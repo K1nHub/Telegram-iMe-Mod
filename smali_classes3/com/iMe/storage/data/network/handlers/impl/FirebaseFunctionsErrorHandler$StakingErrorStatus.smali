@@ -68,7 +68,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 105
+    .line 108
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;
 
     const-string v1, "ERR_STAKING_FINISHED"
@@ -79,7 +79,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;->ERR_STAKING_FINISHED:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;
 
-    .line 106
+    .line 109
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;
 
     const-string v1, "ERR_STAKING_WITHDRAWAL_OVER_LIMIT"
@@ -90,7 +90,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;->ERR_STAKING_WITHDRAWAL_OVER_LIMIT:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;
 
-    .line 107
+    .line 110
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$StakingErrorStatus;
 
     const-string v1, "ERR_STAKING_CLAIM_OVERLAP"
@@ -118,7 +118,7 @@
         }
     .end annotation
 
-    .line 104
+    .line 107
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

@@ -33,15 +33,15 @@
 
     sput-object v0, Lorg/bouncycastle/pqc/crypto/xmss/XMSSUtil$CheckingStream;->components:Ljava/util/Set;
 
-    const-string v1, "java.util.TreeMap"
+    const-string/jumbo v1, "java.util.TreeMap"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "java.lang.Integer"
+    const-string/jumbo v1, "java.lang.Integer"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "java.lang.Number"
+    const-string/jumbo v1, "java.lang.Number"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
@@ -49,7 +49,7 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "java.util.ArrayList"
+    const-string/jumbo v1, "java.util.ArrayList"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
@@ -61,15 +61,15 @@
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "java.util.LinkedList"
+    const-string/jumbo v1, "java.util.LinkedList"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "java.util.Stack"
+    const-string/jumbo v1, "java.util.Stack"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    const-string v1, "java.util.Vector"
+    const-string/jumbo v1, "java.util.Vector"
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 

@@ -4281,7 +4281,6 @@ messages?"</string>
     <string name="TermsOfService">服务协议</string>
     <string name="TermsOfServiceLogin">注册即代表您同意*服务协议*。</string>
     <string name="TextCopied">已复制文本到剪贴板</string>
-    <string name="TextSelectionHit">长按文本，移动光标，选择更多文字以复制。</string>
     <string name="TextSizeHeader">消息文本大小</string>
     <string name="Theme">主题</string>
     <string name="ThemeAlsoAppliedForHint">主题也将应用到**%s** 那一端。</string>

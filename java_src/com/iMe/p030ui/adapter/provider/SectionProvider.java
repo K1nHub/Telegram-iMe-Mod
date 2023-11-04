@@ -6,14 +6,14 @@ import com.iMe.common.IdFabric$ViewTypes;
 import com.iMe.model.wallet.crypto.settings.BlockchainManagementItem;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: SectionProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.SectionProvider */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class SectionProvider extends BaseNodeProvider<BlockchainManagementItem.Section> {
     private final int itemViewType = IdFabric$ViewTypes.SECTION_SPACE;
-    private final int layoutId = C3630R.layout.fork_section_view;
+    private final int layoutId = C3634R.layout.fork_section_view;
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
     public int getItemViewType() {
@@ -29,6 +29,6 @@ public final class SectionProvider extends BaseNodeProvider<BlockchainManagement
     public void convert(BaseViewHolder helper, BlockchainManagementItem.Section item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, C3630R.C3633id.section, Theme.key_windowBackgroundGray);
+        BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, C3634R.C3637id.section, Theme.key_windowBackgroundGray);
     }
 }

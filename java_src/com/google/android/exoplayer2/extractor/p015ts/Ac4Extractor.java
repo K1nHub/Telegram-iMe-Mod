@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
 import android.net.Uri;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.audio.Ac4Util;
 import com.google.android.exoplayer2.extractor.Extractor;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
@@ -96,7 +96,7 @@ public final class Ac4Extractor implements Extractor {
     public void init(ExtractorOutput extractorOutput) {
         this.reader.createTracks(extractorOutput, new TsPayloadReader.TrackIdGenerator(0, 1));
         extractorOutput.endTracks();
-        extractorOutput.seekMap(new SeekMap.Unseekable(C0479C.TIME_UNSET));
+        extractorOutput.seekMap(new SeekMap.Unseekable(C0485C.TIME_UNSET));
     }
 
     @Override // com.google.android.exoplayer2.extractor.Extractor

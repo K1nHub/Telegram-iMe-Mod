@@ -58,20 +58,20 @@ public final class WalletInteractor {
     public final Observable<Result<CryptoTransferMetadata>> getCryptoTransferMetadata(Token token, String str, String str2, Network network) {
         Intrinsics.checkNotNullParameter(token, "token");
         Intrinsics.checkNotNullParameter(network, "network");
-        Observable<Result<CryptoTransferMetadata>> subscribeOn = this.walletRepository.getCryptoTransferMetadata(token, str, str2, network).startWith((Observable<Result<CryptoTransferMetadata>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<CryptoTransferMetadata>> subscribeOn = this.walletRepository.getCryptoTransferMetadata(token, str, str2, network).startWith((Observable<Result<CryptoTransferMetadata>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<Pair<TokenDetailed, Boolean>>> getTokenInfo(Token token) {
         Intrinsics.checkNotNullParameter(token, "token");
-        Observable<Result<Pair<TokenDetailed, Boolean>>> subscribeOn = this.walletRepository.getTokenInfo(token).startWith((Observable<Result<Pair<TokenDetailed, Boolean>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Pair<TokenDetailed, Boolean>>> subscribeOn = this.walletRepository.getTokenInfo(token).startWith((Observable<Result<Pair<TokenDetailed, Boolean>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<CursoredData<TokenDetailed>>> getCustomTokens(String str) {
-        Observable<Result<CursoredData<TokenDetailed>>> subscribeOn = this.walletRepository.getCustomTokens(str).startWith((Observable<Result<CursoredData<TokenDetailed>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<CursoredData<TokenDetailed>>> subscribeOn = this.walletRepository.getCustomTokens(str).startWith((Observable<Result<CursoredData<TokenDetailed>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -80,35 +80,35 @@ public final class WalletInteractor {
         Intrinsics.checkNotNullParameter(query, "query");
         Intrinsics.checkNotNullParameter(networkId, "networkId");
         Intrinsics.checkNotNullParameter(cursor, "cursor");
-        Observable<Result<CursoredData<FoundTokenWithFamily>>> subscribeOn = this.walletRepository.searchTokens(query, networkId, cursor).startWith((Observable<Result<CursoredData<FoundTokenWithFamily>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<CursoredData<FoundTokenWithFamily>>> subscribeOn = this.walletRepository.searchTokens(query, networkId, cursor).startWith((Observable<Result<CursoredData<FoundTokenWithFamily>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<TokenListsData>> getTokenListsData(Token token) {
         Intrinsics.checkNotNullParameter(token, "token");
-        Observable<Result<TokenListsData>> subscribeOn = this.walletRepository.getTokenListsData(token).startWith((Observable<Result<TokenListsData>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<TokenListsData>> subscribeOn = this.walletRepository.getTokenListsData(token).startWith((Observable<Result<TokenListsData>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<Boolean>> setTokenVisibility(Token token, boolean z) {
         Intrinsics.checkNotNullParameter(token, "token");
-        Observable<Result<Boolean>> subscribeOn = this.walletRepository.setTokenVisibility(token, z).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Boolean>> subscribeOn = this.walletRepository.setTokenVisibility(token, z).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<Boolean>> detachCustomToken(Token token) {
         Intrinsics.checkNotNullParameter(token, "token");
-        Observable<Result<Boolean>> subscribeOn = this.walletRepository.detachCustomToken(token).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Boolean>> subscribeOn = this.walletRepository.detachCustomToken(token).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<Map<TokenDetailed, Boolean>>> getDisplayedTokens(String networkId) {
         Intrinsics.checkNotNullParameter(networkId, "networkId");
-        Observable<Result<Map<TokenDetailed, Boolean>>> subscribeOn = this.walletRepository.getDisplayedTokens(networkId).startWith((Observable<Result<Map<TokenDetailed, Boolean>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Map<TokenDetailed, Boolean>>> subscribeOn = this.walletRepository.getDisplayedTokens(networkId).startWith((Observable<Result<Map<TokenDetailed, Boolean>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -122,7 +122,7 @@ public final class WalletInteractor {
 
     public final Observable<Result<List<TokenDisplaySettings.Crypto>>> getTokensSettings(String networkId) {
         Intrinsics.checkNotNullParameter(networkId, "networkId");
-        Observable<Result<List<TokenDisplaySettings.Crypto>>> subscribeOn = this.walletRepository.getTokensSettings(networkId).startWith((Observable<Result<List<TokenDisplaySettings.Crypto>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<List<TokenDisplaySettings.Crypto>>> subscribeOn = this.walletRepository.getTokensSettings(networkId).startWith((Observable<Result<List<TokenDisplaySettings.Crypto>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -136,7 +136,7 @@ public final class WalletInteractor {
 
     public final Observable<Result<List<TokenBalance>>> getWalletBalance(boolean z, String networkId) {
         Intrinsics.checkNotNullParameter(networkId, "networkId");
-        Observable<Result<List<TokenBalance>>> subscribeOn = this.walletRepository.getWalletBalance(z, networkId).startWith((Observable<Result<List<TokenBalance>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<List<TokenBalance>>> subscribeOn = this.walletRepository.getWalletBalance(z, networkId).startWith((Observable<Result<List<TokenBalance>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -158,7 +158,7 @@ public final class WalletInteractor {
 
     public final Observable<Result<List<TokenBalance>>> getWalletMultiChainBalance(boolean z, List<String> networksIds) {
         Intrinsics.checkNotNullParameter(networksIds, "networksIds");
-        Observable<Result<List<TokenBalance>>> subscribeOn = this.walletRepository.getWalletMultiChainBalance(z, networksIds).startWith((Observable<Result<List<TokenBalance>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<List<TokenBalance>>> subscribeOn = this.walletRepository.getWalletMultiChainBalance(z, networksIds).startWith((Observable<Result<List<TokenBalance>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -206,7 +206,7 @@ public final class WalletInteractor {
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<TokenBalance>> subscribeOn = flatMap.startWith((Observable<R>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<TokenBalance>> subscribeOn = flatMap.startWith((Observable<R>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -214,7 +214,7 @@ public final class WalletInteractor {
     public final Observable<Result<List<TokenBalance>>> getTokensBalances(List<Token> tokens, boolean z, String networkId) {
         Intrinsics.checkNotNullParameter(tokens, "tokens");
         Intrinsics.checkNotNullParameter(networkId, "networkId");
-        Observable<Result<List<TokenBalance>>> subscribeOn = this.walletRepository.getTokensBalance(tokens, z, networkId).startWith((Observable<Result<List<TokenBalance>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<List<TokenBalance>>> subscribeOn = this.walletRepository.getTokensBalance(tokens, z, networkId).startWith((Observable<Result<List<TokenBalance>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -237,7 +237,7 @@ public final class WalletInteractor {
 
     public final Observable<Result<List<Transaction>>> getWalletTransactions(boolean z, String str, Token token, int i, String networkId) {
         Intrinsics.checkNotNullParameter(networkId, "networkId");
-        Observable<Result<List<Transaction>>> subscribeOn = this.walletRepository.getWalletTransactionHistory(z, str, token, i, networkId).startWith((Observable<Result<List<Transaction>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<List<Transaction>>> subscribeOn = this.walletRepository.getWalletTransactionHistory(z, str, token, i, networkId).startWith((Observable<Result<List<Transaction>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -245,7 +245,7 @@ public final class WalletInteractor {
     public final Observable<Result<String>> sendTokens(TransferArgs args, Network network) {
         Intrinsics.checkNotNullParameter(args, "args");
         Intrinsics.checkNotNullParameter(network, "network");
-        Observable<Result<String>> subscribeOn = this.walletRepository.sendTokens(args, network).startWith((Observable<Result<String>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<String>> subscribeOn = this.walletRepository.sendTokens(args, network).startWith((Observable<Result<String>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -313,7 +313,7 @@ public final class WalletInteractor {
     }
 
     private final Observable<Result<List<Network>>> getSupportedNetworks() {
-        Observable<Result<List<Network>>> subscribeOn = this.walletRepository.getSupportedNetworks().startWith((Observable<Result<List<Network>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<List<Network>>> subscribeOn = this.walletRepository.getSupportedNetworks().startWith((Observable<Result<List<Network>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletRepository\n       …(schedulersProvider.io())");
         return subscribeOn;
     }

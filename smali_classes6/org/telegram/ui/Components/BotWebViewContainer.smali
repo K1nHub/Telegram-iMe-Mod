@@ -64,6 +64,8 @@
 
 .field private isRequestingPageOpen:Z
 
+.field private isSettingsButtonVisible:Z
+
 .field private isViewPortByMeasureSuppressed:Z
 
 .field private lastButtonColor:I
@@ -123,26 +125,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-T2GX3EPZJAVxsQQmcvxOXvEYNI(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$069hcEu2lvGfehKxgL8J6BmFxXE(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$21(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$03j1cfCahV6jjopy_uhPNWlVbU0(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$13(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$0qZTMAejvyaOUUJJ3fBbKe3rCZU(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Landroid/content/DialogInterface;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$16([Ljava/lang/String;Landroid/content/DialogInterface;I)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$25([Ljava/lang/String;)V
 
     return-void
 .end method
@@ -155,71 +141,15 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$456rcgIN_4Qi0V4QbVu_XXfDeKg(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/Runnable;Landroid/content/DialogInterface;)V
+.method public static synthetic $r8$lambda$86h2dJ_l6zCi7wOcQnWvO8oLUMM(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;ZLandroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$showDialog$27(Ljava/lang/Runnable;Landroid/content/DialogInterface;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$23([Ljava/lang/String;ZLandroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$6Nm6s2niGjuxDVKEsglQq8sRrKw(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$11(Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$6YZiBLDk_fGB80pjDW0P_iWAGQ0(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Landroid/content/DialogInterface;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$15([Ljava/lang/String;Landroid/content/DialogInterface;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$7gR6GlcJgTE_Da4p37_c5MYvCms(Landroid/content/DialogInterface;I)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$17(Landroid/content/DialogInterface;I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$BTDfBr4hIfn71LZeLYcATin5XhA(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$12(Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$BrRnhmmMT63iM1pedpPe_iyVPkQ(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$20(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$FIDAe3vxxzsOsdkvNyuEk4rpOwI(Lorg/telegram/ui/Components/BotWebViewContainer;)V
-    .locals 0
-
-    invoke-direct {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$reload$4()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$SNscmy7a1x3jCMVma2bt2ImqO-U(Lorg/telegram/ui/Components/BotWebViewContainer;)V
-    .locals 0
-
-    invoke-direct {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$23()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$Ss08vDLWUNBweQUfk5fHzIwEXU8(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$BjwrxtAbbZ8WcOc5ojLJVo-qBo0(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$19(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
@@ -227,114 +157,178 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$SxusRnK8FuvoHycIFJztgL7JdLs(Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$DDCIZv4oJdvJQlh3iK8JlybE0A8(Lorg/telegram/ui/Components/BotWebViewContainer;Landroidx/core/util/Consumer;[Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$25(Landroid/content/DialogInterface;I)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$runWithPermissions$0(Landroidx/core/util/Consumer;[Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$UiBapM2NEypJ2e_h9KyN1W4oOvU(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$DRVmGwYvDHoKMkYQSG1lKsX4V6M(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$18([Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$21(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$VFsmn7ANchL4S17MJQvc3wXDMyc(Lorg/telegram/ui/Components/BotWebViewContainer;Landroidx/core/util/Consumer;[Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$FUrEBHaefLniOLZhfUAxAXKBlEg(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$runWithPermissions$1(Landroidx/core/util/Consumer;[Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$20(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$YBHsyTn-EE9LrI1RDJCaDN_jl3M(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$M01VoPOmh4UHJagkgsFuKvE8kI0(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Landroid/content/DialogInterface;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$26([Ljava/lang/String;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$14([Ljava/lang/String;Landroid/content/DialogInterface;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$_eFVzCWFBJYdvgCx9hmFVN1L4bo(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;[Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_error;Landroid/content/DialogInterface;)V
+.method public static synthetic $r8$lambda$MFSDOuWisLSp7MdPEEpQLjOzxzI(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$14(Lorg/telegram/tgnet/TLObject;[Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_error;Landroid/content/DialogInterface;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$10(Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ep-lWfpb4jAiv6XQEy9sHnI8X9c(Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$SK6gyWoSMx8mVvxhIpQ9hAh1zd8(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$evaluateJs$6(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$loadUrl$4(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$kUuHD2mHVSGfwThuUvhrM5T15Vw(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$T7So5tDH5Jb04UQJ2NFMhpL4spw(Lorg/telegram/ui/Components/BotWebViewContainer;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$22(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$reload$3()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$mYwO1pDoTRfCXm0TuwyRh--_MK4(Lorg/telegram/ui/Components/BotWebViewContainer;ZLjava/lang/String;)V
+.method public static synthetic $r8$lambda$Y0EFDhTzk6GVtoiQNUoZdawSt74(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$evaluateJs$7(ZLjava/lang/String;)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$12(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$nlGXb09y2TS81m0SrbXMwDDvfq4(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;ZLandroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$YKuglU1C-6Lg-GWEFNBzLMNUKZk(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$24([Ljava/lang/String;ZLandroid/content/DialogInterface;I)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$15([Ljava/lang/String;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$noMkCrhS8qAdBjJxLR8Qo35tS34(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
+.method public static synthetic $r8$lambda$_sa9w7HZ47YQ9oizrmnXcOdLuig(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/Runnable;Landroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$loadFlickerAndSettingsItem$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$showDialog$26(Ljava/lang/Runnable;Landroid/content/DialogInterface;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$r7-860cg7vDq80oW4m4FgOUE2Io(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$ar3xm82R_fTQy133PFjLwhMgu5I(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$10(Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;I)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$11(Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ueF1KBgSdj_8_TU088nxGo936ns(Lorg/telegram/ui/Components/BotWebViewContainer;Landroid/net/Uri;Z)V
+.method public static synthetic $r8$lambda$bAiQEh7a5a5Fcq6ru3NyE6Q6dps(Lorg/telegram/ui/Components/BotWebViewContainer;ZLjava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onOpenUri$0(Landroid/net/Uri;Z)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$evaluateJs$6(ZLjava/lang/String;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$xoSi9wTni_A1530ayqnrYCALVOo(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$cd68KD0E0ZzxUgwYeTXP5MC-Eic(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$loadFlickerAndSettingsItem$3(Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$7(Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$yDXIRZdITeciRSLd5tbe9eq9P6Y(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;)V
+.method public static synthetic $r8$lambda$ee06spaooqqv7WNcXkx4ZmrhY18(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$loadUrl$5(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$17([Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$fMxKORAJVh9CEeYt0kXRlZoQjmk(Ljava/lang/String;)V
+    .locals 0
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$evaluateJs$5(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$i0ctAtjbDtzDRrKsq6k1XQC9zmU(Lorg/telegram/ui/Components/BotWebViewContainer;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$22()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$iDOa-r9X7gqKVTVo8vKLefoO8YM(Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$24(Landroid/content/DialogInterface;I)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$kzeAwzYVc4DYZkfcqqshcO3kCHg(Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$16(Landroid/content/DialogInterface;I)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$o2wN7xYycrII2QjlB_KgJ8N38e0(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;[Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_error;Landroid/content/DialogInterface;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$13(Lorg/telegram/tgnet/TLObject;[Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_error;Landroid/content/DialogInterface;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$rv6DHg-DYD0WAQ2uubOiUC-Rk6U(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$loadFlickerAndSettingsItem$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$sJaVRm5URUufAAyKP53KcvMiIh4(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$loadFlickerAndSettingsItem$1(Lorg/telegram/tgnet/TLObject;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$v6rwoi552lt0g8z42B87O8bvKog(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->lambda$onEventReceived$18(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
@@ -371,7 +365,7 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
     .locals 4
 
-    .line 145
+    .line 146
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     .line 104
@@ -406,30 +400,30 @@
 
     const/4 v0, -0x1
 
-    .line 1617
+    .line 1628
     iput v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastDialogType:I
 
     const/4 v1, 0x0
 
-    .line 1618
+    .line 1629
     iput v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->shownDialogsCount:I
 
-    .line 146
+    .line 147
     iput-object p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 148
+    .line 149
     instance-of p2, p1, Landroid/app/Activity;
 
     if-eqz p2, :cond_0
 
-    .line 149
+    .line 150
     move-object p2, p1
 
     check-cast p2, Landroid/app/Activity;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->parentActivity:Landroid/app/Activity;
 
-    .line 152
+    .line 153
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
@@ -439,17 +433,17 @@
 
     const/16 v3, 0xcc
 
-    .line 153
+    .line 154
     invoke-virtual {p2, p3, v2, v3}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->setColors(III)V
 
-    .line 154
+    .line 155
     new-instance p2, Lorg/telegram/ui/Components/BotWebViewContainer$1;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer$1;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 184
+    .line 185
     new-instance p3, Landroid/graphics/PorterDuffColorFilter;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchHint:I
@@ -464,7 +458,7 @@
 
     invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/BackupImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 185
+    .line 186
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -475,7 +469,7 @@
 
     invoke-virtual {p2, p3}, Lorg/telegram/messenger/ImageReceiver;->setAspectFit(Z)V
 
-    .line 186
+    .line 187
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v2, 0x30
@@ -488,14 +482,14 @@
 
     invoke-virtual {p0, p2, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 188
+    .line 189
     new-instance p2, Landroid/widget/TextView;
 
     invoke-direct {p2, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webViewNotAvailableText:Landroid/widget/TextView;
 
-    .line 189
+    .line 190
     sget p1, Lorg/telegram/messenger/R$string;->BotWebViewNotAvailablePlaceholder:I
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -504,7 +498,7 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 190
+    .line 191
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webViewNotAvailableText:Landroid/widget/TextView;
 
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
@@ -515,21 +509,21 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 191
+    .line 192
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webViewNotAvailableText:Landroid/widget/TextView;
 
     const/high16 p2, 0x41700000    # 15.0f
 
     invoke-virtual {p1, p3, p2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 192
+    .line 193
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webViewNotAvailableText:Landroid/widget/TextView;
 
     const/16 p2, 0x11
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 193
+    .line 194
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webViewNotAvailableText:Landroid/widget/TextView;
 
     const/16 p3, 0x8
@@ -538,17 +532,17 @@
 
     const/16 p1, 0x10
 
-    .line 194
+    .line 195
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 195
+    .line 196
     iget-object p3, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webViewNotAvailableText:Landroid/widget/TextView;
 
     invoke-virtual {p3, p1, p1, p1, p1}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 196
+    .line 197
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webViewNotAvailableText:Landroid/widget/TextView;
 
     invoke-static {v0, v3, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
@@ -557,7 +551,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 198
+    .line 199
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
     return-void
@@ -746,90 +740,17 @@
 .method private buildThemeParams()Lorg/json/JSONObject;
     .locals 3
 
-    .line 1690
+    .line 1701
     :try_start_0
-    new-instance v0, Lorg/json/JSONObject;
+    iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->makeThemeParams(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/json/JSONObject;
 
-    const-string v1, "bg_color"
+    move-result-object v0
 
-    .line 1691
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+    if-eqz v0, :cond_0
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v1, "secondary_bg_color"
-
-    .line 1692
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
-
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v1, "text_color"
-
-    .line 1693
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
-
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v1, "hint_color"
-
-    .line 1694
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
-
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v1, "link_color"
-
-    .line 1695
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
-
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v1, "button_color"
-
-    .line 1696
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
-
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    const-string v1, "button_text_color"
-
-    .line 1697
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
-
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    .line 1698
+    .line 1703
     new-instance v1, Lorg/json/JSONObject;
 
     invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
@@ -847,10 +768,11 @@
     :catch_0
     move-exception v0
 
-    .line 1700
+    .line 1706
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1701
+    .line 1708
+    :cond_0
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
@@ -861,7 +783,7 @@
 .method private checkCreateWebView()V
     .locals 2
 
-    .line 206
+    .line 207
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     if-nez v0, :cond_0
@@ -870,7 +792,7 @@
 
     if-nez v0, :cond_0
 
-    .line 208
+    .line 209
     :try_start_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->setupWebView()V
     :try_end_0
@@ -881,10 +803,10 @@
     :catchall_0
     move-exception v0
 
-    .line 210
+    .line 211
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 212
+    .line 213
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v1, 0x8
@@ -893,22 +815,22 @@
 
     const/4 v0, 0x1
 
-    .line 213
+    .line 214
     iput-boolean v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webViewNotAvailable:Z
 
-    .line 214
+    .line 215
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webViewNotAvailableText:Landroid/widget/TextView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 215
+    .line 216
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     if-eqz v0, :cond_0
 
-    .line 216
+    .line 217
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
@@ -960,7 +882,7 @@
 .method private error(Ljava/lang/String;)V
     .locals 2
 
-    .line 1614
+    .line 1625
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p0, v0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
@@ -978,76 +900,22 @@
     return-void
 .end method
 
-.method private formatColor(I)Ljava/lang/String;
-    .locals 2
-
-    .line 1713
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
-
-    move-result p1
-
-    .line 1714
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "#"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {p1}, Landroid/graphics/Color;->red(I)I
-
-    move-result v1
-
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->hexFixed(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {p1}, Landroid/graphics/Color;->green(I)I
-
-    move-result v1
-
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->hexFixed(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
-
-    move-result p1
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->hexFixed(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
 .method private getColor(I)I
     .locals 1
 
-    .line 1706
+    .line 1712
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-eqz v0, :cond_0
 
-    .line 1707
+    .line 1713
     invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(I)I
 
     move-result p1
 
     return p1
 
-    .line 1709
+    .line 1715
     :cond_0
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
@@ -1096,46 +964,10 @@
     return-object p0
 .end method
 
-.method private hexFixed(I)Ljava/lang/String;
-    .locals 2
-
-    .line 1718
-    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object p1
-
-    .line 1719
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    const/4 v1, 0x2
-
-    if-ge v0, v1, :cond_0
-
-    .line 1720
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v1, "0"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p1
-
-    :cond_0
-    return-object p1
-.end method
-
 .method private ignoreDialog(I)Z
     .locals 7
 
-    .line 1622
+    .line 1633
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     const/4 v1, 0x1
@@ -1144,7 +976,7 @@
 
     return v1
 
-    .line 1625
+    .line 1636
     :cond_0
     iget-wide v2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->blockedDialogsUntil:J
 
@@ -1166,7 +998,7 @@
 
     return v1
 
-    .line 1628
+    .line 1639
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastDialogType:I
 
@@ -1180,7 +1012,7 @@
 
     if-le p1, v0, :cond_2
 
-    .line 1629
+    .line 1640
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -1191,7 +1023,7 @@
 
     iput-wide v3, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->blockedDialogsUntil:J
 
-    .line 1630
+    .line 1641
     iput v2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->shownDialogsCount:I
 
     return v1
@@ -1200,23 +1032,23 @@
     return v2
 .end method
 
-.method private static synthetic lambda$evaluateJs$6(Ljava/lang/String;)V
+.method private static synthetic lambda$evaluateJs$5(Ljava/lang/String;)V
     .locals 0
 
     return-void
 .end method
 
-.method private synthetic lambda$evaluateJs$7(ZLjava/lang/String;)V
+.method private synthetic lambda$evaluateJs$6(ZLjava/lang/String;)V
     .locals 3
 
     const-string v0, "javascript:"
 
     if-eqz p1, :cond_0
 
-    .line 943
+    .line 940
     invoke-direct {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->checkCreateWebView()V
 
-    .line 945
+    .line 942
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
@@ -1224,7 +1056,7 @@
 
     return-void
 
-    .line 949
+    .line 946
     :cond_1
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1232,14 +1064,14 @@
 
     if-lt v1, v2, :cond_2
 
-    .line 950
+    .line 947
     sget-object v0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda9;->INSTANCE:Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda9;
 
     invoke-virtual {p1, p2, v0}, Landroid/webkit/WebView;->evaluateJavascript(Ljava/lang/String;Landroid/webkit/ValueCallback;)V
 
     goto :goto_0
 
-    .line 954
+    .line 951
     :cond_2
     :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1266,7 +1098,7 @@
 
     goto :goto_0
 
-    .line 956
+    .line 953
     :catch_0
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
@@ -1292,59 +1124,57 @@
     return-void
 .end method
 
-.method private synthetic lambda$loadFlickerAndSettingsItem$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
-    .locals 6
+.method private synthetic lambda$loadFlickerAndSettingsItem$1(Lorg/telegram/tgnet/TLObject;)V
+    .locals 4
 
-    .line 824
+    .line 820
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBotsBot;
 
-    const/16 v1, 0x8
+    if-eqz v0, :cond_1
 
-    if-eqz v0, :cond_3
-
-    .line 825
+    .line 821
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBotsBot;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBotsBot;->bot:Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;
 
-    .line 828
+    .line 824
     invoke-static {p1}, Lorg/telegram/messenger/MediaDataController;->getPlaceholderStaticAttachMenuBotIcon(Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;)Lorg/telegram/tgnet/TLRPC$TL_attachMenuBotIcon;
 
     move-result-object v0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
-    .line 830
+    .line 826
     invoke-static {p1}, Lorg/telegram/messenger/MediaDataController;->getStaticAttachMenuBotIcon(Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;)Lorg/telegram/tgnet/TLRPC$TL_attachMenuBotIcon;
 
     move-result-object v0
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :cond_0
-    move v3, v2
+    move v2, v1
 
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 834
-    iget-object v4, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
+    .line 830
+    iget-object v3, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {v4, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v3, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 835
-    iget-object v4, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
+    .line 831
+    iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    invoke-virtual {v4, v5}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 836
-    iget-object v4, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
+    .line 832
+    iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBotIcon;->icon:Lorg/telegram/tgnet/TLRPC$Document;
 
@@ -1352,137 +1182,72 @@
 
     move-result-object v0
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v4, v0, v5, v5, p1}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
+    invoke-virtual {v1, v0, v3, v3, p1}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
-    .line 837
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/BotWebViewContainer;->setupFlickerParams(Z)V
+    .line 833
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->setupFlickerParams(Z)V
 
     :cond_1
-    if-eqz p2, :cond_4
-
-    .line 841
-    iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->has_settings:Z
-
-    if-eqz p1, :cond_2
-
-    move v1, v2
-
-    :cond_2
-    invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    goto :goto_1
-
-    :cond_3
-    if-eqz p2, :cond_4
-
-    .line 844
-    invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    :cond_4
-    :goto_1
     return-void
 .end method
 
-.method private synthetic lambda$loadFlickerAndSettingsItem$3(Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$loadFlickerAndSettingsItem$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 823
-    new-instance p3, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda17;
+    .line 819
+    new-instance p2, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda15;
 
-    invoke-direct {p3, p0, p2, p1}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
+    invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;)V
 
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$loadUrl$5(Ljava/lang/String;)V
+.method private synthetic lambda$loadUrl$4(Ljava/lang/String;)V
     .locals 3
 
     const/4 v0, 0x0
 
-    .line 879
+    .line 876
     iput-boolean v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->isPageLoaded:Z
 
     const-wide/16 v1, 0x0
 
-    .line 880
+    .line 877
     iput-wide v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastClickMs:J
 
-    .line 881
+    .line 878
     iput-boolean v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->hasUserPermissions:Z
 
-    .line 883
+    .line 880
     invoke-direct {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->checkCreateWebView()V
 
-    .line 884
+    .line 881
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     if-eqz v0, :cond_0
 
-    .line 885
+    .line 882
     invoke-virtual {v0, p1}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
 
     :cond_0
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$10(Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;I)V
-    .locals 1
-
-    .line 1149
-    invoke-interface {p3}, Landroid/content/DialogInterface;->dismiss()V
-
-    :try_start_0
-    const-string p3, "popup_closed"
-
-    .line 1151
-    new-instance p4, Lorg/json/JSONObject;
-
-    invoke-direct {p4}, Lorg/json/JSONObject;-><init>()V
-
-    const-string v0, "button_id"
-
-    iget-object p1, p1, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->id:Ljava/lang/String;
-
-    invoke-virtual {p4, v0, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
-
-    move-result-object p1
-
-    invoke-direct {p0, p3, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->notifyEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
-
-    const/4 p1, 0x1
-
-    .line 1152
-    invoke-virtual {p2, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
-    :try_end_0
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception p1
-
-    .line 1154
-    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    :goto_0
-    return-void
-.end method
-
-.method private synthetic lambda$onEventReceived$11(Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;)V
+.method private synthetic lambda$onEventReceived$10(Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;)V
     .locals 0
 
-    .line 1159
+    .line 1156
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 1160
+    .line 1157
     new-instance p1, Lorg/json/JSONObject;
 
     invoke-direct {p1}, Lorg/json/JSONObject;-><init>()V
@@ -1494,10 +1259,10 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 1162
+    .line 1159
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    .line 1163
+    .line 1160
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide p1
@@ -1507,19 +1272,19 @@
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$12(Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
+.method private synthetic lambda$onEventReceived$11(Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     if-eqz p1, :cond_0
 
     const-string p1, "failed"
 
-    .line 1371
+    .line 1382
     invoke-virtual {p0, p2, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->onInvoiceStatusUpdate(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 1373
+    .line 1384
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
@@ -1529,20 +1294,20 @@
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$13(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$onEventReceived$12(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 1369
-    new-instance v0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda19;
+    .line 1380
+    new-instance v0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda18;
 
-    invoke-direct {v0, p0, p3, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
+    invoke-direct {v0, p0, p3, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$14(Lorg/telegram/tgnet/TLObject;[Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_error;Landroid/content/DialogInterface;)V
+.method private synthetic lambda$onEventReceived$13(Lorg/telegram/tgnet/TLObject;[Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_error;Landroid/content/DialogInterface;)V
     .locals 2
 
     if-eqz p1, :cond_0
@@ -1551,15 +1316,15 @@
 
     const/4 v1, 0x0
 
-    .line 1456
+    .line 1467
     aput-object v0, p2, v1
 
-    .line 1457
+    .line 1468
     instance-of p2, p1, Lorg/telegram/tgnet/TLRPC$Updates;
 
     if-eqz p2, :cond_0
 
-    .line 1458
+    .line 1469
     iget p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1573,23 +1338,23 @@
     :cond_0
     if-eqz p3, :cond_1
 
-    .line 1462
+    .line 1473
     iget-object p1, p3, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->unknownError(Ljava/lang/String;)V
 
-    .line 1464
+    .line 1475
     :cond_1
     invoke-interface {p4}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$15([Ljava/lang/String;Landroid/content/DialogInterface;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$onEventReceived$14([Ljava/lang/String;Landroid/content/DialogInterface;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 7
 
-    .line 1454
-    new-instance v6, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda18;
+    .line 1465
+    new-instance v6, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda17;
 
     move-object v0, v6
 
@@ -1603,22 +1368,22 @@
 
     move-object v5, p2
 
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;[Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_error;Landroid/content/DialogInterface;)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;[Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_error;Landroid/content/DialogInterface;)V
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$16([Ljava/lang/String;Landroid/content/DialogInterface;I)V
+.method private synthetic lambda$onEventReceived$15([Ljava/lang/String;Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 1452
+    .line 1463
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_bots_allowSendMessage;
 
     invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_bots_allowSendMessage;-><init>()V
 
-    .line 1453
+    .line 1464
     iget v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1633,35 +1398,35 @@
 
     iput-object v0, p3, Lorg/telegram/tgnet/TLRPC$TL_bots_allowSendMessage;->bot:Lorg/telegram/tgnet/TLRPC$InputUser;
 
-    .line 1454
+    .line 1465
     iget v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v0
 
-    new-instance v1, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda27;
+    new-instance v1, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda26;
 
-    invoke-direct {v1, p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda27;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Landroid/content/DialogInterface;)V
+    invoke-direct {v1, p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda26;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Landroid/content/DialogInterface;)V
 
     invoke-virtual {v0, p3, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
     return-void
 .end method
 
-.method private static synthetic lambda$onEventReceived$17(Landroid/content/DialogInterface;I)V
+.method private static synthetic lambda$onEventReceived$16(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1468
+    .line 1479
     invoke-interface {p0}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$18([Ljava/lang/String;)V
+.method private synthetic lambda$onEventReceived$17([Ljava/lang/String;)V
     .locals 3
 
-    .line 1473
+    .line 1484
     :try_start_0
     new-instance v0, Lorg/json/JSONObject;
 
@@ -1671,14 +1436,14 @@
 
     const/4 v2, 0x0
 
-    .line 1474
+    .line 1485
     aget-object p1, p1, v2
 
     invoke-virtual {v0, v1, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     const-string p1, "write_access_requested"
 
-    .line 1475
+    .line 1486
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->notifyEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1688,22 +1453,22 @@
     :catch_0
     move-exception p1
 
-    .line 1477
+    .line 1488
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$19(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$onEventReceived$18(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 3
 
-    .line 1433
+    .line 1444
     instance-of p1, p1, Lorg/telegram/tgnet/TLRPC$TL_boolTrue;
 
     if-eqz p1, :cond_0
 
-    .line 1435
+    .line 1446
     :try_start_0
     new-instance p1, Lorg/json/JSONObject;
 
@@ -1713,12 +1478,12 @@
 
     const-string v0, "allowed"
 
-    .line 1436
+    .line 1447
     invoke-virtual {p1, p2, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     const-string p2, "write_access_requested"
 
-    .line 1437
+    .line 1448
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->notifyEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1728,7 +1493,7 @@
     :catch_0
     move-exception p1
 
-    .line 1439
+    .line 1450
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -1737,7 +1502,7 @@
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 1443
+    .line 1454
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->unknownError(Ljava/lang/String;)V
@@ -1747,14 +1512,14 @@
     :cond_1
     const-string p1, "cancelled"
 
-    .line 1447
+    .line 1458
     filled-new-array {p1}, [Ljava/lang/String;
 
     move-result-object p1
 
     const/4 p2, 0x3
 
-    .line 1448
+    .line 1459
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -1765,7 +1530,7 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->BotWebViewRequestWriteTitle:I
 
-    .line 1449
+    .line 1460
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -1776,7 +1541,7 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->BotWebViewRequestWriteMessage:I
 
-    .line 1450
+    .line 1461
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -1787,7 +1552,7 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->BotWebViewRequestAllow:I
 
-    .line 1451
+    .line 1462
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -1802,18 +1567,18 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->BotWebViewRequestDontAllow:I
 
-    .line 1467
+    .line 1478
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    sget-object v2, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda5;->INSTANCE:Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda5;
+    sget-object v2, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda6;->INSTANCE:Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda6;
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object v0
 
-    .line 1470
+    .line 1481
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -1822,16 +1587,16 @@
 
     invoke-direct {v1, p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;)V
 
-    .line 1448
+    .line 1459
     invoke-direct {p0, p2, v0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->showDialog(ILorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Runnable;)Z
 
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$20(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$onEventReceived$19(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 1432
+    .line 1443
     new-instance v0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda16;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
@@ -1841,10 +1606,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$21(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$onEventReceived$20(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 2
 
-    .line 1509
+    .line 1520
     :try_start_0
     new-instance v0, Lorg/json/JSONObject;
 
@@ -1852,15 +1617,15 @@
 
     const-string v1, "req_id"
 
-    .line 1510
+    .line 1521
     invoke-virtual {v0, v1, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 1511
+    .line 1522
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
     if-eqz p1, :cond_0
 
-    .line 1512
+    .line 1523
     new-instance p1, Lorg/json/JSONTokener;
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
@@ -1875,7 +1640,7 @@
 
     const-string p2, "result"
 
-    .line 1513
+    .line 1524
     invoke-virtual {v0, p2, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     goto :goto_0
@@ -1885,7 +1650,7 @@
 
     const-string p1, "error"
 
-    .line 1515
+    .line 1526
     iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-virtual {v0, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
@@ -1894,7 +1659,7 @@
     :goto_0
     const-string p1, "custom_method_invoked"
 
-    .line 1517
+    .line 1528
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->notifyEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1904,33 +1669,33 @@
     :catch_0
     move-exception p1
 
-    .line 1519
+    .line 1530
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1520
+    .line 1531
     invoke-direct {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->unknownError()V
 
     :goto_1
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$22(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$onEventReceived$21(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 1507
-    new-instance v0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda15;
+    .line 1518
+    new-instance v0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda14;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$23()V
+.method private synthetic lambda$onEventReceived$22()V
     .locals 12
 
-    .line 1559
+    .line 1570
     iget v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
@@ -1971,7 +1736,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;)V
 
-    .line 1562
+    .line 1573
     :try_start_0
     new-instance v0, Lorg/json/JSONObject;
 
@@ -1981,12 +1746,12 @@
 
     const-string v2, "sent"
 
-    .line 1563
+    .line 1574
     invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     const-string v1, "phone_requested"
 
-    .line 1564
+    .line 1575
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->notifyEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1996,29 +1761,29 @@
     :catch_0
     move-exception v0
 
-    .line 1566
+    .line 1577
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$24([Ljava/lang/String;ZLandroid/content/DialogInterface;I)V
+.method private synthetic lambda$onEventReceived$23([Ljava/lang/String;ZLandroid/content/DialogInterface;I)V
     .locals 10
 
     const/4 p4, 0x0
 
     const/4 v0, 0x0
 
-    .line 1554
+    .line 1565
     aput-object v0, p1, p4
 
-    .line 1555
+    .line 1566
     invoke-interface {p3}, Landroid/content/DialogInterface;->dismiss()V
 
     if-eqz p2, :cond_0
 
-    .line 1558
+    .line 1569
     iget p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2037,7 +1802,7 @@
 
     goto :goto_0
 
-    .line 1570
+    .line 1581
     :cond_0
     iget p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
@@ -2079,7 +1844,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;)V
 
-    .line 1573
+    .line 1584
     :try_start_0
     new-instance p1, Lorg/json/JSONObject;
 
@@ -2089,12 +1854,12 @@
 
     const-string p3, "sent"
 
-    .line 1574
+    .line 1585
     invoke-virtual {p1, p2, p3}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     const-string p2, "phone_requested"
 
-    .line 1575
+    .line 1586
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->notifyEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2104,35 +1869,35 @@
     :catch_0
     move-exception p1
 
-    .line 1577
+    .line 1588
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
 .end method
 
-.method private static synthetic lambda$onEventReceived$25(Landroid/content/DialogInterface;I)V
+.method private static synthetic lambda$onEventReceived$24(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1582
+    .line 1593
     invoke-interface {p0}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 .end method
 
-.method private synthetic lambda$onEventReceived$26([Ljava/lang/String;)V
+.method private synthetic lambda$onEventReceived$25([Ljava/lang/String;)V
     .locals 3
 
     const/4 v0, 0x0
 
-    .line 1585
+    .line 1596
     aget-object v1, p1, v0
 
     if-nez v1, :cond_0
 
     return-void
 
-    .line 1589
+    .line 1600
     :cond_0
     :try_start_0
     new-instance v1, Lorg/json/JSONObject;
@@ -2141,14 +1906,14 @@
 
     const-string v2, "status"
 
-    .line 1590
+    .line 1601
     aget-object p1, p1, v0
 
     invoke-virtual {v1, v2, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     const-string p1, "phone_requested"
 
-    .line 1591
+    .line 1602
     invoke-direct {p0, p1, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->notifyEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2158,7 +1923,50 @@
     :catch_0
     move-exception p1
 
-    .line 1593
+    .line 1604
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    :goto_0
+    return-void
+.end method
+
+.method private synthetic lambda$onEventReceived$7(Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;I)V
+    .locals 1
+
+    .line 1120
+    invoke-interface {p3}, Landroid/content/DialogInterface;->dismiss()V
+
+    :try_start_0
+    const-string p3, "popup_closed"
+
+    .line 1122
+    new-instance p4, Lorg/json/JSONObject;
+
+    invoke-direct {p4}, Lorg/json/JSONObject;-><init>()V
+
+    const-string v0, "button_id"
+
+    iget-object p1, p1, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->id:Ljava/lang/String;
+
+    invoke-virtual {p4, v0, p1}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    move-result-object p1
+
+    invoke-direct {p0, p3, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->notifyEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
+
+    const/4 p1, 0x1
+
+    .line 1123
+    invoke-virtual {p2, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    :try_end_0
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :goto_0
+
+    :catch_0
+    move-exception p1
+
+    .line 1125
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -2168,13 +1976,13 @@
 .method private synthetic lambda$onEventReceived$8(Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 1123
+    .line 1133
     invoke-interface {p3}, Landroid/content/DialogInterface;->dismiss()V
 
     :try_start_0
     const-string p3, "popup_closed"
 
-    .line 1125
+    .line 1135
     new-instance p4, Lorg/json/JSONObject;
 
     invoke-direct {p4}, Lorg/json/JSONObject;-><init>()V
@@ -2191,7 +1999,7 @@
 
     const/4 p1, 0x1
 
-    .line 1126
+    .line 1136
     invoke-virtual {p2, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
@@ -2201,7 +2009,7 @@
     :catch_0
     move-exception p1
 
-    .line 1128
+    .line 1138
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -2211,13 +2019,13 @@
 .method private synthetic lambda$onEventReceived$9(Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 1136
+    .line 1146
     invoke-interface {p3}, Landroid/content/DialogInterface;->dismiss()V
 
     :try_start_0
     const-string p3, "popup_closed"
 
-    .line 1138
+    .line 1148
     new-instance p4, Lorg/json/JSONObject;
 
     invoke-direct {p4}, Lorg/json/JSONObject;-><init>()V
@@ -2234,7 +2042,7 @@
 
     const/4 p1, 0x1
 
-    .line 1139
+    .line 1149
     invoke-virtual {p2, p1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_0
@@ -2244,60 +2052,62 @@
     :catch_0
     move-exception p1
 
-    .line 1141
+    .line 1151
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
 .end method
 
-.method private synthetic lambda$onOpenUri$0(Landroid/net/Uri;Z)V
-    .locals 2
+.method private synthetic lambda$reload$3()V
+    .locals 4
 
-    .line 539
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
+    .line 856
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->isSettingsButtonVisible:Z
 
-    move-result-object v0
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, p1, v1, p2}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Landroid/net/Uri;ZZ)V
-
-    return-void
-.end method
-
-.method private synthetic lambda$reload$4()V
-    .locals 3
-
-    .line 866
-    invoke-direct {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->checkCreateWebView()V
-
-    const/4 v0, 0x0
-
-    .line 867
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->isPageLoaded:Z
-
-    const-wide/16 v1, 0x0
-
-    .line 868
-    iput-wide v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastClickMs:J
-
-    .line 869
-    iput-boolean v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->hasUserPermissions:Z
-
-    .line 870
-    iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
+    const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 871
+    .line 857
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->isSettingsButtonVisible:Z
+
+    .line 858
+    iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
+
+    if-eqz v0, :cond_0
+
+    .line 859
+    invoke-interface {v0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onSetSettingsButtonVisible(Z)V
+
+    .line 863
+    :cond_0
+    invoke-direct {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->checkCreateWebView()V
+
+    .line 864
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->isPageLoaded:Z
+
+    const-wide/16 v2, 0x0
+
+    .line 865
+    iput-wide v2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastClickMs:J
+
+    .line 866
+    iput-boolean v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->hasUserPermissions:Z
+
+    .line 867
+    iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
+
+    if-eqz v0, :cond_1
+
+    .line 868
     invoke-virtual {v0}, Landroid/webkit/WebView;->reload()V
 
-    :cond_0
+    :cond_1
     return-void
 .end method
 
-.method private synthetic lambda$runWithPermissions$1(Landroidx/core/util/Consumer;[Ljava/lang/String;)V
+.method private synthetic lambda$runWithPermissions$0(Landroidx/core/util/Consumer;[Ljava/lang/String;)V
     .locals 0
 
     .line 612
@@ -2314,18 +2124,18 @@
     return-void
 .end method
 
-.method private synthetic lambda$showDialog$27(Ljava/lang/Runnable;Landroid/content/DialogInterface;)V
+.method private synthetic lambda$showDialog$26(Ljava/lang/Runnable;Landroid/content/DialogInterface;)V
     .locals 0
 
     if-eqz p1, :cond_0
 
-    .line 1642
+    .line 1653
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_0
     const/4 p1, 0x0
 
-    .line 1644
+    .line 1655
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
@@ -2334,7 +2144,7 @@
 .method private notifyEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
     .locals 2
 
-    .line 982
+    .line 979
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2369,7 +2179,7 @@
 .method private notifyThemeChanged()V
     .locals 2
 
-    .line 978
+    .line 975
     invoke-direct {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->buildThemeParams()Lorg/json/JSONObject;
 
     move-result-object v0
@@ -2382,7 +2192,7 @@
 .end method
 
 .method private onEventReceived(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 23
+    .locals 21
 
     move-object/from16 v1, p0
 
@@ -2394,10 +2204,10 @@
 
     const-string v4, "android.permission.CAMERA"
 
-    .line 994
+    .line 991
     iget-object v5, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
-    if-eqz v5, :cond_50
+    if-eqz v5, :cond_51
 
     iget-object v5, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
@@ -2405,7 +2215,7 @@
 
     goto/16 :goto_1d
 
-    .line 997
+    .line 994
     :cond_0
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->hashCode()I
 
@@ -2413,9 +2223,9 @@
 
     move-result v5
 
-    const/4 v8, 0x3
+    const/4 v9, 0x3
 
-    const/4 v11, 0x1
+    const/4 v12, 0x1
 
     sparse-switch v5, :sswitch_data_0
 
@@ -2436,7 +2246,7 @@
     goto :goto_0
 
     :cond_1
-    const/16 v5, 0x16
+    const/16 v5, 0x17
 
     goto/16 :goto_1
 
@@ -2452,7 +2262,7 @@
     goto :goto_0
 
     :cond_2
-    const/16 v5, 0x15
+    const/16 v5, 0x16
 
     goto/16 :goto_1
 
@@ -2468,7 +2278,7 @@
     goto :goto_0
 
     :cond_3
-    const/16 v5, 0x14
+    const/16 v5, 0x15
 
     goto/16 :goto_1
 
@@ -2484,12 +2294,12 @@
     goto :goto_0
 
     :cond_4
-    const/16 v5, 0x13
+    const/16 v5, 0x14
 
     goto/16 :goto_1
 
     :sswitch_4
-    const-string v5, "web_app_setup_main_button"
+    const-string v5, "web_app_setup_settings_button"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2500,12 +2310,12 @@
     goto :goto_0
 
     :cond_5
-    const/16 v5, 0x12
+    const/16 v5, 0x13
 
     goto/16 :goto_1
 
     :sswitch_5
-    const-string v5, "web_app_trigger_haptic_feedback"
+    const-string v5, "web_app_setup_main_button"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2516,12 +2326,12 @@
     goto :goto_0
 
     :cond_6
-    const/16 v5, 0x11
+    const/16 v5, 0x12
 
     goto/16 :goto_1
 
     :sswitch_6
-    const-string v5, "web_app_setup_back_button"
+    const-string v5, "web_app_trigger_haptic_feedback"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2532,12 +2342,12 @@
     goto :goto_0
 
     :cond_7
-    const/16 v5, 0x10
+    const/16 v5, 0x11
 
     goto/16 :goto_1
 
     :sswitch_7
-    const-string v5, "web_app_switch_inline_query"
+    const-string v5, "web_app_setup_back_button"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2548,12 +2358,12 @@
     goto :goto_0
 
     :cond_8
-    const/16 v5, 0xf
+    const/16 v5, 0x10
 
     goto/16 :goto_1
 
     :sswitch_8
-    const-string v5, "web_app_data_send"
+    const-string v5, "web_app_switch_inline_query"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2564,12 +2374,12 @@
     goto :goto_0
 
     :cond_9
-    const/16 v5, 0xe
+    const/16 v5, 0xf
 
     goto/16 :goto_1
 
     :sswitch_9
-    const-string v5, "web_app_read_text_from_clipboard"
+    const-string v5, "web_app_data_send"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2580,12 +2390,12 @@
     goto/16 :goto_0
 
     :cond_a
-    const/16 v5, 0xd
+    const/16 v5, 0xe
 
     goto/16 :goto_1
 
     :sswitch_a
-    const-string v5, "web_app_ready"
+    const-string v5, "web_app_read_text_from_clipboard"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2596,12 +2406,12 @@
     goto/16 :goto_0
 
     :cond_b
-    const/16 v5, 0xc
+    const/16 v5, 0xd
 
     goto/16 :goto_1
 
     :sswitch_b
-    const-string v5, "web_app_close"
+    const-string v5, "web_app_ready"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2612,12 +2422,12 @@
     goto/16 :goto_0
 
     :cond_c
-    const/16 v5, 0xb
+    const/16 v5, 0xc
 
     goto/16 :goto_1
 
     :sswitch_c
-    const-string v5, "web_app_open_tg_link"
+    const-string v5, "web_app_close"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2628,12 +2438,12 @@
     goto/16 :goto_0
 
     :cond_d
-    const/16 v5, 0xa
+    const/16 v5, 0xb
 
     goto/16 :goto_1
 
     :sswitch_d
-    const-string v5, "web_app_request_viewport"
+    const-string v5, "web_app_open_tg_link"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2644,12 +2454,12 @@
     goto/16 :goto_0
 
     :cond_e
-    const/16 v5, 0x9
+    const/16 v5, 0xa
 
     goto/16 :goto_1
 
     :sswitch_e
-    const-string v5, "web_app_request_theme"
+    const-string v5, "web_app_request_viewport"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2660,12 +2470,12 @@
     goto/16 :goto_0
 
     :cond_f
-    const/16 v5, 0x8
+    const/16 v5, 0x9
 
     goto/16 :goto_1
 
     :sswitch_f
-    const-string v5, "web_app_request_phone"
+    const-string v5, "web_app_request_theme"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2676,12 +2486,12 @@
     goto/16 :goto_0
 
     :cond_10
-    const/4 v5, 0x7
+    const/16 v5, 0x8
 
-    goto :goto_1
+    goto/16 :goto_1
 
     :sswitch_10
-    const-string v5, "web_app_open_scan_qr_popup"
+    const-string v5, "web_app_request_phone"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2692,12 +2502,12 @@
     goto/16 :goto_0
 
     :cond_11
-    const/4 v5, 0x6
+    const/4 v5, 0x7
 
     goto :goto_1
 
     :sswitch_11
-    const-string v5, "web_app_setup_closing_behavior"
+    const-string v5, "web_app_open_scan_qr_popup"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2708,12 +2518,12 @@
     goto/16 :goto_0
 
     :cond_12
-    const/4 v5, 0x5
+    const/4 v5, 0x6
 
     goto :goto_1
 
     :sswitch_12
-    const-string v5, "web_app_open_invoice"
+    const-string v5, "web_app_setup_closing_behavior"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2724,12 +2534,12 @@
     goto/16 :goto_0
 
     :cond_13
-    const/4 v5, 0x4
+    const/4 v5, 0x5
 
     goto :goto_1
 
     :sswitch_13
-    const-string v5, "web_app_open_popup"
+    const-string v5, "web_app_open_invoice"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2740,12 +2550,12 @@
     goto/16 :goto_0
 
     :cond_14
-    move v5, v8
+    const/4 v5, 0x4
 
     goto :goto_1
 
     :sswitch_14
-    const-string v5, "web_app_open_link"
+    const-string v5, "web_app_open_popup"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2756,12 +2566,12 @@
     goto/16 :goto_0
 
     :cond_15
-    const/4 v5, 0x2
+    move v5, v9
 
     goto :goto_1
 
     :sswitch_15
-    const-string v5, "web_app_close_scan_qr_popup"
+    const-string v5, "web_app_open_link"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2772,12 +2582,12 @@
     goto/16 :goto_0
 
     :cond_16
-    move v5, v11
+    const/4 v5, 0x2
 
     goto :goto_1
 
     :sswitch_16
-    const-string v5, "web_app_invoke_custom_method"
+    const-string v5, "web_app_close_scan_qr_popup"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -2788,28 +2598,44 @@
     goto/16 :goto_0
 
     :cond_17
+    move v5, v12
+
+    goto :goto_1
+
+    :sswitch_17
+    const-string v5, "web_app_invoke_custom_method"
+
+    invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_18
+
+    goto/16 :goto_0
+
+    :cond_18
     const/4 v5, 0x0
 
     :goto_1
-    const-string v12, "text"
+    const-string v13, "text"
 
-    const-string v13, "status"
+    const-string v14, "status"
 
-    const-string v14, "data"
+    const-string v15, "data"
 
-    const-string v15, "is_visible"
+    const-string v8, "is_visible"
 
-    const-string v7, "color"
+    const-string v6, "color"
 
-    const-string v6, "req_id"
+    const-string v7, "req_id"
 
-    const-string v9, "cancelled"
+    const-string v10, "cancelled"
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
     packed-switch v5, :pswitch_data_0
 
-    .line 1599
+    .line 1610
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2828,7 +2654,7 @@
 
     goto/16 :goto_1c
 
-    .line 1382
+    .line 1393
     :pswitch_0
     iget-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
@@ -2836,26 +2662,26 @@
 
     goto/16 :goto_1c
 
-    .line 1420
+    .line 1431
     :pswitch_1
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Components/BotWebViewContainer;->ignoreDialog(I)Z
+    invoke-direct {v1, v9}, Lorg/telegram/ui/Components/BotWebViewContainer;->ignoreDialog(I)Z
 
     move-result v0
 
-    if-eqz v0, :cond_18
+    if-eqz v0, :cond_19
 
-    .line 1422
+    .line 1433
     :try_start_0
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    .line 1423
-    invoke-virtual {v0, v13, v9}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    .line 1434
+    invoke-virtual {v0, v14, v10}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     const-string v2, "write_access_requested"
 
-    .line 1424
+    .line 1435
     invoke-direct {v1, v2, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->notifyEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2865,19 +2691,19 @@
     :catch_0
     move-exception v0
 
-    .line 1426
+    .line 1437
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_2
     return-void
 
-    .line 1430
-    :cond_18
+    .line 1441
+    :cond_19
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_bots_canSendMessage;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_bots_canSendMessage;-><init>()V
 
-    .line 1431
+    .line 1442
     iget v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2892,34 +2718,34 @@
 
     iput-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_bots_canSendMessage;->bot:Lorg/telegram/tgnet/TLRPC$InputUser;
 
-    .line 1432
+    .line 1443
     iget v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v2
 
-    new-instance v3, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda23;
+    new-instance v3, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda22;
 
-    invoke-direct {v3, v1}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda23;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;)V
+    invoke-direct {v3, v1}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;)V
 
     invoke-virtual {v2, v0, v3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
     goto/16 :goto_1c
 
-    .line 1204
+    .line 1201
     :pswitch_2
     :try_start_1
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1205
+    .line 1202
     iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
     const-string v3, "#ffffff"
 
-    invoke-virtual {v0, v7, v3}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v6, v3}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -2946,126 +2772,126 @@
     :catch_2
     move-exception v0
 
-    .line 1207
+    .line 1204
     :goto_3
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_1c
 
-    .line 1213
+    .line 1210
     :pswitch_3
     :try_start_2
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1214
-    invoke-virtual {v0, v7, v10}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 1211
+    invoke-virtual {v0, v6, v11}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1215
+    .line 1212
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
-    if-nez v3, :cond_19
+    if-nez v3, :cond_1a
 
-    .line 1216
+    .line 1213
     invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
     move-result v0
 
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_4f
 
-    .line 1218
+    .line 1215
     iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
-    invoke-interface {v2, v0, v11}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onWebAppSetActionBarColor(IZ)V
+    invoke-interface {v2, v0, v12}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onWebAppSetActionBarColor(IZ)V
 
     goto/16 :goto_1c
 
-    :cond_19
+    :cond_1a
     const-string v2, "color_key"
 
-    .line 1221
+    .line 1218
     invoke-virtual {v0, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1223
+    .line 1220
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v2
 
     const v3, -0x4b676917
 
-    if-eq v2, v3, :cond_1b
+    if-eq v2, v3, :cond_1c
 
     const v3, -0xc9046ac
 
-    if-eq v2, v3, :cond_1a
+    if-eq v2, v3, :cond_1b
 
     goto :goto_4
 
-    :cond_1a
+    :cond_1b
     const-string v2, "secondary_bg_color"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1d
 
-    move v0, v11
+    move v0, v12
 
     goto :goto_5
 
-    :cond_1b
+    :cond_1c
     const-string v2, "bg_color"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_1c
+    if-eqz v0, :cond_1d
 
     const/4 v0, 0x0
 
     goto :goto_5
 
-    :cond_1c
+    :cond_1d
     :goto_4
     const/4 v0, -0x1
 
     :goto_5
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_1f
 
-    if-eq v0, v11, :cond_1d
+    if-eq v0, v12, :cond_1e
 
-    const/4 v7, -0x1
-
-    goto :goto_6
-
-    .line 1229
-    :cond_1d
-    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+    const/4 v8, -0x1
 
     goto :goto_6
 
-    .line 1225
+    .line 1226
     :cond_1e
-    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    goto :goto_6
+
+    .line 1222
+    :cond_1f
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     :goto_6
-    if-ltz v7, :cond_4e
+    if-ltz v8, :cond_4f
 
-    .line 1234
+    .line 1231
     iget-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
     iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v7, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v8, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
 
@@ -3080,14 +2906,51 @@
     :catch_3
     move-exception v0
 
-    .line 1238
+    .line 1235
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_1c
 
-    .line 1400
+    .line 1351
     :pswitch_4
     :try_start_3
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    .line 1352
+    invoke-virtual {v0, v8}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    .line 1353
+    iget-boolean v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->isSettingsButtonVisible:Z
+
+    if-eq v0, v2, :cond_4f
+
+    .line 1354
+    iput-boolean v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->isSettingsButtonVisible:Z
+
+    .line 1356
+    iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
+
+    invoke-interface {v2, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onSetSettingsButtonVisible(Z)V
+    :try_end_3
+    .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_3} :catch_4
+
+    goto/16 :goto_1c
+
+    :catch_4
+    move-exception v0
+
+    .line 1359
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    goto/16 :goto_1c
+
+    .line 1411
+    :pswitch_5
+    :try_start_4
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
@@ -3096,15 +2959,15 @@
 
     const/4 v5, 0x0
 
-    .line 1401
+    .line 1412
     invoke-virtual {v0, v4, v5}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
 
-    move-result v18
+    move-result v16
 
-    .line 1402
+    .line 1413
     iget-object v4, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->lastButtonText:Ljava/lang/String;
 
-    invoke-virtual {v0, v12, v4}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v13, v4}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -3112,35 +2975,35 @@
 
     move-result-object v4
 
-    .line 1403
-    invoke-virtual {v0, v15, v5}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
+    .line 1414
+    invoke-virtual {v0, v8, v5}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_1f
+    if-eqz v7, :cond_20
 
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
-    if-nez v5, :cond_1f
+    if-nez v5, :cond_20
 
-    move/from16 v17, v11
+    move v15, v12
 
     goto :goto_7
 
-    :cond_1f
-    const/16 v17, 0x0
+    :cond_20
+    const/4 v15, 0x0
 
-    .line 1404
+    .line 1415
     :goto_7
-    invoke-virtual {v0, v7}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+    invoke-virtual {v0, v6}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_20
+    if-eqz v5, :cond_21
 
-    invoke-virtual {v0, v7}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v6}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -3150,16 +3013,16 @@
 
     goto :goto_8
 
-    :cond_20
+    :cond_21
     iget v5, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->lastButtonColor:I
 
-    .line 1405
+    .line 1416
     :goto_8
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
 
     move-result v6
 
-    if-eqz v6, :cond_21
+    if-eqz v6, :cond_22
 
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
@@ -3171,7 +3034,7 @@
 
     goto :goto_9
 
-    :cond_21
+    :cond_22
     iget v3, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->lastButtonTextColor:I
 
     :goto_9
@@ -3179,164 +3042,162 @@
 
     const/4 v7, 0x0
 
-    .line 1406
+    .line 1417
     invoke-virtual {v0, v6, v7}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
 
-    if-eqz v0, :cond_22
+    if-eqz v0, :cond_23
 
-    if-eqz v17, :cond_22
+    if-eqz v15, :cond_23
 
-    move/from16 v22, v11
+    move/from16 v20, v12
 
     goto :goto_a
 
-    :cond_22
-    const/16 v22, 0x0
+    :cond_23
+    const/16 v20, 0x0
 
-    .line 1408
+    .line 1419
     :goto_a
     iput v5, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->lastButtonColor:I
 
-    .line 1409
+    .line 1420
     iput v3, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->lastButtonTextColor:I
 
-    .line 1410
+    .line 1421
     iput-object v4, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->lastButtonText:Ljava/lang/String;
 
-    .line 1411
+    .line 1422
     iput-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->buttonData:Ljava/lang/String;
 
-    .line 1413
-    iget-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
+    .line 1424
+    iget-object v14, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
-    move-object/from16 v16, v0
+    move-object/from16 v17, v4
 
-    move-object/from16 v19, v4
+    move/from16 v18, v5
 
-    move/from16 v20, v5
+    move/from16 v19, v3
 
-    move/from16 v21, v3
-
-    invoke-interface/range {v16 .. v22}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onSetupMainButton(ZZLjava/lang/String;IIZ)V
-    :try_end_3
-    .catch Lorg/json/JSONException; {:try_start_3 .. :try_end_3} :catch_5
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_3 .. :try_end_3} :catch_4
+    invoke-interface/range {v14 .. v20}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onSetupMainButton(ZZLjava/lang/String;IIZ)V
+    :try_end_4
+    .catch Lorg/json/JSONException; {:try_start_4 .. :try_end_4} :catch_6
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_4 .. :try_end_4} :catch_5
 
     goto/16 :goto_1c
-
-    :catch_4
-    move-exception v0
-
-    goto :goto_b
 
     :catch_5
     move-exception v0
 
-    .line 1415
+    goto :goto_b
+
+    :catch_6
+    move-exception v0
+
+    .line 1426
     :goto_b
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_1c
 
-    .line 1253
-    :pswitch_5
-    :try_start_4
+    .line 1250
+    :pswitch_6
+    :try_start_5
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
     const-string v2, "type"
 
-    .line 1254
+    .line 1251
     invoke-virtual {v0, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1257
+    .line 1254
     invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
 
     move-result v3
 
     const v4, -0x469ec2ba
 
-    if-eq v3, v4, :cond_25
+    if-eq v3, v4, :cond_26
 
     const v4, 0xb8209c3
 
-    if-eq v3, v4, :cond_24
+    if-eq v3, v4, :cond_25
 
     const v4, 0x237a88eb
 
-    if-eq v3, v4, :cond_23
+    if-eq v3, v4, :cond_24
 
     goto :goto_c
 
-    :cond_23
+    :cond_24
     const-string v3, "notification"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_27
 
-    move v2, v11
+    move v2, v12
 
     goto :goto_d
 
-    :cond_24
+    :cond_25
     const-string v3, "selection_change"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_27
 
     const/4 v2, 0x2
 
     goto :goto_d
 
-    :cond_25
+    :cond_26
     const-string v3, "impact"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_27
 
     const/4 v2, 0x0
 
     goto :goto_d
 
-    :cond_26
+    :cond_27
     :goto_c
     const/4 v2, -0x1
 
     :goto_d
-    if-eqz v2, :cond_30
+    if-eqz v2, :cond_31
 
-    if-eq v2, v11, :cond_28
+    if-eq v2, v12, :cond_29
 
     const/4 v3, 0x2
 
-    if-eq v2, v3, :cond_27
+    if-eq v2, v3, :cond_28
 
     goto/16 :goto_13
 
-    .line 1301
-    :cond_27
-    sget-object v10, Lorg/telegram/messenger/BotWebViewVibrationEffect;->SELECTION_CHANGE:Lorg/telegram/messenger/BotWebViewVibrationEffect;
-
-    goto/16 :goto_13
-
+    .line 1298
     :cond_28
+    sget-object v11, Lorg/telegram/messenger/BotWebViewVibrationEffect;->SELECTION_CHANGE:Lorg/telegram/messenger/BotWebViewVibrationEffect;
+
+    goto/16 :goto_13
+
+    :cond_29
     const-string v2, "notification_type"
 
-    .line 1284
+    .line 1281
     invoke-virtual {v0, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -3347,97 +3208,97 @@
 
     const v3, -0x6f4abffd
 
-    if-eq v2, v3, :cond_2b
+    if-eq v2, v3, :cond_2c
 
     const v3, 0x5c4d208
 
-    if-eq v2, v3, :cond_2a
+    if-eq v2, v3, :cond_2b
 
     const v3, 0x4305af9c
 
-    if-eq v2, v3, :cond_29
+    if-eq v2, v3, :cond_2a
 
     goto :goto_e
 
-    :cond_29
+    :cond_2a
     const-string v2, "warning"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2d
 
-    const/4 v7, 0x2
+    const/4 v8, 0x2
 
     goto :goto_f
 
-    :cond_2a
+    :cond_2b
     const-string v2, "error"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2d
 
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
     goto :goto_f
 
-    :cond_2b
+    :cond_2c
     const-string v2, "success"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_2d
 
-    move v7, v11
+    move v8, v12
 
     goto :goto_f
 
-    :cond_2c
+    :cond_2d
     :goto_e
-    const/4 v7, -0x1
+    const/4 v8, -0x1
 
     :goto_f
-    if-eqz v7, :cond_2f
+    if-eqz v8, :cond_30
 
-    if-eq v7, v11, :cond_2e
+    if-eq v8, v12, :cond_2f
 
     const/4 v0, 0x2
 
-    if-eq v7, v0, :cond_2d
+    if-eq v8, v0, :cond_2e
 
     goto/16 :goto_13
 
-    .line 1294
-    :cond_2d
+    .line 1291
+    :cond_2e
     sget-object v0, Lorg/telegram/messenger/BotWebViewVibrationEffect;->NOTIFICATION_WARNING:Lorg/telegram/messenger/BotWebViewVibrationEffect;
 
     goto :goto_10
 
-    .line 1290
-    :cond_2e
+    .line 1287
+    :cond_2f
     sget-object v0, Lorg/telegram/messenger/BotWebViewVibrationEffect;->NOTIFICATION_SUCCESS:Lorg/telegram/messenger/BotWebViewVibrationEffect;
 
     goto :goto_10
 
-    .line 1286
-    :cond_2f
+    .line 1283
+    :cond_30
     sget-object v0, Lorg/telegram/messenger/BotWebViewVibrationEffect;->NOTIFICATION_ERROR:Lorg/telegram/messenger/BotWebViewVibrationEffect;
 
     :goto_10
-    move-object v10, v0
+    move-object v11, v0
 
     goto/16 :goto_13
 
-    :cond_30
+    :cond_31
     const-string v2, "impact_style"
 
-    .line 1259
+    .line 1256
     invoke-virtual {v0, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -3450,219 +3311,219 @@
 
     goto :goto_11
 
-    :sswitch_17
+    :sswitch_18
     const-string v2, "rigid"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_32
 
-    move v7, v8
+    move v8, v9
 
     goto :goto_12
 
-    :sswitch_18
+    :sswitch_19
     const-string v2, "light"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_32
 
-    const/4 v7, 0x0
+    const/4 v8, 0x0
 
     goto :goto_12
 
-    :sswitch_19
+    :sswitch_1a
     const-string v2, "heavy"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_32
 
-    const/4 v7, 0x2
+    const/4 v8, 0x2
 
     goto :goto_12
 
-    :sswitch_1a
+    :sswitch_1b
     const-string v2, "soft"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_32
 
-    const/4 v7, 0x4
+    const/4 v8, 0x4
 
     goto :goto_12
 
-    :sswitch_1b
+    :sswitch_1c
     const-string v2, "medium"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    if-eqz v0, :cond_32
 
-    move v7, v11
+    move v8, v12
 
     goto :goto_12
 
-    :cond_31
+    :cond_32
     :goto_11
-    const/4 v7, -0x1
+    const/4 v8, -0x1
 
     :goto_12
-    if-eqz v7, :cond_36
+    if-eqz v8, :cond_37
 
-    if-eq v7, v11, :cond_35
+    if-eq v8, v12, :cond_36
 
     const/4 v0, 0x2
 
-    if-eq v7, v0, :cond_34
+    if-eq v8, v0, :cond_35
 
-    if-eq v7, v8, :cond_33
+    if-eq v8, v9, :cond_34
 
     const/4 v0, 0x4
 
-    if-eq v7, v0, :cond_32
+    if-eq v8, v0, :cond_33
 
     goto :goto_13
 
-    .line 1277
-    :cond_32
+    .line 1274
+    :cond_33
     sget-object v0, Lorg/telegram/messenger/BotWebViewVibrationEffect;->IMPACT_SOFT:Lorg/telegram/messenger/BotWebViewVibrationEffect;
 
     goto :goto_10
 
-    .line 1273
-    :cond_33
+    .line 1270
+    :cond_34
     sget-object v0, Lorg/telegram/messenger/BotWebViewVibrationEffect;->IMPACT_RIGID:Lorg/telegram/messenger/BotWebViewVibrationEffect;
 
     goto :goto_10
 
-    .line 1269
-    :cond_34
+    .line 1266
+    :cond_35
     sget-object v0, Lorg/telegram/messenger/BotWebViewVibrationEffect;->IMPACT_HEAVY:Lorg/telegram/messenger/BotWebViewVibrationEffect;
 
     goto :goto_10
 
-    .line 1265
-    :cond_35
+    .line 1262
+    :cond_36
     sget-object v0, Lorg/telegram/messenger/BotWebViewVibrationEffect;->IMPACT_MEDIUM:Lorg/telegram/messenger/BotWebViewVibrationEffect;
 
     goto :goto_10
 
-    .line 1261
-    :cond_36
+    .line 1258
+    :cond_37
     sget-object v0, Lorg/telegram/messenger/BotWebViewVibrationEffect;->IMPACT_LIGHT:Lorg/telegram/messenger/BotWebViewVibrationEffect;
 
     goto :goto_10
 
     :goto_13
-    if-eqz v10, :cond_4e
+    if-eqz v11, :cond_4f
 
-    .line 1306
-    invoke-virtual {v10}, Lorg/telegram/messenger/BotWebViewVibrationEffect;->vibrate()V
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_6
-
-    goto/16 :goto_1c
-
-    :catch_6
-    move-exception v0
-
-    .line 1309
-    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    goto/16 :goto_1c
-
-    .line 1340
-    :pswitch_6
-    :try_start_5
-    new-instance v0, Lorg/json/JSONObject;
-
-    invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-
-    .line 1341
-    invoke-virtual {v0, v15}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;)Z
-
-    move-result v0
-
-    .line 1342
-    iget-boolean v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->isBackButtonVisible:Z
-
-    if-eq v0, v2, :cond_4e
-
-    .line 1343
-    iput-boolean v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->isBackButtonVisible:Z
-
-    .line 1345
-    iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
-
-    invoke-interface {v2, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onSetBackButtonVisible(Z)V
+    .line 1303
+    invoke-virtual {v11}, Lorg/telegram/messenger/BotWebViewVibrationEffect;->vibrate()V
     :try_end_5
-    .catch Lorg/json/JSONException; {:try_start_5 .. :try_end_5} :catch_7
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_7
 
     goto/16 :goto_1c
 
     :catch_7
     move-exception v0
 
-    .line 1348
+    .line 1306
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_1c
 
-    .line 1004
+    .line 1337
     :pswitch_7
     :try_start_6
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1005
+    .line 1338
+    invoke-virtual {v0, v8}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;)Z
+
+    move-result v0
+
+    .line 1339
+    iget-boolean v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->isBackButtonVisible:Z
+
+    if-eq v0, v2, :cond_4f
+
+    .line 1340
+    iput-boolean v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->isBackButtonVisible:Z
+
+    .line 1342
+    iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
+
+    invoke-interface {v2, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onSetBackButtonVisible(Z)V
+    :try_end_6
+    .catch Lorg/json/JSONException; {:try_start_6 .. :try_end_6} :catch_8
+
+    goto/16 :goto_1c
+
+    :catch_8
+    move-exception v0
+
+    .line 1345
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    goto/16 :goto_1c
+
+    .line 1001
+    :pswitch_8
+    :try_start_7
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    .line 1002
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     const-string v3, "chat_types"
 
-    .line 1006
+    .line 1003
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v3
 
-    const/4 v10, 0x0
+    const/4 v11, 0x0
 
-    .line 1007
+    .line 1004
     :goto_14
     invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
 
     move-result v4
 
-    if-ge v10, v4, :cond_37
+    if-ge v11, v4, :cond_38
 
-    .line 1008
-    invoke-virtual {v3, v10}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+    .line 1005
+    invoke-virtual {v3, v11}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
     invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 v10, v10, 0x1
+    add-int/lit8 v11, v11, 0x1
 
     goto :goto_14
 
-    .line 1011
-    :cond_37
+    .line 1008
+    :cond_38
     iget-object v3, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
     iget-object v4, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->botUser:Lorg/telegram/tgnet/TLRPC$User;
@@ -3674,34 +3535,6 @@
     move-result-object v0
 
     invoke-interface {v3, v4, v0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onWebAppSwitchInlineQuery(Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Ljava/util/List;)V
-    :try_end_6
-    .catch Lorg/json/JSONException; {:try_start_6 .. :try_end_6} :catch_8
-
-    goto/16 :goto_1c
-
-    :catch_8
-    move-exception v0
-
-    .line 1013
-    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    goto/16 :goto_1c
-
-    .line 1244
-    :pswitch_8
-    :try_start_7
-    new-instance v0, Lorg/json/JSONObject;
-
-    invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-
-    .line 1245
-    iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
-
-    invoke-virtual {v0, v14}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v2, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onSendWebViewData(Ljava/lang/String;)V
     :try_end_7
     .catch Lorg/json/JSONException; {:try_start_7 .. :try_end_7} :catch_9
 
@@ -3710,55 +3543,83 @@
     :catch_9
     move-exception v0
 
-    .line 1247
+    .line 1010
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_1c
 
-    .line 1019
+    .line 1241
     :pswitch_9
     :try_start_8
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1020
-    invoke-virtual {v0, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 1242
+    iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
+
+    invoke-virtual {v0, v15}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1021
+    invoke-interface {v2, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onSendWebViewData(Ljava/lang/String;)V
+    :try_end_8
+    .catch Lorg/json/JSONException; {:try_start_8 .. :try_end_8} :catch_a
+
+    goto/16 :goto_1c
+
+    :catch_a
+    move-exception v0
+
+    .line 1244
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    goto/16 :goto_1c
+
+    .line 1016
+    :pswitch_a
+    :try_start_9
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    .line 1017
+    invoke-virtual {v0, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1018
     iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
     invoke-interface {v2}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->isClipboardAvailable()Z
 
     move-result v2
-    :try_end_8
-    .catch Lorg/json/JSONException; {:try_start_8 .. :try_end_8} :catch_a
+    :try_end_9
+    .catch Lorg/json/JSONException; {:try_start_9 .. :try_end_9} :catch_b
 
     const-string v3, "clipboard_text_received"
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_3b
 
-    :try_start_9
+    :try_start_a
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
-    iget-wide v7, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->lastClickMs:J
+    iget-wide v8, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->lastClickMs:J
 
-    sub-long/2addr v4, v7
+    sub-long/2addr v4, v8
 
-    const-wide/16 v7, 0x2710
+    const-wide/16 v8, 0x2710
 
-    cmp-long v2, v4, v7
+    cmp-long v2, v4, v8
 
-    if-lez v2, :cond_38
+    if-lez v2, :cond_39
 
     goto :goto_16
 
-    .line 1026
-    :cond_38
+    .line 1023
+    :cond_39
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -3771,34 +3632,34 @@
 
     check-cast v2, Landroid/content/ClipboardManager;
 
-    .line 1027
+    .line 1024
     invoke-virtual {v2}, Landroid/content/ClipboardManager;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_3a
 
-    .line 1028
+    .line 1025
     invoke-interface {v2}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v2
 
     goto :goto_15
 
-    :cond_39
+    :cond_3a
     const-string v2, ""
 
-    .line 1029
+    .line 1026
     :goto_15
     new-instance v4, Lorg/json/JSONObject;
 
     invoke-direct {v4}, Lorg/json/JSONObject;-><init>()V
 
-    invoke-virtual {v4, v6, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v4, v7, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    invoke-virtual {v0, v14, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v0, v15, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     move-result-object v0
 
@@ -3806,33 +3667,33 @@
 
     goto/16 :goto_1c
 
-    .line 1022
-    :cond_3a
+    .line 1019
+    :cond_3b
     :goto_16
     new-instance v2, Lorg/json/JSONObject;
 
     invoke-direct {v2}, Lorg/json/JSONObject;-><init>()V
 
-    invoke-virtual {v2, v6, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    invoke-virtual {v2, v7, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     move-result-object v0
 
     invoke-direct {v1, v3, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->notifyEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
-    :try_end_9
-    .catch Lorg/json/JSONException; {:try_start_9 .. :try_end_9} :catch_a
+    :try_end_a
+    .catch Lorg/json/JSONException; {:try_start_a .. :try_end_a} :catch_b
 
     goto/16 :goto_1c
 
-    :catch_a
+    :catch_b
     move-exception v0
 
-    .line 1031
+    .line 1028
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_1c
 
-    .line 1395
-    :pswitch_a
+    .line 1406
+    :pswitch_b
     iget-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->getUrl()Ljava/lang/String;
@@ -3843,44 +3704,44 @@
 
     goto/16 :goto_1c
 
-    .line 999
-    :pswitch_b
+    .line 996
+    :pswitch_c
     iget-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
-    invoke-interface {v0, v10}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onCloseRequested(Ljava/lang/Runnable;)V
+    invoke-interface {v0, v11}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onCloseRequested(Ljava/lang/Runnable;)V
 
     goto/16 :goto_1c
 
-    .line 1327
-    :pswitch_c
-    :try_start_a
+    .line 1324
+    :pswitch_d
+    :try_start_b
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
     const-string v2, "path_full"
 
-    .line 1328
+    .line 1325
     invoke-virtual {v0, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     const-string v2, "/"
 
-    .line 1329
+    .line 1326
     invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_3b
+    if-eqz v2, :cond_3c
 
-    .line 1330
-    invoke-virtual {v0, v11}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    .line 1327
+    invoke-virtual {v0, v12}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1332
-    :cond_3b
+    .line 1329
+    :cond_3c
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -3900,28 +3761,28 @@
     move-result-object v0
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->onOpenUri(Landroid/net/Uri;)V
-    :try_end_a
-    .catch Lorg/json/JSONException; {:try_start_a .. :try_end_a} :catch_b
+    :try_end_b
+    .catch Lorg/json/JSONException; {:try_start_b .. :try_end_b} :catch_c
 
     goto/16 :goto_1c
 
-    :catch_b
+    :catch_c
     move-exception v0
 
-    .line 1334
+    .line 1331
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_1c
 
-    .line 1386
-    :pswitch_d
+    .line 1397
+    :pswitch_e
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     instance-of v0, v0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_3d
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
@@ -3933,73 +3794,73 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3c
+    if-eqz v0, :cond_3d
 
-    move v10, v11
+    move v11, v12
 
     goto :goto_17
 
-    :cond_3c
-    const/4 v10, 0x0
+    :cond_3d
+    const/4 v11, 0x0
 
     :goto_17
-    xor-int/lit8 v0, v10, 0x1
+    xor-int/lit8 v0, v11, 0x1
 
-    .line 1387
-    invoke-virtual {v1, v0, v11}, Lorg/telegram/ui/Components/BotWebViewContainer;->invalidateViewPortHeight(ZZ)V
+    .line 1398
+    invoke-virtual {v1, v0, v12}, Lorg/telegram/ui/Components/BotWebViewContainer;->invalidateViewPortHeight(ZZ)V
 
     goto/16 :goto_1c
 
-    .line 1391
-    :pswitch_e
+    .line 1402
+    :pswitch_f
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->notifyThemeChanged()V
 
     goto/16 :goto_1c
 
-    :pswitch_f
+    :pswitch_10
     const/4 v0, 0x4
 
-    .line 1526
+    .line 1537
     invoke-direct {v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->ignoreDialog(I)Z
 
     move-result v2
 
-    if-eqz v2, :cond_3d
+    if-eqz v2, :cond_3e
 
-    .line 1528
-    :try_start_b
+    .line 1539
+    :try_start_c
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    .line 1529
-    invoke-virtual {v0, v13, v9}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    .line 1540
+    invoke-virtual {v0, v14, v10}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
     const-string v2, "phone_requested"
 
-    .line 1530
+    .line 1541
     invoke-direct {v1, v2, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->notifyEvent(Ljava/lang/String;Lorg/json/JSONObject;)V
-    :try_end_b
-    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_b} :catch_c
+    :try_end_c
+    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_d
 
     goto :goto_18
 
-    :catch_c
+    :catch_d
     move-exception v0
 
-    .line 1532
+    .line 1543
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_18
     return-void
 
-    .line 1537
-    :cond_3d
-    filled-new-array {v9}, [Ljava/lang/String;
+    .line 1548
+    :cond_3e
+    filled-new-array {v10}, [Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1538
+    .line 1549
     new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -4010,7 +3871,7 @@
 
     invoke-direct {v2, v3, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1539
+    .line 1550
     sget v3, Lorg/telegram/messenger/R$string;->ShareYouPhoneNumberTitle:I
 
     const-string v4, "ShareYouPhoneNumberTitle"
@@ -4021,29 +3882,29 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1540
+    .line 1551
     new-instance v3, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v3}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 1541
+    .line 1552
     iget-object v4, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->botUser:Lorg/telegram/tgnet/TLRPC$User;
 
     invoke-static {v4}, Lorg/telegram/messenger/UserObject;->getUserName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1542
+    .line 1553
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v5
 
-    if-nez v5, :cond_3e
+    if-nez v5, :cond_3f
 
-    .line 1543
+    .line 1554
     sget v5, Lorg/telegram/messenger/R$string;->AreYouSureShareMyContactInfoWebapp:I
 
-    new-array v6, v11, [Ljava/lang/Object;
+    new-array v6, v12, [Ljava/lang/Object;
 
     const/4 v7, 0x0
 
@@ -4061,8 +3922,8 @@
 
     goto :goto_19
 
-    .line 1545
-    :cond_3e
+    .line 1556
+    :cond_3f
     sget v4, Lorg/telegram/messenger/R$string;->AreYouSureShareMyContactInfoBot:I
 
     invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -4075,7 +3936,7 @@
 
     invoke-virtual {v3, v4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 1547
+    .line 1558
     :goto_19
     iget v4, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
@@ -4093,24 +3954,24 @@
 
     move-result v4
 
-    if-ltz v4, :cond_3f
+    if-ltz v4, :cond_40
 
-    move v10, v11
+    move v11, v12
 
     goto :goto_1a
 
-    :cond_3f
-    const/4 v10, 0x0
+    :cond_40
+    const/4 v11, 0x0
 
     :goto_1a
-    if-eqz v10, :cond_40
+    if-eqz v11, :cond_41
 
     const-string v4, "\n\n"
 
-    .line 1549
+    .line 1560
     invoke-virtual {v3, v4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 1550
+    .line 1561
     sget v4, Lorg/telegram/messenger/R$string;->AreYouSureShareMyContactInfoBotUnblock:I
 
     invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -4119,11 +3980,11 @@
 
     invoke-virtual {v3, v4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 1552
-    :cond_40
+    .line 1563
+    :cond_41
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1553
+    .line 1564
     sget v3, Lorg/telegram/messenger/R$string;->ShareContact:I
 
     const-string v4, "ShareContact"
@@ -4134,11 +3995,11 @@
 
     new-instance v4, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda4;
 
-    invoke-direct {v4, v1, v0, v10}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Z)V
+    invoke-direct {v4, v1, v0, v11}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;Z)V
 
     invoke-virtual {v2, v3, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1581
+    .line 1592
     sget v3, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v4, "Cancel"
@@ -4147,18 +4008,18 @@
 
     move-result-object v3
 
-    sget-object v4, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda6;->INSTANCE:Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda6;
+    sget-object v4, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda5;->INSTANCE:Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda5;
 
     invoke-virtual {v2, v3, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1584
+    .line 1595
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v2
 
-    new-instance v3, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda22;
+    new-instance v3, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda20;
 
-    invoke-direct {v3, v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;)V
+    invoke-direct {v3, v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;)V
 
     const/4 v0, 0x4
 
@@ -4166,41 +4027,41 @@
 
     goto/16 :goto_1c
 
-    .line 1043
-    :pswitch_10
-    :try_start_c
+    .line 1040
+    :pswitch_11
+    :try_start_d
     iget-boolean v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->hasQRPending:Z
 
-    if-nez v0, :cond_4e
+    if-nez v0, :cond_4f
 
     iget-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->parentActivity:Landroid/app/Activity;
 
-    if-nez v0, :cond_41
+    if-nez v0, :cond_42
 
     goto/16 :goto_1c
 
-    .line 1047
-    :cond_41
+    .line 1044
+    :cond_42
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1048
-    invoke-virtual {v0, v12}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+    .line 1045
+    invoke-virtual {v0, v13}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->lastQrText:Ljava/lang/String;
 
-    .line 1049
-    iput-boolean v11, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->hasQRPending:Z
+    .line 1046
+    iput-boolean v12, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->hasQRPending:Z
 
-    .line 1051
+    .line 1048
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x17
 
-    if-lt v0, v2, :cond_42
+    if-lt v0, v2, :cond_43
 
     iget-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->parentActivity:Landroid/app/Activity;
 
@@ -4208,9 +4069,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_42
+    if-eqz v0, :cond_43
 
-    .line 1052
+    .line 1049
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -4223,7 +4084,7 @@
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1072
+    .line 1069
     iget-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->parentActivity:Landroid/app/Activity;
 
     filled-new-array {v4}, [Ljava/lang/String;
@@ -4236,30 +4097,30 @@
 
     return-void
 
-    .line 1076
-    :cond_42
+    .line 1073
+    :cond_43
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->openQrScanActivity()V
-    :try_end_c
-    .catch Lorg/json/JSONException; {:try_start_c .. :try_end_c} :catch_d
+    :try_end_d
+    .catch Lorg/json/JSONException; {:try_start_d .. :try_end_d} :catch_e
 
     goto/16 :goto_1c
 
-    :catch_d
+    :catch_e
     move-exception v0
 
-    .line 1078
+    .line 1075
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_1c
 
-    .line 1195
-    :pswitch_11
-    :try_start_d
+    .line 1192
+    :pswitch_12
+    :try_start_e
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1196
+    .line 1193
     iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
     const-string v3, "need_confirmation"
@@ -4269,75 +4130,6 @@
     move-result v0
 
     invoke-interface {v2, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onWebAppSetupClosingBehavior(Z)V
-    :try_end_d
-    .catch Lorg/json/JSONException; {:try_start_d .. :try_end_d} :catch_e
-
-    goto/16 :goto_1c
-
-    :catch_e
-    move-exception v0
-
-    .line 1198
-    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    goto/16 :goto_1c
-
-    .line 1354
-    :pswitch_12
-    :try_start_e
-    new-instance v0, Lorg/json/JSONObject;
-
-    invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-
-    const-string v2, "slug"
-
-    .line 1355
-    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 1357
-    iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentPaymentSlug:Ljava/lang/String;
-
-    if-eqz v2, :cond_43
-
-    .line 1358
-    invoke-virtual {v1, v0, v9, v11}, Lorg/telegram/ui/Components/BotWebViewContainer;->onInvoiceStatusUpdate(Ljava/lang/String;Ljava/lang/String;Z)V
-
-    goto/16 :goto_1c
-
-    .line 1362
-    :cond_43
-    iput-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentPaymentSlug:Ljava/lang/String;
-
-    .line 1364
-    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_payments_getPaymentForm;
-
-    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_payments_getPaymentForm;-><init>()V
-
-    .line 1365
-    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;
-
-    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;-><init>()V
-
-    .line 1366
-    iput-object v0, v3, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;->slug:Ljava/lang/String;
-
-    .line 1367
-    iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_getPaymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$InputInvoice;
-
-    .line 1369
-    iget v3, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
-
-    invoke-static {v3}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
-
-    move-result-object v3
-
-    new-instance v4, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda24;
-
-    invoke-direct {v4, v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda24;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;)V
-
-    invoke-virtual {v3, v2, v4}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
     :try_end_e
     .catch Lorg/json/JSONException; {:try_start_e .. :try_end_e} :catch_f
 
@@ -4346,22 +4138,91 @@
     :catch_f
     move-exception v0
 
-    .line 1377
+    .line 1195
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_1c
 
-    .line 1084
+    .line 1365
     :pswitch_13
     :try_start_f
-    iget-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
+    new-instance v0, Lorg/json/JSONObject;
 
-    if-eqz v0, :cond_44
+    invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "slug"
+
+    .line 1366
+    invoke-virtual {v0, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1368
+    iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentPaymentSlug:Ljava/lang/String;
+
+    if-eqz v2, :cond_44
+
+    .line 1369
+    invoke-virtual {v1, v0, v10, v12}, Lorg/telegram/ui/Components/BotWebViewContainer;->onInvoiceStatusUpdate(Ljava/lang/String;Ljava/lang/String;Z)V
 
     goto/16 :goto_1c
 
-    .line 1088
+    .line 1373
     :cond_44
+    iput-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentPaymentSlug:Ljava/lang/String;
+
+    .line 1375
+    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_payments_getPaymentForm;
+
+    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_payments_getPaymentForm;-><init>()V
+
+    .line 1376
+    new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;
+
+    invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;-><init>()V
+
+    .line 1377
+    iput-object v0, v3, Lorg/telegram/tgnet/TLRPC$TL_inputInvoiceSlug;->slug:Ljava/lang/String;
+
+    .line 1378
+    iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_payments_getPaymentForm;->invoice:Lorg/telegram/tgnet/TLRPC$InputInvoice;
+
+    .line 1380
+    iget v3, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
+
+    invoke-static {v3}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+
+    move-result-object v3
+
+    new-instance v4, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda25;
+
+    invoke-direct {v4, v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda25;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;)V
+
+    invoke-virtual {v3, v2, v4}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+    :try_end_f
+    .catch Lorg/json/JSONException; {:try_start_f .. :try_end_f} :catch_10
+
+    goto/16 :goto_1c
+
+    :catch_10
+    move-exception v0
+
+    .line 1388
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    goto/16 :goto_1c
+
+    .line 1081
+    :pswitch_14
+    :try_start_10
+    iget-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    if-eqz v0, :cond_45
+
+    goto/16 :goto_1c
+
+    .line 1085
+    :cond_45
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -4374,23 +4235,23 @@
 
     cmp-long v0, v3, v5
 
-    if-gtz v0, :cond_45
+    if-gtz v0, :cond_46
 
-    .line 1089
+    .line 1086
     iget v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->dialogSequentialOpenTimes:I
 
-    add-int/2addr v0, v11
+    add-int/2addr v0, v12
 
     iput v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->dialogSequentialOpenTimes:I
 
-    if-lt v0, v8, :cond_45
+    if-lt v0, v9, :cond_46
 
     const/4 v0, 0x0
 
-    .line 1092
+    .line 1089
     iput v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->dialogSequentialOpenTimes:I
 
-    .line 1093
+    .line 1090
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -4399,8 +4260,8 @@
 
     goto/16 :goto_1c
 
-    .line 1098
-    :cond_45
+    .line 1095
+    :cond_46
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -4413,38 +4274,38 @@
 
     cmp-long v0, v3, v5
 
-    if-gtz v0, :cond_46
+    if-gtz v0, :cond_47
 
     goto/16 :goto_1c
 
-    .line 1102
-    :cond_46
+    .line 1099
+    :cond_47
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
     const-string v2, "title"
 
-    .line 1103
-    invoke-virtual {v0, v2, v10}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 1100
+    invoke-virtual {v0, v2, v11}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     const-string v3, "message"
 
-    .line 1104
+    .line 1101
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     const-string v4, "buttons"
 
-    .line 1105
+    .line 1102
     invoke-virtual {v0, v4}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v0
 
-    .line 1107
+    .line 1104
     new-instance v4, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -4453,32 +4314,32 @@
 
     invoke-direct {v4, v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1108
+    .line 1105
     invoke-virtual {v4, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object v2
 
-    .line 1109
+    .line 1106
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object v2
 
-    .line 1111
+    .line 1108
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v4, 0x0
 
-    .line 1112
+    .line 1109
     :goto_1b
     invoke-virtual {v0}, Lorg/json/JSONArray;->length()I
 
     move-result v5
 
-    if-ge v4, v5, :cond_47
+    if-ge v4, v5, :cond_48
 
-    .line 1113
+    .line 1110
     new-instance v5, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;
 
     invoke-virtual {v0, v4}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
@@ -4493,136 +4354,136 @@
 
     goto :goto_1b
 
-    .line 1115
-    :cond_47
+    .line 1112
+    :cond_48
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-le v0, v8, :cond_48
+    if-le v0, v9, :cond_49
 
     goto/16 :goto_1c
 
-    .line 1119
-    :cond_48
+    .line 1116
+    :cond_49
     new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
-    .line 1120
+    .line 1117
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v4
 
-    if-lt v4, v11, :cond_49
+    if-lt v4, v12, :cond_4a
 
     const/4 v4, 0x0
 
-    .line 1121
+    .line 1118
     invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;
 
-    .line 1122
-    iget-object v4, v5, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->text:Ljava/lang/String;
-
-    new-instance v6, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda2;
-
-    invoke-direct {v6, v1, v5, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;)V
-
-    invoke-virtual {v2, v4, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
-
-    .line 1133
-    :cond_49
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    const/4 v5, 0x2
-
-    if-lt v4, v5, :cond_4a
-
-    .line 1134
-    invoke-interface {v3, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;
-
-    .line 1135
-    iget-object v5, v4, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->text:Ljava/lang/String;
-
-    new-instance v6, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda0;
-
-    invoke-direct {v6, v1, v4, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;)V
-
-    invoke-virtual {v2, v5, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
-
-    .line 1146
-    :cond_4a
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    if-ne v4, v8, :cond_4b
-
-    const/4 v4, 0x2
-
-    .line 1147
-    invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;
-
-    .line 1148
+    .line 1119
     iget-object v4, v5, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->text:Ljava/lang/String;
 
     new-instance v6, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda1;
 
     invoke-direct {v6, v1, v5, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;)V
 
+    invoke-virtual {v2, v4, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    .line 1130
+    :cond_4a
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    const/4 v5, 0x2
+
+    if-lt v4, v5, :cond_4b
+
+    .line 1131
+    invoke-interface {v3, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;
+
+    .line 1132
+    iget-object v5, v4, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->text:Ljava/lang/String;
+
+    new-instance v6, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda2;
+
+    invoke-direct {v6, v1, v4, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;)V
+
+    invoke-virtual {v2, v5, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
+
+    .line 1143
+    :cond_4b
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    if-ne v4, v9, :cond_4c
+
+    const/4 v4, 0x2
+
+    .line 1144
+    invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v5
+
+    check-cast v5, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;
+
+    .line 1145
+    iget-object v4, v5, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->text:Ljava/lang/String;
+
+    new-instance v6, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda0;
+
+    invoke-direct {v6, v1, v5, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;Ljava/util/concurrent/atomic/AtomicBoolean;)V
+
     invoke-virtual {v2, v4, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNeutralButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1158
-    :cond_4b
+    .line 1155
+    :cond_4c
     new-instance v4, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda8;
 
     invoke-direct {v4, v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/util/concurrent/atomic/AtomicBoolean;)V
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1166
+    .line 1163
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
     iput-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    .line 1167
+    .line 1164
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-lt v0, v11, :cond_4c
+    if-lt v0, v12, :cond_4d
 
     const/4 v0, 0x0
 
-    .line 1168
+    .line 1165
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;
 
-    .line 1169
+    .line 1166
     iget v2, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
-    if-ltz v2, :cond_4c
+    if-ltz v2, :cond_4d
 
-    .line 1170
+    .line 1167
     iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     const/4 v4, -0x1
@@ -4633,7 +4494,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 1171
+    .line 1168
     iget v0, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
@@ -4642,29 +4503,29 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1174
-    :cond_4c
+    .line 1171
+    :cond_4d
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v0
 
     const/4 v2, 0x2
 
-    if-lt v0, v2, :cond_4d
+    if-lt v0, v2, :cond_4e
 
-    .line 1175
-    invoke-interface {v3, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    .line 1172
+    invoke-interface {v3, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;
 
-    .line 1176
+    .line 1173
     iget v2, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
-    if-ltz v2, :cond_4d
+    if-ltz v2, :cond_4e
 
-    .line 1177
+    .line 1174
     iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     const/4 v4, -0x2
@@ -4675,7 +4536,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 1178
+    .line 1175
     iget v0, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
@@ -4684,29 +4545,29 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1181
-    :cond_4d
+    .line 1178
+    :cond_4e
     invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v0
 
-    if-ne v0, v8, :cond_4e
+    if-ne v0, v9, :cond_4f
 
     const/4 v0, 0x2
 
-    .line 1182
+    .line 1179
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;
 
-    .line 1183
+    .line 1180
     iget v2, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
-    if-ltz v2, :cond_4e
+    if-ltz v2, :cond_4f
 
-    .line 1184
+    .line 1181
     iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     const/4 v3, -0x3
@@ -4717,7 +4578,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 1185
+    .line 1182
     iget v0, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
@@ -4725,29 +4586,29 @@
     move-result v0
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setTextColor(I)V
-    :try_end_f
-    .catch Lorg/json/JSONException; {:try_start_f .. :try_end_f} :catch_10
+    :try_end_10
+    .catch Lorg/json/JSONException; {:try_start_10 .. :try_end_10} :catch_11
 
     goto/16 :goto_1c
 
-    :catch_10
+    :catch_11
     move-exception v0
 
-    .line 1189
+    .line 1186
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto/16 :goto_1c
 
-    .line 1315
-    :pswitch_14
-    :try_start_10
+    .line 1312
+    :pswitch_15
+    :try_start_11
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
     const-string v2, "url"
 
-    .line 1316
+    .line 1313
     invoke-virtual {v0, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
@@ -4756,7 +4617,7 @@
 
     move-result-object v2
 
-    .line 1317
+    .line 1314
     sget-object v3, Lorg/telegram/ui/Components/BotWebViewContainer;->WHITELISTED_SCHEMES:Ljava/util/List;
 
     invoke-virtual {v2}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
@@ -4767,81 +4628,81 @@
 
     move-result v3
 
-    if-eqz v3, :cond_4e
+    if-eqz v3, :cond_4f
 
     const-string v3, "try_instant_view"
 
-    .line 1318
+    .line 1315
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;)Z
 
     move-result v0
 
-    invoke-direct {v1, v2, v0, v11}, Lorg/telegram/ui/Components/BotWebViewContainer;->onOpenUri(Landroid/net/Uri;ZZ)V
-    :try_end_10
-    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_10} :catch_11
+    invoke-direct {v1, v2, v0, v12}, Lorg/telegram/ui/Components/BotWebViewContainer;->onOpenUri(Landroid/net/Uri;ZZ)V
+    :try_end_11
+    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_11} :catch_12
 
     goto :goto_1c
 
-    :catch_11
+    :catch_12
     move-exception v0
 
-    .line 1321
+    .line 1318
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_1c
 
-    .line 1036
-    :pswitch_15
+    .line 1033
+    :pswitch_16
     iget-boolean v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->hasQRPending:Z
 
-    if-eqz v0, :cond_4e
+    if-eqz v0, :cond_4f
 
-    .line 1037
+    .line 1034
     iget-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->cameraBottomSheet:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     goto :goto_1c
 
-    .line 1487
-    :pswitch_16
-    :try_start_11
+    .line 1498
+    :pswitch_17
+    :try_start_12
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, v2}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1488
-    invoke-virtual {v0, v6}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 1499
+    invoke-virtual {v0, v7}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     const-string v3, "method"
 
-    .line 1489
+    .line 1500
     invoke-virtual {v0, v3}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     const-string v4, "params"
 
-    .line 1490
+    .line 1501
     invoke-virtual {v0, v4}, Lorg/json/JSONObject;->get(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 1491
+    .line 1502
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
-    :try_end_11
-    .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_11} :catch_12
+    :try_end_12
+    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_12} :catch_13
 
-    .line 1502
+    .line 1513
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_bots_invokeWebViewCustomMethod;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_bots_invokeWebViewCustomMethod;-><init>()V
 
-    .line 1503
+    .line 1514
     iget v5, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -4856,59 +4717,59 @@
 
     iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$TL_bots_invokeWebViewCustomMethod;->bot:Lorg/telegram/tgnet/TLRPC$InputUser;
 
-    .line 1504
+    .line 1515
     iput-object v3, v4, Lorg/telegram/tgnet/TLRPC$TL_bots_invokeWebViewCustomMethod;->custom_method:Ljava/lang/String;
 
-    .line 1505
+    .line 1516
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;-><init>()V
 
     iput-object v3, v4, Lorg/telegram/tgnet/TLRPC$TL_bots_invokeWebViewCustomMethod;->params:Lorg/telegram/tgnet/TLRPC$TL_dataJSON;
 
-    .line 1506
+    .line 1517
     iput-object v0, v3, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;->data:Ljava/lang/String;
 
-    .line 1507
+    .line 1518
     iget v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v0
 
-    new-instance v3, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda25;
+    new-instance v3, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda24;
 
-    invoke-direct {v3, v1, v2}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda25;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;)V
+    invoke-direct {v3, v1, v2}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda24;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;)V
 
     invoke-virtual {v0, v4, v3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    :cond_4e
+    :cond_4f
     :goto_1c
     return-void
 
-    :catch_12
+    :catch_13
     move-exception v0
 
-    .line 1493
+    .line 1504
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1494
+    .line 1505
     instance-of v0, v0, Lorg/json/JSONException;
 
-    if-eqz v0, :cond_4f
+    if-eqz v0, :cond_50
 
     const-string v0, "JSON Parse error"
 
-    .line 1495
+    .line 1506
     invoke-direct {v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->error(Ljava/lang/String;)V
 
     goto :goto_1d
 
-    .line 1497
-    :cond_4f
+    .line 1508
+    :cond_50
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->unknownError()V
 
-    :cond_50
+    :cond_51
     :goto_1d
     return-void
 
@@ -4916,25 +4777,26 @@
 
     :sswitch_data_0
     .sparse-switch
-        -0x78380c2f -> :sswitch_16
-        -0x712ef480 -> :sswitch_15
-        -0x665c257a -> :sswitch_14
-        -0x64ed6860 -> :sswitch_13
-        -0x52e382df -> :sswitch_12
-        -0x4feea439 -> :sswitch_11
-        -0x4e07a07c -> :sswitch_10
-        -0x4b514e0b -> :sswitch_f
-        -0x4b1915b0 -> :sswitch_e
-        -0x36e69d41 -> :sswitch_d
-        -0x1a365bc6 -> :sswitch_c
-        -0x44674d1 -> :sswitch_b
-        -0x3767926 -> :sswitch_a
-        0x14fedd3 -> :sswitch_9
-        0x27d30cb4 -> :sswitch_8
-        0x2cc7cfc4 -> :sswitch_7
-        0x3c49757f -> :sswitch_6
-        0x4bed2d1d -> :sswitch_5
-        0x535b446d -> :sswitch_4
+        -0x78380c2f -> :sswitch_17
+        -0x712ef480 -> :sswitch_16
+        -0x665c257a -> :sswitch_15
+        -0x64ed6860 -> :sswitch_14
+        -0x52e382df -> :sswitch_13
+        -0x4feea439 -> :sswitch_12
+        -0x4e07a07c -> :sswitch_11
+        -0x4b514e0b -> :sswitch_10
+        -0x4b1915b0 -> :sswitch_f
+        -0x36e69d41 -> :sswitch_e
+        -0x1a365bc6 -> :sswitch_d
+        -0x44674d1 -> :sswitch_c
+        -0x3767926 -> :sswitch_b
+        0x14fedd3 -> :sswitch_a
+        0x27d30cb4 -> :sswitch_9
+        0x2cc7cfc4 -> :sswitch_8
+        0x3c49757f -> :sswitch_7
+        0x4bed2d1d -> :sswitch_6
+        0x535b446d -> :sswitch_5
+        0x56c86043 -> :sswitch_4
         0x7244ae57 -> :sswitch_3
         0x7749e138 -> :sswitch_2
         0x795c475d -> :sswitch_1
@@ -4943,6 +4805,7 @@
 
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_17
         :pswitch_16
         :pswitch_15
         :pswitch_14
@@ -4970,11 +4833,11 @@
 
     :sswitch_data_1
     .sparse-switch
-        -0x4041708b -> :sswitch_1b
-        0x35f42a -> :sswitch_1a
-        0x5e8f0c7 -> :sswitch_19
-        0x6233516 -> :sswitch_18
-        0x677c22b -> :sswitch_17
+        -0x4041708b -> :sswitch_1c
+        0x35f42a -> :sswitch_1b
+        0x5e8f0c7 -> :sswitch_1a
+        0x6233516 -> :sswitch_19
+        0x677c22b -> :sswitch_18
     .end sparse-switch
 .end method
 
@@ -5005,7 +4868,7 @@
 
     sub-long/2addr v0, v2
 
-    const-wide/16 v2, 0x2710
+    const-wide/16 v2, 0x3e8
 
     cmp-long v0, v0, v2
 
@@ -5046,59 +4909,57 @@
 
     if-eqz v0, :cond_1
 
-    const/high16 p3, 0x60000
+    const/high16 v0, 0x60000
 
     .line 531
-    invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->setDescendantFocusability(I)V
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setDescendantFocusability(I)V
 
     .line 532
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
     .line 533
-    iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
+    iget-object v2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
-    invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setFocusable(Z)V
+    invoke-virtual {v2, v1}, Landroid/webkit/WebView;->setFocusable(Z)V
 
     .line 534
-    iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
+    iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
-    invoke-virtual {v0, p3}, Landroid/webkit/WebView;->setDescendantFocusability(I)V
+    invoke-virtual {v1, v0}, Landroid/webkit/WebView;->setDescendantFocusability(I)V
 
     .line 535
-    iget-object p3, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
+    iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
-    invoke-virtual {p3}, Landroid/webkit/WebView;->clearFocus()V
+    invoke-virtual {v0}, Landroid/webkit/WebView;->clearFocus()V
 
     .line 536
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object p3
+    move-result-object v0
 
-    const-string v0, "input_method"
+    const-string v1, "input_method"
 
-    invoke-virtual {p3, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object p3
+    move-result-object v0
 
-    check-cast p3, Landroid/view/inputmethod/InputMethodManager;
+    check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
     .line 537
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWindowToken()Landroid/os/IBinder;
 
-    move-result-object v0
+    move-result-object v1
 
-    const/4 v1, 0x2
+    const/4 v2, 0x2
 
-    invoke-virtual {p3, v0, v1}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
+    invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
     .line 539
-    iget-object p3, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
-    new-instance v0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda12;
+    move-result-object v0
 
-    invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Landroid/net/Uri;Z)V
-
-    invoke-interface {p3, v0}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onCloseRequested(Ljava/lang/Runnable;)V
+    invoke-static {v0, p1, p3, p2}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Landroid/net/Uri;ZZ)V
 
     goto :goto_0
 
@@ -5128,7 +4989,7 @@
 .method private openQrScanActivity()V
     .locals 4
 
-    .line 1661
+    .line 1672
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->parentActivity:Landroid/app/Activity;
 
     if-nez v0, :cond_0
@@ -5138,7 +4999,7 @@
     :cond_0
     const/4 v1, 0x3
 
-    .line 1665
+    .line 1676
     new-instance v2, Lorg/telegram/ui/Components/BotWebViewContainer$8;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/Components/BotWebViewContainer$8;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;)V
@@ -5197,9 +5058,9 @@
 
     .line 612
     :cond_1
-    new-instance v0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda13;
+    new-instance v0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda12;
 
-    invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Landroidx/core/util/Consumer;[Ljava/lang/String;)V
+    invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Landroidx/core/util/Consumer;[Ljava/lang/String;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->onPermissionsRequestResultCallback:Ljava/lang/Runnable;
 
@@ -5307,10 +5168,10 @@
 .method private setupFlickerParams(Z)V
     .locals 2
 
-    .line 851
+    .line 841
     iput-boolean p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->isFlickeringCenter:Z
 
-    .line 852
+    .line 842
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -5328,7 +5189,7 @@
     :cond_0
     const/16 v1, 0x30
 
-    .line 853
+    .line 843
     :goto_0
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
@@ -5336,7 +5197,7 @@
 
     const/16 p1, 0x40
 
-    .line 855
+    .line 845
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -5350,15 +5211,15 @@
     :cond_1
     const/4 p1, -0x1
 
-    .line 857
+    .line 847
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
     const/4 p1, -0x2
 
-    .line 858
+    .line 848
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 861
+    .line 851
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -5370,20 +5231,20 @@
 .method private setupWebView()V
     .locals 4
 
-    .line 224
+    .line 225
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     if-eqz v0, :cond_0
 
-    .line 225
+    .line 226
     invoke-virtual {v0}, Landroid/webkit/WebView;->destroy()V
 
-    .line 226
+    .line 227
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 228
+    .line 229
     :cond_0
     new-instance v0, Lorg/telegram/ui/Components/BotWebViewContainer$2;
 
@@ -5395,7 +5256,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
-    .line 286
+    .line 287
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
@@ -5404,7 +5265,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setBackgroundColor(I)V
 
-    .line 287
+    .line 288
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
@@ -5413,27 +5274,27 @@
 
     const/4 v1, 0x1
 
-    .line 288
+    .line 289
     invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
 
-    .line 289
+    .line 290
     invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setGeolocationEnabled(Z)V
 
-    .line 290
+    .line 291
     invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V
 
-    .line 291
+    .line 292
     invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setDatabaseEnabled(Z)V
 
-    .line 292
+    .line 293
     invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V
 
-    .line 295
+    .line 296
     sget-object v1, Landroid/webkit/WebSettings$TextSize;->NORMAL:Landroid/webkit/WebSettings$TextSize;
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setTextSize(Landroid/webkit/WebSettings$TextSize;)V
 
-    .line 297
+    .line 298
     new-instance v1, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
@@ -5444,7 +5305,7 @@
 
     invoke-direct {v1, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 298
+    .line 299
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v2
@@ -5464,7 +5325,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 299
+    .line 300
     :cond_2
     invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
@@ -5472,7 +5333,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebSettings;->setDatabasePath(Ljava/lang/String;)V
 
-    .line 301
+    .line 302
     :cond_3
     invoke-static {}, Landroid/webkit/GeolocationPermissions;->getInstance()Landroid/webkit/GeolocationPermissions;
 
@@ -5480,14 +5341,14 @@
 
     invoke-virtual {v0}, Landroid/webkit/GeolocationPermissions;->clearAll()V
 
-    .line 303
+    .line 304
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 304
+    .line 305
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     new-instance v1, Lorg/telegram/ui/Components/BotWebViewContainer$3;
@@ -5496,7 +5357,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
 
-    .line 322
+    .line 323
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     new-instance v1, Lorg/telegram/ui/Components/BotWebViewContainer$4;
@@ -5551,7 +5412,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 1637
+    .line 1648
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->ignoreDialog(I)Z
 
     move-result v1
@@ -5560,7 +5421,7 @@
 
     goto :goto_0
 
-    .line 1640
+    .line 1651
     :cond_0
     new-instance v1, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda7;
 
@@ -5568,34 +5429,34 @@
 
     invoke-virtual {p2, v1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 1646
+    .line 1657
     iput-object p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    .line 1647
+    .line 1658
     invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->setDismissDialogByButtons(Z)V
 
-    .line 1648
+    .line 1659
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 1650
+    .line 1661
     iget p2, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastDialogType:I
 
     if-eq p2, p1, :cond_1
 
-    .line 1651
+    .line 1662
     iput p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastDialogType:I
 
-    .line 1652
+    .line 1663
     iput v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->shownDialogsCount:I
 
     const-wide/16 p1, 0x0
 
-    .line 1653
+    .line 1664
     iput-wide p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->blockedDialogsUntil:J
 
-    .line 1655
+    .line 1666
     :cond_1
     iget p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->shownDialogsCount:I
 
@@ -5617,7 +5478,7 @@
 
     const/4 v0, 0x0
 
-    .line 1606
+    .line 1617
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->unknownError(Ljava/lang/String;)V
 
     return-void
@@ -5626,7 +5487,7 @@
 .method private unknownError(Ljava/lang/String;)V
     .locals 3
 
-    .line 1610
+    .line 1621
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -5679,24 +5540,24 @@
 .method public destroyWebView()V
     .locals 1
 
-    .line 922
+    .line 919
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     if-eqz v0, :cond_1
 
-    .line 923
+    .line 920
     invoke-virtual {v0}, Landroid/webkit/WebView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 924
+    .line 921
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 926
+    .line 923
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
@@ -5704,7 +5565,7 @@
 
     const/4 v0, 0x0
 
-    .line 927
+    .line 924
     iput-boolean v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->isPageLoaded:Z
 
     :cond_1
@@ -5714,17 +5575,17 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 3
 
-    .line 964
+    .line 961
     sget p2, Lorg/telegram/messenger/NotificationCenter;->didSetNewTheme:I
 
     if-ne p1, p2, :cond_1
 
-    .line 965
+    .line 962
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
     if-eqz p1, :cond_0
 
-    .line 966
+    .line 963
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
@@ -5733,7 +5594,7 @@
 
     invoke-virtual {p1, p2}, Landroid/webkit/WebView;->setBackgroundColor(I)V
 
-    .line 968
+    .line 965
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -5751,12 +5612,12 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/BackupImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 969
+    .line 966
     invoke-direct {p0}, Lorg/telegram/ui/Components/BotWebViewContainer;->notifyThemeChanged()V
 
     goto :goto_0
 
-    .line 970
+    .line 967
     :cond_1
     sget p2, Lorg/telegram/messenger/NotificationCenter;->onActivityResultReceived:I
 
@@ -5768,7 +5629,7 @@
 
     if-ne p1, p2, :cond_2
 
-    .line 971
+    .line 968
     aget-object p1, p3, v2
 
     check-cast p1, Ljava/lang/Integer;
@@ -5793,13 +5654,13 @@
 
     goto :goto_0
 
-    .line 972
+    .line 969
     :cond_2
     sget p2, Lorg/telegram/messenger/NotificationCenter;->onRequestPermissionResultReceived:I
 
     if-ne p1, p2, :cond_3
 
-    .line 973
+    .line 970
     aget-object p1, p3, v2
 
     check-cast p1, Ljava/lang/Integer;
@@ -5964,16 +5825,16 @@
 .method public evaluateJs(Ljava/lang/String;Z)V
     .locals 2
 
-    .line 941
+    .line 938
     iget v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
 
-    new-instance v1, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda20;
+    new-instance v1, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda19;
 
-    invoke-direct {v1, p0, p2, p1}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;ZLjava/lang/String;)V
+    invoke-direct {v1, p0, p2, p1}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;ZLjava/lang/String;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/NotificationCenter;->doOnIdle(Ljava/lang/Runnable;)V
 
@@ -6167,7 +6028,7 @@
 .method public isBackButtonVisible()Z
     .locals 1
 
-    .line 932
+    .line 929
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->isBackButtonVisible:Z
 
     return v0
@@ -6183,50 +6044,50 @@
 .end method
 
 .method public loadFlickerAndSettingsItem(IJLorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
-    .locals 7
+    .locals 6
 
     .line 785
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v0
+    move-result-object p4
 
     invoke-static {p2, p3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
-
     move-result-object v0
+
+    invoke-virtual {p4, v0}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object p4
 
     .line 786
-    invoke-static {v0}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
+    invoke-static {p4}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object p4
 
-    const/high16 v1, 0x3f800000    # 1.0f
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    if-eqz v0, :cond_0
+    if-eqz p4, :cond_0
 
-    const-string v3, "DurgerKingBot"
+    const-string v2, "DurgerKingBot"
 
     .line 787
-    invoke-virtual {v0, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p4, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result p4
 
-    if-eqz v0, :cond_0
+    if-eqz p4, :cond_0
 
     .line 788
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 789
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {p1, v1}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
     .line 790
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
@@ -6250,7 +6111,7 @@
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 791
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->setupFlickerParams(Z)V
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->setupFlickerParams(Z)V
 
     return-void
 
@@ -6258,57 +6119,57 @@
     :cond_0
     invoke-static {p1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
-    move-result-object v0
+    move-result-object p4
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/MediaDataController;->getAttachMenuBots()Lorg/telegram/tgnet/TLRPC$TL_attachMenuBots;
+    invoke-virtual {p4}, Lorg/telegram/messenger/MediaDataController;->getAttachMenuBots()Lorg/telegram/tgnet/TLRPC$TL_attachMenuBots;
 
-    move-result-object v0
+    move-result-object p4
 
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBots;->bots:Ljava/util/ArrayList;
+    iget-object p4, p4, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBots;->bots:Ljava/util/ArrayList;
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {p4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v0
+    move-result-object p4
 
     :cond_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {p4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v2
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {p4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
-    check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;
+    check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;
 
     .line 797
-    iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->bot_id:J
+    iget-wide v4, v2, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->bot_id:J
 
-    cmp-long v5, v5, p2
+    cmp-long v4, v4, p2
 
-    if-nez v5, :cond_1
+    if-nez v4, :cond_1
 
     goto :goto_0
 
     :cond_2
-    move-object v3, v4
+    move-object v2, v3
 
     :goto_0
-    if-eqz v3, :cond_6
+    if-eqz v2, :cond_4
 
     .line 805
-    invoke-static {v3}, Lorg/telegram/messenger/MediaDataController;->getPlaceholderStaticAttachMenuBotIcon(Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;)Lorg/telegram/tgnet/TLRPC$TL_attachMenuBotIcon;
+    invoke-static {v2}, Lorg/telegram/messenger/MediaDataController;->getPlaceholderStaticAttachMenuBotIcon(Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;)Lorg/telegram/tgnet/TLRPC$TL_attachMenuBotIcon;
 
     move-result-object p1
 
     if-nez p1, :cond_3
 
     .line 807
-    invoke-static {v3}, Lorg/telegram/messenger/MediaDataController;->getStaticAttachMenuBotIcon(Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;)Lorg/telegram/tgnet/TLRPC$TL_attachMenuBotIcon;
+    invoke-static {v2}, Lorg/telegram/messenger/MediaDataController;->getStaticAttachMenuBotIcon(Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;)Lorg/telegram/tgnet/TLRPC$TL_attachMenuBotIcon;
 
     move-result-object p1
 
@@ -6317,20 +6178,20 @@
     goto :goto_1
 
     :cond_3
-    move p2, v2
+    move p2, v1
 
     :goto_1
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_5
 
     .line 811
     iget-object p3, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {p3, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p3, v1}, Landroid/view/View;->setVisibility(I)V
 
     .line 812
     iget-object p3, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {p3, v1}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {p3, v0}, Landroid/view/View;->setAlpha(F)V
 
     .line 813
     iget-object p3, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerView:Lorg/telegram/ui/Components/BackupImageView;
@@ -6341,76 +6202,60 @@
 
     move-result-object p1
 
-    invoke-virtual {p3, p1, v4, v4, v3}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
+    invoke-virtual {p3, p1, v3, v3, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     .line 814
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->setupFlickerParams(Z)V
 
-    :cond_4
-    if-eqz p4, :cond_7
-
-    .line 818
-    iget-boolean p1, v3, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->has_settings:Z
-
-    if-eqz p1, :cond_5
-
     goto :goto_2
 
-    :cond_5
-    const/16 v2, 0x8
+    .line 817
+    :cond_4
+    new-instance p4, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachMenuBot;
 
-    :goto_2
-    invoke-virtual {p4, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-direct {p4}, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachMenuBot;-><init>()V
 
-    goto :goto_3
-
-    .line 821
-    :cond_6
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachMenuBot;
-
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachMenuBot;-><init>()V
-
-    .line 822
+    .line 818
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, p2, p3}, Lorg/telegram/messenger/MessagesController;->getInputUser(J)Lorg/telegram/tgnet/TLRPC$InputUser;
+    invoke-virtual {v0, p2, p3}, Lorg/telegram/messenger/MessagesController;->getInputUser(J)Lorg/telegram/tgnet/TLRPC$InputUser;
 
     move-result-object p2
 
-    iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachMenuBot;->bot:Lorg/telegram/tgnet/TLRPC$InputUser;
+    iput-object p2, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachMenuBot;->bot:Lorg/telegram/tgnet/TLRPC$InputUser;
 
-    .line 823
+    .line 819
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p1
 
-    new-instance p2, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda26;
+    new-instance p2, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda23;
 
-    invoke-direct {p2, p0, p4}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda26;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
+    invoke-direct {p2, p0}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda23;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;)V
 
-    invoke-virtual {p1, v0, p2}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+    invoke-virtual {p1, p4, p2}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    :cond_7
-    :goto_3
+    :cond_5
+    :goto_2
     return-void
 .end method
 
 .method public loadUrl(ILjava/lang/String;)V
     .locals 1
 
-    .line 877
+    .line 874
     iput p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
-    .line 878
+    .line 875
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
 
-    new-instance v0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda14;
+    new-instance v0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda13;
 
-    invoke-direct {v0, p0, p2}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p2}, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/NotificationCenter;->doOnIdle(Ljava/lang/Runnable;)V
 
@@ -6482,10 +6327,10 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 892
+    .line 889
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 894
+    .line 891
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -6494,7 +6339,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 895
+    .line 892
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -6503,7 +6348,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 896
+    .line 893
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -6512,7 +6357,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 898
+    .line 895
     new-instance v0, Lorg/telegram/ui/Components/BotWebViewContainer$6;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/BotWebViewContainer$6;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer;)V
@@ -6558,10 +6403,10 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 912
+    .line 909
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 914
+    .line 911
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -6570,7 +6415,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 915
+    .line 912
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -6579,7 +6424,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 916
+    .line 913
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -6588,7 +6433,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 918
+    .line 915
     invoke-static {p0}, Lorg/telegram/ui/Components/Bulletin;->removeDelegate(Landroid/widget/FrameLayout;)V
 
     return-void
@@ -6771,7 +6616,7 @@
 .method public reload()V
     .locals 2
 
-    .line 865
+    .line 855
     iget v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -6816,7 +6661,7 @@
 .method public setDelegate(Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;)V
     .locals 0
 
-    .line 990
+    .line 987
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
     return-void
@@ -6834,7 +6679,7 @@
 .method public setViewPortByMeasureSuppressed(Z)V
     .locals 0
 
-    .line 202
+    .line 203
     iput-boolean p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->isViewPortByMeasureSuppressed:Z
 
     return-void
@@ -6860,7 +6705,7 @@
 .method public setWebViewScrollListener(Lorg/telegram/ui/Components/BotWebViewContainer$WebViewScrollListener;)V
     .locals 0
 
-    .line 986
+    .line 983
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webViewScrollListener:Lorg/telegram/ui/Components/BotWebViewContainer$WebViewScrollListener;
 
     return-void

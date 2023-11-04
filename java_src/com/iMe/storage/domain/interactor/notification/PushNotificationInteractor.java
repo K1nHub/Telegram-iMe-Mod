@@ -31,7 +31,7 @@ public final class PushNotificationInteractor {
     public final Observable<Result<Boolean>> savePushToken(List<String> accounts) {
         Intrinsics.checkNotNullParameter(accounts, "accounts");
         if (this.sessionInteractor.hasActiveUser()) {
-            Observable<Result<Boolean>> subscribeOn = this.pushNotificationRepository.savePushToken(accounts).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+            Observable<Result<Boolean>> subscribeOn = this.pushNotificationRepository.savePushToken(accounts).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
             Intrinsics.checkNotNullExpressionValue(subscribeOn, "{\n            pushNotifi…sProvider.io())\n        }");
             return subscribeOn;
         }
@@ -48,26 +48,26 @@ public final class PushNotificationInteractor {
     }
 
     public final Observable<Result<List<Notification>>> getNotifications(String str) {
-        Observable<Result<List<Notification>>> subscribeOn = this.pushNotificationRepository.getNotifications(str).startWith((Observable<Result<List<Notification>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<List<Notification>>> subscribeOn = this.pushNotificationRepository.getNotifications(str).startWith((Observable<Result<List<Notification>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "pushNotificationReposito…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<Boolean>> setNotificationsRead(String id) {
         Intrinsics.checkNotNullParameter(id, "id");
-        Observable<Result<Boolean>> subscribeOn = this.pushNotificationRepository.setNotificationsRead(id).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Boolean>> subscribeOn = this.pushNotificationRepository.setNotificationsRead(id).startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "pushNotificationReposito…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<Boolean>> setAllNotificationsRead() {
-        Observable<Result<Boolean>> subscribeOn = this.pushNotificationRepository.setAllNotificationsRead().startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Boolean>> subscribeOn = this.pushNotificationRepository.setAllNotificationsRead().startWith((Observable<Result<Boolean>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "pushNotificationReposito…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Completable sendActivityMark() {
-        Completable subscribeOn = this.pushNotificationRepository.sendActivityMark().subscribeOn(this.schedulersProvider.mo1010io());
+        Completable subscribeOn = this.pushNotificationRepository.sendActivityMark().subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "pushNotificationReposito…(schedulersProvider.io())");
         return subscribeOn;
     }

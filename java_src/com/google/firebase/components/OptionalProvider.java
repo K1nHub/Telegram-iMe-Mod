@@ -43,7 +43,7 @@ public class OptionalProvider<T> implements Provider<T>, Deferred<T> {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: of */
-    public static <T> OptionalProvider<T> m1039of(Provider<T> provider) {
+    public static <T> OptionalProvider<T> m1040of(Provider<T> provider) {
         return new OptionalProvider<>(null, provider);
     }
 

@@ -266,7 +266,7 @@ public class WebRtcAudioTrack {
         try {
             releaseAudioResources();
         } catch (Throwable th) {
-            FileLog.m97e(th);
+            FileLog.m99e(th);
         }
         return true;
     }
@@ -378,7 +378,7 @@ public class WebRtcAudioTrack {
             try {
                 audioTrack.release();
             } catch (Throwable th) {
-                FileLog.m97e(th);
+                FileLog.m99e(th);
             }
             this.audioTrack = null;
         }

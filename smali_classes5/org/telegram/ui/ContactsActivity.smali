@@ -403,7 +403,7 @@
     .line 520
     iput p1, p0, Lorg/telegram/ui/ContactsActivity;->animationIndex:I
 
-    .line 1602
+    .line 1604
     new-instance p1, Lorg/telegram/ui/ContactsActivity$14;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ContactsActivity$14;-><init>(Lorg/telegram/ui/ContactsActivity;)V
@@ -834,14 +834,14 @@
 .method private askForPermissons(Z)V
     .locals 4
 
-    .line 1464
+    .line 1466
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     if-eqz v0, :cond_2
 
-    .line 1465
+    .line 1467
     iget v1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -865,12 +865,12 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 1468
+    .line 1470
     iget-boolean p1, p0, Lorg/telegram/ui/ContactsActivity;->askAboutContacts:Z
 
     if-eqz p1, :cond_1
 
-    .line 1469
+    .line 1471
     new-instance p1, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda15;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/ContactsActivity;)V
@@ -879,7 +879,7 @@
 
     move-result-object p1
 
-    .line 1476
+    .line 1478
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -888,7 +888,7 @@
 
     return-void
 
-    .line 1479
+    .line 1481
     :cond_1
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
@@ -896,29 +896,29 @@
 
     iput-wide v2, p0, Lorg/telegram/ui/ContactsActivity;->permissionRequestTime:J
 
-    .line 1480
+    .line 1482
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1481
+    .line 1483
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     const-string v1, "android.permission.WRITE_CONTACTS"
 
-    .line 1482
+    .line 1484
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     const-string v1, "android.permission.GET_ACCOUNTS"
 
-    .line 1483
+    .line 1485
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     const/4 v1, 0x0
 
     new-array v1, v1, [Ljava/lang/String;
 
-    .line 1484
+    .line 1486
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object p1
@@ -927,7 +927,7 @@
 
     const/4 v1, 0x1
 
-    .line 1486
+    .line 1488
     :try_start_0
     invoke-virtual {v0, p1, v1}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
     :try_end_0
@@ -938,7 +938,7 @@
     :catch_0
     move-exception p1
 
-    .line 1488
+    .line 1490
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -1649,18 +1649,18 @@
 .method private hideFloatingButton(Z)V
     .locals 8
 
-    .line 1631
+    .line 1633
     iget-boolean v0, p0, Lorg/telegram/ui/ContactsActivity;->floatingHidden:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 1634
+    .line 1636
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/ContactsActivity;->floatingHidden:Z
 
-    .line 1635
+    .line 1637
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
@@ -1669,7 +1669,7 @@
 
     new-array v2, v1, [Landroid/animation/Animator;
 
-    .line 1636
+    .line 1638
     iget-object v3, p0, Lorg/telegram/ui/ContactsActivity;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
     sget-object v4, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -1708,22 +1708,22 @@
 
     const-wide/16 v2, 0x12c
 
-    .line 1637
+    .line 1639
     invoke-virtual {v0, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1638
+    .line 1640
     iget-object v2, p0, Lorg/telegram/ui/ContactsActivity;->floatingInterpolator:Landroid/view/animation/AccelerateDecelerateInterpolator;
 
     invoke-virtual {v0, v2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1639
+    .line 1641
     iget-object v2, p0, Lorg/telegram/ui/ContactsActivity;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
     xor-int/2addr p1, v1
 
     invoke-virtual {v2, p1}, Landroid/widget/FrameLayout;->setClickable(Z)V
 
-    .line 1640
+    .line 1642
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
@@ -1743,7 +1743,7 @@
     :cond_0
     move v1, v0
 
-    .line 1470
+    .line 1472
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/ui/ContactsActivity;->askAboutContacts:Z
 
@@ -1751,7 +1751,7 @@
 
     return-void
 
-    .line 1474
+    .line 1476
     :cond_1
     invoke-direct {p0, v0}, Lorg/telegram/ui/ContactsActivity;->askForPermissons(Z)V
 
@@ -2138,7 +2138,9 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0, p1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
+    iget-boolean p2, p0, Lorg/telegram/ui/ContactsActivity;->needFinishFragment:Z
+
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
 
     goto/16 :goto_3
 
@@ -2732,7 +2734,9 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
 
-    invoke-virtual {p0, p1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
+    iget-boolean p2, p0, Lorg/telegram/ui/ContactsActivity;->needFinishFragment:Z
+
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;Z)Z
 
     goto :goto_3
 
@@ -2902,12 +2906,12 @@
 .method private synthetic lambda$getThemeDescriptions$18()V
     .locals 5
 
-    .line 1916
+    .line 1913
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz v0, :cond_2
 
-    .line 1917
+    .line 1914
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -2919,32 +2923,32 @@
     :goto_0
     if-ge v2, v0, :cond_2
 
-    .line 1919
+    .line 1916
     iget-object v3, p0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 1920
+    .line 1917
     instance-of v4, v3, Lorg/telegram/ui/Cells/UserCell;
 
     if-eqz v4, :cond_0
 
-    .line 1921
+    .line 1918
     check-cast v3, Lorg/telegram/ui/Cells/UserCell;
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Cells/UserCell;->update(I)V
 
     goto :goto_1
 
-    .line 1922
+    .line 1919
     :cond_0
     instance-of v4, v3, Lorg/telegram/ui/Cells/ProfileSearchCell;
 
     if-eqz v4, :cond_1
 
-    .line 1923
+    .line 1920
     check-cast v3, Lorg/telegram/ui/Cells/ProfileSearchCell;
 
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Cells/ProfileSearchCell;->update(I)V
@@ -2962,7 +2966,7 @@
 .method private static synthetic lambda$onCustomTransitionAnimation$16(Landroid/animation/ValueAnimator;Landroid/view/ViewGroup;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1717
+    .line 1719
     invoke-virtual {p0}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p0
@@ -2975,7 +2979,7 @@
 
     const/16 p2, 0x30
 
-    .line 1718
+    .line 1720
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -2990,7 +2994,7 @@
 
     sub-float/2addr p2, p0
 
-    .line 1719
+    .line 1721
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setAlpha(F)V
 
     return-void
@@ -3003,7 +3007,15 @@
 
     move-object/from16 v1, p4
 
-    .line 1756
+    .line 1758
+    iget-object v2, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
+
+    if-nez v2, :cond_0
+
+    return-void
+
+    .line 1761
+    :cond_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v2
@@ -3026,79 +3038,71 @@
 
     iput v2, v0, Lorg/telegram/ui/ContactsActivity;->animationIndex:I
 
-    .line 1757
+    .line 1762
     invoke-virtual/range {p1 .. p1}, Landroid/animation/AnimatorSet;->start()V
 
-    const/16 v2, 0x38
+    if-eqz p2, :cond_2
 
-    const/16 v3, 0x34
-
-    if-eqz p2, :cond_1
-
-    if-eqz p3, :cond_0
-
-    .line 1760
-    iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
-
-    sget v5, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon_camera:I
-
-    invoke-virtual {v3, v5, v2, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
-
-    goto :goto_0
-
-    .line 1762
-    :cond_0
+    .line 1764
     iget-object v2, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
-    sget v5, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon:I
+    if-eqz p3, :cond_1
 
-    invoke-virtual {v2, v5, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+    sget v3, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon_camera:I
 
     goto :goto_0
 
     :cond_1
-    if-eqz p3, :cond_2
+    sget v3, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon_reverse_camera:I
+
+    :goto_0
+    const/16 v5, 0x38
+
+    invoke-virtual {v2, v3, v5, v5}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+
+    goto :goto_2
 
     .line 1766
-    iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
-
-    sget v5, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon_reverse_camera:I
-
-    invoke-virtual {v3, v5, v2, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
-
-    goto :goto_0
-
-    .line 1768
     :cond_2
     iget-object v2, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
-    sget v5, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon_reverse:I
+    if-eqz p3, :cond_3
 
-    invoke-virtual {v2, v5, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+    sget v3, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon:I
 
-    .line 1771
-    :goto_0
+    goto :goto_1
+
+    :cond_3
+    sget v3, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon_reverse:I
+
+    :goto_1
+    const/16 v5, 0x34
+
+    invoke-virtual {v2, v3, v5, v5}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+
+    .line 1768
+    :goto_2
     iget-object v2, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 1772
+    .line 1769
     iget-object v2, v0, Lorg/telegram/ui/ContactsActivity;->bounceIconAnimator:Landroid/animation/AnimatorSet;
 
-    if-eqz v2, :cond_3
+    if-eqz v2, :cond_4
 
-    .line 1773
+    .line 1770
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1775
-    :cond_3
+    .line 1772
+    :cond_4
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object v2, v0, Lorg/telegram/ui/ContactsActivity;->bounceIconAnimator:Landroid/animation/AnimatorSet;
 
-    .line 1776
+    .line 1773
     iget-object v2, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
@@ -3119,25 +3123,25 @@
 
     const/4 v10, 0x2
 
-    if-eqz p2, :cond_9
+    if-eqz p3, :cond_a
 
     move v11, v7
 
-    :goto_1
+    :goto_3
     const/4 v12, 0x6
 
-    if-ge v11, v12, :cond_e
+    if-ge v11, v12, :cond_f
 
-    .line 1780
+    .line 1777
     new-instance v12, Landroid/animation/AnimatorSet;
 
     invoke-direct {v12}, Landroid/animation/AnimatorSet;-><init>()V
 
-    if-nez v11, :cond_4
+    if-nez v11, :cond_5
 
     new-array v13, v8, [Landroid/animation/Animator;
 
-    .line 1782
+    .line 1779
     iget-object v14, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v15, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -3146,7 +3150,7 @@
 
     fill-array-data v3, :array_0
 
-    .line 1783
+    .line 1780
     invoke-static {v14, v15, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
@@ -3161,7 +3165,7 @@
 
     fill-array-data v15, :array_1
 
-    .line 1784
+    .line 1781
     invoke-static {v3, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
@@ -3174,7 +3178,7 @@
 
     fill-array-data v14, :array_2
 
-    .line 1785
+    .line 1782
     invoke-static {v1, v3, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
@@ -3187,14 +3191,14 @@
 
     fill-array-data v14, :array_3
 
-    .line 1786
+    .line 1783
     invoke-static {v1, v3, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
 
     aput-object v3, v13, v9
 
-    .line 1782
+    .line 1779
     invoke-virtual {v12, v13}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const v3, 0x3e02b931
@@ -3203,22 +3207,22 @@
 
     float-to-long v13, v3
 
-    .line 1788
+    .line 1785
     invoke-virtual {v12, v13, v14}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1789
+    .line 1786
     sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v12, v3}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    goto/16 :goto_2
+    goto/16 :goto_4
 
-    :cond_4
-    if-ne v11, v4, :cond_5
+    :cond_5
+    if-ne v11, v4, :cond_6
 
     new-array v3, v8, [Landroid/animation/Animator;
 
-    .line 1791
+    .line 1788
     iget-object v13, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v14, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -3227,7 +3231,7 @@
 
     fill-array-data v15, :array_4
 
-    .line 1792
+    .line 1789
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3242,7 +3246,7 @@
 
     fill-array-data v15, :array_5
 
-    .line 1793
+    .line 1790
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3255,7 +3259,7 @@
 
     fill-array-data v14, :array_6
 
-    .line 1794
+    .line 1791
     invoke-static {v1, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3268,14 +3272,14 @@
 
     fill-array-data v14, :array_7
 
-    .line 1795
+    .line 1792
     invoke-static {v1, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
 
     aput-object v13, v3, v9
 
-    .line 1791
+    .line 1788
     invoke-virtual {v12, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const v3, 0x3eb93105
@@ -3284,22 +3288,22 @@
 
     float-to-long v13, v3
 
-    .line 1797
+    .line 1794
     invoke-virtual {v12, v13, v14}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1798
+    .line 1795
     sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v12, v3}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    goto/16 :goto_2
+    goto/16 :goto_4
 
-    :cond_5
-    if-ne v11, v10, :cond_6
+    :cond_6
+    if-ne v11, v10, :cond_7
 
     new-array v3, v8, [Landroid/animation/Animator;
 
-    .line 1800
+    .line 1797
     iget-object v13, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v14, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -3308,7 +3312,7 @@
 
     fill-array-data v15, :array_8
 
-    .line 1801
+    .line 1798
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3323,7 +3327,7 @@
 
     fill-array-data v15, :array_9
 
-    .line 1802
+    .line 1799
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3336,7 +3340,7 @@
 
     fill-array-data v14, :array_a
 
-    .line 1803
+    .line 1800
     invoke-static {v1, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3349,14 +3353,14 @@
 
     fill-array-data v14, :array_b
 
-    .line 1804
+    .line 1801
     invoke-static {v1, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
 
     aput-object v13, v3, v9
 
-    .line 1800
+    .line 1797
     invoke-virtual {v12, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const v3, 0x3e59df52
@@ -3365,22 +3369,22 @@
 
     float-to-long v13, v3
 
-    .line 1806
+    .line 1803
     invoke-virtual {v12, v13, v14}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1807
+    .line 1804
     sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v12, v3}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    goto/16 :goto_2
+    goto/16 :goto_4
 
-    :cond_6
-    if-ne v11, v9, :cond_7
+    :cond_7
+    if-ne v11, v9, :cond_8
 
     new-array v3, v8, [Landroid/animation/Animator;
 
-    .line 1809
+    .line 1806
     iget-object v13, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v14, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -3389,7 +3393,7 @@
 
     fill-array-data v15, :array_c
 
-    .line 1810
+    .line 1807
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3404,7 +3408,7 @@
 
     fill-array-data v15, :array_d
 
-    .line 1811
+    .line 1808
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3417,7 +3421,7 @@
 
     fill-array-data v14, :array_e
 
-    .line 1812
+    .line 1809
     invoke-static {v1, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3430,14 +3434,14 @@
 
     fill-array-data v14, :array_f
 
-    .line 1813
+    .line 1810
     invoke-static {v1, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
 
     aput-object v13, v3, v9
 
-    .line 1809
+    .line 1806
     invoke-virtual {v12, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const v3, 0x3dd9df52
@@ -3446,22 +3450,22 @@
 
     float-to-long v13, v13
 
-    .line 1815
+    .line 1812
     invoke-virtual {v12, v13, v14}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1816
+    .line 1813
     sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v12, v3}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    goto/16 :goto_2
+    goto/16 :goto_4
 
-    :cond_7
-    if-ne v11, v8, :cond_8
+    :cond_8
+    if-ne v11, v8, :cond_9
 
     new-array v3, v8, [Landroid/animation/Animator;
 
-    .line 1818
+    .line 1815
     iget-object v13, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v14, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -3470,7 +3474,7 @@
 
     fill-array-data v15, :array_10
 
-    .line 1819
+    .line 1816
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3485,7 +3489,7 @@
 
     fill-array-data v15, :array_11
 
-    .line 1820
+    .line 1817
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3498,7 +3502,7 @@
 
     fill-array-data v14, :array_12
 
-    .line 1821
+    .line 1818
     invoke-static {v1, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3511,14 +3515,14 @@
 
     fill-array-data v14, :array_13
 
-    .line 1822
+    .line 1819
     invoke-static {v1, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
 
     aput-object v13, v3, v9
 
-    .line 1818
+    .line 1815
     invoke-virtual {v12, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const v3, 0x3dd9df52
@@ -3527,20 +3531,20 @@
 
     float-to-long v13, v13
 
-    .line 1824
+    .line 1821
     invoke-virtual {v12, v13, v14}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1825
+    .line 1822
     sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v12, v3}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    goto :goto_2
+    goto :goto_4
 
-    :cond_8
+    :cond_9
     new-array v3, v8, [Landroid/animation/Animator;
 
-    .line 1827
+    .line 1824
     iget-object v13, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v14, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -3549,7 +3553,7 @@
 
     fill-array-data v15, :array_14
 
-    .line 1828
+    .line 1825
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3564,7 +3568,7 @@
 
     fill-array-data v15, :array_15
 
-    .line 1829
+    .line 1826
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3577,7 +3581,7 @@
 
     fill-array-data v14, :array_16
 
-    .line 1830
+    .line 1827
     invoke-static {v1, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -3590,14 +3594,14 @@
 
     fill-array-data v14, :array_17
 
-    .line 1831
+    .line 1828
     invoke-static {v1, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
 
     aput-object v13, v3, v9
 
-    .line 1827
+    .line 1824
     invoke-virtual {v12, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const v3, 0x3dae4c41
@@ -3606,26 +3610,26 @@
 
     float-to-long v13, v3
 
-    .line 1834
+    .line 1831
     invoke-virtual {v12, v13, v14}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1835
+    .line 1832
     sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_IN:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v12, v3}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1837
-    :goto_2
+    .line 1834
+    :goto_4
     invoke-virtual {v12, v5, v6}, Landroid/animation/AnimatorSet;->setStartDelay(J)V
 
-    .line 1838
+    .line 1835
     invoke-virtual {v12}, Landroid/animation/AnimatorSet;->getDuration()J
 
     move-result-wide v13
 
     add-long/2addr v5, v13
 
-    .line 1839
+    .line 1836
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->bounceIconAnimator:Landroid/animation/AnimatorSet;
 
     new-array v13, v4, [Landroid/animation/Animator;
@@ -3636,28 +3640,28 @@
 
     add-int/lit8 v11, v11, 0x1
 
-    goto/16 :goto_1
+    goto/16 :goto_3
 
-    :cond_9
+    :cond_a
     move v3, v7
 
-    :goto_3
+    :goto_5
     const/4 v11, 0x5
 
-    if-ge v3, v11, :cond_e
+    if-ge v3, v11, :cond_f
 
-    .line 1843
+    .line 1840
     new-instance v11, Landroid/animation/AnimatorSet;
 
     invoke-direct {v11}, Landroid/animation/AnimatorSet;-><init>()V
 
     const v12, 0x3e471c72
 
-    if-nez v3, :cond_a
+    if-nez v3, :cond_b
 
     new-array v13, v8, [Landroid/animation/Animator;
 
-    .line 1845
+    .line 1842
     iget-object v14, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v15, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -3666,7 +3670,7 @@
 
     fill-array-data v8, :array_18
 
-    .line 1846
+    .line 1843
     invoke-static {v14, v15, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
@@ -3681,7 +3685,7 @@
 
     fill-array-data v15, :array_19
 
-    .line 1847
+    .line 1844
     invoke-static {v8, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
@@ -3694,7 +3698,7 @@
 
     fill-array-data v14, :array_1a
 
-    .line 1848
+    .line 1845
     invoke-static {v1, v8, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
@@ -3707,43 +3711,43 @@
 
     fill-array-data v14, :array_1b
 
-    .line 1849
+    .line 1846
     invoke-static {v1, v8, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
 
     aput-object v8, v13, v9
 
-    .line 1845
+    .line 1842
     invoke-virtual {v11, v13}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     mul-float/2addr v12, v2
 
     float-to-long v12, v12
 
-    .line 1851
+    .line 1848
     invoke-virtual {v11, v12, v13}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1852
+    .line 1849
     sget-object v8, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v11, v8}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    :goto_4
+    :goto_6
     const/4 v8, 0x4
 
     const v12, 0x3dd9df52
 
-    goto/16 :goto_5
+    goto/16 :goto_7
 
-    :cond_a
-    if-ne v3, v4, :cond_b
+    :cond_b
+    if-ne v3, v4, :cond_c
 
     const/4 v8, 0x4
 
     new-array v12, v8, [Landroid/animation/Animator;
 
-    .line 1854
+    .line 1851
     iget-object v8, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v13, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -3752,7 +3756,7 @@
 
     fill-array-data v14, :array_1c
 
-    .line 1855
+    .line 1852
     invoke-static {v8, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
@@ -3767,7 +3771,7 @@
 
     fill-array-data v14, :array_1d
 
-    .line 1856
+    .line 1853
     invoke-static {v8, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
@@ -3780,7 +3784,7 @@
 
     fill-array-data v13, :array_1e
 
-    .line 1857
+    .line 1854
     invoke-static {v1, v8, v13}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
@@ -3793,14 +3797,14 @@
 
     fill-array-data v13, :array_1f
 
-    .line 1858
+    .line 1855
     invoke-static {v1, v8, v13}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
 
     aput-object v8, v12, v9
 
-    .line 1854
+    .line 1851
     invoke-virtual {v11, v12}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const v8, 0x3e638e39
@@ -3809,24 +3813,24 @@
 
     float-to-long v12, v8
 
-    .line 1860
+    .line 1857
     invoke-virtual {v11, v12, v13}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1861
+    .line 1858
     sget-object v8, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v11, v8}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    goto :goto_4
+    goto :goto_6
 
-    :cond_b
-    if-ne v3, v10, :cond_c
+    :cond_c
+    if-ne v3, v10, :cond_d
 
     const/4 v8, 0x4
 
     new-array v13, v8, [Landroid/animation/Animator;
 
-    .line 1863
+    .line 1860
     iget-object v8, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v14, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -3835,7 +3839,7 @@
 
     fill-array-data v15, :array_20
 
-    .line 1864
+    .line 1861
     invoke-static {v8, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
@@ -3850,7 +3854,7 @@
 
     fill-array-data v15, :array_21
 
-    .line 1865
+    .line 1862
     invoke-static {v8, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
@@ -3863,7 +3867,7 @@
 
     fill-array-data v14, :array_22
 
-    .line 1866
+    .line 1863
     invoke-static {v1, v8, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
@@ -3876,38 +3880,38 @@
 
     fill-array-data v14, :array_23
 
-    .line 1867
+    .line 1864
     invoke-static {v1, v8, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
 
     aput-object v8, v13, v9
 
-    .line 1863
+    .line 1860
     invoke-virtual {v11, v13}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     mul-float/2addr v12, v2
 
     float-to-long v12, v12
 
-    .line 1869
+    .line 1866
     invoke-virtual {v11, v12, v13}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1870
+    .line 1867
     sget-object v8, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v11, v8}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    goto/16 :goto_4
+    goto/16 :goto_6
 
-    :cond_c
-    if-ne v3, v9, :cond_d
+    :cond_d
+    if-ne v3, v9, :cond_e
 
     const/4 v8, 0x4
 
     new-array v12, v8, [Landroid/animation/Animator;
 
-    .line 1872
+    .line 1869
     iget-object v8, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v13, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -3916,7 +3920,7 @@
 
     fill-array-data v14, :array_24
 
-    .line 1873
+    .line 1870
     invoke-static {v8, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
@@ -3931,7 +3935,7 @@
 
     fill-array-data v14, :array_25
 
-    .line 1874
+    .line 1871
     invoke-static {v8, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
@@ -3944,7 +3948,7 @@
 
     fill-array-data v13, :array_26
 
-    .line 1875
+    .line 1872
     invoke-static {v1, v8, v13}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
@@ -3957,14 +3961,14 @@
 
     fill-array-data v13, :array_27
 
-    .line 1876
+    .line 1873
     invoke-static {v1, v8, v13}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v8
 
     aput-object v8, v12, v9
 
-    .line 1872
+    .line 1869
     invoke-virtual {v11, v12}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const/high16 v8, 0x3e800000    # 0.25f
@@ -3973,22 +3977,22 @@
 
     float-to-long v12, v8
 
-    .line 1878
+    .line 1875
     invoke-virtual {v11, v12, v13}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1879
+    .line 1876
     sget-object v8, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v11, v8}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    goto/16 :goto_4
+    goto/16 :goto_6
 
-    :cond_d
+    :cond_e
     const/4 v8, 0x4
 
     new-array v12, v8, [Landroid/animation/Animator;
 
-    .line 1881
+    .line 1878
     iget-object v13, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v14, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -3997,7 +4001,7 @@
 
     fill-array-data v15, :array_28
 
-    .line 1882
+    .line 1879
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -4012,7 +4016,7 @@
 
     fill-array-data v15, :array_29
 
-    .line 1883
+    .line 1880
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -4025,7 +4029,7 @@
 
     fill-array-data v14, :array_2a
 
-    .line 1884
+    .line 1881
     invoke-static {v1, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
@@ -4038,14 +4042,14 @@
 
     fill-array-data v14, :array_2b
 
-    .line 1885
+    .line 1882
     invoke-static {v1, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v13
 
     aput-object v13, v12, v9
 
-    .line 1881
+    .line 1878
     invoke-virtual {v11, v12}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const v12, 0x3dd9df52
@@ -4054,26 +4058,26 @@
 
     float-to-long v13, v13
 
-    .line 1887
+    .line 1884
     invoke-virtual {v11, v13, v14}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1888
+    .line 1885
     sget-object v13, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_IN:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v11, v13}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1890
-    :goto_5
+    .line 1887
+    :goto_7
     invoke-virtual {v11, v5, v6}, Landroid/animation/AnimatorSet;->setStartDelay(J)V
 
-    .line 1891
+    .line 1888
     invoke-virtual {v11}, Landroid/animation/AnimatorSet;->getDuration()J
 
     move-result-wide v13
 
     add-long/2addr v5, v13
 
-    .line 1892
+    .line 1889
     iget-object v13, v0, Lorg/telegram/ui/ContactsActivity;->bounceIconAnimator:Landroid/animation/AnimatorSet;
 
     new-array v14, v4, [Landroid/animation/Animator;
@@ -4084,10 +4088,10 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    goto/16 :goto_3
+    goto/16 :goto_5
 
-    .line 1895
-    :cond_e
+    .line 1892
+    :cond_f
     iget-object v2, v0, Lorg/telegram/ui/ContactsActivity;->bounceIconAnimator:Landroid/animation/AnimatorSet;
 
     new-instance v3, Lorg/telegram/ui/ContactsActivity$17;
@@ -4096,12 +4100,14 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1906
+    .line 1903
     iget-object v1, v0, Lorg/telegram/ui/ContactsActivity;->bounceIconAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -4371,7 +4377,7 @@
 .method private synthetic lambda$onRequestPermissionsResultFragment$15(Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 1504
+    .line 1506
     :try_start_0
     new-instance p1, Landroid/content/Intent;
 
@@ -4379,7 +4385,7 @@
 
     invoke-direct {p1, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1505
+    .line 1507
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -4406,7 +4412,7 @@
 
     invoke-virtual {p1, p2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 1506
+    .line 1508
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p2
@@ -4420,7 +4426,7 @@
     :catch_0
     move-exception p1
 
-    .line 1508
+    .line 1510
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -4441,7 +4447,7 @@
     :cond_0
     move v1, v0
 
-    .line 1418
+    .line 1420
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/ui/ContactsActivity;->askAboutContacts:Z
 
@@ -4449,7 +4455,7 @@
 
     return-void
 
-    .line 1422
+    .line 1424
     :cond_1
     invoke-direct {p0, v0}, Lorg/telegram/ui/ContactsActivity;->askForPermissons(Z)V
 
@@ -4883,22 +4889,22 @@
 .method private scheduleSort()V
     .locals 3
 
-    .line 1611
+    .line 1613
     iget-boolean v0, p0, Lorg/telegram/ui/ContactsActivity;->scheduled:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    .line 1612
+    .line 1614
     iput-boolean v0, p0, Lorg/telegram/ui/ContactsActivity;->scheduled:Z
 
-    .line 1613
+    .line 1615
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity;->sortContactsRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1614
+    .line 1616
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity;->sortContactsRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x1388
@@ -4910,7 +4916,7 @@
 .end method
 
 .method private sendInvitationToChat(J)V
-    .locals 17
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -4935,13 +4941,13 @@
 
     const/4 v9, 0x0
 
-    const/4 v10, 0x1
+    const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    const/4 v11, 0x1
 
-    const/4 v12, 0x1
+    const/4 v12, 0x0
 
-    const/4 v13, 0x0
+    const/4 v13, 0x1
 
     const/4 v14, 0x0
 
@@ -4949,9 +4955,11 @@
 
     const/16 v16, 0x0
 
+    const/16 v17, 0x0
+
     move-wide/from16 v4, p1
 
-    invoke-static/range {v2 .. v16}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingMedia(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;ZZLorg/telegram/messenger/MessageObject;ZIZLandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;)V
+    invoke-static/range {v2 .. v17}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingMedia(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;ZZLorg/telegram/messenger/MessageObject;ZIZLandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;)V
 
     return-void
 .end method
@@ -5021,7 +5029,7 @@
 .method private showItemsAnimated()V
     .locals 3
 
-    .line 1656
+    .line 1658
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     if-nez v0, :cond_0
@@ -5035,13 +5043,13 @@
 
     move-result v0
 
-    .line 1657
+    .line 1659
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 1658
+    .line 1660
     iget-object v1, p0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -5238,12 +5246,12 @@
 .method private updateVisibleRows(I)V
     .locals 4
 
-    .line 1619
+    .line 1621
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz v0, :cond_1
 
-    .line 1620
+    .line 1622
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -5253,19 +5261,19 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 1622
+    .line 1624
     iget-object v2, p0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 1623
+    .line 1625
     instance-of v3, v2, Lorg/telegram/ui/Cells/UserCell;
 
     if-eqz v3, :cond_0
 
-    .line 1624
+    .line 1626
     check-cast v2, Lorg/telegram/ui/Cells/UserCell;
 
     invoke-virtual {v2, p1}, Lorg/telegram/ui/Cells/UserCell;->update(I)V
@@ -6616,37 +6624,37 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 2
 
-    .line 1553
+    .line 1555
     sget p2, Lorg/telegram/messenger/NotificationCenter;->blockedUsersDidLoad:I
 
     if-ne p1, p2, :cond_0
 
-    .line 1554
+    .line 1556
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity;->listViewAdapter:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
     if-eqz p1, :cond_c
 
-    .line 1555
+    .line 1557
     invoke-virtual {p1}, Lorg/telegram/ui/Adapters/ContactsAdapter;->refreshOnBlockedUsersLoaded()V
 
     goto/16 :goto_1
 
-    .line 1557
+    .line 1559
     :cond_0
     sget p2, Lorg/telegram/messenger/NotificationCenter;->onContactsActionsClicked:I
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
     if-ne p1, p2, :cond_4
 
-    .line 1558
+    .line 1560
     array-length p1, p3
 
-    if-lt p1, v1, :cond_3
+    if-lt p1, v0, :cond_3
 
-    aget-object p1, p3, v0
+    aget-object p1, p3, v1
 
     instance-of p1, p1, Lcom/iMe/model/contacts/ContactsFilter;
 
@@ -6658,23 +6666,23 @@
 
     goto :goto_0
 
-    .line 1561
+    .line 1563
     :cond_1
-    aget-object p1, p3, v0
+    aget-object p1, p3, v1
 
     check-cast p1, Lcom/iMe/model/contacts/ContactsFilter;
 
-    .line 1562
+    .line 1564
     sget-object p2, Lcom/iMe/model/contacts/ContactsFilter;->BLOCKED:Lcom/iMe/model/contacts/ContactsFilter;
 
     if-ne p1, p2, :cond_2
 
-    .line 1563
+    .line 1565
     invoke-direct {p0}, Lorg/telegram/ui/ContactsActivity;->createMenuForBlockedContactsAction()V
 
     goto/16 :goto_1
 
-    .line 1565
+    .line 1567
     :cond_2
     sget-object p1, Lcom/iMe/fork/enums/ContactsActionType;->DELETE:Lcom/iMe/fork/enums/ContactsActionType;
 
@@ -6686,13 +6694,13 @@
     :goto_0
     return-void
 
-    .line 1568
+    .line 1570
     :cond_4
     sget p2, Lorg/telegram/messenger/NotificationCenter;->storiesUpdated:I
 
     if-ne p1, p2, :cond_5
 
-    .line 1569
+    .line 1571
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity;->listViewAdapter:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -6707,9 +6715,9 @@
 
     move-result-object p2
 
-    invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setStories(Ljava/util/ArrayList;Z)V
+    invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setStories(Ljava/util/ArrayList;Z)V
 
-    .line 1570
+    .line 1572
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -6724,28 +6732,28 @@
 
     goto/16 :goto_1
 
-    .line 1571
+    .line 1573
     :cond_5
     sget p2, Lorg/telegram/messenger/NotificationCenter;->contactsDidLoad:I
 
     if-ne p1, p2, :cond_7
 
-    .line 1572
+    .line 1574
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity;->listViewAdapter:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
     if-eqz p1, :cond_c
 
-    .line 1573
+    .line 1575
     iget-boolean p2, p0, Lorg/telegram/ui/ContactsActivity;->sortByName:Z
 
     if-nez p2, :cond_6
 
     const/4 p2, 0x2
 
-    .line 1574
-    invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setSortType(IZ)V
-
     .line 1576
+    invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->setSortType(IZ)V
+
+    .line 1578
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity;->listViewAdapter:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
@@ -6753,14 +6761,14 @@
 
     goto :goto_1
 
-    .line 1578
+    .line 1580
     :cond_7
     sget p2, Lorg/telegram/messenger/NotificationCenter;->updateInterfaces:I
 
     if-ne p1, p2, :cond_a
 
-    .line 1579
-    aget-object p1, p3, v0
+    .line 1581
+    aget-object p1, p3, v1
 
     check-cast p1, Ljava/lang/Integer;
 
@@ -6768,7 +6776,7 @@
 
     move-result p1
 
-    .line 1580
+    .line 1582
     sget p2, Lorg/telegram/messenger/MessagesController;->UPDATE_MASK_AVATAR:I
 
     and-int/2addr p2, p1
@@ -6787,11 +6795,11 @@
 
     if-eqz p2, :cond_9
 
-    .line 1581
+    .line 1583
     :cond_8
     invoke-direct {p0, p1}, Lorg/telegram/ui/ContactsActivity;->updateVisibleRows(I)V
 
-    .line 1583
+    .line 1585
     :cond_9
     sget p2, Lorg/telegram/messenger/MessagesController;->UPDATE_MASK_STATUS:I
 
@@ -6807,18 +6815,18 @@
 
     if-eqz p1, :cond_c
 
-    .line 1584
+    .line 1586
     invoke-direct {p0}, Lorg/telegram/ui/ContactsActivity;->scheduleSort()V
 
     goto :goto_1
 
-    .line 1586
+    .line 1588
     :cond_a
     sget p2, Lorg/telegram/messenger/NotificationCenter;->encryptedChatCreated:I
 
     if-ne p1, p2, :cond_b
 
-    .line 1587
+    .line 1589
     iget-boolean p1, p0, Lorg/telegram/ui/ContactsActivity;->createSecretChat:Z
 
     if-eqz p1, :cond_c
@@ -6827,24 +6835,24 @@
 
     if-eqz p1, :cond_c
 
-    .line 1588
-    aget-object p1, p3, v0
+    .line 1590
+    aget-object p1, p3, v1
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;
 
-    .line 1589
+    .line 1591
     new-instance p2, Landroid/os/Bundle;
 
     invoke-direct {p2}, Landroid/os/Bundle;-><init>()V
 
-    .line 1590
+    .line 1592
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     const-string p3, "enc_id"
 
     invoke-virtual {p2, p3, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1591
+    .line 1593
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -6853,11 +6861,11 @@
 
     sget p3, Lorg/telegram/messenger/NotificationCenter;->closeChats:I
 
-    new-array v0, v0, [Ljava/lang/Object;
+    new-array v0, v1, [Ljava/lang/Object;
 
     invoke-virtual {p1, p3, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1592
+    .line 1594
     new-instance p1, Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
@@ -6866,19 +6874,19 @@
 
     goto :goto_1
 
-    .line 1594
+    .line 1596
     :cond_b
     sget p2, Lorg/telegram/messenger/NotificationCenter;->closeChats:I
 
     if-ne p1, p2, :cond_c
 
-    .line 1595
+    .line 1597
     iget-boolean p1, p0, Lorg/telegram/ui/ContactsActivity;->creatingChat:Z
 
     if-nez p1, :cond_c
 
-    .line 1596
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack(Z)V
+    .line 1598
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack(Z)V
 
     :cond_c
     :goto_1
@@ -6888,7 +6896,7 @@
 .method protected getListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 1
 
-    .line 1434
+    .line 1436
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object v0
@@ -6907,17 +6915,17 @@
 
     move-object/from16 v0, p0
 
-    .line 1913
+    .line 1910
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1915
+    .line 1912
     new-instance v11, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda17;
 
     invoke-direct {v11, v0}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/ContactsActivity;)V
 
-    .line 1930
+    .line 1927
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -6940,7 +6948,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1931
+    .line 1928
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -6963,7 +6971,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1932
+    .line 1929
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -6980,7 +6988,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1934
+    .line 1931
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -6995,7 +7003,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1936
+    .line 1933
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -7012,7 +7020,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1937
+    .line 1934
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7025,7 +7033,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1938
+    .line 1935
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -7040,7 +7048,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1939
+    .line 1936
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -7055,7 +7063,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1940
+    .line 1937
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -7070,7 +7078,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1941
+    .line 1938
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -7085,7 +7093,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1942
+    .line 1939
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -7100,7 +7108,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1944
+    .line 1941
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7115,7 +7123,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1946
+    .line 1943
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7156,7 +7164,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1948
+    .line 1945
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7187,7 +7195,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1950
+    .line 1947
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7210,7 +7218,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1951
+    .line 1948
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7231,7 +7239,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1952
+    .line 1949
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7248,7 +7256,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1954
+    .line 1951
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7283,7 +7291,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1955
+    .line 1952
     new-instance v15, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7312,7 +7320,7 @@
 
     invoke-virtual {v1, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1956
+    .line 1953
     new-instance v15, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7337,7 +7345,7 @@
 
     invoke-virtual {v1, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1957
+    .line 1954
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7366,7 +7374,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1958
+    .line 1955
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundRed:I
@@ -7387,7 +7395,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1959
+    .line 1956
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundOrange:I
@@ -7398,7 +7406,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1960
+    .line 1957
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundViolet:I
@@ -7409,7 +7417,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1961
+    .line 1958
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundGreen:I
@@ -7420,7 +7428,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1962
+    .line 1959
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundCyan:I
@@ -7431,7 +7439,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1963
+    .line 1960
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundBlue:I
@@ -7442,7 +7450,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1964
+    .line 1961
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundPink:I
@@ -7453,7 +7461,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1966
+    .line 1963
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7488,7 +7496,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1967
+    .line 1964
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7521,7 +7529,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1968
+    .line 1965
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7552,7 +7560,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1970
+    .line 1967
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
@@ -7571,7 +7579,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1971
+    .line 1968
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
@@ -7592,7 +7600,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1972
+    .line 1969
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
@@ -7617,7 +7625,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1974
+    .line 1971
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7646,7 +7654,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1975
+    .line 1972
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7669,7 +7677,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1977
+    .line 1974
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v5, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7696,7 +7704,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1978
+    .line 1975
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7727,7 +7735,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1979
+    .line 1976
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7756,7 +7764,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1980
+    .line 1977
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7781,7 +7789,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1981
+    .line 1978
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7830,7 +7838,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1982
+    .line 1979
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v15, v0, Lorg/telegram/ui/ContactsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -7911,15 +7919,15 @@
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 1
 
-    .line 1439
+    .line 1441
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 1440
+    .line 1442
     iget-object p1, p0, Lorg/telegram/ui/ContactsActivity;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_0
 
-    .line 1441
+    .line 1443
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object p1
@@ -7939,7 +7947,7 @@
 
     move-object v7, p0
 
-    .line 1686
+    .line 1688
     iget-boolean v0, v7, Lorg/telegram/ui/ContactsActivity;->createSecretChat:Z
 
     const/4 v1, 0x0
@@ -7955,7 +7963,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1690
+    .line 1692
     fill-array-data v2, :array_0
 
     invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -7974,7 +7982,7 @@
     :goto_0
     move-object v8, v2
 
-    .line 1691
+    .line 1693
     iget-object v2, v7, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -7983,7 +7991,7 @@
 
     check-cast v2, Landroid/view/ViewGroup;
 
-    .line 1692
+    .line 1694
     iget-object v3, v7, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     invoke-interface {v3}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getFragmentStack()Ljava/util/List;
@@ -8027,13 +8035,13 @@
     :cond_2
     move-object v0, v1
 
-    .line 1694
+    .line 1696
     :goto_1
     instance-of v3, v0, Lorg/telegram/ui/DialogsActivity;
 
     if-eqz v3, :cond_3
 
-    .line 1695
+    .line 1697
     check-cast v0, Lorg/telegram/ui/DialogsActivity;
 
     goto :goto_2
@@ -8046,7 +8054,7 @@
 
     return-object v1
 
-    .line 1700
+    .line 1702
     :cond_4
     sget-object v3, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_STORY:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
@@ -8054,12 +8062,12 @@
 
     move-result v10
 
-    .line 1701
+    .line 1703
     invoke-virtual {v0}, Lorg/telegram/ui/DialogsActivity;->getFloatingButton()Lorg/telegram/ui/Components/RLottieImageView;
 
     move-result-object v5
 
-    .line 1702
+    .line 1704
     invoke-virtual {v5}, Landroid/widget/ImageView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v3
@@ -8079,19 +8087,23 @@
     :cond_5
     move-object v11, v1
 
-    .line 1703
+    .line 1705
     :goto_3
+    iget-object v3, v7, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
+
+    if-eqz v3, :cond_8
+
     iget-object v3, v7, Lorg/telegram/ui/ContactsActivity;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
-    if-eqz v3, :cond_9
+    if-eqz v3, :cond_6
 
-    if-eqz v11, :cond_9
+    if-eqz v11, :cond_6
 
     invoke-virtual {v5}, Landroid/widget/ImageView;->getVisibility()I
 
     move-result v3
 
-    if-nez v3, :cond_9
+    if-nez v3, :cond_6
 
     invoke-virtual {v11}, Landroid/view/View;->getTranslationY()F
 
@@ -8111,7 +8123,7 @@
 
     cmpl-float v3, v3, v6
 
-    if-gtz v3, :cond_9
+    if-gtz v3, :cond_6
 
     iget-object v3, v7, Lorg/telegram/ui/ContactsActivity;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
@@ -8131,50 +8143,96 @@
 
     cmpl-float v3, v3, v4
 
-    if-gtz v3, :cond_9
+    if-gtz v3, :cond_6
 
     invoke-virtual {v0}, Lorg/telegram/ui/DialogsActivity;->isFabAnimationsDisabled()Z
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    if-eqz v0, :cond_8
+
+    :cond_6
+    if-eqz v10, :cond_7
+
+    .line 1707
+    iget-object v0, v7, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
+
+    sget v2, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon_camera:I
+
+    const/16 v3, 0x38
+
+    invoke-virtual {v0, v2, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
     goto :goto_4
 
-    :cond_6
+    .line 1709
+    :cond_7
+    iget-object v0, v7, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
+
+    sget v2, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon:I
+
+    const/16 v3, 0x34
+
+    invoke-virtual {v0, v2, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+
+    .line 1711
+    :goto_4
+    iget-object v0, v7, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
+
+    move-result-object v0
+
+    iget-object v2, v7, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
+
+    invoke-virtual {v2}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lorg/telegram/ui/Components/RLottieDrawable;->getFramesCount()I
+
+    move-result v2
+
+    sub-int/2addr v2, v9
+
+    invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
+
+    return-object v1
+
+    :cond_8
     const/16 v0, 0x8
 
-    .line 1712
+    .line 1714
     invoke-virtual {v11, v0}, Landroid/view/View;->setVisibility(I)V
 
-    if-eqz p1, :cond_7
+    if-eqz p1, :cond_9
 
     const/4 v0, 0x0
 
-    .line 1714
+    .line 1716
     invoke-virtual {v2, v0}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 1716
-    :cond_7
+    .line 1718
+    :cond_9
     new-instance v0, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, v8, v2}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda0;-><init>(Landroid/animation/ValueAnimator;Landroid/view/ViewGroup;)V
 
     invoke-virtual {v8, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1721
+    .line 1723
     iget-object v0, v7, Lorg/telegram/ui/ContactsActivity;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_a
 
-    .line 1722
+    .line 1724
     iget-object v1, v7, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     check-cast v1, Landroid/view/ViewGroup;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 1723
+    .line 1725
     iget-object v0, v7, Lorg/telegram/ui/ActionBar/BaseFragment;->parentLayout:Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     invoke-interface {v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getOverlayContainerView()Landroid/widget/FrameLayout;
@@ -8185,13 +8243,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    :cond_8
+    :cond_a
     const-wide/16 v0, 0x96
 
-    .line 1725
+    .line 1727
     invoke-virtual {v8, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1726
+    .line 1728
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
     const/high16 v1, 0x3fc00000    # 1.5f
@@ -8200,12 +8258,12 @@
 
     invoke-virtual {v8, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1728
+    .line 1730
     new-instance v12, Landroid/animation/AnimatorSet;
 
     invoke-direct {v12}, Landroid/animation/AnimatorSet;-><init>()V
 
-    .line 1729
+    .line 1731
     new-instance v13, Lorg/telegram/ui/ContactsActivity$16;
 
     move-object v0, v13
@@ -8230,10 +8288,10 @@
 
     aput-object v8, v0, v1
 
-    .line 1754
+    .line 1756
     invoke-virtual {v12, v0}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1755
+    .line 1757
     new-instance v6, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda12;
 
     move-object v0, v6
@@ -8241,6 +8299,10 @@
     move-object v1, p0
 
     move-object v2, v12
+
+    move v3, v10
+
+    move v4, p1
 
     move-object v5, v11
 
@@ -8251,57 +8313,6 @@
     invoke-static {v6, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-object v12
-
-    :cond_9
-    :goto_4
-    if-eqz v10, :cond_a
-
-    .line 1705
-    iget-object v0, v7, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
-
-    sget v2, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon_camera:I
-
-    const/16 v3, 0x38
-
-    invoke-virtual {v0, v2, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
-
-    goto :goto_5
-
-    .line 1707
-    :cond_a
-    iget-object v0, v7, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
-
-    sget v2, Lorg/telegram/messenger/R$raw;->write_contacts_fab_icon:I
-
-    const/16 v3, 0x34
-
-    invoke-virtual {v0, v2, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
-
-    .line 1709
-    :goto_5
-    iget-object v0, v7, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
-
-    move-result-object v0
-
-    iget-object v2, v7, Lorg/telegram/ui/ContactsActivity;->floatingButton:Lorg/telegram/ui/Components/RLottieImageView;
-
-    invoke-virtual {v2}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lorg/telegram/ui/Components/RLottieDrawable;->getFramesCount()I
-
-    move-result v2
-
-    sub-int/2addr v2, v9
-
-    invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
-
-    return-object v1
-
-    nop
 
     :array_0
     .array-data 4
@@ -8319,10 +8330,10 @@
 .method protected onDialogDismiss(Landroid/app/Dialog;)V
     .locals 1
 
-    .line 1456
+    .line 1458
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->onDialogDismiss(Landroid/app/Dialog;)V
 
-    .line 1457
+    .line 1459
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity;->permissionDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
 
     if-eqz v0, :cond_0
@@ -8341,7 +8352,7 @@
 
     const/4 p1, 0x0
 
-    .line 1458
+    .line 1460
     invoke-direct {p0, p1}, Lorg/telegram/ui/ContactsActivity;->askForPermissons(Z)V
 
     :cond_0
@@ -8798,15 +8809,15 @@
 .method public onPause()V
     .locals 1
 
-    .line 1544
+    .line 1546
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onPause()V
 
-    .line 1545
+    .line 1547
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     if-eqz v0, :cond_0
 
-    .line 1546
+    .line 1548
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBar;->closeSearchField()V
 
     :cond_0
@@ -8889,7 +8900,7 @@
 
     if-ne p1, v2, :cond_1
 
-    .line 1496
+    .line 1498
     array-length p1, p3
 
     if-lez p1, :cond_0
@@ -8898,12 +8909,12 @@
 
     if-nez p1, :cond_0
 
-    .line 1497
+    .line 1499
     invoke-direct {p0}, Lorg/telegram/ui/ContactsActivity;->showCameraScanner()V
 
     goto/16 :goto_2
 
-    .line 1499
+    .line 1501
     :cond_0
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -8913,7 +8924,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1500
+    .line 1502
     sget p2, Lorg/telegram/messenger/R$string;->AppName:I
 
     const-string p3, "AppName"
@@ -8924,7 +8935,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1501
+    .line 1503
     sget p2, Lorg/telegram/messenger/R$string;->QRCodePermissionNoCameraWithHint:I
 
     const-string p3, "QRCodePermissionNoCameraWithHint"
@@ -8939,7 +8950,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1502
+    .line 1504
     sget p2, Lorg/telegram/messenger/R$string;->PermissionOpenSettings:I
 
     const-string p3, "PermissionOpenSettings"
@@ -8954,7 +8965,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1511
+    .line 1513
     sget p2, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string p3, "OK"
@@ -8965,7 +8976,7 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1512
+    .line 1514
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     goto :goto_2
@@ -8977,20 +8988,20 @@
 
     move p1, v1
 
-    .line 1516
+    .line 1518
     :goto_0
     array-length v2, p2
 
     if-ge p1, v2, :cond_5
 
-    .line 1517
+    .line 1519
     array-length v2, p3
 
     if-gt v2, p1, :cond_2
 
     goto :goto_1
 
-    .line 1520
+    .line 1522
     :cond_2
     aget-object v2, p2, p1
 
@@ -9002,12 +9013,12 @@
 
     if-eqz v2, :cond_4
 
-    .line 1521
+    .line 1523
     aget p1, p3, p1
 
     if-nez p1, :cond_3
 
-    .line 1522
+    .line 1524
     iget p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
@@ -9018,7 +9029,7 @@
 
     goto :goto_2
 
-    .line 1524
+    .line 1526
     :cond_3
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalNotificationsSettings()Landroid/content/SharedPreferences;
 
@@ -9038,7 +9049,7 @@
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 1525
+    .line 1527
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p1
@@ -9053,7 +9064,7 @@
 
     if-gez p1, :cond_5
 
-    .line 1527
+    .line 1529
     :try_start_0
     new-instance p1, Landroid/content/Intent;
 
@@ -9063,7 +9074,7 @@
 
     const-string p2, "package"
 
-    .line 1528
+    .line 1530
     sget-object p3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {p3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
@@ -9074,10 +9085,10 @@
 
     move-result-object p2
 
-    .line 1529
+    .line 1531
     invoke-virtual {p1, p2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 1530
+    .line 1532
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p2
@@ -9091,7 +9102,7 @@
     :catch_0
     move-exception p1
 
-    .line 1532
+    .line 1534
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_2
@@ -9163,14 +9174,14 @@
 
     if-eqz v2, :cond_2
 
-    .line 1416
+    .line 1417
     invoke-virtual {v0, v1}, Landroid/app/Activity;->shouldShowRequestPermissionRationale(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 1417
+    .line 1419
     new-instance v1, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda16;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/ContactsActivity$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/ContactsActivity;)V
@@ -9179,7 +9190,7 @@
 
     move-result-object v0
 
-    .line 1424
+    .line 1426
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -9193,7 +9204,7 @@
     :cond_1
     const/4 v0, 0x1
 
-    .line 1426
+    .line 1428
     invoke-direct {p0, v0}, Lorg/telegram/ui/ContactsActivity;->askForPermissons(Z)V
 
     :cond_2
@@ -9344,7 +9355,7 @@
 .method public setDelegate(Lorg/telegram/ui/ContactsActivity$ContactsActivityDelegate;)V
     .locals 0
 
-    .line 1644
+    .line 1646
     iput-object p1, p0, Lorg/telegram/ui/ContactsActivity;->delegate:Lorg/telegram/ui/ContactsActivity$ContactsActivityDelegate;
 
     return-void
@@ -9353,7 +9364,7 @@
 .method public setInitialSearchString(Ljava/lang/String;)V
     .locals 0
 
-    .line 1652
+    .line 1654
     iput-object p1, p0, Lorg/telegram/ui/ContactsActivity;->initialSearchString:Ljava/lang/String;
 
     return-void

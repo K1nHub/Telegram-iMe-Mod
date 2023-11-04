@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/messenger/video/VideoPlayerHolderBase;)V
     .locals 0
 
-    .line 154
+    .line 155
     iput-object p1, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method private synthetic lambda$onRenderedFirstFrame$0()V
     .locals 2
 
-    .line 186
+    .line 187
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
     iget-boolean v0, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->released:Z
@@ -53,20 +53,11 @@
 
     return-void
 
-    .line 189
+    .line 190
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->onRenderedFirstFrame()V
-
-    .line 191
-    iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
-
-    invoke-static {v0}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->access$100(Lorg/telegram/messenger/video/VideoPlayerHolderBase;)Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_1
 
     .line 192
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
@@ -75,9 +66,18 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    if-eqz v0, :cond_1
 
     .line 193
+    iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
+
+    invoke-static {v0}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->access$100(Lorg/telegram/messenger/video/VideoPlayerHolderBase;)Ljava/lang/Runnable;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    .line 194
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
     const/4 v1, 0x0
@@ -93,7 +93,7 @@
 .method public onError(Lorg/telegram/ui/Components/VideoPlayer;Ljava/lang/Exception;)V
     .locals 0
 
-    .line 175
+    .line 176
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return-void
@@ -102,12 +102,12 @@
 .method public onRenderedFirstFrame()V
     .locals 3
 
-    .line 185
+    .line 186
     new-instance v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;)V
 
-    .line 195
+    .line 196
     iget-object v1, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
     invoke-static {v1}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->access$000(Lorg/telegram/messenger/video/VideoPlayerHolderBase;)Landroid/view/SurfaceView;
@@ -123,7 +123,7 @@
     :cond_0
     const-wide/16 v1, 0x20
 
-    .line 185
+    .line 186
     :goto_0
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
@@ -157,7 +157,7 @@
 .method public onStateChanged(ZI)V
     .locals 3
 
-    .line 157
+    .line 158
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
     iput p2, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->lastState:I
@@ -177,28 +177,28 @@
 
     if-ne p2, v1, :cond_3
 
-    .line 162
+    .line 163
     invoke-virtual {v0}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->needRepeat()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 163
+    .line 164
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
     const/4 v1, 0x0
 
     iput v1, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->progress:F
 
-    .line 164
+    .line 165
     iget-object v0, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const-wide/16 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/VideoPlayer;->seekTo(J)V
 
-    .line 165
+    .line 166
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
     iget-object v0, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
@@ -207,7 +207,7 @@
 
     goto :goto_1
 
-    .line 167
+    .line 168
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
@@ -217,7 +217,7 @@
 
     goto :goto_1
 
-    .line 159
+    .line 160
     :cond_2
     :goto_0
     iget-object v1, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->dispatchQueue:Lorg/telegram/messenger/DispatchQueue;
@@ -226,7 +226,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/DispatchQueue;->cancelRunnable(Ljava/lang/Runnable;)V
 
-    .line 160
+    .line 161
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
     iget-object v1, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->dispatchQueue:Lorg/telegram/messenger/DispatchQueue;
@@ -235,7 +235,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 170
+    .line 171
     :cond_3
     :goto_1
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$2;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;

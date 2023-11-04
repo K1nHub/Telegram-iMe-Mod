@@ -174,7 +174,7 @@
 .method public final resolveItemClick(Lcom/iMe/model/wallet/settings/InterfaceSettingItem;)V
     .locals 2
 
-    const-string v0, "item"
+    const-string/jumbo v0, "item"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

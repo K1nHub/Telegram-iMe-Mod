@@ -49,7 +49,7 @@ public final class StorageModuleKt {
             List emptyList4;
             List emptyList5;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C16761 c16761 = new Function2<Scope, ParametersHolder, PreferenceHelper>() { // from class: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1.1
+            C16821 c16821 = new Function2<Scope, ParametersHolder, PreferenceHelper>() { // from class: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final PreferenceHelper invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -61,13 +61,13 @@ public final class StorageModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(PreferenceHelper.class), null, c16761, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(PreferenceHelper.class), null, c16821, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C16772 c16772 = new Function2<Scope, ParametersHolder, CryptoPreferenceHelper>() { // from class: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1.2
+            C16832 c16832 = new Function2<Scope, ParametersHolder, CryptoPreferenceHelper>() { // from class: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoPreferenceHelper invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -77,13 +77,13 @@ public final class StorageModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, c16772, kind, emptyList2));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, c16832, kind, emptyList2));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
-            C16783 c16783 = new Function2<Scope, ParametersHolder, HintsPreferenceHelper>() { // from class: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1.3
+            C16843 c16843 = new Function2<Scope, ParametersHolder, HintsPreferenceHelper>() { // from class: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final HintsPreferenceHelper invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -93,13 +93,13 @@ public final class StorageModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(HintsPreferenceHelper.class), null, c16783, kind, emptyList3));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(HintsPreferenceHelper.class), null, c16843, kind, emptyList3));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);
             }
             new KoinDefinition(module, singleInstanceFactory3);
-            C16794 c16794 = new Function2<Scope, ParametersHolder, TwitterPreferenceHelper>() { // from class: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1.4
+            C16854 c16854 = new Function2<Scope, ParametersHolder, TwitterPreferenceHelper>() { // from class: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final TwitterPreferenceHelper invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -109,13 +109,13 @@ public final class StorageModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(TwitterPreferenceHelper.class), null, c16794, kind, emptyList4));
+            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(TwitterPreferenceHelper.class), null, c16854, kind, emptyList4));
             module.indexPrimaryType(singleInstanceFactory4);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory4);
             }
             new KoinDefinition(module, singleInstanceFactory4);
-            C16805 c16805 = new Function2<Scope, ParametersHolder, AnalyticsPreferenceHelper>() { // from class: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1.5
+            C16865 c16865 = new Function2<Scope, ParametersHolder, AnalyticsPreferenceHelper>() { // from class: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1.5
                 @Override // kotlin.jvm.functions.Function2
                 public final AnalyticsPreferenceHelper invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -125,7 +125,7 @@ public final class StorageModuleKt {
             };
             StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
             emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(AnalyticsPreferenceHelper.class), null, c16805, kind, emptyList5));
+            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(AnalyticsPreferenceHelper.class), null, c16865, kind, emptyList5));
             module.indexPrimaryType(singleInstanceFactory5);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory5);

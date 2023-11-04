@@ -2,8 +2,10 @@ package com.iMe.p030ui.wallet.cryptobox.conditions;
 
 import com.iMe.manager.TelegramApi;
 import com.iMe.manager.wallet.create.WalletCreateManager;
+import com.iMe.manager.wallet.create.WalletCreateManagerDelegate;
 import com.iMe.manager.wallet.create.WalletCreateManagerView;
 import com.iMe.model.cryptobox.CryptoBoxActionButtonType;
+import com.iMe.model.wallet.crypto.create.WalletCreationType;
 import com.iMe.p030ui.base.mvp.base.BasePresenter;
 import com.iMe.p030ui.base.mvp.base.BaseView;
 import com.iMe.storage.data.utils.extentions.NumberExtKt;
@@ -37,15 +39,15 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.tgnet.TLRPC$Chat;
 import timber.log.Timber;
 /* compiled from: CryptoBoxConditionsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsPresenter */
-/* loaded from: classes3.dex */
-public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxConditionsView> {
+/* loaded from: classes.dex */
+public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxConditionsView> implements WalletCreateManagerDelegate {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoBoxInfo cryptoBoxInfo;
     private final CryptoBoxInteractor cryptoBoxInteractor;
@@ -60,7 +62,7 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
 
     /* compiled from: CryptoBoxConditionsPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsPresenter$WhenMappings */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -95,6 +97,12 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
         this.walletCreateManager.startChooseWalletOptionsFlow(blockchainType);
     }
 
+    @Override // com.iMe.manager.wallet.create.WalletCreateManagerDelegate
+    public void startWalletCreationFlow(WalletCreationType walletCreationType, BlockchainType blockchainType) {
+        Intrinsics.checkNotNullParameter(walletCreationType, "walletCreationType");
+        this.walletCreateManager.startWalletCreationFlow(walletCreationType, blockchainType);
+    }
+
     public CryptoBoxConditionsPresenter(TLRPC$Chat tLRPC$Chat, CryptoBoxInfo cryptoBoxInfo, CryptoAccessManager cryptoAccessManager, CryptoBoxInteractor cryptoBoxInteractor, ResourceManager resourceManager, SchedulersProvider schedulersProvider, TelegramApi telegramApi, WalletCreateManager walletCreateManager) {
         Intrinsics.checkNotNullParameter(cryptoBoxInfo, "cryptoBoxInfo");
         Intrinsics.checkNotNullParameter(cryptoAccessManager, "cryptoAccessManager");
@@ -117,7 +125,7 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
 
     public final void onActionClick() {
         CryptoBoxActionButtonType cryptoBoxActionButtonType = this.currentButtonType;
-        if (cryptoBoxActionButtonType instanceof CryptoBoxActionButtonType.C1528Ok ? true : cryptoBoxActionButtonType instanceof CryptoBoxActionButtonType.WithDescription.Forwarded) {
+        if (cryptoBoxActionButtonType instanceof CryptoBoxActionButtonType.C1534Ok ? true : cryptoBoxActionButtonType instanceof CryptoBoxActionButtonType.WithDescription.Forwarded) {
             ((CryptoBoxConditionsView) getViewState()).finishScreen();
         } else if (cryptoBoxActionButtonType instanceof CryptoBoxActionButtonType.WithDescription.Subscribe) {
             subscribeToRequiredChat();
@@ -126,7 +134,7 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
         } else if (cryptoBoxActionButtonType instanceof CryptoBoxActionButtonType.WithDescription.CreateWallet) {
             startChooseWalletOptionsFlow(this.network.getBlockchainType());
         } else if (cryptoBoxActionButtonType instanceof CryptoBoxActionButtonType.Taken) {
-            ((CryptoBoxConditionsView) getViewState()).showToast(this.resourceManager.getString(C3630R.string.cryptobox_taken_description));
+            ((CryptoBoxConditionsView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.cryptobox_taken_description));
         } else if (cryptoBoxActionButtonType instanceof CryptoBoxActionButtonType.Get) {
             participate();
         }
@@ -180,7 +188,7 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
         CryptoBoxActionButtonType cryptoBoxActionButtonType;
         CryptoBoxParticipationStatus cryptoBoxParticipationStatus = this.participationStatus;
         if (this.sourceChat == null) {
-            cryptoBoxActionButtonType = CryptoBoxActionButtonType.C1528Ok.INSTANCE;
+            cryptoBoxActionButtonType = CryptoBoxActionButtonType.C1534Ok.INSTANCE;
         } else if (this.cryptoBoxInfo.getStatus() == CryptoBoxStatus.FINISHED) {
             cryptoBoxActionButtonType = CryptoBoxActionButtonType.Finished.INSTANCE;
         } else if (this.cryptoBoxInfo.getStatus() == CryptoBoxStatus.STOPPED) {
@@ -213,7 +221,7 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
     }
 
     private final void loadParticipationData() {
-        Observable<Result<CryptoBoxParticipationData>> observeOn = this.cryptoBoxInteractor.getParticipationData(this.cryptoBoxInfo.getId()).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<CryptoBoxParticipationData>> observeOn = this.cryptoBoxInteractor.getParticipationData(this.cryptoBoxInfo.getId()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoBoxInteractor\n    …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends CryptoBoxParticipationData>, Unit>() { // from class: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsPresenter$loadParticipationData$$inlined$subscribeWithErrorHandle$default$1
@@ -223,12 +231,12 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoBoxParticipationData> result) {
-                m1676invoke(result);
+                m1681invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1676invoke(Result<? extends CryptoBoxParticipationData> it) {
+            public final void m1681invoke(Result<? extends CryptoBoxParticipationData> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends CryptoBoxParticipationData> result = it;
@@ -270,7 +278,7 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
     }
 
     private final void participate() {
-        Observable<Result<CryptoBoxParticipationResult>> observeOn = this.cryptoBoxInteractor.participate(this.cryptoBoxInfo.getId()).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<CryptoBoxParticipationResult>> observeOn = this.cryptoBoxInteractor.participate(this.cryptoBoxInfo.getId()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoBoxInteractor\n    …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends CryptoBoxParticipationResult>, Unit>() { // from class: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsPresenter$participate$$inlined$subscribeWithErrorHandle$default$1
@@ -280,12 +288,12 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoBoxParticipationResult> result) {
-                m1677invoke(result);
+                m1682invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1677invoke(Result<? extends CryptoBoxParticipationResult> it) {
+            public final void m1682invoke(Result<? extends CryptoBoxParticipationResult> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends CryptoBoxParticipationResult> result = it;
@@ -328,7 +336,7 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
     private final void subscribeToRequiredChat() {
         Long cryptoBoxChatId = getCryptoBoxChatId();
         if (cryptoBoxChatId == null) {
-            ((CryptoBoxConditionsView) getViewState()).showToast(this.resourceManager.getString(C3630R.string.common_error_unexpected));
+            ((CryptoBoxConditionsView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.common_error_unexpected));
             return;
         }
         Observable<TLRPC$Chat> chatInfoById = this.telegramApi.getChatInfoById(cryptoBoxChatId.longValue());
@@ -353,7 +361,7 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
                 subscribeToRequiredChat$lambda$5 = CryptoBoxConditionsPresenter.subscribeToRequiredChat$lambda$5(Function1.this, obj);
                 return subscribeToRequiredChat$lambda$5;
             }
-        }).observeOn(this.schedulersProvider.mo1009ui());
+        }).observeOn(this.schedulersProvider.mo1010ui());
         final Function1<TLRPC$Chat, Unit> function12 = new Function1<TLRPC$Chat, Unit>() { // from class: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsPresenter$subscribeToRequiredChat$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -401,10 +409,10 @@ public final class CryptoBoxConditionsPresenter extends BasePresenter<CryptoBoxC
                 String message = th.getMessage();
                 if (Intrinsics.areEqual(message, "CHAT_ID_INVALID")) {
                     resourceManager2 = CryptoBoxConditionsPresenter.this.resourceManager;
-                    message = resourceManager2.getString(C3630R.string.cryptobox_participation_chat_unavailable);
+                    message = resourceManager2.getString(C3634R.string.cryptobox_participation_chat_unavailable);
                 } else if (message == null) {
                     resourceManager = CryptoBoxConditionsPresenter.this.resourceManager;
-                    message = resourceManager.getString(C3630R.string.common_error_unexpected);
+                    message = resourceManager.getString(C3634R.string.common_error_unexpected);
                 }
                 cryptoBoxConditionsView.showToast(message);
             }

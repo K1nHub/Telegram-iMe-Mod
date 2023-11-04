@@ -41,7 +41,7 @@ public final class UtilsModuleKt {
             List emptyList2;
             List emptyList3;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C13441 c13441 = new Function2<Scope, ParametersHolder, RxEventBus>() { // from class: com.iMe.di.module.UtilsModuleKt$presentationUtilsModule$1.1
+            C13501 c13501 = new Function2<Scope, ParametersHolder, RxEventBus>() { // from class: com.iMe.di.module.UtilsModuleKt$presentationUtilsModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final RxEventBus invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -53,13 +53,13 @@ public final class UtilsModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(RxEventBus.class), null, c13441, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(RxEventBus.class), null, c13501, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C13452 c13452 = new Function2<Scope, ParametersHolder, ActionGateway>() { // from class: com.iMe.di.module.UtilsModuleKt$presentationUtilsModule$1.2
+            C13512 c13512 = new Function2<Scope, ParametersHolder, ActionGateway>() { // from class: com.iMe.di.module.UtilsModuleKt$presentationUtilsModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final ActionGateway invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -69,13 +69,13 @@ public final class UtilsModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(ActionGateway.class), null, c13452, kind, emptyList2));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(ActionGateway.class), null, c13512, kind, emptyList2));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
-            C13463 c13463 = new Function2<Scope, ParametersHolder, CustomPriceValidator>() { // from class: com.iMe.di.module.UtilsModuleKt$presentationUtilsModule$1.3
+            C13523 c13523 = new Function2<Scope, ParametersHolder, CustomPriceValidator>() { // from class: com.iMe.di.module.UtilsModuleKt$presentationUtilsModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final CustomPriceValidator invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -85,7 +85,7 @@ public final class UtilsModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(CustomPriceValidator.class), null, c13463, kind, emptyList3));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(CustomPriceValidator.class), null, c13523, kind, emptyList3));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);

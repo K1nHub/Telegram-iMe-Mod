@@ -11,9 +11,9 @@ import kotlinx.serialization.internal.ByteArraySerializer;
 import kotlinx.serialization.internal.PluginExceptionsKt;
 import kotlinx.serialization.internal.SerializationConstructorMarker;
 import kotlinx.serialization.json.JsonClassDiscriminator;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: AdnlAddress.kt */
 @JsonClassDiscriminator(discriminator = "@type")
 @Serializable
@@ -22,7 +22,7 @@ public final class AdnlAddressUdp6 implements AdnlAddress {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: ip */
-    private final byte[] f2014ip;
+    private final byte[] f2026ip;
     private final int port;
 
     public boolean equals(Object obj) {
@@ -31,30 +31,30 @@ public final class AdnlAddressUdp6 implements AdnlAddress {
         }
         if (obj instanceof AdnlAddressUdp6) {
             AdnlAddressUdp6 adnlAddressUdp6 = (AdnlAddressUdp6) obj;
-            return Intrinsics.areEqual(this.f2014ip, adnlAddressUdp6.f2014ip) && this.port == adnlAddressUdp6.port;
+            return Intrinsics.areEqual(this.f2026ip, adnlAddressUdp6.f2026ip) && this.port == adnlAddressUdp6.port;
         }
         return false;
     }
 
     public int hashCode() {
-        return (Arrays.hashCode(this.f2014ip) * 31) + this.port;
+        return (Arrays.hashCode(this.f2026ip) * 31) + this.port;
     }
 
     public String toString() {
-        return "AdnlAddressUdp6(ip=" + Arrays.toString(this.f2014ip) + ", port=" + this.port + ')';
+        return "AdnlAddressUdp6(ip=" + Arrays.toString(this.f2026ip) + ", port=" + this.port + ')';
     }
 
     public /* synthetic */ AdnlAddressUdp6(int i, byte[] bArr, int i2, SerializationConstructorMarker serializationConstructorMarker) {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, AdnlAddressUdp6$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2014ip = bArr;
+        this.f2026ip = bArr;
         this.port = i2;
     }
 
     public AdnlAddressUdp6(byte[] ip, int i) {
         Intrinsics.checkNotNullParameter(ip, "ip");
-        this.f2014ip = ip;
+        this.f2026ip = ip;
         this.port = i;
     }
 
@@ -64,7 +64,7 @@ public final class AdnlAddressUdp6 implements AdnlAddress {
     }
 
     public byte[] getIp() {
-        return this.f2014ip;
+        return this.f2026ip;
     }
 
     public int getPort() {
@@ -86,13 +86,13 @@ public final class AdnlAddressUdp6 implements AdnlAddress {
             return AdnlAddressUdp6$$serializer.INSTANCE;
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public AdnlAddressUdp6 decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return new AdnlAddressUdp6(reader.readRaw(16), reader.readInt());
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, AdnlAddressUdp6 value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");

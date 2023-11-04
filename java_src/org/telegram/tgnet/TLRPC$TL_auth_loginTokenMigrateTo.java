@@ -1,7 +1,6 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_auth_loginTokenMigrateTo extends TLRPC$auth_LoginToken {
-    public static int constructor = 110008598;
     public int dc_id;
     public byte[] token;
 
@@ -13,7 +12,7 @@ public class TLRPC$TL_auth_loginTokenMigrateTo extends TLRPC$auth_LoginToken {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(110008598);
         abstractSerializedData.writeInt32(this.dc_id);
         abstractSerializedData.writeByteArray(this.token);
     }

@@ -18,10 +18,10 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.RLottieImageView;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: FloatingActionButton.kt */
 /* renamed from: com.iMe.fork.ui.view.FloatingActionButton */
 /* loaded from: classes3.dex */
@@ -75,7 +75,7 @@ public final class FloatingActionButton extends FrameLayout {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(AndroidUtilities.m102dp(4));
+                return Float.valueOf(AndroidUtilities.m104dp(4));
             }
         });
         this.translationZDefault$delegate = lazy2;
@@ -83,7 +83,7 @@ public final class FloatingActionButton extends FrameLayout {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(AndroidUtilities.m102dp(2));
+                return Float.valueOf(AndroidUtilities.m104dp(2));
             }
         });
         this.translationZPressed$delegate = lazy3;
@@ -91,7 +91,7 @@ public final class FloatingActionButton extends FrameLayout {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
-                return Integer.valueOf(AndroidUtilities.m102dp(56));
+                return Integer.valueOf(AndroidUtilities.m104dp(56));
             }
         });
         this.buttonSize$delegate = lazy4;
@@ -99,7 +99,7 @@ public final class FloatingActionButton extends FrameLayout {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
-                return Integer.valueOf(AndroidUtilities.m102dp(24));
+                return Integer.valueOf(AndroidUtilities.m104dp(24));
             }
         });
         this.loadingAnimationSize$delegate = lazy5;
@@ -159,7 +159,7 @@ public final class FloatingActionButton extends FrameLayout {
         RLottieImageView iconView = getIconView();
         if (this.isLoading) {
             iconView.setAutoRepeat(true);
-            iconView.setAnimation(C3630R.raw.fork_state_progress, getLoadingAnimationSize(), getLoadingAnimationSize());
+            iconView.setAnimation(C3634R.raw.fork_state_progress, getLoadingAnimationSize(), getLoadingAnimationSize());
             iconView.playAnimation();
             return;
         }

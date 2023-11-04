@@ -39,20 +39,20 @@ import kotlin.reflect.jvm.internal.impl.types.typeUtil.TypeUtilsKt;
 public final class FunctionTypesKt {
     public static final boolean isFunctionType(KotlinType kotlinType) {
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        ClassifierDescriptor mo2046getDeclarationDescriptor = kotlinType.getConstructor().mo2046getDeclarationDescriptor();
-        return (mo2046getDeclarationDescriptor != null ? getFunctionalClassKind(mo2046getDeclarationDescriptor) : null) == FunctionClassKind.Function;
+        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
+        return (mo2051getDeclarationDescriptor != null ? getFunctionalClassKind(mo2051getDeclarationDescriptor) : null) == FunctionClassKind.Function;
     }
 
     public static final boolean isSuspendFunctionType(KotlinType kotlinType) {
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        ClassifierDescriptor mo2046getDeclarationDescriptor = kotlinType.getConstructor().mo2046getDeclarationDescriptor();
-        return (mo2046getDeclarationDescriptor != null ? getFunctionalClassKind(mo2046getDeclarationDescriptor) : null) == FunctionClassKind.SuspendFunction;
+        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
+        return (mo2051getDeclarationDescriptor != null ? getFunctionalClassKind(mo2051getDeclarationDescriptor) : null) == FunctionClassKind.SuspendFunction;
     }
 
     public static final boolean isBuiltinFunctionalType(KotlinType kotlinType) {
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        ClassifierDescriptor mo2046getDeclarationDescriptor = kotlinType.getConstructor().mo2046getDeclarationDescriptor();
-        return mo2046getDeclarationDescriptor != null && isBuiltinFunctionalClassDescriptor(mo2046getDeclarationDescriptor);
+        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
+        return mo2051getDeclarationDescriptor != null && isBuiltinFunctionalClassDescriptor(mo2051getDeclarationDescriptor);
     }
 
     public static final boolean isBuiltinFunctionalClassDescriptor(DeclarationDescriptor declarationDescriptor) {
@@ -67,7 +67,7 @@ public final class FunctionTypesKt {
     }
 
     private static final boolean isTypeAnnotatedWithExtensionFunctionType(KotlinType kotlinType) {
-        return kotlinType.getAnnotations().mo2041findAnnotation(StandardNames.FqNames.extensionFunctionType) != null;
+        return kotlinType.getAnnotations().mo2046findAnnotation(StandardNames.FqNames.extensionFunctionType) != null;
     }
 
     public static final FunctionClassKind getFunctionalClassKind(DeclarationDescriptor declarationDescriptor) {
@@ -92,11 +92,11 @@ public final class FunctionTypesKt {
 
     public static final int contextFunctionTypeParamsCount(KotlinType kotlinType) {
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        AnnotationDescriptor mo2041findAnnotation = kotlinType.getAnnotations().mo2041findAnnotation(StandardNames.FqNames.contextFunctionTypeParams);
-        if (mo2041findAnnotation == null) {
+        AnnotationDescriptor mo2046findAnnotation = kotlinType.getAnnotations().mo2046findAnnotation(StandardNames.FqNames.contextFunctionTypeParams);
+        if (mo2046findAnnotation == null) {
             return 0;
         }
-        ConstantValue constantValue = (ConstantValue) MapsKt.getValue(mo2041findAnnotation.getAllValueArguments(), StandardNames.CONTEXT_FUNCTION_TYPE_PARAMETER_COUNT_NAME);
+        ConstantValue constantValue = (ConstantValue) MapsKt.getValue(mo2046findAnnotation.getAllValueArguments(), StandardNames.CONTEXT_FUNCTION_TYPE_PARAMETER_COUNT_NAME);
         Intrinsics.checkNotNull(constantValue, "null cannot be cast to non-null type org.jetbrains.kotlin.resolve.constants.IntValue");
         return ((IntValue) constantValue).getValue().intValue();
     }
@@ -149,11 +149,11 @@ public final class FunctionTypesKt {
     public static final Name extractParameterNameFromFunctionTypeArgument(KotlinType kotlinType) {
         String value;
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        AnnotationDescriptor mo2041findAnnotation = kotlinType.getAnnotations().mo2041findAnnotation(StandardNames.FqNames.parameterName);
-        if (mo2041findAnnotation == null) {
+        AnnotationDescriptor mo2046findAnnotation = kotlinType.getAnnotations().mo2046findAnnotation(StandardNames.FqNames.parameterName);
+        if (mo2046findAnnotation == null) {
             return null;
         }
-        Object singleOrNull = CollectionsKt.singleOrNull(mo2041findAnnotation.getAllValueArguments().values());
+        Object singleOrNull = CollectionsKt.singleOrNull(mo2046findAnnotation.getAllValueArguments().values());
         StringValue stringValue = singleOrNull instanceof StringValue ? (StringValue) singleOrNull : null;
         if (stringValue != null && (value = stringValue.getValue()) != null) {
             if (!Name.isValidIdentifier(value)) {
@@ -195,7 +195,7 @@ public final class FunctionTypesKt {
                 Name identifier = Name.identifier(AppMeasurementSdk.ConditionalUserProperty.NAME);
                 String asString = name.asString();
                 Intrinsics.checkNotNullExpressionValue(asString, "name.asString()");
-                mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m144to(identifier, new StringValue(asString)));
+                mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m146to(identifier, new StringValue(asString)));
                 BuiltInAnnotationDescriptor builtInAnnotationDescriptor = new BuiltInAnnotationDescriptor(builtIns, fqName, mapOf);
                 Annotations.Companion companion = Annotations.Companion;
                 plus = CollectionsKt___CollectionsKt.plus(kotlinType3.getAnnotations(), builtInAnnotationDescriptor);
@@ -250,7 +250,7 @@ public final class FunctionTypesKt {
             return annotations;
         }
         Annotations.Companion companion = Annotations.Companion;
-        mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m144to(StandardNames.CONTEXT_FUNCTION_TYPE_PARAMETER_COUNT_NAME, new IntValue(i)));
+        mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m146to(StandardNames.CONTEXT_FUNCTION_TYPE_PARAMETER_COUNT_NAME, new IntValue(i)));
         plus = CollectionsKt___CollectionsKt.plus(annotations, new BuiltInAnnotationDescriptor(builtIns, fqName, mapOf));
         return companion.create(plus);
     }

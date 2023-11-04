@@ -33,12 +33,12 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements TypeAdapterF
     }
 
     /* renamed from: of */
-    public static <T> RuntimeClassNameTypeAdapterFactory<T> m92of(Class<T> cls, String str, ExclusionStrategy exclusionStrategy) {
+    public static <T> RuntimeClassNameTypeAdapterFactory<T> m93of(Class<T> cls, String str, ExclusionStrategy exclusionStrategy) {
         return new RuntimeClassNameTypeAdapterFactory<>(cls, str, exclusionStrategy);
     }
 
     /* renamed from: of */
-    public static <T> RuntimeClassNameTypeAdapterFactory<T> m93of(Class<T> cls) {
+    public static <T> RuntimeClassNameTypeAdapterFactory<T> m94of(Class<T> cls) {
         return new RuntimeClassNameTypeAdapterFactory<>(cls, "class", null);
     }
 

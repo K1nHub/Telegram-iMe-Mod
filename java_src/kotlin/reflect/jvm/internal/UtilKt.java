@@ -291,9 +291,9 @@ public final class UtilKt {
             ClassLoader classLoader = javaClass.getClassLoader();
             Intrinsics.checkNotNullExpressionValue(classLoader, "annotationClass.classLoader");
             Object runtimeValue = toRuntimeValue((ConstantValue) entry.getValue(), classLoader);
-            Pair m144to = runtimeValue != null ? TuplesKt.m144to(name.asString(), runtimeValue) : null;
-            if (m144to != null) {
-                arrayList.add(m144to);
+            Pair m146to = runtimeValue != null ? TuplesKt.m146to(name.asString(), runtimeValue) : null;
+            if (m146to != null) {
+                arrayList.add(m146to);
             }
         }
         map = MapsKt__MapsKt.toMap(arrayList);
@@ -321,8 +321,8 @@ public final class UtilKt {
                 KClassValue.Value.NormalClass normalClass = (KClassValue.Value.NormalClass) value2;
                 return loadClass(classLoader, normalClass.getClassId(), normalClass.getArrayDimensions());
             } else if (value2 instanceof KClassValue.Value.LocalClass) {
-                ClassifierDescriptor mo2046getDeclarationDescriptor = ((KClassValue.Value.LocalClass) value2).getType().getConstructor().mo2046getDeclarationDescriptor();
-                ClassDescriptor classDescriptor = mo2046getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2046getDeclarationDescriptor : null;
+                ClassifierDescriptor mo2051getDeclarationDescriptor = ((KClassValue.Value.LocalClass) value2).getType().getConstructor().mo2051getDeclarationDescriptor();
+                ClassDescriptor classDescriptor = mo2051getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2051getDeclarationDescriptor : null;
                 if (classDescriptor != null) {
                     return toJavaClass(classDescriptor);
                 }

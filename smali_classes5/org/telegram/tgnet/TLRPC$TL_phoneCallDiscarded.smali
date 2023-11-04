@@ -3,21 +3,11 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x50ca4de1
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 23791
+    .line 23657
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$PhoneCall;-><init>()V
 
     return-void
@@ -28,7 +18,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 23796
+    .line 23662
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -50,7 +40,7 @@
     :cond_0
     move v1, v2
 
-    .line 23797
+    .line 23663
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->need_rating:Z
 
@@ -65,7 +55,7 @@
     :cond_1
     move v1, v2
 
-    .line 23798
+    .line 23664
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->need_debug:Z
 
@@ -75,25 +65,25 @@
 
     move v2, v3
 
-    .line 23799
+    .line 23665
     :cond_2
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->video:Z
 
-    .line 23800
+    .line 23666
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->id:J
 
-    .line 23801
+    .line 23667
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->flags:I
 
     and-int/2addr v0, v3
 
     if-eqz v0, :cond_3
 
-    .line 23802
+    .line 23668
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -104,7 +94,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->reason:Lorg/telegram/tgnet/TLRPC$PhoneCallDiscardReason;
 
-    .line 23804
+    .line 23670
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->flags:I
 
@@ -112,7 +102,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 23805
+    .line 23671
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -126,12 +116,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 23810
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_phoneCallDiscarded;->constructor:I
+    const v0, 0x50ca4de1
 
+    .line 23676
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 23811
+    .line 23677
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->need_rating:Z
 
     if-eqz v0, :cond_0
@@ -150,7 +140,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->flags:I
 
-    .line 23812
+    .line 23678
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->need_debug:Z
 
     if-eqz v1, :cond_1
@@ -165,7 +155,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->flags:I
 
-    .line 23813
+    .line 23679
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->video:Z
 
     if-eqz v1, :cond_2
@@ -180,27 +170,27 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->flags:I
 
-    .line 23814
+    .line 23680
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 23815
+    .line 23681
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 23816
+    .line 23682
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_3
 
-    .line 23817
+    .line 23683
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->reason:Lorg/telegram/tgnet/TLRPC$PhoneCallDiscardReason;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 23819
+    .line 23685
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->flags:I
 
@@ -208,7 +198,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 23820
+    .line 23686
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PhoneCall;->duration:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

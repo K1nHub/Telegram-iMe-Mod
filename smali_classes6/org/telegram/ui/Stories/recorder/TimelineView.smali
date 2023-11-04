@@ -212,10 +212,10 @@
 
     move-object/from16 v9, p5
 
-    .line 161
+    .line 160
     invoke-direct/range {p0 .. p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 112
+    .line 111
     new-instance v7, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v10, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -234,7 +234,7 @@
 
     iput-object v7, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 113
+    .line 112
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v1, 0x168
@@ -243,7 +243,7 @@
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelectedT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 115
+    .line 114
     new-instance v7, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v2, 0x0
@@ -258,7 +258,7 @@
 
     iput-object v7, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformLoaded:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 116
+    .line 115
     new-instance v7, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v4, 0x168
@@ -269,14 +269,14 @@
 
     iput-object v7, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformMax:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 123
+    .line 122
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoBounds:Landroid/graphics/RectF;
 
-    .line 124
+    .line 123
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v11, 0x3
@@ -285,21 +285,21 @@
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoFramePaint:Landroid/graphics/Paint;
 
-    .line 125
+    .line 124
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoClipPath:Landroid/graphics/Path;
 
-    .line 126
+    .line 125
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->selectedVideoClipPath:Landroid/graphics/Path;
 
-    .line 128
+    .line 127
     new-instance v12, Landroid/graphics/Paint;
 
     const/4 v13, 0x1
@@ -308,84 +308,84 @@
 
     iput-object v12, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->regionPaint:Landroid/graphics/Paint;
 
-    .line 129
+    .line 128
     new-instance v14, Landroid/graphics/Paint;
 
     invoke-direct {v14, v13}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v14, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->regionCutPaint:Landroid/graphics/Paint;
 
-    .line 130
+    .line 129
     new-instance v15, Landroid/graphics/Paint;
 
     invoke-direct {v15, v13}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v15, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->regionHandlePaint:Landroid/graphics/Paint;
 
-    .line 131
+    .line 130
     new-instance v7, Landroid/graphics/Paint;
 
     invoke-direct {v7, v13}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v7, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->progressShadowPaint:Landroid/graphics/Paint;
 
-    .line 132
+    .line 131
     new-instance v5, Landroid/graphics/Paint;
 
     invoke-direct {v5, v13}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v5, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->progressWhitePaint:Landroid/graphics/Paint;
 
-    .line 134
+    .line 133
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioBounds:Landroid/graphics/RectF;
 
-    .line 135
+    .line 134
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioClipPath:Landroid/graphics/Path;
 
-    .line 136
+    .line 135
     new-instance v6, Landroid/graphics/Paint;
 
     invoke-direct {v6, v13}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v6, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformPaint:Landroid/graphics/Paint;
 
-    .line 137
+    .line 136
     new-instance v0, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;
 
     invoke-direct {v0, v8}, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;-><init>(Lorg/telegram/ui/Stories/recorder/TimelineView;)V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformPath:Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;
 
-    .line 139
+    .line 138
     new-instance v3, Landroid/graphics/Paint;
 
     invoke-direct {v3, v13}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v3, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDotPaint:Landroid/graphics/Paint;
 
-    .line 141
+    .line 140
     new-instance v4, Landroid/text/TextPaint;
 
     invoke-direct {v4, v13}, Landroid/text/TextPaint;-><init>(I)V
 
     iput-object v4, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioAuthorPaint:Landroid/text/TextPaint;
 
-    .line 144
+    .line 143
     new-instance v2, Landroid/text/TextPaint;
 
     invoke-direct {v2, v13}, Landroid/text/TextPaint;-><init>(I)V
 
     iput-object v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioTitlePaint:Landroid/text/TextPaint;
 
-    .line 148
+    .line 147
     new-instance v1, Landroid/graphics/LinearGradient;
 
     const/4 v0, 0x2
@@ -418,21 +418,21 @@
 
     iput-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ellipsizeGradient:Landroid/graphics/LinearGradient;
 
-    .line 149
+    .line 148
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ellipsizeMatrix:Landroid/graphics/Matrix;
 
-    .line 150
+    .line 149
     new-instance v11, Landroid/graphics/Paint;
 
     invoke-direct {v11, v13}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v11, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ellipsizePaint:Landroid/graphics/Paint;
 
-    .line 152
+    .line 151
     new-instance v0, Lorg/telegram/ui/Components/Scroller;
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
@@ -507,29 +507,29 @@
 
     new-array v3, v2, [F
 
-    .line 936
+    .line 951
     iput-object v3, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->selectedVideoRadii:[F
 
     new-array v2, v2, [F
 
-    .line 937
+    .line 952
     iput-object v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformRadii:[F
 
     move-object/from16 v3, p4
 
-    .line 165
+    .line 164
     iput-object v3, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     const v2, 0x7fffffff
 
     move-object/from16 v4, v26
 
-    .line 167
+    .line 166
     invoke-virtual {v4, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     const/16 v2, 0xc
 
-    .line 168
+    .line 167
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -542,17 +542,17 @@
 
     const-string v4, "fonts/rmedium.ttf"
 
-    .line 169
+    .line 168
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v4
 
     invoke-virtual {v5, v4}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 170
+    .line 169
     invoke-virtual {v5, v0}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 171
+    .line 170
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -563,22 +563,22 @@
 
     invoke-virtual {v4, v2}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 172
+    .line 171
     invoke-virtual {v4, v0}, Landroid/text/TextPaint;->setColor(I)V
 
     const v2, 0x40ffffff    # 7.9999995f
 
     move-object/from16 v4, v29
 
-    .line 173
+    .line 172
     invoke-virtual {v4, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     move-object/from16 v2, v24
 
-    .line 175
+    .line 174
     invoke-virtual {v11, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 176
+    .line 175
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v4, Landroid/graphics/PorterDuff$Mode;->DST_OUT:Landroid/graphics/PorterDuff$Mode;
@@ -587,12 +587,12 @@
 
     invoke-virtual {v11, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 178
+    .line 177
     invoke-virtual {v12, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     const/4 v2, 0x1
 
-    .line 179
+    .line 178
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -611,7 +611,7 @@
 
     invoke-virtual {v12, v4, v5, v2, v6}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
-    .line 180
+    .line 179
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
 
     sget-object v4, Landroid/graphics/PorterDuff$Mode;->CLEAR:Landroid/graphics/PorterDuff$Mode;
@@ -622,20 +622,20 @@
 
     const/high16 v2, -0x1000000
 
-    .line 181
+    .line 180
     invoke-virtual {v15, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     move-object/from16 v2, v28
 
-    .line 182
+    .line 181
     invoke-virtual {v2, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     const/high16 v2, 0x26000000
 
-    .line 183
+    .line 182
     invoke-virtual {v9, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 185
+    .line 184
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -656,7 +656,7 @@
 
     iput-object v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 186
+    .line 185
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v5, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -665,7 +665,7 @@
 
     invoke-virtual {v2, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 189
+    .line 188
     new-instance v0, Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
     move-object/from16 v4, p5
@@ -674,7 +674,7 @@
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->backgroundBlur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
-    .line 190
+    .line 189
     new-instance v0, Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
     const/4 v1, 0x3
@@ -683,7 +683,7 @@
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioBlur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
-    .line 191
+    .line 190
     new-instance v0, Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
     const/4 v1, 0x4
@@ -692,7 +692,7 @@
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioWaveformBlur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
-    .line 193
+    .line 192
     new-instance v6, Lorg/telegram/ui/Stories/recorder/TimelineView$$ExternalSyntheticLambda2;
 
     move-object v0, v6
@@ -725,7 +725,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Stories/recorder/TimelineView;)Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;
     .locals 0
 
-    .line 55
+    .line 54
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveform:Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;
 
     return-object p0
@@ -734,7 +734,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Stories/recorder/TimelineView;)Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;
     .locals 0
 
-    .line 55
+    .line 54
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformPath:Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;
 
     return-object p0
@@ -743,7 +743,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Stories/recorder/TimelineView;)I
     .locals 0
 
-    .line 55
+    .line 54
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
 
     return p0
@@ -752,7 +752,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Stories/recorder/TimelineView;)Z
     .locals 0
 
-    .line 55
+    .line 54
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
 
     return p0
@@ -761,7 +761,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/Stories/recorder/TimelineView;)J
     .locals 2
 
-    .line 55
+    .line 54
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
 
     return-wide v0
@@ -1376,7 +1376,7 @@
 .method private drawProgress(Landroid/graphics/Canvas;FFJF)V
     .locals 8
 
-    .line 1251
+    .line 1266
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
 
     move-result-wide v0
@@ -1387,7 +1387,7 @@
 
     move-result-wide v0
 
-    .line 1253
+    .line 1268
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
 
     move-result-wide v4
@@ -1424,7 +1424,7 @@
 
     div-float/2addr p4, p5
 
-    .line 1254
+    .line 1269
     iget p5, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
 
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
@@ -1459,7 +1459,7 @@
 
     sub-float/2addr p3, p4
 
-    .line 1259
+    .line 1274
     iget-object p4, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progressShadowPaint:Landroid/graphics/Paint;
 
     const/high16 v0, 0x42180000    # 38.0f
@@ -1470,7 +1470,7 @@
 
     invoke-virtual {p4, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1260
+    .line 1275
     iget-object p4, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progressWhitePaint:Landroid/graphics/Paint;
 
     const/high16 v0, 0x437f0000    # 255.0f
@@ -1481,7 +1481,7 @@
 
     invoke-virtual {p4, p6}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1262
+    .line 1277
     sget-object p4, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/high16 p6, 0x3fc00000    # 1.5f
@@ -1502,7 +1502,7 @@
 
     const v0, 0x3f28f5c3    # 0.66f
 
-    .line 1263
+    .line 1278
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v1
@@ -1519,7 +1519,7 @@
 
     const/4 v0, 0x6
 
-    .line 1264
+    .line 1279
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1536,7 +1536,7 @@
 
     invoke-virtual {p1, p4, v1, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1265
+    .line 1280
     invoke-static {p6}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v1
@@ -1551,7 +1551,7 @@
 
     invoke-virtual {p4, v1, p2, p5, p3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1266
+    .line 1281
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -1590,7 +1590,7 @@
 
     return-void
 
-    .line 1213
+    .line 1228
     :cond_0
     sget-object v11, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
@@ -1618,7 +1618,7 @@
 
     const/4 v3, 0x0
 
-    .line 1214
+    .line 1229
     iget v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->w:I
 
     int-to-float v4, v1
@@ -1635,7 +1635,7 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 1215
+    .line 1230
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->regionPaint:Landroid/graphics/Paint;
 
     const/high16 v2, 0x437f0000    # 255.0f
@@ -1648,7 +1648,7 @@
 
     const/4 v1, 0x6
 
-    .line 1216
+    .line 1231
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -1665,7 +1665,7 @@
 
     invoke-virtual {p1, v11, v3, v1, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1217
+    .line 1232
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1682,12 +1682,12 @@
 
     invoke-virtual {v11, v1, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 1218
+    .line 1233
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->regionCutPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v11, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 1220
+    .line 1235
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1706,11 +1706,11 @@
 
     goto :goto_0
 
-    .line 1221
+    .line 1236
     :cond_1
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->regionHandlePaint:Landroid/graphics/Paint;
 
-    .line 1222
+    .line 1237
     :goto_0
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->regionHandlePaint:Landroid/graphics/Paint;
 
@@ -1718,10 +1718,10 @@
 
     invoke-virtual {v5, v6}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1223
+    .line 1238
     invoke-virtual {v4, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1225
+    .line 1240
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1742,7 +1742,7 @@
 
     div-float/2addr v7, v5
 
-    .line 1227
+    .line 1242
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -1759,12 +1759,12 @@
 
     div-float/2addr v6, v5
 
-    .line 1224
+    .line 1239
     invoke-virtual {v11, v2, v7, v9, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
     const/4 v2, 0x1
 
-    .line 1230
+    .line 1245
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -1783,7 +1783,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 1232
+    .line 1247
     iget-object v9, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->regionHandlePaint:Landroid/graphics/Paint;
 
     mul-float v10, p7, v3
@@ -1792,7 +1792,7 @@
 
     invoke-virtual {v9, v10}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1233
+    .line 1248
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -1809,7 +1809,7 @@
 
     invoke-virtual {p1, v11, v9, v10, v13}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1236
+    .line 1251
     :cond_2
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1823,7 +1823,7 @@
 
     add-float v9, p6, v9
 
-    .line 1238
+    .line 1253
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -1836,10 +1836,10 @@
 
     add-float v1, p6, v10
 
-    .line 1235
+    .line 1250
     invoke-virtual {v11, v9, v7, v1, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1241
+    .line 1256
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1856,7 +1856,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 1243
+    .line 1258
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->regionHandlePaint:Landroid/graphics/Paint;
 
     mul-float v3, v3, p7
@@ -1865,7 +1865,7 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1244
+    .line 1259
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1882,7 +1882,7 @@
 
     invoke-virtual {p1, v11, v1, v2, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1247
+    .line 1262
     :cond_3
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -1926,23 +1926,23 @@
 .method private getBaseDuration()J
     .locals 4
 
-    .line 103
+    .line 102
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
 
     if-eqz v0, :cond_0
 
-    .line 104
+    .line 103
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
 
     return-wide v0
 
-    .line 106
+    .line 105
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasAudio:Z
 
     if-eqz v0, :cond_1
 
-    .line 107
+    .line 106
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
 
     return-wide v0
@@ -1950,7 +1950,7 @@
     :cond_1
     const-wide/16 v0, 0x1
 
-    .line 109
+    .line 108
     iget-wide v2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
 
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->max(JJ)J
@@ -2050,9 +2050,9 @@
 .end method
 
 .method private synthetic lambda$new$2(Landroid/view/ViewGroup;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/BlurringShader$BlurManager;Landroid/view/View;)V
-    .locals 9
+    .locals 10
 
-    .line 194
+    .line 193
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->pressVideo:Z
 
     if-nez v0, :cond_2
@@ -2061,20 +2061,31 @@
 
     if-eqz v0, :cond_2
 
-    .line 195
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/VolumeSliderView;
+    .line 194
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/SliderView;
 
-    .line 196
+    .line 195
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-direct {v0, v1}, Lorg/telegram/ui/Stories/recorder/VolumeSliderView;-><init>(Landroid/content/Context;)V
+    const/4 v2, 0x0
+
+    invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/SliderView;-><init>(Landroid/content/Context;I)V
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioVolume:F
 
+    .line 196
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/SliderView;->setValue(F)Lorg/telegram/ui/Stories/recorder/SliderView;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    const/high16 v3, 0x3fc00000    # 1.5f
+
     .line 197
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/VolumeSliderView;->setVolume(F)Lorg/telegram/ui/Stories/recorder/VolumeSliderView;
+    invoke-virtual {v0, v1, v3}, Lorg/telegram/ui/Stories/recorder/SliderView;->setMinMax(FF)Lorg/telegram/ui/Stories/recorder/SliderView;
 
     move-result-object v0
 
@@ -2083,81 +2094,81 @@
     invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/TimelineView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Stories/recorder/TimelineView;)V
 
     .line 198
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/VolumeSliderView;->setOnValueChange(Lorg/telegram/messenger/Utilities$Callback;)Lorg/telegram/ui/Stories/recorder/VolumeSliderView;
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/SliderView;->setOnValueChange(Lorg/telegram/messenger/Utilities$Callback;)Lorg/telegram/ui/Stories/recorder/SliderView;
 
     move-result-object v0
 
     .line 204
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
 
-    move-result-wide v1
+    move-result-wide v3
 
-    const-wide/32 v3, 0x1d4c0
+    const-wide/32 v5, 0x1d4c0
 
-    invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v3, v4, v5, v6}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v1
+    move-result-wide v3
 
     .line 205
-    iget v3, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->w:I
+    iget v1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->w:I
 
-    iget v4, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
+    iget v5, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
 
-    sub-int/2addr v3, v4
+    sub-int/2addr v1, v5
 
-    iget v5, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
+    iget v6, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
 
-    sub-int/2addr v3, v5
-
-    int-to-float v3, v3
-
-    add-int/2addr v4, v5
-
-    int-to-float v4, v4
-
-    iget-wide v5, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
-
-    iget-wide v7, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scroll:J
-
-    sub-long/2addr v5, v7
-
-    long-to-float v5, v5
-
-    iget v6, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
-
-    const/high16 v7, 0x3f800000    # 1.0f
-
-    iget-object v8, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelectedT:Lorg/telegram/ui/Components/AnimatedFloat;
-
-    invoke-virtual {v8}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
-
-    move-result v8
-
-    invoke-static {v6, v7, v8}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
-
-    move-result v6
-
-    iget-wide v7, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
-
-    long-to-float v7, v7
-
-    mul-float/2addr v6, v7
-
-    add-float/2addr v5, v6
-
-    long-to-float v1, v1
-
-    div-float/2addr v5, v1
-
-    iget v1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->sw:I
+    sub-int/2addr v1, v6
 
     int-to-float v1, v1
 
-    mul-float/2addr v5, v1
+    add-int/2addr v5, v6
 
-    add-float/2addr v4, v5
+    int-to-float v5, v5
 
-    invoke-static {v3, v4}, Ljava/lang/Math;->min(FF)F
+    iget-wide v6, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
+
+    iget-wide v8, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scroll:J
+
+    sub-long/2addr v6, v8
+
+    long-to-float v6, v6
+
+    iget v7, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
+
+    const/high16 v8, 0x3f800000    # 1.0f
+
+    iget-object v9, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelectedT:Lorg/telegram/ui/Components/AnimatedFloat;
+
+    invoke-virtual {v9}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
+
+    move-result v9
+
+    invoke-static {v7, v8, v9}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
+
+    move-result v7
+
+    iget-wide v8, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+
+    long-to-float v8, v8
+
+    mul-float/2addr v7, v8
+
+    add-float/2addr v6, v7
+
+    long-to-float v3, v3
+
+    div-float/2addr v6, v3
+
+    iget v3, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->sw:I
+
+    int-to-float v3, v3
+
+    mul-float/2addr v6, v3
+
+    add-float/2addr v5, v6
+
+    invoke-static {v1, v5}, Ljava/lang/Math;->min(FF)F
 
     move-result v1
 
@@ -2185,11 +2196,11 @@
 
     move-result-object v0
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/TimelineView$$ExternalSyntheticLambda0;
+    new-instance v3, Lorg/telegram/ui/Stories/recorder/TimelineView$$ExternalSyntheticLambda0;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/TimelineView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/TimelineView;)V
+    invoke-direct {v3, p0}, Lorg/telegram/ui/Stories/recorder/TimelineView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/TimelineView;)V
 
-    invoke-virtual {p1, p2, v0, v2}, Lorg/telegram/ui/Components/ItemOptions;->add(ILjava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/ItemOptions;
+    invoke-virtual {p1, p2, v0, v3}, Lorg/telegram/ui/Components/ItemOptions;->add(ILjava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/ItemOptions;
 
     move-result-object p1
 
@@ -2232,35 +2243,33 @@
 
     move-result v1
 
-    iget-boolean v2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
+    iget-boolean v3, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
 
-    const/4 v3, 0x0
+    if-nez v3, :cond_1
 
-    if-nez v2, :cond_1
+    iget-boolean v3, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelected:Z
 
-    iget-boolean v2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelected:Z
+    if-eqz v3, :cond_0
 
-    if-eqz v2, :cond_0
-
-    const/16 v2, 0x23
+    const/16 v3, 0x23
 
     goto :goto_0
 
     :cond_0
-    const/16 v2, 0x28
+    const/16 v3, 0x28
 
     :goto_0
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v2
+    move-result v3
 
     goto :goto_1
 
     :cond_1
-    move v2, v3
+    move v3, v2
 
     :goto_1
-    add-int/2addr v1, v2
+    add-int/2addr v1, v3
 
     int-to-float v1, v1
 
@@ -2290,7 +2299,7 @@
 
     .line 221
     :try_start_0
-    invoke-virtual {p0, v3, p2}, Landroid/view/View;->performHapticFeedback(II)Z
+    invoke-virtual {p0, v2, p2}, Landroid/view/View;->performHapticFeedback(II)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -2319,9 +2328,19 @@
 .method private minAudioSelect()J
     .locals 4
 
-    .line 742
+    .line 748
+    iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
+
+    if-eqz v0, :cond_0
+
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
 
+    goto :goto_0
+
+    :cond_0
+    iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+
+    :goto_0
     const-wide/32 v2, 0xe678
 
     invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->min(JJ)J
@@ -2352,7 +2371,7 @@
 
     move/from16 v1, p1
 
-    .line 746
+    .line 752
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
 
     move-result-wide v2
@@ -2361,134 +2380,68 @@
 
     invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
 
-    .line 747
+    .line 753
     iget-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
 
-    const/high16 v3, 0x3f800000    # 1.0f
+    const/4 v3, 0x0
+
+    const/high16 v6, 0x3f800000    # 1.0f
 
     if-nez v2, :cond_0
 
-    .line 748
-    iget-wide v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
+    .line 754
+    iget-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
     float-to-long v1, v1
 
-    add-long v8, v6, v1
+    add-long v9, v7, v1
 
-    const-wide/16 v10, 0x0
+    const-wide/16 v11, 0x0
 
+    .line 755
     iget-wide v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
 
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
 
-    move-result-wide v6
+    move-result-wide v13
 
-    invoke-static {v6, v7, v4, v5}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v13, v14, v4, v5}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v4
 
     sub-long/2addr v1, v4
 
-    neg-long v12, v1
+    neg-long v13, v1
 
-    invoke-static/range {v8 .. v13}, Lorg/telegram/messenger/Utilities;->clamp(JJJ)J
+    invoke-static/range {v9 .. v14}, Lorg/telegram/messenger/Utilities;->clamp(JJJ)J
 
     move-result-wide v1
 
     iput-wide v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
-    goto/16 :goto_2
+    sub-long/2addr v1, v7
 
-    .line 749
-    :cond_0
-    iget-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelected:Z
+    .line 757
+    iget v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
-    if-eqz v2, :cond_5
+    long-to-float v1, v1
 
-    .line 750
-    iget v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
+    iget-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
 
-    iget-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
+    long-to-float v2, v7
 
-    long-to-float v6, v4
+    div-float v2, v1, v2
 
-    mul-float/2addr v6, v2
+    sub-float/2addr v4, v2
 
-    iget v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
-
-    iget-wide v8, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
-
-    long-to-float v10, v8
-
-    mul-float/2addr v10, v7
-
-    sub-float/2addr v6, v10
-
-    float-to-long v10, v6
-
-    .line 751
-    iget v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
-
-    long-to-float v12, v4
-
-    mul-float/2addr v12, v6
-
-    iget v13, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
-
-    long-to-float v14, v8
-
-    mul-float/2addr v14, v13
-
-    sub-float/2addr v12, v14
-
-    float-to-long v14, v12
-
-    sub-float/2addr v7, v13
-
-    sub-float/2addr v2, v6
-
-    long-to-float v4, v4
-
-    mul-float/2addr v2, v4
-
-    long-to-float v4, v8
-
-    div-float/2addr v2, v4
-
-    .line 752
-    invoke-static {v7, v2}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v4, v6, v3}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v2
 
-    .line 753
-    iget-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
+    iput v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
-    float-to-long v6, v1
-
-    add-long v8, v4, v6
-
-    cmp-long v1, v8, v10
-
-    const/4 v8, 0x0
-
-    if-lez v1, :cond_2
-
-    .line 754
-    iget v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
-
-    iget-wide v9, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
-
-    long-to-float v9, v9
-
-    mul-float/2addr v1, v9
-
-    long-to-float v4, v4
-
-    sub-float/2addr v1, v4
-
-    long-to-float v4, v6
-
-    sub-float/2addr v1, v4
+    .line 758
+    iget v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
 
     iget-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
 
@@ -2496,29 +2449,47 @@
 
     div-float/2addr v1, v4
 
-    invoke-static {v1, v3, v2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
+    sub-float/2addr v2, v1
+
+    invoke-static {v2, v6, v3}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v1
 
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
 
-    sub-float/2addr v1, v2
+    .line 759
+    iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
-    .line 755
-    invoke-static {v1, v3, v8}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
+    if-eqz v1, :cond_6
 
-    move-result v1
+    .line 760
+    iget v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
-    iput v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
+    invoke-interface {v1, v2}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onAudioLeftChange(F)V
 
-    .line 756
+    .line 761
+    iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
+
+    iget v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
+
+    invoke-interface {v1, v2}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onAudioRightChange(F)V
+
+    goto/16 :goto_2
+
+    .line 763
+    :cond_0
+    iget-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelected:Z
+
+    if-eqz v2, :cond_5
+
+    .line 764
     iget v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
 
     iget-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
 
-    long-to-float v8, v4
+    long-to-float v7, v4
 
-    mul-float/2addr v2, v8
+    mul-float/2addr v7, v2
 
     iget v8, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
 
@@ -2526,30 +2497,140 @@
 
     long-to-float v11, v9
 
-    mul-float/2addr v8, v11
+    mul-float/2addr v11, v8
 
-    sub-float/2addr v2, v8
+    sub-float/2addr v7, v11
+
+    float-to-long v11, v7
+
+    .line 765
+    iget v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
+
+    long-to-float v13, v4
+
+    mul-float/2addr v13, v7
+
+    iget v14, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
+
+    long-to-float v15, v9
+
+    mul-float/2addr v15, v14
+
+    sub-float/2addr v13, v15
+
+    move-wide/from16 v16, v4
+
+    float-to-long v3, v13
+
+    sub-float/2addr v8, v14
+
+    sub-float/2addr v2, v7
+
+    move-wide/from16 v13, v16
+
+    long-to-float v5, v13
+
+    mul-float/2addr v2, v5
+
+    long-to-float v5, v9
+
+    div-float/2addr v2, v5
+
+    .line 766
+    invoke-static {v8, v2}, Ljava/lang/Math;->min(FF)F
+
+    move-result v2
+
+    .line 767
+    iget-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
+
+    float-to-long v9, v1
+
+    add-long v13, v7, v9
+
+    cmp-long v1, v13, v11
+
+    if-lez v1, :cond_2
+
+    .line 768
+    iget v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
+
+    iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
+
+    long-to-float v3, v3
+
+    mul-float/2addr v1, v3
+
+    long-to-float v3, v7
+
+    sub-float/2addr v1, v3
+
+    long-to-float v3, v9
+
+    sub-float/2addr v1, v3
+
+    iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+
+    long-to-float v3, v3
+
+    div-float/2addr v1, v3
+
+    invoke-static {v1, v6, v2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
+
+    move-result v1
+
+    iput v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
+
+    sub-float/2addr v1, v2
+
+    const/4 v2, 0x0
+
+    .line 769
+    invoke-static {v1, v6, v2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
+
+    move-result v1
+
+    iput v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
+
+    .line 770
+    iget v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
+
+    iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
+
+    long-to-float v5, v3
+
+    mul-float/2addr v2, v5
+
+    iget v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
+
+    iget-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+
+    long-to-float v11, v7
+
+    mul-float/2addr v5, v11
+
+    sub-float/2addr v2, v5
 
     float-to-long v11, v2
 
-    .line 757
+    .line 771
     iget v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
 
-    long-to-float v4, v4
+    long-to-float v3, v3
 
-    mul-float/2addr v2, v4
+    mul-float/2addr v2, v3
 
-    long-to-float v4, v9
+    long-to-float v3, v7
 
-    mul-float/2addr v1, v4
+    mul-float/2addr v1, v3
 
     sub-float/2addr v2, v1
 
     float-to-long v1, v2
 
-    cmp-long v4, v11, v1
+    cmp-long v3, v11, v1
 
-    if-gez v4, :cond_1
+    if-gez v3, :cond_1
 
     move-wide v15, v1
 
@@ -2562,11 +2643,11 @@
 
     move-wide v15, v11
 
-    .line 763
+    .line 777
     :goto_0
     iget-wide v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
-    add-long v13, v1, v6
+    add-long v13, v1, v9
 
     invoke-static/range {v13 .. v18}, Lorg/telegram/messenger/Utilities;->clamp(JJJ)J
 
@@ -2574,17 +2655,17 @@
 
     iput-wide v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
-    .line 764
+    .line 778
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
     if-eqz v1, :cond_6
 
-    .line 765
+    .line 779
     iget v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
     invoke-interface {v1, v2}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onAudioLeftChange(F)V
 
-    .line 766
+    .line 780
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
     iget v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
@@ -2594,38 +2675,40 @@
     goto/16 :goto_2
 
     :cond_2
-    add-long v9, v4, v6
+    add-long v11, v7, v9
 
-    cmp-long v1, v9, v14
+    cmp-long v1, v11, v3
 
     if-gez v1, :cond_4
 
-    .line 769
+    .line 783
     iget v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
 
-    iget-wide v9, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
+    iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
 
-    long-to-float v9, v9
+    long-to-float v3, v3
 
-    mul-float/2addr v1, v9
+    mul-float/2addr v1, v3
 
-    long-to-float v4, v4
+    long-to-float v3, v7
 
-    sub-float/2addr v1, v4
+    sub-float/2addr v1, v3
 
-    long-to-float v4, v6
+    long-to-float v3, v9
 
-    sub-float/2addr v1, v4
+    sub-float/2addr v1, v3
 
-    iget-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+    iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
 
-    long-to-float v4, v4
+    long-to-float v3, v3
 
-    div-float/2addr v1, v4
+    div-float/2addr v1, v3
 
-    sub-float v4, v3, v2
+    sub-float v3, v6, v2
 
-    invoke-static {v1, v4, v8}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
+    const/4 v4, 0x0
+
+    invoke-static {v1, v3, v4}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v1
 
@@ -2633,87 +2716,87 @@
 
     add-float/2addr v1, v2
 
-    .line 770
-    invoke-static {v1, v3, v8}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
+    .line 784
+    invoke-static {v1, v6, v4}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v1
 
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
 
-    .line 771
+    .line 785
     iget v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
 
-    iget-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
+    iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
 
-    long-to-float v8, v4
+    long-to-float v5, v3
 
-    mul-float/2addr v2, v8
+    mul-float/2addr v2, v5
 
-    iget-wide v8, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+    iget-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
 
-    long-to-float v10, v8
+    long-to-float v5, v7
 
-    mul-float/2addr v1, v10
+    mul-float/2addr v1, v5
 
     sub-float/2addr v2, v1
 
     float-to-long v1, v2
 
-    .line 772
-    iget v10, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
+    .line 786
+    iget v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
 
-    long-to-float v4, v4
+    long-to-float v3, v3
 
-    mul-float/2addr v10, v4
+    mul-float/2addr v5, v3
 
-    iget v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
+    iget v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
-    long-to-float v5, v8
+    long-to-float v4, v7
 
-    mul-float/2addr v4, v5
+    mul-float/2addr v3, v4
 
-    sub-float/2addr v10, v4
+    sub-float/2addr v5, v3
 
-    float-to-long v4, v10
+    float-to-long v3, v5
 
-    cmp-long v8, v1, v4
+    cmp-long v5, v1, v3
 
-    if-gez v8, :cond_3
+    if-gez v5, :cond_3
 
-    move-wide v13, v1
+    move-wide v15, v1
 
-    move-wide v11, v4
+    move-wide v13, v3
 
     goto :goto_1
 
     :cond_3
-    move-wide v11, v1
+    move-wide v13, v1
 
-    move-wide v13, v4
+    move-wide v15, v3
 
-    .line 778
+    .line 792
     :goto_1
     iget-wide v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
-    add-long v9, v1, v6
+    add-long v11, v1, v9
 
-    invoke-static/range {v9 .. v14}, Lorg/telegram/messenger/Utilities;->clamp(JJJ)J
+    invoke-static/range {v11 .. v16}, Lorg/telegram/messenger/Utilities;->clamp(JJJ)J
 
     move-result-wide v1
 
     iput-wide v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
-    .line 779
+    .line 793
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
     if-eqz v1, :cond_6
 
-    .line 780
+    .line 794
     iget v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
     invoke-interface {v1, v2}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onAudioLeftChange(F)V
 
-    .line 781
+    .line 795
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
     iget v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
@@ -2723,20 +2806,20 @@
     goto :goto_2
 
     :cond_4
-    add-long/2addr v4, v6
+    add-long/2addr v7, v9
 
-    .line 784
-    iput-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
+    .line 798
+    iput-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
     goto :goto_2
 
-    .line 787
+    .line 801
     :cond_5
-    iget-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
+    iget-wide v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
-    float-to-long v1, v1
+    float-to-long v4, v1
 
-    add-long v6, v4, v1
+    add-long v7, v2, v4
 
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
 
@@ -2744,221 +2827,195 @@
 
     long-to-float v1, v1
 
-    iget-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+    iget-wide v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
 
-    long-to-float v2, v4
+    long-to-float v4, v2
 
-    iget v8, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
+    iget v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
 
-    mul-float/2addr v2, v8
+    mul-float/2addr v4, v5
 
-    sub-float/2addr v1, v2
+    sub-float/2addr v1, v4
 
-    float-to-long v8, v1
+    float-to-long v9, v1
 
     iget v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
     neg-float v1, v1
 
-    long-to-float v2, v4
+    long-to-float v2, v2
 
     mul-float/2addr v1, v2
 
-    float-to-long v10, v1
+    float-to-long v11, v1
 
-    invoke-static/range {v6 .. v11}, Lorg/telegram/messenger/Utilities;->clamp(JJJ)J
+    invoke-static/range {v7 .. v12}, Lorg/telegram/messenger/Utilities;->clamp(JJJ)J
 
     move-result-wide v1
 
     iput-wide v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
-    .line 789
+    .line 803
     :cond_6
     :goto_2
-    iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
-
-    const/4 v2, 0x0
-
-    if-nez v1, :cond_8
-
-    iget-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
-
-    long-to-float v1, v4
-
-    iget-wide v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
-
-    long-to-float v8, v6
-
-    div-float/2addr v1, v8
-
-    iget v8, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
-
-    cmpg-float v1, v1, v8
-
-    if-ltz v1, :cond_7
-
-    long-to-float v1, v4
-
-    long-to-float v4, v6
-
-    div-float/2addr v1, v4
-
-    iget v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
-
-    cmpl-float v1, v1, v4
-
-    if-lez v1, :cond_8
-
-    :cond_7
-    long-to-float v1, v6
-
-    mul-float/2addr v8, v1
-
-    float-to-long v4, v8
-
-    .line 790
-    iput-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
-
-    .line 791
-    iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
-
-    if-eqz v1, :cond_8
-
-    .line 792
-    invoke-interface {v1, v4, v5, v2}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onProgressChange(JZ)V
-
-    .line 795
-    :cond_8
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
-    .line 796
+    .line 804
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_7
 
-    .line 797
-    iget-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
+    .line 805
+    iget-wide v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
-    iget v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
-
-    iget-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
-
-    long-to-float v7, v7
-
-    mul-float/2addr v6, v7
-
-    float-to-long v6, v6
-
-    add-long/2addr v4, v6
-
-    invoke-interface {v1, v4, v5}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onAudioOffsetChange(J)V
-
-    .line 799
-    :cond_9
-    iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->dragged:Z
-
-    if-nez v1, :cond_b
-
-    iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
-
-    if-eqz v4, :cond_b
-
-    const/4 v1, 0x1
-
-    .line 800
-    invoke-interface {v4, v1}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onProgressDragChange(Z)V
-
-    .line 802
-    iget-boolean v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
-
-    if-eqz v4, :cond_d
-
-    .line 803
-    iget-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
-
-    iget v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
+    iget v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
     iget-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
 
-    long-to-float v7, v7
-
-    mul-float/2addr v6, v7
-
-    float-to-long v6, v6
-
-    add-long v8, v4, v6
-
-    iget v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
-
-    iget-wide v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
-
-    long-to-float v7, v5
-
-    mul-float/2addr v4, v7
-
-    float-to-long v10, v4
-
-    iget v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
-
-    long-to-float v5, v5
+    long-to-float v5, v7
 
     mul-float/2addr v4, v5
 
-    float-to-long v12, v4
+    float-to-long v4, v4
 
-    invoke-static/range {v8 .. v13}, Lorg/telegram/messenger/Utilities;->clamp(JJJ)J
+    add-long/2addr v2, v4
 
-    move-result-wide v4
+    invoke-interface {v1, v2, v3}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onAudioOffsetChange(J)V
 
-    .line 804
-    iget-wide v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
+    .line 807
+    :cond_7
+    iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->dragged:Z
 
-    sub-long/2addr v6, v4
+    const/4 v2, 0x0
 
-    invoke-static {v6, v7}, Ljava/lang/Math;->abs(J)J
+    if-nez v1, :cond_a
 
-    move-result-wide v6
+    iget-object v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
-    const-wide/16 v8, 0x190
+    if-eqz v3, :cond_a
 
-    cmp-long v6, v6, v8
-
-    if-lez v6, :cond_a
-
-    .line 805
-    iget-wide v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
-
-    iput-wide v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->loopProgressFrom:J
-
-    .line 806
-    iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->loopProgress:Lorg/telegram/ui/Components/AnimatedFloat;
-
-    invoke-virtual {v6, v3, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
+    const/4 v1, 0x1
 
     .line 808
-    :cond_a
-    iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
+    invoke-interface {v3, v1}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onProgressDragChange(Z)V
 
-    iput-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
+    .line 811
+    iget-boolean v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
 
-    invoke-interface {v1, v4, v5, v2}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onProgressChange(JZ)V
+    if-eqz v3, :cond_8
+
+    .line 812
+    iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
+
+    iget v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
+
+    iget-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+
+    long-to-float v7, v7
+
+    mul-float/2addr v5, v7
+
+    float-to-long v7, v5
+
+    add-long v9, v3, v7
+
+    iget v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
+
+    iget-wide v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
+
+    long-to-float v7, v4
+
+    mul-float/2addr v3, v7
+
+    float-to-long v11, v3
+
+    iget v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
+
+    long-to-float v4, v4
+
+    mul-float/2addr v3, v4
+
+    float-to-long v13, v3
+
+    invoke-static/range {v9 .. v14}, Lorg/telegram/messenger/Utilities;->clamp(JJJ)J
+
+    move-result-wide v3
 
     goto :goto_3
 
-    :cond_b
-    if-nez v1, :cond_c
+    .line 814
+    :cond_8
+    iget v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
-    .line 810
+    iget-wide v9, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+
+    long-to-float v4, v9
+
+    mul-float/2addr v3, v4
+
+    float-to-long v7, v3
+
+    const-wide/16 v11, 0x0
+
+    invoke-static/range {v7 .. v12}, Lorg/telegram/messenger/Utilities;->clamp(JJJ)J
+
+    move-result-wide v3
+
+    .line 816
+    :goto_3
+    iget-boolean v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
+
+    if-eqz v5, :cond_9
+
+    iget-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
+
+    sub-long/2addr v7, v3
+
+    invoke-static {v7, v8}, Ljava/lang/Math;->abs(J)J
+
+    move-result-wide v7
+
+    const-wide/16 v9, 0x190
+
+    cmp-long v5, v7, v9
+
+    if-lez v5, :cond_9
+
+    .line 817
+    iget-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
+
+    iput-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->loopProgressFrom:J
+
+    .line 818
+    iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->loopProgress:Lorg/telegram/ui/Components/AnimatedFloat;
+
+    invoke-virtual {v5, v6, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
+
+    .line 820
+    :cond_9
+    iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
+
+    iput-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
+
+    invoke-interface {v1, v3, v4, v2}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onProgressChange(JZ)V
+
+    goto :goto_5
+
+    :cond_a
+    if-nez v1, :cond_b
+
+    .line 821
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scrolling:Z
 
     if-eqz v1, :cond_d
 
-    :cond_c
+    .line 822
+    :cond_b
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
 
-    if-eqz v1, :cond_d
+    if-eqz v1, :cond_c
 
-    .line 811
+    .line 823
     iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
     iget v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
@@ -2997,16 +3054,41 @@
 
     iput-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
 
-    .line 812
+    goto :goto_4
+
+    .line 825
+    :cond_c
+    iget v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
+
+    iget-wide v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+
+    long-to-float v3, v5
+
+    mul-float/2addr v1, v3
+
+    float-to-long v3, v1
+
+    const-wide/16 v7, 0x0
+
+    invoke-static/range {v3 .. v8}, Lorg/telegram/messenger/Utilities;->clamp(JJJ)J
+
+    move-result-wide v3
+
+    iput-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
+
+    .line 827
+    :goto_4
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
     if-eqz v1, :cond_d
 
-    .line 813
+    .line 828
+    iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
+
     invoke-interface {v1, v3, v4, v2}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onProgressChange(JZ)V
 
     :cond_d
-    :goto_3
+    :goto_5
     return-void
 .end method
 
@@ -3368,7 +3450,7 @@
 .method public computeScroll()V
     .locals 8
 
-    .line 821
+    .line 836
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scroller:Lorg/telegram/ui/Components/Scroller;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Scroller;->computeScrollOffset()Z
@@ -3377,14 +3459,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 822
+    .line 837
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scroller:Lorg/telegram/ui/Components/Scroller;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Scroller;->getCurrX()I
 
     move-result v0
 
-    .line 823
+    .line 838
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
 
     move-result-wide v1
@@ -3395,14 +3477,14 @@
 
     move-result-wide v1
 
-    .line 824
+    .line 839
     iget-boolean v3, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scrollingVideo:Z
 
     if-eqz v3, :cond_0
 
     const/4 v3, 0x0
 
-    .line 826
+    .line 841
     iget v4, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
 
     sub-int v4, v0, v4
@@ -3433,7 +3515,7 @@
 
     goto :goto_0
 
-    .line 834
+    .line 849
     :cond_0
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
 
@@ -3471,19 +3553,19 @@
 
     sub-float/2addr v4, v2
 
-    .line 835
+    .line 850
     invoke-direct {p0, v4}, Lorg/telegram/ui/Stories/recorder/TimelineView;->moveAudioOffset(F)V
 
-    .line 837
+    .line 852
     :goto_0
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 838
+    .line 853
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->wasScrollX:I
 
     goto :goto_1
 
-    .line 839
+    .line 854
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scrolling:Z
 
@@ -3491,15 +3573,15 @@
 
     const/4 v0, 0x0
 
-    .line 840
+    .line 855
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scrolling:Z
 
-    .line 841
+    .line 856
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
     if-eqz v1, :cond_2
 
-    .line 842
+    .line 857
     invoke-interface {v1, v0}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onProgressDragChange(Z)V
 
     :cond_2
@@ -3514,7 +3596,7 @@
 
     move-object/from16 v9, p1
 
-    .line 941
+    .line 956
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->backgroundBlur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
     const/high16 v10, 0x3f800000    # 1.0f
@@ -3523,7 +3605,7 @@
 
     move-result-object v11
 
-    .line 943
+    .line 958
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
 
     move-result-wide v0
@@ -3534,7 +3616,7 @@
 
     move-result-wide v6
 
-    .line 945
+    .line 960
     iget-boolean v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
 
     if-eqz v0, :cond_0
@@ -3557,17 +3639,17 @@
 
     if-eqz v0, :cond_e
 
-    .line 949
+    .line 964
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 950
+    .line 965
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getVideoHeight()F
 
     move-result v0
 
     move/from16 v26, v4
 
-    .line 951
+    .line 966
     iget-wide v3, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
 
     const-wide/16 v17, 0x0
@@ -3622,7 +3704,7 @@
 
     goto :goto_2
 
-    .line 952
+    .line 967
     :cond_2
     iget v5, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
 
@@ -3655,7 +3737,7 @@
 
     add-float/2addr v3, v2
 
-    .line 953
+    .line 968
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoBounds:Landroid/graphics/RectF;
 
     iget v4, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->h:I
@@ -3674,12 +3756,12 @@
 
     invoke-virtual {v2, v1, v10, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 954
+    .line 969
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoClipPath:Landroid/graphics/Path;
 
     invoke-virtual {v2}, Landroid/graphics/Path;->rewind()V
 
-    .line 955
+    .line 970
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoClipPath:Landroid/graphics/Path;
 
     iget-object v4, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoBounds:Landroid/graphics/RectF;
@@ -3700,22 +3782,22 @@
 
     invoke-virtual {v2, v4, v5, v10, v11}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 956
+    .line 971
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoClipPath:Landroid/graphics/Path;
 
     invoke-virtual {v9, v2}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 957
+    .line 972
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->thumbs:Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;
 
     if-eqz v2, :cond_a
 
-    .line 959
+    .line 974
     invoke-virtual {v2}, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->getFrameWidth()I
 
     move-result v2
 
-    .line 960
+    .line 975
     iget v4, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
 
     int-to-float v4, v4
@@ -3738,7 +3820,7 @@
 
     double-to-int v4, v4
 
-    .line 961
+    .line 976
     iget-object v5, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->thumbs:Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;
 
     invoke-static {v5}, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->access$300(Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;)I
@@ -3773,7 +3855,7 @@
 
     double-to-int v3, v10
 
-    .line 963
+    .line 978
     iget v5, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->h:I
 
     iget v10, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->py:I
@@ -3786,7 +3868,7 @@
 
     float-to-int v5, v5
 
-    .line 965
+    .line 980
     iget-object v10, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->thumbs:Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;
 
     invoke-static {v10}, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->access$400(Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;)Ljava/util/ArrayList;
@@ -3811,7 +3893,7 @@
 
     move v10, v4
 
-    .line 968
+    .line 983
     :goto_4
     iget-object v14, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->thumbs:Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;
 
@@ -3829,7 +3911,7 @@
 
     if-ge v10, v14, :cond_5
 
-    .line 969
+    .line 984
     iget-object v14, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->thumbs:Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;
 
     invoke-static {v14}, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->access$400(Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;)Ljava/util/ArrayList;
@@ -3842,7 +3924,7 @@
 
     check-cast v14, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$BitmapFrame;
 
-    .line 970
+    .line 985
     iget-object v14, v14, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$BitmapFrame;->bitmap:Landroid/graphics/Bitmap;
 
     if-nez v14, :cond_4
@@ -3866,12 +3948,12 @@
 
     const/high16 v10, 0x40000000    # 2.0f
 
-    .line 979
+    .line 994
     invoke-virtual {v9, v10}, Landroid/graphics/Canvas;->drawColor(I)V
 
     goto :goto_6
 
-    .line 981
+    .line 996
     :cond_6
     iget-object v10, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoBounds:Landroid/graphics/RectF;
 
@@ -3881,7 +3963,7 @@
 
     const/high16 v10, 0x33000000
 
-    .line 982
+    .line 997
     invoke-virtual {v9, v10}, Landroid/graphics/Canvas;->drawColor(I)V
 
     goto :goto_7
@@ -3890,7 +3972,7 @@
     :goto_6
     move-object/from16 v15, v27
 
-    .line 986
+    .line 1001
     :goto_7
     iget-object v10, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->thumbs:Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;
 
@@ -3908,7 +3990,7 @@
 
     if-ge v4, v10, :cond_9
 
-    .line 987
+    .line 1002
     iget-object v10, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->thumbs:Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;
 
     invoke-static {v10}, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->access$400(Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;)Ljava/util/ArrayList;
@@ -3923,12 +4005,12 @@
 
     check-cast v14, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$BitmapFrame;
 
-    .line 988
+    .line 1003
     iget-object v10, v14, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$BitmapFrame;->bitmap:Landroid/graphics/Bitmap;
 
     if-eqz v10, :cond_8
 
-    .line 989
+    .line 1004
     iget-object v10, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoFramePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v14}, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$BitmapFrame;->getAlpha()F
@@ -3943,7 +4025,7 @@
 
     invoke-virtual {v10, v12}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 990
+    .line 1005
     iget-object v10, v14, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$BitmapFrame;->bitmap:Landroid/graphics/Bitmap;
 
     invoke-virtual {v10}, Landroid/graphics/Bitmap;->getHeight()I
@@ -3978,7 +4060,7 @@
     :cond_9
     if-nez v11, :cond_b
 
-    .line 996
+    .line 1011
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->thumbs:Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->load()V
@@ -3988,14 +4070,14 @@
     :cond_a
     move-object/from16 v15, v27
 
-    .line 999
+    .line 1014
     :cond_b
     :goto_8
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->selectedVideoClipPath:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
 
-    .line 1001
+    .line 1016
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
@@ -4054,7 +4136,7 @@
 
     sub-float/2addr v4, v5
 
-    .line 1002
+    .line 1017
     iget v5, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->h:I
 
     iget v7, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->py:I
@@ -4109,10 +4191,10 @@
 
     int-to-float v0, v5
 
-    .line 1001
+    .line 1016
     invoke-virtual {v1, v4, v12, v2, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1007
+    .line 1022
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->selectedVideoClipPath:Landroid/graphics/Path;
 
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->selectedVideoRadii:[F
@@ -4121,7 +4203,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 1012
+    .line 1027
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->selectedVideoClipPath:Landroid/graphics/Path;
 
     sget-object v1, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
@@ -4130,10 +4212,10 @@
 
     const/high16 v0, 0x50000000
 
-    .line 1013
+    .line 1028
     invoke-virtual {v9, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 1014
+    .line 1029
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     move/from16 v10, v18
@@ -4149,7 +4231,7 @@
 
     const/4 v10, 0x0
 
-    .line 1018
+    .line 1033
     :goto_b
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioT:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -4159,7 +4241,7 @@
 
     move-result v11
 
-    .line 1019
+    .line 1034
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelectedT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasAudio:Z
@@ -4184,14 +4266,14 @@
 
     const/4 v13, 0x4
 
-    .line 1020
+    .line 1035
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     int-to-float v7, v0
 
-    .line 1021
+    .line 1036
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getAudioHeight()F
 
     move-result v0
@@ -4204,22 +4286,22 @@
 
     if-lez v1, :cond_1c
 
-    .line 1023
+    .line 1038
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioBlur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
     invoke-virtual {v0, v11}, Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;->getPaint(F)Landroid/graphics/Paint;
 
     move-result-object v0
 
-    .line 1024
+    .line 1039
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1026
+    .line 1041
     iget-boolean v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
 
     if-eqz v1, :cond_10
 
-    .line 1027
+    .line 1042
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
 
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
@@ -4266,7 +4348,7 @@
 
     add-float/2addr v1, v2
 
-    .line 1028
+    .line 1043
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
 
     iget v4, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
@@ -4330,7 +4412,7 @@
 
     move-wide/from16 v5, v28
 
-    .line 1030
+    .line 1045
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
 
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
@@ -4371,7 +4453,7 @@
 
     sub-long/2addr v14, v12
 
-    .line 1031
+    .line 1046
     iget-wide v12, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
 
     add-long/2addr v14, v12
@@ -4386,7 +4468,7 @@
 
     add-float/2addr v0, v1
 
-    .line 1034
+    .line 1049
     :goto_d
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->h:I
 
@@ -4402,7 +4484,7 @@
 
     sub-float v12, v1, v4
 
-    .line 1035
+    .line 1050
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioBounds:Landroid/graphics/RectF;
 
     iget v3, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
@@ -4419,12 +4501,12 @@
 
     invoke-virtual {v1, v4, v13, v3, v12}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1036
+    .line 1051
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioClipPath:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
 
-    .line 1037
+    .line 1052
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioClipPath:Landroid/graphics/Path;
 
     iget-object v3, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioBounds:Landroid/graphics/RectF;
@@ -4447,7 +4529,7 @@
 
     invoke-virtual {v1, v3, v5, v4, v6}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 1038
+    .line 1053
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioClipPath:Landroid/graphics/Path;
 
     invoke-virtual {v9, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
@@ -4456,7 +4538,7 @@
 
     const/high16 v1, 0x40000000    # 2.0f
 
-    .line 1041
+    .line 1056
     invoke-static {v1, v11}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
     move-result v1
@@ -4467,7 +4549,7 @@
 
     goto :goto_e
 
-    .line 1043
+    .line 1058
     :cond_11
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioBounds:Landroid/graphics/RectF;
 
@@ -4477,14 +4559,14 @@
 
     const/high16 v1, 0x33000000
 
-    .line 1044
+    .line 1059
     invoke-static {v1, v11}, Lorg/telegram/ui/ActionBar/Theme;->multAlpha(IF)I
 
     move-result v1
 
     invoke-virtual {v9, v1}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 1047
+    .line 1062
     :goto_e
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveform:Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;
 
@@ -4492,7 +4574,7 @@
 
     if-eqz v3, :cond_14
 
-    .line 1048
+    .line 1063
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioWaveformBlur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
     const v3, 0x3ecccccd    # 0.4f
@@ -4505,7 +4587,7 @@
 
     if-nez v1, :cond_12
 
-    .line 1050
+    .line 1065
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformPaint:Landroid/graphics/Paint;
 
     const/high16 v3, 0x42800000    # 64.0f
@@ -4514,10 +4596,10 @@
 
     float-to-int v3, v3
 
-    .line 1051
+    .line 1066
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1053
+    .line 1068
     :cond_12
     iget-object v3, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformMax:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -4537,7 +4619,7 @@
 
     move-result v23
 
-    .line 1054
+    .line 1069
     iget-object v3, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveform:Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->getLoadedCount()I
@@ -4556,7 +4638,7 @@
     :goto_f
     iput-boolean v3, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformIsLoaded:Z
 
-    .line 1055
+    .line 1070
     iget-object v3, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformLoaded:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-object v4, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveform:Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;
@@ -4571,7 +4653,7 @@
 
     move-result v19
 
-    .line 1056
+    .line 1071
     iget v3, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
 
     iget v4, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
@@ -4602,7 +4684,7 @@
 
     add-float v15, v3, v4
 
-    .line 1057
+    .line 1072
     iget-object v14, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformPath:Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;
 
     const-wide/16 v31, 0x0
@@ -4623,7 +4705,7 @@
 
     invoke-virtual/range {v14 .. v24}, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;->check(FFFFFJFFF)V
 
-    .line 1058
+    .line 1073
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformPath:Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;
 
     invoke-virtual {v9, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
@@ -4644,7 +4726,7 @@
 
     if-gez v1, :cond_1b
 
-    .line 1062
+    .line 1077
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
 
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
@@ -4703,7 +4785,7 @@
 
     long-to-float v3, v3
 
-    .line 1063
+    .line 1078
     iget v4, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
 
     long-to-float v5, v12
@@ -4722,7 +4804,7 @@
 
     int-to-float v0, v0
 
-    .line 1065
+    .line 1080
     invoke-static {v0, v2}, Ljava/lang/Math;->max(FF)F
 
     move-result v0
@@ -4747,7 +4829,7 @@
 
     const/16 v1, 0xe
 
-    .line 1066
+    .line 1081
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -4756,7 +4838,7 @@
 
     add-float v13, v19, v1
 
-    .line 1067
+    .line 1082
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->w:I
 
     iget v3, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
@@ -4797,7 +4879,7 @@
 
     const/high16 v2, 0x41500000    # 13.0f
 
-    .line 1068
+    .line 1083
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v2
@@ -4851,7 +4933,7 @@
     :cond_16
     const/4 v10, 0x0
 
-    .line 1071
+    .line 1086
     :goto_12
     invoke-static {v2, v1}, Ljava/lang/Math;->min(FF)F
 
@@ -4863,7 +4945,7 @@
 
     sub-float/2addr v0, v1
 
-    .line 1072
+    .line 1087
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioIcon:Landroid/graphics/drawable/Drawable;
 
     float-to-int v3, v0
@@ -4906,7 +4988,7 @@
 
     invoke-virtual {v1, v3, v6, v11, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1073
+    .line 1088
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioIcon:Landroid/graphics/drawable/Drawable;
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -4921,14 +5003,14 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 1074
+    .line 1089
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v9}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     const v1, 0x4180e148    # 16.11f
 
-    .line 1075
+    .line 1090
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v1
@@ -4939,7 +5021,7 @@
 
     const/4 v2, 0x0
 
-    .line 1076
+    .line 1091
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->w:I
 
     int-to-float v3, v0
@@ -4964,7 +5046,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 1077
+    .line 1092
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->w:I
 
     int-to-float v0, v0
@@ -4983,7 +5065,7 @@
 
     sub-float v3, v0, v1
 
-    .line 1078
+    .line 1093
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->h:I
 
     int-to-float v0, v0
@@ -4992,15 +5074,15 @@
 
     invoke-virtual {v9, v14, v15, v3, v0}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 1079
+    .line 1094
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioAuthor:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_17
 
-    .line 1080
+    .line 1095
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1081
+    .line 1096
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioAuthorLeft:F
 
     sub-float v0, v14, v0
@@ -5021,7 +5103,7 @@
 
     invoke-virtual {v9, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1082
+    .line 1097
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioAuthorPaint:Landroid/text/TextPaint;
 
     mul-float v1, v12, v17
@@ -5030,20 +5112,20 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 1083
+    .line 1098
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioAuthor:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, v9}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1084
+    .line 1099
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1085
+    .line 1100
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioAuthorWidth:F
 
     add-float/2addr v14, v0
 
-    .line 1087
+    .line 1102
     :cond_17
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioAuthor:Landroid/text/StaticLayout;
 
@@ -5055,21 +5137,21 @@
 
     const v0, 0x406a3d71    # 3.66f
 
-    .line 1088
+    .line 1103
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v0
 
     add-float/2addr v14, v0
 
-    .line 1089
+    .line 1104
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDotPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getAlpha()I
 
     move-result v0
 
-    .line 1090
+    .line 1105
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDotPaint:Landroid/graphics/Paint;
 
     int-to-float v2, v0
@@ -5080,7 +5162,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1091
+    .line 1106
     invoke-static/range {v25 .. v25}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -5099,14 +5181,14 @@
 
     invoke-virtual {v9, v1, v13, v2, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1092
+    .line 1107
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDotPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 1093
+    .line 1108
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v1
@@ -5115,23 +5197,23 @@
 
     const/high16 v0, 0x40800000    # 4.0f
 
-    .line 1094
+    .line 1109
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v0
 
     add-float/2addr v14, v0
 
-    .line 1096
+    .line 1111
     :cond_18
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioTitle:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_19
 
-    .line 1097
+    .line 1112
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1098
+    .line 1113
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioTitleLeft:F
 
     sub-float/2addr v14, v0
@@ -5152,7 +5234,7 @@
 
     invoke-virtual {v9, v14, v13}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1099
+    .line 1114
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioTitlePaint:Landroid/text/TextPaint;
 
     mul-float v12, v12, v17
@@ -5161,23 +5243,23 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 1100
+    .line 1115
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioTitle:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, v9}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1101
+    .line 1116
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_19
     if-nez v10, :cond_1a
 
-    .line 1104
+    .line 1119
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ellipsizeMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    .line 1105
+    .line 1120
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ellipsizeMatrix:Landroid/graphics/Matrix;
 
     const/high16 v1, 0x41000000    # 8.0f
@@ -5194,7 +5276,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 1106
+    .line 1121
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ellipsizeMatrix:Landroid/graphics/Matrix;
 
     const/16 v1, 0x8
@@ -5209,14 +5291,14 @@
 
     invoke-virtual {v0, v2, v15}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 1107
+    .line 1122
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ellipsizeGradient:Landroid/graphics/LinearGradient;
 
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ellipsizeMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v2}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 1108
+    .line 1123
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -5235,7 +5317,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 1110
+    .line 1125
     :cond_1a
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -5254,7 +5336,7 @@
 
     const/4 v15, 0x0
 
-    .line 1112
+    .line 1127
     :goto_13
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -5279,7 +5361,7 @@
 
     move/from16 v28, v12
 
-    .line 1116
+    .line 1131
     :goto_14
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->h:I
 
@@ -5321,7 +5403,7 @@
 
     move-result v3
 
-    .line 1117
+    .line 1132
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->h:I
 
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->py:I
@@ -5344,7 +5426,7 @@
 
     move-result v4
 
-    .line 1118
+    .line 1133
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
 
     iget-wide v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
@@ -5383,7 +5465,7 @@
 
     move-result v0
 
-    .line 1119
+    .line 1134
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
 
     iget-wide v6, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
@@ -5422,7 +5504,7 @@
 
     move-result v1
 
-    .line 1120
+    .line 1135
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
 
     iget v6, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
@@ -5469,7 +5551,7 @@
 
     add-float v6, v0, v1
 
-    .line 1122
+    .line 1137
     iget-boolean v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasAudio:Z
 
     if-eqz v0, :cond_20
@@ -5500,7 +5582,7 @@
 
     if-lez v0, :cond_27
 
-    .line 1124
+    .line 1139
     :cond_21
     iget-boolean v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
 
@@ -5536,7 +5618,7 @@
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Stories/recorder/TimelineView;->drawRegion(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFFFF)V
 
-    .line 1125
+    .line 1140
     iget-boolean v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
 
     if-eqz v0, :cond_23
@@ -5551,7 +5633,7 @@
 
     if-lez v1, :cond_23
 
-    .line 1126
+    .line 1141
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->h:I
 
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->py:I
@@ -5630,7 +5712,7 @@
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Stories/recorder/TimelineView;->drawRegion(Landroid/graphics/Canvas;Landroid/graphics/Paint;FFFFF)V
 
-    .line 1138
+    .line 1153
     :cond_23
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->loopProgress:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -5640,7 +5722,7 @@
 
     move-result v7
 
-    .line 1139
+    .line 1154
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->h:I
 
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->py:I
@@ -5665,7 +5747,7 @@
 
     sub-float v9, v0, v2
 
-    .line 1140
+    .line 1155
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->h:I
 
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->py:I
@@ -5686,7 +5768,7 @@
 
     if-lez v1, :cond_26
 
-    .line 1142
+    .line 1157
     iget-wide v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->loopProgressFrom:J
 
     const-wide/16 v2, -0x1
@@ -5740,7 +5822,7 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Stories/recorder/TimelineView;->drawProgress(Landroid/graphics/Canvas;FFJF)V
 
-    .line 1144
+    .line 1159
     :cond_26
     iget-wide v4, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
 
@@ -5760,7 +5842,7 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Stories/recorder/TimelineView;->drawProgress(Landroid/graphics/Canvas;FFJF)V
 
-    .line 1147
+    .line 1162
     :cond_27
     iget-boolean v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->dragged:Z
 
@@ -5768,7 +5850,7 @@
 
     const/16 v0, 0x20
 
-    .line 1148
+    .line 1163
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -5797,7 +5879,7 @@
 
     float-to-long v0, v0
 
-    .line 1149
+    .line 1164
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->pressHandle:I
 
     const/4 v3, -0x1
@@ -5806,7 +5888,7 @@
 
     if-ne v2, v4, :cond_2c
 
-    .line 1151
+    .line 1166
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
 
     iget-wide v4, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->scroll:J
@@ -5825,7 +5907,7 @@
 
     goto :goto_1d
 
-    .line 1153
+    .line 1168
     :cond_28
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
 
@@ -5859,14 +5941,14 @@
 
     const-wide/16 v15, 0x0
 
-    .line 1157
+    .line 1172
     invoke-static/range {v11 .. v16}, Lorg/telegram/messenger/Utilities;->clamp(JJJ)J
 
     move-result-wide v0
 
     iput-wide v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->scroll:J
 
-    .line 1158
+    .line 1173
     iget-wide v6, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
 
     add-long/2addr v6, v2
@@ -5877,7 +5959,7 @@
 
     long-to-float v0, v0
 
-    .line 1159
+    .line 1174
     iget-wide v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
 
     long-to-float v1, v1
@@ -5890,7 +5972,7 @@
 
     if-lez v2, :cond_2a
 
-    .line 1161
+    .line 1176
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
 
     const/high16 v3, 0x3f800000    # 1.0f
@@ -5906,7 +5988,7 @@
     :cond_2a
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 1163
+    .line 1178
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
 
     sub-float v5, v1, v2
@@ -5915,7 +5997,7 @@
 
     move-result v0
 
-    .line 1165
+    .line 1180
     :goto_1e
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
 
@@ -5927,7 +6009,7 @@
 
     iput v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
 
-    .line 1166
+    .line 1181
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
 
     add-float/2addr v2, v0
@@ -5938,24 +6020,24 @@
 
     iput v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
 
-    .line 1167
+    .line 1182
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
     if-eqz v0, :cond_2b
 
-    .line 1168
+    .line 1183
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
 
     invoke-interface {v0, v1}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onVideoLeftChange(F)V
 
-    .line 1169
+    .line 1184
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
 
     invoke-interface {v0, v1}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onVideoRightChange(F)V
 
-    .line 1171
+    .line 1186
     :cond_2b
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
@@ -5966,7 +6048,7 @@
 
     if-ne v2, v4, :cond_33
 
-    .line 1174
+    .line 1189
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
     iget-wide v4, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
@@ -5991,7 +6073,7 @@
 
     goto :goto_1f
 
-    .line 1176
+    .line 1191
     :cond_2d
     iget v3, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
 
@@ -6021,7 +6103,7 @@
     :goto_1f
     if-eqz v3, :cond_33
 
-    .line 1181
+    .line 1196
     iget-boolean v6, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelected:Z
 
     if-eqz v6, :cond_2f
@@ -6036,7 +6118,7 @@
 
     sub-long v13, v4, v6
 
-    .line 1182
+    .line 1197
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
 
     iget-wide v6, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
@@ -6090,7 +6172,7 @@
 
     const-wide/16 v15, 0x0
 
-    .line 1184
+    .line 1199
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
 
     move-result-wide v0
@@ -6113,7 +6195,7 @@
 
     iput-wide v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
-    .line 1186
+    .line 1201
     :goto_20
     iget-wide v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
@@ -6135,7 +6217,7 @@
 
     if-lez v2, :cond_30
 
-    .line 1188
+    .line 1203
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
 
     const/high16 v3, 0x3f800000    # 1.0f
@@ -6148,7 +6230,7 @@
 
     goto :goto_21
 
-    .line 1190
+    .line 1205
     :cond_30
     iget v2, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
@@ -6158,13 +6240,13 @@
 
     move-result v0
 
-    .line 1192
+    .line 1207
     :goto_21
     iget-boolean v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
 
     if-nez v1, :cond_31
 
-    .line 1193
+    .line 1208
     iget-wide v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
 
     long-to-float v1, v1
@@ -6194,7 +6276,7 @@
     :cond_31
     const/4 v3, 0x0
 
-    .line 1195
+    .line 1210
     :goto_22
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
@@ -6208,7 +6290,7 @@
 
     iput v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
-    .line 1196
+    .line 1211
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
 
     add-float/2addr v1, v0
@@ -6219,24 +6301,24 @@
 
     iput v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
 
-    .line 1197
+    .line 1212
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
     if-eqz v0, :cond_32
 
-    .line 1198
+    .line 1213
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
     invoke-interface {v0, v1}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onAudioLeftChange(F)V
 
-    .line 1199
+    .line 1214
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
 
     invoke-interface {v0, v1}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onAudioRightChange(F)V
 
-    .line 1200
+    .line 1215
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
     iget-wide v1, v8, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
@@ -6245,7 +6327,7 @@
 
     invoke-interface {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onProgressChange(JZ)V
 
-    .line 1202
+    .line 1217
     :cond_32
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
@@ -6287,7 +6369,7 @@
 .method protected onMeasure(II)V
     .locals 5
 
-    .line 1274
+    .line 1289
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioAuthorPaint:Landroid/text/TextPaint;
 
     const/16 v0, 0xc
@@ -6300,7 +6382,7 @@
 
     invoke-virtual {p2, v1}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 1275
+    .line 1290
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioTitlePaint:Landroid/text/TextPaint;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -6311,7 +6393,7 @@
 
     invoke-virtual {p2, v1}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 1276
+    .line 1291
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformRadii:[F
 
     const/4 v1, 0x2
@@ -6336,7 +6418,7 @@
 
     aput v2, p2, v3
 
-    .line 1277
+    .line 1292
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->waveformRadii:[F
 
     const/4 v2, 0x7
@@ -6357,7 +6439,7 @@
 
     aput v3, p2, v4
 
-    .line 1278
+    .line 1293
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -6380,7 +6462,7 @@
 
     invoke-virtual {p0, p2, v3, v0, v2}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 1279
+    .line 1294
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -6399,14 +6481,14 @@
 
     const/16 p1, 0xa
 
-    .line 1280
+    .line 1295
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
 
-    .line 1281
+    .line 1296
     iget p2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->w:I
 
     mul-int/2addr p1, v1
@@ -6421,7 +6503,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->sw:I
 
-    .line 1282
+    .line 1297
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoPath:Ljava/lang/String;
 
     if-eqz p1, :cond_0
@@ -6430,10 +6512,10 @@
 
     if-nez p1, :cond_0
 
-    .line 1283
+    .line 1298
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->setupVideoThumbs()V
 
-    .line 1285
+    .line 1300
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioPath:Ljava/lang/String;
 
@@ -6443,7 +6525,7 @@
 
     if-nez p1, :cond_1
 
-    .line 1286
+    .line 1301
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->setupAudioWaveform()V
 
     :cond_1
@@ -6758,7 +6840,7 @@
 
     invoke-static {v1, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    goto/16 :goto_15
+    goto/16 :goto_17
 
     .line 524
     :cond_c
@@ -6766,15 +6848,15 @@
 
     move-result v1
 
-    const-wide/32 v11, 0x1d4c0
+    const/4 v11, 0x3
 
-    const/4 v13, 0x3
+    const/4 v12, 0x2
 
-    const/4 v14, 0x2
+    const-wide/32 v13, 0x1d4c0
 
     const/high16 v15, 0x3f800000    # 1.0f
 
-    if-ne v1, v14, :cond_31
+    if-ne v1, v12, :cond_30
 
     .line 525
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
@@ -6812,21 +6894,21 @@
     move v5, v10
 
     :goto_8
-    if-eqz v5, :cond_2e
+    if-eqz v5, :cond_2d
 
     .line 528
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
 
     move-result-wide v7
 
-    invoke-static {v7, v8, v11, v12}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v7, v8, v13, v14}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v7
 
     .line 529
     iget v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->pressHandle:I
 
-    const/4 v11, 0x0
+    const/4 v13, 0x0
 
     if-ne v5, v10, :cond_f
 
@@ -6853,7 +6935,7 @@
 
     long-to-float v1, v4
 
-    invoke-static {v3, v1, v11}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
+    invoke-static {v3, v1, v13}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v1
 
@@ -6873,11 +6955,11 @@
     goto/16 :goto_11
 
     :cond_f
-    const v12, 0x47667800    # 59000.0f
+    const v14, 0x47667800    # 59000.0f
 
-    if-eq v5, v14, :cond_24
+    if-eq v5, v12, :cond_23
 
-    if-eq v5, v13, :cond_24
+    if-eq v5, v11, :cond_23
 
     if-ne v5, v6, :cond_10
 
@@ -6886,9 +6968,9 @@
     :cond_10
     const/4 v6, 0x7
 
-    const/4 v13, 0x6
+    const/4 v11, 0x6
 
-    if-eq v5, v13, :cond_15
+    if-eq v5, v11, :cond_15
 
     if-eq v5, v6, :cond_15
 
@@ -6897,9 +6979,9 @@
     goto :goto_9
 
     :cond_11
-    const/4 v14, 0x5
+    const/4 v12, 0x5
 
-    if-ne v5, v14, :cond_12
+    if-ne v5, v12, :cond_12
 
     .line 655
     iget v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->sw:I
@@ -6927,7 +7009,7 @@
     :cond_12
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->draggingProgress:Z
 
-    if-eqz v1, :cond_2d
+    if-eqz v1, :cond_2c
 
     .line 660
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
@@ -6990,7 +7072,7 @@
 
     const v3, 0x3c23d70a    # 0.01f
 
-    if-ne v5, v13, :cond_1a
+    if-ne v5, v11, :cond_1a
 
     .line 583
     iget v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
@@ -7040,7 +7122,7 @@
 
     long-to-float v6, v6
 
-    div-float v6, v12, v6
+    div-float v6, v14, v6
 
     sub-float/2addr v8, v6
 
@@ -7053,7 +7135,7 @@
 
     if-nez v6, :cond_17
 
-    cmpg-float v6, v1, v11
+    cmpg-float v6, v1, v13
 
     if-gez v6, :cond_17
 
@@ -7061,13 +7143,13 @@
 
     iget v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
 
-    iget-wide v13, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+    iget-wide v11, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
 
-    long-to-float v8, v13
+    long-to-float v8, v11
 
-    div-float/2addr v12, v8
+    div-float/2addr v14, v8
 
-    sub-float/2addr v7, v12
+    sub-float/2addr v7, v14
 
     cmpg-float v6, v6, v7
 
@@ -7082,23 +7164,23 @@
     :cond_16
     iget v8, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
 
-    iget-wide v12, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
+    iget-wide v11, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
 
-    long-to-float v12, v12
+    long-to-float v11, v11
 
-    mul-float/2addr v8, v12
+    mul-float/2addr v8, v11
 
-    iget-wide v12, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scroll:J
+    iget-wide v11, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scroll:J
 
-    long-to-float v12, v12
+    long-to-float v11, v11
 
-    add-float/2addr v8, v12
+    add-float/2addr v8, v11
 
-    iget-wide v12, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
+    iget-wide v11, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
-    long-to-float v12, v12
+    long-to-float v11, v11
 
-    sub-float/2addr v8, v12
+    sub-float/2addr v8, v11
 
     long-to-float v6, v6
 
@@ -7215,9 +7297,9 @@
 
     iget-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
 
-    long-to-float v13, v7
+    long-to-float v11, v7
 
-    div-float/2addr v6, v13
+    div-float/2addr v6, v11
 
     add-float/2addr v5, v6
 
@@ -7231,7 +7313,7 @@
 
     long-to-float v7, v7
 
-    div-float v7, v12, v7
+    div-float v7, v14, v7
 
     add-float/2addr v6, v7
 
@@ -7244,7 +7326,7 @@
 
     if-nez v6, :cond_1c
 
-    cmpl-float v6, v1, v11
+    cmpl-float v6, v1, v13
 
     if-lez v6, :cond_1c
 
@@ -7252,13 +7334,13 @@
 
     iget v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
 
-    iget-wide v13, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+    iget-wide v11, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
 
-    long-to-float v8, v13
+    long-to-float v8, v11
 
-    div-float/2addr v12, v8
+    div-float/2addr v14, v8
 
-    add-float/2addr v7, v12
+    add-float/2addr v7, v14
 
     cmpl-float v6, v6, v7
 
@@ -7273,23 +7355,23 @@
     :cond_1b
     iget v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
 
-    iget-wide v12, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
+    iget-wide v11, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
 
-    long-to-float v12, v12
+    long-to-float v11, v11
 
-    mul-float/2addr v6, v12
+    mul-float/2addr v6, v11
 
-    iget-wide v12, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scroll:J
+    iget-wide v11, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scroll:J
 
-    long-to-float v12, v12
+    long-to-float v11, v11
 
-    add-float/2addr v6, v12
+    add-float/2addr v6, v11
 
-    iget-wide v12, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
+    iget-wide v11, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
-    long-to-float v12, v12
+    long-to-float v11, v11
 
-    sub-float/2addr v6, v12
+    sub-float/2addr v6, v11
 
     long-to-float v7, v7
 
@@ -7369,9 +7451,9 @@
     .line 626
     iget-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scroll:J
 
-    iget-wide v12, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
+    iget-wide v11, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioOffset:J
 
-    sub-long/2addr v7, v12
+    sub-long/2addr v7, v11
 
     add-long v7, v7, v20
 
@@ -7391,7 +7473,7 @@
 
     move-result v4
 
-    cmpl-float v5, v1, v11
+    cmpl-float v5, v1, v13
 
     if-lez v5, :cond_1f
 
@@ -7478,50 +7560,25 @@
     :cond_21
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
 
-    if-nez v1, :cond_23
-
-    iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
-
-    long-to-float v1, v3
-
-    iget-wide v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
-
-    long-to-float v7, v5
-
-    div-float/2addr v1, v7
-
-    iget v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
-
-    cmpg-float v1, v1, v7
-
-    if-ltz v1, :cond_22
-
-    long-to-float v1, v3
-
-    long-to-float v3, v5
-
-    div-float/2addr v1, v3
-
-    iget v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioRight:F
-
-    cmpl-float v1, v1, v3
-
-    if-lez v1, :cond_23
-
-    :cond_22
-    long-to-float v1, v5
-
-    mul-float/2addr v7, v1
-
-    float-to-long v3, v7
+    if-nez v1, :cond_22
 
     .line 645
+    iget v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioLeft:F
+
+    iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+
+    long-to-float v3, v3
+
+    mul-float/2addr v1, v3
+
+    float-to-long v3, v1
+
     iput-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
 
     .line 646
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
-    if-eqz v1, :cond_23
+    if-eqz v1, :cond_22
 
     .line 647
     invoke-interface {v1, v10}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onProgressDragChange(Z)V
@@ -7534,7 +7591,7 @@
     invoke-interface {v1, v3, v4, v2}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onProgressChange(JZ)V
 
     .line 651
-    :cond_23
+    :cond_22
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
     .line 652
@@ -7545,7 +7602,7 @@
 
     goto/16 :goto_11
 
-    :cond_24
+    :cond_23
     :goto_e
     move-wide/from16 v20, v7
 
@@ -7570,7 +7627,7 @@
 
     const/high16 v3, 0x447a0000    # 1000.0f
 
-    if-ne v5, v14, :cond_26
+    if-ne v5, v12, :cond_25
 
     .line 537
     iget v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
@@ -7585,7 +7642,7 @@
 
     sub-float/2addr v1, v3
 
-    invoke-static {v4, v1, v11}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
+    invoke-static {v4, v1, v13}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v1
 
@@ -7594,13 +7651,13 @@
     .line 538
     iget-object v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
-    if-eqz v3, :cond_25
+    if-eqz v3, :cond_24
 
     .line 539
     invoke-interface {v3, v1}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onVideoLeftChange(F)V
 
     .line 541
-    :cond_25
+    :cond_24
     iget v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
 
     iget v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
@@ -7611,17 +7668,17 @@
 
     long-to-float v6, v4
 
-    div-float v6, v12, v6
+    div-float v6, v14, v6
 
     cmpl-float v1, v1, v6
 
-    if-lez v1, :cond_2a
+    if-lez v1, :cond_29
 
     long-to-float v1, v4
 
-    div-float/2addr v12, v1
+    div-float/2addr v14, v1
 
-    add-float/2addr v3, v12
+    add-float/2addr v3, v14
 
     .line 542
     invoke-static {v15, v3}, Ljava/lang/Math;->min(FF)F
@@ -7633,15 +7690,15 @@
     .line 543
     iget-object v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_29
 
     .line 544
     invoke-interface {v3, v1}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onVideoRightChange(F)V
 
     goto :goto_10
 
-    :cond_26
-    if-ne v5, v13, :cond_28
+    :cond_25
+    if-ne v5, v11, :cond_27
 
     .line 548
     iget v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
@@ -7665,13 +7722,13 @@
     .line 549
     iget-object v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
-    if-eqz v3, :cond_27
+    if-eqz v3, :cond_26
 
     .line 550
     invoke-interface {v3, v1}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onVideoRightChange(F)V
 
     .line 552
-    :cond_27
+    :cond_26
     iget v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
 
     iget v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
@@ -7682,20 +7739,20 @@
 
     long-to-float v6, v4
 
-    div-float v6, v12, v6
+    div-float v6, v14, v6
 
     cmpl-float v3, v3, v6
 
-    if-lez v3, :cond_2a
+    if-lez v3, :cond_29
 
     long-to-float v3, v4
 
-    div-float/2addr v12, v3
+    div-float/2addr v14, v3
 
-    sub-float/2addr v1, v12
+    sub-float/2addr v1, v14
 
     .line 553
-    invoke-static {v11, v1}, Ljava/lang/Math;->max(FF)F
+    invoke-static {v13, v1}, Ljava/lang/Math;->max(FF)F
 
     move-result v1
 
@@ -7704,19 +7761,19 @@
     .line 554
     iget-object v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
-    if-eqz v3, :cond_2a
+    if-eqz v3, :cond_29
 
     .line 555
     invoke-interface {v3, v1}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onVideoLeftChange(F)V
 
     goto :goto_10
 
-    :cond_28
-    if-ne v5, v6, :cond_2a
+    :cond_27
+    if-ne v5, v6, :cond_29
 
-    cmpl-float v3, v1, v11
+    cmpl-float v3, v1, v13
 
-    if-lez v3, :cond_29
+    if-lez v3, :cond_28
 
     .line 560
     iget v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
@@ -7730,7 +7787,7 @@
     goto :goto_f
 
     .line 562
-    :cond_29
+    :cond_28
     iget v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
 
     neg-float v3, v3
@@ -7757,7 +7814,7 @@
     .line 566
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_29
 
     .line 567
     invoke-interface {v1, v3}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onVideoLeftChange(F)V
@@ -7770,7 +7827,7 @@
     invoke-interface {v1, v3}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onVideoRightChange(F)V
 
     .line 571
-    :cond_2a
+    :cond_29
     :goto_10
     iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
 
@@ -7786,7 +7843,7 @@
 
     cmpg-float v1, v1, v7
 
-    if-ltz v1, :cond_2b
+    if-ltz v1, :cond_2a
 
     long-to-float v1, v3
 
@@ -7798,9 +7855,9 @@
 
     cmpl-float v1, v1, v3
 
-    if-lez v1, :cond_2c
+    if-lez v1, :cond_2b
 
-    :cond_2b
+    :cond_2a
     long-to-float v1, v5
 
     mul-float/2addr v7, v1
@@ -7813,13 +7870,13 @@
     .line 573
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_2b
 
     .line 574
     invoke-interface {v1, v3, v4, v2}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onProgressChange(JZ)V
 
     .line 577
-    :cond_2c
+    :cond_2b
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
     .line 578
@@ -7829,7 +7886,7 @@
     iput-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->draggingProgress:Z
 
     .line 666
-    :cond_2d
+    :cond_2c
     :goto_11
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -7838,10 +7895,10 @@
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->lastX:F
 
     .line 668
-    :cond_2e
+    :cond_2d
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->dragged:Z
 
-    if-eqz v1, :cond_2f
+    if-eqz v1, :cond_2e
 
     .line 669
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->onLongPress:Ljava/lang/Runnable;
@@ -7849,30 +7906,30 @@
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     .line 671
-    :cond_2f
+    :cond_2e
     iget v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->pressHandle:I
 
-    if-eq v1, v10, :cond_30
+    if-eq v1, v10, :cond_2f
 
     const/4 v2, 0x5
 
-    if-eq v1, v2, :cond_30
+    if-eq v1, v2, :cond_2f
 
-    if-ne v1, v9, :cond_3b
+    if-ne v1, v9, :cond_3c
 
-    :cond_30
+    :cond_2f
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->velocityTracker:Landroid/view/VelocityTracker;
 
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_3c
 
     move-object/from16 v3, p1
 
     .line 672
     invoke-virtual {v1, v3}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    goto/16 :goto_15
+    goto/16 :goto_17
 
-    :cond_31
+    :cond_30
     move-object/from16 v3, p1
 
     .line 674
@@ -7880,16 +7937,16 @@
 
     move-result v4
 
-    if-eq v4, v10, :cond_32
+    if-eq v4, v10, :cond_31
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v4
 
-    if-ne v4, v13, :cond_3b
+    if-ne v4, v11, :cond_3c
 
     .line 675
-    :cond_32
+    :cond_31
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->onLongPress:Ljava/lang/Runnable;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
@@ -7904,39 +7961,39 @@
 
     move-result v4
 
-    if-ne v4, v10, :cond_38
+    if-ne v4, v10, :cond_39
 
     .line 679
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 
-    iget-wide v13, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->pressTime:J
+    iget-wide v11, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->pressTime:J
 
-    sub-long/2addr v6, v13
+    sub-long/2addr v6, v11
 
     invoke-static {}, Landroid/view/ViewConfiguration;->getTapTimeout()I
 
     move-result v4
 
-    int-to-long v13, v4
+    int-to-long v11, v4
 
-    cmp-long v4, v6, v13
+    cmp-long v4, v6, v11
 
-    if-gtz v4, :cond_35
+    if-gtz v4, :cond_34
 
     iget-boolean v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->dragged:Z
 
-    if-nez v4, :cond_35
+    if-nez v4, :cond_34
 
     .line 680
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->pressVideo:Z
 
-    if-nez v1, :cond_33
+    if-nez v1, :cond_32
 
     iget-boolean v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelected:Z
 
-    if-nez v4, :cond_33
+    if-nez v4, :cond_32
 
     .line 681
     iput-boolean v10, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelected:Z
@@ -7944,15 +8001,15 @@
     .line 682
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
-    goto/16 :goto_13
+    goto/16 :goto_15
 
-    :cond_33
-    if-eqz v1, :cond_34
+    :cond_32
+    if-eqz v1, :cond_33
 
     .line 683
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelected:Z
 
-    if-eqz v1, :cond_34
+    if-eqz v1, :cond_33
 
     .line 684
     iput-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelected:Z
@@ -7960,10 +8017,10 @@
     .line 685
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
-    goto/16 :goto_13
+    goto/16 :goto_15
 
     .line 687
-    :cond_34
+    :cond_33
     iget-wide v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
 
     .line 688
@@ -7975,7 +8032,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_39
 
     iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->progress:J
 
@@ -7989,7 +8046,7 @@
 
     cmp-long v1, v3, v8
 
-    if-lez v1, :cond_38
+    if-lez v1, :cond_39
 
     .line 689
     iput-wide v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->loopProgressFrom:J
@@ -8002,21 +8059,21 @@
     .line 691
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
-    goto/16 :goto_13
+    goto/16 :goto_15
 
     .line 694
-    :cond_35
+    :cond_34
     iget v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->pressHandle:I
 
     const/16 v4, 0x64
 
     const/16 v6, 0x3e8
 
-    if-ne v3, v10, :cond_36
+    if-ne v3, v10, :cond_35
 
     iget-object v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->velocityTracker:Landroid/view/VelocityTracker;
 
-    if-eqz v7, :cond_36
+    if-eqz v7, :cond_35
 
     .line 695
     invoke-virtual {v7, v6}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
@@ -8042,12 +8099,12 @@
 
     move-result v4
 
-    if-le v3, v4, :cond_38
+    if-le v3, v4, :cond_39
 
     .line 699
     iget-wide v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
 
-    invoke-static {v3, v4, v11, v12}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v3, v4, v13, v14}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v3
 
@@ -8123,34 +8180,40 @@
 
     invoke-virtual/range {v17 .. v25}, Lorg/telegram/ui/Components/Scroller;->fling(IIIIIIII)V
 
-    goto/16 :goto_12
+    goto/16 :goto_14
 
-    :cond_36
+    :cond_35
     const/4 v1, 0x5
 
-    if-eq v3, v1, :cond_37
+    if-eq v3, v1, :cond_36
 
-    if-ne v3, v9, :cond_38
+    if-ne v3, v9, :cond_39
 
     .line 706
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->dragged:Z
 
-    if-nez v1, :cond_38
+    if-nez v1, :cond_39
 
-    :cond_37
-    iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
-
-    if-eqz v1, :cond_38
-
+    :cond_36
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioSelected:Z
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_39
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->velocityTracker:Landroid/view/VelocityTracker;
 
-    if-eqz v1, :cond_38
+    if-eqz v1, :cond_39
 
     .line 707
+    iget-boolean v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
+
+    if-eqz v3, :cond_37
+
+    goto :goto_12
+
+    :cond_37
+    const/16 v6, 0x5dc
+
+    :goto_12
     invoke-virtual {v1, v6}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
 
     .line 708
@@ -8174,14 +8237,14 @@
 
     move-result v4
 
-    if-le v3, v4, :cond_38
+    if-le v3, v4, :cond_39
 
     .line 711
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
 
     move-result-wide v3
 
-    invoke-static {v3, v4, v11, v12}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v3, v4, v13, v14}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v3
 
@@ -8212,29 +8275,77 @@
 
     float-to-int v4, v6
 
-    .line 713
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
-
-    move-result-wide v6
-
-    iget-wide v8, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
-
-    invoke-static {v6, v7, v8, v9}, Ljava/lang/Math;->max(JJ)J
-
     .line 714
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
+    iget-boolean v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->hasVideo:Z
 
-    move-result-wide v6
-
-    iget-wide v8, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
-
-    invoke-static {v6, v7, v8, v9}, Ljava/lang/Math;->min(JJ)J
+    if-eqz v6, :cond_38
 
     .line 715
-    iput-boolean v10, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scrolling:Z
+    iget v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
+
+    iget-wide v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
+
+    long-to-float v9, v7
+
+    mul-float/2addr v6, v9
+
+    iget-wide v11, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+
+    const-wide/16 v17, 0x0
+
+    mul-long v13, v11, v17
+
+    long-to-float v9, v13
+
+    sub-float/2addr v6, v9
+
+    float-to-long v13, v6
 
     .line 716
-    iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scroller:Lorg/telegram/ui/Components/Scroller;
+    iget v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
+
+    long-to-float v7, v7
+
+    mul-float/2addr v6, v7
+
+    const-wide/16 v7, 0x1
+
+    mul-long/2addr v11, v7
+
+    long-to-float v7, v11
+
+    sub-float/2addr v6, v7
+
+    float-to-long v6, v6
+
+    goto :goto_13
+
+    :cond_38
+    const-wide/16 v17, 0x0
+
+    .line 719
+    iget-wide v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
+
+    invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->getBaseDuration()J
+
+    move-result-wide v8
+
+    invoke-static {v8, v9, v13, v14}, Ljava/lang/Math;->min(JJ)J
+
+    move-result-wide v8
+
+    sub-long/2addr v6, v8
+
+    neg-long v6, v6
+
+    move-wide/from16 v13, v17
+
+    .line 721
+    :goto_13
+    iput-boolean v10, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scrolling:Z
+
+    .line 722
+    iget-object v8, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->scroller:Lorg/telegram/ui/Components/Scroller;
 
     iput v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->wasScrollX:I
 
@@ -8242,167 +8353,129 @@
 
     const/16 v24, 0x0
 
-    iget v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
+    iget v9, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->px:I
 
-    iget v8, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
+    iget v11, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->ph:I
 
-    add-int v9, v7, v8
+    add-int v12, v9, v11
+
+    int-to-float v12, v12
+
+    long-to-float v6, v6
+
+    div-float/2addr v6, v3
+
+    iget v7, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->sw:I
+
+    int-to-float v15, v7
+
+    mul-float/2addr v6, v15
+
+    add-float/2addr v12, v6
+
+    float-to-int v6, v12
+
+    add-int/2addr v9, v11
 
     int-to-float v9, v9
 
-    iget v11, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoLeft:F
-
-    iget-wide v12, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoDuration:J
-
-    long-to-float v14, v12
-
-    mul-float/2addr v11, v14
-
-    const-wide/16 v14, 0x1
-
-    move-object/from16 v20, v6
-
-    iget-wide v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->audioDuration:J
-
-    mul-long/2addr v14, v5
-
-    long-to-float v14, v14
-
-    sub-float/2addr v11, v14
-
-    float-to-long v14, v11
-
-    long-to-float v11, v14
+    long-to-float v11, v13
 
     div-float/2addr v11, v3
 
-    iget v14, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->sw:I
+    int-to-float v3, v7
 
-    int-to-float v15, v14
-
-    mul-float/2addr v11, v15
+    mul-float/2addr v11, v3
 
     add-float/2addr v9, v11
 
-    float-to-int v9, v9
-
-    add-int/2addr v7, v8
-
-    int-to-float v7, v7
-
-    iget v8, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->videoRight:F
-
-    long-to-float v11, v12
-
-    mul-float/2addr v8, v11
-
-    const-wide/16 v11, 0x0
-
-    mul-long/2addr v5, v11
-
-    long-to-float v5, v5
-
-    sub-float/2addr v8, v5
-
-    float-to-long v5, v8
-
-    long-to-float v5, v5
-
-    div-float/2addr v5, v3
-
-    int-to-float v3, v14
-
-    mul-float/2addr v5, v3
-
-    add-float/2addr v7, v5
-
-    float-to-int v3, v7
+    float-to-int v3, v9
 
     const/16 v27, 0x0
 
     const/16 v28, 0x0
 
+    move-object/from16 v20, v8
+
     move/from16 v21, v4
 
     move/from16 v23, v1
 
-    move/from16 v25, v9
+    move/from16 v25, v6
 
     move/from16 v26, v3
 
     invoke-virtual/range {v20 .. v28}, Lorg/telegram/ui/Components/Scroller;->fling(IIIIIIII)V
 
-    :goto_12
+    :goto_14
     move v1, v2
 
-    goto :goto_14
+    goto :goto_16
 
-    :cond_38
-    :goto_13
+    :cond_39
+    :goto_15
     move v1, v10
 
-    .line 721
-    :goto_14
+    .line 727
+    :goto_16
     iget-object v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->askExactSeek:Ljava/lang/Runnable;
 
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_3a
 
-    .line 722
+    .line 728
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 v3, 0x0
 
-    .line 723
+    .line 729
     iput-object v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->askExactSeek:Ljava/lang/Runnable;
 
-    .line 725
-    :cond_39
+    .line 731
+    :cond_3a
     iget-boolean v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->dragged:Z
 
-    if-eqz v3, :cond_3a
+    if-eqz v3, :cond_3b
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_3b
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->delegate:Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;
 
-    if-eqz v1, :cond_3a
+    if-eqz v1, :cond_3b
 
-    .line 726
+    .line 732
     invoke-interface {v1, v2}, Lorg/telegram/ui/Stories/recorder/TimelineView$TimelineDelegate;->onProgressDragChange(Z)V
 
-    .line 728
-    :cond_3a
+    .line 734
+    :cond_3b
     iput-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->dragged:Z
 
-    .line 729
+    .line 735
     iput-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->draggingProgress:Z
 
     const-wide/16 v1, -0x1
 
-    .line 730
+    .line 736
     iput-wide v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->pressTime:J
 
-    const/4 v1, -0x1
+    .line 737
+    iput v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->pressHandle:I
 
-    .line 731
-    iput v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->pressHandle:I
-
-    .line 732
+    .line 738
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->velocityTracker:Landroid/view/VelocityTracker;
 
-    if-eqz v1, :cond_3b
+    if-eqz v1, :cond_3c
 
-    .line 733
+    .line 739
     invoke-virtual {v1}, Landroid/view/VelocityTracker;->recycle()V
 
     const/4 v1, 0x0
 
-    .line 734
+    .line 740
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/TimelineView;->velocityTracker:Landroid/view/VelocityTracker;
 
-    .line 737
-    :cond_3b
-    :goto_15
+    .line 743
+    :cond_3c
+    :goto_17
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1

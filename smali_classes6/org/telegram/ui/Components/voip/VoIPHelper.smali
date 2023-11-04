@@ -2703,7 +2703,7 @@
 .end method
 
 .method private static synthetic lambda$showRateAlert$16(I[ZLjava/io/File;Lorg/telegram/tgnet/TLRPC$TL_phone_setCallRating;Ljava/util/ArrayList;Landroid/content/Context;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 17
+    .locals 18
 
     move-object/from16 v0, p6
 
@@ -2780,17 +2780,19 @@
 
     const/4 v12, 0x0
 
-    const/4 v13, 0x1
+    const/4 v13, 0x0
 
-    const/4 v14, 0x0
+    const/4 v14, 0x1
 
     const/4 v15, 0x0
 
     const/16 v16, 0x0
 
+    const/16 v17, 0x0
+
     const-string v6, "text/plain"
 
-    invoke-static/range {v1 .. v16}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingDocument(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/messenger/MessageObject;ZILandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;)V
+    invoke-static/range {v1 .. v17}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingDocument(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;Lorg/telegram/messenger/MessageObject;ZILandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;)V
 
     .line 621
     sget v0, Lorg/telegram/messenger/R$string;->CallReportSent:I

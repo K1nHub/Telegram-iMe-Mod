@@ -48,7 +48,7 @@ public final class MsgExportDeqShort implements OutMsg {
     }
 
     public int hashCode() {
-        return (((((this.msgEnvHash.hashCode() * 31) + this.nextWorkchain) * 31) + ULong.m1991hashCodeimpl(this.nextAddrPfx)) * 31) + ULong.m1991hashCodeimpl(this.importBlockLt);
+        return (((((this.msgEnvHash.hashCode() * 31) + this.nextWorkchain) * 31) + ULong.m1996hashCodeimpl(this.nextAddrPfx)) * 31) + ULong.m1996hashCodeimpl(this.importBlockLt);
     }
 
     private MsgExportDeqShort(int i, BitString bitString, int i2, ULong uLong, ULong uLong2, SerializationConstructorMarker serializationConstructorMarker) {
@@ -57,8 +57,8 @@ public final class MsgExportDeqShort implements OutMsg {
         }
         this.msgEnvHash = bitString;
         this.nextWorkchain = i2;
-        this.nextAddrPfx = uLong.m1993unboximpl();
-        this.importBlockLt = uLong2.m1993unboximpl();
+        this.nextAddrPfx = uLong.m1998unboximpl();
+        this.importBlockLt = uLong2.m1998unboximpl();
     }
 
     private MsgExportDeqShort(BitString msgEnvHash, int i, long j, long j2) {
@@ -73,8 +73,8 @@ public final class MsgExportDeqShort implements OutMsg {
         compositeEncoder.encodeSerializableElement(serialDescriptor, 0, FiftHexBitStringSerializer.INSTANCE, msgExportDeqShort.msgEnvHash);
         compositeEncoder.encodeIntElement(serialDescriptor, 1, msgExportDeqShort.nextWorkchain);
         ULongSerializer uLongSerializer = ULongSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uLongSerializer, ULong.m1988boximpl(msgExportDeqShort.nextAddrPfx));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, uLongSerializer, ULong.m1988boximpl(msgExportDeqShort.importBlockLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uLongSerializer, ULong.m1993boximpl(msgExportDeqShort.nextAddrPfx));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, uLongSerializer, ULong.m1993boximpl(msgExportDeqShort.importBlockLt));
     }
 
     public final BitString getMsgEnvHash() {
@@ -86,12 +86,12 @@ public final class MsgExportDeqShort implements OutMsg {
     }
 
     /* renamed from: getNextAddrPfx-s-VKNKU  reason: not valid java name */
-    public final long m4976getNextAddrPfxsVKNKU() {
+    public final long m5130getNextAddrPfxsVKNKU() {
         return this.nextAddrPfx;
     }
 
     /* renamed from: getImportBlockLt-s-VKNKU  reason: not valid java name */
-    public final long m4975getImportBlockLtsVKNKU() {
+    public final long m5129getImportBlockLtsVKNKU() {
         return this.importBlockLt;
     }
 
@@ -147,8 +147,8 @@ public final class MsgExportDeqShort implements OutMsg {
         TlbPrettyPrinter open = printer.open("msg_export_deq_short");
         open.field("msg_env_hash", this.msgEnvHash);
         open.field("next_workchain", Integer.valueOf(this.nextWorkchain));
-        open.field("next_addr_pfx", ULong.m1988boximpl(this.nextAddrPfx));
-        open.field("import_block_lt", ULong.m1988boximpl(this.importBlockLt));
+        open.field("next_addr_pfx", ULong.m1993boximpl(this.nextAddrPfx));
+        open.field("import_block_lt", ULong.m1993boximpl(this.importBlockLt));
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

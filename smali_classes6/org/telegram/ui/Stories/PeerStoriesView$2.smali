@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 368
+    .line 371
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$2;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
@@ -35,7 +35,7 @@
 .method protected setImageBitmapByKey(Landroid/graphics/drawable/Drawable;Ljava/lang/String;IZI)Z
     .locals 0
 
-    .line 372
+    .line 375
     invoke-super/range {p0 .. p5}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmapByKey(Landroid/graphics/drawable/Drawable;Ljava/lang/String;IZI)Z
 
     move-result p1
@@ -44,7 +44,7 @@
 
     if-ne p3, p2, :cond_0
 
-    .line 373
+    .line 376
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$2;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$000(Lorg/telegram/ui/Stories/PeerStoriesView;)Ljava/lang/Runnable;
@@ -53,7 +53,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 374
+    .line 377
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$2;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$000(Lorg/telegram/ui/Stories/PeerStoriesView;)Ljava/lang/Runnable;
@@ -62,7 +62,7 @@
 
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
-    .line 375
+    .line 378
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$2;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     const/4 p3, 0x0

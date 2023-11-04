@@ -31,19 +31,19 @@ public final class ExceptionsConstructorKt {
 
     /* JADX WARN: Multi-variable type inference failed */
     public static final <E extends Throwable> E tryCopyException(E e) {
-        Object m1935constructorimpl;
+        Object m1940constructorimpl;
         if (e instanceof CopyableThrowable) {
             try {
                 Result.Companion companion = Result.Companion;
-                m1935constructorimpl = Result.m1935constructorimpl(((CopyableThrowable) e).createCopy());
+                m1940constructorimpl = Result.m1940constructorimpl(((CopyableThrowable) e).createCopy());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th));
+                m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
             }
-            if (Result.m1940isFailureimpl(m1935constructorimpl)) {
-                m1935constructorimpl = null;
+            if (Result.m1945isFailureimpl(m1940constructorimpl)) {
+                m1940constructorimpl = null;
             }
-            return (E) m1935constructorimpl;
+            return (E) m1940constructorimpl;
         }
         return (E) ctorCache.get(e.getClass()).invoke(e);
     }
@@ -52,7 +52,7 @@ public final class ExceptionsConstructorKt {
     public static final <E extends Throwable> Function1<Throwable, Throwable> createConstructor(Class<E> cls) {
         Object obj;
         Function1<Throwable, Throwable> function1;
-        Pair m144to;
+        Pair m146to;
         ExceptionsConstructorKt$createConstructor$nullResult$1 exceptionsConstructorKt$createConstructor$nullResult$1 = new Function1() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createConstructor$nullResult$1
             @Override // kotlin.jvm.functions.Function1
             public final Void invoke(Throwable th) {
@@ -75,7 +75,7 @@ public final class ExceptionsConstructorKt {
             Class<?>[] parameterTypes = constructor.getParameterTypes();
             int length2 = parameterTypes.length;
             if (length2 == 0) {
-                m144to = TuplesKt.m144to(safeCtor(new Function1<Throwable, Throwable>() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createConstructor$1$4
+                m146to = TuplesKt.m146to(safeCtor(new Function1<Throwable, Throwable>() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createConstructor$1$4
                     /* JADX INFO: Access modifiers changed from: package-private */
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
@@ -94,7 +94,7 @@ public final class ExceptionsConstructorKt {
             } else if (length2 == 1) {
                 Class<?> cls2 = parameterTypes[0];
                 if (Intrinsics.areEqual(cls2, String.class)) {
-                    m144to = TuplesKt.m144to(safeCtor(new Function1<Throwable, Throwable>() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createConstructor$1$2
+                    m146to = TuplesKt.m146to(safeCtor(new Function1<Throwable, Throwable>() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createConstructor$1$2
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         {
@@ -111,7 +111,7 @@ public final class ExceptionsConstructorKt {
                         }
                     }), 2);
                 } else if (Intrinsics.areEqual(cls2, Throwable.class)) {
-                    m144to = TuplesKt.m144to(safeCtor(new Function1<Throwable, Throwable>() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createConstructor$1$3
+                    m146to = TuplesKt.m146to(safeCtor(new Function1<Throwable, Throwable>() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createConstructor$1$3
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         {
@@ -126,11 +126,11 @@ public final class ExceptionsConstructorKt {
                         }
                     }), 1);
                 } else {
-                    m144to = TuplesKt.m144to(null, -1);
+                    m146to = TuplesKt.m146to(null, -1);
                 }
             } else if (length2 == 2) {
                 if (Intrinsics.areEqual(parameterTypes[0], String.class) && Intrinsics.areEqual(parameterTypes[1], Throwable.class)) {
-                    m144to = TuplesKt.m144to(safeCtor(new Function1<Throwable, Throwable>() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createConstructor$1$1
+                    m146to = TuplesKt.m146to(safeCtor(new Function1<Throwable, Throwable>() { // from class: kotlinx.coroutines.internal.ExceptionsConstructorKt$createConstructor$1$1
                         /* JADX INFO: Access modifiers changed from: package-private */
                         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                         {
@@ -145,12 +145,12 @@ public final class ExceptionsConstructorKt {
                         }
                     }), 3);
                 } else {
-                    m144to = TuplesKt.m144to(null, -1);
+                    m146to = TuplesKt.m146to(null, -1);
                 }
             } else {
-                m144to = TuplesKt.m144to(null, -1);
+                m146to = TuplesKt.m146to(null, -1);
             }
-            arrayList.add(m144to);
+            arrayList.add(m146to);
             i++;
         }
         Iterator it = arrayList.iterator();
@@ -183,7 +183,7 @@ public final class ExceptionsConstructorKt {
 
             @Override // kotlin.jvm.functions.Function1
             public final Throwable invoke(Throwable th) {
-                Object m1935constructorimpl;
+                Object m1940constructorimpl;
                 Function1<Throwable, Throwable> function12 = function1;
                 try {
                     Result.Companion companion = Result.Companion;
@@ -191,31 +191,31 @@ public final class ExceptionsConstructorKt {
                     if (!Intrinsics.areEqual(th.getMessage(), invoke.getMessage()) && !Intrinsics.areEqual(invoke.getMessage(), th.toString())) {
                         invoke = null;
                     }
-                    m1935constructorimpl = Result.m1935constructorimpl(invoke);
+                    m1940constructorimpl = Result.m1940constructorimpl(invoke);
                 } catch (Throwable th2) {
                     Result.Companion companion2 = Result.Companion;
-                    m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th2));
+                    m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th2));
                 }
-                return Result.m1940isFailureimpl(m1935constructorimpl) ? null : m1935constructorimpl;
+                return Result.m1945isFailureimpl(m1940constructorimpl) ? null : m1940constructorimpl;
             }
         };
     }
 
     private static final int fieldsCountOrDefault(Class<?> cls, int i) {
-        Integer m1935constructorimpl;
+        Integer m1940constructorimpl;
         JvmClassMappingKt.getKotlinClass(cls);
         try {
             Result.Companion companion = Result.Companion;
-            m1935constructorimpl = Result.m1935constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
+            m1940constructorimpl = Result.m1940constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th));
+            m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
         }
         Integer valueOf = Integer.valueOf(i);
-        if (Result.m1940isFailureimpl(m1935constructorimpl)) {
-            m1935constructorimpl = valueOf;
+        if (Result.m1945isFailureimpl(m1940constructorimpl)) {
+            m1940constructorimpl = valueOf;
         }
-        return ((Number) m1935constructorimpl).intValue();
+        return ((Number) m1940constructorimpl).intValue();
     }
 
     static /* synthetic */ int fieldsCount$default(Class cls, int i, int i2, Object obj) {

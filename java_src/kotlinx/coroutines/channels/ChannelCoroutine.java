@@ -45,8 +45,8 @@ public class ChannelCoroutine<E> extends AbstractCoroutine<Unit> implements Chan
 
     @Override // kotlinx.coroutines.channels.SendChannel
     /* renamed from: trySend-JP2dKIU */
-    public Object mo2095trySendJP2dKIU(E e) {
-        return this._channel.mo2095trySendJP2dKIU(e);
+    public Object mo2100trySendJP2dKIU(E e) {
+        return this._channel.mo2100trySendJP2dKIU(e);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

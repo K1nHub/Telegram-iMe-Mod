@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Adapters/ContactsAdapter;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;II)V
     .locals 0
 
-    .line 692
+    .line 693
     iput-object p1, p0, Lorg/telegram/ui/Adapters/ContactsAdapter$2;->this$0:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Stories/DialogStoriesCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;II)V
@@ -35,7 +35,7 @@
 .method public onUserLongPressed(Landroid/view/View;J)V
     .locals 1
 
-    .line 695
+    .line 696
     iget-object v0, p0, Lorg/telegram/ui/Adapters/ContactsAdapter$2;->this$0:Lorg/telegram/ui/Adapters/ContactsAdapter;
 
     invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Adapters/ContactsAdapter;->onStoryLongPressed(Landroid/view/View;J)V

@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.chunk;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.DefaultExtractorInput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -21,7 +21,7 @@ public final class SingleSampleMediaChunk extends BaseMediaChunk {
     }
 
     public SingleSampleMediaChunk(DataSource dataSource, DataSpec dataSpec, Format format, int i, Object obj, long j, long j2, long j3, int i2, Format format2) {
-        super(dataSource, dataSpec, format, i, obj, j, j2, C0479C.TIME_UNSET, C0479C.TIME_UNSET, j3);
+        super(dataSource, dataSpec, format, i, obj, j, j2, C0485C.TIME_UNSET, C0485C.TIME_UNSET, j3);
         this.trackType = i2;
         this.sampleFormat = format2;
     }

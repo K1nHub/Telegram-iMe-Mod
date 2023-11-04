@@ -45,7 +45,7 @@
 
     iget-boolean v4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda73;->f$3:Z
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$-QZsyYAHUn3_nCy6sfSZh4v7lWI(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;JZ)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$HcNkSNI967xj994haGkPkwVWQVA(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;JZ)V
 
     return-void
 .end method

@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletV3R2Contract.kt */
-@DebugMetadata(m143c = "com.iMe.storage.data.manager.ton.WalletV3R2Contract$Companion", m142f = "WalletV3R2Contract.kt", m141l = {126}, m140m = "loadContract")
+@DebugMetadata(m145c = "com.iMe.storage.data.manager.ton.WalletV3R2Contract$Companion", m144f = "WalletV3R2Contract.kt", m143l = {131}, m142m = "loadContract")
 /* loaded from: classes3.dex */
 public final class WalletV3R2Contract$Companion$loadContract$2 extends ContinuationImpl {
     int label;

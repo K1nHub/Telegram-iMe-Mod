@@ -75,7 +75,7 @@
 
     iget-object v8, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda57;->f$8:Landroid/view/View;
 
-    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$I2WdyI2SgRFDlxMs8FWtEs7R-uo(Lorg/telegram/ui/ProfileActivity;[ZLjava/lang/String;I[Ljava/lang/String;Ljava/lang/String;FFLandroid/view/View;)V
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$Oi0apd47npkWpkLnb0PZiDEBUWE(Lorg/telegram/ui/ProfileActivity;[ZLjava/lang/String;I[Ljava/lang/String;Ljava/lang/String;FFLandroid/view/View;)V
 
     return-void
 .end method

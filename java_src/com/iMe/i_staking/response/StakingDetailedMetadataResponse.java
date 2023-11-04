@@ -154,13 +154,13 @@ public final class StakingDetailedMetadataResponse {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1017m = ((((((((((((((((((((((((((((((((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.f279id) * 31) + this.net.hashCode()) * 31) + this.name.hashCode()) * 31) + this.author.hashCode()) * 31) + this.contract.hashCode()) * 31) + this.startsAt.hashCode()) * 31) + this.endsAt.hashCode()) * 31) + this.token.hashCode()) * 31) + this.feeToken.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.apy)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.apr)) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.incomePeriod)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.incomePercent)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.prematureWithdrawalFee)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.immediateWithdrawalFee)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.safeWithdrawalFee)) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.safeWithdrawalDuration)) * 31) + this.compoundAccrualThreshold.hashCode()) * 31) + this.stats.hashCode()) * 31) + this.rules.hashCode()) * 31;
+        int m1018m = ((((((((((((((((((((((((((((((((((((((ProfileData$$ExternalSyntheticBackport0.m1018m(this.f279id) * 31) + this.net.hashCode()) * 31) + this.name.hashCode()) * 31) + this.author.hashCode()) * 31) + this.contract.hashCode()) * 31) + this.startsAt.hashCode()) * 31) + this.endsAt.hashCode()) * 31) + this.token.hashCode()) * 31) + this.feeToken.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.apy)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.apr)) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.incomePeriod)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.incomePercent)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.prematureWithdrawalFee)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.immediateWithdrawalFee)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.safeWithdrawalFee)) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.safeWithdrawalDuration)) * 31) + this.compoundAccrualThreshold.hashCode()) * 31) + this.stats.hashCode()) * 31) + this.rules.hashCode()) * 31;
         boolean z = this.hasEnoughFunds;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        int i2 = (m1017m + i) * 31;
+        int i2 = (m1018m + i) * 31;
         String str = this.minimalRank;
         return ((i2 + (str == null ? 0 : str.hashCode())) * 31) + this.website.hashCode();
     }

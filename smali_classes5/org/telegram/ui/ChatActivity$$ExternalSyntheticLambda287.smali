@@ -2,44 +2,56 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/ToIntFunction;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+
+.field public final synthetic f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
+
+.field public final synthetic f$3:Ljava/lang/String;
+
+.field public final synthetic f$4:Lorg/telegram/ui/Cells/ChatMessageCell;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;->INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLObject;Ljava/lang/String;Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;->f$0:Lorg/telegram/ui/ChatActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;->f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;->f$2:Lorg/telegram/tgnet/TLObject;
+
+    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;->f$3:Ljava/lang/String;
+
+    iput-object p5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;->f$4:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final applyAsInt(Ljava/lang/Object;)I
-    .locals 0
+.method public final run()V
+    .locals 5
 
-    check-cast p1, Lorg/telegram/messenger/MessageObject;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;->f$1:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    move-result p1
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    return p1
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;->f$3:Ljava/lang/String;
+
+    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda287;->f$4:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$PnX296v1MiCIPau6bOEf4TYqF3A(Lorg/telegram/ui/ChatActivity;[Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLObject;Ljava/lang/String;Lorg/telegram/ui/Cells/ChatMessageCell;)V
+
+    return-void
 .end method

@@ -38,11 +38,11 @@ public final class TypeIntersector {
         ArrayList<UnwrappedType> arrayList = new ArrayList();
         for (SimpleType simpleType : types) {
             if (simpleType.getConstructor() instanceof IntersectionTypeConstructor) {
-                Collection<KotlinType> mo2047getSupertypes = simpleType.getConstructor().mo2047getSupertypes();
-                Intrinsics.checkNotNullExpressionValue(mo2047getSupertypes, "type.constructor.supertypes");
-                collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(mo2047getSupertypes, 10);
+                Collection<KotlinType> mo2052getSupertypes = simpleType.getConstructor().mo2052getSupertypes();
+                Intrinsics.checkNotNullExpressionValue(mo2052getSupertypes, "type.constructor.supertypes");
+                collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(mo2052getSupertypes, 10);
                 ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault2);
-                for (KotlinType it : mo2047getSupertypes) {
+                for (KotlinType it : mo2052getSupertypes) {
                     Intrinsics.checkNotNullExpressionValue(it, "it");
                     SimpleType upperIfFlexible = FlexibleTypesKt.upperIfFlexible(it);
                     if (simpleType.isMarkedNullable()) {
@@ -109,13 +109,13 @@ public final class TypeIntersector {
                 return sb.toString();
             }
         };
-        Collection<SimpleType> filterTypes = filterTypes(set, new C3480x702eebb8(this));
+        Collection<SimpleType> filterTypes = filterTypes(set, new C3484x702eebb8(this));
         filterTypes.isEmpty();
         SimpleType findIntersectionType = IntegerLiteralTypeConstructor.Companion.findIntersectionType(filterTypes);
         if (findIntersectionType != null) {
             return findIntersectionType;
         }
-        Collection<SimpleType> filterTypes2 = filterTypes(filterTypes, new C3481xc97d8c34(NewKotlinTypeChecker.Companion.getDefault()));
+        Collection<SimpleType> filterTypes2 = filterTypes(filterTypes, new C3485xc97d8c34(NewKotlinTypeChecker.Companion.getDefault()));
         filterTypes2.isEmpty();
         return filterTypes2.size() < 2 ? (SimpleType) CollectionsKt.single(filterTypes2) : new IntersectionTypeConstructor(set).createType();
     }

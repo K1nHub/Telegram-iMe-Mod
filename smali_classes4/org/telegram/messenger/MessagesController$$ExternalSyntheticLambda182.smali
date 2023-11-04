@@ -51,7 +51,7 @@
 
     iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda182;->f$4:Landroidx/core/util/Consumer;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$7Sl2NGY5kywLDiMwjQtKrqPbb2E(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Chat;ZILandroidx/core/util/Consumer;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$NpuX7MvmdLpcP3l-iS4FfreAx-k(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Chat;ZILandroidx/core/util/Consumer;)V
 
     return-void
 .end method

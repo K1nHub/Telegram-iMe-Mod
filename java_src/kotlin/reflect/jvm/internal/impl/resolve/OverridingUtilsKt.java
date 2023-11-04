@@ -34,7 +34,7 @@ public final class OverridingUtilsKt {
                 /* JADX WARN: Multi-variable type inference failed */
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Object obj) {
-                    invoke2((C3444x410e6287<H>) obj);
+                    invoke2((C3448x410e6287<H>) obj);
                     return Unit.INSTANCE;
                 }
 

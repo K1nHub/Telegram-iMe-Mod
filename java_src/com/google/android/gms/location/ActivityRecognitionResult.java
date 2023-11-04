@@ -22,15 +22,15 @@ import java.util.List;
 /* loaded from: classes3.dex */
 public class ActivityRecognitionResult extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<ActivityRecognitionResult> CREATOR = new zzd();
-    @SafeParcelable.Field(m1089id = 1)
+    @SafeParcelable.Field(m1090id = 1)
     List zza;
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     long zzb;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     long zzc;
-    @SafeParcelable.Field(m1089id = 4)
+    @SafeParcelable.Field(m1090id = 4)
     int zzd;
-    @SafeParcelable.Field(m1089id = 5)
+    @SafeParcelable.Field(m1090id = 5)
     Bundle zze;
 
     @VisibleForTesting
@@ -217,7 +217,7 @@ public class ActivityRecognitionResult extends AbstractSafeParcelable implements
 
     @ShowFirstParty
     @SafeParcelable.Constructor
-    public ActivityRecognitionResult(@SafeParcelable.Param(m1088id = 1) List list, @SafeParcelable.Param(m1088id = 2) long j, @SafeParcelable.Param(m1088id = 3) long j2, @SafeParcelable.Param(m1088id = 4) int i, @SafeParcelable.Param(m1088id = 5) Bundle bundle) {
+    public ActivityRecognitionResult(@SafeParcelable.Param(m1089id = 1) List list, @SafeParcelable.Param(m1089id = 2) long j, @SafeParcelable.Param(m1089id = 3) long j2, @SafeParcelable.Param(m1089id = 4) int i, @SafeParcelable.Param(m1089id = 5) Bundle bundle) {
         boolean z = true;
         Preconditions.checkArgument(list != null && list.size() > 0, "Must have at least 1 detected activity");
         Preconditions.checkArgument((j <= 0 || j2 <= 0) ? false : z, "Must set times");

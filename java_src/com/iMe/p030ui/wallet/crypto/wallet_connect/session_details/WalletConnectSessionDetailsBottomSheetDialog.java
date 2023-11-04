@@ -25,12 +25,12 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentWalletConnectSessionDetailsBinding;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: WalletConnectSessionDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog */
 /* loaded from: classes3.dex */
@@ -42,7 +42,7 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
     private final MoxyKtxDelegate presenter$delegate;
     private final Lazy resourceManager$delegate;
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -52,7 +52,7 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public WalletConnectSessionDetailsBottomSheetDialog(final com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r5, final org.telegram.p042ui.ActionBar.BaseFragment r6, kotlin.jvm.functions.Function0<kotlin.Unit> r7) {
+    public WalletConnectSessionDetailsBottomSheetDialog(final com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r5, final org.telegram.p043ui.ActionBar.BaseFragment r6, kotlin.jvm.functions.Function0<kotlin.Unit> r7) {
         /*
             r4 = this;
             java.lang.String r0 = "item"
@@ -135,11 +135,11 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
         Intrinsics.checkNotNullParameter(network, "network");
         ForkContentWalletConnectSessionDetailsBinding binding = getBinding();
         binding.viewHeader.setupViewData(iconUrl, name, url);
-        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3630R.string.wallet_connect_session_details_connected), connectedDate, C3630R.C3632drawable.msg_calendar2, true);
-        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3630R.string.wallet_connect_session_details_address), address, C3630R.C3632drawable.fork_ic_nav_wallet_24, true);
+        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3634R.string.wallet_connect_session_details_connected), connectedDate, C3634R.C3636drawable.msg_calendar2, true);
+        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3634R.string.wallet_connect_session_details_address), address, C3634R.C3636drawable.fork_ic_nav_wallet_24, true);
         DetailsIconCellView viewNetworkCell = binding.viewNetworkCell;
         Intrinsics.checkNotNullExpressionValue(viewNetworkCell, "viewNetworkCell");
-        DetailsIconCellView.setupViewData$default(viewNetworkCell, getResourceManager().getString(C3630R.string.wallet_connect_session_details_network), network, C3630R.C3632drawable.msg_language, false, 8, null);
+        DetailsIconCellView.setupViewData$default(viewNetworkCell, getResourceManager().getString(C3634R.string.wallet_connect_session_details_network), network, C3634R.C3636drawable.msg_language, false, 8, null);
     }
 
     private final void setupColors() {
@@ -148,11 +148,11 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
         binding.viewConnectedCell.setupColors();
         binding.viewAddressCell.setupColors();
         binding.viewNetworkCell.setupColors();
-        binding.buttonDisconnect.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m102dp(4), Theme.getColor(Theme.key_chat_attachAudioBackground), ViewExtKt.withAlpha(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
+        binding.buttonDisconnect.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m104dp(4), Theme.getColor(Theme.key_chat_attachAudioBackground), ViewExtKt.withAlpha(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
     }
 
     private final void setupTexts() {
-        getBinding().buttonDisconnect.setText(LocaleController.getString("Disconnect", C3630R.string.Disconnect));
+        getBinding().buttonDisconnect.setText(LocaleController.getString("Disconnect", C3634R.string.Disconnect));
     }
 
     private final void setupListeners() {

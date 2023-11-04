@@ -75,37 +75,37 @@
 .method public constructor <init>(Landroid/content/Context;Landroid/view/ActionMode$Callback2;Landroid/view/View;Lorg/telegram/ui/ActionBar/FloatingToolbar;)V
     .locals 1
 
-    .line 84
+    .line 85
     invoke-direct {p0}, Landroid/view/ActionMode;-><init>()V
 
-    .line 63
+    .line 64
     new-instance v0, Lorg/telegram/ui/ActionBar/FloatingActionMode$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/FloatingActionMode$1;-><init>(Lorg/telegram/ui/ActionBar/FloatingActionMode;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mMovingOff:Ljava/lang/Runnable;
 
-    .line 72
+    .line 73
     new-instance v0, Lorg/telegram/ui/ActionBar/FloatingActionMode$2;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/FloatingActionMode$2;-><init>(Lorg/telegram/ui/ActionBar/FloatingActionMode;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mHideOff:Ljava/lang/Runnable;
 
-    .line 85
+    .line 86
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContext:Landroid/content/Context;
 
-    .line 86
+    .line 87
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mCallback:Landroid/view/ActionMode$Callback2;
 
-    .line 88
+    .line 89
     new-instance p2, Landroid/widget/PopupMenu;
 
     const/4 v0, 0x0
 
     invoke-direct {p2, p1, v0}, Landroid/widget/PopupMenu;-><init>(Landroid/content/Context;Landroid/view/View;)V
 
-    .line 89
+    .line 90
     invoke-virtual {p2}, Landroid/widget/PopupMenu;->getMenu()Landroid/view/Menu;
 
     move-result-object p1
@@ -114,31 +114,31 @@
 
     const/4 p1, 0x1
 
-    .line 90
+    .line 91
     invoke-virtual {p0, p1}, Landroid/view/ActionMode;->setType(I)V
 
-    .line 91
+    .line 92
     new-instance p1, Lorg/telegram/ui/ActionBar/FloatingActionMode$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ActionBar/FloatingActionMode$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ActionBar/FloatingActionMode;)V
 
     invoke-virtual {p2, p1}, Landroid/widget/PopupMenu;->setOnMenuItemClickListener(Landroid/widget/PopupMenu$OnMenuItemClickListener;)V
 
-    .line 92
+    .line 93
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRect:Landroid/graphics/Rect;
 
-    .line 93
+    .line 94
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
-    .line 94
+    .line 95
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -149,63 +149,63 @@
 
     new-array p2, p1, [I
 
-    .line 95
+    .line 96
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mViewPositionOnScreen:[I
 
     new-array v0, p1, [I
 
-    .line 96
+    .line 97
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mPreviousViewPositionOnScreen:[I
 
     new-array p1, p1, [I
 
-    .line 97
-    iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mRootViewPositionOnScreen:[I
-
     .line 98
-    new-instance p1, Landroid/graphics/Rect;
-
-    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
+    iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mRootViewPositionOnScreen:[I
 
     .line 99
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mPreviousViewRectOnScreen:Landroid/graphics/Rect;
+    iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
 
     .line 100
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mScreenRect:Landroid/graphics/Rect;
+    iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mPreviousViewRectOnScreen:Landroid/graphics/Rect;
 
     .line 101
-    iput-object p3, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
+    new-instance p1, Landroid/graphics/Rect;
+
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mScreenRect:Landroid/graphics/Rect;
 
     .line 102
+    iput-object p3, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
+
+    .line 103
     invoke-virtual {p3, p2}, Landroid/view/View;->getLocationOnScreen([I)V
 
     const/16 p1, 0x14
 
-    .line 103
+    .line 104
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mBottomAllowance:I
 
-    .line 104
+    .line 105
     new-instance p1, Landroid/graphics/Point;
 
     invoke-direct {p1}, Landroid/graphics/Point;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mDisplaySize:Landroid/graphics/Point;
 
-    .line 105
+    .line 106
     invoke-direct {p0, p4}, Lorg/telegram/ui/ActionBar/FloatingActionMode;->setFloatingToolbar(Lorg/telegram/ui/ActionBar/FloatingToolbar;)V
 
     return-void
@@ -214,7 +214,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/ActionBar/FloatingActionMode;)Z
     .locals 0
 
-    .line 43
+    .line 44
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingActionMode;->isViewStillActive()Z
 
     move-result p0
@@ -225,7 +225,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/ActionBar/FloatingActionMode;)Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
     .locals 0
 
-    .line 43
+    .line 44
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     return-object p0
@@ -234,7 +234,7 @@
 .method private static intersectsClosed(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z
     .locals 2
 
-    .line 197
+    .line 198
     iget v0, p0, Landroid/graphics/Rect;->left:I
 
     iget v1, p1, Landroid/graphics/Rect;->right:I
@@ -273,7 +273,7 @@
 .method private isContentRectWithinBounds()Z
     .locals 4
 
-    .line 191
+    .line 192
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContext:Landroid/content/Context;
 
     const-class v1, Landroid/view/WindowManager;
@@ -292,7 +292,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
 
-    .line 192
+    .line 193
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mScreenRect:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mDisplaySize:Landroid/graphics/Point;
@@ -305,7 +305,7 @@
 
     invoke-virtual {v0, v3, v3, v2, v1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 193
+    .line 194
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mScreenRect:Landroid/graphics/Rect;
@@ -335,7 +335,7 @@
 .method private isViewStillActive()Z
     .locals 1
 
-    .line 265
+    .line 266
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getWindowVisibility()I
@@ -366,7 +366,7 @@
 .method private synthetic lambda$new$0(Landroid/view/MenuItem;)Z
     .locals 1
 
-    .line 91
+    .line 92
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mCallback:Landroid/view/ActionMode$Callback2;
 
     invoke-virtual {v0, p0, p1}, Landroid/view/ActionMode$Callback2;->onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
@@ -379,7 +379,7 @@
 .method private synthetic lambda$setFloatingToolbar$1(Landroid/view/MenuItem;)Z
     .locals 1
 
-    .line 109
+    .line 110
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mCallback:Landroid/view/ActionMode$Callback2;
 
     invoke-virtual {v0, p0, p1}, Landroid/view/ActionMode$Callback2;->onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
@@ -392,21 +392,21 @@
 .method private repositionToolbar()V
     .locals 8
 
-    .line 164
+    .line 165
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRect:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 165
+    .line 166
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
-    .line 166
+    .line 167
     instance-of v1, v0, Landroid/view/ViewGroup;
 
     const/4 v2, 0x0
@@ -415,7 +415,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 167
+    .line 168
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
@@ -424,7 +424,7 @@
 
     invoke-interface {v0, v1, v4, v5}, Landroid/view/ViewParent;->getChildVisibleRect(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Point;)Z
 
-    .line 168
+    .line 169
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mRootViewPositionOnScreen:[I
@@ -437,7 +437,7 @@
 
     goto :goto_0
 
-    .line 170
+    .line 171
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
@@ -449,7 +449,7 @@
 
     invoke-virtual {v0, v4, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 172
+    .line 173
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingActionMode;->isContentRectWithinBounds()Z
 
@@ -457,12 +457,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 173
+    .line 174
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->setOutOfBounds(Z)V
 
-    .line 174
+    .line 175
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
     iget v1, v0, Landroid/graphics/Rect;->left:I
@@ -517,7 +517,7 @@
 
     invoke-virtual {v0, v1, v2, v4, v5}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 175
+    .line 176
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mPreviousContentRectOnScreen:Landroid/graphics/Rect;
@@ -528,19 +528,19 @@
 
     if-nez v0, :cond_2
 
-    .line 176
+    .line 177
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mMovingOff:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 177
+    .line 178
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->setMoving(Z)V
 
-    .line 178
+    .line 179
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mMovingOff:Ljava/lang/Runnable;
@@ -549,39 +549,39 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 179
+    .line 180
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbar:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->setContentRect(Landroid/graphics/Rect;)Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
-    .line 180
+    .line 181
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbar:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->updateLayout()Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     goto :goto_1
 
-    .line 183
+    .line 184
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->setOutOfBounds(Z)V
 
-    .line 184
+    .line 185
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->setEmpty()V
 
-    .line 186
+    .line 187
     :cond_2
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->updateToolbarVisibility()V
 
-    .line 187
+    .line 188
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mPreviousContentRectOnScreen:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRectOnScreen:Landroid/graphics/Rect;
@@ -594,24 +594,24 @@
 .method private reset()V
     .locals 2
 
-    .line 258
+    .line 259
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbar:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->dismiss()V
 
-    .line 259
+    .line 260
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->deactivate()V
 
-    .line 260
+    .line 261
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mMovingOff:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 261
+    .line 262
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mHideOff:Ljava/lang/Runnable;
@@ -624,7 +624,7 @@
 .method private setFloatingToolbar(Lorg/telegram/ui/ActionBar/FloatingToolbar;)V
     .locals 1
 
-    .line 109
+    .line 110
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mMenu:Landroid/view/Menu;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->setMenu(Landroid/view/Menu;)Lorg/telegram/ui/ActionBar/FloatingToolbar;
@@ -641,14 +641,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbar:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
-    .line 110
+    .line 111
     new-instance v0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
-    .line 111
+    .line 112
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->activate()V
 
     return-void
@@ -659,10 +659,10 @@
 .method public finish()V
     .locals 1
 
-    .line 228
+    .line 229
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingActionMode;->reset()V
 
-    .line 229
+    .line 230
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mCallback:Landroid/view/ActionMode$Callback2;
 
     invoke-virtual {v0, p0}, Landroid/view/ActionMode$Callback2;->onDestroyActionMode(Landroid/view/ActionMode;)V
@@ -681,7 +681,7 @@
 .method public getMenu()Landroid/view/Menu;
     .locals 1
 
-    .line 234
+    .line 235
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mMenu:Landroid/view/Menu;
 
     return-object v0
@@ -690,7 +690,7 @@
 .method public getMenuInflater()Landroid/view/MenuInflater;
     .locals 2
 
-    .line 254
+    .line 255
     new-instance v0, Landroid/view/MenuInflater;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContext:Landroid/content/Context;
@@ -725,7 +725,7 @@
 
     if-nez v0, :cond_0
 
-    .line 203
+    .line 204
     invoke-static {}, Landroid/view/ViewConfiguration;->getDefaultActionModeHideDuration()J
 
     move-result-wide p1
@@ -733,12 +733,12 @@
     :cond_0
     const-wide/16 v0, 0xbb8
 
-    .line 205
+    .line 206
     invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide p1
 
-    .line 206
+    .line 207
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mHideOff:Ljava/lang/Runnable;
@@ -751,14 +751,14 @@
 
     if-gtz v0, :cond_1
 
-    .line 208
+    .line 209
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mHideOff:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     goto :goto_0
 
-    .line 210
+    .line 211
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
@@ -766,12 +766,12 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->setHideRequested(Z)V
 
-    .line 211
+    .line 212
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->updateToolbarVisibility()V
 
-    .line 212
+    .line 213
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mHideOff:Ljava/lang/Runnable;
@@ -785,14 +785,14 @@
 .method public invalidate()V
     .locals 2
 
-    .line 136
+    .line 137
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mCallback:Landroid/view/ActionMode$Callback2;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mMenu:Landroid/view/Menu;
 
     invoke-virtual {v0, p0, v1}, Landroid/view/ActionMode$Callback2;->onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
 
-    .line 137
+    .line 138
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/FloatingActionMode;->invalidateContentRect()V
 
     return-void
@@ -801,7 +801,7 @@
 .method public invalidateContentRect()V
     .locals 3
 
-    .line 142
+    .line 143
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mCallback:Landroid/view/ActionMode$Callback2;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
@@ -810,7 +810,7 @@
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/view/ActionMode$Callback2;->onGetContentRect(Landroid/view/ActionMode;Landroid/view/View;Landroid/graphics/Rect;)V
 
-    .line 143
+    .line 144
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mContentRect:Landroid/graphics/Rect;
 
     iget v1, v0, Landroid/graphics/Rect;->left:I
@@ -823,13 +823,13 @@
 
     const/4 v1, 0x1
 
-    .line 144
+    .line 145
     iput v1, v0, Landroid/graphics/Rect;->left:I
 
-    .line 145
+    .line 146
     iput v1, v0, Landroid/graphics/Rect;->right:I
 
-    .line 147
+    .line 148
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingActionMode;->repositionToolbar()V
 
@@ -839,12 +839,12 @@
 .method public onWindowFocusChanged(Z)V
     .locals 1
 
-    .line 222
+    .line 223
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->setWindowFocused(Z)V
 
-    .line 223
+    .line 224
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mFloatingToolbarVisibilityHelper:Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->updateToolbarVisibility()V
@@ -885,14 +885,14 @@
 .method public updateViewLocationInWindow()V
     .locals 5
 
-    .line 151
+    .line 152
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mViewPositionOnScreen:[I
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 152
+    .line 153
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getRootView()Landroid/view/View;
@@ -903,14 +903,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 153
+    .line 154
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mOriginatingView:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
 
-    .line 154
+    .line 155
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mRootViewPositionOnScreen:[I
@@ -925,7 +925,7 @@
 
     invoke-virtual {v0, v3, v1}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 155
+    .line 156
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mViewPositionOnScreen:[I
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mPreviousViewPositionOnScreen:[I
@@ -946,11 +946,11 @@
 
     if-nez v0, :cond_1
 
-    .line 156
+    .line 157
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingActionMode;->repositionToolbar()V
 
-    .line 157
+    .line 158
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mPreviousViewPositionOnScreen:[I
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mViewPositionOnScreen:[I
@@ -959,12 +959,12 @@
 
     aput v3, v0, v2
 
-    .line 158
+    .line 159
     aget v1, v1, v4
 
     aput v1, v0, v4
 
-    .line 159
+    .line 160
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mPreviousViewRectOnScreen:Landroid/graphics/Rect;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode;->mViewRectOnScreen:Landroid/graphics/Rect;

@@ -850,7 +850,7 @@
     goto/16 :goto_4
 
     :pswitch_6f
-    const-string v3, "isUnsignedArrayType"
+    const-string/jumbo v3, "isUnsignedArrayType"
 
     aput-object v3, v2, v1
 
@@ -1224,6 +1224,8 @@
 
     :goto_5
     throw p0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x3

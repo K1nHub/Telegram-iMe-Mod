@@ -317,7 +317,7 @@
 
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v2, "java.io"
+    const-string/jumbo v2, "java.io"
 
     invoke-direct {v1, v2}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -662,7 +662,7 @@
 
     move-result-object v5
 
-    const-string v8, "it.containingDeclaration"
+    const-string/jumbo v8, "it.containingDeclaration"
 
     invoke-static {v5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -888,7 +888,7 @@
 
     move-result-object p1
 
-    const-string v0, "jvmDescriptor = computeJ\u2026CONSIDERED\n            })"
+    const-string/jumbo v0, "jvmDescriptor = computeJ\u2026CONSIDERED\n            })"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -913,7 +913,7 @@
 
     move-result-object p1
 
-    const-string v0, "it.typeConstructor.supertypes"
+    const-string/jumbo v0, "it.typeConstructor.supertypes"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1394,7 +1394,7 @@
 
     check-cast v12, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassConstructorDescriptor;
 
-    const-string v13, "it"
+    const-string/jumbo v13, "it"
 
     .line 290
     invoke-static {v12, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

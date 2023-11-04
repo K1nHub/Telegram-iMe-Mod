@@ -40,9 +40,7 @@
 .method public appendColors()V
     .locals 0
 
-    const p0, 0x0
-
-    throw p0
+    return-void
 .end method
 
 .method public applyServiceShaderMatrix(IIFF)V

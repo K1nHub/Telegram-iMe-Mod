@@ -2,32 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/PinchToZoomHelper$ClipBoundsListener;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnInterceptTouchListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda343;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda343;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda343;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda343;->INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda343;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda343;->f$0:Lorg/telegram/ui/ChatActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final getClipTopBottom([F)V
-    .locals 1
+.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda343;->f$0:Lorg/telegram/ui/ChatActivity;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$ayc36Xp16kJo2Mq3xOrklAWTuZ8(Landroid/view/MotionEvent;)Z
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$Ev2hnUilHEhrng4LNpv7EXmLFx0(Lorg/telegram/ui/ChatActivity;[F)V
+    move-result p1
 
-    return-void
+    return p1
 .end method

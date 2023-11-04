@@ -1483,64 +1483,64 @@
 .method private static checkCalendarDate(JLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
     .locals 9
 
-    .line 4455
+    .line 4456
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 4456
+    .line 4457
     invoke-virtual {v0, p0, p1}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     const/4 p0, 0x1
 
-    .line 4457
+    .line 4458
     invoke-virtual {v0, p0}, Ljava/util/Calendar;->get(I)I
 
     move-result p1
 
     const/4 v1, 0x2
 
-    .line 4458
+    .line 4459
     invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
 
     move-result v2
 
     const/4 v3, 0x5
 
-    .line 4459
+    .line 4460
     invoke-virtual {v0, v3}, Ljava/util/Calendar;->get(I)I
 
     move-result v4
 
-    .line 4460
+    .line 4461
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
 
     invoke-virtual {v0, v5, v6}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 4461
+    .line 4462
     invoke-virtual {v0, p0}, Ljava/util/Calendar;->get(I)I
 
     move-result v5
 
-    .line 4462
+    .line 4463
     invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
 
     move-result v6
 
-    .line 4463
+    .line 4464
     invoke-virtual {v0, v3}, Ljava/util/Calendar;->get(I)I
 
     move-result v7
 
-    .line 4465
+    .line 4466
     invoke-virtual {p4, v5}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 4466
+    .line 4467
     invoke-virtual {p4, p1}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
-    .line 4467
+    .line 4468
     invoke-virtual {p4}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p4
@@ -1554,7 +1554,7 @@
     :cond_0
     const/16 v8, 0xb
 
-    .line 4469
+    .line 4470
     :goto_0
     invoke-virtual {p3, v8}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
@@ -1567,22 +1567,22 @@
     :cond_1
     const/4 v8, 0x0
 
-    .line 4470
+    .line 4471
     :goto_1
     invoke-virtual {p3, v8}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
-    .line 4471
+    .line 4472
     invoke-virtual {p3}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p3
 
-    .line 4473
+    .line 4474
     invoke-virtual {v0, p0, p4}, Ljava/util/Calendar;->set(II)V
 
-    .line 4474
+    .line 4475
     invoke-virtual {v0, v1, p3}, Ljava/util/Calendar;->set(II)V
 
-    .line 4476
+    .line 4477
     invoke-virtual {v0, v3}, Ljava/util/Calendar;->getActualMaximum(I)I
 
     move-result v0
@@ -1591,7 +1591,7 @@
 
     if-ne p3, v6, :cond_2
 
-    .line 4477
+    .line 4478
     invoke-static {v7, v0}, Ljava/lang/Math;->min(II)I
 
     move-result v0
@@ -1605,7 +1605,7 @@
 
     move p0, v4
 
-    .line 4478
+    .line 4479
     :cond_3
     invoke-virtual {p2, p0}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
@@ -1615,7 +1615,7 @@
 .method private static checkInternalBotApp(Ljava/lang/String;)Z
     .locals 1
 
-    .line 1625
+    .line 1626
     invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p0
@@ -1626,7 +1626,7 @@
 
     const-string v0, "^/\\w*/[^\\d]*(?:\\?startapp=.*?|)$"
 
-    .line 1626
+    .line 1627
     invoke-virtual {p0, v0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
 
     move-result p0
@@ -1637,12 +1637,12 @@
 .method private static checkPickerDate(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
     .locals 5
 
-    .line 1546
+    .line 1547
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 1547
+    .line 1548
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -1651,29 +1651,29 @@
 
     const/4 v1, 0x1
 
-    .line 1551
+    .line 1552
     invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
 
     move-result v2
 
     const/4 v3, 0x2
 
-    .line 1552
+    .line 1553
     invoke-virtual {v0, v3}, Ljava/util/Calendar;->get(I)I
 
     move-result v3
 
     const/4 v4, 0x5
 
-    .line 1553
+    .line 1554
     invoke-virtual {v0, v4}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
 
-    .line 1555
+    .line 1556
     invoke-virtual {p2, v2}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
-    .line 1556
+    .line 1557
     invoke-virtual {p2}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p2
@@ -1687,11 +1687,11 @@
     :cond_0
     const/4 v4, 0x0
 
-    .line 1558
+    .line 1559
     :goto_0
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
-    .line 1559
+    .line 1560
     invoke-virtual {p1}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p1
@@ -1702,7 +1702,7 @@
 
     move v1, v0
 
-    .line 1561
+    .line 1562
     :cond_1
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
@@ -1714,7 +1714,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 2977
+    .line 2978
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_4
@@ -1728,7 +1728,7 @@
 
     const/4 v1, 0x0
 
-    .line 2981
+    .line 2982
     :goto_0
     iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
@@ -1738,7 +1738,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 2982
+    .line 2983
     iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1749,7 +1749,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 2983
+    .line 2984
     iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1758,7 +1758,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_updateGroupInvitePrivacyForbidden;
 
-    .line 2984
+    .line 2985
     invoke-static {p0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v3
@@ -1777,12 +1777,12 @@
 
     if-nez v0, :cond_1
 
-    .line 2987
+    .line 2988
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2989
+    .line 2990
     :cond_1
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1794,7 +1794,7 @@
     :cond_3
     if-eqz v0, :cond_4
 
-    .line 2995
+    .line 2996
     new-instance p2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;
 
     invoke-direct {p2, p0, p1, v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda120;-><init>(ILorg/telegram/tgnet/TLRPC$Chat;Ljava/util/ArrayList;)V
@@ -1825,7 +1825,7 @@
 
     move-object v7, p5
 
-    .line 3147
+    .line 3148
     invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/AlertsCreator;->checkScheduleDate(Landroid/widget/TextView;Landroid/widget/TextView;JILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)Z
 
     move-result p0
@@ -1848,44 +1848,44 @@
 
     move-object/from16 v5, p7
 
-    .line 3151
+    .line 3152
     invoke-virtual/range {p5 .. p5}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result v6
 
-    .line 3152
+    .line 3153
     invoke-virtual/range {p6 .. p6}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result v7
 
-    .line 3153
+    .line 3154
     invoke-virtual/range {p7 .. p7}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result v8
 
-    .line 3154
+    .line 3155
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v9
 
-    .line 3156
+    .line 3157
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v10
 
-    .line 3157
+    .line 3158
     invoke-virtual {v9, v10, v11}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     const/4 v12, 0x1
 
-    .line 3158
+    .line 3159
     invoke-virtual {v9, v12}, Ljava/util/Calendar;->get(I)I
 
     move-result v13
 
     const/4 v14, 0x6
 
-    .line 3159
+    .line 3160
     invoke-virtual {v9, v14}, Ljava/util/Calendar;->get(I)I
 
     const-wide/16 v14, 0x0
@@ -1904,27 +1904,27 @@
 
     add-long v1, v10, v23
 
-    .line 3164
+    .line 3165
     invoke-virtual {v9, v1, v2}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 3165
+    .line 3166
     invoke-virtual {v9, v14, v12}, Ljava/util/Calendar;->set(II)V
 
     const/16 v1, 0x3b
 
     const/16 v2, 0xc
 
-    .line 3166
+    .line 3167
     invoke-virtual {v9, v2, v1}, Ljava/util/Calendar;->set(II)V
 
     const/16 v12, 0xd
 
-    .line 3167
+    .line 3168
     invoke-virtual {v9, v12, v1}, Ljava/util/Calendar;->set(II)V
 
     const/4 v12, 0x7
 
-    .line 3169
+    .line 3170
     invoke-virtual {v9}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v21
@@ -1953,22 +1953,22 @@
 
     add-long v2, v10, v27
 
-    .line 3172
+    .line 3173
     invoke-virtual {v9, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 3174
+    .line 3175
     invoke-virtual {v9, v14}, Ljava/util/Calendar;->get(I)I
 
     move-result v15
 
     const/16 v14, 0xc
 
-    .line 3175
+    .line 3176
     invoke-virtual {v9, v14}, Ljava/util/Calendar;->get(I)I
 
     move-result v29
 
-    .line 3177
+    .line 3178
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v30
@@ -1993,20 +1993,20 @@
 
     const/16 v6, 0xb
 
-    .line 3178
+    .line 3179
     invoke-virtual {v9, v6, v7}, Ljava/util/Calendar;->set(II)V
 
     const/16 v6, 0xc
 
-    .line 3179
+    .line 3180
     invoke-virtual {v9, v6, v8}, Ljava/util/Calendar;->set(II)V
 
-    .line 3180
+    .line 3181
     invoke-virtual {v9}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v6
 
-    .line 3181
+    .line 3182
     invoke-virtual {v9, v6, v7}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     move-wide v14, v2
@@ -2015,7 +2015,7 @@
 
     move-object/from16 v2, p5
 
-    .line 3183
+    .line 3184
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     move-wide/from16 v30, v10
@@ -2028,10 +2028,10 @@
 
     if-lez v3, :cond_1
 
-    .line 3185
+    .line 3186
     invoke-virtual {v2, v12}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 3187
+    .line 3188
     :cond_1
     invoke-virtual/range {p5 .. p5}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
@@ -2046,7 +2046,7 @@
     :cond_2
     const/4 v8, 0x0
 
-    .line 3189
+    .line 3190
     :goto_1
     invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
@@ -2061,11 +2061,11 @@
     :cond_3
     const/16 v8, 0x17
 
-    .line 3191
+    .line 3192
     :goto_2
     invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 3193
+    .line 3194
     :cond_4
     invoke-virtual/range {p6 .. p6}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
@@ -2084,7 +2084,7 @@
     :cond_5
     const/4 v8, 0x0
 
-    .line 3195
+    .line 3196
     :goto_3
     invoke-virtual {v5, v8}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
@@ -2101,11 +2101,11 @@
     :cond_6
     const/16 v1, 0x3b
 
-    .line 3197
+    .line 3198
     :goto_4
     invoke-virtual {v5, v1}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 3199
+    .line 3200
     :cond_7
     invoke-virtual/range {p7 .. p7}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
@@ -2115,7 +2115,7 @@
 
     if-gtz v5, :cond_8
 
-    .line 3201
+    .line 3202
     invoke-virtual {v9, v14, v15}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     goto :goto_5
@@ -2127,19 +2127,19 @@
 
     if-lez v3, :cond_9
 
-    .line 3203
+    .line 3204
     invoke-virtual {v9, v10, v11}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     :cond_9
     :goto_5
     const/4 v3, 0x1
 
-    .line 3205
+    .line 3206
     invoke-virtual {v9, v3}, Ljava/util/Calendar;->get(I)I
 
     move-result v5
 
-    .line 3207
+    .line 3208
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v10
@@ -2158,15 +2158,15 @@
 
     const/16 v3, 0xb
 
-    .line 3208
+    .line 3209
     invoke-virtual {v9, v3, v4}, Ljava/util/Calendar;->set(II)V
 
     const/16 v3, 0xc
 
-    .line 3209
+    .line 3210
     invoke-virtual {v9, v3, v1}, Ljava/util/Calendar;->set(II)V
 
-    .line 3211
+    .line 3212
     invoke-virtual {v9}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v3
@@ -2223,7 +2223,7 @@
 
     add-int/lit8 v2, v2, 0x9
 
-    .line 3228
+    .line 3229
     :cond_e
     :goto_8
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
@@ -2247,7 +2247,7 @@
 
     sub-long v3, v3, v30
 
-    .line 3231
+    .line 3232
     div-long v3, v3, v19
 
     long-to-int v1, v3
@@ -2262,7 +2262,7 @@
 
     div-float/2addr v1, v2
 
-    .line 3234
+    .line 3235
     invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
     move-result v1
@@ -2292,7 +2292,7 @@
 
     div-float/2addr v1, v3
 
-    .line 3236
+    .line 3237
     invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
     move-result v1
@@ -2318,7 +2318,7 @@
 
     div-float/2addr v1, v3
 
-    .line 3238
+    .line 3239
     invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
     move-result v1
@@ -2338,12 +2338,12 @@
 
     const-string v4, "SecondsSchedule"
 
-    .line 3240
+    .line 3241
     invoke-static {v4, v1, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3242
+    .line 3243
     :goto_9
     invoke-virtual/range {p1 .. p1}, Landroid/widget/TextView;->getTag()Ljava/lang/Object;
 
@@ -2351,7 +2351,7 @@
 
     if-eqz v3, :cond_13
 
-    .line 3243
+    .line 3244
     sget v3, Lorg/telegram/messenger/R$string;->VoipChannelScheduleInfo:I
 
     const/4 v4, 0x1
@@ -2373,7 +2373,7 @@
     :cond_13
     const/4 v4, 0x1
 
-    .line 3245
+    .line 3246
     sget v3, Lorg/telegram/messenger/R$string;->VoipGroupScheduleInfo:I
 
     new-array v5, v4, [Ljava/lang/Object;
@@ -2416,14 +2416,14 @@
 .method public static checkSlowMode(Landroid/content/Context;IJZ)Z
     .locals 8
 
-    .line 1087
+    .line 1088
     invoke-static {p2, p3}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 1088
+    .line 1089
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -2440,7 +2440,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 1089
+    .line 1090
     iget-boolean p3, p2, Lorg/telegram/tgnet/TLRPC$Chat;->slowmode_enabled:Z
 
     if-eqz p3, :cond_2
@@ -2455,7 +2455,7 @@
 
     if-nez p4, :cond_1
 
-    .line 1091
+    .line 1092
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -2468,7 +2468,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1093
+    .line 1094
     invoke-static {p1}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v1
@@ -2494,7 +2494,7 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 1095
+    .line 1096
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->slowmode_next_send_date:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2512,7 +2512,7 @@
     :cond_1
     if-eqz p4, :cond_2
 
-    .line 1100
+    .line 1101
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
     sget p2, Lorg/telegram/messenger/R$string;->SlowmodeSendError:I
@@ -2540,7 +2540,7 @@
 .method public static createAccountSelectDialog(Landroid/app/Activity;Lorg/telegram/ui/Components/AlertsCreator$AccountSelectDelegate;)Lorg/telegram/ui/ActionBar/AlertDialog;
     .locals 10
 
-    .line 5905
+    .line 5906
     invoke-static {}, Lorg/telegram/messenger/UserConfig;->getActivatedAccountsCount()I
 
     move-result v0
@@ -2553,13 +2553,13 @@
 
     return-object v1
 
-    .line 5909
+    .line 5910
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 5910
+    .line 5911
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object v2
@@ -2568,12 +2568,12 @@
 
     new-array v4, v3, [Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    .line 5913
+    .line 5914
     new-instance v5, Landroid/widget/LinearLayout;
 
     invoke-direct {v5, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 5914
+    .line 5915
     invoke-virtual {v5, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/4 v3, 0x0
@@ -2585,7 +2585,7 @@
 
     if-ge v6, v7, :cond_2
 
-    .line 5916
+    .line 5917
     invoke-static {v6}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v7
@@ -2596,17 +2596,17 @@
 
     if-eqz v7, :cond_1
 
-    .line 5918
+    .line 5919
     new-instance v7, Lorg/telegram/ui/Cells/AccountSelectCell;
 
     invoke-direct {v7, p0, v3}, Lorg/telegram/ui/Cells/AccountSelectCell;-><init>(Landroid/content/Context;Z)V
 
-    .line 5919
+    .line 5920
     invoke-virtual {v7, v6, v3}, Lorg/telegram/ui/Cells/AccountSelectCell;->setAccount(IZ)V
 
     const/16 v8, 0xe
 
-    .line 5920
+    .line 5921
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -2617,7 +2617,7 @@
 
     invoke-virtual {v7, v9, v3, v8, v3}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 5921
+    .line 5922
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v8
@@ -2628,14 +2628,14 @@
 
     const/16 v9, 0x32
 
-    .line 5922
+    .line 5923
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v8
 
     invoke-virtual {v5, v7, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5923
+    .line 5924
     new-instance v8, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda91;
 
     invoke-direct {v8, v4, v2, p1}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda91;-><init>([Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Runnable;Lorg/telegram/ui/Components/AlertsCreator$AccountSelectDelegate;)V
@@ -2647,7 +2647,7 @@
 
     goto :goto_0
 
-    .line 5934
+    .line 5935
     :cond_2
     sget p0, Lorg/telegram/messenger/R$string;->SelectAccount:I
 
@@ -2659,10 +2659,10 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5935
+    .line 5936
     invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5936
+    .line 5937
     sget p0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string p1, "Cancel"
@@ -2673,7 +2673,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5937
+    .line 5938
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -2686,7 +2686,7 @@
 .method public static createApkRestrictedDialog(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/app/Dialog;
     .locals 4
 
-    .line 631
+    .line 632
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -2695,7 +2695,7 @@
 
     const-string v1, "ApkRestricted"
 
-    .line 632
+    .line 633
     invoke-static {v1, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
@@ -2708,7 +2708,7 @@
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
 
-    .line 633
+    .line 634
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
@@ -2725,7 +2725,7 @@
 
     const-string v1, "PermissionOpenSettings"
 
-    .line 634
+    .line 635
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -2742,7 +2742,7 @@
 
     const-string v0, "ContactsPermissionAlertNotNow"
 
-    .line 641
+    .line 642
     invoke-static {v0, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
@@ -2753,7 +2753,7 @@
 
     move-result-object p0
 
-    .line 642
+    .line 643
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -2768,74 +2768,74 @@
 
     move-object/from16 v1, p2
 
-    const/4 v2, 0x0
-
     if-nez v0, :cond_0
 
-    return-object v2
+    const/4 v0, 0x0
 
-    .line 3969
-    :cond_0
-    new-instance v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
-
-    invoke-direct {v3, v1, v2}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/AlertsCreator$1;)V
+    return-object v0
 
     .line 3970
-    new-instance v2, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    :cond_0
+    new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
+
+    invoke-direct {v2, v1}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    .line 3971
+    new-instance v3, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     const/4 v4, 0x0
 
-    invoke-direct {v2, v0, v4, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v3, v0, v4, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 3971
-    invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    .line 3972
+    invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     const/16 v5, 0x11
 
     new-array v6, v5, [I
 
-    .line 3973
+    .line 3974
     fill-array-data v6, :array_0
 
-    .line 3993
+    .line 3994
     new-instance v7, Lorg/telegram/ui/Components/AlertsCreator$29;
 
     invoke-direct {v7, v0, v1, v6}, Lorg/telegram/ui/Components/AlertsCreator$29;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;[I)V
 
-    .line 4009
+    .line 4010
     invoke-virtual {v7, v4}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v1, 0x10
 
-    .line 4010
+    .line 4011
     invoke-virtual {v7, v1}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 4011
-    iget v1, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
+    .line 4012
+    iget v1, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v7, v1}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
-    .line 4012
+    .line 4013
     invoke-virtual {v7, v4}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 4013
+    .line 4014
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda148;
 
     invoke-direct {v1, v6}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda148;-><init>([I)V
 
     invoke-virtual {v7, v1}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 4027
+    .line 4028
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$30;
 
     invoke-direct {v1, v0, v7}, Lorg/telegram/ui/Components/AlertsCreator$30;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/NumberPicker;)V
 
     const/4 v8, 0x1
 
-    .line 4054
+    .line 4055
     invoke-virtual {v1, v8}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 4056
+    .line 4057
     new-instance v9, Landroid/widget/FrameLayout;
 
     invoke-direct {v9, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -2854,19 +2854,19 @@
 
     const/16 v16, 0x4
 
-    .line 4057
+    .line 4058
     invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v10
 
     invoke-virtual {v1, v9, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4059
+    .line 4060
     new-instance v10, Landroid/widget/TextView;
 
     invoke-direct {v10, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 4060
+    .line 4061
     sget v11, Lorg/telegram/messenger/R$string;->AutoDeleteAfteTitle:I
 
     const-string v12, "AutoDeleteAfteTitle"
@@ -2877,19 +2877,19 @@
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4062
-    iget v11, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
+    .line 4063
+    iget v11, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/high16 v11, 0x41a00000    # 20.0f
 
-    .line 4063
+    .line 4064
     invoke-virtual {v10, v8, v11}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v11, "fonts/rmedium.ttf"
 
-    .line 4064
+    .line 4065
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v12
@@ -2910,29 +2910,29 @@
 
     const/16 v19, 0x0
 
-    .line 4065
+    .line 4066
     invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v12
 
     invoke-virtual {v9, v10, v12}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4066
+    .line 4067
     sget-object v9, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda108;
 
     invoke-virtual {v10, v9}, Landroid/widget/TextView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 4068
+    .line 4069
     new-instance v9, Landroid/widget/LinearLayout;
 
     invoke-direct {v9, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 4069
+    .line 4070
     invoke-virtual {v9, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/high16 v10, 0x3f800000    # 1.0f
 
-    .line 4070
+    .line 4071
     invoke-virtual {v9, v10}, Landroid/widget/LinearLayout;->setWeightSum(F)V
 
     const/4 v12, -0x1
@@ -2943,41 +2943,41 @@
 
     const/16 v19, 0xc
 
-    .line 4071
+    .line 4072
     invoke-static/range {v12 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIFIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v12
 
     invoke-virtual {v1, v9, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4073
+    .line 4074
     new-instance v12, Lorg/telegram/ui/Components/AlertsCreator$31;
 
     invoke-direct {v12, v0, v8, v8, v4}, Lorg/telegram/ui/Components/AlertsCreator$31;-><init>(Landroid/content/Context;ZZZ)V
 
     const/16 v0, 0x10e
 
-    .line 4080
+    .line 4081
     invoke-static {v4, v0, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v9, v7, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4082
+    .line 4083
     invoke-virtual {v12, v4, v4, v4, v4}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 4083
+    .line 4084
     invoke-virtual {v12, v5}, Lorg/telegram/ui/Components/AnimatedTextView;->setGravity(I)V
 
-    .line 4084
-    iget v0, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonTextColor:I
+    .line 4085
+    iget v0, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonTextColor:I
 
     invoke-virtual {v12, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
     const/16 v0, 0xe
 
-    .line 4085
+    .line 4086
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -2986,7 +2986,7 @@
 
     invoke-virtual {v12, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 4086
+    .line 4087
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
@@ -2995,14 +2995,14 @@
 
     const/4 v0, 0x4
 
-    .line 4087
+    .line 4088
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    iget v4, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonBackgroundColor:I
+    iget v4, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonBackgroundColor:I
 
-    iget v5, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonBackgroundPressedColor:I
+    iget v5, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonBackgroundPressedColor:I
 
     invoke-static {v0, v4, v5}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorRoundRectDrawable(III)Landroid/graphics/drawable/Drawable;
 
@@ -3024,14 +3024,14 @@
 
     const/16 v19, 0x10
 
-    .line 4088
+    .line 4089
     invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v1, v12, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4089
+    .line 4090
     sget v0, Lorg/telegram/messenger/R$string;->DisableAutoDeleteTimer:I
 
     const-string v4, "DisableAutoDeleteTimer"
@@ -3042,42 +3042,42 @@
 
     invoke-virtual {v12, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4091
+    .line 4092
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda172;
 
     invoke-direct {v0, v12, v1}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda172;-><init>(Lorg/telegram/ui/Components/AnimatedTextView;Landroid/widget/LinearLayout;)V
 
-    .line 4103
+    .line 4104
     invoke-virtual {v7, v0}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
-    .line 4105
+    .line 4106
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;
 
     move-object/from16 v4, p3
 
-    invoke-direct {v0, v6, v7, v4, v2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;-><init>([ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
+    invoke-direct {v0, v6, v7, v4, v3}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda90;-><init>([ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
 
     invoke-virtual {v12, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 4111
-    invoke-virtual {v2, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
-
     .line 4112
-    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->show()Lorg/telegram/ui/ActionBar/BottomSheet;
+    invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+
+    .line 4113
+    invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->show()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object v0
 
-    .line 4113
-    iget v1, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
+    .line 4114
+    iget v1, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setBackgroundColor(I)V
 
-    .line 4114
-    iget v1, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
+    .line 4115
+    iget v1, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar(I)V
 
-    return-object v2
+    return-object v3
 
     nop
 
@@ -3106,14 +3106,14 @@
 .method public static createBackgroundActivityDialog(Landroid/content/Context;)Landroid/app/Dialog;
     .locals 5
 
-    .line 568
+    .line 569
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     sget v1, Lorg/telegram/messenger/R$string;->AllowBackgroundActivity:I
 
-    .line 569
+    .line 570
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -3122,7 +3122,7 @@
 
     move-result-object v0
 
-    .line 570
+    .line 571
     invoke-static {}, Lorg/telegram/messenger/OneUIUtilities;->isOneUI()Z
 
     move-result v1
@@ -3139,7 +3139,7 @@
 
     goto :goto_0
 
-    .line 571
+    .line 572
     :cond_0
     sget v1, Lorg/telegram/messenger/R$string;->AllowBackgroundActivityInfoOneUIBelowS:I
 
@@ -3148,7 +3148,7 @@
     :cond_1
     sget v1, Lorg/telegram/messenger/R$string;->AllowBackgroundActivityInfo:I
 
-    .line 570
+    .line 571
     :goto_0
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
@@ -3170,7 +3170,7 @@
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
 
-    .line 572
+    .line 573
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
@@ -3181,7 +3181,7 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->PermissionOpenSettings:I
 
-    .line 573
+    .line 574
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -3198,7 +3198,7 @@
 
     const-string v1, "ContactsPermissionAlertNotNow"
 
-    .line 582
+    .line 583
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -3211,12 +3211,12 @@
 
     sget-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda63;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda63;
 
-    .line 583
+    .line 584
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object p0
 
-    .line 584
+    .line 585
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -3231,7 +3231,7 @@
 
     if-eqz p0, :cond_3
 
-    .line 5450
+    .line 5451
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1d
@@ -3240,13 +3240,13 @@
 
     goto/16 :goto_2
 
-    .line 5453
+    .line 5454
     :cond_0
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v1, p0, p3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 5454
+    .line 5455
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object p3
@@ -3269,7 +3269,7 @@
 
     move-result-object p3
 
-    .line 5455
+    .line 5456
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v2
@@ -3292,29 +3292,29 @@
 
     move-result-object v0
 
-    .line 5456
+    .line 5457
     new-instance v2, Landroid/widget/FrameLayout;
 
     invoke-direct {v2, p0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v3, 0x1
 
-    .line 5457
+    .line 5458
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setClipToOutline(Z)V
 
-    .line 5458
+    .line 5459
     new-instance v3, Lorg/telegram/ui/Components/AlertsCreator$42;
 
     invoke-direct {v3}, Lorg/telegram/ui/Components/AlertsCreator$42;-><init>()V
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 5465
+    .line 5466
     new-instance v3, Landroid/view/View;
 
     invoke-direct {v3, p0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 5466
+    .line 5467
     invoke-static {p3}, Lorg/telegram/messenger/SvgHelper;->getDrawable(Ljava/lang/String;)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object p3
@@ -3335,19 +3335,19 @@
 
     const/4 v10, 0x0
 
-    .line 5467
+    .line 5468
     invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p3
 
     invoke-virtual {v2, v3, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5469
+    .line 5470
     new-instance p3, Landroid/view/View;
 
     invoke-direct {p3, p0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 5470
+    .line 5471
     invoke-static {v0}, Lorg/telegram/messenger/SvgHelper;->getDrawable(Ljava/lang/String;)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v0
@@ -3362,28 +3362,28 @@
 
     const/4 v6, 0x0
 
-    .line 5471
+    .line 5472
     invoke-static/range {v3 .. v9}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v2, p3, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5473
+    .line 5474
     new-instance p3, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {p3, p0}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
     const/16 v0, 0x1a
 
-    .line 5474
+    .line 5475
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     invoke-virtual {p3, v0}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
-    .line 5475
+    .line 5476
     new-instance v0, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>(Lorg/telegram/tgnet/TLRPC$User;)V
@@ -3396,22 +3396,22 @@
 
     const/16 v9, 0xb
 
-    .line 5476
+    .line 5477
     invoke-static/range {v3 .. v9}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p1
 
     invoke-virtual {v2, p3, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5478
+    .line 5479
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     const p1, 0x3ec1a41a
 
-    .line 5480
+    .line 5481
     invoke-virtual {v1, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopViewAspectRatio(F)V
 
-    .line 5481
+    .line 5482
     sget p1, Lorg/telegram/messenger/R$string;->PermissionBackgroundLocation:I
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -3424,7 +3424,7 @@
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5482
+    .line 5483
     sget p1, Lorg/telegram/messenger/R$string;->Continue:I
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -3437,7 +3437,7 @@
 
     invoke-virtual {v1, p1, p3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5487
+    .line 5488
     sget p0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string p1, "Cancel"
@@ -3470,7 +3470,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 3011
+    .line 3012
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v3
@@ -3485,13 +3485,13 @@
 
     goto/16 :goto_7
 
-    .line 3014
+    .line 3015
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v4
 
-    .line 3015
+    .line 3016
     new-instance v5, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v5, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -3500,15 +3500,15 @@
 
     new-array v7, v6, [Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    .line 3019
+    .line 3020
     new-instance v8, Landroid/widget/LinearLayout;
 
     invoke-direct {v8, v4}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 3020
+    .line 3021
     invoke-virtual {v8, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 3021
+    .line 3022
     invoke-virtual {v5, v8}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     const-string v9, "BlockUserTitle"
@@ -3517,7 +3517,7 @@
 
     if-ne v1, v3, :cond_1
 
-    .line 3025
+    .line 3026
     iget-object v11, v2, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
@@ -3526,7 +3526,7 @@
 
     move-result-object v2
 
-    .line 3026
+    .line 3027
     sget v11, Lorg/telegram/messenger/R$string;->BlockUserTitle:I
 
     new-array v12, v3, [Ljava/lang/Object;
@@ -3539,7 +3539,7 @@
 
     invoke-virtual {v5, v9}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3027
+    .line 3028
     sget v9, Lorg/telegram/messenger/R$string;->BlockUser:I
 
     const-string v11, "BlockUser"
@@ -3548,7 +3548,7 @@
 
     move-result-object v9
 
-    .line 3028
+    .line 3029
     sget v11, Lorg/telegram/messenger/R$string;->BlockUserMessage:I
 
     new-array v12, v3, [Ljava/lang/Object;
@@ -3569,7 +3569,7 @@
 
     goto :goto_0
 
-    .line 3030
+    .line 3031
     :cond_1
     sget v2, Lorg/telegram/messenger/R$string;->BlockUserTitle:I
 
@@ -3591,7 +3591,7 @@
 
     invoke-virtual {v5, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3031
+    .line 3032
     sget v2, Lorg/telegram/messenger/R$string;->BlockUsers:I
 
     const-string v9, "BlockUsers"
@@ -3600,7 +3600,7 @@
 
     move-result-object v9
 
-    .line 3032
+    .line 3033
     sget v2, Lorg/telegram/messenger/R$string;->BlockUsersMessage:I
 
     new-array v11, v3, [Ljava/lang/Object;
@@ -3630,7 +3630,7 @@
     :goto_0
     new-array v2, v6, [Z
 
-    .line 3035
+    .line 3036
     fill-array-data v2, :array_0
 
     move v11, v10
@@ -3646,7 +3646,7 @@
 
     goto :goto_6
 
-    .line 3042
+    .line 3043
     :cond_2
     new-instance v13, Lorg/telegram/ui/Cells/CheckBoxCell;
 
@@ -3654,7 +3654,7 @@
 
     aput-object v13, v7, v11
 
-    .line 3043
+    .line 3044
     aget-object v13, v7, v11
 
     invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
@@ -3667,7 +3667,7 @@
 
     if-nez v11, :cond_3
 
-    .line 3045
+    .line 3046
     aget-object v14, v7, v11
 
     sget v15, Lorg/telegram/messenger/R$string;->ReportSpamTitle:I
@@ -3682,7 +3682,7 @@
 
     goto :goto_3
 
-    .line 3047
+    .line 3048
     :cond_3
     aget-object v6, v7, v11
 
@@ -3706,7 +3706,7 @@
 
     invoke-virtual {v6, v14, v13, v3, v10}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 3049
+    .line 3050
     :goto_3
     aget-object v6, v7, v11
 
@@ -3748,7 +3748,7 @@
     :goto_5
     invoke-virtual {v6, v13, v10, v14, v10}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 3050
+    .line 3051
     aget-object v6, v7, v11
 
     const/16 v13, 0x30
@@ -3759,7 +3759,7 @@
 
     invoke-virtual {v8, v6, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3051
+    .line 3052
     aget-object v6, v7, v11
 
     new-instance v12, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda98;
@@ -3775,7 +3775,7 @@
 
     goto :goto_1
 
-    .line 3058
+    .line 3059
     :cond_7
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda46;
 
@@ -3785,7 +3785,7 @@
 
     invoke-virtual {v5, v9, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3059
+    .line 3060
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -3798,15 +3798,15 @@
 
     invoke-virtual {v5, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3060
+    .line 3061
     invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v1
 
-    .line 3061
+    .line 3062
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 3062
+    .line 3063
     invoke-virtual {v1, v12}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object v0
@@ -3815,7 +3815,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 3064
+    .line 3065
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -3846,7 +3846,7 @@
 
     move-object/from16 v2, p3
 
-    .line 1896
+    .line 1897
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -3855,20 +3855,20 @@
 
     new-array v5, v4, [Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    .line 1898
+    .line 1899
     new-instance v6, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v6, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1900
+    .line 1901
     new-instance v7, Lorg/telegram/ui/Components/AlertsCreator$6;
 
     invoke-direct {v7, v3}, Lorg/telegram/ui/Components/AlertsCreator$6;-><init>(Landroid/content/Context;)V
 
-    .line 1907
+    .line 1908
     invoke-static {v7}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
 
-    .line 1908
+    .line 1909
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -3879,10 +3879,10 @@
 
     const/high16 v8, 0x41800000    # 16.0f
 
-    .line 1909
+    .line 1910
     invoke-virtual {v7, v4, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1910
+    .line 1911
     sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v8, :cond_0
@@ -3899,7 +3899,7 @@
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1911
+    .line 1912
     sget v8, Lorg/telegram/messenger/R$string;->BotWebViewStartPermission:I
 
     invoke-static {v8}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -3908,41 +3908,41 @@
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1913
+    .line 1914
     new-instance v8, Lorg/telegram/ui/Components/AlertsCreator$7;
 
     invoke-direct {v8, v3, v5}, Lorg/telegram/ui/Components/AlertsCreator$7;-><init>(Landroid/content/Context;[Lorg/telegram/ui/Cells/CheckBoxCell;)V
 
     const/4 v11, 0x6
 
-    .line 1922
+    .line 1923
     invoke-virtual {v6, v11}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setCustomViewOffset(I)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1923
+    .line 1924
     invoke-virtual {v6, v8}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1925
+    .line 1926
     new-instance v11, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v11}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     const/16 v12, 0x12
 
-    .line 1926
+    .line 1927
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
     invoke-virtual {v11, v12}, Lorg/telegram/ui/Components/AvatarDrawable;->setTextSize(I)V
 
-    .line 1928
+    .line 1929
     new-instance v12, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {v12, v3}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
     const/16 v13, 0x14
 
-    .line 1929
+    .line 1930
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
@@ -3953,7 +3953,7 @@
 
     const/16 v15, 0x28
 
-    .line 1930
+    .line 1931
     sget-boolean v13, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v13, :cond_1
@@ -3982,12 +3982,12 @@
 
     invoke-virtual {v8, v12, v13}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1932
+    .line 1933
     new-instance v13, Landroid/widget/TextView;
 
     invoke-direct {v13, v3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 1933
+    .line 1934
     sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
     invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -3998,28 +3998,28 @@
 
     const/high16 v14, 0x41a00000    # 20.0f
 
-    .line 1934
+    .line 1935
     invoke-virtual {v13, v4, v14}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v14, "fonts/rmedium.ttf"
 
-    .line 1935
+    .line 1936
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v14
 
     invoke-virtual {v13, v14}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1936
+    .line 1937
     invoke-virtual {v13, v4}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 1937
+    .line 1938
     invoke-virtual {v13, v4}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1938
+    .line 1939
     invoke-virtual {v13, v4}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1939
+    .line 1940
     sget-boolean v14, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v14, :cond_2
@@ -4038,22 +4038,22 @@
 
     invoke-virtual {v13, v14}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1940
+    .line 1941
     sget-object v14, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v13, v14}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1941
+    .line 1942
     iget-object v14, v1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     invoke-virtual {v13, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1943
+    .line 1944
     new-instance v14, Landroid/widget/TextView;
 
     invoke-direct {v14, v3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 1944
+    .line 1945
     sget v16, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue:I
 
     invoke-static/range {v16 .. v16}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -4064,19 +4064,19 @@
 
     const/high16 v9, 0x41600000    # 14.0f
 
-    .line 1945
+    .line 1946
     invoke-virtual {v14, v4, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1946
+    .line 1947
     invoke-virtual {v14, v4}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 1947
+    .line 1948
     invoke-virtual {v14, v4}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1948
+    .line 1949
     invoke-virtual {v14, v4}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1949
+    .line 1950
     sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v9, :cond_3
@@ -4093,19 +4093,19 @@
 
     invoke-virtual {v14, v9}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1950
+    .line 1951
     sget-object v9, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v14, v9}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1951
+    .line 1952
     new-instance v9, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda73;
 
     invoke-direct {v9, v1, v0, v6}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda73;-><init>(Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
 
     invoke-virtual {v14, v9}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1960
+    .line 1961
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -4130,26 +4130,26 @@
 
     move-result-object v9
 
-    .line 1961
+    .line 1962
     new-instance v10, Lorg/telegram/ui/Components/ColoredImageSpan;
 
     sget v15, Lorg/telegram/messenger/R$drawable;->attach_arrow_right:I
 
     invoke-direct {v10, v15}, Lorg/telegram/ui/Components/ColoredImageSpan;-><init>(I)V
 
-    .line 1962
+    .line 1963
     invoke-virtual {v10, v4}, Lorg/telegram/ui/Components/ColoredImageSpan;->setTopOffset(I)V
 
     const/16 v15, 0xa
 
-    .line 1963
+    .line 1964
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v15
 
     invoke-virtual {v10, v15}, Lorg/telegram/ui/Components/ColoredImageSpan;->setSize(I)V
 
-    .line 1964
+    .line 1965
     invoke-virtual {v9}, Landroid/text/SpannableString;->length()I
 
     move-result v15
@@ -4164,14 +4164,14 @@
 
     invoke-virtual {v9, v10, v15, v4, v0}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1965
+    .line 1966
     invoke-virtual {v14, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/16 v20, -0x1
 
     const/16 v21, -0x2
 
-    .line 1967
+    .line 1968
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_4
@@ -4224,7 +4224,7 @@
 
     const/16 v21, -0x2
 
-    .line 1968
+    .line 1969
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_7
@@ -4273,7 +4273,7 @@
 
     const/16 v21, -0x2
 
-    .line 1969
+    .line 1970
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_a
@@ -4304,17 +4304,17 @@
 
     move-object/from16 v0, p1
 
-    .line 1971
+    .line 1972
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_botApp;->request_write_access:Z
 
     if-eqz v0, :cond_d
 
     const/4 v0, 0x1
 
-    .line 1972
+    .line 1973
     invoke-virtual {v2, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 1974
+    .line 1975
     new-instance v4, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -4327,12 +4327,12 @@
 
     aput-object v4, v5, v3
 
-    .line 1975
+    .line 1976
     aget-object v4, v5, v3
 
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/CheckBoxCell;->allowMultiline()V
 
-    .line 1976
+    .line 1977
     aget-object v4, v5, v3
 
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
@@ -4341,7 +4341,7 @@
 
     invoke-virtual {v4, v7}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1977
+    .line 1978
     aget-object v4, v5, v3
 
     sget v7, Lorg/telegram/messenger/R$string;->OpenUrlOption2:I
@@ -4368,7 +4368,7 @@
 
     invoke-virtual {v4, v7, v9, v0, v3}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 1978
+    .line 1979
     aget-object v0, v5, v3
 
     sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -4411,14 +4411,14 @@
     :goto_c
     invoke-virtual {v0, v9, v3, v4, v3}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 1979
+    .line 1980
     aget-object v0, v5, v3
 
     const/4 v4, 0x1
 
     invoke-virtual {v0, v4, v3}, Lorg/telegram/ui/Cells/CheckBoxCell;->setChecked(ZZ)V
 
-    .line 1980
+    .line 1981
     aget-object v0, v5, v3
 
     const/4 v13, -0x1
@@ -4441,7 +4441,7 @@
 
     invoke-virtual {v8, v0, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1981
+    .line 1982
     aget-object v0, v5, v3
 
     new-instance v3, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda71;
@@ -4450,7 +4450,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1989
+    .line 1990
     :cond_d
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
@@ -4462,15 +4462,15 @@
 
     const v0, 0x3f4ccccd    # 0.8f
 
-    .line 1990
+    .line 1991
     invoke-virtual {v11, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
     const/16 v0, 0xc
 
-    .line 1991
+    .line 1992
     invoke-virtual {v11, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 1992
+    .line 1993
     invoke-virtual {v12, v2, v2, v11, v1}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto :goto_d
@@ -4478,16 +4478,16 @@
     :cond_e
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1994
+    .line 1995
     invoke-virtual {v11, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 1995
+    .line 1996
     invoke-virtual {v11, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 1996
+    .line 1997
     invoke-virtual {v12, v1, v11}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 2000
+    .line 2001
     :goto_d
     sget v0, Lorg/telegram/messenger/R$string;->Start:I
 
@@ -4503,7 +4503,7 @@
 
     invoke-virtual {v6, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2001
+    .line 2002
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v1, "Cancel"
@@ -4514,7 +4514,7 @@
 
     invoke-virtual {v6, v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2002
+    .line 2003
     invoke-virtual {v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -4531,25 +4531,25 @@
 
     move-object/from16 v0, p1
 
-    .line 1830
+    .line 1831
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 1831
+    .line 1832
     new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v2, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1833
+    .line 1834
     new-instance v3, Lorg/telegram/ui/Components/AlertsCreator$5;
 
     invoke-direct {v3, v1}, Lorg/telegram/ui/Components/AlertsCreator$5;-><init>(Landroid/content/Context;)V
 
-    .line 1840
+    .line 1841
     invoke-static {v3}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
 
-    .line 1841
+    .line 1842
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -4562,10 +4562,10 @@
 
     const/high16 v5, 0x41800000    # 16.0f
 
-    .line 1842
+    .line 1843
     invoke-virtual {v3, v4, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1843
+    .line 1844
     sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/4 v6, 0x5
@@ -4586,7 +4586,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1844
+    .line 1845
     sget v5, Lorg/telegram/messenger/R$string;->BotWebViewStartPermission:I
 
     invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -4595,41 +4595,41 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1846
+    .line 1847
     new-instance v5, Landroid/widget/FrameLayout;
 
     invoke-direct {v5, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v8, 0x6
 
-    .line 1847
+    .line 1848
     invoke-virtual {v2, v8}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setCustomViewOffset(I)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1848
+    .line 1849
     invoke-virtual {v2, v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1850
+    .line 1851
     new-instance v8, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v8}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     const/16 v9, 0x12
 
-    .line 1851
+    .line 1852
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
 
     invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/AvatarDrawable;->setTextSize(I)V
 
-    .line 1853
+    .line 1854
     new-instance v9, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {v9, v1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
     const/16 v10, 0x14
 
-    .line 1854
+    .line 1855
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -4640,7 +4640,7 @@
 
     const/16 v12, 0x28
 
-    .line 1855
+    .line 1856
     sget-boolean v10, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v10, :cond_1
@@ -4669,12 +4669,12 @@
 
     invoke-virtual {v5, v9, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1857
+    .line 1858
     new-instance v10, Landroid/widget/TextView;
 
     invoke-direct {v10, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 1858
+    .line 1859
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -4685,28 +4685,28 @@
 
     const/high16 v1, 0x41a00000    # 20.0f
 
-    .line 1859
+    .line 1860
     invoke-virtual {v10, v4, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v1, "fonts/rmedium.ttf"
 
-    .line 1860
+    .line 1861
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v1
 
     invoke-virtual {v10, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1861
+    .line 1862
     invoke-virtual {v10, v4}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 1862
+    .line 1863
     invoke-virtual {v10, v4}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1863
+    .line 1864
     invoke-virtual {v10, v4}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1864
+    .line 1865
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_2
@@ -4723,12 +4723,12 @@
 
     invoke-virtual {v10, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1865
+    .line 1866
     sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v10, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1866
+    .line 1867
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     invoke-virtual {v10, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -4737,7 +4737,7 @@
 
     const/4 v12, -0x2
 
-    .line 1867
+    .line 1868
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_3
@@ -4791,7 +4791,7 @@
 
     const/4 v12, -0x2
 
-    .line 1868
+    .line 1869
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_6
@@ -4818,7 +4818,7 @@
 
     invoke-virtual {v5, v3, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1871
+    .line 1872
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v1
@@ -4829,15 +4829,15 @@
 
     const v1, 0x3f4ccccd    # 0.8f
 
-    .line 1872
+    .line 1873
     invoke-virtual {v8, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
     const/16 v1, 0xc
 
-    .line 1873
+    .line 1874
     invoke-virtual {v8, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 1874
+    .line 1875
     invoke-virtual {v9, v3, v3, v8, v0}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto :goto_6
@@ -4845,16 +4845,16 @@
     :cond_7
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 1876
+    .line 1877
     invoke-virtual {v8, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 1877
+    .line 1878
     invoke-virtual {v8, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 1878
+    .line 1879
     invoke-virtual {v9, v0, v8}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 1882
+    .line 1883
     :goto_6
     sget v0, Lorg/telegram/messenger/R$string;->Start:I
 
@@ -4870,7 +4870,7 @@
 
     invoke-virtual {v2, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1887
+    .line 1888
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v1, "Cancel"
@@ -4881,7 +4881,7 @@
 
     invoke-virtual {v2, v0, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1888
+    .line 1889
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -4916,7 +4916,7 @@
 
     return-object v0
 
-    .line 4486
+    .line 4487
     :cond_0
     new-instance v10, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
@@ -4924,17 +4924,17 @@
 
     invoke-direct {v10, v0, v11, v9}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 4487
+    .line 4488
     invoke-virtual {v10, v11}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 4489
+    .line 4490
     new-instance v12, Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-direct {v12, v0, v9}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     const/16 v1, 0xa
 
-    .line 4490
+    .line 4491
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -4943,18 +4943,18 @@
 
     const/4 v2, 0x5
 
-    .line 4491
+    .line 4492
     invoke-virtual {v12, v2}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 4492
+    .line 4493
     new-instance v13, Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-direct {v13, v0, v9}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 4493
+    .line 4494
     invoke-virtual {v13, v2}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 4494
+    .line 4495
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -4963,17 +4963,17 @@
 
     invoke-virtual {v13, v1}, Lorg/telegram/ui/Components/NumberPicker;->setTextOffset(I)V
 
-    .line 4495
+    .line 4496
     new-instance v14, Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-direct {v14, v0, v9}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 4496
+    .line 4497
     invoke-virtual {v14, v2}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
     const/16 v1, 0x18
 
-    .line 4497
+    .line 4498
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -4982,17 +4982,17 @@
 
     invoke-virtual {v14, v1}, Lorg/telegram/ui/Components/NumberPicker;->setTextOffset(I)V
 
-    .line 4499
+    .line 4500
     new-instance v15, Lorg/telegram/ui/Components/AlertsCreator$39;
 
     invoke-direct {v15, v0, v12, v13, v14}, Lorg/telegram/ui/Components/AlertsCreator$39;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     const/4 v6, 0x1
 
-    .line 4530
+    .line 4531
     invoke-virtual {v15, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 4532
+    .line 4533
     new-instance v1, Landroid/widget/FrameLayout;
 
     invoke-direct {v1, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -5011,19 +5011,19 @@
 
     const/16 v22, 0x4
 
-    .line 4533
+    .line 4534
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v15, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4535
+    .line 4536
     new-instance v2, Landroid/widget/TextView;
 
     invoke-direct {v2, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 4536
+    .line 4537
     sget v3, Lorg/telegram/messenger/R$string;->ChooseDate:I
 
     const-string v4, "ChooseDate"
@@ -5034,7 +5034,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4537
+    .line 4538
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {v3, v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -5045,12 +5045,12 @@
 
     const/high16 v3, 0x41a00000    # 20.0f
 
-    .line 4538
+    .line 4539
     invoke-virtual {v2, v6, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v16, "fonts/rmedium.ttf"
 
-    .line 4539
+    .line 4540
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v3
@@ -5067,29 +5067,29 @@
 
     const/16 v23, 0x0
 
-    .line 4540
+    .line 4541
     invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4541
+    .line 4542
     sget-object v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda113;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda113;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 4543
+    .line 4544
     new-instance v5, Landroid/widget/LinearLayout;
 
     invoke-direct {v5, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 4544
+    .line 4545
     invoke-virtual {v5, v11}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 4545
+    .line 4546
     invoke-virtual {v5, v1}, Landroid/widget/LinearLayout;->setWeightSum(F)V
 
     const/16 v17, -0x1
@@ -5102,17 +5102,17 @@
 
     const/16 v24, 0xc
 
-    .line 4546
+    .line 4547
     invoke-static/range {v17 .. v24}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIFIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {v15, v5, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4548
+    .line 4549
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    .line 4550
+    .line 4551
     new-instance v4, Lorg/telegram/ui/Components/AlertsCreator$40;
 
     invoke-direct {v4, v0}, Lorg/telegram/ui/Components/AlertsCreator$40;-><init>(Landroid/content/Context;)V
@@ -5121,30 +5121,30 @@
 
     const/high16 v3, 0x3e800000    # 0.25f
 
-    .line 4557
+    .line 4558
     invoke-static {v11, v2, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v5, v12, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4558
+    .line 4559
     invoke-virtual {v12, v6}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v1, 0x1f
 
-    .line 4559
+    .line 4560
     invoke-virtual {v12, v1}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 4560
+    .line 4561
     invoke-virtual {v12, v11}, Lorg/telegram/ui/Components/NumberPicker;->setWrapSelectorWheel(Z)V
 
-    .line 4561
+    .line 4562
     sget-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda150;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda150;
 
     invoke-virtual {v12, v0}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 4562
+    .line 4563
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda168;
 
     move-object/from16 p0, v0
@@ -5165,25 +5165,25 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda168;-><init>(Landroid/widget/LinearLayout;JLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
-    .line 4570
+    .line 4571
     invoke-virtual {v12, v0}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
-    .line 4572
+    .line 4573
     invoke-virtual {v13, v11}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v1, 0xb
 
-    .line 4573
+    .line 4574
     invoke-virtual {v13, v1}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 4574
+    .line 4575
     invoke-virtual {v13, v11}, Lorg/telegram/ui/Components/NumberPicker;->setWrapSelectorWheel(Z)V
 
     const/high16 v1, 0x3f000000    # 0.5f
 
     const/16 v2, 0x10e
 
-    .line 4575
+    .line 4576
     invoke-static {v11, v2, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v1
@@ -5192,51 +5192,51 @@
 
     invoke-virtual {v3, v13, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4576
+    .line 4577
     sget-object v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda160;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda160;
 
     invoke-virtual {v13, v1}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 4595
+    .line 4596
     invoke-virtual {v13, v0}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
-    .line 4597
+    .line 4598
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v6
 
-    .line 4598
+    .line 4599
     invoke-virtual {v6, v7, v8}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     const/4 v1, 0x1
 
-    .line 4599
+    .line 4600
     invoke-virtual {v6, v1}, Ljava/util/Calendar;->get(I)I
 
     move-result v4
 
-    .line 4600
+    .line 4601
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
     invoke-virtual {v6, v2, v3}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 4601
+    .line 4602
     invoke-virtual {v6, v1}, Ljava/util/Calendar;->get(I)I
 
     move-result v2
 
-    .line 4603
+    .line 4604
     invoke-virtual {v14, v4}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
-    .line 4604
+    .line 4605
     invoke-virtual {v14, v2}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 4605
+    .line 4606
     invoke-virtual {v14, v11}, Lorg/telegram/ui/Components/NumberPicker;->setWrapSelectorWheel(Z)V
 
-    .line 4606
+    .line 4607
     sget-object v3, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda156;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda156;
 
     invoke-virtual {v14, v3}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
@@ -5245,7 +5245,7 @@
 
     const/16 v4, 0x10e
 
-    .line 4607
+    .line 4608
     invoke-static {v11, v4, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
@@ -5254,28 +5254,28 @@
 
     invoke-virtual {v4, v14, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4608
+    .line 4609
     invoke-virtual {v14, v0}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
     const/16 v0, 0x1f
 
-    .line 4610
+    .line 4611
     invoke-virtual {v12, v0}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
     const/16 v0, 0xc
 
-    .line 4611
+    .line 4612
     invoke-virtual {v13, v0}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 4612
+    .line 4613
     invoke-virtual {v14, v2}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 4614
+    .line 4615
     invoke-static {v7, v8, v12, v13, v14}, Lorg/telegram/ui/Components/AlertsCreator;->checkCalendarDate(JLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     const/16 v0, 0x22
 
-    .line 4616
+    .line 4617
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -5290,10 +5290,10 @@
 
     const/16 v0, 0x11
 
-    .line 4617
+    .line 4618
     invoke-virtual {v5, v0}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 4618
+    .line 4619
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
     invoke-static {v0, v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -5304,30 +5304,28 @@
 
     const/high16 v0, 0x41600000    # 14.0f
 
-    .line 4619
+    .line 4620
     invoke-virtual {v5, v1, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 4620
+    .line 4621
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
 
     invoke-virtual {v5, v0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 4621
+    .line 4622
     sget v0, Lorg/telegram/messenger/R$string;->JumpToDate:I
 
-    const-string v1, "JumpToDate"
-
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v5, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const/4 v0, 0x4
+    const/16 v0, 0x8
 
-    .line 4622
+    .line 4623
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -5348,7 +5346,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v5, v0}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v5, v0}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     const/16 v16, -0x1
 
@@ -5364,14 +5362,14 @@
 
     const/16 v22, 0x10
 
-    .line 4623
+    .line 4624
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v15, v5, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4624
+    .line 4625
     new-instance v9, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda67;
 
     move-object v0, v9
@@ -5394,7 +5392,7 @@
 
     invoke-virtual {v11, v9}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 4636
+    .line 4637
     invoke-virtual {v10, v15}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     return-object v10
@@ -5411,7 +5409,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 2521
+    .line 2522
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v3
@@ -5446,16 +5444,16 @@
 
     goto/16 :goto_8
 
-    .line 2525
+    .line 2526
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
 
-    .line 2526
+    .line 2527
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v3
 
-    .line 2527
+    .line 2528
     new-instance v4, Landroid/widget/FrameLayout;
 
     invoke-direct {v4, v3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -5466,7 +5464,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 2532
+    .line 2533
     sget v7, Lorg/telegram/messenger/R$string;->VideoCallAlertTitle:I
 
     const-string v8, "VideoCallAlertTitle"
@@ -5475,7 +5473,7 @@
 
     move-result-object v7
 
-    .line 2533
+    .line 2534
     sget v8, Lorg/telegram/messenger/R$string;->VideoCallAlert:I
 
     new-array v9, v6, [Ljava/lang/Object;
@@ -5494,7 +5492,7 @@
 
     goto :goto_0
 
-    .line 2535
+    .line 2536
     :cond_1
     sget v7, Lorg/telegram/messenger/R$string;->CallAlertTitle:I
 
@@ -5504,7 +5502,7 @@
 
     move-result-object v7
 
-    .line 2536
+    .line 2537
     sget v8, Lorg/telegram/messenger/R$string;->CallAlert:I
 
     new-array v9, v6, [Ljava/lang/Object;
@@ -5521,16 +5519,16 @@
 
     move-result-object v5
 
-    .line 2539
+    .line 2540
     :goto_0
     new-instance v8, Lorg/telegram/ui/Components/AlertsCreator$12;
 
     invoke-direct {v8, v3}, Lorg/telegram/ui/Components/AlertsCreator$12;-><init>(Landroid/content/Context;)V
 
-    .line 2546
+    .line 2547
     invoke-static {v8}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
 
-    .line 2547
+    .line 2548
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -5541,10 +5539,10 @@
 
     const/high16 v9, 0x41800000    # 16.0f
 
-    .line 2548
+    .line 2549
     invoke-virtual {v8, v6, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2549
+    .line 2550
     sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/4 v10, 0x5
@@ -5565,21 +5563,21 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 2550
+    .line 2551
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v5
 
     invoke-virtual {v8, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2552
+    .line 2553
     new-instance v5, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v5}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     const/16 v9, 0xc
 
-    .line 2553
+    .line 2554
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -5588,34 +5586,34 @@
 
     const/high16 v9, 0x3f800000    # 1.0f
 
-    .line 2554
+    .line 2555
     invoke-virtual {v5, v9}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 2555
+    .line 2556
     invoke-virtual {v5, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 2557
+    .line 2558
     new-instance v9, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {v9, v3}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
     const/16 v12, 0x14
 
-    .line 2558
+    .line 2559
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
     invoke-virtual {v9, v12}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
-    .line 2559
+    .line 2560
     invoke-virtual {v9, v1, v5}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
     const/16 v13, 0x28
 
     const/16 v14, 0x28
 
-    .line 2560
+    .line 2561
     sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v5, :cond_3
@@ -5644,12 +5642,12 @@
 
     invoke-virtual {v4, v9, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2562
+    .line 2563
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 2563
+    .line 2564
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
     invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -5660,28 +5658,28 @@
 
     const/high16 v9, 0x41a00000    # 20.0f
 
-    .line 2564
+    .line 2565
     invoke-virtual {v5, v6, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v9, "fonts/rmedium.ttf"
 
-    .line 2565
+    .line 2566
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v9
 
     invoke-virtual {v5, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2566
+    .line 2567
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 2567
+    .line 2568
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 2568
+    .line 2569
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 2569
+    .line 2570
     sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v6, :cond_4
@@ -5698,19 +5696,19 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 2570
+    .line 2571
     sget-object v6, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 2571
+    .line 2572
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/4 v12, -0x1
 
     const/4 v13, -0x2
 
-    .line 2572
+    .line 2573
     sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v6, :cond_5
@@ -5763,7 +5761,7 @@
 
     const/4 v13, -0x2
 
-    .line 2573
+    .line 2574
     sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v5, :cond_8
@@ -5790,7 +5788,7 @@
 
     invoke-virtual {v4, v8, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2575
+    .line 2576
     new-instance v5, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v5, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -5803,7 +5801,7 @@
 
     const-string v5, "Call"
 
-    .line 2576
+    .line 2577
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -5820,7 +5818,7 @@
 
     const-string v3, "Cancel"
 
-    .line 2580
+    .line 2581
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -5831,12 +5829,12 @@
 
     move-result-object v1
 
-    .line 2581
+    .line 2582
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v1
 
-    .line 2582
+    .line 2583
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     :cond_9
@@ -5851,7 +5849,7 @@
 
     move-object/from16 v2, p3
 
-    .line 2586
+    .line 2587
     new-instance v3, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v3, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -5866,7 +5864,7 @@
 
     if-lez v4, :cond_0
 
-    .line 2587
+    .line 2588
     sget v7, Lorg/telegram/messenger/R$string;->UserBio:I
 
     invoke-static {v5, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -5887,7 +5885,7 @@
 
     if-lez v4, :cond_1
 
-    .line 2588
+    .line 2589
     sget v7, Lorg/telegram/messenger/R$string;->VoipGroupBioEditAlertText:I
 
     const-string v8, "VoipGroupBioEditAlertText"
@@ -5906,21 +5904,21 @@
 
     invoke-virtual {v3, v7}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2589
+    .line 2590
     new-instance v7, Landroid/widget/FrameLayout;
 
     invoke-direct {v7, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v8, 0x0
 
-    .line 2590
+    .line 2591
     invoke-virtual {v7, v8}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
     const/4 v9, 0x1
 
     if-gez v4, :cond_2
 
-    .line 2593
+    .line 2594
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v10
@@ -5933,7 +5931,7 @@
 
     if-nez v10, :cond_2
 
-    .line 2595
+    .line 2596
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v10
@@ -5944,18 +5942,18 @@
 
     invoke-virtual {v10, v11, v12, v13, v9}, Lorg/telegram/messenger/MessagesController;->loadFullChat(JIZ)V
 
-    .line 2599
+    .line 2600
     :cond_2
     new-instance v10, Lorg/telegram/ui/Components/NumberTextView;
 
     invoke-direct {v10, v2}, Lorg/telegram/ui/Components/NumberTextView;-><init>(Landroid/content/Context;)V
 
-    .line 2600
+    .line 2601
     new-instance v11, Landroid/widget/EditText;
 
     invoke-direct {v11, v2}, Landroid/widget/EditText;-><init>(Landroid/content/Context;)V
 
-    .line 2601
+    .line 2602
     sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBarItems:I
 
     invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -5966,7 +5964,7 @@
 
     if-lez v4, :cond_3
 
-    .line 2602
+    .line 2603
     sget v6, Lorg/telegram/messenger/R$string;->UserBio:I
 
     invoke-static {v5, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -5987,10 +5985,10 @@
 
     const/high16 v5, 0x41800000    # 16.0f
 
-    .line 2603
+    .line 2604
     invoke-virtual {v11, v9, v5}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 2604
+    .line 2605
     invoke-static {v2, v9}, Lorg/telegram/ui/ActionBar/Theme;->createEditTextDrawable(Landroid/content/Context;Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
@@ -5999,17 +5997,17 @@
 
     const/4 v5, 0x4
 
-    .line 2606
+    .line 2607
     invoke-virtual {v11, v5}, Landroid/widget/EditText;->setMaxLines(I)V
 
     const v5, 0x24001
 
-    .line 2607
+    .line 2608
     invoke-virtual {v11, v5}, Landroid/widget/EditText;->setRawInputType(I)V
 
     const/4 v5, 0x6
 
-    .line 2608
+    .line 2609
     invoke-virtual {v11, v5}, Landroid/widget/EditText;->setImeOptions(I)V
 
     new-array v5, v9, [Landroid/text/InputFilter;
@@ -6023,7 +6021,7 @@
     :cond_4
     const/16 v4, 0xff
 
-    .line 2612
+    .line 2613
     :goto_3
     new-instance v6, Lorg/telegram/ui/Components/AlertsCreator$13;
 
@@ -6031,18 +6029,18 @@
 
     aput-object v6, v5, v8
 
-    .line 2626
+    .line 2627
     invoke-virtual {v11, v5}, Landroid/widget/EditText;->setFilters([Landroid/text/InputFilter;)V
 
-    .line 2628
+    .line 2629
     invoke-virtual {v10, v9}, Lorg/telegram/ui/Components/NumberTextView;->setCenterAlign(Z)V
 
     const/16 v2, 0xf
 
-    .line 2629
+    .line 2630
     invoke-virtual {v10, v2}, Lorg/telegram/ui/Components/NumberTextView;->setTextSize(I)V
 
-    .line 2630
+    .line 2631
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText4:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6053,14 +6051,14 @@
 
     const/4 v2, 0x2
 
-    .line 2631
+    .line 2632
     invoke-virtual {v10, v2}, Landroid/view/View;->setImportantForAccessibility(I)V
 
     const/16 v13, 0x14
 
     const/16 v14, 0x14
 
-    .line 2632
+    .line 2633
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v2, :cond_5
@@ -6089,7 +6087,7 @@
 
     invoke-virtual {v7, v10, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2633
+    .line 2634
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v5, 0x18
@@ -6132,7 +6130,7 @@
 
     invoke-virtual {v11, v2, v9, v5, v6}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 2634
+    .line 2635
     new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$14;
 
     invoke-direct {v2, v4, v10}, Lorg/telegram/ui/Components/AlertsCreator$14;-><init>(ILorg/telegram/ui/Components/NumberTextView;)V
@@ -6141,15 +6139,15 @@
 
     const/4 v2, 0x0
 
-    .line 2656
+    .line 2657
     invoke-static {v10, v8, v2, v8}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
     move-object/from16 v2, p0
 
-    .line 2657
+    .line 2658
     invoke-virtual {v11, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2658
+    .line 2659
     invoke-virtual {v11}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v2
@@ -6164,17 +6162,17 @@
 
     invoke-virtual {v11, v2}, Landroid/widget/EditText;->setSelection(I)V
 
-    .line 2660
+    .line 2661
     invoke-virtual {v3, v7}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2661
+    .line 2662
     new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda3;
 
     move/from16 v4, p4
 
     invoke-direct {v2, v0, v1, v4, v11}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda3;-><init>(JILandroid/widget/EditText;)V
 
-    .line 2707
+    .line 2708
     sget v4, Lorg/telegram/messenger/R$string;->Save:I
 
     const-string v5, "Save"
@@ -6185,7 +6183,7 @@
 
     invoke-virtual {v3, v4, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2708
+    .line 2709
     sget v4, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v5, "Cancel"
@@ -6198,7 +6196,7 @@
 
     invoke-virtual {v3, v4, v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2709
+    .line 2710
     new-instance v4, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda55;
 
     invoke-direct {v4, v11}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda55;-><init>(Landroid/widget/EditText;)V
@@ -6219,32 +6217,32 @@
 
     const/16 v19, 0x15
 
-    .line 2710
+    .line 2711
     invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v4
 
     invoke-virtual {v7, v11, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2711
+    .line 2712
     invoke-virtual {v11}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 2712
+    .line 2713
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
-    .line 2714
+    .line 2715
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v3
 
-    .line 2715
+    .line 2716
     new-instance v4, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda115;
 
     invoke-direct {v4, v0, v1, v3, v2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda115;-><init>(JLorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/DialogInterface$OnClickListener;)V
 
     invoke-virtual {v11, v4}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    .line 2723
+    .line 2724
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_dialogBackground:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6253,10 +6251,10 @@
 
     invoke-virtual {v3, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->setBackgroundColor(I)V
 
-    .line 2724
+    .line 2725
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 2725
+    .line 2726
     invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
@@ -6273,14 +6271,14 @@
 
     move-object/from16 v0, p2
 
-    .line 2732
+    .line 2733
     invoke-static/range {p0 .. p1}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 2733
+    .line 2734
     invoke-static/range {p3 .. p3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -6293,15 +6291,15 @@
 
     move-result-object v1
 
-    .line 2734
+    .line 2735
     iget-object v4, v1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    .line 2735
+    .line 2736
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 2737
+    .line 2738
     :cond_0
     invoke-static/range {p3 .. p3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
@@ -6317,12 +6315,12 @@
 
     move-result-object v1
 
-    .line 2738
+    .line 2739
     iget-object v4, v1, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
     const/4 v1, 0x0
 
-    .line 2740
+    .line 2741
     :goto_0
     new-instance v7, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -6334,7 +6332,7 @@
 
     if-lez v5, :cond_1
 
-    .line 2741
+    .line 2742
     sget v8, Lorg/telegram/messenger/R$string;->VoipEditName:I
 
     const-string v9, "VoipEditName"
@@ -6353,22 +6351,22 @@
 
     invoke-virtual {v7, v8}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2742
+    .line 2743
     new-instance v8, Landroid/widget/LinearLayout;
 
     invoke-direct {v8, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v9, 0x1
 
-    .line 2743
+    .line 2744
     invoke-virtual {v8, v9}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 2745
+    .line 2746
     new-instance v10, Landroid/widget/EditText;
 
     invoke-direct {v10, v0}, Landroid/widget/EditText;-><init>(Landroid/content/Context;)V
 
-    .line 2746
+    .line 2747
     sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBarItems:I
 
     invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6379,19 +6377,19 @@
 
     const/high16 v12, 0x41800000    # 16.0f
 
-    .line 2747
+    .line 2748
     invoke-virtual {v10, v9, v12}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 2748
+    .line 2749
     invoke-virtual {v10, v9}, Landroid/widget/EditText;->setMaxLines(I)V
 
-    .line 2749
+    .line 2750
     invoke-virtual {v10, v9}, Landroid/widget/EditText;->setLines(I)V
 
-    .line 2750
+    .line 2751
     invoke-virtual {v10, v9}, Landroid/widget/EditText;->setSingleLine(Z)V
 
-    .line 2751
+    .line 2752
     sget-boolean v13, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v13, :cond_2
@@ -6408,7 +6406,7 @@
 
     const v13, 0xc000
 
-    .line 2752
+    .line 2753
     invoke-virtual {v10, v13}, Landroid/widget/EditText;->setInputType(I)V
 
     if-lez v5, :cond_3
@@ -6420,13 +6418,13 @@
     :cond_3
     const/4 v15, 0x6
 
-    .line 2753
+    .line 2754
     :goto_3
     invoke-virtual {v10, v15}, Landroid/widget/EditText;->setImeOptions(I)V
 
     if-lez v5, :cond_4
 
-    .line 2754
+    .line 2755
     sget v15, Lorg/telegram/messenger/R$string;->FirstName:I
 
     const-string v6, "FirstName"
@@ -6449,7 +6447,7 @@
     :goto_4
     invoke-virtual {v10, v6}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    .line 2755
+    .line 2756
     invoke-static {v0, v9}, Lorg/telegram/ui/ActionBar/Theme;->createEditTextDrawable(Landroid/content/Context;Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v6
@@ -6458,7 +6456,7 @@
 
     const/16 v6, 0x8
 
-    .line 2756
+    .line 2757
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v15
@@ -6471,36 +6469,36 @@
 
     invoke-virtual {v10, v6, v15, v6, v14}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 2757
+    .line 2758
     invoke-virtual {v10}, Landroid/widget/EditText;->requestFocus()Z
 
     if-lez v5, :cond_6
 
-    .line 2761
+    .line 2762
     new-instance v5, Landroid/widget/EditText;
 
     invoke-direct {v5, v0}, Landroid/widget/EditText;-><init>(Landroid/content/Context;)V
 
-    .line 2762
+    .line 2763
     invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v14
 
     invoke-virtual {v5, v14}, Landroid/widget/EditText;->setTextColor(I)V
 
-    .line 2763
+    .line 2764
     invoke-virtual {v5, v9, v12}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 2764
+    .line 2765
     invoke-virtual {v5, v9}, Landroid/widget/EditText;->setMaxLines(I)V
 
-    .line 2765
+    .line 2766
     invoke-virtual {v5, v9}, Landroid/widget/EditText;->setLines(I)V
 
-    .line 2766
+    .line 2767
     invoke-virtual {v5, v9}, Landroid/widget/EditText;->setSingleLine(Z)V
 
-    .line 2767
+    .line 2768
     sget-boolean v12, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v12, :cond_5
@@ -6515,15 +6513,15 @@
     :goto_5
     invoke-virtual {v5, v14}, Landroid/widget/EditText;->setGravity(I)V
 
-    .line 2768
+    .line 2769
     invoke-virtual {v5, v13}, Landroid/widget/EditText;->setInputType(I)V
 
     const/4 v12, 0x6
 
-    .line 2769
+    .line 2770
     invoke-virtual {v5, v12}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 2770
+    .line 2771
     sget v12, Lorg/telegram/messenger/R$string;->LastName:I
 
     const-string v13, "LastName"
@@ -6534,7 +6532,7 @@
 
     invoke-virtual {v5, v12}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    .line 2771
+    .line 2772
     invoke-static {v0, v9}, Lorg/telegram/ui/ActionBar/Theme;->createEditTextDrawable(Landroid/content/Context;Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -6543,7 +6541,7 @@
 
     const/16 v0, 0x8
 
-    .line 2772
+    .line 2773
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -6561,7 +6559,7 @@
     :cond_6
     const/4 v6, 0x0
 
-    .line 2775
+    .line 2776
     :goto_6
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
@@ -6579,7 +6577,7 @@
 
     const/16 v22, 0x15
 
-    .line 2777
+    .line 2778
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
@@ -6602,18 +6600,18 @@
 
     const/16 v22, 0x15
 
-    .line 2779
+    .line 2780
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v8, v6, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2782
+    .line 2783
     :cond_7
     invoke-virtual {v10, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2783
+    .line 2784
     invoke-virtual {v10}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
@@ -6630,10 +6628,10 @@
 
     if-eqz v6, :cond_8
 
-    .line 2786
+    .line 2787
     invoke-virtual {v6, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2787
+    .line 2788
     invoke-virtual {v6}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
@@ -6648,11 +6646,11 @@
 
     invoke-virtual {v6, v0}, Landroid/widget/EditText;->setSelection(I)V
 
-    .line 2791
+    .line 2792
     :cond_8
     invoke-virtual {v7, v8}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2793
+    .line 2794
     new-instance v8, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda15;
 
     move-object v0, v8
@@ -6667,7 +6665,7 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda15;-><init>(Landroid/widget/EditText;JILandroid/widget/EditText;)V
 
-    .line 2844
+    .line 2845
     sget v0, Lorg/telegram/messenger/R$string;->Save:I
 
     const-string v1, "Save"
@@ -6678,7 +6676,7 @@
 
     invoke-virtual {v7, v0, v8}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2845
+    .line 2846
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v1, "Cancel"
@@ -6691,19 +6689,19 @@
 
     invoke-virtual {v7, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2846
+    .line 2847
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda56;
 
     invoke-direct {v0, v10, v6}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda56;-><init>(Landroid/widget/EditText;Landroid/widget/EditText;)V
 
     invoke-virtual {v7, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setOnPreDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2850
+    .line 2851
     invoke-virtual {v7}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
-    .line 2852
+    .line 2853
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_dialogBackground:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6712,29 +6710,29 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->setBackgroundColor(I)V
 
-    .line 2853
+    .line 2854
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 2854
+    .line 2855
     invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->setTextColor(I)V
 
-    .line 2856
+    .line 2857
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda116;
 
     invoke-direct {v1, v0, v8}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda116;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/content/DialogInterface$OnClickListener;)V
 
     if-eqz v6, :cond_9
 
-    .line 2864
+    .line 2865
     invoke-virtual {v6, v1}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
     goto :goto_7
 
-    .line 2866
+    .line 2867
     :cond_9
     invoke-virtual {v10, v1}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
@@ -6745,12 +6743,12 @@
 .method public static createChooseTemplatesModeDialog(Landroid/content/Context;Lorg/telegram/ui/Components/UndoView;)Lorg/telegram/ui/ActionBar/AlertDialog;
     .locals 11
 
-    .line 450
+    .line 451
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 451
+    .line 452
     sget v1, Lorg/telegram/messenger/R$string;->chat_templates:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -6759,7 +6757,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 452
+    .line 453
     sget v1, Lorg/telegram/messenger/R$string;->common_cancel:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -6770,17 +6768,17 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 454
+    .line 455
     new-instance v1, Landroid/widget/LinearLayout;
 
     invoke-direct {v1, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v2, 0x1
 
-    .line 455
+    .line 456
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 456
+    .line 457
     invoke-static {}, Lcom/iMe/fork/enums/TemplatesMode;->values()[Lcom/iMe/fork/enums/TemplatesMode;
 
     move-result-object v3
@@ -6796,17 +6794,17 @@
 
     aget-object v7, v3, v6
 
-    .line 457
+    .line 458
     new-instance v8, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-direct {v8, p0}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;)V
 
-    .line 458
+    .line 459
     invoke-virtual {v8, v7}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     const/4 v9, 0x4
 
-    .line 459
+    .line 460
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -6817,7 +6815,7 @@
 
     invoke-virtual {v8, v10, v5, v9, v5}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 460
+    .line 461
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
     invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6832,7 +6830,7 @@
 
     invoke-virtual {v8, v9, v10}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 461
+    .line 462
     invoke-virtual {v7}, Lcom/iMe/fork/enums/TemplatesMode;->getTextResId()I
 
     move-result v9
@@ -6855,21 +6853,21 @@
     :goto_1
     invoke-virtual {v8, v9, v7}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
-    .line 462
+    .line 463
     new-instance v7, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda84;
 
     invoke-direct {v7, p1, v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda84;-><init>(Lorg/telegram/ui/Components/UndoView;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
 
     invoke-virtual {v8, v7}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 473
+    .line 474
     invoke-virtual {v1, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 475
+    .line 476
     :cond_1
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -6885,12 +6883,12 @@
 .method public static createChooseVideoVoiceCamera(Landroid/content/Context;)Lorg/telegram/ui/ActionBar/AlertDialog;
     .locals 11
 
-    .line 408
+    .line 409
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 409
+    .line 410
     sget v1, Lorg/telegram/messenger/R$string;->settings_interface_video_voice_camera:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -6899,7 +6897,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 410
+    .line 411
     sget v1, Lorg/telegram/messenger/R$string;->common_cancel:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -6910,17 +6908,17 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 412
+    .line 413
     new-instance v1, Landroid/widget/LinearLayout;
 
     invoke-direct {v1, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v2, 0x1
 
-    .line 413
+    .line 414
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 414
+    .line 415
     invoke-static {}, Lcom/iMe/fork/enums/VideoVoiceCamera;->values()[Lcom/iMe/fork/enums/VideoVoiceCamera;
 
     move-result-object v3
@@ -6936,17 +6934,17 @@
 
     aget-object v7, v3, v6
 
-    .line 415
+    .line 416
     new-instance v8, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-direct {v8, p0}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;)V
 
-    .line 416
+    .line 417
     invoke-virtual {v8, v7}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     const/4 v9, 0x4
 
-    .line 417
+    .line 418
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -6957,7 +6955,7 @@
 
     invoke-virtual {v8, v10, v5, v9, v5}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 418
+    .line 419
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
     invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6972,7 +6970,7 @@
 
     invoke-virtual {v8, v9, v10}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 419
+    .line 420
     invoke-virtual {v7}, Lcom/iMe/fork/enums/VideoVoiceCamera;->getTextResId()I
 
     move-result v9
@@ -6995,21 +6993,21 @@
     :goto_1
     invoke-virtual {v8, v9, v7}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
-    .line 420
+    .line 421
     new-instance v7, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda75;
 
     invoke-direct {v7, v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda75;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
 
     invoke-virtual {v8, v7}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 424
+    .line 425
     invoke-virtual {v1, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     add-int/lit8 v6, v6, 0x1
 
     goto :goto_0
 
-    .line 426
+    .line 427
     :cond_1
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -7037,7 +7035,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 2373
+    .line 2374
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v5
@@ -7050,23 +7048,23 @@
 
     goto/16 :goto_b
 
-    .line 2376
+    .line 2377
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
 
     move-result v5
 
-    .line 2378
+    .line 2379
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v6
 
-    .line 2379
+    .line 2380
     new-instance v7, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v7, v6, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 2380
+    .line 2381
     invoke-static {v5}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v5
@@ -7081,15 +7079,15 @@
 
     new-array v11, v5, [Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    .line 2384
+    .line 2385
     new-instance v12, Lorg/telegram/ui/Components/AlertsCreator$10;
 
     invoke-direct {v12, v6}, Lorg/telegram/ui/Components/AlertsCreator$10;-><init>(Landroid/content/Context;)V
 
-    .line 2391
+    .line 2392
     invoke-static {v12}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
 
-    .line 2392
+    .line 2393
     sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -7100,10 +7098,10 @@
 
     const/high16 v13, 0x41800000    # 16.0f
 
-    .line 2393
+    .line 2394
     invoke-virtual {v12, v5, v13}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2394
+    .line 2395
     sget-boolean v13, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v13, :cond_1
@@ -7120,20 +7118,20 @@
 
     invoke-virtual {v12, v13}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 2396
+    .line 2397
     new-instance v13, Lorg/telegram/ui/Components/AlertsCreator$11;
 
     invoke-direct {v13, v6, v10, v11}, Lorg/telegram/ui/Components/AlertsCreator$11;-><init>(Landroid/content/Context;[Lorg/telegram/ui/Cells/CheckBoxCell;[Lorg/telegram/ui/Cells/CheckBoxCell;)V
 
-    .line 2411
+    .line 2412
     invoke-virtual {v7, v13}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2413
+    .line 2414
     new-instance v14, Landroid/widget/TextView;
 
     invoke-direct {v14, v6}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 2414
+    .line 2415
     sget v17, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
     invoke-static/range {v17 .. v17}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -7144,28 +7142,28 @@
 
     const/high16 v15, 0x41a00000    # 20.0f
 
-    .line 2415
+    .line 2416
     invoke-virtual {v14, v5, v15}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v15, "fonts/rmedium.ttf"
 
-    .line 2416
+    .line 2417
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v15
 
     invoke-virtual {v14, v15}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2417
+    .line 2418
     invoke-virtual {v14, v5}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 2418
+    .line 2419
     invoke-virtual {v14, v5}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 2419
+    .line 2420
     invoke-virtual {v14, v5}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 2420
+    .line 2421
     sget-boolean v15, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v15, :cond_2
@@ -7184,7 +7182,7 @@
 
     invoke-virtual {v14, v15}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 2421
+    .line 2422
     sget-object v15, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v14, v15}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
@@ -7193,7 +7191,7 @@
 
     const/16 v19, -0x2
 
-    .line 2423
+    .line 2424
     sget-boolean v15, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v15, :cond_3
@@ -7226,7 +7224,7 @@
 
     const/16 v19, -0x2
 
-    .line 2424
+    .line 2425
     sget-boolean v15, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v15, :cond_4
@@ -7261,7 +7259,7 @@
 
     if-ne v1, v15, :cond_9
 
-    .line 2428
+    .line 2429
     sget v1, Lorg/telegram/messenger/R$string;->ClearHistory:I
 
     new-array v15, v5, [Ljava/lang/Object;
@@ -7276,7 +7274,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 2430
+    .line 2431
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureClearHistoryWithUser:I
 
     const/4 v5, 0x1
@@ -7308,14 +7306,14 @@
     :cond_5
     if-eqz p4, :cond_7
 
-    .line 2433
+    .line 2434
     invoke-static/range {p3 .. p3}, Lorg/telegram/messenger/ChatObject;->isChannelAndNotMegaGroup(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v1
 
     if-eqz v1, :cond_6
 
-    .line 2434
+    .line 2435
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureClearHistoryWithChannel:I
 
     const/4 v5, 0x1
@@ -7349,7 +7347,7 @@
 
     const/16 v18, 0x0
 
-    .line 2436
+    .line 2437
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureClearHistoryWithChat:I
 
     new-array v14, v5, [Ljava/lang/Object;
@@ -7372,13 +7370,13 @@
 
     goto :goto_4
 
-    .line 2438
+    .line 2439
     :cond_7
     iget-boolean v1, v3, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
     if-eqz v1, :cond_8
 
-    .line 2439
+    .line 2440
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureClearHistoryGroup:I
 
     const-string v5, "AreYouSureClearHistoryGroup"
@@ -7391,7 +7389,7 @@
 
     goto :goto_4
 
-    .line 2441
+    .line 2442
     :cond_8
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureClearHistoryChannel:I
 
@@ -7410,14 +7408,14 @@
 
     const-string v5, "DeleteDays"
 
-    .line 2445
+    .line 2446
     invoke-static {v5, v1, v15}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {v14, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2446
+    .line 2447
     sget v1, Lorg/telegram/messenger/R$string;->DeleteHistoryByDaysMessage:I
 
     const-string v5, "DeleteHistoryByDaysMessage"
@@ -7444,7 +7442,7 @@
 
     if-eqz p4, :cond_a
 
-    .line 2451
+    .line 2452
     invoke-static/range {p3 .. p3}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v15
@@ -7456,7 +7454,7 @@
     :cond_a
     if-eqz v2, :cond_b
 
-    .line 2454
+    .line 2455
     iget-wide v0, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     cmp-long v0, v0, v8
@@ -7480,7 +7478,7 @@
 
     if-nez v0, :cond_12
 
-    .line 2455
+    .line 2456
     :cond_c
     new-instance v0, Lorg/telegram/ui/Cells/CheckBoxCell;
 
@@ -7492,7 +7490,7 @@
 
     aput-object v0, v10, v1
 
-    .line 2456
+    .line 2457
     aget-object v0, v10, v1
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
@@ -7505,7 +7503,7 @@
 
     if-eqz v3, :cond_d
 
-    .line 2458
+    .line 2459
     aget-object v2, v10, v1
 
     sget v8, Lorg/telegram/messenger/R$string;->DeleteMessagesOptionAlsoChat:I
@@ -7520,7 +7518,7 @@
 
     goto :goto_6
 
-    .line 2460
+    .line 2461
     :cond_d
     aget-object v8, v10, v1
 
@@ -7544,7 +7542,7 @@
 
     invoke-virtual {v8, v2, v0, v1, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 2463
+    .line 2464
     :goto_6
     aget-object v2, v10, v1
 
@@ -7586,7 +7584,7 @@
 
     invoke-virtual {v2, v1, v12, v9, v12}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 2464
+    .line 2465
     aget-object v1, v10, v12
 
     const/16 v19, -0x1
@@ -7611,12 +7609,12 @@
 
     const/4 v1, 0x0
 
-    .line 2466
+    .line 2467
     aget-object v2, v10, v1
 
     invoke-virtual {v2, v1, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->setChecked(ZZ)V
 
-    .line 2468
+    .line 2469
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
@@ -7627,14 +7625,14 @@
 
     aput-boolean v2, v5, v1
 
-    .line 2469
+    .line 2470
     aget-object v2, v10, v1
 
     aget-boolean v9, v5, v1
 
     invoke-virtual {v2, v9, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->setChecked(ZZ)V
 
-    .line 2471
+    .line 2472
     aget-object v2, v10, v1
 
     new-instance v9, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda103;
@@ -7643,7 +7641,7 @@
 
     invoke-virtual {v2, v9}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2484
+    .line 2485
     new-instance v2, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     const/4 v9, 0x1
@@ -7652,12 +7650,12 @@
 
     aput-object v2, v11, v1
 
-    .line 2485
+    .line 2486
     aget-object v2, v11, v1
 
     invoke-virtual {v2, v8}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2486
+    .line 2487
     aget-object v2, v11, v1
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
@@ -7666,7 +7664,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2487
+    .line 2488
     aget-object v2, v11, v1
 
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -7705,7 +7703,7 @@
 
     invoke-virtual {v2, v1, v6, v4, v6}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 2488
+    .line 2489
     aget-object v1, v11, v6
 
     sget v2, Lorg/telegram/messenger/R$string;->remember_choice:I
@@ -7718,7 +7716,7 @@
 
     invoke-virtual {v1, v2, v0, v4, v6}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 2489
+    .line 2490
     aget-object v0, v11, v6
 
     const/16 v19, -0x1
@@ -7743,7 +7741,7 @@
 
     const/4 v0, 0x0
 
-    .line 2491
+    .line 2492
     aget-object v0, v11, v0
 
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda105;
@@ -7752,7 +7750,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2498
+    .line 2499
     :cond_12
     sget v0, Lorg/telegram/messenger/R$string;->Delete:I
 
@@ -7766,7 +7764,7 @@
 
     if-eqz p4, :cond_13
 
-    .line 2499
+    .line 2500
     invoke-static/range {p3 .. p3}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v1
@@ -7779,7 +7777,7 @@
 
     if-nez v1, :cond_13
 
-    .line 2500
+    .line 2501
     sget v0, Lorg/telegram/messenger/R$string;->ClearForAll:I
 
     const-string v1, "ClearForAll"
@@ -7788,7 +7786,7 @@
 
     move-result-object v0
 
-    .line 2502
+    .line 2503
     :cond_13
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda44;
 
@@ -7800,7 +7798,7 @@
 
     invoke-virtual {v7, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2511
+    .line 2512
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v1, "Cancel"
@@ -7813,17 +7811,17 @@
 
     invoke-virtual {v7, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2512
+    .line 2513
     invoke-virtual {v7}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
-    .line 2513
+    .line 2514
     invoke-virtual {v2, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     const/4 v1, -0x1
 
-    .line 2514
+    .line 2515
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object v0
@@ -7832,7 +7830,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 2516
+    .line 2517
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -7871,7 +7869,7 @@
 
     move-object/from16 v9, p6
 
-    .line 2006
+    .line 2007
     invoke-static/range {v0 .. v10}, Lorg/telegram/ui/Components/AlertsCreator;->createClearOrDeleteDialogAlert(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;ZZZLorg/telegram/messenger/MessagesStorage$BooleanCallback;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -7884,7 +7882,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 2014
+    .line 2015
     iget-boolean v0, v4, Lorg/telegram/tgnet/TLRPC$Chat;->creator:Z
 
     if-eqz v0, :cond_0
@@ -7939,7 +7937,7 @@
 
     if-eqz v15, :cond_4c
 
-    .line 2018
+    .line 2019
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -7952,23 +7950,23 @@
 
     goto/16 :goto_20
 
-    .line 2021
+    .line 2022
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
 
     move-result v0
 
-    .line 2023
+    .line 2024
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    .line 2024
+    .line 2025
     new-instance v11, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v11, v1, v12}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 2025
+    .line 2026
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v2
@@ -7981,7 +7979,7 @@
 
     if-eqz v10, :cond_1
 
-    .line 2027
+    .line 2028
     invoke-static {v0}, Lcom/iMe/fork/controller/AlbumsController;->getInstance(I)Lcom/iMe/fork/controller/AlbumsController;
 
     move-result-object v4
@@ -8008,15 +8006,15 @@
 
     new-array v6, v2, [Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    .line 2031
+    .line 2032
     new-instance v7, Lorg/telegram/ui/Components/AlertsCreator$8;
 
     invoke-direct {v7, v1}, Lorg/telegram/ui/Components/AlertsCreator$8;-><init>(Landroid/content/Context;)V
 
-    .line 2038
+    .line 2039
     invoke-static {v7}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
 
-    .line 2039
+    .line 2040
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -8027,10 +8025,10 @@
 
     const/high16 v8, 0x41800000    # 16.0f
 
-    .line 2040
+    .line 2041
     invoke-virtual {v7, v2, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2041
+    .line 2042
     sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v18, 0x3
@@ -8051,7 +8049,7 @@
 
     if-nez p8, :cond_3
 
-    .line 2043
+    .line 2044
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v8
@@ -8071,7 +8069,7 @@
     :cond_3
     const/4 v8, 0x0
 
-    .line 2045
+    .line 2046
     :goto_2
     new-instance v9, Lorg/telegram/ui/Components/AlertsCreator$9;
 
@@ -8079,27 +8077,27 @@
 
     const/4 v3, 0x6
 
-    .line 2060
+    .line 2061
     invoke-virtual {v11, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setCustomViewOffset(I)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2061
+    .line 2062
     invoke-virtual {v11, v9}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2063
+    .line 2064
     new-instance v3, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v3}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     const/16 v21, 0x12
 
-    .line 2064
+    .line 2065
     invoke-static/range {v21 .. v21}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     invoke-virtual {v3, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setTextSize(I)V
 
-    .line 2066
+    .line 2067
     new-instance v2, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {v2, v1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -8108,7 +8106,7 @@
 
     move-object/from16 v22, v11
 
-    .line 2067
+    .line 2068
     invoke-static/range {v21 .. v21}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -8119,7 +8117,7 @@
 
     const/16 v24, 0x28
 
-    .line 2068
+    .line 2069
     sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v11, :cond_4
@@ -8148,12 +8146,12 @@
 
     invoke-virtual {v9, v2, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2070
+    .line 2071
     new-instance v11, Landroid/widget/TextView;
 
     invoke-direct {v11, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 2071
+    .line 2072
     sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
     invoke-static/range {v21 .. v21}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -8168,28 +8166,28 @@
 
     const/4 v2, 0x1
 
-    .line 2072
+    .line 2073
     invoke-virtual {v11, v2, v15}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v15, "fonts/rmedium.ttf"
 
-    .line 2073
+    .line 2074
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v15
 
     invoke-virtual {v11, v15}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2074
+    .line 2075
     invoke-virtual {v11, v2}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 2075
+    .line 2076
     invoke-virtual {v11, v2}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 2076
+    .line 2077
     invoke-virtual {v11, v2}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 2077
+    .line 2078
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v2, :cond_5
@@ -8208,7 +8206,7 @@
 
     invoke-virtual {v11, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 2078
+    .line 2079
     sget-object v2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v11, v2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
@@ -8231,7 +8229,7 @@
 
     move/from16 v26, v8
 
-    .line 2081
+    .line 2082
     sget v8, Lorg/telegram/messenger/R$string;->ClearHistoryCache:I
 
     invoke-static {v3, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -8247,7 +8245,7 @@
     :cond_6
     move/from16 v26, v8
 
-    .line 2083
+    .line 2084
     sget v8, Lorg/telegram/messenger/R$string;->ClearHistory:I
 
     move-object/from16 v27, v3
@@ -8269,7 +8267,7 @@
 
     if-eqz p2, :cond_b
 
-    .line 2087
+    .line 2088
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v3
@@ -8278,12 +8276,12 @@
 
     if-eqz v3, :cond_a
 
-    .line 2088
+    .line 2089
     iget-boolean v3, v10, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
     if-eqz v3, :cond_8
 
-    .line 2089
+    .line 2090
     sget v3, Lorg/telegram/messenger/R$string;->DeleteMegaMenu:I
 
     invoke-static {v8, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -8297,7 +8295,7 @@
     :cond_8
     if-eqz v4, :cond_9
 
-    .line 2093
+    .line 2094
     sget v3, Lorg/telegram/messenger/R$string;->cloud_albums_delete_alert_title:I
 
     invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -8308,7 +8306,7 @@
 
     goto :goto_5
 
-    .line 2095
+    .line 2096
     :cond_9
     sget v3, Lorg/telegram/messenger/R$string;->ChannelDeleteMenu:I
 
@@ -8322,7 +8320,7 @@
 
     goto :goto_5
 
-    .line 2098
+    .line 2099
     :cond_a
     sget v3, Lorg/telegram/messenger/R$string;->DeleteMegaMenu:I
 
@@ -8337,19 +8335,19 @@
     :cond_b
     if-eqz v10, :cond_e
 
-    .line 2102
+    .line 2103
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v3
 
     if-eqz v3, :cond_d
 
-    .line 2103
+    .line 2104
     iget-boolean v3, v10, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
     if-eqz v3, :cond_c
 
-    .line 2104
+    .line 2105
     sget v3, Lorg/telegram/messenger/R$string;->LeaveMegaMenu:I
 
     invoke-static {v6, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -8360,7 +8358,7 @@
 
     goto :goto_5
 
-    .line 2106
+    .line 2107
     :cond_c
     sget v3, Lorg/telegram/messenger/R$string;->LeaveChannelMenu:I
 
@@ -8372,7 +8370,7 @@
 
     goto :goto_5
 
-    .line 2109
+    .line 2110
     :cond_d
     sget v3, Lorg/telegram/messenger/R$string;->LeaveMegaMenu:I
 
@@ -8384,7 +8382,7 @@
 
     goto :goto_5
 
-    .line 2112
+    .line 2113
     :cond_e
     sget v3, Lorg/telegram/messenger/R$string;->DeleteChatUser:I
 
@@ -8399,7 +8397,7 @@
 
     const/16 v29, -0x2
 
-    .line 2116
+    .line 2117
     sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v3, :cond_f
@@ -8453,7 +8451,7 @@
 
     const/16 v29, -0x2
 
-    .line 2117
+    .line 2118
     sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v3, :cond_12
@@ -8479,7 +8477,7 @@
 
     if-eqz v13, :cond_13
 
-    .line 2119
+    .line 2120
     iget-boolean v3, v13, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
     if-nez v3, :cond_13
@@ -8513,7 +8511,7 @@
     :goto_8
     if-eqz v13, :cond_15
 
-    .line 2122
+    .line 2123
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v3
@@ -8522,7 +8520,7 @@
 
     goto :goto_9
 
-    .line 2124
+    .line 2125
     :cond_15
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
@@ -8559,7 +8557,7 @@
 
     if-eqz v13, :cond_17
 
-    .line 2132
+    .line 2133
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v3
@@ -8590,7 +8588,7 @@
     :goto_b
     if-eqz v3, :cond_19
 
-    .line 2133
+    .line 2134
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v6
@@ -8658,12 +8656,12 @@
 
     if-eqz v13, :cond_1c
 
-    .line 2137
+    .line 2138
     iget-boolean v7, v13, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
     if-eqz v7, :cond_1c
 
-    .line 2138
+    .line 2139
     new-instance v2, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     const/4 v3, 0x1
@@ -8674,7 +8672,7 @@
 
     aput-object v2, v5, v1
 
-    .line 2139
+    .line 2140
     aget-object v2, v5, v1
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
@@ -8683,7 +8681,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2140
+    .line 2141
     aget-object v2, v5, v1
 
     sget v3, Lorg/telegram/messenger/R$string;->BlockBot:I
@@ -8694,7 +8692,7 @@
 
     invoke-virtual {v2, v3, v6, v1, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 2141
+    .line 2142
     aget-object v2, v5, v1
 
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -8743,7 +8741,7 @@
 
     invoke-virtual {v2, v6, v3, v1, v3}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 2142
+    .line 2143
     aget-object v1, v5, v3
 
     const/4 v2, 0x1
@@ -8752,7 +8750,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/Cells/CheckBoxCell;->setChecked(ZZ)V
 
-    .line 2143
+    .line 2144
     aget-object v1, v5, v3
 
     const/16 v30, -0x1
@@ -8777,7 +8775,7 @@
 
     const/4 v1, 0x0
 
-    .line 2144
+    .line 2145
     aget-object v2, v5, v1
 
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda97;
@@ -8798,7 +8796,7 @@
     :cond_1d
     if-eqz v2, :cond_20
 
-    .line 2149
+    .line 2150
     :cond_1e
     invoke-static/range {p5 .. p5}, Lorg/telegram/messenger/UserObject;->isDeleted(Lorg/telegram/tgnet/TLRPC$User;)Z
 
@@ -8837,7 +8835,7 @@
     :goto_10
     if-eqz v2, :cond_29
 
-    .line 2150
+    .line 2151
     :goto_11
     new-instance v3, Lorg/telegram/ui/Cells/CheckBoxCell;
 
@@ -8849,7 +8847,7 @@
 
     aput-object v3, v5, v7
 
-    .line 2151
+    .line 2152
     aget-object v3, v5, v7
 
     move-object/from16 v31, v15
@@ -8862,7 +8860,7 @@
 
     if-eqz v2, :cond_23
 
-    .line 2153
+    .line 2154
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v2
@@ -8873,7 +8871,7 @@
 
     if-nez v2, :cond_22
 
-    .line 2154
+    .line 2155
     aget-object v2, v5, v7
 
     sget v3, Lorg/telegram/messenger/R$string;->DeleteChannelForAll:I
@@ -8888,7 +8886,7 @@
 
     goto :goto_12
 
-    .line 2156
+    .line 2157
     :cond_22
     aget-object v2, v5, v7
 
@@ -8910,7 +8908,7 @@
     :cond_23
     if-eqz v14, :cond_24
 
-    .line 2159
+    .line 2160
     aget-object v2, v5, v7
 
     sget v3, Lorg/telegram/messenger/R$string;->ClearHistoryOptionAlso:I
@@ -8940,7 +8938,7 @@
     :cond_24
     move/from16 v32, v4
 
-    .line 2161
+    .line 2162
     aget-object v2, v5, v7
 
     sget v3, Lorg/telegram/messenger/R$string;->DeleteMessagesOptionAlso:I
@@ -8963,7 +8961,7 @@
 
     invoke-virtual {v2, v3, v6, v7, v7}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 2164
+    .line 2165
     :goto_13
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
@@ -8975,14 +8973,14 @@
 
     aput-boolean v2, v11, v7
 
-    .line 2165
+    .line 2166
     aget-object v2, v5, v7
 
     aget-boolean v3, v11, v7
 
     invoke-virtual {v2, v3, v7}, Lorg/telegram/ui/Cells/CheckBoxCell;->setChecked(ZZ)V
 
-    .line 2167
+    .line 2168
     aget-object v2, v5, v7
 
     sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -9031,7 +9029,7 @@
 
     invoke-virtual {v2, v7, v3, v15, v3}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 2168
+    .line 2169
     aget-object v2, v5, v3
 
     const/16 v33, -0x1
@@ -9056,7 +9054,7 @@
 
     const/4 v2, 0x0
 
-    .line 2169
+    .line 2170
     aget-object v3, v5, v2
 
     new-instance v4, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda102;
@@ -9067,7 +9065,7 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2180
+    .line 2181
     new-instance v3, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     const/4 v4, 0x1
@@ -9076,14 +9074,14 @@
 
     aput-object v3, v5, v2
 
-    .line 2181
+    .line 2182
     aget-object v1, v5, v2
 
     const/16 v3, 0x8
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2182
+    .line 2183
     aget-object v1, v5, v2
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
@@ -9092,7 +9090,7 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2183
+    .line 2184
     aget-object v1, v5, v2
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -9135,7 +9133,7 @@
 
     invoke-virtual {v1, v4, v3, v2, v3}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 2184
+    .line 2185
     aget-object v1, v5, v3
 
     sget v2, Lorg/telegram/messenger/R$string;->remember_choice:I
@@ -9148,7 +9146,7 @@
 
     invoke-virtual {v1, v2, v6, v4, v3}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 2185
+    .line 2186
     aget-object v1, v5, v3
 
     const/16 v33, -0x1
@@ -9173,7 +9171,7 @@
 
     const/4 v1, 0x0
 
-    .line 2187
+    .line 2188
     aget-object v2, v5, v1
 
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda104;
@@ -9195,7 +9193,7 @@
 
     if-eqz v10, :cond_2a
 
-    .line 2195
+    .line 2196
     iget-wide v2, v10, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
     invoke-static {v0, v2, v3}, Lorg/telegram/messenger/ChatObject;->isTemplatesChat(IJ)Z
@@ -9206,19 +9204,19 @@
 
     move-object/from16 v0, v24
 
-    .line 2196
+    .line 2197
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
     const/16 v1, 0x65
 
-    .line 2197
+    .line 2198
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
     move-object/from16 v2, v21
 
     const/4 v3, 0x0
 
-    .line 2198
+    .line 2199
     invoke-virtual {v2, v3, v3, v0, v10}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto :goto_1a
@@ -9232,27 +9230,27 @@
 
     if-eqz v13, :cond_2d
 
-    .line 2201
+    .line 2202
     invoke-static/range {p5 .. p5}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v4
 
     if-eqz v4, :cond_2b
 
-    .line 2202
+    .line 2203
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
     const/16 v1, 0xc
 
-    .line 2203
+    .line 2204
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 2204
+    .line 2205
     invoke-virtual {v2, v3, v3, v0, v13}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto :goto_1a
 
-    .line 2205
+    .line 2206
     :cond_2b
     iget-wide v4, v13, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
@@ -9260,15 +9258,15 @@
 
     if-nez v4, :cond_2c
 
-    .line 2206
+    .line 2207
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
     const/4 v1, 0x1
 
-    .line 2207
+    .line 2208
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 2208
+    .line 2209
     invoke-virtual {v2, v3, v3, v0, v13}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto :goto_1a
@@ -9276,35 +9274,35 @@
     :cond_2c
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 2210
+    .line 2211
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 2211
+    .line 2212
     invoke-virtual {v0, v13}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 2212
+    .line 2213
     invoke-virtual {v2, v13, v0}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
     goto :goto_1a
 
-    .line 2215
+    .line 2216
     :cond_2d
     invoke-virtual {v0, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 2216
+    .line 2217
     invoke-virtual {v2, v10, v0}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
     :goto_1a
     if-eqz p3, :cond_30
 
-    .line 2220
+    .line 2221
     invoke-static/range {p5 .. p5}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2e
 
-    .line 2221
+    .line 2222
     sget v0, Lorg/telegram/messenger/R$string;->DeleteAllMessagesSavedAlert:I
 
     const-string v1, "DeleteAllMessagesSavedAlert"
@@ -9328,14 +9326,14 @@
 
     if-eqz v10, :cond_2f
 
-    .line 2223
+    .line 2224
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/ChatObject;->isChannelAndNotMegaGroup(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2f
 
-    .line 2224
+    .line 2225
     sget v0, Lorg/telegram/messenger/R$string;->DeleteAllMessagesChannelAlert:I
 
     const-string v2, "DeleteAllMessagesChannelAlert"
@@ -9352,7 +9350,7 @@
 
     goto/16 :goto_1c
 
-    .line 2226
+    .line 2227
     :cond_2f
     sget v0, Lorg/telegram/messenger/R$string;->DeleteAllMessagesAlert:I
 
@@ -9379,7 +9377,7 @@
 
     if-eqz p6, :cond_31
 
-    .line 2233
+    .line 2234
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureClearHistoryWithSecretUser:I
 
     const/4 v2, 0x1
@@ -9408,7 +9406,7 @@
 
     goto/16 :goto_1c
 
-    .line 2235
+    .line 2236
     :cond_31
     iget-wide v4, v13, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
@@ -9416,7 +9414,7 @@
 
     if-nez v0, :cond_32
 
-    .line 2236
+    .line 2237
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureClearHistorySavedMessages:I
 
     const-string v2, "AreYouSureClearHistorySavedMessages"
@@ -9433,7 +9431,7 @@
 
     goto/16 :goto_1c
 
-    .line 2238
+    .line 2239
     :cond_32
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureClearHistoryWithUser:I
 
@@ -9463,7 +9461,7 @@
 
     goto/16 :goto_1c
 
-    .line 2242
+    .line 2243
     :cond_33
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -9483,13 +9481,13 @@
 
     goto :goto_1b
 
-    .line 2244
+    .line 2245
     :cond_34
     iget-boolean v0, v10, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
     if-eqz v0, :cond_35
 
-    .line 2245
+    .line 2246
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureClearHistoryGroup:I
 
     const-string v2, "AreYouSureClearHistoryGroup"
@@ -9502,7 +9500,7 @@
 
     goto/16 :goto_1c
 
-    .line 2247
+    .line 2248
     :cond_35
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureClearHistoryChannel:I
 
@@ -9516,7 +9514,7 @@
 
     goto/16 :goto_1c
 
-    .line 2243
+    .line 2244
     :cond_36
     :goto_1b
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureClearHistoryWithChat:I
@@ -9548,7 +9546,7 @@
     :cond_37
     if-eqz p2, :cond_3b
 
-    .line 2252
+    .line 2253
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
@@ -9557,12 +9555,12 @@
 
     if-eqz v0, :cond_3a
 
-    .line 2253
+    .line 2254
     iget-boolean v0, v10, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
     if-eqz v0, :cond_38
 
-    .line 2254
+    .line 2255
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureDeleteAndExit:I
 
     invoke-static {v2, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -9576,7 +9574,7 @@
     :cond_38
     if-eqz v32, :cond_39
 
-    .line 2258
+    .line 2259
     sget v0, Lorg/telegram/messenger/R$string;->cloud_albums_delete_alert_message:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -9587,7 +9585,7 @@
 
     goto/16 :goto_1c
 
-    .line 2260
+    .line 2261
     :cond_39
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureDeleteAndExitChannel:I
 
@@ -9601,7 +9599,7 @@
 
     goto/16 :goto_1c
 
-    .line 2263
+    .line 2264
     :cond_3a
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureDeleteAndExit:I
 
@@ -9618,7 +9616,7 @@
 
     if-eqz p6, :cond_3c
 
-    .line 2268
+    .line 2269
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureDeleteThisChatWithSecretUser:I
 
     const/4 v2, 0x1
@@ -9647,7 +9645,7 @@
 
     goto/16 :goto_1c
 
-    .line 2270
+    .line 2271
     :cond_3c
     iget-wide v4, v13, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
@@ -9655,7 +9653,7 @@
 
     if-nez v0, :cond_3d
 
-    .line 2271
+    .line 2272
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureDeleteThisChatSavedMessages:I
 
     const-string v2, "AreYouSureDeleteThisChatSavedMessages"
@@ -9672,7 +9670,7 @@
 
     goto/16 :goto_1c
 
-    .line 2273
+    .line 2274
     :cond_3d
     iget-boolean v0, v13, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
@@ -9682,7 +9680,7 @@
 
     if-nez v0, :cond_3e
 
-    .line 2274
+    .line 2275
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureDeleteThisChatWithBotWithCheckmark:I
 
     const/4 v2, 0x1
@@ -9714,7 +9712,7 @@
 
     const/4 v5, 0x0
 
-    .line 2276
+    .line 2277
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureDeleteThisChatWithUser:I
 
     new-array v2, v2, [Ljava/lang/Object;
@@ -9739,7 +9737,7 @@
 
     goto :goto_1c
 
-    .line 2280
+    .line 2281
     :cond_3f
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -9747,12 +9745,12 @@
 
     if-eqz v0, :cond_41
 
-    .line 2281
+    .line 2282
     iget-boolean v0, v10, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
     if-eqz v0, :cond_40
 
-    .line 2282
+    .line 2283
     sget v0, Lorg/telegram/messenger/R$string;->MegaLeaveAlertWithName:I
 
     const/4 v2, 0x1
@@ -9784,7 +9782,7 @@
 
     const/4 v5, 0x0
 
-    .line 2284
+    .line 2285
     sget v0, Lorg/telegram/messenger/R$string;->ChannelLeaveAlertWithName:I
 
     new-array v2, v2, [Ljava/lang/Object;
@@ -9812,7 +9810,7 @@
 
     const/4 v5, 0x0
 
-    .line 2287
+    .line 2288
     sget v0, Lorg/telegram/messenger/R$string;->AreYouSureDeleteAndExitName:I
 
     new-array v2, v2, [Ljava/lang/Object;
@@ -9836,7 +9834,7 @@
     :goto_1c
     if-eqz p3, :cond_42
 
-    .line 2295
+    .line 2296
     sget v0, Lorg/telegram/messenger/R$string;->DeleteAll:I
 
     const-string v1, "DeleteAll"
@@ -9855,7 +9853,7 @@
 
     if-eqz v26, :cond_43
 
-    .line 2299
+    .line 2300
     sget v0, Lorg/telegram/messenger/R$string;->ClearHistoryCache:I
 
     move-object/from16 v1, v27
@@ -9866,7 +9864,7 @@
 
     goto :goto_1d
 
-    .line 2301
+    .line 2302
     :cond_43
     sget v0, Lorg/telegram/messenger/R$string;->ClearForMe:I
 
@@ -9881,7 +9879,7 @@
     :cond_44
     if-eqz p2, :cond_48
 
-    .line 2305
+    .line 2306
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
@@ -9890,12 +9888,12 @@
 
     if-eqz v0, :cond_47
 
-    .line 2306
+    .line 2307
     iget-boolean v0, v10, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
     if-eqz v0, :cond_45
 
-    .line 2307
+    .line 2308
     sget v0, Lorg/telegram/messenger/R$string;->DeleteMega:I
 
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -9907,7 +9905,7 @@
     :cond_45
     if-eqz v32, :cond_46
 
-    .line 2311
+    .line 2312
     sget v0, Lorg/telegram/messenger/R$string;->cloud_albums_delete_alert_title:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -9916,7 +9914,7 @@
 
     goto :goto_1d
 
-    .line 2313
+    .line 2314
     :cond_46
     sget v0, Lorg/telegram/messenger/R$string;->ChannelDelete:I
 
@@ -9928,7 +9926,7 @@
 
     goto :goto_1d
 
-    .line 2316
+    .line 2317
     :cond_47
     sget v0, Lorg/telegram/messenger/R$string;->DeleteMega:I
 
@@ -9938,7 +9936,7 @@
 
     goto :goto_1d
 
-    .line 2319
+    .line 2320
     :cond_48
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -9946,12 +9944,12 @@
 
     if-eqz v0, :cond_4a
 
-    .line 2320
+    .line 2321
     iget-boolean v0, v10, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
     if-eqz v0, :cond_49
 
-    .line 2321
+    .line 2322
     sget v0, Lorg/telegram/messenger/R$string;->LeaveMegaMenu:I
 
     move-object/from16 v1, v29
@@ -9962,7 +9960,7 @@
 
     goto :goto_1d
 
-    .line 2323
+    .line 2324
     :cond_49
     sget v0, Lorg/telegram/messenger/R$string;->LeaveChannelMenu:I
 
@@ -9974,7 +9972,7 @@
 
     goto :goto_1d
 
-    .line 2326
+    .line 2327
     :cond_4a
     sget v0, Lorg/telegram/messenger/R$string;->DeleteChatUser:I
 
@@ -9986,7 +9984,7 @@
 
     goto :goto_1d
 
-    .line 2331
+    .line 2332
     :goto_1e
     new-instance v9, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda45;
 
@@ -10038,7 +10036,7 @@
 
     invoke-virtual {v15, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2359
+    .line 2360
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v1, "Cancel"
@@ -10051,12 +10049,12 @@
 
     invoke-virtual {v15, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2360
+    .line 2361
     invoke-virtual {v15}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
-    .line 2362
+    .line 2363
     sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->isDeleteCloudConfirmationEnabled:Z
 
     if-eqz v1, :cond_4b
@@ -10073,7 +10071,7 @@
 
     if-nez v1, :cond_4b
 
-    .line 2363
+    .line 2364
     new-instance v1, Lcom/iMe/fork/ui/dialog/ClearOrDeleteCloudConfirmBottomSheet;
 
     new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda125;
@@ -10093,13 +10091,13 @@
     :cond_4b
     move-object/from16 v3, p0
 
-    .line 2365
+    .line 2366
     invoke-virtual {v3, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     :goto_1f
     const/4 v1, -0x1
 
-    .line 2366
+    .line 2367
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object v0
@@ -10108,7 +10106,7 @@
 
     if-eqz v0, :cond_4c
 
-    .line 2368
+    .line 2369
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -10137,7 +10135,7 @@
 
     move-object v5, p5
 
-    .line 5158
+    .line 5159
     invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator;->createColorSelectDialog(Landroid/app/Activity;JIILjava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/app/Dialog;
 
     move-result-object p0
@@ -10158,14 +10156,14 @@
 
     move-object/from16 v1, p6
 
-    .line 5163
+    .line 5164
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
 
     move-result-object v2
 
-    .line 5164
+    .line 5165
     invoke-static/range {p1 .. p3}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object v12
@@ -10186,7 +10184,7 @@
 
     if-eqz v13, :cond_2
 
-    .line 5166
+    .line 5167
     new-instance v14, Ljava/lang/StringBuilder;
 
     invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
@@ -10207,7 +10205,7 @@
 
     if-eqz v14, :cond_0
 
-    .line 5167
+    .line 5168
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -10226,7 +10224,7 @@
 
     goto :goto_0
 
-    .line 5169
+    .line 5170
     :cond_0
     invoke-static/range {p1 .. p2}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
 
@@ -10234,14 +10232,14 @@
 
     if-eqz v14, :cond_1
 
-    .line 5170
+    .line 5171
     invoke-interface {v2, v3, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v2
 
     goto :goto_0
 
-    .line 5172
+    .line 5173
     :cond_1
     invoke-interface {v2, v5, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
@@ -10252,7 +10250,7 @@
     :cond_2
     if-ne v10, v6, :cond_3
 
-    .line 5176
+    .line 5177
     invoke-interface {v2, v5, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v2
@@ -10262,7 +10260,7 @@
     :cond_3
     if-nez v10, :cond_4
 
-    .line 5178
+    .line 5179
     invoke-interface {v2, v3, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v2
@@ -10274,7 +10272,7 @@
 
     const-string v3, "StoriesLed"
 
-    .line 5180
+    .line 5181
     invoke-interface {v2, v3, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v2
@@ -10284,25 +10282,25 @@
     :cond_5
     const-string v3, "ChannelLed"
 
-    .line 5182
+    .line 5183
     invoke-interface {v2, v3, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v2
 
-    .line 5184
+    .line 5185
     :goto_0
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-direct {v3, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 5185
+    .line 5186
     invoke-virtual {v3, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/16 v5, 0x9
 
     new-array v7, v5, [Ljava/lang/String;
 
-    .line 5186
+    .line 5187
     sget v14, Lorg/telegram/messenger/R$string;->ColorRed:I
 
     const-string v15, "ColorRed"
@@ -10319,7 +10317,7 @@
 
     const-string v5, "ColorOrange"
 
-    .line 5187
+    .line 5188
     invoke-static {v5, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
@@ -10332,7 +10330,7 @@
 
     const-string v15, "ColorYellow"
 
-    .line 5188
+    .line 5189
     invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v14
@@ -10343,7 +10341,7 @@
 
     const-string v14, "ColorGreen"
 
-    .line 5189
+    .line 5190
     invoke-static {v14, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
@@ -10354,7 +10352,7 @@
 
     const-string v5, "ColorCyan"
 
-    .line 5190
+    .line 5191
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -10369,7 +10367,7 @@
 
     const-string v15, "ColorBlue"
 
-    .line 5191
+    .line 5192
     invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v14
@@ -10382,7 +10380,7 @@
 
     const-string v15, "ColorViolet"
 
-    .line 5192
+    .line 5193
     invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v14
@@ -10395,7 +10393,7 @@
 
     const-string v15, "ColorPink"
 
-    .line 5193
+    .line 5194
     invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v14
@@ -10408,7 +10406,7 @@
 
     const-string v15, "ColorWhite"
 
-    .line 5194
+    .line 5195
     invoke-static {v15, v14}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v14
@@ -10428,14 +10426,14 @@
 
     if-ge v15, v6, :cond_7
 
-    .line 5197
+    .line 5198
     new-instance v6, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-direct {v6, v0, v1}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     move/from16 v16, v13
 
-    .line 5198
+    .line 5199
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
@@ -10446,14 +10444,14 @@
 
     invoke-virtual {v6, v13, v14, v8, v14}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 5199
+    .line 5200
     invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
     invoke-virtual {v6, v8}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 5200
+    .line 5201
     sget-object v8, Lorg/telegram/ui/Cells/TextColorCell;->colors:[I
 
     aget v9, v8, v15
@@ -10462,7 +10460,7 @@
 
     invoke-virtual {v6, v9, v8}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 5201
+    .line 5202
     aget-object v8, v7, v15
 
     sget-object v9, Lorg/telegram/ui/Cells/TextColorCell;->colorsToSave:[I
@@ -10481,10 +10479,10 @@
     :goto_2
     invoke-virtual {v6, v8, v9}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
-    .line 5202
+    .line 5203
     invoke-virtual {v3, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 5203
+    .line 5204
     new-instance v8, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda68;
 
     invoke-direct {v8, v3, v4}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda68;-><init>(Landroid/widget/LinearLayout;[I)V
@@ -10502,12 +10500,12 @@
     :cond_7
     move/from16 v16, v13
 
-    .line 5212
+    .line 5213
     new-instance v8, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v8, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 5213
+    .line 5214
     sget v0, Lorg/telegram/messenger/R$string;->LedColor:I
 
     const-string v1, "LedColor"
@@ -10518,10 +10516,10 @@
 
     invoke-virtual {v8, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5214
+    .line 5215
     invoke-virtual {v8, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5215
+    .line 5216
     sget v0, Lorg/telegram/messenger/R$string;->Set:I
 
     const-string v1, "Set"
@@ -10548,7 +10546,7 @@
 
     invoke-virtual {v8, v9, v13}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5238
+    .line 5239
     sget v0, Lorg/telegram/messenger/R$string;->LedDisabled:I
 
     const-string v1, "LedDisabled"
@@ -10567,7 +10565,7 @@
 
     if-eqz v16, :cond_8
 
-    .line 5258
+    .line 5259
     sget v0, Lorg/telegram/messenger/R$string;->Default:I
 
     const-string v1, "Default"
@@ -10582,7 +10580,7 @@
 
     invoke-virtual {v8, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5268
+    .line 5269
     :cond_8
     invoke-virtual {v8}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -10594,7 +10592,7 @@
 .method public static createContactInviteDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 3
 
-    .line 2931
+    .line 2932
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -10603,7 +10601,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 2932
+    .line 2933
     sget v1, Lorg/telegram/messenger/R$string;->ContactNotRegisteredTitle:I
 
     const-string v2, "ContactNotRegisteredTitle"
@@ -10614,7 +10612,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2933
+    .line 2934
     sget v1, Lorg/telegram/messenger/R$string;->ContactNotRegistered:I
 
     const/4 v2, 0x1
@@ -10637,7 +10635,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2934
+    .line 2935
     sget p1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string p2, "Cancel"
@@ -10650,7 +10648,7 @@
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2935
+    .line 2936
     sget p1, Lorg/telegram/messenger/R$string;->Invite:I
 
     const-string p2, "Invite"
@@ -10665,7 +10663,7 @@
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2944
+    .line 2945
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -10678,12 +10676,12 @@
 .method public static createContactsPermissionDialog(Landroid/app/Activity;Lorg/telegram/messenger/MessagesStorage$IntCallback;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
     .locals 4
 
-    .line 5617
+    .line 5618
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 5618
+    .line 5619
     sget p0, Lorg/telegram/messenger/R$raw;->permission_request_contacts:I
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
@@ -10698,7 +10696,7 @@
 
     invoke-virtual {v0, p0, v2, v3, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopAnimation(IIZI)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5619
+    .line 5620
     sget p0, Lorg/telegram/messenger/R$string;->ContactsPermissionAlert:I
 
     const-string v1, "ContactsPermissionAlert"
@@ -10713,7 +10711,7 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5620
+    .line 5621
     sget p0, Lorg/telegram/messenger/R$string;->ContactsPermissionAlertContinue:I
 
     const-string v1, "ContactsPermissionAlertContinue"
@@ -10728,7 +10726,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5621
+    .line 5622
     sget p0, Lorg/telegram/messenger/R$string;->ContactsPermissionAlertNotNow:I
 
     const-string v1, "ContactsPermissionAlertNotNow"
@@ -10761,7 +10759,7 @@
 
     return-object v3
 
-    .line 3077
+    .line 3078
     :cond_0
     new-instance v4, Landroid/widget/LinearLayout;
 
@@ -10769,25 +10767,25 @@
 
     const/4 v5, 0x0
 
-    .line 3078
+    .line 3079
     invoke-virtual {v4, v5}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/high16 v6, 0x3f800000    # 1.0f
 
-    .line 3079
+    .line 3080
     invoke-virtual {v4, v6}, Landroid/widget/LinearLayout;->setWeightSum(F)V
 
-    .line 3081
+    .line 3082
     new-instance v6, Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-direct {v6, p0}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;)V
 
-    .line 3082
+    .line 3083
     new-instance v7, Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-direct {v7, p0}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;)V
 
-    .line 3083
+    .line 3084
     new-instance v8, Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-direct {v8, p0}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;)V
@@ -10796,60 +10794,60 @@
 
     const v10, 0x3e99999a    # 0.3f
 
-    .line 3085
+    .line 3086
     invoke-static {v5, v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v11
 
     invoke-virtual {v4, v7, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3086
+    .line 3087
     new-instance v11, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda165;
 
     invoke-direct {v11, v2, v7, v6, v8}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda165;-><init>(ZLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     invoke-virtual {v7, v11}, Lorg/telegram/ui/Components/NumberPicker;->setOnScrollListener(Lorg/telegram/ui/Components/NumberPicker$OnScrollListener;)V
 
-    .line 3092
+    .line 3093
     invoke-virtual {v6, v5}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v11, 0xb
 
-    .line 3093
+    .line 3094
     invoke-virtual {v6, v11}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 3094
+    .line 3095
     invoke-static {v5, v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v10
 
     invoke-virtual {v4, v6, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3095
+    .line 3096
     sget-object v10, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda149;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda149;
 
     invoke-virtual {v6, v10}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 3101
+    .line 3102
     new-instance v10, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda173;
 
     invoke-direct {v10, v7, v6, v8}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda173;-><init>(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     invoke-virtual {v6, v10}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
-    .line 3102
+    .line 3103
     new-instance v10, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda163;
 
     invoke-direct {v10, v2, v7, v6, v8}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda163;-><init>(ZLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     invoke-virtual {v6, v10}, Lorg/telegram/ui/Components/NumberPicker;->setOnScrollListener(Lorg/telegram/ui/Components/NumberPicker$OnScrollListener;)V
 
-    .line 3108
+    .line 3109
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v10
 
-    .line 3109
+    .line 3110
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v11
@@ -10858,55 +10856,55 @@
 
     const/4 v11, 0x1
 
-    .line 3110
+    .line 3111
     invoke-virtual {v10, v11}, Ljava/util/Calendar;->get(I)I
 
     move-result v10
 
     add-int v11, v10, p1
 
-    .line 3111
+    .line 3112
     invoke-virtual {v8, v11}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     add-int v11, v10, p2
 
-    .line 3112
+    .line 3113
     invoke-virtual {v8, v11}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
     add-int v10, v10, p3
 
-    .line 3113
+    .line 3114
     invoke-virtual {v8, v10}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
     const v10, 0x3ecccccd    # 0.4f
 
-    .line 3114
+    .line 3115
     invoke-static {v5, v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v4, v8, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3115
+    .line 3116
     new-instance v5, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda174;
 
     invoke-direct {v5, v7, v6, v8}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda174;-><init>(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     invoke-virtual {v8, v5}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
-    .line 3116
+    .line 3117
     new-instance v5, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda164;
 
     invoke-direct {v5, v2, v7, v6, v8}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda164;-><init>(ZLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     invoke-virtual {v8, v5}, Lorg/telegram/ui/Components/NumberPicker;->setOnScrollListener(Lorg/telegram/ui/Components/NumberPicker$OnScrollListener;)V
 
-    .line 3121
+    .line 3122
     invoke-static {v7, v6, v8}, Lorg/telegram/ui/Components/AlertsCreator;->updateDayPicker(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     if-eqz v2, :cond_1
 
-    .line 3123
+    .line 3124
     invoke-static {v7, v6, v8}, Lorg/telegram/ui/Components/AlertsCreator;->checkPickerDate(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     :cond_1
@@ -10914,20 +10912,20 @@
 
     if-eq v1, v5, :cond_2
 
-    .line 3127
+    .line 3128
     invoke-virtual {v7, v1}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
     move/from16 v1, p5
 
-    .line 3128
+    .line 3129
     invoke-virtual {v6, v1}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
     move/from16 v1, p6
 
-    .line 3129
+    .line 3130
     invoke-virtual {v8, v1}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 3132
+    .line 3133
     :cond_2
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -10935,13 +10933,13 @@
 
     move-object/from16 v0, p7
 
-    .line 3133
+    .line 3134
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3135
+    .line 3136
     invoke-virtual {v1, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3136
+    .line 3137
     sget v0, Lorg/telegram/messenger/R$string;->Set:I
 
     const-string v4, "Set"
@@ -10968,7 +10966,7 @@
 
     invoke-virtual {v1, v0, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 3142
+    .line 3143
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -10993,35 +10991,35 @@
 
     return-object v1
 
-    .line 3601
+    .line 3602
     :cond_0
     new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
 
     invoke-direct {v2, v1}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;-><init>(Lorg/telegram/ui/Components/AlertsCreator$1;)V
 
-    .line 3602
+    .line 3603
     new-instance v1, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;Z)V
 
-    .line 3603
+    .line 3604
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 3605
+    .line 3606
     new-instance v10, Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-direct {v10, v0}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;)V
 
-    .line 3606
+    .line 3607
     iget v4, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v10, v4}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
     const/16 v4, 0xa
 
-    .line 3607
+    .line 3608
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -11030,23 +11028,23 @@
 
     const/4 v5, 0x5
 
-    .line 3608
+    .line 3609
     invoke-virtual {v10, v5}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 3609
+    .line 3610
     new-instance v11, Lorg/telegram/ui/Components/AlertsCreator$21;
 
     invoke-direct {v11, v0}, Lorg/telegram/ui/Components/AlertsCreator$21;-><init>(Landroid/content/Context;)V
 
-    .line 3615
+    .line 3616
     invoke-virtual {v11, v5}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 3616
+    .line 3617
     iget v6, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v11, v6}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
-    .line 3617
+    .line 3618
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -11055,22 +11053,22 @@
 
     invoke-virtual {v11, v4}, Lorg/telegram/ui/Components/NumberPicker;->setTextOffset(I)V
 
-    .line 3618
+    .line 3619
     new-instance v12, Lorg/telegram/ui/Components/AlertsCreator$22;
 
     invoke-direct {v12, v0}, Lorg/telegram/ui/Components/AlertsCreator$22;-><init>(Landroid/content/Context;)V
 
-    .line 3624
+    .line 3625
     invoke-virtual {v12, v5}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 3625
+    .line 3626
     iget v4, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v12, v4}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
     const/16 v13, 0x22
 
-    .line 3626
+    .line 3627
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -11079,17 +11077,17 @@
 
     invoke-virtual {v12, v4}, Lorg/telegram/ui/Components/NumberPicker;->setTextOffset(I)V
 
-    .line 3628
+    .line 3629
     new-instance v14, Lorg/telegram/ui/Components/AlertsCreator$23;
 
     invoke-direct {v14, v0, v10, v11, v12}, Lorg/telegram/ui/Components/AlertsCreator$23;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     const/4 v15, 0x1
 
-    .line 3659
+    .line 3660
     invoke-virtual {v14, v15}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 3661
+    .line 3662
     new-instance v4, Landroid/widget/FrameLayout;
 
     invoke-direct {v4, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -11108,19 +11106,19 @@
 
     const/16 v22, 0x4
 
-    .line 3662
+    .line 3663
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v14, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3664
+    .line 3665
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 3665
+    .line 3666
     sget v6, Lorg/telegram/messenger/R$string;->ExpireAfter:I
 
     const-string v7, "ExpireAfter"
@@ -11131,19 +11129,19 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3667
+    .line 3668
     iget v6, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/high16 v6, 0x41a00000    # 20.0f
 
-    .line 3668
+    .line 3669
     invoke-virtual {v5, v15, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v16, "fonts/rmedium.ttf"
 
-    .line 3669
+    .line 3670
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v6
@@ -11160,29 +11158,29 @@
 
     const/16 v23, 0x0
 
-    .line 3670
+    .line 3671
     invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v4, v5, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3671
+    .line 3672
     sget-object v4, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda109;
 
     invoke-virtual {v5, v4}, Landroid/widget/TextView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 3673
+    .line 3674
     new-instance v4, Landroid/widget/LinearLayout;
 
     invoke-direct {v4, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 3674
+    .line 3675
     invoke-virtual {v4, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    .line 3675
+    .line 3676
     invoke-virtual {v4, v5}, Landroid/widget/LinearLayout;->setWeightSum(F)V
 
     const/16 v17, -0x1
@@ -11195,32 +11193,32 @@
 
     const/16 v24, 0xc
 
-    .line 3676
+    .line 3677
     invoke-static/range {v17 .. v24}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIFIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v14, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3678
+    .line 3679
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
 
-    .line 3679
+    .line 3680
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v9
 
-    .line 3680
+    .line 3681
     invoke-virtual {v9, v5, v6}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 3681
+    .line 3682
     invoke-virtual {v9, v15}, Ljava/util/Calendar;->get(I)I
 
     move-result v7
 
-    .line 3683
+    .line 3684
     new-instance v8, Lorg/telegram/ui/Components/AlertsCreator$24;
 
     invoke-direct {v8, v0}, Lorg/telegram/ui/Components/AlertsCreator$24;-><init>(Landroid/content/Context;)V
@@ -11229,90 +11227,90 @@
 
     const/16 v15, 0x10e
 
-    .line 3690
+    .line 3691
     invoke-static {v3, v15, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v4, v10, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3691
+    .line 3692
     invoke-virtual {v10, v3}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v0, 0x16d
 
-    .line 3692
+    .line 3693
     invoke-virtual {v10, v0}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 3693
+    .line 3694
     invoke-virtual {v10, v3}, Lorg/telegram/ui/Components/NumberPicker;->setWrapSelectorWheel(Z)V
 
-    .line 3694
+    .line 3695
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda145;
 
     invoke-direct {v0, v5, v6, v9, v7}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda145;-><init>(JLjava/util/Calendar;I)V
 
     invoke-virtual {v10, v0}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 3708
+    .line 3709
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda170;
 
     invoke-direct {v0, v14, v10, v11, v12}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda170;-><init>(Landroid/widget/LinearLayout;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
-    .line 3716
+    .line 3717
     invoke-virtual {v10, v0}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
-    .line 3718
+    .line 3719
     invoke-virtual {v11, v3}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v5, 0x17
 
-    .line 3719
+    .line 3720
     invoke-virtual {v11, v5}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
     const v5, 0x3e4ccccd    # 0.2f
 
-    .line 3720
+    .line 3721
     invoke-static {v3, v15, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v4, v11, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3721
+    .line 3722
     sget-object v5, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda162;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda162;
 
     invoke-virtual {v11, v5}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 3722
+    .line 3723
     invoke-virtual {v11, v0}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
-    .line 3724
+    .line 3725
     invoke-virtual {v12, v3}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v5, 0x3b
 
-    .line 3725
+    .line 3726
     invoke-virtual {v12, v5}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 3726
+    .line 3727
     invoke-virtual {v12, v3}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 3727
+    .line 3728
     sget-object v5, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda161;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda161;
 
     invoke-virtual {v12, v5}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
     const v5, 0x3e99999a    # 0.3f
 
-    .line 3728
+    .line 3729
     invoke-static {v3, v15, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v4, v12, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3729
+    .line 3730
     invoke-virtual {v12, v0}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
     const-wide/16 v4, 0x0
@@ -11331,7 +11329,7 @@
 
     mul-long v4, v4, p1
 
-    .line 3733
+    .line 3734
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
@@ -11340,25 +11338,25 @@
 
     const/16 v0, 0xc
 
-    .line 3734
+    .line 3735
     invoke-virtual {v9, v0, v3}, Ljava/util/Calendar;->set(II)V
 
     const/16 v6, 0xd
 
-    .line 3735
+    .line 3736
     invoke-virtual {v9, v6, v3}, Ljava/util/Calendar;->set(II)V
 
     const/16 v6, 0xe
 
-    .line 3736
+    .line 3737
     invoke-virtual {v9, v6, v3}, Ljava/util/Calendar;->set(II)V
 
     const/16 v6, 0xb
 
-    .line 3737
+    .line 3738
     invoke-virtual {v9, v6, v3}, Ljava/util/Calendar;->set(II)V
 
-    .line 3738
+    .line 3739
     invoke-virtual {v9}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v18
@@ -11373,26 +11371,26 @@
 
     long-to-int v7, v13
 
-    .line 3739
+    .line 3740
     invoke-virtual {v9, v4, v5}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     if-ltz v7, :cond_2
 
-    .line 3741
+    .line 3742
     invoke-virtual {v9, v0}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
 
     invoke-virtual {v12, v0}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 3742
+    .line 3743
     invoke-virtual {v9, v6}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
 
     invoke-virtual {v11, v0}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 3743
+    .line 3744
     invoke-virtual {v10, v7}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
     goto :goto_0
@@ -11418,12 +11416,12 @@
 
     move-object v9, v12
 
-    .line 3747
+    .line 3748
     invoke-static/range {v4 .. v9}, Lorg/telegram/ui/Components/AlertsCreator;->checkScheduleDate(Landroid/widget/TextView;Landroid/widget/TextView;ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)Z
 
     const/16 v4, 0x22
 
-    .line 3749
+    .line 3750
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -11436,10 +11434,10 @@
 
     const/16 v3, 0x11
 
-    .line 3750
+    .line 3751
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 3751
+    .line 3752
     iget v3, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonTextColor:I
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
@@ -11448,10 +11446,10 @@
 
     const/4 v4, 0x1
 
-    .line 3752
+    .line 3753
     invoke-virtual {v0, v4, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 3753
+    .line 3754
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v3
@@ -11460,7 +11458,7 @@
 
     const/4 v3, 0x4
 
-    .line 3754
+    .line 3755
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -11475,7 +11473,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 3755
+    .line 3756
     sget v3, Lorg/telegram/messenger/R$string;->SetTimeLimit:I
 
     const-string v4, "SetTimeLimit"
@@ -11500,7 +11498,7 @@
 
     const/16 v20, 0x10
 
-    .line 3756
+    .line 3757
     invoke-static/range {v14 .. v20}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
@@ -11509,7 +11507,7 @@
 
     invoke-virtual {v14, v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3757
+    .line 3758
     new-instance v15, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda82;
 
     move-object v3, v15
@@ -11530,20 +11528,20 @@
 
     invoke-virtual {v0, v15}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 3769
+    .line 3770
     invoke-virtual {v1, v14}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 3770
+    .line 3771
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->show()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object v0
 
-    .line 3771
+    .line 3772
     iget v3, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->setBackgroundColor(I)V
 
-    .line 3772
+    .line 3773
     iget v2, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar(I)V
@@ -11604,7 +11602,7 @@
 
     goto/16 :goto_37
 
-    .line 5948
+    .line 5949
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -11614,13 +11612,13 @@
 
     return-void
 
-    .line 5952
+    .line 5953
     :cond_1
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
 
     move-result v7
 
-    .line 5954
+    .line 5955
     new-instance v8, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v8, v1, v10}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -11634,7 +11632,7 @@
     :cond_2
     const v2, 0x3f19999a    # 0.6f
 
-    .line 5955
+    .line 5956
     :goto_0
     invoke-virtual {v8, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setDimAlpha(F)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -11644,7 +11642,7 @@
 
     if-eqz v11, :cond_3
 
-    .line 5958
+    .line 5959
     iget-object v2, v11, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
@@ -11663,7 +11661,7 @@
 
     goto :goto_2
 
-    .line 5962
+    .line 5963
     :cond_4
     aget-object v2, p8, v4
 
@@ -11684,7 +11682,7 @@
     :goto_2
     if-eqz v6, :cond_5
 
-    .line 5967
+    .line 5968
     iget v2, v6, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     int-to-long v4, v2
@@ -11701,12 +11699,12 @@
     :cond_5
     if-eqz v14, :cond_6
 
-    .line 5969
+    .line 5970
     iget-wide v4, v14, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     goto :goto_3
 
-    .line 5971
+    .line 5972
     :cond_6
     iget-wide v4, v13, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
@@ -11714,7 +11712,7 @@
 
     goto :goto_3
 
-    .line 5974
+    .line 5975
     :goto_4
     invoke-static {v7}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
@@ -11728,7 +11726,7 @@
 
     if-eqz v9, :cond_9
 
-    .line 5977
+    .line 5978
     invoke-virtual/range {p7 .. p7}, Lorg/telegram/messenger/MessageObject;->isDice()Z
 
     move-result v20
@@ -11772,7 +11770,7 @@
 
     const/4 v5, 0x0
 
-    .line 5980
+    .line 5981
     :goto_7
     aget-object v23, p8, v4
 
@@ -11782,7 +11780,7 @@
 
     if-ge v5, v10, :cond_c
 
-    .line 5981
+    .line 5982
     aget-object v10, p8, v4
 
     invoke-virtual {v10, v5}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -11791,7 +11789,7 @@
 
     check-cast v10, Lorg/telegram/messenger/MessageObject;
 
-    .line 5982
+    .line 5983
     invoke-virtual {v10}, Lorg/telegram/messenger/MessageObject;->isDice()Z
 
     move-result v23
@@ -11861,7 +11859,7 @@
 
     if-eqz v14, :cond_e
 
-    .line 5995
+    .line 5996
     invoke-static {v7}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v10
@@ -11880,7 +11878,7 @@
     :goto_b
     if-eqz v14, :cond_f
 
-    .line 5998
+    .line 5999
     invoke-static {v7}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v15
@@ -11889,7 +11887,7 @@
 
     goto :goto_c
 
-    .line 6000
+    .line 6001
     :cond_f
     invoke-static {v7}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
@@ -11933,14 +11931,14 @@
 
     if-eqz v13, :cond_33
 
-    .line 6006
+    .line 6007
     iget-boolean v10, v13, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
     if-eqz v10, :cond_33
 
     if-nez p10, :cond_33
 
-    .line 6007
+    .line 6008
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/ChatObject;->canBlockUsers(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v10
@@ -11949,7 +11947,7 @@
 
     if-eqz v9, :cond_19
 
-    .line 6009
+    .line 6010
     iget-object v14, v9, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v6, v14, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
@@ -11983,7 +11981,7 @@
 
     goto :goto_11
 
-    .line 6013
+    .line 6014
     :cond_13
     :goto_e
     iget-object v5, v14, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
@@ -11998,7 +11996,7 @@
 
     if-eqz v11, :cond_14
 
-    .line 6014
+    .line 6015
     invoke-static {v7}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v5
@@ -12022,7 +12020,7 @@
 
     goto :goto_12
 
-    .line 6015
+    .line 6016
     :cond_14
     iget-wide v11, v5, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
@@ -12030,7 +12028,7 @@
 
     if-eqz v11, :cond_15
 
-    .line 6016
+    .line 6017
     invoke-static {v7}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v5
@@ -12056,7 +12054,7 @@
 
     goto :goto_12
 
-    .line 6017
+    .line 6018
     :cond_15
     iget-wide v11, v5, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
@@ -12064,7 +12062,7 @@
 
     if-eqz v5, :cond_16
 
-    .line 6018
+    .line 6019
     invoke-static {v7}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v5
@@ -12091,7 +12089,7 @@
 
     goto :goto_f
 
-    .line 6021
+    .line 6022
     :goto_12
     invoke-virtual/range {p7 .. p7}, Lorg/telegram/messenger/MessageObject;->isSendError()Z
 
@@ -12162,7 +12160,7 @@
 
     const/4 v11, 0x0
 
-    .line 6029
+    .line 6030
     :goto_15
     aget-object v12, p8, v5
 
@@ -12174,7 +12172,7 @@
 
     if-ge v11, v12, :cond_1d
 
-    .line 6030
+    .line 6031
     aget-object v12, p8, v5
 
     invoke-virtual {v12, v11}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -12189,7 +12187,7 @@
 
     if-nez v26, :cond_1a
 
-    .line 6032
+    .line 6033
     invoke-virtual {v12}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
 
     move-result-wide v30
@@ -12199,7 +12197,7 @@
 
     if-ltz v26, :cond_1c
 
-    .line 6034
+    .line 6035
     invoke-virtual {v12}, Lorg/telegram/messenger/MessageObject;->getSenderId()J
 
     move-result-wide v36
@@ -12242,7 +12240,7 @@
 
     const/4 v12, 0x0
 
-    .line 6044
+    .line 6045
     :goto_19
     aget-object v26, p8, v5
 
@@ -12254,7 +12252,7 @@
 
     if-ge v12, v6, :cond_21
 
-    .line 6045
+    .line 6046
     aget-object v6, p8, v5
 
     invoke-virtual {v6, v12}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -12269,7 +12267,7 @@
 
     if-ne v5, v14, :cond_20
 
-    .line 6047
+    .line 6048
     invoke-virtual {v6}, Lorg/telegram/messenger/MessageObject;->isOut()Z
 
     move-result v14
@@ -12282,7 +12280,7 @@
 
     if-nez v14, :cond_20
 
-    .line 6048
+    .line 6049
     iget v6, v6, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     sub-int v6, v2, v6
@@ -12320,7 +12318,7 @@
 
     if-eqz v2, :cond_23
 
-    .line 6056
+    .line 6057
     invoke-static {v7}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -12348,7 +12346,7 @@
     :goto_1b
     if-eqz v5, :cond_25
 
-    .line 6059
+    .line 6060
     iget-wide v14, v5, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {v7}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -12386,7 +12384,7 @@
     :goto_1e
     if-ne v0, v4, :cond_26
 
-    .line 6060
+    .line 6061
     iget-boolean v6, v13, Lorg/telegram/tgnet/TLRPC$Chat;->creator:Z
 
     if-nez v6, :cond_26
@@ -12395,7 +12393,7 @@
 
     new-array v15, v4, [Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    .line 6061
+    .line 6062
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog;
 
     const/4 v2, 0x3
@@ -12406,26 +12404,26 @@
 
     aput-object v0, v15, v1
 
-    .line 6063
+    .line 6064
     new-instance v14, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipant;
 
     invoke-direct {v14}, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipant;-><init>()V
 
-    .line 6064
+    .line 6065
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/MessagesController;->getInputChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Lorg/telegram/tgnet/TLRPC$InputChannel;
 
     move-result-object v0
 
     iput-object v0, v14, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipant;->channel:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
-    .line 6065
+    .line 6066
     invoke-static {v5}, Lorg/telegram/messenger/MessagesController;->getInputPeer(Lorg/telegram/tgnet/TLRPC$User;)Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     move-result-object v0
 
     iput-object v0, v14, Lorg/telegram/tgnet/TLRPC$TL_channels_getParticipant;->participant:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 6066
+    .line 6067
     invoke-static {v7}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v12
@@ -12488,7 +12486,7 @@
 
     move-result v0
 
-    .line 6084
+    .line 6085
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda129;
 
     move-object/from16 v14, p0
@@ -12510,14 +12508,14 @@
 
     move-object/from16 v15, p14
 
-    .line 6093
+    .line 6094
     new-instance v4, Landroid/widget/FrameLayout;
 
     invoke-direct {v4, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     if-eqz v5, :cond_27
 
-    .line 6095
+    .line 6096
     iget-object v6, v5, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object v12, v5, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
@@ -12560,7 +12558,7 @@
 
     goto/16 :goto_24
 
-    .line 6100
+    .line 6101
     :cond_29
     new-instance v5, Lorg/telegram/ui/Cells/CheckBoxCell;
 
@@ -12570,14 +12568,14 @@
 
     const/16 p4, 0x0
 
-    .line 6101
+    .line 6102
     invoke-static/range {p4 .. p4}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     invoke-virtual {v5, v0}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 6102
+    .line 6103
     invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -12586,7 +12584,7 @@
 
     if-nez v12, :cond_2a
 
-    .line 6104
+    .line 6105
     sget v0, Lorg/telegram/messenger/R$string;->DeleteBanUser:I
 
     move/from16 v30, v10
@@ -12614,7 +12612,7 @@
 
     if-ne v12, v0, :cond_2b
 
-    .line 6106
+    .line 6107
     sget v0, Lorg/telegram/messenger/R$string;->DeleteReportSpam:I
 
     move-object/from16 v31, v11
@@ -12632,7 +12630,7 @@
     :cond_2b
     move-object/from16 v31, v11
 
-    .line 6108
+    .line 6109
     sget v0, Lorg/telegram/messenger/R$string;->DeleteAllFrom:I
 
     const/4 v11, 0x1
@@ -12649,7 +12647,7 @@
 
     invoke-virtual {v5, v0, v3, v10, v10}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 6110
+    .line 6111
     :goto_21
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
@@ -12707,14 +12705,14 @@
 
     const/16 v38, 0x0
 
-    .line 6111
+    .line 6112
     invoke-static/range {v32 .. v38}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v4, v5, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6112
+    .line 6113
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda95;
 
     move-object/from16 v11, v26
@@ -12747,7 +12745,7 @@
 
     move-object/from16 v11, v26
 
-    .line 6123
+    .line 6124
     invoke-virtual {v8, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-object/from16 v5, v29
@@ -12769,12 +12767,12 @@
 
     if-eqz v4, :cond_32
 
-    .line 6126
+    .line 6127
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 6127
+    .line 6128
     new-instance v4, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     const/4 v5, 0x1
@@ -12783,14 +12781,14 @@
 
     const/4 v1, 0x0
 
-    .line 6128
+    .line 6129
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 
     invoke-virtual {v4, v5}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 6132
+    .line 6133
     sget v5, Lorg/telegram/messenger/R$string;->DeleteMessagesOption:I
 
     move-object/from16 v6, v27
@@ -12801,7 +12799,7 @@
 
     invoke-virtual {v4, v5, v3, v1, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 6134
+    .line 6135
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_30
@@ -12858,14 +12856,14 @@
 
     const/16 v38, 0x0
 
-    .line 6135
+    .line 6136
     invoke-static/range {v32 .. v38}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {v0, v4, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6136
+    .line 6137
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda96;
 
     move-object/from16 v5, v29
@@ -12874,12 +12872,12 @@
 
     invoke-virtual {v4, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 6141
+    .line 6142
     invoke-virtual {v8, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     const/16 v0, 0x9
 
-    .line 6142
+    .line 6143
     invoke-virtual {v8, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setCustomViewOffset(I)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     const/4 v0, 0x1
@@ -12927,7 +12925,7 @@
 
     if-nez p10, :cond_49
 
-    .line 6146
+    .line 6147
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v10
@@ -12942,7 +12940,7 @@
 
     if-eqz v14, :cond_34
 
-    .line 6147
+    .line 6148
     iget-wide v10, v14, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {v7}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -12971,7 +12969,7 @@
     :cond_35
     if-eqz v9, :cond_39
 
-    .line 6149
+    .line 6150
     invoke-virtual/range {p7 .. p7}, Lorg/telegram/messenger/MessageObject;->isSendError()Z
 
     move-result v10
@@ -13004,7 +13002,7 @@
 
     if-eqz v10, :cond_38
 
-    .line 6155
+    .line 6156
     :cond_36
     invoke-virtual/range {p7 .. p7}, Lorg/telegram/messenger/MessageObject;->isOut()Z
 
@@ -13036,7 +13034,7 @@
     :cond_38
     const/4 v0, 0x0
 
-    .line 6159
+    .line 6160
     :goto_28
     invoke-virtual/range {p7 .. p7}, Lorg/telegram/messenger/MessageObject;->isOut()Z
 
@@ -13068,7 +13066,7 @@
 
     const/4 v9, 0x0
 
-    .line 6162
+    .line 6163
     :goto_2a
     aget-object v27, p8, v10
 
@@ -13080,7 +13078,7 @@
 
     if-ge v9, v12, :cond_3d
 
-    .line 6163
+    .line 6164
     aget-object v12, p8, v10
 
     invoke-virtual {v12, v9}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -13091,7 +13089,7 @@
 
     move/from16 v40, v7
 
-    .line 6164
+    .line 6165
     iget-object v7, v12, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
@@ -13118,7 +13116,7 @@
 
     goto :goto_2b
 
-    .line 6171
+    .line 6172
     :cond_3a
     invoke-virtual {v12}, Lorg/telegram/messenger/MessageObject;->isOut()Z
 
@@ -13136,7 +13134,7 @@
 
     if-eqz v7, :cond_3c
 
-    .line 6172
+    .line 6173
     :cond_3b
     iget-object v7, v12, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -13150,7 +13148,7 @@
 
     if-nez v21, :cond_3c
 
-    .line 6174
+    .line 6175
     invoke-virtual {v12}, Lorg/telegram/messenger/MessageObject;->isOut()Z
 
     move-result v7
@@ -13213,32 +13211,32 @@
 
     if-eqz v14, :cond_40
 
-    .line 6183
+    .line 6184
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/UserObject;->isDeleted(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v0
 
     if-nez v0, :cond_48
 
-    .line 6185
+    .line 6186
     :cond_40
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 6186
+    .line 6187
     new-instance v0, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     const/4 v10, 0x1
 
     invoke-direct {v0, v1, v10, v15}, Lorg/telegram/ui/Cells/CheckBoxCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 6188
+    .line 6189
     new-instance v4, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     invoke-direct {v4, v1, v10, v15}, Lorg/telegram/ui/Cells/CheckBoxCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 6189
+    .line 6190
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v7
@@ -13253,15 +13251,15 @@
 
     const/16 v7, 0x8
 
-    .line 6190
+    .line 6191
     invoke-virtual {v4, v7}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 6191
+    .line 6192
     new-instance v7, Lorg/telegram/ui/Components/AlertsCreator$47;
 
     invoke-direct {v7, v1, v4, v0}, Lorg/telegram/ui/Components/AlertsCreator$47;-><init>(Landroid/content/Context;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;)V
 
-    .line 6200
+    .line 6201
     invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
@@ -13270,7 +13268,7 @@
 
     if-eqz v23, :cond_41
 
-    .line 6202
+    .line 6203
     sget v1, Lorg/telegram/messenger/R$string;->DeleteMessagesOptionAlso:I
 
     new-array v6, v10, [Ljava/lang/Object;
@@ -13302,7 +13300,7 @@
 
     if-ne v11, v9, :cond_43
 
-    .line 6204
+    .line 6205
     :cond_42
     sget v1, Lorg/telegram/messenger/R$string;->DeleteForAll:I
 
@@ -13316,7 +13314,7 @@
 
     goto :goto_2d
 
-    .line 6206
+    .line 6207
     :cond_43
     sget v1, Lorg/telegram/messenger/R$string;->DeleteMessagesOption:I
 
@@ -13326,13 +13324,13 @@
 
     invoke-virtual {v0, v1, v3, v8, v8}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 6208
+    .line 6209
     :goto_2d
     aget-boolean v1, v5, v8
 
     invoke-virtual {v0, v1, v8}, Lorg/telegram/ui/Cells/CheckBoxCell;->setChecked(ZZ)V
 
-    .line 6209
+    .line 6210
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_44
@@ -13389,14 +13387,14 @@
 
     const/16 v34, 0x0
 
-    .line 6210
+    .line 6211
     invoke-static/range {v28 .. v34}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {v7, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6211
+    .line 6212
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda101;
 
     invoke-direct {v1, v5, v4}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda101;-><init>([ZLorg/telegram/ui/Cells/CheckBoxCell;)V
@@ -13405,14 +13403,14 @@
 
     const/4 v0, 0x0
 
-    .line 6224
+    .line 6225
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {v4, v1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 6225
+    .line 6226
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_46
@@ -13455,7 +13453,7 @@
 
     invoke-virtual {v4, v1, v6, v0, v6}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 6226
+    .line 6227
     sget v0, Lorg/telegram/messenger/R$string;->remember_choice:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -13466,7 +13464,7 @@
 
     invoke-virtual {v4, v0, v3, v1, v6}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 6227
+    .line 6228
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda100;
 
     move-object/from16 v3, v22
@@ -13489,7 +13487,7 @@
 
     const/16 v34, 0x0
 
-    .line 6231
+    .line 6232
     invoke-static/range {v28 .. v34}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
@@ -13498,12 +13496,12 @@
 
     move-object/from16 v8, v27
 
-    .line 6233
+    .line 6234
     invoke-virtual {v8, v7}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     const/16 v0, 0x9
 
-    .line 6234
+    .line 6235
     invoke-virtual {v8, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setCustomViewOffset(I)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move/from16 v17, v2
@@ -13558,7 +13556,7 @@
 
     const/16 v31, 0x0
 
-    .line 6239
+    .line 6240
     :goto_34
     sget v0, Lorg/telegram/messenger/R$string;->Delete:I
 
@@ -13632,7 +13630,7 @@
 
     if-ne v2, v3, :cond_4a
 
-    .line 6316
+    .line 6317
     sget v4, Lorg/telegram/messenger/R$string;->DeleteSingleMessagesTitle:I
 
     const-string v5, "DeleteSingleMessagesTitle"
@@ -13647,7 +13645,7 @@
 
     goto :goto_35
 
-    .line 6318
+    .line 6319
     :cond_4a
     sget v4, Lorg/telegram/messenger/R$string;->DeleteMessagesTitle:I
 
@@ -13688,7 +13686,7 @@
 
     if-eq v11, v2, :cond_4b
 
-    .line 6323
+    .line 6324
     sget v2, Lorg/telegram/messenger/R$string;->DeleteMessagesTextGroupPart:I
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -13714,7 +13712,7 @@
     :cond_4b
     if-ne v2, v3, :cond_4c
 
-    .line 6325
+    .line 6326
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureDeleteSingleMessage:I
 
     invoke-static {v4, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -13725,7 +13723,7 @@
 
     goto/16 :goto_36
 
-    .line 6327
+    .line 6328
     :cond_4c
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureDeleteFewMessages:I
 
@@ -13748,7 +13746,7 @@
 
     if-eqz v7, :cond_4e
 
-    .line 6331
+    .line 6332
     sget v2, Lorg/telegram/messenger/R$string;->DeleteMessagesTextGroup:I
 
     new-array v3, v3, [Ljava/lang/Object;
@@ -13771,7 +13769,7 @@
 
     goto :goto_36
 
-    .line 6333
+    .line 6334
     :cond_4e
     sget v2, Lorg/telegram/messenger/R$string;->DeleteMessagesText:I
 
@@ -13810,7 +13808,7 @@
     :cond_4f
     if-eqz v7, :cond_51
 
-    .line 6336
+    .line 6337
     iget-boolean v1, v7, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
     if-eqz v1, :cond_51
@@ -13819,7 +13817,7 @@
 
     if-ne v2, v3, :cond_50
 
-    .line 6338
+    .line 6339
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureDeleteSingleMessageMega:I
 
     const-string v2, "AreYouSureDeleteSingleMessageMega"
@@ -13832,7 +13830,7 @@
 
     goto :goto_36
 
-    .line 6340
+    .line 6341
     :cond_50
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureDeleteFewMessagesMega:I
 
@@ -13849,7 +13847,7 @@
     :cond_51
     if-ne v2, v3, :cond_52
 
-    .line 6344
+    .line 6345
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureDeleteSingleMessage:I
 
     invoke-static {v4, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -13860,7 +13858,7 @@
 
     goto :goto_36
 
-    .line 6346
+    .line 6347
     :cond_52
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureDeleteFewMessages:I
 
@@ -13870,7 +13868,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 6351
+    .line 6352
     :goto_36
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
@@ -13884,7 +13882,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 6352
+    .line 6353
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda59;
 
     move-object/from16 v2, p13
@@ -13893,19 +13891,19 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setOnPreDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 6357
+    .line 6358
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
     move-object/from16 v1, p0
 
-    .line 6358
+    .line 6359
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     const/4 v1, -0x1
 
-    .line 6359
+    .line 6360
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object v0
@@ -13914,7 +13912,7 @@
 
     if-eqz v0, :cond_53
 
-    .line 6361
+    .line 6362
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -13933,12 +13931,12 @@
 
     move-object/from16 v0, p0
 
-    .line 5560
+    .line 5561
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 5561
+    .line 5562
     sget v2, Lorg/telegram/messenger/R$raw;->pip_voice_request:I
 
     const/4 v3, 0x0
@@ -13947,7 +13945,7 @@
 
     move-result-object v2
 
-    .line 5563
+    .line 5564
     new-instance v4, Lorg/telegram/ui/Components/GroupCallPipButton;
 
     const/4 v5, 0x0
@@ -13958,15 +13956,15 @@
 
     const/4 v7, 0x2
 
-    .line 5564
+    .line 5565
     invoke-virtual {v4, v7}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
 
-    .line 5565
+    .line 5566
     new-instance v8, Lorg/telegram/ui/Components/AlertsCreator$45;
 
     invoke-direct {v8, v0, v4}, Lorg/telegram/ui/Components/AlertsCreator$45;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/GroupCallPipButton;)V
 
-    .line 5573
+    .line 5574
     new-instance v9, Landroid/graphics/drawable/GradientDrawable;
 
     sget-object v10, Landroid/graphics/drawable/GradientDrawable$Orientation;->BL_TR:Landroid/graphics/drawable/GradientDrawable$Orientation;
@@ -13979,22 +13977,22 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 5574
+    .line 5575
     invoke-virtual {v8, v6}, Landroid/widget/FrameLayout;->setClipToOutline(Z)V
 
-    .line 5575
+    .line 5576
     new-instance v7, Lorg/telegram/ui/Components/AlertsCreator$46;
 
     invoke-direct {v7}, Lorg/telegram/ui/Components/AlertsCreator$46;-><init>()V
 
     invoke-virtual {v8, v7}, Landroid/widget/FrameLayout;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 5584
+    .line 5585
     new-instance v7, Landroid/view/View;
 
     invoke-direct {v7, v0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 5585
+    .line 5586
     new-instance v9, Landroid/graphics/drawable/BitmapDrawable;
 
     const/16 v10, 0x140
@@ -14031,7 +14029,7 @@
 
     const/16 v16, -0x1
 
-    .line 5586
+    .line 5587
     invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
@@ -14040,17 +14038,17 @@
 
     const/16 v2, 0x75
 
-    .line 5588
+    .line 5589
     invoke-static {v2, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v8, v4, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5590
+    .line 5591
     invoke-virtual {v1, v8}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5591
+    .line 5592
     sget v2, Lorg/telegram/messenger/R$string;->PermissionDrawAboveOtherAppsGroupCallTitle:I
 
     const-string v4, "PermissionDrawAboveOtherAppsGroupCallTitle"
@@ -14061,7 +14059,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5592
+    .line 5593
     sget v2, Lorg/telegram/messenger/R$string;->PermissionDrawAboveOtherAppsGroupCall:I
 
     const-string v4, "PermissionDrawAboveOtherAppsGroupCall"
@@ -14072,7 +14070,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5593
+    .line 5594
     sget v2, Lorg/telegram/messenger/R$string;->Enable:I
 
     const-string v4, "Enable"
@@ -14087,10 +14085,10 @@
 
     invoke-virtual {v1, v2, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5610
+    .line 5611
     invoke-virtual {v1, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->notDrawBackgroundOnTopView(Z)V
 
-    .line 5611
+    .line 5612
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -14103,7 +14101,7 @@
 
     const v0, 0x3f13b13b
 
-    .line 5612
+    .line 5613
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopViewAspectRatio(F)V
 
     return-object v1
@@ -14118,12 +14116,12 @@
 .method public static createDrawOverlayPermissionDialog(Landroid/app/Activity;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
     .locals 13
 
-    .line 5520
+    .line 5521
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 5521
+    .line 5522
     sget v1, Lorg/telegram/messenger/R$raw;->pip_video_request:I
 
     const/4 v2, 0x0
@@ -14132,12 +14130,12 @@
 
     move-result-object v1
 
-    .line 5523
+    .line 5524
     new-instance v2, Landroid/widget/FrameLayout;
 
     invoke-direct {v2, p0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 5524
+    .line 5525
     new-instance v3, Landroid/graphics/drawable/GradientDrawable;
 
     sget-object v4, Landroid/graphics/drawable/GradientDrawable$Orientation;->BL_TR:Landroid/graphics/drawable/GradientDrawable$Orientation;
@@ -14154,22 +14152,22 @@
 
     const/4 v3, 0x1
 
-    .line 5525
+    .line 5526
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setClipToOutline(Z)V
 
-    .line 5526
+    .line 5527
     new-instance v4, Lorg/telegram/ui/Components/AlertsCreator$44;
 
     invoke-direct {v4}, Lorg/telegram/ui/Components/AlertsCreator$44;-><init>()V
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 5534
+    .line 5535
     new-instance v4, Landroid/view/View;
 
     invoke-direct {v4, p0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 5535
+    .line 5536
     new-instance v5, Landroid/graphics/drawable/BitmapDrawable;
 
     const/16 v6, 0x140
@@ -14206,17 +14204,17 @@
 
     const/4 v12, -0x1
 
-    .line 5536
+    .line 5537
     invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {v2, v4, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5538
+    .line 5539
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5539
+    .line 5540
     sget v1, Lorg/telegram/messenger/R$string;->PermissionDrawAboveOtherAppsTitle:I
 
     const-string v2, "PermissionDrawAboveOtherAppsTitle"
@@ -14227,7 +14225,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5540
+    .line 5541
     sget v1, Lorg/telegram/messenger/R$string;->PermissionDrawAboveOtherApps:I
 
     const-string v2, "PermissionDrawAboveOtherApps"
@@ -14238,7 +14236,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5541
+    .line 5542
     sget v1, Lorg/telegram/messenger/R$string;->Enable:I
 
     const-string v2, "Enable"
@@ -14253,10 +14251,10 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5552
+    .line 5553
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->notDrawBackgroundOnTopView(Z)V
 
-    .line 5553
+    .line 5554
     sget p0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v1, "Cancel"
@@ -14269,7 +14267,7 @@
 
     const p0, 0x3f011812
 
-    .line 5554
+    .line 5555
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopViewAspectRatio(F)V
 
     return-object v0
@@ -14298,14 +14296,14 @@
         }
     .end annotation
 
-    .line 301
+    .line 302
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     if-eqz p1, :cond_0
 
-    .line 302
+    .line 303
     sget p1, Lorg/telegram/messenger/R$string;->drawer_profile_cell_alert_title:I
 
     goto :goto_0
@@ -14320,7 +14318,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 303
+    .line 304
     sget p1, Lorg/telegram/messenger/R$string;->common_cancel:I
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -14331,17 +14329,17 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 305
+    .line 306
     new-instance p1, Landroid/widget/LinearLayout;
 
     invoke-direct {p1, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v1, 0x1
 
-    .line 306
+    .line 307
     invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 307
+    .line 308
     invoke-static {}, Lcom/iMe/ui/drawer/DrawerAccountData;->values()[Lcom/iMe/ui/drawer/DrawerAccountData;
 
     move-result-object v2
@@ -14357,17 +14355,17 @@
 
     aget-object v6, v2, v5
 
-    .line 308
+    .line 309
     new-instance v7, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-direct {v7, p0}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;)V
 
-    .line 309
+    .line 310
     invoke-virtual {v7, v6}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     const/4 v8, 0x4
 
-    .line 310
+    .line 311
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -14378,7 +14376,7 @@
 
     invoke-virtual {v7, v9, v4, v8, v4}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 311
+    .line 312
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
     invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -14393,7 +14391,7 @@
 
     invoke-virtual {v7, v8, v9}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 312
+    .line 313
     invoke-virtual {v6}, Lcom/iMe/ui/drawer/DrawerAccountData;->getTitle()Ljava/lang/String;
 
     move-result-object v8
@@ -14410,21 +14408,21 @@
     :goto_2
     invoke-virtual {v7, v8, v6}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
-    .line 313
+    .line 314
     new-instance v6, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda69;
 
     invoke-direct {v6, p3, v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda69;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
 
     invoke-virtual {v7, v6}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 317
+    .line 318
     invoke-virtual {p1, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 319
+    .line 320
     :cond_2
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -14440,14 +14438,14 @@
 .method public static createForgotPasscodeDialog(Landroid/content/Context;)Landroid/app/Dialog;
     .locals 2
 
-    .line 542
+    .line 543
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     sget p0, Lorg/telegram/messenger/R$string;->ForgotPasscode:I
 
-    .line 543
+    .line 544
     invoke-static {p0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p0
@@ -14458,7 +14456,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->ForgotPasscodeInfo:I
 
-    .line 544
+    .line 545
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -14469,7 +14467,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->Close:I
 
-    .line 545
+    .line 546
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -14480,7 +14478,7 @@
 
     move-result-object p0
 
-    .line 546
+    .line 547
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -14491,12 +14489,12 @@
 .method public static createFreeSpaceDialog(Lorg/telegram/ui/LaunchActivity;)Landroid/app/Dialog;
     .locals 3
 
-    .line 5626
+    .line 5627
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 5627
+    .line 5628
     sget v1, Lorg/telegram/messenger/R$string;->LowDiskSpaceTitle:I
 
     const-string v2, "LowDiskSpaceTitle"
@@ -14507,7 +14505,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5628
+    .line 5629
     sget v1, Lorg/telegram/messenger/R$string;->LowDiskSpaceMessage2:I
 
     const-string v2, "LowDiskSpaceMessage2"
@@ -14518,7 +14516,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5629
+    .line 5630
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -14531,7 +14529,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5630
+    .line 5631
     sget v1, Lorg/telegram/messenger/R$string;->LowDiskSpaceButton:I
 
     const-string v2, "LowDiskSpaceButton"
@@ -14546,7 +14544,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5631
+    .line 5632
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -14557,12 +14555,12 @@
 .method public static createGigagroupConvertAlert(Landroid/app/Activity;Landroid/content/DialogInterface$OnClickListener;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
     .locals 12
 
-    .line 5492
+    .line 5493
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 5493
+    .line 5494
     sget v1, Lorg/telegram/messenger/R$raw;->gigagroup:I
 
     const/4 v2, 0x0
@@ -14571,12 +14569,12 @@
 
     move-result-object v1
 
-    .line 5494
+    .line 5495
     new-instance v2, Landroid/widget/FrameLayout;
 
     invoke-direct {v2, p0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 5495
+    .line 5496
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0x15
@@ -14585,10 +14583,10 @@
 
     const/4 v3, 0x1
 
-    .line 5496
+    .line 5497
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setClipToOutline(Z)V
 
-    .line 5497
+    .line 5498
     new-instance v3, Lorg/telegram/ui/Components/AlertsCreator$43;
 
     invoke-direct {v3}, Lorg/telegram/ui/Components/AlertsCreator$43;-><init>()V
@@ -14598,12 +14596,12 @@
     :cond_0
     const v3, 0x3ecb7cb8
 
-    .line 5505
+    .line 5506
     new-instance v4, Landroid/view/View;
 
     invoke-direct {v4, p0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 5506
+    .line 5507
     new-instance p0, Landroid/graphics/drawable/BitmapDrawable;
 
     const/16 v5, 0x140
@@ -14640,20 +14638,20 @@
 
     const/4 v11, -0x1
 
-    .line 5507
+    .line 5508
     invoke-static/range {v5 .. v11}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p0
 
     invoke-virtual {v2, v4, p0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 5509
+    .line 5510
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5510
+    .line 5511
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopViewAspectRatio(F)V
 
-    .line 5511
+    .line 5512
     sget p0, Lorg/telegram/messenger/R$string;->GigagroupAlertTitle:I
 
     const-string v1, "GigagroupAlertTitle"
@@ -14664,7 +14662,7 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5512
+    .line 5513
     sget p0, Lorg/telegram/messenger/R$string;->GigagroupAlertText:I
 
     const-string v1, "GigagroupAlertText"
@@ -14679,7 +14677,7 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5513
+    .line 5514
     sget p0, Lorg/telegram/messenger/R$string;->GigagroupAlertLearnMore:I
 
     const-string v1, "GigagroupAlertLearnMore"
@@ -14690,7 +14688,7 @@
 
     invoke-virtual {v0, p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5514
+    .line 5515
     sget p0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string p1, "Cancel"
@@ -14711,7 +14709,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 517
+    .line 518
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -14720,7 +14718,7 @@
 
     goto :goto_0
 
-    .line 520
+    .line 521
     :cond_0
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -14730,7 +14728,7 @@
 
     invoke-direct {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 521
+    .line 522
     sget v2, Lorg/telegram/messenger/R$string;->hidden_chats_hide_alert:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -14739,7 +14737,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 522
+    .line 523
     sget v2, Lorg/telegram/messenger/R$string;->hidden_chats_info_search_chats:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -14748,7 +14746,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 523
+    .line 524
     sget v2, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v3, "Cancel"
@@ -14759,7 +14757,7 @@
 
     invoke-virtual {v1, v2, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 524
+    .line 525
     sget v0, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string v2, "OK"
@@ -14770,17 +14768,17 @@
 
     invoke-virtual {v1, v0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 525
+    .line 526
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 526
+    .line 527
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     const/4 p0, -0x1
 
-    .line 527
+    .line 528
     invoke-virtual {p1, p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object p0
@@ -14789,7 +14787,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 529
+    .line 530
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -14798,7 +14796,7 @@
 
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 531
+    .line 532
     :cond_1
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -14822,7 +14820,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 1741
+    .line 1742
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v3
@@ -14835,23 +14833,23 @@
 
     goto/16 :goto_7
 
-    .line 1744
+    .line 1745
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
 
     move-result v3
 
-    .line 1746
+    .line 1747
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v4
 
-    .line 1747
+    .line 1748
     new-instance v5, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v5, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1748
+    .line 1749
     invoke-static {v3}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v6
@@ -14860,12 +14858,12 @@
 
     move-result-wide v6
 
-    .line 1750
+    .line 1751
     new-instance v8, Landroid/widget/TextView;
 
     invoke-direct {v8, v4}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 1751
+    .line 1752
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -14878,10 +14876,10 @@
 
     const/4 v10, 0x1
 
-    .line 1752
+    .line 1753
     invoke-virtual {v8, v10, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1753
+    .line 1754
     sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v9, :cond_1
@@ -14898,36 +14896,36 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1755
+    .line 1756
     new-instance v9, Landroid/widget/FrameLayout;
 
     invoke-direct {v9, v4}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1756
+    .line 1757
     invoke-virtual {v5, v9}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1758
+    .line 1759
     new-instance v13, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {v13}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     const/16 v14, 0xc
 
-    .line 1759
+    .line 1760
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v15
 
     invoke-virtual {v13, v15}, Lorg/telegram/ui/Components/AvatarDrawable;->setTextSize(I)V
 
-    .line 1761
+    .line 1762
     new-instance v15, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {v15, v4}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
     const/16 v16, 0x14
 
-    .line 1762
+    .line 1763
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -14938,7 +14936,7 @@
 
     const/16 v17, 0x28
 
-    .line 1763
+    .line 1764
     sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v11, :cond_2
@@ -14967,12 +14965,12 @@
 
     invoke-virtual {v9, v15, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1765
+    .line 1766
     new-instance v11, Landroid/widget/TextView;
 
     invoke-direct {v11, v4}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 1766
+    .line 1767
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -14983,28 +14981,28 @@
 
     const/high16 v4, 0x41a00000    # 20.0f
 
-    .line 1767
+    .line 1768
     invoke-virtual {v11, v10, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v4, "fonts/rmedium.ttf"
 
-    .line 1768
+    .line 1769
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v4
 
     invoke-virtual {v11, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1769
+    .line 1770
     invoke-virtual {v11, v10}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 1770
+    .line 1771
     invoke-virtual {v11, v10}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1771
+    .line 1772
     invoke-virtual {v11, v10}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1772
+    .line 1773
     sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v4, :cond_3
@@ -15021,12 +15019,12 @@
 
     invoke-virtual {v11, v4}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1773
+    .line 1774
     sget-object v4, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v11, v4}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1774
+    .line 1775
     sget v4, Lorg/telegram/messenger/R$string;->ImportMessages:I
 
     const-string v12, "ImportMessages"
@@ -15041,7 +15039,7 @@
 
     const/16 v18, -0x2
 
-    .line 1776
+    .line 1777
     sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v4, :cond_4
@@ -15095,7 +15093,7 @@
 
     const/16 v18, -0x2
 
-    .line 1777
+    .line 1778
     sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v4, :cond_7
@@ -15130,7 +15128,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 1780
+    .line 1781
     iget-wide v11, v2, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
     invoke-static {v3, v11, v12}, Lorg/telegram/messenger/ChatObject;->isTemplatesChat(IJ)Z
@@ -15139,15 +15137,15 @@
 
     if-eqz v3, :cond_8
 
-    .line 1781
+    .line 1782
     invoke-virtual {v13, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
     const/16 v1, 0x65
 
-    .line 1782
+    .line 1783
     invoke-virtual {v13, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 1783
+    .line 1784
     invoke-virtual {v15, v9, v9, v13, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto :goto_6
@@ -15155,25 +15153,25 @@
     :cond_8
     if-eqz v1, :cond_b
 
-    .line 1786
+    .line 1787
     invoke-static/range {p3 .. p3}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v2
 
     if-eqz v2, :cond_9
 
-    .line 1787
+    .line 1788
     invoke-virtual {v13, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 1788
+    .line 1789
     invoke-virtual {v13, v14}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 1789
+    .line 1790
     invoke-virtual {v15, v9, v9, v13, v1}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto :goto_6
 
-    .line 1790
+    .line 1791
     :cond_9
     iget-wide v2, v1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
@@ -15181,13 +15179,13 @@
 
     if-nez v2, :cond_a
 
-    .line 1791
+    .line 1792
     invoke-virtual {v13, v4}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 1792
+    .line 1793
     invoke-virtual {v13, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 1793
+    .line 1794
     invoke-virtual {v15, v9, v9, v13, v1}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto :goto_6
@@ -15195,25 +15193,25 @@
     :cond_a
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 1795
+    .line 1796
     invoke-virtual {v13, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 1796
+    .line 1797
     invoke-virtual {v13, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 1797
+    .line 1798
     invoke-virtual {v15, v1, v13}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
     goto :goto_6
 
-    .line 1800
+    .line 1801
     :cond_b
     invoke-virtual {v13, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 1801
+    .line 1802
     invoke-virtual {v15, v2, v13}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 1804
+    .line 1805
     :goto_6
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
 
@@ -15221,7 +15219,7 @@
 
     invoke-virtual {v8, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1819
+    .line 1820
     sget v1, Lorg/telegram/messenger/R$string;->Import:I
 
     const-string v2, "Import"
@@ -15238,7 +15236,7 @@
 
     invoke-virtual {v5, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1824
+    .line 1825
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -15249,12 +15247,12 @@
 
     invoke-virtual {v5, v1, v9}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1825
+    .line 1826
     invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v1
 
-    .line 1826
+    .line 1827
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     :cond_c
@@ -15277,7 +15275,7 @@
         }
     .end annotation
 
-    .line 479
+    .line 480
     new-instance v8, Lorg/telegram/ui/Components/AlertsCreator$1;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -15314,7 +15312,7 @@
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Components/AlertsCreator$1;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;ZLjava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ChatActivity;)V
 
-    .line 491
+    .line 492
     new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda65;
 
     invoke-direct {p1, v8, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda65;-><init>(Lorg/telegram/ui/Components/ReportAlert;Lorg/telegram/ui/ChatActivity;)V
@@ -15323,7 +15321,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 493
+    .line 494
     new-instance p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda2;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda2;-><init>(Ljava/lang/Runnable;)V
@@ -15343,7 +15341,7 @@
 
     return-object v0
 
-    .line 992
+    .line 993
     :cond_0
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->lang_code:Ljava/lang/String;
 
@@ -15361,7 +15359,7 @@
 
     iput-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->lang_code:Ljava/lang/String;
 
-    .line 993
+    .line 994
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->plural_code:Ljava/lang/String;
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
@@ -15374,12 +15372,12 @@
 
     iput-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->plural_code:Ljava/lang/String;
 
-    .line 994
+    .line 995
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->base_lang_code:Ljava/lang/String;
 
     if-eqz v1, :cond_1
 
-    .line 995
+    .line 996
     invoke-virtual {v1, v2, v3}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v1
@@ -15390,13 +15388,13 @@
 
     iput-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->base_lang_code:Ljava/lang/String;
 
-    .line 1000
+    .line 1001
     :cond_1
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1001
+    .line 1002
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v2
@@ -15405,7 +15403,7 @@
 
     move-result-object v2
 
-    .line 1003
+    .line 1004
     iget-object v2, v2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->shortName:Ljava/lang/String;
 
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->lang_code:Ljava/lang/String;
@@ -15422,7 +15420,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 1004
+    .line 1005
     sget v2, Lorg/telegram/messenger/R$string;->Language:I
 
     const-string v6, "Language"
@@ -15433,7 +15431,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1005
+    .line 1006
     sget v2, Lorg/telegram/messenger/R$string;->LanguageSame:I
 
     new-array v6, v5, [Ljava/lang/Object;
@@ -15448,7 +15446,7 @@
 
     move-result-object v2
 
-    .line 1006
+    .line 1007
     sget v6, Lorg/telegram/messenger/R$string;->OK:I
 
     invoke-static {v3, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -15457,7 +15455,7 @@
 
     invoke-virtual {v1, v3, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1007
+    .line 1008
     sget v0, Lorg/telegram/messenger/R$string;->SETTINGS:I
 
     const-string v3, "SETTINGS"
@@ -15474,13 +15472,13 @@
 
     goto/16 :goto_1
 
-    .line 1009
+    .line 1010
     :cond_2
     iget v2, p1, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->strings_count:I
 
     if-nez v2, :cond_3
 
-    .line 1010
+    .line 1011
     sget v2, Lorg/telegram/messenger/R$string;->LanguageUnknownTitle:I
 
     const-string v6, "LanguageUnknownTitle"
@@ -15491,7 +15489,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1011
+    .line 1012
     sget v2, Lorg/telegram/messenger/R$string;->LanguageUnknownCustomAlert:I
 
     new-array v6, v5, [Ljava/lang/Object;
@@ -15506,7 +15504,7 @@
 
     move-result-object v2
 
-    .line 1012
+    .line 1013
     sget v6, Lorg/telegram/messenger/R$string;->OK:I
 
     invoke-static {v3, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -15517,7 +15515,7 @@
 
     goto :goto_1
 
-    .line 1014
+    .line 1015
     :cond_3
     sget v2, Lorg/telegram/messenger/R$string;->LanguageTitle:I
 
@@ -15529,7 +15527,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1015
+    .line 1016
     iget-boolean v2, p1, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->official:Z
 
     const/high16 v3, 0x42c80000    # 100.0f
@@ -15538,7 +15536,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 1016
+    .line 1017
     sget v2, Lorg/telegram/messenger/R$string;->LanguageAlert:I
 
     new-array v6, v6, [Ljava/lang/Object;
@@ -15581,7 +15579,7 @@
 
     goto :goto_0
 
-    .line 1018
+    .line 1019
     :cond_4
     sget v2, Lorg/telegram/messenger/R$string;->LanguageCustomAlert:I
 
@@ -15623,7 +15621,7 @@
 
     move-result-object v2
 
-    .line 1020
+    .line 1021
     :goto_0
     sget v3, Lorg/telegram/messenger/R$string;->Change:I
 
@@ -15639,7 +15637,7 @@
 
     invoke-virtual {v1, v3, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1045
+    .line 1046
     sget v3, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v6, "Cancel"
@@ -15650,7 +15648,7 @@
 
     invoke-virtual {v1, v3, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1049
+    .line 1050
     :goto_1
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
@@ -15662,7 +15660,7 @@
 
     const/16 v2, 0x5b
 
-    .line 1051
+    .line 1052
     invoke-static {v0, v2}, Landroid/text/TextUtils;->indexOf(Ljava/lang/CharSequence;C)I
 
     move-result v2
@@ -15675,7 +15673,7 @@
 
     add-int/lit8 v7, v2, 0x1
 
-    .line 1054
+    .line 1055
     invoke-static {v0, v6, v7}, Landroid/text/TextUtils;->indexOf(Ljava/lang/CharSequence;CI)I
 
     move-result v6
@@ -15684,10 +15682,10 @@
 
     add-int/lit8 v8, v6, 0x1
 
-    .line 1056
+    .line 1057
     invoke-virtual {v0, v6, v8}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
-    .line 1057
+    .line 1058
     invoke-virtual {v0, v2, v7}, Landroid/text/SpannableStringBuilder;->delete(II)Landroid/text/SpannableStringBuilder;
 
     goto :goto_2
@@ -15701,7 +15699,7 @@
 
     if-eq v6, v3, :cond_7
 
-    .line 1064
+    .line 1065
     new-instance v3, Lorg/telegram/ui/Components/AlertsCreator$2;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->translations_url:Ljava/lang/String;
@@ -15714,21 +15712,21 @@
 
     invoke-virtual {v0, v3, v2, v6, p1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1073
+    .line 1074
     :cond_7
     new-instance p1, Landroid/widget/TextView;
 
     invoke-direct {p1, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 1074
+    .line 1075
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/high16 p0, 0x41800000    # 16.0f
 
-    .line 1075
+    .line 1076
     invoke-virtual {p1, v5, p0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1076
+    .line 1077
     sget p0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextLink:I
 
     invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -15737,7 +15735,7 @@
 
     invoke-virtual {p1, p0}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    .line 1077
+    .line 1078
     sget p0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogLinkSelection:I
 
     invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -15748,7 +15746,7 @@
 
     const/16 p0, 0x17
 
-    .line 1078
+    .line 1079
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -15759,14 +15757,14 @@
 
     invoke-virtual {p1, v0, v4, p0, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1079
+    .line 1080
     new-instance p0, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;
 
     invoke-direct {p0}, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;-><init>()V
 
     invoke-virtual {p1, p0}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 1080
+    .line 1081
     sget p0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -15775,7 +15773,7 @@
 
     invoke-virtual {p1, p0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1081
+    .line 1082
     invoke-virtual {v1, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     return-object v1
@@ -15784,14 +15782,14 @@
 .method public static createLocationRequiredDialog(Landroid/content/Context;Z)Landroid/app/Dialog;
     .locals 4
 
-    .line 550
+    .line 551
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     if-eqz p1, :cond_0
 
-    .line 551
+    .line 552
     sget p1, Lorg/telegram/messenger/R$string;->PermissionNoLocationFriends:I
 
     const-string v1, "PermissionNoLocationFriends"
@@ -15802,7 +15800,7 @@
 
     goto :goto_0
 
-    .line 552
+    .line 553
     :cond_0
     sget p1, Lorg/telegram/messenger/R$string;->PermissionNoLocationPeopleNearby:I
 
@@ -15812,7 +15810,7 @@
 
     move-result-object p1
 
-    .line 551
+    .line 552
     :goto_0
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
 
@@ -15830,7 +15828,7 @@
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
 
-    .line 553
+    .line 554
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
@@ -15843,7 +15841,7 @@
 
     const-string v1, "PermissionOpenSettings"
 
-    .line 554
+    .line 555
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -15860,7 +15858,7 @@
 
     const-string v0, "ContactsPermissionAlertNotNow"
 
-    .line 563
+    .line 564
     invoke-static {v0, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
@@ -15871,7 +15869,7 @@
 
     move-result-object p0
 
-    .line 564
+    .line 565
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -15894,12 +15892,12 @@
 
     new-array v5, v4, [Ljava/lang/String;
 
-    .line 5387
+    .line 5388
     sget v6, Lorg/telegram/messenger/R$string;->SendLiveLocationFor15m:I
 
     const-string v7, "SendLiveLocationFor15m"
 
-    .line 5388
+    .line 5389
     invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
@@ -15912,7 +15910,7 @@
 
     const-string v8, "SendLiveLocationFor1h"
 
-    .line 5389
+    .line 5390
     invoke-static {v8, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
@@ -15923,7 +15921,7 @@
 
     const-string v8, "SendLiveLocationFor8h"
 
-    .line 5390
+    .line 5391
     invoke-static {v8, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
@@ -15932,22 +15930,22 @@
 
     aput-object v6, v5, v8
 
-    .line 5393
+    .line 5394
     new-instance v6, Landroid/widget/LinearLayout;
 
     invoke-direct {v6, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 5394
+    .line 5395
     invoke-virtual {v6, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 5396
+    .line 5397
     new-instance v8, Landroid/widget/TextView;
 
     invoke-direct {v8, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     if-eqz p1, :cond_0
 
-    .line 5398
+    .line 5399
     sget v9, Lorg/telegram/messenger/R$string;->LiveLocationAlertPrivate:I
 
     new-array v10, v2, [Ljava/lang/Object;
@@ -15968,7 +15966,7 @@
 
     goto :goto_0
 
-    .line 5400
+    .line 5401
     :cond_0
     sget v9, Lorg/telegram/messenger/R$string;->LiveLocationAlertGroup:I
 
@@ -15980,7 +15978,7 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 5402
+    .line 5403
     :goto_0
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
@@ -15997,16 +15995,16 @@
 
     move-result v9
 
-    .line 5403
+    .line 5404
     :goto_1
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/high16 v9, 0x41800000    # 16.0f
 
-    .line 5404
+    .line 5405
     invoke-virtual {v8, v2, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 5405
+    .line 5406
     sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/4 v10, 0x5
@@ -16029,7 +16027,7 @@
 
     const/4 v12, -0x2
 
-    .line 5406
+    .line 5407
     sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v9, :cond_3
@@ -16061,14 +16059,14 @@
     :goto_4
     if-ge v8, v4, :cond_7
 
-    .line 5409
+    .line 5410
     new-instance v9, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-direct {v9, v0, v1}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     const/4 v10, 0x4
 
-    .line 5410
+    .line 5411
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -16079,14 +16077,14 @@
 
     invoke-virtual {v9, v11, v7, v10, v7}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 5411
+    .line 5412
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
 
     invoke-virtual {v9, v10}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 5412
+    .line 5413
     sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
     if-eqz v1, :cond_4
@@ -16102,7 +16100,7 @@
 
     move-result v10
 
-    .line 5413
+    .line 5414
     :goto_5
     sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRadioBackgroundChecked:I
 
@@ -16119,11 +16117,11 @@
 
     move-result v11
 
-    .line 5414
+    .line 5415
     :goto_6
     invoke-virtual {v9, v10, v11}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 5415
+    .line 5416
     aget-object v10, v5, v8
 
     aget v11, v3, v7
@@ -16140,10 +16138,10 @@
     :goto_7
     invoke-virtual {v9, v10, v11}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
-    .line 5416
+    .line 5417
     invoke-virtual {v6, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 5417
+    .line 5418
     new-instance v10, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda88;
 
     invoke-direct {v10, v3, v6}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda88;-><init>([ILandroid/widget/LinearLayout;)V
@@ -16154,7 +16152,7 @@
 
     goto :goto_4
 
-    .line 5429
+    .line 5430
     :cond_7
     new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -16162,7 +16160,7 @@
 
     if-eqz v1, :cond_8
 
-    .line 5430
+    .line 5431
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
 
     invoke-interface {v1, v4}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColorOrDefault(I)I
@@ -16178,7 +16176,7 @@
 
     move-result v1
 
-    .line 5431
+    .line 5432
     :goto_8
     new-instance v4, Lorg/telegram/ui/Components/ShareLocationDrawable;
 
@@ -16186,10 +16184,10 @@
 
     invoke-virtual {v2, v4, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopImage(Landroid/graphics/drawable/Drawable;I)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5432
+    .line 5433
     invoke-virtual {v2, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5433
+    .line 5434
     sget v0, Lorg/telegram/messenger/R$string;->ShareFile:I
 
     const-string v1, "ShareFile"
@@ -16206,7 +16204,7 @@
 
     invoke-virtual {v2, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5444
+    .line 5445
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v1, "Cancel"
@@ -16219,7 +16217,7 @@
 
     invoke-virtual {v2, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNeutralButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5445
+    .line 5446
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -16232,7 +16230,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 4641
+    .line 4642
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -16241,7 +16239,7 @@
 
     goto :goto_0
 
-    .line 4645
+    .line 4646
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
@@ -16253,7 +16251,7 @@
 
     invoke-direct {v0, v1, v2, p4}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 4646
+    .line 4647
     sget v1, Lorg/telegram/messenger/R$string;->Notifications:I
 
     const-string v3, "Notifications"
@@ -16270,7 +16268,7 @@
 
     new-array v1, v1, [Ljava/lang/CharSequence;
 
-    .line 4647
+    .line 4648
     sget v4, Lorg/telegram/messenger/R$string;->MuteFor:I
 
     new-array v5, v3, [Ljava/lang/Object;
@@ -16279,7 +16277,7 @@
 
     const-string v7, "Hours"
 
-    .line 4648
+    .line 4649
     invoke-static {v7, v3, v6}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v6
@@ -16300,7 +16298,7 @@
 
     new-array v9, v2, [Ljava/lang/Object;
 
-    .line 4649
+    .line 4650
     invoke-static {v7, v8, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v7
@@ -16321,7 +16319,7 @@
 
     const/4 v8, 0x2
 
-    .line 4650
+    .line 4651
     invoke-static {v7, v8, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v5
@@ -16340,14 +16338,14 @@
 
     const-string v4, "MuteDisable"
 
-    .line 4651
+    .line 4652
     invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
     aput-object v3, v1, v2
 
-    .line 4653
+    .line 4654
     new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda5;
 
     move-object v4, v2
@@ -16364,7 +16362,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 4670
+    .line 4671
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->create()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object p0
@@ -16395,7 +16393,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 4674
+    .line 4675
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -16404,7 +16402,7 @@
 
     goto :goto_0
 
-    .line 4678
+    .line 4679
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
@@ -16416,7 +16414,7 @@
 
     invoke-direct {v0, v1, v2, p3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 4679
+    .line 4680
     sget v1, Lorg/telegram/messenger/R$string;->Notifications:I
 
     const-string v3, "Notifications"
@@ -16433,7 +16431,7 @@
 
     new-array v1, v1, [Ljava/lang/CharSequence;
 
-    .line 4680
+    .line 4681
     sget v4, Lorg/telegram/messenger/R$string;->MuteFor:I
 
     new-array v5, v3, [Ljava/lang/Object;
@@ -16442,7 +16440,7 @@
 
     const-string v7, "Hours"
 
-    .line 4681
+    .line 4682
     invoke-static {v7, v3, v6}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v6
@@ -16463,7 +16461,7 @@
 
     new-array v9, v2, [Ljava/lang/Object;
 
-    .line 4682
+    .line 4683
     invoke-static {v7, v8, v9}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v7
@@ -16484,7 +16482,7 @@
 
     const/4 v8, 0x2
 
-    .line 4683
+    .line 4684
     invoke-static {v7, v8, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v5
@@ -16503,21 +16501,21 @@
 
     const-string v4, "MuteDisable"
 
-    .line 4684
+    .line 4685
     invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
     aput-object v3, v1, v2
 
-    .line 4686
+    .line 4687
     new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda30;
 
     invoke-direct {v2, p1, p2, p0, p3}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda30;-><init>(Ljava/util/ArrayList;ILorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 4708
+    .line 4709
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->create()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object p0
@@ -16538,74 +16536,74 @@
 
     move-object/from16 v1, p1
 
-    const/4 v2, 0x0
-
     if-nez v0, :cond_0
 
-    return-object v2
+    const/4 v0, 0x0
 
-    .line 4264
-    :cond_0
-    new-instance v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
-
-    invoke-direct {v3, v1, v2}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/AlertsCreator$1;)V
+    return-object v0
 
     .line 4265
-    new-instance v2, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    :cond_0
+    new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
+
+    invoke-direct {v2, v1}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    .line 4266
+    new-instance v3, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     const/4 v4, 0x0
 
-    invoke-direct {v2, v0, v4, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v3, v0, v4, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 4266
-    invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    .line 4267
+    invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     const/16 v5, 0x15
 
     new-array v5, v5, [I
 
-    .line 4268
+    .line 4269
     fill-array-data v5, :array_0
 
-    .line 4292
+    .line 4293
     new-instance v6, Lorg/telegram/ui/Components/AlertsCreator$36;
 
     invoke-direct {v6, v0, v1, v5}, Lorg/telegram/ui/Components/AlertsCreator$36;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;[I)V
 
-    .line 4312
+    .line 4313
     invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v1, 0x14
 
-    .line 4313
+    .line 4314
     invoke-virtual {v6, v1}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 4314
-    iget v1, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
+    .line 4315
+    iget v1, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v6, v1}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
-    .line 4315
+    .line 4316
     invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 4316
+    .line 4317
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda147;
 
     invoke-direct {v1, v5}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda147;-><init>([I)V
 
     invoke-virtual {v6, v1}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 4334
+    .line 4335
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$37;
 
     invoke-direct {v1, v0, v6}, Lorg/telegram/ui/Components/AlertsCreator$37;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/NumberPicker;)V
 
     const/4 v7, 0x1
 
-    .line 4361
+    .line 4362
     invoke-virtual {v1, v7}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 4363
+    .line 4364
     new-instance v8, Landroid/widget/FrameLayout;
 
     invoke-direct {v8, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -16624,19 +16622,19 @@
 
     const/4 v15, 0x4
 
-    .line 4364
+    .line 4365
     invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v9
 
     invoke-virtual {v1, v8, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4366
+    .line 4367
     new-instance v9, Landroid/widget/TextView;
 
     invoke-direct {v9, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 4367
+    .line 4368
     sget v10, Lorg/telegram/messenger/R$string;->MuteForAlert:I
 
     const-string v11, "MuteForAlert"
@@ -16647,19 +16645,19 @@
 
     invoke-virtual {v9, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4368
-    iget v10, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
+    .line 4369
+    iget v10, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v9, v10}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/high16 v10, 0x41a00000    # 20.0f
 
-    .line 4369
+    .line 4370
     invoke-virtual {v9, v7, v10}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v10, "fonts/rmedium.ttf"
 
-    .line 4370
+    .line 4371
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v11
@@ -16680,29 +16678,29 @@
 
     const/16 v18, 0x0
 
-    .line 4371
+    .line 4372
     invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v11
 
     invoke-virtual {v8, v9, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4372
+    .line 4373
     sget-object v8, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda111;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda111;
 
     invoke-virtual {v9, v8}, Landroid/widget/TextView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 4374
+    .line 4375
     new-instance v8, Landroid/widget/LinearLayout;
 
     invoke-direct {v8, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 4375
+    .line 4376
     invoke-virtual {v8, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/high16 v9, 0x3f800000    # 1.0f
 
-    .line 4376
+    .line 4377
     invoke-virtual {v8, v9}, Landroid/widget/LinearLayout;->setWeightSum(F)V
 
     const/4 v11, -0x1
@@ -16713,38 +16711,38 @@
 
     const/16 v18, 0xc
 
-    .line 4377
+    .line 4378
     invoke-static/range {v11 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIFIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v11
 
     invoke-virtual {v1, v8, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4379
+    .line 4380
     new-instance v11, Lorg/telegram/ui/Components/AlertsCreator$38;
 
     invoke-direct {v11, v0}, Lorg/telegram/ui/Components/AlertsCreator$38;-><init>(Landroid/content/Context;)V
 
     const/16 v0, 0x10e
 
-    .line 4386
+    .line 4387
     invoke-static {v4, v0, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v8, v6, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4387
+    .line 4388
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda167;
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda167;-><init>(Landroid/widget/LinearLayout;)V
 
-    .line 4394
+    .line 4395
     invoke-virtual {v6, v0}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
     const/16 v0, 0x22
 
-    .line 4396
+    .line 4397
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -16757,20 +16755,20 @@
 
     const/16 v0, 0x11
 
-    .line 4397
+    .line 4398
     invoke-virtual {v11, v0}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 4398
-    iget v0, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonTextColor:I
+    .line 4399
+    iget v0, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonTextColor:I
 
     invoke-virtual {v11, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/high16 v0, 0x41600000    # 14.0f
 
-    .line 4399
+    .line 4400
     invoke-virtual {v11, v7, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 4400
+    .line 4401
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
@@ -16779,14 +16777,14 @@
 
     const/4 v0, 0x4
 
-    .line 4401
+    .line 4402
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    iget v4, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonBackgroundColor:I
+    iget v4, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonBackgroundColor:I
 
-    iget v7, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonBackgroundPressedColor:I
+    iget v7, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonBackgroundPressedColor:I
 
     invoke-static {v0, v4, v7}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorRoundRectDrawable(III)Landroid/graphics/drawable/Drawable;
 
@@ -16794,7 +16792,7 @@
 
     invoke-virtual {v11, v0}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 4402
+    .line 4403
     sget v0, Lorg/telegram/messenger/R$string;->AutoDeleteConfirm:I
 
     const-string v4, "AutoDeleteConfirm"
@@ -16819,41 +16817,41 @@
 
     const/16 v18, 0x10
 
-    .line 4403
+    .line 4404
     invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v1, v11, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4404
+    .line 4405
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda89;
 
     move-object/from16 v4, p2
 
-    invoke-direct {v0, v5, v6, v4, v2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda89;-><init>([ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
+    invoke-direct {v0, v5, v6, v4, v3}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda89;-><init>([ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
 
     invoke-virtual {v11, v0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 4410
-    invoke-virtual {v2, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
-
     .line 4411
-    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->show()Lorg/telegram/ui/ActionBar/BottomSheet;
+    invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+
+    .line 4412
+    invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->show()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object v0
 
-    .line 4412
-    iget v1, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
+    .line 4413
+    iget v1, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setBackgroundColor(I)V
 
-    .line 4413
-    iget v1, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
+    .line 4414
+    iget v1, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar(I)V
 
-    return-object v2
+    return-object v3
 
     :array_0
     .array-data 4
@@ -16884,20 +16882,20 @@
 .method public static createNoAccessAlert(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
     .locals 7
 
-    .line 1109
+    .line 1110
     new-instance v6, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v6, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1110
+    .line 1111
     invoke-virtual {v6, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1111
+    .line 1112
     new-instance v5, Ljava/util/HashMap;
 
     invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
 
-    .line 1112
+    .line 1113
     sget p0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
 
     invoke-static {p0, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -16912,7 +16910,7 @@
 
     invoke-interface {v5, v0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1113
+    .line 1114
     invoke-static {p0, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
@@ -16925,7 +16923,7 @@
 
     invoke-interface {v5, v0, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1114
+    .line 1115
     sget v1, Lorg/telegram/messenger/R$raw;->not_available:I
 
     invoke-static {p0, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -16942,10 +16940,10 @@
 
     const/4 p0, 0x1
 
-    .line 1115
+    .line 1116
     invoke-virtual {v6, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopAnimationIsNew(Z)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1116
+    .line 1117
     sget p0, Lorg/telegram/messenger/R$string;->Close:I
 
     invoke-static {p0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -16956,7 +16954,7 @@
 
     invoke-virtual {v6, p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1117
+    .line 1118
     invoke-virtual {v6, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     return-object v6
@@ -16965,14 +16963,14 @@
 .method public static createOpenTelegramDialog(Landroid/content/Context;Ljava/lang/CharSequence;)Landroid/app/Dialog;
     .locals 2
 
-    .line 508
+    .line 509
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     sget v1, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
 
-    .line 509
+    .line 510
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -16981,14 +16979,14 @@
 
     move-result-object v0
 
-    .line 510
+    .line 511
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object p1
 
     sget v0, Lorg/telegram/messenger/R$string;->Close:I
 
-    .line 511
+    .line 512
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -17001,7 +16999,7 @@
 
     sget v0, Lorg/telegram/messenger/R$string;->DidNotGetTheCodeSms:I
 
-    .line 512
+    .line 513
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -17014,7 +17012,7 @@
 
     move-result-object p0
 
-    .line 513
+    .line 514
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -17025,7 +17023,7 @@
 .method public static createPopupSelectDialog(Landroid/app/Activity;ILjava/lang/Runnable;)Landroid/app/Dialog;
     .locals 11
 
-    .line 5760
+    .line 5761
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
@@ -17042,7 +17040,7 @@
 
     const-string v4, "popupAll"
 
-    .line 5763
+    .line 5764
     invoke-interface {v0, v4, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v0
@@ -17056,7 +17054,7 @@
 
     const-string v4, "popupGroup"
 
-    .line 5765
+    .line 5766
     invoke-interface {v0, v4, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v0
@@ -17068,7 +17066,7 @@
     :cond_1
     const-string v4, "popupChannel"
 
-    .line 5767
+    .line 5768
     invoke-interface {v0, v4, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v0
@@ -17080,12 +17078,12 @@
 
     new-array v4, v0, [Ljava/lang/String;
 
-    .line 5769
+    .line 5770
     sget v5, Lorg/telegram/messenger/R$string;->NoPopup:I
 
     const-string v6, "NoPopup"
 
-    .line 5770
+    .line 5771
     invoke-static {v6, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
@@ -17096,7 +17094,7 @@
 
     const-string v6, "OnlyWhenScreenOn"
 
-    .line 5771
+    .line 5772
     invoke-static {v6, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
@@ -17109,7 +17107,7 @@
 
     const-string v7, "OnlyWhenScreenOff"
 
-    .line 5772
+    .line 5773
     invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
@@ -17122,22 +17120,22 @@
 
     const-string v7, "AlwaysShowPopup"
 
-    .line 5773
+    .line 5774
     invoke-static {v7, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
 
     aput-object v6, v4, v5
 
-    .line 5776
+    .line 5777
     new-instance v5, Landroid/widget/LinearLayout;
 
     invoke-direct {v5, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 5777
+    .line 5778
     invoke-virtual {v5, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 5778
+    .line 5779
     new-instance v6, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v6, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -17147,19 +17145,19 @@
     :goto_1
     if-ge v7, v0, :cond_3
 
-    .line 5781
+    .line 5782
     new-instance v8, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-direct {v8, p0}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;)V
 
-    .line 5782
+    .line 5783
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
 
     invoke-virtual {v8, v9}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 5783
+    .line 5784
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -17170,7 +17168,7 @@
 
     invoke-virtual {v8, v9, v3, v10, v3}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 5784
+    .line 5785
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
     invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -17185,7 +17183,7 @@
 
     invoke-virtual {v8, v9, v10}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 5785
+    .line 5786
     aget-object v9, v4, v7
 
     aget v10, v2, v3
@@ -17202,10 +17200,10 @@
     :goto_2
     invoke-virtual {v8, v9, v10}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
-    .line 5786
+    .line 5787
     invoke-virtual {v5, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 5787
+    .line 5788
     new-instance v9, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda85;
 
     invoke-direct {v9, v2, p1, v6, p2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda85;-><init>([IILorg/telegram/ui/ActionBar/AlertDialog$Builder;Ljava/lang/Runnable;)V
@@ -17216,7 +17214,7 @@
 
     goto :goto_1
 
-    .line 5806
+    .line 5807
     :cond_3
     sget p0, Lorg/telegram/messenger/R$string;->PopupNotification:I
 
@@ -17228,10 +17226,10 @@
 
     invoke-virtual {v6, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5807
+    .line 5808
     invoke-virtual {v6, v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5808
+    .line 5809
     sget p0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string p1, "Cancel"
@@ -17244,7 +17242,7 @@
 
     invoke-virtual {v6, p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5809
+    .line 5810
     invoke-virtual {v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -17267,7 +17265,7 @@
 
     move-object v5, p5
 
-    .line 5635
+    .line 5636
     invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator;->createPrioritySelectDialog(Landroid/app/Activity;JIILjava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/app/Dialog;
 
     move-result-object p0
@@ -17286,7 +17284,7 @@
 
     move-object/from16 v13, p6
 
-    .line 5639
+    .line 5640
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
@@ -17317,7 +17315,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 5643
+    .line 5644
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -17338,7 +17336,7 @@
 
     aput v1, v9, v6
 
-    .line 5644
+    .line 5645
     aget v1, v9, v6
 
     if-ne v1, v7, :cond_0
@@ -17350,7 +17348,7 @@
 
     goto :goto_1
 
-    .line 5646
+    .line 5647
     :cond_0
     aget v1, v9, v6
 
@@ -17362,7 +17360,7 @@
 
     goto :goto_0
 
-    .line 5648
+    .line 5649
     :cond_1
     aget v1, v9, v6
 
@@ -17376,7 +17374,7 @@
 
     goto :goto_1
 
-    .line 5650
+    .line 5651
     :cond_2
     aget v1, v9, v6
 
@@ -17392,12 +17390,12 @@
     :goto_1
     new-array v1, v15, [Ljava/lang/String;
 
-    .line 5655
+    .line 5656
     sget v15, Lorg/telegram/messenger/R$string;->NotificationsPrioritySettings:I
 
     const-string v8, "NotificationsPrioritySettings"
 
-    .line 5656
+    .line 5657
     invoke-static {v8, v15}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v8
@@ -17406,7 +17404,7 @@
 
     sget v8, Lorg/telegram/messenger/R$string;->NotificationsPriorityLow:I
 
-    .line 5657
+    .line 5658
     invoke-static {v5, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
@@ -17417,7 +17415,7 @@
 
     sget v5, Lorg/telegram/messenger/R$string;->NotificationsPriorityMedium:I
 
-    .line 5658
+    .line 5659
     invoke-static {v4, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
@@ -17428,7 +17426,7 @@
 
     sget v4, Lorg/telegram/messenger/R$string;->NotificationsPriorityHigh:I
 
-    .line 5659
+    .line 5660
     invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -17437,7 +17435,7 @@
 
     sget v3, Lorg/telegram/messenger/R$string;->NotificationsPriorityUrgent:I
 
-    .line 5660
+    .line 5661
     invoke-static {v2, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -17459,7 +17457,7 @@
 
     const-string v1, "priority_messages"
 
-    .line 5664
+    .line 5665
     invoke-interface {v14, v1, v8}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v1
@@ -17473,7 +17471,7 @@
 
     const-string v1, "priority_group"
 
-    .line 5666
+    .line 5667
     invoke-interface {v14, v1, v8}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v1
@@ -17489,7 +17487,7 @@
 
     const-string v1, "priority_channel"
 
-    .line 5668
+    .line 5669
     invoke-interface {v14, v1, v8}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v1
@@ -17503,14 +17501,14 @@
 
     const-string v1, "priority_stories"
 
-    .line 5670
+    .line 5671
     invoke-interface {v14, v1, v8}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v1
 
     aput v1, v9, v6
 
-    .line 5672
+    .line 5673
     :cond_8
     :goto_2
     aget v1, v9, v6
@@ -17526,7 +17524,7 @@
 
     goto :goto_4
 
-    .line 5674
+    .line 5675
     :cond_9
     aget v1, v9, v6
 
@@ -17538,7 +17536,7 @@
 
     goto :goto_3
 
-    .line 5676
+    .line 5677
     :cond_a
     aget v1, v9, v6
 
@@ -17558,10 +17556,10 @@
     :goto_4
     new-array v8, v1, [Ljava/lang/String;
 
-    .line 5681
+    .line 5682
     sget v1, Lorg/telegram/messenger/R$string;->NotificationsPriorityLow:I
 
-    .line 5682
+    .line 5683
     invoke-static {v5, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
@@ -17570,7 +17568,7 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->NotificationsPriorityMedium:I
 
-    .line 5683
+    .line 5684
     invoke-static {v4, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
@@ -17581,7 +17579,7 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->NotificationsPriorityHigh:I
 
-    .line 5684
+    .line 5685
     invoke-static {v3, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
@@ -17592,43 +17590,43 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->NotificationsPriorityUrgent:I
 
-    .line 5685
+    .line 5686
     invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
     aput-object v1, v8, v7
 
-    .line 5689
+    .line 5690
     :goto_5
     new-instance v7, Landroid/widget/LinearLayout;
 
     invoke-direct {v7, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 5690
+    .line 5691
     invoke-virtual {v7, v15}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 5691
+    .line 5692
     new-instance v5, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v5, v0, v13}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     move v3, v6
 
-    .line 5693
+    .line 5694
     :goto_6
     array-length v1, v8
 
     if-ge v3, v1, :cond_d
 
-    .line 5694
+    .line 5695
     new-instance v4, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-direct {v4, v0, v13}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     const/16 v16, 0x4
 
-    .line 5695
+    .line 5696
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -17639,14 +17637,14 @@
 
     invoke-virtual {v4, v1, v6, v2, v6}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 5696
+    .line 5697
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {v4, v1}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 5697
+    .line 5698
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
     invoke-static {v1, v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -17661,7 +17659,7 @@
 
     invoke-virtual {v4, v1, v2}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 5698
+    .line 5699
     aget-object v1, v8, v3
 
     aget v2, v9, v6
@@ -17678,10 +17676,10 @@
     :goto_7
     invoke-virtual {v4, v1, v2}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
-    .line 5699
+    .line 5700
     invoke-virtual {v7, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 5700
+    .line 5701
     new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda86;
 
     move-object v1, v2
@@ -17745,7 +17743,7 @@
 
     move-object v10, v7
 
-    .line 5753
+    .line 5754
     sget v0, Lorg/telegram/messenger/R$string;->NotificationsImportance:I
 
     const-string v1, "NotificationsImportance"
@@ -17758,10 +17756,10 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5754
+    .line 5755
     invoke-virtual {v1, v10}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5755
+    .line 5756
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -17774,7 +17772,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5756
+    .line 5757
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -17785,7 +17783,7 @@
 .method public static createProfileIdDialog(Landroid/content/Context;Ljava/lang/String;)Landroid/app/Dialog;
     .locals 3
 
-    .line 207
+    .line 208
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -17794,7 +17792,7 @@
 
     new-array p0, p0, [Ljava/lang/CharSequence;
 
-    .line 208
+    .line 209
     sget v1, Lorg/telegram/messenger/R$string;->Copy:I
 
     const-string v2, "Copy"
@@ -17813,7 +17811,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 220
+    .line 221
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -17836,7 +17834,7 @@
 
     goto/16 :goto_2
 
-    .line 4772
+    .line 4773
     :cond_0
     new-instance v10, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
@@ -17857,18 +17855,18 @@
     :cond_1
     move v3, v2
 
-    .line 4773
+    .line 4774
     :goto_0
     invoke-virtual {v10, v3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setDimBehind(Z)Lorg/telegram/ui/ActionBar/BottomSheet;
 
-    .line 4774
+    .line 4775
     new-instance v3, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda60;
 
     invoke-direct {v3, v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda60;-><init>(Ljava/lang/Runnable;)V
 
     invoke-virtual {v10, v3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setOnPreDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 4779
+    .line 4780
     sget v0, Lorg/telegram/messenger/R$string;->ReportChat:I
 
     const-string v3, "ReportChat"
@@ -17905,10 +17903,10 @@
 
     new-array v14, v13, [Ljava/lang/CharSequence;
 
-    .line 4785
+    .line 4786
     sget v13, Lorg/telegram/messenger/R$string;->ReportChatSpam:I
 
-    .line 4786
+    .line 4787
     invoke-static {v12, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v12
@@ -17917,7 +17915,7 @@
 
     sget v12, Lorg/telegram/messenger/R$string;->ReportChatViolence:I
 
-    .line 4787
+    .line 4788
     invoke-static {v11, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v11
@@ -17926,7 +17924,7 @@
 
     sget v11, Lorg/telegram/messenger/R$string;->ReportChatChild:I
 
-    .line 4788
+    .line 4789
     invoke-static {v8, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v8
@@ -17935,7 +17933,7 @@
 
     sget v8, Lorg/telegram/messenger/R$string;->ReportChatIllegalDrugs:I
 
-    .line 4789
+    .line 4790
     invoke-static {v7, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v7
@@ -17944,7 +17942,7 @@
 
     sget v7, Lorg/telegram/messenger/R$string;->ReportChatPersonalDetails:I
 
-    .line 4790
+    .line 4791
     invoke-static {v6, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
@@ -17953,7 +17951,7 @@
 
     sget v6, Lorg/telegram/messenger/R$string;->ReportChatPornography:I
 
-    .line 4791
+    .line 4792
     invoke-static {v3, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -17964,7 +17962,7 @@
 
     sget v3, Lorg/telegram/messenger/R$string;->ReportChatOther:I
 
-    .line 4792
+    .line 4793
     invoke-static {v0, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -17977,7 +17975,7 @@
 
     new-array v3, v0, [I
 
-    .line 4794
+    .line 4795
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_clearcache:I
 
     aput v0, v3, v2
@@ -18014,7 +18012,7 @@
 
     new-array v0, v0, [I
 
-    .line 4803
+    .line 4804
     fill-array-data v0, :array_0
 
     goto :goto_1
@@ -18024,10 +18022,10 @@
 
     new-array v14, v13, [Ljava/lang/CharSequence;
 
-    .line 4813
+    .line 4814
     sget v13, Lorg/telegram/messenger/R$string;->ReportChatSpam:I
 
-    .line 4814
+    .line 4815
     invoke-static {v12, v13}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v12
@@ -18038,7 +18036,7 @@
 
     const-string v13, "ReportChatFakeAccount"
 
-    .line 4815
+    .line 4816
     invoke-static {v13, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v12
@@ -18047,7 +18045,7 @@
 
     sget v12, Lorg/telegram/messenger/R$string;->ReportChatViolence:I
 
-    .line 4816
+    .line 4817
     invoke-static {v11, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v11
@@ -18056,7 +18054,7 @@
 
     sget v11, Lorg/telegram/messenger/R$string;->ReportChatChild:I
 
-    .line 4817
+    .line 4818
     invoke-static {v8, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v8
@@ -18065,7 +18063,7 @@
 
     sget v8, Lorg/telegram/messenger/R$string;->ReportChatIllegalDrugs:I
 
-    .line 4818
+    .line 4819
     invoke-static {v7, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v7
@@ -18074,7 +18072,7 @@
 
     sget v7, Lorg/telegram/messenger/R$string;->ReportChatPersonalDetails:I
 
-    .line 4819
+    .line 4820
     invoke-static {v6, v7}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v6
@@ -18085,7 +18083,7 @@
 
     sget v6, Lorg/telegram/messenger/R$string;->ReportChatPornography:I
 
-    .line 4820
+    .line 4821
     invoke-static {v3, v6}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -18096,7 +18094,7 @@
 
     sget v3, Lorg/telegram/messenger/R$string;->ReportChatOther:I
 
-    .line 4821
+    .line 4822
     invoke-static {v0, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -18109,7 +18107,7 @@
 
     new-array v3, v0, [I
 
-    .line 4823
+    .line 4824
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_clearcache:I
 
     aput v0, v3, v2
@@ -18152,7 +18150,7 @@
 
     new-array v0, v0, [I
 
-    .line 4833
+    .line 4834
     fill-array-data v0, :array_1
 
     :goto_1
@@ -18160,7 +18158,7 @@
 
     move-object v11, v3
 
-    .line 4844
+    .line 4845
     new-instance v12, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda51;
 
     move-object v0, v12
@@ -18181,12 +18179,12 @@
 
     invoke-virtual {v10, v14, v11, v12}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setItems([Ljava/lang/CharSequence;[ILandroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 4963
+    .line 4964
     invoke-virtual {v10}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->create()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object v0
 
-    .line 4964
+    .line 4965
     invoke-virtual {v9, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     :cond_3
@@ -18222,12 +18220,12 @@
 
     move-object/from16 v7, p0
 
-    .line 323
+    .line 324
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v8
 
-    .line 324
+    .line 325
     new-instance v9, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -18238,7 +18236,7 @@
 
     invoke-direct {v9, v8, v10, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 325
+    .line 326
     sget v0, Lorg/telegram/messenger/R$string;->backup_message_popup_restore:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -18249,35 +18247,35 @@
 
     invoke-virtual {v9, v0, v11}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setTitle(Ljava/lang/CharSequence;Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 326
+    .line 327
     invoke-virtual {v9, v10}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 327
+    .line 328
     new-instance v12, Landroid/widget/FrameLayout;
 
     invoke-direct {v12, v8}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 328
+    .line 329
     invoke-virtual {v9, v12}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 330
+    .line 331
     invoke-static {}, Lcom/iMe/fork/enums/BackupComponent;->values()[Lcom/iMe/fork/enums/BackupComponent;
 
     move-result-object v13
 
-    .line 331
+    .line 332
     array-length v0, v13
 
     new-array v14, v0, [Lorg/telegram/ui/Cells/TextCheckBoxCell;
 
-    .line 333
+    .line 334
     new-instance v15, Landroid/widget/FrameLayout;
 
     invoke-direct {v15, v8}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/16 v0, 0x8
 
-    .line 334
+    .line 335
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -18296,17 +18294,17 @@
 
     invoke-virtual {v15, v1, v2, v3, v0}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 336
+    .line 337
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     const/high16 v1, 0x41600000    # 14.0f
 
-    .line 337
+    .line 338
     invoke-virtual {v0, v11, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 338
+    .line 339
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
 
     invoke-virtual {v7, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -18317,19 +18315,19 @@
 
     const/16 v3, 0x11
 
-    .line 339
+    .line 340
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setGravity(I)V
 
     const-string v4, "fonts/rmedium.ttf"
 
-    .line 340
+    .line 341
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v5
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 341
+    .line 342
     sget v5, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v6, "Cancel"
@@ -18346,7 +18344,7 @@
 
     const/16 v5, 0xa
 
-    .line 342
+    .line 343
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -18363,29 +18361,29 @@
 
     const/16 v10, 0x33
 
-    .line 343
+    .line 344
     invoke-static {v3, v6, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v10
 
     invoke-virtual {v15, v0, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 344
+    .line 345
     new-instance v10, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda78;
 
     invoke-direct {v10, v9}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda78;-><init>(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
 
     invoke-virtual {v0, v10}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 346
+    .line 347
     new-instance v10, Landroid/widget/TextView;
 
     invoke-direct {v10, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 347
+    .line 348
     invoke-virtual {v10, v11, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 348
+    .line 349
     invoke-virtual {v7, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v0
@@ -18394,17 +18392,17 @@
 
     const/16 v0, 0x11
 
-    .line 349
+    .line 350
     invoke-virtual {v10, v0}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 350
+    .line 351
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
 
     invoke-virtual {v10, v0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 351
+    .line 352
     sget v0, Lorg/telegram/messenger/R$string;->backup_restore:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -18417,7 +18415,7 @@
 
     invoke-virtual {v10, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 352
+    .line 353
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -18432,14 +18430,14 @@
 
     const/16 v0, 0x35
 
-    .line 353
+    .line 354
     invoke-static {v3, v6, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v15, v10, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 354
+    .line 355
     new-instance v6, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda94;
 
     move-object v0, v6
@@ -18462,33 +18460,33 @@
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 373
+    .line 374
     new-instance v0, Landroid/widget/ScrollView;
 
     invoke-direct {v0, v8}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 374
+    .line 375
     new-instance v1, Landroid/widget/LinearLayout;
 
     invoke-direct {v1, v8}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v2, 0x1
 
-    .line 375
+    .line 376
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/4 v3, 0x0
 
-    .line 376
+    .line 377
     :goto_0
     array-length v4, v13
 
     if-ge v3, v4, :cond_1
 
-    .line 377
+    .line 378
     aget-object v4, v13, v3
 
-    .line 378
+    .line 379
     new-instance v6, Lorg/telegram/ui/Cells/TextCheckBoxCell;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -18501,7 +18499,7 @@
 
     aput-object v6, v14, v3
 
-    .line 379
+    .line 380
     invoke-virtual {v4}, Lcom/iMe/fork/enums/BackupComponent;->getTitle()Ljava/lang/String;
 
     move-result-object v4
@@ -18522,14 +18520,14 @@
     :goto_1
     invoke-virtual {v6, v4, v2, v11}, Lorg/telegram/ui/Cells/TextCheckBoxCell;->setTextAndCheck(Ljava/lang/String;ZZ)V
 
-    .line 380
+    .line 381
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
     invoke-virtual {v6, v4}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 381
+    .line 382
     new-instance v4, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda80;
 
     invoke-direct {v4, v6, v14, v10}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda80;-><init>(Lorg/telegram/ui/Cells/TextCheckBoxCell;[Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/widget/TextView;)V
@@ -18540,7 +18538,7 @@
 
     const/4 v5, -0x1
 
-    .line 393
+    .line 394
     invoke-static {v5, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v4
@@ -18551,7 +18549,7 @@
 
     goto :goto_0
 
-    .line 395
+    .line 396
     :cond_1
     invoke-virtual {v0, v1}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
@@ -18569,19 +18567,19 @@
 
     const/16 v22, 0x35
 
-    .line 397
+    .line 398
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {v12, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 398
+    .line 399
     new-instance v0, Landroid/view/View;
 
     invoke-direct {v0, v8}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 399
+    .line 400
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
     invoke-virtual {v7, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -18604,7 +18602,7 @@
 
     const/16 v8, 0x34
 
-    .line 400
+    .line 401
     invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
@@ -18617,21 +18615,21 @@
 
     const/4 v2, -0x1
 
-    .line 401
+    .line 402
     invoke-static {v2, v0, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v12, v15, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 402
+    .line 403
     invoke-virtual {v9}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->create()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    .line 403
+    .line 404
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCanDismissWithSwipe(Z)V
 
     return-object v0
@@ -18640,14 +18638,12 @@
 .method public static createScheduleDatePickerDialog(Landroid/content/Context;JJLorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
     .locals 10
 
-    .line 3330
+    .line 3331
     new-instance v7, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
-
-    const/4 v0, 0x0
 
     move-object/from16 v8, p7
 
-    invoke-direct {v7, v8, v0}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/AlertsCreator$1;)V
+    invoke-direct {v7, v8}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     move-object v0, p0
 
@@ -18671,7 +18667,7 @@
 .method public static createScheduleDatePickerDialog(Landroid/content/Context;JJLorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/Runnable;Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
     .locals 10
 
-    .line 3326
+    .line 3327
     new-instance v7, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
 
     const/4 v0, 0x0
@@ -18727,14 +18723,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 3338
+    .line 3339
     invoke-virtual {v0, v8, v9}, Lorg/telegram/ui/ChatActivity;->isTemplatesChannel(ZZ)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 3339
+    .line 3340
     new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda119;
 
     invoke-direct {v2, v10}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda119;-><init>(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)V
@@ -18747,7 +18743,7 @@
 
     return-object v1
 
-    .line 3344
+    .line 3345
     :cond_1
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -18759,7 +18755,7 @@
 
     move-result-wide v24
 
-    .line 3346
+    .line 3347
     invoke-interface/range {p5 .. p5}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;->getSelectedDialogs()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -18768,7 +18764,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 3348
+    .line 3349
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -18793,7 +18789,7 @@
 
     goto :goto_0
 
-    .line 3351
+    .line 3352
     :cond_2
     invoke-virtual {v0, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -18805,7 +18801,7 @@
 
     move-result-wide v1
 
-    .line 3352
+    .line 3353
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -18827,14 +18823,14 @@
 
     move-result-wide v4
 
-    .line 3353
+    .line 3354
     invoke-static {v4, v5}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
     move-result v11
 
     if-eqz v11, :cond_4
 
-    .line 3354
+    .line 3355
     sget v11, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v11}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -18851,7 +18847,7 @@
 
     if-eqz v4, :cond_4
 
-    .line 3355
+    .line 3356
     iget-boolean v5, v4, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
     if-nez v5, :cond_4
@@ -18877,28 +18873,28 @@
     :cond_6
     move-wide/from16 v28, p1
 
-    .line 3368
+    .line 3369
     :goto_0
     new-instance v11, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     invoke-direct {v11, v7, v9, v6}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 3369
+    .line 3370
     invoke-virtual {v11, v9}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 3371
+    .line 3372
     new-instance v15, Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-direct {v15, v7, v6}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 3372
+    .line 3373
     iget v1, v13, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v15, v1}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
     const/16 v1, 0xa
 
-    .line 3373
+    .line 3374
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -18907,31 +18903,31 @@
 
     const/4 v2, 0x5
 
-    .line 3374
+    .line 3375
     invoke-virtual {v15, v2}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 3375
+    .line 3376
     new-instance v14, Lorg/telegram/ui/Components/AlertsCreator$17;
 
     invoke-direct {v14, v7, v6}, Lorg/telegram/ui/Components/AlertsCreator$17;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 3381
+    .line 3382
     invoke-virtual {v14, v8}, Lorg/telegram/ui/Components/NumberPicker;->setWrapSelectorWheel(Z)V
 
     const/16 v3, 0x18
 
-    .line 3382
+    .line 3383
     invoke-virtual {v14, v3}, Lorg/telegram/ui/Components/NumberPicker;->setAllItemsCount(I)V
 
-    .line 3383
+    .line 3384
     invoke-virtual {v14, v2}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 3384
+    .line 3385
     iget v3, v13, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v14, v3}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
-    .line 3385
+    .line 3386
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -18940,30 +18936,30 @@
 
     invoke-virtual {v14, v3}, Lorg/telegram/ui/Components/NumberPicker;->setTextOffset(I)V
 
-    .line 3386
+    .line 3387
     new-instance v5, Lorg/telegram/ui/Components/AlertsCreator$18;
 
     invoke-direct {v5, v7, v6}, Lorg/telegram/ui/Components/AlertsCreator$18;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 3392
+    .line 3393
     invoke-virtual {v5, v8}, Lorg/telegram/ui/Components/NumberPicker;->setWrapSelectorWheel(Z)V
 
     const/16 v3, 0x3c
 
-    .line 3393
+    .line 3394
     invoke-virtual {v5, v3}, Lorg/telegram/ui/Components/NumberPicker;->setAllItemsCount(I)V
 
-    .line 3394
+    .line 3395
     invoke-virtual {v5, v2}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 3395
+    .line 3396
     iget v2, v13, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v5, v2}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
     const/16 v30, 0x22
 
-    .line 3396
+    .line 3397
     invoke-static/range {v30 .. v30}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -18972,15 +18968,15 @@
 
     invoke-virtual {v5, v2}, Lorg/telegram/ui/Components/NumberPicker;->setTextOffset(I)V
 
-    .line 3398
+    .line 3399
     new-instance v4, Lorg/telegram/ui/Components/AlertsCreator$19;
 
     invoke-direct {v4, v7, v15, v14, v5}, Lorg/telegram/ui/Components/AlertsCreator$19;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
-    .line 3429
+    .line 3430
     invoke-virtual {v4, v8}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 3431
+    .line 3432
     new-instance v3, Landroid/widget/FrameLayout;
 
     invoke-direct {v3, v7}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -18999,14 +18995,14 @@
 
     const/16 v22, 0x4
 
-    .line 3432
+    .line 3433
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v4, v3, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3434
+    .line 3435
     new-instance v2, Landroid/widget/TextView;
 
     invoke-direct {v2, v7}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -19015,7 +19011,7 @@
 
     if-nez v16, :cond_7
 
-    .line 3436
+    .line 3437
     sget v9, Lorg/telegram/messenger/R$string;->SetReminder:I
 
     const-string v1, "SetReminder"
@@ -19028,7 +19024,7 @@
 
     goto :goto_1
 
-    .line 3438
+    .line 3439
     :cond_7
     sget v1, Lorg/telegram/messenger/R$string;->ScheduleMessage:I
 
@@ -19040,7 +19036,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3440
+    .line 3441
     :goto_1
     iget v1, v13, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
@@ -19048,12 +19044,12 @@
 
     const/high16 v1, 0x41a00000    # 20.0f
 
-    .line 3441
+    .line 3442
     invoke-virtual {v2, v8, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v9, "fonts/rmedium.ttf"
 
-    .line 3442
+    .line 3443
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v1
@@ -19074,19 +19070,19 @@
 
     const/16 v23, 0x0
 
-    .line 3443
+    .line 3444
     invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {v3, v2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3444
+    .line 3445
     sget-object v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 3446
+    .line 3447
     invoke-static/range {v28 .. v29}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
     move-result v1
@@ -19095,7 +19091,7 @@
 
     if-eqz v16, :cond_a
 
-    .line 3447
+    .line 3448
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -19112,7 +19108,7 @@
 
     if-eqz v1, :cond_a
 
-    .line 3448
+    .line 3449
     iget-boolean v2, v1, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
     if-nez v2, :cond_a
@@ -19125,12 +19121,12 @@
 
     if-lez v2, :cond_a
 
-    .line 3449
+    .line 3450
     invoke-static {v1}, Lorg/telegram/messenger/UserObject;->getFirstName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3450
+    .line 3451
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -19139,7 +19135,7 @@
 
     if-le v2, v8, :cond_8
 
-    .line 3451
+    .line 3452
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -19170,7 +19166,7 @@
     :goto_2
     if-eqz v0, :cond_9
 
-    .line 3454
+    .line 3455
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -19184,7 +19180,7 @@
     :cond_9
     move-object v8, v1
 
-    .line 3459
+    .line 3460
     new-instance v3, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const/4 v2, 0x0
@@ -19223,20 +19219,20 @@
 
     const/4 v1, 0x0
 
-    .line 3460
+    .line 3461
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setLongClickEnabled(Z)V
 
     const/4 v1, 0x2
 
-    .line 3461
+    .line 3462
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setSubMenuOpenSide(I)V
 
-    .line 3462
+    .line 3463
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_other:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIcon(I)V
 
-    .line 3463
+    .line 3464
     iget v1, v13, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->iconSelectorColor:I
 
     const/4 v2, 0x1
@@ -19261,7 +19257,7 @@
 
     const/16 v22, 0x0
 
-    .line 3464
+    .line 3465
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
@@ -19270,7 +19266,7 @@
 
     invoke-virtual {v2, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3465
+    .line 3466
     sget v1, Lorg/telegram/messenger/R$string;->ScheduleWhenOnline:I
 
     const/4 v2, 0x1
@@ -19289,21 +19285,21 @@
 
     invoke-virtual {v0, v2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(ILjava/lang/CharSequence;)Landroid/widget/TextView;
 
-    .line 3466
+    .line 3467
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda74;
 
     invoke-direct {v1, v0, v13}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda74;-><init>(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 3472
+    .line 3473
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda143;
 
     invoke-direct {v1, v10, v11}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda143;-><init>(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setDelegate(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;)V
 
-    .line 3478
+    .line 3479
     sget v1, Lorg/telegram/messenger/R$string;->AccDescrMoreOptions:I
 
     const-string v2, "AccDescrMoreOptions"
@@ -19321,7 +19317,7 @@
 
     move-object/from16 p1, v5
 
-    .line 3482
+    .line 3483
     :goto_3
     new-instance v0, Landroid/widget/LinearLayout;
 
@@ -19329,12 +19325,12 @@
 
     const/4 v1, 0x0
 
-    .line 3483
+    .line 3484
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 3484
+    .line 3485
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setWeightSum(F)V
 
     const/16 v16, -0x1
@@ -19353,7 +19349,7 @@
 
     const/16 v23, 0xc
 
-    .line 3485
+    .line 3486
     invoke-static/range {v16 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIFIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v1
@@ -19362,27 +19358,27 @@
 
     invoke-virtual {v8, v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3487
+    .line 3488
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 3488
+    .line 3489
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v6
 
-    .line 3489
+    .line 3490
     invoke-virtual {v6, v1, v2}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     const/4 v3, 0x1
 
-    .line 3490
+    .line 3491
     invoke-virtual {v6, v3}, Ljava/util/Calendar;->get(I)I
 
     move-result v4
 
-    .line 3492
+    .line 3493
     new-instance v5, Lorg/telegram/ui/Components/AlertsCreator$20;
 
     invoke-direct {v5, v7}, Lorg/telegram/ui/Components/AlertsCreator$20;-><init>(Landroid/content/Context;)V
@@ -19393,32 +19389,32 @@
 
     const/4 v10, 0x0
 
-    .line 3499
+    .line 3500
     invoke-static {v10, v7, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v0, v15, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3500
+    .line 3501
     invoke-virtual {v15, v10}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v3, 0x16d
 
-    .line 3501
+    .line 3502
     invoke-virtual {v15, v3}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 3502
+    .line 3503
     invoke-virtual {v15, v10}, Lorg/telegram/ui/Components/NumberPicker;->setWrapSelectorWheel(Z)V
 
-    .line 3503
+    .line 3504
     new-instance v3, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda144;
 
     invoke-direct {v3, v1, v2, v6, v4}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda144;-><init>(JLjava/util/Calendar;I)V
 
     invoke-virtual {v15, v3}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 3522
+    .line 3523
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda169;
 
     move-object v10, v14
@@ -19443,64 +19439,64 @@
 
     invoke-direct/range {v14 .. v23}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda169;-><init>(Landroid/widget/LinearLayout;Landroid/widget/TextView;JJLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
-    .line 3530
+    .line 3531
     invoke-virtual {v4, v1}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
     const/4 v2, 0x0
 
-    .line 3532
+    .line 3533
     invoke-virtual {v10, v2}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v3, 0x17
 
-    .line 3533
+    .line 3534
     invoke-virtual {v10, v3}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
     const v3, 0x3e4ccccd    # 0.2f
 
-    .line 3534
+    .line 3535
     invoke-static {v2, v7, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v0, v10, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3535
+    .line 3536
     sget-object v3, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda158;
 
     invoke-virtual {v10, v3}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 3536
+    .line 3537
     invoke-virtual {v10, v1}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
     move-object/from16 v14, p1
 
-    .line 3538
+    .line 3539
     invoke-virtual {v14, v2}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v3, 0x3b
 
-    .line 3539
+    .line 3540
     invoke-virtual {v14, v3}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 3540
+    .line 3541
     invoke-virtual {v14, v2}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 3541
+    .line 3542
     sget-object v3, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda157;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda157;
 
     invoke-virtual {v14, v3}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
     const v3, 0x3e99999a    # 0.3f
 
-    .line 3542
+    .line 3543
     invoke-static {v2, v7, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {v0, v14, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3543
+    .line 3544
     invoke-virtual {v14, v1}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
     cmp-long v0, p3, v26
@@ -19517,7 +19513,7 @@
 
     mul-long v0, v0, p3
 
-    .line 3547
+    .line 3548
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -19528,25 +19524,25 @@
 
     const/4 v3, 0x0
 
-    .line 3548
+    .line 3549
     invoke-virtual {v6, v2, v3}, Ljava/util/Calendar;->set(II)V
 
     const/16 v7, 0xd
 
-    .line 3549
+    .line 3550
     invoke-virtual {v6, v7, v3}, Ljava/util/Calendar;->set(II)V
 
     const/16 v7, 0xe
 
-    .line 3550
+    .line 3551
     invoke-virtual {v6, v7, v3}, Ljava/util/Calendar;->set(II)V
 
     const/16 v7, 0xb
 
-    .line 3551
+    .line 3552
     invoke-virtual {v6, v7, v3}, Ljava/util/Calendar;->set(II)V
 
-    .line 3552
+    .line 3553
     invoke-virtual {v6}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v15
@@ -19561,12 +19557,12 @@
 
     long-to-int v3, v7
 
-    .line 3553
+    .line 3554
     invoke-virtual {v6, v0, v1}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     if-ltz v3, :cond_c
 
-    .line 3555
+    .line 3556
     invoke-virtual {v6, v2}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
@@ -19575,14 +19571,14 @@
 
     const/16 v0, 0xb
 
-    .line 3556
+    .line 3557
     invoke-virtual {v6, v0}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
 
     invoke-virtual {v10, v0}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 3557
+    .line 3558
     invoke-virtual {v4, v3}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
     goto :goto_4
@@ -19626,10 +19622,10 @@
 
     move-object v6, v14
 
-    .line 3562
+    .line 3563
     invoke-static/range {v1 .. v6}, Lorg/telegram/ui/Components/AlertsCreator;->checkScheduleDate(Landroid/widget/TextView;Landroid/widget/TextView;ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)Z
 
-    .line 3564
+    .line 3565
     invoke-static/range {v30 .. v30}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -19644,10 +19640,10 @@
 
     const/16 v0, 0x11
 
-    .line 3565
+    .line 3566
     invoke-virtual {v8, v0}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 3566
+    .line 3567
     iget v0, v13, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonTextColor:I
 
     invoke-virtual {v8, v0}, Landroid/widget/TextView;->setTextColor(I)V
@@ -19656,17 +19652,17 @@
 
     const/4 v1, 0x1
 
-    .line 3567
+    .line 3568
     invoke-virtual {v8, v1, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 3568
+    .line 3569
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
 
     invoke-virtual {v8, v0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 3569
+    .line 3570
     iget v0, v13, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonBackgroundColor:I
 
     new-array v1, v1, [F
@@ -19697,7 +19693,7 @@
 
     const/16 v23, 0x10
 
-    .line 3570
+    .line 3571
     invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
@@ -19706,7 +19702,7 @@
 
     invoke-virtual {v9, v8, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3571
+    .line 3572
     new-instance v6, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda99;
 
     move-object v0, v6
@@ -19745,15 +19741,15 @@
 
     move-object/from16 v0, p0
 
-    .line 3584
+    .line 3585
     invoke-virtual {v0, v12}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 3585
+    .line 3586
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->show()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object v1
 
-    .line 3586
+    .line 3587
     new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda61;
 
     move-object/from16 v3, p6
@@ -19764,12 +19760,12 @@
 
     move-object/from16 v2, p7
 
-    .line 3591
+    .line 3592
     iget v3, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->setBackgroundColor(I)V
 
-    .line 3592
+    .line 3593
     iget v2, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar(I)V
@@ -19794,7 +19790,7 @@
 
     move-object v8, p6
 
-    .line 3322
+    .line 3323
     invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/AlertsCreator;->createScheduleDatePickerDialog(Landroid/content/Context;JJLorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     move-result-object p0
@@ -19819,7 +19815,7 @@
 
     move-object v8, p5
 
-    .line 3314
+    .line 3315
     invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/AlertsCreator;->createScheduleDatePickerDialog(Landroid/content/Context;JJLorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     move-result-object p0
@@ -19842,7 +19838,7 @@
 
     move-object v7, p4
 
-    .line 3310
+    .line 3311
     invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/AlertsCreator;->createScheduleDatePickerDialog(Landroid/content/Context;JJLorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/Runnable;Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     move-result-object p0
@@ -19869,7 +19865,7 @@
 
     move-object v9, p5
 
-    .line 3318
+    .line 3319
     invoke-static/range {v0 .. v9}, Lorg/telegram/ui/Components/AlertsCreator;->createScheduleDatePickerDialog(Landroid/content/Context;JJLorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/Runnable;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     move-result-object p0
@@ -19882,7 +19878,7 @@
 
     const/4 v0, 0x0
 
-    .line 1122
+    .line 1123
     invoke-static {p0, v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->createSimpleAlert(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object p0
@@ -19895,7 +19891,7 @@
 
     const/4 v0, 0x0
 
-    .line 1126
+    .line 1127
     invoke-static {p0, p1, p2, v0}, Lorg/telegram/ui/Components/AlertsCreator;->createSimpleAlert(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object p0
@@ -19914,7 +19910,7 @@
 
     goto :goto_1
 
-    .line 1137
+    .line 1138
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -19922,7 +19918,7 @@
 
     if-nez p1, :cond_1
 
-    .line 1138
+    .line 1139
     sget p0, Lorg/telegram/messenger/R$string;->AppName:I
 
     const-string p1, "AppName"
@@ -19934,12 +19930,12 @@
     :cond_1
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1139
+    .line 1140
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     if-nez p3, :cond_2
 
-    .line 1141
+    .line 1142
     sget p0, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string p1, "OK"
@@ -19952,7 +19948,7 @@
 
     goto :goto_0
 
-    .line 1143
+    .line 1144
     :cond_2
     sget p0, Lorg/telegram/messenger/R$string;->Cancel:I
 
@@ -19964,7 +19960,7 @@
 
     invoke-virtual {v0, p0, p5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1144
+    .line 1145
     new-instance p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda24;
 
     invoke-direct {p0, p4}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda24;-><init>(Ljava/lang/Runnable;)V
@@ -19994,7 +19990,7 @@
 
     move-object v5, p3
 
-    .line 1130
+    .line 1131
     invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/AlertsCreator;->createSimpleAlert(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object p0
@@ -20013,7 +20009,7 @@
 
     goto/16 :goto_0
 
-    .line 2951
+    .line 2952
     :cond_0
     new-instance p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
@@ -20023,31 +20019,31 @@
 
     const/4 v0, 0x1
 
-    .line 2952
+    .line 2953
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setPauseNotifications(Z)V
 
     const/16 v1, 0xdc
 
-    .line 2953
+    .line 2954
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setDismissAnimationDuration(I)V
 
-    .line 2954
+    .line 2955
     invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    .line 2955
+    .line 2956
     invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 2956
+    .line 2957
     sget v1, Lorg/telegram/messenger/R$style;->PopupContextAnimation:I
 
     invoke-virtual {p0, v1}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    .line 2957
+    .line 2958
     invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
     const/16 v1, 0x3e8
 
-    .line 2958
+    .line 2959
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -20070,10 +20066,10 @@
 
     const/4 v1, 0x2
 
-    .line 2959
+    .line 2960
     invoke-virtual {p0, v1}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 2960
+    .line 2961
     invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
 
     move-result-object v1
@@ -20086,7 +20082,7 @@
 
     move v1, v0
 
-    .line 2963
+    .line 2964
     :cond_1
     invoke-virtual {p2}, Landroid/view/View;->getRootView()Landroid/view/View;
 
@@ -20094,21 +20090,21 @@
 
     if-eq v2, v3, :cond_2
 
-    .line 2964
+    .line 2965
     invoke-virtual {v2}, Landroid/view/View;->getX()F
 
     move-result v3
 
     add-float/2addr v0, v3
 
-    .line 2965
+    .line 2966
     invoke-virtual {v2}, Landroid/view/View;->getY()F
 
     move-result v3
 
     add-float/2addr v1, v3
 
-    .line 2966
+    .line 2967
     invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
@@ -20117,7 +20113,7 @@
 
     if-nez v2, :cond_1
 
-    .line 2971
+    .line 2972
     :cond_2
     invoke-virtual {p2}, Landroid/view/View;->getRootView()Landroid/view/View;
 
@@ -20157,7 +20153,7 @@
 
     invoke-virtual {p0, p2, v2, p3, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 2972
+    .line 2973
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dimBehind()V
 
     return-object p0
@@ -20172,17 +20168,17 @@
 .method public static createSingleChoiceDialog(Landroid/app/Activity;[Ljava/lang/String;Ljava/lang/String;ILandroid/content/DialogInterface$OnClickListener;)Landroid/app/Dialog;
     .locals 8
 
-    .line 5813
+    .line 5814
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v1, 0x1
 
-    .line 5814
+    .line 5815
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 5815
+    .line 5816
     new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
@@ -20191,20 +20187,20 @@
 
     move v4, v3
 
-    .line 5816
+    .line 5817
     :goto_0
     array-length v5, p1
 
     if-ge v4, v5, :cond_1
 
-    .line 5817
+    .line 5818
     new-instance v5, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-direct {v5, p0}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;)V
 
     const/4 v6, 0x4
 
-    .line 5818
+    .line 5819
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -20215,14 +20211,14 @@
 
     invoke-virtual {v5, v7, v3, v6, v3}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 5819
+    .line 5820
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
     invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 5820
+    .line 5821
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -20237,7 +20233,7 @@
 
     invoke-virtual {v5, v6, v7}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 5821
+    .line 5822
     aget-object v6, p1, v4
 
     if-ne p3, v4, :cond_0
@@ -20252,10 +20248,10 @@
     :goto_1
     invoke-virtual {v5, v6, v7}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
-    .line 5822
+    .line 5823
     invoke-virtual {v0, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 5823
+    .line 5824
     new-instance v6, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda76;
 
     invoke-direct {v6, v2, p4}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda76;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface$OnClickListener;)V
@@ -20266,14 +20262,14 @@
 
     goto :goto_0
 
-    .line 5830
+    .line 5831
     :cond_1
     invoke-virtual {v2, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5831
+    .line 5832
     invoke-virtual {v2, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5832
+    .line 5833
     sget p0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string p1, "Cancel"
@@ -20286,7 +20282,7 @@
 
     invoke-virtual {v2, p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5833
+    .line 5834
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -20301,43 +20297,43 @@
 
     move-object/from16 v1, p4
 
-    const/4 v2, 0x0
-
     if-nez v0, :cond_0
 
-    return-object v2
+    const/4 v0, 0x0
 
-    .line 4127
-    :cond_0
-    new-instance v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
-
-    invoke-direct {v3, v1, v2}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/AlertsCreator$1;)V
+    return-object v0
 
     .line 4128
-    new-instance v2, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    :cond_0
+    new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
+
+    invoke-direct {v2, v1}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    .line 4129
+    new-instance v3, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     const/4 v4, 0x0
 
-    invoke-direct {v2, v0, v4, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v3, v0, v4, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 4129
-    invoke-virtual {v2, v4}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+    .line 4130
+    invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 4131
+    .line 4132
     new-instance v5, Lorg/telegram/ui/Components/AlertsCreator$32;
 
     invoke-direct {v5, v0, v1}, Lorg/telegram/ui/Components/AlertsCreator$32;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 4137
+    .line 4138
     invoke-virtual {v5, v4}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v6, 0xa
 
-    .line 4138
+    .line 4139
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 4139
-    iget v7, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
+    .line 4140
+    iget v7, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v5, v7}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
@@ -20345,84 +20341,84 @@
 
     add-int/lit8 v8, p1, -0x1
 
-    .line 4140
+    .line 4141
     invoke-virtual {v5, v8}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 4141
+    .line 4142
     invoke-virtual {v5, v4}, Lorg/telegram/ui/Components/NumberPicker;->setWrapSelectorWheel(Z)V
 
-    .line 4142
+    .line 4143
     sget-object v8, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda152;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda152;
 
     invoke-virtual {v5, v8}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 4144
+    .line 4145
     new-instance v8, Lorg/telegram/ui/Components/AlertsCreator$33;
 
     invoke-direct {v8, v0, v1}, Lorg/telegram/ui/Components/AlertsCreator$33;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 4150
+    .line 4151
     invoke-virtual {v8, v4}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
-    .line 4151
+    .line 4152
     invoke-virtual {v8, v6}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 4152
-    iget v6, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
+    .line 4153
+    iget v6, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v8, v6}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
-    .line 4153
+    .line 4154
     div-int/lit8 v6, p2, 0x3c
 
     sub-int/2addr v6, v7
 
     invoke-virtual {v8, v6}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 4154
+    .line 4155
     invoke-virtual {v8, v4}, Lorg/telegram/ui/Components/NumberPicker;->setWrapSelectorWheel(Z)V
 
-    .line 4155
+    .line 4156
     sget-object v6, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda155;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda155;
 
     invoke-virtual {v8, v6}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 4157
+    .line 4158
     new-instance v6, Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-direct {v6, v0, v1}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 4158
+    .line 4159
     invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
-    .line 4159
+    .line 4160
     invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 4160
-    iget v1, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
+    .line 4161
+    iget v1, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v6, v1}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
-    .line 4161
+    .line 4162
     invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 4162
+    .line 4163
     invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/NumberPicker;->setWrapSelectorWheel(Z)V
 
-    .line 4163
+    .line 4164
     sget-object v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda159;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda159;
 
     invoke-virtual {v6, v1}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 4165
+    .line 4166
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$34;
 
     invoke-direct {v1, v0, v5, v8, v6}, Lorg/telegram/ui/Components/AlertsCreator$34;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
-    .line 4196
+    .line 4197
     invoke-virtual {v1, v7}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 4198
+    .line 4199
     new-instance v9, Landroid/widget/FrameLayout;
 
     invoke-direct {v9, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -20441,19 +20437,19 @@
 
     const/16 v16, 0x4
 
-    .line 4199
+    .line 4200
     invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v10
 
     invoke-virtual {v1, v9, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4201
+    .line 4202
     new-instance v10, Landroid/widget/TextView;
 
     invoke-direct {v10, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 4202
+    .line 4203
     sget v11, Lorg/telegram/messenger/R$string;->NotfificationsFrequencyTitle:I
 
     const-string v12, "NotfificationsFrequencyTitle"
@@ -20464,19 +20460,19 @@
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4204
-    iget v11, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
+    .line 4205
+    iget v11, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v10, v11}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/high16 v11, 0x41a00000    # 20.0f
 
-    .line 4205
+    .line 4206
     invoke-virtual {v10, v7, v11}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v11, "fonts/rmedium.ttf"
 
-    .line 4206
+    .line 4207
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v12
@@ -20497,29 +20493,29 @@
 
     const/16 v19, 0x0
 
-    .line 4207
+    .line 4208
     invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v12
 
     invoke-virtual {v9, v10, v12}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4208
+    .line 4209
     sget-object v9, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda112;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda112;
 
     invoke-virtual {v10, v9}, Landroid/widget/TextView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 4210
+    .line 4211
     new-instance v9, Landroid/widget/LinearLayout;
 
     invoke-direct {v9, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 4211
+    .line 4212
     invoke-virtual {v9, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/high16 v10, 0x3f800000    # 1.0f
 
-    .line 4212
+    .line 4213
     invoke-virtual {v9, v10}, Landroid/widget/LinearLayout;->setWeightSum(F)V
 
     const/4 v12, -0x1
@@ -20530,14 +20526,14 @@
 
     const/16 v19, 0xc
 
-    .line 4213
+    .line 4214
     invoke-static/range {v12 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIFIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v10
 
     invoke-virtual {v1, v9, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4215
+    .line 4216
     new-instance v10, Lorg/telegram/ui/Components/AlertsCreator$35;
 
     invoke-direct {v10, v0}, Lorg/telegram/ui/Components/AlertsCreator$35;-><init>(Landroid/content/Context;)V
@@ -20546,7 +20542,7 @@
 
     const v12, 0x3ecccccd    # 0.4f
 
-    .line 4222
+    .line 4223
     invoke-static {v4, v0, v12}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v13
@@ -20559,14 +20555,14 @@
 
     const/16 v15, 0x10
 
-    .line 4223
+    .line 4224
     invoke-static {v4, v13, v14, v15}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIFI)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v13
 
     invoke-virtual {v9, v6, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4224
+    .line 4225
     invoke-static {v4, v0, v12}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
@@ -20575,7 +20571,7 @@
 
     const/16 v0, 0x22
 
-    .line 4226
+    .line 4227
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -20588,20 +20584,20 @@
 
     const/16 v0, 0x11
 
-    .line 4227
+    .line 4228
     invoke-virtual {v10, v0}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 4228
-    iget v0, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonTextColor:I
+    .line 4229
+    iget v0, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonTextColor:I
 
     invoke-virtual {v10, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/high16 v0, 0x41600000    # 14.0f
 
-    .line 4229
+    .line 4230
     invoke-virtual {v10, v7, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 4230
+    .line 4231
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
@@ -20610,14 +20606,14 @@
 
     const/4 v0, 0x4
 
-    .line 4231
+    .line 4232
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    iget v4, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonBackgroundColor:I
+    iget v4, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonBackgroundColor:I
 
-    iget v6, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonBackgroundPressedColor:I
+    iget v6, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonBackgroundPressedColor:I
 
     invoke-static {v0, v4, v6}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorRoundRectDrawable(III)Landroid/graphics/drawable/Drawable;
 
@@ -20625,7 +20621,7 @@
 
     invoke-virtual {v10, v0}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 4232
+    .line 4233
     sget v0, Lorg/telegram/messenger/R$string;->AutoDeleteConfirm:I
 
     const-string v4, "AutoDeleteConfirm"
@@ -20650,52 +20646,52 @@
 
     const/16 v17, 0x10
 
-    .line 4233
+    .line 4234
     invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v1, v10, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4235
+    .line 4236
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda166;
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda166;-><init>(Landroid/widget/LinearLayout;)V
 
-    .line 4242
+    .line 4243
     invoke-virtual {v5, v0}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
-    .line 4243
+    .line 4244
     invoke-virtual {v8, v0}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
-    .line 4245
+    .line 4246
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;
 
     move-object/from16 v4, p3
 
-    invoke-direct {v0, v5, v8, v4, v2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;-><init>(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$SoundFrequencyDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
+    invoke-direct {v0, v5, v8, v4, v3}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda81;-><init>(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$SoundFrequencyDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
 
     invoke-virtual {v10, v0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 4252
-    invoke-virtual {v2, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
-
     .line 4253
-    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->show()Lorg/telegram/ui/ActionBar/BottomSheet;
+    invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
+
+    .line 4254
+    invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->show()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object v0
 
-    .line 4254
-    iget v1, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
+    .line 4255
+    iget v1, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setBackgroundColor(I)V
 
-    .line 4255
-    iget v1, v3, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
+    .line 4256
+    iget v1, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar(I)V
 
-    return-object v2
+    return-object v3
 .end method
 
 .method public static createStatusUntilDatePickerDialog(Landroid/content/Context;JLorg/telegram/ui/Components/AlertsCreator$StatusUntilDatePickerDelegate;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
@@ -20709,35 +20705,35 @@
 
     return-object v1
 
-    .line 3785
+    .line 3786
     :cond_0
     new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;
 
     invoke-direct {v2, v1}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;-><init>(Lorg/telegram/ui/Components/AlertsCreator$1;)V
 
-    .line 3786
+    .line 3787
     new-instance v1, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     const/4 v3, 0x0
 
     invoke-direct {v1, v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;Z)V
 
-    .line 3787
+    .line 3788
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setApplyBottomPadding(Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 3789
+    .line 3790
     new-instance v10, Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-direct {v10, v0}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;)V
 
-    .line 3790
+    .line 3791
     iget v4, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v10, v4}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
     const/16 v4, 0xa
 
-    .line 3791
+    .line 3792
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -20746,23 +20742,23 @@
 
     const/4 v5, 0x5
 
-    .line 3792
+    .line 3793
     invoke-virtual {v10, v5}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 3793
+    .line 3794
     new-instance v11, Lorg/telegram/ui/Components/AlertsCreator$25;
 
     invoke-direct {v11, v0}, Lorg/telegram/ui/Components/AlertsCreator$25;-><init>(Landroid/content/Context;)V
 
-    .line 3799
+    .line 3800
     invoke-virtual {v11, v5}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 3800
+    .line 3801
     iget v6, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v11, v6}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
-    .line 3801
+    .line 3802
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -20771,22 +20767,22 @@
 
     invoke-virtual {v11, v4}, Lorg/telegram/ui/Components/NumberPicker;->setTextOffset(I)V
 
-    .line 3802
+    .line 3803
     new-instance v12, Lorg/telegram/ui/Components/AlertsCreator$26;
 
     invoke-direct {v12, v0}, Lorg/telegram/ui/Components/AlertsCreator$26;-><init>(Landroid/content/Context;)V
 
-    .line 3808
+    .line 3809
     invoke-virtual {v12, v5}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 3809
+    .line 3810
     iget v4, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v12, v4}, Lorg/telegram/ui/Components/NumberPicker;->setTextColor(I)V
 
     const/16 v13, 0x22
 
-    .line 3810
+    .line 3811
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -20795,17 +20791,17 @@
 
     invoke-virtual {v12, v4}, Lorg/telegram/ui/Components/NumberPicker;->setTextOffset(I)V
 
-    .line 3812
+    .line 3813
     new-instance v14, Lorg/telegram/ui/Components/AlertsCreator$27;
 
     invoke-direct {v14, v0, v10, v11, v12}, Lorg/telegram/ui/Components/AlertsCreator$27;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     const/4 v15, 0x1
 
-    .line 3843
+    .line 3844
     invoke-virtual {v14, v15}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 3845
+    .line 3846
     new-instance v4, Landroid/widget/FrameLayout;
 
     invoke-direct {v4, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -20824,19 +20820,19 @@
 
     const/16 v22, 0x4
 
-    .line 3846
+    .line 3847
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v14, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3848
+    .line 3849
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 3849
+    .line 3850
     sget v6, Lorg/telegram/messenger/R$string;->SetEmojiStatusUntilTitle:I
 
     const-string v7, "SetEmojiStatusUntilTitle"
@@ -20847,19 +20843,19 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3851
+    .line 3852
     iget v6, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->textColor:I
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/high16 v6, 0x41a00000    # 20.0f
 
-    .line 3852
+    .line 3853
     invoke-virtual {v5, v15, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v16, "fonts/rmedium.ttf"
 
-    .line 3853
+    .line 3854
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v6
@@ -20876,29 +20872,29 @@
 
     const/16 v23, 0x0
 
-    .line 3854
+    .line 3855
     invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v4, v5, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3855
+    .line 3856
     sget-object v4, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda114;
 
     invoke-virtual {v5, v4}, Landroid/widget/TextView;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 3857
+    .line 3858
     new-instance v4, Landroid/widget/LinearLayout;
 
     invoke-direct {v4, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 3858
+    .line 3859
     invoke-virtual {v4, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    .line 3859
+    .line 3860
     invoke-virtual {v4, v5}, Landroid/widget/LinearLayout;->setWeightSum(F)V
 
     const/16 v17, -0x1
@@ -20911,39 +20907,39 @@
 
     const/16 v24, 0xc
 
-    .line 3860
+    .line 3861
     invoke-static/range {v17 .. v24}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIFIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v14, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3862
+    .line 3863
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
 
-    .line 3863
+    .line 3864
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v9
 
-    .line 3864
+    .line 3865
     invoke-virtual {v9, v5, v6}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 3865
+    .line 3866
     invoke-virtual {v9, v15}, Ljava/util/Calendar;->get(I)I
 
     move-result v21
 
     const/4 v7, 0x6
 
-    .line 3866
+    .line 3867
     invoke-virtual {v9, v7}, Ljava/util/Calendar;->get(I)I
 
     move-result v22
 
-    .line 3868
+    .line 3869
     new-instance v8, Lorg/telegram/ui/Components/AlertsCreator$28;
 
     invoke-direct {v8, v0}, Lorg/telegram/ui/Components/AlertsCreator$28;-><init>(Landroid/content/Context;)V
@@ -20952,25 +20948,25 @@
 
     const/16 v7, 0x10e
 
-    .line 3875
+    .line 3876
     invoke-static {v3, v7, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v4, v10, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3876
+    .line 3877
     invoke-virtual {v10, v3}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v0, 0x16d
 
-    .line 3877
+    .line 3878
     invoke-virtual {v10, v0}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 3878
+    .line 3879
     invoke-virtual {v10, v3}, Lorg/telegram/ui/Components/NumberPicker;->setWrapSelectorWheel(Z)V
 
-    .line 3879
+    .line 3880
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda146;
 
     move-object/from16 v17, v0
@@ -20983,65 +20979,65 @@
 
     invoke-virtual {v10, v0}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 3896
+    .line 3897
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda171;
 
     invoke-direct {v0, v14, v10, v11, v12}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda171;-><init>(Landroid/widget/LinearLayout;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
-    .line 3904
+    .line 3905
     invoke-virtual {v10, v0}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
-    .line 3906
+    .line 3907
     invoke-virtual {v11, v3}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v5, 0x17
 
-    .line 3907
+    .line 3908
     invoke-virtual {v11, v5}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
     const v5, 0x3e4ccccd    # 0.2f
 
-    .line 3908
+    .line 3909
     invoke-static {v3, v7, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v4, v11, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3909
+    .line 3910
     sget-object v5, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda151;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda151;
 
     invoke-virtual {v11, v5}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 3910
+    .line 3911
     invoke-virtual {v11, v0}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
-    .line 3912
+    .line 3913
     invoke-virtual {v12, v3}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v5, 0x3b
 
-    .line 3913
+    .line 3914
     invoke-virtual {v12, v5}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 3914
+    .line 3915
     invoke-virtual {v12, v3}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 3915
+    .line 3916
     sget-object v5, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda153;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda153;
 
     invoke-virtual {v12, v5}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
     const v5, 0x3e99999a    # 0.3f
 
-    .line 3916
+    .line 3917
     invoke-static {v3, v7, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v4, v12, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3917
+    .line 3918
     invoke-virtual {v12, v0}, Lorg/telegram/ui/Components/NumberPicker;->setOnValueChangedListener(Lorg/telegram/ui/Components/NumberPicker$OnValueChangeListener;)V
 
     const-wide/16 v4, 0x0
@@ -21060,7 +21056,7 @@
 
     mul-long v4, v4, p1
 
-    .line 3921
+    .line 3922
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
@@ -21069,25 +21065,25 @@
 
     const/16 v0, 0xc
 
-    .line 3922
+    .line 3923
     invoke-virtual {v9, v0, v3}, Ljava/util/Calendar;->set(II)V
 
     const/16 v6, 0xd
 
-    .line 3923
+    .line 3924
     invoke-virtual {v9, v6, v3}, Ljava/util/Calendar;->set(II)V
 
     const/16 v6, 0xe
 
-    .line 3924
+    .line 3925
     invoke-virtual {v9, v6, v3}, Ljava/util/Calendar;->set(II)V
 
     const/16 v6, 0xb
 
-    .line 3925
+    .line 3926
     invoke-virtual {v9, v6, v3}, Ljava/util/Calendar;->set(II)V
 
-    .line 3926
+    .line 3927
     invoke-virtual {v9}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide v17
@@ -21102,26 +21098,26 @@
 
     long-to-int v7, v13
 
-    .line 3927
+    .line 3928
     invoke-virtual {v9, v4, v5}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     if-ltz v7, :cond_2
 
-    .line 3929
+    .line 3930
     invoke-virtual {v9, v0}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
 
     invoke-virtual {v12, v0}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 3930
+    .line 3931
     invoke-virtual {v9, v6}, Ljava/util/Calendar;->get(I)I
 
     move-result v0
 
     invoke-virtual {v11, v0}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 3931
+    .line 3932
     invoke-virtual {v10, v7}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
     goto :goto_0
@@ -21147,12 +21143,12 @@
 
     move-object v9, v12
 
-    .line 3935
+    .line 3936
     invoke-static/range {v4 .. v9}, Lorg/telegram/ui/Components/AlertsCreator;->checkScheduleDate(Landroid/widget/TextView;Landroid/widget/TextView;ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)Z
 
     const/16 v4, 0x22
 
-    .line 3937
+    .line 3938
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -21165,20 +21161,20 @@
 
     const/16 v3, 0x11
 
-    .line 3938
+    .line 3939
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 3939
+    .line 3940
     iget v3, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->buttonTextColor:I
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/high16 v3, 0x41600000    # 14.0f
 
-    .line 3940
+    .line 3941
     invoke-virtual {v0, v15, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 3941
+    .line 3942
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v3
@@ -21187,7 +21183,7 @@
 
     const/4 v3, 0x4
 
-    .line 3942
+    .line 3943
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -21202,7 +21198,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 3943
+    .line 3944
     sget v3, Lorg/telegram/messenger/R$string;->SetEmojiStatusUntilButton:I
 
     const-string v4, "SetEmojiStatusUntilButton"
@@ -21227,7 +21223,7 @@
 
     const/16 v20, 0x10
 
-    .line 3944
+    .line 3945
     invoke-static/range {v14 .. v20}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
@@ -21236,7 +21232,7 @@
 
     invoke-virtual {v14, v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3945
+    .line 3946
     new-instance v15, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda83;
 
     move-object v3, v15
@@ -21257,20 +21253,20 @@
 
     invoke-virtual {v0, v15}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 3957
+    .line 3958
     invoke-virtual {v1, v14}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 3958
+    .line 3959
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->show()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object v0
 
-    .line 3959
+    .line 3960
     iget v3, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->setBackgroundColor(I)V
 
-    .line 3960
+    .line 3961
     iget v2, v2, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->backgroundColor:I
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar(I)V
@@ -21285,7 +21281,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 1630
+    .line 1631
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -21294,7 +21290,7 @@
 
     goto/16 :goto_1
 
-    .line 1633
+    .line 1634
     :cond_0
     new-instance v1, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -21308,7 +21304,7 @@
 
     invoke-direct {v1, v2, v3}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1634
+    .line 1635
     new-instance v2, Landroid/text/SpannableString;
 
     sget v3, Lorg/telegram/messenger/R$string;->AskAQuestionInfo:I
@@ -21333,7 +21329,7 @@
 
     invoke-direct {v2, v3}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 1635
+    .line 1636
     invoke-interface {v2}, Landroid/text/Spannable;->length()I
 
     move-result v3
@@ -21350,29 +21346,29 @@
 
     move v4, v5
 
-    .line 1636
+    .line 1637
     :goto_0
     array-length v6, v3
 
     if-ge v4, v6, :cond_1
 
-    .line 1637
+    .line 1638
     aget-object v6, v3, v4
 
-    .line 1638
+    .line 1639
     invoke-interface {v2, v6}, Landroid/text/Spannable;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v7
 
-    .line 1639
+    .line 1640
     invoke-interface {v2, v6}, Landroid/text/Spannable;->getSpanEnd(Ljava/lang/Object;)I
 
     move-result v8
 
-    .line 1640
+    .line 1641
     invoke-interface {v2, v6}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
 
-    .line 1641
+    .line 1642
     new-instance v9, Lorg/telegram/ui/Components/AlertsCreator$4;
 
     invoke-virtual {v6}, Landroid/text/style/URLSpan;->getURL()Ljava/lang/String;
@@ -21381,14 +21377,14 @@
 
     invoke-direct {v9, v6, p0}, Lorg/telegram/ui/Components/AlertsCreator$4;-><init>(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 1648
+    .line 1649
     invoke-interface {v2, v9, v7, v8, v5}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
 
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 1650
+    .line 1651
     :cond_1
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
@@ -21396,10 +21392,10 @@
 
     const/4 v3, 0x1
 
-    .line 1651
+    .line 1652
     invoke-virtual {v1, v3, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1652
+    .line 1653
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextLink:I
 
     invoke-static {v2, p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -21408,7 +21404,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    .line 1653
+    .line 1654
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogLinkSelection:I
 
     invoke-static {v2, p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -21419,7 +21415,7 @@
 
     const/16 v2, 0x17
 
-    .line 1654
+    .line 1655
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -21430,14 +21426,14 @@
 
     invoke-virtual {v1, v3, v5, v2, v5}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1655
+    .line 1656
     new-instance v2, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;
 
     invoke-direct {v2}, Lorg/telegram/messenger/AndroidUtilities$LinkMovementMethodMy;-><init>()V
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    .line 1656
+    .line 1657
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {v2, p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -21446,7 +21442,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1658
+    .line 1659
     new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -21455,10 +21451,10 @@
 
     invoke-direct {v2, v3, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1659
+    .line 1660
     invoke-virtual {v2, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1660
+    .line 1661
     sget p1, Lorg/telegram/messenger/R$string;->AskAQuestion:I
 
     const-string v1, "AskAQuestion"
@@ -21469,7 +21465,7 @@
 
     invoke-virtual {v2, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1661
+    .line 1662
     sget p1, Lorg/telegram/messenger/R$string;->AskButton:I
 
     const-string v1, "AskButton"
@@ -21484,7 +21480,7 @@
 
     invoke-virtual {v2, p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1662
+    .line 1663
     sget p0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string p1, "Cancel"
@@ -21495,7 +21491,7 @@
 
     invoke-virtual {v2, p0, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1663
+    .line 1664
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -21510,12 +21506,12 @@
 .method public static createTTLAlert(Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
     .locals 5
 
-    .line 5837
+    .line 5838
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 5838
+    .line 5839
     sget p2, Lorg/telegram/messenger/R$string;->MessageLifetime:I
 
     const-string v1, "MessageLifetime"
@@ -21526,22 +21522,22 @@
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5839
+    .line 5840
     new-instance p2, Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/NumberPicker;-><init>(Landroid/content/Context;)V
 
     const/4 p0, 0x0
 
-    .line 5840
+    .line 5841
     invoke-virtual {p2, p0}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/16 v1, 0x14
 
-    .line 5841
+    .line 5842
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/NumberPicker;->setMaxValue(I)V
 
-    .line 5842
+    .line 5843
     iget v2, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->ttl:I
 
     const/16 v3, 0x10
@@ -21550,7 +21546,7 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 5843
+    .line 5844
     invoke-virtual {p2, v2}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
     goto :goto_0
@@ -21560,7 +21556,7 @@
 
     if-ne v2, v4, :cond_1
 
-    .line 5845
+    .line 5846
     invoke-virtual {p2, v3}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
     goto :goto_0
@@ -21572,7 +21568,7 @@
 
     const/16 p0, 0x11
 
-    .line 5847
+    .line 5848
     invoke-virtual {p2, p0}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
     goto :goto_0
@@ -21584,7 +21580,7 @@
 
     const/16 p0, 0x12
 
-    .line 5849
+    .line 5850
     invoke-virtual {p2, p0}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
     goto :goto_0
@@ -21596,7 +21592,7 @@
 
     const/16 p0, 0x13
 
-    .line 5851
+    .line 5852
     invoke-virtual {p2, p0}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
     goto :goto_0
@@ -21606,7 +21602,7 @@
 
     if-ne v2, v3, :cond_5
 
-    .line 5853
+    .line 5854
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
     goto :goto_0
@@ -21614,20 +21610,20 @@
     :cond_5
     if-nez v2, :cond_6
 
-    .line 5855
+    .line 5856
     invoke-virtual {p2, p0}, Lorg/telegram/ui/Components/NumberPicker;->setValue(I)V
 
-    .line 5857
+    .line 5858
     :cond_6
     :goto_0
     sget-object p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda154;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda154;
 
     invoke-virtual {p2, p0}, Lorg/telegram/ui/Components/NumberPicker;->setFormatter(Lorg/telegram/ui/Components/NumberPicker$Formatter;)V
 
-    .line 5875
+    .line 5876
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5876
+    .line 5877
     sget p0, Lorg/telegram/messenger/R$string;->Done:I
 
     const-string v1, "Done"
@@ -21652,7 +21648,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 6366
+    .line 6367
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -21661,23 +21657,23 @@
 
     goto/16 :goto_1
 
-    .line 6369
+    .line 6370
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 6370
+    .line 6371
     new-instance v2, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-direct {v2, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
 
     const/4 v3, 0x0
 
-    .line 6371
+    .line 6372
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 6372
+    .line 6373
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogInputField:I
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -21698,12 +21694,12 @@
 
     invoke-virtual {v2, v4, v5, v6}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setLineColors(III)V
 
-    .line 6374
+    .line 6375
     new-instance v4, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v4, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 6375
+    .line 6376
     sget v5, Lorg/telegram/messenger/R$string;->NewTheme:I
 
     const-string v6, "NewTheme"
@@ -21714,7 +21710,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 6376
+    .line 6377
     sget v5, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v6, "Cancel"
@@ -21725,7 +21721,7 @@
 
     invoke-virtual {v4, v5, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 6377
+    .line 6378
     sget v3, Lorg/telegram/messenger/R$string;->Create:I
 
     const-string v5, "Create"
@@ -21738,27 +21734,27 @@
 
     invoke-virtual {v4, v3, v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 6381
+    .line 6382
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-direct {v3, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v5, 0x1
 
-    .line 6382
+    .line 6383
     invoke-virtual {v3, v5}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 6383
+    .line 6384
     invoke-virtual {v4, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 6385
+    .line 6386
     new-instance v6, Landroid/widget/TextView;
 
     invoke-direct {v6, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     if-eqz p1, :cond_1
 
-    .line 6387
+    .line 6388
     sget v0, Lorg/telegram/messenger/R$string;->EnterThemeNameEdit:I
 
     const-string v7, "EnterThemeNameEdit"
@@ -21775,7 +21771,7 @@
 
     goto :goto_0
 
-    .line 6389
+    .line 6390
     :cond_1
     sget v0, Lorg/telegram/messenger/R$string;->EnterThemeName:I
 
@@ -21790,12 +21786,12 @@
     :goto_0
     const/high16 v0, 0x41800000    # 16.0f
 
-    .line 6391
+    .line 6392
     invoke-virtual {v6, v5, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const/16 v7, 0x17
 
-    .line 6392
+    .line 6393
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -21818,7 +21814,7 @@
 
     invoke-virtual {v6, v8, v9, v7, v11}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 6393
+    .line 6394
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -21831,46 +21827,46 @@
 
     const/4 v9, -0x1
 
-    .line 6394
+    .line 6395
     invoke-static {v9, v8}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v8
 
     invoke-virtual {v3, v6, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6396
+    .line 6397
     invoke-virtual {v2, v5, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setTextSize(IF)V
 
-    .line 6397
+    .line 6398
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
-    .line 6398
+    .line 6399
     invoke-virtual {v2, v5}, Landroid/widget/EditText;->setMaxLines(I)V
 
-    .line 6399
+    .line 6400
     invoke-virtual {v2, v5}, Landroid/widget/EditText;->setLines(I)V
 
     const/16 v0, 0x4001
 
-    .line 6400
+    .line 6401
     invoke-virtual {v2, v0}, Landroid/widget/EditText;->setInputType(I)V
 
     const/16 v0, 0x33
 
-    .line 6401
+    .line 6402
     invoke-virtual {v2, v0}, Landroid/widget/EditText;->setGravity(I)V
 
-    .line 6402
+    .line 6403
     invoke-virtual {v2, v5}, Landroid/widget/EditText;->setSingleLine(Z)V
 
-    .line 6403
+    .line 6404
     invoke-virtual {v2, v10}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 6404
+    .line 6405
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -21881,7 +21877,7 @@
 
     const/16 v0, 0x14
 
-    .line 6405
+    .line 6406
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -21890,12 +21886,12 @@
 
     const/high16 v0, 0x3fc00000    # 1.5f
 
-    .line 6406
+    .line 6407
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
     const/4 v0, 0x4
 
-    .line 6407
+    .line 6408
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -21918,51 +21914,51 @@
 
     const/16 v16, 0x0
 
-    .line 6408
+    .line 6409
     invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v3, v2, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6409
+    .line 6410
     sget-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda117;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda117;
 
     invoke-virtual {v2, v0}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
-    .line 6413
+    .line 6414
     invoke-static/range {p3 .. p3}, Lorg/telegram/ui/Components/AlertsCreator;->generateThemeName(Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {v2, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 6414
+    .line 6415
     invoke-virtual {v2}, Landroid/widget/EditText;->length()I
 
     move-result v0
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
 
-    .line 6416
+    .line 6417
     invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v5
 
-    .line 6417
+    .line 6418
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda64;
 
     invoke-direct {v0, v2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda64;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
     invoke-virtual {v5, v0}, Landroid/app/Dialog;->setOnShowListener(Landroid/content/DialogInterface$OnShowListener;)V
 
-    .line 6421
+    .line 6422
     invoke-virtual {v1, v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 6422
+    .line 6423
     invoke-virtual {v2}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 6423
+    .line 6424
     invoke-virtual {v5, v9}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object v6
@@ -22002,12 +21998,12 @@
         }
     .end annotation
 
-    .line 499
+    .line 500
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 500
+    .line 501
     sget p0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
 
     invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -22018,17 +22014,17 @@
 
     invoke-virtual {v0, p1, p2, v1, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTopAnimation(IIZI)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 501
+    .line 502
     invoke-virtual {v0, p3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 502
+    .line 503
     new-instance p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda19;
 
     invoke-direct {p0, p5}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda19;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     invoke-virtual {v0, p4, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 503
+    .line 504
     sget p0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string p1, "Cancel"
@@ -22043,7 +22039,7 @@
 
     invoke-virtual {v0, p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 504
+    .line 505
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -22066,7 +22062,7 @@
 
     move-object v5, p5
 
-    .line 5286
+    .line 5287
     invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator;->createVibrationSelectDialog(Landroid/app/Activity;JILjava/lang/String;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/app/Dialog;
 
     move-result-object p0
@@ -22083,7 +22079,7 @@
 
     move-object/from16 v10, p6
 
-    .line 5290
+    .line 5291
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
@@ -22116,14 +22112,14 @@
 
     if-eqz v2, :cond_2
 
-    .line 5294
+    .line 5295
     invoke-interface {v1, v9, v14}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result v1
 
     aput v1, v12, v14
 
-    .line 5295
+    .line 5296
     aget v1, v12, v14
 
     if-ne v1, v7, :cond_0
@@ -22132,7 +22128,7 @@
 
     goto :goto_0
 
-    .line 5297
+    .line 5298
     :cond_0
     aget v1, v12, v14
 
@@ -22144,10 +22140,10 @@
     :goto_0
     new-array v1, v13, [Ljava/lang/String;
 
-    .line 5300
+    .line 5301
     sget v2, Lorg/telegram/messenger/R$string;->VibrationDefault:I
 
-    .line 5301
+    .line 5302
     invoke-static {v5, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -22156,7 +22152,7 @@
 
     sget v2, Lorg/telegram/messenger/R$string;->Short:I
 
-    .line 5302
+    .line 5303
     invoke-static {v4, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -22165,7 +22161,7 @@
 
     sget v2, Lorg/telegram/messenger/R$string;->Long:I
 
-    .line 5303
+    .line 5304
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -22174,7 +22170,7 @@
 
     sget v2, Lorg/telegram/messenger/R$string;->VibrationDisabled:I
 
-    .line 5304
+    .line 5305
     invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -22183,7 +22179,7 @@
 
     goto :goto_2
 
-    .line 5307
+    .line 5308
     :cond_2
     invoke-interface {v1, v9, v14}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
@@ -22191,7 +22187,7 @@
 
     aput v1, v12, v14
 
-    .line 5308
+    .line 5309
     aget v1, v12, v14
 
     if-nez v1, :cond_3
@@ -22200,7 +22196,7 @@
 
     goto :goto_1
 
-    .line 5310
+    .line 5311
     :cond_3
     aget v1, v12, v14
 
@@ -22210,7 +22206,7 @@
 
     goto :goto_1
 
-    .line 5312
+    .line 5313
     :cond_4
     aget v1, v12, v14
 
@@ -22224,10 +22220,10 @@
 
     new-array v1, v1, [Ljava/lang/String;
 
-    .line 5315
+    .line 5316
     sget v2, Lorg/telegram/messenger/R$string;->VibrationDisabled:I
 
-    .line 5316
+    .line 5317
     invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -22236,7 +22232,7 @@
 
     sget v2, Lorg/telegram/messenger/R$string;->VibrationDefault:I
 
-    .line 5317
+    .line 5318
     invoke-static {v5, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -22245,7 +22241,7 @@
 
     sget v2, Lorg/telegram/messenger/R$string;->Short:I
 
-    .line 5318
+    .line 5319
     invoke-static {v4, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -22254,7 +22250,7 @@
 
     sget v2, Lorg/telegram/messenger/R$string;->Long:I
 
-    .line 5319
+    .line 5320
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -22265,7 +22261,7 @@
 
     const-string v3, "OnlyIfSilent"
 
-    .line 5320
+    .line 5321
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -22275,33 +22271,33 @@
     :goto_2
     move-object v15, v1
 
-    .line 5324
+    .line 5325
     new-instance v8, Landroid/widget/LinearLayout;
 
     invoke-direct {v8, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 5325
+    .line 5326
     invoke-virtual {v8, v11}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 5326
+    .line 5327
     new-instance v7, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v7, v0, v10}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     move v6, v14
 
-    .line 5328
+    .line 5329
     :goto_3
     array-length v1, v15
 
     if-ge v6, v1, :cond_7
 
-    .line 5329
+    .line 5330
     new-instance v5, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-direct {v5, v0, v10}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 5330
+    .line 5331
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -22312,14 +22308,14 @@
 
     invoke-virtual {v5, v1, v14, v2, v14}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 5331
+    .line 5332
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {v5, v1}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 5332
+    .line 5333
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
     invoke-static {v1, v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -22334,7 +22330,7 @@
 
     invoke-virtual {v5, v1, v2}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 5333
+    .line 5334
     aget-object v1, v15, v6
 
     aget v2, v12, v14
@@ -22351,10 +22347,10 @@
     :goto_4
     invoke-virtual {v5, v1, v2}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
-    .line 5334
+    .line 5335
     invoke-virtual {v8, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 5335
+    .line 5336
     new-instance v3, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda87;
 
     move-object v1, v3
@@ -22400,7 +22396,7 @@
 
     move-object v14, v8
 
-    .line 5378
+    .line 5379
     sget v0, Lorg/telegram/messenger/R$string;->Vibrate:I
 
     const-string v1, "Vibrate"
@@ -22413,10 +22409,10 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5379
+    .line 5380
     invoke-virtual {v1, v14}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5380
+    .line 5381
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -22429,7 +22425,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5381
+    .line 5382
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -22446,7 +22442,7 @@
 
     if-eqz p5, :cond_0
 
-    .line 5278
+    .line 5279
     new-instance p4, Ljava/lang/StringBuilder;
 
     invoke-direct {p4}, Ljava/lang/StringBuilder;-><init>()V
@@ -22489,7 +22485,7 @@
 
     move-object v6, p7
 
-    .line 5282
+    .line 5283
     invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/AlertsCreator;->createVibrationSelectDialog(Landroid/app/Activity;JILjava/lang/String;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/app/Dialog;
 
     move-result-object p0
@@ -22520,7 +22516,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 589
+    .line 590
     instance-of v1, p0, Landroid/app/Activity;
 
     if-eqz v1, :cond_1
@@ -22531,12 +22527,12 @@
 
     if-lt v1, v2, :cond_1
 
-    .line 590
+    .line 591
     move-object v1, p0
 
     check-cast v1, Landroid/app/Activity;
 
-    .line 591
+    .line 592
     array-length v2, p2
 
     move v3, v0
@@ -22546,7 +22542,7 @@
 
     aget-object v4, p2, v3
 
-    .line 592
+    .line 593
     invoke-virtual {v1, v4}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v5
@@ -22571,13 +22567,13 @@
     :cond_1
     move p2, v0
 
-    .line 598
+    .line 599
     :goto_1
     new-instance v1, Ljava/util/concurrent/atomic/AtomicBoolean;
 
     invoke-direct {v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
-    .line 600
+    .line 601
     new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v2, p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -22586,7 +22582,7 @@
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
 
-    .line 601
+    .line 602
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
@@ -22599,7 +22595,7 @@
 
     move-object p4, p5
 
-    .line 602
+    .line 603
     :cond_2
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
 
@@ -22611,7 +22607,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 603
+    .line 604
     sget p3, Lorg/telegram/messenger/R$string;->PermissionOpenSettings:I
 
     goto :goto_2
@@ -22634,7 +22630,7 @@
 
     sget p1, Lorg/telegram/messenger/R$string;->BotWebViewRequestDontAllow:I
 
-    .line 617
+    .line 618
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p1
@@ -22651,12 +22647,12 @@
 
     invoke-direct {p1, v1, p6}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda62;-><init>(Ljava/util/concurrent/atomic/AtomicBoolean;Landroidx/core/util/Consumer;)V
 
-    .line 621
+    .line 622
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-result-object p0
 
-    .line 626
+    .line 627
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -22881,7 +22877,7 @@
 
     const-string v106, "Winsome"
 
-    .line 6474
+    .line 6475
     filled-new-array/range {v0 .. v106}, [Ljava/lang/String;
 
     move-result-object v0
@@ -23052,7 +23048,7 @@
 
     const-string v81, "Zone"
 
-    .line 6584
+    .line 6585
     filled-new-array/range {v1 .. v81}, [Ljava/lang/String;
 
     move-result-object v1
@@ -23061,14 +23057,14 @@
 
     move-result-object v1
 
-    .line 6668
+    .line 6669
     new-instance v2, Ljava/util/HashMap;
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     const/high16 v3, 0x8e0000
 
-    .line 6669
+    .line 6670
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23079,7 +23075,7 @@
 
     const v3, 0xdec196
 
-    .line 6670
+    .line 6671
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23090,7 +23086,7 @@
 
     const v3, 0x800b47
 
-    .line 6671
+    .line 6672
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23101,7 +23097,7 @@
 
     const v3, 0xff7f50
 
-    .line 6672
+    .line 6673
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23112,7 +23108,7 @@
 
     const v3, 0xdb5079
 
-    .line 6673
+    .line 6674
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23123,7 +23119,7 @@
 
     const v3, 0xdc143c
 
-    .line 6674
+    .line 6675
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23134,7 +23130,7 @@
 
     const v3, 0xe0b0ff
 
-    .line 6675
+    .line 6676
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23145,7 +23141,7 @@
 
     const v3, 0xffc0cb
 
-    .line 6676
+    .line 6677
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23156,7 +23152,7 @@
 
     const/high16 v3, 0xff0000
 
-    .line 6677
+    .line 6678
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23167,7 +23163,7 @@
 
     const v3, 0xff007f
 
-    .line 6678
+    .line 6679
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23178,7 +23174,7 @@
 
     const v3, 0x80461b
 
-    .line 6679
+    .line 6680
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23189,7 +23185,7 @@
 
     const v3, 0xff2400
 
-    .line 6680
+    .line 6681
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23200,7 +23196,7 @@
 
     const v3, 0xf1f1f1
 
-    .line 6681
+    .line 6682
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23211,7 +23207,7 @@
 
     const v3, 0xff3399
 
-    .line 6682
+    .line 6683
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23222,7 +23218,7 @@
 
     const v3, 0xffbf00
 
-    .line 6683
+    .line 6684
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23233,7 +23229,7 @@
 
     const v3, 0xeb9373
 
-    .line 6684
+    .line 6685
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23244,7 +23240,7 @@
 
     const v3, 0xfbe7b2
 
-    .line 6685
+    .line 6686
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23255,7 +23251,7 @@
 
     const v3, 0xa1c50a
 
-    .line 6686
+    .line 6687
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23266,7 +23262,7 @@
 
     const v3, 0xb06500
 
-    .line 6687
+    .line 6688
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23277,7 +23273,7 @@
 
     const v3, 0xffd700
 
-    .line 6688
+    .line 6689
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23288,7 +23284,7 @@
 
     const v3, 0xfde910
 
-    .line 6689
+    .line 6690
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23299,7 +23295,7 @@
 
     const v3, 0xffa500
 
-    .line 6690
+    .line 6691
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23310,7 +23306,7 @@
 
     const v3, 0xffe5b4
 
-    .line 6691
+    .line 6692
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23321,7 +23317,7 @@
 
     const v3, 0xff6b53
 
-    .line 6692
+    .line 6693
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23332,7 +23328,7 @@
 
     const v3, 0xe4d422
 
-    .line 6693
+    .line 6694
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23343,7 +23339,7 @@
 
     const v3, 0xf28500
 
-    .line 6694
+    .line 6695
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23354,7 +23350,7 @@
 
     const v3, 0xffc87c
 
-    .line 6695
+    .line 6696
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23365,7 +23361,7 @@
 
     const v3, 0xffff00
 
-    .line 6696
+    .line 6697
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23376,7 +23372,7 @@
 
     const v3, 0x384910
 
-    .line 6697
+    .line 6698
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23387,7 +23383,7 @@
 
     const v3, 0x83aa5d
 
-    .line 6698
+    .line 6699
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23398,7 +23394,7 @@
 
     const v3, 0x50c878
 
-    .line 6699
+    .line 6700
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23409,7 +23405,7 @@
 
     const v3, 0xb5b35c
 
-    .line 6700
+    .line 6701
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23420,7 +23416,7 @@
 
     const v3, 0xff00
 
-    .line 6701
+    .line 6702
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23431,7 +23427,7 @@
 
     const v3, 0xa86b
 
-    .line 6702
+    .line 6703
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23442,7 +23438,7 @@
 
     const v3, 0x29ab87
 
-    .line 6703
+    .line 6704
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23453,7 +23449,7 @@
 
     const v3, 0xbfff00
 
-    .line 6704
+    .line 6705
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23464,7 +23460,7 @@
 
     const v3, 0xbda51
 
-    .line 6705
+    .line 6706
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23475,7 +23471,7 @@
 
     const v3, 0x98ff98
 
-    .line 6706
+    .line 6707
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23486,7 +23482,7 @@
 
     const v3, 0xaddfad
 
-    .line 6707
+    .line 6708
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23497,7 +23493,7 @@
 
     const v3, 0x315ba1
 
-    .line 6708
+    .line 6709
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23508,7 +23504,7 @@
 
     const/16 v3, 0xff
 
-    .line 6709
+    .line 6710
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23519,7 +23515,7 @@
 
     const/16 v3, 0x47ab
 
-    .line 6710
+    .line 6711
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23530,7 +23526,7 @@
 
     const v3, 0x4f69c6
 
-    .line 6711
+    .line 6712
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23541,7 +23537,7 @@
 
     const v3, 0x17987
 
-    .line 6712
+    .line 6713
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23552,7 +23548,7 @@
 
     const v3, 0x71d9e2
 
-    .line 6713
+    .line 6714
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23563,7 +23559,7 @@
 
     const v3, 0x120a8f
 
-    .line 6714
+    .line 6715
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23574,7 +23570,7 @@
 
     const/16 v3, 0x80
 
-    .line 6715
+    .line 6716
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23585,7 +23581,7 @@
 
     const v3, 0x2f519e
 
-    .line 6716
+    .line 6717
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23596,7 +23592,7 @@
 
     const v3, 0x76d7ea
 
-    .line 6717
+    .line 6718
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23607,7 +23603,7 @@
 
     const v3, 0x8080
 
-    .line 6718
+    .line 6719
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23618,7 +23614,7 @@
 
     const v3, 0x40e0d0
 
-    .line 6719
+    .line 6720
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23629,7 +23625,7 @@
 
     const v3, 0x9966cc
 
-    .line 6720
+    .line 6721
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23640,7 +23636,7 @@
 
     const v3, 0x4d0135
 
-    .line 6721
+    .line 6722
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23651,7 +23647,7 @@
 
     const v3, 0x614051
 
-    .line 6722
+    .line 6723
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23662,7 +23658,7 @@
 
     const v3, 0xc8a2c8
 
-    .line 6723
+    .line 6724
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23673,7 +23669,7 @@
 
     const v3, 0xb57edc
 
-    .line 6724
+    .line 6725
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23684,7 +23680,7 @@
 
     const v3, 0xccccff
 
-    .line 6725
+    .line 6726
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23695,7 +23691,7 @@
 
     const v3, 0x843179
 
-    .line 6726
+    .line 6727
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23706,7 +23702,7 @@
 
     const v3, 0x660099
 
-    .line 6727
+    .line 6728
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23717,7 +23713,7 @@
 
     const v3, 0xd8bfd8
 
-    .line 6728
+    .line 6729
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23728,7 +23724,7 @@
 
     const v3, 0xda70d6
 
-    .line 6729
+    .line 6730
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23739,7 +23735,7 @@
 
     const v3, 0x240a40
 
-    .line 6730
+    .line 6731
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23750,7 +23746,7 @@
 
     const v3, 0x3f2109
 
-    .line 6731
+    .line 6732
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23761,7 +23757,7 @@
 
     const v3, 0x370202
 
-    .line 6732
+    .line 6733
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23772,7 +23768,7 @@
 
     const v3, 0x7b3f00
 
-    .line 6733
+    .line 6734
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23783,7 +23779,7 @@
 
     const v3, 0x301f1e
 
-    .line 6734
+    .line 6735
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23794,7 +23790,7 @@
 
     const v3, 0x706555
 
-    .line 6735
+    .line 6736
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23805,7 +23801,7 @@
 
     const v3, 0x796989
 
-    .line 6736
+    .line 6737
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23816,7 +23812,7 @@
 
     const v3, 0x4e0606
 
-    .line 6737
+    .line 6738
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23827,7 +23823,7 @@
 
     const v3, 0x782d19
 
-    .line 6738
+    .line 6739
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23838,7 +23834,7 @@
 
     const v3, 0xc2b280
 
-    .line 6739
+    .line 6740
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23849,7 +23845,7 @@
 
     const v3, 0x882d17
 
-    .line 6740
+    .line 6741
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23860,7 +23856,7 @@
 
     const v3, 0x780109
 
-    .line 6741
+    .line 6742
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23871,7 +23867,7 @@
 
     const v3, 0xf0e68c
 
-    .line 6742
+    .line 6743
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23882,7 +23878,7 @@
 
     const v3, 0xb87333
 
-    .line 6743
+    .line 6744
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23893,7 +23889,7 @@
 
     const v3, 0xb94e48
 
-    .line 6744
+    .line 6745
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23904,7 +23900,7 @@
 
     const v3, 0xeed9c4
 
-    .line 6745
+    .line 6746
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23915,7 +23911,7 @@
 
     const v3, 0xfffdd0
 
-    .line 6746
+    .line 6747
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23926,7 +23922,7 @@
 
     const v3, 0xb9f2ff
 
-    .line 6747
+    .line 6748
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23937,7 +23933,7 @@
 
     const v3, 0xa98307
 
-    .line 6748
+    .line 6749
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23948,7 +23944,7 @@
 
     const v3, 0xfffff0
 
-    .line 6749
+    .line 6750
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23959,7 +23955,7 @@
 
     const v3, 0xeae0c8
 
-    .line 6750
+    .line 6751
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23970,7 +23966,7 @@
 
     const v3, 0xeff2f3
 
-    .line 6751
+    .line 6752
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23981,7 +23977,7 @@
 
     const v3, 0xd1bea8
 
-    .line 6752
+    .line 6753
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -23992,7 +23988,7 @@
 
     const v3, 0xffffff
 
-    .line 6753
+    .line 6754
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -24003,7 +23999,7 @@
 
     const v3, 0x808080
 
-    .line 6754
+    .line 6755
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v3
@@ -24014,7 +24010,7 @@
 
     const/4 v3, 0x0
 
-    .line 6755
+    .line 6756
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -24025,7 +24021,7 @@
 
     const v5, 0xe8f1d4
 
-    .line 6756
+    .line 6757
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -24036,7 +24032,7 @@
 
     const v5, 0x36454f
 
-    .line 6757
+    .line 6758
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -24047,7 +24043,7 @@
 
     const v5, 0xc0b1d
 
-    .line 6758
+    .line 6759
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -24058,7 +24054,7 @@
 
     const v5, 0xc0c0c0
 
-    .line 6759
+    .line 6760
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -24069,7 +24065,7 @@
 
     const v5, 0xf5f5f5
 
-    .line 6760
+    .line 6761
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -24080,7 +24076,7 @@
 
     const v5, 0x262335
 
-    .line 6761
+    .line 6762
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -24091,7 +24087,7 @@
 
     const v5, 0x4fa83d
 
-    .line 6762
+    .line 6763
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -24102,7 +24098,7 @@
 
     const v5, 0x80b3c4
 
-    .line 6763
+    .line 6764
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -24113,7 +24109,7 @@
 
     const v5, 0xfebaad
 
-    .line 6764
+    .line 6765
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -24124,7 +24120,7 @@
 
     const v5, 0xc54b8c
 
-    .line 6765
+    .line 6766
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -24135,7 +24131,7 @@
 
     const v5, 0xa9c6c2
 
-    .line 6766
+    .line 6767
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -24146,7 +24142,7 @@
 
     const v5, 0x54a5f8
 
-    .line 6767
+    .line 6768
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -24155,12 +24151,12 @@
 
     if-nez p0, :cond_0
 
-    .line 6771
+    .line 6772
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v4
 
-    .line 6772
+    .line 6773
     invoke-virtual {v4, v3}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->getAccent(Z)Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
 
     move-result-object v4
@@ -24173,14 +24169,14 @@
     :goto_0
     if-eqz v4, :cond_1
 
-    .line 6774
+    .line 6775
     iget v4, v4, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->accentColor:I
 
     if-eqz v4, :cond_1
 
     goto :goto_1
 
-    .line 6777
+    .line 6778
     :cond_1
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCachedWallpaper()Landroid/graphics/drawable/Drawable;
 
@@ -24197,22 +24193,22 @@
 
     const v5, 0x7fffffff
 
-    .line 6782
+    .line 6783
     invoke-static {v4}, Landroid/graphics/Color;->red(I)I
 
     move-result v6
 
-    .line 6783
+    .line 6784
     invoke-static {v4}, Landroid/graphics/Color;->green(I)I
 
     move-result v7
 
-    .line 6784
+    .line 6785
     invoke-static {v4}, Landroid/graphics/Color;->blue(I)I
 
     move-result v4
 
-    .line 6786
+    .line 6787
     invoke-virtual {v2}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object v2
@@ -24235,14 +24231,14 @@
 
     check-cast v8, Ljava/util/Map$Entry;
 
-    .line 6787
+    .line 6788
     invoke-interface {v8}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v9
 
     check-cast v9, Ljava/lang/Integer;
 
-    .line 6788
+    .line 6789
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v10
@@ -24251,7 +24247,7 @@
 
     move-result v10
 
-    .line 6789
+    .line 6790
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v11
@@ -24260,7 +24256,7 @@
 
     move-result v11
 
-    .line 6790
+    .line 6791
     invoke-virtual {v9}, Ljava/lang/Integer;->intValue()I
 
     move-result v9
@@ -24271,7 +24267,7 @@
 
     add-int v12, v6, v10
 
-    .line 6792
+    .line 6793
     div-int/lit8 v12, v12, 0x2
 
     sub-int v10, v6, v10
@@ -24306,7 +24302,7 @@
 
     if-ge v10, v5, :cond_2
 
-    .line 6799
+    .line 6800
     invoke-interface {v8}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v3
@@ -24317,7 +24313,7 @@
 
     goto :goto_2
 
-    .line 6804
+    .line 6805
     :cond_3
     sget-object v2, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
@@ -24331,7 +24327,7 @@
 
     if-nez v2, :cond_4
 
-    .line 6805
+    .line 6806
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -24364,7 +24360,7 @@
 
     goto :goto_3
 
-    .line 6807
+    .line 6808
     :cond_4
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -24403,7 +24399,7 @@
 .method private static getFloodWaitString(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
 
-    .line 4968
+    .line 4969
     invoke-static {p0}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
     move-result-object p0
@@ -24422,14 +24418,14 @@
 
     const-string v2, "Seconds"
 
-    .line 4971
+    .line 4972
     invoke-static {v2, p0, v0}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
     goto :goto_0
 
-    .line 4973
+    .line 4974
     :cond_0
     div-int/2addr p0, v0
 
@@ -24441,7 +24437,7 @@
 
     move-result-object p0
 
-    .line 4975
+    .line 4976
     :goto_0
     sget v0, Lorg/telegram/messenger/R$string;->FloodWaitTime:I
 
@@ -24463,21 +24459,21 @@
 .method private static synthetic lambda$checkRestrictedInviteUsers$75(ILorg/telegram/tgnet/TLRPC$Chat;Ljava/util/ArrayList;)V
     .locals 7
 
-    .line 2996
+    .line 2997
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 2997
+    .line 2998
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 2998
+    .line 2999
     new-instance v6, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -24494,10 +24490,10 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 2999
+    .line 3000
     invoke-virtual {v6, p1, p2}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->setRestrictedUsers(Lorg/telegram/tgnet/TLRPC$Chat;Ljava/util/ArrayList;)V
 
-    .line 3000
+    .line 3001
     invoke-virtual {v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
     :cond_0
@@ -24509,26 +24505,26 @@
 
     const/4 v0, 0x0
 
-    .line 5924
+    .line 5925
     aget-object v1, p0, v0
 
     if-eqz v1, :cond_0
 
-    .line 5925
+    .line 5926
     aget-object p0, p0, v0
 
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 5927
+    .line 5928
     :cond_0
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 5928
+    .line 5929
     check-cast p3, Lorg/telegram/ui/Cells/AccountSelectCell;
 
-    .line 5929
+    .line 5930
     invoke-virtual {p3}, Lorg/telegram/ui/Cells/AccountSelectCell;->getAccountNumber()I
 
     move-result p0
@@ -24541,7 +24537,7 @@
 .method private static synthetic lambda$createApkRestrictedDialog$29(Landroid/content/Context;Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 636
+    .line 637
     :try_start_0
     new-instance p1, Landroid/content/Intent;
 
@@ -24580,7 +24576,7 @@
     :catch_0
     move-exception p0
 
-    .line 638
+    .line 639
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -24590,12 +24586,12 @@
 .method private static synthetic lambda$createAutoDeleteDatePickerDialog$107([II)Ljava/lang/String;
     .locals 4
 
-    .line 4014
+    .line 4015
     aget v0, p0, p1
 
     if-nez v0, :cond_0
 
-    .line 4015
+    .line 4016
     sget p0, Lorg/telegram/messenger/R$string;->AutoDeleteNever:I
 
     const-string p1, "AutoDeleteNever"
@@ -24606,7 +24602,7 @@
 
     return-object p0
 
-    .line 4016
+    .line 4017
     :cond_0
     aget v0, p0, p1
 
@@ -24616,7 +24612,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 4017
+    .line 4018
     aget p0, p0, p1
 
     div-int/lit16 p0, p0, 0x5a0
@@ -24631,7 +24627,7 @@
 
     return-object p0
 
-    .line 4018
+    .line 4019
     :cond_1
     aget v0, p0, p1
 
@@ -24639,7 +24635,7 @@
 
     if-ge v0, v3, :cond_2
 
-    .line 4019
+    .line 4020
     aget p0, p0, p1
 
     div-int/2addr p0, v1
@@ -24654,7 +24650,7 @@
 
     return-object p0
 
-    .line 4020
+    .line 4021
     :cond_2
     aget v0, p0, p1
 
@@ -24662,7 +24658,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 4021
+    .line 4022
     aget p0, p0, p1
 
     div-int/2addr p0, v3
@@ -24677,7 +24673,7 @@
 
     return-object p0
 
-    .line 4023
+    .line 4024
     :cond_3
     aget p0, p0, p1
 
@@ -24710,7 +24706,7 @@
     :try_start_0
     const-string p2, "DisableAutoDeleteTimer"
 
-    .line 4094
+    .line 4095
     sget p3, Lorg/telegram/messenger/R$string;->DisableAutoDeleteTimer:I
 
     invoke-static {p2, p3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -24724,7 +24720,7 @@
     :cond_0
     const-string p2, "SetAutoDeleteTimer"
 
-    .line 4096
+    .line 4097
     sget p3, Lorg/telegram/messenger/R$string;->SetAutoDeleteTimer:I
 
     invoke-static {p2, p3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -24738,7 +24734,7 @@
 
     const/4 p2, 0x2
 
-    .line 4098
+    .line 4099
     invoke-virtual {p1, p0, p2}, Landroid/widget/LinearLayout;->performHapticFeedback(II)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -24750,7 +24746,7 @@
 .method private static synthetic lambda$createAutoDeleteDatePickerDialog$110([ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
     .locals 0
 
-    .line 4106
+    .line 4107
     invoke-virtual {p1}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p1
@@ -24761,10 +24757,10 @@
 
     const/4 p4, 0x0
 
-    .line 4107
+    .line 4108
     invoke-interface {p2, p1, p0, p4}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;->didSelectDate(ZILjava/lang/String;)V
 
-    .line 4108
+    .line 4109
     invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -24777,7 +24773,7 @@
 .method private static synthetic lambda$createBackgroundActivityDialog$24(Landroid/content/Context;Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 575
+    .line 576
     :try_start_0
     new-instance p1, Landroid/content/Intent;
 
@@ -24785,7 +24781,7 @@
 
     invoke-direct {p1, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 576
+    .line 577
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -24812,7 +24808,7 @@
 
     invoke-virtual {p1, p2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 577
+    .line 578
     invoke-virtual {p0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -24822,7 +24818,7 @@
     :catch_0
     move-exception p0
 
-    .line 579
+    .line 580
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -24832,7 +24828,7 @@
 .method private static synthetic lambda$createBackgroundActivityDialog$25(Landroid/content/DialogInterface;)V
     .locals 0
 
-    .line 583
+    .line 584
     invoke-static {}, Lorg/telegram/messenger/SharedConfig$BackgroundActivityPrefs;->increaseDismissedCount()V
 
     return-void
@@ -24843,14 +24839,14 @@
 
     const-string p1, "android.permission.ACCESS_BACKGROUND_LOCATION"
 
-    .line 5483
+    .line 5484
     invoke-virtual {p0, p1}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result p2
 
     if-eqz p2, :cond_0
 
-    .line 5484
+    .line 5485
     filled-new-array {p1}, [Ljava/lang/String;
 
     move-result-object p1
@@ -24866,7 +24862,7 @@
 .method private static synthetic lambda$createBackgroundLocationPermissionDialog$143(Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 5487
+    .line 5488
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -24875,10 +24871,10 @@
 .method private static synthetic lambda$createBlockDialogAlert$76([ZILandroid/view/View;)V
     .locals 2
 
-    .line 3052
+    .line 3053
     check-cast p2, Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    .line 3053
+    .line 3054
     aget-boolean v0, p0, p1
 
     const/4 v1, 0x1
@@ -24887,7 +24883,7 @@
 
     aput-boolean v0, p0, p1
 
-    .line 3054
+    .line 3055
     aget-boolean p0, p0, p1
 
     invoke-virtual {p2, p0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->setChecked(ZZ)V
@@ -24900,7 +24896,7 @@
 
     const/4 p2, 0x0
 
-    .line 3058
+    .line 3059
     aget-boolean p2, p1, p2
 
     const/4 p3, 0x1
@@ -24917,7 +24913,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 1884
+    .line 1885
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -24929,7 +24925,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 1890
+    .line 1891
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -24939,19 +24935,19 @@
 .method private static synthetic lambda$createBotLaunchAlert$52(Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 2
 
-    .line 1952
+    .line 1953
     new-instance p3, Landroid/os/Bundle;
 
     invoke-direct {p3}, Landroid/os/Bundle;-><init>()V
 
-    .line 1953
+    .line 1954
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     const-string p0, "user_id"
 
     invoke-virtual {p3, p0, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 1954
+    .line 1955
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p0
@@ -24962,14 +24958,14 @@
 
     if-eqz p0, :cond_0
 
-    .line 1955
+    .line 1956
     new-instance p0, Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p3}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
 
     invoke-virtual {p1, p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 1958
+    .line 1959
     :cond_0
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
@@ -24983,10 +24979,10 @@
 .method private static synthetic lambda$createBotLaunchAlert$53(Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/view/View;)V
     .locals 2
 
-    .line 1982
+    .line 1983
     check-cast p1, Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    .line 1983
+    .line 1984
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result v0
@@ -24997,7 +24993,7 @@
 
     invoke-virtual {p0, v0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 1984
+    .line 1985
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result p0
@@ -25010,7 +25006,7 @@
 .method private static synthetic lambda$createBotLaunchAlert$54(Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 2000
+    .line 2001
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -25027,7 +25023,7 @@
 .method private static synthetic lambda$createCalendarPickerDialog$122(I)Ljava/lang/String;
     .locals 2
 
-    .line 4561
+    .line 4562
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -25052,13 +25048,13 @@
 
     const/4 p7, 0x2
 
-    .line 4564
+    .line 4565
     :try_start_0
     invoke-virtual {p0, p6, p7}, Landroid/widget/LinearLayout;->performHapticFeedback(II)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 4568
+    .line 4569
     :catch_0
     invoke-static {p1, p2, p3, p4, p5}, Lorg/telegram/ui/Components/AlertsCreator;->checkCalendarDate(JLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
@@ -25070,7 +25066,7 @@
 
     packed-switch p0, :pswitch_data_0
 
-    .line 4591
+    .line 4592
     sget p0, Lorg/telegram/messenger/R$string;->December:I
 
     const-string v0, "December"
@@ -25081,7 +25077,7 @@
 
     return-object p0
 
-    .line 4588
+    .line 4589
     :pswitch_0
     sget p0, Lorg/telegram/messenger/R$string;->November:I
 
@@ -25093,7 +25089,7 @@
 
     return-object p0
 
-    .line 4587
+    .line 4588
     :pswitch_1
     sget p0, Lorg/telegram/messenger/R$string;->October:I
 
@@ -25105,7 +25101,7 @@
 
     return-object p0
 
-    .line 4586
+    .line 4587
     :pswitch_2
     sget p0, Lorg/telegram/messenger/R$string;->September:I
 
@@ -25117,7 +25113,7 @@
 
     return-object p0
 
-    .line 4585
+    .line 4586
     :pswitch_3
     sget p0, Lorg/telegram/messenger/R$string;->August:I
 
@@ -25129,7 +25125,7 @@
 
     return-object p0
 
-    .line 4584
+    .line 4585
     :pswitch_4
     sget p0, Lorg/telegram/messenger/R$string;->July:I
 
@@ -25141,7 +25137,7 @@
 
     return-object p0
 
-    .line 4583
+    .line 4584
     :pswitch_5
     sget p0, Lorg/telegram/messenger/R$string;->June:I
 
@@ -25153,7 +25149,7 @@
 
     return-object p0
 
-    .line 4582
+    .line 4583
     :pswitch_6
     sget p0, Lorg/telegram/messenger/R$string;->May:I
 
@@ -25165,7 +25161,7 @@
 
     return-object p0
 
-    .line 4581
+    .line 4582
     :pswitch_7
     sget p0, Lorg/telegram/messenger/R$string;->April:I
 
@@ -25177,7 +25173,7 @@
 
     return-object p0
 
-    .line 4580
+    .line 4581
     :pswitch_8
     sget p0, Lorg/telegram/messenger/R$string;->March:I
 
@@ -25189,7 +25185,7 @@
 
     return-object p0
 
-    .line 4579
+    .line 4580
     :pswitch_9
     sget p0, Lorg/telegram/messenger/R$string;->February:I
 
@@ -25201,7 +25197,7 @@
 
     return-object p0
 
-    .line 4578
+    .line 4579
     :pswitch_a
     sget p0, Lorg/telegram/messenger/R$string;->January:I
 
@@ -25238,7 +25234,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 4606
+    .line 4607
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
@@ -25259,10 +25255,10 @@
 .method private static synthetic lambda$createCalendarPickerDialog$126(JLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Ljava/util/Calendar;Lorg/telegram/messenger/MessagesStorage$IntCallback;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
     .locals 0
 
-    .line 4625
+    .line 4626
     invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/AlertsCreator;->checkCalendarDate(JLorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
-    .line 4626
+    .line 4627
     invoke-virtual {p4}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p0
@@ -25271,7 +25267,7 @@
 
     invoke-virtual {p5, p1, p0}, Ljava/util/Calendar;->set(II)V
 
-    .line 4627
+    .line 4628
     invoke-virtual {p3}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p0
@@ -25280,7 +25276,7 @@
 
     invoke-virtual {p5, p1, p0}, Ljava/util/Calendar;->set(II)V
 
-    .line 4628
+    .line 4629
     invoke-virtual {p2}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p0
@@ -25293,20 +25289,20 @@
 
     const/4 p1, 0x0
 
-    .line 4629
+    .line 4630
     invoke-virtual {p5, p0, p1}, Ljava/util/Calendar;->set(II)V
 
     const/16 p0, 0xb
 
-    .line 4630
+    .line 4631
     invoke-virtual {p5, p0, p1}, Ljava/util/Calendar;->set(II)V
 
     const/16 p0, 0xd
 
-    .line 4631
+    .line 4632
     invoke-virtual {p5, p0, p1}, Ljava/util/Calendar;->set(II)V
 
-    .line 4632
+    .line 4633
     invoke-virtual {p5}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide p0
@@ -25319,7 +25315,7 @@
 
     invoke-interface {p6, p0}, Lorg/telegram/messenger/MessagesStorage$IntCallback;->run(I)V
 
-    .line 4633
+    .line 4634
     invoke-virtual {p7}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -25332,7 +25328,7 @@
 .method private static synthetic lambda$createCallDialogAlert$64(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$User;ZLandroid/content/DialogInterface;I)V
     .locals 8
 
-    .line 2577
+    .line 2578
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p3
@@ -25345,7 +25341,7 @@
 
     if-eqz v6, :cond_0
 
-    .line 2578
+    .line 2579
     iget-boolean p3, v6, Lorg/telegram/tgnet/TLRPC$UserFull;->video_calls_available:Z
 
     if-eqz p3, :cond_0
@@ -25402,14 +25398,14 @@
 
     const/4 v7, 0x2
 
-    .line 2702
+    .line 2703
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
     if-lez v2, :cond_3
 
-    .line 2663
+    .line 2664
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -25426,7 +25422,7 @@
 
     move-result-object v2
 
-    .line 2664
+    .line 2665
     invoke-virtual/range {p3 .. p3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v9
@@ -25455,7 +25451,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 2666
+    .line 2667
     iget-object v10, v2, Lorg/telegram/tgnet/TLRPC$UserFull;->about:Ljava/lang/String;
 
     if-nez v10, :cond_0
@@ -25465,7 +25461,7 @@
     :cond_0
     move-object v3, v10
 
-    .line 2670
+    .line 2671
     :goto_0
     invoke-virtual {v3, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -25473,19 +25469,19 @@
 
     if-eqz v3, :cond_1
 
-    .line 2671
+    .line 2672
     invoke-static/range {p3 .. p3}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 2672
+    .line 2673
     invoke-interface/range {p4 .. p4}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 
-    .line 2675
+    .line 2676
     :cond_1
     iput-object v9, v2, Lorg/telegram/tgnet/TLRPC$UserFull;->about:Ljava/lang/String;
 
-    .line 2676
+    .line 2677
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v3
@@ -25504,23 +25500,23 @@
 
     invoke-virtual {v3, v10, v11}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2679
+    .line 2680
     :cond_2
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;-><init>()V
 
-    .line 2680
+    .line 2681
     iput-object v9, v2, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->about:Ljava/lang/String;
 
-    .line 2681
+    .line 2682
     iget v3, v2, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->flags:I
 
     or-int/2addr v3, v4
 
     iput v3, v2, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->flags:I
 
-    .line 2682
+    .line 2683
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v3
@@ -25539,7 +25535,7 @@
 
     invoke-virtual {v3, v4, v9}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2683
+    .line 2684
     invoke-static/range {p2 .. p2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v0
@@ -25550,7 +25546,7 @@
 
     goto :goto_2
 
-    .line 2687
+    .line 2688
     :cond_3
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
@@ -25562,7 +25558,7 @@
 
     move-result-object v2
 
-    .line 2688
+    .line 2689
     invoke-virtual/range {p3 .. p3}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v11
@@ -25573,7 +25569,7 @@
 
     if-eqz v2, :cond_6
 
-    .line 2690
+    .line 2691
     iget-object v12, v2, Lorg/telegram/tgnet/TLRPC$ChatFull;->about:Ljava/lang/String;
 
     if-nez v12, :cond_4
@@ -25583,7 +25579,7 @@
     :cond_4
     move-object v3, v12
 
-    .line 2694
+    .line 2695
     :goto_1
     invoke-virtual {v3, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -25591,19 +25587,19 @@
 
     if-eqz v3, :cond_5
 
-    .line 2695
+    .line 2696
     invoke-static/range {p3 .. p3}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 2696
+    .line 2697
     invoke-interface/range {p4 .. p4}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 
-    .line 2699
+    .line 2700
     :cond_5
     iput-object v11, v2, Lorg/telegram/tgnet/TLRPC$ChatFull;->about:Ljava/lang/String;
 
-    .line 2700
+    .line 2701
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v3
@@ -25630,7 +25626,7 @@
 
     invoke-virtual {v3, v12, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2702
+    .line 2703
     :cond_6
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
@@ -25650,14 +25646,14 @@
 
     invoke-virtual {v3, v4, v7}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2703
+    .line 2704
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
 
     invoke-virtual {v0, v9, v10, v11, v2}, Lorg/telegram/messenger/MessagesController;->updateChatAbout(JLjava/lang/String;Lorg/telegram/tgnet/TLRPC$ChatFull;)V
 
-    .line 2705
+    .line 2706
     :goto_2
     invoke-interface/range {p4 .. p4}, Landroid/content/DialogInterface;->dismiss()V
 
@@ -25667,7 +25663,7 @@
 .method private static synthetic lambda$createChangeBioAlert$67(Landroid/widget/EditText;Landroid/content/DialogInterface;)V
     .locals 0
 
-    .line 2709
+    .line 2710
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
     return-void
@@ -25688,7 +25684,7 @@
 
     if-lez p0, :cond_1
 
-    .line 2716
+    .line 2717
     invoke-virtual {p6}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result p0
@@ -25704,7 +25700,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 2717
+    .line 2718
     invoke-interface {p3, p2, p4}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
     const/4 p0, 0x1
@@ -25724,7 +25720,7 @@
 .method private static synthetic lambda$createChangeNameAlert$70(Landroid/widget/EditText;JILandroid/widget/EditText;Landroid/content/DialogInterface;I)V
     .locals 8
 
-    .line 2794
+    .line 2795
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p6
@@ -25748,7 +25744,7 @@
 
     if-lez p6, :cond_5
 
-    .line 2798
+    .line 2799
     invoke-static {p3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p6
@@ -25761,7 +25757,7 @@
 
     move-result-object p6
 
-    .line 2800
+    .line 2801
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p0
@@ -25770,7 +25766,7 @@
 
     move-result-object p0
 
-    .line 2801
+    .line 2802
     invoke-virtual {p4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p4
@@ -25779,10 +25775,10 @@
 
     move-result-object p4
 
-    .line 2802
+    .line 2803
     iget-object v4, p6, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    .line 2803
+    .line 2804
     iget-object v5, p6, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
 
     const-string v6, ""
@@ -25796,7 +25792,7 @@
 
     move-object v5, v6
 
-    .line 2810
+    .line 2811
     :cond_2
     invoke-virtual {v4, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -25810,31 +25806,31 @@
 
     if-eqz v4, :cond_3
 
-    .line 2811
+    .line 2812
     invoke-interface {p5}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 
-    .line 2814
+    .line 2815
     :cond_3
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;-><init>()V
 
-    .line 2815
+    .line 2816
     iput v1, v4, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->flags:I
 
-    .line 2816
+    .line 2817
     iput-object p0, v4, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->first_name:Ljava/lang/String;
 
     iput-object p0, p6, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    .line 2817
+    .line 2818
     iput-object p4, v4, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->last_name:Ljava/lang/String;
 
     iput-object p4, p6, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
 
-    .line 2818
+    .line 2819
     invoke-static {p3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p0
@@ -25857,17 +25853,17 @@
 
     if-eqz p0, :cond_4
 
-    .line 2820
+    .line 2821
     iget-object p4, v4, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->first_name:Ljava/lang/String;
 
     iput-object p4, p0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    .line 2821
+    .line 2822
     iget-object p4, v4, Lorg/telegram/tgnet/TLRPC$TL_account_updateProfile;->last_name:Ljava/lang/String;
 
     iput-object p4, p0, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
 
-    .line 2823
+    .line 2824
     :cond_4
     invoke-static {p3}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
@@ -25875,7 +25871,7 @@
 
     invoke-virtual {p0, v3}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 2824
+    .line 2825
     invoke-static {p3}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -25886,7 +25882,7 @@
 
     invoke-virtual {p0, p4, p6}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2825
+    .line 2826
     invoke-static {p3}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -25905,7 +25901,7 @@
 
     invoke-virtual {p0, p4, p6}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2826
+    .line 2827
     invoke-static {p3}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p0
@@ -25914,7 +25910,7 @@
 
     invoke-virtual {p0, v4, p3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 2829
+    .line 2830
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -25939,7 +25935,7 @@
 
     goto :goto_0
 
-    .line 2831
+    .line 2832
     :cond_5
     invoke-static {p3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
@@ -25955,7 +25951,7 @@
 
     move-result-object p4
 
-    .line 2832
+    .line 2833
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p0
@@ -25964,7 +25960,7 @@
 
     move-result-object p0
 
-    .line 2833
+    .line 2834
     iget-object p6, p4, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
     if-eqz p6, :cond_6
@@ -25975,16 +25971,16 @@
 
     if-eqz p6, :cond_6
 
-    .line 2834
+    .line 2835
     invoke-interface {p5}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
 
-    .line 2837
+    .line 2838
     :cond_6
     iput-object p0, p4, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
-    .line 2838
+    .line 2839
     invoke-static {p3}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p4
@@ -26003,14 +25999,14 @@
 
     invoke-virtual {p4, p6, v6}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2839
+    .line 2840
     invoke-static {p3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p3
 
     invoke-virtual {p3, v4, v5, p0}, Lorg/telegram/messenger/MessagesController;->changeChatTitle(JLjava/lang/String;)V
 
-    .line 2840
+    .line 2841
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -26033,7 +26029,7 @@
 
     invoke-virtual {p0, p3, p4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2842
+    .line 2843
     :goto_0
     invoke-interface {p5}, Landroid/content/DialogInterface;->dismiss()V
 
@@ -26043,10 +26039,10 @@
 .method private static synthetic lambda$createChangeNameAlert$71(Landroid/widget/EditText;Landroid/widget/EditText;Landroid/content/DialogInterface;)V
     .locals 0
 
-    .line 2847
+    .line 2848
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 2848
+    .line 2849
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
     return-void
@@ -26061,7 +26057,7 @@
 
     if-eq p3, v0, :cond_0
 
-    .line 2857
+    .line 2858
     invoke-virtual {p4}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result p3
@@ -26077,7 +26073,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 2858
+    .line 2859
     invoke-interface {p1, p0, p2}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
     const/4 p0, 0x1
@@ -26091,14 +26087,14 @@
 .method private static synthetic lambda$createChooseTemplatesModeDialog$17(Lorg/telegram/ui/Components/UndoView;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 1
 
-    .line 463
+    .line 464
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Lcom/iMe/fork/enums/TemplatesMode;
 
-    .line 464
+    .line 465
     sget-object v0, Lorg/telegram/messenger/SharedConfig;->selectedTemplatesMode:Lcom/iMe/fork/enums/TemplatesMode;
 
     if-ne p2, v0, :cond_0
@@ -26108,7 +26104,7 @@
     :cond_0
     if-eqz p0, :cond_1
 
-    .line 467
+    .line 468
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$Global;->selectedTemplatesMode()Ljava/lang/String;
 
     move-result-object v0
@@ -26119,7 +26115,7 @@
 
     if-nez v0, :cond_1
 
-    .line 468
+    .line 469
     sget v0, Lorg/telegram/messenger/R$string;->chat_templates_mode_hint:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -26128,11 +26124,11 @@
 
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/UndoView;->showInfo(Ljava/lang/CharSequence;)V
 
-    .line 470
+    .line 471
     :cond_1
     invoke-static {p2}, Lorg/telegram/messenger/SharedConfig;->setSelectedTemplatesMode(Lcom/iMe/fork/enums/TemplatesMode;)V
 
-    .line 471
+    .line 472
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -26145,7 +26141,7 @@
 .method private static synthetic lambda$createChooseVideoVoiceCamera$14(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 0
 
-    .line 421
+    .line 422
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p1
@@ -26154,7 +26150,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setSelectedVideoVoiceCamera(Lcom/iMe/fork/enums/VideoVoiceCamera;)V
 
-    .line 422
+    .line 423
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -26167,12 +26163,12 @@
 .method private static synthetic lambda$createClearDaysDialogAlert$61([Z[Lorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
     .locals 3
 
-    .line 2472
+    .line 2473
     check-cast p2, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     const/4 v0, 0x0
 
-    .line 2473
+    .line 2474
     aget-boolean v1, p0, v0
 
     const/4 v2, 0x1
@@ -26181,12 +26177,12 @@
 
     aput-boolean v1, p0, v0
 
-    .line 2474
+    .line 2475
     aget-boolean p0, p0, v0
 
     invoke-virtual {p2, p0, v2}, Lorg/telegram/ui/Cells/CheckBoxCell;->setChecked(ZZ)V
 
-    .line 2476
+    .line 2477
     aget-object p0, p1, v0
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -26195,7 +26191,7 @@
 
     if-nez p0, :cond_0
 
-    .line 2477
+    .line 2478
     aget-object p0, p1, v0
 
     const/16 p1, 0x8
@@ -26204,7 +26200,7 @@
 
     goto :goto_0
 
-    .line 2479
+    .line 2480
     :cond_0
     aget-object p0, p1, v0
 
@@ -26219,7 +26215,7 @@
 
     const/4 p2, 0x0
 
-    .line 2492
+    .line 2493
     aget-boolean v0, p0, p2
 
     const/4 v1, 0x1
@@ -26228,7 +26224,7 @@
 
     aput-boolean v0, p0, p2
 
-    .line 2493
+    .line 2494
     aget-object p0, p1, p2
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->toggle(Z)V
@@ -26243,7 +26239,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 2504
+    .line 2505
     aget-boolean p5, p1, p4
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
@@ -26260,7 +26256,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 2505
+    .line 2506
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p2
@@ -26269,14 +26265,14 @@
 
     invoke-virtual {p2, p5}, Lcom/iMe/fork/controller/ForkCommonController;->setRevokeByDefault(Z)V
 
-    .line 2506
+    .line 2507
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object p0
 
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ForkCommonController;->saveConfig()V
 
-    .line 2509
+    .line 2510
     :cond_0
     aget-boolean p0, p1, p4
 
@@ -26288,12 +26284,12 @@
 .method private static synthetic lambda$createClearOrDeleteDialogAlert$55([ZLandroid/view/View;)V
     .locals 3
 
-    .line 2145
+    .line 2146
     check-cast p1, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     const/4 v0, 0x0
 
-    .line 2146
+    .line 2147
     aget-boolean v1, p0, v0
 
     const/4 v2, 0x1
@@ -26302,7 +26298,7 @@
 
     aput-boolean v1, p0, v0
 
-    .line 2147
+    .line 2148
     aget-boolean p0, p0, v0
 
     invoke-virtual {p1, p0, v2}, Lorg/telegram/ui/Cells/CheckBoxCell;->setChecked(ZZ)V
@@ -26313,12 +26309,12 @@
 .method private static synthetic lambda$createClearOrDeleteDialogAlert$56([Z[Lorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
     .locals 3
 
-    .line 2170
+    .line 2171
     check-cast p2, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     const/4 v0, 0x0
 
-    .line 2171
+    .line 2172
     aget-boolean v1, p0, v0
 
     const/4 v2, 0x1
@@ -26327,7 +26323,7 @@
 
     aput-boolean v1, p0, v0
 
-    .line 2172
+    .line 2173
     aget-object v1, p1, v0
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -26336,7 +26332,7 @@
 
     if-nez v1, :cond_0
 
-    .line 2173
+    .line 2174
     aget-object p1, p1, v0
 
     const/16 v1, 0x8
@@ -26345,13 +26341,13 @@
 
     goto :goto_0
 
-    .line 2175
+    .line 2176
     :cond_0
     aget-object p1, p1, v0
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2177
+    .line 2178
     :goto_0
     aget-boolean p0, p0, v0
 
@@ -26365,7 +26361,7 @@
 
     const/4 p2, 0x0
 
-    .line 2188
+    .line 2189
     aget-boolean v0, p0, p2
 
     const/4 v1, 0x1
@@ -26374,7 +26370,7 @@
 
     aput-boolean v0, p0, p2
 
-    .line 2189
+    .line 2190
     aget-object p0, p1, p2
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->toggle(Z)V
@@ -26415,7 +26411,7 @@
 
     move-object/from16 v10, p8
 
-    .line 2345
+    .line 2346
     invoke-static/range {v0 .. v10}, Lorg/telegram/ui/Components/AlertsCreator;->createClearOrDeleteDialogAlert(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;ZZZLorg/telegram/messenger/MessagesStorage$BooleanCallback;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     goto :goto_0
@@ -26425,7 +26421,7 @@
 
     const/4 v0, 0x0
 
-    .line 2348
+    .line 2349
     aget-boolean v0, p9, v0
 
     invoke-interface {v9, v0}, Lorg/telegram/messenger/MessagesStorage$BooleanCallback;->run(Z)V
@@ -26446,7 +26442,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 2333
+    .line 2334
     aget-boolean v1, p1, v0
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
@@ -26463,7 +26459,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 2334
+    .line 2335
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v1
@@ -26472,7 +26468,7 @@
 
     invoke-virtual {v1, v2}, Lcom/iMe/fork/controller/ForkCommonController;->setRevokeByDefault(Z)V
 
-    .line 2335
+    .line 2336
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v1
@@ -26486,7 +26482,7 @@
 
     if-nez p5, :cond_2
 
-    .line 2339
+    .line 2340
     invoke-static/range {p6 .. p6}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v1
@@ -26515,7 +26511,7 @@
 
     move-object/from16 v10, p13
 
-    .line 2340
+    .line 2341
     invoke-static/range {v0 .. v10}, Lorg/telegram/ui/Components/AlertsCreator;->createClearOrDeleteDialogAlert(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;ZZZLorg/telegram/messenger/MessagesStorage$BooleanCallback;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -26523,12 +26519,12 @@
     :cond_1
     if-eqz v5, :cond_2
 
-    .line 2342
+    .line 2343
     aget-boolean v1, p1, v0
 
     if-eqz v1, :cond_2
 
-    .line 2343
+    .line 2344
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
 
     move-result v0
@@ -26574,7 +26570,7 @@
 
     if-nez p4, :cond_3
 
-    .line 2356
+    .line 2357
     aget-boolean v1, p1, v0
 
     if-eqz v1, :cond_4
@@ -26592,7 +26588,7 @@
 .method private static synthetic lambda$createClearOrDeleteDialogAlert$60(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
-    .line 2363
+    .line 2364
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
@@ -26601,7 +26597,7 @@
 .method private static synthetic lambda$createColorSelectDialog$135(Landroid/widget/LinearLayout;[ILandroid/view/View;)V
     .locals 6
 
-    .line 5204
+    .line 5205
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result v0
@@ -26613,7 +26609,7 @@
     :goto_0
     if-ge v2, v0, :cond_1
 
-    .line 5206
+    .line 5207
     invoke-virtual {p0, v2}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
@@ -26631,7 +26627,7 @@
     :cond_0
     move v5, v1
 
-    .line 5207
+    .line 5208
     :goto_1
     invoke-virtual {v3, v5, v4}, Lorg/telegram/ui/Cells/RadioColorCell;->setChecked(ZZ)V
 
@@ -26639,7 +26635,7 @@
 
     goto :goto_0
 
-    .line 5209
+    .line 5210
     :cond_1
     sget-object p0, Lorg/telegram/ui/Cells/TextColorCell;->colorsToSave:[I
 
@@ -26663,14 +26659,14 @@
 .method private static synthetic lambda$createColorSelectDialog$136(JLjava/lang/String;[IIILjava/lang/Runnable;Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 5216
+    .line 5217
     sget p7, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p7}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
 
     move-result-object p7
 
-    .line 5217
+    .line 5218
     invoke-interface {p7}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p7
@@ -26683,7 +26679,7 @@
 
     if-eqz p8, :cond_0
 
-    .line 5219
+    .line 5220
     new-instance p5, Ljava/lang/StringBuilder;
 
     invoke-direct {p5}, Ljava/lang/StringBuilder;-><init>()V
@@ -26702,7 +26698,7 @@
 
     invoke-interface {p7, p2, p3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 5220
+    .line 5221
     sget p2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
@@ -26718,7 +26714,7 @@
 
     if-ne p5, p0, :cond_1
 
-    .line 5223
+    .line 5224
     aget p0, p3, v0
 
     const-string p1, "MessagesLed"
@@ -26730,7 +26726,7 @@
     :cond_1
     if-nez p5, :cond_2
 
-    .line 5225
+    .line 5226
     aget p0, p3, v0
 
     const-string p1, "GroupLed"
@@ -26744,7 +26740,7 @@
 
     if-ne p5, p0, :cond_3
 
-    .line 5227
+    .line 5228
     aget p0, p3, v0
 
     const-string p1, "StoriesLed"
@@ -26753,7 +26749,7 @@
 
     goto :goto_0
 
-    .line 5229
+    .line 5230
     :cond_3
     aget p0, p3, v0
 
@@ -26761,7 +26757,7 @@
 
     invoke-interface {p7, p1, p0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 5231
+    .line 5232
     :goto_0
     sget p0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -26771,13 +26767,13 @@
 
     invoke-virtual {p0, p5}, Lorg/telegram/messenger/NotificationsController;->deleteNotificationChannelGlobal(I)V
 
-    .line 5233
+    .line 5234
     :goto_1
     invoke-interface {p7}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     if-eqz p6, :cond_4
 
-    .line 5235
+    .line 5236
     invoke-interface {p6}, Ljava/lang/Runnable;->run()V
 
     :cond_4
@@ -26787,14 +26783,14 @@
 .method private static synthetic lambda$createColorSelectDialog$137(JILjava/lang/Runnable;Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 5239
+    .line 5240
     sget p4, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p4}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
 
     move-result-object p4
 
-    .line 5240
+    .line 5241
     invoke-interface {p4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p4
@@ -26807,7 +26803,7 @@
 
     if-eqz p5, :cond_0
 
-    .line 5242
+    .line 5243
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -26833,7 +26829,7 @@
 
     const-string p0, "MessagesLed"
 
-    .line 5244
+    .line 5245
     invoke-interface {p4, p0, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_0
@@ -26843,7 +26839,7 @@
 
     const-string p0, "GroupLed"
 
-    .line 5246
+    .line 5247
     invoke-interface {p4, p0, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_0
@@ -26855,7 +26851,7 @@
 
     const-string p0, "StoriesLed"
 
-    .line 5248
+    .line 5249
     invoke-interface {p4, p0, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_0
@@ -26863,16 +26859,16 @@
     :cond_3
     const-string p0, "ChannelLed"
 
-    .line 5250
+    .line 5251
     invoke-interface {p4, p0, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 5252
+    .line 5253
     :goto_0
     invoke-interface {p4}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     if-eqz p3, :cond_4
 
-    .line 5254
+    .line 5255
     invoke-interface {p3}, Ljava/lang/Runnable;->run()V
 
     :cond_4
@@ -26882,19 +26878,19 @@
 .method private static synthetic lambda$createColorSelectDialog$138(Ljava/lang/String;Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 5259
+    .line 5260
     sget p2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
 
     move-result-object p2
 
-    .line 5260
+    .line 5261
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
 
-    .line 5261
+    .line 5262
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -26911,12 +26907,12 @@
 
     invoke-interface {p2, p0}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 5262
+    .line 5263
     invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
     if-eqz p1, :cond_0
 
-    .line 5264
+    .line 5265
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -26926,7 +26922,7 @@
 .method private static synthetic lambda$createContactInviteDialog$74(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 2937
+    .line 2938
     :try_start_0
     new-instance p2, Landroid/content/Intent;
 
@@ -26944,7 +26940,7 @@
 
     const-string p0, "sms_body"
 
-    .line 2938
+    .line 2939
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
 
     move-result p3
@@ -26961,7 +26957,7 @@
 
     invoke-virtual {p2, p0, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 2939
+    .line 2940
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p0
@@ -26977,7 +26973,7 @@
     :catch_0
     move-exception p0
 
-    .line 2941
+    .line 2942
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -26989,7 +26985,7 @@
 
     const/4 p1, 0x1
 
-    .line 5620
+    .line 5621
     invoke-interface {p0, p1}, Lorg/telegram/messenger/MessagesStorage$IntCallback;->run(I)V
 
     return-void
@@ -27000,7 +26996,7 @@
 
     const/4 p1, 0x0
 
-    .line 5621
+    .line 5622
     invoke-interface {p0, p1}, Lorg/telegram/messenger/MessagesStorage$IntCallback;->run(I)V
 
     return-void
@@ -27021,12 +27017,12 @@
 
     move-object v5, p2
 
-    .line 3758
+    .line 3759
     invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/AlertsCreator;->checkScheduleDate(Landroid/widget/TextView;Landroid/widget/TextView;ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)Z
 
     move-result p6
 
-    .line 3759
+    .line 3760
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -27053,7 +27049,7 @@
 
     invoke-virtual {p3, v0, v1}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 3760
+    .line 3761
     invoke-virtual {p1}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p0
@@ -27062,7 +27058,7 @@
 
     invoke-virtual {p3, p1, p0}, Ljava/util/Calendar;->set(II)V
 
-    .line 3761
+    .line 3762
     invoke-virtual {p2}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p0
@@ -27077,13 +27073,13 @@
 
     const/4 p1, 0x0
 
-    .line 3763
+    .line 3764
     invoke-virtual {p3, p0, p1}, Ljava/util/Calendar;->set(II)V
 
     :cond_0
     const/4 p0, 0x1
 
-    .line 3765
+    .line 3766
     invoke-virtual {p3}, Ljava/util/Calendar;->getTimeInMillis()J
 
     move-result-wide p1
@@ -27096,7 +27092,7 @@
 
     invoke-interface {p4, p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;->didSelectDate(ZILjava/lang/String;)V
 
-    .line 3766
+    .line 3767
     invoke-virtual {p5}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -27113,7 +27109,7 @@
 
     if-nez p5, :cond_0
 
-    .line 3088
+    .line 3089
     invoke-static {p1, p2, p3}, Lorg/telegram/ui/Components/AlertsCreator;->checkPickerDate(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     :cond_0
@@ -27123,7 +27119,7 @@
 .method private static synthetic lambda$createDatePickerDialog$79(I)Ljava/lang/String;
     .locals 3
 
-    .line 3096
+    .line 3097
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
@@ -27132,15 +27128,15 @@
 
     const/4 v2, 0x1
 
-    .line 3097
+    .line 3098
     invoke-virtual {v0, v1, v2}, Ljava/util/Calendar;->set(II)V
 
     const/4 v1, 0x2
 
-    .line 3098
+    .line 3099
     invoke-virtual {v0, v1, p0}, Ljava/util/Calendar;->set(II)V
 
-    .line 3099
+    .line 3100
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object p0
@@ -27155,7 +27151,7 @@
 .method private static synthetic lambda$createDatePickerDialog$80(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;II)V
     .locals 0
 
-    .line 3101
+    .line 3102
     invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->updateDayPicker(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     return-void
@@ -27168,7 +27164,7 @@
 
     if-nez p5, :cond_0
 
-    .line 3104
+    .line 3105
     invoke-static {p1, p2, p3}, Lorg/telegram/ui/Components/AlertsCreator;->checkPickerDate(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     :cond_0
@@ -27178,7 +27174,7 @@
 .method private static synthetic lambda$createDatePickerDialog$82(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;II)V
     .locals 0
 
-    .line 3115
+    .line 3116
     invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->updateDayPicker(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     return-void
@@ -27191,7 +27187,7 @@
 
     if-nez p5, :cond_0
 
-    .line 3118
+    .line 3119
     invoke-static {p1, p2, p3}, Lorg/telegram/ui/Components/AlertsCreator;->checkPickerDate(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
     :cond_0
@@ -27203,10 +27199,10 @@
 
     if-eqz p0, :cond_0
 
-    .line 3138
+    .line 3139
     invoke-static {p1, p2, p3}, Lorg/telegram/ui/Components/AlertsCreator;->checkPickerDate(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
 
-    .line 3140
+    .line 3141
     :cond_0
     invoke-virtual {p3}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
@@ -27238,7 +27234,7 @@
 
     if-nez p4, :cond_0
 
-    .line 3696
+    .line 3697
     sget p0, Lorg/telegram/messenger/R$string;->MessageScheduleToday:I
 
     const-string p1, "MessageScheduleToday"
@@ -27258,19 +27254,19 @@
 
     add-long/2addr p0, v0
 
-    .line 3699
+    .line 3700
     invoke-virtual {p2, p0, p1}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     const/4 p4, 0x1
 
-    .line 3700
+    .line 3701
     invoke-virtual {p2, p4}, Ljava/util/Calendar;->get(I)I
 
     move-result p2
 
     if-ne p2, p3, :cond_1
 
-    .line 3702
+    .line 3703
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object p2
@@ -27283,7 +27279,7 @@
 
     return-object p0
 
-    .line 3704
+    .line 3705
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -27305,7 +27301,7 @@
 
     const/4 p5, 0x2
 
-    .line 3710
+    .line 3711
     :try_start_0
     invoke-virtual {p0, p4, p5}, Landroid/widget/LinearLayout;->performHapticFeedback(II)Z
     :try_end_0
@@ -27324,7 +27320,7 @@
 
     move-object v5, p3
 
-    .line 3714
+    .line 3715
     invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/AlertsCreator;->checkScheduleDate(Landroid/widget/TextView;Landroid/widget/TextView;ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)Z
 
     return-void
@@ -27337,7 +27333,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 3721
+    .line 3722
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
@@ -27362,7 +27358,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 3727
+    .line 3728
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
@@ -27387,7 +27383,7 @@
 
     const/4 v1, 0x0
 
-    .line 6068
+    .line 6069
     :try_start_0
     aget-object v2, p0, v1
 
@@ -27398,19 +27394,19 @@
     :catchall_0
     const/4 v2, 0x0
 
-    .line 6072
+    .line 6073
     aput-object v2, p0, v1
 
     const/4 v2, 0x2
 
     if-eqz p1, :cond_1
 
-    .line 6075
+    .line 6076
     move-object/from16 v0, p1
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_channels_channelParticipant;
 
-    .line 6076
+    .line 6077
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_channels_channelParticipant;->participant:Lorg/telegram/tgnet/TLRPC$ChannelParticipant;
 
     instance-of v3, v0, Lorg/telegram/tgnet/TLRPC$TL_channelParticipantAdmin;
@@ -27434,7 +27430,7 @@
     :cond_1
     if-eqz v0, :cond_2
 
-    .line 6079
+    .line 6080
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string v3, "USER_NOT_PARTICIPANT"
@@ -27477,7 +27473,7 @@
 
     move-object/from16 v17, p16
 
-    .line 6082
+    .line 6083
     invoke-static/range {v3 .. v17}, Lorg/telegram/ui/Components/AlertsCreator;->createDeleteMessagesAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$ChatFull;JLorg/telegram/messenger/MessageObject;[Landroid/util/SparseArray;Lorg/telegram/messenger/MessageObject$GroupedMessages;ZILjava/lang/Runnable;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -27518,7 +27514,7 @@
 
     move-object/from16 v3, p16
 
-    .line 6066
+    .line 6067
     new-instance v18, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda130;
 
     move-object/from16 v0, v18
@@ -27533,7 +27529,7 @@
 .method private static synthetic lambda$createDeleteMessagesAlert$157(IILandroid/content/DialogInterface;)V
     .locals 0
 
-    .line 6088
+    .line 6089
     invoke-static {p0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p0
@@ -27550,14 +27546,14 @@
 
     const/4 v0, 0x0
 
-    .line 6085
+    .line 6086
     aget-object v1, p0, v0
 
     if-nez v1, :cond_0
 
     return-void
 
-    .line 6088
+    .line 6089
     :cond_0
     aget-object v1, p0, v0
 
@@ -27567,7 +27563,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
-    .line 6089
+    .line 6090
     aget-object p0, p0, v0
 
     invoke-virtual {p3, p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
@@ -27578,7 +27574,7 @@
 .method private static synthetic lambda$createDeleteMessagesAlert$159([ZLandroid/view/View;)V
     .locals 4
 
-    .line 6113
+    .line 6114
     invoke-virtual {p1}, Landroid/view/View;->isEnabled()Z
 
     move-result v0
@@ -27587,18 +27583,18 @@
 
     return-void
 
-    .line 6116
+    .line 6117
     :cond_0
     check-cast p1, Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    .line 6117
+    .line 6118
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 6118
+    .line 6119
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
@@ -27615,7 +27611,7 @@
 
     aput-boolean v2, p0, v1
 
-    .line 6119
+    .line 6120
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -27630,12 +27626,12 @@
 .method private static synthetic lambda$createDeleteMessagesAlert$160([ZLandroid/view/View;)V
     .locals 3
 
-    .line 6137
+    .line 6138
     check-cast p1, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     const/4 v0, 0x0
 
-    .line 6138
+    .line 6139
     aget-boolean v1, p0, v0
 
     const/4 v2, 0x1
@@ -27644,7 +27640,7 @@
 
     aput-boolean v1, p0, v0
 
-    .line 6139
+    .line 6140
     aget-boolean p0, p0, v0
 
     invoke-virtual {p1, p0, v2}, Lorg/telegram/ui/Cells/CheckBoxCell;->setChecked(ZZ)V
@@ -27655,12 +27651,12 @@
 .method private static synthetic lambda$createDeleteMessagesAlert$161([ZLorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
     .locals 3
 
-    .line 6212
+    .line 6213
     check-cast p2, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     const/4 v0, 0x0
 
-    .line 6213
+    .line 6214
     aget-boolean v1, p0, v0
 
     const/4 v2, 0x1
@@ -27669,12 +27665,12 @@
 
     aput-boolean v1, p0, v0
 
-    .line 6214
+    .line 6215
     aget-boolean p0, p0, v0
 
     invoke-virtual {p2, p0, v2}, Lorg/telegram/ui/Cells/CheckBoxCell;->setChecked(ZZ)V
 
-    .line 6216
+    .line 6217
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getVisibility()I
 
     move-result p0
@@ -27683,12 +27679,12 @@
 
     const/16 p0, 0x8
 
-    .line 6217
+    .line 6218
     invoke-virtual {p1, p0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 6219
+    .line 6220
     :cond_0
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
@@ -27701,7 +27697,7 @@
 
     const/4 p2, 0x0
 
-    .line 6228
+    .line 6229
     aget-boolean v0, p0, p2
 
     const/4 v1, 0x1
@@ -27710,7 +27706,7 @@
 
     aput-boolean v0, p0, p2
 
-    .line 6229
+    .line 6230
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->toggle(Z)V
 
     return-void
@@ -27739,7 +27735,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 6241
+    .line 6242
     aget-boolean v2, p1, v11
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
@@ -27756,7 +27752,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 6242
+    .line 6243
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
@@ -27765,7 +27761,7 @@
 
     invoke-virtual {v2, v3}, Lcom/iMe/fork/controller/ForkCommonController;->setRevokeByDefault(Z)V
 
-    .line 6243
+    .line 6244
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
 
     move-result-object v2
@@ -27783,7 +27779,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 6248
+    .line 6249
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
@@ -27792,7 +27788,7 @@
 
     move v0, v11
 
-    .line 6251
+    .line 6252
     :goto_0
     iget-object v2, v1, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
@@ -27802,7 +27798,7 @@
 
     if-ge v0, v2, :cond_4
 
-    .line 6252
+    .line 6253
     iget-object v2, v1, Lorg/telegram/messenger/MessageObject$GroupedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -27811,7 +27807,7 @@
 
     check-cast v2, Lorg/telegram/messenger/MessageObject;
 
-    .line 6253
+    .line 6254
     invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v3
@@ -27824,7 +27820,7 @@
 
     if-eqz p5, :cond_2
 
-    .line 6254
+    .line 6255
     iget-object v3, v2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-wide v3, v3, Lorg/telegram/tgnet/TLRPC$Message;->random_id:J
@@ -27839,12 +27835,12 @@
 
     if-nez v15, :cond_1
 
-    .line 6256
+    .line 6257
     new-instance v15, Ljava/util/ArrayList;
 
     invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
 
-    .line 6258
+    .line 6259
     :cond_1
     iget-object v2, v2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -27861,7 +27857,7 @@
 
     goto :goto_0
 
-    .line 6262
+    .line 6263
     :cond_3
     invoke-virtual/range {p3 .. p3}, Lorg/telegram/messenger/MessageObject;->getId()I
 
@@ -27875,7 +27871,7 @@
 
     if-eqz p5, :cond_4
 
-    .line 6263
+    .line 6264
     iget-object v1, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$Message;->random_id:J
@@ -27888,12 +27884,12 @@
 
     if-eq v1, v12, :cond_4
 
-    .line 6264
+    .line 6265
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 6265
+    .line 6266
     iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-wide v2, v0, Lorg/telegram/tgnet/TLRPC$Message;->random_id:J
@@ -27911,7 +27907,7 @@
     :cond_4
     move-object v2, v15
 
-    .line 6268
+    .line 6269
     :goto_1
     invoke-static/range {p6 .. p6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
@@ -27943,14 +27939,14 @@
     :goto_2
     if-ltz v17, :cond_a
 
-    .line 6271
+    .line 6272
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
     move v0, v11
 
-    .line 6272
+    .line 6273
     :goto_3
     aget-object v1, p10, v17
 
@@ -27960,7 +27956,7 @@
 
     if-ge v0, v1, :cond_6
 
-    .line 6273
+    .line 6274
     aget-object v1, p10, v17
 
     invoke-virtual {v1, v0}, Landroid/util/SparseArray;->keyAt(I)I
@@ -27980,14 +27976,14 @@
     :cond_6
     if-eqz p5, :cond_9
 
-    .line 6277
+    .line 6278
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     move v1, v11
 
-    .line 6278
+    .line 6279
     :goto_4
     aget-object v2, p10, v17
 
@@ -27997,7 +27993,7 @@
 
     if-ge v1, v2, :cond_8
 
-    .line 6279
+    .line 6280
     aget-object v2, p10, v17
 
     invoke-virtual {v2, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -28006,7 +28002,7 @@
 
     check-cast v2, Lorg/telegram/messenger/MessageObject;
 
-    .line 6280
+    .line 6281
     iget-object v3, v2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-wide v3, v3, Lorg/telegram/tgnet/TLRPC$Message;->random_id:J
@@ -28019,7 +28015,7 @@
 
     if-eq v2, v12, :cond_7
 
-    .line 6281
+    .line 6282
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v2
@@ -28039,7 +28035,7 @@
     :cond_9
     move-object v2, v15
 
-    .line 6285
+    .line 6286
     :goto_5
     invoke-static/range {p6 .. p6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
@@ -28059,7 +28055,7 @@
 
     invoke-virtual/range {v0 .. v7}, Lorg/telegram/messenger/MessagesController;->deleteMessages(Ljava/util/ArrayList;Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$EncryptedChat;JZZ)V
 
-    .line 6286
+    .line 6287
     aget-object v0, p10, v17
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
@@ -28076,13 +28072,13 @@
 
     if-eqz v9, :cond_f
 
-    .line 6290
+    .line 6291
     :cond_b
     aget-boolean v0, p13, v11
 
     if-eqz v0, :cond_c
 
-    .line 6291
+    .line 6292
     invoke-static/range {p6 .. p6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -28099,18 +28095,18 @@
 
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->deleteParticipantFromChat(JLorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;ZZ)V
 
-    .line 6293
+    .line 6294
     :cond_c
     aget-boolean v0, p13, v16
 
     if-eqz v0, :cond_e
 
-    .line 6294
+    .line 6295
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_channels_reportSpam;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_channels_reportSpam;-><init>()V
 
-    .line 6295
+    .line 6296
     invoke-static/range {p14 .. p14}, Lorg/telegram/messenger/MessagesController;->getInputChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Lorg/telegram/tgnet/TLRPC$InputChannel;
 
     move-result-object v1
@@ -28119,7 +28115,7 @@
 
     if-eqz v8, :cond_d
 
-    .line 6297
+    .line 6298
     invoke-static/range {p11 .. p11}, Lorg/telegram/messenger/MessagesController;->getInputPeer(Lorg/telegram/tgnet/TLRPC$User;)Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     move-result-object v1
@@ -28128,7 +28124,7 @@
 
     goto :goto_7
 
-    .line 6299
+    .line 6300
     :cond_d
     invoke-static/range {p12 .. p12}, Lorg/telegram/messenger/MessagesController;->getInputPeer(Lorg/telegram/tgnet/TLRPC$Chat;)Lorg/telegram/tgnet/TLRPC$InputPeer;
 
@@ -28136,11 +28132,11 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_channels_reportSpam;->participant:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 6301
+    .line 6302
     :goto_7
     iput-object v7, v0, Lorg/telegram/tgnet/TLRPC$TL_channels_reportSpam;->id:Ljava/util/ArrayList;
 
-    .line 6302
+    .line 6303
     invoke-static/range {p6 .. p6}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v1
@@ -28152,12 +28148,12 @@
     :cond_e
     const/4 v0, 0x2
 
-    .line 6306
+    .line 6307
     aget-boolean v0, p13, v0
 
     if-eqz v0, :cond_f
 
-    .line 6307
+    .line 6308
     invoke-static/range {p6 .. p6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -28167,7 +28163,7 @@
     :cond_f
     if-eqz p15, :cond_10
 
-    .line 6311
+    .line 6312
     invoke-interface/range {p15 .. p15}, Ljava/lang/Runnable;->run()V
 
     :cond_10
@@ -28179,7 +28175,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 6354
+    .line 6355
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -28191,7 +28187,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 5596
+    .line 5597
     :try_start_0
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -28199,7 +28195,7 @@
 
     if-lt p1, p2, :cond_1
 
-    .line 5597
+    .line 5598
     new-instance p1, Landroid/content/Intent;
 
     const-string p2, "android.settings.action.MANAGE_OVERLAY_PERMISSION"
@@ -28228,24 +28224,24 @@
 
     invoke-direct {p1, p2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 5598
+    .line 5599
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->findActivity(Landroid/content/Context;)Landroid/app/Activity;
 
     move-result-object p2
 
-    .line 5599
+    .line 5600
     instance-of v0, p2, Lorg/telegram/ui/LaunchActivity;
 
     if-eqz v0, :cond_0
 
     const/16 p0, 0x69
 
-    .line 5600
+    .line 5601
     invoke-virtual {p2, p1, p0}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
 
     goto :goto_0
 
-    .line 5602
+    .line 5603
     :cond_0
     invoke-virtual {p0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
@@ -28256,7 +28252,7 @@
     :catch_0
     move-exception p0
 
-    .line 5606
+    .line 5607
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -28269,14 +28265,14 @@
 
     if-eqz p0, :cond_0
 
-    .line 5543
+    .line 5544
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 p2, 0x17
 
     if-lt p1, p2, :cond_0
 
-    .line 5545
+    .line 5546
     :try_start_0
     new-instance p1, Landroid/content/Intent;
 
@@ -28315,7 +28311,7 @@
     :catch_0
     move-exception p0
 
-    .line 5547
+    .line 5548
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -28326,7 +28322,7 @@
 .method private static synthetic lambda$createDrawerAccountDataSelectDialog$9(Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 0
 
-    .line 314
+    .line 315
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p2
@@ -28335,7 +28331,7 @@
 
     invoke-interface {p0, p2}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
-    .line 315
+    .line 316
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -28348,7 +28344,7 @@
 .method private static synthetic lambda$createFreeSpaceDialog$148(Lorg/telegram/ui/LaunchActivity;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 5630
+    .line 5631
     new-instance p1, Lorg/telegram/ui/CacheControlActivity;
 
     invoke-direct {p1}, Lorg/telegram/ui/CacheControlActivity;-><init>()V
@@ -28363,7 +28359,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 1821
+    .line 1822
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -28373,7 +28369,7 @@
 .method private static synthetic lambda$createInputTemplateNameDialog$18(Lorg/telegram/ui/Components/ReportAlert;Lorg/telegram/ui/ChatActivity;Landroid/content/DialogInterface;)V
     .locals 0
 
-    .line 491
+    .line 492
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getChatActivityEnterView()Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     move-result-object p1
@@ -28390,7 +28386,7 @@
 .method private static synthetic lambda$createInputTemplateNameDialog$19(Ljava/lang/Runnable;Landroid/content/DialogInterface;)V
     .locals 0
 
-    .line 493
+    .line 494
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -28399,7 +28395,7 @@
 .method private static synthetic lambda$createLanguageAlert$31(Lorg/telegram/ui/LaunchActivity;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1007
+    .line 1008
     new-instance p1, Lorg/telegram/ui/LanguageSelectActivity;
 
     invoke-direct {p1}, Lorg/telegram/ui/LanguageSelectActivity;-><init>()V
@@ -28412,12 +28408,12 @@
 .method private static synthetic lambda$createLanguageAlert$32(Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;Lorg/telegram/ui/LaunchActivity;Landroid/content/DialogInterface;I)V
     .locals 8
 
-    .line 1022
+    .line 1023
     iget-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->official:Z
 
     if-eqz p2, :cond_0
 
-    .line 1023
+    .line 1024
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -28436,7 +28432,7 @@
 
     goto :goto_0
 
-    .line 1025
+    .line 1026
     :cond_0
     new-instance p2, Ljava/lang/StringBuilder;
 
@@ -28454,7 +28450,7 @@
 
     move-result-object p2
 
-    .line 1027
+    .line 1028
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -28466,49 +28462,49 @@
 
     if-nez p2, :cond_2
 
-    .line 1029
+    .line 1030
     new-instance p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
     invoke-direct {p2}, Lorg/telegram/messenger/LocaleController$LocaleInfo;-><init>()V
 
-    .line 1030
+    .line 1031
     iget-object p3, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->native_name:Ljava/lang/String;
 
     iput-object p3, p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->name:Ljava/lang/String;
 
-    .line 1031
+    .line 1032
     iget-object p3, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->name:Ljava/lang/String;
 
     iput-object p3, p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->nameEnglish:Ljava/lang/String;
 
-    .line 1032
+    .line 1033
     iget-object p3, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->lang_code:Ljava/lang/String;
 
     iput-object p3, p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->shortName:Ljava/lang/String;
 
-    .line 1033
+    .line 1034
     iget-object p3, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->base_lang_code:Ljava/lang/String;
 
     iput-object p3, p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->baseLangCode:Ljava/lang/String;
 
-    .line 1034
+    .line 1035
     iget-object p3, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->plural_code:Ljava/lang/String;
 
     iput-object p3, p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pluralLangCode:Ljava/lang/String;
 
-    .line 1035
+    .line 1036
     iget-boolean p3, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->rtl:Z
 
     iput-boolean p3, p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->isRtl:Z
 
-    .line 1036
+    .line 1037
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackLanguage;->official:Z
 
     if-eqz p0, :cond_1
 
     const-string p0, "remote"
 
-    .line 1037
+    .line 1038
     iput-object p0, p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pathToFile:Ljava/lang/String;
 
     goto :goto_1
@@ -28516,14 +28512,14 @@
     :cond_1
     const-string p0, "unofficial"
 
-    .line 1039
+    .line 1040
     iput-object p0, p2, Lorg/telegram/messenger/LocaleController$LocaleInfo;->pathToFile:Ljava/lang/String;
 
     :cond_2
     :goto_1
     move-object v1, p2
 
-    .line 1042
+    .line 1043
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v0
@@ -28544,7 +28540,7 @@
 
     const/4 p0, 0x1
 
-    .line 1043
+    .line 1044
     invoke-virtual {p1, p0}, Lorg/telegram/ui/LaunchActivity;->rebuildAllFragments(Z)V
 
     return-void
@@ -28553,7 +28549,7 @@
 .method private static synthetic lambda$createLocationRequiredDialog$23(Landroid/content/Context;Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 556
+    .line 557
     :try_start_0
     new-instance p1, Landroid/content/Intent;
 
@@ -28561,7 +28557,7 @@
 
     invoke-direct {p1, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 557
+    .line 558
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -28588,7 +28584,7 @@
 
     invoke-virtual {p1, p2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 558
+    .line 559
     invoke-virtual {p0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -28598,7 +28594,7 @@
     :catch_0
     move-exception p0
 
-    .line 560
+    .line 561
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -28608,7 +28604,7 @@
 .method private static synthetic lambda$createLocationUpdateDialog$140([ILandroid/widget/LinearLayout;Landroid/view/View;)V
     .locals 5
 
-    .line 5418
+    .line 5419
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v0
@@ -28621,10 +28617,10 @@
 
     const/4 v1, 0x0
 
-    .line 5419
+    .line 5420
     aput v0, p0, v1
 
-    .line 5420
+    .line 5421
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result p0
@@ -28634,17 +28630,17 @@
     :goto_0
     if-ge v0, p0, :cond_2
 
-    .line 5422
+    .line 5423
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 5423
+    .line 5424
     instance-of v3, v2, Lorg/telegram/ui/Cells/RadioColorCell;
 
     if-eqz v3, :cond_1
 
-    .line 5424
+    .line 5425
     move-object v3, v2
 
     check-cast v3, Lorg/telegram/ui/Cells/RadioColorCell;
@@ -28677,7 +28673,7 @@
 
     const/4 p2, 0x0
 
-    .line 5435
+    .line 5436
     aget p3, p0, p2
 
     if-nez p3, :cond_0
@@ -28686,7 +28682,7 @@
 
     goto :goto_0
 
-    .line 5437
+    .line 5438
     :cond_0
     aget p0, p0, p2
 
@@ -28701,7 +28697,7 @@
     :cond_1
     const/16 p0, 0x7080
 
-    .line 5442
+    .line 5443
     :goto_0
     invoke-interface {p1, p0}, Lorg/telegram/messenger/MessagesStorage$IntCallback;->run(I)V
 
@@ -28738,7 +28734,7 @@
     :cond_2
     const/4 p5, 0x3
 
-    .line 4664
+    .line 4665
     :goto_0
     sget p6, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -28748,14 +28744,14 @@
 
     invoke-virtual {p6, p0, p1, p2, p5}, Lorg/telegram/messenger/NotificationsController;->setDialogNotificationsSettings(JII)V
 
-    .line 4665
+    .line 4666
     invoke-static {p3}, Lorg/telegram/ui/Components/BulletinFactory;->canShowBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     move-result p0
 
     if-eqz p0, :cond_3
 
-    .line 4666
+    .line 4667
     invoke-static {p3, p5, v0, p4}, Lorg/telegram/ui/Components/BulletinFactory;->createMuteBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -28801,7 +28797,7 @@
 
     move p5, v0
 
-    .line 4698
+    .line 4699
     :goto_1
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
@@ -28809,7 +28805,7 @@
 
     if-ge p5, v1, :cond_3
 
-    .line 4699
+    .line 4700
     invoke-virtual {p0, p5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -28820,7 +28816,7 @@
 
     move-result-wide v1
 
-    .line 4700
+    .line 4701
     sget v3, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
@@ -28833,7 +28829,7 @@
 
     goto :goto_1
 
-    .line 4703
+    .line 4704
     :cond_3
     invoke-static {p2}, Lorg/telegram/ui/Components/BulletinFactory;->canShowBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -28841,7 +28837,7 @@
 
     if-eqz p0, :cond_4
 
-    .line 4704
+    .line 4705
     invoke-static {p2, p4, v0, p3}, Lorg/telegram/ui/Components/BulletinFactory;->createMuteBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p0
@@ -28855,12 +28851,12 @@
 .method private static synthetic lambda$createMuteForPickerDialog$117([II)Ljava/lang/String;
     .locals 4
 
-    .line 4317
+    .line 4318
     aget v0, p0, p1
 
     if-nez v0, :cond_0
 
-    .line 4318
+    .line 4319
     sget p0, Lorg/telegram/messenger/R$string;->MuteNever:I
 
     const-string p1, "MuteNever"
@@ -28871,7 +28867,7 @@
 
     return-object p0
 
-    .line 4319
+    .line 4320
     :cond_0
     aget v0, p0, p1
 
@@ -28881,7 +28877,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 4320
+    .line 4321
     aget p0, p0, p1
 
     new-array p1, v2, [Ljava/lang/Object;
@@ -28894,7 +28890,7 @@
 
     return-object p0
 
-    .line 4321
+    .line 4322
     :cond_1
     aget v0, p0, p1
 
@@ -28902,7 +28898,7 @@
 
     if-ge v0, v3, :cond_2
 
-    .line 4322
+    .line 4323
     aget p0, p0, p1
 
     div-int/2addr p0, v1
@@ -28917,7 +28913,7 @@
 
     return-object p0
 
-    .line 4323
+    .line 4324
     :cond_2
     aget v0, p0, p1
 
@@ -28925,7 +28921,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 4324
+    .line 4325
     aget p0, p0, p1
 
     div-int/2addr p0, v3
@@ -28940,7 +28936,7 @@
 
     return-object p0
 
-    .line 4325
+    .line 4326
     :cond_3
     aget v0, p0, p1
 
@@ -28948,7 +28944,7 @@
 
     if-ge v0, v3, :cond_4
 
-    .line 4326
+    .line 4327
     aget p0, p0, p1
 
     div-int/2addr p0, v1
@@ -28963,7 +28959,7 @@
 
     return-object p0
 
-    .line 4327
+    .line 4328
     :cond_4
     aget v0, p0, p1
 
@@ -28971,7 +28967,7 @@
 
     if-ge v0, v1, :cond_5
 
-    .line 4328
+    .line 4329
     aget p0, p0, p1
 
     div-int/2addr p0, v3
@@ -28986,7 +28982,7 @@
 
     return-object p0
 
-    .line 4330
+    .line 4331
     :cond_5
     aget p0, p0, p1
 
@@ -29018,7 +29014,7 @@
 
     const/4 p2, 0x2
 
-    .line 4389
+    .line 4390
     :try_start_0
     invoke-virtual {p0, p1, p2}, Landroid/widget/LinearLayout;->performHapticFeedback(II)Z
     :try_end_0
@@ -29031,7 +29027,7 @@
 .method private static synthetic lambda$createMuteForPickerDialog$120([ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
     .locals 0
 
-    .line 4405
+    .line 4406
     invoke-virtual {p1}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p1
@@ -29044,10 +29040,10 @@
 
     const/4 p4, 0x0
 
-    .line 4406
+    .line 4407
     invoke-interface {p2, p1, p0, p4}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;->didSelectDate(ZILjava/lang/String;)V
 
-    .line 4407
+    .line 4408
     invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -29060,7 +29056,7 @@
 .method private static synthetic lambda$createOpenTelegramDialog$22(Landroid/content/Context;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 512
+    .line 513
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->openTelegramApp(Landroid/content/Context;)V
 
     return-void
@@ -29069,7 +29065,7 @@
 .method private static synthetic lambda$createPopupSelectDialog$150([IILorg/telegram/ui/ActionBar/AlertDialog$Builder;Ljava/lang/Runnable;Landroid/view/View;)V
     .locals 2
 
-    .line 5788
+    .line 5789
     invoke-virtual {p4}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p4
@@ -29084,14 +29080,14 @@
 
     aput p4, p0, v0
 
-    .line 5790
+    .line 5791
     sget p4, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p4}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
 
     move-result-object p4
 
-    .line 5791
+    .line 5792
     invoke-interface {p4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p4
@@ -29100,7 +29096,7 @@
 
     if-ne p1, v1, :cond_0
 
-    .line 5793
+    .line 5794
     aget p0, p0, v0
 
     const-string p1, "popupAll"
@@ -29112,7 +29108,7 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 5795
+    .line 5796
     aget p0, p0, v0
 
     const-string p1, "popupGroup"
@@ -29121,7 +29117,7 @@
 
     goto :goto_0
 
-    .line 5797
+    .line 5798
     :cond_1
     aget p0, p0, v0
 
@@ -29129,11 +29125,11 @@
 
     invoke-interface {p4, p1, p0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 5799
+    .line 5800
     :goto_0
     invoke-interface {p4}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 5800
+    .line 5801
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -29142,7 +29138,7 @@
 
     if-eqz p3, :cond_2
 
-    .line 5802
+    .line 5803
     invoke-interface {p3}, Ljava/lang/Runnable;->run()V
 
     :cond_2
@@ -29152,7 +29148,7 @@
 .method private static synthetic lambda$createPrioritySelectDialog$149([IJIILandroid/content/SharedPreferences;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Ljava/lang/Runnable;Landroid/view/View;)V
     .locals 7
 
-    .line 5701
+    .line 5702
     invoke-virtual {p8}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p8
@@ -29167,14 +29163,14 @@
 
     aput p8, p0, v0
 
-    .line 5703
+    .line 5704
     sget p8, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p8}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
 
     move-result-object p8
 
-    .line 5704
+    .line 5705
     invoke-interface {p8}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p8
@@ -29195,7 +29191,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 5707
+    .line 5708
     aget p4, p0, v0
 
     if-nez p4, :cond_0
@@ -29204,7 +29200,7 @@
 
     goto :goto_0
 
-    .line 5709
+    .line 5710
     :cond_0
     aget p4, p0, v0
 
@@ -29214,7 +29210,7 @@
 
     goto :goto_0
 
-    .line 5711
+    .line 5712
     :cond_1
     aget p4, p0, v0
 
@@ -29224,7 +29220,7 @@
 
     goto :goto_0
 
-    .line 5713
+    .line 5714
     :cond_2
     aget p0, p0, v0
 
@@ -29235,7 +29231,7 @@
     :cond_3
     move v0, v6
 
-    .line 5718
+    .line 5719
     :goto_0
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -29253,7 +29249,7 @@
 
     invoke-interface {p8, p0, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 5719
+    .line 5720
     sget p0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p0}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
@@ -29264,7 +29260,7 @@
 
     goto :goto_3
 
-    .line 5722
+    .line 5723
     :cond_4
     aget p1, p0, v0
 
@@ -29274,7 +29270,7 @@
 
     goto :goto_1
 
-    .line 5724
+    .line 5725
     :cond_5
     aget p1, p0, v0
 
@@ -29282,7 +29278,7 @@
 
     goto :goto_1
 
-    .line 5726
+    .line 5727
     :cond_6
     aget p1, p0, v0
 
@@ -29300,10 +29296,10 @@
 
     const-string p1, "priority_messages"
 
-    .line 5732
+    .line 5733
     invoke-interface {p8, p1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 5733
+    .line 5734
     invoke-interface {p5, p1, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result p1
@@ -29317,10 +29313,10 @@
 
     const-string p1, "priority_group"
 
-    .line 5735
+    .line 5736
     invoke-interface {p8, p1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 5736
+    .line 5737
     invoke-interface {p5, p1, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result p1
@@ -29334,10 +29330,10 @@
 
     const-string p1, "priority_channel"
 
-    .line 5738
+    .line 5739
     invoke-interface {p8, p1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 5739
+    .line 5740
     invoke-interface {p5, p1, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result p1
@@ -29351,17 +29347,17 @@
 
     const-string p1, "priority_stories"
 
-    .line 5741
+    .line 5742
     invoke-interface {p8, p1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 5742
+    .line 5743
     invoke-interface {p5, p1, v6}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
 
     move-result p1
 
     aput p1, p0, v0
 
-    .line 5744
+    .line 5745
     :cond_b
     :goto_2
     sget p0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
@@ -29372,11 +29368,11 @@
 
     invoke-virtual {p0, p4}, Lorg/telegram/messenger/NotificationsController;->deleteNotificationChannelGlobal(I)V
 
-    .line 5746
+    .line 5747
     :goto_3
     invoke-interface {p8}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 5747
+    .line 5748
     invoke-virtual {p6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -29385,7 +29381,7 @@
 
     if-eqz p7, :cond_c
 
-    .line 5749
+    .line 5750
     invoke-interface {p7}, Ljava/lang/Runnable;->run()V
 
     :cond_c
@@ -29397,7 +29393,7 @@
 
     if-nez p2, :cond_0
 
-    .line 211
+    .line 212
     :try_start_0
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -29411,15 +29407,15 @@
 
     const-string p2, "label"
 
-    .line 212
+    .line 213
     invoke-static {p2, p0}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
 
     move-result-object p0
 
-    .line 213
+    .line 214
     invoke-virtual {p1, p0}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
 
-    .line 214
+    .line 215
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string p1, "TextCopied"
@@ -29445,7 +29441,7 @@
     :catch_0
     move-exception p0
 
-    .line 216
+    .line 217
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -29458,7 +29454,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 4776
+    .line 4777
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -29478,7 +29474,7 @@
 
     move-wide/from16 v6, p5
 
-    .line 4845
+    .line 4846
     aget v2, p0, p9
 
     const/4 v0, 0x4
@@ -29505,13 +29501,13 @@
 
     if-ne v2, v0, :cond_1
 
-    .line 4846
+    .line 4847
     :cond_0
     instance-of v8, v9, Lorg/telegram/ui/ChatActivity;
 
     if-eqz v8, :cond_1
 
-    .line 4847
+    .line 4848
     move-object v0, v9
 
     check-cast v0, Lorg/telegram/ui/ChatActivity;
@@ -29536,13 +29532,13 @@
 
     if-ne v2, v8, :cond_5
 
-    .line 4850
+    .line 4851
     :cond_3
     instance-of v0, v9, Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_4
 
-    .line 4851
+    .line 4852
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -29553,7 +29549,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->requestAdjustNothing(Landroid/app/Activity;I)V
 
-    .line 4853
+    .line 4854
     :cond_4
     new-instance v10, Lorg/telegram/ui/Components/AlertsCreator$41;
 
@@ -29577,7 +29573,7 @@
 
     return-void
 
-    .line 4889
+    .line 4890
     :cond_5
     sget v8, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -29593,13 +29589,13 @@
 
     if-eqz p7, :cond_c
 
-    .line 4891
-    new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_stories_report;
-
-    invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_stories_report;-><init>()V
-
     .line 4892
-    iget-object v12, v8, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->id:Ljava/util/ArrayList;
+    new-instance v8, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;
+
+    invoke-direct {v8}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;-><init>()V
+
+    .line 4893
+    iget-object v12, v8, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->id:Ljava/util/ArrayList;
 
     invoke-static/range {p7 .. p7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -29607,7 +29603,7 @@
 
     invoke-virtual {v12, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4893
+    .line 4894
     sget v12, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v12}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -29618,106 +29614,106 @@
 
     move-result-object v6
 
-    iput-object v6, v8, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object v6, v8, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 4894
-    iput-object v11, v8, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->message:Ljava/lang/String;
+    .line 4895
+    iput-object v11, v8, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->message:Ljava/lang/String;
 
     if-nez v2, :cond_6
 
-    .line 4896
+    .line 4897
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonSpam;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonSpam;-><init>()V
 
-    iput-object v0, v8, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
+    iput-object v0, v8, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
 
     goto/16 :goto_1
 
     :cond_6
     if-ne v2, v10, :cond_7
 
-    .line 4898
+    .line 4899
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonFake;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonFake;-><init>()V
 
-    iput-object v0, v8, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
+    iput-object v0, v8, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
 
     goto/16 :goto_1
 
     :cond_7
     if-ne v2, v5, :cond_8
 
-    .line 4900
+    .line 4901
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonViolence;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonViolence;-><init>()V
 
-    iput-object v0, v8, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
+    iput-object v0, v8, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
 
     goto/16 :goto_1
 
     :cond_8
     if-ne v2, v4, :cond_9
 
-    .line 4902
+    .line 4903
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonChildAbuse;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonChildAbuse;-><init>()V
 
-    iput-object v0, v8, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
+    iput-object v0, v8, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
 
     goto/16 :goto_1
 
     :cond_9
     if-ne v2, v3, :cond_a
 
-    .line 4904
+    .line 4905
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPornography;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPornography;-><init>()V
 
-    iput-object v0, v8, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
+    iput-object v0, v8, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
 
     goto/16 :goto_1
 
     :cond_a
     if-ne v2, v1, :cond_b
 
-    .line 4906
+    .line 4907
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonIllegalDrugs;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonIllegalDrugs;-><init>()V
 
-    iput-object v0, v8, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
+    iput-object v0, v8, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
 
     goto/16 :goto_1
 
     :cond_b
     if-ne v2, v0, :cond_1a
 
-    .line 4908
+    .line 4909
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPersonalDetails;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPersonalDetails;-><init>()V
 
-    iput-object v0, v8, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
+    iput-object v0, v8, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
 
     goto/16 :goto_1
 
     :cond_c
     if-eqz p1, :cond_12
 
-    .line 4912
+    .line 4913
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_messages_report;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_messages_report;-><init>()V
 
-    .line 4913
+    .line 4914
     iput-object v8, v6, Lorg/telegram/tgnet/TLRPC$TL_messages_report;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 4914
+    .line 4915
     iget-object v7, v6, Lorg/telegram/tgnet/TLRPC$TL_messages_report;->id:Ljava/util/ArrayList;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -29726,12 +29722,12 @@
 
     invoke-virtual {v7, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4915
+    .line 4916
     iput-object v11, v6, Lorg/telegram/tgnet/TLRPC$TL_messages_report;->message:Ljava/lang/String;
 
     if-nez v2, :cond_d
 
-    .line 4917
+    .line 4918
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonSpam;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonSpam;-><init>()V
@@ -29743,7 +29739,7 @@
     :cond_d
     if-ne v2, v5, :cond_e
 
-    .line 4919
+    .line 4920
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonViolence;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonViolence;-><init>()V
@@ -29755,7 +29751,7 @@
     :cond_e
     if-ne v2, v4, :cond_f
 
-    .line 4921
+    .line 4922
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonChildAbuse;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonChildAbuse;-><init>()V
@@ -29767,7 +29763,7 @@
     :cond_f
     if-ne v2, v3, :cond_10
 
-    .line 4923
+    .line 4924
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPornography;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPornography;-><init>()V
@@ -29779,7 +29775,7 @@
     :cond_10
     if-ne v2, v1, :cond_11
 
-    .line 4925
+    .line 4926
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonIllegalDrugs;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonIllegalDrugs;-><init>()V
@@ -29791,7 +29787,7 @@
     :cond_11
     if-ne v2, v0, :cond_19
 
-    .line 4927
+    .line 4928
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPersonalDetails;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPersonalDetails;-><init>()V
@@ -29800,21 +29796,21 @@
 
     goto :goto_0
 
-    .line 4931
+    .line 4932
     :cond_12
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_account_reportPeer;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_account_reportPeer;-><init>()V
 
-    .line 4932
+    .line 4933
     iput-object v8, v6, Lorg/telegram/tgnet/TLRPC$TL_account_reportPeer;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 4933
+    .line 4934
     iput-object v11, v6, Lorg/telegram/tgnet/TLRPC$TL_account_reportPeer;->message:Ljava/lang/String;
 
     if-nez v2, :cond_13
 
-    .line 4935
+    .line 4936
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonSpam;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonSpam;-><init>()V
@@ -29826,7 +29822,7 @@
     :cond_13
     if-ne v2, v10, :cond_14
 
-    .line 4937
+    .line 4938
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonFake;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonFake;-><init>()V
@@ -29838,7 +29834,7 @@
     :cond_14
     if-ne v2, v5, :cond_15
 
-    .line 4939
+    .line 4940
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonViolence;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonViolence;-><init>()V
@@ -29850,7 +29846,7 @@
     :cond_15
     if-ne v2, v4, :cond_16
 
-    .line 4941
+    .line 4942
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonChildAbuse;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonChildAbuse;-><init>()V
@@ -29862,7 +29858,7 @@
     :cond_16
     if-ne v2, v3, :cond_17
 
-    .line 4943
+    .line 4944
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPornography;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPornography;-><init>()V
@@ -29874,7 +29870,7 @@
     :cond_17
     if-ne v2, v1, :cond_18
 
-    .line 4945
+    .line 4946
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonIllegalDrugs;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonIllegalDrugs;-><init>()V
@@ -29886,7 +29882,7 @@
     :cond_18
     if-ne v2, v0, :cond_19
 
-    .line 4947
+    .line 4948
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPersonalDetails;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPersonalDetails;-><init>()V
@@ -29897,7 +29893,7 @@
     :goto_0
     move-object v8, v6
 
-    .line 4951
+    .line 4952
     :cond_1a
     :goto_1
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
@@ -29910,12 +29906,12 @@
 
     invoke-virtual {v0, v8, v1}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 4954
+    .line 4955
     instance-of v0, v9, Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_1b
 
-    .line 4955
+    .line 4956
     move-object v0, v9
 
     check-cast v0, Lorg/telegram/ui/ChatActivity;
@@ -29932,12 +29928,12 @@
 
     const/4 v4, 0x0
 
-    .line 4957
+    .line 4958
     invoke-virtual {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Runnable;)V
 
     goto :goto_2
 
-    .line 4960
+    .line 4961
     :cond_1b
     invoke-static/range {p2 .. p2}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
 
@@ -29959,7 +29955,7 @@
 .method private static synthetic lambda$createRestoreBackupBottomSheetDialog$10(Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
     .locals 0
 
-    .line 344
+    .line 345
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -29972,17 +29968,17 @@
 .method private static synthetic lambda$createRestoreBackupBottomSheetDialog$11(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Boolean;)V
     .locals 1
 
-    .line 366
+    .line 367
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
-    .line 367
+    .line 368
     invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p0
 
     if-eqz p0, :cond_0
 
-    .line 368
+    .line 369
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p0
@@ -30004,7 +30000,7 @@
 .method private static synthetic lambda$createRestoreBackupBottomSheetDialog$12([Lorg/telegram/ui/Cells/TextCheckBoxCell;[Lcom/iMe/fork/enums/BackupComponent;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
     .locals 3
 
-    .line 355
+    .line 356
     new-instance p6, Ljava/util/ArrayList;
 
     invoke-direct {p6}, Ljava/util/ArrayList;-><init>()V
@@ -30013,13 +30009,13 @@
 
     move v1, v0
 
-    .line 356
+    .line 357
     :goto_0
     array-length v2, p0
 
     if-ge v1, v2, :cond_1
 
-    .line 357
+    .line 358
     aget-object v2, p0, v1
 
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/TextCheckBoxCell;->isChecked()Z
@@ -30028,7 +30024,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 358
+    .line 359
     aget-object v2, p1, v1
 
     invoke-interface {p6, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -30038,7 +30034,7 @@
 
     goto :goto_0
 
-    .line 361
+    .line 362
     :cond_1
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
@@ -30046,20 +30042,20 @@
 
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
-    .line 362
+    .line 363
     new-instance p0, Lorg/telegram/ui/ActionBar/AlertDialog;
 
     const/4 p1, 0x3
 
     invoke-direct {p0, p3, p1}, Lorg/telegram/ui/ActionBar/AlertDialog;-><init>(Landroid/content/Context;I)V
 
-    .line 363
+    .line 364
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanCancel(Z)V
 
-    .line 364
+    .line 365
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 365
+    .line 366
     invoke-virtual {p4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getBackupController()Lcom/iMe/fork/controller/BackupController;
 
     move-result-object p1
@@ -30076,7 +30072,7 @@
 .method private static synthetic lambda$createRestoreBackupBottomSheetDialog$13(Lorg/telegram/ui/Cells/TextCheckBoxCell;[Lorg/telegram/ui/Cells/TextCheckBoxCell;Landroid/widget/TextView;Landroid/view/View;)V
     .locals 3
 
-    .line 382
+    .line 383
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/TextCheckBoxCell;->isChecked()Z
 
     move-result p3
@@ -30087,7 +30083,7 @@
 
     invoke-virtual {p0, p3}, Lorg/telegram/ui/Cells/TextCheckBoxCell;->setChecked(Z)V
 
-    .line 384
+    .line 385
     array-length p0, p1
 
     const/4 p3, 0x0
@@ -30099,7 +30095,7 @@
 
     aget-object v2, p1, v1
 
-    .line 385
+    .line 386
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/TextCheckBoxCell;->isChecked()Z
 
     move-result v2
@@ -30126,11 +30122,11 @@
     :cond_2
     const/high16 p0, 0x3f000000    # 0.5f
 
-    .line 390
+    .line 391
     :goto_2
     invoke-virtual {p2, p0}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 391
+    .line 392
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setEnabled(Z)V
 
     return-void
@@ -30143,7 +30139,7 @@
 
     const/4 v1, 0x0
 
-    .line 3339
+    .line 3340
     invoke-interface {p0, v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;->didSelectDate(ZILjava/lang/String;)V
 
     return-void
@@ -30160,22 +30156,22 @@
 .method private static synthetic lambda$createScheduleDatePickerDialog$87(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;Landroid/view/View;)V
     .locals 1
 
-    .line 3467
+    .line 3468
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->toggleSubMenu()V
 
-    .line 3468
+    .line 3469
     iget p2, p1, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->subMenuTextColor:I
 
     const/4 v0, 0x0
 
     invoke-virtual {p0, p2, v0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setPopupItemsColor(IZ)V
 
-    .line 3469
+    .line 3470
     iget p2, p1, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->subMenuSelectorColor:I
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setupPopupRadialSelectors(I)V
 
-    .line 3470
+    .line 3471
     iget p1, p1, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerColors;->subMenuBackgroundColor:I
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->redrawPopup(I)V
@@ -30194,10 +30190,10 @@
 
     const/4 v1, 0x0
 
-    .line 3474
+    .line 3475
     invoke-interface {p0, v0, p2, v1}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;->didSelectDate(ZILjava/lang/String;)V
 
-    .line 3475
+    .line 3476
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -30213,7 +30209,7 @@
 
     if-nez p4, :cond_0
 
-    .line 3505
+    .line 3506
     sget p0, Lorg/telegram/messenger/R$string;->MessageScheduleToday:I
 
     const-string p1, "MessageScheduleToday"
@@ -30233,24 +30229,24 @@
 
     add-long/2addr p0, v0
 
-    .line 3508
+    .line 3509
     invoke-virtual {p2, p0, p1}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     const/4 p4, 0x1
 
-    .line 3509
+    .line 3510
     invoke-virtual {p2, p4}, Ljava/util/Calendar;->get(I)I
 
     move-result p2
 
     if-ne p2, p3, :cond_1
 
-    .line 3511
+    .line 3512
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 3512
+    .line 3513
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object p3
@@ -30267,7 +30263,7 @@
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3514
+    .line 3515
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object p3
@@ -30286,7 +30282,7 @@
 
     return-object p0
 
-    .line 3517
+    .line 3518
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -30308,7 +30304,7 @@
 
     const/4 p10, 0x2
 
-    .line 3524
+    .line 3525
     :try_start_0
     invoke-virtual {p0, p9, p10}, Landroid/widget/LinearLayout;->performHapticFeedback(II)Z
     :try_end_0
@@ -30341,7 +30337,7 @@
 
     move-object p5, p8
 
-    .line 3528
+    .line 3529
     invoke-static/range {p0 .. p5}, Lorg/telegram/ui/Components/AlertsCreator;->checkScheduleDate(Landroid/widget/TextView;Landroid/widget/TextView;ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)Z
 
     return-void
@@ -30354,7 +30350,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 3535
+    .line 3536
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
@@ -30379,7 +30375,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 3541
+    .line 3542
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
@@ -30404,7 +30400,7 @@
 
     const/4 v1, 0x0
 
-    .line 3572
+    .line 3573
     aput-boolean v1, p0, v1
 
     cmp-long v2, p1, p3
@@ -30431,12 +30427,12 @@
 
     move-object/from16 v9, p7
 
-    .line 3573
+    .line 3574
     invoke-static/range {v4 .. v9}, Lorg/telegram/ui/Components/AlertsCreator;->checkScheduleDate(Landroid/widget/TextView;Landroid/widget/TextView;ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)Z
 
     move-result v2
 
-    .line 3574
+    .line 3575
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -30465,7 +30461,7 @@
 
     const/16 v4, 0xb
 
-    .line 3575
+    .line 3576
     invoke-virtual/range {p6 .. p6}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result v5
@@ -30474,7 +30470,7 @@
 
     const/16 v4, 0xc
 
-    .line 3576
+    .line 3577
     invoke-virtual/range {p7 .. p7}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result v5
@@ -30485,10 +30481,10 @@
 
     const/16 v2, 0xd
 
-    .line 3578
+    .line 3579
     invoke-virtual {v0, v2, v1}, Ljava/util/Calendar;->set(II)V
 
-    .line 3580
+    .line 3581
     :cond_1
     invoke-virtual/range {p8 .. p8}, Ljava/util/Calendar;->getTimeInMillis()J
 
@@ -30504,7 +30500,7 @@
 
     invoke-interface {v2, v3, v0, v1}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;->didSelectDate(ZILjava/lang/String;)V
 
-    .line 3581
+    .line 3582
     invoke-virtual/range {p10 .. p10}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object v0
@@ -30521,12 +30517,12 @@
 
     const/4 p2, 0x0
 
-    .line 3587
+    .line 3588
     aget-boolean p1, p1, p2
 
     if-eqz p1, :cond_0
 
-    .line 3588
+    .line 3589
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -30536,12 +30532,12 @@
 .method private static synthetic lambda$createSimpleAlert$33(Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1145
+    .line 1146
     invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
     if-eqz p0, :cond_0
 
-    .line 1147
+    .line 1148
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -30551,7 +30547,7 @@
 .method private static synthetic lambda$createSingleChoiceDialog$151(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/content/DialogInterface$OnClickListener;Landroid/view/View;)V
     .locals 0
 
-    .line 5824
+    .line 5825
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p2
@@ -30562,7 +30558,7 @@
 
     move-result p2
 
-    .line 5825
+    .line 5826
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -30571,7 +30567,7 @@
 
     const/4 p0, 0x0
 
-    .line 5826
+    .line 5827
     invoke-interface {p1, p0, p2}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
     return-void
@@ -30588,7 +30584,7 @@
 
     const-string v1, "Times"
 
-    .line 4142
+    .line 4143
     invoke-static {v1, p0, v0}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -30607,7 +30603,7 @@
 
     const-string v1, "Minutes"
 
-    .line 4155
+    .line 4156
     invoke-static {v1, p0, v0}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -30618,7 +30614,7 @@
 .method private static synthetic lambda$createSoundFrequencyPickerDialog$113(I)Ljava/lang/String;
     .locals 1
 
-    .line 4163
+    .line 4164
     sget p0, Lorg/telegram/messenger/R$string;->NotificationsFrequencyDivider:I
 
     const-string v0, "NotificationsFrequencyDivider"
@@ -30645,7 +30641,7 @@
 
     const/4 p2, 0x2
 
-    .line 4237
+    .line 4238
     :try_start_0
     invoke-virtual {p0, p1, p2}, Landroid/widget/LinearLayout;->performHapticFeedback(II)Z
     :try_end_0
@@ -30658,14 +30654,14 @@
 .method private static synthetic lambda$createSoundFrequencyPickerDialog$116(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/AlertsCreator$SoundFrequencyDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;Landroid/view/View;)V
     .locals 0
 
-    .line 4246
+    .line 4247
     invoke-virtual {p0}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p0
 
     add-int/lit8 p0, p0, 0x1
 
-    .line 4247
+    .line 4248
     invoke-virtual {p1}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p1
@@ -30674,10 +30670,10 @@
 
     mul-int/lit8 p1, p1, 0x3c
 
-    .line 4248
+    .line 4249
     invoke-interface {p2, p0, p1}, Lorg/telegram/ui/Components/AlertsCreator$SoundFrequencyDelegate;->didSelectValues(II)V
 
-    .line 4249
+    .line 4250
     invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -30700,7 +30696,7 @@
 
     if-nez p5, :cond_0
 
-    .line 3881
+    .line 3882
     sget p0, Lorg/telegram/messenger/R$string;->MessageScheduleToday:I
 
     const-string p1, "MessageScheduleToday"
@@ -30720,19 +30716,19 @@
 
     add-long/2addr p0, v0
 
-    .line 3884
+    .line 3885
     invoke-virtual {p2, p0, p1}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
     const/4 p5, 0x1
 
-    .line 3885
+    .line 3886
     invoke-virtual {p2, p5}, Ljava/util/Calendar;->get(I)I
 
     move-result p5
 
     const/4 v0, 0x6
 
-    .line 3886
+    .line 3887
     invoke-virtual {p2, v0}, Ljava/util/Calendar;->get(I)I
 
     move-result p2
@@ -30743,7 +30739,7 @@
 
     if-ge p2, p4, :cond_1
 
-    .line 3888
+    .line 3889
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -30785,7 +30781,7 @@
     :cond_1
     if-ne p5, p3, :cond_2
 
-    .line 3890
+    .line 3891
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object p2
@@ -30798,7 +30794,7 @@
 
     return-object p0
 
-    .line 3892
+    .line 3893
     :cond_2
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -30820,7 +30816,7 @@
 
     const/4 p5, 0x2
 
-    .line 3898
+    .line 3899
     :try_start_0
     invoke-virtual {p0, p4, p5}, Landroid/widget/LinearLayout;->performHapticFeedback(II)Z
     :try_end_0
@@ -30839,7 +30835,7 @@
 
     move-object v5, p3
 
-    .line 3902
+    .line 3903
     invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/AlertsCreator;->checkScheduleDate(Landroid/widget/TextView;Landroid/widget/TextView;ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)Z
 
     return-void
@@ -30852,7 +30848,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 3909
+    .line 3910
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
@@ -30877,7 +30873,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 3915
+    .line 3916
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
@@ -30910,12 +30906,12 @@
 
     move-object v5, p2
 
-    .line 3946
+    .line 3947
     invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/AlertsCreator;->checkScheduleDate(Landroid/widget/TextView;Landroid/widget/TextView;ILorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)Z
 
     move-result p6
 
-    .line 3947
+    .line 3948
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -30942,7 +30938,7 @@
 
     invoke-virtual {p3, v0, v1}, Ljava/util/Calendar;->setTimeInMillis(J)V
 
-    .line 3948
+    .line 3949
     invoke-virtual {p1}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p0
@@ -30951,7 +30947,7 @@
 
     invoke-virtual {p3, p1, p0}, Ljava/util/Calendar;->set(II)V
 
-    .line 3949
+    .line 3950
     invoke-virtual {p2}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p0
@@ -30966,10 +30962,10 @@
 
     const/4 p1, 0x0
 
-    .line 3951
+    .line 3952
     invoke-virtual {p3, p0, p1}, Ljava/util/Calendar;->set(II)V
 
-    .line 3953
+    .line 3954
     :cond_0
     invoke-virtual {p3}, Ljava/util/Calendar;->getTimeInMillis()J
 
@@ -30981,7 +30977,7 @@
 
     invoke-interface {p4, p0}, Lorg/telegram/ui/Components/AlertsCreator$StatusUntilDatePickerDelegate;->didSelectDate(I)V
 
-    .line 3954
+    .line 3955
     invoke-virtual {p5}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -30994,7 +30990,7 @@
 .method private static synthetic lambda$createSupportAlert$45(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1661
+    .line 1662
     invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator;->performAskAQuestion(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
@@ -31005,7 +31001,7 @@
 
     if-nez p0, :cond_0
 
-    .line 5859
+    .line 5860
     sget p0, Lorg/telegram/messenger/R$string;->ShortMessageLifetimeForever:I
 
     const-string v0, "ShortMessageLifetimeForever"
@@ -31025,7 +31021,7 @@
 
     if-ge p0, v1, :cond_1
 
-    .line 5861
+    .line 5862
     invoke-static {p0}, Lorg/telegram/messenger/LocaleController;->formatTTLString(I)Ljava/lang/String;
 
     move-result-object p0
@@ -31037,7 +31033,7 @@
 
     const/16 p0, 0x1e
 
-    .line 5863
+    .line 5864
     invoke-static {p0}, Lorg/telegram/messenger/LocaleController;->formatTTLString(I)Ljava/lang/String;
 
     move-result-object p0
@@ -31051,7 +31047,7 @@
 
     const/16 p0, 0x3c
 
-    .line 5865
+    .line 5866
     invoke-static {p0}, Lorg/telegram/messenger/LocaleController;->formatTTLString(I)Ljava/lang/String;
 
     move-result-object p0
@@ -31065,7 +31061,7 @@
 
     const/16 p0, 0xe10
 
-    .line 5867
+    .line 5868
     invoke-static {p0}, Lorg/telegram/messenger/LocaleController;->formatTTLString(I)Ljava/lang/String;
 
     move-result-object p0
@@ -31079,7 +31075,7 @@
 
     const p0, 0x15180
 
-    .line 5869
+    .line 5870
     invoke-static {p0}, Lorg/telegram/messenger/LocaleController;->formatTTLString(I)Ljava/lang/String;
 
     move-result-object p0
@@ -31093,7 +31089,7 @@
 
     const p0, 0x93a80
 
-    .line 5871
+    .line 5872
     invoke-static {p0}, Lorg/telegram/messenger/LocaleController;->formatTTLString(I)Ljava/lang/String;
 
     move-result-object p0
@@ -31109,10 +31105,10 @@
 .method private static synthetic lambda$createTTLAlert$153(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/ui/Components/NumberPicker;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 5877
+    .line 5878
     iget p2, p0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->ttl:I
 
-    .line 5878
+    .line 5879
     invoke-virtual {p1}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p1
@@ -31123,7 +31119,7 @@
 
     if-ge p1, p3, :cond_0
 
-    .line 5880
+    .line 5881
     iput p1, p0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->ttl:I
 
     goto :goto_0
@@ -31133,7 +31129,7 @@
 
     const/16 p1, 0x1e
 
-    .line 5882
+    .line 5883
     iput p1, p0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->ttl:I
 
     goto :goto_0
@@ -31145,7 +31141,7 @@
 
     const/16 p1, 0x3c
 
-    .line 5884
+    .line 5885
     iput p1, p0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->ttl:I
 
     goto :goto_0
@@ -31157,7 +31153,7 @@
 
     const/16 p1, 0xe10
 
-    .line 5886
+    .line 5887
     iput p1, p0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->ttl:I
 
     goto :goto_0
@@ -31169,7 +31165,7 @@
 
     const p1, 0x15180
 
-    .line 5888
+    .line 5889
     iput p1, p0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->ttl:I
 
     goto :goto_0
@@ -31181,17 +31177,17 @@
 
     const p1, 0x93a80
 
-    .line 5890
+    .line 5891
     iput p1, p0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->ttl:I
 
-    .line 5892
+    .line 5893
     :cond_5
     :goto_0
     iget p1, p0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->ttl:I
 
     if-eq p2, p1, :cond_6
 
-    .line 5893
+    .line 5894
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/SecretChatHelper;->getInstance(I)Lorg/telegram/messenger/SecretChatHelper;
@@ -31202,7 +31198,7 @@
 
     invoke-virtual {p1, p0, p2}, Lorg/telegram/messenger/SecretChatHelper;->sendTTLMessage(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$Message;)V
 
-    .line 5894
+    .line 5895
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -31224,7 +31220,7 @@
 .method private static synthetic lambda$createThemeCreateDialog$167(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
     .locals 0
 
-    .line 6410
+    .line 6411
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
     const/4 p0, 0x0
@@ -31235,10 +31231,10 @@
 .method private static synthetic lambda$createThemeCreateDialog$168(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
     .locals 0
 
-    .line 6418
+    .line 6419
     invoke-virtual {p0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 6419
+    .line 6420
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
     return-void
@@ -31247,7 +31243,7 @@
 .method private static synthetic lambda$createThemeCreateDialog$169(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/content/DialogInterface;)V
     .locals 0
 
-    .line 6417
+    .line 6418
     new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda126;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda126;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
@@ -31260,7 +31256,7 @@
 .method private static synthetic lambda$createThemeCreateDialog$170(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    .line 6442
+    .line 6443
     invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->processCreate(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
@@ -31269,7 +31265,7 @@
 .method private static synthetic lambda$createThemeCreateDialog$171(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 1
 
-    .line 6442
+    .line 6443
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda128;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda128;-><init>(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -31282,7 +31278,7 @@
 .method private static synthetic lambda$createThemeCreateDialog$172(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/AlertDialog;Landroid/view/View;)V
     .locals 0
 
-    .line 6424
+    .line 6425
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p5
@@ -31291,7 +31287,7 @@
 
     return-void
 
-    .line 6427
+    .line 6428
     :cond_0
     invoke-virtual {p1}, Landroid/widget/EditText;->length()I
 
@@ -31299,7 +31295,7 @@
 
     if-nez p5, :cond_2
 
-    .line 6428
+    .line 6429
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string p2, "vibrator"
@@ -31314,39 +31310,39 @@
 
     const-wide/16 p2, 0xc8
 
-    .line 6430
+    .line 6431
     invoke-virtual {p0, p2, p3}, Landroid/os/Vibrator;->vibrate(J)V
 
-    .line 6432
+    .line 6433
     :cond_1
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->shakeView(Landroid/view/View;)V
 
     return-void
 
-    .line 6435
+    .line 6436
     :cond_2
     instance-of p5, p0, Lorg/telegram/ui/ThemePreviewActivity;
 
     if-eqz p5, :cond_3
 
-    .line 6436
+    .line 6437
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->applyPreviousTheme()V
 
-    .line 6437
+    .line 6438
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     :cond_3
     if-eqz p2, :cond_4
 
-    .line 6440
+    .line 6441
     iget p2, p2, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->id:I
 
     invoke-virtual {p3, p2}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->setCurrentAccentId(I)V
 
-    .line 6441
+    .line 6442
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->refreshThemeColors()V
 
-    .line 6442
+    .line 6443
     sget-object p2, Lorg/telegram/messenger/Utilities;->searchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p3, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda127;
@@ -31357,7 +31353,7 @@
 
     return-void
 
-    .line 6445
+    .line 6446
     :cond_4
     invoke-static {p1, p4, p0}, Lorg/telegram/ui/Components/AlertsCreator;->processCreate(Lorg/telegram/ui/Components/EditTextBoldCursor;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
@@ -31367,7 +31363,7 @@
 .method private static synthetic lambda$createTopAnimationDialog$20(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 502
+    .line 503
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-interface {p0, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
@@ -31378,7 +31374,7 @@
 .method private static synthetic lambda$createTopAnimationDialog$21(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 503
+    .line 504
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-interface {p0, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
@@ -31389,7 +31385,7 @@
 .method private static synthetic lambda$createVibrationSelectDialog$139([IJLjava/lang/String;ILorg/telegram/ui/ActionBar/AlertDialog$Builder;Ljava/lang/Runnable;Landroid/view/View;)V
     .locals 5
 
-    .line 5336
+    .line 5337
     invoke-virtual {p7}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p7
@@ -31404,14 +31400,14 @@
 
     aput p7, p0, v0
 
-    .line 5338
+    .line 5339
     sget p7, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p7}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
 
     move-result-object p7
 
-    .line 5339
+    .line 5340
     invoke-interface {p7}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p7
@@ -31428,48 +31424,48 @@
 
     if-eqz v1, :cond_4
 
-    .line 5341
+    .line 5342
     aget v1, p0, v0
 
     if-nez v1, :cond_0
 
-    .line 5342
+    .line 5343
     invoke-interface {p7, p3, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_0
 
-    .line 5343
+    .line 5344
     :cond_0
     aget v1, p0, v0
 
     if-ne v1, v4, :cond_1
 
-    .line 5344
+    .line 5345
     invoke-interface {p7, p3, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_0
 
-    .line 5345
+    .line 5346
     :cond_1
     aget v1, p0, v0
 
     if-ne v1, v3, :cond_2
 
-    .line 5346
+    .line 5347
     invoke-interface {p7, p3, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_0
 
-    .line 5347
+    .line 5348
     :cond_2
     aget p0, p0, v0
 
     if-ne p0, v2, :cond_3
 
-    .line 5348
+    .line 5349
     invoke-interface {p7, p3, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 5350
+    .line 5351
     :cond_3
     :goto_0
     sget p0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
@@ -31482,51 +31478,51 @@
 
     goto :goto_2
 
-    .line 5352
+    .line 5353
     :cond_4
     aget p1, p0, v0
 
     if-nez p1, :cond_5
 
-    .line 5353
+    .line 5354
     invoke-interface {p7, p3, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_1
 
-    .line 5354
+    .line 5355
     :cond_5
     aget p1, p0, v0
 
     if-ne p1, v4, :cond_6
 
-    .line 5355
+    .line 5356
     invoke-interface {p7, p3, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_1
 
-    .line 5356
+    .line 5357
     :cond_6
     aget p1, p0, v0
 
     if-ne p1, v3, :cond_7
 
-    .line 5357
+    .line 5358
     invoke-interface {p7, p3, v4}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_1
 
-    .line 5358
+    .line 5359
     :cond_7
     aget p1, p0, v0
 
     if-ne p1, v2, :cond_8
 
-    .line 5359
+    .line 5360
     invoke-interface {p7, p3, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     goto :goto_1
 
-    .line 5360
+    .line 5361
     :cond_8
     aget p0, p0, v0
 
@@ -31534,21 +31530,21 @@
 
     if-ne p0, p1, :cond_9
 
-    .line 5361
+    .line 5362
     invoke-interface {p7, p3, p1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     :cond_9
     :goto_1
     const-string p0, "vibrate_channel"
 
-    .line 5363
+    .line 5364
     invoke-virtual {p3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
     if-eqz p0, :cond_a
 
-    .line 5364
+    .line 5365
     sget p0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p0}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
@@ -31562,14 +31558,14 @@
     :cond_a
     const-string p0, "vibrate_group"
 
-    .line 5365
+    .line 5366
     invoke-virtual {p3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p0
 
     if-eqz p0, :cond_b
 
-    .line 5366
+    .line 5367
     sget p0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p0}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
@@ -31580,7 +31576,7 @@
 
     goto :goto_2
 
-    .line 5368
+    .line 5369
     :cond_b
     sget p0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -31590,11 +31586,11 @@
 
     invoke-virtual {p0, v4}, Lorg/telegram/messenger/NotificationsController;->deleteNotificationChannelGlobal(I)V
 
-    .line 5371
+    .line 5372
     :goto_2
     invoke-interface {p7}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 5372
+    .line 5373
     invoke-virtual {p5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -31603,7 +31599,7 @@
 
     if-eqz p6, :cond_c
 
-    .line 5374
+    .line 5375
     invoke-interface {p6}, Ljava/lang/Runnable;->run()V
 
     :cond_c
@@ -31615,7 +31611,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 606
+    .line 607
     :try_start_0
     new-instance p0, Landroid/content/Intent;
 
@@ -31623,7 +31619,7 @@
 
     invoke-direct {p0, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 607
+    .line 608
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -31650,7 +31646,7 @@
 
     invoke-virtual {p0, p2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 608
+    .line 609
     invoke-virtual {p1, p0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -31660,7 +31656,7 @@
     :catch_0
     move-exception p0
 
-    .line 610
+    .line 611
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_0
@@ -31668,10 +31664,10 @@
     :cond_0
     const/4 p0, 0x1
 
-    .line 613
+    .line 614
     invoke-virtual {p2, p0}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 614
+    .line 615
     sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-interface {p3, p0}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
@@ -31685,10 +31681,10 @@
 
     const/4 p2, 0x1
 
-    .line 618
+    .line 619
     invoke-virtual {p0, p2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
-    .line 619
+    .line 620
     sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-interface {p1, p0}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
@@ -31699,14 +31695,14 @@
 .method private static synthetic lambda$createWebViewPermissionsRequestDialog$28(Ljava/util/concurrent/atomic/AtomicBoolean;Landroidx/core/util/Consumer;Landroid/content/DialogInterface;)V
     .locals 0
 
-    .line 622
+    .line 623
     invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     move-result p0
 
     if-nez p0, :cond_0
 
-    .line 623
+    .line 624
     sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-interface {p1, p0}, Landroidx/core/util/Consumer;->accept(Ljava/lang/Object;)V
@@ -31718,12 +31714,12 @@
 .method private static synthetic lambda$performAskAQuestion$46(Landroid/content/SharedPreferences;Lorg/telegram/tgnet/TLRPC$TL_help_support;Lorg/telegram/ui/ActionBar/AlertDialog;ILorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 4
 
-    .line 1702
+    .line 1703
     invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object p0
 
-    .line 1703
+    .line 1704
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_help_support;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -31732,17 +31728,17 @@
 
     invoke-interface {p0, v2, v0, v1}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    .line 1704
+    .line 1705
     new-instance v0, Lorg/telegram/tgnet/SerializedData;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/SerializedData;-><init>()V
 
-    .line 1705
+    .line 1706
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_help_support;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     invoke-virtual {v1, v0}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 1706
+    .line 1707
     invoke-virtual {v0}, Lorg/telegram/tgnet/SerializedData;->toByteArray()[B
 
     move-result-object v1
@@ -31757,13 +31753,13 @@
 
     invoke-interface {p0, v3, v1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 1707
+    .line 1708
     invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 1708
+    .line 1709
     invoke-virtual {v0}, Lorg/telegram/tgnet/SerializedData;->cleanup()V
 
-    .line 1710
+    .line 1711
     :try_start_0
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
     :try_end_0
@@ -31774,21 +31770,21 @@
     :catch_0
     move-exception p0
 
-    .line 1712
+    .line 1713
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1714
+    .line 1715
     :goto_0
     new-instance p0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1715
+    .line 1716
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_help_support;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     invoke-virtual {p0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1716
+    .line 1717
     invoke-static {p3}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p2
@@ -31799,7 +31795,7 @@
 
     invoke-virtual {p2, p0, v0, v1, v1}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
-    .line 1717
+    .line 1718
     invoke-static {p3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p0
@@ -31808,12 +31804,12 @@
 
     invoke-virtual {p0, p2, v2}, Lorg/telegram/messenger/MessagesController;->putUser(Lorg/telegram/tgnet/TLRPC$User;Z)Z
 
-    .line 1718
+    .line 1719
     new-instance p0, Landroid/os/Bundle;
 
     invoke-direct {p0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1719
+    .line 1720
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_help_support;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     iget-wide p1, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -31822,7 +31818,7 @@
 
     invoke-virtual {p0, p3, p1, p2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 1720
+    .line 1721
     new-instance p1, Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
@@ -31835,7 +31831,7 @@
 .method private static synthetic lambda$performAskAQuestion$47(Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
-    .line 1725
+    .line 1726
     :try_start_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
     :try_end_0
@@ -31846,7 +31842,7 @@
     :catch_0
     move-exception p0
 
-    .line 1727
+    .line 1728
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -31858,12 +31854,12 @@
 
     if-nez p5, :cond_0
 
-    .line 1700
+    .line 1701
     move-object v2, p4
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_help_support;
 
-    .line 1701
+    .line 1702
     new-instance p4, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda121;
 
     move-object v0, p4
@@ -31882,7 +31878,7 @@
 
     goto :goto_0
 
-    .line 1723
+    .line 1724
     :cond_0
     new-instance p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda122;
 
@@ -31909,7 +31905,7 @@
 .method private static synthetic lambda$showAddUserAlert$134(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 5058
+    .line 5059
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
 
     move-result p1
@@ -31930,14 +31926,14 @@
 .method private static synthetic lambda$showBlockReportSpamAlert$38([Lorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
     .locals 1
 
-    .line 1289
+    .line 1290
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Ljava/lang/Integer;
 
-    .line 1290
+    .line 1291
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -31974,7 +31970,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 1316
+    .line 1317
     invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -31990,7 +31986,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 1318
+    .line 1319
     aget-object v0, p2, v11
 
     if-eqz v0, :cond_3
@@ -32003,7 +31999,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1319
+    .line 1320
     :cond_1
     invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -32034,7 +32030,7 @@
     :cond_3
     if-eqz p2, :cond_5
 
-    .line 1321
+    .line 1322
     aget-object v0, p2, v10
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/CheckBoxCell;->isChecked()Z
@@ -32045,7 +32041,7 @@
 
     goto :goto_1
 
-    .line 1333
+    .line 1334
     :cond_4
     invoke-interface {v9, v11}, Lorg/telegram/messenger/MessagesStorage$IntCallback;->run(I)V
 
@@ -32055,14 +32051,14 @@
     :goto_1
     if-eqz p5, :cond_7
 
-    .line 1323
+    .line 1324
     invoke-static/range {p5 .. p5}, Lorg/telegram/messenger/ChatObject;->isNotInChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
 
     if-eqz v0, :cond_6
 
-    .line 1324
+    .line 1325
     invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -32071,7 +32067,7 @@
 
     goto :goto_2
 
-    .line 1326
+    .line 1327
     :cond_6
     invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -32103,7 +32099,7 @@
 
     goto :goto_2
 
-    .line 1329
+    .line 1330
     :cond_7
     invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -32111,7 +32107,7 @@
 
     invoke-virtual {v0, v7, v8, v11}, Lorg/telegram/messenger/MessagesController;->deleteDialog(JI)V
 
-    .line 1331
+    .line 1332
     :goto_2
     invoke-interface {v9, v10}, Lorg/telegram/messenger/MessagesStorage$IntCallback;->run(I)V
 
@@ -32124,7 +32120,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 1187
+    .line 1188
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -32134,14 +32130,14 @@
 .method private static synthetic lambda$showBlockReportSpamReplyAlert$35([Lorg/telegram/ui/Cells/CheckBoxCell;Landroid/view/View;)V
     .locals 1
 
-    .line 1210
+    .line 1211
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Ljava/lang/Integer;
 
-    .line 1211
+    .line 1212
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -32170,12 +32166,12 @@
 .method private static synthetic lambda$showBlockReportSpamReplyAlert$36(Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 1242
+    .line 1243
     instance-of p2, p1, Lorg/telegram/tgnet/TLRPC$Updates;
 
     if-eqz p2, :cond_0
 
-    .line 1243
+    .line 1244
     invoke-virtual {p0}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p0
@@ -32195,7 +32191,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 1218
+    .line 1219
     invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p3
@@ -32210,7 +32206,7 @@
 
     goto :goto_0
 
-    .line 1220
+    .line 1221
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -32226,13 +32222,13 @@
 
     invoke-virtual {p0, p6, p7, v0, v1}, Lorg/telegram/messenger/MessagesStorage;->deleteUserChatHistory(JJ)V
 
-    .line 1222
+    .line 1223
     :goto_0
     new-instance p0, Lorg/telegram/tgnet/TLRPC$TL_contacts_blockFromReplies;
 
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_contacts_blockFromReplies;-><init>()V
 
-    .line 1223
+    .line 1224
     invoke-virtual {p4}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result p3
@@ -32241,15 +32237,15 @@
 
     const/4 p3, 0x1
 
-    .line 1224
+    .line 1225
     iput-boolean p3, p0, Lorg/telegram/tgnet/TLRPC$TL_contacts_blockFromReplies;->delete_message:Z
 
-    .line 1225
+    .line 1226
     iput-boolean p3, p0, Lorg/telegram/tgnet/TLRPC$TL_contacts_blockFromReplies;->delete_history:Z
 
     const/4 p4, 0x0
 
-    .line 1226
+    .line 1227
     aget-object p4, p5, p4
 
     invoke-virtual {p4}, Lorg/telegram/ui/Cells/CheckBoxCell;->isChecked()Z
@@ -32258,17 +32254,17 @@
 
     if-eqz p4, :cond_1
 
-    .line 1227
+    .line 1228
     iput-boolean p3, p0, Lorg/telegram/tgnet/TLRPC$TL_contacts_blockFromReplies;->report_spam:Z
 
-    .line 1228
+    .line 1229
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p3
 
     if-eqz p3, :cond_1
 
-    .line 1230
+    .line 1231
     invoke-virtual {p2}, Lorg/telegram/ui/ChatActivity;->getUndoView()Lorg/telegram/ui/Components/UndoView;
 
     move-result-object p2
@@ -32281,10 +32277,10 @@
 
     const/4 p6, 0x0
 
-    .line 1232
+    .line 1233
     invoke-virtual {p2, p3, p4, p5, p6}, Lorg/telegram/ui/Components/UndoView;->showWithAction(JILjava/lang/Runnable;)V
 
-    .line 1241
+    .line 1242
     :cond_1
     invoke-virtual {p1}, Lorg/telegram/messenger/AccountInstance;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
@@ -32302,7 +32298,7 @@
 .method private static synthetic lambda$showChatWithAdmin$73(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/view/View;)V
     .locals 0
 
-    .line 2903
+    .line 2904
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
@@ -32311,7 +32307,7 @@
 .method private static synthetic lambda$showConfirmationDialog$7(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 283
+    .line 284
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-interface {p0, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
@@ -32322,7 +32318,7 @@
 .method private static synthetic lambda$showConfirmationDialog$8(Lcom/iMe/fork/utils/Callbacks$Callback1;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 284
+    .line 285
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-interface {p0, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
@@ -32345,7 +32341,7 @@
 
     move-object/from16 v6, p10
 
-    .line 1402
+    .line 1403
     invoke-virtual/range {p12 .. p12}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object v7
@@ -32372,12 +32368,12 @@
 
     if-eqz v15, :cond_3
 
-    .line 1405
+    .line 1406
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
 
     move-result-object v4
 
-    .line 1406
+    .line 1407
     invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v4
@@ -32386,7 +32382,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 1408
+    .line 1409
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -32403,7 +32399,7 @@
 
     goto :goto_0
 
-    .line 1410
+    .line 1411
     :cond_0
     new-instance v10, Ljava/lang/StringBuilder;
 
@@ -32419,7 +32415,7 @@
 
     invoke-interface {v4, v10, v14}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 1412
+    .line 1413
     :goto_0
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
@@ -32427,10 +32423,10 @@
 
     invoke-virtual {v10, v0, v1, v12, v13}, Lorg/telegram/messenger/MessagesStorage;->setDialogFlags(JJ)V
 
-    .line 1413
+    .line 1414
     invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 1414
+    .line 1415
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v4
@@ -32445,14 +32441,14 @@
 
     if-eqz v4, :cond_1
 
-    .line 1416
+    .line 1417
     new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings;
 
     invoke-direct {v10}, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings;-><init>()V
 
     iput-object v10, v4, Lorg/telegram/tgnet/TLRPC$Dialog;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
-    .line 1418
+    .line 1419
     :cond_1
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
 
@@ -32464,18 +32460,18 @@
 
     if-eqz p3, :cond_2
 
-    .line 1421
+    .line 1422
     invoke-interface {v3, v14}, Lorg/telegram/messenger/MessagesStorage$IntCallback;->run(I)V
 
     goto/16 :goto_4
 
-    .line 1423
+    .line 1424
     :cond_2
     invoke-interface {v3, v11}, Lorg/telegram/messenger/MessagesStorage$IntCallback;->run(I)V
 
     goto/16 :goto_4
 
-    .line 1427
+    .line 1428
     :cond_3
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
 
@@ -32492,17 +32488,17 @@
 
     if-eqz v2, :cond_5
 
-    .line 1431
+    .line 1432
     new-instance v2, Landroid/os/Bundle;
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
     const-string v3, "dialog_id"
 
-    .line 1432
+    .line 1433
     invoke-virtual {v2, v3, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 1433
+    .line 1434
     new-instance v0, Lorg/telegram/ui/ProfileNotificationsActivity;
 
     invoke-direct {v0, v2}, Lorg/telegram/ui/ProfileNotificationsActivity;-><init>(Landroid/os/Bundle;)V
@@ -32511,7 +32507,7 @@
 
     goto :goto_4
 
-    .line 1435
+    .line 1436
     :cond_5
     new-instance v0, Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
@@ -32525,7 +32521,7 @@
 
     goto :goto_4
 
-    .line 1438
+    .line 1439
     :cond_6
     invoke-static/range {p2 .. p2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
@@ -32562,7 +32558,7 @@
 
     move v10, v15
 
-    .line 1446
+    .line 1447
     :cond_9
     :goto_2
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
@@ -32581,12 +32577,12 @@
 
     if-nez p3, :cond_a
 
-    .line 1449
+    .line 1450
     invoke-interface {v3, v14}, Lorg/telegram/messenger/MessagesStorage$IntCallback;->run(I)V
 
     goto :goto_3
 
-    .line 1451
+    .line 1452
     :cond_a
     invoke-interface {v3, v11}, Lorg/telegram/messenger/MessagesStorage$IntCallback;->run(I)V
 
@@ -32594,7 +32590,7 @@
     :goto_3
     if-nez v0, :cond_c
 
-    .line 1455
+    .line 1456
     invoke-static/range {p2 .. p2}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
 
     move-result-object v0
@@ -32605,10 +32601,10 @@
     :goto_4
     if-eqz v6, :cond_d
 
-    .line 1460
+    .line 1461
     invoke-interface {v6, v7}, Lorg/telegram/messenger/MessagesStorage$IntCallback;->run(I)V
 
-    .line 1462
+    .line 1463
     :cond_d
     invoke-virtual/range {p11 .. p11}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
@@ -32655,14 +32651,14 @@
     :goto_5
     if-ltz v8, :cond_12
 
-    .line 1474
+    .line 1475
     invoke-static/range {p7 .. p7}, Lorg/telegram/ui/Components/BulletinFactory;->canShowBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     move-result v0
 
     if-eqz v0, :cond_12
 
-    .line 1475
+    .line 1476
     invoke-static {v5, v8}, Lorg/telegram/ui/Components/BulletinFactory;->createMuteBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v0
@@ -32676,7 +32672,7 @@
 .method private static synthetic lambda$showDeleteAllCloudDraftsAlert$2(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 1
 
-    .line 190
+    .line 191
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
 
     move-result-object p0
@@ -32691,7 +32687,7 @@
 .method private static synthetic lambda$showDeleteAllCloudDraftsAlert$3(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 190
+    .line 191
     new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda123;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda123;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -32704,12 +32700,12 @@
 .method private static synthetic lambda$showDeleteAllCloudDraftsAlert$4(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 189
+    .line 190
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_messages_clearAllDrafts;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_messages_clearAllDrafts;-><init>()V
 
-    .line 190
+    .line 191
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p2
@@ -32726,7 +32722,7 @@
 .method private static synthetic lambda$showDeviceMusicOptionsAlertDialog$6(Lorg/telegram/messenger/MessagesStorage$IntCallback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 0
 
-    .line 258
+    .line 259
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p2
@@ -32737,10 +32733,10 @@
 
     move-result p2
 
-    .line 259
+    .line 260
     invoke-interface {p0, p2}, Lorg/telegram/messenger/MessagesStorage$IntCallback;->run(I)V
 
-    .line 260
+    .line 261
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
     move-result-object p0
@@ -32753,7 +32749,7 @@
 .method private static synthetic lambda$showDisableSuggestionsAlert$0(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 168
+    .line 169
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
@@ -32762,20 +32758,20 @@
 .method private static synthetic lambda$showDisableSuggestionsAlert$1(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 163
+    .line 164
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_payments_clearSavedInfo;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_payments_clearSavedInfo;-><init>()V
 
     const/4 p3, 0x0
 
-    .line 164
+    .line 165
     iput-boolean p3, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_clearSavedInfo;->credentials:Z
 
-    .line 165
+    .line 166
     iput-boolean p3, p2, Lorg/telegram/tgnet/TLRPC$TL_payments_clearSavedInfo;->info:Z
 
-    .line 166
+    .line 167
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v0
@@ -32784,14 +32780,14 @@
 
     iput-object v1, v0, Lorg/telegram/messenger/UserConfig;->tmpPassword:Lorg/telegram/tgnet/TLRPC$TL_account_tmpPassword;
 
-    .line 167
+    .line 168
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v0
 
     invoke-virtual {v0, p3}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 168
+    .line 169
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p0
@@ -32808,7 +32804,7 @@
 .method private static synthetic lambda$showOpenUrlAlert$42(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;JZLorg/telegram/messenger/browser/Browser$Progress;)V
     .locals 2
 
-    .line 1596
+    .line 1597
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p0
@@ -32839,7 +32835,7 @@
 .method private static synthetic lambda$showOpenUrlAlert$43(Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1617
+    .line 1618
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -32848,7 +32844,7 @@
 .method private static synthetic lambda$showOpenUrlAlert$44(Ljava/lang/String;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1619
+    .line 1620
     sget p1, Lorg/telegram/messenger/R$string;->LinkCopied:I
 
     const-string p2, "LinkCopied"
@@ -32869,7 +32865,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 6832
+    .line 6833
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getRepeatCount()I
 
     move-result p1
@@ -32890,7 +32886,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 6833
+    .line 6834
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     return p2
@@ -32904,7 +32900,7 @@
 .method private static synthetic lambda$showPopupMenu$174(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Landroid/graphics/Rect;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 6846
+    .line 6847
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -32913,17 +32909,17 @@
 
     if-eqz p0, :cond_0
 
-    .line 6847
+    .line 6848
     invoke-virtual {p0}, Landroid/widget/PopupWindow;->isShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 6848
+    .line 6849
     invoke-virtual {p2, p1}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 6849
+    .line 6850
     invoke-virtual {p3}, Landroid/view/MotionEvent;->getX()F
 
     move-result p2
@@ -32942,7 +32938,7 @@
 
     if-nez p1, :cond_0
 
-    .line 6850
+    .line 6851
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     :cond_0
@@ -32954,7 +32950,7 @@
 .method private static synthetic lambda$showRestartDialog$15(Landroid/content/DialogInterface;I)V
     .locals 3
 
-    .line 438
+    .line 439
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p0
@@ -32981,7 +32977,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 443
+    .line 444
     invoke-interface {p0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     :cond_0
@@ -32991,14 +32987,14 @@
 .method private static synthetic lambda$showSecretLocationAlert$41(Ljava/util/ArrayList;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;Landroid/view/View;)V
     .locals 0
 
-    .line 1519
+    .line 1520
     invoke-virtual {p3}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p3
 
     check-cast p3, Ljava/lang/Integer;
 
-    .line 1520
+    .line 1521
     invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
 
     move-result p3
@@ -33017,10 +33013,10 @@
 
     if-eqz p1, :cond_0
 
-    .line 1522
+    .line 1523
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 1524
+    .line 1525
     :cond_0
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->getDismissRunnable()Ljava/lang/Runnable;
 
@@ -33034,7 +33030,7 @@
 .method private static synthetic lambda$showUpdateAppAlert$30(Landroid/content/Context;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 983
+    .line 984
     sget-object p1, Lorg/telegram/messenger/BuildVars;->PLAYSTORE_APP_URL:Ljava/lang/String;
 
     invoke-static {p0, p1}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Ljava/lang/String;)V
@@ -33045,12 +33041,12 @@
 .method private static performAskAQuestion(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 10
 
-    .line 1667
+    .line 1668
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
 
     move-result v0
 
-    .line 1668
+    .line 1669
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getMainSettings(I)Landroid/content/SharedPreferences;
 
     move-result-object v1
@@ -33059,7 +33055,7 @@
 
     const-wide/16 v3, 0x0
 
-    .line 1669
+    .line 1670
     invoke-static {v1, v2, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->getPrefIntOrLong(Landroid/content/SharedPreferences;Ljava/lang/String;J)J
 
     move-result-wide v5
@@ -33072,7 +33068,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 1672
+    .line 1673
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -33089,14 +33085,14 @@
 
     const-string v5, "support_user"
 
-    .line 1674
+    .line 1675
     invoke-interface {v1, v5, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
     if-eqz v5, :cond_1
 
-    .line 1677
+    .line 1678
     :try_start_0
     invoke-static {v5, v3}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
 
@@ -33104,12 +33100,12 @@
 
     if-eqz v5, :cond_1
 
-    .line 1679
+    .line 1680
     new-instance v2, Lorg/telegram/tgnet/SerializedData;
 
     invoke-direct {v2, v5}, Lorg/telegram/tgnet/SerializedData;-><init>([B)V
 
-    .line 1680
+    .line 1681
     invoke-virtual {v2, v3}, Lorg/telegram/tgnet/SerializedData;->readInt32(Z)I
 
     move-result v5
@@ -33120,7 +33116,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 1681
+    .line 1682
     iget-wide v6, v5, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     const-wide/32 v8, 0x514c8
@@ -33131,7 +33127,7 @@
 
     move-object v5, v4
 
-    .line 1684
+    .line 1685
     :cond_0
     invoke-virtual {v2}, Lorg/telegram/tgnet/SerializedData;->cleanup()V
     :try_end_0
@@ -33144,7 +33140,7 @@
     :catch_0
     move-exception v2
 
-    .line 1687
+    .line 1688
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_0
@@ -33156,7 +33152,7 @@
     :goto_0
     if-nez v4, :cond_3
 
-    .line 1694
+    .line 1695
     new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -33167,18 +33163,18 @@
 
     invoke-direct {v2, v4, v5}, Lorg/telegram/ui/ActionBar/AlertDialog;-><init>(Landroid/content/Context;I)V
 
-    .line 1695
+    .line 1696
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanCancel(Z)V
 
-    .line 1696
+    .line 1697
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 1697
+    .line 1698
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_help_getSupport;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_help_getSupport;-><init>()V
 
-    .line 1698
+    .line 1699
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v4
@@ -33191,7 +33187,7 @@
 
     goto :goto_1
 
-    .line 1733
+    .line 1734
     :cond_3
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
@@ -33201,19 +33197,19 @@
 
     invoke-virtual {v0, v4, v1}, Lorg/telegram/messenger/MessagesController;->putUser(Lorg/telegram/tgnet/TLRPC$User;Z)Z
 
-    .line 1734
+    .line 1735
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1735
+    .line 1736
     iget-wide v1, v4, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     const-string v3, "user_id"
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 1736
+    .line 1737
     new-instance v1, Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
@@ -33229,7 +33225,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 6450
+    .line 6451
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -33238,11 +33234,11 @@
 
     goto :goto_0
 
-    .line 6453
+    .line 6454
     :cond_0
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 6454
+    .line 6455
     invoke-virtual {p0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p0
@@ -33255,7 +33251,7 @@
 
     move-result-object p0
 
-    .line 6455
+    .line 6456
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -33268,29 +33264,29 @@
 
     invoke-virtual {v0, v1, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 6457
+    .line 6458
     new-instance v0, Lorg/telegram/ui/Components/ThemeEditorView;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/ThemeEditorView;-><init>()V
 
-    .line 6458
+    .line 6459
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
 
     invoke-virtual {v0, v1, p0}, Lorg/telegram/ui/Components/ThemeEditorView;->show(Landroid/app/Activity;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
 
-    .line 6459
+    .line 6460
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
-    .line 6461
+    .line 6462
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object p0
 
     const-string p1, "themehint"
 
-    .line 6462
+    .line 6463
     invoke-interface {p0, p1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v0
@@ -33299,7 +33295,7 @@
 
     return-void
 
-    .line 6465
+    .line 6466
     :cond_1
     invoke-interface {p0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -33313,7 +33309,7 @@
 
     invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 6467
+    .line 6468
     :try_start_0
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -33340,7 +33336,7 @@
     :catch_0
     move-exception p0
 
-    .line 6469
+    .line 6470
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -33359,7 +33355,9 @@
 
     move-object/from16 v2, p4
 
-    .line 646
+    if-eqz v0, :cond_71
+
+    .line 647
     iget v3, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->code:I
 
     const/16 v4, 0x196
@@ -33372,7 +33370,7 @@
 
     goto/16 :goto_1a
 
-    .line 649
+    .line 650
     :cond_0
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_initHistoryImport;
 
@@ -33398,7 +33396,7 @@
 
     goto/16 :goto_16
 
-    .line 683
+    .line 684
     :cond_1
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_account_saveSecureValue;
 
@@ -33416,7 +33414,7 @@
 
     goto/16 :goto_15
 
-    .line 693
+    .line 694
     :cond_2
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_channels_joinChannel;
 
@@ -33464,7 +33462,7 @@
 
     goto/16 :goto_10
 
-    .line 721
+    .line 722
     :cond_3
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_createChat;
 
@@ -33472,21 +33470,21 @@
 
     if-eqz v5, :cond_7
 
-    .line 722
+    .line 723
     invoke-virtual {v4, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_5
 
-    .line 723
+    .line 724
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     if-eqz v0, :cond_4
 
-    .line 724
+    .line 725
     new-instance v7, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -33509,7 +33507,7 @@
 
     goto :goto_0
 
-    .line 726
+    .line 727
     :cond_4
     new-instance v0, Lorg/telegram/ui/TooManyCommunitiesActivity;
 
@@ -33522,7 +33520,7 @@
 
     return-object v0
 
-    .line 729
+    .line 730
     :cond_5
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -33532,14 +33530,14 @@
 
     if-eqz v2, :cond_6
 
-    .line 730
+    .line 731
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-static {v0, v6}, Lorg/telegram/ui/Components/AlertsCreator;->showFloodWaitAlert(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     goto/16 :goto_18
 
-    .line 732
+    .line 733
     :cond_6
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -33549,27 +33547,27 @@
 
     goto/16 :goto_18
 
-    .line 734
+    .line 735
     :cond_7
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;
 
     if-eqz v5, :cond_b
 
-    .line 735
+    .line 736
     invoke-virtual {v4, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
     if-eqz v2, :cond_9
 
-    .line 736
+    .line 737
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     if-eqz v0, :cond_8
 
-    .line 737
+    .line 738
     new-instance v7, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -33592,7 +33590,7 @@
 
     goto :goto_1
 
-    .line 739
+    .line 740
     :cond_8
     new-instance v0, Lorg/telegram/ui/TooManyCommunitiesActivity;
 
@@ -33605,7 +33603,7 @@
 
     return-object v0
 
-    .line 742
+    .line 743
     :cond_9
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -33615,14 +33613,14 @@
 
     if-eqz v2, :cond_a
 
-    .line 743
+    .line 744
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-static {v0, v6}, Lorg/telegram/ui/Components/AlertsCreator;->showFloodWaitAlert(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     goto/16 :goto_18
 
-    .line 745
+    .line 746
     :cond_a
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -33632,7 +33630,7 @@
 
     goto/16 :goto_18
 
-    .line 747
+    .line 748
     :cond_b
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_editMessage;
 
@@ -33640,7 +33638,7 @@
 
     const-string v0, "MESSAGE_NOT_MODIFIED"
 
-    .line 748
+    .line 749
     invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
@@ -33651,7 +33649,7 @@
 
     if-eqz v6, :cond_c
 
-    .line 750
+    .line 751
     sget v1, Lorg/telegram/messenger/R$string;->EditMessageError:I
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -33662,7 +33660,7 @@
 
     goto/16 :goto_18
 
-    .line 752
+    .line 753
     :cond_c
     sget v1, Lorg/telegram/messenger/R$string;->EditMessageError:I
 
@@ -33678,7 +33676,7 @@
 
     goto/16 :goto_19
 
-    .line 755
+    .line 756
     :cond_d
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendMessage;
 
@@ -33706,20 +33704,20 @@
 
     goto/16 :goto_9
 
-    .line 825
+    .line 826
     :cond_e
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_importChatInvite;
 
     if-eqz v5, :cond_14
 
-    .line 826
+    .line 827
     invoke-virtual {v4, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_f
 
-    .line 827
+    .line 828
     sget v0, Lorg/telegram/messenger/R$string;->FloodWait:I
 
     invoke-static {v13, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -33730,7 +33728,7 @@
 
     goto/16 :goto_18
 
-    .line 828
+    .line 829
     :cond_f
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -33742,7 +33740,7 @@
 
     if-eqz v1, :cond_10
 
-    .line 829
+    .line 830
     sget v0, Lorg/telegram/messenger/R$string;->JoinToGroupErrorFull:I
 
     const-string v1, "JoinToGroupErrorFull"
@@ -33755,7 +33753,7 @@
 
     goto/16 :goto_18
 
-    .line 830
+    .line 831
     :cond_10
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -33765,14 +33763,14 @@
 
     if-eqz v1, :cond_12
 
-    .line 831
+    .line 832
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     if-eqz v0, :cond_11
 
-    .line 832
+    .line 833
     new-instance v7, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -33795,7 +33793,7 @@
 
     goto/16 :goto_18
 
-    .line 834
+    .line 835
     :cond_11
     new-instance v0, Lorg/telegram/ui/TooManyCommunitiesActivity;
 
@@ -33807,7 +33805,7 @@
 
     goto/16 :goto_18
 
-    .line 836
+    .line 837
     :cond_12
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -33819,7 +33817,7 @@
 
     if-eqz v0, :cond_13
 
-    .line 837
+    .line 838
     sget v0, Lorg/telegram/messenger/R$string;->ExpiredLink:I
 
     const-string v1, "ExpiredLink"
@@ -33840,7 +33838,7 @@
 
     goto/16 :goto_18
 
-    .line 839
+    .line 840
     :cond_13
     sget v0, Lorg/telegram/messenger/R$string;->JoinToGroupErrorNotExist:I
 
@@ -33854,7 +33852,7 @@
 
     goto/16 :goto_18
 
-    .line 841
+    .line 842
     :cond_14
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;
 
@@ -33862,14 +33860,14 @@
 
     if-eqz v6, :cond_70
 
-    .line 842
+    .line 843
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
 
     if-eqz v1, :cond_70
 
-    .line 843
+    .line 844
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -33906,7 +33904,7 @@
 
     goto/16 :goto_18
 
-    .line 845
+    .line 846
     :cond_15
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_account_confirmPhone;
 
@@ -33934,20 +33932,20 @@
 
     goto/16 :goto_6
 
-    .line 855
+    .line 856
     :cond_16
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_auth_resendCode;
 
     if-eqz v5, :cond_1c
 
-    .line 856
+    .line 857
     invoke-virtual {v4, v12}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_17
 
-    .line 857
+    .line 858
     sget v0, Lorg/telegram/messenger/R$string;->InvalidPhoneNumber:I
 
     invoke-static {v11, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -33960,7 +33958,7 @@
 
     return-object v0
 
-    .line 858
+    .line 859
     :cond_17
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -33980,7 +33978,7 @@
 
     goto :goto_2
 
-    .line 860
+    .line 861
     :cond_18
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -33990,7 +33988,7 @@
 
     if-eqz v1, :cond_19
 
-    .line 861
+    .line 862
     sget v0, Lorg/telegram/messenger/R$string;->CodeExpired:I
 
     invoke-static {v7, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -34003,7 +34001,7 @@
 
     return-object v0
 
-    .line 862
+    .line 863
     :cond_19
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34013,7 +34011,7 @@
 
     if-eqz v1, :cond_1a
 
-    .line 863
+    .line 864
     sget v0, Lorg/telegram/messenger/R$string;->FloodWait:I
 
     invoke-static {v13, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -34026,7 +34024,7 @@
 
     return-object v0
 
-    .line 864
+    .line 865
     :cond_1a
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->code:I
 
@@ -34034,7 +34032,7 @@
 
     if-eq v1, v2, :cond_70
 
-    .line 865
+    .line 866
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -34063,7 +34061,7 @@
 
     return-object v0
 
-    .line 859
+    .line 860
     :cond_1b
     :goto_2
     sget v0, Lorg/telegram/messenger/R$string;->InvalidCode:I
@@ -34078,7 +34076,7 @@
 
     return-object v0
 
-    .line 867
+    .line 868
     :cond_1c
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_account_sendConfirmPhoneCode;
 
@@ -34090,7 +34088,7 @@
 
     if-ne v1, v0, :cond_1d
 
-    .line 869
+    .line 870
     sget v0, Lorg/telegram/messenger/R$string;->CancelLinkExpired:I
 
     const-string v1, "CancelLinkExpired"
@@ -34105,7 +34103,7 @@
 
     return-object v0
 
-    .line 871
+    .line 872
     :cond_1d
     invoke-virtual {v4, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -34113,7 +34111,7 @@
 
     if-eqz v0, :cond_1e
 
-    .line 872
+    .line 873
     sget v0, Lorg/telegram/messenger/R$string;->FloodWait:I
 
     invoke-static {v13, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -34126,7 +34124,7 @@
 
     return-object v0
 
-    .line 874
+    .line 875
     :cond_1e
     sget v0, Lorg/telegram/messenger/R$string;->ErrorOccurred:I
 
@@ -34140,20 +34138,20 @@
 
     return-object v0
 
-    .line 877
+    .line 878
     :cond_1f
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_account_changePhone;
 
     if-eqz v5, :cond_26
 
-    .line 878
+    .line 879
     invoke-virtual {v4, v12}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_20
 
-    .line 879
+    .line 880
     sget v0, Lorg/telegram/messenger/R$string;->InvalidPhoneNumber:I
 
     invoke-static {v11, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -34164,7 +34162,7 @@
 
     goto/16 :goto_18
 
-    .line 880
+    .line 881
     :cond_20
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34184,7 +34182,7 @@
 
     goto :goto_3
 
-    .line 882
+    .line 883
     :cond_21
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34194,7 +34192,7 @@
 
     if-eqz v1, :cond_22
 
-    .line 883
+    .line 884
     sget v0, Lorg/telegram/messenger/R$string;->CodeExpired:I
 
     invoke-static {v7, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -34205,7 +34203,7 @@
 
     goto/16 :goto_18
 
-    .line 884
+    .line 885
     :cond_22
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34215,7 +34213,7 @@
 
     if-eqz v1, :cond_23
 
-    .line 885
+    .line 886
     sget v0, Lorg/telegram/messenger/R$string;->FloodWait:I
 
     invoke-static {v13, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -34226,7 +34224,7 @@
 
     goto/16 :goto_18
 
-    .line 886
+    .line 887
     :cond_23
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34238,20 +34236,26 @@
 
     if-eqz v1, :cond_24
 
-    .line 887
-    sget v0, Lorg/telegram/messenger/R$string;->FreshChangePhoneForbidden:I
+    .line 888
+    sget v0, Lorg/telegram/messenger/R$string;->FreshChangePhoneForbiddenTitle:I
 
-    const-string v1, "FreshChangePhoneForbidden"
-
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v6, v0}, Lorg/telegram/ui/Components/AlertsCreator;->showSimpleAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)Landroid/app/Dialog;
+    sget v1, Lorg/telegram/messenger/R$string;->FreshChangePhoneForbidden:I
+
+    const-string v2, "FreshChangePhoneForbidden"
+
+    invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v6, v0, v1}, Lorg/telegram/ui/Components/AlertsCreator;->showSimpleAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Ljava/lang/String;)Landroid/app/Dialog;
 
     goto/16 :goto_18
 
-    .line 889
+    .line 890
     :cond_24
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34259,7 +34263,7 @@
 
     goto/16 :goto_18
 
-    .line 881
+    .line 882
     :cond_25
     :goto_3
     sget v0, Lorg/telegram/messenger/R$string;->InvalidCode:I
@@ -34272,13 +34276,13 @@
 
     goto/16 :goto_18
 
-    .line 891
+    .line 892
     :cond_26
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_account_sendChangePhoneCode;
 
     if-eqz v5, :cond_2e
 
-    .line 892
+    .line 893
     invoke-virtual {v4, v12}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -34289,7 +34293,7 @@
 
     const/4 v4, 0x0
 
-    .line 893
+    .line 894
     aget-object v0, v2, v4
 
     check-cast v0, Ljava/lang/String;
@@ -34303,7 +34307,7 @@
 
     move-object/from16 v2, p4
 
-    .line 894
+    .line 895
     iget-object v4, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-virtual {v4, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -34322,7 +34326,7 @@
 
     goto :goto_4
 
-    .line 896
+    .line 897
     :cond_28
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34332,7 +34336,7 @@
 
     if-eqz v1, :cond_29
 
-    .line 897
+    .line 898
     sget v0, Lorg/telegram/messenger/R$string;->CodeExpired:I
 
     invoke-static {v7, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -34343,7 +34347,7 @@
 
     goto/16 :goto_18
 
-    .line 898
+    .line 899
     :cond_29
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34353,7 +34357,7 @@
 
     if-eqz v1, :cond_2a
 
-    .line 899
+    .line 900
     sget v0, Lorg/telegram/messenger/R$string;->FloodWait:I
 
     invoke-static {v13, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -34364,7 +34368,7 @@
 
     goto/16 :goto_18
 
-    .line 900
+    .line 901
     :cond_2a
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34376,7 +34380,7 @@
 
     if-eqz v1, :cond_2b
 
-    .line 901
+    .line 902
     sget v0, Lorg/telegram/messenger/R$string;->ChangePhoneNumberOccupied:I
 
     const/4 v1, 0x1
@@ -34402,7 +34406,7 @@
     :cond_2b
     const/4 v3, 0x0
 
-    .line 902
+    .line 903
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string v1, "PHONE_NUMBER_BANNED"
@@ -34413,7 +34417,7 @@
 
     if-eqz v0, :cond_2c
 
-    .line 903
+    .line 904
     aget-object v0, v2, v3
 
     check-cast v0, Ljava/lang/String;
@@ -34424,7 +34428,7 @@
 
     goto/16 :goto_18
 
-    .line 905
+    .line 906
     :cond_2c
     sget v0, Lorg/telegram/messenger/R$string;->ErrorOccurred:I
 
@@ -34436,7 +34440,7 @@
 
     goto/16 :goto_18
 
-    .line 895
+    .line 896
     :cond_2d
     :goto_4
     sget v0, Lorg/telegram/messenger/R$string;->InvalidCode:I
@@ -34449,13 +34453,13 @@
 
     goto/16 :goto_18
 
-    .line 907
+    .line 908
     :cond_2e
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_account_updateUsername;
 
     if-eqz v2, :cond_31
 
-    .line 908
+    .line 909
     invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
 
     const-string v0, "USERNAME_INVALID"
@@ -34474,7 +34478,7 @@
 
     if-nez v0, :cond_2f
 
-    .line 916
+    .line 917
     sget v0, Lorg/telegram/messenger/R$string;->ErrorOccurred:I
 
     invoke-static {v9, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -34485,7 +34489,7 @@
 
     goto/16 :goto_18
 
-    .line 913
+    .line 914
     :cond_2f
     sget v0, Lorg/telegram/messenger/R$string;->UsernameInUse:I
 
@@ -34499,7 +34503,7 @@
 
     goto/16 :goto_18
 
-    .line 910
+    .line 911
     :cond_30
     sget v0, Lorg/telegram/messenger/R$string;->UsernameInvalid:I
 
@@ -34513,20 +34517,20 @@
 
     goto/16 :goto_18
 
-    .line 919
+    .line 920
     :cond_31
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_importContacts;
 
     if-eqz v2, :cond_33
 
-    .line 920
+    .line 921
     invoke-virtual {v4, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_32
 
-    .line 921
+    .line 922
     sget v0, Lorg/telegram/messenger/R$string;->FloodWait:I
 
     invoke-static {v13, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -34537,7 +34541,7 @@
 
     goto/16 :goto_18
 
-    .line 923
+    .line 924
     :cond_32
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -34565,7 +34569,7 @@
 
     goto/16 :goto_18
 
-    .line 925
+    .line 926
     :cond_33
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;
 
@@ -34577,13 +34581,13 @@
 
     goto/16 :goto_5
 
-    .line 931
+    .line 932
     :cond_34
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_sendPaymentForm;
 
     if-eqz v2, :cond_37
 
-    .line 932
+    .line 933
     invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
 
     const-string v1, "BOT_PRECHECKOUT_FAILED"
@@ -34602,14 +34606,14 @@
 
     if-nez v1, :cond_35
 
-    .line 940
+    .line 941
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-static {v6, v0}, Lorg/telegram/ui/Components/AlertsCreator;->showSimpleToast(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)Landroid/widget/Toast;
 
     goto/16 :goto_18
 
-    .line 937
+    .line 938
     :cond_35
     sget v0, Lorg/telegram/messenger/R$string;->PaymentFailed:I
 
@@ -34623,7 +34627,7 @@
 
     goto/16 :goto_18
 
-    .line 934
+    .line 935
     :cond_36
     sget v0, Lorg/telegram/messenger/R$string;->PaymentPrecheckoutFailed:I
 
@@ -34637,13 +34641,13 @@
 
     goto/16 :goto_18
 
-    .line 943
+    .line 944
     :cond_37
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_validateRequestedInfo;
 
     if-eqz v2, :cond_39
 
-    .line 944
+    .line 945
     invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
 
     const-string v1, "SHIPPING_NOT_AVAILABLE"
@@ -34654,14 +34658,14 @@
 
     if-nez v1, :cond_38
 
-    .line 949
+    .line 950
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-static {v6, v0}, Lorg/telegram/ui/Components/AlertsCreator;->showSimpleToast(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)Landroid/widget/Toast;
 
     goto/16 :goto_18
 
-    .line 946
+    .line 947
     :cond_38
     sget v0, Lorg/telegram/messenger/R$string;->PaymentNoShippingMethod:I
 
@@ -34675,13 +34679,13 @@
 
     goto/16 :goto_18
 
-    .line 952
+    .line 953
     :cond_39
     instance-of v1, v1, Lorg/telegram/tgnet/TLRPC$TL_payments_assignPlayMarketTransaction;
 
     if-eqz v1, :cond_70
 
-    .line 953
+    .line 954
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -34710,7 +34714,7 @@
 
     goto/16 :goto_18
 
-    .line 926
+    .line 927
     :cond_3a
     :goto_5
     invoke-virtual {v4, v10}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -34719,7 +34723,7 @@
 
     if-eqz v1, :cond_3b
 
-    .line 927
+    .line 928
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/AlertsCreator;->getFloodWaitString(Ljava/lang/String;)Ljava/lang/String;
@@ -34730,7 +34734,7 @@
 
     goto/16 :goto_18
 
-    .line 929
+    .line 930
     :cond_3b
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34742,7 +34746,7 @@
     :goto_6
     move-object v1, v2
 
-    .line 846
+    .line 847
     invoke-virtual {v4, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -34779,7 +34783,7 @@
 
     goto :goto_8
 
-    .line 848
+    .line 849
     :cond_3d
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34801,7 +34805,7 @@
 
     goto :goto_7
 
-    .line 850
+    .line 851
     :cond_3e
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34811,7 +34815,7 @@
 
     if-eqz v1, :cond_3f
 
-    .line 851
+    .line 852
     sget v0, Lorg/telegram/messenger/R$string;->FloodWait:I
 
     invoke-static {v13, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -34824,7 +34828,7 @@
 
     return-object v0
 
-    .line 853
+    .line 854
     :cond_3f
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34834,7 +34838,7 @@
 
     return-object v0
 
-    .line 849
+    .line 850
     :cond_40
     :goto_7
     sget v0, Lorg/telegram/messenger/R$string;->CodeExpired:I
@@ -34849,7 +34853,7 @@
 
     return-object v0
 
-    .line 847
+    .line 848
     :cond_41
     :goto_8
     sget v0, Lorg/telegram/messenger/R$string;->InvalidCode:I
@@ -34870,7 +34874,7 @@
 
     if-eqz v5, :cond_43
 
-    .line 763
+    .line 764
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendMessage;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendMessage;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
@@ -34881,13 +34885,13 @@
 
     goto :goto_a
 
-    .line 764
+    .line 765
     :cond_43
     instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendMedia;
 
     if-eqz v4, :cond_44
 
-    .line 765
+    .line 766
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendMedia;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
@@ -34898,13 +34902,13 @@
 
     goto :goto_a
 
-    .line 766
+    .line 767
     :cond_44
     instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendInlineBotResult;
 
     if-eqz v4, :cond_45
 
-    .line 767
+    .line 768
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendInlineBotResult;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendInlineBotResult;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
@@ -34915,13 +34919,13 @@
 
     goto :goto_a
 
-    .line 768
+    .line 769
     :cond_45
     instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_forwardMessages;
 
     if-eqz v4, :cond_46
 
-    .line 769
+    .line 770
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_messages_forwardMessages;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_forwardMessages;->to_peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
@@ -34932,13 +34936,13 @@
 
     goto :goto_a
 
-    .line 770
+    .line 771
     :cond_46
     instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendMultiMedia;
 
     if-eqz v4, :cond_47
 
-    .line 771
+    .line 772
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendMultiMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendMultiMedia;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
@@ -34949,13 +34953,13 @@
 
     goto :goto_a
 
-    .line 772
+    .line 773
     :cond_47
     instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendScheduledMessages;
 
     if-eqz v4, :cond_48
 
-    .line 773
+    .line 774
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendScheduledMessages;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_sendScheduledMessages;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
@@ -34969,7 +34973,7 @@
     :cond_48
     move-wide v4, v2
 
-    .line 775
+    .line 776
     :goto_a
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -34997,14 +35001,14 @@
 
     if-eqz v1, :cond_54
 
-    .line 776
+    .line 777
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     cmp-long v2, v4, v2
 
     if-gez v2, :cond_49
 
-    .line 777
+    .line 778
     invoke-static/range {p0 .. p0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -35024,7 +35028,7 @@
     :cond_49
     const/4 v2, 0x0
 
-    .line 778
+    .line 779
     :goto_b
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -35207,7 +35211,7 @@
     :pswitch_0
     const/16 v0, 0x8
 
-    .line 801
+    .line 802
     invoke-static {v2, v0}, Lorg/telegram/messenger/ChatObject;->getRestrictedErrorText(Lorg/telegram/tgnet/TLRPC$Chat;I)Ljava/lang/String;
 
     move-result-object v1
@@ -35217,7 +35221,7 @@
     :pswitch_1
     const/16 v0, 0x10
 
-    .line 783
+    .line 784
     invoke-static {v2, v0}, Lorg/telegram/messenger/ChatObject;->getRestrictedErrorText(Lorg/telegram/tgnet/TLRPC$Chat;I)Ljava/lang/String;
 
     move-result-object v1
@@ -35227,7 +35231,7 @@
     :pswitch_2
     const/16 v0, 0x17
 
-    .line 804
+    .line 805
     invoke-static {v2, v0}, Lorg/telegram/messenger/ChatObject;->getRestrictedErrorText(Lorg/telegram/tgnet/TLRPC$Chat;I)Ljava/lang/String;
 
     move-result-object v1
@@ -35237,7 +35241,7 @@
     :pswitch_3
     const/16 v0, 0x11
 
-    .line 786
+    .line 787
     invoke-static {v2, v0}, Lorg/telegram/messenger/ChatObject;->getRestrictedErrorText(Lorg/telegram/tgnet/TLRPC$Chat;I)Ljava/lang/String;
 
     move-result-object v1
@@ -35247,7 +35251,7 @@
     :pswitch_4
     const/16 v0, 0x15
 
-    .line 789
+    .line 790
     invoke-static {v2, v0}, Lorg/telegram/messenger/ChatObject;->getRestrictedErrorText(Lorg/telegram/tgnet/TLRPC$Chat;I)Ljava/lang/String;
 
     move-result-object v1
@@ -35257,7 +35261,7 @@
     :pswitch_5
     const/16 v0, 0x13
 
-    .line 792
+    .line 793
     invoke-static {v2, v0}, Lorg/telegram/messenger/ChatObject;->getRestrictedErrorText(Lorg/telegram/tgnet/TLRPC$Chat;I)Ljava/lang/String;
 
     move-result-object v1
@@ -35267,7 +35271,7 @@
     :pswitch_6
     const/16 v0, 0xa
 
-    .line 807
+    .line 808
     invoke-static {v2, v0}, Lorg/telegram/messenger/ChatObject;->getRestrictedErrorText(Lorg/telegram/tgnet/TLRPC$Chat;I)Ljava/lang/String;
 
     move-result-object v1
@@ -35277,7 +35281,7 @@
     :pswitch_7
     const/16 v0, 0x12
 
-    .line 798
+    .line 799
     invoke-static {v2, v0}, Lorg/telegram/messenger/ChatObject;->getRestrictedErrorText(Lorg/telegram/tgnet/TLRPC$Chat;I)Ljava/lang/String;
 
     move-result-object v1
@@ -35287,7 +35291,7 @@
     :pswitch_8
     const/16 v0, 0x16
 
-    .line 780
+    .line 781
     invoke-static {v2, v0}, Lorg/telegram/messenger/ChatObject;->getRestrictedErrorText(Lorg/telegram/tgnet/TLRPC$Chat;I)Ljava/lang/String;
 
     move-result-object v1
@@ -35297,12 +35301,12 @@
     :pswitch_9
     const/16 v0, 0x14
 
-    .line 795
+    .line 796
     invoke-static {v2, v0}, Lorg/telegram/messenger/ChatObject;->getRestrictedErrorText(Lorg/telegram/tgnet/TLRPC$Chat;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 811
+    .line 812
     :goto_e
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
@@ -35333,7 +35337,7 @@
     :cond_54
     const/4 v3, 0x2
 
-    .line 813
+    .line 814
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
@@ -35395,7 +35399,7 @@
 
     goto/16 :goto_18
 
-    .line 821
+    .line 822
     :pswitch_a
     sget v0, Lorg/telegram/messenger/R$string;->MessageScheduledLimitReached:I
 
@@ -35409,7 +35413,7 @@
 
     goto/16 :goto_18
 
-    .line 815
+    .line 816
     :pswitch_b
     invoke-static/range {p0 .. p0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
@@ -35438,7 +35442,7 @@
 
     const/4 v3, 0x0
 
-    .line 818
+    .line 819
     invoke-static/range {p0 .. p0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -35461,21 +35465,21 @@
     :goto_10
     if-eqz v6, :cond_5c
 
-    .line 703
+    .line 704
     invoke-virtual {v4, v14}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
     if-eqz v3, :cond_5c
 
-    .line 704
+    .line 705
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     if-eqz v0, :cond_59
 
-    .line 705
+    .line 706
     new-instance v7, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -35504,14 +35508,14 @@
     :cond_59
     if-nez v5, :cond_5b
 
-    .line 707
+    .line 708
     instance-of v0, v1, Lorg/telegram/tgnet/TLRPC$TL_channels_inviteToChannel;
 
     if-eqz v0, :cond_5a
 
     goto :goto_12
 
-    .line 710
+    .line 711
     :cond_5a
     new-instance v0, Lorg/telegram/ui/TooManyCommunitiesActivity;
 
@@ -35523,7 +35527,7 @@
 
     goto :goto_11
 
-    .line 708
+    .line 709
     :cond_5b
     :goto_12
     new-instance v0, Lorg/telegram/ui/TooManyCommunitiesActivity;
@@ -35544,7 +35548,7 @@
 
     if-eqz v6, :cond_5e
 
-    .line 715
+    .line 716
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     if-eqz v2, :cond_5d
@@ -35571,7 +35575,7 @@
 
     goto/16 :goto_18
 
-    .line 717
+    .line 718
     :cond_5e
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -35581,7 +35585,7 @@
 
     if-eqz v0, :cond_70
 
-    .line 718
+    .line 719
     invoke-static/range {p0 .. p0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -35604,7 +35608,7 @@
 
     goto/16 :goto_18
 
-    .line 684
+    .line 685
     :cond_5f
     :goto_15
     invoke-virtual {v4, v12}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -35613,7 +35617,7 @@
 
     if-eqz v1, :cond_60
 
-    .line 685
+    .line 686
     sget v0, Lorg/telegram/messenger/R$string;->InvalidPhoneNumber:I
 
     invoke-static {v11, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -35624,7 +35628,7 @@
 
     goto/16 :goto_18
 
-    .line 686
+    .line 687
     :cond_60
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -35634,7 +35638,7 @@
 
     if-eqz v1, :cond_61
 
-    .line 687
+    .line 688
     sget v0, Lorg/telegram/messenger/R$string;->FloodWait:I
 
     invoke-static {v13, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -35645,7 +35649,7 @@
 
     goto/16 :goto_18
 
-    .line 688
+    .line 689
     :cond_61
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -35657,7 +35661,7 @@
 
     if-eqz v1, :cond_62
 
-    .line 689
+    .line 690
     invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -35676,7 +35680,7 @@
 
     goto/16 :goto_18
 
-    .line 691
+    .line 692
     :cond_62
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -35708,20 +35712,20 @@
     :goto_16
     if-eqz v5, :cond_64
 
-    .line 652
+    .line 653
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_messages_initHistoryImport;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_initHistoryImport;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     goto :goto_17
 
-    .line 653
+    .line 654
     :cond_64
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_startHistoryImport;
 
     if-eqz v2, :cond_65
 
-    .line 654
+    .line 655
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_messages_startHistoryImport;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_startHistoryImport;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
@@ -35734,7 +35738,7 @@
     :goto_17
     const-string v2, "USER_IS_BLOCKED"
 
-    .line 658
+    .line 659
     invoke-virtual {v4, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -35743,7 +35747,7 @@
 
     if-eqz v2, :cond_66
 
-    .line 659
+    .line 660
     sget v0, Lorg/telegram/messenger/R$string;->ImportErrorTitle:I
 
     invoke-static {v3, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -35762,7 +35766,7 @@
 
     goto/16 :goto_18
 
-    .line 660
+    .line 661
     :cond_66
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -35774,7 +35778,7 @@
 
     if-eqz v2, :cond_67
 
-    .line 661
+    .line 662
     sget v0, Lorg/telegram/messenger/R$string;->ImportErrorTitle:I
 
     invoke-static {v3, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -35793,7 +35797,7 @@
 
     goto/16 :goto_18
 
-    .line 662
+    .line 663
     :cond_67
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -35805,12 +35809,12 @@
 
     if-eqz v2, :cond_69
 
-    .line 663
+    .line 664
     instance-of v0, v1, Lorg/telegram/tgnet/TLRPC$TL_inputPeerUser;
 
     if-eqz v0, :cond_68
 
-    .line 664
+    .line 665
     sget v0, Lorg/telegram/messenger/R$string;->ImportErrorTitle:I
 
     invoke-static {v3, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -35829,7 +35833,7 @@
 
     goto/16 :goto_18
 
-    .line 666
+    .line 667
     :cond_68
     sget v0, Lorg/telegram/messenger/R$string;->ImportErrorTitle:I
 
@@ -35849,7 +35853,7 @@
 
     goto/16 :goto_18
 
-    .line 668
+    .line 669
     :cond_69
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -35861,7 +35865,7 @@
 
     if-eqz v1, :cond_6a
 
-    .line 669
+    .line 670
     sget v0, Lorg/telegram/messenger/R$string;->ImportErrorTitle:I
 
     invoke-static {v3, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -35880,7 +35884,7 @@
 
     goto/16 :goto_18
 
-    .line 670
+    .line 671
     :cond_6a
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -35892,7 +35896,7 @@
 
     if-eqz v1, :cond_6b
 
-    .line 671
+    .line 672
     sget v0, Lorg/telegram/messenger/R$string;->ImportErrorTitle:I
 
     invoke-static {v3, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -35911,7 +35915,7 @@
 
     goto/16 :goto_18
 
-    .line 672
+    .line 673
     :cond_6b
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -35923,7 +35927,7 @@
 
     if-eqz v1, :cond_6c
 
-    .line 673
+    .line 674
     sget v0, Lorg/telegram/messenger/R$string;->ImportErrorTitle:I
 
     invoke-static {v3, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -35942,7 +35946,7 @@
 
     goto :goto_18
 
-    .line 674
+    .line 675
     :cond_6c
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -35954,7 +35958,7 @@
 
     if-eqz v1, :cond_6d
 
-    .line 675
+    .line 676
     sget v0, Lorg/telegram/messenger/R$string;->ImportErrorTitle:I
 
     invoke-static {v3, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -35973,7 +35977,7 @@
 
     goto :goto_18
 
-    .line 676
+    .line 677
     :cond_6d
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -35985,7 +35989,7 @@
 
     if-eqz v1, :cond_6e
 
-    .line 677
+    .line 678
     sget v0, Lorg/telegram/messenger/R$string;->ImportErrorTitle:I
 
     invoke-static {v3, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -36004,7 +36008,7 @@
 
     goto :goto_18
 
-    .line 678
+    .line 679
     :cond_6e
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -36014,14 +36018,14 @@
 
     if-eqz v1, :cond_6f
 
-    .line 679
+    .line 680
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-static {v0, v6}, Lorg/telegram/ui/Components/AlertsCreator;->showFloodWaitAlert(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     goto :goto_18
 
-    .line 681
+    .line 682
     :cond_6f
     sget v1, Lorg/telegram/messenger/R$string;->ImportErrorTitle:I
 
@@ -36127,7 +36131,7 @@
 
     if-nez p1, :cond_0
 
-    .line 4714
+    .line 4715
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonSpam;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonSpam;-><init>()V
@@ -36139,7 +36143,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 4716
+    .line 4717
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonFake;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonFake;-><init>()V
@@ -36151,7 +36155,7 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 4718
+    .line 4719
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonViolence;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonViolence;-><init>()V
@@ -36163,7 +36167,7 @@
 
     if-ne p1, v0, :cond_3
 
-    .line 4720
+    .line 4721
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonChildAbuse;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonChildAbuse;-><init>()V
@@ -36175,7 +36179,7 @@
 
     if-ne p1, v0, :cond_4
 
-    .line 4722
+    .line 4723
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPornography;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPornography;-><init>()V
@@ -36187,7 +36191,7 @@
 
     if-ne p1, v0, :cond_5
 
-    .line 4724
+    .line 4725
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonIllegalDrugs;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonIllegalDrugs;-><init>()V
@@ -36199,7 +36203,7 @@
 
     if-ne p1, v0, :cond_6
 
-    .line 4726
+    .line 4727
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPersonalDetails;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonPersonalDetails;-><init>()V
@@ -36211,7 +36215,7 @@
 
     if-ne p1, v0, :cond_7
 
-    .line 4728
+    .line 4729
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonOther;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputReportReasonOther;-><init>()V
@@ -36229,12 +36233,12 @@
     :cond_8
     if-eqz p4, :cond_9
 
-    .line 4734
-    new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_stories_report;
-
-    invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_stories_report;-><init>()V
-
     .line 4735
+    new-instance p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;
+
+    invoke-direct {p3}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;-><init>()V
+
+    .line 4736
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -36247,10 +36251,10 @@
 
     move-result-object p0
 
-    iput-object p0, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object p0, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 4736
-    iget-object p0, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->id:Ljava/util/ArrayList;
+    .line 4737
+    iget-object p0, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->id:Ljava/util/ArrayList;
 
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -36258,13 +36262,13 @@
 
     invoke-virtual {p0, p4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4737
-    iput-object p2, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->message:Ljava/lang/String;
-
     .line 4738
-    iput-object p1, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
+    iput-object p2, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->message:Ljava/lang/String;
 
     .line 4739
+    iput-object p1, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
+
+    .line 4740
     sget p0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -36277,27 +36281,27 @@
 
     goto :goto_1
 
-    .line 4743
+    .line 4744
     :cond_9
     new-instance p4, Lorg/telegram/tgnet/TLRPC$TL_messages_report;
 
     invoke-direct {p4}, Lorg/telegram/tgnet/TLRPC$TL_messages_report;-><init>()V
 
-    .line 4744
+    .line 4745
     iput-object p0, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_report;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 4745
+    .line 4746
     iget-object p0, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_report;->id:Ljava/util/ArrayList;
 
     invoke-virtual {p0, p3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 4746
+    .line 4747
     iput-object p2, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_report;->message:Ljava/lang/String;
 
-    .line 4747
+    .line 4748
     iput-object p1, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_report;->reason:Lorg/telegram/tgnet/TLRPC$ReportReason;
 
-    .line 4748
+    .line 4749
     sget p0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -36319,7 +36323,7 @@
 
     if-eqz p1, :cond_1e
 
-    .line 5050
+    .line 5051
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -36328,7 +36332,7 @@
 
     goto/16 :goto_2
 
-    .line 5053
+    .line 5054
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -36338,7 +36342,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 5054
+    .line 5055
     sget v1, Lorg/telegram/messenger/R$string;->AppName:I
 
     const-string v2, "AppName"
@@ -36351,7 +36355,7 @@
 
     const/4 v1, -0x1
 
-    .line 5055
+    .line 5056
     invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     move-result v2
@@ -36701,7 +36705,7 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 5150
+    .line 5151
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -36730,7 +36734,7 @@
 
     goto/16 :goto_1
 
-    .line 5146
+    .line 5147
     :pswitch_0
     sget p0, Lorg/telegram/messenger/R$string;->VoipGroupVoiceChat:I
 
@@ -36742,7 +36746,7 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5147
+    .line 5148
     sget p0, Lorg/telegram/messenger/R$string;->VoipGroupInviteAlreadyParticipant:I
 
     const-string p2, "VoipGroupInviteAlreadyParticipant"
@@ -36758,7 +36762,7 @@
     :pswitch_1
     if-eqz p2, :cond_16
 
-    .line 5099
+    .line 5100
     sget p0, Lorg/telegram/messenger/R$string;->InviteToChannelError:I
 
     const-string p2, "InviteToChannelError"
@@ -36771,7 +36775,7 @@
 
     goto/16 :goto_1
 
-    .line 5101
+    .line 5102
     :cond_16
     sget p0, Lorg/telegram/messenger/R$string;->InviteToGroupError:I
 
@@ -36785,7 +36789,7 @@
 
     goto/16 :goto_1
 
-    .line 5122
+    .line 5123
     :pswitch_2
     sget p0, Lorg/telegram/messenger/R$string;->AddAdminErrorNotAMember:I
 
@@ -36802,7 +36806,7 @@
     :pswitch_3
     if-eqz p2, :cond_17
 
-    .line 5078
+    .line 5079
     sget p0, Lorg/telegram/messenger/R$string;->ChannelUserLeftError:I
 
     const-string p2, "ChannelUserLeftError"
@@ -36815,7 +36819,7 @@
 
     goto/16 :goto_1
 
-    .line 5080
+    .line 5081
     :cond_17
     sget p0, Lorg/telegram/messenger/R$string;->GroupUserLeftError:I
 
@@ -36829,7 +36833,7 @@
 
     goto/16 :goto_1
 
-    .line 5142
+    .line 5143
     :pswitch_4
     sget p0, Lorg/telegram/messenger/R$string;->ChannelTooMuchTitle:I
 
@@ -36839,7 +36843,7 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5143
+    .line 5144
     sget p0, Lorg/telegram/messenger/R$string;->UserChannelTooMuchJoin:I
 
     const-string p2, "UserChannelTooMuchJoin"
@@ -36852,7 +36856,7 @@
 
     goto/16 :goto_1
 
-    .line 5134
+    .line 5135
     :pswitch_5
     sget p0, Lorg/telegram/messenger/R$string;->ChannelTooMuchTitle:I
 
@@ -36862,12 +36866,12 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5135
+    .line 5136
     instance-of p0, p3, Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;
 
     if-eqz p0, :cond_18
 
-    .line 5136
+    .line 5137
     sget p0, Lorg/telegram/messenger/R$string;->ChannelTooMuch:I
 
     const-string p2, "ChannelTooMuch"
@@ -36880,7 +36884,7 @@
 
     goto/16 :goto_1
 
-    .line 5138
+    .line 5139
     :cond_18
     sget p0, Lorg/telegram/messenger/R$string;->ChannelTooMuchJoin:I
 
@@ -36897,7 +36901,7 @@
     :pswitch_6
     if-eqz p2, :cond_19
 
-    .line 5085
+    .line 5086
     sget p0, Lorg/telegram/messenger/R$string;->ChannelUserCantAdmin:I
 
     const-string p2, "ChannelUserCantAdmin"
@@ -36910,7 +36914,7 @@
 
     goto/16 :goto_1
 
-    .line 5087
+    .line 5088
     :cond_19
     sget p0, Lorg/telegram/messenger/R$string;->GroupUserCantAdmin:I
 
@@ -36927,7 +36931,7 @@
     :pswitch_7
     if-eqz p2, :cond_1a
 
-    .line 5071
+    .line 5072
     sget p0, Lorg/telegram/messenger/R$string;->ChannelUserAddLimit:I
 
     const-string p2, "ChannelUserAddLimit"
@@ -36940,7 +36944,7 @@
 
     goto/16 :goto_1
 
-    .line 5073
+    .line 5074
     :cond_1a
     sget p0, Lorg/telegram/messenger/R$string;->GroupUserAddLimit:I
 
@@ -36954,7 +36958,7 @@
 
     goto/16 :goto_1
 
-    .line 5125
+    .line 5126
     :pswitch_8
     sget p0, Lorg/telegram/messenger/R$string;->AddBannedErrorAdmin:I
 
@@ -36968,7 +36972,7 @@
 
     goto/16 :goto_1
 
-    .line 5111
+    .line 5112
     :pswitch_9
     sget p0, Lorg/telegram/messenger/R$string;->YouBlockedUser:I
 
@@ -36982,13 +36986,13 @@
 
     goto/16 :goto_1
 
-    .line 5115
+    .line 5116
     :pswitch_a
     instance-of p0, p3, Lorg/telegram/tgnet/TLRPC$TL_channels_inviteToChannel;
 
     if-eqz p0, :cond_1b
 
-    .line 5116
+    .line 5117
     sget p0, Lorg/telegram/messenger/R$string;->AddUserErrorBlacklisted:I
 
     const-string p2, "AddUserErrorBlacklisted"
@@ -37001,7 +37005,7 @@
 
     goto/16 :goto_1
 
-    .line 5118
+    .line 5119
     :cond_1b
     sget p0, Lorg/telegram/messenger/R$string;->AddAdminErrorBlacklisted:I
 
@@ -37018,7 +37022,7 @@
     :pswitch_b
     if-eqz p2, :cond_1c
 
-    .line 5092
+    .line 5093
     sget p0, Lorg/telegram/messenger/R$string;->ChannelUserCantBot:I
 
     const-string p2, "ChannelUserCantBot"
@@ -37031,7 +37035,7 @@
 
     goto/16 :goto_1
 
-    .line 5094
+    .line 5095
     :cond_1c
     sget p0, Lorg/telegram/messenger/R$string;->GroupUserCantBot:I
 
@@ -37045,7 +37049,7 @@
 
     goto :goto_1
 
-    .line 5057
+    .line 5058
     :pswitch_c
     sget p0, Lorg/telegram/messenger/R$string;->NobodyLikesSpam2:I
 
@@ -37057,7 +37061,7 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5058
+    .line 5059
     sget p0, Lorg/telegram/messenger/R$string;->MoreInfo:I
 
     const-string p2, "MoreInfo"
@@ -37074,7 +37078,7 @@
 
     goto :goto_1
 
-    .line 5108
+    .line 5109
     :pswitch_d
     sget p0, Lorg/telegram/messenger/R$string;->UserRestricted:I
 
@@ -37091,7 +37095,7 @@
     :pswitch_e
     if-eqz p2, :cond_1d
 
-    .line 5064
+    .line 5065
     sget p0, Lorg/telegram/messenger/R$string;->ChannelUserCantAdd:I
 
     const-string p2, "ChannelUserCantAdd"
@@ -37104,7 +37108,7 @@
 
     goto :goto_1
 
-    .line 5066
+    .line 5067
     :cond_1d
     sget p0, Lorg/telegram/messenger/R$string;->GroupUserCantAdd:I
 
@@ -37118,7 +37122,7 @@
 
     goto :goto_1
 
-    .line 5105
+    .line 5106
     :pswitch_f
     sget p0, Lorg/telegram/messenger/R$string;->CreateGroupError:I
 
@@ -37132,7 +37136,7 @@
 
     goto :goto_1
 
-    .line 5128
+    .line 5129
     :pswitch_10
     sget p0, Lorg/telegram/messenger/R$string;->PublicChannelsTooMuch:I
 
@@ -37146,7 +37150,7 @@
 
     goto :goto_1
 
-    .line 5131
+    .line 5132
     :pswitch_11
     sget p0, Lorg/telegram/messenger/R$string;->LocatedChannelsTooMuch:I
 
@@ -37158,7 +37162,7 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5153
+    .line 5154
     :goto_1
     sget p0, Lorg/telegram/messenger/R$string;->OK:I
 
@@ -37172,7 +37176,7 @@
 
     invoke-virtual {v0, p0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5154
+    .line 5155
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -37247,7 +37251,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 1257
+    .line 1258
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v3
@@ -37256,13 +37260,13 @@
 
     goto/16 :goto_9
 
-    .line 1260
+    .line 1261
     :cond_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
 
     move-result-object v3
 
-    .line 1261
+    .line 1262
     new-instance v11, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -37271,7 +37275,7 @@
 
     invoke-direct {v11, v4, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1264
+    .line 1265
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
 
     move-result v4
@@ -37286,7 +37290,7 @@
 
     if-nez p5, :cond_2
 
-    .line 1265
+    .line 1266
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -37325,7 +37329,7 @@
     :goto_1
     if-eqz p3, :cond_8
 
-    .line 1267
+    .line 1268
     sget v1, Lorg/telegram/messenger/R$string;->BlockUserTitle:I
 
     new-array v8, v5, [Ljava/lang/Object;
@@ -37344,7 +37348,7 @@
 
     invoke-virtual {v11, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1268
+    .line 1269
     sget v1, Lorg/telegram/messenger/R$string;->BlockUserAlert:I
 
     new-array v8, v5, [Ljava/lang/Object;
@@ -37367,7 +37371,7 @@
 
     invoke-virtual {v11, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1269
+    .line 1270
     sget v1, Lorg/telegram/messenger/R$string;->BlockContact:I
 
     const-string v8, "BlockContact"
@@ -37380,7 +37384,7 @@
 
     new-array v14, v8, [Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    .line 1272
+    .line 1273
     new-instance v15, Landroid/widget/LinearLayout;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -37389,7 +37393,7 @@
 
     invoke-direct {v15, v13}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1273
+    .line 1274
     invoke-virtual {v15, v5}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     move v13, v6
@@ -37405,7 +37409,7 @@
 
     goto/16 :goto_6
 
-    .line 1278
+    .line 1279
     :cond_3
     new-instance v8, Lorg/telegram/ui/Cells/CheckBoxCell;
 
@@ -37417,7 +37421,7 @@
 
     aput-object v8, v14, v13
 
-    .line 1279
+    .line 1280
     aget-object v8, v14, v13
 
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
@@ -37426,7 +37430,7 @@
 
     invoke-virtual {v8, v12}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1280
+    .line 1281
     aget-object v8, v14, v13
 
     invoke-static {v13}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -37439,7 +37443,7 @@
 
     if-nez v13, :cond_4
 
-    .line 1282
+    .line 1283
     aget-object v12, v14, v13
 
     sget v5, Lorg/telegram/messenger/R$string;->DeleteReportSpam:I
@@ -37461,7 +37465,7 @@
     :cond_4
     move-object/from16 v16, v1
 
-    .line 1284
+    .line 1285
     aget-object v1, v14, v13
 
     sget v12, Lorg/telegram/messenger/R$string;->DeleteThisChat:I
@@ -37478,7 +37482,7 @@
 
     invoke-virtual {v1, v2, v8, v5, v6}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 1286
+    .line 1287
     :goto_3
     aget-object v1, v14, v13
 
@@ -37520,7 +37524,7 @@
     :goto_5
     invoke-virtual {v1, v2, v6, v5, v6}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 1287
+    .line 1288
     aget-object v1, v14, v13
 
     const/4 v2, -0x2
@@ -37533,7 +37537,7 @@
 
     invoke-virtual {v15, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1288
+    .line 1289
     aget-object v1, v14, v13
 
     new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda93;
@@ -37558,7 +37562,7 @@
     :cond_7
     move-object/from16 v16, v1
 
-    .line 1293
+    .line 1294
     invoke-virtual {v11, v15}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move-object v4, v14
@@ -37572,7 +37576,7 @@
 
     if-eqz p6, :cond_a
 
-    .line 1297
+    .line 1298
     sget v2, Lorg/telegram/messenger/R$string;->ReportUnrelatedGroup:I
 
     const-string v4, "ReportUnrelatedGroup"
@@ -37585,17 +37589,17 @@
 
     if-eqz v1, :cond_9
 
-    .line 1298
+    .line 1299
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$ChatFull;->location:Lorg/telegram/tgnet/TLRPC$ChannelLocation;
 
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_channelLocation;
 
     if-eqz v2, :cond_9
 
-    .line 1299
+    .line 1300
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_channelLocation;
 
-    .line 1300
+    .line 1301
     sget v2, Lorg/telegram/messenger/R$string;->ReportUnrelatedGroupText:I
 
     const/4 v4, 0x1
@@ -37620,7 +37624,7 @@
 
     goto :goto_7
 
-    .line 1302
+    .line 1303
     :cond_9
     sget v1, Lorg/telegram/messenger/R$string;->ReportUnrelatedGroupTextNoAddress:I
 
@@ -37634,7 +37638,7 @@
 
     goto :goto_7
 
-    .line 1305
+    .line 1306
     :cond_a
     sget v1, Lorg/telegram/messenger/R$string;->ReportSpamTitle:I
 
@@ -37646,7 +37650,7 @@
 
     invoke-virtual {v11, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1306
+    .line 1307
     invoke-static/range {p4 .. p4}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v1
@@ -37657,7 +37661,7 @@
 
     if-nez v1, :cond_b
 
-    .line 1307
+    .line 1308
     sget v1, Lorg/telegram/messenger/R$string;->ReportSpamAlertChannel:I
 
     const-string v2, "ReportSpamAlertChannel"
@@ -37670,7 +37674,7 @@
 
     goto :goto_7
 
-    .line 1309
+    .line 1310
     :cond_b
     sget v1, Lorg/telegram/messenger/R$string;->ReportSpamAlertGroup:I
 
@@ -37682,7 +37686,7 @@
 
     invoke-virtual {v11, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1312
+    .line 1313
     :goto_7
     sget v1, Lorg/telegram/messenger/R$string;->ReportChat:I
 
@@ -37696,7 +37700,7 @@
 
     const/4 v4, 0x0
 
-    .line 1314
+    .line 1315
     :goto_8
     new-instance v13, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda37;
 
@@ -37718,7 +37722,7 @@
 
     invoke-virtual {v11, v12, v13}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1336
+    .line 1337
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -37731,17 +37735,17 @@
 
     invoke-virtual {v11, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1337
+    .line 1338
     invoke-virtual {v11}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v1
 
-    .line 1338
+    .line 1339
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     const/4 v0, -0x1
 
-    .line 1339
+    .line 1340
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object v0
@@ -37750,7 +37754,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 1341
+    .line 1342
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -37777,7 +37781,7 @@
 
     if-eqz v8, :cond_8
 
-    .line 1173
+    .line 1174
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v3
@@ -37788,7 +37792,7 @@
 
     goto/16 :goto_6
 
-    .line 1177
+    .line 1178
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAccountInstance()Lorg/telegram/messenger/AccountInstance;
 
@@ -37802,7 +37806,7 @@
 
     if-lez v4, :cond_1
 
-    .line 1178
+    .line 1179
     invoke-virtual {v3}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v5
@@ -37823,7 +37827,7 @@
     :goto_0
     if-gez v4, :cond_2
 
-    .line 1179
+    .line 1180
     invoke-virtual {v3}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v4
@@ -37852,7 +37856,7 @@
 
     return-void
 
-    .line 1183
+    .line 1184
     :cond_3
     new-instance v10, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -37875,18 +37879,18 @@
     :cond_4
     move v6, v1
 
-    .line 1184
+    .line 1185
     :goto_2
     invoke-virtual {v10, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setDimEnabled(Z)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1185
+    .line 1186
     new-instance v6, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda58;
 
     invoke-direct {v6, v2}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda58;-><init>(Ljava/lang/Runnable;)V
 
     invoke-virtual {v10, v6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setOnPreDismissListener(Landroid/content/DialogInterface$OnDismissListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1191
+    .line 1192
     sget v2, Lorg/telegram/messenger/R$string;->BlockUser:I
 
     const-string v6, "BlockUser"
@@ -37901,7 +37905,7 @@
 
     if-eqz v5, :cond_5
 
-    .line 1193
+    .line 1194
     sget v6, Lorg/telegram/messenger/R$string;->BlockUserReplyAlert:I
 
     new-array v11, v0, [Ljava/lang/Object;
@@ -37924,7 +37928,7 @@
 
     goto :goto_3
 
-    .line 1195
+    .line 1196
     :cond_5
     sget v6, Lorg/telegram/messenger/R$string;->BlockUserReplyAlert:I
 
@@ -37947,7 +37951,7 @@
     :goto_3
     new-array v6, v0, [Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    .line 1199
+    .line 1200
     new-instance v2, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -37956,10 +37960,10 @@
 
     invoke-direct {v2, v11}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1200
+    .line 1201
     invoke-virtual {v2, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 1202
+    .line 1203
     new-instance v11, Lorg/telegram/ui/Cells/CheckBoxCell;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -37970,7 +37974,7 @@
 
     aput-object v11, v6, v1
 
-    .line 1203
+    .line 1204
     aget-object v11, v6, v1
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
@@ -37979,7 +37983,7 @@
 
     invoke-virtual {v11, v12}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1204
+    .line 1205
     aget-object v11, v6, v1
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -37988,7 +37992,7 @@
 
     invoke-virtual {v11, v12}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1205
+    .line 1206
     aget-object v11, v6, v1
 
     sget v12, Lorg/telegram/messenger/R$string;->DeleteReportSpam:I
@@ -38003,7 +38007,7 @@
 
     invoke-virtual {v11, v12, v13, v0, v1}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
-    .line 1207
+    .line 1208
     aget-object v0, v6, v1
 
     sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -38044,7 +38048,7 @@
     :goto_5
     invoke-virtual {v0, v11, v1, v12, v1}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 1208
+    .line 1209
     aget-object v0, v6, v1
 
     const/4 v11, -0x2
@@ -38057,7 +38061,7 @@
 
     invoke-virtual {v2, v0, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1209
+    .line 1210
     aget-object v0, v6, v1
 
     new-instance v1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda92;
@@ -38066,10 +38070,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1214
+    .line 1215
     invoke-virtual {v10, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1216
+    .line 1217
     sget v0, Lorg/telegram/messenger/R$string;->BlockAndDeleteReplies:I
 
     const-string v1, "BlockAndDeleteReplies"
@@ -38096,7 +38100,7 @@
 
     invoke-virtual {v10, v11, v13}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1247
+    .line 1248
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v1, "Cancel"
@@ -38107,15 +38111,15 @@
 
     invoke-virtual {v10, v0, v9}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1248
+    .line 1249
     invoke-virtual {v10}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
-    .line 1249
+    .line 1250
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
-    .line 1250
+    .line 1251
     invoke-virtual {v0, v12}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object v0
@@ -38124,7 +38128,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 1252
+    .line 1253
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -38141,7 +38145,7 @@
 .method public static showChatWithAdmin(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;ZI)V
     .locals 10
 
-    .line 2872
+    .line 2873
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p1
@@ -38150,7 +38154,7 @@
 
     return-void
 
-    .line 2875
+    .line 2876
     :cond_0
     new-instance p1, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
@@ -38162,7 +38166,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 2876
+    .line 2877
     sget p3, Lorg/telegram/messenger/R$string;->ChatWithAdminChannelTitle:I
 
     const-string v0, "ChatWithAdminChannelTitle"
@@ -38183,7 +38187,7 @@
 
     invoke-virtual {p1, p3, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setTitle(Ljava/lang/CharSequence;Z)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 2877
+    .line 2878
     new-instance p3, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -38192,10 +38196,10 @@
 
     invoke-direct {p3, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 2878
+    .line 2879
     invoke-virtual {p3, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 2879
+    .line 2880
     new-instance v1, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -38218,14 +38222,14 @@
 
     const/16 v9, 0x8
 
-    .line 2880
+    .line 2881
     invoke-static/range {v3 .. v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {p3, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2881
+    .line 2882
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -38236,10 +38240,10 @@
 
     const/high16 v2, 0x41800000    # 16.0f
 
-    .line 2882
+    .line 2883
     invoke-virtual {v1, v0, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2884
+    .line 2885
     sget v2, Lorg/telegram/messenger/R$string;->ChatWithAdminMessage:I
 
     const/4 v3, 0x2
@@ -38270,7 +38274,7 @@
 
     invoke-virtual {v1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2887
+    .line 2888
     new-instance p2, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -38281,7 +38285,7 @@
 
     const/16 p0, 0x22
 
-    .line 2888
+    .line 2889
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p4
@@ -38294,24 +38298,24 @@
 
     const/16 p0, 0x11
 
-    .line 2889
+    .line 2890
     invoke-virtual {p2, p0}, Landroid/widget/TextView;->setGravity(I)V
 
     const/high16 p0, 0x41600000    # 14.0f
 
-    .line 2890
+    .line 2891
     invoke-virtual {p2, v0, p0}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string p0, "fonts/rmedium.ttf"
 
-    .line 2891
+    .line 2892
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object p0
 
     invoke-virtual {p2, p0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2892
+    .line 2893
     sget p0, Lorg/telegram/messenger/R$string;->IUnderstand:I
 
     const-string p4, "IUnderstand"
@@ -38322,7 +38326,7 @@
 
     invoke-virtual {p2, p0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2894
+    .line 2895
     sget p0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
     invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -38333,7 +38337,7 @@
 
     const/4 p0, 0x6
 
-    .line 2895
+    .line 2896
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p0
@@ -38370,22 +38374,22 @@
 
     const/16 v6, 0x8
 
-    .line 2897
+    .line 2898
     invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object p0
 
     invoke-virtual {p3, p2, p0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2899
+    .line 2900
     invoke-virtual {p1, p3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 2900
+    .line 2901
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->show()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     move-result-object p0
 
-    .line 2902
+    .line 2903
     new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda79;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda79;-><init>(Lorg/telegram/ui/ActionBar/BottomSheet;)V
@@ -38414,28 +38418,28 @@
         }
     .end annotation
 
-    .line 278
+    .line 279
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v0, p1, p6}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     if-eqz p2, :cond_0
 
-    .line 280
+    .line 281
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 282
+    .line 283
     :cond_0
     invoke-virtual {v0, p3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 283
+    .line 284
     new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda17;
 
     invoke-direct {p1, p7}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda17;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback1;)V
 
     invoke-virtual {v0, p4, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 284
+    .line 285
     sget p1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string p2, "Cancel"
@@ -38450,19 +38454,19 @@
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 285
+    .line 286
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
     if-eqz p0, :cond_1
 
-    .line 287
+    .line 288
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     goto :goto_0
 
-    .line 289
+    .line 290
     :cond_1
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
@@ -38471,7 +38475,7 @@
 
     const/4 p0, -0x1
 
-    .line 292
+    .line 293
     invoke-virtual {p1, p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object p0
@@ -38480,7 +38484,7 @@
 
     if-eqz p0, :cond_3
 
-    .line 294
+    .line 295
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     if-eqz p6, :cond_2
@@ -38539,7 +38543,7 @@
 
     move-object/from16 v8, p8
 
-    .line 1346
+    .line 1347
     invoke-static/range {v0 .. v9}, Lorg/telegram/ui/Components/AlertsCreator;->showCustomNotificationsDialog(Lorg/telegram/ui/ActionBar/BaseFragment;JIILjava/util/ArrayList;Ljava/util/ArrayList;ILorg/telegram/messenger/MessagesStorage$IntCallback;Lorg/telegram/messenger/MessagesStorage$IntCallback;)V
 
     return-void
@@ -38570,7 +38574,7 @@
 
     if-eqz v13, :cond_5
 
-    .line 1350
+    .line 1351
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -38579,7 +38583,7 @@
 
     goto/16 :goto_4
 
-    .line 1354
+    .line 1355
     :cond_0
     invoke-static/range {p7 .. p7}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
 
@@ -38593,12 +38597,12 @@
 
     new-array v11, v12, [Ljava/lang/String;
 
-    .line 1356
+    .line 1357
     sget v0, Lorg/telegram/messenger/R$string;->NotificationsTurnOn:I
 
     const-string v1, "NotificationsTurnOn"
 
-    .line 1357
+    .line 1358
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -38617,7 +38621,7 @@
 
     const-string v3, "Hours"
 
-    .line 1358
+    .line 1359
     invoke-static {v3, v9, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
@@ -38640,7 +38644,7 @@
 
     const/4 v5, 0x2
 
-    .line 1359
+    .line 1360
     invoke-static {v4, v5, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
@@ -38661,7 +38665,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1360
+    .line 1361
     instance-of v0, v13, Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
     if-eqz v0, :cond_1
@@ -38688,7 +38692,7 @@
 
     const-string v2, "NotificationsTurnOff"
 
-    .line 1361
+    .line 1362
     invoke-static {v2, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -38699,7 +38703,7 @@
 
     new-array v6, v12, [I
 
-    .line 1364
+    .line 1365
     sget v0, Lorg/telegram/messenger/R$drawable;->notifications_on:I
 
     aput v0, v6, v10
@@ -38720,7 +38724,7 @@
 
     aput v0, v6, v7
 
-    .line 1372
+    .line 1373
     new-instance v5, Landroid/widget/LinearLayout;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -38729,10 +38733,10 @@
 
     invoke-direct {v5, v0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1373
+    .line 1374
     invoke-virtual {v5, v9}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 1374
+    .line 1375
     new-instance v4, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -38746,7 +38750,7 @@
     :goto_1
     if-ge v3, v12, :cond_4
 
-    .line 1377
+    .line 1378
     aget-object v0, v11, v3
 
     if-nez v0, :cond_2
@@ -38773,7 +38777,7 @@
 
     goto/16 :goto_3
 
-    .line 1380
+    .line 1381
     :cond_2
     new-instance v1, Landroid/widget/TextView;
 
@@ -38783,7 +38787,7 @@
 
     invoke-direct {v1, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 1381
+    .line 1382
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -38800,7 +38804,7 @@
 
     if-ne v3, v7, :cond_3
 
-    .line 1383
+    .line 1384
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -38809,7 +38813,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1384
+    .line 1385
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
     sget v17, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
@@ -38826,7 +38830,7 @@
 
     goto :goto_2
 
-    .line 1386
+    .line 1387
     :cond_3
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
@@ -38836,7 +38840,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1387
+    .line 1388
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
@@ -38854,26 +38858,26 @@
     :goto_2
     const/high16 v2, 0x41800000    # 16.0f
 
-    .line 1389
+    .line 1390
     invoke-virtual {v1, v9, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1390
+    .line 1391
     invoke-virtual {v1, v9}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 1391
+    .line 1392
     invoke-virtual {v1, v9}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1392
+    .line 1393
     invoke-virtual {v1, v0, v8, v8, v8}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 1393
+    .line 1394
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 1394
+    .line 1395
     invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -38882,7 +38886,7 @@
 
     const/16 v0, 0x18
 
-    .line 1395
+    .line 1396
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -38893,24 +38897,24 @@
 
     invoke-virtual {v1, v2, v10, v0, v10}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1396
+    .line 1397
     invoke-virtual {v1, v9}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     const/16 v0, 0x13
 
-    .line 1397
+    .line 1398
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setGravity(I)V
 
     const/16 v0, 0x1a
 
-    .line 1398
+    .line 1399
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
 
-    .line 1399
+    .line 1400
     aget-object v0, v11, v3
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -38921,14 +38925,14 @@
 
     const/16 v7, 0x33
 
-    .line 1400
+    .line 1401
     invoke-static {v0, v2, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(III)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
 
     invoke-virtual {v5, v1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1401
+    .line 1402
     new-instance v12, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda66;
 
     move-object v0, v12
@@ -39019,7 +39023,7 @@
 
     move-object v14, v5
 
-    .line 1480
+    .line 1481
     sget v0, Lorg/telegram/messenger/R$string;->Notifications:I
 
     const-string v1, "Notifications"
@@ -39032,10 +39036,10 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1481
+    .line 1482
     invoke-virtual {v1, v14}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1482
+    .line 1483
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -39052,7 +39056,7 @@
 .method public static showDeleteAllCloudDraftsAlert(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 3
 
-    .line 185
+    .line 186
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -39061,7 +39065,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 186
+    .line 187
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureClearDraftsTitle:I
 
     const-string v2, "AreYouSureClearDraftsTitle"
@@ -39072,7 +39076,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 187
+    .line 188
     sget v1, Lorg/telegram/messenger/R$string;->AreYouSureClearDrafts:I
 
     const-string v2, "AreYouSureClearDrafts"
@@ -39083,7 +39087,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 188
+    .line 189
     sget v1, Lorg/telegram/messenger/R$string;->Delete:I
 
     const-string v2, "Delete"
@@ -39098,7 +39102,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 192
+    .line 193
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -39111,17 +39115,17 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 193
+    .line 194
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
-    .line 194
+    .line 195
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     const/4 p0, -0x1
 
-    .line 195
+    .line 196
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object p0
@@ -39130,7 +39134,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 197
+    .line 198
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -39148,7 +39152,7 @@
 
     if-eqz p0, :cond_2
 
-    .line 224
+    .line 225
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -39162,12 +39166,12 @@
 
     new-array v1, v0, [Ljava/lang/String;
 
-    .line 228
+    .line 229
     sget v2, Lorg/telegram/messenger/R$string;->Delete:I
 
     const-string v3, "Delete"
 
-    .line 229
+    .line 230
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -39178,12 +39182,12 @@
 
     new-array v2, v0, [I
 
-    .line 232
+    .line 233
     sget v4, Lorg/telegram/messenger/R$drawable;->msg_delete:I
 
     aput v4, v2, v3
 
-    .line 236
+    .line 237
     new-instance v4, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -39192,10 +39196,10 @@
 
     invoke-direct {v4, v5}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 237
+    .line 238
     invoke-virtual {v4, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 238
+    .line 239
     new-instance v5, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -39209,7 +39213,7 @@
     :goto_0
     if-ge v6, v0, :cond_1
 
-    .line 241
+    .line 242
     new-instance v7, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -39218,7 +39222,7 @@
 
     invoke-direct {v7, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 242
+    .line 243
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v8
@@ -39233,7 +39237,7 @@
 
     move-result-object v8
 
-    .line 243
+    .line 244
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -39242,7 +39246,7 @@
 
     invoke-virtual {v7, v9}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 244
+    .line 245
     new-instance v9, Landroid/graphics/PorterDuffColorFilter;
 
     sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
@@ -39259,28 +39263,28 @@
 
     const/high16 v9, 0x41800000    # 16.0f
 
-    .line 245
+    .line 246
     invoke-virtual {v7, v0, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 246
+    .line 247
     invoke-virtual {v7, v0}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 247
+    .line 248
     invoke-virtual {v7, v0}, Landroid/widget/TextView;->setMaxLines(I)V
 
     const/4 v9, 0x0
 
-    .line 248
+    .line 249
     invoke-virtual {v7, v8, v9, v9, v9}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 249
+    .line 250
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 250
+    .line 251
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v8
@@ -39289,7 +39293,7 @@
 
     const/16 v8, 0x18
 
-    .line 251
+    .line 252
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -39300,24 +39304,24 @@
 
     invoke-virtual {v7, v9, v3, v8, v3}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 252
+    .line 253
     invoke-virtual {v7, v0}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     const/16 v8, 0x13
 
-    .line 253
+    .line 254
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setGravity(I)V
 
     const/16 v8, 0x1a
 
-    .line 254
+    .line 255
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
 
-    .line 255
+    .line 256
     aget-object v8, v1, v6
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -39328,14 +39332,14 @@
 
     const/16 v10, 0x33
 
-    .line 256
+    .line 257
     invoke-static {v8, v9, v10}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(III)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v8
 
     invoke-virtual {v4, v7, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 257
+    .line 258
     new-instance v8, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda72;
 
     invoke-direct {v8, p1, v5}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda72;-><init>(Lorg/telegram/messenger/MessagesStorage$IntCallback;Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
@@ -39346,7 +39350,7 @@
 
     goto/16 :goto_0
 
-    .line 263
+    .line 264
     :cond_1
     sget p1, Lorg/telegram/messenger/R$string;->ActionsChartTitle:I
 
@@ -39358,10 +39362,10 @@
 
     invoke-virtual {v5, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 264
+    .line 265
     invoke-virtual {v5, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 265
+    .line 266
     invoke-virtual {v5}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -39376,7 +39380,7 @@
 .method public static showDisableSuggestionsAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Runnable;)V
     .locals 3
 
-    .line 159
+    .line 160
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -39385,7 +39389,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 160
+    .line 161
     sget v1, Lorg/telegram/messenger/R$string;->SuggestContactsTitle:I
 
     const-string v2, "SuggestContactsTitle"
@@ -39396,7 +39400,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 161
+    .line 162
     sget v1, Lorg/telegram/messenger/R$string;->SuggestContactsAlert:I
 
     const-string v2, "SuggestContactsAlert"
@@ -39407,7 +39411,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 162
+    .line 163
     sget v1, Lorg/telegram/messenger/R$string;->MuteDisable:I
 
     const-string v2, "MuteDisable"
@@ -39422,7 +39426,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 170
+    .line 171
     sget p1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v1, "Cancel"
@@ -39435,17 +39439,17 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 171
+    .line 172
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 172
+    .line 173
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     const/4 p0, -0x1
 
-    .line 173
+    .line 174
     invoke-virtual {p1, p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object p0
@@ -39454,7 +39458,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 175
+    .line 176
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -39474,7 +39478,7 @@
 
     const-string v0, "FLOOD_WAIT"
 
-    .line 4979
+    .line 4980
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -39491,7 +39495,7 @@
 
     goto :goto_1
 
-    .line 4982
+    .line 4983
     :cond_0
     invoke-static {p0}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
@@ -39511,14 +39515,14 @@
 
     const-string v2, "Seconds"
 
-    .line 4985
+    .line 4986
     invoke-static {v2, p0, v0}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
     goto :goto_0
 
-    .line 4987
+    .line 4988
     :cond_1
     div-int/2addr p0, v0
 
@@ -39530,7 +39534,7 @@
 
     move-result-object p0
 
-    .line 4990
+    .line 4991
     :goto_0
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -39540,7 +39544,7 @@
 
     invoke-direct {v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 4991
+    .line 4992
     sget v2, Lorg/telegram/messenger/R$string;->AppName:I
 
     const-string v3, "AppName"
@@ -39551,7 +39555,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 4992
+    .line 4993
     sget v2, Lorg/telegram/messenger/R$string;->FloodWaitTime:I
 
     const/4 v3, 0x1
@@ -39568,7 +39572,7 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 4993
+    .line 4994
     sget p0, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string v1, "OK"
@@ -39581,7 +39585,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 4994
+    .line 4995
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -39612,7 +39616,7 @@
 
     move v4, p3
 
-    .line 1565
+    .line 1566
     invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/AlertsCreator;->showOpenUrlAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;ZZZZLorg/telegram/messenger/browser/Browser$Progress;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -39637,7 +39641,7 @@
 
     move-object v7, p4
 
-    .line 1569
+    .line 1570
     invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/AlertsCreator;->showOpenUrlAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;ZZZZLorg/telegram/messenger/browser/Browser$Progress;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -39662,7 +39666,7 @@
 
     move-object v7, p6
 
-    .line 1573
+    .line 1574
     invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/AlertsCreator;->showOpenUrlAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;ZZZZLorg/telegram/messenger/browser/Browser$Progress;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -39689,7 +39693,7 @@
 
     move-object/from16 v7, p7
 
-    .line 203
+    .line 204
     invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/AlertsCreator;->showOpenUrlAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;ZZZZLorg/telegram/messenger/browser/Browser$Progress;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Z)V
 
     return-void
@@ -39704,7 +39708,7 @@
 
     if-eqz v8, :cond_9
 
-    .line 1577
+    .line 1578
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -39713,7 +39717,7 @@
 
     goto/16 :goto_4
 
-    .line 1580
+    .line 1581
     :cond_0
     instance-of v0, v8, Lorg/telegram/ui/ChatActivity;
 
@@ -39745,7 +39749,7 @@
 
     if-nez p8, :cond_2
 
-    .line 1581
+    .line 1582
     invoke-static {v9, v10}, Lorg/telegram/messenger/browser/Browser;->isInternalUrl(Ljava/lang/String;[Z)Z
 
     move-result v0
@@ -39755,7 +39759,7 @@
     :cond_2
     if-nez p4, :cond_6
 
-    .line 1582
+    .line 1583
     :cond_3
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -39804,13 +39808,13 @@
     :cond_6
     if-eqz p2, :cond_7
 
-    .line 1587
+    .line 1588
     :try_start_0
     invoke-static/range {p1 .. p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 1588
+    .line 1589
     invoke-virtual {v0}, Landroid/net/Uri;->getHost()Ljava/lang/String;
 
     move-result-object v1
@@ -39830,13 +39834,13 @@
     :catch_0
     move-exception v0
 
-    .line 1590
+    .line 1591
     invoke-static {v0, v12}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     :cond_7
     move-object v0, v9
 
-    .line 1596
+    .line 1597
     :goto_3
     new-instance v13, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda124;
 
@@ -39852,7 +39856,7 @@
 
     invoke-direct/range {v1 .. v7}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda124;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;JZLorg/telegram/messenger/browser/Browser$Progress;)V
 
-    .line 1597
+    .line 1598
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -39863,7 +39867,7 @@
 
     invoke-direct {v1, v2, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1598
+    .line 1599
     sget v2, Lorg/telegram/messenger/R$string;->OpenUrlTitle:I
 
     const-string v3, "OpenUrlTitle"
@@ -39876,27 +39880,27 @@
 
     new-array v2, v11, [Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    .line 1600
+    .line 1601
     new-instance v3, Landroid/text/SpannableString;
 
     invoke-direct {v3, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 1601
+    .line 1602
     new-instance v4, Lorg/telegram/ui/Components/AlertsCreator$3;
 
     invoke-direct {v4, v0, v13, v2}, Lorg/telegram/ui/Components/AlertsCreator$3;-><init>(Ljava/lang/String;Ljava/lang/Runnable;[Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
-    .line 1609
+    .line 1610
     invoke-virtual {v3}, Landroid/text/SpannableString;->length()I
 
     move-result v0
 
     const/16 v5, 0x21
 
-    .line 1601
+    .line 1602
     invoke-virtual {v3, v4, v12, v0, v5}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1610
+    .line 1611
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     sget v4, Lorg/telegram/messenger/R$string;->OpenUrlAlert2:I
@@ -39909,7 +39913,7 @@
 
     invoke-direct {v0, v4}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 1611
+    .line 1612
     invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v4
@@ -39924,17 +39928,17 @@
 
     add-int/lit8 v5, v4, 0x4
 
-    .line 1613
+    .line 1614
     invoke-virtual {v0, v4, v5, v3}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 1615
+    .line 1616
     :cond_8
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1616
+    .line 1617
     invoke-virtual {v1, v12}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessageTextViewClickable(Z)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1617
+    .line 1618
     sget v0, Lorg/telegram/messenger/R$string;->Open:I
 
     const-string v3, "Open"
@@ -39949,7 +39953,7 @@
 
     invoke-virtual {v1, v0, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1618
+    .line 1619
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v3, "Cancel"
@@ -39960,7 +39964,7 @@
 
     invoke-virtual {v1, v0, v10}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1619
+    .line 1620
     sget v0, Lorg/telegram/messenger/R$string;->Copy:I
 
     const-string v3, "Copy"
@@ -39975,7 +39979,7 @@
 
     invoke-virtual {v1, v0, v3}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNeutralButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1620
+    .line 1621
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
@@ -39992,19 +39996,19 @@
 .method public static showPopupMenu(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;Landroid/view/View;II)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
     .locals 5
 
-    .line 6814
+    .line 6815
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    .line 6815
+    .line 6816
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/4 v2, -0x2
 
     invoke-direct {v1, p0, v2, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;-><init>(Landroid/view/View;II)V
 
-    .line 6816
+    .line 6817
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v3, 0x0
@@ -40013,12 +40017,12 @@
 
     if-lt v2, v4, :cond_0
 
-    .line 6817
+    .line 6818
     invoke-virtual {v1, v3}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
     goto :goto_0
 
-    .line 6819
+    .line 6820
     :cond_0
     sget v2, Lorg/telegram/messenger/R$style;->PopupAnimation:I
 
@@ -40027,37 +40031,37 @@
     :goto_0
     const/4 v2, 0x1
 
-    .line 6822
+    .line 6823
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setAnimationEnabled(Z)V
 
-    .line 6824
+    .line 6825
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    .line 6825
+    .line 6826
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
     const/4 v4, 0x2
 
-    .line 6827
+    .line 6828
     invoke-virtual {v1, v4}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 6828
+    .line 6829
     invoke-virtual {v1, v3}, Landroid/widget/PopupWindow;->setSoftInputMode(I)V
 
-    .line 6829
+    .line 6830
     invoke-virtual {v1, v2}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
-    .line 6830
+    .line 6831
     invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->setFocusableInTouchMode(Z)V
 
-    .line 6831
+    .line 6832
     new-instance v2, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda106;
 
     invoke-direct {v2, v1}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda106;-><init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
 
     invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
 
-    .line 6839
+    .line 6840
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v2, v2, Landroid/graphics/Point;->x:I
@@ -40086,16 +40090,16 @@
 
     invoke-virtual {p0, v2, v3}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 6840
+    .line 6841
     invoke-virtual {v1, p1, p2, p3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->showAsDropDown(Landroid/view/View;II)V
 
-    .line 6842
+    .line 6843
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->updateRadialSelectors()V
 
-    .line 6843
+    .line 6844
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->startAnimation()V
 
-    .line 6845
+    .line 6846
     new-instance p1, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda107;
 
     invoke-direct {p1, v1, v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda107;-><init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Landroid/graphics/Rect;)V
@@ -40108,17 +40112,17 @@
 .method public static showRestartDialog(Lorg/telegram/ui/ActionBar/BaseFragment;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 4
 
-    .line 430
+    .line 431
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 431
+    .line 432
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 432
+    .line 433
     sget v0, Lorg/telegram/messenger/R$string;->ScreenCaptureAlert:I
 
     const-string v2, "ScreenCaptureAlert"
@@ -40129,14 +40133,14 @@
 
     const-string v2, "\n\n"
 
-    .line 434
+    .line 435
     invoke-virtual {v0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 435
+    .line 436
     invoke-virtual {v0, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
@@ -40147,7 +40151,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 437
+    .line 438
     :cond_0
     sget v0, Lorg/telegram/messenger/R$string;->in_app_update_snackbar_action:I
 
@@ -40159,7 +40163,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 440
+    .line 441
     sget v0, Lorg/telegram/messenger/R$string;->common_cancel:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -40170,14 +40174,14 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 441
+    .line 442
     new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 446
+    .line 447
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -40194,17 +40198,17 @@
 
     move-object/from16 v1, p4
 
-    .line 1486
+    .line 1487
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1487
+    .line 1488
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1488
+    .line 1489
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v4
@@ -40217,7 +40221,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 1490
+    .line 1491
     sget v5, Lorg/telegram/messenger/R$string;->MapPreviewProviderTelegram:I
 
     const-string v7, "MapPreviewProviderTelegram"
@@ -40228,7 +40232,7 @@
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1491
+    .line 1492
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -40242,7 +40246,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 1494
+    .line 1495
     sget v5, Lorg/telegram/messenger/R$string;->MapPreviewProviderGoogle:I
 
     const-string v8, "MapPreviewProviderGoogle"
@@ -40253,7 +40257,7 @@
 
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1495
+    .line 1496
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v5
@@ -40267,7 +40271,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 1498
+    .line 1499
     sget v4, Lorg/telegram/messenger/R$string;->MapPreviewProviderYandex:I
 
     const-string v8, "MapPreviewProviderYandex"
@@ -40280,14 +40284,14 @@
 
     const/4 v4, 0x3
 
-    .line 1499
+    .line 1500
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v4
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1501
+    .line 1502
     :cond_2
     sget v4, Lorg/telegram/messenger/R$string;->MapPreviewProviderNobody:I
 
@@ -40301,19 +40305,19 @@
 
     const/4 v4, 0x2
 
-    .line 1502
+    .line 1503
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
     invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1504
+    .line 1505
     new-instance v8, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v8, p0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1505
+    .line 1506
     sget v9, Lorg/telegram/messenger/R$string;->MapPreviewProviderTitle:I
 
     const-string v10, "MapPreviewProviderTitle"
@@ -40324,20 +40328,20 @@
 
     invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1506
+    .line 1507
     new-instance v9, Landroid/widget/LinearLayout;
 
     invoke-direct {v9, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1507
+    .line 1508
     invoke-virtual {v9, v7}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 1508
+    .line 1509
     invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     move v10, v6
 
-    .line 1510
+    .line 1511
     :goto_0
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -40345,12 +40349,12 @@
 
     if-ge v10, v11, :cond_4
 
-    .line 1511
+    .line 1512
     new-instance v11, Lorg/telegram/ui/Cells/RadioColorCell;
 
     invoke-direct {v11, p0, v1}, Lorg/telegram/ui/Cells/RadioColorCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1512
+    .line 1513
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
@@ -40361,14 +40365,14 @@
 
     invoke-virtual {v11, v12, v6, v13, v6}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 1513
+    .line 1514
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v12
 
     invoke-virtual {v11, v12}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1514
+    .line 1515
     sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
     invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -40383,7 +40387,7 @@
 
     invoke-virtual {v11, v12, v13}, Lorg/telegram/ui/Cells/RadioColorCell;->setCheckColor(II)V
 
-    .line 1515
+    .line 1516
     invoke-virtual {v2, v10}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v12
@@ -40414,7 +40418,7 @@
     :goto_1
     invoke-virtual {v11, v12, v13}, Lorg/telegram/ui/Cells/RadioColorCell;->setTextAndValue(Ljava/lang/CharSequence;Z)V
 
-    .line 1516
+    .line 1517
     sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
     invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -40427,10 +40431,10 @@
 
     invoke-virtual {v11, v12}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1517
+    .line 1518
     invoke-virtual {v9, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 1518
+    .line 1519
     new-instance v12, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda70;
 
     move-object/from16 v13, p2
@@ -40446,7 +40450,7 @@
     :cond_4
     if-nez p3, :cond_5
 
-    .line 1528
+    .line 1529
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v1, "Cancel"
@@ -40459,7 +40463,7 @@
 
     invoke-virtual {v8, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1530
+    .line 1531
     :cond_5
     invoke-virtual {v8}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -40467,7 +40471,7 @@
 
     if-eqz p3, :cond_6
 
-    .line 1532
+    .line 1533
     invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanceledOnTouchOutside(Z)V
 
     :cond_6
@@ -40481,7 +40485,7 @@
 
     if-eqz p1, :cond_15
 
-    .line 4998
+    .line 4999
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -40490,7 +40494,7 @@
 
     goto/16 :goto_1
 
-    .line 5001
+    .line 5002
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -40500,7 +40504,7 @@
 
     invoke-direct {v0, v1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 5002
+    .line 5003
     sget p2, Lorg/telegram/messenger/R$string;->UnableForward:I
 
     const-string v1, "UnableForward"
@@ -40515,7 +40519,7 @@
 
     if-ne p0, p2, :cond_1
 
-    .line 5004
+    .line 5005
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedStickers:I
 
     const-string v1, "ErrorSendRestrictedStickers"
@@ -40533,7 +40537,7 @@
 
     if-ne p0, v1, :cond_2
 
-    .line 5006
+    .line 5007
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedMedia:I
 
     const-string v1, "ErrorSendRestrictedMedia"
@@ -40551,7 +40555,7 @@
 
     if-ne p0, v1, :cond_3
 
-    .line 5008
+    .line 5009
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedPolls:I
 
     const-string v1, "ErrorSendRestrictedPolls"
@@ -40569,7 +40573,7 @@
 
     if-ne p0, v1, :cond_4
 
-    .line 5010
+    .line 5011
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedStickersAll:I
 
     const-string v1, "ErrorSendRestrictedStickersAll"
@@ -40587,7 +40591,7 @@
 
     if-ne p0, v1, :cond_5
 
-    .line 5012
+    .line 5013
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedMediaAll:I
 
     const-string v1, "ErrorSendRestrictedMediaAll"
@@ -40605,7 +40609,7 @@
 
     if-ne p0, v1, :cond_6
 
-    .line 5014
+    .line 5015
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedPollsAll:I
 
     const-string v1, "ErrorSendRestrictedPollsAll"
@@ -40623,7 +40627,7 @@
 
     if-ne p0, v1, :cond_7
 
-    .line 5016
+    .line 5017
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedPrivacyVoiceMessages:I
 
     const-string v1, "ErrorSendRestrictedPrivacyVoiceMessages"
@@ -40641,7 +40645,7 @@
 
     if-ne p0, v1, :cond_8
 
-    .line 5018
+    .line 5019
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedPrivacyVideoMessages:I
 
     const-string v1, "ErrorSendRestrictedPrivacyVideoMessages"
@@ -40659,7 +40663,7 @@
 
     if-ne p0, v1, :cond_9
 
-    .line 5020
+    .line 5021
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedVideoAll:I
 
     const-string v1, "ErrorSendRestrictedPrivacyVideo"
@@ -40677,7 +40681,7 @@
 
     if-ne p0, v1, :cond_a
 
-    .line 5022
+    .line 5023
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedPhotoAll:I
 
     const-string v1, "ErrorSendRestrictedPrivacyPhoto"
@@ -40695,7 +40699,7 @@
 
     if-ne p0, v1, :cond_b
 
-    .line 5024
+    .line 5025
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedVideo:I
 
     const-string v1, "ErrorSendRestrictedVideo"
@@ -40713,7 +40717,7 @@
 
     if-ne p0, v1, :cond_c
 
-    .line 5026
+    .line 5027
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedPhoto:I
 
     const-string v1, "ErrorSendRestrictedPhoto"
@@ -40731,7 +40735,7 @@
 
     if-ne p0, v1, :cond_d
 
-    .line 5028
+    .line 5029
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedVoiceAll:I
 
     const-string v1, "ErrorSendRestrictedVoiceAll"
@@ -40749,7 +40753,7 @@
 
     if-ne p0, v1, :cond_e
 
-    .line 5030
+    .line 5031
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedVoice:I
 
     const-string v1, "ErrorSendRestrictedVoice"
@@ -40767,7 +40771,7 @@
 
     if-ne p0, v1, :cond_f
 
-    .line 5032
+    .line 5033
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedRoundAll:I
 
     const-string v1, "ErrorSendRestrictedRoundAll"
@@ -40785,7 +40789,7 @@
 
     if-ne p0, v1, :cond_10
 
-    .line 5034
+    .line 5035
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedRound:I
 
     const-string v1, "ErrorSendRestrictedRound"
@@ -40803,7 +40807,7 @@
 
     if-ne p0, v1, :cond_11
 
-    .line 5036
+    .line 5037
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedDocumentsAll:I
 
     const-string v1, "ErrorSendRestrictedDocumentsAll"
@@ -40821,7 +40825,7 @@
 
     if-ne p0, v1, :cond_12
 
-    .line 5038
+    .line 5039
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedDocuments:I
 
     const-string v1, "ErrorSendRestrictedDocuments"
@@ -40839,7 +40843,7 @@
 
     if-ne p0, v1, :cond_13
 
-    .line 5040
+    .line 5041
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedMusicAll:I
 
     const-string v1, "ErrorSendRestrictedMusicAll"
@@ -40857,7 +40861,7 @@
 
     if-ne p0, v1, :cond_14
 
-    .line 5042
+    .line 5043
     sget p0, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedMusic:I
 
     const-string v1, "ErrorSendRestrictedMusic"
@@ -40868,7 +40872,7 @@
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5045
+    .line 5046
     :cond_14
     :goto_0
     sget p0, Lorg/telegram/messenger/R$string;->OK:I
@@ -40883,7 +40887,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 5046
+    .line 5047
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p0
@@ -40900,7 +40904,7 @@
 
     const/4 v0, 0x0
 
-    .line 1155
+    .line 1156
     invoke-static {p0, v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->showSimpleAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Ljava/lang/String;)Landroid/app/Dialog;
 
     move-result-object p0
@@ -40913,7 +40917,7 @@
 
     const/4 v0, 0x0
 
-    .line 1159
+    .line 1160
     invoke-static {p0, p1, p2, v0}, Lorg/telegram/ui/Components/AlertsCreator;->showSimpleAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/app/Dialog;
 
     move-result-object p0
@@ -40928,7 +40932,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 1163
+    .line 1164
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -40937,7 +40941,7 @@
 
     goto :goto_0
 
-    .line 1166
+    .line 1167
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
@@ -40947,12 +40951,12 @@
 
     move-result-object p1
 
-    .line 1167
+    .line 1168
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 1168
+    .line 1169
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-object p1
@@ -40976,33 +40980,33 @@
     :cond_0
     if-eqz p0, :cond_1
 
-    .line 964
+    .line 965
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 965
+    .line 966
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p0
 
     goto :goto_0
 
-    .line 967
+    .line 968
     :cond_1
     sget-object p0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     :goto_0
     const/4 v0, 0x1
 
-    .line 969
+    .line 970
     invoke-static {p0, p1, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object p0
 
-    .line 970
+    .line 971
     invoke-virtual {p0}, Landroid/widget/Toast;->show()V
 
     return-object p0
@@ -41019,13 +41023,13 @@
 
     goto :goto_0
 
-    .line 978
+    .line 979
     :cond_0
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 979
+    .line 980
     sget v2, Lorg/telegram/messenger/R$string;->AppName:I
 
     const-string v3, "AppName"
@@ -41036,10 +41040,10 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 980
+    .line 981
     invoke-virtual {v1, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 981
+    .line 982
     sget p1, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string v2, "OK"
@@ -41052,7 +41056,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 983
+    .line 984
     sget p1, Lorg/telegram/messenger/R$string;->UpdateApp:I
 
     const-string p2, "UpdateApp"
@@ -41067,7 +41071,7 @@
 
     invoke-virtual {v1, p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 985
+    .line 986
     :cond_1
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -41083,12 +41087,12 @@
 .method private static updateDayPicker(Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;Lorg/telegram/ui/Components/NumberPicker;)V
     .locals 2
 
-    .line 1538
+    .line 1539
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 1539
+    .line 1540
     invoke-virtual {p1}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p1
@@ -41097,7 +41101,7 @@
 
     invoke-virtual {v0, v1, p1}, Ljava/util/Calendar;->set(II)V
 
-    .line 1540
+    .line 1541
     invoke-virtual {p2}, Lorg/telegram/ui/Components/NumberPicker;->getValue()I
 
     move-result p1
@@ -41106,12 +41110,12 @@
 
     invoke-virtual {v0, p2, p1}, Ljava/util/Calendar;->set(II)V
 
-    .line 1541
+    .line 1542
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/NumberPicker;->setMinValue(I)V
 
     const/4 p1, 0x5
 
-    .line 1542
+    .line 1543
     invoke-virtual {v0, p1}, Ljava/util/Calendar;->getActualMaximum(I)I
 
     move-result p1

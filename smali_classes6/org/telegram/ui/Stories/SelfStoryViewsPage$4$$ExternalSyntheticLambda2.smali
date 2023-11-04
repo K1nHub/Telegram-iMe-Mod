@@ -16,11 +16,11 @@
 
 .field public final synthetic f$4:Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
-.field public final synthetic f$5:Lorg/telegram/tgnet/TLRPC$TL_storyView;
+.field public final synthetic f$5:Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage$4;Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/ui/Cells/ReactedUserHolderView;Lorg/telegram/tgnet/TLRPC$TL_storyView;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage$4;Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/ui/Cells/ReactedUserHolderView;Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
 
     iput-object p5, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$4$$ExternalSyntheticLambda2;->f$4:Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
-    iput-object p6, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$4$$ExternalSyntheticLambda2;->f$5:Lorg/telegram/tgnet/TLRPC$TL_storyView;
+    iput-object p6, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$4$$ExternalSyntheticLambda2;->f$5:Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
     return-void
 .end method
@@ -55,9 +55,9 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$4$$ExternalSyntheticLambda2;->f$4:Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
-    iget-object v5, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$4$$ExternalSyntheticLambda2;->f$5:Lorg/telegram/tgnet/TLRPC$TL_storyView;
+    iget-object v5, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$4$$ExternalSyntheticLambda2;->f$5:Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$4;->$r8$lambda$U3Z3IHpTWvoVNJL2KPFbdcBRGBU(Lorg/telegram/ui/Stories/SelfStoryViewsPage$4;Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/ui/Cells/ReactedUserHolderView;Lorg/telegram/tgnet/TLRPC$TL_storyView;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$4;->$r8$lambda$4nJ-baLDXXjt_axjxomf5C56jns(Lorg/telegram/ui/Stories/SelfStoryViewsPage$4;Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/ui/Cells/ReactedUserHolderView;Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;)V
 
     return-void
 .end method

@@ -165,8 +165,8 @@ public final class TypeParameterUpperBoundEraser {
                 computeProjection = TypeUtils.makeStarProjection(typeParameterDescriptor2, erasureTypeAttributes);
                 Intrinsics.checkNotNullExpressionValue(computeProjection, "makeStarProjection(it, typeAttr)");
             }
-            Pair m144to = TuplesKt.m144to(typeParameterDescriptor2.getTypeConstructor(), computeProjection);
-            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
+            Pair m146to = TuplesKt.m146to(typeParameterDescriptor2.getTypeConstructor(), computeProjection);
+            linkedHashMap.put(m146to.getFirst(), m146to.getSecond());
         }
         TypeSubstitutor create = TypeSubstitutor.create(TypeConstructorSubstitution.Companion.createByConstructorsMap$default(TypeConstructorSubstitution.Companion, linkedHashMap, false, 2, null));
         Intrinsics.checkNotNullExpressionValue(create, "create(TypeConstructorSu…ap(erasedTypeParameters))");
@@ -196,16 +196,16 @@ public final class TypeParameterUpperBoundEraser {
         Set<KotlinType> build;
         createSetBuilder = SetsKt__SetsJVMKt.createSetBuilder();
         for (KotlinType kotlinType : list) {
-            ClassifierDescriptor mo2046getDeclarationDescriptor = kotlinType.getConstructor().mo2046getDeclarationDescriptor();
-            if (mo2046getDeclarationDescriptor instanceof ClassDescriptor) {
+            ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
+            if (mo2051getDeclarationDescriptor instanceof ClassDescriptor) {
                 createSetBuilder.add(Companion.replaceArgumentsOfUpperBound(kotlinType, typeSubstitutor, erasureTypeAttributes.getVisitedTypeParameters(), this.options.getLeaveNonTypeParameterTypes()));
-            } else if (mo2046getDeclarationDescriptor instanceof TypeParameterDescriptor) {
+            } else if (mo2051getDeclarationDescriptor instanceof TypeParameterDescriptor) {
                 Set<TypeParameterDescriptor> visitedTypeParameters = erasureTypeAttributes.getVisitedTypeParameters();
                 boolean z = true;
-                if ((visitedTypeParameters == null || !visitedTypeParameters.contains(mo2046getDeclarationDescriptor)) ? false : false) {
+                if ((visitedTypeParameters == null || !visitedTypeParameters.contains(mo2051getDeclarationDescriptor)) ? false : false) {
                     createSetBuilder.add(getDefaultType(erasureTypeAttributes));
                 } else {
-                    List<KotlinType> upperBounds = ((TypeParameterDescriptor) mo2046getDeclarationDescriptor).getUpperBounds();
+                    List<KotlinType> upperBounds = ((TypeParameterDescriptor) mo2051getDeclarationDescriptor).getUpperBounds();
                     Intrinsics.checkNotNullExpressionValue(upperBounds, "declaration.upperBounds");
                     createSetBuilder.addAll(substituteErasedUpperBounds(typeSubstitutor, upperBounds, erasureTypeAttributes));
                 }

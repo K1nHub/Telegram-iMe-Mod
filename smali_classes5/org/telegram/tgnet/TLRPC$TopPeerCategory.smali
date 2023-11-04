@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 28738
+    .line 29019
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 28747
+    .line 29028
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_topPeerCategoryPhoneCalls;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 28744
+    .line 29025
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_topPeerCategoryChannels;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 28753
+    .line 29034
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_topPeerCategoryBotsInline;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 28765
+    .line 29046
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_topPeerCategoryCorrespondents;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 28759
+    .line 29040
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_topPeerCategoryForwardChats;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 28750
+    .line 29031
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_topPeerCategoryGroups;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 28762
+    .line 29043
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_topPeerCategoryBotsPM;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 28756
+    .line 29037
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_topPeerCategoryForwardUsers;
 
@@ -91,7 +91,7 @@
 
     goto :goto_1
 
-    .line 28769
+    .line 29050
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -121,7 +121,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 28772
+    .line 29053
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

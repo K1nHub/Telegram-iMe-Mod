@@ -76,7 +76,7 @@
 
     move-result-object p1
 
-    const-string v2, "java.lang.reflect.Parameter"
+    const-string/jumbo v2, "java.lang.reflect.Parameter"
 
     invoke-virtual {p1, v2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 

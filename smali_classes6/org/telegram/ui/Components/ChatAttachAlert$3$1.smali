@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlert$3;)V
     .locals 0
 
-    .line 1475
+    .line 1483
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$3$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlert$3;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .method public getBottomOffset(I)I
     .locals 1
 
-    .line 1478
+    .line 1486
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$3$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlert$3;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getHeight()I

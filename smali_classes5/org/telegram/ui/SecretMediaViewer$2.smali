@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/ui/SecretMediaViewer;Ljava/io/File;)V
     .locals 0
 
-    .line 579
+    .line 584
     iput-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     iput-object p2, p0, Lorg/telegram/ui/SecretMediaViewer$2;->val$file:Ljava/io/File;
@@ -48,7 +48,7 @@
 .method private synthetic lambda$onError$0(Ljava/io/File;)V
     .locals 1
 
-    .line 625
+    .line 630
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/SecretMediaViewer;->access$1800(Lorg/telegram/ui/SecretMediaViewer;Ljava/io/File;)V
@@ -61,7 +61,7 @@
 .method public onError(Lorg/telegram/ui/Components/VideoPlayer;Ljava/lang/Exception;)V
     .locals 2
 
-    .line 623
+    .line 628
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$1500(Lorg/telegram/ui/SecretMediaViewer;)I
@@ -70,12 +70,12 @@
 
     if-lez p1, :cond_0
 
-    .line 624
+    .line 629
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$1510(Lorg/telegram/ui/SecretMediaViewer;)I
 
-    .line 625
+    .line 630
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->val$file:Ljava/io/File;
 
     new-instance p2, Lorg/telegram/ui/SecretMediaViewer$2$$ExternalSyntheticLambda0;
@@ -88,7 +88,7 @@
 
     goto :goto_0
 
-    .line 627
+    .line 632
     :cond_0
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -99,7 +99,7 @@
 .method public onRenderedFirstFrame()V
     .locals 2
 
-    .line 645
+    .line 650
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$1600(Lorg/telegram/ui/SecretMediaViewer;)Z
@@ -108,14 +108,14 @@
 
     if-nez v0, :cond_0
 
-    .line 646
+    .line 651
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/SecretMediaViewer;->access$1602(Lorg/telegram/ui/SecretMediaViewer;Z)Z
 
-    .line 647
+    .line 652
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$1700(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/SecretMediaViewer$FrameLayoutDrawer;
@@ -155,7 +155,7 @@
 .method public onStateChanged(ZI)V
     .locals 3
 
-    .line 582
+    .line 587
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$500(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -174,7 +174,7 @@
 
     goto/16 :goto_1
 
-    .line 585
+    .line 590
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
@@ -184,7 +184,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 586
+    .line 591
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$1000(Lorg/telegram/ui/SecretMediaViewer;)Ljava/lang/Runnable;
@@ -203,7 +203,7 @@
 
     if-eq p2, v1, :cond_1
 
-    .line 589
+    .line 594
     :try_start_0
     iget-object v2, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
@@ -224,12 +224,12 @@
     :catch_0
     move-exception p1
 
-    .line 591
+    .line 596
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_0
 
-    .line 595
+    .line 600
     :cond_1
     :try_start_1
     iget-object v2, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
@@ -251,7 +251,7 @@
     :catch_1
     move-exception p1
 
-    .line 597
+    .line 602
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -261,7 +261,7 @@
 
     if-ne p2, p1, :cond_2
 
-    .line 600
+    .line 605
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$200(Lorg/telegram/ui/SecretMediaViewer;)Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
@@ -274,7 +274,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 601
+    .line 606
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$200(Lorg/telegram/ui/SecretMediaViewer;)Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
@@ -283,7 +283,7 @@
 
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 603
+    .line 608
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
@@ -299,7 +299,7 @@
 
     if-eq p2, v0, :cond_3
 
-    .line 604
+    .line 609
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$1100(Lorg/telegram/ui/SecretMediaViewer;)Z
@@ -308,14 +308,14 @@
 
     if-nez p1, :cond_5
 
-    .line 605
+    .line 610
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/SecretMediaViewer;->access$1102(Lorg/telegram/ui/SecretMediaViewer;Z)Z
 
     goto :goto_1
 
-    .line 607
+    .line 612
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
@@ -325,19 +325,19 @@
 
     if-eqz p1, :cond_5
 
-    .line 608
+    .line 613
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1, v2}, Lorg/telegram/ui/SecretMediaViewer;->access$1102(Lorg/telegram/ui/SecretMediaViewer;Z)Z
 
     if-ne p2, v0, :cond_5
 
-    .line 610
+    .line 615
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/SecretMediaViewer;->access$1202(Lorg/telegram/ui/SecretMediaViewer;Z)Z
 
-    .line 611
+    .line 616
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$1300(Lorg/telegram/ui/SecretMediaViewer;)Z
@@ -346,7 +346,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 612
+    .line 617
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$1400(Lorg/telegram/ui/SecretMediaViewer;)Z
@@ -359,7 +359,7 @@
 
     goto :goto_1
 
-    .line 614
+    .line 619
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
@@ -371,7 +371,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->seekTo(J)V
 
-    .line 615
+    .line 620
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$500(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -402,7 +402,7 @@
 .method public onVideoSizeChanged(IIIF)V
     .locals 2
 
-    .line 633
+    .line 638
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$200(Lorg/telegram/ui/SecretMediaViewer;)Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
@@ -428,7 +428,7 @@
 
     move p1, v1
 
-    .line 639
+    .line 644
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$2;->this$0:Lorg/telegram/ui/SecretMediaViewer;

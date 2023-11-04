@@ -15,9 +15,9 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.RLottieImageView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: FabsView.kt */
 /* renamed from: com.iMe.fork.ui.view.FabsView */
 /* loaded from: classes3.dex */
@@ -71,9 +71,9 @@ public final class FabsView extends FrameLayout {
             imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.SRC_IN));
             GradientDrawable gradientDrawable = new GradientDrawable();
             gradientDrawable.setShape(1);
-            gradientDrawable.setStroke(AndroidUtilities.m102dp(1), Theme.getColor(Theme.key_windowBackgroundWhite));
+            gradientDrawable.setStroke(AndroidUtilities.m104dp(1), Theme.getColor(Theme.key_windowBackgroundWhite));
             gradientDrawable.setColor(Theme.getColor(Theme.key_chats_actionBackground));
-            gradientDrawable.setSize(AndroidUtilities.m102dp(36), AndroidUtilities.m102dp(36));
+            gradientDrawable.setSize(AndroidUtilities.m104dp(36), AndroidUtilities.m104dp(36));
             imageView.setBackground(gradientDrawable);
         }
     }

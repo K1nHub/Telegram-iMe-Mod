@@ -29,7 +29,7 @@ public final class McStateExtra implements TlbObject {
     private final CurrencyCollection globalBalance;
 
     /* renamed from: r1 */
-    private final CellRef<McStateExtraAux> f2033r1;
+    private final CellRef<McStateExtraAux> f2045r1;
     private final HashMapE<CellRef<? extends BinTree<ShardDescr>>> shardHashes;
     public static final Companion Companion = new Companion(null);
     private static final KSerializer<Object>[] $childSerializers = {null, null, new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), null};
@@ -48,13 +48,13 @@ public final class McStateExtra implements TlbObject {
         }
         if (obj instanceof McStateExtra) {
             McStateExtra mcStateExtra = (McStateExtra) obj;
-            return ShardHashes.m5029equalsimpl0(this.shardHashes, mcStateExtra.shardHashes) && Intrinsics.areEqual(this.config, mcStateExtra.config) && Intrinsics.areEqual(this.f2033r1, mcStateExtra.f2033r1) && Intrinsics.areEqual(this.globalBalance, mcStateExtra.globalBalance);
+            return ShardHashes.m5183equalsimpl0(this.shardHashes, mcStateExtra.shardHashes) && Intrinsics.areEqual(this.config, mcStateExtra.config) && Intrinsics.areEqual(this.f2045r1, mcStateExtra.f2045r1) && Intrinsics.areEqual(this.globalBalance, mcStateExtra.globalBalance);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((ShardHashes.m5030hashCodeimpl(this.shardHashes) * 31) + this.config.hashCode()) * 31) + this.f2033r1.hashCode()) * 31) + this.globalBalance.hashCode();
+        return (((((ShardHashes.m5184hashCodeimpl(this.shardHashes) * 31) + this.config.hashCode()) * 31) + this.f2045r1.hashCode()) * 31) + this.globalBalance.hashCode();
     }
 
     private McStateExtra(int i, HashMapE<CellRef<? extends BinTree<ShardDescr>>> hashMapE, ConfigParams configParams, CellRef<McStateExtraAux> cellRef, CurrencyCollection currencyCollection, SerializationConstructorMarker serializationConstructorMarker) {
@@ -63,7 +63,7 @@ public final class McStateExtra implements TlbObject {
         }
         this.shardHashes = hashMapE;
         this.config = configParams;
-        this.f2033r1 = cellRef;
+        this.f2045r1 = cellRef;
         this.globalBalance = currencyCollection;
     }
 
@@ -74,20 +74,20 @@ public final class McStateExtra implements TlbObject {
         Intrinsics.checkNotNullParameter(globalBalance, "globalBalance");
         this.shardHashes = shardHashes;
         this.config = config;
-        this.f2033r1 = r1;
+        this.f2045r1 = r1;
         this.globalBalance = globalBalance;
     }
 
     public static final /* synthetic */ void write$Self(McStateExtra mcStateExtra, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         KSerializer<Object>[] kSerializerArr = $childSerializers;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, ShardHashes$$serializer.INSTANCE, ShardHashes.m5026boximpl(mcStateExtra.shardHashes));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, ShardHashes$$serializer.INSTANCE, ShardHashes.m5180boximpl(mcStateExtra.shardHashes));
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ConfigParams$$serializer.INSTANCE, mcStateExtra.config);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, kSerializerArr[2], mcStateExtra.f2033r1);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, kSerializerArr[2], mcStateExtra.f2045r1);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 3, CurrencyCollection$$serializer.INSTANCE, mcStateExtra.globalBalance);
     }
 
     /* renamed from: getShardHashes-78z5ENA  reason: not valid java name */
-    public final HashMapE<CellRef<? extends BinTree<ShardDescr>>> m4968getShardHashes78z5ENA() {
+    public final HashMapE<CellRef<? extends BinTree<ShardDescr>>> m5122getShardHashes78z5ENA() {
         return this.shardHashes;
     }
 
@@ -96,7 +96,7 @@ public final class McStateExtra implements TlbObject {
     }
 
     public final CellRef<McStateExtraAux> getR1() {
-        return this.f2033r1;
+        return this.f2045r1;
     }
 
     public final CurrencyCollection getGlobalBalance() {
@@ -153,9 +153,9 @@ public final class McStateExtra implements TlbObject {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("masterchain_state_extra");
-        open.field("shard_hashes", ShardHashes.m5026boximpl(this.shardHashes));
+        open.field("shard_hashes", ShardHashes.m5180boximpl(this.shardHashes));
         open.field("config", this.config);
-        open.field(this.f2033r1);
+        open.field(this.f2045r1);
         open.field("global_balance", this.globalBalance);
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;

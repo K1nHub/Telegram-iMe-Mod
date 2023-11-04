@@ -54,13 +54,13 @@ public class SessionReportingCoordinator {
 
     public void persistFatalEvent(Throwable th, Thread thread, String str, long j) {
         Logger logger = Logger.getLogger();
-        logger.m1032v("Persisting fatal event for session " + str);
+        logger.m1033v("Persisting fatal event for session " + str);
         persistEvent(th, thread, str, AppMeasurement.CRASH_ORIGIN, j, true);
     }
 
     public void persistNonFatalEvent(Throwable th, Thread thread, String str, long j) {
         Logger logger = Logger.getLogger();
-        logger.m1032v("Persisting non-fatal event for session " + str);
+        logger.m1033v("Persisting non-fatal event for session " + str);
         persistEvent(th, thread, str, "error", j, false);
     }
 
@@ -68,7 +68,7 @@ public class SessionReportingCoordinator {
         if (applicationExitInfo.getTimestamp() >= this.reportPersistence.getStartTimestampMillis(str) && applicationExitInfo.getReason() == 6) {
             CrashlyticsReport.Session.Event captureAnrEventData = this.dataCapture.captureAnrEventData(convertApplicationExitInfo(applicationExitInfo));
             Logger logger = Logger.getLogger();
-            logger.m1038d("Persisting anr for session " + str);
+            logger.m1039d("Persisting anr for session " + str);
             this.reportPersistence.persistEvent(addLogsAndCustomKeysToEvent(captureAnrEventData, logFileManager, userMetadata), str, true);
         }
     }
@@ -126,7 +126,7 @@ public class SessionReportingCoordinator {
         if (logString != null) {
             builder.setLog(CrashlyticsReport.Session.Event.Log.builder().setContent(logString).build());
         } else {
-            Logger.getLogger().m1032v("No log data to include with this event.");
+            Logger.getLogger().m1033v("No log data to include with this event.");
         }
         List<CrashlyticsReport.CustomAttribute> sortedCustomAttributes = getSortedCustomAttributes(userMetadata.getCustomKeys());
         List<CrashlyticsReport.CustomAttribute> sortedCustomAttributes2 = getSortedCustomAttributes(userMetadata.getInternalKeys());
@@ -145,11 +145,11 @@ public class SessionReportingCoordinator {
         if (task.isSuccessful()) {
             CrashlyticsReportWithSessionId result = task.getResult();
             Logger logger = Logger.getLogger();
-            logger.m1038d("Crashlytics report successfully enqueued to DataTransport: " + result.getSessionId());
+            logger.m1039d("Crashlytics report successfully enqueued to DataTransport: " + result.getSessionId());
             this.reportPersistence.deleteFinalizedReport(result.getSessionId());
             return true;
         }
-        Logger.getLogger().m1029w("Crashlytics report could not be enqueued to DataTransport", task.getException());
+        Logger.getLogger().m1030w("Crashlytics report could not be enqueued to DataTransport", task.getException());
         return false;
     }
 
@@ -181,7 +181,7 @@ public class SessionReportingCoordinator {
             str = convertInputStreamToString(applicationExitInfo.getTraceInputStream());
         } catch (IOException | NullPointerException e) {
             Logger logger = Logger.getLogger();
-            logger.m1030w("Could not get input trace in application exit info: " + applicationExitInfo.toString() + " Error: " + e);
+            logger.m1031w("Could not get input trace in application exit info: " + applicationExitInfo.toString() + " Error: " + e);
             str = null;
         }
         return CrashlyticsReport.ApplicationExitInfo.builder().setImportance(applicationExitInfo.getImportance()).setProcessName(applicationExitInfo.getProcessName()).setReasonCode(applicationExitInfo.getReason()).setTimestamp(applicationExitInfo.getTimestamp()).setPid(applicationExitInfo.getPid()).setPss(applicationExitInfo.getPss()).setRss(applicationExitInfo.getRss()).setTraceFile(str).build();

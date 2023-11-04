@@ -64,7 +64,7 @@ public abstract class CallerImpl<M extends Member> implements Caller<M> {
 
     @Override // kotlin.reflect.jvm.internal.calls.Caller
     /* renamed from: getMember */
-    public final M mo2038getMember() {
+    public final M mo2043getMember() {
         return this.member;
     }
 
@@ -132,7 +132,7 @@ public abstract class CallerImpl<M extends Member> implements Caller<M> {
         public Object call(Object[] args) {
             Intrinsics.checkNotNullParameter(args, "args");
             checkArguments(args);
-            return mo2038getMember().newInstance(Arrays.copyOf(args, args.length));
+            return mo2043getMember().newInstance(Arrays.copyOf(args, args.length));
         }
     }
 
@@ -175,7 +175,7 @@ public abstract class CallerImpl<M extends Member> implements Caller<M> {
             SpreadBuilder spreadBuilder = new SpreadBuilder(2);
             spreadBuilder.add(this.boundReceiver);
             spreadBuilder.addSpread(args);
-            return mo2038getMember().newInstance(spreadBuilder.toArray(new Object[spreadBuilder.size()]));
+            return mo2043getMember().newInstance(spreadBuilder.toArray(new Object[spreadBuilder.size()]));
         }
     }
 
@@ -228,7 +228,7 @@ public abstract class CallerImpl<M extends Member> implements Caller<M> {
             SpreadBuilder spreadBuilder = new SpreadBuilder(2);
             spreadBuilder.addSpread(args);
             spreadBuilder.add(null);
-            return mo2038getMember().newInstance(spreadBuilder.toArray(new Object[spreadBuilder.size()]));
+            return mo2043getMember().newInstance(spreadBuilder.toArray(new Object[spreadBuilder.size()]));
         }
     }
 
@@ -286,7 +286,7 @@ public abstract class CallerImpl<M extends Member> implements Caller<M> {
             spreadBuilder.add(this.boundReceiver);
             spreadBuilder.addSpread(args);
             spreadBuilder.add(null);
-            return mo2038getMember().newInstance(spreadBuilder.toArray(new Object[spreadBuilder.size()]));
+            return mo2043getMember().newInstance(spreadBuilder.toArray(new Object[spreadBuilder.size()]));
         }
     }
 
@@ -360,7 +360,7 @@ public abstract class CallerImpl<M extends Member> implements Caller<M> {
 
         protected final Object callMethod(Object obj, Object[] args) {
             Intrinsics.checkNotNullParameter(args, "args");
-            return this.isVoidMethod ? Unit.INSTANCE : mo2038getMember().invoke(obj, Arrays.copyOf(args, args.length));
+            return this.isVoidMethod ? Unit.INSTANCE : mo2043getMember().invoke(obj, Arrays.copyOf(args, args.length));
         }
 
         /* compiled from: CallerImpl.kt */
@@ -541,7 +541,7 @@ public abstract class CallerImpl<M extends Member> implements Caller<M> {
         public Object call(Object[] args) {
             Intrinsics.checkNotNullParameter(args, "args");
             checkArguments(args);
-            return mo2038getMember().get(getInstanceClass() != null ? ArraysKt.first(args) : null);
+            return mo2043getMember().get(getInstanceClass() != null ? ArraysKt.first(args) : null);
         }
 
         /* compiled from: CallerImpl.kt */
@@ -597,7 +597,7 @@ public abstract class CallerImpl<M extends Member> implements Caller<M> {
             public Object call(Object[] args) {
                 Intrinsics.checkNotNullParameter(args, "args");
                 checkArguments(args);
-                return mo2038getMember().get(this.boundReceiver);
+                return mo2043getMember().get(this.boundReceiver);
             }
         }
 
@@ -669,7 +669,7 @@ public abstract class CallerImpl<M extends Member> implements Caller<M> {
         public Object call(Object[] args) {
             Intrinsics.checkNotNullParameter(args, "args");
             checkArguments(args);
-            mo2038getMember().set(getInstanceClass() != null ? ArraysKt.first(args) : null, ArraysKt.last(args));
+            mo2043getMember().set(getInstanceClass() != null ? ArraysKt.first(args) : null, ArraysKt.last(args));
             return Unit.INSTANCE;
         }
 
@@ -726,7 +726,7 @@ public abstract class CallerImpl<M extends Member> implements Caller<M> {
             public Object call(Object[] args) {
                 Intrinsics.checkNotNullParameter(args, "args");
                 checkArguments(args);
-                mo2038getMember().set(this.boundReceiver, ArraysKt.first(args));
+                mo2043getMember().set(this.boundReceiver, ArraysKt.first(args));
                 return Unit.INSTANCE;
             }
         }
@@ -744,7 +744,7 @@ public abstract class CallerImpl<M extends Member> implements Caller<M> {
             public Object call(Object[] args) {
                 Intrinsics.checkNotNullParameter(args, "args");
                 checkArguments(args);
-                mo2038getMember().set(null, ArraysKt.last(args));
+                mo2043getMember().set(null, ArraysKt.last(args));
                 return Unit.INSTANCE;
             }
         }

@@ -40,7 +40,7 @@
 
     const/16 v0, 0x8
 
-    .line 80
+    .line 83
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -53,14 +53,14 @@
 
     iput v0, p0, Lorg/telegram/ui/Cells/ExpiredStoryView;->textY:F
 
-    .line 81
+    .line 84
     iget-boolean v1, p2, Lorg/telegram/ui/Cells/ChatMessageCell;->pinnedTop:Z
 
     const/4 v2, 0x2
 
     if-eqz v1, :cond_0
 
-    .line 82
+    .line 85
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -71,11 +71,11 @@
 
     iput v0, p0, Lorg/telegram/ui/Cells/ExpiredStoryView;->textY:F
 
-    .line 84
+    .line 87
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    .line 85
+    .line 88
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v1
@@ -90,7 +90,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 86
+    .line 89
     iget v1, p2, Lorg/telegram/ui/Cells/ChatMessageCell;->timeWidth:I
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -133,7 +133,7 @@
 
     iput v1, p0, Lorg/telegram/ui/Cells/ExpiredStoryView;->textX:F
 
-    .line 87
+    .line 90
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v1
@@ -174,7 +174,7 @@
 
     goto :goto_1
 
-    .line 89
+    .line 92
     :cond_1
     iget-boolean v1, p2, Lorg/telegram/ui/Cells/ChatMessageCell;->isAvatarVisible:Z
 
@@ -193,7 +193,7 @@
     :cond_2
     move v1, v3
 
-    .line 90
+    .line 93
     :goto_0
     iget v5, p0, Lorg/telegram/ui/Cells/ExpiredStoryView;->horizontalPadding:F
 
@@ -209,7 +209,7 @@
 
     iput v5, p0, Lorg/telegram/ui/Cells/ExpiredStoryView;->textX:F
 
-    .line 91
+    .line 94
     iget v4, p0, Lorg/telegram/ui/Cells/ExpiredStoryView;->horizontalPadding:F
 
     add-float v5, v1, v4
@@ -236,7 +236,7 @@
 
     invoke-virtual {v0, v5, v6, v1, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 95
+    .line 98
     :goto_1
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
@@ -248,7 +248,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 96
+    .line 99
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_replyTextPaint:Landroid/text/TextPaint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReplyNameText:I
@@ -261,7 +261,7 @@
 
     goto :goto_2
 
-    .line 98
+    .line 101
     :cond_3
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_replyTextPaint:Landroid/text/TextPaint;
 
@@ -273,7 +273,7 @@
 
     invoke-virtual {v0, p2}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 121
+    .line 124
     :goto_2
     iget-object p2, p0, Lorg/telegram/ui/Cells/ExpiredStoryView;->titleLayout:Landroid/text/StaticLayout;
 
@@ -285,23 +285,23 @@
 
     goto :goto_3
 
-    .line 125
+    .line 128
     :cond_4
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 126
+    .line 129
     iget p2, p0, Lorg/telegram/ui/Cells/ExpiredStoryView;->textX:F
 
     iget v0, p0, Lorg/telegram/ui/Cells/ExpiredStoryView;->textY:F
 
     invoke-virtual {p1, p2, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 127
+    .line 130
     iget-object p2, p0, Lorg/telegram/ui/Cells/ExpiredStoryView;->titleLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {p2, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 128
+    .line 131
     iget-object p2, p0, Lorg/telegram/ui/Cells/ExpiredStoryView;->titleLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {p2}, Landroid/text/StaticLayout;->getHeight()I
@@ -318,12 +318,12 @@
 
     invoke-virtual {p1, v3, p2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 129
+    .line 132
     iget-object p2, p0, Lorg/telegram/ui/Cells/ExpiredStoryView;->subtitleLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {p2, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 130
+    .line 133
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_5
@@ -371,6 +371,8 @@
 
     move-result-object v1
 
+    const-string v3, ""
+
     if-nez v1, :cond_0
 
     const-string v1, "DELETED"
@@ -383,23 +385,23 @@
 
     if-nez v1, :cond_1
 
-    const-string v1, ""
+    move-object v1, v3
 
     .line 46
     :cond_1
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
-    move-result v3
+    move-result v4
 
-    const v4, 0x3ecccccd    # 0.4f
+    const v5, 0x3ecccccd    # 0.4f
 
-    if-eqz v3, :cond_2
+    if-eqz v4, :cond_2
 
     .line 47
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getMinTabletSide()I
 
-    move-result v3
+    move-result v4
 
     goto :goto_1
 
@@ -407,77 +409,85 @@
     :cond_2
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getParentWidth()I
 
-    move-result v3
-
-    :goto_1
-    int-to-float v3, v3
-
-    mul-float/2addr v3, v4
-
-    float-to-int v3, v3
-
-    .line 51
-    sget v4, Lorg/telegram/messenger/R$string;->From:I
-
-    const-string v5, "From"
-
-    invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 52
-    sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->chat_forwardNamePaint:Landroid/text/TextPaint;
-
-    new-instance v6, Ljava/lang/StringBuilder;
-
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v4, " "
-
-    invoke-virtual {v6, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v5, v4}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
-
     move-result v4
 
-    float-to-double v4, v4
+    :goto_1
+    int-to-float v4, v4
 
-    invoke-static {v4, v5}, Ljava/lang/Math;->ceil(D)D
+    mul-float/2addr v4, v5
 
-    move-result-wide v4
+    float-to-int v4, v4
 
-    double-to-int v4, v4
+    .line 51
+    sget v5, Lorg/telegram/messenger/R$string;->From:I
 
-    const/16 v5, 0x20
+    const-string v6, "From"
+
+    invoke-static {v6, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 52
+    sget-object v6, Lorg/telegram/ui/ActionBar/Theme;->chat_forwardNamePaint:Landroid/text/TextPaint;
+
+    new-instance v7, Ljava/lang/StringBuilder;
+
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v5, " "
+
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v6, v5}, Landroid/text/TextPaint;->measureText(Ljava/lang/String;)F
+
+    move-result v5
+
+    float-to-double v5, v5
+
+    invoke-static {v5, v6}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v5
+
+    double-to-int v5, v5
+
+    if-nez v1, :cond_3
+
+    goto :goto_2
+
+    :cond_3
+    move-object v3, v1
+
+    :goto_2
+    const/16 v1, 0x20
 
     const/16 v10, 0xa
 
-    .line 54
-    invoke-virtual {v1, v10, v5}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+    .line 57
+    invoke-virtual {v3, v10, v1}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v1
 
-    sget-object v5, Lorg/telegram/ui/ActionBar/Theme;->chat_replyNamePaint:Landroid/text/TextPaint;
+    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->chat_replyNamePaint:Landroid/text/TextPaint;
 
-    sub-int/2addr v3, v4
+    sub-int/2addr v4, v5
 
-    int-to-float v3, v3
+    int-to-float v4, v4
 
-    sget-object v4, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
+    sget-object v5, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
-    invoke-static {v1, v5, v3, v4}, Landroid/text/TextUtils;->ellipsize(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;
+    invoke-static {v1, v3, v4, v5}, Landroid/text/TextUtils;->ellipsize(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;
 
     move-result-object v1
 
     check-cast v1, Ljava/lang/String;
 
-    .line 55
+    .line 58
     sget v3, Lorg/telegram/messenger/R$string;->FromFormatted:I
 
     const-string v4, "FromFormatted"
@@ -488,7 +498,7 @@
 
     const-string v4, "%1$s"
 
-    .line 56
+    .line 59
     invoke-virtual {v3, v4}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v4
@@ -501,19 +511,19 @@
 
     aput-object v1, v5, v11
 
-    .line 57
+    .line 60
     invoke-static {v3, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    if-ltz v4, :cond_3
+    if-ltz v4, :cond_4
 
-    .line 59
+    .line 62
     new-instance v5, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v5, v3}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 60
+    .line 63
     new-instance v3, Lorg/telegram/ui/Components/TypefaceSpan;
 
     const-string v6, "fonts/rmedium.ttf"
@@ -536,16 +546,16 @@
 
     move-object v13, v5
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_3
+    :cond_4
     move-object v13, v3
 
-    .line 63
-    :goto_2
+    .line 66
+    :goto_3
     sget-object v14, Lorg/telegram/ui/ActionBar/Theme;->chat_replyTextPaint:Landroid/text/TextPaint;
 
-    .line 65
+    .line 68
     invoke-interface {v2}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
@@ -560,7 +570,7 @@
 
     float-to-int v1, v1
 
-    .line 66
+    .line 69
     new-instance v15, Landroid/text/StaticLayout;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -585,7 +595,7 @@
 
     iput-object v15, v0, Lorg/telegram/ui/Cells/ExpiredStoryView;->titleLayout:Landroid/text/StaticLayout;
 
-    .line 67
+    .line 70
     invoke-interface {v13}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
@@ -598,7 +608,7 @@
 
     float-to-int v1, v1
 
-    .line 68
+    .line 71
     new-instance v2, Landroid/text/StaticLayout;
 
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -621,12 +631,12 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Cells/ExpiredStoryView;->subtitleLayout:Landroid/text/StaticLayout;
 
-    .line 70
+    .line 73
     iput v11, v0, Lorg/telegram/ui/Cells/ExpiredStoryView;->height:I
 
     const/4 v1, 0x4
 
-    .line 71
+    .line 74
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -637,7 +647,7 @@
 
     const/16 v2, 0xc
 
-    .line 72
+    .line 75
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -646,7 +656,7 @@
 
     iput v3, v0, Lorg/telegram/ui/Cells/ExpiredStoryView;->horizontalPadding:F
 
-    .line 73
+    .line 76
     iget v3, v0, Lorg/telegram/ui/Cells/ExpiredStoryView;->height:I
 
     int-to-float v3, v3
@@ -701,7 +711,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Cells/ExpiredStoryView;->height:I
 
-    .line 74
+    .line 77
     iget-object v1, v0, Lorg/telegram/ui/Cells/ExpiredStoryView;->titleLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getWidth()I

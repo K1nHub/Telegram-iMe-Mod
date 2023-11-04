@@ -14,16 +14,16 @@ import java.lang.annotation.RetentionPolicy;
 /* loaded from: classes.dex */
 public class ModuleInstallStatusUpdate extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ModuleInstallStatusUpdate> CREATOR = new zae();
-    @SafeParcelable.Field(getter = "getSessionId", m1089id = 1)
+    @SafeParcelable.Field(getter = "getSessionId", m1090id = 1)
     private final int zaa;
     @InstallState
-    @SafeParcelable.Field(getter = "getInstallState", m1089id = 2)
+    @SafeParcelable.Field(getter = "getInstallState", m1090id = 2)
     private final int zab;
-    @SafeParcelable.Field(getter = "getBytesDownloaded", m1089id = 3)
+    @SafeParcelable.Field(getter = "getBytesDownloaded", m1090id = 3)
     private final Long zac;
-    @SafeParcelable.Field(getter = "getTotalBytesToDownload", m1089id = 4)
+    @SafeParcelable.Field(getter = "getTotalBytesToDownload", m1090id = 4)
     private final Long zad;
-    @SafeParcelable.Field(getter = "getErrorCode", m1089id = 5)
+    @SafeParcelable.Field(getter = "getErrorCode", m1090id = 5)
     private final int zae;
     private final ProgressInfo zaf;
 
@@ -64,7 +64,7 @@ public class ModuleInstallStatusUpdate extends AbstractSafeParcelable {
 
     @SafeParcelable.Constructor
     @KeepForSdk
-    public ModuleInstallStatusUpdate(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) @InstallState int i2, @SafeParcelable.Param(m1088id = 3) Long l, @SafeParcelable.Param(m1088id = 4) Long l2, @SafeParcelable.Param(m1088id = 5) int i3) {
+    public ModuleInstallStatusUpdate(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) @InstallState int i2, @SafeParcelable.Param(m1089id = 3) Long l, @SafeParcelable.Param(m1089id = 4) Long l2, @SafeParcelable.Param(m1089id = 5) int i3) {
         this.zaa = i;
         this.zab = i2;
         this.zac = l;

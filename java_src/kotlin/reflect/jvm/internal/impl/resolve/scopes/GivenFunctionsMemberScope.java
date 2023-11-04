@@ -117,10 +117,10 @@ public abstract class GivenFunctionsMemberScope extends MemberScopeImpl {
     public final List<DeclarationDescriptor> createFakeOverrides(List<? extends FunctionDescriptor> list) {
         Collection<? extends CallableMemberDescriptor> emptyList;
         final ArrayList arrayList = new ArrayList(3);
-        Collection<KotlinType> mo2047getSupertypes = this.containingClass.getTypeConstructor().mo2047getSupertypes();
-        Intrinsics.checkNotNullExpressionValue(mo2047getSupertypes, "containingClass.typeConstructor.supertypes");
+        Collection<KotlinType> mo2052getSupertypes = this.containingClass.getTypeConstructor().mo2052getSupertypes();
+        Intrinsics.checkNotNullExpressionValue(mo2052getSupertypes, "containingClass.typeConstructor.supertypes");
         ArrayList arrayList2 = new ArrayList();
-        for (KotlinType kotlinType : mo2047getSupertypes) {
+        for (KotlinType kotlinType : mo2052getSupertypes) {
             CollectionsKt__MutableCollectionsKt.addAll(arrayList2, ResolutionScope.DefaultImpls.getContributedDescriptors$default(kotlinType.getMemberScope(), null, null, 3, null));
         }
         ArrayList arrayList3 = new ArrayList();

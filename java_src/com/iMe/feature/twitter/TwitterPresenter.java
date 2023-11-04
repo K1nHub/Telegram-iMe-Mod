@@ -38,7 +38,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import okhttp3.internal.Util;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import timber.log.Timber;
 /* compiled from: TwitterPresenter.kt */
@@ -111,12 +111,12 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TweetInfo>> result) {
-                m1425invoke(result);
+                m1430invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1425invoke(Result<? extends List<? extends TweetInfo>> it) {
+            public final void m1430invoke(Result<? extends List<? extends TweetInfo>> it) {
                 List list;
                 List list2;
                 List list3;
@@ -238,7 +238,7 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
     }
 
     public final void onResetMenuClicked() {
-        ((TwitterView) getViewState()).showResetTwitterDialog(new DialogModel(this.resourceManager.getString(C3630R.string.social_reset_account_title, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3630R.string.social_reset_account_message, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3630R.string.social_reset_account_negative_button), this.resourceManager.getString(C3630R.string.social_reset_account_positive_button)));
+        ((TwitterView) getViewState()).showResetTwitterDialog(new DialogModel(this.resourceManager.getString(C3634R.string.social_reset_account_title, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3634R.string.social_reset_account_message, this.socialNetwork.getSocialName()), this.resourceManager.getString(C3634R.string.social_reset_account_negative_button), this.resourceManager.getString(C3634R.string.social_reset_account_positive_button)));
     }
 
     public final void onResetConfirmClicked() {
@@ -254,12 +254,12 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1426invoke(result);
+                m1431invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1426invoke(Result<? extends Boolean> it) {
+            public final void m1431invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 ((TwitterView) TwitterPresenter.this.getViewState()).finishScreen();
             }
@@ -302,12 +302,12 @@ public final class TwitterPresenter extends BasePresenter<TwitterView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(TweetItem tweetItem) {
-                m1427invoke(tweetItem);
+                m1432invoke(tweetItem);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1427invoke(TweetItem it) {
+            public final void m1432invoke(TweetItem it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 TwitterPresenter.this.toggleItemLikeStatus(it);
             }

@@ -49,7 +49,7 @@ public final class GlobalVersion implements TlbObject {
     }
 
     public int hashCode() {
-        return (UInt.m1969hashCodeimpl(this.version) * 31) + ULong.m1991hashCodeimpl(this.capabilities);
+        return (UInt.m1974hashCodeimpl(this.version) * 31) + ULong.m1996hashCodeimpl(this.capabilities);
     }
 
     private GlobalVersion(int i, long j) {
@@ -61,22 +61,22 @@ public final class GlobalVersion implements TlbObject {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, GlobalVersion$$serializer.INSTANCE.getDescriptor());
         }
-        this.version = uInt.m1971unboximpl();
-        this.capabilities = uLong.m1993unboximpl();
+        this.version = uInt.m1976unboximpl();
+        this.capabilities = uLong.m1998unboximpl();
     }
 
     public static final /* synthetic */ void write$Self(GlobalVersion globalVersion, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, UIntSerializer.INSTANCE, UInt.m1966boximpl(globalVersion.version));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1988boximpl(globalVersion.capabilities));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, UIntSerializer.INSTANCE, UInt.m1971boximpl(globalVersion.version));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1993boximpl(globalVersion.capabilities));
     }
 
     /* renamed from: getVersion-pVg5ArA  reason: not valid java name */
-    public final int m4961getVersionpVg5ArA() {
+    public final int m5115getVersionpVg5ArA() {
         return this.version;
     }
 
     /* renamed from: getCapabilities-s-VKNKU  reason: not valid java name */
-    public final long m4960getCapabilitiessVKNKU() {
+    public final long m5114getCapabilitiessVKNKU() {
         return this.capabilities;
     }
 
@@ -125,8 +125,8 @@ public final class GlobalVersion implements TlbObject {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("capabilities");
-        open.field("version", UInt.m1966boximpl(this.version));
-        open.field("capabilities", ULong.m1988boximpl(this.capabilities));
+        open.field("version", UInt.m1971boximpl(this.version));
+        open.field("capabilities", ULong.m1993boximpl(this.capabilities));
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

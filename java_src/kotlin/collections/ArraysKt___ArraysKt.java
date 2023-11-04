@@ -688,7 +688,7 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         int min = Math.min(tArr.length, other.length);
         ArrayList arrayList = new ArrayList(min);
         for (int i = 0; i < min; i++) {
-            arrayList.add(TuplesKt.m144to(tArr[i], other[i]));
+            arrayList.add(TuplesKt.m146to(tArr[i], other[i]));
         }
         return arrayList;
     }

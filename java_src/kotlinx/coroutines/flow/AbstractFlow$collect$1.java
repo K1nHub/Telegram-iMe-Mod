@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Flow.kt */
-@DebugMetadata(m143c = "kotlinx.coroutines.flow.AbstractFlow", m142f = "Flow.kt", m141l = {230}, m140m = "collect")
+@DebugMetadata(m145c = "kotlinx.coroutines.flow.AbstractFlow", m144f = "Flow.kt", m143l = {230}, m142m = "collect")
 /* loaded from: classes4.dex */
 public final class AbstractFlow$collect$1 extends ContinuationImpl {
     Object L$0;

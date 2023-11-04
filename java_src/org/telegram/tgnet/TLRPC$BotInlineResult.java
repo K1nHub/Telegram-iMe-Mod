@@ -7,7 +7,7 @@ public abstract class TLRPC$BotInlineResult extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public String f1598id;
+    public String f1600id;
     public TLRPC$Photo photo;
     public long query_id;
     public TLRPC$BotInlineMessage send_message;
@@ -20,12 +20,10 @@ public abstract class TLRPC$BotInlineResult extends TLObject {
         TLRPC$BotInlineResult tLRPC$BotInlineResult;
         if (i == 295067450) {
             tLRPC$BotInlineResult = new TLRPC$BotInlineResult() { // from class: org.telegram.tgnet.TLRPC$TL_botInlineResult
-                public static int constructor = 295067450;
-
                 @Override // org.telegram.tgnet.TLObject
                 public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                     this.flags = abstractSerializedData2.readInt32(z2);
-                    this.f1598id = abstractSerializedData2.readString(z2);
+                    this.f1600id = abstractSerializedData2.readString(z2);
                     this.type = abstractSerializedData2.readString(z2);
                     if ((this.flags & 2) != 0) {
                         this.title = abstractSerializedData2.readString(z2);
@@ -47,9 +45,9 @@ public abstract class TLRPC$BotInlineResult extends TLObject {
 
                 @Override // org.telegram.tgnet.TLObject
                 public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                    abstractSerializedData2.writeInt32(constructor);
+                    abstractSerializedData2.writeInt32(295067450);
                     abstractSerializedData2.writeInt32(this.flags);
-                    abstractSerializedData2.writeString(this.f1598id);
+                    abstractSerializedData2.writeString(this.f1600id);
                     abstractSerializedData2.writeString(this.type);
                     if ((this.flags & 2) != 0) {
                         abstractSerializedData2.writeString(this.title);
@@ -71,12 +69,10 @@ public abstract class TLRPC$BotInlineResult extends TLObject {
             };
         } else {
             tLRPC$BotInlineResult = i != 400266251 ? null : new TLRPC$BotInlineResult() { // from class: org.telegram.tgnet.TLRPC$TL_botInlineMediaResult
-                public static int constructor = 400266251;
-
                 @Override // org.telegram.tgnet.TLObject
                 public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                     this.flags = abstractSerializedData2.readInt32(z2);
-                    this.f1598id = abstractSerializedData2.readString(z2);
+                    this.f1600id = abstractSerializedData2.readString(z2);
                     this.type = abstractSerializedData2.readString(z2);
                     if ((this.flags & 1) != 0) {
                         this.photo = TLRPC$Photo.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
@@ -95,9 +91,9 @@ public abstract class TLRPC$BotInlineResult extends TLObject {
 
                 @Override // org.telegram.tgnet.TLObject
                 public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                    abstractSerializedData2.writeInt32(constructor);
+                    abstractSerializedData2.writeInt32(400266251);
                     abstractSerializedData2.writeInt32(this.flags);
-                    abstractSerializedData2.writeString(this.f1598id);
+                    abstractSerializedData2.writeString(this.f1600id);
                     abstractSerializedData2.writeString(this.type);
                     if ((this.flags & 1) != 0) {
                         this.photo.serializeToStream(abstractSerializedData2);

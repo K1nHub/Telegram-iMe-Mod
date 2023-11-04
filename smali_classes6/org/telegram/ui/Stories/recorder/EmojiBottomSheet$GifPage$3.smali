@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)V
     .locals 0
 
-    .line 207
+    .line 205
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage$3;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 210
+    .line 208
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage$3;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
@@ -46,7 +46,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 211
+    .line 209
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage$3;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
@@ -75,14 +75,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 212
+    .line 210
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage$3;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->closeKeyboard()V
 
-    .line 215
+    .line 213
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage$3;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;
 
@@ -94,7 +94,7 @@
 
     add-int/lit8 p1, p1, 0x3
 
-    .line 216
+    .line 214
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage$3;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;
 
     iget-object p2, p2, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;->adapter:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage$GifAdapter;
@@ -107,7 +107,7 @@
 
     if-lt p1, p2, :cond_1
 
-    .line 217
+    .line 215
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage$3;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;->adapter:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage$GifAdapter;

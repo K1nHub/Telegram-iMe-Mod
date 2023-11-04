@@ -117,7 +117,7 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
     }
 
     private final void loadStakingTotalStats(final boolean z) {
-        Observable<Result<StakingTotalStats>> observeOn = this.stakingInteractor.getStakingTotalStats().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<StakingTotalStats>> observeOn = this.stakingInteractor.getStakingTotalStats().observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "stakingInteractor\n      …(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends StakingTotalStats>, Unit>() { // from class: com.iMe.ui.wallet.staking.StakingPresenter$loadStakingTotalStats$$inlined$subscribeWithErrorHandle$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -127,12 +127,12 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingTotalStats> result) {
-                m1804invoke(result);
+                m1809invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1804invoke(Result<? extends StakingTotalStats> it) {
+            public final void m1809invoke(Result<? extends StakingTotalStats> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends StakingTotalStats> result = it;
@@ -182,7 +182,7 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.StakingTabRefreshStateChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo1009ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.StakingTabRefreshStateChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.StakingTabRefreshStateChanged, Unit>() { // from class: com.iMe.ui.wallet.staking.StakingPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -191,12 +191,12 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.StakingTabRefreshStateChanged stakingTabRefreshStateChanged) {
-                m1803invoke(stakingTabRefreshStateChanged);
+                m1808invoke(stakingTabRefreshStateChanged);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1803invoke(DomainRxEvents.StakingTabRefreshStateChanged it) {
+            public final void m1808invoke(DomainRxEvents.StakingTabRefreshStateChanged it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents.StakingTabRefreshStateChanged stakingTabRefreshStateChanged = it;
                 int i = StakingPresenter.WhenMappings.$EnumSwitchMapping$0[stakingTabRefreshStateChanged.getStakingTabType().ordinal()];

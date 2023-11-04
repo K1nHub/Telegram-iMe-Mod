@@ -172,7 +172,7 @@
 
     move-result-object v4
 
-    const-string v5, "it.containingDeclaration"
+    const-string/jumbo v5, "it.containingDeclaration"
 
     invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -11,7 +11,7 @@ public class TextureBufferImpl implements VideoFrame.TextureBuffer {
     private final int height;
 
     /* renamed from: id */
-    private final int f2098id;
+    private final int f2110id;
     private final RefCountDelegate refCountDelegate;
     private final RefCountMonitor refCountMonitor;
     private final Handler toI420Handler;
@@ -68,7 +68,7 @@ public class TextureBufferImpl implements VideoFrame.TextureBuffer {
         this.width = i3;
         this.height = i4;
         this.type = type;
-        this.f2098id = i5;
+        this.f2110id = i5;
         this.transformMatrix = matrix;
         this.toI420Handler = handler;
         this.yuvConverter = yuvConverter;
@@ -93,7 +93,7 @@ public class TextureBufferImpl implements VideoFrame.TextureBuffer {
 
     @Override // org.webrtc.VideoFrame.TextureBuffer
     public int getTextureId() {
-        return this.f2098id;
+        return this.f2110id;
     }
 
     @Override // org.webrtc.VideoFrame.TextureBuffer
@@ -123,7 +123,7 @@ public class TextureBufferImpl implements VideoFrame.TextureBuffer {
                 }
             });
         } catch (Throwable th) {
-            FileLog.m97e(th);
+            FileLog.m99e(th);
             int width = getWidth();
             int height = getHeight();
             int i = ((width + 7) / 8) * 8;
@@ -204,7 +204,7 @@ public class TextureBufferImpl implements VideoFrame.TextureBuffer {
         Matrix matrix2 = new Matrix(this.transformMatrix);
         matrix2.preConcat(matrix);
         retain();
-        return new TextureBufferImpl(i, i2, i3, i4, this.type, this.f2098id, matrix2, this.toI420Handler, this.yuvConverter, new RefCountMonitor() { // from class: org.webrtc.TextureBufferImpl.2
+        return new TextureBufferImpl(i, i2, i3, i4, this.type, this.f2110id, matrix2, this.toI420Handler, this.yuvConverter, new RefCountMonitor() { // from class: org.webrtc.TextureBufferImpl.2
             @Override // org.webrtc.TextureBufferImpl.RefCountMonitor
             public void onRetain(TextureBufferImpl textureBufferImpl) {
                 TextureBufferImpl.this.refCountMonitor.onRetain(TextureBufferImpl.this);

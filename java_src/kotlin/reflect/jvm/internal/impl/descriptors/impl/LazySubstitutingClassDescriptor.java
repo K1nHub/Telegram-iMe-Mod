@@ -116,9 +116,9 @@ public class LazySubstitutingClassDescriptor extends ModuleAwareClassDescriptor 
         }
         if (this.typeConstructor == null) {
             TypeSubstitutor substitutor = getSubstitutor();
-            Collection<KotlinType> mo2047getSupertypes = typeConstructor.mo2047getSupertypes();
-            ArrayList arrayList = new ArrayList(mo2047getSupertypes.size());
-            for (KotlinType kotlinType : mo2047getSupertypes) {
+            Collection<KotlinType> mo2052getSupertypes = typeConstructor.mo2052getSupertypes();
+            ArrayList arrayList = new ArrayList(mo2052getSupertypes.size());
+            for (KotlinType kotlinType : mo2052getSupertypes) {
                 arrayList.add(substitutor.substitute(kotlinType, Variance.INVARIANT));
             }
             this.typeConstructor = new ClassTypeConstructorImpl(this, this.typeConstructorParameters, arrayList, LockBasedStorageManager.NO_LOCKS);
@@ -272,8 +272,8 @@ public class LazySubstitutingClassDescriptor extends ModuleAwareClassDescriptor 
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
     /* renamed from: getCompanionObjectDescriptor */
-    public ClassDescriptor mo2039getCompanionObjectDescriptor() {
-        return this.original.mo2039getCompanionObjectDescriptor();
+    public ClassDescriptor mo2044getCompanionObjectDescriptor() {
+        return this.original.mo2044getCompanionObjectDescriptor();
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
@@ -364,8 +364,8 @@ public class LazySubstitutingClassDescriptor extends ModuleAwareClassDescriptor 
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
     /* renamed from: getUnsubstitutedPrimaryConstructor */
-    public ClassConstructorDescriptor mo2040getUnsubstitutedPrimaryConstructor() {
-        return this.original.mo2040getUnsubstitutedPrimaryConstructor();
+    public ClassConstructorDescriptor mo2045getUnsubstitutedPrimaryConstructor() {
+        return this.original.mo2045getUnsubstitutedPrimaryConstructor();
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.DeclarationDescriptorWithSource

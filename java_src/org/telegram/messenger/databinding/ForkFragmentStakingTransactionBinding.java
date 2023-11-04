@@ -14,8 +14,8 @@ import com.iMe.p030ui.custom.StakingSafeWithdrawalView;
 import com.iMe.p030ui.custom.StakingWithdrawalFeeView;
 import com.iMe.p030ui.custom.TitledInputFieldView;
 import com.iMe.p030ui.custom.TransactionActionButtonsView;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.Components.RLottieImageView;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* loaded from: classes4.dex */
 public final class ForkFragmentStakingTransactionBinding implements ViewBinding {
     public final TransactionActionButtonsView buttonSend;
@@ -53,7 +53,7 @@ public final class ForkFragmentStakingTransactionBinding implements ViewBinding 
     }
 
     public static ForkFragmentStakingTransactionBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_fragment_staking_transaction, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_fragment_staking_transaction, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -61,34 +61,34 @@ public final class ForkFragmentStakingTransactionBinding implements ViewBinding 
     }
 
     public static ForkFragmentStakingTransactionBinding bind(View view) {
-        int i = C3630R.C3633id.button_send;
+        int i = C3634R.C3637id.button_send;
         TransactionActionButtonsView transactionActionButtonsView = (TransactionActionButtonsView) ViewBindings.findChildViewById(view, i);
         if (transactionActionButtonsView != null) {
-            i = C3630R.C3633id.image_header;
+            i = C3634R.C3637id.image_header;
             RLottieImageView rLottieImageView = (RLottieImageView) ViewBindings.findChildViewById(view, i);
             if (rLottieImageView != null) {
-                i = C3630R.C3633id.input_amount;
+                i = C3634R.C3637id.input_amount;
                 TitledInputFieldView titledInputFieldView = (TitledInputFieldView) ViewBindings.findChildViewById(view, i);
                 if (titledInputFieldView != null) {
-                    i = C3630R.C3633id.linear_staking_settings;
+                    i = C3634R.C3637id.linear_staking_settings;
                     LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                     if (linearLayout != null) {
-                        i = C3630R.C3633id.staking_percentage_view;
+                        i = C3634R.C3637id.staking_percentage_view;
                         StakingPercentageView stakingPercentageView = (StakingPercentageView) ViewBindings.findChildViewById(view, i);
                         if (stakingPercentageView != null) {
-                            i = C3630R.C3633id.staking_safe_withdrawal_view;
+                            i = C3634R.C3637id.staking_safe_withdrawal_view;
                             StakingSafeWithdrawalView stakingSafeWithdrawalView = (StakingSafeWithdrawalView) ViewBindings.findChildViewById(view, i);
                             if (stakingSafeWithdrawalView != null) {
-                                i = C3630R.C3633id.staking_withdrawal_fee_view;
+                                i = C3634R.C3637id.staking_withdrawal_fee_view;
                                 StakingWithdrawalFeeView stakingWithdrawalFeeView = (StakingWithdrawalFeeView) ViewBindings.findChildViewById(view, i);
                                 if (stakingWithdrawalFeeView != null) {
-                                    i = C3630R.C3633id.text_balance;
+                                    i = C3634R.C3637id.text_balance;
                                     TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                                     if (textView != null) {
-                                        i = C3630R.C3633id.text_header;
+                                        i = C3634R.C3637id.text_header;
                                         TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                                         if (textView2 != null) {
-                                            i = C3630R.C3633id.view_fee;
+                                            i = C3634R.C3637id.view_fee;
                                             FeeView feeView = (FeeView) ViewBindings.findChildViewById(view, i);
                                             if (feeView != null) {
                                                 return new ForkFragmentStakingTransactionBinding((NestedScrollView) view, transactionActionButtonsView, rLottieImageView, titledInputFieldView, linearLayout, stakingPercentageView, stakingSafeWithdrawalView, stakingWithdrawalFeeView, textView, textView2, feeView);

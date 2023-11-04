@@ -59,7 +59,7 @@
 
     move-object v6, p1
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$PFu_p_e9yKhyqsAKNCgRihJeNZA([ILjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$User;ILjava/lang/Runnable;Landroidx/core/util/Consumer;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
+    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$N7-lkbl_q1RFg578wAN36WS7KBc([ILjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$User;ILjava/lang/Runnable;Landroidx/core/util/Consumer;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
 
     move-result p1
 

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda212;->f$1:Lorg/telegram/tgnet/TLRPC$TL_updatePeerBlocked;
 
-    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$SO8Fb04KlgHgjJgJqjDrgIfs7oA(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_updatePeerBlocked;)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$LniSi0rEVVuSgIGZ4Z1yqL6j0g8(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_updatePeerBlocked;)V
 
     return-void
 .end method

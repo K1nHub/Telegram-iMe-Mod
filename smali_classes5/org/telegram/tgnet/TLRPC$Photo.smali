@@ -49,17 +49,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 37516
+    .line 37880
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 37524
+    .line 37888
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
-    .line 37525
+    .line 37889
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 37544
+    .line 37908
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photoEmpty;
 
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 37547
+    .line 37911
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photo_old;
 
@@ -94,7 +94,7 @@
 
     goto :goto_0
 
-    .line 37553
+    .line 37917
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photo;
 
@@ -102,7 +102,7 @@
 
     goto :goto_0
 
-    .line 37550
+    .line 37914
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photo_layer115;
 
@@ -110,7 +110,7 @@
 
     goto :goto_0
 
-    .line 37538
+    .line 37902
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photo_layer55;
 
@@ -118,7 +118,7 @@
 
     goto :goto_0
 
-    .line 37541
+    .line 37905
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photo_old2;
 
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 37535
+    .line 37899
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photo_layer97;
 
@@ -134,7 +134,7 @@
 
     goto :goto_0
 
-    .line 37556
+    .line 37920
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photo_layer82;
 
@@ -147,7 +147,7 @@
 
     goto :goto_1
 
-    .line 37560
+    .line 37924
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -177,7 +177,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 37563
+    .line 37927
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

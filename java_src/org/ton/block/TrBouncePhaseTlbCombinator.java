@@ -10,6 +10,6 @@ public final class TrBouncePhaseTlbCombinator extends TlbCombinator<TrBouncePhas
     public static final TrBouncePhaseTlbCombinator INSTANCE = new TrBouncePhaseTlbCombinator();
 
     private TrBouncePhaseTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(TrBouncePhase.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(TrPhaseBounceNegFunds.class), TrPhaseBounceNegFunds.INSTANCE), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(TrPhaseBounceNoFunds.class), TrPhaseBounceNoFunds.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(TrPhaseBounceOk.class), TrPhaseBounceOk.Companion));
+        super(Reflection.getOrCreateKotlinClass(TrBouncePhase.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(TrPhaseBounceNegFunds.class), TrPhaseBounceNegFunds.INSTANCE), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(TrPhaseBounceNoFunds.class), TrPhaseBounceNoFunds.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(TrPhaseBounceOk.class), TrPhaseBounceOk.Companion));
     }
 }

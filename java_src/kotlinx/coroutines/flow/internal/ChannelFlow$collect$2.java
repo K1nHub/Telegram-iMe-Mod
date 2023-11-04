@@ -13,7 +13,7 @@ import kotlinx.coroutines.flow.FlowCollector;
 import kotlinx.coroutines.flow.FlowKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ChannelFlow.kt */
-@DebugMetadata(m143c = "kotlinx.coroutines.flow.internal.ChannelFlow$collect$2", m142f = "ChannelFlow.kt", m141l = {123}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "kotlinx.coroutines.flow.internal.ChannelFlow$collect$2", m144f = "ChannelFlow.kt", m143l = {123}, m142m = "invokeSuspend")
 /* loaded from: classes4.dex */
 public final class ChannelFlow$collect$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ FlowCollector<T> $collector;

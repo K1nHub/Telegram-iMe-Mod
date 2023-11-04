@@ -19,7 +19,7 @@ public interface Cell {
     CellDescriptor getDescriptor();
 
     /* renamed from: getLevelMask-Kat384U  reason: not valid java name */
-    int mo5052getLevelMaskKat384U();
+    int mo5206getLevelMaskKat384U();
 
     List<Cell> getRefs();
 
@@ -37,8 +37,8 @@ public interface Cell {
         }
 
         /* renamed from: getLevelMask-Kat384U  reason: not valid java name */
-        public static int m5053getLevelMaskKat384U(Cell cell) {
-            return cell.getDescriptor().mo5063getLevelMaskKat384U();
+        public static int m5207getLevelMaskKat384U(Cell cell) {
+            return cell.getDescriptor().mo5217getLevelMaskKat384U();
         }
 
         public static /* synthetic */ BitString hash$default(Cell cell, int i, int i2, Object obj) {

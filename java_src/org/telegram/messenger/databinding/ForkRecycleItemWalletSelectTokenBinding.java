@@ -9,7 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p030ui.custom.TickerView;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletSelectTokenBinding implements ViewBinding {
     private ForkRecycleItemWalletSelectTokenBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, AppCompatImageView appCompatImageView, AppCompatTextView appCompatTextView, AppCompatTextView appCompatTextView2, TickerView tickerView, AppCompatTextView appCompatTextView3) {
@@ -20,7 +20,7 @@ public final class ForkRecycleItemWalletSelectTokenBinding implements ViewBindin
     }
 
     public static ForkRecycleItemWalletSelectTokenBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_select_token, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_recycle_item_wallet_select_token, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -29,19 +29,19 @@ public final class ForkRecycleItemWalletSelectTokenBinding implements ViewBindin
 
     public static ForkRecycleItemWalletSelectTokenBinding bind(View view) {
         ConstraintLayout constraintLayout = (ConstraintLayout) view;
-        int i = C3630R.C3633id.image_token_logo;
+        int i = C3634R.C3637id.image_token_logo;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3630R.C3633id.text_token_balance;
+            i = C3634R.C3637id.text_token_balance;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3630R.C3633id.text_token_balance_in_dollars;
+                i = C3634R.C3637id.text_token_balance_in_dollars;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView2 != null) {
-                    i = C3630R.C3633id.text_token_ticker;
+                    i = C3634R.C3637id.text_token_ticker;
                     TickerView tickerView = (TickerView) ViewBindings.findChildViewById(view, i);
                     if (tickerView != null) {
-                        i = C3630R.C3633id.text_token_title;
+                        i = C3634R.C3637id.text_token_title;
                         AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                         if (appCompatTextView3 != null) {
                             return new ForkRecycleItemWalletSelectTokenBinding(constraintLayout, constraintLayout, appCompatImageView, appCompatTextView, appCompatTextView2, tickerView, appCompatTextView3);

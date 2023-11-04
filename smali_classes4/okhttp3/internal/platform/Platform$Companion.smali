@@ -477,7 +477,7 @@
 .method public final isAndroid()Z
     .locals 2
 
-    const-string v0, "java.vm.name"
+    const-string/jumbo v0, "java.vm.name"
 
     .line 198
     invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;

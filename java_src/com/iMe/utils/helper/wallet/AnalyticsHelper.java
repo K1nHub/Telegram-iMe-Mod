@@ -87,28 +87,28 @@ public final class AnalyticsHelper implements KoinComponent {
 
     private final void trackIsActiveDesktopUser() {
         if (DateExtKt.isDayAgo(getAnalyticsPreference().getActiveDesktopUserLastUpdateTime())) {
-            Observable<List<TLRPC$TL_authorization>> observeOn = getTelegramApi().getAccountSessions().observeOn(getSchedulersProvider().mo1009ui());
+            Observable<List<TLRPC$TL_authorization>> observeOn = getTelegramApi().getAccountSessions().observeOn(getSchedulersProvider().mo1010ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "telegramApi\n            …(schedulersProvider.ui())");
             Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<List<TLRPC$TL_authorization>, Unit>() { // from class: com.iMe.utils.helper.wallet.AnalyticsHelper$trackIsActiveDesktopUser$$inlined$subscribeWithErrorHandle$default$1
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(List<TLRPC$TL_authorization> list) {
-                    m1877invoke(list);
+                    m1882invoke(list);
                     return Unit.INSTANCE;
                 }
 
                 /* JADX WARN: Multi-variable type inference failed */
-                /* JADX WARN: Removed duplicated region for block: B:96:0x00ca A[SYNTHETIC] */
+                /* JADX WARN: Removed duplicated region for block: B:96:0x00cb A[SYNTHETIC] */
                 /* renamed from: invoke  reason: collision with other method in class */
                 /*
                     Code decompiled incorrectly, please refer to instructions dump.
                     To view partially-correct add '--show-bad-code' argument
                 */
-                public final void m1877invoke(java.util.List<org.telegram.tgnet.TLRPC$TL_authorization> r17) {
+                public final void m1882invoke(java.util.List<org.telegram.tgnet.TLRPC$TL_authorization> r17) {
                     /*
-                        Method dump skipped, instructions count: 416
+                        Method dump skipped, instructions count: 417
                         To view this dump add '--comments-level debug' option
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.utils.helper.wallet.C2557x94c78a7f.m1877invoke(java.lang.Object):void");
+                    throw new UnsupportedOperationException("Method not decompiled: com.iMe.utils.helper.wallet.C2561x94c78a7f.m1882invoke(java.lang.Object):void");
                 }
             }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.utils.helper.wallet.AnalyticsHelper$trackIsActiveDesktopUser$$inlined$subscribeWithErrorHandle$default$2
                 {

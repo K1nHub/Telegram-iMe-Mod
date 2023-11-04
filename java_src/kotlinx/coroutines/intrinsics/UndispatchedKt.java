@@ -31,11 +31,11 @@ public final class UndispatchedKt {
             coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
             if (invoke != coroutine_suspended) {
                 Result.Companion companion = Result.Companion;
-                probeCoroutineCreated.resumeWith(Result.m1935constructorimpl(invoke));
+                probeCoroutineCreated.resumeWith(Result.m1940constructorimpl(invoke));
             }
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            probeCoroutineCreated.resumeWith(Result.m1935constructorimpl(ResultKt.createFailure(th)));
+            probeCoroutineCreated.resumeWith(Result.m1940constructorimpl(ResultKt.createFailure(th)));
         }
     }
 
@@ -50,11 +50,11 @@ public final class UndispatchedKt {
             coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
             if (invoke != coroutine_suspended) {
                 Result.Companion companion = Result.Companion;
-                probeCoroutineCreated.resumeWith(Result.m1935constructorimpl(invoke));
+                probeCoroutineCreated.resumeWith(Result.m1940constructorimpl(invoke));
             }
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            probeCoroutineCreated.resumeWith(Result.m1935constructorimpl(ResultKt.createFailure(th)));
+            probeCoroutineCreated.resumeWith(Result.m1940constructorimpl(ResultKt.createFailure(th)));
         }
     }
 

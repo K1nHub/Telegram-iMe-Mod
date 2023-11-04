@@ -48,7 +48,7 @@ final class TranslationRepositoryImpl$translate$1 extends Lambda implements Func
             str2 = TtmlNode.TEXT_EMPHASIS_AUTO;
         }
         Observable<ArrayList<Object>> translate = googleTranslationApi.translate(str, str2, this.$targetLanguage, blockText.toString());
-        final C18991 c18991 = new Function1<ArrayList<Object>, Translation>() { // from class: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1.1
+        final C19051 c19051 = new Function1<ArrayList<Object>, Translation>() { // from class: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1.1
             @Override // kotlin.jvm.functions.Function1
             public final Translation invoke(ArrayList<Object> response) {
                 Intrinsics.checkNotNullParameter(response, "response");

@@ -10,7 +10,7 @@ import org.ton.tlb.TlbCombinator;
 final class BinTreeTlbCombinator extends TlbCombinator<BinTree<?>> {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BinTreeTlbCombinator(TlbCodec<?> x) {
-        super(Reflection.getOrCreateKotlinClass(BinTree.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(BinTreeLeaf.class), BinTreeLeaf.Companion.tlbCodec(x)), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(BinTreeFork.class), BinTreeFork.Companion.tlbCodec(x)));
+        super(Reflection.getOrCreateKotlinClass(BinTree.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(BinTreeLeaf.class), BinTreeLeaf.Companion.tlbCodec(x)), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(BinTreeFork.class), BinTreeFork.Companion.tlbCodec(x)));
         Intrinsics.checkNotNullParameter(x, "x");
     }
 }

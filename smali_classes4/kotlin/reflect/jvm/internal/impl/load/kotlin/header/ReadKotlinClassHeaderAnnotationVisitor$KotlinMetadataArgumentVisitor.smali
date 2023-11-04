@@ -166,7 +166,7 @@
 
     move-result-object p1
 
-    const-string v0, "k"
+    const-string/jumbo v0, "k"
 
     .line 157
     invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

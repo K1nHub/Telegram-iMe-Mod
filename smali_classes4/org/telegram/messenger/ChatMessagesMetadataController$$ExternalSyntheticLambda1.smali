@@ -12,11 +12,11 @@
 
 .field public final synthetic f$2:J
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field public final synthetic f$3:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/ChatMessagesMetadataController;Lorg/telegram/messenger/MessageObject;JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/ChatMessagesMetadataController;Lorg/telegram/messenger/MessageObject;JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
 
     iput-wide p3, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$2:J
 
-    iput-object p5, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$3:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object p5, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$3:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     return-void
 .end method
@@ -43,9 +43,9 @@
 
     iget-wide v2, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$2:J
 
-    iget-object v4, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$3:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v4, p0, Lorg/telegram/messenger/ChatMessagesMetadataController$$ExternalSyntheticLambda1;->f$3:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/ChatMessagesMetadataController;->$r8$lambda$Jg5v8ZEvgS5-XxCm9NV6eLj2dV0(Lorg/telegram/messenger/ChatMessagesMetadataController;Lorg/telegram/messenger/MessageObject;JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/ChatMessagesMetadataController;->$r8$lambda$n6lCq-F57JCTtIfXsbfyQYZReXI(Lorg/telegram/messenger/ChatMessagesMetadataController;Lorg/telegram/messenger/MessageObject;JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
     return-void
 .end method

@@ -213,13 +213,13 @@ public class EnumEntrySyntheticClassDescriptor extends ClassDescriptorBase {
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
     /* renamed from: getCompanionObjectDescriptor */
-    public ClassDescriptor mo2039getCompanionObjectDescriptor() {
+    public ClassDescriptor mo2044getCompanionObjectDescriptor() {
         return null;
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
     /* renamed from: getUnsubstitutedPrimaryConstructor */
-    public ClassConstructorDescriptor mo2040getUnsubstitutedPrimaryConstructor() {
+    public ClassConstructorDescriptor mo2045getUnsubstitutedPrimaryConstructor() {
         return null;
     }
 
@@ -430,29 +430,29 @@ public class EnumEntrySyntheticClassDescriptor extends ClassDescriptorBase {
         /* JADX WARN: Removed duplicated region for block: B:21:0x0034  */
         /* JADX WARN: Removed duplicated region for block: B:22:0x003a  */
         /* JADX WARN: Removed duplicated region for block: B:23:0x0040  */
-        /* JADX WARN: Removed duplicated region for block: B:24:0x0045  */
-        /* JADX WARN: Removed duplicated region for block: B:25:0x004a  */
-        /* JADX WARN: Removed duplicated region for block: B:26:0x004d  */
-        /* JADX WARN: Removed duplicated region for block: B:27:0x0053  */
-        /* JADX WARN: Removed duplicated region for block: B:30:0x0064  */
-        /* JADX WARN: Removed duplicated region for block: B:43:0x0092  */
-        /* JADX WARN: Removed duplicated region for block: B:45:0x0097  */
-        /* JADX WARN: Removed duplicated region for block: B:46:0x009c  */
-        /* JADX WARN: Removed duplicated region for block: B:47:0x00a2  */
-        /* JADX WARN: Removed duplicated region for block: B:48:0x00a5  */
-        /* JADX WARN: Removed duplicated region for block: B:49:0x00a8  */
-        /* JADX WARN: Removed duplicated region for block: B:50:0x00ad  */
-        /* JADX WARN: Removed duplicated region for block: B:51:0x00b0  */
-        /* JADX WARN: Removed duplicated region for block: B:52:0x00b5  */
-        /* JADX WARN: Removed duplicated region for block: B:55:0x00bd A[ADDED_TO_REGION] */
-        /* JADX WARN: Removed duplicated region for block: B:59:0x00c6  */
+        /* JADX WARN: Removed duplicated region for block: B:24:0x0046  */
+        /* JADX WARN: Removed duplicated region for block: B:25:0x004b  */
+        /* JADX WARN: Removed duplicated region for block: B:26:0x004e  */
+        /* JADX WARN: Removed duplicated region for block: B:27:0x0054  */
+        /* JADX WARN: Removed duplicated region for block: B:30:0x0065  */
+        /* JADX WARN: Removed duplicated region for block: B:43:0x0093  */
+        /* JADX WARN: Removed duplicated region for block: B:45:0x0098  */
+        /* JADX WARN: Removed duplicated region for block: B:46:0x009d  */
+        /* JADX WARN: Removed duplicated region for block: B:47:0x00a3  */
+        /* JADX WARN: Removed duplicated region for block: B:48:0x00a6  */
+        /* JADX WARN: Removed duplicated region for block: B:49:0x00a9  */
+        /* JADX WARN: Removed duplicated region for block: B:50:0x00ae  */
+        /* JADX WARN: Removed duplicated region for block: B:51:0x00b1  */
+        /* JADX WARN: Removed duplicated region for block: B:52:0x00b6  */
+        /* JADX WARN: Removed duplicated region for block: B:55:0x00be A[ADDED_TO_REGION] */
+        /* JADX WARN: Removed duplicated region for block: B:59:0x00c7  */
         /*
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
         private static /* synthetic */ void $$$reportNull$$$0(int r13) {
             /*
-                Method dump skipped, instructions count: 354
+                Method dump skipped, instructions count: 356
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: kotlin.reflect.jvm.internal.impl.descriptors.impl.EnumEntrySyntheticClassDescriptor.EnumEntryScope.$$$reportNull$$$0(int):void");
@@ -530,7 +530,7 @@ public class EnumEntrySyntheticClassDescriptor extends ClassDescriptorBase {
         }
 
         private MemberScope getSupertypeScope() {
-            MemberScope memberScope = this.this$0.getTypeConstructor().mo2047getSupertypes().iterator().next().getMemberScope();
+            MemberScope memberScope = this.this$0.getTypeConstructor().mo2052getSupertypes().iterator().next().getMemberScope();
             if (memberScope == null) {
                 $$$reportNull$$$0(9);
             }

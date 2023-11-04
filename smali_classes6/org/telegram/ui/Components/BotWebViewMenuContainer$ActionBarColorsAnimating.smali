@@ -28,17 +28,17 @@
 .method public constructor <init>()V
     .locals 3
 
-    .line 936
+    .line 945
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 938
+    .line 947
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->fromColors:Landroid/util/SparseIntArray;
 
-    .line 939
+    .line 948
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
@@ -49,7 +49,7 @@
 
     new-array v0, v0, [I
 
-    .line 941
+    .line 950
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     const/4 v2, 0x0
@@ -104,7 +104,7 @@
 
     if-nez p2, :cond_0
 
-    .line 963
+    .line 972
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->colorKeys:[I
 
@@ -112,10 +112,10 @@
 
     if-ge v0, v1, :cond_7
 
-    .line 964
+    .line 973
     aget p2, p2, v0
 
-    .line 965
+    .line 974
     invoke-static {p2, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 968
+    .line 977
     :cond_0
     invoke-static {p2}, Landroidx/core/graphics/ColorUtils;->calculateLuminance(I)D
 
@@ -148,12 +148,12 @@
     :goto_1
     const/16 v2, 0x3c
 
-    .line 969
+    .line 978
     invoke-static {v1, v2}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result v2
 
-    .line 970
+    .line 979
     :goto_2
     iget-object v3, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->colorKeys:[I
 
@@ -161,10 +161,10 @@
 
     if-ge v0, v4, :cond_7
 
-    .line 971
+    .line 980
     aget v3, v3, v0
 
-    .line 972
+    .line 981
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
     if-eq v3, v4, :cond_6
@@ -183,7 +183,7 @@
 
     goto :goto_4
 
-    .line 974
+    .line 983
     :cond_2
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
 
@@ -191,7 +191,7 @@
 
     const/high16 v4, 0x3f000000    # 0.5f
 
-    .line 975
+    .line 984
     invoke-static {p2, v1, v4}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v4
@@ -200,7 +200,7 @@
 
     goto :goto_5
 
-    .line 976
+    .line 985
     :cond_3
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarWhiteSelector:I
 
@@ -210,20 +210,20 @@
 
     goto :goto_3
 
-    .line 979
+    .line 988
     :cond_4
     invoke-virtual {p1, v3, v1}, Landroid/util/SparseIntArray;->put(II)V
 
     goto :goto_5
 
-    .line 977
+    .line 986
     :cond_5
     :goto_3
     invoke-virtual {p1, v3, v2}, Landroid/util/SparseIntArray;->put(II)V
 
     goto :goto_5
 
-    .line 973
+    .line 982
     :cond_6
     :goto_4
     invoke-static {v3, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -246,7 +246,7 @@
 .method public getColor(I)I
     .locals 2
 
-    .line 986
+    .line 995
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->fromColors:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
@@ -271,7 +271,7 @@
 .method public setFrom(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 1
 
-    .line 954
+    .line 963
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->fromColors:Landroid/util/SparseIntArray;
 
     invoke-direct {p0, v0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->updateColors(Landroid/util/SparseIntArray;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -282,7 +282,7 @@
 .method public setTo(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 1
 
-    .line 958
+    .line 967
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->toColors:Landroid/util/SparseIntArray;
 
     invoke-direct {p0, v0, p1, p2}, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->updateColors(Landroid/util/SparseIntArray;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -293,10 +293,10 @@
 .method public updateActionBar(Lorg/telegram/ui/ActionBar/ActionBar;F)V
     .locals 2
 
-    .line 990
+    .line 999
     iput p2, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->progress:F
 
-    .line 991
+    .line 1000
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->getColor(I)I
@@ -305,7 +305,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitleColor(I)V
 
-    .line 992
+    .line 1001
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->getColor(I)I
 
     move-result p2
@@ -314,7 +314,7 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
-    .line 993
+    .line 1002
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarWhiteSelector:I
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->getColor(I)I
@@ -323,7 +323,7 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
 
-    .line 994
+    .line 1003
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->getColor(I)I
@@ -332,7 +332,7 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setPopupBackgroundColor(IZ)V
 
-    .line 995
+    .line 1004
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->getColor(I)I
@@ -341,7 +341,7 @@
 
     invoke-virtual {p1, p2, v0, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setPopupItemsColor(IZZ)V
 
-    .line 996
+    .line 1005
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItemIcon:I
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->getColor(I)I
@@ -352,7 +352,7 @@
 
     invoke-virtual {p1, p2, v1, v0}, Lorg/telegram/ui/ActionBar/ActionBar;->setPopupItemsColor(IZZ)V
 
-    .line 997
+    .line 1006
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogButtonSelector:I
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/BotWebViewMenuContainer$ActionBarColorsAnimating;->getColor(I)I

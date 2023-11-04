@@ -283,7 +283,7 @@ public final class PresenterModuleKt {
             List emptyList81;
             List emptyList82;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C12541 c12541 = new Function2<Scope, ParametersHolder, TranslationPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.1
+            C12601 c12601 = new Function2<Scope, ParametersHolder, TranslationPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final TranslationPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -297,10 +297,10 @@ public final class PresenterModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Factory;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationPresenter.class), null, c12541, kind, emptyList));
+            FactoryInstanceFactory factoryInstanceFactory = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationPresenter.class), null, c12601, kind, emptyList));
             module.indexPrimaryType(factoryInstanceFactory);
             new KoinDefinition(module, factoryInstanceFactory);
-            C12652 c12652 = new Function2<Scope, ParametersHolder, ChatPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.2
+            C12712 c12712 = new Function2<Scope, ParametersHolder, ChatPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final ChatPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -311,10 +311,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory2 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(ChatPresenter.class), null, c12652, kind, emptyList2));
+            FactoryInstanceFactory factoryInstanceFactory2 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(ChatPresenter.class), null, c12712, kind, emptyList2));
             module.indexPrimaryType(factoryInstanceFactory2);
             new KoinDefinition(module, factoryInstanceFactory2);
-            C12763 c12763 = new Function2<Scope, ParametersHolder, PhotoViewerPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.3
+            C12823 c12823 = new Function2<Scope, ParametersHolder, PhotoViewerPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final PhotoViewerPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -324,10 +324,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory3 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(PhotoViewerPresenter.class), null, c12763, kind, emptyList3));
+            FactoryInstanceFactory factoryInstanceFactory3 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(PhotoViewerPresenter.class), null, c12823, kind, emptyList3));
             module.indexPrimaryType(factoryInstanceFactory3);
             new KoinDefinition(module, factoryInstanceFactory3);
-            C12874 c12874 = new Function2<Scope, ParametersHolder, ReactionPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.4
+            C12934 c12934 = new Function2<Scope, ParametersHolder, ReactionPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final ReactionPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -338,10 +338,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory4 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(ReactionPresenter.class), null, c12874, kind, emptyList4));
+            FactoryInstanceFactory factoryInstanceFactory4 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(ReactionPresenter.class), null, c12934, kind, emptyList4));
             module.indexPrimaryType(factoryInstanceFactory4);
             new KoinDefinition(module, factoryInstanceFactory4);
-            C12985 c12985 = new Function2<Scope, ParametersHolder, ContactsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.5
+            C13045 c13045 = new Function2<Scope, ParametersHolder, ContactsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.5
                 @Override // kotlin.jvm.functions.Function2
                 public final ContactsPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -351,10 +351,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
             emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory5 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(ContactsPresenter.class), null, c12985, kind, emptyList5));
+            FactoryInstanceFactory factoryInstanceFactory5 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(ContactsPresenter.class), null, c13045, kind, emptyList5));
             module.indexPrimaryType(factoryInstanceFactory5);
             new KoinDefinition(module, factoryInstanceFactory5);
-            C13096 c13096 = new Function2<Scope, ParametersHolder, ProfilePresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.6
+            C13156 c13156 = new Function2<Scope, ParametersHolder, ProfilePresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.6
                 @Override // kotlin.jvm.functions.Function2
                 public final ProfilePresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -368,10 +368,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
             emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory6 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(ProfilePresenter.class), null, c13096, kind, emptyList6));
+            FactoryInstanceFactory factoryInstanceFactory6 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(ProfilePresenter.class), null, c13156, kind, emptyList6));
             module.indexPrimaryType(factoryInstanceFactory6);
             new KoinDefinition(module, factoryInstanceFactory6);
-            C13207 c13207 = new Function2<Scope, ParametersHolder, EmojiViewPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.7
+            C13267 c13267 = new Function2<Scope, ParametersHolder, EmojiViewPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.7
                 @Override // kotlin.jvm.functions.Function2
                 public final EmojiViewPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -381,10 +381,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
             emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory7 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(EmojiViewPresenter.class), null, c13207, kind, emptyList7));
+            FactoryInstanceFactory factoryInstanceFactory7 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(EmojiViewPresenter.class), null, c13267, kind, emptyList7));
             module.indexPrimaryType(factoryInstanceFactory7);
             new KoinDefinition(module, factoryInstanceFactory7);
-            C13318 c13318 = new Function2<Scope, ParametersHolder, TwitterPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.8
+            C13378 c13378 = new Function2<Scope, ParametersHolder, TwitterPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.8
                 @Override // kotlin.jvm.functions.Function2
                 public final TwitterPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -394,10 +394,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
             emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory8 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(TwitterPresenter.class), null, c13318, kind, emptyList8));
+            FactoryInstanceFactory factoryInstanceFactory8 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(TwitterPresenter.class), null, c13378, kind, emptyList8));
             module.indexPrimaryType(factoryInstanceFactory8);
             new KoinDefinition(module, factoryInstanceFactory8);
-            C13359 c13359 = new Function2<Scope, ParametersHolder, TwitterSearchPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.9
+            C13419 c13419 = new Function2<Scope, ParametersHolder, TwitterSearchPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.9
                 @Override // kotlin.jvm.functions.Function2
                 public final TwitterSearchPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -407,10 +407,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
             emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory9 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(TwitterSearchPresenter.class), null, c13359, kind, emptyList9));
+            FactoryInstanceFactory factoryInstanceFactory9 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(TwitterSearchPresenter.class), null, c13419, kind, emptyList9));
             module.indexPrimaryType(factoryInstanceFactory9);
             new KoinDefinition(module, factoryInstanceFactory9);
-            C125510 c125510 = new Function2<Scope, ParametersHolder, WalletAttachAlertPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.10
+            C126110 c126110 = new Function2<Scope, ParametersHolder, WalletAttachAlertPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.10
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletAttachAlertPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -424,10 +424,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
             emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory10 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(WalletAttachAlertPresenter.class), null, c125510, kind, emptyList10));
+            FactoryInstanceFactory factoryInstanceFactory10 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(WalletAttachAlertPresenter.class), null, c126110, kind, emptyList10));
             module.indexPrimaryType(factoryInstanceFactory10);
             new KoinDefinition(module, factoryInstanceFactory10);
-            C125611 c125611 = new Function2<Scope, ParametersHolder, WalletSendRecipientPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.11
+            C126211 c126211 = new Function2<Scope, ParametersHolder, WalletSendRecipientPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.11
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletSendRecipientPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -437,10 +437,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
             emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory11 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(WalletSendRecipientPresenter.class), null, c125611, kind, emptyList11));
+            FactoryInstanceFactory factoryInstanceFactory11 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(WalletSendRecipientPresenter.class), null, c126211, kind, emptyList11));
             module.indexPrimaryType(factoryInstanceFactory11);
             new KoinDefinition(module, factoryInstanceFactory11);
-            C125712 c125712 = new Function2<Scope, ParametersHolder, WalletSendPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.12
+            C126312 c126312 = new Function2<Scope, ParametersHolder, WalletSendPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.12
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletSendPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -450,10 +450,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
             emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory12 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(WalletSendPresenter.class), null, c125712, kind, emptyList12));
+            FactoryInstanceFactory factoryInstanceFactory12 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(WalletSendPresenter.class), null, c126312, kind, emptyList12));
             module.indexPrimaryType(factoryInstanceFactory12);
             new KoinDefinition(module, factoryInstanceFactory12);
-            C125813 c125813 = new Function2<Scope, ParametersHolder, WalletDonationsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.13
+            C126413 c126413 = new Function2<Scope, ParametersHolder, WalletDonationsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.13
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletDonationsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -467,10 +467,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier13 = companion.getRootScopeQualifier();
             emptyList13 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory13 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(WalletDonationsPresenter.class), null, c125813, kind, emptyList13));
+            FactoryInstanceFactory factoryInstanceFactory13 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(WalletDonationsPresenter.class), null, c126413, kind, emptyList13));
             module.indexPrimaryType(factoryInstanceFactory13);
             new KoinDefinition(module, factoryInstanceFactory13);
-            C125914 c125914 = new Function2<Scope, ParametersHolder, WalletRootPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.14
+            C126514 c126514 = new Function2<Scope, ParametersHolder, WalletRootPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.14
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletRootPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -480,10 +480,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier14 = companion.getRootScopeQualifier();
             emptyList14 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory14 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(WalletRootPresenter.class), null, c125914, kind, emptyList14));
+            FactoryInstanceFactory factoryInstanceFactory14 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(WalletRootPresenter.class), null, c126514, kind, emptyList14));
             module.indexPrimaryType(factoryInstanceFactory14);
             new KoinDefinition(module, factoryInstanceFactory14);
-            C126015 c126015 = new Function2<Scope, ParametersHolder, WalletSettingsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.15
+            C126615 c126615 = new Function2<Scope, ParametersHolder, WalletSettingsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.15
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletSettingsPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -493,10 +493,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier15 = companion.getRootScopeQualifier();
             emptyList15 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory15 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(WalletSettingsPresenter.class), null, c126015, kind, emptyList15));
+            FactoryInstanceFactory factoryInstanceFactory15 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(WalletSettingsPresenter.class), null, c126615, kind, emptyList15));
             module.indexPrimaryType(factoryInstanceFactory15);
             new KoinDefinition(module, factoryInstanceFactory15);
-            C126116 c126116 = new Function2<Scope, ParametersHolder, WalletHomePresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.16
+            C126716 c126716 = new Function2<Scope, ParametersHolder, WalletHomePresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.16
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletHomePresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -506,10 +506,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier16 = companion.getRootScopeQualifier();
             emptyList16 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory16 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(WalletHomePresenter.class), null, c126116, kind, emptyList16));
+            FactoryInstanceFactory factoryInstanceFactory16 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(WalletHomePresenter.class), null, c126716, kind, emptyList16));
             module.indexPrimaryType(factoryInstanceFactory16);
             new KoinDefinition(module, factoryInstanceFactory16);
-            C126217 c126217 = new Function2<Scope, ParametersHolder, WalletHomeCryptoPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.17
+            C126817 c126817 = new Function2<Scope, ParametersHolder, WalletHomeCryptoPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.17
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletHomeCryptoPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -519,10 +519,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier17 = companion.getRootScopeQualifier();
             emptyList17 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory17 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(WalletHomeCryptoPresenter.class), null, c126217, kind, emptyList17));
+            FactoryInstanceFactory factoryInstanceFactory17 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(WalletHomeCryptoPresenter.class), null, c126817, kind, emptyList17));
             module.indexPrimaryType(factoryInstanceFactory17);
             new KoinDefinition(module, factoryInstanceFactory17);
-            C126318 c126318 = new Function2<Scope, ParametersHolder, WalletHomeCryptoTokensSettingsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.18
+            C126918 c126918 = new Function2<Scope, ParametersHolder, WalletHomeCryptoTokensSettingsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.18
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletHomeCryptoTokensSettingsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -535,10 +535,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier18 = companion.getRootScopeQualifier();
             emptyList18 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory18 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(WalletHomeCryptoTokensSettingsPresenter.class), null, c126318, kind, emptyList18));
+            FactoryInstanceFactory factoryInstanceFactory18 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(WalletHomeCryptoTokensSettingsPresenter.class), null, c126918, kind, emptyList18));
             module.indexPrimaryType(factoryInstanceFactory18);
             new KoinDefinition(module, factoryInstanceFactory18);
-            C126419 c126419 = new Function2<Scope, ParametersHolder, WalletHomeServicesPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.19
+            C127019 c127019 = new Function2<Scope, ParametersHolder, WalletHomeServicesPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.19
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletHomeServicesPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -548,10 +548,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier19 = companion.getRootScopeQualifier();
             emptyList19 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory19 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(WalletHomeServicesPresenter.class), null, c126419, kind, emptyList19));
+            FactoryInstanceFactory factoryInstanceFactory19 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(WalletHomeServicesPresenter.class), null, c127019, kind, emptyList19));
             module.indexPrimaryType(factoryInstanceFactory19);
             new KoinDefinition(module, factoryInstanceFactory19);
-            C126620 c126620 = new Function2<Scope, ParametersHolder, WalletTokenDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.20
+            C127220 c127220 = new Function2<Scope, ParametersHolder, WalletTokenDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.20
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletTokenDetailsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -561,10 +561,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier20 = companion.getRootScopeQualifier();
             emptyList20 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory20 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(WalletTokenDetailsPresenter.class), null, c126620, kind, emptyList20));
+            FactoryInstanceFactory factoryInstanceFactory20 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(WalletTokenDetailsPresenter.class), null, c127220, kind, emptyList20));
             module.indexPrimaryType(factoryInstanceFactory20);
             new KoinDefinition(module, factoryInstanceFactory20);
-            C126721 c126721 = new Function2<Scope, ParametersHolder, TokenManagementPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.21
+            C127321 c127321 = new Function2<Scope, ParametersHolder, TokenManagementPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.21
                 @Override // kotlin.jvm.functions.Function2
                 public final TokenManagementPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -574,10 +574,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier21 = companion.getRootScopeQualifier();
             emptyList21 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory21 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(TokenManagementPresenter.class), null, c126721, kind, emptyList21));
+            FactoryInstanceFactory factoryInstanceFactory21 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(TokenManagementPresenter.class), null, c127321, kind, emptyList21));
             module.indexPrimaryType(factoryInstanceFactory21);
             new KoinDefinition(module, factoryInstanceFactory21);
-            C126822 c126822 = new Function2<Scope, ParametersHolder, TokenFamilyPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.22
+            C127422 c127422 = new Function2<Scope, ParametersHolder, TokenFamilyPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.22
                 @Override // kotlin.jvm.functions.Function2
                 public final TokenFamilyPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -587,10 +587,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier22 = companion.getRootScopeQualifier();
             emptyList22 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory22 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(TokenFamilyPresenter.class), null, c126822, kind, emptyList22));
+            FactoryInstanceFactory factoryInstanceFactory22 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(TokenFamilyPresenter.class), null, c127422, kind, emptyList22));
             module.indexPrimaryType(factoryInstanceFactory22);
             new KoinDefinition(module, factoryInstanceFactory22);
-            C126923 c126923 = new Function2<Scope, ParametersHolder, WalletNotificationsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.23
+            C127523 c127523 = new Function2<Scope, ParametersHolder, WalletNotificationsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.23
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletNotificationsPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -600,10 +600,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier23 = companion.getRootScopeQualifier();
             emptyList23 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory23 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(WalletNotificationsPresenter.class), null, c126923, kind, emptyList23));
+            FactoryInstanceFactory factoryInstanceFactory23 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(WalletNotificationsPresenter.class), null, c127523, kind, emptyList23));
             module.indexPrimaryType(factoryInstanceFactory23);
             new KoinDefinition(module, factoryInstanceFactory23);
-            C127024 c127024 = new Function2<Scope, ParametersHolder, WalletTransactionsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.24
+            C127624 c127624 = new Function2<Scope, ParametersHolder, WalletTransactionsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.24
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletTransactionsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -613,10 +613,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier24 = companion.getRootScopeQualifier();
             emptyList24 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory24 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(WalletTransactionsPresenter.class), null, c127024, kind, emptyList24));
+            FactoryInstanceFactory factoryInstanceFactory24 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(WalletTransactionsPresenter.class), null, c127624, kind, emptyList24));
             module.indexPrimaryType(factoryInstanceFactory24);
             new KoinDefinition(module, factoryInstanceFactory24);
-            C127125 c127125 = new Function2<Scope, ParametersHolder, WalletNotificationDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.25
+            C127725 c127725 = new Function2<Scope, ParametersHolder, WalletNotificationDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.25
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletNotificationDetailsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -626,10 +626,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier25 = companion.getRootScopeQualifier();
             emptyList25 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory25 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(WalletNotificationDetailsPresenter.class), null, c127125, kind, emptyList25));
+            FactoryInstanceFactory factoryInstanceFactory25 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(WalletNotificationDetailsPresenter.class), null, c127725, kind, emptyList25));
             module.indexPrimaryType(factoryInstanceFactory25);
             new KoinDefinition(module, factoryInstanceFactory25);
-            C127226 c127226 = new Function2<Scope, ParametersHolder, WalletTransactionDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.26
+            C127826 c127826 = new Function2<Scope, ParametersHolder, WalletTransactionDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.26
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletTransactionDetailsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -641,23 +641,23 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier26 = companion.getRootScopeQualifier();
             emptyList26 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory26 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(WalletTransactionDetailsPresenter.class), null, c127226, kind, emptyList26));
+            FactoryInstanceFactory factoryInstanceFactory26 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(WalletTransactionDetailsPresenter.class), null, c127826, kind, emptyList26));
             module.indexPrimaryType(factoryInstanceFactory26);
             new KoinDefinition(module, factoryInstanceFactory26);
-            C127327 c127327 = new Function2<Scope, ParametersHolder, CreateWalletIntroPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.27
+            C127927 c127927 = new Function2<Scope, ParametersHolder, CreateWalletIntroPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.27
                 @Override // kotlin.jvm.functions.Function2
                 public final CreateWalletIntroPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
                     Intrinsics.checkNotNullParameter(parametersHolder, "<name for destructuring parameter 0>");
-                    return new CreateWalletIntroPresenter((CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (String) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(String.class)), (WalletCreationType.Initial) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(WalletCreationType.Initial.class)), (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (CryptoWalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramControllersGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, null));
+                    return new CreateWalletIntroPresenter((BlockchainType) parametersHolder.elementAt(0, Reflection.getOrCreateKotlinClass(BlockchainType.class)), (String) parametersHolder.elementAt(1, Reflection.getOrCreateKotlinClass(String.class)), (WalletCreationType.Initial) parametersHolder.elementAt(2, Reflection.getOrCreateKotlinClass(WalletCreationType.Initial.class)), (CryptoAccessManager) factory.get(Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, null), (CryptoPreferenceHelper) factory.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null), (CryptoWalletInteractor) factory.get(Reflection.getOrCreateKotlinClass(CryptoWalletInteractor.class), null, null), (ResourceManager) factory.get(Reflection.getOrCreateKotlinClass(ResourceManager.class), null, null), (RxEventBus) factory.get(Reflection.getOrCreateKotlinClass(RxEventBus.class), null, null), (SchedulersProvider) factory.get(Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, null), (TelegramControllersGateway) factory.get(Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, null));
                 }
             };
             StringQualifier rootScopeQualifier27 = companion.getRootScopeQualifier();
             emptyList27 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory27 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier27, Reflection.getOrCreateKotlinClass(CreateWalletIntroPresenter.class), null, c127327, kind, emptyList27));
+            FactoryInstanceFactory factoryInstanceFactory27 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier27, Reflection.getOrCreateKotlinClass(CreateWalletIntroPresenter.class), null, c127927, kind, emptyList27));
             module.indexPrimaryType(factoryInstanceFactory27);
             new KoinDefinition(module, factoryInstanceFactory27);
-            C127428 c127428 = new Function2<Scope, ParametersHolder, CreateWalletTutorialPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.28
+            C128028 c128028 = new Function2<Scope, ParametersHolder, CreateWalletTutorialPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.28
                 @Override // kotlin.jvm.functions.Function2
                 public final CreateWalletTutorialPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -667,10 +667,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier28 = companion.getRootScopeQualifier();
             emptyList28 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory28 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier28, Reflection.getOrCreateKotlinClass(CreateWalletTutorialPresenter.class), null, c127428, kind, emptyList28));
+            FactoryInstanceFactory factoryInstanceFactory28 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier28, Reflection.getOrCreateKotlinClass(CreateWalletTutorialPresenter.class), null, c128028, kind, emptyList28));
             module.indexPrimaryType(factoryInstanceFactory28);
             new KoinDefinition(module, factoryInstanceFactory28);
-            C127529 c127529 = new Function2<Scope, ParametersHolder, BuyCryptoProductPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.29
+            C128129 c128129 = new Function2<Scope, ParametersHolder, BuyCryptoProductPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.29
                 @Override // kotlin.jvm.functions.Function2
                 public final BuyCryptoProductPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -684,10 +684,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier29 = companion.getRootScopeQualifier();
             emptyList29 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory29 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier29, Reflection.getOrCreateKotlinClass(BuyCryptoProductPresenter.class), null, c127529, kind, emptyList29));
+            FactoryInstanceFactory factoryInstanceFactory29 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier29, Reflection.getOrCreateKotlinClass(BuyCryptoProductPresenter.class), null, c128129, kind, emptyList29));
             module.indexPrimaryType(factoryInstanceFactory29);
             new KoinDefinition(module, factoryInstanceFactory29);
-            C127730 c127730 = new Function2<Scope, ParametersHolder, CryptoBuyCustomPricePresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.30
+            C128330 c128330 = new Function2<Scope, ParametersHolder, CryptoBuyCustomPricePresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.30
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoBuyCustomPricePresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -698,10 +698,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier30 = companion.getRootScopeQualifier();
             emptyList30 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory30 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier30, Reflection.getOrCreateKotlinClass(CryptoBuyCustomPricePresenter.class), null, c127730, kind, emptyList30));
+            FactoryInstanceFactory factoryInstanceFactory30 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier30, Reflection.getOrCreateKotlinClass(CryptoBuyCustomPricePresenter.class), null, c128330, kind, emptyList30));
             module.indexPrimaryType(factoryInstanceFactory30);
             new KoinDefinition(module, factoryInstanceFactory30);
-            C127831 c127831 = new Function2<Scope, ParametersHolder, CreateWalletPinPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.31
+            C128431 c128431 = new Function2<Scope, ParametersHolder, CreateWalletPinPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.31
                 @Override // kotlin.jvm.functions.Function2
                 public final CreateWalletPinPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -711,10 +711,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier31 = companion.getRootScopeQualifier();
             emptyList31 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory31 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier31, Reflection.getOrCreateKotlinClass(CreateWalletPinPresenter.class), null, c127831, kind, emptyList31));
+            FactoryInstanceFactory factoryInstanceFactory31 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier31, Reflection.getOrCreateKotlinClass(CreateWalletPinPresenter.class), null, c128431, kind, emptyList31));
             module.indexPrimaryType(factoryInstanceFactory31);
             new KoinDefinition(module, factoryInstanceFactory31);
-            C127932 c127932 = new Function2<Scope, ParametersHolder, WalletPrivacySettingPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.32
+            C128532 c128532 = new Function2<Scope, ParametersHolder, WalletPrivacySettingPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.32
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletPrivacySettingPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -724,10 +724,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier32 = companion.getRootScopeQualifier();
             emptyList32 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory32 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier32, Reflection.getOrCreateKotlinClass(WalletPrivacySettingPresenter.class), null, c127932, kind, emptyList32));
+            FactoryInstanceFactory factoryInstanceFactory32 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier32, Reflection.getOrCreateKotlinClass(WalletPrivacySettingPresenter.class), null, c128532, kind, emptyList32));
             module.indexPrimaryType(factoryInstanceFactory32);
             new KoinDefinition(module, factoryInstanceFactory32);
-            C128033 c128033 = new Function2<Scope, ParametersHolder, EnterWalletPinPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.33
+            C128633 c128633 = new Function2<Scope, ParametersHolder, EnterWalletPinPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.33
                 @Override // kotlin.jvm.functions.Function2
                 public final EnterWalletPinPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -737,10 +737,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier33 = companion.getRootScopeQualifier();
             emptyList33 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory33 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier33, Reflection.getOrCreateKotlinClass(EnterWalletPinPresenter.class), null, c128033, kind, emptyList33));
+            FactoryInstanceFactory factoryInstanceFactory33 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier33, Reflection.getOrCreateKotlinClass(EnterWalletPinPresenter.class), null, c128633, kind, emptyList33));
             module.indexPrimaryType(factoryInstanceFactory33);
             new KoinDefinition(module, factoryInstanceFactory33);
-            C128134 c128134 = new Function2<Scope, ParametersHolder, EnterWalletPasswordPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.34
+            C128734 c128734 = new Function2<Scope, ParametersHolder, EnterWalletPasswordPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.34
                 @Override // kotlin.jvm.functions.Function2
                 public final EnterWalletPasswordPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -750,10 +750,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier34 = companion.getRootScopeQualifier();
             emptyList34 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory34 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier34, Reflection.getOrCreateKotlinClass(EnterWalletPasswordPresenter.class), null, c128134, kind, emptyList34));
+            FactoryInstanceFactory factoryInstanceFactory34 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier34, Reflection.getOrCreateKotlinClass(EnterWalletPasswordPresenter.class), null, c128734, kind, emptyList34));
             module.indexPrimaryType(factoryInstanceFactory34);
             new KoinDefinition(module, factoryInstanceFactory34);
-            C128235 c128235 = new Function2<Scope, ParametersHolder, WalletBinancePayHistoryPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.35
+            C128835 c128835 = new Function2<Scope, ParametersHolder, WalletBinancePayHistoryPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.35
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletBinancePayHistoryPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -766,10 +766,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier35 = companion.getRootScopeQualifier();
             emptyList35 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory35 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier35, Reflection.getOrCreateKotlinClass(WalletBinancePayHistoryPresenter.class), null, c128235, kind, emptyList35));
+            FactoryInstanceFactory factoryInstanceFactory35 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier35, Reflection.getOrCreateKotlinClass(WalletBinancePayHistoryPresenter.class), null, c128835, kind, emptyList35));
             module.indexPrimaryType(factoryInstanceFactory35);
             new KoinDefinition(module, factoryInstanceFactory35);
-            C128336 c128336 = new Function2<Scope, ParametersHolder, WalletHomeBinancePayPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.36
+            C128936 c128936 = new Function2<Scope, ParametersHolder, WalletHomeBinancePayPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.36
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletHomeBinancePayPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -784,10 +784,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier36 = companion.getRootScopeQualifier();
             emptyList36 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory36 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier36, Reflection.getOrCreateKotlinClass(WalletHomeBinancePayPresenter.class), null, c128336, kind, emptyList36));
+            FactoryInstanceFactory factoryInstanceFactory36 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier36, Reflection.getOrCreateKotlinClass(WalletHomeBinancePayPresenter.class), null, c128936, kind, emptyList36));
             module.indexPrimaryType(factoryInstanceFactory36);
             new KoinDefinition(module, factoryInstanceFactory36);
-            C128437 c128437 = new Function2<Scope, ParametersHolder, WalletReceiveBinancePayPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.37
+            C129037 c129037 = new Function2<Scope, ParametersHolder, WalletReceiveBinancePayPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.37
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletReceiveBinancePayPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -803,10 +803,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier37 = companion.getRootScopeQualifier();
             emptyList37 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory37 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier37, Reflection.getOrCreateKotlinClass(WalletReceiveBinancePayPresenter.class), null, c128437, kind, emptyList37));
+            FactoryInstanceFactory factoryInstanceFactory37 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier37, Reflection.getOrCreateKotlinClass(WalletReceiveBinancePayPresenter.class), null, c129037, kind, emptyList37));
             module.indexPrimaryType(factoryInstanceFactory37);
             new KoinDefinition(module, factoryInstanceFactory37);
-            C128538 c128538 = new Function2<Scope, ParametersHolder, CreateWalletPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.38
+            C129138 c129138 = new Function2<Scope, ParametersHolder, CreateWalletPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.38
                 @Override // kotlin.jvm.functions.Function2
                 public final CreateWalletPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -816,10 +816,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier38 = companion.getRootScopeQualifier();
             emptyList38 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory38 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier38, Reflection.getOrCreateKotlinClass(CreateWalletPresenter.class), null, c128538, kind, emptyList38));
+            FactoryInstanceFactory factoryInstanceFactory38 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier38, Reflection.getOrCreateKotlinClass(CreateWalletPresenter.class), null, c129138, kind, emptyList38));
             module.indexPrimaryType(factoryInstanceFactory38);
             new KoinDefinition(module, factoryInstanceFactory38);
-            C128639 c128639 = new Function2<Scope, ParametersHolder, SecretWordsCountPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.39
+            C129239 c129239 = new Function2<Scope, ParametersHolder, SecretWordsCountPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.39
                 @Override // kotlin.jvm.functions.Function2
                 public final SecretWordsCountPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -829,10 +829,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier39 = companion.getRootScopeQualifier();
             emptyList39 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory39 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier39, Reflection.getOrCreateKotlinClass(SecretWordsCountPresenter.class), null, c128639, kind, emptyList39));
+            FactoryInstanceFactory factoryInstanceFactory39 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier39, Reflection.getOrCreateKotlinClass(SecretWordsCountPresenter.class), null, c129239, kind, emptyList39));
             module.indexPrimaryType(factoryInstanceFactory39);
             new KoinDefinition(module, factoryInstanceFactory39);
-            C128840 c128840 = new Function2<Scope, ParametersHolder, WalletAccountSettingsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.40
+            C129440 c129440 = new Function2<Scope, ParametersHolder, WalletAccountSettingsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.40
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletAccountSettingsPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -842,10 +842,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier40 = companion.getRootScopeQualifier();
             emptyList40 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory40 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier40, Reflection.getOrCreateKotlinClass(WalletAccountSettingsPresenter.class), null, c128840, kind, emptyList40));
+            FactoryInstanceFactory factoryInstanceFactory40 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier40, Reflection.getOrCreateKotlinClass(WalletAccountSettingsPresenter.class), null, c129440, kind, emptyList40));
             module.indexPrimaryType(factoryInstanceFactory40);
             new KoinDefinition(module, factoryInstanceFactory40);
-            C128941 c128941 = new Function2<Scope, ParametersHolder, BlockchainsManagementPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.41
+            C129541 c129541 = new Function2<Scope, ParametersHolder, BlockchainsManagementPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.41
                 @Override // kotlin.jvm.functions.Function2
                 public final BlockchainsManagementPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -855,10 +855,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier41 = companion.getRootScopeQualifier();
             emptyList41 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory41 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier41, Reflection.getOrCreateKotlinClass(BlockchainsManagementPresenter.class), null, c128941, kind, emptyList41));
+            FactoryInstanceFactory factoryInstanceFactory41 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier41, Reflection.getOrCreateKotlinClass(BlockchainsManagementPresenter.class), null, c129541, kind, emptyList41));
             module.indexPrimaryType(factoryInstanceFactory41);
             new KoinDefinition(module, factoryInstanceFactory41);
-            C129042 c129042 = new Function2<Scope, ParametersHolder, BlockchainWalletDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.42
+            C129642 c129642 = new Function2<Scope, ParametersHolder, BlockchainWalletDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.42
                 @Override // kotlin.jvm.functions.Function2
                 public final BlockchainWalletDetailsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -868,10 +868,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier42 = companion.getRootScopeQualifier();
             emptyList42 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory42 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier42, Reflection.getOrCreateKotlinClass(BlockchainWalletDetailsPresenter.class), null, c129042, kind, emptyList42));
+            FactoryInstanceFactory factoryInstanceFactory42 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier42, Reflection.getOrCreateKotlinClass(BlockchainWalletDetailsPresenter.class), null, c129642, kind, emptyList42));
             module.indexPrimaryType(factoryInstanceFactory42);
             new KoinDefinition(module, factoryInstanceFactory42);
-            C129143 c129143 = new Function2<Scope, ParametersHolder, CustomTokensPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.43
+            C129743 c129743 = new Function2<Scope, ParametersHolder, CustomTokensPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.43
                 @Override // kotlin.jvm.functions.Function2
                 public final CustomTokensPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -881,10 +881,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier43 = companion.getRootScopeQualifier();
             emptyList43 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory43 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier43, Reflection.getOrCreateKotlinClass(CustomTokensPresenter.class), null, c129143, kind, emptyList43));
+            FactoryInstanceFactory factoryInstanceFactory43 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier43, Reflection.getOrCreateKotlinClass(CustomTokensPresenter.class), null, c129743, kind, emptyList43));
             module.indexPrimaryType(factoryInstanceFactory43);
             new KoinDefinition(module, factoryInstanceFactory43);
-            C129244 c129244 = new Function2<Scope, ParametersHolder, BackupWordSwitcherPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.44
+            C129844 c129844 = new Function2<Scope, ParametersHolder, BackupWordSwitcherPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.44
                 @Override // kotlin.jvm.functions.Function2
                 public final BackupWordSwitcherPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -894,10 +894,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier44 = companion.getRootScopeQualifier();
             emptyList44 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory44 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier44, Reflection.getOrCreateKotlinClass(BackupWordSwitcherPresenter.class), null, c129244, kind, emptyList44));
+            FactoryInstanceFactory factoryInstanceFactory44 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier44, Reflection.getOrCreateKotlinClass(BackupWordSwitcherPresenter.class), null, c129844, kind, emptyList44));
             module.indexPrimaryType(factoryInstanceFactory44);
             new KoinDefinition(module, factoryInstanceFactory44);
-            C129345 c129345 = new Function2<Scope, ParametersHolder, AddressMismatchPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.45
+            C129945 c129945 = new Function2<Scope, ParametersHolder, AddressMismatchPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.45
                 @Override // kotlin.jvm.functions.Function2
                 public final AddressMismatchPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -909,10 +909,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier45 = companion.getRootScopeQualifier();
             emptyList45 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory45 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier45, Reflection.getOrCreateKotlinClass(AddressMismatchPresenter.class), null, c129345, kind, emptyList45));
+            FactoryInstanceFactory factoryInstanceFactory45 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier45, Reflection.getOrCreateKotlinClass(AddressMismatchPresenter.class), null, c129945, kind, emptyList45));
             module.indexPrimaryType(factoryInstanceFactory45);
             new KoinDefinition(module, factoryInstanceFactory45);
-            C129446 c129446 = new Function2<Scope, ParametersHolder, WalletSwapProtocolsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.46
+            C130046 c130046 = new Function2<Scope, ParametersHolder, WalletSwapProtocolsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.46
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletSwapProtocolsPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -923,10 +923,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier46 = companion.getRootScopeQualifier();
             emptyList46 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory46 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier46, Reflection.getOrCreateKotlinClass(WalletSwapProtocolsPresenter.class), null, c129446, kind, emptyList46));
+            FactoryInstanceFactory factoryInstanceFactory46 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier46, Reflection.getOrCreateKotlinClass(WalletSwapProtocolsPresenter.class), null, c130046, kind, emptyList46));
             module.indexPrimaryType(factoryInstanceFactory46);
             new KoinDefinition(module, factoryInstanceFactory46);
-            C129547 c129547 = new Function2<Scope, ParametersHolder, WalletSwapProcessPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.47
+            C130147 c130147 = new Function2<Scope, ParametersHolder, WalletSwapProcessPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.47
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletSwapProcessPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -942,10 +942,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier47 = companion.getRootScopeQualifier();
             emptyList47 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory47 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier47, Reflection.getOrCreateKotlinClass(WalletSwapProcessPresenter.class), null, c129547, kind, emptyList47));
+            FactoryInstanceFactory factoryInstanceFactory47 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier47, Reflection.getOrCreateKotlinClass(WalletSwapProcessPresenter.class), null, c130147, kind, emptyList47));
             module.indexPrimaryType(factoryInstanceFactory47);
             new KoinDefinition(module, factoryInstanceFactory47);
-            C129648 c129648 = new Function2<Scope, ParametersHolder, WalletSelectTokenPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.48
+            C130248 c130248 = new Function2<Scope, ParametersHolder, WalletSelectTokenPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.48
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletSelectTokenPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -955,10 +955,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier48 = companion.getRootScopeQualifier();
             emptyList48 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory48 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier48, Reflection.getOrCreateKotlinClass(WalletSelectTokenPresenter.class), null, c129648, kind, emptyList48));
+            FactoryInstanceFactory factoryInstanceFactory48 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier48, Reflection.getOrCreateKotlinClass(WalletSelectTokenPresenter.class), null, c130248, kind, emptyList48));
             module.indexPrimaryType(factoryInstanceFactory48);
             new KoinDefinition(module, factoryInstanceFactory48);
-            C129749 c129749 = new Function2<Scope, ParametersHolder, WalletSwapFeePresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.49
+            C130349 c130349 = new Function2<Scope, ParametersHolder, WalletSwapFeePresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.49
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletSwapFeePresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -969,10 +969,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier49 = companion.getRootScopeQualifier();
             emptyList49 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory49 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier49, Reflection.getOrCreateKotlinClass(WalletSwapFeePresenter.class), null, c129749, kind, emptyList49));
+            FactoryInstanceFactory factoryInstanceFactory49 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier49, Reflection.getOrCreateKotlinClass(WalletSwapFeePresenter.class), null, c130349, kind, emptyList49));
             module.indexPrimaryType(factoryInstanceFactory49);
             new KoinDefinition(module, factoryInstanceFactory49);
-            C129950 c129950 = new Function2<Scope, ParametersHolder, SimplexWebViewProcessingPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.50
+            C130550 c130550 = new Function2<Scope, ParametersHolder, SimplexWebViewProcessingPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.50
                 @Override // kotlin.jvm.functions.Function2
                 public final SimplexWebViewProcessingPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -982,10 +982,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier50 = companion.getRootScopeQualifier();
             emptyList50 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory50 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier50, Reflection.getOrCreateKotlinClass(SimplexWebViewProcessingPresenter.class), null, c129950, kind, emptyList50));
+            FactoryInstanceFactory factoryInstanceFactory50 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier50, Reflection.getOrCreateKotlinClass(SimplexWebViewProcessingPresenter.class), null, c130550, kind, emptyList50));
             module.indexPrimaryType(factoryInstanceFactory50);
             new KoinDefinition(module, factoryInstanceFactory50);
-            C130051 c130051 = new Function2<Scope, ParametersHolder, WalletAppearanceSettingsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.51
+            C130651 c130651 = new Function2<Scope, ParametersHolder, WalletAppearanceSettingsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.51
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletAppearanceSettingsPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -995,10 +995,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier51 = companion.getRootScopeQualifier();
             emptyList51 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory51 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier51, Reflection.getOrCreateKotlinClass(WalletAppearanceSettingsPresenter.class), null, c130051, kind, emptyList51));
+            FactoryInstanceFactory factoryInstanceFactory51 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier51, Reflection.getOrCreateKotlinClass(WalletAppearanceSettingsPresenter.class), null, c130651, kind, emptyList51));
             module.indexPrimaryType(factoryInstanceFactory51);
             new KoinDefinition(module, factoryInstanceFactory51);
-            C130152 c130152 = new Function2<Scope, ParametersHolder, WalletNetworksSettingsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.52
+            C130752 c130752 = new Function2<Scope, ParametersHolder, WalletNetworksSettingsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.52
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletNetworksSettingsPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1008,10 +1008,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier52 = companion.getRootScopeQualifier();
             emptyList52 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory52 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier52, Reflection.getOrCreateKotlinClass(WalletNetworksSettingsPresenter.class), null, c130152, kind, emptyList52));
+            FactoryInstanceFactory factoryInstanceFactory52 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier52, Reflection.getOrCreateKotlinClass(WalletNetworksSettingsPresenter.class), null, c130752, kind, emptyList52));
             module.indexPrimaryType(factoryInstanceFactory52);
             new KoinDefinition(module, factoryInstanceFactory52);
-            C130253 c130253 = new Function2<Scope, ParametersHolder, WalletAirdropPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.53
+            C130853 c130853 = new Function2<Scope, ParametersHolder, WalletAirdropPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.53
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletAirdropPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1021,10 +1021,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier53 = companion.getRootScopeQualifier();
             emptyList53 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory53 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier53, Reflection.getOrCreateKotlinClass(WalletAirdropPresenter.class), null, c130253, kind, emptyList53));
+            FactoryInstanceFactory factoryInstanceFactory53 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier53, Reflection.getOrCreateKotlinClass(WalletAirdropPresenter.class), null, c130853, kind, emptyList53));
             module.indexPrimaryType(factoryInstanceFactory53);
             new KoinDefinition(module, factoryInstanceFactory53);
-            C130354 c130354 = new Function2<Scope, ParametersHolder, WalletAirdropDialogPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.54
+            C130954 c130954 = new Function2<Scope, ParametersHolder, WalletAirdropDialogPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.54
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletAirdropDialogPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1034,10 +1034,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier54 = companion.getRootScopeQualifier();
             emptyList54 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory54 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier54, Reflection.getOrCreateKotlinClass(WalletAirdropDialogPresenter.class), null, c130354, kind, emptyList54));
+            FactoryInstanceFactory factoryInstanceFactory54 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier54, Reflection.getOrCreateKotlinClass(WalletAirdropDialogPresenter.class), null, c130954, kind, emptyList54));
             module.indexPrimaryType(factoryInstanceFactory54);
             new KoinDefinition(module, factoryInstanceFactory54);
-            C130455 c130455 = new Function2<Scope, ParametersHolder, DebugPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.55
+            C131055 c131055 = new Function2<Scope, ParametersHolder, DebugPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.55
                 @Override // kotlin.jvm.functions.Function2
                 public final DebugPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1047,10 +1047,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier55 = companion.getRootScopeQualifier();
             emptyList55 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory55 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier55, Reflection.getOrCreateKotlinClass(DebugPresenter.class), null, c130455, kind, emptyList55));
+            FactoryInstanceFactory factoryInstanceFactory55 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier55, Reflection.getOrCreateKotlinClass(DebugPresenter.class), null, c131055, kind, emptyList55));
             module.indexPrimaryType(factoryInstanceFactory55);
             new KoinDefinition(module, factoryInstanceFactory55);
-            C130556 c130556 = new Function2<Scope, ParametersHolder, WalletConnectPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.56
+            C131156 c131156 = new Function2<Scope, ParametersHolder, WalletConnectPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.56
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletConnectPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1060,10 +1060,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier56 = companion.getRootScopeQualifier();
             emptyList56 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory56 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier56, Reflection.getOrCreateKotlinClass(WalletConnectPresenter.class), null, c130556, kind, emptyList56));
+            FactoryInstanceFactory factoryInstanceFactory56 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier56, Reflection.getOrCreateKotlinClass(WalletConnectPresenter.class), null, c131156, kind, emptyList56));
             module.indexPrimaryType(factoryInstanceFactory56);
             new KoinDefinition(module, factoryInstanceFactory56);
-            C130657 c130657 = new Function2<Scope, ParametersHolder, WalletConnectSessionDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.57
+            C131257 c131257 = new Function2<Scope, ParametersHolder, WalletConnectSessionDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.57
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletConnectSessionDetailsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1073,10 +1073,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier57 = companion.getRootScopeQualifier();
             emptyList57 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory57 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier57, Reflection.getOrCreateKotlinClass(WalletConnectSessionDetailsPresenter.class), null, c130657, kind, emptyList57));
+            FactoryInstanceFactory factoryInstanceFactory57 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier57, Reflection.getOrCreateKotlinClass(WalletConnectSessionDetailsPresenter.class), null, c131257, kind, emptyList57));
             module.indexPrimaryType(factoryInstanceFactory57);
             new KoinDefinition(module, factoryInstanceFactory57);
-            C130758 c130758 = new Function2<Scope, ParametersHolder, WalletConnectNewSessionPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.58
+            C131358 c131358 = new Function2<Scope, ParametersHolder, WalletConnectNewSessionPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.58
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletConnectNewSessionPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1086,10 +1086,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier58 = companion.getRootScopeQualifier();
             emptyList58 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory58 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier58, Reflection.getOrCreateKotlinClass(WalletConnectNewSessionPresenter.class), null, c130758, kind, emptyList58));
+            FactoryInstanceFactory factoryInstanceFactory58 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier58, Reflection.getOrCreateKotlinClass(WalletConnectNewSessionPresenter.class), null, c131358, kind, emptyList58));
             module.indexPrimaryType(factoryInstanceFactory58);
             new KoinDefinition(module, factoryInstanceFactory58);
-            C130859 c130859 = new Function2<Scope, ParametersHolder, WalletConnectTransactionPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.59
+            C131459 c131459 = new Function2<Scope, ParametersHolder, WalletConnectTransactionPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.59
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletConnectTransactionPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1099,10 +1099,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier59 = companion.getRootScopeQualifier();
             emptyList59 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory59 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier59, Reflection.getOrCreateKotlinClass(WalletConnectTransactionPresenter.class), null, c130859, kind, emptyList59));
+            FactoryInstanceFactory factoryInstanceFactory59 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier59, Reflection.getOrCreateKotlinClass(WalletConnectTransactionPresenter.class), null, c131459, kind, emptyList59));
             module.indexPrimaryType(factoryInstanceFactory59);
             new KoinDefinition(module, factoryInstanceFactory59);
-            C131060 c131060 = new Function2<Scope, ParametersHolder, WalletConnectMessageSignPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.60
+            C131660 c131660 = new Function2<Scope, ParametersHolder, WalletConnectMessageSignPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.60
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletConnectMessageSignPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1116,10 +1116,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier60 = companion.getRootScopeQualifier();
             emptyList60 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory60 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier60, Reflection.getOrCreateKotlinClass(WalletConnectMessageSignPresenter.class), null, c131060, kind, emptyList60));
+            FactoryInstanceFactory factoryInstanceFactory60 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier60, Reflection.getOrCreateKotlinClass(WalletConnectMessageSignPresenter.class), null, c131660, kind, emptyList60));
             module.indexPrimaryType(factoryInstanceFactory60);
             new KoinDefinition(module, factoryInstanceFactory60);
-            C131161 c131161 = new Function2<Scope, ParametersHolder, WalletConnectSwitchNetworkPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.61
+            C131761 c131761 = new Function2<Scope, ParametersHolder, WalletConnectSwitchNetworkPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.61
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletConnectSwitchNetworkPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1129,10 +1129,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier61 = companion.getRootScopeQualifier();
             emptyList61 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory61 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier61, Reflection.getOrCreateKotlinClass(WalletConnectSwitchNetworkPresenter.class), null, c131161, kind, emptyList61));
+            FactoryInstanceFactory factoryInstanceFactory61 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier61, Reflection.getOrCreateKotlinClass(WalletConnectSwitchNetworkPresenter.class), null, c131761, kind, emptyList61));
             module.indexPrimaryType(factoryInstanceFactory61);
             new KoinDefinition(module, factoryInstanceFactory61);
-            C131262 c131262 = new Function2<Scope, ParametersHolder, CatalogRootPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.62
+            C131862 c131862 = new Function2<Scope, ParametersHolder, CatalogRootPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.62
                 @Override // kotlin.jvm.functions.Function2
                 public final CatalogRootPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1142,10 +1142,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier62 = companion.getRootScopeQualifier();
             emptyList62 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory62 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier62, Reflection.getOrCreateKotlinClass(CatalogRootPresenter.class), null, c131262, kind, emptyList62));
+            FactoryInstanceFactory factoryInstanceFactory62 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier62, Reflection.getOrCreateKotlinClass(CatalogRootPresenter.class), null, c131862, kind, emptyList62));
             module.indexPrimaryType(factoryInstanceFactory62);
             new KoinDefinition(module, factoryInstanceFactory62);
-            C131363 c131363 = new Function2<Scope, ParametersHolder, CatalogPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.63
+            C131963 c131963 = new Function2<Scope, ParametersHolder, CatalogPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.63
                 @Override // kotlin.jvm.functions.Function2
                 public final CatalogPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1155,10 +1155,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier63 = companion.getRootScopeQualifier();
             emptyList63 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory63 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier63, Reflection.getOrCreateKotlinClass(CatalogPresenter.class), null, c131363, kind, emptyList63));
+            FactoryInstanceFactory factoryInstanceFactory63 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier63, Reflection.getOrCreateKotlinClass(CatalogPresenter.class), null, c131963, kind, emptyList63));
             module.indexPrimaryType(factoryInstanceFactory63);
             new KoinDefinition(module, factoryInstanceFactory63);
-            C131464 c131464 = new Function2<Scope, ParametersHolder, ChannelDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.64
+            C132064 c132064 = new Function2<Scope, ParametersHolder, ChannelDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.64
                 @Override // kotlin.jvm.functions.Function2
                 public final ChannelDetailsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1168,10 +1168,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier64 = companion.getRootScopeQualifier();
             emptyList64 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory64 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier64, Reflection.getOrCreateKotlinClass(ChannelDetailsPresenter.class), null, c131464, kind, emptyList64));
+            FactoryInstanceFactory factoryInstanceFactory64 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier64, Reflection.getOrCreateKotlinClass(ChannelDetailsPresenter.class), null, c132064, kind, emptyList64));
             module.indexPrimaryType(factoryInstanceFactory64);
             new KoinDefinition(module, factoryInstanceFactory64);
-            C131565 c131565 = new Function2<Scope, ParametersHolder, CatalogAllPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.65
+            C132165 c132165 = new Function2<Scope, ParametersHolder, CatalogAllPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.65
                 @Override // kotlin.jvm.functions.Function2
                 public final CatalogAllPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1181,10 +1181,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier65 = companion.getRootScopeQualifier();
             emptyList65 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory65 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier65, Reflection.getOrCreateKotlinClass(CatalogAllPresenter.class), null, c131565, kind, emptyList65));
+            FactoryInstanceFactory factoryInstanceFactory65 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier65, Reflection.getOrCreateKotlinClass(CatalogAllPresenter.class), null, c132165, kind, emptyList65));
             module.indexPrimaryType(factoryInstanceFactory65);
             new KoinDefinition(module, factoryInstanceFactory65);
-            C131666 c131666 = new Function2<Scope, ParametersHolder, CatalogCategoriesPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.66
+            C132266 c132266 = new Function2<Scope, ParametersHolder, CatalogCategoriesPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.66
                 @Override // kotlin.jvm.functions.Function2
                 public final CatalogCategoriesPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1194,10 +1194,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier66 = companion.getRootScopeQualifier();
             emptyList66 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory66 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier66, Reflection.getOrCreateKotlinClass(CatalogCategoriesPresenter.class), null, c131666, kind, emptyList66));
+            FactoryInstanceFactory factoryInstanceFactory66 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier66, Reflection.getOrCreateKotlinClass(CatalogCategoriesPresenter.class), null, c132266, kind, emptyList66));
             module.indexPrimaryType(factoryInstanceFactory66);
             new KoinDefinition(module, factoryInstanceFactory66);
-            C131767 c131767 = new Function2<Scope, ParametersHolder, CatalogUserChannelsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.67
+            C132367 c132367 = new Function2<Scope, ParametersHolder, CatalogUserChannelsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.67
                 @Override // kotlin.jvm.functions.Function2
                 public final CatalogUserChannelsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1207,10 +1207,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier67 = companion.getRootScopeQualifier();
             emptyList67 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory67 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier67, Reflection.getOrCreateKotlinClass(CatalogUserChannelsPresenter.class), null, c131767, kind, emptyList67));
+            FactoryInstanceFactory factoryInstanceFactory67 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier67, Reflection.getOrCreateKotlinClass(CatalogUserChannelsPresenter.class), null, c132367, kind, emptyList67));
             module.indexPrimaryType(factoryInstanceFactory67);
             new KoinDefinition(module, factoryInstanceFactory67);
-            C131868 c131868 = new Function2<Scope, ParametersHolder, StakingPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.68
+            C132468 c132468 = new Function2<Scope, ParametersHolder, StakingPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.68
                 @Override // kotlin.jvm.functions.Function2
                 public final StakingPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1220,10 +1220,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier68 = companion.getRootScopeQualifier();
             emptyList68 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory68 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier68, Reflection.getOrCreateKotlinClass(StakingPresenter.class), null, c131868, kind, emptyList68));
+            FactoryInstanceFactory factoryInstanceFactory68 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier68, Reflection.getOrCreateKotlinClass(StakingPresenter.class), null, c132468, kind, emptyList68));
             module.indexPrimaryType(factoryInstanceFactory68);
             new KoinDefinition(module, factoryInstanceFactory68);
-            C131969 c131969 = new Function2<Scope, ParametersHolder, StakingProgrammesPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.69
+            C132569 c132569 = new Function2<Scope, ParametersHolder, StakingProgrammesPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.69
                 @Override // kotlin.jvm.functions.Function2
                 public final StakingProgrammesPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1233,10 +1233,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier69 = companion.getRootScopeQualifier();
             emptyList69 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory69 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier69, Reflection.getOrCreateKotlinClass(StakingProgrammesPresenter.class), null, c131969, kind, emptyList69));
+            FactoryInstanceFactory factoryInstanceFactory69 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier69, Reflection.getOrCreateKotlinClass(StakingProgrammesPresenter.class), null, c132569, kind, emptyList69));
             module.indexPrimaryType(factoryInstanceFactory69);
             new KoinDefinition(module, factoryInstanceFactory69);
-            C132170 c132170 = new Function2<Scope, ParametersHolder, StakingConditionsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.70
+            C132770 c132770 = new Function2<Scope, ParametersHolder, StakingConditionsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.70
                 @Override // kotlin.jvm.functions.Function2
                 public final StakingConditionsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1246,10 +1246,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier70 = companion.getRootScopeQualifier();
             emptyList70 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory70 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier70, Reflection.getOrCreateKotlinClass(StakingConditionsPresenter.class), null, c132170, kind, emptyList70));
+            FactoryInstanceFactory factoryInstanceFactory70 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier70, Reflection.getOrCreateKotlinClass(StakingConditionsPresenter.class), null, c132770, kind, emptyList70));
             module.indexPrimaryType(factoryInstanceFactory70);
             new KoinDefinition(module, factoryInstanceFactory70);
-            C132271 c132271 = new Function2<Scope, ParametersHolder, StakingTransactionPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.71
+            C132871 c132871 = new Function2<Scope, ParametersHolder, StakingTransactionPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.71
                 @Override // kotlin.jvm.functions.Function2
                 public final StakingTransactionPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1259,10 +1259,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier71 = companion.getRootScopeQualifier();
             emptyList71 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory71 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier71, Reflection.getOrCreateKotlinClass(StakingTransactionPresenter.class), null, c132271, kind, emptyList71));
+            FactoryInstanceFactory factoryInstanceFactory71 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier71, Reflection.getOrCreateKotlinClass(StakingTransactionPresenter.class), null, c132871, kind, emptyList71));
             module.indexPrimaryType(factoryInstanceFactory71);
             new KoinDefinition(module, factoryInstanceFactory71);
-            C132372 c132372 = new Function2<Scope, ParametersHolder, StakingOperationsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.72
+            C132972 c132972 = new Function2<Scope, ParametersHolder, StakingOperationsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.72
                 @Override // kotlin.jvm.functions.Function2
                 public final StakingOperationsPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1272,10 +1272,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier72 = companion.getRootScopeQualifier();
             emptyList72 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory72 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier72, Reflection.getOrCreateKotlinClass(StakingOperationsPresenter.class), null, c132372, kind, emptyList72));
+            FactoryInstanceFactory factoryInstanceFactory72 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier72, Reflection.getOrCreateKotlinClass(StakingOperationsPresenter.class), null, c132972, kind, emptyList72));
             module.indexPrimaryType(factoryInstanceFactory72);
             new KoinDefinition(module, factoryInstanceFactory72);
-            C132473 c132473 = new Function2<Scope, ParametersHolder, StakingCalculatorPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.73
+            C133073 c133073 = new Function2<Scope, ParametersHolder, StakingCalculatorPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.73
                 @Override // kotlin.jvm.functions.Function2
                 public final StakingCalculatorPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1285,10 +1285,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier73 = companion.getRootScopeQualifier();
             emptyList73 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory73 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier73, Reflection.getOrCreateKotlinClass(StakingCalculatorPresenter.class), null, c132473, kind, emptyList73));
+            FactoryInstanceFactory factoryInstanceFactory73 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier73, Reflection.getOrCreateKotlinClass(StakingCalculatorPresenter.class), null, c133073, kind, emptyList73));
             module.indexPrimaryType(factoryInstanceFactory73);
             new KoinDefinition(module, factoryInstanceFactory73);
-            C132574 c132574 = new Function2<Scope, ParametersHolder, StakingCalculatorProgrammesPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.74
+            C133174 c133174 = new Function2<Scope, ParametersHolder, StakingCalculatorProgrammesPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.74
                 @Override // kotlin.jvm.functions.Function2
                 public final StakingCalculatorProgrammesPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1298,10 +1298,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier74 = companion.getRootScopeQualifier();
             emptyList74 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory74 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier74, Reflection.getOrCreateKotlinClass(StakingCalculatorProgrammesPresenter.class), null, c132574, kind, emptyList74));
+            FactoryInstanceFactory factoryInstanceFactory74 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier74, Reflection.getOrCreateKotlinClass(StakingCalculatorProgrammesPresenter.class), null, c133174, kind, emptyList74));
             module.indexPrimaryType(factoryInstanceFactory74);
             new KoinDefinition(module, factoryInstanceFactory74);
-            C132675 c132675 = new Function2<Scope, ParametersHolder, CreateCryptoBoxPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.75
+            C133275 c133275 = new Function2<Scope, ParametersHolder, CreateCryptoBoxPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.75
                 @Override // kotlin.jvm.functions.Function2
                 public final CreateCryptoBoxPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1311,10 +1311,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier75 = companion.getRootScopeQualifier();
             emptyList75 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory75 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier75, Reflection.getOrCreateKotlinClass(CreateCryptoBoxPresenter.class), null, c132675, kind, emptyList75));
+            FactoryInstanceFactory factoryInstanceFactory75 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier75, Reflection.getOrCreateKotlinClass(CreateCryptoBoxPresenter.class), null, c133275, kind, emptyList75));
             module.indexPrimaryType(factoryInstanceFactory75);
             new KoinDefinition(module, factoryInstanceFactory75);
-            C132776 c132776 = new Function2<Scope, ParametersHolder, CryptoBoxesPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.76
+            C133376 c133376 = new Function2<Scope, ParametersHolder, CryptoBoxesPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.76
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoBoxesPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1324,10 +1324,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier76 = companion.getRootScopeQualifier();
             emptyList76 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory76 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier76, Reflection.getOrCreateKotlinClass(CryptoBoxesPresenter.class), null, c132776, kind, emptyList76));
+            FactoryInstanceFactory factoryInstanceFactory76 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier76, Reflection.getOrCreateKotlinClass(CryptoBoxesPresenter.class), null, c133376, kind, emptyList76));
             module.indexPrimaryType(factoryInstanceFactory76);
             new KoinDefinition(module, factoryInstanceFactory76);
-            C132877 c132877 = new Function2<Scope, ParametersHolder, CryptoBoxSuspensionPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.77
+            C133477 c133477 = new Function2<Scope, ParametersHolder, CryptoBoxSuspensionPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.77
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoBoxSuspensionPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1337,10 +1337,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier77 = companion.getRootScopeQualifier();
             emptyList77 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory77 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier77, Reflection.getOrCreateKotlinClass(CryptoBoxSuspensionPresenter.class), null, c132877, kind, emptyList77));
+            FactoryInstanceFactory factoryInstanceFactory77 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier77, Reflection.getOrCreateKotlinClass(CryptoBoxSuspensionPresenter.class), null, c133477, kind, emptyList77));
             module.indexPrimaryType(factoryInstanceFactory77);
             new KoinDefinition(module, factoryInstanceFactory77);
-            C132978 c132978 = new Function2<Scope, ParametersHolder, CryptoBoxConditionsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.78
+            C133578 c133578 = new Function2<Scope, ParametersHolder, CryptoBoxConditionsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.78
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoBoxConditionsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1350,10 +1350,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier78 = companion.getRootScopeQualifier();
             emptyList78 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory78 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier78, Reflection.getOrCreateKotlinClass(CryptoBoxConditionsPresenter.class), null, c132978, kind, emptyList78));
+            FactoryInstanceFactory factoryInstanceFactory78 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier78, Reflection.getOrCreateKotlinClass(CryptoBoxConditionsPresenter.class), null, c133578, kind, emptyList78));
             module.indexPrimaryType(factoryInstanceFactory78);
             new KoinDefinition(module, factoryInstanceFactory78);
-            C133079 c133079 = new Function2<Scope, ParametersHolder, CryptoBoxStatusInfoPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.79
+            C133679 c133679 = new Function2<Scope, ParametersHolder, CryptoBoxStatusInfoPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.79
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoBoxStatusInfoPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1363,10 +1363,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier79 = companion.getRootScopeQualifier();
             emptyList79 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory79 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier79, Reflection.getOrCreateKotlinClass(CryptoBoxStatusInfoPresenter.class), null, c133079, kind, emptyList79));
+            FactoryInstanceFactory factoryInstanceFactory79 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier79, Reflection.getOrCreateKotlinClass(CryptoBoxStatusInfoPresenter.class), null, c133679, kind, emptyList79));
             module.indexPrimaryType(factoryInstanceFactory79);
             new KoinDefinition(module, factoryInstanceFactory79);
-            C133280 c133280 = new Function2<Scope, ParametersHolder, FragmentPremiumPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.80
+            C133880 c133880 = new Function2<Scope, ParametersHolder, FragmentPremiumPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.80
                 @Override // kotlin.jvm.functions.Function2
                 public final FragmentPremiumPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1376,10 +1376,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier80 = companion.getRootScopeQualifier();
             emptyList80 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory80 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier80, Reflection.getOrCreateKotlinClass(FragmentPremiumPresenter.class), null, c133280, kind, emptyList80));
+            FactoryInstanceFactory factoryInstanceFactory80 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier80, Reflection.getOrCreateKotlinClass(FragmentPremiumPresenter.class), null, c133880, kind, emptyList80));
             module.indexPrimaryType(factoryInstanceFactory80);
             new KoinDefinition(module, factoryInstanceFactory80);
-            C133381 c133381 = new Function2<Scope, ParametersHolder, FragmentUsernamesPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.81
+            C133981 c133981 = new Function2<Scope, ParametersHolder, FragmentUsernamesPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.81
                 @Override // kotlin.jvm.functions.Function2
                 public final FragmentUsernamesPresenter invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1389,10 +1389,10 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier81 = companion.getRootScopeQualifier();
             emptyList81 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory81 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier81, Reflection.getOrCreateKotlinClass(FragmentUsernamesPresenter.class), null, c133381, kind, emptyList81));
+            FactoryInstanceFactory factoryInstanceFactory81 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier81, Reflection.getOrCreateKotlinClass(FragmentUsernamesPresenter.class), null, c133981, kind, emptyList81));
             module.indexPrimaryType(factoryInstanceFactory81);
             new KoinDefinition(module, factoryInstanceFactory81);
-            C133482 c133482 = new Function2<Scope, ParametersHolder, TonFragmentProductDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.82
+            C134082 c134082 = new Function2<Scope, ParametersHolder, TonFragmentProductDetailsPresenter>() { // from class: com.iMe.di.module.PresenterModuleKt$presentationPresenterModule$1.82
                 @Override // kotlin.jvm.functions.Function2
                 public final TonFragmentProductDetailsPresenter invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -1402,7 +1402,7 @@ public final class PresenterModuleKt {
             };
             StringQualifier rootScopeQualifier82 = companion.getRootScopeQualifier();
             emptyList82 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory82 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier82, Reflection.getOrCreateKotlinClass(TonFragmentProductDetailsPresenter.class), null, c133482, kind, emptyList82));
+            FactoryInstanceFactory factoryInstanceFactory82 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier82, Reflection.getOrCreateKotlinClass(TonFragmentProductDetailsPresenter.class), null, c134082, kind, emptyList82));
             module.indexPrimaryType(factoryInstanceFactory82);
             new KoinDefinition(module, factoryInstanceFactory82);
         }

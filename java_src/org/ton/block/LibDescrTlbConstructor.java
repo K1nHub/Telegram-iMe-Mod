@@ -27,7 +27,7 @@ final class LibDescrTlbConstructor extends org.ton.tlb.TlbConstructor<LibDescr> 
             public final TlbCodec<HmEdge<Unit>> invoke() {
                 return HmEdge.Companion.tlbCodec(256, new TlbCodec<Unit>() { // from class: org.ton.block.LibDescrTlbConstructor$publishers$2.1
                     /* renamed from: loadTlb  reason: collision with other method in class */
-                    public void m4967loadTlb(CellSlice cellSlice) {
+                    public void m5121loadTlb(CellSlice cellSlice) {
                         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
                     }
 
@@ -39,18 +39,18 @@ final class LibDescrTlbConstructor extends org.ton.tlb.TlbConstructor<LibDescr> 
 
                     @Override // org.ton.tlb.TlbLoader
                     public /* bridge */ /* synthetic */ Object loadTlb(Cell cell) {
-                        m4966loadTlb(cell);
+                        m5120loadTlb(cell);
                         return Unit.INSTANCE;
                     }
 
                     @Override // org.ton.tlb.TlbLoader
                     public /* bridge */ /* synthetic */ Object loadTlb(CellSlice cellSlice) {
-                        m4967loadTlb(cellSlice);
+                        m5121loadTlb(cellSlice);
                         return Unit.INSTANCE;
                     }
 
                     /* renamed from: loadTlb  reason: collision with other method in class */
-                    public void m4966loadTlb(Cell cell) {
+                    public void m5120loadTlb(Cell cell) {
                         TlbCodec.DefaultImpls.loadTlb(this, cell);
                     }
                 });

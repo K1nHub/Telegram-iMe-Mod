@@ -59,10 +59,20 @@
     return v0
 .end method
 
-.method public synthetic getReplyToStory()Lorg/telegram/tgnet/TLRPC$StoryItem;
+.method public synthetic getReplyQuote()Lorg/telegram/ui/ChatActivity$ReplyQuote;
     .locals 1
 
-    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$getReplyToStory(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)Lorg/telegram/tgnet/TLRPC$StoryItem;
+    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$getReplyQuote(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)Lorg/telegram/ui/ChatActivity$ReplyQuote;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic getReplyToStory()Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$getReplyToStory(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     move-result-object v0
 
@@ -422,7 +432,7 @@
     return-void
 .end method
 
-.method public onTextChanged(Ljava/lang/CharSequence;Z)V
+.method public onTextChanged(Ljava/lang/CharSequence;ZZ)V
     .locals 0
 
     return-void

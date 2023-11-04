@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$61$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/ChatActivity$61;
 
-    check-cast p1, Lorg/telegram/messenger/ForwardingMessagesParams;
+    check-cast p1, Lorg/telegram/messenger/MessagePreviewParams;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity$61;->$r8$lambda$okzBKZ4ex7idzxRjG4w8TH9akGg(Lorg/telegram/ui/ChatActivity$61;Lorg/telegram/messenger/ForwardingMessagesParams;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity$61;->$r8$lambda$4dh_j8YQ866fs_-7kvmxHz5IHSw(Lorg/telegram/ui/ChatActivity$61;Lorg/telegram/messenger/MessagePreviewParams;)V
 
     return-void
 .end method

@@ -21,10 +21,12 @@ public class BuildVars {
     public static boolean NO_SCOPED_STORAGE = false;
     public static String PLAYSTORE_APP_URL = null;
     public static String SAFETYNET_KEY = null;
-    public static String SMS_HASH = null;
     public static boolean USE_CLOUD_STRINGS = true;
     private static Boolean betaApp;
-    private static Boolean standaloneApp;
+
+    public static String getSmsHash() {
+        return "+UbHfVTjSrJ";
+    }
 
     public static boolean useInvoiceBilling() {
         return true;
@@ -33,12 +35,11 @@ public class BuildVars {
     static {
         boolean z = true;
         NO_SCOPED_STORAGE = Build.VERSION.SDK_INT <= 29;
-        BUILD_VERSION = 3926;
-        BUILD_VERSION_STRING = "10.1.1";
+        BUILD_VERSION = 4056;
+        BUILD_VERSION_STRING = "10.2.0";
         APP_ID = 4;
         APP_HASH = "014b35b6184100b085b0d0572f9b5103";
         SAFETYNET_KEY = "AIzaSyDqt8P-7F7CPCseMkOiVRgb1LY8RN1bvH8";
-        SMS_HASH = isStandaloneApp() ? "w0lkcmTZkKh" : DEBUG_VERSION ? "O2P2z+/jBpJ" : "oLeq9AcOZkT";
         PLAYSTORE_APP_URL = "https://play.google.com/store/apps/details?id=org.telegram.messenger";
         HUAWEI_STORE_URL = "https://appgallery.huawei.com/app/C101184875";
         GOOGLE_AUTH_CLIENT_ID = "760348033671-81kmi3pi84p11ub8hp9a1funsv0rn2p9.apps.googleusercontent.com";
@@ -61,7 +62,6 @@ public class BuildVars {
         APP_ID = 659337;
         APP_HASH = "314703a39f45937dcdee8dbb8c2dacbb";
         SAFETYNET_KEY = "";
-        SMS_HASH = "+UbHfVTjSrJ";
         PLAYSTORE_APP_URL = PLAYSTORE_APP_URL.replace(BuildConfig.LIBRARY_PACKAGE_NAME, "com.iMe.android");
     }
 
@@ -79,13 +79,6 @@ public class BuildVars {
             }
         }
         return false;
-    }
-
-    public static boolean isStandaloneApp() {
-        if (standaloneApp == null) {
-            standaloneApp = Boolean.valueOf(ApplicationLoader.applicationContext != null && "org.telegram.messenger.web".replace(BuildConfig.LIBRARY_PACKAGE_NAME, "com.iMe.android").equals(ApplicationLoader.applicationContext.getPackageName()));
-        }
-        return standaloneApp.booleanValue();
     }
 
     public static boolean isBetaApp() {

@@ -20,14 +20,14 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import kotlin.text.StringsKt___StringsKt;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkContentFragmentProductDetailsBinding;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.Premium.PremiumButtonView;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.Premium.PremiumButtonView;
 /* compiled from: TonFragmentProductDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.fragment.usernames.details.TonFragmentProductDetailsBottomSheetDialog */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TonFragmentProductDetailsBottomSheetDialog extends MvpBottomSheet implements TonFragmentProductDetailsView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(TonFragmentProductDetailsBottomSheetDialog.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/fragment/usernames/details/TonFragmentProductDetailsPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(TonFragmentProductDetailsBottomSheetDialog.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkContentFragmentProductDetailsBinding;", 0)), Reflection.property1(new PropertyReference1Impl(TonFragmentProductDetailsBottomSheetDialog.class, "actionButton", "getActionButton()Lorg/telegram/ui/Components/Premium/PremiumButtonView;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -36,7 +36,7 @@ public final class TonFragmentProductDetailsBottomSheetDialog extends MvpBottomS
     private final Callbacks$Callback onBuyClickAction;
     private final Lazy resourceManager$delegate;
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return true;
     }
@@ -46,7 +46,7 @@ public final class TonFragmentProductDetailsBottomSheetDialog extends MvpBottomS
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public TonFragmentProductDetailsBottomSheetDialog(final com.iMe.model.wallet.fragment.TonFragmentItem.Product r5, final org.telegram.p042ui.ActionBar.BaseFragment r6, com.iMe.fork.utils.Callbacks$Callback r7) {
+    public TonFragmentProductDetailsBottomSheetDialog(final com.iMe.model.wallet.fragment.TonFragmentItem.Product r5, final org.telegram.p043ui.ActionBar.BaseFragment r6, com.iMe.fork.utils.Callbacks$Callback r7) {
         /*
             r4 = this;
             java.lang.String r0 = "productItem"
@@ -133,9 +133,9 @@ public final class TonFragmentProductDetailsBottomSheetDialog extends MvpBottomS
         Intrinsics.checkNotNullExpressionValue(viewHeader, "viewHeader");
         long hashCode = username.hashCode();
         orNull = StringsKt___StringsKt.getOrNull(username, 1);
-        ImageHeaderView.setupViewData$default(viewHeader, new ImageHeaderView.IconData.TextAvatar(hashCode, username, orNull != null ? orNull.toString() : null), null, titleText, getResourceManager().getString(C3630R.string.fragment_username_details_description), 2, null);
-        binding.viewPriceCell.setupViewData(getResourceManager().getString(C3630R.string.wallet_buy_tokens_purchase_slide_price_title), priceText, C3630R.C3632drawable.fork_ic_donations_24, true);
-        getActionButton().setOverlayText(getResourceManager().getString(C3630R.string.fragment_username_details_buy, priceText), false, true);
+        ImageHeaderView.setupViewData$default(viewHeader, new ImageHeaderView.IconData.TextAvatar(hashCode, username, orNull != null ? orNull.toString() : null), null, titleText, getResourceManager().getString(C3634R.string.fragment_username_details_description), 2, null);
+        binding.viewPriceCell.setupViewData(getResourceManager().getString(C3634R.string.wallet_buy_tokens_purchase_slide_price_title), priceText, C3634R.C3636drawable.fork_ic_donations_24, true);
+        getActionButton().setOverlayText(getResourceManager().getString(C3634R.string.fragment_username_details_buy, priceText), false, true);
     }
 
     @Override // com.iMe.p030ui.wallet.fragment.usernames.details.TonFragmentProductDetailsView
@@ -143,7 +143,7 @@ public final class TonFragmentProductDetailsBottomSheetDialog extends MvpBottomS
         Intrinsics.checkNotNullParameter(timeLeftText, "timeLeftText");
         DetailsIconCellView detailsIconCellView = getBinding().viewTimeLeftCell;
         Intrinsics.checkNotNullExpressionValue(detailsIconCellView, "binding.viewTimeLeftCell");
-        DetailsIconCellView.setupViewData$default(detailsIconCellView, getResourceManager().getString(C3630R.string.fragment_username_details_ends_in), timeLeftText, C3630R.C3632drawable.fork_ic_done_24, false, 8, null);
+        DetailsIconCellView.setupViewData$default(detailsIconCellView, getResourceManager().getString(C3634R.string.fragment_username_details_ends_in), timeLeftText, C3634R.C3636drawable.fork_ic_done_24, false, 8, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -187,7 +187,7 @@ public final class TonFragmentProductDetailsBottomSheetDialog extends MvpBottomS
 
     /* compiled from: TonFragmentProductDetailsBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.details.TonFragmentProductDetailsBottomSheetDialog$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

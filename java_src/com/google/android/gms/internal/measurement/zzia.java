@@ -1,7 +1,8 @@
 package com.google.android.gms.internal.measurement;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
 /* loaded from: classes.dex */
-final class zzia<T> extends zzhz<T> {
+public final class zzia<T> extends zzhz<T> {
     private final T zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */

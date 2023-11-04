@@ -403,7 +403,7 @@ public final class ProtoBuf$Expression extends GeneratedMessageLite implements M
 
         @Override // kotlin.reflect.jvm.internal.impl.protobuf.GeneratedMessageLite.Builder
         /* renamed from: clone */
-        public Builder mo2044clone() {
+        public Builder mo2049clone() {
             return create().mergeFrom(buildPartial());
         }
 

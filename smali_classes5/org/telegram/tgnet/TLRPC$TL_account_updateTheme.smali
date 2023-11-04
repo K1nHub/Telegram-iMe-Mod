@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x5cb367d5
-
-
 # instance fields
 .field public document:Lorg/telegram/tgnet/TLRPC$InputDocument;
 
@@ -24,16 +20,10 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 56750
+    .line 57513
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -44,7 +34,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 56762
+    .line 57525
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$Theme;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_theme;
 
     move-result-object p1
@@ -55,39 +45,39 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 56766
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_updateTheme;->constructor:I
+    const v0, 0x5cb367d5
 
+    .line 57529
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 56767
+    .line 57530
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateTheme;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 56768
+    .line 57531
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateTheme;->format:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 56769
+    .line 57532
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateTheme;->theme:Lorg/telegram/tgnet/TLRPC$InputTheme;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 56770
+    .line 57533
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateTheme;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 56771
+    .line 57534
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateTheme;->slug:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 56773
+    .line 57536
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateTheme;->flags:I
 
@@ -95,12 +85,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 56774
+    .line 57537
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateTheme;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 56776
+    .line 57539
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateTheme;->flags:I
 
@@ -108,12 +98,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 56777
+    .line 57540
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateTheme;->document:Lorg/telegram/tgnet/TLRPC$InputDocument;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 56779
+    .line 57542
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateTheme;->flags:I
 
@@ -121,7 +111,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 56780
+    .line 57543
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_updateTheme;->settings:Lorg/telegram/tgnet/TLRPC$TL_inputThemeSettings;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLRPC$TL_inputThemeSettings;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

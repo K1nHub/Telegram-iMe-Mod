@@ -12,8 +12,8 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: DonationSeeMoreButton.kt */
 /* renamed from: com.iMe.ui.custom.donation.DonationSeeMoreButton */
 /* loaded from: classes3.dex */
@@ -71,7 +71,7 @@ public final class DonationSeeMoreButton extends FrameLayout {
         setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         AppCompatTextView textView = getTextView();
         textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
-        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m102dp(6), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
+        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m104dp(6), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
     }
 
     @Override // android.view.View
@@ -86,8 +86,8 @@ public final class DonationSeeMoreButton extends FrameLayout {
         ViewExtKt.withMediumTypeface(appCompatTextView);
         appCompatTextView.setSingleLine();
         appCompatTextView.setGravity(17);
-        int m102dp = AndroidUtilities.m102dp(10);
-        appCompatTextView.setPadding(m102dp, m102dp, m102dp, m102dp);
+        int m104dp = AndroidUtilities.m104dp(10);
+        appCompatTextView.setPadding(m104dp, m104dp, m104dp, m104dp);
         return appCompatTextView;
     }
 

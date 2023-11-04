@@ -136,12 +136,12 @@ public class DefaultRenderersFactory implements RenderersFactory {
                 i2 = size + 1;
                 try {
                     arrayList.add(size, (Renderer) Class.forName("com.google.android.exoplayer2.ext.vp9.LibvpxVideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
-                    Log.m1108i(TAG, "Loaded LibvpxVideoRenderer.");
+                    Log.m1109i(TAG, "Loaded LibvpxVideoRenderer.");
                 } catch (ClassNotFoundException unused) {
                     size = i2;
                     i2 = size;
                     arrayList.add(i2, (Renderer) Class.forName("com.google.android.exoplayer2.ext.av1.Libgav1VideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
-                    Log.m1108i(TAG, "Loaded Libgav1VideoRenderer.");
+                    Log.m1109i(TAG, "Loaded Libgav1VideoRenderer.");
                 }
             } catch (Exception e) {
                 throw new RuntimeException("Error instantiating VP9 extension", e);
@@ -150,7 +150,7 @@ public class DefaultRenderersFactory implements RenderersFactory {
         }
         try {
             arrayList.add(i2, (Renderer) Class.forName("com.google.android.exoplayer2.ext.av1.Libgav1VideoRenderer").getConstructor(Long.TYPE, Handler.class, VideoRendererEventListener.class, Integer.TYPE).newInstance(Long.valueOf(j), handler, videoRendererEventListener, 50));
-            Log.m1108i(TAG, "Loaded Libgav1VideoRenderer.");
+            Log.m1109i(TAG, "Loaded Libgav1VideoRenderer.");
         } catch (ClassNotFoundException unused3) {
         } catch (Exception e2) {
             throw new RuntimeException("Error instantiating AV1 extension", e2);

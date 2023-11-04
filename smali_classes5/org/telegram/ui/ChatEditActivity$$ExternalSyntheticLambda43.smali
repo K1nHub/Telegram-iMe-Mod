@@ -2,32 +2,48 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
+.implements Lkotlin/jvm/functions/Function1;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ChatEditActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda43;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatEditActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda43;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda43;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda43;->INSTANCE:Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda43;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda43;->f$0:Lorg/telegram/ui/ChatEditActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Z)V
-    .locals 1
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda43;->f$0:Lorg/telegram/ui/ChatEditActivity;
+    check-cast p1, Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$3PpKk8_kwaYEMHQ9LeDjUjoquJA(Lorg/telegram/ui/ChatEditActivity;Z)V
+    invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity;->isArchive()Z
 
-    return-void
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object p1
+
+    return-object p1
 .end method

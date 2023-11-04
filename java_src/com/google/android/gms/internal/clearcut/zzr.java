@@ -13,23 +13,23 @@ import com.google.android.gms.internal.clearcut.zzge;
 /* loaded from: classes.dex */
 public final class zzr extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzr> CREATOR = new zzs();
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     private final String packageName;
-    @SafeParcelable.Field(defaultValue = "true", m1089id = 7)
+    @SafeParcelable.Field(defaultValue = "true", m1090id = 7)
     private final boolean zzay;
-    @SafeParcelable.Field(m1089id = 10)
+    @SafeParcelable.Field(m1090id = 10)
     private final int zzaz;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     private final int zzi;
-    @SafeParcelable.Field(m1089id = 8)
+    @SafeParcelable.Field(m1090id = 8)
     public final String zzj;
-    @SafeParcelable.Field(m1089id = 4)
+    @SafeParcelable.Field(m1090id = 4)
     public final int zzk;
-    @SafeParcelable.Field(m1089id = 5)
+    @SafeParcelable.Field(m1090id = 5)
     private final String zzl;
-    @SafeParcelable.Field(m1089id = 6)
+    @SafeParcelable.Field(m1090id = 6)
     private final String zzm;
-    @SafeParcelable.Field(m1089id = 9)
+    @SafeParcelable.Field(m1090id = 9)
     private final boolean zzn;
 
     public zzr(String str, int i, int i2, String str2, String str3, String str4, boolean z, zzge.zzv.zzb zzbVar) {
@@ -45,7 +45,7 @@ public final class zzr extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public zzr(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) int i, @SafeParcelable.Param(m1088id = 4) int i2, @SafeParcelable.Param(m1088id = 5) String str2, @SafeParcelable.Param(m1088id = 6) String str3, @SafeParcelable.Param(m1088id = 7) boolean z, @SafeParcelable.Param(m1088id = 8) String str4, @SafeParcelable.Param(m1088id = 9) boolean z2, @SafeParcelable.Param(m1088id = 10) int i3) {
+    public zzr(@SafeParcelable.Param(m1089id = 2) String str, @SafeParcelable.Param(m1089id = 3) int i, @SafeParcelable.Param(m1089id = 4) int i2, @SafeParcelable.Param(m1089id = 5) String str2, @SafeParcelable.Param(m1089id = 6) String str3, @SafeParcelable.Param(m1089id = 7) boolean z, @SafeParcelable.Param(m1089id = 8) String str4, @SafeParcelable.Param(m1089id = 9) boolean z2, @SafeParcelable.Param(m1089id = 10) int i3) {
         this.packageName = str;
         this.zzi = i;
         this.zzk = i2;

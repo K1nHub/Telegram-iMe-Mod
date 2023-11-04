@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.extractor.mp4;
 
 import android.util.Pair;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.drm.DrmInitData;
@@ -131,7 +131,7 @@ public final class AtomParsers {
                     arrayList.add(parseMdtaMetadataEntryFromIlst);
                 }
             } else {
-                Log.m1106w(TAG, "Skipped metadata with unknown key index: " + readInt4);
+                Log.m1107w(TAG, "Skipped metadata with unknown key index: " + readInt4);
             }
             parsableByteArray2.setPosition(position + readInt3);
         }
@@ -163,8 +163,8 @@ public final class AtomParsers {
             return null;
         }
         TkhdData parseTkhd = parseTkhd(((Atom.LeafAtom) Assertions.checkNotNull(containerAtom.getLeafAtomOfType(Atom.TYPE_tkhd))).data);
-        long j3 = C0479C.TIME_UNSET;
-        if (j == C0479C.TIME_UNSET) {
+        long j3 = C0485C.TIME_UNSET;
+        if (j == C0485C.TIME_UNSET) {
             leafAtom2 = leafAtom;
             j2 = parseTkhd.duration;
         } else {
@@ -172,7 +172,7 @@ public final class AtomParsers {
             j2 = j;
         }
         long parseMvhd = parseMvhd(leafAtom2.data);
-        if (j2 != C0479C.TIME_UNSET) {
+        if (j2 != C0485C.TIME_UNSET) {
             j3 = Util.scaleLargeTimestamp(j2, 1000000L, parseMvhd);
         }
         long j4 = j3;
@@ -302,7 +302,7 @@ public final class AtomParsers {
                 i3++;
             }
         }
-        long j = C0479C.TIME_UNSET;
+        long j = C0485C.TIME_UNSET;
         if (z) {
             parsableByteArray.skipBytes(i);
         } else {
@@ -383,7 +383,7 @@ public final class AtomParsers {
                 int i5 = (i3 - 8) - 8;
                 byte[] bArr = new byte[i5];
                 parsableByteArray.readBytes(bArr, 0, i5);
-                immutableList = ImmutableList.m1053of(bArr);
+                immutableList = ImmutableList.m1054of(bArr);
                 str2 = MimeTypes.APPLICATION_TX3G;
             } else if (i == 2004251764) {
                 str2 = MimeTypes.APPLICATION_MP4VTT;
@@ -569,7 +569,7 @@ public final class AtomParsers {
                         esdsData = parseEsdsFromParent(parsableByteArray, position2);
                         String str6 = esdsData.mimeType;
                         byte[] bArr4 = esdsData.initializationData;
-                        list2 = bArr4 != null ? ImmutableList.m1053of(bArr4) : list;
+                        list2 = bArr4 != null ? ImmutableList.m1054of(bArr4) : list;
                         str3 = str6;
                         bArr2 = bArr;
                         f2 = f;
@@ -632,7 +632,7 @@ public final class AtomParsers {
                             i14 = z2 ? 1 : 2;
                             i15 = ColorInfo.isoTransferCharacteristicsToColorTransfer(readUnsignedShort4);
                         } else {
-                            Log.m1106w(TAG, "Unsupported color type: " + Atom.getAtomTypeString(readInt3));
+                            Log.m1107w(TAG, "Unsupported color type: " + Atom.getAtomTypeString(readInt3));
                         }
                     }
                 }
@@ -817,7 +817,7 @@ public final class AtomParsers {
             }
             i3 += readInt;
         }
-        if (C0479C.CENC_TYPE_cenc.equals(str) || C0479C.CENC_TYPE_cbc1.equals(str) || C0479C.CENC_TYPE_cens.equals(str) || C0479C.CENC_TYPE_cbcs.equals(str)) {
+        if (C0485C.CENC_TYPE_cenc.equals(str) || C0485C.CENC_TYPE_cbc1.equals(str) || C0485C.CENC_TYPE_cens.equals(str) || C0485C.CENC_TYPE_cbcs.equals(str)) {
             ExtractorUtil.checkContainerInput(num != null, "frma atom is mandatory");
             ExtractorUtil.checkContainerInput(i4 != -1, "schi atom is mandatory");
             TrackEncryptionBox parseSchiFromParent = parseSchiFromParent(parsableByteArray, i4, i5, str);
@@ -1006,7 +1006,7 @@ public final class AtomParsers {
             if (MimeTypes.AUDIO_RAW.equals(format.sampleMimeType)) {
                 int pcmFrameSize = Util.getPcmFrameSize(format.pcmEncoding, format.channelCount);
                 if (readUnsignedIntToInt == 0 || readUnsignedIntToInt % pcmFrameSize != 0) {
-                    Log.m1106w(AtomParsers.TAG, "Audio sample size mismatch. stsd sample size: " + pcmFrameSize + ", stsz sample size: " + readUnsignedIntToInt);
+                    Log.m1107w(AtomParsers.TAG, "Audio sample size mismatch. stsd sample size: " + pcmFrameSize + ", stsz sample size: " + readUnsignedIntToInt);
                     readUnsignedIntToInt = pcmFrameSize;
                 }
             }

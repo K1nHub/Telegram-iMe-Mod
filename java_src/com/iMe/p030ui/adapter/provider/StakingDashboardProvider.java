@@ -11,13 +11,13 @@ import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* compiled from: StakingDashboardProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.StakingDashboardProvider */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class StakingDashboardProvider extends BaseNodeProvider<StakingDashboardItem> {
     private final int itemViewType = IdFabric$ViewTypes.STAKING_DASHBOARD;
-    private final int layoutId = C3630R.layout.fork_recycle_item_staking_dashboard;
+    private final int layoutId = C3634R.layout.fork_recycle_item_staking_dashboard;
     private Callbacks$Callback onCalculatorClick = new Callbacks$Callback() { // from class: com.iMe.ui.adapter.provider.StakingDashboardProvider$$ExternalSyntheticLambda0
         @Override // com.iMe.fork.utils.Callbacks$Callback
         public final void invoke() {
@@ -58,7 +58,7 @@ public final class StakingDashboardProvider extends BaseNodeProvider<StakingDash
     public void convert(BaseViewHolder helper, final StakingDashboardItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(helper, C3630R.C3633id.view_staking_dashboard, new Function1<StakingDashboardView, Unit>() { // from class: com.iMe.ui.adapter.provider.StakingDashboardProvider$convert$1
+        BaseQuickAdapterExtKt.applyForView(helper, C3634R.C3637id.view_staking_dashboard, new Function1<StakingDashboardView, Unit>() { // from class: com.iMe.ui.adapter.provider.StakingDashboardProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -88,7 +88,7 @@ public final class StakingDashboardProvider extends BaseNodeProvider<StakingDash
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseQuickAdapterExtKt.applyForView(helper, C3630R.C3633id.view_staking_dashboard, new Function1<StakingDashboardView, Unit>() { // from class: com.iMe.ui.adapter.provider.StakingDashboardProvider$convert$2
+        BaseQuickAdapterExtKt.applyForView(helper, C3634R.C3637id.view_staking_dashboard, new Function1<StakingDashboardView, Unit>() { // from class: com.iMe.ui.adapter.provider.StakingDashboardProvider$convert$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

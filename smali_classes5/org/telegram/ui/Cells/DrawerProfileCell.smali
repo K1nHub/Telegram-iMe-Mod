@@ -3932,7 +3932,7 @@
 
     xor-int/2addr p2, v4
 
-    invoke-virtual {v0, v1, v2, p2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
+    invoke-virtual {v0, v1, v2, p2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)Z
 
     goto/16 :goto_6
 

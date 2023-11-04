@@ -2287,7 +2287,7 @@
 .method private synthetic lambda$loadSessions$17(Z)V
     .locals 0
 
-    .line 668
+    .line 672
     invoke-virtual {p0, p1}, Lorg/telegram/ui/SessionsActivity;->loadSessions(Z)V
 
     return-void
@@ -2343,18 +2343,27 @@
 
     .line 665
     :cond_1
+    iget-object p1, p0, Lorg/telegram/ui/SessionsActivity;->delegate:Lorg/telegram/ui/SessionsActivity$Delegate;
+
+    if-eqz p1, :cond_2
+
+    .line 666
+    invoke-interface {p1}, Lorg/telegram/ui/SessionsActivity$Delegate;->sessionsLoaded()V
+
+    .line 669
+    :cond_2
     iget p1, p0, Lorg/telegram/ui/SessionsActivity;->repeatLoad:I
 
-    if-lez p1, :cond_2
+    if-lez p1, :cond_3
 
     add-int/lit8 p1, p1, -0x1
 
-    .line 666
+    .line 670
     iput p1, p0, Lorg/telegram/ui/SessionsActivity;->repeatLoad:I
 
-    if-lez p1, :cond_2
+    if-lez p1, :cond_3
 
-    .line 668
+    .line 672
     new-instance p1, Lorg/telegram/ui/SessionsActivity$$ExternalSyntheticLambda12;
 
     invoke-direct {p1, p0, p3}, Lorg/telegram/ui/SessionsActivity$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/SessionsActivity;Z)V
@@ -2363,7 +2372,7 @@
 
     invoke-static {p1, p2, p3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    :cond_2
+    :cond_3
     return-void
 .end method
 
@@ -2383,7 +2392,7 @@
 .method private synthetic lambda$onRequestPermissionsResultFragment$20(Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 1294
+    .line 1298
     :try_start_0
     new-instance p1, Landroid/content/Intent;
 
@@ -2391,7 +2400,7 @@
 
     invoke-direct {p1, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1295
+    .line 1299
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2418,7 +2427,7 @@
 
     invoke-virtual {p1, p2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 1296
+    .line 1300
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p2
@@ -2432,7 +2441,7 @@
     :catch_0
     move-exception p1
 
-    .line 1298
+    .line 1302
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -2442,7 +2451,7 @@
 .method private openCameraScanActivity()V
     .locals 4
 
-    .line 1167
+    .line 1171
     new-instance v0, Lorg/telegram/ui/SessionsActivity$6;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/SessionsActivity$6;-><init>(Lorg/telegram/ui/SessionsActivity;)V
@@ -2486,66 +2495,66 @@
 
     const/4 v0, 0x0
 
-    .line 677
+    .line 681
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     const/4 v0, -0x1
 
-    .line 678
+    .line 682
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->currentSessionSectionRow:I
 
-    .line 679
+    .line 683
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->currentSessionRow:I
 
-    .line 680
+    .line 684
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->terminateAllSessionsRow:I
 
-    .line 681
+    .line 685
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->terminateAllSessionsDetailRow:I
 
-    .line 682
+    .line 686
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->passwordSessionsSectionRow:I
 
-    .line 683
+    .line 687
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->passwordSessionsStartRow:I
 
-    .line 684
+    .line 688
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->passwordSessionsEndRow:I
 
-    .line 685
+    .line 689
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->passwordSessionsDetailRow:I
 
-    .line 686
+    .line 690
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->otherSessionsSectionRow:I
 
-    .line 687
+    .line 691
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->otherSessionsStartRow:I
 
-    .line 688
+    .line 692
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->otherSessionsEndRow:I
 
-    .line 689
+    .line 693
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->otherSessionsTerminateDetail:I
 
-    .line 690
+    .line 694
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->noOtherSessionsRow:I
 
-    .line 691
+    .line 695
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->qrCodeRow:I
 
-    .line 692
+    .line 696
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->qrCodeDividerRow:I
 
-    .line 693
+    .line 697
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->ttlHeaderRow:I
 
-    .line 694
+    .line 698
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->ttlRow:I
 
-    .line 695
+    .line 699
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->ttlDivideRow:I
 
-    .line 697
+    .line 701
     iget v1, p0, Lorg/telegram/ui/SessionsActivity;->currentType:I
 
     if-nez v1, :cond_0
@@ -2558,7 +2567,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 698
+    .line 702
     iget v1, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     add-int/lit8 v2, v1, 0x1
@@ -2569,23 +2578,23 @@
 
     add-int/lit8 v1, v2, 0x1
 
-    .line 699
+    .line 703
     iput v1, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     iput v2, p0, Lorg/telegram/ui/SessionsActivity;->qrCodeDividerRow:I
 
-    .line 701
+    .line 705
     :cond_0
     iget-boolean v1, p0, Lorg/telegram/ui/SessionsActivity;->loading:Z
 
     if-eqz v1, :cond_2
 
-    .line 702
+    .line 706
     iget v0, p0, Lorg/telegram/ui/SessionsActivity;->currentType:I
 
     if-nez v0, :cond_1
 
-    .line 703
+    .line 707
     iget v0, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -2596,7 +2605,7 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 704
+    .line 708
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     iput v1, p0, Lorg/telegram/ui/SessionsActivity;->currentSessionRow:I
@@ -2604,13 +2613,13 @@
     :cond_1
     return-void
 
-    .line 708
+    .line 712
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/SessionsActivity;->currentSession:Lorg/telegram/tgnet/TLRPC$TL_authorization;
 
     if-eqz v1, :cond_3
 
-    .line 709
+    .line 713
     iget v1, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     add-int/lit8 v2, v1, 0x1
@@ -2621,12 +2630,12 @@
 
     add-int/lit8 v1, v2, 0x1
 
-    .line 710
+    .line 714
     iput v1, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     iput v2, p0, Lorg/telegram/ui/SessionsActivity;->currentSessionRow:I
 
-    .line 714
+    .line 718
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/SessionsActivity;->passwordSessions:Ljava/util/ArrayList;
 
@@ -2646,14 +2655,14 @@
 
     goto :goto_1
 
-    .line 719
+    .line 723
     :cond_4
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->terminateAllSessionsRow:I
 
-    .line 720
+    .line 724
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->terminateAllSessionsDetailRow:I
 
-    .line 721
+    .line 725
     iget v1, p0, Lorg/telegram/ui/SessionsActivity;->currentType:I
 
     const/4 v2, 0x1
@@ -2666,13 +2675,13 @@
 
     goto :goto_0
 
-    .line 724
+    .line 728
     :cond_5
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->noOtherSessionsRow:I
 
     goto :goto_2
 
-    .line 722
+    .line 726
     :cond_6
     :goto_0
     iget v0, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
@@ -2685,7 +2694,7 @@
 
     goto :goto_2
 
-    .line 715
+    .line 719
     :cond_7
     :goto_1
     iget v1, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
@@ -2698,15 +2707,15 @@
 
     add-int/lit8 v1, v2, 0x1
 
-    .line 716
+    .line 720
     iput v1, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     iput v2, p0, Lorg/telegram/ui/SessionsActivity;->terminateAllSessionsDetailRow:I
 
-    .line 717
+    .line 721
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->noOtherSessionsRow:I
 
-    .line 727
+    .line 731
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/SessionsActivity;->passwordSessions:Ljava/util/ArrayList;
 
@@ -2716,7 +2725,7 @@
 
     if-nez v0, :cond_8
 
-    .line 728
+    .line 732
     iget v0, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -2725,10 +2734,10 @@
 
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->passwordSessionsSectionRow:I
 
-    .line 729
+    .line 733
     iput v1, p0, Lorg/telegram/ui/SessionsActivity;->passwordSessionsStartRow:I
 
-    .line 730
+    .line 734
     iget-object v0, p0, Lorg/telegram/ui/SessionsActivity;->passwordSessions:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2739,17 +2748,17 @@
 
     iput v1, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
-    .line 731
+    .line 735
     iput v1, p0, Lorg/telegram/ui/SessionsActivity;->passwordSessionsEndRow:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 732
+    .line 736
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     iput v1, p0, Lorg/telegram/ui/SessionsActivity;->passwordSessionsDetailRow:I
 
-    .line 734
+    .line 738
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/SessionsActivity;->sessions:Ljava/util/ArrayList;
 
@@ -2759,7 +2768,7 @@
 
     if-nez v0, :cond_9
 
-    .line 735
+    .line 739
     iget v0, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -2768,10 +2777,10 @@
 
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->otherSessionsSectionRow:I
 
-    .line 736
+    .line 740
     iput v1, p0, Lorg/telegram/ui/SessionsActivity;->otherSessionsStartRow:I
 
-    .line 737
+    .line 741
     iget-object v0, p0, Lorg/telegram/ui/SessionsActivity;->sessions:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2782,7 +2791,7 @@
 
     iput v1, p0, Lorg/telegram/ui/SessionsActivity;->otherSessionsEndRow:I
 
-    .line 738
+    .line 742
     iget v0, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     iget-object v1, p0, Lorg/telegram/ui/SessionsActivity;->sessions:Ljava/util/ArrayList;
@@ -2797,18 +2806,18 @@
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 739
+    .line 743
     iput v1, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->otherSessionsTerminateDetail:I
 
-    .line 742
+    .line 746
     :cond_9
     iget v0, p0, Lorg/telegram/ui/SessionsActivity;->ttlDays:I
 
     if-lez v0, :cond_a
 
-    .line 743
+    .line 747
     iget v0, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -2819,14 +2828,14 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 744
+    .line 748
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     iput v1, p0, Lorg/telegram/ui/SessionsActivity;->ttlRow:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 745
+    .line 749
     iput v1, p0, Lorg/telegram/ui/SessionsActivity;->rowCount:I
 
     iput v0, p0, Lorg/telegram/ui/SessionsActivity;->ttlDivideRow:I
@@ -3099,14 +3108,16 @@
 .end method
 
 .method public getSessionsCount()I
-    .locals 1
+    .locals 3
 
-    .line 1309
+    .line 1313
     iget-object v0, p0, Lorg/telegram/ui/SessionsActivity;->sessions:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
+
+    const/4 v1, 0x0
 
     if-nez v0, :cond_0
 
@@ -3114,11 +3125,9 @@
 
     if-eqz v0, :cond_0
 
-    const/4 v0, 0x0
+    return v1
 
-    return v0
-
-    .line 1312
+    .line 1316
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/SessionsActivity;->sessions:Ljava/util/ArrayList;
 
@@ -3126,7 +3135,14 @@
 
     move-result v0
 
-    add-int/lit8 v0, v0, 0x1
+    iget v2, p0, Lorg/telegram/ui/SessionsActivity;->currentType:I
+
+    if-nez v2, :cond_1
+
+    const/4 v1, 0x1
+
+    :cond_1
+    add-int/2addr v0, v1
 
     return v0
 .end method
@@ -3144,12 +3160,12 @@
 
     move-object/from16 v0, p0
 
-    .line 1239
+    .line 1243
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1241
+    .line 1245
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3192,7 +3208,7 @@
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1242
+    .line 1246
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
@@ -3215,7 +3231,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1244
+    .line 1248
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -3234,7 +3250,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1245
+    .line 1249
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3247,7 +3263,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1246
+    .line 1250
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -3262,7 +3278,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1247
+    .line 1251
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -3277,7 +3293,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1248
+    .line 1252
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -3292,7 +3308,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1250
+    .line 1254
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3307,7 +3323,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1252
+    .line 1256
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3330,7 +3346,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1254
+    .line 1258
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/SessionsActivity;->emptyView:Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -3345,7 +3361,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1256
+    .line 1260
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3388,7 +3404,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1257
+    .line 1261
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3421,7 +3437,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1259
+    .line 1263
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3446,7 +3462,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1260
+    .line 1264
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3473,7 +3489,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1262
+    .line 1266
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3504,7 +3520,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1264
+    .line 1268
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3533,7 +3549,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1265
+    .line 1269
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3570,7 +3586,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1266
+    .line 1270
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3599,7 +3615,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1267
+    .line 1271
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3634,7 +3650,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1268
+    .line 1272
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/SessionsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -3663,7 +3679,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1270
+    .line 1274
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/SessionsActivity;->undoView:Lorg/telegram/ui/Components/UndoView;
@@ -3686,7 +3702,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1271
+    .line 1275
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/SessionsActivity;->undoView:Lorg/telegram/ui/Components/UndoView;
@@ -3717,7 +3733,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1272
+    .line 1276
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/SessionsActivity;->undoView:Lorg/telegram/ui/Components/UndoView;
@@ -3742,7 +3758,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1273
+    .line 1277
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/SessionsActivity;->undoView:Lorg/telegram/ui/Components/UndoView;
@@ -3781,7 +3797,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1274
+    .line 1278
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/SessionsActivity;->undoView:Lorg/telegram/ui/Components/UndoView;
@@ -3808,7 +3824,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1275
+    .line 1279
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/SessionsActivity;->undoView:Lorg/telegram/ui/Components/UndoView;
@@ -3833,7 +3849,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1276
+    .line 1280
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/SessionsActivity;->undoView:Lorg/telegram/ui/Components/UndoView;
@@ -3941,7 +3957,7 @@
 
     move-result p1
 
-    .line 672
+    .line 676
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -4050,7 +4066,7 @@
 .method public onRequestPermissionsResultFragment(I[Ljava/lang/String;[I)V
     .locals 2
 
-    .line 1283
+    .line 1287
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object p2
@@ -4064,7 +4080,7 @@
 
     if-ne p1, p2, :cond_2
 
-    .line 1287
+    .line 1291
     array-length p1, p3
 
     const/4 p2, 0x0
@@ -4075,12 +4091,12 @@
 
     if-nez p1, :cond_1
 
-    .line 1288
+    .line 1292
     invoke-direct {p0}, Lorg/telegram/ui/SessionsActivity;->openCameraScanActivity()V
 
     goto :goto_0
 
-    .line 1290
+    .line 1294
     :cond_1
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -4094,7 +4110,7 @@
 
     const-string v0, "QRCodePermissionNoCameraWithHint"
 
-    .line 1291
+    .line 1295
     invoke-static {v0, p3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p3
@@ -4111,7 +4127,7 @@
 
     const-string v0, "PermissionOpenSettings"
 
-    .line 1292
+    .line 1296
     invoke-static {v0, p3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p3
@@ -4128,7 +4144,7 @@
 
     const-string v0, "ContactsPermissionAlertNotNow"
 
-    .line 1301
+    .line 1305
     invoke-static {v0, p3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p3
@@ -4145,7 +4161,7 @@
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
 
-    .line 1302
+    .line 1306
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
@@ -4154,7 +4170,7 @@
 
     move-result-object p1
 
-    .line 1303
+    .line 1307
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     :cond_2
@@ -4238,7 +4254,7 @@
 .method public setDelegate(Lorg/telegram/ui/SessionsActivity$Delegate;)V
     .locals 0
 
-    .line 1316
+    .line 1320
     iput-object p1, p0, Lorg/telegram/ui/SessionsActivity;->delegate:Lorg/telegram/ui/SessionsActivity$Delegate;
 
     return-void

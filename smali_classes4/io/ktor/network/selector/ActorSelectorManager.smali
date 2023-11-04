@@ -1054,7 +1054,7 @@
 
     if-eqz p1, :cond_0
 
-    const-string v0, "keyFor(selector)"
+    const-string/jumbo v0, "keyFor(selector)"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

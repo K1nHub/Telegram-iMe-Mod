@@ -55,7 +55,7 @@ public final class TronBlockHeaderResponse {
     }
 
     public int hashCode() {
-        return (((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.number) * 31) + this.txTrieRoot.hashCode()) * 31) + this.witnessAddress.hashCode()) * 31) + this.parentHash.hashCode()) * 31) + this.version) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.timestamp);
+        return (((((((((ProfileData$$ExternalSyntheticBackport0.m1018m(this.number) * 31) + this.txTrieRoot.hashCode()) * 31) + this.witnessAddress.hashCode()) * 31) + this.parentHash.hashCode()) * 31) + this.version) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.timestamp);
     }
 
     public String toString() {

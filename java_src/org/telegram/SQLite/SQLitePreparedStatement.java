@@ -102,7 +102,7 @@ public class SQLitePreparedStatement {
         if (BuildVars.LOGS_ENABLED) {
             long elapsedRealtime = SystemClock.elapsedRealtime() - this.startTime;
             if (elapsedRealtime > 500) {
-                FileLog.m100d("sqlite query " + this.query + " took " + elapsedRealtime + "ms");
+                FileLog.m102d("sqlite query " + this.query + " took " + elapsedRealtime + "ms");
             }
         }
         try {
@@ -110,7 +110,7 @@ public class SQLitePreparedStatement {
             finalize(this.sqliteStatementHandle);
         } catch (SQLiteException e) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m98e(e.getMessage(), e);
+                FileLog.m100e(e.getMessage(), e);
             }
         }
     }

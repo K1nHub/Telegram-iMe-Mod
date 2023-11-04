@@ -132,7 +132,7 @@
 
     if-eq p0, v0, :cond_5
 
-    const-string v3, "isVisibleForProtectedAndPackage"
+    const-string/jumbo v3, "isVisibleForProtectedAndPackage"
 
     aput-object v3, v5, v4
 
@@ -171,8 +171,6 @@
 
     :goto_5
     throw p0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

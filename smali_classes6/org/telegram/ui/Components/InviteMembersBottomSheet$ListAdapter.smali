@@ -22,7 +22,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)V
     .locals 0
 
-    .line 618
+    .line 621
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet;Lorg/telegram/ui/Components/InviteMembersBottomSheet$1;)V
     .locals 0
 
-    .line 618
+    .line 621
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;-><init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)V
 
     return-void
@@ -44,7 +44,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 760
+    .line 763
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$2500(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)I
@@ -57,7 +57,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 735
+    .line 738
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$2100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)I
@@ -70,7 +70,7 @@
 
     return p1
 
-    .line 737
+    .line 740
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -84,7 +84,7 @@
 
     return p1
 
-    .line 739
+    .line 742
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -106,7 +106,7 @@
 
     return p1
 
-    .line 741
+    .line 744
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -120,7 +120,7 @@
 
     return p1
 
-    .line 743
+    .line 746
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -143,7 +143,7 @@
 .method public getObject(I)Lorg/telegram/tgnet/TLObject;
     .locals 3
 
-    .line 670
+    .line 673
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$1100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Lorg/telegram/ui/Components/InviteMembersBottomSheet$InviteMembersBottomSheetDelegate;
@@ -152,7 +152,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 671
+    .line 674
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$1300(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Ljava/util/ArrayList;
@@ -173,7 +173,7 @@
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 672
+    .line 675
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
@@ -182,7 +182,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 673
+    .line 676
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$1400(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)I
@@ -205,7 +205,7 @@
 
     return-object p1
 
-    .line 675
+    .line 678
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -231,7 +231,7 @@
 
     return-object p1
 
-    .line 678
+    .line 681
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -259,7 +259,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 3
 
-    .line 752
+    .line 755
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -291,7 +291,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 10
 
-    .line 685
+    .line 688
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$1700(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Z
@@ -300,7 +300,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 686
+    .line 689
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/UsersAlertBase;->emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
@@ -309,7 +309,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/StickerEmptyView;->setVisibility(I)V
 
-    .line 689
+    .line 692
     :cond_0
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -325,43 +325,43 @@
 
     goto/16 :goto_5
 
-    .line 694
+    .line 697
     :cond_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
-    .line 695
+    .line 698
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->getObject(I)Lorg/telegram/tgnet/TLObject;
 
     move-result-object v0
 
-    .line 697
+    .line 700
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->getObject()Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 699
+    .line 702
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$User;
 
     const-wide/16 v3, 0x0
 
     if-eqz v2, :cond_2
 
-    .line 700
+    .line 703
     check-cast v1, Lorg/telegram/tgnet/TLRPC$User;
 
     iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     goto :goto_0
 
-    .line 701
+    .line 704
     :cond_2
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v2, :cond_3
 
-    .line 702
+    .line 705
     check-cast v1, Lorg/telegram/tgnet/TLRPC$Chat;
 
     iget-wide v1, v1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -373,7 +373,7 @@
     :cond_3
     move-wide v1, v3
 
-    .line 707
+    .line 710
     :goto_0
     iget-object v5, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -399,25 +399,25 @@
 
     invoke-virtual {p1, v0, v5, v5, p2}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setObject(Lorg/telegram/tgnet/TLObject;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
-    .line 709
+    .line 712
     instance-of p2, v0, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz p2, :cond_5
 
-    .line 710
+    .line 713
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
     iget-wide v8, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     goto :goto_2
 
-    .line 711
+    .line 714
     :cond_5
     instance-of p2, v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz p2, :cond_6
 
-    .line 712
+    .line 715
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
     iget-wide v8, v0, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -434,7 +434,7 @@
 
     if-eqz p2, :cond_d
 
-    .line 718
+    .line 721
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$1700(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Z
@@ -443,7 +443,7 @@
 
     if-eqz p2, :cond_8
 
-    .line 719
+    .line 722
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$1900(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Ljava/lang/Long;
@@ -478,7 +478,7 @@
 
     goto :goto_5
 
-    .line 721
+    .line 724
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -500,15 +500,15 @@
 
     if-ltz p2, :cond_9
 
-    .line 722
+    .line 725
     invoke-virtual {p1, v6, v7}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setChecked(ZZ)V
 
-    .line 723
+    .line 726
     invoke-virtual {p1, v7}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setCheckBoxEnabled(Z)V
 
     goto :goto_5
 
-    .line 725
+    .line 728
     :cond_9
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -539,12 +539,12 @@
     :cond_b
     invoke-virtual {p1, p2, v7}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setChecked(ZZ)V
 
-    .line 726
+    .line 729
     invoke-virtual {p1, v6}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setCheckBoxEnabled(Z)V
 
     goto :goto_5
 
-    .line 691
+    .line 694
     :cond_c
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -558,7 +558,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 9
 
-    .line 623
+    .line 626
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -583,12 +583,12 @@
 
     if-eq p2, v0, :cond_0
 
-    .line 628
+    .line 631
     new-instance p2, Lorg/telegram/ui/Cells/ManageChatTextCell;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/ManageChatTextCell;-><init>(Landroid/content/Context;)V
 
-    .line 629
+    .line 632
     sget p1, Lorg/telegram/messenger/R$string;->VoipGroupCopyInviteLink:I
 
     const-string v0, "VoipGroupCopyInviteLink"
@@ -609,14 +609,14 @@
 
     invoke-virtual/range {v3 .. v8}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setText(Ljava/lang/String;Ljava/lang/String;IIZ)V
 
-    .line 630
+    .line 633
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
 
     invoke-virtual {p2, p1, p1}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(II)V
 
     goto :goto_2
 
-    .line 648
+    .line 651
     :cond_0
     new-instance p2, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter$2;
 
@@ -624,7 +624,7 @@
 
     invoke-direct {p2, p0, p1, v0, v1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter$2;-><init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;Landroid/content/Context;Landroid/view/View;I)V
 
-    .line 655
+    .line 658
     new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     const/4 v0, -0x1
@@ -633,14 +633,14 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 656
+    .line 659
     iget-object p1, p2, Lorg/telegram/ui/Components/StickerEmptyView;->subtitle:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/16 v0, 0x8
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 657
+    .line 660
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$1100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Lorg/telegram/ui/Components/InviteMembersBottomSheet$InviteMembersBottomSheetDelegate;
@@ -649,7 +649,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 658
+    .line 661
     iget-object p1, p2, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->FilterNoChats:I
@@ -664,7 +664,7 @@
 
     goto :goto_0
 
-    .line 660
+    .line 663
     :cond_1
     iget-object p1, p2, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
 
@@ -678,13 +678,13 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 662
+    .line 665
     :goto_0
     invoke-virtual {p2, v2}, Lorg/telegram/ui/Components/StickerEmptyView;->setAnimateLayoutChange(Z)V
 
     goto :goto_2
 
-    .line 645
+    .line 648
     :cond_2
     new-instance p2, Landroid/view/View;
 
@@ -692,7 +692,7 @@
 
     goto :goto_2
 
-    .line 642
+    .line 645
     :cond_3
     new-instance p2, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
@@ -716,13 +716,13 @@
 
     goto :goto_2
 
-    .line 634
+    .line 637
     :cond_5
     new-instance p2, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter$1;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter$1;-><init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet$ListAdapter;Landroid/content/Context;)V
 
-    .line 666
+    .line 669
     :goto_2
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

@@ -20,7 +20,7 @@ public class CrashlyticsFileMarker {
             return getMarkerFile().createNewFile();
         } catch (IOException e) {
             Logger logger = Logger.getLogger();
-            logger.m1035e("Error creating marker: " + this.markerName, e);
+            logger.m1036e("Error creating marker: " + this.markerName, e);
             return false;
         }
     }

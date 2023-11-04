@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;)V
     .locals 0
 
-    .line 1138
+    .line 1142
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$5;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -35,7 +35,7 @@
 .method public onItemClick(I)V
     .locals 0
 
-    .line 1141
+    .line 1145
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$5;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ShareAlert;->onBackPressed()V

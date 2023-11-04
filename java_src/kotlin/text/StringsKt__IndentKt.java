@@ -25,6 +25,7 @@ public class StringsKt__IndentKt extends StringsKt__AppendableKt {
     public static final String replaceIndentByMargin(String str, String newIndent, String marginPrefix) {
         int i;
         String invoke;
+        boolean isWhitespace;
         Intrinsics.checkNotNullParameter(str, "<this>");
         Intrinsics.checkNotNullParameter(newIndent, "newIndent");
         Intrinsics.checkNotNullParameter(marginPrefix, "marginPrefix");
@@ -53,12 +54,13 @@ public class StringsKt__IndentKt extends StringsKt__AppendableKt {
                     if (i4 >= length2) {
                         i = -1;
                         break;
-                    } else if (!CharsKt.isWhitespace(str2.charAt(i4))) {
+                    }
+                    isWhitespace = CharsKt__CharJVMKt.isWhitespace(str2.charAt(i4));
+                    if (!isWhitespace) {
                         i = i4;
                         break;
-                    } else {
-                        i4++;
                     }
+                    i4++;
                 }
                 if (i != -1) {
                     int i5 = i;
@@ -156,17 +158,19 @@ public class StringsKt__IndentKt extends StringsKt__AppendableKt {
     }
 
     private static final int indentWidth$StringsKt__IndentKt(String str) {
+        boolean isWhitespace;
         int length = str.length();
         int i = 0;
         while (true) {
             if (i >= length) {
                 i = -1;
                 break;
-            } else if (!CharsKt.isWhitespace(str.charAt(i))) {
-                break;
-            } else {
-                i++;
             }
+            isWhitespace = CharsKt__CharJVMKt.isWhitespace(str.charAt(i));
+            if (!isWhitespace) {
+                break;
+            }
+            i++;
         }
         return i == -1 ? str.length() : i;
     }

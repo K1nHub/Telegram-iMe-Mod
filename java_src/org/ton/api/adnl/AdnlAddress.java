@@ -9,7 +9,7 @@ import kotlinx.serialization.Polymorphic;
 import kotlinx.serialization.SealedClassSerializer;
 import kotlinx.serialization.Serializable;
 import kotlinx.serialization.json.JsonClassDiscriminator;
-import org.ton.p044tl.TlCombinator;
+import org.ton.p045tl.TlCombinator;
 /* compiled from: AdnlAddress.kt */
 @Polymorphic
 @JsonClassDiscriminator(discriminator = "@type")
@@ -24,7 +24,7 @@ public interface AdnlAddress {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
 
         private Companion() {
-            super(Reflection.getOrCreateKotlinClass(AdnlAddress.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AdnlAddressUdp.class), AdnlAddressUdp.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AdnlAddressUdp6.class), AdnlAddressUdp6.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AdnlAddressTunnel.class), AdnlAddressTunnel.Companion));
+            super(Reflection.getOrCreateKotlinClass(AdnlAddress.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AdnlAddressUdp.class), AdnlAddressUdp.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AdnlAddressUdp6.class), AdnlAddressUdp6.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AdnlAddressTunnel.class), AdnlAddressTunnel.Companion));
         }
 
         public final KSerializer<AdnlAddress> serializer() {
@@ -32,7 +32,7 @@ public interface AdnlAddress {
             KClass[] kClassArr = {Reflection.getOrCreateKotlinClass(AdnlAddressTunnel.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp6.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp6.class)};
             AdnlAddressUdp$$serializer adnlAddressUdp$$serializer = AdnlAddressUdp$$serializer.INSTANCE;
             AdnlAddressUdp6$$serializer adnlAddressUdp6$$serializer = AdnlAddressUdp6$$serializer.INSTANCE;
-            return new SealedClassSerializer("org.ton.api.adnl.AdnlAddress", orCreateKotlinClass, kClassArr, new KSerializer[]{AdnlAddressTunnel$$serializer.INSTANCE, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer}, new Annotation[]{new C7424x63816b8c("@type")});
+            return new SealedClassSerializer("org.ton.api.adnl.AdnlAddress", orCreateKotlinClass, kClassArr, new KSerializer[]{AdnlAddressTunnel$$serializer.INSTANCE, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer}, new Annotation[]{new C7499x63816b8c("@type")});
         }
     }
 }

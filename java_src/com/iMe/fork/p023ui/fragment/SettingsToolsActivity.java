@@ -23,15 +23,15 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p042ui.ActionBar.C3702ActionBar;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.Cells.TextCell;
-import org.telegram.p042ui.Components.LinkSpanDrawable;
-import org.telegram.p042ui.Components.RecyclerListView;
-import org.telegram.p042ui.Components.StickerEmptyView;
+import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Cells.TextCell;
+import org.telegram.p043ui.Components.LinkSpanDrawable;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.StickerEmptyView;
 /* compiled from: SettingsToolsActivity.kt */
 /* renamed from: com.iMe.fork.ui.fragment.SettingsToolsActivity */
 /* loaded from: classes3.dex */
@@ -120,19 +120,19 @@ public final class SettingsToolsActivity extends MvpFragment {
         return rootView;
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         getListAdapter().notifyDataSetChanged();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3702ActionBar c3702ActionBar = this.actionBar;
+        C3706ActionBar c3706ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3702ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3706ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
         return arrayListOf;
     }
 
@@ -150,7 +150,7 @@ public final class SettingsToolsActivity extends MvpFragment {
         recyclerListView.setLayoutManager(new LinearLayoutManager(recyclerListView.getContext()));
         recyclerListView.setAdapter(getListAdapter());
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.fork.ui.fragment.SettingsToolsActivity$$ExternalSyntheticLambda0
-            @Override // org.telegram.p042ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 SettingsToolsActivity.initListView$lambda$3$lambda$2(SettingsToolsActivity.this, view, i);
             }
@@ -168,7 +168,7 @@ public final class SettingsToolsActivity extends MvpFragment {
     public final StickerEmptyView initEmptyView() {
         StickerEmptyView stickerEmptyView = new StickerEmptyView(getParentActivity(), null, 1);
         stickerEmptyView.setAnimateLayoutChange(true);
-        stickerEmptyView.title.setText(LocaleController.getString("SettingsNoResults", C3630R.string.SettingsNoResults));
+        stickerEmptyView.title.setText(LocaleController.getString("SettingsNoResults", C3634R.string.SettingsNoResults));
         LinkSpanDrawable.LinksTextView subtitle = stickerEmptyView.subtitle;
         Intrinsics.checkNotNullExpressionValue(subtitle, "subtitle");
         ViewExtKt.gone$default(subtitle, false, 1, null);
@@ -177,12 +177,12 @@ public final class SettingsToolsActivity extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3702ActionBar c3702ActionBar = this.actionBar;
-        c3702ActionBar.setBackButtonImage(C3630R.C3632drawable.ic_ab_back);
-        c3702ActionBar.setAllowOverlayTitle(true);
-        c3702ActionBar.setTitle(LocaleController.getInternalString(C3630R.string.settings_tools));
-        c3702ActionBar.setActionBarMenuOnItemClick(new C3702ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.SettingsToolsActivity$setupActionBar$1$1
-            @Override // org.telegram.p042ui.ActionBar.C3702ActionBar.ActionBarMenuOnItemClick
+        C3706ActionBar c3706ActionBar = this.actionBar;
+        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        c3706ActionBar.setAllowOverlayTitle(true);
+        c3706ActionBar.setTitle(LocaleController.getInternalString(C3634R.string.settings_tools));
+        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.SettingsToolsActivity$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     SettingsToolsActivity.this.finishFragment();
@@ -196,7 +196,7 @@ public final class SettingsToolsActivity extends MvpFragment {
     /* renamed from: com.iMe.fork.ui.fragment.SettingsToolsActivity$ListAdapter */
     /* loaded from: classes3.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        @Override // org.telegram.p042ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
             return true;
         }

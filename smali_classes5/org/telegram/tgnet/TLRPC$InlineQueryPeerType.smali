@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 27984
+    .line 28265
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 27990
+    .line 28271
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inlineQueryPeerTypeBroadcast;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 28002
+    .line 28283
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inlineQueryPeerTypeMegagroup;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 28005
+    .line 28286
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inlineQueryPeerTypeSameBotPM;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 27999
+    .line 28280
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inlineQueryPeerTypeBotPM;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 27993
+    .line 28274
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inlineQueryPeerTypeChat;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 27996
+    .line 28277
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inlineQueryPeerTypePM;
 
@@ -75,7 +75,7 @@
 
     goto :goto_1
 
-    .line 28009
+    .line 28290
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -105,7 +105,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 28012
+    .line 28293
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

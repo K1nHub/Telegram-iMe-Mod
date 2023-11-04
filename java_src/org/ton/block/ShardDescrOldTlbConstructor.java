@@ -18,10 +18,10 @@ public final class ShardDescrOldTlbConstructor extends org.ton.tlb.TlbConstructo
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public ShardDescrOld loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        int mo5066loadUInt32pVg5ArA = cellSlice.mo5066loadUInt32pVg5ArA();
-        int mo5066loadUInt32pVg5ArA2 = cellSlice.mo5066loadUInt32pVg5ArA();
-        long mo5067loadUInt64sVKNKU = cellSlice.mo5067loadUInt64sVKNKU();
-        long mo5067loadUInt64sVKNKU2 = cellSlice.mo5067loadUInt64sVKNKU();
+        int mo5220loadUInt32pVg5ArA = cellSlice.mo5220loadUInt32pVg5ArA();
+        int mo5220loadUInt32pVg5ArA2 = cellSlice.mo5220loadUInt32pVg5ArA();
+        long mo5221loadUInt64sVKNKU = cellSlice.mo5221loadUInt64sVKNKU();
+        long mo5221loadUInt64sVKNKU2 = cellSlice.mo5221loadUInt64sVKNKU();
         BitString loadBits = cellSlice.loadBits(256);
         BitString loadBits2 = cellSlice.loadBits(256);
         boolean loadBit = cellSlice.loadBit();
@@ -30,23 +30,23 @@ public final class ShardDescrOldTlbConstructor extends org.ton.tlb.TlbConstructo
         boolean loadBit4 = cellSlice.loadBit();
         boolean loadBit5 = cellSlice.loadBit();
         int intValue = cellSlice.loadInt(3).intValue();
-        int mo5066loadUInt32pVg5ArA3 = cellSlice.mo5066loadUInt32pVg5ArA();
-        long mo5067loadUInt64sVKNKU3 = cellSlice.mo5067loadUInt64sVKNKU();
-        int mo5066loadUInt32pVg5ArA4 = cellSlice.mo5066loadUInt32pVg5ArA();
-        int mo5066loadUInt32pVg5ArA5 = cellSlice.mo5066loadUInt32pVg5ArA();
+        int mo5220loadUInt32pVg5ArA3 = cellSlice.mo5220loadUInt32pVg5ArA();
+        long mo5221loadUInt64sVKNKU3 = cellSlice.mo5221loadUInt64sVKNKU();
+        int mo5220loadUInt32pVg5ArA4 = cellSlice.mo5220loadUInt32pVg5ArA();
+        int mo5220loadUInt32pVg5ArA5 = cellSlice.mo5220loadUInt32pVg5ArA();
         FutureSplitMerge loadTlb = FutureSplitMerge.Companion.loadTlb(cellSlice);
         CurrencyCollection.Companion companion = CurrencyCollection.Companion;
-        return new ShardDescrOld(mo5066loadUInt32pVg5ArA, mo5066loadUInt32pVg5ArA2, mo5067loadUInt64sVKNKU, mo5067loadUInt64sVKNKU2, loadBits, loadBits2, loadBit, loadBit2, loadBit3, loadBit4, loadBit5, intValue, mo5066loadUInt32pVg5ArA3, mo5067loadUInt64sVKNKU3, mo5066loadUInt32pVg5ArA4, mo5066loadUInt32pVg5ArA5, loadTlb, companion.loadTlb(cellSlice), companion.loadTlb(cellSlice), null);
+        return new ShardDescrOld(mo5220loadUInt32pVg5ArA, mo5220loadUInt32pVg5ArA2, mo5221loadUInt64sVKNKU, mo5221loadUInt64sVKNKU2, loadBits, loadBits2, loadBit, loadBit2, loadBit3, loadBit4, loadBit5, intValue, mo5220loadUInt32pVg5ArA3, mo5221loadUInt64sVKNKU3, mo5220loadUInt32pVg5ArA4, mo5220loadUInt32pVg5ArA5, loadTlb, companion.loadTlb(cellSlice), companion.loadTlb(cellSlice), null);
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
     public void storeTlb(CellBuilder cellBuilder, ShardDescrOld value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m5024getSeqNopVg5ArA());
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m5023getRegMcSeqnopVg5ArA());
-        cellBuilder.mo5057storeUInt64VKZWuLQ(value.m5025getStartLtsVKNKU());
-        cellBuilder.mo5057storeUInt64VKZWuLQ(value.m5018getEndLtsVKNKU());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5178getSeqNopVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5177getRegMcSeqnopVg5ArA());
+        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5179getStartLtsVKNKU());
+        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5172getEndLtsVKNKU());
         cellBuilder.storeBits(value.getRootHash());
         cellBuilder.storeBits(value.getFileHash());
         cellBuilder.storeBit(value.getBeforeSplit());
@@ -55,10 +55,10 @@ public final class ShardDescrOldTlbConstructor extends org.ton.tlb.TlbConstructo
         cellBuilder.storeBit(value.getWantMerge());
         cellBuilder.storeBit(value.getNxCcUpdated());
         cellBuilder.storeInt(value.getFlags(), 3);
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m5021getNextCatchainSeqnopVg5ArA());
-        cellBuilder.mo5057storeUInt64VKZWuLQ(value.m5022getNextValidatorShardsVKNKU());
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m5020getMinRefMcSeqnopVg5ArA());
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m5019getGenUtimepVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5175getNextCatchainSeqnopVg5ArA());
+        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5176getNextValidatorShardsVKNKU());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5174getMinRefMcSeqnopVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5173getGenUtimepVg5ArA());
         FutureSplitMerge.Companion.storeTlb(cellBuilder, (CellBuilder) value.getSplitMergeAt());
         CurrencyCollection.Companion companion = CurrencyCollection.Companion;
         companion.storeTlb(cellBuilder, (CellBuilder) value.getFeesCollected());

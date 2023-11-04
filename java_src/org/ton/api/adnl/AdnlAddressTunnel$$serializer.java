@@ -24,7 +24,7 @@ public final class AdnlAddressTunnel$$serializer implements GeneratedSerializer<
         PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor = new PluginGeneratedSerialDescriptor("adnl.address.tunnel", adnlAddressTunnel$$serializer, 2);
         pluginGeneratedSerialDescriptor.addElement("to", false);
         pluginGeneratedSerialDescriptor.addElement("pubkey", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7424x63816b8c("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7499x63816b8c("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

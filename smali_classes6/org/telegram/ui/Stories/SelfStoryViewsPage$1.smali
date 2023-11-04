@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 182
+    .line 183
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$1;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$RecyclerListViewInner;-><init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 186
+    .line 187
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$1;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
@@ -44,7 +44,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->access$002(Lorg/telegram/ui/Stories/SelfStoryViewsPage;I)I
 
-    .line 187
+    .line 188
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->onMeasure(II)V
 
     return-void

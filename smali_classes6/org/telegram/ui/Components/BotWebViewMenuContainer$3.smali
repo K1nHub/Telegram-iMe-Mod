@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewMenuContainer;Landroid/content/Context;)V
     .locals 0
 
-    .line 319
+    .line 334
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$3;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;-><init>(Landroid/content/Context;)V
@@ -35,12 +35,12 @@
 .method protected onMeasure(II)V
     .locals 5
 
-    .line 322
+    .line 337
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 325
+    .line 340
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v1
@@ -67,7 +67,7 @@
 
     goto :goto_0
 
-    .line 328
+    .line 343
     :cond_0
     div-int/2addr v0, v2
 
@@ -80,7 +80,7 @@
 
     move v0, v1
 
-    .line 334
+    .line 349
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->getOffsetY()F
 
@@ -92,22 +92,22 @@
 
     if-eqz v3, :cond_2
 
-    .line 335
+    .line 350
     iget-object v3, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$3;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     const/4 v4, 0x1
 
-    invoke-static {v3, v4}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1402(Lorg/telegram/ui/Components/BotWebViewMenuContainer;Z)Z
+    invoke-static {v3, v4}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1602(Lorg/telegram/ui/Components/BotWebViewMenuContainer;Z)Z
 
-    .line 336
+    .line 351
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->setOffsetY(F)V
 
-    .line 337
+    .line 352
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$3;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1402(Lorg/telegram/ui/Components/BotWebViewMenuContainer;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1602(Lorg/telegram/ui/Components/BotWebViewMenuContainer;Z)Z
 
-    .line 340
+    .line 355
     :cond_2
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -151,10 +151,10 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 345
+    .line 360
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$3;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1400(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1600(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Z
 
     move-result v0
 
@@ -162,7 +162,7 @@
 
     return-void
 
-    .line 348
+    .line 363
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 

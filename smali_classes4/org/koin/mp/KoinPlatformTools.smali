@@ -85,7 +85,7 @@
         }
     .end annotation
 
-    const-string v0, "kClass"
+    const-string/jumbo v0, "kClass"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -98,7 +98,7 @@
 
     move-result-object p1
 
-    const-string v0, "kClass.java.name"
+    const-string/jumbo v0, "kClass.java.name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -153,7 +153,7 @@
 
     move-result-object v6
 
-    const-string v7, "it.className"
+    const-string/jumbo v7, "it.className"
 
     invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

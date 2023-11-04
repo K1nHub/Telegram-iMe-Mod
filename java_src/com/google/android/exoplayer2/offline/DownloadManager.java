@@ -529,7 +529,7 @@ public final class DownloadManager {
                         this.downloads.add(downloadCursor.getDownload());
                     }
                 } catch (IOException e) {
-                    Log.m1109e(DownloadManager.TAG, "Failed to load index.", e);
+                    Log.m1110e(DownloadManager.TAG, "Failed to load index.", e);
                     this.downloads.clear();
                 }
                 Util.closeQuietly(downloadCursor);
@@ -559,7 +559,7 @@ public final class DownloadManager {
                 try {
                     this.downloadIndex.setStopReason(i);
                 } catch (IOException e) {
-                    Log.m1109e(DownloadManager.TAG, "Failed to set manual stop reason", e);
+                    Log.m1110e(DownloadManager.TAG, "Failed to set manual stop reason", e);
                 }
             } else {
                 Download download = getDownload(str, false);
@@ -569,7 +569,7 @@ public final class DownloadManager {
                     try {
                         this.downloadIndex.setStopReason(str, i);
                     } catch (IOException e2) {
-                        Log.m1109e(DownloadManager.TAG, "Failed to set manual stop reason: " + str, e2);
+                        Log.m1110e(DownloadManager.TAG, "Failed to set manual stop reason: " + str, e2);
                     }
                 }
             }
@@ -613,7 +613,7 @@ public final class DownloadManager {
         private void removeDownload(String str) {
             Download download = getDownload(str, true);
             if (download == null) {
-                Log.m1110e(DownloadManager.TAG, "Failed to remove nonexistent download: " + str);
+                Log.m1111e(DownloadManager.TAG, "Failed to remove nonexistent download: " + str);
                 return;
             }
             putDownloadWithState(download, 5, 0);
@@ -629,7 +629,7 @@ public final class DownloadManager {
                 }
                 downloads.close();
             } catch (IOException unused) {
-                Log.m1110e(DownloadManager.TAG, "Failed to load downloads.");
+                Log.m1111e(DownloadManager.TAG, "Failed to load downloads.");
             }
             for (int i = 0; i < this.downloads.size(); i++) {
                 ArrayList<Download> arrayList2 = this.downloads;
@@ -642,7 +642,7 @@ public final class DownloadManager {
             try {
                 this.downloadIndex.setStatesToRemoving();
             } catch (IOException e) {
-                Log.m1109e(DownloadManager.TAG, "Failed to update index.", e);
+                Log.m1110e(DownloadManager.TAG, "Failed to update index.", e);
             }
             ArrayList arrayList3 = new ArrayList(this.downloads);
             for (int i3 = 0; i3 < this.downloads.size(); i3++) {
@@ -658,7 +658,7 @@ public final class DownloadManager {
             try {
                 this.downloadIndex.setDownloadingStatesToQueued();
             } catch (IOException e) {
-                Log.m1109e(DownloadManager.TAG, "Failed to update index.", e);
+                Log.m1110e(DownloadManager.TAG, "Failed to update index.", e);
             }
             this.downloads.clear();
             this.thread.quit();
@@ -770,7 +770,7 @@ public final class DownloadManager {
             }
             Exception exc = task.finalException;
             if (exc != null) {
-                Log.m1109e(DownloadManager.TAG, "Task failed: " + task.request + ", " + z, exc);
+                Log.m1110e(DownloadManager.TAG, "Task failed: " + task.request + ", " + z, exc);
             }
             Download download = (Download) Assertions.checkNotNull(getDownload(str, false));
             int i2 = download.state;
@@ -792,7 +792,7 @@ public final class DownloadManager {
             try {
                 this.downloadIndex.putDownload(download2);
             } catch (IOException e) {
-                Log.m1109e(DownloadManager.TAG, "Failed to update index.", e);
+                Log.m1110e(DownloadManager.TAG, "Failed to update index.", e);
             }
             this.mainHandler.obtainMessage(2, new DownloadUpdate(download2, false, new ArrayList(this.downloads), exc)).sendToTarget();
         }
@@ -808,7 +808,7 @@ public final class DownloadManager {
             try {
                 this.downloadIndex.removeDownload(download.request.f205id);
             } catch (IOException unused) {
-                Log.m1110e(DownloadManager.TAG, "Failed to remove from database");
+                Log.m1111e(DownloadManager.TAG, "Failed to remove from database");
             }
             this.mainHandler.obtainMessage(2, new DownloadUpdate(download, true, new ArrayList(this.downloads), null)).sendToTarget();
         }
@@ -820,7 +820,7 @@ public final class DownloadManager {
                     try {
                         this.downloadIndex.putDownload(download);
                     } catch (IOException e) {
-                        Log.m1109e(DownloadManager.TAG, "Failed to update index.", e);
+                        Log.m1110e(DownloadManager.TAG, "Failed to update index.", e);
                     }
                 }
             }
@@ -853,7 +853,7 @@ public final class DownloadManager {
             try {
                 this.downloadIndex.putDownload(download);
             } catch (IOException e) {
-                Log.m1109e(DownloadManager.TAG, "Failed to update index.", e);
+                Log.m1110e(DownloadManager.TAG, "Failed to update index.", e);
             }
             this.mainHandler.obtainMessage(2, new DownloadUpdate(download, false, new ArrayList(this.downloads), null)).sendToTarget();
             return download;
@@ -868,7 +868,7 @@ public final class DownloadManager {
                 try {
                     return this.downloadIndex.getDownload(str);
                 } catch (IOException e) {
-                    Log.m1109e(DownloadManager.TAG, "Failed to load download: " + str, e);
+                    Log.m1110e(DownloadManager.TAG, "Failed to load download: " + str, e);
                     return null;
                 }
             }

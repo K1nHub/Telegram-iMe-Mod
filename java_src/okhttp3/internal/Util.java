@@ -62,7 +62,7 @@ import p033j$.util.DesugarTimeZone;
 /* loaded from: classes4.dex */
 public final class Util {
     public static final byte[] EMPTY_BYTE_ARRAY;
-    public static final Headers EMPTY_HEADERS = Headers.Companion.m117of(new String[0]);
+    public static final Headers EMPTY_HEADERS = Headers.Companion.m119of(new String[0]);
     public static final ResponseBody EMPTY_RESPONSE;
     private static final Options UNICODE_BOMS;
     public static final TimeZone UTC;
@@ -105,7 +105,7 @@ public final class Util {
         RequestBody.Companion.create$default(RequestBody.Companion, bArr, (MediaType) null, 0, 0, 7, (Object) null);
         Options.Companion companion = Options.Companion;
         ByteString.Companion companion2 = ByteString.Companion;
-        UNICODE_BOMS = companion.m115of(companion2.decodeHex("efbbbf"), companion2.decodeHex("feff"), companion2.decodeHex("fffe"), companion2.decodeHex("0000ffff"), companion2.decodeHex("ffff0000"));
+        UNICODE_BOMS = companion.m117of(companion2.decodeHex("efbbbf"), companion2.decodeHex("feff"), companion2.decodeHex("fffe"), companion2.decodeHex("0000ffff"), companion2.decodeHex("ffff0000"));
         TimeZone timeZone = DesugarTimeZone.getTimeZone("GMT");
         Intrinsics.checkNotNull(timeZone);
         UTC = timeZone;

@@ -39,7 +39,7 @@
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda4;->f$2:Z
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->$r8$lambda$nlGXb09y2TS81m0SrbXMwDDvfq4(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;ZLandroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->$r8$lambda$86h2dJ_l6zCi7wOcQnWvO8oLUMM(Lorg/telegram/ui/Components/BotWebViewContainer;[Ljava/lang/String;ZLandroid/content/DialogInterface;I)V
 
     return-void
 .end method

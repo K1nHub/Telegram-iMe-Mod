@@ -9,7 +9,7 @@ import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlin.sequences.SequenceScope;
 /* compiled from: EmptyBitString.kt */
-@DebugMetadata(m143c = "org.ton.bitstring.EmptyBitString$iterator$1", m142f = "EmptyBitString.kt", m141l = {}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.ton.bitstring.EmptyBitString$iterator$1", m144f = "EmptyBitString.kt", m143l = {}, m142m = "invokeSuspend")
 /* loaded from: classes6.dex */
 final class EmptyBitString$iterator$1 extends RestrictedSuspendLambda implements Function2<SequenceScope<? super Boolean>, Continuation<? super Unit>, Object> {
     int label;

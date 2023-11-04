@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;Landroid/content/Context;Lorg/telegram/ui/Stories/recorder/PaintView;)V
     .locals 0
 
-    .line 3134
+    .line 3140
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$1;->this$1:Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 3135
+    .line 3141
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
@@ -44,14 +44,14 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 5
 
-    .line 3138
+    .line 3144
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$1;->this$1:Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v1, :cond_3
 
-    .line 3139
+    .line 3145
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageSwitchFill:Z
 
     if-eqz v1, :cond_0
@@ -70,7 +70,7 @@
     :cond_1
     if-eqz v1, :cond_2
 
-    .line 3140
+    .line 3146
     iget v0, v0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageSwitchT:F
 
     goto :goto_0
@@ -95,15 +95,15 @@
 
     div-float/2addr v0, v1
 
-    .line 3141
+    .line 3147
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 3142
+    .line 3148
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$1;->path:Landroid/graphics/Path;
 
     invoke-virtual {v2}, Landroid/graphics/Path;->rewind()V
 
-    .line 3143
+    .line 3149
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$1;->path:Landroid/graphics/Path;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -126,22 +126,22 @@
 
     invoke-virtual {v2, v3, v4, v0, v1}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 3144
+    .line 3150
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$1;->path:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 3145
+    .line 3151
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p2
 
-    .line 3146
+    .line 3152
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return p2
 
-    .line 3150
+    .line 3156
     :cond_3
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 

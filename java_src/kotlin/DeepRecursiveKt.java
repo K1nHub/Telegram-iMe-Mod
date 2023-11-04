@@ -17,6 +17,6 @@ public final class DeepRecursiveKt {
         Object coroutine_suspended;
         Result.Companion companion = Result.Companion;
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        UNDEFINED_RESULT = Result.m1935constructorimpl(coroutine_suspended);
+        UNDEFINED_RESULT = Result.m1940constructorimpl(coroutine_suspended);
     }
 }

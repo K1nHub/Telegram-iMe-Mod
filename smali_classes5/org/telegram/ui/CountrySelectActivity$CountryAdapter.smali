@@ -337,15 +337,15 @@
     .line 321
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    new-instance p2, Lorg/telegram/ui/CountrySelectActivity$CountryAdapter$$ExternalSyntheticLambda0;
+    new-instance p2, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda27;
 
-    invoke-direct {p2, p1}, Lorg/telegram/ui/CountrySelectActivity$CountryAdapter$$ExternalSyntheticLambda0;-><init>(Ljava/text/Collator;)V
+    invoke-direct {p2, p1}, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda27;-><init>(Ljava/text/Collator;)V
 
     goto :goto_4
 
     .line 323
     :cond_7
-    sget-object p2, Lorg/telegram/ui/CountrySelectActivity$CountryAdapter$$ExternalSyntheticLambda2;->INSTANCE:Lorg/telegram/ui/CountrySelectActivity$CountryAdapter$$ExternalSyntheticLambda2;
+    sget-object p2, Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda29;->INSTANCE:Lorg/telegram/ui/Components/Premium/boosts/BoostRepository$$ExternalSyntheticLambda29;
 
     .line 325
     :goto_4
@@ -378,9 +378,9 @@
     check-cast p3, Ljava/util/ArrayList;
 
     .line 328
-    new-instance p4, Lorg/telegram/ui/CountrySelectActivity$CountryAdapter$$ExternalSyntheticLambda1;
+    new-instance p4, Lorg/telegram/ui/CountrySelectActivity$CountryAdapter$$ExternalSyntheticLambda0;
 
-    invoke-direct {p4, p2}, Lorg/telegram/ui/CountrySelectActivity$CountryAdapter$$ExternalSyntheticLambda1;-><init>(Ljava/util/Comparator;)V
+    invoke-direct {p4, p2}, Lorg/telegram/ui/CountrySelectActivity$CountryAdapter$$ExternalSyntheticLambda0;-><init>(Ljava/util/Comparator;)V
 
     invoke-static {p3, p4}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 

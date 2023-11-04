@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.dash;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.extractor.ChunkIndex;
 import com.google.android.exoplayer2.source.dash.manifest.RangedUri;
 /* loaded from: classes.dex */
@@ -20,7 +20,7 @@ public final class DashWrappingSegmentIndex implements DashSegmentIndex {
 
     @Override // com.google.android.exoplayer2.source.dash.DashSegmentIndex
     public long getNextSegmentAvailableTimeUs(long j, long j2) {
-        return C0479C.TIME_UNSET;
+        return C0485C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.source.dash.DashSegmentIndex

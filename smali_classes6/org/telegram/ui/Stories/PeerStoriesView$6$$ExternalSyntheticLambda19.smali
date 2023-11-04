@@ -10,11 +10,11 @@
 
 .field public final synthetic f$1:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field public final synthetic f$2:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView$6;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView$6;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda19;->f$1:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
-    iput-object p3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda19;->f$2:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object p3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda19;->f$2:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     return-void
 .end method
@@ -37,9 +37,9 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda19;->f$1:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
-    iget-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda19;->f$2:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$6$$ExternalSyntheticLambda19;->f$2:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Stories/PeerStoriesView$6;->$r8$lambda$4lqW8qGtsL9SDH8fFnzp0P3kIvE(Lorg/telegram/ui/Stories/PeerStoriesView$6;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;Lorg/telegram/tgnet/TLRPC$StoryItem;Landroid/view/View;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Stories/PeerStoriesView$6;->$r8$lambda$kLadjKqDVAp17voD29DjFf33xKo(Lorg/telegram/ui/Stories/PeerStoriesView$6;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Landroid/view/View;)V
 
     return-void
 .end method

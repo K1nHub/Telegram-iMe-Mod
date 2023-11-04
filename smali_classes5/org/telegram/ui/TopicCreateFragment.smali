@@ -1142,7 +1142,7 @@
 
     const-string v1, ""
 
-    invoke-static {v1, v0}, Lorg/telegram/ui/Components/Forum/ForumUtilities;->createTopicDrawable(Ljava/lang/String;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1, v0, v12}, Lorg/telegram/ui/Components/Forum/ForumUtilities;->createTopicDrawable(Ljava/lang/String;IZ)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 

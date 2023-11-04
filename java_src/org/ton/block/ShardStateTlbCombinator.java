@@ -10,6 +10,6 @@ public final class ShardStateTlbCombinator extends TlbCombinator<ShardState> {
     public static final ShardStateTlbCombinator INSTANCE = new ShardStateTlbCombinator();
 
     private ShardStateTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(ShardState.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(SplitState.class), SplitState.Companion.tlbConstructor()), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(ShardStateUnsplit.class), ShardStateUnsplit.Companion.tlbConstructor()));
+        super(Reflection.getOrCreateKotlinClass(ShardState.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(SplitState.class), SplitState.Companion.tlbConstructor()), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(ShardStateUnsplit.class), ShardStateUnsplit.Companion.tlbConstructor()));
     }
 }

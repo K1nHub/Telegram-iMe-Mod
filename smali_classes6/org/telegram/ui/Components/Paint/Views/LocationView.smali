@@ -20,30 +20,30 @@
 
 .field public final marker:Lorg/telegram/ui/Components/Paint/Views/LocationMarker;
 
-.field public mediaArea:Lorg/telegram/tgnet/TLRPC$MediaArea;
+.field public mediaArea:Lorg/telegram/tgnet/tl/TL_stories$MediaArea;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Components/Point;ILorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/TLRPC$MediaArea;FIII)V
+.method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Components/Point;ILorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/tl/TL_stories$MediaArea;FIII)V
     .locals 0
 
-    .line 104
+    .line 72
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/EntityView;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/Point;)V
 
-    .line 106
+    .line 74
     new-instance p2, Lorg/telegram/ui/Components/Paint/Views/LocationMarker;
 
     invoke-direct {p2, p1, p6}, Lorg/telegram/ui/Components/Paint/Views/LocationMarker;-><init>(Landroid/content/Context;F)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->marker:Lorg/telegram/ui/Components/Paint/Views/LocationMarker;
 
-    .line 107
+    .line 75
     invoke-virtual {p2, p7}, Lorg/telegram/ui/Components/Paint/Views/LocationMarker;->setMaxWidth(I)V
 
-    .line 108
-    invoke-virtual {p0, p3, p4, p5}, Lorg/telegram/ui/Components/Paint/Views/LocationView;->setLocation(ILorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/TLRPC$MediaArea;)V
+    .line 76
+    invoke-virtual {p0, p3, p4, p5}, Lorg/telegram/ui/Components/Paint/Views/LocationView;->setLocation(ILorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/tl/TL_stories$MediaArea;)V
 
-    .line 109
+    .line 77
     iput p8, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->currentType:I
 
     iput p9, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->currentColor:I
@@ -54,7 +54,7 @@
 
     const/16 p3, 0x33
 
-    .line 110
+    .line 78
     invoke-static {p1, p1, p3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p1
@@ -63,13 +63,13 @@
 
     const/4 p1, 0x0
 
-    .line 112
+    .line 80
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 113
+    .line 81
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setClipToPadding(Z)V
 
-    .line 115
+    .line 83
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->updatePosition()V
 
     return-void
@@ -78,17 +78,17 @@
 .method private static deg(D)Ljava/lang/String;
     .locals 10
 
-    .line 83
+    .line 51
     invoke-static {p0, p1}, Ljava/lang/Math;->abs(D)D
 
     move-result-wide p0
 
-    .line 85
+    .line 53
     invoke-static {p0, p1}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v0
 
-    .line 86
+    .line 54
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -115,12 +115,12 @@
 
     mul-double/2addr p0, v0
 
-    .line 89
+    .line 57
     invoke-static {p0, p1}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide p0
 
-    .line 90
+    .line 58
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -173,19 +173,19 @@
 
     move-result-object v2
 
-    .line 91
+    .line 59
     invoke-static {p0, p1}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide p0
 
     mul-double/2addr p0, v0
 
-    .line 93
+    .line 61
     invoke-static {p0, p1}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide p0
 
-    .line 94
+    .line 62
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -233,7 +233,7 @@
 .method public static geo(DD)Ljava/lang/String;
     .locals 3
 
-    .line 100
+    .line 68
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -296,7 +296,7 @@
 .method protected bridge synthetic createSelectionView()Lorg/telegram/ui/Components/Paint/Views/EntityView$SelectionView;
     .locals 1
 
-    .line 51
+    .line 19
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LocationView;->createSelectionView()Lorg/telegram/ui/Components/Paint/Views/LocationView$TextViewSelectionView;
 
     move-result-object v0
@@ -307,7 +307,7 @@
 .method protected createSelectionView()Lorg/telegram/ui/Components/Paint/Views/LocationView$TextViewSelectionView;
     .locals 2
 
-    .line 194
+    .line 162
     new-instance v0, Lorg/telegram/ui/Components/Paint/Views/LocationView$TextViewSelectionView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -322,7 +322,7 @@
 .method public getColor()I
     .locals 1
 
-    .line 167
+    .line 135
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->currentColor:I
 
     return v0
@@ -339,7 +339,7 @@
 .method protected getSelectionBounds()Lorg/telegram/ui/Components/Rect;
     .locals 7
 
-    .line 181
+    .line 149
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -348,20 +348,20 @@
 
     if-nez v0, :cond_0
 
-    .line 183
+    .line 151
     new-instance v0, Lorg/telegram/ui/Components/Rect;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/Rect;-><init>()V
 
     return-object v0
 
-    .line 185
+    .line 153
     :cond_0
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getScaleX()F
 
     move-result v0
 
-    .line 186
+    .line 154
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -386,7 +386,7 @@
 
     add-float/2addr v1, v3
 
-    .line 187
+    .line 155
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v3
@@ -409,7 +409,7 @@
 
     add-float/2addr v3, v2
 
-    .line 188
+    .line 156
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->getPositionX()F
 
     move-result v2
@@ -426,7 +426,7 @@
 
     add-float/2addr v1, v2
 
-    .line 190
+    .line 158
     new-instance v5, Lorg/telegram/ui/Components/Rect;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->getPositionY()F
@@ -451,7 +451,7 @@
 .method protected getStickyPaddingBottom()F
     .locals 1
 
-    .line 77
+    .line 45
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->marker:Lorg/telegram/ui/Components/Paint/Views/LocationMarker;
 
     iget v0, v0, Lorg/telegram/ui/Components/Paint/Views/LocationMarker;->pady:I
@@ -464,7 +464,7 @@
 .method protected getStickyPaddingLeft()F
     .locals 1
 
-    .line 62
+    .line 30
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->marker:Lorg/telegram/ui/Components/Paint/Views/LocationMarker;
 
     iget v0, v0, Lorg/telegram/ui/Components/Paint/Views/LocationMarker;->padx:I
@@ -477,7 +477,7 @@
 .method protected getStickyPaddingRight()F
     .locals 1
 
-    .line 72
+    .line 40
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->marker:Lorg/telegram/ui/Components/Paint/Views/LocationMarker;
 
     iget v0, v0, Lorg/telegram/ui/Components/Paint/Views/LocationMarker;->padx:I
@@ -490,7 +490,7 @@
 .method protected getStickyPaddingTop()F
     .locals 1
 
-    .line 67
+    .line 35
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->marker:Lorg/telegram/ui/Components/Paint/Views/LocationMarker;
 
     iget v0, v0, Lorg/telegram/ui/Components/Paint/Views/LocationMarker;->pady:I
@@ -503,7 +503,7 @@
 .method public getType()I
     .locals 1
 
-    .line 171
+    .line 139
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->currentType:I
 
     return v0
@@ -512,10 +512,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 144
+    .line 112
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 145
+    .line 113
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->updatePosition()V
 
     return-void
@@ -524,10 +524,10 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 150
+    .line 118
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 151
+    .line 119
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->updatePosition()V
 
     return-void
@@ -536,7 +536,7 @@
 .method public setColor(I)V
     .locals 1
 
-    .line 163
+    .line 131
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->currentType:I
 
     invoke-virtual {p0, v0, p1}, Lorg/telegram/ui/Components/Paint/Views/LocationView;->setType(II)V
@@ -544,23 +544,23 @@
     return-void
 .end method
 
-.method public setLocation(ILorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/TLRPC$MediaArea;)V
+.method public setLocation(ILorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/tl/TL_stories$MediaArea;)V
     .locals 3
 
-    .line 119
+    .line 87
     iput-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->location:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 120
-    iput-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->mediaArea:Lorg/telegram/tgnet/TLRPC$MediaArea;
+    .line 88
+    iput-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->mediaArea:Lorg/telegram/tgnet/tl/TL_stories$MediaArea;
 
-    .line 124
+    .line 92
     instance-of p3, p2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaGeo;
 
     const/4 v0, 0x0
 
     if-eqz p3, :cond_0
 
-    .line 125
+    .line 93
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
 
     iget-wide v1, p2, Lorg/telegram/tgnet/TLRPC$GeoPoint;->lat:D
@@ -573,20 +573,20 @@
 
     goto :goto_0
 
-    .line 126
+    .line 94
     :cond_0
     instance-of p3, p2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;
 
     if-eqz p3, :cond_1
 
-    .line 127
+    .line 95
     iget-object p3, p2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->title:Ljava/lang/String;
 
     invoke-virtual {p3}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
     move-result-object p3
 
-    .line 128
+    .line 96
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;
 
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;->emoji:Ljava/lang/String;
@@ -598,18 +598,18 @@
     :cond_1
     const-string p2, ""
 
-    .line 132
+    .line 100
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->marker:Lorg/telegram/ui/Components/Paint/Views/LocationMarker;
 
     invoke-virtual {p3, p1, v0}, Lorg/telegram/ui/Components/Paint/Views/LocationMarker;->setCountryCodeEmoji(ILjava/lang/String;)V
 
-    .line 133
+    .line 101
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->marker:Lorg/telegram/ui/Components/Paint/Views/LocationMarker;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LocationMarker;->setText(Ljava/lang/String;)V
 
-    .line 135
+    .line 103
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->updateSelectionView()V
 
     return-void
@@ -618,7 +618,7 @@
 .method public setMaxWidth(I)V
     .locals 1
 
-    .line 139
+    .line 107
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->marker:Lorg/telegram/ui/Components/Paint/Views/LocationMarker;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/LocationMarker;->setMaxWidth(I)V
@@ -629,7 +629,7 @@
 .method public setType(I)V
     .locals 2
 
-    .line 155
+    .line 123
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->marker:Lorg/telegram/ui/Components/Paint/Views/LocationMarker;
 
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->currentType:I
@@ -644,7 +644,7 @@
 .method public setType(II)V
     .locals 1
 
-    .line 159
+    .line 127
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->marker:Lorg/telegram/ui/Components/Paint/Views/LocationMarker;
 
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/LocationView;->currentType:I

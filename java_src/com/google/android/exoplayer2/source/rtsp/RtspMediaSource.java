@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.rtsp;
 
 import android.net.Uri;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.ExoPlayerLibraryInfo;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.Timeline;
@@ -32,7 +32,7 @@ public final class RtspMediaSource extends BaseMediaSource {
     private boolean timelineIsSeekable;
     private final Uri uri;
     private final String userAgent;
-    private long timelineDurationUs = C0479C.TIME_UNSET;
+    private long timelineDurationUs = C0485C.TIME_UNSET;
     private boolean timelineIsPlaceholder = true;
 
     @Override // com.google.android.exoplayer2.source.MediaSource

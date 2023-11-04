@@ -153,6 +153,19 @@
 
 
 # virtual methods
+.method protected getFullHeight()I
+    .locals 1
+
+    const/16 v0, 0x38
+
+    .line 78
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public getTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
     .locals 1
 
@@ -174,17 +187,17 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 126
+    .line 130
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->divider:Z
 
     if-eqz v0, :cond_2
 
-    .line 127
+    .line 131
     iget v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->dividerColor:I
 
     if-eqz v0, :cond_0
 
-    .line 128
+    .line 132
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dividerExtraPaint:Landroid/graphics/Paint;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -196,7 +209,7 @@
     :cond_0
     const/16 v0, 0x47
 
-    .line 130
+    .line 134
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -254,7 +267,7 @@
 
     sub-int/2addr p4, p2
 
-    .line 82
+    .line 86
     iget-object p1, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->valueTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getTextHeight()I
@@ -265,7 +278,7 @@
 
     div-int/lit8 p1, p1, 0x2
 
-    .line 83
+    .line 87
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 p3, 0x18
@@ -281,7 +294,7 @@
     :cond_0
     const/4 p2, 0x0
 
-    .line 84
+    .line 88
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->valueTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -301,7 +314,7 @@
 
     invoke-virtual {v0, p2, p1, v1, v2}, Landroid/view/View;->layout(IIII)V
 
-    .line 86
+    .line 90
     iget-object p1, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getTextHeight()I
@@ -312,7 +325,7 @@
 
     div-int/lit8 p5, p5, 0x2
 
-    .line 87
+    .line 91
     sget-boolean p1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez p1, :cond_1
@@ -330,7 +343,7 @@
 
     move-result p1
 
-    .line 88
+    .line 92
     :goto_1
     iget-object p2, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -352,12 +365,12 @@
 
     const/16 p1, 0x9
 
-    .line 90
+    .line 94
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 91
+    .line 95
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 p3, 0x15
@@ -385,7 +398,7 @@
 
     sub-int p2, p4, p2
 
-    .line 92
+    .line 96
     :goto_2
     iget-object p3, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->imageView:Landroid/widget/ImageView;
 
@@ -492,10 +505,8 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/widget/ImageView;->measure(II)V
 
-    const/16 p2, 0x38
-
     .line 74
-    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {p0}, Lorg/telegram/ui/Cells/ManageChatTextCell;->getFullHeight()I
 
     move-result p2
 
@@ -511,7 +522,7 @@
 .method public setColors(II)V
     .locals 3
 
-    .line 100
+    .line 104
     iget-object v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -520,7 +531,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 101
+    .line 105
     iget-object v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -529,7 +540,7 @@
 
     invoke-virtual {v0, p2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 102
+    .line 106
     iget-object p2, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->imageView:Landroid/widget/ImageView;
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
@@ -544,7 +555,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 103
+    .line 107
     iget-object p2, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->imageView:Landroid/widget/ImageView;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -568,7 +579,7 @@
 .method public setText(Ljava/lang/String;Ljava/lang/String;IIZ)V
     .locals 1
 
-    .line 111
+    .line 115
     iget-object v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
@@ -577,19 +588,19 @@
 
     if-eqz p2, :cond_0
 
-    .line 113
+    .line 117
     iget-object v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->valueTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 114
+    .line 118
     iget-object p2, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->valueTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 116
+    .line 120
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->valueTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -597,7 +608,7 @@
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 118
+    .line 122
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->imageView:Landroid/widget/ImageView;
 
@@ -607,17 +618,17 @@
 
     invoke-virtual {p2, p1, p4, p1, p1}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 119
+    .line 123
     iget-object p1, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 120
+    .line 124
     iput-boolean p5, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->divider:Z
 
     xor-int/lit8 p1, p5, 0x1
 
-    .line 121
+    .line 125
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
@@ -638,7 +649,7 @@
 
     move v5, p4
 
-    .line 107
+    .line 111
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setText(Ljava/lang/String;Ljava/lang/String;IIZ)V
 
     return-void
@@ -647,7 +658,7 @@
 .method public setTextColor(I)V
     .locals 1
 
-    .line 96
+    .line 100
     iget-object v0, p0, Lorg/telegram/ui/Cells/ManageChatTextCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V

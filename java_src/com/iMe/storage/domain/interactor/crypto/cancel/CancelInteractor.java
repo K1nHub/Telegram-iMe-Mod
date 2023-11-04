@@ -74,13 +74,13 @@ public final class CancelInteractor {
                 String address = eVMWallet != null ? eVMWallet.getAddress() : null;
                 Observable<Result<String>> cancel = cancelRepository.cancel(new CancelArgs.Ethereum(str, str2, new TransferArgs.EVM(parseDouble, factor, address == null ? "" : address, chainId, nonce, price, limit, null)));
                 schedulersProvider = CancelInteractor.this.schedulersProvider;
-                Observable<Result<String>> subscribeOn = cancel.subscribeOn(schedulersProvider.mo1010io());
+                Observable<Result<String>> subscribeOn = cancel.subscribeOn(schedulersProvider.mo1011io());
                 Intrinsics.checkNotNullExpressionValue(subscribeOn, "with(result.data!!) {\n  …r.io())\n                }");
                 return subscribeOn;
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<String>> startWith = flatMap.subscribeOn(this.schedulersProvider.mo1010io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
+        Observable<Result<String>> startWith = flatMap.subscribeOn(this.schedulersProvider.mo1011io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "cancelRepository\n       …artWith(Result.loading())");
         return startWith;
     }

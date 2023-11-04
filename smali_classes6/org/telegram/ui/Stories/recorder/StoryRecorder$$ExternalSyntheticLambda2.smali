@@ -39,7 +39,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda2;->f$2:F
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$5TXdA7XWZZsLL8gSCSlbZtcwRng(Lorg/telegram/ui/Stories/recorder/StoryRecorder;FFLandroid/animation/ValueAnimator;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$TTSnUDpqjd_mfj0laIbBf09GfLw(Lorg/telegram/ui/Stories/recorder/StoryRecorder;FFLandroid/animation/ValueAnimator;)V
 
     return-void
 .end method

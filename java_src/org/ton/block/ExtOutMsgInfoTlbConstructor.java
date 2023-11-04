@@ -19,13 +19,13 @@ public final class ExtOutMsgInfoTlbConstructor extends org.ton.tlb.TlbConstructo
         Intrinsics.checkNotNullParameter(value, "value");
         MsgAddressInt.Companion.storeTlb(cellBuilder, (CellBuilder) value.getSrc());
         MsgAddressExt.Companion.storeTlb(cellBuilder, (CellBuilder) value.getDest());
-        cellBuilder.storeUInt(value.m4955getCreatedLtsVKNKU(), 64);
-        cellBuilder.storeUInt(value.m4954getCreatedAtpVg5ArA(), 32);
+        cellBuilder.storeUInt(value.m5109getCreatedLtsVKNKU(), 64);
+        cellBuilder.storeUInt(value.m5108getCreatedAtpVg5ArA(), 32);
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public ExtOutMsgInfo loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new ExtOutMsgInfo(MsgAddressInt.Companion.loadTlb(cellSlice), MsgAddressExt.Companion.loadTlb(cellSlice), cellSlice.mo5067loadUInt64sVKNKU(), cellSlice.mo5066loadUInt32pVg5ArA(), null);
+        return new ExtOutMsgInfo(MsgAddressInt.Companion.loadTlb(cellSlice), MsgAddressExt.Companion.loadTlb(cellSlice), cellSlice.mo5221loadUInt64sVKNKU(), cellSlice.mo5220loadUInt32pVg5ArA(), null);
     }
 }

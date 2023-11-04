@@ -43,8 +43,8 @@ import kotlin.jvm.internal.Ref$BooleanRef;
 import kotlin.jvm.internal.Ref$LongRef;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.TypefaceSpan;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.TypefaceSpan;
 import timber.log.Timber;
 /* compiled from: ViewExt.kt */
 /* loaded from: classes4.dex */
@@ -73,7 +73,7 @@ public final class ViewExtKt {
     }
 
     public static final int getDpToPx(float f) {
-        return AndroidUtilities.m103dp(f);
+        return AndroidUtilities.m105dp(f);
     }
 
     public static /* synthetic */ View inflate$default(ViewGroup viewGroup, int i, boolean z, int i2, Object obj) {
@@ -93,13 +93,13 @@ public final class ViewExtKt {
     public static final void setVerticalPadding(View view, Number verticalPadding) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         Intrinsics.checkNotNullParameter(verticalPadding, "verticalPadding");
-        view.setPadding(view.getPaddingLeft(), AndroidUtilities.m103dp(verticalPadding.floatValue()), view.getPaddingRight(), AndroidUtilities.m103dp(verticalPadding.floatValue()));
+        view.setPadding(view.getPaddingLeft(), AndroidUtilities.m105dp(verticalPadding.floatValue()), view.getPaddingRight(), AndroidUtilities.m105dp(verticalPadding.floatValue()));
     }
 
     public static final void setHorizontalPadding(View view, Number horizontalPadding) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         Intrinsics.checkNotNullParameter(horizontalPadding, "horizontalPadding");
-        view.setPadding(AndroidUtilities.m103dp(horizontalPadding.floatValue()), view.getPaddingTop(), AndroidUtilities.m103dp(horizontalPadding.floatValue()), view.getPaddingBottom());
+        view.setPadding(AndroidUtilities.m105dp(horizontalPadding.floatValue()), view.getPaddingTop(), AndroidUtilities.m105dp(horizontalPadding.floatValue()), view.getPaddingBottom());
     }
 
     public static final void loadImage(ImageView imageView, TokenDetailed token) {
@@ -420,8 +420,8 @@ public final class ViewExtKt {
         Intrinsics.checkNotNullParameter(viewPager, "<this>");
         viewPager.setOffscreenPageLimit(3);
         viewPager.setClipToPadding(false);
-        int m103dp = AndroidUtilities.m103dp(24.0f);
-        viewPager.setPadding(m103dp, 0, m103dp, 0);
+        int m105dp = AndroidUtilities.m105dp(24.0f);
+        viewPager.setPadding(m105dp, 0, m105dp, 0);
     }
 
     public static final void withMediumTypeface(TextView textView) {

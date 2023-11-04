@@ -30,7 +30,7 @@ public final class EnhancedTypeAnnotations implements Annotations {
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.annotations.Annotations
     /* renamed from: findAnnotation */
-    public EnhancedTypeAnnotationDescriptor mo2041findAnnotation(FqName fqName) {
+    public EnhancedTypeAnnotationDescriptor mo2046findAnnotation(FqName fqName) {
         Intrinsics.checkNotNullParameter(fqName, "fqName");
         if (Intrinsics.areEqual(fqName, this.fqNameToMatch)) {
             return EnhancedTypeAnnotationDescriptor.INSTANCE;

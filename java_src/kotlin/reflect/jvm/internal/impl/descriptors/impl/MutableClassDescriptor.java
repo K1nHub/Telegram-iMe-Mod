@@ -224,13 +224,13 @@ public class MutableClassDescriptor extends ClassDescriptorBase {
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
     /* renamed from: getCompanionObjectDescriptor */
-    public ClassDescriptor mo2039getCompanionObjectDescriptor() {
+    public ClassDescriptor mo2044getCompanionObjectDescriptor() {
         return null;
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
     /* renamed from: getUnsubstitutedPrimaryConstructor */
-    public ClassConstructorDescriptor mo2040getUnsubstitutedPrimaryConstructor() {
+    public ClassConstructorDescriptor mo2045getUnsubstitutedPrimaryConstructor() {
         return null;
     }
 

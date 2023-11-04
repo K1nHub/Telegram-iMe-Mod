@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTONWalletTransferDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TONWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extensions/ResultExtKt\n*L\n1#1,64:1\n70#2:65\n15#3:66\n*S KotlinDebug\n*F\n+ 1 TONWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl\n*L\n41#1:65\n62#1:66\n*E\n"
+    value = "SMAP\nTONWalletTransferDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TONWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl\n+ 2 FirebaseExt.kt\ncom/iMe/storage/data/utils/extentions/FirebaseExtKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extensions/ResultExtKt\n*L\n1#1,65:1\n70#2:66\n15#3:67\n*S KotlinDebug\n*F\n+ 1 TONWalletTransferDataSourceImpl.kt\ncom/iMe/storage/data/datasource/transfer/impl/TONWalletTransferDataSourceImpl\n*L\n41#1:66\n63#1:67\n*E\n"
 .end annotation
 
 
@@ -152,7 +152,7 @@
 
     move-result-object p1
 
-    .line 62
+    .line 63
     invoke-static {p1}, Lio/reactivex/Observable;->just(Ljava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -178,7 +178,7 @@
 .end method
 
 .method public transfer(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;Ljava/lang/String;)Lio/reactivex/Observable;
-    .locals 6
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -226,28 +226,33 @@
     move-result-wide v2
 
     .line 51
-    new-instance v4, Lcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload$Message;
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getSeqno()I
+
+    move-result v4
 
     .line 52
+    new-instance v5, Lcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload$Message;
+
+    .line 53
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getMessage()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 53
+    .line 54
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted()Z
 
-    move-result v5
+    move-result v6
 
-    .line 51
-    invoke-direct {v4, p2, v5}, Lcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload$Message;-><init>(Ljava/lang/String;Z)V
+    .line 52
+    invoke-direct {v5, p2, v6}, Lcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload$Message;-><init>(Ljava/lang/String;Z)V
 
-    .line 55
+    .line 56
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->getSendMode()I
 
-    move-result v5
+    move-result v6
 
     .line 48
-    invoke-interface/range {v0 .. v5}, Lcom/iMe/storage/domain/manager/ton/TonController;->sendTransaction(Ljava/lang/String;JLcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;I)Lio/reactivex/Observable;
+    invoke-interface/range {v0 .. v6}, Lcom/iMe/storage/domain/manager/ton/TonController;->sendTransaction(Ljava/lang/String;JILcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;I)Lio/reactivex/Observable;
 
     move-result-object p1
 

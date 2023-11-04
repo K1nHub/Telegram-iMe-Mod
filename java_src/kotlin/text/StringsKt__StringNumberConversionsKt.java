@@ -1,6 +1,6 @@
 package kotlin.text;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StringNumberConversions.kt */
@@ -23,7 +23,7 @@ public class StringsKt__StringNumberConversionsKt extends StringsKt__StringNumbe
         int i3 = 0;
         char charAt = str.charAt(0);
         int compare = Intrinsics.compare((int) charAt, 48);
-        int i4 = C0479C.RATE_UNSET_INT;
+        int i4 = C0485C.RATE_UNSET_INT;
         int i5 = 1;
         if (compare >= 0) {
             z = false;
@@ -70,7 +70,7 @@ public class StringsKt__StringNumberConversionsKt extends StringsKt__StringNumbe
         int i2 = 0;
         char charAt = str.charAt(0);
         int compare = Intrinsics.compare((int) charAt, 48);
-        long j = C0479C.TIME_UNSET;
+        long j = C0485C.TIME_UNSET;
         boolean z = true;
         if (compare >= 0) {
             z = false;

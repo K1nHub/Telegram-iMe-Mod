@@ -16,10 +16,10 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkChatCopyContentLayoutBinding;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ChatCopyPartBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.chat.copy.ChatCopyPartBottomSheetDialog */
 /* loaded from: classes3.dex */
@@ -34,7 +34,7 @@ public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
         return Companion.newInstance(baseFragment, str);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -44,7 +44,7 @@ public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public ChatCopyPartBottomSheetDialog(final org.telegram.p042ui.ActionBar.BaseFragment r4, java.lang.String r5) {
+    public ChatCopyPartBottomSheetDialog(final org.telegram.p043ui.ActionBar.BaseFragment r4, java.lang.String r5) {
         /*
             r3 = this;
             java.lang.String r0 = "fragment"
@@ -106,7 +106,7 @@ public final class ChatCopyPartBottomSheetDialog extends MvpBottomSheet {
 
     private final void setupTexts() {
         ForkChatCopyContentLayoutBinding binding = getBinding();
-        binding.buttonClose.setText(getResourceManager().getString(C3630R.string.common_close));
+        binding.buttonClose.setText(getResourceManager().getString(C3634R.string.common_close));
         binding.textMessage.setText(this.message);
     }
 

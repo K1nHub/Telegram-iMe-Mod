@@ -64,10 +64,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
-    .line 2429
+    .line 2427
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 2413
+    .line 2411
     new-instance p1, Landroid/text/TextPaint;
 
     const/4 v0, 0x1
@@ -76,35 +76,35 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->textPaint:Landroid/text/TextPaint;
 
-    .line 2414
+    .line 2412
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1, v0}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->selectPaint:Landroid/graphics/Paint;
 
-    .line 2423
+    .line 2421
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->emojiRect:Landroid/graphics/RectF;
 
-    .line 2424
+    .line 2422
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->stickersRect:Landroid/graphics/RectF;
 
-    .line 2425
+    .line 2423
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->gifsRect:Landroid/graphics/RectF;
 
-    .line 2426
+    .line 2424
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -119,7 +119,7 @@
 
     if-gtz p1, :cond_0
 
-    .line 2487
+    .line 2485
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->emojiRect:Landroid/graphics/RectF;
 
     return-object p1
@@ -129,12 +129,12 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 2489
+    .line 2487
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->stickersRect:Landroid/graphics/RectF;
 
     return-object p1
 
-    .line 2491
+    .line 2489
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->gifsRect:Landroid/graphics/RectF;
 
@@ -144,7 +144,7 @@
 .method private updateLayouts()V
     .locals 13
 
-    .line 2456
+    .line 2454
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->textPaint:Landroid/text/TextPaint;
 
     const/16 v1, 0xe
@@ -157,7 +157,7 @@
 
     invoke-virtual {v0, v2}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 2457
+    .line 2455
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->textPaint:Landroid/text/TextPaint;
 
     const-string v2, "fonts/rmedium.ttf"
@@ -168,7 +168,7 @@
 
     invoke-virtual {v0, v2}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 2459
+    .line 2457
     new-instance v0, Landroid/text/StaticLayout;
 
     const-string v2, "Emoji"
@@ -197,7 +197,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->emojiLayout:Landroid/text/StaticLayout;
 
-    .line 2460
+    .line 2458
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v0
@@ -224,7 +224,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->emojiLayoutWidth:F
 
-    .line 2461
+    .line 2459
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->emojiLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
@@ -247,7 +247,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->emojiLayoutLeft:F
 
-    .line 2463
+    .line 2461
     new-instance v0, Landroid/text/StaticLayout;
 
     const-string v5, "AccDescrStickers"
@@ -276,7 +276,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->stickersLayout:Landroid/text/StaticLayout;
 
-    .line 2464
+    .line 2462
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v0
@@ -297,7 +297,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->stickersLayoutWidth:F
 
-    .line 2465
+    .line 2463
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->stickersLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
@@ -320,7 +320,7 @@
     :goto_3
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->stickersLayoutLeft:F
 
-    .line 2467
+    .line 2465
     new-instance v0, Landroid/text/StaticLayout;
 
     sget v5, Lorg/telegram/messenger/R$string;->AccDescrGIFs:I
@@ -351,7 +351,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->gifsLayout:Landroid/text/StaticLayout;
 
-    .line 2468
+    .line 2466
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v0
@@ -372,7 +372,7 @@
     :goto_4
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->gifsLayoutWidth:F
 
-    .line 2469
+    .line 2467
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->gifsLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
@@ -392,7 +392,7 @@
 
     const/16 v0, 0xc
 
-    .line 2471
+    .line 2469
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -437,7 +437,7 @@
 
     add-float/2addr v2, v0
 
-    .line 2472
+    .line 2470
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -458,7 +458,7 @@
 
     div-float/2addr v4, v1
 
-    .line 2473
+    .line 2471
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v5
@@ -469,7 +469,7 @@
 
     div-float/2addr v5, v1
 
-    .line 2475
+    .line 2473
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->emojiRect:Landroid/graphics/RectF;
 
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->emojiLayoutWidth:F
@@ -488,7 +488,7 @@
 
     invoke-virtual {v1, v5, v0, v2, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2476
+    .line 2474
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->emojiLayoutWidth:F
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -501,7 +501,7 @@
 
     add-float/2addr v5, v1
 
-    .line 2478
+    .line 2476
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->stickersRect:Landroid/graphics/RectF;
 
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->stickersLayoutWidth:F
@@ -518,7 +518,7 @@
 
     invoke-virtual {v1, v5, v0, v2, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2479
+    .line 2477
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->stickersLayoutWidth:F
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -531,7 +531,7 @@
 
     add-float/2addr v5, v1
 
-    .line 2481
+    .line 2479
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->gifsRect:Landroid/graphics/RectF;
 
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->gifsLayoutWidth:F
@@ -548,7 +548,7 @@
 
     invoke-virtual {v1, v5, v0, v2, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2482
+    .line 2480
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     return-void
@@ -561,17 +561,17 @@
 
     const v0, -0xe0e0e1
 
-    .line 2497
+    .line 2495
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 2498
+    .line 2496
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->selectPaint:Landroid/graphics/Paint;
 
     const v1, -0xc9c9ca
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2500
+    .line 2498
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->type:F
 
     float-to-int v0, v0
@@ -606,7 +606,7 @@
 
     invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->lerp(Landroid/graphics/RectF;Landroid/graphics/RectF;FLandroid/graphics/RectF;)V
 
-    .line 2501
+    .line 2499
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->selectRect:Landroid/graphics/RectF;
 
     const/16 v1, 0x14
@@ -627,7 +627,7 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 2503
+    .line 2501
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->emojiLayout:Landroid/text/StaticLayout;
 
     const/4 v1, -0x1
@@ -644,10 +644,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 2504
+    .line 2502
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2505
+    .line 2503
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->emojiRect:Landroid/graphics/RectF;
 
     iget v0, v0, Landroid/graphics/RectF;->left:F
@@ -688,7 +688,7 @@
 
     invoke-virtual {p1, v0, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2506
+    .line 2504
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->textPaint:Landroid/text/TextPaint;
 
     iget v7, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->type:F
@@ -711,24 +711,24 @@
 
     invoke-virtual {v0, v7}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 2507
+    .line 2505
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->emojiLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2508
+    .line 2506
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2511
+    .line 2509
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->stickersLayout:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_1
 
-    .line 2512
+    .line 2510
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2513
+    .line 2511
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->stickersRect:Landroid/graphics/RectF;
 
     iget v0, v0, Landroid/graphics/RectF;->left:F
@@ -769,7 +769,7 @@
 
     invoke-virtual {p1, v0, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2514
+    .line 2512
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->textPaint:Landroid/text/TextPaint;
 
     iget v7, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->type:F
@@ -792,24 +792,24 @@
 
     invoke-virtual {v0, v7}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 2515
+    .line 2513
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->stickersLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2516
+    .line 2514
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2519
+    .line 2517
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->gifsLayout:Landroid/text/StaticLayout;
 
     if-eqz v0, :cond_2
 
-    .line 2520
+    .line 2518
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2521
+    .line 2519
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->gifsRect:Landroid/graphics/RectF;
 
     iget v0, v0, Landroid/graphics/RectF;->left:F
@@ -850,7 +850,7 @@
 
     invoke-virtual {p1, v0, v7}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2522
+    .line 2520
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->textPaint:Landroid/text/TextPaint;
 
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->type:F
@@ -873,12 +873,12 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 2523
+    .line 2521
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->gifsLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2524
+    .line 2522
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_2
@@ -888,14 +888,14 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 2447
+    .line 2445
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
     const/16 p2, 0x28
 
-    .line 2448
+    .line 2446
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -906,7 +906,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
 
-    .line 2449
+    .line 2447
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result p1
@@ -919,11 +919,11 @@
 
     if-nez p1, :cond_1
 
-    .line 2450
+    .line 2448
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->updateLayouts()V
 
-    .line 2452
+    .line 2450
     :cond_1
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -937,7 +937,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 2530
+    .line 2528
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -948,7 +948,7 @@
 
     return v1
 
-    .line 2532
+    .line 2530
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -960,7 +960,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 2533
+    .line 2531
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->emojiRect:Landroid/graphics/RectF;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -977,7 +977,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2534
+    .line 2532
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->onTypeSelected:Lorg/telegram/messenger/Utilities$Callback;
 
     const/4 v0, 0x0
@@ -990,7 +990,7 @@
 
     goto :goto_0
 
-    .line 2535
+    .line 2533
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->stickersRect:Landroid/graphics/RectF;
 
@@ -1008,7 +1008,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2536
+    .line 2534
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->onTypeSelected:Lorg/telegram/messenger/Utilities$Callback;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1019,7 +1019,7 @@
 
     goto :goto_0
 
-    .line 2537
+    .line 2535
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->gifsRect:Landroid/graphics/RectF;
 
@@ -1037,7 +1037,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 2538
+    .line 2536
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->onTypeSelected:Lorg/telegram/messenger/Utilities$Callback;
 
     const/4 v0, 0x2
@@ -1052,7 +1052,7 @@
     :goto_0
     return v1
 
-    .line 2542
+    .line 2540
     :cond_4
     invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -1072,7 +1072,7 @@
         }
     .end annotation
 
-    .line 2440
+    .line 2438
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->onTypeSelected:Lorg/telegram/messenger/Utilities$Callback;
 
     return-void
@@ -1081,10 +1081,10 @@
 .method public setType(F)V
     .locals 0
 
-    .line 2434
+    .line 2432
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->type:F
 
-    .line 2435
+    .line 2433
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void

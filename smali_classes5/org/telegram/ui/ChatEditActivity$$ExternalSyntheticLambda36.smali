@@ -2,32 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ChatEditActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda36;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatEditActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda36;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda36;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda36;->INSTANCE:Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda36;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/ui/ChatEditActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final invoke()V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/ui/ChatEditActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$0nFQURAWtCmx86pM1I5aV9oh_Ww(Lorg/telegram/ui/ChatEditActivity;)V
+    invoke-static {}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$hHHUcKNhHqIKy8b8ZLguKXF8pkg()V
 
     return-void
 .end method

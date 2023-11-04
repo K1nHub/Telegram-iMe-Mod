@@ -142,7 +142,7 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.encoders.proto.ProtobufDataEncoderContext$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C09921 {
+    public static /* synthetic */ class C09981 {
 
         /* renamed from: $SwitchMap$com$google$firebase$encoders$proto$Protobuf$IntEncoding */
         static final /* synthetic */ int[] f246x531607dd;
@@ -170,7 +170,7 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
             return this;
         }
         Protobuf protobuf = getProtobuf(fieldDescriptor);
-        int i2 = C09921.f246x531607dd[protobuf.intEncoding().ordinal()];
+        int i2 = C09981.f246x531607dd[protobuf.intEncoding().ordinal()];
         if (i2 == 1) {
             writeVarInt32(protobuf.tag() << 3);
             writeVarInt32(i);
@@ -194,7 +194,7 @@ final class ProtobufDataEncoderContext implements ObjectEncoderContext {
             return this;
         }
         Protobuf protobuf = getProtobuf(fieldDescriptor);
-        int i = C09921.f246x531607dd[protobuf.intEncoding().ordinal()];
+        int i = C09981.f246x531607dd[protobuf.intEncoding().ordinal()];
         if (i == 1) {
             writeVarInt32(protobuf.tag() << 3);
             writeVarInt64(j);

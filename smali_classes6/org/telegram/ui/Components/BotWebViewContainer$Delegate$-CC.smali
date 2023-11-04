@@ -4,14 +4,6 @@
 
 
 # direct methods
-.method public static $default$isClipboardAvailable(Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public static $default$onSendWebViewData(Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;Ljava/lang/String;)V
     .locals 0
 

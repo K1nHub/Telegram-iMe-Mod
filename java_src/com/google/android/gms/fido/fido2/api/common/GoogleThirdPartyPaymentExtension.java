@@ -11,11 +11,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class GoogleThirdPartyPaymentExtension extends AbstractSafeParcelable {
     public static final Parcelable.Creator<GoogleThirdPartyPaymentExtension> CREATOR = new zzac();
-    @SafeParcelable.Field(getter = "getThirdPartyPayment", m1089id = 1)
+    @SafeParcelable.Field(getter = "getThirdPartyPayment", m1090id = 1)
     private final boolean zza;
 
     @SafeParcelable.Constructor
-    public GoogleThirdPartyPaymentExtension(@SafeParcelable.Param(m1088id = 1) boolean z) {
+    public GoogleThirdPartyPaymentExtension(@SafeParcelable.Param(m1089id = 1) boolean z) {
         this.zza = z;
     }
 

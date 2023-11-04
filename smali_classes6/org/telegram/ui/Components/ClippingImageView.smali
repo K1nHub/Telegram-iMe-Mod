@@ -168,7 +168,7 @@
 .method public getBitmap()Landroid/graphics/Bitmap;
     .locals 1
 
-    .line 302
+    .line 305
     iget-object v0, p0, Lorg/telegram/ui/Components/ClippingImageView;->bmp:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     if-eqz v0, :cond_0
@@ -187,7 +187,7 @@
 .method public getBitmapHolder()Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
     .locals 1
 
-    .line 298
+    .line 301
     iget-object v0, p0, Lorg/telegram/ui/Components/ClippingImageView;->bmp:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     return-object v0
@@ -441,7 +441,7 @@
 .method public getOrientation()I
     .locals 1
 
-    .line 306
+    .line 309
     iget v0, p0, Lorg/telegram/ui/Components/ClippingImageView;->orientation:I
 
     return v0
@@ -1548,28 +1548,40 @@
     .line 284
     iget-object v0, p0, Lorg/telegram/ui/Components/ClippingImageView;->bmp:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
+    const/4 v1, 0x0
+
     if-eqz v0, :cond_0
 
     .line 285
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->release()V
 
-    const/4 v0, 0x0
-
     .line 286
-    iput-object v0, p0, Lorg/telegram/ui/Components/ClippingImageView;->bitmapShader:Landroid/graphics/BitmapShader;
+    iput-object v1, p0, Lorg/telegram/ui/Components/ClippingImageView;->bitmapShader:Landroid/graphics/BitmapShader;
 
-    .line 288
     :cond_0
-    iput-object p1, p0, Lorg/telegram/ui/Components/ClippingImageView;->bmp:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
-
     if-eqz p1, :cond_1
 
-    .line 289
-    iget-object v0, p1, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->bitmap:Landroid/graphics/Bitmap;
+    .line 288
+    invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->isRecycled()Z
+
+    move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 290
+    move-object p1, v1
+
+    .line 291
+    :cond_1
+    iput-object p1, p0, Lorg/telegram/ui/Components/ClippingImageView;->bmp:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
+
+    if-eqz p1, :cond_2
+
+    .line 292
+    iget-object v0, p1, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->bitmap:Landroid/graphics/Bitmap;
+
+    if-eqz v0, :cond_2
+
+    .line 293
     iget-object v0, p0, Lorg/telegram/ui/Components/ClippingImageView;->bitmapRect:Landroid/graphics/RectF;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver$BitmapHolder;->getWidth()I
@@ -1588,7 +1600,7 @@
 
     invoke-virtual {v0, v2, v2, v1, p1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 291
+    .line 294
     new-instance p1, Landroid/graphics/BitmapShader;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ClippingImageView;->bmp:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
@@ -1601,13 +1613,13 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ClippingImageView;->bitmapShader:Landroid/graphics/BitmapShader;
 
-    .line 292
+    .line 295
     iget-object v0, p0, Lorg/telegram/ui/Components/ClippingImageView;->roundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 294
-    :cond_1
+    .line 297
+    :cond_2
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -1664,17 +1676,17 @@
 
     if-nez p1, :cond_0
 
-    .line 311
+    .line 314
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ClippingImageView;->needRadius:Z
 
-    .line 312
+    .line 315
     iget-object p1, p0, Lorg/telegram/ui/Components/ClippingImageView;->radius:[I
 
     invoke-static {p1, v0}, Ljava/util/Arrays;->fill([II)V
 
     return-void
 
-    .line 315
+    .line 318
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ClippingImageView;->radius:[I
 
@@ -1682,23 +1694,23 @@
 
     invoke-static {p1, v0, v1, v0, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 316
+    .line 319
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ClippingImageView;->needRadius:Z
 
-    .line 317
+    .line 320
     :goto_0
     array-length v1, p1
 
     if-ge v0, v1, :cond_2
 
-    .line 318
+    .line 321
     aget v1, p1, v0
 
     if-eqz v1, :cond_1
 
     const/4 p1, 0x1
 
-    .line 319
+    .line 322
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ClippingImageView;->needRadius:Z
 
     goto :goto_1

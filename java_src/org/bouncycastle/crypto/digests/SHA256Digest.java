@@ -48,7 +48,7 @@ public class SHA256Digest extends GeneralDigest {
     }
 
     /* renamed from: Ch */
-    private static int m108Ch(int i, int i2, int i3) {
+    private static int m110Ch(int i, int i2, int i3) {
         return ((~i) & i3) ^ (i2 & i);
     }
 
@@ -135,37 +135,37 @@ public class SHA256Digest extends GeneralDigest {
         int i9 = this.f1443H8;
         int i10 = 0;
         for (int i11 = 0; i11 < 8; i11++) {
-            int Sum1 = Sum1(i6) + m108Ch(i6, i7, i8);
+            int Sum1 = Sum1(i6) + m110Ch(i6, i7, i8);
             int[] iArr3 = f1435K;
             int i12 = i9 + Sum1 + iArr3[i10] + this.f1444X[i10];
             int i13 = i5 + i12;
             int Sum0 = i12 + Sum0(i2) + Maj(i2, i3, i4);
             int i14 = i10 + 1;
-            int Sum12 = i8 + Sum1(i13) + m108Ch(i13, i6, i7) + iArr3[i14] + this.f1444X[i14];
+            int Sum12 = i8 + Sum1(i13) + m110Ch(i13, i6, i7) + iArr3[i14] + this.f1444X[i14];
             int i15 = i4 + Sum12;
             int Sum02 = Sum12 + Sum0(Sum0) + Maj(Sum0, i2, i3);
             int i16 = i14 + 1;
-            int Sum13 = i7 + Sum1(i15) + m108Ch(i15, i13, i6) + iArr3[i16] + this.f1444X[i16];
+            int Sum13 = i7 + Sum1(i15) + m110Ch(i15, i13, i6) + iArr3[i16] + this.f1444X[i16];
             int i17 = i3 + Sum13;
             int Sum03 = Sum13 + Sum0(Sum02) + Maj(Sum02, Sum0, i2);
             int i18 = i16 + 1;
-            int Sum14 = i6 + Sum1(i17) + m108Ch(i17, i15, i13) + iArr3[i18] + this.f1444X[i18];
+            int Sum14 = i6 + Sum1(i17) + m110Ch(i17, i15, i13) + iArr3[i18] + this.f1444X[i18];
             int i19 = i2 + Sum14;
             int Sum04 = Sum14 + Sum0(Sum03) + Maj(Sum03, Sum02, Sum0);
             int i20 = i18 + 1;
-            int Sum15 = i13 + Sum1(i19) + m108Ch(i19, i17, i15) + iArr3[i20] + this.f1444X[i20];
+            int Sum15 = i13 + Sum1(i19) + m110Ch(i19, i17, i15) + iArr3[i20] + this.f1444X[i20];
             i9 = Sum0 + Sum15;
             i5 = Sum15 + Sum0(Sum04) + Maj(Sum04, Sum03, Sum02);
             int i21 = i20 + 1;
-            int Sum16 = i15 + Sum1(i9) + m108Ch(i9, i19, i17) + iArr3[i21] + this.f1444X[i21];
+            int Sum16 = i15 + Sum1(i9) + m110Ch(i9, i19, i17) + iArr3[i21] + this.f1444X[i21];
             i8 = Sum02 + Sum16;
             i4 = Sum16 + Sum0(i5) + Maj(i5, Sum04, Sum03);
             int i22 = i21 + 1;
-            int Sum17 = i17 + Sum1(i8) + m108Ch(i8, i9, i19) + iArr3[i22] + this.f1444X[i22];
+            int Sum17 = i17 + Sum1(i8) + m110Ch(i8, i9, i19) + iArr3[i22] + this.f1444X[i22];
             i7 = Sum03 + Sum17;
             i3 = Sum17 + Sum0(i4) + Maj(i4, i5, Sum04);
             int i23 = i22 + 1;
-            int Sum18 = i19 + Sum1(i7) + m108Ch(i7, i8, i9) + iArr3[i23] + this.f1444X[i23];
+            int Sum18 = i19 + Sum1(i7) + m110Ch(i7, i8, i9) + iArr3[i23] + this.f1444X[i23];
             i6 = Sum04 + Sum18;
             i2 = Sum18 + Sum0(i3) + Maj(i3, i4, i5);
             i10 = i23 + 1;

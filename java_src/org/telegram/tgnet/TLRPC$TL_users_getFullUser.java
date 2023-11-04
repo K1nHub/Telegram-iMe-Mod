@@ -1,10 +1,9 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_users_getFullUser extends TLObject {
-    public static int constructor = -1240508136;
 
     /* renamed from: id */
-    public TLRPC$InputUser f1757id;
+    public TLRPC$InputUser f1744id;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -13,7 +12,7 @@ public class TLRPC$TL_users_getFullUser extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
-        this.f1757id.serializeToStream(abstractSerializedData);
+        abstractSerializedData.writeInt32(-1240508136);
+        this.f1744id.serializeToStream(abstractSerializedData);
     }
 }

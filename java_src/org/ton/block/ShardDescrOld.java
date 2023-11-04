@@ -50,7 +50,7 @@ public final class ShardDescrOld implements ShardDescr {
     private final boolean wantMerge;
     private final boolean wantSplit;
     public static final Companion Companion = new Companion(null);
-    private static final KSerializer<Object>[] $childSerializers = {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new SealedClassSerializer("org.ton.block.FutureSplitMerge", Reflection.getOrCreateKotlinClass(FutureSplitMerge.class), new KClass[]{Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmMerge.class), Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmNone.class), Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmSplit.class)}, new KSerializer[]{FutureSplitMerge$FsmMerge$$serializer.INSTANCE, new ObjectSerializer("fsm_none", FutureSplitMerge.FsmNone.INSTANCE, new Annotation[]{new C7520x18a57a5b("@type")}), FutureSplitMerge$FsmSplit$$serializer.INSTANCE}, new Annotation[]{new C7520x18a57a5b("@type")}), null, null};
+    private static final KSerializer<Object>[] $childSerializers = {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, new SealedClassSerializer("org.ton.block.FutureSplitMerge", Reflection.getOrCreateKotlinClass(FutureSplitMerge.class), new KClass[]{Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmMerge.class), Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmNone.class), Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmSplit.class)}, new KSerializer[]{FutureSplitMerge$FsmMerge$$serializer.INSTANCE, new ObjectSerializer("fsm_none", FutureSplitMerge.FsmNone.INSTANCE, new Annotation[]{new C7595x18a57a5b("@type")}), FutureSplitMerge$FsmSplit$$serializer.INSTANCE}, new Annotation[]{new C7595x18a57a5b("@type")}), null, null};
 
     public /* synthetic */ ShardDescrOld(int i, int i2, long j, long j2, BitString bitString, BitString bitString2, boolean z, boolean z2, boolean z3, boolean z4, boolean z5, int i3, int i4, long j3, int i5, int i6, FutureSplitMerge futureSplitMerge, CurrencyCollection currencyCollection, CurrencyCollection currencyCollection2, DefaultConstructorMarker defaultConstructorMarker) {
         this(i, i2, j, j2, bitString, bitString2, z, z2, z3, z4, z5, i3, i4, j3, i5, i6, futureSplitMerge, currencyCollection, currencyCollection2);
@@ -73,13 +73,13 @@ public final class ShardDescrOld implements ShardDescr {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1969hashCodeimpl = ((((((((((UInt.m1969hashCodeimpl(this.seqNo) * 31) + UInt.m1969hashCodeimpl(this.regMcSeqno)) * 31) + ULong.m1991hashCodeimpl(this.startLt)) * 31) + ULong.m1991hashCodeimpl(this.endLt)) * 31) + this.rootHash.hashCode()) * 31) + this.fileHash.hashCode()) * 31;
+        int m1974hashCodeimpl = ((((((((((UInt.m1974hashCodeimpl(this.seqNo) * 31) + UInt.m1974hashCodeimpl(this.regMcSeqno)) * 31) + ULong.m1996hashCodeimpl(this.startLt)) * 31) + ULong.m1996hashCodeimpl(this.endLt)) * 31) + this.rootHash.hashCode()) * 31) + this.fileHash.hashCode()) * 31;
         boolean z = this.beforeSplit;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        int i2 = (m1969hashCodeimpl + i) * 31;
+        int i2 = (m1974hashCodeimpl + i) * 31;
         boolean z2 = this.beforeMerge;
         int i3 = z2;
         if (z2 != 0) {
@@ -99,7 +99,7 @@ public final class ShardDescrOld implements ShardDescr {
         }
         int i8 = (i6 + i7) * 31;
         boolean z5 = this.nxCcUpdated;
-        return ((((((((((((((((i8 + (z5 ? 1 : z5 ? 1 : 0)) * 31) + this.flags) * 31) + UInt.m1969hashCodeimpl(this.nextCatchainSeqno)) * 31) + ULong.m1991hashCodeimpl(this.nextValidatorShard)) * 31) + UInt.m1969hashCodeimpl(this.minRefMcSeqno)) * 31) + UInt.m1969hashCodeimpl(this.genUtime)) * 31) + this.splitMergeAt.hashCode()) * 31) + this.feesCollected.hashCode()) * 31) + this.fundsCreated.hashCode();
+        return ((((((((((((((((i8 + (z5 ? 1 : z5 ? 1 : 0)) * 31) + this.flags) * 31) + UInt.m1974hashCodeimpl(this.nextCatchainSeqno)) * 31) + ULong.m1996hashCodeimpl(this.nextValidatorShard)) * 31) + UInt.m1974hashCodeimpl(this.minRefMcSeqno)) * 31) + UInt.m1974hashCodeimpl(this.genUtime)) * 31) + this.splitMergeAt.hashCode()) * 31) + this.feesCollected.hashCode()) * 31) + this.fundsCreated.hashCode();
     }
 
     private ShardDescrOld(int i, int i2, long j, long j2, BitString rootHash, BitString fileHash, boolean z, boolean z2, boolean z3, boolean z4, boolean z5, int i3, int i4, long j3, int i5, int i6, FutureSplitMerge splitMergeAt, CurrencyCollection feesCollected, CurrencyCollection fundsCreated) {
@@ -140,10 +140,10 @@ public final class ShardDescrOld implements ShardDescr {
         if (524287 != (i & 524287)) {
             PluginExceptionsKt.throwMissingFieldException(i, 524287, ShardDescrOld$$serializer.INSTANCE.getDescriptor());
         }
-        this.seqNo = uInt.m1971unboximpl();
-        this.regMcSeqno = uInt2.m1971unboximpl();
-        this.startLt = uLong.m1993unboximpl();
-        this.endLt = uLong2.m1993unboximpl();
+        this.seqNo = uInt.m1976unboximpl();
+        this.regMcSeqno = uInt2.m1976unboximpl();
+        this.startLt = uLong.m1998unboximpl();
+        this.endLt = uLong2.m1998unboximpl();
         this.rootHash = bitString;
         this.fileHash = bitString2;
         this.beforeSplit = z;
@@ -152,10 +152,10 @@ public final class ShardDescrOld implements ShardDescr {
         this.wantMerge = z4;
         this.nxCcUpdated = z5;
         this.flags = i2;
-        this.nextCatchainSeqno = uInt3.m1971unboximpl();
-        this.nextValidatorShard = uLong3.m1993unboximpl();
-        this.minRefMcSeqno = uInt4.m1971unboximpl();
-        this.genUtime = uInt5.m1971unboximpl();
+        this.nextCatchainSeqno = uInt3.m1976unboximpl();
+        this.nextValidatorShard = uLong3.m1998unboximpl();
+        this.minRefMcSeqno = uInt4.m1976unboximpl();
+        this.genUtime = uInt5.m1976unboximpl();
         this.splitMergeAt = futureSplitMerge;
         this.feesCollected = currencyCollection;
         this.fundsCreated = currencyCollection2;
@@ -171,11 +171,11 @@ public final class ShardDescrOld implements ShardDescr {
     public static final /* synthetic */ void write$Self(ShardDescrOld shardDescrOld, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         KSerializer<Object>[] kSerializerArr = $childSerializers;
         UIntSerializer uIntSerializer = UIntSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uIntSerializer, UInt.m1966boximpl(shardDescrOld.seqNo));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uIntSerializer, UInt.m1966boximpl(shardDescrOld.regMcSeqno));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uIntSerializer, UInt.m1971boximpl(shardDescrOld.seqNo));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uIntSerializer, UInt.m1971boximpl(shardDescrOld.regMcSeqno));
         ULongSerializer uLongSerializer = ULongSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uLongSerializer, ULong.m1988boximpl(shardDescrOld.startLt));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, uLongSerializer, ULong.m1988boximpl(shardDescrOld.endLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uLongSerializer, ULong.m1993boximpl(shardDescrOld.startLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, uLongSerializer, ULong.m1993boximpl(shardDescrOld.endLt));
         FiftHexBitStringSerializer fiftHexBitStringSerializer = FiftHexBitStringSerializer.INSTANCE;
         compositeEncoder.encodeSerializableElement(serialDescriptor, 4, fiftHexBitStringSerializer, shardDescrOld.rootHash);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 5, fiftHexBitStringSerializer, shardDescrOld.fileHash);
@@ -185,10 +185,10 @@ public final class ShardDescrOld implements ShardDescr {
         compositeEncoder.encodeBooleanElement(serialDescriptor, 9, shardDescrOld.wantMerge);
         compositeEncoder.encodeBooleanElement(serialDescriptor, 10, shardDescrOld.nxCcUpdated);
         compositeEncoder.encodeIntElement(serialDescriptor, 11, shardDescrOld.flags);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 12, uIntSerializer, UInt.m1966boximpl(shardDescrOld.nextCatchainSeqno));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 13, uLongSerializer, ULong.m1988boximpl(shardDescrOld.nextValidatorShard));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 14, uIntSerializer, UInt.m1966boximpl(shardDescrOld.minRefMcSeqno));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 15, uIntSerializer, UInt.m1966boximpl(shardDescrOld.genUtime));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 12, uIntSerializer, UInt.m1971boximpl(shardDescrOld.nextCatchainSeqno));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 13, uLongSerializer, ULong.m1993boximpl(shardDescrOld.nextValidatorShard));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 14, uIntSerializer, UInt.m1971boximpl(shardDescrOld.minRefMcSeqno));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 15, uIntSerializer, UInt.m1971boximpl(shardDescrOld.genUtime));
         compositeEncoder.encodeSerializableElement(serialDescriptor, 16, kSerializerArr[16], shardDescrOld.splitMergeAt);
         CurrencyCollection$$serializer currencyCollection$$serializer = CurrencyCollection$$serializer.INSTANCE;
         compositeEncoder.encodeSerializableElement(serialDescriptor, 17, currencyCollection$$serializer, shardDescrOld.feesCollected);
@@ -196,22 +196,22 @@ public final class ShardDescrOld implements ShardDescr {
     }
 
     /* renamed from: getSeqNo-pVg5ArA  reason: not valid java name */
-    public final int m5024getSeqNopVg5ArA() {
+    public final int m5178getSeqNopVg5ArA() {
         return this.seqNo;
     }
 
     /* renamed from: getRegMcSeqno-pVg5ArA  reason: not valid java name */
-    public final int m5023getRegMcSeqnopVg5ArA() {
+    public final int m5177getRegMcSeqnopVg5ArA() {
         return this.regMcSeqno;
     }
 
     /* renamed from: getStartLt-s-VKNKU  reason: not valid java name */
-    public final long m5025getStartLtsVKNKU() {
+    public final long m5179getStartLtsVKNKU() {
         return this.startLt;
     }
 
     /* renamed from: getEndLt-s-VKNKU  reason: not valid java name */
-    public final long m5018getEndLtsVKNKU() {
+    public final long m5172getEndLtsVKNKU() {
         return this.endLt;
     }
 
@@ -248,22 +248,22 @@ public final class ShardDescrOld implements ShardDescr {
     }
 
     /* renamed from: getNextCatchainSeqno-pVg5ArA  reason: not valid java name */
-    public final int m5021getNextCatchainSeqnopVg5ArA() {
+    public final int m5175getNextCatchainSeqnopVg5ArA() {
         return this.nextCatchainSeqno;
     }
 
     /* renamed from: getNextValidatorShard-s-VKNKU  reason: not valid java name */
-    public final long m5022getNextValidatorShardsVKNKU() {
+    public final long m5176getNextValidatorShardsVKNKU() {
         return this.nextValidatorShard;
     }
 
     /* renamed from: getMinRefMcSeqno-pVg5ArA  reason: not valid java name */
-    public final int m5020getMinRefMcSeqnopVg5ArA() {
+    public final int m5174getMinRefMcSeqnopVg5ArA() {
         return this.minRefMcSeqno;
     }
 
     /* renamed from: getGenUtime-pVg5ArA  reason: not valid java name */
-    public final int m5019getGenUtimepVg5ArA() {
+    public final int m5173getGenUtimepVg5ArA() {
         return this.genUtime;
     }
 
@@ -329,10 +329,10 @@ public final class ShardDescrOld implements ShardDescr {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("shard_descr_old");
-        open.field("seq_no", UInt.m1966boximpl(this.seqNo));
-        open.field("reg_mc_seqno", UInt.m1966boximpl(this.regMcSeqno));
-        open.field("start_lt", ULong.m1988boximpl(this.startLt));
-        open.field("end_lt", ULong.m1988boximpl(this.endLt));
+        open.field("seq_no", UInt.m1971boximpl(this.seqNo));
+        open.field("reg_mc_seqno", UInt.m1971boximpl(this.regMcSeqno));
+        open.field("start_lt", ULong.m1993boximpl(this.startLt));
+        open.field("end_lt", ULong.m1993boximpl(this.endLt));
         open.field("root_hash", this.rootHash);
         open.field("file_hash", this.fileHash);
         open.field("before_split", Boolean.valueOf(this.beforeSplit));
@@ -341,10 +341,10 @@ public final class ShardDescrOld implements ShardDescr {
         open.field("want_merge", Boolean.valueOf(this.wantMerge));
         open.field("nx_cc_updated", Boolean.valueOf(this.nxCcUpdated));
         open.field("flags", Integer.valueOf(this.flags));
-        open.field("next_catchain_seqno", UInt.m1966boximpl(this.nextCatchainSeqno));
-        open.field("next_validator_shard", ULong.m1988boximpl(this.nextValidatorShard));
-        open.field("min_ref_mc_seqno", UInt.m1966boximpl(this.minRefMcSeqno));
-        open.field("gen_utime", UInt.m1966boximpl(this.genUtime));
+        open.field("next_catchain_seqno", UInt.m1971boximpl(this.nextCatchainSeqno));
+        open.field("next_validator_shard", ULong.m1993boximpl(this.nextValidatorShard));
+        open.field("min_ref_mc_seqno", UInt.m1971boximpl(this.minRefMcSeqno));
+        open.field("gen_utime", UInt.m1971boximpl(this.genUtime));
         open.field("split_merge_at", this.splitMergeAt);
         open.field("fees_collected", this.feesCollected);
         open.field("funds_created", this.fundsCreated);

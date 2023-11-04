@@ -45,7 +45,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import timber.log.Timber;
 /* compiled from: WalletTransactionDetailsPresenter.kt */
 @InjectViewState
@@ -116,7 +116,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             String formatISODate = StringExtKt.formatISODate(item.getCreatedAt(), DateFormatter.DateType.DATE_AND_TIME);
             String transactionTitle = item.getTransactionTitle(this.resourceManager);
             String amount = item.getAmount(this.resourceManager);
-            String string = this.resourceManager.getString(C3630R.string.wallet_transaction_details_transaction_hash_title);
+            String string = this.resourceManager.getString(C3634R.string.wallet_transaction_details_transaction_hash_title);
             String txHash = item.getTxHash();
             walletTransactionDetailsView.setupScreenWithData(icon, transactionTitle, amount, string, txHash.length() == 0 ? "-" : txHash, null, item.getStatusText(this.resourceManager), formatISODate, ((WalletTransactionDetailsScreenType.StakingOperationDetails) this.screenType).getNetwork().getFullName(), getFee(), isFeeEnabled(), getScanUrl().length() > 0, item.getToken().getAvatarUrl());
         } else if (walletTransactionDetailsScreenType instanceof WalletTransactionDetailsScreenType.CryptoBoxActionDetails) {
@@ -126,7 +126,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             String formatISODate2 = StringExtKt.formatISODate(item2.getCreatedAt(), DateFormatter.DateType.DATE_AND_TIME);
             String transactionTitle2 = item2.getTransactionTitle(this.resourceManager);
             String amount2 = item2.getAmount();
-            String string2 = this.resourceManager.getString(C3630R.string.wallet_transaction_details_transaction_hash_title);
+            String string2 = this.resourceManager.getString(C3634R.string.wallet_transaction_details_transaction_hash_title);
             String txHash2 = item2.getTxHash();
             walletTransactionDetailsView2.setupScreenWithData(icon2, transactionTitle2, amount2, string2, txHash2.length() == 0 ? "-" : txHash2, null, item2.getStatusText(this.resourceManager), formatISODate2, ((WalletTransactionDetailsScreenType.CryptoBoxActionDetails) this.screenType).getNetwork().getFullName(), getFee(), isFeeEnabled(), getScanUrl().length() > 0, item2.getToken().getAvatarUrl());
         } else if (walletTransactionDetailsScreenType instanceof WalletTransactionDetailsScreenType.TransactionDetails) {
@@ -150,27 +150,27 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
 
     private final String getRecipientOrSenderOrElseTitle(Transaction transaction) {
         if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
-            return this.resourceManager.getString(C3630R.string.wallet_transaction_details_simplex_order_id_title);
+            return this.resourceManager.getString(C3634R.string.wallet_transaction_details_simplex_order_id_title);
         }
         if (transaction instanceof Transaction.Crypto.Swap ? true : transaction instanceof Transaction.Crypto.Approve) {
-            return this.resourceManager.getString(C3630R.string.wallet_transaction_details_transaction_hash_title);
+            return this.resourceManager.getString(C3634R.string.wallet_transaction_details_transaction_hash_title);
         }
         int i = WhenMappings.$EnumSwitchMapping$0[transaction.getDirection().ordinal()];
         if (i != 1) {
             if (i == 2 || i == 3) {
-                return this.resourceManager.getString(C3630R.string.wallet_transaction_details_recipient_title);
+                return this.resourceManager.getString(C3634R.string.wallet_transaction_details_recipient_title);
             }
             throw new NoWhenBranchMatchedException();
         }
-        return this.resourceManager.getString(C3630R.string.wallet_transaction_details_sender_title);
+        return this.resourceManager.getString(C3634R.string.wallet_transaction_details_sender_title);
     }
 
     private final String getRecipientOrSenderOrElseValue(Transaction transaction) {
         if (transaction instanceof Transaction.Referral) {
-            return this.resourceManager.getString(C3630R.string.wallet_transaction_details_sender_referral, ((Transaction.Referral) transaction).getInvitedUserId());
+            return this.resourceManager.getString(C3634R.string.wallet_transaction_details_sender_referral, ((Transaction.Referral) transaction).getInvitedUserId());
         }
         if (transaction instanceof Transaction.Lottery ? true : transaction instanceof Transaction.Registration) {
-            return this.resourceManager.getString(C3630R.string.wallet_transaction_details_sender_bonus);
+            return this.resourceManager.getString(C3634R.string.wallet_transaction_details_sender_bonus);
         }
         if (transaction instanceof Transaction.Transfer) {
             return ((Transaction.Transfer) transaction).getRecipientUserId();
@@ -194,13 +194,13 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             }
             return ((Transaction.Crypto.Transfer) transaction).getSenderAddress();
         }
-        return this.resourceManager.getString(C3630R.string.wallet_transaction_details_sender);
+        return this.resourceManager.getString(C3634R.string.wallet_transaction_details_sender);
     }
 
     private final List<Pair<TransactionActionItem, Function0<Unit>>> resolveTransactionAction() {
         ArrayList arrayList = new ArrayList();
         if (canAskSupport()) {
-            arrayList.add(TuplesKt.m144to(TransactionActionItem.Support.INSTANCE, new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$1$1
+            arrayList.add(TuplesKt.m146to(TransactionActionItem.Support.INSTANCE, new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(0);
@@ -219,7 +219,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             }));
         }
         if (canOpenProfile()) {
-            arrayList.add(TuplesKt.m144to(TransactionActionItem.Profile.INSTANCE, new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$1$2
+            arrayList.add(TuplesKt.m146to(TransactionActionItem.Profile.INSTANCE, new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$1$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(0);
@@ -239,7 +239,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
         }
         if (canOpenScanSite()) {
             Network.Explorer explorer = getOperationNetwork().getExplorer();
-            arrayList.add(TuplesKt.m144to(new TransactionActionItem.OpenScan(this.resourceManager.getString(C3630R.string.wallet_transaction_details_action_open_etherscan, explorer.getName()), explorer.getLogoUrl()), new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$1$3$1
+            arrayList.add(TuplesKt.m146to(new TransactionActionItem.OpenScan(this.resourceManager.getString(C3634R.string.wallet_transaction_details_action_open_etherscan, explorer.getName()), explorer.getLogoUrl()), new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$1$3$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(0);
@@ -258,7 +258,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             }));
         }
         if (canCopy()) {
-            arrayList.add(TuplesKt.m144to(new TransactionActionItem.Copy(getCopyTitle()), new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$1$4
+            arrayList.add(TuplesKt.m146to(new TransactionActionItem.Copy(getCopyTitle()), new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$1$4
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(0);
@@ -277,7 +277,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             }));
         }
         if (canCancelOrBoost()) {
-            arrayList.add(TuplesKt.m144to(TransactionActionItem.Cancel.INSTANCE, new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$1$5
+            arrayList.add(TuplesKt.m146to(TransactionActionItem.Cancel.INSTANCE, new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$1$5
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(0);
@@ -296,7 +296,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             }));
         }
         if (canCancelOrBoost()) {
-            arrayList.add(TuplesKt.m144to(TransactionActionItem.Boost.INSTANCE, new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$1$6
+            arrayList.add(TuplesKt.m146to(TransactionActionItem.Boost.INSTANCE, new Function0<Unit>() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter$resolveTransactionAction$1$6
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(0);
@@ -379,7 +379,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     public final void cancelTransaction(final String str) {
         WalletTransactionDetailsScreenType walletTransactionDetailsScreenType = this.screenType;
         if (walletTransactionDetailsScreenType instanceof WalletTransactionDetailsScreenType.TransactionDetails) {
-            Observable<Result<String>> observeOn = this.cancelInteractor.cancelEthTransaction(((WalletTransactionDetailsScreenType.TransactionDetails) walletTransactionDetailsScreenType).getItem().getTransaction().getToken().getTicker(), str).observeOn(this.schedulersProvider.mo1009ui());
+            Observable<Result<String>> observeOn = this.cancelInteractor.cancelEthTransaction(((WalletTransactionDetailsScreenType.TransactionDetails) walletTransactionDetailsScreenType).getItem().getTransaction().getToken().getTicker(), str).observeOn(this.schedulersProvider.mo1010ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "cancelInteractor\n       …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -393,12 +393,12 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                    m1859invoke(result);
+                    m1864invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1859invoke(Result<? extends String> it) {
+                public final void m1864invoke(Result<? extends String> it) {
                     ResourceManager resourceManager;
                     Intrinsics.checkNotNullExpressionValue(it, "it");
                     Result<? extends String> result = it;
@@ -441,7 +441,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void boostTransaction(final String str) {
-        Observable<Result<String>> observeOn = this.boostInteractor.boostEthTransaction(str).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<String>> observeOn = this.boostInteractor.boostEthTransaction(str).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "boostInteractor\n        …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -455,12 +455,12 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1858invoke(result);
+                m1863invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1858invoke(Result<? extends String> it) {
+            public final void m1863invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;
@@ -698,14 +698,14 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     private final int getCopyTitle() {
         WalletTransactionDetailsScreenType walletTransactionDetailsScreenType = this.screenType;
         if (walletTransactionDetailsScreenType instanceof WalletTransactionDetailsScreenType.StakingOperationDetails ? true : walletTransactionDetailsScreenType instanceof WalletTransactionDetailsScreenType.CryptoBoxActionDetails) {
-            return C3630R.string.wallet_transaction_details_action_copy_hash;
+            return C3634R.string.wallet_transaction_details_action_copy_hash;
         }
         if (walletTransactionDetailsScreenType instanceof WalletTransactionDetailsScreenType.TransactionDetails) {
             Transaction transaction = ((WalletTransactionDetailsScreenType.TransactionDetails) walletTransactionDetailsScreenType).getItem().getTransaction();
             if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
-                return C3630R.string.wallet_token_details_action_copy_order_id;
+                return C3634R.string.wallet_token_details_action_copy_order_id;
             }
-            return transaction instanceof Transaction.Crypto.Swap ? true : transaction instanceof Transaction.Crypto.Approve ? C3630R.string.wallet_transaction_details_action_copy_hash : C3630R.string.wallet_transaction_details_action_copy_address;
+            return transaction instanceof Transaction.Crypto.Swap ? true : transaction instanceof Transaction.Crypto.Approve ? C3634R.string.wallet_transaction_details_action_copy_hash : C3634R.string.wallet_transaction_details_action_copy_address;
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -806,7 +806,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             boolean r3 = kotlin.jvm.internal.Intrinsics.areEqual(r3, r4)
             if (r3 == 0) goto L9b
             com.iMe.storage.domain.utils.system.ResourceManager r0 = r6.resourceManager
-            int r1 = org.telegram.messenger.C3630R.string.fee_nothing
+            int r1 = org.telegram.messenger.C3634R.string.fee_nothing
             java.lang.String r0 = r0.getString(r1)
             goto Ld2
         L9b:
@@ -850,11 +850,11 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     }
 
     private final DialogModel getConfirmCancelDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3630R.string.wallet_cancel_transaction_title), this.resourceManager.getString(C3630R.string.wallet_cancel_transaction_description), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_cancel_transaction_title), this.resourceManager.getString(C3634R.string.wallet_cancel_transaction_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.common_confirm));
     }
 
     private final DialogModel getConfirmBoostDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3630R.string.wallet_boost_transaction_title), this.resourceManager.getString(C3630R.string.wallet_boost_transaction_description), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_boost_transaction_title), this.resourceManager.getString(C3634R.string.wallet_boost_transaction_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.common_confirm));
     }
 
     private final void setupTransactionActions(List<Pair<TransactionActionItem, Function0<Unit>>> list) {

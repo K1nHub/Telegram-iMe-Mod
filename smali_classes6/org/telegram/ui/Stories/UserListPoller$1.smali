@@ -41,7 +41,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/UserListPoller;)V
     .locals 0
 
-    .line 47
+    .line 44
     iput-object p1, p0, Lorg/telegram/ui/Stories/UserListPoller$1;->this$0:Lorg/telegram/ui/Stories/UserListPoller;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,15 +54,15 @@
 
     if-eqz p1, :cond_6
 
-    .line 59
+    .line 56
     check-cast p1, Lorg/telegram/tgnet/TLRPC$Vector;
 
-    .line 60
+    .line 57
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 61
+    .line 58
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -71,7 +71,7 @@
 
     move v3, v2
 
-    .line 62
+    .line 59
     :goto_0
     iget-object v4, p1, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
@@ -81,7 +81,7 @@
 
     if-ge v3, v4, :cond_5
 
-    .line 63
+    .line 60
     invoke-virtual {p2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -98,7 +98,7 @@
 
     if-lez v4, :cond_2
 
-    .line 64
+    .line 61
     iget-object v4, p0, Lorg/telegram/ui/Stories/UserListPoller$1;->this$0:Lorg/telegram/ui/Stories/UserListPoller;
 
     iget v4, v4, Lorg/telegram/ui/Stories/UserListPoller;->currentAccount:I
@@ -121,7 +121,7 @@
 
     goto :goto_3
 
-    .line 68
+    .line 65
     :cond_0
     iget-object v5, p1, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
@@ -139,7 +139,7 @@
 
     if-eqz v5, :cond_1
 
-    .line 70
+    .line 67
     iget v5, v4, Lorg/telegram/tgnet/TLRPC$User;->flags2:I
 
     or-int/lit8 v5, v5, 0x20
@@ -148,7 +148,7 @@
 
     goto :goto_1
 
-    .line 72
+    .line 69
     :cond_1
     iget v5, v4, Lorg/telegram/tgnet/TLRPC$User;->flags2:I
 
@@ -156,13 +156,13 @@
 
     iput v5, v4, Lorg/telegram/tgnet/TLRPC$User;->flags2:I
 
-    .line 74
+    .line 71
     :goto_1
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    .line 76
+    .line 73
     :cond_2
     iget-object v4, p0, Lorg/telegram/ui/Stories/UserListPoller$1;->this$0:Lorg/telegram/ui/Stories/UserListPoller;
 
@@ -186,7 +186,7 @@
 
     goto :goto_3
 
-    .line 80
+    .line 77
     :cond_3
     iget-object v5, p1, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
@@ -204,7 +204,7 @@
 
     if-eqz v5, :cond_4
 
-    .line 82
+    .line 79
     iget v5, v4, Lorg/telegram/tgnet/TLRPC$Chat;->flags2:I
 
     or-int/lit8 v5, v5, 0x10
@@ -213,7 +213,7 @@
 
     goto :goto_2
 
-    .line 84
+    .line 81
     :cond_4
     iget v5, v4, Lorg/telegram/tgnet/TLRPC$Chat;->flags2:I
 
@@ -221,7 +221,7 @@
 
     iput v5, v4, Lorg/telegram/tgnet/TLRPC$Chat;->flags2:I
 
-    .line 86
+    .line 83
     :goto_2
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -230,7 +230,7 @@
 
     goto/16 :goto_0
 
-    .line 89
+    .line 86
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Stories/UserListPoller$1;->this$0:Lorg/telegram/ui/Stories/UserListPoller;
 
@@ -244,7 +244,7 @@
 
     invoke-virtual {p1, v0, v1, p2, p2}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
-    .line 90
+    .line 87
     iget-object p1, p0, Lorg/telegram/ui/Stories/UserListPoller$1;->this$0:Lorg/telegram/ui/Stories/UserListPoller;
 
     iget p1, p1, Lorg/telegram/ui/Stories/UserListPoller;->currentAccount:I
@@ -272,7 +272,7 @@
 .method private synthetic lambda$run$1(Ljava/util/ArrayList;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 57
+    .line 54
     new-instance p3, Lorg/telegram/ui/Stories/UserListPoller$1$$ExternalSyntheticLambda0;
 
     invoke-direct {p3, p0, p2, p1}, Lorg/telegram/ui/Stories/UserListPoller$1$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/UserListPoller$1;Lorg/telegram/tgnet/TLObject;Ljava/util/ArrayList;)V
@@ -287,7 +287,7 @@
 .method public run()V
     .locals 7
 
-    .line 50
+    .line 47
     iget-object v0, p0, Lorg/telegram/ui/Stories/UserListPoller$1;->this$0:Lorg/telegram/ui/Stories/UserListPoller;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/UserListPoller;->collectedDialogIds:Ljava/util/ArrayList;
@@ -298,7 +298,7 @@
 
     if-nez v0, :cond_1
 
-    .line 51
+    .line 48
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/UserListPoller$1;->this$0:Lorg/telegram/ui/Stories/UserListPoller;
@@ -307,21 +307,21 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 52
+    .line 49
     iget-object v1, p0, Lorg/telegram/ui/Stories/UserListPoller$1;->this$0:Lorg/telegram/ui/Stories/UserListPoller;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/UserListPoller;->collectedDialogIds:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 53
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_stories_getPeerMaxIDs;
+    .line 50
+    new-instance v1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getPeerMaxIDs;
 
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_stories_getPeerMaxIDs;-><init>()V
+    invoke-direct {v1}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getPeerMaxIDs;-><init>()V
 
     const/4 v2, 0x0
 
-    .line 54
+    .line 51
     :goto_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -329,8 +329,8 @@
 
     if-ge v2, v3, :cond_0
 
-    .line 55
-    iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$TL_stories_getPeerMaxIDs;->id:Ljava/util/ArrayList;
+    .line 52
+    iget-object v3, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getPeerMaxIDs;->id:Ljava/util/ArrayList;
 
     iget-object v4, p0, Lorg/telegram/ui/Stories/UserListPoller$1;->this$0:Lorg/telegram/ui/Stories/UserListPoller;
 
@@ -360,7 +360,7 @@
 
     goto :goto_0
 
-    .line 57
+    .line 54
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Stories/UserListPoller$1;->this$0:Lorg/telegram/ui/Stories/UserListPoller;
 

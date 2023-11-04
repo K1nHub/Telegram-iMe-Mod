@@ -34,6 +34,6 @@ public final class TonFragmentPremiumRecycleAdapter extends BaseNodeAdapter<Base
     protected int getItemType(List<? extends BaseNode> data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         BaseNode baseNode = data.get(i);
-        return baseNode instanceof TonFragmentItem.C1529Premium ? IdFabric$ViewTypes.TON_FRAGMENT_PREMIUM : baseNode instanceof GlobalStateItem ? IdFabric$ViewTypes.GLOBAL_STATE : IdFabric$ViewTypes.TON_FRAGMENT_PREMIUM;
+        return baseNode instanceof TonFragmentItem.C1535Premium ? IdFabric$ViewTypes.TON_FRAGMENT_PREMIUM : baseNode instanceof GlobalStateItem ? IdFabric$ViewTypes.GLOBAL_STATE : IdFabric$ViewTypes.TON_FRAGMENT_PREMIUM;
     }
 }

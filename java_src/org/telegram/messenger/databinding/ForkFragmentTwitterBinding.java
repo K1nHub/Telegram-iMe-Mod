@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentTwitterBinding implements ViewBinding {
     public final RecyclerView recycleTweets;
@@ -27,7 +27,7 @@ public final class ForkFragmentTwitterBinding implements ViewBinding {
     }
 
     public static ForkFragmentTwitterBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_fragment_twitter, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_fragment_twitter, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -35,7 +35,7 @@ public final class ForkFragmentTwitterBinding implements ViewBinding {
     }
 
     public static ForkFragmentTwitterBinding bind(View view) {
-        int i = C3630R.C3633id.recycle_tweets;
+        int i = C3634R.C3637id.recycle_tweets;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentTwitterBinding((SwipeRefreshLayout) view, recyclerView);

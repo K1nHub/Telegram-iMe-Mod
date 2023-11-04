@@ -3,21 +3,11 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x7a015fc1
-
-
 # instance fields
 .field public short_name:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
@@ -30,8 +20,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_stickers_suggestedShortName;
     .locals 1
 
-    .line 547
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_stickers_suggestedShortName;->constructor:I
+    const v0, -0x7a015fc1
 
     if-eq v0, p1, :cond_1
 
@@ -97,9 +86,9 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 564
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_stickers_suggestedShortName;->constructor:I
+    const v0, -0x7a015fc1
 
+    .line 564
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     .line 565

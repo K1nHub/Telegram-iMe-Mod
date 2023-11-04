@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
     .locals 0
 
-    .line 13603
+    .line 13602
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$65;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0}, Landroid/transition/Transition;-><init>()V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$createAnimator$0(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 13634
+    .line 13633
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$65;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -70,7 +70,7 @@
 .method public captureEndValues(Landroid/transition/TransitionValues;)V
     .locals 2
 
-    .line 13613
+    .line 13612
     iget-object v0, p1, Landroid/transition/TransitionValues;->view:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$65;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -81,7 +81,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 13614
+    .line 13613
     iget-object p1, p1, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$65;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -109,7 +109,7 @@
 .method public captureStartValues(Landroid/transition/TransitionValues;)V
     .locals 2
 
-    .line 13606
+    .line 13605
     iget-object v0, p1, Landroid/transition/TransitionValues;->view:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$65;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -120,7 +120,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 13607
+    .line 13606
     iget-object p1, p1, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$65;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -148,7 +148,7 @@
 .method public createAnimator(Landroid/view/ViewGroup;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
     .locals 4
 
-    .line 13620
+    .line 13619
     iget-object p1, p2, Landroid/transition/TransitionValues;->view:Landroid/view/View;
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$65;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -167,7 +167,7 @@
 
     new-array p1, v2, [I
 
-    .line 13621
+    .line 13620
     iget-object p2, p2, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
 
     const-string p3, "scrollY"
@@ -190,14 +190,14 @@
 
     move-result-object p1
 
-    .line 13622
+    .line 13621
     new-instance p2, Lorg/telegram/ui/PhotoViewer$65$1;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/PhotoViewer$65$1;-><init>(Lorg/telegram/ui/PhotoViewer$65;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 13634
+    .line 13633
     new-instance p2, Lorg/telegram/ui/PhotoViewer$65$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/PhotoViewer$65$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PhotoViewer$65;)V
@@ -206,7 +206,7 @@
 
     return-object p1
 
-    .line 13636
+    .line 13635
     :cond_0
     iget-object p1, p3, Landroid/transition/TransitionValues;->view:Landroid/view/View;
 
@@ -218,7 +218,7 @@
 
     if-ne p1, p2, :cond_1
 
-    .line 13637
+    .line 13636
     iget-object p1, p3, Landroid/transition/TransitionValues;->values:Ljava/util/Map;
 
     const-string p2, "translationY"
@@ -235,7 +235,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 13639
+    .line 13638
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$65;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p2}, Lorg/telegram/ui/PhotoViewer;->access$8000(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;
@@ -258,7 +258,7 @@
 
     move-result-object p1
 
-    .line 13640
+    .line 13639
     new-instance p2, Lorg/telegram/ui/PhotoViewer$65$2;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/PhotoViewer$65$2;-><init>(Lorg/telegram/ui/PhotoViewer$65;)V

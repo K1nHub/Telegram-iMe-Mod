@@ -21,10 +21,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 12975
+    .line 12724
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 12978
+    .line 12727
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -49,7 +49,7 @@
 
     goto :goto_0
 
-    .line 12984
+    .line 12733
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInviteReplaced;
 
@@ -57,7 +57,7 @@
 
     goto :goto_0
 
-    .line 12987
+    .line 12736
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInvite;
 
@@ -70,7 +70,7 @@
 
     goto :goto_1
 
-    .line 12991
+    .line 12740
     :cond_2
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -100,7 +100,7 @@
     :goto_1
     if-eqz v0, :cond_4
 
-    .line 12994
+    .line 12743
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_4

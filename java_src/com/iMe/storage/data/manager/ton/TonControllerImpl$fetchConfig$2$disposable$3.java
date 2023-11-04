@@ -23,6 +23,6 @@ import kotlin.jvm.internal.FunctionReferenceImpl;
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(String str) {
         Result.Companion companion = Result.Companion;
-        ((Continuation) this.receiver).resumeWith(Result.m1935constructorimpl(str));
+        ((Continuation) this.receiver).resumeWith(Result.m1940constructorimpl(str));
     }
 }

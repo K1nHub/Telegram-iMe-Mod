@@ -22,9 +22,9 @@ import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.RLottieImageView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: MiniFabsContainer.kt */
 /* renamed from: com.iMe.ui.multifab.MiniFabsContainer */
 /* loaded from: classes3.dex */
@@ -79,19 +79,19 @@ public final class MiniFabsContainer extends LinearLayout {
         RLottieImageView rLottieImageView = new RLottieImageView(getContext());
         ViewExtKt.setScale(rLottieImageView, BitmapDescriptorFactory.HUE_RED);
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
-        float m102dp = AndroidUtilities.m102dp(2);
+        float m104dp = AndroidUtilities.m104dp(2);
         StateListAnimator stateListAnimator = new StateListAnimator();
         Property property = LinearLayout.TRANSLATION_Z;
-        float f = 2 * m102dp;
-        stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(rLottieImageView, property, m102dp, f).setDuration(200L));
-        stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(rLottieImageView, property, f, m102dp).setDuration(200L));
+        float f = 2 * m104dp;
+        stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(rLottieImageView, property, m104dp, f).setDuration(200L));
+        stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(rLottieImageView, property, f, m104dp).setDuration(200L));
         rLottieImageView.setStateListAnimator(stateListAnimator);
         rLottieImageView.setOutlineProvider(new ViewOutlineProvider() { // from class: com.iMe.ui.multifab.MiniFabsContainer$createFab$1$2
             @Override // android.view.ViewOutlineProvider
             public void getOutline(View view, Outline outline) {
                 Intrinsics.checkNotNullParameter(view, "view");
                 Intrinsics.checkNotNullParameter(outline, "outline");
-                outline.setOval(0, 0, AndroidUtilities.m102dp(36), AndroidUtilities.m102dp(36));
+                outline.setOval(0, 0, AndroidUtilities.m104dp(36), AndroidUtilities.m104dp(36));
             }
         });
         FilterFabExtKt.bindMini(filterFab, rLottieImageView);
@@ -161,9 +161,9 @@ public final class MiniFabsContainer extends LinearLayout {
             Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(i)");
             if (childAt instanceof RLottieImageView) {
                 RLottieImageView rLottieImageView = (RLottieImageView) childAt;
-                int m102dp = AndroidUtilities.m102dp(36);
+                int m104dp = AndroidUtilities.m104dp(36);
                 int i2 = Theme.key_windowBackgroundWhite;
-                rLottieImageView.setBackground(Theme.createSimpleSelectorCircleDrawable(m102dp, ColorUtils.blendARGB(Theme.getColor(i2), -1, 0.1f), Theme.blendOver(Theme.getColor(i2), Theme.getColor(Theme.key_listSelector))));
+                rLottieImageView.setBackground(Theme.createSimpleSelectorCircleDrawable(m104dp, ColorUtils.blendARGB(Theme.getColor(i2), -1, 0.1f), Theme.blendOver(Theme.getColor(i2), Theme.getColor(Theme.key_listSelector))));
                 rLottieImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon), PorterDuff.Mode.SRC_IN));
             }
         }

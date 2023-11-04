@@ -2966,14 +2966,14 @@
 
     add-int/2addr v7, v14
 
-    invoke-virtual {v13, v7}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    int-to-float v7, v7
+
+    invoke-virtual {v13, v7}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     sub-int v7, v11, v10
 
     .line 724
     invoke-virtual {v13, v7}, Lorg/telegram/messenger/ImageReceiver;->setImageWidth(I)V
-
-    move v4, v8
 
     goto/16 :goto_6
 
@@ -3014,7 +3014,9 @@
 
     add-int/2addr v3, v2
 
-    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    int-to-float v3, v3
+
+    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     goto/16 :goto_5
 
@@ -3040,7 +3042,9 @@
 
     add-int/2addr v3, v2
 
-    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    int-to-float v3, v3
+
+    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     goto :goto_5
 
@@ -3074,7 +3078,9 @@
 
     add-int/2addr v3, v2
 
-    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    int-to-float v3, v3
+
+    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     goto :goto_5
 
@@ -3102,7 +3108,9 @@
 
     add-int/2addr v3, v2
 
-    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    int-to-float v3, v3
+
+    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     goto :goto_5
 
@@ -3138,7 +3146,9 @@
 
     add-int/2addr v3, v2
 
-    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    int-to-float v3, v3
+
+    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     goto :goto_5
 
@@ -3178,7 +3188,9 @@
 
     add-int/2addr v3, v2
 
-    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    int-to-float v3, v3
+
+    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     .line 747
     :goto_5
@@ -3200,20 +3212,20 @@
 
     div-int/lit8 v7, v6, 0x2
 
-    int-to-float v7, v7
+    int-to-float v4, v7
 
-    add-float/2addr v3, v7
+    add-float/2addr v3, v4
 
     float-to-int v3, v3
 
-    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    int-to-float v3, v3
+
+    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     goto :goto_6
 
-    :cond_e
-    const/4 v4, 0x2
-
     .line 751
+    :cond_e
     iget v3, v0, Lorg/telegram/ui/Components/GroupedPhotosListView;->itemWidth:I
 
     invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageWidth(I)V
@@ -3224,21 +3236,23 @@
 
     invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
+    const/4 v3, 0x2
+
     .line 755
-    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v4
 
-    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
+    invoke-virtual {v13, v4}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    move-object/from16 v3, p1
+    move-object/from16 v4, p1
 
     .line 756
-    invoke-virtual {v13, v3}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
+    invoke-virtual {v13, v4}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
     add-int/lit8 v9, v9, 0x1
 
-    move v8, v4
+    move v8, v3
 
     goto/16 :goto_4
 

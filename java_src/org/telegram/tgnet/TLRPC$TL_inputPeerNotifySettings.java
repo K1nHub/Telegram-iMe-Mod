@@ -1,7 +1,6 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_inputPeerNotifySettings extends TLObject {
-    public static int constructor = -892638494;
     public int flags;
     public int mute_until;
     public boolean show_previews;
@@ -40,7 +39,7 @@ public class TLRPC$TL_inputPeerNotifySettings extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-892638494);
         abstractSerializedData.writeInt32(this.flags);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeBool(this.show_previews);

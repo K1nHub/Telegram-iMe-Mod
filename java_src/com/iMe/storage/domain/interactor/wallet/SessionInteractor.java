@@ -83,7 +83,7 @@ public final class SessionInteractor {
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<SessionTokens>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<SessionTokens>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "sessionRepository\n      …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -98,7 +98,7 @@ public final class SessionInteractor {
 
     public final Completable tgAccountLogout() {
         if (hasActiveUser()) {
-            Completable subscribeOn = this.notificationRepository.deletePushToken().ignoreElements().andThen(this.sessionRepository.logout()).subscribeOn(this.schedulersProvider.mo1010io());
+            Completable subscribeOn = this.notificationRepository.deletePushToken().ignoreElements().andThen(this.sessionRepository.logout()).subscribeOn(this.schedulersProvider.mo1011io());
             Intrinsics.checkNotNullExpressionValue(subscribeOn, "{\n            notificati…sProvider.io())\n        }");
             return subscribeOn;
         }
@@ -150,7 +150,7 @@ public final class SessionInteractor {
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<SessionTokens>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<SessionTokens>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "sessionRepository\n      …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -175,7 +175,7 @@ public final class SessionInteractor {
                     mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(data);
                     Observable<Result<Boolean>> savePushToken = pushNotificationRepository.savePushToken(mutableListOf);
                     schedulersProvider = SessionInteractor.this.schedulersProvider;
-                    Observable<Result<Boolean>> subscribeOn = savePushToken.subscribeOn(schedulersProvider.mo1010io());
+                    Observable<Result<Boolean>> subscribeOn = savePushToken.subscribeOn(schedulersProvider.mo1011io());
                     Intrinsics.checkNotNullExpressionValue(subscribeOn, "notificationRepository\n …(schedulersProvider.io())");
                     return subscribeOn;
                 } else if (result instanceof Result.Error) {
@@ -188,7 +188,7 @@ public final class SessionInteractor {
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<Boolean>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Boolean>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "notificationRepository\n …(schedulersProvider.io())");
         return subscribeOn;
     }

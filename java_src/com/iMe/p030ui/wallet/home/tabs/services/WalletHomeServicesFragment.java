@@ -45,9 +45,9 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeServicesBinding;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.ActionIntroActivity;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.ActionIntroActivity;
 /* compiled from: WalletHomeServicesFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.tabs.services.WalletHomeServicesFragment */
 /* loaded from: classes4.dex */
@@ -156,19 +156,19 @@ public final class WalletHomeServicesFragment extends WalletHomeTabFragment impl
         return root;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         FrameLayout root = getBinding().getRoot();
         int i = ThemeDescription.FLAG_BACKGROUND;
         final BalancesRecycleAdapter balancesAdapter = getBalancesAdapter();
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(root, i, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.home.tabs.services.WalletHomeServicesFragment$$ExternalSyntheticLambda2
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 BalancesRecycleAdapter.this.notifyDataSetChanged();
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }

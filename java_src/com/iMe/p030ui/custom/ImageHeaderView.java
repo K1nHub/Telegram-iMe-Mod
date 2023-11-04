@@ -17,10 +17,10 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkContentImageHeaderBinding;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.AvatarDrawable;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.AvatarDrawable;
 /* compiled from: ImageHeaderView.kt */
 /* renamed from: com.iMe.ui.custom.ImageHeaderView */
 /* loaded from: classes3.dex */
@@ -52,7 +52,7 @@ public final class ImageHeaderView extends FrameLayout {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(ImageHeaderView.this.getResources().getDimension(C3630R.dimen.icon_size_medium) / 2);
+                return Float.valueOf(ImageHeaderView.this.getResources().getDimension(C3634R.dimen.icon_size_medium) / 2);
             }
         });
         this.networkIconCornerSize$delegate = lazy;
@@ -112,7 +112,7 @@ public final class ImageHeaderView extends FrameLayout {
         ForkContentImageHeaderBinding forkContentImageHeaderBinding = this.binding;
         AppCompatImageView imageIcon = forkContentImageHeaderBinding.imageIcon;
         Intrinsics.checkNotNullExpressionValue(imageIcon, "imageIcon");
-        ImageViewExtKt.loadFrom$default(imageIcon, iconUrl, Integer.valueOf(C3630R.C3632drawable.fork_ic_internal_logo), false, 4, null);
+        ImageViewExtKt.loadFrom$default(imageIcon, iconUrl, Integer.valueOf(C3634R.C3636drawable.fork_ic_internal_logo), false, 4, null);
         forkContentImageHeaderBinding.textTitle.setText(titleText);
         forkContentImageHeaderBinding.textSubtitle.setText(subtitleText);
     }
@@ -233,9 +233,9 @@ public final class ImageHeaderView extends FrameLayout {
             }
 
             public int hashCode() {
-                int m1017m = ((ProfileData$$ExternalSyntheticBackport0.m1017m(this.f394id) * 31) + this.firstName.hashCode()) * 31;
+                int m1018m = ((ProfileData$$ExternalSyntheticBackport0.m1018m(this.f394id) * 31) + this.firstName.hashCode()) * 31;
                 String str = this.lastName;
-                return m1017m + (str == null ? 0 : str.hashCode());
+                return m1018m + (str == null ? 0 : str.hashCode());
             }
 
             public String toString() {

@@ -73,9 +73,9 @@ public final class TokenBalanceResponse {
     }
 
     public int hashCode() {
-        int m1011m = ((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.total) * 31) + this.totalInFiat.hashCode()) * 31) + this.rateToFiat.hashCode()) * 31;
+        int m1012m = ((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.total) * 31) + this.totalInFiat.hashCode()) * 31) + this.rateToFiat.hashCode()) * 31;
         Double d = this.ratePercentageChange24h;
-        return ((m1011m + (d == null ? 0 : d.hashCode())) * 31) + this.token.hashCode();
+        return ((m1012m + (d == null ? 0 : d.hashCode())) * 31) + this.token.hashCode();
     }
 
     public String toString() {

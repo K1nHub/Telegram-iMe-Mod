@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/CacheControlActivity$CacheChartHeader;Landroid/content/Context;Lorg/telegram/ui/CacheControlActivity;)V
     .locals 0
 
-    .line 1872
+    .line 1877
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1875
+    .line 1880
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1

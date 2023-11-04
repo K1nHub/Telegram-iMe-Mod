@@ -61,7 +61,7 @@ public final class TrComputePhaseAux implements TlbObject {
     }
 
     public int hashCode() {
-        return (((((((((((((((this.gasUsed.hashCode() * 31) + this.gasLimit.hashCode()) * 31) + this.gasCredit.hashCode()) * 31) + this.mode) * 31) + this.exitCode) * 31) + this.exitArg.hashCode()) * 31) + UInt.m1969hashCodeimpl(this.vmSteps)) * 31) + this.vmInitStateHash.hashCode()) * 31) + this.vmFinalStateHash.hashCode();
+        return (((((((((((((((this.gasUsed.hashCode() * 31) + this.gasLimit.hashCode()) * 31) + this.gasCredit.hashCode()) * 31) + this.mode) * 31) + this.exitCode) * 31) + this.exitArg.hashCode()) * 31) + UInt.m1974hashCodeimpl(this.vmSteps)) * 31) + this.vmInitStateHash.hashCode()) * 31) + this.vmFinalStateHash.hashCode();
     }
 
     private TrComputePhaseAux(int i, VarUInteger varUInteger, VarUInteger varUInteger2, Maybe<VarUInteger> maybe, int i2, int i3, Maybe<Integer> maybe2, UInt uInt, BitString bitString, BitString bitString2, SerializationConstructorMarker serializationConstructorMarker) {
@@ -74,7 +74,7 @@ public final class TrComputePhaseAux implements TlbObject {
         this.mode = i2;
         this.exitCode = i3;
         this.exitArg = maybe2;
-        this.vmSteps = uInt.m1971unboximpl();
+        this.vmSteps = uInt.m1976unboximpl();
         this.vmInitStateHash = bitString;
         this.vmFinalStateHash = bitString2;
     }
@@ -106,7 +106,7 @@ public final class TrComputePhaseAux implements TlbObject {
         compositeEncoder.encodeIntElement(serialDescriptor, 3, trComputePhaseAux.mode);
         compositeEncoder.encodeIntElement(serialDescriptor, 4, trComputePhaseAux.exitCode);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 5, kSerializerArr[5], trComputePhaseAux.exitArg);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 6, UIntSerializer.INSTANCE, UInt.m1966boximpl(trComputePhaseAux.vmSteps));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 6, UIntSerializer.INSTANCE, UInt.m1971boximpl(trComputePhaseAux.vmSteps));
         FiftHexBitStringSerializer fiftHexBitStringSerializer = FiftHexBitStringSerializer.INSTANCE;
         compositeEncoder.encodeSerializableElement(serialDescriptor, 7, fiftHexBitStringSerializer, trComputePhaseAux.vmInitStateHash);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 8, fiftHexBitStringSerializer, trComputePhaseAux.vmFinalStateHash);
@@ -137,7 +137,7 @@ public final class TrComputePhaseAux implements TlbObject {
     }
 
     /* renamed from: getVmSteps-pVg5ArA  reason: not valid java name */
-    public final int m5049getVmStepspVg5ArA() {
+    public final int m5203getVmStepspVg5ArA() {
         return this.vmSteps;
     }
 
@@ -159,7 +159,7 @@ public final class TrComputePhaseAux implements TlbObject {
         open.field("mode", Integer.valueOf(this.mode));
         open.field("exit_code", Integer.valueOf(this.exitCode));
         open.field("exit_arg", this.exitArg);
-        open.field("vm_steps", UInt.m1966boximpl(this.vmSteps));
+        open.field("vm_steps", UInt.m1971boximpl(this.vmSteps));
         open.field("vm_init_state_hash", this.vmInitStateHash);
         open.field("vm_final_state_hash", this.vmFinalStateHash);
         TlbPrettyPrinter.close$default(open, null, 1, null);
@@ -217,6 +217,6 @@ public final class TrComputePhaseAux implements TlbObject {
         KClass[] kClassArr = {Reflection.getOrCreateKotlinClass(Just.class), Reflection.getOrCreateKotlinClass(Nothing.class)};
         Just.Companion companion = Just.Companion;
         Nothing.Companion companion2 = Nothing.Companion;
-        $childSerializers = new KSerializer[]{null, null, new SealedClassSerializer("org.ton.block.Maybe", orCreateKotlinClass, kClassArr, new KSerializer[]{companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), companion2.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7538x101b1ca4("@type")}), null, null, new SealedClassSerializer("org.ton.block.Maybe", Reflection.getOrCreateKotlinClass(Maybe.class), new KClass[]{Reflection.getOrCreateKotlinClass(Just.class), Reflection.getOrCreateKotlinClass(Nothing.class)}, new KSerializer[]{companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), companion2.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7538x101b1ca4("@type")}), null, null, null};
+        $childSerializers = new KSerializer[]{null, null, new SealedClassSerializer("org.ton.block.Maybe", orCreateKotlinClass, kClassArr, new KSerializer[]{companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), companion2.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7613x101b1ca4("@type")}), null, null, new SealedClassSerializer("org.ton.block.Maybe", Reflection.getOrCreateKotlinClass(Maybe.class), new KClass[]{Reflection.getOrCreateKotlinClass(Just.class), Reflection.getOrCreateKotlinClass(Nothing.class)}, new KSerializer[]{companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), companion2.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7613x101b1ca4("@type")}), null, null, null};
     }
 }

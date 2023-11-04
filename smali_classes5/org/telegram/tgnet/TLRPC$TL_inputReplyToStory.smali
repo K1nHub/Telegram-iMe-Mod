@@ -3,23 +3,7 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x15b0f283
-
-
-# instance fields
-.field public story_id:I
-
-.field public user_id:Lorg/telegram/tgnet/TLRPC$InputUser;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
@@ -41,13 +25,13 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_inputReplyToStory;->user_id:Lorg/telegram/tgnet/TLRPC$InputUser;
+    iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$InputReplyTo;->user_id:Lorg/telegram/tgnet/TLRPC$InputUser;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
 
-    iput p1, p0, Lorg/telegram/tgnet/TLRPC$TL_inputReplyToStory;->story_id:I
+    iput p1, p0, Lorg/telegram/tgnet/TLRPC$InputReplyTo;->story_id:I
 
     return-void
 .end method
@@ -55,15 +39,15 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_inputReplyToStory;->constructor:I
+    const v0, 0x15b0f283
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_inputReplyToStory;->user_id:Lorg/telegram/tgnet/TLRPC$InputUser;
+    iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$InputReplyTo;->user_id:Lorg/telegram/tgnet/TLRPC$InputUser;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_inputReplyToStory;->story_id:I
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$InputReplyTo;->story_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 

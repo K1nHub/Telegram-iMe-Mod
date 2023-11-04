@@ -229,20 +229,20 @@
     return-void
 .end method
 
-.method static synthetic access$3600(Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;JJZ)V
-    .locals 0
-
-    .line 169
-    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->setDestroyTime(JJZ)V
-
-    return-void
-.end method
-
-.method static synthetic access$3700(Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;)V
+.method static synthetic access$3600(Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;)V
     .locals 0
 
     .line 169
     invoke-direct {p0}, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->setOnce()V
+
+    return-void
+.end method
+
+.method static synthetic access$4500(Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;JJZ)V
+    .locals 0
+
+    .line 169
+    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->setDestroyTime(JJZ)V
 
     return-void
 .end method
@@ -389,7 +389,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_6
 
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
@@ -434,7 +434,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     .line 255
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->this$0:Lorg/telegram/ui/SecretMediaViewer;
@@ -462,11 +462,11 @@
 
     cmp-long v0, v2, v6
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     cmp-long v0, v4, v6
 
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_3
 
     long-to-float v0, v4
 
@@ -480,6 +480,18 @@
 
     .line 266
     :cond_1
+    iget-wide v2, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->destroyTime:J
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v0, v2, v4
+
+    if-nez v0, :cond_2
+
+    goto :goto_0
+
+    .line 269
+    :cond_2
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -504,14 +516,12 @@
 
     add-long/2addr v0, v2
 
-    const-wide/16 v2, 0x0
+    .line 270
+    iget-wide v2, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->destroyTime:J
 
-    .line 267
-    iget-wide v4, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->destroyTime:J
+    sub-long/2addr v2, v0
 
-    sub-long/2addr v4, v0
-
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->max(JJ)J
+    invoke-static {v4, v5, v2, v3}, Ljava/lang/Math;->max(JJ)J
 
     move-result-wide v0
 
@@ -527,17 +537,17 @@
 
     div-float v1, v0, v1
 
-    .line 270
-    :cond_2
+    .line 275
+    :cond_3
     :goto_0
     iget-boolean v0, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->once:Z
 
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_5
 
-    .line 271
+    .line 276
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 272
+    .line 277
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->deleteProgressRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
@@ -566,15 +576,15 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 273
+    .line 278
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->onceLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 274
+    .line 279
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 276
+    .line 281
     iget-object v2, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->deleteProgressRect:Landroid/graphics/RectF;
 
     const/high16 v3, 0x42b40000    # 90.0f
@@ -596,9 +606,9 @@
     :goto_1
     const/4 v2, 0x5
 
-    if-ge v1, v2, :cond_3
+    if-ge v1, v2, :cond_4
 
-    .line 284
+    .line 289
     iget-object v4, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->deleteProgressRect:Landroid/graphics/RectF;
 
     const/high16 v2, 0x43870000    # 270.0f
@@ -623,8 +633,8 @@
 
     goto :goto_1
 
-    .line 287
-    :cond_3
+    .line 292
+    :cond_4
     iget-object v2, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->timerParticles:Lorg/telegram/ui/Components/TimerParticles;
 
     iget-object v4, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->particlePaint:Landroid/graphics/Paint;
@@ -641,15 +651,15 @@
 
     goto :goto_2
 
-    .line 289
-    :cond_4
+    .line 294
+    :cond_5
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->deleteProgressRect:Landroid/graphics/RectF;
 
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
 
     move-result v0
 
-    .line 290
+    .line 295
     iget-object v2, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->deleteProgressRect:Landroid/graphics/RectF;
 
     invoke-virtual {v2}, Landroid/graphics/RectF;->centerY()F
@@ -668,14 +678,14 @@
 
     const/16 v3, 0x8
 
-    .line 291
+    .line 296
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
     int-to-float v3, v3
 
-    .line 292
+    .line 297
     iget-object v4, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     sub-float v5, v0, v3
@@ -696,7 +706,7 @@
 
     invoke-virtual {v4, v5, v6, v0, v2}, Landroid/graphics/drawable/BitmapDrawable;->setBounds(IIII)V
 
-    .line 293
+    .line 298
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->drawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->draw(Landroid/graphics/Canvas;)V
@@ -705,7 +715,7 @@
 
     mul-float/2addr v0, v1
 
-    .line 295
+    .line 300
     iget-object v3, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->deleteProgressRect:Landroid/graphics/RectF;
 
     const/high16 v4, -0x3d4c0000    # -90.0f
@@ -720,7 +730,7 @@
 
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
-    .line 296
+    .line 301
     iget-object v2, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->timerParticles:Lorg/telegram/ui/Components/TimerParticles;
 
     iget-object v4, p0, Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;->particlePaint:Landroid/graphics/Paint;
@@ -735,11 +745,11 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/TimerParticles;->draw(Landroid/graphics/Canvas;Landroid/graphics/Paint;Landroid/graphics/RectF;FF)V
 
-    .line 298
+    .line 303
     :goto_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    :cond_5
+    :cond_6
     :goto_3
     return-void
 .end method

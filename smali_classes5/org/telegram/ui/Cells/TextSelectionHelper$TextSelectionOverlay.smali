@@ -36,13 +36,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Cells/TextSelectionHelper;Landroid/content/Context;)V
     .locals 0
 
-    .line 764
+    .line 773
     iput-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    .line 765
+    .line 774
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 756
+    .line 765
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -53,17 +53,17 @@
 
     const-wide/16 p1, 0x0
 
-    .line 760
+    .line 769
     iput-wide p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->pressedTime:J
 
-    .line 762
+    .line 771
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
-    .line 766
+    .line 775
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->handleViewPaint:Landroid/graphics/Paint;
 
     sget-object p2, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
@@ -80,39 +80,35 @@
 
     if-nez p3, :cond_0
 
-    .line 1316
+    .line 1330
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1500(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
+    invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1400(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
 
     move-result-object p1
 
     const/4 p2, 0x1
 
-    .line 1317
+    .line 1331
     aget p1, p1, p2
 
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget p1, p1, Lorg/telegram/ui/Cells/TextSelectionHelper;->textY:I
 
-    .line 1319
+    .line 1333
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
+    iget-boolean p2, p1, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandle:Z
 
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
+    if-nez p2, :cond_1
 
     iget-boolean p2, p1, Lorg/telegram/ui/Cells/TextSelectionHelper;->allowDiscard:Z
 
     if-eqz p2, :cond_1
 
-    .line 1320
+    .line 1334
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->clear()V
 
     :cond_1
@@ -122,28 +118,28 @@
 .method public checkCancelAction(Landroid/view/MotionEvent;)V
     .locals 3
 
-    .line 1327
+    .line 1341
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1328
+    .line 1342
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->cancelPressedX:F
 
-    .line 1329
+    .line 1343
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->cancelPressedY:F
 
-    .line 1330
+    .line 1344
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->isInSelectionMode()Z
@@ -154,7 +150,7 @@
 
     goto :goto_0
 
-    .line 1331
+    .line 1345
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -214,7 +210,7 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 1332
+    .line 1346
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -234,7 +230,7 @@
 .method public checkOnTap(Landroid/view/MotionEvent;)Z
     .locals 7
 
-    .line 771
+    .line 780
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->isInSelectionMode()Z
@@ -247,15 +243,13 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
-
-    move-result v0
+    iget-boolean v0, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandle:Z
 
     if-eqz v0, :cond_0
 
     goto :goto_0
 
-    .line 772
+    .line 781
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -269,7 +263,7 @@
 
     goto :goto_0
 
-    .line 779
+    .line 788
     :cond_1
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -311,7 +305,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1000(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
+    invoke-static {v0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$900(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
 
     move-result v0
 
@@ -321,19 +315,19 @@
 
     if-gez p1, :cond_3
 
-    .line 780
+    .line 789
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1100(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
+    invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1000(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
 
-    .line 781
+    .line 790
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->clear()V
 
     return v2
 
-    .line 774
+    .line 783
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -341,14 +335,14 @@
 
     iput v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->pressedX:F
 
-    .line 775
+    .line 784
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->pressedY:F
 
-    .line 776
+    .line 785
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -363,13 +357,13 @@
 .method public invalidate()V
     .locals 1
 
-    .line 1338
+    .line 1352
     invoke-super {p0}, Landroid/view/View;->invalidate()V
 
-    .line 1339
+    .line 1353
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2700(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
 
     move-result v0
 
@@ -381,7 +375,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1340
+    .line 1354
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
 
     :cond_0
@@ -395,7 +389,7 @@
 
     move-object/from16 v1, p1
 
-    .line 1137
+    .line 1150
     iget-object v2, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->isInSelectionMode()Z
@@ -409,24 +403,24 @@
     :cond_0
     const/16 v2, 0x16
 
-    .line 1138
+    .line 1151
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    .line 1141
+    .line 1154
     iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2100(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
+    invoke-static {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2000(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
 
     move-result v3
 
-    .line 1142
+    .line 1155
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->pickEndView()V
 
-    .line 1143
+    .line 1156
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v4, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
@@ -441,17 +435,17 @@
 
     if-eqz v4, :cond_7
 
-    .line 1144
+    .line 1157
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1145
+    .line 1158
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1500(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
+    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1400(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
 
     move-result-object v4
 
-    .line 1146
+    .line 1159
     aget v9, v4, v6
 
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
@@ -462,7 +456,7 @@
 
     int-to-float v9, v9
 
-    .line 1147
+    .line 1160
     aget v4, v4, v7
 
     iget v10, v10, Lorg/telegram/ui/Cells/TextSelectionHelper;->textX:I
@@ -471,10 +465,10 @@
 
     int-to-float v4, v4
 
-    .line 1149
+    .line 1162
     invoke-virtual {v1, v4, v9}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1151
+    .line 1164
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v10, v10, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
@@ -497,14 +491,14 @@
     :goto_0
     if-eqz v10, :cond_2
 
-    .line 1152
+    .line 1165
     invoke-virtual {v10}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
 
     move-result v10
 
     if-eqz v10, :cond_2
 
-    .line 1153
+    .line 1166
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->handleViewPaint:Landroid/graphics/Paint;
 
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
@@ -519,7 +513,7 @@
 
     goto :goto_1
 
-    .line 1155
+    .line 1168
     :cond_2
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->handleViewPaint:Landroid/graphics/Paint;
 
@@ -533,7 +527,7 @@
 
     invoke-virtual {v10, v11}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1158
+    .line 1171
     :goto_1
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -547,7 +541,7 @@
 
     move-result v10
 
-    .line 1160
+    .line 1173
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget v12, v11, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
@@ -556,12 +550,12 @@
 
     if-gt v12, v10, :cond_6
 
-    .line 1161
+    .line 1174
     iget-object v10, v11, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
 
     invoke-virtual {v11, v12, v10}, Lorg/telegram/ui/Cells/TextSelectionHelper;->fillLayoutForOffset(ILorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;)V
 
-    .line 1162
+    .line 1175
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v11, v10, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
@@ -570,14 +564,14 @@
 
     if-eqz v12, :cond_6
 
-    .line 1164
+    .line 1177
     iget v10, v10, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
     iget v11, v11, Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;->charOffset:I
 
     sub-int/2addr v10, v11
 
-    .line 1165
+    .line 1178
     invoke-virtual {v12}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v11
@@ -590,25 +584,25 @@
 
     move v10, v11
 
-    .line 1170
+    .line 1183
     :cond_3
     invoke-virtual {v12, v10}, Landroid/text/Layout;->getLineForOffset(I)I
 
     move-result v11
 
-    .line 1171
+    .line 1184
     invoke-virtual {v12, v10}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
 
     move-result v10
 
-    .line 1172
+    .line 1185
     invoke-virtual {v12, v11}, Landroid/text/Layout;->getLineBottom(I)I
 
     move-result v11
 
     int-to-float v11, v11
 
-    .line 1173
+    .line 1186
     iget-object v13, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v14, v13, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
@@ -619,7 +613,7 @@
 
     float-to-int v11, v11
 
-    .line 1174
+    .line 1187
     iget v14, v14, Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;->xOffset:F
 
     add-float/2addr v10, v14
@@ -628,7 +622,7 @@
 
     add-float/2addr v9, v11
 
-    .line 1176
+    .line 1189
     iget v14, v13, Lorg/telegram/ui/Cells/TextSelectionHelper;->keyboardSize:I
 
     add-int/2addr v14, v3
@@ -651,7 +645,7 @@
 
     if-gez v13, :cond_5
 
-    .line 1177
+    .line 1190
     iget-object v13, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget v13, v13, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
@@ -662,16 +656,16 @@
 
     if-nez v12, :cond_4
 
-    .line 1178
+    .line 1191
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1179
+    .line 1192
     invoke-virtual {v1, v10, v11}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1180
+    .line 1193
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2200(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/animation/Interpolator;
+    invoke-static {v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2100(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/animation/Interpolator;
 
     move-result-object v11
 
@@ -687,22 +681,22 @@
 
     div-float v15, v12, v5
 
-    .line 1181
+    .line 1194
     invoke-virtual {v1, v11, v11, v15, v15}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1182
+    .line 1195
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     invoke-virtual {v11}, Landroid/graphics/Path;->reset()V
 
-    .line 1183
+    .line 1196
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     sget-object v13, Landroid/graphics/Path$Direction;->CCW:Landroid/graphics/Path$Direction;
 
     invoke-virtual {v11, v15, v15, v15, v13}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 1184
+    .line 1197
     iget-object v13, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     const/4 v14, 0x0
@@ -719,20 +713,20 @@
 
     invoke-virtual/range {v13 .. v18}, Landroid/graphics/Path;->addRect(FFFFLandroid/graphics/Path$Direction;)V
 
-    .line 1185
+    .line 1198
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     iget-object v13, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->handleViewPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v11, v13}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 1186
+    .line 1199
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1187
+    .line 1200
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1600(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
+    invoke-static {v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
 
     move-result-object v11
 
@@ -746,10 +740,10 @@
 
     invoke-virtual {v11, v4, v10, v13, v9}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1191
+    .line 1204
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1600(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
+    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
 
     move-result-object v4
 
@@ -775,7 +769,7 @@
 
     goto/16 :goto_3
 
-    .line 1194
+    .line 1207
     :cond_4
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
@@ -783,13 +777,13 @@
 
     sub-float v12, v10, v15
 
-    .line 1195
+    .line 1208
     invoke-virtual {v1, v12, v11}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1196
+    .line 1209
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2200(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/animation/Interpolator;
+    invoke-static {v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2100(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/animation/Interpolator;
 
     move-result-object v11
 
@@ -803,22 +797,22 @@
 
     div-float v14, v15, v5
 
-    .line 1197
+    .line 1210
     invoke-virtual {v1, v11, v11, v14, v14}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1198
+    .line 1211
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     invoke-virtual {v11}, Landroid/graphics/Path;->reset()V
 
-    .line 1199
+    .line 1212
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     sget-object v12, Landroid/graphics/Path$Direction;->CCW:Landroid/graphics/Path$Direction;
 
     invoke-virtual {v11, v14, v14, v14, v12}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 1200
+    .line 1213
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     const/4 v13, 0x0
@@ -837,20 +831,20 @@
 
     invoke-virtual/range {v11 .. v16}, Landroid/graphics/Path;->addRect(FFFFLandroid/graphics/Path$Direction;)V
 
-    .line 1201
+    .line 1214
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     iget-object v12, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->handleViewPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v11, v12}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 1202
+    .line 1215
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1203
+    .line 1216
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1600(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
+    invoke-static {v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
 
     move-result-object v11
 
@@ -864,10 +858,10 @@
 
     invoke-virtual {v11, v10, v12, v4, v9}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1207
+    .line 1220
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1600(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
+    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
 
     move-result-object v4
 
@@ -891,11 +885,11 @@
 
     goto :goto_2
 
-    .line 1210
+    .line 1223
     :cond_5
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1600(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
+    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
 
     move-result-object v4
 
@@ -905,7 +899,7 @@
     :goto_2
     move v4, v7
 
-    .line 1214
+    .line 1227
     :goto_3
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -914,30 +908,30 @@
     :cond_7
     move v4, v7
 
-    .line 1216
+    .line 1229
     :goto_4
     iget-object v9, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v9}, Lorg/telegram/ui/Cells/TextSelectionHelper;->pickStartView()V
 
-    .line 1217
+    .line 1230
     iget-object v9, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v9, v9, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
 
     if-eqz v9, :cond_c
 
-    .line 1218
+    .line 1231
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1219
+    .line 1232
     iget-object v9, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v9}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1500(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
+    invoke-static {v9}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1400(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
 
     move-result-object v9
 
-    .line 1220
+    .line 1233
     aget v6, v9, v6
 
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
@@ -948,7 +942,7 @@
 
     int-to-float v6, v6
 
-    .line 1221
+    .line 1234
     aget v9, v9, v7
 
     iget v10, v10, Lorg/telegram/ui/Cells/TextSelectionHelper;->textX:I
@@ -957,10 +951,10 @@
 
     int-to-float v9, v9
 
-    .line 1222
+    .line 1235
     invoke-virtual {v1, v9, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1224
+    .line 1237
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v11, v10, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
@@ -973,7 +967,7 @@
 
     move-result v7
 
-    .line 1226
+    .line 1239
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget v11, v10, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
@@ -982,12 +976,12 @@
 
     if-gt v11, v7, :cond_b
 
-    .line 1227
+    .line 1240
     iget-object v7, v10, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
 
     invoke-virtual {v10, v11, v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->fillLayoutForOffset(ILorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;)V
 
-    .line 1228
+    .line 1241
     iget-object v7, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v10, v7, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
@@ -996,31 +990,31 @@
 
     if-eqz v11, :cond_b
 
-    .line 1230
+    .line 1243
     iget v7, v7, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
     iget v10, v10, Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;->charOffset:I
 
     sub-int/2addr v7, v10
 
-    .line 1231
+    .line 1244
     invoke-virtual {v11, v7}, Landroid/text/Layout;->getLineForOffset(I)I
 
     move-result v10
 
-    .line 1232
+    .line 1245
     invoke-virtual {v11, v7}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
 
     move-result v7
 
-    .line 1234
+    .line 1247
     invoke-virtual {v11, v10}, Landroid/text/Layout;->getLineBottom(I)I
 
     move-result v10
 
     int-to-float v10, v10
 
-    .line 1235
+    .line 1248
     iget-object v12, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v13, v12, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
@@ -1031,7 +1025,7 @@
 
     float-to-int v10, v10
 
-    .line 1236
+    .line 1249
     iget v13, v13, Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;->xOffset:F
 
     add-float/2addr v7, v13
@@ -1040,7 +1034,7 @@
 
     add-float/2addr v6, v10
 
-    .line 1238
+    .line 1251
     iget v13, v12, Lorg/telegram/ui/Cells/TextSelectionHelper;->keyboardSize:I
 
     add-int/2addr v3, v13
@@ -1063,7 +1057,7 @@
 
     if-gez v3, :cond_9
 
-    .line 1239
+    .line 1252
     iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget v3, v3, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
@@ -1074,20 +1068,20 @@
 
     if-nez v3, :cond_8
 
-    .line 1240
+    .line 1253
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     int-to-float v2, v2
 
     sub-float v3, v7, v2
 
-    .line 1241
+    .line 1254
     invoke-virtual {v1, v3, v10}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1242
+    .line 1255
     iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2200(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/animation/Interpolator;
+    invoke-static {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2100(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/animation/Interpolator;
 
     move-result-object v3
 
@@ -1101,22 +1095,22 @@
 
     div-float v15, v2, v5
 
-    .line 1243
+    .line 1256
     invoke-virtual {v1, v3, v3, v15, v15}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1244
+    .line 1257
     iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     invoke-virtual {v3}, Landroid/graphics/Path;->reset()V
 
-    .line 1245
+    .line 1258
     iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     sget-object v5, Landroid/graphics/Path$Direction;->CCW:Landroid/graphics/Path$Direction;
 
     invoke-virtual {v3, v15, v15, v15, v5}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 1246
+    .line 1259
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     const/4 v13, 0x0
@@ -1129,20 +1123,20 @@
 
     invoke-virtual/range {v11 .. v16}, Landroid/graphics/Path;->addRect(FFFFLandroid/graphics/Path$Direction;)V
 
-    .line 1247
+    .line 1260
     iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     iget-object v5, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->handleViewPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3, v5}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 1248
+    .line 1261
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1249
+    .line 1262
     iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1400(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
+    invoke-static {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1300(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
 
     move-result-object v3
 
@@ -1156,10 +1150,10 @@
 
     invoke-virtual {v3, v5, v7, v9, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1253
+    .line 1266
     iget-object v2, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1400(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
+    invoke-static {v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1300(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
 
     move-result-object v2
 
@@ -1185,17 +1179,17 @@
 
     goto/16 :goto_5
 
-    .line 1256
+    .line 1269
     :cond_8
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1257
+    .line 1270
     invoke-virtual {v1, v7, v10}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1258
+    .line 1271
     iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2200(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/animation/Interpolator;
+    invoke-static {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2100(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/animation/Interpolator;
 
     move-result-object v3
 
@@ -1211,22 +1205,22 @@
 
     div-float v14, v2, v5
 
-    .line 1259
+    .line 1272
     invoke-virtual {v1, v3, v3, v14, v14}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1260
+    .line 1273
     iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     invoke-virtual {v3}, Landroid/graphics/Path;->reset()V
 
-    .line 1261
+    .line 1274
     iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     sget-object v5, Landroid/graphics/Path$Direction;->CCW:Landroid/graphics/Path$Direction;
 
     invoke-virtual {v3, v14, v14, v14, v5}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 1262
+    .line 1275
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     const/4 v11, 0x0
@@ -1239,20 +1233,20 @@
 
     invoke-virtual/range {v10 .. v15}, Landroid/graphics/Path;->addRect(FFFFLandroid/graphics/Path$Direction;)V
 
-    .line 1263
+    .line 1276
     iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->path:Landroid/graphics/Path;
 
     iget-object v5, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->handleViewPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v3, v5}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 1264
+    .line 1277
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1265
+    .line 1278
     iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1400(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
+    invoke-static {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1300(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
 
     move-result-object v3
 
@@ -1266,10 +1260,10 @@
 
     invoke-virtual {v3, v9, v5, v7, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1269
+    .line 1282
     iget-object v2, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1400(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
+    invoke-static {v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1300(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
 
     move-result-object v2
 
@@ -1300,7 +1294,7 @@
 
     if-lez v2, :cond_a
 
-    .line 1272
+    .line 1285
     iget-object v2, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getLineHeight()I
@@ -1327,17 +1321,17 @@
 
     add-int/lit8 v4, v4, 0x1
 
-    .line 1275
+    .line 1288
     :cond_a
     iget-object v2, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1400(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
+    invoke-static {v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1300(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
 
     move-result-object v2
 
     invoke-virtual {v2}, Landroid/graphics/RectF;->setEmpty()V
 
-    .line 1279
+    .line 1292
     :cond_b
     :goto_5
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
@@ -1345,45 +1339,41 @@
     :cond_c
     if-eqz v4, :cond_f
 
-    .line 1283
+    .line 1296
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
+    iget-boolean v2, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandle:Z
 
-    move-result v1
+    if-eqz v2, :cond_f
 
-    if-eqz v1, :cond_f
-
-    .line 1284
-    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
-
+    .line 1297
     iget-boolean v2, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandleStart:Z
 
     if-nez v2, :cond_d
 
-    .line 1285
+    .line 1298
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->pickEndView()V
 
-    .line 1287
+    .line 1300
     :cond_d
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1200(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1100(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
 
     move-result v2
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1700(Lorg/telegram/ui/Cells/TextSelectionHelper;I)V
+    invoke-static {v1, v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1600(Lorg/telegram/ui/Cells/TextSelectionHelper;I)V
 
-    .line 1288
+    .line 1301
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2300(Lorg/telegram/ui/Cells/TextSelectionHelper;)F
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2200(Lorg/telegram/ui/Cells/TextSelectionHelper;)F
 
     move-result v1
 
     iget-object v2, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2400(Lorg/telegram/ui/Cells/TextSelectionHelper;)F
+    invoke-static {v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2300(Lorg/telegram/ui/Cells/TextSelectionHelper;)F
 
     move-result v2
 
@@ -1393,13 +1383,13 @@
 
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2500(Lorg/telegram/ui/Cells/TextSelectionHelper;)F
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2400(Lorg/telegram/ui/Cells/TextSelectionHelper;)F
 
     move-result v1
 
     iget-object v2, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2600(Lorg/telegram/ui/Cells/TextSelectionHelper;)F
+    invoke-static {v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2500(Lorg/telegram/ui/Cells/TextSelectionHelper;)F
 
     move-result v2
 
@@ -1407,26 +1397,39 @@
 
     if-eqz v1, :cond_f
 
-    .line 1289
+    .line 1302
     :cond_e
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->invalidate()V
 
-    .line 1294
+    .line 1307
     :cond_f
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2700(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2600(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
 
     move-result v1
 
     if-nez v1, :cond_10
 
-    .line 1295
+    .line 1308
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$300(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$300(Lorg/telegram/ui/Cells/TextSelectionHelper;)Ljava/lang/Runnable;
 
-    .line 1298
+    move-result-object v1
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
+
+    .line 1309
+    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
+
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$300(Lorg/telegram/ui/Cells/TextSelectionHelper;)Ljava/lang/Runnable;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+
+    .line 1312
     :cond_10
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1436,34 +1439,34 @@
 
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/ActionMode;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$700(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/ActionMode;
 
     move-result-object v1
 
     if-eqz v1, :cond_11
 
-    .line 1299
+    .line 1313
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/ActionMode;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$700(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/ActionMode;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/view/ActionMode;->invalidateContentRect()V
 
-    .line 1300
+    .line 1314
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/ActionMode;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$700(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/ActionMode;
 
     move-result-object v1
 
     if-eqz v1, :cond_11
 
-    .line 1301
+    .line 1315
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/ActionMode;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$700(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/view/ActionMode;
 
     move-result-object v1
 
@@ -1471,17 +1474,17 @@
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/FloatingActionMode;->updateViewLocationInWindow()V
 
-    .line 1305
+    .line 1319
     :cond_11
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$600(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
 
     move-result v1
 
     if-eqz v1, :cond_12
 
-    .line 1306
+    .line 1320
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->invalidate()V
 
     :cond_12
@@ -1493,7 +1496,7 @@
 
     move-object/from16 v0, p0
 
-    .line 793
+    .line 802
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->isInSelectionMode()Z
@@ -1506,7 +1509,7 @@
 
     return v2
 
-    .line 794
+    .line 803
     :cond_0
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
@@ -1516,20 +1519,18 @@
 
     if-le v1, v3, :cond_1
 
-    .line 795
+    .line 804
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
-
-    move-result v1
+    iget-boolean v1, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandle:Z
 
     return v1
 
-    .line 798
+    .line 807
     :cond_1
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1200(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1100(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
 
     move-result v1
 
@@ -1543,14 +1544,14 @@
 
     float-to-int v1, v1
 
-    .line 799
+    .line 808
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1300(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
+    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1200(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
-    .line 801
+    .line 810
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
@@ -1559,9 +1560,9 @@
 
     float-to-int v5, v5
 
-    invoke-static {v4, v5}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1202(Lorg/telegram/ui/Cells/TextSelectionHelper;I)I
+    invoke-static {v4, v5}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1102(Lorg/telegram/ui/Cells/TextSelectionHelper;I)I
 
-    .line 802
+    .line 811
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
@@ -1570,9 +1571,9 @@
 
     float-to-int v5, v5
 
-    invoke-static {v4, v5}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1302(Lorg/telegram/ui/Cells/TextSelectionHelper;I)I
+    invoke-static {v4, v5}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1202(Lorg/telegram/ui/Cells/TextSelectionHelper;I)I
 
-    .line 804
+    .line 813
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v4
@@ -1591,33 +1592,29 @@
 
     goto/16 :goto_1d
 
-    .line 856
+    .line 867
     :cond_2
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
+    iget-boolean v5, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandle:Z
 
-    move-result v4
+    if-eqz v5, :cond_51
 
-    if-eqz v4, :cond_51
-
-    .line 857
-    iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
-
+    .line 868
     iget-boolean v5, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandleStart:Z
 
     if-eqz v5, :cond_3
 
-    .line 858
+    .line 869
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->pickStartView()V
 
     goto :goto_0
 
-    .line 860
+    .line 871
     :cond_3
     invoke-virtual {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->pickEndView()V
 
-    .line 863
+    .line 874
     :goto_0
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -1625,14 +1622,12 @@
 
     if-nez v5, :cond_4
 
-    .line 864
-    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
-
-    move-result v1
+    .line 875
+    iget-boolean v1, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandle:Z
 
     return v1
 
-    .line 867
+    .line 878
     :cond_4
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -1646,7 +1641,7 @@
 
     float-to-int v4, v4
 
-    .line 868
+    .line 879
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v5
@@ -1659,12 +1654,12 @@
 
     float-to-int v5, v5
 
-    .line 870
+    .line 881
     invoke-virtual {v6, v5, v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectLayout(II)Z
 
     move-result v10
 
-    .line 872
+    .line 883
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v7, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
@@ -1673,13 +1668,13 @@
 
     return v3
 
-    .line 876
+    .line 887
     :cond_5
     iget-boolean v7, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandleStart:Z
 
     if-eqz v7, :cond_6
 
-    .line 877
+    .line 888
     iget v7, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
     iget-object v8, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
@@ -1688,7 +1683,7 @@
 
     goto :goto_1
 
-    .line 879
+    .line 890
     :cond_6
     iget v7, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
@@ -1696,7 +1691,7 @@
 
     invoke-virtual {v6, v7, v8}, Lorg/telegram/ui/Cells/TextSelectionHelper;->fillLayoutForOffset(ILorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;)V
 
-    .line 882
+    .line 893
     :goto_1
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -1708,36 +1703,36 @@
 
     return v3
 
-    .line 886
+    .line 897
     :cond_7
     iget v12, v7, Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;->yOffset:F
 
-    .line 887
+    .line 898
     iget-object v13, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
 
-    .line 889
-    invoke-static {v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1500(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
+    .line 900
+    invoke-static {v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1400(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
 
     move-result-object v6
 
-    .line 890
+    .line 901
     aget v7, v6, v3
 
     sub-int/2addr v4, v7
 
-    .line 891
+    .line 902
     aget v6, v6, v2
 
     sub-int v15, v5, v6
 
-    .line 893
+    .line 904
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v5
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1000(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
+    invoke-static {v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$900(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
 
     move-result v6
 
@@ -1809,7 +1804,7 @@
     :cond_9
     move v5, v2
 
-    .line 894
+    .line 905
     :goto_2
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
@@ -1878,7 +1873,7 @@
 
     goto :goto_5
 
-    .line 908
+    .line 919
     :cond_c
     iget-object v5, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -1888,15 +1883,15 @@
 
     if-eqz v5, :cond_d
 
-    .line 909
+    .line 920
     iget-object v5, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {v5, v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$102(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
 
-    .line 910
+    .line 921
     iget-object v5, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v5}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Ljava/lang/Runnable;
+    invoke-static {v5}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1700(Lorg/telegram/ui/Cells/TextSelectionHelper;)Ljava/lang/Runnable;
 
     move-result-object v5
 
@@ -1908,7 +1903,7 @@
 
     goto :goto_7
 
-    .line 896
+    .line 907
     :cond_e
     :goto_5
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
@@ -1919,21 +1914,21 @@
 
     if-nez v4, :cond_f
 
-    .line 897
+    .line 908
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {v4, v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$102(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
 
-    .line 898
+    .line 909
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Ljava/lang/Runnable;
+    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1700(Lorg/telegram/ui/Cells/TextSelectionHelper;)Ljava/lang/Runnable;
 
     move-result-object v4
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 900
+    .line 911
     :cond_f
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -1941,7 +1936,7 @@
 
     if-eqz v5, :cond_10
 
-    .line 903
+    .line 914
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v4, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->parentView:Landroid/view/ViewGroup;
@@ -1968,7 +1963,7 @@
 
     goto :goto_6
 
-    .line 905
+    .line 916
     :cond_10
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -1993,7 +1988,7 @@
 
     goto :goto_4
 
-    .line 914
+    .line 925
     :goto_7
     iget-object v14, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2017,7 +2012,7 @@
 
     if-ltz v8, :cond_47
 
-    .line 916
+    .line 927
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-boolean v5, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingDirectionSettling:Z
@@ -2028,44 +2023,44 @@
 
     return v3
 
-    .line 919
+    .line 930
     :cond_11
     iget v5, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
     if-ge v8, v5, :cond_12
 
-    .line 920
+    .line 931
     iput-boolean v2, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingDirectionSettling:Z
 
-    .line 921
+    .line 932
     iput-boolean v3, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandleStart:Z
 
-    .line 922
-    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1100(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
+    .line 933
+    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1000(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
 
     goto :goto_8
 
-    .line 923
+    .line 934
     :cond_12
     iget v5, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
     if-le v8, v5, :cond_13
 
-    .line 924
+    .line 935
     iput-boolean v2, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingDirectionSettling:Z
 
-    .line 925
+    .line 936
     iput-boolean v2, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandleStart:Z
 
-    .line 926
-    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1100(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
+    .line 937
+    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1000(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
 
     goto :goto_8
 
     :cond_13
     return v3
 
-    .line 931
+    .line 942
     :cond_14
     :goto_8
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
@@ -2076,7 +2071,7 @@
 
     if-eqz v5, :cond_2e
 
-    .line 932
+    .line 943
     iget v5, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
     if-eq v5, v8, :cond_46
@@ -2087,7 +2082,7 @@
 
     if-eqz v4, :cond_46
 
-    .line 933
+    .line 944
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v5, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
@@ -2096,26 +2091,26 @@
 
     move-result-object v4
 
-    .line 935
+    .line 946
     iget-object v5, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v7, v5, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
 
     invoke-virtual {v5, v8, v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->fillLayoutForOffset(ILorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;)V
 
-    .line 936
+    .line 947
     iget-object v5, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v7, v5, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
 
     iget-object v9, v7, Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;->layout:Landroid/text/Layout;
 
-    .line 938
+    .line 949
     iget v11, v5, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
     invoke-virtual {v5, v11, v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->fillLayoutForOffset(ILorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;)V
 
-    .line 939
+    .line 950
     iget-object v5, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v5, v5, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
@@ -2136,7 +2131,7 @@
 
     if-ltz v7, :cond_16
 
-    .line 946
+    .line 957
     invoke-interface {v4, v7}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v7
@@ -2151,13 +2146,13 @@
 
     goto :goto_9
 
-    .line 950
+    .line 961
     :cond_16
     invoke-virtual {v5, v11}, Landroid/text/Layout;->getLineForOffset(I)I
 
     move-result v7
 
-    .line 951
+    .line 962
     iget-object v14, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget v14, v14, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
@@ -2166,7 +2161,7 @@
 
     move-result v14
 
-    .line 952
+    .line 963
     invoke-virtual {v5, v8}, Landroid/text/Layout;->getLineForOffset(I)I
 
     move-result v15
@@ -2175,7 +2170,7 @@
 
     if-ne v9, v5, :cond_2b
 
-    .line 954
+    .line 965
     iget-object v9, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget v9, v9, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
@@ -2190,7 +2185,7 @@
 
     goto/16 :goto_11
 
-    .line 960
+    .line 971
     :cond_17
     invoke-virtual {v5, v8}, Landroid/text/Layout;->getLineForOffset(I)I
 
@@ -2220,7 +2215,7 @@
     :goto_a
     add-int/lit8 v6, v5, 0x1
 
-    .line 974
+    .line 985
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
     move-result v7
@@ -2244,28 +2239,28 @@
     :cond_19
     sub-int v6, v8, v11
 
-    .line 978
+    .line 989
     invoke-static {v6}, Ljava/lang/Math;->abs(I)I
 
     move-result v6
 
     sub-int v5, v8, v5
 
-    .line 979
+    .line 990
     invoke-static {v5}, Ljava/lang/Math;->abs(I)I
 
     move-result v5
 
-    .line 981
+    .line 992
     iget-object v7, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1900(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
+    invoke-static {v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
 
     move-result v7
 
     if-eqz v7, :cond_1b
 
-    .line 982
+    .line 993
     iget-object v7, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     if-ltz v1, :cond_1a
@@ -2278,14 +2273,14 @@
     move v9, v2
 
     :goto_b
-    invoke-static {v7, v9}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1902(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
+    invoke-static {v7, v9}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1802(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
 
     :cond_1b
     add-int/lit8 v7, v8, -0x1
 
     if-lez v7, :cond_1c
 
-    .line 984
+    .line 995
     invoke-interface {v4, v7}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v7
@@ -2303,7 +2298,7 @@
     :cond_1c
     move v7, v2
 
-    .line 987
+    .line 998
     :goto_c
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
@@ -2313,7 +2308,7 @@
 
     if-lt v8, v9, :cond_1d
 
-    .line 988
+    .line 999
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
     move-result v8
@@ -2322,13 +2317,13 @@
 
     goto :goto_d
 
-    .line 991
+    .line 1002
     :cond_1d
     invoke-interface {v4, v8}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v9
 
-    .line 995
+    .line 1006
     :goto_d
     iget-object v12, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2340,7 +2335,7 @@
 
     if-lt v12, v13, :cond_1e
 
-    .line 996
+    .line 1007
     iget-object v12, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
@@ -2353,7 +2348,7 @@
 
     goto :goto_e
 
-    .line 999
+    .line 1010
     :cond_1e
     iget-object v12, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2363,7 +2358,7 @@
 
     move-result v4
 
-    .line 1002
+    .line 1013
     :goto_e
     iget-object v12, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2393,7 +2388,7 @@
 
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1900(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
 
     move-result v1
 
@@ -2406,11 +2401,11 @@
 
     if-ne v4, v10, :cond_46
 
-    .line 1003
+    .line 1014
     :cond_22
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1900(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
 
     move-result v1
 
@@ -2420,7 +2415,7 @@
 
     return v3
 
-    .line 1006
+    .line 1017
     :cond_23
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2442,7 +2437,7 @@
 
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1900(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
 
     move-result v1
 
@@ -2451,23 +2446,23 @@
     :cond_24
     if-eq v4, v10, :cond_25
 
-    .line 1007
+    .line 1018
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iput v11, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
-    .line 1008
-    invoke-static {v1, v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1902(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
+    .line 1019
+    invoke-static {v1, v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1802(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
 
     goto :goto_f
 
-    .line 1010
+    .line 1021
     :cond_25
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iput v8, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
-    .line 1013
+    .line 1024
     :goto_f
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2477,16 +2472,16 @@
 
     if-le v4, v5, :cond_26
 
-    .line 1015
+    .line 1026
     iput v4, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
-    .line 1016
+    .line 1027
     iput v5, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
-    .line 1017
+    .line 1028
     iput-boolean v2, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandleStart:Z
 
-    .line 1019
+    .line 1030
     :cond_26
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -2494,14 +2489,14 @@
 
     if-lt v2, v4, :cond_27
 
-    .line 1020
+    .line 1031
     iget-object v1, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
     const/16 v2, 0x9
 
     invoke-virtual {v1, v2, v3}, Landroid/view/View;->performHapticFeedback(II)Z
 
-    .line 1022
+    .line 1033
     :cond_27
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2509,28 +2504,28 @@
 
     goto/16 :goto_1b
 
-    .line 961
+    .line 972
     :cond_28
     :goto_10
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iput v8, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
-    .line 962
+    .line 973
     iget v4, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
     if-le v8, v4, :cond_29
 
-    .line 964
+    .line 975
     iput v8, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
-    .line 965
+    .line 976
     iput v4, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
-    .line 966
+    .line 977
     iput-boolean v2, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandleStart:Z
 
-    .line 968
+    .line 979
     :cond_29
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -2538,14 +2533,14 @@
 
     if-lt v2, v4, :cond_2a
 
-    .line 969
+    .line 980
     iget-object v1, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
     const/16 v2, 0x9
 
     invoke-virtual {v1, v2, v3}, Landroid/view/View;->performHapticFeedback(II)Z
 
-    .line 971
+    .line 982
     :cond_2a
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2553,7 +2548,7 @@
 
     goto/16 :goto_1b
 
-    .line 955
+    .line 966
     :cond_2b
     :goto_11
     iget-object v7, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
@@ -2568,14 +2563,14 @@
 
     invoke-virtual/range {v7 .. v13}, Lorg/telegram/ui/Cells/TextSelectionHelper;->jumpToLine(IIZFFLorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;)V
 
-    .line 956
+    .line 967
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1b
 
     if-lt v1, v2, :cond_2c
 
-    .line 957
+    .line 968
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v1, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
@@ -2584,7 +2579,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/view/View;->performHapticFeedback(II)Z
 
-    .line 959
+    .line 970
     :cond_2c
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2596,7 +2591,7 @@
     :goto_12
     return v3
 
-    .line 1027
+    .line 1038
     :cond_2e
     iget v5, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
@@ -2608,7 +2603,7 @@
 
     if-eqz v4, :cond_46
 
-    .line 1029
+    .line 1040
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v5, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
@@ -2619,7 +2614,7 @@
 
     move v9, v8
 
-    .line 1032
+    .line 1043
     :goto_13
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
@@ -2641,7 +2636,7 @@
 
     goto :goto_13
 
-    .line 1037
+    .line 1048
     :cond_2f
     iget-object v5, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2649,19 +2644,19 @@
 
     invoke-virtual {v5, v8, v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->fillLayoutForOffset(ILorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;)V
 
-    .line 1038
+    .line 1049
     iget-object v5, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v7, v5, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
 
     iget-object v11, v7, Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;->layout:Landroid/text/Layout;
 
-    .line 1040
+    .line 1051
     iget v14, v5, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
     invoke-virtual {v5, v14, v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->fillLayoutForOffset(ILorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;)V
 
-    .line 1041
+    .line 1052
     iget-object v5, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v5, v5, Lorg/telegram/ui/Cells/TextSelectionHelper;->layoutBlock:Lorg/telegram/ui/Cells/TextSelectionHelper$LayoutBlock;
@@ -2674,7 +2669,7 @@
 
     goto/16 :goto_1a
 
-    .line 1047
+    .line 1058
     :cond_30
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
@@ -2682,20 +2677,20 @@
 
     if-le v8, v7, :cond_31
 
-    .line 1048
+    .line 1059
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
     move-result v7
 
     move v8, v7
 
-    .line 1051
+    .line 1062
     :cond_31
     invoke-virtual {v5, v9}, Landroid/text/Layout;->getLineForOffset(I)I
 
     move-result v7
 
-    .line 1052
+    .line 1063
     iget-object v14, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget v14, v14, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
@@ -2704,7 +2699,7 @@
 
     move-result v14
 
-    .line 1053
+    .line 1064
     invoke-virtual {v5, v8}, Landroid/text/Layout;->getLineForOffset(I)I
 
     move-result v15
@@ -2713,7 +2708,7 @@
 
     if-ne v11, v5, :cond_43
 
-    .line 1055
+    .line 1066
     iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget v11, v11, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
@@ -2728,7 +2723,7 @@
 
     goto/16 :goto_19
 
-    .line 1061
+    .line 1072
     :cond_32
     invoke-virtual {v5, v8}, Landroid/text/Layout;->getLineForOffset(I)I
 
@@ -2760,7 +2755,7 @@
 
     if-ltz v6, :cond_34
 
-    .line 1075
+    .line 1086
     invoke-interface {v4, v6}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v6
@@ -2778,14 +2773,14 @@
     :cond_34
     sub-int v6, v8, v9
 
-    .line 1079
+    .line 1090
     invoke-static {v6}, Ljava/lang/Math;->abs(I)I
 
     move-result v6
 
     sub-int v5, v8, v5
 
-    .line 1080
+    .line 1091
     invoke-static {v5}, Ljava/lang/Math;->abs(I)I
 
     move-result v5
@@ -2794,7 +2789,7 @@
 
     if-lez v7, :cond_35
 
-    .line 1082
+    .line 1093
     invoke-interface {v4, v7}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v7
@@ -2812,17 +2807,17 @@
     :cond_35
     move v7, v2
 
-    .line 1084
+    .line 1095
     :goto_15
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v10}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1900(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
+    invoke-static {v10}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
 
     move-result v10
 
     if-eqz v10, :cond_37
 
-    .line 1085
+    .line 1096
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     if-gtz v1, :cond_36
@@ -2835,9 +2830,9 @@
     move v11, v2
 
     :goto_16
-    invoke-static {v10, v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1902(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
+    invoke-static {v10, v11}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1802(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
 
-    .line 1087
+    .line 1098
     :cond_37
     iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2859,7 +2854,7 @@
 
     move v2, v3
 
-    .line 1088
+    .line 1099
     :cond_38
     iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2879,13 +2874,13 @@
 
     if-eqz v2, :cond_46
 
-    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1900(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
+    invoke-static {v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
 
     move-result v1
 
     if-nez v1, :cond_46
 
-    .line 1089
+    .line 1100
     :cond_3b
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2897,30 +2892,30 @@
 
     if-eqz v2, :cond_3c
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1900(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
 
     move-result v1
 
     if-eqz v1, :cond_3d
 
-    .line 1090
+    .line 1101
     :cond_3c
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iput v9, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
-    .line 1091
-    invoke-static {v1, v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1902(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
+    .line 1102
+    invoke-static {v1, v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1802(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
 
     goto :goto_17
 
-    .line 1093
+    .line 1104
     :cond_3d
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iput v8, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
-    .line 1095
+    .line 1106
     :goto_17
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2930,16 +2925,16 @@
 
     if-le v2, v4, :cond_3e
 
-    .line 1097
+    .line 1108
     iput v2, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
-    .line 1098
+    .line 1109
     iput v4, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
-    .line 1099
+    .line 1110
     iput-boolean v3, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandleStart:Z
 
-    .line 1101
+    .line 1112
     :cond_3e
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -2947,14 +2942,14 @@
 
     if-lt v2, v4, :cond_3f
 
-    .line 1102
+    .line 1113
     iget-object v1, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
     const/16 v2, 0x9
 
     invoke-virtual {v1, v2, v3}, Landroid/view/View;->performHapticFeedback(II)Z
 
-    .line 1104
+    .line 1115
     :cond_3f
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -2962,28 +2957,28 @@
 
     goto :goto_1b
 
-    .line 1062
+    .line 1073
     :cond_40
     :goto_18
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iput v8, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
-    .line 1063
+    .line 1074
     iget v2, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
     if-le v2, v8, :cond_41
 
-    .line 1065
+    .line 1076
     iput v2, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
-    .line 1066
+    .line 1077
     iput v8, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
-    .line 1067
+    .line 1078
     iput-boolean v3, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandleStart:Z
 
-    .line 1069
+    .line 1080
     :cond_41
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -2991,14 +2986,14 @@
 
     if-lt v2, v4, :cond_42
 
-    .line 1070
+    .line 1081
     iget-object v1, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
     const/16 v2, 0x9
 
     invoke-virtual {v1, v2, v3}, Landroid/view/View;->performHapticFeedback(II)Z
 
-    .line 1072
+    .line 1083
     :cond_42
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -3006,7 +3001,7 @@
 
     goto :goto_1b
 
-    .line 1056
+    .line 1067
     :cond_43
     :goto_19
     iget-object v7, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
@@ -3017,14 +3012,14 @@
 
     invoke-virtual/range {v7 .. v13}, Lorg/telegram/ui/Cells/TextSelectionHelper;->jumpToLine(IIZFFLorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;)V
 
-    .line 1057
+    .line 1068
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1b
 
     if-lt v1, v2, :cond_44
 
-    .line 1058
+    .line 1069
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v1, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
@@ -3033,7 +3028,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/view/View;->performHapticFeedback(II)Z
 
-    .line 1060
+    .line 1071
     :cond_44
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -3045,45 +3040,43 @@
     :goto_1a
     return v3
 
-    .line 1110
+    .line 1121
     :cond_46
     :goto_1b
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->onOffsetChanged()V
 
-    .line 1112
+    .line 1123
     :cond_47
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1200(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1100(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
 
     move-result v2
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1700(Lorg/telegram/ui/Cells/TextSelectionHelper;I)V
+    invoke-static {v1, v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1600(Lorg/telegram/ui/Cells/TextSelectionHelper;I)V
 
     goto/16 :goto_1d
 
-    .line 1117
+    .line 1128
     :cond_48
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$2000(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1900(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
 
-    .line 1118
+    .line 1129
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$502(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
+    iput-boolean v2, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandle:Z
 
-    .line 1119
-    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
-
+    .line 1130
     iput-boolean v2, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingDirectionSettling:Z
 
-    .line 1120
-    invoke-static {v1, v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$602(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
+    .line 1131
+    invoke-static {v1, v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$502(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
 
-    .line 1121
+    .line 1132
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->isInSelectionMode()Z
@@ -3092,17 +3085,37 @@
 
     if-eqz v1, :cond_49
 
-    .line 1122
+    .line 1133
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$300(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
+    iget-object v1, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
-    .line 1123
+    invoke-virtual {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->invalidate()V
+
+    .line 1134
+    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
+
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$300(Lorg/telegram/ui/Cells/TextSelectionHelper;)Ljava/lang/Runnable;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
+
+    .line 1135
+    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
+
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$300(Lorg/telegram/ui/Cells/TextSelectionHelper;)Ljava/lang/Runnable;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+
+    .line 1136
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->showHandleViews()V
 
-    .line 1125
+    .line 1138
     :cond_49
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -3112,15 +3125,15 @@
 
     if-eqz v1, :cond_51
 
-    .line 1126
+    .line 1139
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-static {v1, v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$102(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
 
-    .line 1127
+    .line 1140
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1800(Lorg/telegram/ui/Cells/TextSelectionHelper;)Ljava/lang/Runnable;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1700(Lorg/telegram/ui/Cells/TextSelectionHelper;)Ljava/lang/Runnable;
 
     move-result-object v1
 
@@ -3128,19 +3141,17 @@
 
     goto/16 :goto_1d
 
-    .line 806
+    .line 815
     :cond_4a
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
-
-    move-result v1
+    iget-boolean v1, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandle:Z
 
     if-eqz v1, :cond_4b
 
     return v3
 
-    .line 809
+    .line 818
     :cond_4b
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -3148,17 +3159,17 @@
 
     float-to-int v1, v1
 
-    .line 810
+    .line 819
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v4
 
     float-to-int v4, v4
 
-    .line 811
+    .line 820
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1400(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
+    invoke-static {v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1300(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
 
     move-result-object v6
 
@@ -3172,12 +3183,12 @@
 
     if-eqz v6, :cond_4e
 
-    .line 812
+    .line 821
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->pickStartView()V
 
-    .line 813
+    .line 822
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v7, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
@@ -3186,23 +3197,21 @@
 
     return v2
 
-    .line 816
+    .line 825
     :cond_4c
-    invoke-static {v6, v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$502(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
+    iput-boolean v3, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandle:Z
 
-    .line 817
-    iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
-
+    .line 826
     iput-boolean v3, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandleStart:Z
 
-    .line 818
+    .line 827
     iget v7, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
     invoke-virtual {v6, v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->offsetToCord(I)[I
 
     move-result-object v6
 
-    .line 821
+    .line 830
     iget-object v7, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getLineHeight()I
@@ -3213,21 +3222,21 @@
 
     int-to-float v5, v7
 
-    .line 823
+    .line 832
     iget-object v7, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1500(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
+    invoke-static {v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1400(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
 
     move-result-object v7
 
-    .line 824
+    .line 833
     iget-object v8, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-boolean v9, v8, Lorg/telegram/ui/Cells/TextSelectionHelper;->useMovingOffset:Z
 
     if-eqz v9, :cond_4d
 
-    .line 825
+    .line 834
     aget v9, v6, v2
 
     iget v10, v8, Lorg/telegram/ui/Cells/TextSelectionHelper;->textX:I
@@ -3249,10 +3258,10 @@
     :cond_4d
     const/4 v1, 0x0
 
-    .line 827
+    .line 836
     iput v1, v8, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingOffsetX:F
 
-    .line 829
+    .line 838
     :goto_1c
     aget v1, v6, v3
 
@@ -3272,16 +3281,23 @@
 
     iput v1, v8, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingOffsetY:F
 
-    .line 830
-    invoke-static {v8}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1100(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
+    .line 839
+    invoke-static {v8}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1000(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
+
+    .line 840
+    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
+
+    iget-object v1, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
+
+    invoke-virtual {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->invalidate()V
 
     return v3
 
-    .line 834
+    .line 844
     :cond_4e
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1600(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
+    invoke-static {v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Landroid/graphics/RectF;
 
     move-result-object v6
 
@@ -3291,12 +3307,12 @@
 
     if-eqz v6, :cond_50
 
-    .line 835
+    .line 845
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->pickEndView()V
 
-    .line 836
+    .line 846
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v7, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
@@ -3305,23 +3321,21 @@
 
     return v2
 
-    .line 839
+    .line 849
     :cond_4f
-    invoke-static {v6, v3}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$502(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
+    iput-boolean v3, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandle:Z
 
-    .line 840
-    iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
-
+    .line 850
     iput-boolean v2, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandleStart:Z
 
-    .line 841
+    .line 851
     iget v7, v6, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
     invoke-virtual {v6, v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->offsetToCord(I)[I
 
     move-result-object v6
 
-    .line 843
+    .line 853
     iget-object v7, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getLineHeight()I
@@ -3332,14 +3346,14 @@
 
     int-to-float v5, v7
 
-    .line 844
+    .line 854
     iget-object v7, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1500(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
+    invoke-static {v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1400(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
 
     move-result-object v7
 
-    .line 845
+    .line 855
     iget-object v8, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     aget v9, v6, v2
@@ -3358,7 +3372,7 @@
 
     iput v1, v8, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingOffsetX:F
 
-    .line 846
+    .line 856
     aget v1, v6, v3
 
     iget v2, v8, Lorg/telegram/ui/Cells/TextSelectionHelper;->textY:I
@@ -3377,39 +3391,42 @@
 
     iput v1, v8, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingOffsetY:F
 
-    .line 847
-    invoke-static {v8}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1200(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
+    .line 857
+    invoke-static {v8}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1100(Lorg/telegram/ui/Cells/TextSelectionHelper;)I
 
     move-result v1
 
-    invoke-static {v8, v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1700(Lorg/telegram/ui/Cells/TextSelectionHelper;I)V
+    invoke-static {v8, v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1600(Lorg/telegram/ui/Cells/TextSelectionHelper;I)V
 
-    .line 848
+    .line 858
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1100(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
+    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1000(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
+
+    .line 859
+    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
+
+    iget-object v1, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
+
+    invoke-virtual {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->invalidate()V
 
     return v3
 
-    .line 852
+    .line 863
     :cond_50
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$502(Lorg/telegram/ui/Cells/TextSelectionHelper;Z)Z
+    iput-boolean v2, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandle:Z
 
-    .line 853
-    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
-
+    .line 864
     iput-boolean v3, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->allowDiscard:Z
 
-    .line 1132
+    .line 1145
     :cond_51
     :goto_1d
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$500(Lorg/telegram/ui/Cells/TextSelectionHelper;)Z
-
-    move-result v1
+    iget-boolean v1, v1, Lorg/telegram/ui/Cells/TextSelectionHelper;->movingHandle:Z
 
     return v1
 .end method

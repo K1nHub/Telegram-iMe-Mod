@@ -488,13 +488,17 @@
 
     move-result-object p2
 
-    invoke-virtual {p2}, Lorg/telegram/messenger/AccountInstance;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
+    invoke-virtual {p2}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p2
 
     iget-wide v3, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    invoke-virtual {p2, v3, v4}, Lorg/telegram/messenger/MessagesStorage;->clearUserPhotos(J)V
+    invoke-virtual {p2, v3, v4}, Lorg/telegram/messenger/MessagesController;->getDialogPhotos(J)Lorg/telegram/messenger/MessagesController$DialogPhotos;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Lorg/telegram/messenger/MessagesController$DialogPhotos;->reset()V
 
     .line 8471
     new-instance p2, Ljava/util/ArrayList;

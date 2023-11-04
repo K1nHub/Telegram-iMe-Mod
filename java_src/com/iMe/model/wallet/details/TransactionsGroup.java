@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.wallet.transaction.Transaction;
 import com.iMe.storage.domain.model.wallet.transaction.TransactionDirection;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* compiled from: TransactionsGroup.kt */
 /* loaded from: classes3.dex */
 public abstract class TransactionsGroup {
@@ -44,7 +44,7 @@ public abstract class TransactionsGroup {
         }
 
         private All() {
-            super(C3630R.C3633id.wallet_token_details_transactions_all, C3630R.string.wallet_token_details_transactions_all, null);
+            super(C3634R.C3637id.wallet_token_details_transactions_all, C3634R.string.wallet_token_details_transactions_all, null);
         }
     }
 
@@ -54,7 +54,7 @@ public abstract class TransactionsGroup {
         public static final Incoming INSTANCE = new Incoming();
 
         private Incoming() {
-            super(C3630R.C3633id.wallet_token_details_transactions_incoming, C3630R.string.wallet_token_details_transactions_incoming, null);
+            super(C3634R.C3637id.wallet_token_details_transactions_incoming, C3634R.string.wallet_token_details_transactions_incoming, null);
         }
 
         @Override // com.iMe.model.wallet.details.TransactionsGroup
@@ -70,7 +70,7 @@ public abstract class TransactionsGroup {
         public static final Outgoing INSTANCE = new Outgoing();
 
         private Outgoing() {
-            super(C3630R.C3633id.wallet_token_details_transactions_outgoing, C3630R.string.wallet_token_details_transactions_outgoing, null);
+            super(C3634R.C3637id.wallet_token_details_transactions_outgoing, C3634R.string.wallet_token_details_transactions_outgoing, null);
         }
 
         @Override // com.iMe.model.wallet.details.TransactionsGroup
@@ -86,7 +86,7 @@ public abstract class TransactionsGroup {
         public static final Swap INSTANCE = new Swap();
 
         private Swap() {
-            super(C3630R.C3633id.wallet_token_details_transactions_swap, C3630R.string.wallet_token_details_transactions_swap, null);
+            super(C3634R.C3637id.wallet_token_details_transactions_swap, C3634R.string.wallet_token_details_transactions_swap, null);
         }
 
         @Override // com.iMe.model.wallet.details.TransactionsGroup

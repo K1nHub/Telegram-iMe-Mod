@@ -5,7 +5,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: TonFragmentProductDetailsView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.fragment.usernames.details.TonFragmentProductDetailsView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface TonFragmentProductDetailsView extends BaseView {
     void renderScreenData(String str, String str2, String str3);
 

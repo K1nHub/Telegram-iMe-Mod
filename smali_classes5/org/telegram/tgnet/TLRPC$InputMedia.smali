@@ -73,17 +73,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 31522
+    .line 31966
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 31531
+    .line 31975
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$InputMedia;->stickers:Ljava/util/ArrayList;
 
-    .line 31544
+    .line 31988
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -102,7 +102,7 @@
 
     goto :goto_0
 
-    .line 31585
+    .line 32029
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaUploadedDocument;
 
@@ -110,7 +110,7 @@
 
     goto :goto_0
 
-    .line 31555
+    .line 31999
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaDocument;
 
@@ -118,7 +118,7 @@
 
     goto :goto_0
 
-    .line 31576
+    .line 32020
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaUploadedPhoto;
 
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 31573
+    .line 32017
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaPoll;
 
@@ -134,7 +134,7 @@
 
     goto :goto_0
 
-    .line 31567
+    .line 32011
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaDocumentExternal;
 
@@ -142,7 +142,7 @@
 
     goto :goto_0
 
-    .line 31564
+    .line 32008
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaGeoPoint;
 
@@ -150,7 +150,7 @@
 
     goto :goto_0
 
-    .line 31552
+    .line 31996
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaContact;
 
@@ -158,7 +158,7 @@
 
     goto :goto_0
 
-    .line 31561
+    .line 32005
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaDice;
 
@@ -166,7 +166,7 @@
 
     goto :goto_0
 
-    .line 31588
+    .line 32032
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaPhotoExternal;
 
@@ -174,7 +174,7 @@
 
     goto :goto_0
 
-    .line 31558
+    .line 32002
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaGame;
 
@@ -182,32 +182,40 @@
 
     goto :goto_0
 
-    .line 31579
+    .line 32038
     :sswitch_a
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaWebPage;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputMediaWebPage;-><init>()V
+
+    goto :goto_0
+
+    .line 32023
+    :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaVenue;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputMediaVenue;-><init>()V
 
     goto :goto_0
 
-    .line 31591
-    :sswitch_b
+    .line 32035
+    :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaPhoto;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputMediaPhoto;-><init>()V
 
     goto :goto_0
 
-    .line 31582
-    :sswitch_c
+    .line 32026
+    :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaGeoLive;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputMediaGeoLive;-><init>()V
 
     goto :goto_0
 
-    .line 31570
-    :sswitch_d
+    .line 32014
+    :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputMediaEmpty;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputMediaEmpty;-><init>()V
@@ -219,7 +227,7 @@
 
     goto :goto_1
 
-    .line 31595
+    .line 32042
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -249,7 +257,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 31598
+    .line 32045
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2
@@ -259,10 +267,11 @@
 
     :sswitch_data_0
     .sparse-switch
-        -0x699b0a81 -> :sswitch_d
-        -0x68e057bd -> :sswitch_c
-        -0x4c45f9cb -> :sswitch_b
-        -0x3ec2e3ef -> :sswitch_a
+        -0x699b0a81 -> :sswitch_e
+        -0x68e057bd -> :sswitch_d
+        -0x4c45f9cb -> :sswitch_c
+        -0x3ec2e3ef -> :sswitch_b
+        -0x3de477b7 -> :sswitch_a
         -0x2cc0bc0d -> :sswitch_9
         -0x1a4401e6 -> :sswitch_8
         -0x19904085 -> :sswitch_7

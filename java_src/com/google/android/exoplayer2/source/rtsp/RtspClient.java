@@ -3,7 +3,7 @@ package com.google.android.exoplayer2.source.rtsp;
 import android.net.Uri;
 import android.os.Handler;
 import android.util.SparseArray;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.source.rtsp.RtspClient;
 import com.google.android.exoplayer2.source.rtsp.RtspHeaders;
@@ -60,7 +60,7 @@ public final class RtspClient implements Closeable {
     private final SparseArray<RtspRequest> pendingRequests = new SparseArray<>();
     private final MessageSender messageSender = new MessageSender();
     private RtspMessageChannel messageChannel = new RtspMessageChannel(new MessageListener());
-    private long pendingSeekPositionUs = C0479C.TIME_UNSET;
+    private long pendingSeekPositionUs = C0485C.TIME_UNSET;
     private int rtspState = -1;
 
     /* loaded from: classes.dex */
@@ -168,7 +168,7 @@ public final class RtspClient implements Closeable {
     /* JADX INFO: Access modifiers changed from: private */
     public void maybeLogMessage(List<String> list) {
         if (this.debugLoggingEnabled) {
-            Log.m1112d(TAG, Joiner.m1057on("\n").join(list));
+            Log.m1113d(TAG, Joiner.m1058on("\n").join(list));
         }
     }
 
@@ -219,16 +219,16 @@ public final class RtspClient implements Closeable {
         }
 
         public void sendOptionsRequest(Uri uri, String str) {
-            sendRequest(getRequestWithCommonHeaders(4, str, ImmutableMap.m1047of(), uri));
+            sendRequest(getRequestWithCommonHeaders(4, str, ImmutableMap.m1048of(), uri));
         }
 
         public void sendDescribeRequest(Uri uri, String str) {
-            sendRequest(getRequestWithCommonHeaders(2, str, ImmutableMap.m1047of(), uri));
+            sendRequest(getRequestWithCommonHeaders(2, str, ImmutableMap.m1048of(), uri));
         }
 
         public void sendSetupRequest(Uri uri, String str, String str2) {
             RtspClient.this.rtspState = 0;
-            sendRequest(getRequestWithCommonHeaders(10, str2, ImmutableMap.m1046of(RtspHeaders.TRANSPORT, str), uri));
+            sendRequest(getRequestWithCommonHeaders(10, str2, ImmutableMap.m1047of(RtspHeaders.TRANSPORT, str), uri));
         }
 
         public void sendPlayRequest(Uri uri, long j, String str) {
@@ -237,7 +237,7 @@ public final class RtspClient implements Closeable {
                 z = false;
             }
             Assertions.checkState(z);
-            sendRequest(getRequestWithCommonHeaders(6, str, ImmutableMap.m1046of(RtspHeaders.RANGE, RtspSessionTiming.getOffsetStartTimeTiming(j)), uri));
+            sendRequest(getRequestWithCommonHeaders(6, str, ImmutableMap.m1047of(RtspHeaders.RANGE, RtspSessionTiming.getOffsetStartTimeTiming(j)), uri));
         }
 
         public void sendTeardownRequest(Uri uri, String str) {
@@ -245,12 +245,12 @@ public final class RtspClient implements Closeable {
                 return;
             }
             RtspClient.this.rtspState = 0;
-            sendRequest(getRequestWithCommonHeaders(12, str, ImmutableMap.m1047of(), uri));
+            sendRequest(getRequestWithCommonHeaders(12, str, ImmutableMap.m1048of(), uri));
         }
 
         public void sendPauseRequest(Uri uri, String str) {
             Assertions.checkState(RtspClient.this.rtspState == 2);
-            sendRequest(getRequestWithCommonHeaders(5, str, ImmutableMap.m1047of(), uri));
+            sendRequest(getRequestWithCommonHeaders(5, str, ImmutableMap.m1048of(), uri));
             RtspClient.this.hasPendingPauseRequest = true;
         }
 
@@ -350,7 +350,7 @@ public final class RtspClient implements Closeable {
 
         private void handleRtspResponse(List<String> list) {
             RtspSessionTiming parseTiming;
-            ImmutableList<RtspTrackTiming> m1054of;
+            ImmutableList<RtspTrackTiming> m1055of;
             RtspResponse parseResponse = RtspMessageUtil.parseResponse(list);
             int parseInt = Integer.parseInt((String) Assertions.checkNotNull(parseResponse.headers.get(RtspHeaders.CSEQ)));
             RtspRequest rtspRequest = (RtspRequest) RtspClient.this.pendingRequests.get(parseInt);
@@ -425,14 +425,14 @@ public final class RtspClient implements Closeable {
                         try {
                             String str3 = parseResponse.headers.get(RtspHeaders.RTP_INFO);
                             if (str3 != null) {
-                                m1054of = RtspTrackTiming.parseTrackTiming(str3, RtspClient.this.uri);
+                                m1055of = RtspTrackTiming.parseTrackTiming(str3, RtspClient.this.uri);
                             } else {
-                                m1054of = ImmutableList.m1054of();
+                                m1055of = ImmutableList.m1055of();
                             }
                         } catch (ParserException unused) {
-                            m1054of = ImmutableList.m1054of();
+                            m1055of = ImmutableList.m1055of();
                         }
-                        onPlayResponseReceived(new RtspPlayResponse(parseResponse.status, parseTiming, m1054of));
+                        onPlayResponseReceived(new RtspPlayResponse(parseResponse.status, parseTiming, m1055of));
                         return;
                     case 10:
                         String str4 = parseResponse.headers.get(RtspHeaders.SESSION);
@@ -496,7 +496,7 @@ public final class RtspClient implements Closeable {
                 rtspClient.keepAliveMonitor = new KeepAliveMonitor(30000L);
                 RtspClient.this.keepAliveMonitor.start();
             }
-            RtspClient.this.pendingSeekPositionUs = C0479C.TIME_UNSET;
+            RtspClient.this.pendingSeekPositionUs = C0485C.TIME_UNSET;
             RtspClient.this.playbackEventListener.onPlaybackStarted(Util.msToUs(rtspPlayResponse.sessionTiming.startTimeMs), rtspPlayResponse.trackTimingList);
         }
 
@@ -504,7 +504,7 @@ public final class RtspClient implements Closeable {
             Assertions.checkState(RtspClient.this.rtspState == 2);
             RtspClient.this.rtspState = 1;
             RtspClient.this.hasPendingPauseRequest = false;
-            if (RtspClient.this.pendingSeekPositionUs != C0479C.TIME_UNSET) {
+            if (RtspClient.this.pendingSeekPositionUs != C0485C.TIME_UNSET) {
                 RtspClient rtspClient = RtspClient.this;
                 rtspClient.startPlayback(Util.usToMs(rtspClient.pendingSeekPositionUs));
             }

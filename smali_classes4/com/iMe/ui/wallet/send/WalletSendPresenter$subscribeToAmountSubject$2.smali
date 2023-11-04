@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 957
+    .line 973
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/send/WalletSendPresenter$subscribeToAmountSubject$2;->invoke(Ljava/lang/String;)V
@@ -62,7 +62,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .locals 9
 
-    .line 958
+    .line 974
     iget-object v0, p0, Lcom/iMe/ui/wallet/send/WalletSendPresenter$subscribeToAmountSubject$2;->this$0:Lcom/iMe/ui/wallet/send/WalletSendPresenter;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/send/WalletSendPresenter;->access$getSelectedAmount$p(Lcom/iMe/ui/wallet/send/WalletSendPresenter;)Ljava/lang/String;
@@ -77,18 +77,18 @@
 
     const/4 v2, 0x1
 
-    const-string v3, "it"
+    const-string/jumbo v3, "it"
 
     if-nez v0, :cond_1
 
-    .line 959
+    .line 975
     iget-object v0, p0, Lcom/iMe/ui/wallet/send/WalletSendPresenter$subscribeToAmountSubject$2;->this$0:Lcom/iMe/ui/wallet/send/WalletSendPresenter;
 
     invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0, p1}, Lcom/iMe/ui/wallet/send/WalletSendPresenter;->access$setSelectedAmount$p(Lcom/iMe/ui/wallet/send/WalletSendPresenter;Ljava/lang/String;)V
 
-    .line 960
+    .line 976
     iget-object v0, p0, Lcom/iMe/ui/wallet/send/WalletSendPresenter$subscribeToAmountSubject$2;->this$0:Lcom/iMe/ui/wallet/send/WalletSendPresenter;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/send/WalletSendPresenter;->access$getSelectedTokenBalance$p(Lcom/iMe/ui/wallet/send/WalletSendPresenter;)Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
@@ -103,7 +103,7 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/send/WalletSendPresenter$subscribeToAmountSubject$2;->this$0:Lcom/iMe/ui/wallet/send/WalletSendPresenter;
 
-    .line 961
+    .line 977
     invoke-static {p1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
     move-result-wide v6
@@ -122,7 +122,7 @@
     :goto_0
     invoke-static {v0, v4}, Lcom/iMe/ui/wallet/send/WalletSendPresenter;->access$showAmountError(Lcom/iMe/ui/wallet/send/WalletSendPresenter;Z)V
 
-    .line 964
+    .line 980
     :cond_1
     iget-object v0, p0, Lcom/iMe/ui/wallet/send/WalletSendPresenter$subscribeToAmountSubject$2;->this$0:Lcom/iMe/ui/wallet/send/WalletSendPresenter;
 
@@ -134,24 +134,24 @@
 
     iget-object v4, p0, Lcom/iMe/ui/wallet/send/WalletSendPresenter$subscribeToAmountSubject$2;->this$0:Lcom/iMe/ui/wallet/send/WalletSendPresenter;
 
-    .line 965
+    .line 981
     invoke-virtual {v4}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v5
 
     check-cast v5, Lcom/iMe/ui/wallet/send/WalletSendView;
 
-    .line 966
+    .line 982
     invoke-static {v4}, Lcom/iMe/ui/wallet/send/WalletSendPresenter;->access$getResourceManager$p(Lcom/iMe/ui/wallet/send/WalletSendPresenter;)Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v4
 
-    .line 967
+    .line 983
     sget v6, Lorg/telegram/messenger/R$string;->wallet_amount_send_send_amount_in_fiat:I
 
     new-array v2, v2, [Ljava/lang/Object;
 
-    .line 968
+    .line 984
     invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {p1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
@@ -164,15 +164,15 @@
 
     aput-object p1, v2, v1
 
-    .line 966
+    .line 982
     invoke-interface {v4, v6, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 965
+    .line 981
     invoke-interface {v5, p1}, Lcom/iMe/ui/wallet/send/WalletSendView;->renderInsertedAmountInFiat(Ljava/lang/String;)V
 
-    .line 972
+    .line 988
     :cond_2
     iget-object p1, p0, Lcom/iMe/ui/wallet/send/WalletSendPresenter$subscribeToAmountSubject$2;->this$0:Lcom/iMe/ui/wallet/send/WalletSendPresenter;
 

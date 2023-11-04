@@ -36,15 +36,15 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.BottomSheet;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.RecyclerListView;
-import org.telegram.p042ui.FilterCreateActivity;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.FilterCreateActivity;
 /* compiled from: TopicsAlert.kt */
 /* renamed from: com.iMe.ui.topics.TopicsAlert */
 /* loaded from: classes3.dex */
@@ -67,7 +67,7 @@ public final class TopicsAlert extends BottomSheet {
     private final Lazy topShadow$delegate;
     private final Lazy topics$delegate;
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -273,7 +273,7 @@ public final class TopicsAlert extends BottomSheet {
     public final TopicsAlert$initListView$1 initListView() {
         final Context context = getContext();
         ?? r1 = new RecyclerListView(context) { // from class: com.iMe.ui.topics.TopicsAlert$initListView$1
-            @Override // org.telegram.p042ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+            @Override // org.telegram.p043ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
             public void requestLayout() {
                 if (TopicsAlert.this.ignoreLayout) {
                     return;
@@ -298,8 +298,8 @@ public final class TopicsAlert extends BottomSheet {
                 RecyclerView.ViewHolder childViewHolder = parent.getChildViewHolder(view);
                 Intrinsics.checkNotNull(childViewHolder, "null cannot be cast to non-null type org.telegram.ui.Components.RecyclerListView.Holder");
                 int adapterPosition = ((RecyclerListView.Holder) childViewHolder).getAdapterPosition() % 4;
-                outRect.left = adapterPosition == 0 ? 0 : AndroidUtilities.m102dp(4);
-                outRect.right = adapterPosition != 3 ? AndroidUtilities.m102dp(4) : 0;
+                outRect.left = adapterPosition == 0 ? 0 : AndroidUtilities.m104dp(4);
+                outRect.right = adapterPosition != 3 ? AndroidUtilities.m104dp(4) : 0;
             }
         });
         return r1;
@@ -313,7 +313,7 @@ public final class TopicsAlert extends BottomSheet {
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getInternalString(C3630R.string.topics_select));
+        textView.setText(LocaleController.getInternalString(C3634R.string.topics_select));
         textView.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(getThemedColor(Theme.key_dialogTextLink));
@@ -329,7 +329,7 @@ public final class TopicsAlert extends BottomSheet {
         textView.setGravity(17);
         textView.setTextSize(1, 14.0f);
         if (z) {
-            textView.setText(LocaleController.getString("Create", C3630R.string.Create));
+            textView.setText(LocaleController.getString("Create", C3634R.string.Create));
             textView.setTextColor(getThemedColor(Theme.key_dialogTextBlue2));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
@@ -338,7 +338,7 @@ public final class TopicsAlert extends BottomSheet {
                 }
             });
         } else if (this.selectedTopic == null) {
-            textView.setText(LocaleController.getString("Close", C3630R.string.Close));
+            textView.setText(LocaleController.getString("Close", C3634R.string.Close));
             textView.setTextColor(getThemedColor(Theme.key_dialogTextBlue2));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
@@ -347,7 +347,7 @@ public final class TopicsAlert extends BottomSheet {
                 }
             });
         } else {
-            textView.setText(LocaleController.getInternalString(C3630R.string.topics_remove));
+            textView.setText(LocaleController.getInternalString(C3634R.string.topics_remove));
             textView.setTextColor(getThemedColor(Theme.key_text_RedRegular));
             textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
@@ -412,7 +412,7 @@ public final class TopicsAlert extends BottomSheet {
             }
         });
         listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.ui.topics.TopicsAlert$$ExternalSyntheticLambda4
-            @Override // org.telegram.p042ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 TopicsAlert.setupListeners$lambda$12$lambda$11(TopicsAlert.this, view, i);
             }
@@ -563,23 +563,23 @@ public final class TopicsAlert extends BottomSheet {
             TopicsAlert.this.ignoreLayout = true;
             setPadding(((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, ((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, 0);
             TopicsAlert.this.ignoreLayout = false;
-            TopicsAlert.this.itemWidth = (View.MeasureSpec.getSize(i) - AndroidUtilities.m102dp(28)) / 4;
-            int m102dp = AndroidUtilities.m102dp(110) + (((int) Math.ceil(TopicsAlert.this.getTopics().size() / 4.0f)) * AndroidUtilities.m102dp(100)) + ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
+            TopicsAlert.this.itemWidth = (View.MeasureSpec.getSize(i) - AndroidUtilities.m104dp(28)) / 4;
+            int m104dp = AndroidUtilities.m104dp(110) + (((int) Math.ceil(TopicsAlert.this.getTopics().size() / 4.0f)) * AndroidUtilities.m104dp(100)) + ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + AndroidUtilities.statusBarHeight;
             int size = View.MeasureSpec.getSize(i2);
-            int i3 = ((double) m102dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
-            if (i3 != 0 && m102dp < size) {
-                i3 -= size - m102dp;
+            int i3 = ((double) m104dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
+            if (i3 != 0 && m104dp < size) {
+                i3 -= size - m104dp;
             }
             if (i3 == 0) {
                 i3 = ((BottomSheet) TopicsAlert.this).backgroundPaddingTop;
             }
             if (TopicsAlert.this.getListView().getPaddingTop() != i3) {
                 TopicsAlert.this.ignoreLayout = true;
-                TopicsAlert.this.getListView().setPadding(AndroidUtilities.m102dp(10), i3, AndroidUtilities.m102dp(10), 14);
+                TopicsAlert.this.getListView().setPadding(AndroidUtilities.m104dp(10), i3, AndroidUtilities.m104dp(10), 14);
                 TopicsAlert.this.ignoreLayout = false;
             }
-            this.fullHeight = m102dp >= size;
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m102dp, size), 1073741824));
+            this.fullHeight = m104dp >= size;
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m104dp, size), 1073741824));
         }
 
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -606,12 +606,12 @@ public final class TopicsAlert extends BottomSheet {
             int i;
             float f;
             Intrinsics.checkNotNullParameter(canvas, "canvas");
-            int m102dp = (TopicsAlert.this.scrollOffsetY - ((BottomSheet) TopicsAlert.this).backgroundPaddingTop) + AndroidUtilities.m102dp(6);
-            int m102dp2 = (TopicsAlert.this.scrollOffsetY - ((BottomSheet) TopicsAlert.this).backgroundPaddingTop) - AndroidUtilities.m102dp(13);
-            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m102dp(15) + ((BottomSheet) TopicsAlert.this).backgroundPaddingTop;
+            int m104dp = (TopicsAlert.this.scrollOffsetY - ((BottomSheet) TopicsAlert.this).backgroundPaddingTop) + AndroidUtilities.m104dp(6);
+            int m104dp2 = (TopicsAlert.this.scrollOffsetY - ((BottomSheet) TopicsAlert.this).backgroundPaddingTop) - AndroidUtilities.m104dp(13);
+            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m104dp(15) + ((BottomSheet) TopicsAlert.this).backgroundPaddingTop;
             int i2 = AndroidUtilities.statusBarHeight;
-            int i3 = m102dp2 + i2;
-            int i4 = m102dp + i2;
+            int i3 = m104dp2 + i2;
+            int i4 = m104dp + i2;
             if (this.fullHeight) {
                 int i5 = ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3;
                 int i6 = AndroidUtilities.statusBarHeight;
@@ -634,13 +634,13 @@ public final class TopicsAlert extends BottomSheet {
             ((BottomSheet) TopicsAlert.this).shadowDrawable.draw(canvas);
             if (!(f == 1.0f)) {
                 Theme.dialogs_onlineCirclePaint.setColor(TopicsAlert.this.getThemedColor(Theme.key_dialogBackground));
-                this.rect.set(((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3 + AndroidUtilities.m102dp(24));
-                canvas.drawRoundRect(this.rect, AndroidUtilities.m102dp(12) * f, AndroidUtilities.m102dp(12) * f, Theme.dialogs_onlineCirclePaint);
+                this.rect.set(((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) TopicsAlert.this).backgroundPaddingLeft, ((BottomSheet) TopicsAlert.this).backgroundPaddingTop + i3 + AndroidUtilities.m104dp(24));
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m104dp(12) * f, AndroidUtilities.m104dp(12) * f, Theme.dialogs_onlineCirclePaint);
             }
-            int m102dp3 = AndroidUtilities.m102dp(36);
-            this.rect.set((getMeasuredWidth() - m102dp3) / 2.0f, i4, (getMeasuredWidth() + m102dp3) / 2.0f, i4 + AndroidUtilities.m102dp(4));
+            int m104dp3 = AndroidUtilities.m104dp(36);
+            this.rect.set((getMeasuredWidth() - m104dp3) / 2.0f, i4, (getMeasuredWidth() + m104dp3) / 2.0f, i4 + AndroidUtilities.m104dp(4));
             Theme.dialogs_onlineCirclePaint.setColor(TopicsAlert.this.getThemedColor(Theme.key_sheet_scrollUp));
-            canvas.drawRoundRect(this.rect, AndroidUtilities.m102dp(2), AndroidUtilities.m102dp(2), Theme.dialogs_onlineCirclePaint);
+            canvas.drawRoundRect(this.rect, AndroidUtilities.m104dp(2), AndroidUtilities.m104dp(2), Theme.dialogs_onlineCirclePaint);
             if (i > 0) {
                 int themedColor = TopicsAlert.this.getThemedColor(Theme.key_dialogBackground);
                 Theme.dialogs_onlineCirclePaint.setColor(Color.argb(255, (int) (Color.red(themedColor) * 0.8f), (int) (Color.green(themedColor) * 0.8f), (int) (Color.blue(themedColor) * 0.8f)));
@@ -662,7 +662,7 @@ public final class TopicsAlert extends BottomSheet {
             return TopicsAlert.this.getTopics().size();
         }
 
-        @Override // org.telegram.p042ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             TopicModel topicModel = TopicsAlert.this.selectedTopic;
@@ -691,7 +691,7 @@ public final class TopicsAlert extends BottomSheet {
                 protected void onMeasure(int i2, int i3) {
                     int i4;
                     i4 = TopicsAlert.this.itemWidth;
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m102dp(100), 1073741824));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m104dp(100), 1073741824));
                 }
             });
         }
@@ -720,7 +720,7 @@ public final class TopicsAlert extends BottomSheet {
                 com.iMe.ui.topics.TopicsAlert r0 = com.iMe.p030ui.topics.TopicsAlert.this
                 boolean r1 = r8.isUserTopic()
                 if (r1 == 0) goto L51
-                int r1 = org.telegram.p042ui.ActionBar.Theme.key_chats_actionBackground
+                int r1 = org.telegram.p043ui.ActionBar.Theme.key_chats_actionBackground
                 int r1 = com.iMe.p030ui.topics.TopicsAlert.access$getThemedColor(r0, r1)
                 r7.setColor(r1)
                 com.iMe.storage.data.repository.topics.Topic r1 = r8.getIcon()

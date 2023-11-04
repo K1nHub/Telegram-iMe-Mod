@@ -32,10 +32,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 14
 
-    .line 1069
+    .line 1070
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1071
+    .line 1072
     new-instance v0, Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/4 v1, 0x1
@@ -48,7 +48,7 @@
 
     const/16 v2, 0xf
 
-    .line 1072
+    .line 1073
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -57,7 +57,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 1073
+    .line 1074
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->textView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const-string v3, "fonts/rmedium.ttf"
@@ -68,7 +68,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Components/AnimatedTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1074
+    .line 1075
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->textView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
@@ -79,7 +79,7 @@
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 1075
+    .line 1076
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->textView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -100,7 +100,7 @@
     :goto_0
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/AnimatedTextView;->setGravity(I)V
 
-    .line 1076
+    .line 1077
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->textView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/4 v7, -0x1
@@ -135,7 +135,7 @@
 
     invoke-virtual {p0, v0, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1078
+    .line 1079
     new-instance v7, Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-direct {v7, p1, v1, v1, v1}, Lorg/telegram/ui/Components/AnimatedTextView;-><init>(Landroid/content/Context;ZZZ)V
@@ -148,12 +148,12 @@
 
     const-wide/16 v11, 0xfa
 
-    .line 1079
+    .line 1080
     sget-object v13, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual/range {v7 .. v13}, Lorg/telegram/ui/Components/AnimatedTextView;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 1080
+    .line 1081
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->actionTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -164,7 +164,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextSize(F)V
 
-    .line 1081
+    .line 1082
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->actionTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -173,7 +173,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 1082
+    .line 1083
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->actionTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -190,7 +190,7 @@
     :goto_2
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setGravity(I)V
 
-    .line 1083
+    .line 1084
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->actionTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     const/4 v7, -0x2
@@ -220,7 +220,7 @@
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1085
+    .line 1086
     invoke-static {p0, v1}, Landroidx/core/view/ViewCompat;->setAccessibilityHeading(Landroid/view/View;Z)V
 
     return-void
@@ -231,7 +231,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 1104
+    .line 1105
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -243,15 +243,15 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 1111
+    .line 1112
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "android.widget.TextView"
 
-    .line 1112
+    .line 1113
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 1113
+    .line 1114
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->textView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView;->getText()Ljava/lang/CharSequence;
@@ -266,7 +266,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1090
+    .line 1091
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -285,7 +285,7 @@
 .method public setAction(Ljava/lang/CharSequence;Ljava/lang/Runnable;)V
     .locals 2
 
-    .line 1101
+    .line 1102
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->actionTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -294,7 +294,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/AnimatedTextView;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 1102
+    .line 1103
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->actionTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     new-instance v0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell$$ExternalSyntheticLambda0;
@@ -311,12 +311,12 @@
 
     if-eqz p2, :cond_0
 
-    .line 1095
+    .line 1096
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->textView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView;->cancelAnimation()V
 
-    .line 1097
+    .line 1098
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->textView:Lorg/telegram/ui/Components/AnimatedTextView;
 

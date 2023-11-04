@@ -6,24 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:I
-
-.field public final synthetic f$1:[I
-
-.field public final synthetic f$2:Ljava/lang/Runnable;
+.field public final synthetic f$0:Lorg/telegram/messenger/browser/Browser$Progress;
 
 
 # direct methods
-.method public synthetic constructor <init>(I[ILjava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/browser/Browser$Progress;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$0:I
-
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$1:[I
-
-    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$2:Ljava/lang/Runnable;
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/messenger/browser/Browser$Progress;
 
     return-void
 .end method
@@ -31,15 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 1
 
-    iget v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$0:I
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/messenger/browser/Browser$Progress;
 
-    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$1:[I
-
-    iget-object v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$2:Ljava/lang/Runnable;
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$qkB2gDjg5rxS_45r9wUZadlGqp0(I[ILjava/lang/Runnable;)V
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$IBaQUPVK2hkaia0HUk9Lz-x4bSo(Lorg/telegram/messenger/browser/Browser$Progress;)V
 
     return-void
 .end method

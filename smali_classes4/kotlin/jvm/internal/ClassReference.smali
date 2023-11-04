@@ -328,56 +328,56 @@
 
     const-string v2, "boolean"
 
-    const-string v3, "kotlin.Boolean"
+    const-string/jumbo v3, "kotlin.Boolean"
 
     .line 110
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v2, "char"
 
-    const-string v5, "kotlin.Char"
+    const-string/jumbo v5, "kotlin.Char"
 
     .line 111
     invoke-virtual {v0, v2, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v2, "byte"
 
-    const-string v6, "kotlin.Byte"
+    const-string/jumbo v6, "kotlin.Byte"
 
     .line 112
     invoke-virtual {v0, v2, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v2, "short"
 
-    const-string v7, "kotlin.Short"
+    const-string/jumbo v7, "kotlin.Short"
 
     .line 113
     invoke-virtual {v0, v2, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v2, "int"
 
-    const-string v8, "kotlin.Int"
+    const-string/jumbo v8, "kotlin.Int"
 
     .line 114
     invoke-virtual {v0, v2, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v2, "float"
 
-    const-string v9, "kotlin.Float"
+    const-string/jumbo v9, "kotlin.Float"
 
     .line 115
     invoke-virtual {v0, v2, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v2, "long"
 
-    const-string v10, "kotlin.Long"
+    const-string/jumbo v10, "kotlin.Long"
 
     .line 116
     invoke-virtual {v0, v2, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string v2, "double"
 
-    const-string v11, "kotlin.Double"
+    const-string/jumbo v11, "kotlin.Double"
 
     .line 117
     invoke-virtual {v0, v2, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -390,42 +390,42 @@
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    const-string v12, "java.lang.Boolean"
+    const-string/jumbo v12, "java.lang.Boolean"
 
     .line 121
     invoke-virtual {v2, v12, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "java.lang.Character"
+    const-string/jumbo v3, "java.lang.Character"
 
     .line 122
     invoke-virtual {v2, v3, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "java.lang.Byte"
+    const-string/jumbo v3, "java.lang.Byte"
 
     .line 123
     invoke-virtual {v2, v3, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "java.lang.Short"
+    const-string/jumbo v3, "java.lang.Short"
 
     .line 124
     invoke-virtual {v2, v3, v7}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "java.lang.Integer"
+    const-string/jumbo v3, "java.lang.Integer"
 
     .line 125
     invoke-virtual {v2, v3, v8}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "java.lang.Float"
+    const-string/jumbo v3, "java.lang.Float"
 
     .line 126
     invoke-virtual {v2, v3, v9}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "java.lang.Long"
+    const-string/jumbo v3, "java.lang.Long"
 
     .line 127
     invoke-virtual {v2, v3, v10}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "java.lang.Double"
+    const-string/jumbo v3, "java.lang.Double"
 
     .line 128
     invoke-virtual {v2, v3, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -438,119 +438,119 @@
 
     invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
 
-    const-string v5, "java.lang.Object"
+    const-string/jumbo v5, "java.lang.Object"
 
-    const-string v6, "kotlin.Any"
+    const-string/jumbo v6, "kotlin.Any"
 
     .line 133
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.lang.String"
+    const-string/jumbo v5, "java.lang.String"
 
-    const-string v6, "kotlin.String"
+    const-string/jumbo v6, "kotlin.String"
 
     .line 134
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.lang.CharSequence"
+    const-string/jumbo v5, "java.lang.CharSequence"
 
-    const-string v6, "kotlin.CharSequence"
+    const-string/jumbo v6, "kotlin.CharSequence"
 
     .line 135
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.lang.Throwable"
+    const-string/jumbo v5, "java.lang.Throwable"
 
-    const-string v6, "kotlin.Throwable"
+    const-string/jumbo v6, "kotlin.Throwable"
 
     .line 136
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.lang.Cloneable"
+    const-string/jumbo v5, "java.lang.Cloneable"
 
-    const-string v6, "kotlin.Cloneable"
+    const-string/jumbo v6, "kotlin.Cloneable"
 
     .line 137
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.lang.Number"
+    const-string/jumbo v5, "java.lang.Number"
 
-    const-string v6, "kotlin.Number"
+    const-string/jumbo v6, "kotlin.Number"
 
     .line 138
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.lang.Comparable"
+    const-string/jumbo v5, "java.lang.Comparable"
 
-    const-string v6, "kotlin.Comparable"
+    const-string/jumbo v6, "kotlin.Comparable"
 
     .line 139
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.lang.Enum"
+    const-string/jumbo v5, "java.lang.Enum"
 
-    const-string v6, "kotlin.Enum"
+    const-string/jumbo v6, "kotlin.Enum"
 
     .line 140
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.lang.annotation.Annotation"
+    const-string/jumbo v5, "java.lang.annotation.Annotation"
 
-    const-string v6, "kotlin.Annotation"
+    const-string/jumbo v6, "kotlin.Annotation"
 
     .line 141
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.lang.Iterable"
+    const-string/jumbo v5, "java.lang.Iterable"
 
     const-string/jumbo v6, "kotlin.collections.Iterable"
 
     .line 142
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.util.Iterator"
+    const-string/jumbo v5, "java.util.Iterator"
 
     const-string/jumbo v6, "kotlin.collections.Iterator"
 
     .line 143
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.util.Collection"
+    const-string/jumbo v5, "java.util.Collection"
 
     const-string/jumbo v6, "kotlin.collections.Collection"
 
     .line 144
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.util.List"
+    const-string/jumbo v5, "java.util.List"
 
     const-string/jumbo v6, "kotlin.collections.List"
 
     .line 145
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.util.Set"
+    const-string/jumbo v5, "java.util.Set"
 
     const-string/jumbo v6, "kotlin.collections.Set"
 
     .line 146
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.util.ListIterator"
+    const-string/jumbo v5, "java.util.ListIterator"
 
     const-string/jumbo v6, "kotlin.collections.ListIterator"
 
     .line 147
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.util.Map"
+    const-string/jumbo v5, "java.util.Map"
 
     const-string/jumbo v6, "kotlin.collections.Map"
 
     .line 148
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v5, "java.util.Map$Entry"
+    const-string/jumbo v5, "java.util.Map$Entry"
 
     const-string/jumbo v6, "kotlin.collections.Map.Entry"
 
@@ -559,14 +559,14 @@
 
     const-string/jumbo v5, "kotlin.jvm.internal.StringCompanionObject"
 
-    const-string v6, "kotlin.String.Companion"
+    const-string/jumbo v6, "kotlin.String.Companion"
 
     .line 150
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v5, "kotlin.jvm.internal.EnumCompanionObject"
 
-    const-string v6, "kotlin.Enum.Companion"
+    const-string/jumbo v6, "kotlin.Enum.Companion"
 
     .line 151
     invoke-virtual {v3, v5, v6}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -715,7 +715,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "kotlin.Function"
+    const-string/jumbo v8, "kotlin.Function"
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -808,7 +808,7 @@
         }
     .end annotation
 
-    const-string v0, "jClass"
+    const-string/jumbo v0, "jClass"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

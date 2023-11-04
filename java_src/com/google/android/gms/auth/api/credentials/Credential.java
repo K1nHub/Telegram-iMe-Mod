@@ -20,21 +20,21 @@ import java.util.List;
 public class Credential extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<Credential> CREATOR = new zba();
     public static final String EXTRA_KEY = "com.google.android.gms.credentials.Credential";
-    @SafeParcelable.Field(getter = "getId", m1089id = 1)
+    @SafeParcelable.Field(getter = "getId", m1090id = 1)
     private final String zba;
-    @SafeParcelable.Field(getter = "getName", m1089id = 2)
+    @SafeParcelable.Field(getter = "getName", m1090id = 2)
     private final String zbb;
-    @SafeParcelable.Field(getter = "getProfilePictureUri", m1089id = 3)
+    @SafeParcelable.Field(getter = "getProfilePictureUri", m1090id = 3)
     private final Uri zbc;
-    @SafeParcelable.Field(getter = "getIdTokens", m1089id = 4)
+    @SafeParcelable.Field(getter = "getIdTokens", m1090id = 4)
     private final List zbd;
-    @SafeParcelable.Field(getter = "getPassword", m1089id = 5)
+    @SafeParcelable.Field(getter = "getPassword", m1090id = 5)
     private final String zbe;
-    @SafeParcelable.Field(getter = "getAccountType", m1089id = 6)
+    @SafeParcelable.Field(getter = "getAccountType", m1090id = 6)
     private final String zbf;
-    @SafeParcelable.Field(getter = "getGivenName", m1089id = 9)
+    @SafeParcelable.Field(getter = "getGivenName", m1090id = 9)
     private final String zbg;
-    @SafeParcelable.Field(getter = "getFamilyName", m1089id = 10)
+    @SafeParcelable.Field(getter = "getFamilyName", m1090id = 10)
     private final String zbh;
 
     /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
@@ -92,7 +92,7 @@ public class Credential extends AbstractSafeParcelable implements ReflectedParce
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public Credential(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) String str2, @SafeParcelable.Param(m1088id = 3) Uri uri, @SafeParcelable.Param(m1088id = 4) List list, @SafeParcelable.Param(m1088id = 5) String str3, @SafeParcelable.Param(m1088id = 6) String str4, @SafeParcelable.Param(m1088id = 9) String str5, @SafeParcelable.Param(m1088id = 10) String str6) {
+    public Credential(@SafeParcelable.Param(m1089id = 1) String str, @SafeParcelable.Param(m1089id = 2) String str2, @SafeParcelable.Param(m1089id = 3) Uri uri, @SafeParcelable.Param(m1089id = 4) List list, @SafeParcelable.Param(m1089id = 5) String str3, @SafeParcelable.Param(m1089id = 6) String str4, @SafeParcelable.Param(m1089id = 9) String str5, @SafeParcelable.Param(m1089id = 10) String str6) {
         List unmodifiableList;
         Boolean bool;
         String trim = ((String) Preconditions.checkNotNull(str, "credential identifier cannot be null")).trim();

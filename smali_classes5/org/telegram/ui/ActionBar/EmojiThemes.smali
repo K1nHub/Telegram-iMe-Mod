@@ -1802,7 +1802,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 266
+    .line 265
     iget v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;->id:I
 
     invoke-virtual {v4, v0}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->setCurrentAccentId(I)V

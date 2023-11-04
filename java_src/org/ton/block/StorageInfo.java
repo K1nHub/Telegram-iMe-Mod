@@ -84,7 +84,7 @@ public final class StorageInfo implements TlbObject {
     }
 
     public int hashCode() {
-        return (((this.used.hashCode() * 31) + UInt.m1969hashCodeimpl(this.lastPaid)) * 31) + this.duePayment.hashCode();
+        return (((this.used.hashCode() * 31) + UInt.m1974hashCodeimpl(this.lastPaid)) * 31) + this.duePayment.hashCode();
     }
 
     private StorageInfo(int i, StorageUsed storageUsed, UInt uInt, Maybe<Coins> maybe, SerializationConstructorMarker serializationConstructorMarker) {
@@ -92,7 +92,7 @@ public final class StorageInfo implements TlbObject {
             PluginExceptionsKt.throwMissingFieldException(i, 7, StorageInfo$$serializer.INSTANCE.getDescriptor());
         }
         this.used = storageUsed;
-        this.lastPaid = uInt.m1971unboximpl();
+        this.lastPaid = uInt.m1976unboximpl();
         this.duePayment = maybe;
     }
 
@@ -107,7 +107,7 @@ public final class StorageInfo implements TlbObject {
     public static final /* synthetic */ void write$Self(StorageInfo storageInfo, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         KSerializer<Object>[] kSerializerArr = $childSerializers;
         compositeEncoder.encodeSerializableElement(serialDescriptor, 0, StorageUsed$$serializer.INSTANCE, storageInfo.used);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, UIntSerializer.INSTANCE, UInt.m1966boximpl(storageInfo.lastPaid));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, UIntSerializer.INSTANCE, UInt.m1971boximpl(storageInfo.lastPaid));
         compositeEncoder.encodeSerializableElement(serialDescriptor, 2, kSerializerArr[2], storageInfo.duePayment);
     }
 
@@ -174,7 +174,7 @@ public final class StorageInfo implements TlbObject {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("storage_info");
         open.field("used", this.used);
-        open.field("last_paid", UInt.m1966boximpl(this.lastPaid));
+        open.field("last_paid", UInt.m1971boximpl(this.lastPaid));
         open.field("due_payment", this.duePayment);
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;

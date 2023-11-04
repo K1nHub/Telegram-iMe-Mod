@@ -12,7 +12,7 @@ import javax.microedition.khronos.egl.EGLSurface;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.p042ui.Stories.recorder.StoryEntry;
+import org.telegram.p043ui.Stories.recorder.StoryEntry;
 /* loaded from: classes4.dex */
 public class OutputSurface implements SurfaceTexture.OnFrameAvailableListener {
     private static final int EGL_CONTEXT_CLIENT_VERSION = 12440;
@@ -154,7 +154,7 @@ public class OutputSurface implements SurfaceTexture.OnFrameAvailableListener {
         try {
             return GLES20.glGetString(7939).contains("GL_EXT_YUV_target");
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
             return false;
         }
     }

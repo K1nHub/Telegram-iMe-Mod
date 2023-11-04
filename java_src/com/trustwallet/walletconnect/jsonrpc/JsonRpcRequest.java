@@ -26,9 +26,9 @@ public final class JsonRpcRequest<T> {
     }
 
     public int hashCode() {
-        int m1017m = ((ProfileData$$ExternalSyntheticBackport0.m1017m(this.f413id) * 31) + this.jsonrpc.hashCode()) * 31;
+        int m1018m = ((ProfileData$$ExternalSyntheticBackport0.m1018m(this.f413id) * 31) + this.jsonrpc.hashCode()) * 31;
         WCMethod wCMethod = this.method;
-        int hashCode = (m1017m + (wCMethod == null ? 0 : wCMethod.hashCode())) * 31;
+        int hashCode = (m1018m + (wCMethod == null ? 0 : wCMethod.hashCode())) * 31;
         T t = this.params;
         return hashCode + (t != null ? t.hashCode() : 0);
     }

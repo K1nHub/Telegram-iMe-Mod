@@ -1,12 +1,12 @@
 package com.iMe.p030ui.wallet.swap.process;
 
 import android.os.CountDownTimer;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.p030ui.custom.TransactionActionButtonsView;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkFragmentWalletSwapProcessBinding;
 /* compiled from: WalletSwapProcessFragment.kt */
 /* renamed from: com.iMe.ui.wallet.swap.process.WalletSwapProcessFragment$renderState$1$4 */
@@ -18,7 +18,7 @@ public final class WalletSwapProcessFragment$renderState$1$4 extends CountDownTi
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WalletSwapProcessFragment$renderState$1$4(ForkFragmentWalletSwapProcessBinding forkFragmentWalletSwapProcessBinding, WalletSwapProcessFragment walletSwapProcessFragment) {
-        super(C0479C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS, 1000L);
+        super(C0485C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS, 1000L);
         this.$this_with = forkFragmentWalletSwapProcessBinding;
         this.this$0 = walletSwapProcessFragment;
     }
@@ -30,7 +30,7 @@ public final class WalletSwapProcessFragment$renderState$1$4 extends CountDownTi
         Intrinsics.checkNotNullExpressionValue(viewActionButtons, "viewActionButtons");
         StringBuilder sb = new StringBuilder();
         resourceManager = this.this$0.getResourceManager();
-        sb.append(resourceManager.getString(C3630R.string.wallet_swap_process_button_exchange));
+        sb.append(resourceManager.getString(C3634R.string.wallet_swap_process_button_exchange));
         sb.append(" (");
         sb.append((j + 1000) / 1000);
         sb.append(')');

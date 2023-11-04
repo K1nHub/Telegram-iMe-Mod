@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;Landroid/content/Context;)V
     .locals 0
 
-    .line 4919
+    .line 4952
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$26;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$26;->val$context:Landroid/content/Context;
@@ -39,14 +39,14 @@
 .method protected createTextView()Landroid/widget/TextView;
     .locals 3
 
-    .line 4922
+    .line 4955
     new-instance v0, Landroid/widget/TextView;
 
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$26;->val$context:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 4923
+    .line 4956
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$26;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_player_actionBarSubtitle:I
@@ -61,20 +61,20 @@
 
     const/high16 v2, 0x41600000    # 14.0f
 
-    .line 4924
+    .line 4957
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 4925
+    .line 4958
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 4926
+    .line 4959
     sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     const/4 v1, 0x3
 
-    .line 4927
+    .line 4960
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
     return-object v0

@@ -186,7 +186,7 @@ public final class CipherSuite {
         companion.init("TLS_DH_anon_WITH_AES_128_CBC_SHA256", 108);
         companion.init("TLS_DH_anon_WITH_AES_256_CBC_SHA256", 109);
         companion.init("TLS_RSA_WITH_CAMELLIA_256_CBC_SHA", 132);
-        companion.init("TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA", TsExtractor.TS_STREAM_TYPE_E_AC3);
+        companion.init("TLS_DHE_DSS_WITH_CAMELLIA_256_CBC_SHA", 135);
         companion.init("TLS_DHE_RSA_WITH_CAMELLIA_256_CBC_SHA", 136);
         companion.init("TLS_PSK_WITH_RC4_128_SHA", TsExtractor.TS_STREAM_TYPE_DTS);
         companion.init("TLS_PSK_WITH_3DES_EDE_CBC_SHA", 139);

@@ -27,13 +27,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 1353
+    .line 1354
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
-    .line 1354
+    .line 1355
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1355
+    .line 1356
     new-instance p1, Landroidx/core/view/NestedScrollingParentHelper;
 
     invoke-direct {p1, p0}, Landroidx/core/view/NestedScrollingParentHelper;-><init>(Landroid/view/ViewGroup;)V
@@ -48,7 +48,7 @@
 .method public getNestedScrollAxes()I
     .locals 1
 
-    .line 1417
+    .line 1418
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->nestedScrollingParentHelper:Landroidx/core/view/NestedScrollingParentHelper;
 
     invoke-virtual {v0}, Landroidx/core/view/NestedScrollingParentHelper;->getNestedScrollAxes()I
@@ -77,7 +77,7 @@
 .method public onNestedPreScroll(Landroid/view/View;II[I)V
     .locals 2
 
-    .line 1393
+    .line 1394
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iget p2, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibleProgress:F
@@ -97,17 +97,17 @@
     :cond_0
     if-lez p3, :cond_1
 
-    .line 1396
+    .line 1397
     iget p2, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F
 
     cmpl-float p2, p2, v0
 
     if-lez p2, :cond_1
 
-    .line 1397
+    .line 1398
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->cancelExpandAnimator()V
 
-    .line 1398
+    .line 1399
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iget p2, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F
@@ -124,19 +124,19 @@
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 1399
+    .line 1400
     invoke-static {p2, p1, v0}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result p1
 
-    .line 1400
+    .line 1401
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     const/4 v0, 0x1
 
     invoke-static {p2, p1, v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->access$200(Lorg/telegram/ui/Components/AvatarConstructorFragment;FZ)V
 
-    .line 1401
+    .line 1402
     aput p3, p4, v0
 
     :cond_1
@@ -147,7 +147,7 @@
 .method public onNestedScroll(Landroid/view/View;IIII)V
     .locals 0
 
-    .line 1380
+    .line 1381
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iget p2, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibleProgress:F
@@ -167,10 +167,10 @@
     :cond_0
     if-eqz p5, :cond_1
 
-    .line 1384
+    .line 1385
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->cancelExpandAnimator()V
 
-    .line 1385
+    .line 1386
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iget p2, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F
@@ -187,12 +187,12 @@
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 1386
+    .line 1387
     invoke-static {p2, p1, p3}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result p1
 
-    .line 1387
+    .line 1388
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     const/4 p3, 0x1
@@ -207,12 +207,12 @@
 .method public onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;I)V
     .locals 1
 
-    .line 1368
+    .line 1369
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->nestedScrollingParentHelper:Landroidx/core/view/NestedScrollingParentHelper;
 
     invoke-virtual {v0, p1, p2, p3}, Landroidx/core/view/NestedScrollingParentHelper;->onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;I)V
 
-    .line 1369
+    .line 1370
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->cancelExpandAnimator()V
@@ -223,7 +223,7 @@
 .method public onStartNestedScroll(Landroid/view/View;Landroid/view/View;I)Z
     .locals 0
 
-    .line 1360
+    .line 1361
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iget p2, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment;->keyboardVisibleProgress:F
@@ -255,12 +255,12 @@
 .method public onStopNestedScroll(Landroid/view/View;)V
     .locals 2
 
-    .line 1374
+    .line 1375
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->nestedScrollingParentHelper:Landroidx/core/view/NestedScrollingParentHelper;
 
     invoke-virtual {v0, p1}, Landroidx/core/view/NestedScrollingParentHelper;->onStopNestedScroll(Landroid/view/View;)V
 
-    .line 1375
+    .line 1376
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$ContainerLayout;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     iget v0, p1, Lorg/telegram/ui/Components/AvatarConstructorFragment;->progressToExpand:F

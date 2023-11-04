@@ -48,12 +48,12 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import timber.log.Timber;
 /* compiled from: FragmentUsernamesPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUsernamesView> {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final String itemsHeaderText;
@@ -97,7 +97,7 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
             }
         });
         this.rootItems$delegate = lazy;
-        this.itemsHeaderText = resourceManager.getString(C3630R.string.fragment_usernames_list_title);
+        this.itemsHeaderText = resourceManager.getString(C3634R.string.fragment_usernames_list_title);
         emptyList = CollectionsKt__CollectionsKt.emptyList();
         this.productsItems = emptyList;
         this.query = "";
@@ -122,7 +122,7 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
 
     public final void onSelectSortingTypeClick() {
         FragmentUsernamesView fragmentUsernamesView = (FragmentUsernamesView) getViewState();
-        DialogModel dialogModel = new DialogModel(this.resourceManager.getString(C3630R.string.fragment_usernames_sorting_title), null, null, this.resourceManager.getString(C3630R.string.common_cancel), 6, null);
+        DialogModel dialogModel = new DialogModel(this.resourceManager.getString(C3634R.string.fragment_usernames_sorting_title), null, null, this.resourceManager.getString(C3634R.string.common_cancel), 6, null);
         TonFragmentProductsSortingType[] values = TonFragmentProductsSortingType.values();
         ArrayList arrayList = new ArrayList(values.length);
         for (TonFragmentProductsSortingType tonFragmentProductsSortingType : values) {
@@ -145,7 +145,7 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
     public final void onBuyClick() {
         TonFragmentItem.Product product = this.selectedProductItem;
         if (product != null) {
-            ((FragmentUsernamesView) getViewState()).showConfirmationDialog(new DialogModel(this.resourceManager.getString(C3630R.string.settings_interface_confirmation_header), this.resourceManager.getString(C3630R.string.fragment_usernames_buy_confirmation_description, product.getTitle(), product.getPriceText()), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.wallet_buy_button_action_text)));
+            ((FragmentUsernamesView) getViewState()).showConfirmationDialog(new DialogModel(this.resourceManager.getString(C3634R.string.settings_interface_confirmation_header), this.resourceManager.getString(C3634R.string.fragment_usernames_buy_confirmation_description, product.getTitle(), product.getPriceText()), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_buy_button_action_text)));
         }
     }
 
@@ -157,7 +157,7 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
     }
 
     public final void loadProducts(final boolean z) {
-        Observable<R> flatMap = this.tonFragmentInteractor.checkAndPrepareSession().flatMap(new C2272x5a5385bf(new Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends List<? extends TonFragmentProduct>>>>() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesPresenter$loadProducts$$inlined$flatMapSuccess$1
+        Observable<R> flatMap = this.tonFragmentInteractor.checkAndPrepareSession().flatMap(new C2276x5a5385bf(new Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends List<? extends TonFragmentProduct>>>>() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesPresenter$loadProducts$$inlined$flatMapSuccess$1
             {
                 super(1);
             }
@@ -179,7 +179,7 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo1009ui());
+        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "tonFragmentInteractor\n  …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends TonFragmentProduct>>, Unit>() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesPresenter$loadProducts$$inlined$subscribeWithErrorHandle$default$1
@@ -190,12 +190,12 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TonFragmentProduct>> result) {
-                m1713invoke(result);
+                m1718invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1713invoke(Result<? extends List<? extends TonFragmentProduct>> it) {
+            public final void m1718invoke(Result<? extends List<? extends TonFragmentProduct>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends TonFragmentProduct>> result = it;
                 ((FragmentUsernamesView) FragmentUsernamesPresenter.this.getViewState()).showRefreshing(z && result.isLoading());
@@ -244,7 +244,7 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
         if (product == null) {
             return;
         }
-        Observable<R> flatMap = this.walletInteractor.getTokenBalance(new Token("", NetworkType.TON), true, NetworkType.TON).flatMap(new C2272x5a5385bf(new Function1<Result<? extends TokenBalance>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesPresenter$buyUsername$$inlined$flatMapSuccess$1
+        Observable<R> flatMap = this.walletInteractor.getTokenBalance(new Token("", NetworkType.TON), true, NetworkType.TON).flatMap(new C2276x5a5385bf(new Function1<Result<? extends TokenBalance>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesPresenter$buyUsername$$inlined$flatMapSuccess$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
                 super(1);
@@ -266,7 +266,7 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
                 TokenBalance data = result.getData();
                 if (NumberExtKt.orZero(data != null ? Double.valueOf(data.getTotal()) : null) < Double.parseDouble(TonFragmentItem.Product.this.getPrice())) {
                     resourceManager = this.resourceManager;
-                    Observable just = Observable.just(Result.Companion.error$default(Result.Companion, new ErrorModel(resourceManager.getString(C3630R.string.wallet_amount_send_error_insufficient_funds), FirebaseFunctionsErrorHandler.ErrorStatus.NO_ENOUGH_MONEY, null, 4, null), null, 2, null));
+                    Observable just = Observable.just(Result.Companion.error$default(Result.Companion, new ErrorModel(resourceManager.getString(C3634R.string.wallet_amount_send_error_insufficient_funds), FirebaseFunctionsErrorHandler.ErrorStatus.NO_ENOUGH_MONEY, null, 4, null), null, 2, null));
                     Intrinsics.checkNotNullExpressionValue(just, "just(this)");
                     return just;
                 }
@@ -275,7 +275,7 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo1009ui());
+        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -288,12 +288,12 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1712invoke(result);
+                m1717invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1712invoke(Result<? extends Boolean> it) {
+            public final void m1717invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;
@@ -403,7 +403,7 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
                 subscribeToQueryChanges$lambda$8 = FragmentUsernamesPresenter.subscribeToQueryChanges$lambda$8(Function1.this, obj);
                 return subscribeToQueryChanges$lambda$8;
             }
-        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo1010io());
+        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo1011io());
         final Function1<String, ObservableSource<? extends Result<? extends List<? extends TonFragmentProduct>>>> function12 = new Function1<String, ObservableSource<? extends Result<? extends List<? extends TonFragmentProduct>>>>() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesPresenter$subscribeToQueryChanges$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -426,7 +426,7 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
                 subscribeToQueryChanges$lambda$9 = FragmentUsernamesPresenter.subscribeToQueryChanges$lambda$9(Function1.this, obj);
                 return subscribeToQueryChanges$lambda$9;
             }
-        }).observeOn(this.schedulersProvider.mo1009ui());
+        }).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn2, "private fun subscribeToQ…     .autoDispose()\n    }");
         Disposable subscribe = observeOn2.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends TonFragmentProduct>>, Unit>() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesPresenter$subscribeToQueryChanges$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -435,12 +435,12 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TonFragmentProduct>> result) {
-                m1714invoke(result);
+                m1719invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1714invoke(Result<? extends List<? extends TonFragmentProduct>> it) {
+            public final void m1719invoke(Result<? extends List<? extends TonFragmentProduct>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends TonFragmentProduct>> result = it;
                 if (result instanceof Result.Success) {
@@ -537,7 +537,7 @@ public final class FragmentUsernamesPresenter extends BasePresenter<FragmentUser
     /* JADX INFO: Access modifiers changed from: private */
     public final List<BaseNode> initRootItems() {
         List<BaseNode> listOfNotNull;
-        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(new AnimatedHeaderItem(C3630R.raw.fork_fragment_usernames, this.resourceManager.getString(C3630R.string.fragment_usernames_description), null, 4, null));
+        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(new AnimatedHeaderItem(C3634R.raw.fork_fragment_usernames, this.resourceManager.getString(C3634R.string.fragment_usernames_description), null, 4, null));
         return listOfNotNull;
     }
 }

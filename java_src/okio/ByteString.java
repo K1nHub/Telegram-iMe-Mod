@@ -162,7 +162,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
             if ((i3 & 2) != 0) {
                 i2 = bArr.length;
             }
-            return companion.m116of(bArr, i, i2);
+            return companion.m118of(bArr, i, i2);
         }
 
         private Companion() {
@@ -181,7 +181,7 @@ public class ByteString implements Serializable, Comparable<ByteString> {
         }
 
         /* renamed from: of */
-        public final ByteString m116of(byte[] toByteString, int i, int i2) {
+        public final ByteString m118of(byte[] toByteString, int i, int i2) {
             byte[] copyOfRange;
             Intrinsics.checkNotNullParameter(toByteString, "$this$toByteString");
             Util.checkOffsetAndCount(toByteString.length, i, i2);

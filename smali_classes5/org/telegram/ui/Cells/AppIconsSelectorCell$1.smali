@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/AppIconsSelectorCell;)V
     .locals 0
 
-    .line 73
+    .line 74
     iput-object p1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$1;->this$0:Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 92
+    .line 93
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$1;->this$0:Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->access$100(Lorg/telegram/ui/Cells/AppIconsSelectorCell;)Ljava/util/List;
@@ -52,12 +52,12 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 5
 
-    .line 83
+    .line 84
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;
 
-    .line 84
+    .line 85
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$1;->this$0:Lorg/telegram/ui/Cells/AppIconsSelectorCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/AppIconsSelectorCell;->access$100(Lorg/telegram/ui/Cells/AppIconsSelectorCell;)Ljava/util/List;
@@ -70,10 +70,10 @@
 
     check-cast p2, Lorg/telegram/ui/LauncherIconController$LauncherIcon;
 
-    .line 85
+    .line 86
     invoke-static {p1, p2}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->access$200(Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;Lorg/telegram/ui/LauncherIconController$LauncherIcon;)V
 
-    .line 86
+    .line 87
     invoke-static {p1}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->access$300(Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;)Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;
 
     move-result-object v0
@@ -100,7 +100,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 87
+    .line 88
     invoke-static {p1}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->access$300(Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;)Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;
 
     move-result-object p1
@@ -115,7 +115,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    .line 78
+    .line 79
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     new-instance v0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;

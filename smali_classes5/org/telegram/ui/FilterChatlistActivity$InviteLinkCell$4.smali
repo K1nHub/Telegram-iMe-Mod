@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;Landroid/content/Context;Landroid/widget/FrameLayout;)V
     .locals 0
 
-    .line 1215
+    .line 1216
     iput-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$4;->this$0:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;
 
     iput-object p3, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$4;->val$finalContainer:Landroid/widget/FrameLayout;
@@ -41,10 +41,10 @@
 
     const/high16 v0, 0x33000000
 
-    .line 1219
+    .line 1220
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 1220
+    .line 1221
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$4;->this$0:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;
 
     iget-object v1, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->linkBox:Landroid/widget/FrameLayout;
@@ -57,10 +57,10 @@
 
     invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->access$2500(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;Landroid/widget/FrameLayout;Landroid/widget/FrameLayout;[F)V
 
-    .line 1221
+    .line 1222
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1222
+    .line 1223
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$4;->this$0:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;
 
     iget-object v0, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->linkBox:Landroid/widget/FrameLayout;
@@ -95,7 +95,7 @@
 
     const/4 v2, 0x0
 
-    .line 1224
+    .line 1225
     iget-object v4, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$4;->this$0:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;
 
     invoke-static {v4}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->access$2400(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;)[F
@@ -122,7 +122,7 @@
 
     invoke-virtual {p1, v2, v4, v0, v1}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 1226
+    .line 1227
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$4;->this$0:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;
 
@@ -144,14 +144,14 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1228
+    .line 1229
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$4;->this$0:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;
 
     iget-object v0, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->linkBox:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1229
+    .line 1230
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void

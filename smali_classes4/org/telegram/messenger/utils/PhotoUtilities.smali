@@ -1002,15 +1002,19 @@
     .line 214
     :cond_5
     :goto_1
-    invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
+    invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
 
     iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    iget-object v7, v4, Lorg/telegram/tgnet/TLRPC$TL_photos_photo;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
+    invoke-virtual {v0, v5, v6}, Lorg/telegram/messenger/MessagesController;->getDialogPhotos(J)Lorg/telegram/messenger/MessagesController$DialogPhotos;
 
-    invoke-virtual {v0, v5, v6, v7}, Lorg/telegram/messenger/MessagesStorage;->addDialogPhoto(JLorg/telegram/tgnet/TLRPC$Photo;)V
+    move-result-object v0
+
+    iget-object v5, v4, Lorg/telegram/tgnet/TLRPC$TL_photos_photo;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
+
+    invoke-virtual {v0, v5}, Lorg/telegram/messenger/MessagesController$DialogPhotos;->addPhotoAtStart(Lorg/telegram/tgnet/TLRPC$Photo;)V
 
     .line 215
     new-instance v0, Ljava/util/ArrayList;

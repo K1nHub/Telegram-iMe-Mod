@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LiteClient.kt */
-@DebugMetadata(m143c = "org.ton.lite.client.LiteClient$liteApi$1", m142f = "LiteClient.kt", m141l = {91, 98}, m140m = "sendRawQuery")
+@DebugMetadata(m145c = "org.ton.lite.client.LiteClient$liteApi$1", m144f = "LiteClient.kt", m143l = {91, 98}, m142m = "sendRawQuery")
 /* loaded from: classes6.dex */
 public final class LiteClient$liteApi$1$sendRawQuery$1 extends ContinuationImpl {
     int I$0;

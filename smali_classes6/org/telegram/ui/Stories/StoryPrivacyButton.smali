@@ -35,10 +35,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 9
 
-    .line 47
+    .line 46
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 31
+    .line 30
     new-instance p1, Landroid/graphics/Matrix;
 
     invoke-direct {p1}, Landroid/graphics/Matrix;-><init>()V
@@ -49,10 +49,10 @@
 
     new-array v0, p1, [Landroid/graphics/Paint;
 
-    .line 32
+    .line 31
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->backgroundPaint:[Landroid/graphics/Paint;
 
-    .line 33
+    .line 32
     new-instance v8, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v7, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -71,15 +71,15 @@
 
     new-array v1, p1, [Landroid/graphics/drawable/Drawable;
 
-    .line 37
+    .line 36
     iput-object v1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->icon:[Landroid/graphics/drawable/Drawable;
 
     new-array p1, p1, [F
 
-    .line 38
+    .line 37
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->iconSize:[F
 
-    .line 41
+    .line 40
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -88,14 +88,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->arrowPaint:Landroid/graphics/Paint;
 
-    .line 42
+    .line 41
     new-instance v2, Landroid/graphics/Path;
 
     invoke-direct {v2}, Landroid/graphics/Path;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->arrowPath:Landroid/graphics/Path;
 
-    .line 44
+    .line 43
     new-instance v2, Lorg/telegram/ui/Components/ButtonBounce;
 
     const v3, 0x3f19999a    # 0.6f
@@ -106,7 +106,7 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 
-    .line 48
+    .line 47
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v1}, Landroid/graphics/Paint;-><init>(I)V
@@ -115,31 +115,31 @@
 
     aput-object v2, v0, v3
 
-    .line 49
+    .line 48
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     aput-object v2, v0, v1
 
-    .line 50
+    .line 49
     sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 51
+    .line 50
     sget-object v0, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 52
+    .line 51
     sget-object v0, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeJoin(Landroid/graphics/Paint$Join;)V
 
     const/4 v0, -0x1
 
-    .line 53
+    .line 52
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
@@ -148,7 +148,7 @@
 .method private setIcon(IF)V
     .locals 5
 
-    .line 115
+    .line 114
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->icon:[Landroid/graphics/drawable/Drawable;
 
     const/4 v1, 0x0
@@ -159,14 +159,14 @@
 
     aput-object v2, v0, v3
 
-    .line 116
+    .line 115
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->iconSize:[F
 
     aget v4, v2, v1
 
     aput v4, v2, v3
 
-    .line 117
+    .line 116
     aget-object v2, v0, v1
 
     if-eqz v2, :cond_0
@@ -175,7 +175,7 @@
 
     if-eq p1, v2, :cond_1
 
-    .line 118
+    .line 117
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
@@ -197,7 +197,7 @@
 
     aput-object p1, v0, v1
 
-    .line 119
+    .line 118
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->icon:[Landroid/graphics/drawable/Drawable;
 
     aget-object p1, p1, v1
@@ -212,7 +212,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 120
+    .line 119
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->iconSize:[F
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
@@ -221,7 +221,7 @@
 
     aput p2, p1, v1
 
-    .line 121
+    .line 120
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_1
@@ -231,7 +231,7 @@
 .method private setupGradient(II)V
     .locals 12
 
-    .line 126
+    .line 125
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->backgroundPaint:[Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -248,7 +248,7 @@
 
     invoke-virtual {v2, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 127
+    .line 126
     iget v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->topColor:I
 
     if-ne v0, p1, :cond_0
@@ -257,7 +257,7 @@
 
     if-eq v0, p2, :cond_1
 
-    .line 128
+    .line 127
     :cond_0
     new-instance v0, Landroid/graphics/LinearGradient;
 
@@ -297,12 +297,12 @@
 
     invoke-direct/range {v4 .. v11}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    .line 129
+    .line 128
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {p1}, Landroid/graphics/Matrix;->reset()V
 
-    .line 130
+    .line 129
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->gradientMatrix:Landroid/graphics/Matrix;
 
     const/4 p2, 0x0
@@ -317,19 +317,19 @@
 
     invoke-virtual {p1, p2, v1}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 131
+    .line 130
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, p1}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 132
+    .line 131
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->backgroundPaint:[Landroid/graphics/Paint;
 
     aget-object p1, p1, v3
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 133
+    .line 132
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_1
@@ -349,7 +349,7 @@
 .method public getCenterX()F
     .locals 3
 
-    .line 212
+    .line 211
     invoke-virtual {p0}, Landroid/view/View;->getX()F
 
     move-result v0
@@ -392,14 +392,14 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 14
 
-    .line 139
+    .line 138
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->draw:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 143
+    .line 142
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->drawArrow:Z
 
@@ -418,7 +418,7 @@
 
     move-result v0
 
-    .line 144
+    .line 143
     :goto_0
     iget-boolean v2, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->drawArrow:Z
 
@@ -439,16 +439,16 @@
 
     move-result v2
 
-    .line 145
+    .line 144
     :goto_1
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v3
 
-    .line 146
+    .line 145
     sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
-    .line 147
+    .line 146
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v5
@@ -463,7 +463,7 @@
 
     add-float/2addr v5, v0
 
-    .line 148
+    .line 147
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v7
@@ -474,7 +474,7 @@
 
     div-float/2addr v7, v6
 
-    .line 149
+    .line 148
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v8
@@ -487,7 +487,7 @@
 
     add-float/2addr v0, v8
 
-    .line 150
+    .line 149
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v2
@@ -498,10 +498,10 @@
 
     div-float/2addr v2, v6
 
-    .line 146
+    .line 145
     invoke-virtual {v4, v5, v7, v0, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 153
+    .line 152
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     const v2, 0x3d99999a    # 0.075f
@@ -510,10 +510,10 @@
 
     move-result v0
 
-    .line 154
+    .line 153
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 155
+    .line 154
     invoke-virtual {v4}, Landroid/graphics/RectF;->centerX()F
 
     move-result v2
@@ -524,7 +524,7 @@
 
     invoke-virtual {p1, v0, v0, v2, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 157
+    .line 156
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->crossfadeT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(F)F
@@ -539,7 +539,7 @@
 
     if-lez v1, :cond_3
 
-    .line 159
+    .line 158
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->backgroundPaint:[Landroid/graphics/Paint;
 
     aget-object v1, v1, v3
@@ -548,7 +548,7 @@
 
     invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 160
+    .line 159
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -576,7 +576,7 @@
 
     if-gez v5, :cond_4
 
-    .line 163
+    .line 162
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->backgroundPaint:[Landroid/graphics/Paint;
 
     aget-object v5, v5, v7
@@ -591,7 +591,7 @@
 
     invoke-virtual {v5, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 164
+    .line 163
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -615,14 +615,14 @@
 
     sub-float v2, v0, v1
 
-    .line 167
+    .line 166
     invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
     move-result v2
 
     add-float/2addr v2, v1
 
-    .line 168
+    .line 167
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->icon:[Landroid/graphics/drawable/Drawable;
 
     aget-object v5, v5, v3
@@ -635,7 +635,7 @@
 
     if-lez v5, :cond_6
 
-    .line 169
+    .line 168
     iget-boolean v5, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->drawArrow:Z
 
     if-eqz v5, :cond_5
@@ -655,7 +655,7 @@
 
     move-result v5
 
-    .line 170
+    .line 169
     :goto_2
     iget-object v9, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->icon:[Landroid/graphics/drawable/Drawable;
 
@@ -673,7 +673,7 @@
 
     float-to-int v10, v10
 
-    .line 172
+    .line 171
     invoke-virtual {v4}, Landroid/graphics/RectF;->centerY()F
 
     move-result v11
@@ -700,7 +700,7 @@
 
     float-to-int v5, v5
 
-    .line 174
+    .line 173
     invoke-virtual {v4}, Landroid/graphics/RectF;->centerY()F
 
     move-result v12
@@ -717,17 +717,17 @@
 
     float-to-int v12, v12
 
-    .line 170
+    .line 169
     invoke-virtual {v9, v10, v11, v5, v12}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 176
+    .line 175
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->icon:[Landroid/graphics/drawable/Drawable;
 
     aget-object v3, v5, v3
 
     invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 178
+    .line 177
     :cond_6
     iget-object v3, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->icon:[Landroid/graphics/drawable/Drawable;
 
@@ -739,7 +739,7 @@
 
     if-gtz v0, :cond_8
 
-    .line 179
+    .line 178
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->drawArrow:Z
 
     if-eqz v0, :cond_7
@@ -759,7 +759,7 @@
 
     move-result v0
 
-    .line 180
+    .line 179
     :goto_3
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->icon:[Landroid/graphics/drawable/Drawable;
 
@@ -777,7 +777,7 @@
 
     float-to-int v3, v3
 
-    .line 182
+    .line 181
     invoke-virtual {v4}, Landroid/graphics/RectF;->centerY()F
 
     move-result v5
@@ -804,7 +804,7 @@
 
     float-to-int v0, v0
 
-    .line 184
+    .line 183
     invoke-virtual {v4}, Landroid/graphics/RectF;->centerY()F
 
     move-result v8
@@ -821,28 +821,28 @@
 
     float-to-int v2, v8
 
-    .line 180
+    .line 179
     invoke-virtual {v1, v3, v5, v0, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 186
+    .line 185
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->icon:[Landroid/graphics/drawable/Drawable;
 
     aget-object v0, v0, v7
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 188
+    .line 187
     :cond_8
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->drawArrow:Z
 
     if-eqz v0, :cond_9
 
-    .line 189
+    .line 188
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->arrowPath:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 190
+    .line 189
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->arrowPath:Landroid/graphics/Path;
 
     iget v1, v4, Landroid/graphics/RectF;->right:F
@@ -869,7 +869,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 191
+    .line 190
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->arrowPath:Landroid/graphics/Path;
 
     iget v1, v4, Landroid/graphics/RectF;->right:F
@@ -896,7 +896,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 192
+    .line 191
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->arrowPath:Landroid/graphics/Path;
 
     iget v1, v4, Landroid/graphics/RectF;->right:F
@@ -921,7 +921,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 193
+    .line 192
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->arrowPaint:Landroid/graphics/Paint;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
@@ -930,14 +930,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 194
+    .line 193
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->arrowPath:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->arrowPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 197
+    .line 196
     :cond_9
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -949,7 +949,7 @@
 
     const/16 p1, 0x3c
 
-    .line 208
+    .line 207
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -975,33 +975,33 @@
     return-void
 .end method
 
-.method public set(ZLorg/telegram/tgnet/TLRPC$StoryItem;Z)Z
+.method public set(ZLorg/telegram/tgnet/tl/TL_stories$StoryItem;Z)Z
     .locals 4
 
-    .line 57
+    .line 56
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->drawArrow:Z
 
     const/4 v0, 0x1
 
-    .line 58
+    .line 57
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->draw:Z
 
     const/4 v1, 0x0
 
     if-nez p2, :cond_0
 
-    .line 60
+    .line 59
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->draw:Z
 
     goto :goto_0
 
-    .line 61
+    .line 60
     :cond_0
-    iget-boolean v2, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->close_friends:Z
+    iget-boolean v2, p2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->close_friends:Z
 
     if-eqz v2, :cond_1
 
-    .line 62
+    .line 61
     sget p1, Lorg/telegram/messenger/R$drawable;->msg_stories_closefriends:I
 
     const/high16 p2, 0x41700000    # 15.0f
@@ -1012,25 +1012,25 @@
 
     const p2, -0xd249c5
 
-    .line 63
+    .line 62
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setupGradient(II)V
 
-    .line 64
+    .line 63
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->crossfadeT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {p1, p3, v0}, Lorg/telegram/ui/Components/AnimatedFloat;->set(ZZ)F
 
     goto :goto_0
 
-    .line 65
+    .line 64
     :cond_1
-    iget-boolean v2, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->contacts:Z
+    iget-boolean v2, p2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->contacts:Z
 
     const v3, 0x418aa3d7    # 17.33f
 
     if-eqz v2, :cond_2
 
-    .line 66
+    .line 65
     sget p1, Lorg/telegram/messenger/R$drawable;->msg_folders_private:I
 
     invoke-direct {p0, p1, v3}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setIcon(IF)V
@@ -1039,23 +1039,23 @@
 
     const p2, -0x69a306
 
-    .line 67
+    .line 66
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setupGradient(II)V
 
-    .line 68
+    .line 67
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->crossfadeT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {p1, p3, v0}, Lorg/telegram/ui/Components/AnimatedFloat;->set(ZZ)F
 
     goto :goto_0
 
-    .line 69
+    .line 68
     :cond_2
-    iget-boolean p2, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->selected_contacts:Z
+    iget-boolean p2, p2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->selected_contacts:Z
 
     if-eqz p2, :cond_3
 
-    .line 70
+    .line 69
     sget p1, Lorg/telegram/messenger/R$drawable;->msg_folders_groups:I
 
     invoke-direct {p0, p1, v3}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setIcon(IF)V
@@ -1064,10 +1064,10 @@
 
     const p2, -0x971cc
 
-    .line 71
+    .line 70
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setupGradient(II)V
 
-    .line 72
+    .line 71
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->crossfadeT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {p1, p3, v0}, Lorg/telegram/ui/Components/AnimatedFloat;->set(ZZ)F
@@ -1077,7 +1077,7 @@
     :cond_3
     if-eqz p1, :cond_4
 
-    .line 74
+    .line 73
     sget p1, Lorg/telegram/messenger/R$drawable;->msg_folders_channels:I
 
     invoke-direct {p0, p1, v3}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setIcon(IF)V
@@ -1086,21 +1086,21 @@
 
     const p2, -0xee7f09
 
-    .line 75
+    .line 74
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setupGradient(II)V
 
-    .line 76
+    .line 75
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->crossfadeT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {p1, p3, v0}, Lorg/telegram/ui/Components/AnimatedFloat;->set(ZZ)F
 
     goto :goto_0
 
-    .line 78
+    .line 77
     :cond_4
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->draw:Z
 
-    .line 80
+    .line 79
     :goto_0
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->draw:Z
 
@@ -1114,10 +1114,10 @@
     :goto_1
     invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 81
+    .line 80
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 82
+    .line 81
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->draw:Z
 
     return p1
@@ -1126,19 +1126,19 @@
 .method public set(ZLorg/telegram/ui/Stories/StoriesController$UploadingStory;Z)Z
     .locals 3
 
-    .line 86
+    .line 85
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->drawArrow:Z
 
     const/4 v0, 0x1
 
-    .line 87
+    .line 86
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->draw:Z
 
     const/4 v1, 0x0
 
     if-eqz p2, :cond_5
 
-    .line 88
+    .line 87
     iget-object p2, p2, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->entry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object p2, p2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacy:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
@@ -1147,13 +1147,13 @@
 
     goto :goto_0
 
-    .line 90
+    .line 89
     :cond_0
     iget p2, p2, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;->type:I
 
     if-ne p2, v0, :cond_1
 
-    .line 91
+    .line 90
     sget p1, Lorg/telegram/messenger/R$drawable;->msg_stories_closefriends:I
 
     const/high16 p2, 0x41700000    # 15.0f
@@ -1164,10 +1164,10 @@
 
     const p2, -0xd249c5
 
-    .line 92
+    .line 91
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setupGradient(II)V
 
-    .line 93
+    .line 92
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->crossfadeT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     xor-int/lit8 p2, p3, 0x1
@@ -1183,7 +1183,7 @@
 
     if-ne p2, v0, :cond_2
 
-    .line 95
+    .line 94
     sget p1, Lorg/telegram/messenger/R$drawable;->msg_folders_private:I
 
     invoke-direct {p0, p1, v2}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setIcon(IF)V
@@ -1192,10 +1192,10 @@
 
     const p2, -0x69a306
 
-    .line 96
+    .line 95
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setupGradient(II)V
 
-    .line 97
+    .line 96
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->crossfadeT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     xor-int/lit8 p2, p3, 0x1
@@ -1209,7 +1209,7 @@
 
     if-ne p2, v0, :cond_3
 
-    .line 99
+    .line 98
     sget p1, Lorg/telegram/messenger/R$drawable;->msg_folders_groups:I
 
     invoke-direct {p0, p1, v2}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setIcon(IF)V
@@ -1218,10 +1218,10 @@
 
     const p2, -0x971cc
 
-    .line 100
+    .line 99
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setupGradient(II)V
 
-    .line 101
+    .line 100
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->crossfadeT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     xor-int/lit8 p2, p3, 0x1
@@ -1233,7 +1233,7 @@
     :cond_3
     if-eqz p1, :cond_4
 
-    .line 103
+    .line 102
     sget p1, Lorg/telegram/messenger/R$drawable;->msg_folders_channels:I
 
     invoke-direct {p0, p1, v2}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setIcon(IF)V
@@ -1242,10 +1242,10 @@
 
     const p2, -0xee7f09
 
-    .line 104
+    .line 103
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoryPrivacyButton;->setupGradient(II)V
 
-    .line 105
+    .line 104
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->crossfadeT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     xor-int/lit8 p2, p3, 0x1
@@ -1254,18 +1254,18 @@
 
     goto :goto_1
 
-    .line 107
+    .line 106
     :cond_4
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->draw:Z
 
     goto :goto_1
 
-    .line 89
+    .line 88
     :cond_5
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->draw:Z
 
-    .line 109
+    .line 108
     :goto_1
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->draw:Z
 
@@ -1279,10 +1279,10 @@
     :goto_2
     invoke-virtual {p0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 110
+    .line 109
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 111
+    .line 110
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->draw:Z
 
     return p1
@@ -1291,10 +1291,10 @@
 .method public setPressed(Z)V
     .locals 1
 
-    .line 202
+    .line 201
     invoke-super {p0, p1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 203
+    .line 202
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryPrivacyButton;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V

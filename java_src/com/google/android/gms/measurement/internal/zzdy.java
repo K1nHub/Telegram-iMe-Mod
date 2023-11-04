@@ -1,7 +1,7 @@
 package com.google.android.gms.measurement.internal;
 
 import android.content.Context;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.audio.AacUtil;
 import com.google.android.gms.common.util.VisibleForTesting;
 import com.google.android.gms.internal.measurement.zzna;
@@ -297,7 +297,7 @@ public final class zzdy {
                 return Long.valueOf(zznm.zzn());
             }
         });
-        Long valueOf2 = Long.valueOf((long) C0479C.DEFAULT_SEEK_FORWARD_INCREMENT_MS);
+        Long valueOf2 = Long.valueOf((long) C0485C.DEFAULT_SEEK_FORWARD_INCREMENT_MS);
         zzz = zza("measurement.upload.initial_upload_delay_time", valueOf2, valueOf2, new zzdu() { // from class: com.google.android.gms.measurement.internal.zzbe
             @Override // com.google.android.gms.measurement.internal.zzdu
             public final Object zza() {

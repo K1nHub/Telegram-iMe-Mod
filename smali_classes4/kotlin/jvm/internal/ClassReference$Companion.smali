@@ -49,7 +49,7 @@
         }
     .end annotation
 
-    const-string v0, "jClass"
+    const-string/jumbo v0, "jClass"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -129,7 +129,7 @@
     :cond_2
     if-nez v1, :cond_4
 
-    const-string v1, "kotlin.Array"
+    const-string/jumbo v1, "kotlin.Array"
 
     goto :goto_0
 
@@ -173,7 +173,7 @@
         }
     .end annotation
 
-    const-string v0, "jClass"
+    const-string/jumbo v0, "jClass"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -378,7 +378,7 @@
         }
     .end annotation
 
-    const-string v0, "jClass"
+    const-string/jumbo v0, "jClass"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

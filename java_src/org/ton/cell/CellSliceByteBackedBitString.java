@@ -61,7 +61,7 @@ public final class CellSliceByteBackedBitString extends CellSliceImpl {
     }
 
     /* renamed from: getLong-I7RO_PI  reason: not valid java name */
-    public final long m5071getLongI7RO_PI(int i) {
+    public final long m5225getLongI7RO_PI(int i) {
         long j = 0;
         if (i == 0) {
             return 0L;
@@ -69,12 +69,12 @@ public final class CellSliceByteBackedBitString extends CellSliceImpl {
         int i2 = i / 8;
         int i3 = i % 8;
         for (int i4 = 0; i4 < i2; i4++) {
-            j = ULong.m1989constructorimpl(j | ULong.m1989constructorimpl(ULong.m1989constructorimpl(getByte(i4 * 8) & 255) << ((7 - i4) * 8)));
+            j = ULong.m1994constructorimpl(j | ULong.m1994constructorimpl(ULong.m1994constructorimpl(getByte(i4 * 8) & 255) << ((7 - i4) * 8)));
         }
         if (i3 != 0) {
-            j = ULong.m1989constructorimpl(j | ULong.m1989constructorimpl(ULong.m1989constructorimpl(getBits(i2 * 8, i3) & 255) << (((7 - i2) * 8) + (8 - i3))));
+            j = ULong.m1994constructorimpl(j | ULong.m1994constructorimpl(ULong.m1994constructorimpl(getBits(i2 * 8, i3) & 255) << (((7 - i2) * 8) + (8 - i3))));
         }
-        return ULong.m1989constructorimpl(j >>> (64 - i));
+        return ULong.m1994constructorimpl(j >>> (64 - i));
     }
 
     @Override // org.ton.cell.CellSliceImpl, org.ton.cell.CellSlice
@@ -112,13 +112,13 @@ public final class CellSliceByteBackedBitString extends CellSliceImpl {
         if (i == 8) {
             return BigIntJvmKt.toBigInt(getByte(0) & 255);
         }
-        long m5071getLongI7RO_PI = m5071getLongI7RO_PI(i);
-        compare = Long.compare(m5071getLongI7RO_PI ^ Long.MIN_VALUE, ULong.m1989constructorimpl(Long.MAX_VALUE) ^ Long.MIN_VALUE);
+        long m5225getLongI7RO_PI = m5225getLongI7RO_PI(i);
+        compare = Long.compare(m5225getLongI7RO_PI ^ Long.MIN_VALUE, ULong.m1994constructorimpl(Long.MAX_VALUE) ^ Long.MIN_VALUE);
         if (compare > 0) {
-            m29m = CellSliceByteBackedBitString$$ExternalSyntheticBackport1.m29m(m5071getLongI7RO_PI, 10);
+            m29m = CellSliceByteBackedBitString$$ExternalSyntheticBackport1.m29m(m5225getLongI7RO_PI, 10);
             return new BigInteger(m29m, 10);
         }
-        return BigIntJvmKt.toBigInt(m5071getLongI7RO_PI);
+        return BigIntJvmKt.toBigInt(m5225getLongI7RO_PI);
     }
 
     @Override // org.ton.cell.CellSliceImpl, org.ton.cell.CellSlice
@@ -129,12 +129,12 @@ public final class CellSliceByteBackedBitString extends CellSliceImpl {
         if (i > 64) {
             return super.preloadInt(i);
         }
-        long m5071getLongI7RO_PI = m5071getLongI7RO_PI(i);
+        long m5225getLongI7RO_PI = m5225getLongI7RO_PI(i);
         long j = 1 << (i - 1);
-        if (m5071getLongI7RO_PI >= j) {
-            return BigIntJvmKt.toBigInt(m5071getLongI7RO_PI - (j * 2));
+        if (m5225getLongI7RO_PI >= j) {
+            return BigIntJvmKt.toBigInt(m5225getLongI7RO_PI - (j * 2));
         }
-        return BigIntJvmKt.toBigInt(m5071getLongI7RO_PI);
+        return BigIntJvmKt.toBigInt(m5225getLongI7RO_PI);
     }
 
     @Override // org.ton.cell.CellSliceImpl
@@ -143,9 +143,9 @@ public final class CellSliceByteBackedBitString extends CellSliceImpl {
             return 0L;
         }
         if (i <= 64) {
-            long m5071getLongI7RO_PI = m5071getLongI7RO_PI(i);
+            long m5225getLongI7RO_PI = m5225getLongI7RO_PI(i);
             long j = 1 << (i - 1);
-            return m5071getLongI7RO_PI >= j ? m5071getLongI7RO_PI - (j * 2) : m5071getLongI7RO_PI;
+            return m5225getLongI7RO_PI >= j ? m5225getLongI7RO_PI - (j * 2) : m5225getLongI7RO_PI;
         }
         throw new IllegalArgumentException("expected length in 0..64, actual: " + i);
     }

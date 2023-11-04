@@ -190,8 +190,8 @@ public final class RecentChatsController extends BaseController implements KoinC
             coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
             LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
             for (HistoryDialogModel historyDialogModel2 : pinnedRecentChats2) {
-                Pair m144to = TuplesKt.m144to(Long.valueOf(historyDialogModel2.getDialogId()), historyDialogModel2);
-                linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
+                Pair m146to = TuplesKt.m146to(Long.valueOf(historyDialogModel2.getDialogId()), historyDialogModel2);
+                linkedHashMap.put(m146to.getFirst(), m146to.getSecond());
             }
             mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
             this.historyDialogs = mutableMap;
@@ -301,8 +301,8 @@ public final class RecentChatsController extends BaseController implements KoinC
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (HistoryDialogDb historyDialogDb : historyDialog) {
-            Pair m144to = TuplesKt.m144to(Long.valueOf(historyDialogDb.getDialogId()), RecentChatsMappingKt.mapToDomain(historyDialogDb));
-            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
+            Pair m146to = TuplesKt.m146to(Long.valueOf(historyDialogDb.getDialogId()), RecentChatsMappingKt.mapToDomain(historyDialogDb));
+            linkedHashMap.put(m146to.getFirst(), m146to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.historyDialogs = mutableMap;

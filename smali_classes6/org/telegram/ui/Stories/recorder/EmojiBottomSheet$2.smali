@@ -22,12 +22,12 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)V
     .locals 0
 
-    .line 1234
+    .line 1232
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$2;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
 
-    .line 1235
+    .line 1233
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5300(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
 
     move-result p1
@@ -42,7 +42,7 @@
 .method public getParentActivity()Landroid/app/Activity;
     .locals 1
 
-    .line 1243
+    .line 1241
     sget-object v0, Lorg/telegram/ui/LaunchActivity;->instance:Lorg/telegram/ui/LaunchActivity;
 
     return-object v0
@@ -51,7 +51,7 @@
 .method public getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 2
 
-    .line 1248
+    .line 1246
     new-instance v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$2$1;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$2;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
@@ -76,7 +76,7 @@
 .method public showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
     .locals 0
 
-    .line 1238
+    .line 1236
     invoke-virtual {p1}, Landroid/app/Dialog;->show()V
 
     return-object p1

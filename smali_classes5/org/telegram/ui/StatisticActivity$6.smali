@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 507
+    .line 528
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$6;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -37,10 +37,10 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 512
+    .line 533
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->onMeasure(II)V
 
-    .line 513
+    .line 534
     iget p1, p0, Lorg/telegram/ui/StatisticActivity$6;->lastH:I
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -57,7 +57,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 514
+    .line 535
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$6;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/StatisticActivity;->access$300(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$Adapter;
@@ -66,7 +66,7 @@
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 516
+    .line 537
     :cond_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 

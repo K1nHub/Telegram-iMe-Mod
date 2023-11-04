@@ -46,18 +46,18 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Landroid/content/Context;)V
     .locals 10
 
-    .line 3129
+    .line 3135
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    .line 3130
+    .line 3136
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x0
 
-    .line 3131
+    .line 3137
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 3132
+    .line 3138
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$3900(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -74,7 +74,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 3134
+    .line 3140
     new-instance v0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$1;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$1;-><init>(Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;Landroid/content/Context;Lorg/telegram/ui/Stories/recorder/PaintView;)V
@@ -95,26 +95,26 @@
 
     const/4 v7, 0x0
 
-    .line 3154
+    .line 3160
     invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3156
+    .line 3162
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageView:Landroid/widget/ImageView;
 
-    .line 3157
+    .line 3163
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 3158
+    .line 3164
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageView:Landroid/widget/ImageView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
@@ -125,7 +125,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    .line 3159
+    .line 3165
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imagesView:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageView:Landroid/widget/ImageView;
@@ -140,19 +140,19 @@
 
     invoke-virtual {v0, v2, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3160
+    .line 3166
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
-    .line 3161
+    .line 3167
     sget-object v2, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 3162
+    .line 3168
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4000(Lorg/telegram/ui/Stories/recorder/PaintView;I)I
@@ -161,14 +161,14 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setColorFilter(I)V
 
-    .line 3163
+    .line 3169
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3164
+    .line 3170
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imagesView:Landroid/widget/FrameLayout;
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->image2View:Landroid/widget/ImageView;
@@ -179,21 +179,21 @@
 
     invoke-virtual {v0, v5, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3166
+    .line 3172
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->textView:Landroid/widget/TextView;
 
-    .line 3167
+    .line 3173
     invoke-static {p1, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4000(Lorg/telegram/ui/Stories/recorder/PaintView;I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 3168
+    .line 3174
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->textView:Landroid/widget/TextView;
 
     const/4 v1, 0x1
@@ -202,7 +202,7 @@
 
     invoke-virtual {v0, v1, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 3169
+    .line 3175
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->textView:Landroid/widget/TextView;
 
     const/4 v3, -0x2
@@ -223,26 +223,26 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3171
+    .line 3177
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->checkView:Landroid/widget/ImageView;
 
-    .line 3172
+    .line 3178
     sget p2, Lorg/telegram/messenger/R$drawable;->msg_text_check:I
 
     invoke-virtual {v0, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 3173
+    .line 3179
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->checkView:Landroid/widget/ImageView;
 
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 3174
+    .line 3180
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->checkView:Landroid/widget/ImageView;
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
@@ -259,12 +259,12 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 3175
+    .line 3181
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->checkView:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3176
+    .line 3182
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->checkView:Landroid/widget/ImageView;
 
     const/16 p2, 0x32
@@ -283,7 +283,7 @@
 .method private synthetic lambda$setIcon$0(ZLandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 3205
+    .line 3211
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -298,7 +298,7 @@
 
     if-nez p1, :cond_0
 
-    .line 3207
+    .line 3213
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageView:Landroid/widget/ImageView;
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -307,7 +307,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 3209
+    .line 3215
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imagesView:Landroid/widget/FrameLayout;
 
@@ -329,7 +329,7 @@
 .method public performClick()Z
     .locals 2
 
-    .line 3233
+    .line 3239
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4100(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -350,7 +350,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3234
+    .line 3240
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$4100(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -361,7 +361,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss(Z)V
 
-    .line 3236
+    .line 3242
     :cond_0
     invoke-super {p0}, Landroid/widget/LinearLayout;->performClick()Z
 
@@ -377,7 +377,7 @@
 
     const/4 v1, 0x0
 
-    .line 3188
+    .line 3194
     invoke-virtual {p0, p1, v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->setIcon(IZZ)V
 
     return-void
@@ -388,41 +388,41 @@
 
     if-eqz p3, :cond_1
 
-    .line 3193
+    .line 3199
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
     const/4 v0, 0x0
 
     if-eqz p3, :cond_0
 
-    .line 3194
+    .line 3200
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 p2, 0x0
 
-    .line 3195
+    .line 3201
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
-    .line 3196
+    .line 3202
     invoke-virtual {p0, p1, v0, v0}, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->setIcon(IZZ)V
 
     return-void
 
-    .line 3199
+    .line 3205
     :cond_0
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageSwitchFill:Z
 
-    .line 3200
+    .line 3206
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
     invoke-virtual {p3, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 3201
+    .line 3207
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3202
+    .line 3208
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->image2View:Landroid/widget/ImageView;
 
     const/high16 p3, 0x3f800000    # 1.0f
@@ -433,7 +433,7 @@
 
     new-array p1, p1, [F
 
-    .line 3203
+    .line 3209
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -442,14 +442,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
-    .line 3204
+    .line 3210
     new-instance p3, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$$ExternalSyntheticLambda0;
 
     invoke-direct {p3, p0, p2}, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;Z)V
 
     invoke-virtual {p1, p3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 3211
+    .line 3217
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
     new-instance p2, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton$2;
@@ -458,28 +458,28 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 3223
+    .line 3229
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 3224
+    .line 3230
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 p2, 0x1a4
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 3225
+    .line 3231
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageSwitchAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 3227
+    .line 3233
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->imageView:Landroid/widget/ImageView;
 
@@ -498,7 +498,7 @@
 .method public setSelected(Z)V
     .locals 1
 
-    .line 3180
+    .line 3186
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->checkView:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_0
@@ -519,7 +519,7 @@
 .method public setText(Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 3184
+    .line 3190
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupButton;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V

@@ -88,14 +88,14 @@ public class UnconfirmedAuthController {
             goto L26
         L44:
             r2 = move-exception
-            org.telegram.messenger.FileLog.m97e(r2)     // Catch: java.lang.Throwable -> L49 java.lang.Exception -> L4b
+            org.telegram.messenger.FileLog.m99e(r2)     // Catch: java.lang.Throwable -> L49 java.lang.Exception -> L4b
             goto L26
         L49:
             r0 = move-exception
             goto L5d
         L4b:
             r2 = move-exception
-            org.telegram.messenger.FileLog.m97e(r2)     // Catch: java.lang.Throwable -> L49
+            org.telegram.messenger.FileLog.m99e(r2)     // Catch: java.lang.Throwable -> L49
             if (r3 == 0) goto L54
         L51:
             r3.dispose()
@@ -270,7 +270,7 @@ public class UnconfirmedAuthController {
             goto L5e
         L4c:
             r0 = move-exception
-            org.telegram.messenger.FileLog.m97e(r0)     // Catch: java.lang.Throwable -> L4a
+            org.telegram.messenger.FileLog.m99e(r0)     // Catch: java.lang.Throwable -> L4a
             if (r1 == 0) goto L55
         L52:
             r1.dispose()

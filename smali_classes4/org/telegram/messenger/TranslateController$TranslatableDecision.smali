@@ -50,24 +50,24 @@
 .method constructor <init>()V
     .locals 1
 
-    .line 51
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 52
-    new-instance v0, Ljava/util/HashSet;
-
-    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/messenger/TranslateController$TranslatableDecision;->certainlyTranslatable:Ljava/util/Set;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 53
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/messenger/TranslateController$TranslatableDecision;->unknown:Ljava/util/Set;
+    iput-object v0, p0, Lorg/telegram/messenger/TranslateController$TranslatableDecision;->certainlyTranslatable:Ljava/util/Set;
 
     .line 54
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/messenger/TranslateController$TranslatableDecision;->unknown:Ljava/util/Set;
+
+    .line 55
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V

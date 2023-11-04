@@ -81,7 +81,7 @@
 
     move-result-object v1
 
-    const-string v3, "java.lang.Module"
+    const-string/jumbo v3, "java.lang.Module"
 
     invoke-virtual {v1, v3}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
@@ -105,7 +105,7 @@
 
     move-result-object p1
 
-    const-string v3, "java.lang.module.ModuleDescriptor"
+    const-string/jumbo v3, "java.lang.module.ModuleDescriptor"
 
     invoke-virtual {p1, v3}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 

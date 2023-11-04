@@ -1,5 +1,6 @@
 package io.ktor.utils.p032io;
 
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.coroutines.Continuation;
@@ -15,7 +16,7 @@ import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.Job;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Coroutines.kt */
-@DebugMetadata(m143c = "io.ktor.utils.io.CoroutinesKt$launchChannel$job$1", m142f = "Coroutines.kt", m141l = {134}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "io.ktor.utils.io.CoroutinesKt$launchChannel$job$1", m144f = "Coroutines.kt", m143l = {TsExtractor.TS_STREAM_TYPE_SPLICE_INFO}, m142m = "invokeSuspend")
 /* renamed from: io.ktor.utils.io.CoroutinesKt$launchChannel$job$1 */
 /* loaded from: classes4.dex */
 public final class CoroutinesKt$launchChannel$job$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {

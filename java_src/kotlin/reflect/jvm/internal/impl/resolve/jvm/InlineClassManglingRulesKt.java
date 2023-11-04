@@ -53,8 +53,8 @@ public final class InlineClassManglingRulesKt {
 
     public static final boolean isInlineClassThatRequiresMangling(KotlinType kotlinType) {
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        ClassifierDescriptor mo2046getDeclarationDescriptor = kotlinType.getConstructor().mo2046getDeclarationDescriptor();
-        return mo2046getDeclarationDescriptor != null && isInlineClassThatRequiresMangling(mo2046getDeclarationDescriptor);
+        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
+        return mo2051getDeclarationDescriptor != null && isInlineClassThatRequiresMangling(mo2051getDeclarationDescriptor);
     }
 
     private static final boolean requiresFunctionNameManglingInParameterTypes(KotlinType kotlinType) {
@@ -66,8 +66,8 @@ public final class InlineClassManglingRulesKt {
     }
 
     private static final boolean isTypeParameterWithUpperBoundThatRequiresMangling(KotlinType kotlinType) {
-        ClassifierDescriptor mo2046getDeclarationDescriptor = kotlinType.getConstructor().mo2046getDeclarationDescriptor();
-        TypeParameterDescriptor typeParameterDescriptor = mo2046getDeclarationDescriptor instanceof TypeParameterDescriptor ? (TypeParameterDescriptor) mo2046getDeclarationDescriptor : null;
+        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
+        TypeParameterDescriptor typeParameterDescriptor = mo2051getDeclarationDescriptor instanceof TypeParameterDescriptor ? (TypeParameterDescriptor) mo2051getDeclarationDescriptor : null;
         if (typeParameterDescriptor == null) {
             return false;
         }

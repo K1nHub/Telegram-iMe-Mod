@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    .line 139
+    .line 140
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$1;->val$frontendFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-direct {p0}, Lorg/telegram/ui/CacheControlActivity;-><init>()V
@@ -35,7 +35,7 @@
 .method public getContext()Landroid/content/Context;
     .locals 1
 
-    .line 147
+    .line 148
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$1;->val$frontendFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-eqz v0, :cond_0
@@ -56,7 +56,7 @@
 .method public getParentActivity()Landroid/app/Activity;
     .locals 1
 
-    .line 142
+    .line 143
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$1;->val$frontendFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-eqz v0, :cond_0
@@ -77,7 +77,7 @@
 .method public showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
     .locals 1
 
-    .line 152
+    .line 153
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$1;->val$frontendFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-eqz v0, :cond_0

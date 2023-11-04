@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletSecretWordsCountBinding implements ViewBinding {
     private ForkRecycleItemWalletSecretWordsCountBinding(FrameLayout frameLayout, AppCompatTextView appCompatTextView) {
@@ -18,7 +18,7 @@ public final class ForkRecycleItemWalletSecretWordsCountBinding implements ViewB
     }
 
     public static ForkRecycleItemWalletSecretWordsCountBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_secret_words_count, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_recycle_item_wallet_secret_words_count, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -26,7 +26,7 @@ public final class ForkRecycleItemWalletSecretWordsCountBinding implements ViewB
     }
 
     public static ForkRecycleItemWalletSecretWordsCountBinding bind(View view) {
-        int i = C3630R.C3633id.text_words_count;
+        int i = C3634R.C3637id.text_words_count;
         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
         if (appCompatTextView != null) {
             return new ForkRecycleItemWalletSecretWordsCountBinding((FrameLayout) view, appCompatTextView);

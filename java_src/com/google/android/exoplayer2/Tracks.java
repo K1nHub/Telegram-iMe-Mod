@@ -17,7 +17,7 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class Tracks implements Bundleable {
     private final ImmutableList<Group> groups;
-    public static final Tracks EMPTY = new Tracks(ImmutableList.m1054of());
+    public static final Tracks EMPTY = new Tracks(ImmutableList.m1055of());
     private static final String FIELD_TRACK_GROUPS = Util.intToStringMaxRadix(0);
     public static final Bundleable.Creator<Tracks> CREATOR = new Bundleable.Creator() { // from class: com.google.android.exoplayer2.Tracks$$ExternalSyntheticLambda0
         @Override // com.google.android.exoplayer2.Bundleable.Creator
@@ -224,7 +224,7 @@ public final class Tracks implements Bundleable {
         ImmutableList fromBundleList;
         ArrayList parcelableArrayList = bundle.getParcelableArrayList(FIELD_TRACK_GROUPS);
         if (parcelableArrayList == null) {
-            fromBundleList = ImmutableList.m1054of();
+            fromBundleList = ImmutableList.m1055of();
         } else {
             fromBundleList = BundleableUtil.fromBundleList(Group.CREATOR, parcelableArrayList);
         }

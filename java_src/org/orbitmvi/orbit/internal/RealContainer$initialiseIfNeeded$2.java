@@ -11,7 +11,7 @@ import kotlinx.coroutines.CoroutineScope;
 import org.orbitmvi.orbit.syntax.ContainerContext;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RealContainer.kt */
-@DebugMetadata(m143c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2", m142f = "RealContainer.kt", m141l = {98}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2", m144f = "RealContainer.kt", m143l = {98}, m142m = "invokeSuspend")
 /* loaded from: classes4.dex */
 public final class RealContainer$initialiseIfNeeded$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
@@ -153,17 +153,17 @@ public final class RealContainer$initialiseIfNeeded$2 extends SuspendLambda impl
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RealContainer.kt */
-    @DebugMetadata(m143c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2$1", m142f = "RealContainer.kt", m141l = {99}, m140m = "invokeSuspend")
+    @DebugMetadata(m145c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2$1", m144f = "RealContainer.kt", m143l = {99}, m142m = "invokeSuspend")
     /* renamed from: org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C35371 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C35411 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function2<ContainerContext<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> $msg;
         int label;
         final /* synthetic */ RealContainer<STATE, SIDE_EFFECT> this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
-        C35371(Function2<? super ContainerContext<STATE, SIDE_EFFECT>, ? super Continuation<? super Unit>, ? extends Object> function2, RealContainer<STATE, SIDE_EFFECT> realContainer, Continuation<? super C35371> continuation) {
+        C35411(Function2<? super ContainerContext<STATE, SIDE_EFFECT>, ? super Continuation<? super Unit>, ? extends Object> function2, RealContainer<STATE, SIDE_EFFECT> realContainer, Continuation<? super C35411> continuation) {
             super(2, continuation);
             this.$msg = function2;
             this.this$0 = realContainer;
@@ -171,12 +171,12 @@ public final class RealContainer$initialiseIfNeeded$2 extends SuspendLambda impl
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C35371(this.$msg, this.this$0, continuation);
+            return new C35411(this.$msg, this.this$0, continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((C35371) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C35411) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

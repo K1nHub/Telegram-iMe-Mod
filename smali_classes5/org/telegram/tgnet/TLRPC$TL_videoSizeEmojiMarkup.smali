@@ -3,25 +3,15 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x7a3bec4
-
-
 # instance fields
 .field public emoji_id:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 20502
+    .line 20251
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$VideoSize;-><init>()V
 
     return-void
@@ -32,14 +22,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 20508
+    .line 20257
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_videoSizeEmojiMarkup;->emoji_id:J
 
-    .line 20509
+    .line 20258
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -54,7 +44,7 @@
 
     return-void
 
-    .line 20512
+    .line 20261
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -78,7 +68,7 @@
 
     throw p1
 
-    .line 20516
+    .line 20265
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -87,7 +77,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 20518
+    .line 20267
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$VideoSize;->background_colors:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
@@ -111,29 +101,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 20523
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_videoSizeEmojiMarkup;->constructor:I
+    const v0, -0x7a3bec4
 
+    .line 20272
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 20524
+    .line 20273
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_videoSizeEmojiMarkup;->emoji_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
     const v0, 0x1cb5c415
 
-    .line 20525
+    .line 20274
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 20526
+    .line 20275
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$VideoSize;->background_colors:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 20527
+    .line 20276
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -141,7 +131,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 20529
+    .line 20278
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$VideoSize;->background_colors:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

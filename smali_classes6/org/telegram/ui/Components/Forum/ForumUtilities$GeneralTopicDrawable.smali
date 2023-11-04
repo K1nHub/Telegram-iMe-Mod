@@ -23,20 +23,53 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;FI)V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;FIZ)V
+    .locals 0
 
-    .line 99
+    .line 117
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 100
+    if-eqz p4, :cond_1
+
+    .line 119
+    sget-object p4, Lorg/telegram/ui/Components/Forum/ForumUtilities;->dialogGeneralIcon:Landroid/graphics/drawable/Drawable;
+
+    if-nez p4, :cond_0
+
+    .line 120
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
 
-    sget v0, Lorg/telegram/messenger/R$drawable;->msg_filled_general:I
+    sget p4, Lorg/telegram/messenger/R$drawable;->msg_filled_general:I
 
-    invoke-virtual {p1, v0}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p1, p4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    sput-object p1, Lorg/telegram/ui/Components/Forum/ForumUtilities;->dialogGeneralIcon:Landroid/graphics/drawable/Drawable;
+
+    .line 122
+    :cond_0
+    sget-object p1, Lorg/telegram/ui/Components/Forum/ForumUtilities;->dialogGeneralIcon:Landroid/graphics/drawable/Drawable;
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->icon:Landroid/graphics/drawable/Drawable;
+
+    goto :goto_0
+
+    .line 124
+    :cond_1
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object p1
+
+    sget p4, Lorg/telegram/messenger/R$drawable;->msg_filled_general:I
+
+    invoke-virtual {p1, p4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
@@ -46,10 +79,11 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
-    .line 101
+    .line 126
+    :goto_0
     iput p2, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->scale:F
 
-    .line 102
+    .line 127
     invoke-virtual {p0, p3}, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->setColor(I)V
 
     return-void
@@ -60,12 +94,12 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 107
+    .line 132
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 108
+    .line 133
     iget v1, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->scale:F
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -74,18 +108,18 @@
 
     if-nez v1, :cond_0
 
-    .line 109
+    .line 134
     iget-object v1, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
     goto :goto_0
 
-    .line 111
+    .line 136
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
-    .line 112
+    .line 137
     invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
 
     move-result v2
@@ -110,7 +144,7 @@
 
     float-to-int v2, v2
 
-    .line 113
+    .line 138
     invoke-virtual {v0}, Landroid/graphics/Rect;->centerY()I
 
     move-result v3
@@ -133,7 +167,7 @@
 
     float-to-int v3, v3
 
-    .line 114
+    .line 139
     invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
 
     move-result v5
@@ -156,7 +190,7 @@
 
     float-to-int v5, v5
 
-    .line 115
+    .line 140
     invoke-virtual {v0}, Landroid/graphics/Rect;->centerY()I
 
     move-result v6
@@ -179,10 +213,10 @@
 
     float-to-int v0, v6
 
-    .line 111
+    .line 136
     invoke-virtual {v1, v2, v3, v5, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 118
+    .line 143
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
@@ -202,7 +236,7 @@
 .method public setAlpha(I)V
     .locals 1
 
-    .line 129
+    .line 154
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
@@ -213,12 +247,12 @@
 .method public setColor(I)V
     .locals 2
 
-    .line 122
+    .line 147
     iget v0, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->color:I
 
     if-eq v0, p1, :cond_0
 
-    .line 123
+    .line 148
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     iput p1, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->color:I
@@ -236,7 +270,7 @@
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 1
 
-    .line 134
+    .line 159
     iget-object v0, p0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->icon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V

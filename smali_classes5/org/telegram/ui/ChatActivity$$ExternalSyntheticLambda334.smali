@@ -2,42 +2,48 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnInterceptTouchListener;
+.implements Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda334;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda334;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda334;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda334;->INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda334;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$BotInlineResult;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda334;->f$0:Lorg/telegram/ui/ChatActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda334;->f$1:Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 0
+.method public final didSelectDate(ZILjava/lang/String;)V
+    .locals 2
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$cgC2hZltZLbUyHVHCFy1d2uyo30(Landroid/view/MotionEvent;)Z
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda334;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    move-result p1
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda334;->f$1:Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
-    return p1
+    invoke-static {v0, v1, p1, p2, p3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$0qBM0r74VDRTAZFwgIC5OjVfF5w(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$BotInlineResult;ZILjava/lang/String;)V
+
+    return-void
+.end method
+
+.method public synthetic getSelectedDialogs()Ljava/util/ArrayList;
+    .locals 1
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate$-CC;->$default$getSelectedDialogs(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
+    return-object v0
 .end method

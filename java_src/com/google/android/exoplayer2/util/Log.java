@@ -31,40 +31,40 @@ public final class Log {
         public static final Logger DEFAULT = new Logger() { // from class: com.google.android.exoplayer2.util.Log.Logger.1
             @Override // com.google.android.exoplayer2.util.Log.Logger
             /* renamed from: d */
-            public void mo1104d(String str, String str2) {
+            public void mo1105d(String str, String str2) {
                 android.util.Log.d(str, str2);
             }
 
             @Override // com.google.android.exoplayer2.util.Log.Logger
             /* renamed from: i */
-            public void mo1102i(String str, String str2) {
+            public void mo1103i(String str, String str2) {
                 android.util.Log.i(str, str2);
             }
 
             @Override // com.google.android.exoplayer2.util.Log.Logger
             /* renamed from: w */
-            public void mo1101w(String str, String str2) {
+            public void mo1102w(String str, String str2) {
                 android.util.Log.w(str, str2);
             }
 
             @Override // com.google.android.exoplayer2.util.Log.Logger
             /* renamed from: e */
-            public void mo1103e(String str, String str2) {
+            public void mo1104e(String str, String str2) {
                 android.util.Log.e(str, str2);
             }
         };
 
         /* renamed from: d */
-        void mo1104d(String str, String str2);
+        void mo1105d(String str, String str2);
 
         /* renamed from: e */
-        void mo1103e(String str, String str2);
+        void mo1104e(String str, String str2);
 
         /* renamed from: i */
-        void mo1102i(String str, String str2);
+        void mo1103i(String str, String str2);
 
         /* renamed from: w */
-        void mo1101w(String str, String str2);
+        void mo1102w(String str, String str2);
     }
 
     private Log() {
@@ -97,59 +97,59 @@ public final class Log {
     }
 
     /* renamed from: d */
-    public static void m1112d(String str, String str2) {
+    public static void m1113d(String str, String str2) {
         synchronized (lock) {
             if (logLevel == 0) {
-                logger.mo1104d(str, str2);
+                logger.mo1105d(str, str2);
             }
         }
     }
 
     /* renamed from: d */
-    public static void m1111d(String str, String str2, Throwable th) {
-        m1112d(str, appendThrowableString(str2, th));
+    public static void m1112d(String str, String str2, Throwable th) {
+        m1113d(str, appendThrowableString(str2, th));
     }
 
     /* renamed from: i */
-    public static void m1108i(String str, String str2) {
+    public static void m1109i(String str, String str2) {
         synchronized (lock) {
             if (logLevel <= 1) {
-                logger.mo1102i(str, str2);
+                logger.mo1103i(str, str2);
             }
         }
     }
 
     /* renamed from: i */
-    public static void m1107i(String str, String str2, Throwable th) {
-        m1108i(str, appendThrowableString(str2, th));
+    public static void m1108i(String str, String str2, Throwable th) {
+        m1109i(str, appendThrowableString(str2, th));
     }
 
     /* renamed from: w */
-    public static void m1106w(String str, String str2) {
+    public static void m1107w(String str, String str2) {
         synchronized (lock) {
             if (logLevel <= 2) {
-                logger.mo1101w(str, str2);
+                logger.mo1102w(str, str2);
             }
         }
     }
 
     /* renamed from: w */
-    public static void m1105w(String str, String str2, Throwable th) {
-        m1106w(str, appendThrowableString(str2, th));
+    public static void m1106w(String str, String str2, Throwable th) {
+        m1107w(str, appendThrowableString(str2, th));
     }
 
     /* renamed from: e */
-    public static void m1110e(String str, String str2) {
+    public static void m1111e(String str, String str2) {
         synchronized (lock) {
             if (logLevel <= 3) {
-                logger.mo1103e(str, str2);
+                logger.mo1104e(str, str2);
             }
         }
     }
 
     /* renamed from: e */
-    public static void m1109e(String str, String str2, Throwable th) {
-        m1110e(str, appendThrowableString(str2, th));
+    public static void m1110e(String str, String str2, Throwable th) {
+        m1111e(str, appendThrowableString(str2, th));
     }
 
     public static String getThrowableString(Throwable th) {

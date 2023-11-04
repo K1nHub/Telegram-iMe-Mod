@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FolderBottomSheet;)V
     .locals 0
 
-    .line 921
+    .line 922
     iput-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1052
+    .line 1053
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$2300(Lorg/telegram/ui/Components/FolderBottomSheet;)I
@@ -48,7 +48,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 1040
+    .line 1041
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$2000(Lorg/telegram/ui/Components/FolderBottomSheet;)I
@@ -61,7 +61,7 @@
 
     return p1
 
-    .line 1042
+    .line 1043
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
@@ -89,7 +89,7 @@
 
     goto :goto_1
 
-    .line 1044
+    .line 1045
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
@@ -130,7 +130,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 2
 
-    .line 931
+    .line 932
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -177,7 +177,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 9
 
-    .line 956
+    .line 957
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -190,12 +190,12 @@
 
     if-ne v0, v3, :cond_b
 
-    .line 958
+    .line 959
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
-    .line 960
+    .line 961
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$200(Lorg/telegram/ui/Components/FolderBottomSheet;)I
@@ -212,7 +212,7 @@
 
     if-gt p2, v0, :cond_0
 
-    .line 961
+    .line 962
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$800(Lorg/telegram/ui/Components/FolderBottomSheet;)Ljava/util/ArrayList;
@@ -243,7 +243,7 @@
 
     goto :goto_0
 
-    .line 962
+    .line 963
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
@@ -261,7 +261,7 @@
 
     if-gt p2, v0, :cond_1
 
-    .line 963
+    .line 964
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$1100(Lorg/telegram/ui/Components/FolderBottomSheet;)Ljava/util/ArrayList;
@@ -300,15 +300,15 @@
 
     if-eqz p2, :cond_5
 
-    .line 970
+    .line 971
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     if-eqz v0, :cond_3
 
-    .line 971
+    .line 972
     iget-wide v3, p2, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 972
+    .line 973
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -329,19 +329,19 @@
 
     move-result-object v2
 
-    .line 974
+    .line 975
     invoke-static {v2}, Lorg/telegram/messenger/UserObject;->getUserName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object p2
 
     if-eqz v2, :cond_2
 
-    .line 975
+    .line 976
     iget-boolean v0, v2, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
     if-eqz v0, :cond_2
 
-    .line 976
+    .line 977
     sget v0, Lorg/telegram/messenger/R$string;->FilterInviteBot:I
 
     const-string v5, "FilterInviteBot"
@@ -352,7 +352,7 @@
 
     goto :goto_2
 
-    .line 978
+    .line 979
     :cond_2
     sget v0, Lorg/telegram/messenger/R$string;->FilterInviteUser:I
 
@@ -364,18 +364,18 @@
 
     goto :goto_2
 
-    .line 980
+    .line 981
     :cond_3
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$TL_peerChat;
 
     if-eqz v0, :cond_4
 
-    .line 981
+    .line 982
     iget-wide v3, p2, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
     neg-long v3, v3
 
-    .line 982
+    .line 983
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -405,18 +405,18 @@
 
     goto :goto_2
 
-    .line 983
+    .line 984
     :cond_4
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$TL_peerChannel;
 
     if-eqz v0, :cond_5
 
-    .line 984
+    .line 985
     iget-wide v3, p2, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
     neg-long v3, v3
 
-    .line 985
+    .line 986
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -444,33 +444,33 @@
 
     move-object v0, p2
 
-    .line 988
+    .line 989
     :goto_2
     instance-of v5, v2, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v5, :cond_9
 
-    .line 989
+    .line 990
     move-object p2, v2
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 990
+    .line 991
     iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
-    .line 991
+    .line 992
     iget v5, p2, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
     if-eqz v5, :cond_7
 
-    .line 992
+    .line 993
     invoke-static {p2}, Lorg/telegram/messenger/ChatObject;->isChannelAndNotMegaGroup(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v5
 
     if-eqz v5, :cond_6
 
-    .line 993
+    .line 994
     iget p2, p2, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
     const-string v5, "Subscribers"
@@ -481,7 +481,7 @@
 
     goto :goto_3
 
-    .line 995
+    .line 996
     :cond_6
     iget p2, p2, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
@@ -493,7 +493,7 @@
 
     goto :goto_3
 
-    .line 998
+    .line 999
     :cond_7
     invoke-static {p2}, Lorg/telegram/messenger/ChatObject;->isChannelAndNotMegaGroup(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -501,7 +501,7 @@
 
     if-eqz p2, :cond_8
 
-    .line 999
+    .line 1000
     sget p2, Lorg/telegram/messenger/R$string;->ChannelPublic:I
 
     const-string v5, "ChannelPublic"
@@ -512,7 +512,7 @@
 
     goto :goto_3
 
-    .line 1001
+    .line 1002
     :cond_8
     sget p2, Lorg/telegram/messenger/R$string;->MegaPublic:I
 
@@ -529,7 +529,7 @@
 
     move-object p2, v8
 
-    .line 1005
+    .line 1006
     :cond_9
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -537,7 +537,7 @@
 
     invoke-virtual {p1, v5}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1006
+    .line 1007
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->getCheckBox()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object v5
@@ -572,7 +572,7 @@
     :goto_4
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/CheckBoxBase;->setAlpha(F)V
 
-    .line 1007
+    .line 1008
     iget-object v5, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$1300(Lorg/telegram/ui/Components/FolderBottomSheet;)Ljava/util/ArrayList;
@@ -589,7 +589,7 @@
 
     invoke-virtual {p1, v3, v1}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setChecked(ZZ)V
 
-    .line 1008
+    .line 1009
     invoke-virtual {p1, v2, p2, v0}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setObject(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
 
     goto/16 :goto_6
@@ -601,12 +601,12 @@
 
     if-ne v0, v3, :cond_d
 
-    .line 1010
+    .line 1011
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;
 
-    .line 1011
+    .line 1012
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$1400(Lorg/telegram/ui/Components/FolderBottomSheet;)I
@@ -615,7 +615,7 @@
 
     if-ne p2, v0, :cond_c
 
-    .line 1012
+    .line 1013
     sget p2, Lorg/telegram/messenger/R$string;->FolderLinkHeaderAlready:I
 
     const-string v0, "FolderLinkHeaderAlready"
@@ -626,18 +626,18 @@
 
     invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 1013
+    .line 1014
     invoke-virtual {p1, v4, v2}, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;->setAction(Ljava/lang/CharSequence;Ljava/lang/Runnable;)V
 
     goto/16 :goto_6
 
-    .line 1015
+    .line 1016
     :cond_c
     iget-object p2, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$1502(Lorg/telegram/ui/Components/FolderBottomSheet;Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;)Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;
 
-    .line 1016
+    .line 1017
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$1600(Lorg/telegram/ui/Components/FolderBottomSheet;Z)V
@@ -649,12 +649,12 @@
 
     if-ne v0, v2, :cond_11
 
-    .line 1019
+    .line 1020
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 1020
+    .line 1021
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -671,7 +671,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setForeground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1021
+    .line 1022
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$1700(Lorg/telegram/ui/Components/FolderBottomSheet;)I
@@ -710,11 +710,11 @@
 
     goto :goto_5
 
-    .line 1025
+    .line 1026
     :cond_e
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 1026
+    .line 1027
     iget-object p2, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$1900(Lorg/telegram/ui/Components/FolderBottomSheet;)Z
@@ -723,7 +723,7 @@
 
     if-eqz p2, :cond_f
 
-    .line 1027
+    .line 1028
     sget p2, Lorg/telegram/messenger/R$string;->FolderLinkHintRemove:I
 
     const-string v0, "FolderLinkHintRemove"
@@ -736,7 +736,7 @@
 
     goto :goto_6
 
-    .line 1029
+    .line 1030
     :cond_f
     sget p2, Lorg/telegram/messenger/R$string;->FolderLinkHint:I
 
@@ -754,10 +754,10 @@
     :goto_5
     const/16 p2, 0xc
 
-    .line 1022
+    .line 1023
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 1023
+    .line 1024
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_6
@@ -765,7 +765,7 @@
     :cond_11
     if-nez v0, :cond_12
 
-    .line 1033
+    .line 1034
     iget-object p2, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -774,7 +774,7 @@
 
     invoke-static {p2, p1}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$402(Lorg/telegram/ui/Components/FolderBottomSheet;Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell;)Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell;
 
-    .line 1034
+    .line 1035
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/FolderBottomSheet;->updateCount(Z)V
@@ -793,7 +793,7 @@
 
     if-nez p2, :cond_2
 
-    .line 939
+    .line 940
     iget-object p2, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
     new-instance v1, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell;
@@ -806,17 +806,17 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$500(Lorg/telegram/ui/Components/FolderBottomSheet;)Lorg/telegram/tgnet/TLRPC$chatlist_ChatlistInvite;
+    invoke-static {v4}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$500(Lorg/telegram/ui/Components/FolderBottomSheet;)Lorg/telegram/tgnet/tl/TL_chatlists$chatlist_ChatlistInvite;
 
     move-result-object v4
 
-    instance-of v4, v4, Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistInviteAlready;
+    instance-of v4, v4, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_chatlistInviteAlready;
 
     if-nez v4, :cond_0
 
     iget-object v4, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$600(Lorg/telegram/ui/Components/FolderBottomSheet;)Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;
+    invoke-static {v4}, Lorg/telegram/ui/Components/FolderBottomSheet;->access$600(Lorg/telegram/ui/Components/FolderBottomSheet;)Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_chatlistUpdates;
 
     move-result-object v4
 
@@ -843,7 +843,7 @@
     :cond_2
     if-ne p2, v0, :cond_3
 
-    .line 941
+    .line 942
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
@@ -854,7 +854,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
 
-    .line 942
+    .line 943
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -870,7 +870,7 @@
 
     if-ne p2, v1, :cond_4
 
-    .line 944
+    .line 945
     new-instance p2, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
@@ -881,7 +881,7 @@
 
     invoke-direct {p2, v1, v0, p1, p1}, Lorg/telegram/ui/Cells/GroupCreateUserCell;-><init>(Landroid/content/Context;IIZ)V
 
-    .line 945
+    .line 946
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -899,7 +899,7 @@
 
     if-ne p2, p1, :cond_5
 
-    .line 948
+    .line 949
     new-instance p1, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/FolderBottomSheet$1;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet;
@@ -910,7 +910,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/FolderBottomSheet$HeaderCell;-><init>(Landroid/content/Context;)V
 
-    .line 949
+    .line 950
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -924,7 +924,7 @@
     :cond_5
     const/4 p1, 0x0
 
-    .line 951
+    .line 952
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

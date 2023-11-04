@@ -161,7 +161,7 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
             }
         });
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo1009ui());
+        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "dynamicLinksInteractor\n …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -175,12 +175,12 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoBoxInfo> result) {
-                m1586invoke(result);
+                m1591invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1586invoke(Result<? extends CryptoBoxInfo> it) {
+            public final void m1591invoke(Result<? extends CryptoBoxInfo> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends CryptoBoxInfo> result = it;
@@ -224,7 +224,7 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
         Intrinsics.checkNotNullParameter(selectedMessages, "selectedMessages");
         Intrinsics.checkNotNullParameter(chat, "chat");
         MultiReplyInteractor multiReplyInteractor = this.multiReplyInteractor;
-        Single<Result<CharSequence>> observeOn = multiReplyInteractor.buildMultiReplyMessage(multiReplyInteractor.prepareSelectedMessages(selectedMessages), chat).observeOn(this.schedulersProvider.mo1009ui());
+        Single<Result<CharSequence>> observeOn = multiReplyInteractor.buildMultiReplyMessage(multiReplyInteractor.prepareSelectedMessages(selectedMessages), chat).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "multiReplyInteractor\n   …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends CharSequence>, Unit>() { // from class: com.iMe.ui.chat.ChatPresenter$getMultiReplyMessage$$inlined$subscribeWithErrorHandle$default$1
@@ -234,12 +234,12 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CharSequence> result) {
-                m1583invoke(result);
+                m1588invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1583invoke(Result<? extends CharSequence> it) {
+            public final void m1588invoke(Result<? extends CharSequence> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends CharSequence> result = it;
                 if (result instanceof Result.Success) {
@@ -277,7 +277,7 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
     public final void processVoiceToText(final MessageObject messageObject, File file) {
         Intrinsics.checkNotNullParameter(messageObject, "messageObject");
         Intrinsics.checkNotNullParameter(file, "file");
-        Observable<Result<String>> observeOn = this.googleServicesInteractor.getVoiceText(file, DialogTranslationController.Companion.getCurrentLocale()).timeout(1L, TimeUnit.MINUTES).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<String>> observeOn = this.googleServicesInteractor.getVoiceText(file, DialogTranslationController.Companion.getCurrentLocale()).timeout(1L, TimeUnit.MINUTES).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "googleServicesInteractor…(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends String>, Unit>() { // from class: com.iMe.ui.chat.ChatPresenter$processVoiceToText$$inlined$subscribeWithErrorHandle$default$1
@@ -288,12 +288,12 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1585invoke(result);
+                m1590invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1585invoke(Result<? extends String> it) {
+            public final void m1590invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;
@@ -361,12 +361,12 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
-                    m1582invoke(bool);
+                    m1587invoke(bool);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1582invoke(Boolean it) {
+                public final void m1587invoke(Boolean it) {
                     Intrinsics.checkNotNullExpressionValue(it, "it");
                     it.booleanValue();
                     ChatPresenter chatPresenter = ChatPresenter.this;
@@ -414,7 +414,7 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
 
     public final void loadTextTranslateLanguages() {
         final String currentLanguage = this.telegramGateway.getCurrentLanguage();
-        Observable<Result<List<TranslationLanguage>>> observeOn = this.translationInteractor.languages().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<List<TranslationLanguage>>> observeOn = this.translationInteractor.languages().observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -428,12 +428,12 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<TranslationLanguage>> result) {
-                m1584invoke(result);
+                m1589invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1584invoke(Result<? extends List<TranslationLanguage>> it) {
+            public final void m1589invoke(Result<? extends List<TranslationLanguage>> it) {
                 ResourceManager resourceManager;
                 int collectionSizeOrDefault;
                 List sortedWith;
@@ -533,14 +533,14 @@ public final class ChatPresenter extends BasePresenter<ChatView> {
             sendingMediaInfo.caption = str2;
             AccountInstance accountInstance = AccountInstance.getInstance(this.telegramGateway.getSelectedAccountIndex());
             arrayListOf4 = CollectionsKt__CollectionsKt.arrayListOf(sendingMediaInfo);
-            SendMessagesHelper.prepareSendingMedia(accountInstance, arrayListOf4, botId, messageObject, null, null, false, false, null, false, 0, false, null, null);
+            SendMessagesHelper.prepareSendingMedia(accountInstance, arrayListOf4, botId, messageObject, null, null, null, false, false, null, false, 0, false, null, null);
         } else if (firstOrNull instanceof String) {
             this.messagesReaction = str;
             AccountInstance accountInstance2 = AccountInstance.getInstance(this.telegramGateway.getSelectedAccountIndex());
             String str5 = (String) firstOrNull;
             arrayListOf2 = CollectionsKt__CollectionsKt.arrayListOf(str5);
             arrayListOf3 = CollectionsKt__CollectionsKt.arrayListOf(str5);
-            SendMessagesHelper.prepareSendingDocuments(accountInstance2, arrayListOf2, arrayListOf3, null, str2, null, botId, messageObject, null, null, null, false, 0, null, null, true);
+            SendMessagesHelper.prepareSendingDocuments(accountInstance2, arrayListOf2, arrayListOf3, null, str2, null, botId, messageObject, null, null, null, null, false, 0, null, null, true);
         } else if (firstOrNull instanceof MessageObject) {
             this.messagesReaction = str;
             AccountInstance accountInstance3 = AccountInstance.getInstance(this.telegramGateway.getSelectedAccountIndex());

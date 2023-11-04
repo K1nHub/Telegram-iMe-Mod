@@ -62,7 +62,7 @@
 .method public final invoke(Lkotlin/reflect/jvm/internal/impl/descriptors/ModuleDescriptor;)Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
     .locals 1
 
-    const-string v0, "it"
+    const-string/jumbo v0, "it"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -77,7 +77,7 @@
 
     move-result-object p1
 
-    const-string v0, "it.builtIns.getPrimitive\u2026KotlinType(componentType)"
+    const-string/jumbo v0, "it.builtIns.getPrimitive\u2026KotlinType(componentType)"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

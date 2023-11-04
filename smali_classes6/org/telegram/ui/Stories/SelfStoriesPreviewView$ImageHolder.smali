@@ -32,19 +32,19 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/SelfStoriesPreviewView;)V
     .locals 1
 
-    .line 411
+    .line 407
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 405
+    .line 401
     new-instance v0, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {v0, p1}, Lorg/telegram/messenger/ImageReceiver;-><init>(Landroid/view/View;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 408
+    .line 404
     new-instance p1, Landroid/text/TextPaint;
 
     const/4 v0, 0x1
@@ -53,12 +53,12 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->paint:Landroid/text/TextPaint;
 
-    .line 412
+    .line 408
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setAllowLoadingOnAttachedOnly(Z)V
 
-    .line 413
+    .line 409
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v0, 0x6
@@ -69,14 +69,14 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    .line 414
+    .line 410
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->paint:Landroid/text/TextPaint;
 
     const/4 v0, -0x1
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 415
+    .line 411
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->paint:Landroid/text/TextPaint;
 
     const/16 v0, 0xd
@@ -97,28 +97,28 @@
 
     move-object/from16 v0, p0
 
-    .line 432
+    .line 428
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v1}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 433
+    .line 429
     iget-object v2, v0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->storyItem:Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;
 
-    iget-object v2, v2, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v2, v2, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     if-eqz v2, :cond_0
 
-    .line 434
+    .line 430
     iget-object v3, v0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
-    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->views:Lorg/telegram/tgnet/TLRPC$StoryViews;
+    iget-object v2, v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->views:Lorg/telegram/tgnet/tl/TL_stories$StoryViews;
 
     const/4 v4, 0x0
 
-    invoke-static {v3, v1, v2, v4}, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->access$200(Lorg/telegram/ui/Stories/SelfStoriesPreviewView;Landroid/text/SpannableStringBuilder;Lorg/telegram/tgnet/TLRPC$StoryViews;Z)V
+    invoke-static {v3, v1, v2, v4}, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->access$200(Lorg/telegram/ui/Stories/SelfStoriesPreviewView;Landroid/text/SpannableStringBuilder;Lorg/telegram/tgnet/tl/TL_stories$StoryViews;Z)V
 
-    .line 436
+    .line 432
     :cond_0
     invoke-virtual {v1}, Landroid/text/SpannableStringBuilder;->length()I
 
@@ -128,12 +128,12 @@
 
     const/4 v1, 0x0
 
-    .line 437
+    .line 433
     iput-object v1, v0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->layout:Landroid/text/StaticLayout;
 
     goto :goto_0
 
-    .line 439
+    .line 435
     :cond_1
     iget-object v2, v0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->paint:Landroid/text/TextPaint;
 
@@ -169,7 +169,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->layout:Landroid/text/StaticLayout;
 
-    .line 440
+    .line 436
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v1
@@ -178,25 +178,25 @@
 
     if-le v1, v2, :cond_2
 
-    .line 441
+    .line 437
     new-instance v12, Landroid/text/SpannableStringBuilder;
 
     const-string v1, ""
 
     invoke-direct {v12, v1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 442
+    .line 438
     iget-object v1, v0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     iget-object v3, v0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->storyItem:Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;
 
-    iget-object v3, v3, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v3, v3, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->views:Lorg/telegram/tgnet/TLRPC$StoryViews;
+    iget-object v3, v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->views:Lorg/telegram/tgnet/tl/TL_stories$StoryViews;
 
-    invoke-static {v1, v12, v3, v2}, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->access$200(Lorg/telegram/ui/Stories/SelfStoriesPreviewView;Landroid/text/SpannableStringBuilder;Lorg/telegram/tgnet/TLRPC$StoryViews;Z)V
+    invoke-static {v1, v12, v3, v2}, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->access$200(Lorg/telegram/ui/Stories/SelfStoriesPreviewView;Landroid/text/SpannableStringBuilder;Lorg/telegram/tgnet/tl/TL_stories$StoryViews;Z)V
 
-    .line 443
+    .line 439
     iget-object v13, v0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->paint:Landroid/text/TextPaint;
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
@@ -239,7 +239,7 @@
 .method public draw(Landroid/graphics/Canvas;FFIIII)V
     .locals 1
 
-    .line 453
+    .line 449
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
     int-to-float p4, p4
@@ -252,29 +252,29 @@
 
     invoke-virtual {v0, p4, p5, p6, p7}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 454
+    .line 450
     iget-object p4, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p4, p2}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 455
+    .line 451
     iget-object p4, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p4, p1}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 456
+    .line 452
     iget-object p4, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
     const/high16 p5, 0x3f800000    # 1.0f
 
     invoke-virtual {p4, p5}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 457
+    .line 453
     iget-object p4, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->layout:Landroid/text/StaticLayout;
 
     if-eqz p4, :cond_0
 
-    .line 458
+    .line 454
     iget-object p4, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->paint:Landroid/text/TextPaint;
 
     const/high16 p5, 0x437f0000    # 255.0f
@@ -285,21 +285,21 @@
 
     invoke-virtual {p4, p2}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 459
+    .line 455
     iget-object p4, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     iget-object p4, p4, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->gradientDrawable:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {p4, p2}, Landroid/graphics/drawable/GradientDrawable;->setAlpha(I)V
 
-    .line 460
+    .line 456
     iget-object p2, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     iget-object p2, p2, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->gradientDrawable:Landroid/graphics/drawable/GradientDrawable;
 
     iget-object p4, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 461
+    .line 457
     invoke-virtual {p4}, Lorg/telegram/messenger/ImageReceiver;->getImageX()F
 
     move-result p4
@@ -344,20 +344,20 @@
 
     add-int/lit8 p7, p7, 0x2
 
-    .line 460
+    .line 456
     invoke-virtual {p2, p4, p5, p6, p7}, Landroid/graphics/drawable/GradientDrawable;->setBounds(IIII)V
 
-    .line 462
+    .line 458
     iget-object p2, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     iget-object p2, p2, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->gradientDrawable:Landroid/graphics/drawable/GradientDrawable;
 
     invoke-virtual {p2, p1}, Landroid/graphics/drawable/GradientDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 463
+    .line 459
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 464
+    .line 460
     iget-object p2, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getCenterX()F
@@ -384,7 +384,7 @@
 
     invoke-virtual {p1, p3, p3, p2, p4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 465
+    .line 461
     iget-object p2, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getCenterX()F
@@ -431,12 +431,12 @@
 
     invoke-virtual {p1, p2, p4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 466
+    .line 462
     iget-object p2, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {p2, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 467
+    .line 463
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_0
@@ -446,7 +446,7 @@
 .method onBind(I)V
     .locals 1
 
-    .line 419
+    .line 415
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->storyItems:Ljava/util/ArrayList;
@@ -459,7 +459,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->storyItem:Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;
 
-    .line 420
+    .line 416
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/SelfStoriesPreviewView;->access$100(Lorg/telegram/ui/Stories/SelfStoriesPreviewView;)Z
@@ -468,27 +468,27 @@
 
     if-eqz p1, :cond_0
 
-    .line 421
+    .line 417
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 423
+    .line 419
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->storyItem:Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;
 
-    iget-object v0, p1, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v0, p1, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     if-eqz v0, :cond_1
 
-    .line 424
+    .line 420
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Stories/StoriesUtilities;->setImage(Lorg/telegram/messenger/ImageReceiver;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-static {p1, v0}, Lorg/telegram/ui/Stories/StoriesUtilities;->setImage(Lorg/telegram/messenger/ImageReceiver;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
     goto :goto_0
 
-    .line 426
+    .line 422
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -496,7 +496,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoriesUtilities;->setImage(Lorg/telegram/messenger/ImageReceiver;Lorg/telegram/ui/Stories/StoriesController$UploadingStory;)V
 
-    .line 428
+    .line 424
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->updateLayout()V
 
@@ -506,7 +506,7 @@
 .method onDetach()V
     .locals 1
 
-    .line 449
+    .line 445
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->receiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
@@ -517,7 +517,7 @@
 .method public update()V
     .locals 0
 
-    .line 472
+    .line 468
     invoke-direct {p0}, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;->updateLayout()V
 
     return-void

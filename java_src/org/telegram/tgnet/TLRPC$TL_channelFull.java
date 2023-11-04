@@ -1,11 +1,10 @@
 package org.telegram.tgnet;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import org.telegram.messenger.LiteMode;
+import org.telegram.tgnet.p042tl.TL_stories$PeerStories;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
-    public static int constructor = 1915758525;
-
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         int readInt32 = abstractSerializedData.readInt32(z);
@@ -25,7 +24,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         this.participants_hidden = (readInt322 & 4) != 0;
         this.translations_disabled = (readInt322 & 8) != 0;
         this.stories_pinned_available = (readInt322 & 32) != 0;
-        this.f1601id = abstractSerializedData.readInt64(z);
+        this.f1603id = abstractSerializedData.readInt64(z);
         this.about = abstractSerializedData.readString(z);
         if ((this.flags & 1) != 0) {
             this.participants_count = abstractSerializedData.readInt32(z);
@@ -121,7 +120,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
             this.groupcall_default_join_as = TLRPC$Peer.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
-        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
             this.theme_emoticon = abstractSerializedData.readString(z);
         }
         if ((this.flags & 268435456) != 0) {
@@ -147,13 +146,13 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
             this.available_reactions = TLRPC$ChatReactions.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
         if ((this.flags2 & 16) != 0) {
-            this.stories = TLRPC$PeerStories.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
+            this.stories = TL_stories$PeerStories.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(1915758525);
         int i = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
         this.flags = i;
         int i2 = this.can_set_username ? i | 64 : i & (-65);
@@ -182,7 +181,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         int i13 = this.stories_pinned_available ? i12 | 32 : i12 & (-33);
         this.flags2 = i13;
         abstractSerializedData.writeInt32(i13);
-        abstractSerializedData.writeInt64(this.f1601id);
+        abstractSerializedData.writeInt64(this.f1603id);
         abstractSerializedData.writeString(this.about);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt32(this.participants_count);
@@ -264,7 +263,7 @@ public class TLRPC$TL_channelFull extends TLRPC$ChatFull {
         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
             this.groupcall_default_join_as.serializeToStream(abstractSerializedData);
         }
-        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
             abstractSerializedData.writeString(this.theme_emoticon);
         }
         if ((this.flags & 268435456) != 0) {

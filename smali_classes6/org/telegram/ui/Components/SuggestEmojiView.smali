@@ -1693,7 +1693,7 @@
 .end method
 
 .method private synthetic lambda$searchAnimated$6(Ljava/lang/String;I)V
-    .locals 6
+    .locals 7
 
     .line 513
     new-instance v1, Ljava/util/ArrayList;
@@ -1724,15 +1724,17 @@
 
     move-result-object v2
 
-    new-instance v5, Lorg/telegram/ui/Components/SuggestEmojiView$$ExternalSyntheticLambda3;
+    new-instance v6, Lorg/telegram/ui/Components/SuggestEmojiView$$ExternalSyntheticLambda3;
 
-    invoke-direct {v5, p0, p2, p1, v1}, Lorg/telegram/ui/Components/SuggestEmojiView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/SuggestEmojiView;ILjava/lang/String;Ljava/util/ArrayList;)V
+    invoke-direct {v6, p0, p2, p1, v1}, Lorg/telegram/ui/Components/SuggestEmojiView$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/SuggestEmojiView;ILjava/lang/String;Ljava/util/ArrayList;)V
 
     const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    invoke-virtual/range {v0 .. v5}, Lorg/telegram/messenger/MediaDataController;->fillWithAnimatedEmoji(Ljava/util/ArrayList;Ljava/lang/Integer;ZZLjava/lang/Runnable;)V
+    const/4 v5, 0x0
+
+    invoke-virtual/range {v0 .. v6}, Lorg/telegram/messenger/MediaDataController;->fillWithAnimatedEmoji(Ljava/util/ArrayList;Ljava/lang/Integer;ZZZLjava/lang/Runnable;)V
 
     return-void
 .end method
@@ -1864,14 +1866,40 @@
 
     invoke-direct {v5, p0, p3, p2}, Lorg/telegram/ui/Components/SuggestEmojiView$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Components/SuggestEmojiView;ILjava/lang/String;)V
 
-    const/4 v4, 0x1
+    sget-boolean p3, Lorg/telegram/messenger/SharedConfig;->suggestAnimatedEmoji:Z
 
-    const/4 v6, 0x1
+    if-eqz p3, :cond_0
+
+    iget p3, p0, Lorg/telegram/ui/Components/SuggestEmojiView;->currentAccount:I
+
+    .line 484
+    invoke-static {p3}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+
+    move-result-object p3
+
+    invoke-virtual {p3}, Lorg/telegram/messenger/UserConfig;->isPremium()Z
+
+    move-result p3
+
+    if-eqz p3, :cond_0
+
+    const/4 p3, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p3, 0x0
+
+    :goto_0
+    move v6, p3
+
+    const/4 v4, 0x1
 
     move-object v2, p1
 
     move-object v3, p2
 
+    .line 457
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/messenger/MediaDataController;->getEmojiSuggestions([Ljava/lang/String;Ljava/lang/String;ZLorg/telegram/messenger/MediaDataController$KeywordResultCallback;Z)V
 
     return-void

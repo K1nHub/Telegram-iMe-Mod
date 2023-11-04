@@ -13,8 +13,8 @@ public final class TonFragmentPremiumDiffCallback extends DiffUtil.ItemCallback<
     public boolean areItemsTheSame(BaseNode oldItem, BaseNode newItem) {
         Intrinsics.checkNotNullParameter(oldItem, "oldItem");
         Intrinsics.checkNotNullParameter(newItem, "newItem");
-        if ((oldItem instanceof TonFragmentItem.C1529Premium) && (newItem instanceof TonFragmentItem.C1529Premium)) {
-            if (((TonFragmentItem.C1529Premium) oldItem).getMonthsCount() == ((TonFragmentItem.C1529Premium) newItem).getMonthsCount()) {
+        if ((oldItem instanceof TonFragmentItem.C1535Premium) && (newItem instanceof TonFragmentItem.C1535Premium)) {
+            if (((TonFragmentItem.C1535Premium) oldItem).getMonthsCount() == ((TonFragmentItem.C1535Premium) newItem).getMonthsCount()) {
                 return true;
             }
         } else if ((oldItem instanceof GlobalStateItem) && (newItem instanceof GlobalStateItem)) {
@@ -36,11 +36,11 @@ public final class TonFragmentPremiumDiffCallback extends DiffUtil.ItemCallback<
         GlobalStateItem globalStateItem;
         Intrinsics.checkNotNullParameter(oldItem, "oldItem");
         Intrinsics.checkNotNullParameter(newItem, "newItem");
-        if ((oldItem instanceof TonFragmentItem.C1529Premium) && (newItem instanceof TonFragmentItem.C1529Premium)) {
-            boolean isChecked = ((TonFragmentItem.C1529Premium) oldItem).isChecked();
-            TonFragmentItem.C1529Premium c1529Premium = (TonFragmentItem.C1529Premium) newItem;
-            boolean isChecked2 = c1529Premium.isChecked();
-            globalStateItem = c1529Premium;
+        if ((oldItem instanceof TonFragmentItem.C1535Premium) && (newItem instanceof TonFragmentItem.C1535Premium)) {
+            boolean isChecked = ((TonFragmentItem.C1535Premium) oldItem).isChecked();
+            TonFragmentItem.C1535Premium c1535Premium = (TonFragmentItem.C1535Premium) newItem;
+            boolean isChecked2 = c1535Premium.isChecked();
+            globalStateItem = c1535Premium;
             if (isChecked == isChecked2) {
                 return null;
             }

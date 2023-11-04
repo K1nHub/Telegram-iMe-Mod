@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,898:1\n129#2,5:899\n129#2,5:904\n129#2,5:909\n129#2,5:914\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46\n*L\n563#1:899,5\n564#1:904,5\n565#1:909,5\n566#1:914,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,901:1\n129#2,5:902\n129#2,5:907\n129#2,5:912\n129#2,5:917\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$46\n*L\n566#1:902,5\n567#1:907,5\n568#1:912,5\n569#1:917,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 563
+    .line 566
     check-cast p2, Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;
 
     .line 133
@@ -99,7 +99,7 @@
 
     move-result-object v1
 
-    .line 564
+    .line 567
     check-cast v1, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     .line 133
@@ -113,7 +113,7 @@
 
     move-result-object v2
 
-    .line 565
+    .line 568
     check-cast v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
@@ -127,10 +127,10 @@
 
     move-result-object p1
 
-    .line 566
+    .line 569
     check-cast p1, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 562
+    .line 565
     new-instance v0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsPresenter;
 
     invoke-direct {v0, v2, v1, p2, p1}, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsPresenter;-><init>(Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/manager/binancepay/BinancePayManager;Lcom/iMe/storage/domain/utils/rx/RxEventBus;)V
@@ -141,7 +141,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 561
+    .line 564
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

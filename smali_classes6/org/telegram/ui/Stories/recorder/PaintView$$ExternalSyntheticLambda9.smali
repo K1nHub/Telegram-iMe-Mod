@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda9;->f$0:Ljava/lang/Runnable;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$Ndes6Q43B1Qh4PH4HkgALAiOia4(Ljava/lang/Runnable;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$RrdWWiPNkGYHh_9t93x4iKEXLyo(Ljava/lang/Runnable;Landroid/view/View;)V
 
     return-void
 .end method

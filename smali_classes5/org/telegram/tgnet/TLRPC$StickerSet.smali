@@ -32,6 +32,8 @@
 
 .field public short_name:Ljava/lang/String;
 
+.field public text_color:Z
+
 .field public thumb_dc_id:I
 
 .field public thumb_document_id:J
@@ -57,10 +59,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 46753
+    .line 47509
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 46770
+    .line 47527
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -79,7 +81,7 @@
 
     goto :goto_0
 
-    .line 46786
+    .line 47543
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_layer97;
 
@@ -87,7 +89,7 @@
 
     goto :goto_0
 
-    .line 46783
+    .line 47540
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_layer96;
 
@@ -95,7 +97,7 @@
 
     goto :goto_0
 
-    .line 46792
+    .line 47549
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_layer126;
 
@@ -103,7 +105,7 @@
 
     goto :goto_0
 
-    .line 46801
+    .line 47558
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet;
 
@@ -111,7 +113,7 @@
 
     goto :goto_0
 
-    .line 46789
+    .line 47546
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_layer121;
 
@@ -119,7 +121,7 @@
 
     goto :goto_0
 
-    .line 46798
+    .line 47555
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_layer143;
 
@@ -127,7 +129,7 @@
 
     goto :goto_0
 
-    .line 46795
+    .line 47552
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_layer75;
 
@@ -135,7 +137,7 @@
 
     goto :goto_0
 
-    .line 46780
+    .line 47537
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stickerSet_old;
 
@@ -148,7 +150,7 @@
 
     goto :goto_1
 
-    .line 46805
+    .line 47562
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -178,7 +180,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 46808
+    .line 47565
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

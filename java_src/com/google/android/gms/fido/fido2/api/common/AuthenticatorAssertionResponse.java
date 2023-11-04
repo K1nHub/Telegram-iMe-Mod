@@ -16,20 +16,20 @@ import java.util.Arrays;
 /* loaded from: classes.dex */
 public class AuthenticatorAssertionResponse extends AuthenticatorResponse {
     public static final Parcelable.Creator<AuthenticatorAssertionResponse> CREATOR = new zzg();
-    @SafeParcelable.Field(getter = "getKeyHandle", m1089id = 2)
+    @SafeParcelable.Field(getter = "getKeyHandle", m1090id = 2)
     private final byte[] zza;
-    @SafeParcelable.Field(getter = "getClientDataJSON", m1089id = 3)
+    @SafeParcelable.Field(getter = "getClientDataJSON", m1090id = 3)
     private final byte[] zzb;
-    @SafeParcelable.Field(getter = "getAuthenticatorData", m1089id = 4)
+    @SafeParcelable.Field(getter = "getAuthenticatorData", m1090id = 4)
     private final byte[] zzc;
-    @SafeParcelable.Field(getter = "getSignature", m1089id = 5)
+    @SafeParcelable.Field(getter = "getSignature", m1090id = 5)
     private final byte[] zzd;
-    @SafeParcelable.Field(getter = "getUserHandle", m1089id = 6)
+    @SafeParcelable.Field(getter = "getUserHandle", m1090id = 6)
     private final byte[] zze;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public AuthenticatorAssertionResponse(@SafeParcelable.Param(m1088id = 2) byte[] bArr, @SafeParcelable.Param(m1088id = 3) byte[] bArr2, @SafeParcelable.Param(m1088id = 4) byte[] bArr3, @SafeParcelable.Param(m1088id = 5) byte[] bArr4, @SafeParcelable.Param(m1088id = 6) byte[] bArr5) {
+    public AuthenticatorAssertionResponse(@SafeParcelable.Param(m1089id = 2) byte[] bArr, @SafeParcelable.Param(m1089id = 3) byte[] bArr2, @SafeParcelable.Param(m1089id = 4) byte[] bArr3, @SafeParcelable.Param(m1089id = 5) byte[] bArr4, @SafeParcelable.Param(m1089id = 6) byte[] bArr5) {
         this.zza = (byte[]) Preconditions.checkNotNull(bArr);
         this.zzb = (byte[]) Preconditions.checkNotNull(bArr2);
         this.zzc = (byte[]) Preconditions.checkNotNull(bArr3);

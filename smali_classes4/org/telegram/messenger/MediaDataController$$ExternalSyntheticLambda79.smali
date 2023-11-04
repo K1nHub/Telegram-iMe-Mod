@@ -63,7 +63,7 @@
 
     iget-wide v6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda79;->f$6:J
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$dTHpU9b0VTZY4clXxJ5IQ5L79Qg(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;ZLjava/util/ArrayList;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;J)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$t1yTjMwTL7hpLLSJx13r5D0FrlY(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;ZLjava/util/ArrayList;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;J)V
 
     return-void
 .end method

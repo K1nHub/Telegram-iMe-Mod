@@ -18,13 +18,13 @@ public final class CertificateTlbConstructor extends org.ton.tlb.TlbConstructor<
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
         SigPubKey.Companion.storeTlb(cellBuilder, (CellBuilder) value.getTemp_key());
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m4941getValid_sincepVg5ArA());
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m4942getValid_untilpVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5095getValid_sincepVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5096getValid_untilpVg5ArA());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public Certificate loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new Certificate(SigPubKey.Companion.loadTlb(cellSlice), cellSlice.mo5066loadUInt32pVg5ArA(), cellSlice.mo5066loadUInt32pVg5ArA(), null);
+        return new Certificate(SigPubKey.Companion.loadTlb(cellSlice), cellSlice.mo5220loadUInt32pVg5ArA(), cellSlice.mo5220loadUInt32pVg5ArA(), null);
     }
 }

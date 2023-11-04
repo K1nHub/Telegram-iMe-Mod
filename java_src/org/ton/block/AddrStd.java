@@ -42,7 +42,7 @@ public final class AddrStd implements MsgAddressInt {
     private final Maybe<Anycast> anycast;
     private final int workchainId;
     public static final Companion Companion = new Companion(null);
-    private static final KSerializer<Object>[] $childSerializers = {new SealedClassSerializer("org.ton.block.Maybe", Reflection.getOrCreateKotlinClass(Maybe.class), new KClass[]{Reflection.getOrCreateKotlinClass(Just.class), Reflection.getOrCreateKotlinClass(Nothing.class)}, new KSerializer[]{Just.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), Nothing.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7459xaf8cfd0d("@type")}), null, null};
+    private static final KSerializer<Object>[] $childSerializers = {new SealedClassSerializer("org.ton.block.Maybe", Reflection.getOrCreateKotlinClass(Maybe.class), new KClass[]{Reflection.getOrCreateKotlinClass(Just.class), Reflection.getOrCreateKotlinClass(Nothing.class)}, new KSerializer[]{Just.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), Nothing.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7534xaf8cfd0d("@type")}), null, null};
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -247,13 +247,13 @@ public final class AddrStd implements MsgAddressInt {
                 byte[] bArr2 = new byte[32];
                 ByteBuffer order = ByteBuffer.wrap(bArr, 0, 36).slice().order(ByteOrder.BIG_ENDIAN);
                 Intrinsics.checkNotNullExpressionValue(order, "wrap(this, offset, lengt…der(ByteOrder.BIG_ENDIAN)");
-                ByteBuffer m1905constructorimpl = Memory.m1905constructorimpl(order);
-                byte b = m1905constructorimpl.get(0);
+                ByteBuffer m1910constructorimpl = Memory.m1910constructorimpl(order);
+                byte b = m1910constructorimpl.get(0);
                 byte b2 = (byte) (b & Byte.MAX_VALUE);
                 if ((b2 == 81) | (b2 == 17)) {
-                    byte b3 = m1905constructorimpl.get(1);
+                    byte b3 = m1910constructorimpl.get(1);
                     copyInto$default = ArraysKt___ArraysJvmKt.copyInto$default(bArr, bArr2, 0, 2, 34, 2, (Object) null);
-                    if (!((UShort.m2011constructorimpl(m1905constructorimpl.getShort(34)) & 65535) == checksum(b, b3, copyInto$default))) {
+                    if (!((UShort.m2016constructorimpl(m1910constructorimpl.getShort(34)) & 65535) == checksum(b, b3, copyInto$default))) {
                         throw new IllegalStateException("CRC check failed".toString());
                     }
                     return new AddrStd(b3, copyInto$default);

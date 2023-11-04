@@ -88,7 +88,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewContainer;)V
     .locals 0
 
-    .line 322
+    .line 323
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
@@ -437,7 +437,7 @@
 .method public onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z
     .locals 0
 
-    .line 327
+    .line 328
     new-instance p2, Landroid/webkit/WebView;
 
     invoke-virtual {p1}, Landroid/webkit/WebView;->getContext()Landroid/content/Context;
@@ -446,22 +446,22 @@
 
     invoke-direct {p2, p1}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
 
-    .line 328
+    .line 329
     new-instance p1, Lorg/telegram/ui/Components/BotWebViewContainer$4$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/BotWebViewContainer$4$1;-><init>(Lorg/telegram/ui/Components/BotWebViewContainer$4;)V
 
     invoke-virtual {p2, p1}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
 
-    .line 335
+    .line 336
     iget-object p1, p4, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Landroid/webkit/WebView$WebViewTransport;
 
-    .line 336
+    .line 337
     invoke-virtual {p1, p2}, Landroid/webkit/WebView$WebViewTransport;->setWebView(Landroid/webkit/WebView;)V
 
-    .line 337
+    .line 338
     invoke-virtual {p4}, Landroid/os/Message;->sendToTarget()V
 
     const/4 p1, 0x1
@@ -1017,27 +1017,25 @@
         }
     .end annotation
 
-    .line 343
+    .line 344
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    .line 344
-    instance-of v0, p1, Landroid/app/Activity;
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->findActivity(Landroid/content/Context;)Landroid/app/Activity;
 
-    if-nez v0, :cond_0
+    move-result-object p1
+
+    if-nez p1, :cond_0
 
     const/4 p1, 0x0
 
     return p1
 
-    .line 347
-    :cond_0
-    check-cast p1, Landroid/app/Activity;
-
     .line 349
+    :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$600(Lorg/telegram/ui/Components/BotWebViewContainer;)Landroid/webkit/ValueCallback;

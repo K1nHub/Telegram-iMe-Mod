@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;)V
     .locals 0
 
-    .line 178
+    .line 186
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView$2;->this$0:Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,14 +35,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 181
+    .line 189
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView$2;->this$0:Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;->access$102(Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;F)F
 
-    .line 182
+    .line 190
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView$2;->this$0:Lorg/telegram/ui/Stories/recorder/ButtonWithCounterView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

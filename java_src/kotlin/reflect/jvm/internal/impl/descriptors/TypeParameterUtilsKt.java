@@ -104,8 +104,8 @@ public final class TypeParameterUtilsKt {
 
     public static final PossiblyInnerType buildPossiblyInnerType(KotlinType kotlinType) {
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        ClassifierDescriptor mo2046getDeclarationDescriptor = kotlinType.getConstructor().mo2046getDeclarationDescriptor();
-        return buildPossiblyInnerType(kotlinType, mo2046getDeclarationDescriptor instanceof ClassifierDescriptorWithTypeParameters ? (ClassifierDescriptorWithTypeParameters) mo2046getDeclarationDescriptor : null, 0);
+        ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
+        return buildPossiblyInnerType(kotlinType, mo2051getDeclarationDescriptor instanceof ClassifierDescriptorWithTypeParameters ? (ClassifierDescriptorWithTypeParameters) mo2051getDeclarationDescriptor : null, 0);
     }
 
     private static final PossiblyInnerType buildPossiblyInnerType(KotlinType kotlinType, ClassifierDescriptorWithTypeParameters classifierDescriptorWithTypeParameters, int i) {

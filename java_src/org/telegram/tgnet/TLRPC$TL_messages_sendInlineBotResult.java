@@ -1,14 +1,13 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_messages_sendInlineBotResult extends TLObject {
-    public static int constructor = -138647366;
     public boolean background;
     public boolean clear_draft;
     public int flags;
     public boolean hide_via;
 
     /* renamed from: id */
-    public String f1717id;
+    public String f1714id;
     public TLRPC$InputPeer peer;
     public long query_id;
     public long random_id;
@@ -24,7 +23,7 @@ public class TLRPC$TL_messages_sendInlineBotResult extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-138647366);
         int i = this.silent ? this.flags | 32 : this.flags & (-33);
         this.flags = i;
         int i2 = this.background ? i | 64 : i & (-65);
@@ -40,7 +39,7 @@ public class TLRPC$TL_messages_sendInlineBotResult extends TLObject {
         }
         abstractSerializedData.writeInt64(this.random_id);
         abstractSerializedData.writeInt64(this.query_id);
-        abstractSerializedData.writeString(this.f1717id);
+        abstractSerializedData.writeString(this.f1714id);
         if ((this.flags & 1024) != 0) {
             abstractSerializedData.writeInt32(this.schedule_date);
         }

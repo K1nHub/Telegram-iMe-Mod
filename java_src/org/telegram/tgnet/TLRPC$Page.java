@@ -9,7 +9,7 @@ public abstract class TLRPC$Page extends TLObject {
     public String url;
 
     /* renamed from: v2 */
-    public boolean f1626v2;
+    public boolean f1628v2;
     public int views;
     public ArrayList<TLRPC$PageBlock> blocks = new ArrayList<>();
     public ArrayList<TLRPC$Photo> photos = new ArrayList<>();
@@ -20,8 +20,6 @@ public abstract class TLRPC$Page extends TLObject {
         switch (i) {
             case -1913754556:
                 tLRPC$Page = new TLRPC$TL_pagePart_layer82() { // from class: org.telegram.tgnet.TLRPC$TL_pagePart_layer67
-                    public static int constructor = -1913754556;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_pagePart_layer82, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -73,7 +71,7 @@ public abstract class TLRPC$Page extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_pagePart_layer82, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-1913754556);
                         abstractSerializedData2.writeInt32(481674261);
                         int size = this.blocks.size();
                         abstractSerializedData2.writeInt32(size);
@@ -103,8 +101,6 @@ public abstract class TLRPC$Page extends TLObject {
                 break;
             case -1366746132:
                 tLRPC$Page = new TLRPC$TL_page() { // from class: org.telegram.tgnet.TLRPC$TL_page_layer110
-                    public static int constructor = -1366746132;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_page, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -161,7 +157,7 @@ public abstract class TLRPC$Page extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_page, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-1366746132);
                         int i2 = this.part ? this.flags | 1 : this.flags & (-2);
                         this.flags = i2;
                         int i3 = this.rtl ? i2 | 2 : i2 & (-3);
@@ -191,8 +187,6 @@ public abstract class TLRPC$Page extends TLObject {
                 break;
             case -677274263:
                 tLRPC$Page = new TLRPC$TL_page() { // from class: org.telegram.tgnet.TLRPC$TL_pageFull_layer67
-                    public static int constructor = -677274263;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_page, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -244,7 +238,7 @@ public abstract class TLRPC$Page extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_page, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-677274263);
                         abstractSerializedData2.writeInt32(481674261);
                         int size = this.blocks.size();
                         abstractSerializedData2.writeInt32(size);
@@ -268,8 +262,6 @@ public abstract class TLRPC$Page extends TLObject {
                 break;
             case 1433323434:
                 tLRPC$Page = new TLRPC$TL_page() { // from class: org.telegram.tgnet.TLRPC$TL_pageFull_layer82
-                    public static int constructor = 1433323434;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_page, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -321,7 +313,7 @@ public abstract class TLRPC$Page extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_page, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1433323434);
                         abstractSerializedData2.writeInt32(481674261);
                         int size = this.blocks.size();
                         abstractSerializedData2.writeInt32(size);

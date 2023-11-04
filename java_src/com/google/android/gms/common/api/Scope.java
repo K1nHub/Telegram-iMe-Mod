@@ -13,14 +13,14 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class Scope extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<Scope> CREATOR = new zza();
-    @SafeParcelable.VersionField(m1086id = 1)
+    @SafeParcelable.VersionField(m1087id = 1)
     final int zza;
-    @SafeParcelable.Field(getter = "getScopeUri", m1089id = 2)
+    @SafeParcelable.Field(getter = "getScopeUri", m1090id = 2)
     private final String zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public Scope(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) String str) {
+    public Scope(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) String str) {
         Preconditions.checkNotEmpty(str, "scopeUri must not be null or empty");
         this.zza = i;
         this.zzb = str;

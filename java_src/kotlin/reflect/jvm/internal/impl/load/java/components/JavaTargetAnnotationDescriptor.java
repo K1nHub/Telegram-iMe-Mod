@@ -53,7 +53,7 @@ public final class JavaTargetAnnotationDescriptor extends JavaAnnotationDescript
                 } else {
                     constantValue = null;
                 }
-                Map<Name, ? extends ConstantValue<? extends Object>> mapOf = constantValue != null ? MapsKt__MapsJVMKt.mapOf(TuplesKt.m144to(JavaAnnotationMapper.INSTANCE.getTARGET_ANNOTATION_ALLOWED_TARGETS$descriptors_jvm(), constantValue)) : null;
+                Map<Name, ? extends ConstantValue<? extends Object>> mapOf = constantValue != null ? MapsKt__MapsJVMKt.mapOf(TuplesKt.m146to(JavaAnnotationMapper.INSTANCE.getTARGET_ANNOTATION_ALLOWED_TARGETS$descriptors_jvm(), constantValue)) : null;
                 if (mapOf == null) {
                     emptyMap = MapsKt__MapsKt.emptyMap();
                     return emptyMap;

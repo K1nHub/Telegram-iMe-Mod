@@ -664,7 +664,7 @@
 
     move-result-object v4
 
-    const-string v5, "java.util.Arrays.copyOf(this, size)"
+    const-string/jumbo v5, "java.util.Arrays.copyOf(this, size)"
 
     invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

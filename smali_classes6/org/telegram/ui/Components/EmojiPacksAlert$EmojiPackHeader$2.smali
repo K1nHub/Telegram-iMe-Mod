@@ -40,7 +40,7 @@
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6100(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6200(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
 
     move-result p1
 

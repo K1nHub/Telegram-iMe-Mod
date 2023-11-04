@@ -24,7 +24,7 @@ public final class JsonRpcErrorResponse {
     }
 
     public int hashCode() {
-        return (((this.jsonrpc.hashCode() * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.f412id)) * 31) + this.error.hashCode();
+        return (((this.jsonrpc.hashCode() * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.f412id)) * 31) + this.error.hashCode();
     }
 
     public String toString() {

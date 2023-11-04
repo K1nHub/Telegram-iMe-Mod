@@ -77,7 +77,7 @@ public abstract class AnalyticsEvent {
     public static final class OpenScreen extends AnalyticsEvent {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public OpenScreen(String screenName) {
-            super("open_screen", MapsKt.hashMapOf(TuplesKt.m144to("screen_name", screenName)), null);
+            super("open_screen", MapsKt.hashMapOf(TuplesKt.m146to("screen_name", screenName)), null);
             Intrinsics.checkNotNullParameter(screenName, "screenName");
         }
     }
@@ -113,7 +113,7 @@ public abstract class AnalyticsEvent {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public SendClip(String sendType) {
-            super("send_clip", MapsKt.hashMapOf(TuplesKt.m144to("send_type", sendType)), null);
+            super("send_clip", MapsKt.hashMapOf(TuplesKt.m146to("send_type", sendType)), null);
             Intrinsics.checkNotNullParameter(sendType, "sendType");
         }
 
@@ -137,7 +137,7 @@ public abstract class AnalyticsEvent {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public SelectClipCategory(String category) {
-            super("select_clip_category", MapsKt.hashMapOf(TuplesKt.m144to("category", category)), null);
+            super("select_clip_category", MapsKt.hashMapOf(TuplesKt.m146to("category", category)), null);
             Intrinsics.checkNotNullParameter(category, "category");
         }
 
@@ -197,7 +197,7 @@ public abstract class AnalyticsEvent {
         public static final class PreviewCatalogItem extends CatalogEvent {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public PreviewCatalogItem(String channelName, String catalogType) {
-                super("preview_catalog_item", MapsKt.hashMapOf(TuplesKt.m144to("channel_name", channelName), TuplesKt.m144to("catalog_type", catalogType)));
+                super("preview_catalog_item", MapsKt.hashMapOf(TuplesKt.m146to("channel_name", channelName), TuplesKt.m146to("catalog_type", catalogType)));
                 Intrinsics.checkNotNullParameter(channelName, "channelName");
                 Intrinsics.checkNotNullParameter(catalogType, "catalogType");
             }
@@ -208,7 +208,7 @@ public abstract class AnalyticsEvent {
         public static final class SubscribeCatalogItem extends CatalogEvent {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public SubscribeCatalogItem(String channelName, String catalogType) {
-                super("subscribe_catalog_item", MapsKt.hashMapOf(TuplesKt.m144to("channel_name", channelName), TuplesKt.m144to("catalog_type", catalogType)));
+                super("subscribe_catalog_item", MapsKt.hashMapOf(TuplesKt.m146to("channel_name", channelName), TuplesKt.m146to("catalog_type", catalogType)));
                 Intrinsics.checkNotNullParameter(channelName, "channelName");
                 Intrinsics.checkNotNullParameter(catalogType, "catalogType");
             }
@@ -219,7 +219,7 @@ public abstract class AnalyticsEvent {
         public static final class UnsubscribeCatalogItem extends CatalogEvent {
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public UnsubscribeCatalogItem(String channelName, String catalogType) {
-                super("unsubscribe_catalog_item", MapsKt.hashMapOf(TuplesKt.m144to("channel_name", channelName), TuplesKt.m144to("catalog_type", catalogType)));
+                super("unsubscribe_catalog_item", MapsKt.hashMapOf(TuplesKt.m146to("channel_name", channelName), TuplesKt.m146to("catalog_type", catalogType)));
                 Intrinsics.checkNotNullParameter(channelName, "channelName");
                 Intrinsics.checkNotNullParameter(catalogType, "catalogType");
             }
@@ -236,7 +236,7 @@ public abstract class AnalyticsEvent {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public OpenWalletScreen(String source) {
-            super("open_wallet_screen", MapsKt.hashMapOf(TuplesKt.m144to("source", source)), null);
+            super("open_wallet_screen", MapsKt.hashMapOf(TuplesKt.m146to("source", source)), null);
             Intrinsics.checkNotNullParameter(source, "source");
         }
 
@@ -312,7 +312,7 @@ public abstract class AnalyticsEvent {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public SendGif(String sendType) {
-            super("send_gif", MapsKt.hashMapOf(TuplesKt.m144to("send_type", sendType)), null);
+            super("send_gif", MapsKt.hashMapOf(TuplesKt.m146to("send_type", sendType)), null);
             Intrinsics.checkNotNullParameter(sendType, "sendType");
         }
 
@@ -343,7 +343,7 @@ public abstract class AnalyticsEvent {
     public static final class SelectGifCategory extends AnalyticsEvent {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public SelectGifCategory(String category) {
-            super("select_gif_category", MapsKt.hashMapOf(TuplesKt.m144to("category", category)), null);
+            super("select_gif_category", MapsKt.hashMapOf(TuplesKt.m146to("category", category)), null);
             Intrinsics.checkNotNullParameter(category, "category");
         }
     }
@@ -360,7 +360,7 @@ public abstract class AnalyticsEvent {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public ActiveDesktopUser(String client, String os) {
-            super("active_desktop_user", MapsKt.hashMapOf(TuplesKt.m144to("client", client), TuplesKt.m144to("os", os)), null);
+            super("active_desktop_user", MapsKt.hashMapOf(TuplesKt.m146to("client", client), TuplesKt.m146to("os", os)), null);
             Intrinsics.checkNotNullParameter(client, "client");
             Intrinsics.checkNotNullParameter(os, "os");
         }
@@ -386,7 +386,7 @@ public abstract class AnalyticsEvent {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public OpenStoryScreen(String source) {
-            super("open_story_screen", MapsKt.hashMapOf(TuplesKt.m144to("source", source)), null);
+            super("open_story_screen", MapsKt.hashMapOf(TuplesKt.m146to("source", source)), null);
             Intrinsics.checkNotNullParameter(source, "source");
         }
 

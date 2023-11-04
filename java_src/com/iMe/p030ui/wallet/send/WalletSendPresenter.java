@@ -90,10 +90,9 @@ import kotlin.text.Regex;
 import kotlin.text.StringsKt__StringNumberConversionsJVMKt;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC$Chat;
-import org.telegram.tgnet.TLRPC$MessageEntity;
 import org.telegram.tgnet.TLRPC$TL_messageEntityTextUrl;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
@@ -255,7 +254,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
         if (this.isBinanceReplenish) {
             getBinanceAddressesForReplenish(selectedToken);
         }
-        Observable<Result<TokenBalance>> observeOn = this.walletInteractor.getTokenBalance(TokenExtKt.toIndexedToken(selectedToken), true, selectedToken.getNetworkId()).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<TokenBalance>> observeOn = this.walletInteractor.getTokenBalance(TokenExtKt.toIndexedToken(selectedToken), true, selectedToken.getNetworkId()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -268,12 +267,12 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TokenBalance> result) {
-                m1792invoke(result);
+                m1797invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1792invoke(Result<? extends TokenBalance> it) {
+            public final void m1797invoke(Result<? extends TokenBalance> it) {
                 ResourceManager resourceManager;
                 ResourceManager resourceManager2;
                 ResourceManager resourceManager3;
@@ -285,12 +284,12 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
                     TokenDetailed token = tokenBalance2.getToken();
                     WalletSendView walletSendView = (WalletSendView) WalletSendPresenter.this.getViewState();
                     resourceManager2 = WalletSendPresenter.this.resourceManager;
-                    String string = resourceManager2.getString(C3630R.string.wallet_common_token_name_with_ticker, token.getName(), token.getTicker());
+                    String string = resourceManager2.getString(C3634R.string.wallet_common_token_name_with_ticker, token.getName(), token.getTicker());
                     String avatarUrl = token.getAvatarUrl();
                     int decimals = token.getDecimals();
                     String str = BalanceFormatter.format$default(Double.valueOf(tokenBalance2.getTotal()), null, 2, null) + ' ' + token.getTicker();
                     resourceManager3 = WalletSendPresenter.this.resourceManager;
-                    walletSendView.renderSelectedToken(string, avatarUrl, decimals, str, resourceManager3.getString(C3630R.string.wallet_amount_send_send_amount_in_fiat, 0));
+                    walletSendView.renderSelectedToken(string, avatarUrl, decimals, str, resourceManager3.getString(C3634R.string.wallet_amount_send_send_amount_in_fiat, 0));
                     walletSendPresenter.selectedTokenBalance = tokenBalance2;
                     WalletSendPresenter.this.selectedAmount = "";
                     WalletSendPresenter.this.checkEnteredData();
@@ -350,19 +349,19 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
     public final void send(boolean z) {
         TransferArgs formatTransferArgs = formatTransferArgs(this.selectedAmount);
         if (formatTransferArgs == null) {
-            ((WalletSendView) getViewState()).showToast(this.resourceManager.getString(C3630R.string.wallet_feature_not_available));
+            ((WalletSendView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.wallet_feature_not_available));
         } else if (this.isWalletTransfer || this.isBinanceReplenish) {
             transferTokens(formatTransferArgs, z);
         } else if (this.isDonationsTransfer && this.args.getChatId() != null && (formatTransferArgs instanceof TransferArgs.EVM)) {
             sendDonation(TelegramConstants.INSTANCE.prepareChatIdForBotAPI(this.args.getChatId().longValue()), (TransferArgs.EVM) formatTransferArgs);
         } else {
-            ((WalletSendView) getViewState()).showToast(this.resourceManager.getString(C3630R.string.wallet_feature_not_available));
+            ((WalletSendView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.wallet_feature_not_available));
         }
     }
 
     public final void validateRecipientAddress(String address) {
         Intrinsics.checkNotNullParameter(address, "address");
-        Observable<Result<SendCryptoQRData>> observeOn = CryptoHelper.extractAddressAndAmount(address, this.selectedNetwork.getBlockchainType(), this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<SendCryptoQRData>> observeOn = CryptoHelper.extractAddressAndAmount(address, this.selectedNetwork.getBlockchainType(), this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "extractAddressAndAmount(…(schedulersProvider.ui())");
         Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends SendCryptoQRData>, Unit>() { // from class: com.iMe.ui.wallet.send.WalletSendPresenter$validateRecipientAddress$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -371,12 +370,12 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SendCryptoQRData> result) {
-                m1795invoke(result);
+                m1800invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1795invoke(Result<? extends SendCryptoQRData> it) {
+            public final void m1800invoke(Result<? extends SendCryptoQRData> it) {
                 ResourceManager resourceManager;
                 String str;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -397,7 +396,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
                         return;
                     }
                     resourceManager = WalletSendPresenter.this.resourceManager;
-                    ((WalletSendView) WalletSendPresenter.this.getViewState()).showToast(resourceManager.getString(C3630R.string.wallet_recipient_validation_address_error));
+                    ((WalletSendView) WalletSendPresenter.this.getViewState()).showToast(resourceManager.getString(C3634R.string.wallet_recipient_validation_address_error));
                 }
             }
         }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.send.WalletSendPresenter$validateRecipientAddress$$inlined$subscribeWithErrorHandle$default$2
@@ -440,7 +439,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
         if (tLRPC$User != null) {
             TelegramGateway telegramGateway = this.telegramGateway;
             Intrinsics.checkNotNull(tLRPC$User);
-            if (telegramGateway.hasUser(tLRPC$User.f1762id)) {
+            if (telegramGateway.hasUser(tLRPC$User.f1749id)) {
                 z = true;
                 walletSendView.onSuccessValidation(sendConfirmationDialogModel, z);
             }
@@ -455,9 +454,9 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
             WalletSendView walletSendView = (WalletSendView) getViewState();
             ResourceManager resourceManager = this.resourceManager;
             if (this.selectedAddress.length() == 0) {
-                i = C3630R.string.binance_replenish_token_choose_token_first_error;
+                i = C3634R.string.binance_replenish_token_choose_token_first_error;
             } else {
-                i = C3630R.string.binance_replenish_token_choose_token_cant_change_error;
+                i = C3634R.string.binance_replenish_token_choose_token_cant_change_error;
             }
             walletSendView.showToast(resourceManager.getString(i));
             return;
@@ -536,11 +535,11 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void showAmountError(boolean z) {
-        ((WalletSendView) getViewState()).setupAmountInputErrorState(z, FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(this.selectedNetwork.getId()) ? this.resourceManager.getString(C3630R.string.wallet_token_details_action_buy) : "");
+        ((WalletSendView) getViewState()).setupAmountInputErrorState(z, FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(this.selectedNetwork.getId()) ? this.resourceManager.getString(C3634R.string.wallet_token_details_action_buy) : "");
     }
 
     private final void validateSend() {
-        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(this.selectedAddress, this.selectedNetwork.getBlockchainType()).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(this.selectedAddress, this.selectedNetwork.getBlockchainType()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
         Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.send.WalletSendPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -549,11 +548,11 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1796invoke(result);
+                m1801invoke(result);
                 return Unit.INSTANCE;
             }
 
-            /* JADX WARN: Code restructure failed: missing block: B:7:0x0019, code lost:
+            /* JADX WARN: Code restructure failed: missing block: B:7:0x001a, code lost:
                 if (r0 != false) goto L16;
              */
             /* renamed from: invoke  reason: collision with other method in class */
@@ -561,53 +560,53 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
                 Code decompiled incorrectly, please refer to instructions dump.
                 To view partially-correct add '--show-bad-code' argument
             */
-            public final void m1796invoke(com.iMe.storage.domain.model.Result<? extends java.lang.Boolean> r3) {
+            public final void m1801invoke(com.iMe.storage.domain.model.Result<? extends java.lang.Boolean> r3) {
                 /*
                     r2 = this;
                     java.lang.String r0 = "it"
                     kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, r0)
                     com.iMe.storage.domain.model.Result r3 = (com.iMe.storage.domain.model.Result) r3
                     boolean r0 = r3 instanceof com.iMe.storage.domain.model.Result.Success
-                    if (r0 == 0) goto L80
+                    if (r0 == 0) goto L81
                     com.iMe.ui.wallet.send.WalletSendPresenter r0 = com.iMe.p030ui.wallet.send.WalletSendPresenter.this
                     boolean r0 = com.iMe.p030ui.wallet.send.WalletSendPresenter.access$isWalletTransfer$p(r0)
-                    if (r0 != 0) goto L1b
+                    if (r0 != 0) goto L1c
                     com.iMe.ui.wallet.send.WalletSendPresenter r0 = com.iMe.p030ui.wallet.send.WalletSendPresenter.this
                     boolean r0 = com.iMe.p030ui.wallet.send.WalletSendPresenter.access$isBinanceReplenish$p(r0)
-                    if (r0 == 0) goto L41
-                L1b:
+                    if (r0 == 0) goto L42
+                L1c:
                     com.iMe.storage.domain.model.Result$Success r3 = (com.iMe.storage.domain.model.Result.Success) r3
                     java.lang.Object r3 = r3.getData()
                     java.lang.Boolean r3 = (java.lang.Boolean) r3
                     boolean r3 = r3.booleanValue()
-                    if (r3 != 0) goto L41
+                    if (r3 != 0) goto L42
                     com.iMe.ui.wallet.send.WalletSendPresenter r3 = com.iMe.p030ui.wallet.send.WalletSendPresenter.this
                     moxy.MvpView r3 = r3.getViewState()
                     com.iMe.ui.wallet.send.WalletSendView r3 = (com.iMe.p030ui.wallet.send.WalletSendView) r3
                     com.iMe.ui.wallet.send.WalletSendPresenter r0 = com.iMe.p030ui.wallet.send.WalletSendPresenter.this
                     com.iMe.storage.domain.utils.system.ResourceManager r0 = com.iMe.p030ui.wallet.send.WalletSendPresenter.access$getResourceManager$p(r0)
-                    int r1 = org.telegram.messenger.C3630R.string.wallet_amount_send_invalid_eth_address
+                    int r1 = org.telegram.messenger.C3634R.string.wallet_amount_send_invalid_eth_address
                     java.lang.String r0 = r0.getString(r1)
                     r3.showToast(r0)
-                    goto L97
-                L41:
+                    goto L98
+                L42:
                     com.iMe.ui.wallet.send.WalletSendPresenter r3 = com.iMe.p030ui.wallet.send.WalletSendPresenter.this
                     boolean r3 = com.iMe.p030ui.wallet.send.WalletSendPresenter.access$isDonationsTransfer$p(r3)
-                    if (r3 == 0) goto L6d
+                    if (r3 == 0) goto L6e
                     com.iMe.ui.wallet.send.WalletSendPresenter r3 = com.iMe.p030ui.wallet.send.WalletSendPresenter.this
                     com.iMe.model.wallet.transfer.TransferScreenArgs r3 = com.iMe.p030ui.wallet.send.WalletSendPresenter.access$getArgs$p(r3)
                     java.lang.Long r3 = r3.getChatId()
-                    if (r3 != 0) goto L6d
+                    if (r3 != 0) goto L6e
                     com.iMe.ui.wallet.send.WalletSendPresenter r3 = com.iMe.p030ui.wallet.send.WalletSendPresenter.this
                     moxy.MvpView r3 = r3.getViewState()
                     com.iMe.ui.wallet.send.WalletSendView r3 = (com.iMe.p030ui.wallet.send.WalletSendView) r3
                     com.iMe.ui.wallet.send.WalletSendPresenter r0 = com.iMe.p030ui.wallet.send.WalletSendPresenter.this
                     com.iMe.storage.domain.utils.system.ResourceManager r0 = com.iMe.p030ui.wallet.send.WalletSendPresenter.access$getResourceManager$p(r0)
-                    int r1 = org.telegram.messenger.C3630R.string.wallet_amount_send_invalid_chat_id
+                    int r1 = org.telegram.messenger.C3634R.string.wallet_amount_send_invalid_chat_id
                     java.lang.String r0 = r0.getString(r1)
                     r3.showToast(r0)
-                    goto L97
-                L6d:
+                    goto L98
+                L6e:
                     com.iMe.ui.wallet.send.WalletSendPresenter r3 = com.iMe.p030ui.wallet.send.WalletSendPresenter.this
                     moxy.MvpView r3 = r3.getViewState()
                     com.iMe.ui.wallet.send.WalletSendView r3 = (com.iMe.p030ui.wallet.send.WalletSendView) r3
@@ -615,10 +614,10 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
                     r3.updateStateButtonSend(r0)
                     com.iMe.ui.wallet.send.WalletSendPresenter r3 = com.iMe.p030ui.wallet.send.WalletSendPresenter.this
                     com.iMe.p030ui.wallet.send.WalletSendPresenter.access$updateFee(r3)
-                    goto L97
-                L80:
+                    goto L98
+                L81:
                     boolean r0 = r3 instanceof com.iMe.storage.domain.model.Result.Error
-                    if (r0 == 0) goto L97
+                    if (r0 == 0) goto L98
                     com.iMe.ui.wallet.send.WalletSendPresenter r0 = com.iMe.p030ui.wallet.send.WalletSendPresenter.this
                     moxy.MvpView r0 = r0.getViewState()
                     com.iMe.ui.wallet.send.WalletSendView r0 = (com.iMe.p030ui.wallet.send.WalletSendView) r0
@@ -626,10 +625,10 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
                     com.iMe.ui.wallet.send.WalletSendPresenter r1 = com.iMe.p030ui.wallet.send.WalletSendPresenter.this
                     com.iMe.storage.domain.utils.system.ResourceManager r1 = com.iMe.p030ui.wallet.send.WalletSendPresenter.access$getResourceManager$p(r1)
                     r0.showErrorToast(r3, r1)
-                L97:
+                L98:
                     return
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.send.C2435x4eac471e.m1796invoke(java.lang.Object):void");
+                throw new UnsupportedOperationException("Method not decompiled: com.iMe.p030ui.wallet.send.C2439x4eac471e.m1801invoke(java.lang.Object):void");
             }
         }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.send.WalletSendPresenter$validateSend$$inlined$subscribeWithErrorHandle$default$2
             {
@@ -730,7 +729,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
         if (tokenDetailed == null) {
             return;
         }
-        Observable<Result<String>> observeOn = this.binanceInternalInteractor.getAddressForTokenReplenish(tokenDetailed.getTicker(), this.selectedNetwork.getId()).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<String>> observeOn = this.binanceInternalInteractor.getAddressForTokenReplenish(tokenDetailed.getTicker(), this.selectedNetwork.getId()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -743,12 +742,12 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1790invoke(result);
+                m1795invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1790invoke(Result<? extends String> it) {
+            public final void m1795invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 String str;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -809,7 +808,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
     }
 
     private final void getBinanceAvailableTokensForReplenish(Network network, final Callbacks$Callback callbacks$Callback) {
-        Observable<Result<List<BinanceTokenInfo>>> observeOn = this.binanceInternalInteractor.getTokensForReplenish(network.getId()).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<List<BinanceTokenInfo>>> observeOn = this.binanceInternalInteractor.getTokensForReplenish(network.getId()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -823,12 +822,12 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTokenInfo>> result) {
-                m1791invoke(result);
+                m1796invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1791invoke(Result<? extends List<? extends BinanceTokenInfo>> it) {
+            public final void m1796invoke(Result<? extends List<? extends BinanceTokenInfo>> it) {
                 ResourceManager resourceManager;
                 int collectionSizeOrDefault;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -890,7 +889,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
         if (tokenBalance == null || (token = tokenBalance.getToken()) == null || (indexedToken = TokenExtKt.toIndexedToken(token)) == null) {
             return;
         }
-        Observable<Result<DonationTransferMetadata>> observeOn = donationsInteractor.getDataForDonation(j, str, indexedToken).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<DonationTransferMetadata>> observeOn = donationsInteractor.getDataForDonation(j, str, indexedToken).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -903,12 +902,12 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends DonationTransferMetadata> result) {
-                m1788invoke(result);
+                m1793invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1788invoke(Result<? extends DonationTransferMetadata> it) {
+            public final void m1793invoke(Result<? extends DonationTransferMetadata> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends DonationTransferMetadata> result = it;
@@ -1101,7 +1100,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
             if (tokenBalance3 != null && (token2 = tokenBalance3.getToken()) != null) {
                 num = Integer.valueOf(token2.getDecimals());
             }
-            return new TransferArgs.TON(parseDouble3, NumberExtKt.orZero(num), this.selectedAddress, this.comment, this.sendMode, false, 32, null);
+            return new TransferArgs.TON(parseDouble3, NumberExtKt.orZero(num), this.selectedAddress, this.comment, this.sendMode, ((TransactionParams.Ton) transactionParams).getWalletSeqno(), false, 64, null);
         } else if (transactionParams instanceof TransactionParams.Tron) {
             double parseDouble4 = Double.parseDouble(str);
             TokenBalance tokenBalance4 = this.selectedTokenBalance;
@@ -1122,7 +1121,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
     }
 
     private final DialogModel getSendConfirmationDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3630R.string.wallet_amount_confirm_alert_title), getConfirmMessage(str), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.wallet_amount_confirm_alert_ok_btn));
+        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_amount_confirm_alert_title), getConfirmMessage(str), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_amount_confirm_alert_ok_btn));
     }
 
     private final void calculateFeeForTransaction(String str, String str2) {
@@ -1131,7 +1130,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
         if (tokenBalance == null || (token = tokenBalance.getToken()) == null) {
             return;
         }
-        Observable<Result<CryptoTransferMetadata>> observeOn = this.walletInteractor.getCryptoTransferMetadata(new Token(token.getAddress(), token.getNetworkId()), str, str2, this.selectedNetwork).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<CryptoTransferMetadata>> observeOn = this.walletInteractor.getCryptoTransferMetadata(new Token(token.getAddress(), token.getNetworkId()), str, str2, this.selectedNetwork).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends CryptoTransferMetadata>, Unit>() { // from class: com.iMe.ui.wallet.send.WalletSendPresenter$calculateFeeForTransaction$$inlined$subscribeWithErrorHandle$default$1
@@ -1141,12 +1140,12 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CryptoTransferMetadata> result) {
-                m1789invoke(result);
+                m1794invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1789invoke(Result<? extends CryptoTransferMetadata> it) {
+            public final void m1794invoke(Result<? extends CryptoTransferMetadata> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends CryptoTransferMetadata> result = it;
@@ -1199,11 +1198,11 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
     }
 
     private final DialogModel getFeeDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3630R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3630R.string.common_cancel), 6, null);
+        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3634R.string.common_cancel), 6, null);
     }
 
     private final void sendDonation(long j, final TransferArgs.EVM evm) {
-        Observable<Result<Boolean>> observeOn = this.donationsInteractor.sendDonation(j, evm).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Boolean>> observeOn = this.donationsInteractor.sendDonation(j, evm).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -1217,12 +1216,12 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1793invoke(result);
+                m1798invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1793invoke(Result<? extends Boolean> it) {
+            public final void m1798invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 ResourceManager resourceManager2;
                 TLRPC$User tLRPC$User;
@@ -1290,7 +1289,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
     }
 
     private final void transferTokens(final TransferArgs transferArgs, final boolean z) {
-        Observable<Result<String>> observeOn = this.walletInteractor.sendTokens(transferArgs, this.selectedNetwork).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<String>> observeOn = this.walletInteractor.sendTokens(transferArgs, this.selectedNetwork).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -1304,12 +1303,12 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1794invoke(result);
+                m1799invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1794invoke(Result<? extends String> it) {
+            public final void m1799invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 ResourceManager resourceManager2;
                 TLRPC$User tLRPC$User;
@@ -1330,11 +1329,11 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
                         telegramGateway = WalletSendPresenter.this.telegramGateway;
                         tLRPC$User3 = WalletSendPresenter.this.selectedUser;
                         Intrinsics.checkNotNull(tLRPC$User3);
-                        if (telegramGateway.hasUser(tLRPC$User3.f1762id)) {
+                        if (telegramGateway.hasUser(tLRPC$User3.f1749id)) {
                             WalletSendPresenter walletSendPresenter = WalletSendPresenter.this;
                             tLRPC$User4 = walletSendPresenter.selectedUser;
                             Intrinsics.checkNotNull(tLRPC$User4);
-                            walletSendPresenter.sendReceiptToChat(tLRPC$User4.f1762id, (String) ((Result.Success) result).getData());
+                            walletSendPresenter.sendReceiptToChat(tLRPC$User4.f1749id, (String) ((Result.Success) result).getData());
                         }
                     }
                     rxEventBus = WalletSendPresenter.this.rxEventBus;
@@ -1412,7 +1411,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
     private final String getConfirmMessage(String str) {
         TokenDetailed token;
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3630R.string.wallet_amount_send_confirm_alert_description;
+        int i = C3634R.string.wallet_amount_send_confirm_alert_description;
         Object[] objArr = new Object[2];
         Double valueOf = Double.valueOf(Double.parseDouble(str));
         TokenBalance tokenBalance = this.selectedTokenBalance;
@@ -1425,7 +1424,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
     public final String getSuccessMessage(double d) {
         TokenDetailed token;
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3630R.string.wallet_amount_success_send_description;
+        int i = C3634R.string.wallet_amount_success_send_description;
         Object[] objArr = new Object[2];
         Double valueOf = Double.valueOf(d);
         TokenBalance tokenBalance = this.selectedTokenBalance;
@@ -1438,59 +1437,56 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
     public final void sendReceiptToChat(long j, String str) {
         String shortened;
         int indexOf$default;
+        int lastIndexOf$default;
+        ArrayList arrayListOf;
         int indexOf$default2;
         int indexOf$default3;
-        ArrayList arrayListOf;
-        int indexOf$default4;
         Wallet wallet2 = this.cryptoAccessManager.getWallet(this.selectedNetwork.getBlockchainType());
         String address = wallet2 != null ? wallet2.getAddress() : null;
         String str2 = address == null ? "" : address;
         String shortened2 = StringExtKt.shortened(str2, 6);
         String shortened3 = StringExtKt.shortened(this.selectedAddress, 6);
         if (this.selectedNetwork.getBlockchainType().isTON()) {
-            shortened = this.resourceManager.getString(C3630R.string.wallet_amount_send_message_hash_unavailable);
+            shortened = this.resourceManager.getString(C3634R.string.wallet_amount_send_message_hash_unavailable);
         } else {
             shortened = StringExtKt.shortened(str, 6);
         }
         String str3 = shortened;
-        String string = this.selectedNetwork.getBlockchainType().isTON() ? "" : this.resourceManager.getString(C3630R.string.wallet_amount_send_message_open_etherscan, this.selectedNetwork.getExplorer().getName());
-        String formatMessageToUser = formatMessageToUser(shortened2, shortened3, str3, DateExtKt.now(), string);
-        TLRPC$MessageEntity[] tLRPC$MessageEntityArr = new TLRPC$MessageEntity[4];
+        String string = this.selectedNetwork.getBlockchainType().isTON() ? "" : this.resourceManager.getString(C3634R.string.wallet_transaction_details_action_open_etherscan, this.selectedNetwork.getExplorer().getName());
+        String formatMessageToUser = formatMessageToUser(shortened2, shortened3, str3, DateExtKt.now(), this.selectedNetwork.getBlockchainType().isTON() ? "" : this.resourceManager.getString(C3634R.string.wallet_amount_send_message_open_scanner, string));
         TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl = new TLRPC$TL_messageEntityTextUrl();
         tLRPC$TL_messageEntityTextUrl.url = this.selectedNetwork.getAddressUrl(str2);
         tLRPC$TL_messageEntityTextUrl.length = shortened2.length();
         indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) formatMessageToUser, shortened2, 0, false, 6, (Object) null);
         tLRPC$TL_messageEntityTextUrl.offset = indexOf$default;
         Unit unit = Unit.INSTANCE;
-        tLRPC$MessageEntityArr[0] = tLRPC$TL_messageEntityTextUrl;
         TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl2 = new TLRPC$TL_messageEntityTextUrl();
         tLRPC$TL_messageEntityTextUrl2.url = this.selectedNetwork.getAddressUrl(this.selectedAddress);
         tLRPC$TL_messageEntityTextUrl2.length = shortened3.length();
-        indexOf$default2 = StringsKt__StringsKt.indexOf$default((CharSequence) formatMessageToUser, shortened3, 0, false, 6, (Object) null);
-        tLRPC$TL_messageEntityTextUrl2.offset = indexOf$default2;
-        tLRPC$MessageEntityArr[1] = tLRPC$TL_messageEntityTextUrl2;
-        TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl3 = new TLRPC$TL_messageEntityTextUrl();
+        lastIndexOf$default = StringsKt__StringsKt.lastIndexOf$default((CharSequence) formatMessageToUser, shortened3, 0, false, 6, (Object) null);
+        tLRPC$TL_messageEntityTextUrl2.offset = lastIndexOf$default;
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(tLRPC$TL_messageEntityTextUrl, tLRPC$TL_messageEntityTextUrl2);
         if (!this.selectedNetwork.getBlockchainType().isTON()) {
+            TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl3 = new TLRPC$TL_messageEntityTextUrl();
             tLRPC$TL_messageEntityTextUrl3.url = this.selectedNetwork.getTxUrl(str);
             tLRPC$TL_messageEntityTextUrl3.length = str3.length();
-            indexOf$default4 = StringsKt__StringsKt.indexOf$default((CharSequence) formatMessageToUser, str3, 0, false, 6, (Object) null);
-            tLRPC$TL_messageEntityTextUrl3.offset = indexOf$default4;
+            indexOf$default2 = StringsKt__StringsKt.indexOf$default((CharSequence) formatMessageToUser, str3, 0, false, 6, (Object) null);
+            tLRPC$TL_messageEntityTextUrl3.offset = indexOf$default2;
+            arrayListOf.add(tLRPC$TL_messageEntityTextUrl3);
+            TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl4 = new TLRPC$TL_messageEntityTextUrl();
+            tLRPC$TL_messageEntityTextUrl4.url = this.selectedNetwork.getTxUrl(str);
+            tLRPC$TL_messageEntityTextUrl4.length = string.length();
+            indexOf$default3 = StringsKt__StringsKt.indexOf$default((CharSequence) formatMessageToUser, string, 0, false, 6, (Object) null);
+            tLRPC$TL_messageEntityTextUrl4.offset = indexOf$default3;
+            arrayListOf.add(tLRPC$TL_messageEntityTextUrl4);
         }
-        tLRPC$MessageEntityArr[2] = tLRPC$TL_messageEntityTextUrl3;
-        TLRPC$TL_messageEntityTextUrl tLRPC$TL_messageEntityTextUrl4 = new TLRPC$TL_messageEntityTextUrl();
-        tLRPC$TL_messageEntityTextUrl4.url = this.selectedNetwork.getTxUrl(str);
-        tLRPC$TL_messageEntityTextUrl4.length = string.length();
-        indexOf$default3 = StringsKt__StringsKt.indexOf$default((CharSequence) formatMessageToUser, string, 0, false, 6, (Object) null);
-        tLRPC$TL_messageEntityTextUrl4.offset = indexOf$default3;
-        tLRPC$MessageEntityArr[3] = tLRPC$TL_messageEntityTextUrl4;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(tLRPC$MessageEntityArr);
-        TelegramControllersGateway.CC.getSendMessagesHelper$default(this.telegramControllersGateway, 0, 1, null).sendMessage(SendMessagesHelper.SendMessageParams.m90of(formatMessageToUser, j, null, null, null, false, arrayListOf, null, null, true, 0, null, false, null));
+        TelegramControllersGateway.CC.getSendMessagesHelper$default(this.telegramControllersGateway, 0, 1, null).sendMessage(SendMessagesHelper.SendMessageParams.m91of(formatMessageToUser, j, null, null, null, false, arrayListOf, null, null, true, 0, null, false, null));
     }
 
     private final String formatMessageToUser(String str, String str2, String str3, long j, String str4) {
         TokenDetailed token;
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3630R.string.wallet_amount_send_message_payload;
+        int i = C3634R.string.wallet_amount_send_message_payload;
         Object[] objArr = new Object[7];
         TokenBalance tokenBalance = this.selectedTokenBalance;
         String ticker = (tokenBalance == null || (token = tokenBalance.getToken()) == null) ? null : token.getTicker();
@@ -1535,7 +1531,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
     }
 
     private final void subscribeToAmountSubject() {
-        Observable<String> observeOn = this.amountSubject.observeOn(this.schedulersProvider.mo1009ui());
+        Observable<String> observeOn = this.amountSubject.observeOn(this.schedulersProvider.mo1010ui());
         final Function1<String, Boolean> function1 = new Function1<String, Boolean>() { // from class: com.iMe.ui.wallet.send.WalletSendPresenter$subscribeToAmountSubject$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -1553,7 +1549,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
                     ((WalletSendView) WalletSendPresenter.this.getViewState()).updateStateButtonSend(WalletSendPresenter.SendScreenState.PREPARE);
                     WalletSendPresenter.this.showAmountError(false);
                     resourceManager = WalletSendPresenter.this.resourceManager;
-                    ((WalletSendView) WalletSendPresenter.this.getViewState()).renderInsertedAmountInFiat(resourceManager.getString(C3630R.string.wallet_amount_send_send_amount_in_fiat, BalanceFormatter.formatFiatBalance$default(BalanceFormatter.INSTANCE, 0, null, 2, null)));
+                    ((WalletSendView) WalletSendPresenter.this.getViewState()).renderInsertedAmountInFiat(resourceManager.getString(C3634R.string.wallet_amount_send_send_amount_in_fiat, BalanceFormatter.formatFiatBalance$default(BalanceFormatter.INSTANCE, 0, null, 2, null)));
                     z = false;
                 }
                 return Boolean.valueOf(z);
@@ -1562,11 +1558,11 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
         Observable<String> observeOn2 = observeOn.filter(new Predicate() { // from class: com.iMe.ui.wallet.send.WalletSendPresenter$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Predicate
             public final boolean test(Object obj) {
-                boolean subscribeToAmountSubject$lambda$26;
-                subscribeToAmountSubject$lambda$26 = WalletSendPresenter.subscribeToAmountSubject$lambda$26(Function1.this, obj);
-                return subscribeToAmountSubject$lambda$26;
+                boolean subscribeToAmountSubject$lambda$27;
+                subscribeToAmountSubject$lambda$27 = WalletSendPresenter.subscribeToAmountSubject$lambda$27(Function1.this, obj);
+                return subscribeToAmountSubject$lambda$27;
             }
-        }).observeOn(this.schedulersProvider.mo1010io()).debounce(300L, TimeUnit.MILLISECONDS).observeOn(this.schedulersProvider.mo1009ui());
+        }).observeOn(this.schedulersProvider.mo1011io()).debounce(300L, TimeUnit.MILLISECONDS).observeOn(this.schedulersProvider.mo1010ui());
         final Function1<String, Unit> function12 = new Function1<String, Unit>() { // from class: com.iMe.ui.wallet.send.WalletSendPresenter$subscribeToAmountSubject$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -1599,7 +1595,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
                 if (tokenBalance != null) {
                     WalletSendPresenter walletSendPresenter2 = WalletSendPresenter.this;
                     resourceManager = walletSendPresenter2.resourceManager;
-                    int i = C3630R.string.wallet_amount_send_send_amount_in_fiat;
+                    int i = C3634R.string.wallet_amount_send_send_amount_in_fiat;
                     Intrinsics.checkNotNullExpressionValue(it, "it");
                     ((WalletSendView) walletSendPresenter2.getViewState()).renderInsertedAmountInFiat(resourceManager.getString(i, TokenBalanceExtKt.getInsertedTokenAmountInDollars(tokenBalance, Double.parseDouble(it))));
                 }
@@ -1609,7 +1605,7 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
         Disposable subscribe = observeOn2.subscribe(new Consumer() { // from class: com.iMe.ui.wallet.send.WalletSendPresenter$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer
             public final void accept(Object obj) {
-                WalletSendPresenter.subscribeToAmountSubject$lambda$27(Function1.this, obj);
+                WalletSendPresenter.subscribeToAmountSubject$lambda$28(Function1.this, obj);
             }
         });
         Intrinsics.checkNotNullExpressionValue(subscribe, "private fun subscribeToA…     .autoDispose()\n    }");
@@ -1617,13 +1613,13 @@ public final class WalletSendPresenter extends BasePresenter<WalletSendView> {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean subscribeToAmountSubject$lambda$26(Function1 tmp0, Object obj) {
+    public static final boolean subscribeToAmountSubject$lambda$27(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         return ((Boolean) tmp0.invoke(obj)).booleanValue();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void subscribeToAmountSubject$lambda$27(Function1 tmp0, Object obj) {
+    public static final void subscribeToAmountSubject$lambda$28(Function1 tmp0, Object obj) {
         Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
         tmp0.invoke(obj);
     }

@@ -641,7 +641,7 @@
     .line 1611
     check-cast v2, Lkotlin/reflect/jvm/internal/impl/metadata/ProtoBuf$Annotation$Argument;
 
-    const-string v4, "it"
+    const-string/jumbo v4, "it"
 
     .line 48
     invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -842,7 +842,7 @@
 
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v4, "it"
+    const-string/jumbo v4, "it"
 
     invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1111,8 +1111,6 @@
 
     :goto_5
     return-object p1
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

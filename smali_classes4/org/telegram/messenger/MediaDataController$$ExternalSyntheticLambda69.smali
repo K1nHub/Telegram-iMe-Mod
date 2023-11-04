@@ -51,7 +51,7 @@
 
     iget-wide v4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda69;->f$4:J
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$HAWzT9FQE6jbKTR_xh_bnMUjKeA(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;IIJ)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$gJj4wcwgmBLv65XE6o4Iv1LqTiQ(Lorg/telegram/messenger/MediaDataController;Ljava/util/ArrayList;IIJ)V
 
     return-void
 .end method

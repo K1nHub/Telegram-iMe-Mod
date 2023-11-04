@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ShareAlert$SwitchView;Landroid/content/Context;Lorg/telegram/ui/Components/ShareAlert;)V
     .locals 0
 
-    .line 380
+    .line 384
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView$1;->this$1:Lorg/telegram/ui/Components/ShareAlert$SwitchView;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 389
+    .line 393
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 396
+    .line 400
     invoke-virtual {p0}, Landroid/view/View;->getTranslationX()F
 
     move-result v0
@@ -61,7 +61,7 @@
 
     move-result v0
 
-    .line 397
+    .line 401
     invoke-virtual {p0}, Landroid/view/View;->getTranslationX()F
 
     move-result v1
@@ -82,7 +82,7 @@
 
     move-result v1
 
-    .line 398
+    .line 402
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView$1;->this$1:Lorg/telegram/ui/Components/ShareAlert$SwitchView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->access$400(Lorg/telegram/ui/Components/ShareAlert$SwitchView;)I
@@ -91,7 +91,7 @@
 
     if-eq v0, v2, :cond_0
 
-    .line 399
+    .line 403
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView$1;->this$1:Lorg/telegram/ui/Components/ShareAlert$SwitchView;
 
     new-instance v11, Landroid/graphics/LinearGradient;
@@ -130,7 +130,7 @@
 
     invoke-static {v2, v11}, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->access$502(Lorg/telegram/ui/Components/ShareAlert$SwitchView;Landroid/graphics/LinearGradient;)Landroid/graphics/LinearGradient;
 
-    .line 400
+    .line 404
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView$1;->this$1:Lorg/telegram/ui/Components/ShareAlert$SwitchView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->access$600(Lorg/telegram/ui/Components/ShareAlert$SwitchView;)Landroid/graphics/Paint;
@@ -145,7 +145,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 402
+    .line 406
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView$1;->this$1:Lorg/telegram/ui/Components/ShareAlert$SwitchView;
 
@@ -169,7 +169,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 403
+    .line 407
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView$1;->this$1:Lorg/telegram/ui/Components/ShareAlert$SwitchView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->access$700(Lorg/telegram/ui/Components/ShareAlert$SwitchView;)Landroid/graphics/RectF;
@@ -204,10 +204,10 @@
 .method public setTranslationX(F)V
     .locals 0
 
-    .line 383
+    .line 387
     invoke-super {p0, p1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 384
+    .line 388
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void

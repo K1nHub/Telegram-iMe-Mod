@@ -6,9 +6,9 @@ import kotlinx.serialization.KSerializer;
 import kotlinx.serialization.Serializable;
 import kotlinx.serialization.internal.PluginExceptionsKt;
 import kotlinx.serialization.internal.SerializationConstructorMarker;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: LiteServerSendMsgStatus.kt */
 @Serializable
 /* loaded from: classes6.dex */
@@ -61,13 +61,13 @@ public final class LiteServerSendMsgStatus {
             return LiteServerSendMsgStatus$$serializer.INSTANCE;
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public LiteServerSendMsgStatus decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return new LiteServerSendMsgStatus(reader.readInt());
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, LiteServerSendMsgStatus value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");

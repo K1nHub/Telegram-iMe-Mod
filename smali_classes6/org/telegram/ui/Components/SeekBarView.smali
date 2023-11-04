@@ -1001,7 +1001,7 @@
     .line 678
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestamps:Ljava/util/ArrayList;
 
-    if-eqz v0, :cond_16
+    if-eqz v0, :cond_17
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -1009,7 +1009,7 @@
 
     if-eqz v0, :cond_0
 
-    goto/16 :goto_6
+    goto/16 :goto_7
 
     .line 682
     :cond_0
@@ -1091,6 +1091,32 @@
 
     div-float/2addr v0, v4
 
+    iget-wide v5, p0, Lorg/telegram/ui/Components/SeekBarView;->lastDuration:J
+
+    const-wide/32 v7, 0x927c0
+
+    cmp-long v5, v5, v7
+
+    const/16 v6, 0x2a
+
+    const/4 v9, 0x0
+
+    if-lez v5, :cond_4
+
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v5
+
+    goto :goto_2
+
+    :cond_4
+    move v5, v9
+
+    :goto_2
+    int-to-float v5, v5
+
+    add-float/2addr v0, v5
+
     .line 697
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -1098,44 +1124,37 @@
 
     int-to-float v5, v5
 
-    iget v6, p0, Lorg/telegram/ui/Components/SeekBarView;->selectorWidth:I
+    iget v10, p0, Lorg/telegram/ui/Components/SeekBarView;->selectorWidth:I
 
-    int-to-float v6, v6
+    int-to-float v10, v10
 
-    div-float/2addr v6, v4
+    div-float/2addr v10, v4
 
-    sub-float/2addr v5, v6
+    sub-float/2addr v5, v10
 
-    .line 698
-    iget-wide v6, p0, Lorg/telegram/ui/Components/SeekBarView;->lastDuration:J
+    iget-wide v10, p0, Lorg/telegram/ui/Components/SeekBarView;->lastDuration:J
 
-    const-wide/32 v8, 0x927c0
+    cmp-long v7, v10, v7
 
-    cmp-long v6, v6, v8
-
-    const/4 v7, 0x0
-
-    if-lez v6, :cond_4
-
-    const/16 v6, 0x24
+    if-lez v7, :cond_5
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
-    goto :goto_2
+    goto :goto_3
 
-    :cond_4
-    move v6, v7
+    :cond_5
+    move v6, v9
 
-    :goto_2
+    :goto_3
     int-to-float v6, v6
 
     sub-float/2addr v5, v6
 
     sub-float v5, v0, v5
 
-    .line 699
+    .line 698
     invoke-static {v5}, Ljava/lang/Math;->abs(F)F
 
     move-result v5
@@ -1150,14 +1169,14 @@
 
     sub-float/2addr v5, v6
 
-    .line 701
+    .line 700
     iget v6, p0, Lorg/telegram/ui/Components/SeekBarView;->lastWidth:F
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
-    cmpl-float v9, v6, v8
+    cmpl-float v8, v6, v7
 
-    if-lez v9, :cond_6
+    if-lez v8, :cond_7
 
     sub-float/2addr v6, v5
 
@@ -1165,186 +1184,186 @@
 
     move-result v6
 
-    const v9, 0x3c23d70a    # 0.01f
+    const v8, 0x3c23d70a    # 0.01f
 
-    cmpl-float v6, v6, v9
+    cmpl-float v6, v6, v8
 
-    if-lez v6, :cond_6
+    if-lez v6, :cond_7
+
+    .line 701
+    iget-object v6, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
+
+    aget-object v8, v6, v9
+
+    if-eqz v8, :cond_6
 
     .line 702
-    iget-object v6, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
+    aget-object v8, v6, v9
 
-    aget-object v9, v6, v7
+    invoke-virtual {v8}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
-    if-eqz v9, :cond_5
-
-    .line 703
-    aget-object v9, v6, v7
-
-    invoke-virtual {v9}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v9
+    move-result-object v8
 
     float-to-int v10, v5
 
-    invoke-direct {p0, v9, v10}, Lorg/telegram/ui/Components/SeekBarView;->makeStaticLayout(Ljava/lang/CharSequence;I)Landroid/text/StaticLayout;
+    invoke-direct {p0, v8, v10}, Lorg/telegram/ui/Components/SeekBarView;->makeStaticLayout(Ljava/lang/CharSequence;I)Landroid/text/StaticLayout;
 
-    move-result-object v9
+    move-result-object v8
 
-    aput-object v9, v6, v7
+    aput-object v8, v6, v9
+
+    .line 704
+    :cond_6
+    iget-object v6, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
+
+    aget-object v8, v6, v2
+
+    if-eqz v8, :cond_7
 
     .line 705
-    :cond_5
-    iget-object v6, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
+    aget-object v8, v6, v2
 
-    aget-object v9, v6, v2
+    invoke-virtual {v8}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
-    if-eqz v9, :cond_6
-
-    .line 706
-    aget-object v9, v6, v2
-
-    invoke-virtual {v9}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v9
+    move-result-object v8
 
     float-to-int v10, v5
 
-    invoke-direct {p0, v9, v10}, Lorg/telegram/ui/Components/SeekBarView;->makeStaticLayout(Ljava/lang/CharSequence;I)Landroid/text/StaticLayout;
+    invoke-direct {p0, v8, v10}, Lorg/telegram/ui/Components/SeekBarView;->makeStaticLayout(Ljava/lang/CharSequence;I)Landroid/text/StaticLayout;
 
-    move-result-object v9
+    move-result-object v8
 
-    aput-object v9, v6, v2
+    aput-object v8, v6, v2
 
-    .line 709
-    :cond_6
+    .line 708
+    :cond_7
     iput v5, p0, Lorg/telegram/ui/Components/SeekBarView;->lastWidth:F
 
-    .line 711
+    .line 710
     iget v6, p0, Lorg/telegram/ui/Components/SeekBarView;->currentTimestamp:I
 
-    if-eq v1, v6, :cond_e
+    if-eq v1, v6, :cond_f
 
-    .line 712
+    .line 711
     iget-object v6, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
 
-    aget-object v9, v6, v7
+    aget-object v8, v6, v9
 
-    aput-object v9, v6, v2
+    aput-object v8, v6, v2
 
-    .line 713
+    .line 712
     iget-boolean v6, p0, Lorg/telegram/ui/Components/SeekBarView;->pressed:Z
 
-    if-eqz v6, :cond_7
+    if-eqz v6, :cond_8
 
     const/16 v6, 0x9
 
-    .line 715
+    .line 714
     :try_start_0
     invoke-virtual {p0, v6, v2}, Landroid/widget/FrameLayout;->performHapticFeedback(II)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    :cond_7
+    :cond_8
     const/4 v6, 0x0
 
-    if-ltz v1, :cond_9
+    if-ltz v1, :cond_a
+
+    .line 717
+    iget-object v8, p0, Lorg/telegram/ui/Components/SeekBarView;->timestamps:Ljava/util/ArrayList;
+
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
+
+    move-result v8
+
+    if-ge v1, v8, :cond_a
 
     .line 718
-    iget-object v9, p0, Lorg/telegram/ui/Components/SeekBarView;->timestamps:Ljava/util/ArrayList;
+    iget-object v8, p0, Lorg/telegram/ui/Components/SeekBarView;->timestamps:Ljava/util/ArrayList;
 
-    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v8, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result v9
+    move-result-object v8
 
-    if-ge v1, v9, :cond_9
+    check-cast v8, Landroid/util/Pair;
 
-    .line 719
-    iget-object v9, p0, Lorg/telegram/ui/Components/SeekBarView;->timestamps:Ljava/util/ArrayList;
+    iget-object v8, v8, Landroid/util/Pair;->second:Ljava/lang/Object;
 
-    invoke-virtual {v9, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    check-cast v8, Ljava/lang/CharSequence;
 
-    move-result-object v9
+    if-nez v8, :cond_9
 
-    check-cast v9, Landroid/util/Pair;
-
-    iget-object v9, v9, Landroid/util/Pair;->second:Ljava/lang/Object;
-
-    check-cast v9, Ljava/lang/CharSequence;
-
-    if-nez v9, :cond_8
-
-    .line 721
+    .line 720
     iget-object v5, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
 
-    aput-object v6, v5, v7
+    aput-object v6, v5, v9
 
-    goto :goto_3
+    goto :goto_4
 
-    .line 723
-    :cond_8
+    .line 722
+    :cond_9
     iget-object v6, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
 
     float-to-int v5, v5
 
-    invoke-direct {p0, v9, v5}, Lorg/telegram/ui/Components/SeekBarView;->makeStaticLayout(Ljava/lang/CharSequence;I)Landroid/text/StaticLayout;
+    invoke-direct {p0, v8, v5}, Lorg/telegram/ui/Components/SeekBarView;->makeStaticLayout(Ljava/lang/CharSequence;I)Landroid/text/StaticLayout;
 
     move-result-object v5
 
-    aput-object v5, v6, v7
+    aput-object v5, v6, v9
 
-    goto :goto_3
+    goto :goto_4
 
-    .line 726
-    :cond_9
+    .line 725
+    :cond_a
     iget-object v5, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
 
-    aput-object v6, v5, v7
+    aput-object v6, v5, v9
 
-    .line 728
-    :goto_3
-    iput v8, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeT:F
+    .line 727
+    :goto_4
+    iput v7, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeT:F
 
-    if-ne v1, v3, :cond_a
+    if-ne v1, v3, :cond_b
+
+    .line 729
+    iput v3, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeDirection:I
+
+    goto :goto_5
 
     .line 730
-    iput v3, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeDirection:I
-
-    goto :goto_4
-
-    .line 731
-    :cond_a
+    :cond_b
     iget v5, p0, Lorg/telegram/ui/Components/SeekBarView;->currentTimestamp:I
 
-    if-ne v5, v3, :cond_b
+    if-ne v5, v3, :cond_c
 
-    .line 732
+    .line 731
     iput v2, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeDirection:I
 
-    goto :goto_4
-
-    :cond_b
-    if-ge v1, v5, :cond_c
-
-    .line 734
-    iput v3, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeDirection:I
-
-    goto :goto_4
+    goto :goto_5
 
     :cond_c
-    if-le v1, v5, :cond_d
+    if-ge v1, v5, :cond_d
 
-    .line 736
+    .line 733
+    iput v3, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeDirection:I
+
+    goto :goto_5
+
+    :cond_d
+    if-le v1, v5, :cond_e
+
+    .line 735
     iput v2, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeDirection:I
 
-    .line 739
-    :cond_d
-    :goto_4
+    .line 738
+    :cond_e
+    :goto_5
     iput v1, p0, Lorg/telegram/ui/Components/SeekBarView;->currentTimestamp:I
 
-    .line 741
-    :cond_e
+    .line 740
+    :cond_f
     iget v1, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeT:F
 
     const/high16 v3, 0x3f800000    # 1.0f
@@ -1353,11 +1372,11 @@
 
     const-wide/16 v5, 0x11
 
-    const/16 v9, 0x8
+    const/16 v8, 0x8
 
-    if-gez v1, :cond_10
+    if-gez v1, :cond_11
 
-    .line 742
+    .line 741
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v10
@@ -1374,24 +1393,24 @@
 
     move-result-wide v10
 
-    .line 743
+    .line 742
     iget-object v1, p0, Lorg/telegram/ui/Components/SeekBarView;->timestamps:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    if-le v1, v9, :cond_f
+    if-le v1, v8, :cond_10
 
     const/high16 v1, 0x43200000    # 160.0f
 
-    goto :goto_5
+    goto :goto_6
 
-    :cond_f
+    :cond_10
     const/high16 v1, 0x435c0000    # 220.0f
 
-    .line 744
-    :goto_5
+    .line 743
+    :goto_6
     iget v12, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeT:F
 
     long-to-float v10, v10
@@ -1406,25 +1425,25 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeT:F
 
-    .line 745
+    .line 744
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 746
+    .line 745
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v10
 
     iput-wide v10, p0, Lorg/telegram/ui/Components/SeekBarView;->lastTimestampUpdate:J
 
-    .line 748
-    :cond_10
+    .line 747
+    :cond_11
     iget v1, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampsAppearing:F
 
     cmpg-float v1, v1, v3
 
-    if-gez v1, :cond_11
+    if-gez v1, :cond_12
 
-    .line 749
+    .line 748
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v10
@@ -1441,7 +1460,7 @@
 
     move-result-wide v5
 
-    .line 750
+    .line 749
     iget v1, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampsAppearing:F
 
     long-to-float v5, v5
@@ -1458,14 +1477,14 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampsAppearing:F
 
-    .line 751
+    .line 750
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 752
+    .line 751
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    .line 754
-    :cond_11
+    .line 753
+    :cond_12
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     iget v5, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeT:F
@@ -1474,10 +1493,10 @@
 
     move-result v1
 
-    .line 756
+    .line 755
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 757
+    .line 756
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v5
@@ -1498,7 +1517,7 @@
 
     const/16 v6, 0x19
 
-    .line 758
+    .line 757
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -1509,7 +1528,7 @@
 
     invoke-virtual {p1, v0, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 759
+    .line 758
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabelPaint:Landroid/text/TextPaint;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_player_time:I
@@ -1520,7 +1539,7 @@
 
     invoke-virtual {v0, v5}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 760
+    .line 759
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
 
     aget-object v0, v0, v2
@@ -1529,18 +1548,18 @@
 
     const/high16 v6, 0x437f0000    # 255.0f
 
-    if-eqz v0, :cond_13
+    if-eqz v0, :cond_14
 
-    .line 761
+    .line 760
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 762
+    .line 761
     iget v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeDirection:I
 
-    if-eqz v0, :cond_12
+    if-eqz v0, :cond_13
 
-    .line 763
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 762
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
@@ -1562,10 +1581,10 @@
 
     add-float/2addr v0, v10
 
-    invoke-virtual {p1, v0, v8}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v0, v7}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 765
-    :cond_12
+    .line 764
+    :cond_13
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
 
     aget-object v0, v0, v2
@@ -1580,9 +1599,9 @@
 
     div-float/2addr v0, v4
 
-    invoke-virtual {p1, v8, v0}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v7, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 766
+    .line 765
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabelPaint:Landroid/text/TextPaint;
 
     sub-float v10, v3, v1
@@ -1597,34 +1616,34 @@
 
     invoke-virtual {v0, v10}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 767
+    .line 766
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
 
     aget-object v0, v0, v2
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 768
+    .line 767
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 770
-    :cond_13
+    .line 769
+    :cond_14
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
 
-    aget-object v0, v0, v7
+    aget-object v0, v0, v9
+
+    if-eqz v0, :cond_16
+
+    .line 770
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 771
+    iget v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeDirection:I
 
     if-eqz v0, :cond_15
 
-    .line 771
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
-
     .line 772
-    iget v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampChangeDirection:I
-
-    if-eqz v0, :cond_14
-
-    .line 773
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
@@ -1646,13 +1665,13 @@
 
     add-float/2addr v0, v2
 
-    invoke-virtual {p1, v0, v8}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v0, v7}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 775
-    :cond_14
+    .line 774
+    :cond_15
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
 
-    aget-object v0, v0, v7
+    aget-object v0, v0, v9
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getHeight()I
 
@@ -1664,9 +1683,9 @@
 
     div-float/2addr v0, v4
 
-    invoke-virtual {p1, v8, v0}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v7, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 776
+    .line 775
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabelPaint:Landroid/text/TextPaint;
 
     mul-float/2addr v1, v6
@@ -1679,29 +1698,29 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setAlpha(I)V
 
-    .line 777
+    .line 776
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabel:[Landroid/text/StaticLayout;
 
-    aget-object v0, v0, v7
+    aget-object v0, v0, v9
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 778
+    .line 777
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 780
-    :cond_15
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
-
+    .line 779
     :cond_16
-    :goto_6
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
+    :cond_17
+    :goto_7
     return-void
 .end method
 
 .method private getThemedColor(I)I
     .locals 1
 
-    .line 821
+    .line 820
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -1784,14 +1803,14 @@
 
     move/from16 v6, p2
 
-    .line 784
+    .line 783
     iget-object v1, v0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabelPaint:Landroid/text/TextPaint;
 
     const/4 v2, 0x1
 
     if-nez v1, :cond_0
 
-    .line 785
+    .line 784
     new-instance v1, Landroid/text/TextPaint;
 
     invoke-direct {v1, v2}, Landroid/text/TextPaint;-><init>(I)V
@@ -1800,7 +1819,7 @@
 
     const/16 v3, 0xc
 
-    .line 786
+    .line 785
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -1809,7 +1828,7 @@
 
     invoke-virtual {v1, v3}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 788
+    .line 787
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabelPaint:Landroid/text/TextPaint;
 
@@ -1832,7 +1851,7 @@
     :cond_1
     move-object/from16 v3, p1
 
-    .line 792
+    .line 791
     :goto_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1844,7 +1863,7 @@
 
     const/4 v1, 0x0
 
-    .line 793
+    .line 792
     invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
 
     move-result v4
@@ -1855,26 +1874,26 @@
 
     move-result-object v1
 
-    .line 794
+    .line 793
     invoke-virtual {v1, v2}, Landroid/text/StaticLayout$Builder;->setMaxLines(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v1
 
     sget-object v2, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
 
-    .line 795
+    .line 794
     invoke-virtual {v1, v2}, Landroid/text/StaticLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/StaticLayout$Builder;
 
     move-result-object v1
 
     sget-object v2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
-    .line 796
+    .line 795
     invoke-virtual {v1, v2}, Landroid/text/StaticLayout$Builder;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)Landroid/text/StaticLayout$Builder;
 
     move-result-object v1
 
-    .line 797
+    .line 796
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1887,20 +1906,20 @@
 
     move-result-object v1
 
-    .line 798
+    .line 797
     invoke-virtual {v1}, Landroid/text/StaticLayout$Builder;->build()Landroid/text/StaticLayout;
 
     move-result-object v1
 
     return-object v1
 
-    .line 800
+    .line 799
     :cond_2
     new-instance v13, Landroid/text/StaticLayout;
 
     const/4 v4, 0x0
 
-    .line 803
+    .line 802
     invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
 
     move-result v7
@@ -1917,7 +1936,7 @@
 
     sget-object v14, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
-    .line 811
+    .line 810
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2094,7 +2113,7 @@
 .method public getSeekBarAccessibilityDelegate()Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;
     .locals 1
 
-    .line 817
+    .line 816
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->seekBarAccessibilityDelegate:Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;
 
     return-object v0
@@ -4073,6 +4092,10 @@
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v3
+
+    const-wide/16 v5, 0xa
+
+    mul-long/2addr v3, v5
 
     iput-wide v3, p0, Lorg/telegram/ui/Components/SeekBarView;->lastDuration:J
 

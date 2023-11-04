@@ -46,7 +46,7 @@ public final class LazyJavaStaticClassScope extends LazyJavaStaticScope {
 
     @Override // kotlin.reflect.jvm.internal.impl.resolve.scopes.MemberScopeImpl, kotlin.reflect.jvm.internal.impl.resolve.scopes.ResolutionScope
     /* renamed from: getContributedClassifier */
-    public ClassifierDescriptor mo2048getContributedClassifier(Name name, LookupLocation location) {
+    public ClassifierDescriptor mo2053getContributedClassifier(Name name, LookupLocation location) {
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(location, "location");
         return null;
@@ -227,12 +227,12 @@ public final class LazyJavaStaticClassScope extends LazyJavaStaticScope {
             }
         }, new DFS.AbstractNodeHandler<ClassDescriptor, Unit>() { // from class: kotlin.reflect.jvm.internal.impl.load.java.lazy.descriptors.LazyJavaStaticClassScope$flatMapJavaStaticSupertypesScopes$2
             /* renamed from: result  reason: collision with other method in class */
-            public void m2043result() {
+            public void m2048result() {
             }
 
             @Override // kotlin.reflect.jvm.internal.impl.utils.DFS.NodeHandler
             public /* bridge */ /* synthetic */ Object result() {
-                m2043result();
+                m2048result();
                 return Unit.INSTANCE;
             }
 
@@ -259,15 +259,15 @@ public final class LazyJavaStaticClassScope extends LazyJavaStaticScope {
         Sequence asSequence;
         Sequence mapNotNull;
         Iterable asIterable;
-        Collection<KotlinType> mo2047getSupertypes = classDescriptor.getTypeConstructor().mo2047getSupertypes();
-        Intrinsics.checkNotNullExpressionValue(mo2047getSupertypes, "it.typeConstructor.supertypes");
-        asSequence = CollectionsKt___CollectionsKt.asSequence(mo2047getSupertypes);
+        Collection<KotlinType> mo2052getSupertypes = classDescriptor.getTypeConstructor().mo2052getSupertypes();
+        Intrinsics.checkNotNullExpressionValue(mo2052getSupertypes, "it.typeConstructor.supertypes");
+        asSequence = CollectionsKt___CollectionsKt.asSequence(mo2052getSupertypes);
         mapNotNull = SequencesKt___SequencesKt.mapNotNull(asSequence, new Function1<KotlinType, ClassDescriptor>() { // from class: kotlin.reflect.jvm.internal.impl.load.java.lazy.descriptors.LazyJavaStaticClassScope$flatMapJavaStaticSupertypesScopes$1$1
             @Override // kotlin.jvm.functions.Function1
             public final ClassDescriptor invoke(KotlinType kotlinType) {
-                ClassifierDescriptor mo2046getDeclarationDescriptor = kotlinType.getConstructor().mo2046getDeclarationDescriptor();
-                if (mo2046getDeclarationDescriptor instanceof ClassDescriptor) {
-                    return (ClassDescriptor) mo2046getDeclarationDescriptor;
+                ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
+                if (mo2051getDeclarationDescriptor instanceof ClassDescriptor) {
+                    return (ClassDescriptor) mo2051getDeclarationDescriptor;
                 }
                 return null;
             }

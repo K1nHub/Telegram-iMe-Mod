@@ -24,7 +24,7 @@
 .method public constructor <init>(Lkotlin/reflect/jvm/internal/impl/load/java/lazy/JavaResolverSettings;)V
     .locals 1
 
-    const-string v0, "javaResolverSettings"
+    const-string/jumbo v0, "javaResolverSettings"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

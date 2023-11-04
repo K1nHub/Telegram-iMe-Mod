@@ -13,8 +13,8 @@ import com.iMe.utils.formatter.DateFormatter;
 import java.math.BigDecimal;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: StakingOperationItem.kt */
 /* loaded from: classes3.dex */
 public final class StakingOperationItem extends NoChildNode {
@@ -142,9 +142,9 @@ public final class StakingOperationItem extends NoChildNode {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1017m = ((((((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.f307id) * 31) + this.amount.hashCode()) * 31) + this.tokenSymbol.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + this.txHash.hashCode()) * 31;
+        int m1018m = ((((((((((((ProfileData$$ExternalSyntheticBackport0.m1018m(this.f307id) * 31) + this.amount.hashCode()) * 31) + this.tokenSymbol.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + this.txHash.hashCode()) * 31;
         StakingOperationCost stakingOperationCost = this.fee;
-        int hashCode = (m1017m + (stakingOperationCost == null ? 0 : stakingOperationCost.hashCode())) * 31;
+        int hashCode = (m1018m + (stakingOperationCost == null ? 0 : stakingOperationCost.hashCode())) * 31;
         boolean z = this.safe;
         int i = z;
         if (z != 0) {
@@ -229,15 +229,15 @@ public final class StakingOperationItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i2 == 1) {
-            i = C3630R.string.staking_operation_type_approval;
+            i = C3634R.string.staking_operation_type_approval;
         } else if (i2 == 2) {
-            i = C3630R.string.staking_operation_type_deposit;
+            i = C3634R.string.staking_operation_type_deposit;
         } else if (i2 == 3) {
-            i = this.safe ? C3630R.string.staking_operation_type_withdrawal_request : C3630R.string.staking_operation_type_immediate_withdrawal;
+            i = this.safe ? C3634R.string.staking_operation_type_withdrawal_request : C3634R.string.staking_operation_type_immediate_withdrawal;
         } else if (i2 != 4) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3630R.string.staking_operation_type_claim;
+            i = C3634R.string.staking_operation_type_claim;
         }
         return resourceManager.getString(i);
     }
@@ -267,15 +267,15 @@ public final class StakingOperationItem extends NoChildNode {
             if (i != 2) {
                 if (i != 3) {
                     if (i == 4) {
-                        return C3630R.C3632drawable.fork_ic_transaction_receive;
+                        return C3634R.C3636drawable.fork_ic_transaction_receive;
                     }
                     throw new NoWhenBranchMatchedException();
                 }
-                return C3630R.C3632drawable.fork_ic_transaction_staking_withdraw;
+                return C3634R.C3636drawable.fork_ic_transaction_staking_withdraw;
             }
-            return C3630R.C3632drawable.fork_ic_transaction_sent;
+            return C3634R.C3636drawable.fork_ic_transaction_sent;
         }
-        return C3630R.C3632drawable.fork_ic_transaction_approve;
+        return C3634R.C3636drawable.fork_ic_transaction_approve;
     }
 
     public final String getTransactionTimeText() {
@@ -285,7 +285,7 @@ public final class StakingOperationItem extends NoChildNode {
     public final String getAmount(ResourceManager resourceManager) {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         if (WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()] == 1) {
-            return resourceManager.getString(C3630R.string.wallet_transactions_type_approve_title, this.token.getTicker());
+            return resourceManager.getString(C3634R.string.wallet_transactions_type_approve_title, this.token.getTicker());
         }
         return getSymbol() + BalanceFormatter.format(this.amount, Integer.valueOf(this.token.getDecimals())) + ' ' + this.token.getTicker();
     }

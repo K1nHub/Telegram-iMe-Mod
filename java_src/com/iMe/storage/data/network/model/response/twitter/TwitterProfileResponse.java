@@ -70,9 +70,9 @@ public final class TwitterProfileResponse {
     }
 
     public int hashCode() {
-        int m1017m = ProfileData$$ExternalSyntheticBackport0.m1017m(this.twitterUserId) * 31;
+        int m1018m = ProfileData$$ExternalSyntheticBackport0.m1018m(this.twitterUserId) * 31;
         Long l = this.twitterUserIdInDatabase;
-        int hashCode = (m1017m + (l == null ? 0 : l.hashCode())) * 31;
+        int hashCode = (m1018m + (l == null ? 0 : l.hashCode())) * 31;
         Long l2 = this.telegramUserId;
         int hashCode2 = (hashCode + (l2 == null ? 0 : l2.hashCode())) * 31;
         String str = this.twitterUserName;

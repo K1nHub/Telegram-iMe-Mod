@@ -28,10 +28,10 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkContentFeeBinding;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: FeeView.kt */
 /* renamed from: com.iMe.ui.custom.FeeView */
 /* loaded from: classes3.dex */
@@ -192,11 +192,11 @@ public final class FeeView extends FrameLayout implements KoinComponent {
         ForkContentFeeBinding forkContentFeeBinding = this.binding;
         AppCompatTextView appCompatTextView = forkContentFeeBinding.textFeeValue;
         ResourceManager resourceManager = getResourceManager();
-        int i = C3630R.string.wallet_swap_process_fee_price_value;
+        int i = C3634R.string.wallet_swap_process_fee_price_value;
         Double valueOf = Double.valueOf(gasPriceItem.getInfo().getFeeInFiat().getValue());
         TokenDetailed.Companion companion = TokenDetailed.Companion;
         appCompatTextView.setText(resourceManager.getString(i, BalanceFormatter.format(Double.valueOf(gasPriceItem.getInfo().getFee()), Integer.valueOf(gasPriceItem.getFeeToken().getDecimals())), gasPriceItem.getFeeToken().getTicker(), BalanceFormatter.format(valueOf, Integer.valueOf(companion.getUSD().getDecimals())), companion.getUSD().getTicker()));
-        forkContentFeeBinding.textTimeValue.setText(getResourceManager().getString(C3630R.string.wallet_swap_process_fee_duration_value, Integer.valueOf(gasPriceItem.getInfo().getDuration())));
+        forkContentFeeBinding.textTimeValue.setText(getResourceManager().getString(C3634R.string.wallet_swap_process_fee_duration_value, Integer.valueOf(gasPriceItem.getInfo().getDuration())));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:4:0x0004, code lost:
@@ -247,7 +247,7 @@ public final class FeeView extends FrameLayout implements KoinComponent {
 
     private final void setupTexts() {
         ForkContentFeeBinding forkContentFeeBinding = this.binding;
-        forkContentFeeBinding.textFeeTitle.setText(getResourceManager().getString(C3630R.string.wallet_swap_process_fee_price));
-        forkContentFeeBinding.textTimeTitle.setText(getResourceManager().getString(C3630R.string.wallet_swap_process_fee_duration));
+        forkContentFeeBinding.textFeeTitle.setText(getResourceManager().getString(C3634R.string.wallet_swap_process_fee_price));
+        forkContentFeeBinding.textTimeTitle.setText(getResourceManager().getString(C3634R.string.wallet_swap_process_fee_duration));
     }
 }

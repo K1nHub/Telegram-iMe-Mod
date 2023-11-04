@@ -2,6 +2,9 @@
 .super Landroid/view/View;
 .source "RecordControl.java"
 
+# interfaces
+.implements Lorg/telegram/ui/Stories/recorder/FlashViews$Invertable;
+
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
@@ -189,17 +192,17 @@
 
     move-object/from16 v7, p0
 
-    .line 118
+    .line 119
     invoke-direct/range {p0 .. p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 83
+    .line 84
     new-instance v8, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {v8}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
 
     iput-object v8, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->galleryImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 93
+    .line 94
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v9, 0x1
@@ -208,84 +211,84 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->mainPaint:Landroid/graphics/Paint;
 
-    .line 94
+    .line 95
     new-instance v10, Landroid/graphics/Paint;
 
     invoke-direct {v10, v9}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v10, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->outlinePaint:Landroid/graphics/Paint;
 
-    .line 95
+    .line 96
     new-instance v11, Landroid/graphics/Paint;
 
     invoke-direct {v11, v9}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v11, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->outlineFilledPaint:Landroid/graphics/Paint;
 
-    .line 96
+    .line 97
     new-instance v12, Landroid/graphics/Paint;
 
     invoke-direct {v12, v9}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v12, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->buttonPaint:Landroid/graphics/Paint;
 
-    .line 97
+    .line 98
     new-instance v13, Landroid/graphics/Paint;
 
     invoke-direct {v13, v9}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v13, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->buttonPaintWhite:Landroid/graphics/Paint;
 
-    .line 98
+    .line 99
     new-instance v14, Landroid/graphics/Paint;
 
     invoke-direct {v14, v9}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v14, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->redPaint:Landroid/graphics/Paint;
 
-    .line 99
+    .line 100
     new-instance v15, Landroid/graphics/Paint;
 
     invoke-direct {v15, v9}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v15, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->hintLinePaintWhite:Landroid/graphics/Paint;
 
-    .line 100
+    .line 101
     new-instance v6, Landroid/graphics/Paint;
 
     invoke-direct {v6, v9}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v6, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->hintLinePaintBlack:Landroid/graphics/Paint;
 
-    .line 101
+    .line 102
     new-instance v4, Landroid/graphics/Matrix;
 
     invoke-direct {v4}, Landroid/graphics/Matrix;-><init>()V
 
     iput-object v4, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->redMatrix:Landroid/graphics/Matrix;
 
-    .line 104
+    .line 105
     new-instance v0, Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-direct {v0, v7}, Lorg/telegram/ui/Components/ButtonBounce;-><init>(Landroid/view/View;)V
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordButton:Lorg/telegram/ui/Components/ButtonBounce;
 
-    .line 105
+    .line 106
     new-instance v0, Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-direct {v0, v7}, Lorg/telegram/ui/Components/ButtonBounce;-><init>(Landroid/view/View;)V
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButton:Lorg/telegram/ui/Components/ButtonBounce;
 
-    .line 106
+    .line 107
     new-instance v0, Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-direct {v0, v7}, Lorg/telegram/ui/Components/ButtonBounce;-><init>(Landroid/view/View;)V
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockButton:Lorg/telegram/ui/Components/ButtonBounce;
 
-    .line 109
+    .line 110
     new-instance v5, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v16, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -314,7 +317,7 @@
 
     iput-object v9, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableRotateT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 111
+    .line 112
     new-instance v9, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v4, 0x14a
@@ -325,7 +328,7 @@
 
     iput-object v9, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->dualT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 241
+    .line 251
     new-instance v9, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v4, 0x15e
@@ -338,15 +341,15 @@
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 242
+    .line 252
     iput v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->overrideStartModeIsVideoT:F
 
     const/4 v0, 0x1
 
-    .line 243
+    .line 253
     iput-boolean v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->startModeIsVideo:Z
 
-    .line 245
+    .line 255
     new-instance v9, Lorg/telegram/ui/Components/AnimatedFloat;
 
     move-object v0, v9
@@ -355,7 +358,7 @@
 
     iput-object v9, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 246
+    .line 256
     new-instance v9, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v4, 0x352
@@ -370,10 +373,10 @@
 
     new-array v0, v0, [F
 
-    .line 249
+    .line 259
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->loadingSegments:[F
 
-    .line 250
+    .line 260
     new-instance v9, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v4, 0x15e
@@ -384,7 +387,7 @@
 
     iput-object v9, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoadingT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 260
+    .line 270
     new-instance v9, Lorg/telegram/ui/Components/AnimatedFloat;
 
     move-object v0, v9
@@ -393,7 +396,7 @@
 
     iput-object v9, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 261
+    .line 271
     new-instance v9, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v4, 0x28a
@@ -404,7 +407,7 @@
 
     iput-object v9, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchIsCenterT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 262
+    .line 272
     new-instance v9, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v6, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_IN:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -417,7 +420,7 @@
 
     iput-object v9, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchIsCenter2T:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 263
+    .line 273
     new-instance v9, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v4, 0x2ee
@@ -430,7 +433,7 @@
 
     iput-object v9, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordCx:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 264
+    .line 274
     new-instance v9, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v4, 0x28a
@@ -441,7 +444,7 @@
 
     iput-object v9, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchIsButtonT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 265
+    .line 275
     new-instance v9, Lorg/telegram/ui/Components/AnimatedFloat;
 
     const-wide/16 v4, 0x140
@@ -452,35 +455,35 @@
 
     iput-object v9, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockedT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 267
+    .line 277
     new-instance v0, Lorg/telegram/ui/Stories/recorder/RecordControl$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, v7}, Lorg/telegram/ui/Stories/recorder/RecordControl$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Stories/recorder/RecordControl;)V
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->onRecordLongPressRunnable:Ljava/lang/Runnable;
 
-    .line 287
+    .line 297
     new-instance v0, Lorg/telegram/ui/Stories/recorder/RecordControl$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, v7}, Lorg/telegram/ui/Stories/recorder/RecordControl$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Stories/recorder/RecordControl;)V
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->onFlipLongPressRunnable:Ljava/lang/Runnable;
 
-    .line 299
+    .line 309
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->metaballsPath:Landroid/graphics/Path;
 
-    .line 300
+    .line 310
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->circlePath:Landroid/graphics/Path;
 
-    .line 557
+    .line 567
     new-instance v0, Lorg/telegram/ui/Components/Point;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/Point;-><init>()V
@@ -531,10 +534,10 @@
 
     const/4 v0, 0x0
 
-    .line 120
+    .line 121
     invoke-virtual {v7, v0}, Landroid/view/View;->setWillNotDraw(Z)V
 
-    .line 122
+    .line 123
     new-instance v1, Landroid/graphics/RadialGradient;
 
     const/16 v2, 0x30
@@ -575,97 +578,97 @@
 
     move-object/from16 v2, v19
 
-    .line 123
+    .line 124
     invoke-virtual {v1, v2}, Landroid/graphics/RadialGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 124
+    .line 125
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->redGradient:Landroid/graphics/RadialGradient;
 
     invoke-virtual {v14, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     const/4 v1, -0x1
 
-    .line 125
+    .line 126
     invoke-virtual {v10, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 126
+    .line 127
     sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v10, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     const v2, -0x8cecf
 
-    .line 127
+    .line 128
     invoke-virtual {v11, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 128
+    .line 129
     sget-object v2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v11, v2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 129
+    .line 130
     sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v11, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     const/high16 v2, 0x64000000
 
-    .line 130
+    .line 131
     invoke-virtual {v12, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 131
+    .line 132
     invoke-virtual {v13, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     const v2, 0x58ffffff
 
-    .line 132
+    .line 133
     invoke-virtual {v15, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 133
+    const/high16 v2, 0x18000000
+
+    .line 134
+    invoke-virtual {v8, v2}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 135
     sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v15, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 134
+    .line 136
     sget-object v2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v15, v2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    const/high16 v2, 0x18000000
-
-    .line 135
-    invoke-virtual {v8, v2}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 136
+    .line 137
     sget-object v2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v8, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 137
+    .line 138
     sget-object v2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v8, v2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
     move-object/from16 v2, v17
 
-    .line 139
+    .line 140
     invoke-virtual {v2, v7}, Lorg/telegram/messenger/ImageReceiver;->setParentView(Landroid/view/View;)V
 
     const/4 v3, 0x1
 
-    .line 140
+    .line 141
     invoke-virtual {v2, v3}, Lorg/telegram/messenger/ImageReceiver;->setCrossfadeWithOldImage(Z)V
 
     const/4 v3, 0x6
 
-    .line 141
+    .line 142
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     invoke-virtual {v2, v4}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    .line 143
+    .line 144
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
@@ -680,7 +683,7 @@
 
     move-result-object v2
 
-    .line 144
+    .line 145
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v5, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -691,7 +694,7 @@
 
     invoke-virtual {v2, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 145
+    .line 146
     new-instance v4, Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -708,12 +711,12 @@
 
     iput-object v4, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->noGalleryDrawable:Lorg/telegram/ui/Components/CombinedDrawable;
 
-    .line 146
+    .line 147
     invoke-virtual {v4, v0}, Lorg/telegram/ui/Components/CombinedDrawable;->setFullsize(Z)V
 
     const/16 v0, 0x18
 
-    .line 147
+    .line 148
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -724,7 +727,7 @@
 
     invoke-virtual {v4, v2, v0}, Lorg/telegram/ui/Components/CombinedDrawable;->setIconSize(II)V
 
-    .line 149
+    .line 150
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -741,7 +744,7 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableWhite:Landroid/graphics/drawable/Drawable;
 
-    .line 150
+    .line 151
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v4, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -750,7 +753,7 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 151
+    .line 152
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -765,7 +768,7 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableBlack:Landroid/graphics/drawable/Drawable;
 
-    .line 152
+    .line 153
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -776,7 +779,7 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 154
+    .line 155
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -793,7 +796,7 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->unlockDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 155
+    .line 156
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -802,7 +805,7 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 156
+    .line 157
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -819,7 +822,7 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 157
+    .line 158
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -828,7 +831,7 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 159
+    .line 160
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -845,7 +848,7 @@
 
     iput-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->pauseDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 160
+    .line 161
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -854,7 +857,7 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 162
+    .line 163
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/RecordControl;->updateGalleryImage()V
 
     return-void
@@ -877,7 +880,7 @@
 .method private dist(Lorg/telegram/ui/Components/Point;Lorg/telegram/ui/Components/Point;)F
     .locals 2
 
-    .line 564
+    .line 574
     iget v0, p1, Lorg/telegram/ui/Components/Point;->x:F
 
     iget p1, p1, Lorg/telegram/ui/Components/Point;->y:F
@@ -898,7 +901,7 @@
 
     float-to-double v0, p1
 
-    .line 559
+    .line 569
     invoke-static {p3, p4}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v2
@@ -915,7 +918,7 @@
 
     float-to-double p1, p2
 
-    .line 560
+    .line 570
     invoke-static {p3, p4}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide p3
@@ -934,7 +937,7 @@
 .method private isPressed(FFFFFZ)Z
     .locals 3
 
-    .line 574
+    .line 584
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
     const/4 v1, 0x1
@@ -949,7 +952,7 @@
 
     const/16 p2, 0x64
 
-    .line 575
+    .line 585
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -965,7 +968,7 @@
     :cond_0
     sub-float/2addr p3, p1
 
-    .line 578
+    .line 588
     invoke-static {p3}, Ljava/lang/Math;->abs(F)F
 
     move-result p1
@@ -982,7 +985,7 @@
     :goto_0
     return v1
 
-    .line 580
+    .line 590
     :cond_2
     invoke-static {p1, p2, p3, p4}, Lcom/google/zxing/common/detector/MathUtils;->distance(FFFF)F
 
@@ -1004,7 +1007,7 @@
 .method private synthetic lambda$new$0()V
     .locals 3
 
-    .line 281
+    .line 291
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -1013,10 +1016,10 @@
 
     const/4 v0, 0x1
 
-    .line 282
+    .line 292
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
-    .line 283
+    .line 293
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     const-wide/16 v1, 0x0
@@ -1031,14 +1034,14 @@
 .method private synthetic lambda$new$1()V
     .locals 3
 
-    .line 268
+    .line 278
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 271
+    .line 281
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
@@ -1050,20 +1053,20 @@
 
     const/4 v0, 0x0
 
-    .line 272
+    .line 282
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->touch:Z
 
-    .line 273
+    .line 283
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 274
+    .line 284
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 275
+    .line 285
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
@@ -1073,13 +1076,13 @@
     :cond_1
     const/4 v0, 0x1
 
-    .line 278
+    .line 288
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->longpressRecording:Z
 
-    .line 279
+    .line 289
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->showLock:Z
 
-    .line 280
+    .line 290
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     new-instance v2, Lorg/telegram/ui/Stories/recorder/RecordControl$$ExternalSyntheticLambda1;
@@ -1094,37 +1097,37 @@
 .method private synthetic lambda$new$2()V
     .locals 2
 
-    .line 288
+    .line 298
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
     if-nez v0, :cond_0
 
-    .line 289
+    .line 299
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {v0}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->onFlipLongClick()V
 
     const/high16 v0, 0x43b40000    # 360.0f
 
-    .line 290
+    .line 300
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/recorder/RecordControl;->rotateFlip(F)V
 
     const/4 v0, 0x0
 
-    .line 292
+    .line 302
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->touch:Z
 
-    .line 293
+    .line 303
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 294
+    .line 304
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 295
+    .line 305
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
@@ -1138,13 +1141,13 @@
 
     const/4 v0, 0x0
 
-    .line 387
+    .line 397
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
-    .line 388
+    .line 398
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->longpressRecording:Z
 
-    .line 389
+    .line 399
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
@@ -1153,28 +1156,28 @@
 
     const/4 v1, 0x1
 
-    .line 390
+    .line 400
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoading:Z
 
-    .line 391
+    .line 401
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->touch:Z
 
-    .line 392
+    .line 402
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 393
+    .line 403
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 394
+    .line 404
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 395
+    .line 405
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {v0, v1}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->onVideoRecordEnd(Z)V
@@ -1185,7 +1188,7 @@
 .method private synthetic lambda$onTouchEvent$4()V
     .locals 3
 
-    .line 684
+    .line 694
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -1194,15 +1197,15 @@
 
     const-wide/16 v0, 0x0
 
-    .line 685
+    .line 695
     iput-wide v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->lastDuration:J
 
     const/4 v2, 0x1
 
-    .line 686
+    .line 696
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
-    .line 687
+    .line 697
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {v2, v0, v1}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->onVideoDuration(J)V
@@ -1213,7 +1216,7 @@
 .method private static setDrawableBounds(Landroid/graphics/drawable/Drawable;FF)V
     .locals 2
 
-    .line 234
+    .line 244
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
@@ -1256,7 +1259,7 @@
 
     float-to-int p2, p2
 
-    .line 238
+    .line 248
     invoke-virtual {p0, v0, v1, p1, p2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     return-void
@@ -1267,7 +1270,7 @@
 .method public isTouch()Z
     .locals 1
 
-    .line 586
+    .line 596
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->discardParentTouch:Z
 
     return v0
@@ -1276,10 +1279,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 194
+    .line 195
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 195
+    .line 196
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->galleryImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
@@ -1290,12 +1293,12 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 200
+    .line 201
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->galleryImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 201
+    .line 202
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
     return-void
@@ -1308,7 +1311,7 @@
 
     move-object/from16 v8, p1
 
-    .line 306
+    .line 316
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
@@ -1331,7 +1334,7 @@
 
     move-result v11
 
-    .line 307
+    .line 317
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLongT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
@@ -1350,7 +1353,7 @@
 
     move-result v6
 
-    .line 308
+    .line 318
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->overrideStartModeIsVideoT:F
 
     cmpl-float v1, v0, v10
@@ -1383,7 +1386,7 @@
 
     move-result v12
 
-    .line 312
+    .line 322
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touch:Z
@@ -1402,7 +1405,7 @@
 
     move-result v13
 
-    .line 313
+    .line 323
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchIsCenterT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchX:F
@@ -1454,7 +1457,7 @@
 
     mul-float v14, v13, v0
 
-    .line 314
+    .line 324
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchIsCenter2T:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchX:F
@@ -1491,7 +1494,7 @@
 
     mul-float v15, v13, v0
 
-    .line 315
+    .line 325
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchX:F
 
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cx:F
@@ -1514,7 +1517,7 @@
 
     move-result v17
 
-    .line 316
+    .line 326
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchX:F
 
     iget v3, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cx:F
@@ -1533,7 +1536,7 @@
 
     move-result v18
 
-    .line 317
+    .line 327
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchIsButtonT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchX:F
@@ -1584,7 +1587,7 @@
 
     mul-float v5, v13, v0
 
-    .line 319
+    .line 329
     iget-boolean v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->longpressRecording:Z
 
     if-eqz v0, :cond_9
@@ -1605,7 +1608,7 @@
 
     if-lez v0, :cond_a
 
-    .line 321
+    .line 331
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cx:F
 
     const/16 v1, 0x32
@@ -1628,7 +1631,7 @@
 
     add-float v2, v0, v1
 
-    .line 322
+    .line 332
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->hintLinePaintWhite:Landroid/graphics/Paint;
 
     const/4 v1, 0x2
@@ -1641,7 +1644,7 @@
 
     invoke-virtual {v0, v10}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 323
+    .line 333
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->hintLinePaintBlack:Landroid/graphics/Paint;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1652,7 +1655,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 325
+    .line 335
     iget v10, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->rightCx:F
@@ -1703,7 +1706,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 326
+    .line 336
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->rightCx:F
@@ -1730,7 +1733,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 328
+    .line 338
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->leftCx:F
@@ -1757,7 +1760,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 329
+    .line 339
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->leftCx:F
@@ -1791,11 +1794,11 @@
 
     move/from16 v20, v15
 
-    .line 332
+    .line 342
     :goto_9
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 333
+    .line 343
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     iget-boolean v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->startModeIsVideo:Z
@@ -1820,14 +1823,14 @@
 
     move-result v0
 
-    .line 334
+    .line 344
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cx:F
 
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     invoke-virtual {v8, v0, v0, v1, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 335
+    .line 345
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->mainPaint:Landroid/graphics/Paint;
 
     const/4 v2, -0x1
@@ -1840,7 +1843,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 336
+    .line 346
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cx:F
 
     iget-object v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordCx:Lorg/telegram/ui/Components/AnimatedFloat;
@@ -1867,7 +1870,7 @@
 
     const/16 v1, 0x1d
 
-    .line 337
+    .line 347
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1910,7 +1913,7 @@
 
     move-result v15
 
-    .line 338
+    .line 348
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -1935,7 +1938,7 @@
 
     int-to-float v5, v1
 
-    .line 339
+    .line 349
     sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     sub-float v3, v10, v15
@@ -1950,32 +1953,32 @@
 
     invoke-virtual {v4, v3, v2, v9, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 340
+    .line 350
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->mainPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v4, v5, v5, v1}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 341
+    .line 351
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 343
+    .line 353
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 344
+    .line 354
     invoke-static {v0, v1}, Ljava/lang/Math;->max(FF)F
 
     move-result v0
 
-    .line 345
+    .line 355
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cx:F
 
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     invoke-virtual {v8, v0, v0, v1, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 346
+    .line 356
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->outlinePaint:Landroid/graphics/Paint;
 
     const/4 v1, 0x3
@@ -1990,7 +1993,7 @@
 
     const/high16 v0, 0x42060000    # 33.5f
 
-    .line 347
+    .line 357
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v0
@@ -2019,7 +2022,7 @@
 
     move-result v0
 
-    .line 348
+    .line 358
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cx:F
 
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
@@ -2030,7 +2033,7 @@
 
     invoke-virtual {v8, v1, v2, v0, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 350
+    .line 360
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -2043,7 +2046,7 @@
 
     sub-long v9, v1, v9
 
-    .line 351
+    .line 361
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cx:F
 
     sub-float v2, v1, v0
@@ -2060,7 +2063,7 @@
 
     invoke-virtual {v4, v2, v5, v1, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 352
+    .line 362
     iget-boolean v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
     if-eqz v0, :cond_c
@@ -2085,7 +2088,7 @@
 
     mul-float v3, v0, v2
 
-    .line 355
+    .line 365
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoadingT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoading:Z
@@ -2094,7 +2097,7 @@
 
     move-result v0
 
-    .line 357
+    .line 367
     iget-object v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->outlineFilledPaint:Landroid/graphics/Paint;
 
     const/4 v5, 0x3
@@ -2107,7 +2110,7 @@
 
     invoke-virtual {v2, v5}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 358
+    .line 368
     iget-object v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->outlineFilledPaint:Landroid/graphics/Paint;
 
     const v5, 0x3f333333    # 0.7f
@@ -2142,7 +2145,7 @@
 
     const/4 v5, 0x0
 
-    .line 361
+    .line 371
     iget-object v6, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->outlineFilledPaint:Landroid/graphics/Paint;
 
     move-object/from16 v0, p1
@@ -2170,12 +2173,12 @@
 
     move-object/from16 v19, v4
 
-    .line 363
+    .line 373
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
 
-    .line 364
+    .line 374
     iget-wide v4, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoadingStart:J
 
     sub-long/2addr v1, v4
@@ -2190,10 +2193,10 @@
 
     invoke-static {v1, v2}, Lorg/telegram/ui/Components/CircularProgressDrawable;->getSegments(F[F)V
 
-    .line 365
+    .line 375
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
-    .line 366
+    .line 376
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->loadingSegments:[F
 
     const/4 v2, 0x0
@@ -2210,14 +2213,14 @@
 
     sub-float/2addr v1, v2
 
-    .line 369
+    .line 379
     invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
     move-result v1
 
     div-float v1, v1, v27
 
-    .line 371
+    .line 381
     iget-boolean v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoading:Z
 
     if-eqz v2, :cond_e
@@ -2228,12 +2231,12 @@
 
     add-float/2addr v2, v3
 
-    .line 372
+    .line 382
     invoke-static {v2, v4, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v4
 
-    .line 373
+    .line 383
     invoke-static {v3, v1, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v1
@@ -2245,7 +2248,7 @@
 
     const/4 v4, 0x0
 
-    .line 376
+    .line 386
     iget-object v5, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->outlineFilledPaint:Landroid/graphics/Paint;
 
     move-object/from16 v0, p1
@@ -2254,18 +2257,18 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
-    .line 379
+    .line 389
     :goto_c
     iget-boolean v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
     if-eqz v0, :cond_11
 
-    .line 380
+    .line 390
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
     const-wide/16 v0, 0x3e8
 
-    .line 382
+    .line 392
     div-long v2, v9, v0
 
     iget-wide v4, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->lastDuration:J
@@ -2276,7 +2279,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 383
+    .line 393
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {v0, v2, v3}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->onVideoDuration(J)V
@@ -2288,29 +2291,29 @@
 
     if-ltz v0, :cond_10
 
-    .line 386
+    .line 396
     new-instance v0, Lorg/telegram/ui/Stories/recorder/RecordControl$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, v7}, Lorg/telegram/ui/Stories/recorder/RecordControl$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Stories/recorder/RecordControl;)V
 
     invoke-virtual {v7, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    .line 398
+    .line 408
     :cond_10
     iput-wide v9, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->lastDuration:J
 
-    .line 401
+    .line 411
     :cond_11
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 403
+    .line 413
     iget-boolean v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->showLock:Z
 
     const/16 v9, 0x16
 
     if-eqz v0, :cond_12
 
-    .line 404
+    .line 414
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     const v1, 0x3e4ccccd    # 0.2f
@@ -2327,17 +2330,17 @@
 
     if-lez v2, :cond_12
 
-    .line 406
+    .line 416
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 407
+    .line 417
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->leftCx:F
 
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     invoke-virtual {v8, v0, v0, v1, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 408
+    .line 418
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->leftCx:F
 
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
@@ -2352,15 +2355,15 @@
 
     invoke-virtual {v8, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 409
+    .line 419
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->unlockDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 410
+    .line 420
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 414
+    .line 424
     :cond_12
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockButton:Lorg/telegram/ui/Components/ButtonBounce;
 
@@ -2382,25 +2385,25 @@
 
     if-lez v2, :cond_13
 
-    .line 416
+    .line 426
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 417
+    .line 427
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->leftCx:F
 
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     invoke-virtual {v8, v0, v0, v1, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 418
+    .line 428
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->galleryImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0, v8}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 419
+    .line 429
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 422
+    .line 432
     :cond_13
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->dualT:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -2426,10 +2429,10 @@
 
     if-lez v2, :cond_15
 
-    .line 424
+    .line 434
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 425
+    .line 435
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     const v2, 0x3e4ccccd    # 0.2f
@@ -2440,14 +2443,14 @@
 
     mul-float/2addr v1, v0
 
-    .line 426
+    .line 436
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->rightCx:F
 
     iget v3, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     invoke-virtual {v8, v1, v1, v2, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 427
+    .line 437
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableRotateT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableRotate:F
@@ -2462,7 +2465,7 @@
 
     invoke-virtual {v8, v1, v2, v3}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 428
+    .line 438
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->rightCx:F
 
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
@@ -2477,12 +2480,12 @@
 
     invoke-virtual {v8, v1, v2, v3, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 429
+    .line 439
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableBlack:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 430
+    .line 440
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_15
@@ -2492,10 +2495,10 @@
 
     if-gez v2, :cond_16
 
-    .line 433
+    .line 443
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 434
+    .line 444
     iget-object v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     const v3, 0x3e4ccccd    # 0.2f
@@ -2508,14 +2511,14 @@
 
     mul-float/2addr v2, v0
 
-    .line 435
+    .line 445
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->rightCx:F
 
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     invoke-virtual {v8, v2, v2, v0, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 436
+    .line 446
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableRotateT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableRotate:F
@@ -2530,7 +2533,7 @@
 
     invoke-virtual {v8, v0, v1, v2}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 437
+    .line 447
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->rightCx:F
 
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
@@ -2545,15 +2548,15 @@
 
     invoke-virtual {v8, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 438
+    .line 448
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableWhite:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 439
+    .line 449
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 443
+    .line 453
     :cond_16
     iget-boolean v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->longpressRecording:Z
 
@@ -2563,7 +2566,7 @@
 
     mul-float/2addr v0, v11
 
-    .line 449
+    .line 459
     invoke-static/range {v16 .. v16}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2572,7 +2575,7 @@
 
     const/16 v2, 0x8
 
-    .line 451
+    .line 461
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -2593,7 +2596,7 @@
 
     add-float/2addr v3, v2
 
-    .line 452
+    .line 462
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -2602,17 +2605,17 @@
 
     move/from16 v4, v24
 
-    .line 450
+    .line 460
     invoke-static {v3, v2, v4}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v2
 
-    .line 455
+    .line 465
     invoke-static {v4, v14}, Ljava/lang/Math;->max(FF)F
 
     move-result v3
 
-    .line 448
+    .line 458
     invoke-static {v1, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v1
@@ -2626,7 +2629,7 @@
     :cond_17
     const/4 v10, 0x0
 
-    .line 461
+    .line 471
     :goto_e
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockedT:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -2656,14 +2659,14 @@
 
     if-lez v16, :cond_1b
 
-    .line 463
+    .line 473
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->redPaint:Landroid/graphics/Paint;
 
     const/16 v1, 0xff
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 464
+    .line 474
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchX:F
 
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
@@ -2672,10 +2675,10 @@
 
     invoke-virtual {v8, v0, v1, v10, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 466
+    .line 476
     iget v6, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchX:F
 
-    .line 468
+    .line 478
     invoke-static/range {v18 .. v18}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -2698,7 +2701,7 @@
 
     sub-float v0, v22, v6
 
-    .line 469
+    .line 479
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v18
@@ -2741,7 +2744,7 @@
 
     float-to-double v2, v2
 
-    .line 475
+    .line 485
     invoke-static {v2, v3}, Ljava/lang/Math;->acos(D)D
 
     move-result-wide v2
@@ -2756,7 +2759,7 @@
 
     float-to-double v0, v0
 
-    .line 476
+    .line 486
     invoke-static {v0, v1}, Ljava/lang/Math;->acos(D)D
 
     move-result-wide v0
@@ -2791,7 +2794,7 @@
 
     float-to-double v9, v4
 
-    .line 482
+    .line 492
     invoke-static {v9, v10}, Ljava/lang/Math;->acos(D)D
 
     move-result-wide v9
@@ -2836,7 +2839,7 @@
 
     add-double v32, v32, v41
 
-    .line 489
+    .line 499
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     iget-object v11, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->p1:Lorg/telegram/ui/Components/Point;
@@ -2857,7 +2860,7 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Stories/recorder/RecordControl;->getVector(FFDFLorg/telegram/ui/Components/Point;)V
 
-    .line 490
+    .line 500
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     iget-object v6, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->p2:Lorg/telegram/ui/Components/Point;
@@ -2866,7 +2869,7 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Stories/recorder/RecordControl;->getVector(FFDFLorg/telegram/ui/Components/Point;)V
 
-    .line 491
+    .line 501
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     iget-object v6, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->p3:Lorg/telegram/ui/Components/Point;
@@ -2879,7 +2882,7 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Stories/recorder/RecordControl;->getVector(FFDFLorg/telegram/ui/Components/Point;)V
 
-    .line 492
+    .line 502
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     iget-object v6, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->p4:Lorg/telegram/ui/Components/Point;
@@ -2892,7 +2895,7 @@
 
     mul-float v5, v12, v0
 
-    .line 495
+    .line 505
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->p1:Lorg/telegram/ui/Components/Point;
 
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->p3:Lorg/telegram/ui/Components/Point;
@@ -2913,7 +2916,7 @@
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 496
+    .line 506
     invoke-static {v2, v1}, Ljava/lang/Math;->min(FF)F
 
     move-result v1
@@ -2924,7 +2927,7 @@
 
     mul-float v12, v34, v0
 
-    .line 501
+    .line 511
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->p1:Lorg/telegram/ui/Components/Point;
 
     iget v1, v0, Lorg/telegram/ui/Components/Point;->x:F
@@ -2943,7 +2946,7 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Stories/recorder/RecordControl;->getVector(FFDFLorg/telegram/ui/Components/Point;)V
 
-    .line 502
+    .line 512
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->p2:Lorg/telegram/ui/Components/Point;
 
     iget v1, v0, Lorg/telegram/ui/Components/Point;->x:F
@@ -2958,7 +2961,7 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Stories/recorder/RecordControl;->getVector(FFDFLorg/telegram/ui/Components/Point;)V
 
-    .line 503
+    .line 513
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->p3:Lorg/telegram/ui/Components/Point;
 
     iget v1, v0, Lorg/telegram/ui/Components/Point;->x:F
@@ -2975,7 +2978,7 @@
 
     invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Stories/recorder/RecordControl;->getVector(FFDFLorg/telegram/ui/Components/Point;)V
 
-    .line 504
+    .line 514
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->p4:Lorg/telegram/ui/Components/Point;
 
     iget v1, v0, Lorg/telegram/ui/Components/Point;->x:F
@@ -3002,12 +3005,12 @@
 
     if-lez v1, :cond_1c
 
-    .line 509
+    .line 519
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->metaballsPath:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 511
+    .line 521
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->metaballsPath:Landroid/graphics/Path;
 
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->p1:Lorg/telegram/ui/Components/Point;
@@ -3018,7 +3021,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/graphics/Path;->moveTo(FF)V
 
-    .line 512
+    .line 522
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->metaballsPath:Landroid/graphics/Path;
 
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->h1:Lorg/telegram/ui/Components/Point;
@@ -3055,7 +3058,7 @@
 
     invoke-virtual/range {v40 .. v46}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
-    .line 513
+    .line 523
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->metaballsPath:Landroid/graphics/Path;
 
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->p4:Lorg/telegram/ui/Components/Point;
@@ -3066,7 +3069,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 514
+    .line 524
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->metaballsPath:Landroid/graphics/Path;
 
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->h4:Lorg/telegram/ui/Components/Point;
@@ -3103,7 +3106,7 @@
 
     invoke-virtual/range {v40 .. v46}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
-    .line 515
+    .line 525
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->metaballsPath:Landroid/graphics/Path;
 
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->p1:Lorg/telegram/ui/Components/Point;
@@ -3114,7 +3117,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 517
+    .line 527
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->redPaint:Landroid/graphics/Paint;
 
     mul-float v13, v13, v21
@@ -3123,14 +3126,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 518
+    .line 528
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->metaballsPath:Landroid/graphics/Path;
 
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->redPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 520
+    .line 530
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     sub-float v1, v0, v15
@@ -3145,7 +3148,7 @@
 
     invoke-virtual {v2, v10, v1, v3, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 521
+    .line 531
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->redPaint:Landroid/graphics/Paint;
 
     move/from16 v1, v29
@@ -3169,7 +3172,7 @@
 
     if-lez v1, :cond_21
 
-    .line 526
+    .line 536
     :cond_1d
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockButton:Lorg/telegram/ui/Components/ButtonBounce;
 
@@ -3181,17 +3184,17 @@
 
     mul-float v0, v0, v39
 
-    .line 527
+    .line 537
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 528
+    .line 538
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->circlePath:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
 
     if-lez v16, :cond_1e
 
-    .line 530
+    .line 540
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->circlePath:Landroid/graphics/Path;
 
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchX:F
@@ -3211,12 +3214,12 @@
 
     if-lez v1, :cond_1f
 
-    .line 532
+    .line 542
     iget-boolean v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->showLock:Z
 
     if-eqz v1, :cond_1f
 
-    .line 533
+    .line 543
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->circlePath:Landroid/graphics/Path;
 
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->leftCx:F
@@ -3239,28 +3242,28 @@
 
     invoke-virtual {v1, v2, v3, v14, v4}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 535
+    .line 545
     :cond_1f
     iget-object v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->circlePath:Landroid/graphics/Path;
 
     invoke-virtual {v8, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 537
+    .line 547
     iget-boolean v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->showLock:Z
 
     if-eqz v1, :cond_20
 
-    .line 538
+    .line 548
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 539
+    .line 549
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->leftCx:F
 
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     invoke-virtual {v8, v0, v0, v1, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 540
+    .line 550
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->leftCx:F
 
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
@@ -3277,15 +3280,15 @@
 
     invoke-virtual {v8, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 541
+    .line 551
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 542
+    .line 552
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 545
+    .line 555
     :cond_20
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButton:Lorg/telegram/ui/Components/ButtonBounce;
 
@@ -3295,17 +3298,17 @@
 
     move-result v0
 
-    .line 546
+    .line 556
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 547
+    .line 557
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->rightCx:F
 
     iget v2, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     invoke-virtual {v8, v0, v0, v1, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 548
+    .line 558
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableRotateT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableRotate:F
@@ -3320,7 +3323,7 @@
 
     invoke-virtual {v8, v0, v1, v2}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 549
+    .line 559
     iget v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->rightCx:F
 
     iget v1, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
@@ -3337,15 +3340,15 @@
 
     invoke-virtual {v8, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 550
+    .line 560
     iget-object v0, v7, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableBlack:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 551
+    .line 561
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 553
+    .line 563
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_21
@@ -3355,14 +3358,14 @@
 .method protected onMeasure(II)V
     .locals 5
 
-    .line 209
+    .line 219
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
     const/16 p2, 0x64
 
-    .line 210
+    .line 220
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -3373,19 +3376,19 @@
 
     div-float v2, v0, v1
 
-    .line 212
+    .line 222
     iput v2, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->cx:F
 
     int-to-float v2, p2
 
     div-float/2addr v2, v1
 
-    .line 213
+    .line 223
     iput v2, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     const/16 v1, 0x87
 
-    .line 215
+    .line 225
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -3400,7 +3403,7 @@
 
     move-result v0
 
-    .line 216
+    .line 226
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->cx:F
 
     sub-float v2, v1, v0
@@ -3409,10 +3412,10 @@
 
     add-float/2addr v1, v0
 
-    .line 217
+    .line 227
     iput v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->rightCx:F
 
-    .line 219
+    .line 229
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableWhite:Landroid/graphics/drawable/Drawable;
 
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
@@ -3427,7 +3430,7 @@
 
     invoke-static {v0, v1, v2, v4}, Lorg/telegram/ui/Stories/recorder/RecordControl;->setDrawableBounds(Landroid/graphics/drawable/Drawable;FFF)V
 
-    .line 220
+    .line 230
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableBlack:Landroid/graphics/drawable/Drawable;
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->rightCx:F
@@ -3442,7 +3445,7 @@
 
     invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/recorder/RecordControl;->setDrawableBounds(Landroid/graphics/drawable/Drawable;FFF)V
 
-    .line 221
+    .line 231
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->unlockDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->leftCx:F
@@ -3451,7 +3454,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/RecordControl;->setDrawableBounds(Landroid/graphics/drawable/Drawable;FF)V
 
-    .line 222
+    .line 232
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->leftCx:F
@@ -3460,7 +3463,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/RecordControl;->setDrawableBounds(Landroid/graphics/drawable/Drawable;FF)V
 
-    .line 223
+    .line 233
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->pauseDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->leftCx:F
@@ -3469,7 +3472,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/RecordControl;->setDrawableBounds(Landroid/graphics/drawable/Drawable;FF)V
 
-    .line 224
+    .line 234
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->galleryImage:Lorg/telegram/messenger/ImageReceiver;
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->leftCx:F
@@ -3510,12 +3513,12 @@
 
     invoke-virtual {v0, v1, v3, v4, v2}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 226
+    .line 236
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->redMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    .line 227
+    .line 237
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->redMatrix:Landroid/graphics/Matrix;
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->cx:F
@@ -3524,14 +3527,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 228
+    .line 238
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->redGradient:Landroid/graphics/RadialGradient;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->redMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/graphics/RadialGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 230
+    .line 240
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
@@ -3540,12 +3543,12 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 14
 
-    .line 599
+    .line 609
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
-    .line 601
+    .line 611
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v1
@@ -3568,7 +3571,7 @@
 
     add-float/2addr p1, v2
 
-    .line 603
+    .line 613
     iget v8, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->rightCx:F
 
     iget v9, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
@@ -3593,24 +3596,24 @@
 
     move-result v3
 
-    .line 604
+    .line 614
     iget-boolean v4, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoading:Z
 
     const/4 v12, 0x0
 
     if-eqz v4, :cond_0
 
-    .line 605
+    .line 615
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v4, v12}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 606
+    .line 616
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v4, v12}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 607
+    .line 617
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v4, v12}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
@@ -3620,12 +3623,12 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 608
+    .line 618
     iget-boolean v4, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->touch:Z
 
     if-eqz v4, :cond_2
 
-    .line 609
+    .line 619
     :cond_1
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordButton:Lorg/telegram/ui/Components/ButtonBounce;
 
@@ -3655,7 +3658,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 610
+    .line 620
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     iget v8, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->rightCx:F
@@ -3680,7 +3683,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 611
+    .line 621
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     iget v8, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->leftCx:F
@@ -3709,10 +3712,10 @@
 
     if-nez v0, :cond_6
 
-    .line 616
+    .line 626
     iput-boolean v4, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->touch:Z
 
-    .line 617
+    .line 627
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ButtonBounce;->isPressed()Z
@@ -3735,13 +3738,13 @@
     :cond_4
     iput-boolean v12, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->discardParentTouch:Z
 
-    .line 618
+    .line 628
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    .line 619
+    .line 629
     iput v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchX:F
 
-    .line 622
+    .line 632
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->cx:F
 
     sub-float/2addr v1, p1
@@ -3762,7 +3765,7 @@
 
     if-gez p1, :cond_5
 
-    .line 623
+    .line 633
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->onRecordLongPressRunnable:Ljava/lang/Runnable;
 
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
@@ -3773,7 +3776,7 @@
 
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 626
+    .line 636
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButton:Lorg/telegram/ui/Components/ButtonBounce;
 
@@ -3783,7 +3786,7 @@
 
     if-eqz p1, :cond_9
 
-    .line 627
+    .line 637
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->onFlipLongPressRunnable:Ljava/lang/Runnable;
 
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
@@ -3805,14 +3808,14 @@
 
     if-ne v0, v5, :cond_a
 
-    .line 632
+    .line 642
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->touch:Z
 
     if-nez v0, :cond_7
 
     return v12
 
-    .line 635
+    .line 645
     :cond_7
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->rightCx:F
 
@@ -3824,10 +3827,10 @@
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->touchX:F
 
-    .line 637
+    .line 647
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 639
+    .line 649
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
     if-eqz v0, :cond_8
@@ -3838,15 +3841,15 @@
 
     if-eqz v3, :cond_8
 
-    .line 640
+    .line 650
     invoke-virtual {p0, v6}, Lorg/telegram/ui/Stories/recorder/RecordControl;->rotateFlip(F)V
 
-    .line 641
+    .line 651
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {v0}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->onFlipClick()V
 
-    .line 644
+    .line 654
     :cond_8
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
@@ -3856,7 +3859,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 645
+    .line 655
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->cy:F
 
     const/16 v1, 0x30
@@ -3871,7 +3874,7 @@
 
     sub-float/2addr v0, p1
 
-    .line 646
+    .line 656
     sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget p1, p1, Landroid/graphics/Point;->y:I
@@ -3888,7 +3891,7 @@
 
     move-result p1
 
-    .line 647
+    .line 657
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {v0, p1}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->onZoom(F)V
@@ -3906,7 +3909,7 @@
 
     if-ne v0, p1, :cond_14
 
-    .line 652
+    .line 662
     :cond_b
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->touch:Z
 
@@ -3914,24 +3917,24 @@
 
     return v12
 
-    .line 656
+    .line 666
     :cond_c
     iput-boolean v12, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->touch:Z
 
-    .line 657
+    .line 667
     iput-boolean v12, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->discardParentTouch:Z
 
-    .line 659
+    .line 669
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->onRecordLongPressRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 660
+    .line 670
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->onFlipLongPressRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 662
+    .line 672
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
     if-nez p1, :cond_d
@@ -3944,14 +3947,14 @@
 
     if-eqz p1, :cond_d
 
-    .line 663
+    .line 673
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {p1}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->onGalleryClick()V
 
     goto/16 :goto_2
 
-    .line 664
+    .line 674
     :cond_d
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
@@ -3961,7 +3964,7 @@
 
     if-eqz p1, :cond_f
 
-    .line 665
+    .line 675
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ButtonBounce;->isPressed()Z
@@ -3970,43 +3973,43 @@
 
     if-eqz p1, :cond_e
 
-    .line 666
+    .line 676
     iput-boolean v12, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->longpressRecording:Z
 
-    .line 667
+    .line 677
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockedT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {p1, v7, v4}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
 
-    .line 668
+    .line 678
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {p1}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->onVideoRecordLocked()V
 
     goto :goto_2
 
-    .line 670
+    .line 680
     :cond_e
     iput-boolean v12, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
-    .line 671
+    .line 681
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoadingStart:J
 
-    .line 672
+    .line 682
     iput-boolean v4, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoading:Z
 
-    .line 673
+    .line 683
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {p1, v12}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->onVideoRecordEnd(Z)V
 
     goto :goto_2
 
-    .line 675
+    .line 685
     :cond_f
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordButton:Lorg/telegram/ui/Components/ButtonBounce;
 
@@ -4016,7 +4019,7 @@
 
     if-eqz p1, :cond_12
 
-    .line 676
+    .line 686
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->startModeIsVideo:Z
 
     if-nez p1, :cond_10
@@ -4029,20 +4032,20 @@
 
     if-nez p1, :cond_10
 
-    .line 677
+    .line 687
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {p1}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->onPhotoShoot()V
 
     goto :goto_2
 
-    .line 678
+    .line 688
     :cond_10
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
     if-nez p1, :cond_11
 
-    .line 679
+    .line 689
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {p1}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->canRecordAudio()Z
@@ -4053,20 +4056,20 @@
 
     const-wide/16 v0, 0x0
 
-    .line 680
+    .line 690
     iput-wide v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->lastDuration:J
 
-    .line 681
+    .line 691
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingStart:J
 
-    .line 682
+    .line 692
     iput-boolean v12, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->showLock:Z
 
-    .line 683
+    .line 693
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     new-instance v0, Lorg/telegram/ui/Stories/recorder/RecordControl$$ExternalSyntheticLambda0;
@@ -4077,31 +4080,31 @@
 
     goto :goto_2
 
-    .line 691
+    .line 701
     :cond_11
     iput-boolean v12, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
-    .line 692
+    .line 702
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoadingStart:J
 
-    .line 693
+    .line 703
     iput-boolean v4, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoading:Z
 
-    .line 694
+    .line 704
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {p1, v12}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->onVideoRecordEnd(Z)V
 
-    .line 698
+    .line 708
     :cond_12
     :goto_2
     iput-boolean v12, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->longpressRecording:Z
 
-    .line 700
+    .line 710
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ButtonBounce;->isPressed()Z
@@ -4110,36 +4113,36 @@
 
     if-eqz p1, :cond_13
 
-    .line 701
+    .line 711
     invoke-virtual {p0, v6}, Lorg/telegram/ui/Stories/recorder/RecordControl;->rotateFlip(F)V
 
-    .line 702
+    .line 712
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {p1}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->onFlipClick()V
 
-    .line 705
+    .line 715
     :cond_13
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {p1, v12}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 706
+    .line 716
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {p1, v12}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 707
+    .line 717
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {p1, v12}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 709
+    .line 719
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     goto/16 :goto_1
 
-    .line 713
+    .line 723
     :cond_14
     :goto_3
     iput-boolean v3, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButtonWasPressed:Z
@@ -4150,7 +4153,7 @@
 .method public rotateFlip(F)V
     .locals 3
 
-    .line 568
+    .line 578
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableRotateT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/high16 v1, 0x43340000    # 180.0f
@@ -4169,14 +4172,14 @@
     :goto_0
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedFloat;->setDuration(J)V
 
-    .line 569
+    .line 579
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableRotate:F
 
     add-float/2addr v0, p1
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableRotate:F
 
-    .line 570
+    .line 580
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -4185,7 +4188,7 @@
 .method public setDelegate(Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;)V
     .locals 0
 
-    .line 78
+    .line 79
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     return-void
@@ -4194,18 +4197,106 @@
 .method public setDual(Z)V
     .locals 1
 
-    .line 590
+    .line 600
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->dual:Z
 
     if-eq p1, v0, :cond_0
 
-    .line 591
+    .line 601
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->dual:Z
 
-    .line 592
+    .line 602
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_0
+    return-void
+.end method
+
+.method public setInvert(F)V
+    .locals 6
+
+    .line 206
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->outlinePaint:Landroid/graphics/Paint;
+
+    const/4 v1, -0x1
+
+    const/high16 v2, -0x1000000
+
+    invoke-static {v1, v2, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+
+    move-result v3
+
+    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 207
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->buttonPaint:Landroid/graphics/Paint;
+
+    const/high16 v3, 0x64000000
+
+    const/high16 v4, 0x16000000
+
+    invoke-static {v3, v4, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+
+    move-result v3
+
+    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 208
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->hintLinePaintWhite:Landroid/graphics/Paint;
+
+    const v3, 0x58ffffff
+
+    const v4, 0x10ffffff
+
+    invoke-static {v3, v4, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+
+    move-result v3
+
+    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 209
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->hintLinePaintBlack:Landroid/graphics/Paint;
+
+    const/high16 v3, 0x18000000
+
+    const/high16 v4, 0x30000000
+
+    invoke-static {v3, v4, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+
+    move-result v3
+
+    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 210
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipDrawableWhite:Landroid/graphics/drawable/Drawable;
+
+    new-instance v3, Landroid/graphics/PorterDuffColorFilter;
+
+    invoke-static {v1, v2, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+
+    move-result v4
+
+    sget-object v5, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v3, v4, v5}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+    .line 211
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->unlockDrawable:Landroid/graphics/drawable/Drawable;
+
+    new-instance v3, Landroid/graphics/PorterDuffColorFilter;
+
+    invoke-static {v1, v2, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+
+    move-result p1
+
+    sget-object v1, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v3, p1, v1}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
     return-void
 .end method
 
@@ -4214,13 +4305,13 @@
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 67
+    .line 68
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->overrideStartModeIsVideoT:F
 
-    .line 68
+    .line 69
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->startModeIsVideo:Z
 
-    .line 69
+    .line 70
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -4229,10 +4320,10 @@
 .method public startAsVideoT(F)V
     .locals 0
 
-    .line 73
+    .line 74
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->overrideStartModeIsVideoT:F
 
-    .line 74
+    .line 75
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -4241,7 +4332,7 @@
 .method public stopRecording()V
     .locals 3
 
-    .line 718
+    .line 728
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
     if-nez v0, :cond_0
@@ -4251,10 +4342,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 721
+    .line 731
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recording:Z
 
-    .line 722
+    .line 732
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v1
@@ -4263,30 +4354,30 @@
 
     const/4 v1, 0x1
 
-    .line 723
+    .line 733
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoading:Z
 
-    .line 724
+    .line 734
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->delegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-interface {v1, v0}, Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;->onVideoRecordEnd(Z)V
 
-    .line 725
+    .line 735
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 726
+    .line 736
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->flipButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 727
+    .line 737
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->lockButton:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 728
+    .line 738
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -4297,19 +4388,19 @@
 
     const/4 v0, 0x0
 
-    .line 732
+    .line 742
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoading:Z
 
     if-nez p1, :cond_0
 
-    .line 734
+    .line 744
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/RecordControl;->recordingLoadingT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/4 v1, 0x1
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/AnimatedFloat;->set(ZZ)F
 
-    .line 736
+    .line 746
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -4321,7 +4412,7 @@
 
     move-object/from16 v0, p0
 
-    .line 167
+    .line 168
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/RecordControl;->galleryImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->getCurrentAccount()I
@@ -4342,7 +4433,7 @@
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/DraftsController;->drafts:Ljava/util/ArrayList;
 
-    .line 168
+    .line 169
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/RecordControl;->galleryImage:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v3, 0x0
@@ -4353,7 +4444,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 169
+    .line 170
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v2
@@ -4370,7 +4461,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 170
+    .line 171
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/RecordControl;->galleryImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4409,7 +4500,7 @@
 
     return-void
 
-    .line 173
+    .line 174
     :cond_0
     sget-object v1, Lorg/telegram/messenger/MediaController;->allMediaAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
@@ -4417,7 +4508,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 175
+    .line 176
     iget-object v5, v1, Lorg/telegram/messenger/MediaController$AlbumEntry;->photos:Ljava/util/ArrayList;
 
     if-eqz v5, :cond_1
@@ -4428,7 +4519,7 @@
 
     if-nez v5, :cond_1
 
-    .line 176
+    .line 177
     iget-object v1, v1, Lorg/telegram/messenger/MediaController$AlbumEntry;->photos:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4442,12 +4533,12 @@
     :cond_1
     if-eqz v2, :cond_2
 
-    .line 178
+    .line 179
     iget-object v1, v2, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
 
     if-eqz v1, :cond_2
 
-    .line 179
+    .line 180
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/RecordControl;->galleryImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static {v1}, Lorg/telegram/messenger/ImageLocation;->getForPath(Ljava/lang/String;)Lorg/telegram/messenger/ImageLocation;
@@ -4477,19 +4568,19 @@
     :cond_2
     if-eqz v2, :cond_4
 
-    .line 180
+    .line 181
     iget-object v1, v2, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
     if-eqz v1, :cond_4
 
-    .line 181
+    .line 182
     iget-boolean v1, v2, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     const-string v3, ":"
 
     if-eqz v1, :cond_3
 
-    .line 182
+    .line 183
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/RecordControl;->galleryImage:Lorg/telegram/messenger/ImageReceiver;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4538,7 +4629,7 @@
 
     goto :goto_0
 
-    .line 184
+    .line 185
     :cond_3
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/RecordControl;->galleryImage:Lorg/telegram/messenger/ImageReceiver;
 
@@ -4548,7 +4639,7 @@
 
     invoke-virtual {v1, v5, v6, v4}, Lorg/telegram/messenger/ImageReceiver;->setOrientation(IIZ)V
 
-    .line 185
+    .line 186
     iget-object v7, v0, Lorg/telegram/ui/Stories/recorder/RecordControl;->galleryImage:Lorg/telegram/messenger/ImageReceiver;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -4597,7 +4688,7 @@
 
     goto :goto_0
 
-    .line 188
+    .line 189
     :cond_4
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/RecordControl;->galleryImage:Lorg/telegram/messenger/ImageReceiver;
 

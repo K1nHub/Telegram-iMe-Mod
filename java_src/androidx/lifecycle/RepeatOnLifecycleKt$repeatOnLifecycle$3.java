@@ -13,7 +13,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.Dispatchers;
 import kotlinx.coroutines.MainCoroutineDispatcher;
 /* compiled from: RepeatOnLifecycle.kt */
-@DebugMetadata(m143c = "androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3", m142f = "RepeatOnLifecycle.kt", m141l = {84}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3", m144f = "RepeatOnLifecycle.kt", m143l = {84}, m142m = "invokeSuspend")
 /* loaded from: classes.dex */
 final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<CoroutineScope, Continuation<? super Unit>, Object> $block;
@@ -46,10 +46,10 @@ final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implem
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: RepeatOnLifecycle.kt */
-    @DebugMetadata(m143c = "androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1", m142f = "RepeatOnLifecycle.kt", m141l = {166}, m140m = "invokeSuspend")
+    @DebugMetadata(m145c = "androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1", m144f = "RepeatOnLifecycle.kt", m143l = {166}, m142m = "invokeSuspend")
     /* renamed from: androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1 */
     /* loaded from: classes.dex */
-    public static final class C02241 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C02301 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ CoroutineScope $$this$coroutineScope;
         final /* synthetic */ Function2<CoroutineScope, Continuation<? super Unit>, Object> $block;
         final /* synthetic */ Lifecycle.State $state;
@@ -64,7 +64,7 @@ final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implem
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
-        C02241(Lifecycle lifecycle, Lifecycle.State state, CoroutineScope coroutineScope, Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super C02241> continuation) {
+        C02301(Lifecycle lifecycle, Lifecycle.State state, CoroutineScope coroutineScope, Function2<? super CoroutineScope, ? super Continuation<? super Unit>, ? extends Object> function2, Continuation<? super C02301> continuation) {
             super(2, continuation);
             this.$this_repeatOnLifecycle = lifecycle;
             this.$state = state;
@@ -74,12 +74,12 @@ final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implem
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C02241(this.$this_repeatOnLifecycle, this.$state, this.$$this$coroutineScope, this.$block, continuation);
+            return new C02301(this.$this_repeatOnLifecycle, this.$state, this.$$this$coroutineScope, this.$block, continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((C02241) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C02301) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         /* JADX WARN: Removed duplicated region for block: B:35:0x00cd  */
@@ -95,7 +95,7 @@ final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implem
                 Method dump skipped, instructions count: 221
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3.C02241.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3.C02301.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 
@@ -108,9 +108,9 @@ final class RepeatOnLifecycleKt$repeatOnLifecycle$3 extends SuspendLambda implem
             ResultKt.throwOnFailure(obj);
             CoroutineScope coroutineScope = (CoroutineScope) this.L$0;
             MainCoroutineDispatcher immediate = Dispatchers.getMain().getImmediate();
-            C02241 c02241 = new C02241(this.$this_repeatOnLifecycle, this.$state, coroutineScope, this.$block, null);
+            C02301 c02301 = new C02301(this.$this_repeatOnLifecycle, this.$state, coroutineScope, this.$block, null);
             this.label = 1;
-            if (BuildersKt.withContext(immediate, c02241, this) == coroutine_suspended) {
+            if (BuildersKt.withContext(immediate, c02301, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

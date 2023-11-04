@@ -8,22 +8,30 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/SendMessagesHelper;
 
-.field public final synthetic f$1:Ljava/lang/String;
+.field public final synthetic f$1:Ljava/util/ArrayList;
 
-.field public final synthetic f$2:Ljava/util/List;
+.field public final synthetic f$2:J
+
+.field public final synthetic f$3:Landroid/net/Uri;
+
+.field public final synthetic f$4:Lorg/telegram/messenger/MessagesStorage$LongCallback;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/SendMessagesHelper;Ljava/lang/String;Ljava/util/List;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/SendMessagesHelper;Ljava/util/ArrayList;JLandroid/net/Uri;Lorg/telegram/messenger/MessagesStorage$LongCallback;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$0:Lorg/telegram/messenger/SendMessagesHelper;
 
-    iput-object p2, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$1:Ljava/lang/String;
+    iput-object p2, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$1:Ljava/util/ArrayList;
 
-    iput-object p3, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$2:Ljava/util/List;
+    iput-wide p3, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$2:J
+
+    iput-object p5, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$3:Landroid/net/Uri;
+
+    iput-object p6, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$4:Lorg/telegram/messenger/MessagesStorage$LongCallback;
 
     return-void
 .end method
@@ -31,15 +39,19 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$0:Lorg/telegram/messenger/SendMessagesHelper;
 
-    iget-object v1, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$1:Ljava/lang/String;
+    iget-object v1, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$1:Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$2:Ljava/util/List;
+    iget-wide v2, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$2:J
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$kzPy3_HTk2tJvuM5WYdH6-98Yh4(Lorg/telegram/messenger/SendMessagesHelper;Ljava/lang/String;Ljava/util/List;)V
+    iget-object v4, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$3:Landroid/net/Uri;
+
+    iget-object v5, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda30;->f$4:Lorg/telegram/messenger/MessagesStorage$LongCallback;
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$iLqvqDgreGv4bkGs0qfxGeFPGxg(Lorg/telegram/messenger/SendMessagesHelper;Ljava/util/ArrayList;JLandroid/net/Uri;Lorg/telegram/messenger/MessagesStorage$LongCallback;)V
 
     return-void
 .end method

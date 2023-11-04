@@ -2,40 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;
+.implements Landroidx/core/util/Consumer;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+.field public final synthetic f$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ReactedUsersListView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda138;->f$0:Lorg/telegram/ui/ChatActivity;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda138;->f$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSelectCloudDialog(J)V
+.method public final accept(Ljava/lang/Object;)V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda138;->f$0:Lorg/telegram/ui/ChatActivity;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda138;->f$0:Lorg/telegram/ui/Components/ReactedUsersListView;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$K_Ppa121MIUghCVzgLGMKfkUXdc(Lorg/telegram/ui/ChatActivity;J)V
+    check-cast p1, Ljava/util/List;
 
-    return-void
-.end method
-
-.method public synthetic onAlbumCreatorOpened()V
-    .locals 0
-
-    invoke-static {p0}, Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate$-CC;->$default$onAlbumCreatorOpened(Lcom/iMe/fork/ui/dialog/ForwardCloudBottomSheet$Delegate;)V
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/ReactedUsersListView;->setSeenUsers(Ljava/util/List;)Lorg/telegram/ui/Components/ReactedUsersListView;
 
     return-void
 .end method

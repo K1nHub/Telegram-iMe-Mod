@@ -15,20 +15,20 @@
 
 
 # instance fields
-.field public storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field public storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
 .field public uploadingStory:Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
 
 # direct methods
-.method public constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsView;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsView;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 0
 
     .line 505
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 506
-    iput-object p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     return-void
 .end method

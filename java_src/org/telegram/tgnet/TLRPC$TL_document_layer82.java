@@ -1,11 +1,9 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_document_layer82 extends TLRPC$TL_document {
-    public static int constructor = -2027738169;
-
     @Override // org.telegram.tgnet.TLRPC$TL_document, org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1608id = abstractSerializedData.readInt64(z);
+        this.f1610id = abstractSerializedData.readInt64(z);
         this.access_hash = abstractSerializedData.readInt64(z);
         this.date = abstractSerializedData.readInt32(z);
         this.mime_type = abstractSerializedData.readString(z);
@@ -32,8 +30,8 @@ public class TLRPC$TL_document_layer82 extends TLRPC$TL_document {
 
     @Override // org.telegram.tgnet.TLRPC$TL_document, org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1608id);
+        abstractSerializedData.writeInt32(-2027738169);
+        abstractSerializedData.writeInt64(this.f1610id);
         abstractSerializedData.writeInt64(this.access_hash);
         abstractSerializedData.writeInt32(this.date);
         abstractSerializedData.writeString(this.mime_type);

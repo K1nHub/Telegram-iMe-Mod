@@ -13,7 +13,7 @@ import kotlinx.serialization.json.JsonElement;
 import kotlinx.serialization.json.JsonPrimitive;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: JsonTreeReader.kt */
-@DebugMetadata(m143c = "kotlinx.serialization.json.internal.JsonTreeReader$readDeepRecursive$1", m142f = "JsonTreeReader.kt", m141l = {112}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "kotlinx.serialization.json.internal.JsonTreeReader$readDeepRecursive$1", m144f = "JsonTreeReader.kt", m143l = {112}, m142m = "invokeSuspend")
 /* loaded from: classes4.dex */
 public final class JsonTreeReader$readDeepRecursive$1 extends RestrictedSuspendLambda implements Function3<DeepRecursiveScope<Unit, JsonElement>, Unit, Continuation<? super JsonElement>, Object> {
     private /* synthetic */ Object L$0;

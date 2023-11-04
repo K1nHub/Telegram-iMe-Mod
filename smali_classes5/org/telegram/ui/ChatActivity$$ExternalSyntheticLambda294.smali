@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/MessagesStorage$IntCallback;
+.implements Lj$/util/function/ToIntFunction;
 
 
 # instance fields
@@ -22,12 +22,16 @@
 
 
 # virtual methods
-.method public final run(I)V
+.method public final applyAsInt(Ljava/lang/Object;)I
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda294;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$CV9E3bQst9kfFux3wo6KqbLIDGY(Lorg/telegram/ui/ChatActivity;I)V
+    check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    return-void
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$L2hIOnEye_yaYzcILLi4XwfnW30(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;)I
+
+    move-result p1
+
+    return p1
 .end method

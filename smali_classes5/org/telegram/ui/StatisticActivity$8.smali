@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity;)V
     .locals 0
 
-    .line 564
+    .line 585
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$8;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 567
+    .line 588
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$8;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/StatisticActivity;->access$400(Lorg/telegram/ui/StatisticActivity;)Ljava/util/ArrayList;
@@ -58,7 +58,7 @@
 
     if-eq p1, p2, :cond_0
 
-    .line 568
+    .line 589
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$8;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/StatisticActivity;->access$600(Lorg/telegram/ui/StatisticActivity;)Z
@@ -91,7 +91,7 @@
 
     if-le p1, p2, :cond_0
 
-    .line 569
+    .line 590
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$8;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/StatisticActivity;->access$800(Lorg/telegram/ui/StatisticActivity;)V

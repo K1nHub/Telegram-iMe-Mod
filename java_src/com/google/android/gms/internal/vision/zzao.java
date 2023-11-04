@@ -11,23 +11,23 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzao extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzao> CREATOR = new zzar();
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     public final zzab zza;
-    @SafeParcelable.Field(m1089id = 5)
+    @SafeParcelable.Field(m1090id = 5)
     public final String zzb;
-    @SafeParcelable.Field(m1089id = 7)
+    @SafeParcelable.Field(m1090id = 7)
     public final String zzc;
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     private final zzal[] zzd;
-    @SafeParcelable.Field(m1089id = 4)
+    @SafeParcelable.Field(m1090id = 4)
     private final zzab zze;
-    @SafeParcelable.Field(m1089id = 6)
+    @SafeParcelable.Field(m1090id = 6)
     private final float zzf;
-    @SafeParcelable.Field(m1089id = 8)
+    @SafeParcelable.Field(m1090id = 8)
     private final boolean zzg;
 
     @SafeParcelable.Constructor
-    public zzao(@SafeParcelable.Param(m1088id = 2) zzal[] zzalVarArr, @SafeParcelable.Param(m1088id = 3) zzab zzabVar, @SafeParcelable.Param(m1088id = 4) zzab zzabVar2, @SafeParcelable.Param(m1088id = 5) String str, @SafeParcelable.Param(m1088id = 6) float f, @SafeParcelable.Param(m1088id = 7) String str2, @SafeParcelable.Param(m1088id = 8) boolean z) {
+    public zzao(@SafeParcelable.Param(m1089id = 2) zzal[] zzalVarArr, @SafeParcelable.Param(m1089id = 3) zzab zzabVar, @SafeParcelable.Param(m1089id = 4) zzab zzabVar2, @SafeParcelable.Param(m1089id = 5) String str, @SafeParcelable.Param(m1089id = 6) float f, @SafeParcelable.Param(m1089id = 7) String str2, @SafeParcelable.Param(m1089id = 8) boolean z) {
         this.zzd = zzalVarArr;
         this.zza = zzabVar;
         this.zze = zzabVar2;

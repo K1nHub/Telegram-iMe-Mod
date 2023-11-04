@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;FZF)V
     .locals 0
 
-    .line 16211
+    .line 16289
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$80;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput p2, p0, Lorg/telegram/ui/DialogsActivity$80;->val$fromScrollY:F
@@ -46,7 +46,7 @@
 
     float-to-int p1, p2
 
-    .line 16213
+    .line 16291
     iput p1, p0, Lorg/telegram/ui/DialogsActivity$80;->currentValue:I
 
     return-void
@@ -57,7 +57,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
 
-    .line 16217
+    .line 16295
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$80;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -72,12 +72,12 @@
 
     iput v1, v0, Lorg/telegram/ui/DialogsActivity;->progressToShowStories:F
 
-    .line 16218
+    .line 16296
     iget-boolean v0, p0, Lorg/telegram/ui/DialogsActivity$80;->val$newVisibility:Z
 
     if-nez v0, :cond_0
 
-    .line 16219
+    .line 16297
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$80;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -88,7 +88,7 @@
 
     iput v1, v0, Lorg/telegram/ui/DialogsActivity;->progressToShowStories:F
 
-    .line 16221
+    .line 16299
     :cond_0
     iget v0, p0, Lorg/telegram/ui/DialogsActivity$80;->val$fromScrollY:F
 
@@ -110,15 +110,15 @@
 
     float-to-int p1, p1
 
-    .line 16222
+    .line 16300
     iget v0, p0, Lorg/telegram/ui/DialogsActivity$80;->currentValue:I
 
     sub-int v0, p1, v0
 
-    .line 16223
+    .line 16301
     iput p1, p0, Lorg/telegram/ui/DialogsActivity$80;->currentValue:I
 
-    .line 16224
+    .line 16302
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$80;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$1400(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -133,7 +133,7 @@
 
     invoke-virtual {p1, v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->scrollBy(II)V
 
-    .line 16225
+    .line 16303
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$80;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$41800(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
@@ -142,7 +142,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 16226
+    .line 16304
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$80;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$41900(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;

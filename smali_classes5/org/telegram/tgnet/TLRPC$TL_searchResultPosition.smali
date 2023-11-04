@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x7f648b67
-
-
 # instance fields
 .field public date:I
 
@@ -16,16 +12,10 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 40874
+    .line 41238
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -34,8 +24,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;
     .locals 1
 
-    .line 40882
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;->constructor:I
+    const v0, 0x7f648b67
 
     if-eq v0, p1, :cond_1
 
@@ -45,7 +34,7 @@
 
     return-object p0
 
-    .line 40884
+    .line 41248
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -71,13 +60,13 @@
 
     throw p0
 
-    .line 40889
+    .line 41253
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;-><init>()V
 
-    .line 40890
+    .line 41254
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -88,21 +77,21 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 40895
+    .line 41259
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;->msg_id:I
 
-    .line 40896
+    .line 41260
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;->date:I
 
-    .line 40897
+    .line 41261
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -115,22 +104,22 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 40901
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;->constructor:I
+    const v0, 0x7f648b67
 
+    .line 41265
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 40902
+    .line 41266
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;->msg_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 40903
+    .line 41267
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;->date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 40904
+    .line 41268
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;->offset:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

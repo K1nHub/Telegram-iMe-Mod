@@ -24,7 +24,7 @@ import android.util.Log;
 import com.caverock.androidsvg.CSSParser;
 import com.caverock.androidsvg.PreserveAspectRatio;
 import com.caverock.androidsvg.SVG;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -1024,7 +1024,7 @@ public class SVGAndroidRenderer {
         private TextProcessor(SVGAndroidRenderer sVGAndroidRenderer) {
         }
 
-        /* synthetic */ TextProcessor(SVGAndroidRenderer sVGAndroidRenderer, C04631 c04631) {
+        /* synthetic */ TextProcessor(SVGAndroidRenderer sVGAndroidRenderer, C04691 c04691) {
             this(sVGAndroidRenderer);
         }
     }
@@ -1206,7 +1206,7 @@ public class SVGAndroidRenderer {
             this.f159x = BitmapDescriptorFactory.HUE_RED;
         }
 
-        /* synthetic */ TextWidthCalculator(SVGAndroidRenderer sVGAndroidRenderer, C04631 c04631) {
+        /* synthetic */ TextWidthCalculator(SVGAndroidRenderer sVGAndroidRenderer, C04691 c04691) {
             this();
         }
 
@@ -1459,7 +1459,7 @@ public class SVGAndroidRenderer {
             float r2 = r2 / r1
             float r5 = r10.height
             float r5 = r5 / r1
-            int[] r6 = com.caverock.androidsvg.SVGAndroidRenderer.C04631.$SwitchMap$com$caverock$androidsvg$PreserveAspectRatio$Alignment
+            int[] r6 = com.caverock.androidsvg.SVGAndroidRenderer.C04691.$SwitchMap$com$caverock$androidsvg$PreserveAspectRatio$Alignment
             com.caverock.androidsvg.PreserveAspectRatio$Alignment r7 = r12.getAlignment()
             int r7 = r7.ordinal()
             r7 = r6[r7]
@@ -1571,7 +1571,7 @@ public class SVGAndroidRenderer {
         }
         if (isSpecified(style, 64L)) {
             rendererState.style.strokeLineCap = style.strokeLineCap;
-            int i = C04631.$SwitchMap$com$caverock$androidsvg$SVG$Style$LineCap[style.strokeLineCap.ordinal()];
+            int i = C04691.$SwitchMap$com$caverock$androidsvg$SVG$Style$LineCap[style.strokeLineCap.ordinal()];
             if (i == 1) {
                 rendererState.strokePaint.setStrokeCap(Paint.Cap.BUTT);
             } else if (i == 2) {
@@ -1582,7 +1582,7 @@ public class SVGAndroidRenderer {
         }
         if (isSpecified(style, 128L)) {
             rendererState.style.strokeLineJoin = style.strokeLineJoin;
-            int i2 = C04631.$SwitchMap$com$caverock$androidsvg$SVG$Style$LineJoin[style.strokeLineJoin.ordinal()];
+            int i2 = C04691.$SwitchMap$com$caverock$androidsvg$SVG$Style$LineJoin[style.strokeLineJoin.ordinal()];
             if (i2 == 1) {
                 rendererState.strokePaint.setStrokeJoin(Paint.Join.MITER);
             } else if (i2 == 2) {
@@ -1662,7 +1662,7 @@ public class SVGAndroidRenderer {
             }
             if (typeface == null) {
                 SVG.Style style6 = rendererState.style;
-                typeface = checkGenericFont(C0479C.SERIF_NAME, style6.fontWeight, style6.fontStyle);
+                typeface = checkGenericFont(C0485C.SERIF_NAME, style6.fontWeight, style6.fontStyle);
             }
             rendererState.fillPaint.setTypeface(typeface);
             rendererState.strokePaint.setTypeface(typeface);
@@ -1738,7 +1738,7 @@ public class SVGAndroidRenderer {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.caverock.androidsvg.SVGAndroidRenderer$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C04631 {
+    public static /* synthetic */ class C04691 {
         static final /* synthetic */ int[] $SwitchMap$com$caverock$androidsvg$PreserveAspectRatio$Alignment;
         static final /* synthetic */ int[] $SwitchMap$com$caverock$androidsvg$SVG$Style$LineCap;
         static final /* synthetic */ int[] $SwitchMap$com$caverock$androidsvg$SVG$Style$LineJoin;

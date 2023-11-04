@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.Log;
@@ -27,10 +27,10 @@ public final class Loader implements LoaderErrorThrower {
     private LoadTask<? extends Loadable> currentTask;
     private final ExecutorService downloadExecutorService;
     private IOException fatalError;
-    public static final LoadErrorAction RETRY = createRetryAction(false, C0479C.TIME_UNSET);
-    public static final LoadErrorAction RETRY_RESET_ERROR_COUNT = createRetryAction(true, C0479C.TIME_UNSET);
-    public static final LoadErrorAction DONT_RETRY = new LoadErrorAction(2, C0479C.TIME_UNSET);
-    public static final LoadErrorAction DONT_RETRY_FATAL = new LoadErrorAction(3, C0479C.TIME_UNSET);
+    public static final LoadErrorAction RETRY = createRetryAction(false, C0485C.TIME_UNSET);
+    public static final LoadErrorAction RETRY_RESET_ERROR_COUNT = createRetryAction(true, C0485C.TIME_UNSET);
+    public static final LoadErrorAction DONT_RETRY = new LoadErrorAction(2, C0485C.TIME_UNSET);
+    public static final LoadErrorAction DONT_RETRY_FATAL = new LoadErrorAction(3, C0485C.TIME_UNSET);
 
     /* loaded from: classes.dex */
     public interface Callback<T extends Loadable> {
@@ -252,7 +252,7 @@ public final class Loader implements LoaderErrorThrower {
                 obtainMessage(2, e).sendToTarget();
             } catch (Error e2) {
                 if (!this.released) {
-                    Log.m1109e(TAG, "Unexpected error loading stream", e2);
+                    Log.m1110e(TAG, "Unexpected error loading stream", e2);
                     obtainMessage(3, e2).sendToTarget();
                 }
                 throw e2;
@@ -260,13 +260,13 @@ public final class Loader implements LoaderErrorThrower {
                 if (this.released) {
                     return;
                 }
-                Log.m1109e(TAG, "Unexpected exception loading stream", e3);
+                Log.m1110e(TAG, "Unexpected exception loading stream", e3);
                 obtainMessage(2, new UnexpectedLoaderException(e3)).sendToTarget();
             } catch (OutOfMemoryError e4) {
                 if (this.released) {
                     return;
                 }
-                Log.m1109e(TAG, "OutOfMemory error loading stream", e4);
+                Log.m1110e(TAG, "OutOfMemory error loading stream", e4);
                 obtainMessage(2, new UnexpectedLoaderException(e4)).sendToTarget();
             }
         }
@@ -296,7 +296,7 @@ public final class Loader implements LoaderErrorThrower {
                     try {
                         callback.onLoadCompleted(this.loadable, elapsedRealtime, j);
                     } catch (RuntimeException e) {
-                        Log.m1109e(TAG, "Unexpected exception handling load completed", e);
+                        Log.m1110e(TAG, "Unexpected exception handling load completed", e);
                         Loader.this.fatalError = new UnexpectedLoaderException(e);
                     }
                 } else if (i2 != 2) {
@@ -311,7 +311,7 @@ public final class Loader implements LoaderErrorThrower {
                             if (onLoadError.type == 1) {
                                 this.errorCount = 1;
                             }
-                            if (onLoadError.retryDelayMillis != C0479C.TIME_UNSET) {
+                            if (onLoadError.retryDelayMillis != C0485C.TIME_UNSET) {
                                 retryDelayMillis = onLoadError.retryDelayMillis;
                             } else {
                                 retryDelayMillis = getRetryDelayMillis();

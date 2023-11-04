@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.upstream.cache;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import java.io.File;
 /* loaded from: classes.dex */
 public class CacheSpan implements Comparable<CacheSpan> {
@@ -12,7 +12,7 @@ public class CacheSpan implements Comparable<CacheSpan> {
     public final long position;
 
     public CacheSpan(String str, long j, long j2) {
-        this(str, j, j2, C0479C.TIME_UNSET, null);
+        this(str, j, j2, C0485C.TIME_UNSET, null);
     }
 
     public CacheSpan(String str, long j, long j2, long j3, File file) {

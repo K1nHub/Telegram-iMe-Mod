@@ -406,7 +406,7 @@ public final class DeserializedClassDescriptor extends AbstractClassDescriptor i
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
     /* renamed from: getUnsubstitutedPrimaryConstructor */
-    public ClassConstructorDescriptor mo2040getUnsubstitutedPrimaryConstructor() {
+    public ClassConstructorDescriptor mo2045getUnsubstitutedPrimaryConstructor() {
         return this.primaryConstructor.invoke();
     }
 
@@ -416,7 +416,7 @@ public final class DeserializedClassDescriptor extends AbstractClassDescriptor i
         List plus;
         List plus2;
         List<ClassConstructorDescriptor> computeSecondaryConstructors = computeSecondaryConstructors();
-        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(mo2040getUnsubstitutedPrimaryConstructor());
+        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(mo2045getUnsubstitutedPrimaryConstructor());
         plus = CollectionsKt___CollectionsKt.plus((Collection) computeSecondaryConstructors, (Iterable) listOfNotNull);
         plus2 = CollectionsKt___CollectionsKt.plus((Collection) plus, (Iterable) this.f1386c.getComponents().getAdditionalClassPartsProvider().getConstructors(this));
         return plus2;
@@ -464,9 +464,9 @@ public final class DeserializedClassDescriptor extends AbstractClassDescriptor i
     /* JADX INFO: Access modifiers changed from: private */
     public final ClassDescriptor computeCompanionObjectDescriptor() {
         if (this.classProto.hasCompanionObjectName()) {
-            ClassifierDescriptor mo2048getContributedClassifier = getMemberScope().mo2048getContributedClassifier(NameResolverUtilKt.getName(this.f1386c.getNameResolver(), this.classProto.getCompanionObjectName()), NoLookupLocation.FROM_DESERIALIZATION);
-            if (mo2048getContributedClassifier instanceof ClassDescriptor) {
-                return (ClassDescriptor) mo2048getContributedClassifier;
+            ClassifierDescriptor mo2053getContributedClassifier = getMemberScope().mo2053getContributedClassifier(NameResolverUtilKt.getName(this.f1386c.getNameResolver(), this.classProto.getCompanionObjectName()), NoLookupLocation.FROM_DESERIALIZATION);
+            if (mo2053getContributedClassifier instanceof ClassDescriptor) {
+                return (ClassDescriptor) mo2053getContributedClassifier;
             }
             return null;
         }
@@ -475,7 +475,7 @@ public final class DeserializedClassDescriptor extends AbstractClassDescriptor i
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
     /* renamed from: getCompanionObjectDescriptor */
-    public ClassDescriptor mo2039getCompanionObjectDescriptor() {
+    public ClassDescriptor mo2044getCompanionObjectDescriptor() {
         return this.companionObjectDescriptor.invoke();
     }
 
@@ -529,11 +529,11 @@ public final class DeserializedClassDescriptor extends AbstractClassDescriptor i
             if (this.metadataVersion.isAtLeast(1, 5, 1)) {
                 return null;
             }
-            ClassConstructorDescriptor mo2040getUnsubstitutedPrimaryConstructor = mo2040getUnsubstitutedPrimaryConstructor();
-            if (mo2040getUnsubstitutedPrimaryConstructor == null) {
+            ClassConstructorDescriptor mo2045getUnsubstitutedPrimaryConstructor = mo2045getUnsubstitutedPrimaryConstructor();
+            if (mo2045getUnsubstitutedPrimaryConstructor == null) {
                 throw new IllegalStateException(("Inline class has no primary constructor: " + this).toString());
             }
-            List<ValueParameterDescriptor> valueParameters = mo2040getUnsubstitutedPrimaryConstructor.getValueParameters();
+            List<ValueParameterDescriptor> valueParameters = mo2045getUnsubstitutedPrimaryConstructor.getValueParameters();
             Intrinsics.checkNotNullExpressionValue(valueParameters, "constructor.valueParameters");
             Name name = ((ValueParameterDescriptor) CollectionsKt.first((List<? extends Object>) valueParameters)).getName();
             Intrinsics.checkNotNullExpressionValue(name, "constructor.valueParameters.first().name");
@@ -668,8 +668,8 @@ public final class DeserializedClassDescriptor extends AbstractClassDescriptor i
             plus = CollectionsKt___CollectionsKt.plus((Collection) arrayList, (Iterable) DeserializedClassDescriptor.this.getC().getComponents().getAdditionalClassPartsProvider().getSupertypes(DeserializedClassDescriptor.this));
             ArrayList<NotFoundClasses.MockClassDescriptor> arrayList2 = new ArrayList();
             for (KotlinType kotlinType : plus) {
-                ClassifierDescriptor mo2046getDeclarationDescriptor = kotlinType.getConstructor().mo2046getDeclarationDescriptor();
-                NotFoundClasses.MockClassDescriptor mockClassDescriptor = mo2046getDeclarationDescriptor instanceof NotFoundClasses.MockClassDescriptor ? (NotFoundClasses.MockClassDescriptor) mo2046getDeclarationDescriptor : null;
+                ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
+                NotFoundClasses.MockClassDescriptor mockClassDescriptor = mo2051getDeclarationDescriptor instanceof NotFoundClasses.MockClassDescriptor ? (NotFoundClasses.MockClassDescriptor) mo2051getDeclarationDescriptor : null;
                 if (mockClassDescriptor != null) {
                     arrayList2.add(mockClassDescriptor);
                 }
@@ -699,7 +699,7 @@ public final class DeserializedClassDescriptor extends AbstractClassDescriptor i
 
         @Override // kotlin.reflect.jvm.internal.impl.types.ClassifierBasedTypeConstructor, kotlin.reflect.jvm.internal.impl.types.TypeConstructor
         /* renamed from: getDeclarationDescriptor */
-        public DeserializedClassDescriptor mo2046getDeclarationDescriptor() {
+        public DeserializedClassDescriptor mo2051getDeclarationDescriptor() {
             return DeserializedClassDescriptor.this;
         }
 
@@ -872,9 +872,9 @@ public final class DeserializedClassDescriptor extends AbstractClassDescriptor i
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope
         public Set<Name> getNonDeclaredFunctionNames() {
-            List<KotlinType> mo2047getSupertypes = getClassDescriptor().typeConstructor.mo2047getSupertypes();
+            List<KotlinType> mo2052getSupertypes = getClassDescriptor().typeConstructor.mo2052getSupertypes();
             LinkedHashSet linkedHashSet = new LinkedHashSet();
-            for (KotlinType kotlinType : mo2047getSupertypes) {
+            for (KotlinType kotlinType : mo2052getSupertypes) {
                 CollectionsKt__MutableCollectionsKt.addAll(linkedHashSet, kotlinType.getMemberScope().getFunctionNames());
             }
             linkedHashSet.addAll(getC().getComponents().getAdditionalClassPartsProvider().getFunctionsNames(this.this$0));
@@ -884,9 +884,9 @@ public final class DeserializedClassDescriptor extends AbstractClassDescriptor i
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope
         public Set<Name> getNonDeclaredVariableNames() {
-            List<KotlinType> mo2047getSupertypes = getClassDescriptor().typeConstructor.mo2047getSupertypes();
+            List<KotlinType> mo2052getSupertypes = getClassDescriptor().typeConstructor.mo2052getSupertypes();
             LinkedHashSet linkedHashSet = new LinkedHashSet();
-            for (KotlinType kotlinType : mo2047getSupertypes) {
+            for (KotlinType kotlinType : mo2052getSupertypes) {
                 CollectionsKt__MutableCollectionsKt.addAll(linkedHashSet, kotlinType.getMemberScope().getVariableNames());
             }
             return linkedHashSet;
@@ -895,9 +895,9 @@ public final class DeserializedClassDescriptor extends AbstractClassDescriptor i
         /* JADX INFO: Access modifiers changed from: protected */
         @Override // kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope
         public Set<Name> getNonDeclaredClassifierNames() {
-            List<KotlinType> mo2047getSupertypes = getClassDescriptor().typeConstructor.mo2047getSupertypes();
+            List<KotlinType> mo2052getSupertypes = getClassDescriptor().typeConstructor.mo2052getSupertypes();
             LinkedHashSet linkedHashSet = new LinkedHashSet();
-            for (KotlinType kotlinType : mo2047getSupertypes) {
+            for (KotlinType kotlinType : mo2052getSupertypes) {
                 Set<Name> classifierNames = kotlinType.getMemberScope().getClassifierNames();
                 if (classifierNames == null) {
                     return null;
@@ -909,13 +909,13 @@ public final class DeserializedClassDescriptor extends AbstractClassDescriptor i
 
         @Override // kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope, kotlin.reflect.jvm.internal.impl.resolve.scopes.MemberScopeImpl, kotlin.reflect.jvm.internal.impl.resolve.scopes.ResolutionScope
         /* renamed from: getContributedClassifier */
-        public ClassifierDescriptor mo2048getContributedClassifier(Name name, LookupLocation location) {
+        public ClassifierDescriptor mo2053getContributedClassifier(Name name, LookupLocation location) {
             ClassDescriptor findEnumEntry;
             Intrinsics.checkNotNullParameter(name, "name");
             Intrinsics.checkNotNullParameter(location, "location");
             recordLookup(name, location);
             EnumEntryClassDescriptors enumEntryClassDescriptors = getClassDescriptor().enumEntries;
-            return (enumEntryClassDescriptors == null || (findEnumEntry = enumEntryClassDescriptors.findEnumEntry(name)) == null) ? super.mo2048getContributedClassifier(name, location) : findEnumEntry;
+            return (enumEntryClassDescriptors == null || (findEnumEntry = enumEntryClassDescriptors.findEnumEntry(name)) == null) ? super.mo2053getContributedClassifier(name, location) : findEnumEntry;
         }
 
         @Override // kotlin.reflect.jvm.internal.impl.serialization.deserialization.descriptors.DeserializedMemberScope
@@ -1030,7 +1030,7 @@ public final class DeserializedClassDescriptor extends AbstractClassDescriptor i
         public final Set<Name> computeEnumMemberNames() {
             Set<Name> plus;
             HashSet hashSet = new HashSet();
-            for (KotlinType kotlinType : DeserializedClassDescriptor.this.getTypeConstructor().mo2047getSupertypes()) {
+            for (KotlinType kotlinType : DeserializedClassDescriptor.this.getTypeConstructor().mo2052getSupertypes()) {
                 for (DeclarationDescriptor declarationDescriptor : ResolutionScope.DefaultImpls.getContributedDescriptors$default(kotlinType.getMemberScope(), null, null, 3, null)) {
                     if ((declarationDescriptor instanceof SimpleFunctionDescriptor) || (declarationDescriptor instanceof PropertyDescriptor)) {
                         hashSet.add(declarationDescriptor.getName());

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;-><init>(Ljava/lang/String;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;)V
+    value = Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;-><init>(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,23 +26,27 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCreateWalletIntroFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletIntroFragment.kt\ncom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,372:1\n56#2,6:373\n*S KotlinDebug\n*F\n+ 1 CreateWalletIntroFragment.kt\ncom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2\n*L\n62#1:373,6\n*E\n"
+    value = "SMAP\nCreateWalletIntroFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CreateWalletIntroFragment.kt\ncom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,376:1\n56#2,6:377\n*S KotlinDebug\n*F\n+ 1 CreateWalletIntroFragment.kt\ncom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2\n*L\n64#1:377,6\n*E\n"
 .end annotation
 
 
 # instance fields
 .field final synthetic $linkedWalletAddress:Ljava/lang/String;
 
+.field final synthetic $manualBlockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
 .field final synthetic this$0:Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;
 
 
 # direct methods
-.method constructor <init>(Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;Ljava/lang/String;)V
+.method constructor <init>(Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/lang/String;)V
     .locals 0
 
     iput-object p1, p0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;
 
-    iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2;->$linkedWalletAddress:Ljava/lang/String;
+    iput-object p2, p0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2;->$manualBlockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    iput-object p3, p0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2;->$linkedWalletAddress:Ljava/lang/String;
 
     const/4 p1, 0x0
 
@@ -56,14 +60,16 @@
 .method public final invoke()Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroPresenter;
     .locals 5
 
-    .line 62
+    .line 64
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2;->this$0:Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;
 
     new-instance v1, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2$1;
 
-    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2;->$linkedWalletAddress:Ljava/lang/String;
+    iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2;->$manualBlockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    invoke-direct {v1, v2, v0}, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2$1;-><init>(Ljava/lang/String;Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;)V
+    iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2;->$linkedWalletAddress:Ljava/lang/String;
+
+    invoke-direct {v1, v2, v3, v0}, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2$1;-><init>(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/lang/String;Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;)V
 
     .line 58
     sget-object v2, Lorg/koin/mp/KoinPlatformTools;->INSTANCE:Lorg/koin/mp/KoinPlatformTools;
@@ -83,7 +89,7 @@
 
     move-result-object v0
 
-    .line 67
+    .line 70
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
 
     move-result-object v0
@@ -96,7 +102,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 61
+    .line 63
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$presenter$2;->invoke()Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroPresenter;
 
     move-result-object v0

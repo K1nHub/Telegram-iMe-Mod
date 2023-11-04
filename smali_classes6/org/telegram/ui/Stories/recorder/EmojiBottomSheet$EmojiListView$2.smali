@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;Landroid/content/Context;I)V
     .locals 0
 
-    .line 1799
+    .line 1797
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$2;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;
 
     invoke-direct {p0, p2, p3}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;-><init>(Landroid/content/Context;I)V
@@ -35,7 +35,7 @@
 .method public onEnd()V
     .locals 2
 
-    .line 1802
+    .line 1800
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$2;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;
 
     const/4 v1, 0x0
@@ -48,7 +48,7 @@
 .method protected onStart()V
     .locals 2
 
-    .line 1806
+    .line 1804
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$2;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;
 
     const/4 v1, 0x1

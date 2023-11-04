@@ -91,7 +91,7 @@ public final class McStateExtra$$serializer implements GeneratedSerializer<McSta
         }
         beginStructure.endStructure(descriptor2);
         ShardHashes shardHashes = (ShardHashes) obj2;
-        return new McStateExtra(i, shardHashes != null ? shardHashes.m5033unboximpl() : null, (ConfigParams) obj4, (CellRef) obj, (CurrencyCollection) obj3, null, null);
+        return new McStateExtra(i, shardHashes != null ? shardHashes.m5187unboximpl() : null, (ConfigParams) obj4, (CellRef) obj, (CurrencyCollection) obj3, null, null);
     }
 
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy

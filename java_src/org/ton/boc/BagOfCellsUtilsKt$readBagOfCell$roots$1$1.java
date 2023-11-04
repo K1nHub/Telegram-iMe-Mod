@@ -12,7 +12,7 @@ import kotlinx.coroutines.CoroutineScope;
 import org.ton.cell.Cell;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BagOfCellsUtils.kt */
-@DebugMetadata(m143c = "org.ton.boc.BagOfCellsUtilsKt$readBagOfCell$roots$1$1", m142f = "BagOfCellsUtils.kt", m141l = {126}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.ton.boc.BagOfCellsUtilsKt$readBagOfCell$roots$1$1", m144f = "BagOfCellsUtils.kt", m143l = {126}, m142m = "invokeSuspend")
 /* loaded from: classes6.dex */
 public final class BagOfCellsUtilsKt$readBagOfCell$roots$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Cell>, Object> {
     final /* synthetic */ CompletableDeferred<Cell>[] $cells;

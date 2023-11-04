@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;Lorg/telegram/ui/DialogsActivity$ContentView;)V
     .locals 0
 
-    .line 5470
+    .line 5519
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$14;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$14;->val$contentView:Lorg/telegram/ui/DialogsActivity$ContentView;
@@ -39,7 +39,7 @@
 .method public setTranslationX(F)V
     .locals 3
 
-    .line 5473
+    .line 5522
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTranslationX()F
 
     move-result v0
@@ -48,10 +48,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 5474
+    .line 5523
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 5475
+    .line 5524
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$14;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$5700(Lorg/telegram/ui/DialogsActivity;)Z
@@ -60,7 +60,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 5476
+    .line 5525
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$14;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$1400(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -73,7 +73,7 @@
 
     if-ne p1, p0, :cond_0
 
-    .line 5477
+    .line 5526
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$14;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$1400(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
@@ -106,7 +106,7 @@
 
     div-float/2addr p1, v0
 
-    .line 5478
+    .line 5527
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$14;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$1200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/FilterTabsView;
@@ -129,7 +129,7 @@
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/Components/FilterTabsView;->selectTabWithId(IF)V
 
-    .line 5481
+    .line 5530
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$14;->val$contentView:Lorg/telegram/ui/DialogsActivity$ContentView;
 

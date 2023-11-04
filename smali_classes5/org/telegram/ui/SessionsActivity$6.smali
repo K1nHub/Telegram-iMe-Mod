@@ -77,17 +77,17 @@
 .method constructor <init>(Lorg/telegram/ui/SessionsActivity;)V
     .locals 0
 
-    .line 1167
+    .line 1171
     iput-object p1, p0, Lorg/telegram/ui/SessionsActivity$6;->this$0:Lorg/telegram/ui/SessionsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 1169
+    .line 1173
     iput-object p1, p0, Lorg/telegram/ui/SessionsActivity$6;->response:Lorg/telegram/tgnet/TLObject;
 
-    .line 1170
+    .line 1174
     iput-object p1, p0, Lorg/telegram/ui/SessionsActivity$6;->error:Lorg/telegram/tgnet/TLRPC$TL_error;
 
     return-void
@@ -96,7 +96,7 @@
 .method private synthetic lambda$didFindQr$0(Ljava/lang/String;)V
     .locals 0
 
-    .line 1176
+    .line 1180
     invoke-virtual {p0, p1}, Lorg/telegram/ui/SessionsActivity$6;->didFindQr(Ljava/lang/String;)V
 
     return-void
@@ -105,7 +105,7 @@
 .method private synthetic lambda$didFindQr$1()V
     .locals 4
 
-    .line 1195
+    .line 1199
     iget-object v0, p0, Lorg/telegram/ui/SessionsActivity$6;->error:Lorg/telegram/tgnet/TLRPC$TL_error;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
@@ -120,7 +120,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1196
+    .line 1200
     sget v0, Lorg/telegram/messenger/R$string;->AccountAlreadyLoggedIn:I
 
     const-string v1, "AccountAlreadyLoggedIn"
@@ -131,7 +131,7 @@
 
     goto :goto_0
 
-    .line 1198
+    .line 1202
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -161,7 +161,7 @@
 
     move-result-object v0
 
-    .line 1200
+    .line 1204
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/SessionsActivity$6;->this$0:Lorg/telegram/ui/SessionsActivity;
 
@@ -181,13 +181,13 @@
 .method private synthetic lambda$processQr$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 1219
+    .line 1223
     iput-object p1, p0, Lorg/telegram/ui/SessionsActivity$6;->response:Lorg/telegram/tgnet/TLObject;
 
-    .line 1220
+    .line 1224
     iput-object p2, p0, Lorg/telegram/ui/SessionsActivity$6;->error:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    .line 1221
+    .line 1225
     invoke-interface {p3}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -196,7 +196,7 @@
 .method private synthetic lambda$processQr$3(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 1218
+    .line 1222
     new-instance v0, Lorg/telegram/ui/SessionsActivity$6$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, p0, p2, p3, p1}, Lorg/telegram/ui/SessionsActivity$6$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/SessionsActivity$6;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/Runnable;)V
@@ -209,7 +209,7 @@
 .method private synthetic lambda$processQr$4()V
     .locals 4
 
-    .line 1226
+    .line 1230
     iget-object v0, p0, Lorg/telegram/ui/SessionsActivity$6;->this$0:Lorg/telegram/ui/SessionsActivity;
 
     sget v1, Lorg/telegram/messenger/R$string;->AuthAnotherClient:I
@@ -238,7 +238,7 @@
 
     const/16 v0, 0x11
 
-    .line 1212
+    .line 1216
     :try_start_0
     invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
@@ -248,7 +248,7 @@
 
     const-string v1, "_"
 
-    .line 1213
+    .line 1217
     invoke-virtual {p1, v0, v1}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -257,27 +257,27 @@
 
     const-string v1, "-"
 
-    .line 1214
+    .line 1218
     invoke-virtual {p1, v0, v1}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     const/16 v0, 0x8
 
-    .line 1215
+    .line 1219
     invoke-static {p1, v0}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
 
     move-result-object p1
 
-    .line 1216
+    .line 1220
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_auth_acceptLoginToken;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_auth_acceptLoginToken;-><init>()V
 
-    .line 1217
+    .line 1221
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_auth_acceptLoginToken;->token:[B
 
-    .line 1218
+    .line 1222
     iget-object p1, p0, Lorg/telegram/ui/SessionsActivity$6;->this$0:Lorg/telegram/ui/SessionsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -299,17 +299,17 @@
 
     const-string v0, "Failed to pass qr code auth"
 
-    .line 1224
+    .line 1228
     invoke-static {v0, p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 1225
+    .line 1229
     new-instance p1, Lorg/telegram/ui/SessionsActivity$6$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/SessionsActivity$6$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/SessionsActivity$6;)V
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1228
+    .line 1232
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
     :goto_0
@@ -329,7 +329,7 @@
 .method public didFindQr(Ljava/lang/String;)V
     .locals 4
 
-    .line 1175
+    .line 1179
     iget-object v0, p0, Lorg/telegram/ui/SessionsActivity$6;->response:Lorg/telegram/tgnet/TLObject;
 
     if-nez v0, :cond_0
@@ -338,7 +338,7 @@
 
     if-nez v1, :cond_0
 
-    .line 1176
+    .line 1180
     new-instance v0, Lorg/telegram/ui/SessionsActivity$6$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/SessionsActivity$6$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/SessionsActivity$6;Ljava/lang/String;)V
@@ -347,18 +347,18 @@
 
     return-void
 
-    .line 1180
+    .line 1184
     :cond_0
     instance-of p1, v0, Lorg/telegram/tgnet/TLRPC$TL_authorization;
 
     if-eqz p1, :cond_2
 
-    .line 1181
+    .line 1185
     move-object p1, v0
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_authorization;
 
-    .line 1182
+    .line 1186
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_authorization;
 
     iget-boolean v0, v0, Lorg/telegram/tgnet/TLRPC$TL_authorization;->password_pending:Z
@@ -367,7 +367,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1183
+    .line 1187
     iget-object v0, p0, Lorg/telegram/ui/SessionsActivity$6;->this$0:Lorg/telegram/ui/SessionsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/SessionsActivity;->access$300(Lorg/telegram/ui/SessionsActivity;)Ljava/util/ArrayList;
@@ -376,21 +376,21 @@
 
     invoke-virtual {v0, v1, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 1184
+    .line 1188
     iget-object p1, p0, Lorg/telegram/ui/SessionsActivity$6;->this$0:Lorg/telegram/ui/SessionsActivity;
 
     const/4 v0, 0x4
 
     invoke-static {p1, v0}, Lorg/telegram/ui/SessionsActivity;->access$3702(Lorg/telegram/ui/SessionsActivity;I)I
 
-    .line 1185
+    .line 1189
     iget-object p1, p0, Lorg/telegram/ui/SessionsActivity$6;->this$0:Lorg/telegram/ui/SessionsActivity;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/SessionsActivity;->loadSessions(Z)V
 
     goto :goto_0
 
-    .line 1187
+    .line 1191
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/SessionsActivity$6;->this$0:Lorg/telegram/ui/SessionsActivity;
 
@@ -400,13 +400,13 @@
 
     invoke-virtual {v0, v1, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 1189
+    .line 1193
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/SessionsActivity$6;->this$0:Lorg/telegram/ui/SessionsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/SessionsActivity;->access$400(Lorg/telegram/ui/SessionsActivity;)V
 
-    .line 1190
+    .line 1194
     iget-object p1, p0, Lorg/telegram/ui/SessionsActivity$6;->this$0:Lorg/telegram/ui/SessionsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/SessionsActivity;->access$500(Lorg/telegram/ui/SessionsActivity;)Lorg/telegram/ui/SessionsActivity$ListAdapter;
@@ -415,7 +415,7 @@
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 1191
+    .line 1195
     iget-object p1, p0, Lorg/telegram/ui/SessionsActivity$6;->this$0:Lorg/telegram/ui/SessionsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/SessionsActivity;->access$3800(Lorg/telegram/ui/SessionsActivity;)Lorg/telegram/ui/Components/UndoView;
@@ -432,13 +432,13 @@
 
     goto :goto_1
 
-    .line 1192
+    .line 1196
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/SessionsActivity$6;->error:Lorg/telegram/tgnet/TLRPC$TL_error;
 
     if-eqz p1, :cond_3
 
-    .line 1193
+    .line 1197
     new-instance p1, Lorg/telegram/ui/SessionsActivity$6$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/SessionsActivity$6$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/SessionsActivity$6;)V
@@ -473,13 +473,13 @@
 
     const/4 v0, 0x0
 
-    .line 1208
+    .line 1212
     iput-object v0, p0, Lorg/telegram/ui/SessionsActivity$6;->response:Lorg/telegram/tgnet/TLObject;
 
-    .line 1209
+    .line 1213
     iput-object v0, p0, Lorg/telegram/ui/SessionsActivity$6;->error:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    .line 1210
+    .line 1214
     new-instance v0, Lorg/telegram/ui/SessionsActivity$6$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/SessionsActivity$6$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/SessionsActivity$6;Ljava/lang/String;Ljava/lang/Runnable;)V

@@ -13,6 +13,7 @@
         Lorg/telegram/messenger/Utilities$Callback3Return;,
         Lorg/telegram/messenger/Utilities$Callback2Return;,
         Lorg/telegram/messenger/Utilities$CallbackReturn;,
+        Lorg/telegram/messenger/Utilities$Callback0Return;,
         Lorg/telegram/messenger/Utilities$CallbackVoidReturn;,
         Lorg/telegram/messenger/Utilities$Callback;
     }
@@ -1419,12 +1420,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 585
+    .line 589
     array-length v0, p1
 
     if-le v0, p0, :cond_0
 
-    .line 586
+    .line 590
     aget-object v0, p1, p0
 
     new-instance v1, Lorg/telegram/messenger/Utilities$$ExternalSyntheticLambda0;
@@ -1450,7 +1451,7 @@
 
     const/4 v0, 0x0
 
-    .line 582
+    .line 586
     invoke-static {v0, p0}, Lorg/telegram/messenger/Utilities;->doCallbacks(I[Lorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
@@ -1623,12 +1624,12 @@
 .method public static getOrCreatePlayerQueue()Lorg/telegram/messenger/DispatchQueue;
     .locals 2
 
-    .line 612
+    .line 616
     sget-object v0, Lorg/telegram/messenger/Utilities;->videoPlayerQueue:Lorg/telegram/messenger/DispatchQueue;
 
     if-nez v0, :cond_0
 
-    .line 613
+    .line 617
     new-instance v0, Lorg/telegram/messenger/DispatchQueue;
 
     const-string/jumbo v1, "playerQueue"
@@ -1637,7 +1638,7 @@
 
     sput-object v0, Lorg/telegram/messenger/Utilities;->videoPlayerQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    .line 615
+    .line 619
     :cond_0
     sget-object v0, Lorg/telegram/messenger/Utilities;->videoPlayerQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -1658,7 +1659,7 @@
         }
     .end annotation
 
-    .line 574
+    .line 578
     invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -2060,7 +2061,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 619
+    .line 623
     invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
 
     move-result p0
@@ -2087,7 +2088,7 @@
 
     add-int/lit8 p0, p0, 0x1
 
-    .line 586
+    .line 590
     invoke-static {p0, p1}, Lorg/telegram/messenger/Utilities;->doCallbacks(I[Lorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
@@ -2098,14 +2099,14 @@
 
     const/4 v0, 0x0
 
-    .line 599
+    .line 603
     aget v1, p0, v0
 
     add-int/lit8 v1, v1, 0x1
 
     aput v1, p0, v0
 
-    .line 600
+    .line 604
     aget p0, p0, v0
 
     array-length p1, p1
@@ -2114,7 +2115,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 602
+    .line 606
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -2403,7 +2404,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 591
+    .line 595
     array-length v0, p1
 
     if-nez v0, :cond_0
@@ -2419,18 +2420,18 @@
 
     aput v1, v0, v1
 
-    .line 598
+    .line 602
     new-instance v2, Lorg/telegram/messenger/Utilities$$ExternalSyntheticLambda1;
 
     invoke-direct {v2, v0, p1, p0}, Lorg/telegram/messenger/Utilities$$ExternalSyntheticLambda1;-><init>([I[Lorg/telegram/messenger/Utilities$Callback;Ljava/lang/Runnable;)V
 
-    .line 606
+    .line 610
     :goto_0
     array-length p0, p1
 
     if-ge v1, p0, :cond_1
 
-    .line 607
+    .line 611
     aget-object p0, p1, v1
 
     invoke-interface {p0, v2}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
@@ -2446,7 +2447,7 @@
     :goto_1
     if-eqz p0, :cond_3
 
-    .line 593
+    .line 597
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     :cond_3

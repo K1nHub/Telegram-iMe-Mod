@@ -17,14 +17,14 @@ public final class ValidatorInfoTlbConstructor extends org.ton.tlb.TlbConstructo
     public void storeTlb(CellBuilder cellBuilder, ValidatorInfo value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m5051getValidatorListHashShortpVg5ArA());
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m5050getCatchainSeqnopVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5205getValidatorListHashShortpVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5204getCatchainSeqnopVg5ArA());
         cellBuilder.storeBit(value.getNxCcUpdated());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public ValidatorInfo loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new ValidatorInfo(cellSlice.mo5066loadUInt32pVg5ArA(), cellSlice.mo5066loadUInt32pVg5ArA(), cellSlice.loadBit(), null);
+        return new ValidatorInfo(cellSlice.mo5220loadUInt32pVg5ArA(), cellSlice.mo5220loadUInt32pVg5ArA(), cellSlice.loadBit(), null);
     }
 }

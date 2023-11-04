@@ -86,7 +86,7 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
             this.transactions.clear();
             ((WalletBinancePayHistoryView) getViewState()).resetLoadMore();
         }
-        Observable doFinally = BinanceInternalInteractor.getTransactionHistory$default(this.binanceInternalInteractor, 0, str, this.tokenCode, 1, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo1009ui()).doFinally(new Action() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryPresenter$$ExternalSyntheticLambda0
+        Observable doFinally = BinanceInternalInteractor.getTransactionHistory$default(this.binanceInternalInteractor, 0, str, this.tokenCode, 1, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo1010ui()).doFinally(new Action() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
                 WalletBinancePayHistoryPresenter.loadTransactions$lambda$0(WalletBinancePayHistoryPresenter.this);
@@ -102,12 +102,12 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTransaction>> result) {
-                m1747invoke(result);
+                m1752invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1747invoke(Result<? extends List<? extends BinanceTransaction>> it) {
+            public final void m1752invoke(Result<? extends List<? extends BinanceTransaction>> it) {
                 ResourceManager resourceManager;
                 List filterTransactionsByTypeIfNeeded;
                 List<BaseNode> mapTransactionsToGroups;
@@ -176,7 +176,7 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
 
     public final void loadMoreTransactions(String lastId) {
         Intrinsics.checkNotNullParameter(lastId, "lastId");
-        Observable observeOn = BinanceInternalInteractor.getTransactionHistory$default(this.binanceInternalInteractor, 0, lastId, this.tokenCode, 1, null).observeOn(this.schedulersProvider.mo1009ui());
+        Observable observeOn = BinanceInternalInteractor.getTransactionHistory$default(this.binanceInternalInteractor, 0, lastId, this.tokenCode, 1, null).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends BinanceTransaction>>, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryPresenter$loadMoreTransactions$$inlined$subscribeWithErrorHandle$default$1
@@ -186,12 +186,12 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTransaction>> result) {
-                m1746invoke(result);
+                m1751invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1746invoke(Result<? extends List<? extends BinanceTransaction>> it) {
+            public final void m1751invoke(Result<? extends List<? extends BinanceTransaction>> it) {
                 ResourceManager resourceManager;
                 List filterTransactionsByTypeIfNeeded;
                 List mapTransactionsToGroups;
@@ -274,7 +274,7 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1009ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<RxEvent, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.history.WalletBinancePayHistoryPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -283,12 +283,12 @@ public final class WalletBinancePayHistoryPresenter extends BasePresenter<Wallet
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
-                m1745invoke(rxEvent);
+                m1750invoke(rxEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1745invoke(RxEvent it) {
+            public final void m1750invoke(RxEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 RxEvent rxEvent = it;
                 if (Intrinsics.areEqual(rxEvent, AppRxEvents.UpdateWalletScreen.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletReset.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletCreated.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletRestored.INSTANCE)) {

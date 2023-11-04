@@ -36,9 +36,9 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkContentCryptoboxStatusInfoBinding;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CryptoBoxStatusInfoBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.cryptobox.statuses_description.CryptoBoxStatusInfoBottomSheetDialog */
 /* loaded from: classes3.dex */
@@ -49,7 +49,7 @@ public final class CryptoBoxStatusInfoBottomSheetDialog extends MvpBottomSheet i
     private final Lazy resourceManager$delegate;
     private final Lazy statusInfoAdapter$delegate;
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -189,8 +189,8 @@ public final class CryptoBoxStatusInfoBottomSheetDialog extends MvpBottomSheet i
 
     private final void setupViews() {
         ForkContentCryptoboxStatusInfoBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3630R.string.cryptobox_status_info_title));
-        binding.buttonOk.setText(getResourceManager().getString(C3630R.string.common_ok));
+        binding.textTitle.setText(getResourceManager().getString(C3634R.string.cryptobox_status_info_title));
+        binding.buttonOk.setText(getResourceManager().getString(C3634R.string.common_ok));
     }
 
     private final void setupColors() {

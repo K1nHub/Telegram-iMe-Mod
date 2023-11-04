@@ -33,7 +33,7 @@ public final class zzoy {
         String headerField2 = zza.getHeaderField("ETag");
         GmsLogger gmsLogger = zzass;
         String valueOf = String.valueOf(headerField);
-        gmsLogger.m1099d("ModelInfoRetriever", valueOf.length() != 0 ? "Received download URL: ".concat(valueOf) : new String("Received download URL: "));
+        gmsLogger.m1100d("ModelInfoRetriever", valueOf.length() != 0 ? "Received download URL: ".concat(valueOf) : new String("Received download URL: "));
         if (headerField == null) {
             return null;
         }
@@ -74,18 +74,18 @@ public final class zzoy {
         }
         FirebaseInstanceId firebaseInstanceId = FirebaseInstanceId.getInstance(firebaseApp);
         if (firebaseInstanceId == null) {
-            zzass.m1091w("ModelInfoRetriever", "Cannot get a valid instance of FirebaseInstanceId. Cannot retrieve model info.");
+            zzass.m1092w("ModelInfoRetriever", "Cannot get a valid instance of FirebaseInstanceId. Cannot retrieve model info.");
             return null;
         }
         String id = firebaseInstanceId.getId();
         if (id == null) {
-            zzass.m1091w("ModelInfoRetriever", "Firebase instance id is null. Cannot retrieve model info.");
+            zzass.m1092w("ModelInfoRetriever", "Firebase instance id is null. Cannot retrieve model info.");
             return null;
         }
         try {
             String token = firebaseInstanceId.getToken(gcmSenderId, "*");
             if (token == null) {
-                zzass.m1091w("ModelInfoRetriever", "Firebase instance token is null. Cannot retrieve model info.");
+                zzass.m1092w("ModelInfoRetriever", "Firebase instance token is null. Cannot retrieve model info.");
                 return null;
             }
             return String.format("https://mlkit.googleapis.com/v1beta1/projects/%s/models/%s/versions/active?key=%s&app_instance_id=%s&app_instance_token=%s", firebaseApp.getOptions().getProjectId(), str, firebaseApp.getOptions().getApiKey(), id, token);

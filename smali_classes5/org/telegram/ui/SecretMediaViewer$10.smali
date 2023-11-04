@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SecretMediaViewer;Landroid/content/Context;Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;Landroid/widget/FrameLayout;)V
     .locals 0
 
-    .line 1010
+    .line 1015
     iput-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$10;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;-><init>(Landroid/content/Context;Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;Landroid/widget/FrameLayout;)V
@@ -35,7 +35,7 @@
 .method protected onScrollEnd()V
     .locals 3
 
-    .line 1025
+    .line 1030
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$10;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$3400(Lorg/telegram/ui/SecretMediaViewer;)Z
@@ -50,7 +50,7 @@
 
     if-gtz v0, :cond_0
 
-    .line 1026
+    .line 1031
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$10;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$3100(Lorg/telegram/ui/SecretMediaViewer;)Ljava/lang/Runnable;
@@ -68,7 +68,7 @@
 .method protected onScrollStart()V
     .locals 1
 
-    .line 1013
+    .line 1018
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$10;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$3100(Lorg/telegram/ui/SecretMediaViewer;)Ljava/lang/Runnable;
@@ -83,7 +83,7 @@
 .method protected onScrollUpdate()V
     .locals 4
 
-    .line 1018
+    .line 1023
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$10;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$2000(Lorg/telegram/ui/SecretMediaViewer;)Landroid/animation/AnimatorSet;
@@ -92,7 +92,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1019
+    .line 1024
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$10;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getScrollY()I

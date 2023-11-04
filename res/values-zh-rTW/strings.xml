@@ -4285,7 +4285,6 @@ Telegram 團隊"</string>
     <string name="TermsOfService">服務條款</string>
     <string name="TermsOfServiceLogin">註冊代表您同意*服務條款*。</string>
     <string name="TextCopied">文字已複製到剪貼簿</string>
-    <string name="TextSelectionHit">按住**文字**，然後移動游標以選擇更多文字進行複製。</string>
     <string name="TextSizeHeader">訊息文字大小</string>
     <string name="Theme">主題</string>
     <string name="ThemeAlsoAppliedForHint">主題也將套用到「%s」那一端。</string>

@@ -6,6 +6,7 @@ import com.iMe.fork.utils.Callbacks$Callback;
 import com.iMe.gateway.TelegramControllersGateway;
 import com.iMe.manager.common.FeatureAvailableManager$Token;
 import com.iMe.manager.wallet.create.WalletCreateManager;
+import com.iMe.manager.wallet.create.WalletCreateManagerDelegate;
 import com.iMe.manager.wallet.create.WalletCreateManagerView;
 import com.iMe.mapper.nft.NftUiMappingKt;
 import com.iMe.mapper.wallet.NetworkUiMappingKt;
@@ -91,14 +92,14 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
 /* compiled from: WalletHomeCryptoPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter */
 /* loaded from: classes4.dex */
-public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCryptoView> {
+public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCryptoView> implements WalletCreateManagerDelegate {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final CryptoWalletInteractor cryptoWalletInteractor;
@@ -181,9 +182,10 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
         this.walletCreateManager.setLinkedWalletsAddresses(map);
     }
 
-    public void startWalletCreationFlow(WalletCreationType walletCreationType) {
+    @Override // com.iMe.manager.wallet.create.WalletCreateManagerDelegate
+    public void startWalletCreationFlow(WalletCreationType walletCreationType, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(walletCreationType, "walletCreationType");
-        this.walletCreateManager.startWalletCreationFlow(walletCreationType);
+        this.walletCreateManager.startWalletCreationFlow(walletCreationType, blockchainType);
     }
 
     public WalletHomeCryptoPresenter(CryptoAccessManager cryptoAccessManager, CryptoPreferenceHelper cryptoPreferenceHelper, CryptoWalletInteractor cryptoWalletInteractor, HintsPreferenceHelper hintsPreferenceHelper, NftInteractor nftAvatarInteractor, ResourceManager resourceManager, RxEventBus rxEventBus, SchedulersProvider schedulersProvider, TelegramControllersGateway telegramControllersGateway, TelegramGateway telegramGateway, WalletCreateManager walletCreateManager, WalletInteractor walletInteractor) {
@@ -313,7 +315,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
                 return;
             }
             cryptoPreferenceHelper.setNetwork(mapToDomain);
-            startWalletCreationFlow(((NetworkChoosePurpose.NewWallet) purpose).getWalletCreationType());
+            WalletCreateManagerDelegate.CC.startWalletCreationFlow$default(this, ((NetworkChoosePurpose.NewWallet) purpose).getWalletCreationType(), null, 2, null);
         }
     }
 
@@ -440,7 +442,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
         } else {
             walletBalanceItemsObservable = getNftItemsObservable();
         }
-        Observable<Result<Map<BlockchainType, String>>> observeOn = this.cryptoWalletInteractor.getLinkedWalletsAddresses().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Map<BlockchainType, String>>> observeOn = this.cryptoWalletInteractor.getLinkedWalletsAddresses().observeOn(this.schedulersProvider.mo1010ui());
         final Function1<Result<? extends Map<BlockchainType, ? extends String>>, ObservableSource<? extends Result<? extends List<BaseNode>>>> function1 = new Function1<Result<? extends Map<BlockchainType, ? extends String>>, ObservableSource<? extends Result<? extends List<BaseNode>>>>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$loadTokens$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -499,7 +501,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
                 loadTokens$lambda$3 = WalletHomeCryptoPresenter.loadTokens$lambda$3(Function1.this, obj);
                 return loadTokens$lambda$3;
             }
-        }).observeOn(this.schedulersProvider.mo1009ui()).doFinally(new Action() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$$ExternalSyntheticLambda1
+        }).observeOn(this.schedulersProvider.mo1010ui()).doFinally(new Action() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Action
             public final void run() {
                 WalletHomeCryptoPresenter.loadTokens$lambda$4(WalletHomeCryptoPresenter.this);
@@ -514,12 +516,12 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<BaseNode>> result) {
-                m1761invoke(result);
+                m1766invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1761invoke(Result<? extends List<BaseNode>> it) {
+            public final void m1766invoke(Result<? extends List<BaseNode>> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<BaseNode>> result = it;
@@ -577,28 +579,28 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
     private final List<ItemOptionsModel> createMutableListMenuItem(TokenDetailed tokenDetailed) {
         List<ItemOptionsModel> listOf;
         if (tokenDetailed == null) {
-            listOf = CollectionsKt__CollectionsJVMKt.listOf(new ItemOptionsModel(IdFabric$Menu.WALLET_BANNER_DISABLE, C3630R.C3632drawable.msg_disable, C3630R.string.wallet_details_menu_hide_banner));
+            listOf = CollectionsKt__CollectionsJVMKt.listOf(new ItemOptionsModel(IdFabric$Menu.WALLET_BANNER_DISABLE, C3634R.C3636drawable.msg_disable, C3634R.string.wallet_details_menu_hide_banner));
             return listOf;
         }
         this.selectedTokenDetailed = tokenDetailed;
         ArrayList arrayList = new ArrayList();
         if (!tokenDetailed.isCoin() && !isAllNetworksSelected()) {
-            arrayList.add(new ItemOptionsModel(IdFabric$Menu.WALLET_TOKEN_HIDE, C3630R.C3632drawable.msg_archive_hide, C3630R.string.wallet_token_details_menu_hide_token));
+            arrayList.add(new ItemOptionsModel(IdFabric$Menu.WALLET_TOKEN_HIDE, C3634R.C3636drawable.msg_archive_hide, C3634R.string.wallet_token_details_menu_hide_token));
         }
         if (this.cryptoPreferenceHelper.isQuotationsVisible()) {
-            arrayList.add(new ItemOptionsModel(IdFabric$Menu.WALLET_TOKEN_HIDE_RATES, C3630R.C3632drawable.msg_noise_off, C3630R.string.wallet_token_details_menu_hide_rates));
+            arrayList.add(new ItemOptionsModel(IdFabric$Menu.WALLET_TOKEN_HIDE_RATES, C3634R.C3636drawable.msg_noise_off, C3634R.string.wallet_token_details_menu_hide_rates));
         } else {
-            arrayList.add(new ItemOptionsModel(IdFabric$Menu.WALLET_TOKEN_SHOW_RATES, C3630R.C3632drawable.msg_noise_on, C3630R.string.wallet_token_details_menu_show_rates));
+            arrayList.add(new ItemOptionsModel(IdFabric$Menu.WALLET_TOKEN_SHOW_RATES, C3634R.C3636drawable.msg_noise_on, C3634R.string.wallet_token_details_menu_show_rates));
         }
-        arrayList.add(new ItemOptionsModel(IdFabric$Menu.WALLET_TOKEN_SEND, C3630R.C3632drawable.msg_send, C3630R.string.wallet_token_details_details_action_send));
+        arrayList.add(new ItemOptionsModel(IdFabric$Menu.WALLET_TOKEN_SEND, C3634R.C3636drawable.msg_send, C3634R.string.wallet_token_details_details_action_send));
         if (isBuyAvailable(tokenDetailed.getNetworkId())) {
-            arrayList.add(new ItemOptionsModel(IdFabric$Menu.WALLET_TOKEN_SWAP, C3630R.C3632drawable.fork_ic_exchange_27, C3630R.string.wallet_token_details_transactions_swap));
+            arrayList.add(new ItemOptionsModel(IdFabric$Menu.WALLET_TOKEN_SWAP, C3634R.C3636drawable.fork_ic_exchange_27, C3634R.string.wallet_token_details_transactions_swap));
         }
         return arrayList;
     }
 
     private final void hideToken(TokenDetailed tokenDetailed) {
-        Observable<Result<Boolean>> observeOn = this.walletInteractor.setTokenVisibility(new Token(tokenDetailed.getAddress(), tokenDetailed.getNetworkId()), false).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Boolean>> observeOn = this.walletInteractor.setTokenVisibility(new Token(tokenDetailed.getAddress(), tokenDetailed.getNetworkId()), false).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor.setToke…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$hideToken$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -607,12 +609,12 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1759invoke(result);
+                m1764invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1759invoke(Result<? extends Boolean> it) {
+            public final void m1764invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;
@@ -671,7 +673,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
         if (isAllNetworksSelected()) {
             Observable distinctUntilChanged = WalletInteractor.getWalletMultiChainBalance$default(this.walletInteractor, z, null, 2, null).distinctUntilChanged();
             Intrinsics.checkNotNullExpressionValue(distinctUntilChanged, "walletInteractor\n       …  .distinctUntilChanged()");
-            Observable<Result<List<BaseNode>>> map = distinctUntilChanged.map(new C2358x21775993(new Function1<Result<? extends List<? extends TokenBalance>>, Result<? extends List<BaseNode>>>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$getWalletBalanceItemsObservable$$inlined$mapSuccess$1
+            Observable<Result<List<BaseNode>>> map = distinctUntilChanged.map(new C2362x21775993(new Function1<Result<? extends List<? extends TokenBalance>>, Result<? extends List<BaseNode>>>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$getWalletBalanceItemsObservable$$inlined$mapSuccess$1
                 {
                     super(1);
                 }
@@ -712,7 +714,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
         }
         Observable distinctUntilChanged2 = WalletInteractor.getWalletBalance$default(this.walletInteractor, z, null, 2, null).distinctUntilChanged();
         Intrinsics.checkNotNullExpressionValue(distinctUntilChanged2, "walletInteractor\n       …  .distinctUntilChanged()");
-        Observable<Result<List<BaseNode>>> flatMap = distinctUntilChanged2.flatMap(new C2358x21775993(new Function1<Result<? extends List<? extends TokenBalance>>, ObservableSource<? extends Result<? extends List<BaseNode>>>>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$getWalletBalanceItemsObservable$$inlined$flatMapSuccess$1
+        Observable<Result<List<BaseNode>>> flatMap = distinctUntilChanged2.flatMap(new C2362x21775993(new Function1<Result<? extends List<? extends TokenBalance>>, ObservableSource<? extends Result<? extends List<BaseNode>>>>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$getWalletBalanceItemsObservable$$inlined$flatMapSuccess$1
             {
                 super(1);
             }
@@ -733,10 +735,10 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
                 walletInteractor = WalletHomeCryptoPresenter.this.walletInteractor;
                 Observable tokensSettings$default = WalletInteractor.getTokensSettings$default(walletInteractor, null, 1, null);
                 schedulersProvider = WalletHomeCryptoPresenter.this.schedulersProvider;
-                Observable observeOn = tokensSettings$default.observeOn(schedulersProvider.mo1009ui());
+                Observable observeOn = tokensSettings$default.observeOn(schedulersProvider.mo1010ui());
                 Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
                 final WalletHomeCryptoPresenter walletHomeCryptoPresenter = WalletHomeCryptoPresenter.this;
-                Observable map2 = observeOn.map(new C2358x21775993(new Function1<Result<? extends List<? extends TokenDisplaySettings.Crypto>>, Result<? extends List<BaseNode>>>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$getWalletBalanceItemsObservable$lambda$11$$inlined$mapSuccess$1
+                Observable map2 = observeOn.map(new C2362x21775993(new Function1<Result<? extends List<? extends TokenDisplaySettings.Crypto>>, Result<? extends List<BaseNode>>>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$getWalletBalanceItemsObservable$lambda$11$$inlined$mapSuccess$1
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                     {
                         super(1);
@@ -806,7 +808,8 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
         if (this.cryptoPreferenceHelper.isTokensPositiveBalances()) {
             ArrayList arrayList2 = new ArrayList();
             for (Object obj2 : arrayList) {
-                if (((TokenBalance) obj2).getTotalInFiat().getValue() > 0.0d) {
+                TokenBalance tokenBalance = (TokenBalance) obj2;
+                if (tokenBalance.getToken().isCoin() || tokenBalance.getTotal() > 0.0d) {
                     arrayList2.add(obj2);
                 }
             }
@@ -868,9 +871,9 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
         }
         ArrayList arrayList5 = new ArrayList();
         for (TokenDisplaySettings.Crypto crypto : arrayList4) {
-            TokenBalance tokenBalance = (TokenBalance) linkedHashMap.get(crypto.getTokenAddress());
-            if (tokenBalance != null) {
-                arrayList5.add(tokenBalance);
+            TokenBalance tokenBalance2 = (TokenBalance) linkedHashMap.get(crypto.getTokenAddress());
+            if (tokenBalance2 != null) {
+                arrayList5.add(tokenBalance2);
             }
         }
         int i2 = WhenMappings.$EnumSwitchMapping$1[this.cryptoPreferenceHelper.getTokensOrderType().ordinal()];
@@ -935,7 +938,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
     private final Observable<Result<List<BaseNode>>> getNftItemsObservable() {
         Observable distinctUntilChanged = NftInteractor.getOwnNftItems$default(this.nftAvatarInteractor, isAllNetworksSelected() ? null : getCurrentNetworkId(), null, null, 6, null).distinctUntilChanged();
         Intrinsics.checkNotNullExpressionValue(distinctUntilChanged, "nftAvatarInteractor\n    …  .distinctUntilChanged()");
-        Observable<Result<List<BaseNode>>> map = distinctUntilChanged.map(new C2358x21775993(new Function1<Result<? extends List<? extends NftToken>>, Result<? extends List<BaseNode>>>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$getNftItemsObservable$$inlined$mapSuccess$1
+        Observable<Result<List<BaseNode>>> map = distinctUntilChanged.map(new C2362x21775993(new Function1<Result<? extends List<? extends NftToken>>, Result<? extends List<BaseNode>>>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$getNftItemsObservable$$inlined$mapSuccess$1
             {
                 super(1);
             }
@@ -981,7 +984,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1009ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         final WalletHomeCryptoPresenter$listenEvents$1 walletHomeCryptoPresenter$listenEvents$1 = new Function1<RxEvent, Boolean>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$listenEvents$1
             @Override // kotlin.jvm.functions.Function1
@@ -1021,16 +1024,17 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
-                m1760invoke(rxEvent);
+                m1765invoke(rxEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1760invoke(RxEvent it) {
+            public final void m1765invoke(RxEvent it) {
                 Map<BlockchainType, String> emptyMap;
                 NetworkItem networkItem;
-                CryptoPreferenceHelper cryptoPreferenceHelper;
                 NetworkItem networkItem2;
+                CryptoPreferenceHelper cryptoPreferenceHelper;
+                NetworkItem networkItem3;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 RxEvent rxEvent = it;
                 if (rxEvent instanceof DomainRxEvents.TokensSettingsChanged ? true : rxEvent instanceof DomainRxEvents.InterfaceSettingsChanged) {
@@ -1038,15 +1042,15 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
                     return;
                 }
                 if (Intrinsics.areEqual(rxEvent, DomainRxEvents.NetworksSettingsChanged.INSTANCE)) {
-                    networkItem = WalletHomeCryptoPresenter.this.selectedNetworkItem;
-                    NetworkItem.Crypto crypto = networkItem instanceof NetworkItem.Crypto ? (NetworkItem.Crypto) networkItem : null;
+                    networkItem2 = WalletHomeCryptoPresenter.this.selectedNetworkItem;
+                    NetworkItem.Crypto crypto = networkItem2 instanceof NetworkItem.Crypto ? (NetworkItem.Crypto) networkItem2 : null;
                     String networkId = crypto != null ? crypto.getNetworkId() : null;
                     if (networkId != null && !NetworksHelper.INSTANCE.isNetworkEnabled(networkId)) {
                         WalletHomeCryptoPresenter.this.selectedNetworkItem = NetworkItem.All.INSTANCE;
                     }
                     cryptoPreferenceHelper = WalletHomeCryptoPresenter.this.cryptoPreferenceHelper;
-                    networkItem2 = WalletHomeCryptoPresenter.this.selectedNetworkItem;
-                    cryptoPreferenceHelper.setAllNetworksSelected(Intrinsics.areEqual(networkItem2, NetworkItem.All.INSTANCE));
+                    networkItem3 = WalletHomeCryptoPresenter.this.selectedNetworkItem;
+                    cryptoPreferenceHelper.setAllNetworksSelected(Intrinsics.areEqual(networkItem3, NetworkItem.All.INSTANCE));
                     WalletHomeCryptoPresenter.this.loadScreenInfo(true, true);
                     return;
                 }
@@ -1054,6 +1058,11 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
                     WalletHomeCryptoPresenter walletHomeCryptoPresenter = WalletHomeCryptoPresenter.this;
                     emptyMap = MapsKt__MapsKt.emptyMap();
                     walletHomeCryptoPresenter.setLinkedWalletsAddresses(emptyMap);
+                    networkItem = WalletHomeCryptoPresenter.this.selectedNetworkItem;
+                    if (!Intrinsics.areEqual(networkItem, NetworkItem.All.INSTANCE)) {
+                        WalletHomeCryptoPresenter walletHomeCryptoPresenter2 = WalletHomeCryptoPresenter.this;
+                        walletHomeCryptoPresenter2.selectedNetworkItem = NetworkUiMappingKt.mapToUI(walletHomeCryptoPresenter2.getCurrentNetwork());
+                    }
                     WalletHomeCryptoPresenter.loadScreenInfo$default(WalletHomeCryptoPresenter.this, true, false, 2, null);
                     return;
                 }
@@ -1121,9 +1130,9 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
 
     private final void configureTokensHeader(List<BaseNode> list) {
         int collectionSizeOrDefault;
-        int i = C3630R.C3633id.selectable_token_header;
+        int i = C3634R.C3637id.selectable_token_header;
         int category = this.selectedTokenType.getCategory();
-        int i2 = C3630R.C3632drawable.fork_ic_arrow_down_16;
+        int i2 = C3634R.C3636drawable.fork_ic_arrow_down_16;
         List<TokenType> availableTypes = TokenType.Companion.getAvailableTypes();
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(availableTypes, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
@@ -1160,7 +1169,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
     }
 
     private final void configureCryptoAccountHeader(List<BaseNode> list) {
-        list.add(new HeaderItemWithNetworkSwitcher(this.resourceManager.getString(C3630R.string.wallet_home_crypto_account), this.selectedNetworkItem, false, 4, null));
+        list.add(new HeaderItemWithNetworkSwitcher(this.resourceManager.getString(C3634R.string.wallet_home_crypto_account), this.selectedNetworkItem, false, 4, null));
     }
 
     private final List<BaseNode> configureCryptoAccount(List<BaseNode> list) {
@@ -1230,7 +1239,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
 
     private final List<HorizontalActionButtonItem> resolveActions() {
         List<HorizontalActionButtonItem> listOf;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3630R.C3632drawable.msg_send, this.resourceManager.getString(C3630R.string.wallet_token_details_details_action_send), this.selectedTokenType.isCrypto(), new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$resolveActions$1
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3634R.C3636drawable.msg_send, this.resourceManager.getString(C3634R.string.wallet_token_details_details_action_send), this.selectedTokenType.isCrypto(), new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$resolveActions$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -1246,7 +1255,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
             public final void invoke2() {
                 ((WalletHomeCryptoView) WalletHomeCryptoPresenter.this.getViewState()).openSendScreen(null);
             }
-        }), new HorizontalActionButtonItem(C3630R.C3632drawable.fork_ic_ask_transfer, this.resourceManager.getString(C3630R.string.wallet_binance_pay_action_receive), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$resolveActions$2
+        }), new HorizontalActionButtonItem(C3634R.C3636drawable.fork_ic_ask_transfer, this.resourceManager.getString(C3634R.string.wallet_binance_pay_action_receive), false, new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$resolveActions$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -1262,7 +1271,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
             public final void invoke2() {
                 WalletHomeCryptoPresenter.this.onReceiveClick();
             }
-        }, 4, null), new HorizontalActionButtonItem(C3630R.C3632drawable.fork_ic_transactions_28, this.resourceManager.getString(C3630R.string.wallet_binance_pay_action_history), this.selectedTokenType.isCrypto(), new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$resolveActions$3
+        }, 4, null), new HorizontalActionButtonItem(C3634R.C3636drawable.fork_ic_transactions_28, this.resourceManager.getString(C3634R.string.wallet_binance_pay_action_history), this.selectedTokenType.isCrypto(), new Function0<Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoPresenter$resolveActions$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -1308,7 +1317,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
                     if (isAllNetworksSelected) {
                         WalletHomeCryptoPresenter.this.startChooseNetworkDialog(new NetworkChoosePurpose.NewWallet(walletCreationType));
                     } else {
-                        WalletHomeCryptoPresenter.this.startWalletCreationFlow(walletCreationType);
+                        WalletCreateManagerDelegate.CC.startWalletCreationFlow$default(WalletHomeCryptoPresenter.this, walletCreationType, null, 2, null);
                     }
                 }
             }, 4, null));
@@ -1373,7 +1382,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
     }
 
     private final NetworkItem getInitialNetworkItem() {
-        return isAllNetworksSelected() ? NetworkItem.All.INSTANCE : NetworkUiMappingKt.mapToUI(this.cryptoPreferenceHelper.getNetwork());
+        return isAllNetworksSelected() ? NetworkItem.All.INSTANCE : NetworkUiMappingKt.mapToUI(getCurrentNetwork());
     }
 
     private final void configureNftTokens(List<BaseNode> list, List<? extends Object> list2) {

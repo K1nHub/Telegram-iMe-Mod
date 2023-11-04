@@ -2,10 +2,13 @@
 .super Ljava/lang/Object;
 .source "WalletCreateManager.kt"
 
+# interfaces
+.implements Lcom/iMe/manager/wallet/create/WalletCreateManagerDelegate;
+
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletCreateManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletCreateManager.kt\ncom/iMe/manager/wallet/create/WalletCreateManager\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 4 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,144:1\n1549#2:145\n1620#2,3:146\n37#3,2:149\n63#4,12:151\n63#4,12:163\n*S KotlinDebug\n*F\n+ 1 WalletCreateManager.kt\ncom/iMe/manager/wallet/create/WalletCreateManager\n*L\n71#1:145\n71#1:146,3\n73#1:149,2\n104#1:151,12\n124#1:163,12\n*E\n"
+    value = "SMAP\nWalletCreateManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletCreateManager.kt\ncom/iMe/manager/wallet/create/WalletCreateManager\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n+ 4 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,155:1\n1549#2:156\n1620#2,3:157\n37#3,2:160\n63#4,12:162\n63#4,12:174\n*S KotlinDebug\n*F\n+ 1 WalletCreateManager.kt\ncom/iMe/manager/wallet/create/WalletCreateManager\n*L\n79#1:156\n79#1:157,3\n81#1:160,2\n115#1:162,12\n135#1:174,12\n*E\n"
 .end annotation
 
 
@@ -39,26 +42,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$2E9EwP8HAckdROis77JLWmVHE8o(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
+.method public static synthetic $r8$lambda$XYN8C_wG4kiWJKHiCjFhRR60XC8(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow$lambda$2(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
+    invoke-static {p0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow$lambda$2$lambda$1$lambda$0(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$bv9yk9cI0ra2leM_ySySoGIi0xk(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
+.method public static synthetic $r8$lambda$boH2P7RfiySwkxEnoOjmQ8fQLYY(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow$lambda$2$lambda$1$lambda$0(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
+    invoke-static {p0, p1, p2}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow$lambda$2(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$zlJ-6Aa-wkhUQWworQT9p9E26-w(Lcom/iMe/manager/wallet/create/WalletCreateManager;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$qBeBqfVSg2lJxCkk-qNqKwhTu1M(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->startChooseWalletOptionsFlow$lambda$4(Lcom/iMe/manager/wallet/create/WalletCreateManager;Landroid/content/DialogInterface;I)V
+    invoke-static {p0, p1, p2, p3}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->startChooseWalletOptionsFlow$lambda$4(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
@@ -160,15 +163,15 @@
 .method private final activateBib39BasedWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
     .locals 3
 
-    .line 120
+    .line 131
     iget-object v0, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->cryptoWalletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 121
+    .line 132
     invoke-virtual {v0, p1}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->activateBip39BasedWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 122
+    .line 133
     iget-object v0, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -183,7 +186,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 123
+    .line 134
     invoke-direct {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getViewState()Lcom/iMe/manager/wallet/create/WalletCreateManagerView;
 
     move-result-object v0
@@ -194,7 +197,7 @@
 
     move-result-object p1
 
-    .line 124
+    .line 135
     iget-object v0, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->viewState:Lcom/iMe/manager/wallet/create/WalletCreateManagerView;
 
     .line 68
@@ -231,10 +234,10 @@
 .method private final getActivationConfirmationDialogModel()Lcom/iMe/model/dialog/DialogModel;
     .locals 6
 
-    .line 137
+    .line 148
     new-instance v0, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 138
+    .line 149
     iget-object v1, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v2, Lorg/telegram/messenger/R$string;->wallet_activation_confirmation_title:I
@@ -243,7 +246,7 @@
 
     move-result-object v1
 
-    .line 139
+    .line 150
     iget-object v2, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v3, Lorg/telegram/messenger/R$string;->wallet_activation_confirmation_description:I
@@ -252,7 +255,7 @@
 
     move-result-object v2
 
-    .line 140
+    .line 151
     iget-object v3, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v4, Lorg/telegram/messenger/R$string;->common_cancel:I
@@ -261,7 +264,7 @@
 
     move-result-object v3
 
-    .line 141
+    .line 152
     iget-object v4, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v5, Lorg/telegram/messenger/R$string;->common_ok:I
@@ -270,7 +273,7 @@
 
     move-result-object v4
 
-    .line 137
+    .line 148
     invoke-direct {v0, v1, v2, v3, v4}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     return-object v0
@@ -292,7 +295,7 @@
 .method private final getViewState()Lcom/iMe/manager/wallet/create/WalletCreateManagerView;
     .locals 2
 
-    .line 134
+    .line 145
     iget-object v0, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->viewState:Lcom/iMe/manager/wallet/create/WalletCreateManagerView;
 
     if-eqz v0, :cond_0
@@ -313,27 +316,32 @@
     throw v0
 .end method
 
-.method private static final startChooseWalletOptionsFlow$lambda$4(Lcom/iMe/manager/wallet/create/WalletCreateManager;Landroid/content/DialogInterface;I)V
+.method private static final startChooseWalletOptionsFlow$lambda$4(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    const-string p1, "this$0"
+    const-string p2, "this$0"
 
-    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p0, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 75
-    sget-object p1, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->Companion:Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Companion;
+    const-string p2, "$blockchainType"
 
-    invoke-virtual {p1, p2}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Companion;->getByIndex(I)Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    move-result-object p1
+    .line 84
+    sget-object p2, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->Companion:Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Companion;
 
-    invoke-virtual {p0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow(Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
+    invoke-virtual {p2, p3}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Companion;->getByIndex(I)Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;
+
+    move-result-object p2
+
+    .line 83
+    invoke-virtual {p0, p2, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow(Lcom/iMe/model/wallet/crypto/create/WalletCreationType;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
     return-void
 .end method
 
-.method private static final startWalletCreationFlow$lambda$2(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
-    .locals 3
+.method private static final startWalletCreationFlow$lambda$2(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
+    .locals 2
 
     const-string v0, "this$0"
 
@@ -343,26 +351,26 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 49
+    const-string v0, "$blockchainType"
+
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 53
     invoke-direct {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getViewState()Lcom/iMe/manager/wallet/create/WalletCreateManagerView;
 
     move-result-object v0
 
-    .line 51
+    .line 55
     instance-of v1, p1, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;
 
     if-eqz v1, :cond_1
 
-    .line 52
+    .line 57
     invoke-virtual {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getLinkedWalletsAddresses()Ljava/util/Map;
-
-    move-result-object v1
-
-    invoke-direct {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object p0
 
-    invoke-interface {v1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
 
@@ -372,56 +380,50 @@
 
     const-string p0, ""
 
-    .line 53
+    .line 58
     :cond_0
     check-cast p1, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;
 
-    .line 51
-    invoke-interface {v0, p0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManagerView;->openCreateWalletIntroScreen(Ljava/lang/String;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;)V
+    .line 55
+    invoke-interface {v0, p2, p0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManagerView;->openCreateWalletIntroScreen(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;)V
 
     goto :goto_0
 
-    .line 56
+    .line 61
     :cond_1
-    instance-of v1, p1, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Activate;
+    instance-of p1, p1, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Activate;
 
-    if-eqz v1, :cond_2
+    if-eqz p1, :cond_2
 
-    .line 57
+    .line 62
     invoke-direct {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getActivationConfirmationDialogModel()Lcom/iMe/model/dialog/DialogModel;
 
-    move-result-object v1
+    move-result-object p1
 
-    .line 56
-    new-instance v2, Lcom/iMe/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda2;
+    .line 61
+    new-instance v1, Lcom/iMe/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda2;
 
-    invoke-direct {v2, p0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
+    invoke-direct {v1, p0, p2}, Lcom/iMe/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
-    invoke-interface {v0, v1, v2}, Lcom/iMe/manager/wallet/create/WalletCreateManagerView;->showActivationConfirmationDialog(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
+    invoke-interface {v0, p1, v1}, Lcom/iMe/manager/wallet/create/WalletCreateManagerView;->showActivationConfirmationDialog(Lcom/iMe/model/dialog/DialogModel;Lcom/iMe/fork/utils/Callbacks$Callback;)V
 
     :cond_2
     :goto_0
     return-void
 .end method
 
-.method private static final startWalletCreationFlow$lambda$2$lambda$1$lambda$0(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
+.method private static final startWalletCreationFlow$lambda$2$lambda$1$lambda$0(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
     .locals 1
 
     const-string v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "$walletCreationType"
+    const-string v0, "$blockchainType"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 58
-    check-cast p1, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Activate;
-
-    invoke-virtual {p1}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Activate;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
-
-    move-result-object p1
-
+    .line 63
     invoke-direct {p0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->activateBib39BasedWallet(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
     return-void
@@ -457,14 +459,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 82
+    .line 93
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->isBip39PhraseBased()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 83
+    .line 94
     iget-object v0, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isAnyBip39PhraseBasedWalletCreated()Z
@@ -473,7 +475,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 85
+    .line 96
     new-instance v0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Activate;
 
     invoke-direct {v0, p1}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Activate;-><init>(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
@@ -487,7 +489,7 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 87
+    .line 98
     invoke-direct {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object p1
@@ -498,7 +500,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 88
+    .line 99
     iget-object p1, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {p1}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->isAnyBip39PhraseBasedWalletCreated()Z
@@ -507,7 +509,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 89
+    .line 100
     iget-object p1, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {p1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->isAllNetworksSelected()Z
@@ -516,7 +518,7 @@
 
     if-nez p1, :cond_1
 
-    .line 91
+    .line 102
     new-instance p1, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Activate;
 
     invoke-direct {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -531,7 +533,7 @@
 
     goto :goto_0
 
-    .line 93
+    .line 104
     :cond_1
     sget-object p1, Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;->Companion:Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial$Companion;
 
@@ -579,7 +581,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 97
+    .line 108
     invoke-virtual {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getLinkedWalletsAddresses()Ljava/util/Map;
 
     move-result-object v0
@@ -594,21 +596,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 98
+    .line 109
     invoke-interface {p1}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
 
     goto :goto_0
 
-    .line 100
+    .line 111
     :cond_0
     iget-object v0, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->cryptoWalletInteractor:Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
 
-    .line 101
+    .line 112
     invoke-virtual {v0}, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;->getLinkedWalletsAddresses()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 102
+    .line 113
     iget-object v1, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -623,7 +625,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 103
+    .line 114
     invoke-direct {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getViewState()Lcom/iMe/manager/wallet/create/WalletCreateManagerView;
 
     move-result-object v1
@@ -638,7 +640,7 @@
 
     move-result-object v0
 
-    .line 104
+    .line 115
     invoke-direct {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getViewState()Lcom/iMe/manager/wallet/create/WalletCreateManagerView;
 
     move-result-object v1
@@ -671,7 +673,7 @@
     .line 70
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 115
+    .line 126
     iget-object v0, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->subscriptions:Lio/reactivex/disposables/CompositeDisposable;
 
     invoke-static {p1, v0}, Lcom/iMe/storage/data/utils/extentions/RxExtKt;->autoDispose(Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;)V
@@ -703,130 +705,141 @@
 .end method
 
 .method public startChooseWalletOptionsFlow(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
-    .locals 5
+    .locals 6
 
     const-string v0, "blockchainType"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 65
+    .line 70
     invoke-virtual {p0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getAvailableWalletCreationTypes(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Ljava/util/List;
-
-    move-result-object p1
-
-    .line 66
-    invoke-static {p1}, Lcom/iMe/storage/data/utils/extentions/CollectionExtKt;->isSingletonList(Ljava/util/List;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 67
-    invoke-static {p1}, Lkotlin/collections/CollectionsKt;->first(Ljava/util/List;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;
-
-    invoke-virtual {p0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow(Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
-
-    goto :goto_1
-
-    .line 69
-    :cond_0
-    invoke-direct {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getViewState()Lcom/iMe/manager/wallet/create/WalletCreateManagerView;
 
     move-result-object v0
 
-    .line 70
-    iget-object v1, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+    .line 71
+    invoke-static {v0}, Lcom/iMe/storage/data/utils/extentions/CollectionExtKt;->isSingletonList(Ljava/util/List;)Z
 
-    sget v2, Lorg/telegram/messenger/R$string;->wallet_dashboard_create_start_dialog_title:I
+    move-result v1
 
-    invoke-interface {v1, v2}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+    if-eqz v1, :cond_0
+
+    .line 73
+    invoke-static {v0}, Lkotlin/collections/CollectionsKt;->first(Ljava/util/List;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;
+
+    .line 72
+    invoke-virtual {p0, v0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow(Lcom/iMe/model/wallet/crypto/create/WalletCreationType;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
+
+    goto :goto_1
+
+    .line 77
+    :cond_0
+    invoke-direct {p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->getViewState()Lcom/iMe/manager/wallet/create/WalletCreateManagerView;
 
     move-result-object v1
 
+    .line 78
+    iget-object v2, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v3, Lorg/telegram/messenger/R$string;->wallet_dashboard_create_start_dialog_title:I
+
+    invoke-interface {v2, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
     .line 1549
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v3, Ljava/util/ArrayList;
 
-    const/16 v3, 0xa
+    const/16 v4, 0xa
 
-    invoke-static {p1, v3}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+    invoke-static {v0, v4}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
-    move-result v3
+    move-result v4
 
-    invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 1620
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object p1
+    move-result-object v0
 
     :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v4
 
-    if-eqz v3, :cond_1
+    if-eqz v4, :cond_1
 
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
-
-    .line 1621
-    check-cast v3, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;
-
-    .line 72
-    iget-object v4, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
-
-    invoke-virtual {v3}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;->getButtonTextResId()I
-
-    move-result v3
-
-    invoke-interface {v4, v3}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
-
-    move-result-object v3
+    move-result-object v4
 
     .line 1621
-    invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    check-cast v4, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;
+
+    .line 80
+    iget-object v5, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    invoke-virtual {v4}, Lcom/iMe/model/wallet/crypto/create/WalletCreationType;->getButtonTextResId()I
+
+    move-result v4
+
+    invoke-interface {v5, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 1621
+    invoke-interface {v3, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    const/4 v0, 0x0
 
-    new-array p1, p1, [Ljava/lang/String;
+    new-array v0, v0, [Ljava/lang/String;
 
     .line 38
-    invoke-interface {v2, p1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v3, v0}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    check-cast p1, [Ljava/lang/String;
+    check-cast v0, [Ljava/lang/String;
 
-    .line 69
-    new-instance v2, Lcom/iMe/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda0;
+    .line 77
+    new-instance v3, Lcom/iMe/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda0;
 
-    invoke-direct {v2, p0}, Lcom/iMe/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/manager/wallet/create/WalletCreateManager;)V
+    invoke-direct {v3, p0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
-    invoke-interface {v0, v1, p1, v2}, Lcom/iMe/manager/wallet/create/WalletCreateManagerView;->showSelectOptionsDialog(Ljava/lang/String;[Ljava/lang/String;Landroid/content/DialogInterface$OnClickListener;)V
+    invoke-interface {v1, v2, v0, v3}, Lcom/iMe/manager/wallet/create/WalletCreateManagerView;->showSelectOptionsDialog(Ljava/lang/String;[Ljava/lang/String;Landroid/content/DialogInterface$OnClickListener;)V
 
     :goto_1
     return-void
 .end method
 
-.method public startWalletCreationFlow(Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
+.method public startWalletCreationFlow(Lcom/iMe/model/wallet/crypto/create/WalletCreationType;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
     .locals 1
 
     const-string v0, "walletCreationType"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 48
+    if-nez p2, :cond_0
+
+    .line 51
+    iget-object p2, p0, Lcom/iMe/manager/wallet/create/WalletCreateManager;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+
+    invoke-interface {p2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getCurrentBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    move-result-object p2
+
+    .line 52
+    :cond_0
     new-instance v0, Lcom/iMe/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda1;
 
-    invoke-direct {v0, p0, p1}, Lcom/iMe/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/iMe/manager/wallet/create/WalletCreateManager$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/manager/wallet/create/WalletCreateManager;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
     invoke-virtual {p0, v0}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->runWithCryptoInformationCheck(Lcom/iMe/fork/utils/Callbacks$Callback;)V
 

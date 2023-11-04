@@ -64,7 +64,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 984
+    .line 1000
     new-instance v0, Lcom/iMe/ui/wallet/send/WalletSendPresenter$SendScreenState;
 
     const-string v1, "SEND"
@@ -75,7 +75,7 @@
 
     sput-object v0, Lcom/iMe/ui/wallet/send/WalletSendPresenter$SendScreenState;->SEND:Lcom/iMe/ui/wallet/send/WalletSendPresenter$SendScreenState;
 
-    .line 985
+    .line 1001
     new-instance v0, Lcom/iMe/ui/wallet/send/WalletSendPresenter$SendScreenState;
 
     const-string v1, "LOADING"
@@ -86,7 +86,7 @@
 
     sput-object v0, Lcom/iMe/ui/wallet/send/WalletSendPresenter$SendScreenState;->LOADING:Lcom/iMe/ui/wallet/send/WalletSendPresenter$SendScreenState;
 
-    .line 986
+    .line 1002
     new-instance v0, Lcom/iMe/ui/wallet/send/WalletSendPresenter$SendScreenState;
 
     const-string v1, "PREPARE"
@@ -114,7 +114,7 @@
         }
     .end annotation
 
-    .line 983
+    .line 999
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

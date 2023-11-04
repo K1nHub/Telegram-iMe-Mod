@@ -1157,21 +1157,45 @@
 
     invoke-direct {v14}, Lorg/telegram/ui/Components/EmptyStubSpan;-><init>()V
 
-    invoke-virtual {v11, v14, v4, v5, v13}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v11}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result v15
+
+    invoke-static {v15, v5}, Ljava/lang/Math;->min(II)I
+
+    move-result v15
+
+    invoke-virtual {v11, v14, v4, v15, v13}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 158
     new-instance v14, Lorg/telegram/ui/Components/EmptyStubSpan;
 
     invoke-direct {v14}, Lorg/telegram/ui/Components/EmptyStubSpan;-><init>()V
 
-    invoke-virtual {v7, v14, v4, v5, v13}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v7}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result v15
+
+    invoke-static {v15, v5}, Ljava/lang/Math;->min(II)I
+
+    move-result v15
+
+    invoke-virtual {v7, v14, v4, v15, v13}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     .line 159
     new-instance v14, Lorg/telegram/ui/Components/EmptyStubSpan;
 
     invoke-direct {v14}, Lorg/telegram/ui/Components/EmptyStubSpan;-><init>()V
 
-    invoke-virtual {v8, v14, v4, v5, v13}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v8}, Landroid/text/SpannableStringBuilder;->length()I
+
+    move-result v15
+
+    invoke-static {v15, v5}, Ljava/lang/Math;->min(II)I
+
+    move-result v15
+
+    invoke-virtual {v8, v14, v4, v15, v13}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
     :cond_b
     move v6, v4

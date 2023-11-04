@@ -17,7 +17,7 @@ public final class UTF8Kt {
     }
 
     /* renamed from: encodeUTF8-lBXzO7A  reason: not valid java name */
-    public static final int m1922encodeUTF8lBXzO7A(ByteBuffer encodeUTF8, CharSequence text, int i, int i2, int i3, int i4) {
+    public static final int m1927encodeUTF8lBXzO7A(ByteBuffer encodeUTF8, CharSequence text, int i, int i2, int i3, int i4) {
         int coerceAtMost;
         Intrinsics.checkNotNullParameter(encodeUTF8, "$this$encodeUTF8");
         Intrinsics.checkNotNullParameter(text, "text");
@@ -33,14 +33,14 @@ public final class UTF8Kt {
                 i5 = i7;
                 i6++;
             } else {
-                return m1923encodeUTF8Stage1Vm9B2pQ(encodeUTF8, text, i7 - 1, min, i, i6, coerceAtMost, i3);
+                return m1928encodeUTF8Stage1Vm9B2pQ(encodeUTF8, text, i7 - 1, min, i, i6, coerceAtMost, i3);
             }
         }
-        return EncodeResult.m1919constructorimpl(UShort.m2011constructorimpl((short) (i5 - i)), UShort.m2011constructorimpl((short) (i6 - i3)));
+        return EncodeResult.m1924constructorimpl(UShort.m2016constructorimpl((short) (i5 - i)), UShort.m2016constructorimpl((short) (i6 - i3)));
     }
 
     /* renamed from: encodeUTF8Stage1-Vm9B2pQ  reason: not valid java name */
-    private static final int m1923encodeUTF8Stage1Vm9B2pQ(ByteBuffer byteBuffer, CharSequence charSequence, int i, int i2, int i3, int i4, int i5, int i6) {
+    private static final int m1928encodeUTF8Stage1Vm9B2pQ(ByteBuffer byteBuffer, CharSequence charSequence, int i, int i2, int i3, int i4, int i5, int i6) {
         int i7 = i5 - 3;
         int i8 = i;
         int i9 = i4;
@@ -93,13 +93,13 @@ public final class UTF8Kt {
             i8 = i10;
         }
         if (i9 == i7) {
-            return m1924encodeUTF8Stage2Vm9B2pQ(byteBuffer, charSequence, i8, i2, i3, i9, i5, i6);
+            return m1929encodeUTF8Stage2Vm9B2pQ(byteBuffer, charSequence, i8, i2, i3, i9, i5, i6);
         }
-        return EncodeResult.m1919constructorimpl(UShort.m2011constructorimpl((short) (i8 - i3)), UShort.m2011constructorimpl((short) (i9 - i6)));
+        return EncodeResult.m1924constructorimpl(UShort.m2016constructorimpl((short) (i8 - i3)), UShort.m2016constructorimpl((short) (i9 - i6)));
     }
 
     /* renamed from: encodeUTF8Stage2-Vm9B2pQ  reason: not valid java name */
-    private static final int m1924encodeUTF8Stage2Vm9B2pQ(ByteBuffer byteBuffer, CharSequence charSequence, int i, int i2, int i3, int i4, int i5, int i6) {
+    private static final int m1929encodeUTF8Stage2Vm9B2pQ(ByteBuffer byteBuffer, CharSequence charSequence, int i, int i2, int i3, int i4, int i5, int i6) {
         int i7;
         int i8 = i;
         int i9 = i4;
@@ -172,7 +172,7 @@ public final class UTF8Kt {
             i9 += i13;
             i8 = i11;
         }
-        return EncodeResult.m1919constructorimpl(UShort.m2011constructorimpl((short) (i8 - i3)), UShort.m2011constructorimpl((short) (i9 - i6)));
+        return EncodeResult.m1924constructorimpl(UShort.m2016constructorimpl((short) (i8 - i3)), UShort.m2016constructorimpl((short) (i9 - i6)));
     }
 
     public static final Void malformedCodePoint(int i) {

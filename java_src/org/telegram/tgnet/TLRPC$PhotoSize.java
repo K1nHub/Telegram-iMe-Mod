@@ -9,13 +9,13 @@ public abstract class TLRPC$PhotoSize extends TLObject {
     public int gradientTopColor;
 
     /* renamed from: h */
-    public int f1631h;
+    public int f1633h;
     public TLRPC$FileLocation location;
     public int size;
     public String type;
 
     /* renamed from: w */
-    public int f1632w;
+    public int f1634w;
 
     public static TLRPC$PhotoSize TLdeserialize(long j, long j2, long j3, AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$PhotoSize tLRPC$TL_photoPathSize;
@@ -29,24 +29,22 @@ public abstract class TLRPC$PhotoSize extends TLObject {
                 break;
             case -374917894:
                 tLRPC$TL_photoPathSize = new TLRPC$TL_photoCachedSize() { // from class: org.telegram.tgnet.TLRPC$TL_photoCachedSize_layer127
-                    public static int constructor = -374917894;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_photoCachedSize, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.type = abstractSerializedData2.readString(z2);
                         this.location = TLRPC$FileLocation.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
-                        this.f1632w = abstractSerializedData2.readInt32(z2);
-                        this.f1631h = abstractSerializedData2.readInt32(z2);
+                        this.f1634w = abstractSerializedData2.readInt32(z2);
+                        this.f1633h = abstractSerializedData2.readInt32(z2);
                         this.bytes = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_photoCachedSize, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-374917894);
                         abstractSerializedData2.writeString(this.type);
                         this.location.serializeToStream(abstractSerializedData2);
-                        abstractSerializedData2.writeInt32(this.f1632w);
-                        abstractSerializedData2.writeInt32(this.f1631h);
+                        abstractSerializedData2.writeInt32(this.f1634w);
+                        abstractSerializedData2.writeInt32(this.f1633h);
                         abstractSerializedData2.writeByteArray(this.bytes);
                     }
                 };
@@ -62,14 +60,12 @@ public abstract class TLRPC$PhotoSize extends TLObject {
                 break;
             case 1520986705:
                 tLRPC$TL_photoPathSize = new TLRPC$TL_photoSizeProgressive() { // from class: org.telegram.tgnet.TLRPC$TL_photoSizeProgressive_layer127
-                    public static int constructor = 1520986705;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_photoSizeProgressive, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.type = abstractSerializedData2.readString(z2);
                         this.location = TLRPC$FileLocation.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
-                        this.f1632w = abstractSerializedData2.readInt32(z2);
-                        this.f1631h = abstractSerializedData2.readInt32(z2);
+                        this.f1634w = abstractSerializedData2.readInt32(z2);
+                        this.f1633h = abstractSerializedData2.readInt32(z2);
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         if (readInt32 != 481674261) {
                             if (z2) {
@@ -90,11 +86,11 @@ public abstract class TLRPC$PhotoSize extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_photoSizeProgressive, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1520986705);
                         abstractSerializedData2.writeString(this.type);
                         this.location.serializeToStream(abstractSerializedData2);
-                        abstractSerializedData2.writeInt32(this.f1632w);
-                        abstractSerializedData2.writeInt32(this.f1631h);
+                        abstractSerializedData2.writeInt32(this.f1634w);
+                        abstractSerializedData2.writeInt32(this.f1633h);
                         abstractSerializedData2.writeInt32(481674261);
                         int size = this.sizes.size();
                         abstractSerializedData2.writeInt32(size);

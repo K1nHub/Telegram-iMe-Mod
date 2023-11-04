@@ -41,7 +41,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 5408
+    .line 5469
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -64,7 +64,7 @@
 
     move v4, p4
 
-    .line 5416
+    .line 5477
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/Stories/PeerStoriesView$33;->onReactionClickedInternal(Landroid/view/View;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZZ)V
 
     return-void
@@ -73,10 +73,10 @@
 .method private synthetic lambda$onReactionClickedInternal$1()V
     .locals 1
 
-    .line 5465
+    .line 5526
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$7700(Lorg/telegram/ui/Stories/PeerStoriesView;)V
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$7800(Lorg/telegram/ui/Stories/PeerStoriesView;)V
 
     return-void
 .end method
@@ -96,10 +96,10 @@
 .method public drawRoundRect(Landroid/graphics/Canvas;Landroid/graphics/RectF;FFFIZ)V
     .locals 1
 
-    .line 5480
+    .line 5541
     iget-object p6, p0, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {p6}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6400(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/BitmapShaderTools;
+    invoke-static {p6}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6500(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/BitmapShaderTools;
 
     move-result-object p6
 
@@ -109,7 +109,7 @@
 
     iget-object p7, p0, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    .line 5481
+    .line 5542
     invoke-virtual {p7}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p7
@@ -120,7 +120,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    .line 5482
+    .line 5543
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -129,7 +129,7 @@
 
     add-float/2addr v0, p5
 
-    .line 5480
+    .line 5541
     invoke-virtual {p6, p4, p5, p7, v0}, Lorg/telegram/ui/Components/BitmapShaderTools;->setBounds(FFFF)V
 
     const/4 p4, 0x0
@@ -138,10 +138,10 @@
 
     if-lez p4, :cond_0
 
-    .line 5484
+    .line 5545
     iget-object p4, p0, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {p4}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6400(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/BitmapShaderTools;
+    invoke-static {p4}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6500(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/BitmapShaderTools;
 
     move-result-object p4
 
@@ -149,7 +149,7 @@
 
     invoke-virtual {p1, p2, p3, p3, p4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 5485
+    .line 5546
     iget-object p4, p0, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object p4, p4, Lorg/telegram/ui/Stories/PeerStoriesView;->inputBackgroundPaint:Landroid/graphics/Paint;
@@ -158,11 +158,11 @@
 
     goto :goto_0
 
-    .line 5487
+    .line 5548
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {p3}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6400(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/BitmapShaderTools;
+    invoke-static {p3}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6500(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/BitmapShaderTools;
 
     move-result-object p3
 
@@ -170,7 +170,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 5488
+    .line 5549
     iget-object p3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object p3, p3, Lorg/telegram/ui/Stories/PeerStoriesView;->inputBackgroundPaint:Landroid/graphics/Paint;
@@ -184,7 +184,7 @@
 .method public needEnterText()Z
     .locals 1
 
-    .line 5494
+    .line 5555
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->needEnterText()Z
@@ -197,7 +197,7 @@
 .method public onEmojiWindowDismissed()V
     .locals 2
 
-    .line 5499
+    .line 5560
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
@@ -224,7 +224,7 @@
 
     move v4, p4
 
-    .line 5411
+    .line 5472
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/Stories/PeerStoriesView$33;->onReactionClickedInternal(Landroid/view/View;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZZ)V
 
     return-void
@@ -239,7 +239,7 @@
 
     if-eqz p5, :cond_0
 
-    .line 5415
+    .line 5476
     iget-object v7, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     new-instance v8, Lorg/telegram/ui/Stories/PeerStoriesView$33$$ExternalSyntheticLambda1;
@@ -258,7 +258,7 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Stories/PeerStoriesView$33$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Stories/PeerStoriesView$33;Landroid/view/View;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZ)V
 
-    invoke-static {v7, v8}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4200(Lorg/telegram/ui/Stories/PeerStoriesView;Ljava/lang/Runnable;)Z
+    invoke-static {v7, v8}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4300(Lorg/telegram/ui/Stories/PeerStoriesView;Ljava/lang/Runnable;)Z
 
     move-result v0
 
@@ -273,20 +273,20 @@
 
     if-eqz p3, :cond_1
 
-    .line 5421
+    .line 5482
     iget-object v2, v15, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
     if-eqz v2, :cond_1
 
-    .line 5422
+    .line 5483
     iget-object v2, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
 
-    .line 5423
+    .line 5484
     new-instance v2, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;
 
-    .line 5424
+    .line 5485
     invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v8
@@ -299,7 +299,7 @@
 
     const/4 v11, 0x0
 
-    .line 5426
+    .line 5487
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v3
@@ -320,8 +320,8 @@
 
     iget-object v1, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    .line 5427
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3900(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    .line 5488
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v16
 
@@ -344,10 +344,10 @@
     :cond_1
     move-object v3, v15
 
-    .line 5430
+    .line 5491
     new-instance v2, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;
 
-    .line 5431
+    .line 5492
     invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v8
@@ -360,7 +360,7 @@
 
     const/4 v11, 0x0
 
-    .line 5433
+    .line 5494
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v4
@@ -381,8 +381,8 @@
 
     iget-object v1, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    .line 5434
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3900(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    .line 5495
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v16
 
@@ -398,11 +398,11 @@
 
     invoke-direct/range {v7 .. v18}, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Cells/ChatMessageCell;Landroid/view/View;FFLorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;IIZ)V
 
-    .line 5437
+    .line 5498
     :goto_0
     sput-object v2, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->currentOverlay:Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;
 
-    .line 5438
+    .line 5499
     iget-object v1, v2, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->windowView:Landroid/widget/FrameLayout;
 
     sget v4, Lorg/telegram/messenger/R$id;->parent_tag:I
@@ -415,34 +415,34 @@
 
     invoke-virtual {v1, v4, v7}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
 
-    .line 5439
+    .line 5500
     iget-object v1, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v4, v2, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->windowView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 5440
+    .line 5501
     iput-boolean v5, v2, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->started:Z
 
-    .line 5441
+    .line 5502
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
     iput-wide v4, v2, Lorg/telegram/ui/Components/Reactions/ReactionsEffectOverlay;->startTime:J
 
-    .line 5443
+    .line 5504
     iget-object v1, v3, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_2
 
-    .line 5444
+    .line 5505
     iget-object v0, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3900(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v0
 
@@ -456,12 +456,12 @@
 
     move-result-object v0
 
-    .line 5445
+    .line 5506
     iget-object v1, v3, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
     iget-object v3, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v3}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5400(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v3}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v3
 
@@ -469,17 +469,17 @@
 
     move-result-object v1
 
-    .line 5446
+    .line 5507
     iget-object v2, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v3, v2, Lorg/telegram/ui/Stories/PeerStoriesView;->currentStory:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
 
-    iget-object v3, v3, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v3, v3, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iput-object v3, v1, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->replyToStoryItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object v3, v1, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->replyToStoryItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    .line 5447
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3900(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    .line 5508
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v2
 
@@ -491,11 +491,11 @@
 
     goto :goto_1
 
-    .line 5449
+    .line 5510
     :cond_2
     iget-object v1, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3900(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v1
 
@@ -505,15 +505,15 @@
 
     move-result-object v1
 
-    .line 5450
+    .line 5511
     invoke-static {v1, v2}, Lorg/telegram/messenger/MessageObject;->findAnimatedEmojiEmoticon(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 5451
+    .line 5512
     iget-object v5, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v5}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5400(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v5}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v7
 
@@ -521,49 +521,49 @@
 
     move-result-object v2
 
-    .line 5452
+    .line 5513
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v5, v2, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->entities:Ljava/util/ArrayList;
 
-    .line 5453
+    .line 5514
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;-><init>()V
 
-    .line 5454
+    .line 5515
     iget-wide v7, v3, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
     iput-wide v7, v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document_id:J
 
-    .line 5455
+    .line 5516
     iput v0, v5, Lorg/telegram/tgnet/TLRPC$MessageEntity;->offset:I
 
-    .line 5456
+    .line 5517
     invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     move-result v0
 
     iput v0, v5, Lorg/telegram/tgnet/TLRPC$MessageEntity;->length:I
 
-    .line 5457
+    .line 5518
     iget-object v0, v2, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 5458
+    .line 5519
     iget-object v0, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v3, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->currentStory:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
 
-    iget-object v3, v3, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v3, v3, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->replyToStoryItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object v3, v2, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->replyToStoryItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    .line 5459
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3900(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    .line 5520
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v0
 
@@ -575,13 +575,13 @@
 
     move-object v0, v1
 
-    .line 5462
+    .line 5523
     :goto_1
     iget-object v1, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->storyContainer:Landroid/widget/FrameLayout;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6300(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6400(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v1
 
@@ -593,7 +593,7 @@
 
     const-string v3, "ReactionSent"
 
-    .line 5463
+    .line 5524
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -602,7 +602,7 @@
 
     const-string v4, "ViewInChat"
 
-    .line 5464
+    .line 5525
     invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -611,21 +611,21 @@
 
     invoke-direct {v4, v6}, Lorg/telegram/ui/Stories/PeerStoriesView$33$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/PeerStoriesView$33;)V
 
-    .line 5462
+    .line 5523
     invoke-virtual {v1, v0, v2, v3, v4}, Lorg/telegram/ui/Components/BulletinFactory;->createEmojiBulletin(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v0
 
     const/16 v1, 0x1388
 
-    .line 5466
+    .line 5527
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Bulletin;->setDuration(I)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
-    .line 5467
+    .line 5528
     iget-object v0, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -636,7 +636,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 5468
+    .line 5529
     iget-object v0, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->reactionsContainerLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -647,7 +647,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->dismissWithAlpha()V
 
-    .line 5470
+    .line 5531
     :cond_3
     iget-object v0, v6, Lorg/telegram/ui/Stories/PeerStoriesView$33;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 

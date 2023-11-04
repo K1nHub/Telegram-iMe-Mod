@@ -19,7 +19,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CIOWriter.kt */
-@DebugMetadata(m143c = "io.ktor.network.sockets.CIOWriterKt$attachForWritingDirectImpl$1", m142f = "CIOWriter.kt", m141l = {86}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "io.ktor.network.sockets.CIOWriterKt$attachForWritingDirectImpl$1", m144f = "CIOWriter.kt", m143l = {86}, m142m = "invokeSuspend")
 /* loaded from: classes4.dex */
 public final class CIOWriterKt$attachForWritingDirectImpl$1 extends SuspendLambda implements Function2<ReaderScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ ByteChannel $channel;
@@ -65,9 +65,9 @@ public final class CIOWriterKt$attachForWritingDirectImpl$1 extends SuspendLambd
                 ReaderScope readerScope = (ReaderScope) this.L$0;
                 this.$selectable.interestOp(SelectInterest.WRITE, false);
                 ByteChannel byteChannel = this.$channel;
-                C26601 c26601 = new C26601(this.$socketOptions, readerScope, byteChannel, this.$nioChannel, this.$selectable, this.$selector, null);
+                C26641 c26641 = new C26641(this.$socketOptions, readerScope, byteChannel, this.$nioChannel, this.$selectable, this.$selector, null);
                 this.label = 1;
-                if (byteChannel.lookAheadSuspend(c26601, this) == coroutine_suspended) {
+                if (byteChannel.lookAheadSuspend(c26641, this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             } else if (i != 1) {
@@ -103,10 +103,10 @@ public final class CIOWriterKt$attachForWritingDirectImpl$1 extends SuspendLambd
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: CIOWriter.kt */
-    @DebugMetadata(m143c = "io.ktor.network.sockets.CIOWriterKt$attachForWritingDirectImpl$1$1", m142f = "CIOWriter.kt", m141l = {99, 111, 111}, m140m = "invokeSuspend")
+    @DebugMetadata(m145c = "io.ktor.network.sockets.CIOWriterKt$attachForWritingDirectImpl$1$1", m144f = "CIOWriter.kt", m143l = {99, 111, 111}, m142m = "invokeSuspend")
     /* renamed from: io.ktor.network.sockets.CIOWriterKt$attachForWritingDirectImpl$1$1 */
     /* loaded from: classes4.dex */
-    public static final class C26601 extends SuspendLambda implements Function2<LookAheadSuspendSession, Continuation<? super Unit>, Object> {
+    public static final class C26641 extends SuspendLambda implements Function2<LookAheadSuspendSession, Continuation<? super Unit>, Object> {
         final /* synthetic */ ReaderScope $$this$reader;
         final /* synthetic */ ByteChannel $channel;
         final /* synthetic */ WritableByteChannel $nioChannel;
@@ -124,7 +124,7 @@ public final class CIOWriterKt$attachForWritingDirectImpl$1 extends SuspendLambd
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C26601(SocketOptions.TCPClientSocketOptions tCPClientSocketOptions, ReaderScope readerScope, ByteChannel byteChannel, WritableByteChannel writableByteChannel, Selectable selectable, SelectorManager selectorManager, Continuation<? super C26601> continuation) {
+        C26641(SocketOptions.TCPClientSocketOptions tCPClientSocketOptions, ReaderScope readerScope, ByteChannel byteChannel, WritableByteChannel writableByteChannel, Selectable selectable, SelectorManager selectorManager, Continuation<? super C26641> continuation) {
             super(2, continuation);
             this.$socketOptions = tCPClientSocketOptions;
             this.$$this$reader = readerScope;
@@ -136,14 +136,14 @@ public final class CIOWriterKt$attachForWritingDirectImpl$1 extends SuspendLambd
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            C26601 c26601 = new C26601(this.$socketOptions, this.$$this$reader, this.$channel, this.$nioChannel, this.$selectable, this.$selector, continuation);
-            c26601.L$0 = obj;
-            return c26601;
+            C26641 c26641 = new C26641(this.$socketOptions, this.$$this$reader, this.$channel, this.$nioChannel, this.$selectable, this.$selector, continuation);
+            c26641.L$0 = obj;
+            return c26641;
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(LookAheadSuspendSession lookAheadSuspendSession, Continuation<? super Unit> continuation) {
-            return ((C26601) create(lookAheadSuspendSession, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C26641) create(lookAheadSuspendSession, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
@@ -171,7 +171,7 @@ public final class CIOWriterKt$attachForWritingDirectImpl$1 extends SuspendLambd
                 Method dump skipped, instructions count: 409
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: io.ktor.network.sockets.CIOWriterKt$attachForWritingDirectImpl$1.C26601.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: io.ktor.network.sockets.CIOWriterKt$attachForWritingDirectImpl$1.C26641.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 }

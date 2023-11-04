@@ -177,7 +177,7 @@ public class VideoCapturerDevice {
         this.nativePtr = j;
         if ("screen".equals(str)) {
             if (Build.VERSION.SDK_INT >= 21 && this.videoCapturer == null) {
-                this.videoCapturer = new ScreenCapturerAndroid(mediaProjectionPermissionResultData, new C36841());
+                this.videoCapturer = new ScreenCapturerAndroid(mediaProjectionPermissionResultData, new C36881());
                 final Point screenCaptureSize = getScreenCaptureSize();
                 this.currentWidth = screenCaptureSize.x;
                 this.currentHeight = screenCaptureSize.y;
@@ -210,7 +210,7 @@ public class VideoCapturerDevice {
         }
         final String str2 = deviceNames[i];
         if (this.videoCapturer == null) {
-            this.videoCapturer = camera2Enumerator.createCapturer(str2, new C36852());
+            this.videoCapturer = camera2Enumerator.createCapturer(str2, new C36892());
             this.videoCapturerSurfaceTextureHelper = SurfaceTextureHelper.create("VideoCapturerThread", eglBase.getEglBaseContext());
             this.handler.post(new Runnable() { // from class: org.telegram.messenger.voip.VideoCapturerDevice$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
@@ -231,8 +231,8 @@ public class VideoCapturerDevice {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.voip.VideoCapturerDevice$1 */
     /* loaded from: classes4.dex */
-    public class C36841 extends MediaProjection.Callback {
-        C36841() {
+    public class C36881 extends MediaProjection.Callback {
+        C36881() {
         }
 
         @Override // android.media.projection.MediaProjection.Callback
@@ -240,7 +240,7 @@ public class VideoCapturerDevice {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VideoCapturerDevice$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VideoCapturerDevice.C36841.lambda$onStop$0();
+                    VideoCapturerDevice.C36881.lambda$onStop$0();
                 }
             });
         }
@@ -273,7 +273,7 @@ public class VideoCapturerDevice {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.voip.VideoCapturerDevice$2 */
     /* loaded from: classes4.dex */
-    public class C36852 implements CameraVideoCapturer.CameraEventsHandler {
+    public class C36892 implements CameraVideoCapturer.CameraEventsHandler {
         @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
         public void onCameraClosed() {
         }
@@ -294,7 +294,7 @@ public class VideoCapturerDevice {
         public void onCameraOpening(String str) {
         }
 
-        C36852() {
+        C36892() {
         }
 
         @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
@@ -302,7 +302,7 @@ public class VideoCapturerDevice {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VideoCapturerDevice$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VideoCapturerDevice.C36852.lambda$onFirstFrameAvailable$0();
+                    VideoCapturerDevice.C36892.lambda$onFirstFrameAvailable$0();
                 }
             });
         }
@@ -328,12 +328,12 @@ public class VideoCapturerDevice {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.voip.VideoCapturerDevice$3 */
     /* loaded from: classes4.dex */
-    public class C36863 implements CameraVideoCapturer.CameraSwitchHandler {
+    public class C36903 implements CameraVideoCapturer.CameraSwitchHandler {
         @Override // org.webrtc.CameraVideoCapturer.CameraSwitchHandler
         public void onCameraSwitchError(String str) {
         }
 
-        C36863() {
+        C36903() {
         }
 
         @Override // org.webrtc.CameraVideoCapturer.CameraSwitchHandler
@@ -341,7 +341,7 @@ public class VideoCapturerDevice {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.voip.VideoCapturerDevice$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    VideoCapturerDevice.C36863.lambda$onCameraSwitchDone$0(z);
+                    VideoCapturerDevice.C36903.lambda$onCameraSwitchDone$0(z);
                 }
             });
         }
@@ -356,7 +356,7 @@ public class VideoCapturerDevice {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$init$4(String str) {
-        ((CameraVideoCapturer) this.videoCapturer).switchCamera(new C36863(), str);
+        ((CameraVideoCapturer) this.videoCapturer).switchCamera(new C36903(), str);
     }
 
     public static MediaProjection getMediaProjection() {
@@ -445,7 +445,7 @@ public class VideoCapturerDevice {
         try {
             this.thread.quitSafely();
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
         }
     }
 

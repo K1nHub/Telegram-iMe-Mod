@@ -96,7 +96,7 @@ public final class AnnotationConstructorCaller implements Caller {
 
     @Override // kotlin.reflect.jvm.internal.calls.Caller
     /* renamed from: getMember  reason: collision with other method in class */
-    public /* bridge */ /* synthetic */ Member mo2038getMember() {
+    public /* bridge */ /* synthetic */ Member mo2043getMember() {
         return (Member) getMember();
     }
 

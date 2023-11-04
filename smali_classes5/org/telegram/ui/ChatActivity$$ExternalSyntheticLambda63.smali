@@ -2,64 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
 # instance fields
-.field public final synthetic f$0:Landroidx/viewpager/widget/ViewPager;
-
-.field public final synthetic f$1:I
-
-.field public final synthetic f$2:Landroid/widget/LinearLayout;
-
-.field public final synthetic f$3:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-.field public final synthetic f$4:Landroid/widget/HorizontalScrollView;
-
-.field public final synthetic f$5:Lorg/telegram/ui/Components/ReactionTabHolderView;
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroidx/viewpager/widget/ViewPager;ILandroid/widget/LinearLayout;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/widget/HorizontalScrollView;Lorg/telegram/ui/Components/ReactionTabHolderView;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$0:Landroidx/viewpager/widget/ViewPager;
-
-    iput p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$1:I
-
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$2:Landroid/widget/LinearLayout;
-
-    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$3:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iput-object p5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$4:Landroid/widget/HorizontalScrollView;
-
-    iput-object p6, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$5:Lorg/telegram/ui/Components/ReactionTabHolderView;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$0:Lorg/telegram/ui/ChatActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 7
+.method public final onDismiss(Landroid/content/DialogInterface;)V
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$0:Landroidx/viewpager/widget/ViewPager;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iget v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$1:I
-
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$2:Landroid/widget/LinearLayout;
-
-    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$3:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    iget-object v4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$4:Landroid/widget/HorizontalScrollView;
-
-    iget-object v5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda63;->f$5:Lorg/telegram/ui/Components/ReactionTabHolderView;
-
-    move-object v6, p1
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$AO6x4m23zCz-tu2g_RrO_o8bYXE(Landroidx/viewpager/widget/ViewPager;ILandroid/widget/LinearLayout;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/widget/HorizontalScrollView;Lorg/telegram/ui/Components/ReactionTabHolderView;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$cbDKhDSb71NnPIbkPkFbmhwdk_o(Lorg/telegram/ui/ChatActivity;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

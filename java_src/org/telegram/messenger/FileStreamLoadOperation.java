@@ -49,7 +49,7 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
 
     public static int getStreamPrioriy(TLRPC$Document tLRPC$Document) {
         Integer num;
-        if (tLRPC$Document == null || (num = priorityMap.get(Long.valueOf(tLRPC$Document.f1608id))) == null) {
+        if (tLRPC$Document == null || (num = priorityMap.get(Long.valueOf(tLRPC$Document.f1610id))) == null) {
             return 3;
         }
         return num.intValue();
@@ -65,7 +65,7 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
         TLRPC$TL_document tLRPC$TL_document = new TLRPC$TL_document();
         this.document = tLRPC$TL_document;
         tLRPC$TL_document.access_hash = Utilities.parseLong(this.uri.getQueryParameter("hash")).longValue();
-        this.document.f1608id = Utilities.parseLong(this.uri.getQueryParameter(TtmlNode.ATTR_ID)).longValue();
+        this.document.f1610id = Utilities.parseLong(this.uri.getQueryParameter(TtmlNode.ATTR_ID)).longValue();
         this.document.size = Utilities.parseLong(this.uri.getQueryParameter("size")).longValue();
         this.document.dc_id = Utilities.parseInt((CharSequence) this.uri.getQueryParameter("dc")).intValue();
         this.document.mime_type = this.uri.getQueryParameter("mime");
@@ -114,7 +114,7 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
     }
 
     private int getCurrentPriority() {
-        Integer num = (Integer) ConcurrentMap$EL.getOrDefault(priorityMap, Long.valueOf(this.document.f1608id), null);
+        Integer num = (Integer) ConcurrentMap$EL.getOrDefault(priorityMap, Long.valueOf(this.document.f1610id), null);
         if (num != null) {
             return num.intValue();
         }
@@ -153,7 +153,7 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
             try {
                 randomAccessFile.close();
             } catch (Exception e) {
-                FileLog.m97e(e);
+                FileLog.m99e(e);
             }
             this.file = null;
         }
@@ -180,7 +180,7 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
 
     public static void setPriorityForDocument(TLRPC$Document tLRPC$Document, int i) {
         if (tLRPC$Document != null) {
-            priorityMap.put(Long.valueOf(tLRPC$Document.f1608id), Integer.valueOf(i));
+            priorityMap.put(Long.valueOf(tLRPC$Document.f1610id), Integer.valueOf(i));
         }
     }
 
@@ -195,7 +195,7 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
             sb.append("?account=");
             sb.append(i);
             sb.append("&id=");
-            sb.append(tLRPC$Document.f1608id);
+            sb.append(tLRPC$Document.f1610id);
             sb.append("&hash=");
             sb.append(tLRPC$Document.access_hash);
             sb.append("&dc=");
@@ -217,7 +217,7 @@ public class FileStreamLoadOperation extends BaseDataSource implements FileLoadO
             String sb2 = sb.toString();
             return Uri.parse("tg://" + attachFileName + sb2);
         } catch (UnsupportedEncodingException e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
             return null;
         }
     }

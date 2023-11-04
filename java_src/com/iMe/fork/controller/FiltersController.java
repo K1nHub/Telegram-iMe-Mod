@@ -52,8 +52,8 @@ import org.telegram.messenger.BaseController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.FilterCreateActivity;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.FilterCreateActivity;
 import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
@@ -310,7 +310,7 @@ public final class FiltersController extends BaseController implements KoinCompo
             for (MessagesController.DialogFilter dialogFilter : filters) {
                 dialogFilter.alwaysShow.clear();
                 dialogFilter.pinnedDialogs.clear();
-                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1537id).name());
+                Pair<List<Long>, List<Integer>> pair = archiveSortingPinnedChats.get(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1538id).name());
                 if (pair != null) {
                     int i = 0;
                     for (Object obj : pair.getFirst()) {
@@ -454,7 +454,7 @@ public final class FiltersController extends BaseController implements KoinCompo
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(filterSettings, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (FilterSettingsDb filterSettingsDb : filterSettings) {
-            arrayList.add(TuplesKt.m144to(Integer.valueOf(filterSettingsDb.getFilterId()), FilterSettingsMappingKt.mapToDomain(filterSettingsDb)));
+            arrayList.add(TuplesKt.m146to(Integer.valueOf(filterSettingsDb.getFilterId()), FilterSettingsMappingKt.mapToDomain(filterSettingsDb)));
         }
         MapsKt__MapsKt.putAll(map, arrayList);
     }
@@ -512,8 +512,8 @@ public final class FiltersController extends BaseController implements KoinCompo
                 arrayList.add(Long.valueOf(dialogFilter.pinnedDialogs.keyAt(i)));
                 arrayList2.add(Integer.valueOf(dialogFilter.pinnedDialogs.valueAt(i)));
             }
-            Pair m144to = TuplesKt.m144to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1537id).name(), TuplesKt.m144to(arrayList, arrayList2));
-            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
+            Pair m146to = TuplesKt.m146to(SortingFilter.Companion.getFilterByIdWithExtra(z, dialogFilter.f1538id).name(), TuplesKt.m146to(arrayList, arrayList2));
+            linkedHashMap.put(m146to.getFirst(), m146to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;

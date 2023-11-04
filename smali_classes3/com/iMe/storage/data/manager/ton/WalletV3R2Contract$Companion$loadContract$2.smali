@@ -17,7 +17,7 @@
     c = "com.iMe.storage.data.manager.ton.WalletV3R2Contract$Companion"
     f = "WalletV3R2Contract.kt"
     l = {
-        0x7e
+        0x83
     }
     m = "loadContract"
 .end annotation

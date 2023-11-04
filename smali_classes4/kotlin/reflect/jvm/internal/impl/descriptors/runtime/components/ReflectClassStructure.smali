@@ -175,7 +175,7 @@
 
     move-result-object v2
 
-    const-string v3, "javaClassId.asSingleFqName()"
+    const-string/jumbo v3, "javaClassId.asSingleFqName()"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -216,7 +216,7 @@
 
     move-result-object v0
 
-    const-string v1, "klass.declaredConstructors"
+    const-string/jumbo v1, "klass.declaredConstructors"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -458,7 +458,7 @@
 
     move-result-object p1
 
-    const-string v0, "klass.declaredFields"
+    const-string/jumbo v0, "klass.declaredFields"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -566,7 +566,7 @@
 
     move-result-object v0
 
-    const-string v1, "klass.declaredMethods"
+    const-string/jumbo v1, "klass.declaredMethods"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1247,7 +1247,7 @@
         }
     .end annotation
 
-    const-string v0, "klass"
+    const-string/jumbo v0, "klass"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1260,7 +1260,7 @@
 
     move-result-object p1
 
-    const-string v0, "klass.declaredAnnotations"
+    const-string/jumbo v0, "klass.declaredAnnotations"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1303,7 +1303,7 @@
         }
     .end annotation
 
-    const-string v0, "klass"
+    const-string/jumbo v0, "klass"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

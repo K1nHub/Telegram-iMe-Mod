@@ -38,7 +38,7 @@
     if-nez v0, :cond_1
 
     .line 32
-    invoke-static {}, Lorg/telegram/messenger/BuildVars;->isStandaloneApp()Z
+    invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isStandaloneBuild()Z
 
     move-result v0
 

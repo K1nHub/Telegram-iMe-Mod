@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    .line 3825
+    .line 3832
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
@@ -35,7 +35,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 2
 
-    .line 3828
+    .line 3835
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     iget-object p1, p1, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -51,27 +51,27 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 3831
+    .line 3838
     invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setNewTelegramAuthorizationRulesRead(Z)V
 
-    .line 3832
+    .line 3839
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView$1;->this$1:Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;
 
     iget-object p1, p1, Lorg/telegram/ui/LoginActivity$LoginActivitySmsView;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    .line 3833
+    .line 3840
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
     sget v1, Lorg/telegram/messenger/R$string;->open_telegram_alert_auth:I
 
-    .line 3834
+    .line 3841
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 3832
+    .line 3839
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/AlertsCreator;->createOpenTelegramDialog(Landroid/content/Context;Ljava/lang/CharSequence;)Landroid/app/Dialog;
 
     move-result-object v0

@@ -30,32 +30,32 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 12
 
-    .line 1826
+    .line 1827
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x1
 
-    .line 1877
+    .line 1878
     iput-boolean v0, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->divider:Z
 
     const/4 v1, 0x0
 
-    .line 1878
+    .line 1879
     iput-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->translateText:Ljava/lang/Boolean;
 
-    .line 1828
+    .line 1829
     new-instance v1, Landroid/widget/ImageView;
 
     invoke-direct {v1, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->imageView:Landroid/widget/ImageView;
 
-    .line 1829
+    .line 1830
     sget-object v2, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1830
+    .line 1831
     iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->imageView:Landroid/widget/ImageView;
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -94,7 +94,7 @@
 
     invoke-virtual {p0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1832
+    .line 1833
     new-instance v1, Landroid/widget/TextView;
 
     invoke-direct {v1, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -103,20 +103,20 @@
 
     const/high16 p1, 0x41800000    # 16.0f
 
-    .line 1833
-    invoke-virtual {v1, v0, p1}, Landroid/widget/TextView;->setTextSize(IF)V
-
     .line 1834
-    iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
-
-    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setLines(I)V
+    invoke-virtual {v1, v0, p1}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 1835
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
 
-    invoke-virtual {p1}, Landroid/widget/TextView;->setSingleLine()V
+    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setLines(I)V
 
     .line 1836
+    iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
+
+    invoke-virtual {p1}, Landroid/widget/TextView;->setSingleLine()V
+
+    .line 1837
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
 
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -142,7 +142,7 @@
     :cond_2
     invoke-virtual {p1, v5, v2, v1, v2}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1837
+    .line 1838
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
 
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -157,7 +157,7 @@
     :goto_2
     invoke-virtual {p1, v3}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1838
+    .line 1839
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
 
     const/4 v3, -0x1
@@ -208,15 +208,15 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 1882
+    .line 1883
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 1883
+    .line 1884
     iget-boolean v0, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->divider:Z
 
     if-eqz v0, :cond_0
 
-    .line 1884
+    .line 1885
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getLeft()I
@@ -260,7 +260,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1891
+    .line 1892
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -273,7 +273,7 @@
 
     const/16 v0, 0x30
 
-    .line 1892
+    .line 1893
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -282,7 +282,7 @@
 
     move-result p2
 
-    .line 1890
+    .line 1891
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -291,7 +291,7 @@
 .method public set(ILjava/lang/CharSequence;Z)V
     .locals 6
 
-    .line 1848
+    .line 1849
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/4 v1, 0x1
@@ -310,7 +310,7 @@
 
     if-nez p1, :cond_1
 
-    .line 1851
+    .line 1852
     iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->imageView:Landroid/widget/ImageView;
 
     const/16 v4, 0x8
@@ -319,18 +319,18 @@
 
     goto :goto_1
 
-    .line 1853
+    .line 1854
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1854
+    .line 1855
     iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {v3, p1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1856
+    .line 1857
     :goto_1
     sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
@@ -340,7 +340,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 1857
+    .line 1858
     iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v3}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -365,7 +365,7 @@
 
     goto :goto_4
 
-    .line 1859
+    .line 1860
     :cond_3
     iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
 
@@ -389,7 +389,7 @@
 
     iput v4, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
 
-    .line 1861
+    .line 1862
     :goto_4
     iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
 
@@ -401,7 +401,7 @@
 
     move v2, v1
 
-    .line 1864
+    .line 1865
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->translateText:Ljava/lang/Boolean;
 
@@ -413,7 +413,7 @@
 
     if-eq p2, v2, :cond_a
 
-    .line 1865
+    .line 1866
     :cond_6
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -421,19 +421,19 @@
 
     iput-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->translateText:Ljava/lang/Boolean;
 
-    .line 1866
+    .line 1867
     iget p2, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->lastIconResId:I
 
     const/4 v3, 0x0
 
     if-ne p2, p1, :cond_8
 
-    .line 1867
+    .line 1868
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p2}, Landroid/widget/TextView;->clearAnimation()V
 
-    .line 1868
+    .line 1869
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p2}, Landroid/widget/TextView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -471,7 +471,7 @@
 
     goto :goto_5
 
-    .line 1870
+    .line 1871
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
 
@@ -488,7 +488,7 @@
     :cond_9
     invoke-virtual {p2, v3}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 1873
+    .line 1874
     :cond_a
     :goto_5
     iput-boolean p3, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->divider:Z
@@ -497,7 +497,7 @@
 
     invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 1874
+    .line 1875
     iput p1, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->lastIconResId:I
 
     return-void
@@ -506,7 +506,7 @@
 .method public setRed(Z)V
     .locals 4
 
-    .line 1842
+    .line 1843
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->imageView:Landroid/widget/ImageView;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
@@ -531,7 +531,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1843
+    .line 1844
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->textView:Landroid/widget/TextView;
 
     if-eqz p1, :cond_1

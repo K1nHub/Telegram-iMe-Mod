@@ -67,7 +67,7 @@ public class Jdk9Platform extends Platform {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x001e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x001f, code lost:
         if (r1.intValue() >= 9) goto L9;
      */
     static {
@@ -78,25 +78,25 @@ public class Jdk9Platform extends Platform {
             okhttp3.internal.platform.Jdk9Platform.Companion = r0
             java.lang.String r0 = "java.specification.version"
             java.lang.String r0 = java.lang.System.getProperty(r0)
-            if (r0 == 0) goto L14
+            if (r0 == 0) goto L15
             java.lang.Integer r1 = kotlin.text.StringsKt.toIntOrNull(r0)
-        L14:
+        L15:
             r0 = 1
             r2 = 0
-            if (r1 == 0) goto L23
+            if (r1 == 0) goto L24
             int r1 = r1.intValue()
             r3 = 9
-            if (r1 < r3) goto L21
-            goto L2c
-        L21:
+            if (r1 < r3) goto L22
+            goto L2d
+        L22:
             r0 = r2
-            goto L2c
-        L23:
+            goto L2d
+        L24:
             java.lang.Class<javax.net.ssl.SSLSocket> r1 = javax.net.ssl.SSLSocket.class
             java.lang.String r3 = "getApplicationProtocol"
-            java.lang.Class[] r4 = new java.lang.Class[r2]     // Catch: java.lang.NoSuchMethodException -> L21
-            r1.getMethod(r3, r4)     // Catch: java.lang.NoSuchMethodException -> L21
-        L2c:
+            java.lang.Class[] r4 = new java.lang.Class[r2]     // Catch: java.lang.NoSuchMethodException -> L22
+            r1.getMethod(r3, r4)     // Catch: java.lang.NoSuchMethodException -> L22
+        L2d:
             okhttp3.internal.platform.Jdk9Platform.isAvailable = r0
             return
         */

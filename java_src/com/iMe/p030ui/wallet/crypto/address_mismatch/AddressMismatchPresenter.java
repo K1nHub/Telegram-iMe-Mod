@@ -18,7 +18,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import timber.log.Timber;
 /* compiled from: AddressMismatchPresenter.kt */
 @InjectViewState
@@ -45,7 +45,7 @@ public final class AddressMismatchPresenter extends BasePresenter<AddressMismatc
     }
 
     public final DialogModel getDeleteWalletDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3630R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3630R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn));
+        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3634R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn));
     }
 
     public static /* synthetic */ void deleteActiveWallet$default(AddressMismatchPresenter addressMismatchPresenter, long j, int i, Object obj) {
@@ -56,7 +56,7 @@ public final class AddressMismatchPresenter extends BasePresenter<AddressMismatc
     }
 
     public final void deleteActiveWallet(final long j) {
-        Observable observeOn = CryptoWalletInteractor.deleteWallet$default(this.cryptoWalletInteractor, this.cryptoPreferenceHelper.getCurrentBlockchainType(), false, false, 4, null).observeOn(this.schedulersProvider.mo1009ui());
+        Observable observeOn = CryptoWalletInteractor.deleteWallet$default(this.cryptoWalletInteractor, this.cryptoPreferenceHelper.getCurrentBlockchainType(), false, false, 4, null).observeOn(this.schedulersProvider.mo1010ui());
         final Function1<Result<? extends Boolean>, Unit> function1 = new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchPresenter$deleteActiveWallet$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -141,7 +141,7 @@ public final class AddressMismatchPresenter extends BasePresenter<AddressMismatc
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1009ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.CryptoEvent, Unit>() { // from class: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -150,12 +150,12 @@ public final class AddressMismatchPresenter extends BasePresenter<AddressMismatc
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.CryptoEvent cryptoEvent) {
-                m1618invoke(cryptoEvent);
+                m1623invoke(cryptoEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1618invoke(DomainRxEvents.CryptoEvent it) {
+            public final void m1623invoke(DomainRxEvents.CryptoEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents.CryptoEvent cryptoEvent = it;
                 if (Intrinsics.areEqual(cryptoEvent, DomainRxEvents.SuccessSaveBackup.INSTANCE)) {

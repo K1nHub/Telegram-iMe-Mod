@@ -50,7 +50,7 @@
 
     move-result v0
 
-    if-nez v0, :cond_1
+    if-nez v0, :cond_0
 
     .line 38
     iget-object p1, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet$1;->this$0:Lorg/telegram/ui/Components/MemberRequestsBottomSheet;
@@ -65,7 +65,7 @@
 
     const/4 p2, 0x4
 
-    if-eq p1, p2, :cond_0
+    if-eq p1, p2, :cond_2
 
     .line 39
     iget-object p1, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet$1;->this$0:Lorg/telegram/ui/Components/MemberRequestsBottomSheet;
@@ -76,16 +76,10 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/StickerEmptyView;->setVisibility(I)V
 
-    .line 41
-    :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet$1;->this$0:Lorg/telegram/ui/Components/MemberRequestsBottomSheet;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/UsersAlertBase;->dismiss()V
-
     goto :goto_0
 
-    :cond_1
-    if-eqz p3, :cond_2
+    :cond_0
+    if-eqz p3, :cond_1
 
     .line 43
     iget-object p1, p0, Lorg/telegram/ui/Components/MemberRequestsBottomSheet$1;->this$0:Lorg/telegram/ui/Components/MemberRequestsBottomSheet;
@@ -101,9 +95,10 @@
     goto :goto_0
 
     .line 45
-    :cond_2
+    :cond_1
     invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->onImportersChanged(Ljava/lang/String;ZZ)V
 
+    :cond_2
     :goto_0
     return-void
 .end method

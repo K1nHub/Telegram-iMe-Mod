@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactAddActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 259
+    .line 262
     iput-object p1, p0, Lorg/telegram/ui/ContactAddActivity$3;->this$0:Lorg/telegram/ui/ContactAddActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected getResourcesProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 1
 
-    .line 262
+    .line 265
     iget-object v0, p0, Lorg/telegram/ui/ContactAddActivity$3;->this$0:Lorg/telegram/ui/ContactAddActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactAddActivity;->access$800(Lorg/telegram/ui/ContactAddActivity;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;

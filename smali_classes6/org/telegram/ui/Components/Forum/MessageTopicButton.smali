@@ -1730,7 +1730,7 @@
 
     const v14, 0x3f266666    # 0.65f
 
-    invoke-static {v12, v14, v3}, Lorg/telegram/ui/Components/Forum/ForumUtilities;->createGeneralTopicDrawable(Landroid/content/Context;FI)Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;
+    invoke-static {v12, v14, v3, v6}, Lorg/telegram/ui/Components/Forum/ForumUtilities;->createGeneralTopicDrawable(Landroid/content/Context;FIZ)Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;
 
     move-result-object v12
 

@@ -31,11 +31,11 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import timber.log.Timber;
 /* compiled from: WalletCreateManager.kt */
 /* loaded from: classes3.dex */
-public final class WalletCreateManager {
+public final class WalletCreateManager implements WalletCreateManagerDelegate {
     private final CryptoAccessManager cryptoAccessManager;
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final CryptoWalletInteractor cryptoWalletInteractor;
@@ -87,54 +87,59 @@ public final class WalletCreateManager {
         this.viewState = null;
     }
 
-    public void startWalletCreationFlow(final WalletCreationType walletCreationType) {
+    @Override // com.iMe.manager.wallet.create.WalletCreateManagerDelegate
+    public void startWalletCreationFlow(final WalletCreationType walletCreationType, final BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(walletCreationType, "walletCreationType");
+        if (blockchainType == null) {
+            blockchainType = this.cryptoPreferenceHelper.getCurrentBlockchainType();
+        }
         runWithCryptoInformationCheck(new Callbacks$Callback() { // from class: com.iMe.manager.wallet.create.WalletCreateManager$$ExternalSyntheticLambda1
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
-                WalletCreateManager.startWalletCreationFlow$lambda$2(WalletCreateManager.this, walletCreationType);
+                WalletCreateManager.startWalletCreationFlow$lambda$2(WalletCreateManager.this, walletCreationType, blockchainType);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void startWalletCreationFlow$lambda$2(final WalletCreateManager this$0, final WalletCreationType walletCreationType) {
+    public static final void startWalletCreationFlow$lambda$2(final WalletCreateManager this$0, WalletCreationType walletCreationType, final BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(walletCreationType, "$walletCreationType");
+        Intrinsics.checkNotNullParameter(blockchainType, "$blockchainType");
         WalletCreateManagerView viewState = this$0.getViewState();
         if (walletCreationType instanceof WalletCreationType.Initial) {
-            String str = this$0.getLinkedWalletsAddresses().get(this$0.getCurrentBlockchainType());
+            String str = this$0.getLinkedWalletsAddresses().get(blockchainType);
             if (str == null) {
                 str = "";
             }
-            viewState.openCreateWalletIntroScreen(str, (WalletCreationType.Initial) walletCreationType);
+            viewState.openCreateWalletIntroScreen(blockchainType, str, (WalletCreationType.Initial) walletCreationType);
         } else if (walletCreationType instanceof WalletCreationType.Activate) {
             viewState.showActivationConfirmationDialog(this$0.getActivationConfirmationDialogModel(), new Callbacks$Callback() { // from class: com.iMe.manager.wallet.create.WalletCreateManager$$ExternalSyntheticLambda2
                 @Override // com.iMe.fork.utils.Callbacks$Callback
                 public final void invoke() {
-                    WalletCreateManager.startWalletCreationFlow$lambda$2$lambda$1$lambda$0(WalletCreateManager.this, walletCreationType);
+                    WalletCreateManager.startWalletCreationFlow$lambda$2$lambda$1$lambda$0(WalletCreateManager.this, blockchainType);
                 }
             });
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void startWalletCreationFlow$lambda$2$lambda$1$lambda$0(WalletCreateManager this$0, WalletCreationType walletCreationType) {
+    public static final void startWalletCreationFlow$lambda$2$lambda$1$lambda$0(WalletCreateManager this$0, BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Intrinsics.checkNotNullParameter(walletCreationType, "$walletCreationType");
-        this$0.activateBib39BasedWallet(((WalletCreationType.Activate) walletCreationType).getBlockchainType());
+        Intrinsics.checkNotNullParameter(blockchainType, "$blockchainType");
+        this$0.activateBib39BasedWallet(blockchainType);
     }
 
-    public void startChooseWalletOptionsFlow(BlockchainType blockchainType) {
+    public void startChooseWalletOptionsFlow(final BlockchainType blockchainType) {
         int collectionSizeOrDefault;
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         List<WalletCreationType> availableWalletCreationTypes = getAvailableWalletCreationTypes(blockchainType);
         if (CollectionExtKt.isSingletonList(availableWalletCreationTypes)) {
-            startWalletCreationFlow((WalletCreationType) CollectionsKt.first((List<? extends Object>) availableWalletCreationTypes));
+            startWalletCreationFlow((WalletCreationType) CollectionsKt.first((List<? extends Object>) availableWalletCreationTypes), blockchainType);
             return;
         }
         WalletCreateManagerView viewState = getViewState();
-        String string = this.resourceManager.getString(C3630R.string.wallet_dashboard_create_start_dialog_title);
+        String string = this.resourceManager.getString(C3634R.string.wallet_dashboard_create_start_dialog_title);
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(availableWalletCreationTypes, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (WalletCreationType walletCreationType : availableWalletCreationTypes) {
@@ -143,15 +148,16 @@ public final class WalletCreateManager {
         viewState.showSelectOptionsDialog(string, (String[]) arrayList.toArray(new String[0]), new DialogInterface.OnClickListener() { // from class: com.iMe.manager.wallet.create.WalletCreateManager$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
-                WalletCreateManager.startChooseWalletOptionsFlow$lambda$4(WalletCreateManager.this, dialogInterface, i);
+                WalletCreateManager.startChooseWalletOptionsFlow$lambda$4(WalletCreateManager.this, blockchainType, dialogInterface, i);
             }
         });
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void startChooseWalletOptionsFlow$lambda$4(WalletCreateManager this$0, DialogInterface dialogInterface, int i) {
+    public static final void startChooseWalletOptionsFlow$lambda$4(WalletCreateManager this$0, BlockchainType blockchainType, DialogInterface dialogInterface, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.startWalletCreationFlow(WalletCreationType.Initial.Companion.getByIndex(i));
+        Intrinsics.checkNotNullParameter(blockchainType, "$blockchainType");
+        this$0.startWalletCreationFlow(WalletCreationType.Initial.Companion.getByIndex(i), blockchainType);
     }
 
     public List<WalletCreationType> getAvailableWalletCreationTypes(BlockchainType blockchainType) {
@@ -174,7 +180,7 @@ public final class WalletCreateManager {
             endAction.invoke();
             return;
         }
-        Observable<Result<Map<BlockchainType, String>>> observeOn = this.cryptoWalletInteractor.getLinkedWalletsAddresses().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Map<BlockchainType, String>>> observeOn = this.cryptoWalletInteractor.getLinkedWalletsAddresses().observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
         Observable withLoadingDialog$default = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) getViewState(), false, 2, (Object) null);
         final WalletCreateManagerView viewState = getViewState();
@@ -186,12 +192,12 @@ public final class WalletCreateManager {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Map<BlockchainType, ? extends String>> result) {
-                m1531invoke(result);
+                m1536invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1531invoke(Result<? extends Map<BlockchainType, ? extends String>> it) {
+            public final void m1536invoke(Result<? extends Map<BlockchainType, ? extends String>> it) {
                 WalletCreateManagerView viewState2;
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -235,7 +241,7 @@ public final class WalletCreateManager {
     }
 
     private final void activateBib39BasedWallet(BlockchainType blockchainType) {
-        Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.activateBip39BasedWallet(blockchainType).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.activateBip39BasedWallet(blockchainType).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
         Observable withLoadingDialog = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) getViewState(), false);
         final WalletCreateManagerView walletCreateManagerView = this.viewState;
@@ -246,12 +252,12 @@ public final class WalletCreateManager {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Wallet> result) {
-                m1530invoke(result);
+                m1535invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1530invoke(Result<? extends Wallet> it) {
+            public final void m1535invoke(Result<? extends Wallet> it) {
                 WalletCreateManagerView viewState;
                 ResourceManager resourceManager;
                 RxEventBus rxEventBus;
@@ -303,6 +309,6 @@ public final class WalletCreateManager {
     }
 
     private final DialogModel getActivationConfirmationDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3630R.string.wallet_activation_confirmation_title), this.resourceManager.getString(C3630R.string.wallet_activation_confirmation_description), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.common_ok));
+        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_activation_confirmation_title), this.resourceManager.getString(C3634R.string.wallet_activation_confirmation_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.common_ok));
     }
 }

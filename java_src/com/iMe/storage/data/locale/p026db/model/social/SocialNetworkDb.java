@@ -30,13 +30,13 @@ public final class SocialNetworkDb {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1017m = ((((((((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.profileId) * 31) + this.social.hashCode()) * 31) + this.iconUrl.hashCode()) * 31) + this.socialPosition) * 31) + this.socialElementId.hashCode()) * 31) + this.socialElementAvatarUrl.hashCode()) * 31) + this.socialUserName.hashCode()) * 31) + this.socialWebUrl.hashCode()) * 31;
+        int m1018m = ((((((((((((((ProfileData$$ExternalSyntheticBackport0.m1018m(this.profileId) * 31) + this.social.hashCode()) * 31) + this.iconUrl.hashCode()) * 31) + this.socialPosition) * 31) + this.socialElementId.hashCode()) * 31) + this.socialElementAvatarUrl.hashCode()) * 31) + this.socialUserName.hashCode()) * 31) + this.socialWebUrl.hashCode()) * 31;
         boolean z = this.isActive;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return ((m1017m + i) * 31) + this.beforeConnectMessage.hashCode();
+        return ((m1018m + i) * 31) + this.beforeConnectMessage.hashCode();
     }
 
     public String toString() {

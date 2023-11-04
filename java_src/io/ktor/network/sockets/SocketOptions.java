@@ -21,7 +21,7 @@ public abstract class SocketOptions {
 
     private SocketOptions(Map<Object, Object> map) {
         this.customOptions = map;
-        this.typeOfService = TypeOfService.Companion.m1902getUNDEFINEDzieKYfw();
+        this.typeOfService = TypeOfService.Companion.m1907getUNDEFINEDzieKYfw();
     }
 
     protected final Map<Object, Object> getCustomOptions() {
@@ -59,7 +59,7 @@ public abstract class SocketOptions {
     }
 
     /* renamed from: getTypeOfService-zieKYfw  reason: not valid java name */
-    public final byte m1899getTypeOfServicezieKYfw() {
+    public final byte m1904getTypeOfServicezieKYfw() {
         return this.typeOfService;
     }
 

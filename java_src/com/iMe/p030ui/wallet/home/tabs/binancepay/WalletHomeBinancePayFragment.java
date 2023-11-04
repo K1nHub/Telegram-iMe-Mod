@@ -72,15 +72,15 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeBinancePayBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.ActionIntroActivity;
-import org.telegram.p042ui.Components.ItemOptions;
-import org.telegram.p042ui.ManageLinksActivity;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.ActionIntroActivity;
+import org.telegram.p043ui.Components.ItemOptions;
+import org.telegram.p043ui.ManageLinksActivity;
 /* compiled from: WalletHomeBinancePayFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.tabs.binancepay.WalletHomeBinancePayFragment */
 /* loaded from: classes4.dex */
@@ -251,16 +251,16 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         return root;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda11
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletHomeBinancePayFragment.getThemeDescriptions$lambda$0(WalletHomeBinancePayFragment.this);
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -337,7 +337,7 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
     public void openPayScreen() {
         ActionIntroActivity actionIntroActivity = new ActionIntroActivity(109);
         actionIntroActivity.setQrLoginDelegate(new ActionIntroActivity.ActionIntroQRLoginDelegate() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda12
-            @Override // org.telegram.p042ui.ActionIntroActivity.ActionIntroQRLoginDelegate
+            @Override // org.telegram.p043ui.ActionIntroActivity.ActionIntroQRLoginDelegate
             public final void didFindQRCode(String str) {
                 WalletHomeBinancePayFragment.openPayScreen$lambda$5$lambda$4(WalletHomeBinancePayFragment.this, str);
             }
@@ -476,13 +476,13 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         this$0.getPresenter().onMenuItemClick(it.getId());
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         getBinancePayRecycleAdapter().getBannerProvider().getBannersRecycleAdapter().resumeAnimation();
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onPause() {
         super.onPause();
         getBinancePayRecycleAdapter().getBannerProvider().getBannersRecycleAdapter().pauseAnimation();
@@ -502,7 +502,7 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
     private final void setupListeners() {
         final BinancePayRecycleAdapter binancePayRecycleAdapter = getBinancePayRecycleAdapter();
         binancePayRecycleAdapter.getBinanceAccountProvider().setActionBarMenuItemDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.ui.wallet.home.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda10
-            @Override // org.telegram.p042ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
                 WalletHomeBinancePayFragment.setupListeners$lambda$19$lambda$13(WalletHomeBinancePayFragment.this, i);
             }
@@ -569,7 +569,7 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         BaseNode baseNode = (BaseNode) this_with.getItem(i);
         if (baseNode instanceof CardButtonItem) {
-            if (((CardButtonItem) baseNode).getId() == C3630R.C3633id.binance_pay_link) {
+            if (((CardButtonItem) baseNode).getId() == C3634R.C3637id.binance_pay_link) {
                 this$0.getPresenter().startBinancePayLoginFlow();
             }
         } else if (baseNode instanceof BinanceBalanceItem) {
@@ -585,15 +585,15 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         Intrinsics.checkNotNullParameter(view, "view");
         BaseNode baseNode = (BaseNode) this_with.getItem(i);
         int id = view.getId();
-        if (id == C3630R.C3633id.image_copy) {
+        if (id == C3634R.C3637id.image_copy) {
             if (baseNode instanceof BinanceAccountItem) {
                 ContextExtKt.copyToClipboard$default(((BinanceAccountItem) baseNode).getInfo().getId(), null, 2, null);
             }
-        } else if (id == C3630R.C3633id.image_wallet_crypto_tokens_settings) {
+        } else if (id == C3634R.C3637id.image_wallet_crypto_tokens_settings) {
             this$0.presentFragment(WalletHomeCryptoTokensSettingsFragment.Companion.newInstance(new TokensScreenType.Binance(SelectableMappingKt.mapToDetailedTokensList(this$0.getPresenter().getBalances()))));
-        } else if (id == C3630R.C3633id.image_wallet_order_tokens) {
+        } else if (id == C3634R.C3637id.image_wallet_order_tokens) {
             this$0.getPresenter().onOrderTokensClick();
-        } else if (id == C3630R.C3633id.image_wallet_crypto_eye) {
+        } else if (id == C3634R.C3637id.image_wallet_crypto_eye) {
             this$0.getPresenter().switchHiddenBalance();
         }
     }

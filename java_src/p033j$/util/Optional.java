@@ -26,12 +26,12 @@ public final class Optional<T> {
     }
 
     /* renamed from: of */
-    public static <T> Optional<T> m669of(T t) {
+    public static <T> Optional<T> m670of(T t) {
         return new Optional<>(t);
     }
 
     public static <T> Optional<T> ofNullable(T t) {
-        return t == null ? empty() : m669of(t);
+        return t == null ? empty() : m670of(t);
     }
 
     public boolean equals(Object obj) {
@@ -39,7 +39,7 @@ public final class Optional<T> {
             return true;
         }
         if (obj instanceof Optional) {
-            return AbstractC2839k.m588q(this.f698a, ((Optional) obj).f698a);
+            return AbstractC2843k.m589q(this.f698a, ((Optional) obj).f698a);
         }
         return false;
     }

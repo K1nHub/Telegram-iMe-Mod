@@ -60,7 +60,7 @@ public final class HttpUtil {
             r0.append(r9)
             r0.append(r1)
             java.lang.String r0 = r0.toString()
-            com.google.android.exoplayer2.util.Log.m1110e(r2, r0)
+            com.google.android.exoplayer2.util.Log.m1111e(r2, r0)
         L26:
             r3 = -1
         L28:
@@ -101,7 +101,7 @@ public final class HttpUtil {
             r0.append(r10)     // Catch: java.lang.NumberFormatException -> L8d
             r0.append(r1)     // Catch: java.lang.NumberFormatException -> L8d
             java.lang.String r9 = r0.toString()     // Catch: java.lang.NumberFormatException -> L8d
-            com.google.android.exoplayer2.util.Log.m1106w(r2, r9)     // Catch: java.lang.NumberFormatException -> L8d
+            com.google.android.exoplayer2.util.Log.m1107w(r2, r9)     // Catch: java.lang.NumberFormatException -> L8d
             long r9 = java.lang.Math.max(r3, r5)     // Catch: java.lang.NumberFormatException -> L8d
             r3 = r9
             goto La4
@@ -113,7 +113,7 @@ public final class HttpUtil {
             r9.append(r10)
             r9.append(r1)
             java.lang.String r9 = r9.toString()
-            com.google.android.exoplayer2.util.Log.m1110e(r2, r9)
+            com.google.android.exoplayer2.util.Log.m1111e(r2, r9)
         La4:
             return r3
         */

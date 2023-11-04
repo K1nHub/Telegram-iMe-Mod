@@ -68,7 +68,7 @@
 
     if-eq p0, v0, :cond_3
 
-    const-string p0, "isVisible"
+    const-string/jumbo p0, "isVisible"
 
     aput-object p0, v1, v4
 

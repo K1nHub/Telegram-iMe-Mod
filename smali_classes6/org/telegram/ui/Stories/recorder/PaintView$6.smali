@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;)V
     .locals 0
 
-    .line 464
+    .line 463
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$6;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 .method public onEntityDeselect()V
     .locals 3
 
-    .line 477
+    .line 476
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$6;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$600(Lorg/telegram/ui/Stories/recorder/PaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
 
-    .line 478
+    .line 477
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$6;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/PaintView;->enteredThroughText:Z
@@ -54,15 +54,15 @@
 
     if-eqz v1, :cond_0
 
-    .line 479
+    .line 478
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->dismiss()V
 
-    .line 480
+    .line 479
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$6;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/PaintView;->enteredThroughText:Z
 
-    .line 482
+    .line 481
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$6;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -74,7 +74,7 @@
 .method public onSelectedEntityRequest()Lorg/telegram/ui/Components/Paint/Views/EntityView;
     .locals 1
 
-    .line 472
+    .line 471
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$6;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$500(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/Views/EntityView;

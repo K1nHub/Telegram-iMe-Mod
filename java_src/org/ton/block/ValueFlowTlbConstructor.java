@@ -4,9 +4,10 @@ import kotlin.jvm.internal.Intrinsics;
 import org.ton.block.CurrencyCollection;
 import org.ton.cell.CellBuilder;
 import org.ton.cell.CellSlice;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ValueFlow.kt */
 /* loaded from: classes6.dex */
-final class ValueFlowTlbConstructor extends org.ton.tlb.TlbConstructor<ValueFlow> {
+public final class ValueFlowTlbConstructor extends org.ton.tlb.TlbConstructor<ValueFlow> {
     public static final ValueFlowTlbConstructor INSTANCE = new ValueFlowTlbConstructor();
 
     private ValueFlowTlbConstructor() {

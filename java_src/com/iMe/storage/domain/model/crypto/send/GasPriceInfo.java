@@ -74,7 +74,7 @@ public final class GasPriceInfo {
     }
 
     public int hashCode() {
-        return (((((((this.price.hashCode() * 31) + this.limit.hashCode()) * 31) + this.duration) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.fee)) * 31) + this.feeInFiat.hashCode();
+        return (((((((this.price.hashCode() * 31) + this.limit.hashCode()) * 31) + this.duration) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.fee)) * 31) + this.feeInFiat.hashCode();
     }
 
     public String toString() {

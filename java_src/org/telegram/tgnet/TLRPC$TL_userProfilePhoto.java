@@ -6,8 +6,6 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_userProfilePhoto extends TLRPC$UserProfilePhoto {
-    public static int constructor = -2100168954;
-
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         int readInt32 = abstractSerializedData.readInt32(z);
@@ -33,13 +31,13 @@ public class TLRPC$TL_userProfilePhoto extends TLRPC$UserProfilePhoto {
         try {
             this.strippedBitmap = new BitmapDrawable(ImageLoader.getStrippedPhotoBitmap(this.stripped_thumb, "b"));
         } catch (Throwable th) {
-            FileLog.m97e(th);
+            FileLog.m99e(th);
         }
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-2100168954);
         int i = this.has_video ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         int i2 = this.personal ? i | 4 : i & (-5);

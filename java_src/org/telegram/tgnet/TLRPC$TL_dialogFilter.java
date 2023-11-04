@@ -1,8 +1,6 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_dialogFilter extends TLRPC$DialogFilter {
-    public static int constructor = 1949890536;
-
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         int readInt32 = abstractSerializedData.readInt32(z);
@@ -15,7 +13,7 @@ public class TLRPC$TL_dialogFilter extends TLRPC$DialogFilter {
         this.exclude_muted = (readInt32 & 2048) != 0;
         this.exclude_read = (readInt32 & 4096) != 0;
         this.exclude_archived = (readInt32 & 8192) != 0;
-        this.f1607id = abstractSerializedData.readInt32(z);
+        this.f1609id = abstractSerializedData.readInt32(z);
         this.title = abstractSerializedData.readString(z);
         if ((this.flags & ConnectionsManager.FileTypeVideo) != 0) {
             this.emoticon = abstractSerializedData.readString(z);
@@ -69,7 +67,7 @@ public class TLRPC$TL_dialogFilter extends TLRPC$DialogFilter {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(1949890536);
         int i = this.contacts ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         int i2 = this.non_contacts ? i | 2 : i & (-3);
@@ -87,7 +85,7 @@ public class TLRPC$TL_dialogFilter extends TLRPC$DialogFilter {
         int i8 = this.exclude_archived ? i7 | 8192 : i7 & (-8193);
         this.flags = i8;
         abstractSerializedData.writeInt32(i8);
-        abstractSerializedData.writeInt32(this.f1607id);
+        abstractSerializedData.writeInt32(this.f1609id);
         abstractSerializedData.writeString(this.title);
         if ((this.flags & ConnectionsManager.FileTypeVideo) != 0) {
             abstractSerializedData.writeString(this.emoticon);

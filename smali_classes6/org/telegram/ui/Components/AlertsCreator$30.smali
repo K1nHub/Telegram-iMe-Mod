@@ -24,14 +24,14 @@
 .method constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Components/NumberPicker;)V
     .locals 0
 
-    .line 4027
+    .line 4028
     iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$30;->val$numberPicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 4029
+    .line 4030
     iput-boolean p1, p0, Lorg/telegram/ui/Components/AlertsCreator$30;->ignoreLayout:Z
 
     return-void
@@ -44,10 +44,10 @@
 
     const/4 v0, 0x1
 
-    .line 4033
+    .line 4034
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AlertsCreator$30;->ignoreLayout:Z
 
-    .line 4035
+    .line 4036
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -63,13 +63,13 @@
     :cond_0
     const/4 v0, 0x5
 
-    .line 4040
+    .line 4041
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$30;->val$numberPicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/NumberPicker;->setItemCount(I)V
 
-    .line 4041
+    .line 4042
     iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$30;->val$numberPicker:Lorg/telegram/ui/Components/NumberPicker;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -88,10 +88,10 @@
 
     const/4 v0, 0x0
 
-    .line 4042
+    .line 4043
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AlertsCreator$30;->ignoreLayout:Z
 
-    .line 4043
+    .line 4044
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
     return-void
@@ -100,14 +100,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 4048
+    .line 4049
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AlertsCreator$30;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 4051
+    .line 4052
     :cond_0
     invoke-super {p0}, Landroid/widget/LinearLayout;->requestLayout()V
 

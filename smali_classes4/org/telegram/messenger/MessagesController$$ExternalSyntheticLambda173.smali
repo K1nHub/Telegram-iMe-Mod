@@ -45,7 +45,7 @@
 
     iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda173;->f$3:Lorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$CXJqM4A419d0-J2qDtxf61C7OwI(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;ZLorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$W9CaQcs51_Be6DP6e2jfylbWYts(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;ZLorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;)V
 
     return-void
 .end method

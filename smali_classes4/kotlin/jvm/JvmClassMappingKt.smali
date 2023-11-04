@@ -340,7 +340,7 @@
     goto/16 :goto_0
 
     :sswitch_0
-    const-string v0, "java.lang.Double"
+    const-string/jumbo v0, "java.lang.Double"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -356,7 +356,7 @@
     goto/16 :goto_1
 
     :sswitch_1
-    const-string v0, "java.lang.Void"
+    const-string/jumbo v0, "java.lang.Void"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -373,7 +373,7 @@
     goto :goto_1
 
     :sswitch_2
-    const-string v0, "java.lang.Long"
+    const-string/jumbo v0, "java.lang.Long"
 
     .line 39
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -390,7 +390,7 @@
     goto :goto_1
 
     :sswitch_3
-    const-string v0, "java.lang.Byte"
+    const-string/jumbo v0, "java.lang.Byte"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -406,7 +406,7 @@
     goto :goto_1
 
     :sswitch_4
-    const-string v0, "java.lang.Boolean"
+    const-string/jumbo v0, "java.lang.Boolean"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -422,7 +422,7 @@
     goto :goto_1
 
     :sswitch_5
-    const-string v0, "java.lang.Character"
+    const-string/jumbo v0, "java.lang.Character"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -438,7 +438,7 @@
     goto :goto_1
 
     :sswitch_6
-    const-string v0, "java.lang.Short"
+    const-string/jumbo v0, "java.lang.Short"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -454,7 +454,7 @@
     goto :goto_1
 
     :sswitch_7
-    const-string v0, "java.lang.Float"
+    const-string/jumbo v0, "java.lang.Float"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -470,7 +470,7 @@
     goto :goto_1
 
     :sswitch_8
-    const-string v0, "java.lang.Integer"
+    const-string/jumbo v0, "java.lang.Integer"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -490,8 +490,6 @@
 
     :goto_1
     return-object p0
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

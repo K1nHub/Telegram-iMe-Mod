@@ -38,12 +38,12 @@ public final class ShardStateUnsplit implements ShardState {
     private final CellRef<OutMsgQueueInfo> outMsgQueueInfo;
 
     /* renamed from: r1 */
-    private final CellRef<ShardStateUnsplitAux> f2038r1;
+    private final CellRef<ShardStateUnsplitAux> f2050r1;
     private final int seqNo;
     private final ShardIdent shardId;
     private final int vertSeqNo;
     public static final Companion Companion = new Companion(null);
-    private static final KSerializer<Object>[] $childSerializers = {null, null, null, null, null, null, null, new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), null, new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), new SealedClassSerializer("org.ton.block.Maybe", Reflection.getOrCreateKotlinClass(Maybe.class), new KClass[]{Reflection.getOrCreateKotlinClass(Just.class), Reflection.getOrCreateKotlinClass(Nothing.class)}, new KSerializer[]{Just.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), Nothing.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7523x50c509b1("@type")})};
+    private static final KSerializer<Object>[] $childSerializers = {null, null, null, null, null, null, null, new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), null, new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), new SealedClassSerializer("org.ton.block.Maybe", Reflection.getOrCreateKotlinClass(Maybe.class), new KClass[]{Reflection.getOrCreateKotlinClass(Just.class), Reflection.getOrCreateKotlinClass(Nothing.class)}, new KSerializer[]{Just.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), Nothing.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7598x50c509b1("@type")})};
 
     public /* synthetic */ ShardStateUnsplit(int i, int i2, ShardIdent shardIdent, UInt uInt, int i3, UInt uInt2, ULong uLong, UInt uInt3, CellRef cellRef, boolean z, CellRef cellRef2, CellRef cellRef3, Maybe maybe, SerializationConstructorMarker serializationConstructorMarker, DefaultConstructorMarker defaultConstructorMarker) {
         this(i, i2, shardIdent, uInt, i3, uInt2, uLong, uInt3, cellRef, z, cellRef2, cellRef3, maybe, serializationConstructorMarker);
@@ -59,20 +59,20 @@ public final class ShardStateUnsplit implements ShardState {
         }
         if (obj instanceof ShardStateUnsplit) {
             ShardStateUnsplit shardStateUnsplit = (ShardStateUnsplit) obj;
-            return this.globalId == shardStateUnsplit.globalId && Intrinsics.areEqual(this.shardId, shardStateUnsplit.shardId) && this.seqNo == shardStateUnsplit.seqNo && this.vertSeqNo == shardStateUnsplit.vertSeqNo && this.genUtime == shardStateUnsplit.genUtime && this.genLt == shardStateUnsplit.genLt && this.minRefMcSeqno == shardStateUnsplit.minRefMcSeqno && Intrinsics.areEqual(this.outMsgQueueInfo, shardStateUnsplit.outMsgQueueInfo) && this.beforeSplit == shardStateUnsplit.beforeSplit && Intrinsics.areEqual(this.accounts, shardStateUnsplit.accounts) && Intrinsics.areEqual(this.f2038r1, shardStateUnsplit.f2038r1) && Intrinsics.areEqual(this.custom, shardStateUnsplit.custom);
+            return this.globalId == shardStateUnsplit.globalId && Intrinsics.areEqual(this.shardId, shardStateUnsplit.shardId) && this.seqNo == shardStateUnsplit.seqNo && this.vertSeqNo == shardStateUnsplit.vertSeqNo && this.genUtime == shardStateUnsplit.genUtime && this.genLt == shardStateUnsplit.genLt && this.minRefMcSeqno == shardStateUnsplit.minRefMcSeqno && Intrinsics.areEqual(this.outMsgQueueInfo, shardStateUnsplit.outMsgQueueInfo) && this.beforeSplit == shardStateUnsplit.beforeSplit && Intrinsics.areEqual(this.accounts, shardStateUnsplit.accounts) && Intrinsics.areEqual(this.f2050r1, shardStateUnsplit.f2050r1) && Intrinsics.areEqual(this.custom, shardStateUnsplit.custom);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((((((((((((((this.globalId * 31) + this.shardId.hashCode()) * 31) + UInt.m1969hashCodeimpl(this.seqNo)) * 31) + this.vertSeqNo) * 31) + UInt.m1969hashCodeimpl(this.genUtime)) * 31) + ULong.m1991hashCodeimpl(this.genLt)) * 31) + UInt.m1969hashCodeimpl(this.minRefMcSeqno)) * 31) + this.outMsgQueueInfo.hashCode()) * 31;
+        int hashCode = ((((((((((((((this.globalId * 31) + this.shardId.hashCode()) * 31) + UInt.m1974hashCodeimpl(this.seqNo)) * 31) + this.vertSeqNo) * 31) + UInt.m1974hashCodeimpl(this.genUtime)) * 31) + ULong.m1996hashCodeimpl(this.genLt)) * 31) + UInt.m1974hashCodeimpl(this.minRefMcSeqno)) * 31) + this.outMsgQueueInfo.hashCode()) * 31;
         boolean z = this.beforeSplit;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return ((((((hashCode + i) * 31) + this.accounts.hashCode()) * 31) + this.f2038r1.hashCode()) * 31) + this.custom.hashCode();
+        return ((((((hashCode + i) * 31) + this.accounts.hashCode()) * 31) + this.f2050r1.hashCode()) * 31) + this.custom.hashCode();
     }
 
     private ShardStateUnsplit(int i, int i2, ShardIdent shardIdent, UInt uInt, int i3, UInt uInt2, ULong uLong, UInt uInt3, CellRef<OutMsgQueueInfo> cellRef, boolean z, CellRef<ShardAccounts> cellRef2, CellRef<ShardStateUnsplitAux> cellRef3, Maybe<CellRef<McStateExtra>> maybe, SerializationConstructorMarker serializationConstructorMarker) {
@@ -81,15 +81,15 @@ public final class ShardStateUnsplit implements ShardState {
         }
         this.globalId = i2;
         this.shardId = shardIdent;
-        this.seqNo = uInt.m1971unboximpl();
+        this.seqNo = uInt.m1976unboximpl();
         this.vertSeqNo = i3;
-        this.genUtime = uInt2.m1971unboximpl();
-        this.genLt = uLong.m1993unboximpl();
-        this.minRefMcSeqno = uInt3.m1971unboximpl();
+        this.genUtime = uInt2.m1976unboximpl();
+        this.genLt = uLong.m1998unboximpl();
+        this.minRefMcSeqno = uInt3.m1976unboximpl();
         this.outMsgQueueInfo = cellRef;
         this.beforeSplit = z;
         this.accounts = cellRef2;
-        this.f2038r1 = cellRef3;
+        this.f2050r1 = cellRef3;
         this.custom = maybe;
     }
 
@@ -109,7 +109,7 @@ public final class ShardStateUnsplit implements ShardState {
         this.outMsgQueueInfo = outMsgQueueInfo;
         this.beforeSplit = z;
         this.accounts = accounts;
-        this.f2038r1 = r1;
+        this.f2050r1 = r1;
         this.custom = custom;
     }
 
@@ -118,15 +118,15 @@ public final class ShardStateUnsplit implements ShardState {
         compositeEncoder.encodeIntElement(serialDescriptor, 0, shardStateUnsplit.globalId);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ShardIdent$$serializer.INSTANCE, shardStateUnsplit.shardId);
         UIntSerializer uIntSerializer = UIntSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uIntSerializer, UInt.m1966boximpl(shardStateUnsplit.seqNo));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uIntSerializer, UInt.m1971boximpl(shardStateUnsplit.seqNo));
         compositeEncoder.encodeIntElement(serialDescriptor, 3, shardStateUnsplit.vertSeqNo);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 4, uIntSerializer, UInt.m1966boximpl(shardStateUnsplit.genUtime));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 5, ULongSerializer.INSTANCE, ULong.m1988boximpl(shardStateUnsplit.genLt));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 6, uIntSerializer, UInt.m1966boximpl(shardStateUnsplit.minRefMcSeqno));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 4, uIntSerializer, UInt.m1971boximpl(shardStateUnsplit.genUtime));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 5, ULongSerializer.INSTANCE, ULong.m1993boximpl(shardStateUnsplit.genLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 6, uIntSerializer, UInt.m1971boximpl(shardStateUnsplit.minRefMcSeqno));
         compositeEncoder.encodeSerializableElement(serialDescriptor, 7, kSerializerArr[7], shardStateUnsplit.outMsgQueueInfo);
         compositeEncoder.encodeBooleanElement(serialDescriptor, 8, shardStateUnsplit.beforeSplit);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 9, kSerializerArr[9], shardStateUnsplit.accounts);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 10, kSerializerArr[10], shardStateUnsplit.f2038r1);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 10, kSerializerArr[10], shardStateUnsplit.f2050r1);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 11, kSerializerArr[11], shardStateUnsplit.custom);
     }
 
@@ -139,7 +139,7 @@ public final class ShardStateUnsplit implements ShardState {
     }
 
     /* renamed from: getSeqNo-pVg5ArA  reason: not valid java name */
-    public final int m5046getSeqNopVg5ArA() {
+    public final int m5200getSeqNopVg5ArA() {
         return this.seqNo;
     }
 
@@ -148,17 +148,17 @@ public final class ShardStateUnsplit implements ShardState {
     }
 
     /* renamed from: getGenUtime-pVg5ArA  reason: not valid java name */
-    public final int m5044getGenUtimepVg5ArA() {
+    public final int m5198getGenUtimepVg5ArA() {
         return this.genUtime;
     }
 
     /* renamed from: getGenLt-s-VKNKU  reason: not valid java name */
-    public final long m5043getGenLtsVKNKU() {
+    public final long m5197getGenLtsVKNKU() {
         return this.genLt;
     }
 
     /* renamed from: getMinRefMcSeqno-pVg5ArA  reason: not valid java name */
-    public final int m5045getMinRefMcSeqnopVg5ArA() {
+    public final int m5199getMinRefMcSeqnopVg5ArA() {
         return this.minRefMcSeqno;
     }
 
@@ -175,7 +175,7 @@ public final class ShardStateUnsplit implements ShardState {
     }
 
     public final CellRef<ShardStateUnsplitAux> getR1() {
-        return this.f2038r1;
+        return this.f2050r1;
     }
 
     public final Maybe<CellRef<McStateExtra>> getCustom() {
@@ -234,15 +234,15 @@ public final class ShardStateUnsplit implements ShardState {
         TlbPrettyPrinter open = printer.open("shard_state");
         open.field("global_id", Integer.valueOf(this.globalId));
         open.field("shard_id", this.shardId);
-        open.field("seq_no", UInt.m1966boximpl(this.seqNo));
+        open.field("seq_no", UInt.m1971boximpl(this.seqNo));
         open.field("vert_seq_no", Integer.valueOf(this.vertSeqNo));
-        open.field("gen_utime", UInt.m1966boximpl(this.genUtime));
-        open.field("gen_lt", ULong.m1988boximpl(this.genLt));
-        open.field("min_ref_mc_seqno", UInt.m1966boximpl(this.minRefMcSeqno));
+        open.field("gen_utime", UInt.m1971boximpl(this.genUtime));
+        open.field("gen_lt", ULong.m1993boximpl(this.genLt));
+        open.field("min_ref_mc_seqno", UInt.m1971boximpl(this.minRefMcSeqno));
         open.field("out_msg_queue_info", this.outMsgQueueInfo);
         open.field("before_split", Boolean.valueOf(this.beforeSplit));
         open.field("accounts", this.accounts);
-        open.field(this.f2038r1);
+        open.field(this.f2050r1);
         open.field("custom", this.custom);
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;

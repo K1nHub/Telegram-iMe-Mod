@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;)V
     .locals 0
 
-    .line 3699
+    .line 3707
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$25;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .method public getBottomOffset(I)I
     .locals 0
 
-    .line 3702
+    .line 3710
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$25;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$6700(Lorg/telegram/ui/TopicsFragment;)Landroid/widget/FrameLayout;

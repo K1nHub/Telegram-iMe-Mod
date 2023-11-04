@@ -3,25 +3,15 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x43fe19f3
-
-
 # instance fields
 .field public import_head:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 59502
+    .line 60286
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +22,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 59508
+    .line 60292
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;
 
     move-result-object p1
@@ -43,12 +33,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 59512
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_checkHistoryImport;->constructor:I
+    const v0, 0x43fe19f3
 
+    .line 60296
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 59513
+    .line 60297
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_checkHistoryImport;->import_head:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

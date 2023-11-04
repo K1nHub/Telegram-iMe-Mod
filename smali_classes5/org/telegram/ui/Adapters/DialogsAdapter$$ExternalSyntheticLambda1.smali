@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/lang/Float;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Adapters/DialogsAdapter;->$r8$lambda$QNqHElwfngWdKzkbcgEaTXmaGDk(Lorg/telegram/ui/Adapters/DialogsAdapter;Ljava/lang/Float;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Adapters/DialogsAdapter;->$r8$lambda$0obS1cF650kxqI_nvO5XU4W_2MA(Lorg/telegram/ui/Adapters/DialogsAdapter;Ljava/lang/Float;)V
 
     return-void
 .end method

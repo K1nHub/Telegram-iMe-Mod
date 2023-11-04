@@ -14,12 +14,12 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Cells.PollEditTextCell;
-import org.telegram.p042ui.Components.EditTextBoldCursor;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.PollEditTextCell;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: PollEditTextCellWrapper.kt */
 /* renamed from: com.iMe.fork.ui.view.PollEditTextCellWrapper */
 /* loaded from: classes3.dex */
@@ -182,7 +182,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final LinearLayout initIconLayout() {
         LinearLayout linearLayout = new LinearLayout(getContext());
-        ViewExtKt.setHorizontalPadding(linearLayout, Integer.valueOf(AndroidUtilities.m102dp(6)));
+        ViewExtKt.setHorizontalPadding(linearLayout, Integer.valueOf(AndroidUtilities.m104dp(6)));
         linearLayout.setGravity(17);
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.PollEditTextCellWrapper$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -212,7 +212,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initNoIconTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3630R.string.no_icon));
+        textView.setText(LocaleController.getInternalString(C3634R.string.no_icon));
         textView.setTextSize(1, 14.0f);
         return textView;
     }
@@ -221,7 +221,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     public final ImageView initArrowImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setImageResource(C3630R.C3632drawable.arrow_more);
+        imageView.setImageResource(C3634R.C3636drawable.arrow_more);
         return imageView;
     }
 

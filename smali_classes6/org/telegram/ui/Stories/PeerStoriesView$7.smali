@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 1517
+    .line 1539
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$7;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Cells/TextSelectionHelper$Callback;-><init>()V
@@ -35,12 +35,12 @@
 .method public onStateChanged(Z)V
     .locals 1
 
-    .line 1520
+    .line 1542
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$7;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, p1, Lorg/telegram/ui/Stories/PeerStoriesView;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1200(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
+    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$800(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryCaptionView;
 
     move-result-object p1
 

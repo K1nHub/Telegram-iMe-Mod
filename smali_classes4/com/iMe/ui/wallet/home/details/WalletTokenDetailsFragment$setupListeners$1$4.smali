@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 972
+    .line 977
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$setupListeners$1$4;->invoke(Landroid/view/View;)V
@@ -62,11 +62,11 @@
 .method public final invoke(Landroid/view/View;)V
     .locals 3
 
-    const-string v0, "it"
+    const-string/jumbo v0, "it"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 973
+    .line 978
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$setupListeners$1$4;->this$0:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;
 
     sget-object v0, Lcom/iMe/ui/wallet/cryptobox/statuses_description/CryptoBoxStatusInfoBottomSheetDialog;->Companion:Lcom/iMe/ui/wallet/cryptobox/statuses_description/CryptoBoxStatusInfoBottomSheetDialog$Companion;

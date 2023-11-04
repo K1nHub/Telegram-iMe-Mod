@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$24\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,898:1\n44#2,2:899\n129#3,5:901\n129#3,5:906\n129#3,5:911\n129#3,5:916\n129#3,5:921\n129#3,5:926\n129#3,5:931\n129#3,5:936\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$24\n*L\n363#1:899,2\n367#1:901,5\n368#1:906,5\n369#1:911,5\n370#1:916,5\n371#1:921,5\n372#1:926,5\n373#1:931,5\n374#1:936,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$24\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,901:1\n44#2,2:902\n129#3,5:904\n129#3,5:909\n129#3,5:914\n129#3,5:919\n129#3,5:924\n129#3,5:929\n129#3,5:934\n129#3,5:939\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$24\n*L\n363#1:902,2\n367#1:904,5\n368#1:909,5\n369#1:914,5\n370#1:919,5\n371#1:924,5\n372#1:929,5\n373#1:934,5\n374#1:939,5\n*E\n"
 .end annotation
 
 

@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LazyCreateContainerDecorator.kt */
-@DebugMetadata(m143c = "org.orbitmvi.orbit.internal.LazyCreateContainerDecorator", m142f = "LazyCreateContainerDecorator.kt", m141l = {52}, m140m = "orbit")
+@DebugMetadata(m145c = "org.orbitmvi.orbit.internal.LazyCreateContainerDecorator", m144f = "LazyCreateContainerDecorator.kt", m143l = {52}, m142m = "orbit")
 /* loaded from: classes4.dex */
 public final class LazyCreateContainerDecorator$orbit$1 extends ContinuationImpl {
     Object L$0;

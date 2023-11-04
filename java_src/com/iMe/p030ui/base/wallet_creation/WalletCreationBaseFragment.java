@@ -31,7 +31,7 @@ public abstract class WalletCreationBaseFragment extends WalletAuthBaseFragment 
 
     private final void listenGlobalRxEvents() {
         RxEventBus rxEventBus = getRxEventBus();
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.class).observeOn(rxEventBus.getSchedulersProvider().mo1009ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.class).observeOn(rxEventBus.getSchedulersProvider().mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents, Unit>() { // from class: com.iMe.ui.base.wallet_creation.WalletCreationBaseFragment$listenGlobalRxEvents$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -40,12 +40,12 @@ public abstract class WalletCreationBaseFragment extends WalletAuthBaseFragment 
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents domainRxEvents) {
-                m1571invoke(domainRxEvents);
+                m1576invoke(domainRxEvents);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1571invoke(DomainRxEvents it) {
+            public final void m1576invoke(DomainRxEvents it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents domainRxEvents = it;
                 if (domainRxEvents instanceof DomainRxEvents.WalletCreated ? true : domainRxEvents instanceof DomainRxEvents.WalletRestored) {

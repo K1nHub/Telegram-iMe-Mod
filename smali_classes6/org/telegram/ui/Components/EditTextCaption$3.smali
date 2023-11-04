@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EditTextCaption;Landroid/view/ActionMode$Callback;)V
     .locals 0
 
-    .line 391
+    .line 428
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextCaption$3;->this$0:Lorg/telegram/ui/Components/EditTextCaption;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/EditTextCaption$3;->val$callback:Landroid/view/ActionMode$Callback;
@@ -42,14 +42,14 @@
 .method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
     .locals 2
 
-    .line 406
+    .line 443
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$3;->this$0:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-interface {p2}, Landroid/view/MenuItem;->getItemId()I
 
     move-result v1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EditTextCaption;->access$300(Lorg/telegram/ui/Components/EditTextCaption;I)Z
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextCaption;->performMenuAction(I)Z
 
     move-result v0
 
@@ -57,12 +57,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 407
+    .line 444
     invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
 
     return v1
 
-    .line 411
+    .line 448
     :cond_0
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$3;->val$callback:Landroid/view/ActionMode$Callback;
@@ -82,19 +82,19 @@
 .method public onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
     .locals 2
 
-    .line 394
+    .line 431
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$3;->this$0:Lorg/telegram/ui/Components/EditTextCaption;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/EditTextCaption;->access$202(Lorg/telegram/ui/Components/EditTextCaption;Z)Z
 
-    .line 395
+    .line 432
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$3;->this$0:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EditTextCaption;->onContextMenuOpen()V
 
-    .line 396
+    .line 433
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$3;->val$callback:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/view/ActionMode$Callback;->onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
@@ -107,19 +107,19 @@
 .method public onDestroyActionMode(Landroid/view/ActionMode;)V
     .locals 2
 
-    .line 420
+    .line 457
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$3;->this$0:Lorg/telegram/ui/Components/EditTextCaption;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/EditTextCaption;->access$202(Lorg/telegram/ui/Components/EditTextCaption;Z)Z
 
-    .line 421
+    .line 458
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$3;->this$0:Lorg/telegram/ui/Components/EditTextCaption;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EditTextCaption;->onContextMenuClose()V
 
-    .line 422
+    .line 459
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$3;->val$callback:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/ActionMode$Callback;->onDestroyActionMode(Landroid/view/ActionMode;)V
@@ -130,7 +130,7 @@
 .method public onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
     .locals 1
 
-    .line 401
+    .line 438
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextCaption$3;->val$callback:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/view/ActionMode$Callback;->onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z

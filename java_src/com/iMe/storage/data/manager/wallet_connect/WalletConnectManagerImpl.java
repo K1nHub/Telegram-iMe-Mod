@@ -186,7 +186,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
     public void connectToStoredSessions() {
         if (this.cryptoAccessManager.isWalletCreated(BlockchainType.EVM)) {
             clear();
-            Single<Result<List<WCSessionStoreItem>>> subscribeOn = this.walletConnectInteractor.getWalletConnectSavedSessionsFirst().singleOrError().subscribeOn(this.schedulersProvider.mo1010io());
+            Single<Result<List<WCSessionStoreItem>>> subscribeOn = this.walletConnectInteractor.getWalletConnectSavedSessionsFirst().singleOrError().subscribeOn(this.schedulersProvider.mo1011io());
             final Function1<Result<? extends List<? extends WCSessionStoreItem>>, Unit> function1 = new Function1<Result<? extends List<? extends WCSessionStoreItem>>, Unit>() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$connectToStoredSessions$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
@@ -450,7 +450,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
             return;
         }
         this.pendingSessionStoreItem = null;
-        Completable observeOn = this.walletConnectInteractor.insertWalletConnectSession(sessionStoreItem).observeOn(this.schedulersProvider.mo1009ui());
+        Completable observeOn = this.walletConnectInteractor.insertWalletConnectSession(sessionStoreItem).observeOn(this.schedulersProvider.mo1010ui());
         WalletConnectManagerImpl$$ExternalSyntheticLambda2 walletConnectManagerImpl$$ExternalSyntheticLambda2 = new Action() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Action
             public final void run() {
@@ -712,7 +712,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
                 map.remove(str);
             }
         });
-        Completable observeOn = this.walletConnectInteractor.deleteWalletConnectSession(sessionKey).observeOn(this.schedulersProvider.mo1009ui());
+        Completable observeOn = this.walletConnectInteractor.deleteWalletConnectSession(sessionKey).observeOn(this.schedulersProvider.mo1010ui());
         Action action = new Action() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Action
             public final void run() {
@@ -796,7 +796,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
                 }
             }
         });
-        Completable observeOn = this.walletConnectInteractor.deleteAllWalletConnectSessions().observeOn(this.schedulersProvider.mo1009ui());
+        Completable observeOn = this.walletConnectInteractor.deleteAllWalletConnectSessions().observeOn(this.schedulersProvider.mo1010ui());
         Action action = new Action() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
@@ -1033,7 +1033,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
                 subscribeToErrors$lambda$16 = WalletConnectManagerImpl.subscribeToErrors$lambda$16(Function1.this, obj);
                 return subscribeToErrors$lambda$16;
             }
-        })).subscribeOn(this.schedulersProvider.mo1010io()).observeOn(this.schedulersProvider.mo1009ui());
+        })).subscribeOn(this.schedulersProvider.mo1011io()).observeOn(this.schedulersProvider.mo1010ui());
         final Function1<Throwable, Unit> function1 = new Function1<Throwable, Unit>() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$subscribeToErrors$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -1083,9 +1083,9 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
 
     private final void subscribeToRxEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1009ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
-        Observable observeOn2 = observeOn.subscribeOn(this.schedulersProvider.mo1010io()).observeOn(this.schedulersProvider.mo1009ui());
+        Observable observeOn2 = observeOn.subscribeOn(this.schedulersProvider.mo1011io()).observeOn(this.schedulersProvider.mo1010ui());
         final Function1<RxEvent, Unit> function1 = new Function1<RxEvent, Unit>() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$subscribeToRxEvents$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -1222,7 +1222,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
         String gasPrice = wCEthereumTransaction.getGasPrice();
         BigInteger convertFromWei = (gasPrice == null || (hexToBigIntegerOrNull = CryptoExtKt.hexToBigIntegerOrNull(gasPrice)) == null) ? null : NumberExtKt.convertFromWei(hexToBigIntegerOrNull, Convert.Unit.GWEI);
         String nonce = wCEthereumTransaction.getNonce();
-        Observable<Result<WalletConnectProcessedTransaction>> observeOn = walletConnectInteractor.getWalletConnectParamsForCryptoTransaction(new WalletConnectTransaction(from, str, bigInteger, data, hexToBigIntegerOrNull2, convertFromWei, nonce != null ? CryptoExtKt.hexToBigIntegerOrNull(nonce) : null, this.cryptoPreferenceHelper.getNetworkId())).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<WalletConnectProcessedTransaction>> observeOn = walletConnectInteractor.getWalletConnectParamsForCryptoTransaction(new WalletConnectTransaction(from, str, bigInteger, data, hexToBigIntegerOrNull2, convertFromWei, nonce != null ? CryptoExtKt.hexToBigIntegerOrNull(nonce) : null, this.cryptoPreferenceHelper.getNetworkId())).observeOn(this.schedulersProvider.mo1010ui());
         final Function1<Result<? extends WalletConnectProcessedTransaction>, Unit> function1 = new Function1<Result<? extends WalletConnectProcessedTransaction>, Unit>() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$onTransactionProcessing$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

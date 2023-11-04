@@ -18,9 +18,7 @@
 
 
 # instance fields
-.field private beforeCursorPosition:I
-
-.field private text:Ljava/lang/String;
+.field pasted:Z
 
 .field final synthetic this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
@@ -29,15 +27,10 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)V
     .locals 0
 
-    .line 108
+    .line 109
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 p1, 0x0
-
-    .line 110
-    iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->beforeCursorPosition:I
 
     return-void
 .end method
@@ -45,68 +38,149 @@
 
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
-    .locals 1
+    .locals 2
 
-    .line 125
+    .line 119
+    iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->pasted:Z
+
+    if-eqz p1, :cond_0
+
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
+    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)I
+
+    move-result p1
+
+    if-lez p1, :cond_0
+
+    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$100(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)I
+
+    move-result p1
+
+    if-lez p1, :cond_0
+
+    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$200(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$300(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
 
     move-result-object p1
 
-    invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->removeTextChangedListener(Landroid/text/TextWatcher;)V
+    invoke-virtual {p1}, Landroid/widget/EditText;->getLayout()Landroid/text/Layout;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    .line 120
+    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$300(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/widget/EditText;->getLayout()Landroid/text/Layout;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/text/Layout;->getHeight()I
+
+    move-result p1
+
+    .line 121
+    sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
+
+    iget v0, v0, Landroid/graphics/Point;->y:I
+
+    int-to-float v0, v0
+
+    const/high16 v1, 0x40400000    # 3.0f
+
+    div-float/2addr v0, v1
+
+    int-to-float p1, p1
+
+    cmpl-float v1, p1, v0
+
+    if-lez v1, :cond_0
+
+    div-float/2addr v0, p1
+
+    .line 124
+    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getBaseFontSize()I
+
+    move-result p1
+
+    int-to-float p1, p1
+
+    mul-float/2addr v0, p1
+
+    float-to-int p1, v0
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$100(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)I
+
+    move-result v0
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
+
+    invoke-static {v1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)I
+
+    move-result v1
+
+    invoke-static {p1, v0, v1}, Lorg/telegram/messenger/Utilities;->clamp(III)I
+
+    move-result p1
+
+    .line 125
+    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getBaseFontSize()I
+
+    move-result v0
+
+    if-eq p1, v0, :cond_0
+
+    .line 126
+    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->setBaseFontSize(I)V
 
     .line 127
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
+    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$400(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Ljava/lang/Runnable;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Landroid/widget/EditText;->getLineCount()I
-
-    move-result p1
-
-    const/16 v0, 0x9
-
-    if-le p1, v0, :cond_0
+    if-eqz p1, :cond_0
 
     .line 128
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
+    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$400(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Ljava/lang/Runnable;
 
     move-result-object p1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->text:Ljava/lang/String;
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
-
-    .line 129
-    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
-
-    move-result-object p1
-
-    iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->beforeCursorPosition:I
-
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setSelection(I)V
-
-    .line 132
+    .line 133
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$100(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)V
-
-    .line 134
-    iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->this$0:Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$000(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
-
-    move-result-object p1
-
-    invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->access$500(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;)V
 
     return-void
 .end method
@@ -114,15 +188,20 @@
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .locals 0
 
-    .line 114
-    invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    const/4 p1, 0x3
 
-    move-result-object p1
+    if-le p4, p1, :cond_0
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->text:Ljava/lang/String;
+    const/4 p1, 0x1
 
-    .line 115
-    iput p2, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->beforeCursorPosition:I
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    .line 113
+    :goto_0
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView$2;->pasted:Z
 
     return-void
 .end method

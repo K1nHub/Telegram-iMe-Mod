@@ -16,7 +16,7 @@ final class EitherTlbCombinator<X, Y> extends TlbCombinator<Either<?, ?>> {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public EitherTlbCombinator(TlbCodec<X> x, TlbCodec<Y> y, LeftTlbConstructor<X, Y> left, RightTlbConstructor<X, Y> right) {
-        super(Reflection.getOrCreateKotlinClass(Either.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(Either.Left.class), left), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(Either.Right.class), right));
+        super(Reflection.getOrCreateKotlinClass(Either.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(Either.Left.class), left), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(Either.Right.class), right));
         Intrinsics.checkNotNullParameter(x, "x");
         Intrinsics.checkNotNullParameter(y, "y");
         Intrinsics.checkNotNullParameter(left, "left");

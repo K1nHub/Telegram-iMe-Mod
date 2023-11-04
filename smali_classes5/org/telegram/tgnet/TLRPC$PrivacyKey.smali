@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 6211
+    .line 5858
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -22,7 +22,7 @@
 
     goto :goto_0
 
-    .line 6238
+    .line 5885
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyForwards;
 
@@ -30,7 +30,7 @@
 
     goto :goto_0
 
-    .line 6223
+    .line 5870
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyChatInvite;
 
@@ -38,7 +38,7 @@
 
     goto :goto_0
 
-    .line 6226
+    .line 5873
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyAddedByPhone;
 
@@ -46,7 +46,7 @@
 
     goto :goto_0
 
-    .line 6235
+    .line 5882
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyPhoneCall;
 
@@ -54,7 +54,7 @@
 
     goto :goto_0
 
-    .line 6220
+    .line 5867
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyPhoneP2P;
 
@@ -62,7 +62,7 @@
 
     goto :goto_0
 
-    .line 6229
+    .line 5876
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyVoiceMessages;
 
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 6241
+    .line 5888
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyPhoneNumber;
 
@@ -78,7 +78,7 @@
 
     goto :goto_0
 
-    .line 6217
+    .line 5864
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyStatusTimestamp;
 
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 6232
+    .line 5879
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyAbout;
 
@@ -94,7 +94,7 @@
 
     goto :goto_0
 
-    .line 6244
+    .line 5891
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_privacyKeyProfilePhoto;
 
@@ -107,7 +107,7 @@
 
     goto :goto_1
 
-    .line 6248
+    .line 5895
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -137,7 +137,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 6251
+    .line 5898
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

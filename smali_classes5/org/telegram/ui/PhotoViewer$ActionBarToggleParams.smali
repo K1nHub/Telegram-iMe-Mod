@@ -32,7 +32,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 11248
+    .line 11220
     new-instance v0, Lorg/telegram/ui/PhotoViewer$ActionBarToggleParams;
 
     invoke-direct {v0}, Lorg/telegram/ui/PhotoViewer$ActionBarToggleParams;-><init>()V
@@ -45,20 +45,20 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 11255
+    .line 11227
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/16 v0, 0xc8
 
-    .line 11250
+    .line 11222
     iput v0, p0, Lorg/telegram/ui/PhotoViewer$ActionBarToggleParams;->animationDuration:I
 
     const/4 v0, 0x1
 
-    .line 11252
+    .line 11224
     iput-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$ActionBarToggleParams;->enableStatusBarAnimation:Z
 
-    .line 11253
+    .line 11225
     iput-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$ActionBarToggleParams;->enableTranslationAnimation:Z
 
     return-void
@@ -69,7 +69,7 @@
 .method public animationDuration(I)Lorg/telegram/ui/PhotoViewer$ActionBarToggleParams;
     .locals 0
 
-    .line 11269
+    .line 11241
     iput p1, p0, Lorg/telegram/ui/PhotoViewer$ActionBarToggleParams;->animationDuration:I
 
     return-object p0
@@ -78,7 +78,7 @@
 .method public animationInterpolator(Landroid/view/animation/Interpolator;)Lorg/telegram/ui/PhotoViewer$ActionBarToggleParams;
     .locals 0
 
-    .line 11274
+    .line 11246
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$ActionBarToggleParams;->animationInterpolator:Landroid/view/animation/Interpolator;
 
     return-object p0
@@ -87,7 +87,7 @@
 .method public enableStatusBarAnimation(Z)Lorg/telegram/ui/PhotoViewer$ActionBarToggleParams;
     .locals 0
 
-    .line 11259
+    .line 11231
     iput-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$ActionBarToggleParams;->enableStatusBarAnimation:Z
 
     return-object p0
@@ -96,7 +96,7 @@
 .method public enableTranslationAnimation(Z)Lorg/telegram/ui/PhotoViewer$ActionBarToggleParams;
     .locals 0
 
-    .line 11264
+    .line 11236
     iput-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$ActionBarToggleParams;->enableTranslationAnimation:Z
 
     return-object p0

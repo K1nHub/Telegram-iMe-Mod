@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 4580
+    .line 4571
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -41,7 +41,7 @@
 .method private synthetic lambda$onLayout$0()V
     .locals 4
 
-    .line 4688
+    .line 4679
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$11700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/CheckBox;
@@ -54,7 +54,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 4689
+    .line 4680
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v2, "window"
@@ -65,14 +65,14 @@
 
     check-cast v1, Landroid/view/WindowManager;
 
-    .line 4690
+    .line 4681
     invoke-interface {v1}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/view/Display;->getRotation()I
 
-    .line 4691
+    .line 4682
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v1
@@ -107,15 +107,15 @@
     :goto_0
     add-int/2addr v1, v2
 
-    .line 4692
+    .line 4683
     iget v2, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     if-eq v1, v2, :cond_1
 
-    .line 4693
+    .line 4684
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 4694
+    .line 4685
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$11700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/CheckBox;
@@ -124,7 +124,7 @@
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4697
+    .line 4688
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -138,7 +138,7 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 4698
+    .line 4689
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v1
@@ -166,15 +166,15 @@
     :cond_2
     add-int/2addr v1, v3
 
-    .line 4699
+    .line 4690
     iget v2, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     if-eq v2, v1, :cond_3
 
-    .line 4700
+    .line 4691
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 4701
+    .line 4692
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$12700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CounterView;
@@ -192,10 +192,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 4759
+    .line 4750
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 4760
+    .line 4751
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$12600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
@@ -204,7 +204,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4761
+    .line 4752
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$12600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
@@ -217,24 +217,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 4762
+    .line 4753
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
 
     move-result v1
 
     if-nez v1, :cond_0
 
-    .line 4763
+    .line 4754
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 4764
+    .line 4755
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/View;
 
-    .line 4765
+    .line 4756
     invoke-virtual {v1}, Landroid/view/View;->getX()F
 
     move-result v2
@@ -269,7 +269,7 @@
 
     invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 4766
+    .line 4757
     invoke-virtual {v0}, Landroid/view/View;->getX()F
 
     move-result v1
@@ -280,13 +280,13 @@
 
     invoke-virtual {p1, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 4767
+    .line 4758
     invoke-virtual {v0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 4768
+    .line 4759
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 4769
+    .line 4760
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_0
@@ -296,10 +296,10 @@
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 2
 
-    .line 4594
+    .line 4585
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
-    .line 4595
+    .line 4586
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$2900(Lorg/telegram/ui/PhotoViewer;)Z
@@ -362,7 +362,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 4596
+    .line 4587
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -374,7 +374,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->setVolume(F)V
 
-    .line 4598
+    .line 4589
     :cond_1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
@@ -388,7 +388,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 4735
+    .line 4726
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v0
@@ -405,7 +405,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 4736
+    .line 4727
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$12200(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Cells/TextSelectionHelper$SimpleTextSelectionHelper;
@@ -418,7 +418,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 4737
+    .line 4728
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$12200(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Cells/TextSelectionHelper$SimpleTextSelectionHelper;
@@ -427,7 +427,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->clear()V
 
-    .line 4739
+    .line 4730
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -439,14 +439,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 4740
+    .line 4731
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/PhotoViewer;->access$12400(Lorg/telegram/ui/PhotoViewer;Z)V
 
     return v0
 
-    .line 4743
+    .line 4734
     :cond_1
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
@@ -456,7 +456,7 @@
 
     return v1
 
-    .line 4746
+    .line 4737
     :cond_2
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchKeyEventPreIme(Landroid/view/KeyEvent;)Z
 
@@ -468,7 +468,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 4603
+    .line 4594
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$300(Lorg/telegram/ui/PhotoViewer;)Z
@@ -485,7 +485,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 4604
+    .line 4595
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -510,7 +510,7 @@
 
     goto :goto_0
 
-    .line 4612
+    .line 4603
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -518,7 +518,7 @@
 
     goto :goto_0
 
-    .line 4607
+    .line 4598
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -528,7 +528,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 4616
+    .line 4607
     :cond_2
     :goto_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
@@ -541,7 +541,7 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 0
 
-    .line 4623
+    .line 4614
     :try_start_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -561,10 +561,10 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 4714
+    .line 4705
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 4715
+    .line 4706
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$8700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
@@ -573,7 +573,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 4716
+    .line 4707
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$11900(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
@@ -582,7 +582,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 4717
+    .line 4708
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$12000(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
@@ -591,14 +591,14 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 4718
+    .line 4709
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$12102(Lorg/telegram/ui/PhotoViewer;Z)Z
 
-    .line 4719
+    .line 4710
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-interface {v0}, Lcom/iMe/ui/base/mvp/view/ICustomMvpView;->onCreateMvpView()V
@@ -609,10 +609,10 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 4724
+    .line 4715
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 4725
+    .line 4716
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$8700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
@@ -621,7 +621,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 4726
+    .line 4717
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$11900(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
@@ -630,7 +630,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 4727
+    .line 4718
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$12000(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
@@ -639,19 +639,19 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 4728
+    .line 4719
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$12102(Lorg/telegram/ui/PhotoViewer;Z)Z
 
-    .line 4729
+    .line 4720
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$11302(Lorg/telegram/ui/PhotoViewer;Z)Z
 
-    .line 4730
+    .line 4721
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-interface {v0}, Lcom/iMe/ui/base/mvp/view/ICustomMvpView;->onDestroyMvpView()V
@@ -662,7 +662,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 4751
+    .line 4742
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -677,7 +677,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4752
+    .line 4743
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$12500(Lorg/telegram/ui/PhotoViewer;)Landroid/graphics/Paint;
@@ -698,7 +698,7 @@
 
     const/4 v3, 0x0
 
-    .line 4753
+    .line 4744
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -744,7 +744,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 4584
+    .line 4575
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6900(Lorg/telegram/ui/PhotoViewer;)Z
@@ -773,7 +773,7 @@
 .method protected onLayout(ZIIII)V
     .locals 3
 
-    .line 4674
+    .line 4665
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p2}, Lorg/telegram/ui/PhotoViewer;->access$7300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/ClippingImageView;
@@ -814,7 +814,7 @@
 
     invoke-virtual {p2, p3, v0, p4, p5}, Landroid/view/View;->layout(IIII)V
 
-    .line 4675
+    .line 4666
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p2}, Lorg/telegram/ui/PhotoViewer;->access$1400(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
@@ -853,7 +853,7 @@
 
     invoke-virtual {p2, p3, v0, p4, p5}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 4676
+    .line 4667
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p2}, Lorg/telegram/ui/PhotoViewer;->access$10300(Lorg/telegram/ui/PhotoViewer;)Landroid/view/View;
@@ -908,7 +908,7 @@
 
     invoke-virtual {p2, p3, p4, p5, v1}, Landroid/view/View;->layout(IIII)V
 
-    .line 4677
+    .line 4668
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 p3, 0x1
@@ -917,7 +917,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 4679
+    .line 4670
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$11400(Lorg/telegram/ui/PhotoViewer;)Z
@@ -926,26 +926,26 @@
 
     if-nez p1, :cond_0
 
-    .line 4680
+    .line 4671
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/high16 p2, 0x3f800000    # 1.0f
 
     invoke-static {p1, p2}, Lorg/telegram/ui/PhotoViewer;->access$9902(Lorg/telegram/ui/PhotoViewer;F)F
 
-    .line 4681
+    .line 4672
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 p2, 0x0
 
     invoke-static {p1, p2}, Lorg/telegram/ui/PhotoViewer;->access$11502(Lorg/telegram/ui/PhotoViewer;F)F
 
-    .line 4682
+    .line 4673
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/PhotoViewer;->access$10002(Lorg/telegram/ui/PhotoViewer;F)F
 
-    .line 4683
+    .line 4674
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$9900(Lorg/telegram/ui/PhotoViewer;)F
@@ -954,7 +954,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/PhotoViewer;->access$11600(Lorg/telegram/ui/PhotoViewer;F)V
 
-    .line 4686
+    .line 4677
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -964,7 +964,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 4687
+    .line 4678
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$11700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/CheckBox;
@@ -977,7 +977,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    .line 4706
+    .line 4697
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -987,12 +987,12 @@
 
     if-eqz p1, :cond_2
 
-    .line 4707
+    .line 4698
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$11800(Lorg/telegram/ui/PhotoViewer;)V
 
-    .line 4708
+    .line 4699
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$11402(Lorg/telegram/ui/PhotoViewer;Z)Z
@@ -1004,24 +1004,24 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 4632
+    .line 4623
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 4633
+    .line 4624
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 4634
+    .line 4625
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_3
 
-    .line 4635
+    .line 4626
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$8900(Lorg/telegram/ui/PhotoViewer;)Z
@@ -1030,12 +1030,12 @@
 
     if-nez v0, :cond_2
 
-    .line 4636
+    .line 4627
     sget-boolean v0, Lorg/telegram/messenger/AndroidUtilities;->incorrectDisplaySizeFix:Z
 
     if-eqz v0, :cond_1
 
-    .line 4637
+    .line 4628
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v0, v0, Landroid/graphics/Point;->y:I
@@ -1044,7 +1044,7 @@
 
     move p2, v0
 
-    .line 4640
+    .line 4631
     :cond_0
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
@@ -1052,7 +1052,7 @@
 
     goto :goto_0
 
-    .line 4642
+    .line 4633
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -1064,14 +1064,14 @@
 
     if-ltz v0, :cond_2
 
-    .line 4643
+    .line 4634
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     if-ltz v0, :cond_2
 
     sub-int v0, p2, v0
 
-    .line 4644
+    .line 4635
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$11100(Lorg/telegram/ui/PhotoViewer;)Landroid/graphics/Rect;
@@ -1088,12 +1088,12 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 4646
+    .line 4637
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iput v0, v1, Landroid/graphics/Point;->y:I
 
-    .line 4651
+    .line 4642
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
@@ -1111,7 +1111,7 @@
     :cond_3
     if-ge v0, v1, :cond_4
 
-    .line 4655
+    .line 4646
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$11100(Lorg/telegram/ui/PhotoViewer;)Landroid/graphics/Rect;
@@ -1122,7 +1122,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->top:I
 
-    .line 4656
+    .line 4647
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$11100(Lorg/telegram/ui/PhotoViewer;)Landroid/graphics/Rect;
@@ -1133,7 +1133,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->bottom:I
 
-    .line 4658
+    .line 4649
     :cond_4
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -1143,7 +1143,7 @@
 
     move p2, v0
 
-    .line 4662
+    .line 4653
     :cond_5
     :goto_1
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
@@ -1158,17 +1158,17 @@
 
     sub-int/2addr p1, v0
 
-    .line 4663
+    .line 4654
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingBottom()I
 
     move-result v0
 
     sub-int/2addr p2, v0
 
-    .line 4664
+    .line 4655
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
-    .line 4665
+    .line 4656
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$7300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/ClippingImageView;
@@ -1179,7 +1179,7 @@
 
     move-result-object v0
 
-    .line 4666
+    .line 4657
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$7300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/ClippingImageView;
@@ -1202,7 +1202,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/view/View;->measure(II)V
 
-    .line 4667
+    .line 4658
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1400(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
@@ -1221,7 +1221,7 @@
 
     invoke-virtual {v0, v2, p2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 4668
+    .line 4659
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p2}, Lorg/telegram/ui/PhotoViewer;->access$10300(Lorg/telegram/ui/PhotoViewer;)Landroid/view/View;
@@ -1250,7 +1250,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 4589
+    .line 4580
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$13;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$6900(Lorg/telegram/ui/PhotoViewer;)Z

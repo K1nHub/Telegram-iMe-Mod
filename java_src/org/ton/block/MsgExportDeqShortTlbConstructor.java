@@ -19,13 +19,13 @@ public final class MsgExportDeqShortTlbConstructor extends org.ton.tlb.TlbConstr
         Intrinsics.checkNotNullParameter(value, "value");
         cellBuilder.storeBits(value.getMsgEnvHash());
         cellBuilder.storeInt(value.getNextWorkchain(), 32);
-        cellBuilder.mo5057storeUInt64VKZWuLQ(value.m4976getNextAddrPfxsVKNKU());
-        cellBuilder.mo5057storeUInt64VKZWuLQ(value.m4975getImportBlockLtsVKNKU());
+        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5130getNextAddrPfxsVKNKU());
+        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5129getImportBlockLtsVKNKU());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public MsgExportDeqShort loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new MsgExportDeqShort(cellSlice.loadBits(256), (int) cellSlice.loadTinyInt(32), cellSlice.mo5067loadUInt64sVKNKU(), cellSlice.mo5067loadUInt64sVKNKU(), null);
+        return new MsgExportDeqShort(cellSlice.loadBits(256), (int) cellSlice.loadTinyInt(32), cellSlice.mo5221loadUInt64sVKNKU(), cellSlice.mo5221loadUInt64sVKNKU(), null);
     }
 }

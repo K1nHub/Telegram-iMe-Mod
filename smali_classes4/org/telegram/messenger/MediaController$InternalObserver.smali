@@ -22,12 +22,12 @@
 .method public constructor <init>(Lorg/telegram/messenger/MediaController;)V
     .locals 0
 
-    .line 889
+    .line 932
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$InternalObserver;->this$0:Lorg/telegram/messenger/MediaController;
 
     const/4 p1, 0x0
 
-    .line 890
+    .line 933
     invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
     return-void
@@ -38,10 +38,10 @@
 .method public onChange(Z)V
     .locals 1
 
-    .line 895
+    .line 938
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 896
+    .line 939
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$InternalObserver;->this$0:Lorg/telegram/messenger/MediaController;
 
     sget-object v0, Landroid/provider/MediaStore$Images$Media;->INTERNAL_CONTENT_URI:Landroid/net/Uri;

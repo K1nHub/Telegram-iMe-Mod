@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MusicPlayerService;)V
     .locals 0
 
-    .line 71
+    .line 73
     iput-object p1, p0, Lorg/telegram/messenger/MusicPlayerService$1;->this$0:Lorg/telegram/messenger/MusicPlayerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,7 +35,7 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 0
 
-    .line 74
+    .line 76
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object p1
@@ -48,7 +48,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 75
+    .line 77
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1

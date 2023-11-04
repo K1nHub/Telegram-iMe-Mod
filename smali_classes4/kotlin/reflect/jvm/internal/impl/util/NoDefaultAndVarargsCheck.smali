@@ -102,7 +102,7 @@
 
     check-cast v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
 
-    const-string v3, "it"
+    const-string/jumbo v3, "it"
 
     .line 105
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

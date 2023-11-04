@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 732
+    .line 735
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter$getHorizontalActionButtonItems$1$1$1;->invoke()V
 
     sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -61,9 +61,9 @@
 .end method
 
 .method public final invoke()V
-    .locals 3
+    .locals 4
 
-    .line 733
+    .line 736
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter$getHorizontalActionButtonItems$1$1$1;->this$0:Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;->access$isAllNetworksSelected(Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;)Z
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 734
+    .line 737
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter$getHorizontalActionButtonItems$1$1$1;->this$0:Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;
 
     new-instance v1, Lcom/iMe/model/wallet/home/NetworkChoosePurpose$NewWallet;
@@ -85,13 +85,17 @@
 
     goto :goto_0
 
-    .line 736
+    .line 739
     :cond_0
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter$getHorizontalActionButtonItems$1$1$1;->this$0:Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter$getHorizontalActionButtonItems$1$1$1;->$this_with:Lcom/iMe/model/wallet/crypto/create/WalletCreationType;
 
-    invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/home/tabs/crypto/WalletHomeCryptoPresenter;->startWalletCreationFlow(Lcom/iMe/model/wallet/crypto/create/WalletCreationType;)V
+    const/4 v2, 0x2
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v1, v3, v2, v3}, Lcom/iMe/manager/wallet/create/WalletCreateManagerDelegate$-CC;->startWalletCreationFlow$default(Lcom/iMe/manager/wallet/create/WalletCreateManagerDelegate;Lcom/iMe/model/wallet/crypto/create/WalletCreationType;Lcom/iMe/storage/domain/model/crypto/BlockchainType;ILjava/lang/Object;)V
 
     :goto_0
     return-void

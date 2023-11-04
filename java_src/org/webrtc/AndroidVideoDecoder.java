@@ -438,7 +438,7 @@ class AndroidVideoDecoder implements VideoDecoder, VideoSink {
                 dataV.put(byteBuffer);
             }
         } catch (Throwable th) {
-            FileLog.m97e(th);
+            FileLog.m99e(th);
         }
         return allocateI420Buffer;
     }

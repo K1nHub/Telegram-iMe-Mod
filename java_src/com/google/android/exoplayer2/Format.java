@@ -626,15 +626,15 @@ public final class Format implements Bundleable {
                     break;
                 }
                 UUID uuid = drmInitData.get(i).uuid;
-                if (uuid.equals(C0479C.COMMON_PSSH_UUID)) {
-                    linkedHashSet.add(C0479C.CENC_TYPE_cenc);
-                } else if (uuid.equals(C0479C.CLEARKEY_UUID)) {
+                if (uuid.equals(C0485C.COMMON_PSSH_UUID)) {
+                    linkedHashSet.add(C0485C.CENC_TYPE_cenc);
+                } else if (uuid.equals(C0485C.CLEARKEY_UUID)) {
                     linkedHashSet.add("clearkey");
-                } else if (uuid.equals(C0479C.PLAYREADY_UUID)) {
+                } else if (uuid.equals(C0485C.PLAYREADY_UUID)) {
                     linkedHashSet.add("playready");
-                } else if (uuid.equals(C0479C.WIDEVINE_UUID)) {
+                } else if (uuid.equals(C0485C.WIDEVINE_UUID)) {
                     linkedHashSet.add("widevine");
-                } else if (uuid.equals(C0479C.UUID_NIL)) {
+                } else if (uuid.equals(C0485C.UUID_NIL)) {
                     linkedHashSet.add("universal");
                 } else {
                     linkedHashSet.add("unknown (" + uuid + ")");
@@ -642,7 +642,7 @@ public final class Format implements Bundleable {
                 i++;
             }
             sb.append(", drm=[");
-            Joiner.m1058on(',').appendTo(sb, linkedHashSet);
+            Joiner.m1059on(',').appendTo(sb, linkedHashSet);
             sb.append(']');
         }
         if (format.width != -1 && format.height != -1) {
@@ -683,7 +683,7 @@ public final class Format implements Bundleable {
                 arrayList.add("forced");
             }
             sb.append(", selectionFlags=[");
-            Joiner.m1058on(',').appendTo(sb, arrayList);
+            Joiner.m1059on(',').appendTo(sb, arrayList);
             sb.append("]");
         }
         if (format.roleFlags != 0) {
@@ -734,7 +734,7 @@ public final class Format implements Bundleable {
                 arrayList2.add("trick-play");
             }
             sb.append(", roleFlags=[");
-            Joiner.m1058on(',').appendTo(sb, arrayList2);
+            Joiner.m1059on(',').appendTo(sb, arrayList2);
             sb.append("]");
         }
         return sb.toString();

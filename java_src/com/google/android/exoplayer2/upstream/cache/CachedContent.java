@@ -128,7 +128,7 @@ public final class CachedContent {
             if (file.renameTo(cacheFile)) {
                 file = cacheFile;
             } else {
-                Log.m1106w(TAG, "Failed to rename " + file + " to " + cacheFile);
+                Log.m1107w(TAG, "Failed to rename " + file + " to " + cacheFile);
             }
         }
         SimpleCacheSpan copyWithFileAndLastTouchTimestamp = simpleCacheSpan.copyWithFileAndLastTouchTimestamp(file, j);

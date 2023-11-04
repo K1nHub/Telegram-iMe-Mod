@@ -77,7 +77,7 @@ public final class AhmnNodeIterator<X, Y> extends AbstractIterator<Pair<? extend
                     return null;
                 }
                 this.visited = true;
-                return TuplesKt.m144to(this.prefix, getNode());
+                return TuplesKt.m146to(this.prefix, getNode());
             }
         }
 
@@ -108,7 +108,7 @@ public final class AhmnNodeIterator<X, Y> extends AbstractIterator<Pair<? extend
             public Pair<BitString, HashmapAugNode<X, Y>> step() {
                 if (!this.rootVisited) {
                     this.rootVisited = true;
-                    return TuplesKt.m144to(this.prefix, getNode());
+                    return TuplesKt.m146to(this.prefix, getNode());
                 } else if (this.leftVisited) {
                     if (this.rightVisited) {
                         return null;
@@ -121,7 +121,7 @@ public final class AhmnNodeIterator<X, Y> extends AbstractIterator<Pair<? extend
                     beginCell.storeBits(this.prefix);
                     beginCell.storeBit(true);
                     beginCell.storeBits(ahmEdge.getLabel().toBitString());
-                    return TuplesKt.m144to(beginCell.getBits().toBitString(), ahmEdge.getNode());
+                    return TuplesKt.m146to(beginCell.getBits().toBitString(), ahmEdge.getNode());
                 } else {
                     this.leftVisited = true;
                     HashmapAug<X, Y> value2 = getNode().getLeft().getValue();
@@ -131,7 +131,7 @@ public final class AhmnNodeIterator<X, Y> extends AbstractIterator<Pair<? extend
                     beginCell2.storeBits(this.prefix);
                     beginCell2.storeBit(false);
                     beginCell2.storeBits(ahmEdge2.getLabel().toBitString());
-                    return TuplesKt.m144to(beginCell2.getBits().toBitString(), ahmEdge2.getNode());
+                    return TuplesKt.m146to(beginCell2.getBits().toBitString(), ahmEdge2.getNode());
                 }
             }
         }

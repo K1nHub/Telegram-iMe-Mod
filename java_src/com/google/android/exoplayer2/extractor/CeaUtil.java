@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.util.Log;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 /* loaded from: classes.dex */
@@ -22,7 +22,7 @@ public final class CeaUtil {
             int readNon255TerminatedValue2 = readNon255TerminatedValue(parsableByteArray);
             int position = parsableByteArray.getPosition() + readNon255TerminatedValue2;
             if (readNon255TerminatedValue2 == -1 || readNon255TerminatedValue2 > parsableByteArray.bytesLeft()) {
-                Log.m1106w(TAG, "Skipping remainder of malformed SEI NAL unit.");
+                Log.m1107w(TAG, "Skipping remainder of malformed SEI NAL unit.");
                 position = parsableByteArray.limit();
             } else if (readNon255TerminatedValue == 4 && readNon255TerminatedValue2 >= 8) {
                 int readUnsignedByte = parsableByteArray.readUnsignedByte();
@@ -53,7 +53,7 @@ public final class CeaUtil {
             for (TrackOutput trackOutput : trackOutputArr) {
                 parsableByteArray.setPosition(position);
                 trackOutput.sampleData(parsableByteArray, i);
-                if (j != C0479C.TIME_UNSET) {
+                if (j != C0485C.TIME_UNSET) {
                     trackOutput.sampleMetadata(j, 1, i, 0, null);
                 }
             }

@@ -26,17 +26,17 @@
 .method public constructor <init>(Lorg/telegram/ui/TopicsFragment;Landroid/content/Context;)V
     .locals 8
 
-    .line 3103
+    .line 3111
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 3104
+    .line 3112
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->textView:Landroid/widget/TextView;
 
-    .line 3106
+    .line 3114
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const-string v0, "  "
@@ -49,12 +49,12 @@
 
     if-eqz p2, :cond_0
 
-    .line 3107
+    .line 3115
     new-instance p2, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {p2, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 3108
+    .line 3116
     new-instance v0, Lorg/telegram/ui/Components/ColoredImageSpan;
 
     sget v4, Lorg/telegram/messenger/R$drawable;->attach_arrow_left:I
@@ -63,7 +63,7 @@
 
     invoke-virtual {p2, v0, v2, v3, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 3109
+    .line 3117
     sget v0, Lorg/telegram/messenger/R$string;->TapToCreateTopicHint:I
 
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -74,7 +74,7 @@
 
     goto :goto_0
 
-    .line 3111
+    .line 3119
     :cond_0
     new-instance p2, Landroid/text/SpannableStringBuilder;
 
@@ -86,10 +86,10 @@
 
     invoke-direct {p2, v1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 3112
+    .line 3120
     invoke-virtual {p2, v0}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 3113
+    .line 3121
     new-instance v0, Lorg/telegram/ui/Components/ColoredImageSpan;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->arrow_newchat:I
@@ -108,20 +108,20 @@
 
     invoke-virtual {p2, v0, v1, v4, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 3115
+    .line 3123
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3116
+    .line 3124
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->textView:Landroid/widget/TextView;
 
     const/high16 v0, 0x41600000    # 14.0f
 
     invoke-virtual {p2, v3, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 3117
+    .line 3125
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->textView:Landroid/widget/TextView;
 
     const/4 v0, 0x2
@@ -130,7 +130,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/widget/TextView;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 3118
+    .line 3126
     iget-object p2, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->textView:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
@@ -145,7 +145,7 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 3119
+    .line 3127
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->textView:Landroid/widget/TextView;
 
     const/4 v0, -0x2
@@ -206,10 +206,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 3127
+    .line 3135
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 3128
+    .line 3136
     iget-boolean p1, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->increment:Z
 
     const/4 v0, 0x1
@@ -218,7 +218,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 3129
+    .line 3137
     iget p1, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->progress:F
 
     add-float/2addr p1, v1
@@ -233,15 +233,15 @@
 
     const/4 p1, 0x0
 
-    .line 3131
+    .line 3139
     iput-boolean p1, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->increment:Z
 
-    .line 3132
+    .line 3140
     iput v1, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->progress:F
 
     goto :goto_0
 
-    .line 3135
+    .line 3143
     :cond_0
     iget p1, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->progress:F
 
@@ -255,13 +255,13 @@
 
     if-gez p1, :cond_1
 
-    .line 3137
+    .line 3145
     iput-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->increment:Z
 
-    .line 3138
+    .line 3146
     iput v1, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->progress:F
 
-    .line 3141
+    .line 3149
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$EmptyViewContainer;->textView:Landroid/widget/TextView;
@@ -297,7 +297,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 3142
+    .line 3150
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

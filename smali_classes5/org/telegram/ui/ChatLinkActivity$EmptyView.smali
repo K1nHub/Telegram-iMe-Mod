@@ -29,17 +29,17 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 7
 
-    .line 106
+    .line 107
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 101
+    .line 102
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iput v0, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->currentAccount:I
 
     const/16 v0, 0xc
 
-    .line 108
+    .line 109
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -54,24 +54,24 @@
 
     const/4 v0, 0x1
 
-    .line 109
+    .line 110
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 111
+    .line 112
     new-instance v0, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->stickerView:Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 112
+    .line 113
     new-instance p1, Lorg/telegram/ui/Components/LoadingStickerDrawable;
 
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->stickerView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v1, 0x68
 
-    .line 121
+    .line 122
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -86,12 +86,12 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->drawable:Lorg/telegram/ui/Components/LoadingStickerDrawable;
 
-    .line 122
+    .line 123
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->stickerView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/BackupImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 123
+    .line 124
     iget-object p1, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->stickerView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v0, 0x68
@@ -120,7 +120,7 @@
 .method private setSticker()V
     .locals 8
 
-    .line 127
+    .line 128
     iget v0, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -135,7 +135,7 @@
 
     if-nez v0, :cond_0
 
-    .line 129
+    .line 130
     iget v0, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -151,7 +151,7 @@
 
     if-eqz v7, :cond_1
 
-    .line 131
+    .line 132
     iget-object v0, v7, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -162,7 +162,7 @@
 
     if-lt v0, v2, :cond_1
 
-    .line 132
+    .line 133
     iget-object v0, v7, Lorg/telegram/tgnet/TLRPC$messages_StickerSet;->documents:Ljava/util/ArrayList;
 
     const/4 v1, 0x2
@@ -173,12 +173,12 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 133
+    .line 134
     invoke-static {v0}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v3
 
-    .line 134
+    .line 135
     iget-object v2, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->stickerView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v6, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->drawable:Lorg/telegram/ui/Components/LoadingStickerDrawable;
@@ -191,7 +191,7 @@
 
     goto :goto_1
 
-    .line 136
+    .line 137
     :cond_1
     iget v0, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->currentAccount:I
 
@@ -213,7 +213,7 @@
     :goto_0
     invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/messenger/MediaDataController;->loadStickersByEmojiOrName(Ljava/lang/String;ZZ)V
 
-    .line 137
+    .line 138
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->stickerView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v1, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->drawable:Lorg/telegram/ui/Components/LoadingStickerDrawable;
@@ -229,28 +229,28 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 156
+    .line 157
     sget p2, Lorg/telegram/messenger/NotificationCenter;->diceStickersDidLoad:I
 
     if-ne p1, p2, :cond_0
 
     const/4 p1, 0x0
 
-    .line 157
+    .line 158
     aget-object p1, p3, p1
 
     check-cast p1, Ljava/lang/String;
 
     const-string p2, "tg_placeholders_android"
 
-    .line 158
+    .line 159
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 159
+    .line 160
     invoke-direct {p0}, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->setSticker()V
 
     :cond_0
@@ -260,13 +260,13 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 143
+    .line 144
     invoke-super {p0}, Landroid/widget/LinearLayout;->onAttachedToWindow()V
 
-    .line 144
+    .line 145
     invoke-direct {p0}, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->setSticker()V
 
-    .line 145
+    .line 146
     iget v0, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -283,10 +283,10 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 150
+    .line 151
     invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
 
-    .line 151
+    .line 152
     iget v0, p0, Lorg/telegram/ui/ChatLinkActivity$EmptyView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;

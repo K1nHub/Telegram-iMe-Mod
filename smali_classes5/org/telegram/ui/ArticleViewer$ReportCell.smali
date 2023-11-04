@@ -26,26 +26,26 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 14
 
-    .line 11460
+    .line 11484
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/16 v0, 0x5a
 
-    .line 11461
+    .line 11485
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 11463
+    .line 11487
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
-    .line 11464
+    .line 11488
     sget v1, Lorg/telegram/messenger/R$string;->PreviewFeedback2:I
 
     const-string v2, "PreviewFeedback2"
@@ -56,7 +56,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 11465
+    .line 11489
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/4 v1, 0x1
@@ -65,14 +65,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 11466
+    .line 11490
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/16 v3, 0x11
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 11467
+    .line 11491
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/16 v3, 0x12
@@ -89,7 +89,7 @@
 
     invoke-virtual {v0, v4, v6, v5, v6}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 11468
+    .line 11492
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/4 v7, -0x1
@@ -112,24 +112,24 @@
 
     invoke-virtual {p0, v0, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 11470
+    .line 11494
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
-    .line 11471
+    .line 11495
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 11472
+    .line 11496
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
     const/16 v0, 0x13
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 11473
+    .line 11497
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -142,7 +142,7 @@
 
     invoke-virtual {p1, v0, v6, v1, v6}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 11474
+    .line 11498
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
     const/4 v0, -0x1
@@ -169,7 +169,7 @@
 .method static synthetic access$22700(Lorg/telegram/ui/ArticleViewer$ReportCell;)Z
     .locals 0
 
-    .line 11453
+    .line 11477
     iget-boolean p0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->hasViews:Z
 
     return p0
@@ -182,7 +182,7 @@
 
     const/16 p2, 0x2c
 
-    .line 11479
+    .line 11503
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -205,17 +205,17 @@
 
     if-nez p1, :cond_0
 
-    .line 11484
+    .line 11508
     iput-boolean v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->hasViews:Z
 
-    .line 11485
+    .line 11509
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
     const/16 v0, 0x8
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 11486
+    .line 11510
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/16 v0, 0x11
@@ -227,22 +227,22 @@
     :cond_0
     const/4 v1, 0x1
 
-    .line 11488
+    .line 11512
     iput-boolean v1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->hasViews:Z
 
-    .line 11489
+    .line 11513
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 11490
+    .line 11514
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/16 v1, 0x15
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 11491
+    .line 11515
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
     const-string v1, "Views"
@@ -253,7 +253,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 11493
+    .line 11517
     :goto_0
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrack:I
 
@@ -261,7 +261,7 @@
 
     move-result p1
 
-    .line 11494
+    .line 11518
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     invoke-static {}, Lorg/telegram/ui/ArticleViewer;->access$20300()I
@@ -270,7 +270,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 11495
+    .line 11519
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->viewsTextView:Landroid/widget/TextView;
 
     invoke-static {}, Lorg/telegram/ui/ArticleViewer;->access$20300()I
@@ -279,7 +279,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 11496
+    .line 11520
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$ReportCell;->textView:Landroid/widget/TextView;
 
     const/16 v1, 0x22

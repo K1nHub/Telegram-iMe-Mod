@@ -49,7 +49,7 @@ public final class Presentation implements MatrixTransformation {
     @Override // com.google.android.exoplayer2.effect.GlMatrixTransformation, com.google.android.exoplayer2.effect.GlEffect
     public /* synthetic */ SingleFrameGlTextureProcessor toGlTextureProcessor(Context context, boolean z) {
         SingleFrameGlTextureProcessor create;
-        create = MatrixTextureProcessor.create(context, ImmutableList.m1053of(this), ImmutableList.m1054of(), z);
+        create = MatrixTextureProcessor.create(context, ImmutableList.m1054of(this), ImmutableList.m1055of(), z);
         return create;
     }
 

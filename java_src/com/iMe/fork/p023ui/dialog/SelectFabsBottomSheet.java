@@ -25,12 +25,12 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p042ui.ActionBar.BottomSheet;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.RecyclerListView;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: SelectFabsBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.SelectFabsBottomSheet */
 /* loaded from: classes3.dex */
@@ -129,12 +129,12 @@ public final class SelectFabsBottomSheet extends BottomSheet {
             }
         });
         this.saveButton$delegate = lazy5;
-        setTitle(LocaleController.getInternalString(C3630R.string.create_folder_change_fab_title), true);
+        setTitle(LocaleController.getInternalString(C3634R.string.create_folder_change_fab_title), true);
         setApplyBottomPadding(false);
         FrameLayout frameLayout = new FrameLayout(context) { // from class: com.iMe.fork.ui.dialog.SelectFabsBottomSheet.1
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                this.itemWidth = (View.MeasureSpec.getSize(i) - AndroidUtilities.m102dp(28)) / 4;
+                this.itemWidth = (View.MeasureSpec.getSize(i) - AndroidUtilities.m104dp(28)) / 4;
                 super.onMeasure(i, i2);
             }
         };
@@ -187,7 +187,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
         recyclerListView.setClipToPadding(false);
         recyclerListView.setEnabled(true);
         recyclerListView.setOverScrollMode(2);
-        recyclerListView.setPadding(AndroidUtilities.m102dp(10), 0, AndroidUtilities.m102dp(10), 0);
+        recyclerListView.setPadding(AndroidUtilities.m104dp(10), 0, AndroidUtilities.m104dp(10), 0);
         recyclerListView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.iMe.fork.ui.dialog.SelectFabsBottomSheet$initListView$1$1
             @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
@@ -198,8 +198,8 @@ public final class SelectFabsBottomSheet extends BottomSheet {
                 RecyclerView.ViewHolder childViewHolder = parent.getChildViewHolder(view);
                 Intrinsics.checkNotNull(childViewHolder, "null cannot be cast to non-null type org.telegram.ui.Components.RecyclerListView.Holder");
                 int adapterPosition = ((RecyclerListView.Holder) childViewHolder).getAdapterPosition() % 4;
-                outRect.left = adapterPosition == 0 ? 0 : AndroidUtilities.m102dp(4);
-                outRect.right = adapterPosition != 3 ? AndroidUtilities.m102dp(4) : 0;
+                outRect.left = adapterPosition == 0 ? 0 : AndroidUtilities.m104dp(4);
+                outRect.right = adapterPosition != 3 ? AndroidUtilities.m104dp(4) : 0;
             }
         });
         return recyclerListView;
@@ -220,7 +220,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
         textView.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor(Theme.key_dialogBackground), Theme.getColor(Theme.key_listSelector)));
-        textView.setText(LocaleController.getString("Save", C3630R.string.Save));
+        textView.setText(LocaleController.getString("Save", C3634R.string.Save));
         textView.setTextSize(1, 14.0f);
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2));
         return textView;
@@ -228,7 +228,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
 
     private final void setupListeners() {
         getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.fork.ui.dialog.SelectFabsBottomSheet$$ExternalSyntheticLambda2
-            @Override // org.telegram.p042ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 SelectFabsBottomSheet.setupListeners$lambda$7(SelectFabsBottomSheet.this, view, i);
             }
@@ -301,7 +301,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
     /* renamed from: com.iMe.fork.ui.dialog.SelectFabsBottomSheet$ListAdapter */
     /* loaded from: classes3.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        @Override // org.telegram.p042ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return false;
@@ -333,7 +333,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
                 protected void onMeasure(int i2, int i3) {
                     int i4;
                     i4 = SelectFabsBottomSheet.this.itemWidth;
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m102dp(100), 1073741824));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m104dp(100), 1073741824));
                 }
             });
         }

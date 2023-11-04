@@ -13,21 +13,21 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class zzd extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzd> CREATOR = new zze();
-    @SafeParcelable.Field(getter = "getUid", m1089id = 1)
+    @SafeParcelable.Field(getter = "getUid", m1090id = 1)
     private final int zza;
-    @SafeParcelable.Field(getter = "getPid", m1089id = 2)
+    @SafeParcelable.Field(getter = "getPid", m1090id = 2)
     private final int zzb;
-    @SafeParcelable.Field(getter = "getPackageName", m1089id = 3)
+    @SafeParcelable.Field(getter = "getPackageName", m1090id = 3)
     private final String zzc;
-    @SafeParcelable.Field(getter = "getAttributionTag", m1089id = 4)
+    @SafeParcelable.Field(getter = "getAttributionTag", m1090id = 4)
     private final String zzd;
-    @SafeParcelable.Field(getter = "getClientSdkVersion", m1089id = 5)
+    @SafeParcelable.Field(getter = "getClientSdkVersion", m1090id = 5)
     private final int zze;
-    @SafeParcelable.Field(getter = "getListenerId", m1089id = 6)
+    @SafeParcelable.Field(getter = "getListenerId", m1090id = 6)
     private final String zzf;
-    @SafeParcelable.Field(getter = "getImpersonator", m1089id = 7)
+    @SafeParcelable.Field(getter = "getImpersonator", m1090id = 7)
     private final zzd zzg;
-    @SafeParcelable.Field(defaultValueUnchecked = "com.google.common.collect.ImmutableList.of()", getter = "getClientFeatures", m1089id = 8)
+    @SafeParcelable.Field(defaultValueUnchecked = "com.google.common.collect.ImmutableList.of()", getter = "getClientFeatures", m1090id = 8)
     private final List zzh;
 
     static {
@@ -37,7 +37,7 @@ public final class zzd extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzd(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) int i2, @SafeParcelable.Param(m1088id = 3) String str, @SafeParcelable.Param(m1088id = 4) String str2, @SafeParcelable.Param(m1088id = 6) String str3, @SafeParcelable.Param(m1088id = 5) int i3, @SafeParcelable.Param(m1088id = 8) List list, @SafeParcelable.Param(m1088id = 7) zzd zzdVar) {
+    public zzd(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) int i2, @SafeParcelable.Param(m1089id = 3) String str, @SafeParcelable.Param(m1089id = 4) String str2, @SafeParcelable.Param(m1089id = 6) String str3, @SafeParcelable.Param(m1089id = 5) int i3, @SafeParcelable.Param(m1089id = 8) List list, @SafeParcelable.Param(m1089id = 7) zzd zzdVar) {
         this.zza = i;
         this.zzb = i2;
         this.zzc = str;

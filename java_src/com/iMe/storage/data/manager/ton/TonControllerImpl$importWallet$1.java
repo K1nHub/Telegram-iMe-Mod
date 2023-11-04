@@ -12,13 +12,13 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
-import org.ton.api.p043pk.PrivateKeyEd25519;
+import org.ton.api.p044pk.PrivateKeyEd25519;
 import org.ton.api.pub.PublicKeyEd25519;
 import org.ton.block.MsgAddressInt;
 import org.ton.contract.wallet.WalletContract;
 import org.ton.mnemonic.Mnemonic;
 /* compiled from: TonControllerImpl.kt */
-@DebugMetadata(m143c = "com.iMe.storage.data.manager.ton.TonControllerImpl$importWallet$1", m142f = "TonControllerImpl.kt", m141l = {91}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "com.iMe.storage.data.manager.ton.TonControllerImpl$importWallet$1", m144f = "TonControllerImpl.kt", m143l = {91}, m142m = "invokeSuspend")
 /* loaded from: classes3.dex */
 final class TonControllerImpl$importWallet$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Result<? extends Wallet.TON>>, Object> {
     final /* synthetic */ List<String> $mnemonic;

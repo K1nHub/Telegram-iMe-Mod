@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    value = Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 3222
+    .line 3226
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$39;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 10
 
-    .line 3226
+    .line 3230
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$39;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$5600(Lorg/telegram/ui/Components/EmojiView;)Landroidx/viewpager/widget/ViewPager;
@@ -53,7 +53,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 3229
+    .line 3233
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$39;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$13200(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$SearchField;
@@ -65,7 +65,7 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 3232
+    .line 3236
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$39;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$6100(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$SearchField;
@@ -79,7 +79,7 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 3234
+    .line 3238
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$39;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$3900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$SearchField;
@@ -88,7 +88,7 @@
 
     goto :goto_0
 
-    .line 3236
+    .line 3240
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$39;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -101,7 +101,7 @@
 
     return-void
 
-    .line 3241
+    .line 3245
     :cond_3
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView$SearchField;->access$2300(Lorg/telegram/ui/Components/EmojiView$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -121,19 +121,19 @@
 
     const/4 v8, 0x0
 
-    .line 3242
+    .line 3246
     invoke-static/range {v1 .. v8}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    .line 3243
+    .line 3247
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView$SearchField;->access$2300(Lorg/telegram/ui/Components/EmojiView$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 3244
+    .line 3248
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
     const-wide/16 v2, 0x0
@@ -146,19 +146,19 @@
 
     const/4 v9, 0x0
 
-    .line 3245
+    .line 3249
     invoke-static/range {v2 .. v9}, Landroid/view/MotionEvent;->obtain(JJIFFI)Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    .line 3246
+    .line 3250
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView$SearchField;->access$2300(Lorg/telegram/ui/Components/EmojiView$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p1
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 3247
+    .line 3251
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
     return-void

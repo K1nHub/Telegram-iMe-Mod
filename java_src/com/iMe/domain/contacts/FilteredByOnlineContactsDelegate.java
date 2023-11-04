@@ -360,6 +360,6 @@ public final class FilteredByOnlineContactsDelegate extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean userIsOnline(TLRPC$User tLRPC$User) {
         TLRPC$UserStatus tLRPC$UserStatus = tLRPC$User.status;
-        return (tLRPC$UserStatus != null && tLRPC$UserStatus.expires > getConnectionsManager().getCurrentTime()) || getMessagesController().onlinePrivacy.containsKey(Long.valueOf(tLRPC$User.f1762id));
+        return (tLRPC$UserStatus != null && tLRPC$UserStatus.expires > getConnectionsManager().getCurrentTime()) || getMessagesController().onlinePrivacy.containsKey(Long.valueOf(tLRPC$User.f1749id));
     }
 }

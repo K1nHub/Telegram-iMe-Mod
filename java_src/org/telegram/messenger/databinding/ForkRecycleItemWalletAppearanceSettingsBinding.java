@@ -9,8 +9,8 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p030ui.custom.DividerView;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.Components.Switch;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.Components.Switch;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletAppearanceSettingsBinding implements ViewBinding {
     private ForkRecycleItemWalletAppearanceSettingsBinding(LinearLayout linearLayout, AppCompatImageView appCompatImageView, LinearLayout linearLayout2, AppCompatTextView appCompatTextView, AppCompatTextView appCompatTextView2, DividerView dividerView, Switch r7) {
@@ -21,7 +21,7 @@ public final class ForkRecycleItemWalletAppearanceSettingsBinding implements Vie
     }
 
     public static ForkRecycleItemWalletAppearanceSettingsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_appearance_settings, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_recycle_item_wallet_appearance_settings, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -29,20 +29,20 @@ public final class ForkRecycleItemWalletAppearanceSettingsBinding implements Vie
     }
 
     public static ForkRecycleItemWalletAppearanceSettingsBinding bind(View view) {
-        int i = C3630R.C3633id.image_icon;
+        int i = C3634R.C3637id.image_icon;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
             LinearLayout linearLayout = (LinearLayout) view;
-            i = C3630R.C3633id.text_setting_description;
+            i = C3634R.C3637id.text_setting_description;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3630R.C3633id.text_setting_title;
+                i = C3634R.C3637id.text_setting_title;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView2 != null) {
-                    i = C3630R.C3633id.view_divider;
+                    i = C3634R.C3637id.view_divider;
                     DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
                     if (dividerView != null) {
-                        i = C3630R.C3633id.view_switch;
+                        i = C3634R.C3637id.view_switch;
                         Switch r9 = (Switch) ViewBindings.findChildViewById(view, i);
                         if (r9 != null) {
                             return new ForkRecycleItemWalletAppearanceSettingsBinding(linearLayout, appCompatImageView, linearLayout, appCompatTextView, appCompatTextView2, dividerView, r9);

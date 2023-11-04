@@ -67,12 +67,12 @@ public final class KMutableProperty2Impl<D, E, V> extends KProperty2Impl<D, E, V
         /* JADX WARN: Multi-variable type inference failed */
         @Override // kotlin.jvm.functions.Function3
         public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2, Object obj3) {
-            m2037invoke((Setter<D, E, V>) obj, obj2, obj3);
+            m2042invoke((Setter<D, E, V>) obj, obj2, obj3);
             return Unit.INSTANCE;
         }
 
         /* renamed from: invoke  reason: collision with other method in class */
-        public void m2037invoke(D d, E e, V v) {
+        public void m2042invoke(D d, E e, V v) {
             getProperty().set(d, e, v);
         }
     }

@@ -47,10 +47,10 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 684
+    .line 729
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 641
+    .line 686
     new-instance v0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$GpsLocationListener;
 
     const/4 v1, 0x0
@@ -59,7 +59,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->gpsLocationListener:Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$GpsLocationListener;
 
-    .line 642
+    .line 687
     new-instance v0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$GpsLocationListener;
 
     invoke-direct {v0, p0, v1}, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$GpsLocationListener;-><init>(Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;Lorg/telegram/messenger/SendMessagesHelper$1;)V
@@ -72,10 +72,10 @@
 .method public constructor <init>(Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$LocationProviderDelegate;)V
     .locals 2
 
-    .line 688
+    .line 733
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 641
+    .line 686
     new-instance v0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$GpsLocationListener;
 
     const/4 v1, 0x0
@@ -84,14 +84,14 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->gpsLocationListener:Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$GpsLocationListener;
 
-    .line 642
+    .line 687
     new-instance v0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$GpsLocationListener;
 
     invoke-direct {v0, p0, v1}, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$GpsLocationListener;-><init>(Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;Lorg/telegram/messenger/SendMessagesHelper$1;)V
 
     iput-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->networkLocationListener:Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$GpsLocationListener;
 
-    .line 689
+    .line 734
     iput-object p1, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->delegate:Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$LocationProviderDelegate;
 
     return-void
@@ -100,7 +100,7 @@
 .method static synthetic access$1000(Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;)V
     .locals 0
 
-    .line 632
+    .line 677
     invoke-direct {p0}, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->cleanup()V
 
     return-void
@@ -109,7 +109,7 @@
 .method static synthetic access$700(Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 632
+    .line 677
     iget-object p0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationQueryCancelRunnable:Ljava/lang/Runnable;
 
     return-object p0
@@ -118,7 +118,7 @@
 .method static synthetic access$802(Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;Landroid/location/Location;)Landroid/location/Location;
     .locals 0
 
-    .line 632
+    .line 677
     iput-object p1, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->lastKnownLocation:Landroid/location/Location;
 
     return-object p1
@@ -127,7 +127,7 @@
 .method static synthetic access$900(Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;)Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$LocationProviderDelegate;
     .locals 0
 
-    .line 632
+    .line 677
     iget-object p0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->delegate:Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$LocationProviderDelegate;
 
     return-object p0
@@ -136,14 +136,14 @@
 .method private cleanup()V
     .locals 2
 
-    .line 697
+    .line 742
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationManager:Landroid/location/LocationManager;
 
     iget-object v1, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->gpsLocationListener:Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$GpsLocationListener;
 
     invoke-virtual {v0, v1}, Landroid/location/LocationManager;->removeUpdates(Landroid/location/LocationListener;)V
 
-    .line 698
+    .line 743
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationManager:Landroid/location/LocationManager;
 
     iget-object v1, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->networkLocationListener:Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$GpsLocationListener;
@@ -152,10 +152,10 @@
 
     const/4 v0, 0x0
 
-    .line 699
+    .line 744
     iput-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->lastKnownLocation:Landroid/location/Location;
 
-    .line 700
+    .line 745
     iput-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationQueryCancelRunnable:Ljava/lang/Runnable;
 
     return-void
@@ -164,26 +164,26 @@
 .method private synthetic lambda$start$0()V
     .locals 2
 
-    .line 729
+    .line 774
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->delegate:Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$LocationProviderDelegate;
 
     if-eqz v0, :cond_1
 
-    .line 730
+    .line 775
     iget-object v1, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->lastKnownLocation:Landroid/location/Location;
 
     if-eqz v1, :cond_0
 
-    .line 731
+    .line 776
     invoke-interface {v0, v1}, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$LocationProviderDelegate;->onLocationAcquired(Landroid/location/Location;)V
 
     goto :goto_0
 
-    .line 733
+    .line 778
     :cond_0
     invoke-interface {v0}, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$LocationProviderDelegate;->onUnableLocationAcquire()V
 
-    .line 736
+    .line 781
     :cond_1
     :goto_0
     invoke-direct {p0}, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->cleanup()V
@@ -196,7 +196,7 @@
 .method public setDelegate(Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$LocationProviderDelegate;)V
     .locals 0
 
-    .line 693
+    .line 738
     iput-object p1, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->delegate:Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$LocationProviderDelegate;
 
     return-void
@@ -205,12 +205,12 @@
 .method public start()V
     .locals 7
 
-    .line 704
+    .line 749
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationManager:Landroid/location/LocationManager;
 
     if-nez v0, :cond_0
 
-    .line 705
+    .line 750
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string/jumbo v1, "location"
@@ -223,7 +223,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationManager:Landroid/location/LocationManager;
 
-    .line 708
+    .line 753
     :cond_0
     :try_start_0
     iget-object v1, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationManager:Landroid/location/LocationManager;
@@ -245,10 +245,10 @@
     :catch_0
     move-exception v0
 
-    .line 710
+    .line 755
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 713
+    .line 758
     :goto_0
     :try_start_1
     iget-object v1, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationManager:Landroid/location/LocationManager;
@@ -270,10 +270,10 @@
     :catch_1
     move-exception v0
 
-    .line 715
+    .line 760
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 718
+    .line 763
     :goto_1
     :try_start_2
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationManager:Landroid/location/LocationManager;
@@ -288,7 +288,7 @@
 
     if-nez v0, :cond_1
 
-    .line 720
+    .line 765
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationManager:Landroid/location/LocationManager;
 
     const-string/jumbo v1, "network"
@@ -306,20 +306,20 @@
     :catch_2
     move-exception v0
 
-    .line 723
+    .line 768
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 725
+    .line 770
     :cond_1
     :goto_2
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationQueryCancelRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_2
 
-    .line 726
+    .line 771
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 728
+    .line 773
     :cond_2
     new-instance v0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider$$ExternalSyntheticLambda0;
 
@@ -329,7 +329,7 @@
 
     const-wide/16 v1, 0x1388
 
-    .line 738
+    .line 783
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-void
@@ -338,23 +338,23 @@
 .method public stop()V
     .locals 1
 
-    .line 742
+    .line 787
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationManager:Landroid/location/LocationManager;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 745
+    .line 790
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->locationQueryCancelRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_1
 
-    .line 746
+    .line 791
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 749
+    .line 794
     :cond_1
     invoke-direct {p0}, Lorg/telegram/messenger/SendMessagesHelper$LocationProvider;->cleanup()V
 

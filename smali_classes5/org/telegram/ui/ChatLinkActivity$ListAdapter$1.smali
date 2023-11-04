@@ -104,7 +104,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatLinkActivity$ListAdapter;Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$Chat;)V
     .locals 0
 
-    .line 882
+    .line 888
     iput-object p1, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iput-object p4, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->val$chat:Lorg/telegram/tgnet/TLRPC$Chat;
@@ -123,7 +123,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 887
+    .line 893
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -134,7 +134,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 888
+    .line 894
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -165,7 +165,7 @@
 
     goto :goto_0
 
-    .line 890
+    .line 896
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
@@ -173,7 +173,7 @@
 
     invoke-static {v0, p2, p3}, Lorg/telegram/ui/ChatLinkActivity;->access$2002(Lorg/telegram/ui/ChatLinkActivity;J)J
 
-    .line 891
+    .line 897
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -192,7 +192,7 @@
 
     invoke-static {v0, p2}, Lorg/telegram/ui/ChatLinkActivity;->access$1602(Lorg/telegram/ui/ChatLinkActivity;Lorg/telegram/tgnet/TLRPC$Chat;)Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 893
+    .line 899
     :goto_0
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
@@ -203,7 +203,7 @@
 .method private synthetic lambda$onJoinRequestToggle$1()V
     .locals 2
 
-    .line 910
+    .line 916
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -218,7 +218,7 @@
 .method private synthetic lambda$onJoinRequestToggle$2(Ljava/lang/Runnable;)V
     .locals 2
 
-    .line 912
+    .line 918
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -227,7 +227,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatLinkActivity;->access$1802(Lorg/telegram/ui/ChatLinkActivity;Z)Z
 
-    .line 913
+    .line 919
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -236,10 +236,10 @@
 .method private synthetic lambda$onJoinRequestToggle$3(Lorg/telegram/tgnet/TLRPC$Chat;ZLjava/lang/Runnable;)V
     .locals 7
 
-    .line 908
+    .line 914
     iput-boolean p2, p1, Lorg/telegram/tgnet/TLRPC$Chat;->join_request:Z
 
-    .line 909
+    .line 915
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -268,7 +268,7 @@
 .method private synthetic lambda$onJoinToSendToggle$5()V
     .locals 2
 
-    .line 941
+    .line 947
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -285,13 +285,13 @@
 
     const/4 v0, 0x1
 
-    .line 943
+    .line 949
     iput-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$Chat;->join_request:Z
 
-    .line 944
+    .line 950
     iput-boolean v0, p0, Lorg/telegram/ui/Components/JoinToSendSettingsView;->isJoinRequest:Z
 
-    .line 945
+    .line 951
     iget-object p1, p0, Lorg/telegram/ui/Components/JoinToSendSettingsView;->joinRequestCell:Lorg/telegram/ui/Cells/TextCheckCell;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckCell;->setChecked(Z)V
@@ -302,7 +302,7 @@
 .method private synthetic lambda$onJoinToSendToggle$7(ZLorg/telegram/tgnet/TLRPC$Chat;)V
     .locals 6
 
-    .line 936
+    .line 942
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -313,15 +313,15 @@
 
     if-nez p1, :cond_0
 
-    .line 937
+    .line 943
     iget-boolean p1, p2, Lorg/telegram/tgnet/TLRPC$Chat;->join_request:Z
 
     if-eqz p1, :cond_0
 
-    .line 938
+    .line 944
     iput-boolean v1, p2, Lorg/telegram/tgnet/TLRPC$Chat;->join_request:Z
 
-    .line 939
+    .line 945
     iget-object p1, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -330,7 +330,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ChatLinkActivity;->access$1802(Lorg/telegram/ui/ChatLinkActivity;Z)Z
 
-    .line 940
+    .line 946
     iget-object p1, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -360,7 +360,7 @@
 .method private synthetic lambda$onJoinToSendToggle$8(Ljava/lang/Runnable;)V
     .locals 2
 
-    .line 949
+    .line 955
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -369,7 +369,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatLinkActivity;->access$1902(Lorg/telegram/ui/ChatLinkActivity;Z)Z
 
-    .line 950
+    .line 956
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -378,10 +378,10 @@
 .method private synthetic lambda$onJoinToSendToggle$9(Lorg/telegram/tgnet/TLRPC$Chat;ZLjava/lang/Runnable;)V
     .locals 7
 
-    .line 934
+    .line 940
     iput-boolean p2, p1, Lorg/telegram/tgnet/TLRPC$Chat;->join_to_send:Z
 
-    .line 935
+    .line 941
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -410,7 +410,7 @@
 .method private synthetic lambda$overrideCancel$4(Ljava/lang/Runnable;)V
     .locals 2
 
-    .line 921
+    .line 927
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -419,14 +419,14 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatLinkActivity;->access$1902(Lorg/telegram/ui/ChatLinkActivity;Z)Z
 
-    .line 922
+    .line 928
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatLinkActivity;->access$1802(Lorg/telegram/ui/ChatLinkActivity;Z)Z
 
-    .line 923
+    .line 929
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -435,7 +435,7 @@
 .method private migrateIfNeeded(Ljava/lang/Runnable;Ljava/lang/Runnable;)V
     .locals 8
 
-    .line 884
+    .line 890
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -450,7 +450,7 @@
 
     if-nez v0, :cond_0
 
-    .line 885
+    .line 891
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -485,7 +485,7 @@
 
     goto :goto_0
 
-    .line 897
+    .line 903
     :cond_0
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
@@ -496,7 +496,7 @@
 .method private overrideCancel(Ljava/lang/Runnable;)Ljava/lang/Runnable;
     .locals 1
 
-    .line 920
+    .line 926
     new-instance v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;Ljava/lang/Runnable;)V
@@ -509,7 +509,7 @@
 .method public onJoinRequestToggle(ZLjava/lang/Runnable;)Z
     .locals 4
 
-    .line 903
+    .line 909
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -524,7 +524,7 @@
 
     return p1
 
-    .line 906
+    .line 912
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
@@ -534,7 +534,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatLinkActivity;->access$1802(Lorg/telegram/ui/ChatLinkActivity;Z)Z
 
-    .line 907
+    .line 913
     invoke-direct {p0, p2}, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->overrideCancel(Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
     move-result-object v0
@@ -553,7 +553,7 @@
 .method public onJoinToSendToggle(ZLjava/lang/Runnable;)Z
     .locals 4
 
-    .line 929
+    .line 935
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -568,7 +568,7 @@
 
     return p1
 
-    .line 932
+    .line 938
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ChatLinkActivity$ListAdapter;
 
@@ -578,7 +578,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatLinkActivity;->access$1902(Lorg/telegram/ui/ChatLinkActivity;Z)Z
 
-    .line 933
+    .line 939
     invoke-direct {p0, p2}, Lorg/telegram/ui/ChatLinkActivity$ListAdapter$1;->overrideCancel(Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
     move-result-object v0

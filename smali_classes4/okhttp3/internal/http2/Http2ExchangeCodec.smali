@@ -68,7 +68,7 @@
 
     const-string v3, "host"
 
-    const-string v4, "keep-alive"
+    const-string/jumbo v4, "keep-alive"
 
     const-string/jumbo v5, "proxy-connection"
 
@@ -104,7 +104,7 @@
 
     const-string v2, "host"
 
-    const-string v3, "keep-alive"
+    const-string/jumbo v3, "keep-alive"
 
     const-string/jumbo v4, "proxy-connection"
 

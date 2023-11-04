@@ -183,7 +183,7 @@
 .method public static final isJspecifyEnabledInStrictMode(Lkotlin/reflect/jvm/internal/impl/load/java/JavaTypeEnhancementState;)Z
     .locals 1
 
-    const-string v0, "javaTypeEnhancementState"
+    const-string/jumbo v0, "javaTypeEnhancementState"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -35,7 +35,7 @@
 .method public final run()V
     .locals 0
 
-    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$7uN5_N3yzdHDXRPrGX8uE5IULOk()V
+    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$NhiJD3_HDyKqY-pIm9yQKmbzPqg()V
 
     return-void
 .end method

@@ -87,17 +87,17 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeCryptoTokensBinding;
 import org.telegram.messenger.databinding.ForkRecycleItemGlobalStateBinding;
 import org.telegram.messenger.databinding.ForkRecycleItemWalletTokensHeaderBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.C3702ActionBar;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.Components.EditTextBoldCursor;
-import org.telegram.p042ui.Components.RecyclerListView;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: WalletHomeCryptoTokensSettingsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment */
 /* loaded from: classes4.dex */
@@ -266,7 +266,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
         return root;
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         WalletHomeCryptoTokensSettingsPresenter.saveSettings$default(getPresenter(), false, 1, null);
         super.onFragmentDestroy();
@@ -296,21 +296,21 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
         getSearchRecycleAdapter().getLoadMoreModule().loadMoreFail();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isLightStatusBar() {
         return ColorUtils.calculateLuminance(getThemedColor(this.isSearching ? Theme.key_actionBarActionModeDefault : Theme.key_actionBarDefault)) > 0.699999988079071d;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$$ExternalSyntheticLambda3
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletHomeCryptoTokensSettingsFragment.getThemeDescriptions$lambda$1(WalletHomeCryptoTokensSettingsFragment.this);
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -376,12 +376,12 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
     }
 
     private final void setupActionBar() {
-        C3702ActionBar c3702ActionBar = this.actionBar;
-        c3702ActionBar.setBackButtonImage(C3630R.C3632drawable.ic_ab_back);
-        c3702ActionBar.setTitle(LocaleController.getInternalString(C3630R.string.wallet_home_crypto_tokens_settings_toolbar_title));
+        C3706ActionBar c3706ActionBar = this.actionBar;
+        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        c3706ActionBar.setTitle(LocaleController.getInternalString(C3634R.string.wallet_home_crypto_tokens_settings_toolbar_title));
         setupSearchIfNeeded();
-        c3702ActionBar.setActionBarMenuOnItemClick(new C3702ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupActionBar$1$1
-            @Override // org.telegram.p042ui.ActionBar.C3702ActionBar.ActionBarMenuOnItemClick
+        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletHomeCryptoTokensSettingsFragment.this.finishFragment();
@@ -392,8 +392,8 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
 
     private final void setupSearchIfNeeded() {
         if (Intrinsics.areEqual(this.screenType, TokensScreenType.Crypto.INSTANCE)) {
-            ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3630R.C3632drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupSearchIfNeeded$1
-                @Override // org.telegram.p042ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
+            ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3634R.C3636drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupSearchIfNeeded$1
+                @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
                 public void onSearchExpand() {
                     ForkFragmentWalletHomeCryptoTokensBinding binding;
                     WalletHomeCryptoTokensSettingsFragment.this.isSearching = true;
@@ -407,7 +407,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
                     ViewExtKt.visible$default(recycleTokensSearch, false, 1, null);
                 }
 
-                @Override // org.telegram.p042ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
+                @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
                 public void onSearchCollapse() {
                     ForkFragmentWalletHomeCryptoTokensBinding binding;
                     WalletHomeCryptoTokensSettingsFragment.this.isSearching = false;
@@ -422,7 +422,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
                     WalletHomeCryptoTokensSettingsFragment.this.getPresenter().onQueryUpdate("");
                 }
 
-                @Override // org.telegram.p042ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
+                @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
                 public void onTextChanged(EditText editText) {
                     Intrinsics.checkNotNullParameter(editText, "editText");
                     WalletHomeCryptoTokensSettingsFragment.this.getPresenter().onQueryUpdate(editText.getText().toString());
@@ -431,8 +431,8 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
             EditTextBoldCursor searchField = actionBarMenuItemSearchListener.getSearchField();
             searchField.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(128)});
             searchField.setImeOptions(Integer.MIN_VALUE);
-            actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3630R.string.token_search_hint));
-            actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3630R.string.Search));
+            actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3634R.string.token_search_hint));
+            actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3634R.string.Search));
         }
     }
 
@@ -518,27 +518,27 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
         ForkFragmentWalletHomeCryptoTokensBinding binding = getBinding();
         binding.getRoot().setBackgroundColor(getThemedColor(Theme.key_windowBackgroundGray));
         binding.recycleTokensSearch.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundWhite));
-        C3702ActionBar c3702ActionBar = this.actionBar;
+        C3706ActionBar c3706ActionBar = this.actionBar;
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3702ActionBar.setSearchTextColor(getThemedColor(i), false);
-        c3702ActionBar.setSearchTextColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText), true);
-        c3702ActionBar.setSearchCursorColor(getThemedColor(i));
+        c3706ActionBar.setSearchTextColor(getThemedColor(i), false);
+        c3706ActionBar.setSearchTextColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText), true);
+        c3706ActionBar.setSearchCursorColor(getThemedColor(i));
         AndroidUtilities.setLightStatusBar(getParentActivity().getWindow(), isLightStatusBar());
         setupActionBarColors();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void setupActionBarColors() {
-        C3702ActionBar c3702ActionBar = this.actionBar;
+        C3706ActionBar c3706ActionBar = this.actionBar;
         if (this.isSearching) {
-            c3702ActionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefault));
-            c3702ActionBar.setItemsColor(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), false);
-            c3702ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefaultSelector), false);
+            c3706ActionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefault));
+            c3706ActionBar.setItemsColor(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), false);
+            c3706ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefaultSelector), false);
             return;
         }
-        c3702ActionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarDefault));
-        c3702ActionBar.setItemsColor(getThemedColor(Theme.key_actionBarDefaultIcon), false);
-        c3702ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSelector), false);
+        c3706ActionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarDefault));
+        c3706ActionBar.setItemsColor(getThemedColor(Theme.key_actionBarDefaultIcon), false);
+        c3706ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSelector), false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -585,7 +585,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
                 /* JADX WARN: Can't rename method to resolve collision */
                 @Override // kotlin.jvm.functions.Function0
                 public final Integer invoke() {
-                    return Integer.valueOf(AndroidUtilities.m103dp(35.0f));
+                    return Integer.valueOf(AndroidUtilities.m105dp(35.0f));
                 }
             });
             this.tokenLogoSize$delegate = lazy;
@@ -600,7 +600,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
             notifyItemMoved(i, i2);
         }
 
-        @Override // org.telegram.p042ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return holder.getItemViewType() == IdFabric$ViewTypes.MOVING_CHECK_CELL && !(holder.getAdapterPosition() == WalletHomeCryptoTokensSettingsFragment.this.tokensStartRow && WalletHomeCryptoTokensSettingsFragment.this.isPinAvailable);
@@ -623,9 +623,9 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
             if (i == IdFabric$ViewTypes.HEADER_CELL) {
                 final ForkRecycleItemWalletTokensHeaderBinding inflate = ForkRecycleItemWalletTokensHeaderBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletHomeCryptoTokensSettingsFragment.this));
                 final WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment = WalletHomeCryptoTokensSettingsFragment.this;
-                inflate.textAddToken.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3630R.string.wallet_token_settings_add_custom_tokens));
-                inflate.textNetwork.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3630R.string.wallet_network_type_dialog_title));
-                inflate.textTitleDisplayedTokens.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3630R.string.wallet_token_settings_displayed_tokens));
+                inflate.textAddToken.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3634R.string.wallet_token_settings_add_custom_tokens));
+                inflate.textNetwork.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3634R.string.wallet_network_type_dialog_title));
+                inflate.textTitleDisplayedTokens.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3634R.string.wallet_token_settings_displayed_tokens));
                 LinearLayout linearAddToken = inflate.linearAddToken;
                 Intrinsics.checkNotNullExpressionValue(linearAddToken, "linearAddToken");
                 ViewExtKt.safeThrottledClick$default(linearAddToken, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$onCreateViewHolder$1$1
@@ -803,8 +803,8 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthBase
                 } else if (screenType instanceof TokensScreenType.Crypto) {
                     GradientDrawable gradientDrawable = new GradientDrawable();
                     gradientDrawable.setShape(1);
-                    gradientDrawable.setColor(ColorStateList.valueOf(ContextCompat.getColor(movingCheckCell.getContext(), C3630R.C3631color.placeholder_color)));
-                    movingCheckCell.setImage(DrawableKt.toBitmap$default(gradientDrawable, AndroidUtilities.m102dp(40), AndroidUtilities.m102dp(40), null, 4, null));
+                    gradientDrawable.setColor(ColorStateList.valueOf(ContextCompat.getColor(movingCheckCell.getContext(), C3634R.C3635color.placeholder_color)));
+                    movingCheckCell.setImage(DrawableKt.toBitmap$default(gradientDrawable, AndroidUtilities.m104dp(40), AndroidUtilities.m104dp(40), null, 4, null));
                     Activity parentActivity2 = walletHomeCryptoTokensSettingsFragment3.getParentActivity();
                     Intrinsics.checkNotNullExpressionValue(parentActivity2, "parentActivity");
                     GlideHelper.loadImageAsBitmap(parentActivity2, component1.getAvatarUrl(), new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$$ExternalSyntheticLambda0

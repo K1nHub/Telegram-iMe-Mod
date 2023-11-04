@@ -440,7 +440,7 @@
     return-object v0
 .end method
 
-.method public getSelectedStory()Lorg/telegram/tgnet/TLRPC$StoryItem;
+.method public getSelectedStory()Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
     .locals 2
 
     .line 388
@@ -473,7 +473,7 @@
 
     check-cast v0, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;
 
-    iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     return-object v0
 
@@ -674,7 +674,7 @@
         value = {
             "(J",
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$StoryItem;",
+            "Lorg/telegram/tgnet/tl/TL_stories$StoryItem;",
             ">;I)V"
         }
     .end annotation
@@ -708,9 +708,9 @@
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    invoke-direct {v1, p0, v2}, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;-><init>(Lorg/telegram/ui/Stories/SelfStoryViewsView;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-direct {v1, p0, v2}, Lorg/telegram/ui/Stories/SelfStoryViewsView$StoryItemInternal;-><init>(Lorg/telegram/ui/Stories/SelfStoryViewsView;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1060,9 +1060,9 @@
 
     iget-object v4, v4, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
 
-    iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v0, v0, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v0, v0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-virtual {v4, v6, v7, v0}, Lorg/telegram/ui/Stories/StoriesViewPager;->setCurrentDate(JI)V
 

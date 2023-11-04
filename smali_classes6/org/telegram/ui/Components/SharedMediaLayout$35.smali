@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;)V
     .locals 0
 
-    .line 6224
+    .line 6245
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$35;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,10 +46,10 @@
 
     if-nez p3, :cond_0
 
-    .line 6242
+    .line 6263
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$35;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
-    invoke-static {p2, p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$9000(Lorg/telegram/ui/Components/SharedMediaLayout;Ljava/lang/String;)V
+    invoke-static {p2, p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$9100(Lorg/telegram/ui/Components/SharedMediaLayout;Ljava/lang/String;)V
 
     goto :goto_1
 
@@ -60,7 +60,7 @@
 
     const-string p2, "mailto:"
 
-    .line 6245
+    .line 6266
     invoke-virtual {p1, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p2
@@ -69,7 +69,7 @@
 
     const/4 p2, 0x7
 
-    .line 6246
+    .line 6267
     invoke-virtual {p1, p2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
@@ -79,7 +79,7 @@
     :cond_1
     const-string p2, "tel:"
 
-    .line 6247
+    .line 6268
     invoke-virtual {p1, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result p2
@@ -88,12 +88,12 @@
 
     const/4 p2, 0x4
 
-    .line 6248
+    .line 6269
     invoke-virtual {p1, p2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 6250
+    .line 6271
     :cond_2
     :goto_0
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->addToClipboard(Ljava/lang/CharSequence;)Z
@@ -108,7 +108,7 @@
 .method public canPerformActions()Z
     .locals 1
 
-    .line 6232
+    .line 6253
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$35;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Components/SharedMediaLayout;->isActionModeShowed:Z
@@ -121,10 +121,10 @@
 .method public needOpenWebView(Lorg/telegram/tgnet/TLRPC$WebPage;Lorg/telegram/messenger/MessageObject;)V
     .locals 1
 
-    .line 6227
+    .line 6248
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$35;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$8900(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/tgnet/TLRPC$WebPage;Lorg/telegram/messenger/MessageObject;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$9000(Lorg/telegram/ui/Components/SharedMediaLayout;Lorg/telegram/tgnet/TLRPC$WebPage;Lorg/telegram/messenger/MessageObject;)V
 
     return-void
 .end method
@@ -134,7 +134,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 6238
+    .line 6259
     new-instance p2, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$35;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -149,7 +149,7 @@
 
     invoke-direct {p2, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 6239
+    .line 6260
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     const/4 v0, 0x2
@@ -158,7 +158,7 @@
 
     const/4 v1, 0x0
 
-    .line 6240
+    .line 6261
     sget v2, Lorg/telegram/messenger/R$string;->Open:I
 
     const-string v3, "Open"
@@ -187,7 +187,7 @@
 
     invoke-virtual {p2, v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 6253
+    .line 6274
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$35;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -202,11 +202,11 @@
 
     goto :goto_0
 
-    .line 6255
+    .line 6276
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$35;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
-    invoke-static {p2, p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$9000(Lorg/telegram/ui/Components/SharedMediaLayout;Ljava/lang/String;)V
+    invoke-static {p2, p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$9100(Lorg/telegram/ui/Components/SharedMediaLayout;Ljava/lang/String;)V
 
     :goto_0
     return-void

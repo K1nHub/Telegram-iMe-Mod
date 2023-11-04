@@ -3,8 +3,8 @@ package com.iMe.p030ui.common;
 import android.view.View;
 import androidx.core.graphics.ColorUtils;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.AnimationProperties;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.AnimationProperties;
 /* compiled from: ColorBlenderAnimator.kt */
 /* renamed from: com.iMe.ui.common.ColorBlenderAnimator */
 /* loaded from: classes3.dex */
@@ -19,7 +19,7 @@ public final class ColorBlenderAnimator extends AnimationProperties.FloatPropert
         this.toColorKey = i2;
     }
 
-    @Override // org.telegram.p042ui.Components.AnimationProperties.FloatProperty
+    @Override // org.telegram.p043ui.Components.AnimationProperties.FloatProperty
     public void setValue(View view, float f) {
         Intrinsics.checkNotNullParameter(view, "view");
         this.animationValue = f;

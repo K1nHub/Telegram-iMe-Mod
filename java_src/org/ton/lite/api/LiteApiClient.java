@@ -6,7 +6,7 @@ import org.ton.lite.api.liteserver.LiteServerAccountState;
 import org.ton.lite.api.liteserver.LiteServerSendMsgStatus;
 import org.ton.lite.api.liteserver.functions.LiteServerGetAccountState;
 import org.ton.lite.api.liteserver.functions.LiteServerSendMessage;
-import org.ton.p044tl.TlCodec;
+import org.ton.p045tl.TlCodec;
 /* compiled from: LiteApiClient.kt */
 /* loaded from: classes6.dex */
 public interface LiteApiClient extends LiteApi {
@@ -28,7 +28,7 @@ public interface LiteApiClient extends LiteApi {
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
-        public static <Q, A> java.lang.Object sendQuery(org.ton.lite.api.LiteApiClient r6, org.ton.p044tl.TlCodec<Q> r7, org.ton.p044tl.TlCodec<A> r8, Q r9, int r10, kotlin.coroutines.Continuation<? super A> r11) {
+        public static <Q, A> java.lang.Object sendQuery(org.ton.lite.api.LiteApiClient r6, org.ton.p045tl.TlCodec<Q> r7, org.ton.p045tl.TlCodec<A> r8, Q r9, int r10, kotlin.coroutines.Continuation<? super A> r11) {
             /*
                 boolean r0 = r11 instanceof org.ton.lite.api.LiteApiClient$sendQuery$1
                 if (r0 == 0) goto L13
@@ -54,7 +54,7 @@ public interface LiteApiClient extends LiteApi {
                 if (r2 != r3) goto L2f
                 java.lang.Object r6 = r0.L$0
                 r8 = r6
-                org.ton.tl.TlCodec r8 = (org.ton.p044tl.TlCodec) r8
+                org.ton.tl.TlCodec r8 = (org.ton.p045tl.TlCodec) r8
                 kotlin.ResultKt.throwOnFailure(r11)
                 goto L7a
             L2f:

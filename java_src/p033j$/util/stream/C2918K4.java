@@ -1,0 +1,87 @@
+package p033j$.util.stream;
+
+import p033j$.util.function.Consumer;
+/* renamed from: j$.util.stream.K4 */
+/* loaded from: classes2.dex */
+public final /* synthetic */ class C2918K4 implements InterfaceC3076m3 {
+
+    /* renamed from: a */
+    public final /* synthetic */ int f916a = 0;
+
+    /* renamed from: b */
+    public final /* synthetic */ Object f917b;
+
+    @Override // p033j$.util.stream.InterfaceC3076m3
+    public /* synthetic */ void accept(double d) {
+        switch (this.f916a) {
+            case 0:
+                AbstractC3086o1.m418f(this);
+                throw null;
+            default:
+                AbstractC3086o1.m418f(this);
+                throw null;
+        }
+    }
+
+    @Override // p033j$.util.function.Consumer
+    public /* synthetic */ Consumer andThen(Consumer consumer) {
+        switch (this.f916a) {
+            case 0:
+                return Consumer.CC.$default$andThen(this, consumer);
+            default:
+                return Consumer.CC.$default$andThen(this, consumer);
+        }
+    }
+
+    @Override // p033j$.util.stream.InterfaceC3076m3
+    /* renamed from: l */
+    public /* synthetic */ void mo385l() {
+    }
+
+    @Override // p033j$.util.stream.InterfaceC3076m3
+    /* renamed from: m */
+    public /* synthetic */ void mo361m(long j) {
+    }
+
+    @Override // p033j$.util.stream.InterfaceC3076m3
+    /* renamed from: o */
+    public /* synthetic */ boolean mo360o() {
+        return false;
+    }
+
+    @Override // p033j$.util.stream.InterfaceC3076m3
+    public /* synthetic */ void accept(int i) {
+        switch (this.f916a) {
+            case 0:
+                AbstractC3086o1.m420d(this);
+                throw null;
+            default:
+                AbstractC3086o1.m420d(this);
+                throw null;
+        }
+    }
+
+    @Override // p033j$.util.stream.InterfaceC3076m3, p033j$.util.stream.InterfaceC3070l3, p033j$.util.function.InterfaceC2830p
+    public /* synthetic */ void accept(long j) {
+        switch (this.f916a) {
+            case 0:
+                AbstractC3086o1.m419e(this);
+                throw null;
+            default:
+                AbstractC3086o1.m419e(this);
+                throw null;
+        }
+    }
+
+    @Override // p033j$.util.function.Consumer
+    public final void accept(Object obj) {
+        switch (this.f916a) {
+            case 0:
+                ((Consumer) this.f917b).accept(obj);
+                return;
+            default:
+                ((C3005a4) this.f917b).accept(obj);
+                return;
+        }
+    }
+}

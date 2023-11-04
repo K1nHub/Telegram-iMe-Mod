@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;Z)V
     .locals 0
 
-    .line 216
+    .line 217
     iput-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$3;->this$0:Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$3;->val$appear:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 225
+    .line 226
     iget-boolean p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$3;->val$appear:Z
 
     if-nez p1, :cond_0
 
-    .line 226
+    .line 227
     iget-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$3;->this$0:Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;
 
     invoke-static {p1}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->access$100(Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;)Landroid/widget/FrameLayout;
@@ -55,7 +55,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 228
+    .line 229
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$3;->this$0:Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;
 
@@ -65,7 +65,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 229
+    .line 230
     iget-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$3;->this$0:Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;
 
     invoke-static {p1}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->access$200(Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;)Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$Callback;
@@ -81,12 +81,12 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 219
+    .line 220
     iget-boolean p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$3;->val$appear:Z
 
     if-eqz p1, :cond_0
 
-    .line 220
+    .line 221
     iget-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$3;->this$0:Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;
 
     invoke-static {p1}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->access$100(Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;)Landroid/widget/FrameLayout;

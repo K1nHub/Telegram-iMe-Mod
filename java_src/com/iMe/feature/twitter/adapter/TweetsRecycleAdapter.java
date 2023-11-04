@@ -13,7 +13,7 @@ import com.iMe.p030ui.adapter.provider.TweetProvider;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* compiled from: TweetsRecycleAdapter.kt */
 /* loaded from: classes3.dex */
 public final class TweetsRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
@@ -34,7 +34,7 @@ public final class TweetsRecycleAdapter extends BaseNodeAdapter<BaseNode> implem
         this.tweetProvider = tweetProvider;
         this.tweetsDateProvider = tweetsDateProvider;
         this.globalStateProvider = globalStateProvider;
-        addChildClickViewIds(C3630R.C3633id.image_share, C3630R.C3633id.image_menu);
+        addChildClickViewIds(C3634R.C3637id.image_share, C3634R.C3637id.image_menu);
         addItemProvider(BaseQuickAdapterExtKt.asItem(globalStateProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(tweetProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(tweetsDateProvider));

@@ -37,7 +37,7 @@
 
     check-cast p1, Ljava/lang/String;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->$r8$lambda$ep-lWfpb4jAiv6XQEy9sHnI8X9c(Ljava/lang/String;)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->$r8$lambda$fMxKORAJVh9CEeYt0kXRlZoQjmk(Ljava/lang/String;)V
 
     return-void
 .end method

@@ -85,7 +85,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "jClass"
+    const-string/jumbo v0, "jClass"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -4372,7 +4372,7 @@
         }
     .end annotation
 
-    const-string p2, "kindFilter"
+    const-string/jumbo p2, "kindFilter"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -4421,7 +4421,7 @@
         }
     .end annotation
 
-    const-string v0, "kindFilter"
+    const-string/jumbo v0, "kindFilter"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -5152,7 +5152,7 @@
         }
     .end annotation
 
-    const-string p2, "kindFilter"
+    const-string/jumbo p2, "kindFilter"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

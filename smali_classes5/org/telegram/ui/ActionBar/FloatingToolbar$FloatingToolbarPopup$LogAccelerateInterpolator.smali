@@ -25,14 +25,14 @@
 .method private constructor <init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
     .locals 1
 
-    .line 1229
+    .line 1255
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/high16 p1, 0x3f800000    # 1.0f
 
     const/16 v0, 0x64
 
-    .line 1231
+    .line 1257
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$LogAccelerateInterpolator;->computeLog(FI)F
 
     move-result v0
@@ -47,7 +47,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Lorg/telegram/ui/ActionBar/FloatingToolbar$1;)V
     .locals 0
 
-    .line 1229
+    .line 1255
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$LogAccelerateInterpolator;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
 
     return-void
@@ -62,7 +62,7 @@
 
     float-to-double p1, p1
 
-    .line 1234
+    .line 1260
     invoke-static {v0, v1, p1, p2}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide p1
@@ -87,7 +87,7 @@
 
     const/16 v1, 0x64
 
-    .line 1239
+    .line 1265
     invoke-direct {p0, p1, v1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$LogAccelerateInterpolator;->computeLog(FI)F
 
     move-result p1

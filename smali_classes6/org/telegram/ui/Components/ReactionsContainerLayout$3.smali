@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;IZ)V
     .locals 0
 
-    .line 230
+    .line 231
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-direct {p0, p2, p3, p4}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
@@ -45,7 +45,7 @@
 
     if-gez p1, :cond_5
 
-    .line 234
+    .line 235
     iget-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget v5, v4, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingLeftOffset:F
@@ -56,12 +56,12 @@
 
     if-eqz v5, :cond_5
 
-    .line 235
+    .line 236
     invoke-virtual {v4}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->getPullingLeftProgress()F
 
     move-result v4
 
-    .line 236
+    .line 237
     iget-object v5, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget v7, v5, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingLeftOffset:F
@@ -72,7 +72,7 @@
 
     iput v7, v5, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingLeftOffset:F
 
-    .line 237
+    .line 238
     invoke-virtual {v5}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->getPullingLeftProgress()F
 
     move-result p1
@@ -103,14 +103,14 @@
     :goto_1
     if-eq v4, p1, :cond_2
 
-    .line 241
+    .line 242
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->performHapticFeedback(I)Z
 
-    .line 243
+    .line 244
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -122,7 +122,7 @@
 
     float-to-int v4, v4
 
-    .line 245
+    .line 246
     iput v6, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingLeftOffset:F
 
     goto :goto_2
@@ -130,16 +130,16 @@
     :cond_3
     move v4, v2
 
-    .line 249
+    .line 250
     :goto_2
     iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customReactionsContainer:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_4
 
-    .line 250
+    .line 251
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 252
+    .line 253
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -149,7 +149,7 @@
 
     move p1, v4
 
-    .line 254
+    .line 255
     :cond_5
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollHorizontallyBy(ILandroidx/recyclerview/widget/RecyclerView$Recycler;Landroidx/recyclerview/widget/RecyclerView$State;)I
 
@@ -159,7 +159,7 @@
 
     if-nez p2, :cond_c
 
-    .line 255
+    .line 256
     iget-object p3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget-object p3, p3, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -178,24 +178,24 @@
 
     if-eqz p3, :cond_c
 
-    .line 256
+    .line 257
     iget-object p3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget-object p3, p3, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingDownBackAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p3, :cond_6
 
-    .line 257
+    .line 258
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 258
+    .line 259
     iget-object p3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget-object p3, p3, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingDownBackAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 261
+    .line 262
     :cond_6
     iget-object p3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -211,7 +211,7 @@
 
     const v4, 0x3d4ccccd    # 0.05f
 
-    .line 267
+    .line 268
     :cond_7
     iget-object v5, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -225,7 +225,7 @@
 
     iput v6, v5, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingLeftOffset:F
 
-    .line 268
+    .line 269
     invoke-virtual {v5}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->getPullingLeftProgress()F
 
     move-result p1
@@ -249,14 +249,14 @@
     :cond_9
     if-eq p3, v2, :cond_a
 
-    .line 272
+    .line 273
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->performHapticFeedback(I)Z
 
-    .line 274
+    .line 275
     :cond_a
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
@@ -264,10 +264,10 @@
 
     if-eqz p1, :cond_b
 
-    .line 275
+    .line 276
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 277
+    .line 278
     :cond_b
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 

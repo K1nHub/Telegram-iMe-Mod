@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ContactsActivity;)V
     .locals 0
 
-    .line 1602
+    .line 1604
     iput-object p1, p0, Lorg/telegram/ui/ContactsActivity$14;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 2
 
-    .line 1605
+    .line 1607
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$14;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ContactsActivity;->access$500(Lorg/telegram/ui/ContactsActivity;)Lorg/telegram/ui/Adapters/ContactsAdapter;
@@ -47,7 +47,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Adapters/ContactsAdapter;->sortOnlineContacts()V
 
-    .line 1606
+    .line 1608
     iget-object v0, p0, Lorg/telegram/ui/ContactsActivity$14;->this$0:Lorg/telegram/ui/ContactsActivity;
 
     const/4 v1, 0x0

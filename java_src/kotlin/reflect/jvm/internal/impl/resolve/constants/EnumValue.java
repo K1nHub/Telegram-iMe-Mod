@@ -21,7 +21,7 @@ public final class EnumValue extends ConstantValue<Pair<? extends ClassId, ? ext
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public EnumValue(ClassId enumClassId, Name enumEntryName) {
-        super(TuplesKt.m144to(enumClassId, enumEntryName));
+        super(TuplesKt.m146to(enumClassId, enumEntryName));
         Intrinsics.checkNotNullParameter(enumClassId, "enumClassId");
         Intrinsics.checkNotNullParameter(enumEntryName, "enumEntryName");
         this.enumClassId = enumClassId;

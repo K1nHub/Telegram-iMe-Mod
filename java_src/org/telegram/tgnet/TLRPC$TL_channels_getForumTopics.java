@@ -1,7 +1,6 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_channels_getForumTopics extends TLObject {
-    public static int constructor = 233136337;
     public TLRPC$InputChannel channel;
     public int flags;
     public int limit;
@@ -10,7 +9,7 @@ public class TLRPC$TL_channels_getForumTopics extends TLObject {
     public int offset_topic;
 
     /* renamed from: q */
-    public String f1643q;
+    public String f1644q;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -19,11 +18,11 @@ public class TLRPC$TL_channels_getForumTopics extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(233136337);
         abstractSerializedData.writeInt32(this.flags);
         this.channel.serializeToStream(abstractSerializedData);
         if ((this.flags & 1) != 0) {
-            abstractSerializedData.writeString(this.f1643q);
+            abstractSerializedData.writeString(this.f1644q);
         }
         abstractSerializedData.writeInt32(this.offset_date);
         abstractSerializedData.writeInt32(this.offset_id);

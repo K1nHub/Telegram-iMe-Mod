@@ -12,10 +12,10 @@ import org.ton.tlb.TlbCombinator;
 final class HashmapAugETlbCombinator<X, Y> extends TlbCombinator<HashmapAugE<?, ?>> {
 
     /* renamed from: x */
-    private final TlbCodec<X> f2077x;
+    private final TlbCodec<X> f2089x;
 
     /* renamed from: y */
-    private final TlbCodec<Y> f2078y;
+    private final TlbCodec<Y> f2090y;
 
     public /* synthetic */ HashmapAugETlbCombinator(int i, TlbCodec tlbCodec, TlbCodec tlbCodec2, TlbCodec<HashmapAugE.AhmeEmpty<X, Y>> tlbCodec3, TlbCodec<HashmapAugE.AhmeRoot<X, Y>> tlbCodec4, int i2, DefaultConstructorMarker defaultConstructorMarker) {
         this(i, tlbCodec, tlbCodec2, (i2 & 8) != 0 ? HashmapAugE.AhmeEmpty.Companion.tlbCodec(i, tlbCodec2) : tlbCodec3, (i2 & 16) != 0 ? HashmapAugE.AhmeRoot.Companion.tlbCodec(i, tlbCodec, tlbCodec2) : tlbCodec4);
@@ -23,12 +23,12 @@ final class HashmapAugETlbCombinator<X, Y> extends TlbCombinator<HashmapAugE<?, 
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public HashmapAugETlbCombinator(int i, TlbCodec<X> x, TlbCodec<Y> y, TlbCodec<HashmapAugE.AhmeEmpty<X, Y>> ahmeEmptyCodec, TlbCodec<HashmapAugE.AhmeRoot<X, Y>> ahmeRootCodec) {
-        super(Reflection.getOrCreateKotlinClass(HashmapAugE.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(HashmapAugE.AhmeEmpty.class), ahmeEmptyCodec), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(HashmapAugE.AhmeRoot.class), ahmeRootCodec));
+        super(Reflection.getOrCreateKotlinClass(HashmapAugE.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(HashmapAugE.AhmeEmpty.class), ahmeEmptyCodec), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(HashmapAugE.AhmeRoot.class), ahmeRootCodec));
         Intrinsics.checkNotNullParameter(x, "x");
         Intrinsics.checkNotNullParameter(y, "y");
         Intrinsics.checkNotNullParameter(ahmeEmptyCodec, "ahmeEmptyCodec");
         Intrinsics.checkNotNullParameter(ahmeRootCodec, "ahmeRootCodec");
-        this.f2077x = x;
-        this.f2078y = y;
+        this.f2089x = x;
+        this.f2090y = y;
     }
 }

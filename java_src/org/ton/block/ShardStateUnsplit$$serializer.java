@@ -39,7 +39,7 @@ public final class ShardStateUnsplit$$serializer implements GeneratedSerializer<
         pluginGeneratedSerialDescriptor.addElement("accounts", false);
         pluginGeneratedSerialDescriptor.addElement("r1", false);
         pluginGeneratedSerialDescriptor.addElement("custom", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7523x50c509b1("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7598x50c509b1("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

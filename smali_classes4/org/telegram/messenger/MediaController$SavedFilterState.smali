@@ -60,10 +60,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 242
+    .line 247
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 258
+    .line 263
     new-instance v0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;-><init>()V
@@ -78,10 +78,10 @@
 .method public isEmpty()Z
     .locals 2
 
-    .line 326
+    .line 331
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->enhanceValue:F
 
-    .line 327
+    .line 332
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -94,7 +94,7 @@
 
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->softenSkinValue:F
 
-    .line 328
+    .line 333
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -105,7 +105,7 @@
 
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->exposureValue:F
 
-    .line 329
+    .line 334
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -116,7 +116,7 @@
 
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->contrastValue:F
 
-    .line 330
+    .line 335
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -127,7 +127,7 @@
 
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->warmthValue:F
 
-    .line 331
+    .line 336
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -138,7 +138,7 @@
 
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->saturationValue:F
 
-    .line 332
+    .line 337
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -149,7 +149,7 @@
 
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->fadeValue:F
 
-    .line 333
+    .line 338
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -168,7 +168,7 @@
 
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->highlightsValue:F
 
-    .line 336
+    .line 341
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -179,7 +179,7 @@
 
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->shadowsValue:F
 
-    .line 337
+    .line 342
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -190,7 +190,7 @@
 
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->vignetteValue:F
 
-    .line 338
+    .line 343
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -201,7 +201,7 @@
 
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->grainValue:F
 
-    .line 339
+    .line 344
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -216,7 +216,7 @@
 
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->sharpenValue:F
 
-    .line 341
+    .line 346
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -239,124 +239,124 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 294
+    .line 299
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->enhanceValue:F
 
-    .line 295
+    .line 300
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->softenSkinValue:F
 
-    .line 296
+    .line 301
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->exposureValue:F
 
-    .line 297
+    .line 302
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->contrastValue:F
 
-    .line 298
+    .line 303
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->warmthValue:F
 
-    .line 299
+    .line 304
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->saturationValue:F
 
-    .line 300
+    .line 305
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->fadeValue:F
 
-    .line 301
+    .line 306
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->tintShadowsColor:I
 
-    .line 302
+    .line 307
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->tintHighlightsColor:I
 
-    .line 303
+    .line 308
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->highlightsValue:F
 
-    .line 304
+    .line 309
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->shadowsValue:F
 
-    .line 305
+    .line 310
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->vignetteValue:F
 
-    .line 306
+    .line 311
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->grainValue:F
 
-    .line 307
+    .line 312
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurType:I
 
-    .line 308
+    .line 313
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->sharpenValue:F
 
-    .line 309
+    .line 314
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
-    .line 310
+    .line 315
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludeSize:F
 
-    .line 311
+    .line 316
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -367,25 +367,25 @@
 
     const/4 v0, 0x0
 
-    .line 313
+    .line 318
     iput-object v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludePoint:Lorg/telegram/ui/Components/Point;
 
     goto :goto_0
 
-    .line 315
+    .line 320
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludePoint:Lorg/telegram/ui/Components/Point;
 
     if-nez v0, :cond_1
 
-    .line 316
+    .line 321
     new-instance v0, Lorg/telegram/ui/Components/Point;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/Point;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludePoint:Lorg/telegram/ui/Components/Point;
 
-    .line 318
+    .line 323
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludePoint:Lorg/telegram/ui/Components/Point;
 
@@ -395,7 +395,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/Point;->x:F
 
-    .line 319
+    .line 324
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludePoint:Lorg/telegram/ui/Components/Point;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
@@ -404,7 +404,7 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/Point;->y:F
 
-    .line 321
+    .line 326
     :goto_0
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
@@ -412,7 +412,7 @@
 
     iput v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludeBlurSize:F
 
-    .line 322
+    .line 327
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result p1
@@ -425,99 +425,99 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 265
+    .line 270
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->enhanceValue:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 266
+    .line 271
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->softenSkinValue:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 267
+    .line 272
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->exposureValue:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 268
+    .line 273
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->contrastValue:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 269
+    .line 274
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->warmthValue:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 270
+    .line 275
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->saturationValue:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 271
+    .line 276
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->fadeValue:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 272
+    .line 277
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->tintShadowsColor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 273
+    .line 278
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->tintHighlightsColor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 274
+    .line 279
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->highlightsValue:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 275
+    .line 280
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->shadowsValue:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 276
+    .line 281
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->vignetteValue:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 277
+    .line 282
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->grainValue:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 278
+    .line 283
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurType:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 279
+    .line 284
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->sharpenValue:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 280
+    .line 285
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 281
+    .line 286
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludeSize:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 282
+    .line 287
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludePoint:Lorg/telegram/ui/Components/Point;
 
     if-nez v0, :cond_0
 
     const v0, 0x56730bcc
 
-    .line 283
+    .line 288
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     goto :goto_0
@@ -525,30 +525,30 @@
     :cond_0
     const v0, -0x21524111
 
-    .line 285
+    .line 290
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 286
+    .line 291
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludePoint:Lorg/telegram/ui/Components/Point;
 
     iget v0, v0, Lorg/telegram/ui/Components/Point;->x:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 287
+    .line 292
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludePoint:Lorg/telegram/ui/Components/Point;
 
     iget v0, v0, Lorg/telegram/ui/Components/Point;->y:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 289
+    .line 294
     :goto_0
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludeBlurSize:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V
 
-    .line 290
+    .line 295
     iget v0, p0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurAngle:F
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V

@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletCryptoAddTokensBinding implements ViewBinding {
     private ForkRecycleItemWalletCryptoAddTokensBinding(FrameLayout frameLayout, FrameLayout frameLayout2, AppCompatTextView appCompatTextView) {
@@ -18,7 +18,7 @@ public final class ForkRecycleItemWalletCryptoAddTokensBinding implements ViewBi
     }
 
     public static ForkRecycleItemWalletCryptoAddTokensBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_crypto_add_tokens, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_recycle_item_wallet_crypto_add_tokens, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -27,7 +27,7 @@ public final class ForkRecycleItemWalletCryptoAddTokensBinding implements ViewBi
 
     public static ForkRecycleItemWalletCryptoAddTokensBinding bind(View view) {
         FrameLayout frameLayout = (FrameLayout) view;
-        int i = C3630R.C3633id.text_add_tokens;
+        int i = C3634R.C3637id.text_add_tokens;
         AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
         if (appCompatTextView != null) {
             return new ForkRecycleItemWalletCryptoAddTokensBinding(frameLayout, frameLayout, appCompatTextView);

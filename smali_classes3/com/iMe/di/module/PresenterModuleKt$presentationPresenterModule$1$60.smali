@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$60\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,898:1\n44#2,3:899\n129#3,5:902\n129#3,5:907\n129#3,5:912\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$60\n*L\n681#1:899,3\n690#1:902,5\n691#1:907,5\n692#1:912,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$60\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,901:1\n44#2,3:902\n129#3,5:905\n129#3,5:910\n129#3,5:915\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$60\n*L\n684#1:902,3\n693#1:905,5\n694#1:910,5\n695#1:915,5\n*E\n"
 .end annotation
 
 
@@ -138,7 +138,7 @@
 
     move-result-object p2
 
-    .line 690
+    .line 693
     move-object v8, p2
 
     check-cast v8, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
@@ -154,7 +154,7 @@
 
     move-result-object p2
 
-    .line 691
+    .line 694
     move-object v7, p2
 
     check-cast v7, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -170,12 +170,12 @@
 
     move-result-object p1
 
-    .line 692
+    .line 695
     move-object v6, p1
 
     check-cast v6, Lcom/iMe/storage/domain/manager/wallet_connect/WalletConnectManager;
 
-    .line 686
+    .line 689
     new-instance p1, Lcom/iMe/ui/wallet/crypto/wallet_connect/message_sign/WalletConnectMessageSignPresenter;
 
     move-object v1, p1
@@ -188,7 +188,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 681
+    .line 684
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SecretMediaViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 751
+    .line 756
     iput-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$3;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected onLayout(ZIIII)V
     .locals 1
 
-    .line 782
+    .line 787
     sget p2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 p3, 0x0
@@ -52,7 +52,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 783
+    .line 788
     iget-object p2, p0, Lorg/telegram/ui/SecretMediaViewer$3;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p2}, Lorg/telegram/ui/SecretMediaViewer;->access$1900(Lorg/telegram/ui/SecretMediaViewer;)Ljava/lang/Object;
@@ -72,7 +72,7 @@
     :cond_0
     move p2, p3
 
-    .line 785
+    .line 790
     :goto_0
     iget-object p4, p0, Lorg/telegram/ui/SecretMediaViewer$3;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
@@ -106,7 +106,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 787
+    .line 792
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$3;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$2000(Lorg/telegram/ui/SecretMediaViewer;)Landroid/animation/AnimatorSet;
@@ -115,26 +115,26 @@
 
     if-nez p1, :cond_1
 
-    .line 788
+    .line 793
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$3;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     const/high16 p2, 0x3f800000    # 1.0f
 
     invoke-static {p1, p2}, Lorg/telegram/ui/SecretMediaViewer;->access$2102(Lorg/telegram/ui/SecretMediaViewer;F)F
 
-    .line 789
+    .line 794
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$3;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     const/4 p2, 0x0
 
     invoke-static {p1, p2}, Lorg/telegram/ui/SecretMediaViewer;->access$2202(Lorg/telegram/ui/SecretMediaViewer;F)F
 
-    .line 790
+    .line 795
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$3;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/SecretMediaViewer;->access$2302(Lorg/telegram/ui/SecretMediaViewer;F)F
 
-    .line 792
+    .line 797
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$3;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
@@ -151,17 +151,17 @@
 .method protected onMeasure(II)V
     .locals 4
 
-    .line 754
+    .line 759
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 755
+    .line 760
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 756
+    .line 761
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -176,7 +176,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 757
+    .line 762
     iget-object v2, p0, Lorg/telegram/ui/SecretMediaViewer$3;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/SecretMediaViewer;->access$1900(Lorg/telegram/ui/SecretMediaViewer;)Ljava/lang/Object;
@@ -185,12 +185,12 @@
 
     check-cast v2, Landroid/view/WindowInsets;
 
-    .line 758
+    .line 763
     sget-boolean v3, Lorg/telegram/messenger/AndroidUtilities;->incorrectDisplaySizeFix:Z
 
     if-eqz v3, :cond_1
 
-    .line 759
+    .line 764
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v3, v3, Landroid/graphics/Point;->y:I
@@ -199,13 +199,13 @@
 
     move p2, v3
 
-    .line 762
+    .line 767
     :cond_0
     sget v3, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     add-int/2addr p2, v3
 
-    .line 764
+    .line 769
     :cond_1
     invoke-virtual {v2}, Landroid/view/WindowInsets;->getSystemWindowInsetBottom()I
 
@@ -213,7 +213,7 @@
 
     sub-int/2addr p2, v3
 
-    .line 765
+    .line 770
     invoke-virtual {v2}, Landroid/view/WindowInsets;->getSystemWindowInsetRight()I
 
     move-result v2
@@ -222,7 +222,7 @@
 
     goto :goto_0
 
-    .line 767
+    .line 772
     :cond_2
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -232,14 +232,14 @@
 
     move p2, v2
 
-    .line 771
+    .line 776
     :cond_3
     :goto_0
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
     if-lt v0, v1, :cond_4
 
-    .line 772
+    .line 777
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$3;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$1900(Lorg/telegram/ui/SecretMediaViewer;)Ljava/lang/Object;
@@ -248,7 +248,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 773
+    .line 778
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$3;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$1900(Lorg/telegram/ui/SecretMediaViewer;)Ljava/lang/Object;
@@ -263,7 +263,7 @@
 
     sub-int/2addr p1, v0
 
-    .line 775
+    .line 780
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$3;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 

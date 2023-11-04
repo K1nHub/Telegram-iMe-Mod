@@ -3,7 +3,6 @@ package org.telegram.tgnet;
 import java.util.ArrayList;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_theme extends TLRPC$Theme {
-    public static int constructor = -1609668650;
     public long access_hash;
     public boolean creator;
     public TLRPC$Document document;
@@ -12,7 +11,7 @@ public class TLRPC$TL_theme extends TLRPC$Theme {
     public boolean for_chat;
 
     /* renamed from: id */
-    public long f1751id;
+    public long f1738id;
     public int installs_count;
     public boolean isDefault;
     public ArrayList<TLRPC$ThemeSettings> settings = new ArrayList<>();
@@ -26,7 +25,7 @@ public class TLRPC$TL_theme extends TLRPC$Theme {
         this.creator = (readInt32 & 1) != 0;
         this.isDefault = (readInt32 & 2) != 0;
         this.for_chat = (readInt32 & 32) != 0;
-        this.f1751id = abstractSerializedData.readInt64(z);
+        this.f1738id = abstractSerializedData.readInt64(z);
         this.access_hash = abstractSerializedData.readInt64(z);
         this.slug = abstractSerializedData.readString(z);
         this.title = abstractSerializedData.readString(z);
@@ -60,7 +59,7 @@ public class TLRPC$TL_theme extends TLRPC$Theme {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-1609668650);
         int i = this.creator ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         int i2 = this.isDefault ? i | 2 : i & (-3);
@@ -68,7 +67,7 @@ public class TLRPC$TL_theme extends TLRPC$Theme {
         int i3 = this.for_chat ? i2 | 32 : i2 & (-33);
         this.flags = i3;
         abstractSerializedData.writeInt32(i3);
-        abstractSerializedData.writeInt64(this.f1751id);
+        abstractSerializedData.writeInt64(this.f1738id);
         abstractSerializedData.writeInt64(this.access_hash);
         abstractSerializedData.writeString(this.slug);
         abstractSerializedData.writeString(this.title);

@@ -16,10 +16,10 @@ import kotlinx.serialization.json.JsonClassDiscriminator;
 import org.ton.api.tonnode.TonNodeBlockId;
 import org.ton.api.tonnode.TonNodeBlockIdExt;
 import org.ton.api.tonnode.TonNodeBlockIdExt$$serializer;
-import org.ton.p044tl.ByteString;
-import org.ton.p044tl.TlCodec;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.ByteString;
+import org.ton.p045tl.TlCodec;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: ValidatorConfigGlobal.kt */
 @JsonClassDiscriminator(discriminator = "@type")
 @Serializable
@@ -194,53 +194,53 @@ public final class ValidatorConfigGlobal {
             this();
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public ValidatorConfigGlobal decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return this.$$delegate_0.decode(reader);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public ValidatorConfigGlobal decodeBoxed(Input input) {
             Intrinsics.checkNotNullParameter(input, "input");
             return this.$$delegate_0.decodeBoxed(input);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public ValidatorConfigGlobal decodeBoxed(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return this.$$delegate_0.decodeBoxed(reader);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(Output output, ValidatorConfigGlobal value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encode(output, (Output) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, ValidatorConfigGlobal value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encode(writer, value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encodeBoxed(Output output, ValidatorConfigGlobal value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encodeBoxed(output, (Output) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encodeBoxed(TlWriter writer, ValidatorConfigGlobal value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encodeBoxed(writer, (TlWriter) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public byte[] encodeToByteArray(ValidatorConfigGlobal value, boolean z) {
             Intrinsics.checkNotNullParameter(value, "value");
             return this.$$delegate_0.encodeToByteArray(value, z);

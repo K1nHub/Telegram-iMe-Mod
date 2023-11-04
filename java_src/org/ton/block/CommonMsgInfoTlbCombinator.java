@@ -10,6 +10,6 @@ public final class CommonMsgInfoTlbCombinator extends TlbCombinator<CommonMsgInf
     public static final CommonMsgInfoTlbCombinator INSTANCE = new CommonMsgInfoTlbCombinator();
 
     private CommonMsgInfoTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(CommonMsgInfo.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(IntMsgInfo.class), IntMsgInfo.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(ExtInMsgInfo.class), ExtInMsgInfo.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(ExtOutMsgInfo.class), ExtOutMsgInfo.Companion));
+        super(Reflection.getOrCreateKotlinClass(CommonMsgInfo.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(IntMsgInfo.class), IntMsgInfo.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(ExtInMsgInfo.class), ExtInMsgInfo.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(ExtOutMsgInfo.class), ExtOutMsgInfo.Companion));
     }
 }

@@ -1,11 +1,10 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_contacts_search extends TLObject {
-    public static int constructor = 301470424;
     public int limit;
 
     /* renamed from: q */
-    public String f1651q;
+    public String f1652q;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -14,8 +13,8 @@ public class TLRPC$TL_contacts_search extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeString(this.f1651q);
+        abstractSerializedData.writeInt32(301470424);
+        abstractSerializedData.writeString(this.f1652q);
         abstractSerializedData.writeInt32(this.limit);
     }
 }

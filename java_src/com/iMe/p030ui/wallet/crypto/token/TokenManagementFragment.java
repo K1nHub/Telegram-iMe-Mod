@@ -64,19 +64,19 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentTokenManagementBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.C3702ActionBar;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.CameraScanActivity;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.CameraScanActivity;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TokenManagementFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.token.TokenManagementFragment */
 /* loaded from: classes3.dex */
@@ -88,7 +88,7 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
     private final MoxyKtxDelegate presenter$delegate;
     private final ScreenType screenType;
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return true;
     }
@@ -180,7 +180,7 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
         return root;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onRequestPermissionsResultFragment(int i, String[] permissions, int[] grantResults) {
         Intrinsics.checkNotNullParameter(permissions, "permissions");
         Intrinsics.checkNotNullParameter(grantResults, "grantResults");
@@ -280,12 +280,12 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
         ScreenType screenType = this.screenType;
         if (screenType instanceof ScreenType.Import) {
             ViewExtKt.visible$default(setupActionButtonState$lambda$2, false, 1, null);
-            setupActionButtonState$lambda$2.setText(getResourceManager().getString(C3630R.string.wallet_tokens_management_import_confirmation_import));
+            setupActionButtonState$lambda$2.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_import_confirmation_import));
             setupActionButtonState$lambda$2.setEnabled(z2);
             setupActionButtonState$lambda$2.setAlpha(z2 ? 1.0f : 0.5f);
         } else if ((screenType instanceof ScreenType.View) && z) {
             ViewExtKt.visible$default(setupActionButtonState$lambda$2, false, 1, null);
-            setupActionButtonState$lambda$2.setText(getResourceManager().getString(C3630R.string.favorite_folder_delete));
+            setupActionButtonState$lambda$2.setText(getResourceManager().getString(C3634R.string.favorite_folder_delete));
         }
     }
 
@@ -319,8 +319,8 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
             LinearLayout linearSafety = binding.linearSafety;
             Intrinsics.checkNotNullExpressionValue(linearSafety, "linearSafety");
             ViewExtKt.visible$default(linearSafety, false, 1, null);
-            binding.textSafetyStatus.setText(LocaleController.formatPluralStringInternal(C3630R.string.plural_wallet_tokens_management_verified, num.intValue()));
-            binding.imageSafetyStatus.setImageResource(num.intValue() > 0 ? C3630R.C3632drawable.fork_ic_verified : C3630R.C3632drawable.fork_ic_warning_info);
+            binding.textSafetyStatus.setText(LocaleController.formatPluralStringInternal(C3634R.string.plural_wallet_tokens_management_verified, num.intValue()));
+            binding.imageSafetyStatus.setImageResource(num.intValue() > 0 ? C3634R.C3636drawable.fork_ic_verified : C3634R.C3636drawable.fork_ic_warning_info);
         }
     }
 
@@ -355,16 +355,16 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
         showDialog(createFormattedDialog$default);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, Theme.key_actionBarDefaultSelector), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$$ExternalSyntheticLambda5
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 TokenManagementFragment.this.setupColors();
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -373,12 +373,12 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
     }
 
     private final void setupActionBar() {
-        C3702ActionBar c3702ActionBar = this.actionBar;
-        c3702ActionBar.setBackButtonImage(C3630R.C3632drawable.ic_ab_back);
-        c3702ActionBar.setTitle(getResourceManager().getString(Intrinsics.areEqual(this.screenType, ScreenType.Import.INSTANCE) ? C3630R.string.wallet_tokens_management_title_import : C3630R.string.wallet_tokens_management_title_details));
-        c3702ActionBar.setAllowOverlayTitle(true);
-        c3702ActionBar.setActionBarMenuOnItemClick(new C3702ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupActionBar$1$1
-            @Override // org.telegram.p042ui.ActionBar.C3702ActionBar.ActionBarMenuOnItemClick
+        C3706ActionBar c3706ActionBar = this.actionBar;
+        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        c3706ActionBar.setTitle(getResourceManager().getString(Intrinsics.areEqual(this.screenType, ScreenType.Import.INSTANCE) ? C3634R.string.wallet_tokens_management_title_import : C3634R.string.wallet_tokens_management_title_details));
+        c3706ActionBar.setAllowOverlayTitle(true);
+        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 TokenManagementPresenter presenter;
                 if (i == -1) {
@@ -393,10 +393,10 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
             Activity parentActivity = getParentActivity();
             Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
             this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
-            ActionBarMenuItem setupActionBar$lambda$6$lambda$5 = c3702ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+            ActionBarMenuItem setupActionBar$lambda$6$lambda$5 = c3706ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
             setupActionBar$lambda$6$lambda$5.disableRipple();
             Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$6$lambda$5, "setupActionBar$lambda$6$lambda$5");
-            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$6$lambda$5, AndroidUtilities.m102dp(14));
+            com.tbuonomo.viewpagerdotsindicator.ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$6$lambda$5, AndroidUtilities.m104dp(14));
             setupActionBar$lambda$6$lambda$5.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
         }
     }
@@ -588,7 +588,7 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
         NetworkItem.Crypto crypto = network instanceof NetworkItem.Crypto ? (NetworkItem.Crypto) network : null;
         setupAddressOptions(z, crypto != null ? NetworkUiMappingKt.mapToDomain(crypto) : null);
         setupViews$lambda$18$lambda$16.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$$ExternalSyntheticLambda4
-            @Override // org.telegram.p042ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
                 TokenManagementFragment.setupViews$lambda$18$lambda$16$lambda$15(TokenManagementFragment.this, i);
             }
@@ -597,19 +597,19 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$18$lambda$17, "setupViews$lambda$18$lambda$17");
         setupViews$lambda$18$lambda$17.setVisibility(Intrinsics.areEqual(this.screenType, ScreenType.Import.INSTANCE) ? 0 : 8);
         setupViews$lambda$18$lambda$17.setBackground(null);
-        setupViews$lambda$18$lambda$17.setHint(getResourceManager().getString(C3630R.string.channel_donations_address_field_hint));
+        setupViews$lambda$18$lambda$17.setHint(getResourceManager().getString(C3634R.string.channel_donations_address_field_hint));
         TextView textAddress = binding.textAddress;
         Intrinsics.checkNotNullExpressionValue(textAddress, "textAddress");
         textAddress.setVisibility(this.screenType instanceof ScreenType.View ? 0 : 8);
-        binding.textAddressTitle.setText(getResourceManager().getString(C3630R.string.wallet_tokens_management_token_address));
-        binding.textInformationTitle.setText(getResourceManager().getString(C3630R.string.wallet_tokens_management_token_information));
-        binding.textIconTitle.setText(getResourceManager().getString(C3630R.string.wallet_tokens_management_icon));
-        binding.textSymbolTitle.setText(getResourceManager().getString(C3630R.string.wallet_tokens_management_symbol));
-        binding.textNameTitle.setText(getResourceManager().getString(C3630R.string.wallet_tokens_management_name));
-        binding.textDecimalsTitle.setText(getResourceManager().getString(C3630R.string.wallet_tokens_management_decimals));
-        binding.textNetworkTitle.setText(getResourceManager().getString(C3630R.string.wallet_connect_session_details_network));
-        binding.textSafetyTitle.setText(getResourceManager().getString(C3630R.string.wallet_tokens_management_token_safety));
-        binding.textNotFound.setText(getResourceManager().getString(C3630R.string.wallet_tokens_management_token_not_found));
+        binding.textAddressTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_token_address));
+        binding.textInformationTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_token_information));
+        binding.textIconTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_icon));
+        binding.textSymbolTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_symbol));
+        binding.textNameTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_name));
+        binding.textDecimalsTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_decimals));
+        binding.textNetworkTitle.setText(getResourceManager().getString(C3634R.string.wallet_connect_session_details_network));
+        binding.textSafetyTitle.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_token_safety));
+        binding.textNotFound.setText(getResourceManager().getString(C3634R.string.wallet_tokens_management_token_not_found));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -627,8 +627,8 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
         final ActionBarMenuItem setupAddressOptions$lambda$21 = getBinding().buttonAddressOptions;
         setupAddressOptions$lambda$21.removeAllSubItems();
         if (Intrinsics.areEqual(this.screenType, ScreenType.Import.INSTANCE)) {
-            setupAddressOptions$lambda$21.setIcon(C3630R.C3632drawable.msg_qrcode);
-            setupAddressOptions$lambda$21.setContentDescription(getResourceManager().getString(C3630R.string.wallet_backup_scan_qr));
+            setupAddressOptions$lambda$21.setIcon(C3634R.C3636drawable.msg_qrcode);
+            setupAddressOptions$lambda$21.setContentDescription(getResourceManager().getString(C3634R.string.wallet_backup_scan_qr));
             Intrinsics.checkNotNullExpressionValue(setupAddressOptions$lambda$21, "setupAddressOptions$lambda$21");
             ViewExtKt.safeThrottledClick$default(setupAddressOptions$lambda$21, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupAddressOptions$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
@@ -650,11 +650,11 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
             }, 1, null);
         }
         if (z) {
-            setupAddressOptions$lambda$21.setIcon(C3630R.C3632drawable.ic_ab_other);
-            setupAddressOptions$lambda$21.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3630R.string.AccDescrMoreOptions));
-            setupAddressOptions$lambda$21.addSubItem(IdFabric$Menu.COPY, C3630R.C3632drawable.msg_copy, getResourceManager().getString(C3630R.string.wallet_transaction_details_action_copy_address));
+            setupAddressOptions$lambda$21.setIcon(C3634R.C3636drawable.ic_ab_other);
+            setupAddressOptions$lambda$21.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+            setupAddressOptions$lambda$21.addSubItem(IdFabric$Menu.COPY, C3634R.C3636drawable.msg_copy, getResourceManager().getString(C3634R.string.wallet_transaction_details_action_copy_address));
             if (network != null && (explorer = network.getExplorer()) != null) {
-                setupAddressOptions$lambda$21.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3630R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
+                setupAddressOptions$lambda$21.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3634R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
             }
             Intrinsics.checkNotNullExpressionValue(setupAddressOptions$lambda$21, "setupAddressOptions$lambda$21");
             ViewExtKt.safeThrottledClick$default(setupAddressOptions$lambda$21, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$setupAddressOptions$1$3
@@ -681,27 +681,27 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
     /* JADX INFO: Access modifiers changed from: private */
     public final void openQRScan() {
         CameraScanActivity.showAsSheet((BaseFragment) this, true, 1, new CameraScanActivity.CameraScanActivityDelegate() { // from class: com.iMe.ui.wallet.crypto.token.TokenManagementFragment$openQRScan$1
-            @Override // org.telegram.p042ui.CameraScanActivity.CameraScanActivityDelegate
+            @Override // org.telegram.p043ui.CameraScanActivity.CameraScanActivityDelegate
             public /* synthetic */ void didFindMrzInfo(MrzRecognizer.Result result) {
                 CameraScanActivity.CameraScanActivityDelegate.CC.$default$didFindMrzInfo(this, result);
             }
 
-            @Override // org.telegram.p042ui.CameraScanActivity.CameraScanActivityDelegate
+            @Override // org.telegram.p043ui.CameraScanActivity.CameraScanActivityDelegate
             public /* synthetic */ String getSubtitleText() {
                 return CameraScanActivity.CameraScanActivityDelegate.CC.$default$getSubtitleText(this);
             }
 
-            @Override // org.telegram.p042ui.CameraScanActivity.CameraScanActivityDelegate
+            @Override // org.telegram.p043ui.CameraScanActivity.CameraScanActivityDelegate
             public /* synthetic */ void onDismiss() {
                 CameraScanActivity.CameraScanActivityDelegate.CC.$default$onDismiss(this);
             }
 
-            @Override // org.telegram.p042ui.CameraScanActivity.CameraScanActivityDelegate
+            @Override // org.telegram.p043ui.CameraScanActivity.CameraScanActivityDelegate
             public /* synthetic */ boolean processQr(String str, Runnable runnable) {
                 return CameraScanActivity.CameraScanActivityDelegate.CC.$default$processQr(this, str, runnable);
             }
 
-            @Override // org.telegram.p042ui.CameraScanActivity.CameraScanActivityDelegate
+            @Override // org.telegram.p043ui.CameraScanActivity.CameraScanActivityDelegate
             public void didFindQr(String text) {
                 TokenManagementPresenter presenter;
                 Intrinsics.checkNotNullParameter(text, "text");
@@ -713,7 +713,7 @@ public final class TokenManagementFragment extends WalletAuthBaseFragment implem
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void showTokensListsInfoDialog() {
-        showDialog(DialogsFactoryKt.createDialogInfoWithAnimation$default(this, 0, null, getResourceManager().getString(C3630R.string.token_lists_description), 0, null, null, 59, null));
+        showDialog(DialogsFactoryKt.createDialogInfoWithAnimation$default(this, 0, null, getResourceManager().getString(C3634R.string.token_lists_description), 0, null, null, 59, null));
     }
 
     /* compiled from: TokenManagementFragment.kt */

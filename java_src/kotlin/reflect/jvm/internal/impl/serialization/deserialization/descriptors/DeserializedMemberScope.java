@@ -238,7 +238,7 @@ public abstract class DeserializedMemberScope extends MemberScopeImpl {
 
     @Override // kotlin.reflect.jvm.internal.impl.resolve.scopes.MemberScopeImpl, kotlin.reflect.jvm.internal.impl.resolve.scopes.ResolutionScope
     /* renamed from: getContributedClassifier */
-    public ClassifierDescriptor mo2048getContributedClassifier(Name name, LookupLocation location) {
+    public ClassifierDescriptor mo2053getContributedClassifier(Name name, LookupLocation location) {
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(location, "location");
         if (hasClass(name)) {
@@ -460,7 +460,7 @@ public abstract class DeserializedMemberScope extends MemberScopeImpl {
                 java.util.Iterator r0 = r0.iterator()
             L3b:
                 boolean r3 = r0.hasNext()
-                if (r3 == 0) goto L66
+                if (r3 == 0) goto L67
                 java.lang.Object r3 = r0.next()
                 kotlin.reflect.jvm.internal.impl.metadata.ProtoBuf$Function r3 = (kotlin.reflect.jvm.internal.impl.metadata.ProtoBuf$Function) r3
                 kotlin.reflect.jvm.internal.impl.serialization.deserialization.DeserializationContext r4 = r2.getC()
@@ -469,15 +469,15 @@ public abstract class DeserializedMemberScope extends MemberScopeImpl {
                 kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r3, r5)
                 kotlin.reflect.jvm.internal.impl.descriptors.SimpleFunctionDescriptor r3 = r4.loadFunction(r3)
                 boolean r4 = r2.isDeclaredFunctionAvailable(r3)
-                if (r4 == 0) goto L5f
-                goto L60
-            L5f:
-                r3 = 0
+                if (r4 == 0) goto L60
+                goto L61
             L60:
+                r3 = 0
+            L61:
                 if (r3 == 0) goto L3b
                 r1.add(r3)
                 goto L3b
-            L66:
+            L67:
                 r2.computeNonDeclaredFunctions(r7, r1)
                 java.util.List r7 = kotlin.reflect.jvm.internal.impl.utils.CollectionsKt.compact(r1)
                 return r7
@@ -522,7 +522,7 @@ public abstract class DeserializedMemberScope extends MemberScopeImpl {
                 java.util.Iterator r0 = r0.iterator()
             L3b:
                 boolean r3 = r0.hasNext()
-                if (r3 == 0) goto L5e
+                if (r3 == 0) goto L5f
                 java.lang.Object r3 = r0.next()
                 kotlin.reflect.jvm.internal.impl.metadata.ProtoBuf$Property r3 = (kotlin.reflect.jvm.internal.impl.metadata.ProtoBuf$Property) r3
                 kotlin.reflect.jvm.internal.impl.serialization.deserialization.DeserializationContext r4 = r2.getC()
@@ -533,7 +533,7 @@ public abstract class DeserializedMemberScope extends MemberScopeImpl {
                 if (r3 == 0) goto L3b
                 r1.add(r3)
                 goto L3b
-            L5e:
+            L5f:
                 r2.computeNonDeclaredProperties(r7, r1)
                 java.util.List r7 = kotlin.reflect.jvm.internal.impl.utils.CollectionsKt.compact(r1)
                 return r7

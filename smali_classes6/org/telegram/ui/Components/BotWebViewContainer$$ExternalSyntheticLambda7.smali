@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$$ExternalSyntheticLambda7;->f$1:Ljava/lang/Runnable;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->$r8$lambda$456rcgIN_4Qi0V4QbVu_XXfDeKg(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/Runnable;Landroid/content/DialogInterface;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->$r8$lambda$_sa9w7HZ47YQ9oizrmnXcOdLuig(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/Runnable;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

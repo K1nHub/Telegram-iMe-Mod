@@ -9,7 +9,7 @@ import com.iMe.utils.extentions.common.ImageViewExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.databinding.ForkContentNetworkCellBinding;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ImageTextCheckCell.kt */
 /* renamed from: com.iMe.ui.custom.ImageTextCheckCell */
 /* loaded from: classes3.dex */

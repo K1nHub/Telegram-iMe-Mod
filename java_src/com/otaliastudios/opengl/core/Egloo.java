@@ -46,12 +46,12 @@ public final class Egloo {
     }
 
     public static final void checkGlError(String opName) {
-        int m1967constructorimpl;
+        int m1972constructorimpl;
         Intrinsics.checkNotNullParameter(opName, "opName");
-        if (UInt.m1967constructorimpl(GLES20.glGetError()) == GlKt.getGL_NO_ERROR()) {
+        if (UInt.m1972constructorimpl(GLES20.glGetError()) == GlKt.getGL_NO_ERROR()) {
             return;
         }
-        String str = "Error during " + opName + ": glError 0x" + MiscKt.intToHexString(m1967constructorimpl) + ": " + MiscKt.gluErrorString(m1967constructorimpl);
+        String str = "Error during " + opName + ": glError 0x" + MiscKt.intToHexString(m1972constructorimpl) + ": " + MiscKt.gluErrorString(m1972constructorimpl);
         Log.e("Egloo", str);
         throw new RuntimeException(str);
     }

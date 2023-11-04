@@ -66,7 +66,7 @@ public final class TRONBlockchainCryptoWalletManagerImpl extends BlockchainCrypt
                 return generateAddressByMnemonic$lambda$0;
             }
         });
-        final C1773x29f55e4 c1773x29f55e4 = new Function1<Throwable, Result<? extends String>>() { // from class: com.iMe.storage.data.manager.crypto.blockchains.TRONBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$2
+        final C1779x29f55e4 c1779x29f55e4 = new Function1<Throwable, Result<? extends String>>() { // from class: com.iMe.storage.data.manager.crypto.blockchains.TRONBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$2
             @Override // kotlin.jvm.functions.Function1
             public final Result<String> invoke(Throwable it) {
                 Intrinsics.checkNotNullParameter(it, "it");

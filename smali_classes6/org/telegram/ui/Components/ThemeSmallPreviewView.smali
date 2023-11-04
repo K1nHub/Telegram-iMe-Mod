@@ -1629,7 +1629,7 @@
     if-eqz v0, :cond_0
 
     .line 683
-    invoke-virtual {v0}, Lorg/telegram/ui/ChatBackgroundDrawable;->onAttachedToWindow()V
+    invoke-virtual {v0, p0}, Lorg/telegram/ui/ChatBackgroundDrawable;->onAttachedToWindow(Landroid/view/View;)V
 
     :cond_0
     return-void
@@ -1661,7 +1661,7 @@
     if-eqz v0, :cond_0
 
     .line 693
-    invoke-virtual {v0}, Lorg/telegram/ui/ChatBackgroundDrawable;->onDetachedFromWindow()V
+    invoke-virtual {v0, p0}, Lorg/telegram/ui/ChatBackgroundDrawable;->onDetachedFromWindow(Landroid/view/View;)V
 
     :cond_0
     return-void
@@ -2174,7 +2174,7 @@
     if-eqz v3, :cond_7
 
     .line 208
-    invoke-virtual {v3}, Lorg/telegram/ui/ChatBackgroundDrawable;->onDetachedFromWindow()V
+    invoke-virtual {v3, v6}, Lorg/telegram/ui/ChatBackgroundDrawable;->onDetachedFromWindow(Landroid/view/View;)V
 
     .line 210
     :cond_7
@@ -2199,7 +2199,7 @@
     .line 213
     iget-object v1, v6, Lorg/telegram/ui/Components/ThemeSmallPreviewView;->chatBackgroundDrawable:Lorg/telegram/ui/ChatBackgroundDrawable;
 
-    invoke-virtual {v1}, Lorg/telegram/ui/ChatBackgroundDrawable;->onAttachedToWindow()V
+    invoke-virtual {v1, v6}, Lorg/telegram/ui/ChatBackgroundDrawable;->onAttachedToWindow(Landroid/view/View;)V
 
     goto :goto_4
 
@@ -2214,7 +2214,7 @@
     if-eqz v1, :cond_9
 
     .line 217
-    invoke-virtual {v1}, Lorg/telegram/ui/ChatBackgroundDrawable;->onDetachedFromWindow()V
+    invoke-virtual {v1, v6}, Lorg/telegram/ui/ChatBackgroundDrawable;->onDetachedFromWindow(Landroid/view/View;)V
 
     .line 219
     :cond_9

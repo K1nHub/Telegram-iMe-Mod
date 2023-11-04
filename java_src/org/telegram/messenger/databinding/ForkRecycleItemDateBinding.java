@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemDateBinding implements ViewBinding {
     private ForkRecycleItemDateBinding(FrameLayout frameLayout, TextView textView) {
@@ -18,7 +18,7 @@ public final class ForkRecycleItemDateBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemDateBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_date, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_recycle_item_date, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -26,7 +26,7 @@ public final class ForkRecycleItemDateBinding implements ViewBinding {
     }
 
     public static ForkRecycleItemDateBinding bind(View view) {
-        int i = C3630R.C3633id.text_date;
+        int i = C3634R.C3637id.text_date;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
             return new ForkRecycleItemDateBinding((FrameLayout) view, textView);

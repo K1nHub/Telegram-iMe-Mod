@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SocketImpl.kt */
-@DebugMetadata(m143c = "io.ktor.network.sockets.SocketImpl", m142f = "SocketImpl.kt", m141l = {47, 65}, m140m = "connect$ktor_network")
+@DebugMetadata(m145c = "io.ktor.network.sockets.SocketImpl", m144f = "SocketImpl.kt", m143l = {47, 65}, m142m = "connect$ktor_network")
 /* loaded from: classes4.dex */
 public final class SocketImpl$connect$1 extends ContinuationImpl {
     Object L$0;

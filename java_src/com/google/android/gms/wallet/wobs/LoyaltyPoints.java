@@ -11,11 +11,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class LoyaltyPoints extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LoyaltyPoints> CREATOR = new zzj();
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     String zza;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     LoyaltyPointsBalance zzb;
-    @SafeParcelable.Field(m1089id = 5)
+    @SafeParcelable.Field(m1090id = 5)
     @Deprecated
     TimeInterval zzc;
 
@@ -87,7 +87,7 @@ public final class LoyaltyPoints extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public LoyaltyPoints(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) LoyaltyPointsBalance loyaltyPointsBalance, @SafeParcelable.Param(m1088id = 5) TimeInterval timeInterval) {
+    public LoyaltyPoints(@SafeParcelable.Param(m1089id = 2) String str, @SafeParcelable.Param(m1089id = 3) LoyaltyPointsBalance loyaltyPointsBalance, @SafeParcelable.Param(m1089id = 5) TimeInterval timeInterval) {
         this.zza = str;
         this.zzb = loyaltyPointsBalance;
         this.zzc = timeInterval;

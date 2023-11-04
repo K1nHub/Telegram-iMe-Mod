@@ -51,10 +51,10 @@ public abstract class KotlinTypePreparator extends AbstractTypePreparator {
             UnwrappedType unwrappedType2 = unwrappedType;
             if (capturedTypeConstructorImpl.getNewTypeConstructor() == null) {
                 TypeProjection projection2 = capturedTypeConstructorImpl.getProjection();
-                Collection<KotlinType> mo2047getSupertypes = capturedTypeConstructorImpl.mo2047getSupertypes();
-                collectionSizeOrDefault3 = CollectionsKt__IterablesKt.collectionSizeOrDefault(mo2047getSupertypes, 10);
+                Collection<KotlinType> mo2052getSupertypes = capturedTypeConstructorImpl.mo2052getSupertypes();
+                collectionSizeOrDefault3 = CollectionsKt__IterablesKt.collectionSizeOrDefault(mo2052getSupertypes, 10);
                 ArrayList arrayList = new ArrayList(collectionSizeOrDefault3);
-                for (KotlinType kotlinType : mo2047getSupertypes) {
+                for (KotlinType kotlinType : mo2052getSupertypes) {
                     arrayList.add(kotlinType.unwrap());
                 }
                 capturedTypeConstructorImpl.setNewTypeConstructor(new NewCapturedTypeConstructor(projection2, arrayList, null, 4, null));
@@ -64,10 +64,10 @@ public abstract class KotlinTypePreparator extends AbstractTypePreparator {
             Intrinsics.checkNotNull(newTypeConstructor);
             return new NewCapturedType(captureStatus, newTypeConstructor, unwrappedType2, simpleType.getAttributes(), simpleType.isMarkedNullable(), false, 32, null);
         } else if (constructor instanceof IntegerValueTypeConstructor) {
-            Collection<KotlinType> mo2047getSupertypes2 = ((IntegerValueTypeConstructor) constructor).mo2047getSupertypes();
-            collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(mo2047getSupertypes2, 10);
+            Collection<KotlinType> mo2052getSupertypes2 = ((IntegerValueTypeConstructor) constructor).mo2052getSupertypes();
+            collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(mo2052getSupertypes2, 10);
             ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault2);
-            for (KotlinType kotlinType2 : mo2047getSupertypes2) {
+            for (KotlinType kotlinType2 : mo2052getSupertypes2) {
                 KotlinType makeNullableAsSpecified = TypeUtils.makeNullableAsSpecified(kotlinType2, simpleType.isMarkedNullable());
                 Intrinsics.checkNotNullExpressionValue(makeNullableAsSpecified, "makeNullableAsSpecified(it, type.isMarkedNullable)");
                 arrayList2.add(makeNullableAsSpecified);
@@ -78,10 +78,10 @@ public abstract class KotlinTypePreparator extends AbstractTypePreparator {
             return KotlinTypeFactory.simpleTypeWithNonTrivialMemberScope(attributes, intersectionTypeConstructor2, emptyList, false, simpleType.getMemberScope());
         } else if ((constructor instanceof IntersectionTypeConstructor) && simpleType.isMarkedNullable()) {
             IntersectionTypeConstructor intersectionTypeConstructor3 = (IntersectionTypeConstructor) constructor;
-            Collection<KotlinType> mo2047getSupertypes3 = intersectionTypeConstructor3.mo2047getSupertypes();
-            collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(mo2047getSupertypes3, 10);
+            Collection<KotlinType> mo2052getSupertypes3 = intersectionTypeConstructor3.mo2052getSupertypes();
+            collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(mo2052getSupertypes3, 10);
             ArrayList arrayList3 = new ArrayList(collectionSizeOrDefault);
-            for (KotlinType kotlinType3 : mo2047getSupertypes3) {
+            for (KotlinType kotlinType3 : mo2052getSupertypes3) {
                 arrayList3.add(TypeUtilsKt.makeNullable(kotlinType3));
                 z = true;
             }

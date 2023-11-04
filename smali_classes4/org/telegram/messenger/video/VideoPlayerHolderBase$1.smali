@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/video/VideoPlayerHolderBase;)V
     .locals 0
 
-    .line 68
+    .line 69
     iput-object p1, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$1;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 .method public run()V
     .locals 4
 
-    .line 71
+    .line 72
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$1;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
     iget-object v1, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v1, :cond_1
 
-    .line 72
+    .line 73
     iget v2, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->lastState:I
 
     const/4 v3, 0x4
@@ -54,12 +54,12 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 73
+    .line 74
     iput v1, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->progress:F
 
     goto :goto_0
 
-    .line 75
+    .line 76
     :cond_0
     invoke-virtual {v1}, Lorg/telegram/ui/Components/VideoPlayer;->getCurrentPosition()J
 
@@ -67,7 +67,7 @@
 
     iput-wide v1, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->currentPosition:J
 
-    .line 76
+    .line 77
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$1;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
     iget-object v1, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
@@ -78,7 +78,7 @@
 
     iput-wide v1, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->playerDuration:J
 
-    .line 78
+    .line 79
     :goto_0
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$1;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
@@ -88,14 +88,14 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 79
+    .line 80
     iget-object v1, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->dispatchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     iget-object v0, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->progressRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/DispatchQueue;->cancelRunnable(Ljava/lang/Runnable;)V
 
-    .line 80
+    .line 81
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$1;->this$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
     iget-object v1, v0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->dispatchQueue:Lorg/telegram/messenger/DispatchQueue;

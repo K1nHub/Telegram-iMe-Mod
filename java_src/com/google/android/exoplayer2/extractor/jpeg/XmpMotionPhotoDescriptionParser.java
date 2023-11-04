@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.jpeg;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.jpeg.MotionPhotoDescription;
 import com.google.android.exoplayer2.util.Log;
@@ -23,7 +23,7 @@ final class XmpMotionPhotoDescriptionParser {
         try {
             return parseInternal(str);
         } catch (ParserException | NumberFormatException | XmlPullParserException unused) {
-            Log.m1106w(TAG, "Ignoring unexpected XMP metadata");
+            Log.m1107w(TAG, "Ignoring unexpected XMP metadata");
             return null;
         }
     }
@@ -35,8 +35,8 @@ final class XmpMotionPhotoDescriptionParser {
         if (!XmlPullParserUtil.isStartTag(newPullParser, "x:xmpmeta")) {
             throw ParserException.createForMalformedContainer("Couldn't find xmp metadata", null);
         }
-        long j = C0479C.TIME_UNSET;
-        ImmutableList<MotionPhotoDescription.ContainerItem> m1054of = ImmutableList.m1054of();
+        long j = C0485C.TIME_UNSET;
+        ImmutableList<MotionPhotoDescription.ContainerItem> m1055of = ImmutableList.m1055of();
         do {
             newPullParser.next();
             if (XmlPullParserUtil.isStartTag(newPullParser, "rdf:Description")) {
@@ -44,17 +44,17 @@ final class XmpMotionPhotoDescriptionParser {
                     return null;
                 }
                 j = parseMotionPhotoPresentationTimestampUsFromDescription(newPullParser);
-                m1054of = parseMicroVideoOffsetFromDescription(newPullParser);
+                m1055of = parseMicroVideoOffsetFromDescription(newPullParser);
             } else if (XmlPullParserUtil.isStartTag(newPullParser, "Container:Directory")) {
-                m1054of = parseMotionPhotoV1Directory(newPullParser, "Container", "Item");
+                m1055of = parseMotionPhotoV1Directory(newPullParser, "Container", "Item");
             } else if (XmlPullParserUtil.isStartTag(newPullParser, "GContainer:Directory")) {
-                m1054of = parseMotionPhotoV1Directory(newPullParser, "GContainer", "GContainerItem");
+                m1055of = parseMotionPhotoV1Directory(newPullParser, "GContainer", "GContainerItem");
             }
         } while (!XmlPullParserUtil.isEndTag(newPullParser, "x:xmpmeta"));
-        if (m1054of.isEmpty()) {
+        if (m1055of.isEmpty()) {
             return null;
         }
-        return new MotionPhotoDescription(j, m1054of);
+        return new MotionPhotoDescription(j, m1055of);
     }
 
     private static boolean parseMotionPhotoFlagFromDescription(XmlPullParser xmlPullParser) {
@@ -72,20 +72,20 @@ final class XmpMotionPhotoDescriptionParser {
             String attributeValue = XmlPullParserUtil.getAttributeValue(xmlPullParser, str);
             if (attributeValue != null) {
                 long parseLong = Long.parseLong(attributeValue);
-                return parseLong == -1 ? C0479C.TIME_UNSET : parseLong;
+                return parseLong == -1 ? C0485C.TIME_UNSET : parseLong;
             }
         }
-        return C0479C.TIME_UNSET;
+        return C0485C.TIME_UNSET;
     }
 
     private static ImmutableList<MotionPhotoDescription.ContainerItem> parseMicroVideoOffsetFromDescription(XmlPullParser xmlPullParser) {
         for (String str : DESCRIPTION_MICRO_VIDEO_OFFSET_ATTRIBUTE_NAMES) {
             String attributeValue = XmlPullParserUtil.getAttributeValue(xmlPullParser, str);
             if (attributeValue != null) {
-                return ImmutableList.m1052of(new MotionPhotoDescription.ContainerItem(MimeTypes.IMAGE_JPEG, "Primary", 0L, 0L), new MotionPhotoDescription.ContainerItem(MimeTypes.VIDEO_MP4, "MotionPhoto", Long.parseLong(attributeValue), 0L));
+                return ImmutableList.m1053of(new MotionPhotoDescription.ContainerItem(MimeTypes.IMAGE_JPEG, "Primary", 0L, 0L), new MotionPhotoDescription.ContainerItem(MimeTypes.VIDEO_MP4, "MotionPhoto", Long.parseLong(attributeValue), 0L));
             }
         }
-        return ImmutableList.m1054of();
+        return ImmutableList.m1055of();
     }
 
     private static ImmutableList<MotionPhotoDescription.ContainerItem> parseMotionPhotoV1Directory(XmlPullParser xmlPullParser, String str, String str2) throws XmlPullParserException, IOException {
@@ -100,7 +100,7 @@ final class XmpMotionPhotoDescriptionParser {
                 String attributeValue3 = XmlPullParserUtil.getAttributeValue(xmlPullParser, str2 + ":Length");
                 String attributeValue4 = XmlPullParserUtil.getAttributeValue(xmlPullParser, str2 + ":Padding");
                 if (attributeValue == null || attributeValue2 == null) {
-                    return ImmutableList.m1054of();
+                    return ImmutableList.m1055of();
                 }
                 builder.add((ImmutableList.Builder) new MotionPhotoDescription.ContainerItem(attributeValue, attributeValue2, attributeValue3 != null ? Long.parseLong(attributeValue3) : 0L, attributeValue4 != null ? Long.parseLong(attributeValue4) : 0L));
             }

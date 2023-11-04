@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;)V
     .locals 0
 
-    .line 232
+    .line 230
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

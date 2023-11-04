@@ -52,9 +52,9 @@
 
     const/4 v1, 0x1
 
-    const-string v3, "iterator"
+    const-string/jumbo v3, "iterator"
 
-    const-string v4, "iterator()Ljava/util/Iterator;"
+    const-string/jumbo v4, "iterator()Ljava/util/Iterator;"
 
     const/4 v5, 0x0
 

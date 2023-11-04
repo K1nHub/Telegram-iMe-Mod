@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.audio.AacUtil;
@@ -76,15 +76,15 @@ public final class AdtsReader implements ElementaryStreamReader {
         setFindingSampleState();
         this.firstFrameVersion = -1;
         this.firstFrameSampleRateIndex = -1;
-        this.sampleDurationUs = C0479C.TIME_UNSET;
-        this.timeUs = C0479C.TIME_UNSET;
+        this.sampleDurationUs = C0485C.TIME_UNSET;
+        this.timeUs = C0485C.TIME_UNSET;
         this.exposeId3 = z;
         this.language = str;
     }
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
     public void seek() {
-        this.timeUs = C0479C.TIME_UNSET;
+        this.timeUs = C0485C.TIME_UNSET;
         resetSync();
     }
 
@@ -107,7 +107,7 @@ public final class AdtsReader implements ElementaryStreamReader {
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
     public void packetStarted(long j, int i) {
-        if (j != C0479C.TIME_UNSET) {
+        if (j != C0485C.TIME_UNSET) {
             this.timeUs = j;
         }
     }
@@ -323,7 +323,7 @@ public final class AdtsReader implements ElementaryStreamReader {
         if (!this.hasOutputFormat) {
             int readBits = this.adtsScratch.readBits(2) + 1;
             if (readBits != 2) {
-                Log.m1106w(TAG, "Detected audio object type: " + readBits + ", but assuming AAC LC.");
+                Log.m1107w(TAG, "Detected audio object type: " + readBits + ", but assuming AAC LC.");
                 readBits = 2;
             }
             this.adtsScratch.skipBits(5);
@@ -352,7 +352,7 @@ public final class AdtsReader implements ElementaryStreamReader {
         int i2 = this.sampleSize;
         if (i == i2) {
             long j = this.timeUs;
-            if (j != C0479C.TIME_UNSET) {
+            if (j != C0485C.TIME_UNSET) {
                 this.currentOutput.sampleMetadata(j, 1, i2, 0, null);
                 this.timeUs += this.currentSampleDuration;
             }

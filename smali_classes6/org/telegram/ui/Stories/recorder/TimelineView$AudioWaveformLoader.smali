@@ -66,27 +66,27 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/recorder/TimelineView;Ljava/lang/String;I)V
     .locals 7
 
-    .line 1479
+    .line 1494
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->this$0:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 1466
+    .line 1481
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->loaded:I
 
-    .line 1474
+    .line 1489
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->lock:Ljava/lang/Object;
 
-    .line 1475
+    .line 1490
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->stop:Z
 
-    .line 1481
+    .line 1496
     new-instance v1, Landroid/media/MediaExtractor;
 
     invoke-direct {v1}, Landroid/media/MediaExtractor;-><init>()V
@@ -95,11 +95,11 @@
 
     const/4 v2, 0x0
 
-    .line 1484
+    .line 1499
     :try_start_0
     invoke-virtual {v1, p2}, Landroid/media/MediaExtractor;->setDataSource(Ljava/lang/String;)V
 
-    .line 1486
+    .line 1501
     invoke-virtual {v1}, Landroid/media/MediaExtractor;->getTrackCount()I
 
     move-result v1
@@ -107,7 +107,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 1488
+    .line 1503
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->extractor:Landroid/media/MediaExtractor;
 
     invoke-virtual {v3, v0}, Landroid/media/MediaExtractor;->getTrackFormat(I)Landroid/media/MediaFormat;
@@ -116,7 +116,7 @@
 
     const-string v4, "mime"
 
-    .line 1489
+    .line 1504
     invoke-virtual {v3, v4}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
@@ -125,19 +125,19 @@
 
     const-string v4, "audio/"
 
-    .line 1490
+    .line 1505
     invoke-virtual {v2, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 1491
+    .line 1506
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->extractor:Landroid/media/MediaExtractor;
 
     invoke-virtual {v1, v0}, Landroid/media/MediaExtractor;->selectTrack(I)V
 
-    .line 1492
+    .line 1507
     iput-object v3, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->inputFormat:Landroid/media/MediaFormat;
 
     goto :goto_1
@@ -147,7 +147,7 @@
 
     goto :goto_0
 
-    .line 1497
+    .line 1512
     :cond_1
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->inputFormat:Landroid/media/MediaFormat;
@@ -156,7 +156,7 @@
 
     const-string v1, "durationUs"
 
-    .line 1498
+    .line 1513
     invoke-virtual {v0, v1}, Landroid/media/MediaFormat;->getLong(Ljava/lang/String;)J
 
     move-result-wide v0
@@ -174,10 +174,10 @@
     :catch_0
     move-exception v0
 
-    .line 1501
+    .line 1516
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1504
+    .line 1519
     :cond_2
     :goto_2
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/TimelineView;->access$500(Lorg/telegram/ui/Stories/recorder/TimelineView;)Z
@@ -208,7 +208,7 @@
 
     long-to-float p1, v0
 
-    .line 1505
+    .line 1520
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->duration:J
 
     mul-long/2addr v0, v3
@@ -223,7 +223,7 @@
 
     const p1, 0x405554ca
 
-    .line 1506
+    .line 1521
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result p1
@@ -236,19 +236,19 @@
 
     div-float/2addr v0, p1
 
-    .line 1507
+    .line 1522
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->count:I
 
-    .line 1508
+    .line 1523
     new-array p3, p1, [S
 
     iput-object p3, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->data:[S
 
-    .line 1510
+    .line 1525
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->duration:J
 
     const-wide/16 v3, 0x0
@@ -263,7 +263,7 @@
 
     const-string p3, "audio/mpeg"
 
-    .line 1511
+    .line 1526
     invoke-virtual {p3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p3
@@ -280,7 +280,7 @@
 
     goto :goto_4
 
-    .line 1514
+    .line 1529
     :cond_4
     sget-object p1, Lorg/telegram/messenger/Utilities;->phoneBookQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -292,7 +292,7 @@
 
     goto :goto_5
 
-    .line 1512
+    .line 1527
     :cond_5
     :goto_4
     new-instance p3, Lorg/telegram/ui/Stories/recorder/FfmpegAudioWaveformLoader;
@@ -313,7 +313,7 @@
 .method private synthetic lambda$run$0([SI)V
     .locals 0
 
-    .line 1599
+    .line 1614
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->receiveData([SI)V
 
     return-void
@@ -327,7 +327,7 @@
     :goto_0
     if-ge v0, p2, :cond_2
 
-    .line 1647
+    .line 1662
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->loaded:I
 
     add-int v2, v1, v0
@@ -343,19 +343,19 @@
     :cond_0
     add-int/2addr v1, v0
 
-    .line 1650
+    .line 1665
     aget-short v2, p1, v0
 
     aput-short v2, v3, v1
 
-    .line 1651
+    .line 1666
     iget-short v1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->max:S
 
     aget-short v2, p1, v0
 
     if-ge v1, v2, :cond_1
 
-    .line 1652
+    .line 1667
     aget-short v1, p1, v0
 
     iput-short v1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->max:S
@@ -365,7 +365,7 @@
 
     goto :goto_0
 
-    .line 1655
+    .line 1670
     :cond_2
     :goto_1
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->loaded:I
@@ -374,7 +374,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->loaded:I
 
-    .line 1656
+    .line 1671
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->this$0:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
@@ -387,7 +387,7 @@
 
     move-object/from16 v1, p0
 
-    .line 1521
+    .line 1536
     :try_start_0
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->inputFormat:Landroid/media/MediaFormat;
 
@@ -397,7 +397,7 @@
 
     move-result v0
 
-    .line 1523
+    .line 1538
     iget-wide v2, v1, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->duration:J
 
     int-to-long v4, v0
@@ -420,7 +420,7 @@
 
     move-result v0
 
-    .line 1525
+    .line 1540
     iget-object v2, v1, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->inputFormat:Landroid/media/MediaFormat;
 
     const-string v3, "mime"
@@ -429,7 +429,7 @@
 
     move-result-object v2
 
-    .line 1526
+    .line 1541
     invoke-static {v2}, Landroid/media/MediaCodec;->createDecoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
 
     move-result-object v2
@@ -438,7 +438,7 @@
 
     return-void
 
-    .line 1530
+    .line 1545
     :cond_0
     iget-object v3, v1, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->inputFormat:Landroid/media/MediaFormat;
 
@@ -448,15 +448,15 @@
 
     invoke-virtual {v2, v3, v4, v4, v10}, Landroid/media/MediaCodec;->configure(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
 
-    .line 1531
+    .line 1546
     invoke-virtual {v2}, Landroid/media/MediaCodec;->start()V
 
-    .line 1533
+    .line 1548
     invoke-virtual {v2}, Landroid/media/MediaCodec;->getInputBuffers()[Ljava/nio/ByteBuffer;
 
     move-result-object v11
 
-    .line 1534
+    .line 1549
     invoke-virtual {v2}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
 
     move-result-object v3
@@ -481,7 +481,7 @@
 
     const/4 v9, -0x1
 
-    .line 1545
+    .line 1560
     :goto_0
     new-instance v7, Landroid/media/MediaCodec$BufferInfo;
 
@@ -489,7 +489,7 @@
 
     const-wide/16 v5, 0x9c4
 
-    .line 1546
+    .line 1561
     invoke-virtual {v2, v5, v6}, Landroid/media/MediaCodec;->dequeueInputBuffer(J)I
 
     move-result v4
@@ -500,23 +500,23 @@
 
     if-ltz v4, :cond_3
 
-    .line 1549
+    .line 1564
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-ge v3, v8, :cond_1
 
-    .line 1550
+    .line 1565
     aget-object v3, v11, v4
 
     goto :goto_1
 
-    .line 1552
+    .line 1567
     :cond_1
     invoke-virtual {v2, v4}, Landroid/media/MediaCodec;->getInputBuffer(I)Ljava/nio/ByteBuffer;
 
     move-result-object v3
 
-    .line 1554
+    .line 1569
     :goto_1
     iget-object v5, v1, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->extractor:Landroid/media/MediaExtractor;
 
@@ -546,7 +546,7 @@
 
     move v9, v15
 
-    .line 1556
+    .line 1571
     invoke-virtual/range {v3 .. v9}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
 
     move/from16 v15, v20
@@ -560,7 +560,7 @@
 
     const/4 v5, 0x0
 
-    .line 1559
+    .line 1574
     iget-object v3, v1, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->extractor:Landroid/media/MediaExtractor;
 
     invoke-virtual {v3}, Landroid/media/MediaExtractor;->getSampleTime()J
@@ -573,7 +573,7 @@
 
     invoke-virtual/range {v3 .. v9}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
 
-    .line 1560
+    .line 1575
     iget-object v3, v1, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->extractor:Landroid/media/MediaExtractor;
 
     invoke-virtual {v3}, Landroid/media/MediaExtractor;->advance()Z
@@ -588,19 +588,19 @@
     :goto_2
     if-ltz v10, :cond_5
 
-    .line 1566
+    .line 1581
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0x15
 
     if-ge v3, v4, :cond_4
 
-    .line 1567
+    .line 1582
     aget-object v3, v13, v10
 
     goto :goto_3
 
-    .line 1569
+    .line 1584
     :cond_4
     invoke-virtual {v2, v10}, Landroid/media/MediaCodec;->getOutputBuffer(I)Ljava/nio/ByteBuffer;
 
@@ -609,13 +609,13 @@
     :goto_3
     const/4 v4, 0x0
 
-    .line 1572
+    .line 1587
     invoke-virtual {v3, v4}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     :cond_5
     const-wide/16 v3, 0x9c4
 
-    .line 1575
+    .line 1590
     invoke-virtual {v2, v12, v3, v4}, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo;J)I
 
     move-result v5
@@ -631,19 +631,19 @@
 
     if-ltz v9, :cond_10
 
-    .line 1579
+    .line 1594
     sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v7, 0x15
 
     if-ge v6, v7, :cond_6
 
-    .line 1580
+    .line 1595
     aget-object v6, v13, v9
 
     goto :goto_5
 
-    .line 1582
+    .line 1597
     :cond_6
     invoke-virtual {v2, v9}, Landroid/media/MediaCodec;->getOutputBuffer(I)Ljava/nio/ByteBuffer;
 
@@ -652,14 +652,14 @@
     :goto_5
     if-eqz v6, :cond_e
 
-    .line 1584
+    .line 1599
     iget v8, v12, Landroid/media/MediaCodec$BufferInfo;->size:I
 
     if-lez v8, :cond_e
 
     move/from16 v8, v18
 
-    .line 1585
+    .line 1600
     :goto_6
     invoke-virtual {v6}, Ljava/nio/ByteBuffer;->remaining()I
 
@@ -667,12 +667,12 @@
 
     if-lez v10, :cond_d
 
-    .line 1586
+    .line 1601
     invoke-virtual {v6}, Ljava/nio/ByteBuffer;->get()B
 
     move-result v10
 
-    .line 1587
+    .line 1602
     invoke-virtual {v6}, Ljava/nio/ByteBuffer;->get()B
 
     move-result v5
@@ -693,14 +693,14 @@
 
     sub-int v8, v16, v17
 
-    .line 1592
+    .line 1607
     aput-short v19, v14, v8
 
     add-int/lit8 v8, v16, 0x1
 
     sub-int v10, v8, v17
 
-    .line 1594
+    .line 1609
     array-length v3, v14
 
     if-ge v10, v3, :cond_7
@@ -709,13 +709,13 @@
 
     if-lt v8, v3, :cond_8
 
-    .line 1597
+    .line 1612
     :cond_7
     array-length v3, v14
 
     new-array v3, v3, [S
 
-    .line 1599
+    .line 1614
     new-instance v4, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader$$ExternalSyntheticLambda1;
 
     invoke-direct {v4, v1, v14, v10}, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;[SI)V
@@ -726,7 +726,7 @@
 
     move/from16 v17, v8
 
-    .line 1603
+    .line 1618
     :cond_8
     iget-object v3, v1, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->data:[S
 
@@ -767,7 +767,7 @@
     :goto_8
     add-int/lit8 v8, v8, 0x1
 
-    .line 1613
+    .line 1628
     invoke-virtual {v6}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v3
@@ -776,7 +776,7 @@
 
     goto :goto_9
 
-    .line 1615
+    .line 1630
     :cond_c
     invoke-virtual {v6}, Ljava/nio/ByteBuffer;->position()I
 
@@ -806,11 +806,11 @@
     :goto_a
     const/4 v3, 0x0
 
-    .line 1618
+    .line 1633
     :goto_b
     invoke-virtual {v2, v9, v3}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
 
-    .line 1620
+    .line 1635
     iget v5, v12, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
     and-int/lit8 v5, v5, 0x4
@@ -837,7 +837,7 @@
 
     if-ne v9, v4, :cond_11
 
-    .line 1626
+    .line 1641
     invoke-virtual {v2}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
 
     move-result-object v13
@@ -846,7 +846,7 @@
     :goto_c
     const-wide/16 v4, 0x9c4
 
-    .line 1628
+    .line 1643
     invoke-virtual {v2, v12, v4, v5}, Landroid/media/MediaCodec;->dequeueOutputBuffer(Landroid/media/MediaCodec$BufferInfo;J)I
 
     move-result v9
@@ -860,7 +860,7 @@
 
     move/from16 v4, v16
 
-    .line 1630
+    .line 1645
     :goto_d
     iget-object v5, v1, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->lock:Ljava/lang/Object;
 
@@ -868,18 +868,18 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1631
+    .line 1646
     :try_start_1
     iget-boolean v6, v1, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->stop:Z
 
     if-eqz v6, :cond_13
 
-    .line 1632
+    .line 1647
     monitor-exit v5
 
     goto :goto_e
 
-    .line 1634
+    .line 1649
     :cond_13
     monitor-exit v5
     :try_end_1
@@ -887,7 +887,7 @@
 
     if-nez v15, :cond_15
 
-    .line 1635
+    .line 1650
     :try_start_2
     iget v5, v1, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->count:I
 
@@ -902,15 +902,15 @@
 
     goto/16 :goto_0
 
-    .line 1637
+    .line 1652
     :cond_15
     :goto_e
     invoke-virtual {v2}, Landroid/media/MediaCodec;->stop()V
 
-    .line 1638
+    .line 1653
     invoke-virtual {v2}, Landroid/media/MediaCodec;->release()V
 
-    .line 1639
+    .line 1654
     iget-object v0, v1, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->extractor:Landroid/media/MediaExtractor;
 
     invoke-virtual {v0}, Landroid/media/MediaExtractor;->release()V
@@ -922,7 +922,7 @@
     :catchall_0
     move-exception v0
 
-    .line 1634
+    .line 1649
     :try_start_3
     monitor-exit v5
     :try_end_3
@@ -936,7 +936,7 @@
     :catch_0
     move-exception v0
 
-    .line 1641
+    .line 1656
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_f
@@ -948,15 +948,15 @@
 .method public destroy()V
     .locals 2
 
-    .line 1660
+    .line 1675
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->waveformLoader:Lorg/telegram/ui/Stories/recorder/FfmpegAudioWaveformLoader;
 
     if-eqz v0, :cond_0
 
-    .line 1661
+    .line 1676
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/FfmpegAudioWaveformLoader;->destroy()V
 
-    .line 1663
+    .line 1678
     :cond_0
     sget-object v0, Lorg/telegram/messenger/Utilities;->phoneBookQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -966,18 +966,18 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->cancelRunnable(Ljava/lang/Runnable;)V
 
-    .line 1664
+    .line 1679
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->lock:Ljava/lang/Object;
 
     monitor-enter v0
 
     const/4 v1, 0x1
 
-    .line 1665
+    .line 1680
     :try_start_0
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->stop:Z
 
-    .line 1666
+    .line 1681
     monitor-exit v0
 
     return-void
@@ -995,7 +995,7 @@
 .method public getBar(I)S
     .locals 1
 
-    .line 1674
+    .line 1689
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->data:[S
 
     aget-short p1, v0, p1
@@ -1006,7 +1006,7 @@
 .method public getCount()I
     .locals 1
 
-    .line 1682
+    .line 1697
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->count:I
 
     return v0
@@ -1015,7 +1015,7 @@
 .method public getLoadedCount()I
     .locals 1
 
-    .line 1678
+    .line 1693
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->loaded:I
 
     return v0
@@ -1024,7 +1024,7 @@
 .method public getMaxBar()S
     .locals 1
 
-    .line 1670
+    .line 1685
     iget-short v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;->max:S
 
     return v0

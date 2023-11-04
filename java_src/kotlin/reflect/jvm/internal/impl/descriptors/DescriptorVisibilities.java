@@ -40,16 +40,16 @@ public class DescriptorVisibilities {
     /* JADX WARN: Removed duplicated region for block: B:26:0x0047  */
     /* JADX WARN: Removed duplicated region for block: B:27:0x004a  */
     /* JADX WARN: Removed duplicated region for block: B:29:0x004f  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x0054  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0057  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0066  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x0070  */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x007f  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0085  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0055  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x005d  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x0062  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0067  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0071  */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x0077  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0082  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0088  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -123,67 +123,67 @@ public class DescriptorVisibilities {
             r4[r6] = r2
         L4c:
             switch(r8) {
-                case 2: goto L75;
-                case 3: goto L75;
-                case 4: goto L70;
-                case 5: goto L70;
-                case 6: goto L6b;
-                case 7: goto L6b;
-                case 8: goto L66;
-                case 9: goto L66;
-                case 10: goto L61;
-                case 11: goto L61;
-                case 12: goto L5c;
-                case 13: goto L5c;
-                case 14: goto L57;
-                case 15: goto L54;
-                case 16: goto L79;
+                case 2: goto L77;
+                case 3: goto L77;
+                case 4: goto L71;
+                case 5: goto L71;
+                case 6: goto L6c;
+                case 7: goto L6c;
+                case 8: goto L67;
+                case 9: goto L67;
+                case 10: goto L62;
+                case 11: goto L62;
+                case 12: goto L5d;
+                case 13: goto L5d;
+                case 14: goto L58;
+                case 15: goto L55;
+                case 16: goto L7c;
                 default: goto L4f;
             }
         L4f:
             java.lang.String r2 = "isVisible"
             r4[r3] = r2
-            goto L79
-        L54:
+            goto L7c
+        L55:
             r4[r3] = r2
-            goto L79
-        L57:
+            goto L7c
+        L58:
             java.lang.String r2 = "isPrivate"
             r4[r3] = r2
-            goto L79
-        L5c:
+            goto L7c
+        L5d:
             java.lang.String r2 = "compare"
             r4[r3] = r2
-            goto L79
-        L61:
+            goto L7c
+        L62:
             java.lang.String r2 = "compareLocal"
             r4[r3] = r2
-            goto L79
-        L66:
+            goto L7c
+        L67:
             java.lang.String r2 = "findInvisibleMember"
             r4[r3] = r2
-            goto L79
-        L6b:
+            goto L7c
+        L6c:
             java.lang.String r2 = "inSameFile"
             r4[r3] = r2
-            goto L79
-        L70:
+            goto L7c
+        L71:
             java.lang.String r2 = "isVisibleWithAnyReceiver"
             r4[r3] = r2
-            goto L79
-        L75:
+            goto L7c
+        L77:
             java.lang.String r2 = "isVisibleIgnoringReceiver"
             r4[r3] = r2
-        L79:
+        L7c:
             java.lang.String r1 = java.lang.String.format(r1, r4)
-            if (r8 == r0) goto L85
+            if (r8 == r0) goto L88
             java.lang.IllegalArgumentException r8 = new java.lang.IllegalArgumentException
             r8.<init>(r1)
-            goto L8a
-        L85:
+            goto L8d
+        L88:
             java.lang.IllegalStateException r8 = new java.lang.IllegalStateException
             r8.<init>(r1)
-        L8a:
+        L8d:
             throw r8
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlin.reflect.jvm.internal.impl.descriptors.DescriptorVisibilities.$$$reportNull$$$0(int):void");

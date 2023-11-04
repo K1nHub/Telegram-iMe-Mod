@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda25;->f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$if6aSg5asskCQl4LKI4yorSGyJw(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$2T97tMuteZje11o-iwt73leSnj8(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;)V
 
     return-void
 .end method

@@ -34,13 +34,9 @@
 
 .field public static SAFETYNET_KEY:Ljava/lang/String; = null
 
-.field public static SMS_HASH:Ljava/lang/String; = null
-
 .field public static USE_CLOUD_STRINGS:Z = true
 
 .field private static betaApp:Ljava/lang/Boolean;
-
-.field private static standaloneApp:Ljava/lang/Boolean;
 
 
 # direct methods
@@ -68,12 +64,12 @@
     :goto_0
     sput-boolean v0, Lorg/telegram/messenger/BuildVars;->NO_SCOPED_STORAGE:Z
 
-    const/16 v0, 0xf56
+    const/16 v0, 0xfd8
 
     .line 32
     sput v0, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION:I
 
-    const-string v0, "10.1.1"
+    const-string v0, "10.2.0"
 
     .line 33
     sput-object v0, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION_STRING:Ljava/lang/String;
@@ -93,61 +89,35 @@
     .line 38
     sput-object v0, Lorg/telegram/messenger/BuildVars;->SAFETYNET_KEY:Ljava/lang/String;
 
-    .line 39
-    invoke-static {}, Lorg/telegram/messenger/BuildVars;->isStandaloneApp()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    const-string/jumbo v0, "w0lkcmTZkKh"
-
-    goto :goto_1
-
-    :cond_1
-    sget-boolean v0, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
-
-    if-eqz v0, :cond_2
-
-    const-string v0, "O2P2z+/jBpJ"
-
-    goto :goto_1
-
-    :cond_2
-    const-string/jumbo v0, "oLeq9AcOZkT"
-
-    :goto_1
-    sput-object v0, Lorg/telegram/messenger/BuildVars;->SMS_HASH:Ljava/lang/String;
-
     const-string v0, "https://play.google.com/store/apps/details?id=org.telegram.messenger"
 
-    .line 40
+    .line 39
     sput-object v0, Lorg/telegram/messenger/BuildVars;->PLAYSTORE_APP_URL:Ljava/lang/String;
 
     const-string v0, "https://appgallery.huawei.com/app/C101184875"
 
-    .line 41
+    .line 40
     sput-object v0, Lorg/telegram/messenger/BuildVars;->HUAWEI_STORE_URL:Ljava/lang/String;
 
     const-string v0, "760348033671-81kmi3pi84p11ub8hp9a1funsv0rn2p9.apps.googleusercontent.com"
 
-    .line 42
+    .line 41
     sput-object v0, Lorg/telegram/messenger/BuildVars;->GOOGLE_AUTH_CLIENT_ID:Ljava/lang/String;
 
     const-string v0, "101184875"
 
-    .line 44
+    .line 43
     sput-object v0, Lorg/telegram/messenger/BuildVars;->HUAWEI_APP_ID:Ljava/lang/String;
 
-    .line 47
+    .line 46
     sput-boolean v2, Lorg/telegram/messenger/BuildVars;->IS_BILLING_UNAVAILABLE:Z
 
-    .line 50
+    .line 49
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_3
 
-    .line 51
+    .line 50
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string/jumbo v3, "systemConfig"
@@ -156,10 +126,10 @@
 
     move-result-object v0
 
-    .line 52
+    .line 51
     sget-boolean v3, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
-    if-nez v3, :cond_4
+    if-nez v3, :cond_2
 
     const-string/jumbo v4, "logsEnabled"
 
@@ -167,19 +137,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_1
 
-    goto :goto_2
+    goto :goto_1
 
-    :cond_3
+    :cond_1
     move v1, v2
 
-    :cond_4
-    :goto_2
+    :cond_2
+    :goto_1
     sput-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    .line 55
-    :cond_5
+    .line 54
+    :cond_3
     sput-boolean v2, Lorg/telegram/messenger/BuildVars;->CHECK_UPDATES:Z
 
     sput-boolean v2, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
@@ -188,7 +158,7 @@
 
     sput-boolean v2, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
-    .line 56
+    .line 55
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getVersionCode()I
 
     move-result v0
@@ -197,7 +167,7 @@
 
     sput v0, Lorg/telegram/messenger/BuildVars;->BUILD_VERSION:I
 
-    .line 57
+    .line 56
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getVersionName()Ljava/lang/String;
 
     move-result-object v0
@@ -206,25 +176,20 @@
 
     const v0, 0xa0f89
 
-    .line 58
+    .line 57
     sput v0, Lorg/telegram/messenger/BuildVars;->APP_ID:I
 
     const-string v0, "314703a39f45937dcdee8dbb8c2dacbb"
 
-    .line 59
+    .line 58
     sput-object v0, Lorg/telegram/messenger/BuildVars;->APP_HASH:Ljava/lang/String;
 
     const-string v0, ""
 
-    .line 60
+    .line 59
     sput-object v0, Lorg/telegram/messenger/BuildVars;->SAFETYNET_KEY:Ljava/lang/String;
 
-    const-string v0, "+UbHfVTjSrJ"
-
-    .line 61
-    sput-object v0, Lorg/telegram/messenger/BuildVars;->SMS_HASH:Ljava/lang/String;
-
-    .line 62
+    .line 60
     sget-object v0, Lorg/telegram/messenger/BuildVars;->PLAYSTORE_APP_URL:Ljava/lang/String;
 
     const-string/jumbo v1, "org.telegram.messenger"
@@ -249,10 +214,18 @@
     return-void
 .end method
 
+.method public static getSmsHash()Ljava/lang/String;
+    .locals 1
+
+    const-string v0, "+UbHfVTjSrJ"
+
+    return-object v0
+.end method
+
 .method private static hasDirectCurrency()Z
     .locals 7
 
-    .line 76
+    .line 74
     invoke-static {}, Lorg/telegram/messenger/BillingController;->getInstance()Lorg/telegram/messenger/BillingController;
 
     move-result-object v0
@@ -271,7 +244,7 @@
 
     goto :goto_0
 
-    .line 79
+    .line 77
     :cond_0
     invoke-virtual {v0}, Lcom/android/billingclient/api/ProductDetails;->getSubscriptionOfferDetails()Ljava/util/List;
 
@@ -294,7 +267,7 @@
 
     check-cast v2, Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;
 
-    .line 80
+    .line 78
     invoke-virtual {v2}, Lcom/android/billingclient/api/ProductDetails$SubscriptionOfferDetails;->getPricingPhases()Lcom/android/billingclient/api/ProductDetails$PricingPhases;
 
     move-result-object v2
@@ -320,7 +293,7 @@
 
     check-cast v3, Lcom/android/billingclient/api/ProductDetails$PricingPhase;
 
-    .line 81
+    .line 79
     sget v4, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -346,7 +319,7 @@
 
     check-cast v5, Ljava/lang/String;
 
-    .line 82
+    .line 80
     invoke-virtual {v3}, Lcom/android/billingclient/api/ProductDetails$PricingPhase;->getPriceCurrencyCode()Ljava/lang/String;
 
     move-result-object v6
@@ -369,12 +342,12 @@
 .method public static isBetaApp()Z
     .locals 3
 
-    .line 101
+    .line 91
     sget-object v0, Lorg/telegram/messenger/BuildVars;->betaApp:Ljava/lang/Boolean;
 
     if-nez v0, :cond_1
 
-    .line 102
+    .line 92
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     if-eqz v0, :cond_0
@@ -415,7 +388,7 @@
 
     sput-object v0, Lorg/telegram/messenger/BuildVars;->betaApp:Ljava/lang/Boolean;
 
-    .line 104
+    .line 94
     :cond_1
     sget-object v0, Lorg/telegram/messenger/BuildVars;->betaApp:Ljava/lang/Boolean;
 
@@ -429,68 +402,8 @@
 .method public static isHuaweiStoreApp()Z
     .locals 1
 
-    .line 109
+    .line 99
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isHuaweiStoreBuild()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static isStandaloneApp()Z
-    .locals 3
-
-    .line 93
-    sget-object v0, Lorg/telegram/messenger/BuildVars;->standaloneApp:Ljava/lang/Boolean;
-
-    if-nez v0, :cond_1
-
-    .line 94
-    sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
-
-    if-eqz v0, :cond_0
-
-    const-string/jumbo v0, "org.telegram.messenger.web"
-
-    const-string/jumbo v1, "org.telegram.messenger"
-
-    const-string v2, "com.iMe.android"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
-
-    invoke-virtual {v1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    const/4 v0, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    sput-object v0, Lorg/telegram/messenger/BuildVars;->standaloneApp:Ljava/lang/Boolean;
-
-    .line 96
-    :cond_1
-    sget-object v0, Lorg/telegram/messenger/BuildVars;->standaloneApp:Ljava/lang/Boolean;
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 

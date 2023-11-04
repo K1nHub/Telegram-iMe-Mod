@@ -70,7 +70,7 @@
 
     move-object/from16 v0, p1
 
-    const-string v1, "it"
+    const-string/jumbo v1, "it"
 
     .line 69
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

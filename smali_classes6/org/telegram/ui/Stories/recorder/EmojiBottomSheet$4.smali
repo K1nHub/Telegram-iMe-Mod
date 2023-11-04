@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 1346
+    .line 1344
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$4;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$4;->val$context:Landroid/content/Context;
@@ -39,7 +39,7 @@
 .method public bindView(Landroid/view/View;II)V
     .locals 0
 
-    .line 1370
+    .line 1368
     check-cast p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$IPage;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$IPage;->bind(I)V
@@ -54,7 +54,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 1354
+    .line 1352
     new-instance p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$GifPage;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$4;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
@@ -65,7 +65,7 @@
 
     return-object p1
 
-    .line 1356
+    .line 1354
     :cond_0
     new-instance p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$Page;
 

@@ -10,21 +10,21 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzh extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzh> CREATOR = new zzg();
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     private final int height;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
 
     /* renamed from: id */
     private final int f252id;
-    @SafeParcelable.Field(m1089id = 5)
+    @SafeParcelable.Field(m1090id = 5)
     private final int rotation;
-    @SafeParcelable.Field(m1089id = 4)
+    @SafeParcelable.Field(m1090id = 4)
     private final long timestampMillis;
-    @SafeParcelable.Field(m1089id = 1)
+    @SafeParcelable.Field(m1090id = 1)
     private final int width;
 
     @SafeParcelable.Constructor
-    public zzh(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) int i2, @SafeParcelable.Param(m1088id = 3) int i3, @SafeParcelable.Param(m1088id = 4) long j, @SafeParcelable.Param(m1088id = 5) int i4) {
+    public zzh(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) int i2, @SafeParcelable.Param(m1089id = 3) int i3, @SafeParcelable.Param(m1089id = 4) long j, @SafeParcelable.Param(m1089id = 5) int i4) {
         this.width = i;
         this.height = i2;
         this.f252id = i3;

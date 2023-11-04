@@ -26,14 +26,14 @@ public final class TwitterInteractor {
     }
 
     public final Observable<Result<List<TweetInfo>>> getUserTweets(long j, long j2, Long l) {
-        Observable<Result<List<TweetInfo>>> subscribeOn = this.twitterRepository.getUserTweets(j, j2, l).startWith((Observable<Result<List<TweetInfo>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<List<TweetInfo>>> subscribeOn = this.twitterRepository.getUserTweets(j, j2, l).startWith((Observable<Result<List<TweetInfo>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "twitterRepository\n      …(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<List<TwitterUserInfo>>> searchUsersByUsername(String usernameQuery, int i) {
         Intrinsics.checkNotNullParameter(usernameQuery, "usernameQuery");
-        Observable<Result<List<TwitterUserInfo>>> subscribeOn = this.twitterRepository.searchUsersByUsername(usernameQuery, i).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<List<TwitterUserInfo>>> subscribeOn = this.twitterRepository.searchUsersByUsername(usernameQuery, i).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "twitterRepository\n      …(schedulersProvider.io())");
         return subscribeOn;
     }

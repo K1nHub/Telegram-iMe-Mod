@@ -36,19 +36,19 @@ public class zznl {
                 sb.append(str);
                 sb.append(" version is ");
                 sb.append(str2);
-                gmsLogger.m1093v("LibraryVersion", sb.toString());
+                gmsLogger.m1094v("LibraryVersion", sb.toString());
             } else {
                 GmsLogger gmsLogger2 = zzass;
                 String valueOf = String.valueOf(str);
-                gmsLogger2.m1097e("LibraryVersion", valueOf.length() != 0 ? "Failed to get app version for libraryName: ".concat(valueOf) : new String("Failed to get app version for libraryName: "));
+                gmsLogger2.m1098e("LibraryVersion", valueOf.length() != 0 ? "Failed to get app version for libraryName: ".concat(valueOf) : new String("Failed to get app version for libraryName: "));
             }
         } catch (IOException e) {
             GmsLogger gmsLogger3 = zzass;
             String valueOf2 = String.valueOf(str);
-            gmsLogger3.m1096e("LibraryVersion", valueOf2.length() != 0 ? "Failed to get app version for libraryName: ".concat(valueOf2) : new String("Failed to get app version for libraryName: "), e);
+            gmsLogger3.m1097e("LibraryVersion", valueOf2.length() != 0 ? "Failed to get app version for libraryName: ".concat(valueOf2) : new String("Failed to get app version for libraryName: "), e);
         }
         if (str2 == null) {
-            zzass.m1099d("LibraryVersion", ".properties file is dropped during release process. Failure to read app version isexpected druing Google internal testing where locally-built libraries are used");
+            zzass.m1100d("LibraryVersion", ".properties file is dropped during release process. Failure to read app version isexpected druing Google internal testing where locally-built libraries are used");
             str2 = "UNKNOWN";
         }
         this.zzasu.put(str, str2);

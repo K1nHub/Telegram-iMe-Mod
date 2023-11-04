@@ -68,7 +68,7 @@ final class StreamFormatChunk implements AviChunk {
         if (i == 1) {
             return parseWaveFormatEx(parsableByteArray);
         }
-        Log.m1106w(TAG, "Ignoring strf box for unsupported track type: " + Util.getTrackTypeString(i));
+        Log.m1107w(TAG, "Ignoring strf box for unsupported track type: " + Util.getTrackTypeString(i));
         return null;
     }
 
@@ -84,7 +84,7 @@ final class StreamFormatChunk implements AviChunk {
         int readLittleEndianInt3 = parsableByteArray.readLittleEndianInt();
         String mimeTypeFromCompression = getMimeTypeFromCompression(readLittleEndianInt3);
         if (mimeTypeFromCompression == null) {
-            Log.m1106w(TAG, "Ignoring track with unsupported compression " + readLittleEndianInt3);
+            Log.m1107w(TAG, "Ignoring track with unsupported compression " + readLittleEndianInt3);
             return null;
         }
         Format.Builder builder = new Format.Builder();
@@ -96,7 +96,7 @@ final class StreamFormatChunk implements AviChunk {
         int readLittleEndianUnsignedShort = parsableByteArray.readLittleEndianUnsignedShort();
         String mimeTypeFromTag = getMimeTypeFromTag(readLittleEndianUnsignedShort);
         if (mimeTypeFromTag == null) {
-            Log.m1106w(TAG, "Ignoring track with unsupported format tag " + readLittleEndianUnsignedShort);
+            Log.m1107w(TAG, "Ignoring track with unsupported format tag " + readLittleEndianUnsignedShort);
             return null;
         }
         int readLittleEndianUnsignedShort2 = parsableByteArray.readLittleEndianUnsignedShort();
@@ -112,7 +112,7 @@ final class StreamFormatChunk implements AviChunk {
             builder.setPcmEncoding(pcmEncoding);
         }
         if ("audio/mp4a-latm".equals(mimeTypeFromTag) && readLittleEndianUnsignedShort3 > 0) {
-            builder.setInitializationData(ImmutableList.m1053of(bArr));
+            builder.setInitializationData(ImmutableList.m1054of(bArr));
         }
         return new StreamFormatChunk(builder.build());
     }

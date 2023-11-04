@@ -43,7 +43,7 @@ public final class StakingApprovalPrepareRequest {
     }
 
     public int hashCode() {
-        return (ProfileData$$ExternalSyntheticBackport0.m1017m(this.stakingId) * 31) + this.token.hashCode();
+        return (ProfileData$$ExternalSyntheticBackport0.m1018m(this.stakingId) * 31) + this.token.hashCode();
     }
 
     public String toString() {

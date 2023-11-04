@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;I)V
     .locals 0
 
-    .line 5171
+    .line 5175
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$46;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0, p2, p3}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;-><init>(Landroid/content/Context;I)V
@@ -35,7 +35,7 @@
 .method public onEnd()V
     .locals 2
 
-    .line 5174
+    .line 5178
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$46;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x0
@@ -48,7 +48,7 @@
 .method protected onStart()V
     .locals 2
 
-    .line 5179
+    .line 5183
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$46;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x1

@@ -51,7 +51,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda49;->f$4:Lorg/telegram/messenger/Utilities$Callback;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$k6MwvUGXAQ-4TIHQAIqq7EqghXQ(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLRPC$ChannelParticipant;Lorg/telegram/tgnet/TLRPC$ChatParticipant;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/messenger/Utilities$Callback;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$6aJ8VyU4nqxTRTzdqPAnEbqOpUU(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLRPC$ChannelParticipant;Lorg/telegram/tgnet/TLRPC$ChatParticipant;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
 .end method

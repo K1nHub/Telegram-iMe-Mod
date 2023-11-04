@@ -66,10 +66,10 @@
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/Runnable;)V
     .locals 8
 
-    .line 1342
+    .line 1343
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 1325
+    .line 1326
     new-instance p1, Landroid/text/TextPaint;
 
     const/4 v0, 0x1
@@ -78,14 +78,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->topTextPaint:Landroid/text/TextPaint;
 
-    .line 1326
+    .line 1327
     new-instance p1, Landroid/text/TextPaint;
 
     invoke-direct {p1, v0}, Landroid/text/TextPaint;-><init>(I)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->bottomTextPaint:Landroid/text/TextPaint;
 
-    .line 1335
+    .line 1336
     new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v7, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -102,14 +102,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->showT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 1389
+    .line 1390
     new-instance p1, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->hide:Ljava/lang/Runnable;
 
-    .line 1343
+    .line 1344
     iput-object p2, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->requestFilterView:Ljava/lang/Runnable;
 
     return-void
@@ -120,10 +120,10 @@
 
     const/4 v0, 0x0
 
-    .line 1390
+    .line 1391
     iput-boolean v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->shown:Z
 
-    .line 1391
+    .line 1392
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -132,7 +132,7 @@
 .method private updateBottomText()V
     .locals 11
 
-    .line 1376
+    .line 1377
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->filterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     const/4 v1, 0x0
@@ -148,7 +148,7 @@
 
     move-result v0
 
-    .line 1377
+    .line 1378
     :goto_0
     new-instance v10, Landroid/text/StaticLayout;
 
@@ -194,7 +194,7 @@
 
     iput-object v10, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->bottomText:Landroid/text/StaticLayout;
 
-    .line 1378
+    .line 1379
     invoke-virtual {v10}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v0
@@ -217,7 +217,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->bottomTextWidth:F
 
-    .line 1379
+    .line 1380
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->bottomText:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
@@ -235,7 +235,7 @@
     :cond_2
     iput v1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->bottomTextLeft:F
 
-    .line 1380
+    .line 1381
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -246,7 +246,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 1471
+    .line 1472
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->showT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->shown:Z
@@ -261,7 +261,7 @@
 
     if-lez v1, :cond_0
 
-    .line 1473
+    .line 1474
     iget-object v1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->topText:Landroid/text/StaticLayout;
 
     if-eqz v1, :cond_0
@@ -274,7 +274,7 @@
 
     const/4 v4, 0x0
 
-    .line 1474
+    .line 1475
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v1
@@ -299,10 +299,10 @@
 
     invoke-virtual/range {v2 .. v8}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 1476
+    .line 1477
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1477
+    .line 1478
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -333,18 +333,18 @@
 
     invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1478
+    .line 1479
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->topText:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1479
+    .line 1480
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1481
+    .line 1482
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1482
+    .line 1483
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -381,15 +381,15 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1483
+    .line 1484
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->bottomText:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1484
+    .line 1485
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1486
+    .line 1487
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_0
@@ -399,27 +399,27 @@
 .method protected onMeasure(II)V
     .locals 10
 
-    .line 1357
+    .line 1358
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 1358
+    .line 1359
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 1356
+    .line 1357
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
 
-    .line 1361
+    .line 1362
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->topTextPaint:Landroid/text/TextPaint;
 
     const/4 p2, -0x1
 
     invoke-virtual {p1, p2}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 1362
+    .line 1363
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->topTextPaint:Landroid/text/TextPaint;
 
     const/16 v0, 0x8
@@ -436,7 +436,7 @@
 
     invoke-virtual {p1, v0, v1, v1, v2}, Landroid/text/TextPaint;->setShadowLayer(FFFI)V
 
-    .line 1363
+    .line 1364
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->topTextPaint:Landroid/text/TextPaint;
 
     const/16 v0, 0x22
@@ -449,12 +449,12 @@
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 1364
+    .line 1365
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->bottomTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {p1, p2}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 1365
+    .line 1366
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->bottomTextPaint:Landroid/text/TextPaint;
 
     const/16 p2, 0xc
@@ -467,7 +467,7 @@
 
     invoke-virtual {p1, p2, v1, v1, v2}, Landroid/text/TextPaint;->setShadowLayer(FFFI)V
 
-    .line 1366
+    .line 1367
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->bottomTextPaint:Landroid/text/TextPaint;
 
     const/16 p2, 0x3a
@@ -480,12 +480,12 @@
 
     invoke-virtual {p1, p2}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 1368
+    .line 1369
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->topText:Landroid/text/StaticLayout;
 
     if-nez p1, :cond_2
 
-    .line 1369
+    .line 1370
     new-instance p1, Landroid/text/StaticLayout;
 
     sget p2, Lorg/telegram/messenger/R$string;->Enhance:I
@@ -516,7 +516,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->topText:Landroid/text/StaticLayout;
 
-    .line 1370
+    .line 1371
     invoke-virtual {p1}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result p1
@@ -539,7 +539,7 @@
     :goto_0
     iput p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->topTextWidth:F
 
-    .line 1371
+    .line 1372
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->topText:Landroid/text/StaticLayout;
 
     invoke-virtual {p1}, Landroid/text/StaticLayout;->getLineCount()I
@@ -564,7 +564,7 @@
 .method public onTouch(Landroid/view/MotionEvent;)Z
     .locals 10
 
-    .line 1395
+    .line 1396
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->allowTouch:Z
 
     const/4 v1, 0x0
@@ -579,43 +579,43 @@
 
     if-ne v0, v2, :cond_d
 
-    .line 1396
+    .line 1397
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 1398
+    .line 1399
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->tracking:Z
 
-    .line 1399
+    .line 1400
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->downTime:J
 
-    .line 1400
+    .line 1401
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->lastTouchX:F
 
-    .line 1401
+    .line 1402
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->lastTouchY:F
 
-    .line 1402
+    .line 1403
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->filterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     if-eqz p1, :cond_0
 
-    .line 1403
+    .line 1404
     invoke-virtual {p1}, Lorg/telegram/ui/Components/PhotoFilterView;->getEnhanceValue()F
 
     move-result p1
@@ -632,7 +632,7 @@
 
     if-ne v0, v4, :cond_a
 
-    .line 1407
+    .line 1408
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -641,12 +641,12 @@
 
     move-result p1
 
-    .line 1408
+    .line 1409
     iget-boolean v5, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->tracking:Z
 
     if-nez v5, :cond_2
 
-    .line 1409
+    .line 1410
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v5
@@ -669,7 +669,7 @@
 
     sub-float/2addr v5, p1
 
-    .line 1410
+    .line 1411
     invoke-static {v5}, Ljava/lang/Math;->abs(F)F
 
     move-result v5
@@ -690,7 +690,7 @@
 
     sub-float/2addr v5, v0
 
-    .line 1411
+    .line 1412
     invoke-static {v5}, Ljava/lang/Math;->abs(F)F
 
     move-result v5
@@ -701,53 +701,53 @@
 
     if-lez v5, :cond_2
 
-    .line 1413
+    .line 1414
     iput-boolean v2, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->tracking:Z
 
-    .line 1415
+    .line 1416
     iget-object v5, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->hide:Ljava/lang/Runnable;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1416
+    .line 1417
     iput-boolean v2, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->shown:Z
 
-    .line 1417
+    .line 1418
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 1421
+    .line 1422
     :cond_2
     iget-boolean v5, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->tracking:Z
 
     if-eqz v5, :cond_9
 
-    .line 1422
+    .line 1423
     iget v5, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->lastTouchX:F
 
     sub-float v5, v0, v5
 
-    .line 1423
+    .line 1424
     iget-object v6, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->filterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     if-nez v6, :cond_3
 
-    .line 1424
+    .line 1425
     iget-object v6, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->requestFilterView:Ljava/lang/Runnable;
 
     invoke-interface {v6}, Ljava/lang/Runnable;->run()V
 
-    .line 1426
+    .line 1427
     :cond_3
     iget-object v6, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->filterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     if-nez v6, :cond_4
 
-    .line 1427
+    .line 1428
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->tracking:Z
 
     return v1
 
-    .line 1430
+    .line 1431
     :cond_4
     sget-object v7, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -759,7 +759,7 @@
 
     mul-float/2addr v7, v8
 
-    .line 1431
+    .line 1432
     invoke-virtual {v6}, Lorg/telegram/ui/Components/PhotoFilterView;->getEnhanceValue()F
 
     move-result v6
@@ -772,7 +772,7 @@
 
     const/4 v8, 0x0
 
-    .line 1432
+    .line 1433
     invoke-static {v5, v7, v8}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v5
@@ -781,7 +781,7 @@
 
     mul-float v8, v5, v7
 
-    .line 1433
+    .line 1434
     invoke-static {v8}, Ljava/lang/Math;->round(F)I
 
     move-result v8
@@ -808,14 +808,14 @@
 
     if-nez v8, :cond_6
 
-    .line 1436
+    .line 1437
     :cond_5
     :try_start_0
     invoke-virtual {p0, v3, v2}, Landroid/view/View;->performHapticFeedback(II)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1438
+    .line 1439
     :catch_0
     iput v5, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->lastVibrateValue:F
 
@@ -824,7 +824,7 @@
     :cond_6
     sub-int/2addr v8, v7
 
-    .line 1439
+    .line 1440
     invoke-static {v8}, Ljava/lang/Math;->abs(I)I
 
     move-result v3
@@ -847,31 +847,31 @@
 
     const/16 v3, 0x9
 
-    .line 1441
+    .line 1442
     :try_start_1
     invoke-virtual {p0, v3, v2}, Landroid/view/View;->performHapticFeedback(II)Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1443
+    .line 1444
     :catch_1
     iput v5, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->lastVibrateValue:F
 
-    .line 1445
+    .line 1446
     :cond_8
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->filterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/PhotoFilterView;->setEnhanceValue(F)V
 
-    .line 1446
+    .line 1447
     invoke-direct {p0}, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->updateBottomText()V
 
-    .line 1449
+    .line 1450
     :cond_9
     iput v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->lastTouchX:F
 
-    .line 1450
+    .line 1451
     iput p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->lastTouchY:F
 
     goto :goto_2
@@ -881,28 +881,28 @@
 
     if-ne v0, v3, :cond_e
 
-    .line 1452
+    .line 1453
     :cond_b
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->tracking:Z
 
     const-wide/16 v2, -0x1
 
-    .line 1453
+    .line 1454
     iput-wide v2, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->downTime:J
 
-    .line 1454
+    .line 1455
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->filterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     if-eqz p1, :cond_c
 
-    .line 1455
+    .line 1456
     invoke-virtual {p1}, Lorg/telegram/ui/Components/PhotoFilterView;->getEnhanceValue()F
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->lastVibrateValue:F
 
-    .line 1457
+    .line 1458
     :cond_c
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->hide:Ljava/lang/Runnable;
 
@@ -912,16 +912,16 @@
 
     return v1
 
-    .line 1461
+    .line 1462
     :cond_d
     iget-boolean p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->shown:Z
 
     if-eqz p1, :cond_e
 
-    .line 1462
+    .line 1463
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->shown:Z
 
-    .line 1463
+    .line 1464
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_e
@@ -932,7 +932,7 @@
 .method public setAllowTouch(Z)V
     .locals 0
 
-    .line 1351
+    .line 1352
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->allowTouch:Z
 
     return-void
@@ -941,7 +941,7 @@
 .method public setFilterView(Lorg/telegram/ui/Components/PhotoFilterView;)V
     .locals 0
 
-    .line 1347
+    .line 1348
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->filterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     return-void

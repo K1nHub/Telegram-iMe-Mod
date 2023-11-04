@@ -1,7 +1,6 @@
 package org.telegram.messenger;
 
 import android.content.SharedPreferences;
-import android.os.BatteryManager;
 import android.os.Build;
 import androidx.core.math.MathUtils;
 import java.util.ArrayList;
@@ -9,8 +8,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.Utilities;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.AnimatedEmojiDrawable;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.AnimatedEmojiDrawable;
 import org.telegram.tgnet.TLRPC$JSONValue;
 import org.telegram.tgnet.TLRPC$TL_jsonArray;
 import org.telegram.tgnet.TLRPC$TL_jsonNumber;
@@ -80,13 +79,41 @@ public class LiteMode {
         return value;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:5:0x0010, code lost:
+        if ((r0 - org.telegram.messenger.LiteMode.lastBatteryLevelChecked) > 12000) goto L8;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
     public static int getBatteryLevel() {
-        BatteryManager batteryManager;
-        if ((lastBatteryLevelCached < 0 || System.currentTimeMillis() - lastBatteryLevelChecked > 12000) && (batteryManager = (BatteryManager) ApplicationLoader.applicationContext.getSystemService("batterymanager")) != null) {
-            lastBatteryLevelCached = batteryManager.getIntProperty(4);
-            lastBatteryLevelChecked = System.currentTimeMillis();
-        }
-        return lastBatteryLevelCached;
+        /*
+            int r0 = org.telegram.messenger.LiteMode.lastBatteryLevelCached
+            if (r0 < 0) goto L13
+            long r0 = java.lang.System.currentTimeMillis()
+            long r2 = org.telegram.messenger.LiteMode.lastBatteryLevelChecked
+            long r2 = r0 - r2
+            r4 = 12000(0x2ee0, double:5.929E-320)
+            int r2 = (r2 > r4 ? 1 : (r2 == r4 ? 0 : -1))
+            if (r2 <= 0) goto L2a
+            goto L15
+        L13:
+            r0 = 0
+        L15:
+            android.content.Context r2 = org.telegram.messenger.ApplicationLoader.applicationContext
+            java.lang.String r3 = "batterymanager"
+            java.lang.Object r2 = r2.getSystemService(r3)
+            android.os.BatteryManager r2 = (android.os.BatteryManager) r2
+            if (r2 == 0) goto L2a
+            r3 = 4
+            int r2 = r2.getIntProperty(r3)
+            org.telegram.messenger.LiteMode.lastBatteryLevelCached = r2
+            org.telegram.messenger.LiteMode.lastBatteryLevelChecked = r0
+        L2a:
+            int r0 = org.telegram.messenger.LiteMode.lastBatteryLevelCached
+            return r0
+        */
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.LiteMode.getBatteryLevel():int");
     }
 
     private static int preprocessFlag(int i) {
@@ -144,7 +171,7 @@ public class LiteMode {
                         PRESET_MEDIUM = (int) ((TLRPC$TL_jsonNumber) arrayList.get(1)).value;
                         PRESET_HIGH = (int) ((TLRPC$TL_jsonNumber) arrayList.get(2)).value;
                     } catch (Exception e) {
-                        FileLog.m97e(e);
+                        FileLog.m99e(e);
                     }
                 }
             }
@@ -157,7 +184,7 @@ public class LiteMode {
                         BATTERY_MEDIUM = (int) ((TLRPC$TL_jsonNumber) arrayList2.get(1)).value;
                         BATTERY_HIGH = (int) ((TLRPC$TL_jsonNumber) arrayList2.get(2)).value;
                     } catch (Exception e2) {
-                        FileLog.m97e(e2);
+                        FileLog.m99e(e2);
                     }
                 }
             }

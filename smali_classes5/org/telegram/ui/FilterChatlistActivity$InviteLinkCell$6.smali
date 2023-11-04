@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;Landroid/view/View;Landroid/widget/FrameLayout;Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
     .locals 0
 
-    .line 1247
+    .line 1248
     iput-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;->this$0:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;
 
     iput-object p2, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;->val$dimView:Landroid/view/View;
@@ -50,14 +50,14 @@
 .method public onDismiss()V
     .locals 3
 
-    .line 1250
+    .line 1251
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;->this$0:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->access$2602(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    .line 1251
+    .line 1252
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;->val$dimView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1252
+    .line 1253
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;->val$dimView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;

@@ -35,9 +35,9 @@ import org.koin.core.scope.Scope;
 import org.koin.java.KoinJavaComponent;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkContentWordSwitcherBinding;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: BackupWordSwitcher.kt */
 /* renamed from: com.iMe.ui.custom.backup.switcher.BackupWordSwitcher */
 /* loaded from: classes3.dex */
@@ -161,9 +161,9 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
         ForkContentWordSwitcherBinding forkContentWordSwitcherBinding = this.binding;
         ConstraintLayout constraintLayout = forkContentWordSwitcherBinding.constraintWords;
         GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setCornerRadius(AndroidUtilities.m103dp(9.0f));
+        gradientDrawable.setCornerRadius(AndroidUtilities.m105dp(9.0f));
         gradientDrawable.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-        gradientDrawable.setStroke(AndroidUtilities.m103dp(1.0f), Theme.getColor(Theme.key_chats_actionBackground));
+        gradientDrawable.setStroke(AndroidUtilities.m105dp(1.0f), Theme.getColor(Theme.key_chats_actionBackground));
         constraintLayout.setBackground(gradientDrawable);
         forkContentWordSwitcherBinding.textTitle.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         ConstraintLayout constraintWords = forkContentWordSwitcherBinding.constraintWords;
@@ -204,7 +204,7 @@ public final class BackupWordSwitcher extends MvpFrameLayout implements KoinComp
     }
 
     public void setupTitle(int i) {
-        this.binding.textTitle.setText(getResourceManager().getString(C3630R.string.wallet_eth_backup_confirm_word_description, Integer.valueOf(i)));
+        this.binding.textTitle.setText(getResourceManager().getString(C3634R.string.wallet_eth_backup_confirm_word_description, Integer.valueOf(i)));
     }
 
     public void setupBackupWords(List<String> words) {

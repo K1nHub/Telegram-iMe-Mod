@@ -252,7 +252,7 @@ public final class LazyJavaPackageScope extends LazyJavaStaticScope {
 
     @Override // kotlin.reflect.jvm.internal.impl.resolve.scopes.MemberScopeImpl, kotlin.reflect.jvm.internal.impl.resolve.scopes.ResolutionScope
     /* renamed from: getContributedClassifier */
-    public ClassDescriptor mo2048getContributedClassifier(Name name, LookupLocation location) {
+    public ClassDescriptor mo2053getContributedClassifier(Name name, LookupLocation location) {
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(location, "location");
         return findClassifier(name, null);
@@ -335,8 +335,8 @@ public final class LazyJavaPackageScope extends LazyJavaStaticScope {
         return emptySet;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:19:0x0061 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0034 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0063 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0035 A[SYNTHETIC] */
     @Override // kotlin.reflect.jvm.internal.impl.load.java.lazy.descriptors.LazyJavaScope, kotlin.reflect.jvm.internal.impl.resolve.scopes.MemberScopeImpl, kotlin.reflect.jvm.internal.impl.resolve.scopes.ResolutionScope
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -354,24 +354,24 @@ public final class LazyJavaPackageScope extends LazyJavaStaticScope {
             int r0 = r0.getNON_SINGLETON_CLASSIFIERS_MASK()
             r0 = r0 | r1
             boolean r5 = r5.acceptsKinds(r0)
-            if (r5 != 0) goto L21
+            if (r5 != 0) goto L22
             java.util.List r5 = kotlin.collections.CollectionsKt.emptyList()
-            goto L66
-        L21:
+            goto L68
+        L22:
             kotlin.reflect.jvm.internal.impl.storage.NotNullLazyValue r5 = r4.getAllDescriptors()
             java.lang.Object r5 = r5.invoke()
             java.lang.Iterable r5 = (java.lang.Iterable) r5
             java.util.ArrayList r0 = new java.util.ArrayList
             r0.<init>()
             java.util.Iterator r5 = r5.iterator()
-        L34:
+        L35:
             boolean r1 = r5.hasNext()
-            if (r1 == 0) goto L65
+            if (r1 == 0) goto L67
             java.lang.Object r1 = r5.next()
             r2 = r1
             kotlin.reflect.jvm.internal.impl.descriptors.DeclarationDescriptor r2 = (kotlin.reflect.jvm.internal.impl.descriptors.DeclarationDescriptor) r2
             boolean r3 = r2 instanceof kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
-            if (r3 == 0) goto L5e
+            if (r3 == 0) goto L60
             kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor r2 = (kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor) r2
             kotlin.reflect.jvm.internal.impl.name.Name r2 = r2.getName()
             java.lang.String r3 = "it.name"
@@ -379,18 +379,18 @@ public final class LazyJavaPackageScope extends LazyJavaStaticScope {
             java.lang.Object r2 = r6.invoke(r2)
             java.lang.Boolean r2 = (java.lang.Boolean) r2
             boolean r2 = r2.booleanValue()
-            if (r2 == 0) goto L5e
+            if (r2 == 0) goto L60
             r2 = 1
-            goto L5f
-        L5e:
+            goto L61
+        L60:
             r2 = 0
-        L5f:
-            if (r2 == 0) goto L34
+        L61:
+            if (r2 == 0) goto L35
             r0.add(r1)
-            goto L34
-        L65:
+            goto L35
+        L67:
             r5 = r0
-        L66:
+        L68:
             return r5
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlin.reflect.jvm.internal.impl.load.java.lazy.descriptors.LazyJavaPackageScope.getContributedDescriptors(kotlin.reflect.jvm.internal.impl.resolve.scopes.DescriptorKindFilter, kotlin.jvm.functions.Function1):java.util.Collection");

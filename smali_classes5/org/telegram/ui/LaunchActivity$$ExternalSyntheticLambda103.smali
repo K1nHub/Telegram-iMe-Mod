@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda103;->f$1:Landroid/content/Intent;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$HnFzV9rad-_HbS1h6j5uv_CaMGA(Lorg/telegram/ui/LaunchActivity;Landroid/content/Intent;Z)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$Ywozmj1jZcL3PBgWR5aTHcUBL9E(Lorg/telegram/ui/LaunchActivity;Landroid/content/Intent;Z)V
 
     return-void
 .end method

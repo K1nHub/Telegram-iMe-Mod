@@ -10,7 +10,7 @@ import org.ton.tlb.TlbCodec;
 public final class BinTreeTlbConstructor<X> extends org.ton.tlb.TlbConstructor<BinTreeLeaf<X>> {
 
     /* renamed from: x */
-    private final TlbCodec<X> f2022x;
+    private final TlbCodec<X> f2034x;
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
     public /* bridge */ /* synthetic */ void storeTlb(CellBuilder cellBuilder, Object obj) {
@@ -21,18 +21,18 @@ public final class BinTreeTlbConstructor<X> extends org.ton.tlb.TlbConstructor<B
     public BinTreeTlbConstructor(TlbCodec<X> x) {
         super("bt_leaf$0 {X:Type} leaf:X = BinTree X;", null, 2, null);
         Intrinsics.checkNotNullParameter(x, "x");
-        this.f2022x = x;
+        this.f2034x = x;
     }
 
     public void storeTlb(CellBuilder cellBuilder, BinTreeLeaf<X> value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        this.f2022x.storeTlb(cellBuilder, value.getLeaf());
+        this.f2034x.storeTlb(cellBuilder, value.getLeaf());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public BinTreeLeaf<X> loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new BinTreeLeaf<>(this.f2022x.loadTlb(cellSlice));
+        return new BinTreeLeaf<>(this.f2034x.loadTlb(cellSlice));
     }
 }

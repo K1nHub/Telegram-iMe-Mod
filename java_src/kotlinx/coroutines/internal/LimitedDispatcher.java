@@ -28,8 +28,8 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Dela
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo2115scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
-        this.$$delegate_0.mo2115scheduleResumeAfterDelay(j, cancellableContinuation);
+    public void mo2120scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
+        this.$$delegate_0.mo2120scheduleResumeAfterDelay(j, cancellableContinuation);
     }
 
     public LimitedDispatcher(CoroutineDispatcher coroutineDispatcher, int i) {
@@ -43,13 +43,13 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Dela
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo2114dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo2119dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         Runnable obtainTaskOrDeallocateWorker;
         this.queue.addLast(runnable);
         if (runningWorkers$FU.get(this) >= this.parallelism || !tryAllocateWorker() || (obtainTaskOrDeallocateWorker = obtainTaskOrDeallocateWorker()) == null) {
             return;
         }
-        this.dispatcher.mo2114dispatch(this, new Worker(obtainTaskOrDeallocateWorker));
+        this.dispatcher.mo2119dispatch(this, new Worker(obtainTaskOrDeallocateWorker));
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
@@ -116,7 +116,7 @@ public final class LimitedDispatcher extends CoroutineDispatcher implements Dela
                 this.currentTask = obtainTaskOrDeallocateWorker;
                 i++;
                 if (i >= 16 && LimitedDispatcher.this.dispatcher.isDispatchNeeded(LimitedDispatcher.this)) {
-                    LimitedDispatcher.this.dispatcher.mo2114dispatch(LimitedDispatcher.this, this);
+                    LimitedDispatcher.this.dispatcher.mo2119dispatch(LimitedDispatcher.this, this);
                     return;
                 }
             }

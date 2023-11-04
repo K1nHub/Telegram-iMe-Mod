@@ -11,11 +11,11 @@ import kotlinx.serialization.encoding.CompositeEncoder;
 import kotlinx.serialization.internal.ByteArraySerializer;
 import kotlinx.serialization.internal.PluginExceptionsKt;
 import kotlinx.serialization.internal.SerializationConstructorMarker;
-import org.ton.p044tl.ByteString;
-import org.ton.p044tl.ByteStringSerializer;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.ByteString;
+import org.ton.p045tl.ByteStringSerializer;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: AdnlMessageQuery.kt */
 @Polymorphic
 @Serializable
@@ -87,7 +87,7 @@ public final class AdnlMessageQuery {
             return AdnlMessageQuery$$serializer.INSTANCE;
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter output, AdnlMessageQuery value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
@@ -95,7 +95,7 @@ public final class AdnlMessageQuery {
             TlWriter.writeBytes$default(output, value.getQuery(), 0, 0, 6, (Object) null);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public AdnlMessageQuery decode(TlReader input) {
             Intrinsics.checkNotNullParameter(input, "input");
             return new AdnlMessageQuery(input.readByteString(32), input.readBytes());

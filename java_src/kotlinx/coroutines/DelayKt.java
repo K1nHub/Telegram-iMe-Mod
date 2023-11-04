@@ -23,7 +23,7 @@ public final class DelayKt {
         CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(intercepted, 1);
         cancellableContinuationImpl.initCancellability();
         if (j < Long.MAX_VALUE) {
-            getDelay(cancellableContinuationImpl.getContext()).mo2115scheduleResumeAfterDelay(j, cancellableContinuationImpl);
+            getDelay(cancellableContinuationImpl.getContext()).mo2120scheduleResumeAfterDelay(j, cancellableContinuationImpl);
         }
         Object result = cancellableContinuationImpl.getResult();
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
@@ -35,9 +35,9 @@ public final class DelayKt {
     }
 
     /* renamed from: delay-VtjQ1oo  reason: not valid java name */
-    public static final Object m2089delayVtjQ1oo(long j, Continuation<? super Unit> continuation) {
+    public static final Object m2094delayVtjQ1oo(long j, Continuation<? super Unit> continuation) {
         Object coroutine_suspended;
-        Object delay = delay(m2090toDelayMillisLRDsOJo(j), continuation);
+        Object delay = delay(m2095toDelayMillisLRDsOJo(j), continuation);
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
         return delay == coroutine_suspended ? delay : Unit.INSTANCE;
     }
@@ -49,10 +49,10 @@ public final class DelayKt {
     }
 
     /* renamed from: toDelayMillis-LRDsOJo  reason: not valid java name */
-    public static final long m2090toDelayMillisLRDsOJo(long j) {
+    public static final long m2095toDelayMillisLRDsOJo(long j) {
         long coerceAtLeast;
-        if (Duration.m2057compareToLRDsOJo(j, Duration.Companion.m2087getZEROUwyO8pc()) > 0) {
-            coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(Duration.m2064getInWholeMillisecondsimpl(j), 1L);
+        if (Duration.m2062compareToLRDsOJo(j, Duration.Companion.m2092getZEROUwyO8pc()) > 0) {
+            coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(Duration.m2069getInWholeMillisecondsimpl(j), 1L);
             return coerceAtLeast;
         }
         return 0L;

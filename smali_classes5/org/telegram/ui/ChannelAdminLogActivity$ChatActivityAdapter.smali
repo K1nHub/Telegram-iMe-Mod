@@ -564,7 +564,7 @@
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setHighlighted(Z)V
 
     .line 2838
-    invoke-virtual {v3, p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setHighlightedText(Ljava/lang/String;)V
+    invoke-virtual {v3, p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->setHighlightedText(Ljava/lang/String;)Z
 
     goto :goto_2
 

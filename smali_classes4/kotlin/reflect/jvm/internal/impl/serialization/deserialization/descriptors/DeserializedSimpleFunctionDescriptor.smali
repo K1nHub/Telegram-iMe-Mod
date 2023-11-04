@@ -50,7 +50,7 @@
 
     invoke-static {v4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "kind"
+    const-string/jumbo v0, "kind"
 
     move-object/from16 v5, p5
 
@@ -178,7 +178,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "kind"
+    const-string/jumbo v0, "kind"
 
     move-object/from16 v6, p3
 

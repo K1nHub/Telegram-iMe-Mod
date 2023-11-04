@@ -30,7 +30,7 @@ public final class zzpa {
         }
         long zzf = this.zzato.zzf(this.zzavo);
         if (zzf == 0) {
-            zzass.m1091w("ModelDownloadLogger", "Model downloaded without its beginning time recorded.");
+            zzass.m1092w("ModelDownloadLogger", "Model downloaded without its beginning time recorded.");
             this.zzavr.zza(zzlu.zzs.zzjl().zza(zzlu.zzam.zzle().zzbi(str)).zza(zzlu.zzw.zzjs().zze(zzmc.UNKNOWN_ERROR).zzav(i).zzk(zza)), zzmd.MODEL_DOWNLOAD);
             return;
         }

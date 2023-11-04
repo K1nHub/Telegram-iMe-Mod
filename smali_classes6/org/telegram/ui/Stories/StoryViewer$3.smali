@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Stories/StoryViewer;->open(Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$StoryItem;Ljava/util/ArrayList;ILorg/telegram/ui/Stories/StoriesController$StoriesList;Lorg/telegram/tgnet/TLRPC$PeerStories;Lorg/telegram/ui/Stories/StoryViewer$PlaceProvider;Z)V
+    value = Lorg/telegram/ui/Stories/StoryViewer;->open(Landroid/content/Context;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Ljava/util/ArrayList;ILorg/telegram/ui/Stories/StoriesController$StoriesList;Lorg/telegram/tgnet/tl/TL_stories$PeerStories;Lorg/telegram/ui/Stories/StoryViewer$PlaceProvider;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 1058
+    .line 1103
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Stories/HwFrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 1095
+    .line 1140
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -44,7 +44,7 @@
 
     move-result-object v0
 
-    .line 1097
+    .line 1142
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v2, v1, Lorg/telegram/ui/Stories/StoryViewer;->selfStoryViewsView:Lorg/telegram/ui/Stories/SelfStoryViewsView;
@@ -55,12 +55,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 1098
+    .line 1143
     iget v1, v1, Lorg/telegram/ui/Stories/StoryViewer;->selfStoriesViewsOffset:F
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Stories/SelfStoryViewsView;->setOffset(F)V
 
-    .line 1099
+    .line 1144
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v2, v1, Lorg/telegram/ui/Stories/StoryViewer;->selfStoryViewsView:Lorg/telegram/ui/Stories/SelfStoryViewsView;
@@ -73,14 +73,14 @@
 
     if-nez v2, :cond_0
 
-    .line 1100
+    .line 1145
     iget-object v1, v1, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 1102
+    .line 1147
     :cond_0
     iget-object v1, v1, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
 
@@ -88,7 +88,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 1104
+    .line 1149
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -96,7 +96,7 @@
 
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/StoriesViewPager;->checkPageVisibility()V
 
-    .line 1106
+    .line 1151
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getTop()I
 
     move-result v1
@@ -111,14 +111,14 @@
 
     int-to-float v1, v1
 
-    .line 1108
+    .line 1153
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/StoryViewer;->selfStoryViewsView:Lorg/telegram/ui/Stories/SelfStoryViewsView;
 
     iget v2, v2, Lorg/telegram/ui/Stories/SelfStoryViewsView;->progressToOpen:F
 
-    .line 1109
+    .line 1154
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
@@ -127,7 +127,7 @@
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
-    .line 1110
+    .line 1155
     iget-object v5, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->storyContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -136,7 +136,7 @@
 
     if-lez v5, :cond_1
 
-    .line 1111
+    .line 1156
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v6, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->storyContainer:Landroid/widget/FrameLayout;
@@ -147,9 +147,9 @@
 
     int-to-float v6, v6
 
-    invoke-static {v5, v6}, Lorg/telegram/ui/Stories/StoryViewer;->access$2802(Lorg/telegram/ui/Stories/StoryViewer;F)F
+    invoke-static {v5, v6}, Lorg/telegram/ui/Stories/StoryViewer;->access$3002(Lorg/telegram/ui/Stories/StoryViewer;F)F
 
-    .line 1113
+    .line 1158
     :cond_1
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -157,25 +157,25 @@
 
     iget v6, v6, Lorg/telegram/ui/Stories/SelfStoryViewsView;->toHeight:F
 
-    invoke-static {v5}, Lorg/telegram/ui/Stories/StoryViewer;->access$2800(Lorg/telegram/ui/Stories/StoryViewer;)F
+    invoke-static {v5}, Lorg/telegram/ui/Stories/StoryViewer;->access$3000(Lorg/telegram/ui/Stories/StoryViewer;)F
 
     move-result v5
 
     div-float/2addr v6, v5
 
-    .line 1114
+    .line 1159
     invoke-static {v4, v6, v2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v4
 
-    .line 1115
+    .line 1160
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v5, v5, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     invoke-virtual {v5, v1}, Landroid/view/ViewGroup;->setPivotY(F)V
 
-    .line 1116
+    .line 1161
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v5, v5, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -192,14 +192,14 @@
 
     invoke-virtual {v5, v7}, Landroid/view/ViewGroup;->setPivotX(F)V
 
-    .line 1117
+    .line 1162
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v5, v5, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     invoke-virtual {v5, v4}, Landroid/view/ViewGroup;->setScaleX(F)V
 
-    .line 1118
+    .line 1163
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v5, v5, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -208,10 +208,10 @@
 
     const/4 v5, 0x1
 
-    .line 1119
+    .line 1164
     iput-boolean v5, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->forceUpdateOffsets:Z
 
-    .line 1121
+    .line 1166
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget v7, v5, Lorg/telegram/ui/Stories/StoryViewer;->selfStoriesViewsOffset:F
@@ -224,12 +224,12 @@
 
     const/4 v4, 0x0
 
-    .line 1122
+    .line 1167
     invoke-virtual {v0, v8, v8, v8, v4}, Lorg/telegram/ui/Stories/PeerStoriesView;->setViewsThumbImageReceiver(FFFLorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;)V
 
     goto :goto_1
 
-    .line 1124
+    .line 1169
     :cond_2
     iget-object v5, v5, Lorg/telegram/ui/Stories/StoryViewer;->selfStoryViewsView:Lorg/telegram/ui/Stories/SelfStoryViewsView;
 
@@ -239,18 +239,18 @@
 
     invoke-virtual {v0, v2, v4, v1, v5}, Lorg/telegram/ui/Stories/PeerStoriesView;->setViewsThumbImageReceiver(FFFLorg/telegram/ui/Stories/SelfStoriesPreviewView$ImageHolder;)V
 
-    .line 1126
+    .line 1171
     :goto_1
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1127
+    .line 1172
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v5, 0x15
 
     if-lt v4, v5, :cond_3
 
-    .line 1128
+    .line 1173
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->outlineProvider:Lorg/telegram/ui/Stories/RoundRectOutlineProvider;
 
     const/high16 v5, 0x41200000    # 10.0f
@@ -275,12 +275,12 @@
 
     iput v5, v4, Lorg/telegram/ui/Stories/RoundRectOutlineProvider;->radiusInDp:F
 
-    .line 1129
+    .line 1174
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->storyContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->invalidateOutline()V
 
-    .line 1131
+    .line 1176
     :cond_3
     iget-object v4, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -299,10 +299,10 @@
     :cond_4
     if-eqz v0, :cond_5
 
-    .line 1135
+    .line 1180
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$1200(Lorg/telegram/ui/Stories/StoryViewer;)Lorg/telegram/ui/Stories/StoriesVolumeContorl;
+    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$1300(Lorg/telegram/ui/Stories/StoryViewer;)Lorg/telegram/ui/Stories/StoriesVolumeControl;
 
     move-result-object v1
 
@@ -322,7 +322,7 @@
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1137
+    .line 1182
     :cond_5
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -332,17 +332,17 @@
 .method public measureKeyboardHeight()I
     .locals 5
 
-    .line 1061
+    .line 1106
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getRootView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 1062
+    .line 1107
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
 
-    .line 1063
+    .line 1108
     iget v2, v1, Landroid/graphics/Rect;->bottom:I
 
     const/4 v3, 0x0
@@ -355,7 +355,7 @@
 
     return v3
 
-    .line 1066
+    .line 1111
     :cond_0
     invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
@@ -381,7 +381,7 @@
 
     sub-int/2addr v2, v0
 
-    .line 1067
+    .line 1112
     iget v0, v1, Landroid/graphics/Rect;->bottom:I
 
     iget v1, v1, Landroid/graphics/Rect;->top:I
@@ -400,35 +400,35 @@
 .method protected onMeasure(II)V
     .locals 5
 
-    .line 1072
+    .line 1117
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 1073
+    .line 1118
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-boolean v2, v1, Lorg/telegram/ui/Stories/StoryViewer;->ATTACH_TO_FRAGMENT:Z
 
     if-nez v2, :cond_0
 
-    .line 1074
+    .line 1119
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoryViewer$3;->measureKeyboardHeight()I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Stories/StoryViewer;->setKeyboardHeightFromParent(I)V
 
-    .line 1075
+    .line 1120
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$2200(Lorg/telegram/ui/Stories/StoryViewer;)I
+    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$2300(Lorg/telegram/ui/Stories/StoryViewer;)I
 
     move-result v1
 
     add-int/2addr v0, v1
 
-    .line 1077
+    .line 1122
     :cond_0
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -448,7 +448,7 @@
 
     if-le v0, v2, :cond_1
 
-    .line 1081
+    .line 1126
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -465,7 +465,7 @@
 
     goto :goto_0
 
-    .line 1084
+    .line 1129
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -487,7 +487,7 @@
 
     move v1, v2
 
-    .line 1086
+    .line 1131
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -501,7 +501,7 @@
 
     iput v0, v2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 1087
+    .line 1132
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
@@ -512,7 +512,7 @@
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 1088
+    .line 1133
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$3;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
@@ -523,12 +523,12 @@
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1089
+    .line 1134
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1090
+    .line 1135
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void

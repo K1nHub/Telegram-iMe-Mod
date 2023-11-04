@@ -3,7 +3,7 @@ package org.webrtc;
 import android.view.SurfaceHolder;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.concurrent.CountDownLatch;
-import org.telegram.p042ui.ActionBar.Theme$$ExternalSyntheticLambda2;
+import org.telegram.p043ui.ActionBar.Theme$$ExternalSyntheticLambda2;
 import org.webrtc.EglBase;
 import org.webrtc.RendererCommon;
 /* loaded from: classes6.dex */

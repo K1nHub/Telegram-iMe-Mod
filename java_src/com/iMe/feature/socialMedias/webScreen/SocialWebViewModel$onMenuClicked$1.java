@@ -11,7 +11,7 @@ import kotlin.jvm.functions.Function2;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt;
 /* compiled from: SocialWebViewModel.kt */
-@DebugMetadata(m143c = "com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onMenuClicked$1", m142f = "SocialWebViewModel.kt", m141l = {67}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "com.iMe.feature.socialMedias.webScreen.SocialWebViewModel$onMenuClicked$1", m144f = "SocialWebViewModel.kt", m143l = {67}, m142m = "invokeSuspend")
 /* loaded from: classes3.dex */
 final class SocialWebViewModel$onMenuClicked$1 extends SuspendLambda implements Function2<SimpleSyntax<SocialWebState, SocialSideEffects>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;

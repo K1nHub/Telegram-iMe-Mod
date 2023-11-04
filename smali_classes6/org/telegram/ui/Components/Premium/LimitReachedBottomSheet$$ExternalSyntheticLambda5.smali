@@ -35,7 +35,7 @@
 .method public final onClick(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->$r8$lambda$LnlfENAeUv5WNgnPDT6UOMJ9-rI(Landroid/content/DialogInterface;I)V
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->$r8$lambda$T52Bn6DD1brXOeavkEwgIBI0Y2Y(Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

@@ -65,24 +65,24 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 22680
+    .line 22546
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 22694
+    .line 22560
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->pinned_peers:Ljava/util/ArrayList;
 
-    .line 22695
+    .line 22561
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->include_peers:Ljava/util/ArrayList;
 
-    .line 22696
+    .line 22562
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -111,7 +111,7 @@
 
     goto :goto_0
 
-    .line 22709
+    .line 22575
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_dialogFilter;
 
@@ -119,7 +119,7 @@
 
     goto :goto_0
 
-    .line 22706
+    .line 22572
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_dialogFilterDefault;
 
@@ -127,7 +127,7 @@
 
     goto :goto_0
 
-    .line 22703
+    .line 22569
     :cond_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_dialogFilterChatlist;
 
@@ -140,7 +140,7 @@
 
     goto :goto_1
 
-    .line 22713
+    .line 22579
     :cond_3
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -170,7 +170,7 @@
     :goto_1
     if-eqz v0, :cond_5
 
-    .line 22716
+    .line 22582
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_5

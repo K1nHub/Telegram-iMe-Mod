@@ -136,7 +136,7 @@ public abstract class TransactionParams {
         }
 
         public int hashCode() {
-            return (((((((getMedium().hashCode() * 31) + (getFastest() == null ? 0 : getFastest().hashCode())) * 31) + (getLow() != null ? getLow().hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.chainId);
+            return (((((((getMedium().hashCode() * 31) + (getFastest() == null ? 0 : getFastest().hashCode())) * 31) + (getLow() != null ? getLow().hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.chainId);
         }
 
         public String toString() {

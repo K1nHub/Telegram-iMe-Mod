@@ -14,13 +14,13 @@ import com.google.android.gms.fido.fido2.api.common.ResidentKeyRequirement;
 /* loaded from: classes.dex */
 public class AuthenticatorSelectionCriteria extends AbstractSafeParcelable {
     public static final Parcelable.Creator<AuthenticatorSelectionCriteria> CREATOR = new zzj();
-    @SafeParcelable.Field(getter = "getAttachmentAsString", m1089id = 2, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getAttachmentAsString", m1090id = 2, type = "java.lang.String")
     private final Attachment zza;
-    @SafeParcelable.Field(getter = "getRequireResidentKey", m1089id = 3)
+    @SafeParcelable.Field(getter = "getRequireResidentKey", m1090id = 3)
     private final Boolean zzb;
-    @SafeParcelable.Field(getter = "getRequireUserVerificationAsString", m1089id = 4, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getRequireUserVerificationAsString", m1090id = 4, type = "java.lang.String")
     private final zzat zzc;
-    @SafeParcelable.Field(getter = "getResidentKeyRequirementAsString", m1089id = 5, type = "java.lang.String")
+    @SafeParcelable.Field(getter = "getResidentKeyRequirementAsString", m1090id = 5, type = "java.lang.String")
     private final ResidentKeyRequirement zzd;
 
     /* compiled from: com.google.android.gms:play-services-fido@@19.0.0 */
@@ -56,7 +56,7 @@ public class AuthenticatorSelectionCriteria extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public AuthenticatorSelectionCriteria(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) Boolean bool, @SafeParcelable.Param(m1088id = 4) String str2, @SafeParcelable.Param(m1088id = 5) String str3) {
+    public AuthenticatorSelectionCriteria(@SafeParcelable.Param(m1089id = 2) String str, @SafeParcelable.Param(m1089id = 3) Boolean bool, @SafeParcelable.Param(m1089id = 4) String str2, @SafeParcelable.Param(m1089id = 5) String str3) {
         Attachment fromString;
         ResidentKeyRequirement residentKeyRequirement = null;
         if (str == null) {

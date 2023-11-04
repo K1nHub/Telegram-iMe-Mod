@@ -15,6 +15,6 @@ public final class CoroutinesUtilsKt {
     }
 
     public static final CoroutineContext SilentSupervisor(Job job) {
-        return SupervisorKt.SupervisorJob(job).plus(new C2661xf907d825(CoroutineExceptionHandler.Key));
+        return SupervisorKt.SupervisorJob(job).plus(new C2665xf907d825(CoroutineExceptionHandler.Key));
     }
 }

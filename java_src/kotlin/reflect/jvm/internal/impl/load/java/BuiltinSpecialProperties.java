@@ -61,7 +61,7 @@ public final class BuiltinSpecialProperties {
         child3 = BuiltinSpecialPropertiesKt.child(fqName, "keys");
         child4 = BuiltinSpecialPropertiesKt.child(fqName, "values");
         child5 = BuiltinSpecialPropertiesKt.child(fqName, "entries");
-        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m144to(childSafe, Name.identifier(AppMeasurementSdk.ConditionalUserProperty.NAME)), TuplesKt.m144to(childSafe2, Name.identifier("ordinal")), TuplesKt.m144to(child, Name.identifier("size")), TuplesKt.m144to(child2, Name.identifier("size")), TuplesKt.m144to(childSafe3, Name.identifier(SessionDescription.ATTR_LENGTH)), TuplesKt.m144to(child3, Name.identifier("keySet")), TuplesKt.m144to(child4, Name.identifier("values")), TuplesKt.m144to(child5, Name.identifier("entrySet")));
+        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m146to(childSafe, Name.identifier(AppMeasurementSdk.ConditionalUserProperty.NAME)), TuplesKt.m146to(childSafe2, Name.identifier("ordinal")), TuplesKt.m146to(child, Name.identifier("size")), TuplesKt.m146to(child2, Name.identifier("size")), TuplesKt.m146to(childSafe3, Name.identifier(SessionDescription.ATTR_LENGTH)), TuplesKt.m146to(child3, Name.identifier("keySet")), TuplesKt.m146to(child4, Name.identifier("values")), TuplesKt.m146to(child5, Name.identifier("entrySet")));
         PROPERTY_FQ_NAME_TO_JVM_GETTER_NAME_MAP = mapOf;
         Set<Map.Entry<FqName, Name>> entrySet = mapOf.entrySet();
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(entrySet, 10);

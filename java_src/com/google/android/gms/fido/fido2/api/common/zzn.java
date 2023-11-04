@@ -13,18 +13,18 @@ import java.util.Arrays;
 /* loaded from: classes.dex */
 public final class zzn extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzn> CREATOR = new zzo();
-    @SafeParcelable.Field(getter = "getVersion", m1089id = 1)
+    @SafeParcelable.Field(getter = "getVersion", m1090id = 1)
     private final long zza;
-    @SafeParcelable.Field(getter = "getClientEid", m1089id = 2)
+    @SafeParcelable.Field(getter = "getClientEid", m1090id = 2)
     private final byte[] zzb;
-    @SafeParcelable.Field(getter = "getAuthenticatorEid", m1089id = 3)
+    @SafeParcelable.Field(getter = "getAuthenticatorEid", m1090id = 3)
     private final byte[] zzc;
-    @SafeParcelable.Field(getter = "getSessionPreKey", m1089id = 4)
+    @SafeParcelable.Field(getter = "getSessionPreKey", m1090id = 4)
     private final byte[] zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzn(@SafeParcelable.Param(m1088id = 1) long j, @SafeParcelable.Param(m1088id = 2) byte[] bArr, @SafeParcelable.Param(m1088id = 3) byte[] bArr2, @SafeParcelable.Param(m1088id = 4) byte[] bArr3) {
+    public zzn(@SafeParcelable.Param(m1089id = 1) long j, @SafeParcelable.Param(m1089id = 2) byte[] bArr, @SafeParcelable.Param(m1089id = 3) byte[] bArr2, @SafeParcelable.Param(m1089id = 4) byte[] bArr3) {
         this.zza = j;
         this.zzb = (byte[]) Preconditions.checkNotNull(bArr);
         this.zzc = (byte[]) Preconditions.checkNotNull(bArr2);

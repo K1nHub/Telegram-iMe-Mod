@@ -10,6 +10,6 @@ public final class AccountStateTlbCombinator extends TlbCombinator<AccountState>
     public static final AccountStateTlbCombinator INSTANCE = new AccountStateTlbCombinator();
 
     private AccountStateTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(AccountState.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AccountUninit.class), AccountUninit.INSTANCE), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AccountActive.class), AccountActive.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AccountFrozen.class), AccountFrozen.Companion));
+        super(Reflection.getOrCreateKotlinClass(AccountState.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AccountUninit.class), AccountUninit.INSTANCE), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AccountActive.class), AccountActive.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AccountFrozen.class), AccountFrozen.Companion));
     }
 }

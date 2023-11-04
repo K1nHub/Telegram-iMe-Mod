@@ -40,7 +40,7 @@ public final class CryptoBoxSuspensionPresenter extends BasePresenter<CryptoBoxS
     }
 
     public final void onStopClick() {
-        Observable<Result<String>> observeOn = this.cryptoBoxInteractor.sendSuspensionExecute(this.transactionAction.getTransaction()).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<String>> observeOn = this.cryptoBoxInteractor.sendSuspensionExecute(this.transactionAction.getTransaction()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoBoxInteractor\n    …(schedulersProvider.ui())");
         final CryptoBoxSuspensionView cryptoBoxSuspensionView = (CryptoBoxSuspensionView) getViewState();
         Observable withLoadingUpdate = RxExtKt.withLoadingUpdate(observeOn, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.cryptobox.suspension.CryptoBoxSuspensionPresenter$$ExternalSyntheticLambda0
@@ -57,12 +57,12 @@ public final class CryptoBoxSuspensionPresenter extends BasePresenter<CryptoBoxS
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1696invoke(result);
+                m1701invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1696invoke(Result<? extends String> it) {
+            public final void m1701invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;

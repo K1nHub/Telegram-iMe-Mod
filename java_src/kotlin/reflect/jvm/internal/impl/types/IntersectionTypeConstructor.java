@@ -27,7 +27,7 @@ public final class IntersectionTypeConstructor implements TypeConstructor, Inter
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getDeclarationDescriptor */
-    public ClassifierDescriptor mo2046getDeclarationDescriptor() {
+    public ClassifierDescriptor mo2051getDeclarationDescriptor() {
         return null;
     }
 
@@ -58,7 +58,7 @@ public final class IntersectionTypeConstructor implements TypeConstructor, Inter
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getSupertypes */
-    public Collection<KotlinType> mo2047getSupertypes() {
+    public Collection<KotlinType> mo2052getSupertypes() {
         return this.intersectedTypes;
     }
 
@@ -172,11 +172,11 @@ public final class IntersectionTypeConstructor implements TypeConstructor, Inter
     public IntersectionTypeConstructor refine(KotlinTypeRefiner kotlinTypeRefiner) {
         int collectionSizeOrDefault;
         Intrinsics.checkNotNullParameter(kotlinTypeRefiner, "kotlinTypeRefiner");
-        Collection<KotlinType> mo2047getSupertypes = mo2047getSupertypes();
-        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(mo2047getSupertypes, 10);
+        Collection<KotlinType> mo2052getSupertypes = mo2052getSupertypes();
+        collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(mo2052getSupertypes, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         boolean z = false;
-        for (KotlinType kotlinType : mo2047getSupertypes) {
+        for (KotlinType kotlinType : mo2052getSupertypes) {
             arrayList.add(kotlinType.refine(kotlinTypeRefiner));
             z = true;
         }

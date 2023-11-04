@@ -4,28 +4,28 @@
 
 
 # direct methods
-.method public static synthetic sendTransaction$default(Lcom/iMe/storage/domain/manager/ton/TonController;Ljava/lang/String;JLcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;IILjava/lang/Object;)Lio/reactivex/Observable;
-    .locals 6
+.method public static synthetic sendTransaction$default(Lcom/iMe/storage/domain/manager/ton/TonController;Ljava/lang/String;JILcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;IILjava/lang/Object;)Lio/reactivex/Observable;
+    .locals 7
 
-    if-nez p7, :cond_2
+    if-nez p8, :cond_2
 
-    and-int/lit8 p7, p6, 0x4
+    and-int/lit8 p8, p7, 0x8
 
-    if-eqz p7, :cond_0
+    if-eqz p8, :cond_0
 
-    const/4 p4, 0x0
+    const/4 p5, 0x0
 
     :cond_0
-    move-object v4, p4
+    move-object v5, p5
 
-    and-int/lit8 p4, p6, 0x8
+    and-int/lit8 p5, p7, 0x10
 
-    if-eqz p4, :cond_1
+    if-eqz p5, :cond_1
 
-    const/4 p5, 0x3
+    const/4 p6, 0x3
 
     :cond_1
-    move v5, p5
+    move v6, p6
 
     move-object v0, p0
 
@@ -33,8 +33,10 @@
 
     move-wide v2, p2
 
+    move v4, p4
+
     .line 16
-    invoke-interface/range {v0 .. v5}, Lcom/iMe/storage/domain/manager/ton/TonController;->sendTransaction(Ljava/lang/String;JLcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;I)Lio/reactivex/Observable;
+    invoke-interface/range {v0 .. v6}, Lcom/iMe/storage/domain/manager/ton/TonController;->sendTransaction(Ljava/lang/String;JILcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;I)Lio/reactivex/Observable;
 
     move-result-object p0
 

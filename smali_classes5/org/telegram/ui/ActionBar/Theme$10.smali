@@ -22,7 +22,7 @@
 .method constructor <init>(IZZLandroid/util/SparseIntArray;)V
     .locals 0
 
-    .line 7816
+    .line 7945
     iput-object p4, p0, Lorg/telegram/ui/ActionBar/Theme$10;->val$colors:Landroid/util/SparseIntArray;
 
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;-><init>(IZZ)V
@@ -35,7 +35,7 @@
 .method protected getColor(I)I
     .locals 1
 
-    .line 7819
+    .line 7948
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$10;->val$colors:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
@@ -44,7 +44,7 @@
 
     if-lez v0, :cond_0
 
-    .line 7821
+    .line 7950
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$10;->val$colors:Landroid/util/SparseIntArray;
 
     invoke-virtual {p1, v0}, Landroid/util/SparseIntArray;->valueAt(I)I
@@ -53,9 +53,9 @@
 
     return p1
 
-    .line 7823
+    .line 7952
     :cond_0
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1000()[I
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$900()[I
 
     move-result-object v0
 
@@ -67,7 +67,7 @@
 .method protected getCurrentColor(I)I
     .locals 1
 
-    .line 7829
+    .line 7958
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$10;->val$colors:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I

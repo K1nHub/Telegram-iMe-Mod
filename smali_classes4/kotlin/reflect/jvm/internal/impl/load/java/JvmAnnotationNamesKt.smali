@@ -216,7 +216,7 @@
     .line 37
     new-instance v5, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v13, "javax.annotation.Nullable"
+    const-string/jumbo v13, "javax.annotation.Nullable"
 
     invoke-direct {v5, v13}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -227,7 +227,7 @@
     .line 38
     new-instance v5, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v14, "javax.annotation.CheckForNull"
+    const-string/jumbo v14, "javax.annotation.CheckForNull"
 
     invoke-direct {v5, v14}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -300,7 +300,7 @@
     .line 46
     new-instance v5, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v13, "javax.annotation.Nonnull"
+    const-string/jumbo v13, "javax.annotation.Nonnull"
 
     invoke-direct {v5, v13}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 

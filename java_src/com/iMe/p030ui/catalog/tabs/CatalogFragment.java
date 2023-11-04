@@ -50,12 +50,12 @@ import org.koin.core.qualifier.StringQualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkFragmentCatalogTabsBinding;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.Components.ViewPagerFixed;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.ViewPagerFixed;
 /* compiled from: CatalogFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.CatalogFragment */
 /* loaded from: classes3.dex */
@@ -227,7 +227,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         getPresenter().setupNavigationRouter();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onActivityResultFragment(int i, int i2, Intent intent) {
         super.onActivityResultFragment(i, i2, intent);
         for (CatalogTabFragment catalogTabFragment : getNavigationRouter().getScreenStack()) {
@@ -235,13 +235,13 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         }
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         super.onFragmentDestroy();
         getNavigationRouter().clean();
     }
 
-    @Override // com.iMe.p030ui.wallet.common.BottomNavigationTabFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.wallet.common.BottomNavigationTabFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onDestroyView() {
         super.onDestroyView();
         for (CatalogTabFragment catalogTabFragment : getNavigationRouter().getScreenStack()) {
@@ -249,7 +249,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         }
     }
 
-    @Override // com.iMe.p030ui.wallet.common.BottomNavigationTabFragment, com.iMe.p030ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.wallet.common.BottomNavigationTabFragment, com.iMe.p030ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         for (CatalogTabFragment catalogTabFragment : getNavigationRouter().getScreenStack()) {
@@ -257,7 +257,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         }
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onPause() {
         super.onPause();
         for (CatalogTabFragment catalogTabFragment : getNavigationRouter().getScreenStack()) {
@@ -283,7 +283,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         TabbedViewPager tabbedViewPager = getBinding().catalogPager;
         tabbedViewPager.init(this, ViewPagerFixed.TabsView.TabType.TITLE);
         ViewPagerFixed.TabsView tabsView = tabbedViewPager.getTabsView();
-        tabsView.setElevation(AndroidUtilities.m102dp(2));
+        tabsView.setElevation(AndroidUtilities.m104dp(2));
         tabsView.setColors(Theme.key_actionBarTabLine, Theme.key_actionBarTabActiveText, Theme.key_actionBarTabUnactiveText, Theme.key_actionBarTabSelector, Theme.key_actionBarDefault);
     }
 
@@ -294,7 +294,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         }
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return getBinding().catalogPager.isSwipeBackEnabled();
     }
@@ -327,16 +327,16 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
         return root;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$$ExternalSyntheticLambda0
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 CatalogFragment.this.setupColors();
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -351,7 +351,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
     /* JADX INFO: Access modifiers changed from: private */
     public final List<CatalogNavigationTab> initPageTabs() {
         List<CatalogNavigationTab> listOf;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CatalogNavigationTab[]{new CatalogNavigationTab(C3630R.C3633id.catalog_all, new TabbedFragmentPage(getResourceManager().getString(C3630R.string.catalog_all), 0, CatalogAllFragment.Companion.newInstance(this.chatType), new Function0<View>() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$initPageTabs$1
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CatalogNavigationTab[]{new CatalogNavigationTab(C3634R.C3637id.catalog_all, new TabbedFragmentPage(getResourceManager().getString(C3634R.string.catalog_all), 0, CatalogAllFragment.Companion.newInstance(this.chatType), new Function0<View>() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$initPageTabs$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -363,9 +363,9 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
                 NavigationRouter navigationRouter;
                 navigationRouter = CatalogFragment.this.getNavigationRouter();
                 Intrinsics.checkNotNull(navigationRouter, "null cannot be cast to non-null type com.iMe.navigation.common.router.base.BaseNavigationRouter<com.iMe.ui.catalog.tabs.CatalogTabFragment>");
-                return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3630R.C3633id.catalog_all);
+                return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3634R.C3637id.catalog_all);
             }
-        }, 2, null)), new CatalogNavigationTab(C3630R.C3633id.catalog_categories, new TabbedFragmentPage(getResourceManager().getString(C3630R.string.catalog_categories), 0, CatalogCategoriesFragment.Companion.newInstance(this.chatType), new Function0<View>() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$initPageTabs$2
+        }, 2, null)), new CatalogNavigationTab(C3634R.C3637id.catalog_categories, new TabbedFragmentPage(getResourceManager().getString(C3634R.string.catalog_categories), 0, CatalogCategoriesFragment.Companion.newInstance(this.chatType), new Function0<View>() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$initPageTabs$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -377,9 +377,9 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
                 NavigationRouter navigationRouter;
                 navigationRouter = CatalogFragment.this.getNavigationRouter();
                 Intrinsics.checkNotNull(navigationRouter, "null cannot be cast to non-null type com.iMe.navigation.common.router.base.BaseNavigationRouter<com.iMe.ui.catalog.tabs.CatalogTabFragment>");
-                return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3630R.C3633id.catalog_categories);
+                return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3634R.C3637id.catalog_categories);
             }
-        }, 2, null)), new CatalogNavigationTab(C3630R.C3633id.catalog_user_channels, new TabbedFragmentPage(getResourceManager().getString(C3630R.string.catalog_user_channels), 0, CatalogUserChannelsFragment.Companion.newInstance(this.chatType), new Function0<View>() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$initPageTabs$3
+        }, 2, null)), new CatalogNavigationTab(C3634R.C3637id.catalog_user_channels, new TabbedFragmentPage(getResourceManager().getString(C3634R.string.catalog_user_channels), 0, CatalogUserChannelsFragment.Companion.newInstance(this.chatType), new Function0<View>() { // from class: com.iMe.ui.catalog.tabs.CatalogFragment$initPageTabs$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -391,7 +391,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
                 NavigationRouter navigationRouter;
                 navigationRouter = CatalogFragment.this.getNavigationRouter();
                 Intrinsics.checkNotNull(navigationRouter, "null cannot be cast to non-null type com.iMe.navigation.common.router.base.BaseNavigationRouter<com.iMe.ui.catalog.tabs.CatalogTabFragment>");
-                return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3630R.C3633id.catalog_user_channels);
+                return ((BaseNavigationRouter) navigationRouter).getViewByFragmentId(C3634R.C3637id.catalog_user_channels);
             }
         }, 2, null))});
         for (CatalogNavigationTab catalogNavigationTab : listOf) {

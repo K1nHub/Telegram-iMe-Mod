@@ -17,24 +17,24 @@ import java.util.List;
 /* loaded from: classes.dex */
 public class TokenData extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<TokenData> CREATOR = new zzm();
-    @SafeParcelable.VersionField(m1086id = 1)
+    @SafeParcelable.VersionField(m1087id = 1)
     final int zza;
-    @SafeParcelable.Field(getter = "getToken", m1089id = 2)
+    @SafeParcelable.Field(getter = "getToken", m1090id = 2)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getExpirationTimeSecs", m1089id = 3)
+    @SafeParcelable.Field(getter = "getExpirationTimeSecs", m1090id = 3)
     private final Long zzc;
-    @SafeParcelable.Field(getter = "isCached", m1089id = 4)
+    @SafeParcelable.Field(getter = "isCached", m1090id = 4)
     private final boolean zzd;
-    @SafeParcelable.Field(getter = "isSnowballed", m1089id = 5)
+    @SafeParcelable.Field(getter = "isSnowballed", m1090id = 5)
     private final boolean zze;
-    @SafeParcelable.Field(getter = "getGrantedScopes", m1089id = 6)
+    @SafeParcelable.Field(getter = "getGrantedScopes", m1090id = 6)
     private final List zzf;
-    @SafeParcelable.Field(getter = "getScopeData", m1089id = 7)
+    @SafeParcelable.Field(getter = "getScopeData", m1090id = 7)
     private final String zzg;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public TokenData(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) Long l, @SafeParcelable.Param(m1088id = 4) boolean z, @SafeParcelable.Param(m1088id = 5) boolean z2, @SafeParcelable.Param(m1088id = 6) List list, @SafeParcelable.Param(m1088id = 7) String str2) {
+    public TokenData(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) String str, @SafeParcelable.Param(m1089id = 3) Long l, @SafeParcelable.Param(m1089id = 4) boolean z, @SafeParcelable.Param(m1089id = 5) boolean z2, @SafeParcelable.Param(m1089id = 6) List list, @SafeParcelable.Param(m1089id = 7) String str2) {
         this.zza = i;
         this.zzb = Preconditions.checkNotEmpty(str);
         this.zzc = l;

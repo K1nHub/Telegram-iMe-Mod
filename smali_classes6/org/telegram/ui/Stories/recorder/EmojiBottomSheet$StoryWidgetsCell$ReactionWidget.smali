@@ -54,42 +54,42 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;)V
     .locals 3
 
-    .line 2680
+    .line 2678
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$1;)V
 
-    .line 2672
+    .line 2670
     new-instance v0, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;-><init>(Landroid/view/View;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->reactionHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
-    .line 2673
+    .line 2671
     new-instance v0, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;-><init>(Landroid/view/View;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->nextReactionHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
-    .line 2675
+    .line 2673
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/AnimatedFloat;-><init>(Landroid/view/View;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->progressToNext:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 2678
+    .line 2676
     new-instance v0, Lorg/telegram/ui/Stories/StoryReactionWidgetBackground;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Stories/StoryReactionWidgetBackground;-><init>(Landroid/view/View;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->background:Lorg/telegram/ui/Stories/StoryReactionWidgetBackground;
 
-    .line 2679
+    .line 2677
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -98,12 +98,12 @@
 
     const/4 v0, 0x3
 
-    .line 2681
+    .line 2679
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->id:I
 
     const/16 v0, 0x2c
 
-    .line 2682
+    .line 2680
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -114,7 +114,7 @@
 
     const/16 v0, 0x24
 
-    .line 2683
+    .line 2681
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -123,7 +123,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->height:F
 
-    .line 2685
+    .line 2683
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$7100(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)I
@@ -140,7 +140,7 @@
 
     const/4 v0, 0x0
 
-    .line 2686
+    .line 2684
     :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -154,7 +154,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 2687
+    .line 2685
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->visibleReactions:Ljava/util/ArrayList;
 
     invoke-interface {p1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -173,7 +173,7 @@
 
     goto :goto_0
 
-    .line 2689
+    .line 2687
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->visibleReactions:Ljava/util/ArrayList;
 
@@ -181,7 +181,7 @@
 
     invoke-static {p1, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 2694
+    .line 2692
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->visibleReactions:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -190,7 +190,7 @@
 
     if-nez p1, :cond_1
 
-    .line 2695
+    .line 2693
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->reactionHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->visibleReactions:Ljava/util/ArrayList;
@@ -205,7 +205,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;->setVisibleReaction(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
 
-    .line 2698
+    .line 2696
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->progressToNext:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -221,7 +221,7 @@
 .method private static synthetic lambda$new$0(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)I
     .locals 3
 
-    .line 2690
+    .line 2688
     iget-object p0, p0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
     const/4 v0, -0x1
@@ -245,7 +245,7 @@
     :cond_0
     move p0, v2
 
-    .line 2691
+    .line 2689
     :goto_0
     iget-object p1, p1, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
@@ -275,7 +275,7 @@
 
     const/4 v0, 0x4
 
-    .line 2703
+    .line 2701
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -284,7 +284,7 @@
 
     sub-float/2addr p3, v0
 
-    .line 2704
+    .line 2702
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
 
     float-to-int v1, p2
@@ -311,7 +311,7 @@
 
     invoke-virtual {v0, v1, v2, p2, p3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2705
+    .line 2703
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     const p3, 0x3d4ccccd    # 0.05f
@@ -320,10 +320,10 @@
 
     move-result p2
 
-    .line 2706
+    .line 2704
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2707
+    .line 2705
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
 
     invoke-virtual {p3}, Landroid/graphics/RectF;->centerX()F
@@ -338,7 +338,7 @@
 
     invoke-virtual {p1, p2, p2, p3, v0}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 2708
+    .line 2706
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->background:Lorg/telegram/ui/Stories/StoryReactionWidgetBackground;
 
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
@@ -361,26 +361,26 @@
 
     invoke-virtual {p2, v0, v1, v2, p3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 2709
+    .line 2707
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->background:Lorg/telegram/ui/Stories/StoryReactionWidgetBackground;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Stories/StoryReactionWidgetBackground;->draw(Landroid/graphics/Canvas;)V
 
     const/16 p2, 0x1e
 
-    .line 2710
+    .line 2708
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
     int-to-float p2, p2
 
-    .line 2711
+    .line 2709
     sget-object p3, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
 
-    .line 2712
+    .line 2710
     invoke-virtual {v0}, Landroid/graphics/RectF;->centerX()F
 
     move-result v0
@@ -395,7 +395,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
 
-    .line 2713
+    .line 2711
     invoke-virtual {v1}, Landroid/graphics/RectF;->centerY()F
 
     move-result v1
@@ -406,7 +406,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
 
-    .line 2714
+    .line 2712
     invoke-virtual {v2}, Landroid/graphics/RectF;->centerX()F
 
     move-result v2
@@ -417,7 +417,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
 
-    .line 2715
+    .line 2713
     invoke-virtual {v3}, Landroid/graphics/RectF;->centerY()F
 
     move-result v3
@@ -426,10 +426,10 @@
 
     float-to-int p2, v3
 
-    .line 2711
+    .line 2709
     invoke-virtual {p3, v0, v1, v2, p2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 2717
+    .line 2715
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->progressToNext:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -438,12 +438,12 @@
 
     move-result p2
 
-    .line 2718
+    .line 2716
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->nextReactionHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
     invoke-virtual {v1, p3}, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 2719
+    .line 2717
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->reactionHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
     invoke-virtual {v1, p3}, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;->setBounds(Landroid/graphics/Rect;)V
@@ -452,20 +452,20 @@
 
     if-nez p3, :cond_0
 
-    .line 2721
+    .line 2719
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->reactionHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;->draw(Landroid/graphics/Canvas;)V
 
     goto :goto_0
 
-    .line 2723
+    .line 2721
     :cond_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     sub-float/2addr v0, p2
 
-    .line 2724
+    .line 2722
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
 
     invoke-virtual {p3}, Landroid/graphics/RectF;->centerX()F
@@ -478,23 +478,23 @@
 
     invoke-virtual {p1, v0, v0, p3, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 2725
+    .line 2723
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->nextReactionHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
     invoke-virtual {p3, v0}, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;->setAlpha(F)V
 
-    .line 2726
+    .line 2724
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->nextReactionHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
     invoke-virtual {p3, p1}, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2727
+    .line 2725
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2729
+    .line 2727
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2730
+    .line 2728
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
 
     invoke-virtual {p3}, Landroid/graphics/RectF;->centerX()F
@@ -507,20 +507,20 @@
 
     invoke-virtual {p1, p2, p2, p3, v0}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 2731
+    .line 2729
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->reactionHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
     invoke-virtual {p3, p2}, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;->setAlpha(F)V
 
-    .line 2732
+    .line 2730
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->reactionHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2733
+    .line 2731
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2735
+    .line 2733
     :goto_0
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -530,43 +530,43 @@
 .method public onAttachToWindow(Z)V
     .locals 7
 
-    .line 2740
+    .line 2738
     invoke-super {p0, p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->onAttachToWindow(Z)V
 
-    .line 2741
+    .line 2739
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->reactionHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;->onAttachedToWindow(Z)V
 
-    .line 2742
+    .line 2740
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->nextReactionHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;->onAttachedToWindow(Z)V
 
-    .line 2743
+    .line 2741
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->timeTimer:Ljava/util/Timer;
 
     if-eqz v0, :cond_0
 
-    .line 2744
+    .line 2742
     invoke-virtual {v0}, Ljava/util/Timer;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 2745
+    .line 2743
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->timeTimer:Ljava/util/Timer;
 
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 2748
+    .line 2746
     new-instance v1, Ljava/util/Timer;
 
     invoke-direct {v1}, Ljava/util/Timer;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;->timeTimer:Ljava/util/Timer;
 
-    .line 2749
+    .line 2747
     new-instance v2, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget$1;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget$1;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;)V

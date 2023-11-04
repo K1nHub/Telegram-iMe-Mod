@@ -34,28 +34,28 @@
 .method public constructor <init>(Lorg/telegram/ui/ThemeActivity;Landroid/content/Context;)V
     .locals 9
 
-    .line 280
+    .line 290
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->this$0:Lorg/telegram/ui/ThemeActivity;
 
-    .line 281
+    .line 291
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/16 v0, 0xc
 
-    .line 274
+    .line 284
     iput v0, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->startFontSize:I
 
     const/16 v0, 0x1e
 
-    .line 275
+    .line 285
     iput v0, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->endFontSize:I
 
     const/4 v0, 0x0
 
-    .line 283
+    .line 293
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 285
+    .line 295
     new-instance v1, Landroid/text/TextPaint;
 
     const/4 v2, 0x1
@@ -66,7 +66,7 @@
 
     const/16 v3, 0x10
 
-    .line 286
+    .line 296
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -75,17 +75,17 @@
 
     invoke-virtual {v1, v3}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 288
+    .line 298
     new-instance v1, Lorg/telegram/ui/Components/SeekBarView;
 
     invoke-direct {v1, p2}, Lorg/telegram/ui/Components/SeekBarView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
-    .line 289
+    .line 299
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/SeekBarView;->setReportChanges(Z)V
 
-    .line 290
+    .line 300
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     iget v3, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->endFontSize:I
@@ -98,7 +98,7 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/SeekBarView;->setSeparatorsCount(I)V
 
-    .line 291
+    .line 301
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     new-instance v2, Lorg/telegram/ui/ThemeActivity$TextSizeCell$1;
@@ -107,14 +107,14 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/SeekBarView;->setDelegate(Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate;)V
 
-    .line 311
+    .line 321
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     const/4 v2, 0x2
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
 
-    .line 312
+    .line 322
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     const/4 v2, -0x1
@@ -137,7 +137,7 @@
 
     invoke-virtual {p0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 314
+    .line 324
     new-instance v1, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemeActivity;->access$700(Lorg/telegram/ui/ThemeActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -148,7 +148,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->messagesCell:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
 
-    .line 315
+    .line 325
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 p2, 0x13
@@ -157,10 +157,10 @@
 
     const/4 p1, 0x4
 
-    .line 316
+    .line 326
     invoke-virtual {v1, p1}, Landroid/widget/LinearLayout;->setImportantForAccessibility(I)V
 
-    .line 318
+    .line 328
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->messagesCell:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
 
@@ -190,7 +190,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/ThemeActivity$TextSizeCell;)Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
     .locals 0
 
-    .line 270
+    .line 280
     iget-object p0, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->messagesCell:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
 
     return-object p0
@@ -199,7 +199,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/ThemeActivity$TextSizeCell;)I
     .locals 0
 
-    .line 270
+    .line 280
     iget p0, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->startFontSize:I
 
     return p0
@@ -208,7 +208,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/ThemeActivity$TextSizeCell;)I
     .locals 0
 
-    .line 270
+    .line 280
     iget p0, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->endFontSize:I
 
     return p0
@@ -217,7 +217,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/ThemeActivity$TextSizeCell;)Lorg/telegram/ui/Components/SeekBarView;
     .locals 0
 
-    .line 270
+    .line 280
     iget-object p0, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     return-object p0
@@ -228,15 +228,15 @@
 .method public invalidate()V
     .locals 1
 
-    .line 339
+    .line 349
     invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 340
+    .line 350
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->messagesCell:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->invalidate()V
 
-    .line 341
+    .line 351
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
@@ -247,7 +247,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 323
+    .line 333
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->textPaint:Landroid/text/TextPaint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteValueText:I
@@ -258,7 +258,7 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 324
+    .line 334
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -307,10 +307,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 346
+    .line 356
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 347
+    .line 357
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/SeekBarView;->getSeekBarAccessibilityDelegate()Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;
@@ -325,20 +325,20 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 329
+    .line 339
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 330
+    .line 340
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 331
+    .line 341
     iget p2, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->lastWidth:I
 
     if-eq p2, p1, :cond_0
 
-    .line 332
+    .line 342
     iget-object p2, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->sizeBar:Lorg/telegram/ui/Components/SeekBarView;
 
     sget v0, Lorg/telegram/messenger/SharedConfig;->fontSize:I
@@ -359,7 +359,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/SeekBarView;->setProgress(F)V
 
-    .line 333
+    .line 343
     iput p1, p0, Lorg/telegram/ui/ThemeActivity$TextSizeCell;->lastWidth:I
 
     :cond_0
@@ -369,7 +369,7 @@
 .method public performAccessibilityAction(ILandroid/os/Bundle;)Z
     .locals 1
 
-    .line 352
+    .line 362
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->performAccessibilityAction(ILandroid/os/Bundle;)Z
 
     move-result v0

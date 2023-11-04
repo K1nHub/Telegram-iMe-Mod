@@ -33,15 +33,15 @@ public final class Instant implements Comparable<Instant> {
     }
 
     /* renamed from: minus-LRDsOJo  reason: not valid java name */
-    public final Instant m2120minusLRDsOJo(long j) {
-        return m2121plusLRDsOJo(Duration.m2083unaryMinusUwyO8pc(j));
+    public final Instant m2125minusLRDsOJo(long j) {
+        return m2126plusLRDsOJo(Duration.m2088unaryMinusUwyO8pc(j));
     }
 
     /* renamed from: minus-5sfh64U  reason: not valid java name */
-    public final long m2119minus5sfh64U(Instant other) {
+    public final long m2124minus5sfh64U(Instant other) {
         Intrinsics.checkNotNullParameter(other, "other");
         Duration.Companion companion = Duration.Companion;
-        return Duration.m2079plusLRDsOJo(DurationKt.toDuration(this.value.getEpochSecond() - other.value.getEpochSecond(), DurationUnit.SECONDS), DurationKt.toDuration(this.value.getNano() - other.value.getNano(), DurationUnit.NANOSECONDS));
+        return Duration.m2084plusLRDsOJo(DurationKt.toDuration(this.value.getEpochSecond() - other.value.getEpochSecond(), DurationUnit.SECONDS), DurationKt.toDuration(this.value.getNano() - other.value.getNano(), DurationUnit.NANOSECONDS));
     }
 
     @Override // java.lang.Comparable
@@ -178,14 +178,14 @@ public final class Instant implements Comparable<Instant> {
     }
 
     /* renamed from: plus-LRDsOJo  reason: not valid java name */
-    public final Instant m2121plusLRDsOJo(long j) {
+    public final Instant m2126plusLRDsOJo(long j) {
         try {
-            p033j$.time.Instant plusNanos = this.value.plusSeconds(Duration.m2066getInWholeSecondsimpl(j)).plusNanos(Duration.m2068getNanosecondsComponentimpl(j));
+            p033j$.time.Instant plusNanos = this.value.plusSeconds(Duration.m2071getInWholeSecondsimpl(j)).plusNanos(Duration.m2073getNanosecondsComponentimpl(j));
             Intrinsics.checkNotNullExpressionValue(plusNanos, "value.plusSeconds(second…nos(nanoseconds.toLong())");
             return new Instant(plusNanos);
         } catch (Exception e) {
             if ((e instanceof ArithmeticException) || (e instanceof DateTimeException)) {
-                return Duration.m2078isPositiveimpl(j) ? MAX : MIN;
+                return Duration.m2083isPositiveimpl(j) ? MAX : MIN;
             }
             throw e;
         }

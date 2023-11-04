@@ -22,7 +22,7 @@ public interface INativeImageLabeler extends IInterface {
             if (i == 1) {
                 IObjectWrapper.Stub.asInterface(parcel.readStrongBinder());
                 Parcelable.Creator<LabelOptions> creator = LabelOptions.CREATOR;
-                throw ImageLabeler$$ExternalSyntheticThrowNSME0.m1060m();
+                throw ImageLabeler$$ExternalSyntheticThrowNSME0.m1061m();
             } else if (i != 2) {
                 return false;
             } else {

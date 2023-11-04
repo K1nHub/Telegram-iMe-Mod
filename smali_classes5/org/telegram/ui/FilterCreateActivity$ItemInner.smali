@@ -27,7 +27,7 @@
 
 .field private isRed:Z
 
-.field private link:Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+.field private link:Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
 .field private newSpan:Z
 
@@ -40,7 +40,7 @@
 .method public constructor <init>(IZ)V
     .locals 0
 
-    .line 1381
+    .line 1382
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
     return-void
@@ -49,7 +49,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Z
     .locals 0
 
-    .line 1363
+    .line 1364
     iget-boolean p0, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->newSpan:Z
 
     return p0
@@ -58,7 +58,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Ljava/lang/CharSequence;
     .locals 0
 
-    .line 1363
+    .line 1364
     iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->text:Ljava/lang/CharSequence;
 
     return-object p0
@@ -67,7 +67,7 @@
 .method static synthetic access$2000(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Ljava/lang/String;
     .locals 0
 
-    .line 1363
+    .line 1364
     iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->chatType:Ljava/lang/String;
 
     return-object p0
@@ -76,7 +76,7 @@
 .method static synthetic access$2100(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)J
     .locals 2
 
-    .line 1363
+    .line 1364
     iget-wide v0, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->did:J
 
     return-wide v0
@@ -85,17 +85,17 @@
 .method static synthetic access$2200(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)I
     .locals 0
 
-    .line 1363
+    .line 1364
     iget p0, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->iconResId:I
 
     return p0
 .end method
 
-.method static synthetic access$2300(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+.method static synthetic access$2300(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
     .locals 0
 
-    .line 1363
-    iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+    .line 1364
+    iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
     return-object p0
 .end method
@@ -103,7 +103,7 @@
 .method static synthetic access$3500(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)I
     .locals 0
 
-    .line 1363
+    .line 1364
     iget p0, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->flags:I
 
     return p0
@@ -112,7 +112,7 @@
 .method static synthetic access$3600(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Z
     .locals 0
 
-    .line 1363
+    .line 1364
     iget-boolean p0, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->include:Z
 
     return p0
@@ -121,7 +121,7 @@
 .method static synthetic access$3700(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Landroid/view/View$OnClickListener;
     .locals 0
 
-    .line 1363
+    .line 1364
     iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->onClickListener:Landroid/view/View$OnClickListener;
 
     return-object p0
@@ -130,7 +130,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Z
     .locals 0
 
-    .line 1363
+    .line 1364
     iget-boolean p0, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->isRed:Z
 
     return p0
@@ -139,7 +139,7 @@
 .method public static asButton(ILjava/lang/CharSequence;Z)Lorg/telegram/ui/FilterCreateActivity$ItemInner;
     .locals 3
 
-    .line 1430
+    .line 1431
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
     const/4 v1, 0x4
@@ -148,13 +148,13 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;-><init>(IZ)V
 
-    .line 1431
+    .line 1432
     iput p0, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->iconResId:I
 
-    .line 1432
+    .line 1433
     iput-object p1, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->text:Ljava/lang/CharSequence;
 
-    .line 1433
+    .line 1434
     iput-boolean p2, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->isRed:Z
 
     return-object v0
@@ -163,7 +163,7 @@
 .method public static asChat(ZJ)Lorg/telegram/ui/FilterCreateActivity$ItemInner;
     .locals 3
 
-    .line 1398
+    .line 1399
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
     const/4 v1, 0x1
@@ -172,10 +172,10 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;-><init>(IZ)V
 
-    .line 1399
+    .line 1400
     iput-boolean p0, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->include:Z
 
-    .line 1400
+    .line 1401
     iput-wide p1, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->did:J
 
     return-object v0
@@ -184,7 +184,7 @@
 .method public static asChat(ZLjava/lang/CharSequence;Ljava/lang/String;I)Lorg/telegram/ui/FilterCreateActivity$ItemInner;
     .locals 3
 
-    .line 1405
+    .line 1406
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
     const/4 v1, 0x1
@@ -193,16 +193,16 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;-><init>(IZ)V
 
-    .line 1406
+    .line 1407
     iput-boolean p0, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->include:Z
 
-    .line 1407
+    .line 1408
     iput-object p1, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->text:Ljava/lang/CharSequence;
 
-    .line 1408
+    .line 1409
     iput-object p2, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->chatType:Ljava/lang/String;
 
-    .line 1409
+    .line 1410
     iput p3, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->flags:I
 
     return-object v0
@@ -211,7 +211,7 @@
 .method public static asCreateLink()Lorg/telegram/ui/FilterCreateActivity$ItemInner;
     .locals 3
 
-    .line 1438
+    .line 1439
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
     const/16 v1, 0x8
@@ -226,7 +226,7 @@
 .method public static asEdit()Lorg/telegram/ui/FilterCreateActivity$ItemInner;
     .locals 3
 
-    .line 1414
+    .line 1415
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
     const/4 v1, 0x2
@@ -241,14 +241,14 @@
 .method public static asHeader(Ljava/lang/CharSequence;)Lorg/telegram/ui/FilterCreateActivity$ItemInner;
     .locals 2
 
-    .line 1385
+    .line 1386
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, v1, v1}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;-><init>(IZ)V
 
-    .line 1386
+    .line 1387
     iput-object p0, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->text:Ljava/lang/CharSequence;
 
     return-object v0
@@ -257,26 +257,26 @@
 .method public static asHeader(Ljava/lang/CharSequence;Z)Lorg/telegram/ui/FilterCreateActivity$ItemInner;
     .locals 2
 
-    .line 1391
+    .line 1392
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, v1, v1}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;-><init>(IZ)V
 
-    .line 1392
+    .line 1393
     iput-object p0, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->text:Ljava/lang/CharSequence;
 
-    .line 1393
+    .line 1394
     iput-boolean p1, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->newSpan:Z
 
     return-object v0
 .end method
 
-.method public static asLink(Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;)Lorg/telegram/ui/FilterCreateActivity$ItemInner;
+.method public static asLink(Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;)Lorg/telegram/ui/FilterCreateActivity$ItemInner;
     .locals 3
 
-    .line 1424
+    .line 1425
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
     const/4 v1, 0x7
@@ -285,8 +285,8 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;-><init>(IZ)V
 
-    .line 1425
-    iput-object p0, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+    .line 1426
+    iput-object p0, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
     return-object v0
 .end method
@@ -294,7 +294,7 @@
 .method public static asShadow(Ljava/lang/CharSequence;)Lorg/telegram/ui/FilterCreateActivity$ItemInner;
     .locals 3
 
-    .line 1418
+    .line 1419
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -315,7 +315,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;-><init>(IZ)V
 
-    .line 1419
+    .line 1420
     iput-object p0, v0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->text:Ljava/lang/CharSequence;
 
     return-object v0
@@ -337,7 +337,7 @@
 
     if-eqz p1, :cond_b
 
-    .line 1453
+    .line 1454
     const-class v2, Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -348,11 +348,11 @@
 
     goto/16 :goto_3
 
-    .line 1454
+    .line 1455
     :cond_1
     check-cast p1, Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
-    .line 1455
+    .line 1456
     iget v2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v3, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -374,7 +374,7 @@
 
     if-ne v2, v3, :cond_4
 
-    .line 1459
+    .line 1460
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->text:Ljava/lang/CharSequence;
 
@@ -388,13 +388,13 @@
 
     return v1
 
-    .line 1463
+    .line 1464
     :cond_4
     iget v2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     if-nez v2, :cond_6
 
-    .line 1464
+    .line 1465
     iget-boolean v2, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->newSpan:Z
 
     iget-boolean p1, p1, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->newSpan:Z
@@ -412,7 +412,7 @@
     :cond_6
     if-ne v2, v0, :cond_8
 
-    .line 1467
+    .line 1468
     iget-wide v2, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->did:J
 
     iget-wide v4, p1, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->did:J
@@ -425,7 +425,7 @@
 
     iget-object v3, p1, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->chatType:Ljava/lang/String;
 
-    .line 1469
+    .line 1470
     invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -451,57 +451,57 @@
 
     if-ne v2, v3, :cond_a
 
-    .line 1474
-    iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+    .line 1475
+    iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
-    iget-object v3, p1, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+    iget-object v3, p1, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
     if-eq v2, v3, :cond_a
 
-    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;->url:Ljava/lang/String;
+    iget-object v2, v2, Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;->url:Ljava/lang/String;
 
-    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;->url:Ljava/lang/String;
+    iget-object v3, v3, Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;->url:Ljava/lang/String;
 
-    .line 1476
+    .line 1477
     invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_9
 
-    iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+    iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
-    iget-boolean v3, v2, Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;->revoked:Z
+    iget-boolean v3, v2, Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;->revoked:Z
 
-    iget-object v4, p1, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+    iget-object v4, p1, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
-    iget-boolean v5, v4, Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;->revoked:Z
+    iget-boolean v5, v4, Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;->revoked:Z
 
     if-ne v3, v5, :cond_9
 
-    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;->title:Ljava/lang/String;
+    iget-object v2, v2, Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;->title:Ljava/lang/String;
 
-    iget-object v3, v4, Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;->title:Ljava/lang/String;
+    iget-object v3, v4, Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;->title:Ljava/lang/String;
 
-    .line 1478
+    .line 1479
     invoke-static {v2, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-eqz v2, :cond_9
 
-    iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+    iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
-    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;->peers:Ljava/util/ArrayList;
+    iget-object v2, v2, Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;->peers:Ljava/util/ArrayList;
 
-    .line 1479
+    .line 1480
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v2
 
-    iget-object p1, p1, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+    iget-object p1, p1, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->link:Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;->peers:Ljava/util/ArrayList;
+    iget-object p1, p1, Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;->peers:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -526,7 +526,7 @@
 .method public isShadow()Z
     .locals 2
 
-    .line 1447
+    .line 1448
     iget v0, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     const/4 v1, 0x3
@@ -555,7 +555,7 @@
 .method public whenClicked(Landroid/view/View$OnClickListener;)Lorg/telegram/ui/FilterCreateActivity$ItemInner;
     .locals 0
 
-    .line 1442
+    .line 1443
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->onClickListener:Landroid/view/View$OnClickListener;
 
     return-object p0

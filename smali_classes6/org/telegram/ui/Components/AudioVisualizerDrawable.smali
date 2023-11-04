@@ -193,7 +193,7 @@
 
     const/16 v0, 0x20
 
-    .line 146
+    .line 155
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
@@ -214,7 +214,7 @@
 
     if-ge v1, v2, :cond_5
 
-    .line 150
+    .line 159
     iget-object v2, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->animateTo:[F
 
     aget v4, v2, v1
@@ -227,7 +227,7 @@
 
     if-eqz v4, :cond_4
 
-    .line 151
+    .line 160
     aget v4, v5, v1
 
     iget-object v6, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->dt:[F
@@ -242,7 +242,7 @@
 
     aput v4, v5, v1
 
-    .line 152
+    .line 161
     aget v4, v6, v1
 
     cmpl-float v4, v4, v3
@@ -272,13 +272,13 @@
 
     if-gez v3, :cond_3
 
-    .line 153
+    .line 162
     :cond_2
     aget v2, v2, v1
 
     aput v2, v5, v1
 
-    .line 155
+    .line 164
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->parentView:Landroid/view/View;
 
@@ -289,7 +289,7 @@
 
     goto :goto_0
 
-    .line 159
+    .line 168
     :cond_5
     iget-boolean v1, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->idleScaleInc:Z
 
@@ -301,7 +301,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 160
+    .line 169
     iget v1, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->idleScale:F
 
     add-float/2addr v1, v2
@@ -312,15 +312,15 @@
 
     if-lez v1, :cond_7
 
-    .line 162
+    .line 171
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->idleScaleInc:Z
 
-    .line 163
+    .line 172
     iput v4, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->idleScale:F
 
     goto :goto_1
 
-    .line 166
+    .line 175
     :cond_6
     iget v1, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->idleScale:F
 
@@ -332,13 +332,13 @@
 
     if-gez v1, :cond_7
 
-    .line 168
+    .line 177
     iput-boolean v5, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->idleScaleInc:Z
 
-    .line 169
+    .line 178
     iput v3, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->idleScale:F
 
-    .line 173
+    .line 182
     :cond_7
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->current:[F
@@ -349,7 +349,7 @@
 
     const/4 v6, 0x6
 
-    .line 174
+    .line 183
     aget v6, v1, v6
 
     aget v1, v1, v0
@@ -374,7 +374,7 @@
 
     if-ge v1, v3, :cond_9
 
-    .line 181
+    .line 190
     iget-object v3, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->tmpWaveform:[I
 
     iget-object v7, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->current:[F
@@ -393,7 +393,7 @@
 
     goto :goto_2
 
-    .line 183
+    .line 192
     :cond_9
     iget-object v1, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->drawables:[Lorg/telegram/ui/Components/CircleBezierDrawable;
 
@@ -408,7 +408,7 @@
     :goto_3
     if-ge v1, v3, :cond_a
 
-    .line 186
+    .line 195
     iget-object v7, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->tmpWaveform:[I
 
     iget-object v8, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->current:[F
@@ -429,7 +429,7 @@
 
     goto :goto_3
 
-    .line 188
+    .line 197
     :cond_a
     iget-object v1, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->drawables:[Lorg/telegram/ui/Components/CircleBezierDrawable;
 
@@ -441,7 +441,7 @@
 
     const/16 v1, 0x16
 
-    .line 189
+    .line 198
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -450,7 +450,7 @@
 
     const/4 v3, 0x4
 
-    .line 190
+    .line 199
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -469,7 +469,7 @@
 
     const/16 v2, 0x1a
 
-    .line 193
+    .line 202
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -480,14 +480,14 @@
 
     if-lez v3, :cond_b
 
-    .line 194
+    .line 203
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    .line 196
+    .line 205
     :cond_b
     iget-object v2, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->drawables:[Lorg/telegram/ui/Components/CircleBezierDrawable;
 
@@ -499,10 +499,10 @@
 
     iput v1, v3, Lorg/telegram/ui/Components/CircleBezierDrawable;->radius:F
 
-    .line 198
+    .line 207
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 199
+    .line 208
     iget v1, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->rotation:F
 
     float-to-double v1, v1
@@ -515,13 +515,13 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->rotation:F
 
-    .line 200
+    .line 209
     invoke-virtual {p1, v1, p2, p3}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 201
+    .line 210
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 202
+    .line 211
     iget v1, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->idleScale:F
 
     const v2, 0x3d23d70a    # 0.04f
@@ -530,10 +530,10 @@
 
     add-float/2addr v1, v4
 
-    .line 203
+    .line 212
     invoke-virtual {p1, v1, v1, p2, p3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 204
+    .line 213
     iget-object v1, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->drawables:[Lorg/telegram/ui/Components/CircleBezierDrawable;
 
     aget-object v0, v1, v0
@@ -542,15 +542,15 @@
 
     invoke-virtual {v0, p2, p3, p1, v1}, Lorg/telegram/ui/Components/CircleBezierDrawable;->draw(FFLandroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 205
+    .line 214
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     const/high16 v0, 0x42700000    # 60.0f
 
-    .line 207
+    .line 216
     invoke-virtual {p1, v0, p2, p3}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 208
+    .line 217
     iget v0, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->idleScale:F
 
     sub-float v0, v4, v0
@@ -559,10 +559,10 @@
 
     add-float/2addr v0, v4
 
-    .line 209
+    .line 218
     invoke-virtual {p1, v0, v0, p2, p3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 210
+    .line 219
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->drawables:[Lorg/telegram/ui/Components/CircleBezierDrawable;
 
     aget-object v0, v0, v5
@@ -571,8 +571,47 @@
 
     invoke-virtual {v0, p2, p3, p1, v1}, Lorg/telegram/ui/Components/CircleBezierDrawable;->draw(FFLandroid/graphics/Canvas;Landroid/graphics/Paint;)V
 
-    .line 211
+    .line 220
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+
+    return-void
+.end method
+
+.method public draw(Landroid/graphics/Canvas;FFIFLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .locals 0
+
+    const/16 p6, 0x20
+
+    .line 118
+    invoke-static {p6}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+
+    move-result p6
+
+    if-nez p6, :cond_0
+
+    return-void
+
+    .line 121
+    :cond_0
+    iget-object p6, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->p1:Landroid/graphics/Paint;
+
+    invoke-virtual {p6, p4}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 122
+    iget-object p4, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->p1:Landroid/graphics/Paint;
+
+    iget p6, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->ALPHA:I
+
+    int-to-float p6, p6
+
+    mul-float/2addr p6, p5
+
+    float-to-int p5, p6
+
+    invoke-virtual {p4, p5}, Landroid/graphics/Paint;->setAlpha(I)V
+
+    .line 123
+    invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->draw(Landroid/graphics/Canvas;FF)V
 
     return-void
 .end method
@@ -582,7 +621,7 @@
 
     const/16 v0, 0x20
 
-    .line 118
+    .line 127
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
@@ -594,7 +633,7 @@
     :cond_0
     if-eqz p4, :cond_1
 
-    .line 122
+    .line 131
     iget-object p4, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->p1:Landroid/graphics/Paint;
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outLoader:I
@@ -605,7 +644,7 @@
 
     invoke-virtual {p4, p6}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 123
+    .line 132
     iget-object p4, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->p1:Landroid/graphics/Paint;
 
     iget p6, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->ALPHA:I
@@ -620,7 +659,7 @@
 
     goto :goto_0
 
-    .line 125
+    .line 134
     :cond_1
     iget-object p4, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->p1:Landroid/graphics/Paint;
 
@@ -632,7 +671,7 @@
 
     invoke-virtual {p4, p6}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 126
+    .line 135
     iget-object p4, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->p1:Landroid/graphics/Paint;
 
     iget p6, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->ALPHA:I
@@ -645,7 +684,7 @@
 
     invoke-virtual {p4, p5}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 128
+    .line 137
     :goto_0
     invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->draw(Landroid/graphics/Canvas;FF)V
 
@@ -655,7 +694,7 @@
 .method public getParentView()Landroid/view/View;
     .locals 1
 
-    .line 219
+    .line 228
     iget-object v0, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->parentView:Landroid/view/View;
 
     return-object v0
@@ -664,7 +703,7 @@
 .method public setParentView(Landroid/view/View;)V
     .locals 0
 
-    .line 215
+    .line 224
     iput-object p1, p0, Lorg/telegram/ui/Components/AudioVisualizerDrawable;->parentView:Landroid/view/View;
 
     return-void

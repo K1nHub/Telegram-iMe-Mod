@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x127a154b
-
-
 # instance fields
 .field public flags:I
 
@@ -30,19 +26,13 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 1
 
-    .line 35078
+    .line 35463
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Update;-><init>()V
 
-    .line 35084
+    .line 35469
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -57,7 +47,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 35089
+    .line 35474
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -79,11 +69,11 @@
     :cond_0
     move v0, v2
 
-    .line 35090
+    .line 35475
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedMessages;->pinned:Z
 
-    .line 35091
+    .line 35476
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -94,7 +84,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedMessages;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 35092
+    .line 35477
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -107,7 +97,7 @@
 
     return-void
 
-    .line 35095
+    .line 35480
     :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -129,7 +119,7 @@
 
     throw p1
 
-    .line 35099
+    .line 35484
     :cond_2
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -138,7 +128,7 @@
     :goto_1
     if-ge v2, v0, :cond_3
 
-    .line 35101
+    .line 35486
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
@@ -155,7 +145,7 @@
 
     goto :goto_1
 
-    .line 35103
+    .line 35488
     :cond_3
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -163,7 +153,7 @@
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedMessages;->pts:I
 
-    .line 35104
+    .line 35489
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -176,12 +166,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 35108
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedMessages;->constructor:I
+    const v0, -0x127a154b
 
+    .line 35493
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 35109
+    .line 35494
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedMessages;->pinned:Z
 
     if-eqz v0, :cond_0
@@ -200,27 +190,27 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedMessages;->flags:I
 
-    .line 35110
+    .line 35495
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 35111
+    .line 35496
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedMessages;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
     const v0, 0x1cb5c415
 
-    .line 35112
+    .line 35497
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 35113
+    .line 35498
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 35114
+    .line 35499
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -228,7 +218,7 @@
     :goto_1
     if-ge v1, v0, :cond_1
 
-    .line 35116
+    .line 35501
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -247,13 +237,13 @@
 
     goto :goto_1
 
-    .line 35118
+    .line 35503
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedMessages;->pts:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 35119
+    .line 35504
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updatePinnedMessages;->pts_count:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

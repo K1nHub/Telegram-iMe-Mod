@@ -67,7 +67,7 @@ public class AudioRecoder {
                 this.audioInputs.get(i).release();
             }
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
         }
     }
 

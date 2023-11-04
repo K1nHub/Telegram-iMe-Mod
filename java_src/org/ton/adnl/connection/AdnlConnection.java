@@ -173,7 +173,7 @@ public final class AdnlConnection implements CoroutineScope, Closeable {
             r0.I$0 = r4     // Catch: java.lang.Throwable -> L78
             r0.I$1 = r2     // Catch: java.lang.Throwable -> L78
             r0.label = r3     // Catch: java.lang.Throwable -> L78
-            java.lang.Object r11 = kotlinx.coroutines.TimeoutKt.m2093withTimeoutOrNullKLykuaI(r7, r11, r0)     // Catch: java.lang.Throwable -> L78
+            java.lang.Object r11 = kotlinx.coroutines.TimeoutKt.m2098withTimeoutOrNullKLykuaI(r7, r11, r0)     // Catch: java.lang.Throwable -> L78
             if (r11 != r1) goto L64
             return r1
         L64:
@@ -322,7 +322,7 @@ public final class AdnlConnection implements CoroutineScope, Closeable {
         }
 
         /* renamed from: getMAX_IDLE_TIME-UwyO8pc  reason: not valid java name */
-        public final long m4917getMAX_IDLE_TIMEUwyO8pc() {
+        public final long m5071getMAX_IDLE_TIMEUwyO8pc() {
             return AdnlConnection.MAX_IDLE_TIME;
         }
     }

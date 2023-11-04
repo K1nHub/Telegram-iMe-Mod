@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateContainerBack()V
+    value = Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navigateTo(IZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,13 +17,21 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
+.field final synthetic val$oldPage:I
+
+.field final synthetic val$page:I
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;II)V
     .locals 0
 
-    .line 2944
+    .line 3056
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$14;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
+
+    iput p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$14;->val$oldPage:I
+
+    iput p3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$14;->val$page:I
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -33,34 +41,16 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+    .locals 2
 
-    .line 2947
+    .line 3059
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$14;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    const/4 v0, 0x0
+    iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$14;->val$oldPage:I
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$9402(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
+    iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$14;->val$page:I
 
-    .line 2948
-    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$14;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
-
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
-
-    move-result-object p1
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;->setTranslationY(F)V
-
-    .line 2949
-    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$14;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
-
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;->setTranslationY2(F)V
+    invoke-static {p1, v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$10000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;II)V
 
     return-void
 .end method

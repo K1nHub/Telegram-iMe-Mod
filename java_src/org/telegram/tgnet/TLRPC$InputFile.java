@@ -3,7 +3,7 @@ package org.telegram.tgnet;
 public abstract class TLRPC$InputFile extends TLObject {
 
     /* renamed from: id */
-    public long f1618id;
+    public long f1620id;
     public String md5_checksum;
     public String name;
     public int parts;

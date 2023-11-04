@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FolderBottomSheet$Button;)V
     .locals 0
 
-    .line 758
+    .line 759
     iput-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button$2;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet$Button;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,14 +35,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 761
+    .line 762
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button$2;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet$Button;
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/FolderBottomSheet$Button;->access$102(Lorg/telegram/ui/Components/FolderBottomSheet$Button;F)F
 
-    .line 762
+    .line 763
     iget-object p1, p0, Lorg/telegram/ui/Components/FolderBottomSheet$Button$2;->this$0:Lorg/telegram/ui/Components/FolderBottomSheet$Button;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

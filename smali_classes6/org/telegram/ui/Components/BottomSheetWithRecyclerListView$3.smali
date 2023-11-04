@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;
-.super Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
+.super Lorg/telegram/ui/ActionBar/ActionBar;
 .source "BottomSheetWithRecyclerListView.java"
 
 
@@ -17,123 +17,59 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;
 
-.field final synthetic val$adapter:Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
-
-.field final synthetic val$context:Landroid/content/Context;
+.field final synthetic val$containerView:Landroid/widget/FrameLayout;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;Landroid/content/Context;Landroid/widget/FrameLayout;)V
     .locals 0
 
     .line 142
     iput-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;->this$0:Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;->val$adapter:Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
+    iput-object p3, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;->val$containerView:Landroid/widget/FrameLayout;
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;->val$context:Landroid/content/Context;
-
-    invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/ActionBar;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getItemCount()I
+.method public setAlpha(F)V
     .locals 1
 
-    .line 187
-    iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;->val$adapter:Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
-
-    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->getItemCount()I
+    .line 145
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getAlpha()F
 
     move-result v0
 
-    add-int/lit8 v0, v0, 0x1
+    cmpl-float v0, v0, p1
 
-    return v0
-.end method
-
-.method public getItemViewType(I)I
-    .locals 1
-
-    if-nez p1, :cond_0
-
-    const/16 p1, -0x3e8
-
-    return p1
-
-    .line 182
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;->val$adapter:Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
-
-    add-int/lit8 p1, p1, -0x1
-
-    invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->getItemViewType(I)I
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
-    .locals 1
+    if-eqz v0, :cond_0
 
     .line 146
-    iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;->val$adapter:Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;->isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
+    .line 147
+    iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;->val$containerView:Landroid/widget/FrameLayout;
 
-    move-result p1
-
-    return p1
-.end method
-
-.method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 1
-
-    if-eqz p2, :cond_0
-
-    .line 173
-    iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;->val$adapter:Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
-
-    add-int/lit8 p2, p2, -0x1
-
-    invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_0
     return-void
 .end method
 
-.method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-    .locals 1
-
-    const/16 v0, -0x3e8
-
-    if-ne p2, v0, :cond_0
+.method public setTag(Ljava/lang/Object;)V
+    .locals 0
 
     .line 153
-    new-instance p1, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3$1;
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    iget-object p2, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;->val$context:Landroid/content/Context;
+    .line 154
+    iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;->this$0:Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;
 
-    invoke-direct {p1, p0, p2}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3$1;-><init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;Landroid/content/Context;)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->access$400(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;)V
 
-    .line 165
-    new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
-
-    invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
-
-    return-object p2
-
-    .line 167
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;->val$adapter:Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
-
-    invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

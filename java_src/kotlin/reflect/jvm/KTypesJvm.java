@@ -46,8 +46,8 @@ public final class KTypesJvm {
                 Object next = it.next();
                 KType kType = (KType) next;
                 Intrinsics.checkNotNull(kType, "null cannot be cast to non-null type kotlin.reflect.jvm.internal.KTypeImpl");
-                ClassifierDescriptor mo2046getDeclarationDescriptor = ((KTypeImpl) kType).getType().getConstructor().mo2046getDeclarationDescriptor();
-                classDescriptor = mo2046getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2046getDeclarationDescriptor : null;
+                ClassifierDescriptor mo2051getDeclarationDescriptor = ((KTypeImpl) kType).getType().getConstructor().mo2051getDeclarationDescriptor();
+                classDescriptor = mo2051getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2051getDeclarationDescriptor : null;
                 if (classDescriptor == null || classDescriptor.getKind() == ClassKind.INTERFACE || classDescriptor.getKind() == ClassKind.ANNOTATION_CLASS) {
                     z = false;
                     continue;

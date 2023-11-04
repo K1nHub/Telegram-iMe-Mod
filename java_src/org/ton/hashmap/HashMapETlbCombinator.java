@@ -44,7 +44,7 @@ public final class HashMapETlbCombinator<X> extends TlbCombinator<HashMapE<?>> {
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public HashMapETlbCombinator(int i, TlbCodec<X> x, TlbConstructor<HmeRoot<X>> root) {
-        super(Reflection.getOrCreateKotlinClass(HashMapE.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(HmeEmpty.class), EmptyHashMapETlbConstructor.INSTANCE), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(HmeRoot.class), root));
+        super(Reflection.getOrCreateKotlinClass(HashMapE.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(HmeEmpty.class), EmptyHashMapETlbConstructor.INSTANCE), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(HmeRoot.class), root));
         Intrinsics.checkNotNullParameter(x, "x");
         Intrinsics.checkNotNullParameter(root, "root");
     }

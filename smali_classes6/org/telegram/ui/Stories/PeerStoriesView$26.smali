@@ -26,19 +26,19 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/content/Context;)V
     .locals 2
 
-    .line 2797
+    .line 2858
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$26;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 2799
+    .line 2860
     new-instance p1, Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-direct {p1}, Lorg/telegram/ui/Components/LoadingDrawable;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$26;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
-    .line 2800
+    .line 2861
     new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -57,15 +57,15 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 11
 
-    .line 2804
+    .line 2865
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 2805
+    .line 2866
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$26;->animatedFloat:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedFloat;->setParent(Landroid/view/View;)V
 
-    .line 2806
+    .line 2867
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$26;->animatedFloat:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$26;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
@@ -90,7 +90,7 @@
 
     invoke-virtual {v0, v1, v4}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
 
-    .line 2807
+    .line 2868
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$26;->animatedFloat:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
@@ -101,7 +101,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2809
+    .line 2870
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$26;->animatedFloat:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedFloat;->get()F
@@ -116,7 +116,7 @@
 
     const/4 v6, 0x0
 
-    .line 2810
+    .line 2871
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -151,11 +151,11 @@
 
     goto :goto_1
 
-    .line 2812
+    .line 2873
     :cond_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2814
+    .line 2875
     :goto_1
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
@@ -175,19 +175,19 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2815
+    .line 2876
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$26;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/LoadingDrawable;->setBounds(Landroid/graphics/RectF;)V
 
-    .line 2816
+    .line 2877
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$26;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     const/high16 v1, 0x41c00000    # 24.0f
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/LoadingDrawable;->setRadiiDp(F)V
 
-    .line 2817
+    .line 2878
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$26;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     const/16 v1, 0x14
@@ -216,15 +216,15 @@
 
     invoke-virtual {v0, v1, v4, v3, v2}, Lorg/telegram/ui/Components/LoadingDrawable;->setColors(IIII)V
 
-    .line 2818
+    .line 2879
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$26;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/LoadingDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2819
+    .line 2880
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
-    .line 2820
+    .line 2881
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_2

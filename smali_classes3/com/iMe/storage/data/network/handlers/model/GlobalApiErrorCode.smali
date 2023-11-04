@@ -100,6 +100,10 @@
 
 .field public static final enum JWT_VALIDATION_FAILED:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
+.field public static final enum NO_CURRENT_AUTHORIZATION_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+.field public static final enum NO_CURRENT_TON_CONNECT_SESSION_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
 .field public static final enum NO_OAUTH_ACCESS_GRANTED_ERROR:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
 .field public static final enum REFRESH_TOKEN_ABSENT:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
@@ -117,7 +121,7 @@
 .method private static final synthetic $values()[Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
     .locals 3
 
-    const/16 v0, 0x2c
+    const/16 v0, 0x2e
 
     new-array v0, v0, [Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
@@ -379,9 +383,21 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->UNKNOWN:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_CURRENT_TON_CONNECT_SESSION_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
     const/16 v2, 0x2b
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_CURRENT_AUTHORIZATION_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const/16 v2, 0x2c
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->UNKNOWN:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const/16 v2, 0x2d
 
     aput-object v1, v0, v2
 
@@ -867,9 +883,31 @@
     .line 47
     new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
 
-    const-string v1, "UNKNOWN"
+    const-string v1, "NO_CURRENT_TON_CONNECT_SESSION_FOUND"
 
     const/16 v2, 0x2b
+
+    invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_CURRENT_TON_CONNECT_SESSION_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    .line 48
+    new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const-string v1, "NO_CURRENT_AUTHORIZATION_FOUND"
+
+    const/16 v2, 0x2c
+
+    invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_CURRENT_AUTHORIZATION_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    .line 49
+    new-instance v0, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    const-string v1, "UNKNOWN"
+
+    const/16 v2, 0x2d
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;-><init>(Ljava/lang/String;I)V
 

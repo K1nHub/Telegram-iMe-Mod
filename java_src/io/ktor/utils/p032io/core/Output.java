@@ -26,12 +26,12 @@ public abstract class Output implements Appendable, Closeable {
     protected abstract void closeDestination();
 
     /* renamed from: flush-62zg_DM */
-    protected abstract void mo1913flush62zg_DM(ByteBuffer byteBuffer, int i, int i2);
+    protected abstract void mo1918flush62zg_DM(ByteBuffer byteBuffer, int i, int i2);
 
     public Output(ObjectPool<ChunkBuffer> pool) {
         Intrinsics.checkNotNullParameter(pool, "pool");
         this.pool = pool;
-        this.tailMemory = Memory.Companion.m1908getEmptySK3TCg8();
+        this.tailMemory = Memory.Companion.m1913getEmptySK3TCg8();
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -45,7 +45,7 @@ public abstract class Output implements Appendable, Closeable {
     }
 
     /* renamed from: getTailMemory-SK3TCg8$ktor_io  reason: not valid java name */
-    public final ByteBuffer m1915getTailMemorySK3TCg8$ktor_io() {
+    public final ByteBuffer m1920getTailMemorySK3TCg8$ktor_io() {
         return this.tailMemory;
     }
 
@@ -82,7 +82,7 @@ public abstract class Output implements Appendable, Closeable {
         ChunkBuffer chunkBuffer = stealAll$ktor_io;
         do {
             try {
-                mo1913flush62zg_DM(chunkBuffer.m1912getMemorySK3TCg8(), chunkBuffer.getReadPosition(), chunkBuffer.getWritePosition() - chunkBuffer.getReadPosition());
+                mo1918flush62zg_DM(chunkBuffer.m1917getMemorySK3TCg8(), chunkBuffer.getReadPosition(), chunkBuffer.getWritePosition() - chunkBuffer.getReadPosition());
                 chunkBuffer = chunkBuffer.getNext();
             } finally {
                 BuffersKt.releaseAll(stealAll$ktor_io, this.pool);
@@ -105,7 +105,7 @@ public abstract class Output implements Appendable, Closeable {
         this.tailEndExclusive = 0;
         this.tailInitialPosition = 0;
         this.chainedSize = 0;
-        this.tailMemory = Memory.Companion.m1908getEmptySK3TCg8();
+        this.tailMemory = Memory.Companion.m1913getEmptySK3TCg8();
         return chunkBuffer;
     }
 
@@ -137,7 +137,7 @@ public abstract class Output implements Appendable, Closeable {
         }
         this._tail = chunkBuffer2;
         this.chainedSize += i;
-        this.tailMemory = chunkBuffer2.m1912getMemorySK3TCg8();
+        this.tailMemory = chunkBuffer2.m1917getMemorySK3TCg8();
         this.tailPosition = chunkBuffer2.getWritePosition();
         this.tailInitialPosition = chunkBuffer2.getReadPosition();
         this.tailEndExclusive = chunkBuffer2.getLimit();
@@ -244,30 +244,30 @@ public abstract class Output implements Appendable, Closeable {
         int i = 3;
         ChunkBuffer prepareWriteHead = prepareWriteHead(3);
         try {
-            ByteBuffer m1912getMemorySK3TCg8 = prepareWriteHead.m1912getMemorySK3TCg8();
+            ByteBuffer m1917getMemorySK3TCg8 = prepareWriteHead.m1917getMemorySK3TCg8();
             int writePosition = prepareWriteHead.getWritePosition();
             if (c >= 0 && c < 128) {
-                m1912getMemorySK3TCg8.put(writePosition, (byte) c);
+                m1917getMemorySK3TCg8.put(writePosition, (byte) c);
                 i = 1;
             } else {
                 if (128 <= c && c < 2048) {
-                    m1912getMemorySK3TCg8.put(writePosition, (byte) (((c >> 6) & 31) | PsExtractor.AUDIO_STREAM));
-                    m1912getMemorySK3TCg8.put(writePosition + 1, (byte) ((c & '?') | 128));
+                    m1917getMemorySK3TCg8.put(writePosition, (byte) (((c >> 6) & 31) | PsExtractor.AUDIO_STREAM));
+                    m1917getMemorySK3TCg8.put(writePosition + 1, (byte) ((c & '?') | 128));
                     i = 2;
                 } else {
                     if (2048 <= c && c < 0) {
-                        m1912getMemorySK3TCg8.put(writePosition, (byte) (((c >> '\f') & 15) | 224));
-                        m1912getMemorySK3TCg8.put(writePosition + 1, (byte) (((c >> 6) & 63) | 128));
-                        m1912getMemorySK3TCg8.put(writePosition + 2, (byte) ((c & '?') | 128));
+                        m1917getMemorySK3TCg8.put(writePosition, (byte) (((c >> '\f') & 15) | 224));
+                        m1917getMemorySK3TCg8.put(writePosition + 1, (byte) (((c >> 6) & 63) | 128));
+                        m1917getMemorySK3TCg8.put(writePosition + 2, (byte) ((c & '?') | 128));
                     } else {
                         if (!(0 <= c && c < 0)) {
                             UTF8Kt.malformedCodePoint(c);
                             throw new KotlinNothingValueException();
                         }
-                        m1912getMemorySK3TCg8.put(writePosition, (byte) (((c >> 18) & 7) | PsExtractor.VIDEO_STREAM_MASK));
-                        m1912getMemorySK3TCg8.put(writePosition + 1, (byte) (((c >> '\f') & 63) | 128));
-                        m1912getMemorySK3TCg8.put(writePosition + 2, (byte) (((c >> 6) & 63) | 128));
-                        m1912getMemorySK3TCg8.put(writePosition + 3, (byte) ((c & '?') | 128));
+                        m1917getMemorySK3TCg8.put(writePosition, (byte) (((c >> 18) & 7) | PsExtractor.VIDEO_STREAM_MASK));
+                        m1917getMemorySK3TCg8.put(writePosition + 1, (byte) (((c >> '\f') & 63) | 128));
+                        m1917getMemorySK3TCg8.put(writePosition + 2, (byte) (((c >> 6) & 63) | 128));
+                        m1917getMemorySK3TCg8.put(writePosition + 3, (byte) ((c & '?') | 128));
                         i = 4;
                     }
                 }

@@ -16,28 +16,28 @@ import java.util.Arrays;
 /* loaded from: classes.dex */
 public final class zzs extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzs> CREATOR = new zzt();
-    @SafeParcelable.Field(m1089id = 1)
+    @SafeParcelable.Field(m1090id = 1)
     public final String zza;
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     public final String zzb;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     public final boolean zzc;
-    @SafeParcelable.Field(defaultValue = IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, m1089id = 4)
+    @SafeParcelable.Field(defaultValue = IcyHeaders.REQUEST_HEADER_ENABLE_METADATA_VALUE, m1090id = 4)
     public final int zzd;
-    @SafeParcelable.Field(m1089id = 5)
+    @SafeParcelable.Field(m1090id = 5)
     public final boolean zze;
-    @SafeParcelable.Field(m1089id = 6)
+    @SafeParcelable.Field(m1090id = 6)
     public final String zzf;
-    @SafeParcelable.Field(m1089id = 7)
+    @SafeParcelable.Field(m1090id = 7)
     public final zzm[] zzg;
-    @SafeParcelable.Field(m1089id = 11)
+    @SafeParcelable.Field(m1090id = 11)
     public final String zzh;
-    @SafeParcelable.Field(m1089id = 12)
+    @SafeParcelable.Field(m1090id = 12)
     public final zzu zzi;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzs(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) String str2, @SafeParcelable.Param(m1088id = 3) boolean z, @SafeParcelable.Param(m1088id = 4) int i, @SafeParcelable.Param(m1088id = 5) boolean z2, @SafeParcelable.Param(m1088id = 6) String str3, @SafeParcelable.Param(m1088id = 7) zzm[] zzmVarArr, @SafeParcelable.Param(m1088id = 11) String str4, @SafeParcelable.Param(m1088id = 12) zzu zzuVar) {
+    public zzs(@SafeParcelable.Param(m1089id = 1) String str, @SafeParcelable.Param(m1089id = 2) String str2, @SafeParcelable.Param(m1089id = 3) boolean z, @SafeParcelable.Param(m1089id = 4) int i, @SafeParcelable.Param(m1089id = 5) boolean z2, @SafeParcelable.Param(m1089id = 6) String str3, @SafeParcelable.Param(m1089id = 7) zzm[] zzmVarArr, @SafeParcelable.Param(m1089id = 11) String str4, @SafeParcelable.Param(m1089id = 12) zzu zzuVar) {
         this.zza = str;
         this.zzb = str2;
         this.zzc = z;

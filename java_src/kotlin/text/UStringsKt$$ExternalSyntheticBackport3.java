@@ -2,7 +2,7 @@ package kotlin.text;
 /* loaded from: classes4.dex */
 public final /* synthetic */ class UStringsKt$$ExternalSyntheticBackport3 {
     /* renamed from: m */
-    public static /* synthetic */ long m129m(long j, long j2) {
+    public static /* synthetic */ long m131m(long j, long j2) {
         if (j2 < 0) {
             return (j ^ Long.MIN_VALUE) < (j2 ^ Long.MIN_VALUE) ? 0L : 1L;
         } else if (j >= 0) {

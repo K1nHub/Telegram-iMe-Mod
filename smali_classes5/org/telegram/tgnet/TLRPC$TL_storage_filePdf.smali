@@ -3,21 +3,11 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x51e1af73
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 47342
+    .line 48101
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$storage_FileType;-><init>()V
 
     return-void
@@ -28,9 +18,9 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 47347
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_storage_filePdf;->constructor:I
+    const v0, -0x51e1af73
 
+    .line 48106
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     return-void

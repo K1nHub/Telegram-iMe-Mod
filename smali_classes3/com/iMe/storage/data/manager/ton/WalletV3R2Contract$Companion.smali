@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletV3R2Contract.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletV3R2Contract.kt\ncom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion\n+ 2 CellRef.kt\norg/ton/tlb/CellRefKt\n+ 3 BitString.kt\norg/ton/bitstring/BitStringKt\n*L\n1#1,244:1\n11#2:245\n11#2:246\n11#2:249\n11#2:250\n9#3,2:247\n*S KotlinDebug\n*F\n+ 1 WalletV3R2Contract.kt\ncom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion\n*L\n148#1:245\n158#1:246\n228#1:249\n234#1:250\n205#1:247,2\n*E\n"
+    value = "SMAP\nWalletV3R2Contract.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletV3R2Contract.kt\ncom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion\n+ 2 CellRef.kt\norg/ton/tlb/CellRefKt\n+ 3 CellBuilder.kt\norg/ton/cell/CellBuilderKt\n+ 4 BitString.kt\norg/ton/bitstring/BitStringKt\n*L\n1#1,249:1\n11#2:250\n11#2:251\n11#2:256\n11#2:257\n135#3,2:252\n9#4,2:254\n*S KotlinDebug\n*F\n+ 1 WalletV3R2Contract.kt\ncom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion\n*L\n153#1:250\n163#1:251\n233#1:256\n239#1:257\n177#1:252,2\n210#1:254,2\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 108
+    .line 113
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
 .method public static final synthetic access$createIntMsg(Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion;Lorg/ton/contract/wallet/WalletTransfer;)Lorg/ton/block/MessageRelaxed;
     .locals 0
 
-    .line 108
+    .line 113
     invoke-direct {p0, p1}, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion;->createIntMsg(Lorg/ton/contract/wallet/WalletTransfer;)Lorg/ton/block/MessageRelaxed;
 
     move-result-object p0
@@ -60,28 +60,28 @@
         }
     .end annotation
 
-    .line 215
+    .line 220
     new-instance v13, Lorg/ton/block/CommonMsgInfoRelaxed$IntMsgInfoRelaxed;
 
-    .line 217
+    .line 222
     invoke-virtual/range {p1 .. p1}, Lorg/ton/contract/wallet/WalletTransfer;->getBounceable()Z
 
     move-result v2
 
-    .line 219
+    .line 224
     sget-object v4, Lorg/ton/block/AddrNone;->INSTANCE:Lorg/ton/block/AddrNone;
 
-    .line 220
+    .line 225
     invoke-virtual/range {p1 .. p1}, Lorg/ton/contract/wallet/WalletTransfer;->getDestination()Lorg/ton/block/MsgAddressInt;
 
     move-result-object v5
 
-    .line 221
+    .line 226
     invoke-virtual/range {p1 .. p1}, Lorg/ton/contract/wallet/WalletTransfer;->getCoins()Lorg/ton/block/CurrencyCollection;
 
     move-result-object v6
 
-    .line 222
+    .line 227
     new-instance v7, Lorg/ton/block/Coins;
 
     const/4 v14, 0x0
@@ -90,7 +90,7 @@
 
     invoke-direct {v7, v14, v0, v14}, Lorg/ton/block/Coins;-><init>(Lorg/ton/block/VarUInteger;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 223
+    .line 228
     new-instance v8, Lorg/ton/block/Coins;
 
     invoke-direct {v8, v14, v0, v14}, Lorg/ton/block/Coins;-><init>(Lorg/ton/block/VarUInteger;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
@@ -107,10 +107,10 @@
 
     move-object v0, v13
 
-    .line 215
+    .line 220
     invoke-direct/range {v0 .. v12}, Lorg/ton/block/CommonMsgInfoRelaxed$IntMsgInfoRelaxed;-><init>(ZZZLorg/ton/block/MsgAddress;Lorg/ton/block/MsgAddressInt;Lorg/ton/block/CurrencyCollection;Lorg/ton/block/Coins;Lorg/ton/block/Coins;JILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 227
+    .line 232
     sget-object v0, Lorg/ton/block/Maybe;->Companion:Lorg/ton/block/Maybe$Companion;
 
     invoke-virtual/range {p1 .. p1}, Lorg/ton/contract/wallet/WalletTransfer;->getStateInit()Lorg/ton/block/StateInit;
@@ -119,7 +119,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 228
+    .line 233
     sget-object v2, Lorg/ton/block/Either;->Companion:Lorg/ton/block/Either$Companion;
 
     sget-object v3, Lorg/ton/block/StateInit;->Companion:Lorg/ton/block/StateInit$Companion;
@@ -131,7 +131,7 @@
 
     move-result-object v1
 
-    .line 228
+    .line 233
     invoke-virtual {v2, v14, v1}, Lorg/ton/block/Either$Companion;->of(Ljava/lang/Object;Ljava/lang/Object;)Lorg/ton/block/Either;
 
     move-result-object v1
@@ -141,20 +141,20 @@
     :cond_0
     move-object v1, v14
 
-    .line 227
+    .line 232
     :goto_0
     invoke-virtual {v0, v1}, Lorg/ton/block/Maybe$Companion;->of(Ljava/lang/Object;)Lorg/ton/block/Maybe;
 
     move-result-object v0
 
-    .line 230
+    .line 235
     invoke-virtual/range {p1 .. p1}, Lorg/ton/contract/wallet/WalletTransfer;->getBody()Lorg/ton/cell/Cell;
 
     move-result-object v1
 
     if-nez v1, :cond_1
 
-    .line 232
+    .line 237
     sget-object v1, Lorg/ton/block/Either;->Companion:Lorg/ton/block/Either$Companion;
 
     sget-object v2, Lorg/ton/cell/Cell;->Companion:Lorg/ton/cell/Cell$Companion;
@@ -169,7 +169,7 @@
 
     goto :goto_1
 
-    .line 234
+    .line 239
     :cond_1
     sget-object v2, Lorg/ton/block/Either;->Companion:Lorg/ton/block/Either$Companion;
 
@@ -180,12 +180,12 @@
 
     move-result-object v1
 
-    .line 234
+    .line 239
     invoke-virtual {v2, v14, v1}, Lorg/ton/block/Either$Companion;->of(Ljava/lang/Object;Ljava/lang/Object;)Lorg/ton/block/Either;
 
     move-result-object v1
 
-    .line 237
+    .line 242
     :goto_1
     new-instance v2, Lorg/ton/block/MessageRelaxed;
 
@@ -203,7 +203,7 @@
 
     const/4 p3, 0x0
 
-    .line 167
+    .line 172
     :cond_0
     invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion;->createStateInit(Lorg/ton/api/pub/PublicKeyEd25519;II)Lorg/ton/block/StateInit;
 
@@ -215,7 +215,7 @@
 .method private final varargs createTransferMessageBody(Lorg/ton/api/pk/PrivateKeyEd25519;III[Lorg/ton/contract/wallet/WalletTransfer;)Lorg/ton/cell/Cell;
     .locals 2
 
-    .line 190
+    .line 195
     sget-object v0, Lorg/ton/cell/CellBuilder;->Companion:Lorg/ton/cell/CellBuilder$Companion;
 
     new-instance v1, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$createTransferMessageBody$unsignedBody$1;
@@ -232,7 +232,7 @@
 
     const/4 p5, 0x0
 
-    .line 205
+    .line 210
     invoke-static {p2, p3, p4, p5}, Lorg/ton/cell/Cell$DefaultImpls;->hash$default(Lorg/ton/cell/Cell;IILjava/lang/Object;)Lorg/ton/bitstring/BitString;
 
     move-result-object v1
@@ -257,7 +257,7 @@
 
     move-result-object p1
 
-    .line 207
+    .line 212
     new-instance p3, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$createTransferMessageBody$1;
 
     invoke-direct {p3, p1, p2}, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$createTransferMessageBody$1;-><init>(Lorg/ton/bitstring/BitString;Lorg/ton/cell/Cell;)V
@@ -272,43 +272,63 @@
 
 # virtual methods
 .method public final createStateInit(Lorg/ton/api/pub/PublicKeyEd25519;II)Lorg/ton/block/StateInit;
-    .locals 10
+    .locals 9
 
     const-string v0, "publicKey"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 172
+    .line 136
     sget-object v0, Lorg/ton/cell/CellBuilder;->Companion:Lorg/ton/cell/CellBuilder$Companion;
 
-    new-instance v1, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$createStateInit$data$1;
+    invoke-virtual {v0}, Lorg/ton/cell/CellBuilder$Companion;->beginCell()Lorg/ton/cell/CellBuilder;
 
-    invoke-direct {v1, p3, p2, p1}, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$createStateInit$data$1;-><init>(IILorg/ton/api/pub/PublicKeyEd25519;)V
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lorg/ton/cell/CellBuilder$Companion;->createCell(Lkotlin/jvm/functions/Function1;)Lorg/ton/cell/Cell;
-
-    move-result-object v4
-
-    .line 177
-    new-instance p1, Lorg/ton/block/StateInit;
+    const/16 v1, 0x20
 
     .line 178
-    sget-object v3, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract;->CODE:Lorg/ton/cell/Cell;
+    invoke-interface {v0, p3, v1}, Lorg/ton/cell/CellBuilder;->storeUInt(II)Lorg/ton/cell/CellBuilder;
+
+    .line 179
+    invoke-interface {v0, p2, v1}, Lorg/ton/cell/CellBuilder;->storeUInt(II)Lorg/ton/cell/CellBuilder;
+
+    .line 180
+    invoke-virtual {p1}, Lorg/ton/api/pub/PublicKeyEd25519;->getKey()Lorg/ton/tl/ByteString;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/ton/tl/ByteString;->toByteArray()[B
+
+    move-result-object p1
+
+    invoke-interface {v0, p1}, Lorg/ton/cell/CellBuilder;->storeBytes([B)Lorg/ton/cell/CellBuilder;
+
+    .line 136
+    invoke-interface {v0}, Lorg/ton/cell/CellBuilder;->endCell()Lorg/ton/cell/Cell;
+
+    move-result-object v3
+
+    .line 182
+    new-instance p1, Lorg/ton/block/StateInit;
+
+    .line 183
+    sget-object v2, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract;->CODE:Lorg/ton/cell/Cell;
+
+    const/4 v4, 0x0
 
     const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    const/16 v7, 0x1c
 
-    const/16 v8, 0x1c
+    const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    move-object v1, p1
 
-    move-object v2, p1
-
-    .line 177
-    invoke-direct/range {v2 .. v9}, Lorg/ton/block/StateInit;-><init>(Lorg/ton/cell/Cell;Lorg/ton/cell/Cell;Lorg/ton/hashmap/HashMapE;Lkotlin/UInt;Lorg/ton/block/TickTock;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 182
+    invoke-direct/range {v1 .. v8}, Lorg/ton/block/StateInit;-><init>(Lorg/ton/cell/Cell;Lorg/ton/cell/Cell;Lorg/ton/hashmap/HashMapE;Lkotlin/UInt;Lorg/ton/block/TickTock;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-object p1
 .end method
@@ -350,13 +370,13 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 140
+    .line 145
     new-instance v3, Lorg/ton/block/ExtInMsgInfo;
 
-    .line 141
+    .line 146
     sget-object v4, Lorg/ton/block/AddrNone;->INSTANCE:Lorg/ton/block/AddrNone;
 
-    .line 143
+    .line 148
     new-instance v6, Lorg/ton/block/Coins;
 
     const/4 v10, 0x0
@@ -365,15 +385,15 @@
 
     invoke-direct {v6, v10, v7, v10}, Lorg/ton/block/Coins;-><init>(Lorg/ton/block/VarUInteger;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 140
+    .line 145
     invoke-direct {v3, v4, p1, v6}, Lorg/ton/block/ExtInMsgInfo;-><init>(Lorg/ton/block/MsgAddressExt;Lorg/ton/block/MsgAddressInt;Lorg/ton/block/Coins;)V
 
-    .line 145
+    .line 150
     sget-object v0, Lorg/ton/block/Maybe;->Companion:Lorg/ton/block/Maybe$Companion;
 
     if-eqz v1, :cond_0
 
-    .line 146
+    .line 151
     sget-object v4, Lorg/ton/block/Either;->Companion:Lorg/ton/block/Either$Companion;
 
     .line 11
@@ -383,7 +403,7 @@
 
     move-result-object v1
 
-    .line 146
+    .line 151
     invoke-virtual {v4, v10, v1}, Lorg/ton/block/Either$Companion;->of(Ljava/lang/Object;Ljava/lang/Object;)Lorg/ton/block/Either;
 
     move-result-object v1
@@ -393,13 +413,13 @@
     :cond_0
     move-object v1, v10
 
-    .line 145
+    .line 150
     :goto_0
     invoke-virtual {v0, v1}, Lorg/ton/block/Maybe$Companion;->of(Ljava/lang/Object;)Lorg/ton/block/Maybe;
 
     move-result-object v0
 
-    .line 156
+    .line 161
     array-length v1, v2
 
     invoke-static {v2, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
@@ -420,12 +440,12 @@
 
     move/from16 v8, p6
 
-    .line 151
+    .line 156
     invoke-direct/range {v4 .. v9}, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion;->createTransferMessageBody(Lorg/ton/api/pk/PrivateKeyEd25519;III[Lorg/ton/contract/wallet/WalletTransfer;)Lorg/ton/cell/Cell;
 
     move-result-object v1
 
-    .line 158
+    .line 163
     sget-object v2, Lorg/ton/block/Either;->Companion:Lorg/ton/block/Either$Companion;
 
     .line 11
@@ -435,12 +455,12 @@
 
     move-result-object v1
 
-    .line 158
+    .line 163
     invoke-virtual {v2, v10, v1}, Lorg/ton/block/Either$Companion;->of(Ljava/lang/Object;Ljava/lang/Object;)Lorg/ton/block/Either;
 
     move-result-object v1
 
-    .line 159
+    .line 164
     new-instance v2, Lorg/ton/block/Message;
 
     invoke-direct {v2, v3, v0, v1}, Lorg/ton/block/Message;-><init>(Lorg/ton/block/CommonMsgInfo;Lorg/ton/block/Maybe;Lorg/ton/block/Either;)V
@@ -498,7 +518,7 @@
 
     move-result-object v1
 
-    .line 121
+    .line 126
     iget v2, v0, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$loadContract$2;->label:I
 
     const/4 v3, 0x1
@@ -523,7 +543,7 @@
     :cond_2
     invoke-static {p4}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    .line 126
+    .line 131
     iput v3, v0, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$loadContract$2;->label:I
 
     invoke-virtual {p1, p3, p2, v0}, Lorg/ton/lite/client/LiteClient;->getAccountState(Lorg/ton/block/AddrStd;Lorg/ton/api/tonnode/TonNodeBlockIdExt;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
@@ -534,12 +554,12 @@
 
     return-object v1
 
-    .line 121
+    .line 126
     :cond_3
     :goto_1
     check-cast p4, Lorg/ton/lite/client/internal/FullAccountState;
 
-    .line 127
+    .line 132
     new-instance p1, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract;
 
     invoke-virtual {p4}, Lorg/ton/lite/client/internal/FullAccountState;->account()Lorg/ton/tlb/CellRef;
@@ -623,7 +643,7 @@
 
     move-result-object v1
 
-    .line 115
+    .line 120
     iget v2, v0, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$loadContract$1;->label:I
 
     const/4 v3, 0x2
@@ -675,7 +695,7 @@
 
     const/4 p3, 0x0
 
-    .line 116
+    .line 121
     iput-object p0, v0, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$loadContract$1;->L$0:Ljava/lang/Object;
 
     iput-object p1, v0, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$loadContract$1;->L$1:Ljava/lang/Object;
@@ -695,11 +715,11 @@
     :cond_4
     move-object v2, p0
 
-    .line 115
+    .line 120
     :goto_1
     check-cast p3, Lorg/ton/api/tonnode/TonNodeBlockIdExt;
 
-    .line 117
+    .line 122
     iput-object v5, v0, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$loadContract$1;->L$0:Ljava/lang/Object;
 
     iput-object v5, v0, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$loadContract$1;->L$1:Ljava/lang/Object;

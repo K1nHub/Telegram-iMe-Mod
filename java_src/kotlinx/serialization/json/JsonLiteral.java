@@ -64,6 +64,6 @@ public final class JsonLiteral extends JsonPrimitive {
     }
 
     public int hashCode() {
-        return (JsonLiteral$$ExternalSyntheticBackport0.m126m(isString()) * 31) + getContent().hashCode();
+        return (JsonLiteral$$ExternalSyntheticBackport0.m128m(isString()) * 31) + getContent().hashCode();
     }
 }

@@ -217,26 +217,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$-NWfmAzEVD97lzWEz6L9O-Cyu64(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+.method public static synthetic $r8$lambda$0c-ncR2xAjtVDX0ufed1QTt_4jQ(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$detectFaces$20()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$0rZc7S6fhEnqT059fuxG-K9wVgE(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showTypefaceMenu$23(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$4nKqG5tb5tI4oGkGAXYKASQXRZ8(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showTypefaceMenu$24(ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showTypefaceMenu$25(ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
 
     return-void
 .end method
@@ -257,18 +241,26 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$6vy2_2ElmUc0ull9TtvAbwh1Ar8(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$6k8amoVjSN1QQ7eTfYiK27std3M(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showMenuForEntity$35(Landroid/view/View;)V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$createText$13()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$9tgc9k7MupWrwFBFPAcFs6bLIQg(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$7SmdpfPjoJxmfbHasFgE222ua2c(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$setupTabsLayout$13(Landroid/view/View;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showMenuForEntity$37(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$88Y5K5PMvuJe5y3SVC99aZ8ectY(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showMenuForEntity$33(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/view/View;)V
 
     return-void
 .end method
@@ -283,28 +275,36 @@
     return p0
 .end method
 
-.method public static synthetic $r8$lambda$EIfercosjmL5KxeGzOlXgRDAuHI(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;)Z
+.method public static synthetic $r8$lambda$F9IDxRZFi4jgK4y0QZK44BWC8l4(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/view/View;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$onAddButtonPressed$30(Landroid/view/View;)Z
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showMenuForEntity$35(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$Lb7MSrvbzBH9kTfTmRsLJBuPIY4(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$registerRemovalUndo$41(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$M7Jz9rwxmTAz4sx4M4uI8Q9ImSQ(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;)Z
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$onAddButtonPressed$31(Landroid/view/View;)Z
 
     move-result p0
 
     return p0
 .end method
 
-.method public static synthetic $r8$lambda$HlAtEIamWyGd_tgup9OCQ5d8FyE(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/KeyEvent;)V
+.method public static synthetic $r8$lambda$N6buHH2QBpdjCNexyMvrZgizkvE(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;Z[ZFLandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showPopup$38(Landroid/view/KeyEvent;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$NMXago8iiC_xBkC5TjydJoNUixM(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showMenuForEntity$36(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
+    invoke-direct/range {p0 .. p7}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showColorList$26(Landroid/view/View;Z[ZFLandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
 
     return-void
 .end method
@@ -317,10 +317,18 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$OTrY93f35mZWHiY27M3KbEJKl84(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
+.method public static synthetic $r8$lambda$QBskuonacoVumPa_ybudkokKYb0(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;Landroid/view/View;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$registerRemovalUndo$40(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$switchTab$17(Landroid/view/View;Landroid/view/View;Landroid/animation/ValueAnimator;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$QIAoxbVphGm3qv279LVkQbSYtuU(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/animation/ValueAnimator;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$hideEmojiPopup$43(Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method
@@ -341,10 +349,18 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$SRes0jrkQ11z7qHHCH7lfZ12Mh4()V
+.method public static synthetic $r8$lambda$SPyYCH--dMQFNzAW8uUg-2cTlV8(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Ljava/lang/Integer;ILandroid/animation/ValueAnimator;)V
     .locals 0
 
-    invoke-static {}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$shutdown$21()V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$setCurrentSwatch$28(Ljava/lang/Integer;ILandroid/animation/ValueAnimator;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$U2cvtpBqgezCxu8Y2GJjlfq9owY(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;ILandroid/content/DialogInterface;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$openStickersView$20(ILandroid/content/DialogInterface;)V
 
     return-void
 .end method
@@ -365,10 +381,18 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Y2_zxIsiFUneVzL_Vk4GNZQ1etg(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+.method public static synthetic $r8$lambda$WjzeCrJIzAllXRrIPPGdkYFP1rA(Ljava/lang/Runnable;Landroid/view/View;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$onAddButtonPressed$31()V
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$buttonForPopup$29(Ljava/lang/Runnable;Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$Xe1MC5f1BJAykyncL6Ij0JEU4tM(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Boolean;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$openStickersView$19(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Boolean;)V
 
     return-void
 .end method
@@ -377,6 +401,22 @@
     .locals 0
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$setupTabsLayout$14(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$YoOsic7JiUphQLb5jrU9cXIZYaA(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$setupTabsLayout$16(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$ZkMuQ7iW-HAG5GZ5l50vDY2JupY(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$onAddButtonPressed$32()V
 
     return-void
 .end method
@@ -397,10 +437,18 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$bGwhlZNnffWEdSCyEvFqCJFvKuI(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/animation/ValueAnimator;)V
+.method public static synthetic $r8$lambda$aoOyhcWCo4gbmyTulSJEhB4rLlM(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showEmojiPopup$41(Landroid/animation/ValueAnimator;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showMenuForEntity$34(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$ar6leIPFzJS-TOQoINnbMxMYc0g(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/animation/ValueAnimator;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showEmojiPopup$42(Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method
@@ -413,26 +461,34 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$bw-o2EC2ygOCQs_vuErvT-ZwLYA(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/KeyEvent;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showPopup$39(Landroid/view/KeyEvent;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$cJw9fIIlJt1btdwClO4DbIiZy0M(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showPopup$40()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$dALRJvnMcQq1UlDikf5HeJnxNVw(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$detectFaces$21()V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$eBItFW9IV0p3wmZQnAB63Ls-2mM(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$new$6(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$fKfVwhKvNNzu90ErUNoKuiejcbo(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Boolean;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$openStickersView$18(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Boolean;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$fiGTzrFCot4WObSh2bzood-GnkM(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Brush$Shape;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$onAddButtonPressed$29(Lorg/telegram/ui/Components/Paint/Brush$Shape;I)V
 
     return-void
 .end method
@@ -445,76 +501,50 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$jf5O1cEAm8bdgNobzYURnlpCEms(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+.method public static synthetic $r8$lambda$guAWOUh64KVZTnE8jC8QzMUSipo(Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showPopup$39()V
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$maybeShowDismissalAlert$23(Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$kSsudwZ9sAsKHs_59DfkhGZTnfw(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method public static synthetic $r8$lambda$hB1cy7T6OwP9G4rPXNoJnDcAYdc(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showPopup$37(Landroid/view/View;Landroid/view/MotionEvent;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static synthetic $r8$lambda$kV_dykmeXXL4XnMCmzUKL4IjV4M(Ljava/lang/Runnable;Landroid/view/View;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$buttonForPopup$28(Ljava/lang/Runnable;Landroid/view/View;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showMenuForEntity$36(Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$mXL6m5zQLj8ORZ55D5ILk_eog4o(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+.method public static synthetic $r8$lambda$hP2sCrUMk5XzkyOryuOyC340Uck()V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$openStickersView$17()V
+    invoke-static {}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$shutdown$22()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$nh8BKkPXAGmFdvijcL9IDg74Op4(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$j-9trP14clm3SRdOhU8yv-pLSzs(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Brush$Shape;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showMenuForEntity$32(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/view/View;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$onAddButtonPressed$30(Lorg/telegram/ui/Components/Paint/Brush$Shape;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$oePXTwbcJeZafK9BPu3_AS8pBsw(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$nN9cnZgBisVwZm9LHPB4B0apdBg(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showMenuForEntity$34(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/view/View;)V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$openStickersView$18()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$pPiXqlqbDlaHaMjmSxnIb2wApKU(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+.method public static synthetic $r8$lambda$pknZdFaJk_r_w_ZiYrSUENdL6Xg(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
-    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showColorList$26(ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$pcWxFoEoMeZhU8wN2N-ZKXXqIZY(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;Z[ZFLandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p7}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showColorList$25(Landroid/view/View;Z[ZFLandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$rtIJsTRNmUoNhSw7dwlC8JLrUl0(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;ILandroid/content/DialogInterface;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$openStickersView$19(ILandroid/content/DialogInterface;)V
+    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showColorList$27(ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
 
     return-void
 .end method
@@ -527,42 +557,20 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$u39aYQ03iI8uUIscbXT8u3jxIbg(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;Landroid/view/View;Landroid/animation/ValueAnimator;)V
+.method public static synthetic $r8$lambda$ut7ccYQ-an6cDC0PYC8PHx0-GO0(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$switchTab$16(Landroid/view/View;Landroid/view/View;Landroid/animation/ValueAnimator;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showPopup$38(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
-    return-void
+    move-result p0
+
+    return p0
 .end method
 
-.method public static synthetic $r8$lambda$uo9EMoeSpUeew0fbdpHg39y2zdc(Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$zVvB4Y6Sp04UqzvoojPjvGMM3_E(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$maybeShowDismissalAlert$22(Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$wncs_pEDSkJnnzd38AB_0K5eF_o(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Ljava/lang/Integer;ILandroid/animation/ValueAnimator;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$setCurrentSwatch$27(Ljava/lang/Integer;ILandroid/animation/ValueAnimator;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$xdIfcLxmSborUOpuh6pLiBkaM3I(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showMenuForEntity$33(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$zHb-M7-EXJ7Ad0WHhMkzJrEHKOo(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/animation/ValueAnimator;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$hideEmojiPopup$42(Landroid/animation/ValueAnimator;)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lambda$showTypefaceMenu$24(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
 
     return-void
 .end method
@@ -677,17 +685,17 @@
 
     iput-object v1, v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsPaint:Landroid/graphics/Paint;
 
-    .line 1019
+    .line 1024
     iput-boolean v14, v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->zoomOutVisible:Z
 
     const/4 v6, 0x2
 
     new-array v1, v6, [I
 
-    .line 2909
+    .line 2916
     iput-object v1, v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->pos:[I
 
-    .line 2957
+    .line 2964
     new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;
 
     invoke-direct {v1, v8}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$17;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
@@ -701,11 +709,11 @@
     iput v10, v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     .line 216
-    new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda40;
+    new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda41;
 
     move-object/from16 v2, p10
 
-    invoke-direct {v1, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda40;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v1, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda41;-><init>(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v1, v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
@@ -773,9 +781,9 @@
     iput-object v1, v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->undoStore:Lorg/telegram/ui/Components/Paint/UndoStore;
 
     .line 282
-    new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda41;
+    new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda42;
 
-    invoke-direct {v2, v8}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda41;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-direct {v2, v8}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda42;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/Paint/UndoStore;->setDelegate(Lorg/telegram/ui/Components/Paint/UndoStore$UndoStoreDelegate;)V
 
@@ -1384,9 +1392,9 @@
     .line 507
     iget-object v0, v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->undoButton:Landroid/widget/ImageView;
 
-    new-instance v4, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda12;
+    new-instance v4, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda11;
 
-    invoke-direct {v4, v8}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-direct {v4, v8}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -1652,9 +1660,9 @@
     .line 547
     iget-object v0, v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->undoAllButton:Landroid/widget/TextView;
 
-    new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda13;
+    new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda12;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
@@ -2086,9 +2094,9 @@
     .line 774
     iget-object v0, v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceListView:Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
 
-    new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda42;
+    new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda43;
 
-    invoke-direct {v2, v8}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda42;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-direct {v2, v8}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda43;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
@@ -2407,9 +2415,9 @@
     .line 906
     iget-object v0, v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
-    new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda33;
+    new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda34;
 
-    invoke-direct {v1, v8, v10}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda33;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;I)V
+    invoke-direct {v1, v8, v10}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda34;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;I)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->setOnUpdate(Ljava/lang/Runnable;)V
 
@@ -2945,7 +2953,7 @@
 .method private baseStickerSize()Lorg/telegram/ui/Components/Size;
     .locals 4
 
-    .line 2709
+    .line 2716
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getPaintingSize()Lorg/telegram/ui/Components/Size;
 
     move-result-object v0
@@ -2964,7 +2972,7 @@
 
     double-to-float v0, v0
 
-    .line 2710
+    .line 2717
     new-instance v1, Lorg/telegram/ui/Components/Size;
 
     invoke-direct {v1, v0, v0}, Lorg/telegram/ui/Components/Size;-><init>(FF)V
@@ -2981,7 +2989,7 @@
 .method private buttonForPopup(Ljava/lang/String;IZLjava/lang/Runnable;)Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;
     .locals 2
 
-    .line 2236
+    .line 2243
     new-instance v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -2990,18 +2998,18 @@
 
     invoke-direct {v0, p0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;)V
 
-    .line 2237
+    .line 2244
     invoke-virtual {v0, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->setIcon(I)V
 
-    .line 2238
+    .line 2245
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2239
+    .line 2246
     invoke-virtual {v0, p3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;->setSelected(Z)V
 
     if-eqz p4, :cond_0
 
-    .line 2241
+    .line 2248
     new-instance p1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda7;
 
     invoke-direct {p1, p4}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda7;-><init>(Ljava/lang/Runnable;)V
@@ -3021,7 +3029,7 @@
 
     const/4 v2, 0x0
 
-    .line 2730
+    .line 2737
     :goto_0
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
 
@@ -3031,7 +3039,7 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 2731
+    .line 2738
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3040,12 +3048,12 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;
 
-    .line 2732
+    .line 2739
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeSticker;
 
     if-eqz v4, :cond_0
 
-    .line 2733
+    .line 2740
     iget-object v2, v3, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->mask_coords:Lorg/telegram/tgnet/TLRPC$TL_maskCoords;
 
     goto :goto_1
@@ -3058,7 +3066,7 @@
     :cond_1
     const/4 v2, 0x0
 
-    .line 2740
+    .line 2747
     :goto_1
     iget-object v3, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
@@ -3066,7 +3074,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 2741
+    .line 2748
     iget v5, v3, Lorg/telegram/messenger/MediaController$CropState;->transformRotation:I
 
     int-to-float v5, v5
@@ -3077,7 +3085,7 @@
 
     neg-float v5, v5
 
-    .line 2742
+    .line 2749
     iget v3, v3, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
     div-float/2addr v4, v3
@@ -3087,7 +3095,7 @@
     :cond_2
     const/4 v5, 0x0
 
-    .line 2747
+    .line 2754
     :goto_2
     new-instance v3, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;
 
@@ -3099,7 +3107,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 2748
+    .line 2755
     iget-object v4, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->faces:Ljava/util/ArrayList;
 
     if-eqz v4, :cond_5
@@ -3112,11 +3120,11 @@
 
     goto :goto_3
 
-    .line 2751
+    .line 2758
     :cond_3
     iget v4, v2, Lorg/telegram/tgnet/TLRPC$TL_maskCoords;->n:I
 
-    .line 2753
+    .line 2760
     iget-wide v5, v1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     invoke-direct {v0, v4, v5, v6, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getRandomFaceWithVacantAnchor(IJLorg/telegram/tgnet/TLRPC$TL_maskCoords;)Lorg/telegram/ui/Components/Paint/PhotoFace;
@@ -3127,28 +3135,28 @@
 
     return-object v3
 
-    .line 2758
+    .line 2765
     :cond_4
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/Paint/PhotoFace;->getPointForAnchor(I)Lorg/telegram/ui/Components/Point;
 
     move-result-object v3
 
-    .line 2759
+    .line 2766
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/Paint/PhotoFace;->getWidthForAnchor(I)F
 
     move-result v4
 
-    .line 2760
+    .line 2767
     invoke-virtual {v1}, Lorg/telegram/ui/Components/Paint/PhotoFace;->getAngle()F
 
     move-result v1
 
-    .line 2761
+    .line 2768
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->baseStickerSize()Lorg/telegram/ui/Components/Size;
 
     move-result-object v5
 
-    .line 2763
+    .line 2770
     iget v5, v5, Lorg/telegram/ui/Components/Size;->width:F
 
     div-float v5, v4, v5
@@ -3163,7 +3171,7 @@
 
     float-to-double v6, v1
 
-    .line 2765
+    .line 2772
     invoke-static {v6, v7}, Ljava/lang/Math;->toRadians(D)D
 
     move-result-wide v6
@@ -3176,7 +3184,7 @@
 
     sub-double v10, v8, v6
 
-    .line 2766
+    .line 2773
     invoke-static {v10, v11}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v12
@@ -3191,7 +3199,7 @@
 
     double-to-float v4, v12
 
-    .line 2767
+    .line 2774
     invoke-static {v10, v11}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v8
@@ -3208,7 +3216,7 @@
 
     add-double/2addr v6, v9
 
-    .line 2769
+    .line 2776
     invoke-static {v6, v7}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v9
@@ -3221,7 +3229,7 @@
 
     double-to-float v9, v9
 
-    .line 2770
+    .line 2777
     invoke-static {v6, v7}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v6
@@ -3234,21 +3242,21 @@
 
     double-to-float v2, v6
 
-    .line 2772
+    .line 2779
     iget v6, v3, Lorg/telegram/ui/Components/Point;->x:F
 
     add-float/2addr v6, v4
 
     add-float/2addr v6, v9
 
-    .line 2773
+    .line 2780
     iget v3, v3, Lorg/telegram/ui/Components/Point;->y:F
 
     add-float/2addr v3, v8
 
     add-float/2addr v3, v2
 
-    .line 2775
+    .line 2782
     new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;
 
     new-instance v4, Lorg/telegram/ui/Components/Point;
@@ -3267,29 +3275,29 @@
 .method private centerPositionForEntity()Lorg/telegram/ui/Components/Point;
     .locals 12
 
-    .line 2714
+    .line 2721
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getPaintingSize()Lorg/telegram/ui/Components/Size;
 
     move-result-object v0
 
-    .line 2715
+    .line 2722
     iget v1, v0, Lorg/telegram/ui/Components/Size;->width:F
 
     const/high16 v2, 0x40000000    # 2.0f
 
     div-float/2addr v1, v2
 
-    .line 2716
+    .line 2723
     iget v3, v0, Lorg/telegram/ui/Components/Size;->height:F
 
     div-float/2addr v3, v2
 
-    .line 2717
+    .line 2724
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
     if-eqz v2, :cond_0
 
-    .line 2718
+    .line 2725
     iget v4, v2, Lorg/telegram/messenger/MediaController$CropState;->transformRotation:I
 
     int-to-float v4, v4
@@ -3308,7 +3316,7 @@
 
     double-to-float v2, v4
 
-    .line 2719
+    .line 2726
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
     iget v4, v4, Lorg/telegram/messenger/MediaController$CropState;->cropPx:F
@@ -3339,7 +3347,7 @@
 
     double-to-float v2, v4
 
-    .line 2720
+    .line 2727
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
     iget v4, v4, Lorg/telegram/messenger/MediaController$CropState;->cropPx:F
@@ -3368,21 +3376,21 @@
 
     double-to-float v4, v4
 
-    .line 2721
+    .line 2728
     iget v5, v0, Lorg/telegram/ui/Components/Size;->width:F
 
     mul-float/2addr v2, v5
 
     sub-float/2addr v1, v2
 
-    .line 2722
+    .line 2729
     iget v0, v0, Lorg/telegram/ui/Components/Size;->height:F
 
     mul-float/2addr v4, v0
 
     sub-float/2addr v3, v4
 
-    .line 2724
+    .line 2731
     :cond_0
     new-instance v0, Lorg/telegram/ui/Components/Point;
 
@@ -3394,12 +3402,12 @@
 .method private createSticker(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$Document;Z)Lorg/telegram/ui/Components/Paint/Views/StickerView;
     .locals 11
 
-    .line 2829
+    .line 2836
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->calculateStickerPosition(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;
 
     move-result-object v0
 
-    .line 2830
+    .line 2837
     new-instance v10, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$16;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -3432,14 +3440,14 @@
 
     invoke-direct/range {v1 .. v9}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$16;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;Lorg/telegram/ui/Components/Point;FFLorg/telegram/ui/Components/Size;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Object;)V
 
-    .line 2836
+    .line 2843
     invoke-static {p2}, Lorg/telegram/messenger/MessageObject;->isTextColorEmoji(Lorg/telegram/tgnet/TLRPC$Document;)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 2837
+    .line 2844
     iget-object p1, v10, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
     new-instance p2, Landroid/graphics/PorterDuffColorFilter;
@@ -3452,7 +3460,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 2839
+    .line 2846
     :cond_0
     iget-object p1, v10, Lorg/telegram/ui/Components/Paint/Views/StickerView;->centerImage:Lorg/telegram/messenger/ImageReceiver;
 
@@ -3460,7 +3468,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setLayerNum(I)V
 
-    .line 2840
+    .line 2847
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;->access$3100(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;)Lorg/telegram/ui/Components/Point;
 
     move-result-object p1
@@ -3485,10 +3493,10 @@
 
     if-nez p1, :cond_1
 
-    .line 2841
+    .line 2848
     invoke-virtual {v10, p2}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setStickyX(I)V
 
-    .line 2843
+    .line 2850
     :cond_1
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;->access$3100(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$StickerPosition;)Lorg/telegram/ui/Components/Point;
 
@@ -3510,24 +3518,24 @@
 
     if-nez p1, :cond_2
 
-    .line 2844
+    .line 2851
     invoke-virtual {v10, p2}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setStickyY(I)V
 
-    .line 2846
+    .line 2853
     :cond_2
     invoke-virtual {v10, p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setDelegate(Lorg/telegram/ui/Components/Paint/Views/EntityView$EntityViewDelegate;)V
 
-    .line 2847
+    .line 2854
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {p1, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     if-eqz p3, :cond_3
 
-    .line 2849
+    .line 2856
     invoke-direct {p0, v10}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->registerRemovalUndo(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
 
-    .line 2850
+    .line 2857
     invoke-direct {p0, v10}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
 
     :cond_3
@@ -3535,7 +3543,7 @@
 .end method
 
 .method private createText(Z)Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
-    .locals 10
+    .locals 11
 
     .line 965
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onTextAdd()V
@@ -3561,9 +3569,9 @@
 
     iget v2, v0, Lorg/telegram/ui/Components/Size;->width:F
 
-    const/high16 v4, 0x41100000    # 9.0f
+    const/high16 v10, 0x41100000    # 9.0f
 
-    div-float/2addr v2, v4
+    div-float/2addr v2, v10
 
     float-to-int v5, v2
 
@@ -3580,6 +3588,31 @@
     invoke-direct/range {v2 .. v8}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/Point;ILjava/lang/CharSequence;Lorg/telegram/ui/Components/Paint/Swatch;I)V
 
     .line 970
+    iget v2, v0, Lorg/telegram/ui/Components/Size;->width:F
+
+    div-float v3, v2, v10
+
+    const/high16 v4, 0x3f000000    # 0.5f
+
+    mul-float/2addr v3, v4
+
+    float-to-int v3, v3
+
+    div-float/2addr v2, v10
+
+    const/high16 v4, 0x40000000    # 2.0f
+
+    mul-float/2addr v2, v4
+
+    float-to-int v2, v2
+
+    new-instance v5, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda30;
+
+    invoke-direct {v5, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda30;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+
+    invoke-virtual {v9, v3, v2, v5}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->setMinMaxFontSize(IILjava/lang/Runnable;)V
+
+    .line 975
     iget v2, v1, Lorg/telegram/ui/Components/Point;->x:F
 
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
@@ -3590,8 +3623,6 @@
 
     int-to-float v3, v3
 
-    const/high16 v4, 0x40000000    # 2.0f
-
     div-float/2addr v3, v4
 
     cmpl-float v2, v2, v3
@@ -3600,10 +3631,10 @@
 
     if-nez v2, :cond_0
 
-    .line 971
+    .line 976
     invoke-virtual {v9, v3}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setStickyX(I)V
 
-    .line 973
+    .line 978
     :cond_0
     iget v1, v1, Lorg/telegram/ui/Components/Point;->y:F
 
@@ -3621,14 +3652,14 @@
 
     if-nez v1, :cond_1
 
-    .line 974
+    .line 979
     invoke-virtual {v9, v3}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setStickyY(I)V
 
-    .line 976
+    .line 981
     :cond_1
     invoke-virtual {v9, p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setDelegate(Lorg/telegram/ui/Components/Paint/Views/EntityView$EntityViewDelegate;)V
 
-    .line 977
+    .line 982
     iget v0, v0, Lorg/telegram/ui/Components/Size;->width:F
 
     const/high16 v1, 0x41a00000    # 20.0f
@@ -3639,7 +3670,7 @@
 
     invoke-virtual {v9, v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->setMaxWidth(I)V
 
-    .line 978
+    .line 983
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -3652,7 +3683,7 @@
 
     invoke-virtual {v9, v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->setTypeface(Ljava/lang/String;)V
 
-    .line 979
+    .line 984
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -3665,7 +3696,7 @@
 
     invoke-virtual {v9, v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->setType(I)V
 
-    .line 980
+    .line 985
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     const/4 v1, -0x2
@@ -3676,21 +3707,21 @@
 
     invoke-virtual {v0, v9, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 981
+    .line 986
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
     if-eqz v0, :cond_2
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 982
+    .line 987
     iget v0, v0, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
     div-float/2addr v1, v0
 
     invoke-virtual {v9, v1}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->scale(F)V
 
-    .line 983
+    .line 988
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
     iget v1, v0, Lorg/telegram/messenger/MediaController$CropState;->transformRotation:I
@@ -3708,25 +3739,25 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    .line 987
+    .line 992
     invoke-direct {p0, v9}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->registerRemovalUndo(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
 
-    .line 989
+    .line 994
     invoke-virtual {v9}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->beginEditing()V
 
     const/4 p1, 0x0
 
-    .line 990
+    .line 995
     invoke-direct {p0, v9, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;Z)Z
 
-    .line 991
+    .line 996
     invoke-virtual {v9}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getFocusedView()Landroid/view/View;
 
     move-result-object p1
 
     invoke-virtual {p1}, Landroid/view/View;->requestFocus()Z
 
-    .line 992
+    .line 997
     invoke-virtual {v9}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getFocusedView()Landroid/view/View;
 
     move-result-object p1
@@ -3735,10 +3766,10 @@
 
     const/4 p1, 0x1
 
-    .line 993
+    .line 998
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->editingText:Z
 
-    .line 994
+    .line 999
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
     iget v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
@@ -3753,7 +3784,7 @@
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->setAlignment(IZ)V
 
-    .line 995
+    .line 1000
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
@@ -3775,12 +3806,12 @@
 .method private detectFaces()V
     .locals 4
 
-    .line 1549
+    .line 1556
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->queue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda30;
+    new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda32;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda30;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda32;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     const-wide/16 v2, 0xc8
 
@@ -3792,7 +3823,7 @@
 .method private duplicateSelectedEntity()V
     .locals 4
 
-    .line 2579
+    .line 2586
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     if-nez v0, :cond_0
@@ -3802,19 +3833,19 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 2584
+    .line 2591
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->startPositionRelativeToEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Lorg/telegram/ui/Components/Point;
 
     move-result-object v0
 
-    .line 2586
+    .line 2593
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     instance-of v3, v2, Lorg/telegram/ui/Components/Paint/Views/StickerView;
 
     if-eqz v3, :cond_1
 
-    .line 2587
+    .line 2594
     new-instance v1, Lorg/telegram/ui/Components/Paint/Views/StickerView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -3827,23 +3858,23 @@
 
     invoke-direct {v1, v2, v3, v0}, Lorg/telegram/ui/Components/Paint/Views/StickerView;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/Paint/Views/StickerView;Lorg/telegram/ui/Components/Point;)V
 
-    .line 2588
+    .line 2595
     invoke-virtual {v1, p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setDelegate(Lorg/telegram/ui/Components/Paint/Views/EntityView$EntityViewDelegate;)V
 
-    .line 2589
+    .line 2596
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     goto :goto_0
 
-    .line 2591
+    .line 2598
     :cond_1
     instance-of v2, v2, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz v2, :cond_2
 
-    .line 2592
+    .line 2599
     new-instance v1, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -3856,10 +3887,10 @@
 
     invoke-direct {v1, v2, v3, v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/Paint/Views/TextPaintView;Lorg/telegram/ui/Components/Point;)V
 
-    .line 2593
+    .line 2600
     invoke-virtual {v1, p0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setDelegate(Lorg/telegram/ui/Components/Paint/Views/EntityView$EntityViewDelegate;)V
 
-    .line 2594
+    .line 2601
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getPaintingSize()Lorg/telegram/ui/Components/Size;
 
     move-result-object v0
@@ -3874,7 +3905,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->setMaxWidth(I)V
 
-    .line 2595
+    .line 2602
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     const/4 v2, -0x2
@@ -3885,12 +3916,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2599
+    .line 2606
     :cond_2
     :goto_0
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->registerRemovalUndo(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
 
-    .line 2600
+    .line 2607
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
 
     return-void
@@ -3899,7 +3930,7 @@
 .method private editSelectedTextEntity()V
     .locals 2
 
-    .line 1006
+    .line 1011
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
@@ -3912,27 +3943,27 @@
 
     goto :goto_0
 
-    .line 1010
+    .line 1015
     :cond_0
     check-cast v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     const/4 v1, 0x1
 
-    .line 1011
+    .line 1016
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->editingText:Z
 
-    .line 1013
+    .line 1018
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->beginEditing()V
 
-    .line 1014
+    .line 1019
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getFocusedView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 1015
+    .line 1020
     invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
 
-    .line 1016
+    .line 1021
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
     :cond_1
@@ -3945,7 +3976,7 @@
 
     if-nez p1, :cond_0
 
-    .line 1271
+    .line 1278
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->paintToolsView:Lorg/telegram/ui/Components/Paint/Views/PaintToolsView;
 
     return-object p1
@@ -3955,7 +3986,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 1273
+    .line 1280
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
     return-object p1
@@ -3969,7 +4000,7 @@
 .method private getBarView()Landroid/view/ViewGroup;
     .locals 2
 
-    .line 1184
+    .line 1191
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectedIndex:I
 
     const/4 v1, 0x2
@@ -3990,12 +4021,12 @@
 .method private getCenterLocationInWindow(Landroid/view/View;)[I
     .locals 11
 
-    .line 2911
+    .line 2918
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->pos:[I
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 2912
+    .line 2919
     invoke-virtual {p1}, Landroid/view/View;->getRotation()F
 
     move-result v0
@@ -4028,7 +4059,7 @@
 
     double-to-float v0, v0
 
-    .line 2913
+    .line 2920
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v1
@@ -4049,7 +4080,7 @@
 
     mul-float/2addr v1, v2
 
-    .line 2914
+    .line 2921
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v2
@@ -4074,7 +4105,7 @@
 
     float-to-double v0, v0
 
-    .line 2915
+    .line 2922
     invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v5
@@ -4093,7 +4124,7 @@
 
     double-to-float p1, v5
 
-    .line 2916
+    .line 2923
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v5
@@ -4110,7 +4141,7 @@
 
     double-to-float v0, v3
 
-    .line 2917
+    .line 2924
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->pos:[I
 
     const/4 v2, 0x0
@@ -4131,7 +4162,7 @@
 
     const/4 p1, 0x1
 
-    .line 2918
+    .line 2925
     aget v2, v1, p1
 
     int-to-float v2, v2
@@ -4150,7 +4181,7 @@
 .method private getFrameRotation()I
     .locals 2
 
-    .line 1536
+    .line 1543
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->originalBitmapRotation:I
 
     const/16 v1, 0x5a
@@ -4188,14 +4219,14 @@
 .method private getPaintingSize()Lorg/telegram/ui/Components/Size;
     .locals 6
 
-    .line 1497
+    .line 1504
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->paintingSize:Lorg/telegram/ui/Components/Size;
 
     if-eqz v0, :cond_0
 
     return-object v0
 
-    .line 1500
+    .line 1507
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bitmapToEdit:Landroid/graphics/Bitmap;
 
@@ -4205,7 +4236,7 @@
 
     int-to-float v0, v0
 
-    .line 1501
+    .line 1508
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bitmapToEdit:Landroid/graphics/Bitmap;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
@@ -4214,7 +4245,7 @@
 
     int-to-float v1, v1
 
-    .line 1504
+    .line 1511
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
     move-result v2
@@ -4237,7 +4268,7 @@
     :cond_2
     const/16 v2, 0x500
 
-    .line 1516
+    .line 1523
     :goto_0
     new-instance v3, Lorg/telegram/ui/Components/Size;
 
@@ -4245,7 +4276,7 @@
 
     int-to-float v2, v2
 
-    .line 1517
+    .line 1524
     iput v2, v3, Lorg/telegram/ui/Components/Size;->width:F
 
     mul-float v4, v2, v1
@@ -4254,7 +4285,7 @@
 
     float-to-double v4, v4
 
-    .line 1518
+    .line 1525
     invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v4
@@ -4267,7 +4298,7 @@
 
     if-lez v4, :cond_3
 
-    .line 1520
+    .line 1527
     iput v2, v3, Lorg/telegram/ui/Components/Size;->height:F
 
     mul-float/2addr v2, v0
@@ -4276,7 +4307,7 @@
 
     float-to-double v0, v2
 
-    .line 1521
+    .line 1528
     invoke-static {v0, v1}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v0
@@ -4285,7 +4316,7 @@
 
     iput v0, v3, Lorg/telegram/ui/Components/Size;->width:F
 
-    .line 1523
+    .line 1530
     :cond_3
     iput-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->paintingSize:Lorg/telegram/ui/Components/Size;
 
@@ -4303,7 +4334,7 @@
 
     if-gt p1, v1, :cond_2
 
-    .line 2780
+    .line 2787
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->faces:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -4314,7 +4345,7 @@
 
     goto :goto_1
 
-    .line 2784
+    .line 2791
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->faces:Ljava/util/ArrayList;
 
@@ -4322,7 +4353,7 @@
 
     move-result v1
 
-    .line 2785
+    .line 2792
     sget-object v2, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v2, v1}, Ljava/security/SecureRandom;->nextInt(I)I
@@ -4334,7 +4365,7 @@
     :goto_0
     if-lez v3, :cond_2
 
-    .line 2790
+    .line 2797
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->faces:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -4353,7 +4384,7 @@
 
     move-object v10, p4
 
-    .line 2791
+    .line 2798
     invoke-direct/range {v5 .. v10}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->isFaceAnchorOccupied(Lorg/telegram/ui/Components/Paint/PhotoFace;IJLorg/telegram/tgnet/TLRPC$TL_maskCoords;)Z
 
     move-result v5
@@ -4365,7 +4396,7 @@
     :cond_1
     add-int/lit8 v2, v2, 0x1
 
-    .line 2789
+    .line 2796
     rem-int/2addr v2, v1
 
     add-int/lit8 v3, v3, -0x1
@@ -4380,7 +4411,7 @@
 .method private getThemedColor(I)I
     .locals 1
 
-    .line 2700
+    .line 2707
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -4393,20 +4424,20 @@
 .method private hideEmojiPopup(Z)V
     .locals 3
 
-    .line 3097
+    .line 3104
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 3098
+    .line 3105
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->showEmojiPopup(I)V
 
     :cond_0
     if-eqz p1, :cond_2
 
-    .line 3101
+    .line 3108
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-eqz p1, :cond_1
@@ -4421,7 +4452,7 @@
 
     if-nez p1, :cond_1
 
-    .line 3102
+    .line 3109
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -4442,25 +4473,25 @@
 
     aput p1, v0, v2
 
-    .line 3103
+    .line 3110
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
-    .line 3105
+    .line 3112
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomPanelIgnoreOnce:Z
 
-    .line 3107
-    new-instance v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda1;
+    .line 3114
+    new-instance v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda0;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 3114
+    .line 3121
     iput-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->isAnimatePopupClosing:Z
 
-    .line 3115
+    .line 3122
     new-instance v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$19;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$19;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
@@ -4469,20 +4500,20 @@
 
     const-wide/16 v0, 0xfa
 
-    .line 3127
+    .line 3134
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 3128
+    .line 3135
     sget-object v0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->keyboardInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 3129
+    .line 3136
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 3131
+    .line 3138
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->hideEmojiView()V
 
@@ -4494,15 +4525,15 @@
 .method private hideEmojiView()V
     .locals 2
 
-    .line 3160
+    .line 3167
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
     if-lez v0, :cond_0
 
-    .line 3161
+    .line 3168
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->updateKeyboard()V
 
-    .line 3163
+    .line 3170
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
@@ -4520,7 +4551,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 3164
+    .line 3171
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->setVisibility(I)V
@@ -4528,7 +4559,7 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 3166
+    .line 3173
     iput v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
     return-void
@@ -4537,7 +4568,7 @@
 .method private isFaceAnchorOccupied(Lorg/telegram/ui/Components/Paint/PhotoFace;IJLorg/telegram/tgnet/TLRPC$TL_maskCoords;)Z
     .locals 9
 
-    .line 2800
+    .line 2807
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Paint/PhotoFace;->getPointForAnchor(I)Lorg/telegram/ui/Components/Point;
 
     move-result-object p5
@@ -4551,7 +4582,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 2805
+    .line 2812
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/Paint/PhotoFace;->getWidthForAnchor(I)F
 
     move-result p1
@@ -4562,7 +4593,7 @@
 
     move v2, v1
 
-    .line 2807
+    .line 2814
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
@@ -4572,25 +4603,25 @@
 
     if-ge v2, v3, :cond_5
 
-    .line 2808
+    .line 2815
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {v3, v2}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 2809
+    .line 2816
     instance-of v4, v3, Lorg/telegram/ui/Components/Paint/Views/StickerView;
 
     if-nez v4, :cond_1
 
     goto :goto_1
 
-    .line 2813
+    .line 2820
     :cond_1
     check-cast v3, Lorg/telegram/ui/Components/Paint/Views/StickerView;
 
-    .line 2814
+    .line 2821
     invoke-virtual {v3}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->getAnchor()I
 
     move-result v4
@@ -4599,13 +4630,13 @@
 
     goto :goto_1
 
-    .line 2818
+    .line 2825
     :cond_2
     invoke-virtual {v3}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->getPosition()Lorg/telegram/ui/Components/Point;
 
     move-result-object v4
 
-    .line 2819
+    .line 2826
     iget v5, v4, Lorg/telegram/ui/Components/Point;->x:F
 
     iget v6, p5, Lorg/telegram/ui/Components/Point;->x:F
@@ -4628,7 +4659,7 @@
 
     double-to-float v4, v4
 
-    .line 2820
+    .line 2827
     invoke-virtual {v3}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->getSticker()Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v3
@@ -4667,7 +4698,7 @@
 .method private isSidewardOrientation()Z
     .locals 3
 
-    .line 1545
+    .line 1552
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->originalBitmapRotation:I
 
     rem-int/lit16 v1, v0, 0x168
@@ -4697,21 +4728,36 @@
     return v0
 .end method
 
-.method private static synthetic lambda$buttonForPopup$28(Ljava/lang/Runnable;Landroid/view/View;)V
+.method private static synthetic lambda$buttonForPopup$29(Ljava/lang/Runnable;Landroid/view/View;)V
     .locals 0
 
-    .line 2241
+    .line 2248
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     return-void
 .end method
 
-.method private synthetic lambda$detectFaces$20()V
+.method private synthetic lambda$createText$13()V
+    .locals 1
+
+    .line 971
+    iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
+
+    if-eqz v0, :cond_0
+
+    .line 972
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
+
+    :cond_0
+    return-void
+.end method
+
+.method private synthetic lambda$detectFaces$21()V
     .locals 9
 
     const/4 v0, 0x0
 
-    .line 1552
+    .line 1559
     :try_start_0
     new-instance v1, Lcom/google/android/gms/vision/face/FaceDetector$Builder;
 
@@ -4723,19 +4769,19 @@
 
     const/4 v2, 0x1
 
-    .line 1553
+    .line 1560
     invoke-virtual {v1, v2}, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->setMode(I)Lcom/google/android/gms/vision/face/FaceDetector$Builder;
 
     move-result-object v1
 
-    .line 1554
+    .line 1561
     invoke-virtual {v1, v2}, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->setLandmarkType(I)Lcom/google/android/gms/vision/face/FaceDetector$Builder;
 
     move-result-object v1
 
     const/4 v2, 0x0
 
-    .line 1555
+    .line 1562
     invoke-virtual {v1, v2}, Lcom/google/android/gms/vision/face/FaceDetector$Builder;->setTrackingEnabled(Z)Lcom/google/android/gms/vision/face/FaceDetector$Builder;
 
     move-result-object v1
@@ -4744,33 +4790,33 @@
 
     move-result-object v0
 
-    .line 1556
+    .line 1563
     invoke-virtual {v0}, Lcom/google/android/gms/vision/face/FaceDetector;->isOperational()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 1557
+    .line 1564
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_0
 
     const-string v1, "face detection is not operational"
 
-    .line 1558
+    .line 1565
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 1586
+    .line 1593
     :cond_0
     invoke-virtual {v0}, Lcom/google/android/gms/vision/face/FaceDetector;->release()V
 
     return-void
 
-    .line 1563
+    .line 1570
     :cond_1
     :try_start_1
     new-instance v1, Lcom/google/android/gms/vision/Frame$Builder;
@@ -4798,7 +4844,7 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 1566
+    .line 1573
     :try_start_2
     invoke-virtual {v0, v1}, Lcom/google/android/gms/vision/face/FaceDetector;->detect(Lcom/google/android/gms/vision/Frame;)Landroid/util/SparseArray;
 
@@ -4806,18 +4852,18 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 1571
+    .line 1578
     :try_start_3
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1572
+    .line 1579
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getPaintingSize()Lorg/telegram/ui/Components/Size;
 
     move-result-object v4
 
-    .line 1573
+    .line 1580
     :goto_0
     invoke-virtual {v1}, Landroid/util/SparseArray;->size()I
 
@@ -4825,19 +4871,19 @@
 
     if-ge v2, v5, :cond_3
 
-    .line 1574
+    .line 1581
     invoke-virtual {v1, v2}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v5
 
-    .line 1575
+    .line 1582
     invoke-virtual {v1, v5}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lcom/google/android/gms/vision/face/Face;
 
-    .line 1576
+    .line 1583
     new-instance v6, Lorg/telegram/ui/Components/Paint/PhotoFace;
 
     iget-object v7, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->facesBitmap:Landroid/graphics/Bitmap;
@@ -4848,14 +4894,14 @@
 
     invoke-direct {v6, v5, v7, v4, v8}, Lorg/telegram/ui/Components/Paint/PhotoFace;-><init>(Lcom/google/android/gms/vision/face/Face;Landroid/graphics/Bitmap;Lorg/telegram/ui/Components/Size;Z)V
 
-    .line 1577
+    .line 1584
     invoke-virtual {v6}, Lorg/telegram/ui/Components/Paint/PhotoFace;->isSufficient()Z
 
     move-result v5
 
     if-eqz v5, :cond_2
 
-    .line 1578
+    .line 1585
     invoke-virtual {v3, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_2
@@ -4863,7 +4909,7 @@
 
     goto :goto_0
 
-    .line 1581
+    .line 1588
     :cond_3
     iput-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->faces:Ljava/util/ArrayList;
 
@@ -4872,13 +4918,13 @@
     :catchall_0
     move-exception v1
 
-    .line 1568
+    .line 1575
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 1586
+    .line 1593
     invoke-virtual {v0}, Lcom/google/android/gms/vision/face/FaceDetector;->release()V
 
     return-void
@@ -4891,7 +4937,7 @@
     :catch_0
     move-exception v1
 
-    .line 1583
+    .line 1590
     :try_start_4
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_4
@@ -4899,7 +4945,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1586
+    .line 1593
     :goto_1
     invoke-virtual {v0}, Lcom/google/android/gms/vision/face/FaceDetector;->release()V
 
@@ -4911,15 +4957,15 @@
 
     invoke-virtual {v0}, Lcom/google/android/gms/vision/face/FaceDetector;->release()V
 
-    .line 1588
+    .line 1595
     :cond_5
     throw v1
 .end method
 
-.method private synthetic lambda$hideEmojiPopup$42(Landroid/animation/ValueAnimator;)V
+.method private synthetic lambda$hideEmojiPopup$43(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 3108
+    .line 3115
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -4930,7 +4976,7 @@
 
     move-result p1
 
-    .line 3109
+    .line 3116
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/EmojiView;->setTranslationY(F)V
@@ -4938,10 +4984,10 @@
     return-void
 .end method
 
-.method private static synthetic lambda$maybeShowDismissalAlert$22(Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
+.method private static synthetic lambda$maybeShowDismissalAlert$23(Ljava/lang/Runnable;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1853
+    .line 1860
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -5639,10 +5685,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onAddButtonPressed$29(Lorg/telegram/ui/Components/Paint/Brush$Shape;I)V
+.method private synthetic lambda$onAddButtonPressed$30(Lorg/telegram/ui/Components/Paint/Brush$Shape;I)V
     .locals 1
 
-    .line 2458
+    .line 2465
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/RenderView;->getCurrentBrush()Lorg/telegram/ui/Components/Paint/Brush;
@@ -5655,14 +5701,14 @@
 
     const/4 v0, 0x1
 
-    .line 2459
+    .line 2466
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->ignoreToolChangeAnimationOnce:Z
 
-    .line 2461
+    .line 2468
     :cond_0
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onBrushSelected(Lorg/telegram/ui/Components/Paint/Brush;)V
 
-    .line 2462
+    .line 2469
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->paintToolsView:Lorg/telegram/ui/Components/Paint/Views/PaintToolsView;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Paint/Views/PaintToolsView;->animatePlusToIcon(I)V
@@ -5670,17 +5716,17 @@
     return-void
 .end method
 
-.method private synthetic lambda$onAddButtonPressed$30(Landroid/view/View;)Z
+.method private synthetic lambda$onAddButtonPressed$31(Landroid/view/View;)Z
     .locals 4
 
-    .line 2465
+    .line 2472
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     const/4 v0, 0x1
 
     if-eqz p1, :cond_2
 
-    .line 2466
+    .line 2473
     iget p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -5689,7 +5735,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->toggleFillShapes()V
 
-    .line 2467
+    .line 2474
     iget p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -5702,7 +5748,7 @@
 
     const/4 v1, 0x0
 
-    .line 2468
+    .line 2475
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
@@ -5712,19 +5758,19 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 2469
+    .line 2476
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 2470
+    .line 2477
     instance-of v3, v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;
 
     if-eqz v3, :cond_1
 
-    .line 2471
+    .line 2478
     sget-object v3, Lorg/telegram/ui/Components/Paint/Brush$Shape;->SHAPES_LIST:Ljava/util/List;
 
     invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -5735,7 +5781,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2472
+    .line 2479
     invoke-virtual {v3}, Lorg/telegram/ui/Components/Paint/Brush$Shape;->getFilledIconRes()I
 
     move-result v3
@@ -5747,7 +5793,7 @@
 
     move-result v3
 
-    .line 2473
+    .line 2480
     :goto_1
     check-cast v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;
 
@@ -5762,10 +5808,10 @@
     return v0
 .end method
 
-.method private synthetic lambda$onAddButtonPressed$31()V
+.method private synthetic lambda$onAddButtonPressed$32()V
     .locals 7
 
-    .line 2453
+    .line 2460
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -5780,7 +5826,7 @@
 
     move v2, v1
 
-    .line 2454
+    .line 2461
     :goto_0
     sget-object v3, Lorg/telegram/ui/Components/Paint/Brush$Shape;->SHAPES_LIST:Ljava/util/List;
 
@@ -5790,7 +5836,7 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 2455
+    .line 2462
     sget-object v3, Lorg/telegram/ui/Components/Paint/Brush$Shape;->SHAPES_LIST:Ljava/util/List;
 
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -5801,7 +5847,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2456
+    .line 2463
     invoke-virtual {v3}, Lorg/telegram/ui/Components/Paint/Brush$Shape;->getFilledIconRes()I
 
     move-result v4
@@ -5813,28 +5859,28 @@
 
     move-result v4
 
-    .line 2457
+    .line 2464
     :goto_1
     invoke-virtual {v3}, Lorg/telegram/ui/Components/Paint/Brush$Shape;->getShapeName()Ljava/lang/String;
 
     move-result-object v5
 
-    new-instance v6, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda34;
+    new-instance v6, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda35;
 
-    invoke-direct {v6, p0, v3, v4}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda34;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Brush$Shape;I)V
+    invoke-direct {v6, p0, v3, v4}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda35;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Brush$Shape;I)V
 
     invoke-direct {p0, v5, v4, v1, v6}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->buttonForPopup(Ljava/lang/String;IZLjava/lang/Runnable;)Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$PopupButton;
 
     move-result-object v3
 
-    .line 2464
+    .line 2471
     new-instance v4, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda21;
 
     invoke-direct {v4, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     invoke-virtual {v3, v4}, Landroid/widget/LinearLayout;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 2479
+    .line 2486
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     const/4 v5, -0x1
@@ -5855,32 +5901,32 @@
     return-void
 .end method
 
-.method private synthetic lambda$openStickersView$17()V
+.method private synthetic lambda$openStickersView$18()V
     .locals 1
 
-    .line 1360
+    .line 1367
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->facesBitmap:Landroid/graphics/Bitmap;
 
     if-eqz v0, :cond_0
 
-    .line 1361
+    .line 1368
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->detectFaces()V
 
     :cond_0
     return-void
 .end method
 
-.method private synthetic lambda$openStickersView$18(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Boolean;)V
+.method private synthetic lambda$openStickersView$19(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Boolean;)V
     .locals 1
 
     const/4 v0, 0x1
 
-    .line 1371
+    .line 1378
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->createSticker(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$Document;Z)Lorg/telegram/ui/Components/Paint/Views/StickerView;
 
     move-result-object p1
 
-    .line 1372
+    .line 1379
     invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p2
@@ -5889,40 +5935,40 @@
 
     const/high16 p2, 0x3fc00000    # 1.5f
 
-    .line 1373
+    .line 1380
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->setScale(F)V
 
     :cond_0
     return-void
 .end method
 
-.method private synthetic lambda$openStickersView$19(ILandroid/content/DialogInterface;)V
+.method private synthetic lambda$openStickersView$20(ILandroid/content/DialogInterface;)V
     .locals 0
 
     const/4 p2, 0x0
 
-    .line 1377
+    .line 1384
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onOpenCloseStickersAlert(Z)V
 
-    .line 1378
+    .line 1385
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->switchTab(I)V
 
     return-void
 .end method
 
-.method private synthetic lambda$registerRemovalUndo$40(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
+.method private synthetic lambda$registerRemovalUndo$41(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
     .locals 0
 
-    .line 2879
+    .line 2886
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->removeEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$setCurrentSwatch$27(Ljava/lang/Integer;ILandroid/animation/ValueAnimator;)V
+.method private synthetic lambda$setCurrentSwatch$28(Ljava/lang/Integer;ILandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 2188
+    .line 2195
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p3
@@ -5933,7 +5979,7 @@
 
     move-result p3
 
-    .line 2189
+    .line 2196
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -5946,12 +5992,12 @@
 
     iput p1, v0, Lorg/telegram/ui/Components/Paint/Swatch;->color:I
 
-    .line 2190
+    .line 2197
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomLayout:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_0
 
-    .line 2191
+    .line 2198
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_0
@@ -5989,17 +6035,17 @@
     return-void
 .end method
 
-.method private synthetic lambda$setupTabsLayout$13(Landroid/view/View;)V
+.method private synthetic lambda$setupTabsLayout$14(Landroid/view/View;)V
     .locals 0
 
-    .line 1229
+    .line 1236
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->editingText:Z
 
     if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
-    .line 1230
+    .line 1237
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
 
     goto :goto_0
@@ -6007,31 +6053,31 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 1232
+    .line 1239
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->switchTab(I)V
 
     :goto_0
     return-void
 .end method
 
-.method private synthetic lambda$setupTabsLayout$14(Landroid/view/View;)V
+.method private synthetic lambda$setupTabsLayout$15(Landroid/view/View;)V
     .locals 0
 
-    .line 1241
+    .line 1248
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->openStickersView()V
 
     return-void
 .end method
 
-.method private synthetic lambda$setupTabsLayout$15(Landroid/view/View;)V
+.method private synthetic lambda$setupTabsLayout$16(Landroid/view/View;)V
     .locals 0
 
     const/4 p1, 0x2
 
-    .line 1261
+    .line 1268
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->switchTab(I)V
 
-    .line 1262
+    .line 1269
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     instance-of p1, p1, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
@@ -6040,21 +6086,21 @@
 
     const/4 p1, 0x1
 
-    .line 1263
+    .line 1270
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->createText(Z)Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     :cond_0
     return-void
 .end method
 
-.method private synthetic lambda$showColorList$25(Landroid/view/View;Z[ZFLandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+.method private synthetic lambda$showColorList$26(Landroid/view/View;Z[ZFLandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 1
 
     const/high16 p5, 0x447a0000    # 1000.0f
 
     div-float/2addr p6, p5
 
-    .line 2119
+    .line 2126
     iput p6, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformProgress:F
 
     const/high16 p5, 0x3f800000    # 1.0f
@@ -6069,15 +6115,15 @@
 
     add-float/2addr p6, p7
 
-    .line 2122
+    .line 2129
     invoke-virtual {p1, p6}, Landroid/view/View;->setScaleX(F)V
 
-    .line 2123
+    .line 2130
     invoke-virtual {p1, p6}, Landroid/view/View;->setScaleY(F)V
 
     const/16 p6, 0x10
 
-    .line 2124
+    .line 2131
     invoke-static {p6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p6
@@ -6098,7 +6144,7 @@
 
     invoke-virtual {p1, p6}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 2125
+    .line 2132
     iget p6, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformProgress:F
 
     invoke-static {p6, v0}, Ljava/lang/Math;->min(FF)F
@@ -6111,28 +6157,28 @@
 
     invoke-virtual {p1, p6}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2127
+    .line 2134
     iget-object p6, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorsListView:Lorg/telegram/ui/Components/Paint/Views/PaintColorsListView;
 
     iget p7, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformProgress:F
 
     invoke-virtual {p6, p7, p2}, Lorg/telegram/ui/Components/Paint/Views/PaintColorsListView;->setProgress(FZ)V
 
-    .line 2129
+    .line 2136
     iget-object p6, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->doneButton:Lorg/telegram/ui/Components/Paint/Views/PaintDoneView;
 
     iget p7, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformProgress:F
 
     invoke-virtual {p6, p7}, Lorg/telegram/ui/Components/Paint/Views/PaintDoneView;->setProgress(F)V
 
-    .line 2130
+    .line 2137
     iget-object p6, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->cancelButton:Lorg/telegram/ui/Components/Paint/Views/PaintCancelView;
 
     iget p7, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformProgress:F
 
     invoke-virtual {p6, p7}, Lorg/telegram/ui/Components/Paint/Views/PaintCancelView;->setProgress(F)V
 
-    .line 2132
+    .line 2139
     iget-object p6, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsLayout:Landroid/widget/LinearLayout;
 
     const/16 p7, 0x20
@@ -6151,12 +6197,12 @@
 
     const/4 p6, 0x0
 
-    .line 2136
+    .line 2143
     aget-boolean p3, p3, p6
 
     if-eqz p3, :cond_2
 
-    .line 2137
+    .line 2144
     iget p3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformProgress:F
 
     if-eqz p2, :cond_0
@@ -6166,7 +6212,7 @@
     :cond_0
     sub-float p3, p5, p3
 
-    .line 2138
+    .line 2145
     :goto_0
     iget-object p5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomLayout:Landroid/widget/FrameLayout;
 
@@ -6198,18 +6244,18 @@
 
     invoke-virtual {p5, p4}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 2140
+    .line 2147
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 2142
+    .line 2149
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
     if-ne p1, p2, :cond_3
 
-    .line 2143
+    .line 2150
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->overlayLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -6218,29 +6264,29 @@
     return-void
 .end method
 
-.method private synthetic lambda$showColorList$26(ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+.method private synthetic lambda$showColorList$27(ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
-    .line 2147
+    .line 2154
     iget-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-ne p2, p3, :cond_0
 
     const/4 p2, 0x0
 
-    .line 2148
+    .line 2155
     iput-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-nez p1, :cond_0
 
-    .line 2151
+    .line 2158
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorsListView:Lorg/telegram/ui/Components/Paint/Views/PaintColorsListView;
 
     const/16 p2, 0x8
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
-    .line 2152
+    .line 2159
     iget p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -6249,7 +6295,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->saveColors()V
 
-    .line 2153
+    .line 2160
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorsListView:Lorg/telegram/ui/Components/Paint/Views/PaintColorsListView;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
@@ -6262,10 +6308,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$showEmojiPopup$41(Landroid/animation/ValueAnimator;)V
+.method private synthetic lambda$showEmojiPopup$42(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 3049
+    .line 3056
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -6276,7 +6322,7 @@
 
     move-result p1
 
-    .line 3050
+    .line 3057
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/EmojiView;->setTranslationY(F)V
@@ -6284,13 +6330,13 @@
     return-void
 .end method
 
-.method private synthetic lambda$showMenuForEntity$32(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/view/View;)V
+.method private synthetic lambda$showMenuForEntity$33(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/view/View;)V
     .locals 0
 
-    .line 2503
+    .line 2510
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->removeEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
 
-    .line 2505
+    .line 2512
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_0
@@ -6301,7 +6347,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2506
+    .line 2513
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/4 p2, 0x1
@@ -6312,13 +6358,13 @@
     return-void
 .end method
 
-.method private synthetic lambda$showMenuForEntity$33(Landroid/view/View;)V
+.method private synthetic lambda$showMenuForEntity$34(Landroid/view/View;)V
     .locals 1
 
-    .line 2522
+    .line 2529
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->editSelectedTextEntity()V
 
-    .line 2524
+    .line 2531
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_0
@@ -6329,7 +6375,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2525
+    .line 2532
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/4 v0, 0x1
@@ -6340,17 +6386,17 @@
     return-void
 .end method
 
-.method private synthetic lambda$showMenuForEntity$34(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/view/View;)V
+.method private synthetic lambda$showMenuForEntity$35(Lorg/telegram/ui/Components/Paint/Views/EntityView;Landroid/view/View;)V
     .locals 0
 
-    .line 2542
+    .line 2549
     check-cast p1, Lorg/telegram/ui/Components/Paint/Views/StickerView;
 
     const/4 p2, 0x1
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->mirror(Z)V
 
-    .line 2544
+    .line 2551
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_0
@@ -6361,7 +6407,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2545
+    .line 2552
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss(Z)V
@@ -6370,13 +6416,13 @@
     return-void
 .end method
 
-.method private synthetic lambda$showMenuForEntity$35(Landroid/view/View;)V
+.method private synthetic lambda$showMenuForEntity$36(Landroid/view/View;)V
     .locals 1
 
-    .line 2561
+    .line 2568
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->duplicateSelectedEntity()V
 
-    .line 2563
+    .line 2570
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_0
@@ -6387,7 +6433,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2564
+    .line 2571
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/4 v0, 0x1
@@ -6398,10 +6444,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$showMenuForEntity$36(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
+.method private synthetic lambda$showMenuForEntity$37(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
     .locals 13
 
-    .line 2490
+    .line 2497
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -6412,10 +6458,10 @@
 
     const/4 v1, 0x0
 
-    .line 2491
+    .line 2498
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 2493
+    .line 2500
     new-instance v2, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -6424,7 +6470,7 @@
 
     invoke-direct {v2, v3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 2494
+    .line 2501
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
     invoke-direct {p0, v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getThemedColor(I)I
@@ -6433,7 +6479,7 @@
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2495
+    .line 2502
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
@@ -6442,10 +6488,10 @@
 
     const/16 v4, 0x10
 
-    .line 2496
+    .line 2503
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 2497
+    .line 2504
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -6462,17 +6508,17 @@
 
     const/high16 v7, 0x41600000    # 14.0f
 
-    .line 2498
+    .line 2505
     invoke-virtual {v2, v5, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2499
+    .line 2506
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
     invoke-virtual {v2, v8}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 2500
+    .line 2507
     sget v8, Lorg/telegram/messenger/R$string;->PaintDelete:I
 
     const-string v9, "PaintDelete"
@@ -6483,12 +6529,12 @@
 
     invoke-virtual {v2, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2501
+    .line 2508
     sget-object v8, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v2, v8}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 2502
+    .line 2509
     new-instance v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda18;
 
     invoke-direct {v8, p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
@@ -6499,19 +6545,19 @@
 
     const/16 v9, 0x30
 
-    .line 2509
+    .line 2516
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v10
 
     invoke-virtual {v0, v2, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2511
+    .line 2518
     instance-of v2, p1, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz v2, :cond_0
 
-    .line 2512
+    .line 2519
     new-instance v2, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -6520,24 +6566,24 @@
 
     invoke-direct {v2, v10}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 2513
+    .line 2520
     invoke-direct {p0, v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getThemedColor(I)I
 
     move-result v10
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2514
+    .line 2521
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v10
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2515
+    .line 2522
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 2516
+    .line 2523
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -6548,22 +6594,22 @@
 
     invoke-virtual {v2, v10, v1, v11, v1}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 2517
+    .line 2524
     invoke-virtual {v2, v5, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2518
+    .line 2525
     sget-object v10, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 2519
+    .line 2526
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 2520
+    .line 2527
     sget v10, Lorg/telegram/messenger/R$string;->PaintEdit:I
 
     const-string v11, "PaintEdit"
@@ -6574,21 +6620,21 @@
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2521
-    new-instance v10, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda16;
+    .line 2528
+    new-instance v10, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda13;
 
-    invoke-direct {v10, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-direct {v10, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2528
+    .line 2535
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v10
 
     invoke-virtual {v0, v2, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2531
+    .line 2538
     :cond_0
     instance-of v2, p1, Lorg/telegram/ui/Components/Paint/Views/StickerView;
 
@@ -6596,7 +6642,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 2532
+    .line 2539
     new-instance v2, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -6605,29 +6651,29 @@
 
     invoke-direct {v2, v11}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 2533
+    .line 2540
     invoke-direct {p0, v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getThemedColor(I)I
 
     move-result v11
 
     invoke-virtual {v2, v11}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2534
+    .line 2541
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v11
 
     invoke-virtual {v2, v11}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2535
+    .line 2542
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 2536
+    .line 2543
     sget-object v11, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v2, v11}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 2537
+    .line 2544
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -6638,17 +6684,17 @@
 
     invoke-virtual {v2, v11, v1, v12, v1}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 2538
+    .line 2545
     invoke-virtual {v2, v5, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2539
+    .line 2546
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v11
 
     invoke-virtual {v2, v11}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 2540
+    .line 2547
     sget v11, Lorg/telegram/messenger/R$string;->Flip:I
 
     const-string v12, "Flip"
@@ -6659,21 +6705,21 @@
 
     invoke-virtual {v2, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2541
+    .line 2548
     new-instance v11, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda19;
 
     invoke-direct {v11, p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
 
     invoke-virtual {v2, v11}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2548
+    .line 2555
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object p1
 
     invoke-virtual {v0, v2, p1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2551
+    .line 2558
     :cond_1
     new-instance p1, Landroid/widget/TextView;
 
@@ -6683,29 +6729,29 @@
 
     invoke-direct {p1, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 2552
+    .line 2559
     invoke-direct {p0, v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getThemedColor(I)I
 
     move-result v2
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2553
+    .line 2560
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2554
+    .line 2561
     invoke-virtual {p1, v4}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 2555
+    .line 2562
     sget-object v2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 2556
+    .line 2563
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -6716,17 +6762,17 @@
 
     invoke-virtual {p1, v2, v1, v3, v1}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 2557
+    .line 2564
     invoke-virtual {p1, v5, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2558
+    .line 2565
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 2559
+    .line 2566
     sget v1, Lorg/telegram/messenger/R$string;->PaintDuplicate:I
 
     const-string v2, "PaintDuplicate"
@@ -6737,55 +6783,55 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2560
-    new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda8;
+    .line 2567
+    new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda16;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2567
+    .line 2574
     invoke-static {v8, v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {v0, p1, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2569
+    .line 2576
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    .line 2571
+    .line 2578
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p1
 
     check-cast p1, Landroid/widget/LinearLayout$LayoutParams;
 
-    .line 2572
+    .line 2579
     iput v8, p1, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
-    .line 2573
+    .line 2580
     iput v8, p1, Landroid/widget/LinearLayout$LayoutParams;->height:I
 
-    .line 2574
+    .line 2581
     invoke-virtual {v0, p1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$showPopup$37(Landroid/view/View;Landroid/view/MotionEvent;)Z
+.method private synthetic lambda$showPopup$38(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 2654
+    .line 2661
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 2655
+    .line 2662
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz v0, :cond_0
@@ -6796,12 +6842,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 2656
+    .line 2663
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 2657
+    .line 2664
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupRect:Landroid/graphics/Rect;
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
@@ -6822,7 +6868,7 @@
 
     if-nez p1, :cond_0
 
-    .line 2658
+    .line 2665
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
@@ -6833,10 +6879,10 @@
     return p1
 .end method
 
-.method private synthetic lambda$showPopup$38(Landroid/view/KeyEvent;)V
+.method private synthetic lambda$showPopup$39(Landroid/view/KeyEvent;)V
     .locals 2
 
-    .line 2665
+    .line 2672
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v0
@@ -6861,7 +6907,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2666
+    .line 2673
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
@@ -6870,10 +6916,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$showPopup$39()V
+.method private synthetic lambda$showPopup$40()V
     .locals 1
 
-    .line 2684
+    .line 2691
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->removeInnerViews()V
@@ -6881,32 +6927,32 @@
     return-void
 .end method
 
-.method private synthetic lambda$showTypefaceMenu$23(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+.method private synthetic lambda$showTypefaceMenu$24(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 0
 
     const/high16 p1, 0x447a0000    # 1000.0f
 
     div-float/2addr p2, p1
 
-    .line 2078
+    .line 2085
     iput p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceMenuTransformProgress:F
 
-    .line 2079
+    .line 2086
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceListView:Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 2080
+    .line 2087
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceListView:Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 2081
+    .line 2088
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->overlayLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 2083
+    .line 2090
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->getTypefaceCell()Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;
@@ -6924,29 +6970,29 @@
     return-void
 .end method
 
-.method private synthetic lambda$showTypefaceMenu$24(ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+.method private synthetic lambda$showTypefaceMenu$25(ZLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
-    .line 2086
+    .line 2093
     iget-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceMenuTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-ne p2, p3, :cond_1
 
     const/4 p2, 0x0
 
-    .line 2087
+    .line 2094
     iput-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceMenuTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-nez p1, :cond_0
 
-    .line 2090
+    .line 2097
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceListView:Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
 
     const/16 p3, 0x8
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
-    .line 2092
+    .line 2099
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceListView:Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
 
@@ -6956,27 +7002,27 @@
     return-void
 .end method
 
-.method private static synthetic lambda$shutdown$21()V
+.method private static synthetic lambda$shutdown$22()V
     .locals 1
 
-    .line 1599
+    .line 1606
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1601
+    .line 1608
     invoke-virtual {v0}, Landroid/os/Looper;->quit()V
 
     :cond_0
     return-void
 .end method
 
-.method private synthetic lambda$switchTab$16(Landroid/view/View;Landroid/view/View;Landroid/animation/ValueAnimator;)V
+.method private synthetic lambda$switchTab$17(Landroid/view/View;Landroid/view/View;Landroid/animation/ValueAnimator;)V
     .locals 8
 
-    .line 1296
+    .line 1303
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p3
@@ -6989,24 +7035,24 @@
 
     iput p3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectionProgress:F
 
-    .line 1297
+    .line 1304
     iget-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {p3}, Landroid/widget/LinearLayout;->invalidate()V
 
-    .line 1298
+    .line 1305
     iget-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p3}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1299
+    .line 1306
     iget-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->overlayLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p3}, Landroid/widget/FrameLayout;->invalidate()V
 
     const/4 p3, 0x0
 
-    .line 1301
+    .line 1308
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsLayout:Landroid/widget/LinearLayout;
 
@@ -7022,7 +7068,7 @@
 
     if-ge p3, v0, :cond_2
 
-    .line 1302
+    .line 1309
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, p3}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
@@ -7062,7 +7108,7 @@
 
     goto :goto_0
 
-    .line 1304
+    .line 1311
     :cond_2
     sget-object p3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
@@ -7082,15 +7128,15 @@
 
     add-float/2addr v4, v2
 
-    .line 1308
+    .line 1315
     invoke-virtual {p1, v4}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1309
+    .line 1316
     invoke-virtual {p1, v4}, Landroid/view/View;->setScaleY(F)V
 
     const/16 v4, 0x10
 
-    .line 1310
+    .line 1317
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -7109,7 +7155,7 @@
 
     invoke-virtual {p1, v5}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1311
+    .line 1318
     invoke-static {p3, v6}, Ljava/lang/Math;->min(FF)F
 
     move-result v5
@@ -7124,13 +7170,13 @@
 
     add-float/2addr p3, v2
 
-    .line 1314
+    .line 1321
     invoke-virtual {p2, p3}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1315
+    .line 1322
     invoke-virtual {p2, p3}, Landroid/view/View;->setScaleY(F)V
 
-    .line 1316
+    .line 1323
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -7149,7 +7195,7 @@
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1317
+    .line 1324
     invoke-static {v0, v6}, Ljava/lang/Math;->min(FF)F
 
     move-result p1
@@ -7167,7 +7213,7 @@
 .method private onWindowSizeChanged()V
     .locals 0
 
-    .line 3170
+    .line 3177
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     return-void
@@ -7176,24 +7222,24 @@
 .method private openStickersView()V
     .locals 6
 
-    .line 1357
+    .line 1364
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectedIndex:I
 
     const/4 v1, 0x1
 
-    .line 1358
+    .line 1365
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->switchTab(I)V
 
-    .line 1359
-    new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda32;
+    .line 1366
+    new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda33;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda32;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda33;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     const-wide/16 v3, 0x15e
 
     invoke-virtual {p0, v2, v3, v4}, Landroid/widget/FrameLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1364
+    .line 1371
     new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -7206,24 +7252,24 @@
 
     invoke-direct {v2, p0, v3, v5, v4}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$15;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1370
-    new-instance v3, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda38;
+    .line 1377
+    new-instance v3, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda39;
 
-    invoke-direct {v3, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda38;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-direct {v3, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda39;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->whenDocumentSelected(Lorg/telegram/messenger/Utilities$Callback3;)Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    .line 1376
+    .line 1383
     new-instance v3, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda6;
 
     invoke-direct {v3, p0, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;I)V
 
     invoke-virtual {v2, v3}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 1380
+    .line 1387
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
-    .line 1381
+    .line 1388
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onOpenCloseStickersAlert(Z)V
 
     return-void
@@ -7232,16 +7278,16 @@
 .method private registerRemovalUndo(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
     .locals 3
 
-    .line 2879
+    .line 2886
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->undoStore:Lorg/telegram/ui/Components/Paint/UndoStore;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->getUUID()Ljava/util/UUID;
 
     move-result-object v1
 
-    new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda36;
+    new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda37;
 
-    invoke-direct {v2, p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda36;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
+    invoke-direct {v2, p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda37;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/Paint/UndoStore;->registerUndo(Ljava/util/UUID;Ljava/lang/Runnable;)V
 
@@ -7251,27 +7297,27 @@
 .method private removeEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
     .locals 2
 
-    .line 2856
+    .line 2863
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     if-ne p1, v0, :cond_1
 
     if-eqz v0, :cond_1
 
-    .line 2857
+    .line 2864
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->deselect()V
 
     const/4 v0, 0x0
 
-    .line 2858
+    .line 2865
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
-    .line 2860
+    .line 2867
     instance-of v0, p1, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz v0, :cond_1
 
-    .line 2861
+    .line 2868
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectionAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
@@ -7280,16 +7326,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 2862
+    .line 2869
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_0
     const/4 v0, 0x0
 
-    .line 2864
+    .line 2871
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->switchTab(I)V
 
-    .line 2867
+    .line 2874
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
@@ -7297,7 +7343,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 2869
+    .line 2876
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->undoStore:Lorg/telegram/ui/Components/Paint/UndoStore;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->getUUID()Ljava/util/UUID;
@@ -7306,7 +7352,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/UndoStore;->unregisterUndo(Ljava/util/UUID;)V
 
-    .line 2872
+    .line 2879
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
@@ -7314,14 +7360,14 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->setValueOverride(Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$ValueOverride;)V
 
-    .line 2873
+    .line 2880
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->setShowPreview(Z)V
 
-    .line 2874
+    .line 2881
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightDefaultValueOverride:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$ValueOverride;
@@ -7332,7 +7378,7 @@
 
     iput v1, p1, Lorg/telegram/ui/Components/Paint/Swatch;->brushWeight:F
 
-    .line 2875
+    .line 2882
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->setCurrentSwatch(Lorg/telegram/ui/Components/Paint/Swatch;Z)V
@@ -7345,7 +7391,7 @@
 
     const/4 v0, 0x1
 
-    .line 1031
+    .line 1036
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;Z)Z
 
     move-result p1
@@ -7356,7 +7402,7 @@
 .method private selectEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;Z)Z
     .locals 6
 
-    .line 1038
+    .line 1043
     instance-of v0, p1, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     const/4 v1, 0x2
@@ -7380,7 +7426,7 @@
 
     if-eq v3, v1, :cond_4
 
-    .line 1039
+    .line 1044
     :cond_1
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectionAnimator:Landroid/animation/ValueAnimator;
 
@@ -7388,19 +7434,19 @@
 
     if-eq v3, v1, :cond_2
 
-    .line 1040
+    .line 1045
     invoke-virtual {v4}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 1042
+    .line 1047
     :cond_2
     iget-boolean v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->isColorListShown:Z
 
     if-eqz v3, :cond_3
 
-    .line 1043
+    .line 1048
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->showColorList(Z)V
 
-    .line 1045
+    .line 1050
     :cond_3
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->switchTab(I)V
 
@@ -7411,7 +7457,7 @@
 
     if-eqz p2, :cond_7
 
-    .line 1051
+    .line 1056
     move-object p2, p1
 
     check-cast p2, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
@@ -7439,14 +7485,14 @@
     :cond_5
     move v1, v3
 
-    .line 1063
+    .line 1068
     :cond_6
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
     invoke-virtual {v4, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->setAlignment(I)V
 
-    .line 1064
+    .line 1069
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getTypeface()Lorg/telegram/ui/Components/Paint/PaintTypeface;
@@ -7459,7 +7505,7 @@
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->setTypeface(Ljava/lang/String;)V
 
-    .line 1065
+    .line 1070
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getType()I
@@ -7468,12 +7514,12 @@
 
     invoke-virtual {v1, p2, v3}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->setOutlineType(IZ)V
 
-    .line 1066
+    .line 1071
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->overlayLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1069
+    .line 1074
     :cond_7
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
@@ -7481,23 +7527,23 @@
 
     if-ne p2, p1, :cond_a
 
-    .line 1071
+    .line 1076
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->editingText:Z
 
     if-nez p1, :cond_8
 
-    .line 1072
+    .line 1077
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->showMenuForEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
 
     goto :goto_1
 
-    .line 1073
+    .line 1078
     :cond_8
     instance-of p1, p2, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz p1, :cond_9
 
-    .line 1074
+    .line 1079
     check-cast p2, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getFocusedView()Landroid/view/View;
@@ -7506,35 +7552,35 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
-    .line 1075
+    .line 1080
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->hideEmojiPopup(Z)V
 
     :cond_9
     :goto_1
     return v3
 
-    .line 1079
+    .line 1084
     :cond_a
     invoke-virtual {p2}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->deselect()V
 
-    .line 1080
+    .line 1085
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     instance-of v1, p2, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz v1, :cond_b
 
-    .line 1081
+    .line 1086
     check-cast p2, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->endEditing()V
 
     if-nez v0, :cond_b
 
-    .line 1083
+    .line 1088
     iput-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->editingText:Z
 
-    .line 1084
+    .line 1089
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     check-cast p2, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
@@ -7545,7 +7591,7 @@
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 1085
+    .line 1090
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->hideEmojiPopup(Z)V
 
     :cond_b
@@ -7556,24 +7602,24 @@
     :cond_c
     move p2, v2
 
-    .line 1092
+    .line 1097
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
-    .line 1093
+    .line 1098
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
-    .line 1094
+    .line 1099
     instance-of p1, v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz p1, :cond_d
 
-    .line 1095
+    .line 1100
     move-object p1, v0
 
     check-cast p1, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
-    .line 1096
+    .line 1101
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getText()Ljava/lang/CharSequence;
 
     move-result-object p1
@@ -7584,38 +7630,41 @@
 
     if-eqz p1, :cond_d
 
-    .line 1097
+    .line 1102
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->removeEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
 
-    .line 1101
+    .line 1106
     :cond_d
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     if-eqz p1, :cond_f
 
-    .line 1102
+    .line 1107
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectionContainerView:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->select(Landroid/view/ViewGroup;)V
 
-    .line 1103
+    .line 1108
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->bringChildToFront(Landroid/view/View;)V
 
-    .line 1105
+    .line 1110
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     instance-of p2, p1, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz p2, :cond_e
 
-    .line 1106
+    .line 1111
     check-cast p1, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
-    .line 1107
+    .line 1112
+    invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->disableAutoresize(Z)V
+
+    .line 1113
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getSwatch()Lorg/telegram/ui/Components/Paint/Swatch;
 
     move-result-object p2
@@ -7626,14 +7675,14 @@
 
     iput v0, p2, Lorg/telegram/ui/Components/Paint/Swatch;->brushWeight:F
 
-    .line 1108
+    .line 1114
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getSwatch()Lorg/telegram/ui/Components/Paint/Swatch;
 
     move-result-object p2
 
     invoke-direct {p0, p2, v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->setCurrentSwatch(Lorg/telegram/ui/Components/Paint/Swatch;Z)V
 
-    .line 1110
+    .line 1116
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->paintingSize:Lorg/telegram/ui/Components/Size;
 
     iget p2, p2, Lorg/telegram/ui/Components/Size;->width:F
@@ -7646,7 +7695,7 @@
 
     int-to-float p2, p2
 
-    .line 1111
+    .line 1117
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$12;
@@ -7655,14 +7704,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->setValueOverride(Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$ValueOverride;)V
 
-    .line 1122
+    .line 1129
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->setShowPreview(Z)V
 
     goto :goto_3
 
-    .line 1124
+    .line 1131
     :cond_e
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
@@ -7670,12 +7719,12 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->setValueOverride(Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$ValueOverride;)V
 
-    .line 1125
+    .line 1132
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->setShowPreview(Z)V
 
-    .line 1126
+    .line 1133
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightDefaultValueOverride:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$ValueOverride;
@@ -7686,14 +7735,14 @@
 
     iput p2, p1, Lorg/telegram/ui/Components/Paint/Swatch;->brushWeight:F
 
-    .line 1127
+    .line 1134
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     invoke-direct {p0, p1, v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->setCurrentSwatch(Lorg/telegram/ui/Components/Paint/Swatch;Z)V
 
     goto :goto_3
 
-    .line 1132
+    .line 1139
     :cond_f
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectionAnimator:Landroid/animation/ValueAnimator;
 
@@ -7703,35 +7752,35 @@
 
     if-eqz v0, :cond_10
 
-    .line 1133
+    .line 1140
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 1135
+    .line 1142
     :cond_10
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->isColorListShown:Z
 
     if-eqz p1, :cond_11
 
-    .line 1136
+    .line 1143
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->showColorList(Z)V
 
-    .line 1138
+    .line 1145
     :cond_11
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->switchTab(I)V
 
-    .line 1140
+    .line 1147
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightDefaultValueOverride:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$ValueOverride;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->setValueOverride(Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$ValueOverride;)V
 
-    .line 1141
+    .line 1148
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->setShowPreview(Z)V
 
-    .line 1142
+    .line 1149
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightDefaultValueOverride:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$ValueOverride;
@@ -7742,7 +7791,7 @@
 
     iput v0, p1, Lorg/telegram/ui/Components/Paint/Swatch;->brushWeight:F
 
-    .line 1143
+    .line 1150
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     invoke-direct {p0, p1, v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->setCurrentSwatch(Lorg/telegram/ui/Components/Paint/Swatch;Z)V
@@ -7758,7 +7807,7 @@
 
     const/4 v0, 0x0
 
-    .line 2167
+    .line 2174
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->setCurrentSwatch(Lorg/telegram/ui/Components/Paint/Swatch;ZLjava/lang/Integer;)V
 
     return-void
@@ -7767,27 +7816,27 @@
 .method private setCurrentSwatch(Lorg/telegram/ui/Components/Paint/Swatch;ZLjava/lang/Integer;)V
     .locals 3
 
-    .line 2171
+    .line 2178
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     if-eq v0, p1, :cond_0
 
-    .line 2172
+    .line 2179
     iget v1, p1, Lorg/telegram/ui/Components/Paint/Swatch;->color:I
 
     iput v1, v0, Lorg/telegram/ui/Components/Paint/Swatch;->color:I
 
-    .line 2173
+    .line 2180
     iget v1, p1, Lorg/telegram/ui/Components/Paint/Swatch;->colorLocation:F
 
     iput v1, v0, Lorg/telegram/ui/Components/Paint/Swatch;->colorLocation:F
 
-    .line 2174
+    .line 2181
     iget v1, p1, Lorg/telegram/ui/Components/Paint/Swatch;->brushWeight:F
 
     iput v1, v0, Lorg/telegram/ui/Components/Paint/Swatch;->brushWeight:F
 
-    .line 2176
+    .line 2183
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -7798,7 +7847,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->selectColor(I)V
 
-    .line 2177
+    .line 2184
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -7809,7 +7858,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->setCurrentWeight(F)V
 
-    .line 2180
+    .line 2187
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
@@ -7817,7 +7866,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/RenderView;->setColor(I)V
 
-    .line 2181
+    .line 2188
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     iget v1, p1, Lorg/telegram/ui/Components/Paint/Swatch;->brushWeight:F
@@ -7826,14 +7875,14 @@
 
     if-eqz p2, :cond_2
 
-    .line 2184
+    .line 2191
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     iget p2, p2, Lorg/telegram/ui/Components/Paint/Swatch;->color:I
 
     if-eqz p3, :cond_1
 
-    .line 2185
+    .line 2192
     invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -7844,7 +7893,7 @@
 
     new-array v0, v0, [F
 
-    .line 2186
+    .line 2193
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -7857,28 +7906,28 @@
 
     move-result-object v0
 
-    .line 2187
+    .line 2194
     new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda4;
 
     invoke-direct {v1, p0, p3, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Ljava/lang/Integer;I)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 2194
+    .line 2201
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 2195
+    .line 2202
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomLayout:Landroid/widget/FrameLayout;
 
     if-eqz p2, :cond_2
 
-    .line 2196
+    .line 2203
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 2200
+    .line 2207
     :cond_2
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
@@ -7887,7 +7936,7 @@
 
     if-eqz p3, :cond_3
 
-    .line 2201
+    .line 2208
     check-cast p2, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     new-instance p3, Lorg/telegram/ui/Components/Paint/Swatch;
@@ -7967,7 +8016,7 @@
 .method private setTextAlignment(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;I)V
     .locals 5
 
-    .line 2415
+    .line 2422
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->setAlign(I)V
 
     const/16 v0, 0x11
@@ -7992,7 +8041,7 @@
     :cond_1
     move v3, v0
 
-    .line 2431
+    .line 2438
     :goto_0
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getEditText()Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
 
@@ -8000,7 +8049,7 @@
 
     invoke-virtual {v4, v3}, Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;->setGravity(I)V
 
-    .line 2432
+    .line 2439
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v3, v0, :cond_6
@@ -8011,7 +8060,7 @@
 
     if-eq p2, v2, :cond_3
 
-    .line 2437
+    .line 2444
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p2, :cond_5
@@ -8021,7 +8070,7 @@
 
     goto :goto_1
 
-    .line 2443
+    .line 2450
     :cond_3
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
@@ -8032,7 +8081,7 @@
     :cond_4
     const/4 v2, 0x4
 
-    .line 2446
+    .line 2453
     :cond_5
     :goto_1
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getEditText()Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
@@ -8048,10 +8097,10 @@
 .method private setTextType(I)V
     .locals 3
 
-    .line 2376
+    .line 2383
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectedTextType:I
 
-    .line 2377
+    .line 2384
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     instance-of v0, v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
@@ -8064,14 +8113,14 @@
 
     if-nez p1, :cond_0
 
-    .line 2378
+    .line 2385
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     iget v2, v2, Lorg/telegram/ui/Components/Paint/Swatch;->color:I
 
     if-ne v2, v1, :cond_0
 
-    .line 2379
+    .line 2386
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->setNewColor(I)V
 
     goto :goto_0
@@ -8085,7 +8134,7 @@
 
     if-ne p1, v2, :cond_2
 
-    .line 2380
+    .line 2387
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
@@ -8093,10 +8142,10 @@
 
     if-ne v2, v0, :cond_2
 
-    .line 2381
+    .line 2388
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->setNewColor(I)V
 
-    .line 2383
+    .line 2390
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
@@ -8105,7 +8154,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->setType(I)V
 
-    .line 2385
+    .line 2392
     :cond_3
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
@@ -8115,7 +8164,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->setCurrentTextType(I)V
 
-    .line 2386
+    .line 2393
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->setOutlineType(I)V
@@ -8126,7 +8175,7 @@
 .method private setupTabsLayout(Landroid/content/Context;)V
     .locals 14
 
-    .line 1188
+    .line 1195
     new-instance v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$13;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$13;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/content/Context;)V
@@ -8135,15 +8184,15 @@
 
     const/4 v1, 0x0
 
-    .line 1215
+    .line 1222
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setClipToPadding(Z)V
 
-    .line 1216
+    .line 1223
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsLayout:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 1217
+    .line 1224
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomLayout:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsLayout:Landroid/widget/LinearLayout;
@@ -8168,14 +8217,14 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1219
+    .line 1226
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->drawTab:Landroid/widget/TextView;
 
-    .line 1220
+    .line 1227
     sget v2, Lorg/telegram/messenger/R$string;->PhotoEditorDraw:I
 
     invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -8188,7 +8237,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1221
+    .line 1228
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->drawTab:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
@@ -8205,7 +8254,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1222
+    .line 1229
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->drawTab:Landroid/widget/TextView;
 
     const/16 v3, 0x8
@@ -8220,14 +8269,14 @@
 
     invoke-virtual {v0, v1, v5, v1, v6}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1223
+    .line 1230
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->drawTab:Landroid/widget/TextView;
 
     const/4 v5, -0x1
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1224
+    .line 1231
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->drawTab:Landroid/widget/TextView;
 
     const/4 v6, 0x1
@@ -8236,12 +8285,12 @@
 
     invoke-virtual {v0, v6, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1225
+    .line 1232
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->drawTab:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1226
+    .line 1233
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->drawTab:Landroid/widget/TextView;
 
     const-string v8, "fonts/rmedium.ttf"
@@ -8252,12 +8301,12 @@
 
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1227
+    .line 1234
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->drawTab:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->setSingleLine()V
 
-    .line 1228
+    .line 1235
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->drawTab:Landroid/widget/TextView;
 
     new-instance v9, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda9;
@@ -8266,7 +8315,7 @@
 
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1235
+    .line 1242
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsLayout:Landroid/widget/LinearLayout;
 
     iget-object v9, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->drawTab:Landroid/widget/TextView;
@@ -8281,14 +8330,14 @@
 
     invoke-virtual {v0, v9, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1237
+    .line 1244
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->stickerTab:Landroid/widget/TextView;
 
-    .line 1238
+    .line 1245
     sget v9, Lorg/telegram/messenger/R$string;->PhotoEditorSticker:I
 
     invoke-static {v9}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -8301,7 +8350,7 @@
 
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1239
+    .line 1246
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->stickerTab:Landroid/widget/TextView;
 
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getThemedColor(I)I
@@ -8314,7 +8363,7 @@
 
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1240
+    .line 1247
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->stickerTab:Landroid/widget/TextView;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -8327,31 +8376,31 @@
 
     invoke-virtual {v0, v1, v9, v1, v12}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1241
+    .line 1248
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->stickerTab:Landroid/widget/TextView;
 
-    new-instance v9, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda11;
+    new-instance v9, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda8;
 
-    invoke-direct {v9, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-direct {v9, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1242
+    .line 1249
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->stickerTab:Landroid/widget/TextView;
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1243
+    .line 1250
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->stickerTab:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1244
+    .line 1251
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->stickerTab:Landroid/widget/TextView;
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1245
+    .line 1252
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->stickerTab:Landroid/widget/TextView;
 
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -8360,19 +8409,19 @@
 
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1246
+    .line 1253
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->stickerTab:Landroid/widget/TextView;
 
     const v9, 0x3f19999a    # 0.6f
 
     invoke-virtual {v0, v9}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 1247
+    .line 1254
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->stickerTab:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->setSingleLine()V
 
-    .line 1248
+    .line 1255
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsLayout:Landroid/widget/LinearLayout;
 
     iget-object v12, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->stickerTab:Landroid/widget/TextView;
@@ -8383,14 +8432,14 @@
 
     invoke-virtual {v0, v12, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1250
+    .line 1257
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textTab:Landroid/widget/TextView;
 
-    .line 1251
+    .line 1258
     sget p1, Lorg/telegram/messenger/R$string;->PhotoEditorText:I
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -8403,7 +8452,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1252
+    .line 1259
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textTab:Landroid/widget/TextView;
 
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getThemedColor(I)I
@@ -8416,7 +8465,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1253
+    .line 1260
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textTab:Landroid/widget/TextView;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -8429,22 +8478,22 @@
 
     invoke-virtual {p1, v1, v0, v1, v2}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1254
+    .line 1261
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textTab:Landroid/widget/TextView;
 
     invoke-virtual {p1, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1255
+    .line 1262
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textTab:Landroid/widget/TextView;
 
     invoke-virtual {p1, v6, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1256
+    .line 1263
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textTab:Landroid/widget/TextView;
 
     invoke-virtual {p1, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1257
+    .line 1264
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textTab:Landroid/widget/TextView;
 
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -8453,17 +8502,17 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1258
+    .line 1265
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textTab:Landroid/widget/TextView;
 
     invoke-virtual {p1, v9}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 1259
+    .line 1266
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textTab:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->setSingleLine()V
 
-    .line 1260
+    .line 1267
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textTab:Landroid/widget/TextView;
 
     new-instance v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda10;
@@ -8472,7 +8521,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1266
+    .line 1273
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsLayout:Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textTab:Landroid/widget/TextView;
@@ -8489,23 +8538,23 @@
 .method private showColorList(Z)V
     .locals 9
 
-    .line 2101
+    .line 2108
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->isColorListShown:Z
 
     if-eq v0, p1, :cond_5
 
-    .line 2102
+    .line 2109
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->isColorListShown:Z
 
-    .line 2104
+    .line 2111
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz v0, :cond_0
 
-    .line 2105
+    .line 2112
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    .line 2108
+    .line 2115
     :cond_0
     new-instance v0, Landroidx/dynamicanimation/animation/SpringAnimation;
 
@@ -8531,7 +8580,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 2109
+    .line 2116
     new-instance v1, Landroidx/dynamicanimation/animation/SpringForce;
 
     invoke-direct {v1}, Landroidx/dynamicanimation/animation/SpringForce;-><init>()V
@@ -8540,7 +8589,7 @@
 
     move v2, v3
 
-    .line 2110
+    .line 2117
     :cond_2
     invoke-virtual {v1, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
 
@@ -8548,26 +8597,26 @@
 
     const v2, 0x449c4000    # 1250.0f
 
-    .line 2111
+    .line 2118
     invoke-virtual {v1, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v1
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 2112
+    .line 2119
     invoke-virtual {v1, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v1
 
-    .line 2109
+    .line 2116
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/SpringAnimation;->setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
 
     const/4 v0, 0x1
 
     new-array v5, v0, [Z
 
-    .line 2114
+    .line 2121
     iget-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
     const/4 v7, 0x0
@@ -8587,19 +8636,19 @@
     :goto_1
     aput-boolean v0, v5, v7
 
-    .line 2115
+    .line 2122
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result v6
 
-    .line 2117
+    .line 2124
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getBarView()Landroid/view/ViewGroup;
 
     move-result-object v3
 
-    .line 2118
+    .line 2125
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     new-instance v8, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda29;
@@ -8614,7 +8663,7 @@
 
     invoke-virtual {v0, v8}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 2146
+    .line 2153
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda27;
@@ -8623,19 +8672,19 @@
 
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 2157
+    .line 2164
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
     if-eqz p1, :cond_5
 
-    .line 2160
+    .line 2167
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorsListView:Lorg/telegram/ui/Components/Paint/Views/PaintColorsListView;
 
     invoke-virtual {p1, v7}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
-    .line 2161
+    .line 2168
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorsListView:Lorg/telegram/ui/Components/Paint/Views/PaintColorsListView;
 
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
@@ -8659,14 +8708,14 @@
 
     const/4 v0, 0x0
 
-    .line 2995
+    .line 3002
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomPanelIgnoreOnce:Z
 
     const/4 v1, 0x1
 
     if-ne p1, v1, :cond_9
 
-    .line 2997
+    .line 3004
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-eqz p1, :cond_0
@@ -8684,22 +8733,22 @@
     :cond_0
     move p1, v0
 
-    .line 2998
+    .line 3005
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->createEmojiView()V
 
-    .line 3000
+    .line 3007
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/EmojiView;->setVisibility(I)V
 
-    .line 3002
+    .line 3009
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
-    .line 3003
+    .line 3010
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
-    .line 3005
+    .line 3012
     iget v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeight:I
 
     const/16 v4, 0x96
@@ -8708,14 +8757,14 @@
 
     if-gtz v3, :cond_2
 
-    .line 3006
+    .line 3013
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 3007
+    .line 3014
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -8724,7 +8773,7 @@
 
     goto :goto_1
 
-    .line 3009
+    .line 3016
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalEmojiSettings()Landroid/content/SharedPreferences;
 
@@ -8742,21 +8791,21 @@
 
     iput v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeight:I
 
-    .line 3012
+    .line 3019
     :cond_2
     :goto_1
     iget v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeightLand:I
 
     if-gtz v3, :cond_4
 
-    .line 3013
+    .line 3020
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    .line 3014
+    .line 3021
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -8765,7 +8814,7 @@
 
     goto :goto_2
 
-    .line 3016
+    .line 3023
     :cond_3
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalEmojiSettings()Landroid/content/SharedPreferences;
 
@@ -8783,7 +8832,7 @@
 
     iput v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeightLand:I
 
-    .line 3019
+    .line 3026
     :cond_4
     :goto_2
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -8801,7 +8850,7 @@
     :cond_5
     iget v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeight:I
 
-    .line 3021
+    .line 3028
     :goto_3
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -8809,13 +8858,13 @@
 
     check-cast v4, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 3022
+    .line 3029
     iput v3, v4, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 3023
+    .line 3030
     invoke-virtual {v2, v4}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3024
+    .line 3031
     sget-boolean v2, Lorg/telegram/messenger/AndroidUtilities;->isInMultiwindow:Z
 
     if-nez v2, :cond_6
@@ -8832,27 +8881,27 @@
 
     if-eqz v4, :cond_6
 
-    .line 3025
+    .line 3032
     check-cast v2, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getEditText()Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
 
     move-result-object v2
 
-    .line 3026
+    .line 3033
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 3029
+    .line 3036
     :cond_6
     iput v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
-    .line 3030
+    .line 3037
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->requestLayout()V
 
-    .line 3031
+    .line 3038
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->updateKeyboard()V
 
-    .line 3033
+    .line 3040
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->getEmojiButton()Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView;
@@ -8861,18 +8910,18 @@
 
     if-eqz v2, :cond_7
 
-    .line 3035
+    .line 3042
     sget-object v3, Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView$State;->KEYBOARD:Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView$State;
 
     invoke-virtual {v2, v3, v1}, Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView;->setState(Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView$State;Z)V
 
-    .line 3037
+    .line 3044
     :cond_7
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onWindowSizeChanged()V
 
     if-nez p1, :cond_e
 
-    .line 3040
+    .line 3047
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
     if-eqz p1, :cond_8
@@ -8884,7 +8933,7 @@
 
     new-array p1, p1, [F
 
-    .line 3046
+    .line 3053
     iget v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
     int-to-float v2, v2
@@ -8899,26 +8948,26 @@
 
     move-result-object p1
 
-    .line 3048
-    new-instance v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda0;
+    .line 3055
+    new-instance v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda1;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 3055
+    .line 3062
     new-instance v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$18;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$18;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 3067
+    .line 3074
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_4
 
-    .line 3072
+    .line 3079
     :cond_9
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
@@ -8928,21 +8977,21 @@
 
     if-eqz v2, :cond_a
 
-    .line 3074
+    .line 3081
     sget-object v3, Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView$State;->SMILE:Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView$State;
 
     invoke-virtual {v2, v3, v1}, Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView;->setState(Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView$State;Z)V
 
-    .line 3076
+    .line 3083
     :cond_a
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-eqz v1, :cond_c
 
-    .line 3078
+    .line 3085
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
-    .line 3079
+    .line 3086
     sget-boolean v2, Lorg/telegram/messenger/AndroidUtilities;->usingHardwareInput:Z
 
     if-nez v2, :cond_b
@@ -8954,23 +9003,23 @@
     :cond_b
     const/16 v2, 0x8
 
-    .line 3080
+    .line 3087
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/EmojiView;->setVisibility(I)V
 
     :cond_c
     if-nez p1, :cond_d
 
-    .line 3084
+    .line 3091
     iput v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
-    .line 3086
+    .line 3093
     :cond_d
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->updateKeyboard()V
 
-    .line 3091
+    .line 3098
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->requestLayout()V
 
-    .line 3092
+    .line 3099
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onWindowSizeChanged()V
 
     :cond_e
@@ -8981,19 +9030,19 @@
 .method private showMenuForEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
     .locals 8
 
-    .line 2485
+    .line 2492
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getCenterLocationInWindow(Landroid/view/View;)[I
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    .line 2486
+    .line 2493
     aget v6, v0, v1
 
     const/4 v1, 0x1
 
-    .line 2487
+    .line 2494
     aget v0, v0, v1
 
     const/16 v1, 0x20
@@ -9004,10 +9053,10 @@
 
     sub-int v7, v0, v1
 
-    .line 2489
-    new-instance v3, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda35;
+    .line 2496
+    new-instance v3, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda36;
 
-    invoke-direct {v3, p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda35;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
+    invoke-direct {v3, p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda36;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
 
     const/16 v5, 0x33
 
@@ -9023,7 +9072,7 @@
 .method private showPopup(Ljava/lang/Runnable;Landroid/view/View;III)V
     .locals 5
 
-    .line 2643
+    .line 2650
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz v0, :cond_0
@@ -9034,14 +9083,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 2644
+    .line 2651
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     return-void
 
-    .line 2648
+    .line 2655
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
@@ -9049,14 +9098,14 @@
 
     if-nez v0, :cond_1
 
-    .line 2649
+    .line 2656
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupRect:Landroid/graphics/Rect;
 
-    .line 2650
+    .line 2657
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -9069,17 +9118,17 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    .line 2651
+    .line 2658
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setAnimationEnabled(Z)V
 
-    .line 2652
+    .line 2659
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     const v2, -0xd7d7d7
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setBackgroundColor(I)V
 
-    .line 2653
+    .line 2660
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda22;
@@ -9088,37 +9137,37 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 2664
+    .line 2671
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda39;
+    new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda40;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda39;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda40;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setDispatchKeyEventListener(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$OnDispatchKeyEventListener;)V
 
-    .line 2669
+    .line 2676
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setShownFromBottom(Z)V
 
-    .line 2672
+    .line 2679
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->removeInnerViews()V
 
-    .line 2673
+    .line 2680
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 2675
+    .line 2682
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/4 v0, 0x2
 
     if-nez p1, :cond_2
 
-    .line 2676
+    .line 2683
     new-instance p1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -9129,39 +9178,39 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    .line 2677
+    .line 2684
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setAnimationEnabled(Z)V
 
-    .line 2678
+    .line 2685
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     sget v2, Lorg/telegram/messenger/R$style;->PopupAnimation:I
 
     invoke-virtual {p1, v2}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    .line 2679
+    .line 2686
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1, v1}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    .line 2680
+    .line 2687
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1, v1}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 2681
+    .line 2688
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1, v0}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 2682
+    .line 2689
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/4 v2, 0x0
 
     invoke-virtual {p1, v2}, Landroid/widget/PopupWindow;->setSoftInputMode(I)V
 
-    .line 2683
+    .line 2690
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
@@ -9170,7 +9219,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setFocusableInTouchMode(Z)V
 
-    .line 2684
+    .line 2691
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     new-instance v2, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda23;
@@ -9179,7 +9228,7 @@
 
     invoke-virtual {p1, v2}, Landroid/widget/PopupWindow;->setOnDismissListener(Landroid/widget/PopupWindow$OnDismissListener;)V
 
-    .line 2687
+    .line 2694
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
@@ -9205,7 +9254,7 @@
 
     invoke-virtual {p1, v3, v2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 2689
+    .line 2696
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1, v1}, Landroid/widget/PopupWindow;->setFocusable(Z)V
@@ -9214,7 +9263,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 2692
+    .line 2699
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -9225,7 +9274,7 @@
 
     sub-int/2addr p4, p1
 
-    .line 2693
+    .line 2700
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -9234,13 +9283,13 @@
 
     sub-int/2addr p5, p1
 
-    .line 2695
+    .line 2702
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1, p2, p3, p4, p5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 2696
+    .line 2703
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->startAnimation(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)Landroid/animation/AnimatorSet;
@@ -9251,23 +9300,23 @@
 .method private showTypefaceMenu(Z)V
     .locals 5
 
-    .line 2059
+    .line 2066
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->isTypefaceMenuShown:Z
 
     if-eq v0, p1, :cond_4
 
-    .line 2060
+    .line 2067
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->isTypefaceMenuShown:Z
 
-    .line 2062
+    .line 2069
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceMenuTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz v0, :cond_0
 
-    .line 2063
+    .line 2070
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    .line 2066
+    .line 2073
     :cond_0
     new-instance v0, Landroidx/dynamicanimation/animation/SpringAnimation;
 
@@ -9293,7 +9342,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceMenuTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 2067
+    .line 2074
     new-instance v1, Landroidx/dynamicanimation/animation/SpringForce;
 
     invoke-direct {v1}, Landroidx/dynamicanimation/animation/SpringForce;-><init>()V
@@ -9305,7 +9354,7 @@
     :cond_2
     move v2, v3
 
-    .line 2068
+    .line 2075
     :goto_1
     invoke-virtual {v1, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
 
@@ -9313,36 +9362,36 @@
 
     const v2, 0x449c4000    # 1250.0f
 
-    .line 2069
+    .line 2076
     invoke-virtual {v1, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v1
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 2070
+    .line 2077
     invoke-virtual {v1, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v1
 
-    .line 2067
+    .line 2074
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/SpringAnimation;->setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz p1, :cond_3
 
-    .line 2073
+    .line 2080
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceListView:Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
 
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 2074
+    .line 2081
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceListView:Lorg/telegram/ui/Components/Paint/Views/PaintTypefaceListView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
-    .line 2077
+    .line 2084
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceMenuTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
@@ -9352,7 +9401,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 2085
+    .line 2092
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceMenuTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda26;
@@ -9361,7 +9410,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 2095
+    .line 2102
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->typefaceMenuTransformAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
@@ -9373,14 +9422,14 @@
 .method private startPositionRelativeToEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Lorg/telegram/ui/Components/Point;
     .locals 11
 
-    .line 2605
+    .line 2612
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
     const/high16 v1, 0x43480000    # 200.0f
 
     if-eqz v0, :cond_0
 
-    .line 2606
+    .line 2613
     iget v2, v0, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
     div-float/2addr v1, v2
@@ -9388,12 +9437,12 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 2610
+    .line 2617
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->getPosition()Lorg/telegram/ui/Components/Point;
 
     move-result-object p1
 
-    .line 2611
+    .line 2618
     new-instance v0, Lorg/telegram/ui/Components/Point;
 
     iget v2, p1, Lorg/telegram/ui/Components/Point;->x:F
@@ -9413,12 +9462,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 2615
+    .line 2622
     iget v0, v0, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
     div-float/2addr p1, v0
 
-    .line 2617
+    .line 2624
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->centerPositionForEntity()Lorg/telegram/ui/Components/Point;
 
@@ -9429,7 +9478,7 @@
 
     move v3, v2
 
-    .line 2620
+    .line 2627
     :goto_1
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
@@ -9439,21 +9488,21 @@
 
     if-ge v2, v4, :cond_5
 
-    .line 2621
+    .line 2628
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {v4, v2}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 2622
+    .line 2629
     instance-of v5, v4, Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     if-nez v5, :cond_3
 
     goto :goto_2
 
-    .line 2625
+    .line 2632
     :cond_3
     check-cast v4, Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
@@ -9461,7 +9510,7 @@
 
     move-result-object v4
 
-    .line 2626
+    .line 2633
     iget v5, v4, Lorg/telegram/ui/Components/Point;->x:F
 
     iget v6, v0, Lorg/telegram/ui/Components/Point;->x:F
@@ -9513,7 +9562,7 @@
 
     return-object v0
 
-    .line 2635
+    .line 2642
     :cond_6
     new-instance v2, Lorg/telegram/ui/Components/Point;
 
@@ -9535,7 +9584,7 @@
 .method private switchTab(I)V
     .locals 6
 
-    .line 1278
+    .line 1285
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectedIndex:I
 
     if-eq v0, p1, :cond_3
@@ -9546,16 +9595,16 @@
 
     goto :goto_1
 
-    .line 1281
+    .line 1288
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectionAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_1
 
-    .line 1282
+    .line 1289
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 1285
+    .line 1292
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectedIndex:I
 
@@ -9563,15 +9612,15 @@
 
     move-result-object v0
 
-    .line 1286
+    .line 1293
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsNewSelectedIndex:I
 
-    .line 1287
+    .line 1294
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getBarView(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1289
+    .line 1296
     iget v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -9594,7 +9643,7 @@
     :goto_0
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->setInTextMode(Z)V
 
-    .line 1290
+    .line 1297
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     iget v5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
@@ -9609,14 +9658,14 @@
 
     iput v5, v2, Lorg/telegram/ui/Components/Paint/Swatch;->color:I
 
-    .line 1291
+    .line 1298
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     invoke-direct {p0, v2, v3}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->setCurrentSwatch(Lorg/telegram/ui/Components/Paint/Swatch;Z)V
 
     new-array v2, v4, [F
 
-    .line 1293
+    .line 1300
     fill-array-data v2, :array_0
 
     invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -9631,12 +9680,12 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectionAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1294
+    .line 1301
     sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1295
+    .line 1302
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectionAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v3, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda3;
@@ -9645,7 +9694,7 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1320
+    .line 1327
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectionAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v3, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$14;
@@ -9654,7 +9703,7 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1353
+    .line 1360
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectionAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -9677,7 +9726,7 @@
 .method public adjustPanLayoutHelperProgress()F
     .locals 1
 
-    .line 3408
+    .line 3415
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->panTranslationProgress:F
 
     return v0
@@ -9686,7 +9735,7 @@
 .method public allowInteraction(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
     .locals 0
 
-    .line 2924
+    .line 2931
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->editingText:Z
 
     xor-int/lit8 p1, p1, 0x1
@@ -9695,9 +9744,9 @@
 .end method
 
 .method protected createEmojiView()V
-    .locals 12
+    .locals 13
 
-    .line 3258
+    .line 3265
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-eqz v0, :cond_0
@@ -9708,15 +9757,15 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 3259
+    .line 3266
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
     const/4 v0, 0x0
 
-    .line 3260
+    .line 3267
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
-    .line 3262
+    .line 3269
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
@@ -9724,7 +9773,7 @@
 
     return-void
 
-    .line 3265
+    .line 3272
     :cond_1
     new-instance v0, Lorg/telegram/ui/Components/EmojiView;
 
@@ -9750,37 +9799,39 @@
 
     iget-object v11, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
+    const/4 v12, 0x0
+
     move-object v1, v0
 
-    invoke-direct/range {v1 .. v11}, Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct/range {v1 .. v12}, Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Z)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x1
 
-    .line 3266
+    .line 3273
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->allowEmojisForNonPremium(Z)V
 
-    .line 3267
+    .line 3274
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/EmojiView;->setVisibility(I)V
 
-    .line 3268
+    .line 3275
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 3269
+    .line 3276
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->setForseMultiwindowLayout(Z)V
 
-    .line 3271
+    .line 3278
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
@@ -9790,7 +9841,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->setDelegate(Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;)V
 
-    .line 3403
+    .line 3410
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
@@ -9801,12 +9852,12 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 3431
+    .line 3438
     sget p2, Lorg/telegram/messenger/NotificationCenter;->customTypefacesLoaded:I
 
     if-ne p1, p2, :cond_2
 
-    .line 3432
+    .line 3439
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     if-nez p1, :cond_0
@@ -9816,7 +9867,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 3435
+    .line 3442
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
@@ -9826,19 +9877,19 @@
 
     if-ge p1, p2, :cond_2
 
-    .line 3436
+    .line 3443
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object p2
 
-    .line 3437
+    .line 3444
     instance-of p3, p2, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz p3, :cond_1
 
-    .line 3438
+    .line 3445
     check-cast p2, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->updateTypeface()V
@@ -9861,7 +9912,7 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 9
 
-    .line 1152
+    .line 1159
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     const/4 v1, 0x0
@@ -9885,10 +9936,10 @@
 
     if-eqz v0, :cond_4
 
-    .line 1153
+    .line 1160
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1155
+    .line 1162
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x15
@@ -9901,7 +9952,7 @@
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    .line 1156
+    .line 1163
     :cond_1
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
@@ -9909,17 +9960,17 @@
 
     add-int/2addr v0, v1
 
-    .line 1159
+    .line 1166
     invoke-virtual {p2}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
 
-    .line 1160
+    .line 1167
     invoke-virtual {p2}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v3
 
-    .line 1161
+    .line 1168
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
     iget v5, v4, Lorg/telegram/messenger/MediaController$CropState;->transformRotation:I
@@ -9942,7 +9993,7 @@
     :cond_3
     int-to-float v2, v2
 
-    .line 1168
+    .line 1175
     iget v4, v4, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
     mul-float/2addr v2, v4
@@ -9963,7 +10014,7 @@
 
     int-to-float v3, v3
 
-    .line 1169
+    .line 1176
     iget v4, v4, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
     mul-float/2addr v3, v4
@@ -9982,7 +10033,7 @@
 
     float-to-int v3, v3
 
-    .line 1170
+    .line 1177
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v4
@@ -10007,7 +10058,7 @@
 
     add-float/2addr v4, v6
 
-    .line 1171
+    .line 1178
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v6
@@ -10058,7 +10109,7 @@
 
     const/4 v1, 0x0
 
-    .line 1173
+    .line 1180
     invoke-static {v1, v4}, Ljava/lang/Math;->max(FF)F
 
     move-result v5
@@ -10099,7 +10150,7 @@
 
     const/4 v1, 0x1
 
-    .line 1176
+    .line 1183
     :cond_4
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -10107,7 +10158,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 1178
+    .line 1185
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_5
@@ -10119,7 +10170,7 @@
 
     const/16 v0, 0x18
 
-    .line 1887
+    .line 1894
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -10132,7 +10183,7 @@
 
     const/16 v0, 0x30
 
-    .line 1882
+    .line 1889
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -10158,7 +10209,7 @@
 
     move-object/from16 v2, p1
 
-    .line 1655
+    .line 1662
     iget-object v0, v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     const/4 v3, 0x0
@@ -10167,14 +10218,14 @@
 
     move-result-object v4
 
-    .line 1656
+    .line 1663
     sget-object v0, Ljava/math/BigInteger;->ONE:Ljava/math/BigInteger;
 
     iput-object v0, v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lcm:Ljava/math/BigInteger;
 
     if-eqz v4, :cond_17
 
-    .line 1657
+    .line 1664
     iget-object v0, v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->entitiesCount()I
@@ -10183,7 +10234,7 @@
 
     if-lez v0, :cond_17
 
-    .line 1660
+    .line 1667
     iget-object v0, v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getChildCount()I
@@ -10197,14 +10248,14 @@
     :goto_0
     if-ge v7, v5, :cond_17
 
-    .line 1663
+    .line 1670
     iget-object v8, v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {v8, v7}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v8
 
-    .line 1664
+    .line 1671
     instance-of v9, v8, Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     if-nez v9, :cond_0
@@ -10217,13 +10268,13 @@
 
     goto/16 :goto_6
 
-    .line 1667
+    .line 1674
     :cond_0
     move-object v9, v8
 
     check-cast v9, Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
-    .line 1668
+    .line 1675
     invoke-virtual {v9}, Lorg/telegram/ui/Components/Paint/Views/EntityView;->getPosition()Lorg/telegram/ui/Components/Point;
 
     move-result-object v10
@@ -10232,12 +10283,12 @@
 
     if-eqz v2, :cond_11
 
-    .line 1670
+    .line 1677
     new-instance v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;
 
     invoke-direct {v14}, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;-><init>()V
 
-    .line 1671
+    .line 1678
     instance-of v15, v9, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     const-wide/16 v16, 0x1388
@@ -10246,30 +10297,30 @@
 
     if-eqz v15, :cond_9
 
-    .line 1672
+    .line 1679
     iput-byte v13, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->type:B
 
-    .line 1673
+    .line 1680
     move-object v15, v9
 
     check-cast v15, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
-    .line 1674
+    .line 1681
     invoke-virtual {v15}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v6
 
-    .line 1675
+    .line 1682
     instance-of v12, v6, Landroid/text/Spanned;
 
     if-eqz v12, :cond_8
 
-    .line 1676
+    .line 1683
     move-object v12, v6
 
     check-cast v12, Landroid/text/Spanned;
 
-    .line 1677
+    .line 1684
     invoke-interface {v6}, Ljava/lang/CharSequence;->length()I
 
     move-result v11
@@ -10286,23 +10337,23 @@
 
     move v13, v3
 
-    .line 1679
+    .line 1686
     :goto_1
     array-length v3, v11
 
     if-ge v13, v3, :cond_7
 
-    .line 1680
+    .line 1687
     aget-object v3, v11, v13
 
     move-object/from16 v19, v0
 
-    .line 1681
+    .line 1688
     iget-object v0, v3, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-nez v0, :cond_1
 
-    .line 1683
+    .line 1690
     iget v0, v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     move-object/from16 v20, v10
@@ -10327,7 +10378,7 @@
     :goto_2
     if-eqz v0, :cond_2
 
-    .line 1686
+    .line 1693
     iget v10, v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {v10}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getDocumentFetcher(I)Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;
@@ -10336,7 +10387,7 @@
 
     invoke-virtual {v10, v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$EmojiDocumentFetcher;->putDocument(Lorg/telegram/tgnet/TLRPC$Document;)V
 
-    .line 1689
+    .line 1696
     :cond_2
     new-instance v10, Lorg/telegram/messenger/VideoEditedInfo$EmojiEntity;
 
@@ -10346,24 +10397,24 @@
 
     move/from16 v22, v5
 
-    .line 1690
+    .line 1697
     invoke-virtual {v3}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->getDocumentId()J
 
     move-result-wide v4
 
     iput-wide v4, v10, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document_id:J
 
-    .line 1691
+    .line 1698
     iput-object v0, v10, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 1692
+    .line 1699
     invoke-interface {v12, v3}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v4
 
     iput v4, v10, Lorg/telegram/tgnet/TLRPC$MessageEntity;->offset:I
 
-    .line 1693
+    .line 1700
     invoke-interface {v12, v3}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
 
     move-result v3
@@ -10374,7 +10425,7 @@
 
     iput v3, v10, Lorg/telegram/tgnet/TLRPC$MessageEntity;->length:I
 
-    .line 1694
+    .line 1701
     iget v3, v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -10393,7 +10444,7 @@
 
     iput-object v3, v10, Lorg/telegram/messenger/VideoEditedInfo$EmojiEntity;->documentAbsolutePath:Ljava/lang/String;
 
-    .line 1695
+    .line 1702
     iget-object v3, v10, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/MessageObject;->isAnimatedStickerDocument(Lorg/telegram/tgnet/TLRPC$Document;Z)Z
@@ -10402,7 +10453,7 @@
 
     if-nez v3, :cond_3
 
-    .line 1696
+    .line 1703
     iget-object v4, v10, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-static {v4}, Lorg/telegram/messenger/MessageObject;->isVideoStickerDocument(Lorg/telegram/tgnet/TLRPC$Document;)Z
@@ -10411,7 +10462,7 @@
 
     if-eqz v4, :cond_5
 
-    .line 1697
+    .line 1704
     :cond_3
     iget-byte v4, v10, Lorg/telegram/messenger/VideoEditedInfo$EmojiEntity;->subType:B
 
@@ -10431,7 +10482,7 @@
 
     iput-byte v3, v10, Lorg/telegram/messenger/VideoEditedInfo$EmojiEntity;->subType:B
 
-    .line 1699
+    .line 1706
     :cond_5
     iget-object v3, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->entities:Ljava/util/ArrayList;
 
@@ -10439,12 +10490,12 @@
 
     if-eqz v0, :cond_6
 
-    .line 1704
+    .line 1711
     invoke-static/range {v16 .. v17}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     move-result-object v0
 
-    .line 1705
+    .line 1712
     iget-object v3, v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lcm:Ljava/math/BigInteger;
 
     invoke-virtual {v3, v0}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
@@ -10487,7 +10538,7 @@
 
     move-object/from16 v20, v10
 
-    .line 1710
+    .line 1717
     iget-object v0, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -10503,7 +10554,7 @@
 
     move-object/from16 v20, v10
 
-    .line 1714
+    .line 1721
     :goto_4
     invoke-interface {v6}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
@@ -10511,7 +10562,7 @@
 
     iput-object v0, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->text:Ljava/lang/String;
 
-    .line 1715
+    .line 1722
     invoke-virtual {v15}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getType()I
 
     move-result v0
@@ -10520,7 +10571,7 @@
 
     iput-byte v0, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->subType:B
 
-    .line 1716
+    .line 1723
     invoke-virtual {v15}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getSwatch()Lorg/telegram/ui/Components/Paint/Swatch;
 
     move-result-object v0
@@ -10529,21 +10580,21 @@
 
     iput v0, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->color:I
 
-    .line 1717
+    .line 1724
     invoke-virtual {v15}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getTextSize()I
 
     move-result v0
 
     iput v0, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->fontSize:I
 
-    .line 1718
+    .line 1725
     invoke-virtual {v15}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getTypeface()Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
     move-result-object v0
 
     iput-object v0, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textTypeface:Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
-    .line 1719
+    .line 1726
     invoke-virtual {v15}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getAlign()I
 
     move-result v0
@@ -10563,56 +10614,56 @@
 
     move-object/from16 v20, v10
 
-    .line 1721
+    .line 1728
     instance-of v0, v9, Lorg/telegram/ui/Components/Paint/Views/StickerView;
 
     if-eqz v0, :cond_10
 
     const/4 v3, 0x0
 
-    .line 1722
+    .line 1729
     iput-byte v3, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->type:B
 
-    .line 1723
+    .line 1730
     move-object v0, v9
 
     check-cast v0, Lorg/telegram/ui/Components/Paint/Views/StickerView;
 
-    .line 1724
+    .line 1731
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->getBaseSize()Lorg/telegram/ui/Components/Size;
 
     move-result-object v3
 
-    .line 1725
+    .line 1732
     iget v4, v3, Lorg/telegram/ui/Components/Size;->width:F
 
     iput v4, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->width:F
 
-    .line 1726
+    .line 1733
     iget v3, v3, Lorg/telegram/ui/Components/Size;->height:F
 
     iput v3, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->height:F
 
-    .line 1727
+    .line 1734
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->getSticker()Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v3
 
     iput-object v3, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 1728
+    .line 1735
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->getParentObject()Ljava/lang/Object;
 
     move-result-object v3
 
     iput-object v3, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->parentObject:Ljava/lang/Object;
 
-    .line 1729
+    .line 1736
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->getSticker()Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v3
 
-    .line 1730
+    .line 1737
     sget v4, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -10631,7 +10682,7 @@
 
     iput-object v4, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->text:Ljava/lang/String;
 
-    .line 1731
+    .line 1738
     invoke-static {v3, v5}, Lorg/telegram/messenger/MessageObject;->isAnimatedStickerDocument(Lorg/telegram/tgnet/TLRPC$Document;Z)Z
 
     move-result v4
@@ -10644,13 +10695,13 @@
 
     if-eqz v4, :cond_d
 
-    .line 1732
+    .line 1739
     :cond_a
     invoke-static {v3, v5}, Lorg/telegram/messenger/MessageObject;->isAnimatedStickerDocument(Lorg/telegram/tgnet/TLRPC$Document;Z)Z
 
     move-result v3
 
-    .line 1733
+    .line 1740
     iget-byte v4, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->subType:B
 
     if-eqz v3, :cond_b
@@ -10666,7 +10717,7 @@
 
     if-eqz v3, :cond_c
 
-    .line 1736
+    .line 1743
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->getDuration()J
 
     move-result-wide v16
@@ -10678,12 +10729,12 @@
 
     if-eqz v3, :cond_d
 
-    .line 1741
+    .line 1748
     invoke-static/range {v16 .. v17}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     move-result-object v3
 
-    .line 1742
+    .line 1749
     iget-object v4, v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lcm:Ljava/math/BigInteger;
 
     invoke-virtual {v4, v3}, Ljava/math/BigInteger;->multiply(Ljava/math/BigInteger;)Ljava/math/BigInteger;
@@ -10702,7 +10753,7 @@
 
     iput-object v3, v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lcm:Ljava/math/BigInteger;
 
-    .line 1746
+    .line 1753
     :cond_d
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->isMirrored()Z
 
@@ -10710,7 +10761,7 @@
 
     if-eqz v0, :cond_e
 
-    .line 1747
+    .line 1754
     iget-byte v0, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->subType:B
 
     const/4 v3, 0x2
@@ -10721,46 +10772,46 @@
 
     iput-byte v0, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->subType:B
 
-    .line 1752
+    .line 1759
     :cond_e
     :goto_5
     invoke-virtual {v2, v14}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1753
+    .line 1760
     invoke-virtual {v8}, Landroid/view/View;->getScaleX()F
 
     move-result v0
 
-    .line 1754
+    .line 1761
     invoke-virtual {v8}, Landroid/view/View;->getScaleY()F
 
     move-result v3
 
-    .line 1755
+    .line 1762
     invoke-virtual {v8}, Landroid/view/View;->getX()F
 
     move-result v4
 
-    .line 1756
+    .line 1763
     invoke-virtual {v8}, Landroid/view/View;->getY()F
 
     move-result v6
 
-    .line 1757
+    .line 1764
     invoke-virtual {v8}, Landroid/view/View;->getWidth()I
 
     move-result v10
 
     iput v10, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewWidth:I
 
-    .line 1758
+    .line 1765
     invoke-virtual {v8}, Landroid/view/View;->getHeight()I
 
     move-result v10
 
     iput v10, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewHeight:I
 
-    .line 1759
+    .line 1766
     invoke-virtual {v8}, Landroid/view/View;->getWidth()I
 
     move-result v10
@@ -10781,7 +10832,7 @@
 
     iput v10, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->width:F
 
-    .line 1760
+    .line 1767
     invoke-virtual {v8}, Landroid/view/View;->getHeight()I
 
     move-result v10
@@ -10802,7 +10853,7 @@
 
     iput v10, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->height:F
 
-    .line 1761
+    .line 1768
     invoke-virtual {v8}, Landroid/view/View;->getWidth()I
 
     move-result v10
@@ -10833,7 +10884,7 @@
 
     iput v10, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->x:F
 
-    .line 1762
+    .line 1769
     invoke-virtual {v8}, Landroid/view/View;->getHeight()I
 
     move-result v10
@@ -10860,7 +10911,7 @@
 
     iput v10, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->y:F
 
-    .line 1763
+    .line 1770
     invoke-virtual {v8}, Landroid/view/View;->getRotation()F
 
     move-result v3
@@ -10877,7 +10928,7 @@
 
     iput v3, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->rotation:F
 
-    .line 1765
+    .line 1772
     invoke-virtual {v8}, Landroid/view/View;->getWidth()I
 
     move-result v3
@@ -10902,7 +10953,7 @@
 
     iput v4, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textViewX:F
 
-    .line 1766
+    .line 1773
     invoke-virtual {v8}, Landroid/view/View;->getHeight()I
 
     move-result v3
@@ -10925,7 +10976,7 @@
 
     iput v6, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textViewY:F
 
-    .line 1767
+    .line 1774
     iget v3, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewWidth:I
 
     int-to-float v3, v3
@@ -10942,7 +10993,7 @@
 
     iput v3, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textViewWidth:F
 
-    .line 1768
+    .line 1775
     iget v3, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->viewHeight:I
 
     int-to-float v3, v3
@@ -10959,17 +11010,17 @@
 
     iput v3, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->textViewHeight:F
 
-    .line 1769
+    .line 1776
     iput v0, v14, Lorg/telegram/messenger/VideoEditedInfo$MediaEntity;->scale:F
 
     const/4 v3, 0x0
 
-    .line 1771
+    .line 1778
     aget-object v0, p2, v3
 
     if-nez v0, :cond_f
 
-    .line 1772
+    .line 1779
     invoke-virtual {v11}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v0
@@ -10988,7 +11039,7 @@
 
     aput-object v0, p2, v3
 
-    .line 1773
+    .line 1780
     new-instance v0, Landroid/graphics/Canvas;
 
     aget-object v4, p2, v3
@@ -10999,7 +11050,7 @@
 
     const/4 v4, 0x0
 
-    .line 1774
+    .line 1781
     invoke-virtual {v0, v11, v3, v3, v4}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     move-object/from16 v19, v0
@@ -11030,7 +11081,7 @@
 
     const/4 v13, 0x0
 
-    .line 1777
+    .line 1784
     :goto_7
     new-instance v3, Landroid/graphics/Canvas;
 
@@ -11061,20 +11112,20 @@
 
     goto/16 :goto_c
 
-    .line 1783
+    .line 1790
     :cond_13
     invoke-virtual {v6}, Landroid/graphics/Canvas;->save()I
 
     move-object/from16 v10, v20
 
-    .line 1784
+    .line 1791
     iget v0, v10, Lorg/telegram/ui/Components/Point;->x:F
 
     iget v12, v10, Lorg/telegram/ui/Components/Point;->y:F
 
     invoke-virtual {v6, v0, v12}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1785
+    .line 1792
     invoke-virtual {v8}, Landroid/view/View;->getScaleX()F
 
     move-result v0
@@ -11085,14 +11136,14 @@
 
     invoke-virtual {v6, v0, v12}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 1786
+    .line 1793
     invoke-virtual {v8}, Landroid/view/View;->getRotation()F
 
     move-result v0
 
     invoke-virtual {v6, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
-    .line 1787
+    .line 1794
     invoke-virtual {v9}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v0
@@ -11117,7 +11168,7 @@
 
     invoke-virtual {v6, v0, v14}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1788
+    .line 1795
     instance-of v0, v8, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz v0, :cond_14
@@ -11134,7 +11185,7 @@
 
     if-lez v0, :cond_14
 
-    .line 1789
+    .line 1796
     invoke-virtual {v8}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -11149,15 +11200,15 @@
 
     move-result-object v14
 
-    .line 1790
+    .line 1797
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, v14}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 1791
+    .line 1798
     invoke-virtual {v8, v0}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1792
+    .line 1799
     new-instance v15, Landroid/graphics/Rect;
 
     invoke-virtual {v14}, Landroid/graphics/Bitmap;->getWidth()I
@@ -11176,7 +11227,7 @@
 
     invoke-virtual {v6, v14, v5, v15, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 1794
+    .line 1801
     :try_start_0
     invoke-virtual {v0, v5}, Landroid/graphics/Canvas;->setBitmap(Landroid/graphics/Bitmap;)V
     :try_end_0
@@ -11189,10 +11240,10 @@
 
     move-object v12, v0
 
-    .line 1796
+    .line 1803
     invoke-static {v12}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1798
+    .line 1805
     :goto_a
     invoke-virtual {v14}, Landroid/graphics/Bitmap;->recycle()V
 
@@ -11203,10 +11254,10 @@
 
     const/4 v5, 0x0
 
-    .line 1800
+    .line 1807
     invoke-virtual {v8, v6}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1802
+    .line 1809
     :goto_b
     invoke-virtual {v6}, Landroid/graphics/Canvas;->restore()V
 
@@ -11260,7 +11311,7 @@
 .method public getCancelView()Landroid/view/View;
     .locals 1
 
-    .line 1826
+    .line 1833
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->cancelButton:Lorg/telegram/ui/Components/Paint/Views/PaintCancelView;
 
     return-object v0
@@ -11269,7 +11320,7 @@
 .method public getCenterLocation(Lorg/telegram/ui/Components/Paint/Views/EntityView;)[I
     .locals 0
 
-    .line 2906
+    .line 2913
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getCenterLocationInWindow(Landroid/view/View;)[I
 
     move-result-object p1
@@ -11280,7 +11331,7 @@
 .method public getCropRotation()F
     .locals 2
 
-    .line 2929
+    .line 2936
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
     if-eqz v0, :cond_0
@@ -11305,7 +11356,7 @@
 .method public getDoneView()Landroid/view/View;
     .locals 1
 
-    .line 1821
+    .line 1828
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->doneButton:Lorg/telegram/ui/Components/Paint/Views/PaintDoneView;
 
     return-object v0
@@ -11314,7 +11365,7 @@
 .method public getEmojiPadding(Z)I
     .locals 2
 
-    .line 3148
+    .line 3155
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->translateBottomPanelAfterResize:Z
 
     if-eqz v0, :cond_0
@@ -11325,10 +11376,10 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 3149
+    .line 3156
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomPanelTranslationY(FF)V
 
-    .line 3151
+    .line 3158
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
@@ -11344,7 +11395,7 @@
 
     return p1
 
-    .line 3156
+    .line 3163
     :cond_1
     iget p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
@@ -11354,7 +11405,7 @@
 .method public getLcm()J
     .locals 2
 
-    .line 1816
+    .line 1823
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lcm:Ljava/math/BigInteger;
 
     invoke-virtual {v0}, Ljava/math/BigInteger;->longValue()J
@@ -11375,7 +11426,7 @@
         }
     .end annotation
 
-    .line 1980
+    .line 1987
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getChildCount()I
@@ -11391,19 +11442,19 @@
     :goto_0
     if-ge v3, v0, :cond_8
 
-    .line 1982
+    .line 1989
     iget-object v4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {v4, v3}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 1983
+    .line 1990
     instance-of v5, v4, Lorg/telegram/ui/Components/Paint/Views/StickerView;
 
     if-eqz v5, :cond_2
 
-    .line 1984
+    .line 1991
     check-cast v4, Lorg/telegram/ui/Components/Paint/Views/StickerView;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/Paint/Views/StickerView;->getSticker()Lorg/telegram/tgnet/TLRPC$Document;
@@ -11412,28 +11463,28 @@
 
     if-nez v2, :cond_0
 
-    .line 1986
+    .line 1993
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1988
+    .line 1995
     :cond_0
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_inputDocument;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_inputDocument;-><init>()V
 
-    .line 1989
+    .line 1996
     iget-wide v6, v4, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     iput-wide v6, v5, Lorg/telegram/tgnet/TLRPC$InputDocument;->id:J
 
-    .line 1990
+    .line 1997
     iget-wide v6, v4, Lorg/telegram/tgnet/TLRPC$Document;->access_hash:J
 
     iput-wide v6, v5, Lorg/telegram/tgnet/TLRPC$InputDocument;->access_hash:J
 
-    .line 1991
+    .line 1998
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
     iput-object v4, v5, Lorg/telegram/tgnet/TLRPC$InputDocument;->file_reference:[B
@@ -11442,35 +11493,35 @@
 
     new-array v4, v1, [B
 
-    .line 1993
+    .line 2000
     iput-object v4, v5, Lorg/telegram/tgnet/TLRPC$InputDocument;->file_reference:[B
 
-    .line 1995
+    .line 2002
     :cond_1
     invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_3
 
-    .line 1996
+    .line 2003
     :cond_2
     instance-of v5, v4, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz v5, :cond_7
 
-    .line 1997
+    .line 2004
     check-cast v4, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
-    .line 1998
+    .line 2005
     invoke-virtual {v4}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v4
 
-    .line 1999
+    .line 2006
     instance-of v5, v4, Landroid/text/Spanned;
 
     if-eqz v5, :cond_7
 
-    .line 2000
+    .line 2007
     move-object v5, v4
 
     check-cast v5, Landroid/text/Spanned;
@@ -11491,25 +11542,25 @@
 
     move v5, v1
 
-    .line 2002
+    .line 2009
     :goto_1
     array-length v6, v4
 
     if-ge v5, v6, :cond_7
 
-    .line 2003
+    .line 2010
     aget-object v6, v4, v5
 
     if-eqz v6, :cond_6
 
-    .line 2006
+    .line 2013
     iget-object v7, v6, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-eqz v7, :cond_3
 
     goto :goto_2
 
-    .line 2009
+    .line 2016
     :cond_3
     iget v7, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
@@ -11526,28 +11577,28 @@
 
     if-nez v2, :cond_4
 
-    .line 2014
+    .line 2021
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2016
+    .line 2023
     :cond_4
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_inputDocument;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_inputDocument;-><init>()V
 
-    .line 2017
+    .line 2024
     iget-wide v8, v7, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     iput-wide v8, v6, Lorg/telegram/tgnet/TLRPC$InputDocument;->id:J
 
-    .line 2018
+    .line 2025
     iget-wide v8, v7, Lorg/telegram/tgnet/TLRPC$Document;->access_hash:J
 
     iput-wide v8, v6, Lorg/telegram/tgnet/TLRPC$InputDocument;->access_hash:J
 
-    .line 2019
+    .line 2026
     iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
     iput-object v7, v6, Lorg/telegram/tgnet/TLRPC$InputDocument;->file_reference:[B
@@ -11556,10 +11607,10 @@
 
     new-array v7, v1, [B
 
-    .line 2021
+    .line 2028
     iput-object v7, v6, Lorg/telegram/tgnet/TLRPC$InputDocument;->file_reference:[B
 
-    .line 2023
+    .line 2030
     :cond_5
     invoke-virtual {v2, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -11581,7 +11632,7 @@
 .method public getOffsetTranslationY()F
     .locals 1
 
-    .line 1640
+    .line 1647
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->offsetTranslationY:F
 
     return v0
@@ -11598,7 +11649,7 @@
 .method public getRenderView()Lorg/telegram/ui/Components/Paint/RenderView;
     .locals 1
 
-    .line 1892
+    .line 1899
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     return-object v0
@@ -11667,7 +11718,7 @@
 .method public getTransformedTouch(FF[F)V
     .locals 9
 
-    .line 2897
+    .line 2904
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -11680,7 +11731,7 @@
 
     sub-float/2addr p1, v1
 
-    .line 2898
+    .line 2905
     iget v0, v0, Landroid/graphics/Point;->y:I
 
     int-to-float v0, v0
@@ -11689,7 +11740,7 @@
 
     sub-float/2addr p2, v0
 
-    .line 2899
+    .line 2906
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getRotation()F
@@ -11710,7 +11761,7 @@
 
     float-to-double v0, v0
 
-    .line 2900
+    .line 2907
     invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v5
@@ -11743,7 +11794,7 @@
 
     aput v5, p3, v6
 
-    .line 2901
+    .line 2908
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v5
@@ -11790,7 +11841,7 @@
 .method public hasChanges()Z
     .locals 1
 
-    .line 1650
+    .line 1657
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->undoStore:Lorg/telegram/ui/Components/Paint/UndoStore;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/UndoStore;->canUndo()Z
@@ -11803,7 +11854,7 @@
 .method public init()V
     .locals 2
 
-    .line 1529
+    .line 1536
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
     iget v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
@@ -11818,19 +11869,19 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->setTypeface(Ljava/lang/String;)V
 
-    .line 1530
+    .line 1537
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1531
+    .line 1538
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     invoke-virtual {v0, v1}, Landroid/view/TextureView;->setVisibility(I)V
 
-    .line 1532
+    .line 1539
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderInputView:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
@@ -11852,19 +11903,19 @@
 .method public maybeShowDismissalAlert(Lorg/telegram/ui/PhotoViewer;Landroid/app/Activity;Ljava/lang/Runnable;)V
     .locals 3
 
-    .line 1831
+    .line 1838
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->isColorListShown:Z
 
     if-eqz v0, :cond_0
 
     const/4 p1, 0x0
 
-    .line 1832
+    .line 1839
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->showColorList(Z)V
 
     return-void
 
-    .line 1836
+    .line 1843
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
@@ -11872,12 +11923,12 @@
 
     const/4 p1, 0x1
 
-    .line 1837
+    .line 1844
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->hideEmojiPopup(Z)V
 
     return-void
 
-    .line 1841
+    .line 1848
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->editingText:Z
 
@@ -11885,12 +11936,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 1842
+    .line 1849
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
 
     return-void
 
-    .line 1846
+    .line 1853
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->hasChanges()Z
 
@@ -11902,7 +11953,7 @@
 
     return-void
 
-    .line 1850
+    .line 1857
     :cond_3
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -11910,7 +11961,7 @@
 
     invoke-direct {v0, p2, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1851
+    .line 1858
     sget p2, Lorg/telegram/messenger/R$string;->PhotoEditorDiscardAlert:I
 
     const-string v2, "PhotoEditorDiscardAlert"
@@ -11921,7 +11972,7 @@
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1852
+    .line 1859
     sget p2, Lorg/telegram/messenger/R$string;->DiscardChanges:I
 
     const-string v2, "DiscardChanges"
@@ -11932,7 +11983,7 @@
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1853
+    .line 1860
     sget p2, Lorg/telegram/messenger/R$string;->PassportDiscard:I
 
     const-string v2, "PassportDiscard"
@@ -11947,7 +11998,7 @@
 
     invoke-virtual {v0, p2, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1854
+    .line 1861
     sget p2, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string p3, "Cancel"
@@ -11958,12 +12009,12 @@
 
     invoke-virtual {v0, p2, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1855
+    .line 1862
     invoke-virtual {p1, v0}, Lorg/telegram/ui/PhotoViewer;->showAlertDialog(Lorg/telegram/ui/ActionBar/AlertDialog$Builder;)V
 
     goto :goto_0
 
-    .line 1857
+    .line 1864
     :cond_4
     invoke-interface {p3}, Ljava/lang/Runnable;->run()V
 
@@ -11974,12 +12025,12 @@
 .method public onAddButtonPressed(Landroid/view/View;)V
     .locals 6
 
-    .line 2452
+    .line 2459
     new-instance v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda31;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda31;-><init>(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
 
-    .line 2481
+    .line 2488
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v5
@@ -11992,7 +12043,7 @@
 
     move-object v2, p0
 
-    .line 2452
+    .line 2459
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->showPopup(Ljava/lang/Runnable;Landroid/view/View;III)V
 
     return-void
@@ -12001,12 +12052,12 @@
 .method public onAnimationStateChanged(Z)V
     .locals 5
 
-    .line 1613
+    .line 1620
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectedIndex:I
 
     if-nez v0, :cond_3
 
-    .line 1614
+    .line 1621
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     const/4 v1, 0x2
@@ -12027,7 +12078,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 1615
+    .line 1622
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomLayout:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_1
@@ -12042,7 +12093,7 @@
     :goto_1
     invoke-virtual {v0, v3, v4}, Landroid/widget/FrameLayout;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 1616
+    .line 1623
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->topLayout:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_2
@@ -12064,13 +12115,13 @@
 
     const/4 v0, 0x0
 
-    .line 3417
+    .line 3424
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->destroyed:Z
 
-    .line 3418
+    .line 3425
     invoke-super {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->onAttachedToWindow()V
 
-    .line 3419
+    .line 3426
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -12085,7 +12136,7 @@
 .method public onBackPressed()Z
     .locals 3
 
-    .line 2207
+    .line 2214
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->isColorListShown:Z
 
     const/4 v1, 0x0
@@ -12094,23 +12145,23 @@
 
     if-eqz v0, :cond_0
 
-    .line 2208
+    .line 2215
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->showColorList(Z)V
 
     return v2
 
-    .line 2212
+    .line 2219
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
     if-eqz v0, :cond_1
 
-    .line 2213
+    .line 2220
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->hideEmojiPopup(Z)V
 
     return v2
 
-    .line 2217
+    .line 2224
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->editingText:Z
 
@@ -12118,7 +12169,7 @@
 
     const/4 v0, 0x0
 
-    .line 2218
+    .line 2225
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
 
     return v2
@@ -12130,7 +12181,7 @@
 .method public onBrushSelected(Lorg/telegram/ui/Components/Paint/Brush;)V
     .locals 3
 
-    .line 2036
+    .line 2043
     instance-of v0, p1, Lorg/telegram/ui/Components/Paint/Brush$Blurer;
 
     if-nez v0, :cond_1
@@ -12141,7 +12192,7 @@
 
     goto :goto_0
 
-    .line 2039
+    .line 2046
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
@@ -12153,7 +12204,7 @@
 
     goto :goto_1
 
-    .line 2037
+    .line 2044
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
@@ -12164,7 +12215,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->setMinMax(FF)V
 
-    .line 2041
+    .line 2048
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
@@ -12176,7 +12227,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->setDrawCenter(Z)V
 
-    .line 2042
+    .line 2049
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/RenderView;->getCurrentBrush()Lorg/telegram/ui/Components/Paint/Brush;
@@ -12187,21 +12238,21 @@
 
     if-eqz v0, :cond_2
 
-    .line 2043
+    .line 2050
     iput-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->ignoreToolChangeAnimationOnce:Z
 
-    .line 2045
+    .line 2052
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/RenderView;->setBrush(Lorg/telegram/ui/Components/Paint/Brush;)V
 
-    .line 2046
+    .line 2053
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     iget v0, p1, Lorg/telegram/ui/Components/Paint/Swatch;->color:I
 
-    .line 2047
+    .line 2054
     iget v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -12214,7 +12265,7 @@
 
     iput v1, p1, Lorg/telegram/ui/Components/Paint/Swatch;->color:I
 
-    .line 2048
+    .line 2055
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightDefaultValueOverride:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView$ValueOverride;
@@ -12225,7 +12276,7 @@
 
     iput v1, p1, Lorg/telegram/ui/Components/Paint/Swatch;->brushWeight:F
 
-    .line 2049
+    .line 2056
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->colorSwatch:Lorg/telegram/ui/Components/Paint/Swatch;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -12234,7 +12285,7 @@
 
     invoke-direct {p0, p1, v2, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->setCurrentSwatch(Lorg/telegram/ui/Components/Paint/Swatch;ZLjava/lang/Integer;)V
 
-    .line 2050
+    .line 2057
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderInputView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
@@ -12245,7 +12296,7 @@
 .method public onCleanupEntities()V
     .locals 1
 
-    .line 1811
+    .line 1818
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->removeAllViews()V
@@ -12258,7 +12309,7 @@
 
     const/4 v0, 0x1
 
-    .line 2227
+    .line 2234
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->showColorList(Z)V
 
     return-void
@@ -12269,13 +12320,13 @@
 
     const/4 v0, 0x1
 
-    .line 3424
+    .line 3431
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->destroyed:Z
 
-    .line 3425
+    .line 3432
     invoke-super {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->onDetachedFromWindow()V
 
-    .line 3426
+    .line 3433
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -12290,30 +12341,30 @@
 .method public onEmojiButtonClick()V
     .locals 3
 
-    .line 2975
+    .line 2982
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 2976
+    .line 2983
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     instance-of v2, v2, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz v2, :cond_0
 
-    .line 2977
+    .line 2984
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomPanelIgnoreOnce:Z
 
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 2980
+    .line 2987
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onEmojiViewCloseByClick()V
 
-    .line 2982
+    .line 2989
     :cond_1
     iget-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
@@ -12323,21 +12374,21 @@
 
     if-eqz v0, :cond_2
 
-    .line 2983
+    .line 2990
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz v1, :cond_2
 
-    .line 2984
+    .line 2991
     check-cast v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getEditText()Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
 
     move-result-object v0
 
-    .line 2985
+    .line 2992
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
 
     :cond_2
@@ -12417,7 +12468,7 @@
 .method public onEntityLongClicked(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
     .locals 0
 
-    .line 2891
+    .line 2898
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->showMenuForEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
 
     const/4 p1, 0x1
@@ -12428,7 +12479,7 @@
 .method public onEntitySelected(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
     .locals 0
 
-    .line 2886
+    .line 2893
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
 
     move-result p1
@@ -12439,7 +12490,7 @@
 .method public onGetPalette()Lorg/telegram/ui/Components/Paint/PersistColorPalette;
     .locals 1
 
-    .line 2705
+    .line 2712
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -12452,28 +12503,28 @@
 .method protected onLayout(ZIIII)V
     .locals 2
 
-    .line 1466
+    .line 1473
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/Components/SizeNotifierFrameLayoutPhoto;->onLayout(ZIIII)V
 
     sub-int/2addr p4, p2
 
     sub-int/2addr p5, p3
 
-    .line 1471
+    .line 1478
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 p2, 0x0
 
     if-eqz p1, :cond_1
 
-    .line 1473
+    .line 1480
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 1474
+    .line 1481
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -12484,7 +12535,7 @@
 
     goto :goto_0
 
-    .line 1476
+    .line 1483
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayoutPhoto;->measureKeyboardHeight()I
 
@@ -12500,7 +12551,7 @@
 
     sub-int/2addr p1, p3
 
-    .line 1478
+    .line 1485
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
@@ -12520,7 +12571,7 @@
 
     invoke-virtual {p3, p2, p1, v0, v1}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 1481
+    .line 1488
     :cond_1
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -12534,7 +12585,7 @@
 
     sget p2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    .line 1482
+    .line 1489
     :cond_2
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
@@ -12542,7 +12593,7 @@
 
     add-int/2addr p1, p2
 
-    .line 1485
+    .line 1492
     iget-object p3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     invoke-virtual {p3}, Landroid/view/TextureView;->getMeasuredWidth()I
@@ -12569,7 +12620,7 @@
 
     const/16 p1, 0x30
 
-    .line 1486
+    .line 1493
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -12610,7 +12661,7 @@
 
     add-int/2addr p5, p1
 
-    .line 1488
+    .line 1495
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     invoke-virtual {p1}, Landroid/view/TextureView;->getMeasuredWidth()I
@@ -12629,7 +12680,7 @@
 
     invoke-virtual {p1, p3, p5, p2, p4}, Landroid/view/TextureView;->layout(IIII)V
 
-    .line 1489
+    .line 1496
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderInputView:Landroid/view/View;
 
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
@@ -12648,7 +12699,7 @@
 
     invoke-virtual {p1, p3, p5, p2, p4}, Landroid/view/View;->layout(IIII)V
 
-    .line 1490
+    .line 1497
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     invoke-virtual {p1}, Landroid/view/TextureView;->getMeasuredWidth()I
@@ -12667,7 +12718,7 @@
 
     add-int/2addr p1, p3
 
-    .line 1491
+    .line 1498
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     invoke-virtual {p2}, Landroid/view/TextureView;->getMeasuredHeight()I
@@ -12686,7 +12737,7 @@
 
     add-int/2addr p2, p5
 
-    .line 1492
+    .line 1499
     iget-object p4, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {p4}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -12705,7 +12756,7 @@
 
     invoke-virtual {p4, p1, p2, v0, v1}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 1493
+    .line 1500
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectionContainerView:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -12732,23 +12783,23 @@
 
     const/4 v0, 0x1
 
-    .line 1398
+    .line 1405
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->ignoreLayout:Z
 
-    .line 1399
+    .line 1406
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    .line 1400
+    .line 1407
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v2
 
-    .line 1402
+    .line 1409
     invoke-virtual {p0, v1, v2}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
-    .line 1406
+    .line 1413
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v3, v3, Landroid/graphics/Point;->y:I
@@ -12773,26 +12824,26 @@
 
     const/16 v4, 0x30
 
-    .line 1407
+    .line 1414
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     sub-int/2addr v3, v5
 
-    .line 1408
+    .line 1415
     iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bitmapToEdit:Landroid/graphics/Bitmap;
 
     if-eqz v5, :cond_0
 
-    .line 1409
+    .line 1416
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v4
 
     int-to-float v4, v4
 
-    .line 1410
+    .line 1417
     iget-object v5, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bitmapToEdit:Landroid/graphics/Bitmap;
 
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getHeight()I
@@ -12806,7 +12857,7 @@
     :cond_0
     int-to-float v5, v1
 
-    .line 1413
+    .line 1420
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v6
@@ -12836,7 +12887,7 @@
 
     float-to-double v6, v6
 
-    .line 1417
+    .line 1424
     invoke-static {v6, v7}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v6
@@ -12855,7 +12906,7 @@
 
     float-to-double v4, v4
 
-    .line 1420
+    .line 1427
     invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
 
     move-result-wide v4
@@ -12864,7 +12915,7 @@
 
     move v6, v3
 
-    .line 1423
+    .line 1430
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
@@ -12884,7 +12935,7 @@
 
     invoke-virtual {v3, v7, v8}, Landroid/view/TextureView;->measure(II)V
 
-    .line 1424
+    .line 1431
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderInputView:Landroid/view/View;
 
     invoke-static {v4, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -12897,7 +12948,7 @@
 
     invoke-virtual {v3, v7, v8}, Landroid/view/View;->measure(II)V
 
-    .line 1426
+    .line 1433
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->paintingSize:Lorg/telegram/ui/Components/Size;
 
     iget v3, v3, Lorg/telegram/ui/Components/Size;->width:F
@@ -12906,19 +12957,19 @@
 
     iput v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->baseScale:F
 
-    .line 1427
+    .line 1434
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {v3, v1}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 1428
+    .line 1435
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     iget v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->baseScale:F
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 1429
+    .line 1436
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->paintingSize:Lorg/telegram/ui/Components/Size;
@@ -12943,10 +12994,10 @@
 
     invoke-virtual {v1, v3, v7}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 1430
+    .line 1437
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->updateEntitiesSelections()V
 
-    .line 1431
+    .line 1438
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectionContainerView:Landroid/widget/FrameLayout;
 
     invoke-static {v4, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -12959,22 +13010,22 @@
 
     invoke-virtual {v1, v3, v4}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 1432
+    .line 1439
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, v1, p1, p2}, Landroid/widget/FrameLayout;->measureChild(Landroid/view/View;II)V
 
-    .line 1433
+    .line 1440
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-virtual {p0, v1, p1, p2}, Landroid/widget/FrameLayout;->measureChild(Landroid/view/View;II)V
 
-    .line 1434
+    .line 1441
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->pipetteContainerLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, v1, p1, p2}, Landroid/widget/FrameLayout;->measureChild(Landroid/view/View;II)V
 
-    .line 1435
+    .line 1442
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->getPKeyboardHeight()I
 
     move-result v1
@@ -12985,7 +13036,7 @@
 
     move-result v1
 
-    .line 1436
+    .line 1443
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->overlayLayout:Landroid/widget/FrameLayout;
 
     sub-int/2addr v2, v1
@@ -12996,7 +13047,7 @@
 
     invoke-virtual {p0, v3, p1, v1}, Landroid/widget/FrameLayout;->measureChild(Landroid/view/View;II)V
 
-    .line 1438
+    .line 1445
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->topLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getPaddingLeft()I
@@ -13027,17 +13078,17 @@
 
     invoke-virtual {v1, v2, v3, v4, v5}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 1439
+    .line 1446
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->topLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p0, v1, p1, p2}, Landroid/widget/FrameLayout;->measureChild(Landroid/view/View;II)V
 
     const/4 v1, 0x0
 
-    .line 1440
+    .line 1447
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->ignoreLayout:Z
 
-    .line 1443
+    .line 1450
     iget-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->waitingForKeyboardOpen:Z
 
     const/16 v3, 0x14
@@ -13058,16 +13109,16 @@
 
     if-nez v2, :cond_2
 
-    .line 1444
+    .line 1451
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->ignoreLayout:Z
 
-    .line 1445
+    .line 1452
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->hideEmojiView()V
 
-    .line 1446
+    .line 1453
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->ignoreLayout:Z
 
-    .line 1449
+    .line 1456
     :cond_2
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -13077,17 +13128,17 @@
 
     goto :goto_1
 
-    .line 1452
+    .line 1459
     :cond_3
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->hideEmojiView()V
 
-    .line 1455
+    .line 1462
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     if-eqz v0, :cond_4
 
-    .line 1456
+    .line 1463
     invoke-virtual {p0, v0, p1, p2}, Landroid/widget/FrameLayout;->measureChild(Landroid/view/View;II)V
 
     :cond_4
@@ -13097,7 +13148,7 @@
 .method public onNewTextSelected()V
     .locals 1
 
-    .line 2391
+    .line 2398
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
     if-nez v0, :cond_1
@@ -13111,12 +13162,12 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 2394
+    .line 2401
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->createText(Z)Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     goto :goto_1
 
-    .line 2392
+    .line 2399
     :cond_1
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onEmojiButtonClick()V
@@ -13134,7 +13185,7 @@
 .method public onResume()V
     .locals 1
 
-    .line 1608
+    .line 1615
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/RenderView;->redraw()V
@@ -13147,7 +13198,7 @@
 
     const/16 v0, 0x32
 
-    .line 3179
+    .line 3186
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -13170,10 +13221,10 @@
 
     if-eqz p2, :cond_0
 
-    .line 3181
+    .line 3188
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeightLand:I
 
-    .line 3182
+    .line 3189
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalEmojiSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -13194,11 +13245,11 @@
 
     goto :goto_0
 
-    .line 3184
+    .line 3191
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeight:I
 
-    .line 3185
+    .line 3192
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalEmojiSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -13217,7 +13268,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 3189
+    .line 3196
     :cond_1
     :goto_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
@@ -13226,7 +13277,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 3190
+    .line 3197
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeightLand:I
 
     goto :goto_1
@@ -13234,7 +13285,7 @@
     :cond_2
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardHeight:I
 
-    .line 3192
+    .line 3199
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
@@ -13244,7 +13295,7 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 3193
+    .line 3200
     iget v2, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
     sget-object v3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -13257,33 +13308,33 @@
 
     if-eq v2, v0, :cond_4
 
-    .line 3194
+    .line 3201
     :cond_3
     iput v3, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 3195
+    .line 3202
     iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 3196
+    .line 3203
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 3198
+    .line 3205
     iget v0, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
     iput v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
-    .line 3199
+    .line 3206
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->requestLayout()V
 
-    .line 3200
+    .line 3207
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->updateKeyboard()V
 
-    .line 3201
+    .line 3208
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onWindowSizeChanged()V
 
-    .line 3205
+    .line 3212
     :cond_4
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lastSizeChangeValue1:I
 
@@ -13293,22 +13344,22 @@
 
     if-ne v0, p2, :cond_5
 
-    .line 3206
+    .line 3213
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onWindowSizeChanged()V
 
     return-void
 
-    .line 3209
+    .line 3216
     :cond_5
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lastSizeChangeValue1:I
 
-    .line 3210
+    .line 3217
     iput-boolean p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->lastSizeChangeValue2:Z
 
-    .line 3212
+    .line 3219
     iget-boolean p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
-    .line 3213
+    .line 3220
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
@@ -13317,14 +13368,14 @@
 
     if-eqz v1, :cond_7
 
-    .line 3214
+    .line 3221
     check-cast v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->getEditText()Lorg/telegram/ui/Components/Paint/Views/EditTextOutline;
 
     move-result-object v0
 
-    .line 3215
+    .line 3222
     invoke-virtual {v0}, Landroid/widget/EditText;->isFocused()Z
 
     move-result v0
@@ -13345,11 +13396,11 @@
 
     goto :goto_3
 
-    .line 3217
+    .line 3224
     :cond_7
     iput-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
-    .line 3219
+    .line 3226
     :goto_3
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
@@ -13359,10 +13410,10 @@
 
     if-eqz p1, :cond_8
 
-    .line 3220
+    .line 3227
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->showEmojiPopup(I)V
 
-    .line 3222
+    .line 3229
     :cond_8
     iget p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
@@ -13378,19 +13429,19 @@
 
     if-nez p1, :cond_9
 
-    .line 3223
+    .line 3230
     iput v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
-    .line 3224
+    .line 3231
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->requestLayout()V
 
-    .line 3225
+    .line 3232
     invoke-virtual {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->updateKeyboard()V
 
     :cond_9
     if-eqz p2, :cond_a
 
-    .line 3227
+    .line 3234
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
     if-nez p1, :cond_a
@@ -13403,22 +13454,22 @@
 
     if-eqz p1, :cond_a
 
-    .line 3228
+    .line 3235
     iput-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->translateBottomPanelAfterResize:Z
 
     const/4 p1, 0x0
 
     const/high16 p2, 0x3f800000    # 1.0f
 
-    .line 3229
+    .line 3236
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomPanelTranslationY(FF)V
 
-    .line 3230
+    .line 3237
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;->stopPanTransition()V
 
-    .line 3232
+    .line 3239
     :cond_a
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
@@ -13428,15 +13479,15 @@
 
     if-eqz p1, :cond_b
 
-    .line 3233
+    .line 3240
     iput-boolean v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->waitingForKeyboardOpen:Z
 
-    .line 3234
+    .line 3241
     iget-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->openKeyboardRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 3236
+    .line 3243
     :cond_b
     invoke-direct {p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onWindowSizeChanged()V
 
@@ -13452,19 +13503,19 @@
 .method public onTextAlignmentSelected(I)V
     .locals 2
 
-    .line 2408
+    .line 2415
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz v1, :cond_0
 
-    .line 2409
+    .line 2416
     check-cast v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->setTextAlignment(Lorg/telegram/ui/Components/Paint/Views/TextPaintView;I)V
 
-    .line 2410
+    .line 2417
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -13480,7 +13531,7 @@
 .method public onTextOutlineSelected(Landroid/view/View;)V
     .locals 0
 
-    .line 2232
+    .line 2239
     iget p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectedTextType:I
 
     add-int/lit8 p1, p1, 0x1
@@ -13495,17 +13546,17 @@
 .method public onTouch(Landroid/view/MotionEvent;)Z
     .locals 12
 
-    .line 1863
+    .line 1870
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 1864
+    .line 1871
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectEntity(Lorg/telegram/ui/Components/Paint/Views/EntityView;)Z
 
-    .line 1867
+    .line 1874
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -13539,7 +13590,7 @@
 
     div-float/2addr v0, v1
 
-    .line 1868
+    .line 1875
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v1
@@ -13596,7 +13647,7 @@
 
     div-float/2addr v1, v3
 
-    .line 1869
+    .line 1876
     iget-object v3, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     invoke-virtual {v3}, Landroid/view/TextureView;->getRotation()F
@@ -13617,7 +13668,7 @@
 
     float-to-double v6, v3
 
-    .line 1870
+    .line 1877
     invoke-static {v6, v7}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v8
@@ -13648,7 +13699,7 @@
 
     add-float/2addr v3, v8
 
-    .line 1871
+    .line 1878
     invoke-static {v6, v7}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v8
@@ -13677,20 +13728,20 @@
 
     add-float/2addr v0, v1
 
-    .line 1873
+    .line 1880
     invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object p1
 
-    .line 1874
+    .line 1881
     invoke-virtual {p1, v3, v0}, Landroid/view/MotionEvent;->setLocation(FF)V
 
-    .line 1875
+    .line 1882
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/RenderView;->onTouch(Landroid/view/MotionEvent;)Z
 
-    .line 1876
+    .line 1883
     invoke-virtual {p1}, Landroid/view/MotionEvent;->recycle()V
 
     const/4 p1, 0x1
@@ -13703,7 +13754,7 @@
 
     const/4 v0, 0x1
 
-    .line 2055
+    .line 2062
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->showTypefaceMenu(Z)V
 
     return-void
@@ -13712,7 +13763,7 @@
 .method public onTypefaceSelected(Lorg/telegram/ui/Components/Paint/PaintTypeface;)V
     .locals 2
 
-    .line 2400
+    .line 2407
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->getInstance(I)Lorg/telegram/ui/Components/Paint/PersistColorPalette;
@@ -13725,14 +13776,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->setCurrentTypeface(Ljava/lang/String;)V
 
-    .line 2401
+    .line 2408
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     if-eqz v1, :cond_0
 
-    .line 2402
+    .line 2409
     check-cast v0, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Paint/Views/TextPaintView;->setTypeface(Lorg/telegram/ui/Components/Paint/PaintTypeface;)V
@@ -13744,14 +13795,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 1390
+    .line 1397
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->ignoreLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 1393
+    .line 1400
     :cond_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
@@ -13761,12 +13812,12 @@
 .method public setOffsetTranslationX(F)V
     .locals 1
 
-    .line 1622
+    .line 1629
     iget v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->tabsSelectedIndex:I
 
     if-nez v0, :cond_0
 
-    .line 1623
+    .line 1630
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->weightChooserView:Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setTranslationX(F)V
@@ -13778,19 +13829,19 @@
 .method public setOffsetTranslationY(FFIZ)V
     .locals 0
 
-    .line 1629
+    .line 1636
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->offsetTranslationY:F
 
     if-nez p4, :cond_0
 
-    .line 1631
+    .line 1638
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->topLayout:Landroid/widget/FrameLayout;
 
     neg-float p3, p1
 
     invoke-virtual {p2, p3}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1632
+    .line 1639
     iget-object p2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->bottomLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
@@ -13800,7 +13851,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 1634
+    .line 1641
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
     :goto_0
@@ -13810,7 +13861,7 @@
 .method public setOnDoneButtonClickedListener(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 1002
+    .line 1007
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->onDoneButtonClickedListener:Ljava/lang/Runnable;
 
     return-void
@@ -13831,30 +13882,30 @@
 
     move/from16 v5, p5
 
-    .line 1897
+    .line 1904
     iput v1, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->scale:F
 
-    .line 1898
+    .line 1905
     iput v4, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->imageWidth:F
 
-    .line 1899
+    .line 1906
     iput v5, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->imageHeight:F
 
-    .line 1900
+    .line 1907
     iput v2, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->inputTransformX:F
 
-    .line 1901
+    .line 1908
     iput v3, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->inputTransformY:F
 
-    .line 1902
+    .line 1909
     iput v2, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->transformX:F
 
-    .line 1903
+    .line 1910
     iget v6, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->panTranslationY:F
 
     add-float/2addr v3, v6
 
-    .line 1904
+    .line 1911
     iput v3, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->transformY:F
 
     const/4 v6, 0x0
@@ -13866,7 +13917,7 @@
 
     if-nez v6, :cond_0
 
-    .line 1909
+    .line 1916
     iget-object v7, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     goto :goto_1
@@ -13876,7 +13927,7 @@
 
     if-ne v6, v7, :cond_1
 
-    .line 1911
+    .line 1918
     iget-object v7, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectionContainerView:Landroid/widget/FrameLayout;
 
     goto :goto_1
@@ -13886,36 +13937,36 @@
 
     if-ne v6, v7, :cond_2
 
-    .line 1913
+    .line 1920
     iget-object v7, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     goto :goto_1
 
-    .line 1915
+    .line 1922
     :cond_2
     iget-object v7, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderInputView:Landroid/view/View;
 
     :goto_1
     const/4 v8, 0x0
 
-    .line 1920
+    .line 1927
     iget-object v9, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
     const/high16 v10, 0x3f800000    # 1.0f
 
     if-eqz v9, :cond_7
 
-    .line 1921
+    .line 1928
     iget v8, v9, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
     mul-float/2addr v8, v10
 
-    .line 1923
+    .line 1930
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v9
 
-    .line 1924
+    .line 1931
     invoke-virtual {v7}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v11
@@ -13926,7 +13977,7 @@
 
     goto :goto_2
 
-    .line 1928
+    .line 1935
     :cond_3
     iget-object v12, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
@@ -13950,7 +14001,7 @@
     :cond_5
     int-to-float v9, v9
 
-    .line 1936
+    .line 1943
     iget v14, v12, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
     mul-float/2addr v14, v9
@@ -13959,7 +14010,7 @@
 
     int-to-float v11, v11
 
-    .line 1937
+    .line 1944
     iget v12, v12, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
     mul-float/2addr v12, v11
@@ -13974,14 +14025,14 @@
 
     div-float v12, v5, v12
 
-    .line 1939
+    .line 1946
     invoke-static {v14, v12}, Ljava/lang/Math;->max(FF)F
 
     move-result v12
 
     mul-float/2addr v8, v12
 
-    .line 1942
+    .line 1949
     iget-object v14, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentCropState:Lorg/telegram/messenger/MediaController$CropState;
 
     iget v15, v14, Lorg/telegram/messenger/MediaController$CropState;->cropPx:F
@@ -13998,7 +14049,7 @@
 
     add-float/2addr v15, v2
 
-    .line 1943
+    .line 1950
     iget v10, v14, Lorg/telegram/messenger/MediaController$CropState;->cropPy:F
 
     mul-float/2addr v10, v11
@@ -14011,7 +14062,7 @@
 
     add-float/2addr v10, v3
 
-    .line 1944
+    .line 1951
     iget v9, v14, Lorg/telegram/messenger/MediaController$CropState;->cropRotate:F
 
     int-to-float v11, v13
@@ -14031,7 +14082,7 @@
     :cond_7
     if-nez v6, :cond_8
 
-    .line 1947
+    .line 1954
     iget v9, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->baseScale:F
 
     const/high16 v10, 0x3f800000    # 1.0f
@@ -14056,7 +14107,7 @@
 
     move/from16 v8, v16
 
-    .line 1952
+    .line 1959
     :goto_4
     iget v12, v0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiPadding:I
 
@@ -14072,7 +14123,7 @@
 
     mul-float/2addr v8, v1
 
-    .line 1954
+    .line 1961
     invoke-static {v8}, Ljava/lang/Float;->isNaN(F)Z
 
     move-result v12
@@ -14084,34 +14135,34 @@
     :cond_9
     move v10, v8
 
-    .line 1957
+    .line 1964
     :goto_5
     invoke-virtual {v7, v10}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1958
+    .line 1965
     invoke-virtual {v7, v10}, Landroid/view/View;->setScaleY(F)V
 
-    .line 1959
+    .line 1966
     invoke-virtual {v7, v15}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1960
+    .line 1967
     invoke-virtual {v7, v11}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1961
+    .line 1968
     invoke-virtual {v7, v9}, Landroid/view/View;->setRotation(F)V
 
-    .line 1962
+    .line 1969
     invoke-virtual {v7}, Landroid/view/View;->invalidate()V
 
     add-int/lit8 v6, v6, 0x1
 
     goto/16 :goto_0
 
-    .line 1964
+    .line 1971
     :cond_a
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->updateEntitiesSelections()V
 
-    .line 1965
+    .line 1972
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -14120,27 +14171,27 @@
 .method public shutdown()V
     .locals 2
 
-    .line 1594
+    .line 1601
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->renderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Paint/RenderView;->shutdown()V
 
-    .line 1595
+    .line 1602
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1596
+    .line 1603
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->selectionContainerView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1598
+    .line 1605
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->queue:Lorg/telegram/messenger/DispatchQueue;
 
-    sget-object v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda37;->INSTANCE:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda37;
+    sget-object v1, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda38;->INSTANCE:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda38;
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
@@ -14190,7 +14241,7 @@
 .method public updateColors()V
     .locals 2
 
-    .line 1645
+    .line 1652
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->toolsPaint:Landroid/graphics/Paint;
 
     const v1, -0xe6e6e7
@@ -14205,7 +14256,7 @@
 
     const/4 v0, 0x0
 
-    .line 1969
+    .line 1976
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
@@ -14215,14 +14266,14 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 1970
+    .line 1977
     iget-object v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1971
+    .line 1978
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->currentEntityView:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
     if-eq v1, v2, :cond_0
@@ -14241,7 +14292,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 1972
+    .line 1979
     :cond_0
     check-cast v1, Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
@@ -14265,43 +14316,43 @@
 .method public updatePlusEmojiKeyboardButton()V
     .locals 15
 
-    .line 3240
+    .line 3247
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->textOptionsView:Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;
 
     if-eqz v0, :cond_2
 
-    .line 3241
+    .line 3248
     iget-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
 
     if-eqz v1, :cond_0
 
-    .line 3242
+    .line 3249
     sget v1, Lorg/telegram/messenger/R$drawable;->input_smile:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->animatePlusToIcon(I)V
 
     goto :goto_0
 
-    .line 3243
+    .line 3250
     :cond_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->emojiViewVisible:Z
 
     if-eqz v1, :cond_1
 
-    .line 3244
+    .line 3251
     sget v1, Lorg/telegram/messenger/R$drawable;->input_keyboard:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->animatePlusToIcon(I)V
 
     goto :goto_0
 
-    .line 3246
+    .line 3253
     :cond_1
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_add:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView;->animatePlusToIcon(I)V
 
-    .line 3250
+    .line 3257
     :cond_2
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->undoAllButton:Landroid/widget/TextView;
@@ -14336,7 +14387,7 @@
 
     invoke-static/range {v2 .. v7}, Lorg/telegram/messenger/AndroidUtilities;->updateViewShow(Landroid/view/View;ZZFZLjava/lang/Runnable;)V
 
-    .line 3251
+    .line 3258
     iget-object v9, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->undoButton:Landroid/widget/ImageView;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
@@ -14365,7 +14416,7 @@
 
     invoke-static/range {v9 .. v14}, Lorg/telegram/messenger/AndroidUtilities;->updateViewShow(Landroid/view/View;ZZFZLjava/lang/Runnable;)V
 
-    .line 3253
+    .line 3260
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->doneTextButton:Landroid/widget/TextView;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
@@ -14398,7 +14449,7 @@
 
     invoke-static/range {v2 .. v7}, Lorg/telegram/messenger/AndroidUtilities;->updateViewShow(Landroid/view/View;ZZFZLjava/lang/Runnable;)V
 
-    .line 3254
+    .line 3261
     iget-object v9, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->cancelTextButton:Landroid/widget/TextView;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->keyboardVisible:Z
@@ -14439,15 +14490,15 @@
 
     xor-int/lit8 v0, p1, 0x1
 
-    .line 1023
+    .line 1028
     iget-boolean v1, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->zoomOutVisible:Z
 
     if-eq v1, v0, :cond_1
 
-    .line 1024
+    .line 1029
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->zoomOutVisible:Z
 
-    .line 1025
+    .line 1030
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->zoomOutButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -14456,7 +14507,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 1026
+    .line 1031
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->zoomOutButton:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->animate()Landroid/view/ViewPropertyAnimator;

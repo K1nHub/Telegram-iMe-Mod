@@ -15,7 +15,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes4.dex */
 public final class WCBinanceTransferOrderKt {
     private static final JsonDeserializer<WCBinanceTransferOrder.Message> transferOrderDeserializer = GsonBuilderKt.jsonDeserializer(new Function1<DeserializerArg, WCBinanceTransferOrder.Message>() { // from class: com.trustwallet.walletconnect.models.binance.WCBinanceTransferOrderKt$transferOrderDeserializer$1
-        /* JADX WARN: Removed duplicated region for block: B:10:0x0081  */
+        /* JADX WARN: Removed duplicated region for block: B:10:0x0083  */
         @Override // kotlin.jvm.functions.Function1
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -41,17 +41,17 @@ public final class WCBinanceTransferOrderKt {
                 kotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r3, r4)
                 boolean r5 = r3 instanceof java.lang.reflect.ParameterizedType
                 java.lang.String r6 = "type.rawType"
-                if (r5 == 0) goto L48
+                if (r5 == 0) goto L49
                 r5 = r3
                 java.lang.reflect.ParameterizedType r5 = (java.lang.reflect.ParameterizedType) r5
                 boolean r7 = com.github.salomonbrys.kotson.GsonBuilderKt.isWildcard(r5)
-                if (r7 == 0) goto L48
+                if (r7 == 0) goto L49
                 java.lang.reflect.Type r3 = r5.getRawType()
                 kotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r3, r6)
-                goto L4c
-            L48:
+                goto L4d
+            L49:
                 java.lang.reflect.Type r3 = com.github.salomonbrys.kotson.GsonBuilderKt.removeTypeWildcards(r3)
-            L4c:
+            L4d:
                 java.lang.Object r1 = r1.deserialize(r2, r3)
                 java.lang.String r2 = "it.context.deserialize(i…ageKey.INPUTS.key].array)"
                 kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r1, r2)
@@ -68,17 +68,17 @@ public final class WCBinanceTransferOrderKt {
                 java.lang.reflect.Type r3 = r3.getType()
                 kotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r3, r4)
                 boolean r4 = r3 instanceof java.lang.reflect.ParameterizedType
-                if (r4 == 0) goto L92
+                if (r4 == 0) goto L94
                 r4 = r3
                 java.lang.reflect.ParameterizedType r4 = (java.lang.reflect.ParameterizedType) r4
                 boolean r5 = com.github.salomonbrys.kotson.GsonBuilderKt.isWildcard(r4)
-                if (r5 == 0) goto L92
+                if (r5 == 0) goto L94
                 java.lang.reflect.Type r3 = r4.getRawType()
                 kotlin.jvm.internal.Intrinsics.checkExpressionValueIsNotNull(r3, r6)
-                goto L96
-            L92:
+                goto L98
+            L94:
                 java.lang.reflect.Type r3 = com.github.salomonbrys.kotson.GsonBuilderKt.removeTypeWildcards(r3)
-            L96:
+            L98:
                 java.lang.Object r9 = r2.deserialize(r9, r3)
                 java.lang.String r2 = "it.context.deserialize(i…geKey.OUTPUTS.key].array)"
                 kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r9, r2)

@@ -91,7 +91,7 @@ public abstract class ImmutableCollection<E> extends AbstractCollection<E> imple
     }
 
     public ImmutableList<E> asList() {
-        return isEmpty() ? ImmutableList.m1054of() : ImmutableList.asImmutableList(toArray());
+        return isEmpty() ? ImmutableList.m1055of() : ImmutableList.asImmutableList(toArray());
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

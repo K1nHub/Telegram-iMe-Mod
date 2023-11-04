@@ -16,8 +16,8 @@ import java.util.HashSet;
 import java.util.Locale;
 import org.telegram.messenger.time.FastDateFormat;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
-import org.telegram.p042ui.Components.AnimatedFileDrawable;
-import org.telegram.p042ui.LaunchActivity;
+import org.telegram.p043ui.Components.AnimatedFileDrawable;
+import org.telegram.p043ui.LaunchActivity;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$TL_error;
 /* loaded from: classes4.dex */
@@ -83,7 +83,7 @@ public class FileLog {
                     }
                 });
             } catch (Throwable th) {
-                m96e(th, BuildVars.DEBUG_PRIVATE_VERSION);
+                m98e(th, BuildVars.DEBUG_PRIVATE_VERSION);
             }
         }
     }
@@ -172,7 +172,7 @@ public class FileLog {
                     return cls.isInstance(DispatchQueue.class) || cls.isInstance(AnimatedFileDrawable.class) || cls.isInstance(ColorStateList.class) || cls.isInstance(Context.class);
                 }
             };
-            gson = new GsonBuilder().addSerializationExclusionStrategy(exclusionStrategy).registerTypeAdapterFactory(RuntimeClassNameTypeAdapterFactory.m92of(TLObject.class, "type_", exclusionStrategy)).create();
+            gson = new GsonBuilder().addSerializationExclusionStrategy(exclusionStrategy).registerTypeAdapterFactory(RuntimeClassNameTypeAdapterFactory.m93of(TLObject.class, "type_", exclusionStrategy)).create();
         }
     }
 
@@ -254,7 +254,7 @@ public class FileLog {
     }
 
     /* renamed from: e */
-    public static void m98e(final String str, final Throwable th) {
+    public static void m100e(final String str, final Throwable th) {
         if (BuildVars.LOGS_ENABLED) {
             ensureInitied();
             Log.e(tag, str, th);
@@ -282,7 +282,7 @@ public class FileLog {
     }
 
     /* renamed from: e */
-    public static void m99e(final String str) {
+    public static void m101e(final String str) {
         if (BuildVars.LOGS_ENABLED) {
             ensureInitied();
             Log.e(tag, str);
@@ -309,18 +309,18 @@ public class FileLog {
     }
 
     /* renamed from: e */
-    public static void m97e(Throwable th) {
-        m96e(th, true);
+    public static void m99e(Throwable th) {
+        m98e(th, true);
     }
 
     /* renamed from: e */
-    public static void m96e(final Throwable th, boolean z) {
+    public static void m98e(final Throwable th, boolean z) {
         if (BuildVars.LOGS_ENABLED) {
             if (BuildVars.DEBUG_VERSION && needSent(th) && z) {
                 AndroidUtilities.appCenterLog(th);
             }
             if (BuildVars.DEBUG_VERSION && th.getMessage() != null && th.getMessage().contains("disk image is malformed") && !databaseIsMalformed) {
-                m100d("copy malformed files");
+                m102d("copy malformed files");
                 databaseIsMalformed = true;
                 File file = new File(ApplicationLoader.getFilesDirFixed(), "malformed_database/");
                 file.mkdirs();
@@ -329,7 +329,7 @@ public class FileLog {
                     try {
                         AndroidUtilities.copyFile(databaseFiles.get(i), new File(file, databaseFiles.get(i).getName()));
                     } catch (IOException e) {
-                        m97e(e);
+                        m99e(e);
                     }
                 }
             }
@@ -415,7 +415,7 @@ public class FileLog {
     }
 
     /* renamed from: d */
-    public static void m100d(final String str) {
+    public static void m102d(final String str) {
         if (BuildVars.LOGS_ENABLED) {
             ensureInitied();
             Log.d(tag, str);
@@ -445,7 +445,7 @@ public class FileLog {
     }
 
     /* renamed from: w */
-    public static void m95w(final String str) {
+    public static void m97w(final String str) {
         if (BuildVars.LOGS_ENABLED) {
             ensureInitied();
             Log.w(tag, str);

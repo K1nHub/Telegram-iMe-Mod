@@ -10,7 +10,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: PopupFactory.kt */
 /* loaded from: classes4.dex */
 public final class PopupFactoryKt {
@@ -31,8 +31,8 @@ public final class PopupFactoryKt {
         final ListPopupWindow listPopupWindow = new ListPopupWindow(view.getContext());
         listPopupWindow.setWidth(AndroidUtilities.displaySize.x / 2);
         listPopupWindow.setAnchorView(view);
-        int m102dp = AndroidUtilities.m102dp(6);
-        listPopupWindow.setBackgroundDrawable(Theme.createRoundRectDrawable(m102dp, m102dp, Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground)));
+        int m104dp = AndroidUtilities.m104dp(6);
+        listPopupWindow.setBackgroundDrawable(Theme.createRoundRectDrawable(m104dp, m104dp, Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground)));
         if (num != null) {
             listPopupWindow.setVerticalOffset(num.intValue());
         }

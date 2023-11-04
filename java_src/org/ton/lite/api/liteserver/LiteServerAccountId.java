@@ -8,11 +8,11 @@ import kotlinx.serialization.descriptors.SerialDescriptor;
 import kotlinx.serialization.encoding.CompositeEncoder;
 import kotlinx.serialization.internal.PluginExceptionsKt;
 import kotlinx.serialization.internal.SerializationConstructorMarker;
-import org.ton.p044tl.ByteString;
-import org.ton.p044tl.ByteStringSerializer;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.ByteString;
+import org.ton.p045tl.ByteStringSerializer;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: LiteServerAccountId.kt */
 @Serializable
 /* loaded from: classes6.dex */
@@ -20,7 +20,7 @@ public final class LiteServerAccountId {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: id */
-    private final ByteString f2086id;
+    private final ByteString f2098id;
     private final int workchain;
 
     public boolean equals(Object obj) {
@@ -29,17 +29,17 @@ public final class LiteServerAccountId {
         }
         if (obj instanceof LiteServerAccountId) {
             LiteServerAccountId liteServerAccountId = (LiteServerAccountId) obj;
-            return this.workchain == liteServerAccountId.workchain && Intrinsics.areEqual(this.f2086id, liteServerAccountId.f2086id);
+            return this.workchain == liteServerAccountId.workchain && Intrinsics.areEqual(this.f2098id, liteServerAccountId.f2098id);
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.workchain * 31) + this.f2086id.hashCode();
+        return (this.workchain * 31) + this.f2098id.hashCode();
     }
 
     public String toString() {
-        return "LiteServerAccountId(workchain=" + this.workchain + ", id=" + this.f2086id + ')';
+        return "LiteServerAccountId(workchain=" + this.workchain + ", id=" + this.f2098id + ')';
     }
 
     public /* synthetic */ LiteServerAccountId(int i, int i2, ByteString byteString, SerializationConstructorMarker serializationConstructorMarker) {
@@ -47,18 +47,18 @@ public final class LiteServerAccountId {
             PluginExceptionsKt.throwMissingFieldException(i, 3, LiteServerAccountId$$serializer.INSTANCE.getDescriptor());
         }
         this.workchain = i2;
-        this.f2086id = byteString;
+        this.f2098id = byteString;
     }
 
     public LiteServerAccountId(int i, ByteString id) {
         Intrinsics.checkNotNullParameter(id, "id");
         this.workchain = i;
-        this.f2086id = id;
+        this.f2098id = id;
     }
 
     public static final /* synthetic */ void write$Self(LiteServerAccountId liteServerAccountId, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         compositeEncoder.encodeIntElement(serialDescriptor, 0, liteServerAccountId.workchain);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ByteStringSerializer.INSTANCE, liteServerAccountId.f2086id);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ByteStringSerializer.INSTANCE, liteServerAccountId.f2098id);
     }
 
     public final int workchain() {
@@ -67,7 +67,7 @@ public final class LiteServerAccountId {
 
     /* renamed from: id */
     public final ByteString m24id() {
-        return this.f2086id;
+        return this.f2098id;
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
@@ -91,13 +91,13 @@ public final class LiteServerAccountId {
             return LiteServerAccountId$$serializer.INSTANCE;
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public LiteServerAccountId decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return new LiteServerAccountId(reader.readInt(), reader.readRaw(32));
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, LiteServerAccountId value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");

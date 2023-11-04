@@ -1111,7 +1111,7 @@
 
     move-result-object v0
 
-    const-string v3, "java.util.Arrays.copyOf(this, size)"
+    const-string/jumbo v3, "java.util.Arrays.copyOf(this, size)"
 
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1136,6 +1136,8 @@
     invoke-direct {v0, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
+
+    nop
 
     :array_0
     .array-data 4

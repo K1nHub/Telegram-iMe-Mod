@@ -10,6 +10,6 @@ public final class IntermediateAddressTlbCombinator extends TlbCombinator<Interm
     public static final IntermediateAddressTlbCombinator INSTANCE = new IntermediateAddressTlbCombinator();
 
     private IntermediateAddressTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(IntermediateAddress.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(IntermediateAddressExt.class), IntermediateAddressExt.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(IntermediateAddressRegular.class), IntermediateAddressRegular.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(IntermediateAddressSimple.class), IntermediateAddressSimple.Companion));
+        super(Reflection.getOrCreateKotlinClass(IntermediateAddress.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(IntermediateAddressExt.class), IntermediateAddressExt.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(IntermediateAddressRegular.class), IntermediateAddressRegular.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(IntermediateAddressSimple.class), IntermediateAddressSimple.Companion));
     }
 }

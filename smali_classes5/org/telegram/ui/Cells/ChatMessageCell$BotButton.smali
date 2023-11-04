@@ -62,7 +62,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 0
 
-    .line 697
+    .line 743
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -73,7 +73,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/ui/Cells/ChatMessageCell$1;)V
     .locals 0
 
-    .line 697
+    .line 743
     invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;-><init>(Lorg/telegram/ui/Cells/ChatMessageCell;)V
 
     return-void
@@ -82,35 +82,71 @@
 .method static synthetic access$002(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 697
+    .line 743
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressAnimator:Landroid/animation/ValueAnimator;
 
     return-object p1
 .end method
 
-.method static synthetic access$1200(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Lorg/telegram/tgnet/TLRPC$KeyboardButton;
+.method static synthetic access$1100(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Lorg/telegram/tgnet/TLRPC$KeyboardButton;
     .locals 0
 
-    .line 697
+    .line 743
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->button:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
 
     return-object p0
 .end method
 
-.method static synthetic access$1202(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;Lorg/telegram/tgnet/TLRPC$KeyboardButton;)Lorg/telegram/tgnet/TLRPC$KeyboardButton;
+.method static synthetic access$1102(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;Lorg/telegram/tgnet/TLRPC$KeyboardButton;)Lorg/telegram/tgnet/TLRPC$KeyboardButton;
     .locals 0
 
-    .line 697
+    .line 743
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->button:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
 
     return-object p1
 .end method
 
+.method static synthetic access$1400(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)I
+    .locals 0
+
+    .line 743
+    iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->y:I
+
+    return p0
+.end method
+
+.method static synthetic access$1402(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;I)I
+    .locals 0
+
+    .line 743
+    iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->y:I
+
+    return p1
+.end method
+
+.method static synthetic access$1500(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)I
+    .locals 0
+
+    .line 743
+    iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->x:I
+
+    return p0
+.end method
+
+.method static synthetic access$1502(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;I)I
+    .locals 0
+
+    .line 743
+    iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->x:I
+
+    return p1
+.end method
+
 .method static synthetic access$1600(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)I
     .locals 0
 
-    .line 697
-    iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->y:I
+    .line 743
+    iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->width:I
 
     return p0
 .end method
@@ -118,8 +154,8 @@
 .method static synthetic access$1602(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;I)I
     .locals 0
 
-    .line 697
-    iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->y:I
+    .line 743
+    iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->width:I
 
     return p1
 .end method
@@ -127,8 +163,8 @@
 .method static synthetic access$1700(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)I
     .locals 0
 
-    .line 697
-    iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->x:I
+    .line 743
+    iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->height:I
 
     return p0
 .end method
@@ -136,133 +172,97 @@
 .method static synthetic access$1702(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;I)I
     .locals 0
 
-    .line 697
-    iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->x:I
-
-    return p1
-.end method
-
-.method static synthetic access$1800(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)I
-    .locals 0
-
-    .line 697
-    iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->width:I
-
-    return p0
-.end method
-
-.method static synthetic access$1802(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;I)I
-    .locals 0
-
-    .line 697
-    iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->width:I
-
-    return p1
-.end method
-
-.method static synthetic access$1900(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)I
-    .locals 0
-
-    .line 697
-    iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->height:I
-
-    return p0
-.end method
-
-.method static synthetic access$1902(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;I)I
-    .locals 0
-
-    .line 697
+    .line 743
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->height:I
 
     return p1
 .end method
 
-.method static synthetic access$2000(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Landroid/graphics/drawable/Drawable;
+.method static synthetic access$1800(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 697
+    .line 743
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p0
 .end method
 
-.method static synthetic access$2002(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+.method static synthetic access$1802(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 697
+    .line 743
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p1
 .end method
 
-.method static synthetic access$2100(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;Z)V
+.method static synthetic access$1900(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;Z)V
     .locals 0
 
-    .line 697
+    .line 743
     invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->setPressed(Z)V
 
     return-void
 .end method
 
-.method static synthetic access$3200(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)F
+.method static synthetic access$3000(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)F
     .locals 0
 
-    .line 697
+    .line 743
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->progressAlpha:F
 
     return p0
 .end method
 
-.method static synthetic access$3202(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;F)F
+.method static synthetic access$3002(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;F)F
     .locals 0
 
-    .line 697
+    .line 743
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->progressAlpha:F
 
     return p1
 .end method
 
-.method static synthetic access$3300(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)I
+.method static synthetic access$3100(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)I
     .locals 0
 
-    .line 697
+    .line 743
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->angle:I
 
     return p0
 .end method
 
-.method static synthetic access$3302(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;I)I
+.method static synthetic access$3102(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;I)I
     .locals 0
 
-    .line 697
+    .line 743
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->angle:I
 
     return p1
 .end method
 
-.method static synthetic access$3400(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)J
+.method static synthetic access$3200(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)J
     .locals 2
 
-    .line 697
+    .line 743
     iget-wide v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->lastUpdateTime:J
 
     return-wide v0
 .end method
 
-.method static synthetic access$3402(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;J)J
+.method static synthetic access$3202(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;J)J
     .locals 0
 
-    .line 697
+    .line 743
     iput-wide p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->lastUpdateTime:J
 
     return-wide p1
 .end method
 
-.method static synthetic access$3576(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;I)I
+.method static synthetic access$3376(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;I)I
     .locals 1
 
-    .line 697
+    .line 743
     iget v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->positionFlags:I
 
     or-int/2addr p1, v0
@@ -272,46 +272,46 @@
     return p1
 .end method
 
-.method static synthetic access$3600(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Landroid/text/StaticLayout;
+.method static synthetic access$3400(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 697
+    .line 743
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->title:Landroid/text/StaticLayout;
 
     return-object p0
 .end method
 
-.method static synthetic access$3602(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;Landroid/text/StaticLayout;)Landroid/text/StaticLayout;
+.method static synthetic access$3402(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;Landroid/text/StaticLayout;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 697
+    .line 743
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->title:Landroid/text/StaticLayout;
 
     return-object p1
 .end method
 
-.method static synthetic access$3700(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Z
+.method static synthetic access$3500(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Z
     .locals 0
 
-    .line 697
+    .line 743
     iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->isInviteButton:Z
 
     return p0
 .end method
 
-.method static synthetic access$3702(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;Z)Z
+.method static synthetic access$3502(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;Z)Z
     .locals 0
 
-    .line 697
+    .line 743
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->isInviteButton:Z
 
     return p1
 .end method
 
-.method static synthetic access$5100(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)F
+.method static synthetic access$4800(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)F
     .locals 0
 
-    .line 697
+    .line 743
     invoke-direct {p0}, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->getPressScale()F
 
     move-result p0
@@ -319,19 +319,19 @@
     return p0
 .end method
 
-.method static synthetic access$5200(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Lorg/telegram/ui/Components/LoadingDrawable;
+.method static synthetic access$4900(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Lorg/telegram/ui/Components/LoadingDrawable;
     .locals 0
 
-    .line 697
+    .line 743
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     return-object p0
 .end method
 
-.method static synthetic access$5202(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;Lorg/telegram/ui/Components/LoadingDrawable;)Lorg/telegram/ui/Components/LoadingDrawable;
+.method static synthetic access$4902(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;Lorg/telegram/ui/Components/LoadingDrawable;)Lorg/telegram/ui/Components/LoadingDrawable;
     .locals 0
 
-    .line 697
+    .line 743
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->loadingDrawable:Lorg/telegram/ui/Components/LoadingDrawable;
 
     return-object p1
@@ -340,7 +340,7 @@
 .method private getPressScale()F
     .locals 5
 
-    .line 752
+    .line 798
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressed:Z
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -357,7 +357,7 @@
 
     const/high16 v3, 0x447a0000    # 1000.0f
 
-    .line 753
+    .line 799
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->screenRefreshRate:F
 
     div-float/2addr v3, v4
@@ -376,14 +376,14 @@
 
     const/4 v2, 0x0
 
-    .line 754
+    .line 800
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressT:F
 
-    .line 755
+    .line 801
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidateOutbounds()V
@@ -393,7 +393,7 @@
 
     const v2, 0x3d23d70a    # 0.04f
 
-    .line 757
+    .line 803
     iget v3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressT:F
 
     sub-float/2addr v1, v3
@@ -408,7 +408,7 @@
 .method private synthetic lambda$setPressed$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 730
+    .line 776
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -421,7 +421,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressT:F
 
-    .line 731
+    .line 777
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidateOutbounds()V
@@ -432,30 +432,30 @@
 .method private setPressed(Z)V
     .locals 3
 
-    .line 718
+    .line 764
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressed:Z
 
     if-eq v0, p1, :cond_1
 
-    .line 719
+    .line 765
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressed:Z
 
-    .line 720
+    .line 766
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidateOutbounds()V
 
     if-eqz p1, :cond_0
 
-    .line 722
+    .line 768
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 723
+    .line 769
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 724
+    .line 770
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
@@ -463,7 +463,7 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 727
+    .line 773
     iget p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressT:F
 
     const/4 v0, 0x0
@@ -484,21 +484,21 @@
 
     aput v0, v1, p1
 
-    .line 728
+    .line 774
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressAnimator:Landroid/animation/ValueAnimator;
 
-    .line 729
+    .line 775
     new-instance v0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 733
+    .line 779
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton$1;
@@ -507,7 +507,7 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 740
+    .line 786
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Landroid/view/animation/OvershootInterpolator;
@@ -518,14 +518,14 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 741
+    .line 787
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x15e
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 742
+    .line 788
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->pressAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -539,7 +539,7 @@
 .method public hasPositionFlag(I)Z
     .locals 1
 
-    .line 748
+    .line 794
     iget v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->positionFlags:I
 
     and-int/2addr v0, p1

@@ -11,8 +11,8 @@ import kotlinx.serialization.encoding.Encoder;
 import kotlinx.serialization.internal.GeneratedSerializer;
 import kotlinx.serialization.internal.IntSerializer;
 import kotlinx.serialization.internal.PluginGeneratedSerialDescriptor;
-import org.ton.p044tl.ByteString;
-import org.ton.p044tl.ByteStringSerializer;
+import org.ton.p045tl.ByteString;
+import org.ton.p045tl.ByteStringSerializer;
 /* compiled from: TonNodeZeroStateIdExt.kt */
 /* loaded from: classes6.dex */
 public final class TonNodeZeroStateIdExt$$serializer implements GeneratedSerializer<TonNodeZeroStateIdExt> {

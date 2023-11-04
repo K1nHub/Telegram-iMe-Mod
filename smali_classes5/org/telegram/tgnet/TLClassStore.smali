@@ -42,178 +42,178 @@
     iput-object v1, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
     .line 21
-    sget v2, Lorg/telegram/tgnet/TLRPC$TL_error;->constructor:I
+    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    const-class v3, Lorg/telegram/tgnet/TLRPC$TL_error;
+    const v3, -0x3b460645
 
-    invoke-virtual {v1, v2, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 22
     iget-object v1, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageService;->constructor:I
+    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageService;
 
-    const-class v3, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageService;
+    const v3, 0x73164160
 
-    invoke-virtual {v1, v2, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 23
     iget-object v1, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage;->constructor:I
+    const v2, -0x6e33b98c
 
     invoke-virtual {v1, v2, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 24
     iget-object v1, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;->constructor:I
+    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;
 
-    const-class v3, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;
+    const v3, 0x1be31789
 
-    invoke-virtual {v1, v2, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v1, v3, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 25
     iget-object v1, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage_layer17;->constructor:I
+    const v2, 0x204d3878
 
     invoke-virtual {v1, v2, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 26
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage_layer45;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage_layer45;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage_layer45;
+    const v2, 0x36b091de
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 27
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageService_layer8;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageService_layer8;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageService_layer8;
+    const v2, -0x55b7cd83
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 28
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage_layer8;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage_layer8;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage_layer8;
+    const v2, 0x1f814f1f
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 29
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_message_secret;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_message_secret;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_message_secret;
+    const v2, 0x555555fa
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 30
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_message_secret_layer72;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_message_secret_layer72;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_message_secret_layer72;
+    const v2, 0x555555f9
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 31
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_message_secret_old;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_message_secret_old;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_message_secret_old;
+    const v2, 0x555555f8
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 32
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_messageEncryptedAction;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_messageEncryptedAction;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_messageEncryptedAction;
+    const v2, 0x555555f7
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 33
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_null;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_null;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_null;
+    const v2, 0x56730bcc
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 35
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_updateShortChatMessage;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_updateShortChatMessage;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_updateShortChatMessage;
+    const v2, 0x4d6deea5    # 2.4949E8f
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 36
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_updates;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_updates;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_updates;
+    const v2, 0x74ae4240
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 37
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_updateShortMessage;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_updateShortMessage;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_updateShortMessage;
+    const v2, 0x313bc7f8
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 38
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_updateShort;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_updateShort;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_updateShort;
+    const v2, 0x78d4dec1
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 39
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_updatesCombined;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_updatesCombined;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_updatesCombined;
+    const v2, 0x725b04c3
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 40
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_updateShortSentMessage;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_updateShortSentMessage;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_updateShortSentMessage;
+    const v2, -0x6fea1eff
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     .line 41
     iget-object v0, p0, Lorg/telegram/tgnet/TLClassStore;->classStore:Landroid/util/SparseArray;
 
-    sget v1, Lorg/telegram/tgnet/TLRPC$TL_updatesTooLong;->constructor:I
+    const-class v1, Lorg/telegram/tgnet/TLRPC$TL_updatesTooLong;
 
-    const-class v2, Lorg/telegram/tgnet/TLRPC$TL_updatesTooLong;
+    const v2, -0x1ce85082
 
-    invoke-virtual {v0, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     return-void
 .end method

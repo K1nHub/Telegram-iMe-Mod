@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EditTextEmoji;Landroid/content/Context;)V
     .locals 0
 
-    .line 232
+    .line 266
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji$3;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 235
+    .line 269
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$3;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$500(Lorg/telegram/ui/Components/EditTextEmoji;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$800(Lorg/telegram/ui/Components/EditTextEmoji;)Landroid/widget/ImageView;
 
     move-result-object v1
 
@@ -54,7 +54,7 @@
 
     if-nez v0, :cond_0
 
-    .line 236
+    .line 270
     invoke-super {p0, p1}, Landroid/widget/ImageView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     :cond_0

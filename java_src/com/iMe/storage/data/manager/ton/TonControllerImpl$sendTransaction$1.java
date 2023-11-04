@@ -11,28 +11,30 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: TonControllerImpl.kt */
-@DebugMetadata(m143c = "com.iMe.storage.data.manager.ton.TonControllerImpl$sendTransaction$1", m142f = "TonControllerImpl.kt", m141l = {108}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "com.iMe.storage.data.manager.ton.TonControllerImpl$sendTransaction$1", m144f = "TonControllerImpl.kt", m143l = {109}, m142m = "invokeSuspend")
 /* loaded from: classes3.dex */
 final class TonControllerImpl$sendTransaction$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Result<? extends String>>, Object> {
     final /* synthetic */ long $amount;
     final /* synthetic */ TonTransactionPayload $payload;
+    final /* synthetic */ int $seqno;
     final /* synthetic */ String $to;
     int label;
     final /* synthetic */ TonControllerImpl this$0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public TonControllerImpl$sendTransaction$1(TonControllerImpl tonControllerImpl, String str, long j, TonTransactionPayload tonTransactionPayload, Continuation<? super TonControllerImpl$sendTransaction$1> continuation) {
+    public TonControllerImpl$sendTransaction$1(TonControllerImpl tonControllerImpl, String str, long j, int i, TonTransactionPayload tonTransactionPayload, Continuation<? super TonControllerImpl$sendTransaction$1> continuation) {
         super(2, continuation);
         this.this$0 = tonControllerImpl;
         this.$to = str;
         this.$amount = j;
+        this.$seqno = i;
         this.$payload = tonTransactionPayload;
     }
 
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new TonControllerImpl$sendTransaction$1(this.this$0, this.$to, this.$amount, this.$payload, continuation);
+        return new TonControllerImpl$sendTransaction$1(this.this$0, this.$to, this.$amount, this.$seqno, this.$payload, continuation);
     }
 
     @Override // kotlin.jvm.functions.Function2
@@ -55,9 +57,10 @@ final class TonControllerImpl$sendTransaction$1 extends SuspendLambda implements
             TonControllerImpl tonControllerImpl = this.this$0;
             String str = this.$to;
             long j = this.$amount;
+            int i2 = this.$seqno;
             TonTransactionPayload tonTransactionPayload = this.$payload;
             this.label = 1;
-            obj = tonControllerImpl.sendInternal(str, j, tonTransactionPayload, this);
+            obj = tonControllerImpl.sendInternal(str, j, i2, tonTransactionPayload, this);
             if (obj == coroutine_suspended) {
                 return coroutine_suspended;
             }

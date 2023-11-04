@@ -11,11 +11,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class UserVerificationMethodExtension extends AbstractSafeParcelable {
     public static final Parcelable.Creator<UserVerificationMethodExtension> CREATOR = new zzaq();
-    @SafeParcelable.Field(getter = "getUvm", m1089id = 1)
+    @SafeParcelable.Field(getter = "getUvm", m1090id = 1)
     private final boolean zza;
 
     @SafeParcelable.Constructor
-    public UserVerificationMethodExtension(@SafeParcelable.Param(m1088id = 1) boolean z) {
+    public UserVerificationMethodExtension(@SafeParcelable.Param(m1089id = 1) boolean z) {
         this.zza = z;
     }
 

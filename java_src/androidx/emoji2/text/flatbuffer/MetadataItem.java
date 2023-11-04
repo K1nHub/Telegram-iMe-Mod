@@ -13,7 +13,7 @@ public final class MetadataItem extends Table {
     }
 
     /* renamed from: id */
-    public int m1150id() {
+    public int m1151id() {
         int __offset = __offset(4);
         if (__offset != 0) {
             return this.f44bb.getInt(__offset + this.bb_pos);

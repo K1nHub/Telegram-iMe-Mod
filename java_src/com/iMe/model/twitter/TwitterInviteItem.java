@@ -46,7 +46,7 @@ public final class TwitterInviteItem extends NoChildNode {
     }
 
     public int hashCode() {
-        return (ProfileData$$ExternalSyntheticBackport0.m1017m(this.f295id) * 31) + this.nickname.hashCode();
+        return (ProfileData$$ExternalSyntheticBackport0.m1018m(this.f295id) * 31) + this.nickname.hashCode();
     }
 
     public String toString() {

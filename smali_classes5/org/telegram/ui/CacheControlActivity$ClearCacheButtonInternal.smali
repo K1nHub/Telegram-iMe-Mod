@@ -78,13 +78,13 @@
 .method public constructor <init>(Lorg/telegram/ui/CacheControlActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 2141
+    .line 2146
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
-    .line 2142
+    .line 2147
     invoke-direct {p0, p2}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;-><init>(Landroid/content/Context;)V
 
-    .line 2143
+    .line 2148
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -101,7 +101,7 @@
 
     iput p2, p1, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 2144
+    .line 2149
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->button:Landroid/widget/FrameLayout;
 
     new-instance p2, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda1;
@@ -116,7 +116,7 @@
 .method private doClearCache()V
     .locals 10
 
-    .line 2161
+    .line 2166
     new-instance v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$1;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -127,16 +127,16 @@
 
     invoke-direct {v0, p0, v1, v2}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$1;-><init>(Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;Landroid/content/Context;Z)V
 
-    .line 2167
+    .line 2172
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar()V
 
-    .line 2168
+    .line 2173
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCanDismissWithSwipe(Z)V
 
-    .line 2169
+    .line 2174
     invoke-virtual {v0, v2}, Landroid/app/Dialog;->setCancelable(Z)V
 
-    .line 2170
+    .line 2175
     new-instance v1, Lorg/telegram/ui/CacheControlActivity$ClearingCacheView;
 
     iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -147,7 +147,7 @@
 
     invoke-direct {v1, v3, v4}, Lorg/telegram/ui/CacheControlActivity$ClearingCacheView;-><init>(Lorg/telegram/ui/CacheControlActivity;Landroid/content/Context;)V
 
-    .line 2171
+    .line 2176
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
 
     const/4 v3, 0x1
@@ -166,7 +166,7 @@
 
     aput-boolean v2, v6, v2
 
-    .line 2176
+    .line 2181
     new-instance v7, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda2;
 
     invoke-direct {v7, p0, v1, v5, v6}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;Lorg/telegram/ui/CacheControlActivity$ClearingCacheView;[F[Z)V
@@ -177,7 +177,7 @@
 
     aput-wide v8, v3, v2
 
-    .line 2184
+    .line 2189
     new-instance v2, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda3;
 
     invoke-direct {v2, p0, v4, v3, v0}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;[Z[JLorg/telegram/ui/ActionBar/BottomSheet;)V
@@ -186,7 +186,7 @@
 
     invoke-static {v2, v8, v9}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 2191
+    .line 2196
     iget-object v2, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     new-instance v8, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda6;
@@ -207,17 +207,17 @@
 
     const/4 v0, 0x0
 
-    .line 2177
+    .line 2182
     aget p2, p2, v0
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/CacheControlActivity$ClearingCacheView;->setProgress(F)V
 
-    .line 2178
+    .line 2183
     aget-boolean p1, p3, v0
 
     if-eqz p1, :cond_0
 
-    .line 2179
+    .line 2184
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$3200(Lorg/telegram/ui/CacheControlActivity;)V
@@ -231,19 +231,19 @@
 
     const/4 v0, 0x0
 
-    .line 2185
+    .line 2190
     aget-boolean p1, p1, v0
 
     if-nez p1, :cond_0
 
-    .line 2186
+    .line 2191
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
     aput-wide v1, p2, v0
 
-    .line 2187
+    .line 2192
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
@@ -255,7 +255,7 @@
 .method private static synthetic lambda$doClearCache$4([F[ZLjava/lang/Runnable;Ljava/lang/Float;Ljava/lang/Boolean;)V
     .locals 1
 
-    .line 2193
+    .line 2198
     invoke-virtual {p3}, Ljava/lang/Float;->floatValue()F
 
     move-result p3
@@ -264,17 +264,17 @@
 
     aput p3, p0, v0
 
-    .line 2194
+    .line 2199
     invoke-virtual {p4}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p0
 
     aput-boolean p0, p1, v0
 
-    .line 2195
+    .line 2200
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 2196
+    .line 2201
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
@@ -287,15 +287,15 @@
 
     const/4 v1, 0x0
 
-    .line 2199
+    .line 2204
     aput-boolean v0, p0, v1
 
     const/high16 p0, 0x3f800000    # 1.0f
 
-    .line 2200
+    .line 2205
     invoke-virtual {p1, p0}, Lorg/telegram/ui/CacheControlActivity$ClearingCacheView;->setProgress(F)V
 
-    .line 2201
+    .line 2206
     aget-wide p0, p2, v1
 
     const-wide/16 v2, 0x0
@@ -304,7 +304,7 @@
 
     if-lez p0, :cond_0
 
-    .line 2202
+    .line 2207
     invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance p0, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda6;
@@ -331,7 +331,7 @@
 
     goto :goto_0
 
-    .line 2204
+    .line 2209
     :cond_0
     invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
@@ -342,7 +342,7 @@
 .method private static synthetic lambda$doClearCache$6([ZLorg/telegram/ui/CacheControlActivity$ClearingCacheView;[JLorg/telegram/ui/ActionBar/BottomSheet;)V
     .locals 1
 
-    .line 2198
+    .line 2203
     new-instance v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;-><init>([ZLorg/telegram/ui/CacheControlActivity$ClearingCacheView;[JLorg/telegram/ui/ActionBar/BottomSheet;)V
@@ -355,7 +355,7 @@
 .method private synthetic lambda$new$0(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 2148
+    .line 2153
     invoke-direct {p0}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->doClearCache()V
 
     return-void
@@ -364,7 +364,7 @@
 .method private synthetic lambda$new$1(Landroid/view/View;)V
     .locals 3
 
-    .line 2145
+    .line 2150
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -381,7 +381,7 @@
 
     const-string v2, "ClearCache"
 
-    .line 2146
+    .line 2151
     invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
@@ -444,7 +444,7 @@
 
     const-string v1, "StorageUsageInfo"
 
-    .line 2147
+    .line 2152
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -455,7 +455,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->textView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    .line 2148
+    .line 2153
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -472,7 +472,7 @@
 
     const-string v1, "Cancel"
 
-    .line 2149
+    .line 2154
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -483,29 +483,29 @@
 
     move-result-object p1
 
-    .line 2150
+    .line 2155
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 2151
+    .line 2156
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     const/4 v0, -0x1
 
-    .line 2152
+    .line 2157
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object p1
 
-    .line 2153
+    .line 2158
     instance-of v0, p1, Landroid/widget/TextView;
 
     if-eqz v0, :cond_1
 
-    .line 2154
+    .line 2159
     move-object v0, p1
 
     check-cast v0, Landroid/widget/TextView;
@@ -520,7 +520,7 @@
 
     const/4 v0, 0x6
 
-    .line 2155
+    .line 2160
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -550,7 +550,7 @@
 .method public updateSize()V
     .locals 7
 
-    .line 2212
+    .line 2217
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$2100(Lorg/telegram/ui/CacheControlActivity;)[Z
@@ -576,7 +576,7 @@
     :cond_0
     move-wide v3, v1
 
-    .line 2213
+    .line 2218
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -604,7 +604,7 @@
     :goto_1
     add-long/2addr v3, v5
 
-    .line 2214
+    .line 2219
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$2100(Lorg/telegram/ui/CacheControlActivity;)[Z
@@ -631,7 +631,7 @@
     :goto_2
     add-long/2addr v3, v5
 
-    .line 2215
+    .line 2220
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$2100(Lorg/telegram/ui/CacheControlActivity;)[Z
@@ -658,7 +658,7 @@
     :goto_3
     add-long/2addr v3, v5
 
-    .line 2216
+    .line 2221
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$2100(Lorg/telegram/ui/CacheControlActivity;)[Z
@@ -685,7 +685,7 @@
     :goto_4
     add-long/2addr v3, v5
 
-    .line 2217
+    .line 2222
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$2100(Lorg/telegram/ui/CacheControlActivity;)[Z
@@ -712,7 +712,7 @@
     :goto_5
     add-long/2addr v3, v5
 
-    .line 2218
+    .line 2223
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$2100(Lorg/telegram/ui/CacheControlActivity;)[Z
@@ -739,7 +739,7 @@
     :goto_6
     add-long/2addr v3, v5
 
-    .line 2219
+    .line 2224
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$2100(Lorg/telegram/ui/CacheControlActivity;)[Z
@@ -766,7 +766,7 @@
     :goto_7
     add-long/2addr v3, v5
 
-    .line 2220
+    .line 2225
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$2100(Lorg/telegram/ui/CacheControlActivity;)[Z
@@ -788,15 +788,15 @@
     :cond_8
     add-long/2addr v3, v1
 
-    .line 2222
+    .line 2227
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
-    .line 2223
+    .line 2228
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$3100(Lorg/telegram/ui/CacheControlActivity;)Z
 
     move-result v0
 
-    .line 2222
+    .line 2227
     invoke-virtual {p0, v0, v3, v4}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->setSize(ZJ)V
 
     return-void

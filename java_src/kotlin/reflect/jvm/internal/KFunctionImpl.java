@@ -151,7 +151,7 @@ public final class KFunctionImpl extends KCallableImpl<Object> implements Functi
                     throw new KotlinReflectionInternalError("Could not compute caller for function: " + KFunctionImpl.this.getDescriptor() + " (member = " + constructor + ')');
                 } else {
                     Method method2 = (Method) constructor;
-                    createInstanceMethodCaller = !Modifier.isStatic(method2.getModifiers()) ? KFunctionImpl.this.createInstanceMethodCaller(method2) : KFunctionImpl.this.getDescriptor().getAnnotations().mo2041findAnnotation(UtilKt.getJVM_STATIC()) != null ? KFunctionImpl.this.createJvmStaticInObjectCaller(method2) : KFunctionImpl.this.createStaticMethodCaller(method2);
+                    createInstanceMethodCaller = !Modifier.isStatic(method2.getModifiers()) ? KFunctionImpl.this.createInstanceMethodCaller(method2) : KFunctionImpl.this.getDescriptor().getAnnotations().mo2046findAnnotation(UtilKt.getJVM_STATIC()) != null ? KFunctionImpl.this.createJvmStaticInObjectCaller(method2) : KFunctionImpl.this.createStaticMethodCaller(method2);
                 }
                 return InlineClassAwareCallerKt.createInlineClassAwareCallerIfNeeded$default(createInstanceMethodCaller, KFunctionImpl.this.getDescriptor(), false, 2, null);
             }
@@ -170,15 +170,15 @@ public final class KFunctionImpl extends KCallableImpl<Object> implements Functi
                 int collectionSizeOrDefault;
                 int collectionSizeOrDefault2;
                 Caller caller;
-                ?? mo2038getMember;
+                ?? mo2043getMember;
                 JvmFunctionSignature mapSignature = RuntimeTypeMapper.INSTANCE.mapSignature(KFunctionImpl.this.getDescriptor());
                 if (mapSignature instanceof JvmFunctionSignature.KotlinFunction) {
                     KDeclarationContainerImpl container = KFunctionImpl.this.getContainer();
                     JvmFunctionSignature.KotlinFunction kotlinFunction = (JvmFunctionSignature.KotlinFunction) mapSignature;
                     String methodName = kotlinFunction.getMethodName();
                     String methodDesc = kotlinFunction.getMethodDesc();
-                    Intrinsics.checkNotNull(KFunctionImpl.this.getCaller().mo2038getMember());
-                    genericDeclaration = container.findDefaultMethod(methodName, methodDesc, !Modifier.isStatic(mo2038getMember.getModifiers()));
+                    Intrinsics.checkNotNull(KFunctionImpl.this.getCaller().mo2043getMember());
+                    genericDeclaration = container.findDefaultMethod(methodName, methodDesc, !Modifier.isStatic(mo2043getMember.getModifiers()));
                 } else if (mapSignature instanceof JvmFunctionSignature.KotlinConstructor) {
                     if (KFunctionImpl.this.isAnnotationConstructor()) {
                         Class<?> jClass = KFunctionImpl.this.getContainer().getJClass();
@@ -209,7 +209,7 @@ public final class KFunctionImpl extends KCallableImpl<Object> implements Functi
                     KFunctionImpl kFunctionImpl = KFunctionImpl.this;
                     caller = kFunctionImpl.createConstructorCaller((Constructor) genericDeclaration, kFunctionImpl.getDescriptor(), true);
                 } else if (genericDeclaration instanceof Method) {
-                    if (KFunctionImpl.this.getDescriptor().getAnnotations().mo2041findAnnotation(UtilKt.getJVM_STATIC()) != null) {
+                    if (KFunctionImpl.this.getDescriptor().getAnnotations().mo2046findAnnotation(UtilKt.getJVM_STATIC()) != null) {
                         DeclarationDescriptor containingDeclaration = KFunctionImpl.this.getDescriptor().getContainingDeclaration();
                         Intrinsics.checkNotNull(containingDeclaration, "null cannot be cast to non-null type org.jetbrains.kotlin.descriptors.ClassDescriptor");
                         if (!((ClassDescriptor) containingDeclaration).isCompanionObject()) {

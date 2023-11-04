@@ -26,7 +26,7 @@
 
     move-object v0, p1
 
-    .line 4792
+    .line 4825
     iput-object v0, v9, Lorg/telegram/ui/ProfileActivity$23;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     move-object v0, p0
@@ -55,12 +55,12 @@
 .method protected setCustomAvatarProgress(F)V
     .locals 1
 
-    .line 4795
+    .line 4828
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$23;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->access$17002(Lorg/telegram/ui/ProfileActivity;F)F
 
-    .line 4796
+    .line 4829
     iget-object p1, p0, Lorg/telegram/ui/ProfileActivity$23;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ProfileActivity;->access$17300(Lorg/telegram/ui/ProfileActivity;)V

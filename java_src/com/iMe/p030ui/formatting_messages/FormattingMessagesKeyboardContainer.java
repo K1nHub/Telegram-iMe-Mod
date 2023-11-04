@@ -23,15 +23,15 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.EditTextBoldCursor;
-import org.telegram.p042ui.Components.EditTextCaption;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.TextStyleSpan;
-import org.telegram.p042ui.Components.URLSpanReplacement;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.Components.EditTextCaption;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.TextStyleSpan;
+import org.telegram.p043ui.Components.URLSpanReplacement;
 /* compiled from: FormattingMessagesKeyboardContainer.kt */
 /* renamed from: com.iMe.ui.formatting_messages.FormattingMessagesKeyboardContainer */
 /* loaded from: classes3.dex */
@@ -339,9 +339,9 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
         View view = new View(context);
         this.view = view;
         updateView();
-        addView(view, LayoutHelper.createFrame(-1, AndroidUtilities.m102dp(1), 48));
+        addView(view, LayoutHelper.createFrame(-1, AndroidUtilities.m104dp(1), 48));
         addView(getTitleLink(), LayoutHelper.createFrame(-2, -2));
-        addView(getLinkContainer(), LayoutHelper.createFrame(-1, -2, 0, AndroidUtilities.m102dp(8), 0, AndroidUtilities.m102dp(8), 0));
+        addView(getLinkContainer(), LayoutHelper.createFrame(-1, -2, 0, AndroidUtilities.m104dp(8), 0, AndroidUtilities.m104dp(8), 0));
         addView(getTitleFormat(), LayoutHelper.createFrame(-2, -2, 80));
         addView(getSmallButtons(), LayoutHelper.createFrame(-1, 60, 80));
         addView(getBigButtons(), LayoutHelper.createFrame(-1, 60, 80));
@@ -442,7 +442,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
                 linkText.setBackgroundDrawable(null);
                 mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(getBoldButton(), getItalicButton(), getUnderlineButton(), getStrikeButton(), getSpoilerButton(), getMonoButton());
                 updateTextColor(mutableListOf);
-                getLinkContainer().setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m103dp(8.0f), Theme.getColor(this.buttonDefaultColor), Theme.getColor(this.buttonPressedColor)));
+                getLinkContainer().setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m105dp(8.0f), Theme.getColor(this.buttonDefaultColor), Theme.getColor(this.buttonPressedColor)));
             }
         }
         ViewExtKt.gone$default(getClearLink(), false, 1, null);
@@ -453,7 +453,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
         linkText.setBackgroundDrawable(null);
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(getBoldButton(), getItalicButton(), getUnderlineButton(), getStrikeButton(), getSpoilerButton(), getMonoButton());
         updateTextColor(mutableListOf);
-        getLinkContainer().setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m103dp(8.0f), Theme.getColor(this.buttonDefaultColor), Theme.getColor(this.buttonPressedColor)));
+        getLinkContainer().setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m105dp(8.0f), Theme.getColor(this.buttonDefaultColor), Theme.getColor(this.buttonPressedColor)));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:63:0x01a8 A[SYNTHETIC] */
@@ -493,7 +493,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
     public final TextView initTitleLink() {
         TextView textView = new TextView(getContext());
         textView.setGravity(17);
-        textView.setText(LocaleController.getString(C3630R.string.formatting_link_title));
+        textView.setText(LocaleController.getString(C3634R.string.formatting_link_title));
         textView.setTextSize(1, 14.0f);
         return textView;
     }
@@ -501,9 +501,9 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final ImageView initIconLink() {
         ImageView imageView = new ImageView(getContext());
-        int m102dp = AndroidUtilities.m102dp(8);
-        imageView.setPadding(m102dp, m102dp, m102dp, m102dp);
-        imageView.setImageResource(C3630R.C3632drawable.msg_link_folder);
+        int m104dp = AndroidUtilities.m104dp(8);
+        imageView.setPadding(m104dp, m104dp, m104dp, m104dp);
+        imageView.setImageResource(C3634R.C3636drawable.msg_link_folder);
         return imageView;
     }
 
@@ -512,7 +512,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
     public final FormattingMessagesKeyboardContainer$initLinkText$1 initLinkText() {
         final Context context = getContext();
         ?? r1 = new EditTextBoldCursor(context) { // from class: com.iMe.ui.formatting_messages.FormattingMessagesKeyboardContainer$initLinkText$1
-            @Override // org.telegram.p042ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+            @Override // org.telegram.p043ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
             public boolean onTouchEvent(MotionEvent event) {
                 Intrinsics.checkNotNullParameter(event, "event");
                 if (event.getAction() == 0 && isEnabled()) {
@@ -527,9 +527,9 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
         r1.setLines(1);
         r1.setSingleLine(true);
         r1.setImeOptions(268435459);
-        r1.setHint(r1.getContext().getString(C3630R.string.formatting_link_hint_edit_text));
+        r1.setHint(r1.getContext().getString(C3634R.string.formatting_link_hint_edit_text));
         r1.setCursorColor(Theme.key_featuredStickers_addedIcon);
-        r1.setCursorSize(AndroidUtilities.m102dp(20));
+        r1.setCursorSize(AndroidUtilities.m104dp(20));
         return r1;
     }
 
@@ -544,7 +544,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(locale)");
         textView.setText(upperCase);
         textView.setTextSize(1, 18.0f);
-        textView.setPadding(0, 0, AndroidUtilities.m102dp(8), 0);
+        textView.setPadding(0, 0, AndroidUtilities.m104dp(8), 0);
         textView.setIncludeFontPadding(false);
         ViewExtKt.gone$default(textView, false, 1, null);
         return textView;
@@ -554,9 +554,9 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
     public final ImageView initClearLink() {
         ImageView imageView = new ImageView(getContext());
         ViewExtKt.gone$default(imageView, false, 1, null);
-        imageView.setImageResource(C3630R.C3632drawable.msg_delete);
-        int m102dp = AndroidUtilities.m102dp(8);
-        imageView.setPadding(m102dp, m102dp, m102dp, m102dp);
+        imageView.setImageResource(C3634R.C3636drawable.msg_delete);
+        int m104dp = AndroidUtilities.m104dp(8);
+        imageView.setPadding(m104dp, m104dp, m104dp, m104dp);
         return imageView;
     }
 
@@ -564,7 +564,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
     public final TextView initTitleFormat() {
         TextView textView = new TextView(getContext());
         textView.setGravity(17);
-        textView.setText(textView.getContext().getText(C3630R.string.formatting_hint_format));
+        textView.setText(textView.getContext().getText(C3634R.string.formatting_hint_format));
         textView.setTextSize(1, 14.0f);
         return textView;
     }
@@ -627,7 +627,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
         textView.setTag(this.formattingTextController.getListTextStyleSpanFlags().get(2));
         textView.setGravity(17);
         textView.setIncludeFontPadding(false);
-        textView.setText(LocaleController.getString("Mono", C3630R.string.Mono));
+        textView.setText(LocaleController.getString("Mono", C3634R.string.Mono));
         ViewExtKt.withMediumTypeface(textView);
         textView.setTextSize(1, 18.0f);
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.formatting_messages.FormattingMessagesKeyboardContainer$$ExternalSyntheticLambda1
@@ -654,7 +654,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
         textView.setTag(this.formattingTextController.getListTextStyleSpanFlags().get(5));
         textView.setGravity(17);
         textView.setIncludeFontPadding(false);
-        textView.setText(LocaleController.getString("Spoiler", C3630R.string.Spoiler));
+        textView.setText(LocaleController.getString("Spoiler", C3634R.string.Spoiler));
         ViewExtKt.withMediumTypeface(textView);
         textView.setTextSize(1, 18.0f);
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.formatting_messages.FormattingMessagesKeyboardContainer$$ExternalSyntheticLambda4
@@ -773,7 +773,7 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
     public final LinearLayout initLinkContainer() {
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(0);
-        linearLayout.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m103dp(8.0f), Theme.getColor(this.buttonDefaultColor), Theme.getColor(this.buttonPressedColor)));
+        linearLayout.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m105dp(8.0f), Theme.getColor(this.buttonDefaultColor), Theme.getColor(this.buttonPressedColor)));
         linearLayout.addView(getIconLink(), LayoutHelper.createLinear(-2, 40));
         linearLayout.addView(getLinkText(), LayoutHelper.createLinear(-1, 40, 1.0f));
         linearLayout.addView(getPastLink(), LayoutHelper.createLinear(-2, 40));
@@ -785,10 +785,10 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
     public final LinearLayout initSmallButtons() {
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(0);
-        linearLayout.addView(getBoldButton(), LayoutHelper.createLinear(-2, 60, 1.0f, AndroidUtilities.m102dp(8), 0, 0, 0));
-        linearLayout.addView(getItalicButton(), LayoutHelper.createLinear(-2, 60, 1.0f, AndroidUtilities.m102dp(1), 0, 0, 0));
-        linearLayout.addView(getUnderlineButton(), LayoutHelper.createLinear(-2, 60, 1.0f, AndroidUtilities.m102dp(1), 0, 0, 0));
-        linearLayout.addView(getStrikeButton(), LayoutHelper.createLinear(-2, 60, 1.0f, AndroidUtilities.m102dp(1), 0, AndroidUtilities.m102dp(8), 0));
+        linearLayout.addView(getBoldButton(), LayoutHelper.createLinear(-2, 60, 1.0f, AndroidUtilities.m104dp(8), 0, 0, 0));
+        linearLayout.addView(getItalicButton(), LayoutHelper.createLinear(-2, 60, 1.0f, AndroidUtilities.m104dp(1), 0, 0, 0));
+        linearLayout.addView(getUnderlineButton(), LayoutHelper.createLinear(-2, 60, 1.0f, AndroidUtilities.m104dp(1), 0, 0, 0));
+        linearLayout.addView(getStrikeButton(), LayoutHelper.createLinear(-2, 60, 1.0f, AndroidUtilities.m104dp(1), 0, AndroidUtilities.m104dp(8), 0));
         return linearLayout;
     }
 
@@ -796,8 +796,8 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
     public final LinearLayout initBigButtons() {
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(0);
-        linearLayout.addView(getMonoButton(), LayoutHelper.createLinear(-2, 60, 1.0f, AndroidUtilities.m102dp(8), 0, AndroidUtilities.m102dp(2), AndroidUtilities.m102dp(8)));
-        linearLayout.addView(getSpoilerButton(), LayoutHelper.createLinear(-2, 60, 1.0f, AndroidUtilities.m102dp(2), 0, AndroidUtilities.m102dp(8), AndroidUtilities.m102dp(8)));
+        linearLayout.addView(getMonoButton(), LayoutHelper.createLinear(-2, 60, 1.0f, AndroidUtilities.m104dp(8), 0, AndroidUtilities.m104dp(2), AndroidUtilities.m104dp(8)));
+        linearLayout.addView(getSpoilerButton(), LayoutHelper.createLinear(-2, 60, 1.0f, AndroidUtilities.m104dp(2), 0, AndroidUtilities.m104dp(8), AndroidUtilities.m104dp(8)));
         return linearLayout;
     }
 
@@ -809,18 +809,18 @@ public final class FormattingMessagesKeyboardContainer extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        ViewExtKt.setMargins(getTitleLink(), AndroidUtilities.m102dp(50), AndroidUtilities.m102dp(20), 0, 0);
+        ViewExtKt.setMargins(getTitleLink(), AndroidUtilities.m104dp(50), AndroidUtilities.m104dp(20), 0, 0);
         LinearLayout linkContainer = getLinkContainer();
         ViewGroup.LayoutParams layoutParams = getLinkContainer().getLayoutParams();
         ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : null;
         int i3 = marginLayoutParams != null ? marginLayoutParams.leftMargin : 0;
-        int m102dp = AndroidUtilities.m102dp(50);
+        int m104dp = AndroidUtilities.m104dp(50);
         ViewGroup.LayoutParams layoutParams2 = getLinkContainer().getLayoutParams();
         ViewGroup.MarginLayoutParams marginLayoutParams2 = layoutParams2 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams2 : null;
-        ViewExtKt.setMargins(linkContainer, i3, m102dp, marginLayoutParams2 != null ? marginLayoutParams2.rightMargin : 0, 0);
-        ViewExtKt.setMargins(getTitleFormat(), AndroidUtilities.m102dp(50), 0, 0, AndroidUtilities.m102dp(163));
-        ViewExtKt.setMargins(getSmallButtons(), 0, 0, 0, AndroidUtilities.m102dp(90));
-        ViewExtKt.setMargins(getBigButtons(), 0, 0, 0, AndroidUtilities.m102dp(20));
+        ViewExtKt.setMargins(linkContainer, i3, m104dp, marginLayoutParams2 != null ? marginLayoutParams2.rightMargin : 0, 0);
+        ViewExtKt.setMargins(getTitleFormat(), AndroidUtilities.m104dp(50), 0, 0, AndroidUtilities.m104dp(163));
+        ViewExtKt.setMargins(getSmallButtons(), 0, 0, 0, AndroidUtilities.m104dp(90));
+        ViewExtKt.setMargins(getBigButtons(), 0, 0, 0, AndroidUtilities.m104dp(20));
         super.onMeasure(i, i2);
     }
 

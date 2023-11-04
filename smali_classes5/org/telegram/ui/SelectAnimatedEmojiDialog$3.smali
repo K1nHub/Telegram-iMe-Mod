@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;II)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,14 +26,14 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Ljava/lang/Integer;)V
     .locals 0
 
-    .line 506
+    .line 525
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     iput-object p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->val$bubbleX:Ljava/lang/Integer;
 
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
-    .line 507
+    .line 526
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -46,9 +46,9 @@
 
 # virtual methods
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
-    .locals 7
+    .locals 9
 
-    .line 511
+    .line 530
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->val$bubbleX:Ljava/lang/Integer;
 
     if-nez v0, :cond_0
@@ -83,7 +83,7 @@
 
     add-float/2addr v0, v1
 
-    .line 512
+    .line 531
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v1
@@ -102,7 +102,7 @@
 
     int-to-float v1, v1
 
-    .line 513
+    .line 532
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
 
     move-result v2
@@ -121,10 +121,19 @@
 
     int-to-float v2, v2
 
-    .line 514
+    .line 533
+    iget-object v3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-virtual {v3}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->isBottom()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_1
+
+    .line 534
     iget-object v3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->rect:Landroid/graphics/Rect;
 
-    .line 515
+    .line 535
     invoke-virtual {p1}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v4
@@ -145,12 +154,54 @@
 
     float-to-int v4, v4
 
-    .line 516
+    .line 536
     invoke-virtual {p1}, Landroid/view/View;->getPaddingTop()I
 
     move-result v5
 
-    .line 517
+    int-to-float v5, v5
+
+    iget-object v6, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v6}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$300(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)F
+
+    move-result v6
+
+    const/high16 v7, 0x3f800000    # 1.0f
+
+    sub-float v6, v7, v6
+
+    mul-float/2addr v6, v2
+
+    add-float/2addr v5, v6
+
+    iget-object v6, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v6}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$400(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)I
+
+    move-result v6
+
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    iget-object v8, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v8}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$300(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)F
+
+    move-result v8
+
+    sub-float v8, v7, v8
+
+    mul-float/2addr v6, v8
+
+    add-float/2addr v5, v6
+
+    float-to-int v5, v5
+
+    .line 537
     invoke-virtual {p1}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v6
@@ -173,7 +224,100 @@
 
     float-to-int v0, v6
 
-    .line 518
+    .line 538
+    invoke-virtual {p1}, Landroid/view/View;->getPaddingTop()I
+
+    move-result p1
+
+    int-to-float p1, p1
+
+    add-float/2addr p1, v2
+
+    iget-object v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$400(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)I
+
+    move-result v1
+
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$300(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)F
+
+    move-result v2
+
+    sub-float/2addr v7, v2
+
+    mul-float/2addr v1, v7
+
+    add-float/2addr p1, v1
+
+    float-to-int p1, p1
+
+    .line 534
+    invoke-virtual {v3, v4, v5, v0, p1}, Landroid/graphics/Rect;->set(IIII)V
+
+    goto :goto_1
+
+    .line 541
+    :cond_1
+    iget-object v3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->rect:Landroid/graphics/Rect;
+
+    .line 542
+    invoke-virtual {p1}, Landroid/view/View;->getPaddingLeft()I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    iget-object v5, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v5}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$200(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)F
+
+    move-result v5
+
+    mul-float/2addr v5, v0
+
+    sub-float v5, v0, v5
+
+    add-float/2addr v4, v5
+
+    float-to-int v4, v4
+
+    .line 543
+    invoke-virtual {p1}, Landroid/view/View;->getPaddingTop()I
+
+    move-result v5
+
+    .line 544
+    invoke-virtual {p1}, Landroid/view/View;->getPaddingLeft()I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    add-float/2addr v6, v0
+
+    sub-float/2addr v1, v0
+
+    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+
+    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$200(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)F
+
+    move-result v0
+
+    mul-float/2addr v1, v0
+
+    add-float/2addr v6, v1
+
+    float-to-int v0, v6
+
+    .line 545
     invoke-virtual {p1}, Landroid/view/View;->getPaddingTop()I
 
     move-result p1
@@ -192,10 +336,11 @@
 
     float-to-int p1, p1
 
-    .line 514
+    .line 541
     invoke-virtual {v3, v4, v5, v0, p1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 520
+    .line 548
+    :goto_1
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$3;->rect:Landroid/graphics/Rect;
 
     const/16 v0, 0xc

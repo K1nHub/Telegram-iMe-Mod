@@ -13,8 +13,8 @@ import com.iMe.fork.enums.DrawerSocialNetwork;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: SocialNetworksRowView.kt */
 /* renamed from: com.iMe.fork.ui.view.SocialNetworksRowView */
 /* loaded from: classes3.dex */
@@ -97,7 +97,7 @@ public final class SocialNetworksRowView extends LinearLayout {
     protected void onDraw(Canvas canvas) {
         Intrinsics.checkNotNullParameter(canvas, "canvas");
         super.onDraw(canvas);
-        canvas.drawLine(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), AndroidUtilities.m102dp(AndroidUtilities.getShadowHeight()), Theme.dividerPaint);
+        canvas.drawLine(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), AndroidUtilities.m104dp(AndroidUtilities.getShadowHeight()), Theme.dividerPaint);
     }
 
     /* compiled from: SocialNetworksRowView.kt */

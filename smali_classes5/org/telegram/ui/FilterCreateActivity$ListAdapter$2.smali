@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilterCreateActivity$ListAdapter;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;II)V
     .locals 0
 
-    .line 1595
+    .line 1596
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$2;->this$1:Lorg/telegram/ui/FilterCreateActivity$ListAdapter;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/FilterCreateActivity$LinkCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;II)V
@@ -32,15 +32,15 @@
 
 
 # virtual methods
-.method protected onDelete(Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;)V
+.method protected onDelete(Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;)V
     .locals 1
 
-    .line 1598
+    .line 1599
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$2;->this$1:Lorg/telegram/ui/FilterCreateActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/FilterCreateActivity;->access$1700(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/FilterCreateActivity;->access$1700(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;)V
 
     return-void
 .end method

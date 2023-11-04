@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x108006ea
-
-
 # instance fields
 .field public actions_graph:Lorg/telegram/tgnet/TLRPC$StatsGraph;
 
@@ -76,12 +72,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 1
 
@@ -122,8 +112,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_stats_megagroupStats;
     .locals 1
 
-    .line 115
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_stats_megagroupStats;->constructor:I
+    const v0, -0x108006ea
 
     if-eq v0, p1, :cond_1
 
@@ -595,9 +584,9 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 5
 
-    .line 204
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_stats_megagroupStats;->constructor:I
+    const v0, -0x108006ea
 
+    .line 204
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     .line 205

@@ -70,7 +70,7 @@ public final class AffineNielsPointLookupTable {
         Intrinsics.checkNotNullParameter(out, "out");
         out.identity();
         for (int i = 1; i < 9; i++) {
-            out.conditionalAssign(get(i - 1), UInt.m1967constructorimpl(UInt.m1967constructorimpl(UInt.m1967constructorimpl(((byte) i) ^ b) - 1) >>> 31));
+            out.conditionalAssign(get(i - 1), UInt.m1972constructorimpl(UInt.m1972constructorimpl(UInt.m1972constructorimpl(((byte) i) ^ b) - 1) >>> 31));
         }
         return out;
     }

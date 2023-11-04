@@ -3,14 +3,13 @@ package org.telegram.tgnet;
 import java.util.ArrayList;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_photoSizeProgressive extends TLRPC$PhotoSize {
-    public static int constructor = -96535659;
     public ArrayList<Integer> sizes = new ArrayList<>();
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         this.type = abstractSerializedData.readString(z);
-        this.f1632w = abstractSerializedData.readInt32(z);
-        this.f1631h = abstractSerializedData.readInt32(z);
+        this.f1634w = abstractSerializedData.readInt32(z);
+        this.f1633h = abstractSerializedData.readInt32(z);
         int readInt32 = abstractSerializedData.readInt32(z);
         if (readInt32 != 481674261) {
             if (z) {
@@ -31,10 +30,10 @@ public class TLRPC$TL_photoSizeProgressive extends TLRPC$PhotoSize {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-96535659);
         abstractSerializedData.writeString(this.type);
-        abstractSerializedData.writeInt32(this.f1632w);
-        abstractSerializedData.writeInt32(this.f1631h);
+        abstractSerializedData.writeInt32(this.f1634w);
+        abstractSerializedData.writeInt32(this.f1633h);
         abstractSerializedData.writeInt32(481674261);
         int size = this.sizes.size();
         abstractSerializedData.writeInt32(size);

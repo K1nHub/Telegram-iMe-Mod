@@ -136,7 +136,7 @@
     goto :goto_2
 
     :pswitch_4
-    const-string v9, "kindFilter"
+    const-string/jumbo v9, "kindFilter"
 
     aput-object v9, v6, v8
 
@@ -322,6 +322,8 @@
 
     :goto_5
     throw p0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0xf

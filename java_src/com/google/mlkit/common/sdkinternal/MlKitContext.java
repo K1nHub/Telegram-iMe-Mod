@@ -17,7 +17,7 @@ public class MlKitContext {
     private final ComponentRuntime zza;
 
     private MlKitContext(Context context) {
-        ComponentRuntime componentRuntime = new ComponentRuntime(TaskExecutors.MAIN_THREAD, ComponentDiscovery.forContext(context, MlKitComponentDiscoveryService.class).discover(), Component.m1040of(context, Context.class, new Class[0]), Component.m1040of(this, MlKitContext.class, new Class[0]));
+        ComponentRuntime componentRuntime = new ComponentRuntime(TaskExecutors.MAIN_THREAD, ComponentDiscovery.forContext(context, MlKitComponentDiscoveryService.class).discover(), Component.m1041of(context, Context.class, new Class[0]), Component.m1041of(this, MlKitContext.class, new Class[0]));
         this.zza = componentRuntime;
         componentRuntime.initializeEagerComponents(true);
     }

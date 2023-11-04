@@ -61,6 +61,13 @@ public class FirebaseFunctionsErrorHandler implements ErrorHandler<ApiBaseRespon
 
     /* compiled from: FirebaseFunctionsErrorHandler.kt */
     /* loaded from: classes3.dex */
+    public enum TonFragmentErrorStatus implements IErrorStatus {
+        NO_CURRENT_TON_CONNECT_SESSION_FOUND,
+        NO_CURRENT_AUTHORIZATION_FOUND
+    }
+
+    /* compiled from: FirebaseFunctionsErrorHandler.kt */
+    /* loaded from: classes3.dex */
     public enum TwitterErrorStatus implements IErrorStatus {
         WRONG_TWITTER_ACCESS_TOKEN_ERROR,
         WRONG_TWITTER_REFRESH_TOKEN_ERROR,
@@ -211,6 +218,14 @@ public class FirebaseFunctionsErrorHandler implements ErrorHandler<ApiBaseRespon
                 iArr[GlobalApiErrorCode.NO_OAUTH_ACCESS_GRANTED_ERROR.ordinal()] = 34;
             } catch (NoSuchFieldError unused34) {
             }
+            try {
+                iArr[GlobalApiErrorCode.NO_CURRENT_TON_CONNECT_SESSION_FOUND.ordinal()] = 35;
+            } catch (NoSuchFieldError unused35) {
+            }
+            try {
+                iArr[GlobalApiErrorCode.NO_CURRENT_AUTHORIZATION_FOUND.ordinal()] = 36;
+            } catch (NoSuchFieldError unused36) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
@@ -319,6 +334,12 @@ public class FirebaseFunctionsErrorHandler implements ErrorHandler<ApiBaseRespon
                 break;
             case 34:
                 iErrorStatus = TwitterErrorStatus.NO_OAUTH_ACCESS_GRANTED_ERROR;
+                break;
+            case 35:
+                iErrorStatus = TonFragmentErrorStatus.NO_CURRENT_TON_CONNECT_SESSION_FOUND;
+                break;
+            case 36:
+                iErrorStatus = TonFragmentErrorStatus.NO_CURRENT_AUTHORIZATION_FOUND;
                 break;
             default:
                 iErrorStatus = ApiErrorHandler.ErrorStatus.BAD_RESPONSE;

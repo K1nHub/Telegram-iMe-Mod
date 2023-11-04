@@ -26,7 +26,7 @@ public final class MsgImportIhr$$serializer implements GeneratedSerializer<MsgIm
         pluginGeneratedSerialDescriptor.addElement("transaction", false);
         pluginGeneratedSerialDescriptor.addElement("ihrFee", false);
         pluginGeneratedSerialDescriptor.addElement("proofCreated", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7511xae4e1e52("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7586xae4e1e52("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

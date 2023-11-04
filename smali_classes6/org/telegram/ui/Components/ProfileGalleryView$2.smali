@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ProfileGalleryView;)V
     .locals 0
 
-    .line 272
+    .line 283
     iput-object p1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,14 +44,14 @@
 .method public onPageScrolled(IFI)V
     .locals 7
 
-    .line 275
+    .line 286
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$000(Lorg/telegram/ui/Components/ProfileGalleryView;IF)V
 
     if-nez p3, :cond_5
 
-    .line 277
+    .line 288
     iget-object p2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$100(Lorg/telegram/ui/Components/ProfileGalleryView;)Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
@@ -62,12 +62,12 @@
 
     move-result p1
 
-    .line 278
+    .line 289
     iget-object p2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/ProfileGalleryView;->getCurrentItemView()Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 279
+    .line 290
     iget-object p2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getChildCount()I
@@ -81,21 +81,21 @@
     :goto_0
     if-ge v0, p2, :cond_5
 
-    .line 281
+    .line 292
     iget-object v1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 282
+    .line 293
     instance-of v2, v1, Lorg/telegram/ui/Components/BackupImageView;
 
     if-nez v2, :cond_0
 
-    goto :goto_1
+    goto/16 :goto_1
 
-    .line 285
+    .line 296
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
@@ -121,18 +121,33 @@
 
     move-result v2
 
-    .line 286
+    .line 297
     check-cast v1, Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 287
+    .line 298
     invoke-virtual {v1}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v1
 
-    .line 288
+    .line 299
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->getAllowStartAnimation()Z
 
     move-result v3
+
+    if-ltz v2, :cond_4
+
+    .line 300
+    iget-object v4, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
+
+    invoke-static {v4}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$400(Lorg/telegram/ui/Components/ProfileGalleryView;)Ljava/util/ArrayList;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+
+    move-result v4
+
+    if-ge v2, v4, :cond_4
 
     const/4 v4, 0x1
 
@@ -140,13 +155,13 @@
 
     if-nez v3, :cond_1
 
-    .line 291
+    .line 303
     invoke-virtual {v1, v4}, Lorg/telegram/messenger/ImageReceiver;->setAllowStartAnimation(Z)V
 
-    .line 292
+    .line 304
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->startAnimation()V
 
-    .line 294
+    .line 306
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
@@ -162,7 +177,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 296
+    .line 308
     iget-object v2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$500(Lorg/telegram/ui/Components/ProfileGalleryView;)I
@@ -184,14 +199,14 @@
     :cond_2
     if-eqz v3, :cond_4
 
-    .line 300
+    .line 312
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->getAnimation()Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     move-result-object v3
 
     if-eqz v3, :cond_3
 
-    .line 302
+    .line 314
     iget-object v5, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$400(Lorg/telegram/ui/Components/ProfileGalleryView;)Ljava/util/ArrayList;
@@ -206,44 +221,94 @@
 
     if-eqz v2, :cond_3
 
-    .line 304
+    .line 316
     iget-wide v5, v2, Lorg/telegram/messenger/ImageLocation;->videoSeekTo:J
 
     invoke-virtual {v3, v5, v6, p3, v4}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->seekTo(JZZ)V
 
-    .line 307
+    .line 319
     :cond_3
     invoke-virtual {v1, p3}, Lorg/telegram/messenger/ImageReceiver;->setAllowStartAnimation(Z)V
 
-    .line 308
+    .line 320
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->stopAnimation()V
 
     :cond_4
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_5
     return-void
 .end method
 
 .method public onPageSelected(I)V
-    .locals 2
+    .locals 4
 
-    .line 318
+    .line 331
     iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     iget v1, v0, Lorg/telegram/ui/Components/ProfileGalleryView;->selectedPage:I
 
-    if-eq p1, v1, :cond_0
+    const/4 v2, 0x0
 
-    .line 319
-    iput v1, v0, Lorg/telegram/ui/Components/ProfileGalleryView;->prevPage:I
+    if-lt p1, v1, :cond_0
 
-    .line 320
-    iput p1, v0, Lorg/telegram/ui/Components/ProfileGalleryView;->selectedPage:I
+    const/4 v3, 0x1
+
+    goto :goto_0
 
     :cond_0
+    move v3, v2
+
+    :goto_0
+    if-eq p1, v1, :cond_1
+
+    .line 333
+    iput v1, v0, Lorg/telegram/ui/Components/ProfileGalleryView;->prevPage:I
+
+    .line 334
+    iput p1, v0, Lorg/telegram/ui/Components/ProfileGalleryView;->selectedPage:I
+
+    .line 336
+    :cond_1
+    invoke-static {v0}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$600(Lorg/telegram/ui/Components/ProfileGalleryView;)Lorg/telegram/messenger/MessagesController$DialogPhotos;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_3
+
+    .line 337
+    iget-object v0, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$600(Lorg/telegram/ui/Components/ProfileGalleryView;)Lorg/telegram/messenger/MessagesController$DialogPhotos;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
+
+    invoke-static {v1}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$100(Lorg/telegram/ui/Components/ProfileGalleryView;)Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_2
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$2;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
+
+    invoke-static {v1}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$100(Lorg/telegram/ui/Components/ProfileGalleryView;)Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lorg/telegram/ui/Components/ProfileGalleryView$ViewPagerAdapter;->getExtraCount()I
+
+    move-result v2
+
+    :cond_2
+    sub-int/2addr p1, v2
+
+    invoke-virtual {v0, p1, v3}, Lorg/telegram/messenger/MessagesController$DialogPhotos;->loadAfter(IZ)V
+
+    :cond_3
     return-void
 .end method

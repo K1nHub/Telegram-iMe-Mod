@@ -56,7 +56,7 @@ public final class WCBinanceTradeOrder extends WCBinanceOrder<Message> {
         }
 
         public int hashCode() {
-            return (((((((((((((this.f416id.hashCode() * 31) + this.orderType) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.price)) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.quantity)) * 31) + this.sender.hashCode()) * 31) + this.side) * 31) + this.symbol.hashCode()) * 31) + this.timeInforce;
+            return (((((((((((((this.f416id.hashCode() * 31) + this.orderType) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.price)) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.quantity)) * 31) + this.sender.hashCode()) * 31) + this.side) * 31) + this.symbol.hashCode()) * 31) + this.timeInforce;
         }
 
         public String toString() {

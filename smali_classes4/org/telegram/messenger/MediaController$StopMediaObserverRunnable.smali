@@ -27,14 +27,14 @@
 .method private constructor <init>(Lorg/telegram/messenger/MediaController;)V
     .locals 0
 
-    .line 1036
+    .line 1079
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 1037
+    .line 1080
     iput p1, p0, Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;->currentObserverToken:I
 
     return-void
@@ -43,7 +43,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/MediaController;Lorg/telegram/messenger/MediaController$1;)V
     .locals 0
 
-    .line 1036
+    .line 1079
     invoke-direct {p0, p1}, Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;-><init>(Lorg/telegram/messenger/MediaController;)V
 
     return-void
@@ -54,7 +54,7 @@
 .method public run()V
     .locals 3
 
-    .line 1041
+    .line 1084
     iget v0, p0, Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;->currentObserverToken:I
 
     iget-object v1, p0, Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;->this$0:Lorg/telegram/messenger/MediaController;
@@ -67,7 +67,7 @@
 
     const/4 v0, 0x0
 
-    .line 1043
+    .line 1086
     :try_start_0
     iget-object v1, p0, Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -77,7 +77,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1044
+    .line 1087
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -92,7 +92,7 @@
 
     invoke-virtual {v1, v2}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 1045
+    .line 1088
     iget-object v1, p0, Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v1, v0}, Lorg/telegram/messenger/MediaController;->access$2402(Lorg/telegram/messenger/MediaController;Lorg/telegram/messenger/MediaController$InternalObserver;)Lorg/telegram/messenger/MediaController$InternalObserver;
@@ -104,10 +104,10 @@
     :catch_0
     move-exception v1
 
-    .line 1048
+    .line 1091
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1051
+    .line 1094
     :cond_0
     :goto_0
     :try_start_1
@@ -119,7 +119,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 1052
+    .line 1095
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -134,7 +134,7 @@
 
     invoke-virtual {v1, v2}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 1053
+    .line 1096
     iget-object v1, p0, Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v1, v0}, Lorg/telegram/messenger/MediaController;->access$2502(Lorg/telegram/messenger/MediaController;Lorg/telegram/messenger/MediaController$ExternalObserver;)Lorg/telegram/messenger/MediaController$ExternalObserver;
@@ -146,7 +146,7 @@
     :catch_1
     move-exception v0
 
-    .line 1056
+    .line 1099
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1

@@ -18,13 +18,13 @@ public final class FsmSplitTlbConstructor extends org.ton.tlb.TlbConstructor<Fut
     public void storeTlb(CellBuilder cellBuilder, FutureSplitMerge.FsmSplit value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m4959getSplitUtimepVg5ArA());
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m4958getIntervalpVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5113getSplitUtimepVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5112getIntervalpVg5ArA());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public FutureSplitMerge.FsmSplit loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new FutureSplitMerge.FsmSplit(cellSlice.mo5066loadUInt32pVg5ArA(), cellSlice.mo5066loadUInt32pVg5ArA(), null);
+        return new FutureSplitMerge.FsmSplit(cellSlice.mo5220loadUInt32pVg5ArA(), cellSlice.mo5220loadUInt32pVg5ArA(), null);
     }
 }

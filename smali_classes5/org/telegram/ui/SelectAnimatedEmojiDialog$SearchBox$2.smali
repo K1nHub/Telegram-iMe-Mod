@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;Landroid/content/Context;Lorg/telegram/ui/SelectAnimatedEmojiDialog;Z)V
     .locals 0
 
-    .line 4271
+    .line 4312
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
     iput-boolean p4, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->val$drawBackground:Z
@@ -41,14 +41,14 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 11
 
-    .line 4276
+    .line 4317
     iget-boolean v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->val$drawBackground:Z
 
     if-nez v0, :cond_1
 
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->access$8200(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;)F
+    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->access$8400(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;)F
 
     move-result v0
 
@@ -58,21 +58,21 @@
 
     if-lez v0, :cond_1
 
-    .line 4277
+    .line 4318
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->fadePaint:Landroid/graphics/Paint;
 
     const/16 v1, 0x12
 
     if-nez v0, :cond_0
 
-    .line 4278
+    .line 4319
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->fadePaint:Landroid/graphics/Paint;
 
-    .line 4279
+    .line 4320
     new-instance v10, Landroid/graphics/LinearGradient;
 
     const/4 v3, 0x0
@@ -105,7 +105,7 @@
 
     invoke-virtual {v0, v10}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 4280
+    .line 4321
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->fadePaint:Landroid/graphics/Paint;
 
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
@@ -121,7 +121,7 @@
 
     const/4 v6, 0x0
 
-    .line 4282
+    .line 4323
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -142,15 +142,15 @@
 
     invoke-virtual/range {v4 .. v10}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 4283
+    .line 4324
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 4284
+    .line 4325
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->fadePaint:Landroid/graphics/Paint;
 
     iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$2;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
-    invoke-static {v2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->access$8200(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;)F
+    invoke-static {v2}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->access$8400(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;)F
 
     move-result v2
 
@@ -164,7 +164,7 @@
 
     const/4 v4, 0x0
 
-    .line 4285
+    .line 4326
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -183,12 +183,12 @@
 
     invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 4286
+    .line 4327
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_0
 
-    .line 4288
+    .line 4329
     :cond_1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 

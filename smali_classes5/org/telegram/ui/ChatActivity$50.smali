@@ -26,7 +26,7 @@
 
     move-object v0, p1
 
-    .line 9330
+    .line 9399
     iput-object v0, v8, Lorg/telegram/ui/ChatActivity$50;->this$0:Lorg/telegram/ui/ChatActivity;
 
     move-object v0, p0
@@ -53,7 +53,7 @@
 .method public onAllEffectsEnd()V
     .locals 2
 
-    .line 9333
+    .line 9402
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$50;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v1, 0x0

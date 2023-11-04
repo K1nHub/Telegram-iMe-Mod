@@ -14,11 +14,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelableSerialize
 /* loaded from: classes.dex */
 public class BrowserPublicKeyCredentialCreationOptions extends BrowserRequestOptions {
     public static final Parcelable.Creator<BrowserPublicKeyCredentialCreationOptions> CREATOR = new zzk();
-    @SafeParcelable.Field(getter = "getPublicKeyCredentialCreationOptions", m1089id = 2)
+    @SafeParcelable.Field(getter = "getPublicKeyCredentialCreationOptions", m1090id = 2)
     private final PublicKeyCredentialCreationOptions zza;
-    @SafeParcelable.Field(getter = "getOrigin", m1089id = 3)
+    @SafeParcelable.Field(getter = "getOrigin", m1090id = 3)
     private final Uri zzb;
-    @SafeParcelable.Field(getter = "getClientDataHash", m1089id = 4)
+    @SafeParcelable.Field(getter = "getClientDataHash", m1090id = 4)
     private final byte[] zzc;
 
     /* compiled from: com.google.android.gms:play-services-fido@@19.0.0 */
@@ -36,7 +36,14 @@ public class BrowserPublicKeyCredentialCreationOptions extends BrowserRequestOpt
             jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: com.google.android.gms.fido.fido2.api.common.BrowserPublicKeyCredentialCreationOptions.zzb(byte[]):byte[]
             	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
             	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-            Caused by: java.lang.NullPointerException
+            Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+            	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+            	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+            	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:65)
+            	... 1 more
             */
         public com.google.android.gms.fido.fido2.api.common.BrowserPublicKeyCredentialCreationOptions.Builder setClientDataHash(byte[] r1) {
             /*
@@ -52,7 +59,14 @@ public class BrowserPublicKeyCredentialCreationOptions extends BrowserRequestOpt
             jadx.core.utils.exceptions.JadxRuntimeException: Failed to process method for inline: com.google.android.gms.fido.fido2.api.common.BrowserPublicKeyCredentialCreationOptions.zza(android.net.Uri):android.net.Uri
             	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:76)
             	at jadx.core.dex.visitors.InlineMethods.visit(InlineMethods.java:51)
-            Caused by: java.lang.NullPointerException
+            Caused by: java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+            	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+            	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+            	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+            	at jadx.core.dex.visitors.InlineMethods.processInvokeInsn(InlineMethods.java:65)
+            	... 1 more
             */
         public com.google.android.gms.fido.fido2.api.common.BrowserPublicKeyCredentialCreationOptions.Builder setOrigin(android.net.Uri r1) {
             /*
@@ -72,7 +86,7 @@ public class BrowserPublicKeyCredentialCreationOptions extends BrowserRequestOpt
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public BrowserPublicKeyCredentialCreationOptions(@SafeParcelable.Param(m1088id = 2) PublicKeyCredentialCreationOptions publicKeyCredentialCreationOptions, @SafeParcelable.Param(m1088id = 3) Uri uri, @SafeParcelable.Param(m1088id = 4) byte[] bArr) {
+    public BrowserPublicKeyCredentialCreationOptions(@SafeParcelable.Param(m1089id = 2) PublicKeyCredentialCreationOptions publicKeyCredentialCreationOptions, @SafeParcelable.Param(m1089id = 3) Uri uri, @SafeParcelable.Param(m1089id = 4) byte[] bArr) {
         this.zza = (PublicKeyCredentialCreationOptions) Preconditions.checkNotNull(publicKeyCredentialCreationOptions);
         zzc(uri);
         this.zzb = uri;
@@ -85,7 +99,13 @@ public class BrowserPublicKeyCredentialCreationOptions extends BrowserRequestOpt
     }
 
     /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-        java.lang.NullPointerException
+        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+        	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+        	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.visit(MarkMethodsForInline.java:37)
         */
     static /* bridge */ /* synthetic */ android.net.Uri zza(android.net.Uri r0) {
         /*
@@ -96,7 +116,13 @@ public class BrowserPublicKeyCredentialCreationOptions extends BrowserRequestOpt
     }
 
     /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-        java.lang.NullPointerException
+        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+        	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+        	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.visit(MarkMethodsForInline.java:37)
         */
     static /* bridge */ /* synthetic */ byte[] zzb(byte[] r0) {
         /*

@@ -1514,29 +1514,6 @@
     return-void
 .end method
 
-.method public static isDefaultStatusEmoji(Landroid/graphics/drawable/Drawable;)Z
-    .locals 1
-
-    .line 786
-    instance-of v0, p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
-
-    if-nez v0, :cond_0
-
-    const/4 p0, 0x0
-
-    return p0
-
-    .line 789
-    :cond_0
-    check-cast p0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
-
-    invoke-static {p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->isDefaultStatusEmoji(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)Z
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public static isDefaultStatusEmoji(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)Z
     .locals 0
 
@@ -1786,14 +1763,14 @@
 .method public static updateAll()V
     .locals 8
 
-    .line 1245
+    .line 1256
     sget-object v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->globalEmojiCache:Landroid/util/SparseArray;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1248
+    .line 1259
     :cond_0
     invoke-static {}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->updateLiteModeValues()V
 
@@ -1801,7 +1778,7 @@
 
     move v1, v0
 
-    .line 1249
+    .line 1260
     :goto_0
     sget-object v2, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->globalEmojiCache:Landroid/util/SparseArray;
 
@@ -1811,7 +1788,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 1250
+    .line 1261
     sget-object v2, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->globalEmojiCache:Landroid/util/SparseArray;
 
     invoke-virtual {v2, v1}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -1822,7 +1799,7 @@
 
     move v3, v0
 
-    .line 1251
+    .line 1262
     :goto_1
     invoke-virtual {v2}, Landroid/util/LongSparseArray;->size()I
 
@@ -1830,12 +1807,12 @@
 
     if-ge v3, v4, :cond_2
 
-    .line 1252
+    .line 1263
     invoke-virtual {v2, v3}, Landroid/util/LongSparseArray;->keyAt(I)J
 
     move-result-wide v4
 
-    .line 1253
+    .line 1264
     invoke-virtual {v2, v4, v5}, Landroid/util/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object v6
@@ -1844,19 +1821,19 @@
 
     if-eqz v6, :cond_1
 
-    .line 1254
+    .line 1265
     iget-boolean v7, v6, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->attached:Z
 
     if-eqz v7, :cond_1
 
     const/4 v4, 0x1
 
-    .line 1255
+    .line 1266
     invoke-direct {v6, v4}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->initDocument(Z)V
 
     goto :goto_2
 
-    .line 1257
+    .line 1268
     :cond_1
     invoke-virtual {v2, v4, v5}, Landroid/util/LongSparseArray;->remove(J)V
 

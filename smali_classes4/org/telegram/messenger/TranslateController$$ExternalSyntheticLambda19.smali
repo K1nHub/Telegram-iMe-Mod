@@ -8,7 +8,7 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/TranslateController;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field public final synthetic f$1:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
 .field public final synthetic f$2:Ljava/lang/String;
 
@@ -22,14 +22,14 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/TranslateController;Lorg/telegram/tgnet/TLRPC$StoryItem;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;Lorg/telegram/messenger/TranslateController$StoryKey;Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/TranslateController;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;Lorg/telegram/messenger/TranslateController$StoryKey;Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/messenger/TranslateController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda19;->f$1:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object p2, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda19;->f$1:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     iput-object p3, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda19;->f$2:Ljava/lang/String;
 
@@ -51,7 +51,7 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/messenger/TranslateController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda19;->f$1:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v1, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda19;->f$1:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     iget-object v2, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda19;->f$2:Ljava/lang/String;
 
@@ -63,7 +63,7 @@
 
     iget-object v6, p0, Lorg/telegram/messenger/TranslateController$$ExternalSyntheticLambda19;->f$6:Ljava/lang/Runnable;
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/TranslateController;->$r8$lambda$KSMob6fvoCyY4QwKmzxEp1xGT7k(Lorg/telegram/messenger/TranslateController;Lorg/telegram/tgnet/TLRPC$StoryItem;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;Lorg/telegram/messenger/TranslateController$StoryKey;Ljava/lang/Runnable;)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/TranslateController;->$r8$lambda$OS_RuG58AmgI2lxf45bD9v8pY9E(Lorg/telegram/messenger/TranslateController;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;Lorg/telegram/tgnet/TLRPC$TL_textWithEntities;Lorg/telegram/messenger/TranslateController$StoryKey;Ljava/lang/Runnable;)V
 
     return-void
 .end method

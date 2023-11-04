@@ -15,7 +15,7 @@ public final class AhmeEdgeImpl<X, Y> implements HashmapAug.AhmEdge<X, Y> {
     private final HmLabel label;
 
     /* renamed from: n */
-    private final int f2058n;
+    private final int f2070n;
     private final HashmapAugNode<X, Y> node;
 
     public boolean equals(Object obj) {
@@ -24,19 +24,19 @@ public final class AhmeEdgeImpl<X, Y> implements HashmapAug.AhmEdge<X, Y> {
         }
         if (obj instanceof AhmeEdgeImpl) {
             AhmeEdgeImpl ahmeEdgeImpl = (AhmeEdgeImpl) obj;
-            return this.f2058n == ahmeEdgeImpl.f2058n && Intrinsics.areEqual(this.label, ahmeEdgeImpl.label) && Intrinsics.areEqual(this.node, ahmeEdgeImpl.node);
+            return this.f2070n == ahmeEdgeImpl.f2070n && Intrinsics.areEqual(this.label, ahmeEdgeImpl.label) && Intrinsics.areEqual(this.node, ahmeEdgeImpl.node);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.f2058n * 31) + this.label.hashCode()) * 31) + this.node.hashCode();
+        return (((this.f2070n * 31) + this.label.hashCode()) * 31) + this.node.hashCode();
     }
 
     public AhmeEdgeImpl(int i, HmLabel label, HashmapAugNode<X, Y> node) {
         Intrinsics.checkNotNullParameter(label, "label");
         Intrinsics.checkNotNullParameter(node, "node");
-        this.f2058n = i;
+        this.f2070n = i;
         this.label = label;
         this.node = node;
     }
@@ -48,7 +48,7 @@ public final class AhmeEdgeImpl<X, Y> implements HashmapAug.AhmEdge<X, Y> {
 
     @Override // org.ton.hashmap.HashmapAug.AhmEdge
     public int getN() {
-        return this.f2058n;
+        return this.f2070n;
     }
 
     @Override // org.ton.hashmap.HashmapAug.AhmEdge

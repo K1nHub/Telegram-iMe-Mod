@@ -189,7 +189,7 @@
 
     move-object/from16 v1, v20
 
-    invoke-static/range {v1 .. v19}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$fUMQ3OYEx0J2UzkAmsRUUopOFvY(Lorg/telegram/messenger/MessagesController;ILjava/util/ArrayList;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;ILorg/telegram/messenger/support/LongSparseIntArray;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;ZLjava/util/ArrayList;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Ljava/util/ArrayList;)V
+    invoke-static/range {v1 .. v19}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$utGIMGmpc2eFydxGQA_OQ5EhRvc(Lorg/telegram/messenger/MessagesController;ILjava/util/ArrayList;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;ILorg/telegram/messenger/support/LongSparseIntArray;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;ZLjava/util/ArrayList;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Ljava/util/ArrayList;)V
 
     return-void
 .end method

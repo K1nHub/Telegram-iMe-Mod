@@ -7,4 +7,4 @@
 
 .field public static final btn_ok:I = 0x7f090083
 
-.field public static final tv_content:I = 0x7f090445
+.field public static final tv_content:I = 0x7f090446

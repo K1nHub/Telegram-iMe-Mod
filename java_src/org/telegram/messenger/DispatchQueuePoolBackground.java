@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.os.SystemClock;
 import android.util.SparseIntArray;
 import java.util.ArrayList;
-import org.telegram.p042ui.Components.Reactions.HwEmojis;
+import org.telegram.p043ui.Components.Reactions.HwEmojis;
 /* loaded from: classes4.dex */
 public class DispatchQueuePoolBackground {
     public static final String THREAD_PREFIX = "DispatchQueuePoolThreadSafety_";
@@ -127,7 +127,7 @@ public class DispatchQueuePoolBackground {
     public static void execute(Runnable runnable, boolean z) {
         if (Thread.currentThread() != ApplicationLoader.applicationHandler.getLooper().getThread()) {
             if (BuildVars.DEBUG_VERSION) {
-                FileLog.m97e(new RuntimeException("wrong thread"));
+                FileLog.m99e(new RuntimeException("wrong thread"));
                 return;
             }
             return;

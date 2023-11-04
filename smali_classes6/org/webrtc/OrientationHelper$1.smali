@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/webrtc/OrientationHelper;Landroid/content/Context;)V
     .locals 0
 
-    .line 32
+    .line 33
     iput-object p1, p0, Lorg/webrtc/OrientationHelper$1;->this$0:Lorg/webrtc/OrientationHelper;
 
     invoke-direct {p0, p2}, Landroid/view/OrientationEventListener;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public onOrientationChanged(I)V
     .locals 2
 
-    .line 35
+    .line 36
     iget-object v0, p0, Lorg/webrtc/OrientationHelper$1;->this$0:Lorg/webrtc/OrientationHelper;
 
     invoke-static {v0}, Lorg/webrtc/OrientationHelper;->access$000(Lorg/webrtc/OrientationHelper;)Landroid/view/OrientationEventListener;
@@ -50,7 +50,7 @@
 
     goto :goto_0
 
-    .line 38
+    .line 39
     :cond_0
     iget-object v0, p0, Lorg/webrtc/OrientationHelper$1;->this$0:Lorg/webrtc/OrientationHelper;
 
@@ -62,7 +62,7 @@
 
     move-result p1
 
-    .line 39
+    .line 40
     iget-object v0, p0, Lorg/webrtc/OrientationHelper$1;->this$0:Lorg/webrtc/OrientationHelper;
 
     invoke-static {v0}, Lorg/webrtc/OrientationHelper;->access$100(Lorg/webrtc/OrientationHelper;)I
@@ -71,7 +71,7 @@
 
     if-eq p1, v0, :cond_1
 
-    .line 40
+    .line 41
     iget-object v0, p0, Lorg/webrtc/OrientationHelper$1;->this$0:Lorg/webrtc/OrientationHelper;
 
     invoke-static {v0, p1}, Lorg/webrtc/OrientationHelper;->access$102(Lorg/webrtc/OrientationHelper;I)I

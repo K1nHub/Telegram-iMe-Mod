@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.viewbinding.ViewBinding;
 import java.util.Objects;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* loaded from: classes4.dex */
 public final class ForkNavigationScreenBinding implements ViewBinding {
     private ForkNavigationScreenBinding(FragmentContainerView fragmentContainerView, FragmentContainerView fragmentContainerView2) {
@@ -17,7 +17,7 @@ public final class ForkNavigationScreenBinding implements ViewBinding {
     }
 
     public static ForkNavigationScreenBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_navigation_screen, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_navigation_screen, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

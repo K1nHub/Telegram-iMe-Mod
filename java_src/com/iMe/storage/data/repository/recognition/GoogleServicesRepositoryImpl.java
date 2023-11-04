@@ -186,7 +186,7 @@ public final class GoogleServicesRepositoryImpl implements GoogleServicesReposit
 
     private final Pair<MultipartBody.Part, File> convertBitmapToMultipart(Bitmap bitmap) {
         File tempFile$default = BitmapExtKt.toTempFile$default(bitmap, this.cachePath, null, 2, null);
-        return TuplesKt.m144to(MultipartBody.Part.Companion.createFormData("image", tempFile$default.getName(), RequestBody.Companion.create(tempFile$default, MediaType.Companion.parse(MimeTypes.IMAGE_JPEG))), tempFile$default);
+        return TuplesKt.m146to(MultipartBody.Part.Companion.createFormData("image", tempFile$default.getName(), RequestBody.Companion.create(tempFile$default, MediaType.Companion.parse(MimeTypes.IMAGE_JPEG))), tempFile$default);
     }
 
     /* compiled from: GoogleServicesRepositoryImpl.kt */

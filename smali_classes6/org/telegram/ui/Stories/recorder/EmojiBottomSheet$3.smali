@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 1336
+    .line 1334
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ViewPagerFixed;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected onTabAnimationUpdate(Z)V
     .locals 1
 
-    .line 1339
+    .line 1337
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5600(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;
@@ -54,7 +54,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$TabsView;->setType(F)V
 
-    .line 1340
+    .line 1338
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5700(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Landroid/view/ViewGroup;
@@ -63,10 +63,10 @@
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 1341
+    .line 1339
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1342
+    .line 1340
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$3;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;->access$5500(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;)Lorg/telegram/ui/Components/ViewPagerFixed;

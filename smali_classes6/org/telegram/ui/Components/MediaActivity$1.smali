@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MediaActivity;)V
     .locals 0
 
-    .line 251
+    .line 237
     iput-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$1;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -41,7 +41,7 @@
 .method private static synthetic lambda$onItemClick$0(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 281
+    .line 267
     invoke-interface {p0}, Landroid/content/DialogInterface;->dismiss()V
 
     return-void
@@ -58,7 +58,7 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 255
+    .line 241
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$1;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MediaActivity;->sharedMediaLayout:Lorg/telegram/ui/Components/SharedMediaLayout;
@@ -71,7 +71,7 @@
 
     return-void
 
-    .line 258
+    .line 244
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$1;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
@@ -86,7 +86,7 @@
 
     if-ne p1, v1, :cond_5
 
-    .line 260
+    .line 246
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$1;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$000(Lorg/telegram/ui/Components/MediaActivity;)Landroid/util/SparseArray;
@@ -95,14 +95,14 @@
 
     if-eqz p1, :cond_6
 
-    .line 261
+    .line 247
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     move v1, v2
 
-    .line 262
+    .line 248
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/MediaActivity$1;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
@@ -116,7 +116,7 @@
 
     if-ge v1, v3, :cond_3
 
-    .line 263
+    .line 249
     iget-object v3, p0, Lorg/telegram/ui/Components/MediaActivity$1;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/MediaActivity;->access$000(Lorg/telegram/ui/Components/MediaActivity;)Landroid/util/SparseArray;
@@ -129,12 +129,12 @@
 
     check-cast v3, Lorg/telegram/messenger/MessageObject;
 
-    .line 264
-    iget-object v3, v3, Lorg/telegram/messenger/MessageObject;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    .line 250
+    iget-object v3, v3, Lorg/telegram/messenger/MessageObject;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     if-eqz v3, :cond_2
 
-    .line 265
+    .line 251
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_2
@@ -142,7 +142,7 @@
 
     goto :goto_0
 
-    .line 269
+    .line 255
     :cond_3
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -150,7 +150,7 @@
 
     if-nez v1, :cond_6
 
-    .line 270
+    .line 256
     new-instance v1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/MediaActivity$1;->this$0:Lorg/telegram/ui/Components/MediaActivity;
@@ -167,7 +167,7 @@
 
     invoke-direct {v1, v3, v4}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 271
+    .line 257
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -192,7 +192,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 272
+    .line 258
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -207,7 +207,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 273
+    .line 259
     sget v0, Lorg/telegram/messenger/R$string;->Delete:I
 
     const-string v2, "Delete"
@@ -222,7 +222,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 280
+    .line 266
     sget p1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v0, "Cancel"
@@ -235,15 +235,15 @@
 
     invoke-virtual {v1, p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 283
+    .line 269
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 284
+    .line 270
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
-    .line 285
+    .line 271
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->redPositive()V
 
     goto :goto_2
@@ -253,7 +253,7 @@
 
     if-ne p1, v0, :cond_6
 
-    .line 289
+    .line 275
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$1;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MediaActivity;->sharedMediaLayout:Lorg/telegram/ui/Components/SharedMediaLayout;

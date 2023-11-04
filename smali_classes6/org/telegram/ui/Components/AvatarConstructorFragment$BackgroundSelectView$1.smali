@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;Lorg/telegram/ui/Components/AvatarConstructorFragment;)V
     .locals 0
 
-    .line 904
+    .line 905
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 939
+    .line 940
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;->gradients:Ljava/util/ArrayList;
@@ -52,7 +52,7 @@
 .method public getItemId(I)J
     .locals 2
 
-    .line 944
+    .line 945
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;->gradients:Ljava/util/ArrayList;
@@ -67,7 +67,7 @@
 
     return-wide v0
 
-    .line 947
+    .line 948
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
@@ -89,7 +89,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 952
+    .line 953
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;->gradients:Ljava/util/ArrayList;
@@ -113,7 +113,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 4
 
-    .line 925
+    .line 926
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -124,12 +124,12 @@
 
     if-nez v0, :cond_1
 
-    .line 926
+    .line 927
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;
 
-    .line 927
+    .line 928
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;->gradients:Ljava/util/ArrayList;
@@ -142,7 +142,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->setGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
 
-    .line 928
+    .line 929
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     iget v3, v0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;->selectedItemId:I
@@ -166,23 +166,23 @@
 
     goto :goto_0
 
-    .line 930
+    .line 931
     :cond_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;
 
-    .line 931
+    .line 932
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->setCustom(Z)V
 
-    .line 932
+    .line 933
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;->customSelectedGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->setGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
 
-    .line 933
+    .line 934
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
 
     iget p2, p2, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;->selectedItemId:I
@@ -201,7 +201,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 1
 
-    .line 917
+    .line 918
     new-instance p1, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView$1;->this$1:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundSelectView;
@@ -214,7 +214,7 @@
 
     invoke-direct {p1, v0, p2}, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;-><init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;)V
 
-    .line 920
+    .line 921
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

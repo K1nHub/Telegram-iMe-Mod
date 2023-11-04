@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoriesViewPager;)V
     .locals 0
 
-    .line 48
+    .line 49
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesViewPager$1;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 2
 
-    .line 51
+    .line 52
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesViewPager$1;->this$0:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     const/4 v1, 0x0

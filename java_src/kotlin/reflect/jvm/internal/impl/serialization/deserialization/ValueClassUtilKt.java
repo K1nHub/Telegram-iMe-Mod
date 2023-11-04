@@ -53,8 +53,8 @@ public final class ValueClassUtilKt {
             Intrinsics.checkNotNullExpressionValue(it, "it");
             arrayList.add(NameResolverUtilKt.getName(nameResolver, it.intValue()));
         }
-        Pair m144to = TuplesKt.m144to(Integer.valueOf(protoBuf$Class.getMultiFieldValueClassUnderlyingTypeIdCount()), Integer.valueOf(protoBuf$Class.getMultiFieldValueClassUnderlyingTypeCount()));
-        if (Intrinsics.areEqual(m144to, TuplesKt.m144to(Integer.valueOf(arrayList.size()), 0))) {
+        Pair m146to = TuplesKt.m146to(Integer.valueOf(protoBuf$Class.getMultiFieldValueClassUnderlyingTypeIdCount()), Integer.valueOf(protoBuf$Class.getMultiFieldValueClassUnderlyingTypeCount()));
+        if (Intrinsics.areEqual(m146to, TuplesKt.m146to(Integer.valueOf(arrayList.size()), 0))) {
             List<Integer> multiFieldValueClassUnderlyingTypeIdList = protoBuf$Class.getMultiFieldValueClassUnderlyingTypeIdList();
             Intrinsics.checkNotNullExpressionValue(multiFieldValueClassUnderlyingTypeIdList, "multiFieldValueClassUnderlyingTypeIdList");
             collectionSizeOrDefault3 = CollectionsKt__IterablesKt.collectionSizeOrDefault(multiFieldValueClassUnderlyingTypeIdList, 10);
@@ -63,7 +63,7 @@ public final class ValueClassUtilKt {
                 Intrinsics.checkNotNullExpressionValue(it2, "it");
                 multiFieldValueClassUnderlyingTypeList.add(typeTable.get(it2.intValue()));
             }
-        } else if (!Intrinsics.areEqual(m144to, TuplesKt.m144to(0, Integer.valueOf(arrayList.size())))) {
+        } else if (!Intrinsics.areEqual(m146to, TuplesKt.m146to(0, Integer.valueOf(arrayList.size())))) {
             throw new IllegalStateException(("class " + NameResolverUtilKt.getName(nameResolver, protoBuf$Class.getFqName()) + " has illegal multi-field value class representation").toString());
         } else {
             multiFieldValueClassUnderlyingTypeList = protoBuf$Class.getMultiFieldValueClassUnderlyingTypeList();

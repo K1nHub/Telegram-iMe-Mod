@@ -2,7 +2,7 @@ package com.iMe.fork.enums;
 
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: BackupComponent.kt */
 /* loaded from: classes3.dex */
@@ -82,51 +82,51 @@ public enum BackupComponent {
     public final String getTitle() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String internalString = LocaleController.getInternalString(C3630R.string.settings_tools);
+                String internalString = LocaleController.getInternalString(C3634R.string.settings_tools);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.settings_tools)");
                 return internalString;
             case 2:
-                String internalString2 = LocaleController.getInternalString(C3630R.string.backup_component_multi_panel);
+                String internalString2 = LocaleController.getInternalString(C3634R.string.backup_component_multi_panel);
                 Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…up_component_multi_panel)");
                 return internalString2;
             case 3:
-                String internalString3 = LocaleController.getInternalString(C3630R.string.backup_component_filters);
+                String internalString3 = LocaleController.getInternalString(C3634R.string.backup_component_filters);
                 Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.stri…backup_component_filters)");
                 return internalString3;
             case 4:
-                String internalString4 = LocaleController.getInternalString(C3630R.string.backup_component_sorting);
+                String internalString4 = LocaleController.getInternalString(C3634R.string.backup_component_sorting);
                 Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(R.stri…backup_component_sorting)");
                 return internalString4;
             case 5:
-                String internalString5 = LocaleController.getInternalString(C3630R.string.backup_component_albums);
+                String internalString5 = LocaleController.getInternalString(C3634R.string.backup_component_albums);
                 Intrinsics.checkNotNullExpressionValue(internalString5, "getInternalString(R.stri….backup_component_albums)");
                 return internalString5;
             case 6:
-                String internalString6 = LocaleController.getInternalString(C3630R.string.cloud_filter_music);
+                String internalString6 = LocaleController.getInternalString(C3634R.string.cloud_filter_music);
                 Intrinsics.checkNotNullExpressionValue(internalString6, "getInternalString(R.string.cloud_filter_music)");
                 return internalString6;
             case 7:
-                String internalString7 = LocaleController.getInternalString(C3630R.string.backup_component_translation);
+                String internalString7 = LocaleController.getInternalString(C3634R.string.backup_component_translation);
                 Intrinsics.checkNotNullExpressionValue(internalString7, "getInternalString(R.stri…up_component_translation)");
                 return internalString7;
             case 8:
-                String string = LocaleController.getString("ProfileStories", C3630R.string.ProfileStories);
+                String string = LocaleController.getString("ProfileStories", C3634R.string.ProfileStories);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"ProfileStorie… R.string.ProfileStories)");
                 return string;
             case 9:
-                String internalString8 = LocaleController.getInternalString(C3630R.string.chat_templates);
+                String internalString8 = LocaleController.getInternalString(C3634R.string.chat_templates);
                 Intrinsics.checkNotNullExpressionValue(internalString8, "getInternalString(R.string.chat_templates)");
                 return internalString8;
             case 10:
-                String internalString9 = LocaleController.getInternalString(C3630R.string.backup_component_topics);
+                String internalString9 = LocaleController.getInternalString(C3634R.string.backup_component_topics);
                 Intrinsics.checkNotNullExpressionValue(internalString9, "getInternalString(R.stri….backup_component_topics)");
                 return internalString9;
             case 11:
-                String internalString10 = LocaleController.getInternalString(C3630R.string.hidden_chats_title);
+                String internalString10 = LocaleController.getInternalString(C3634R.string.hidden_chats_title);
                 Intrinsics.checkNotNullExpressionValue(internalString10, "getInternalString(R.string.hidden_chats_title)");
                 return internalString10;
             case 12:
-                String internalString11 = LocaleController.getInternalString(C3630R.string.settings_interface_recent_chats);
+                String internalString11 = LocaleController.getInternalString(C3634R.string.settings_interface_recent_chats);
                 Intrinsics.checkNotNullExpressionValue(internalString11, "getInternalString(R.stri…s_interface_recent_chats)");
                 return internalString11;
             default:

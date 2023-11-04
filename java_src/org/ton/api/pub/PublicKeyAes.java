@@ -13,10 +13,10 @@ import kotlinx.serialization.internal.SerializationConstructorMarker;
 import org.ton.api.adnl.AdnlIdShort;
 import org.ton.crypto.Encryptor;
 import org.ton.crypto.EncryptorAes;
-import org.ton.p044tl.ByteString;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.ByteString;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: pub.kt */
 @Serializable
 /* loaded from: classes6.dex */
@@ -114,14 +114,14 @@ public final class PublicKeyAes implements PublicKey, Encryptor {
             return PublicKeyAes$$serializer.INSTANCE;
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, PublicKeyAes value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
             writer.writeRaw(value.getKey());
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public PublicKeyAes decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return new PublicKeyAes(reader.readByteString(32));

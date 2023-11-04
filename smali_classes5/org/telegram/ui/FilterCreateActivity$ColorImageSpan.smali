@@ -22,7 +22,7 @@
 .method public constructor <init>(Landroid/graphics/drawable/Drawable;I)V
     .locals 0
 
-    .line 2236
+    .line 2237
     invoke-direct {p0, p1, p2}, Landroid/text/style/ImageSpan;-><init>(Landroid/graphics/drawable/Drawable;I)V
 
     return-void
@@ -33,7 +33,7 @@
 .method public draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
     .locals 4
 
-    .line 2242
+    .line 2243
     invoke-virtual {p9}, Landroid/graphics/Paint;->getColor()I
 
     move-result v0
@@ -42,14 +42,14 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 2243
+    .line 2244
     invoke-virtual {p0}, Landroid/text/style/ImageSpan;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 2244
+    .line 2245
     invoke-virtual {p0}, Landroid/text/style/ImageSpan;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -68,7 +68,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 2247
+    .line 2248
     :cond_0
     invoke-super/range {p0 .. p9}, Landroid/text/style/ImageSpan;->draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
 

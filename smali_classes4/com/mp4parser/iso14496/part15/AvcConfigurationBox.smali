@@ -187,7 +187,7 @@
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
-    const-string v4, "java.util.List"
+    const-string/jumbo v4, "java.util.List"
 
     const-string/jumbo v5, "sequenceParameterSets"
 
@@ -215,7 +215,7 @@
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
-    const-string v4, "java.util.List"
+    const-string/jumbo v4, "java.util.List"
 
     const-string/jumbo v5, "pictureParameterSets"
 
@@ -429,7 +429,7 @@
 
     const-string v6, ""
 
-    const-string v7, "java.util.List"
+    const-string/jumbo v7, "java.util.List"
 
     move-object v0, v8
 
@@ -447,7 +447,7 @@
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
-    const-string v4, "java.util.List"
+    const-string/jumbo v4, "java.util.List"
 
     const-string/jumbo v5, "sequenceParameterSetExts"
 
@@ -547,7 +547,7 @@
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
-    const-string v4, "java.nio.ByteBuffer"
+    const-string/jumbo v4, "java.nio.ByteBuffer"
 
     const-string v5, "byteBuffer"
 
@@ -653,7 +653,7 @@
 
     const-string v6, ""
 
-    const-string v7, "java.lang.String"
+    const-string/jumbo v7, "java.lang.String"
 
     move-object v0, v8
 
@@ -729,7 +729,7 @@
 
     const-string v6, ""
 
-    const-string v7, "java.util.List"
+    const-string/jumbo v7, "java.util.List"
 
     move-object v0, v8
 
@@ -753,7 +753,7 @@
 
     const-string v6, ""
 
-    const-string v7, "java.util.List"
+    const-string/jumbo v7, "java.util.List"
 
     move-object v0, v8
 

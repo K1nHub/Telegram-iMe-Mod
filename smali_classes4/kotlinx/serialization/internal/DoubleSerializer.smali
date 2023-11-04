@@ -38,7 +38,7 @@
 
     sget-object v1, Lkotlinx/serialization/descriptors/PrimitiveKind$DOUBLE;->INSTANCE:Lkotlinx/serialization/descriptors/PrimitiveKind$DOUBLE;
 
-    const-string v2, "kotlin.Double"
+    const-string/jumbo v2, "kotlin.Double"
 
     invoke-direct {v0, v2, v1}, Lkotlinx/serialization/internal/PrimitiveSerialDescriptor;-><init>(Ljava/lang/String;Lkotlinx/serialization/descriptors/PrimitiveKind;)V
 

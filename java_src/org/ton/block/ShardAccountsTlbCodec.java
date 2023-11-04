@@ -18,34 +18,34 @@ public final class ShardAccountsTlbCodec implements TlbCodec<ShardAccounts> {
 
     @Override // org.ton.tlb.TlbLoader
     public /* bridge */ /* synthetic */ Object loadTlb(Cell cell) {
-        return ShardAccounts.m4995boximpl(m5007loadTlb63rkgx0(cell));
+        return ShardAccounts.m5149boximpl(m5161loadTlb63rkgx0(cell));
     }
 
     @Override // org.ton.tlb.TlbLoader
     public /* bridge */ /* synthetic */ Object loadTlb(CellSlice cellSlice) {
-        return ShardAccounts.m4995boximpl(m5008loadTlb63rkgx0(cellSlice));
+        return ShardAccounts.m5149boximpl(m5162loadTlb63rkgx0(cellSlice));
     }
 
     /* renamed from: loadTlb-63rkgx0  reason: not valid java name */
-    public HashmapAugE<ShardAccount, DepthBalanceInfo> m5007loadTlb63rkgx0(Cell cell) {
-        return ((ShardAccounts) TlbCodec.DefaultImpls.loadTlb(this, cell)).m5001unboximpl();
+    public HashmapAugE<ShardAccount, DepthBalanceInfo> m5161loadTlb63rkgx0(Cell cell) {
+        return ((ShardAccounts) TlbCodec.DefaultImpls.loadTlb(this, cell)).m5155unboximpl();
     }
 
     @Override // org.ton.tlb.TlbStorer
     public /* bridge */ /* synthetic */ void storeTlb(CellBuilder cellBuilder, Object obj) {
-        m5009storeTlbo4VblW0(cellBuilder, ((ShardAccounts) obj).m5001unboximpl());
+        m5163storeTlbo4VblW0(cellBuilder, ((ShardAccounts) obj).m5155unboximpl());
     }
 
     /* renamed from: storeTlb-o4VblW0  reason: not valid java name */
-    public void m5009storeTlbo4VblW0(CellBuilder cellBuilder, HashmapAugE<ShardAccount, DepthBalanceInfo> value) {
+    public void m5163storeTlbo4VblW0(CellBuilder cellBuilder, HashmapAugE<ShardAccount, DepthBalanceInfo> value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
         codec.storeTlb(cellBuilder, value);
     }
 
     /* renamed from: loadTlb-63rkgx0  reason: not valid java name */
-    public HashmapAugE<ShardAccount, DepthBalanceInfo> m5008loadTlb63rkgx0(CellSlice cellSlice) {
+    public HashmapAugE<ShardAccount, DepthBalanceInfo> m5162loadTlb63rkgx0(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return ShardAccounts.m4996constructorimpl(codec.loadTlb(cellSlice));
+        return ShardAccounts.m5150constructorimpl(codec.loadTlb(cellSlice));
     }
 }

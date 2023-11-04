@@ -90,7 +90,7 @@
 
     move-result v2
 
-    const-string v3, "it"
+    const-string/jumbo v3, "it"
 
     if-eqz v2, :cond_0
 

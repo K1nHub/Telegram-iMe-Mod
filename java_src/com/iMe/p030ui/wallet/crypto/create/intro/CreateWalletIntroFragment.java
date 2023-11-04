@@ -29,6 +29,7 @@ import com.iMe.p030ui.base.wallet_creation.WalletCreationBaseFragment;
 import com.iMe.p030ui.wallet.crypto.create.CreateWalletFragment;
 import com.iMe.p030ui.wallet.crypto.tutorial.CreateWalletTutorialFragment;
 import com.iMe.storage.domain.model.analytics.AnalyticsEvent;
+import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.utils.dialogs.DialogExtKt;
@@ -64,21 +65,21 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentCreateWalletIntroBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.C3702ActionBar;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.RLottieImageView;
-import org.telegram.p042ui.Components.URLSpanNoUnderline;
-import org.telegram.p042ui.PasscodeActivity;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RLottieImageView;
+import org.telegram.p043ui.Components.URLSpanNoUnderline;
+import org.telegram.p043ui.PasscodeActivity;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: CreateWalletIntroFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment */
@@ -94,9 +95,10 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
     private final ResettableLazy toolbar$delegate;
     private final WalletCreationType.Initial walletCreationType;
 
-    public CreateWalletIntroFragment(final String linkedWalletAddress, WalletCreationType.Initial walletCreationType) {
+    public CreateWalletIntroFragment(final BlockchainType manualBlockchainType, final String linkedWalletAddress, WalletCreationType.Initial walletCreationType) {
         Lazy lazy;
         Lazy lazy2;
+        Intrinsics.checkNotNullParameter(manualBlockchainType, "manualBlockchainType");
         Intrinsics.checkNotNullParameter(linkedWalletAddress, "linkedWalletAddress");
         Intrinsics.checkNotNullParameter(walletCreationType, "walletCreationType");
         this.walletCreationType = walletCreationType;
@@ -112,6 +114,7 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
             public final CreateWalletIntroPresenter invoke() {
                 Lazy lazy3;
                 final CreateWalletIntroFragment createWalletIntroFragment = CreateWalletIntroFragment.this;
+                final BlockchainType blockchainType = manualBlockchainType;
                 final String str = linkedWalletAddress;
                 final Function0<ParametersHolder> function02 = new Function0<ParametersHolder>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$presenter$2.1
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -123,7 +126,7 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
                     public final ParametersHolder invoke() {
                         WalletCreationType.Initial initial;
                         initial = createWalletIntroFragment.walletCreationType;
-                        return ParametersHolderKt.parametersOf(str, initial);
+                        return ParametersHolderKt.parametersOf(BlockchainType.this, str, initial);
                     }
                 };
                 lazy3 = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new Function0<CreateWalletIntroPresenter>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$presenter$2$invoke$$inlined$inject$default$1
@@ -169,7 +172,7 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(AndroidUtilities.m102dp(1));
+                return Float.valueOf(AndroidUtilities.m104dp(1));
             }
         });
         this.linkedWalletViewStrokeWidth$delegate = lazy;
@@ -177,19 +180,19 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(AndroidUtilities.m102dp(8));
+                return Float.valueOf(AndroidUtilities.m104dp(8));
             }
         });
         this.linkedWalletViewCornerRadius$delegate = lazy2;
-        this.toolbar$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<C3702ActionBar>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$toolbar$2
+        this.toolbar$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new Function0<C3706ActionBar>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$toolbar$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
             }
 
             @Override // kotlin.jvm.functions.Function0
-            public final C3702ActionBar invoke() {
-                C3702ActionBar initActionBar;
+            public final C3706ActionBar invoke() {
+                C3706ActionBar initActionBar;
                 initActionBar = CreateWalletIntroFragment.this.initActionBar();
                 return initActionBar;
             }
@@ -213,8 +216,8 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
         return ((Number) this.linkedWalletViewCornerRadius$delegate.getValue()).floatValue();
     }
 
-    private final C3702ActionBar getToolbar() {
-        return (C3702ActionBar) this.toolbar$delegate.getValue(this, $$delegatedProperties[2]);
+    private final C3706ActionBar getToolbar() {
+        return (C3706ActionBar) this.toolbar$delegate.getValue(this, $$delegatedProperties[2]);
     }
 
     @Override // com.iMe.p030ui.base.mvp.MvpFragment
@@ -239,7 +242,7 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
         Intrinsics.checkNotNullExpressionValue(constraintLinkedWalletSection, "constraintLinkedWalletSection");
         ViewExtKt.visible$default(constraintLinkedWalletSection, false, 1, null);
         binding.imageAvatar.setUser(user);
-        binding.textUserId.setText(getResourceManager().getString(C3630R.string.wallet_home_crypto_account_telegram_id, Long.valueOf(user.f1762id)));
+        binding.textUserId.setText(getResourceManager().getString(C3634R.string.wallet_home_crypto_account_telegram_id, Long.valueOf(user.f1749id)));
         binding.textAddress.setText(address);
         setupItemMoreOptions(explorer);
     }
@@ -313,21 +316,21 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
         floatingActionButton.updateLoadingState(z);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isLightStatusBar() {
         return ColorUtils.calculateLuminance(getThemedColor(Theme.key_windowBackgroundWhite)) > 0.699999988079071d;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$$ExternalSyntheticLambda3
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 CreateWalletIntroFragment.this.setupColors();
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -336,13 +339,13 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public final C3702ActionBar initActionBar() {
-        C3702ActionBar c3702ActionBar = new C3702ActionBar(getContext());
-        c3702ActionBar.setBackButtonImage(C3630R.C3632drawable.ic_ab_back);
-        c3702ActionBar.setTitle(getResourceManager().getString(this.walletCreationType.getTitleTextResId()));
-        c3702ActionBar.createMenu().addItem(IdFabric$Menu.INFO, C3630R.C3632drawable.msg_info);
-        c3702ActionBar.setActionBarMenuOnItemClick(new C3702ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$initActionBar$1$1
-            @Override // org.telegram.p042ui.ActionBar.C3702ActionBar.ActionBarMenuOnItemClick
+    public final C3706ActionBar initActionBar() {
+        C3706ActionBar c3706ActionBar = new C3706ActionBar(getContext());
+        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        c3706ActionBar.setTitle(getResourceManager().getString(this.walletCreationType.getTitleTextResId()));
+        c3706ActionBar.createMenu().addItem(IdFabric$Menu.INFO, C3634R.C3636drawable.msg_info);
+        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$initActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CreateWalletIntroFragment.this.finishFragment();
@@ -351,17 +354,17 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
                 }
             }
         });
-        return c3702ActionBar;
+        return c3706ActionBar;
     }
 
     private final void setupItemMoreOptions(Network.Explorer explorer) {
         final ActionBarMenuItem setupItemMoreOptions$lambda$8 = getBinding().itemMoreOptions;
         setupItemMoreOptions$lambda$8.setLongClickEnabled(false);
         setupItemMoreOptions$lambda$8.setSubMenuOpenSide(2);
-        setupItemMoreOptions$lambda$8.setIcon(C3630R.C3632drawable.ic_ab_other);
+        setupItemMoreOptions$lambda$8.setIcon(C3634R.C3636drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupItemMoreOptions$lambda$8, "setupItemMoreOptions$lambda$8");
         ViewExtKt.setCircleRippleBackground(setupItemMoreOptions$lambda$8);
-        setupItemMoreOptions$lambda$8.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3630R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
+        setupItemMoreOptions$lambda$8.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3634R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
         ViewExtKt.safeThrottledClick$default(setupItemMoreOptions$lambda$8, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$setupItemMoreOptions$1$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -381,12 +384,12 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
             }
         }, 1, null);
         setupItemMoreOptions$lambda$8.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$$ExternalSyntheticLambda2
-            @Override // org.telegram.p042ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
                 CreateWalletIntroFragment.setupItemMoreOptions$lambda$8$lambda$7(CreateWalletIntroFragment.this, i);
             }
         });
-        setupItemMoreOptions$lambda$8.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3630R.string.AccDescrMoreOptions));
+        setupItemMoreOptions$lambda$8.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -399,7 +402,7 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
 
     private final void setupListeners() {
         final ForkFragmentCreateWalletIntroBinding binding = getBinding();
-        C3702ActionBar toolbar = getToolbar();
+        C3706ActionBar toolbar = getToolbar();
         if (!ViewCompat.isLaidOut(toolbar) || toolbar.isLayoutRequested()) {
             toolbar.addOnLayoutChangeListener(new View.OnLayoutChangeListener() { // from class: com.iMe.ui.wallet.crypto.create.intro.CreateWalletIntroFragment$setupListeners$lambda$12$$inlined$doOnLayout$1
                 @Override // android.view.View.OnLayoutChangeListener
@@ -528,7 +531,7 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
     /* JADX INFO: Access modifiers changed from: private */
     public final void setupColors() {
         List<AppCompatImageView> listOf;
-        C3702ActionBar toolbar = getToolbar();
+        C3706ActionBar toolbar = getToolbar();
         int i = Theme.key_windowBackgroundWhite;
         toolbar.setBackgroundColor(getThemedColor(i));
         int i2 = Theme.key_windowBackgroundWhiteBlackText;
@@ -581,30 +584,30 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
         ForkFragmentCreateWalletIntroBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageHeader;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3630R.raw.fork_crypto_wallet, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        rLottieImageView.setAnimation(C3634R.raw.fork_crypto_wallet, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         rLottieImageView.playAnimation();
-        binding.textTitle.setText(getResourceManager().getString(C3630R.string.wallet_creation_intro_title));
-        binding.textDescription.setText(getResourceManager().getString(C3630R.string.wallet_creation_intro_description));
-        binding.textLinkedWalletTitle.setText(getResourceManager().getString(C3630R.string.wallet_creation_intro_linked_wallet));
+        binding.textTitle.setText(getResourceManager().getString(C3634R.string.wallet_creation_intro_title));
+        binding.textDescription.setText(getResourceManager().getString(C3634R.string.wallet_creation_intro_description));
+        binding.textLinkedWalletTitle.setText(getResourceManager().getString(C3634R.string.wallet_creation_intro_linked_wallet));
         TextView textView = binding.textPrivacy;
         textView.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-        String string = getResourceManager().getString(C3630R.string.wallet_creation_intro_privacy);
+        String string = getResourceManager().getString(C3634R.string.wallet_creation_intro_privacy);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
         indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) string, "*", 0, false, 6, (Object) null);
         lastIndexOf$default = StringsKt__StringsKt.lastIndexOf$default((CharSequence) string, "*", 0, false, 6, (Object) null);
         if (indexOf$default != -1 && lastIndexOf$default != -1 && indexOf$default != lastIndexOf$default) {
             spannableStringBuilder.replace(lastIndexOf$default, lastIndexOf$default + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf$default, indexOf$default + 1, (CharSequence) "");
-            spannableStringBuilder.setSpan(new URLSpanNoUnderline(LocaleController.getString("PrivacyPolicyUrl", C3630R.string.PrivacyPolicyUrl)), indexOf$default, lastIndexOf$default - 1, 33);
+            spannableStringBuilder.setSpan(new URLSpanNoUnderline(LocaleController.getString("PrivacyPolicyUrl", C3634R.string.PrivacyPolicyUrl)), indexOf$default, lastIndexOf$default - 1, 33);
         }
         textView.setText(spannableStringBuilder);
-        binding.itemMoreOptions.setIcon(C3630R.C3632drawable.ic_ab_other);
-        binding.buttonNext.setIcon(C3630R.C3632drawable.msg_arrow_forward);
+        binding.itemMoreOptions.setIcon(C3634R.C3636drawable.ic_ab_other);
+        binding.buttonNext.setIcon(C3634R.C3636drawable.msg_arrow_forward);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void showInfoDialog() {
-        showDialog(DialogsFactoryKt.createDialogInfoWithAnimation$default(this, 0, getResourceManager().getString(C3630R.string.wallet_creation_intro_information_title), getResourceManager().getString(C3630R.string.wallet_creation_intro_information_description), 0, null, null, 57, null));
+        showDialog(DialogsFactoryKt.createDialogInfoWithAnimation$default(this, 0, getResourceManager().getString(C3634R.string.wallet_creation_intro_information_title), getResourceManager().getString(C3634R.string.wallet_creation_intro_information_description), 0, null, null, 57, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -623,10 +626,11 @@ public final class CreateWalletIntroFragment extends WalletCreationBaseFragment 
         private Companion() {
         }
 
-        public final CreateWalletIntroFragment newInstance(WalletCreationType.Initial walletCreationType, String linkedWalletAddress) {
-            Intrinsics.checkNotNullParameter(walletCreationType, "walletCreationType");
+        public final CreateWalletIntroFragment newInstance(String linkedWalletAddress, WalletCreationType.Initial walletCreationType, BlockchainType manualBlockchainType) {
             Intrinsics.checkNotNullParameter(linkedWalletAddress, "linkedWalletAddress");
-            return new CreateWalletIntroFragment(linkedWalletAddress, walletCreationType);
+            Intrinsics.checkNotNullParameter(walletCreationType, "walletCreationType");
+            Intrinsics.checkNotNullParameter(manualBlockchainType, "manualBlockchainType");
+            return new CreateWalletIntroFragment(manualBlockchainType, linkedWalletAddress, walletCreationType);
         }
     }
 }

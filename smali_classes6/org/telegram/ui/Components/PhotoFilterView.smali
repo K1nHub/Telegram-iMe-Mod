@@ -2399,7 +2399,7 @@
 .method private fixLayout(II)V
     .locals 12
 
-    .line 937
+    .line 938
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->ownLayout:Z
 
     if-nez v0, :cond_0
@@ -2409,7 +2409,7 @@
     :cond_0
     const/16 v0, 0x1c
 
-    .line 940
+    .line 941
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2418,7 +2418,7 @@
 
     const/16 v1, 0xd6
 
-    .line 941
+    .line 942
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2447,12 +2447,12 @@
 
     sub-int/2addr p2, v1
 
-    .line 945
+    .line 946
     iget-object v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->bitmapToEdit:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_4
 
-    .line 946
+    .line 947
     iget v5, p0, Lorg/telegram/ui/Components/PhotoFilterView;->orientation:I
 
     rem-int/lit16 v6, v5, 0x168
@@ -2469,7 +2469,7 @@
 
     goto :goto_1
 
-    .line 950
+    .line 951
     :cond_2
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -2477,7 +2477,7 @@
 
     int-to-float v1, v1
 
-    .line 951
+    .line 952
     iget-object v5, p0, Lorg/telegram/ui/Components/PhotoFilterView;->bitmapToEdit:Landroid/graphics/Bitmap;
 
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getHeight()I
@@ -2486,7 +2486,7 @@
 
     goto :goto_2
 
-    .line 947
+    .line 948
     :cond_3
     :goto_1
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
@@ -2495,7 +2495,7 @@
 
     int-to-float v1, v1
 
-    .line 948
+    .line 949
     iget-object v5, p0, Lorg/telegram/ui/Components/PhotoFilterView;->bitmapToEdit:Landroid/graphics/Bitmap;
 
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
@@ -2504,7 +2504,7 @@
 
     goto :goto_2
 
-    .line 954
+    .line 955
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->textureView:Landroid/view/TextureView;
 
@@ -2514,7 +2514,7 @@
 
     int-to-float v1, v1
 
-    .line 955
+    .line 956
     iget-object v5, p0, Lorg/telegram/ui/Components/PhotoFilterView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {v5}, Landroid/view/TextureView;->getHeight()I
@@ -2540,7 +2540,7 @@
 
     float-to-double v9, v1
 
-    .line 961
+    .line 962
     invoke-static {v9, v10}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v9
@@ -2558,7 +2558,7 @@
 
     float-to-double v9, v5
 
-    .line 964
+    .line 965
     invoke-static {v9, v10}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v9
@@ -2580,7 +2580,7 @@
 
     const/16 v9, 0xe
 
-    .line 967
+    .line 968
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -2601,7 +2601,7 @@
 
     div-float/2addr v8, v7
 
-    .line 968
+    .line 969
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -2640,12 +2640,12 @@
 
     float-to-int v5, v5
 
-    .line 972
+    .line 973
     iget-boolean v8, p0, Lorg/telegram/ui/Components/PhotoFilterView;->ownsTextureView:Z
 
     if-eqz v8, :cond_7
 
-    .line 973
+    .line 974
     iget-object v8, p0, Lorg/telegram/ui/Components/PhotoFilterView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {v8}, Landroid/view/TextureView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2654,19 +2654,19 @@
 
     check-cast v8, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 974
+    .line 975
     iput v6, v8, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 975
+    .line 976
     iput v7, v8, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 976
+    .line 977
     iput v1, v8, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 977
+    .line 978
     iput v5, v8, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 980
+    .line 981
     :cond_7
     iget-object v8, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesControl:Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
@@ -2696,12 +2696,12 @@
 
     invoke-virtual {v8, v6, v2, v1, v3}, Lorg/telegram/ui/Components/PhotoFilterCurvesControl;->setActualArea(FFFF)V
 
-    .line 982
+    .line 983
     iget-object v2, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurControl:Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     invoke-virtual {v2, v1, v3}, Lorg/telegram/ui/Components/PhotoFilterBlurControl;->setActualAreaSize(FF)V
 
-    .line 984
+    .line 985
     iget-object v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurControl:Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2712,7 +2712,7 @@
 
     const/16 v2, 0x26
 
-    .line 985
+    .line 986
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -2721,7 +2721,7 @@
 
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 987
+    .line 988
     iget-object v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesControl:Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2730,7 +2730,7 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 988
+    .line 989
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -2739,7 +2739,7 @@
 
     iput p2, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 990
+    .line 991
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result p2
@@ -2748,14 +2748,14 @@
 
     const/16 p2, 0x56
 
-    .line 991
+    .line 992
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
     mul-int/lit8 p2, p2, 0xa
 
-    .line 992
+    .line 993
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2766,12 +2766,12 @@
 
     if-ge p2, p1, :cond_9
 
-    .line 994
+    .line 995
     iput p2, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
     sub-int/2addr p1, p2
 
-    .line 995
+    .line 996
     div-int/lit8 p1, p1, 0x2
 
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
@@ -2781,10 +2781,10 @@
     :cond_9
     const/4 p1, -0x1
 
-    .line 997
+    .line 998
     iput p1, v0, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 998
+    .line 999
     iput v4, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     :cond_a
@@ -2795,7 +2795,7 @@
 .method private getThemedColor(I)I
     .locals 1
 
-    .line 1171
+    .line 1172
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -3158,25 +3158,25 @@
 .method private setShowOriginal(Z)V
     .locals 1
 
-    .line 843
+    .line 844
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->showOriginal:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 846
+    .line 847
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->showOriginal:Z
 
-    .line 847
+    .line 848
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->eglThread:Lorg/telegram/ui/Components/FilterGLThread;
 
     if-eqz p1, :cond_1
 
     const/4 v0, 0x0
 
-    .line 848
+    .line 849
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/FilterGLThread;->requestRender(Z)V
 
     :cond_1
@@ -3186,10 +3186,10 @@
 .method private updateFiltersEmpty()V
     .locals 2
 
-    .line 853
+    .line 854
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->enhanceValue:F
 
-    .line 854
+    .line 855
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -3202,7 +3202,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->softenSkinValue:F
 
-    .line 855
+    .line 856
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -3213,7 +3213,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->exposureValue:F
 
-    .line 856
+    .line 857
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -3224,7 +3224,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->contrastValue:F
 
-    .line 857
+    .line 858
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -3235,7 +3235,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->warmthValue:F
 
-    .line 858
+    .line 859
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -3246,7 +3246,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->saturationValue:F
 
-    .line 859
+    .line 860
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -3257,7 +3257,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->fadeValue:F
 
-    .line 860
+    .line 861
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -3276,7 +3276,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->highlightsValue:F
 
-    .line 863
+    .line 864
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -3287,7 +3287,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->shadowsValue:F
 
-    .line 864
+    .line 865
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -3298,7 +3298,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->vignetteValue:F
 
-    .line 865
+    .line 866
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -3309,7 +3309,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->grainValue:F
 
-    .line 866
+    .line 867
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -3324,7 +3324,7 @@
 
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->sharpenValue:F
 
-    .line 868
+    .line 869
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -3335,7 +3335,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
-    .line 869
+    .line 870
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;->shouldBeSkipped()Z
 
     move-result v0
@@ -3605,8 +3605,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
+    .line 728
     :cond_2
     :goto_0
+    invoke-direct {p0}, Lorg/telegram/ui/Components/PhotoFilterView;->updateFiltersEmpty()V
+
     return-void
 .end method
 
@@ -3615,12 +3618,12 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 0
 
-    .line 1005
+    .line 1006
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p3
 
-    .line 1006
+    .line 1007
     iget-object p4, p0, Lorg/telegram/ui/Components/PhotoFilterView;->paintingOverlay:Lorg/telegram/ui/Components/PaintingOverlay;
 
     if-eqz p4, :cond_0
@@ -3629,10 +3632,10 @@
 
     if-ne p2, p4, :cond_0
 
-    .line 1007
+    .line 1008
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1008
+    .line 1009
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoFilterView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {p2}, Landroid/view/TextureView;->getLeft()I
@@ -3651,7 +3654,7 @@
 
     invoke-virtual {p1, p2, p4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1009
+    .line 1010
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoFilterView;->textureView:Landroid/view/TextureView;
 
     invoke-virtual {p2}, Landroid/view/TextureView;->getMeasuredWidth()I
@@ -3670,15 +3673,15 @@
 
     div-float/2addr p2, p4
 
-    .line 1010
+    .line 1011
     invoke-virtual {p1, p2, p2}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 1011
+    .line 1012
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoFilterView;->paintingOverlay:Lorg/telegram/ui/Components/PaintingOverlay;
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1012
+    .line 1013
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_0
@@ -3688,12 +3691,12 @@
 .method public fillAndGetCurveBuffer()Ljava/nio/ByteBuffer;
     .locals 1
 
-    .line 1146
+    .line 1147
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;->fillBuffer()V
 
-    .line 1147
+    .line 1148
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;->curveBuffer:Ljava/nio/ByteBuffer;
@@ -3704,7 +3707,7 @@
 .method public getBitmap()Landroid/graphics/Bitmap;
     .locals 1
 
-    .line 933
+    .line 934
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->eglThread:Lorg/telegram/ui/Components/FilterGLThread;
 
     if-eqz v0, :cond_0
@@ -3725,7 +3728,7 @@
 .method public getBlurAngle()F
     .locals 1
 
-    .line 1126
+    .line 1127
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurAngle:F
 
     return v0
@@ -3734,7 +3737,7 @@
 .method public getBlurControl()Lorg/telegram/ui/Components/PhotoFilterBlurControl;
     .locals 1
 
-    .line 1159
+    .line 1160
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurControl:Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     return-object v0
@@ -3743,7 +3746,7 @@
 .method public getBlurExcludeBlurSize()F
     .locals 1
 
-    .line 1121
+    .line 1122
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurExcludeBlurSize:F
 
     return v0
@@ -3752,7 +3755,7 @@
 .method public getBlurExcludePoint()Lorg/telegram/ui/Components/Point;
     .locals 1
 
-    .line 1131
+    .line 1132
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurExcludePoint:Lorg/telegram/ui/Components/Point;
 
     return-object v0
@@ -3761,7 +3764,7 @@
 .method public getBlurExcludeSize()F
     .locals 1
 
-    .line 1116
+    .line 1117
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurExcludeSize:F
 
     return v0
@@ -3770,7 +3773,7 @@
 .method public getBlurType()I
     .locals 1
 
-    .line 1111
+    .line 1112
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurType:I
 
     return v0
@@ -3779,7 +3782,7 @@
 .method public getCancelTextView()Landroid/widget/TextView;
     .locals 1
 
-    .line 1167
+    .line 1168
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->cancelTextView:Landroid/widget/TextView;
 
     return-object v0
@@ -3788,7 +3791,7 @@
 .method public getContrastValue()F
     .locals 2
 
-    .line 1045
+    .line 1046
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->contrastValue:F
 
     const/high16 v1, 0x42c80000    # 100.0f
@@ -3809,7 +3812,7 @@
 .method public getCurveControl()Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
     .locals 1
 
-    .line 1155
+    .line 1156
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesControl:Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
     return-object v0
@@ -3818,7 +3821,7 @@
 .method public getDoneTextView()Landroid/widget/TextView;
     .locals 1
 
-    .line 1163
+    .line 1164
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->doneTextView:Landroid/widget/TextView;
 
     return-object v0
@@ -3827,7 +3830,7 @@
 .method public getEnhanceValue()F
     .locals 2
 
-    .line 1035
+    .line 1036
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->enhanceValue:F
 
     const/high16 v1, 0x42c80000    # 100.0f
@@ -3840,7 +3843,7 @@
 .method public getExposureValue()F
     .locals 2
 
-    .line 1040
+    .line 1041
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->exposureValue:F
 
     const/high16 v1, 0x42c80000    # 100.0f
@@ -3853,7 +3856,7 @@
 .method public getFadeValue()F
     .locals 2
 
-    .line 1070
+    .line 1071
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->fadeValue:F
 
     const/high16 v1, 0x42c80000    # 100.0f
@@ -3866,7 +3869,7 @@
 .method public getGrainValue()F
     .locals 2
 
-    .line 1065
+    .line 1066
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->grainValue:F
 
     const/high16 v1, 0x42c80000    # 100.0f
@@ -3883,7 +3886,7 @@
 .method public getHighlightsValue()F
     .locals 2
 
-    .line 1030
+    .line 1031
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->highlightsValue:F
 
     const/high16 v1, 0x3f400000    # 0.75f
@@ -3902,7 +3905,7 @@
 .method public getMyTextureView()Landroid/view/TextureView;
     .locals 1
 
-    .line 922
+    .line 923
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->ownsTextureView:Z
 
     if-eqz v0, :cond_0
@@ -3911,7 +3914,7 @@
 
     if-nez v0, :cond_0
 
-    .line 923
+    .line 924
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->textureView:Landroid/view/TextureView;
 
     return-object v0
@@ -3925,7 +3928,7 @@
 .method public getSaturationValue()F
     .locals 2
 
-    .line 1092
+    .line 1093
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->saturationValue:F
 
     const/high16 v1, 0x42c80000    # 100.0f
@@ -3953,112 +3956,112 @@
 .method public getSavedFilterState()Lorg/telegram/messenger/MediaController$SavedFilterState;
     .locals 2
 
-    .line 731
+    .line 732
     new-instance v0, Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     invoke-direct {v0}, Lorg/telegram/messenger/MediaController$SavedFilterState;-><init>()V
 
-    .line 732
+    .line 733
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->enhanceValue:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->enhanceValue:F
 
-    .line 733
+    .line 734
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->exposureValue:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->exposureValue:F
 
-    .line 734
+    .line 735
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->contrastValue:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->contrastValue:F
 
-    .line 735
+    .line 736
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->warmthValue:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->warmthValue:F
 
-    .line 736
+    .line 737
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->saturationValue:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->saturationValue:F
 
-    .line 737
+    .line 738
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->fadeValue:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->fadeValue:F
 
-    .line 738
+    .line 739
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->softenSkinValue:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->softenSkinValue:F
 
-    .line 739
+    .line 740
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->tintShadowsColor:I
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->tintShadowsColor:I
 
-    .line 740
+    .line 741
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->tintHighlightsColor:I
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->tintHighlightsColor:I
 
-    .line 741
+    .line 742
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->highlightsValue:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->highlightsValue:F
 
-    .line 742
+    .line 743
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->shadowsValue:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->shadowsValue:F
 
-    .line 743
+    .line 744
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->vignetteValue:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->vignetteValue:F
 
-    .line 744
+    .line 745
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->grainValue:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->grainValue:F
 
-    .line 745
+    .line 746
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurType:I
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurType:I
 
-    .line 746
+    .line 747
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->sharpenValue:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->sharpenValue:F
 
-    .line 747
+    .line 748
     iget-object v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
     iput-object v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
-    .line 748
+    .line 749
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurExcludeSize:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludeSize:F
 
-    .line 749
+    .line 750
     iget-object v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurExcludePoint:Lorg/telegram/ui/Components/Point;
 
     iput-object v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludePoint:Lorg/telegram/ui/Components/Point;
 
-    .line 750
+    .line 751
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurExcludeBlurSize:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurExcludeBlurSize:F
 
-    .line 751
+    .line 752
     iget v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurAngle:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->blurAngle:F
 
-    .line 752
+    .line 753
     iput-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     return-object v0
@@ -4067,7 +4070,7 @@
 .method public getShadowsValue()F
     .locals 2
 
-    .line 1025
+    .line 1026
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->shadowsValue:F
 
     const v1, 0x3f0ccccd    # 0.55f
@@ -4086,7 +4089,7 @@
 .method public getSharpenValue()F
     .locals 2
 
-    .line 1060
+    .line 1061
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->sharpenValue:F
 
     const/high16 v1, 0x42c80000    # 100.0f
@@ -4107,7 +4110,7 @@
 .method public getSoftenSkinValue()F
     .locals 2
 
-    .line 1075
+    .line 1076
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->softenSkinValue:F
 
     const/high16 v1, 0x42c80000    # 100.0f
@@ -4120,7 +4123,7 @@
 .method public getTintHighlightsColor()I
     .locals 1
 
-    .line 1101
+    .line 1102
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->tintHighlightsColor:I
 
     return v0
@@ -4129,7 +4132,7 @@
 .method public getTintHighlightsIntensityValue()F
     .locals 1
 
-    .line 1081
+    .line 1082
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->tintHighlightsColor:I
 
     if-nez v0, :cond_0
@@ -4148,7 +4151,7 @@
 .method public getTintShadowsColor()I
     .locals 1
 
-    .line 1106
+    .line 1107
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->tintShadowsColor:I
 
     return v0
@@ -4157,7 +4160,7 @@
 .method public getTintShadowsIntensityValue()F
     .locals 1
 
-    .line 1087
+    .line 1088
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->tintShadowsColor:I
 
     if-nez v0, :cond_0
@@ -4176,7 +4179,7 @@
 .method public getToolsView()Landroid/widget/FrameLayout;
     .locals 1
 
-    .line 1151
+    .line 1152
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->toolsView:Landroid/widget/FrameLayout;
 
     return-object v0
@@ -4185,7 +4188,7 @@
 .method public getUiBlurBitmap()Landroid/graphics/Bitmap;
     .locals 1
 
-    .line 1492
+    .line 1493
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->eglThread:Lorg/telegram/ui/Components/FilterGLThread;
 
     if-nez v0, :cond_0
@@ -4194,7 +4197,7 @@
 
     return-object v0
 
-    .line 1495
+    .line 1496
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/Components/FilterGLThread;->getUiBlurBitmap()Landroid/graphics/Bitmap;
 
@@ -4206,7 +4209,7 @@
 .method public getVignetteValue()F
     .locals 2
 
-    .line 1055
+    .line 1056
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->vignetteValue:F
 
     const/high16 v1, 0x42c80000    # 100.0f
@@ -4219,7 +4222,7 @@
 .method public getWarmthValue()F
     .locals 2
 
-    .line 1050
+    .line 1051
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->warmthValue:F
 
     const/high16 v1, 0x42c80000    # 100.0f
@@ -4232,7 +4235,7 @@
 .method public hasChanges()Z
     .locals 5
 
-    .line 756
+    .line 757
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     const/4 v1, 0x0
@@ -4241,7 +4244,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 757
+    .line 758
     iget v3, p0, Lorg/telegram/ui/Components/PhotoFilterView;->enhanceValue:F
 
     iget v4, v0, Lorg/telegram/messenger/MediaController$SavedFilterState;->enhanceValue:F
@@ -4352,7 +4355,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
-    .line 771
+    .line 772
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;->shouldBeSkipped()Z
 
     move-result v0
@@ -4365,7 +4368,7 @@
     :cond_1
     return v1
 
-    .line 773
+    .line 774
     :cond_2
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->enhanceValue:F
 
@@ -4451,7 +4454,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
-    .line 774
+    .line 775
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;->shouldBeSkipped()Z
 
     move-result v0
@@ -4468,7 +4471,7 @@
 .method public init()V
     .locals 2
 
-    .line 929
+    .line 930
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->textureView:Landroid/view/TextureView;
 
     const/4 v1, 0x0
@@ -4481,7 +4484,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 1019
+    .line 1020
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
@@ -4492,7 +4495,7 @@
 
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Components/PhotoFilterView;->fixLayout(II)V
 
-    .line 1020
+    .line 1021
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -4501,7 +4504,7 @@
 .method public onTouch(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 826
+    .line 827
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -4520,7 +4523,7 @@
 
     goto :goto_0
 
-    .line 836
+    .line 837
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -4539,12 +4542,12 @@
     :cond_1
     const/4 p1, 0x0
 
-    .line 837
+    .line 838
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PhotoFilterView;->setShowOriginal(Z)V
 
     goto :goto_1
 
-    .line 827
+    .line 828
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->textureView:Landroid/view/TextureView;
@@ -4553,7 +4556,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 828
+    .line 829
     check-cast v0, Lorg/telegram/ui/Components/VideoEditTextureView;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -4570,12 +4573,12 @@
 
     if-eqz p1, :cond_4
 
-    .line 829
+    .line 830
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/PhotoFilterView;->setShowOriginal(Z)V
 
     goto :goto_1
 
-    .line 832
+    .line 833
     :cond_3
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
@@ -4653,7 +4656,7 @@
 
     if-gtz p1, :cond_4
 
-    .line 833
+    .line 834
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/PhotoFilterView;->setShowOriginal(Z)V
 
     :cond_4
@@ -4668,17 +4671,17 @@
 
     mul-float/2addr p1, v0
 
-    .line 1175
+    .line 1176
     iput p1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->enhanceValue:F
 
-    .line 1176
+    .line 1177
     invoke-direct {p0}, Lorg/telegram/ui/Components/PhotoFilterView;->updateFiltersEmpty()V
 
     const/4 p1, 0x0
 
     move v0, p1
 
-    .line 1177
+    .line 1178
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -4688,14 +4691,14 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1178
+    .line 1179
     iget-object v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1179
+    .line 1180
     instance-of v2, v1, Lorg/telegram/ui/Cells/PhotoEditToolCell;
 
     if-eqz v2, :cond_0
@@ -4710,7 +4713,7 @@
 
     if-ne v2, v3, :cond_0
 
-    .line 1180
+    .line 1181
     check-cast v1, Lorg/telegram/ui/Cells/PhotoEditToolCell;
 
     sget v0, Lorg/telegram/messenger/R$string;->Enhance:I
@@ -4734,7 +4737,7 @@
 
     goto :goto_0
 
-    .line 1184
+    .line 1185
     :cond_1
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->eglThread:Lorg/telegram/ui/Components/FilterGLThread;
@@ -4743,7 +4746,7 @@
 
     const/4 v0, 0x1
 
-    .line 1185
+    .line 1186
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/FilterGLThread;->requestRender(Z)V
 
     :cond_2
@@ -4753,7 +4756,7 @@
 .method public shouldDrawCurvesPass()Z
     .locals 1
 
-    .line 1141
+    .line 1142
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;->shouldBeSkipped()Z
@@ -4768,7 +4771,7 @@
 .method public shouldShowOriginal()Z
     .locals 1
 
-    .line 1136
+    .line 1137
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->showOriginal:Z
 
     if-nez v0, :cond_1
@@ -4795,25 +4798,25 @@
 .method public shutdown()V
     .locals 3
 
-    .line 905
+    .line 906
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->ownsTextureView:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 906
+    .line 907
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->eglThread:Lorg/telegram/ui/Components/FilterGLThread;
 
     if-eqz v0, :cond_0
 
-    .line 907
+    .line 908
     invoke-virtual {v0}, Lorg/telegram/ui/Components/FilterGLThread;->shutdown()V
 
-    .line 908
+    .line 909
     iput-object v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->eglThread:Lorg/telegram/ui/Components/FilterGLThread;
 
-    .line 910
+    .line 911
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->textureView:Landroid/view/TextureView;
 
@@ -4823,7 +4826,7 @@
 
     goto :goto_0
 
-    .line 911
+    .line 912
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->textureView:Landroid/view/TextureView;
 
@@ -4831,26 +4834,26 @@
 
     if-eqz v2, :cond_3
 
-    .line 912
+    .line 913
     check-cast v0, Lorg/telegram/ui/Components/VideoEditTextureView;
 
-    .line 913
+    .line 914
     iget-object v2, p0, Lorg/telegram/ui/Components/PhotoFilterView;->lastState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     if-nez v2, :cond_2
 
-    .line 914
+    .line 915
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoEditTextureView;->setDelegate(Lorg/telegram/ui/Components/VideoEditTextureView$VideoEditTextureViewDelegate;)V
 
     goto :goto_0
 
-    .line 915
+    .line 916
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->eglThread:Lorg/telegram/ui/Components/FilterGLThread;
 
     if-eqz v0, :cond_3
 
-    .line 916
+    .line 917
     invoke-static {v2}, Lorg/telegram/ui/Components/FilterShaders;->getFilterShadersDelegate(Lorg/telegram/messenger/MediaController$SavedFilterState;)Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;
 
     move-result-object v1
@@ -4865,7 +4868,7 @@
 .method public switchMode()V
     .locals 6
 
-    .line 873
+    .line 874
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->selectedTool:I
 
     const/4 v1, 0x0
@@ -4874,27 +4877,27 @@
 
     if-nez v0, :cond_0
 
-    .line 874
+    .line 875
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurControl:Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 875
+    .line 876
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 876
+    .line 877
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curveLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 877
+    .line 878
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesControl:Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 879
+    .line 880
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
@@ -4906,37 +4909,37 @@
 
     if-ne v0, v3, :cond_2
 
-    .line 881
+    .line 882
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
-    .line 882
+    .line 883
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curveLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 883
+    .line 884
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesControl:Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 885
+    .line 886
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 886
+    .line 887
     iget v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurType:I
 
     if-eqz v0, :cond_1
 
-    .line 887
+    .line 888
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurControl:Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 889
+    .line 890
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/Components/PhotoFilterView;->updateSelectedBlurType()V
 
@@ -4947,32 +4950,32 @@
 
     if-ne v0, v4, :cond_4
 
-    .line 891
+    .line 892
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
-    .line 892
+    .line 893
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 893
+    .line 894
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurControl:Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 895
+    .line 896
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curveLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 896
+    .line 897
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesControl:Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 897
+    .line 898
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curvesToolValue:Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;
 
     iput v1, v0, Lorg/telegram/ui/Components/PhotoFilterView$CurvesToolValue;->activeType:I
@@ -4982,7 +4985,7 @@
     :goto_0
     if-ge v0, v2, :cond_4
 
-    .line 899
+    .line 900
     iget-object v4, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curveRadioButton:[Lorg/telegram/ui/Components/RadioButton;
 
     aget-object v4, v4, v0
@@ -5122,21 +5125,21 @@
 .method public updateUiBlurGradient(II)V
     .locals 1
 
-    .line 1500
+    .line 1501
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->eglThread:Lorg/telegram/ui/Components/FilterGLThread;
 
     if-eqz v0, :cond_0
 
-    .line 1501
+    .line 1502
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/FilterGLThread;->updateUiBlurGradient(II)V
 
     goto :goto_0
 
-    .line 1503
+    .line 1504
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->gradientTop:I
 
-    .line 1504
+    .line 1505
     iput p2, p0, Lorg/telegram/ui/Components/PhotoFilterView;->gradientBottom:I
 
     :goto_0

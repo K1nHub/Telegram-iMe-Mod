@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;II)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;Ljava/lang/Integer;)V
     .locals 0
 
-    .line 630
+    .line 657
     iput-object p3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$6;->val$bubbleX:Ljava/lang/Integer;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -35,15 +35,15 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 634
+    .line 660
     invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
-    .line 635
+    .line 661
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$6;->val$bubbleX:Ljava/lang/Integer;
 
     if-eqz p1, :cond_0
 
-    .line 636
+    .line 662
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1

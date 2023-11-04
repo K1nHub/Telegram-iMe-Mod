@@ -34,7 +34,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extensions/ObservableExtKt$flatMapSuccess$1\n+ 2 TonFragmentInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extensions/ObservableExtKt\n*L\n1#1,101:1\n120#2,7:102\n29#3,7:109\n*S KotlinDebug\n*F\n+ 1 TonFragmentInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor\n*L\n126#1:109,7\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extensions/ObservableExtKt$flatMapSuccess$1\n+ 2 TonFragmentInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extensions/ObservableExtKt\n*L\n1#1,101:1\n105#2,8:102\n29#3,7:110\n*S KotlinDebug\n*F\n+ 1 TonFragmentInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor\n*L\n112#1:110,7\n*E\n"
 .end annotation
 
 
@@ -58,7 +58,7 @@
 
 # virtual methods
 .method public final invoke(Lcom/iMe/storage/domain/model/Result;)Lio/reactivex/ObservableSource;
-    .locals 9
+    .locals 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -108,29 +108,34 @@
     .line 106
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/ton/ProductBuyTransactionParams;->getAmount()Ljava/math/BigInteger;
 
-    move-result-object p1
+    move-result-object v0
 
-    invoke-virtual {p1}, Ljava/math/BigInteger;->longValue()J
+    invoke-virtual {v0}, Ljava/math/BigInteger;->longValue()J
 
     move-result-wide v3
 
-    const/4 v5, 0x0
+    .line 107
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/ton/ProductBuyTransactionParams;->getSeqno()I
+
+    move-result v5
 
     const/4 v6, 0x0
 
-    const/16 v7, 0xc
+    const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    const/16 v8, 0x18
+
+    const/4 v9, 0x0
 
     .line 104
-    invoke-static/range {v1 .. v8}, Lcom/iMe/storage/domain/manager/ton/TonController$-CC;->sendTransaction$default(Lcom/iMe/storage/domain/manager/ton/TonController;Ljava/lang/String;JLcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;IILjava/lang/Object;)Lio/reactivex/Observable;
+    invoke-static/range {v1 .. v9}, Lcom/iMe/storage/domain/manager/ton/TonController$-CC;->sendTransaction$default(Lcom/iMe/storage/domain/manager/ton/TonController;Ljava/lang/String;JILcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;IILjava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object p1
 
     .line 29
-    new-instance v0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$buyProduct$lambda$9$lambda$8$$inlined$mapSuccess$1;
+    new-instance v0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$buyProduct$lambda$7$lambda$6$$inlined$mapSuccess$1;
 
-    invoke-direct {v0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$buyProduct$lambda$9$lambda$8$$inlined$mapSuccess$1;-><init>()V
+    invoke-direct {v0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$buyProduct$lambda$7$lambda$6$$inlined$mapSuccess$1;-><init>()V
 
     new-instance v1, Lcom/iMe/storage/domain/utils/extensions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment$$ExternalSyntheticLambda15;->f$0:Lorg/telegram/ui/VoIPFragment;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/VoIPFragment;->$r8$lambda$TtalD22nkGfzdnVYctO10266eo8(Lorg/telegram/ui/VoIPFragment;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/VoIPFragment;->$r8$lambda$NxIkpJeM5ZiAzrL_hhw0t6nKPEM(Lorg/telegram/ui/VoIPFragment;Landroid/view/View;)V
 
     return-void
 .end method

@@ -44,7 +44,7 @@ public final class FirebaseModuleKt {
             List emptyList3;
             List emptyList4;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C15911 c15911 = new Function2<Scope, ParametersHolder, FirebaseDynamicLinks>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.1
+            C15971 c15971 = new Function2<Scope, ParametersHolder, FirebaseDynamicLinks>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final FirebaseDynamicLinks invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -56,13 +56,13 @@ public final class FirebaseModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(FirebaseDynamicLinks.class), null, c15911, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(FirebaseDynamicLinks.class), null, c15971, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C15922 c15922 = new Function2<Scope, ParametersHolder, FirebaseRemoteConfig>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.2
+            C15982 c15982 = new Function2<Scope, ParametersHolder, FirebaseRemoteConfig>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final FirebaseRemoteConfig invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -72,13 +72,13 @@ public final class FirebaseModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(FirebaseRemoteConfig.class), null, c15922, kind, emptyList2));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(FirebaseRemoteConfig.class), null, c15982, kind, emptyList2));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
-            C15933 c15933 = new Function2<Scope, ParametersHolder, FirebaseAnalytics>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.3
+            C15993 c15993 = new Function2<Scope, ParametersHolder, FirebaseAnalytics>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final FirebaseAnalytics invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -88,13 +88,13 @@ public final class FirebaseModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(FirebaseAnalytics.class), null, c15933, kind, emptyList3));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(FirebaseAnalytics.class), null, c15993, kind, emptyList3));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);
             }
             new KoinDefinition(module, singleInstanceFactory3);
-            C15944 c15944 = new Function2<Scope, ParametersHolder, FirebaseApp>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.4
+            C16004 c16004 = new Function2<Scope, ParametersHolder, FirebaseApp>() { // from class: com.iMe.storage.data.di.module.FirebaseModuleKt$firebaseModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final FirebaseApp invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -104,7 +104,7 @@ public final class FirebaseModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(FirebaseApp.class), null, c15944, kind, emptyList4));
+            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(FirebaseApp.class), null, c16004, kind, emptyList4));
             module.indexPrimaryType(singleInstanceFactory4);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory4);

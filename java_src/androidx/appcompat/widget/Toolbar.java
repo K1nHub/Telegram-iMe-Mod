@@ -24,7 +24,7 @@ import android.window.OnBackInvokedDispatcher;
 import androidx.activity.OnBackPressedDispatcher$Api33Impl$$ExternalSyntheticLambda0;
 import androidx.appcompat.R$attr;
 import androidx.appcompat.R$styleable;
-import androidx.appcompat.app.AbstractC0019ActionBar;
+import androidx.appcompat.app.AbstractC0025ActionBar;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.view.CollapsibleActionView;
 import androidx.appcompat.view.SupportMenuInflater;
@@ -1252,8 +1252,8 @@ public class Toolbar extends ViewGroup implements MenuHost {
         if (layoutParams instanceof LayoutParams) {
             return new LayoutParams((LayoutParams) layoutParams);
         }
-        if (layoutParams instanceof AbstractC0019ActionBar.LayoutParams) {
-            return new LayoutParams((AbstractC0019ActionBar.LayoutParams) layoutParams);
+        if (layoutParams instanceof AbstractC0025ActionBar.LayoutParams) {
+            return new LayoutParams((AbstractC0025ActionBar.LayoutParams) layoutParams);
         }
         if (layoutParams instanceof ViewGroup.MarginLayoutParams) {
             return new LayoutParams((ViewGroup.MarginLayoutParams) layoutParams);
@@ -1388,7 +1388,7 @@ public class Toolbar extends ViewGroup implements MenuHost {
     }
 
     /* loaded from: classes.dex */
-    public static class LayoutParams extends AbstractC0019ActionBar.LayoutParams {
+    public static class LayoutParams extends AbstractC0025ActionBar.LayoutParams {
         int mViewType;
 
         public LayoutParams(Context context, AttributeSet attributeSet) {
@@ -1403,12 +1403,12 @@ public class Toolbar extends ViewGroup implements MenuHost {
         }
 
         public LayoutParams(LayoutParams layoutParams) {
-            super((AbstractC0019ActionBar.LayoutParams) layoutParams);
+            super((AbstractC0025ActionBar.LayoutParams) layoutParams);
             this.mViewType = 0;
             this.mViewType = layoutParams.mViewType;
         }
 
-        public LayoutParams(AbstractC0019ActionBar.LayoutParams layoutParams) {
+        public LayoutParams(AbstractC0025ActionBar.LayoutParams layoutParams) {
             super(layoutParams);
             this.mViewType = 0;
         }

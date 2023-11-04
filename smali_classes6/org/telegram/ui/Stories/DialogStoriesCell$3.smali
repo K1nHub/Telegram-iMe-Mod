@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell;Landroid/content/Context;)V
     .locals 0
 
-    .line 233
+    .line 234
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$3;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 236
+    .line 237
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$3;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->viewsDrawInParent:Ljava/util/ArrayList;
@@ -46,7 +46,7 @@
 
     move v1, v0
 
-    .line 237
+    .line 238
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -54,14 +54,14 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 238
+    .line 239
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
 
-    .line 239
+    .line 240
     invoke-virtual {p0, v2}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result v3
@@ -70,7 +70,7 @@
 
     const/4 v4, 0x1
 
-    .line 240
+    .line 241
     iput-boolean v4, v2, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->drawInParent:Z
 
     if-nez v3, :cond_0
@@ -82,11 +82,11 @@
     :cond_0
     move v5, v0
 
-    .line 241
+    .line 242
     :goto_1
     iput-boolean v5, v2, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isFirst:Z
 
-    .line 242
+    .line 243
     iget-object v5, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$3;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v5, v5, Lorg/telegram/ui/Stories/DialogStoriesCell;->miniItems:Ljava/util/ArrayList;
@@ -107,7 +107,7 @@
     :goto_2
     iput-boolean v4, v2, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isLast:Z
 
-    .line 243
+    .line 244
     iget-object v3, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$3;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v3, v3, Lorg/telegram/ui/Stories/DialogStoriesCell;->viewsDrawInParent:Ljava/util/ArrayList;
@@ -118,7 +118,7 @@
 
     goto :goto_0
 
-    .line 246
+    .line 247
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$3;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -128,7 +128,7 @@
 
     invoke-static {v2, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 247
+    .line 248
     :goto_3
     iget-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$3;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -140,7 +140,7 @@
 
     if-ge v0, v1, :cond_4
 
-    .line 248
+    .line 249
     iget-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$3;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/DialogStoriesCell;->viewsDrawInParent:Ljava/util/ArrayList;
@@ -151,12 +151,12 @@
 
     check-cast v1, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;
 
-    .line 249
+    .line 250
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v2
 
-    .line 250
+    .line 251
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getX()F
 
     move-result v3
@@ -167,7 +167,7 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 251
+    .line 252
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getAlpha()F
 
     move-result v3
@@ -180,7 +180,7 @@
 
     const/4 v3, 0x4
 
-    .line 252
+    .line 253
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -227,7 +227,7 @@
 
     invoke-virtual/range {v5 .. v11}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 254
+    .line 255
     :cond_3
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getScaleX()F
 
@@ -251,10 +251,10 @@
 
     invoke-virtual {p1, v3, v4, v5, v6}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 255
+    .line 256
     invoke-virtual {v1, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 256
+    .line 257
     invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     add-int/lit8 v0, v0, 0x1
@@ -284,10 +284,10 @@
 .method public onScrolled(II)V
     .locals 0
 
-    .line 262
+    .line 263
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->onScrolled(II)V
 
-    .line 263
+    .line 264
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$3;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$200(Lorg/telegram/ui/Stories/DialogStoriesCell;)Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -296,7 +296,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 264
+    .line 265
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$3;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$200(Lorg/telegram/ui/Stories/DialogStoriesCell;)Lorg/telegram/ui/Stories/recorder/HintView2;

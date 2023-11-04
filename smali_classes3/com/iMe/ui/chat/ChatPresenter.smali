@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChatPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatPresenter.kt\ncom/iMe/ui/chat/ChatPresenter\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extensions/ObservableExtKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,270:1\n16#2,7:271\n63#3,12:278\n106#3,12:290\n63#3,12:302\n63#3,12:314\n63#3,12:326\n*S KotlinDebug\n*F\n+ 1 ChatPresenter.kt\ncom/iMe/ui/chat/ChatPresenter\n*L\n67#1:271,7\n77#1:278,12\n97#1:290,12\n114#1:302,12\n147#1:314,12\n163#1:326,12\n*E\n"
+    value = "SMAP\nChatPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ChatPresenter.kt\ncom/iMe/ui/chat/ChatPresenter\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extensions/ObservableExtKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,272:1\n16#2,7:273\n63#3,12:280\n106#3,12:292\n63#3,12:304\n63#3,12:316\n63#3,12:328\n*S KotlinDebug\n*F\n+ 1 ChatPresenter.kt\ncom/iMe/ui/chat/ChatPresenter\n*L\n67#1:273,7\n77#1:280,12\n97#1:292,12\n114#1:304,12\n147#1:316,12\n163#1:328,12\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -162,7 +162,7 @@
 .end method
 
 .method private final sendReactionMessage(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;)V
-    .locals 19
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -287,59 +287,63 @@
 
     const/16 v17, 0x0
 
+    const/16 v18, 0x0
+
     move-wide v4, v8
 
     move-object/from16 v6, p4
 
     move-object v8, v1
 
-    move v9, v10
+    move-object v9, v10
 
     move v10, v11
 
-    move-object v11, v12
+    move v11, v12
 
-    move v12, v13
+    move-object v12, v13
 
     move v13, v14
 
     move v14, v15
 
-    move-object/from16 v15, v16
+    move/from16 v15, v16
 
     move-object/from16 v16, v17
 
+    move-object/from16 v17, v18
+
     .line 206
-    invoke-static/range {v2 .. v16}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingMedia(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;ZZLorg/telegram/messenger/MessageObject;ZIZLandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;)V
+    invoke-static/range {v2 .. v17}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingMedia(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;ZZLorg/telegram/messenger/MessageObject;ZIZLandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;)V
 
     goto/16 :goto_3
 
     :cond_4
     move-object/from16 v6, p3
 
-    .line 224
+    .line 225
     instance-of v3, v1, Ljava/lang/String;
 
     if-eqz v3, :cond_5
 
-    .line 225
+    .line 226
     iput-object v2, v0, Lcom/iMe/ui/chat/ChatPresenter;->messagesReaction:Ljava/lang/String;
 
-    .line 228
+    .line 229
     iget-object v2, v0, Lcom/iMe/ui/chat/ChatPresenter;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {v2}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
 
     move-result v2
 
-    .line 227
+    .line 228
     invoke-static {v2}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object v2
 
     new-array v3, v5, [Ljava/lang/String;
 
-    .line 230
+    .line 231
     check-cast v1, Ljava/lang/String;
 
     aput-object v1, v3, v4
@@ -352,7 +356,7 @@
 
     aput-object v1, v5, v4
 
-    .line 231
+    .line 232
     invoke-static {v5}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v4
@@ -375,41 +379,43 @@
 
     const/16 v17, 0x0
 
-    const/16 v18, 0x1
+    const/16 v18, 0x0
+
+    const/16 v19, 0x1
 
     move-object/from16 v6, p3
 
     move-object/from16 v10, p4
 
-    .line 226
-    invoke-static/range {v2 .. v18}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/messenger/MessageObject;ZILandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;Z)V
+    .line 227
+    invoke-static/range {v2 .. v19}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;Lorg/telegram/messenger/MessageObject;ZILandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;Z)V
 
     goto :goto_3
 
-    .line 248
+    .line 250
     :cond_5
     instance-of v3, v1, Lorg/telegram/messenger/MessageObject;
 
     if-eqz v3, :cond_6
 
-    .line 249
+    .line 251
     iput-object v2, v0, Lcom/iMe/ui/chat/ChatPresenter;->messagesReaction:Ljava/lang/String;
 
-    .line 252
+    .line 254
     iget-object v2, v0, Lcom/iMe/ui/chat/ChatPresenter;->telegramGateway:Lcom/iMe/storage/domain/gateway/TelegramGateway;
 
     invoke-interface {v2}, Lcom/iMe/storage/domain/gateway/TelegramGateway;->getSelectedAccountIndex()I
 
     move-result v2
 
-    .line 251
+    .line 253
     invoke-static {v2}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object v2
 
     new-array v3, v5, [Lorg/telegram/messenger/MessageObject;
 
-    .line 254
+    .line 256
     check-cast v1, Lorg/telegram/messenger/MessageObject;
 
     aput-object v1, v3, v4
@@ -452,8 +458,8 @@
 
     move v14, v15
 
-    .line 250
-    invoke-static/range {v2 .. v14}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingAudioDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/lang/CharSequence;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;ZILorg/telegram/messenger/MessageObject;Ljava/lang/String;Z)V
+    .line 252
+    invoke-static/range {v2 .. v14}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingAudioDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/lang/CharSequence;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;ZILorg/telegram/messenger/MessageObject;Ljava/lang/String;Z)V
 
     :cond_6
     :goto_3

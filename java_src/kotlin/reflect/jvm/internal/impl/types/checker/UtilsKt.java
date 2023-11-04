@@ -67,7 +67,7 @@ public final class UtilsKt {
                 }
                 throw new AssertionError("Type constructors should be equals!\nsubstitutedSuperType: " + debugInfo(constructor) + ", \n\nsupertype: " + debugInfo(constructor2) + " \n" + typeCheckingProcedureCallbacks.assertEqualTypeConstructors(constructor, constructor2));
             }
-            for (KotlinType immediateSupertype : constructor3.mo2047getSupertypes()) {
+            for (KotlinType immediateSupertype : constructor3.mo2052getSupertypes()) {
                 Intrinsics.checkNotNullExpressionValue(immediateSupertype, "immediateSupertype");
                 arrayDeque.add(new SubtypePathNode(immediateSupertype, subtypePathNode));
             }
@@ -84,9 +84,9 @@ public final class UtilsKt {
         debugInfo$lambda$1$unaryPlus("type: " + typeConstructor, sb);
         debugInfo$lambda$1$unaryPlus("hashCode: " + typeConstructor.hashCode(), sb);
         debugInfo$lambda$1$unaryPlus("javaClass: " + typeConstructor.getClass().getCanonicalName(), sb);
-        for (DeclarationDescriptor mo2046getDeclarationDescriptor = typeConstructor.mo2046getDeclarationDescriptor(); mo2046getDeclarationDescriptor != null; mo2046getDeclarationDescriptor = mo2046getDeclarationDescriptor.getContainingDeclaration()) {
-            debugInfo$lambda$1$unaryPlus("fqName: " + DescriptorRenderer.FQ_NAMES_IN_TYPES.render(mo2046getDeclarationDescriptor), sb);
-            debugInfo$lambda$1$unaryPlus("javaClass: " + mo2046getDeclarationDescriptor.getClass().getCanonicalName(), sb);
+        for (DeclarationDescriptor mo2051getDeclarationDescriptor = typeConstructor.mo2051getDeclarationDescriptor(); mo2051getDeclarationDescriptor != null; mo2051getDeclarationDescriptor = mo2051getDeclarationDescriptor.getContainingDeclaration()) {
+            debugInfo$lambda$1$unaryPlus("fqName: " + DescriptorRenderer.FQ_NAMES_IN_TYPES.render(mo2051getDeclarationDescriptor), sb);
+            debugInfo$lambda$1$unaryPlus("javaClass: " + mo2051getDeclarationDescriptor.getClass().getCanonicalName(), sb);
         }
         String sb2 = sb.toString();
         Intrinsics.checkNotNullExpressionValue(sb2, "StringBuilder().apply(builderAction).toString()");

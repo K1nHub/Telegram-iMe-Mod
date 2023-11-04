@@ -22,7 +22,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.utils.BitmapsCache;
-import org.telegram.p042ui.Components.RLottieDrawable;
+import org.telegram.p043ui.Components.RLottieDrawable;
 import p033j$.util.concurrent.ConcurrentHashMap;
 /* loaded from: classes4.dex */
 public class BitmapsCache {
@@ -42,7 +42,7 @@ public class BitmapsCache {
     private int frameIndex;
 
     /* renamed from: h */
-    int f1586h;
+    int f1588h;
     BitmapFactory.Options options;
     volatile boolean recycled;
     private final Cacheable source;
@@ -50,11 +50,11 @@ public class BitmapsCache {
     final boolean useSharedBuffers;
 
     /* renamed from: w */
-    int f1587w;
+    int f1589w;
     static ConcurrentHashMap<Thread, byte[]> sharedBuffers = new ConcurrentHashMap<>();
 
     /* renamed from: N */
-    private static final int f1585N = Utilities.clamp(Runtime.getRuntime().availableProcessors() - 2, 6, 1);
+    private static final int f1587N = Utilities.clamp(Runtime.getRuntime().availableProcessors() - 2, 6, 1);
     ArrayList<FrameOffset> frameOffsets = new ArrayList<>();
     private final Object mutex = new Object();
     public AtomicBoolean cancelled = new AtomicBoolean(false);
@@ -103,12 +103,12 @@ public class BitmapsCache {
         RandomAccessFile randomAccessFile;
         Throwable th;
         this.source = cacheable;
-        this.f1587w = i;
-        this.f1586h = i2;
+        this.f1589w = i;
+        this.f1588h = i2;
         this.compressQuality = cacheOptions.compressQuality;
         this.fileName = file.getName();
         if (bitmapCompressExecutor == null) {
-            int i3 = f1585N;
+            int i3 = f1587N;
             bitmapCompressExecutor = new ThreadPoolExecutor(i3, i3, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue());
         }
         File file2 = new File(FileLoader.checkDirectory(4), "acache");
@@ -127,7 +127,7 @@ public class BitmapsCache {
         sb.append(".pcache2");
         File file3 = new File(file2, sb.toString());
         this.file = file3;
-        this.useSharedBuffers = (i >= AndroidUtilities.m102dp(60) || i2 >= AndroidUtilities.m102dp(60)) ? false : z2;
+        this.useSharedBuffers = (i >= AndroidUtilities.m104dp(60) || i2 >= AndroidUtilities.m104dp(60)) ? false : z2;
         if (SharedConfig.getDevicePerformanceClass() >= 2) {
             this.fileExist = file3.exists();
             if (this.fileExist) {
@@ -336,7 +336,7 @@ public class BitmapsCache {
                     } catch (Throwable th) {
                         th = th;
                         randomAccessFile2 = randomAccessFile;
-                        FileLog.m96e(th, false);
+                        FileLog.m98e(th, false);
                         int i2 = this.tryCount + 1;
                         this.tryCount = i2;
                         if (i2 > 10) {
@@ -455,15 +455,15 @@ public class BitmapsCache {
         private int lastSize;
 
         private CacheGeneratorSharedTools() {
-            this.byteArrayOutputStream = new ImmutableByteArrayOutputStream[BitmapsCache.f1585N];
-            this.bitmap = new Bitmap[BitmapsCache.f1585N];
+            this.byteArrayOutputStream = new ImmutableByteArrayOutputStream[BitmapsCache.f1587N];
+            this.bitmap = new Bitmap[BitmapsCache.f1587N];
         }
 
         void allocate(int i, int i2) {
             int i3 = (i2 << 16) + i;
             boolean z = this.lastSize != i3;
             this.lastSize = i3;
-            for (int i4 = 0; i4 < BitmapsCache.f1585N; i4++) {
+            for (int i4 = 0; i4 < BitmapsCache.f1587N; i4++) {
                 if (z || this.bitmap[i4] == null) {
                     Bitmap[] bitmapArr = this.bitmap;
                     if (bitmapArr[i4] != null) {
@@ -494,7 +494,7 @@ public class BitmapsCache {
 
         void release() {
             final ArrayList arrayList = null;
-            for (int i = 0; i < BitmapsCache.f1585N; i++) {
+            for (int i = 0; i < BitmapsCache.f1587N; i++) {
                 if (this.bitmap[i] != null) {
                     if (arrayList == null) {
                         arrayList = new ArrayList();

@@ -10,6 +10,6 @@ public final class MsgAddressTlbCombinator extends TlbCombinator<MsgAddress> {
     public static final MsgAddressTlbCombinator INSTANCE = new MsgAddressTlbCombinator();
 
     private MsgAddressTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(MsgAddress.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(MsgAddressInt.class), MsgAddressInt.Companion.tlbCodec()), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(MsgAddressExt.class), MsgAddressExt.Companion.tlbCodec()));
+        super(Reflection.getOrCreateKotlinClass(MsgAddress.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(MsgAddressInt.class), MsgAddressInt.Companion.tlbCodec()), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(MsgAddressExt.class), MsgAddressExt.Companion.tlbCodec()));
     }
 }

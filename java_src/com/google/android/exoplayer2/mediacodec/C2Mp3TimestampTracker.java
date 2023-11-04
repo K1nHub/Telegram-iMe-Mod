@@ -37,7 +37,7 @@ final class C2Mp3TimestampTracker {
             this.seenInvalidMpegAudioHeader = true;
             this.processedFrames = 0L;
             this.anchorTimestampUs = decoderInputBuffer.timeUs;
-            Log.m1106w(TAG, "MPEG audio header is invalid.");
+            Log.m1107w(TAG, "MPEG audio header is invalid.");
             return decoderInputBuffer.timeUs;
         }
         long bufferTimestampUs = getBufferTimestampUs(format.sampleRate);

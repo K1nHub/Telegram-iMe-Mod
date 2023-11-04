@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x7206e458
-
-
 # instance fields
 .field public format:Ljava/lang/String;
 
@@ -14,16 +10,10 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 56846
+    .line 57609
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -34,7 +24,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 56853
+    .line 57616
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$account_Themes;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$account_Themes;
 
     move-result-object p1
@@ -45,17 +35,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 56857
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_getThemes;->constructor:I
+    const v0, 0x7206e458
 
+    .line 57620
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 56858
+    .line 57621
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_getThemes;->format:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 56859
+    .line 57622
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_getThemes;->hash:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V

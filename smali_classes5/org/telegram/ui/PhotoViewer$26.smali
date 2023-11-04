@@ -24,17 +24,17 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
     .locals 1
 
-    .line 6161
+    .line 6131
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$26;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/VideoTimelinePlayView;-><init>(Landroid/content/Context;)V
 
-    .line 6170
+    .line 6140
     new-instance p2, Landroid/graphics/Path;
 
     invoke-direct {p2}, Landroid/graphics/Path;-><init>()V
 
-    .line 6171
+    .line 6141
     new-instance p2, Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$18500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/BlurringShader$BlurManager;
@@ -63,13 +63,13 @@
 .method protected drawBlur(Landroid/graphics/Canvas;Landroid/graphics/RectF;)V
     .locals 9
 
-    .line 6180
+    .line 6150
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 6181
+    .line 6151
     invoke-virtual {p1, p2}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/RectF;)Z
 
-    .line 6182
+    .line 6152
     invoke-virtual {p0}, Landroid/view/View;->getX()F
 
     move-result p2
@@ -108,7 +108,7 @@
 
     invoke-virtual {p1, p2, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 6183
+    .line 6153
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$26;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iget-object v3, p0, Lorg/telegram/ui/PhotoViewer$26;->blur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
@@ -127,7 +127,7 @@
 
     invoke-static/range {v1 .. v8}, Lorg/telegram/ui/PhotoViewer;->access$18600(Lorg/telegram/ui/PhotoViewer;Landroid/graphics/Canvas;Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;IIZZZ)V
 
-    .line 6184
+    .line 6154
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -136,7 +136,7 @@
 .method public invalidate()V
     .locals 2
 
-    .line 6189
+    .line 6159
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->photoViewerBlur:Z
 
     if-eqz v0, :cond_1
@@ -174,7 +174,7 @@
     :cond_0
     return-void
 
-    .line 6192
+    .line 6162
     :cond_1
     invoke-super {p0}, Landroid/view/View;->invalidate()V
 
@@ -184,7 +184,7 @@
 .method public setTranslationY(F)V
     .locals 1
 
-    .line 6164
+    .line 6134
     invoke-virtual {p0}, Landroid/view/View;->getTranslationY()F
 
     move-result v0
@@ -193,10 +193,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 6165
+    .line 6135
     invoke-super {p0, p1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 6166
+    .line 6136
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$26;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$1400(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;

@@ -69,7 +69,7 @@ public final class HmEdgeIterator<T> extends AbstractIterator<Pair<? extends Bit
                     return null;
                 }
                 this.visited = true;
-                return TuplesKt.m144to(this.prefix, getNode());
+                return TuplesKt.m146to(this.prefix, getNode());
             }
         }
 
@@ -105,14 +105,14 @@ public final class HmEdgeIterator<T> extends AbstractIterator<Pair<? extends Bit
                     beginCell.storeBits(this.prefix);
                     beginCell.storeBit(true);
                     beginCell.storeBits(getNode().getRight().getValue().getLabel().toBitString());
-                    return TuplesKt.m144to(beginCell.getBits().toBitString(), getNode().getRight().getValue().getNode());
+                    return TuplesKt.m146to(beginCell.getBits().toBitString(), getNode().getRight().getValue().getNode());
                 }
                 this.leftVisited = true;
                 CellBuilder beginCell2 = CellBuilder.Companion.beginCell();
                 beginCell2.storeBits(this.prefix);
                 beginCell2.storeBit(false);
                 beginCell2.storeBits(getNode().getLeft().getValue().getLabel().toBitString());
-                return TuplesKt.m144to(beginCell2.getBits().toBitString(), getNode().getLeft().getValue().getNode());
+                return TuplesKt.m146to(beginCell2.getBits().toBitString(), getNode().getLeft().getValue().getNode());
             }
         }
     }
@@ -140,7 +140,7 @@ public final class HmEdgeIterator<T> extends AbstractIterator<Pair<? extends Bit
                 BitString component1 = step.component1();
                 HashMapNode<T> component2 = step.component2();
                 if (component2 instanceof HmnLeaf) {
-                    return TuplesKt.m144to(component1, ((HmnLeaf) component2).getValue());
+                    return TuplesKt.m146to(component1, ((HmnLeaf) component2).getValue());
                 }
                 addState(component1, component2);
             }

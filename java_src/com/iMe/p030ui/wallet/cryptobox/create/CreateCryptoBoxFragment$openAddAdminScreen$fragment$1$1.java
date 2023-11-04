@@ -2,8 +2,8 @@ package com.iMe.p030ui.wallet.cryptobox.create;
 
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ChatRightsEditActivity;
-import org.telegram.p042ui.Components.BulletinFactory;
+import org.telegram.p043ui.ChatRightsEditActivity;
+import org.telegram.p043ui.Components.BulletinFactory;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$TL_chatAdminRights;
 import org.telegram.tgnet.TLRPC$TL_chatBannedRights;
@@ -17,7 +17,7 @@ public final class CreateCryptoBoxFragment$openAddAdminScreen$fragment$1$1 imple
     final /* synthetic */ long $walletBotId;
     final /* synthetic */ CreateCryptoBoxFragment this$0;
 
-    @Override // org.telegram.p042ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
+    @Override // org.telegram.p043ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
     public void didChangeOwner(TLRPC$User tLRPC$User) {
     }
 
@@ -29,7 +29,7 @@ public final class CreateCryptoBoxFragment$openAddAdminScreen$fragment$1$1 imple
         this.$chat = tLRPC$Chat;
     }
 
-    @Override // org.telegram.p042ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
+    @Override // org.telegram.p043ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
     public void didSetRights(int i, TLRPC$TL_chatAdminRights tLRPC$TL_chatAdminRights, TLRPC$TL_chatBannedRights tLRPC$TL_chatBannedRights, String str) {
         CreateCryptoBoxPresenter presenter;
         final TLRPC$User user = this.$this_apply.getMessagesController().getUser(Long.valueOf(this.$walletBotId));

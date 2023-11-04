@@ -60,7 +60,7 @@
     return-void
 .end method
 
-.method public synthetic b(Lj$/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
+.method public synthetic andThen(Lj$/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
     .locals 1
 
     iget-object v0, p0, Lj$/wrappers/q;->a:Ljava/util/function/BiConsumer;

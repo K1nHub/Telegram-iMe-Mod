@@ -1,7 +1,6 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_authorization extends TLObject {
-    public static int constructor = -1392388579;
     public int api_id;
     public String app_name;
     public String app_version;
@@ -16,7 +15,7 @@ public class TLRPC$TL_authorization extends TLObject {
     public long hash;
 
     /* renamed from: ip */
-    public String f1637ip;
+    public String f1638ip;
     public boolean official_app;
     public boolean password_pending;
     public String platform;
@@ -25,7 +24,7 @@ public class TLRPC$TL_authorization extends TLObject {
     public boolean unconfirmed;
 
     public static TLRPC$TL_authorization TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
-        if (constructor != i) {
+        if (-1392388579 != i) {
             if (z) {
                 throw new RuntimeException(String.format("can't parse magic %x in TL_authorization", Integer.valueOf(i)));
             }
@@ -55,14 +54,14 @@ public class TLRPC$TL_authorization extends TLObject {
         this.app_version = abstractSerializedData.readString(z);
         this.date_created = abstractSerializedData.readInt32(z);
         this.date_active = abstractSerializedData.readInt32(z);
-        this.f1637ip = abstractSerializedData.readString(z);
+        this.f1638ip = abstractSerializedData.readString(z);
         this.country = abstractSerializedData.readString(z);
         this.region = abstractSerializedData.readString(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-1392388579);
         int i = this.current ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         int i2 = this.official_app ? i | 2 : i & (-3);
@@ -85,7 +84,7 @@ public class TLRPC$TL_authorization extends TLObject {
         abstractSerializedData.writeString(this.app_version);
         abstractSerializedData.writeInt32(this.date_created);
         abstractSerializedData.writeInt32(this.date_active);
-        abstractSerializedData.writeString(this.f1637ip);
+        abstractSerializedData.writeString(this.f1638ip);
         abstractSerializedData.writeString(this.country);
         abstractSerializedData.writeString(this.region);
     }

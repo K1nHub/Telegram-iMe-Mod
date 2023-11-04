@@ -7,12 +7,12 @@ public class Joiner {
     private final String separator;
 
     /* renamed from: on */
-    public static Joiner m1057on(String str) {
+    public static Joiner m1058on(String str) {
         return new Joiner(str);
     }
 
     /* renamed from: on */
-    public static Joiner m1058on(char c) {
+    public static Joiner m1059on(char c) {
         return new Joiner(String.valueOf(c));
     }
 

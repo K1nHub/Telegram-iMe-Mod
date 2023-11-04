@@ -36,7 +36,7 @@ public final class AnnotationQualifiersFqNamesKt {
         DEFAULT_JSPECIFY_APPLICABILITY = listOf;
         FqName jspecify_old_null_marked = JvmAnnotationNamesKt.getJSPECIFY_OLD_NULL_MARKED();
         NullabilityQualifier nullabilityQualifier = NullabilityQualifier.NOT_NULL;
-        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m144to(jspecify_old_null_marked, new JavaDefaultQualifiers(new NullabilityQualifierWithMigrationStatus(nullabilityQualifier, false, 2, null), listOf, false)), TuplesKt.m144to(JvmAnnotationNamesKt.getJSPECIFY_NULL_MARKED(), new JavaDefaultQualifiers(new NullabilityQualifierWithMigrationStatus(nullabilityQualifier, false, 2, null), listOf, false)));
+        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m146to(jspecify_old_null_marked, new JavaDefaultQualifiers(new NullabilityQualifierWithMigrationStatus(nullabilityQualifier, false, 2, null), listOf, false)), TuplesKt.m146to(JvmAnnotationNamesKt.getJSPECIFY_NULL_MARKED(), new JavaDefaultQualifiers(new NullabilityQualifierWithMigrationStatus(nullabilityQualifier, false, 2, null), listOf, false)));
         JSPECIFY_DEFAULT_ANNOTATIONS = mapOf;
         FqName fqName = new FqName("javax.annotation.ParametersAreNullableByDefault");
         NullabilityQualifierWithMigrationStatus nullabilityQualifierWithMigrationStatus = new NullabilityQualifierWithMigrationStatus(NullabilityQualifier.NULLABLE, false, 2, null);
@@ -44,7 +44,7 @@ public final class AnnotationQualifiersFqNamesKt {
         FqName fqName2 = new FqName("javax.annotation.ParametersAreNonnullByDefault");
         NullabilityQualifierWithMigrationStatus nullabilityQualifierWithMigrationStatus2 = new NullabilityQualifierWithMigrationStatus(nullabilityQualifier, false, 2, null);
         listOf3 = CollectionsKt__CollectionsJVMKt.listOf(annotationQualifierApplicabilityType);
-        mapOf2 = MapsKt__MapsKt.mapOf(TuplesKt.m144to(fqName, new JavaDefaultQualifiers(nullabilityQualifierWithMigrationStatus, listOf2, false, 4, null)), TuplesKt.m144to(fqName2, new JavaDefaultQualifiers(nullabilityQualifierWithMigrationStatus2, listOf3, false, 4, null)));
+        mapOf2 = MapsKt__MapsKt.mapOf(TuplesKt.m146to(fqName, new JavaDefaultQualifiers(nullabilityQualifierWithMigrationStatus, listOf2, false, 4, null)), TuplesKt.m146to(fqName2, new JavaDefaultQualifiers(nullabilityQualifierWithMigrationStatus2, listOf3, false, 4, null)));
         plus = MapsKt__MapsKt.plus(mapOf2, mapOf);
         BUILT_IN_TYPE_QUALIFIER_DEFAULT_ANNOTATIONS = plus;
         of = SetsKt__SetsKt.setOf((Object[]) new FqName[]{JvmAnnotationNamesKt.getJAVAX_NONNULL_ANNOTATION(), JvmAnnotationNamesKt.getJAVAX_CHECKFORNULL_ANNOTATION()});

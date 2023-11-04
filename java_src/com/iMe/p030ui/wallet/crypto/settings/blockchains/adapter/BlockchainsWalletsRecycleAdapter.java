@@ -10,7 +10,7 @@ import com.iMe.p030ui.adapter.provider.SectionProvider;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* compiled from: BlockchainsWalletsRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.adapter.BlockchainsWalletsRecycleAdapter */
 /* loaded from: classes3.dex */
@@ -21,7 +21,7 @@ public final class BlockchainsWalletsRecycleAdapter extends BaseNodeAdapter<Base
         Intrinsics.checkNotNullParameter(blockchainManagementWalletProvider, "blockchainManagementWalletProvider");
         Intrinsics.checkNotNullParameter(blockchainManagementActionButtonProvider, "blockchainManagementActionButtonProvider");
         Intrinsics.checkNotNullParameter(sectionProvider, "sectionProvider");
-        addChildClickViewIds(C3630R.C3633id.image_info);
+        addChildClickViewIds(C3634R.C3637id.image_info);
         addItemProvider(BaseQuickAdapterExtKt.asItem(blockchainManagementWalletProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(blockchainManagementActionButtonProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(sectionProvider));

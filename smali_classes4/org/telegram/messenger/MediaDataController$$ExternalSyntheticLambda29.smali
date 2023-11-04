@@ -87,7 +87,7 @@
 
     iget-object v11, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda29;->f$10:Ljava/lang/Runnable;
 
-    invoke-static/range {v0 .. v11}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$tmUDPE-uHCvO0C42BLMtfP0mhvY(Lorg/telegram/messenger/MediaDataController;ILandroidx/collection/LongSparseArray;Ljava/util/HashMap;Ljava/util/ArrayList;JILandroidx/collection/LongSparseArray;Ljava/util/HashMap;Landroidx/collection/LongSparseArray;Ljava/lang/Runnable;)V
+    invoke-static/range {v0 .. v11}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$ySWEOQ61rTQU_bda7V4zmIuHs3w(Lorg/telegram/messenger/MediaDataController;ILandroidx/collection/LongSparseArray;Ljava/util/HashMap;Ljava/util/ArrayList;JILandroidx/collection/LongSparseArray;Ljava/util/HashMap;Landroidx/collection/LongSparseArray;Ljava/lang/Runnable;)V
 
     return-void
 .end method

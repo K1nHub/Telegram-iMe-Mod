@@ -24,12 +24,12 @@
 .method public constructor <init>(Lorg/telegram/ui/ChatLinkActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 846
+    .line 852
     iput-object p1, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 847
+    .line 853
     iput-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -40,7 +40,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 858
+    .line 864
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatLinkActivity;->access$1300(Lorg/telegram/ui/ChatLinkActivity;)Z
@@ -61,7 +61,7 @@
 
     return v0
 
-    .line 861
+    .line 867
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
@@ -75,7 +75,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 1012
+    .line 1018
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatLinkActivity;->access$2400(Lorg/telegram/ui/ChatLinkActivity;)I
@@ -88,7 +88,7 @@
 
     return p1
 
-    .line 1014
+    .line 1020
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
@@ -108,7 +108,7 @@
 
     goto :goto_0
 
-    .line 1016
+    .line 1022
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
@@ -130,7 +130,7 @@
 
     return p1
 
-    .line 1018
+    .line 1024
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
@@ -159,7 +159,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 852
+    .line 858
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -188,7 +188,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 9
 
-    .line 967
+    .line 973
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -211,13 +211,13 @@
 
     goto/16 :goto_1
 
-    .line 986
+    .line 992
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatTextCell;
 
-    .line 987
+    .line 993
     iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatLinkActivity;->access$1000(Lorg/telegram/ui/ChatLinkActivity;)Z
@@ -226,7 +226,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 988
+    .line 994
     iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatLinkActivity;->access$1100(Lorg/telegram/ui/ChatLinkActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -239,12 +239,12 @@
 
     if-eqz p2, :cond_1
 
-    .line 989
+    .line 995
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     invoke-virtual {p1, p2, p2}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(II)V
 
-    .line 990
+    .line 996
     sget p2, Lorg/telegram/messenger/R$string;->DiscussionUnlinkGroup:I
 
     const-string v0, "DiscussionUnlinkGroup"
@@ -259,7 +259,7 @@
 
     goto/16 :goto_1
 
-    .line 992
+    .line 998
     :cond_1
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueIcon:I
 
@@ -267,7 +267,7 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(II)V
 
-    .line 993
+    .line 999
     sget p2, Lorg/telegram/messenger/R$string;->DiscussionCreateGroup:I
 
     const-string v0, "DiscussionCreateGroup"
@@ -282,13 +282,13 @@
 
     goto/16 :goto_1
 
-    .line 996
+    .line 1002
     :cond_2
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     invoke-virtual {p1, p2, p2}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(II)V
 
-    .line 997
+    .line 1003
     sget p2, Lorg/telegram/messenger/R$string;->DiscussionUnlinkChannel:I
 
     const-string v0, "DiscussionUnlinkChannel"
@@ -303,13 +303,13 @@
 
     goto/16 :goto_1
 
-    .line 976
+    .line 982
     :cond_3
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 977
+    .line 983
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatLinkActivity;->access$2300(Lorg/telegram/ui/ChatLinkActivity;)I
@@ -318,7 +318,7 @@
 
     if-ne p2, v0, :cond_9
 
-    .line 978
+    .line 984
     iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChatLinkActivity;->access$1000(Lorg/telegram/ui/ChatLinkActivity;)Z
@@ -327,7 +327,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 979
+    .line 985
     sget p2, Lorg/telegram/messenger/R$string;->DiscussionChannelHelp2:I
 
     const-string v0, "DiscussionChannelHelp2"
@@ -340,7 +340,7 @@
 
     goto :goto_1
 
-    .line 981
+    .line 987
     :cond_4
     sget p2, Lorg/telegram/messenger/R$string;->DiscussionGroupHelp2:I
 
@@ -354,20 +354,20 @@
 
     goto :goto_1
 
-    .line 969
+    .line 975
     :cond_5
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
-    .line 970
+    .line 976
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 971
+    .line 977
     iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatLinkActivity;->access$1200(Lorg/telegram/ui/ChatLinkActivity;)Ljava/util/ArrayList;
@@ -388,7 +388,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 973
+    .line 979
     invoke-static {v0}, Lorg/telegram/messenger/ChatObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$Chat;)Ljava/lang/String;
 
     move-result-object v6
@@ -471,7 +471,7 @@
 
     if-eq p2, v0, :cond_0
 
-    .line 959
+    .line 965
     new-instance p1, Lorg/telegram/ui/ChatLinkActivity$HintInnerCell;
 
     iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
@@ -482,7 +482,7 @@
 
     goto :goto_1
 
-    .line 881
+    .line 887
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
@@ -513,7 +513,7 @@
 
     move-result-object p1
 
-    .line 882
+    .line 888
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
@@ -529,7 +529,7 @@
 
     goto :goto_1
 
-    .line 877
+    .line 883
     :cond_2
     new-instance p1, Lorg/telegram/ui/Cells/ManageChatTextCell;
 
@@ -537,7 +537,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/ManageChatTextCell;-><init>(Landroid/content/Context;)V
 
-    .line 878
+    .line 884
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -548,7 +548,7 @@
 
     goto :goto_1
 
-    .line 873
+    .line 879
     :cond_3
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -556,7 +556,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;-><init>(Landroid/content/Context;)V
 
-    .line 874
+    .line 880
     iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
@@ -571,7 +571,7 @@
 
     goto :goto_1
 
-    .line 869
+    .line 875
     :cond_4
     new-instance p2, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
@@ -581,7 +581,7 @@
 
     invoke-direct {p2, v1, v2, v0, p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;-><init>(Landroid/content/Context;IIZ)V
 
-    .line 870
+    .line 876
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -592,7 +592,7 @@
 
     move-object p1, p2
 
-    .line 962
+    .line 968
     :goto_1
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -604,14 +604,14 @@
 .method public onViewRecycled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 1005
+    .line 1011
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     if-eqz v0, :cond_0
 
-    .line 1006
+    .line 1012
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;->recycle()V

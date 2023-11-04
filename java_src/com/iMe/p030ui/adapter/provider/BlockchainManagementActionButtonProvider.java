@@ -15,12 +15,12 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Cells.TextCell;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.TextCell;
 /* compiled from: BlockchainManagementActionButtonProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.BlockchainManagementActionButtonProvider */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class BlockchainManagementActionButtonProvider extends BaseNodeProvider<BlockchainManagementItem.ActionButton> {
     private final Lazy itemElevation$delegate;
     private final int itemViewType;
@@ -36,7 +36,7 @@ public final class BlockchainManagementActionButtonProvider extends BaseNodeProv
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.BLOCKCHAIN_ACTION_BUTTON;
-        this.layoutId = C3630R.layout.fork_recycle_item_blockchain_management_action_button;
+        this.layoutId = C3634R.layout.fork_recycle_item_blockchain_management_action_button;
         lazy = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.adapter.provider.BlockchainManagementActionButtonProvider$itemElevation$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -46,7 +46,7 @@ public final class BlockchainManagementActionButtonProvider extends BaseNodeProv
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(BlockchainManagementActionButtonProvider.this.getContext().getResources().getDimension(C3630R.dimen.wallet_card_elevation));
+                return Float.valueOf(BlockchainManagementActionButtonProvider.this.getContext().getResources().getDimension(C3634R.dimen.wallet_card_elevation));
             }
         });
         this.itemElevation$delegate = lazy;
@@ -71,7 +71,7 @@ public final class BlockchainManagementActionButtonProvider extends BaseNodeProv
     public void convert(final BaseViewHolder helper, final BlockchainManagementItem.ActionButton item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3630R.C3633id.view_text_cell;
+        int i = C3634R.C3637id.view_text_cell;
         BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setRippleForeground(BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, i, Theme.key_windowBackgroundWhite), i, false), i, new Function1<TextCell, Unit>() { // from class: com.iMe.ui.adapter.provider.BlockchainManagementActionButtonProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

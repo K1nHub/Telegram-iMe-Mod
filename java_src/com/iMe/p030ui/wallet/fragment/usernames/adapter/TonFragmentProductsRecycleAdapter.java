@@ -14,10 +14,10 @@ import com.iMe.p030ui.adapter.provider.TonFragmentProductProvider;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* compiled from: TonFragmentProductsRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.fragment.usernames.adapter.TonFragmentProductsRecycleAdapter */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class TonFragmentProductsRecycleAdapter extends BaseNodeAdapter<BaseNode> {
     private final GlobalStateProvider globalStateProvider;
 
@@ -33,7 +33,7 @@ public final class TonFragmentProductsRecycleAdapter extends BaseNodeAdapter<Bas
         Intrinsics.checkNotNullParameter(tonFragmentProductProvider, "tonFragmentProductProvider");
         Intrinsics.checkNotNullParameter(globalStateProvider, "globalStateProvider");
         this.globalStateProvider = globalStateProvider;
-        addChildClickViewIds(C3630R.C3633id.image_order);
+        addChildClickViewIds(C3634R.C3637id.image_order);
         addItemProvider(BaseQuickAdapterExtKt.asItem(animatedHeaderProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(sortingListHeaderProvider));
         addItemProvider(BaseQuickAdapterExtKt.asItem(tonFragmentProductProvider));

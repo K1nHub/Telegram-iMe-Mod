@@ -5,27 +5,21 @@
 .implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda161;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda161;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda161;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda161;->INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda161;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$KeyboardButton;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda161;->f$0:Lorg/telegram/ui/ChatActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda161;->f$1:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
 
     return-void
 .end method
@@ -33,9 +27,13 @@
 
 # virtual methods
 .method public final invoke()V
-    .locals 0
+    .locals 2
 
-    invoke-static {}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$iHaLQ0LcGkEhLPIP-xGLr6LclGQ()V
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda161;->f$0:Lorg/telegram/ui/ChatActivity;
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda161;->f$1:Lorg/telegram/tgnet/TLRPC$KeyboardButton;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$EezAZfAMK6F0J0LtJYUVh8C8_kQ(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$KeyboardButton;)V
 
     return-void
 .end method

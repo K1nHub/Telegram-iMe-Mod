@@ -49,17 +49,17 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentFragmentProductsBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.C3702ActionBar;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
 /* compiled from: FragmentUsernamesFragment.kt */
 /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class FragmentUsernamesFragment extends WalletAuthBaseFragment implements FragmentUsernamesView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(FragmentUsernamesFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/fragment/usernames/FragmentUsernamesPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(FragmentUsernamesFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentFragmentProductsBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -71,7 +71,7 @@ public final class FragmentUsernamesFragment extends WalletAuthBaseFragment impl
         return Companion.newInstance();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return true;
     }
@@ -202,7 +202,7 @@ public final class FragmentUsernamesFragment extends WalletAuthBaseFragment impl
 
     @Override // com.iMe.p030ui.wallet.fragment.usernames.FragmentUsernamesView
     public void showActionSuccess() {
-        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3630R.string.cryptobox_create_success_title), getResourceManager().getString(C3630R.string.fragment_usernames_buy_success_description), getResourceManager().getString(C3630R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesFragment$$ExternalSyntheticLambda5
+        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3634R.string.cryptobox_create_success_title), getResourceManager().getString(C3634R.string.fragment_usernames_buy_success_description), getResourceManager().getString(C3634R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesFragment$$ExternalSyntheticLambda5
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 FragmentUsernamesFragment.showActionSuccess$lambda$1(FragmentUsernamesFragment.this);
@@ -219,7 +219,7 @@ public final class FragmentUsernamesFragment extends WalletAuthBaseFragment impl
     @Override // com.iMe.p030ui.wallet.fragment.usernames.FragmentUsernamesView
     public void showActionError(String message) {
         Intrinsics.checkNotNullParameter(message, "message");
-        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3630R.string.common_error), message, getResourceManager().getString(C3630R.string.common_ok), null, 8, null);
+        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3634R.string.common_error), message, getResourceManager().getString(C3634R.string.common_ok), null, 8, null);
     }
 
     @Override // com.iMe.p030ui.wallet.fragment.usernames.FragmentUsernamesView
@@ -265,16 +265,16 @@ public final class FragmentUsernamesFragment extends WalletAuthBaseFragment impl
         BaseQuickAdapter.setDiffNewData$default(getProductsRecycleAdapter(), items, null, 2, null);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, Theme.key_actionBarDefaultSelector), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesFragment$$ExternalSyntheticLambda7
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 FragmentUsernamesFragment.getThemeDescriptions$lambda$4(FragmentUsernamesFragment.this);
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -290,27 +290,27 @@ public final class FragmentUsernamesFragment extends WalletAuthBaseFragment impl
     }
 
     private final void setupActionBar() {
-        C3702ActionBar c3702ActionBar = this.actionBar;
-        c3702ActionBar.setBackButtonImage(C3630R.C3632drawable.ic_ab_back);
-        c3702ActionBar.setTitle(getResourceManager().getString(C3630R.string.fragment_usernames_title));
-        c3702ActionBar.setAllowOverlayTitle(true);
-        c3702ActionBar.setActionBarMenuOnItemClick(new C3702ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesFragment$setupActionBar$1$1
-            @Override // org.telegram.p042ui.ActionBar.C3702ActionBar.ActionBarMenuOnItemClick
+        C3706ActionBar c3706ActionBar = this.actionBar;
+        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.fragment_usernames_title));
+        c3706ActionBar.setAllowOverlayTitle(true);
+        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     FragmentUsernamesFragment.this.finishFragment();
                 }
             }
         });
-        ActionBarMenuItem actionBarMenuItemSearchListener = c3702ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3630R.C3632drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesFragment$setupActionBar$1$2
-            @Override // org.telegram.p042ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
+        ActionBarMenuItem actionBarMenuItemSearchListener = c3706ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3634R.C3636drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchCollapse() {
                 FragmentUsernamesPresenter presenter;
                 presenter = FragmentUsernamesFragment.this.getPresenter();
                 presenter.onQueryUpdate("");
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onTextChanged(EditText editText) {
                 FragmentUsernamesPresenter presenter;
                 Intrinsics.checkNotNullParameter(editText, "editText");
@@ -321,8 +321,8 @@ public final class FragmentUsernamesFragment extends WalletAuthBaseFragment impl
         EditTextBoldCursor searchField = actionBarMenuItemSearchListener.getSearchField();
         searchField.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(32)});
         searchField.setImeOptions(Integer.MIN_VALUE);
-        actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3630R.string.fragment_usernames_search_hint));
-        actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3630R.string.Search));
+        actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3634R.string.fragment_usernames_search_hint));
+        actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3634R.string.Search));
     }
 
     private final void setupColors() {
@@ -376,7 +376,7 @@ public final class FragmentUsernamesFragment extends WalletAuthBaseFragment impl
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
-        if (view.getId() == C3630R.C3633id.image_order) {
+        if (view.getId() == C3634R.C3637id.image_order) {
             this$0.getPresenter().onSelectSortingTypeClick();
         }
     }
@@ -386,7 +386,7 @@ public final class FragmentUsernamesFragment extends WalletAuthBaseFragment impl
         TonFragmentProductsRecycleAdapter productsRecycleAdapter = getProductsRecycleAdapter();
         GlobalStateProvider globalStateProvider = productsRecycleAdapter.getGlobalStateProvider();
         globalStateProvider.setWhiteBackground(true);
-        globalStateProvider.setCustomElevation(recyclerView.getResources().getDimension(C3630R.dimen.wallet_card_elevation));
+        globalStateProvider.setCustomElevation(recyclerView.getResources().getDimension(C3634R.dimen.wallet_card_elevation));
         globalStateProvider.setOnRetryButtonClickAction(new Function0<Unit>() { // from class: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesFragment$setupRecycleView$1$1$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -414,7 +414,7 @@ public final class FragmentUsernamesFragment extends WalletAuthBaseFragment impl
 
     /* compiled from: FragmentUsernamesFragment.kt */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

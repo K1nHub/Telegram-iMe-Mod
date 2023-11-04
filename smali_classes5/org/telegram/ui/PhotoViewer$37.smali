@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/animation/ValueAnimator;F)V
     .locals 0
 
-    .line 7758
+    .line 7743
     iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$37;->val$valueAnimator:Landroid/animation/ValueAnimator;
 
     iput p3, p0, Lorg/telegram/ui/PhotoViewer$37;->val$scale:F
@@ -39,7 +39,7 @@
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 6
 
-    .line 7761
+    .line 7746
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3

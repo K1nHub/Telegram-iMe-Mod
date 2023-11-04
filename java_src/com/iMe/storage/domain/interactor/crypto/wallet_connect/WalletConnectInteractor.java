@@ -27,27 +27,27 @@ public final class WalletConnectInteractor {
 
     public final Observable<Result<WalletConnectProcessedTransaction>> getWalletConnectParamsForCryptoTransaction(WalletConnectTransaction transaction) {
         Intrinsics.checkNotNullParameter(transaction, "transaction");
-        Observable<Result<WalletConnectProcessedTransaction>> subscribeOn = this.walletConnectRepository.getWalletConnectParamsForCryptoTransaction(transaction).startWith((Observable<Result<WalletConnectProcessedTransaction>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<WalletConnectProcessedTransaction>> subscribeOn = this.walletConnectRepository.getWalletConnectParamsForCryptoTransaction(transaction).startWith((Observable<Result<WalletConnectProcessedTransaction>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletConnectRepository\n…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<String>> sendWalletConnectCryptoTransaction(WalletConnectTransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable<Result<String>> subscribeOn = this.walletConnectRepository.sendWalletConnectCryptoTransaction(args).startWith((Observable<Result<String>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<String>> subscribeOn = this.walletConnectRepository.sendWalletConnectCryptoTransaction(args).startWith((Observable<Result<String>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletConnectRepository\n…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<String>> signWalletConnectCryptoTransaction(WalletConnectTransactionArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable<Result<String>> subscribeOn = this.walletConnectRepository.signWalletConnectCryptoTransaction(args).startWith((Observable<Result<String>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<String>> subscribeOn = this.walletConnectRepository.signWalletConnectCryptoTransaction(args).startWith((Observable<Result<String>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletConnectRepository\n…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Flowable<Result<List<WCSessionStoreItem>>> getWalletConnectSavedSessions() {
-        Flowable<Result<List<WCSessionStoreItem>>> subscribeOn = this.walletConnectRepository.getWalletConnectSavedSessions().subscribeOn(this.schedulersProvider.mo1010io());
+        Flowable<Result<List<WCSessionStoreItem>>> subscribeOn = this.walletConnectRepository.getWalletConnectSavedSessions().subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletConnectRepository\n…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -60,20 +60,20 @@ public final class WalletConnectInteractor {
 
     public final Completable insertWalletConnectSession(WCSessionStoreItem session) {
         Intrinsics.checkNotNullParameter(session, "session");
-        Completable subscribeOn = this.walletConnectRepository.insertWalletConnectSession(session).subscribeOn(this.schedulersProvider.mo1010io());
+        Completable subscribeOn = this.walletConnectRepository.insertWalletConnectSession(session).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletConnectRepository\n…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Completable deleteAllWalletConnectSessions() {
-        Completable subscribeOn = this.walletConnectRepository.deleteAllWalletConnectSessions().subscribeOn(this.schedulersProvider.mo1010io());
+        Completable subscribeOn = this.walletConnectRepository.deleteAllWalletConnectSessions().subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletConnectRepository\n…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Completable deleteWalletConnectSession(String sessionKey) {
         Intrinsics.checkNotNullParameter(sessionKey, "sessionKey");
-        Completable subscribeOn = this.walletConnectRepository.deleteWalletConnectSession(sessionKey).subscribeOn(this.schedulersProvider.mo1010io());
+        Completable subscribeOn = this.walletConnectRepository.deleteWalletConnectSession(sessionKey).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "walletConnectRepository\n…(schedulersProvider.io())");
         return subscribeOn;
     }

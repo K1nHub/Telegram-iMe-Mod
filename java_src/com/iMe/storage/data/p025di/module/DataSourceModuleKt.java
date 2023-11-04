@@ -82,7 +82,7 @@ public final class DataSourceModuleKt {
             List emptyList13;
             List emptyList14;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C15611 c15611 = new Function2<Scope, ParametersHolder, WalletTransferDataSourceFactory>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.1
+            C15671 c15671 = new Function2<Scope, ParametersHolder, WalletTransferDataSourceFactory>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletTransferDataSourceFactory invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -94,13 +94,13 @@ public final class DataSourceModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(WalletTransferDataSourceFactory.class), null, c15611, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(WalletTransferDataSourceFactory.class), null, c15671, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C15672 c15672 = new Function2<Scope, ParametersHolder, WalletSwapDataSourceFactory>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.2
+            C15732 c15732 = new Function2<Scope, ParametersHolder, WalletSwapDataSourceFactory>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletSwapDataSourceFactory invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -110,13 +110,13 @@ public final class DataSourceModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(WalletSwapDataSourceFactory.class), null, c15672, kind, emptyList2));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(WalletSwapDataSourceFactory.class), null, c15732, kind, emptyList2));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
-            C15683 c15683 = new Function2<Scope, ParametersHolder, WalletApproveDataSourceFactory>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.3
+            C15743 c15743 = new Function2<Scope, ParametersHolder, WalletApproveDataSourceFactory>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletApproveDataSourceFactory invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -126,13 +126,13 @@ public final class DataSourceModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletApproveDataSourceFactory.class), null, c15683, kind, emptyList3));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletApproveDataSourceFactory.class), null, c15743, kind, emptyList3));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);
             }
             new KoinDefinition(module, singleInstanceFactory3);
-            C15694 c15694 = new Function2<Scope, ParametersHolder, WalletCancelDataSourceFactory>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.4
+            C15754 c15754 = new Function2<Scope, ParametersHolder, WalletCancelDataSourceFactory>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletCancelDataSourceFactory invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -142,13 +142,13 @@ public final class DataSourceModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletCancelDataSourceFactory.class), null, c15694, kind, emptyList4));
+            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletCancelDataSourceFactory.class), null, c15754, kind, emptyList4));
             module.indexPrimaryType(singleInstanceFactory4);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory4);
             }
             new KoinDefinition(module, singleInstanceFactory4);
-            C15705 c15705 = new Function2<Scope, ParametersHolder, WalletBoostDataSourceFactory>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.5
+            C15765 c15765 = new Function2<Scope, ParametersHolder, WalletBoostDataSourceFactory>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.5
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletBoostDataSourceFactory invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -159,14 +159,14 @@ public final class DataSourceModuleKt {
             };
             StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
             emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(WalletBoostDataSourceFactory.class), null, c15705, kind, emptyList5));
+            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(WalletBoostDataSourceFactory.class), null, c15765, kind, emptyList5));
             module.indexPrimaryType(singleInstanceFactory5);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory5);
             }
             new KoinDefinition(module, singleInstanceFactory5);
             StringQualifier evm_crypto_transfer_data_source = DataSourceModuleKt.getEVM_CRYPTO_TRANSFER_DATA_SOURCE();
-            C15716 c15716 = new Function2<Scope, ParametersHolder, WalletTransferDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.6
+            C15776 c15776 = new Function2<Scope, ParametersHolder, WalletTransferDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.6
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletTransferDataSource invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -177,14 +177,14 @@ public final class DataSourceModuleKt {
             };
             StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
             emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(WalletTransferDataSource.class), evm_crypto_transfer_data_source, c15716, kind, emptyList6));
+            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(WalletTransferDataSource.class), evm_crypto_transfer_data_source, c15776, kind, emptyList6));
             module.indexPrimaryType(singleInstanceFactory6);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory6);
             }
             new KoinDefinition(module, singleInstanceFactory6);
             StringQualifier ton_crypto_transfer_data_source = DataSourceModuleKt.getTON_CRYPTO_TRANSFER_DATA_SOURCE();
-            C15727 c15727 = new Function2<Scope, ParametersHolder, WalletTransferDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.7
+            C15787 c15787 = new Function2<Scope, ParametersHolder, WalletTransferDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.7
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletTransferDataSource invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -194,14 +194,14 @@ public final class DataSourceModuleKt {
             };
             StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
             emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(WalletTransferDataSource.class), ton_crypto_transfer_data_source, c15727, kind, emptyList7));
+            SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(WalletTransferDataSource.class), ton_crypto_transfer_data_source, c15787, kind, emptyList7));
             module.indexPrimaryType(singleInstanceFactory7);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory7);
             }
             new KoinDefinition(module, singleInstanceFactory7);
             StringQualifier tron_crypto_transfer_data_source = DataSourceModuleKt.getTRON_CRYPTO_TRANSFER_DATA_SOURCE();
-            C15738 c15738 = new Function2<Scope, ParametersHolder, WalletTransferDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.8
+            C15798 c15798 = new Function2<Scope, ParametersHolder, WalletTransferDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.8
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletTransferDataSource invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -212,14 +212,14 @@ public final class DataSourceModuleKt {
             };
             StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
             emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(WalletTransferDataSource.class), tron_crypto_transfer_data_source, c15738, kind, emptyList8));
+            SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(WalletTransferDataSource.class), tron_crypto_transfer_data_source, c15798, kind, emptyList8));
             module.indexPrimaryType(singleInstanceFactory8);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory8);
             }
             new KoinDefinition(module, singleInstanceFactory8);
             StringQualifier btc_crypto_transfer_data_source = DataSourceModuleKt.getBTC_CRYPTO_TRANSFER_DATA_SOURCE();
-            C15749 c15749 = new Function2<Scope, ParametersHolder, WalletTransferDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.9
+            C15809 c15809 = new Function2<Scope, ParametersHolder, WalletTransferDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.9
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletTransferDataSource invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -230,14 +230,14 @@ public final class DataSourceModuleKt {
             };
             StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
             emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(WalletTransferDataSource.class), btc_crypto_transfer_data_source, c15749, kind, emptyList9));
+            SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(WalletTransferDataSource.class), btc_crypto_transfer_data_source, c15809, kind, emptyList9));
             module.indexPrimaryType(singleInstanceFactory9);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory9);
             }
             new KoinDefinition(module, singleInstanceFactory9);
             StringQualifier dex_swap_data_source = DataSourceModuleKt.getDEX_SWAP_DATA_SOURCE();
-            C156210 c156210 = new Function2<Scope, ParametersHolder, WalletSwapDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.10
+            C156810 c156810 = new Function2<Scope, ParametersHolder, WalletSwapDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.10
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletSwapDataSource invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -247,14 +247,14 @@ public final class DataSourceModuleKt {
             };
             StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
             emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(WalletSwapDataSource.class), dex_swap_data_source, c156210, kind, emptyList10));
+            SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(WalletSwapDataSource.class), dex_swap_data_source, c156810, kind, emptyList10));
             module.indexPrimaryType(singleInstanceFactory10);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory10);
             }
             new KoinDefinition(module, singleInstanceFactory10);
             StringQualifier eth_approve_data_source = DataSourceModuleKt.getETH_APPROVE_DATA_SOURCE();
-            C156311 c156311 = new Function2<Scope, ParametersHolder, WalletApproveDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.11
+            C156911 c156911 = new Function2<Scope, ParametersHolder, WalletApproveDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.11
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletApproveDataSource invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -264,14 +264,14 @@ public final class DataSourceModuleKt {
             };
             StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
             emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(WalletApproveDataSource.class), eth_approve_data_source, c156311, kind, emptyList11));
+            SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(WalletApproveDataSource.class), eth_approve_data_source, c156911, kind, emptyList11));
             module.indexPrimaryType(singleInstanceFactory11);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory11);
             }
             new KoinDefinition(module, singleInstanceFactory11);
             StringQualifier eth_cancel_data_source = DataSourceModuleKt.getETH_CANCEL_DATA_SOURCE();
-            C156412 c156412 = new Function2<Scope, ParametersHolder, WalletCancelDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.12
+            C157012 c157012 = new Function2<Scope, ParametersHolder, WalletCancelDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.12
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletCancelDataSource invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -281,13 +281,13 @@ public final class DataSourceModuleKt {
             };
             StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
             emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(WalletCancelDataSource.class), eth_cancel_data_source, c156412, kind, emptyList12));
+            SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(WalletCancelDataSource.class), eth_cancel_data_source, c157012, kind, emptyList12));
             module.indexPrimaryType(singleInstanceFactory12);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory12);
             }
             new KoinDefinition(module, singleInstanceFactory12);
-            C156513 c156513 = new Function2<Scope, ParametersHolder, WalletConnectDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.13
+            C157113 c157113 = new Function2<Scope, ParametersHolder, WalletConnectDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.13
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletConnectDataSource invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -297,13 +297,13 @@ public final class DataSourceModuleKt {
             };
             StringQualifier rootScopeQualifier13 = companion.getRootScopeQualifier();
             emptyList13 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(WalletConnectDataSource.class), null, c156513, kind, emptyList13));
+            SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(WalletConnectDataSource.class), null, c157113, kind, emptyList13));
             module.indexPrimaryType(singleInstanceFactory13);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory13);
             }
             new KoinDefinition(module, singleInstanceFactory13);
-            C156614 c156614 = new Function2<Scope, ParametersHolder, CryptoBoxDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.14
+            C157214 c157214 = new Function2<Scope, ParametersHolder, CryptoBoxDataSource>() { // from class: com.iMe.storage.data.di.module.DataSourceModuleKt$dataSourceModule$1.14
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoBoxDataSource invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -313,7 +313,7 @@ public final class DataSourceModuleKt {
             };
             StringQualifier rootScopeQualifier14 = companion.getRootScopeQualifier();
             emptyList14 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(CryptoBoxDataSource.class), null, c156614, kind, emptyList14));
+            SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(CryptoBoxDataSource.class), null, c157214, kind, emptyList14));
             module.indexPrimaryType(singleInstanceFactory14);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory14);

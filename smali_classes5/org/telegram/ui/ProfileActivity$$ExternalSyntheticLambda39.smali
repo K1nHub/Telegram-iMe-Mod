@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda39;->f$2:Landroid/app/Activity;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$Oxgpr5I96ulEmhjOIDkxyKep-SU(Lorg/telegram/ui/ActionBar/AlertDialog;ZLandroid/app/Activity;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$qDpHN2eFv2pN2n1VGp9UcY4vREo(Lorg/telegram/ui/ActionBar/AlertDialog;ZLandroid/app/Activity;)V
 
     return-void
 .end method

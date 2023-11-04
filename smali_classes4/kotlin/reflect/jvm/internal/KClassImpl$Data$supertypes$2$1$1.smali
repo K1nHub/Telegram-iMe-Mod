@@ -165,7 +165,7 @@
 
     move-result-object v2
 
-    const-string v3, "jClass.interfaces"
+    const-string/jumbo v3, "jClass.interfaces"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

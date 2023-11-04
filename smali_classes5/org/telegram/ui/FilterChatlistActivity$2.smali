@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilterChatlistActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 172
+    .line 173
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     return-void

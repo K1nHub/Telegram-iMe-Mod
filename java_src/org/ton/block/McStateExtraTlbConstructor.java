@@ -21,7 +21,7 @@ public final class McStateExtraTlbConstructor extends org.ton.tlb.TlbConstructor
     public void storeTlb(CellBuilder cellBuilder, McStateExtra value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        ShardHashes.Companion.storeTlb(cellBuilder, ShardHashes.m5026boximpl(value.m4968getShardHashes78z5ENA()));
+        ShardHashes.Companion.storeTlb(cellBuilder, ShardHashes.m5180boximpl(value.m5122getShardHashes78z5ENA()));
         ConfigParams.Companion.storeTlb(cellBuilder, (CellBuilder) value.getConfig());
         cellBuilder.storeRef(value.getR1().toCell(McStateExtraAux.Companion));
         CurrencyCollection.Companion.storeTlb(cellBuilder, (CellBuilder) value.getGlobalBalance());
@@ -30,9 +30,9 @@ public final class McStateExtraTlbConstructor extends org.ton.tlb.TlbConstructor
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public McStateExtra loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        HashMapE m5033unboximpl = ShardHashes.Companion.loadTlb(cellSlice).m5033unboximpl();
+        HashMapE m5187unboximpl = ShardHashes.Companion.loadTlb(cellSlice).m5187unboximpl();
         ConfigParams loadTlb = ConfigParams.Companion.loadTlb(cellSlice);
         McStateExtraAux.Companion companion = McStateExtraAux.Companion;
-        return new McStateExtra(m5033unboximpl, loadTlb, CellRef.Companion.valueOf(cellSlice.loadRef(), (TlbCodec) companion), CurrencyCollection.Companion.loadTlb(cellSlice), null);
+        return new McStateExtra(m5187unboximpl, loadTlb, CellRef.Companion.valueOf(cellSlice.loadRef(), (TlbCodec) companion), CurrencyCollection.Companion.loadTlb(cellSlice), null);
     }
 }

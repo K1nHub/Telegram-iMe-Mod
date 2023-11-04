@@ -18,11 +18,11 @@
 
 .field public final synthetic f$5:Lorg/telegram/messenger/MessageObject;
 
-.field public final synthetic f$6:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field public final synthetic f$6:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaController;IIJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaController;IIJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
     iput-object p7, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda22;->f$5:Lorg/telegram/messenger/MessageObject;
 
-    iput-object p8, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda22;->f$6:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object p8, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda22;->f$6:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     return-void
 .end method
@@ -61,9 +61,9 @@
 
     iget-object v6, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda22;->f$5:Lorg/telegram/messenger/MessageObject;
 
-    iget-object v7, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda22;->f$6:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v7, p0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda22;->f$6:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MediaController;->$r8$lambda$NjrPSDawbPoO3VbYxaNt_8K2VP8(Lorg/telegram/messenger/MediaController;IIJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MediaController;->$r8$lambda$MH3d_NRrIsBsW9fbwHVvTod15jk(Lorg/telegram/messenger/MediaController;IIJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
     return-void
 .end method

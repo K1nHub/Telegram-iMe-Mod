@@ -15,12 +15,12 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentMap;
-import p033j$.lang.AbstractC2669d;
+import p033j$.lang.AbstractC2673d;
 import p033j$.util.Collection;
 import p033j$.util.List;
 import p033j$.util.Map;
-import p033j$.util.concurrent.C2804a;
-import p033j$.util.concurrent.InterfaceC2805b;
+import p033j$.util.concurrent.C2808a;
+import p033j$.util.concurrent.InterfaceC2809b;
 import p033j$.util.function.BiConsumer;
 import p033j$.util.function.BiFunction;
 import p033j$.util.function.Consumer;
@@ -29,7 +29,7 @@ import p033j$.util.function.Predicate;
 import p033j$.util.function.UnaryOperator;
 import p033j$.wrappers.C$r8$wrapper$java$util$function$BiFunction$VWRP;
 import p033j$.wrappers.C$r8$wrapper$java$util$function$Function$VWRP;
-import p033j$.wrappers.C3228q;
+import p033j$.wrappers.C3232q;
 /* renamed from: j$.util.DesugarCollections */
 /* loaded from: classes2.dex */
 public class DesugarCollections {
@@ -55,7 +55,7 @@ public class DesugarCollections {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: j$.util.DesugarCollections$a */
     /* loaded from: classes2.dex */
-    public static class C2767a implements Map, Serializable, Map {
+    public static class C2771a implements Map, Serializable, Map {
 
         /* renamed from: a */
         private final Map f682a;
@@ -72,14 +72,14 @@ public class DesugarCollections {
         /* renamed from: e */
         private transient Collection f686e;
 
-        C2767a(Map map) {
+        C2771a(Map map) {
             Objects.requireNonNull(map);
             this.f682a = map;
             this.f683b = this;
         }
 
         /* renamed from: a */
-        private Set m685a(Set set, Object obj) {
+        private Set m686a(Set set, Object obj) {
             if (DesugarCollections.f681f == null) {
                 return Collections.synchronizedSet(set);
             }
@@ -154,7 +154,7 @@ public class DesugarCollections {
             synchronized (this.f683b) {
                 try {
                     java.util.Map map = this.f682a;
-                    computeIfAbsent = map instanceof Map ? ((Map) map).computeIfAbsent(obj, function) : map instanceof ConcurrentMap ? AbstractC2669d.m991a((ConcurrentMap) map, obj, function) : Map.CC.$default$computeIfAbsent(map, obj, function);
+                    computeIfAbsent = map instanceof Map ? ((Map) map).computeIfAbsent(obj, function) : map instanceof ConcurrentMap ? AbstractC2673d.m992a((ConcurrentMap) map, obj, function) : Map.CC.$default$computeIfAbsent(map, obj, function);
                 } catch (Throwable th) {
                     throw th;
                 }
@@ -233,7 +233,7 @@ public class DesugarCollections {
             Set set;
             synchronized (this.f683b) {
                 if (this.f685d == null) {
-                    this.f685d = m685a(this.f682a.entrySet(), this.f683b);
+                    this.f685d = m686a(this.f682a.entrySet(), this.f683b);
                 }
                 set = this.f685d;
             }
@@ -255,24 +255,16 @@ public class DesugarCollections {
         @Override // p033j$.util.Map
         public void forEach(BiConsumer biConsumer) {
             synchronized (this.f683b) {
-                try {
-                    java.util.Map map = this.f682a;
-                    if (map instanceof Map) {
-                        ((Map) map).forEach(biConsumer);
-                    } else if (map instanceof ConcurrentMap) {
-                        AbstractC2669d.m990b((ConcurrentMap) map, biConsumer);
-                    } else {
-                        Map.CC.$default$forEach(map, biConsumer);
-                    }
-                } catch (Throwable th) {
-                    throw th;
-                }
+                Map.EL.forEach(this.f682a, biConsumer);
             }
         }
 
         @Override // java.util.Map
-        public /* synthetic */ void forEach(java.util.function.BiConsumer biConsumer) {
-            forEach(C3228q.m174a(biConsumer));
+        public void forEach(java.util.function.BiConsumer biConsumer) {
+            BiConsumer m175a = C3232q.m175a(biConsumer);
+            synchronized (this.f683b) {
+                Map.EL.forEach(this.f682a, m175a);
+            }
         }
 
         @Override // java.util.Map, p033j$.util.Map
@@ -316,7 +308,7 @@ public class DesugarCollections {
             Set set;
             synchronized (this.f683b) {
                 if (this.f684c == null) {
-                    this.f684c = m685a(this.f682a.keySet(), this.f683b);
+                    this.f684c = m686a(this.f682a.keySet(), this.f683b);
                 }
                 set = this.f684c;
             }
@@ -396,7 +388,7 @@ public class DesugarCollections {
                 monitor-exit(r0)     // Catch: java.lang.Throwable -> L30
                 throw r5
             */
-            throw new UnsupportedOperationException("Method not decompiled: p033j$.util.DesugarCollections.C2767a.merge(java.lang.Object, java.lang.Object, j$.util.function.BiFunction):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: p033j$.util.DesugarCollections.C2771a.merge(java.lang.Object, java.lang.Object, j$.util.function.BiFunction):java.lang.Object");
         }
 
         @Override // java.util.Map
@@ -485,11 +477,11 @@ public class DesugarCollections {
                     } else if (map instanceof ConcurrentMap) {
                         ConcurrentMap concurrentMap = (ConcurrentMap) map;
                         Objects.requireNonNull(biFunction);
-                        C2804a c2804a = new C2804a(concurrentMap, biFunction);
-                        if (concurrentMap instanceof InterfaceC2805b) {
-                            ((InterfaceC2805b) concurrentMap).forEach(c2804a);
+                        C2808a c2808a = new C2808a(concurrentMap, biFunction);
+                        if (concurrentMap instanceof InterfaceC2809b) {
+                            ((InterfaceC2809b) concurrentMap).forEach(c2808a);
                         } else {
-                            AbstractC2669d.m990b(concurrentMap, c2804a);
+                            AbstractC2673d.m991b(concurrentMap, c2808a);
                         }
                     } else {
                         Map.CC.$default$replaceAll(map, biFunction);
@@ -603,11 +595,11 @@ public class DesugarCollections {
     }
 
     /* renamed from: c */
-    public static void m689c(Iterable iterable, Consumer consumer) {
+    public static void m690c(Iterable iterable, Consumer consumer) {
         Field field = f678c;
         if (field == null) {
             try {
-                Collection.EL.m695a((java.util.Collection) f679d.get(iterable), consumer);
+                Collection.EL.m696a((java.util.Collection) f679d.get(iterable), consumer);
                 return;
             } catch (IllegalAccessException e) {
                 throw new Error("Runtime illegal access in synchronized collection forEach fall-back.", e);
@@ -615,7 +607,7 @@ public class DesugarCollections {
         }
         try {
             synchronized (field.get(iterable)) {
-                Collection.EL.m695a((java.util.Collection) f679d.get(iterable), consumer);
+                Collection.EL.m696a((java.util.Collection) f679d.get(iterable), consumer);
             }
         } catch (IllegalAccessException e2) {
             throw new Error("Runtime illegal access in synchronized collection forEach.", e2);
@@ -624,7 +616,7 @@ public class DesugarCollections {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: d */
-    public static boolean m688d(java.util.Collection collection, Predicate predicate) {
+    public static boolean m689d(java.util.Collection collection, Predicate predicate) {
         boolean removeIf;
         Field field = f678c;
         if (field == null) {
@@ -646,7 +638,7 @@ public class DesugarCollections {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: e */
-    public static void m687e(List list, UnaryOperator unaryOperator) {
+    public static void m688e(List list, UnaryOperator unaryOperator) {
         Field field = f678c;
         if (field == null) {
             try {
@@ -678,11 +670,11 @@ public class DesugarCollections {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: f */
-    public static void m686f(java.util.List list, Comparator comparator) {
+    public static void m687f(java.util.List list, Comparator comparator) {
         Field field = f678c;
         if (field == null) {
             try {
-                AbstractC2839k.m587r((java.util.List) f679d.get(list), comparator);
+                AbstractC2843k.m588r((java.util.List) f679d.get(list), comparator);
                 return;
             } catch (IllegalAccessException e) {
                 throw new Error("Runtime illegal access in synchronized collection sort fall-back.", e);
@@ -690,7 +682,7 @@ public class DesugarCollections {
         }
         try {
             synchronized (field.get(list)) {
-                AbstractC2839k.m587r((java.util.List) f679d.get(list), comparator);
+                AbstractC2843k.m588r((java.util.List) f679d.get(list), comparator);
             }
         } catch (IllegalAccessException e2) {
             throw new Error("Runtime illegal access in synchronized list sort.", e2);
@@ -698,6 +690,6 @@ public class DesugarCollections {
     }
 
     public static <K, V> java.util.Map<K, V> synchronizedMap(java.util.Map<K, V> map) {
-        return new C2767a(map);
+        return new C2771a(map);
     }
 }

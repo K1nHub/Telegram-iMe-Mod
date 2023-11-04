@@ -88,7 +88,7 @@
         }
     .end annotation
 
-    const-string v0, "it"
+    const-string/jumbo v0, "it"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -106,7 +106,7 @@
 
     move-result-object v1
 
-    const-string v2, "it.json.asJsonArray"
+    const-string/jumbo v2, "it.json.asJsonArray"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -201,7 +201,7 @@
 
     move-result-object v2
 
-    const-string v3, "it.context.deserialize(tx)"
+    const-string/jumbo v3, "it.context.deserialize(tx)"
 
     .line 22
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

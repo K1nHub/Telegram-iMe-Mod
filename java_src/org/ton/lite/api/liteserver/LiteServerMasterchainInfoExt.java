@@ -15,9 +15,9 @@ import org.ton.api.tonnode.TonNodeBlockIdExt;
 import org.ton.api.tonnode.TonNodeBlockIdExt$$serializer;
 import org.ton.api.tonnode.TonNodeZeroStateIdExt;
 import org.ton.api.tonnode.TonNodeZeroStateIdExt$$serializer;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: LiteServerMasterchainInfoExt.kt */
 @Serializable
 /* loaded from: classes6.dex */
@@ -119,7 +119,7 @@ public final class LiteServerMasterchainInfoExt {
     }
 
     public int hashCode() {
-        return (((((((((((((this.mode * 31) + this.version) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.capabilities)) * 31) + this.last.hashCode()) * 31) + this.lastUtime) * 31) + this.now) * 31) + Arrays.hashCode(this.stateRootHash)) * 31) + this.init.hashCode();
+        return (((((((((((((this.mode * 31) + this.version) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.capabilities)) * 31) + this.last.hashCode()) * 31) + this.lastUtime) * 31) + this.now) * 31) + Arrays.hashCode(this.stateRootHash)) * 31) + this.init.hashCode();
     }
 
     /* compiled from: LiteServerMasterchainInfoExt.kt */
@@ -137,13 +137,13 @@ public final class LiteServerMasterchainInfoExt {
             return LiteServerMasterchainInfoExt$$serializer.INSTANCE;
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public LiteServerMasterchainInfoExt decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return new LiteServerMasterchainInfoExt(reader.readInt(), reader.readInt(), reader.readLong(), TonNodeBlockIdExt.Companion.decode(reader), reader.readInt(), reader.readInt(), reader.readRaw(32), TonNodeZeroStateIdExt.Companion.decode(reader));
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, LiteServerMasterchainInfoExt value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");

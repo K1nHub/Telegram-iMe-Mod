@@ -13,8 +13,8 @@ import kotlinx.serialization.internal.ByteArraySerializer;
 import kotlinx.serialization.internal.GeneratedSerializer;
 import kotlinx.serialization.internal.PluginGeneratedSerialDescriptor;
 import kotlinx.serialization.json.JsonClassDiscriminator;
-import org.ton.p044tl.ByteString;
-import org.ton.p044tl.ByteStringSerializer;
+import org.ton.p045tl.ByteString;
+import org.ton.p045tl.ByteStringSerializer;
 /* compiled from: AdnlMessageQuery.kt */
 /* loaded from: classes6.dex */
 public final class AdnlMessageQuery$$serializer implements GeneratedSerializer<AdnlMessageQuery> {

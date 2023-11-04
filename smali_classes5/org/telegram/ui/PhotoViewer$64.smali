@@ -34,7 +34,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;IZZ)V
     .locals 0
 
-    .line 13558
+    .line 13557
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$64;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iput-boolean p3, p0, Lorg/telegram/ui/PhotoViewer$64;->val$isCurrentCaptionEmpty:Z
@@ -49,7 +49,7 @@
 .method private synthetic lambda$onDisappear$0(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 13573
+    .line 13572
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$64;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -68,7 +68,7 @@
 
     iput p1, v0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->backgroundAlpha:F
 
-    .line 13574
+    .line 13573
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$64;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -85,12 +85,12 @@
 .method public onDisappear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
     .locals 0
 
-    .line 13561
+    .line 13560
     invoke-super {p0, p1, p2, p3, p4}, Landroid/transition/Fade;->onDisappear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
 
     move-result-object p1
 
-    .line 13562
+    .line 13561
     iget-boolean p3, p0, Lorg/telegram/ui/PhotoViewer$64;->val$isCurrentCaptionEmpty:Z
 
     if-nez p3, :cond_1
@@ -109,14 +109,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 13565
+    .line 13564
     new-instance p2, Lorg/telegram/ui/PhotoViewer$64$1;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/PhotoViewer$64$1;-><init>(Lorg/telegram/ui/PhotoViewer$64;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 13572
+    .line 13571
     :cond_0
     move-object p2, p1
 

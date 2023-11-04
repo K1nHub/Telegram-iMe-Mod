@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;)V
     .locals 0
 
-    .line 1201
+    .line 1204
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer$1;->this$1:Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1204
+    .line 1207
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer$1;->this$1:Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;

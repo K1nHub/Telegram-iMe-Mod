@@ -62,7 +62,7 @@ public final class ErrorTypeConstructor implements TypeConstructor {
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getSupertypes */
-    public Collection<KotlinType> mo2047getSupertypes() {
+    public Collection<KotlinType> mo2052getSupertypes() {
         List emptyList;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
         return emptyList;
@@ -70,7 +70,7 @@ public final class ErrorTypeConstructor implements TypeConstructor {
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getDeclarationDescriptor */
-    public ClassifierDescriptor mo2046getDeclarationDescriptor() {
+    public ClassifierDescriptor mo2051getDeclarationDescriptor() {
         return ErrorUtils.INSTANCE.getErrorClass();
     }
 

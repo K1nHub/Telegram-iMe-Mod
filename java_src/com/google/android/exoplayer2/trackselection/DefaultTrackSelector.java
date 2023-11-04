@@ -20,7 +20,7 @@ import com.google.android.exoplayer2.RendererConfiguration;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import com.google.android.exoplayer2.audio.AudioAttributes;
-import com.google.android.exoplayer2.audio.ExecutorC0522x59586989;
+import com.google.android.exoplayer2.audio.ExecutorC0528x59586989;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.TrackGroup;
 import com.google.android.exoplayer2.source.TrackGroupArray;
@@ -951,7 +951,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
                 int[] intArray = bundle.getIntArray(Parameters.FIELD_SELECTION_OVERRIDES_RENDERER_INDICES);
                 ArrayList parcelableArrayList = bundle.getParcelableArrayList(Parameters.FIELD_SELECTION_OVERRIDES_TRACK_GROUP_ARRAYS);
                 if (parcelableArrayList == null) {
-                    fromBundleList = ImmutableList.m1054of();
+                    fromBundleList = ImmutableList.m1055of();
                 } else {
                     fromBundleList = BundleableUtil.fromBundleList(TrackGroupArray.CREATOR, parcelableArrayList);
                 }
@@ -1323,7 +1323,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
             this.spatializer = SpatializerWrapperV32.tryCreateInstance(context);
         }
         if (this.parameters.constrainAudioChannelCountToDeviceCapabilities && context == null) {
-            Log.m1106w(TAG, AUDIO_CHANNEL_COUNT_CONSTRAINTS_WARN_MESSAGE);
+            Log.m1107w(TAG, AUDIO_CHANNEL_COUNT_CONSTRAINTS_WARN_MESSAGE);
         }
     }
 
@@ -1389,7 +1389,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
         }
         if (z) {
             if (parameters.constrainAudioChannelCountToDeviceCapabilities && this.context == null) {
-                Log.m1106w(TAG, AUDIO_CHANNEL_COUNT_CONSTRAINTS_WARN_MESSAGE);
+                Log.m1107w(TAG, AUDIO_CHANNEL_COUNT_CONSTRAINTS_WARN_MESSAGE);
             }
             invalidate();
         }
@@ -1601,7 +1601,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
                             i2 = rendererCount;
                         } else {
                             if (selectionEligibility == 1) {
-                                randomAccess = ImmutableList.m1053of(t);
+                                randomAccess = ImmutableList.m1054of(t);
                                 i2 = rendererCount;
                             } else {
                                 ArrayList arrayList2 = new ArrayList();
@@ -2288,7 +2288,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
             this.isForced = (i6 & 2) != 0;
             int i7 = Integer.MAX_VALUE;
             if (parameters.preferredTextLanguages.isEmpty()) {
-                immutableList = ImmutableList.m1053of("");
+                immutableList = ImmutableList.m1054of("");
             } else {
                 immutableList = parameters.preferredTextLanguages;
             }
@@ -2393,7 +2393,7 @@ public class DefaultTrackSelector extends MappingTrackSelector {
                 this.handler = handler;
                 Spatializer spatializer = this.spatializer;
                 Objects.requireNonNull(handler);
-                spatializer.addOnSpatializerStateChangedListener(new ExecutorC0522x59586989(handler), this.listener);
+                spatializer.addOnSpatializerStateChangedListener(new ExecutorC0528x59586989(handler), this.listener);
             }
         }
 

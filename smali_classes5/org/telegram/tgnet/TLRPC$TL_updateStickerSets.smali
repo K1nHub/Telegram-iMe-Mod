@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x31c24808
-
-
 # instance fields
 .field public emojis:Z
 
@@ -16,16 +12,10 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 34068
+    .line 34450
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Update;-><init>()V
 
     return-void
@@ -36,7 +26,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 34076
+    .line 34458
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -58,7 +48,7 @@
     :cond_0
     move p2, v0
 
-    .line 34077
+    .line 34459
     :goto_0
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSets;->masks:Z
 
@@ -68,7 +58,7 @@
 
     move v0, v1
 
-    .line 34078
+    .line 34460
     :cond_1
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSets;->emojis:Z
 
@@ -78,12 +68,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 34082
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSets;->constructor:I
+    const v0, 0x31c24808
 
+    .line 34464
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 34083
+    .line 34465
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSets;->masks:Z
 
     if-eqz v0, :cond_0
@@ -102,7 +92,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSets;->flags:I
 
-    .line 34084
+    .line 34466
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSets;->emojis:Z
 
     if-eqz v1, :cond_1
@@ -117,7 +107,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateStickerSets;->flags:I
 
-    .line 34085
+    .line 34467
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     return-void

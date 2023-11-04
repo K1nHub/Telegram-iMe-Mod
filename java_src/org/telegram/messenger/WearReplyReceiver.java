@@ -93,7 +93,7 @@ public class WearReplyReceiver extends BroadcastReceiver {
         if (i != 0) {
             TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
             tLRPC$TL_message.message = "";
-            tLRPC$TL_message.f1624id = i;
+            tLRPC$TL_message.f1626id = i;
             tLRPC$TL_message.peer_id = accountInstance.getMessagesController().getPeer(j);
             TLRPC$TL_messageActionTopicCreate tLRPC$TL_messageActionTopicCreate = new TLRPC$TL_messageActionTopicCreate();
             tLRPC$TL_message.action = tLRPC$TL_messageActionTopicCreate;
@@ -102,7 +102,7 @@ public class WearReplyReceiver extends BroadcastReceiver {
         } else {
             messageObject = null;
         }
-        accountInstance.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.m90of(charSequence.toString(), j, messageObject, null, null, true, null, null, null, true, 0, null, false, null));
+        accountInstance.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.m91of(charSequence.toString(), j, messageObject, null, null, true, null, null, null, true, 0, null, false, null));
         if (i == 0) {
             accountInstance.getMessagesController().markDialogAsRead(j, i2, i2, 0, false, i, 0, true, 0);
         }

@@ -1163,7 +1163,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string v1, "json"
+    const-string/jumbo v1, "json"
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

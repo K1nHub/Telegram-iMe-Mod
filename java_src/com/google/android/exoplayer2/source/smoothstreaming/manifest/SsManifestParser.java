@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Pair;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.audio.AacUtil;
@@ -438,9 +438,9 @@ public class SsManifestParser implements ParsingLoadable.Parser<SsManifest> {
 
         private void parseStreamFragmentStartTag(XmlPullParser xmlPullParser) throws ParserException {
             int size = this.startTimes.size();
-            long parseLong = parseLong(xmlPullParser, KEY_FRAGMENT_START_TIME, C0479C.TIME_UNSET);
+            long parseLong = parseLong(xmlPullParser, KEY_FRAGMENT_START_TIME, C0485C.TIME_UNSET);
             int i = 1;
-            if (parseLong == C0479C.TIME_UNSET) {
+            if (parseLong == C0485C.TIME_UNSET) {
                 if (size == 0) {
                     parseLong = 0;
                 } else if (this.lastChunkDuration != -1) {
@@ -450,9 +450,9 @@ public class SsManifestParser implements ParsingLoadable.Parser<SsManifest> {
                 }
             }
             this.startTimes.add(Long.valueOf(parseLong));
-            this.lastChunkDuration = parseLong(xmlPullParser, KEY_FRAGMENT_DURATION, C0479C.TIME_UNSET);
+            this.lastChunkDuration = parseLong(xmlPullParser, KEY_FRAGMENT_DURATION, C0485C.TIME_UNSET);
             long parseLong2 = parseLong(xmlPullParser, KEY_FRAGMENT_REPEAT_COUNT, 1L);
-            if (parseLong2 > 1 && this.lastChunkDuration == C0479C.TIME_UNSET) {
+            if (parseLong2 > 1 && this.lastChunkDuration == C0485C.TIME_UNSET) {
                 throw ParserException.createForMalformedManifest("Repeated chunk with unspecified duration", null);
             }
             while (true) {

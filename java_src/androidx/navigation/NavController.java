@@ -142,7 +142,7 @@ public class NavController {
         this.lifecycleObserver = new LifecycleEventObserver() { // from class: androidx.navigation.NavController$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.LifecycleEventObserver
             public final void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-                NavController.m1176lifecycleObserver$lambda2(NavController.this, lifecycleOwner, event);
+                NavController.m1181lifecycleObserver$lambda2(NavController.this, lifecycleOwner, event);
             }
         };
         this.onBackPressedCallback = new OnBackPressedCallback() { // from class: androidx.navigation.NavController$onBackPressedCallback$1
@@ -238,7 +238,7 @@ public class NavController {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: lifecycleObserver$lambda-2  reason: not valid java name */
-    public static final void m1176lifecycleObserver$lambda2(NavController this$0, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+    public static final void m1181lifecycleObserver$lambda2(NavController this$0, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(event, "event");

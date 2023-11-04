@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.MvpDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.AlertDialog;
 import timber.log.Timber;
 /* compiled from: MvpBaseDelegate.kt */
 /* renamed from: com.iMe.ui.base.mvp.base.MvpBaseDelegate */

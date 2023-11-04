@@ -258,7 +258,7 @@
     goto :goto_2
 
     :pswitch_12
-    const-string v10, "kind"
+    const-string/jumbo v10, "kind"
 
     aput-object v10, v7, v9
 
@@ -486,6 +486,8 @@
 
     :goto_5
     throw p0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x15

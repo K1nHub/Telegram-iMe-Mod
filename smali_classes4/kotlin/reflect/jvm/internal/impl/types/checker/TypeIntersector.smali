@@ -425,7 +425,7 @@
     .line 1621
     check-cast v5, Lkotlin/reflect/jvm/internal/impl/types/KotlinType;
 
-    const-string v7, "it"
+    const-string/jumbo v7, "it"
 
     .line 81
     invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

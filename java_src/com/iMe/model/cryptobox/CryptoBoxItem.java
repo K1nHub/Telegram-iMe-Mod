@@ -83,7 +83,7 @@ public final class CryptoBoxItem extends NoChildNode {
     }
 
     public int hashCode() {
-        return (((((((((((((((((this.f290id.hashCode() * 31) + this.name.hashCode()) * 31) + this.description.hashCode()) * 31) + this.chatAvatarUrl.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.chatId)) * 31) + this.chatName.hashCode()) * 31) + this.tokenLogoUrl.hashCode()) * 31) + this.creationTimeText.hashCode()) * 31) + this.statusText.hashCode()) * 31) + this.statusColorResId;
+        return (((((((((((((((((this.f290id.hashCode() * 31) + this.name.hashCode()) * 31) + this.description.hashCode()) * 31) + this.chatAvatarUrl.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.chatId)) * 31) + this.chatName.hashCode()) * 31) + this.tokenLogoUrl.hashCode()) * 31) + this.creationTimeText.hashCode()) * 31) + this.statusText.hashCode()) * 31) + this.statusColorResId;
     }
 
     public String toString() {

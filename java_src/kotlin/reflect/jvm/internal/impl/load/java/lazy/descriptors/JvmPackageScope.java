@@ -89,23 +89,23 @@ public final class JvmPackageScope implements MemberScope {
 
     @Override // kotlin.reflect.jvm.internal.impl.resolve.scopes.ResolutionScope
     /* renamed from: getContributedClassifier */
-    public ClassifierDescriptor mo2048getContributedClassifier(Name name, LookupLocation location) {
+    public ClassifierDescriptor mo2053getContributedClassifier(Name name, LookupLocation location) {
         Intrinsics.checkNotNullParameter(name, "name");
         Intrinsics.checkNotNullParameter(location, "location");
         recordLookup(name, location);
-        ClassDescriptor mo2048getContributedClassifier = this.javaScope.mo2048getContributedClassifier(name, location);
-        if (mo2048getContributedClassifier != null) {
-            return mo2048getContributedClassifier;
+        ClassDescriptor mo2053getContributedClassifier = this.javaScope.mo2053getContributedClassifier(name, location);
+        if (mo2053getContributedClassifier != null) {
+            return mo2053getContributedClassifier;
         }
         ClassifierDescriptor classifierDescriptor = null;
         for (MemberScope memberScope : getKotlinScopes()) {
-            ClassifierDescriptor mo2048getContributedClassifier2 = memberScope.mo2048getContributedClassifier(name, location);
-            if (mo2048getContributedClassifier2 != null) {
-                if (!(mo2048getContributedClassifier2 instanceof ClassifierDescriptorWithTypeParameters) || !((ClassifierDescriptorWithTypeParameters) mo2048getContributedClassifier2).isExpect()) {
-                    return mo2048getContributedClassifier2;
+            ClassifierDescriptor mo2053getContributedClassifier2 = memberScope.mo2053getContributedClassifier(name, location);
+            if (mo2053getContributedClassifier2 != null) {
+                if (!(mo2053getContributedClassifier2 instanceof ClassifierDescriptorWithTypeParameters) || !((ClassifierDescriptorWithTypeParameters) mo2053getContributedClassifier2).isExpect()) {
+                    return mo2053getContributedClassifier2;
                 }
                 if (classifierDescriptor == null) {
-                    classifierDescriptor = mo2048getContributedClassifier2;
+                    classifierDescriptor = mo2053getContributedClassifier2;
                 }
             }
         }

@@ -21,19 +21,19 @@
 
 
 # direct methods
-.method public constructor <init>(Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public constructor <init>(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 2
 
-    .line 1134
+    .line 1135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1135
-    iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+    .line 1136
+    iget-wide v0, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
     iput-wide v0, p0, Lorg/telegram/messenger/TranslateController$StoryKey;->dialogId:J
 
-    .line 1136
-    iget p1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    .line 1137
+    iget p1, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     iput p1, p0, Lorg/telegram/messenger/TranslateController$StoryKey;->storyId:I
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;)V
     .locals 0
 
-    .line 1773
+    .line 1771
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$1;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimationCallback;-><init>()V
@@ -35,7 +35,7 @@
 .method public onEndAnimation()V
     .locals 2
 
-    .line 1781
+    .line 1779
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$1;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;
 
     const/4 v1, 0x0
@@ -48,7 +48,7 @@
 .method public onPreAnimation()V
     .locals 2
 
-    .line 1776
+    .line 1774
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView$1;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$EmojiListView;
 
     const/4 v1, 0x1

@@ -1,12 +1,10 @@
 package org.telegram.tgnet;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LiteMode;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_user extends TLRPC$User {
-    public static int constructor = -1414139616;
-
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         int readInt32 = abstractSerializedData.readInt32(z);
@@ -35,7 +33,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         this.close_friend = (readInt322 & 4) != 0;
         this.stories_hidden = (readInt322 & 8) != 0;
         this.stories_unavailable = (readInt322 & 16) != 0;
-        this.f1762id = abstractSerializedData.readInt64(z);
+        this.f1749id = abstractSerializedData.readInt64(z);
         if ((this.flags & 1) != 0) {
             this.access_hash = abstractSerializedData.readInt64(z);
         }
@@ -108,7 +106,13 @@ public class TLRPC$TL_user extends TLRPC$User {
                 this.stories_max_id = abstractSerializedData.readInt32(z);
             }
         } catch (Throwable th) {
-            FileLog.m97e(th);
+            FileLog.m99e(th);
+        }
+        if ((this.flags2 & 128) != 0) {
+            this.color = abstractSerializedData.readInt32(z);
+        }
+        if ((this.flags2 & 64) != 0) {
+            this.background_emoji_id = abstractSerializedData.readInt64(z);
         }
     }
 
@@ -117,7 +121,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         if (this.username == null) {
             this.flags &= -9;
         }
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-346018011);
         int i = this.self ? this.flags | 1024 : this.flags & (-1025);
         this.flags = i;
         int i2 = this.contact ? i | 2048 : i & (-2049);
@@ -148,7 +152,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         this.flags = i14;
         int i15 = this.fake ? i14 | ConnectionsManager.FileTypeFile : i14 & (-67108865);
         this.flags = i15;
-        int i16 = this.bot_attach_menu ? i15 | C0479C.BUFFER_FLAG_FIRST_SAMPLE : i15 & (-134217729);
+        int i16 = this.bot_attach_menu ? i15 | C0485C.BUFFER_FLAG_FIRST_SAMPLE : i15 & (-134217729);
         this.flags = i16;
         int i17 = this.premium ? i16 | 268435456 : i16 & (-268435457);
         this.flags = i17;
@@ -164,7 +168,7 @@ public class TLRPC$TL_user extends TLRPC$User {
         int i22 = this.stories_unavailable ? i21 | 16 : i21 & (-17);
         this.flags2 = i22;
         abstractSerializedData.writeInt32(i22);
-        abstractSerializedData.writeInt64(this.f1762id);
+        abstractSerializedData.writeInt64(this.f1749id);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt64(this.access_hash);
         }
@@ -216,6 +220,12 @@ public class TLRPC$TL_user extends TLRPC$User {
         }
         if ((this.flags2 & 32) != 0) {
             abstractSerializedData.writeInt32(this.stories_max_id);
+        }
+        if ((this.flags2 & 128) != 0) {
+            abstractSerializedData.writeInt32(this.color);
+        }
+        if ((this.flags2 & 64) != 0) {
+            abstractSerializedData.writeInt64(this.background_emoji_id);
         }
     }
 }

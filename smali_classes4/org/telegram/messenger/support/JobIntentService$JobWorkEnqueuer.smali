@@ -61,7 +61,7 @@
 
     move-result-object p1
 
-    const-string p2, "jobscheduler"
+    const-string/jumbo p2, "jobscheduler"
 
     invoke-virtual {p1, p2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 

@@ -358,7 +358,7 @@
     :cond_7
     new-instance p0, Ljava/io/IOException;
 
-    const-string p1, "key parameters not recognized"
+    const-string/jumbo p1, "key parameters not recognized"
 
     invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 

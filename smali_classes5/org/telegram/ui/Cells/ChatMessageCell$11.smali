@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Cells/ChatMessageCell$11;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroid/util/Property;
 .source "ChatMessageCell.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Cells/ChatMessageCell;->createStatusDrawableAnimator(IIZ)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/telegram/ui/Cells/ChatMessageCell;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -13,88 +13,78 @@
     name = null
 .end annotation
 
-
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-.field final synthetic val$fromParent:Z
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/util/Property<",
+        "Lorg/telegram/ui/Cells/ChatMessageCell;",
+        "Ljava/lang/Float;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;Z)V
+.method constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
 
-    .line 16939
-    iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    iput-boolean p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->val$fromParent:Z
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    .line 19675
+    invoke-direct {p0, p2, p3}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 3
+.method public get(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/lang/Float;
+    .locals 0
 
-    .line 16942
-    iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$7700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->createStatusDrawableParams()I
+    .line 19678
+    invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8600(Lorg/telegram/ui/Cells/ChatMessageCell;)F
 
     move-result p1
 
-    .line 16943
-    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$7800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
-
-    move-result v0
-
-    if-eq v0, p1, :cond_0
-
-    .line 16944
-    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$7800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
-
-    move-result v1
-
-    iget-boolean v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->val$fromParent:Z
-
-    invoke-static {v0, v1, p1, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$7900(Lorg/telegram/ui/Cells/ChatMessageCell;IIZ)V
-
-    goto :goto_0
-
-    .line 16946
-    :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8002(Lorg/telegram/ui/Cells/ChatMessageCell;Z)Z
-
-    .line 16947
-    iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$7700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;
+    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object p1
 
-    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+    return-object p1
+.end method
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$7800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    move-result v0
+    .line 19675
+    check-cast p1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    iput v0, p1, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastStatusDrawableParams:I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell$11;->get(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/lang/Float;
 
-    :goto_0
+    move-result-object p1
+
+    return-object p1
+.end method
+
+.method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
+
+    .line 19675
+    check-cast p1, Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    check-cast p2, Ljava/lang/Float;
+
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Cells/ChatMessageCell$11;->set(Lorg/telegram/ui/Cells/ChatMessageCell;Ljava/lang/Float;)V
+
+    return-void
+.end method
+
+.method public set(Lorg/telegram/ui/Cells/ChatMessageCell;Ljava/lang/Float;)V
+    .locals 0
+
+    .line 19683
+    invoke-virtual {p2}, Ljava/lang/Float;->floatValue()F
+
+    move-result p2
+
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/ChatMessageCell;->setAnimationOffsetX(F)V
+
     return-void
 .end method

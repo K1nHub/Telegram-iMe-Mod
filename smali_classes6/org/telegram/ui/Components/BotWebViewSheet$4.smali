@@ -22,14 +22,14 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 512
+    .line 524
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 514
+    .line 526
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
@@ -40,10 +40,10 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 11
 
-    .line 540
+    .line 552
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 542
+    .line 554
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
@@ -57,36 +57,36 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3000(Lorg/telegram/ui/Components/BotWebViewSheet;)F
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3100(Lorg/telegram/ui/Components/BotWebViewSheet;)F
 
     move-result v0
 
-    .line 543
+    .line 555
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3100(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
+    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3200(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
 
     move-result-object v1
 
     iget-object v2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$2500(Lorg/telegram/ui/Components/BotWebViewSheet;)I
+    invoke-static {v2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$2600(Lorg/telegram/ui/Components/BotWebViewSheet;)I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 544
+    .line 556
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3100(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
+    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3200(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
 
     move-result-object v1
 
     iget-object v2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3100(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
+    invoke-static {v2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3200(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
 
     move-result-object v2
 
@@ -114,12 +114,12 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 546
+    .line 558
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     sub-float/2addr v3, v0
 
-    .line 548
+    .line 560
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v1
@@ -156,7 +156,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3000(Lorg/telegram/ui/Components/BotWebViewSheet;)F
+    invoke-static {v2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3100(Lorg/telegram/ui/Components/BotWebViewSheet;)F
 
     move-result v2
 
@@ -166,7 +166,7 @@
 
     goto :goto_1
 
-    .line 549
+    .line 561
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
@@ -207,7 +207,7 @@
     :goto_1
     move v9, v0
 
-    .line 550
+    .line 562
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v0
@@ -218,7 +218,7 @@
 
     invoke-virtual {p1, v3, v3, v0, v9}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 551
+    .line 563
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v0
@@ -255,7 +255,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3100(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3200(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
 
     move-result-object v10
 
@@ -265,13 +265,13 @@
 
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 552
+    .line 564
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 554
+    .line 566
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3200(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3300(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -293,7 +293,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 555
+    .line 567
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1600(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -330,10 +330,10 @@
 
     add-float/2addr v0, v1
 
-    .line 556
+    .line 568
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3200(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3300(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -347,7 +347,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3200(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v5}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3300(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 
@@ -363,10 +363,10 @@
 
     invoke-virtual {v1, v2, v3, v4, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 557
+    .line 569
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3200(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3300(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -378,10 +378,10 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 573
+    .line 585
     invoke-super {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->onAttachedToWindow()V
 
-    .line 574
+    .line 586
     new-instance v0, Lorg/telegram/ui/Components/BotWebViewSheet$4$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/BotWebViewSheet$4$1;-><init>(Lorg/telegram/ui/Components/BotWebViewSheet$4;)V
@@ -394,10 +394,10 @@
 .method protected onDetachedFromWindow()V
     .locals 0
 
-    .line 584
+    .line 596
     invoke-super {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->onDetachedFromWindow()V
 
-    .line 585
+    .line 597
     invoke-static {p0}, Lorg/telegram/ui/Components/Bulletin;->removeDelegate(Landroid/widget/FrameLayout;)V
 
     return-void
@@ -406,13 +406,13 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 519
+    .line 531
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 521
+    .line 533
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$2600(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/PasscodeView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$2700(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/PasscodeView;
 
     move-result-object v0
 
@@ -422,7 +422,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 522
+    .line 534
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1200(Lorg/telegram/ui/Components/BotWebViewSheet;)Z
@@ -431,7 +431,7 @@
 
     if-nez v0, :cond_0
 
-    .line 523
+    .line 535
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1500(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
@@ -442,13 +442,13 @@
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$2700(Lorg/telegram/ui/Components/BotWebViewSheet;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$2800(Lorg/telegram/ui/Components/BotWebViewSheet;I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 525
+    .line 537
     :cond_0
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
@@ -468,19 +468,19 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 526
+    .line 538
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$2800(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
+    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$2900(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
 
     move-result-object v1
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 528
+    .line 540
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$2900(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
+    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3000(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
 
     move-result-object v1
 
@@ -494,7 +494,7 @@
 
     const/16 v1, 0x10
 
-    .line 529
+    .line 541
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -514,7 +514,7 @@
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3000(Lorg/telegram/ui/Components/BotWebViewSheet;)F
+    invoke-static {v2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3100(Lorg/telegram/ui/Components/BotWebViewSheet;)F
 
     move-result v2
 
@@ -523,7 +523,7 @@
     :goto_0
     mul-float/2addr v1, v4
 
-    .line 530
+    .line 542
     iget-object v2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$500(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
@@ -548,7 +548,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3000(Lorg/telegram/ui/Components/BotWebViewSheet;)F
+    invoke-static {v5}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3100(Lorg/telegram/ui/Components/BotWebViewSheet;)F
 
     move-result v5
 
@@ -592,16 +592,16 @@
 
     invoke-virtual {v0, v2, v3, v4, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 531
+    .line 543
     iget-object v2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$2900(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
+    invoke-static {v2}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3000(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
 
     move-result-object v2
 
     invoke-virtual {p1, v0, v1, v1, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 533
+    .line 545
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$500(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
@@ -652,7 +652,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 534
+    .line 546
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1500(Lorg/telegram/ui/Components/BotWebViewSheet;)Landroid/graphics/Paint;
@@ -668,7 +668,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 563
+    .line 575
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -703,7 +703,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3000(Lorg/telegram/ui/Components/BotWebViewSheet;)F
+    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$3100(Lorg/telegram/ui/Components/BotWebViewSheet;)F
 
     move-result v3
 
@@ -715,7 +715,7 @@
 
     if-lez v0, :cond_0
 
-    .line 564
+    .line 576
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -756,7 +756,7 @@
 
     if-gez v0, :cond_1
 
-    .line 565
+    .line 577
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$4;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
@@ -766,7 +766,7 @@
 
     return p1
 
-    .line 568
+    .line 580
     :cond_1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 

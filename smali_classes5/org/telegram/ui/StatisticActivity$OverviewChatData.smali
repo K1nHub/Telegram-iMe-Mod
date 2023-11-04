@@ -56,10 +56,10 @@
 
     move-object/from16 v1, p1
 
-    .line 2444
+    .line 2465
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2445
+    .line 2466
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_megagroupStats;->members:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -93,12 +93,12 @@
 
     mul-float/2addr v7, v8
 
-    .line 2446
+    .line 2467
     invoke-static {v7}, Ljava/lang/Math;->abs(F)F
 
     move-result v5
 
-    .line 2447
+    .line 2468
     :goto_0
     sget v6, Lorg/telegram/messenger/R$string;->MembersOverviewTitle:I
 
@@ -110,7 +110,7 @@
 
     iput-object v6, v0, Lorg/telegram/ui/StatisticActivity$OverviewChatData;->membersTitle:Ljava/lang/String;
 
-    .line 2448
+    .line 2469
     iget-object v6, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_megagroupStats;->members:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v6, v6, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -154,7 +154,7 @@
 
     if-nez v13, :cond_3
 
-    .line 2453
+    .line 2474
     sget-object v5, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
     new-array v9, v9, [Ljava/lang/Object;
@@ -205,7 +205,7 @@
 
     goto :goto_4
 
-    .line 2455
+    .line 2476
     :cond_3
     sget-object v8, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
@@ -257,7 +257,7 @@
 
     goto :goto_4
 
-    .line 2451
+    .line 2472
     :cond_5
     :goto_3
     iput-object v11, v0, Lorg/telegram/ui/StatisticActivity$OverviewChatData;->membersSecondary:Ljava/lang/String;
@@ -272,11 +272,11 @@
     :cond_6
     move v2, v7
 
-    .line 2457
+    .line 2478
     :goto_5
     iput-boolean v2, v0, Lorg/telegram/ui/StatisticActivity$OverviewChatData;->membersUp:Z
 
-    .line 2459
+    .line 2480
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_megagroupStats;->viewers:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v8, v2, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -306,12 +306,12 @@
 
     mul-float/2addr v5, v8
 
-    .line 2460
+    .line 2481
     invoke-static {v5}, Ljava/lang/Math;->abs(F)F
 
     move-result v5
 
-    .line 2461
+    .line 2482
     :goto_6
     sget v8, Lorg/telegram/messenger/R$string;->ViewingMembers:I
 
@@ -323,7 +323,7 @@
 
     iput-object v8, v0, Lorg/telegram/ui/StatisticActivity$OverviewChatData;->viewingMembersTitle:Ljava/lang/String;
 
-    .line 2462
+    .line 2483
     iget-object v8, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_megagroupStats;->viewers:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v8, v8, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -348,7 +348,7 @@
 
     goto :goto_8
 
-    .line 2467
+    .line 2488
     :cond_8
     sget-object v5, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
@@ -390,7 +390,7 @@
 
     goto :goto_9
 
-    .line 2465
+    .line 2486
     :cond_a
     :goto_8
     iput-object v11, v0, Lorg/telegram/ui/StatisticActivity$OverviewChatData;->viewingMembersSecondary:Ljava/lang/String;
@@ -405,11 +405,11 @@
     :cond_b
     move v2, v7
 
-    .line 2469
+    .line 2490
     :goto_a
     iput-boolean v2, v0, Lorg/telegram/ui/StatisticActivity$OverviewChatData;->viewingMembersUp:Z
 
-    .line 2472
+    .line 2493
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_megagroupStats;->posters:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v12, v2, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -439,12 +439,12 @@
 
     mul-float/2addr v5, v9
 
-    .line 2473
+    .line 2494
     invoke-static {v5}, Ljava/lang/Math;->abs(F)F
 
     move-result v5
 
-    .line 2474
+    .line 2495
     :goto_b
     sget v9, Lorg/telegram/messenger/R$string;->PostingMembers:I
 
@@ -456,7 +456,7 @@
 
     iput-object v9, v0, Lorg/telegram/ui/StatisticActivity$OverviewChatData;->postingMembersTitle:Ljava/lang/String;
 
-    .line 2475
+    .line 2496
     iget-object v9, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_megagroupStats;->posters:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v12, v9, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -479,7 +479,7 @@
 
     goto :goto_d
 
-    .line 2479
+    .line 2500
     :cond_d
     sget-object v5, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
@@ -521,7 +521,7 @@
 
     goto :goto_e
 
-    .line 2477
+    .line 2498
     :cond_f
     :goto_d
     iput-object v11, v0, Lorg/telegram/ui/StatisticActivity$OverviewChatData;->postingMembersSecondary:Ljava/lang/String;
@@ -536,11 +536,11 @@
     :cond_10
     move v2, v7
 
-    .line 2481
+    .line 2502
     :goto_f
     iput-boolean v2, v0, Lorg/telegram/ui/StatisticActivity$OverviewChatData;->postingMembersUp:Z
 
-    .line 2483
+    .line 2504
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_megagroupStats;->messages:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v12, v2, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -570,12 +570,12 @@
 
     mul-float/2addr v3, v4
 
-    .line 2484
+    .line 2505
     invoke-static {v3}, Ljava/lang/Math;->abs(F)F
 
     move-result v9
 
-    .line 2485
+    .line 2506
     :goto_10
     sget v3, Lorg/telegram/messenger/R$string;->MessagesOverview:I
 
@@ -587,7 +587,7 @@
 
     iput-object v3, v0, Lorg/telegram/ui/StatisticActivity$OverviewChatData;->messagesTitle:Ljava/lang/String;
 
-    .line 2486
+    .line 2507
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_megagroupStats;->messages:Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;
 
     iget-wide v3, v1, Lorg/telegram/tgnet/TLRPC$TL_statsAbsValueAndPrev;->current:D
@@ -610,7 +610,7 @@
 
     goto :goto_12
 
-    .line 2490
+    .line 2511
     :cond_12
     sget-object v1, Ljava/util/Locale;->ENGLISH:Ljava/util/Locale;
 
@@ -650,7 +650,7 @@
 
     goto :goto_13
 
-    .line 2488
+    .line 2509
     :cond_14
     :goto_12
     iput-object v11, v0, Lorg/telegram/ui/StatisticActivity$OverviewChatData;->messagesSecondary:Ljava/lang/String;
@@ -660,7 +660,7 @@
 
     move v7, v10
 
-    .line 2492
+    .line 2513
     :cond_15
     iput-boolean v7, v0, Lorg/telegram/ui/StatisticActivity$OverviewChatData;->messagesUp:Z
 

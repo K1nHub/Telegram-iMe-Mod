@@ -51,13 +51,13 @@
 
     invoke-static {v14, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "jvmBuiltInsKotlinClassFinder"
+    const-string/jumbo v1, "jvmBuiltInsKotlinClassFinder"
 
     move-object/from16 v15, p2
 
     invoke-static {v15, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "javaClassFinder"
+    const-string/jumbo v1, "javaClassFinder"
 
     move-object/from16 v2, p3
 
@@ -73,7 +73,7 @@
 
     invoke-static {v13, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v1, "javaSourceElementFactory"
+    const-string/jumbo v1, "javaSourceElementFactory"
 
     move-object/from16 v9, p6
 

@@ -290,21 +290,21 @@
 
     const-string v1, "Any"
 
-    const-string v3, "java/lang/Object"
+    const-string/jumbo v3, "java/lang/Object"
 
     .line 45
     invoke-static {v0, v1, v3}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/ClassMapperLite;->map$lambda$0$add(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v1, "Nothing"
 
-    const-string v3, "java/lang/Void"
+    const-string/jumbo v3, "java/lang/Void"
 
     .line 46
     invoke-static {v0, v1, v3}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/ClassMapperLite;->map$lambda$0$add(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v1, "Annotation"
 
-    const-string v3, "java/lang/annotation/Annotation"
+    const-string/jumbo v3, "java/lang/annotation/Annotation"
 
     .line 47
     invoke-static {v0, v1, v3}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/ClassMapperLite;->map$lambda$0$add(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
@@ -354,7 +354,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "java/lang/"
+    const-string/jumbo v5, "java/lang/"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -426,7 +426,7 @@
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "java/util/"
+    const-string/jumbo v6, "java/util/"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -472,7 +472,7 @@
     :cond_2
     const-string v1, "collections/Iterable"
 
-    const-string v3, "java/lang/Iterable"
+    const-string/jumbo v3, "java/lang/Iterable"
 
     .line 58
     invoke-static {v0, v1, v3}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/ClassMapperLite;->map$lambda$0$add(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V
@@ -484,7 +484,7 @@
 
     const-string v1, "collections/Map.Entry"
 
-    const-string v3, "java/util/Map$Entry"
+    const-string/jumbo v3, "java/util/Map$Entry"
 
     .line 60
     invoke-static {v0, v1, v3}, Lkotlin/reflect/jvm/internal/impl/metadata/jvm/deserialization/ClassMapperLite;->map$lambda$0$add(Ljava/util/Map;Ljava/lang/String;Ljava/lang/String;)V

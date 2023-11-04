@@ -760,16 +760,23 @@
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBox:I
 
-    invoke-virtual {v0, v7, v3}, Landroid/util/SparseIntArray;->put(II)V
+    invoke-virtual {v0, v7, v5}, Landroid/util/SparseIntArray;->put(II)V
 
     .line 118
+    iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
+
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRadioBackgroundChecked:I
+
+    invoke-virtual {v0, v7, v5}, Landroid/util/SparseIntArray;->put(II)V
+
+    .line 119
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
 
     invoke-virtual {v0, v7, v5}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 119
+    .line 120
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_color_red:I
@@ -778,7 +785,7 @@
 
     invoke-virtual {v0, v7, v8}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 120
+    .line 121
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxDisabled:I
@@ -787,19 +794,19 @@
 
     invoke-virtual {v0, v7, v8}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 121
+    .line 122
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBoxCheck:I
 
     invoke-virtual {v0, v7, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 122
+    .line 123
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, v9, v10}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 123
+    .line 124
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_spanBackground:I
@@ -808,14 +815,14 @@
 
     invoke-virtual {v0, v7, v8}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 124
+    .line 125
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_spanDelete:I
 
     invoke-virtual {v0, v7, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 125
+    .line 126
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_spanText:I
@@ -824,28 +831,28 @@
 
     invoke-virtual {v0, v7, v8}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 126
+    .line 127
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_text:I
 
     invoke-virtual {v0, v7, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 127
+    .line 128
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_hintText:I
 
     invoke-virtual {v0, v7, v12}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 128
+    .line 129
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_cursor:I
 
     invoke-virtual {v0, v7, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 129
+    .line 130
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
@@ -854,7 +861,7 @@
 
     invoke-virtual {v0, v7, v8}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 130
+    .line 131
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSelector:I
@@ -863,7 +870,7 @@
 
     invoke-virtual {v0, v7, v8}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 131
+    .line 132
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_fastScrollInactive:I
@@ -872,7 +879,7 @@
 
     invoke-virtual {v0, v7, v8}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 132
+    .line 133
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_fastScrollActive:I
@@ -881,35 +888,35 @@
 
     invoke-virtual {v0, v7, v8}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 133
+    .line 134
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_fastScrollText:I
 
     invoke-virtual {v0, v7, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 134
+    .line 135
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
     invoke-virtual {v0, v7, v5}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 135
+    .line 136
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextLink:I
 
     invoke-virtual {v0, v5, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 136
+    .line 137
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchText:I
 
     invoke-virtual {v0, v3, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 137
+    .line 138
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkIn:I
@@ -918,28 +925,28 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 138
+    .line 139
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray2:I
 
     invoke-virtual {v0, v3, v12}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 140
+    .line 141
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_location_actionIcon:I
 
     invoke-virtual {v0, v3, v11}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 141
+    .line 142
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_location_actionBackground:I
 
     invoke-virtual {v0, v3, v6}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 142
+    .line 143
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_location_actionPressedBackground:I
@@ -948,7 +955,7 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 143
+    .line 144
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_location_actionActiveIcon:I
@@ -957,7 +964,7 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 145
+    .line 146
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_other:I
@@ -966,7 +973,7 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 147
+    .line 148
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubble:I
@@ -979,7 +986,7 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 148
+    .line 149
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradient1:I
@@ -988,21 +995,21 @@
 
     invoke-virtual {v0, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 149
+    .line 150
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradient2:I
 
     invoke-virtual {v0, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 150
+    .line 151
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubbleGradient3:I
 
     invoke-virtual {v0, v3, v4}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 151
+    .line 152
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_textSelectBackground:I
@@ -1015,10 +1022,10 @@
 
     invoke-virtual {v0, v3, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 153
+    .line 154
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->appendColors()V
 
-    .line 154
+    .line 155
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->dividerPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->getColor(I)I
@@ -1049,12 +1056,12 @@
 .method public getAnimatedEmojiColorFilter()Landroid/graphics/ColorFilter;
     .locals 3
 
-    .line 204
+    .line 205
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->animatedEmojiColorFilter:Landroid/graphics/ColorFilter;
 
     if-nez v0, :cond_0
 
-    .line 205
+    .line 206
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -1069,7 +1076,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->animatedEmojiColorFilter:Landroid/graphics/ColorFilter;
 
-    .line 207
+    .line 208
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->animatedEmojiColorFilter:Landroid/graphics/ColorFilter;
 
@@ -1079,7 +1086,7 @@
 .method public getColor(I)I
     .locals 2
 
-    .line 163
+    .line 164
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->indexOfKey(I)I
@@ -1088,7 +1095,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 165
+    .line 166
     iget-object p1, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->sparseIntArray:Landroid/util/SparseIntArray;
 
     invoke-virtual {p1, v0}, Landroid/util/SparseIntArray;->valueAt(I)I
@@ -1097,7 +1104,7 @@
 
     return p1
 
-    .line 168
+    .line 169
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->debugUnknownKeys:Ljava/util/HashSet;
 
@@ -1111,7 +1118,7 @@
 
     if-nez v0, :cond_1
 
-    .line 169
+    .line 170
     iget-object v0, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->debugUnknownKeys:Ljava/util/HashSet;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1120,7 +1127,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 171
+    .line 172
     :cond_1
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
@@ -1154,19 +1161,19 @@
 
     const-string v0, "drawableMsgOutMedia"
 
-    .line 178
+    .line 179
     invoke-static {p1, v0}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 179
+    .line 180
     iget-object p1, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->msgOutMedia:Landroid/graphics/drawable/Drawable;
 
     if-nez p1, :cond_0
 
-    .line 180
+    .line 181
     new-instance p1, Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
     const/4 v0, 0x0
@@ -1177,13 +1184,13 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->msgOutMedia:Landroid/graphics/drawable/Drawable;
 
-    .line 182
+    .line 183
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->msgOutMedia:Landroid/graphics/drawable/Drawable;
 
     return-object p1
 
-    .line 184
+    .line 185
     :cond_1
     invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getDrawable(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
@@ -1197,14 +1204,14 @@
 
     const-string v0, "paintDivider"
 
-    .line 189
+    .line 190
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 190
+    .line 191
     iget-object p1, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->dividerPaint:Landroid/graphics/Paint;
 
     return-object p1
@@ -1212,19 +1219,19 @@
     :cond_0
     const-string v0, "paintChatActionBackground"
 
-    .line 192
+    .line 193
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 193
+    .line 194
     iget-object p1, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->actionPaint:Landroid/graphics/Paint;
 
     if-nez p1, :cond_1
 
-    .line 194
+    .line 195
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -1239,20 +1246,20 @@
 
     const v2, 0x3dcccccd    # 0.1f
 
-    .line 195
+    .line 196
     invoke-static {v0, v1, v2}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v0
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 197
+    .line 198
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;->actionPaint:Landroid/graphics/Paint;
 
     return-object p1
 
-    .line 199
+    .line 200
     :cond_2
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getThemePaint(Ljava/lang/String;)Landroid/graphics/Paint;
 

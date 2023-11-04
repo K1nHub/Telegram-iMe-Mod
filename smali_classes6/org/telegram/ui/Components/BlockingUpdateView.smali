@@ -724,7 +724,7 @@
     .locals 3
 
     .line 142
-    invoke-static {}, Lorg/telegram/messenger/BuildVars;->isStandaloneApp()Z
+    invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isStandaloneBuild()Z
 
     move-result p2
 
@@ -1636,7 +1636,7 @@
     if-eqz p3, :cond_4
 
     .line 303
-    invoke-static {}, Lorg/telegram/messenger/BuildVars;->isStandaloneApp()Z
+    invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isStandaloneBuild()Z
 
     move-result p1
 

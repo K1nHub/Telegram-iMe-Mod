@@ -20,7 +20,7 @@ public final class CloudAlbumDb {
     }
 
     public int hashCode() {
-        return (ProfileData$$ExternalSyntheticBackport0.m1017m(this.userId) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.albumId);
+        return (ProfileData$$ExternalSyntheticBackport0.m1018m(this.userId) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.albumId);
     }
 
     public String toString() {

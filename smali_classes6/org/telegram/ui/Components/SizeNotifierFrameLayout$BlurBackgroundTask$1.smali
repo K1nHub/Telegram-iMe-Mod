@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask;Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBitmap;)V
     .locals 0
 
-    .line 716
+    .line 722
     iput-object p1, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask$1;->this$1:Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask$1;->val$oldBitmap:Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBitmap;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 719
+    .line 725
     iget-object v0, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask$1;->this$1:Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -48,14 +48,14 @@
 
     iput v1, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->blurCrossfadeProgress:F
 
-    .line 720
+    .line 726
     iget-object v0, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->unusedBitmaps:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask$1;->val$oldBitmap:Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBitmap;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 721
+    .line 727
     iget-object v0, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask$1;->this$1:Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 722
+    .line 728
     iget-object v0, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask$1;->this$1:Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -75,14 +75,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 723
+    .line 729
     iget-object v0, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask$1;->this$1:Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BlurBackgroundTask;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->invalidateBlurredViews()V
 
-    .line 724
+    .line 730
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
     return-void

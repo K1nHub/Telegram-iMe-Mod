@@ -20,7 +20,7 @@ public final class AdnlIdShortImpl implements AdnlIdShort {
     private final Lazy _string$delegate;
 
     /* renamed from: id */
-    private final byte[] f2015id;
+    private final byte[] f2027id;
 
     /* compiled from: AdnlIdShort.kt */
     /* loaded from: classes6.dex */
@@ -43,7 +43,7 @@ public final class AdnlIdShortImpl implements AdnlIdShort {
         if (1 != (i & 1)) {
             PluginExceptionsKt.throwMissingFieldException(i, 1, AdnlIdShortImpl$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2015id = bArr;
+        this.f2027id = bArr;
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.PUBLICATION;
         lazy = LazyKt__LazyJVMKt.lazy(lazyThreadSafetyMode, new Function0<Integer>() { // from class: org.ton.api.adnl.AdnlIdShortImpl.1
             {
@@ -74,7 +74,7 @@ public final class AdnlIdShortImpl implements AdnlIdShort {
         Lazy lazy;
         Lazy lazy2;
         Intrinsics.checkNotNullParameter(id, "id");
-        this.f2015id = id;
+        this.f2027id = id;
         LazyThreadSafetyMode lazyThreadSafetyMode = LazyThreadSafetyMode.PUBLICATION;
         lazy = LazyKt__LazyJVMKt.lazy(lazyThreadSafetyMode, new Function0<Integer>() { // from class: org.ton.api.adnl.AdnlIdShortImpl$_hashCode$2
             /* JADX INFO: Access modifiers changed from: package-private */
@@ -105,7 +105,7 @@ public final class AdnlIdShortImpl implements AdnlIdShort {
 
     @Override // org.ton.api.adnl.AdnlIdShort
     public byte[] getId() {
-        return this.f2015id;
+        return this.f2027id;
     }
 
     private final int get_hashCode() {

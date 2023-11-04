@@ -4,8 +4,8 @@ import com.iMe.storage.domain.model.binancepay.BinanceTransactionDirection;
 import com.iMe.storage.domain.model.binancepay.BinanceTransactionStatus;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: BinancePayExt.kt */
 /* loaded from: classes4.dex */
 public final class BinancePayExtKt {
@@ -49,11 +49,11 @@ public final class BinancePayExtKt {
         int i = WhenMappings.$EnumSwitchMapping$0[binanceTransactionDirection.ordinal()];
         if (i != 1) {
             if (i == 2) {
-                return C3630R.C3632drawable.fork_ic_binance_pay_outgoing_request;
+                return C3634R.C3636drawable.fork_ic_binance_pay_outgoing_request;
             }
             throw new NoWhenBranchMatchedException();
         }
-        return C3630R.C3632drawable.fork_ic_binance_pay_incoming_request;
+        return C3634R.C3636drawable.fork_ic_binance_pay_incoming_request;
     }
 
     public static final int colorKey(BinanceTransactionStatus binanceTransactionStatus) {

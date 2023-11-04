@@ -7,7 +7,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TickerView.kt */
 /* renamed from: com.iMe.ui.custom.TickerView */
 /* loaded from: classes3.dex */
@@ -36,10 +36,10 @@ public final class TickerView extends AppCompatTextView {
 
     private final void setupView() {
         GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setCornerRadius(AndroidUtilities.m103dp(2.0f));
-        gradientDrawable.setStroke(AndroidUtilities.m103dp(1.0f), Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
+        gradientDrawable.setCornerRadius(AndroidUtilities.m105dp(2.0f));
+        gradientDrawable.setStroke(AndroidUtilities.m105dp(1.0f), Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         setBackground(gradientDrawable);
         setTextSize(9.0f);
-        setPadding(AndroidUtilities.m103dp(6.0f), AndroidUtilities.m103dp(2.0f), AndroidUtilities.m103dp(6.0f), AndroidUtilities.m103dp(2.0f));
+        setPadding(AndroidUtilities.m105dp(6.0f), AndroidUtilities.m105dp(2.0f), AndroidUtilities.m105dp(6.0f), AndroidUtilities.m105dp(2.0f));
     }
 }

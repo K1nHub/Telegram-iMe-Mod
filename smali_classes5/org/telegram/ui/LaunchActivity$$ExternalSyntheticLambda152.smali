@@ -2,32 +2,48 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/PaymentFormActivity$PaymentFormCallback;
+.implements Lorg/telegram/ui/LocationActivity$LocationActivityDelegate;
 
 
 # instance fields
-.field public final synthetic f$0:Ljava/lang/Runnable;
+.field public final synthetic f$0:Ljava/util/HashMap;
+
+.field public final synthetic f$1:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Ljava/util/HashMap;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda152;->f$0:Ljava/lang/Runnable;
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda152;->f$0:Ljava/util/HashMap;
+
+    iput p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda152;->f$1:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onInvoiceStatusChanged(Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;)V
-    .locals 1
+.method public final didSelectLocation(Lorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
+    .locals 7
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda152;->f$0:Ljava/lang/Runnable;
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda152;->f$0:Ljava/util/HashMap;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$SPnlffAKQQNAqwzNREVtZ5g3UyQ(Ljava/lang/Runnable;Lorg/telegram/ui/PaymentFormActivity$InvoiceStatus;)V
+    iget v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda152;->f$1:I
+
+    move-object v2, p1
+
+    move v3, p2
+
+    move v4, p3
+
+    move v5, p4
+
+    move-object v6, p5
+
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$I789XcUO5A9hz04xuNcBtlceFFQ(Ljava/util/HashMap;ILorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
 
     return-void
 .end method

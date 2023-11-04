@@ -64,7 +64,7 @@ public final class ProductBuyTransactionParams {
     }
 
     public int hashCode() {
-        return (((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.validUntil) * 31) + this.address.hashCode()) * 31) + this.amount.hashCode()) * 31) + this.seqno;
+        return (((((ProfileData$$ExternalSyntheticBackport0.m1018m(this.validUntil) * 31) + this.address.hashCode()) * 31) + this.amount.hashCode()) * 31) + this.seqno;
     }
 
     public String toString() {

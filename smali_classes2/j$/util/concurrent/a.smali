@@ -168,13 +168,44 @@
     .end packed-switch
 .end method
 
+.method public synthetic andThen(Lj$/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
+    .locals 1
+
+    iget v0, p0, Lj$/util/concurrent/a;->a:I
+
+    packed-switch v0, :pswitch_data_0
+
+    goto :goto_0
+
+    .line 1
+    :pswitch_0
+    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
+
+    move-result-object p1
+
+    return-object p1
+
+    .line 2
+    :goto_0
+    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
+
+    move-result-object p1
+
+    return-object p1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
 .method public andThen(Lj$/util/function/Function;)Lj$/util/function/BiFunction;
     .locals 1
 
-    .line 1
+    .line 3
     invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2
+    .line 4
     new-instance v0, Lj$/util/concurrent/a;
 
     invoke-direct {v0, p0, p1}, Lj$/util/concurrent/a;-><init>(Lj$/util/function/BiFunction;Lj$/util/function/Function;)V
@@ -213,41 +244,4 @@
     move-result-object p1
 
     return-object p1
-.end method
-
-.method public b(Lj$/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
-    .locals 1
-
-    iget v0, p0, Lj$/util/concurrent/a;->a:I
-
-    packed-switch v0, :pswitch_data_0
-
-    goto :goto_0
-
-    .line 1
-    :pswitch_0
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    new-instance v0, Lj$/util/concurrent/a;
-
-    invoke-direct {v0, p0, p1}, Lj$/util/concurrent/a;-><init>(Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;)V
-
-    return-object v0
-
-    .line 3
-    :goto_0
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 4
-    new-instance v0, Lj$/util/concurrent/a;
-
-    invoke-direct {v0, p0, p1}, Lj$/util/concurrent/a;-><init>(Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;)V
-
-    return-object v0
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

@@ -125,7 +125,7 @@
     check-cast v1, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;
 
     .line 805
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->access$3200(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;)F
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->access$3300(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;)F
 
     move-result v4
 
@@ -404,7 +404,7 @@
     add-float/2addr v4, v5
 
     .line 848
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->access$3200(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;)F
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->access$3300(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;)F
 
     move-result v7
 
@@ -421,7 +421,7 @@
     const v9, 0x3e4ccccd    # 0.2f
 
     .line 849
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->access$3200(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;)F
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;->access$3300(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;)F
 
     move-result v10
 
@@ -548,7 +548,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3400(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
 
     move-result-object v0
 
@@ -718,11 +718,13 @@
 
     iget-object v3, v3, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueIcon:I
 
-    move-result-object v3
+    invoke-static {v3, v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3200(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getAnimatedEmojiColorFilter(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/ColorFilter;
+    move-result v4
+
+    invoke-static {v3, v4}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3000(Lorg/telegram/ui/Components/EmojiPacksAlert;I)Landroid/graphics/ColorFilter;
 
     move-result-object v3
 

@@ -154,7 +154,7 @@ public final class MultiDex {
         } else if (i >= 14) {
             V14.install(classLoader, list);
         } else {
-            C0232V4.install(classLoader, list);
+            C0238V4.install(classLoader, list);
         }
     }
 
@@ -391,7 +391,7 @@ public final class MultiDex {
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: androidx.multidex.MultiDex$V4 */
     /* loaded from: classes.dex */
-    public static final class C0232V4 {
+    public static final class C0238V4 {
         static void install(ClassLoader classLoader, List<? extends File> list) throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, IOException {
             int size = list.size();
             Field findField = MultiDex.findField(classLoader, "path");

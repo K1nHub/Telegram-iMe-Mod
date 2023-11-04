@@ -11,11 +11,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class UvmEntry extends AbstractSafeParcelable {
     public static final Parcelable.Creator<UvmEntry> CREATOR = new zzav();
-    @SafeParcelable.Field(getter = "getUserVerificationMethod", m1089id = 1)
+    @SafeParcelable.Field(getter = "getUserVerificationMethod", m1090id = 1)
     private int zza;
-    @SafeParcelable.Field(getter = "getKeyProtectionType", m1089id = 2)
+    @SafeParcelable.Field(getter = "getKeyProtectionType", m1090id = 2)
     private short zzb;
-    @SafeParcelable.Field(getter = "getMatcherProtectionType", m1089id = 3)
+    @SafeParcelable.Field(getter = "getMatcherProtectionType", m1090id = 3)
     private short zzc;
 
     /* compiled from: com.google.android.gms:play-services-fido@@19.0.0 */
@@ -47,7 +47,7 @@ public class UvmEntry extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public UvmEntry(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) short s, @SafeParcelable.Param(m1088id = 3) short s2) {
+    public UvmEntry(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) short s, @SafeParcelable.Param(m1089id = 3) short s2) {
         this.zza = i;
         this.zzb = s;
         this.zzc = s2;

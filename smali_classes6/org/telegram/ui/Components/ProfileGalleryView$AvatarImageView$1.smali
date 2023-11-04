@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;I)V
     .locals 0
 
-    .line 1378
+    .line 1428
     iput-object p1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView$1;->this$1:Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;
 
     iput p2, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView$1;->val$finalRealPosition:I
@@ -39,19 +39,19 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1381
+    .line 1431
     iget-object p1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView$1;->this$1:Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->access$1802(Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;Lorg/telegram/ui/Components/RadialProgress2;)Lorg/telegram/ui/Components/RadialProgress2;
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->access$1902(Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;Lorg/telegram/ui/Components/RadialProgress2;)Lorg/telegram/ui/Components/RadialProgress2;
 
-    .line 1382
+    .line 1432
     iget-object p1, p0, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView$1;->this$1:Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ProfileGalleryView$AvatarImageView;->this$0:Lorg/telegram/ui/Components/ProfileGalleryView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$1900(Lorg/telegram/ui/Components/ProfileGalleryView;)Landroid/util/SparseArray;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ProfileGalleryView;->access$2000(Lorg/telegram/ui/Components/ProfileGalleryView;)Landroid/util/SparseArray;
 
     move-result-object p1
 

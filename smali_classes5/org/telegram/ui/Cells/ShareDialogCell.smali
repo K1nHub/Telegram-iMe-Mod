@@ -365,9 +365,9 @@
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     :goto_5
-    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBoxCheck:I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBoxCheck:I
 
-    invoke-virtual {v6, v1, v2, v3}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
+    invoke-virtual {v6, v1, v2, v7}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 114
     iget-object v1, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
@@ -428,7 +428,7 @@
     .line 124
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    invoke-static {v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 
@@ -1437,17 +1437,19 @@
     .line 191
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicWasVisible:Z
 
+    const/4 v1, 0x0
+
     if-eqz p1, :cond_0
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/4 v1, 0x0
+    move v2, v1
 
     :goto_0
-    if-ne v0, v1, :cond_1
+    if-ne v0, v2, :cond_1
 
     if-nez p2, :cond_8
 
@@ -1455,9 +1457,9 @@
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    sget v2, Lorg/telegram/messenger/R$id;->spring_tag:I
+    sget v3, Lorg/telegram/messenger/R$id;->spring_tag:I
 
-    invoke-virtual {v0, v2}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+    invoke-virtual {v0, v3}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -1469,16 +1471,16 @@
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
     :cond_2
-    if-eqz v1, :cond_3
+    if-eqz v2, :cond_3
 
     .line 200
     iget-object v0, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getTextPaint()Landroid/text/TextPaint;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-static {p1, v3}, Lorg/telegram/ui/Components/Forum/ForumUtilities;->getTopicSpannedName(Lorg/telegram/tgnet/TLRPC$ForumTopic;Landroid/graphics/Paint;)Ljava/lang/CharSequence;
+    invoke-static {p1, v4, v1}, Lorg/telegram/ui/Components/Forum/ForumUtilities;->getTopicSpannedName(Lorg/telegram/tgnet/TLRPC$ForumTopic;Landroid/graphics/Paint;Z)Ljava/lang/CharSequence;
 
     move-result-object p1
 
@@ -1499,11 +1501,11 @@
     .line 204
     new-instance p2, Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    new-instance v3, Landroidx/dynamicanimation/animation/FloatValueHolder;
+    new-instance v1, Landroidx/dynamicanimation/animation/FloatValueHolder;
 
     const/high16 v4, 0x447a0000    # 1000.0f
 
-    if-eqz v1, :cond_4
+    if-eqz v2, :cond_4
 
     move v5, v0
 
@@ -1513,24 +1515,24 @@
     move v5, v4
 
     :goto_1
-    invoke-direct {v3, v5}, Landroidx/dynamicanimation/animation/FloatValueHolder;-><init>(F)V
+    invoke-direct {v1, v5}, Landroidx/dynamicanimation/animation/FloatValueHolder;-><init>(F)V
 
-    invoke-direct {p2, v3}, Landroidx/dynamicanimation/animation/SpringAnimation;-><init>(Landroidx/dynamicanimation/animation/FloatValueHolder;)V
+    invoke-direct {p2, v1}, Landroidx/dynamicanimation/animation/SpringAnimation;-><init>(Landroidx/dynamicanimation/animation/FloatValueHolder;)V
 
-    new-instance v3, Landroidx/dynamicanimation/animation/SpringForce;
+    new-instance v1, Landroidx/dynamicanimation/animation/SpringForce;
 
-    if-eqz v1, :cond_5
+    if-eqz v2, :cond_5
 
     move v0, v4
 
     .line 205
     :cond_5
-    invoke-direct {v3, v0}, Landroidx/dynamicanimation/animation/SpringForce;-><init>(F)V
+    invoke-direct {v1, v0}, Landroidx/dynamicanimation/animation/SpringForce;-><init>(F)V
 
     const v0, 0x44bb8000    # 1500.0f
 
     .line 206
-    invoke-virtual {v3, v0}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
+    invoke-virtual {v1, v0}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v0
 
@@ -1569,7 +1571,7 @@
     .line 220
     iget-object p2, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-virtual {p2, v2, p1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {p2, v3, p1}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     .line 221
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
@@ -1579,12 +1581,12 @@
     :cond_6
     const/16 p2, 0xa
 
-    if-eqz v1, :cond_7
+    if-eqz v2, :cond_7
 
     .line 224
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v1, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-virtual {v2, p1}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v1, p1}, Landroid/view/View;->setAlpha(F)V
 
     .line 225
     iget-object p1, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->nameTextView:Landroid/widget/TextView;
@@ -1611,14 +1613,14 @@
 
     .line 229
     :cond_7
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v1, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-virtual {v2, v0}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v1, v0}, Landroid/view/View;->setAlpha(F)V
 
     .line 230
-    iget-object v2, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->nameTextView:Landroid/widget/TextView;
+    iget-object v1, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->nameTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v2, p1}, Landroid/widget/TextView;->setAlpha(F)V
+    invoke-virtual {v1, p1}, Landroid/widget/TextView;->setAlpha(F)V
 
     .line 231
     iget-object p1, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -1640,7 +1642,7 @@
 
     .line 236
     :goto_2
-    iput-boolean v1, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicWasVisible:Z
+    iput-boolean v2, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicWasVisible:Z
 
     :cond_8
     return-void

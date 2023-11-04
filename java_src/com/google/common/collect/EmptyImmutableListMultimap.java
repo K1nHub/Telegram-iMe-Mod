@@ -5,6 +5,6 @@ public class EmptyImmutableListMultimap extends ImmutableListMultimap<Object, Ob
     static final EmptyImmutableListMultimap INSTANCE = new EmptyImmutableListMultimap();
 
     private EmptyImmutableListMultimap() {
-        super(ImmutableMap.m1047of(), 0);
+        super(ImmutableMap.m1048of(), 0);
     }
 }

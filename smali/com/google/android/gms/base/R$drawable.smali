@@ -52,9 +52,9 @@
 
 .field public static final common_google_signin_btn_text_light_normal_background:I = 0x7f080116
 
-.field public static final googleg_disabled_color_18:I = 0x7f0802ea
+.field public static final googleg_disabled_color_18:I = 0x7f0802f4
 
-.field public static final googleg_standard_color_18:I = 0x7f0802eb
+.field public static final googleg_standard_color_18:I = 0x7f0802f5
 
 
 # direct methods

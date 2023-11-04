@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$Adapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 501
+    .line 506
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$Adapter$5;->this$1:Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$Adapter;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 504
+    .line 509
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 506
+    .line 511
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$Adapter$5;->this$1:Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$Adapter;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$Adapter;->this$0:Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;
@@ -49,7 +49,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 507
+    .line 512
     invoke-virtual {p2}, Landroid/view/TextureView;->getTop()I
 
     move-result p1
@@ -75,13 +75,13 @@
 
     goto :goto_1
 
-    .line 508
+    .line 513
     :cond_0
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet;->overrideTitleIcon:Landroid/view/View;
 
     if-eqz p1, :cond_1
 
-    .line 509
+    .line 514
     invoke-virtual {p1}, Landroid/view/View;->getTop()I
 
     move-result p1
@@ -103,7 +103,7 @@
     :cond_1
     const/4 p1, 0x0
 
-    .line 511
+    .line 516
     :goto_1
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$Adapter$5;->this$1:Lorg/telegram/ui/Components/Premium/PremiumPreviewBottomSheet$Adapter;
 

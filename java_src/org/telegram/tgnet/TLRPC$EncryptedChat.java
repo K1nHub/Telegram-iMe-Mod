@@ -16,7 +16,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
     public boolean history_deleted;
 
     /* renamed from: id */
-    public int f1612id;
+    public int f1614id;
     public int in_seq_no;
     public int key_create_date;
     public long key_fingerprint;
@@ -37,27 +37,23 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
         switch (i) {
             case -1417756512:
                 tLRPC$EncryptedChat = new TLRPC$EncryptedChat() { // from class: org.telegram.tgnet.TLRPC$TL_encryptedChatEmpty
-                    public static int constructor = -1417756512;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1612id = abstractSerializedData2.readInt32(z2);
+                        this.f1614id = abstractSerializedData2.readInt32(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1612id);
+                        abstractSerializedData2.writeInt32(-1417756512);
+                        abstractSerializedData2.writeInt32(this.f1614id);
                     }
                 };
                 break;
             case -931638658:
                 tLRPC$EncryptedChat = new TLRPC$EncryptedChat() { // from class: org.telegram.tgnet.TLRPC$TL_encryptedChatRequested_layer115
-                    public static int constructor = -931638658;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1612id = abstractSerializedData2.readInt32(z2);
+                        this.f1614id = abstractSerializedData2.readInt32(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt32(z2);
@@ -67,8 +63,8 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1612id);
+                        abstractSerializedData2.writeInt32(-931638658);
+                        abstractSerializedData2.writeInt32(this.f1614id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32((int) this.admin_id);
@@ -79,11 +75,9 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                 break;
             case -94974410:
                 tLRPC$EncryptedChat = new TLRPC$TL_encryptedChat() { // from class: org.telegram.tgnet.TLRPC$TL_encryptedChat_layer131
-                    public static int constructor = -94974410;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChat, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1612id = abstractSerializedData2.readInt32(z2);
+                        this.f1614id = abstractSerializedData2.readInt32(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt32(z2);
@@ -94,8 +88,8 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChat, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1612id);
+                        abstractSerializedData2.writeInt32(-94974410);
+                        abstractSerializedData2.writeInt32(this.f1614id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32((int) this.admin_id);
@@ -107,11 +101,9 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                 break;
             case -39213129:
                 tLRPC$EncryptedChat = new TLRPC$TL_encryptedChatRequested() { // from class: org.telegram.tgnet.TLRPC$TL_encryptedChatRequested_old
-                    public static int constructor = -39213129;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatRequested, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1612id = abstractSerializedData2.readInt32(z2);
+                        this.f1614id = abstractSerializedData2.readInt32(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt32(z2);
@@ -122,8 +114,8 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatRequested, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1612id);
+                        abstractSerializedData2.writeInt32(-39213129);
+                        abstractSerializedData2.writeInt32(this.f1614id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32((int) this.admin_id);
@@ -135,17 +127,15 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                 break;
             case 332848423:
                 tLRPC$EncryptedChat = new TLRPC$TL_encryptedChatDiscarded() { // from class: org.telegram.tgnet.TLRPC$TL_encryptedChatDiscarded_layer122
-                    public static int constructor = 332848423;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatDiscarded, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1612id = abstractSerializedData2.readInt32(z2);
+                        this.f1614id = abstractSerializedData2.readInt32(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatDiscarded, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1612id);
+                        abstractSerializedData2.writeInt32(332848423);
+                        abstractSerializedData2.writeInt32(this.f1614id);
                     }
                 };
                 break;
@@ -154,11 +144,9 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                 break;
             case 1006044124:
                 tLRPC$EncryptedChat = new TLRPC$TL_encryptedChatWaiting() { // from class: org.telegram.tgnet.TLRPC$TL_encryptedChatWaiting_layer131
-                    public static int constructor = 1006044124;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatWaiting, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1612id = abstractSerializedData2.readInt32(z2);
+                        this.f1614id = abstractSerializedData2.readInt32(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt32(z2);
@@ -167,8 +155,8 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatWaiting, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1612id);
+                        abstractSerializedData2.writeInt32(1006044124);
+                        abstractSerializedData2.writeInt32(this.f1614id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32((int) this.admin_id);
@@ -184,8 +172,6 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                 break;
             case 1651608194:
                 tLRPC$EncryptedChat = new TLRPC$TL_encryptedChatRequested() { // from class: org.telegram.tgnet.TLRPC$TL_encryptedChatRequested_layer131
-                    public static int constructor = 1651608194;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatRequested, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -193,7 +179,7 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                         if ((readInt32 & 1) != 0) {
                             this.folder_id = abstractSerializedData2.readInt32(z2);
                         }
-                        this.f1612id = abstractSerializedData2.readInt32(z2);
+                        this.f1614id = abstractSerializedData2.readInt32(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt32(z2);
@@ -203,12 +189,12 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChatRequested, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1651608194);
                         abstractSerializedData2.writeInt32(this.flags);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.folder_id);
                         }
-                        abstractSerializedData2.writeInt32(this.f1612id);
+                        abstractSerializedData2.writeInt32(this.f1614id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32((int) this.admin_id);
@@ -219,11 +205,9 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
                 break;
             case 1711395151:
                 tLRPC$EncryptedChat = new TLRPC$TL_encryptedChat() { // from class: org.telegram.tgnet.TLRPC$TL_encryptedChat_old
-                    public static int constructor = 1711395151;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChat, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1612id = abstractSerializedData2.readInt32(z2);
+                        this.f1614id = abstractSerializedData2.readInt32(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt32(z2);
@@ -235,8 +219,8 @@ public abstract class TLRPC$EncryptedChat extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_encryptedChat, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32(this.f1612id);
+                        abstractSerializedData2.writeInt32(1711395151);
+                        abstractSerializedData2.writeInt32(this.f1614id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt32((int) this.admin_id);

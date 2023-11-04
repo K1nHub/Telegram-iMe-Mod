@@ -3,9 +3,9 @@ package org.ton.api.tonnode;
 import io.ktor.utils.p032io.core.Input;
 import io.ktor.utils.p032io.core.Output;
 import kotlin.jvm.internal.Intrinsics;
-import org.ton.p044tl.TlCodec;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlCodec;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: TonNodeBlockId.kt */
 /* loaded from: classes6.dex */
 public interface TonNodeBlockId {
@@ -43,53 +43,53 @@ public interface TonNodeBlockId {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
         private final /* synthetic */ TonNodeBlockIdTlbConstructor $$delegate_0 = TonNodeBlockIdTlbConstructor.INSTANCE;
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public TonNodeBlockId decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return this.$$delegate_0.decode(reader);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public TonNodeBlockId decodeBoxed(Input input) {
             Intrinsics.checkNotNullParameter(input, "input");
             return this.$$delegate_0.decodeBoxed(input);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public TonNodeBlockId decodeBoxed(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return this.$$delegate_0.decodeBoxed(reader);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(Output output, TonNodeBlockId value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encode(output, (Output) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, TonNodeBlockId value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encode(writer, value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encodeBoxed(Output output, TonNodeBlockId value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encodeBoxed(output, (Output) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encodeBoxed(TlWriter writer, TonNodeBlockId value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encodeBoxed(writer, (TlWriter) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public byte[] encodeToByteArray(TonNodeBlockId value, boolean z) {
             Intrinsics.checkNotNullParameter(value, "value");
             return this.$$delegate_0.encodeToByteArray(value, z);

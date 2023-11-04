@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Landroid/os/Bundle;Lorg/telegram/messenger/Utilities$Callback;[Lorg/telegram/ui/Components/ChatAttachAlert;)V
     .locals 0
 
-    .line 1912
+    .line 1918
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$25;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput-object p3, p0, Lorg/telegram/ui/Stories/recorder/PaintView$25;->val$onAudioSelected:Lorg/telegram/messenger/Utilities$Callback;
@@ -43,7 +43,7 @@
 .method public getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
     .locals 1
 
-    .line 1935
+    .line 1941
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -68,7 +68,7 @@
 .method public getParentActivity()Landroid/app/Activity;
     .locals 1
 
-    .line 1930
+    .line 1936
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$25;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -85,7 +85,7 @@
 .method public getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 1
 
-    .line 1920
+    .line 1926
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$25;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$3900(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -126,7 +126,7 @@
         }
     .end annotation
 
-    .line 1945
+    .line 1951
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p2
@@ -138,7 +138,7 @@
     :cond_0
     const/4 p2, 0x0
 
-    .line 1948
+    .line 1954
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
@@ -149,20 +149,20 @@
 
     return-void
 
-    .line 1952
+    .line 1958
     :cond_1
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/PaintView$25;->val$onAudioSelected:Lorg/telegram/messenger/Utilities$Callback;
 
     invoke-interface {p3, p1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
-    .line 1953
+    .line 1959
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$25;->val$audioAlert:[Lorg/telegram/ui/Components/ChatAttachAlert;
 
     aget-object p3, p1, p2
 
     if-eqz p3, :cond_2
 
-    .line 1954
+    .line 1960
     aget-object p1, p1, p2
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->dismiss()V

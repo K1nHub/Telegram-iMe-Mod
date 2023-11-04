@@ -38,9 +38,9 @@ public class DataTransportCrashlyticsReportSender {
     public static DataTransportCrashlyticsReportSender create(Context context) {
         TransportRuntime.initialize(context);
         TransportFactory newFactory = TransportRuntime.getInstance().newFactory(new CCTDestination(CRASHLYTICS_ENDPOINT, CRASHLYTICS_API_KEY));
-        Encoding m1121of = Encoding.m1121of("json");
+        Encoding m1122of = Encoding.m1122of("json");
         Transformer<CrashlyticsReport, byte[]> transformer = DEFAULT_TRANSFORM;
-        return new DataTransportCrashlyticsReportSender(newFactory.getTransport("FIREBASE_CRASHLYTICS_REPORT", CrashlyticsReport.class, m1121of, transformer), transformer);
+        return new DataTransportCrashlyticsReportSender(newFactory.getTransport("FIREBASE_CRASHLYTICS_REPORT", CrashlyticsReport.class, m1122of, transformer), transformer);
     }
 
     DataTransportCrashlyticsReportSender(Transport<CrashlyticsReport> transport, Transformer<CrashlyticsReport, byte[]> transformer) {

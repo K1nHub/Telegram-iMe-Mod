@@ -28,14 +28,14 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Landroid/content/Context;)V
     .locals 2
 
-    .line 3574
+    .line 3580
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$3900(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object p1
 
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 3578
+    .line 3584
     new-instance p1, Lorg/telegram/ui/Components/ButtonBounce;
 
     const/high16 p2, 0x3fc00000    # 1.5f
@@ -50,7 +50,7 @@
 
     const/4 p1, 0x1
 
-    .line 3579
+    .line 3585
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupWindowLayout;->enableBounce:Z
 
     return-void
@@ -61,7 +61,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 3595
+    .line 3601
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupWindowLayout;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     const v1, 0x3d4ccccd    # 0.05f
@@ -76,23 +76,23 @@
 
     if-gez v1, :cond_0
 
-    .line 3597
+    .line 3603
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 3598
+    .line 3604
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupWindowLayout;->cx:F
 
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupWindowLayout;->cy:F
 
     invoke-virtual {p1, v0, v0, v2, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 3600
+    .line 3606
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     if-gez v1, :cond_1
 
-    .line 3602
+    .line 3608
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_1
@@ -102,28 +102,28 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 3583
+    .line 3589
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 3584
+    .line 3590
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupWindowLayout;->cx:F
 
-    .line 3585
+    .line 3591
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupWindowLayout;->cy:F
 
-    .line 3586
+    .line 3592
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupWindowLayout;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupWindowLayout;->enableBounce:Z
@@ -132,7 +132,7 @@
 
     goto :goto_0
 
-    .line 3587
+    .line 3593
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -150,7 +150,7 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 3588
+    .line 3594
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$PopupWindowLayout;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 
@@ -158,7 +158,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 3590
+    .line 3596
     :cond_2
     :goto_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z

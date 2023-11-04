@@ -10,7 +10,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: Channels.kt */
-@DebugMetadata(m143c = "kotlinx.coroutines.channels.ChannelsKt__ChannelsKt$trySendBlocking$2", m142f = "Channels.kt", m141l = {39}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "kotlinx.coroutines.channels.ChannelsKt__ChannelsKt$trySendBlocking$2", m144f = "Channels.kt", m143l = {39}, m142m = "invokeSuspend")
 /* loaded from: classes4.dex */
 final class ChannelsKt__ChannelsKt$trySendBlocking$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super ChannelResult<? extends Unit>>, Object> {
     final /* synthetic */ E $element;
@@ -47,7 +47,7 @@ final class ChannelsKt__ChannelsKt$trySendBlocking$2 extends SuspendLambda imple
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
     public final Object invokeSuspend(Object obj) {
         Object coroutine_suspended;
-        Object m1935constructorimpl;
+        Object m1940constructorimpl;
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         try {
@@ -66,11 +66,11 @@ final class ChannelsKt__ChannelsKt$trySendBlocking$2 extends SuspendLambda imple
             } else {
                 ResultKt.throwOnFailure(obj);
             }
-            m1935constructorimpl = Result.m1935constructorimpl(Unit.INSTANCE);
+            m1940constructorimpl = Result.m1940constructorimpl(Unit.INSTANCE);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th));
+            m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
         }
-        return ChannelResult.m2096boximpl(Result.m1941isSuccessimpl(m1935constructorimpl) ? ChannelResult.Companion.m2107successJP2dKIU(Unit.INSTANCE) : ChannelResult.Companion.m2105closedJP2dKIU(Result.m1938exceptionOrNullimpl(m1935constructorimpl)));
+        return ChannelResult.m2101boximpl(Result.m1946isSuccessimpl(m1940constructorimpl) ? ChannelResult.Companion.m2112successJP2dKIU(Unit.INSTANCE) : ChannelResult.Companion.m2110closedJP2dKIU(Result.m1943exceptionOrNullimpl(m1940constructorimpl)));
     }
 }

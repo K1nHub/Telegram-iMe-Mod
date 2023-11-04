@@ -27,11 +27,11 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda158;->f$0:Ljava/util/ArrayList;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+    check-cast p1, Lorg/telegram/messenger/MediaDataController$KeywordResult;
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+    check-cast p2, Lorg/telegram/messenger/MediaDataController$KeywordResult;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$37vtIPJbTy4wzuT7Yu6khYBPTFA(Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;)I
+    invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$-q6Bj4LqViks122KRRFusns7NS4(Ljava/util/ArrayList;Lorg/telegram/messenger/MediaDataController$KeywordResult;Lorg/telegram/messenger/MediaDataController$KeywordResult;)I
 
     move-result p1
 

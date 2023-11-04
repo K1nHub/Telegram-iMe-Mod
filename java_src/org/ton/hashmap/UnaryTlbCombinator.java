@@ -9,6 +9,6 @@ final class UnaryTlbCombinator extends TlbNegatedCombinator<Unary> {
     public static final UnaryTlbCombinator INSTANCE = new UnaryTlbCombinator();
 
     private UnaryTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(Unary.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(UnaryZero.class), UnaryZeroTlbConstructor.INSTANCE), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(UnarySuccess.class), UnarySuccessTlbConstructor.INSTANCE));
+        super(Reflection.getOrCreateKotlinClass(Unary.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(UnaryZero.class), UnaryZeroTlbConstructor.INSTANCE), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(UnarySuccess.class), UnarySuccessTlbConstructor.INSTANCE));
     }
 }

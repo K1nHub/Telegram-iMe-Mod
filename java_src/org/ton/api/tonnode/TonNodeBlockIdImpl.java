@@ -33,7 +33,7 @@ final class TonNodeBlockIdImpl implements TonNodeBlockId {
     }
 
     public int hashCode() {
-        return (((this.workchain * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.shard)) * 31) + this.seqno;
+        return (((this.workchain * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.shard)) * 31) + this.seqno;
     }
 
     /* compiled from: TonNodeBlockId.kt */
@@ -103,7 +103,7 @@ final class TonNodeBlockIdImpl implements TonNodeBlockId {
         sb.append('(');
         sb.append(getWorkchain());
         sb.append(':');
-        padStart = StringsKt__StringsKt.padStart(UStringsKt.m2052toStringJSWoG40(ULong.m1989constructorimpl(Shard.m4918constructorimpl(getShard())), 16), 16, '0');
+        padStart = StringsKt__StringsKt.padStart(UStringsKt.m2057toStringJSWoG40(ULong.m1994constructorimpl(Shard.m5072constructorimpl(getShard())), 16), 16, '0');
         sb.append(padStart);
         sb.append(':');
         sb.append(getSeqno());

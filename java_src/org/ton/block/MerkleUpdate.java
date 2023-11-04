@@ -28,7 +28,7 @@ public final class MerkleUpdate<X> implements TlbObject {
     private static final SerialDescriptor $cachedDescriptor;
 
     /* renamed from: new  reason: not valid java name */
-    private final CellRef<X> f2162new;
+    private final CellRef<X> f2174new;
     private final short newDepth;
     private final BitString newHash;
     private final CellRef<X> old;
@@ -51,17 +51,17 @@ public final class MerkleUpdate<X> implements TlbObject {
         }
         if (obj instanceof MerkleUpdate) {
             MerkleUpdate merkleUpdate = (MerkleUpdate) obj;
-            return Intrinsics.areEqual(this.oldHash, merkleUpdate.oldHash) && Intrinsics.areEqual(this.newHash, merkleUpdate.newHash) && this.oldDepth == merkleUpdate.oldDepth && this.newDepth == merkleUpdate.newDepth && Intrinsics.areEqual(this.old, merkleUpdate.old) && Intrinsics.areEqual(this.f2162new, merkleUpdate.f2162new);
+            return Intrinsics.areEqual(this.oldHash, merkleUpdate.oldHash) && Intrinsics.areEqual(this.newHash, merkleUpdate.newHash) && this.oldDepth == merkleUpdate.oldDepth && this.newDepth == merkleUpdate.newDepth && Intrinsics.areEqual(this.old, merkleUpdate.old) && Intrinsics.areEqual(this.f2174new, merkleUpdate.f2174new);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((this.oldHash.hashCode() * 31) + this.newHash.hashCode()) * 31) + UShort.m2013hashCodeimpl(this.oldDepth)) * 31) + UShort.m2013hashCodeimpl(this.newDepth)) * 31) + this.old.hashCode()) * 31) + this.f2162new.hashCode();
+        return (((((((((this.oldHash.hashCode() * 31) + this.newHash.hashCode()) * 31) + UShort.m2018hashCodeimpl(this.oldDepth)) * 31) + UShort.m2018hashCodeimpl(this.newDepth)) * 31) + this.old.hashCode()) * 31) + this.f2174new.hashCode();
     }
 
     public String toString() {
-        return "MerkleUpdate(oldHash=" + this.oldHash + ", newHash=" + this.newHash + ", oldDepth=" + ((Object) UShort.m2014toStringimpl(this.oldDepth)) + ", newDepth=" + ((Object) UShort.m2014toStringimpl(this.newDepth)) + ", old=" + this.old + ", new=" + this.f2162new + ')';
+        return "MerkleUpdate(oldHash=" + this.oldHash + ", newHash=" + this.newHash + ", oldDepth=" + ((Object) UShort.m2019toStringimpl(this.oldDepth)) + ", newDepth=" + ((Object) UShort.m2019toStringimpl(this.newDepth)) + ", old=" + this.old + ", new=" + this.f2174new + ')';
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -71,10 +71,10 @@ public final class MerkleUpdate<X> implements TlbObject {
         }
         this.oldHash = bitString;
         this.newHash = bitString2;
-        this.oldDepth = uShort.m2015unboximpl();
-        this.newDepth = uShort2.m2015unboximpl();
+        this.oldDepth = uShort.m2020unboximpl();
+        this.newDepth = uShort2.m2020unboximpl();
         this.old = cellRef;
-        this.f2162new = cellRef2;
+        this.f2174new = cellRef2;
         if (!(bitString.getSize() == 256)) {
             throw new IllegalArgumentException("Failed requirement.".toString());
         }
@@ -94,7 +94,7 @@ public final class MerkleUpdate<X> implements TlbObject {
         this.oldDepth = s;
         this.newDepth = s2;
         this.old = old;
-        this.f2162new = cellRef;
+        this.f2174new = cellRef;
         if (!(oldHash.getSize() == 256)) {
             throw new IllegalArgumentException("Failed requirement.".toString());
         }
@@ -109,10 +109,10 @@ public final class MerkleUpdate<X> implements TlbObject {
         compositeEncoder.encodeSerializableElement(serialDescriptor, 0, fiftHexBitStringSerializer, merkleUpdate.oldHash);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, fiftHexBitStringSerializer, merkleUpdate.newHash);
         UShortSerializer uShortSerializer = UShortSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uShortSerializer, UShort.m2010boximpl(merkleUpdate.oldDepth));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, uShortSerializer, UShort.m2010boximpl(merkleUpdate.newDepth));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uShortSerializer, UShort.m2015boximpl(merkleUpdate.oldDepth));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, uShortSerializer, UShort.m2015boximpl(merkleUpdate.newDepth));
         compositeEncoder.encodeSerializableElement(serialDescriptor, 4, kSerializerArr[4], merkleUpdate.old);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 5, kSerializerArr[5], merkleUpdate.f2162new);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 5, kSerializerArr[5], merkleUpdate.f2174new);
     }
 
     public final BitString getOldHash() {
@@ -124,12 +124,12 @@ public final class MerkleUpdate<X> implements TlbObject {
     }
 
     /* renamed from: getOldDepth-Mh2AYeg  reason: not valid java name */
-    public final short m4971getOldDepthMh2AYeg() {
+    public final short m5125getOldDepthMh2AYeg() {
         return this.oldDepth;
     }
 
     /* renamed from: getNewDepth-Mh2AYeg  reason: not valid java name */
-    public final short m4970getNewDepthMh2AYeg() {
+    public final short m5124getNewDepthMh2AYeg() {
         return this.newDepth;
     }
 
@@ -138,7 +138,7 @@ public final class MerkleUpdate<X> implements TlbObject {
     }
 
     public final CellRef<X> getNew() {
-        return this.f2162new;
+        return this.f2174new;
     }
 
     /* compiled from: MerkleUpdate.kt */
@@ -179,10 +179,10 @@ public final class MerkleUpdate<X> implements TlbObject {
         TlbPrettyPrinter open = printer.open("!merkle_update");
         open.field("old_hash", this.oldHash);
         open.field("new_hash", this.newHash);
-        open.field("old_depth", UShort.m2010boximpl(this.oldDepth));
-        open.field("new_depth", UShort.m2010boximpl(this.newDepth));
+        open.field("old_depth", UShort.m2015boximpl(this.oldDepth));
+        open.field("new_depth", UShort.m2015boximpl(this.newDepth));
         open.field("old", CellRef.DefaultImpls.toCell$default(this.old, null, 1, null));
-        open.field("new", CellRef.DefaultImpls.toCell$default(this.f2162new, null, 1, null));
+        open.field("new", CellRef.DefaultImpls.toCell$default(this.f2174new, null, 1, null));
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

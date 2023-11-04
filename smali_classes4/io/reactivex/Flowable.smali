@@ -145,7 +145,7 @@
         }
     .end annotation
 
-    const-string v0, "keySelector is null"
+    const-string/jumbo v0, "keySelector is null"
 
     .line 8934
     invoke-static {p1, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

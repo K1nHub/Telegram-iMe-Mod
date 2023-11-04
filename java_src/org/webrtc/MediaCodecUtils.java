@@ -51,7 +51,7 @@ class MediaCodecUtils {
                 }
             });
         } catch (Exception e2) {
-            FileLog.m97e(e2);
+            FileLog.m99e(e2);
         }
         return arrayList;
     }
@@ -86,7 +86,7 @@ class MediaCodecUtils {
 
     /* renamed from: org.webrtc.MediaCodecUtils$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C75961 {
+    static /* synthetic */ class C76711 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$VideoCodecMimeType;
 
         static {
@@ -117,7 +117,7 @@ class MediaCodecUtils {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public static Map<String, String> getCodecProperties(VideoCodecMimeType videoCodecMimeType, boolean z) {
-        int i = C75961.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
+        int i = C76711.$SwitchMap$org$webrtc$VideoCodecMimeType[videoCodecMimeType.ordinal()];
         if (i == 1 || i == 2 || i == 3 || i == 4) {
             return new HashMap();
         }

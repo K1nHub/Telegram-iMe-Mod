@@ -27,7 +27,7 @@ public final class BlockInfoTlbConstructor extends org.ton.tlb.TlbConstructor<Bl
     public void storeTlb(CellBuilder cellBuilder, BlockInfo value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m4940getVersionpVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5094getVersionpVg5ArA());
         cellBuilder.storeBit(value.getNotMaster());
         cellBuilder.storeBit(value.getAfterMerge());
         cellBuilder.storeBit(value.getBeforeSplit());
@@ -40,13 +40,13 @@ public final class BlockInfoTlbConstructor extends org.ton.tlb.TlbConstructor<Bl
         cellBuilder.storeInt(value.getSeqNo(), 32);
         cellBuilder.storeInt(value.getVertSeqNo(), 32);
         ShardIdent.Companion.storeTlb(cellBuilder, (CellBuilder) value.getShard());
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m4935getGenUtimepVg5ArA());
-        cellBuilder.mo5057storeUInt64VKZWuLQ(value.m4939getStartLtsVKNKU());
-        cellBuilder.mo5057storeUInt64VKZWuLQ(value.m4933getEndLtsVKNKU());
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m4936getGenValidatorListHashShortpVg5ArA());
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m4934getGenCatchainSeqnopVg5ArA());
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m4937getMinRefMcSeqnopVg5ArA());
-        cellBuilder.mo5056storeUInt32WZ4Q5Ns(value.m4938getPrevKeyBlockSeqnopVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5089getGenUtimepVg5ArA());
+        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5093getStartLtsVKNKU());
+        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5087getEndLtsVKNKU());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5090getGenValidatorListHashShortpVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5088getGenCatchainSeqnopVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5091getMinRefMcSeqnopVg5ArA());
+        cellBuilder.mo5210storeUInt32WZ4Q5Ns(value.m5092getPrevKeyBlockSeqnopVg5ArA());
         if ((value.getFlags() & 1) != 0 && value.getGenSoftware() != null) {
             GlobalVersion.Companion.storeTlb(cellBuilder, (CellBuilder) value.getGenSoftware());
         }
@@ -63,7 +63,7 @@ public final class BlockInfoTlbConstructor extends org.ton.tlb.TlbConstructor<Bl
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public BlockInfo loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        int mo5066loadUInt32pVg5ArA = cellSlice.mo5066loadUInt32pVg5ArA();
+        int mo5220loadUInt32pVg5ArA = cellSlice.mo5220loadUInt32pVg5ArA();
         boolean loadBit = cellSlice.loadBit();
         boolean loadBit2 = cellSlice.loadBit();
         boolean loadBit3 = cellSlice.loadBit();
@@ -73,6 +73,6 @@ public final class BlockInfoTlbConstructor extends org.ton.tlb.TlbConstructor<Bl
         boolean loadBit7 = cellSlice.loadBit();
         boolean loadBit8 = cellSlice.loadBit();
         int intValue = cellSlice.loadInt(8).intValue();
-        return new BlockInfo(mo5066loadUInt32pVg5ArA, loadBit, loadBit2, loadBit3, loadBit4, loadBit5, loadBit6, loadBit7, loadBit8, intValue, cellSlice.mo5066loadUInt32pVg5ArA(), cellSlice.mo5066loadUInt32pVg5ArA(), ShardIdent.Companion.loadTlb(cellSlice), cellSlice.mo5066loadUInt32pVg5ArA(), cellSlice.mo5067loadUInt64sVKNKU(), cellSlice.mo5067loadUInt64sVKNKU(), cellSlice.mo5066loadUInt32pVg5ArA(), cellSlice.mo5066loadUInt32pVg5ArA(), cellSlice.mo5066loadUInt32pVg5ArA(), cellSlice.mo5066loadUInt32pVg5ArA(), (intValue & 1) != 0 ? GlobalVersion.Companion.loadTlb(cellSlice) : null, loadBit ? blkMasterInfo.loadTlb(cellSlice) : null, (CellRef) CellRef.Companion.tlbCodec(BlkPrevInfo.Companion.tlbCodec(loadBit2)).loadTlb(cellSlice), loadBit8 ? blkPrevInfoVert.loadTlb(cellSlice) : null, null);
+        return new BlockInfo(mo5220loadUInt32pVg5ArA, loadBit, loadBit2, loadBit3, loadBit4, loadBit5, loadBit6, loadBit7, loadBit8, intValue, cellSlice.mo5220loadUInt32pVg5ArA(), cellSlice.mo5220loadUInt32pVg5ArA(), ShardIdent.Companion.loadTlb(cellSlice), cellSlice.mo5220loadUInt32pVg5ArA(), cellSlice.mo5221loadUInt64sVKNKU(), cellSlice.mo5221loadUInt64sVKNKU(), cellSlice.mo5220loadUInt32pVg5ArA(), cellSlice.mo5220loadUInt32pVg5ArA(), cellSlice.mo5220loadUInt32pVg5ArA(), cellSlice.mo5220loadUInt32pVg5ArA(), (intValue & 1) != 0 ? GlobalVersion.Companion.loadTlb(cellSlice) : null, loadBit ? blkMasterInfo.loadTlb(cellSlice) : null, (CellRef) CellRef.Companion.tlbCodec(BlkPrevInfo.Companion.tlbCodec(loadBit2)).loadTlb(cellSlice), loadBit8 ? blkPrevInfoVert.loadTlb(cellSlice) : null, null);
     }
 }

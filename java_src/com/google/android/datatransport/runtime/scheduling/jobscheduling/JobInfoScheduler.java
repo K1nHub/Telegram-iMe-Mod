@@ -57,7 +57,7 @@ public class JobInfoScheduler implements WorkScheduler {
         JobScheduler jobScheduler = (JobScheduler) this.context.getSystemService("jobscheduler");
         int jobId = getJobId(transportContext);
         if (!z && isJobServiceOn(jobScheduler, jobId, i)) {
-            Logging.m1119d("JobInfoScheduler", "Upload for context %s is already scheduled. Returning...", transportContext);
+            Logging.m1120d("JobInfoScheduler", "Upload for context %s is already scheduled. Returning...", transportContext);
             return;
         }
         long nextCallTime = this.eventStore.getNextCallTime(transportContext);
@@ -70,7 +70,7 @@ public class JobInfoScheduler implements WorkScheduler {
             persistableBundle.putString("extras", Base64.encodeToString(transportContext.getExtras(), 0));
         }
         configureJob.setExtras(persistableBundle);
-        Logging.m1118d("JobInfoScheduler", "Scheduling upload for context %s with jobId=%d in %dms(Backend next call timestamp %d). Attempt %d", transportContext, Integer.valueOf(jobId), Long.valueOf(this.config.getScheduleDelay(transportContext.getPriority(), nextCallTime, i)), Long.valueOf(nextCallTime), Integer.valueOf(i));
+        Logging.m1119d("JobInfoScheduler", "Scheduling upload for context %s with jobId=%d in %dms(Backend next call timestamp %d). Attempt %d", transportContext, Integer.valueOf(jobId), Long.valueOf(this.config.getScheduleDelay(transportContext.getPriority(), nextCallTime, i)), Long.valueOf(nextCallTime), Integer.valueOf(i));
         jobScheduler.schedule(configureJob.build());
     }
 }

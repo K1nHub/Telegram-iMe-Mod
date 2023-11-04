@@ -31,14 +31,14 @@ import moxy.MvpDelegate;
 import moxy.MvpDelegateHolder;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
 /* compiled from: MvpFragment.kt */
 /* renamed from: com.iMe.ui.base.mvp.MvpFragment */
 /* loaded from: classes3.dex */
 public abstract class MvpFragment extends BaseFragment implements MvpDelegateHolder, KoinComponent, BaseView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(MvpFragment.class, "hintUtils", "getHintUtils()Lcom/iMe/utils/hints/HintUtils;", 0))};
-    private final Lazy mvpBaseDelegate$delegate = LazyKt.lazy(new Function0<MvpFragment$mvpBaseDelegate$2.C19701>() { // from class: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2
+    private final Lazy mvpBaseDelegate$delegate = LazyKt.lazy(new Function0<MvpFragment$mvpBaseDelegate$2.C19741>() { // from class: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2
         /* JADX INFO: Access modifiers changed from: package-private */
         {
             super(0);
@@ -47,7 +47,7 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
         /* JADX WARN: Can't rename method to resolve collision */
         /* JADX WARN: Type inference failed for: r0v0, types: [com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2$1] */
         @Override // kotlin.jvm.functions.Function0
-        public final C19701 invoke() {
+        public final C19741 invoke() {
             return new MvpBaseDelegate<MvpFragment>() { // from class: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2.1
                 private final Lazy context$delegate;
 
@@ -133,7 +133,7 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
         return getMvpBaseDelegate().getMvpDelegate();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public View createView(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
         getMvpBaseDelegate().getResettableLazyManager().reset();
@@ -147,35 +147,35 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
         return fragmentView;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onViewCreated() {
         onViewReady();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onPause() {
         super.onPause();
         getMvpBaseDelegate().onPause();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         getMvpBaseDelegate().onResume();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onDestroyView() {
         getMvpBaseDelegate().onDestroyView();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onTransitionAnimationStart(boolean z, boolean z2) {
         getHintUtils().hideHint();
         super.onTransitionAnimationStart(z, z2);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         this.subscriptions.clear();
         getMvpBaseDelegate().onDetachedFromWindow();
@@ -200,7 +200,7 @@ public abstract class MvpFragment extends BaseFragment implements MvpDelegateHol
         removeSelfFromStack(true);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void saveSelfArgs(Bundle bundle) {
         super.saveSelfArgs(bundle);
         MvpDelegate<MvpFragment> mvpDelegate = getMvpBaseDelegate().getMvpDelegate();

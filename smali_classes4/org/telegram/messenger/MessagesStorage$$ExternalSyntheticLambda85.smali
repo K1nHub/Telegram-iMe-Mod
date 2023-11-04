@@ -14,13 +14,11 @@
 
 .field public final synthetic f$3:J
 
-.field public final synthetic f$4:J
-
-.field public final synthetic f$5:I
+.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;JIJJI)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;JIJLorg/telegram/tgnet/TLRPC$InputChannel;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -33,9 +31,7 @@
 
     iput-wide p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda85;->f$3:J
 
-    iput-wide p7, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda85;->f$4:J
-
-    iput p9, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda85;->f$5:I
+    iput-object p7, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda85;->f$4:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
     return-void
 .end method
@@ -43,7 +39,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 9
+    .locals 7
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda85;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
@@ -53,11 +49,9 @@
 
     iget-wide v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda85;->f$3:J
 
-    iget-wide v6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda85;->f$4:J
+    iget-object v6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda85;->f$4:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
-    iget v8, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda85;->f$5:I
-
-    invoke-static/range {v0 .. v8}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$2_boq61BsGi0o9o7F37JFAGSOv0(Lorg/telegram/messenger/MessagesStorage;JIJJI)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$K2q_HBYkuqLhKYfNXec4DIqO1uE(Lorg/telegram/messenger/MessagesStorage;JIJLorg/telegram/tgnet/TLRPC$InputChannel;)V
 
     return-void
 .end method

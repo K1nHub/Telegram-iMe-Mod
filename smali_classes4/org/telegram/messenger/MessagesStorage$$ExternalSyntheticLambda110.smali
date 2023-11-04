@@ -63,7 +63,7 @@
 
     iget-boolean v7, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda110;->f$6:Z
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$46T6OrROx7bALazaFamLVmm1zjg(Lorg/telegram/messenger/MessagesStorage;JLjava/util/ArrayList;Ljava/util/HashMap;IIZ)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$r3JXOPOXCgPerZZmKTzqbkUh6SI(Lorg/telegram/messenger/MessagesStorage;JLjava/util/ArrayList;Ljava/util/HashMap;IIZ)V
 
     return-void
 .end method

@@ -80,7 +80,7 @@
 
     move-result-object p2
 
-    const-string v1, "it.type"
+    const-string/jumbo v1, "it.type"
 
     invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -488,7 +488,7 @@
 
     move-result-object p0
 
-    const-string v0, "java/lang/Object"
+    const-string/jumbo v0, "java/lang/Object"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 

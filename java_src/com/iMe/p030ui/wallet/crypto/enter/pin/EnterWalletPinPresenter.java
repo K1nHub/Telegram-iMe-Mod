@@ -27,7 +27,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.FingerprintController;
 import timber.log.Timber;
 /* compiled from: EnterWalletPinPresenter.kt */
@@ -70,7 +70,7 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
     public final void validatePin(final String pin, final boolean z) {
         Intrinsics.checkNotNullParameter(pin, "pin");
         if (isValidPinCode(pin)) {
-            Observable<Result<String>> observeOn = this.pinCodeInteractor.readPasswordByPinCode(pin, this.screenType.isTotalLock()).observeOn(this.schedulersProvider.mo1009ui());
+            Observable<Result<String>> observeOn = this.pinCodeInteractor.readPasswordByPinCode(pin, this.screenType.isTotalLock()).observeOn(this.schedulersProvider.mo1010ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "pinCodeInteractor\n      …(schedulersProvider.ui())");
             Observable withLoadingUpdate = RxExtKt.withLoadingUpdate(observeOn, new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinPresenter$$ExternalSyntheticLambda0
                 @Override // com.iMe.fork.utils.Callbacks$Callback1
@@ -87,12 +87,12 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                    m1638invoke(result);
+                    m1643invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1638invoke(Result<? extends String> it) {
+                public final void m1643invoke(Result<? extends String> it) {
                     CryptoPreferenceHelper cryptoPreferenceHelper;
                     ResourceManager resourceManager;
                     CryptoPreferenceHelper cryptoPreferenceHelper2;
@@ -169,12 +169,12 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
             ((EnterWalletPinView) getViewState()).openRestoreWalletScreen(this.cryptoAccessManager.getLastLoggedInAddress(this.cryptoPreferenceHelper.getCurrentBlockchainType()));
         } else if (i != 1) {
         } else {
-            ((EnterWalletPinView) getViewState()).showDeleteWalletDialog(new DialogModel(this.resourceManager.getString(C3630R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3630R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn)));
+            ((EnterWalletPinView) getViewState()).showDeleteWalletDialog(new DialogModel(this.resourceManager.getString(C3634R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3634R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn)));
         }
     }
 
     public final void deleteWallets() {
-        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.deleteAllWallets().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.deleteAllWallets().observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -187,12 +187,12 @@ public final class EnterWalletPinPresenter extends BasePresenter<EnterWalletPinV
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1637invoke(result);
+                m1642invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1637invoke(Result<? extends Boolean> it) {
+            public final void m1642invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;

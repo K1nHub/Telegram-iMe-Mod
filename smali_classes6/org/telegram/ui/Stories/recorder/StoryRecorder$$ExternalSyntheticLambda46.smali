@@ -33,7 +33,7 @@
 
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda46;->f$1:Z
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$Wgk8T0Jm2Rci4U9NvOJ_Gp1LpBQ(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$--ePl4TlgUdmIA2PEJFUYSsg1h4(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
     return-void
 .end method

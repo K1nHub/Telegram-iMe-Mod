@@ -59,7 +59,7 @@
 
     move-object v7, p1
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/ChatAttachAlert;->$r8$lambda$JZtmLKPVrZspdnQcwvqtbLOGEs4(Lorg/telegram/ui/Components/ChatAttachAlert;ILorg/telegram/ui/ChatActivity;Ljava/lang/String;JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;)V
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/ChatAttachAlert;->$r8$lambda$c-d8e1PTk5XHVghRVHbwKZIonOE(Lorg/telegram/ui/Components/ChatAttachAlert;ILorg/telegram/ui/ChatActivity;Ljava/lang/String;JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;)V
 
     return-void
 .end method

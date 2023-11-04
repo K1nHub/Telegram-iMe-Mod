@@ -5,27 +5,21 @@
 .implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda45;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
+
+.field public final synthetic f$1:Z
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda45;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda45;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda45;->INSTANCE:Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda45;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda45;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
+
+    iput-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda45;->f$1:Z
 
     return-void
 .end method
@@ -33,9 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 0
+    .locals 2
 
-    invoke-static {}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$pBidHyD2WmoIBmqZqzH1YQW88_c()V
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda45;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
+
+    iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda45;->f$1:Z
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$A1DOTGbnLOJ7kUxPPNQCyDbmUDI(Lorg/telegram/ui/Stories/recorder/PaintView;Z)V
 
     return-void
 .end method

@@ -106,111 +106,111 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity;)V
     .locals 0
 
-    .line 744
+    .line 765
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
     const/4 p1, -0x1
 
-    .line 746
+    .line 767
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->overviewHeaderCell:I
 
-    .line 748
+    .line 769
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->growCell:I
 
-    .line 749
+    .line 770
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->progressCell:I
 
-    .line 752
+    .line 773
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->folowersCell:I
 
-    .line 753
+    .line 774
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topHourseCell:I
 
-    .line 754
+    .line 775
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->interactionsCell:I
 
-    .line 755
+    .line 776
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->ivInteractionsCell:I
 
-    .line 756
+    .line 777
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->viewsBySourceCell:I
 
-    .line 757
+    .line 778
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->newFollowersBySourceCell:I
 
-    .line 758
+    .line 779
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->languagesCell:I
 
-    .line 759
+    .line 780
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->notificationsCell:I
 
-    .line 761
+    .line 782
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsHeaderCell:I
 
-    .line 762
+    .line 783
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsStartRow:I
 
-    .line 763
+    .line 784
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsEndRow:I
 
-    .line 766
+    .line 787
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->groupMembersCell:I
 
-    .line 767
+    .line 788
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->newMembersBySourceCell:I
 
-    .line 768
+    .line 789
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->membersLanguageCell:I
 
-    .line 769
+    .line 790
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->messagesCell:I
 
-    .line 770
+    .line 791
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->actionsCell:I
 
-    .line 771
+    .line 792
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topDayOfWeeksCell:I
 
-    .line 772
+    .line 793
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topMembersHeaderCell:I
 
-    .line 773
+    .line 794
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topMembersStartRow:I
 
-    .line 774
+    .line 795
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topMembersEndRow:I
 
-    .line 775
+    .line 796
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topAdminsHeaderCell:I
 
-    .line 776
+    .line 797
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topAdminsStartRow:I
 
-    .line 777
+    .line 798
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topAdminsEndRow:I
 
-    .line 778
+    .line 799
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topInviterHeaderCell:I
 
-    .line 779
+    .line 800
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topInviterStartRow:I
 
-    .line 780
+    .line 801
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topInviterEndRow:I
 
-    .line 781
+    .line 802
     iput p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->expandTopMembersRow:I
 
-    .line 784
+    .line 805
     new-instance p1, Landroidx/collection/ArraySet;
 
     invoke-direct {p1}, Landroidx/collection/ArraySet;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
-    .line 785
+    .line 806
     new-instance p1, Landroidx/collection/ArraySet;
 
     invoke-direct {p1}, Landroidx/collection/ArraySet;-><init>()V
@@ -225,7 +225,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 998
+    .line 1019
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     return v0
@@ -234,7 +234,7 @@
 .method public getItemId(I)J
     .locals 2
 
-    .line 823
+    .line 844
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsStartRow:I
 
     if-lt p1, v0, :cond_0
@@ -243,7 +243,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 824
+    .line 845
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$500(Lorg/telegram/ui/StatisticActivity;)Ljava/util/ArrayList;
@@ -268,7 +268,7 @@
 
     return-wide v0
 
-    .line 826
+    .line 847
     :cond_0
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->growCell:I
 
@@ -278,7 +278,7 @@
 
     return-wide v0
 
-    .line 828
+    .line 849
     :cond_1
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->folowersCell:I
 
@@ -288,7 +288,7 @@
 
     return-wide v0
 
-    .line 830
+    .line 851
     :cond_2
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topHourseCell:I
 
@@ -298,7 +298,7 @@
 
     return-wide v0
 
-    .line 832
+    .line 853
     :cond_3
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->interactionsCell:I
 
@@ -308,7 +308,7 @@
 
     return-wide v0
 
-    .line 834
+    .line 855
     :cond_4
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->notificationsCell:I
 
@@ -318,7 +318,7 @@
 
     return-wide v0
 
-    .line 836
+    .line 857
     :cond_5
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->ivInteractionsCell:I
 
@@ -328,7 +328,7 @@
 
     return-wide v0
 
-    .line 838
+    .line 859
     :cond_6
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->viewsBySourceCell:I
 
@@ -338,7 +338,7 @@
 
     return-wide v0
 
-    .line 840
+    .line 861
     :cond_7
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->newFollowersBySourceCell:I
 
@@ -348,7 +348,7 @@
 
     return-wide v0
 
-    .line 842
+    .line 863
     :cond_8
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->languagesCell:I
 
@@ -358,7 +358,7 @@
 
     return-wide v0
 
-    .line 844
+    .line 865
     :cond_9
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->groupMembersCell:I
 
@@ -368,7 +368,7 @@
 
     return-wide v0
 
-    .line 846
+    .line 867
     :cond_a
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->newMembersBySourceCell:I
 
@@ -378,7 +378,7 @@
 
     return-wide v0
 
-    .line 848
+    .line 869
     :cond_b
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->membersLanguageCell:I
 
@@ -388,7 +388,7 @@
 
     return-wide v0
 
-    .line 850
+    .line 871
     :cond_c
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->messagesCell:I
 
@@ -398,7 +398,7 @@
 
     return-wide v0
 
-    .line 852
+    .line 873
     :cond_d
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->actionsCell:I
 
@@ -408,7 +408,7 @@
 
     return-wide v0
 
-    .line 854
+    .line 875
     :cond_e
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topDayOfWeeksCell:I
 
@@ -418,7 +418,7 @@
 
     return-wide v0
 
-    .line 857
+    .line 878
     :cond_f
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->getItemId(I)J
 
@@ -430,7 +430,7 @@
 .method public getItemViewType(I)I
     .locals 3
 
-    .line 791
+    .line 812
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->growCell:I
 
     if-eq p1, v0, :cond_12
@@ -457,7 +457,7 @@
 
     goto/16 :goto_4
 
-    .line 793
+    .line 814
     :cond_0
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->interactionsCell:I
 
@@ -469,7 +469,7 @@
 
     goto/16 :goto_3
 
-    .line 795
+    .line 816
     :cond_1
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->viewsBySourceCell:I
 
@@ -489,7 +489,7 @@
 
     goto/16 :goto_2
 
-    .line 797
+    .line 818
     :cond_2
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->languagesCell:I
 
@@ -505,7 +505,7 @@
 
     goto :goto_1
 
-    .line 799
+    .line 820
     :cond_3
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsStartRow:I
 
@@ -519,7 +519,7 @@
 
     return v1
 
-    .line 801
+    .line 822
     :cond_4
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->progressCell:I
 
@@ -529,7 +529,7 @@
 
     return p1
 
-    .line 803
+    .line 824
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->emptyCells:Landroidx/collection/ArraySet;
 
@@ -547,7 +547,7 @@
 
     return p1
 
-    .line 805
+    .line 826
     :cond_6
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsHeaderCell:I
 
@@ -571,7 +571,7 @@
 
     goto :goto_0
 
-    .line 808
+    .line 829
     :cond_7
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->overviewCell:I
 
@@ -581,7 +581,7 @@
 
     return p1
 
-    .line 810
+    .line 831
     :cond_8
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topAdminsStartRow:I
 
@@ -612,7 +612,7 @@
     :cond_b
     return v1
 
-    .line 814
+    .line 835
     :cond_c
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->expandTopMembersRow:I
 
@@ -661,7 +661,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 2
 
-    .line 1215
+    .line 1236
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -696,7 +696,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 4
 
-    .line 918
+    .line 939
     invoke-virtual {p0, p2}, Lorg/telegram/ui/StatisticActivity$Adapter;->getItemViewType(I)I
 
     move-result v0
@@ -709,12 +709,12 @@
 
     if-gt v0, v2, :cond_e
 
-    .line 921
+    .line 942
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->growCell:I
 
     if-ne v0, p2, :cond_0
 
-    .line 922
+    .line 943
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$1200(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -723,13 +723,13 @@
 
     goto/16 :goto_0
 
-    .line 923
+    .line 944
     :cond_0
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->folowersCell:I
 
     if-ne v0, p2, :cond_1
 
-    .line 924
+    .line 945
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$1300(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -738,13 +738,13 @@
 
     goto/16 :goto_0
 
-    .line 925
+    .line 946
     :cond_1
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->interactionsCell:I
 
     if-ne v0, p2, :cond_2
 
-    .line 926
+    .line 947
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$1400(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -753,13 +753,13 @@
 
     goto/16 :goto_0
 
-    .line 927
+    .line 948
     :cond_2
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->viewsBySourceCell:I
 
     if-ne v0, p2, :cond_3
 
-    .line 928
+    .line 949
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$1500(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -768,13 +768,13 @@
 
     goto/16 :goto_0
 
-    .line 929
+    .line 950
     :cond_3
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->newFollowersBySourceCell:I
 
     if-ne v0, p2, :cond_4
 
-    .line 930
+    .line 951
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$1600(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -783,13 +783,13 @@
 
     goto/16 :goto_0
 
-    .line 931
+    .line 952
     :cond_4
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->ivInteractionsCell:I
 
     if-ne v0, p2, :cond_5
 
-    .line 932
+    .line 953
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$1700(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -798,13 +798,13 @@
 
     goto :goto_0
 
-    .line 933
+    .line 954
     :cond_5
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topHourseCell:I
 
     if-ne v0, p2, :cond_6
 
-    .line 934
+    .line 955
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$1800(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -813,13 +813,13 @@
 
     goto :goto_0
 
-    .line 935
+    .line 956
     :cond_6
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->notificationsCell:I
 
     if-ne v0, p2, :cond_7
 
-    .line 936
+    .line 957
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$1900(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -828,13 +828,13 @@
 
     goto :goto_0
 
-    .line 937
+    .line 958
     :cond_7
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->groupMembersCell:I
 
     if-ne v0, p2, :cond_8
 
-    .line 938
+    .line 959
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$2000(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -843,13 +843,13 @@
 
     goto :goto_0
 
-    .line 939
+    .line 960
     :cond_8
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->newMembersBySourceCell:I
 
     if-ne v0, p2, :cond_9
 
-    .line 940
+    .line 961
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$2100(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -858,13 +858,13 @@
 
     goto :goto_0
 
-    .line 941
+    .line 962
     :cond_9
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->membersLanguageCell:I
 
     if-ne v0, p2, :cond_a
 
-    .line 942
+    .line 963
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$2200(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -873,13 +873,13 @@
 
     goto :goto_0
 
-    .line 943
+    .line 964
     :cond_a
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->messagesCell:I
 
     if-ne v0, p2, :cond_b
 
-    .line 944
+    .line 965
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$2300(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -888,13 +888,13 @@
 
     goto :goto_0
 
-    .line 945
+    .line 966
     :cond_b
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->actionsCell:I
 
     if-ne v0, p2, :cond_c
 
-    .line 946
+    .line 967
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$2400(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -903,13 +903,13 @@
 
     goto :goto_0
 
-    .line 947
+    .line 968
     :cond_c
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topDayOfWeeksCell:I
 
     if-ne v0, p2, :cond_d
 
-    .line 948
+    .line 969
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$2500(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
@@ -918,7 +918,7 @@
 
     goto :goto_0
 
-    .line 950
+    .line 971
     :cond_d
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -926,7 +926,7 @@
 
     move-result-object p2
 
-    .line 952
+    .line 973
     :goto_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -941,7 +941,7 @@
 
     if-ne v0, v2, :cond_12
 
-    .line 954
+    .line 975
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$2700(Lorg/telegram/ui/StatisticActivity;)Z
@@ -950,7 +950,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 955
+    .line 976
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topAdminsStartRow:I
 
     if-lt p2, v0, :cond_f
@@ -961,7 +961,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 957
+    .line 978
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/StatisticPostInfoCell;
@@ -982,7 +982,7 @@
 
     goto/16 :goto_1
 
-    .line 958
+    .line 979
     :cond_f
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topMembersStartRow:I
 
@@ -994,7 +994,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 960
+    .line 981
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/StatisticPostInfoCell;
@@ -1015,7 +1015,7 @@
 
     goto/16 :goto_1
 
-    .line 961
+    .line 982
     :cond_10
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topInviterStartRow:I
 
@@ -1027,7 +1027,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 963
+    .line 984
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/StatisticPostInfoCell;
@@ -1048,13 +1048,13 @@
 
     goto/16 :goto_1
 
-    .line 966
+    .line 987
     :cond_11
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsStartRow:I
 
     sub-int/2addr p2, v0
 
-    .line 967
+    .line 988
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/StatisticPostInfoCell;
@@ -1080,12 +1080,12 @@
 
     if-ne v0, v2, :cond_17
 
-    .line 970
+    .line 991
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Charts/view_data/ChartHeaderView;
 
-    .line 971
+    .line 992
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$3100(Lorg/telegram/ui/StatisticActivity;)J
@@ -1100,12 +1100,12 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Lorg/telegram/ui/Charts/view_data/ChartHeaderView;->setDates(JJ)V
 
-    .line 972
+    .line 993
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->overviewHeaderCell:I
 
     if-ne p2, v0, :cond_13
 
-    .line 973
+    .line 994
     sget p2, Lorg/telegram/messenger/R$string;->StatisticOverview:I
 
     const-string v0, "StatisticOverview"
@@ -1118,13 +1118,13 @@
 
     goto/16 :goto_1
 
-    .line 974
+    .line 995
     :cond_13
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topAdminsHeaderCell:I
 
     if-ne p2, v0, :cond_14
 
-    .line 975
+    .line 996
     sget p2, Lorg/telegram/messenger/R$string;->TopAdmins:I
 
     const-string v0, "TopAdmins"
@@ -1137,13 +1137,13 @@
 
     goto/16 :goto_1
 
-    .line 976
+    .line 997
     :cond_14
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topInviterHeaderCell:I
 
     if-ne p2, v0, :cond_15
 
-    .line 977
+    .line 998
     sget p2, Lorg/telegram/messenger/R$string;->TopInviters:I
 
     const-string v0, "TopInviters"
@@ -1156,13 +1156,13 @@
 
     goto :goto_1
 
-    .line 978
+    .line 999
     :cond_15
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topMembersHeaderCell:I
 
     if-ne p2, v0, :cond_16
 
-    .line 979
+    .line 1000
     sget p2, Lorg/telegram/messenger/R$string;->TopMembers:I
 
     const-string v0, "TopMembers"
@@ -1175,7 +1175,7 @@
 
     goto :goto_1
 
-    .line 981
+    .line 1002
     :cond_16
     sget p2, Lorg/telegram/messenger/R$string;->RecentPosts:I
 
@@ -1194,12 +1194,12 @@
 
     if-ne v0, p2, :cond_19
 
-    .line 984
+    .line 1005
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/StatisticActivity$OverviewCell;
 
-    .line 985
+    .line 1006
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$2700(Lorg/telegram/ui/StatisticActivity;)Z
@@ -1208,7 +1208,7 @@
 
     if-eqz p2, :cond_18
 
-    .line 986
+    .line 1007
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$3300(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$OverviewChatData;
@@ -1219,7 +1219,7 @@
 
     goto :goto_1
 
-    .line 988
+    .line 1009
     :cond_18
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -1236,12 +1236,12 @@
 
     if-ne v0, p2, :cond_1a
 
-    .line 991
+    .line 1012
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatTextCell;
 
-    .line 992
+    .line 1013
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/StatisticActivity;->access$3500(Lorg/telegram/ui/StatisticActivity;)Ljava/util/ArrayList;
@@ -1294,7 +1294,7 @@
 
     if-gt p2, v1, :cond_0
 
-    .line 864
+    .line 885
     new-instance v1, Lorg/telegram/ui/StatisticActivity$Adapter$1;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -1309,7 +1309,7 @@
 
     invoke-direct {v1, p0, p1, p2, v2}, Lorg/telegram/ui/StatisticActivity$Adapter$1;-><init>(Lorg/telegram/ui/StatisticActivity$Adapter;Landroid/content/Context;ILorg/telegram/ui/Charts/BaseChartView$SharedUiComponents;)V
 
-    .line 873
+    .line 894
     invoke-virtual {v1, v0}, Landroid/view/View;->setWillNotDraw(Z)V
 
     goto/16 :goto_0
@@ -1319,7 +1319,7 @@
 
     if-ne p2, v1, :cond_1
 
-    .line 875
+    .line 896
     new-instance v1, Lorg/telegram/ui/StatisticActivity$Adapter$2;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -1334,7 +1334,7 @@
 
     invoke-direct {v1, p0, p1, p2}, Lorg/telegram/ui/StatisticActivity$Adapter$2;-><init>(Lorg/telegram/ui/StatisticActivity$Adapter;Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$ChatFull;)V
 
-    .line 884
+    .line 905
     invoke-virtual {v1, v0}, Landroid/view/View;->setWillNotDraw(Z)V
 
     goto/16 :goto_0
@@ -1344,7 +1344,7 @@
 
     if-ne p2, v1, :cond_2
 
-    .line 886
+    .line 907
     new-instance v1, Lorg/telegram/ui/Cells/LoadingCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -1353,7 +1353,7 @@
 
     invoke-direct {v1, p1}, Lorg/telegram/ui/Cells/LoadingCell;-><init>(Landroid/content/Context;)V
 
-    .line 887
+    .line 908
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1371,7 +1371,7 @@
 
     if-ne p2, v2, :cond_3
 
-    .line 889
+    .line 910
     new-instance p2, Lorg/telegram/ui/Cells/EmptyCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -1393,7 +1393,7 @@
 
     if-ne p2, v3, :cond_4
 
-    .line 891
+    .line 912
     new-instance v1, Lorg/telegram/ui/StatisticActivity$Adapter$3;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -1402,10 +1402,10 @@
 
     invoke-direct {v1, p0, p1}, Lorg/telegram/ui/StatisticActivity$Adapter$3;-><init>(Lorg/telegram/ui/StatisticActivity$Adapter;Landroid/content/Context;)V
 
-    .line 900
+    .line 921
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 901
+    .line 922
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result p1
@@ -1433,7 +1433,7 @@
 
     if-ne p2, v0, :cond_5
 
-    .line 904
+    .line 925
     new-instance v1, Lorg/telegram/ui/StatisticActivity$OverviewCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -1447,7 +1447,7 @@
     :cond_5
     if-ne p2, v1, :cond_6
 
-    .line 906
+    .line 927
     new-instance v1, Lorg/telegram/ui/Cells/ManageChatTextCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -1456,7 +1456,7 @@
 
     invoke-direct {v1, p1}, Lorg/telegram/ui/Cells/ManageChatTextCell;-><init>(Landroid/content/Context;)V
 
-    .line 907
+    .line 928
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1465,7 +1465,7 @@
 
     invoke-virtual {v1, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 908
+    .line 929
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueIcon:I
 
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueButton:I
@@ -1474,7 +1474,7 @@
 
     goto :goto_0
 
-    .line 910
+    .line 931
     :cond_6
     new-instance v1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -1490,7 +1490,7 @@
 
     invoke-direct {v1, p1, v2, p2}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;II)V
 
-    .line 912
+    .line 933
     :goto_0
     new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -1502,7 +1502,7 @@
 
     invoke-virtual {v1, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 913
+    .line 934
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, v1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -1515,109 +1515,109 @@
 
     const/4 v0, -0x1
 
-    .line 1002
+    .line 1023
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->growCell:I
 
-    .line 1003
+    .line 1024
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->folowersCell:I
 
-    .line 1004
+    .line 1025
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->interactionsCell:I
 
-    .line 1005
+    .line 1026
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->viewsBySourceCell:I
 
-    .line 1006
+    .line 1027
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->newFollowersBySourceCell:I
 
-    .line 1007
+    .line 1028
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->languagesCell:I
 
-    .line 1008
+    .line 1029
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsStartRow:I
 
-    .line 1009
+    .line 1030
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsEndRow:I
 
-    .line 1010
+    .line 1031
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->progressCell:I
 
-    .line 1011
+    .line 1032
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsHeaderCell:I
 
-    .line 1012
+    .line 1033
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->ivInteractionsCell:I
 
-    .line 1013
+    .line 1034
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topHourseCell:I
 
-    .line 1014
+    .line 1035
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->notificationsCell:I
 
-    .line 1015
+    .line 1036
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->groupMembersCell:I
 
-    .line 1016
+    .line 1037
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->newMembersBySourceCell:I
 
-    .line 1017
+    .line 1038
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->membersLanguageCell:I
 
-    .line 1018
+    .line 1039
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->messagesCell:I
 
-    .line 1019
+    .line 1040
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->actionsCell:I
 
-    .line 1020
+    .line 1041
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topDayOfWeeksCell:I
 
-    .line 1021
+    .line 1042
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topMembersHeaderCell:I
 
-    .line 1022
+    .line 1043
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topMembersStartRow:I
 
-    .line 1023
+    .line 1044
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topMembersEndRow:I
 
-    .line 1024
+    .line 1045
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topAdminsHeaderCell:I
 
-    .line 1025
+    .line 1046
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topAdminsStartRow:I
 
-    .line 1026
+    .line 1047
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topAdminsEndRow:I
 
-    .line 1027
+    .line 1048
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topInviterHeaderCell:I
 
-    .line 1028
+    .line 1049
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topInviterStartRow:I
 
-    .line 1029
+    .line 1050
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topInviterEndRow:I
 
-    .line 1030
+    .line 1051
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->expandTopMembersRow:I
 
     const/4 v0, 0x0
 
-    .line 1032
+    .line 1053
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
-    .line 1033
+    .line 1054
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->emptyCells:Landroidx/collection/ArraySet;
 
     invoke-virtual {v0}, Landroidx/collection/ArraySet;->clear()V
 
-    .line 1034
+    .line 1055
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     invoke-virtual {v0}, Landroidx/collection/ArraySet;->clear()V
 
-    .line 1036
+    .line 1057
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$2700(Lorg/telegram/ui/StatisticActivity;)Z
@@ -1626,7 +1626,7 @@
 
     if-eqz v0, :cond_18
 
-    .line 1037
+    .line 1058
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$3300(Lorg/telegram/ui/StatisticActivity;)Lorg/telegram/ui/StatisticActivity$OverviewChatData;
@@ -1635,7 +1635,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1038
+    .line 1059
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     add-int/lit8 v1, v0, 0x1
@@ -1646,12 +1646,12 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 1039
+    .line 1060
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->overviewCell:I
 
-    .line 1042
+    .line 1063
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -1671,12 +1671,12 @@
 
     if-nez v0, :cond_2
 
-    .line 1043
+    .line 1064
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_1
 
-    .line 1044
+    .line 1065
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -1689,7 +1689,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1046
+    .line 1067
     :cond_1
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -1699,7 +1699,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->growCell:I
 
-    .line 1048
+    .line 1069
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -1719,12 +1719,12 @@
 
     if-nez v0, :cond_4
 
-    .line 1049
+    .line 1070
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_3
 
-    .line 1050
+    .line 1071
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -1737,7 +1737,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1052
+    .line 1073
     :cond_3
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -1747,7 +1747,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->groupMembersCell:I
 
-    .line 1054
+    .line 1075
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -1777,12 +1777,12 @@
 
     if-nez v0, :cond_6
 
-    .line 1055
+    .line 1076
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_5
 
-    .line 1056
+    .line 1077
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -1795,7 +1795,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1058
+    .line 1079
     :cond_5
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -1805,7 +1805,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->newMembersBySourceCell:I
 
-    .line 1060
+    .line 1081
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -1835,12 +1835,12 @@
 
     if-nez v0, :cond_8
 
-    .line 1061
+    .line 1082
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_7
 
-    .line 1062
+    .line 1083
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -1853,7 +1853,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1064
+    .line 1085
     :cond_7
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -1863,7 +1863,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->membersLanguageCell:I
 
-    .line 1066
+    .line 1087
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -1893,12 +1893,12 @@
 
     if-nez v0, :cond_a
 
-    .line 1067
+    .line 1088
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_9
 
-    .line 1068
+    .line 1089
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -1911,7 +1911,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1070
+    .line 1091
     :cond_9
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -1921,7 +1921,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->messagesCell:I
 
-    .line 1072
+    .line 1093
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -1951,12 +1951,12 @@
 
     if-nez v0, :cond_c
 
-    .line 1073
+    .line 1094
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_b
 
-    .line 1074
+    .line 1095
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -1969,7 +1969,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1076
+    .line 1097
     :cond_b
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -1979,7 +1979,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->actionsCell:I
 
-    .line 1078
+    .line 1099
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2009,12 +2009,12 @@
 
     if-nez v0, :cond_e
 
-    .line 1079
+    .line 1100
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_d
 
-    .line 1080
+    .line 1101
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2027,7 +2027,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1082
+    .line 1103
     :cond_d
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2037,7 +2037,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topHourseCell:I
 
-    .line 1085
+    .line 1106
     :cond_e
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2067,12 +2067,12 @@
 
     if-nez v0, :cond_10
 
-    .line 1086
+    .line 1107
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_f
 
-    .line 1087
+    .line 1108
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2085,7 +2085,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1089
+    .line 1110
     :cond_f
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2095,7 +2095,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topDayOfWeeksCell:I
 
-    .line 1092
+    .line 1113
     :cond_10
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2109,12 +2109,12 @@
 
     if-lez v0, :cond_13
 
-    .line 1093
+    .line 1114
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_11
 
-    .line 1094
+    .line 1115
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2127,7 +2127,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1096
+    .line 1117
     :cond_11
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2139,12 +2139,12 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 1097
+    .line 1118
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topMembersStartRow:I
 
-    .line 1098
+    .line 1119
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$2900(Lorg/telegram/ui/StatisticActivity;)Ljava/util/ArrayList;
@@ -2165,10 +2165,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 1099
+    .line 1120
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
-    .line 1100
+    .line 1121
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$2900(Lorg/telegram/ui/StatisticActivity;)Ljava/util/ArrayList;
@@ -2191,7 +2191,7 @@
 
     if-eq v0, v1, :cond_12
 
-    .line 1101
+    .line 1122
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     add-int/lit8 v1, v0, 0x1
@@ -2202,7 +2202,7 @@
 
     goto :goto_0
 
-    .line 1103
+    .line 1124
     :cond_12
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->emptyCells:Landroidx/collection/ArraySet;
 
@@ -2218,7 +2218,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1107
+    .line 1128
     :cond_13
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
@@ -2233,12 +2233,12 @@
 
     if-lez v0, :cond_15
 
-    .line 1108
+    .line 1129
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_14
 
-    .line 1109
+    .line 1130
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2251,7 +2251,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1111
+    .line 1132
     :cond_14
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2263,12 +2263,12 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 1112
+    .line 1133
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topAdminsStartRow:I
 
-    .line 1113
+    .line 1134
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$2800(Lorg/telegram/ui/StatisticActivity;)Ljava/util/ArrayList;
@@ -2289,10 +2289,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 1114
+    .line 1135
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
-    .line 1115
+    .line 1136
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->emptyCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v1, 0x1
@@ -2305,7 +2305,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1118
+    .line 1139
     :cond_15
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2319,12 +2319,12 @@
 
     if-lez v0, :cond_17
 
-    .line 1119
+    .line 1140
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_16
 
-    .line 1120
+    .line 1141
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2337,7 +2337,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1122
+    .line 1143
     :cond_16
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2349,12 +2349,12 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 1123
+    .line 1144
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topInviterStartRow:I
 
-    .line 1124
+    .line 1145
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$3000(Lorg/telegram/ui/StatisticActivity;)Ljava/util/ArrayList;
@@ -2375,16 +2375,16 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 1125
+    .line 1146
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
-    .line 1128
+    .line 1149
     :cond_17
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_2d
 
-    .line 1129
+    .line 1150
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->emptyCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2397,7 +2397,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1130
+    .line 1151
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     iget v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
@@ -2414,7 +2414,7 @@
 
     goto/16 :goto_2
 
-    .line 1133
+    .line 1154
     :cond_18
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2424,7 +2424,7 @@
 
     if-eqz v0, :cond_19
 
-    .line 1134
+    .line 1155
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     add-int/lit8 v1, v0, 0x1
@@ -2435,12 +2435,12 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 1135
+    .line 1156
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->overviewCell:I
 
-    .line 1138
+    .line 1159
     :cond_19
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2460,12 +2460,12 @@
 
     if-nez v0, :cond_1b
 
-    .line 1139
+    .line 1160
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_1a
 
-    .line 1140
+    .line 1161
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2478,7 +2478,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1142
+    .line 1163
     :cond_1a
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2488,7 +2488,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->growCell:I
 
-    .line 1145
+    .line 1166
     :cond_1b
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2508,12 +2508,12 @@
 
     if-nez v0, :cond_1d
 
-    .line 1146
+    .line 1167
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_1c
 
-    .line 1147
+    .line 1168
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2526,7 +2526,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1149
+    .line 1170
     :cond_1c
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2536,7 +2536,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->folowersCell:I
 
-    .line 1151
+    .line 1172
     :cond_1d
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2556,12 +2556,12 @@
 
     if-nez v0, :cond_1f
 
-    .line 1152
+    .line 1173
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_1e
 
-    .line 1153
+    .line 1174
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2574,7 +2574,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1155
+    .line 1176
     :cond_1e
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2584,7 +2584,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->notificationsCell:I
 
-    .line 1157
+    .line 1178
     :cond_1f
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2604,12 +2604,12 @@
 
     if-nez v0, :cond_21
 
-    .line 1158
+    .line 1179
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_20
 
-    .line 1159
+    .line 1180
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2622,7 +2622,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1161
+    .line 1182
     :cond_20
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2632,7 +2632,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->topHourseCell:I
 
-    .line 1163
+    .line 1184
     :cond_21
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2652,12 +2652,12 @@
 
     if-nez v0, :cond_23
 
-    .line 1164
+    .line 1185
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_22
 
-    .line 1165
+    .line 1186
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2670,7 +2670,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1167
+    .line 1188
     :cond_22
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2680,7 +2680,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->viewsBySourceCell:I
 
-    .line 1169
+    .line 1190
     :cond_23
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2700,12 +2700,12 @@
 
     if-nez v0, :cond_25
 
-    .line 1170
+    .line 1191
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_24
 
-    .line 1171
+    .line 1192
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2718,7 +2718,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1173
+    .line 1194
     :cond_24
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2728,7 +2728,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->newFollowersBySourceCell:I
 
-    .line 1175
+    .line 1196
     :cond_25
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2748,12 +2748,12 @@
 
     if-nez v0, :cond_27
 
-    .line 1176
+    .line 1197
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_26
 
-    .line 1177
+    .line 1198
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2766,7 +2766,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1179
+    .line 1200
     :cond_26
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2776,7 +2776,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->languagesCell:I
 
-    .line 1181
+    .line 1202
     :cond_27
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2796,12 +2796,12 @@
 
     if-nez v0, :cond_29
 
-    .line 1182
+    .line 1203
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_28
 
-    .line 1183
+    .line 1204
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2814,7 +2814,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1185
+    .line 1206
     :cond_28
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2824,7 +2824,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->interactionsCell:I
 
-    .line 1187
+    .line 1208
     :cond_29
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
@@ -2854,12 +2854,12 @@
 
     if-nez v0, :cond_2b
 
-    .line 1188
+    .line 1209
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     if-lez v0, :cond_2a
 
-    .line 1189
+    .line 1210
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
     add-int/lit8 v2, v0, 0x1
@@ -2872,7 +2872,7 @@
 
     invoke-virtual {v1, v0}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1191
+    .line 1212
     :cond_2a
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
@@ -2882,7 +2882,7 @@
 
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->ivInteractionsCell:I
 
-    .line 1194
+    .line 1215
     :cond_2b
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 
@@ -2898,7 +2898,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1196
+    .line 1217
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$400(Lorg/telegram/ui/StatisticActivity;)Ljava/util/ArrayList;
@@ -2911,7 +2911,7 @@
 
     if-lez v0, :cond_2d
 
-    .line 1197
+    .line 1218
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     add-int/lit8 v1, v0, 0x1
@@ -2922,12 +2922,12 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 1198
+    .line 1219
     iput v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->recentPostsStartRow:I
 
-    .line 1199
+    .line 1220
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$500(Lorg/telegram/ui/StatisticActivity;)Ljava/util/ArrayList;
@@ -2948,10 +2948,10 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 1200
+    .line 1221
     iput v1, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
-    .line 1202
+    .line 1223
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$500(Lorg/telegram/ui/StatisticActivity;)Ljava/util/ArrayList;
@@ -2974,7 +2974,7 @@
 
     if-eq v0, v1, :cond_2c
 
-    .line 1203
+    .line 1224
     iget v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->count:I
 
     add-int/lit8 v1, v0, 0x1
@@ -2985,7 +2985,7 @@
 
     goto :goto_1
 
-    .line 1205
+    .line 1226
     :cond_2c
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->emptyCells:Landroidx/collection/ArraySet;
 
@@ -3001,7 +3001,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/collection/ArraySet;->add(Ljava/lang/Object;)Z
 
-    .line 1208
+    .line 1229
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$Adapter;->shadowDivideCells:Landroidx/collection/ArraySet;
 

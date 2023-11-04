@@ -15,13 +15,13 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
     public String first_name;
 
     /* renamed from: h */
-    public int f1602h;
+    public int f1604h;
 
     /* renamed from: id */
-    public long f1603id;
+    public long f1605id;
 
     /* renamed from: iv */
-    public byte[] f1604iv;
+    public byte[] f1606iv;
     public byte[] key;
     public String last_name;
     public double lat;
@@ -37,7 +37,7 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
     public String venue_id;
 
     /* renamed from: w */
-    public int f1605w;
+    public int f1607w;
 
     public static TLRPC$DecryptedMessageMedia TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$DecryptedMessageMedia tLRPC$TL_decryptedMessageMediaVenue;
@@ -50,7 +50,6 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                 break;
             case -1332395189:
                 tLRPC$TL_decryptedMessageMediaVenue = new TLRPC$TL_decryptedMessageMediaDocument() { // from class: org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaDocument_layer8
-                    public static int constructor = -1332395189;
                     public byte[] thumb;
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaDocument, org.telegram.tgnet.TLObject
@@ -62,12 +61,12 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         this.mime_type = abstractSerializedData2.readString(z2);
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1604iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1606iv = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaDocument, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-1332395189);
                         abstractSerializedData2.writeByteArray(this.thumb);
                         abstractSerializedData2.writeInt32(this.thumb_w);
                         abstractSerializedData2.writeInt32(this.thumb_h);
@@ -75,7 +74,7 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         abstractSerializedData2.writeString(this.mime_type);
                         abstractSerializedData2.writeInt32((int) this.size);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1604iv);
+                        abstractSerializedData2.writeByteArray(this.f1606iv);
                     }
                 };
                 break;
@@ -93,7 +92,6 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                 break;
             case 846826124:
                 tLRPC$TL_decryptedMessageMediaVenue = new TLRPC$TL_decryptedMessageMediaPhoto() { // from class: org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaPhoto_layer8
-                    public static int constructor = 846826124;
                     public byte[] thumb;
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaPhoto, org.telegram.tgnet.TLObject
@@ -101,24 +99,24 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         this.thumb = abstractSerializedData2.readByteArray(z2);
                         this.thumb_w = abstractSerializedData2.readInt32(z2);
                         this.thumb_h = abstractSerializedData2.readInt32(z2);
-                        this.f1605w = abstractSerializedData2.readInt32(z2);
-                        this.f1602h = abstractSerializedData2.readInt32(z2);
+                        this.f1607w = abstractSerializedData2.readInt32(z2);
+                        this.f1604h = abstractSerializedData2.readInt32(z2);
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1604iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1606iv = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaPhoto, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(846826124);
                         abstractSerializedData2.writeByteArray(this.thumb);
                         abstractSerializedData2.writeInt32(this.thumb_w);
                         abstractSerializedData2.writeInt32(this.thumb_h);
-                        abstractSerializedData2.writeInt32(this.f1605w);
-                        abstractSerializedData2.writeInt32(this.f1602h);
+                        abstractSerializedData2.writeInt32(this.f1607w);
+                        abstractSerializedData2.writeInt32(this.f1604h);
                         abstractSerializedData2.writeInt32((int) this.size);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1604iv);
+                        abstractSerializedData2.writeByteArray(this.f1606iv);
                     }
                 };
                 break;
@@ -127,7 +125,6 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                 break;
             case 1290694387:
                 tLRPC$TL_decryptedMessageMediaVenue = new TLRPC$TL_decryptedMessageMediaVideo() { // from class: org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaVideo_layer8
-                    public static int constructor = 1290694387;
                     public byte[] thumb;
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaVideo, org.telegram.tgnet.TLObject
@@ -136,31 +133,30 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         this.thumb_w = abstractSerializedData2.readInt32(z2);
                         this.thumb_h = abstractSerializedData2.readInt32(z2);
                         this.duration = abstractSerializedData2.readInt32(z2);
-                        this.f1605w = abstractSerializedData2.readInt32(z2);
-                        this.f1602h = abstractSerializedData2.readInt32(z2);
+                        this.f1607w = abstractSerializedData2.readInt32(z2);
+                        this.f1604h = abstractSerializedData2.readInt32(z2);
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1604iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1606iv = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaVideo, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1290694387);
                         abstractSerializedData2.writeByteArray(this.thumb);
                         abstractSerializedData2.writeInt32(this.thumb_w);
                         abstractSerializedData2.writeInt32(this.thumb_h);
                         abstractSerializedData2.writeInt32(this.duration);
-                        abstractSerializedData2.writeInt32(this.f1605w);
-                        abstractSerializedData2.writeInt32(this.f1602h);
+                        abstractSerializedData2.writeInt32(this.f1607w);
+                        abstractSerializedData2.writeInt32(this.f1604h);
                         abstractSerializedData2.writeInt32((int) this.size);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1604iv);
+                        abstractSerializedData2.writeByteArray(this.f1606iv);
                     }
                 };
                 break;
             case 1380598109:
                 tLRPC$TL_decryptedMessageMediaVenue = new TLRPC$TL_decryptedMessageMediaVideo() { // from class: org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaVideo_layer17
-                    public static int constructor = 1380598109;
                     public byte[] thumb;
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaVideo, org.telegram.tgnet.TLObject
@@ -170,26 +166,26 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         this.thumb_h = abstractSerializedData2.readInt32(z2);
                         this.duration = abstractSerializedData2.readInt32(z2);
                         this.mime_type = abstractSerializedData2.readString(z2);
-                        this.f1605w = abstractSerializedData2.readInt32(z2);
-                        this.f1602h = abstractSerializedData2.readInt32(z2);
+                        this.f1607w = abstractSerializedData2.readInt32(z2);
+                        this.f1604h = abstractSerializedData2.readInt32(z2);
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1604iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1606iv = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaVideo, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1380598109);
                         abstractSerializedData2.writeByteArray(this.thumb);
                         abstractSerializedData2.writeInt32(this.thumb_w);
                         abstractSerializedData2.writeInt32(this.thumb_h);
                         abstractSerializedData2.writeInt32(this.duration);
                         abstractSerializedData2.writeString(this.mime_type);
-                        abstractSerializedData2.writeInt32(this.f1605w);
-                        abstractSerializedData2.writeInt32(this.f1602h);
+                        abstractSerializedData2.writeInt32(this.f1607w);
+                        abstractSerializedData2.writeInt32(this.f1604h);
                         abstractSerializedData2.writeInt32((int) this.size);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1604iv);
+                        abstractSerializedData2.writeByteArray(this.f1606iv);
                     }
                 };
                 break;
@@ -201,23 +197,21 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                 break;
             case 1619031439:
                 tLRPC$TL_decryptedMessageMediaVenue = new TLRPC$TL_decryptedMessageMediaAudio() { // from class: org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaAudio_layer8
-                    public static int constructor = 1619031439;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaAudio, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.duration = abstractSerializedData2.readInt32(z2);
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1604iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1606iv = abstractSerializedData2.readByteArray(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaAudio, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1619031439);
                         abstractSerializedData2.writeInt32(this.duration);
                         abstractSerializedData2.writeInt32((int) this.size);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1604iv);
+                        abstractSerializedData2.writeByteArray(this.f1606iv);
                     }
                 };
                 break;
@@ -226,7 +220,6 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                 break;
             case 2063502050:
                 tLRPC$TL_decryptedMessageMediaVenue = new TLRPC$TL_decryptedMessageMediaDocument() { // from class: org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaDocument_layer101
-                    public static int constructor = 2063502050;
                     public byte[] thumb;
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaDocument, org.telegram.tgnet.TLObject
@@ -237,7 +230,7 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
                         this.mime_type = abstractSerializedData2.readString(z2);
                         this.size = abstractSerializedData2.readInt32(z2);
                         this.key = abstractSerializedData2.readByteArray(z2);
-                        this.f1604iv = abstractSerializedData2.readByteArray(z2);
+                        this.f1606iv = abstractSerializedData2.readByteArray(z2);
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         if (readInt32 != 481674261) {
                             if (z2) {
@@ -258,14 +251,14 @@ public abstract class TLRPC$DecryptedMessageMedia extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessageMediaDocument, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(2063502050);
                         abstractSerializedData2.writeByteArray(this.thumb);
                         abstractSerializedData2.writeInt32(this.thumb_w);
                         abstractSerializedData2.writeInt32(this.thumb_h);
                         abstractSerializedData2.writeString(this.mime_type);
                         abstractSerializedData2.writeInt32((int) this.size);
                         abstractSerializedData2.writeByteArray(this.key);
-                        abstractSerializedData2.writeByteArray(this.f1604iv);
+                        abstractSerializedData2.writeByteArray(this.f1606iv);
                         abstractSerializedData2.writeInt32(481674261);
                         int size = this.attributes.size();
                         abstractSerializedData2.writeInt32(size);

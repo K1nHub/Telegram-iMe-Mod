@@ -38,15 +38,15 @@ public class LazyList<E> extends AbstractList<E> {
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
     public Iterator<E> iterator() {
-        return new C11511();
+        return new C11571();
     }
 
     /* renamed from: com.googlecode.mp4parser.util.LazyList$1 */
     /* loaded from: classes3.dex */
-    class C11511 implements Iterator<E>, p033j$.util.Iterator {
+    class C11571 implements Iterator<E>, p033j$.util.Iterator {
         int pos = 0;
 
-        C11511() {
+        C11571() {
         }
 
         @Override // p033j$.util.Iterator

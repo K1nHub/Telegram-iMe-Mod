@@ -70,25 +70,25 @@
 
     const/4 v0, 0x0
 
-    .line 50
+    .line 51
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;-><init>(DILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 44
+    .line 45
     iput-wide p1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->amount:D
 
-    .line 45
+    .line 46
     iput p3, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->decimals:I
 
-    .line 46
+    .line 47
     iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->recipientAddress:Ljava/lang/String;
 
-    .line 47
+    .line 48
     iput-object p5, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->utxos:Ljava/util/List;
 
-    .line 48
+    .line 49
     iput-object p6, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->changeAddress:Ljava/lang/String;
 
-    .line 49
+    .line 50
     iput-object p7, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->byteFee:Ljava/math/BigInteger;
 
     return-void
@@ -418,7 +418,7 @@
 .method public getAmount()D
     .locals 2
 
-    .line 44
+    .line 45
     iget-wide v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->amount:D
 
     return-wide v0
@@ -427,7 +427,7 @@
 .method public final getByteFee()Ljava/math/BigInteger;
     .locals 1
 
-    .line 49
+    .line 50
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->byteFee:Ljava/math/BigInteger;
 
     return-object v0
@@ -436,7 +436,7 @@
 .method public final getChangeAddress()Ljava/lang/String;
     .locals 1
 
-    .line 48
+    .line 49
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->changeAddress:Ljava/lang/String;
 
     return-object v0
@@ -445,7 +445,7 @@
 .method protected getDecimals()I
     .locals 1
 
-    .line 45
+    .line 46
     iget v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->decimals:I
 
     return v0
@@ -454,7 +454,7 @@
 .method public final getRecipientAddress()Ljava/lang/String;
     .locals 1
 
-    .line 46
+    .line 47
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->recipientAddress:Ljava/lang/String;
 
     return-object v0
@@ -471,7 +471,7 @@
         }
     .end annotation
 
-    .line 47
+    .line 48
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;->utxos:Ljava/util/List;
 
     return-object v0

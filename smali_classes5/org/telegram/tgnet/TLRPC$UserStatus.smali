@@ -11,7 +11,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 32616
+    .line 33089
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -26,7 +26,7 @@
 
     goto :goto_0
 
-    .line 32632
+    .line 33105
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userStatusLastMonth;
 
@@ -34,7 +34,7 @@
 
     goto :goto_0
 
-    .line 32629
+    .line 33102
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userStatusEmpty;
 
@@ -42,7 +42,7 @@
 
     goto :goto_0
 
-    .line 32626
+    .line 33099
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userStatusLastWeek;
 
@@ -50,7 +50,7 @@
 
     goto :goto_0
 
-    .line 32623
+    .line 33096
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userStatusOffline;
 
@@ -58,7 +58,7 @@
 
     goto :goto_0
 
-    .line 32635
+    .line 33108
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userStatusOnline;
 
@@ -66,7 +66,7 @@
 
     goto :goto_0
 
-    .line 32638
+    .line 33111
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userStatusRecently;
 
@@ -79,7 +79,7 @@
 
     goto :goto_1
 
-    .line 32642
+    .line 33115
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -109,7 +109,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 32645
+    .line 33118
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

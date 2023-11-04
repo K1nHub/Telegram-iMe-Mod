@@ -12,13 +12,13 @@
 
 .field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field public final synthetic f$3:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
 .field public final synthetic f$4:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,7 +29,7 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda31;->f$2:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    iput-object p4, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda31;->f$3:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object p4, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda31;->f$3:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     iput-object p5, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda31;->f$4:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
@@ -47,11 +47,11 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda31;->f$2:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda31;->f$3:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v3, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda31;->f$3:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     iget-object v4, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda31;->f$4:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$4D3patVK4I6SNAv-mDhJ8Figdzk(Lorg/telegram/ui/Stories/PeerStoriesView;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$jKGk7HPCbQLxV6bO73E2J5dnDxk(Lorg/telegram/ui/Stories/PeerStoriesView;Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;)V
 
     return-void
 .end method

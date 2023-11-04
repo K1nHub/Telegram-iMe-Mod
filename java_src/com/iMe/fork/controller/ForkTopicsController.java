@@ -275,7 +275,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
                 TLRPC$Dialog dialog = getMessagesController().getDialog(longValue);
                 if (dialog != null) {
                     Intrinsics.checkNotNullExpressionValue(dialog, "getDialog(did)");
-                    if (!getHiddenChatsController().isChatHidden(dialog.f1606id)) {
+                    if (!getHiddenChatsController().isChatHidden(dialog.f1608id)) {
                         if (dialog.folder_id == 0) {
                             arrayList.add(Long.valueOf(longValue));
                         } else {
@@ -289,7 +289,7 @@ public final class ForkTopicsController extends BaseController implements KoinCo
                 TLRPC$Dialog dialog2 = getMessagesController().getDialog(longValue2);
                 if (dialog2 != null) {
                     Intrinsics.checkNotNullExpressionValue(dialog2, "getDialog(did)");
-                    if (!getHiddenChatsController().isChatHidden(dialog2.f1606id)) {
+                    if (!getHiddenChatsController().isChatHidden(dialog2.f1608id)) {
                         if (dialog2.folder_id == 0) {
                             arrayList.add(Long.valueOf(longValue2));
                         } else {
@@ -788,8 +788,8 @@ public final class ForkTopicsController extends BaseController implements KoinCo
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (TopicDb topicDb : list) {
-            Pair m144to = TuplesKt.m144to(Long.valueOf(topicDb.getTopicId()), TopicMappingKt.mapToDomain(topicDb));
-            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
+            Pair m146to = TuplesKt.m146to(Long.valueOf(topicDb.getTopicId()), TopicMappingKt.mapToDomain(topicDb));
+            linkedHashMap.put(m146to.getFirst(), m146to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.topics = mutableMap;

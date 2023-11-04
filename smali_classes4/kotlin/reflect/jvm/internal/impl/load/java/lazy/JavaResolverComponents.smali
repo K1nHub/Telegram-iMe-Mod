@@ -115,11 +115,11 @@
 
     invoke-static {v6, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "javaResolverCache"
+    const-string/jumbo v0, "javaResolverCache"
 
     invoke-static {v7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "javaPropertyInitializerEvaluator"
+    const-string/jumbo v0, "javaPropertyInitializerEvaluator"
 
     invoke-static {v8, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -169,7 +169,7 @@
 
     invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "javaClassesTracker"
+    const-string/jumbo v0, "javaClassesTracker"
 
     move-object/from16 v15, p19
 
@@ -187,13 +187,13 @@
 
     invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "javaTypeEnhancementState"
+    const-string/jumbo v0, "javaTypeEnhancementState"
 
     move-object/from16 v15, p22
 
     invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "javaModuleResolver"
+    const-string/jumbo v0, "javaModuleResolver"
 
     move-object/from16 v15, p23
 
@@ -599,7 +599,7 @@
 
     move-object/from16 v8, p1
 
-    const-string v1, "javaResolverCache"
+    const-string/jumbo v1, "javaResolverCache"
 
     move-object/from16 v2, p1
 

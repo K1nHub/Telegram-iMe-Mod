@@ -41,7 +41,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MediaController;ILorg/telegram/messenger/MessageObject;[IZ)V
     .locals 0
 
-    .line 2916
+    .line 2959
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     iput p2, p0, Lorg/telegram/messenger/MediaController$7;->val$tag:I
@@ -60,7 +60,7 @@
 .method private synthetic lambda$onSurfaceDestroyed$0()V
     .locals 2
 
-    .line 2979
+    .line 3022
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     const/4 v1, 0x1
@@ -75,7 +75,7 @@
 .method public onError(Lorg/telegram/ui/Components/VideoPlayer;Ljava/lang/Exception;)V
     .locals 0
 
-    .line 2927
+    .line 2970
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return-void
@@ -84,7 +84,7 @@
 .method public onRenderedFirstFrame()V
     .locals 2
 
-    .line 2947
+    .line 2990
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$3900(Lorg/telegram/messenger/MediaController;)Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
@@ -105,14 +105,14 @@
 
     if-nez v0, :cond_0
 
-    .line 2948
+    .line 2991
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/MediaController;->access$4002(Lorg/telegram/messenger/MediaController;Z)Z
 
-    .line 2949
+    .line 2992
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$3900(Lorg/telegram/messenger/MediaController;)Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
@@ -121,7 +121,7 @@
 
     invoke-virtual {v0, v1}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->setDrawingReady(Z)V
 
-    .line 2950
+    .line 2993
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$4100(Lorg/telegram/messenger/MediaController;)Landroid/widget/FrameLayout;
@@ -165,7 +165,7 @@
 .method public onStateChanged(ZI)V
     .locals 8
 
-    .line 2919
+    .line 2962
     iget v0, p0, Lorg/telegram/messenger/MediaController$7;->val$tag:I
 
     iget-object v1, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
@@ -178,7 +178,7 @@
 
     return-void
 
-    .line 2922
+    .line 2965
     :cond_0
     iget-object v2, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -200,7 +200,7 @@
 .method public onSurfaceDestroyed(Landroid/graphics/SurfaceTexture;)Z
     .locals 5
 
-    .line 2956
+    .line 2999
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$2800(Lorg/telegram/messenger/MediaController;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -213,7 +213,7 @@
 
     return v1
 
-    .line 2959
+    .line 3002
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -227,7 +227,7 @@
 
     if-ne v0, v2, :cond_5
 
-    .line 2960
+    .line 3003
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$3900(Lorg/telegram/messenger/MediaController;)Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
@@ -236,7 +236,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 2961
+    .line 3004
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$4000(Lorg/telegram/messenger/MediaController;)Z
@@ -245,7 +245,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2962
+    .line 3005
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$3900(Lorg/telegram/messenger/MediaController;)Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
@@ -254,7 +254,7 @@
 
     invoke-virtual {v0, v3}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->setDrawingReady(Z)V
 
-    .line 2964
+    .line 3007
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -268,7 +268,7 @@
 
     if-nez v0, :cond_2
 
-    .line 2965
+    .line 3008
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$4100(Lorg/telegram/messenger/MediaController;)Landroid/widget/FrameLayout;
@@ -283,7 +283,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 2967
+    .line 3010
     :cond_2
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -297,7 +297,7 @@
 
     if-eq v0, p1, :cond_3
 
-    .line 2968
+    .line 3011
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$4300(Lorg/telegram/messenger/MediaController;)Landroid/view/TextureView;
@@ -306,7 +306,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/TextureView;->setSurfaceTexture(Landroid/graphics/SurfaceTexture;)V
 
-    .line 2970
+    .line 3013
     :cond_3
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -322,7 +322,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/VideoPlayer;->setTextureView(Landroid/view/TextureView;)V
 
-    .line 2972
+    .line 3015
     :cond_4
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -330,7 +330,7 @@
 
     return v3
 
-    .line 2974
+    .line 3017
     :cond_5
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -340,7 +340,7 @@
 
     if-ne v0, v3, :cond_9
 
-    .line 2975
+    .line 3018
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$4400(Lorg/telegram/messenger/MediaController;)Landroid/app/Activity;
@@ -349,7 +349,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 2976
+    .line 3019
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$4500(Lorg/telegram/messenger/MediaController;)Lorg/telegram/ui/Components/PipRoundVideoView;
@@ -358,7 +358,7 @@
 
     if-nez v0, :cond_6
 
-    .line 2978
+    .line 3021
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -368,7 +368,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/messenger/MediaController;->access$4502(Lorg/telegram/messenger/MediaController;Lorg/telegram/ui/Components/PipRoundVideoView;)Lorg/telegram/ui/Components/PipRoundVideoView;
 
-    .line 2979
+    .line 3022
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$4500(Lorg/telegram/messenger/MediaController;)Lorg/telegram/ui/Components/PipRoundVideoView;
@@ -391,7 +391,7 @@
 
     goto :goto_0
 
-    .line 2981
+    .line 3024
     :catch_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -399,7 +399,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/messenger/MediaController;->access$4502(Lorg/telegram/messenger/MediaController;Lorg/telegram/ui/Components/PipRoundVideoView;)Lorg/telegram/ui/Components/PipRoundVideoView;
 
-    .line 2984
+    .line 3027
     :cond_6
     :goto_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
@@ -410,7 +410,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 2985
+    .line 3028
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$4500(Lorg/telegram/messenger/MediaController;)Lorg/telegram/ui/Components/PipRoundVideoView;
@@ -427,7 +427,7 @@
 
     if-eq v0, p1, :cond_7
 
-    .line 2986
+    .line 3029
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->access$4500(Lorg/telegram/messenger/MediaController;)Lorg/telegram/ui/Components/PipRoundVideoView;
@@ -440,7 +440,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/TextureView;->setSurfaceTexture(Landroid/graphics/SurfaceTexture;)V
 
-    .line 2988
+    .line 3031
     :cond_7
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -460,7 +460,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/VideoPlayer;->setTextureView(Landroid/view/TextureView;)V
 
-    .line 2991
+    .line 3034
     :cond_8
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
@@ -468,7 +468,7 @@
 
     return v3
 
-    .line 2993
+    .line 3036
     :cond_9
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->hasInstance()Z
 
@@ -486,7 +486,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 2994
+    .line 3037
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v0
@@ -508,7 +508,7 @@
 .method public onVideoSizeChanged(IIIF)V
     .locals 2
 
-    .line 2932
+    .line 2975
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {v0, p3}, Lorg/telegram/messenger/MediaController;->access$3702(Lorg/telegram/messenger/MediaController;I)I
@@ -530,7 +530,7 @@
 
     move p1, v1
 
-    .line 2938
+    .line 2981
     :cond_1
     :goto_0
     iget-object p3, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
@@ -553,7 +553,7 @@
     :goto_1
     invoke-static {p3, p1}, Lorg/telegram/messenger/MediaController;->access$3802(Lorg/telegram/messenger/MediaController;F)F
 
-    .line 2940
+    .line 2983
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {p1}, Lorg/telegram/messenger/MediaController;->access$3900(Lorg/telegram/messenger/MediaController;)Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
@@ -562,7 +562,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 2941
+    .line 2984
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$7;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {p1}, Lorg/telegram/messenger/MediaController;->access$3900(Lorg/telegram/messenger/MediaController;)Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;

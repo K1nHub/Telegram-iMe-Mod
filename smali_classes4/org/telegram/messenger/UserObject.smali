@@ -3,11 +3,15 @@
 .source "UserObject.java"
 
 
+# static fields
+.field public static final REPLY_BOT:J = 0x4bc5fe8dL
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    .line 16
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -22,13 +26,13 @@
 
     return-object v0
 
-    .line 138
+    .line 143
     :cond_0
     instance-of v1, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
 
     if-eqz v1, :cond_1
 
-    .line 139
+    .line 144
     check-cast p0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
 
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;->document_id:J
@@ -39,16 +43,16 @@
 
     return-object p0
 
-    .line 140
+    .line 145
     :cond_1
     instance-of v1, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
     if-eqz v1, :cond_2
 
-    .line 141
+    .line 146
     check-cast p0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
-    .line 142
+    .line 147
     iget v1, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->until:I
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -63,7 +67,7 @@
 
     if-le v1, v2, :cond_2
 
-    .line 143
+    .line 148
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->document_id:J
 
     invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -85,7 +89,7 @@
 
     return-object p0
 
-    .line 131
+    .line 136
     :cond_0
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$User;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
 
@@ -101,7 +105,7 @@
 
     const/4 v0, 0x1
 
-    .line 99
+    .line 104
     invoke-static {p0, v0}, Lorg/telegram/messenger/UserObject;->getFirstName(Lorg/telegram/tgnet/TLRPC$User;Z)Ljava/lang/String;
 
     move-result-object p0
@@ -114,7 +118,7 @@
 
     if-eqz p0, :cond_4
 
-    .line 103
+    .line 108
     invoke-static {p0}, Lorg/telegram/messenger/UserObject;->isDeleted(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v0
@@ -123,18 +127,18 @@
 
     goto :goto_2
 
-    .line 106
+    .line 111
     :cond_0
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    .line 107
+    .line 112
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 108
+    .line 113
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
 
     goto :goto_0
@@ -142,7 +146,7 @@
     :cond_1
     if-nez p1, :cond_2
 
-    .line 109
+    .line 114
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result p1
@@ -151,7 +155,7 @@
 
     if-gt p1, v1, :cond_2
 
-    .line 110
+    .line 115
     iget-object p1, p0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
@@ -162,7 +166,7 @@
 
     return-object p0
 
-    .line 112
+    .line 117
     :cond_2
     :goto_0
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -195,7 +199,7 @@
 .method public static getPhoto(Lorg/telegram/tgnet/TLRPC$User;)Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;
     .locals 1
 
-    .line 120
+    .line 125
     invoke-static {p0}, Lorg/telegram/messenger/UserObject;->hasPhoto(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v0
@@ -218,7 +222,7 @@
 
     const/4 v0, 0x0
 
-    .line 77
+    .line 82
     invoke-static {p0, v0}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;Z)Ljava/lang/String;
 
     move-result-object p0
@@ -235,7 +239,7 @@
 
     return-object v0
 
-    .line 62
+    .line 67
     :cond_0
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$User;->username:Ljava/lang/String;
 
@@ -245,12 +249,12 @@
 
     if-nez v1, :cond_1
 
-    .line 63
+    .line 68
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$User;->username:Ljava/lang/String;
 
     return-object p0
 
-    .line 65
+    .line 70
     :cond_1
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$User;->usernames:Ljava/util/ArrayList;
 
@@ -258,7 +262,7 @@
 
     const/4 v1, 0x0
 
-    .line 66
+    .line 71
     :goto_0
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$User;->usernames:Ljava/util/ArrayList;
 
@@ -268,7 +272,7 @@
 
     if-ge v1, v2, :cond_5
 
-    .line 67
+    .line 72
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$User;->usernames:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -279,7 +283,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 68
+    .line 73
     iget-boolean v3, v2, Lorg/telegram/tgnet/TLRPC$TL_username;->active:Z
 
     if-eqz v3, :cond_2
@@ -300,7 +304,7 @@
 
     if-nez v3, :cond_4
 
-    .line 69
+    .line 74
     iget-object p0, v2, Lorg/telegram/tgnet/TLRPC$TL_username;->username:Ljava/lang/String;
 
     return-object p0
@@ -319,7 +323,7 @@
 
     if-eqz p0, :cond_3
 
-    .line 51
+    .line 56
     invoke-static {p0}, Lorg/telegram/messenger/UserObject;->isDeleted(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v0
@@ -328,7 +332,7 @@
 
     goto :goto_1
 
-    .line 54
+    .line 59
     :cond_0
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
@@ -338,7 +342,7 @@
 
     move-result-object v0
 
-    .line 55
+    .line 60
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -384,7 +388,7 @@
     :goto_0
     return-object v0
 
-    .line 52
+    .line 57
     :cond_3
     :goto_1
     sget p0, Lorg/telegram/messenger/R$string;->HiddenName:I
@@ -403,7 +407,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 124
+    .line 129
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$UserFull;->fallback_photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     if-eqz p0, :cond_0
@@ -428,7 +432,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 116
+    .line 121
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$User;->photo:Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;
 
     if-eqz p0, :cond_0
@@ -459,7 +463,7 @@
 
     goto :goto_1
 
-    .line 84
+    .line 89
     :cond_0
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$User;->username:Ljava/lang/String;
 
@@ -473,7 +477,7 @@
 
     return v2
 
-    .line 87
+    .line 92
     :cond_1
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$User;->usernames:Ljava/util/ArrayList;
 
@@ -481,7 +485,7 @@
 
     move v1, v0
 
-    .line 88
+    .line 93
     :goto_0
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$User;->usernames:Ljava/util/ArrayList;
 
@@ -491,7 +495,7 @@
 
     if-ge v1, v3, :cond_3
 
-    .line 89
+    .line 94
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$User;->usernames:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -502,7 +506,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 90
+    .line 95
     iget-boolean v4, v3, Lorg/telegram/tgnet/TLRPC$TL_username;->active:Z
 
     if-eqz v4, :cond_2
@@ -532,7 +536,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 35
+    .line 39
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_userContact_old2;
 
     if-nez v0, :cond_0
@@ -562,7 +566,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 31
+    .line 35
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_userDeleted_old2;
 
     if-nez v0, :cond_1
@@ -595,7 +599,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 23
+    .line 25
     invoke-static {p0}, Lorg/telegram/messenger/UserObject;->isDeleted(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v0
@@ -662,7 +666,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 43
+    .line 47
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     const-wide/32 v2, 0xacfa1
@@ -730,7 +734,7 @@
 
     if-eqz p0, :cond_1
 
-    .line 39
+    .line 43
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_userSelf_old3;
 
     if-nez v0, :cond_0

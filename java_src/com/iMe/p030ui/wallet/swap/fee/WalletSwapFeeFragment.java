@@ -44,15 +44,15 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.C3702ActionBar;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.Cells.HeaderCell;
-import org.telegram.p042ui.Cells.TextInfoPrivacyCell;
-import org.telegram.p042ui.Cells.TextSettingsCell;
-import org.telegram.p042ui.Components.RecyclerListView;
-import org.telegram.p042ui.Components.SlideChooseView;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Cells.HeaderCell;
+import org.telegram.p043ui.Cells.TextInfoPrivacyCell;
+import org.telegram.p043ui.Cells.TextSettingsCell;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.SlideChooseView;
 import timber.log.Timber;
 /* compiled from: WalletSwapFeeFragment.kt */
 /* renamed from: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment */
@@ -200,7 +200,7 @@ public final class WalletSwapFeeFragment extends WalletAuthBaseFragment implemen
         return (RecyclerListView) this.listView$delegate.getValue(this, $$delegatedProperties[3]);
     }
 
-    @Override // com.iMe.p030ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         updateRows();
@@ -215,7 +215,7 @@ public final class WalletSwapFeeFragment extends WalletAuthBaseFragment implemen
         return rootView;
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         super.onFragmentDestroy();
         invokeResultListener();
@@ -226,7 +226,7 @@ public final class WalletSwapFeeFragment extends WalletAuthBaseFragment implemen
         getListAdapter().notifyItemChanged(this.feeInfoRow);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         RecyclerListView listView = getListView();
@@ -237,13 +237,13 @@ public final class WalletSwapFeeFragment extends WalletAuthBaseFragment implemen
     }
 
     private final void setupActionBar() {
-        C3702ActionBar c3702ActionBar = this.actionBar;
-        c3702ActionBar.setBackButtonImage(C3630R.C3632drawable.ic_ab_back);
-        c3702ActionBar.setTitle(getResourceManager().getString(C3630R.string.wallet_swap_transaction_options_toolbar_title));
-        c3702ActionBar.setAllowOverlayTitle(true);
-        c3702ActionBar.createMenu();
-        c3702ActionBar.setActionBarMenuOnItemClick(new C3702ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$setupActionBar$1$1
-            @Override // org.telegram.p042ui.ActionBar.C3702ActionBar.ActionBarMenuOnItemClick
+        C3706ActionBar c3706ActionBar = this.actionBar;
+        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.wallet_swap_transaction_options_toolbar_title));
+        c3706ActionBar.setAllowOverlayTitle(true);
+        c3706ActionBar.createMenu();
+        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletSwapFeeFragment.this.finishFragment();
@@ -317,7 +317,7 @@ public final class WalletSwapFeeFragment extends WalletAuthBaseFragment implemen
         private final Context mContext;
         final /* synthetic */ WalletSwapFeeFragment this$0;
 
-        @Override // org.telegram.p042ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return false;
@@ -365,25 +365,25 @@ public final class WalletSwapFeeFragment extends WalletAuthBaseFragment implemen
                 WalletSwapFeeFragment walletSwapFeeFragment = this.this$0;
                 if (holder.getItemViewType() == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL && (view instanceof TextInfoPrivacyCell)) {
                     if (i == walletSwapFeeFragment.slipInfoRow) {
-                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3630R.string.wallet_swap_transaction_options_slip_description));
+                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3634R.string.wallet_swap_transaction_options_slip_description));
                     } else if (i == walletSwapFeeFragment.deadlineInfoRow) {
-                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3630R.string.wallet_swap_transaction_options_deadline_description));
+                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3634R.string.wallet_swap_transaction_options_deadline_description));
                     } else {
                         GasPriceInfo info = walletSwapFeeFragment.getPresenter().getSelectedFee().getInfo();
                         ResourceManager resourceManager = walletSwapFeeFragment.getResourceManager();
-                        int i2 = C3630R.string.wallet_amount_send_fee_format;
+                        int i2 = C3634R.string.wallet_amount_send_fee_format;
                         Double valueOf = Double.valueOf(info.getFeeInFiat().getValue());
                         TokenDetailed.Companion companion = TokenDetailed.Companion;
                         ((TextInfoPrivacyCell) view).setText(resourceManager.getString(i2, Integer.valueOf(info.getDuration()), BalanceFormatter.format(Double.valueOf(info.getFee()), Integer.valueOf(walletSwapFeeFragment.getPresenter().getMetadata().getFeeToken().getDecimals())), walletSwapFeeFragment.getPresenter().getMetadata().getFeeToken().getTicker(), BalanceFormatter.format(valueOf, Integer.valueOf(companion.getUSD().getDecimals())), companion.getUSD().getTicker()));
                     }
-                    ((TextInfoPrivacyCell) view).setBackground(Theme.getThemedDrawable(this.mContext, C3630R.C3632drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                    ((TextInfoPrivacyCell) view).setBackground(Theme.getThemedDrawable(this.mContext, C3634R.C3636drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 } else if (holder.getItemViewType() == IdFabric$ViewTypes.HEADER_CELL && (view instanceof HeaderCell)) {
                     if (i == walletSwapFeeFragment.slipHeaderRow) {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3630R.string.wallet_swap_transaction_options_slip_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3634R.string.wallet_swap_transaction_options_slip_header));
                     } else if (i == walletSwapFeeFragment.deadlineHeaderRow) {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3630R.string.wallet_swap_transaction_options_deadline_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3634R.string.wallet_swap_transaction_options_deadline_header));
                     } else {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3630R.string.wallet_swap_transaction_options_fee_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3634R.string.wallet_swap_transaction_options_fee_header));
                     }
                 } else if (holder.getItemViewType() == IdFabric$ViewTypes.SLIDE_CHOOSE && (view instanceof SlideChooseView)) {
                     if (i == walletSwapFeeFragment.slipChooserRow) {
@@ -419,12 +419,12 @@ public final class WalletSwapFeeFragment extends WalletAuthBaseFragment implemen
                 Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
                 final WalletSwapFeeFragment walletSwapFeeFragment = this.this$0;
                 ((SlideChooseView) view).setCallback(new SlideChooseView.Callback() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$ListAdapter$$ExternalSyntheticLambda0
-                    @Override // org.telegram.p042ui.Components.SlideChooseView.Callback
+                    @Override // org.telegram.p043ui.Components.SlideChooseView.Callback
                     public final void onOptionSelected(int i) {
                         WalletSwapFeeFragment.ListAdapter.setupChooser$lambda$5$lambda$4(RecyclerListView.Holder.this, walletSwapFeeFragment, i);
                     }
 
-                    @Override // org.telegram.p042ui.Components.SlideChooseView.Callback
+                    @Override // org.telegram.p043ui.Components.SlideChooseView.Callback
                     public /* synthetic */ void onTouchEnd() {
                         SlideChooseView.Callback.CC.$default$onTouchEnd(this);
                     }

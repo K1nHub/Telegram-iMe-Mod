@@ -61,7 +61,7 @@ final class SignatureEnhancementBuilder {
                 this.this$0 = classEnhancementBuilder;
                 this.functionName = functionName;
                 this.parameters = new ArrayList();
-                this.returnType = TuplesKt.m144to("V", null);
+                this.returnType = TuplesKt.m146to("V", null);
             }
 
             public final void parameter(String type, JavaTypeQualifiers... qualifiers) {
@@ -86,7 +86,7 @@ final class SignatureEnhancementBuilder {
                     }
                     typeEnhancementInfo = new TypeEnhancementInfo(linkedHashMap);
                 }
-                list.add(TuplesKt.m144to(type, typeEnhancementInfo));
+                list.add(TuplesKt.m146to(type, typeEnhancementInfo));
             }
 
             public final void returns(String type, JavaTypeQualifiers... qualifiers) {
@@ -104,14 +104,14 @@ final class SignatureEnhancementBuilder {
                 for (IndexedValue indexedValue : withIndex) {
                     linkedHashMap.put(Integer.valueOf(indexedValue.getIndex()), (JavaTypeQualifiers) indexedValue.getValue());
                 }
-                this.returnType = TuplesKt.m144to(type, new TypeEnhancementInfo(linkedHashMap));
+                this.returnType = TuplesKt.m146to(type, new TypeEnhancementInfo(linkedHashMap));
             }
 
             public final void returns(JvmPrimitiveType type) {
                 Intrinsics.checkNotNullParameter(type, "type");
                 String desc = type.getDesc();
                 Intrinsics.checkNotNullExpressionValue(desc, "type.desc");
-                this.returnType = TuplesKt.m144to(desc, null);
+                this.returnType = TuplesKt.m146to(desc, null);
             }
 
             public final Pair<String, PredefinedFunctionEnhancementInfo> build() {
@@ -136,7 +136,7 @@ final class SignatureEnhancementBuilder {
                 while (it2.hasNext()) {
                     arrayList2.add((TypeEnhancementInfo) ((Pair) it2.next()).getSecond());
                 }
-                return TuplesKt.m144to(signature, new PredefinedFunctionEnhancementInfo(second, arrayList2));
+                return TuplesKt.m146to(signature, new PredefinedFunctionEnhancementInfo(second, arrayList2));
             }
         }
     }

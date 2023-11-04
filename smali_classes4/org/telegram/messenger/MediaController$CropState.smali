@@ -58,18 +58,18 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 346
+    .line 351
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 349
+    .line 354
     iput v0, p0, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
-    .line 351
+    .line 356
     iput v0, p0, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    .line 352
+    .line 357
     iput v0, p0, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
     return-void
@@ -85,7 +85,7 @@
         }
     .end annotation
 
-    .line 346
+    .line 351
     invoke-virtual {p0}, Lorg/telegram/messenger/MediaController$CropState;->clone()Lorg/telegram/messenger/MediaController$CropState;
 
     move-result-object v0
@@ -96,102 +96,102 @@
 .method public clone()Lorg/telegram/messenger/MediaController$CropState;
     .locals 2
 
-    .line 372
+    .line 377
     new-instance v0, Lorg/telegram/messenger/MediaController$CropState;
 
     invoke-direct {v0}, Lorg/telegram/messenger/MediaController$CropState;-><init>()V
 
-    .line 374
+    .line 379
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->cropPx:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->cropPx:F
 
-    .line 375
+    .line 380
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->cropPy:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->cropPy:F
 
-    .line 376
+    .line 381
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->cropScale:F
 
-    .line 377
+    .line 382
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->cropRotate:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->cropRotate:F
 
-    .line 378
+    .line 383
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->cropPw:F
 
-    .line 379
+    .line 384
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->cropPh:F
 
-    .line 380
+    .line 385
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->transformWidth:I
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->transformWidth:I
 
-    .line 381
+    .line 386
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->transformHeight:I
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->transformHeight:I
 
-    .line 382
+    .line 387
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->transformRotation:I
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->transformRotation:I
 
-    .line 383
+    .line 388
     iget-boolean v1, p0, Lorg/telegram/messenger/MediaController$CropState;->mirrored:Z
 
     iput-boolean v1, v0, Lorg/telegram/messenger/MediaController$CropState;->mirrored:Z
 
-    .line 385
+    .line 390
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->stateScale:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->stateScale:F
 
-    .line 386
+    .line 391
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->scale:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->scale:F
 
-    .line 387
+    .line 392
     iget-object v1, p0, Lorg/telegram/messenger/MediaController$CropState;->matrix:Landroid/graphics/Matrix;
 
     iput-object v1, v0, Lorg/telegram/messenger/MediaController$CropState;->matrix:Landroid/graphics/Matrix;
 
-    .line 388
+    .line 393
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->width:I
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->width:I
 
-    .line 389
+    .line 394
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->height:I
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->height:I
 
-    .line 390
+    .line 395
     iget-boolean v1, p0, Lorg/telegram/messenger/MediaController$CropState;->freeform:Z
 
     iput-boolean v1, v0, Lorg/telegram/messenger/MediaController$CropState;->freeform:Z
 
-    .line 391
+    .line 396
     iget v1, p0, Lorg/telegram/messenger/MediaController$CropState;->lockedAspectRatio:F
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$CropState;->lockedAspectRatio:F
 
-    .line 393
+    .line 398
     iget-boolean v1, p0, Lorg/telegram/messenger/MediaController$CropState;->initied:Z
 
     iput-boolean v1, v0, Lorg/telegram/messenger/MediaController$CropState;->initied:Z
 
-    .line 394
+    .line 399
     iget-object v1, p0, Lorg/telegram/messenger/MediaController$CropState;->useMatrix:Landroid/graphics/Matrix;
 
     iput-object v1, v0, Lorg/telegram/messenger/MediaController$CropState;->useMatrix:Landroid/graphics/Matrix;
@@ -202,7 +202,7 @@
 .method public isEmpty()Z
     .locals 2
 
-    .line 399
+    .line 404
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$CropState;->matrix:Landroid/graphics/Matrix;
 
     if-eqz v0, :cond_0

@@ -1,9 +1,6 @@
 .class Lorg/telegram/ui/Stories/recorder/StoryRecorder$5;
-.super Ljava/lang/Object;
+.super Landroid/widget/FrameLayout;
 .source "StoryRecorder.java"
-
-# interfaces
-.implements Lorg/telegram/ui/Components/Bulletin$Delegate;
 
 
 # annotations
@@ -17,80 +14,56 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;)V
     .locals 0
 
-    .line 1575
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1611
+    iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$5;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
+
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic allowLayoutChanges()Z
+.method public setTranslationY(F)V
     .locals 1
 
-    invoke-static {p0}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$allowLayoutChanges(Lorg/telegram/ui/Components/Bulletin$Delegate;)Z
+    .line 1614
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTranslationY()F
 
     move-result v0
 
-    return v0
-.end method
+    cmpl-float v0, v0, p1
 
-.method public clipWithGradient(I)Z
-    .locals 0
+    if-eqz v0, :cond_0
 
-    const/4 p1, 0x1
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$5;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    return p1
-.end method
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
-.method public getBottomOffset(I)I
-    .locals 0
+    move-result-object v0
 
-    .line 1583
-    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$getBottomOffset(Lorg/telegram/ui/Components/Bulletin$Delegate;I)I
+    if-eqz v0, :cond_0
 
-    move-result p1
+    .line 1615
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    return p1
-.end method
+    .line 1616
+    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$5;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-.method public getTopOffset(I)I
-    .locals 0
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$6000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
-    const/16 p1, 0x38
+    move-result-object p1
 
-    .line 1578
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->updateMentionsLayoutPosition()V
 
-    move-result p1
-
-    return p1
-.end method
-
-.method public synthetic onBottomOffsetChange(F)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onBottomOffsetChange(Lorg/telegram/ui/Components/Bulletin$Delegate;F)V
-
-    return-void
-.end method
-
-.method public synthetic onHide(Lorg/telegram/ui/Components/Bulletin;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onHide(Lorg/telegram/ui/Components/Bulletin$Delegate;Lorg/telegram/ui/Components/Bulletin;)V
-
-    return-void
-.end method
-
-.method public synthetic onShow(Lorg/telegram/ui/Components/Bulletin;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onShow(Lorg/telegram/ui/Components/Bulletin$Delegate;Lorg/telegram/ui/Components/Bulletin;)V
-
+    :cond_0
     return-void
 .end method

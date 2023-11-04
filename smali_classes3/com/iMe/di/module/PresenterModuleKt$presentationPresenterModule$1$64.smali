@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$64\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,898:1\n44#2,3:899\n129#3,5:902\n129#3,5:907\n129#3,5:912\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$64\n*L\n724#1:899,3\n729#1:902,5\n730#1:907,5\n731#1:912,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$64\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,901:1\n44#2,3:902\n129#3,5:905\n129#3,5:910\n129#3,5:915\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$64\n*L\n727#1:902,3\n732#1:905,5\n733#1:910,5\n734#1:915,5\n*E\n"
 .end annotation
 
 
@@ -123,7 +123,7 @@
 
     check-cast v4, Lcom/iMe/storage/domain/model/catalog/ChatType;
 
-    .line 725
+    .line 728
     new-instance p2, Lcom/iMe/ui/catalog/details/ChannelDetailsPresenter;
 
     .line 133
@@ -175,7 +175,7 @@
 
     move-object v1, p2
 
-    .line 725
+    .line 728
     invoke-direct/range {v1 .. v7}, Lcom/iMe/ui/catalog/details/ChannelDetailsPresenter;-><init>(Lcom/iMe/model/catalog/CampaignItem;Lorg/telegram/tgnet/TLRPC$Chat;Lcom/iMe/storage/domain/model/catalog/ChatType;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/manager/TelegramApi;Lcom/iMe/gateway/TelegramControllersGateway;)V
 
     return-object p2
@@ -184,7 +184,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 724
+    .line 727
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

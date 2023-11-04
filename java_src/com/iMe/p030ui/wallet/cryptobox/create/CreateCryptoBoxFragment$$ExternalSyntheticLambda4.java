@@ -2,7 +2,7 @@ package com.iMe.p030ui.wallet.cryptobox.create;
 
 import android.graphics.Bitmap;
 import com.iMe.fork.utils.Callbacks$Callback1;
-import org.telegram.p042ui.Components.LinkActionView;
+import org.telegram.p043ui.Components.LinkActionView;
 /* renamed from: com.iMe.ui.wallet.cryptobox.create.CreateCryptoBoxFragment$$ExternalSyntheticLambda4 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class CreateCryptoBoxFragment$$ExternalSyntheticLambda4 implements Callbacks$Callback1 {

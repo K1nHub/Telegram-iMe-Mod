@@ -58,22 +58,22 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.databinding.ForkFragmentWalletConnectBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.C3702ActionBar;
-import org.telegram.p042ui.ActionBar.INavigationLayout;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.CameraScanActivity;
-import org.telegram.p042ui.Cells.DialogCell;
-import org.telegram.p042ui.Cells.TextCell;
-import org.telegram.p042ui.Components.ColoredImageSpan;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.RLottieImageView;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.CameraScanActivity;
+import org.telegram.p043ui.Cells.DialogCell;
+import org.telegram.p043ui.Cells.TextCell;
+import org.telegram.p043ui.Components.ColoredImageSpan;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: WalletConnectFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment */
 /* loaded from: classes3.dex */
@@ -86,7 +86,7 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
     private final MoxyKtxDelegate presenter$delegate;
     private final Lazy sessionsAdapter$delegate;
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return true;
     }
@@ -193,7 +193,7 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
         return root;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onRequestPermissionsResultFragment(int i, String[] permissions, int[] grantResults) {
         Intrinsics.checkNotNullParameter(permissions, "permissions");
         Intrinsics.checkNotNullParameter(grantResults, "grantResults");
@@ -251,7 +251,7 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
         hintUtils.showChangeNetworkHint(parentLayout);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onTransitionAnimationEnd(boolean z, boolean z2) {
         if (z && !z2) {
             getPresenter().showChangeNetworkHintIfNeeded();
@@ -259,16 +259,16 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
         super.onTransitionAnimationEnd(z, z2);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         ThemeDescription.ThemeDescriptionDelegate themeDescriptionDelegate = new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$$ExternalSyntheticLambda3
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletConnectFragment.this.updateAnimationColors();
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -280,12 +280,12 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
         int i3 = ThemeDescription.FLAG_BACKGROUND;
         final WalletConnectSessionsRecycleAdapter sessionsAdapter = getSessionsAdapter();
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(linearLayout, i, themeDescriptionDelegate, i2), new ThemeDescription(getBinding().linearAddSession, ThemeDescription.FLAG_BACKGROUND, i2), new ThemeDescription(getBinding().buttonConnect, ThemeDescription.FLAG_USEBACKGROUNDDRAWABLE, themeDescriptionDelegate, Theme.key_featuredStickers_addButton), new ThemeDescription(getBinding().textDescription, ThemeDescription.FLAG_TEXTCOLOR, themeDescriptionDelegate, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getBinding().textSessionsTitle, ThemeDescription.FLAG_TEXTCOLOR, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, Theme.key_actionBarDefaultSelector), new ThemeDescription(root, i3, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$$ExternalSyntheticLambda4
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletConnectSessionsRecycleAdapter.this.notifyDataSetChanged();
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -294,12 +294,12 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
     }
 
     private final void setupActionBar() {
-        C3702ActionBar c3702ActionBar = this.actionBar;
-        c3702ActionBar.setBackButtonImage(C3630R.C3632drawable.ic_ab_back);
-        c3702ActionBar.setTitle(getResourceManager().getString(C3630R.string.wallet_connect_title));
-        c3702ActionBar.setAllowOverlayTitle(true);
-        c3702ActionBar.setActionBarMenuOnItemClick(new C3702ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupActionBar$1$1
-            @Override // org.telegram.p042ui.ActionBar.C3702ActionBar.ActionBarMenuOnItemClick
+        C3706ActionBar c3706ActionBar = this.actionBar;
+        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.wallet_connect_title));
+        c3706ActionBar.setAllowOverlayTitle(true);
+        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletConnectPresenter presenter;
                 if (i == -1) {
@@ -313,10 +313,10 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
-        ActionBarMenuItem setupActionBar$lambda$2$lambda$1 = c3702ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+        ActionBarMenuItem setupActionBar$lambda$2$lambda$1 = c3706ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
         setupActionBar$lambda$2$lambda$1.disableRipple();
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$2$lambda$1, "setupActionBar$lambda$2$lambda$1");
-        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$2$lambda$1, AndroidUtilities.m102dp(14));
+        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$2$lambda$1, AndroidUtilities.m104dp(14));
         setupActionBar$lambda$2$lambda$1.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
     }
 
@@ -484,47 +484,47 @@ public final class WalletConnectFragment extends WalletAuthBaseFragment implemen
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         repeat = StringsKt__StringsJVMKt.repeat(" ", 2);
         spannableStringBuilder.append((CharSequence) repeat);
-        Drawable drawable = ContextCompat.getDrawable(getParentActivity(), C3630R.C3632drawable.msg_mini_qr);
+        Drawable drawable = ContextCompat.getDrawable(getParentActivity(), C3634R.C3636drawable.msg_mini_qr);
         Intrinsics.checkNotNull(drawable);
         spannableStringBuilder.setSpan(new ColoredImageSpan(drawable), 0, 1, 0);
-        spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m102dp(8)), 1, 2, 0);
-        spannableStringBuilder.append((CharSequence) getResourceManager().getString(C3630R.string.wallet_connect_new_connection));
+        spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m104dp(8)), 1, 2, 0);
+        spannableStringBuilder.append((CharSequence) getResourceManager().getString(C3634R.string.wallet_connect_new_connection));
         bigActionButton.setText(spannableStringBuilder);
-        bigActionButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m102dp(6), getThemedColor(Theme.key_featuredStickers_addButton), getThemedColor(Theme.key_featuredStickers_addButtonPressed)));
+        bigActionButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m104dp(6), getThemedColor(Theme.key_featuredStickers_addButton), getThemedColor(Theme.key_featuredStickers_addButtonPressed)));
         RLottieImageView rLottieImageView = binding.imageHeader;
         updateAnimationColors();
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3630R.raw.fork_wallet_connect, 300, 170, this.colors);
+        rLottieImageView.setAnimation(C3634R.raw.fork_wallet_connect, 300, 170, this.colors);
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         rLottieImageView.playAnimation();
-        binding.textSessionsTitle.setText(getResourceManager().getString(C3630R.string.wallet_connect_active_sessions));
-        binding.textDescription.setText(getResourceManager().getString(C3630R.string.wallet_connect_description));
-        binding.buttonDisconnectAll.setTextAndIcon(getResourceManager().getString(C3630R.string.wallet_connect_terminate_all), C3630R.C3632drawable.msg_block2, false);
+        binding.textSessionsTitle.setText(getResourceManager().getString(C3634R.string.wallet_connect_active_sessions));
+        binding.textDescription.setText(getResourceManager().getString(C3634R.string.wallet_connect_description));
+        binding.buttonDisconnectAll.setTextAndIcon(getResourceManager().getString(C3634R.string.wallet_connect_terminate_all), C3634R.C3636drawable.msg_block2, false);
     }
 
     private final void openQRScan() {
         CameraScanActivity.showAsSheet((BaseFragment) this, true, 1, new CameraScanActivity.CameraScanActivityDelegate() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$openQRScan$1
-            @Override // org.telegram.p042ui.CameraScanActivity.CameraScanActivityDelegate
+            @Override // org.telegram.p043ui.CameraScanActivity.CameraScanActivityDelegate
             public /* synthetic */ void didFindMrzInfo(MrzRecognizer.Result result) {
                 CameraScanActivity.CameraScanActivityDelegate.CC.$default$didFindMrzInfo(this, result);
             }
 
-            @Override // org.telegram.p042ui.CameraScanActivity.CameraScanActivityDelegate
+            @Override // org.telegram.p043ui.CameraScanActivity.CameraScanActivityDelegate
             public /* synthetic */ String getSubtitleText() {
                 return CameraScanActivity.CameraScanActivityDelegate.CC.$default$getSubtitleText(this);
             }
 
-            @Override // org.telegram.p042ui.CameraScanActivity.CameraScanActivityDelegate
+            @Override // org.telegram.p043ui.CameraScanActivity.CameraScanActivityDelegate
             public /* synthetic */ void onDismiss() {
                 CameraScanActivity.CameraScanActivityDelegate.CC.$default$onDismiss(this);
             }
 
-            @Override // org.telegram.p042ui.CameraScanActivity.CameraScanActivityDelegate
+            @Override // org.telegram.p043ui.CameraScanActivity.CameraScanActivityDelegate
             public /* synthetic */ boolean processQr(String str, Runnable runnable) {
                 return CameraScanActivity.CameraScanActivityDelegate.CC.$default$processQr(this, str, runnable);
             }
 
-            @Override // org.telegram.p042ui.CameraScanActivity.CameraScanActivityDelegate
+            @Override // org.telegram.p043ui.CameraScanActivity.CameraScanActivityDelegate
             public void didFindQr(String text) {
                 WalletConnectPresenter presenter;
                 Intrinsics.checkNotNullParameter(text, "text");

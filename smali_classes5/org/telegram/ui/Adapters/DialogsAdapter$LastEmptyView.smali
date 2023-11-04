@@ -24,10 +24,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Adapters/DialogsAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 1323
+    .line 1333
     iput-object p1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
-    .line 1324
+    .line 1334
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -38,7 +38,7 @@
 .method protected onMeasure(II)V
     .locals 11
 
-    .line 1328
+    .line 1338
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
@@ -47,7 +47,7 @@
 
     move-result v0
 
-    .line 1329
+    .line 1339
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     invoke-static {v1}, Lorg/telegram/ui/Adapters/DialogsAdapter;->access$300(Lorg/telegram/ui/Adapters/DialogsAdapter;)Z
@@ -122,7 +122,7 @@
     :cond_2
     move v1, v3
 
-    .line 1331
+    .line 1341
     :goto_1
     iget-object v4, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
@@ -148,7 +148,7 @@
 
     move v1, v3
 
-    .line 1335
+    .line 1345
     :cond_3
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
@@ -156,12 +156,12 @@
 
     check-cast v4, Landroid/view/View;
 
-    .line 1338
+    .line 1348
     instance-of v5, v4, Lorg/telegram/ui/Components/BlurredRecyclerView;
 
     if-eqz v5, :cond_4
 
-    .line 1339
+    .line 1349
     move-object v5, v4
 
     check-cast v5, Lorg/telegram/ui/Components/BlurredRecyclerView;
@@ -173,7 +173,7 @@
     :cond_4
     move v5, v3
 
-    .line 1341
+    .line 1351
     :goto_2
     iget-object v6, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
@@ -181,14 +181,14 @@
 
     move-result v6
 
-    .line 1342
+    .line 1352
     invoke-virtual {v4}, Landroid/view/View;->getPaddingTop()I
 
     move-result v7
 
     sub-int/2addr v7, v5
 
-    .line 1344
+    .line 1354
     iget-object v8, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     invoke-static {v8}, Lorg/telegram/ui/Adapters/DialogsAdapter;->access$700(Lorg/telegram/ui/Adapters/DialogsAdapter;)I
@@ -217,14 +217,14 @@
 
     if-ne v8, v10, :cond_8
 
-    .line 1345
+    .line 1355
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
     if-nez p2, :cond_5
 
-    .line 1347
+    .line 1357
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result p2
@@ -232,7 +232,7 @@
     :cond_5
     if-nez p2, :cond_7
 
-    .line 1350
+    .line 1360
     sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget p2, p2, Landroid/graphics/Point;->y:I
@@ -257,7 +257,7 @@
     :goto_3
     sub-int/2addr p2, v0
 
-    .line 1352
+    .line 1362
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
@@ -271,7 +271,7 @@
 
     const/16 v0, 0x51
 
-    .line 1353
+    .line 1363
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -289,7 +289,7 @@
 
     goto/16 :goto_c
 
-    .line 1358
+    .line 1368
     :cond_9
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -297,7 +297,7 @@
 
     if-nez p2, :cond_a
 
-    .line 1360
+    .line 1370
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result p2
@@ -305,7 +305,7 @@
     :cond_a
     if-nez p2, :cond_c
 
-    .line 1363
+    .line 1373
     sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget p2, p2, Landroid/graphics/Point;->y:I
@@ -333,7 +333,7 @@
     :cond_c
     sub-int/2addr p2, v5
 
-    .line 1366
+    .line 1376
     sget-boolean v4, Lorg/telegram/messenger/SharedConfig;->isDialogsCompactModeEnabled:Z
 
     if-eqz v4, :cond_d
@@ -366,7 +366,7 @@
     :goto_6
     if-ge v5, v0, :cond_13
 
-    .line 1369
+    .line 1379
     iget-object v9, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     iget-object v9, v9, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
@@ -381,7 +381,7 @@
 
     if-nez v9, :cond_10
 
-    .line 1370
+    .line 1380
     iget-object v9, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     iget-object v9, v9, Lorg/telegram/ui/Adapters/DialogsAdapter;->itemInternals:Ljava/util/ArrayList;
@@ -398,7 +398,7 @@
 
     if-nez v6, :cond_11
 
-    .line 1371
+    .line 1381
     sget-boolean v9, Lorg/telegram/messenger/SharedConfig;->useThreeLinesLayout:Z
 
     if-eqz v9, :cond_f
@@ -419,7 +419,7 @@
 
     goto :goto_8
 
-    .line 1375
+    .line 1385
     :cond_10
     iget-object v9, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
@@ -449,7 +449,7 @@
 
     add-int/2addr v8, v0
 
-    .line 1380
+    .line 1390
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->access$1000(Lorg/telegram/ui/Adapters/DialogsAdapter;)Ljava/util/ArrayList;
@@ -458,7 +458,7 @@
 
     if-eqz v0, :cond_14
 
-    .line 1381
+    .line 1391
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->access$1000(Lorg/telegram/ui/Adapters/DialogsAdapter;)Ljava/util/ArrayList;
@@ -520,12 +520,12 @@
 
     if-eqz v7, :cond_1a
 
-    .line 1387
+    .line 1397
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     sub-int/2addr p2, v0
 
-    .line 1388
+    .line 1398
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->access$900(Lorg/telegram/ui/Adapters/DialogsAdapter;)Lorg/telegram/ui/DialogsActivity;
@@ -546,14 +546,14 @@
 
     if-nez v0, :cond_16
 
-    .line 1389
+    .line 1399
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v0
 
     sub-int/2addr p2, v0
 
-    .line 1390
+    .line 1400
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -562,14 +562,14 @@
 
     if-eqz v0, :cond_1a
 
-    .line 1391
+    .line 1401
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
 
-    .line 1392
+    .line 1402
     iget v0, v0, Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;->additionalPadding:I
 
     :goto_a
@@ -594,12 +594,12 @@
 
     if-eqz v7, :cond_1a
 
-    .line 1401
+    .line 1411
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     sub-int/2addr p2, v0
 
-    .line 1402
+    .line 1412
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->access$900(Lorg/telegram/ui/Adapters/DialogsAdapter;)Lorg/telegram/ui/DialogsActivity;
@@ -620,14 +620,14 @@
 
     if-nez v0, :cond_18
 
-    .line 1403
+    .line 1413
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v0
 
     sub-int/2addr p2, v0
 
-    .line 1404
+    .line 1414
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -636,14 +636,14 @@
 
     if-eqz v0, :cond_1a
 
-    .line 1405
+    .line 1415
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;
 
-    .line 1406
+    .line 1416
     iget v0, v0, Lorg/telegram/ui/DialogsActivity$DialogsRecyclerView;->additionalPadding:I
 
     goto :goto_a
@@ -666,7 +666,7 @@
     :cond_1b
     move v3, p2
 
-    .line 1419
+    .line 1429
     :goto_e
     iget-object p2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$LastEmptyView;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
@@ -678,7 +678,7 @@
 
     const/16 p2, 0x3e8
 
-    .line 1420
+    .line 1430
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -688,7 +688,7 @@
     :cond_1c
     const/high16 p2, 0x40000000    # 2.0f
 
-    .line 1422
+    .line 1432
     invoke-static {v3, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2

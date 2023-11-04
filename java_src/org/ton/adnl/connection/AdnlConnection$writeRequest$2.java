@@ -23,7 +23,7 @@ import kotlinx.coroutines.Job;
 import org.ton.crypto.AesCtr;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AdnlConnection.kt */
-@DebugMetadata(m143c = "org.ton.adnl.connection.AdnlConnection$writeRequest$2", m142f = "AdnlConnection.kt", m141l = {}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.ton.adnl.connection.AdnlConnection$writeRequest$2", m144f = "AdnlConnection.kt", m143l = {}, m142m = "invokeSuspend")
 /* loaded from: classes6.dex */
 public final class AdnlConnection$writeRequest$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Job>, Object> {
     final /* synthetic */ CoroutineContext $callContext;
@@ -62,7 +62,7 @@ public final class AdnlConnection$writeRequest$2 extends SuspendLambda implement
         IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
         if (this.label == 0) {
             ResultKt.throwOnFailure(obj);
-            launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(this.$callContext.plus(new CoroutineName("Request body writer"))), null, null, new C74221(this.this$0, this.$output, this.$cipher, this.$request, this.$closeChannel, null), 3, null);
+            launch$default = BuildersKt__Builders_commonKt.launch$default(CoroutineScopeKt.CoroutineScope(this.$callContext.plus(new CoroutineName("Request body writer"))), null, null, new C74971(this.this$0, this.$output, this.$cipher, this.$request, this.$closeChannel, null), 3, null);
             return launch$default;
         }
         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -70,10 +70,10 @@ public final class AdnlConnection$writeRequest$2 extends SuspendLambda implement
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: AdnlConnection.kt */
-    @DebugMetadata(m143c = "org.ton.adnl.connection.AdnlConnection$writeRequest$2$1", m142f = "AdnlConnection.kt", m141l = {122}, m140m = "invokeSuspend")
+    @DebugMetadata(m145c = "org.ton.adnl.connection.AdnlConnection$writeRequest$2$1", m144f = "AdnlConnection.kt", m143l = {122}, m142m = "invokeSuspend")
     /* renamed from: org.ton.adnl.connection.AdnlConnection$writeRequest$2$1 */
     /* loaded from: classes6.dex */
-    public static final class C74221 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C74971 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ AesCtr $cipher;
         final /* synthetic */ boolean $closeChannel;
         final /* synthetic */ ByteWriteChannel $output;
@@ -82,7 +82,7 @@ public final class AdnlConnection$writeRequest$2 extends SuspendLambda implement
         final /* synthetic */ AdnlConnection this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C74221(AdnlConnection adnlConnection, ByteWriteChannel byteWriteChannel, AesCtr aesCtr, AdnlRequestData adnlRequestData, boolean z, Continuation<? super C74221> continuation) {
+        C74971(AdnlConnection adnlConnection, ByteWriteChannel byteWriteChannel, AesCtr aesCtr, AdnlRequestData adnlRequestData, boolean z, Continuation<? super C74971> continuation) {
             super(2, continuation);
             this.this$0 = adnlConnection;
             this.$output = byteWriteChannel;
@@ -93,12 +93,12 @@ public final class AdnlConnection$writeRequest$2 extends SuspendLambda implement
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C74221(this.this$0, this.$output, this.$cipher, this.$request, this.$closeChannel, continuation);
+            return new C74971(this.this$0, this.$output, this.$cipher, this.$request, this.$closeChannel, continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((C74221) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C74971) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

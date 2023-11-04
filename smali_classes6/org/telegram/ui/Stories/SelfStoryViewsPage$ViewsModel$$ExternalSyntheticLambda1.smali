@@ -35,9 +35,9 @@
 .method public final applyAsInt(Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_storyView;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->$r8$lambda$zBe7mc_dAL-_ehJUNZOPcsu0FM4(Lorg/telegram/tgnet/TLRPC$TL_storyView;)I
+    invoke-static {p1}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->$r8$lambda$7FE1lHAQpYWkC-Yhirg2AA2f1jE(Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;)I
 
     move-result p1
 

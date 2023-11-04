@@ -269,7 +269,7 @@ public final class JvmBuiltInsCustomizer implements AdditionalClassPartsProvider
         return functionNames;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x00eb, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:40:0x00ec, code lost:
         if (isMutabilityViolation(r3, r10) != false) goto L20;
      */
     /*
@@ -329,7 +329,7 @@ public final class JvmBuiltInsCustomizer implements AdditionalClassPartsProvider
             java.util.Iterator r11 = r11.iterator()
         L80:
             boolean r2 = r11.hasNext()
-            if (r2 == 0) goto Lf3
+            if (r2 == 0) goto Lf4
             java.lang.Object r2 = r11.next()
             r3 = r2
             kotlin.reflect.jvm.internal.impl.descriptors.SimpleFunctionDescriptor r3 = (kotlin.reflect.jvm.internal.impl.descriptors.SimpleFunctionDescriptor) r3
@@ -340,7 +340,7 @@ public final class JvmBuiltInsCustomizer implements AdditionalClassPartsProvider
             if (r4 == r5) goto L99
         L97:
             r6 = r7
-            goto Led
+            goto Lee
         L99:
             kotlin.reflect.jvm.internal.impl.descriptors.DescriptorVisibility r4 = r3.getVisibility()
             boolean r4 = r4.isPublicAPI()
@@ -360,7 +360,7 @@ public final class JvmBuiltInsCustomizer implements AdditionalClassPartsProvider
             if (r5 == 0) goto Lc0
         Lbe:
             r4 = r7
-            goto Le4
+            goto Le5
         Lc0:
             java.util.Iterator r4 = r4.iterator()
         Lc4:
@@ -375,17 +375,17 @@ public final class JvmBuiltInsCustomizer implements AdditionalClassPartsProvider
             boolean r5 = r1.contains(r5)
             if (r5 == 0) goto Lc4
             r4 = r6
-        Le4:
-            if (r4 == 0) goto Le7
+        Le5:
+            if (r4 == 0) goto Le8
             goto L97
-        Le7:
+        Le8:
             boolean r3 = r9.isMutabilityViolation(r3, r10)
             if (r3 != 0) goto L97
-        Led:
+        Lee:
             if (r6 == 0) goto L80
             r0.add(r2)
             goto L80
-        Lf3:
+        Lf4:
             return r0
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlin.reflect.jvm.internal.impl.builtins.jvm.JvmBuiltInsCustomizer.getAdditionalFunctions(kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor, kotlin.jvm.functions.Function1):java.util.Collection");
@@ -502,12 +502,12 @@ public final class JvmBuiltInsCustomizer implements AdditionalClassPartsProvider
     /* JADX INFO: Access modifiers changed from: private */
     public static final Iterable getJdkMethodStatus$lambda$9(JvmBuiltInsCustomizer this$0, ClassDescriptor classDescriptor) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Collection<KotlinType> mo2047getSupertypes = classDescriptor.getTypeConstructor().mo2047getSupertypes();
-        Intrinsics.checkNotNullExpressionValue(mo2047getSupertypes, "it.typeConstructor.supertypes");
+        Collection<KotlinType> mo2052getSupertypes = classDescriptor.getTypeConstructor().mo2052getSupertypes();
+        Intrinsics.checkNotNullExpressionValue(mo2052getSupertypes, "it.typeConstructor.supertypes");
         ArrayList arrayList = new ArrayList();
-        for (KotlinType kotlinType : mo2047getSupertypes) {
-            ClassifierDescriptor mo2046getDeclarationDescriptor = kotlinType.getConstructor().mo2046getDeclarationDescriptor();
-            ClassifierDescriptor original = mo2046getDeclarationDescriptor != null ? mo2046getDeclarationDescriptor.getOriginal() : null;
+        for (KotlinType kotlinType : mo2052getSupertypes) {
+            ClassifierDescriptor mo2051getDeclarationDescriptor = kotlinType.getConstructor().mo2051getDeclarationDescriptor();
+            ClassifierDescriptor original = mo2051getDeclarationDescriptor != null ? mo2051getDeclarationDescriptor.getOriginal() : null;
             ClassDescriptor classDescriptor2 = original instanceof ClassDescriptor ? (ClassDescriptor) original : null;
             LazyJavaClassDescriptor javaAnalogue = classDescriptor2 != null ? this$0.getJavaAnalogue(classDescriptor2) : null;
             if (javaAnalogue != null) {
@@ -640,8 +640,8 @@ public final class JvmBuiltInsCustomizer implements AdditionalClassPartsProvider
         if (constructorDescriptor.getValueParameters().size() == 1) {
             List<ValueParameterDescriptor> valueParameters = constructorDescriptor.getValueParameters();
             Intrinsics.checkNotNullExpressionValue(valueParameters, "valueParameters");
-            ClassifierDescriptor mo2046getDeclarationDescriptor = ((ValueParameterDescriptor) CollectionsKt.single((List<? extends Object>) valueParameters)).getType().getConstructor().mo2046getDeclarationDescriptor();
-            if (Intrinsics.areEqual(mo2046getDeclarationDescriptor != null ? DescriptorUtilsKt.getFqNameUnsafe(mo2046getDeclarationDescriptor) : null, DescriptorUtilsKt.getFqNameUnsafe(classDescriptor))) {
+            ClassifierDescriptor mo2051getDeclarationDescriptor = ((ValueParameterDescriptor) CollectionsKt.single((List<? extends Object>) valueParameters)).getType().getConstructor().mo2051getDeclarationDescriptor();
+            if (Intrinsics.areEqual(mo2051getDeclarationDescriptor != null ? DescriptorUtilsKt.getFqNameUnsafe(mo2051getDeclarationDescriptor) : null, DescriptorUtilsKt.getFqNameUnsafe(classDescriptor))) {
                 return true;
             }
         }

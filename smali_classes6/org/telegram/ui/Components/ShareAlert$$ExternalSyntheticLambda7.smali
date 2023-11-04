@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda7;->f$1:Landroid/widget/ImageView;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$URK6ffMRkVqUeJT64ahMMwSe5dY(Lorg/telegram/ui/Components/ShareAlert;Landroid/widget/ImageView;Landroid/view/View;)Z
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$0drkURjZkfkShn2kdf-8fvuO538(Lorg/telegram/ui/Components/ShareAlert;Landroid/widget/ImageView;Landroid/view/View;)Z
 
     move-result p1
 

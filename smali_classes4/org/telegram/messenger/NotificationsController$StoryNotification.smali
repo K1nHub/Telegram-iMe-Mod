@@ -55,7 +55,7 @@
 
     move-wide/from16 v7, p5
 
-    .line 5726
+    .line 5748
     invoke-direct/range {v2 .. v10}, Lorg/telegram/messenger/NotificationsController$StoryNotification;-><init>(JLjava/lang/String;IJJ)V
 
     return-void
@@ -64,23 +64,23 @@
 .method public constructor <init>(JLjava/lang/String;IJJ)V
     .locals 1
 
-    .line 5729
+    .line 5751
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5720
+    .line 5742
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/NotificationsController$StoryNotification;->dateByIds:Ljava/util/HashMap;
 
-    .line 5730
+    .line 5752
     iput-wide p1, p0, Lorg/telegram/messenger/NotificationsController$StoryNotification;->dialogId:J
 
-    .line 5731
+    .line 5753
     iput-object p3, p0, Lorg/telegram/messenger/NotificationsController$StoryNotification;->localName:Ljava/lang/String;
 
-    .line 5732
+    .line 5754
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
@@ -99,7 +99,7 @@
 
     invoke-virtual {v0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5733
+    .line 5755
     iput-wide p5, p0, Lorg/telegram/messenger/NotificationsController$StoryNotification;->date:J
 
     return-void
@@ -110,7 +110,7 @@
 .method public getLeastDate()J
     .locals 8
 
-    .line 5738
+    .line 5760
     iget-object v0, p0, Lorg/telegram/messenger/NotificationsController$StoryNotification;->dateByIds:Ljava/util/HashMap;
 
     invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
@@ -143,7 +143,7 @@
 
     if-eqz v6, :cond_1
 
-    .line 5739
+    .line 5761
     iget-object v6, v5, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v6, Ljava/lang/Long;
@@ -156,7 +156,7 @@
 
     if-lez v6, :cond_0
 
-    .line 5740
+    .line 5762
     :cond_1
     iget-object v3, v5, Landroid/util/Pair;->first:Ljava/lang/Object;
 

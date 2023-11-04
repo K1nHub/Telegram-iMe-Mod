@@ -163,7 +163,7 @@
     :goto_3
     packed-switch p0, :pswitch_data_1
 
-    const-string v2, "isVisible"
+    const-string/jumbo v2, "isVisible"
 
     aput-object v2, v4, v3
 
@@ -210,14 +210,14 @@
     goto :goto_4
 
     :pswitch_b
-    const-string v2, "isVisibleWithAnyReceiver"
+    const-string/jumbo v2, "isVisibleWithAnyReceiver"
 
     aput-object v2, v4, v3
 
     goto :goto_4
 
     :pswitch_c
-    const-string v2, "isVisibleIgnoringReceiver"
+    const-string/jumbo v2, "isVisibleIgnoringReceiver"
 
     aput-object v2, v4, v3
 
@@ -242,8 +242,6 @@
 
     :goto_5
     throw p0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x9

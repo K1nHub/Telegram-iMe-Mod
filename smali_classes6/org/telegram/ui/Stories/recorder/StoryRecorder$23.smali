@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/Stories/recorder/StoryRecorder$23;
-.super Landroid/text/style/ImageSpan;
+.super Ljava/lang/Object;
 .source "StoryRecorder.java"
+
+# interfaces
+.implements Lorg/telegram/ui/Components/Bulletin$Delegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraBtnSpan(Landroid/content/Context;)Ljava/lang/CharSequence;
+    value = Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showPremiumPeriodBulletin(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,78 +17,74 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic val$cameraDrawable:Landroid/graphics/drawable/Drawable;
-
-
 # direct methods
-.method constructor <init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+.method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    .line 4705
-    iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$23;->val$cameraDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-direct {p0, p1}, Landroid/text/style/ImageSpan;-><init>(Landroid/graphics/drawable/Drawable;)V
+    .line 4870
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
-    .locals 2
+.method public synthetic allowLayoutChanges()Z
+    .locals 1
 
-    .line 4713
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+    invoke-static {p0}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$allowLayoutChanges(Lorg/telegram/ui/Components/Bulletin$Delegate;)Z
 
-    sub-int v0, p8, p6
+    move-result v0
 
-    .line 4714
-    div-int/lit8 v0, v0, 0x2
+    return v0
+.end method
 
-    const/4 v1, 0x1
+.method public clipWithGradient(I)Z
+    .locals 0
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    const/4 p1, 0x1
 
-    move-result v1
+    return p1
+.end method
 
-    add-int/2addr v0, v1
+.method public synthetic getBottomOffset(I)I
+    .locals 0
 
-    int-to-float v0, v0
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$getBottomOffset(Lorg/telegram/ui/Components/Bulletin$Delegate;I)I
 
-    const/4 v1, 0x0
+    move-result p1
 
-    invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
+    return p1
+.end method
 
-    .line 4715
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$23;->val$cameraDrawable:Landroid/graphics/drawable/Drawable;
+.method public getTopOffset(I)I
+    .locals 0
 
-    invoke-virtual {p9}, Landroid/graphics/Paint;->getAlpha()I
+    const/4 p1, 0x0
 
-    move-result v1
+    return p1
+.end method
 
-    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+.method public synthetic onBottomOffsetChange(F)V
+    .locals 0
 
-    .line 4716
-    invoke-super/range {p0 .. p9}, Landroid/text/style/ImageSpan;->draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
-
-    .line 4717
-    invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onBottomOffsetChange(Lorg/telegram/ui/Components/Bulletin$Delegate;F)V
 
     return-void
 .end method
 
-.method public getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
+.method public synthetic onHide(Lorg/telegram/ui/Components/Bulletin;)V
     .locals 0
 
-    .line 4708
-    invoke-super/range {p0 .. p5}, Landroid/text/style/ImageSpan;->getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onHide(Lorg/telegram/ui/Components/Bulletin$Delegate;Lorg/telegram/ui/Components/Bulletin;)V
 
-    move-result p1
+    return-void
+.end method
 
-    div-int/lit8 p1, p1, 0x3
+.method public synthetic onShow(Lorg/telegram/ui/Components/Bulletin;)V
+    .locals 0
 
-    mul-int/lit8 p1, p1, 0x2
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onShow(Lorg/telegram/ui/Components/Bulletin$Delegate;Lorg/telegram/ui/Components/Bulletin;)V
 
-    return p1
+    return-void
 .end method

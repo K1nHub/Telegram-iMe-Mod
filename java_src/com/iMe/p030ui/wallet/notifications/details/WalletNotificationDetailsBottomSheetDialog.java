@@ -23,12 +23,12 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkContentWalletNotificationDetailsLayoutBinding;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ProfileActivity;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ProfileActivity;
 /* compiled from: WalletNotificationDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.notifications.details.WalletNotificationDetailsBottomSheetDialog */
 /* loaded from: classes4.dex */
@@ -40,7 +40,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
     private final NotificationItem item;
     private final Lazy resourceManager$delegate;
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -50,7 +50,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public WalletNotificationDetailsBottomSheetDialog(org.telegram.p042ui.ActionBar.BaseFragment r5, com.iMe.model.wallet.notification.NotificationItem r6) {
+    public WalletNotificationDetailsBottomSheetDialog(org.telegram.p043ui.ActionBar.BaseFragment r5, com.iMe.model.wallet.notification.NotificationItem r6) {
         /*
             r4 = this;
             java.lang.String r0 = "fragment"
@@ -119,7 +119,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
 
     @Override // com.iMe.manager.wallet.WalletLinkClickableView
     public void actionOpenProfileScreen(long j) {
-        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m144to("user_id", Long.valueOf(j))));
+        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m146to("user_id", Long.valueOf(j))));
         profileActivity.setPlayProfileAnimation(0);
         this.fragment.presentFragment(profileActivity);
         dismiss();
@@ -203,7 +203,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
     }
 
     private final void setupTexts() {
-        getBinding().textActionCancel.setText(getResourceManager().getString(C3630R.string.common_ok));
+        getBinding().textActionCancel.setText(getResourceManager().getString(C3634R.string.common_ok));
     }
 
     private final void setupListeners() {

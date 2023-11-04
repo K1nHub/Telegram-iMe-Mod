@@ -3,25 +3,15 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0xfbe1db0
-
-
 # instance fields
 .field public onlines:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 51861
+    .line 52620
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -30,8 +20,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_chatOnlines;
     .locals 1
 
-    .line 51867
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_chatOnlines;->constructor:I
+    const v0, -0xfbe1db0
 
     if-eq v0, p1, :cond_1
 
@@ -41,7 +30,7 @@
 
     return-object p0
 
-    .line 51869
+    .line 52628
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -67,13 +56,13 @@
 
     throw p0
 
-    .line 51874
+    .line 52633
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_chatOnlines;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_chatOnlines;-><init>()V
 
-    .line 51875
+    .line 52634
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_chatOnlines;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -84,7 +73,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 0
 
-    .line 51880
+    .line 52639
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -97,12 +86,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 51884
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_chatOnlines;->constructor:I
+    const v0, -0xfbe1db0
 
+    .line 52643
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 51885
+    .line 52644
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_chatOnlines;->onlines:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

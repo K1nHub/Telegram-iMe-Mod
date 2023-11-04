@@ -23,7 +23,7 @@ public class CommonUtils {
             StringBuilder sb = new StringBuilder(valueOf.length() + 48);
             sb.append("Exception thrown when trying to get app version ");
             sb.append(valueOf);
-            gmsLogger.m1097e("CommonUtils", sb.toString());
+            gmsLogger.m1098e("CommonUtils", sb.toString());
             return "";
         }
     }

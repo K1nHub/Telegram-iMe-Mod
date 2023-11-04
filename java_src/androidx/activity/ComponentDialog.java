@@ -25,7 +25,7 @@ public class ComponentDialog extends Dialog implements LifecycleOwner, OnBackPre
         this.onBackPressedDispatcher = new OnBackPressedDispatcher(new Runnable() { // from class: androidx.activity.ComponentDialog$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {
-                ComponentDialog.m1161onBackPressedDispatcher$lambda1(ComponentDialog.this);
+                ComponentDialog.m1166onBackPressedDispatcher$lambda1(ComponentDialog.this);
             }
         });
     }
@@ -71,7 +71,7 @@ public class ComponentDialog extends Dialog implements LifecycleOwner, OnBackPre
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: onBackPressedDispatcher$lambda-1  reason: not valid java name */
-    public static final void m1161onBackPressedDispatcher$lambda1(ComponentDialog this$0) {
+    public static final void m1166onBackPressedDispatcher$lambda1(ComponentDialog this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         super.onBackPressed();
     }

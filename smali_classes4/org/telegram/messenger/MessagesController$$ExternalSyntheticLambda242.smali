@@ -10,13 +10,27 @@
 
 .field public final synthetic f$1:Z
 
+.field public final synthetic f$10:Z
+
 .field public final synthetic f$2:J
 
-.field public final synthetic f$3:Ljava/util/ArrayList;
+.field public final synthetic f$3:Z
+
+.field public final synthetic f$4:Z
+
+.field public final synthetic f$5:Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+.field public final synthetic f$6:Ljava/util/ArrayList;
+
+.field public final synthetic f$7:Ljava/util/ArrayList;
+
+.field public final synthetic f$8:Ljava/util/HashMap;
+
+.field public final synthetic f$9:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;ZJLjava/util/ArrayList;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;ZJZZLorg/telegram/tgnet/TLRPC$ChatFull;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;IZ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +41,21 @@
 
     iput-wide p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$2:J
 
-    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$3:Ljava/util/ArrayList;
+    iput-boolean p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$3:Z
+
+    iput-boolean p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$4:Z
+
+    iput-object p7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$5:Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    iput-object p8, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$6:Ljava/util/ArrayList;
+
+    iput-object p9, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$7:Ljava/util/ArrayList;
+
+    iput-object p10, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$8:Ljava/util/HashMap;
+
+    iput p11, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$9:I
+
+    iput-boolean p12, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$10:Z
 
     return-void
 .end method
@@ -35,7 +63,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 12
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$0:Lorg/telegram/messenger/MessagesController;
 
@@ -43,9 +71,23 @@
 
     iget-wide v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$2:J
 
-    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$3:Ljava/util/ArrayList;
+    iget-boolean v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$3:Z
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$b1F0fFjPQ7LOHlpMHfXqL5Dt_Do(Lorg/telegram/messenger/MessagesController;ZJLjava/util/ArrayList;)V
+    iget-boolean v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$4:Z
+
+    iget-object v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$5:Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    iget-object v7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$6:Ljava/util/ArrayList;
+
+    iget-object v8, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$7:Ljava/util/ArrayList;
+
+    iget-object v9, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$8:Ljava/util/HashMap;
+
+    iget v10, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$9:I
+
+    iget-boolean v11, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda242;->f$10:Z
+
+    invoke-static/range {v0 .. v11}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$g8msyHeL_m6D6Ub4vve9xD5l8-0(Lorg/telegram/messenger/MessagesController;ZJZZLorg/telegram/tgnet/TLRPC$ChatFull;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/HashMap;IZ)V
 
     return-void
 .end method

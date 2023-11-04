@@ -1,12 +1,12 @@
 package com.google.android.exoplayer2.util;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 /* loaded from: classes.dex */
 public final class FrameProcessingException extends Exception {
     public final long presentationTimeUs;
 
     public static FrameProcessingException from(Exception exc) {
-        return from(exc, C0479C.TIME_UNSET);
+        return from(exc, C0485C.TIME_UNSET);
     }
 
     public static FrameProcessingException from(Exception exc, long j) {
@@ -17,7 +17,7 @@ public final class FrameProcessingException extends Exception {
     }
 
     public FrameProcessingException(String str) {
-        this(str, (long) C0479C.TIME_UNSET);
+        this(str, (long) C0485C.TIME_UNSET);
     }
 
     public FrameProcessingException(String str, long j) {
@@ -26,7 +26,7 @@ public final class FrameProcessingException extends Exception {
     }
 
     public FrameProcessingException(String str, Throwable th) {
-        this(str, th, C0479C.TIME_UNSET);
+        this(str, th, C0485C.TIME_UNSET);
     }
 
     public FrameProcessingException(String str, Throwable th, long j) {
@@ -35,7 +35,7 @@ public final class FrameProcessingException extends Exception {
     }
 
     public FrameProcessingException(Throwable th) {
-        this(th, (long) C0479C.TIME_UNSET);
+        this(th, (long) C0485C.TIME_UNSET);
     }
 
     public FrameProcessingException(Throwable th, long j) {

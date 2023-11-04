@@ -40,7 +40,7 @@ public abstract class zzuu<MessageType extends zzuu<MessageType, BuilderType>, B
         private static final /* synthetic */ int[] zzbtj = {1, 2};
 
         /* renamed from: values$50KLMJ33DTMIUPRFDTJMOP9FE1P6UT3FC9QMCBQ7CLN6ASJ1EHIM8JB5EDPM2PR59HKN8P949LIN8Q3FCHA6UIBEEPNMMP9R0 */
-        public static int[] m1075x126d66cb() {
+        public static int[] m1076x126d66cb() {
             return (int[]) zzbtd.clone();
         }
     }

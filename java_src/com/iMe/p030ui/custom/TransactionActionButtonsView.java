@@ -25,9 +25,9 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkContentStakingTransactionActionsBinding;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TransactionActionButtonsView.kt */
 /* renamed from: com.iMe.ui.custom.TransactionActionButtonsView */
 /* loaded from: classes3.dex */
@@ -101,7 +101,7 @@ public final class TransactionActionButtonsView extends FrameLayout implements K
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
-                return Integer.valueOf(AndroidUtilities.m103dp(4.0f));
+                return Integer.valueOf(AndroidUtilities.m105dp(4.0f));
             }
         });
         this.cornerRadius$delegate = lazy2;
@@ -234,8 +234,8 @@ public final class TransactionActionButtonsView extends FrameLayout implements K
     private final void setupView() {
         setupColors();
         ForkContentStakingTransactionActionsBinding forkContentStakingTransactionActionsBinding = this.binding;
-        forkContentStakingTransactionActionsBinding.buttonConditions.setText(getResourceManager().getString(C3630R.string.staking_deposit_conditions));
-        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(getResourceManager().getString(C3630R.string.wallet_swap_process_what_is_approve));
+        forkContentStakingTransactionActionsBinding.buttonConditions.setText(getResourceManager().getString(C3634R.string.staking_deposit_conditions));
+        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(getResourceManager().getString(C3634R.string.wallet_swap_process_what_is_approve));
         addView(this.binding.getRoot());
     }
 }

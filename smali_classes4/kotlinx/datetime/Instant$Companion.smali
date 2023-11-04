@@ -309,7 +309,7 @@
 .method public final parse(Ljava/lang/String;)Lkotlinx/datetime/Instant;
     .locals 2
 
-    const-string v0, "isoString"
+    const-string/jumbo v0, "isoString"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

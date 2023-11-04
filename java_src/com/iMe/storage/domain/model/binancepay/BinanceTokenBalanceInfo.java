@@ -217,7 +217,7 @@ public final class BinanceTokenBalanceInfo {
         }
 
         public int hashCode() {
-            return (((((((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.total) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.free)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.locked)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.freeze)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.withdrawing)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.btcValuation)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.fiatValuation);
+            return (((((((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.total) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.free)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.locked)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.freeze)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.withdrawing)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.btcValuation)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.fiatValuation);
         }
 
         public String toString() {

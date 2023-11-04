@@ -24,7 +24,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 7395
+    .line 7576
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -33,13 +33,13 @@
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
-    .line 7398
+    .line 7579
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 7399
+    .line 7580
     iput-object p1, p0, Lorg/telegram/messenger/MediaDataController$KeywordResult;->emoji:Ljava/lang/String;
 
-    .line 7400
+    .line 7581
     iput-object p2, p0, Lorg/telegram/messenger/MediaDataController$KeywordResult;->keyword:Ljava/lang/String;
 
     return-void

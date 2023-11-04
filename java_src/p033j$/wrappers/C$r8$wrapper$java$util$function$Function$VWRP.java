@@ -16,12 +16,12 @@ public final /* synthetic */ class C$r8$wrapper$java$util$function$Function$VWRP
         if (function == null) {
             return null;
         }
-        return function instanceof C3179K ? ((C3179K) function).f1282a : new C$r8$wrapper$java$util$function$Function$VWRP(function);
+        return function instanceof C3183K ? ((C3183K) function).f1282a : new C$r8$wrapper$java$util$function$Function$VWRP(function);
     }
 
     @Override // p033j$.util.function.Function
     public /* synthetic */ Function andThen(Function function) {
-        return convert(this.f1256a.andThen(C3179K.m240a(function)));
+        return convert(this.f1256a.andThen(C3183K.m241a(function)));
     }
 
     @Override // p033j$.util.function.Function
@@ -31,6 +31,6 @@ public final /* synthetic */ class C$r8$wrapper$java$util$function$Function$VWRP
 
     @Override // p033j$.util.function.Function
     public /* synthetic */ Function compose(Function function) {
-        return convert(this.f1256a.compose(C3179K.m240a(function)));
+        return convert(this.f1256a.compose(C3183K.m241a(function)));
     }
 }

@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.hls;
 
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.Extractor;
@@ -56,7 +56,7 @@ public final class WebvttExtractor implements Extractor {
     @Override // com.google.android.exoplayer2.extractor.Extractor
     public void init(ExtractorOutput extractorOutput) {
         this.output = extractorOutput;
-        extractorOutput.seekMap(new SeekMap.Unseekable(C0479C.TIME_UNSET));
+        extractorOutput.seekMap(new SeekMap.Unseekable(C0485C.TIME_UNSET));
     }
 
     @Override // com.google.android.exoplayer2.extractor.Extractor

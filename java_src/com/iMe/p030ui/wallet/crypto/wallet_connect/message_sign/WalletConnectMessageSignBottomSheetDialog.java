@@ -25,12 +25,12 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectMessageSignBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.INavigationLayout;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: WalletConnectMessageSignBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog */
 /* loaded from: classes3.dex */
@@ -47,12 +47,12 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
         return Companion.newInstance(j, walletConnectSessionItem, wCEthereumSignMessage, walletConnectManager, baseFragment);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithTouchOutside() {
         return false;
     }
@@ -62,7 +62,7 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public WalletConnectMessageSignBottomSheetDialog(final long r10, final com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r12, final com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage r13, final com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager r14, org.telegram.p042ui.ActionBar.BaseFragment r15) {
+    public WalletConnectMessageSignBottomSheetDialog(final long r10, final com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r12, final com.trustwallet.walletconnect.models.ethereum.WCEthereumSignMessage r13, final com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager r14, org.telegram.p043ui.ActionBar.BaseFragment r15) {
         /*
             r9 = this;
             java.lang.String r0 = "sessionItem"
@@ -159,11 +159,11 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
         Intrinsics.checkNotNullParameter(peerUrl, "peerUrl");
         ForkContentWalletConnectMessageSignBinding binding = getBinding();
         binding.textMessage.setText(message);
-        binding.textFrom.setTextAndValue(from, getResourceManager().getString(C3630R.string.wallet_connect_transaction_from), true);
-        binding.textPeerUrl.setTextAndValue(peerUrl, getResourceManager().getString(C3630R.string.wallet_connect_transaction_dapp), false);
+        binding.textFrom.setTextAndValue(from, getResourceManager().getString(C3634R.string.wallet_connect_transaction_from), true);
+        binding.textPeerUrl.setTextAndValue(peerUrl, getResourceManager().getString(C3634R.string.wallet_connect_transaction_dapp), false);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
     public void dismiss() {
         getPresenter().rejectSign();
         super.dismiss();
@@ -188,11 +188,11 @@ public final class WalletConnectMessageSignBottomSheetDialog extends MvpBottomSh
 
     private final void setupViews() {
         ForkContentWalletConnectMessageSignBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3630R.string.wallet_connect_transaction_title));
-        binding.buttonProcess.setText(getResourceManager().getString(C3630R.string.wallet_connect_transaction_button_sign));
+        binding.textTitle.setText(getResourceManager().getString(C3634R.string.wallet_connect_transaction_title));
+        binding.buttonProcess.setText(getResourceManager().getString(C3634R.string.wallet_connect_transaction_button_sign));
         ActionBarMenuItem actionBarMenuItem = binding.buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3630R.C3632drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3634R.C3636drawable.ic_close_white);
     }
 
     private final void setupListeners() {

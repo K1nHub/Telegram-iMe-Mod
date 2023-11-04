@@ -56,7 +56,7 @@ public final class CryptoBoxCreationRulesResponse {
     }
 
     public int hashCode() {
-        return (((((((((this.feeToken.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.feePerUser)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.feePerCryptobox)) * 31) + this.minimalCapacity) * 31) + this.factoryContractAddress.hashCode()) * 31) + this.factoryContractUrl.hashCode();
+        return (((((((((this.feeToken.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.feePerUser)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.feePerCryptobox)) * 31) + this.minimalCapacity) * 31) + this.factoryContractAddress.hashCode()) * 31) + this.factoryContractUrl.hashCode();
     }
 
     public String toString() {

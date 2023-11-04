@@ -6,8 +6,8 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: BlockchainManagementItem.kt */
 /* loaded from: classes3.dex */
 public abstract class BlockchainManagementItem extends NoChildNode {
@@ -226,7 +226,7 @@ public abstract class BlockchainManagementItem extends NoChildNode {
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public AddWallet(BlockchainType blockchainType) {
-                super(C3630R.C3632drawable.fork_ic_add, C3630R.string.wallet_blockchain_add_wallet, Theme.key_dialogTextBlue, null);
+                super(C3634R.C3636drawable.fork_ic_add, C3634R.string.wallet_blockchain_add_wallet, Theme.key_dialogTextBlue, null);
                 Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
                 this.blockchainType = blockchainType;
             }
@@ -244,7 +244,7 @@ public abstract class BlockchainManagementItem extends NoChildNode {
             public static final ResetAllWallets INSTANCE = new ResetAllWallets();
 
             private ResetAllWallets() {
-                super(C3630R.C3632drawable.msg_block2, C3630R.string.wallet_reset_all_title, Theme.key_text_RedRegular, null);
+                super(C3634R.C3636drawable.msg_block2, C3634R.string.wallet_reset_all_title, Theme.key_text_RedRegular, null);
             }
         }
     }

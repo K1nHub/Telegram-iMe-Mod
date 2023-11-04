@@ -34,11 +34,11 @@ public final class McBlockExtra implements TlbObject {
     private final boolean keyBlock;
 
     /* renamed from: r1 */
-    private final CellRef<McBlockExtraAux> f2032r1;
+    private final CellRef<McBlockExtraAux> f2044r1;
     private final HashmapAugE<ShardFeeCreated, ShardFeeCreated> shardFees;
     private final HashMapE<BinTree<ShardDescr>> shardHashes;
     public static final Companion Companion = new Companion(null);
-    private static final KSerializer<Object>[] $childSerializers = {null, new SealedClassSerializer("org.ton.hashmap.HashMapE", Reflection.getOrCreateKotlinClass(HashMapE.class), new KClass[]{Reflection.getOrCreateKotlinClass(HmeEmpty.class), Reflection.getOrCreateKotlinClass(HmeRoot.class)}, new KSerializer[]{HmeEmpty.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), HmeRoot.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7491x712f2ee6("@type")}), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(HashmapAugE.class), new Annotation[]{new C7491x712f2ee6("@type")}), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), null};
+    private static final KSerializer<Object>[] $childSerializers = {null, new SealedClassSerializer("org.ton.hashmap.HashMapE", Reflection.getOrCreateKotlinClass(HashMapE.class), new KClass[]{Reflection.getOrCreateKotlinClass(HmeEmpty.class), Reflection.getOrCreateKotlinClass(HmeRoot.class)}, new KSerializer[]{HmeEmpty.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), HmeRoot.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7566x712f2ee6("@type")}), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(HashmapAugE.class), new Annotation[]{new C7566x712f2ee6("@type")}), new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(CellRef.class), new Annotation[0]), null};
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -46,7 +46,7 @@ public final class McBlockExtra implements TlbObject {
         }
         if (obj instanceof McBlockExtra) {
             McBlockExtra mcBlockExtra = (McBlockExtra) obj;
-            return this.keyBlock == mcBlockExtra.keyBlock && Intrinsics.areEqual(this.shardHashes, mcBlockExtra.shardHashes) && Intrinsics.areEqual(this.shardFees, mcBlockExtra.shardFees) && Intrinsics.areEqual(this.f2032r1, mcBlockExtra.f2032r1) && Intrinsics.areEqual(this.config, mcBlockExtra.config);
+            return this.keyBlock == mcBlockExtra.keyBlock && Intrinsics.areEqual(this.shardHashes, mcBlockExtra.shardHashes) && Intrinsics.areEqual(this.shardFees, mcBlockExtra.shardFees) && Intrinsics.areEqual(this.f2044r1, mcBlockExtra.f2044r1) && Intrinsics.areEqual(this.config, mcBlockExtra.config);
         }
         return false;
     }
@@ -61,7 +61,7 @@ public final class McBlockExtra implements TlbObject {
         if (z) {
             r0 = 1;
         }
-        int hashCode = ((((((r0 * 31) + this.shardHashes.hashCode()) * 31) + this.shardFees.hashCode()) * 31) + this.f2032r1.hashCode()) * 31;
+        int hashCode = ((((((r0 * 31) + this.shardHashes.hashCode()) * 31) + this.shardFees.hashCode()) * 31) + this.f2044r1.hashCode()) * 31;
         ConfigParams configParams = this.config;
         return hashCode + (configParams == null ? 0 : configParams.hashCode());
     }
@@ -73,7 +73,7 @@ public final class McBlockExtra implements TlbObject {
         this.keyBlock = z;
         this.shardHashes = hashMapE;
         this.shardFees = hashmapAugE;
-        this.f2032r1 = cellRef;
+        this.f2044r1 = cellRef;
         this.config = configParams;
     }
 
@@ -84,7 +84,7 @@ public final class McBlockExtra implements TlbObject {
         this.keyBlock = z;
         this.shardHashes = shardHashes;
         this.shardFees = shardFees;
-        this.f2032r1 = r1;
+        this.f2044r1 = r1;
         this.config = configParams;
     }
 
@@ -93,7 +93,7 @@ public final class McBlockExtra implements TlbObject {
         compositeEncoder.encodeBooleanElement(serialDescriptor, 0, mcBlockExtra.keyBlock);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, kSerializerArr[1], mcBlockExtra.shardHashes);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 2, kSerializerArr[2], mcBlockExtra.shardFees);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, kSerializerArr[3], mcBlockExtra.f2032r1);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, kSerializerArr[3], mcBlockExtra.f2044r1);
         compositeEncoder.encodeNullableSerializableElement(serialDescriptor, 4, ConfigParams$$serializer.INSTANCE, mcBlockExtra.config);
     }
 
@@ -110,7 +110,7 @@ public final class McBlockExtra implements TlbObject {
     }
 
     public final CellRef<McBlockExtraAux> getR1() {
-        return this.f2032r1;
+        return this.f2044r1;
     }
 
     public final ConfigParams getConfig() {
@@ -170,7 +170,7 @@ public final class McBlockExtra implements TlbObject {
         open.field("key_block", Boolean.valueOf(this.keyBlock));
         open.field("shard_hashes", this.shardHashes);
         open.field("shard_fees", this.shardFees);
-        open.field(this.f2032r1);
+        open.field(this.f2044r1);
         open.field("config", this.config);
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;

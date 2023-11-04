@@ -117,7 +117,7 @@ public final class StatisticDiagramModel {
         }
 
         public int hashCode() {
-            return (((this.name.hashCode() * 31) + this.colorKey) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.value);
+            return (((this.name.hashCode() * 31) + this.colorKey) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.value);
         }
 
         public String toString() {

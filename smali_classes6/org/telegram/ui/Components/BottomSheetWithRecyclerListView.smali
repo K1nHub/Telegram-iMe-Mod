@@ -83,10 +83,10 @@
     .line 38
     iput-boolean p2, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->showShadow:Z
 
-    const/high16 p5, 0x3f800000    # 1.0f
+    const/high16 v0, 0x3f800000    # 1.0f
 
     .line 39
-    iput p5, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->shadowAlpha:F
+    iput v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->shadowAlpha:F
 
     .line 47
     iput-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -100,17 +100,17 @@
     move-result-object p1
 
     .line 50
-    sget p5, Lorg/telegram/messenger/R$drawable;->header_shadow:I
+    sget v0, Lorg/telegram/messenger/R$drawable;->header_shadow:I
 
-    invoke-static {p1, p5}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, v0}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object p5
+    move-result-object v0
 
-    invoke-virtual {p5}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    move-result-object p5
+    move-result-object v0
 
-    iput-object p5, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->headerShadowDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->headerShadowDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p4, :cond_0
 
@@ -131,18 +131,18 @@
 
     .line 127
     :goto_0
-    new-instance p5, Lorg/telegram/ui/Components/RecyclerListView;
+    new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-direct {p5, p1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p1, p5}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    iput-object p5, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
+    iput-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     .line 128
-    new-instance v0, Landroidx/recyclerview/widget/LinearLayoutManager;
+    new-instance p5, Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    invoke-direct {v0, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
+    invoke-direct {p5, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {p5, v0}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
+    invoke-virtual {v0, p5}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
     .line 129
     iget-object p5, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->nestedSizeNotifierLayout:Lorg/telegram/ui/Components/NestedSizeNotifierLayout;
@@ -163,28 +163,27 @@
 
     invoke-virtual {p5, v0}, Lorg/telegram/ui/Components/NestedSizeNotifierLayout;->setTargetListView(Landroid/view/View;)V
 
-    .line 134
     :cond_1
-    invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->createAdapter()Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
-
-    move-result-object p5
-
     if-eqz p3, :cond_2
 
-    .line 137
+    .line 135
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->setHasFixedSize(Z)V
 
-    .line 138
+    .line 136
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    invoke-virtual {p1, p5}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->createAdapter()Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
 
-    .line 139
+    move-result-object p2
+
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
+
+    .line 137
     invoke-virtual {p0, p4}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
 
-    .line 140
+    .line 138
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 p2, -0x1
@@ -199,27 +198,21 @@
 
     goto :goto_1
 
-    .line 142
+    .line 140
     :cond_2
-    iget-object p3, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->resetAdapter(Landroid/content/Context;)V
 
-    new-instance v0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;
-
-    invoke-direct {v0, p0, p5, p1}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;-><init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;Landroid/content/Context;)V
-
-    invoke-virtual {p3, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
-
-    .line 190
+    .line 141
     iput-object p4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    .line 191
-    new-instance p3, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$4;
+    .line 142
+    new-instance p3, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;
 
-    invoke-direct {p3, p0, p1, p4}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$4;-><init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;Landroid/content/Context;Landroid/widget/FrameLayout;)V
+    invoke-direct {p3, p0, p1, p4}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$3;-><init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;Landroid/content/Context;Landroid/widget/FrameLayout;)V
 
     iput-object p3, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 206
+    .line 157
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
@@ -228,7 +221,7 @@
 
     invoke-virtual {p3, p1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackgroundColor(I)V
 
-    .line 207
+    .line 158
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -239,7 +232,7 @@
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitleColor(I)V
 
-    .line 208
+    .line 159
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefaultSelector:I
@@ -252,7 +245,7 @@
 
     invoke-virtual {p1, p3, p5}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
 
-    .line 209
+    .line 160
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefaultIcon:I
@@ -263,19 +256,19 @@
 
     invoke-virtual {p1, p3, p5}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
-    .line 211
+    .line 162
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/ActionBar;->setCastShadows(Z)V
 
-    .line 212
+    .line 163
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget p2, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
-    .line 213
+    .line 164
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getTitle()Ljava/lang/CharSequence;
@@ -284,21 +277,21 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 214
+    .line 165
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    new-instance p2, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$5;
+    new-instance p2, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$4;
 
-    invoke-direct {p2, p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$5;-><init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;)V
+    invoke-direct {p2, p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$4;-><init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 223
+    .line 174
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p4, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 224
+    .line 175
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v0, -0x1
@@ -321,20 +314,20 @@
 
     invoke-virtual {p4, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 226
+    .line 177
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance p2, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$6;
+    new-instance p2, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$5;
 
-    invoke-direct {p2, p0, p4}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$6;-><init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;Landroid/widget/FrameLayout;)V
+    invoke-direct {p2, p0, p4}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$5;-><init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;Landroid/widget/FrameLayout;)V
 
     invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->addOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 234
+    .line 185
     :goto_1
     invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->onViewCreated(Landroid/widget/FrameLayout;)V
 
-    .line 235
+    .line 186
     invoke-direct {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->updateStatusBar()V
 
     return-void
@@ -388,10 +381,12 @@
 .method private isLightStatusBar()Z
     .locals 4
 
-    .line 285
+    .line 296
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+    iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v0
 
@@ -419,7 +414,7 @@
 .method private postDrawInternal(Landroid/graphics/Canvas;Landroid/view/View;)V
     .locals 6
 
-    .line 239
+    .line 242
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->showShadow:Z
 
     const v1, 0x3dda740e
@@ -438,10 +433,10 @@
 
     add-float/2addr v4, v1
 
-    .line 240
+    .line 243
     iput v4, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->shadowAlpha:F
 
-    .line 241
+    .line 244
     invoke-virtual {p2}, Landroid/view/View;->invalidate()V
 
     goto :goto_0
@@ -449,7 +444,7 @@
     :cond_0
     if-nez v0, :cond_1
 
-    .line 242
+    .line 245
     iget v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->shadowAlpha:F
 
     cmpl-float v4, v0, v3
@@ -458,13 +453,13 @@
 
     sub-float/2addr v0, v1
 
-    .line 243
+    .line 246
     iput v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->shadowAlpha:F
 
-    .line 244
+    .line 247
     invoke-virtual {p2}, Landroid/view/View;->invalidate()V
 
-    .line 246
+    .line 249
     :cond_1
     :goto_0
     iget v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->shadowAlpha:F
@@ -475,7 +470,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->shadowAlpha:F
 
-    .line 247
+    .line 250
     iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     if-eqz v0, :cond_2
@@ -502,7 +497,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 248
+    .line 251
     iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->headerShadowDrawable:Landroid/graphics/drawable/Drawable;
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
@@ -537,7 +532,7 @@
 
     invoke-virtual {v0, v1, v2, p2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 249
+    .line 252
     iget-object p2, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->headerShadowDrawable:Landroid/graphics/drawable/Drawable;
 
     const/high16 v0, 0x437f0000    # 255.0f
@@ -558,7 +553,7 @@
 
     invoke-virtual {p2, v0}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 250
+    .line 253
     iget-object p2, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->headerShadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -566,7 +561,7 @@
     :cond_2
     const/4 p1, 0x1
 
-    .line 252
+    .line 255
     iput-boolean p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->wasDrawn:Z
 
     return-void
@@ -575,12 +570,12 @@
 .method private preDrawInternal(Landroid/graphics/Canvas;Landroid/view/View;)V
     .locals 7
 
-    .line 256
+    .line 259
     iget-boolean v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->hasFixedSize:Z
 
-    if-nez v0, :cond_3
+    if-nez v0, :cond_4
 
-    .line 257
+    .line 260
     iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x0
@@ -591,7 +586,7 @@
 
     const/16 v2, 0x10
 
-    .line 258
+    .line 261
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -600,7 +595,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 260
+    .line 263
     iget-object v0, v0, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getBottom()I
@@ -613,7 +608,7 @@
 
     sub-int v3, v0, v3
 
-    .line 263
+    .line 266
     :cond_0
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -645,7 +640,7 @@
 
     move v0, v4
 
-    .line 268
+    .line 271
     :cond_1
     iget-object v5, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -665,7 +660,14 @@
 
     invoke-static {v5, v4, v2, v6}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
-    .line 269
+    .line 272
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->needPaddingShadow()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    .line 273
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p2}, Landroid/view/View;->getMeasuredWidth()I
@@ -678,22 +680,53 @@
 
     invoke-virtual {v2, v1, v3, v4, p2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 270
+    goto :goto_1
+
+    .line 275
+    :cond_3
+    iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->shadowDrawable:Landroid/graphics/drawable/Drawable;
+
+    const/4 v2, 0x6
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v4
+
+    neg-int v4, v4
+
+    invoke-virtual {p2}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v5
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    add-int/2addr v5, v2
+
+    invoke-virtual {p2}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result p2
+
+    invoke-virtual {v1, v4, v3, v5, p2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 277
+    :goto_1
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 272
+    .line 279
     invoke-virtual {p0, p1, v3, v0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->onPreDraw(Landroid/graphics/Canvas;IF)V
 
-    :cond_3
+    :cond_4
     return-void
 .end method
 
 .method private updateStatusBar()V
     .locals 2
 
-    .line 310
+    .line 321
     iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     if-eqz v0, :cond_0
@@ -704,7 +737,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 311
+    .line 322
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -717,13 +750,13 @@
 
     goto :goto_0
 
-    .line 312
+    .line 323
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-eqz v0, :cond_1
 
-    .line 313
+    .line 324
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -757,7 +790,7 @@
 .method public getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
     .locals 1
 
-    .line 306
+    .line 317
     iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->baseFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-object v0
@@ -766,10 +799,18 @@
 .method protected abstract getTitle()Ljava/lang/CharSequence;
 .end method
 
+.method protected needPaddingShadow()Z
+    .locals 1
+
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
 .method public notifyDataSetChanged()V
     .locals 1
 
-    .line 297
+    .line 308
     iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
@@ -799,13 +840,33 @@
     return-void
 .end method
 
+.method protected resetAdapter(Landroid/content/Context;)V
+    .locals 3
+
+    .line 190
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->createAdapter()Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
+
+    move-result-object v0
+
+    .line 191
+    iget-object v1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    new-instance v2, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$6;
+
+    invoke-direct {v2, p0, v0, p1}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$6;-><init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;Landroid/content/Context;)V
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
+
+    return-void
+.end method
+
 .method public setShowShadow(Z)V
     .locals 0
 
-    .line 324
+    .line 335
     iput-boolean p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->showShadow:Z
 
-    .line 325
+    .line 336
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->nestedSizeNotifierLayout:Lorg/telegram/ui/Components/NestedSizeNotifierLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -816,12 +877,12 @@
 .method public updateTitle()V
     .locals 2
 
-    .line 318
+    .line 329
     iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     if-eqz v0, :cond_0
 
-    .line 319
+    .line 330
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getTitle()Ljava/lang/CharSequence;
 
     move-result-object v1

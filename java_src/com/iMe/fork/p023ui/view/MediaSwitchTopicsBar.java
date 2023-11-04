@@ -10,7 +10,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: MediaSwitchTopicsBar.kt */
 /* renamed from: com.iMe.fork.ui.view.MediaSwitchTopicsBar */
 /* loaded from: classes3.dex */

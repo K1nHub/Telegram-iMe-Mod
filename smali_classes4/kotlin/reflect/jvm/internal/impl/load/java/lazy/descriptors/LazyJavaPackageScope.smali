@@ -52,7 +52,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "jPackage"
+    const-string/jumbo v0, "jPackage"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -299,7 +299,7 @@
         }
     .end annotation
 
-    const-string v0, "kindFilter"
+    const-string/jumbo v0, "kindFilter"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -457,7 +457,7 @@
         }
     .end annotation
 
-    const-string p2, "kindFilter"
+    const-string/jumbo p2, "kindFilter"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -519,7 +519,7 @@
         }
     .end annotation
 
-    const-string p2, "kindFilter"
+    const-string/jumbo p2, "kindFilter"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -534,7 +534,7 @@
 .method public final findClassifierByJavaClass$descriptors_jvm(Lkotlin/reflect/jvm/internal/impl/load/java/structure/JavaClass;)Lkotlin/reflect/jvm/internal/impl/descriptors/ClassDescriptor;
     .locals 1
 
-    const-string v0, "javaClass"
+    const-string/jumbo v0, "javaClass"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -599,7 +599,7 @@
         }
     .end annotation
 
-    const-string v0, "kindFilter"
+    const-string/jumbo v0, "kindFilter"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -682,7 +682,7 @@
 
     move-result-object v2
 
-    const-string v3, "it.name"
+    const-string/jumbo v3, "it.name"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -57,7 +57,7 @@ public final class FeatureModuleKt {
             List emptyList2;
             List emptyList3;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C11871 c11871 = new Function2<Scope, ParametersHolder, DevViewModel>() { // from class: com.iMe.di.module.FeatureModuleKt$devToolsFeature$1.1
+            C11931 c11931 = new Function2<Scope, ParametersHolder, DevViewModel>() { // from class: com.iMe.di.module.FeatureModuleKt$devToolsFeature$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final DevViewModel invoke(Scope viewModel, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -69,7 +69,7 @@ public final class FeatureModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Factory;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(DevViewModel.class), null, c11871, kind, emptyList));
+            InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(DevViewModel.class), null, c11931, kind, emptyList));
             module.indexPrimaryType(factoryInstanceFactory);
             new KoinDefinition(module, factoryInstanceFactory);
             Function2<Scope, ParametersHolder, DevToolRepository> function2 = new Function2<Scope, ParametersHolder, DevToolRepository>() { // from class: com.iMe.di.module.FeatureModuleKt$devToolsFeature$1$invoke$$inlined$singleOf$default$1
@@ -89,7 +89,7 @@ public final class FeatureModuleKt {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             OptionDSLKt.onOptions(new KoinDefinition(module, singleInstanceFactory), null);
-            C11883 c11883 = new Function2<Scope, ParametersHolder, DevUseCase>() { // from class: com.iMe.di.module.FeatureModuleKt$devToolsFeature$1.3
+            C11943 c11943 = new Function2<Scope, ParametersHolder, DevUseCase>() { // from class: com.iMe.di.module.FeatureModuleKt$devToolsFeature$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final DevUseCase invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -99,7 +99,7 @@ public final class FeatureModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(DevUseCase.class), null, c11883, kind2, emptyList3));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(DevUseCase.class), null, c11943, kind2, emptyList3));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
@@ -123,7 +123,7 @@ public final class FeatureModuleKt {
             List emptyList5;
             List emptyList6;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C11911 c11911 = new Function2<Scope, ParametersHolder, AuthViewModel>() { // from class: com.iMe.di.module.FeatureModuleKt$socialfeature$1.1
+            C11971 c11971 = new Function2<Scope, ParametersHolder, AuthViewModel>() { // from class: com.iMe.di.module.FeatureModuleKt$socialfeature$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final AuthViewModel invoke(Scope viewModel, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -135,10 +135,10 @@ public final class FeatureModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Factory;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(AuthViewModel.class), null, c11911, kind, emptyList));
+            InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(AuthViewModel.class), null, c11971, kind, emptyList));
             module.indexPrimaryType(factoryInstanceFactory);
             new KoinDefinition(module, factoryInstanceFactory);
-            C11922 c11922 = new Function2<Scope, ParametersHolder, SocialWebViewModel>() { // from class: com.iMe.di.module.FeatureModuleKt$socialfeature$1.2
+            C11982 c11982 = new Function2<Scope, ParametersHolder, SocialWebViewModel>() { // from class: com.iMe.di.module.FeatureModuleKt$socialfeature$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final SocialWebViewModel invoke(Scope viewModel, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(viewModel, "$this$viewModel");
@@ -148,10 +148,10 @@ public final class FeatureModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            InstanceFactory<?> factoryInstanceFactory2 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SocialWebViewModel.class), null, c11922, kind, emptyList2));
+            InstanceFactory<?> factoryInstanceFactory2 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SocialWebViewModel.class), null, c11982, kind, emptyList2));
             module.indexPrimaryType(factoryInstanceFactory2);
             new KoinDefinition(module, factoryInstanceFactory2);
-            C11933 c11933 = new Function2<Scope, ParametersHolder, SocialRepository>() { // from class: com.iMe.di.module.FeatureModuleKt$socialfeature$1.3
+            C11993 c11993 = new Function2<Scope, ParametersHolder, SocialRepository>() { // from class: com.iMe.di.module.FeatureModuleKt$socialfeature$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final SocialRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -162,13 +162,13 @@ public final class FeatureModuleKt {
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             Kind kind2 = Kind.Singleton;
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(SocialRepository.class), null, c11933, kind2, emptyList3));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(SocialRepository.class), null, c11993, kind2, emptyList3));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C11944 c11944 = new Function2<Scope, ParametersHolder, AuthUseCase>() { // from class: com.iMe.di.module.FeatureModuleKt$socialfeature$1.4
+            C12004 c12004 = new Function2<Scope, ParametersHolder, AuthUseCase>() { // from class: com.iMe.di.module.FeatureModuleKt$socialfeature$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final AuthUseCase invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -178,13 +178,13 @@ public final class FeatureModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(AuthUseCase.class), null, c11944, kind2, emptyList4));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(AuthUseCase.class), null, c12004, kind2, emptyList4));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
-            C11955 c11955 = new Function2<Scope, ParametersHolder, SocialUseCase>() { // from class: com.iMe.di.module.FeatureModuleKt$socialfeature$1.5
+            C12015 c12015 = new Function2<Scope, ParametersHolder, SocialUseCase>() { // from class: com.iMe.di.module.FeatureModuleKt$socialfeature$1.5
                 @Override // kotlin.jvm.functions.Function2
                 public final SocialUseCase invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -194,13 +194,13 @@ public final class FeatureModuleKt {
             };
             StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
             emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(SocialUseCase.class), null, c11955, kind2, emptyList5));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(SocialUseCase.class), null, c12015, kind2, emptyList5));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);
             }
             new KoinDefinition(module, singleInstanceFactory3);
-            C11966 c11966 = new Function2<Scope, ParametersHolder, GroupMembershipUseCase>() { // from class: com.iMe.di.module.FeatureModuleKt$socialfeature$1.6
+            C12026 c12026 = new Function2<Scope, ParametersHolder, GroupMembershipUseCase>() { // from class: com.iMe.di.module.FeatureModuleKt$socialfeature$1.6
                 @Override // kotlin.jvm.functions.Function2
                 public final GroupMembershipUseCase invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -210,7 +210,7 @@ public final class FeatureModuleKt {
             };
             StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
             emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(GroupMembershipUseCase.class), null, c11966, kind2, emptyList6));
+            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(GroupMembershipUseCase.class), null, c12026, kind2, emptyList6));
             module.indexPrimaryType(singleInstanceFactory4);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory4);
@@ -230,7 +230,7 @@ public final class FeatureModuleKt {
             List emptyList;
             List emptyList2;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C11891 c11891 = new Function2<Scope, ParametersHolder, ProfileRepository>() { // from class: com.iMe.di.module.FeatureModuleKt$profileFeature$1.1
+            C11951 c11951 = new Function2<Scope, ParametersHolder, ProfileRepository>() { // from class: com.iMe.di.module.FeatureModuleKt$profileFeature$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final ProfileRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -242,13 +242,13 @@ public final class FeatureModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(ProfileRepository.class), null, c11891, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(ProfileRepository.class), null, c11951, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C11902 c11902 = new Function2<Scope, ParametersHolder, ProfileUseCase>() { // from class: com.iMe.di.module.FeatureModuleKt$profileFeature$1.2
+            C11962 c11962 = new Function2<Scope, ParametersHolder, ProfileUseCase>() { // from class: com.iMe.di.module.FeatureModuleKt$profileFeature$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final ProfileUseCase invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -258,7 +258,7 @@ public final class FeatureModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(ProfileUseCase.class), null, c11902, kind, emptyList2));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(ProfileUseCase.class), null, c11962, kind, emptyList2));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);

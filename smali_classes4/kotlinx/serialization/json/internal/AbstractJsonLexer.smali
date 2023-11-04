@@ -2212,7 +2212,7 @@
 .method public final failOnUnknownKey(Ljava/lang/String;)V
     .locals 8
 
-    const-string v0, "key"
+    const-string/jumbo v0, "key"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

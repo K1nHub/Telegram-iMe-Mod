@@ -41,7 +41,7 @@ public final class UtilsModuleKt {
             List emptyList;
             List emptyList2;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C16811 c16811 = new Function2<Scope, ParametersHolder, ResourceManager>() { // from class: com.iMe.storage.data.di.module.UtilsModuleKt$dataUtilsModule$1.1
+            C16871 c16871 = new Function2<Scope, ParametersHolder, ResourceManager>() { // from class: com.iMe.storage.data.di.module.UtilsModuleKt$dataUtilsModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final ResourceManager invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -53,13 +53,13 @@ public final class UtilsModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(ResourceManager.class), null, c16811, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(ResourceManager.class), null, c16871, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C16822 c16822 = new Function2<Scope, ParametersHolder, SchedulersProvider>() { // from class: com.iMe.storage.data.di.module.UtilsModuleKt$dataUtilsModule$1.2
+            C16882 c16882 = new Function2<Scope, ParametersHolder, SchedulersProvider>() { // from class: com.iMe.storage.data.di.module.UtilsModuleKt$dataUtilsModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final SchedulersProvider invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -70,7 +70,7 @@ public final class UtilsModuleKt {
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             Kind kind2 = Kind.Factory;
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, c16822, kind2, emptyList2));
+            InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SchedulersProvider.class), null, c16882, kind2, emptyList2));
             module.indexPrimaryType(factoryInstanceFactory);
             new KoinDefinition(module, factoryInstanceFactory);
         }

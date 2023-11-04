@@ -1,16 +1,22 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_webPageEmpty extends TLRPC$WebPage {
-    public static int constructor = -350980120;
-
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1771id = abstractSerializedData.readInt64(z);
+        this.flags = abstractSerializedData.readInt32(z);
+        this.f1758id = abstractSerializedData.readInt64(z);
+        if ((this.flags & 1) != 0) {
+            this.url = abstractSerializedData.readString(z);
+        }
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1771id);
+        abstractSerializedData.writeInt32(555358088);
+        abstractSerializedData.writeInt32(this.flags);
+        abstractSerializedData.writeInt64(this.f1758id);
+        if ((this.flags & 1) != 0) {
+            abstractSerializedData.writeString(this.url);
+        }
     }
 }

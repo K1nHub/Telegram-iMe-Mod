@@ -12,8 +12,8 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.LoadingDrawable;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LoadingDrawable;
 /* compiled from: ActionButton.kt */
 /* renamed from: com.iMe.ui.custom.ActionButton */
 /* loaded from: classes3.dex */
@@ -126,7 +126,7 @@ public class ActionButton extends AppCompatTextView {
     }
 
     public final void setForcedCustomHeight(int i) {
-        this.forcedButtonHeight = Integer.valueOf(AndroidUtilities.m102dp(i));
+        this.forcedButtonHeight = Integer.valueOf(AndroidUtilities.m104dp(i));
         invalidate();
     }
 
@@ -146,17 +146,17 @@ public class ActionButton extends AppCompatTextView {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int calculateCornerRadius() {
-        return AndroidUtilities.m102dp(4);
+        return AndroidUtilities.m104dp(4);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int calculateHorizontalPadding() {
-        return AndroidUtilities.m102dp(34);
+        return AndroidUtilities.m104dp(34);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
     public int calculateButtonHeight() {
-        return AndroidUtilities.m102dp(40);
+        return AndroidUtilities.m104dp(40);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

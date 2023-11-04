@@ -30,20 +30,20 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ItemOptions;Landroid/content/Context;)V
     .locals 2
 
-    .line 625
+    .line 678
     iput-object p1, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 626
+    .line 679
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 628
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    .line 681
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object p2
 
     if-eqz p2, :cond_0
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object p2
 
@@ -55,8 +55,8 @@
 
     if-eqz p2, :cond_0
 
-    .line 629
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    .line 682
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object p2
 
@@ -70,7 +70,7 @@
 
     move-result p2
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object v0
 
@@ -87,14 +87,14 @@
     :cond_0
     const/4 p2, 0x0
 
-    .line 631
+    .line 684
     iput p2, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->clipTop:F
 
     :goto_0
     const/4 p2, 0x0
 
-    .line 633
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$400(Lorg/telegram/ui/Components/ItemOptions;)I
+    .line 686
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$700(Lorg/telegram/ui/Components/ItemOptions;)I
 
     move-result v0
 
@@ -104,8 +104,8 @@
 
     iput p2, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->dim:I
 
-    .line 635
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    .line 688
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object p2
 
@@ -113,7 +113,7 @@
 
     if-eqz p2, :cond_1
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$500(Lorg/telegram/ui/Components/ItemOptions;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$800(Lorg/telegram/ui/Components/ItemOptions;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p2
 
@@ -121,7 +121,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 636
+    .line 689
     new-instance p2, Landroid/graphics/Paint;
 
     const/4 v0, 0x3
@@ -130,8 +130,8 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->cachedBitmapPaint:Landroid/graphics/Paint;
 
-    .line 637
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    .line 690
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object p2
 
@@ -139,7 +139,7 @@
 
     move-result p2
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v0
 
@@ -149,7 +149,7 @@
 
     add-int/2addr p2, v0
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object v0
 
@@ -157,7 +157,7 @@
 
     move-result v0
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v1
 
@@ -175,13 +175,13 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->cachedBitmap:Landroid/graphics/Bitmap;
 
-    .line 638
+    .line 691
     new-instance v0, Landroid/graphics/Canvas;
 
     invoke-direct {v0, p2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 639
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    .line 692
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object p2
 
@@ -189,7 +189,7 @@
 
     int-to-float p2, p2
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v1
 
@@ -199,8 +199,8 @@
 
     invoke-virtual {v0, p2, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 640
-    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    .line 693
+    invoke-static {p1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object p1
 
@@ -211,10 +211,10 @@
     :cond_1
     const/4 p1, 0x0
 
-    .line 642
+    .line 695
     iput-object p1, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->cachedBitmapPaint:Landroid/graphics/Paint;
 
-    .line 643
+    .line 696
     iput-object p1, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->cachedBitmap:Landroid/graphics/Bitmap;
 
     :goto_1
@@ -226,15 +226,15 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 649
+    .line 702
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 650
+    .line 703
     iget v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->dim:I
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 652
+    .line 705
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->cachedBitmap:Landroid/graphics/Bitmap;
 
     const/4 v1, 0x0
@@ -247,7 +247,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object v0
 
@@ -259,20 +259,20 @@
 
     if-eqz v0, :cond_2
 
-    .line 653
+    .line 706
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 654
+    .line 707
     iget v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->clipTop:F
 
     cmpg-float v0, v0, v3
 
     if-gez v0, :cond_0
 
-    .line 655
+    .line 708
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v0
 
@@ -284,7 +284,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v4}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v4
 
@@ -296,7 +296,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/ItemOptions;->access$700(Lorg/telegram/ui/Components/ItemOptions;)[F
+    invoke-static {v5}, Lorg/telegram/ui/Components/ItemOptions;->access$1000(Lorg/telegram/ui/Components/ItemOptions;)[F
 
     move-result-object v5
 
@@ -316,7 +316,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v5}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v5
 
@@ -332,7 +332,7 @@
 
     iget-object v6, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v6}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v6
 
@@ -344,11 +344,11 @@
 
     invoke-virtual {p1, v0, v4, v3, v5}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 657
+    .line 710
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$700(Lorg/telegram/ui/Components/ItemOptions;)[F
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$1000(Lorg/telegram/ui/Components/ItemOptions;)[F
 
     move-result-object v0
 
@@ -356,7 +356,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ItemOptions;->access$700(Lorg/telegram/ui/Components/ItemOptions;)[F
+    invoke-static {v1}, Lorg/telegram/ui/Components/ItemOptions;->access$1000(Lorg/telegram/ui/Components/ItemOptions;)[F
 
     move-result-object v1
 
@@ -364,25 +364,25 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 659
+    .line 712
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$800(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$1100(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 660
+    .line 713
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$800(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$1100(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v1
 
@@ -392,7 +392,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v2}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v2
 
@@ -402,7 +402,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    invoke-static {v3}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object v3
 
@@ -412,7 +412,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v4}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v4
 
@@ -422,7 +422,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    invoke-static {v4}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object v4
 
@@ -432,7 +432,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v5}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v5
 
@@ -442,22 +442,22 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 661
+    .line 714
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$800(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$1100(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 663
+    .line 716
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->cachedBitmap:Landroid/graphics/Bitmap;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v1
 
@@ -469,7 +469,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v2}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v2
 
@@ -483,16 +483,16 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 664
+    .line 717
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto/16 :goto_0
 
-    .line 665
+    .line 718
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object v0
 
@@ -500,7 +500,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object v0
 
@@ -512,20 +512,20 @@
 
     if-eqz v0, :cond_5
 
-    .line 666
+    .line 719
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 667
+    .line 720
     iget v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->clipTop:F
 
     cmpg-float v0, v0, v3
 
     if-gez v0, :cond_3
 
-    .line 668
+    .line 721
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v0
 
@@ -537,7 +537,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v4}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v4
 
@@ -549,7 +549,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/ItemOptions;->access$700(Lorg/telegram/ui/Components/ItemOptions;)[F
+    invoke-static {v5}, Lorg/telegram/ui/Components/ItemOptions;->access$1000(Lorg/telegram/ui/Components/ItemOptions;)[F
 
     move-result-object v5
 
@@ -569,7 +569,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v5}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v5
 
@@ -585,7 +585,7 @@
 
     iget-object v6, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v6}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v6
 
@@ -597,11 +597,11 @@
 
     invoke-virtual {p1, v0, v4, v3, v5}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 670
+    .line 723
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$700(Lorg/telegram/ui/Components/ItemOptions;)[F
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$1000(Lorg/telegram/ui/Components/ItemOptions;)[F
 
     move-result-object v0
 
@@ -609,7 +609,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ItemOptions;->access$700(Lorg/telegram/ui/Components/ItemOptions;)[F
+    invoke-static {v1}, Lorg/telegram/ui/Components/ItemOptions;->access$1000(Lorg/telegram/ui/Components/ItemOptions;)[F
 
     move-result-object v1
 
@@ -617,25 +617,25 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 672
+    .line 725
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$800(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$1100(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     if-eqz v0, :cond_4
 
-    .line 673
+    .line 726
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$800(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$1100(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v1
 
@@ -645,7 +645,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v2}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v2
 
@@ -655,7 +655,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    invoke-static {v3}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object v3
 
@@ -665,7 +665,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v4}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v4
 
@@ -675,7 +675,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    invoke-static {v4}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object v4
 
@@ -685,7 +685,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
+    invoke-static {v5}, Lorg/telegram/ui/Components/ItemOptions;->access$900(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/Rect;
 
     move-result-object v5
 
@@ -695,26 +695,26 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 674
+    .line 727
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$800(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$1100(Lorg/telegram/ui/Components/ItemOptions;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 676
+    .line 729
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$DimView;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$300(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$600(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/View;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 677
+    .line 730
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_5

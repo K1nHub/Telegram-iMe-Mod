@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EditTextEmoji;)V
     .locals 0
 
-    .line 628
+    .line 679
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,10 +44,10 @@
 .method private synthetic lambda$onClearEmojiRecent$0(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 733
+    .line 784
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EditTextEmoji;->access$800(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EmojiView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1000(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EmojiView;
 
     move-result-object p1
 
@@ -175,10 +175,10 @@
 .method public onAnimatedEmojiUnlockClick()V
     .locals 4
 
-    .line 640
+    .line 691
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1000(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v0
 
@@ -188,12 +188,12 @@
 
     if-nez v0, :cond_0
 
-    .line 642
+    .line 693
     new-instance v0, Lorg/telegram/ui/Components/EditTextEmoji$7$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/EditTextEmoji$7$1;-><init>(Lorg/telegram/ui/Components/EditTextEmoji$7;)V
 
-    .line 676
+    .line 727
     new-instance v3, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     invoke-direct {v3, v0, v2, v1}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;IZ)V
@@ -202,7 +202,7 @@
 
     goto :goto_0
 
-    .line 678
+    .line 729
     :cond_0
     new-instance v3, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
@@ -217,7 +217,7 @@
 .method public onBackspace()Z
     .locals 4
 
-    .line 631
+    .line 682
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -234,7 +234,7 @@
 
     return v1
 
-    .line 634
+    .line 685
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
@@ -258,7 +258,7 @@
 .method public onClearEmojiRecent()V
     .locals 3
 
-    .line 730
+    .line 781
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
@@ -269,13 +269,13 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1200(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v2}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1300(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v2
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 731
+    .line 782
     sget v1, Lorg/telegram/messenger/R$string;->ClearRecentEmojiTitle:I
 
     const-string v2, "ClearRecentEmojiTitle"
@@ -286,7 +286,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 732
+    .line 783
     sget v1, Lorg/telegram/messenger/R$string;->ClearRecentEmojiText:I
 
     const-string v2, "ClearRecentEmojiText"
@@ -297,7 +297,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 733
+    .line 784
     sget v1, Lorg/telegram/messenger/R$string;->ClearButton:I
 
     const-string v2, "ClearButton"
@@ -312,7 +312,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 734
+    .line 785
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -325,19 +325,19 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 735
+    .line 786
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1000(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 736
+    .line 787
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1000(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v1
 
@@ -349,7 +349,7 @@
 
     goto :goto_0
 
-    .line 738
+    .line 789
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -360,7 +360,7 @@
 .method public onCustomEmojiSelected(JLorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Z)V
     .locals 3
 
-    .line 703
+    .line 754
     iget-object p5, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-static {p5}, Lorg/telegram/ui/Components/EditTextEmoji;->access$100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -377,23 +377,23 @@
 
     move p5, v0
 
-    .line 708
+    .line 759
     :cond_0
     :try_start_0
     iget-object v1, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     const/4 v2, 0x2
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1102(Lorg/telegram/ui/Components/EditTextEmoji;I)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1202(Lorg/telegram/ui/Components/EditTextEmoji;I)I
 
-    .line 709
+    .line 760
     new-instance v1, Landroid/text/SpannableString;
 
     invoke-direct {v1, p4}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
     if-eqz p3, :cond_1
 
-    .line 712
+    .line 763
     new-instance p1, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
@@ -414,7 +414,7 @@
 
     goto :goto_0
 
-    .line 714
+    .line 765
     :cond_1
     new-instance p3, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
@@ -436,11 +436,11 @@
 
     move-object p1, p3
 
-    .line 716
+    .line 767
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/EditTextEmoji;->access$800(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EmojiView;
+    invoke-static {p2}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1000(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EmojiView;
 
     move-result-object p2
 
@@ -448,7 +448,7 @@
 
     iput p2, p1, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->cacheType:I
 
-    .line 717
+    .line 768
     invoke-virtual {v1}, Landroid/text/SpannableString;->length()I
 
     move-result p2
@@ -457,7 +457,7 @@
 
     invoke-virtual {v1, p1, v0, p2, p3}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 718
+    .line 769
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EditTextEmoji;->access$100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -480,14 +480,14 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 719
+    .line 770
     invoke-virtual {v1}, Landroid/text/SpannableString;->length()I
 
     move-result p1
 
     add-int/2addr p5, p1
 
-    .line 720
+    .line 771
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EditTextEmoji;->access$100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -509,33 +509,33 @@
     :catch_0
     move-exception p1
 
-    .line 722
+    .line 773
     :try_start_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 724
+    .line 775
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1102(Lorg/telegram/ui/Components/EditTextEmoji;I)I
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1202(Lorg/telegram/ui/Components/EditTextEmoji;I)I
 
     return-void
 
     :goto_2
     iget-object p2, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
-    invoke-static {p2, v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1102(Lorg/telegram/ui/Components/EditTextEmoji;I)I
+    invoke-static {p2, v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1202(Lorg/telegram/ui/Components/EditTextEmoji;I)I
 
-    .line 725
+    .line 776
     throw p1
 .end method
 
 .method public onEmojiSelected(Ljava/lang/String;)V
     .locals 4
 
-    .line 684
+    .line 735
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->access$100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -552,16 +552,16 @@
 
     move v0, v1
 
-    .line 689
+    .line 740
     :cond_0
     :try_start_0
     iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     const/4 v3, 0x2
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1102(Lorg/telegram/ui/Components/EditTextEmoji;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1202(Lorg/telegram/ui/Components/EditTextEmoji;I)I
 
-    .line 690
+    .line 741
     iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/EditTextEmoji;->access$100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -586,7 +586,7 @@
 
     move-result-object p1
 
-    .line 691
+    .line 742
     iget-object v2, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/EditTextEmoji;->access$100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -609,14 +609,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 692
+    .line 743
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
 
     add-int/2addr v0, p1
 
-    .line 693
+    .line 744
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EditTextEmoji;->access$100(Lorg/telegram/ui/Components/EditTextEmoji;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -638,26 +638,26 @@
     :catch_0
     move-exception p1
 
-    .line 695
+    .line 746
     :try_start_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 697
+    .line 748
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1102(Lorg/telegram/ui/Components/EditTextEmoji;I)I
+    invoke-static {p1, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1202(Lorg/telegram/ui/Components/EditTextEmoji;I)I
 
     return-void
 
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$7;->this$0:Lorg/telegram/ui/Components/EditTextEmoji;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1102(Lorg/telegram/ui/Components/EditTextEmoji;I)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->access$1202(Lorg/telegram/ui/Components/EditTextEmoji;I)I
 
-    .line 698
+    .line 749
     throw p1
 .end method
 

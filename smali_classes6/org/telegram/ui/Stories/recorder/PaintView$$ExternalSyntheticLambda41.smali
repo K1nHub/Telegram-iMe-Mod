@@ -8,22 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-.field public final synthetic f$1:Lorg/telegram/ui/Components/Paint/Brush$Shape;
-
-.field public final synthetic f$2:I
+.field public final synthetic f$1:Landroid/view/View;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Lorg/telegram/ui/Components/Paint/Brush$Shape;I)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Landroid/view/View;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda41;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda41;->f$1:Lorg/telegram/ui/Components/Paint/Brush$Shape;
-
-    iput p3, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda41;->f$2:I
+    iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda41;->f$1:Landroid/view/View;
 
     return-void
 .end method
@@ -31,15 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda41;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda41;->f$1:Lorg/telegram/ui/Components/Paint/Brush$Shape;
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda41;->f$1:Landroid/view/View;
 
-    iget v2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda41;->f$2:I
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$zXFWyy4G_1o-O4Aq60i8cVzvUzE(Lorg/telegram/ui/Stories/recorder/PaintView;Lorg/telegram/ui/Components/Paint/Brush$Shape;I)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$zoh8Y5MEGrMOZXjrMwIeK-M22BQ(Lorg/telegram/ui/Stories/recorder/PaintView;Landroid/view/View;)V
 
     return-void
 .end method

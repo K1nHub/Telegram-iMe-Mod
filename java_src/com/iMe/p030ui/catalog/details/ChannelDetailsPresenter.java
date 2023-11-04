@@ -24,7 +24,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringBuilderKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC$Chat;
@@ -62,7 +62,7 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
         if (str == null) {
             return;
         }
-        Observable<TLRPC$Chat> observeOn = telegramApi.getChatInfoByUsername(str).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<TLRPC$Chat> observeOn = telegramApi.getChatInfoByUsername(str).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "telegramApi.getChatInfoB…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -97,12 +97,12 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Boolean bool) {
-                m1574invoke(bool);
+                m1579invoke(bool);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1574invoke(Boolean it) {
+            public final void m1579invoke(Boolean it) {
                 CampaignItem campaignItem;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Boolean bool = it;
@@ -171,13 +171,13 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
     }
 
     public final void copyChannelLink() {
-        String string = LocaleController.getString("LinkCopied", C3630R.string.LinkCopied);
+        String string = LocaleController.getString("LinkCopied", C3634R.string.LinkCopied);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"LinkCopied\", R.string.LinkCopied)");
         ContextExtKt.copyToClipboard("https://" + TelegramControllersGateway.CC.getMessagesController$default(this.telegramControllersGateway, 0, 1, null).linkPrefix + '/' + this.campaign.getShortname(), string);
     }
 
     public final void createChannelQr() {
-        ((ChannelDetailsView) getViewState()).showChannelQr(this.chat.f1600id);
+        ((ChannelDetailsView) getViewState()).showChannelQr(this.chat.f1602id);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

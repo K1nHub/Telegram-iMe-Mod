@@ -99,7 +99,7 @@ public final class ImageToObjectsResponse {
         }
 
         public int hashCode() {
-            return (((this.recognizedObject.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.score)) * 31) + this.entityId.hashCode();
+            return (((this.recognizedObject.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.score)) * 31) + this.entityId.hashCode();
         }
 
         public String toString() {

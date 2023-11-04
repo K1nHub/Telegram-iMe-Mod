@@ -77,7 +77,7 @@ public final class CampaignResponse {
     }
 
     public int hashCode() {
-        int hashCode = ((((((((this.category.hashCode() * 31) + this.channel.hashCode()) * 31) + this.countries.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.f315id)) * 31;
+        int hashCode = ((((((((this.category.hashCode() * 31) + this.channel.hashCode()) * 31) + this.countries.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.f315id)) * 31;
         String str = this.invalidReason;
         return ((((((hashCode + (str == null ? 0 : str.hashCode())) * 31) + this.language.hashCode()) * 31) + this.status.hashCode()) * 31) + this.tags.hashCode();
     }

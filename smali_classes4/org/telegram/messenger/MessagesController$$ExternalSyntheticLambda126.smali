@@ -51,7 +51,7 @@
 
     iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda126;->f$4:Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$fKeKKz5r5fYk0kyedYhglEQJruc(Lorg/telegram/messenger/MessagesController;Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;)V
+    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$ddNopOxpzupMvhR_CgtM4lC3xA8(Lorg/telegram/messenger/MessagesController;Lcom/iMe/fork/utils/Callbacks$Callback1;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_channels_createChannel;)V
 
     return-void
 .end method

@@ -42,7 +42,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;)V
     .locals 0
 
-    .line 771
+    .line 775
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$7;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
@@ -55,17 +55,17 @@
 
     const/4 v0, 0x0
 
-    .line 810
+    .line 814
     iput-object v0, p0, Lorg/telegram/ui/TopicsFragment$7;->finishRunnable:Ljava/lang/Runnable;
 
-    .line 811
+    .line 815
     iget v0, p0, Lorg/telegram/ui/TopicsFragment$7;->scrollAnimationIndex:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 812
+    .line 816
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$7;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -76,7 +76,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
 
-    .line 813
+    .line 817
     iput v1, p0, Lorg/telegram/ui/TopicsFragment$7;->scrollAnimationIndex:I
 
     :cond_0
@@ -88,17 +88,17 @@
 
     const/4 v0, 0x0
 
-    .line 794
+    .line 798
     iput-object v0, p0, Lorg/telegram/ui/TopicsFragment$7;->finishRunnable:Ljava/lang/Runnable;
 
-    .line 795
+    .line 799
     iget v0, p0, Lorg/telegram/ui/TopicsFragment$7;->scrollAnimationIndex:I
 
     const/4 v1, -0x1
 
     if-eq v0, v1, :cond_0
 
-    .line 796
+    .line 800
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$7;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -109,7 +109,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
 
-    .line 797
+    .line 801
     iput v1, p0, Lorg/telegram/ui/TopicsFragment$7;->scrollAnimationIndex:I
 
     :cond_0
@@ -121,7 +121,7 @@
 .method protected afterAnimateMoveImpl(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 820
+    .line 824
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$7;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$1800(Lorg/telegram/ui/TopicsFragment;)Landroid/view/View;
@@ -132,7 +132,7 @@
 
     if-ne v0, p1, :cond_2
 
-    .line 821
+    .line 825
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$7;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$1800(Lorg/telegram/ui/TopicsFragment;)Landroid/view/View;
@@ -143,7 +143,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 822
+    .line 826
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$7;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$3100(Lorg/telegram/ui/TopicsFragment;)Landroidx/recyclerview/widget/ItemTouchHelper;
@@ -152,7 +152,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 823
+    .line 827
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$7;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$3100(Lorg/telegram/ui/TopicsFragment;)Landroidx/recyclerview/widget/ItemTouchHelper;
@@ -161,7 +161,7 @@
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/ItemTouchHelper;->clearRecoverAnimations()V
 
-    .line 825
+    .line 829
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$7;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -173,7 +173,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 826
+    .line 830
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$7;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$1800(Lorg/telegram/ui/TopicsFragment;)Landroid/view/View;
@@ -196,7 +196,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->setTopicIcon(Lorg/telegram/tgnet/TLRPC$TL_forumTopic;)V
 
-    .line 828
+    .line 832
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$7;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -211,14 +211,14 @@
 .method public checkIsRunning()V
     .locals 4
 
-    .line 777
+    .line 781
     iget v0, p0, Lorg/telegram/ui/TopicsFragment$7;->scrollAnimationIndex:I
 
     const/4 v1, -0x1
 
     if-ne v0, v1, :cond_0
 
-    .line 778
+    .line 782
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$7;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -237,15 +237,15 @@
 
     iput v0, p0, Lorg/telegram/ui/TopicsFragment$7;->scrollAnimationIndex:I
 
-    .line 779
+    .line 783
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$7;->finishRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 780
+    .line 784
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 781
+    .line 785
     iput-object v3, p0, Lorg/telegram/ui/TopicsFragment$7;->finishRunnable:Ljava/lang/Runnable;
 
     :cond_0
@@ -255,18 +255,18 @@
 .method public endAnimations()V
     .locals 1
 
-    .line 805
+    .line 809
     invoke-super {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;->endAnimations()V
 
-    .line 806
+    .line 810
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$7;->finishRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 807
+    .line 811
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 809
+    .line 813
     :cond_0
     new-instance v0, Lorg/telegram/ui/TopicsFragment$7$$ExternalSyntheticLambda1;
 
@@ -282,23 +282,23 @@
 .method protected onAllAnimationsDone()V
     .locals 1
 
-    .line 788
+    .line 792
     invoke-super {p0}, Landroidx/recyclerview/widget/DefaultItemAnimator;->onAllAnimationsDone()V
 
-    .line 789
+    .line 793
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$7;->finishRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 790
+    .line 794
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 v0, 0x0
 
-    .line 791
+    .line 795
     iput-object v0, p0, Lorg/telegram/ui/TopicsFragment$7;->finishRunnable:Ljava/lang/Runnable;
 
-    .line 793
+    .line 797
     :cond_0
     new-instance v0, Lorg/telegram/ui/TopicsFragment$7$$ExternalSyntheticLambda0;
 

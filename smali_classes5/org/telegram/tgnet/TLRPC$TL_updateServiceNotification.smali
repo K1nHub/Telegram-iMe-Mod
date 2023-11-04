@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x141b97e7
-
-
 # instance fields
 .field public entities:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -22,6 +18,8 @@
 
 .field public inbox_date:I
 
+.field public invert_media:Z
+
 .field public media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
 .field public message:Ljava/lang/String;
@@ -32,19 +30,13 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 1
 
-    .line 34610
+    .line 34992
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Update;-><init>()V
 
-    .line 34619
+    .line 35001
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -59,7 +51,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 34622
+    .line 35005
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -81,7 +73,7 @@
     :cond_0
     move v1, v2
 
-    .line 34623
+    .line 35006
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->popup:Z
 
@@ -89,29 +81,46 @@
 
     if-eqz v0, :cond_1
 
-    .line 34625
+    .line 35008
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->inbox_date:I
 
-    .line 34627
+    .line 35010
     :cond_1
+    iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->flags:I
+
+    and-int/lit8 v0, v0, 0x4
+
+    if-eqz v0, :cond_2
+
+    move v0, v3
+
+    goto :goto_1
+
+    :cond_2
+    move v0, v2
+
+    :goto_1
+    iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->invert_media:Z
+
+    .line 35011
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->type:Ljava/lang/String;
 
-    .line 34628
+    .line 35012
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->message:Ljava/lang/String;
 
-    .line 34629
+    .line 35013
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -122,21 +131,21 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 34630
+    .line 35014
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     const v1, 0x1cb5c415
 
-    if-eq v0, v1, :cond_3
+    if-eq v0, v1, :cond_4
 
-    if-nez p2, :cond_2
+    if-nez p2, :cond_3
 
     return-void
 
-    .line 34633
-    :cond_2
+    .line 35017
+    :cond_3
     new-instance p1, Ljava/lang/RuntimeException;
 
     new-array p2, v3, [Ljava/lang/Object;
@@ -157,16 +166,16 @@
 
     throw p1
 
-    .line 34637
-    :cond_3
+    .line 35021
+    :cond_4
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
-    :goto_1
-    if-ge v2, v0, :cond_5
+    :goto_2
+    if-ge v2, v0, :cond_6
 
-    .line 34639
+    .line 35023
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -175,33 +184,33 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_4
+    if-nez v1, :cond_5
 
     return-void
 
-    .line 34643
-    :cond_4
+    .line 35027
+    :cond_5
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_5
+    :cond_6
     return-void
 .end method
 
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 34648
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->constructor:I
+    const v0, -0x141b97e7
 
+    .line 35032
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 34649
+    .line 35033
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->popup:Z
 
     if-eqz v0, :cond_0
@@ -220,58 +229,73 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->flags:I
 
-    .line 34650
+    .line 35034
+    iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->invert_media:Z
+
+    if-eqz v1, :cond_1
+
+    or-int/lit8 v0, v0, 0x4
+
+    goto :goto_1
+
+    :cond_1
+    and-int/lit8 v0, v0, -0x5
+
+    :goto_1
+    iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->flags:I
+
+    .line 35035
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 34651
+    .line 35036
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_2
 
-    .line 34652
+    .line 35037
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->inbox_date:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 34654
-    :cond_1
+    .line 35039
+    :cond_2
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->type:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 34655
+    .line 35040
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->message:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 34656
+    .line 35041
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
     const v0, 0x1cb5c415
 
-    .line 34657
+    .line 35042
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 34658
+    .line 35043
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 34659
+    .line 35044
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
 
-    :goto_1
-    if-ge v1, v0, :cond_2
+    :goto_2
+    if-ge v1, v0, :cond_3
 
-    .line 34661
+    .line 35046
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_updateServiceNotification;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -284,8 +308,8 @@
 
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_2
+    :cond_3
     return-void
 .end method

@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;ZI)V
     .locals 0
 
-    .line 25152
+    .line 25958
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$110;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$110;->val$user:Lorg/telegram/tgnet/TLRPC$User;
@@ -54,7 +54,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 4
 
-    .line 25155
+    .line 25961
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$110;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$110;->val$user:Lorg/telegram/tgnet/TLRPC$User;

@@ -17,7 +17,7 @@ public final class AccountStorageTlbConstructor extends org.ton.tlb.TlbConstruct
     public void storeTlb(CellBuilder cellBuilder, AccountStorage value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.mo5057storeUInt64VKZWuLQ(value.lastTransLt());
+        cellBuilder.mo5211storeUInt64VKZWuLQ(value.lastTransLt());
         CurrencyCollection.Companion.storeTlb(cellBuilder, (CellBuilder) value.balance());
         AccountState.Companion.storeTlb(cellBuilder, (CellBuilder) value.state());
     }
@@ -25,6 +25,6 @@ public final class AccountStorageTlbConstructor extends org.ton.tlb.TlbConstruct
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public AccountStorage loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new AccountStorage(cellSlice.mo5067loadUInt64sVKNKU(), CurrencyCollection.Companion.loadTlb(cellSlice), AccountState.Companion.loadTlb(cellSlice), null);
+        return new AccountStorage(cellSlice.mo5221loadUInt64sVKNKU(), CurrencyCollection.Companion.loadTlb(cellSlice), AccountState.Companion.loadTlb(cellSlice), null);
     }
 }

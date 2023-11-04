@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function2;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AuthViewModel.kt */
-@DebugMetadata(m143c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onOverrideUrl$1", m142f = "AuthViewModel.kt", m141l = {30, 34, 35, 36, 37, 38}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onOverrideUrl$1", m144f = "AuthViewModel.kt", m143l = {30, 34, 35, 36, 37, 38}, m142m = "invokeSuspend")
 /* loaded from: classes3.dex */
 public final class AuthViewModel$onOverrideUrl$1 extends SuspendLambda implements Function2<SimpleSyntax<AuthState, AuthSideEffects>, Continuation<? super Unit>, Object> {
     final /* synthetic */ String $overrideUrl;

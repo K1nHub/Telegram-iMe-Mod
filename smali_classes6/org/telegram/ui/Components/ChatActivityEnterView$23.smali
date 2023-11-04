@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/content/Context;)V
     .locals 0
 
-    .line 3358
+    .line 3420
     invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 3361
+    .line 3423
     invoke-virtual {p0}, Landroid/widget/ImageView;->getAlpha()F
 
     move-result v0
@@ -44,7 +44,7 @@
 
     return p1
 
-    .line 3364
+    .line 3426
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/ImageView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 

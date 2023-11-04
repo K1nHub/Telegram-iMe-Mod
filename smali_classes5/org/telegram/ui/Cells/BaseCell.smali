@@ -172,6 +172,26 @@
     return-void
 .end method
 
+.method public static setDrawableBounds(Landroid/graphics/drawable/Drawable;FFII)V
+    .locals 0
+
+    if-eqz p0, :cond_0
+
+    float-to-int p1, p1
+
+    float-to-int p2, p2
+
+    add-int/2addr p3, p1
+
+    add-int/2addr p4, p2
+
+    .line 80
+    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    :cond_0
+    return-void
+.end method
+
 .method public static setDrawableBounds(Landroid/graphics/drawable/Drawable;II)V
     .locals 2
 

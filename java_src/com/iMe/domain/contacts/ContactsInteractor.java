@@ -99,7 +99,7 @@ public final class ContactsInteractor {
                 deleteUsersById$lambda$0 = ContactsInteractor.deleteUsersById$lambda$0(Function1.this, obj);
                 return deleteUsersById$lambda$0;
             }
-        }).subscribeOn(this.schedulersProvider.mo1010io());
+        }).subscribeOn(this.schedulersProvider.mo1011io());
         final Function1<List<? extends TLRPC$User>, CompletableSource> function12 = new Function1<List<? extends TLRPC$User>, CompletableSource>() { // from class: com.iMe.domain.contacts.ContactsInteractor$deleteUsersById$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {

@@ -2,32 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/MediaDataController$KeywordResultCallback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
+.field public final synthetic f$1:Ljava/util/ArrayList;
+
+.field public final synthetic f$2:Landroidx/collection/LongSparseArray;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Adapters/MentionsAdapter;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Adapters/MentionsAdapter;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
+    iput-object p2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$$ExternalSyntheticLambda6;->f$1:Ljava/util/ArrayList;
+
+    iput-object p3, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$$ExternalSyntheticLambda6;->f$2:Landroidx/collection/LongSparseArray;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/util/ArrayList;Ljava/lang/String;)V
-    .locals 1
+.method public final run()V
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/Adapters/MentionsAdapter;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Adapters/MentionsAdapter;->$r8$lambda$eNDAm_YfK9yBjS93edRWWrG_HHU(Lorg/telegram/ui/Adapters/MentionsAdapter;Ljava/util/ArrayList;Ljava/lang/String;)V
+    iget-object v1, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$$ExternalSyntheticLambda6;->f$1:Ljava/util/ArrayList;
+
+    iget-object v2, p0, Lorg/telegram/ui/Adapters/MentionsAdapter$$ExternalSyntheticLambda6;->f$2:Landroidx/collection/LongSparseArray;
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Adapters/MentionsAdapter;->$r8$lambda$xnbcLpmoz9wHHheJ7WrCsYo3xS8(Lorg/telegram/ui/Adapters/MentionsAdapter;Ljava/util/ArrayList;Landroidx/collection/LongSparseArray;)V
 
     return-void
 .end method

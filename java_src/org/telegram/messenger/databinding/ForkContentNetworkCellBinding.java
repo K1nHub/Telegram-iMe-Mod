@@ -9,7 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p030ui.custom.DividerView;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* loaded from: classes4.dex */
 public final class ForkContentNetworkCellBinding implements ViewBinding {
     public final DividerView divider;
@@ -35,7 +35,7 @@ public final class ForkContentNetworkCellBinding implements ViewBinding {
     }
 
     public static ForkContentNetworkCellBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_content_network_cell, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_content_network_cell, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -43,16 +43,16 @@ public final class ForkContentNetworkCellBinding implements ViewBinding {
     }
 
     public static ForkContentNetworkCellBinding bind(View view) {
-        int i = C3630R.C3633id.divider;
+        int i = C3634R.C3637id.divider;
         DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
         if (dividerView != null) {
-            i = C3630R.C3633id.image_check;
+            i = C3634R.C3637id.image_check;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView != null) {
-                i = C3630R.C3633id.image_network;
+                i = C3634R.C3637id.image_network;
                 AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView2 != null) {
-                    i = C3630R.C3633id.text_network;
+                    i = C3634R.C3637id.text_network;
                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView != null) {
                         return new ForkContentNetworkCellBinding((ConstraintLayout) view, dividerView, appCompatImageView, appCompatImageView2, appCompatTextView);

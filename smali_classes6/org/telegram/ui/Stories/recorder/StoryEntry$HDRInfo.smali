@@ -26,7 +26,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 890
+    .line 885
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,14 +37,14 @@
 .method public getHDRType()I
     .locals 3
 
-    .line 903
+    .line 898
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->colorStandard:I
 
     const/4 v1, 0x6
 
     if-ne v0, v1, :cond_1
 
-    .line 904
+    .line 899
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$HDRInfo;->colorTransfer:I
 
     const/4 v2, 0x7

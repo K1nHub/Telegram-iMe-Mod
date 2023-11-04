@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
     .locals 0
 
-    .line 612
+    .line 613
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$6;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .method public getBottomOffset(I)I
     .locals 0
 
-    .line 615
+    .line 616
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$6;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;

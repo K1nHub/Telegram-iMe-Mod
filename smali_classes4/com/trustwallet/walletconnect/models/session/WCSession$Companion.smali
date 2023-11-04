@@ -88,7 +88,7 @@
 
     move-result-object v0
 
-    const-string v1, "key"
+    const-string/jumbo v1, "key"
 
     .line 22
     invoke-virtual {p1, v1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;

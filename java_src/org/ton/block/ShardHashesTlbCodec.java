@@ -19,34 +19,34 @@ public final class ShardHashesTlbCodec implements TlbCodec<ShardHashes> {
 
     @Override // org.ton.tlb.TlbLoader
     public /* bridge */ /* synthetic */ Object loadTlb(Cell cell) {
-        return ShardHashes.m5026boximpl(m5039loadTlbnCYawEE(cell));
+        return ShardHashes.m5180boximpl(m5193loadTlbnCYawEE(cell));
     }
 
     @Override // org.ton.tlb.TlbLoader
     public /* bridge */ /* synthetic */ Object loadTlb(CellSlice cellSlice) {
-        return ShardHashes.m5026boximpl(m5040loadTlbnCYawEE(cellSlice));
+        return ShardHashes.m5180boximpl(m5194loadTlbnCYawEE(cellSlice));
     }
 
     /* renamed from: loadTlb-nCYawEE  reason: not valid java name */
-    public HashMapE<CellRef<? extends BinTree<ShardDescr>>> m5039loadTlbnCYawEE(Cell cell) {
-        return ((ShardHashes) TlbCodec.DefaultImpls.loadTlb(this, cell)).m5033unboximpl();
+    public HashMapE<CellRef<? extends BinTree<ShardDescr>>> m5193loadTlbnCYawEE(Cell cell) {
+        return ((ShardHashes) TlbCodec.DefaultImpls.loadTlb(this, cell)).m5187unboximpl();
     }
 
     @Override // org.ton.tlb.TlbStorer
     public /* bridge */ /* synthetic */ void storeTlb(CellBuilder cellBuilder, Object obj) {
-        m5041storeTlbZFAh1YI(cellBuilder, ((ShardHashes) obj).m5033unboximpl());
+        m5195storeTlbZFAh1YI(cellBuilder, ((ShardHashes) obj).m5187unboximpl());
     }
 
     /* renamed from: storeTlb-ZFAh1YI  reason: not valid java name */
-    public void m5041storeTlbZFAh1YI(CellBuilder cellBuilder, HashMapE<CellRef<? extends BinTree<ShardDescr>>> value) {
+    public void m5195storeTlbZFAh1YI(CellBuilder cellBuilder, HashMapE<CellRef<? extends BinTree<ShardDescr>>> value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
         codec.storeTlb(cellBuilder, value);
     }
 
     /* renamed from: loadTlb-nCYawEE  reason: not valid java name */
-    public HashMapE<CellRef<? extends BinTree<ShardDescr>>> m5040loadTlbnCYawEE(CellSlice cellSlice) {
+    public HashMapE<CellRef<? extends BinTree<ShardDescr>>> m5194loadTlbnCYawEE(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return ShardHashes.m5027constructorimpl(codec.loadTlb(cellSlice));
+        return ShardHashes.m5181constructorimpl(codec.loadTlb(cellSlice));
     }
 }

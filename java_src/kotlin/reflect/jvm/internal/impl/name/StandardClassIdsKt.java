@@ -83,8 +83,8 @@ public final class StandardClassIdsKt {
         Iterator<T> it = entrySet.iterator();
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            Pair m144to = TuplesKt.m144to(entry.getValue(), entry.getKey());
-            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
+            Pair m146to = TuplesKt.m146to(entry.getValue(), entry.getKey());
+            linkedHashMap.put(m146to.getFirst(), m146to.getSecond());
         }
         return linkedHashMap;
     }

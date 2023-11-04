@@ -66,7 +66,7 @@ public final class DateFormatter {
         HashMap<String, HashMap<DateType, SimpleDateFormat>> hashMap = availableLocalesFormatter;
         HashMap<DateType, SimpleDateFormat> hashMap2 = hashMap.get(str);
         if (hashMap2 == null) {
-            hashMap2 = MapsKt__MapsKt.hashMapOf(TuplesKt.m144to(dateType, INSTANCE.createFormatFor(dateType, str, timeZone)));
+            hashMap2 = MapsKt__MapsKt.hashMapOf(TuplesKt.m146to(dateType, INSTANCE.createFormatFor(dateType, str, timeZone)));
             hashMap.put(str, hashMap2);
         }
         HashMap<DateType, SimpleDateFormat> hashMap3 = hashMap2;

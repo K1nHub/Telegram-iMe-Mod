@@ -1,0 +1,422 @@
+package Components;
+
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import androidx.core.widget.NestedScrollView;
+import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.iMe.android.web.R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.BackupImageView;
+import org.telegram.p043ui.Components.CubicBezierInterpolator;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.tgnet.TLRPC$TL_help_appUpdate;
+/* loaded from: classes.dex */
+public class UpdateAppAlertDialog extends BottomSheet {
+    private int accountNum;
+    private boolean animationInProgress;
+    private TLRPC$TL_help_appUpdate appUpdate;
+    private final TextView changelogTextView;
+    private LinearLayout linearLayout;
+    private int[] location;
+    private TextView messageTextView;
+    private int scrollOffsetY;
+    private NestedScrollView scrollView;
+    private final Runnable setChangelogRunnable;
+    private final Runnable setStickerRunnable;
+    private View shadow;
+    private AnimatorSet shadowAnimation;
+    private Drawable shadowDrawable;
+    private final BackupImageView stickerImageView;
+    private TextView textView;
+
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
+    protected boolean canDismissWithSwipe() {
+        return false;
+    }
+
+    public void updateUI() {
+        TLRPC$TL_help_appUpdate tLRPC$TL_help_appUpdate = SharedConfig.pendingAppUpdate;
+        this.appUpdate = tLRPC$TL_help_appUpdate;
+        if (tLRPC$TL_help_appUpdate.sticker != null) {
+            this.stickerImageView.setVisibility(0);
+            this.setStickerRunnable.run();
+        } else {
+            this.stickerImageView.setVisibility(8);
+        }
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) this.textView.getLayoutParams();
+        layoutParams.topMargin = AndroidUtilities.m104dp(this.appUpdate.sticker != null ? 16 : 0);
+        this.textView.setLayoutParams(layoutParams);
+        TLRPC$TL_help_appUpdate tLRPC$TL_help_appUpdate2 = this.appUpdate;
+        int i = tLRPC$TL_help_appUpdate2.document.date;
+        if (i != 0) {
+            this.messageTextView.setText(LocaleController.formatString("AppUpdateVersionAndSize", R.string.AppUpdateVersionAndSize, tLRPC$TL_help_appUpdate2.version, LocaleController.formatSeenDate(i)));
+        } else {
+            this.messageTextView.setText(tLRPC$TL_help_appUpdate2.version);
+        }
+        if (!TextUtils.isEmpty(this.appUpdate.text)) {
+            this.changelogTextView.setVisibility(0);
+            this.setChangelogRunnable.run();
+            return;
+        }
+        this.changelogTextView.setVisibility(8);
+    }
+
+    /* loaded from: classes.dex */
+    public class BottomSheetCell extends FrameLayout {
+        private View background;
+        private boolean hasBackground;
+        private TextView[] textView;
+
+        public BottomSheetCell(Context context, boolean z) {
+            super(context);
+            this.textView = new TextView[2];
+            this.hasBackground = !z;
+            setBackground(null);
+            View view = new View(context);
+            this.background = view;
+            if (this.hasBackground) {
+                view.setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 4.0f));
+            }
+            addView(this.background, LayoutHelper.createFrame(-1, -1, 0, 16, z ? 0 : 16, 16, 16));
+            for (int i = 0; i < 2; i++) {
+                this.textView[i] = new TextView(context);
+                this.textView[i].setLines(1);
+                this.textView[i].setSingleLine(true);
+                this.textView[i].setGravity(1);
+                this.textView[i].setEllipsize(TextUtils.TruncateAt.END);
+                this.textView[i].setGravity(17);
+                if (this.hasBackground) {
+                    this.textView[i].setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
+                    this.textView[i].setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+                } else {
+                    this.textView[i].setTextColor(Theme.getColor(Theme.key_featuredStickers_addButton));
+                }
+                this.textView[i].setTextSize(1, 14.0f);
+                this.textView[i].setPadding(0, 0, 0, this.hasBackground ? 0 : AndroidUtilities.m104dp(13));
+                addView(this.textView[i], LayoutHelper.createFrame(-2, -2, 17));
+                if (i == 1) {
+                    this.textView[i].setAlpha(BitmapDescriptorFactory.HUE_RED);
+                }
+            }
+        }
+
+        @Override // android.widget.FrameLayout, android.view.View
+        protected void onMeasure(int i, int i2) {
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m104dp(this.hasBackground ? 80 : 50), 1073741824));
+        }
+
+        public void setText(CharSequence charSequence, boolean z) {
+            if (!z) {
+                this.textView[0].setText(charSequence);
+                return;
+            }
+            this.textView[1].setText(charSequence);
+            UpdateAppAlertDialog.this.animationInProgress = true;
+            AnimatorSet animatorSet = new AnimatorSet();
+            animatorSet.setDuration(180L);
+            animatorSet.setInterpolator(CubicBezierInterpolator.EASE_OUT);
+            animatorSet.playTogether(ObjectAnimator.ofFloat(this.textView[0], View.ALPHA, 1.0f, BitmapDescriptorFactory.HUE_RED), ObjectAnimator.ofFloat(this.textView[0], View.TRANSLATION_Y, BitmapDescriptorFactory.HUE_RED, -AndroidUtilities.m104dp(10)), ObjectAnimator.ofFloat(this.textView[1], View.ALPHA, BitmapDescriptorFactory.HUE_RED, 1.0f), ObjectAnimator.ofFloat(this.textView[1], View.TRANSLATION_Y, AndroidUtilities.m104dp(10), BitmapDescriptorFactory.HUE_RED));
+            animatorSet.addListener(new AnimatorListenerAdapter() { // from class: Components.UpdateAppAlertDialog.BottomSheetCell.1
+                @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+                public void onAnimationEnd(Animator animator) {
+                    UpdateAppAlertDialog.this.animationInProgress = false;
+                    TextView textView = BottomSheetCell.this.textView[0];
+                    BottomSheetCell.this.textView[0] = BottomSheetCell.this.textView[1];
+                    BottomSheetCell.this.textView[1] = textView;
+                }
+            });
+            animatorSet.start();
+        }
+    }
+
+    public UpdateAppAlertDialog(Context context, TLRPC$TL_help_appUpdate tLRPC$TL_help_appUpdate, int i) {
+        super(context, false);
+        this.location = new int[2];
+        this.appUpdate = tLRPC$TL_help_appUpdate;
+        this.accountNum = i;
+        setCanceledOnTouchOutside(false);
+        setApplyTopPadding(false);
+        setApplyBottomPadding(false);
+        Drawable mutate = context.getResources().getDrawable(R.drawable.sheet_shadow_round).mutate();
+        this.shadowDrawable = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogBackground), PorterDuff.Mode.MULTIPLY));
+        FrameLayout frameLayout = new FrameLayout(context) { // from class: Components.UpdateAppAlertDialog.1
+            @Override // android.view.View
+            public void setTranslationY(float f) {
+                super.setTranslationY(f);
+                UpdateAppAlertDialog.this.updateLayout();
+            }
+
+            @Override // android.view.ViewGroup
+            public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+                if (motionEvent.getAction() == 0 && UpdateAppAlertDialog.this.scrollOffsetY != 0 && motionEvent.getY() < UpdateAppAlertDialog.this.scrollOffsetY) {
+                    UpdateAppAlertDialog.this.dismiss();
+                    return true;
+                }
+                return super.onInterceptTouchEvent(motionEvent);
+            }
+
+            @Override // android.view.View
+            public boolean onTouchEvent(MotionEvent motionEvent) {
+                return !UpdateAppAlertDialog.this.isDismissed() && super.onTouchEvent(motionEvent);
+            }
+
+            @Override // android.view.View
+            protected void onDraw(Canvas canvas) {
+                UpdateAppAlertDialog.this.shadowDrawable.setBounds(0, (int) ((UpdateAppAlertDialog.this.scrollOffsetY - ((BottomSheet) UpdateAppAlertDialog.this).backgroundPaddingTop) - getTranslationY()), getMeasuredWidth(), getMeasuredHeight());
+                UpdateAppAlertDialog.this.shadowDrawable.draw(canvas);
+            }
+        };
+        frameLayout.setWillNotDraw(false);
+        this.containerView = frameLayout;
+        NestedScrollView nestedScrollView = new NestedScrollView(context) { // from class: Components.UpdateAppAlertDialog.2
+            private boolean ignoreLayout;
+
+            /* JADX INFO: Access modifiers changed from: protected */
+            @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
+            public void onMeasure(int i2, int i3) {
+                int size = View.MeasureSpec.getSize(i3);
+                measureChildWithMargins(UpdateAppAlertDialog.this.linearLayout, i2, 0, i3, 0);
+                int measuredHeight = UpdateAppAlertDialog.this.linearLayout.getMeasuredHeight();
+                int i4 = (size / 5) * 2;
+                if (measuredHeight - (size - i4) < AndroidUtilities.m104dp(90) || measuredHeight < (size / 2) + AndroidUtilities.m104dp(90)) {
+                    i4 = size - measuredHeight;
+                }
+                if (i4 < 0) {
+                    i4 = 0;
+                }
+                if (getPaddingTop() != i4) {
+                    this.ignoreLayout = true;
+                    setPadding(0, i4, 0, 0);
+                    this.ignoreLayout = false;
+                }
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(size, 1073741824));
+            }
+
+            /* JADX INFO: Access modifiers changed from: protected */
+            @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+            public void onLayout(boolean z, int i2, int i3, int i4, int i5) {
+                super.onLayout(z, i2, i3, i4, i5);
+                UpdateAppAlertDialog.this.updateLayout();
+            }
+
+            @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
+            public void requestLayout() {
+                if (this.ignoreLayout) {
+                    return;
+                }
+                super.requestLayout();
+            }
+
+            /* JADX INFO: Access modifiers changed from: protected */
+            @Override // androidx.core.widget.NestedScrollView, android.view.View
+            public void onScrollChanged(int i2, int i3, int i4, int i5) {
+                super.onScrollChanged(i2, i3, i4, i5);
+                UpdateAppAlertDialog.this.updateLayout();
+            }
+        };
+        this.scrollView = nestedScrollView;
+        nestedScrollView.setFillViewport(true);
+        this.scrollView.setWillNotDraw(false);
+        this.scrollView.setClipToPadding(false);
+        this.scrollView.setVerticalScrollBarEnabled(false);
+        frameLayout.addView(this.scrollView, LayoutHelper.createFrame(-1, -1, 51, 0, 0, 0, (int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.linearLayout = linearLayout;
+        linearLayout.setOrientation(1);
+        this.scrollView.addView(this.linearLayout, LayoutHelper.createScroll(-1, -2, 51));
+        final BackupImageView backupImageView = new BackupImageView(context);
+        this.stickerImageView = backupImageView;
+        this.setStickerRunnable = new Runnable() { // from class: Components.UpdateAppAlertDialog$$ExternalSyntheticLambda3
+            @Override // java.lang.Runnable
+            public final void run() {
+                UpdateAppAlertDialog.this.lambda$new$0(backupImageView);
+            }
+        };
+        this.linearLayout.addView(backupImageView, LayoutHelper.createLinear(160, 160, 49, 17, 8, 17, 0));
+        TextView textView = new TextView(context);
+        this.textView = textView;
+        textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
+        textView.setTextSize(1, 20.0f);
+        int i2 = Theme.key_dialogTextBlack;
+        textView.setTextColor(Theme.getColor(i2));
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setText(LocaleController.getString("AppUpdate", R.string.AppUpdate));
+        this.linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 49, 23, 16, 23, 0));
+        TextView textView2 = new TextView(getContext());
+        this.messageTextView = textView2;
+        textView2.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
+        textView2.setTextSize(1, 14.0f);
+        textView2.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
+        int i3 = Theme.key_dialogTextLink;
+        textView2.setLinkTextColor(Theme.getColor(i3));
+        textView2.setGravity(49);
+        this.linearLayout.addView(textView2, LayoutHelper.createLinear(-2, -2, 49, 23, 0, 23, 5));
+        final TextView textView3 = new TextView(getContext());
+        this.changelogTextView = textView3;
+        textView3.setTextColor(Theme.getColor(i2));
+        textView3.setTextSize(1, 14.0f);
+        textView3.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
+        textView3.setLinkTextColor(Theme.getColor(i3));
+        this.setChangelogRunnable = new Runnable() { // from class: Components.UpdateAppAlertDialog$$ExternalSyntheticLambda2
+            @Override // java.lang.Runnable
+            public final void run() {
+                UpdateAppAlertDialog.this.lambda$new$1(textView3);
+            }
+        };
+        textView3.setGravity(51);
+        this.linearLayout.addView(textView3, LayoutHelper.createLinear(-2, -2, 51, 23, 15, 23, 0));
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight(), 83);
+        layoutParams.bottomMargin = AndroidUtilities.m104dp((int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS);
+        View view = new View(context);
+        this.shadow = view;
+        view.setBackgroundColor(Theme.getColor(Theme.key_dialogShadowLine));
+        this.shadow.setAlpha(BitmapDescriptorFactory.HUE_RED);
+        this.shadow.setTag(1);
+        frameLayout.addView(this.shadow, layoutParams);
+        BottomSheetCell bottomSheetCell = new BottomSheetCell(context, false);
+        bottomSheetCell.setText(LocaleController.formatString("AppUpdateDownloadNow", R.string.AppUpdateDownloadNow, new Object[0]), false);
+        bottomSheetCell.background.setOnClickListener(new View.OnClickListener() { // from class: Components.UpdateAppAlertDialog$$ExternalSyntheticLambda0
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                UpdateAppAlertDialog.this.lambda$new$2(view2);
+            }
+        });
+        frameLayout.addView(bottomSheetCell, LayoutHelper.createFrame(-1, 50, 83, 0, 0, 0, 50));
+        BottomSheetCell bottomSheetCell2 = new BottomSheetCell(context, true);
+        bottomSheetCell2.setText(LocaleController.getString("AppUpdateRemindMeLater", R.string.AppUpdateRemindMeLater), false);
+        bottomSheetCell2.background.setOnClickListener(new View.OnClickListener() { // from class: Components.UpdateAppAlertDialog$$ExternalSyntheticLambda1
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                UpdateAppAlertDialog.this.lambda$new$3(view2);
+            }
+        });
+        frameLayout.addView(bottomSheetCell2, LayoutHelper.createFrame(-1, 50, 83, 0, 0, 0, 0));
+        updateUI();
+        FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) this.scrollView.getLayoutParams();
+        int i4 = layoutParams2.bottomMargin - bottomSheetCell.getLayoutParams().height;
+        layoutParams2.bottomMargin = i4;
+        int i5 = i4 - bottomSheetCell2.getLayoutParams().height;
+        layoutParams2.bottomMargin = i5;
+        layoutParams2.bottomMargin = i5 + AndroidUtilities.m104dp(50);
+        this.scrollView.setLayoutParams(layoutParams2);
+        AndroidUtilities.removeFromParent(this.shadow);
+        AndroidUtilities.removeFromParent(bottomSheetCell);
+        AndroidUtilities.removeFromParent(bottomSheetCell2);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$0(BackupImageView backupImageView) {
+        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(this.appUpdate.sticker.thumbs, Theme.key_windowBackgroundGray, 1.0f);
+        ImageLocation forDocument = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(this.appUpdate.sticker.thumbs, 90), this.appUpdate.sticker);
+        if (svgThumb != null) {
+            backupImageView.setImage(ImageLocation.getForDocument(this.appUpdate.sticker), "250_250", svgThumb, 0, "update");
+        } else {
+            backupImageView.setImage(ImageLocation.getForDocument(this.appUpdate.sticker), "250_250", forDocument, (String) null, 0, "update");
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$1(TextView textView) {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.appUpdate.text);
+        MessageObject.addEntitiesToText(spannableStringBuilder, this.appUpdate.entities, false, false, false, false);
+        textView.setText(spannableStringBuilder);
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$2(View view) {
+        FileLoader.getInstance(this.accountNum).loadFile(this.appUpdate.document, "update", 1, 1);
+        dismiss();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public /* synthetic */ void lambda$new$3(View view) {
+        dismiss();
+    }
+
+    private void runShadowAnimation(int i, final boolean z) {
+        if ((!z || this.shadow.getTag() == null) && (z || this.shadow.getTag() != null)) {
+            return;
+        }
+        this.shadow.setTag(z ? null : 1);
+        if (z) {
+            this.shadow.setVisibility(0);
+        }
+        AnimatorSet animatorSet = this.shadowAnimation;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.shadowAnimation = animatorSet2;
+        Animator[] animatorArr = new Animator[1];
+        View view = this.shadow;
+        Property property = View.ALPHA;
+        float[] fArr = new float[1];
+        fArr[0] = z ? 1.0f : BitmapDescriptorFactory.HUE_RED;
+        animatorArr[0] = ObjectAnimator.ofFloat(view, property, fArr);
+        animatorSet2.playTogether(animatorArr);
+        this.shadowAnimation.setDuration(150L);
+        this.shadowAnimation.addListener(new AnimatorListenerAdapter() { // from class: Components.UpdateAppAlertDialog.3
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationEnd(Animator animator) {
+                if (UpdateAppAlertDialog.this.shadowAnimation == null || !UpdateAppAlertDialog.this.shadowAnimation.equals(animator)) {
+                    return;
+                }
+                if (!z) {
+                    UpdateAppAlertDialog.this.shadow.setVisibility(4);
+                }
+                UpdateAppAlertDialog.this.shadowAnimation = null;
+            }
+
+            @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+            public void onAnimationCancel(Animator animator) {
+                if (UpdateAppAlertDialog.this.shadowAnimation == null || !UpdateAppAlertDialog.this.shadowAnimation.equals(animator)) {
+                    return;
+                }
+                UpdateAppAlertDialog.this.shadowAnimation = null;
+            }
+        });
+        this.shadowAnimation.start();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public void updateLayout() {
+        this.linearLayout.getChildAt(0).getLocationInWindow(this.location);
+        int max = Math.max(this.location[1] - AndroidUtilities.m104dp(24), 0);
+        if (this.location[1] + this.linearLayout.getMeasuredHeight() <= (this.container.getMeasuredHeight() - AndroidUtilities.m104dp(113)) + this.containerView.getTranslationY()) {
+            runShadowAnimation(0, false);
+        } else {
+            runShadowAnimation(0, true);
+        }
+        if (this.scrollOffsetY != max) {
+            this.scrollOffsetY = max;
+            this.scrollView.invalidate();
+        }
+    }
+}

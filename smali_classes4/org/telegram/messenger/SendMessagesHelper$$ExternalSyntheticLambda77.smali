@@ -20,7 +20,9 @@
 
 .field public final synthetic f$14:Ljava/lang/String;
 
-.field public final synthetic f$15:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field public final synthetic f$15:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
+
+.field public final synthetic f$16:Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
 .field public final synthetic f$2:Lorg/telegram/messenger/MessageObject;
 
@@ -40,7 +42,7 @@
 
 
 # direct methods
-.method public synthetic constructor <init>([Landroid/graphics/Bitmap;[Ljava/lang/String;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$TL_photo;Ljava/util/HashMap;Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZIZLjava/lang/String;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public synthetic constructor <init>([Landroid/graphics/Bitmap;[Ljava/lang/String;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$TL_photo;Ljava/util/HashMap;Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZIZLjava/lang/String;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;)V
     .locals 3
 
     move-object v0, p0
@@ -109,7 +111,11 @@
 
     move-object/from16 v1, p17
 
-    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda77;->f$15:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda77;->f$15:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
+
+    move-object/from16 v1, p18
+
+    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda77;->f$16:Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
     return-void
 .end method
@@ -117,7 +123,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 19
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -149,19 +155,23 @@
 
     iget-boolean v15, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda77;->f$13:Z
 
-    move-object/from16 v18, v1
+    move-object/from16 v19, v1
 
     iget-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda77;->f$14:Ljava/lang/String;
 
     move-object/from16 v16, v1
 
-    iget-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda77;->f$15:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda77;->f$15:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     move-object/from16 v17, v1
 
-    move-object/from16 v1, v18
+    iget-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda77;->f$16:Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
-    invoke-static/range {v1 .. v17}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$wX56JtX9dSvtZ2yHrzbGXSiG1nQ([Landroid/graphics/Bitmap;[Ljava/lang/String;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$TL_photo;Ljava/util/HashMap;Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZIZLjava/lang/String;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+    move-object/from16 v18, v1
+
+    move-object/from16 v1, v19
+
+    invoke-static/range {v1 .. v18}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$3TtDuoSEvO1xk1hK3w-LNlJd3Mw([Landroid/graphics/Bitmap;[Ljava/lang/String;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$TL_photo;Ljava/util/HashMap;Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;ZIZLjava/lang/String;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;)V
 
     return-void
 .end method

@@ -37,7 +37,7 @@
 
     check-cast p1, Ljava/lang/Void;
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$MJ35Q6uNfgQrzgN7l5xPKECNzps(Ljava/lang/Void;)Lorg/telegram/ui/DialogsActivity;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$pNzgFy1f7irYzYSEHEAHfuxUiNI(Ljava/lang/Void;)Lorg/telegram/ui/DialogsActivity;
 
     move-result-object p1
 

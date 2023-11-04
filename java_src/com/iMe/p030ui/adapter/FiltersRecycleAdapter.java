@@ -10,7 +10,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* compiled from: FiltersRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.adapter.FiltersRecycleAdapter */
 /* loaded from: classes.dex */
@@ -21,7 +21,7 @@ public final class FiltersRecycleAdapter extends BaseQuickAdapter<FilterItem, Ba
     }
 
     public FiltersRecycleAdapter() {
-        super(C3630R.layout.fork_recycle_item_filter, null, 2, null);
+        super(C3634R.layout.fork_recycle_item_filter, null, 2, null);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -29,7 +29,7 @@ public final class FiltersRecycleAdapter extends BaseQuickAdapter<FilterItem, Ba
     public void convert(BaseViewHolder holder, final FilterItem item) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(holder, C3630R.C3633id.view_filter, new Function1<TopicView, Unit>() { // from class: com.iMe.ui.adapter.FiltersRecycleAdapter$convert$1
+        BaseQuickAdapterExtKt.applyForView(holder, C3634R.C3637id.view_filter, new Function1<TopicView, Unit>() { // from class: com.iMe.ui.adapter.FiltersRecycleAdapter$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -44,7 +44,7 @@ public final class FiltersRecycleAdapter extends BaseQuickAdapter<FilterItem, Ba
             /* renamed from: invoke  reason: avoid collision after fix types in other method */
             public final void invoke2(TopicView applyForView) {
                 Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
-                applyForView.setHorizontalMargins(0, AndroidUtilities.m102dp(8));
+                applyForView.setHorizontalMargins(0, AndroidUtilities.m104dp(8));
                 applyForView.setFilterItem(FilterItem.this);
             }
         });
@@ -55,7 +55,7 @@ public final class FiltersRecycleAdapter extends BaseQuickAdapter<FilterItem, Ba
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseQuickAdapterExtKt.applyForView(holder, C3630R.C3633id.view_filter, new Function1<TopicView, Unit>() { // from class: com.iMe.ui.adapter.FiltersRecycleAdapter$convert$2
+        BaseQuickAdapterExtKt.applyForView(holder, C3634R.C3637id.view_filter, new Function1<TopicView, Unit>() { // from class: com.iMe.ui.adapter.FiltersRecycleAdapter$convert$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

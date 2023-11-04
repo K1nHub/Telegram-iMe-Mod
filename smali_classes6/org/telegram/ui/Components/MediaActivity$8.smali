@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MediaActivity;IZ)V
     .locals 0
 
-    .line 1198
+    .line 1188
     iput-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$8;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     iput p2, p0, Lorg/telegram/ui/Components/MediaActivity$8;->val$i:I
@@ -43,10 +43,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
 
-    .line 1201
+    .line 1191
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$8;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$2100(Lorg/telegram/ui/Components/MediaActivity;)[F
+    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$2200(Lorg/telegram/ui/Components/MediaActivity;)[F
 
     move-result-object p1
 
@@ -70,10 +70,10 @@
     :goto_0
     aput v1, p1, v0
 
-    .line 1202
+    .line 1192
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$8;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$300(Lorg/telegram/ui/Components/MediaActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$400(Lorg/telegram/ui/Components/MediaActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     move-result-object p1
 
@@ -97,10 +97,10 @@
     :goto_1
     invoke-virtual {p1, v0}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1203
+    .line 1193
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$8;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$300(Lorg/telegram/ui/Components/MediaActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$400(Lorg/telegram/ui/Components/MediaActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     move-result-object p1
 
@@ -117,10 +117,10 @@
     :cond_2
     invoke-virtual {p1, v1}, Landroid/view/View;->setScaleY(F)V
 
-    .line 1204
+    .line 1194
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$8;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$300(Lorg/telegram/ui/Components/MediaActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$400(Lorg/telegram/ui/Components/MediaActivity;)[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     move-result-object p1
 
@@ -148,10 +148,10 @@
     :goto_2
     invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1205
+    .line 1195
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$8;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$400(Lorg/telegram/ui/Components/MediaActivity;)[Lorg/telegram/ui/Components/AnimatedTextView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$500(Lorg/telegram/ui/Components/MediaActivity;)[Lorg/telegram/ui/Components/AnimatedTextView;
 
     move-result-object p1
 
@@ -168,15 +168,15 @@
     :cond_4
     invoke-virtual {p1, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1207
+    .line 1197
     iget-boolean p1, p0, Lorg/telegram/ui/Components/MediaActivity$8;->val$show:Z
 
     if-nez p1, :cond_5
 
-    .line 1208
+    .line 1198
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$8;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$400(Lorg/telegram/ui/Components/MediaActivity;)[Lorg/telegram/ui/Components/AnimatedTextView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$500(Lorg/telegram/ui/Components/MediaActivity;)[Lorg/telegram/ui/Components/AnimatedTextView;
 
     move-result-object p1
 

@@ -112,14 +112,14 @@ public final class McStateExtraAux implements TlbObject {
         }
         if (obj instanceof McStateExtraAux) {
             McStateExtraAux mcStateExtraAux = (McStateExtraAux) obj;
-            return this.flags == mcStateExtraAux.flags && Intrinsics.areEqual(this.validatorInfo, mcStateExtraAux.validatorInfo) && OldMcBlocksInfo.m4980equalsimpl0(this.prevBlocks, mcStateExtraAux.prevBlocks) && this.afterKeyBlock == mcStateExtraAux.afterKeyBlock && Intrinsics.areEqual(this.lastKeyBlock, mcStateExtraAux.lastKeyBlock) && Intrinsics.areEqual(this.blockCreateStats, mcStateExtraAux.blockCreateStats);
+            return this.flags == mcStateExtraAux.flags && Intrinsics.areEqual(this.validatorInfo, mcStateExtraAux.validatorInfo) && OldMcBlocksInfo.m5134equalsimpl0(this.prevBlocks, mcStateExtraAux.prevBlocks) && this.afterKeyBlock == mcStateExtraAux.afterKeyBlock && Intrinsics.areEqual(this.lastKeyBlock, mcStateExtraAux.lastKeyBlock) && Intrinsics.areEqual(this.blockCreateStats, mcStateExtraAux.blockCreateStats);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((((this.flags * 31) + this.validatorInfo.hashCode()) * 31) + OldMcBlocksInfo.m4981hashCodeimpl(this.prevBlocks)) * 31;
+        int hashCode = ((((this.flags * 31) + this.validatorInfo.hashCode()) * 31) + OldMcBlocksInfo.m5135hashCodeimpl(this.prevBlocks)) * 31;
         boolean z = this.afterKeyBlock;
         int i = z;
         if (z != 0) {
@@ -166,7 +166,7 @@ public final class McStateExtraAux implements TlbObject {
         KSerializer<Object>[] kSerializerArr = $childSerializers;
         compositeEncoder.encodeIntElement(serialDescriptor, 0, mcStateExtraAux.flags);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ValidatorInfo$$serializer.INSTANCE, mcStateExtraAux.validatorInfo);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, OldMcBlocksInfo$$serializer.INSTANCE, OldMcBlocksInfo.m4977boximpl(mcStateExtraAux.prevBlocks));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, OldMcBlocksInfo$$serializer.INSTANCE, OldMcBlocksInfo.m5131boximpl(mcStateExtraAux.prevBlocks));
         compositeEncoder.encodeBooleanElement(serialDescriptor, 3, mcStateExtraAux.afterKeyBlock);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 4, kSerializerArr[4], mcStateExtraAux.lastKeyBlock);
         compositeEncoder.encodeNullableSerializableElement(serialDescriptor, 5, kSerializerArr[5], mcStateExtraAux.blockCreateStats);
@@ -181,7 +181,7 @@ public final class McStateExtraAux implements TlbObject {
     }
 
     /* renamed from: getPrevBlocks-D6f0ERk  reason: not valid java name */
-    public final HashmapAugE<KeyExtBlkRef, KeyMaxLt> m4969getPrevBlocksD6f0ERk() {
+    public final HashmapAugE<KeyExtBlkRef, KeyMaxLt> m5123getPrevBlocksD6f0ERk() {
         return this.prevBlocks;
     }
 
@@ -249,7 +249,7 @@ public final class McStateExtraAux implements TlbObject {
         TlbPrettyPrinter open = printer.open("");
         open.field("flags", Integer.valueOf(this.flags));
         open.field("validator_info", this.validatorInfo);
-        open.field("prev_blocks", OldMcBlocksInfo.m4977boximpl(this.prevBlocks));
+        open.field("prev_blocks", OldMcBlocksInfo.m5131boximpl(this.prevBlocks));
         open.field("after_key_block", Boolean.valueOf(this.afterKeyBlock));
         open.field("last_key_block", this.lastKeyBlock);
         open.field("block_create_stats", this.blockCreateStats);

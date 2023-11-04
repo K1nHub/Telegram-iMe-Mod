@@ -43,11 +43,11 @@ public final class Certificate {
     }
 
     public int hashCode() {
-        return (((this.temp_key.hashCode() * 31) + UInt.m1969hashCodeimpl(this.valid_since)) * 31) + UInt.m1969hashCodeimpl(this.valid_until);
+        return (((this.temp_key.hashCode() * 31) + UInt.m1974hashCodeimpl(this.valid_since)) * 31) + UInt.m1974hashCodeimpl(this.valid_until);
     }
 
     public String toString() {
-        return "Certificate(temp_key=" + this.temp_key + ", valid_since=" + ((Object) UInt.m1970toStringimpl(this.valid_since)) + ", valid_until=" + ((Object) UInt.m1970toStringimpl(this.valid_until)) + ')';
+        return "Certificate(temp_key=" + this.temp_key + ", valid_since=" + ((Object) UInt.m1975toStringimpl(this.valid_since)) + ", valid_until=" + ((Object) UInt.m1975toStringimpl(this.valid_until)) + ')';
     }
 
     private Certificate(int i, SigPubKey sigPubKey, UInt uInt, UInt uInt2, SerializationConstructorMarker serializationConstructorMarker) {
@@ -55,8 +55,8 @@ public final class Certificate {
             PluginExceptionsKt.throwMissingFieldException(i, 7, Certificate$$serializer.INSTANCE.getDescriptor());
         }
         this.temp_key = sigPubKey;
-        this.valid_since = uInt.m1971unboximpl();
-        this.valid_until = uInt2.m1971unboximpl();
+        this.valid_since = uInt.m1976unboximpl();
+        this.valid_until = uInt2.m1976unboximpl();
     }
 
     private Certificate(SigPubKey temp_key, int i, int i2) {
@@ -69,8 +69,8 @@ public final class Certificate {
     public static final /* synthetic */ void write$Self(Certificate certificate, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         compositeEncoder.encodeSerializableElement(serialDescriptor, 0, SigPubKey$$serializer.INSTANCE, certificate.temp_key);
         UIntSerializer uIntSerializer = UIntSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uIntSerializer, UInt.m1966boximpl(certificate.valid_since));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uIntSerializer, UInt.m1966boximpl(certificate.valid_until));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uIntSerializer, UInt.m1971boximpl(certificate.valid_since));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uIntSerializer, UInt.m1971boximpl(certificate.valid_until));
     }
 
     public final SigPubKey getTemp_key() {
@@ -78,12 +78,12 @@ public final class Certificate {
     }
 
     /* renamed from: getValid_since-pVg5ArA  reason: not valid java name */
-    public final int m4941getValid_sincepVg5ArA() {
+    public final int m5095getValid_sincepVg5ArA() {
         return this.valid_since;
     }
 
     /* renamed from: getValid_until-pVg5ArA  reason: not valid java name */
-    public final int m4942getValid_untilpVg5ArA() {
+    public final int m5096getValid_untilpVg5ArA() {
         return this.valid_until;
     }
 

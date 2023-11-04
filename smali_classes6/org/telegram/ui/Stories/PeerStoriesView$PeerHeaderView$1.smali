@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;Landroid/content/Context;)V
     .locals 0
 
-    .line 4417
+    .line 4475
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView$1;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 4420
+    .line 4478
     iget-object v0, p0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getVisible()Z
@@ -44,7 +44,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4421
+    .line 4479
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -63,7 +63,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 4422
+    .line 4480
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView$1;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;
 
     const/4 v2, 0x1
@@ -72,7 +72,7 @@
 
     invoke-virtual {v1, p1, v0, v2, v3}, Lorg/telegram/ui/Stories/PeerStoriesView$PeerHeaderView;->drawUploadingProgress(Landroid/graphics/Canvas;Landroid/graphics/RectF;ZF)V
 
-    .line 4424
+    .line 4482
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BackupImageView;->onDraw(Landroid/graphics/Canvas;)V
 

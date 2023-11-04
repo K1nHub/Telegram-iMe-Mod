@@ -9,6 +9,6 @@ final class ShardDescrTlbCombinator extends TlbCombinator<ShardDescr> {
     public static final ShardDescrTlbCombinator INSTANCE = new ShardDescrTlbCombinator();
 
     private ShardDescrTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(ShardDescr.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(ShardDescrOld.class), ShardDescrOld.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(ShardDescrNew.class), ShardDescrNew.Companion));
+        super(Reflection.getOrCreateKotlinClass(ShardDescr.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(ShardDescrOld.class), ShardDescrOld.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(ShardDescrNew.class), ShardDescrNew.Companion));
     }
 }

@@ -7,7 +7,7 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.StringExtKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: BlockchainWalletDetailsPresenter.kt */
 @InjectViewState
@@ -25,7 +25,7 @@ public final class BlockchainWalletDetailsPresenter extends BasePresenter<Blockc
     }
 
     public final void showResetWalletConfirmationDialog() {
-        ((BlockchainWalletDetailsView) getViewState()).showResetWalletConfirmationDialog(new DialogModel(this.resourceManager.getString(C3630R.string.wallet_details_reset_title), this.resourceManager.getString(C3630R.string.wallet_details_reset_description), LocaleController.getString("Cancel", C3630R.string.Cancel), LocaleController.getString("Reset", C3630R.string.Reset)));
+        ((BlockchainWalletDetailsView) getViewState()).showResetWalletConfirmationDialog(new DialogModel(this.resourceManager.getString(C3634R.string.wallet_details_reset_title), this.resourceManager.getString(C3634R.string.wallet_details_reset_description), LocaleController.getString("Cancel", C3634R.string.Cancel), LocaleController.getString("Reset", C3634R.string.Reset)));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

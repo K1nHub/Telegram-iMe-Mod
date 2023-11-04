@@ -59,10 +59,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 21442
+    .line 21255
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 21481
+    .line 21295
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -81,7 +81,7 @@
 
     goto :goto_0
 
-    .line 21506
+    .line 21323
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPageNotModified;
 
@@ -89,7 +89,7 @@
 
     goto :goto_0
 
-    .line 21494
+    .line 21308
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_layer104;
 
@@ -97,64 +97,80 @@
 
     goto :goto_0
 
-    .line 21491
+    .line 21314
     :sswitch_2
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_layer107;
-
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_webPage_layer107;-><init>()V
-
-    goto :goto_0
-
-    .line 21500
-    :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPageEmpty;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_webPageEmpty;-><init>()V
 
     goto :goto_0
 
-    .line 21488
+    .line 21305
+    :sswitch_3
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_layer107;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_webPage_layer107;-><init>()V
+
+    goto :goto_0
+
+    .line 21317
     :sswitch_4
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPageEmpty_layer165;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_webPageEmpty_layer165;-><init>()V
+
+    goto :goto_0
+
+    .line 21302
+    :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_webPage;-><init>()V
 
     goto :goto_0
 
-    .line 21503
-    :sswitch_5
+    .line 21320
+    :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPageUrlPending;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_webPageUrlPending;-><init>()V
 
     goto :goto_0
 
-    .line 21515
-    :sswitch_6
+    .line 21335
+    :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_layer58;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_webPage_layer58;-><init>()V
 
     goto :goto_0
 
-    .line 21509
-    :sswitch_7
+    .line 21329
+    :sswitch_8
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPagePending_layer165;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_webPagePending_layer165;-><init>()V
+
+    goto :goto_0
+
+    .line 21326
+    :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPagePending;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_webPagePending;-><init>()V
 
     goto :goto_0
 
-    .line 21497
-    :sswitch_8
+    .line 21311
+    :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_old;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_webPage_old;-><init>()V
 
     goto :goto_0
 
-    .line 21512
-    :sswitch_9
+    .line 21332
+    :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webPageNotModified_layer110;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_webPageNotModified_layer110;-><init>()V
@@ -166,7 +182,7 @@
 
     goto :goto_1
 
-    .line 21519
+    .line 21339
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -196,7 +212,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 21522
+    .line 21342
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2
@@ -206,14 +222,16 @@
 
     :sswitch_data_0
     .sparse-switch
-        -0x7a7b6b8d -> :sswitch_9
-        -0x5ce15f4b -> :sswitch_8
-        -0x3a7925e4 -> :sswitch_7
-        -0x357df129 -> :sswitch_6
-        -0x2be5ae99 -> :sswitch_5
-        -0x1763ba4e -> :sswitch_4
-        -0x14eb8818 -> :sswitch_3
-        -0x59b1e8e -> :sswitch_2
+        -0x7a7b6b8d -> :sswitch_b
+        -0x5ce15f4b -> :sswitch_a
+        -0x4f2ec1b9 -> :sswitch_9
+        -0x3a7925e4 -> :sswitch_8
+        -0x357df129 -> :sswitch_7
+        -0x2be5ae99 -> :sswitch_6
+        -0x1763ba4e -> :sswitch_5
+        -0x14eb8818 -> :sswitch_4
+        -0x59b1e8e -> :sswitch_3
+        0x211a1788 -> :sswitch_2
         0x5f07b4bc -> :sswitch_1
         0x7311ca11 -> :sswitch_0
     .end sparse-switch

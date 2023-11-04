@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet;)V
     .locals 0
 
-    .line 1119
+    .line 1140
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$12;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method private static synthetic lambda$onLayoutChange$0(Lorg/telegram/messenger/AnimationNotificationsLocker;Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
-    .line 1134
+    .line 1155
     invoke-virtual {p0}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
     return-void
@@ -55,10 +55,10 @@
 .method public onLayoutChange(Landroid/view/View;IIIIIIII)V
     .locals 0
 
-    .line 1122
+    .line 1143
     invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 1124
+    .line 1145
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$12;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$500(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
@@ -79,10 +79,10 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->setSwipeOffsetY(F)V
 
-    .line 1125
+    .line 1146
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$12;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1800(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->access$1900(Lorg/telegram/ui/Components/BotWebViewSheet;)Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     move-result-object p1
 
@@ -90,15 +90,15 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1127
+    .line 1148
     new-instance p1, Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-direct {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;-><init>()V
 
-    .line 1128
+    .line 1149
     invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
 
-    .line 1129
+    .line 1150
     new-instance p2, Landroidx/dynamicanimation/animation/SpringAnimation;
 
     iget-object p3, p0, Lorg/telegram/ui/Components/BotWebViewSheet$12;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
@@ -119,19 +119,19 @@
 
     const/high16 p4, 0x3f400000    # 0.75f
 
-    .line 1131
+    .line 1152
     invoke-virtual {p3, p4}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object p3
 
     const/high16 p4, 0x43fa0000    # 500.0f
 
-    .line 1132
+    .line 1153
     invoke-virtual {p3, p4}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object p3
 
-    .line 1130
+    .line 1151
     invoke-virtual {p2, p3}, Landroidx/dynamicanimation/animation/SpringAnimation;->setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
 
     move-result-object p2
@@ -140,14 +140,14 @@
 
     invoke-direct {p3, p1}, Lorg/telegram/ui/Components/BotWebViewSheet$12$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/AnimationNotificationsLocker;)V
 
-    .line 1133
+    .line 1154
     invoke-virtual {p2, p3}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
     move-result-object p1
 
     check-cast p1, Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 1135
+    .line 1156
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
     return-void

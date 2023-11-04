@@ -34,7 +34,7 @@
 .method constructor <init>(Lorg/telegram/ui/SecretMediaViewer;IZZ)V
     .locals 0
 
-    .line 1101
+    .line 1106
     iput-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$11;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     iput-boolean p3, p0, Lorg/telegram/ui/SecretMediaViewer$11;->val$isCurrentCaptionEmpty:Z
@@ -49,7 +49,7 @@
 .method private synthetic lambda$onAppear$0(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 1113
+    .line 1118
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$11;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$2700(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -68,7 +68,7 @@
 
     iput p1, v0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->backgroundAlpha:F
 
-    .line 1114
+    .line 1119
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$11;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$2700(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -85,12 +85,12 @@
 .method public onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
     .locals 0
 
-    .line 1104
+    .line 1109
     invoke-super {p0, p1, p2, p3, p4}, Landroid/transition/Fade;->onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
 
     move-result-object p1
 
-    .line 1105
+    .line 1110
     iget-boolean p3, p0, Lorg/telegram/ui/SecretMediaViewer$11;->val$isCurrentCaptionEmpty:Z
 
     if-eqz p3, :cond_0
@@ -107,14 +107,14 @@
 
     if-ne p2, p3, :cond_0
 
-    .line 1106
+    .line 1111
     new-instance p2, Lorg/telegram/ui/SecretMediaViewer$11$1;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/SecretMediaViewer$11$1;-><init>(Lorg/telegram/ui/SecretMediaViewer$11;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1112
+    .line 1117
     move-object p2, p1
 
     check-cast p2, Landroid/animation/ObjectAnimator;

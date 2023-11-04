@@ -11,7 +11,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ProgressView.kt */
 /* renamed from: com.iMe.ui.custom.ProgressView */
 /* loaded from: classes3.dex */
@@ -51,7 +51,7 @@ public final class ProgressView extends View {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
-                return Integer.valueOf(AndroidUtilities.m102dp(24));
+                return Integer.valueOf(AndroidUtilities.m104dp(24));
             }
         });
         this.viewHeight$delegate = lazy;
@@ -59,7 +59,7 @@ public final class ProgressView extends View {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(AndroidUtilities.m102dp(6));
+                return Float.valueOf(AndroidUtilities.m104dp(6));
             }
         });
         this.strokeWidth$delegate = lazy2;
@@ -82,7 +82,7 @@ public final class ProgressView extends View {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(AndroidUtilities.m102dp(15));
+                return Float.valueOf(AndroidUtilities.m104dp(15));
             }
         });
         this.lineY$delegate = lazy4;

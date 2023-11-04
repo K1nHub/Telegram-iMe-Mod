@@ -53,7 +53,7 @@ public final class ManagerModuleKt {
             List emptyList3;
             List emptyList4;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C12441 c12441 = new Function2<Scope, ParametersHolder, PushNotificationsManager>() { // from class: com.iMe.di.module.ManagerModuleKt$presentationManagerModule$1.1
+            C12501 c12501 = new Function2<Scope, ParametersHolder, PushNotificationsManager>() { // from class: com.iMe.di.module.ManagerModuleKt$presentationManagerModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final PushNotificationsManager invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -65,10 +65,10 @@ public final class ManagerModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Factory;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(PushNotificationsManager.class), null, c12441, kind, emptyList));
+            FactoryInstanceFactory factoryInstanceFactory = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(PushNotificationsManager.class), null, c12501, kind, emptyList));
             module.indexPrimaryType(factoryInstanceFactory);
             new KoinDefinition(module, factoryInstanceFactory);
-            C12452 c12452 = new Function2<Scope, ParametersHolder, CryptoRecipientManager>() { // from class: com.iMe.di.module.ManagerModuleKt$presentationManagerModule$1.2
+            C12512 c12512 = new Function2<Scope, ParametersHolder, CryptoRecipientManager>() { // from class: com.iMe.di.module.ManagerModuleKt$presentationManagerModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoRecipientManager invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -79,10 +79,10 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory2 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(CryptoRecipientManager.class), null, c12452, kind, emptyList2));
+            FactoryInstanceFactory factoryInstanceFactory2 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(CryptoRecipientManager.class), null, c12512, kind, emptyList2));
             module.indexPrimaryType(factoryInstanceFactory2);
             new KoinDefinition(module, factoryInstanceFactory2);
-            C12463 c12463 = new Function2<Scope, ParametersHolder, BinancePayProcessManager>() { // from class: com.iMe.di.module.ManagerModuleKt$presentationManagerModule$1.3
+            C12523 c12523 = new Function2<Scope, ParametersHolder, BinancePayProcessManager>() { // from class: com.iMe.di.module.ManagerModuleKt$presentationManagerModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final BinancePayProcessManager invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -92,10 +92,10 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory3 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(BinancePayProcessManager.class), null, c12463, kind, emptyList3));
+            FactoryInstanceFactory factoryInstanceFactory3 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(BinancePayProcessManager.class), null, c12523, kind, emptyList3));
             module.indexPrimaryType(factoryInstanceFactory3);
             new KoinDefinition(module, factoryInstanceFactory3);
-            C12474 c12474 = new Function2<Scope, ParametersHolder, WalletCreateManager>() { // from class: com.iMe.di.module.ManagerModuleKt$presentationManagerModule$1.4
+            C12534 c12534 = new Function2<Scope, ParametersHolder, WalletCreateManager>() { // from class: com.iMe.di.module.ManagerModuleKt$presentationManagerModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletCreateManager invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -105,7 +105,7 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            FactoryInstanceFactory factoryInstanceFactory4 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletCreateManager.class), null, c12474, kind, emptyList4));
+            FactoryInstanceFactory factoryInstanceFactory4 = new FactoryInstanceFactory(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletCreateManager.class), null, c12534, kind, emptyList4));
             module.indexPrimaryType(factoryInstanceFactory4);
             new KoinDefinition(module, factoryInstanceFactory4);
         }

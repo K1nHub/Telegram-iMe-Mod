@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)V
     .locals 0
 
-    .line 1850
+    .line 1851
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iput p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->val$fromProgress:F
@@ -42,7 +42,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 3
 
-    .line 1853
+    .line 1854
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -57,7 +57,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$3102(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)F
 
-    .line 1854
+    .line 1855
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->val$fromProgress:F
@@ -74,7 +74,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$2602(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)F
 
-    .line 1855
+    .line 1856
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

@@ -36,33 +36,33 @@
 .method constructor <init>(Lorg/telegram/ui/ThemeActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1723
+    .line 1737
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 1724
+    .line 1738
     iput-object p2, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->mContext:Landroid/content/Context;
 
-    .line 1725
+    .line 1739
     invoke-virtual {p0}, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->notifyDataSetChanged()V
 
     return-void
 .end method
 
-.method static synthetic access$10700(Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;)Ljava/util/ArrayList;
+.method static synthetic access$10800(Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 1717
+    .line 1731
     iget-object p0, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->themeAccents:Ljava/util/ArrayList;
 
     return-object p0
 .end method
 
-.method static synthetic access$10800(Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+.method static synthetic access$10900(Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
     .locals 0
 
-    .line 1717
+    .line 1731
     iget-object p0, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->currentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     return-object p0
@@ -71,7 +71,7 @@
 .method static synthetic access$8300(Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;)I
     .locals 0
 
-    .line 1717
+    .line 1731
     invoke-direct {p0}, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->findCurrentAccent()I
 
     move-result p0
@@ -82,7 +82,7 @@
 .method private findCurrentAccent()I
     .locals 3
 
-    .line 1780
+    .line 1794
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->themeAccents:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->currentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
@@ -105,7 +105,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1776
+    .line 1790
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->themeAccents:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -134,7 +134,7 @@
 .method public getItemViewType(I)I
     .locals 2
 
-    .line 1742
+    .line 1756
     invoke-virtual {p0}, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->getItemCount()I
 
     move-result v0
@@ -165,7 +165,7 @@
 .method public notifyDataSetChanged()V
     .locals 2
 
-    .line 1730
+    .line 1744
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->this$0:Lorg/telegram/ui/ThemeActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemeActivity;->access$2100(Lorg/telegram/ui/ThemeActivity;)I
@@ -190,7 +190,7 @@
     :goto_0
     iput-object v0, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->currentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    .line 1731
+    .line 1745
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->themeAccents:Ljava/util/ArrayList;
 
     if-nez v0, :cond_1
@@ -213,7 +213,7 @@
     :goto_1
     iput-object v0, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->themeAccents:Ljava/util/ArrayList;
 
-    .line 1732
+    .line 1746
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
@@ -222,7 +222,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 2
 
-    .line 1760
+    .line 1774
     invoke-virtual {p0, p2}, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->getItemViewType(I)I
 
     move-result v0
@@ -235,26 +235,26 @@
 
     goto :goto_0
 
-    .line 1767
+    .line 1781
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ThemeActivity$InnerCustomAccentView;
 
-    .line 1768
+    .line 1782
     iget-object p2, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->currentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/ThemeActivity$InnerCustomAccentView;->access$2300(Lorg/telegram/ui/ThemeActivity$InnerCustomAccentView;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
 
     goto :goto_0
 
-    .line 1762
+    .line 1776
     :cond_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ThemeActivity$InnerAccentView;
 
-    .line 1763
+    .line 1777
     iget-object v0, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->currentTheme:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     iget-object v1, p0, Lorg/telegram/ui/ThemeActivity$ThemeAccentsListAdapter;->themeAccents:Ljava/util/ArrayList;
@@ -276,7 +276,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 1753
+    .line 1767
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     new-instance p2, Lorg/telegram/ui/ThemeActivity$InnerCustomAccentView;
@@ -289,7 +289,7 @@
 
     return-object p1
 
-    .line 1749
+    .line 1763
     :cond_0
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

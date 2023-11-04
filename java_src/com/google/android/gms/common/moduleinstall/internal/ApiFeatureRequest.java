@@ -35,17 +35,17 @@ public class ApiFeatureRequest extends AbstractSafeParcelable {
             return (feature.getVersion() > feature2.getVersion() ? 1 : (feature.getVersion() == feature2.getVersion() ? 0 : -1));
         }
     };
-    @SafeParcelable.Field(getter = "getApiFeatures", m1089id = 1)
+    @SafeParcelable.Field(getter = "getApiFeatures", m1090id = 1)
     private final List zab;
-    @SafeParcelable.Field(getter = "getIsUrgent", m1089id = 2)
+    @SafeParcelable.Field(getter = "getIsUrgent", m1090id = 2)
     private final boolean zac;
-    @SafeParcelable.Field(getter = "getFeatureRequestSessionId", m1089id = 3)
+    @SafeParcelable.Field(getter = "getFeatureRequestSessionId", m1090id = 3)
     private final String zad;
-    @SafeParcelable.Field(getter = "getCallingPackage", m1089id = 4)
+    @SafeParcelable.Field(getter = "getCallingPackage", m1090id = 4)
     private final String zae;
 
     @SafeParcelable.Constructor
-    public ApiFeatureRequest(@SafeParcelable.Param(m1088id = 1) List list, @SafeParcelable.Param(m1088id = 2) boolean z, @SafeParcelable.Param(m1088id = 3) String str, @SafeParcelable.Param(m1088id = 4) String str2) {
+    public ApiFeatureRequest(@SafeParcelable.Param(m1089id = 1) List list, @SafeParcelable.Param(m1089id = 2) boolean z, @SafeParcelable.Param(m1089id = 3) String str, @SafeParcelable.Param(m1089id = 4) String str2) {
         Preconditions.checkNotNull(list);
         this.zab = list;
         this.zac = z;

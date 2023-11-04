@@ -24,13 +24,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;)V
     .locals 0
 
-    .line 2001
+    .line 2002
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    .line 2002
+    .line 2003
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1999
+    .line 2000
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -47,7 +47,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 2008
+    .line 2009
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$3200(Lorg/telegram/ui/Components/ReactionsContainerLayout;)I
@@ -70,7 +70,7 @@
 
     goto :goto_0
 
-    .line 2011
+    .line 2012
     :cond_0
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItemIcon:I
 
@@ -106,18 +106,18 @@
 
     const/16 v1, 0x1e
 
-    .line 2009
+    .line 2010
     invoke-static {v0, v1}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result v0
 
-    .line 2013
+    .line 2014
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2015
+    .line 2016
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -128,7 +128,7 @@
 
     div-float/2addr v0, v1
 
-    .line 2016
+    .line 2017
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v2
@@ -139,12 +139,12 @@
 
     const/4 v3, 0x0
 
-    .line 2017
+    .line 2018
     invoke-virtual {p0, v3}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 2019
+    .line 2020
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v4
@@ -161,14 +161,14 @@
 
     div-float/2addr v4, v1
 
-    .line 2021
+    .line 2022
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->expandSize()F
 
     move-result v1
 
-    .line 2022
+    .line 2023
     sget-object v5, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     sub-float v6, v2, v4
@@ -185,10 +185,10 @@
 
     invoke-virtual {v5, v6, v7, v8, v9}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2023
+    .line 2024
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2024
+    .line 2025
     invoke-virtual {v3}, Landroid/view/View;->getScaleX()F
 
     move-result v6
@@ -199,26 +199,26 @@
 
     invoke-virtual {p1, v6, v3, v2, v0}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 2025
+    .line 2026
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$CustomReactionsContainer;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v5, v4, v4, v0}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 2026
+    .line 2027
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2028
+    .line 2029
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/4 v0, 0x0
 
-    .line 2029
+    .line 2030
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2030
+    .line 2031
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 2031
+    .line 2032
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void

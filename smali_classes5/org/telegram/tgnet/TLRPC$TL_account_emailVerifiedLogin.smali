@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x1e44f29f
-
-
 # instance fields
 .field public email:Ljava/lang/String;
 
@@ -14,12 +10,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
@@ -58,9 +48,9 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 426
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_emailVerifiedLogin;->constructor:I
+    const v0, -0x1e44f29f
 
+    .line 426
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     .line 427

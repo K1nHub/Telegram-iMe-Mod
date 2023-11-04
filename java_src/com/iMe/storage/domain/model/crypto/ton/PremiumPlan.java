@@ -62,7 +62,7 @@ public final class PremiumPlan {
     }
 
     public int hashCode() {
-        return (((((this.months * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.price)) * 31) + this.discount.hashCode()) * 31) + this.fiatPrice.hashCode();
+        return (((((this.months * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.price)) * 31) + this.discount.hashCode()) * 31) + this.fiatPrice.hashCode();
     }
 
     public String toString() {

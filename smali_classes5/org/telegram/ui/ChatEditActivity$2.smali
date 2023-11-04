@@ -38,7 +38,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatEditActivity;)V
     .locals 0
 
-    .line 497
+    .line 499
     iput-object p1, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -49,7 +49,7 @@
 .method private synthetic lambda$onItemClick$0()V
     .locals 1
 
-    .line 503
+    .line 505
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatEditActivity;->onSuccessDeleteAlbum()V
@@ -60,7 +60,7 @@
 .method private synthetic lambda$onItemClick$1(Z)V
     .locals 3
 
-    .line 503
+    .line 505
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getAlbumsController()Lcom/iMe/fork/controller/AlbumsController;
@@ -93,7 +93,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 502
+    .line 504
     iget-object v1, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     const/4 v2, 0x0
@@ -129,7 +129,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 507
+    .line 509
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1000(Lorg/telegram/ui/ChatEditActivity;)Z
@@ -138,7 +138,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 508
+    .line 510
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -150,7 +150,7 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 511
+    .line 513
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$2;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1100(Lorg/telegram/ui/ChatEditActivity;)V

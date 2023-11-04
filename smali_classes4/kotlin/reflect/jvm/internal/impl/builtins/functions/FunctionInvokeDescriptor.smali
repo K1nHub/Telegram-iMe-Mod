@@ -239,7 +239,7 @@
 
     move-result-object v6
 
-    const-string v7, "it.name"
+    const-string/jumbo v7, "it.name"
 
     invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -368,7 +368,7 @@
 
     invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p4, "kind"
+    const-string/jumbo p4, "kind"
 
     invoke-static {p3, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -429,7 +429,7 @@
 
     const/4 v3, 0x0
 
-    const-string v4, "it.type"
+    const-string/jumbo v4, "it.type"
 
     const/4 v5, 0x1
 

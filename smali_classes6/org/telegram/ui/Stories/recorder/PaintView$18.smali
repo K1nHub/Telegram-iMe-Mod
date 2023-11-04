@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Z)V
     .locals 0
 
-    .line 1488
+    .line 1494
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$18;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$18;->val$show:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1491
+    .line 1497
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$18;->val$show:Z
 
     if-nez p1, :cond_0
 
-    .line 1492
+    .line 1498
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$18;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/PaintView;->reactionLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -53,7 +53,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1493
+    .line 1499
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$18;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/PaintView;->reactionLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;

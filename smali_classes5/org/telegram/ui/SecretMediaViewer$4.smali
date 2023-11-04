@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SecretMediaViewer;Landroid/content/Context;)V
     .locals 0
 
-    .line 802
+    .line 807
     iput-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$4;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/SecretMediaViewer$FrameLayoutDrawer;-><init>(Lorg/telegram/ui/SecretMediaViewer;Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onLayout(ZIIII)V
     .locals 6
 
-    .line 805
+    .line 810
     invoke-super/range {p0 .. p5}, Landroid/widget/FrameLayout;->onLayout(ZIIII)V
 
-    .line 806
+    .line 811
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$4;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$2500(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;
@@ -51,7 +51,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 807
+    .line 812
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result p1
@@ -84,7 +84,7 @@
     :goto_0
     add-int/2addr p1, v2
 
-    .line 808
+    .line 813
     iget-object v2, p0, Lorg/telegram/ui/SecretMediaViewer$4;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/SecretMediaViewer;->access$2500(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/SecretMediaViewer$SecretDeleteTimer;
@@ -125,7 +125,7 @@
 
     invoke-virtual {v2, v3, p1, v4, v5}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 810
+    .line 815
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$4;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
@@ -143,7 +143,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 811
+    .line 816
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result p1
@@ -196,7 +196,7 @@
 
     sub-int/2addr p1, v2
 
-    .line 812
+    .line 817
     iget-object v2, p0, Lorg/telegram/ui/SecretMediaViewer$4;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/SecretMediaViewer;->access$2600(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -237,7 +237,7 @@
 
     invoke-virtual {v2, v3, p1, v4, v5}, Landroid/view/View;->layout(IIII)V
 
-    .line 814
+    .line 819
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$4;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
@@ -247,7 +247,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 815
+    .line 820
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result p1
@@ -266,7 +266,7 @@
     :goto_2
     add-int/2addr p1, v0
 
-    .line 816
+    .line 821
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$4;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$2700(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -307,7 +307,7 @@
 
     invoke-virtual {v0, v2, p1, v3, v4}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 818
+    .line 823
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$4;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
@@ -317,7 +317,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 819
+    .line 824
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$4;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/SecretMediaViewer;->access$2800(Lorg/telegram/ui/SecretMediaViewer;)Landroid/view/View;
@@ -341,20 +341,20 @@
 .method protected onMeasure(II)V
     .locals 6
 
-    .line 825
+    .line 830
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 826
+    .line 831
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p1
 
-    .line 827
+    .line 832
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result p2
 
-    .line 828
+    .line 833
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$4;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$2700(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
@@ -365,19 +365,19 @@
 
     if-eqz v0, :cond_2
 
-    .line 829
+    .line 834
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$4;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$2700(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/PhotoViewer$CaptionScrollView;
 
     move-result-object v0
 
-    .line 830
+    .line 835
     invoke-static {p1, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v2
 
-    .line 831
+    .line 836
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v3
@@ -434,10 +434,10 @@
 
     move-result p2
 
-    .line 829
+    .line 834
     invoke-virtual {v0, v2, p2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 834
+    .line 839
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/SecretMediaViewer$4;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
@@ -447,26 +447,26 @@
 
     if-eqz p2, :cond_3
 
-    .line 835
+    .line 840
     iget-object p2, p0, Lorg/telegram/ui/SecretMediaViewer$4;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {p2}, Lorg/telegram/ui/SecretMediaViewer;->access$2800(Lorg/telegram/ui/SecretMediaViewer;)Landroid/view/View;
 
     move-result-object p2
 
-    .line 836
+    .line 841
     invoke-static {p1, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
 
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->navigationBarHeight:I
 
-    .line 837
+    .line 842
     invoke-static {v0, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
 
-    .line 835
+    .line 840
     invoke-virtual {p2, p1, v0}, Landroid/view/View;->measure(II)V
 
     :cond_3

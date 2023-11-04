@@ -23,7 +23,7 @@ public final class CloudMessage extends AbstractSafeParcelable {
     public static final int PRIORITY_HIGH = 1;
     public static final int PRIORITY_NORMAL = 2;
     public static final int PRIORITY_UNKNOWN = 0;
-    @SafeParcelable.Field(m1089id = 1)
+    @SafeParcelable.Field(m1090id = 1)
     Intent zza;
     private Map<String, String> zzb;
 
@@ -35,7 +35,7 @@ public final class CloudMessage extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public CloudMessage(@SafeParcelable.Param(m1088id = 1) Intent intent) {
+    public CloudMessage(@SafeParcelable.Param(m1089id = 1) Intent intent) {
         this.zza = intent;
     }
 

@@ -325,6 +325,21 @@
     return-object v0
 .end method
 
+.method public static final isForwardingPreviewEditorHintShown()Ljava/lang/String;
+    .locals 2
+
+    .line 245
+    sget-object v0, Lcom/iMe/common/TelegramPreferenceKeys;->INSTANCE:Lcom/iMe/common/TelegramPreferenceKeys;
+
+    const-string v1, "isForwardingPreviewEditorHintShown"
+
+    invoke-static {v0, v1}, Lcom/iMe/common/TelegramPreferenceKeys;->access$withForkPrefix(Lcom/iMe/common/TelegramPreferenceKeys;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public static final isHideChatKeyboardOnScrollEnabled()Ljava/lang/String;
     .locals 2
 

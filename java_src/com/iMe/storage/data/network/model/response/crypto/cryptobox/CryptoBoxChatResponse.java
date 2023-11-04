@@ -54,7 +54,7 @@ public final class CryptoBoxChatResponse {
     }
 
     public int hashCode() {
-        return (((ProfileData$$ExternalSyntheticBackport0.m1017m(this.f323id) * 31) + this.image.hashCode()) * 31) + this.name.hashCode();
+        return (((ProfileData$$ExternalSyntheticBackport0.m1018m(this.f323id) * 31) + this.image.hashCode()) * 31) + this.name.hashCode();
     }
 
     public String toString() {

@@ -87,7 +87,7 @@ public final class Channel {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((((((((((((((((((this.chatType.hashCode() * 31) + this.createdAt.hashCode()) * 31) + this.description.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.f342id)) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.membersCount)) * 31) + this.photo.hashCode()) * 31) + this.shortname.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.telegramId)) * 31) + this.title.hashCode()) * 31) + this.updatedAt.hashCode()) * 31;
+        int hashCode = ((((((((((((((((((this.chatType.hashCode() * 31) + this.createdAt.hashCode()) * 31) + this.description.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.f342id)) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.membersCount)) * 31) + this.photo.hashCode()) * 31) + this.shortname.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.telegramId)) * 31) + this.title.hashCode()) * 31) + this.updatedAt.hashCode()) * 31;
         boolean z = this.verified;
         int i = z;
         if (z != 0) {

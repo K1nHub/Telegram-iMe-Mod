@@ -153,9 +153,9 @@ public final class LazyJavaAnnotationDescriptor implements AnnotationDescriptor,
                         name = JvmAnnotationNames.DEFAULT_ANNOTATION_MEMBER_NAME;
                     }
                     resolveAnnotationArgument = lazyJavaAnnotationDescriptor.resolveAnnotationArgument(javaAnnotationArgument);
-                    Pair m144to = resolveAnnotationArgument != null ? TuplesKt.m144to(name, resolveAnnotationArgument) : null;
-                    if (m144to != null) {
-                        arrayList.add(m144to);
+                    Pair m146to = resolveAnnotationArgument != null ? TuplesKt.m146to(name, resolveAnnotationArgument) : null;
+                    if (m146to != null) {
+                        arrayList.add(m146to);
                     }
                 }
                 map = MapsKt__MapsKt.toMap(arrayList);

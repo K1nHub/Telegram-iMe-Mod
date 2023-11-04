@@ -59,9 +59,9 @@
 
     move-result-object v3
 
-    const-string v4, "java.util.ArrayList"
+    const-string/jumbo v4, "java.util.ArrayList"
 
-    const-string v5, "java.util.LinkedList"
+    const-string/jumbo v5, "java.util.LinkedList"
 
     filled-new-array {v4, v5}, [Ljava/lang/String;
 
@@ -78,11 +78,11 @@
 
     move-result-object v3
 
-    const-string v4, "java.util.HashSet"
+    const-string/jumbo v4, "java.util.HashSet"
 
-    const-string v5, "java.util.TreeSet"
+    const-string/jumbo v5, "java.util.TreeSet"
 
-    const-string v6, "java.util.LinkedHashSet"
+    const-string/jumbo v6, "java.util.LinkedHashSet"
 
     filled-new-array {v4, v5, v6}, [Ljava/lang/String;
 
@@ -99,15 +99,15 @@
 
     move-result-object v2
 
-    const-string v3, "java.util.HashMap"
+    const-string/jumbo v3, "java.util.HashMap"
 
-    const-string v4, "java.util.TreeMap"
+    const-string/jumbo v4, "java.util.TreeMap"
 
-    const-string v5, "java.util.LinkedHashMap"
+    const-string/jumbo v5, "java.util.LinkedHashMap"
 
-    const-string v6, "java.util.concurrent.ConcurrentHashMap"
+    const-string/jumbo v6, "java.util.concurrent.ConcurrentHashMap"
 
-    const-string v7, "java.util.concurrent.ConcurrentSkipListMap"
+    const-string/jumbo v7, "java.util.concurrent.ConcurrentSkipListMap"
 
     .line 26
     filled-new-array {v3, v4, v5, v6, v7}, [Ljava/lang/String;
@@ -124,7 +124,7 @@
     .line 28
     new-instance v2, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v3, "java.util.function.Function"
+    const-string/jumbo v3, "java.util.function.Function"
 
     invoke-direct {v2, v3}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -136,7 +136,7 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v3, "java.util.function.UnaryOperator"
+    const-string/jumbo v3, "java.util.function.UnaryOperator"
 
     filled-new-array {v3}, [Ljava/lang/String;
 
@@ -151,7 +151,7 @@
     .line 29
     new-instance v2, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v3, "java.util.function.BiFunction"
+    const-string/jumbo v3, "java.util.function.BiFunction"
 
     invoke-direct {v2, v3}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -163,7 +163,7 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v3, "java.util.function.BinaryOperator"
+    const-string/jumbo v3, "java.util.function.BinaryOperator"
 
     filled-new-array {v3}, [Ljava/lang/String;
 

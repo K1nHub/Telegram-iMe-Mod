@@ -32,6 +32,8 @@
 
 .field inc:Z
 
+.field public invalidationEnabled:Z
+
 .field private isBoostsStyle:Z
 
 .field public isStatistic:Z
@@ -104,6 +106,9 @@
 
     .line 68
     iput-boolean v1, v6, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->animationCanPlay:Z
+
+    .line 80
+    iput-boolean v1, v6, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->invalidationEnabled:Z
 
     .line 89
     iput-object v3, v6, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -997,10 +1002,10 @@
     return-void
 .end method
 
-.method public increaseCurrentValue(II)V
+.method public increaseCurrentValue(III)V
     .locals 2
 
-    .line 480
+    .line 479
     iget v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->currentValue:I
 
     const/4 v1, 0x1
@@ -1009,42 +1014,40 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->currentValue:I
 
-    int-to-float p1, p1
-
     int-to-float p2, p2
 
-    div-float/2addr p1, p2
+    int-to-float p3, p3
 
-    const/4 p2, 0x0
+    div-float/2addr p2, p3
+
+    const/4 p3, 0x0
 
     const/high16 v0, 0x3f800000    # 1.0f
 
+    .line 480
+    invoke-static {p2, p3, v0}, Landroidx/core/math/MathUtils;->clamp(FFF)F
+
+    move-result p2
+
+    iput p2, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->percent:F
+
     .line 481
-    invoke-static {p1, p2, v0}, Landroidx/core/math/MathUtils;->clamp(FFF)F
-
-    move-result p1
-
-    iput p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->percent:F
-
-    .line 482
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->animateIncrease:Z
 
+    .line 482
+    iget p2, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->width1:I
+
+    iput p2, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->animateIncreaseWidth:I
+
     .line 483
-    iget p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->width1:I
-
-    iput p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->animateIncreaseWidth:I
-
-    .line 485
-    iget p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->currentValue:I
-
     invoke-virtual {p0, p1, v1}, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->setIconValue(IZ)V
 
-    .line 486
+    .line 484
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->limitsContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 487
+    .line 485
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->requestLayout()V
 
     return-void
@@ -1596,14 +1599,14 @@
     return-void
 .end method
 
-.method public setBoosts(Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;Z)V
+.method public setBoosts(Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;Z)V
     .locals 7
 
     .line 455
-    iget v0, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;->current_level_boosts:I
+    iget v0, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;->current_level_boosts:I
 
     .line 456
-    iget v1, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;->boosts:I
+    iget v1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;->boosts:I
 
     const/4 v2, 0x0
 
@@ -1629,7 +1632,7 @@
 
     .line 457
     :cond_1
-    iget p2, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;->next_level_boosts:I
+    iget p2, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;->next_level_boosts:I
 
     if-nez p2, :cond_3
 
@@ -1644,7 +1647,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    iget v4, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;->level:I
+    iget v4, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;->level:I
 
     sub-int/2addr v4, v3
 
@@ -1665,7 +1668,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    iget v4, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;->level:I
+    iget v4, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;->level:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1708,7 +1711,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    iget v4, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;->level:I
+    iget v4, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;->level:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -1727,7 +1730,7 @@
 
     new-array v1, v3, [Ljava/lang/Object;
 
-    iget v4, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;->level:I
+    iget v4, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;->level:I
 
     add-int/2addr v4, v3
 
@@ -1794,12 +1797,12 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 475
-    iget p1, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;->boosts:I
+    .line 474
+    iget p1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;->boosts:I
 
     invoke-virtual {p0, p1, v2}, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->setIconValue(IZ)V
 
-    .line 476
+    .line 475
     iput-boolean v3, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->isBoostsStyle:Z
 
     return-void

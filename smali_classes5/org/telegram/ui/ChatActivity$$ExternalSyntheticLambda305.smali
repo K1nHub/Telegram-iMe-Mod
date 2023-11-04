@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/messenger/Utilities$Callback2;
 
 
 # instance fields
@@ -10,23 +10,11 @@
 
 .field public final synthetic f$1:I
 
-.field public final synthetic f$2:I
-
-.field public final synthetic f$3:J
-
-.field public final synthetic f$4:I
-
-.field public final synthetic f$5:Lorg/telegram/messenger/MessageObject;
-
-.field public final synthetic f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_getDiscussionMessage;
-
-.field public final synthetic f$7:Lorg/telegram/tgnet/TLRPC$Chat;
-
-.field public final synthetic f$8:Lorg/telegram/messenger/MessageObject;
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_getWebPagePreview;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;IIJILorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$TL_messages_getDiscussionMessage;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/messenger/MessageObject;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;ILorg/telegram/tgnet/TLRPC$TL_messages_getWebPagePreview;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,51 +23,27 @@
 
     iput p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$1:I
 
-    iput p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$2:I
-
-    iput-wide p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$3:J
-
-    iput p6, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$4:I
-
-    iput-object p7, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$5:Lorg/telegram/messenger/MessageObject;
-
-    iput-object p8, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_getDiscussionMessage;
-
-    iput-object p9, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$7:Lorg/telegram/tgnet/TLRPC$Chat;
-
-    iput-object p10, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$8:Lorg/telegram/messenger/MessageObject;
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_getWebPagePreview;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 12
+.method public final run(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$0:Lorg/telegram/ui/ChatActivity;
 
     iget v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$1:I
 
-    iget v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$2:I
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_getWebPagePreview;
 
-    iget-wide v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$3:J
+    check-cast p1, Ljava/lang/Boolean;
 
-    iget v5, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$4:I
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    iget-object v6, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$5:Lorg/telegram/messenger/MessageObject;
-
-    iget-object v7, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_getDiscussionMessage;
-
-    iget-object v8, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$7:Lorg/telegram/tgnet/TLRPC$Chat;
-
-    iget-object v9, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda305;->f$8:Lorg/telegram/messenger/MessageObject;
-
-    move-object v10, p1
-
-    move-object v11, p2
-
-    invoke-static/range {v0 .. v11}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$N4iCIFW-DbpxPHu9NCrMU1G8xHg(Lorg/telegram/ui/ChatActivity;IIJILorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$TL_messages_getDiscussionMessage;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$0OjSE-BQ_R8tOPi9DNaVdHbSy-k(Lorg/telegram/ui/ChatActivity;ILorg/telegram/tgnet/TLRPC$TL_messages_getWebPagePreview;Ljava/lang/Boolean;Lorg/telegram/tgnet/TLRPC$WebPage;)V
 
     return-void
 .end method

@@ -13,9 +13,9 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class PaymentMethodTokenizationParameters extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PaymentMethodTokenizationParameters> CREATOR = new zzaf();
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     int zza;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     Bundle zzb;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
@@ -67,7 +67,7 @@ public final class PaymentMethodTokenizationParameters extends AbstractSafeParce
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PaymentMethodTokenizationParameters(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) Bundle bundle) {
+    public PaymentMethodTokenizationParameters(@SafeParcelable.Param(m1089id = 2) int i, @SafeParcelable.Param(m1089id = 3) Bundle bundle) {
         new Bundle();
         this.zza = i;
         this.zzb = bundle;

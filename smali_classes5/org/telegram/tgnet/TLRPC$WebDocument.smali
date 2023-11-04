@@ -27,10 +27,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 41089
+    .line 41453
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 41094
+    .line 41458
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -59,7 +59,7 @@
 
     goto :goto_0
 
-    .line 41106
+    .line 41470
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webDocument;
 
@@ -67,7 +67,7 @@
 
     goto :goto_0
 
-    .line 41100
+    .line 41464
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webDocumentNoProxy;
 
@@ -75,7 +75,7 @@
 
     goto :goto_0
 
-    .line 41103
+    .line 41467
     :cond_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_webDocument_layer81;
 
@@ -88,7 +88,7 @@
 
     goto :goto_1
 
-    .line 41110
+    .line 41474
     :cond_3
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -118,7 +118,7 @@
     :goto_1
     if-eqz v0, :cond_5
 
-    .line 41113
+    .line 41477
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_5

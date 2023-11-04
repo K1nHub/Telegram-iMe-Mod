@@ -1,11 +1,9 @@
 package org.telegram.tgnet;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import org.telegram.messenger.LiteMode;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_channel extends TLRPC$Chat {
-    public static int constructor = -1795845413;
-
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         int readInt32 = abstractSerializedData.readInt32(z);
@@ -35,7 +33,7 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         this.stories_hidden = (readInt322 & 2) != 0;
         this.stories_hidden_min = (readInt322 & 4) != 0;
         this.stories_unavailable = (readInt322 & 8) != 0;
-        this.f1600id = abstractSerializedData.readInt64(z);
+        this.f1602id = abstractSerializedData.readInt64(z);
         if ((this.flags & 8192) != 0) {
             this.access_hash = abstractSerializedData.readInt64(z);
         }
@@ -94,11 +92,17 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         if ((this.flags2 & 16) != 0) {
             this.stories_max_id = abstractSerializedData.readInt32(z);
         }
+        if ((this.flags2 & 64) != 0) {
+            this.color = abstractSerializedData.readInt32(z);
+        }
+        if ((this.flags2 & 32) != 0) {
+            this.background_emoji_id = abstractSerializedData.readInt64(z);
+        }
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(427944574);
         int i = this.creator ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         int i2 = this.left ? i | 4 : i & (-5);
@@ -131,7 +135,7 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         this.flags = i15;
         int i16 = this.gigagroup ? i15 | ConnectionsManager.FileTypeFile : i15 & (-67108865);
         this.flags = i16;
-        int i17 = this.noforwards ? i16 | C0479C.BUFFER_FLAG_FIRST_SAMPLE : i16 & (-134217729);
+        int i17 = this.noforwards ? i16 | C0485C.BUFFER_FLAG_FIRST_SAMPLE : i16 & (-134217729);
         this.flags = i17;
         int i18 = this.join_to_send ? i17 | 268435456 : i17 & (-268435457);
         this.flags = i18;
@@ -147,7 +151,7 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         int i23 = this.stories_unavailable ? i22 | 8 : i22 & (-9);
         this.flags2 = i23;
         abstractSerializedData.writeInt32(i23);
-        abstractSerializedData.writeInt64(this.f1600id);
+        abstractSerializedData.writeInt64(this.f1602id);
         if ((this.flags & 8192) != 0) {
             abstractSerializedData.writeInt64(this.access_hash);
         }
@@ -187,6 +191,12 @@ public class TLRPC$TL_channel extends TLRPC$Chat {
         }
         if ((this.flags2 & 16) != 0) {
             abstractSerializedData.writeInt32(this.stories_max_id);
+        }
+        if ((this.flags2 & 64) != 0) {
+            abstractSerializedData.writeInt32(this.color);
+        }
+        if ((this.flags2 & 32) != 0) {
+            abstractSerializedData.writeInt64(this.background_emoji_id);
         }
     }
 }

@@ -30,17 +30,17 @@
 .method public constructor <init>(Lorg/telegram/ui/FilterCreateActivity;Landroid/content/Context;)V
     .locals 7
 
-    .line 224
+    .line 225
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 226
+    .line 227
     new-instance v0, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, p2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 228
+    .line 229
     invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->access$000(Lorg/telegram/ui/FilterCreateActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object p2
@@ -49,7 +49,7 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 229
+    .line 230
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget v1, Lorg/telegram/messenger/R$raw;->fork_topic_new:I
@@ -60,7 +60,7 @@
 
     goto :goto_0
 
-    .line 231
+    .line 232
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -70,7 +70,7 @@
 
     invoke-virtual {p2, v1, v2, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 232
+    .line 233
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -78,19 +78,19 @@
 
     invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 233
+    .line 234
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 235
+    .line 236
     invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->access$000(Lorg/telegram/ui/FilterCreateActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object p1
 
     if-ne p1, v0, :cond_1
 
-    .line 236
+    .line 237
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/16 v0, 0x7d
@@ -115,7 +115,7 @@
 
     goto :goto_1
 
-    .line 238
+    .line 239
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -139,7 +139,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 239
+    .line 240
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -155,7 +155,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 1
 
-    .line 240
+    .line 241
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->isPlaying()Z
@@ -164,14 +164,14 @@
 
     if-nez p1, :cond_0
 
-    .line 241
+    .line 242
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 242
+    .line 243
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -185,7 +185,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 249
+    .line 250
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1

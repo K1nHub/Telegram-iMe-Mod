@@ -57,24 +57,24 @@ public final class BackStackRecordState implements Parcelable {
         int i = 0;
         int i2 = 0;
         while (i < size) {
-            FragmentTransaction.C0212Op c0212Op = backStackRecord.mOps.get(i);
+            FragmentTransaction.C0218Op c0218Op = backStackRecord.mOps.get(i);
             int i3 = i2 + 1;
-            this.mOps[i2] = c0212Op.mCmd;
+            this.mOps[i2] = c0218Op.mCmd;
             ArrayList<String> arrayList = this.mFragmentWhos;
-            Fragment fragment = c0212Op.mFragment;
+            Fragment fragment = c0218Op.mFragment;
             arrayList.add(fragment != null ? fragment.mWho : null);
             int[] iArr = this.mOps;
             int i4 = i3 + 1;
-            iArr[i3] = c0212Op.mFromExpandedOp ? 1 : 0;
+            iArr[i3] = c0218Op.mFromExpandedOp ? 1 : 0;
             int i5 = i4 + 1;
-            iArr[i4] = c0212Op.mEnterAnim;
+            iArr[i4] = c0218Op.mEnterAnim;
             int i6 = i5 + 1;
-            iArr[i5] = c0212Op.mExitAnim;
+            iArr[i5] = c0218Op.mExitAnim;
             int i7 = i6 + 1;
-            iArr[i6] = c0212Op.mPopEnterAnim;
-            iArr[i7] = c0212Op.mPopExitAnim;
-            this.mOldMaxLifecycleStates[i] = c0212Op.mOldMaxState.ordinal();
-            this.mCurrentMaxLifecycleStates[i] = c0212Op.mCurrentMaxState.ordinal();
+            iArr[i6] = c0218Op.mPopEnterAnim;
+            iArr[i7] = c0218Op.mPopExitAnim;
+            this.mOldMaxLifecycleStates[i] = c0218Op.mOldMaxState.ordinal();
+            this.mCurrentMaxLifecycleStates[i] = c0218Op.mCurrentMaxState.ordinal();
             i++;
             i2 = i7 + 1;
         }
@@ -144,36 +144,36 @@ public final class BackStackRecordState implements Parcelable {
         while (true) {
             boolean z = true;
             if (i < this.mOps.length) {
-                FragmentTransaction.C0212Op c0212Op = new FragmentTransaction.C0212Op();
+                FragmentTransaction.C0218Op c0218Op = new FragmentTransaction.C0218Op();
                 int i3 = i + 1;
-                c0212Op.mCmd = this.mOps[i];
+                c0218Op.mCmd = this.mOps[i];
                 if (FragmentManager.isLoggingEnabled(2)) {
                     Log.v("FragmentManager", "Instantiate " + backStackRecord + " op #" + i2 + " base fragment #" + this.mOps[i3]);
                 }
-                c0212Op.mOldMaxState = Lifecycle.State.values()[this.mOldMaxLifecycleStates[i2]];
-                c0212Op.mCurrentMaxState = Lifecycle.State.values()[this.mCurrentMaxLifecycleStates[i2]];
+                c0218Op.mOldMaxState = Lifecycle.State.values()[this.mOldMaxLifecycleStates[i2]];
+                c0218Op.mCurrentMaxState = Lifecycle.State.values()[this.mCurrentMaxLifecycleStates[i2]];
                 int[] iArr = this.mOps;
                 int i4 = i3 + 1;
                 if (iArr[i3] == 0) {
                     z = false;
                 }
-                c0212Op.mFromExpandedOp = z;
+                c0218Op.mFromExpandedOp = z;
                 int i5 = i4 + 1;
                 int i6 = iArr[i4];
-                c0212Op.mEnterAnim = i6;
+                c0218Op.mEnterAnim = i6;
                 int i7 = i5 + 1;
                 int i8 = iArr[i5];
-                c0212Op.mExitAnim = i8;
+                c0218Op.mExitAnim = i8;
                 int i9 = i7 + 1;
                 int i10 = iArr[i7];
-                c0212Op.mPopEnterAnim = i10;
+                c0218Op.mPopEnterAnim = i10;
                 int i11 = iArr[i9];
-                c0212Op.mPopExitAnim = i11;
+                c0218Op.mPopExitAnim = i11;
                 backStackRecord.mEnterAnim = i6;
                 backStackRecord.mExitAnim = i8;
                 backStackRecord.mPopEnterAnim = i10;
                 backStackRecord.mPopExitAnim = i11;
-                backStackRecord.addOp(c0212Op);
+                backStackRecord.addOp(c0218Op);
                 i2++;
                 i = i9 + 1;
             } else {

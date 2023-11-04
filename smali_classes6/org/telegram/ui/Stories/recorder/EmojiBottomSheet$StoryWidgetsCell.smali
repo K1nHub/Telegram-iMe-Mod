@@ -56,13 +56,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;Landroid/content/Context;)V
     .locals 5
 
-    .line 2603
+    .line 2601
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->this$0:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet;
 
-    .line 2604
+    .line 2602
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 2592
+    .line 2590
     new-instance p2, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -71,7 +71,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->bgPaint:Landroid/graphics/Paint;
 
-    .line 2593
+    .line 2591
     new-instance v1, Landroid/text/TextPaint;
 
     invoke-direct {v1, v0}, Landroid/text/TextPaint;-><init>(I)V
@@ -80,12 +80,12 @@
 
     const v2, 0x19ffffff
 
-    .line 2595
+    .line 2593
     invoke-virtual {p2, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     const-string p2, "fonts/rcondensedbold.ttf"
 
-    .line 2596
+    .line 2594
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object p2
@@ -94,7 +94,7 @@
 
     const p2, 0x41aa6666    # 21.3f
 
-    .line 2597
+    .line 2595
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result p2
@@ -103,10 +103,10 @@
 
     const/4 p2, -0x1
 
-    .line 2598
+    .line 2596
     invoke-virtual {v1, p2}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 2601
+    .line 2599
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
@@ -115,10 +115,10 @@
 
     const/4 v1, 0x0
 
-    .line 2605
+    .line 2603
     invoke-virtual {p0, v1, v1, v1, v1}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 2606
+    .line 2604
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -129,7 +129,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 2607
+    .line 2605
     new-instance v2, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$Button;
 
     sget v3, Lorg/telegram/messenger/R$drawable;->map_pin3:I
@@ -144,7 +144,7 @@
 
     invoke-interface {p2, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 2608
+    .line 2606
     :cond_0
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -156,7 +156,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 2609
+    .line 2607
     new-instance v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$Button;
 
     sget v2, Lorg/telegram/messenger/R$drawable;->filled_widget_music:I
@@ -174,7 +174,7 @@
     :cond_1
     const/4 v0, 0x2
 
-    .line 2610
+    .line 2608
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -185,7 +185,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 2611
+    .line 2609
     new-instance v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$Button;
 
     sget v2, Lorg/telegram/messenger/R$drawable;->files_gallery:I
@@ -203,7 +203,7 @@
     :cond_2
     const/4 v0, 0x3
 
-    .line 2612
+    .line 2610
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -214,7 +214,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 2613
+    .line 2611
     new-instance p1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$ReactionWidget;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;)V
@@ -228,7 +228,7 @@
 .method static synthetic access$6900(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;)Landroid/text/TextPaint;
     .locals 0
 
-    .line 2590
+    .line 2588
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->textPaint:Landroid/text/TextPaint;
 
     return-object p0
@@ -237,7 +237,7 @@
 .method static synthetic access$7000(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;)Landroid/graphics/Paint;
     .locals 0
 
-    .line 2590
+    .line 2588
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->bgPaint:Landroid/graphics/Paint;
 
     return-object p0
@@ -248,7 +248,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 2813
+    .line 2811
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->widgets:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -268,7 +268,7 @@
 
     check-cast v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;
 
-    .line 2814
+    .line 2812
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result v2
@@ -315,7 +315,7 @@
 
     const/16 v3, 0xc
 
-    .line 2815
+    .line 2813
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -336,7 +336,7 @@
 
     int-to-float v3, v3
 
-    .line 2816
+    .line 2814
     invoke-virtual {v1, p1, v2, v3}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->draw(Landroid/graphics/Canvas;FF)V
 
     goto :goto_0
@@ -348,10 +348,10 @@
 .method protected onAttachedToWindow()V
     .locals 3
 
-    .line 2852
+    .line 2850
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 2853
+    .line 2851
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->widgets:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -373,7 +373,7 @@
 
     const/4 v2, 0x1
 
-    .line 2854
+    .line 2852
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->onAttachToWindow(Z)V
 
     goto :goto_0
@@ -385,10 +385,10 @@
 .method protected onDetachedFromWindow()V
     .locals 3
 
-    .line 2861
+    .line 2859
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
-    .line 2862
+    .line 2860
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->widgets:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -410,7 +410,7 @@
 
     const/4 v2, 0x0
 
-    .line 2863
+    .line 2861
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->onAttachToWindow(Z)V
 
     goto :goto_0
@@ -422,12 +422,12 @@
 .method protected onMeasure(II)V
     .locals 9
 
-    .line 2780
+    .line 2778
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 2781
+    .line 2779
     invoke-virtual {p0}, Landroid/view/View;->getPaddingLeft()I
 
     move-result p2
@@ -448,7 +448,7 @@
 
     float-to-int p2, p2
 
-    .line 2783
+    .line 2781
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->widgets:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -478,10 +478,10 @@
 
     check-cast v5, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;
 
-    .line 2784
+    .line 2782
     iput v4, v5, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->layoutX:F
 
-    .line 2785
+    .line 2783
     iget v7, v5, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->width:F
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -502,10 +502,10 @@
 
     add-int/lit8 v3, v3, 0x1
 
-    .line 2788
+    .line 2786
     iput v1, v5, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->layoutX:F
 
-    .line 2789
+    .line 2787
     iget v4, v5, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->width:F
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -518,13 +518,13 @@
 
     add-float/2addr v4, v1
 
-    .line 2791
+    .line 2789
     :cond_0
     iput v3, v5, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->layoutLine:I
 
     goto :goto_0
 
-    .line 2795
+    .line 2793
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->lineWidths:[F
 
@@ -536,20 +536,20 @@
 
     goto :goto_1
 
-    .line 2798
+    .line 2796
     :cond_2
     invoke-static {p2, v1}, Ljava/util/Arrays;->fill([FF)V
 
     goto :goto_2
 
-    .line 2796
+    .line 2794
     :cond_3
     :goto_1
     new-array p2, v3, [F
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->lineWidths:[F
 
-    .line 2800
+    .line 2798
     :goto_2
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->widgets:Ljava/util/List;
 
@@ -570,12 +570,12 @@
 
     check-cast v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;
 
-    .line 2801
+    .line 2799
     iget v4, v0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->layoutLine:I
 
     sub-int/2addr v4, v2
 
-    .line 2802
+    .line 2800
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->lineWidths:[F
 
     aget v7, v5, v4
@@ -584,7 +584,7 @@
 
     if-lez v7, :cond_4
 
-    .line 2803
+    .line 2801
     aget v7, v5, v4
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -597,7 +597,7 @@
 
     aput v7, v5, v4
 
-    .line 2804
+    .line 2802
     :cond_4
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->lineWidths:[F
 
@@ -614,7 +614,7 @@
     :cond_5
     const/16 p2, 0x18
 
-    .line 2807
+    .line 2805
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -641,7 +641,7 @@
 
     add-int/2addr p2, v3
 
-    .line 2808
+    .line 2806
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
 
     return-void
@@ -650,7 +650,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 6
 
-    .line 2823
+    .line 2821
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->widgets:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -670,7 +670,7 @@
 
     check-cast v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;
 
-    .line 2824
+    .line 2822
     iget-object v2, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -692,7 +692,7 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 2829
+    .line 2827
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->widgets:Ljava/util/List;
 
@@ -718,7 +718,7 @@
 
     if-eq v2, v1, :cond_2
 
-    .line 2831
+    .line 2829
     iget-object v2, v2, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
@@ -730,7 +730,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 2835
+    .line 2833
     iget-object v2, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
@@ -757,7 +757,7 @@
     :goto_2
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
-    .line 2837
+    .line 2835
     :cond_5
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -767,12 +767,12 @@
 
     if-eqz v1, :cond_6
 
-    .line 2838
+    .line 2836
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->onClickListener:Lorg/telegram/messenger/Utilities$Callback;
 
     if-eqz p1, :cond_6
 
-    .line 2839
+    .line 2837
     iget v2, v1, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->id:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -801,7 +801,7 @@
         }
     .end annotation
 
-    .line 2847
+    .line 2845
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->onClickListener:Lorg/telegram/messenger/Utilities$Callback;
 
     return-void

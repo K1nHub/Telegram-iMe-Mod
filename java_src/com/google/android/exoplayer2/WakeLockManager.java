@@ -20,7 +20,7 @@ final class WakeLockManager {
         if (z && this.wakeLock == null) {
             PowerManager powerManager = this.powerManager;
             if (powerManager == null) {
-                Log.m1106w(TAG, "PowerManager is null, therefore not creating the WakeLock.");
+                Log.m1107w(TAG, "PowerManager is null, therefore not creating the WakeLock.");
                 return;
             }
             PowerManager.WakeLock newWakeLock = powerManager.newWakeLock(1, WAKE_LOCK_TAG);

@@ -78,7 +78,9 @@
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ChatActivity;->fillActionModeMenu(Landroid/view/Menu;Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
+    const/4 v0, 0x0
+
+    invoke-static {p1, p2, v0}, Lorg/telegram/ui/ChatActivity;->fillActionModeMenu(Landroid/view/Menu;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Z)V
 
     :cond_1
     return-void

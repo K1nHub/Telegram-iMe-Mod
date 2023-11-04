@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;Landroid/view/View;)V
     .locals 0
 
-    .line 15165
+    .line 15167
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$69;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/PhotoViewerWebView;-><init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;Landroid/view/View;)V
 
-    .line 15167
+    .line 15169
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -44,7 +44,7 @@
 .method protected drawBlackBackground(Landroid/graphics/Canvas;II)V
     .locals 4
 
-    .line 15171
+    .line 15173
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$69;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$8700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/messenger/ImageReceiver;
@@ -59,7 +59,7 @@
 
     int-to-float v1, p2
 
-    .line 15173
+    .line 15175
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -82,7 +82,7 @@
 
     move-result v1
 
-    .line 15174
+    .line 15176
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
@@ -93,7 +93,7 @@
 
     float-to-int v2, v2
 
-    .line 15175
+    .line 15177
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v3
@@ -106,15 +106,15 @@
 
     sub-int/2addr p3, v1
 
-    .line 15176
+    .line 15178
     div-int/lit8 p3, p3, 0x2
 
     sub-int/2addr p2, v2
 
-    .line 15177
+    .line 15179
     div-int/lit8 p2, p2, 0x2
 
-    .line 15178
+    .line 15180
     iget-object v3, p0, Lorg/telegram/ui/PhotoViewer$69;->rect:Landroid/graphics/Rect;
 
     add-int/2addr v2, p2
@@ -123,7 +123,7 @@
 
     invoke-virtual {v3, p2, p3, v2, v1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 15179
+    .line 15181
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$69;->rect:Landroid/graphics/Rect;
 
     const/4 p3, 0x0

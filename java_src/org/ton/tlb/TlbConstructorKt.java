@@ -10,7 +10,7 @@ public final class TlbConstructorKt {
     public static final <T> TlbCombinator<T> asTlbCombinator(TlbConstructor<T> tlbConstructor, final KClass<T> clazz) {
         Intrinsics.checkNotNullParameter(tlbConstructor, "<this>");
         Intrinsics.checkNotNullParameter(clazz, "clazz");
-        final Pair[] pairArr = {TuplesKt.m144to(clazz, tlbConstructor)};
+        final Pair[] pairArr = {TuplesKt.m146to(clazz, tlbConstructor)};
         return new TlbCombinator<T>(clazz, pairArr) { // from class: org.ton.tlb.TlbConstructorKt$asTlbCombinator$1
         };
     }

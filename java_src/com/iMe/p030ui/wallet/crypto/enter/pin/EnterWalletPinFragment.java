@@ -60,14 +60,14 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthEnterPinBinding;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.INavigationLayout;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.PasscodeView;
-import org.telegram.p042ui.PasscodeActivity;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.PasscodeView;
+import org.telegram.p043ui.PasscodeActivity;
 import timber.log.Timber;
 /* compiled from: EnterWalletPinFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment */
@@ -183,13 +183,13 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
         return (ForkFragmentWalletEthEnterPinBinding) this.binding$delegate.getValue(this, $$delegatedProperties[1]);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean onBackPressed() {
         handleBackPress();
         return false;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return !this.screenType.isTotalLock() || isLastWalletScreen();
     }
@@ -205,19 +205,19 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
         return root;
     }
 
-    @Override // com.iMe.p030ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         getBinding().passcodeView.onResume();
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onPause() {
         getBinding().passcodeView.onPause();
         super.onPause();
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         getBinding().passcodeView.resetWalletLoadingAnimation();
         super.onFragmentDestroy();
@@ -386,7 +386,7 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
         ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams3 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams3 : null;
         layoutParams2.setMargins(((ViewGroup.MarginLayoutParams) layoutParams2).leftMargin, (marginLayoutParams != null ? marginLayoutParams.topMargin : 0) + AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) layoutParams2).rightMargin, ((ViewGroup.MarginLayoutParams) layoutParams2).bottomMargin);
         setupActionBar$lambda$6.setLayoutParams(layoutParams2);
-        setupActionBar$lambda$6.setImageResource(C3630R.C3632drawable.ic_ab_back);
+        setupActionBar$lambda$6.setImageResource(C3634R.C3636drawable.ic_ab_back);
         ViewExtKt.setCircleRippleBackground(setupActionBar$lambda$6);
         ImageViewExtKt.setImageColor(setupActionBar$lambda$6, Theme.getColor(Theme.key_actionBarDefaultTitle));
         ViewExtKt.safeThrottledClick$default(setupActionBar$lambda$6, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$setupActionBar$1$2
@@ -412,14 +412,14 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
     private final void setupPasscodeView() {
         PasscodeView passcodeView = getBinding().passcodeView;
         passcodeView.setWalletDelegate(new PasscodeView.WalletDelegate() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$setupPasscodeView$1$1
-            @Override // org.telegram.p042ui.Components.PasscodeView.WalletDelegate
+            @Override // org.telegram.p043ui.Components.PasscodeView.WalletDelegate
             public void onForgotPinCodeClicked() {
                 EnterWalletPinPresenter presenter;
                 presenter = EnterWalletPinFragment.this.getPresenter();
                 presenter.onForgotPinClick();
             }
 
-            @Override // org.telegram.p042ui.Components.PasscodeView.WalletDelegate
+            @Override // org.telegram.p043ui.Components.PasscodeView.WalletDelegate
             public void onPinCodeEntered(String str) {
                 EnterWalletPinPresenter presenter;
                 presenter = EnterWalletPinFragment.this.getPresenter();
@@ -429,7 +429,7 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
                 presenter.validatePin(str, false);
             }
 
-            @Override // org.telegram.p042ui.Components.PasscodeView.WalletDelegate
+            @Override // org.telegram.p043ui.Components.PasscodeView.WalletDelegate
             public void onFingerPrintConfirmed(Cipher cipher) {
                 EnterWalletPinPresenter presenter;
                 presenter = EnterWalletPinFragment.this.getPresenter();
@@ -441,7 +441,7 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
 
     private final void setupListeners() {
         RxEventBus rxEventBus = getRxEventBus();
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1009ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.CryptoEvent, Unit>() { // from class: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$setupListeners$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -450,12 +450,12 @@ public final class EnterWalletPinFragment extends WalletAuthBaseFragment impleme
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.CryptoEvent cryptoEvent) {
-                m1636invoke(cryptoEvent);
+                m1641invoke(cryptoEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1636invoke(DomainRxEvents.CryptoEvent it) {
+            public final void m1641invoke(DomainRxEvents.CryptoEvent it) {
                 RxEventBus rxEventBus2;
                 EnterPinCodeScreenType enterPinCodeScreenType;
                 Function2 function2;

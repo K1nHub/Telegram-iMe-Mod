@@ -8,30 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesStorage;
 
-.field public final synthetic f$1:Landroidx/collection/LongSparseArray;
+.field public final synthetic f$1:Ljava/lang/Long;
 
-.field public final synthetic f$2:Landroidx/collection/LongSparseArray;
-
-.field public final synthetic f$3:Landroidx/collection/LongSparseArray;
-
-.field public final synthetic f$4:Z
+.field public final synthetic f$2:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;Ljava/lang/Long;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$1:Landroidx/collection/LongSparseArray;
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$1:Ljava/lang/Long;
 
-    iput-object p3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$2:Landroidx/collection/LongSparseArray;
-
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$3:Landroidx/collection/LongSparseArray;
-
-    iput-boolean p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$4:Z
+    iput p3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$2:I
 
     return-void
 .end method
@@ -39,19 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$1:Landroidx/collection/LongSparseArray;
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$1:Ljava/lang/Long;
 
-    iget-object v2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$2:Landroidx/collection/LongSparseArray;
+    iget v2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$2:I
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$3:Landroidx/collection/LongSparseArray;
-
-    iget-boolean v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda137;->f$4:Z
-
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$UU9G25sNRBeo9pUJOocBtrRNiCI(Lorg/telegram/messenger/MessagesStorage;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Landroidx/collection/LongSparseArray;Z)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$E3EKJK3JphK9ca5RvUSJRhX7MwE(Lorg/telegram/messenger/MessagesStorage;Ljava/lang/Long;I)V
 
     return-void
 .end method

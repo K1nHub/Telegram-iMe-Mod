@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatBackgroundDrawable;)V
     .locals 0
 
-    .line 42
+    .line 43
     iput-object p1, p0, Lorg/telegram/ui/ChatBackgroundDrawable$1;->this$0:Lorg/telegram/ui/ChatBackgroundDrawable;
 
     invoke-direct {p0}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
@@ -35,14 +35,14 @@
 .method public invalidate()V
     .locals 1
 
-    .line 45
+    .line 46
     iget-object v0, p0, Lorg/telegram/ui/ChatBackgroundDrawable$1;->this$0:Lorg/telegram/ui/ChatBackgroundDrawable;
 
     iget-object v0, v0, Lorg/telegram/ui/ChatBackgroundDrawable;->parent:Landroid/view/View;
 
     if-eqz v0, :cond_0
 
-    .line 46
+    .line 47
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
     :cond_0

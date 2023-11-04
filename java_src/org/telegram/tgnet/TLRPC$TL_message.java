@@ -1,12 +1,10 @@
 package org.telegram.tgnet;
 
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import org.telegram.messenger.LiteMode;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_message extends TLRPC$Message {
-    public static int constructor = 940666592;
-
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         int readInt32 = abstractSerializedData.readInt32(z);
@@ -21,8 +19,8 @@ public class TLRPC$TL_message extends TLRPC$Message {
         this.edit_hide = (2097152 & readInt32) != 0;
         this.pinned = (16777216 & readInt32) != 0;
         this.noforwards = (67108864 & readInt32) != 0;
-        this.topic_start = (readInt32 & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0;
-        this.f1624id = abstractSerializedData.readInt32(z);
+        this.invert_media = (readInt32 & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0;
+        this.f1626id = abstractSerializedData.readInt32(z);
         if ((this.flags & 256) != 0) {
             this.from_id = TLRPC$Peer.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
@@ -113,7 +111,7 @@ public class TLRPC$TL_message extends TLRPC$Message {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(940666592);
         int i = this.out ? this.flags | 2 : this.flags & (-3);
         this.flags = i;
         int i2 = this.mentioned ? i | 16 : i & (-17);
@@ -134,10 +132,10 @@ public class TLRPC$TL_message extends TLRPC$Message {
         this.flags = i9;
         int i10 = this.noforwards ? i9 | ConnectionsManager.FileTypeFile : i9 & (-67108865);
         this.flags = i10;
-        int i11 = this.topic_start ? i10 | C0479C.BUFFER_FLAG_FIRST_SAMPLE : i10 & (-134217729);
+        int i11 = this.invert_media ? i10 | C0485C.BUFFER_FLAG_FIRST_SAMPLE : i10 & (-134217729);
         this.flags = i11;
         abstractSerializedData.writeInt32(i11);
-        abstractSerializedData.writeInt32(this.f1624id);
+        abstractSerializedData.writeInt32(this.f1626id);
         if ((this.flags & 256) != 0) {
             this.from_id.serializeToStream(abstractSerializedData);
         }

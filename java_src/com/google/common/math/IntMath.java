@@ -13,7 +13,7 @@ public final class IntMath {
 
     /* renamed from: com.google.common.math.IntMath$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C09151 {
+    static /* synthetic */ class C09211 {
         static final /* synthetic */ int[] $SwitchMap$java$math$RoundingMode;
 
         static {
@@ -57,7 +57,7 @@ public final class IntMath {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
     public static int log2(int i, RoundingMode roundingMode) {
         MathPreconditions.checkPositive("x", i);
-        switch (C09151.$SwitchMap$java$math$RoundingMode[roundingMode.ordinal()]) {
+        switch (C09211.$SwitchMap$java$math$RoundingMode[roundingMode.ordinal()]) {
             case 1:
                 MathPreconditions.checkRoundingUnnecessary(isPowerOfTwo(i));
                 break;
@@ -109,7 +109,7 @@ public final class IntMath {
             int r5 = r5 >> 31
             r2 = 1
             r5 = r5 | r2
-            int[] r3 = com.google.common.math.IntMath.C09151.$SwitchMap$java$math$RoundingMode
+            int[] r3 = com.google.common.math.IntMath.C09211.$SwitchMap$java$math$RoundingMode
             int r4 = r7.ordinal()
             r3 = r3[r4]
             r4 = 0

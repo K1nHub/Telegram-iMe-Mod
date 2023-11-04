@@ -26,7 +26,7 @@
 
     const v0, 0x3e4ccccd    # 0.2f
 
-    .line 927
+    .line 946
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$BounceableImageView;-><init>(Landroid/content/Context;F)V
 
     return-void
@@ -35,17 +35,17 @@
 .method public constructor <init>(Landroid/content/Context;F)V
     .locals 0
 
-    .line 930
+    .line 949
     invoke-direct {p0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 934
+    .line 953
     new-instance p1, Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ButtonBounce;-><init>(Landroid/view/View;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$BounceableImageView;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 
-    .line 931
+    .line 950
     iput p2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$BounceableImageView;->scale:F
 
     return-void
@@ -56,10 +56,10 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 944
+    .line 963
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 945
+    .line 964
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$BounceableImageView;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$BounceableImageView;->scale:F
@@ -68,7 +68,7 @@
 
     move-result v0
 
-    .line 946
+    .line 965
     invoke-virtual {p0}, Landroid/widget/ImageView;->getWidth()I
 
     move-result v1
@@ -89,10 +89,10 @@
 
     invoke-virtual {p1, v0, v0, v1, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 947
+    .line 966
     invoke-super {p0, p1}, Landroid/widget/ImageView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 948
+    .line 967
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -101,10 +101,10 @@
 .method public setPressed(Z)V
     .locals 1
 
-    .line 938
+    .line 957
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setPressed(Z)V
 
-    .line 939
+    .line 958
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$BounceableImageView;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V

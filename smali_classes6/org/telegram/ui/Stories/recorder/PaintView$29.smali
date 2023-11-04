@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;)V
     .locals 0
 
-    .line 4165
+    .line 4171
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$29;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 4168
+    .line 4174
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$29;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/PaintView;->emojiView:Lorg/telegram/ui/Components/EmojiView;

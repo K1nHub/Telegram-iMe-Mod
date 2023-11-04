@@ -16,12 +16,12 @@ public final /* synthetic */ class C$r8$wrapper$java$util$function$Predicate$VWR
         if (predicate == null) {
             return null;
         }
-        return predicate instanceof C3237u0 ? ((C3237u0) predicate).f1340a : new C$r8$wrapper$java$util$function$Predicate$VWRP(predicate);
+        return predicate instanceof C3241u0 ? ((C3241u0) predicate).f1340a : new C$r8$wrapper$java$util$function$Predicate$VWRP(predicate);
     }
 
     @Override // p033j$.util.function.Predicate
     public /* synthetic */ Predicate and(Predicate predicate) {
-        return convert(this.f1257a.and(C3237u0.m164a(predicate)));
+        return convert(this.f1257a.and(C3241u0.m166a(predicate)));
     }
 
     @Override // p033j$.util.function.Predicate
@@ -32,7 +32,7 @@ public final /* synthetic */ class C$r8$wrapper$java$util$function$Predicate$VWR
     @Override // p033j$.util.function.Predicate
     /* renamed from: or */
     public /* synthetic */ Predicate mo53or(Predicate predicate) {
-        return convert(this.f1257a.or(C3237u0.m164a(predicate)));
+        return convert(this.f1257a.or(C3241u0.m166a(predicate)));
     }
 
     @Override // p033j$.util.function.Predicate

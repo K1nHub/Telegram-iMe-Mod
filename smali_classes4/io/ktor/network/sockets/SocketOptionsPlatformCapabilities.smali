@@ -40,7 +40,7 @@
 
     const-string/jumbo v2, "socketChannelClass.methods"
 
-    const-string v3, "java.net.SocketOption"
+    const-string/jumbo v3, "java.net.SocketOption"
 
     new-instance v4, Lio/ktor/network/sockets/SocketOptionsPlatformCapabilities;
 
@@ -53,7 +53,7 @@
     const/4 v5, 0x0
 
     :try_start_0
-    const-string v6, "java.net.StandardSocketOptions"
+    const-string/jumbo v6, "java.net.StandardSocketOptions"
 
     .line 17
     invoke-static {v6}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
@@ -173,7 +173,7 @@
 
     move-result-object v9
 
-    const-string v10, "it.name"
+    const-string/jumbo v10, "it.name"
 
     invoke-static {v9, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -213,7 +213,7 @@
 
     move-result-object v8
 
-    const-string v9, "java.nio.channels.SocketChannel"
+    const-string/jumbo v9, "java.nio.channels.SocketChannel"
 
     .line 32
     invoke-static {v9}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
@@ -355,7 +355,7 @@
 
     move-result-object v8
 
-    const-string v9, "java.nio.channels.ServerSocketChannel"
+    const-string/jumbo v9, "java.nio.channels.ServerSocketChannel"
 
     .line 49
     invoke-static {v9}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
@@ -497,7 +497,7 @@
 
     move-result-object v3
 
-    const-string v8, "java.nio.channels.DatagramChannel"
+    const-string/jumbo v8, "java.nio.channels.DatagramChannel"
 
     .line 67
     invoke-static {v8}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;

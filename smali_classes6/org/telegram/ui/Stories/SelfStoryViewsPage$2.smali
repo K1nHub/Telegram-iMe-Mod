@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
     .locals 0
 
-    .line 198
+    .line 199
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$2;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onScroll()V
     .locals 1
 
-    .line 201
+    .line 202
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$2;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V

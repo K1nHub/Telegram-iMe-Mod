@@ -22,7 +22,7 @@
 .method public static final checkKind(Lkotlinx/serialization/descriptors/SerialKind;)V
     .locals 1
 
-    const-string v0, "kind"
+    const-string/jumbo v0, "kind"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -92,7 +92,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "json"
+    const-string/jumbo v0, "json"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -340,7 +340,7 @@
 .method public static final throwSerializerNotFound(Ljava/lang/String;Lkotlinx/serialization/json/JsonObject;)Ljava/lang/Void;
     .locals 3
 
-    const-string v0, "jsonTree"
+    const-string/jumbo v0, "jsonTree"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

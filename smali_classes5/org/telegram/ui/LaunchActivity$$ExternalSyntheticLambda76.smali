@@ -69,7 +69,7 @@
 
     iget-wide v7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda76;->f$7:J
 
-    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$OyIaJeDulstm4eWOKmq8S68zkKs(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLObject;ILjava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;J)V
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$KckEqBxFGryc5jJfVwZZmzDSH9s(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLObject;ILjava/lang/String;Ljava/lang/String;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;J)V
 
     return-void
 .end method

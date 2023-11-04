@@ -128,7 +128,7 @@ public final class BitArray implements Cloneable {
     }
 
     /* renamed from: clone */
-    public BitArray m1413clone() {
+    public BitArray m1418clone() {
         return new BitArray((int[]) this.bits.clone(), this.size);
     }
 }

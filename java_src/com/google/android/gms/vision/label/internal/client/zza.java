@@ -13,7 +13,7 @@ public final class zza extends com.google.android.gms.internal.vision.zza implem
     @Override // com.google.android.gms.vision.label.internal.client.INativeImageLabeler
     public final zze[] zza(IObjectWrapper iObjectWrapper, LabelOptions labelOptions) throws RemoteException {
         obtainAndWriteInterfaceToken();
-        throw ImageLabeler$$ExternalSyntheticThrowNSME0.m1060m();
+        throw ImageLabeler$$ExternalSyntheticThrowNSME0.m1061m();
     }
 
     @Override // com.google.android.gms.vision.label.internal.client.INativeImageLabeler

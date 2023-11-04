@@ -21,7 +21,7 @@
     :try_start_0
     sget-object v0, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
-    const-string v0, "java.lang.ClassValue"
+    const-string/jumbo v0, "java.lang.ClassValue"
 
     .line 21
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;

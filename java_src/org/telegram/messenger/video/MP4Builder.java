@@ -47,12 +47,13 @@ public class MP4Builder {
     private FileOutputStream fos = null;
 
     /* renamed from: fc */
-    private FileChannel f1588fc = null;
+    private FileChannel f1590fc = null;
     private long dataOffset = 0;
     private long wroteSinceLastMdat = 0;
     private boolean writeNewMdat = true;
     private HashMap<Track, long[]> track2SampleSizes = new HashMap<>();
     private ByteBuffer sizeBuffer = null;
+    private boolean allowSyncFiles = true;
 
     protected void createSidx(Track track, SampleTableBox sampleTableBox) {
     }
@@ -61,9 +62,9 @@ public class MP4Builder {
         this.currentMp4Movie = mp4Movie;
         FileOutputStream fileOutputStream = new FileOutputStream(mp4Movie.getCacheFile());
         this.fos = fileOutputStream;
-        this.f1588fc = fileOutputStream.getChannel();
+        this.f1590fc = fileOutputStream.getChannel();
         FileTypeBox createFileTypeBox = createFileTypeBox(z2);
-        createFileTypeBox.getBox(this.f1588fc);
+        createFileTypeBox.getBox(this.f1590fc);
         long size = this.dataOffset + createFileTypeBox.getSize();
         this.dataOffset = size;
         this.wroteSinceLastMdat += size;
@@ -74,20 +75,22 @@ public class MP4Builder {
     }
 
     private void flushCurrentMdat() throws Exception {
-        long position = this.f1588fc.position();
-        this.f1588fc.position(this.mdat.getOffset());
-        this.mdat.getBox(this.f1588fc);
-        this.f1588fc.position(position);
+        long position = this.f1590fc.position();
+        this.f1590fc.position(this.mdat.getOffset());
+        this.mdat.getBox(this.f1590fc);
+        this.f1590fc.position(position);
         this.mdat.setDataOffset(0L);
         this.mdat.setContentSize(0L);
         this.fos.flush();
-        this.fos.getFD().sync();
+        if (this.allowSyncFiles) {
+            this.fos.getFD().sync();
+        }
     }
 
     public long writeSampleData(int i, ByteBuffer byteBuffer, MediaCodec.BufferInfo bufferInfo, boolean z) throws Exception {
         if (this.writeNewMdat) {
             this.mdat.setContentSize(0L);
-            this.mdat.getBox(this.f1588fc);
+            this.mdat.getBox(this.f1590fc);
             this.mdat.setDataOffset(this.dataOffset);
             this.dataOffset += 16;
             this.wroteSinceLastMdat += 16;
@@ -113,18 +116,20 @@ public class MP4Builder {
             this.sizeBuffer.position(0);
             this.sizeBuffer.putInt(bufferInfo.size - 4);
             this.sizeBuffer.position(0);
-            this.f1588fc.write(this.sizeBuffer);
+            this.f1590fc.write(this.sizeBuffer);
             byteBuffer.position(bufferInfo.offset + 4);
         } else {
             byteBuffer.position(bufferInfo.offset);
         }
         byteBuffer.limit(bufferInfo.offset + bufferInfo.size);
-        this.f1588fc.write(byteBuffer);
+        this.f1590fc.write(byteBuffer);
         this.dataOffset += bufferInfo.size;
         if (z2) {
             this.fos.flush();
-            this.fos.getFD().sync();
-            return this.f1588fc.position();
+            if (this.allowSyncFiles) {
+                this.fos.getFD().sync();
+            }
+            return this.f1590fc.position();
         }
         return 0L;
     }
@@ -152,10 +157,12 @@ public class MP4Builder {
             }
             this.track2SampleSizes.put(next, jArr);
         }
-        createMovieBox(this.currentMp4Movie).getBox(this.f1588fc);
+        createMovieBox(this.currentMp4Movie).getBox(this.f1590fc);
         this.fos.flush();
-        this.fos.getFD().sync();
-        this.f1588fc.close();
+        if (this.allowSyncFiles) {
+            this.fos.getFD().sync();
+        }
+        this.f1590fc.close();
         this.fos.close();
     }
 
@@ -166,6 +173,10 @@ public class MP4Builder {
         linkedList.add(z ? "hvc1" : "avc1");
         linkedList.add("mp41");
         return new FileTypeBox("isom", 512L, linkedList);
+    }
+
+    public void setAllowSyncFiles(boolean z) {
+        this.allowSyncFiles = z;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

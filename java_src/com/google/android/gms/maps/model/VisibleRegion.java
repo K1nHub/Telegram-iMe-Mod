@@ -12,19 +12,19 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class VisibleRegion extends AbstractSafeParcelable {
     public static final Parcelable.Creator<VisibleRegion> CREATOR = new zzad();
-    @SafeParcelable.Field(m1089id = 4)
+    @SafeParcelable.Field(m1090id = 4)
     public final LatLng farLeft;
-    @SafeParcelable.Field(m1089id = 5)
+    @SafeParcelable.Field(m1090id = 5)
     public final LatLng farRight;
-    @SafeParcelable.Field(m1089id = 6)
+    @SafeParcelable.Field(m1090id = 6)
     public final LatLngBounds latLngBounds;
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     public final LatLng nearLeft;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     public final LatLng nearRight;
 
     @SafeParcelable.Constructor
-    public VisibleRegion(@SafeParcelable.Param(m1088id = 2) LatLng latLng, @SafeParcelable.Param(m1088id = 3) LatLng latLng2, @SafeParcelable.Param(m1088id = 4) LatLng latLng3, @SafeParcelable.Param(m1088id = 5) LatLng latLng4, @SafeParcelable.Param(m1088id = 6) LatLngBounds latLngBounds) {
+    public VisibleRegion(@SafeParcelable.Param(m1089id = 2) LatLng latLng, @SafeParcelable.Param(m1089id = 3) LatLng latLng2, @SafeParcelable.Param(m1089id = 4) LatLng latLng3, @SafeParcelable.Param(m1089id = 5) LatLng latLng4, @SafeParcelable.Param(m1089id = 6) LatLngBounds latLngBounds) {
         this.nearLeft = latLng;
         this.nearRight = latLng2;
         this.farLeft = latLng3;

@@ -231,6 +231,6 @@ final class zzfn extends zzdi<Long> implements zzew<Long>, zzgi {
     static {
         zzfn zzfnVar = new zzfn(new long[0], 0);
         zza = zzfnVar;
-        zzfnVar.mo1072b_();
+        zzfnVar.mo1073b_();
     }
 }

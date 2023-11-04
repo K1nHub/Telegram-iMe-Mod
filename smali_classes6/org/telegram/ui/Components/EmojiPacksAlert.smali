@@ -27,6 +27,10 @@
 # instance fields
 .field private adapter:Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;
 
+.field private adaptiveEmojiColor:I
+
+.field private adaptiveEmojiColorFilter:Landroid/graphics/ColorFilter;
+
 .field private addButtonView:Landroid/widget/TextView;
 
 .field private animatedEmojiDrawables:Landroid/util/LongSparseArray;
@@ -1116,13 +1120,15 @@
     return-object p0
 .end method
 
-.method static synthetic access$2900(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.method static synthetic access$2900(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
-    return-object p0
+    move-result p0
+
+    return p0
 .end method
 
 .method static synthetic access$300(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
@@ -1134,7 +1140,18 @@
     return p0
 .end method
 
-.method static synthetic access$3000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/CircularProgressDrawable;
+.method static synthetic access$3000(Lorg/telegram/ui/Components/EmojiPacksAlert;I)Landroid/graphics/ColorFilter;
+    .locals 0
+
+    .line 82
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->getAdaptiveEmojiColorFilter(I)Landroid/graphics/ColorFilter;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method static synthetic access$3100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/Components/CircularProgressDrawable;
     .locals 0
 
     .line 82
@@ -1143,16 +1160,18 @@
     return-object p0
 .end method
 
-.method static synthetic access$3100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.method static synthetic access$3200(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
-    return-object p0
+    move-result p0
+
+    return p0
 .end method
 
-.method static synthetic access$3300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
+.method static synthetic access$3400(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
     .locals 0
 
     .line 82
@@ -1161,7 +1180,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$3700(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
+.method static synthetic access$3800(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
@@ -1172,24 +1191,13 @@
     return p0
 .end method
 
-.method static synthetic access$3800(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/View;
+.method static synthetic access$3900(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/View;
     .locals 0
 
     .line 82
     iget-object p0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert;->paddingView:Landroid/view/View;
 
     return-object p0
-.end method
-
-.method static synthetic access$3900(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
-    .locals 0
-
-    .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
-
-    move-result p0
-
-    return p0
 .end method
 
 .method static synthetic access$400(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -1201,7 +1209,18 @@
     return-object p0
 .end method
 
-.method static synthetic access$4000(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
+.method static synthetic access$4000(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
+    .locals 0
+
+    .line 82
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method static synthetic access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
     .locals 0
 
     .line 82
@@ -1210,7 +1229,7 @@
     return p0
 .end method
 
-.method static synthetic access$4002(Lorg/telegram/ui/Components/EmojiPacksAlert;Z)Z
+.method static synthetic access$4102(Lorg/telegram/ui/Components/EmojiPacksAlert;Z)Z
     .locals 0
 
     .line 82
@@ -1219,22 +1238,13 @@
     return p1
 .end method
 
-.method static synthetic access$4100(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
+.method static synthetic access$4200(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
     .locals 0
 
     .line 82
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
-.end method
-
-.method static synthetic access$4200(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
-    .locals 0
-
-    .line 82
-    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
-
-    return-object p0
 .end method
 
 .method static synthetic access$4300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
@@ -1246,7 +1256,16 @@
     return-object p0
 .end method
 
-.method static synthetic access$4400(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.method static synthetic access$4400(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
+    .locals 0
+
+    .line 82
+    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+
+    return-object p0
+.end method
+
+.method static synthetic access$4500(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
     .line 82
@@ -1255,7 +1274,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$4500(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
+.method static synthetic access$4600(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
     .locals 0
 
     .line 82
@@ -1264,24 +1283,13 @@
     return p0
 .end method
 
-.method static synthetic access$4600(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.method static synthetic access$4700(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
     .line 82
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-object p0
-.end method
-
-.method static synthetic access$4700(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
-    .locals 0
-
-    .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
-
-    move-result p0
-
-    return p0
 .end method
 
 .method static synthetic access$4800(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
@@ -1326,13 +1334,15 @@
     return p0
 .end method
 
-.method static synthetic access$5100(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.method static synthetic access$5100(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
-    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
-    return-object p0
+    move-result p0
+
+    return p0
 .end method
 
 .method static synthetic access$5200(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -1344,15 +1354,13 @@
     return-object p0
 .end method
 
-.method static synthetic access$5300(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
+.method static synthetic access$5300(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
     .line 82
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
+    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move-result p0
-
-    return p0
+    return-object p0
 .end method
 
 .method static synthetic access$5400(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
@@ -1377,16 +1385,7 @@
     return p0
 .end method
 
-.method static synthetic access$5600(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-    .locals 0
-
-    .line 82
-    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    return-object p0
-.end method
-
-.method static synthetic access$5700(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
+.method static synthetic access$5600(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
     .locals 0
 
     .line 82
@@ -1397,31 +1396,33 @@
     return p0
 .end method
 
-.method static synthetic access$5800(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
+.method static synthetic access$5700(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    .locals 0
+
+    .line 82
+    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    return-object p0
+.end method
+
+.method static synthetic access$5800(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
+    .locals 0
+
+    .line 82
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method static synthetic access$5900(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
     .locals 0
 
     .line 82
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
-.end method
-
-.method static synthetic access$5900()Ljava/util/regex/Pattern;
-    .locals 1
-
-    .line 82
-    sget-object v0, Lorg/telegram/ui/Components/EmojiPacksAlert;->urlPattern:Ljava/util/regex/Pattern;
-
-    return-object v0
-.end method
-
-.method static synthetic access$5902(Ljava/util/regex/Pattern;)Ljava/util/regex/Pattern;
-    .locals 0
-
-    .line 82
-    sput-object p0, Lorg/telegram/ui/Components/EmojiPacksAlert;->urlPattern:Ljava/util/regex/Pattern;
-
-    return-object p0
 .end method
 
 .method static synthetic access$600(Lorg/telegram/ui/Components/EmojiPacksAlert;)Landroid/view/ViewGroup;
@@ -1433,13 +1434,22 @@
     return-object p0
 .end method
 
-.method static synthetic access$6100(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
+.method static synthetic access$6000()Ljava/util/regex/Pattern;
+    .locals 1
+
+    .line 82
+    sget-object v0, Lorg/telegram/ui/Components/EmojiPacksAlert;->urlPattern:Ljava/util/regex/Pattern;
+
+    return-object v0
+.end method
+
+.method static synthetic access$6002(Ljava/util/regex/Pattern;)Ljava/util/regex/Pattern;
     .locals 0
 
     .line 82
-    iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
+    sput-object p0, Lorg/telegram/ui/Components/EmojiPacksAlert;->urlPattern:Ljava/util/regex/Pattern;
 
-    return p0
+    return-object p0
 .end method
 
 .method static synthetic access$6200(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
@@ -1460,7 +1470,16 @@
     return p0
 .end method
 
-.method static synthetic access$6400(Lorg/telegram/ui/Components/EmojiPacksAlert;I)V
+.method static synthetic access$6400(Lorg/telegram/ui/Components/EmojiPacksAlert;)I
+    .locals 0
+
+    .line 82
+    iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
+
+    return p0
+.end method
+
+.method static synthetic access$6500(Lorg/telegram/ui/Components/EmojiPacksAlert;I)V
     .locals 0
 
     .line 82
@@ -1469,22 +1488,13 @@
     return-void
 .end method
 
-.method static synthetic access$6502(Lorg/telegram/ui/Components/EmojiPacksAlert;J)J
+.method static synthetic access$6602(Lorg/telegram/ui/Components/EmojiPacksAlert;J)J
     .locals 0
 
     .line 82
     iput-wide p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert;->premiumButtonClicked:J
 
     return-wide p1
-.end method
-
-.method static synthetic access$6600(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-    .locals 0
-
-    .line 82
-    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    return-object p0
 .end method
 
 .method static synthetic access$6700(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -1496,7 +1506,16 @@
     return-object p0
 .end method
 
-.method static synthetic access$6800(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
+.method static synthetic access$6800(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    .locals 0
+
+    .line 82
+    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    return-object p0
+.end method
+
+.method static synthetic access$6900(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
     .locals 0
 
     .line 82
@@ -1530,6 +1549,37 @@
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
+.end method
+
+.method private getAdaptiveEmojiColorFilter(I)Landroid/graphics/ColorFilter;
+    .locals 2
+
+    .line 2064
+    iget v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert;->adaptiveEmojiColor:I
+
+    if-ne p1, v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert;->adaptiveEmojiColorFilter:Landroid/graphics/ColorFilter;
+
+    if-nez v0, :cond_1
+
+    .line 2065
+    :cond_0
+    new-instance v0, Landroid/graphics/PorterDuffColorFilter;
+
+    iput p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert;->adaptiveEmojiColor:I
+
+    sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v0, p1, v1}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert;->adaptiveEmojiColorFilter:Landroid/graphics/ColorFilter;
+
+    .line 2067
+    :cond_1
+    iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert;->adaptiveEmojiColorFilter:Landroid/graphics/ColorFilter;
+
+    return-object p1
 .end method
 
 .method private getListTop()I
@@ -4651,13 +4701,13 @@
     check-cast v1, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;
 
     .line 939
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->access$3400(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;)Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->access$3500(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;)Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     move-result-object v2
 
     if-eqz v2, :cond_0
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->access$3400(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;)Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->access$3500(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;)Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     move-result-object v2
 
@@ -4672,7 +4722,7 @@
 
     move-result-object v2
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->access$3400(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;)Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->access$3500(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;)Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
 
     move-result-object v3
 
@@ -4686,7 +4736,7 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v1, v2, v3}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->access$3500(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;ZZ)V
+    invoke-static {v1, v2, v3}, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;->access$3600(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPackHeader;ZZ)V
 
     :cond_0
     add-int/lit8 v0, v0, 0x1

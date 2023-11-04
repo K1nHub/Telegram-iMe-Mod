@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$5;
-.super Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;
+.super Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 .source "BottomSheetWithRecyclerListView.java"
 
 
@@ -15,35 +15,33 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;
+.field final synthetic val$containerView:Landroid/widget/FrameLayout;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;)V
+.method constructor <init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;Landroid/widget/FrameLayout;)V
     .locals 0
 
-    .line 214
-    iput-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$5;->this$0:Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;
+    .line 177
+    iput-object p2, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$5;->val$containerView:Landroid/widget/FrameLayout;
 
-    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
+    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onItemClick(I)V
-    .locals 1
+.method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
+    .locals 0
 
-    const/4 v0, -0x1
+    .line 180
+    invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    if-ne p1, v0, :cond_0
+    .line 181
+    iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$5;->val$containerView:Landroid/widget/FrameLayout;
 
-    .line 218
-    iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$5;->this$0:Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
-
-    :cond_0
     return-void
 .end method

@@ -34,7 +34,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.tgnet.TLRPC$ChatParticipant;
 import timber.log.Timber;
 /* compiled from: ProfilePresenter.kt */
@@ -114,12 +114,12 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1416invoke(result);
+                m1421invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1416invoke(Result<? extends Boolean> it) {
+            public final void m1421invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;
@@ -241,12 +241,12 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends AccountLevelInformation> result) {
-                m1417invoke(result);
+                m1422invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1417invoke(Result<? extends AccountLevelInformation> it) {
+            public final void m1422invoke(Result<? extends AccountLevelInformation> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends AccountLevelInformation> result = it;
                 if (result instanceof Result.Success) {
@@ -294,12 +294,12 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SocialDomain> result) {
-                m1418invoke(result);
+                m1423invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1418invoke(Result<? extends SocialDomain> it) {
+            public final void m1423invoke(Result<? extends SocialDomain> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 ProfilePresenter.this.onLoadSocialResult(it);
             }
@@ -374,12 +374,12 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1419invoke(result);
+                m1424invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1419invoke(Result<? extends Boolean> it) {
+            public final void m1424invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 ProfilePresenter.this.onSocialLogoutResult(it);
             }
@@ -424,21 +424,21 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
     }
 
     private final void showResetConfirmationDialog(SocialNetwork socialNetwork) {
-        ((ProfileView) getViewState()).showResetConfirmationDialog(new DialogModel(this.resourceManager.getString(C3630R.string.social_reset_account_title, socialNetwork.getSocialName()), this.resourceManager.getString(C3630R.string.social_reset_account_message, socialNetwork.getSocialName()), this.resourceManager.getString(C3630R.string.social_reset_account_negative_button), this.resourceManager.getString(C3630R.string.social_reset_account_positive_button)), socialNetwork);
+        ((ProfileView) getViewState()).showResetConfirmationDialog(new DialogModel(this.resourceManager.getString(C3634R.string.social_reset_account_title, socialNetwork.getSocialName()), this.resourceManager.getString(C3634R.string.social_reset_account_message, socialNetwork.getSocialName()), this.resourceManager.getString(C3634R.string.social_reset_account_negative_button), this.resourceManager.getString(C3634R.string.social_reset_account_positive_button)), socialNetwork);
     }
 
     private final void showNeedAuthorizeDialog() {
-        ((ProfileView) getViewState()).showNeedAuthorizeDialog(new DialogModel(this.resourceManager.getString(C3630R.string.wallet_crypto_wallet_not_created_dialog_title), this.resourceManager.getString(C3630R.string.wallet_crypto_wallet_not_created_dialog_description), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.common_ok)));
+        ((ProfileView) getViewState()).showNeedAuthorizeDialog(new DialogModel(this.resourceManager.getString(C3634R.string.wallet_crypto_wallet_not_created_dialog_title), this.resourceManager.getString(C3634R.string.wallet_crypto_wallet_not_created_dialog_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.common_ok)));
     }
 
     private final void showBeforeDialog(SocialNetwork socialNetwork) {
         String socialName = socialNetwork.getSocialName();
         String beforeConnectMessage = socialNetwork.getBeforeConnectMessage();
-        String string = this.resourceManager.getString(C3630R.string.common_ok);
+        String string = this.resourceManager.getString(C3634R.string.common_ok);
         Locale locale = Locale.ROOT;
         String upperCase = string.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
-        String upperCase2 = this.resourceManager.getString(C3630R.string.common_cancel).toUpperCase(locale);
+        String upperCase2 = this.resourceManager.getString(C3634R.string.common_cancel).toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         ((ProfileView) getViewState()).showBeforeConnectMessage(socialNetwork, new DialogModel(socialName, beforeConnectMessage, upperCase2, upperCase));
     }
@@ -456,12 +456,12 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SocialAuthDomain> result) {
-                m1420invoke(result);
+                m1425invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1420invoke(Result<? extends SocialAuthDomain> it) {
+            public final void m1425invoke(Result<? extends SocialAuthDomain> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SocialAuthDomain> result = it;

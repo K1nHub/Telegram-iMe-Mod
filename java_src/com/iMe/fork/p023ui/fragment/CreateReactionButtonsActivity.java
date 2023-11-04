@@ -71,30 +71,30 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.C3702ActionBar;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.Cells.HeaderCell;
-import org.telegram.p042ui.Cells.RadioColorCell;
-import org.telegram.p042ui.Cells.TextCell;
-import org.telegram.p042ui.Cells.TextInfoPrivacyCell;
-import org.telegram.p042ui.Cells.TextSettingsCell;
-import org.telegram.p042ui.Components.CombinedDrawable;
-import org.telegram.p042ui.Components.EditTextBoldCursor;
-import org.telegram.p042ui.Components.EmojiView;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.RLottieDrawable;
-import org.telegram.p042ui.Components.RadialProgress;
-import org.telegram.p042ui.Components.RecyclerListView;
-import org.telegram.p042ui.Components.TrendingStickersLayout;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Cells.HeaderCell;
+import org.telegram.p043ui.Cells.RadioColorCell;
+import org.telegram.p043ui.Cells.TextCell;
+import org.telegram.p043ui.Cells.TextInfoPrivacyCell;
+import org.telegram.p043ui.Cells.TextSettingsCell;
+import org.telegram.p043ui.Components.CombinedDrawable;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.Components.EmojiView;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RLottieDrawable;
+import org.telegram.p043ui.Components.RadialProgress;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.TrendingStickersLayout;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$InputStickerSet;
 import org.telegram.tgnet.TLRPC$Message;
@@ -374,8 +374,8 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         this.reactions = new ArrayList<>();
         this.buttons = new UrlButton[12];
         this.buttonsRowsType = ReactionButtonsRowsType.SINGLE;
-        this.keyboardHeight = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.m103dp(200.0f));
-        this.keyboardHeightLand = MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.m103dp(200.0f));
+        this.keyboardHeight = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.m105dp(200.0f));
+        this.keyboardHeightLand = MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.m105dp(200.0f));
     }
 
     static {
@@ -430,7 +430,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         return (RadialProgress) this.uploadProgressBar$delegate.getValue(this, $$delegatedProperties[9]);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean onFragmentCreate() {
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.emojiLoaded);
         NotificationCenter notificationCenter = getNotificationCenter();
@@ -441,7 +441,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         return super.onFragmentCreate();
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.emojiLoaded);
         NotificationCenter notificationCenter = getNotificationCenter();
@@ -468,7 +468,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         return rootView;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean onBackPressed() {
         if (this.showEmojiView) {
             showEmojiView$default(this, false, null, 2, null);
@@ -520,8 +520,8 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         Intrinsics.checkNotNullParameter(buttonPosition, "buttonPosition");
         showEmojiView$default(this, false, null, 2, null);
         final AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(getResourceManager().getString(C3630R.string.chat_reaction_button_position));
-        builder.setNegativeButton(getResourceManager().getString(C3630R.string.common_cancel), null);
+        builder.setTitle(getResourceManager().getString(C3634R.string.chat_reaction_button_position));
+        builder.setNegativeButton(getResourceManager().getString(C3634R.string.common_cancel), null);
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         linearLayout.setOrientation(1);
         builder.setView(linearLayout);
@@ -530,7 +530,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         for (int i = 0; i < length; i++) {
             ReactionButtonsRowsType reactionButtonsRowsType = values[i];
             RadioColorCell radioColorCell = new RadioColorCell(getParentActivity());
-            radioColorCell.setPadding(AndroidUtilities.m103dp(4.0f), 0, AndroidUtilities.m103dp(4.0f), 0);
+            radioColorCell.setPadding(AndroidUtilities.m105dp(4.0f), 0, AndroidUtilities.m105dp(4.0f), 0);
             radioColorCell.setTag(Integer.valueOf(reactionButtonsRowsType.ordinal()));
             radioColorCell.setCheckColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
             radioColorCell.setTextAndValue(getResourceManager().getString(reactionButtonsRowsType.getResource()), buttonPosition == reactionButtonsRowsType);
@@ -575,7 +575,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         }
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         RecyclerListView listView = getListView();
@@ -587,12 +587,12 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         int i6 = Theme.key_windowBackgroundGray;
         int i7 = Theme.key_windowBackgroundWhiteBlueHeader;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(listView, i, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteHintText), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"deleteImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"moveImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{MovingReactionCell.class}, null, null, null, i5), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i6), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i7), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_text_RedRegular), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText3), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class}, null, null, null, i5), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueText4), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_checkboxCheck), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCell.class}, null, null, null, i5), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class}, null, null, null, i5), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i6), new ThemeDescription(getListView(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i7), new ThemeDescription(getRootView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{FrameLayout.class}, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda4
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 CreateReactionButtonsActivity.getThemeDescriptions$lambda$7(CreateReactionButtonsActivity.this);
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -619,7 +619,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         recyclerListView.setLayoutManager(new LinearLayoutManager(getParentActivity(), 1, false));
         recyclerListView.setAdapter(getListAdapter());
         recyclerListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda5
-            @Override // org.telegram.p042ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 CreateReactionButtonsActivity.initListView$lambda$10$lambda$9(CreateReactionButtonsActivity.this, view, i);
             }
@@ -645,7 +645,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
 
     /* JADX INFO: Access modifiers changed from: private */
     public final EmojiView initEmojiView() {
-        EmojiView emojiView = new EmojiView(this, false, false, false, getParentActivity(), false, null, null, true, null);
+        EmojiView emojiView = new EmojiView(this, false, false, false, getParentActivity(), false, null, null, true, null, false);
         Point point = AndroidUtilities.displaySize;
         this.currentHeight = point.x > point.y ? this.keyboardHeightLand : this.keyboardHeight;
         FrameLayout.LayoutParams createFrame = LayoutHelper.createFrame(-2, -2, 80);
@@ -654,159 +654,159 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         emojiView.setLayoutParams(createFrame);
         showEmojiView(false, emojiView);
         emojiView.setDelegate(new EmojiView.EmojiViewDelegate() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$initEmojiView$1$2
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ boolean canSchedule() {
                 return EmojiView.EmojiViewDelegate.CC.$default$canSchedule(this);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void editAnimatedSticker(TLRPC$Document tLRPC$Document, RLottieDrawable rLottieDrawable, boolean z) {
                 EmojiView.EmojiViewDelegate.CC.$default$editAnimatedSticker(this, tLRPC$Document, rLottieDrawable, z);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void editMedia(TLRPC$Document tLRPC$Document, boolean z) {
                 EmojiView.EmojiViewDelegate.CC.$default$editMedia(this, tLRPC$Document, z);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ long getDialogId() {
                 return EmojiView.EmojiViewDelegate.CC.$default$getDialogId(this);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ float getProgressToSearchOpened() {
                 float f;
                 f = BitmapDescriptorFactory.HUE_RED;
                 return f;
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ int getThreadId() {
                 return EmojiView.EmojiViewDelegate.CC.$default$getThreadId(this);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void invalidateEnterView() {
                 EmojiView.EmojiViewDelegate.CC.$default$invalidateEnterView(this);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ boolean isExpanded() {
                 return EmojiView.EmojiViewDelegate.CC.$default$isExpanded(this);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ boolean isInScheduleMode() {
                 return EmojiView.EmojiViewDelegate.CC.$default$isInScheduleMode(this);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ boolean isSearchOpened() {
                 return EmojiView.EmojiViewDelegate.CC.$default$isSearchOpened(this);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ boolean isStoryReply() {
                 return EmojiView.EmojiViewDelegate.CC.$default$isStoryReply(this);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ boolean isUserSelf() {
                 return EmojiView.EmojiViewDelegate.CC.$default$isUserSelf(this);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onAnimatedEmojiUnlockClick() {
                 EmojiView.EmojiViewDelegate.CC.$default$onAnimatedEmojiUnlockClick(this);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ boolean onBackspace() {
                 return EmojiView.EmojiViewDelegate.CC.$default$onBackspace(this);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onClearEmojiRecent() {
                 EmojiView.EmojiViewDelegate.CC.$default$onClearEmojiRecent(this);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onCustomEmojiSelected(long j, TLRPC$Document tLRPC$Document, String str, boolean z) {
                 EmojiView.EmojiViewDelegate.CC.$default$onCustomEmojiSelected(this, j, tLRPC$Document, str, z);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onEmojiSettingsClick(ArrayList arrayList) {
                 EmojiView.EmojiViewDelegate.CC.$default$onEmojiSettingsClick(this, arrayList);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onGifSelected(View view, Object obj, String str, Object obj2, boolean z, int i, String str2) {
                 EmojiView.EmojiViewDelegate.CC.$default$onGifSelected(this, view, obj, str, obj2, z, i, str2);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onKiklikoVideoSelected(String str, boolean z, boolean z2, int i, String str2) {
                 EmojiView.EmojiViewDelegate.CC.$default$onKiklikoVideoSelected(this, str, z, z2, i, str2);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onSearchOpenClose(int i) {
                 EmojiView.EmojiViewDelegate.CC.$default$onSearchOpenClose(this, i);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onShowStickerSet(TLRPC$StickerSet tLRPC$StickerSet, TLRPC$InputStickerSet tLRPC$InputStickerSet) {
                 EmojiView.EmojiViewDelegate.CC.$default$onShowStickerSet(this, tLRPC$StickerSet, tLRPC$InputStickerSet);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onStickerSelected(View view, TLRPC$Document tLRPC$Document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z, int i, String str2) {
                 EmojiView.EmojiViewDelegate.CC.$default$onStickerSelected(this, view, tLRPC$Document, str, obj, sendAnimationData, z, i, str2);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onStickerSetAdd(TLRPC$StickerSetCovered tLRPC$StickerSetCovered) {
                 EmojiView.EmojiViewDelegate.CC.$default$onStickerSetAdd(this, tLRPC$StickerSetCovered);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onStickerSetRemove(TLRPC$StickerSetCovered tLRPC$StickerSetCovered) {
                 EmojiView.EmojiViewDelegate.CC.$default$onStickerSetRemove(this, tLRPC$StickerSetCovered);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onStickersGroupClick(long j) {
                 EmojiView.EmojiViewDelegate.CC.$default$onStickersGroupClick(this, j);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onStickersSettingsClick() {
                 EmojiView.EmojiViewDelegate.CC.$default$onStickersSettingsClick(this);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void onTabOpened(int i) {
                 EmojiView.EmojiViewDelegate.CC.$default$onTabOpened(this, i);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void setKiklikoAvatar(String str) {
                 EmojiView.EmojiViewDelegate.CC.$default$setKiklikoAvatar(this, str);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void showKiklikoReportAlert(String str, Callbacks$Callback1 callbacks$Callback1) {
                 EmojiView.EmojiViewDelegate.CC.$default$showKiklikoReportAlert(this, str, callbacks$Callback1);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public /* synthetic */ void showTrendingStickersAlert(TrendingStickersLayout trendingStickersLayout) {
                 EmojiView.EmojiViewDelegate.CC.$default$showTrendingStickersAlert(this, trendingStickersLayout);
             }
 
-            @Override // org.telegram.p042ui.Components.EmojiView.EmojiViewDelegate
+            @Override // org.telegram.p043ui.Components.EmojiView.EmojiViewDelegate
             public void onEmojiSelected(String str) {
                 boolean z;
                 if (str == null) {
@@ -838,11 +838,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
             protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
                 RadialProgress uploadProgressBar;
                 super.onLayout(z, i, i2, i3, i4);
-                int m103dp = AndroidUtilities.m103dp(45.0f);
-                int i5 = ((i3 - i) - m103dp) / 2;
-                int i6 = ((i4 - i2) - m103dp) / 2;
+                int m105dp = AndroidUtilities.m105dp(45.0f);
+                int i5 = ((i3 - i) - m105dp) / 2;
+                int i6 = ((i4 - i2) - m105dp) / 2;
                 uploadProgressBar = CreateReactionButtonsActivity.this.getUploadProgressBar();
-                uploadProgressBar.setProgressRect(i5, i6, i5 + m103dp, m103dp + i6);
+                uploadProgressBar.setProgressRect(i5, i6, i5 + m105dp, m105dp + i6);
             }
         };
         ViewExtKt.invisible$default(r1, false, 1, null);
@@ -857,7 +857,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     /* JADX INFO: Access modifiers changed from: private */
     public final View initProgressCircleView() {
         View view = new View(getParentActivity());
-        view.setBackground(Theme.createServiceDrawable(AndroidUtilities.m103dp(18.0f), view, this.fragmentView));
+        view.setBackground(Theme.createServiceDrawable(AndroidUtilities.m105dp(18.0f), view, this.fragmentView));
         return view;
     }
 
@@ -872,7 +872,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initUploadTextView() {
         TextView textView = new TextView(getParentActivity());
-        textView.setText(getResourceManager().getString(C3630R.string.chat_reaction_text_loader));
+        textView.setText(getResourceManager().getString(C3634R.string.chat_reaction_text_loader));
         textView.setTextSize(1, 16.0f);
         textView.setTextSize(1, 16.0f);
         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText4));
@@ -889,11 +889,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     }
 
     private final void setupActionBar() {
-        C3702ActionBar c3702ActionBar = this.actionBar;
-        c3702ActionBar.setBackButtonImage(C3630R.C3632drawable.ic_ab_back);
-        c3702ActionBar.setTitle(getResourceManager().getString(C3630R.string.chat_reaction_title));
-        c3702ActionBar.setActionBarMenuOnItemClick(new C3702ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$setupActionBar$1$1
-            @Override // org.telegram.p042ui.ActionBar.C3702ActionBar.ActionBarMenuOnItemClick
+        C3706ActionBar c3706ActionBar = this.actionBar;
+        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.chat_reaction_title));
+        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == 1) {
                     CreateReactionButtonsActivity.this.createMessage();
@@ -902,7 +902,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 }
             }
         });
-        ActionBarMenuItem setupActionBar$lambda$20$lambda$19$lambda$18 = c3702ActionBar.createMenu().addItem(1, getResourceManager().getString(C3630R.string.chat_reaction_create));
+        ActionBarMenuItem setupActionBar$lambda$20$lambda$19$lambda$18 = c3706ActionBar.createMenu().addItem(1, getResourceManager().getString(C3634R.string.chat_reaction_create));
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$20$lambda$19$lambda$18, "setupActionBar$lambda$20$lambda$19$lambda$18");
         ViewExtKt.invisible$default(setupActionBar$lambda$20$lambda$19$lambda$18, false, 1, null);
         this.doneItem = setupActionBar$lambda$20$lambda$19$lambda$18;
@@ -934,7 +934,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     /* JADX INFO: Access modifiers changed from: private */
     public final void createMessage() {
         if (!getListAdapter().isAllButtonsValid()) {
-            showToast(getResourceManager().getString(C3630R.string.chat_reaction_empty_field_warning));
+            showToast(getResourceManager().getString(C3634R.string.chat_reaction_empty_field_warning));
         } else {
             getPresenter().prepareTextMessage(getListAdapter().getFixedEmotions(), getListAdapter().getAllButtons(), this.messageText, getListAdapter().getButtonLine(), this.attachedFile, this.replyMessageObject);
         }
@@ -964,9 +964,9 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         final Activity parentActivity = getParentActivity();
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(parentActivity) { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$showURLButtonDialog$editText$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // org.telegram.p042ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+            @Override // org.telegram.p043ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
             public void onMeasure(int i2, int i3) {
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m103dp(64.0f), 1073741824));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m105dp(64.0f), 1073741824));
             }
         };
         ViewExtKt.singleLine(editTextBoldCursor);
@@ -983,7 +983,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         editTextBoldCursor.setText(str);
         editTextBoldCursor.setTextSize(1, 18.0f);
         editTextBoldCursor.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
-        editTextBoldCursor.setHintText(LocaleController.getString("URL", C3630R.string.URL));
+        editTextBoldCursor.setHintText(LocaleController.getString("URL", C3634R.string.URL));
         editTextBoldCursor.setHeaderHintColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
         editTextBoldCursor.setTransformHintToHeader(true);
         editTextBoldCursor.setLineColors(Theme.getColor(Theme.key_windowBackgroundWhiteInputField), Theme.getColor(Theme.key_windowBackgroundWhiteInputFieldActivated), Theme.getColor(Theme.key_text_RedRegular));
@@ -995,15 +995,15 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         ViewExtKt.setHorizontalPadding(frameLayout, 24);
         frameLayout.addView(editTextBoldCursor);
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(LocaleController.getString("CreateLink", C3630R.string.CreateLink));
+        builder.setTitle(LocaleController.getString("CreateLink", C3634R.string.CreateLink));
         builder.setView(frameLayout);
-        builder.setPositiveButton(LocaleController.getString("OK", C3630R.string.OK), new DialogInterface.OnClickListener() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda0
+        builder.setPositiveButton(LocaleController.getString("OK", C3634R.string.OK), new DialogInterface.OnClickListener() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 CreateReactionButtonsActivity.showURLButtonDialog$lambda$27$lambda$25(CreateReactionButtonsActivity.this, i, editTextBoldCursor, dialogInterface, i2);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3630R.string.Cancel), new DialogInterface.OnClickListener() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda1
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3634R.string.Cancel), new DialogInterface.OnClickListener() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 dialogInterface.dismiss();
@@ -1363,11 +1363,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 if (i == createReactionButtonsActivity.reactionsSectionRow) {
                     if (6 - createReactionButtonsActivity.reactions.size() > 1) {
                         StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-                        format2 = String.format(this.resourceManager.getString(C3630R.string.chat_reaction_max_reaction_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
+                        format2 = String.format(this.resourceManager.getString(C3634R.string.chat_reaction_max_reaction_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
                         Intrinsics.checkNotNullExpressionValue(format2, "format(format, *args)");
                     } else {
                         StringCompanionObject stringCompanionObject2 = StringCompanionObject.INSTANCE;
-                        format2 = String.format(this.resourceManager.getString(C3630R.string.chat_reaction_max_reaction_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
+                        format2 = String.format(this.resourceManager.getString(C3634R.string.chat_reaction_max_reaction_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
                         Intrinsics.checkNotNullExpressionValue(format2, "format(format, *args)");
                     }
                     textInfoPrivacyCell.setText(format2);
@@ -1375,11 +1375,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 }
                 if (12 - createReactionButtonsActivity.buttonsCount > 1) {
                     StringCompanionObject stringCompanionObject3 = StringCompanionObject.INSTANCE;
-                    format = String.format(this.resourceManager.getString(C3630R.string.chat_reaction_max_button_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
+                    format = String.format(this.resourceManager.getString(C3634R.string.chat_reaction_max_button_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
                     Intrinsics.checkNotNullExpressionValue(format, "format(format, *args)");
                 } else {
                     StringCompanionObject stringCompanionObject4 = StringCompanionObject.INSTANCE;
-                    format = String.format(this.resourceManager.getString(C3630R.string.chat_reaction_max_button_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
+                    format = String.format(this.resourceManager.getString(C3634R.string.chat_reaction_max_button_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
                     Intrinsics.checkNotNullExpressionValue(format, "format(format, *args)");
                 }
                 textInfoPrivacyCell.setText(format);
@@ -1388,13 +1388,13 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 CreateReactionButtonsActivity createReactionButtonsActivity2 = this.this$0;
                 TextCell textCell = (TextCell) view;
                 textCell.setColors(-1, Theme.key_windowBackgroundWhiteBlueText4);
-                Drawable drawable2 = AppCompatResources.getDrawable(textCell.getContext(), C3630R.C3632drawable.poll_add_circle);
-                if (drawable2 == null || (drawable = AppCompatResources.getDrawable(textCell.getContext(), C3630R.C3632drawable.poll_add_plus)) == null) {
+                Drawable drawable2 = AppCompatResources.getDrawable(textCell.getContext(), C3634R.C3636drawable.poll_add_circle);
+                if (drawable2 == null || (drawable = AppCompatResources.getDrawable(textCell.getContext(), C3634R.C3636drawable.poll_add_plus)) == null) {
                     return;
                 }
                 drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_switchTrackChecked), PorterDuff.Mode.MULTIPLY));
                 drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_checkboxCheck), PorterDuff.Mode.MULTIPLY));
-                textCell.setTextAndIcon(this.resourceManager.getString(createReactionButtonsActivity2.reactionsAddRow == i ? C3630R.string.chat_reaction_select_emoji : C3630R.string.chat_reaction_create_button), (Drawable) new CombinedDrawable(drawable2, drawable), false);
+                textCell.setTextAndIcon(this.resourceManager.getString(createReactionButtonsActivity2.reactionsAddRow == i ? C3634R.string.chat_reaction_select_emoji : C3634R.string.chat_reaction_create_button), (Drawable) new CombinedDrawable(drawable2, drawable), false);
             } else if (view instanceof MovingReactionCell) {
                 Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
                 CreateReactionButtonsActivity createReactionButtonsActivity3 = this.this$0;
@@ -1416,11 +1416,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 }
             } else if (view instanceof TextSettingsCell) {
                 Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
-                ((TextSettingsCell) view).setTextAndValue(this.resourceManager.getString(C3630R.string.chat_reaction_button_position), this.resourceManager.getString(this.this$0.buttonsRowsType.getResource()), false);
+                ((TextSettingsCell) view).setTextAndValue(this.resourceManager.getString(C3634R.string.chat_reaction_button_position), this.resourceManager.getString(this.this$0.buttonsRowsType.getResource()), false);
             }
         }
 
-        @Override // org.telegram.p042ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
             Integer valueOf = viewHolder != null ? Integer.valueOf(viewHolder.getAdapterPosition()) : null;
             int i = this.this$0.reactionsAddRow;
@@ -1525,7 +1525,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         }
 
         private final String updateHeader(int i) {
-            return i == this.this$0.reactionHeaderRow ? this.resourceManager.getString(C3630R.string.chat_reaction_create_a_reaction) : i == this.this$0.buttonsHeaderRow ? this.resourceManager.getString(C3630R.string.chat_reaction_create_button) : this.resourceManager.getString(C3630R.string.chat_reaction_settings);
+            return i == this.this$0.reactionHeaderRow ? this.resourceManager.getString(C3634R.string.chat_reaction_create_a_reaction) : i == this.this$0.buttonsHeaderRow ? this.resourceManager.getString(C3634R.string.chat_reaction_create_button) : this.resourceManager.getString(C3634R.string.chat_reaction_settings);
         }
 
         private final void removeUrlItem(int i) {

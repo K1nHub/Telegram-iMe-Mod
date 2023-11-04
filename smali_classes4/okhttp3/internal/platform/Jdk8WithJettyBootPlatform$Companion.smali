@@ -38,7 +38,7 @@
 .method public final buildIfSupported()Lokhttp3/internal/platform/Platform;
     .locals 12
 
-    const-string v0, "java.specification.version"
+    const-string/jumbo v0, "java.specification.version"
 
     const-string/jumbo v1, "unknown"
 
@@ -50,7 +50,7 @@
     const/4 v1, 0x0
 
     :try_start_0
-    const-string v2, "jvmVersion"
+    const-string/jumbo v2, "jvmVersion"
 
     .line 128
     invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

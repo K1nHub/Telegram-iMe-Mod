@@ -19,13 +19,13 @@ public final class GlobalVersionTlbConstructor extends org.ton.tlb.TlbConstructo
     public void storeTlb(CellBuilder cellBuilder, GlobalVersion value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.storeUInt(value.m4961getVersionpVg5ArA(), 32);
-        cellBuilder.storeUInt(value.m4960getCapabilitiessVKNKU(), 64);
+        cellBuilder.storeUInt(value.m5115getVersionpVg5ArA(), 32);
+        cellBuilder.storeUInt(value.m5114getCapabilitiessVKNKU(), 64);
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public GlobalVersion loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new GlobalVersion(UInt.m1967constructorimpl(cellSlice.loadUInt(32).intValue()), ULong.m1989constructorimpl(cellSlice.loadUInt(64).longValue()), null);
+        return new GlobalVersion(UInt.m1972constructorimpl(cellSlice.loadUInt(32).intValue()), ULong.m1994constructorimpl(cellSlice.loadUInt(64).longValue()), null);
     }
 }

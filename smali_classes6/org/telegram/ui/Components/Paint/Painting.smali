@@ -3427,6 +3427,10 @@
 
     iget-object v0, v1, Lorg/telegram/ui/Components/Paint/Painting;->bitmapBlurTexture:Lorg/telegram/ui/Components/Paint/Texture;
 
+    if-eqz v0, :cond_3
+
+    iget-boolean v0, v1, Lorg/telegram/ui/Components/Paint/Painting;->hasBlur:Z
+
     if-nez v0, :cond_0
 
     goto/16 :goto_1

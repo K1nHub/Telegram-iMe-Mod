@@ -98,6 +98,12 @@
     return-void
 .end method
 
+.method public static $default$didPressGiveawayChatButton(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;I)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public static $default$didPressHiddenForward(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 0
 
@@ -141,6 +147,12 @@
 .end method
 
 .method public static $default$didPressSideButton(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$didPressSponsoredClose(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;)V
     .locals 0
 
     return-void
@@ -193,6 +205,20 @@
             ">;III)V"
         }
     .end annotation
+
+    return-void
+.end method
+
+.method public static $default$didPressWebPage(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$WebPage;Ljava/lang/String;Z)V
+    .locals 0
+    .param p0, "_this"    # Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
+
+    .line 596
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    invoke-static {p1, p3}, Lorg/telegram/messenger/browser/Browser;->openUrl(Landroid/content/Context;Ljava/lang/String;)V
 
     return-void
 .end method

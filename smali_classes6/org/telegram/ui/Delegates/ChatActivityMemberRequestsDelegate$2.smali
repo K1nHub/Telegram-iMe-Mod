@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;Lorg/telegram/ui/ActionBar/BaseFragment;J)V
     .locals 0
 
-    .line 143
+    .line 144
     iput-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$2;->this$0:Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/MemberRequestsBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;J)V
@@ -35,7 +35,7 @@
 .method public dismiss()V
     .locals 2
 
-    .line 146
+    .line 147
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$2;->this$0:Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;
 
     invoke-static {v0}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->access$000(Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;)Lorg/telegram/ui/Components/MemberRequestsBottomSheet;
@@ -56,14 +56,14 @@
 
     if-nez v0, :cond_0
 
-    .line 147
+    .line 148
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$2;->this$0:Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->access$002(Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;Lorg/telegram/ui/Components/MemberRequestsBottomSheet;)Lorg/telegram/ui/Components/MemberRequestsBottomSheet;
 
-    .line 149
+    .line 150
     :cond_0
     invoke-super {p0}, Lorg/telegram/ui/Components/UsersAlertBase;->dismiss()V
 

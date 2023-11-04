@@ -41,7 +41,7 @@ public final class PriceRate {
     }
 
     public int hashCode() {
-        return (StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.rateToDollars) * 31) + Float.floatToIntBits(this.ratePercentageChange24h);
+        return (StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.rateToDollars) * 31) + Float.floatToIntBits(this.ratePercentageChange24h);
     }
 
     public String toString() {

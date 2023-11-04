@@ -60,8 +60,58 @@
     return-void
 .end method
 
+.method public constructor <init>(Landroid/view/View;JJLandroid/animation/TimeInterpolator;)V
+    .locals 2
+
+    .line 58
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const-wide/16 v0, 0x0
+
+    .line 19
+    iput-wide v0, p0, Lorg/telegram/ui/Components/AnimatedColor;->transitionDelay:J
+
+    const-wide/16 v0, 0xc8
+
+    .line 20
+    iput-wide v0, p0, Lorg/telegram/ui/Components/AnimatedColor;->transitionDuration:J
+
+    .line 21
+    sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    iput-object v0, p0, Lorg/telegram/ui/Components/AnimatedColor;->transitionInterpolator:Landroid/animation/TimeInterpolator;
+
+    .line 59
+    iput-object p1, p0, Lorg/telegram/ui/Components/AnimatedColor;->parent:Landroid/view/View;
+
+    .line 60
+    iput-wide p2, p0, Lorg/telegram/ui/Components/AnimatedColor;->transitionDelay:J
+
+    .line 61
+    iput-wide p4, p0, Lorg/telegram/ui/Components/AnimatedColor;->transitionDuration:J
+
+    .line 62
+    iput-object p6, p0, Lorg/telegram/ui/Components/AnimatedColor;->transitionInterpolator:Landroid/animation/TimeInterpolator;
+
+    const/4 p1, 0x1
+
+    .line 63
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/AnimatedColor;->firstSet:Z
+
+    return-void
+.end method
+
 
 # virtual methods
+.method public get()I
+    .locals 1
+
+    .line 110
+    iget v0, p0, Lorg/telegram/ui/Components/AnimatedColor;->value:I
+
+    return v0
+.end method
+
 .method public set(I)I
     .locals 1
 

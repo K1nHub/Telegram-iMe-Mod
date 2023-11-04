@@ -77,17 +77,17 @@ public class zzon {
                 if (load != null) {
                     try {
                         zzoqVar.zza(load);
-                        zzass.m1099d("ModelLoader", "Remote model source is loaded successfully");
+                        zzass.m1100d("ModelLoader", "Remote model source is loaded successfully");
                         return true;
                     } catch (RuntimeException e) {
                         list.add(zzmc.REMOTE_MODEL_INVALID);
                         throw e;
                     }
                 }
-                zzass.m1099d("ModelLoader", "Remote model source can NOT be loaded, try local model.");
+                zzass.m1100d("ModelLoader", "Remote model source can NOT be loaded, try local model.");
                 list.add(zzmc.REMOTE_MODEL_LOADER_LOADS_NO_MODEL);
             } catch (FirebaseMLException e2) {
-                zzass.m1099d("ModelLoader", "Remote model source can NOT be loaded, try local model.");
+                zzass.m1100d("ModelLoader", "Remote model source can NOT be loaded, try local model.");
                 list.add(zzmc.REMOTE_MODEL_LOADER_ERROR);
                 throw e2;
             }
@@ -103,7 +103,7 @@ public class zzon {
         }
         try {
             zzoqVar.zza(load);
-            zzass.m1099d("ModelLoader", "Local model source is loaded successfully");
+            zzass.m1100d("ModelLoader", "Local model source is loaded successfully");
             return true;
         } catch (RuntimeException e) {
             list.add(zzmc.LOCAL_MODEL_INVALID);

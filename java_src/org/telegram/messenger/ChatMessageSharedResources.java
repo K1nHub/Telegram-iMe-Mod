@@ -14,14 +14,14 @@ public class ChatMessageSharedResources {
 
     public Drawable getRedLocationIcon() {
         if (this.chat_redLocationIcon == null) {
-            this.chat_redLocationIcon = this.context.getResources().getDrawable(C3630R.C3632drawable.map_pin).mutate();
+            this.chat_redLocationIcon = this.context.getResources().getDrawable(C3634R.C3636drawable.map_pin).mutate();
         }
         return this.chat_redLocationIcon;
     }
 
     public Drawable getAvatarLiveLocation() {
         if (this.chat_msgAvatarLiveLocationDrawable == null) {
-            this.chat_msgAvatarLiveLocationDrawable = this.context.getResources().getDrawable(C3630R.C3632drawable.livepin).mutate();
+            this.chat_msgAvatarLiveLocationDrawable = this.context.getResources().getDrawable(C3634R.C3636drawable.livepin).mutate();
         }
         return this.chat_msgAvatarLiveLocationDrawable;
     }

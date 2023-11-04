@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 1858
+    .line 1859
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$10;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1861
+    .line 1862
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1862
+    .line 1863
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$10;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     const/4 v0, 0x0
@@ -47,15 +47,15 @@
 
     const/4 v1, 0x0
 
-    .line 1863
+    .line 1864
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$2602(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)F
 
-    .line 1864
+    .line 1865
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$10;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$102(Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
-    .line 1865
+    .line 1866
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$10;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

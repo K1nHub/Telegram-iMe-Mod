@@ -38,10 +38,10 @@
 .method private constructor <init>(Landroid/content/Context;)V
     .locals 7
 
-    .line 229
+    .line 230
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 220
+    .line 221
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -50,22 +50,22 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->outlinePaint:Landroid/graphics/Paint;
 
-    .line 221
+    .line 222
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->fillPaint:Landroid/graphics/Paint;
 
-    .line 231
+    .line 232
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/4 v0, 0x0
 
-    .line 233
+    .line 234
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setWillNotDraw(Z)V
 
-    .line 234
+    .line 235
     new-instance v0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;-><init>(Landroid/content/Context;)V
@@ -74,7 +74,7 @@
 
     const/16 v2, 0x8
 
-    .line 235
+    .line 236
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -93,7 +93,7 @@
 
     invoke-virtual {v0, v3, v4, v5, v2}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 236
+    .line 237
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->iconView:Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;
 
     const/16 v2, 0x3a
@@ -104,24 +104,24 @@
 
     invoke-virtual {p0, v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 238
+    .line 239
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->titleView:Landroid/widget/TextView;
 
-    .line 239
+    .line 240
     invoke-virtual {v0}, Landroid/widget/TextView;->setSingleLine()V
 
-    .line 240
+    .line 241
     iget-object p1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->titleView:Landroid/widget/TextView;
 
     const/high16 v0, 0x41500000    # 13.0f
 
     invoke-virtual {p1, v1, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 241
+    .line 242
     iget-object p1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->titleView:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -132,7 +132,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 242
+    .line 243
     iget-object p1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->titleView:Landroid/widget/TextView;
 
     const/4 v0, -0x2
@@ -155,14 +155,14 @@
 
     invoke-virtual {p0, p1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 244
+    .line 245
     iget-object p1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->outlinePaint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 245
+    .line 246
     iget-object p1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->outlinePaint:Landroid/graphics/Paint;
 
     const/high16 v0, 0x3f000000    # 0.5f
@@ -181,7 +181,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 247
+    .line 248
     iget-object p1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->fillPaint:Landroid/graphics/Paint;
 
     const/4 v0, -0x1
@@ -194,7 +194,7 @@
 .method synthetic constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Cells/AppIconsSelectorCell$1;)V
     .locals 0
 
-    .line 219
+    .line 220
     invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -203,7 +203,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;Lorg/telegram/ui/LauncherIconController$LauncherIcon;)V
     .locals 0
 
-    .line 219
+    .line 220
     invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->bind(Lorg/telegram/ui/LauncherIconController$LauncherIcon;)V
 
     return-void
@@ -212,7 +212,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;)Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;
     .locals 0
 
-    .line 219
+    .line 220
     iget-object p0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->iconView:Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;
 
     return-object p0
@@ -221,7 +221,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;ZZ)V
     .locals 0
 
-    .line 219
+    .line 220
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->setSelected(ZZ)V
 
     return-void
@@ -230,12 +230,12 @@
 .method private bind(Lorg/telegram/ui/LauncherIconController$LauncherIcon;)V
     .locals 6
 
-    .line 288
+    .line 289
     iget v0, p1, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->background:I
 
     if-nez v0, :cond_0
 
-    .line 289
+    .line 290
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->iconView:Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;
 
     iget v1, p1, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->backgroundColor:I
@@ -244,13 +244,13 @@
 
     goto :goto_0
 
-    .line 291
+    .line 292
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->iconView:Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 293
+    .line 294
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->titleView:Landroid/widget/TextView;
 
@@ -260,7 +260,7 @@
 
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 294
+    .line 295
     iget-boolean v1, p1, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->premium:Z
 
     const/4 v2, 0x0
@@ -273,7 +273,7 @@
 
     if-nez v1, :cond_1
 
-    .line 295
+    .line 296
     new-instance v1, Landroid/text/SpannableString;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -298,7 +298,7 @@
 
     invoke-direct {v1, v3}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 296
+    .line 297
     new-instance v3, Lorg/telegram/ui/Components/ColoredImageSpan;
 
     sget v4, Lorg/telegram/messenger/R$drawable;->msg_mini_premiumlock:I
@@ -307,12 +307,12 @@
 
     const/4 v4, 0x1
 
-    .line 297
+    .line 298
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/ColoredImageSpan;->setTopOffset(I)V
 
     const/16 v5, 0xd
 
-    .line 298
+    .line 299
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -321,30 +321,30 @@
 
     const/16 v5, 0x21
 
-    .line 299
+    .line 300
     invoke-virtual {v1, v3, v2, v4, v5}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     const/4 v3, 0x4
 
-    .line 301
+    .line 302
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
     iput v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 302
+    .line 303
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
-    .line 304
+    .line 305
     :cond_1
     iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 305
+    .line 306
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->titleView:Landroid/widget/TextView;
 
     iget v1, p1, Lorg/telegram/ui/LauncherIconController$LauncherIcon;->title:I
@@ -355,7 +355,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 307
+    .line 308
     :goto_1
     invoke-static {p1}, Lorg/telegram/ui/LauncherIconController;->isEnabled(Lorg/telegram/ui/LauncherIconController$LauncherIcon;)Z
 
@@ -369,7 +369,7 @@
 .method private synthetic lambda$setSelected$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 279
+    .line 280
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -388,10 +388,10 @@
 .method private setProgress(F)V
     .locals 4
 
-    .line 262
+    .line 263
     iput p1, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->progress:F
 
-    .line 264
+    .line 265
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->titleView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -412,7 +412,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 265
+    .line 266
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->outlinePaint:Landroid/graphics/Paint;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrack:I
@@ -437,7 +437,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 266
+    .line 267
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->outlinePaint:Landroid/graphics/Paint;
 
     const/high16 v1, 0x3f000000    # 0.5f
@@ -462,7 +462,7 @@
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 267
+    .line 268
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->invalidate()V
 
     return-void
@@ -480,7 +480,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 272
+    .line 273
     :goto_0
     iget v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->progress:F
 
@@ -507,7 +507,7 @@
 
     aput p1, p2, v0
 
-    .line 277
+    .line 278
     invoke-static {p2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
@@ -518,24 +518,24 @@
 
     move-result-object p1
 
-    .line 278
+    .line 279
     sget-object p2, Lorg/telegram/ui/Components/Easings;->easeInOutQuad:Landroid/view/animation/Interpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 279
+    .line 280
     new-instance p2, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 280
+    .line 281
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_1
 
-    .line 282
+    .line 283
     :cond_2
     invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->setProgress(F)V
 
@@ -548,14 +548,14 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 252
+    .line 253
     iget-object v0, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->outlinePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getStrokeWidth()F
 
     move-result v0
 
-    .line 253
+    .line 254
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget-object v2, p0, Lorg/telegram/ui/Cells/AppIconsSelectorCell$IconHolderView;->iconView:Lorg/telegram/ui/Cells/AppIconsSelectorCell$AdaptiveIconImageView;
@@ -602,7 +602,7 @@
 
     const/high16 v0, 0x41900000    # 18.0f
 
-    .line 254
+    .line 255
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
@@ -619,10 +619,10 @@
 
     invoke-virtual {p1, v1, v2, v3, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 256
+    .line 257
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 258
+    .line 259
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2

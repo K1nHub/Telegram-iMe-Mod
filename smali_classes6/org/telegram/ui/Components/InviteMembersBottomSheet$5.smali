@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)V
     .locals 0
 
-    .line 516
+    .line 519
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$5;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 519
+    .line 522
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$5;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$900(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/widget/ImageView;

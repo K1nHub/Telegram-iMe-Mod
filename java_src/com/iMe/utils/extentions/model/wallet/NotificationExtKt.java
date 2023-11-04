@@ -4,7 +4,7 @@ import com.iMe.storage.domain.model.notification.Notification;
 import com.iMe.storage.domain.model.wallet.transaction.TransactionDirection;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* compiled from: NotificationExt.kt */
 /* loaded from: classes4.dex */
 public final class NotificationExtKt {
@@ -16,31 +16,31 @@ public final class NotificationExtKt {
     public static final int getCategoryTitle(Notification notification) {
         Intrinsics.checkNotNullParameter(notification, "<this>");
         if (notification instanceof Notification.Donation) {
-            return C3630R.string.channel_donations_toolbar_title;
+            return C3634R.string.channel_donations_toolbar_title;
         }
-        if (notification instanceof Notification.CryptoTransfer.C1959In) {
+        if (notification instanceof Notification.CryptoTransfer.C1963In) {
             return TransactionDirection.f392IN.getTitle();
         }
         if (notification instanceof Notification.CryptoTransfer.Out) {
             return TransactionDirection.OUT.getTitle();
         }
         if (notification instanceof Notification.Cancel) {
-            return C3630R.string.wallet_transactions_type_cancel_title;
+            return C3634R.string.wallet_transactions_type_cancel_title;
         }
         if (notification instanceof Notification.Approve) {
-            return C3630R.string.push_notification_wallet_approve_category_title;
+            return C3634R.string.push_notification_wallet_approve_category_title;
         }
         if (notification instanceof Notification.Simplex) {
-            return C3630R.string.wallet_transactions_type_simplex_title;
+            return C3634R.string.wallet_transactions_type_simplex_title;
         }
         if (notification instanceof Notification.Unsupported) {
-            return C3630R.string.wallet_transactions_type_unsupported_title;
+            return C3634R.string.wallet_transactions_type_unsupported_title;
         }
         if (notification instanceof Notification.BinancePayRequestCreated ? true : notification instanceof Notification.BinancePayRequestStatusUpdated) {
-            return C3630R.string.wallet_binance_attach_title;
+            return C3634R.string.wallet_binance_attach_title;
         }
         if (notification instanceof Notification.StakingSafeWithdrawalStarted ? true : notification instanceof Notification.StakingSafeWithdrawalFinished ? true : notification instanceof Notification.StakingStarted ? true : notification instanceof Notification.StakingFinished) {
-            return C3630R.string.push_notification_staking_title;
+            return C3634R.string.push_notification_staking_title;
         }
         throw new NoWhenBranchMatchedException();
     }

@@ -36,9 +36,9 @@ public final class WalletConnectSessionDb {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1017m = ((((((((((((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.tgUserId) * 31) + this.sessionTopic.hashCode()) * 31) + this.sessionVersion.hashCode()) * 31) + this.sessionBridge.hashCode()) * 31) + this.sessionKey.hashCode()) * 31) + this.chainId) * 31) + this.peerId.hashCode()) * 31) + this.remotePeerId.hashCode()) * 31) + this.remotePeerMetaName.hashCode()) * 31) + this.remotePeerMetaUrl.hashCode()) * 31;
+        int m1018m = ((((((((((((((((((ProfileData$$ExternalSyntheticBackport0.m1018m(this.tgUserId) * 31) + this.sessionTopic.hashCode()) * 31) + this.sessionVersion.hashCode()) * 31) + this.sessionBridge.hashCode()) * 31) + this.sessionKey.hashCode()) * 31) + this.chainId) * 31) + this.peerId.hashCode()) * 31) + this.remotePeerId.hashCode()) * 31) + this.remotePeerMetaName.hashCode()) * 31) + this.remotePeerMetaUrl.hashCode()) * 31;
         String str = this.remotePeerMetaDescription;
-        int hashCode = (((m1017m + (str == null ? 0 : str.hashCode())) * 31) + this.remotePeerMetaIcons.hashCode()) * 31;
+        int hashCode = (((m1018m + (str == null ? 0 : str.hashCode())) * 31) + this.remotePeerMetaIcons.hashCode()) * 31;
         boolean z = this.isAutoSign;
         int i = z;
         if (z != 0) {

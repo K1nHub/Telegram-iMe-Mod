@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function2;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: DevViewModel.kt */
-@DebugMetadata(m143c = "com.iMe.feature.devTools.DevViewModel$onCreate$1", m142f = "DevViewModel.kt", m141l = {21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "com.iMe.feature.devTools.DevViewModel$onCreate$1", m144f = "DevViewModel.kt", m143l = {21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33}, m142m = "invokeSuspend")
 /* loaded from: classes3.dex */
 public final class DevViewModel$onCreate$1 extends SuspendLambda implements Function2<SimpleSyntax<DevState, DevSideEffects>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;

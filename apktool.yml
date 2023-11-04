@@ -1,5 +1,5 @@
 !!brut.androlib.apk.ApkInfo
-apkFileName: ime_android_10_1_2.apk
+apkFileName: ime_android_10_2_0.apk
 doNotCompress:
 - resources.arsc
 - png
@@ -10,7 +10,7 @@ doNotCompress:
 isFrameworkApk: false
 packageInfo:
   forcedPackageId: '127'
-  renameManifestPackage: org.telegram.messenger
+  renameManifestPackage: null
 resourcesAreCompressed: false
 sdkInfo:
   minSdkVersion: '23'
@@ -241,5 +241,5 @@ usesFramework:
   tag: null
 version: 2.8.1
 versionInfo:
-  versionCode: '1010209'
-  versionName: 10.1.2
+  versionCode: '1020009'
+  versionName: 10.2.0

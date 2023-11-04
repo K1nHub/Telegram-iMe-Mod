@@ -3,7 +3,7 @@ package com.google.android.exoplayer2.extractor.mp4;
 import android.net.Uri;
 import android.util.Pair;
 import android.util.SparseArray;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.audio.Ac4Util;
@@ -176,9 +176,9 @@ public class FragmentedMp4Extractor implements Extractor {
         this.containerAtoms = new ArrayDeque<>();
         this.pendingMetadataSampleInfos = new ArrayDeque<>();
         this.trackBundles = new SparseArray<>();
-        this.durationUs = C0479C.TIME_UNSET;
-        this.pendingSeekTimeUs = C0479C.TIME_UNSET;
-        this.segmentIndexEarliestPresentationTimeUs = C0479C.TIME_UNSET;
+        this.durationUs = C0485C.TIME_UNSET;
+        this.pendingSeekTimeUs = C0485C.TIME_UNSET;
+        this.segmentIndexEarliestPresentationTimeUs = C0485C.TIME_UNSET;
         this.extractorOutput = ExtractorOutput.PLACEHOLDER;
         this.emsgTrackOutputs = new TrackOutput[0];
         this.ceaTrackOutputs = new TrackOutput[0];
@@ -425,12 +425,12 @@ public class FragmentedMp4Extractor implements Extractor {
                 this.trackBundles.valueAt(i).updateDrmInitData(drmInitDataFromAtoms);
             }
         }
-        if (this.pendingSeekTimeUs != C0479C.TIME_UNSET) {
+        if (this.pendingSeekTimeUs != C0485C.TIME_UNSET) {
             int size2 = this.trackBundles.size();
             for (int i2 = 0; i2 < size2; i2++) {
                 this.trackBundles.valueAt(i2).seek(this.pendingSeekTimeUs);
             }
-            this.pendingSeekTimeUs = C0479C.TIME_UNSET;
+            this.pendingSeekTimeUs = C0485C.TIME_UNSET;
         }
     }
 
@@ -486,14 +486,14 @@ public class FragmentedMp4Extractor implements Extractor {
             long readUnsignedInt2 = parsableByteArray.readUnsignedInt();
             scaleLargeTimestamp = Util.scaleLargeTimestamp(parsableByteArray.readUnsignedInt(), 1000000L, readUnsignedInt2);
             long j2 = this.segmentIndexEarliestPresentationTimeUs;
-            long j3 = j2 != C0479C.TIME_UNSET ? j2 + scaleLargeTimestamp : -9223372036854775807L;
+            long j3 = j2 != C0485C.TIME_UNSET ? j2 + scaleLargeTimestamp : -9223372036854775807L;
             str = str3;
             scaleLargeTimestamp2 = Util.scaleLargeTimestamp(parsableByteArray.readUnsignedInt(), 1000L, readUnsignedInt2);
             str2 = str4;
             readUnsignedInt = parsableByteArray.readUnsignedInt();
             j = j3;
         } else if (parseFullAtomVersion != 1) {
-            Log.m1106w(TAG, "Skipping unsupported emsg version: " + parseFullAtomVersion);
+            Log.m1107w(TAG, "Skipping unsupported emsg version: " + parseFullAtomVersion);
             return;
         } else {
             long readUnsignedInt3 = parsableByteArray.readUnsignedInt();
@@ -514,7 +514,7 @@ public class FragmentedMp4Extractor implements Extractor {
             parsableByteArray2.setPosition(0);
             trackOutput.sampleData(parsableByteArray2, bytesLeft);
         }
-        if (j == C0479C.TIME_UNSET) {
+        if (j == C0485C.TIME_UNSET) {
             this.pendingMetadataSampleInfos.addLast(new MetadataSampleInfo(scaleLargeTimestamp, true, bytesLeft));
             this.pendingMetadataSampleBytes += bytesLeft;
         } else if (!this.pendingMetadataSampleInfos.isEmpty()) {
@@ -930,7 +930,7 @@ public class FragmentedMp4Extractor implements Extractor {
             }
             int currentSampleOffset = (int) (trackBundle.getCurrentSampleOffset() - extractorInput.getPosition());
             if (currentSampleOffset < 0) {
-                Log.m1106w(TAG, "Ignoring negative offset to sample data.");
+                Log.m1107w(TAG, "Ignoring negative offset to sample data.");
                 currentSampleOffset = 0;
             }
             extractorInput.skipFully(currentSampleOffset);
@@ -1086,7 +1086,7 @@ public class FragmentedMp4Extractor implements Extractor {
                 byte[] data = leafAtom.data.getData();
                 UUID parseUuid = PsshAtomUtil.parseUuid(data);
                 if (parseUuid == null) {
-                    Log.m1106w(TAG, "Skipped pssh atom (failed to extract uuid)");
+                    Log.m1107w(TAG, "Skipped pssh atom (failed to extract uuid)");
                 } else {
                     arrayList.add(new DrmInitData.SchemeData(parseUuid, MimeTypes.VIDEO_MP4, data));
                 }

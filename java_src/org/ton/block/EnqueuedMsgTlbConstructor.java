@@ -20,15 +20,15 @@ public final class EnqueuedMsgTlbConstructor extends org.ton.tlb.TlbConstructor<
     public void storeTlb(CellBuilder cellBuilder, EnqueuedMsg value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.mo5057storeUInt64VKZWuLQ(value.m4951getEnqueuedLtsVKNKU());
+        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5105getEnqueuedLtsVKNKU());
         cellBuilder.storeRef(value.getOutMsg().toCell(MsgEnvelope.Companion));
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public EnqueuedMsg loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        long mo5067loadUInt64sVKNKU = cellSlice.mo5067loadUInt64sVKNKU();
+        long mo5221loadUInt64sVKNKU = cellSlice.mo5221loadUInt64sVKNKU();
         MsgEnvelope.Companion companion = MsgEnvelope.Companion;
-        return new EnqueuedMsg(mo5067loadUInt64sVKNKU, CellRef.Companion.valueOf(cellSlice.loadRef(), (TlbCodec) companion), null);
+        return new EnqueuedMsg(mo5221loadUInt64sVKNKU, CellRef.Companion.valueOf(cellSlice.loadRef(), (TlbCodec) companion), null);
     }
 }

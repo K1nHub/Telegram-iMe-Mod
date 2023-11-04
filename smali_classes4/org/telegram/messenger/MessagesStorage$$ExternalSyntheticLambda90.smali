@@ -12,11 +12,13 @@
 
 .field public final synthetic f$2:I
 
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$TL_updates_channelDifferenceTooLong;
+
+.field public final synthetic f$4:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;JILorg/telegram/tgnet/TLRPC$TL_chatBannedRights;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;JILorg/telegram/tgnet/TLRPC$TL_updates_channelDifferenceTooLong;Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +29,9 @@
 
     iput p4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda90;->f$2:I
 
-    iput-object p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda90;->f$3:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    iput-object p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda90;->f$3:Lorg/telegram/tgnet/TLRPC$TL_updates_channelDifferenceTooLong;
+
+    iput-object p6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda90;->f$4:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -35,7 +39,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 5
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda90;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
@@ -43,9 +47,11 @@
 
     iget v3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda90;->f$2:I
 
-    iget-object v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda90;->f$3:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+    iget-object v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda90;->f$3:Lorg/telegram/tgnet/TLRPC$TL_updates_channelDifferenceTooLong;
 
-    invoke-static {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$V-CWuXWilqE_aZPcECNsA8GS-A8(Lorg/telegram/messenger/MessagesStorage;JILorg/telegram/tgnet/TLRPC$TL_chatBannedRights;)V
+    iget-object v5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda90;->f$4:Ljava/lang/Runnable;
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$DB-y6qBZ8o38hyBr8zdKFEd_5F4(Lorg/telegram/messenger/MessagesStorage;JILorg/telegram/tgnet/TLRPC$TL_updates_channelDifferenceTooLong;Ljava/lang/Runnable;)V
 
     return-void
 .end method

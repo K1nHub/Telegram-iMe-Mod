@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MediaActivity$1;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 273
+    .line 259
     iput-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$1$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$1;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$1$1;->val$storyItems:Ljava/util/ArrayList;
@@ -40,9 +40,9 @@
 
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
-    .locals 0
+    .locals 2
 
-    .line 276
+    .line 262
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$1$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MediaActivity$1;->this$0:Lorg/telegram/ui/Components/MediaActivity;
@@ -55,11 +55,19 @@
 
     move-result-object p1
 
+    iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$1$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$1;
+
+    iget-object p2, p2, Lorg/telegram/ui/Components/MediaActivity$1;->this$0:Lorg/telegram/ui/Components/MediaActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/MediaActivity;->access$100(Lorg/telegram/ui/Components/MediaActivity;)J
+
+    move-result-wide v0
+
     iget-object p2, p0, Lorg/telegram/ui/Components/MediaActivity$1$1;->val$storyItems:Ljava/util/ArrayList;
 
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->deleteStories(Ljava/util/ArrayList;)V
+    invoke-virtual {p1, v0, v1, p2}, Lorg/telegram/ui/Stories/StoriesController;->deleteStories(JLjava/util/ArrayList;)V
 
-    .line 277
+    .line 263
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$1$1;->this$1:Lorg/telegram/ui/Components/MediaActivity$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/MediaActivity$1;->this$0:Lorg/telegram/ui/Components/MediaActivity;

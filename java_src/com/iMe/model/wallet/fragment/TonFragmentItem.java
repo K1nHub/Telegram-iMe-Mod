@@ -24,7 +24,7 @@ public abstract class TonFragmentItem extends NoChildNode {
     /* compiled from: TonFragmentItem.kt */
     /* renamed from: com.iMe.model.wallet.fragment.TonFragmentItem$Premium */
     /* loaded from: classes3.dex */
-    public static final class C1529Premium extends TonFragmentItem {
+    public static final class C1535Premium extends TonFragmentItem {
         private final String discount;
         private final String fiatPrice;
         private final boolean isChecked;
@@ -56,33 +56,33 @@ public abstract class TonFragmentItem extends NoChildNode {
             return this.isChecked;
         }
 
-        public final C1529Premium copy(double d, String priceText, String fiatPrice, int i, String discount, boolean z) {
+        public final C1535Premium copy(double d, String priceText, String fiatPrice, int i, String discount, boolean z) {
             Intrinsics.checkNotNullParameter(priceText, "priceText");
             Intrinsics.checkNotNullParameter(fiatPrice, "fiatPrice");
             Intrinsics.checkNotNullParameter(discount, "discount");
-            return new C1529Premium(d, priceText, fiatPrice, i, discount, z);
+            return new C1535Premium(d, priceText, fiatPrice, i, discount, z);
         }
 
         public boolean equals(Object obj) {
             if (this == obj) {
                 return true;
             }
-            if (obj instanceof C1529Premium) {
-                C1529Premium c1529Premium = (C1529Premium) obj;
-                return Double.compare(this.price, c1529Premium.price) == 0 && Intrinsics.areEqual(this.priceText, c1529Premium.priceText) && Intrinsics.areEqual(this.fiatPrice, c1529Premium.fiatPrice) && this.monthsCount == c1529Premium.monthsCount && Intrinsics.areEqual(this.discount, c1529Premium.discount) && this.isChecked == c1529Premium.isChecked;
+            if (obj instanceof C1535Premium) {
+                C1535Premium c1535Premium = (C1535Premium) obj;
+                return Double.compare(this.price, c1535Premium.price) == 0 && Intrinsics.areEqual(this.priceText, c1535Premium.priceText) && Intrinsics.areEqual(this.fiatPrice, c1535Premium.fiatPrice) && this.monthsCount == c1535Premium.monthsCount && Intrinsics.areEqual(this.discount, c1535Premium.discount) && this.isChecked == c1535Premium.isChecked;
             }
             return false;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         public int hashCode() {
-            int m1011m = ((((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.price) * 31) + this.priceText.hashCode()) * 31) + this.fiatPrice.hashCode()) * 31) + this.monthsCount) * 31) + this.discount.hashCode()) * 31;
+            int m1012m = ((((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.price) * 31) + this.priceText.hashCode()) * 31) + this.fiatPrice.hashCode()) * 31) + this.monthsCount) * 31) + this.discount.hashCode()) * 31;
             boolean z = this.isChecked;
             int i = z;
             if (z != 0) {
                 i = 1;
             }
-            return m1011m + i;
+            return m1012m + i;
         }
 
         public String toString() {
@@ -118,7 +118,7 @@ public abstract class TonFragmentItem extends NoChildNode {
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
-        public C1529Premium(double r3, java.lang.String r5, java.lang.String r6, int r7, java.lang.String r8, boolean r9) {
+        public C1535Premium(double r3, java.lang.String r5, java.lang.String r6, int r7, java.lang.String r8, boolean r9) {
             /*
                 r2 = this;
                 java.lang.String r0 = "priceText"
@@ -143,7 +143,7 @@ public abstract class TonFragmentItem extends NoChildNode {
                 r2.isChecked = r9
                 return
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.iMe.model.wallet.fragment.TonFragmentItem.C1529Premium.<init>(double, java.lang.String, java.lang.String, int, java.lang.String, boolean):void");
+            throw new UnsupportedOperationException("Method not decompiled: com.iMe.model.wallet.fragment.TonFragmentItem.C1535Premium.<init>(double, java.lang.String, java.lang.String, int, java.lang.String, boolean):void");
         }
     }
 

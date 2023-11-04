@@ -19,7 +19,7 @@ public final class TransactionId {
     private final BitString hash;
 
     /* renamed from: lt */
-    private final long f2090lt;
+    private final long f2102lt;
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -27,17 +27,17 @@ public final class TransactionId {
         }
         if (obj instanceof TransactionId) {
             TransactionId transactionId = (TransactionId) obj;
-            return Intrinsics.areEqual(this.hash, transactionId.hash) && this.f2090lt == transactionId.f2090lt;
+            return Intrinsics.areEqual(this.hash, transactionId.hash) && this.f2102lt == transactionId.f2102lt;
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.hash.hashCode() * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.f2090lt);
+        return (this.hash.hashCode() * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.f2102lt);
     }
 
     public String toString() {
-        return "TransactionId(hash=" + this.hash + ", lt=" + this.f2090lt + ')';
+        return "TransactionId(hash=" + this.hash + ", lt=" + this.f2102lt + ')';
     }
 
     /* compiled from: BlockHeaderResult.kt */
@@ -60,7 +60,7 @@ public final class TransactionId {
             PluginExceptionsKt.throwMissingFieldException(i, 3, TransactionId$$serializer.INSTANCE.getDescriptor());
         }
         this.hash = bitString;
-        this.f2090lt = j;
+        this.f2102lt = j;
         if (bitString.getSize() == 256) {
             return;
         }
@@ -70,7 +70,7 @@ public final class TransactionId {
     public TransactionId(BitString hash, long j) {
         Intrinsics.checkNotNullParameter(hash, "hash");
         this.hash = hash;
-        this.f2090lt = j;
+        this.f2102lt = j;
         if (hash.getSize() == 256) {
             return;
         }
@@ -79,6 +79,6 @@ public final class TransactionId {
 
     public static final /* synthetic */ void write$Self(TransactionId transactionId, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         compositeEncoder.encodeSerializableElement(serialDescriptor, 0, FiftHexBitStringSerializer.INSTANCE, transactionId.hash);
-        compositeEncoder.encodeLongElement(serialDescriptor, 1, transactionId.f2090lt);
+        compositeEncoder.encodeLongElement(serialDescriptor, 1, transactionId.f2102lt);
     }
 }

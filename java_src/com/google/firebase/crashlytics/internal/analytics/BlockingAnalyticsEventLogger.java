@@ -22,18 +22,18 @@ public class BlockingAnalyticsEventLogger implements AnalyticsEventReceiver, Ana
     public void logEvent(String str, Bundle bundle) {
         synchronized (this.latchLock) {
             Logger logger = Logger.getLogger();
-            logger.m1032v("Logging event " + str + " to Firebase Analytics with params " + bundle);
+            logger.m1033v("Logging event " + str + " to Firebase Analytics with params " + bundle);
             this.eventLatch = new CountDownLatch(1);
             this.baseAnalyticsEventLogger.logEvent(str, bundle);
-            Logger.getLogger().m1032v("Awaiting app exception callback from Analytics...");
+            Logger.getLogger().m1033v("Awaiting app exception callback from Analytics...");
             try {
                 if (this.eventLatch.await(this.timeout, this.timeUnit)) {
-                    Logger.getLogger().m1032v("App exception callback received from Analytics listener.");
+                    Logger.getLogger().m1033v("App exception callback received from Analytics listener.");
                 } else {
-                    Logger.getLogger().m1030w("Timeout exceeded while awaiting app exception callback from Analytics listener.");
+                    Logger.getLogger().m1031w("Timeout exceeded while awaiting app exception callback from Analytics listener.");
                 }
             } catch (InterruptedException unused) {
-                Logger.getLogger().m1036e("Interrupted while awaiting app exception callback from Analytics listener.");
+                Logger.getLogger().m1037e("Interrupted while awaiting app exception callback from Analytics listener.");
             }
             this.eventLatch = null;
         }

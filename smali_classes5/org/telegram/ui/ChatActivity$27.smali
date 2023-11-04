@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
     .locals 0
 
-    .line 7615
+    .line 7690
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$27;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Cells/ChatActionCell;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
@@ -35,7 +35,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 7643
+    .line 7718
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$27;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$3700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -62,7 +62,7 @@
 
     const/4 v1, 0x4
 
-    .line 7644
+    .line 7719
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -77,7 +77,7 @@
 
     if-lez v2, :cond_0
 
-    .line 7646
+    .line 7721
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v2
@@ -88,10 +88,10 @@
 
     if-gez v2, :cond_1
 
-    .line 7647
+    .line 7722
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 7648
+    .line 7723
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result v2
@@ -106,15 +106,15 @@
 
     invoke-virtual {p1, v1, v0, v2, v3}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 7649
+    .line 7724
     invoke-super {p0, p1}, Lorg/telegram/ui/Cells/ChatActionCell;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 7650
+    .line 7725
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_0
 
-    .line 7653
+    .line 7728
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Cells/ChatActionCell;->onDraw(Landroid/graphics/Canvas;)V
 
@@ -126,7 +126,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 7627
+    .line 7702
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getAlpha()F
 
     move-result v0
@@ -139,7 +139,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$27;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$24500(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$24100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object v0
 
@@ -159,7 +159,7 @@
 
     goto :goto_0
 
-    .line 7630
+    .line 7705
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -177,7 +177,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 7635
+    .line 7710
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getAlpha()F
 
     move-result v0
@@ -190,7 +190,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$27;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$24600(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$24200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
 
     move-result-object v0
 
@@ -210,7 +210,7 @@
 
     goto :goto_0
 
-    .line 7638
+    .line 7713
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Cells/ChatActionCell;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -228,7 +228,7 @@
 .method public setTranslationY(F)V
     .locals 1
 
-    .line 7619
+    .line 7694
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getTranslationY()F
 
     move-result v0
@@ -237,10 +237,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 7620
+    .line 7695
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/ChatActionCell;->invalidate()V
 
-    .line 7622
+    .line 7697
     :cond_0
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->setTranslationY(F)V
 

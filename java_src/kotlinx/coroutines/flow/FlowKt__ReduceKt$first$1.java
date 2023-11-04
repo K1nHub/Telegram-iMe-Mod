@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Reduce.kt */
-@DebugMetadata(m143c = "kotlinx.coroutines.flow.FlowKt__ReduceKt", m142f = "Reduce.kt", m141l = {183}, m140m = "first")
+@DebugMetadata(m145c = "kotlinx.coroutines.flow.FlowKt__ReduceKt", m144f = "Reduce.kt", m143l = {183}, m142m = "first")
 /* loaded from: classes4.dex */
 public final class FlowKt__ReduceKt$first$1<T> extends ContinuationImpl {
     Object L$0;

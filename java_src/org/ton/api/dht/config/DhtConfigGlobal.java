@@ -12,9 +12,9 @@ import kotlinx.serialization.internal.SerializationConstructorMarker;
 import kotlinx.serialization.json.JsonClassDiscriminator;
 import org.ton.api.dht.DhtNodes;
 import org.ton.api.dht.DhtNodes$$serializer;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: DhtConfigGlobal.kt */
 @JsonClassDiscriminator(discriminator = "@type")
 @Serializable
@@ -23,10 +23,10 @@ public final class DhtConfigGlobal {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: a */
-    private final int f2017a;
+    private final int f2029a;
 
     /* renamed from: k */
-    private final int f2018k;
+    private final int f2030k;
     private final DhtNodes staticNodes;
 
     public DhtConfigGlobal() {
@@ -39,17 +39,17 @@ public final class DhtConfigGlobal {
         }
         if (obj instanceof DhtConfigGlobal) {
             DhtConfigGlobal dhtConfigGlobal = (DhtConfigGlobal) obj;
-            return Intrinsics.areEqual(this.staticNodes, dhtConfigGlobal.staticNodes) && this.f2018k == dhtConfigGlobal.f2018k && this.f2017a == dhtConfigGlobal.f2017a;
+            return Intrinsics.areEqual(this.staticNodes, dhtConfigGlobal.staticNodes) && this.f2030k == dhtConfigGlobal.f2030k && this.f2029a == dhtConfigGlobal.f2029a;
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.staticNodes.hashCode() * 31) + this.f2018k) * 31) + this.f2017a;
+        return (((this.staticNodes.hashCode() * 31) + this.f2030k) * 31) + this.f2029a;
     }
 
     public String toString() {
-        return "DhtConfigGlobal(staticNodes=" + this.staticNodes + ", k=" + this.f2018k + ", a=" + this.f2017a + ')';
+        return "DhtConfigGlobal(staticNodes=" + this.staticNodes + ", k=" + this.f2030k + ", a=" + this.f2029a + ')';
     }
 
     public /* synthetic */ DhtConfigGlobal(int i, DhtNodes dhtNodes, int i2, int i3, SerializationConstructorMarker serializationConstructorMarker) {
@@ -58,33 +58,33 @@ public final class DhtConfigGlobal {
         }
         this.staticNodes = (i & 1) == 0 ? new DhtNodes((Collection) null, 1, (DefaultConstructorMarker) null) : dhtNodes;
         if ((i & 2) == 0) {
-            this.f2018k = 0;
+            this.f2030k = 0;
         } else {
-            this.f2018k = i2;
+            this.f2030k = i2;
         }
         if ((i & 4) == 0) {
-            this.f2017a = 0;
+            this.f2029a = 0;
         } else {
-            this.f2017a = i3;
+            this.f2029a = i3;
         }
     }
 
     public DhtConfigGlobal(DhtNodes staticNodes, int i, int i2) {
         Intrinsics.checkNotNullParameter(staticNodes, "staticNodes");
         this.staticNodes = staticNodes;
-        this.f2018k = i;
-        this.f2017a = i2;
+        this.f2030k = i;
+        this.f2029a = i2;
     }
 
     public static final /* synthetic */ void write$Self(DhtConfigGlobal dhtConfigGlobal, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         if (compositeEncoder.shouldEncodeElementDefault(serialDescriptor, 0) || !Intrinsics.areEqual(dhtConfigGlobal.staticNodes, new DhtNodes((Collection) null, 1, (DefaultConstructorMarker) null))) {
             compositeEncoder.encodeSerializableElement(serialDescriptor, 0, DhtNodes$$serializer.INSTANCE, dhtConfigGlobal.staticNodes);
         }
-        if (compositeEncoder.shouldEncodeElementDefault(serialDescriptor, 1) || dhtConfigGlobal.f2018k != 0) {
-            compositeEncoder.encodeIntElement(serialDescriptor, 1, dhtConfigGlobal.f2018k);
+        if (compositeEncoder.shouldEncodeElementDefault(serialDescriptor, 1) || dhtConfigGlobal.f2030k != 0) {
+            compositeEncoder.encodeIntElement(serialDescriptor, 1, dhtConfigGlobal.f2030k);
         }
-        if (compositeEncoder.shouldEncodeElementDefault(serialDescriptor, 2) || dhtConfigGlobal.f2017a != 0) {
-            compositeEncoder.encodeIntElement(serialDescriptor, 2, dhtConfigGlobal.f2017a);
+        if (compositeEncoder.shouldEncodeElementDefault(serialDescriptor, 2) || dhtConfigGlobal.f2029a != 0) {
+            compositeEncoder.encodeIntElement(serialDescriptor, 2, dhtConfigGlobal.f2029a);
         }
     }
 
@@ -97,11 +97,11 @@ public final class DhtConfigGlobal {
     }
 
     public final int getK() {
-        return this.f2018k;
+        return this.f2030k;
     }
 
     public final int getA() {
-        return this.f2017a;
+        return this.f2029a;
     }
 
     /* compiled from: DhtConfigGlobal.kt */
@@ -119,7 +119,7 @@ public final class DhtConfigGlobal {
             return DhtConfigGlobal$$serializer.INSTANCE;
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter output, DhtConfigGlobal value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
@@ -128,7 +128,7 @@ public final class DhtConfigGlobal {
             output.writeInt(value.getA());
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public DhtConfigGlobal decode(TlReader input) {
             Intrinsics.checkNotNullParameter(input, "input");
             return new DhtConfigGlobal(DhtNodes.Companion.decode(input), input.readInt(), input.readInt());

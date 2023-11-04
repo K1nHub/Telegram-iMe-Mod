@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: JsonTreeReader.kt */
-@DebugMetadata(m143c = "kotlinx.serialization.json.internal.JsonTreeReader", m142f = "JsonTreeReader.kt", m141l = {23}, m140m = "readObject")
+@DebugMetadata(m145c = "kotlinx.serialization.json.internal.JsonTreeReader", m144f = "JsonTreeReader.kt", m143l = {23}, m142m = "readObject")
 /* loaded from: classes4.dex */
 public final class JsonTreeReader$readObject$2 extends ContinuationImpl {
     Object L$0;

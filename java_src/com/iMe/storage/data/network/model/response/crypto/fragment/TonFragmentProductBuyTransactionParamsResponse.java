@@ -54,7 +54,7 @@ public final class TonFragmentProductBuyTransactionParamsResponse {
     }
 
     public int hashCode() {
-        return (((ProfileData$$ExternalSyntheticBackport0.m1017m(this.validUntil) * 31) + this.requestId.hashCode()) * 31) + this.payment.hashCode();
+        return (((ProfileData$$ExternalSyntheticBackport0.m1018m(this.validUntil) * 31) + this.requestId.hashCode()) * 31) + this.payment.hashCode();
     }
 
     public String toString() {

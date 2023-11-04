@@ -40,13 +40,13 @@
         }
     .end annotation
 
-    .line 167
+    .line 168
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 168
+    .line 169
     iput-object p1, p0, Lorg/telegram/tgnet/ConnectionsManager$ResolvedDomain;->addresses:Ljava/util/ArrayList;
 
-    .line 169
+    .line 170
     iput-wide p2, p0, Lorg/telegram/tgnet/ConnectionsManager$ResolvedDomain;->ttl:J
 
     return-void
@@ -57,7 +57,7 @@
 .method public getAddress()Ljava/lang/String;
     .locals 3
 
-    .line 173
+    .line 174
     iget-object v0, p0, Lorg/telegram/tgnet/ConnectionsManager$ResolvedDomain;->addresses:Ljava/util/ArrayList;
 
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;

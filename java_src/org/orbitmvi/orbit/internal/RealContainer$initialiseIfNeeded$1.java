@@ -12,7 +12,7 @@ import kotlinx.coroutines.channels.ProduceKt;
 import kotlinx.coroutines.channels.ProducerScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: RealContainer.kt */
-@DebugMetadata(m143c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$1", m142f = "RealContainer.kt", m141l = {90}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$1", m144f = "RealContainer.kt", m143l = {90}, m142m = "invokeSuspend")
 /* loaded from: classes4.dex */
 public final class RealContainer$initialiseIfNeeded$1 extends SuspendLambda implements Function2<ProducerScope<? super Unit>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;

@@ -14,16 +14,16 @@ final /* synthetic */ class ThreadPoolDispatcherKt__ThreadPoolDispatcherKt {
         return ExecutorsKt.from(Executors.newScheduledThreadPool(i, new ThreadFactory() { // from class: kotlinx.coroutines.ThreadPoolDispatcherKt__ThreadPoolDispatcherKt$$ExternalSyntheticLambda0
             @Override // java.util.concurrent.ThreadFactory
             public final Thread newThread(Runnable runnable) {
-                Thread m128x1146da6d;
-                m128x1146da6d = ThreadPoolDispatcherKt__ThreadPoolDispatcherKt.m128x1146da6d(i, str, atomicInteger, runnable);
-                return m128x1146da6d;
+                Thread m130x1146da6d;
+                m130x1146da6d = ThreadPoolDispatcherKt__ThreadPoolDispatcherKt.m130x1146da6d(i, str, atomicInteger, runnable);
+                return m130x1146da6d;
             }
         }));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: newFixedThreadPoolContext$lambda$1$ThreadPoolDispatcherKt__ThreadPoolDispatcherKt */
-    public static final Thread m128x1146da6d(int i, String str, AtomicInteger atomicInteger, Runnable runnable) {
+    public static final Thread m130x1146da6d(int i, String str, AtomicInteger atomicInteger, Runnable runnable) {
         if (i != 1) {
             str = str + '-' + atomicInteger.incrementAndGet();
         }

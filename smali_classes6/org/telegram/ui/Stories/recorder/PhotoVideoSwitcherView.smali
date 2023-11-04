@@ -2,6 +2,9 @@
 .super Landroid/view/View;
 .source "PhotoVideoSwitcherView.java"
 
+# interfaces
+.implements Lorg/telegram/ui/Stories/recorder/FlashViews$Invertable;
+
 
 # instance fields
 .field private animator:Landroid/animation/ValueAnimator;
@@ -79,10 +82,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 12
 
-    .line 46
+    .line 48
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 30
+    .line 32
     new-instance v0, Landroid/text/TextPaint;
 
     const/4 v1, 0x1
@@ -91,14 +94,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->textPaint:Landroid/text/TextPaint;
 
-    .line 31
+    .line 33
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->selectorPaint:Landroid/graphics/Paint;
 
-    .line 107
+    .line 109
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
@@ -117,21 +120,21 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->selectorRect:Landroid/graphics/RectF;
 
-    .line 48
+    .line 50
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->selectorPaint:Landroid/graphics/Paint;
 
     const v1, 0x32ffffff
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 50
+    .line 51
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->textPaint:Landroid/text/TextPaint;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 51
+    .line 53
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->textPaint:Landroid/text/TextPaint;
 
     const-string v1, "fonts/rmedium.ttf"
@@ -142,7 +145,7 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 52
+    .line 54
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->textPaint:Landroid/text/TextPaint;
 
     const/high16 v1, 0x41600000    # 14.0f
@@ -153,7 +156,7 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 53
+    .line 55
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->textPaint:Landroid/text/TextPaint;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -176,7 +179,7 @@
 
     const-string v0, "StoryPhoto"
 
-    .line 55
+    .line 57
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -188,7 +191,7 @@
     :cond_0
     move-object v5, v0
 
-    .line 59
+    .line 61
     new-instance v0, Landroid/text/StaticLayout;
 
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->textPaint:Landroid/text/TextPaint;
@@ -213,7 +216,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->photoText:Landroid/text/StaticLayout;
 
-    .line 60
+    .line 62
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v0
@@ -236,7 +239,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->photoTextLeft:F
 
-    .line 61
+    .line 63
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->photoText:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
@@ -259,7 +262,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->photoTextWidth:F
 
-    .line 62
+    .line 64
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->photoText:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getHeight()I
@@ -272,7 +275,7 @@
 
     const-string v0, "StoryVideo"
 
-    .line 64
+    .line 66
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -284,7 +287,7 @@
     :cond_3
     move-object v5, v0
 
-    .line 68
+    .line 70
     new-instance v0, Landroid/text/StaticLayout;
 
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->textPaint:Landroid/text/TextPaint;
@@ -309,7 +312,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->videoText:Landroid/text/StaticLayout;
 
-    .line 69
+    .line 71
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result v0
@@ -330,7 +333,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->videoTextLeft:F
 
-    .line 70
+    .line 72
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->videoText:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getLineCount()I
@@ -348,7 +351,7 @@
     :cond_5
     iput v3, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->videoTextWidth:F
 
-    .line 71
+    .line 73
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->videoText:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getHeight()I
@@ -361,7 +364,7 @@
 
     const/16 v0, 0x20
 
-    .line 73
+    .line 75
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -384,7 +387,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->scrollWidth:F
 
-    .line 75
+    .line 77
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object p1
@@ -401,7 +404,7 @@
 .method private getScrollCx()F
     .locals 5
 
-    .line 110
+    .line 112
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
@@ -414,7 +417,7 @@
 
     const/16 v2, 0x10
 
-    .line 111
+    .line 113
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -427,7 +430,7 @@
 
     add-float/2addr v3, v4
 
-    .line 112
+    .line 114
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -444,7 +447,7 @@
 
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mode:F
 
-    .line 110
+    .line 112
     invoke-static {v3, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v1
@@ -457,7 +460,7 @@
 .method private synthetic lambda$switchMode$0(Landroid/animation/ValueAnimator;)V
     .locals 3
 
-    .line 96
+    .line 98
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -470,7 +473,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mode:F
 
-    .line 97
+    .line 99
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->onSwitchingModeListener:Lorg/telegram/messenger/Utilities$Callback;
 
     if-eqz v0, :cond_0
@@ -479,7 +482,7 @@
 
     const/4 v2, 0x0
 
-    .line 98
+    .line 100
     invoke-static {p1, v1, v2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result p1
@@ -490,7 +493,7 @@
 
     invoke-interface {v0, p1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
-    .line 100
+    .line 102
     :cond_0
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
@@ -502,10 +505,10 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 163
+    .line 165
     invoke-super {p0, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 165
+    .line 167
     invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
     move-result v0
@@ -516,14 +519,14 @@
 
     div-float/2addr v0, v1
 
-    .line 166
+    .line 168
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->getScrollCx()F
 
     move-result v2
 
     const/4 v3, 0x1
 
-    .line 168
+    .line 170
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -532,12 +535,12 @@
 
     const/16 v4, 0x1a
 
-    .line 169
+    .line 171
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    .line 170
+    .line 172
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->photoRect:Landroid/graphics/RectF;
 
     const/16 v6, 0x1c
@@ -580,7 +583,7 @@
 
     invoke-virtual {v5, v7, v8, v10, v11}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 171
+    .line 173
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->videoRect:Landroid/graphics/RectF;
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -605,7 +608,7 @@
 
     invoke-virtual {v5, v7, v8, v6, v11}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 172
+    .line 174
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->photoRect:Landroid/graphics/RectF;
 
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->videoRect:Landroid/graphics/RectF;
@@ -624,19 +627,19 @@
 
     invoke-static {v5, v6, v7, v8}, Lorg/telegram/messenger/AndroidUtilities;->lerp(Landroid/graphics/RectF;Landroid/graphics/RectF;FLandroid/graphics/RectF;)V
 
-    .line 173
+    .line 175
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->selectorRect:Landroid/graphics/RectF;
 
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->selectorPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v5, v4, v4, v6}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 175
+    .line 177
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/16 v4, 0x10
 
-    .line 176
+    .line 178
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -663,18 +666,18 @@
 
     invoke-virtual {p1, v5, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 177
+    .line 179
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->photoText:Landroid/text/StaticLayout;
 
     invoke-virtual {v5, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 178
+    .line 180
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 180
+    .line 182
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 181
+    .line 183
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -697,12 +700,12 @@
 
     invoke-virtual {p1, v2, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 182
+    .line 184
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->videoText:Landroid/text/StaticLayout;
 
     invoke-virtual {v0, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 183
+    .line 185
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -711,25 +714,25 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 6
 
-    .line 188
+    .line 190
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v0, :cond_0
 
-    .line 189
+    .line 191
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 191
+    .line 193
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 193
+    .line 195
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -750,21 +753,21 @@
 
     goto :goto_1
 
-    .line 202
+    .line 204
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
-    .line 203
+    .line 205
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mLastX:F
 
     sub-float/2addr v1, v0
 
-    .line 204
+    .line 206
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->scrollX(F)V
 
-    .line 205
+    .line 207
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mLastX:F
 
     goto :goto_1
@@ -772,24 +775,24 @@
     :cond_2
     const/4 v0, 0x0
 
-    .line 213
+    .line 215
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     if-eqz v2, :cond_3
 
     const/16 v0, 0x3e8
 
-    .line 214
+    .line 216
     invoke-virtual {v2, v0}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
 
-    .line 215
+    .line 217
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->getXVelocity()F
 
     move-result v0
 
-    .line 218
+    .line 220
     :cond_3
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->stopScroll(F)Z
 
@@ -839,7 +842,7 @@
 
     if-gez v0, :cond_5
 
-    .line 219
+    .line 221
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -857,23 +860,23 @@
     :cond_4
     const/4 v1, 0x0
 
-    .line 220
+    .line 222
     :goto_0
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->switchMode(Z)V
 
-    .line 221
+    .line 223
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->onSwitchModeListener:Lorg/telegram/messenger/Utilities$Callback;
 
     if-eqz v0, :cond_5
 
-    .line 222
+    .line 224
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v1
 
     invoke-interface {v0, v1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
-    .line 226
+    .line 228
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
@@ -881,10 +884,10 @@
 
     const/4 v0, 0x0
 
-    .line 227
+    .line 229
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mVelocityTracker:Landroid/view/VelocityTracker;
 
-    .line 231
+    .line 233
     :goto_1
     invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -892,7 +895,7 @@
 
     return p1
 
-    .line 197
+    .line 199
     :cond_6
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -900,7 +903,7 @@
 
     iput-wide v2, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mLastTouchTime:J
 
-    .line 198
+    .line 200
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result p1
@@ -913,7 +916,7 @@
 .method public scrollX(F)V
     .locals 5
 
-    .line 118
+    .line 120
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mIsScrolling:Z
 
     if-nez v0, :cond_0
@@ -932,10 +935,10 @@
 
     const/4 v0, 0x1
 
-    .line 119
+    .line 121
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mIsScrolling:Z
 
-    .line 122
+    .line 124
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mIsScrolling:Z
 
@@ -943,7 +946,7 @@
 
     const v0, 0x3e4ccccd    # 0.2f
 
-    .line 124
+    .line 126
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mode:F
 
     const/4 v2, 0x0
@@ -974,7 +977,7 @@
 
     goto :goto_0
 
-    .line 129
+    .line 131
     :cond_2
     :goto_1
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->scrollWidth:F
@@ -993,19 +996,19 @@
 
     const v0, -0x41b33333    # -0.2f
 
-    .line 130
+    .line 132
     invoke-static {v1, p1, v0}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mode:F
 
-    .line 131
+    .line 133
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->onSwitchingModeListener:Lorg/telegram/messenger/Utilities$Callback;
 
     if-eqz v0, :cond_3
 
-    .line 132
+    .line 134
     invoke-static {p1, v4, v2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result p1
@@ -1016,11 +1019,43 @@
 
     invoke-interface {v0, p1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
-    .line 134
+    .line 136
     :cond_3
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_4
+    return-void
+.end method
+
+.method public setInvert(F)V
+    .locals 3
+
+    .line 252
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->selectorPaint:Landroid/graphics/Paint;
+
+    const v1, 0x32ffffff
+
+    const/high16 v2, 0x20000000
+
+    invoke-static {v1, v2, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 253
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->textPaint:Landroid/text/TextPaint;
+
+    const/4 v1, -0x1
+
+    const/high16 v2, -0x1000000
+
+    invoke-static {v1, v2, p1}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+
+    move-result p1
+
+    invoke-virtual {v0, p1}, Landroid/text/TextPaint;->setColor(I)V
+
     return-void
 .end method
 
@@ -1035,7 +1070,7 @@
         }
     .end annotation
 
-    .line 83
+    .line 85
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->onSwitchModeListener:Lorg/telegram/messenger/Utilities$Callback;
 
     return-void
@@ -1052,7 +1087,7 @@
         }
     .end annotation
 
-    .line 87
+    .line 89
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->onSwitchingModeListener:Lorg/telegram/messenger/Utilities$Callback;
 
     return-void
@@ -1061,7 +1096,7 @@
 .method public stopScroll(F)Z
     .locals 3
 
-    .line 139
+    .line 141
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mIsScrolling:Z
 
     const/4 v1, 0x0
@@ -1070,11 +1105,11 @@
 
     return v1
 
-    .line 144
+    .line 146
     :cond_0
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mIsScrolling:Z
 
-    .line 147
+    .line 149
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -1098,7 +1133,7 @@
 
     goto :goto_1
 
-    .line 150
+    .line 152
     :cond_1
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mode:F
 
@@ -1110,17 +1145,17 @@
 
     goto :goto_0
 
-    .line 153
+    .line 155
     :cond_2
     :goto_1
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->switchMode(Z)V
 
-    .line 154
+    .line 156
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->onSwitchModeListener:Lorg/telegram/messenger/Utilities$Callback;
 
     if-eqz p1, :cond_3
 
-    .line 155
+    .line 157
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
@@ -1134,12 +1169,12 @@
 .method public switchMode(Z)V
     .locals 3
 
-    .line 91
+    .line 93
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->animator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 92
+    .line 94
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_0
@@ -1149,7 +1184,7 @@
 
     const/4 v1, 0x0
 
-    .line 94
+    .line 96
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->mode:F
 
     aput v2, v0, v1
@@ -1174,28 +1209,28 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->animator:Landroid/animation/ValueAnimator;
 
-    .line 95
+    .line 97
     new-instance v0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 102
+    .line 104
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->animator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x140
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 103
+    .line 105
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->animator:Landroid/animation/ValueAnimator;
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 104
+    .line 106
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->animator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V

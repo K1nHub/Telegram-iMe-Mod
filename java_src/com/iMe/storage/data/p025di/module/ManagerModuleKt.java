@@ -79,7 +79,7 @@ public final class ManagerModuleKt {
             List emptyList11;
             List emptyList12;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C15951 c15951 = new Function2<Scope, ParametersHolder, TonController>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.1
+            C16011 c16011 = new Function2<Scope, ParametersHolder, TonController>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final TonController invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -91,14 +91,14 @@ public final class ManagerModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TonController.class), null, c15951, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TonController.class), null, c16011, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
             StringQualifier evm_blockchain_crypto_wallet_manager = ManagerModuleKt.getEVM_BLOCKCHAIN_CRYPTO_WALLET_MANAGER();
-            C15992 c15992 = new Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.2
+            C16052 c16052 = new Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final BlockchainCryptoWalletManager invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -108,14 +108,14 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), evm_blockchain_crypto_wallet_manager, c15992, kind, emptyList2));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), evm_blockchain_crypto_wallet_manager, c16052, kind, emptyList2));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
             StringQualifier ton_blockchain_crypto_wallet_manager = ManagerModuleKt.getTON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER();
-            C16003 c16003 = new Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.3
+            C16063 c16063 = new Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final BlockchainCryptoWalletManager invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -125,14 +125,14 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), ton_blockchain_crypto_wallet_manager, c16003, kind, emptyList3));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), ton_blockchain_crypto_wallet_manager, c16063, kind, emptyList3));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);
             }
             new KoinDefinition(module, singleInstanceFactory3);
             StringQualifier tron_blockchain_crypto_wallet_manager = ManagerModuleKt.getTRON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER();
-            C16014 c16014 = new Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.4
+            C16074 c16074 = new Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final BlockchainCryptoWalletManager invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -142,14 +142,14 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), tron_blockchain_crypto_wallet_manager, c16014, kind, emptyList4));
+            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), tron_blockchain_crypto_wallet_manager, c16074, kind, emptyList4));
             module.indexPrimaryType(singleInstanceFactory4);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory4);
             }
             new KoinDefinition(module, singleInstanceFactory4);
             StringQualifier btc_blockchain_crypto_wallet_manager = ManagerModuleKt.getBTC_BLOCKCHAIN_CRYPTO_WALLET_MANAGER();
-            C16025 c16025 = new Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.5
+            C16085 c16085 = new Function2<Scope, ParametersHolder, BlockchainCryptoWalletManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.5
                 @Override // kotlin.jvm.functions.Function2
                 public final BlockchainCryptoWalletManager invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -159,13 +159,13 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
             emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), btc_blockchain_crypto_wallet_manager, c16025, kind, emptyList5));
+            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(BlockchainCryptoWalletManager.class), btc_blockchain_crypto_wallet_manager, c16085, kind, emptyList5));
             module.indexPrimaryType(singleInstanceFactory5);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory5);
             }
             new KoinDefinition(module, singleInstanceFactory5);
-            C16036 c16036 = new Function2<Scope, ParametersHolder, CryptoWalletsManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.6
+            C16096 c16096 = new Function2<Scope, ParametersHolder, CryptoWalletsManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.6
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoWalletsManager invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -175,13 +175,13 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
             emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(CryptoWalletsManager.class), null, c16036, kind, emptyList6));
+            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(CryptoWalletsManager.class), null, c16096, kind, emptyList6));
             module.indexPrimaryType(singleInstanceFactory6);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory6);
             }
             new KoinDefinition(module, singleInstanceFactory6);
-            C16047 c16047 = new Function2<Scope, ParametersHolder, CryptoAccessManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.7
+            C16107 c16107 = new Function2<Scope, ParametersHolder, CryptoAccessManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.7
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoAccessManager invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -191,13 +191,13 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
             emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, c16047, kind, emptyList7));
+            SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(CryptoAccessManager.class), null, c16107, kind, emptyList7));
             module.indexPrimaryType(singleInstanceFactory7);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory7);
             }
             new KoinDefinition(module, singleInstanceFactory7);
-            C16058 c16058 = new Function2<Scope, ParametersHolder, BinancePayManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.8
+            C16118 c16118 = new Function2<Scope, ParametersHolder, BinancePayManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.8
                 @Override // kotlin.jvm.functions.Function2
                 public final BinancePayManager invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -207,13 +207,13 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
             emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(BinancePayManager.class), null, c16058, kind, emptyList8));
+            SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(BinancePayManager.class), null, c16118, kind, emptyList8));
             module.indexPrimaryType(singleInstanceFactory8);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory8);
             }
             new KoinDefinition(module, singleInstanceFactory8);
-            C16069 c16069 = new Function2<Scope, ParametersHolder, AuthManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.9
+            C16129 c16129 = new Function2<Scope, ParametersHolder, AuthManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.9
                 @Override // kotlin.jvm.functions.Function2
                 public final AuthManager invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -223,13 +223,13 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
             emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(AuthManager.class), null, c16069, kind, emptyList9));
+            SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(AuthManager.class), null, c16129, kind, emptyList9));
             module.indexPrimaryType(singleInstanceFactory9);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory9);
             }
             new KoinDefinition(module, singleInstanceFactory9);
-            C159610 c159610 = new Function2<Scope, ParametersHolder, WalletConnectManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.10
+            C160210 c160210 = new Function2<Scope, ParametersHolder, WalletConnectManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.10
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletConnectManager invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -239,13 +239,13 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
             emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, c159610, kind, emptyList10));
+            SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(WalletConnectManager.class), null, c160210, kind, emptyList10));
             module.indexPrimaryType(singleInstanceFactory10);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory10);
             }
             new KoinDefinition(module, singleInstanceFactory10);
-            C159711 c159711 = new Function2<Scope, ParametersHolder, UpdateManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.11
+            C160311 c160311 = new Function2<Scope, ParametersHolder, UpdateManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.11
                 @Override // kotlin.jvm.functions.Function2
                 public final UpdateManager invoke(Scope single, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -258,13 +258,13 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
             emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(UpdateManager.class), null, c159711, kind, emptyList11));
+            SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(UpdateManager.class), null, c160311, kind, emptyList11));
             module.indexPrimaryType(singleInstanceFactory11);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory11);
             }
             new KoinDefinition(module, singleInstanceFactory11);
-            C159812 c159812 = new Function2<Scope, ParametersHolder, AppReviewManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.12
+            C160412 c160412 = new Function2<Scope, ParametersHolder, AppReviewManager>() { // from class: com.iMe.storage.data.di.module.ManagerModuleKt$dataManagerModule$1.12
                 @Override // kotlin.jvm.functions.Function2
                 public final AppReviewManager invoke(Scope single, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -274,7 +274,7 @@ public final class ManagerModuleKt {
             };
             StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
             emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(AppReviewManager.class), null, c159812, kind, emptyList12));
+            SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(AppReviewManager.class), null, c160412, kind, emptyList12));
             module.indexPrimaryType(singleInstanceFactory12);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory12);

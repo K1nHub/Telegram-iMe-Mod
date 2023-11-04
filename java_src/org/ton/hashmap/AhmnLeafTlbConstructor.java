@@ -11,10 +11,10 @@ import org.ton.tlb.TlbConstructor;
 final class AhmnLeafTlbConstructor<X, Y> extends TlbConstructor<HashmapAugNode.AhmnLeaf<X, Y>> {
 
     /* renamed from: x */
-    private final TlbCodec<X> f2068x;
+    private final TlbCodec<X> f2080x;
 
     /* renamed from: y */
-    private final TlbCodec<Y> f2069y;
+    private final TlbCodec<Y> f2081y;
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
     public /* bridge */ /* synthetic */ void storeTlb(CellBuilder cellBuilder, Object obj) {
@@ -26,20 +26,20 @@ final class AhmnLeafTlbConstructor<X, Y> extends TlbConstructor<HashmapAugNode.A
         super("ahmn_leaf#_ {X:Type} {Y:Type} extra:Y value:X = HashmapAugNode 0 X Y", null, 2, null);
         Intrinsics.checkNotNullParameter(x, "x");
         Intrinsics.checkNotNullParameter(y, "y");
-        this.f2068x = x;
-        this.f2069y = y;
+        this.f2080x = x;
+        this.f2081y = y;
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public HashmapAugNode.AhmnLeaf<X, Y> loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new AhmnLeafImpl(this.f2069y.loadTlb(cellSlice), this.f2068x.loadTlb(cellSlice));
+        return new AhmnLeafImpl(this.f2081y.loadTlb(cellSlice), this.f2080x.loadTlb(cellSlice));
     }
 
     public void storeTlb(CellBuilder cellBuilder, HashmapAugNode.AhmnLeaf<X, Y> value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        this.f2069y.storeTlb(cellBuilder, value.getExtra());
-        this.f2068x.storeTlb(cellBuilder, value.getValue());
+        this.f2081y.storeTlb(cellBuilder, value.getExtra());
+        this.f2080x.storeTlb(cellBuilder, value.getValue());
     }
 }

@@ -26,7 +26,7 @@ public final class RequestAppUpdateMetadata {
     }
 
     public int hashCode() {
-        return (((ProfileData$$ExternalSyntheticBackport0.m1017m(this.lastRequestTime) * 31) + this.count) * 31) + this.version.hashCode();
+        return (((ProfileData$$ExternalSyntheticBackport0.m1018m(this.lastRequestTime) * 31) + this.count) * 31) + this.version.hashCode();
     }
 
     public String toString() {

@@ -15,7 +15,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.databinding.ForkViewCollapsableHeaderPagerBinding;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: CollapsableHeaderTabbedViewPager.kt */
 /* renamed from: com.iMe.fork.ui.view.CollapsableHeaderTabbedViewPager */
 /* loaded from: classes3.dex */
@@ -48,7 +48,7 @@ public final class CollapsableHeaderTabbedViewPager extends TabbedViewPager {
         Intrinsics.checkNotNullParameter(delegate, "delegate");
         setDelegate(delegate);
         ForkViewCollapsableHeaderPagerBinding forkViewCollapsableHeaderPagerBinding = this.binding;
-        forkViewCollapsableHeaderPagerBinding.toolbar.getLayoutParams().height = AndroidUtilities.m102dp(44);
+        forkViewCollapsableHeaderPagerBinding.toolbar.getLayoutParams().height = AndroidUtilities.m104dp(44);
         forkViewCollapsableHeaderPagerBinding.frameTabsContainer.addView(getTabsView(), LayoutHelper.createFrame(-1, 44));
         View scrollableHeaderView = delegate.getScrollableHeaderView();
         if (scrollableHeaderView != null) {

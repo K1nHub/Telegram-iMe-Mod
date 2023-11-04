@@ -13,14 +13,14 @@ import org.ton.tlb.TlbNegatedResult;
 final class HashMapLabelSameTlbConstructor extends TlbNegatedConstructor<HmlSame> {
 
     /* renamed from: ID */
-    private static final BitString f2074ID;
+    private static final BitString f2086ID;
 
     /* renamed from: m */
-    private final int f2075m;
+    private final int f2087m;
 
     public HashMapLabelSameTlbConstructor(int i) {
-        super("hml_same$11 {m:#} v:Bit n:(#<= m) = HmLabel ~n m;", f2074ID);
-        this.f2075m = i;
+        super("hml_same$11 {m:#} v:Bit n:(#<= m) = HmLabel ~n m;", f2086ID);
+        this.f2087m = i;
     }
 
     @Override // org.ton.tlb.TlbNegatedStorer
@@ -28,7 +28,7 @@ final class HashMapLabelSameTlbConstructor extends TlbNegatedConstructor<HmlSame
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
         cellBuilder.storeBit(value.getV());
-        cellBuilder.storeUIntLeq(value.getN(), this.f2075m);
+        cellBuilder.storeUIntLeq(value.getN(), this.f2087m);
         return value.getN();
     }
 
@@ -36,7 +36,7 @@ final class HashMapLabelSameTlbConstructor extends TlbNegatedConstructor<HmlSame
     public TlbNegatedResult<HmlSame> loadNegatedTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
         boolean loadBit = cellSlice.loadBit();
-        int intValue = cellSlice.loadUIntLeq(this.f2075m).intValue();
+        int intValue = cellSlice.loadUIntLeq(this.f2087m).intValue();
         return new TlbNegatedResult<>(intValue, new HmlSame(loadBit, intValue));
     }
 
@@ -53,6 +53,6 @@ final class HashMapLabelSameTlbConstructor extends TlbNegatedConstructor<HmlSame
 
     static {
         new Companion(null);
-        f2074ID = BitString.Companion.m42of(Arrays.copyOf(new boolean[]{true, true}, 2));
+        f2086ID = BitString.Companion.m42of(Arrays.copyOf(new boolean[]{true, true}, 2));
     }
 }

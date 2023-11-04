@@ -18,7 +18,7 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/MediaActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 1300
+    .line 1290
     invoke-direct {p0, p2, p3, p1}, Lorg/telegram/ui/Components/BottomPagerTabs;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
@@ -33,7 +33,7 @@
 
     new-array v0, v0, [Lorg/telegram/ui/Components/BottomPagerTabs$Tab;
 
-    .line 1305
+    .line 1295
     new-instance v1, Lorg/telegram/ui/Components/BottomPagerTabs$Tab;
 
     sget v2, Lorg/telegram/messenger/R$raw;->msg_stories_saved:I
@@ -42,7 +42,7 @@
 
     const-string v4, "ProfileMyStoriesTab"
 
-    .line 1306
+    .line 1296
     invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -61,7 +61,7 @@
 
     const-string v5, "ProfileStoriesArchiveTab"
 
-    .line 1307
+    .line 1297
     invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -80,7 +80,7 @@
 
     const-string v5, "Settings"
 
-    .line 1308
+    .line 1298
     invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -91,14 +91,14 @@
 
     aput-object v1, v0, v5
 
-    .line 1310
+    .line 1300
     aget-object v1, v0, v4
 
     const/16 v2, 0x14
 
     iput v2, v1, Lorg/telegram/ui/Components/BottomPagerTabs$Tab;->customEndFrameMid:I
 
-    .line 1311
+    .line 1301
     aget-object v1, v0, v4
 
     const/16 v2, 0x28

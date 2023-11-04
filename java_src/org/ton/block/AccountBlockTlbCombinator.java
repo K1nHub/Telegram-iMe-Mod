@@ -10,6 +10,6 @@ public final class AccountBlockTlbCombinator extends TlbCombinator<AccountBlock>
     public static final AccountBlockTlbCombinator INSTANCE = new AccountBlockTlbCombinator();
 
     private AccountBlockTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(AccountBlock.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AccountBlock.class), AccountBlockTlbConstructor.INSTANCE));
+        super(Reflection.getOrCreateKotlinClass(AccountBlock.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AccountBlock.class), AccountBlockTlbConstructor.INSTANCE));
     }
 }

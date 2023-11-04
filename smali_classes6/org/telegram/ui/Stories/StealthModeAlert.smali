@@ -71,17 +71,17 @@
 
     const/4 v3, 0x0
 
-    .line 49
+    .line 46
     invoke-direct {v0, v1, v3, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 197
+    .line 194
     new-instance v4, Lorg/telegram/ui/Stories/StealthModeAlert$$ExternalSyntheticLambda2;
 
     invoke-direct {v4, v0}, Lorg/telegram/ui/Stories/StealthModeAlert$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Stories/StealthModeAlert;)V
 
     iput-object v4, v0, Lorg/telegram/ui/Stories/StealthModeAlert;->updateButtonRunnuble:Ljava/lang/Runnable;
 
-    .line 50
+    .line 47
     new-instance v4, Lorg/telegram/ui/Stories/StealthModeAlert$1;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -92,7 +92,7 @@
 
     invoke-direct {v4, v0, v5, v6}, Lorg/telegram/ui/Stories/StealthModeAlert$1;-><init>(Lorg/telegram/ui/Stories/StealthModeAlert;Landroid/content/Context;F)V
 
-    .line 69
+    .line 66
     new-instance v5, Landroid/widget/ImageView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -101,14 +101,14 @@
 
     invoke-direct {v5, v6}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 70
+    .line 67
     sget-object v6, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     const/16 v6, 0x50
 
-    .line 71
+    .line 68
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -125,7 +125,7 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 72
+    .line 69
     sget v6, Lorg/telegram/messenger/R$drawable;->large_stealth:I
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -144,14 +144,14 @@
 
     const/4 v13, 0x0
 
-    .line 73
+    .line 70
     invoke-static/range {v7 .. v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v4, v5, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 75
+    .line 72
     new-instance v5, Landroid/widget/LinearLayout;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -162,7 +162,7 @@
 
     const/4 v6, 0x1
 
-    .line 76
+    .line 73
     invoke-virtual {v5, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/4 v7, -0x1
@@ -173,14 +173,14 @@
 
     const/16 v11, 0x74
 
-    .line 77
+    .line 74
     invoke-static/range {v7 .. v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v7
 
     invoke-virtual {v4, v5, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 79
+    .line 76
     new-instance v7, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -191,19 +191,19 @@
 
     const/high16 v8, 0x41a00000    # 20.0f
 
-    .line 80
+    .line 77
     invoke-virtual {v7, v6, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v8, "fonts/rmedium.ttf"
 
-    .line 81
+    .line 78
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v8
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 82
+    .line 79
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-static {v8, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -212,10 +212,10 @@
 
     invoke-virtual {v7, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 83
-    sget v8, Lorg/telegram/messenger/R$string;->StealthMode:I
+    .line 80
+    sget v8, Lorg/telegram/messenger/R$string;->StealthModeTitle:I
 
-    const-string v9, "StealthMode"
+    const-string v9, "StealthModeTitle"
 
     invoke-static {v9, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
@@ -225,14 +225,14 @@
 
     const/4 v8, -0x2
 
-    .line 84
+    .line 81
     invoke-static {v8, v8, v6}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(III)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v8
 
     invoke-virtual {v5, v7, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 86
+    .line 83
     new-instance v7, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -243,20 +243,20 @@
 
     const/16 v8, 0xe
 
-    .line 87
+    .line 84
     invoke-virtual {v7, v8}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    .line 88
+    .line 85
     sget-object v8, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
 
     invoke-virtual {v7, v8}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setAlignment(Landroid/text/Layout$Alignment;)V
 
     const/16 v8, 0x64
 
-    .line 89
+    .line 86
     invoke-virtual {v7, v8}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setMaxLines(I)V
 
-    .line 90
+    .line 87
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
     invoke-static {v8, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -265,7 +265,7 @@
 
     invoke-virtual {v7, v8}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 91
+    .line 88
     iget v8, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v8}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -278,7 +278,7 @@
 
     if-eqz v8, :cond_0
 
-    .line 92
+    .line 89
     sget v8, Lorg/telegram/messenger/R$string;->StealthModeHint:I
 
     const-string v9, "StealthModeHint"
@@ -291,7 +291,7 @@
 
     goto :goto_0
 
-    .line 94
+    .line 91
     :cond_0
     sget v8, Lorg/telegram/messenger/R$string;->StealthModePremiumHint:I
 
@@ -318,14 +318,14 @@
 
     const/4 v15, 0x0
 
-    .line 96
+    .line 93
     invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v8
 
     invoke-virtual {v5, v7, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 98
+    .line 95
     new-instance v7, Lorg/telegram/ui/Stories/StealthModeAlert$ItemCell;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -334,14 +334,14 @@
 
     invoke-direct {v7, v0, v8}, Lorg/telegram/ui/Stories/StealthModeAlert$ItemCell;-><init>(Lorg/telegram/ui/Stories/StealthModeAlert;Landroid/content/Context;)V
 
-    .line 99
+    .line 96
     iget-object v8, v7, Lorg/telegram/ui/Stories/StealthModeAlert$ItemCell;->imageView:Landroid/widget/ImageView;
 
     sget v9, Lorg/telegram/messenger/R$drawable;->msg_stealth_5min:I
 
     invoke-virtual {v8, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 100
+    .line 97
     iget-object v8, v7, Lorg/telegram/ui/Stories/StealthModeAlert$ItemCell;->textView:Landroid/widget/TextView;
 
     sget v9, Lorg/telegram/messenger/R$string;->HideRecentViews:I
@@ -354,7 +354,7 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 101
+    .line 98
     iget-object v8, v7, Lorg/telegram/ui/Stories/StealthModeAlert$ItemCell;->description:Landroid/widget/TextView;
 
     sget v9, Lorg/telegram/messenger/R$string;->HideRecentViewsDescription:I
@@ -379,14 +379,14 @@
 
     const/16 v16, 0x0
 
-    .line 103
+    .line 100
     invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v8
 
     invoke-virtual {v5, v7, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 106
+    .line 103
     new-instance v7, Lorg/telegram/ui/Stories/StealthModeAlert$ItemCell;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -395,14 +395,14 @@
 
     invoke-direct {v7, v0, v8}, Lorg/telegram/ui/Stories/StealthModeAlert$ItemCell;-><init>(Lorg/telegram/ui/Stories/StealthModeAlert;Landroid/content/Context;)V
 
-    .line 107
+    .line 104
     iget-object v8, v7, Lorg/telegram/ui/Stories/StealthModeAlert$ItemCell;->imageView:Landroid/widget/ImageView;
 
     sget v9, Lorg/telegram/messenger/R$drawable;->msg_stealth_25min:I
 
     invoke-virtual {v8, v9}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 108
+    .line 105
     iget-object v8, v7, Lorg/telegram/ui/Stories/StealthModeAlert$ItemCell;->textView:Landroid/widget/TextView;
 
     sget v9, Lorg/telegram/messenger/R$string;->HideNextViews:I
@@ -415,7 +415,7 @@
 
     invoke-virtual {v8, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 109
+    .line 106
     iget-object v8, v7, Lorg/telegram/ui/Stories/StealthModeAlert$ItemCell;->description:Landroid/widget/TextView;
 
     sget v9, Lorg/telegram/messenger/R$string;->HideNextViewsDescription:I
@@ -432,14 +432,14 @@
 
     const/16 v14, 0xa
 
-    .line 111
+    .line 108
     invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v8
 
     invoke-virtual {v5, v7, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 113
+    .line 110
     new-instance v7, Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     const/16 v8, 0x8
@@ -452,10 +452,10 @@
 
     iput-object v7, v0, Lorg/telegram/ui/Stories/StealthModeAlert;->button:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
-    .line 114
+    .line 111
     iput-boolean v3, v7, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->drawGradient:Z
 
-    .line 115
+    .line 112
     iget-object v1, v7, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/AnimatedTextView;->getDrawable()Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
@@ -464,15 +464,15 @@
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setSplitByWords(Z)V
 
-    .line 116
+    .line 113
     sget v1, Lorg/telegram/messenger/R$raw;->unlock_icon:I
 
     invoke-virtual {v7, v1}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->setIcon(I)V
 
-    .line 117
+    .line 114
     invoke-static {v7}, Lorg/telegram/ui/Components/ScaleStateListAnimator;->apply(Landroid/view/View;)V
 
-    .line 118
+    .line 115
     iget v6, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v6}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -483,15 +483,15 @@
 
     move-result-object v6
 
-    .line 119
+    .line 116
     iget-boolean v8, v6, Lorg/telegram/tgnet/TLRPC$User;->premium:Z
 
     if-nez v8, :cond_1
 
-    .line 120
+    .line 117
     invoke-virtual {v7, v1}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->setIcon(I)V
 
-    .line 121
+    .line 118
     sget v1, Lorg/telegram/messenger/R$string;->UnlockStealthMode:I
 
     const-string v3, "UnlockStealthMode"
@@ -508,7 +508,7 @@
 
     goto :goto_1
 
-    .line 130
+    .line 127
     :cond_1
     invoke-direct {v0, v3}, Lorg/telegram/ui/Stories/StealthModeAlert;->updateButton(Z)V
 
@@ -527,17 +527,17 @@
 
     const/16 v14, 0x10
 
-    .line 132
+    .line 129
     invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {v5, v7, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 135
+    .line 132
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
 
-    .line 137
+    .line 134
     new-instance v1, Lorg/telegram/ui/Stories/StealthModeAlert$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, v0, v6, v2}, Lorg/telegram/ui/Stories/StealthModeAlert$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Stories/StealthModeAlert;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -550,7 +550,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Stories/StealthModeAlert;)Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
     .locals 0
 
-    .line 43
+    .line 40
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     return-object p0
@@ -559,7 +559,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Stories/StealthModeAlert;)Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
     .locals 0
 
-    .line 43
+    .line 40
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     return-object p0
@@ -568,7 +568,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Stories/StealthModeAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
-    .line 43
+    .line 40
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-object p0
@@ -577,7 +577,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Stories/StealthModeAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
-    .line 43
+    .line 40
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-object p0
@@ -586,17 +586,17 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 3
 
-    .line 122
+    .line 119
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 123
+    .line 120
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 125
+    .line 122
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     const/16 v1, 0xe
@@ -605,7 +605,7 @@
 
     invoke-direct {v0, p1, v1, v2}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;IZ)V
 
-    .line 126
+    .line 123
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     :cond_0
@@ -621,7 +621,7 @@
 .method private static synthetic lambda$new$2(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 161
+    .line 158
     sget-object p0, Lorg/telegram/ui/Stories/StealthModeAlert$$ExternalSyntheticLambda3;->INSTANCE:Lorg/telegram/ui/Stories/StealthModeAlert$$ExternalSyntheticLambda3;
 
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
@@ -632,22 +632,22 @@
 .method private synthetic lambda$new$3(Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;)V
     .locals 3
 
-    .line 138
+    .line 135
     iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$User;->premium:Z
 
     if-nez p1, :cond_0
 
-    .line 139
+    .line 136
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 140
+    .line 137
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p1
 
     if-eqz p1, :cond_5
 
-    .line 142
+    .line 139
     new-instance p2, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     const/16 p3, 0xe
@@ -656,23 +656,23 @@
 
     invoke-direct {p2, p1, p3, v0}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;IZ)V
 
-    .line 143
+    .line 140
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     goto/16 :goto_1
 
-    .line 146
+    .line 143
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/StealthModeAlert;->stealthModeIsActive:Z
 
     if-eqz p1, :cond_1
 
-    .line 147
+    .line 144
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
 
-    .line 150
+    .line 147
     :cond_1
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -684,8 +684,8 @@
 
     move-result-object p1
 
-    .line 151
-    invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesController;->getStealthMode()Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
+    .line 148
+    invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesController;->getStealthMode()Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;
 
     move-result-object p3
 
@@ -693,7 +693,7 @@
 
     if-eqz p3, :cond_4
 
-    .line 152
+    .line 149
     iget v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -704,24 +704,24 @@
 
     move-result v1
 
-    iget p3, p3, Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;->cooldown_until_date:I
+    iget p3, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;->cooldown_until_date:I
 
     if-le v1, p3, :cond_2
 
     goto :goto_0
 
-    .line 167
+    .line 164
     :cond_2
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/StealthModeAlert;->stealthModeIsActive:Z
 
     if-eqz p1, :cond_3
 
-    .line 168
+    .line 165
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     goto :goto_1
 
-    .line 170
+    .line 167
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
@@ -731,12 +731,12 @@
 
     if-eqz p1, :cond_5
 
-    .line 172
+    .line 169
     sget p2, Lorg/telegram/messenger/R$string;->StealthModeCooldownHint:I
 
     const-string p3, "StealthModeCooldownHint"
 
-    .line 173
+    .line 170
     invoke-static {p3, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
@@ -745,44 +745,44 @@
 
     move-result-object p2
 
-    .line 172
+    .line 169
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/BulletinFactory;->createErrorBulletin(Ljava/lang/CharSequence;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
 
-    .line 174
+    .line 171
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/Bulletin;->show(Z)Lorg/telegram/ui/Components/Bulletin;
 
     goto :goto_1
 
-    .line 153
+    .line 150
     :cond_4
     :goto_0
-    new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_stories_activateStealthMode;
+    new-instance p2, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_activateStealthMode;
 
-    invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_stories_activateStealthMode;-><init>()V
+    invoke-direct {p2}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_activateStealthMode;-><init>()V
+
+    .line 151
+    iput-boolean v0, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_activateStealthMode;->future:Z
+
+    .line 152
+    iput-boolean v0, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_activateStealthMode;->past:Z
+
+    .line 153
+    new-instance p3, Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;
+
+    invoke-direct {p3}, Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;-><init>()V
 
     .line 154
-    iput-boolean v0, p2, Lorg/telegram/tgnet/TLRPC$TL_stories_activateStealthMode;->future:Z
-
-    .line 155
-    iput-boolean v0, p2, Lorg/telegram/tgnet/TLRPC$TL_stories_activateStealthMode;->past:Z
-
-    .line 156
-    new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
-
-    invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;-><init>()V
-
-    .line 157
-    iget v0, p3, Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;->flags:I
+    iget v0, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;->flags:I
 
     const/4 v1, 0x3
 
     or-int/2addr v0, v1
 
-    iput v0, p3, Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;->flags:I
+    iput v0, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;->flags:I
 
-    .line 158
+    .line 155
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -803,9 +803,9 @@
 
     add-int/2addr v0, v2
 
-    iput v0, p3, Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;->cooldown_until_date:I
+    iput v0, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;->cooldown_until_date:I
 
-    .line 159
+    .line 156
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -826,12 +826,12 @@
 
     add-int/2addr v0, v2
 
-    iput v0, p3, Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;->active_until_date:I
+    iput v0, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;->active_until_date:I
 
-    .line 160
-    invoke-virtual {p1, p3}, Lorg/telegram/ui/Stories/StoriesController;->setStealthMode(Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;)V
+    .line 157
+    invoke-virtual {p1, p3}, Lorg/telegram/ui/Stories/StoriesController;->setStealthMode(Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;)V
 
-    .line 161
+    .line 158
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -842,15 +842,15 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 164
+    .line 161
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->performHapticFeedback(I)Z
 
-    .line 165
+    .line 162
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 166
+    .line 163
     invoke-static {}, Lorg/telegram/ui/Stories/StealthModeAlert;->showStealthModeEnabledBulletin()V
 
     :cond_5
@@ -861,7 +861,7 @@
 .method private synthetic lambda$new$4()V
     .locals 1
 
-    .line 198
+    .line 195
     invoke-virtual {p0}, Landroid/app/Dialog;->isShowing()Z
 
     move-result v0
@@ -870,7 +870,7 @@
 
     const/4 v0, 0x1
 
-    .line 199
+    .line 196
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StealthModeAlert;->updateButton(Z)V
 
     :cond_0
@@ -880,17 +880,17 @@
 .method public static showStealthModeEnabledBulletin()V
     .locals 5
 
-    .line 182
+    .line 179
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v0
 
-    .line 184
+    .line 181
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
     if-eqz v0, :cond_0
 
-    .line 185
+    .line 182
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer;->windowView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoryViewer;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -903,7 +903,7 @@
 
     goto :goto_0
 
-    .line 187
+    .line 184
     :cond_0
     invoke-static {}, Lorg/telegram/ui/Components/BulletinFactory;->global()Lorg/telegram/ui/Components/BulletinFactory;
 
@@ -912,14 +912,14 @@
     :goto_0
     if-eqz v0, :cond_1
 
-    .line 190
+    .line 187
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_stories_stealth2:I
 
     sget v2, Lorg/telegram/messenger/R$string;->StealthModeOn:I
 
     const-string v3, "StealthModeOn"
 
-    .line 191
+    .line 188
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
@@ -928,17 +928,17 @@
 
     const-string v4, "StealthModeOnHint"
 
-    .line 192
+    .line 189
     invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 190
+    .line 187
     invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/Components/BulletinFactory;->createSimpleLargeBulletin(ILjava/lang/CharSequence;Ljava/lang/CharSequence;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v0
 
-    .line 193
+    .line 190
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
     :cond_1
@@ -948,7 +948,7 @@
 .method private updateButton(Z)V
     .locals 8
 
-    .line 204
+    .line 201
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -959,8 +959,8 @@
 
     move-result-object v0
 
-    .line 205
-    invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController;->getStealthMode()Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
+    .line 202
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController;->getStealthMode()Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;
 
     move-result-object v0
 
@@ -968,7 +968,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 206
+    .line 203
     iget v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -979,14 +979,14 @@
 
     move-result v2
 
-    iget v3, v0, Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;->active_until_date:I
+    iget v3, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;->active_until_date:I
 
     if-ge v2, v3, :cond_0
 
-    .line 207
+    .line 204
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StealthModeAlert;->stealthModeIsActive:Z
 
-    .line 208
+    .line 205
     iget-object v0, p0, Lorg/telegram/ui/Stories/StealthModeAlert;->button:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     sget v2, Lorg/telegram/messenger/R$string;->StealthModeIsActive:I
@@ -999,7 +999,7 @@
 
     invoke-virtual {v0, v2, v1, p1}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->setOverlayText(Ljava/lang/String;ZZ)V
 
-    .line 209
+    .line 206
     iget-object p1, p0, Lorg/telegram/ui/Stories/StealthModeAlert;->button:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
@@ -1017,7 +1017,7 @@
     :cond_0
     if-eqz v0, :cond_2
 
-    .line 210
+    .line 207
     iget v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -1028,13 +1028,13 @@
 
     move-result v2
 
-    iget v0, v0, Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;->cooldown_until_date:I
+    iget v0, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;->cooldown_until_date:I
 
     if-le v2, v0, :cond_1
 
     goto/16 :goto_0
 
-    .line 214
+    .line 211
     :cond_1
     iget v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -1052,24 +1052,24 @@
 
     const-wide/16 v4, 0x3c
 
-    .line 215
+    .line 212
     rem-long v6, v2, v4
 
     long-to-int v0, v6
 
-    .line 216
+    .line 213
     div-long/2addr v2, v4
 
     rem-long v6, v2, v4
 
     long-to-int v6, v6
 
-    .line 217
+    .line 214
     div-long/2addr v2, v4
 
     long-to-int v2, v2
 
-    .line 218
+    .line 215
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1128,7 +1128,7 @@
 
     move-result-object v0
 
-    .line 219
+    .line 216
     iget-object v2, p0, Lorg/telegram/ui/Stories/StealthModeAlert;->button:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     sget v3, Lorg/telegram/messenger/R$string;->AvailableIn:I
@@ -1145,7 +1145,7 @@
 
     invoke-virtual {v2, v0, v1, p1}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->setOverlayText(Ljava/lang/String;ZZ)V
 
-    .line 220
+    .line 217
     iget-object p1, p0, Lorg/telegram/ui/Stories/StealthModeAlert;->button:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;
@@ -1164,12 +1164,12 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedTextView;->setTextColor(I)V
 
-    .line 221
+    .line 218
     iget-object p1, p0, Lorg/telegram/ui/Stories/StealthModeAlert;->updateButtonRunnuble:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 222
+    .line 219
     iget-object p1, p0, Lorg/telegram/ui/Stories/StealthModeAlert;->updateButtonRunnuble:Ljava/lang/Runnable;
 
     const-wide/16 v0, 0x3e8
@@ -1178,7 +1178,7 @@
 
     goto :goto_1
 
-    .line 211
+    .line 208
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/StealthModeAlert;->button:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
@@ -1193,7 +1193,7 @@
 
     invoke-virtual {v0, v2, v1, p1}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->setOverlayText(Ljava/lang/String;ZZ)V
 
-    .line 212
+    .line 209
     iget-object p1, p0, Lorg/telegram/ui/Stories/StealthModeAlert;->button:Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/PremiumButtonView;->overlayTextView:Lorg/telegram/ui/Components/AnimatedTextView;

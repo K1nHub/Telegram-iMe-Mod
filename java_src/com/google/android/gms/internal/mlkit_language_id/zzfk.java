@@ -9,7 +9,7 @@ final class zzfk extends zzfj {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.gms.internal.mlkit_language_id.zzfj
     public final void zza(Object obj, long j) {
-        zzb(obj, j).mo1072b_();
+        zzb(obj, j).mo1073b_();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

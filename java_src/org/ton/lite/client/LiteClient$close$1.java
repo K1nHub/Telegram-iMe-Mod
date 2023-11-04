@@ -10,7 +10,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: LiteClient.kt */
-@DebugMetadata(m143c = "org.ton.lite.client.LiteClient$close$1", m142f = "LiteClient.kt", m141l = {}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.ton.lite.client.LiteClient$close$1", m144f = "LiteClient.kt", m143l = {}, m142m = "invokeSuspend")
 /* loaded from: classes6.dex */
 final class LiteClient$close$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;

@@ -8,18 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field public final synthetic f$1:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda35;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    iput-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda35;->f$1:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda35;->f$1:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     return-void
 .end method
@@ -31,7 +31,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda35;->f$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda35;->f$1:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$$ExternalSyntheticLambda35;->f$1:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     move-object v2, p1
 
@@ -43,7 +43,7 @@
 
     move-object v6, p5
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$4PJIMW0FCJM5mvd4fFwXvklsMjY(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;ZZLorg/telegram/tgnet/TLRPC$InputPeer;Ljava/lang/Runnable;)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Stories/PeerStoriesView;->$r8$lambda$VI1RyczaXXcVlF6osgMKE6CFAlU(Lorg/telegram/ui/Stories/PeerStoriesView;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;ZZLorg/telegram/tgnet/TLRPC$InputPeer;Ljava/lang/Runnable;)V
 
     return-void
 .end method

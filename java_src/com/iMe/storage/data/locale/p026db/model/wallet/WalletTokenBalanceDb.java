@@ -38,13 +38,13 @@ public final class WalletTokenBalanceDb {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1017m = ((((((((((((((((((((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.tgUserId) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.total)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.totalInFiatValue)) * 31) + this.totalInFiatSymbol.hashCode()) * 31) + this.totalInFiatTicker.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.rateToFiatValue)) * 31) + this.rateToFiatSymbol.hashCode()) * 31) + this.rateToFiatTicker.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.ratePercentageChange24h)) * 31) + this.address.hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.decimals) * 31) + this.ticker.hashCode()) * 31;
+        int m1018m = ((((((((((((((((((((((((((ProfileData$$ExternalSyntheticBackport0.m1018m(this.tgUserId) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.total)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.totalInFiatValue)) * 31) + this.totalInFiatSymbol.hashCode()) * 31) + this.totalInFiatTicker.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.rateToFiatValue)) * 31) + this.rateToFiatSymbol.hashCode()) * 31) + this.rateToFiatTicker.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.ratePercentageChange24h)) * 31) + this.address.hashCode()) * 31) + this.networkId.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.decimals) * 31) + this.ticker.hashCode()) * 31;
         boolean z = this.isCoin;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return ((((m1017m + i) * 31) + this.name.hashCode()) * 31) + this.website.hashCode();
+        return ((((m1018m + i) * 31) + this.name.hashCode()) * 31) + this.website.hashCode();
     }
 
     public String toString() {

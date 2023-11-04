@@ -18,9 +18,9 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.databinding.ForkFullscreenContentAlertBinding;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.RLottieImageView;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: FullscreenContentDialog.kt */
 /* renamed from: com.iMe.ui.dialog.FullscreenContentDialog */
 /* loaded from: classes3.dex */

@@ -3946,7 +3946,6 @@ Essa senha também será necessária sempre que você fizer login no Telegram em
     <string name="TermsOfServiceLogin">"Ao se cadastrar,
 você concorda com os *Termos de Serviço*."</string>
     <string name="TextCopied">O texto foi copiado.</string>
-    <string name="TextSelectionHit">Segure na **palavra** e depois mova o cursor para selecionar mais texto para copiar.</string>
     <string name="TextSizeHeader">Tamanho do texto das mensagens</string>
     <string name="Theme">Tema</string>
     <string name="ThemeArcticBlue">Ártico</string>

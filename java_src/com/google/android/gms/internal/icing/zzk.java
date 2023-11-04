@@ -14,13 +14,13 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zzk extends AbstractSafeParcelable {
     private static final zzs zzf;
-    @SafeParcelable.Field(m1089id = 1)
+    @SafeParcelable.Field(m1090id = 1)
     public final String zzb;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     final zzs zzc;
-    @SafeParcelable.Field(defaultValue = "-1", m1089id = 4)
+    @SafeParcelable.Field(defaultValue = "-1", m1090id = 4)
     public final int zzd;
-    @SafeParcelable.Field(m1089id = 5)
+    @SafeParcelable.Field(m1090id = 5)
     public final byte[] zze;
     public static final int zza = Integer.parseInt("-1");
     public static final Parcelable.Creator<zzk> CREATOR = new zzl();
@@ -34,7 +34,7 @@ public final class zzk extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzk(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 3) zzs zzsVar, @SafeParcelable.Param(m1088id = 4) int i, @SafeParcelable.Param(m1088id = 5) byte[] bArr) {
+    public zzk(@SafeParcelable.Param(m1089id = 1) String str, @SafeParcelable.Param(m1089id = 3) zzs zzsVar, @SafeParcelable.Param(m1089id = 4) int i, @SafeParcelable.Param(m1089id = 5) byte[] bArr) {
         int i2 = zza;
         boolean z = true;
         if (i != i2 && zzq.zza(i) == null) {

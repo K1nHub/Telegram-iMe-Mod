@@ -92,7 +92,7 @@ public final class InlineClassAwareCallerKt {
 
     public static final Class<?> toInlineClass(KotlinType kotlinType) {
         Intrinsics.checkNotNullParameter(kotlinType, "<this>");
-        Class<?> inlineClass = toInlineClass(kotlinType.getConstructor().mo2046getDeclarationDescriptor());
+        Class<?> inlineClass = toInlineClass(kotlinType.getConstructor().mo2051getDeclarationDescriptor());
         if (inlineClass == null) {
             return null;
         }

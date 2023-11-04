@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x3c20629f
-
-
 # instance fields
 .field public start_param:Ljava/lang/String;
 
@@ -14,16 +10,10 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 33174
+    .line 33556
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,8 +22,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_inlineBotSwitchPM;
     .locals 1
 
-    .line 33181
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_inlineBotSwitchPM;->constructor:I
+    const v0, 0x3c20629f
 
     if-eq v0, p1, :cond_1
 
@@ -43,7 +32,7 @@
 
     return-object p0
 
-    .line 33183
+    .line 33565
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -69,13 +58,13 @@
 
     throw p0
 
-    .line 33188
+    .line 33570
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inlineBotSwitchPM;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inlineBotSwitchPM;-><init>()V
 
-    .line 33189
+    .line 33571
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_inlineBotSwitchPM;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -86,14 +75,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 33194
+    .line 33576
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_inlineBotSwitchPM;->text:Ljava/lang/String;
 
-    .line 33195
+    .line 33577
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -106,17 +95,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 33199
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_inlineBotSwitchPM;->constructor:I
+    const v0, 0x3c20629f
 
+    .line 33581
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 33200
+    .line 33582
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_inlineBotSwitchPM;->text:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 33201
+    .line 33583
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_inlineBotSwitchPM;->start_param:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

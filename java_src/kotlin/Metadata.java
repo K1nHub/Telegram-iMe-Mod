@@ -10,26 +10,26 @@ import java.lang.annotation.Target;
 /* loaded from: classes4.dex */
 public @interface Metadata {
     /* renamed from: bv */
-    int[] m152bv() default {1, 0, 3};
+    int[] m154bv() default {1, 0, 3};
 
     /* renamed from: d1 */
-    String[] m151d1() default {};
+    String[] m153d1() default {};
 
     /* renamed from: d2 */
-    String[] m150d2() default {};
+    String[] m152d2() default {};
 
     /* renamed from: k */
-    int m149k() default 1;
+    int m151k() default 1;
 
     /* renamed from: mv */
-    int[] m148mv() default {};
+    int[] m150mv() default {};
 
     /* renamed from: pn */
-    String m147pn() default "";
+    String m149pn() default "";
 
     /* renamed from: xi */
-    int m146xi() default 0;
+    int m148xi() default 0;
 
     /* renamed from: xs */
-    String m145xs() default "";
+    String m147xs() default "";
 }

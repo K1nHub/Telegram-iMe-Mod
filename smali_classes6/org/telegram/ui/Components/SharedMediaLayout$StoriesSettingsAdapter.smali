@@ -62,15 +62,15 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/content/Context;)V
     .locals 0
 
-    .line 277
+    .line 276
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 278
+    .line 277
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->context:Landroid/content/Context;
 
-    .line 279
+    .line 278
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p2
@@ -89,7 +89,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
-    .line 280
+    .line 279
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$100(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p1
@@ -104,7 +104,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->notificationCenter:Lorg/telegram/messenger/NotificationCenter;
 
-    .line 281
+    .line 280
     invoke-direct {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->updateRows()V
 
     return-void
@@ -113,7 +113,7 @@
 .method private synthetic lambda$onItemClick$0()V
     .locals 1
 
-    .line 307
+    .line 306
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->enableSectionRow:I
 
     invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
@@ -124,13 +124,13 @@
 .method private synthetic lambda$onItemClick$1(Lorg/telegram/ui/Cells/TextCheckCell;)V
     .locals 2
 
-    .line 299
+    .line 298
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->rowCount:I
 
-    .line 300
+    .line 299
     invoke-direct {p0}, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->updateRows()V
 
-    .line 301
+    .line 300
     iget v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->rowCount:I
 
     sub-int/2addr v0, v1
@@ -139,14 +139,14 @@
 
     move-result v0
 
-    .line 302
+    .line 301
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->isChecked()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 303
+    .line 302
     iget p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->enableSectionRow:I
 
     add-int/lit8 p1, p1, 0x1
@@ -155,7 +155,7 @@
 
     goto :goto_0
 
-    .line 305
+    .line 304
     :cond_0
     iget p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->enableSectionRow:I
 
@@ -163,7 +163,7 @@
 
     invoke-virtual {p0, p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
-    .line 307
+    .line 306
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -185,7 +185,7 @@
 
     const/4 v0, -0x1
 
-    .line 408
+    .line 407
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsProfileRow:I
 
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsChannelsRow:I
@@ -200,26 +200,26 @@
 
     const/4 v0, 0x0
 
-    .line 412
+    .line 411
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->rowCount:I
 
     const/4 v1, 0x0
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 413
+    .line 412
     iput v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->rowCount:I
 
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->enableRow:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 414
+    .line 413
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->rowCount:I
 
     iput v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->enableSectionRow:I
 
-    .line 415
+    .line 414
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController;->isEnabled()Z
@@ -228,7 +228,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 416
+    .line 415
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->rowCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -239,35 +239,35 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 417
+    .line 416
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->rowCount:I
 
     iput v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesBarSectionRow:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 418
+    .line 417
     iput v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->rowCount:I
 
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsHeaderRow:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 419
+    .line 418
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->rowCount:I
 
     iput v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsContactsRow:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 420
+    .line 419
     iput v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->rowCount:I
 
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsChannelsRow:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 421
+    .line 420
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->rowCount:I
 
     iput v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsProfileRow:I
@@ -281,7 +281,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 328
+    .line 327
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->rowCount:I
 
     return v0
@@ -290,7 +290,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 338
+    .line 337
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->enableSectionRow:I
 
     if-eq p1, v0, :cond_2
@@ -301,24 +301,24 @@
 
     goto :goto_0
 
-    .line 341
+    .line 340
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsHeaderRow:I
 
     if-ne p1, v0, :cond_1
 
-    .line 342
+    .line 341
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     return p1
 
-    .line 344
+    .line 343
     :cond_1
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     return p1
 
-    .line 339
+    .line 338
     :cond_2
     :goto_0
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
@@ -337,12 +337,12 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 4
 
-    .line 366
+    .line 365
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->isNeedDivider(I)Z
 
     move-result v0
 
-    .line 367
+    .line 366
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v1
@@ -353,12 +353,12 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 368
+    .line 367
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 369
+    .line 368
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->enableSectionRow:I
 
     if-ne p2, v0, :cond_0
@@ -376,7 +376,7 @@
 
     if-ne p2, v0, :cond_2
 
-    .line 370
+    .line 369
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->context:Landroid/content/Context;
 
@@ -392,17 +392,17 @@
 
     const/16 p2, 0xc
 
-    .line 371
+    .line 370
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
     const/4 p2, 0x0
 
-    .line 372
+    .line 371
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
     goto/16 :goto_0
 
-    .line 374
+    .line 373
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->context:Landroid/content/Context;
 
@@ -416,10 +416,10 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 375
+    .line 374
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 376
+    .line 375
     sget p2, Lorg/telegram/messenger/R$string;->settings_stories_enable_hint:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -430,7 +430,7 @@
 
     goto/16 :goto_0
 
-    .line 378
+    .line 377
     :cond_3
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -440,17 +440,17 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 379
+    .line 378
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 380
+    .line 379
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsHeaderRow:I
 
     if-ne p2, v0, :cond_9
 
-    .line 381
+    .line 380
     sget p2, Lorg/telegram/messenger/R$string;->settings_stories_avatars:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -461,7 +461,7 @@
 
     goto/16 :goto_0
 
-    .line 383
+    .line 382
     :cond_4
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -471,22 +471,22 @@
 
     if-ne v1, v2, :cond_9
 
-    .line 384
+    .line 383
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 385
+    .line 384
     iget v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->enableRow:I
 
     if-ne p2, v1, :cond_5
 
     const/4 p2, 0x1
 
-    .line 386
+    .line 385
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
 
-    .line 387
+    .line 386
     sget p2, Lorg/telegram/messenger/R$string;->settings_stories_enable:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -503,16 +503,16 @@
 
     goto :goto_0
 
-    .line 389
+    .line 388
     :cond_5
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Cells/TextCheckCell;->setType(I)V
 
-    .line 390
+    .line 389
     iget v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesBarRow:I
 
     if-ne p2, v1, :cond_6
 
-    .line 391
+    .line 390
     sget p2, Lorg/telegram/messenger/R$string;->settings_stories_bar:I
 
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -529,13 +529,13 @@
 
     goto :goto_0
 
-    .line 392
+    .line 391
     :cond_6
     iget v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsContactsRow:I
 
     if-ne p2, v1, :cond_7
 
-    .line 393
+    .line 392
     sget p2, Lorg/telegram/messenger/R$string;->FilterContacts:I
 
     const-string v1, "FilterContacts"
@@ -554,13 +554,13 @@
 
     goto :goto_0
 
-    .line 394
+    .line 393
     :cond_7
     iget v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsChannelsRow:I
 
     if-ne p2, v1, :cond_8
 
-    .line 395
+    .line 394
     sget p2, Lorg/telegram/messenger/R$string;->FilterChannels:I
 
     const-string v1, "FilterChannels"
@@ -579,13 +579,13 @@
 
     goto :goto_0
 
-    .line 396
+    .line 395
     :cond_8
     iget v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsProfileRow:I
 
     if-ne p2, v1, :cond_9
 
-    .line 397
+    .line 396
     sget p2, Lorg/telegram/messenger/R$string;->PrivacyProfilePhoto:I
 
     const-string v1, "PrivacyProfilePhoto"
@@ -610,12 +610,12 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    .line 351
+    .line 350
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
 
     if-ne p2, p1, :cond_0
 
-    .line 352
+    .line 351
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->context:Landroid/content/Context;
@@ -624,20 +624,20 @@
 
     goto :goto_0
 
-    .line 353
+    .line 352
     :cond_0
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne p2, p1, :cond_1
 
-    .line 354
+    .line 353
     new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->context:Landroid/content/Context;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
-    .line 355
+    .line 354
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -648,7 +648,7 @@
 
     goto :goto_0
 
-    .line 357
+    .line 356
     :cond_1
     new-instance p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
@@ -656,7 +656,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell;-><init>(Landroid/content/Context;)V
 
-    .line 358
+    .line 357
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -665,7 +665,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 360
+    .line 359
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -677,7 +677,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 361
+    .line 360
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -688,25 +688,25 @@
 .method public onItemClick(Landroid/view/View;I)V
     .locals 2
 
-    .line 287
+    .line 286
     instance-of v0, p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     if-eqz v0, :cond_6
 
-    .line 288
+    .line 287
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    .line 289
+    .line 288
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckBox()V
 
-    .line 290
+    .line 289
     iget v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->enableRow:I
 
     const/4 v1, 0x1
 
     if-ne p2, v0, :cond_1
 
-    .line 291
+    .line 290
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Stories/StoriesController;->isEnabled()Z
@@ -717,7 +717,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Stories/StoriesController;->setEnabled(Z)V
 
-    .line 292
+    .line 291
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Stories/StoriesController;->isEnabled()Z
@@ -726,27 +726,27 @@
 
     if-eqz p2, :cond_0
 
-    .line 293
+    .line 292
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Stories/StoriesController;->setBarEnabled(Z)V
 
-    .line 294
+    .line 293
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Stories/StoriesController;->setContactsAvatarsEnabled(Z)V
 
-    .line 295
+    .line 294
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Stories/StoriesController;->setChannelsAvatarsEnabled(Z)V
 
-    .line 296
+    .line 295
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Stories/StoriesController;->setProfileAvatarEnabled(Z)V
 
-    .line 298
+    .line 297
     :cond_0
     new-instance p2, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter$$ExternalSyntheticLambda1;
 
@@ -756,13 +756,13 @@
 
     goto :goto_0
 
-    .line 309
+    .line 308
     :cond_1
     iget p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesBarRow:I
 
     if-ne p2, p1, :cond_2
 
-    .line 310
+    .line 309
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesController;->isBarEnabled()Z
@@ -775,13 +775,13 @@
 
     goto :goto_0
 
-    .line 311
+    .line 310
     :cond_2
     iget p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsContactsRow:I
 
     if-ne p2, p1, :cond_3
 
-    .line 312
+    .line 311
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesController;->isContactsAvatarsEnabled()Z
@@ -794,13 +794,13 @@
 
     goto :goto_0
 
-    .line 313
+    .line 312
     :cond_3
     iget p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsChannelsRow:I
 
     if-ne p2, p1, :cond_4
 
-    .line 314
+    .line 313
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesController;->isChannelsAvatarsEnabled()Z
@@ -813,13 +813,13 @@
 
     goto :goto_0
 
-    .line 315
+    .line 314
     :cond_4
     iget p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->avatarsProfileRow:I
 
     if-ne p2, p1, :cond_5
 
-    .line 316
+    .line 315
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesController;->isProfileAvatarEnabled()Z
@@ -830,7 +830,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->setProfileAvatarEnabled(Z)V
 
-    .line 318
+    .line 317
     :cond_5
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$StoriesSettingsAdapter;->notificationCenter:Lorg/telegram/messenger/NotificationCenter;

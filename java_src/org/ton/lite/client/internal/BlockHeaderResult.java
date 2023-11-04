@@ -8,7 +8,7 @@ import org.ton.bitstring.BitString;
 public final class BlockHeaderResult {
 
     /* renamed from: lt */
-    private final long f2089lt;
+    private final long f2101lt;
     private final BitString stateHash;
     private final int time;
 
@@ -18,24 +18,24 @@ public final class BlockHeaderResult {
         }
         if (obj instanceof BlockHeaderResult) {
             BlockHeaderResult blockHeaderResult = (BlockHeaderResult) obj;
-            return this.time == blockHeaderResult.time && this.f2089lt == blockHeaderResult.f2089lt && Intrinsics.areEqual(this.stateHash, blockHeaderResult.stateHash);
+            return this.time == blockHeaderResult.time && this.f2101lt == blockHeaderResult.f2101lt && Intrinsics.areEqual(this.stateHash, blockHeaderResult.stateHash);
         }
         return false;
     }
 
     public int hashCode() {
-        int m1017m = ((this.time * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.f2089lt)) * 31;
+        int m1018m = ((this.time * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.f2101lt)) * 31;
         BitString bitString = this.stateHash;
-        return m1017m + (bitString == null ? 0 : bitString.hashCode());
+        return m1018m + (bitString == null ? 0 : bitString.hashCode());
     }
 
     public String toString() {
-        return "BlockHeaderResult(time=" + this.time + ", lt=" + this.f2089lt + ", stateHash=" + this.stateHash + ')';
+        return "BlockHeaderResult(time=" + this.time + ", lt=" + this.f2101lt + ", stateHash=" + this.stateHash + ')';
     }
 
     public BlockHeaderResult(int i, long j, BitString bitString) {
         this.time = i;
-        this.f2089lt = j;
+        this.f2101lt = j;
         this.stateHash = bitString;
     }
 

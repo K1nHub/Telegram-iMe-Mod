@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.smoothstreaming;
 
 import android.net.Uri;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.SeekParameters;
 import com.google.android.exoplayer2.extractor.mp4.FragmentedMp4Extractor;
@@ -76,7 +76,7 @@ public class DefaultSsChunkSource implements SsChunkSource {
             TrackEncryptionBox[] trackEncryptionBoxArr = format.drmInitData != null ? ((SsManifest.ProtectionElement) Assertions.checkNotNull(ssManifest.protectionElement)).trackEncryptionBoxes : null;
             int i3 = streamElement.type;
             int i4 = i2;
-            this.chunkExtractors[i4] = new BundledChunkExtractor(new FragmentedMp4Extractor(3, null, new Track(indexInTrackGroup, i3, streamElement.timescale, C0479C.TIME_UNSET, ssManifest.durationUs, format, 0, trackEncryptionBoxArr, i3 == 2 ? 4 : 0, null, null)), streamElement.type, format);
+            this.chunkExtractors[i4] = new BundledChunkExtractor(new FragmentedMp4Extractor(3, null, new Track(indexInTrackGroup, i3, streamElement.timescale, C0485C.TIME_UNSET, ssManifest.durationUs, format, 0, trackEncryptionBoxArr, i3 == 2 ? 4 : 0, null, null)), streamElement.type, format);
             i2 = i4 + 1;
         }
     }
@@ -178,7 +178,7 @@ public class DefaultSsChunkSource implements SsChunkSource {
         long startTimeUs = streamElement.getStartTimeUs(nextChunkIndex);
         long chunkDurationUs = startTimeUs + streamElement.getChunkDurationUs(nextChunkIndex);
         if (!list.isEmpty()) {
-            j3 = C0479C.TIME_UNSET;
+            j3 = C0485C.TIME_UNSET;
         }
         long j5 = j3;
         int i2 = nextChunkIndex + this.currentManifestChunkOffset;
@@ -207,7 +207,7 @@ public class DefaultSsChunkSource implements SsChunkSource {
     }
 
     private static MediaChunk newMediaChunk(Format format, DataSource dataSource, Uri uri, int i, long j, long j2, long j3, int i2, Object obj, ChunkExtractor chunkExtractor) {
-        return new ContainerMediaChunk(dataSource, new DataSpec(uri), format, i2, obj, j, j2, j3, C0479C.TIME_UNSET, i, 1, j, chunkExtractor);
+        return new ContainerMediaChunk(dataSource, new DataSpec(uri), format, i2, obj, j, j2, j3, C0485C.TIME_UNSET, i, 1, j, chunkExtractor);
     }
 
     private long resolveTimeToLiveEdgeUs(long j) {
@@ -217,7 +217,7 @@ public class DefaultSsChunkSource implements SsChunkSource {
             int i = streamElement.chunkCount - 1;
             return (streamElement.getStartTimeUs(i) + streamElement.getChunkDurationUs(i)) - j;
         }
-        return C0479C.TIME_UNSET;
+        return C0485C.TIME_UNSET;
     }
 
     /* loaded from: classes.dex */

@@ -42,7 +42,7 @@
         }
     .end annotation
 
-    const-string v0, "jsonrpc"
+    const-string/jumbo v0, "jsonrpc"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

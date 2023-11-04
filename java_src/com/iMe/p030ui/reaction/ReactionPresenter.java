@@ -35,7 +35,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
 import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SendMessagesHelper;
@@ -91,7 +91,7 @@ public final class ReactionPresenter extends BasePresenter<ReactionView> {
         } else {
             reactionRequestData = new ReactionRequestData(ReactionMessageTypes.TEXT, null, messageText, emojiList, buttonList, i);
         }
-        Observable<R> flatMap = this.interactor.prepareLikeMessage(reactionRequestData).flatMap(new C2036x5210a4c3(new Function1<Result<? extends ReactionMessageResult>, ObservableSource<? extends Result<? extends TLRPC$messages_BotResults>>>() { // from class: com.iMe.ui.reaction.ReactionPresenter$prepareTextMessage$$inlined$flatMapSuccess$1
+        Observable<R> flatMap = this.interactor.prepareLikeMessage(reactionRequestData).flatMap(new C2040x5210a4c3(new Function1<Result<? extends ReactionMessageResult>, ObservableSource<? extends Result<? extends TLRPC$messages_BotResults>>>() { // from class: com.iMe.ui.reaction.ReactionPresenter$prepareTextMessage$$inlined$flatMapSuccess$1
             {
                 super(1);
             }
@@ -118,12 +118,12 @@ public final class ReactionPresenter extends BasePresenter<ReactionView> {
                 Intrinsics.checkNotNull(data2);
                 String id = data2.getId();
                 j = ReactionPresenter.this.dialogId;
-                Observable wrapAsResult = telegramApi.getInlineBot(id, j, AppConfiguration$Reaction.getBotId()).map(new C2036x5210a4c3(new Function1<TLRPC$messages_BotResults, Result<? extends TLRPC$messages_BotResults>>() { // from class: com.iMe.ui.reaction.ReactionPresenter$prepareTextMessage$lambda$0$$inlined$wrapAsResult$1
+                Observable wrapAsResult = telegramApi.getInlineBot(id, j, AppConfiguration$Reaction.getBotId()).map(new C2040x5210a4c3(new Function1<TLRPC$messages_BotResults, Result<? extends TLRPC$messages_BotResults>>() { // from class: com.iMe.ui.reaction.ReactionPresenter$prepareTextMessage$lambda$0$$inlined$wrapAsResult$1
                     @Override // kotlin.jvm.functions.Function1
                     public final Result<? extends TLRPC$messages_BotResults> invoke(TLRPC$messages_BotResults tLRPC$messages_BotResults) {
                         return Result.Companion.success(tLRPC$messages_BotResults);
                     }
-                })).onErrorReturn(new C2036x5210a4c3(new Function1<Throwable, Result<? extends TLRPC$messages_BotResults>>() { // from class: com.iMe.ui.reaction.ReactionPresenter$prepareTextMessage$lambda$0$$inlined$wrapAsResult$2
+                })).onErrorReturn(new C2040x5210a4c3(new Function1<Throwable, Result<? extends TLRPC$messages_BotResults>>() { // from class: com.iMe.ui.reaction.ReactionPresenter$prepareTextMessage$lambda$0$$inlined$wrapAsResult$2
                     @Override // kotlin.jvm.functions.Function1
                     public final Result<TLRPC$messages_BotResults> invoke(Throwable it) {
                         Intrinsics.checkNotNullParameter(it, "it");
@@ -135,7 +135,7 @@ public final class ReactionPresenter extends BasePresenter<ReactionView> {
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo1009ui());
+        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "interactor\n            .…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -149,12 +149,12 @@ public final class ReactionPresenter extends BasePresenter<ReactionView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TLRPC$messages_BotResults> result) {
-                m1602invoke(result);
+                m1607invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1602invoke(Result<? extends TLRPC$messages_BotResults> it) {
+            public final void m1607invoke(Result<? extends TLRPC$messages_BotResults> it) {
                 ResourceManager resourceManager;
                 TelegramGateway telegramGateway;
                 HashMap formatBotRequestParams;
@@ -173,7 +173,7 @@ public final class ReactionPresenter extends BasePresenter<ReactionView> {
                     AccountInstance accountInstance = AccountInstance.getInstance(telegramGateway.getSelectedAccountIndex());
                     formatBotRequestParams = ReactionPresenter.this.formatBotRequestParams((TLRPC$messages_BotResults) success.getData());
                     j = ReactionPresenter.this.dialogId;
-                    SendMessagesHelper.prepareSendingBotContextResult(null, accountInstance, tLRPC$BotInlineResult, formatBotRequestParams, j, messageObject, null, null, true, 0, null);
+                    SendMessagesHelper.prepareSendingBotContextResult(null, accountInstance, tLRPC$BotInlineResult, formatBotRequestParams, j, messageObject, null, null, null, true, 0, null);
                     telegramGateway2 = ReactionPresenter.this.telegramGateway;
                     NotificationCenter.getInstance(telegramGateway2.getSelectedAccountIndex()).lambda$postNotificationNameOnUIThread$1(NotificationCenter.sendSocialEmotion, new Object[0]);
                     ((ReactionView) ReactionPresenter.this.getViewState()).messageCreated();
@@ -220,7 +220,7 @@ public final class ReactionPresenter extends BasePresenter<ReactionView> {
         if (Patterns.WEB_URL.matcher(url).matches()) {
             ((ReactionView) getViewState()).onUrlValid(i, url);
         } else {
-            ((ReactionView) getViewState()).showToast(this.resourceManager.getString(C3630R.string.chat_reaction_url_validation_error));
+            ((ReactionView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.chat_reaction_url_validation_error));
         }
     }
 
@@ -233,7 +233,7 @@ public final class ReactionPresenter extends BasePresenter<ReactionView> {
     /* JADX INFO: Access modifiers changed from: private */
     public final HashMap<String, String> formatBotRequestParams(TLRPC$messages_BotResults tLRPC$messages_BotResults) {
         HashMap<String, String> hashMapOf;
-        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m144to(TtmlNode.ATTR_ID, this.messageId), TuplesKt.m144to("query_id", String.valueOf(tLRPC$messages_BotResults.query_id)), TuplesKt.m144to("bot", String.valueOf(AppConfiguration$Reaction.getBotId())), TuplesKt.m144to("bot_name", AppConfiguration$Reaction.getBotName()));
+        hashMapOf = MapsKt__MapsKt.hashMapOf(TuplesKt.m146to(TtmlNode.ATTR_ID, this.messageId), TuplesKt.m146to("query_id", String.valueOf(tLRPC$messages_BotResults.query_id)), TuplesKt.m146to("bot", String.valueOf(AppConfiguration$Reaction.getBotId())), TuplesKt.m146to("bot_name", AppConfiguration$Reaction.getBotName()));
         return hashMapOf;
     }
 }

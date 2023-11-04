@@ -21,7 +21,7 @@ public final class AdnlClientImpl {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public java.lang.Object m4916sendQuery8Mi8wO0(io.ktor.utils.p032io.core.ByteReadPacket r11, long r12, kotlin.coroutines.Continuation<? super io.ktor.utils.p032io.core.ByteReadPacket> r14) {
+    public java.lang.Object m5070sendQuery8Mi8wO0(io.ktor.utils.p032io.core.ByteReadPacket r11, long r12, kotlin.coroutines.Continuation<? super io.ktor.utils.p032io.core.ByteReadPacket> r14) {
         /*
             r10 = this;
             boolean r0 = r14 instanceof org.ton.adnl.connection.AdnlClientImpl$sendQuery$1
@@ -60,7 +60,7 @@ public final class AdnlClientImpl {
             org.ton.adnl.connection.AdnlConnectionPool r14 = org.ton.adnl.connection.AdnlClientImpl.connectionPool
             org.ton.api.liteserver.LiteServerDesc r2 = r10.liteServerDesc
             org.ton.adnl.connection.AdnlConnection r5 = r14.selectConnection(r2)
-            org.ton.tl.ByteString$Companion r14 = org.ton.p044tl.ByteString.Companion
+            org.ton.tl.ByteString$Companion r14 = org.ton.p045tl.ByteString.Companion
             kotlin.random.Random$Default r2 = kotlin.random.Random.Default
             r4 = 32
             byte[] r2 = r2.nextBytes(r4)
@@ -76,7 +76,7 @@ public final class AdnlClientImpl {
             r4 = r11
             r4.<init>(r5, r6, r7, r8, r9)     // Catch: java.lang.Throwable -> L29
             r0.label = r3     // Catch: java.lang.Throwable -> L29
-            java.lang.Object r14 = kotlinx.coroutines.TimeoutKt.m2092withTimeoutKLykuaI(r12, r11, r0)     // Catch: java.lang.Throwable -> L29
+            java.lang.Object r14 = kotlinx.coroutines.TimeoutKt.m2097withTimeoutKLykuaI(r12, r11, r0)     // Catch: java.lang.Throwable -> L29
             if (r14 != r1) goto L6b
             return r1
         L6b:
@@ -84,7 +84,7 @@ public final class AdnlClientImpl {
         L6c:
             throw r11
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.ton.adnl.connection.AdnlClientImpl.m4916sendQuery8Mi8wO0(io.ktor.utils.io.core.ByteReadPacket, long, kotlin.coroutines.Continuation):java.lang.Object");
+        throw new UnsupportedOperationException("Method not decompiled: org.ton.adnl.connection.AdnlClientImpl.m5070sendQuery8Mi8wO0(io.ktor.utils.io.core.ByteReadPacket, long, kotlin.coroutines.Continuation):java.lang.Object");
     }
 
     /* compiled from: AdnlClientImpl.kt */

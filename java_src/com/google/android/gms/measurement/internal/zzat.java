@@ -11,13 +11,13 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzat extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzat> CREATOR = new zzau();
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     public final String zza;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     public final zzar zzb;
-    @SafeParcelable.Field(m1089id = 4)
+    @SafeParcelable.Field(m1090id = 4)
     public final String zzc;
-    @SafeParcelable.Field(m1089id = 5)
+    @SafeParcelable.Field(m1090id = 5)
     public final long zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -50,7 +50,7 @@ public final class zzat extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public zzat(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) zzar zzarVar, @SafeParcelable.Param(m1088id = 4) String str2, @SafeParcelable.Param(m1088id = 5) long j) {
+    public zzat(@SafeParcelable.Param(m1089id = 2) String str, @SafeParcelable.Param(m1089id = 3) zzar zzarVar, @SafeParcelable.Param(m1089id = 4) String str2, @SafeParcelable.Param(m1089id = 5) long j) {
         this.zza = str;
         this.zzb = zzarVar;
         this.zzc = str2;

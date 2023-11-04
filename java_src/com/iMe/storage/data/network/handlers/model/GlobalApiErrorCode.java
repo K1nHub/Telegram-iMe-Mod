@@ -48,6 +48,8 @@ public enum GlobalApiErrorCode {
     ERR_TOKEN_NOT_FOUND,
     ERR_AMOUNT_LESS_THAN_MIN,
     ERR_FETCH_TOKEN,
+    NO_CURRENT_TON_CONNECT_SESSION_FOUND,
+    NO_CURRENT_AUTHORIZATION_FOUND,
     UNKNOWN;
     
     public static final Companion Companion = new Companion(null);

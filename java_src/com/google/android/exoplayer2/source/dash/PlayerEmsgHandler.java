@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.source.dash;
 
 import android.os.Handler;
 import android.os.Message;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
 import com.google.android.exoplayer2.ParserException;
@@ -52,7 +52,7 @@ public final class PlayerEmsgHandler implements Handler.Callback {
 
     public void updateManifest(DashManifest dashManifest) {
         this.isWaitingForManifestRefresh = false;
-        this.expiredManifestPublishTimeUs = C0479C.TIME_UNSET;
+        this.expiredManifestPublishTimeUs = C0485C.TIME_UNSET;
         this.manifest = dashManifest;
         removePreviouslyExpiredManifestPublishTimeValues();
     }
@@ -157,7 +157,7 @@ public final class PlayerEmsgHandler implements Handler.Callback {
         try {
             return Util.parseXsDateTime(Util.fromUtf8Bytes(eventMessage.messageData));
         } catch (ParserException unused) {
-            return C0479C.TIME_UNSET;
+            return C0485C.TIME_UNSET;
         }
     }
 
@@ -171,7 +171,7 @@ public final class PlayerEmsgHandler implements Handler.Callback {
         private final SampleQueue sampleQueue;
         private final FormatHolder formatHolder = new FormatHolder();
         private final MetadataInputBuffer buffer = new MetadataInputBuffer();
-        private long maxLoadedChunkEndTimeUs = C0479C.TIME_UNSET;
+        private long maxLoadedChunkEndTimeUs = C0485C.TIME_UNSET;
 
         @Override // com.google.android.exoplayer2.extractor.TrackOutput
         public /* synthetic */ int sampleData(DataReader dataReader, int i, boolean z) {
@@ -216,7 +216,7 @@ public final class PlayerEmsgHandler implements Handler.Callback {
 
         public void onChunkLoadCompleted(Chunk chunk) {
             long j = this.maxLoadedChunkEndTimeUs;
-            if (j == C0479C.TIME_UNSET || chunk.endTimeUs > j) {
+            if (j == C0485C.TIME_UNSET || chunk.endTimeUs > j) {
                 this.maxLoadedChunkEndTimeUs = chunk.endTimeUs;
             }
             PlayerEmsgHandler.this.onChunkLoadCompleted(chunk);
@@ -224,7 +224,7 @@ public final class PlayerEmsgHandler implements Handler.Callback {
 
         public boolean onChunkLoadError(Chunk chunk) {
             long j = this.maxLoadedChunkEndTimeUs;
-            return PlayerEmsgHandler.this.onChunkLoadError(j != C0479C.TIME_UNSET && j < chunk.startTimeUs);
+            return PlayerEmsgHandler.this.onChunkLoadError(j != C0485C.TIME_UNSET && j < chunk.startTimeUs);
         }
 
         public void release() {
@@ -259,7 +259,7 @@ public final class PlayerEmsgHandler implements Handler.Callback {
 
         private void parsePlayerEmsgEvent(long j, EventMessage eventMessage) {
             long manifestPublishTimeMsInEmsg = PlayerEmsgHandler.getManifestPublishTimeMsInEmsg(eventMessage);
-            if (manifestPublishTimeMsInEmsg == C0479C.TIME_UNSET) {
+            if (manifestPublishTimeMsInEmsg == C0485C.TIME_UNSET) {
                 return;
             }
             onManifestExpiredMessageEncountered(j, manifestPublishTimeMsInEmsg);

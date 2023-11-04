@@ -19,7 +19,7 @@ public final class BytePacketBuilder extends Output {
 
     @Override // io.ktor.utils.p032io.core.Output
     /* renamed from: flush-62zg_DM  reason: not valid java name */
-    protected final void mo1913flush62zg_DM(ByteBuffer source, int i, int i2) {
+    protected final void mo1918flush62zg_DM(ByteBuffer source, int i, int i2) {
         Intrinsics.checkNotNullParameter(source, "source");
     }
 

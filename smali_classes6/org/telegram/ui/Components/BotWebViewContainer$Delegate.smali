@@ -27,6 +27,9 @@
 .method public abstract onSetBackButtonVisible(Z)V
 .end method
 
+.method public abstract onSetSettingsButtonVisible(Z)V
+.end method
+
 .method public abstract onSetupMainButton(ZZLjava/lang/String;IIZ)V
 .end method
 

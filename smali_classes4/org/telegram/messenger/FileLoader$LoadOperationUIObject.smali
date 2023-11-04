@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1842
+    .line 1830
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/FileLoader$1;)V
     .locals 0
 
-    .line 1842
+    .line 1830
     invoke-direct {p0}, Lorg/telegram/messenger/FileLoader$LoadOperationUIObject;-><init>()V
 
     return-void

@@ -10,6 +10,6 @@ public final class TrComputePhaseTlbCombinator extends TlbCombinator<TrComputePh
     public static final TrComputePhaseTlbCombinator INSTANCE = new TrComputePhaseTlbCombinator();
 
     private TrComputePhaseTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(TrComputePhase.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(TrPhaseComputeSkipped.class), TrPhaseComputeSkipped.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(TrPhaseComputeVm.class), TrPhaseComputeVm.Companion));
+        super(Reflection.getOrCreateKotlinClass(TrComputePhase.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(TrPhaseComputeSkipped.class), TrPhaseComputeSkipped.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(TrPhaseComputeVm.class), TrPhaseComputeVm.Companion));
     }
 }

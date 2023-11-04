@@ -13,7 +13,7 @@ import org.orbitmvi.orbit.syntax.simple.SimpleContext;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt;
 /* compiled from: AuthViewModel.kt */
-@DebugMetadata(m143c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onPageStared$1", m142f = "AuthViewModel.kt", m141l = {42}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onPageStared$1", m144f = "AuthViewModel.kt", m143l = {42}, m142m = "invokeSuspend")
 /* loaded from: classes3.dex */
 final class AuthViewModel$onPageStared$1 extends SuspendLambda implements Function2<SimpleSyntax<AuthState, AuthSideEffects>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
@@ -43,7 +43,7 @@ final class AuthViewModel$onPageStared$1 extends SuspendLambda implements Functi
         int i = this.label;
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
-            C13811 c13811 = new Function1<SimpleContext<AuthState>, AuthState>() { // from class: com.iMe.feature.socialMedias.auth.AuthViewModel$onPageStared$1.1
+            C13871 c13871 = new Function1<SimpleContext<AuthState>, AuthState>() { // from class: com.iMe.feature.socialMedias.auth.AuthViewModel$onPageStared$1.1
                 @Override // kotlin.jvm.functions.Function1
                 public final AuthState invoke(SimpleContext<AuthState> reduce) {
                     Intrinsics.checkNotNullParameter(reduce, "$this$reduce");
@@ -51,7 +51,7 @@ final class AuthViewModel$onPageStared$1 extends SuspendLambda implements Functi
                 }
             };
             this.label = 1;
-            if (SimpleSyntaxExtensionsKt.reduce((SimpleSyntax) this.L$0, c13811, this) == coroutine_suspended) {
+            if (SimpleSyntaxExtensionsKt.reduce((SimpleSyntax) this.L$0, c13871, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

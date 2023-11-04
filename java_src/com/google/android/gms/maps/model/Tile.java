@@ -11,15 +11,15 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class Tile extends AbstractSafeParcelable {
     public static final Parcelable.Creator<Tile> CREATOR = new zzz();
-    @SafeParcelable.Field(m1089id = 4)
+    @SafeParcelable.Field(m1090id = 4)
     public final byte[] data;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     public final int height;
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     public final int width;
 
     @SafeParcelable.Constructor
-    public Tile(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) int i2, @SafeParcelable.Param(m1088id = 4) byte[] bArr) {
+    public Tile(@SafeParcelable.Param(m1089id = 2) int i, @SafeParcelable.Param(m1089id = 3) int i2, @SafeParcelable.Param(m1089id = 4) byte[] bArr) {
         this.width = i;
         this.height = i2;
         this.data = bArr;

@@ -318,7 +318,7 @@ public final class RealBufferedSource implements BufferedSource {
         kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r2, "java.lang.Integer.toStri…(this, checkRadix(radix))");
         r1.append(r2);
      */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x0058, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x0059, code lost:
         throw new java.lang.NumberFormatException(r1.toString());
      */
     @Override // okio.BufferedSource
@@ -336,7 +336,7 @@ public final class RealBufferedSource implements BufferedSource {
         L8:
             long r6 = r4 + r0
             boolean r8 = r10.request(r6)
-            if (r8 == 0) goto L59
+            if (r8 == 0) goto L5a
             okio.Buffer r8 = r10.bufferField
             byte r8 = r8.getByte(r4)
             r9 = 48
@@ -357,7 +357,7 @@ public final class RealBufferedSource implements BufferedSource {
             goto L8
         L2c:
             if (r4 == 0) goto L2f
-            goto L59
+            goto L5a
         L2f:
             java.lang.NumberFormatException r0 = new java.lang.NumberFormatException
             java.lang.StringBuilder r1 = new java.lang.StringBuilder
@@ -374,7 +374,7 @@ public final class RealBufferedSource implements BufferedSource {
             java.lang.String r1 = r1.toString()
             r0.<init>(r1)
             throw r0
-        L59:
+        L5a:
             okio.Buffer r0 = r10.bufferField
             long r0 = r0.readDecimalLong()
             return r0

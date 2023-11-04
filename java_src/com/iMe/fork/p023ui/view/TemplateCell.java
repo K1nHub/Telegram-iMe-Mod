@@ -18,14 +18,14 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.AvatarDrawable;
-import org.telegram.p042ui.Components.BackupImageView;
-import org.telegram.p042ui.Components.BotCommandsMenuView;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.AvatarDrawable;
+import org.telegram.p043ui.Components.BackupImageView;
+import org.telegram.p043ui.Components.BotCommandsMenuView;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TemplateCell.kt */
 /* renamed from: com.iMe.fork.ui.view.TemplateCell */
 /* loaded from: classes3.dex */
@@ -141,8 +141,8 @@ public final class TemplateCell extends LinearLayout {
             }
         });
         this.sendButton$delegate = lazy6;
-        int m102dp = AndroidUtilities.m102dp(6);
-        setPadding(m102dp, m102dp, m102dp, m102dp);
+        int m104dp = AndroidUtilities.m104dp(6);
+        setPadding(m104dp, m104dp, m104dp, m104dp);
         setGravity(16);
         addView(getAvatarView(), LayoutHelper.createLinear(40, 40, 16, 6, 0, 0, 0));
         addView(getTitleContainer(), LayoutHelper.createLinear(0, -2, 1.0f, 16, 16, 0, 6, 0));
@@ -195,10 +195,10 @@ public final class TemplateCell extends LinearLayout {
         TextView subtitleTextView = getSubtitleTextView();
         if (SharedConfig.selectedTemplatesSortingType != TemplatesSortingType.USAGE) {
             ViewExtKt.visible$default(subtitleTextView, false, 1, null);
-            subtitleTextView.setText(LocaleController.getInternalString(C3630R.string.chat_template_subtitle_created_at) + ' ' + LocaleController.formatDateCallLog(template.getCreationDate() / 1000));
+            subtitleTextView.setText(LocaleController.getInternalString(C3634R.string.chat_template_subtitle_created_at) + ' ' + LocaleController.formatDateCallLog(template.getCreationDate() / 1000));
         } else {
             subtitleTextView.setVisibility(template.getUsageRating() != 0 ? 0 : 8);
-            subtitleTextView.setText(LocaleController.getInternalString(C3630R.string.chat_template_subtitle_sent) + ' ' + LocaleController.formatPluralString("Times", template.getUsageRating(), new Object[0]));
+            subtitleTextView.setText(LocaleController.getInternalString(C3634R.string.chat_template_subtitle_sent) + ' ' + LocaleController.formatPluralString("Times", template.getUsageRating(), new Object[0]));
         }
         getGoToMessageButton().setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.TemplateCell$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -249,7 +249,7 @@ public final class TemplateCell extends LinearLayout {
         ViewExtKt.singleLine(textView);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setTextSize(16.0f);
-        textView.setMaxHeight(AndroidUtilities.m102dp(20));
+        textView.setMaxHeight(AndroidUtilities.m104dp(20));
         textView.setIncludeFontPadding(false);
         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         return textView;
@@ -259,7 +259,7 @@ public final class TemplateCell extends LinearLayout {
     public final TextView initSubtitleTextView() {
         TextView textView = new TextView(getContext());
         textView.setTextSize(15.0f);
-        textView.setMaxHeight(AndroidUtilities.m102dp(20));
+        textView.setMaxHeight(AndroidUtilities.m104dp(20));
         textView.setIncludeFontPadding(false);
         textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
         return textView;
@@ -271,7 +271,7 @@ public final class TemplateCell extends LinearLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chat_messagePanelIcons), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3630R.C3632drawable.msg_message);
+        imageView.setImageResource(C3634R.C3636drawable.msg_message);
         return imageView;
     }
 
@@ -281,7 +281,7 @@ public final class TemplateCell extends LinearLayout {
         imageView.setScaleType(ImageView.ScaleType.CENTER);
         imageView.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chat_messagePanelSend), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3630R.C3632drawable.ic_send);
+        imageView.setImageResource(C3634R.C3636drawable.ic_send);
         return imageView;
     }
 

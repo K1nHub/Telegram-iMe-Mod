@@ -19,7 +19,7 @@ public class ResourceUnityVersionProvider implements UnityVersionProvider {
                 unityVersion = context.getResources().getString(resourcesIdentifier);
                 isUnityVersionSet = true;
                 Logger logger = Logger.getLogger();
-                logger.m1032v("Unity Editor version is: " + unityVersion);
+                logger.m1033v("Unity Editor version is: " + unityVersion);
             }
             return unityVersion;
         }

@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SimpleSyntaxExtensions.kt */
-@DebugMetadata(m143c = "org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt", m142f = "SimpleSyntaxExtensions.kt", m141l = {42}, m140m = "reduce")
+@DebugMetadata(m145c = "org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt", m144f = "SimpleSyntaxExtensions.kt", m143l = {42}, m142m = "reduce")
 /* loaded from: classes4.dex */
 public final class SimpleSyntaxExtensionsKt$reduce$1<S, SE> extends ContinuationImpl {
     Object L$0;

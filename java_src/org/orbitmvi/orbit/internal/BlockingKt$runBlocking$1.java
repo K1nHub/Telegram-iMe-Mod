@@ -11,7 +11,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* compiled from: Blocking.kt */
-@DebugMetadata(m143c = "org.orbitmvi.orbit.internal.BlockingKt$runBlocking$1", m142f = "Blocking.kt", m141l = {21}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.orbitmvi.orbit.internal.BlockingKt$runBlocking$1", m144f = "Blocking.kt", m143l = {21}, m142m = "invokeSuspend")
 /* loaded from: classes4.dex */
 final class BlockingKt$runBlocking$1<T> extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super T>, Object> {
     final /* synthetic */ Function1<Continuation<? super T>, Object> $block;

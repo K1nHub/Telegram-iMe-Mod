@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -15,7 +15,7 @@ public final class DvbSubtitleReader implements ElementaryStreamReader {
     private int bytesToCheck;
     private final TrackOutput[] outputs;
     private int sampleBytesWritten;
-    private long sampleTimeUs = C0479C.TIME_UNSET;
+    private long sampleTimeUs = C0485C.TIME_UNSET;
     private final List<TsPayloadReader.DvbSubtitleInfo> subtitleInfos;
     private boolean writingSample;
 
@@ -27,7 +27,7 @@ public final class DvbSubtitleReader implements ElementaryStreamReader {
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
     public void seek() {
         this.writingSample = false;
-        this.sampleTimeUs = C0479C.TIME_UNSET;
+        this.sampleTimeUs = C0485C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
@@ -47,7 +47,7 @@ public final class DvbSubtitleReader implements ElementaryStreamReader {
             return;
         }
         this.writingSample = true;
-        if (j != C0479C.TIME_UNSET) {
+        if (j != C0485C.TIME_UNSET) {
             this.sampleTimeUs = j;
         }
         this.sampleBytesWritten = 0;
@@ -57,7 +57,7 @@ public final class DvbSubtitleReader implements ElementaryStreamReader {
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
     public void packetFinished() {
         if (this.writingSample) {
-            if (this.sampleTimeUs != C0479C.TIME_UNSET) {
+            if (this.sampleTimeUs != C0485C.TIME_UNSET) {
                 for (TrackOutput trackOutput : this.outputs) {
                     trackOutput.sampleMetadata(this.sampleTimeUs, 1, this.sampleBytesWritten, 0, null);
                 }

@@ -33,7 +33,7 @@
 
 .field public drawClip:Lorg/telegram/ui/Stories/StoryViewer$HolderClip;
 
-.field params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
+.field public params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
 .field public radialProgressUpload:Lorg/telegram/ui/Components/RadialProgress;
 
@@ -48,12 +48,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 2604
+    .line 2727
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 2615
+    .line 2738
     iput v0, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->alpha:F
 
     return-void
@@ -66,52 +66,52 @@
 
     const/4 v0, 0x0
 
-    .line 2622
+    .line 2745
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->view:Landroid/view/View;
 
-    .line 2623
+    .line 2746
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
-    .line 2624
+    .line 2747
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 2625
+    .line 2748
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->storyImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 2626
+    .line 2749
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->drawAbove:Lorg/telegram/ui/Stories/StoryViewer$HolderDrawAbove;
 
-    .line 2627
+    .line 2750
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->drawClip:Lorg/telegram/ui/Stories/StoryViewer$HolderClip;
 
-    .line 2628
+    .line 2751
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->clipParent:Landroid/view/View;
 
-    .line 2629
+    .line 2752
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->radialProgressUpload:Lorg/telegram/ui/Components/RadialProgress;
 
-    .line 2630
+    .line 2753
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->crossfadeToAvatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v1, 0x0
 
-    .line 2631
+    .line 2754
     iput v1, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->clipTop:F
 
-    .line 2632
+    .line 2755
     iput v1, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->clipBottom:F
 
     const/4 v1, 0x0
 
-    .line 2633
+    .line 2756
     iput v1, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->storyId:I
 
-    .line 2634
+    .line 2757
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->bgPaint:Landroid/graphics/Paint;
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 2635
+    .line 2758
     iput v0, p0, Lorg/telegram/ui/Stories/StoryViewer$TransitionViewHolder;->alpha:F
 
     return-void

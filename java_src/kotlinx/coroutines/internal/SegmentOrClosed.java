@@ -6,17 +6,17 @@ import kotlinx.coroutines.internal.Segment;
 /* loaded from: classes4.dex */
 public final class SegmentOrClosed<S extends Segment<S>> {
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <S extends Segment<S>> Object m2116constructorimpl(Object obj) {
+    public static <S extends Segment<S>> Object m2121constructorimpl(Object obj) {
         return obj;
     }
 
     /* renamed from: isClosed-impl  reason: not valid java name */
-    public static final boolean m2118isClosedimpl(Object obj) {
+    public static final boolean m2123isClosedimpl(Object obj) {
         return obj == ConcurrentLinkedListKt.CLOSED;
     }
 
     /* renamed from: getSegment-impl  reason: not valid java name */
-    public static final S m2117getSegmentimpl(Object obj) {
+    public static final S m2122getSegmentimpl(Object obj) {
         if (obj != ConcurrentLinkedListKt.CLOSED) {
             Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type S of kotlinx.coroutines.internal.SegmentOrClosed");
             return (S) obj;

@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 196
+    .line 204
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$1;->invoke(Ljava/lang/Throwable;)V
@@ -62,7 +62,7 @@
 .method public final invoke(Ljava/lang/Throwable;)V
     .locals 0
 
-    .line 197
+    .line 205
     iget-object p1, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$fetchConfig$2$1;->$disposable:Lio/reactivex/disposables/Disposable;
 
     invoke-interface {p1}, Lio/reactivex/disposables/Disposable;->dispose()V

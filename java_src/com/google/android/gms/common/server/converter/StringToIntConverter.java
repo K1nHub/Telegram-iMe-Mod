@@ -16,7 +16,7 @@ import java.util.HashMap;
 /* loaded from: classes.dex */
 public final class StringToIntConverter extends AbstractSafeParcelable implements FastJsonResponse.FieldConverter<String, Integer> {
     public static final Parcelable.Creator<StringToIntConverter> CREATOR = new zad();
-    @SafeParcelable.VersionField(m1086id = 1)
+    @SafeParcelable.VersionField(m1087id = 1)
     final int zaa;
     private final HashMap zab;
     private final SparseArray zac;
@@ -71,7 +71,7 @@ public final class StringToIntConverter extends AbstractSafeParcelable implement
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public StringToIntConverter(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) ArrayList arrayList) {
+    public StringToIntConverter(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) ArrayList arrayList) {
         this.zaa = i;
         this.zab = new HashMap();
         this.zac = new SparseArray();

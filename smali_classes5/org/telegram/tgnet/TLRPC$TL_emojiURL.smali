@@ -3,25 +3,15 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x5a8a8c63
-
-
 # instance fields
 .field public url:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 52649
+    .line 53408
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -30,8 +20,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_emojiURL;
     .locals 1
 
-    .line 52655
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_emojiURL;->constructor:I
+    const v0, -0x5a8a8c63
 
     if-eq v0, p1, :cond_1
 
@@ -41,7 +30,7 @@
 
     return-object p0
 
-    .line 52657
+    .line 53416
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -67,13 +56,13 @@
 
     throw p0
 
-    .line 52662
+    .line 53421
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_emojiURL;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_emojiURL;-><init>()V
 
-    .line 52663
+    .line 53422
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_emojiURL;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -84,7 +73,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 0
 
-    .line 52668
+    .line 53427
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -97,12 +86,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 52672
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_emojiURL;->constructor:I
+    const v0, -0x5a8a8c63
 
+    .line 53431
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 52673
+    .line 53432
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiURL;->url:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

@@ -44,22 +44,22 @@
 .method public constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 1
 
-    .line 34209
+    .line 35327
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimationCallback;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 34212
+    .line 35330
     iput p1, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->position:I
 
     const/4 v0, 0x1
 
-    .line 34213
+    .line 35331
     iput-boolean v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->bottom:Z
 
-    .line 34214
+    .line 35332
     iput p1, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->offset:I
 
     return-void
@@ -68,8 +68,17 @@
 .method static synthetic access$1002(Lorg/telegram/ui/ChatActivity$ChatScrollCallback;I)I
     .locals 0
 
-    .line 34209
+    .line 35327
     iput p1, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->lastPadding:I
+
+    return p1
+.end method
+
+.method static synthetic access$34802(Lorg/telegram/ui/ChatActivity$ChatScrollCallback;I)I
+    .locals 0
+
+    .line 35327
+    iput p1, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->position:I
 
     return p1
 .end method
@@ -77,25 +86,16 @@
 .method static synthetic access$34902(Lorg/telegram/ui/ChatActivity$ChatScrollCallback;I)I
     .locals 0
 
-    .line 34209
-    iput p1, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->position:I
-
-    return p1
-.end method
-
-.method static synthetic access$35002(Lorg/telegram/ui/ChatActivity$ChatScrollCallback;I)I
-    .locals 0
-
-    .line 34209
+    .line 35327
     iput p1, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->offset:I
 
     return p1
 .end method
 
-.method static synthetic access$35102(Lorg/telegram/ui/ChatActivity$ChatScrollCallback;Z)Z
+.method static synthetic access$35002(Lorg/telegram/ui/ChatActivity$ChatScrollCallback;Z)Z
     .locals 0
 
-    .line 34209
+    .line 35327
     iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->bottom:Z
 
     return p1
@@ -104,7 +104,7 @@
 .method static synthetic access$702(Lorg/telegram/ui/ChatActivity$ChatScrollCallback;Lorg/telegram/messenger/MessageObject;)Lorg/telegram/messenger/MessageObject;
     .locals 0
 
-    .line 34209
+    .line 35327
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->scrollTo:Lorg/telegram/messenger/MessageObject;
 
     return-object p1
@@ -113,7 +113,7 @@
 .method static synthetic access$802(Lorg/telegram/ui/ChatActivity$ChatScrollCallback;Z)Z
     .locals 0
 
-    .line 34209
+    .line 35327
     iput-boolean p1, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->lastBottom:Z
 
     return p1
@@ -122,7 +122,7 @@
 .method static synthetic access$902(Lorg/telegram/ui/ChatActivity$ChatScrollCallback;I)I
     .locals 0
 
-    .line 34209
+    .line 35327
     iput p1, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->lastItemOffset:I
 
     return p1
@@ -131,7 +131,7 @@
 .method private synthetic lambda$onEndAnimation$0()V
     .locals 2
 
-    .line 34246
+    .line 35364
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -140,7 +140,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$60200(Lorg/telegram/ui/ChatActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$60600(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v1
 
@@ -154,12 +154,12 @@
 .method public onEndAnimation()V
     .locals 4
 
-    .line 34230
+    .line 35348
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->scrollTo:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v0, :cond_0
 
-    .line 34231
+    .line 35349
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$3500(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;
@@ -168,7 +168,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsSafe()V
 
-    .line 34232
+    .line 35350
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$3500(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;
@@ -191,10 +191,10 @@
 
     if-ltz v0, :cond_1
 
-    .line 34234
+    .line 35352
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$14500(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/GridLayoutManagerFixed;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$14300(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/GridLayoutManagerFixed;
 
     move-result-object v1
 
@@ -222,7 +222,7 @@
 
     goto :goto_0
 
-    .line 34237
+    .line 35355
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
@@ -232,10 +232,10 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity$ChatActivityAdapter;->updateRowsSafe()V
 
-    .line 34238
+    .line 35356
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$14500(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/GridLayoutManagerFixed;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$14300(Lorg/telegram/ui/ChatActivity;)Landroidx/recyclerview/widget/GridLayoutManagerFixed;
 
     move-result-object v0
 
@@ -251,22 +251,22 @@
     :goto_0
     const/4 v0, 0x0
 
-    .line 34240
+    .line 35358
     iput-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->scrollTo:Lorg/telegram/messenger/MessageObject;
 
-    .line 34241
+    .line 35359
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$23002(Lorg/telegram/ui/ChatActivity;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$22602(Lorg/telegram/ui/ChatActivity;Z)Z
 
-    .line 34244
+    .line 35362
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$4000(Lorg/telegram/ui/ChatActivity;)V
 
-    .line 34246
+    .line 35364
     new-instance v0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ChatActivity$ChatScrollCallback$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChatActivity$ChatScrollCallback;)V
@@ -279,10 +279,10 @@
 .method public onStartAnimation()V
     .locals 4
 
-    .line 34221
+    .line 35339
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimationCallback;->onStartAnimation()V
 
-    .line 34222
+    .line 35340
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -291,11 +291,11 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$60200(Lorg/telegram/ui/ChatActivity;)I
+    invoke-static {v2}, Lorg/telegram/ui/ChatActivity;->access$60600(Lorg/telegram/ui/ChatActivity;)I
 
     move-result v2
 
-    invoke-static {}, Lorg/telegram/ui/ChatActivity;->access$21700()[I
+    invoke-static {}, Lorg/telegram/ui/ChatActivity;->access$21600()[I
 
     move-result-object v3
 
@@ -303,12 +303,12 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$60202(Lorg/telegram/ui/ChatActivity;I)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$60602(Lorg/telegram/ui/ChatActivity;I)I
 
-    .line 34223
+    .line 35341
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$28800(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/PinchToZoomHelper;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$28100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/PinchToZoomHelper;
 
     move-result-object v0
 
@@ -318,10 +318,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 34224
+    .line 35342
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$28800(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/PinchToZoomHelper;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$28100(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/PinchToZoomHelper;
 
     move-result-object v0
 
@@ -334,15 +334,15 @@
 .method public recycleView(Landroid/view/View;)V
     .locals 1
 
-    .line 34251
+    .line 35369
     instance-of v0, p1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v0, :cond_0
 
-    .line 34252
+    .line 35370
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatScrollCallback;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$48600(Lorg/telegram/ui/ChatActivity;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$49000(Lorg/telegram/ui/ChatActivity;)Ljava/util/ArrayList;
 
     move-result-object v0
 

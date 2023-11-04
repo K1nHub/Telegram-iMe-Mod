@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.avi;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.DummyExtractorOutput;
@@ -62,7 +62,7 @@ public final class AviExtractor implements Extractor {
     private long moviStart = -1;
     private long moviEnd = -1;
     private int hdrlSize = -1;
-    private long durationUs = C0479C.TIME_UNSET;
+    private long durationUs = C0485C.TIME_UNSET;
 
     @Target({ElementType.TYPE_USE})
     @Documented
@@ -340,10 +340,10 @@ public final class AviExtractor implements Extractor {
         AviStreamHeaderChunk aviStreamHeaderChunk = (AviStreamHeaderChunk) listChunk.getChild(AviStreamHeaderChunk.class);
         StreamFormatChunk streamFormatChunk = (StreamFormatChunk) listChunk.getChild(StreamFormatChunk.class);
         if (aviStreamHeaderChunk == null) {
-            Log.m1106w(TAG, "Missing Stream Header");
+            Log.m1107w(TAG, "Missing Stream Header");
             return null;
         } else if (streamFormatChunk == null) {
-            Log.m1106w(TAG, "Missing Stream Format");
+            Log.m1107w(TAG, "Missing Stream Format");
             return null;
         } else {
             long durationUs = aviStreamHeaderChunk.getDurationUs();

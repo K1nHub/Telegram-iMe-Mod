@@ -38,7 +38,7 @@ final class AccountStatusTlbCombinator extends TlbCombinator<AccountStatus> {
     }
 
     private AccountStatusTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(AccountStatus.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AccountStatus.class), AccountStatusUninitTlbConstructor.INSTANCE), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AccountStatus.class), AccountStatusFrozenTlbConstructor.INSTANCE), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AccountStatus.class), AccountStatusActiveTlbConstructor.INSTANCE), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AccountStatus.class), AccountStatusNonExistTlbConstructor.INSTANCE));
+        super(Reflection.getOrCreateKotlinClass(AccountStatus.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AccountStatus.class), AccountStatusUninitTlbConstructor.INSTANCE), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AccountStatus.class), AccountStatusFrozenTlbConstructor.INSTANCE), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AccountStatus.class), AccountStatusActiveTlbConstructor.INSTANCE), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AccountStatus.class), AccountStatusNonExistTlbConstructor.INSTANCE));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

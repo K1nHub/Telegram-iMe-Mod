@@ -17,11 +17,11 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CategoryWithCampaignsProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CategoryWithCampaignsProvider */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CategoryWithCampaignsProvider extends BaseNodeProvider<CategoryWithCampaignsItem> implements KoinComponent {
     private Function1<? super CampaignItem, Unit> onChannelItemClick = new Function1<CampaignItem, Unit>() { // from class: com.iMe.ui.adapter.provider.CategoryWithCampaignsProvider$onChannelItemClick$1
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
@@ -46,7 +46,7 @@ public final class CategoryWithCampaignsProvider extends BaseNodeProvider<Catego
         }
     };
     private final int itemViewType = IdFabric$ViewTypes.CATALOG_CATEGORY_WITH_CAMPAIGNS;
-    private final int layoutId = C3630R.layout.fork_recycle_item_catalog_category_preview;
+    private final int layoutId = C3634R.layout.fork_recycle_item_catalog_category_preview;
     private final ChannelsDiffCallback channelsDiffCallback = new ChannelsDiffCallback();
     private Map<Integer, Parcelable> channelsRecyclersScrollStates = new LinkedHashMap();
     private final Map<Long, CatalogAllChannelsRecycleAdapter> channelsAdapters = new LinkedHashMap();
@@ -89,7 +89,7 @@ public final class CategoryWithCampaignsProvider extends BaseNodeProvider<Catego
         if (BaseQuickAdapterExtKt.isViewType(holder, getItemViewType())) {
             Map<Integer, Parcelable> map = this.channelsRecyclersScrollStates;
             Integer valueOf = Integer.valueOf(holder.getAdapterPosition());
-            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3630R.C3633id.recycle_channels)).getLayoutManager();
+            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3634R.C3637id.recycle_channels)).getLayoutManager();
             map.put(valueOf, layoutManager != null ? layoutManager.onSaveInstanceState() : null);
         }
     }
@@ -106,7 +106,7 @@ public final class CategoryWithCampaignsProvider extends BaseNodeProvider<Catego
     public void convert(BaseViewHolder helper, CategoryWithCampaignsItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3630R.C3633id.text_title;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(helper, i, Theme.key_windowBackgroundWhiteGrayText2).setText(i, item.getCategory().getTitle()), i), C3630R.C3633id.recycle_channels, new CategoryWithCampaignsProvider$convert$1(this, helper, item));
+        int i = C3634R.C3637id.text_title;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(helper, i, Theme.key_windowBackgroundWhiteGrayText2).setText(i, item.getCategory().getTitle()), i), C3634R.C3637id.recycle_channels, new CategoryWithCampaignsProvider$convert$1(this, helper, item));
     }
 }

@@ -10,7 +10,7 @@ public final class DefaultAllocator implements Allocator {
 
     @Override // io.ktor.utils.p032io.bits.Allocator
     /* renamed from: free-3GNKZMM */
-    public void mo1904free3GNKZMM(ByteBuffer instance) {
+    public void mo1909free3GNKZMM(ByteBuffer instance) {
         Intrinsics.checkNotNullParameter(instance, "instance");
     }
 
@@ -19,9 +19,9 @@ public final class DefaultAllocator implements Allocator {
 
     @Override // io.ktor.utils.p032io.bits.Allocator
     /* renamed from: alloc-gFv-Zug */
-    public ByteBuffer mo1903allocgFvZug(int i) {
+    public ByteBuffer mo1908allocgFvZug(int i) {
         ByteBuffer allocate = ByteBuffer.allocate(i);
         Intrinsics.checkNotNullExpressionValue(allocate, "allocate(size)");
-        return Memory.m1905constructorimpl(allocate);
+        return Memory.m1910constructorimpl(allocate);
     }
 }

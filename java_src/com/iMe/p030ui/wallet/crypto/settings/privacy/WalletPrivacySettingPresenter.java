@@ -31,7 +31,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import timber.log.Timber;
 /* compiled from: WalletPrivacySettingPresenter.kt */
 @InjectViewState
@@ -126,7 +126,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
             public final Pair<Result<CryptoWalletsInfo>, Result<Boolean>> invoke2(Result<CryptoWalletsInfo> walletAddressResult, Result<Boolean> accountRankResult) {
                 Intrinsics.checkNotNullParameter(walletAddressResult, "walletAddressResult");
                 Intrinsics.checkNotNullParameter(accountRankResult, "accountRankResult");
-                return TuplesKt.m144to(walletAddressResult, accountRankResult);
+                return TuplesKt.m146to(walletAddressResult, accountRankResult);
             }
         };
         Observable observeOn = Observable.zip(walletAddressSettingsObservable, accountRankSettingsObservable, new BiFunction() { // from class: com.iMe.ui.wallet.crypto.settings.privacy.WalletPrivacySettingPresenter$$ExternalSyntheticLambda1
@@ -136,7 +136,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 loadPrivacySettings$lambda$1 = WalletPrivacySettingPresenter.loadPrivacySettings$lambda$1(Function2.this, obj, obj2);
                 return loadPrivacySettings$lambda$1;
             }
-        }).observeOn(this.schedulersProvider.mo1009ui());
+        }).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "zip(\n                get…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -149,12 +149,12 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>> pair) {
-                m1651invoke(pair);
+                m1656invoke(pair);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1651invoke(Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>> it) {
+            public final void m1656invoke(Pair<? extends Result<? extends CryptoWalletsInfo>, ? extends Result<? extends Boolean>> it) {
                 int resolveAccessTypeBy;
                 int resolveAccessTypeBy2;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -233,7 +233,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 saveSettings$lambda$3 = WalletPrivacySettingPresenter.saveSettings$lambda$3(Function2.this, obj, obj2);
                 return saveSettings$lambda$3;
             }
-        }).observeOn(this.schedulersProvider.mo1009ui());
+        }).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "zip(\n            walletA…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -246,12 +246,12 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(List<? extends Result<? extends Boolean>> list) {
-                m1652invoke(list);
+                m1657invoke(list);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1652invoke(List<? extends Result<? extends Boolean>> it) {
+            public final void m1657invoke(List<? extends Result<? extends Boolean>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 if (ResultExtKt.isAllSuccess(it)) {
                     ((WalletPrivacySettingsView) WalletPrivacySettingPresenter.this.getViewState()).onSuccessSaveCryptoSettings();
@@ -293,7 +293,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     }
 
     private final Observable<Result<CryptoWalletsInfo>> getWalletAddressSettingsObservable() {
-        Observable<Result<CryptoWalletsInfo>> observeOn = this.cryptoPermissionInteractor.getCryptoPrivacySettings(false).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<CryptoWalletsInfo>> observeOn = this.cryptoPermissionInteractor.getCryptoPrivacySettings(false).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoPermissionInteract…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -368,7 +368,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 cryptoPermissionInteractor = WalletPrivacySettingPresenter.this.cryptoPermissionInteractor;
                 Observable<Result<Boolean>> manageCryptoPrivacySettings = cryptoPermissionInteractor.manageCryptoPrivacySettings(i2 == 0, arrayList2);
                 schedulersProvider = WalletPrivacySettingPresenter.this.schedulersProvider;
-                Observable<Result<Boolean>> observeOn = manageCryptoPrivacySettings.observeOn(schedulersProvider.mo1009ui());
+                Observable<Result<Boolean>> observeOn = manageCryptoPrivacySettings.observeOn(schedulersProvider.mo1010ui());
                 Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoPermissionInteract…(schedulersProvider.ui())");
                 T viewState = WalletPrivacySettingPresenter.this.getViewState();
                 Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -437,7 +437,7 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
                 accountLevelInteractor = WalletPrivacySettingPresenter.this.accountLevelInteractor;
                 Observable<Result<Boolean>> changeLevelVisibility = accountLevelInteractor.changeLevelVisibility(i2 == 0);
                 schedulersProvider = WalletPrivacySettingPresenter.this.schedulersProvider;
-                Observable<Result<Boolean>> observeOn = changeLevelVisibility.observeOn(schedulersProvider.mo1009ui());
+                Observable<Result<Boolean>> observeOn = changeLevelVisibility.observeOn(schedulersProvider.mo1010ui());
                 Intrinsics.checkNotNullExpressionValue(observeOn, "accountLevelInteractor\n …(schedulersProvider.ui())");
                 T viewState = WalletPrivacySettingPresenter.this.getViewState();
                 Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -481,6 +481,6 @@ public final class WalletPrivacySettingPresenter extends BasePresenter<WalletPri
     }
 
     private final DialogModel getEverybodyWarningDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3630R.string.wallet_crypto_privacy_everyone_dialog_confirm_title), this.resourceManager.getString(C3630R.string.wallet_crypto_privacy_everyone_dialog_confirm_description), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_crypto_privacy_everyone_dialog_confirm_title), this.resourceManager.getString(C3634R.string.wallet_crypto_privacy_everyone_dialog_confirm_description), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.common_confirm));
     }
 }

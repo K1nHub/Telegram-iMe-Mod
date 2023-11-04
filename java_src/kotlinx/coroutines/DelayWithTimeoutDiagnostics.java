@@ -3,5 +3,5 @@ package kotlinx.coroutines;
 /* loaded from: classes4.dex */
 public interface DelayWithTimeoutDiagnostics extends Delay {
     /* renamed from: timeoutMessage-LRDsOJo  reason: not valid java name */
-    String m2091timeoutMessageLRDsOJo(long j);
+    String m2096timeoutMessageLRDsOJo(long j);
 }

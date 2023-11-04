@@ -56,10 +56,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;)V
     .locals 11
 
-    .line 371
+    .line 375
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 373
+    .line 377
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -68,14 +68,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->paint:Landroid/graphics/Paint;
 
-    .line 374
+    .line 378
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->rect:Landroid/graphics/RectF;
 
-    .line 376
+    .line 380
     new-instance v0, Landroid/view/View;
 
     invoke-direct {v0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -84,7 +84,7 @@
 
     const/16 v1, 0x12
 
-    .line 377
+    .line 381
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -113,7 +113,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 378
+    .line 382
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->searchBackground:Landroid/view/View;
 
     const/4 v1, -0x1
@@ -136,7 +136,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 380
+    .line 384
     new-instance v0, Lorg/telegram/ui/Components/ShareAlert$SwitchView$1;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/Components/ShareAlert$SwitchView$1;-><init>(Lorg/telegram/ui/Components/ShareAlert$SwitchView;Landroid/content/Context;Lorg/telegram/ui/Components/ShareAlert;)V
@@ -145,21 +145,21 @@
 
     const/4 v1, -0x1
 
-    .line 406
+    .line 410
     invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 408
+    .line 412
     new-instance v0, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-direct {v0, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->leftTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    .line 409
+    .line 413
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_nameText:I
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/ShareAlert;->access$800(Lorg/telegram/ui/Components/ShareAlert;I)I
@@ -168,21 +168,21 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 410
+    .line 414
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->leftTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/16 v2, 0xd
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    .line 411
+    .line 415
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->leftTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget v3, Lorg/telegram/messenger/R$drawable;->msg_tabs_mic1:I
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setLeftDrawable(I)V
 
-    .line 412
+    .line 416
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->leftTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget v3, Lorg/telegram/messenger/R$string;->VoipGroupInviteCanSpeak:I
@@ -195,14 +195,14 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 413
+    .line 417
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->leftTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/16 v3, 0x11
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
 
-    .line 414
+    .line 418
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->leftTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v4, -0x1
@@ -225,7 +225,7 @@
 
     invoke-virtual {p0, v0, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 415
+    .line 419
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->leftTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     new-instance v4, Lorg/telegram/ui/Components/ShareAlert$SwitchView$$ExternalSyntheticLambda1;
@@ -234,33 +234,33 @@
 
     invoke-virtual {v0, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 417
+    .line 421
     new-instance v0, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-direct {v0, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->rightTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    .line 418
+    .line 422
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/ShareAlert;->access$900(Lorg/telegram/ui/Components/ShareAlert;I)I
 
     move-result p1
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 419
+    .line 423
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->rightTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    .line 420
+    .line 424
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->rightTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget p2, Lorg/telegram/messenger/R$drawable;->msg_tabs_mic2:I
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setLeftDrawable(I)V
 
-    .line 421
+    .line 425
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->rightTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->VoipGroupInviteListenOnly:I
@@ -273,12 +273,12 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 422
+    .line 426
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->rightTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
 
-    .line 423
+    .line 427
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->rightTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v0, -0x1
@@ -301,7 +301,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 424
+    .line 428
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->rightTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     new-instance p2, Lorg/telegram/ui/Components/ShareAlert$SwitchView$$ExternalSyntheticLambda0;
@@ -316,7 +316,7 @@
 .method static synthetic access$1002(Lorg/telegram/ui/Components/ShareAlert$SwitchView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 356
+    .line 360
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->animator:Landroid/animation/AnimatorSet;
 
     return-object p1
@@ -325,7 +325,7 @@
 .method static synthetic access$12300(Lorg/telegram/ui/Components/ShareAlert$SwitchView;)I
     .locals 0
 
-    .line 356
+    .line 360
     iget p0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->currentTab:I
 
     return p0
@@ -334,7 +334,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/ShareAlert$SwitchView;)I
     .locals 0
 
-    .line 356
+    .line 360
     iget p0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->lastColor:I
 
     return p0
@@ -343,7 +343,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Components/ShareAlert$SwitchView;)Landroid/graphics/LinearGradient;
     .locals 0
 
-    .line 356
+    .line 360
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->linearGradient:Landroid/graphics/LinearGradient;
 
     return-object p0
@@ -352,7 +352,7 @@
 .method static synthetic access$502(Lorg/telegram/ui/Components/ShareAlert$SwitchView;Landroid/graphics/LinearGradient;)Landroid/graphics/LinearGradient;
     .locals 0
 
-    .line 356
+    .line 360
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->linearGradient:Landroid/graphics/LinearGradient;
 
     return-object p1
@@ -361,7 +361,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/Components/ShareAlert$SwitchView;)Landroid/graphics/Paint;
     .locals 0
 
-    .line 356
+    .line 360
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->paint:Landroid/graphics/Paint;
 
     return-object p0
@@ -370,7 +370,7 @@
 .method static synthetic access$700(Lorg/telegram/ui/Components/ShareAlert$SwitchView;)Landroid/graphics/RectF;
     .locals 0
 
-    .line 356
+    .line 360
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->rect:Landroid/graphics/RectF;
 
     return-object p0
@@ -381,7 +381,7 @@
 
     const/4 p1, 0x0
 
-    .line 415
+    .line 419
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->switchToTab(I)V
 
     return-void
@@ -392,7 +392,7 @@
 
     const/4 p1, 0x1
 
-    .line 424
+    .line 428
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->switchToTab(I)V
 
     return-void
@@ -401,26 +401,26 @@
 .method private switchToTab(I)V
     .locals 6
 
-    .line 432
+    .line 436
     iget v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->currentTab:I
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 435
+    .line 439
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->currentTab:I
 
-    .line 436
+    .line 440
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->animator:Landroid/animation/AnimatorSet;
 
     if-eqz p1, :cond_1
 
-    .line 437
+    .line 441
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 439
+    .line 443
     :cond_1
     new-instance p1, Landroid/animation/AnimatorSet;
 
@@ -432,7 +432,7 @@
 
     new-array v1, v0, [Landroid/animation/Animator;
 
-    .line 440
+    .line 444
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->slidingView:Landroid/view/View;
 
     sget-object v3, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
@@ -467,21 +467,21 @@
 
     invoke-virtual {p1, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 441
+    .line 445
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->animator:Landroid/animation/AnimatorSet;
 
     const-wide/16 v0, 0xb4
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 442
+    .line 446
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->animator:Landroid/animation/AnimatorSet;
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 443
+    .line 447
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->animator:Landroid/animation/AnimatorSet;
 
     new-instance v0, Lorg/telegram/ui/Components/ShareAlert$SwitchView$2;
@@ -490,12 +490,12 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 449
+    .line 453
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->animator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 450
+    .line 454
     iget p1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->currentTab:I
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->onTabSwitch(I)V
@@ -508,7 +508,7 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 455
+    .line 459
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
@@ -521,7 +521,7 @@
 
     sub-int/2addr v0, v1
 
-    .line 456
+    .line 460
     iget-object v1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->leftTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -530,36 +530,13 @@
 
     check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 457
+    .line 461
     div-int/lit8 v0, v0, 0x2
 
     iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 459
-    iget-object v1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->rightTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
-
-    .line 460
-    iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
-
-    const/16 v2, 0xe
-
-    .line 461
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    add-int/2addr v2, v0
-
-    iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
-
     .line 463
-    iget-object v1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->slidingView:Landroid/view/View;
+    iget-object v1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->rightTab:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -570,15 +547,38 @@
     .line 464
     iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
+    const/16 v2, 0xe
+
     .line 465
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    add-int/2addr v2, v0
+
+    iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
+
+    .line 467
+    iget-object v1, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->slidingView:Landroid/view/View;
+
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/FrameLayout$LayoutParams;
+
+    .line 468
+    iput v0, v1, Landroid/widget/FrameLayout$LayoutParams;->width:I
+
+    .line 469
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->animator:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_0
 
-    .line 466
+    .line 470
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 468
+    .line 472
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->slidingView:Landroid/view/View;
 
@@ -598,7 +598,7 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 470
+    .line 474
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$32\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,898:1\n44#2:899\n129#3,5:900\n129#3,5:905\n129#3,5:910\n129#3,5:915\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$32\n*L\n442#1:899\n445#1:900,5\n446#1:905,5\n447#1:910,5\n448#1:915,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$32\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,901:1\n44#2:902\n129#3,5:903\n129#3,5:908\n129#3,5:913\n129#3,5:918\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$32\n*L\n445#1:902\n448#1:903,5\n449#1:908,5\n450#1:913,5\n451#1:918,5\n*E\n"
 .end annotation
 
 
@@ -104,7 +104,7 @@
 
     move-result-object p2
 
-    .line 445
+    .line 448
     move-object v2, p2
 
     check-cast v2, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
@@ -120,7 +120,7 @@
 
     move-result-object p2
 
-    .line 446
+    .line 449
     move-object v3, p2
 
     check-cast v3, Lcom/iMe/storage/domain/interactor/crypto/permission/CryptoPermissionInteractor;
@@ -136,7 +136,7 @@
 
     move-result-object p2
 
-    .line 447
+    .line 450
     move-object v5, p2
 
     check-cast v5, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -152,12 +152,12 @@
 
     move-result-object p1
 
-    .line 448
+    .line 451
     move-object v4, p1
 
     check-cast v4, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 443
+    .line 446
     new-instance p1, Lcom/iMe/ui/wallet/crypto/settings/privacy/WalletPrivacySettingPresenter;
 
     move-object v0, p1
@@ -170,7 +170,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 442
+    .line 445
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

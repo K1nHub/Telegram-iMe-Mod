@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StealthModeAlert;Landroid/content/Context;F)V
     .locals 0
 
-    .line 50
+    .line 47
     iput-object p1, p0, Lorg/telegram/ui/Stories/StealthModeAlert$1;->this$0:Lorg/telegram/ui/Stories/StealthModeAlert;
 
     iput p3, p0, Lorg/telegram/ui/Stories/StealthModeAlert$1;->val$topOffset:F
@@ -39,10 +39,10 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 53
+    .line 50
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 54
+    .line 51
     iget-object v0, p0, Lorg/telegram/ui/Stories/StealthModeAlert$1;->this$0:Lorg/telegram/ui/Stories/StealthModeAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StealthModeAlert;->access$000(Lorg/telegram/ui/Stories/StealthModeAlert;)Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
@@ -61,10 +61,10 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 64
+    .line 61
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 65
+    .line 62
     iget-object v0, p0, Lorg/telegram/ui/Stories/StealthModeAlert$1;->this$0:Lorg/telegram/ui/Stories/StealthModeAlert;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/StealthModeAlert;->access$100(Lorg/telegram/ui/Stories/StealthModeAlert;)Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;

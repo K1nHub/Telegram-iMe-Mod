@@ -4822,6 +4822,12 @@
 
     xor-int/2addr v11, v4
 
+    iput-boolean v11, v9, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_inline:Z
+
+    iput-boolean v11, v9, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_gifs:Z
+
+    iput-boolean v11, v9, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_games:Z
+
     iput-boolean v11, v9, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_stickers:Z
 
     if-eqz v11, :cond_d

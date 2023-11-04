@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SharedConfig;
@@ -17,8 +17,8 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.video.audio_input.AudioInput;
 import org.telegram.messenger.video.audio_input.GeneralAudioInput;
-import org.telegram.p042ui.Components.RLottieDrawable;
-import org.telegram.p042ui.Stories.recorder.StoryEntry;
+import org.telegram.p043ui.Components.RLottieDrawable;
+import org.telegram.p043ui.Stories.recorder.StoryEntry;
 /* loaded from: classes4.dex */
 public class MediaCodecVideoConvertor {
     private static final int MEDIACODEC_TIMEOUT_DEFAULT = 2500;
@@ -591,9 +591,9 @@ public class MediaCodecVideoConvertor {
         String readRes;
         if (z) {
             if (hDRInfo.getHDRType() == 1) {
-                readRes = RLottieDrawable.readRes(null, C3630R.raw.yuv_hlg2rgb);
+                readRes = RLottieDrawable.readRes(null, C3634R.raw.yuv_hlg2rgb);
             } else {
-                readRes = RLottieDrawable.readRes(null, C3630R.raw.yuv_pq2rgb);
+                readRes = RLottieDrawable.readRes(null, C3634R.raw.yuv_pq2rgb);
             }
             String replace = readRes.replace("$dstWidth", i3 + ".0");
             String replace2 = replace.replace("$dstHeight", i4 + ".0");
@@ -608,7 +608,7 @@ public class MediaCodecVideoConvertor {
             clamp = 1;
         }
         int min = Math.min(i5, clamp);
-        FileLog.m100d("source size " + i + "x" + i2 + "    dest size " + i3 + i4 + "   kernelRadius " + min);
+        FileLog.m102d("source size " + i + "x" + i2 + "    dest size " + i3 + i4 + "   kernelRadius " + min);
         if (z) {
             return "#extension GL_OES_EGL_image_external : require\nprecision mediump float;\nvarying vec2 vTextureCoord;\nconst float kernel = " + min + ".0;\nconst float pixelSizeX = 1.0 / " + i + ".0;\nconst float pixelSizeY = 1.0 / " + i2 + ".0;\nuniform samplerExternalOES sTexture;\nvoid main() {\nvec3 accumulation = vec3(0);\nvec3 weightsum = vec3(0);\nfor (float x = -kernel; x <= kernel; x++){\n   for (float y = -kernel; y <= kernel; y++){\n       accumulation += texture2D(sTexture, vTextureCoord + vec2(x * pixelSizeX, y * pixelSizeY)).xyz;\n       weightsum += 1.0;\n   }\n}\ngl_FragColor = vec4(accumulation / weightsum, 1.0);\n}\n";
         }
@@ -686,7 +686,7 @@ public class MediaCodecVideoConvertor {
         }
 
         /* renamed from: of */
-        public static ConvertVideoParams m77of(String str, File file, int i, boolean z, int i2, int i3, int i4, int i5, int i6, int i7, int i8, long j, long j2, long j3, boolean z2, long j4, MediaController.SavedFilterState savedFilterState, String str2, String str3, ArrayList<VideoEditedInfo.MediaEntity> arrayList, boolean z3, MediaController.CropState cropState, boolean z4, MediaController.VideoConvertorListener videoConvertorListener, Integer num, Integer num2, boolean z5, boolean z6, StoryEntry.HDRInfo hDRInfo, ArrayList<StoryEntry.Part> arrayList2) {
+        public static ConvertVideoParams m78of(String str, File file, int i, boolean z, int i2, int i3, int i4, int i5, int i6, int i7, int i8, long j, long j2, long j3, boolean z2, long j4, MediaController.SavedFilterState savedFilterState, String str2, String str3, ArrayList<VideoEditedInfo.MediaEntity> arrayList, boolean z3, MediaController.CropState cropState, boolean z4, MediaController.VideoConvertorListener videoConvertorListener, Integer num, Integer num2, boolean z5, boolean z6, StoryEntry.HDRInfo hDRInfo, ArrayList<StoryEntry.Part> arrayList2) {
             ConvertVideoParams convertVideoParams = new ConvertVideoParams();
             convertVideoParams.videoPath = str;
             convertVideoParams.cacheFile = file;

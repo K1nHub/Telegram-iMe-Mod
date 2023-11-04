@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;)V
     .locals 0
 
-    .line 5528
+    .line 5548
     invoke-direct {p0}, Landroid/transition/Visibility;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
     .locals 2
 
-    .line 5531
+    .line 5551
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -38,7 +38,7 @@
 
     new-array p3, p3, [Landroid/animation/Animator;
 
-    .line 5532
+    .line 5552
     sget-object p4, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     const/4 v0, 0x2
@@ -47,7 +47,7 @@
 
     fill-array-data v1, :array_0
 
-    .line 5533
+    .line 5553
     invoke-static {p2, p4, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p4
@@ -62,7 +62,7 @@
 
     fill-array-data v1, :array_1
 
-    .line 5534
+    .line 5554
     invoke-static {p2, p4, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p4
@@ -77,17 +77,17 @@
 
     fill-array-data v1, :array_2
 
-    .line 5535
+    .line 5555
     invoke-static {p2, p4, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p2
 
     aput-object p2, p3, v0
 
-    .line 5532
+    .line 5552
     invoke-virtual {p1, p3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 5537
+    .line 5557
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
@@ -118,7 +118,7 @@
 .method public onDisappear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
     .locals 6
 
-    .line 5543
+    .line 5563
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -127,14 +127,14 @@
 
     new-array p3, p3, [Landroid/animation/Animator;
 
-    .line 5544
+    .line 5564
     sget-object p4, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     const/4 v0, 0x2
 
     new-array v1, v0, [F
 
-    .line 5545
+    .line 5565
     invoke-virtual {p2}, Landroid/view/View;->getAlpha()F
 
     move-result v2
@@ -159,7 +159,7 @@
 
     new-array v1, v0, [F
 
-    .line 5546
+    .line 5566
     invoke-virtual {p2}, Landroid/view/View;->getScaleX()F
 
     move-result v2
@@ -180,7 +180,7 @@
 
     new-array v1, v0, [F
 
-    .line 5547
+    .line 5567
     invoke-virtual {p2}, Landroid/view/View;->getScaleX()F
 
     move-result v5
@@ -195,10 +195,10 @@
 
     aput-object p2, p3, v0
 
-    .line 5544
+    .line 5564
     invoke-virtual {p1, p3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 5549
+    .line 5569
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V

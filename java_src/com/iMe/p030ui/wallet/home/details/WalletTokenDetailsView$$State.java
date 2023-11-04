@@ -14,6 +14,7 @@ import com.iMe.model.wallet.staking.StakingScreenType;
 import com.iMe.navigation.wallet.coordinator.args.TokenBuyCoordinatorArgs;
 import com.iMe.p030ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
+import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxInfo;
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxStatus;
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxTransactionAction;
@@ -478,14 +479,14 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
     }
 
     @Override // com.iMe.manager.wallet.create.WalletCreateManagerView
-    public void openCreateWalletIntroScreen(String str, WalletCreationType.Initial initial) {
-        OpenCreateWalletIntroScreenCommand openCreateWalletIntroScreenCommand = new OpenCreateWalletIntroScreenCommand(this, str, initial);
+    public void openCreateWalletIntroScreen(BlockchainType blockchainType, String str, WalletCreationType.Initial initial) {
+        OpenCreateWalletIntroScreenCommand openCreateWalletIntroScreenCommand = new OpenCreateWalletIntroScreenCommand(this, blockchainType, str, initial);
         this.viewCommands.beforeApply(openCreateWalletIntroScreenCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.openCreateWalletIntroScreen(str, initial);
+            view.openCreateWalletIntroScreen(blockchainType, str, initial);
         }
         this.viewCommands.afterApply(openCreateWalletIntroScreenCommand);
     }
@@ -1146,18 +1147,20 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
     /* renamed from: com.iMe.ui.wallet.home.details.WalletTokenDetailsView$$State$OpenCreateWalletIntroScreenCommand */
     /* loaded from: classes4.dex */
     public class OpenCreateWalletIntroScreenCommand extends ViewCommand<WalletTokenDetailsView> {
+        public final BlockchainType blockchainType;
         public final String linkedWalletAddress;
         public final WalletCreationType.Initial walletCreationType;
 
-        OpenCreateWalletIntroScreenCommand(WalletTokenDetailsView$$State walletTokenDetailsView$$State, String str, WalletCreationType.Initial initial) {
+        OpenCreateWalletIntroScreenCommand(WalletTokenDetailsView$$State walletTokenDetailsView$$State, BlockchainType blockchainType, String str, WalletCreationType.Initial initial) {
             super("openCreateWalletIntroScreen", OneExecutionStateStrategy.class);
+            this.blockchainType = blockchainType;
             this.linkedWalletAddress = str;
             this.walletCreationType = initial;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletTokenDetailsView walletTokenDetailsView) {
-            walletTokenDetailsView.openCreateWalletIntroScreen(this.linkedWalletAddress, this.walletCreationType);
+            walletTokenDetailsView.openCreateWalletIntroScreen(this.blockchainType, this.linkedWalletAddress, this.walletCreationType);
         }
     }
 

@@ -2,48 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function1;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda42;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ChatEditActivity;
+
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda42;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda42;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda42;->INSTANCE:Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda42;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatEditActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda42;->f$0:Lorg/telegram/ui/ChatEditActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda42;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+    iput-object p3, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda42;->f$2:Lorg/telegram/tgnet/TLObject;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final run()V
+    .locals 3
 
-    check-cast p1, Lorg/telegram/ui/DialogsActivity;
+    iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda42;->f$0:Lorg/telegram/ui/ChatEditActivity;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity;->isArchive()Z
+    iget-object v1, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda42;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    move-result p1
+    iget-object v2, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda42;->f$2:Lorg/telegram/tgnet/TLObject;
 
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$N3A_ESx2BHdgMdJiiL5IXYGXgSQ(Lorg/telegram/ui/ChatEditActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
 
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

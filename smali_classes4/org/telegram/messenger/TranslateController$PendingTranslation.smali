@@ -62,24 +62,24 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 713
+    .line 714
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 715
-    new-instance v0, Ljava/util/ArrayList;
-
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/messenger/TranslateController$PendingTranslation;->messageIds:Ljava/util/ArrayList;
 
     .line 716
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/messenger/TranslateController$PendingTranslation;->messageTexts:Ljava/util/ArrayList;
+    iput-object v0, p0, Lorg/telegram/messenger/TranslateController$PendingTranslation;->messageIds:Ljava/util/ArrayList;
 
     .line 717
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/messenger/TranslateController$PendingTranslation;->messageTexts:Ljava/util/ArrayList;
+
+    .line 718
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -88,12 +88,12 @@
 
     const/16 v0, 0x50
 
-    .line 720
+    .line 721
     iput v0, p0, Lorg/telegram/messenger/TranslateController$PendingTranslation;->delay:I
 
     const/4 v0, -0x1
 
-    .line 723
+    .line 724
     iput v0, p0, Lorg/telegram/messenger/TranslateController$PendingTranslation;->reqId:I
 
     return-void
@@ -102,7 +102,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/TranslateController$1;)V
     .locals 0
 
-    .line 713
+    .line 714
     invoke-direct {p0}, Lorg/telegram/messenger/TranslateController$PendingTranslation;-><init>()V
 
     return-void

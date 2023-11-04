@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Landroid/view/View;Lorg/telegram/messenger/Utilities$Callback;)V
     .locals 0
 
-    .line 1067
+    .line 1066
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$13;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;-><init>(Landroid/view/View;Lorg/telegram/messenger/Utilities$Callback;)V
@@ -35,12 +35,12 @@
 .method public ignore(Z)V
     .locals 1
 
-    .line 1070
+    .line 1069
     invoke-super {p0, p1}, Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;->ignore(Z)V
 
     if-eqz p1, :cond_0
 
-    .line 1072
+    .line 1071
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$13;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     const/4 v0, 0x0

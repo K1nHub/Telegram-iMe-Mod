@@ -34,7 +34,7 @@ public abstract class Input implements Closeable {
         Intrinsics.checkNotNullParameter(pool, "pool");
         this.pool = pool;
         this._head = head;
-        this.headMemory = head.m1912getMemorySK3TCg8();
+        this.headMemory = head.m1917getMemorySK3TCg8();
         this.headPosition = head.getReadPosition();
         int writePosition = head.getWritePosition();
         this.headEndExclusive = writePosition;
@@ -47,7 +47,7 @@ public abstract class Input implements Closeable {
 
     private final void set_head(ChunkBuffer chunkBuffer) {
         this._head = chunkBuffer;
-        this.headMemory = chunkBuffer.m1912getMemorySK3TCg8();
+        this.headMemory = chunkBuffer.m1917getMemorySK3TCg8();
         this.headPosition = chunkBuffer.getReadPosition();
         this.headEndExclusive = chunkBuffer.getWritePosition();
     }
@@ -59,7 +59,7 @@ public abstract class Input implements Closeable {
     }
 
     /* renamed from: getHeadMemory-SK3TCg8  reason: not valid java name */
-    public final ByteBuffer m1914getHeadMemorySK3TCg8() {
+    public final ByteBuffer m1919getHeadMemorySK3TCg8() {
         return this.headMemory;
     }
 

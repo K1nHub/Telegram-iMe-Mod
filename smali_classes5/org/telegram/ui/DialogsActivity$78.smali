@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 16161
+    .line 16239
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$78;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 16164
+    .line 16242
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$78;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -53,7 +53,7 @@
 
     iput p1, v0, Lorg/telegram/ui/DialogsActivity;->progressToDialogStoriesCell:F
 
-    .line 16165
+    .line 16243
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$78;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$41400(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;
@@ -62,7 +62,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 16166
+    .line 16244
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$78;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$41500(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;

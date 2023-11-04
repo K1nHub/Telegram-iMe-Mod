@@ -10,8 +10,8 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p042ui.Cells.TextDetailCell;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p043ui.Cells.TextDetailCell;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TextDetailWithRankCell.kt */
 /* renamed from: com.iMe.ui.custom.cells.TextDetailWithRankCell */
 /* loaded from: classes3.dex */

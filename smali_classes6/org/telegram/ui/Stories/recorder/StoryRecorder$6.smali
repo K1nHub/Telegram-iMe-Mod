@@ -1,6 +1,9 @@
 .class Lorg/telegram/ui/Stories/recorder/StoryRecorder$6;
-.super Landroid/view/ViewOutlineProvider;
+.super Ljava/lang/Object;
 .source "StoryRecorder.java"
+
+# interfaces
+.implements Lorg/telegram/ui/Components/Bulletin$Delegate;
 
 
 # annotations
@@ -18,41 +21,76 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    .line 1604
-    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+    .line 1624
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
-    .locals 6
+.method public synthetic allowLayoutChanges()Z
+    .locals 1
 
-    .line 1607
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-static {p0}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$allowLayoutChanges(Lorg/telegram/ui/Components/Bulletin$Delegate;)Z
 
-    move-result v3
+    move-result v0
 
-    invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
+    return v0
+.end method
 
-    move-result v4
+.method public clipWithGradient(I)Z
+    .locals 0
 
-    const/16 p1, 0xc
+    const/4 p1, 0x1
 
+    return p1
+.end method
+
+.method public getBottomOffset(I)I
+    .locals 0
+
+    .line 1632
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$getBottomOffset(Lorg/telegram/ui/Components/Bulletin$Delegate;I)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public getTopOffset(I)I
+    .locals 0
+
+    const/16 p1, 0x38
+
+    .line 1627
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    int-to-float v5, p1
+    return p1
+.end method
 
-    const/4 v1, 0x0
+.method public synthetic onBottomOffsetChange(F)V
+    .locals 0
 
-    const/4 v2, 0x0
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onBottomOffsetChange(Lorg/telegram/ui/Components/Bulletin$Delegate;F)V
 
-    move-object v0, p2
+    return-void
+.end method
 
-    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Outline;->setRoundRect(IIIIF)V
+.method public synthetic onHide(Lorg/telegram/ui/Components/Bulletin;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onHide(Lorg/telegram/ui/Components/Bulletin$Delegate;Lorg/telegram/ui/Components/Bulletin;)V
+
+    return-void
+.end method
+
+.method public synthetic onShow(Lorg/telegram/ui/Components/Bulletin;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/Bulletin$Delegate$-CC;->$default$onShow(Lorg/telegram/ui/Components/Bulletin$Delegate;Lorg/telegram/ui/Components/Bulletin;)V
 
     return-void
 .end method

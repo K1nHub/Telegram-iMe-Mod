@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda46;->f$2:Ljava/util/HashSet;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$bzbugZLhaOCQ5Rw2NAEQrVZk9kU(Lorg/telegram/ui/ProfileActivity;Ljava/util/ArrayList;Ljava/util/HashSet;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$aiXBuBCcTqLV253o3fSvRk1GxNA(Lorg/telegram/ui/ProfileActivity;Ljava/util/ArrayList;Ljava/util/HashSet;)V
 
     return-void
 .end method

@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.drm;
 
 import android.util.Pair;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import java.util.Map;
 /* loaded from: classes.dex */
 public final class WidevineUtil {
@@ -23,11 +23,11 @@ public final class WidevineUtil {
         if (map != null) {
             try {
                 String str2 = map.get(str);
-                return str2 != null ? Long.parseLong(str2) : C0479C.TIME_UNSET;
+                return str2 != null ? Long.parseLong(str2) : C0485C.TIME_UNSET;
             } catch (NumberFormatException unused) {
-                return C0479C.TIME_UNSET;
+                return C0485C.TIME_UNSET;
             }
         }
-        return C0479C.TIME_UNSET;
+        return C0485C.TIME_UNSET;
     }
 }

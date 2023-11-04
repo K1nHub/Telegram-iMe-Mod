@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LiteClient.kt */
-@DebugMetadata(m143c = "org.ton.lite.client.LiteClient", m142f = "LiteClient.kt", m141l = {148, 157}, m140m = "getLastBlockId")
+@DebugMetadata(m145c = "org.ton.lite.client.LiteClient", m144f = "LiteClient.kt", m143l = {148, 157}, m142m = "getLastBlockId")
 /* loaded from: classes6.dex */
 public final class LiteClient$getLastBlockId$1 extends ContinuationImpl {
     Object L$0;

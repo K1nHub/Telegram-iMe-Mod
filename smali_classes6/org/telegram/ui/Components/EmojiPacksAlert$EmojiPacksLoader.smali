@@ -491,7 +491,7 @@
     .line 1972
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6800(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6900(Lorg/telegram/ui/Components/EmojiPacksAlert;)Z
 
     move-result v0
 
@@ -702,7 +702,7 @@
 
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6700(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6800(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v6
 
@@ -1068,7 +1068,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiPacksLoader;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6600(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$6700(Lorg/telegram/ui/Components/EmojiPacksAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v10
 

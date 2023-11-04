@@ -3,7 +3,6 @@ package org.telegram.tgnet;
 import java.util.ArrayList;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_auth_exportLoginToken extends TLObject {
-    public static int constructor = -1210022402;
     public String api_hash;
     public int api_id;
     public ArrayList<Long> except_ids = new ArrayList<>();
@@ -15,7 +14,7 @@ public class TLRPC$TL_auth_exportLoginToken extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-1210022402);
         abstractSerializedData.writeInt32(this.api_id);
         abstractSerializedData.writeString(this.api_hash);
         abstractSerializedData.writeInt32(481674261);

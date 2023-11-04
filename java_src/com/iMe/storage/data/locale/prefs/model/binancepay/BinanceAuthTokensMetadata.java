@@ -22,7 +22,7 @@ public final class BinanceAuthTokensMetadata {
 
     public int hashCode() {
         BinanceAuthTokens binanceAuthTokens = this.authTokens;
-        return ((binanceAuthTokens == null ? 0 : binanceAuthTokens.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.updateTimestamp);
+        return ((binanceAuthTokens == null ? 0 : binanceAuthTokens.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.updateTimestamp);
     }
 
     public String toString() {

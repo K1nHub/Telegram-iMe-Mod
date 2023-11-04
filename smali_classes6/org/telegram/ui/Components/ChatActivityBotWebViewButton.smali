@@ -682,10 +682,29 @@
     .line 71
     iput p3, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->buttonColor:I
 
+    .line 72
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelVoiceBackground:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result p1
+
+    iget p2, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->buttonColor:I
+
+    iget p3, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->progress:F
+
+    invoke-static {p1, p2, p3}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+
+    move-result p1
+
+    iput p1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->backgroundColor:I
+
     .line 73
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->rippleView:Landroid/view/View;
 
-    invoke-static {p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->getMainButtonRippleColor(I)I
+    iget p2, p0, Lorg/telegram/ui/Components/ChatActivityBotWebViewButton;->buttonColor:I
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->getMainButtonRippleColor(I)I
 
     move-result p2
 

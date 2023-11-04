@@ -3,21 +3,11 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0xbe149de
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 27698
+    .line 27979
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$account_Themes;-><init>()V
 
     return-void
@@ -28,9 +18,9 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 27703
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_themesNotModified;->constructor:I
+    const v0, -0xbe149de
 
+    .line 27984
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     return-void

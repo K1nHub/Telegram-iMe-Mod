@@ -12,12 +12,12 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class ModuleInstallIntentResponse extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ModuleInstallIntentResponse> CREATOR = new zab();
-    @SafeParcelable.Field(getter = "getPendingIntent", m1089id = 1)
+    @SafeParcelable.Field(getter = "getPendingIntent", m1090id = 1)
     private final PendingIntent zaa;
 
     @SafeParcelable.Constructor
     @KeepForSdk
-    public ModuleInstallIntentResponse(@SafeParcelable.Param(m1088id = 1) PendingIntent pendingIntent) {
+    public ModuleInstallIntentResponse(@SafeParcelable.Param(m1089id = 1) PendingIntent pendingIntent) {
         this.zaa = pendingIntent;
     }
 

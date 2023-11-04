@@ -1,10 +1,9 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_messages_reportReaction extends TLObject {
-    public static int constructor = 1631726152;
 
     /* renamed from: id */
-    public int f1711id;
+    public int f1708id;
     public TLRPC$InputPeer peer;
     public TLRPC$InputUser user_id;
 
@@ -15,9 +14,9 @@ public class TLRPC$TL_messages_reportReaction extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(1631726152);
         this.peer.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1711id);
+        abstractSerializedData.writeInt32(this.f1708id);
         this.user_id.serializeToStream(abstractSerializedData);
     }
 }

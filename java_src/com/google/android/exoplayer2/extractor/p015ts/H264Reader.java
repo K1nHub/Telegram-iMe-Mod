@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
 import android.util.SparseArray;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -30,7 +30,7 @@ public final class H264Reader implements ElementaryStreamReader {
     private final NalUnitTargetBuffer sps = new NalUnitTargetBuffer(7, 128);
     private final NalUnitTargetBuffer pps = new NalUnitTargetBuffer(8, 128);
     private final NalUnitTargetBuffer sei = new NalUnitTargetBuffer(6, 128);
-    private long pesTimeUs = C0479C.TIME_UNSET;
+    private long pesTimeUs = C0485C.TIME_UNSET;
     private final ParsableByteArray seiWrapper = new ParsableByteArray();
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
@@ -47,7 +47,7 @@ public final class H264Reader implements ElementaryStreamReader {
     public void seek() {
         this.totalBytesWritten = 0L;
         this.randomAccessIndicator = false;
-        this.pesTimeUs = C0479C.TIME_UNSET;
+        this.pesTimeUs = C0485C.TIME_UNSET;
         NalUnitUtil.clearPrefixFlags(this.prefixFlags);
         this.sps.reset();
         this.pps.reset();
@@ -70,7 +70,7 @@ public final class H264Reader implements ElementaryStreamReader {
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
     public void packetStarted(long j, int i) {
-        if (j != C0479C.TIME_UNSET) {
+        if (j != C0485C.TIME_UNSET) {
             this.pesTimeUs = j;
         }
         this.randomAccessIndicator |= (i & 2) != 0;
@@ -285,7 +285,7 @@ public final class H264Reader implements ElementaryStreamReader {
 
         private void outputSample(int i) {
             long j = this.sampleTimeUs;
-            if (j == C0479C.TIME_UNSET) {
+            if (j == C0485C.TIME_UNSET) {
                 return;
             }
             boolean z = this.sampleIsKeyframe;

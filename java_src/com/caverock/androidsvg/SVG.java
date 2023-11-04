@@ -850,7 +850,7 @@ public class SVG {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public float floatValueX(SVGAndroidRenderer sVGAndroidRenderer) {
-            switch (C04621.$SwitchMap$com$caverock$androidsvg$SVG$Unit[this.unit.ordinal()]) {
+            switch (C04681.$SwitchMap$com$caverock$androidsvg$SVG$Unit[this.unit.ordinal()]) {
                 case 1:
                     return this.value;
                 case 2:
@@ -917,7 +917,7 @@ public class SVG {
 
         /* JADX INFO: Access modifiers changed from: package-private */
         public float floatValue(float f) {
-            int i = C04621.$SwitchMap$com$caverock$androidsvg$SVG$Unit[this.unit.ordinal()];
+            int i = C04681.$SwitchMap$com$caverock$androidsvg$SVG$Unit[this.unit.ordinal()];
             if (i == 1) {
                 return this.value;
             }
@@ -955,7 +955,7 @@ public class SVG {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.caverock.androidsvg.SVG$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C04621 {
+    public static /* synthetic */ class C04681 {
         static final /* synthetic */ int[] $SwitchMap$com$caverock$androidsvg$SVG$Unit;
 
         static {

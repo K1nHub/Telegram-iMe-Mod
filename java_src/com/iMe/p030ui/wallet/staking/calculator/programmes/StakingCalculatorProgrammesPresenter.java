@@ -64,7 +64,7 @@ public final class StakingCalculatorProgrammesPresenter extends BasePresenter<St
             ((StakingCalculatorProgrammesView) getViewState()).onLoadMoreComplete();
             return;
         }
-        Observable<Result<StakingProgrammes>> observeOn = this.stakingInteractor.getStakingProgrammesList(StakingOrderType.DEFAULT, this.lastItemId).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<StakingProgrammes>> observeOn = this.stakingInteractor.getStakingProgrammesList(StakingOrderType.DEFAULT, this.lastItemId).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "stakingInteractor\n      …(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends StakingProgrammes>, Unit>() { // from class: com.iMe.ui.wallet.staking.calculator.programmes.StakingCalculatorProgrammesPresenter$loadStakingProgrammes$$inlined$subscribeWithErrorHandle$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -74,12 +74,12 @@ public final class StakingCalculatorProgrammesPresenter extends BasePresenter<St
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingProgrammes> result) {
-                m1809invoke(result);
+                m1814invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1809invoke(Result<? extends StakingProgrammes> it) {
+            public final void m1814invoke(Result<? extends StakingProgrammes> it) {
                 List list;
                 List list2;
                 List<BaseNode> list3;

@@ -10,12 +10,12 @@ public interface Function<T, R> {
     public final /* synthetic */ class CC {
         public static Function $default$andThen(Function function, Function function2) {
             Objects.requireNonNull(function2);
-            return new C2819i(function, function2, 0);
+            return new C2823i(function, function2, 0);
         }
 
         public static Function $default$compose(Function function, Function function2) {
             Objects.requireNonNull(function2);
-            return new C2819i(function, function2, 1);
+            return new C2823i(function, function2, 1);
         }
     }
 

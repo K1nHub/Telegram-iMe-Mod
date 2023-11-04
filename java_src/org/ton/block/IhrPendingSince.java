@@ -34,18 +34,18 @@ public final class IhrPendingSince {
     }
 
     public int hashCode() {
-        return ULong.m1991hashCodeimpl(this.import_lt);
+        return ULong.m1996hashCodeimpl(this.import_lt);
     }
 
     public String toString() {
-        return "IhrPendingSince(import_lt=" + ((Object) ULong.m1992toStringimpl(this.import_lt)) + ')';
+        return "IhrPendingSince(import_lt=" + ((Object) ULong.m1997toStringimpl(this.import_lt)) + ')';
     }
 
     private IhrPendingSince(int i, ULong uLong, SerializationConstructorMarker serializationConstructorMarker) {
         if (1 != (i & 1)) {
             PluginExceptionsKt.throwMissingFieldException(i, 1, IhrPendingSince$$serializer.INSTANCE.getDescriptor());
         }
-        this.import_lt = uLong.m1993unboximpl();
+        this.import_lt = uLong.m1998unboximpl();
     }
 
     private IhrPendingSince(long j) {
@@ -53,7 +53,7 @@ public final class IhrPendingSince {
     }
 
     /* renamed from: getImport_lt-s-VKNKU  reason: not valid java name */
-    public final long m4962getImport_ltsVKNKU() {
+    public final long m5116getImport_ltsVKNKU() {
         return this.import_lt;
     }
 

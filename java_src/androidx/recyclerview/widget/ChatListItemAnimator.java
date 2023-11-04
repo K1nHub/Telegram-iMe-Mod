@@ -22,15 +22,15 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Cells.BotHelpCell;
-import org.telegram.p042ui.Cells.ChatMessageCell;
-import org.telegram.p042ui.ChatActivity;
-import org.telegram.p042ui.Components.ChatGreetingsView;
-import org.telegram.p042ui.Components.CubicBezierInterpolator;
-import org.telegram.p042ui.Components.RecyclerListView;
-import org.telegram.p042ui.TextMessageEnterTransition;
-import org.telegram.p042ui.VoiceMessageEnterTransition;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.BotHelpCell;
+import org.telegram.p043ui.Cells.ChatMessageCell;
+import org.telegram.p043ui.ChatActivity;
+import org.telegram.p043ui.Components.ChatGreetingsView;
+import org.telegram.p043ui.Components.CubicBezierInterpolator;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.TextMessageEnterTransition;
+import org.telegram.p043ui.VoiceMessageEnterTransition;
 /* loaded from: classes.dex */
 public class ChatListItemAnimator extends DefaultItemAnimator {
     public static final Interpolator DEFAULT_INTERPOLATOR = new CubicBezierInterpolator(0.19919472913616398d, 0.010644531250000006d, 0.27920937042459737d, 0.91025390625d);
@@ -354,7 +354,7 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
     @Override // androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.SimpleItemAnimator
     public boolean animateRemove(RecyclerView.ViewHolder viewHolder, RecyclerView.ItemAnimator.ItemHolderInfo itemHolderInfo) {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m100d("animate remove");
+            FileLog.m102d("animate remove");
         }
         boolean animateRemove = super.animateRemove(viewHolder, itemHolderInfo);
         if (animateRemove && itemHolderInfo != null) {
@@ -967,7 +967,7 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
     @Override // androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.RecyclerView.ItemAnimator
     public void endAnimations() {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m100d("end animations");
+            FileLog.m102d("end animations");
         }
         Iterator<MessageObject.GroupedMessages> it = this.willChangedGroups.iterator();
         while (it.hasNext()) {
@@ -1048,7 +1048,7 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
     @Override // androidx.recyclerview.widget.DefaultItemAnimator
     protected boolean endChangeAnimationIfNecessary(DefaultItemAnimator.ChangeInfo changeInfo, RecyclerView.ViewHolder viewHolder) {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m100d("end change if necessary");
+            FileLog.m102d("end change if necessary");
         }
         Animator remove = this.animators.remove(viewHolder);
         if (remove != null) {
@@ -1142,7 +1142,7 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
     @Override // androidx.recyclerview.widget.DefaultItemAnimator
     protected void animateRemoveImpl(final RecyclerView.ViewHolder viewHolder) {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m100d("animate remove impl");
+            FileLog.m102d("animate remove impl");
         }
         final View view = viewHolder.itemView;
         this.mRemoveAnimations.add(viewHolder);

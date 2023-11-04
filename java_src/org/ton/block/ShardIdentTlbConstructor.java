@@ -19,12 +19,12 @@ public final class ShardIdentTlbConstructor extends org.ton.tlb.TlbConstructor<S
         Intrinsics.checkNotNullParameter(value, "value");
         cellBuilder.storeUIntLeq(value.getShardPfxBits(), 60);
         cellBuilder.storeInt(value.getWorkchainId(), 32);
-        cellBuilder.mo5057storeUInt64VKZWuLQ(value.m5042getShardPrefixsVKNKU());
+        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5196getShardPrefixsVKNKU());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public ShardIdent loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new ShardIdent(cellSlice.loadUIntLeq(60).intValue(), cellSlice.loadInt(32).intValue(), cellSlice.mo5067loadUInt64sVKNKU(), null);
+        return new ShardIdent(cellSlice.loadUIntLeq(60).intValue(), cellSlice.loadInt(32).intValue(), cellSlice.mo5221loadUInt64sVKNKU(), null);
     }
 }

@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/tgnet/TLRPC$TL_forumTopic;)V
     .locals 0
 
-    .line 1804
+    .line 1808
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iput-object p2, p0, Lorg/telegram/ui/TopicsFragment$22;->val$topic:Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
@@ -48,12 +48,12 @@
 .method private synthetic lambda$showCustomize$0(Lorg/telegram/tgnet/TLRPC$TL_forumTopic;)V
     .locals 4
 
-    .line 1844
+    .line 1848
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 1845
+    .line 1849
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-wide v1, v1, Lorg/telegram/ui/TopicsFragment;->chatId:J
@@ -64,14 +64,14 @@
 
     invoke-virtual {v0, v3, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 1846
+    .line 1850
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->id:I
 
     const-string v1, "topic_id"
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 1847
+    .line 1851
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     new-instance v1, Lorg/telegram/ui/ProfileNotificationsActivity;
@@ -90,7 +90,7 @@
 .method public dismiss()V
     .locals 1
 
-    .line 1807
+    .line 1811
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishPreviewFragment()V
@@ -101,14 +101,14 @@
 .method public muteFor(I)V
     .locals 5
 
-    .line 1824
+    .line 1828
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishPreviewFragment()V
 
     if-nez p1, :cond_1
 
-    .line 1826
+    .line 1830
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -131,7 +131,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1827
+    .line 1831
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$6000(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/messenger/NotificationsController;
@@ -152,7 +152,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Lorg/telegram/messenger/NotificationsController;->muteDialog(JIZ)V
 
-    .line 1829
+    .line 1833
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -162,7 +162,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1830
+    .line 1834
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     const/4 v1, 0x4
@@ -179,7 +179,7 @@
 
     goto :goto_0
 
-    .line 1833
+    .line 1837
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -199,7 +199,7 @@
 
     invoke-virtual {v0, v1, v2, v3, p1}, Lorg/telegram/messenger/NotificationsController;->muteUntil(JII)V
 
-    .line 1834
+    .line 1838
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BulletinFactory;->canShowBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
@@ -208,7 +208,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1835
+    .line 1839
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     const/4 v1, 0x5
@@ -239,12 +239,12 @@
 .method public showCustomize()V
     .locals 4
 
-    .line 1842
+    .line 1846
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishPreviewFragment()V
 
-    .line 1843
+    .line 1847
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->val$topic:Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
     new-instance v1, Lorg/telegram/ui/TopicsFragment$22$$ExternalSyntheticLambda0;
@@ -261,12 +261,12 @@
 .method public toggleMute()V
     .locals 5
 
-    .line 1853
+    .line 1857
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishPreviewFragment()V
 
-    .line 1854
+    .line 1858
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -289,7 +289,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 1855
+    .line 1859
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/TopicsFragment;->access$6200(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/messenger/NotificationsController;
@@ -308,7 +308,7 @@
 
     invoke-virtual {v1, v2, v3, v4, v0}, Lorg/telegram/messenger/NotificationsController;->muteDialog(JIZ)V
 
-    .line 1857
+    .line 1861
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/BulletinFactory;->canShowBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
@@ -317,7 +317,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 1858
+    .line 1862
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     if-eqz v0, :cond_0
@@ -357,7 +357,7 @@
 .method public toggleSound()V
     .locals 7
 
-    .line 1812
+    .line 1816
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$5900(Lorg/telegram/ui/TopicsFragment;)I
@@ -368,7 +368,7 @@
 
     move-result-object v0
 
-    .line 1813
+    .line 1817
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -405,7 +405,7 @@
 
     xor-int/2addr v1, v3
 
-    .line 1814
+    .line 1818
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -442,12 +442,12 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 1815
+    .line 1819
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishPreviewFragment()V
 
-    .line 1816
+    .line 1820
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BulletinFactory;->canShowBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
@@ -456,7 +456,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1817
+    .line 1821
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$22;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     xor-int/2addr v1, v3

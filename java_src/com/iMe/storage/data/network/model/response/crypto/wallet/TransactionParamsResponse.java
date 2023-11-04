@@ -87,7 +87,7 @@ public abstract class TransactionParamsResponse {
             GasPriceResponse gasPriceResponse = this.fastest;
             int hashCode = (((gasPriceResponse == null ? 0 : gasPriceResponse.hashCode()) * 31) + this.fast.hashCode()) * 31;
             GasPriceResponse gasPriceResponse2 = this.safeLow;
-            return ((((hashCode + (gasPriceResponse2 != null ? gasPriceResponse2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.chainId);
+            return ((((hashCode + (gasPriceResponse2 != null ? gasPriceResponse2.hashCode() : 0)) * 31) + this.nonce.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.chainId);
         }
 
         public String toString() {

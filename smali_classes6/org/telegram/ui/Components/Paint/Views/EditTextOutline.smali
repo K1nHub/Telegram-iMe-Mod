@@ -1275,6 +1275,17 @@
     return-void
 .end method
 
+.method public onTextContextMenuItem(I)Z
+    .locals 0
+
+    .line 269
+    invoke-super {p0, p1}, Landroid/widget/EditText;->onTextContextMenuItem(I)Z
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public setFrameColor(I)V
     .locals 6
 

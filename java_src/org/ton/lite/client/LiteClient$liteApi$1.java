@@ -6,7 +6,7 @@ import org.ton.lite.api.liteserver.LiteServerAccountState;
 import org.ton.lite.api.liteserver.LiteServerSendMsgStatus;
 import org.ton.lite.api.liteserver.functions.LiteServerGetAccountState;
 import org.ton.lite.api.liteserver.functions.LiteServerSendMessage;
-import org.ton.p044tl.TlCodec;
+import org.ton.p045tl.TlCodec;
 /* compiled from: LiteClient.kt */
 /* loaded from: classes6.dex */
 public final class LiteClient$liteApi$1 implements LiteApiClient {

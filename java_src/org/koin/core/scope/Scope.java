@@ -212,7 +212,7 @@ public final class Scope {
             if (logger.isAt(level)) {
                 logger.display(level, "| >> parameters " + invoke + ' ');
             }
-            KoinPlatformTools.INSTANCE.m2164synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$resolveInstance$2
+            KoinPlatformTools.INSTANCE.m2169synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$resolveInstance$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -238,7 +238,7 @@ public final class Scope {
             if (logger2.isAt(level2)) {
                 logger2.display(level2, "| << parameters");
             }
-            KoinPlatformTools.INSTANCE.m2164synchronized(this, new Function0<ParametersHolder>() { // from class: org.koin.core.scope.Scope$resolveInstance$3
+            KoinPlatformTools.INSTANCE.m2169synchronized(this, new Function0<ParametersHolder>() { // from class: org.koin.core.scope.Scope$resolveInstance$3
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
                     super(0);
@@ -287,7 +287,7 @@ public final class Scope {
                     }
                     t = (T) findInOtherScope(kClass, qualifier, function0);
                     if (t == null) {
-                        KoinPlatformTools.INSTANCE.m2164synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$resolveValue$4$1
+                        KoinPlatformTools.INSTANCE.m2169synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$resolveValue$4$1
                             /* JADX INFO: Access modifiers changed from: package-private */
                             {
                                 super(0);
@@ -368,7 +368,7 @@ public final class Scope {
     }
 
     public final void close() {
-        KoinPlatformTools.INSTANCE.m2164synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$close$1
+        KoinPlatformTools.INSTANCE.m2169synchronized(this, new Function0<Unit>() { // from class: org.koin.core.scope.Scope$close$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);

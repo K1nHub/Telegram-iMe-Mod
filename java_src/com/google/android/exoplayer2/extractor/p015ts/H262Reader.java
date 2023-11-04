@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
 import com.google.android.exoplayer2.extractor.p015ts.TsPayloadReader;
@@ -53,8 +53,8 @@ public final class H262Reader implements ElementaryStreamReader {
             this.userData = null;
             this.userDataParsable = null;
         }
-        this.pesTimeUs = C0479C.TIME_UNSET;
-        this.sampleTimeUs = C0479C.TIME_UNSET;
+        this.pesTimeUs = C0485C.TIME_UNSET;
+        this.sampleTimeUs = C0485C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
@@ -67,8 +67,8 @@ public final class H262Reader implements ElementaryStreamReader {
         }
         this.totalBytesWritten = 0L;
         this.startedFirstSample = false;
-        this.pesTimeUs = C0479C.TIME_UNSET;
-        this.sampleTimeUs = C0479C.TIME_UNSET;
+        this.pesTimeUs = C0485C.TIME_UNSET;
+        this.sampleTimeUs = C0485C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader

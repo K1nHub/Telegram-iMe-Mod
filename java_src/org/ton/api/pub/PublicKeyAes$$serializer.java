@@ -10,8 +10,8 @@ import kotlinx.serialization.encoding.Decoder;
 import kotlinx.serialization.encoding.Encoder;
 import kotlinx.serialization.internal.GeneratedSerializer;
 import kotlinx.serialization.internal.PluginGeneratedSerialDescriptor;
-import org.ton.p044tl.ByteString;
-import org.ton.p044tl.ByteStringSerializer;
+import org.ton.p045tl.ByteString;
+import org.ton.p045tl.ByteStringSerializer;
 /* compiled from: pub.kt */
 /* loaded from: classes6.dex */
 public final class PublicKeyAes$$serializer implements GeneratedSerializer<PublicKeyAes> {
@@ -23,7 +23,7 @@ public final class PublicKeyAes$$serializer implements GeneratedSerializer<Publi
         INSTANCE = publicKeyAes$$serializer;
         PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor = new PluginGeneratedSerialDescriptor("pub.aes", publicKeyAes$$serializer, 1);
         pluginGeneratedSerialDescriptor.addElement("key", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7439x79401cc9("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7514x79401cc9("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

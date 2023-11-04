@@ -156,7 +156,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
         if (transitionState2 == transitionState3 && newState == transitionState3) {
             fireTransitionChange();
         }
-        int i = C01075.f31xabc7e4ac[transitionState2.ordinal()];
+        int i = C01135.f31xabc7e4ac[transitionState2.ordinal()];
         if (i != 1 && i != 2) {
             if (i == 3 && newState == transitionState) {
                 fireTransitionCompleted();
@@ -175,7 +175,7 @@ public class MotionLayout extends ConstraintLayout implements NestedScrollingPar
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: androidx.constraintlayout.motion.widget.MotionLayout$5 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C01075 {
+    public static /* synthetic */ class C01135 {
 
         /* renamed from: $SwitchMap$androidx$constraintlayout$motion$widget$MotionLayout$TransitionState */
         static final /* synthetic */ int[] f31xabc7e4ac;

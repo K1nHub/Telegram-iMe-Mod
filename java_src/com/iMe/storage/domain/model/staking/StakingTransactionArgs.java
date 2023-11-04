@@ -73,7 +73,7 @@ public final class StakingTransactionArgs implements TransactionArgs {
     }
 
     public int hashCode() {
-        return (((((((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.chainId) * 31) + this.from.hashCode()) * 31) + this.f375to.hashCode()) * 31) + this.value) * 31) + this.data.hashCode()) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode();
+        return (((((((((((((ProfileData$$ExternalSyntheticBackport0.m1018m(this.chainId) * 31) + this.from.hashCode()) * 31) + this.f375to.hashCode()) * 31) + this.value) * 31) + this.data.hashCode()) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode();
     }
 
     public String toString() {

@@ -76,13 +76,13 @@ public final class BlockInfo implements TlbObject {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1969hashCodeimpl = UInt.m1969hashCodeimpl(this.version) * 31;
+        int m1974hashCodeimpl = UInt.m1974hashCodeimpl(this.version) * 31;
         boolean z = this.notMaster;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        int i2 = (m1969hashCodeimpl + i) * 31;
+        int i2 = (m1974hashCodeimpl + i) * 31;
         boolean z2 = this.afterMerge;
         int i3 = z2;
         if (z2 != 0) {
@@ -120,7 +120,7 @@ public final class BlockInfo implements TlbObject {
         }
         int i14 = (i12 + i13) * 31;
         boolean z8 = this.vertSeqnoIncr;
-        int hashCode = (((((((((((((((((((((((i14 + (z8 ? 1 : z8 ? 1 : 0)) * 31) + this.flags) * 31) + this.seqNo) * 31) + this.vertSeqNo) * 31) + this.shard.hashCode()) * 31) + UInt.m1969hashCodeimpl(this.genUtime)) * 31) + ULong.m1991hashCodeimpl(this.startLt)) * 31) + ULong.m1991hashCodeimpl(this.endLt)) * 31) + UInt.m1969hashCodeimpl(this.genValidatorListHashShort)) * 31) + UInt.m1969hashCodeimpl(this.genCatchainSeqno)) * 31) + UInt.m1969hashCodeimpl(this.minRefMcSeqno)) * 31) + UInt.m1969hashCodeimpl(this.prevKeyBlockSeqno)) * 31;
+        int hashCode = (((((((((((((((((((((((i14 + (z8 ? 1 : z8 ? 1 : 0)) * 31) + this.flags) * 31) + this.seqNo) * 31) + this.vertSeqNo) * 31) + this.shard.hashCode()) * 31) + UInt.m1974hashCodeimpl(this.genUtime)) * 31) + ULong.m1996hashCodeimpl(this.startLt)) * 31) + ULong.m1996hashCodeimpl(this.endLt)) * 31) + UInt.m1974hashCodeimpl(this.genValidatorListHashShort)) * 31) + UInt.m1974hashCodeimpl(this.genCatchainSeqno)) * 31) + UInt.m1974hashCodeimpl(this.minRefMcSeqno)) * 31) + UInt.m1974hashCodeimpl(this.prevKeyBlockSeqno)) * 31;
         GlobalVersion globalVersion = this.genSoftware;
         int hashCode2 = (hashCode + (globalVersion == null ? 0 : globalVersion.hashCode())) * 31;
         CellRef<BlkMasterInfo> cellRef = this.masterRef;
@@ -134,7 +134,7 @@ public final class BlockInfo implements TlbObject {
         if (16777215 != (i & 16777215)) {
             PluginExceptionsKt.throwMissingFieldException(i, 16777215, BlockInfo$$serializer.INSTANCE.getDescriptor());
         }
-        this.version = uInt.m1971unboximpl();
+        this.version = uInt.m1976unboximpl();
         this.notMaster = z;
         this.afterMerge = z2;
         this.beforeSplit = z3;
@@ -147,13 +147,13 @@ public final class BlockInfo implements TlbObject {
         this.seqNo = i3;
         this.vertSeqNo = i4;
         this.shard = shardIdent;
-        this.genUtime = uInt2.m1971unboximpl();
-        this.startLt = uLong.m1993unboximpl();
-        this.endLt = uLong2.m1993unboximpl();
-        this.genValidatorListHashShort = uInt3.m1971unboximpl();
-        this.genCatchainSeqno = uInt4.m1971unboximpl();
-        this.minRefMcSeqno = uInt5.m1971unboximpl();
-        this.prevKeyBlockSeqno = uInt6.m1971unboximpl();
+        this.genUtime = uInt2.m1976unboximpl();
+        this.startLt = uLong.m1998unboximpl();
+        this.endLt = uLong2.m1998unboximpl();
+        this.genValidatorListHashShort = uInt3.m1976unboximpl();
+        this.genCatchainSeqno = uInt4.m1976unboximpl();
+        this.minRefMcSeqno = uInt5.m1976unboximpl();
+        this.prevKeyBlockSeqno = uInt6.m1976unboximpl();
         this.genSoftware = globalVersion;
         this.masterRef = cellRef;
         this.prevRef = cellRef2;
@@ -193,7 +193,7 @@ public final class BlockInfo implements TlbObject {
     public static final /* synthetic */ void write$Self(BlockInfo blockInfo, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         KSerializer<Object>[] kSerializerArr = $childSerializers;
         UIntSerializer uIntSerializer = UIntSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uIntSerializer, UInt.m1966boximpl(blockInfo.version));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uIntSerializer, UInt.m1971boximpl(blockInfo.version));
         compositeEncoder.encodeBooleanElement(serialDescriptor, 1, blockInfo.notMaster);
         compositeEncoder.encodeBooleanElement(serialDescriptor, 2, blockInfo.afterMerge);
         compositeEncoder.encodeBooleanElement(serialDescriptor, 3, blockInfo.beforeSplit);
@@ -206,14 +206,14 @@ public final class BlockInfo implements TlbObject {
         compositeEncoder.encodeIntElement(serialDescriptor, 10, blockInfo.seqNo);
         compositeEncoder.encodeIntElement(serialDescriptor, 11, blockInfo.vertSeqNo);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 12, ShardIdent$$serializer.INSTANCE, blockInfo.shard);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 13, uIntSerializer, UInt.m1966boximpl(blockInfo.genUtime));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 13, uIntSerializer, UInt.m1971boximpl(blockInfo.genUtime));
         ULongSerializer uLongSerializer = ULongSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 14, uLongSerializer, ULong.m1988boximpl(blockInfo.startLt));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 15, uLongSerializer, ULong.m1988boximpl(blockInfo.endLt));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 16, uIntSerializer, UInt.m1966boximpl(blockInfo.genValidatorListHashShort));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 17, uIntSerializer, UInt.m1966boximpl(blockInfo.genCatchainSeqno));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 18, uIntSerializer, UInt.m1966boximpl(blockInfo.minRefMcSeqno));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 19, uIntSerializer, UInt.m1966boximpl(blockInfo.prevKeyBlockSeqno));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 14, uLongSerializer, ULong.m1993boximpl(blockInfo.startLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 15, uLongSerializer, ULong.m1993boximpl(blockInfo.endLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 16, uIntSerializer, UInt.m1971boximpl(blockInfo.genValidatorListHashShort));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 17, uIntSerializer, UInt.m1971boximpl(blockInfo.genCatchainSeqno));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 18, uIntSerializer, UInt.m1971boximpl(blockInfo.minRefMcSeqno));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 19, uIntSerializer, UInt.m1971boximpl(blockInfo.prevKeyBlockSeqno));
         compositeEncoder.encodeNullableSerializableElement(serialDescriptor, 20, GlobalVersion$$serializer.INSTANCE, blockInfo.genSoftware);
         compositeEncoder.encodeNullableSerializableElement(serialDescriptor, 21, kSerializerArr[21], blockInfo.masterRef);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 22, kSerializerArr[22], blockInfo.prevRef);
@@ -221,7 +221,7 @@ public final class BlockInfo implements TlbObject {
     }
 
     /* renamed from: getVersion-pVg5ArA  reason: not valid java name */
-    public final int m4940getVersionpVg5ArA() {
+    public final int m5094getVersionpVg5ArA() {
         return this.version;
     }
 
@@ -274,37 +274,37 @@ public final class BlockInfo implements TlbObject {
     }
 
     /* renamed from: getGenUtime-pVg5ArA  reason: not valid java name */
-    public final int m4935getGenUtimepVg5ArA() {
+    public final int m5089getGenUtimepVg5ArA() {
         return this.genUtime;
     }
 
     /* renamed from: getStartLt-s-VKNKU  reason: not valid java name */
-    public final long m4939getStartLtsVKNKU() {
+    public final long m5093getStartLtsVKNKU() {
         return this.startLt;
     }
 
     /* renamed from: getEndLt-s-VKNKU  reason: not valid java name */
-    public final long m4933getEndLtsVKNKU() {
+    public final long m5087getEndLtsVKNKU() {
         return this.endLt;
     }
 
     /* renamed from: getGenValidatorListHashShort-pVg5ArA  reason: not valid java name */
-    public final int m4936getGenValidatorListHashShortpVg5ArA() {
+    public final int m5090getGenValidatorListHashShortpVg5ArA() {
         return this.genValidatorListHashShort;
     }
 
     /* renamed from: getGenCatchainSeqno-pVg5ArA  reason: not valid java name */
-    public final int m4934getGenCatchainSeqnopVg5ArA() {
+    public final int m5088getGenCatchainSeqnopVg5ArA() {
         return this.genCatchainSeqno;
     }
 
     /* renamed from: getMinRefMcSeqno-pVg5ArA  reason: not valid java name */
-    public final int m4937getMinRefMcSeqnopVg5ArA() {
+    public final int m5091getMinRefMcSeqnopVg5ArA() {
         return this.minRefMcSeqno;
     }
 
     /* renamed from: getPrevKeyBlockSeqno-pVg5ArA  reason: not valid java name */
-    public final int m4938getPrevKeyBlockSeqnopVg5ArA() {
+    public final int m5092getPrevKeyBlockSeqnopVg5ArA() {
         return this.prevKeyBlockSeqno;
     }
 
@@ -369,7 +369,7 @@ public final class BlockInfo implements TlbObject {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("block_info");
-        open.field("version", UInt.m1966boximpl(this.version));
+        open.field("version", UInt.m1971boximpl(this.version));
         open.field("not_master", Boolean.valueOf(this.notMaster));
         open.field("after_merge", Boolean.valueOf(this.afterMerge));
         open.field("before_split", Boolean.valueOf(this.beforeSplit));
@@ -382,13 +382,13 @@ public final class BlockInfo implements TlbObject {
         open.field("seq_no", Integer.valueOf(this.seqNo));
         open.field("vert_seq_no", Integer.valueOf(this.vertSeqNo));
         open.field("shard", this.shard);
-        open.field("gen_utime", UInt.m1966boximpl(this.genUtime));
-        open.field("start_lt", ULong.m1988boximpl(this.startLt));
-        open.field("end_lt", ULong.m1988boximpl(this.endLt));
-        open.field("gen_validator_list_hash_short", UInt.m1966boximpl(this.genValidatorListHashShort));
-        open.field("gen_catchain_seqno", UInt.m1966boximpl(this.genCatchainSeqno));
-        open.field("min_ref_mc_seqno", UInt.m1966boximpl(this.minRefMcSeqno));
-        open.field("prevKeyBlockSeqno", UInt.m1966boximpl(this.prevKeyBlockSeqno));
+        open.field("gen_utime", UInt.m1971boximpl(this.genUtime));
+        open.field("start_lt", ULong.m1993boximpl(this.startLt));
+        open.field("end_lt", ULong.m1993boximpl(this.endLt));
+        open.field("gen_validator_list_hash_short", UInt.m1971boximpl(this.genValidatorListHashShort));
+        open.field("gen_catchain_seqno", UInt.m1971boximpl(this.genCatchainSeqno));
+        open.field("min_ref_mc_seqno", UInt.m1971boximpl(this.minRefMcSeqno));
+        open.field("prevKeyBlockSeqno", UInt.m1971boximpl(this.prevKeyBlockSeqno));
         open.field("gen_software", this.genSoftware);
         open.field("master_ref", this.masterRef);
         open.field("prev_ref", this.prevRef);

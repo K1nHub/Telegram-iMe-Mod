@@ -6,7 +6,7 @@ public final class Encoding {
     private final String name;
 
     /* renamed from: of */
-    public static Encoding m1121of(String str) {
+    public static Encoding m1122of(String str) {
         return new Encoding(str);
     }
 

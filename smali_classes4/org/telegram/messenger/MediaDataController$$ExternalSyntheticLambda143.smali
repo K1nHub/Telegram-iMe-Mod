@@ -10,19 +10,17 @@
 
 .field public final synthetic f$1:[Z
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$StickerSet;
+.field public final synthetic f$2:Ljava/util/ArrayList;
 
-.field public final synthetic f$3:I
+.field public final synthetic f$3:Landroid/content/Context;
 
-.field public final synthetic f$4:I
+.field public final synthetic f$4:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-.field public final synthetic f$5:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
-
-.field public final synthetic f$6:Ljava/lang/Runnable;
+.field public final synthetic f$5:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;[ZLorg/telegram/tgnet/TLRPC$StickerSet;IILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;Ljava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MediaDataController;[ZLjava/util/ArrayList;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,15 +29,13 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$1:[Z
 
-    iput-object p3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$2:Lorg/telegram/tgnet/TLRPC$StickerSet;
+    iput-object p3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$2:Ljava/util/ArrayList;
 
-    iput p4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$3:I
+    iput-object p4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$3:Landroid/content/Context;
 
-    iput p5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$4:I
+    iput-object p5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$4:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iput-object p6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$5:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
-
-    iput-object p7, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$6:Ljava/lang/Runnable;
+    iput p6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$5:I
 
     return-void
 .end method
@@ -47,23 +43,21 @@
 
 # virtual methods
 .method public final run()V
-    .locals 7
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$0:Lorg/telegram/messenger/MediaDataController;
 
     iget-object v1, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$1:[Z
 
-    iget-object v2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$2:Lorg/telegram/tgnet/TLRPC$StickerSet;
+    iget-object v2, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$2:Ljava/util/ArrayList;
 
-    iget v3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$3:I
+    iget-object v3, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$3:Landroid/content/Context;
 
-    iget v4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$4:I
+    iget-object v4, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$4:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iget-object v5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$5:Lorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;
+    iget v5, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$5:I
 
-    iget-object v6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda143;->f$6:Ljava/lang/Runnable;
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$5JPTxL_xCwA8L6XXs1cI4P244VA(Lorg/telegram/messenger/MediaDataController;[ZLorg/telegram/tgnet/TLRPC$StickerSet;IILorg/telegram/tgnet/TLRPC$TL_messages_stickerSet;Ljava/lang/Runnable;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$XX5tbiVS0NXWetQV0UnkTHGv_vQ(Lorg/telegram/messenger/MediaDataController;[ZLjava/util/ArrayList;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;I)V
 
     return-void
 .end method

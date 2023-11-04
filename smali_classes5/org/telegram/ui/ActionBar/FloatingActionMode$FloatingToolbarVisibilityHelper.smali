@@ -34,15 +34,15 @@
 .method public constructor <init>(Lorg/telegram/ui/ActionBar/FloatingToolbar;)V
     .locals 1
 
-    .line 278
+    .line 279
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
-    .line 274
+    .line 275
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mWindowFocused:Z
 
-    .line 279
+    .line 280
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mToolbar:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     return-void
@@ -55,21 +55,21 @@
 
     const/4 v0, 0x0
 
-    .line 283
+    .line 284
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mHideRequested:Z
 
-    .line 284
+    .line 285
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mMoving:Z
 
-    .line 285
+    .line 286
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mOutOfBounds:Z
 
     const/4 v0, 0x1
 
-    .line 286
+    .line 287
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mWindowFocused:Z
 
-    .line 287
+    .line 288
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mActive:Z
 
     return-void
@@ -80,10 +80,10 @@
 
     const/4 v0, 0x0
 
-    .line 291
+    .line 292
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mActive:Z
 
-    .line 292
+    .line 293
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mToolbar:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->dismiss()V
@@ -94,7 +94,7 @@
 .method public setHideRequested(Z)V
     .locals 0
 
-    .line 296
+    .line 297
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mHideRequested:Z
 
     return-void
@@ -103,7 +103,7 @@
 .method public setMoving(Z)V
     .locals 4
 
-    .line 300
+    .line 301
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -130,7 +130,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 302
+    .line 303
     :cond_1
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mMoving:Z
 
@@ -141,7 +141,7 @@
 .method public setOutOfBounds(Z)V
     .locals 0
 
-    .line 307
+    .line 308
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mOutOfBounds:Z
 
     return-void
@@ -150,7 +150,7 @@
 .method public setWindowFocused(Z)V
     .locals 0
 
-    .line 311
+    .line 312
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mWindowFocused:Z
 
     return-void
@@ -159,14 +159,14 @@
 .method public updateToolbarVisibility()V
     .locals 2
 
-    .line 315
+    .line 316
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mActive:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 318
+    .line 319
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mHideRequested:Z
 
@@ -186,13 +186,13 @@
 
     goto :goto_0
 
-    .line 321
+    .line 322
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mToolbar:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->show()Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
-    .line 322
+    .line 323
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -201,7 +201,7 @@
 
     goto :goto_1
 
-    .line 319
+    .line 320
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->mToolbar:Lorg/telegram/ui/ActionBar/FloatingToolbar;

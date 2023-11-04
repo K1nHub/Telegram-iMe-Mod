@@ -158,7 +158,7 @@ public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttach
     }
 
     private final void getWalletBalance(boolean z) {
-        Observable observeOn = WalletInteractor.getWalletBalance$default(this.walletInteractor, z, null, 2, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo1009ui());
+        Observable observeOn = WalletInteractor.getWalletBalance$default(this.walletInteractor, z, null, 2, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo1010ui());
         final Function1<Result<? extends List<? extends TokenBalance>>, Unit> function1 = new Function1<Result<? extends List<? extends TokenBalance>>, Unit>() { // from class: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter$getWalletBalance$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -309,7 +309,7 @@ public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttach
                 walletTransactions$lambda$8 = WalletAttachAlertPresenter.getWalletTransactions$lambda$8(Function1.this, obj);
                 return walletTransactions$lambda$8;
             }
-        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo1009ui());
+        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo1010ui());
         final Function1<Result<? extends List<? extends Transaction>>, Unit> function12 = new Function1<Result<? extends List<? extends Transaction>>, Unit>() { // from class: com.iMe.ui.wallet.home.attach.WalletAttachAlertPresenter$getWalletTransactions$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

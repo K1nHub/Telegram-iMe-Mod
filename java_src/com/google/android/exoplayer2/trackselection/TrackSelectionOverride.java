@@ -26,7 +26,7 @@ public final class TrackSelectionOverride implements Bundleable {
     };
 
     public TrackSelectionOverride(TrackGroup trackGroup, int i) {
-        this(trackGroup, ImmutableList.m1053of(Integer.valueOf(i)));
+        this(trackGroup, ImmutableList.m1054of(Integer.valueOf(i)));
     }
 
     public TrackSelectionOverride(TrackGroup trackGroup, List<Integer> list) {

@@ -134,7 +134,7 @@
     goto :goto_3
 
     :cond_3
-    const-string v7, "iterator"
+    const-string/jumbo v7, "iterator"
 
     aput-object v7, v6, v9
 
@@ -179,6 +179,8 @@
 
     :goto_5
     throw p0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x2

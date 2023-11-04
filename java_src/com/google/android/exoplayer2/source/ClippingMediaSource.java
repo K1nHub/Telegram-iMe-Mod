@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Timeline;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.upstream.Allocator;
@@ -173,7 +173,7 @@ public final class ClippingMediaSource extends WrappingMediaSource {
             }
             long max2 = j2 == Long.MIN_VALUE ? window.durationUs : Math.max(0L, j2);
             long j3 = window.durationUs;
-            if (j3 != C0479C.TIME_UNSET) {
+            if (j3 != C0485C.TIME_UNSET) {
                 max2 = max2 > j3 ? j3 : max2;
                 if (max > max2) {
                     throw new IllegalClippingException(2);
@@ -181,9 +181,9 @@ public final class ClippingMediaSource extends WrappingMediaSource {
             }
             this.startUs = max;
             this.endUs = max2;
-            int i = (max2 > C0479C.TIME_UNSET ? 1 : (max2 == C0479C.TIME_UNSET ? 0 : -1));
+            int i = (max2 > C0485C.TIME_UNSET ? 1 : (max2 == C0485C.TIME_UNSET ? 0 : -1));
             this.durationUs = i == 0 ? -9223372036854775807L : max2 - max;
-            if (window.isDynamic && (i == 0 || (j3 != C0479C.TIME_UNSET && max2 == j3))) {
+            if (window.isDynamic && (i == 0 || (j3 != C0485C.TIME_UNSET && max2 == j3))) {
                 z = true;
             }
             this.isDynamic = z;
@@ -198,11 +198,11 @@ public final class ClippingMediaSource extends WrappingMediaSource {
             window.durationUs = this.durationUs;
             window.isDynamic = this.isDynamic;
             long j4 = window.defaultPositionUs;
-            if (j4 != C0479C.TIME_UNSET) {
+            if (j4 != C0485C.TIME_UNSET) {
                 long max = Math.max(j4, j3);
                 window.defaultPositionUs = max;
                 long j5 = this.endUs;
-                if (j5 != C0479C.TIME_UNSET) {
+                if (j5 != C0485C.TIME_UNSET) {
                     max = Math.min(max, j5);
                 }
                 window.defaultPositionUs = max;
@@ -210,11 +210,11 @@ public final class ClippingMediaSource extends WrappingMediaSource {
             }
             long usToMs = Util.usToMs(this.startUs);
             long j6 = window.presentationStartTimeMs;
-            if (j6 != C0479C.TIME_UNSET) {
+            if (j6 != C0485C.TIME_UNSET) {
                 window.presentationStartTimeMs = j6 + usToMs;
             }
             long j7 = window.windowStartTimeMs;
-            if (j7 != C0479C.TIME_UNSET) {
+            if (j7 != C0485C.TIME_UNSET) {
                 window.windowStartTimeMs = j7 + usToMs;
             }
             return window;
@@ -225,7 +225,7 @@ public final class ClippingMediaSource extends WrappingMediaSource {
             this.timeline.getPeriod(0, period, z);
             long positionInWindowUs = period.getPositionInWindowUs() - this.startUs;
             long j = this.durationUs;
-            return period.set(period.f190id, period.uid, 0, j == C0479C.TIME_UNSET ? -9223372036854775807L : j - positionInWindowUs, positionInWindowUs);
+            return period.set(period.f190id, period.uid, 0, j == C0485C.TIME_UNSET ? -9223372036854775807L : j - positionInWindowUs, positionInWindowUs);
         }
     }
 }

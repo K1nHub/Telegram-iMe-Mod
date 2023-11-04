@@ -53,10 +53,10 @@ public final class IndexedParametersSubstitution extends TypeSubstitution {
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeSubstitution
     /* renamed from: get */
-    public TypeProjection mo2051get(KotlinType key) {
+    public TypeProjection mo2056get(KotlinType key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        ClassifierDescriptor mo2046getDeclarationDescriptor = key.getConstructor().mo2046getDeclarationDescriptor();
-        TypeParameterDescriptor typeParameterDescriptor = mo2046getDeclarationDescriptor instanceof TypeParameterDescriptor ? (TypeParameterDescriptor) mo2046getDeclarationDescriptor : null;
+        ClassifierDescriptor mo2051getDeclarationDescriptor = key.getConstructor().mo2051getDeclarationDescriptor();
+        TypeParameterDescriptor typeParameterDescriptor = mo2051getDeclarationDescriptor instanceof TypeParameterDescriptor ? (TypeParameterDescriptor) mo2051getDeclarationDescriptor : null;
         if (typeParameterDescriptor == null) {
             return null;
         }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewMenuContainer;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
     .locals 0
 
-    .line 862
+    .line 871
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$8;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/BotWebViewContainer;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
@@ -35,7 +35,7 @@
 .method public onWebViewCreated()V
     .locals 2
 
-    .line 865
+    .line 874
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$8;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$100(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;

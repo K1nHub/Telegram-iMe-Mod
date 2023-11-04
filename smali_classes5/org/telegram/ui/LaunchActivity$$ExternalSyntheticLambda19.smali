@@ -6,16 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
+.field public final synthetic f$0:[Lorg/telegram/messenger/LocaleController$LocaleInfo;
+
+.field public final synthetic f$1:[Lorg/telegram/ui/Cells/LanguageCell;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
+.method public synthetic constructor <init>([Lorg/telegram/messenger/LocaleController$LocaleInfo;[Lorg/telegram/ui/Cells/LanguageCell;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/LaunchActivity;
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda19;->f$0:[Lorg/telegram/messenger/LocaleController$LocaleInfo;
+
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda19;->f$1:[Lorg/telegram/ui/Cells/LanguageCell;
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/LaunchActivity;
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda19;->f$0:[Lorg/telegram/messenger/LocaleController$LocaleInfo;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$1nV2dP930gp8olKsOlLxS6nPqPQ(Lorg/telegram/ui/LaunchActivity;Landroid/view/View;)V
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda19;->f$1:[Lorg/telegram/ui/Cells/LanguageCell;
+
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$-msUS0C8HvCw1C6_PmjOEpsFVrk([Lorg/telegram/messenger/LocaleController$LocaleInfo;[Lorg/telegram/ui/Cells/LanguageCell;Landroid/view/View;)V
 
     return-void
 .end method

@@ -30,7 +30,7 @@
 .method constructor <init>(Landroid/view/View;Landroid/view/View;ILandroid/graphics/Paint;)V
     .locals 0
 
-    .line 5342
+    .line 5471
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/Theme$6;->val$view:Landroid/view/View;
 
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/Theme$6;->val$containerView:Landroid/view/View;
@@ -41,7 +41,7 @@
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 5344
+    .line 5473
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
@@ -56,12 +56,12 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 5348
+    .line 5477
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 5349
+    .line 5478
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/Theme$6;->rect:Landroid/graphics/RectF;
 
     iget v2, v0, Landroid/graphics/Rect;->left:I
@@ -82,14 +82,14 @@
 
     invoke-virtual {v1, v2, v3, v4, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 5350
+    .line 5479
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$6;->val$view:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/Theme$6;->val$containerView:Landroid/view/View;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->applyServiceShaderMatrixForView(Landroid/view/View;Landroid/view/View;)V
 
-    .line 5351
+    .line 5480
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$6;->rect:Landroid/graphics/RectF;
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/Theme$6;->val$rad:I
@@ -102,14 +102,14 @@
 
     invoke-virtual {p1, v0, v2, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 5352
+    .line 5481
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->hasGradientService()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 5353
+    .line 5482
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/Theme$6;->rect:Landroid/graphics/RectF;
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/Theme$6;->val$rad:I

@@ -45,7 +45,7 @@
 
     const-class v0, Lorg/bouncycastle/jce/provider/BouncyCastleProvider;
 
-    const-string v1, "java.security.cert.PKIXRevocationChecker"
+    const-string/jumbo v1, "java.security.cert.PKIXRevocationChecker"
 
     invoke-static {v0, v1}, Lorg/bouncycastle/jcajce/provider/symmetric/util/ClassUtil;->loadClass(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Class;
 

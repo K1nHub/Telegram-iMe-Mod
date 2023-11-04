@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openPremium()V
+    value = Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showLimitReachedSheet(Lorg/telegram/ui/Stories/StoriesController$StoryLimit;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,17 +22,10 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    .line 4598
+    .line 4761
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$21;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
-
-    .line 4599
-    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
-
-    move-result p1
-
-    iput p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return-void
 .end method
@@ -42,10 +35,10 @@
 .method public getParentActivity()Landroid/app/Activity;
     .locals 1
 
-    .line 4607
+    .line 4769
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$21;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$10300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/app/Activity;
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$11000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/app/Activity;
 
     move-result-object v0
 
@@ -55,12 +48,12 @@
 .method public getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 2
 
-    .line 4612
+    .line 4774
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$21$1;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$21;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$10700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$11500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v1
 
@@ -77,11 +70,15 @@
     return v0
 .end method
 
-.method public showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
+.method public presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
     .locals 0
 
-    .line 4602
-    invoke-virtual {p1}, Landroid/app/Dialog;->show()V
+    .line 4785
+    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$21;->this$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    return-object p1
+    invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->access$7300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+
+    const/4 p1, 0x0
+
+    return p1
 .end method

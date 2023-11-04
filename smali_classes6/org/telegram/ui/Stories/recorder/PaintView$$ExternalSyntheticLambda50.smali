@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Lorg/telegram/messenger/Utilities$Callback3;
 
 
 # instance fields
@@ -22,14 +22,16 @@
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
+.method public final run(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda50;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    check-cast p1, Lorg/telegram/messenger/MessageObject;
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$Document;
 
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->onAudioSelect(Lorg/telegram/messenger/MessageObject;)V
+    check-cast p3, Ljava/lang/Boolean;
+
+    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$1iw-jmB8ia5y4J9YOiAW_ZJfZJ4(Lorg/telegram/ui/Stories/recorder/PaintView;Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Boolean;)V
 
     return-void
 .end method

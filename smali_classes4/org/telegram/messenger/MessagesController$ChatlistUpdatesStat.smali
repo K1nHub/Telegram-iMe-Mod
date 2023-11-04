@@ -17,7 +17,7 @@
 # instance fields
 .field lastRequestTime:J
 
-.field lastValue:Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;
+.field lastValue:Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_chatlistUpdates;
 
 .field loading:Z
 
@@ -28,46 +28,46 @@
 .method public constructor <init>(Lorg/telegram/messenger/MessagesController;)V
     .locals 0
 
-    .line 394
+    .line 402
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->this$0:Lorg/telegram/messenger/MessagesController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 401
+    .line 409
     iput-boolean p1, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->loading:Z
 
     const/4 p1, 0x1
 
-    .line 395
+    .line 403
     iput-boolean p1, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->loading:Z
 
     return-void
 .end method
 
-.method public constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;)V
+.method public constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_chatlistUpdates;)V
     .locals 2
 
-    .line 397
+    .line 405
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->this$0:Lorg/telegram/messenger/MessagesController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x0
 
-    .line 401
+    .line 409
     iput-boolean p1, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->loading:Z
 
-    .line 398
+    .line 406
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->lastRequestTime:J
 
-    .line 399
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->lastValue:Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;
+    .line 407
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;->lastValue:Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_chatlistUpdates;
 
     return-void
 .end method

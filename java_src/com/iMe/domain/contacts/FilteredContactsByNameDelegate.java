@@ -121,7 +121,7 @@ public final class FilteredContactsByNameDelegate extends BaseController {
                             java.lang.Boolean r6 = java.lang.Boolean.valueOf(r1)
                             return r6
                         */
-                        throw new UnsupportedOperationException("Method not decompiled: com.iMe.domain.contacts.FilteredContactsByNameDelegate$giftPremiumContacts$2.C13501.invoke(org.telegram.tgnet.TLRPC$TL_contact):java.lang.Boolean");
+                        throw new UnsupportedOperationException("Method not decompiled: com.iMe.domain.contacts.FilteredContactsByNameDelegate$giftPremiumContacts$2.C13561.invoke(org.telegram.tgnet.TLRPC$TL_contact):java.lang.Boolean");
                     }
                 });
                 return usersByPredicate;
@@ -195,7 +195,7 @@ public final class FilteredContactsByNameDelegate extends BaseController {
                             java.lang.Boolean r6 = java.lang.Boolean.valueOf(r1)
                             return r6
                         */
-                        throw new UnsupportedOperationException("Method not decompiled: com.iMe.domain.contacts.FilteredContactsByNameDelegate$giftPremiumContactsArr$2.C13511.invoke(org.telegram.tgnet.TLRPC$TL_contact):java.lang.Boolean");
+                        throw new UnsupportedOperationException("Method not decompiled: com.iMe.domain.contacts.FilteredContactsByNameDelegate$giftPremiumContactsArr$2.C13571.invoke(org.telegram.tgnet.TLRPC$TL_contact):java.lang.Boolean");
                     }
                 });
                 return arrCharsByPredicate;
@@ -574,7 +574,7 @@ public final class FilteredContactsByNameDelegate extends BaseController {
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean userIsOnline(TLRPC$User tLRPC$User) {
         TLRPC$UserStatus tLRPC$UserStatus = tLRPC$User.status;
-        return (tLRPC$UserStatus != null && tLRPC$UserStatus.expires > getConnectionsManager().getCurrentTime()) || getMessagesController().onlinePrivacy.containsKey(Long.valueOf(tLRPC$User.f1762id));
+        return (tLRPC$UserStatus != null && tLRPC$UserStatus.expires > getConnectionsManager().getCurrentTime()) || getMessagesController().onlinePrivacy.containsKey(Long.valueOf(tLRPC$User.f1749id));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -30,7 +30,7 @@ public final class JavaDeprecatedAnnotationDescriptor extends JavaAnnotationDesc
             @Override // kotlin.jvm.functions.Function0
             public final Map<Name, ? extends StringValue> invoke() {
                 Map<Name, ? extends StringValue> mapOf;
-                mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m144to(JavaAnnotationMapper.INSTANCE.getDEPRECATED_ANNOTATION_MESSAGE$descriptors_jvm(), new StringValue("Deprecated in Java")));
+                mapOf = MapsKt__MapsJVMKt.mapOf(TuplesKt.m146to(JavaAnnotationMapper.INSTANCE.getDEPRECATED_ANNOTATION_MESSAGE$descriptors_jvm(), new StringValue("Deprecated in Java")));
                 return mapOf;
             }
         });

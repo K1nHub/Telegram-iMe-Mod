@@ -87,7 +87,7 @@ public final class ReflectClassUtilKt {
         Iterator<T> it = listOf.iterator();
         while (it.hasNext()) {
             KClass kClass = (KClass) it.next();
-            arrayList.add(TuplesKt.m144to(JvmClassMappingKt.getJavaObjectType(kClass), JvmClassMappingKt.getJavaPrimitiveType(kClass)));
+            arrayList.add(TuplesKt.m146to(JvmClassMappingKt.getJavaObjectType(kClass), JvmClassMappingKt.getJavaPrimitiveType(kClass)));
         }
         map = MapsKt__MapsKt.toMap(arrayList);
         WRAPPER_TO_PRIMITIVE = map;
@@ -97,7 +97,7 @@ public final class ReflectClassUtilKt {
         Iterator<T> it2 = list.iterator();
         while (it2.hasNext()) {
             KClass kClass2 = (KClass) it2.next();
-            arrayList2.add(TuplesKt.m144to(JvmClassMappingKt.getJavaPrimitiveType(kClass2), JvmClassMappingKt.getJavaObjectType(kClass2)));
+            arrayList2.add(TuplesKt.m146to(JvmClassMappingKt.getJavaPrimitiveType(kClass2), JvmClassMappingKt.getJavaObjectType(kClass2)));
         }
         map2 = MapsKt__MapsKt.toMap(arrayList2);
         PRIMITIVE_TO_WRAPPER = map2;
@@ -109,7 +109,7 @@ public final class ReflectClassUtilKt {
             if (i < 0) {
                 CollectionsKt__CollectionsKt.throwIndexOverflow();
             }
-            arrayList3.add(TuplesKt.m144to((Class) obj, Integer.valueOf(i)));
+            arrayList3.add(TuplesKt.m146to((Class) obj, Integer.valueOf(i)));
             i = i2;
         }
         map3 = MapsKt__MapsKt.toMap(arrayList3);

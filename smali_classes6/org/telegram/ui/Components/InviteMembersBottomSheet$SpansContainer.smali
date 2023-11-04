@@ -62,13 +62,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 1130
+    .line 1133
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
-    .line 1131
+    .line 1134
     invoke-direct {p0, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
 
-    .line 1125
+    .line 1128
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -81,7 +81,7 @@
 .method static synthetic access$3302(Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;Z)Z
     .locals 0
 
-    .line 1122
+    .line 1125
     iput-boolean p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animationStarted:Z
 
     return p1
@@ -90,7 +90,7 @@
 .method static synthetic access$3402(Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;Landroid/view/View;)Landroid/view/View;
     .locals 0
 
-    .line 1122
+    .line 1125
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->removingSpan:Landroid/view/View;
 
     return-object p1
@@ -99,7 +99,7 @@
 .method private synthetic lambda$onMeasure$0(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 1217
+    .line 1220
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -114,7 +114,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3002(Lorg/telegram/ui/Components/InviteMembersBottomSheet;I)I
 
-    .line 1218
+    .line 1221
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3500(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/view/ViewGroup;
@@ -129,7 +129,7 @@
 .method private synthetic lambda$onMeasure$1(I)V
     .locals 2
 
-    .line 1224
+    .line 1227
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$800(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/widget/ScrollView;
@@ -154,7 +154,7 @@
 .method private synthetic lambda$onMeasure$2(I)V
     .locals 2
 
-    .line 1226
+    .line 1229
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$800(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/widget/ScrollView;
@@ -183,10 +183,10 @@
 
     const/4 v0, 0x1
 
-    .line 1265
+    .line 1268
     iput-boolean v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->addAnimation:Z
 
-    .line 1266
+    .line 1269
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroidx/collection/LongSparseArray;
@@ -199,7 +199,7 @@
 
     invoke-virtual {v0, v1, v2, p1}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 1268
+    .line 1271
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -208,7 +208,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1269
+    .line 1272
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -217,7 +217,7 @@
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->setupEndValues()V
 
-    .line 1270
+    .line 1273
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -229,12 +229,12 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1272
+    .line 1275
     iput-boolean v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animationStarted:Z
 
     if-eqz p2, :cond_1
 
-    .line 1274
+    .line 1277
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     new-instance v0, Landroid/animation/AnimatorSet;
@@ -243,7 +243,7 @@
 
     invoke-static {p2, v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3102(Lorg/telegram/ui/Components/InviteMembersBottomSheet;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 1275
+    .line 1278
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -256,7 +256,7 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1282
+    .line 1285
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -267,7 +267,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1283
+    .line 1286
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -278,12 +278,12 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1284
+    .line 1287
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animators:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->clear()V
 
-    .line 1285
+    .line 1288
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animators:Ljava/util/ArrayList;
 
     sget-object v0, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -300,7 +300,7 @@
 
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1286
+    .line 1289
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animators:Ljava/util/ArrayList;
 
     sget-object v0, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
@@ -315,7 +315,7 @@
 
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1287
+    .line 1290
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animators:Ljava/util/ArrayList;
 
     sget-object v0, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -330,7 +330,7 @@
 
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1289
+    .line 1292
     :cond_1
     invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
@@ -360,7 +360,7 @@
 .method protected onLayout(ZIIII)V
     .locals 1
 
-    .line 1257
+    .line 1260
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result p1
@@ -372,12 +372,12 @@
     :goto_0
     if-ge p3, p1, :cond_0
 
-    .line 1259
+    .line 1262
     invoke-virtual {p0, p3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object p4
 
-    .line 1260
+    .line 1263
     invoke-virtual {p4}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result p5
@@ -399,19 +399,19 @@
 .method protected onMeasure(II)V
     .locals 13
 
-    .line 1136
+    .line 1139
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result p2
 
-    .line 1137
+    .line 1140
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
     const/16 v0, 0x1a
 
-    .line 1138
+    .line 1141
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -420,12 +420,12 @@
 
     const/16 v1, 0xa
 
-    .line 1140
+    .line 1143
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    .line 1142
+    .line 1145
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -443,12 +443,12 @@
 
     if-ge v4, p2, :cond_8
 
-    .line 1145
+    .line 1148
     invoke-virtual {p0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v8
 
-    .line 1146
+    .line 1149
     instance-of v9, v8, Lorg/telegram/ui/Components/GroupCreateSpan;
 
     if-nez v9, :cond_0
@@ -458,7 +458,7 @@
     :cond_0
     const/high16 v9, -0x80000000
 
-    .line 1149
+    .line 1152
     invoke-static {p1, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v9
@@ -477,7 +477,7 @@
 
     invoke-virtual {v8, v9, v10}, Landroid/view/View;->measure(II)V
 
-    .line 1150
+    .line 1153
     iget-object v9, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->removingSpan:Landroid/view/View;
 
     const/16 v10, 0x8
@@ -492,7 +492,7 @@
 
     if-le v9, v0, :cond_1
 
-    .line 1151
+    .line 1154
     invoke-virtual {v8}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v5
@@ -507,7 +507,7 @@
 
     move v5, v3
 
-    .line 1154
+    .line 1157
     :cond_1
     invoke-virtual {v8}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -517,7 +517,7 @@
 
     if-le v9, v0, :cond_2
 
-    .line 1155
+    .line 1158
     invoke-virtual {v8}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v6
@@ -535,24 +535,24 @@
     :cond_2
     const/16 v9, 0xd
 
-    .line 1158
+    .line 1161
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
     add-int/2addr v10, v5
 
-    .line 1159
+    .line 1162
     iget-boolean v11, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animationStarted:Z
 
     if-nez v11, :cond_6
 
-    .line 1160
+    .line 1163
     iget-object v11, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->removingSpan:Landroid/view/View;
 
     if-ne v8, v11, :cond_3
 
-    .line 1161
+    .line 1164
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -565,7 +565,7 @@
 
     int-to-float v7, v1
 
-    .line 1162
+    .line 1165
     invoke-virtual {v8, v7}, Landroid/view/View;->setTranslationY(F)V
 
     goto :goto_1
@@ -573,7 +573,7 @@
     :cond_3
     if-eqz v11, :cond_5
 
-    .line 1164
+    .line 1167
     invoke-virtual {v8}, Landroid/view/View;->getTranslationX()F
 
     move-result v9
@@ -584,7 +584,7 @@
 
     if-eqz v9, :cond_4
 
-    .line 1165
+    .line 1168
     iget-object v9, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animators:Ljava/util/ArrayList;
 
     sget-object v11, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
@@ -599,7 +599,7 @@
 
     invoke-virtual {v9, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1167
+    .line 1170
     :cond_4
     invoke-virtual {v8}, Landroid/view/View;->getTranslationY()F
 
@@ -611,7 +611,7 @@
 
     if-eqz v9, :cond_6
 
-    .line 1168
+    .line 1171
     iget-object v9, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animators:Ljava/util/ArrayList;
 
     sget-object v11, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -631,15 +631,15 @@
     :cond_5
     int-to-float v7, v10
 
-    .line 1171
+    .line 1174
     invoke-virtual {v8, v7}, Landroid/view/View;->setTranslationX(F)V
 
     int-to-float v7, v2
 
-    .line 1172
+    .line 1175
     invoke-virtual {v8, v7}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1175
+    .line 1178
     :cond_6
     :goto_1
     iget-object v7, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->removingSpan:Landroid/view/View;
@@ -648,7 +648,7 @@
 
     if-eq v8, v7, :cond_7
 
-    .line 1176
+    .line 1179
     invoke-virtual {v8}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v7
@@ -661,7 +661,7 @@
 
     add-int/2addr v5, v7
 
-    .line 1178
+    .line 1181
     :cond_7
     invoke-virtual {v8}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -683,21 +683,21 @@
     :cond_8
     const/16 p2, 0x2a
 
-    .line 1181
+    .line 1184
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     add-int/2addr v1, v0
 
-    .line 1182
+    .line 1185
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
     add-int/2addr v2, p2
 
-    .line 1185
+    .line 1188
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$1100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Lorg/telegram/ui/Components/InviteMembersBottomSheet$InviteMembersBottomSheetDelegate;
@@ -706,7 +706,7 @@
 
     if-eqz p2, :cond_a
 
-    .line 1186
+    .line 1189
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$2900(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Z
@@ -732,7 +732,7 @@
 
     goto :goto_3
 
-    .line 1188
+    .line 1191
     :cond_a
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -756,7 +756,7 @@
 
     move-result p2
 
-    .line 1190
+    .line 1193
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -764,7 +764,7 @@
 
     move-result v0
 
-    .line 1191
+    .line 1194
     iget-object v4, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$1100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Lorg/telegram/ui/Components/InviteMembersBottomSheet$InviteMembersBottomSheetDelegate;
@@ -799,7 +799,7 @@
     :goto_4
     invoke-static {v4, v5}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$2802(Lorg/telegram/ui/Components/InviteMembersBottomSheet;I)I
 
-    .line 1192
+    .line 1195
     iget-object v4, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$1000(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)I
@@ -818,13 +818,13 @@
 
     if-eq v0, v4, :cond_d
 
-    .line 1193
+    .line 1196
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0, p2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$1002(Lorg/telegram/ui/Components/InviteMembersBottomSheet;I)I
 
-    .line 1194
+    .line 1197
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -849,7 +849,7 @@
 
     if-lez p2, :cond_d
 
-    .line 1195
+    .line 1198
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -860,7 +860,7 @@
 
     if-eqz p2, :cond_d
 
-    .line 1197
+    .line 1200
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -871,7 +871,7 @@
 
     invoke-virtual {v0, v3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 1198
+    .line 1201
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/UsersAlertBase;->layoutManager:Lorg/telegram/ui/Components/FillLastLinearLayoutManager;
@@ -894,7 +894,7 @@
 
     invoke-virtual {v0, v3, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 1199
+    .line 1202
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -907,21 +907,21 @@
 
     new-array p2, v5, [F
 
-    .line 1200
+    .line 1203
     fill-array-data p2, :array_0
 
     invoke-static {p2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p2
 
-    .line 1201
+    .line 1204
     new-instance v0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer$1;-><init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;)V
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1207
+    .line 1210
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -940,7 +940,7 @@
 
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 1213
+    .line 1216
     :cond_d
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -952,7 +952,7 @@
 
     move-result p2
 
-    .line 1214
+    .line 1217
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3000(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)I
@@ -963,7 +963,7 @@
 
     new-array v0, v5, [I
 
-    .line 1215
+    .line 1218
     iget-object v4, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3000(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)I
@@ -978,19 +978,19 @@
 
     move-result-object v0
 
-    .line 1216
+    .line 1219
     new-instance v3, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer$$ExternalSyntheticLambda0;
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;)V
 
     invoke-virtual {v0, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1220
+    .line 1223
     iget-object v3, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animators:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1223
+    .line 1226
     :cond_e
     iget-boolean v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->addAnimation:Z
 
@@ -1004,7 +1004,7 @@
 
     if-le v2, v0, :cond_f
 
-    .line 1224
+    .line 1227
     new-instance v0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0, v2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;I)V
@@ -1013,7 +1013,7 @@
 
     goto :goto_5
 
-    .line 1225
+    .line 1228
     :cond_f
     iget-boolean v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->addAnimation:Z
 
@@ -1043,21 +1043,21 @@
 
     if-le v0, v2, :cond_10
 
-    .line 1226
+    .line 1229
     new-instance v0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0, v2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;I)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1229
+    .line 1232
     :cond_10
     :goto_5
     iget-boolean v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animationStarted:Z
 
     if-nez v0, :cond_11
 
-    .line 1230
+    .line 1233
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -1066,7 +1066,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 1231
+    .line 1234
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -1077,7 +1077,7 @@
 
     invoke-virtual {v0, v3}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 1232
+    .line 1235
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -1090,7 +1090,7 @@
 
     invoke-virtual {v0, v3}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1240
+    .line 1243
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -1099,10 +1099,10 @@
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1241
+    .line 1244
     iput-boolean v7, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animationStarted:Z
 
-    .line 1245
+    .line 1248
     :cond_11
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -1112,12 +1112,12 @@
 
     if-nez v0, :cond_12
 
-    .line 1246
+    .line 1249
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0, p2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3002(Lorg/telegram/ui/Components/InviteMembersBottomSheet;I)I
 
-    .line 1247
+    .line 1250
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3200(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/view/ViewGroup;
@@ -1126,7 +1126,7 @@
 
     invoke-virtual {p2}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 1250
+    .line 1253
     :cond_12
     invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
 
@@ -1134,7 +1134,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/view/ViewGroup;->setMeasuredDimension(II)V
 
-    .line 1252
+    .line 1255
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/UsersAlertBase;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -1159,10 +1159,10 @@
 
     const/4 v0, 0x0
 
-    .line 1293
+    .line 1296
     iput-boolean v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->addAnimation:Z
 
-    .line 1295
+    .line 1298
     iget-object v1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroidx/collection/LongSparseArray;
@@ -1177,10 +1177,10 @@
 
     const/4 v1, 0x0
 
-    .line 1296
+    .line 1299
     invoke-virtual {p1, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1298
+    .line 1301
     iget-object v1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -1189,7 +1189,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1299
+    .line 1302
     iget-object v1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -1198,7 +1198,7 @@
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->setupEndValues()V
 
-    .line 1300
+    .line 1303
     iget-object v1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -1207,11 +1207,11 @@
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1302
+    .line 1305
     :cond_0
     iput-boolean v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animationStarted:Z
 
-    .line 1303
+    .line 1306
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     new-instance v1, Landroid/animation/AnimatorSet;
@@ -1220,7 +1220,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3102(Lorg/telegram/ui/Components/InviteMembersBottomSheet;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 1304
+    .line 1307
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -1233,7 +1233,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1313
+    .line 1316
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$3100(Lorg/telegram/ui/Components/InviteMembersBottomSheet;)Landroid/animation/AnimatorSet;
@@ -1244,15 +1244,15 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1314
+    .line 1317
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->removingSpan:Landroid/view/View;
 
-    .line 1315
+    .line 1318
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animators:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 1316
+    .line 1319
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animators:Ljava/util/ArrayList;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->removingSpan:Landroid/view/View;
@@ -1271,7 +1271,7 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1317
+    .line 1320
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animators:Ljava/util/ArrayList;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->removingSpan:Landroid/view/View;
@@ -1288,7 +1288,7 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1318
+    .line 1321
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->animators:Ljava/util/ArrayList;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SpansContainer;->removingSpan:Landroid/view/View;
@@ -1305,7 +1305,7 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1319
+    .line 1322
     invoke-virtual {p0}, Landroid/view/ViewGroup;->requestLayout()V
 
     return-void

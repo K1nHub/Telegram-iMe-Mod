@@ -179,7 +179,7 @@ public class ConstraintAnchor {
         if (type == type2) {
             return type2 != Type.BASELINE || (constraintAnchor.getOwner().hasBaseline() && getOwner().hasBaseline());
         }
-        switch (C01001.f21x6930e354[type2.ordinal()]) {
+        switch (C01061.f21x6930e354[type2.ordinal()]) {
             case 1:
                 return (type == Type.BASELINE || type == Type.CENTER_X || type == Type.CENTER_Y) ? false : true;
             case 2:
@@ -216,7 +216,7 @@ public class ConstraintAnchor {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: androidx.constraintlayout.core.widgets.ConstraintAnchor$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C01001 {
+    public static /* synthetic */ class C01061 {
 
         /* renamed from: $SwitchMap$androidx$constraintlayout$core$widgets$ConstraintAnchor$Type */
         static final /* synthetic */ int[] f21x6930e354;
@@ -268,7 +268,7 @@ public class ConstraintAnchor {
     }
 
     public final ConstraintAnchor getOpposite() {
-        switch (C01001.f21x6930e354[this.mType.ordinal()]) {
+        switch (C01061.f21x6930e354[this.mType.ordinal()]) {
             case 1:
             case 6:
             case 7:

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAvatarContainer;Landroid/view/View;II)V
     .locals 0
 
-    .line 345
+    .line 372
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$3;->this$0:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;-><init>(Landroid/view/View;II)V
@@ -35,10 +35,10 @@
 .method public dismiss()V
     .locals 2
 
-    .line 348
+    .line 375
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
-    .line 349
+    .line 376
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$3;->this$0:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->access$000(Lorg/telegram/ui/Components/ChatAvatarContainer;)Lorg/telegram/ui/ChatActivity;
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 350
+    .line 377
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$3;->this$0:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->access$000(Lorg/telegram/ui/Components/ChatAvatarContainer;)Lorg/telegram/ui/ChatActivity;

@@ -46,17 +46,17 @@
 .method private constructor <init>(Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler$TagHandler;)V
     .locals 1
 
-    .line 128
+    .line 159
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 126
+    .line 157
     new-instance v0, Ljava/util/ArrayDeque;
 
     invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->tagStatus:Ljava/util/ArrayDeque;
 
-    .line 129
+    .line 160
     iput-object p1, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->handler:Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler$TagHandler;
 
     return-void
@@ -65,7 +65,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler$TagHandler;Lorg/telegram/messenger/utils/CopyUtilities$1;)V
     .locals 0
 
-    .line 109
+    .line 140
     invoke-direct {p0, p1}, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;-><init>(Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler$TagHandler;)V
 
     return-void
@@ -74,7 +74,7 @@
 .method public static getValue(Lorg/xml/sax/Attributes;Ljava/lang/String;)Ljava/lang/String;
     .locals 3
 
-    .line 115
+    .line 146
     invoke-interface {p0}, Lorg/xml/sax/Attributes;->getLength()I
 
     move-result v0
@@ -84,7 +84,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 116
+    .line 147
     invoke-interface {p0, v1}, Lorg/xml/sax/Attributes;->getLocalName(I)Ljava/lang/String;
 
     move-result-object v2
@@ -95,7 +95,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 117
+    .line 148
     invoke-interface {p0, v1}, Lorg/xml/sax/Attributes;->getValue(I)Ljava/lang/String;
 
     move-result-object p0
@@ -123,7 +123,7 @@
         }
     .end annotation
 
-    .line 186
+    .line 217
     iget-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->wrapped:Lorg/xml/sax/ContentHandler;
 
     invoke-interface {v0, p1, p2, p3}, Lorg/xml/sax/ContentHandler;->characters([CII)V
@@ -139,7 +139,7 @@
         }
     .end annotation
 
-    .line 171
+    .line 202
     iget-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->wrapped:Lorg/xml/sax/ContentHandler;
 
     invoke-interface {v0}, Lorg/xml/sax/ContentHandler;->endDocument()V
@@ -155,7 +155,7 @@
         }
     .end annotation
 
-    .line 153
+    .line 184
     iget-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->tagStatus:Ljava/util/ArrayDeque;
 
     invoke-virtual {v0}, Ljava/util/ArrayDeque;->removeLast()Ljava/lang/Object;
@@ -170,12 +170,12 @@
 
     if-nez v0, :cond_0
 
-    .line 154
+    .line 185
     iget-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->wrapped:Lorg/xml/sax/ContentHandler;
 
     invoke-interface {v0, p1, p2, p3}, Lorg/xml/sax/ContentHandler;->endElement(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 156
+    .line 187
     :cond_0
     iget-object p1, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->handler:Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler$TagHandler;
 
@@ -198,7 +198,7 @@
         }
     .end annotation
 
-    .line 181
+    .line 212
     iget-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->wrapped:Lorg/xml/sax/ContentHandler;
 
     invoke-interface {v0, p1}, Lorg/xml/sax/ContentHandler;->endPrefixMapping(Ljava/lang/String;)V
@@ -209,25 +209,25 @@
 .method public handleTag(ZLjava/lang/String;Landroid/text/Editable;Lorg/xml/sax/XMLReader;)V
     .locals 0
 
-    .line 134
+    .line 165
     iget-object p1, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->wrapped:Lorg/xml/sax/ContentHandler;
 
     if-nez p1, :cond_0
 
-    .line 135
+    .line 166
     iput-object p3, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->text:Landroid/text/Editable;
 
-    .line 136
+    .line 167
     invoke-interface {p4}, Lorg/xml/sax/XMLReader;->getContentHandler()Lorg/xml/sax/ContentHandler;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->wrapped:Lorg/xml/sax/ContentHandler;
 
-    .line 137
+    .line 168
     invoke-interface {p4, p0}, Lorg/xml/sax/XMLReader;->setContentHandler(Lorg/xml/sax/ContentHandler;)V
 
-    .line 138
+    .line 169
     iget-object p1, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->tagStatus:Ljava/util/ArrayDeque;
 
     sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
@@ -246,7 +246,7 @@
         }
     .end annotation
 
-    .line 191
+    .line 222
     iget-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->wrapped:Lorg/xml/sax/ContentHandler;
 
     invoke-interface {v0, p1, p2, p3}, Lorg/xml/sax/ContentHandler;->ignorableWhitespace([CII)V
@@ -262,7 +262,7 @@
         }
     .end annotation
 
-    .line 196
+    .line 227
     iget-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->wrapped:Lorg/xml/sax/ContentHandler;
 
     invoke-interface {v0, p1, p2}, Lorg/xml/sax/ContentHandler;->processingInstruction(Ljava/lang/String;Ljava/lang/String;)V
@@ -273,7 +273,7 @@
 .method public setDocumentLocator(Lorg/xml/sax/Locator;)V
     .locals 1
 
-    .line 161
+    .line 192
     iget-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->wrapped:Lorg/xml/sax/ContentHandler;
 
     invoke-interface {v0, p1}, Lorg/xml/sax/ContentHandler;->setDocumentLocator(Lorg/xml/sax/Locator;)V
@@ -289,7 +289,7 @@
         }
     .end annotation
 
-    .line 201
+    .line 232
     iget-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->wrapped:Lorg/xml/sax/ContentHandler;
 
     invoke-interface {v0, p1}, Lorg/xml/sax/ContentHandler;->skippedEntity(Ljava/lang/String;)V
@@ -305,7 +305,7 @@
         }
     .end annotation
 
-    .line 166
+    .line 197
     iget-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->wrapped:Lorg/xml/sax/ContentHandler;
 
     invoke-interface {v0}, Lorg/xml/sax/ContentHandler;->startDocument()V
@@ -321,7 +321,7 @@
         }
     .end annotation
 
-    .line 144
+    .line 175
     iget-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->handler:Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler$TagHandler;
 
     iget-object v1, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->text:Landroid/text/Editable;
@@ -332,7 +332,7 @@
 
     move-result v0
 
-    .line 145
+    .line 176
     iget-object v1, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->tagStatus:Ljava/util/ArrayDeque;
 
     invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -343,7 +343,7 @@
 
     if-nez v0, :cond_0
 
-    .line 147
+    .line 178
     iget-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->wrapped:Lorg/xml/sax/ContentHandler;
 
     invoke-interface {v0, p1, p2, p3, p4}, Lorg/xml/sax/ContentHandler;->startElement(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V
@@ -360,7 +360,7 @@
         }
     .end annotation
 
-    .line 176
+    .line 207
     iget-object v0, p0, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;->wrapped:Lorg/xml/sax/ContentHandler;
 
     invoke-interface {v0, p1, p2}, Lorg/xml/sax/ContentHandler;->startPrefixMapping(Ljava/lang/String;Ljava/lang/String;)V

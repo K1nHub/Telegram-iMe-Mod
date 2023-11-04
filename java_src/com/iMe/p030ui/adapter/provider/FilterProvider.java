@@ -17,10 +17,10 @@ import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* compiled from: FilterProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.FilterProvider */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class FilterProvider extends BaseNodeProvider<FiltersListItem> {
     private final FiltersDiffCallback filtersDiffCallback;
     private final FiltersRecycleAdapter filtersRecycleAdapter;
@@ -42,7 +42,7 @@ public final class FilterProvider extends BaseNodeProvider<FiltersListItem> {
         Intrinsics.checkNotNullParameter(filtersRecycleAdapter, "filtersRecycleAdapter");
         this.filtersRecycleAdapter = filtersRecycleAdapter;
         this.itemViewType = IdFabric$ViewTypes.FILTERS_LIST;
-        this.layoutId = C3630R.layout.fork_recycle_item_filters_list;
+        this.layoutId = C3634R.layout.fork_recycle_item_filters_list;
         this.filtersDiffCallback = new FiltersDiffCallback();
     }
 
@@ -67,7 +67,7 @@ public final class FilterProvider extends BaseNodeProvider<FiltersListItem> {
     public final void onViewRecycled(BaseViewHolder holder) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         if (BaseQuickAdapterExtKt.isViewType(holder, getItemViewType())) {
-            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3630R.C3633id.recycle_filters)).getLayoutManager();
+            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3634R.C3637id.recycle_filters)).getLayoutManager();
             this.filtersScrollState = layoutManager != null ? layoutManager.onSaveInstanceState() : null;
         }
     }
@@ -76,7 +76,7 @@ public final class FilterProvider extends BaseNodeProvider<FiltersListItem> {
     public void convert(BaseViewHolder helper, final FiltersListItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(helper, C3630R.C3633id.recycle_filters, new Function1<RecyclerView, Unit>() { // from class: com.iMe.ui.adapter.provider.FilterProvider$convert$1
+        BaseQuickAdapterExtKt.applyForView(helper, C3634R.C3637id.recycle_filters, new Function1<RecyclerView, Unit>() { // from class: com.iMe.ui.adapter.provider.FilterProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {

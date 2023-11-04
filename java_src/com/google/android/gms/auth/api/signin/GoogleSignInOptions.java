@@ -47,25 +47,25 @@ public class GoogleSignInOptions extends AbstractSafeParcelable implements Api.A
     @VisibleForTesting
     public static final Scope zae;
     private static Comparator zag;
-    @SafeParcelable.VersionField(m1086id = 1)
+    @SafeParcelable.VersionField(m1087id = 1)
     final int zaf;
-    @SafeParcelable.Field(getter = "getScopes", m1089id = 2)
+    @SafeParcelable.Field(getter = "getScopes", m1090id = 2)
     private final ArrayList zah;
-    @SafeParcelable.Field(getter = "getAccount", m1089id = 3)
+    @SafeParcelable.Field(getter = "getAccount", m1090id = 3)
     private Account zai;
-    @SafeParcelable.Field(getter = "isIdTokenRequested", m1089id = 4)
+    @SafeParcelable.Field(getter = "isIdTokenRequested", m1090id = 4)
     private boolean zaj;
-    @SafeParcelable.Field(getter = "isServerAuthCodeRequested", m1089id = 5)
+    @SafeParcelable.Field(getter = "isServerAuthCodeRequested", m1090id = 5)
     private final boolean zak;
-    @SafeParcelable.Field(getter = "isForceCodeForRefreshToken", m1089id = 6)
+    @SafeParcelable.Field(getter = "isForceCodeForRefreshToken", m1090id = 6)
     private final boolean zal;
-    @SafeParcelable.Field(getter = "getServerClientId", m1089id = 7)
+    @SafeParcelable.Field(getter = "getServerClientId", m1090id = 7)
     private String zam;
-    @SafeParcelable.Field(getter = "getHostedDomain", m1089id = 8)
+    @SafeParcelable.Field(getter = "getHostedDomain", m1090id = 8)
     private String zan;
-    @SafeParcelable.Field(getter = "getExtensions", m1089id = 9)
+    @SafeParcelable.Field(getter = "getExtensions", m1090id = 9)
     private ArrayList zao;
-    @SafeParcelable.Field(getter = "getLogSessionId", m1089id = 10)
+    @SafeParcelable.Field(getter = "getLogSessionId", m1090id = 10)
     private String zap;
     private Map zaq;
 
@@ -214,7 +214,7 @@ public class GoogleSignInOptions extends AbstractSafeParcelable implements Api.A
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public GoogleSignInOptions(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) ArrayList arrayList, @SafeParcelable.Param(m1088id = 3) Account account, @SafeParcelable.Param(m1088id = 4) boolean z, @SafeParcelable.Param(m1088id = 5) boolean z2, @SafeParcelable.Param(m1088id = 6) boolean z3, @SafeParcelable.Param(m1088id = 7) String str, @SafeParcelable.Param(m1088id = 8) String str2, @SafeParcelable.Param(m1088id = 9) ArrayList arrayList2, @SafeParcelable.Param(m1088id = 10) String str3) {
+    public GoogleSignInOptions(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) ArrayList arrayList, @SafeParcelable.Param(m1089id = 3) Account account, @SafeParcelable.Param(m1089id = 4) boolean z, @SafeParcelable.Param(m1089id = 5) boolean z2, @SafeParcelable.Param(m1089id = 6) boolean z3, @SafeParcelable.Param(m1089id = 7) String str, @SafeParcelable.Param(m1089id = 8) String str2, @SafeParcelable.Param(m1089id = 9) ArrayList arrayList2, @SafeParcelable.Param(m1089id = 10) String str3) {
         this(i, arrayList, account, z, z2, z3, str, str2, zam(arrayList2), str3);
     }
 

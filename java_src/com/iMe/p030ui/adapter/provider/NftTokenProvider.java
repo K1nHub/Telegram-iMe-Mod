@@ -10,17 +10,17 @@ import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.BackupImageView;
-import org.telegram.p042ui.Components.LoadingDrawable;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.BackupImageView;
+import org.telegram.p043ui.Components.LoadingDrawable;
 /* compiled from: NftTokenProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.NftTokenProvider */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class NftTokenProvider extends BaseNodeProvider<NftTokenItem> {
     private int spanCount = 4;
     private final int itemViewType = IdFabric$ViewTypes.NFT_AVATAR;
-    private final int layoutId = C3630R.layout.fork_recycle_item_nft_token;
+    private final int layoutId = C3634R.layout.fork_recycle_item_nft_token;
     private final int spacing = ViewExtKt.getDpToPx(16);
 
     public final void setSpanCount(int i) {
@@ -47,8 +47,8 @@ public final class NftTokenProvider extends BaseNodeProvider<NftTokenItem> {
         int i3 = this.spacing;
         final int i4 = i3 - ((i2 * i3) / i);
         final int i5 = ((i2 + 1) * i3) / i;
-        int i6 = C3630R.C3633id.card_nft_token;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i6, false), i6, Theme.key_windowBackgroundWhite), C3630R.C3633id.nft_root_view, new Function1<NftRootView, Unit>() { // from class: com.iMe.ui.adapter.provider.NftTokenProvider$convert$1
+        int i6 = C3634R.C3637id.card_nft_token;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i6, false), i6, Theme.key_windowBackgroundWhite), C3634R.C3637id.nft_root_view, new Function1<NftRootView, Unit>() { // from class: com.iMe.ui.adapter.provider.NftTokenProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -68,7 +68,7 @@ public final class NftTokenProvider extends BaseNodeProvider<NftTokenItem> {
                 applyForView.setNftTokenType(NftTokenItem.this.getNftType());
                 applyForView.setPadding(i4, applyForView.getPaddingTop(), i5, applyForView.getPaddingBottom());
             }
-        }), C3630R.C3633id.image_nft_image, new Function1<BackupImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.NftTokenProvider$convert$2
+        }), C3634R.C3637id.image_nft_image, new Function1<BackupImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.NftTokenProvider$convert$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

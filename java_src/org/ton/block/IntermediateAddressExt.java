@@ -44,7 +44,7 @@ public final class IntermediateAddressExt implements IntermediateAddress {
     }
 
     public int hashCode() {
-        return (this.workchainId * 31) + ULong.m1991hashCodeimpl(this.addrPfx);
+        return (this.workchainId * 31) + ULong.m1996hashCodeimpl(this.addrPfx);
     }
 
     private IntermediateAddressExt(int i, int i2, ULong uLong, SerializationConstructorMarker serializationConstructorMarker) {
@@ -52,7 +52,7 @@ public final class IntermediateAddressExt implements IntermediateAddress {
             PluginExceptionsKt.throwMissingFieldException(i, 3, IntermediateAddressExt$$serializer.INSTANCE.getDescriptor());
         }
         this.workchainId = i2;
-        this.addrPfx = uLong.m1993unboximpl();
+        this.addrPfx = uLong.m1998unboximpl();
     }
 
     private IntermediateAddressExt(int i, long j) {
@@ -62,7 +62,7 @@ public final class IntermediateAddressExt implements IntermediateAddress {
 
     public static final /* synthetic */ void write$Self(IntermediateAddressExt intermediateAddressExt, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         compositeEncoder.encodeIntElement(serialDescriptor, 0, intermediateAddressExt.workchainId);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1988boximpl(intermediateAddressExt.addrPfx));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1993boximpl(intermediateAddressExt.addrPfx));
     }
 
     public final int getWorkchainId() {
@@ -70,7 +70,7 @@ public final class IntermediateAddressExt implements IntermediateAddress {
     }
 
     /* renamed from: getAddrPfx-s-VKNKU  reason: not valid java name */
-    public final long m4963getAddrPfxsVKNKU() {
+    public final long m5117getAddrPfxsVKNKU() {
         return this.addrPfx;
     }
 
@@ -125,7 +125,7 @@ public final class IntermediateAddressExt implements IntermediateAddress {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("interm_addr_ext");
         open.field("workchain_id", Integer.valueOf(this.workchainId));
-        open.field("addr_pfx", ULong.m1988boximpl(this.addrPfx));
+        open.field("addr_pfx", ULong.m1993boximpl(this.addrPfx));
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

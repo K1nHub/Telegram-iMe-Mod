@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda5;->f$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$wxFUwjMZZBvLopFp6c_nloycAYA(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$mLVFjlnPoDNEXn0N7WBhi16G8Rc(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;)V
 
     return-void
 .end method

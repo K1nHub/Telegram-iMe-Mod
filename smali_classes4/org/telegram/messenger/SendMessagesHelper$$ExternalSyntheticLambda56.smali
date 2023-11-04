@@ -10,19 +10,21 @@
 
 .field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$Message;
 
-.field public final synthetic f$3:Ljava/util/ArrayList;
+.field public final synthetic f$3:Lorg/telegram/tgnet/TLObject;
 
-.field public final synthetic f$4:Ljava/util/ArrayList;
+.field public final synthetic f$4:Lorg/telegram/messenger/MessageObject;
 
-.field public final synthetic f$5:Z
+.field public final synthetic f$5:Ljava/lang/String;
 
-.field public final synthetic f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_sendMultiMedia;
+.field public final synthetic f$6:Z
+
+.field public final synthetic f$7:Lorg/telegram/tgnet/TLObject;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/SendMessagesHelper;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Ljava/util/ArrayList;Ljava/util/ArrayList;ZLorg/telegram/tgnet/TLRPC$TL_messages_sendMultiMedia;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/SendMessagesHelper;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MessageObject;Ljava/lang/String;ZLorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,15 +33,17 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    iput-object p3, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$2:Lorg/telegram/tgnet/TLObject;
+    iput-object p3, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$2:Lorg/telegram/tgnet/TLRPC$Message;
 
-    iput-object p4, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$3:Ljava/util/ArrayList;
+    iput-object p4, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$3:Lorg/telegram/tgnet/TLObject;
 
-    iput-object p5, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$4:Ljava/util/ArrayList;
+    iput-object p5, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$4:Lorg/telegram/messenger/MessageObject;
 
-    iput-boolean p6, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$5:Z
+    iput-object p6, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$5:Ljava/lang/String;
 
-    iput-object p7, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_sendMultiMedia;
+    iput-boolean p7, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$6:Z
+
+    iput-object p8, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$7:Lorg/telegram/tgnet/TLObject;
 
     return-void
 .end method
@@ -47,23 +51,25 @@
 
 # virtual methods
 .method public final run()V
-    .locals 7
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$0:Lorg/telegram/messenger/SendMessagesHelper;
 
     iget-object v1, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    iget-object v2, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$2:Lorg/telegram/tgnet/TLObject;
+    iget-object v2, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$2:Lorg/telegram/tgnet/TLRPC$Message;
 
-    iget-object v3, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$3:Ljava/util/ArrayList;
+    iget-object v3, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$3:Lorg/telegram/tgnet/TLObject;
 
-    iget-object v4, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$4:Ljava/util/ArrayList;
+    iget-object v4, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$4:Lorg/telegram/messenger/MessageObject;
 
-    iget-boolean v5, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$5:Z
+    iget-object v5, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$5:Ljava/lang/String;
 
-    iget-object v6, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_sendMultiMedia;
+    iget-boolean v6, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$6:Z
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$2FmlknlxRppTV5iD0SnH4-2Jwzc(Lorg/telegram/messenger/SendMessagesHelper;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Ljava/util/ArrayList;Ljava/util/ArrayList;ZLorg/telegram/tgnet/TLRPC$TL_messages_sendMultiMedia;)V
+    iget-object v7, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda56;->f$7:Lorg/telegram/tgnet/TLObject;
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$zfKlNI0NFu9-sbDO6CO3q6ZEqtI(Lorg/telegram/messenger/SendMessagesHelper;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/tgnet/TLObject;Lorg/telegram/messenger/MessageObject;Ljava/lang/String;ZLorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method

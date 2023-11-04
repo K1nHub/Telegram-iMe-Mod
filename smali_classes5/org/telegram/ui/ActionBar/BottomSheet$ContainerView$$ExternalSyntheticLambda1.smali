@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;->$r8$lambda$Z6zqSyBAKh364FKKOwPSVaPr21Q(Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;->$r8$lambda$i4ZKz2o_gTJ-uwhBVmqinXkwmv8(Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

@@ -1267,6 +1267,25 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
         }
     }
 
+    public void smoothScrollBy(int i, int i2, int i3, Interpolator interpolator) {
+        LayoutManager layoutManager = this.mLayout;
+        if (layoutManager == null) {
+            Log.e("RecyclerView", "Cannot smooth scroll without a LayoutManager set. Call setLayoutManager with a non-null argument.");
+        } else if (this.mLayoutSuppressed) {
+        } else {
+            if (!layoutManager.canScrollHorizontally()) {
+                i = 0;
+            }
+            if (!this.mLayout.canScrollVertically()) {
+                i2 = 0;
+            }
+            if (i == 0 && i2 == 0) {
+                return;
+            }
+            this.mViewFlinger.smoothScrollBy(i, i2, i3, interpolator);
+        }
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r0v1, types: [boolean] */
     /* JADX WARN: Type inference failed for: r0v6 */

@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x2eb6767
-
-
 # instance fields
 .field public free:Z
 
@@ -14,16 +10,10 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 2445
+    .line 2092
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;-><init>()V
 
     return-void
@@ -34,7 +24,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 2452
+    .line 2099
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -56,7 +46,7 @@
     :cond_0
     move v1, v2
 
-    .line 2453
+    .line 2100
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeCustomEmoji;->free:Z
 
@@ -66,18 +56,18 @@
 
     move v2, v3
 
-    .line 2454
+    .line 2101
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeCustomEmoji;->text_color:Z
 
-    .line 2455
+    .line 2102
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->alt:Ljava/lang/String;
 
-    .line 2456
+    .line 2103
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -94,12 +84,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 2460
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeCustomEmoji;->constructor:I
+    const v0, -0x2eb6767
 
+    .line 2107
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2461
+    .line 2108
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeCustomEmoji;->free:Z
 
     if-eqz v0, :cond_0
@@ -118,7 +108,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
-    .line 2462
+    .line 2109
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeCustomEmoji;->text_color:Z
 
     if-eqz v1, :cond_1
@@ -133,15 +123,15 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
-    .line 2463
+    .line 2110
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2464
+    .line 2111
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->alt:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 2465
+    .line 2112
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->stickerset:Lorg/telegram/tgnet/TLRPC$InputStickerSet;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

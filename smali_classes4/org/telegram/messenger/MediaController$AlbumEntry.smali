@@ -48,30 +48,30 @@
 .method public constructor <init>(ILjava/lang/String;Lorg/telegram/messenger/MediaController$PhotoEntry;)V
     .locals 1
 
-    .line 230
+    .line 235
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 227
+    .line 232
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MediaController$AlbumEntry;->photos:Ljava/util/ArrayList;
 
-    .line 228
+    .line 233
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MediaController$AlbumEntry;->photosByIds:Landroid/util/SparseArray;
 
-    .line 231
+    .line 236
     iput p1, p0, Lorg/telegram/messenger/MediaController$AlbumEntry;->bucketId:I
 
-    .line 232
+    .line 237
     iput-object p2, p0, Lorg/telegram/messenger/MediaController$AlbumEntry;->bucketName:Ljava/lang/String;
 
-    .line 233
+    .line 238
     iput-object p3, p0, Lorg/telegram/messenger/MediaController$AlbumEntry;->coverPhoto:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     return-void
@@ -82,12 +82,12 @@
 .method public addPhoto(Lorg/telegram/messenger/MediaController$PhotoEntry;)V
     .locals 2
 
-    .line 237
+    .line 242
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$AlbumEntry;->photos:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 238
+    .line 243
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$AlbumEntry;->photosByIds:Landroid/util/SparseArray;
 
     iget v1, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->imageId:I

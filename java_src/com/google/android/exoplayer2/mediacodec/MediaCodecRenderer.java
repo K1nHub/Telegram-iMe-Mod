@@ -8,7 +8,7 @@ import android.media.metrics.LogSessionId;
 import android.os.Bundle;
 import android.os.SystemClock;
 import com.google.android.exoplayer2.BaseRenderer;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
@@ -293,12 +293,12 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         this.outputBufferInfo = new MediaCodec.BufferInfo();
         this.currentPlaybackSpeed = 1.0f;
         this.targetPlaybackSpeed = 1.0f;
-        this.renderTimeLimitMs = C0479C.TIME_UNSET;
+        this.renderTimeLimitMs = C0485C.TIME_UNSET;
         this.pendingOutputStreamStartPositionsUs = new long[10];
         this.pendingOutputStreamOffsetsUs = new long[10];
         this.pendingOutputStreamSwitchTimesUs = new long[10];
-        this.outputStreamStartPositionUs = C0479C.TIME_UNSET;
-        setOutputStreamOffsetUs(C0479C.TIME_UNSET);
+        this.outputStreamStartPositionUs = C0485C.TIME_UNSET;
+        setOutputStreamOffsetUs(C0485C.TIME_UNSET);
         batchBuffer.ensureSpaceForWrite(0);
         batchBuffer.data.order(ByteOrder.nativeOrder());
         this.codecOperatingRate = -1.0f;
@@ -306,9 +306,9 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         this.codecReconfigurationState = 0;
         this.inputIndex = -1;
         this.outputIndex = -1;
-        this.codecHotswapDeadlineMs = C0479C.TIME_UNSET;
-        this.largestQueuedPresentationTimeUs = C0479C.TIME_UNSET;
-        this.lastBufferInStreamPresentationTimeUs = C0479C.TIME_UNSET;
+        this.codecHotswapDeadlineMs = C0485C.TIME_UNSET;
+        this.largestQueuedPresentationTimeUs = C0485C.TIME_UNSET;
+        this.lastBufferInStreamPresentationTimeUs = C0485C.TIME_UNSET;
         this.codecDrainState = 0;
         this.codecDrainAction = 0;
     }
@@ -421,15 +421,15 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.google.android.exoplayer2.BaseRenderer
     public void onStreamChanged(Format[] formatArr, long j, long j2) throws ExoPlaybackException {
-        if (this.outputStreamOffsetUs == C0479C.TIME_UNSET) {
-            Assertions.checkState(this.outputStreamStartPositionUs == C0479C.TIME_UNSET);
+        if (this.outputStreamOffsetUs == C0485C.TIME_UNSET) {
+            Assertions.checkState(this.outputStreamStartPositionUs == C0485C.TIME_UNSET);
             this.outputStreamStartPositionUs = j;
             setOutputStreamOffsetUs(j2);
             return;
         }
         int i = this.pendingOutputStreamOffsetCount;
         if (i == this.pendingOutputStreamOffsetsUs.length) {
-            Log.m1106w(TAG, "Too many stream changes, so dropping offset: " + this.pendingOutputStreamOffsetsUs[this.pendingOutputStreamOffsetCount - 1]);
+            Log.m1107w(TAG, "Too many stream changes, so dropping offset: " + this.pendingOutputStreamOffsetsUs[this.pendingOutputStreamOffsetCount - 1]);
         } else {
             this.pendingOutputStreamOffsetCount = i + 1;
         }
@@ -476,8 +476,8 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     @Override // com.google.android.exoplayer2.BaseRenderer
     public void onDisabled() {
         this.inputFormat = null;
-        this.outputStreamStartPositionUs = C0479C.TIME_UNSET;
-        setOutputStreamOffsetUs(C0479C.TIME_UNSET);
+        this.outputStreamStartPositionUs = C0485C.TIME_UNSET;
+        setOutputStreamOffsetUs(C0485C.TIME_UNSET);
         this.pendingOutputStreamOffsetCount = 0;
         flushOrReleaseCodec();
     }
@@ -609,7 +609,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                 try {
                     updateDrmSessionV23();
                 } catch (ExoPlaybackException e) {
-                    Log.m1105w(TAG, "Failed to update the DRM session, releasing the codec instead.", e);
+                    Log.m1106w(TAG, "Failed to update the DRM session, releasing the codec instead.", e);
                     releaseCodec();
                     return true;
                 }
@@ -631,7 +631,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     public void resetCodecStateForFlush() {
         resetInputBuffer();
         resetOutputBuffer();
-        this.codecHotswapDeadlineMs = C0479C.TIME_UNSET;
+        this.codecHotswapDeadlineMs = C0485C.TIME_UNSET;
         this.codecReceivedEos = false;
         this.codecReceivedBuffers = false;
         this.codecNeedsAdaptationWorkaroundBuffer = false;
@@ -639,8 +639,8 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         this.isDecodeOnlyOutputBuffer = false;
         this.isLastOutputBuffer = false;
         this.decodeOnlyPresentationTimestamps.clear();
-        this.largestQueuedPresentationTimeUs = C0479C.TIME_UNSET;
-        this.lastBufferInStreamPresentationTimeUs = C0479C.TIME_UNSET;
+        this.largestQueuedPresentationTimeUs = C0485C.TIME_UNSET;
+        this.lastBufferInStreamPresentationTimeUs = C0485C.TIME_UNSET;
         C2Mp3TimestampTracker c2Mp3TimestampTracker = this.c2Mp3TimestampTracker;
         if (c2Mp3TimestampTracker != null) {
             c2Mp3TimestampTracker.reset();
@@ -759,7 +759,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
             java.lang.String r4 = "MediaCodecRenderer"
             if (r2 != r0) goto L73
             java.lang.String r3 = "Preferred decoder instantiation failed. Sleeping for 50ms then retrying."
-            com.google.android.exoplayer2.util.Log.m1106w(r4, r3)     // Catch: java.lang.Exception -> L74
+            com.google.android.exoplayer2.util.Log.m1107w(r4, r3)     // Catch: java.lang.Exception -> L74
             r5 = 50
             java.lang.Thread.sleep(r5)     // Catch: java.lang.Exception -> L74
             r7.initCodec(r2, r8)     // Catch: java.lang.Exception -> L74
@@ -774,7 +774,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
             r5.append(r6)
             r5.append(r2)
             java.lang.String r5 = r5.toString()
-            com.google.android.exoplayer2.util.Log.m1105w(r4, r5, r3)
+            com.google.android.exoplayer2.util.Log.m1106w(r4, r5, r3)
             java.util.ArrayDeque<com.google.android.exoplayer2.mediacodec.MediaCodecInfo> r4 = r7.availableCodecInfos
             r4.removeFirst()
             com.google.android.exoplayer2.mediacodec.MediaCodecRenderer$DecoderInitializationException r4 = new com.google.android.exoplayer2.mediacodec.MediaCodecRenderer$DecoderInitializationException
@@ -814,7 +814,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         if (decoderInfos.isEmpty() && z) {
             decoderInfos = getDecoderInfos(this.mediaCodecSelector, this.inputFormat, false);
             if (!decoderInfos.isEmpty()) {
-                Log.m1106w(TAG, "Drm session requires secure decoder for " + this.inputFormat.sampleMimeType + ", but no secure decoder available. Trying to proceed with " + decoderInfos + ".");
+                Log.m1107w(TAG, "Drm session requires secure decoder for " + this.inputFormat.sampleMimeType + ", but no secure decoder available. Trying to proceed with " + decoderInfos + ".");
             }
         }
         return decoderInfos;
@@ -847,7 +847,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
             TraceUtil.endSection();
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
             if (!mediaCodecInfo.isFormatSupported(this.inputFormat)) {
-                Log.m1106w(TAG, Util.formatInvariant("Format exceeds selected codec's capabilities [%s, %s]", Format.toLogString(this.inputFormat), str));
+                Log.m1107w(TAG, Util.formatInvariant("Format exceeds selected codec's capabilities [%s, %s]", Format.toLogString(this.inputFormat), str));
             }
             this.codecInfo = mediaCodecInfo;
             this.codecOperatingRate = f;
@@ -881,7 +881,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
     }
 
     private boolean shouldContinueRendering(long j) {
-        return this.renderTimeLimitMs == C0479C.TIME_UNSET || SystemClock.elapsedRealtime() - j < this.renderTimeLimitMs;
+        return this.renderTimeLimitMs == C0485C.TIME_UNSET || SystemClock.elapsedRealtime() - j < this.renderTimeLimitMs;
     }
 
     private boolean hasOutputBuffer() {
@@ -1099,7 +1099,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
 
     @Override // com.google.android.exoplayer2.Renderer
     public boolean isReady() {
-        return this.inputFormat != null && (isSourceReady() || hasOutputBuffer() || (this.codecHotswapDeadlineMs != C0479C.TIME_UNSET && SystemClock.elapsedRealtime() < this.codecHotswapDeadlineMs));
+        return this.inputFormat != null && (isSourceReady() || hasOutputBuffer() || (this.codecHotswapDeadlineMs != C0485C.TIME_UNSET && SystemClock.elapsedRealtime() < this.codecHotswapDeadlineMs));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -1226,7 +1226,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
                     MediaCodec.BufferInfo bufferInfo4 = this.outputBufferInfo;
                     if (bufferInfo4.presentationTimeUs == 0 && (bufferInfo4.flags & 4) != 0) {
                         long j3 = this.largestQueuedPresentationTimeUs;
-                        if (j3 != C0479C.TIME_UNSET) {
+                        if (j3 != C0485C.TIME_UNSET) {
                             bufferInfo4.presentationTimeUs = j3;
                         }
                     }
@@ -1318,7 +1318,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
 
     private void setOutputStreamOffsetUs(long j) {
         this.outputStreamOffsetUs = j;
-        if (j != C0479C.TIME_UNSET) {
+        if (j != C0485C.TIME_UNSET) {
             onOutputStreamOffsetUsChanged(j);
         }
     }
@@ -1337,7 +1337,7 @@ public abstract class MediaCodecRenderer extends BaseRenderer {
         if (drmSession2 == null || drmSession == null || !drmSession2.getSchemeUuid().equals(drmSession.getSchemeUuid()) || Util.SDK_INT < 23) {
             return true;
         }
-        UUID uuid = C0479C.PLAYREADY_UUID;
+        UUID uuid = C0485C.PLAYREADY_UUID;
         if (uuid.equals(drmSession.getSchemeUuid()) || uuid.equals(drmSession2.getSchemeUuid()) || (frameworkCryptoConfig = getFrameworkCryptoConfig(drmSession2)) == null) {
             return true;
         }

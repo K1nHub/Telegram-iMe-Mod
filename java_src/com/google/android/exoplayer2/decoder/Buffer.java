@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.decoder;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 /* loaded from: classes.dex */
 public abstract class Buffer {
     private int flags;
@@ -14,7 +14,7 @@ public abstract class Buffer {
     }
 
     public final boolean isFirstSample() {
-        return getFlag(C0479C.BUFFER_FLAG_FIRST_SAMPLE);
+        return getFlag(C0485C.BUFFER_FLAG_FIRST_SAMPLE);
     }
 
     public final boolean isEndOfStream() {

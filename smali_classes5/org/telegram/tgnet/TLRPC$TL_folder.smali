@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0xabb19b
-
-
 # instance fields
 .field public autofill_new_broadcasts:Z
 
@@ -24,16 +20,10 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 3667
+    .line 3314
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -42,8 +32,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_folder;
     .locals 1
 
-    .line 3679
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_folder;->constructor:I
+    const v0, -0xabb19b
 
     if-eq v0, p1, :cond_1
 
@@ -53,7 +42,7 @@
 
     return-object p0
 
-    .line 3681
+    .line 3328
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -79,13 +68,13 @@
 
     throw p0
 
-    .line 3686
+    .line 3333
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_folder;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_folder;-><init>()V
 
-    .line 3687
+    .line 3334
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_folder;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -96,7 +85,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 3692
+    .line 3339
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -118,7 +107,7 @@
     :cond_0
     move v1, v2
 
-    .line 3693
+    .line 3340
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->autofill_new_broadcasts:Z
 
@@ -133,7 +122,7 @@
     :cond_1
     move v1, v2
 
-    .line 3694
+    .line 3341
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->autofill_public_groups:Z
 
@@ -143,32 +132,32 @@
 
     move v2, v3
 
-    .line 3695
+    .line 3342
     :cond_2
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->autofill_new_correspondents:Z
 
-    .line 3696
+    .line 3343
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->id:I
 
-    .line 3697
+    .line 3344
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->title:Ljava/lang/String;
 
-    .line 3698
+    .line 3345
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->flags:I
 
     and-int/lit8 v0, v0, 0x8
 
     if-eqz v0, :cond_3
 
-    .line 3699
+    .line 3346
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -186,12 +175,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 3704
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_folder;->constructor:I
+    const v0, -0xabb19b
 
+    .line 3351
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 3705
+    .line 3352
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->autofill_new_broadcasts:Z
 
     if-eqz v0, :cond_0
@@ -210,7 +199,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->flags:I
 
-    .line 3706
+    .line 3353
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->autofill_public_groups:Z
 
     if-eqz v1, :cond_1
@@ -225,7 +214,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->flags:I
 
-    .line 3707
+    .line 3354
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->autofill_new_correspondents:Z
 
     if-eqz v1, :cond_2
@@ -240,27 +229,27 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->flags:I
 
-    .line 3708
+    .line 3355
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 3709
+    .line 3356
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 3710
+    .line 3357
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 3711
+    .line 3358
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->flags:I
 
     and-int/lit8 v0, v0, 0x8
 
     if-eqz v0, :cond_3
 
-    .line 3712
+    .line 3359
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_folder;->photo:Lorg/telegram/tgnet/TLRPC$ChatPhoto;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

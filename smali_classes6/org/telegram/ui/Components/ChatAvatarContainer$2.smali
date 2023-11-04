@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAvatarContainer;[Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
     .locals 0
 
-    .line 318
+    .line 345
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$2;->this$0:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$2;->val$scrimPopupWindow:[Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -42,7 +42,7 @@
 .method public dismiss()V
     .locals 3
 
-    .line 321
+    .line 348
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$2;->val$scrimPopupWindow:[Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/4 v1, 0x0
@@ -51,7 +51,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 322
+    .line 349
     aget-object v0, v0, v1
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
@@ -63,7 +63,7 @@
 .method public setAutoDeleteHistory(II)V
     .locals 10
 
-    .line 328
+    .line 355
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$2;->this$0:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->access$000(Lorg/telegram/ui/Components/ChatAvatarContainer;)Lorg/telegram/ui/ChatActivity;
@@ -74,7 +74,7 @@
 
     return-void
 
-    .line 331
+    .line 358
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$2;->this$0:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
@@ -98,7 +98,7 @@
 
     invoke-virtual {v0, v1, v2, p1}, Lorg/telegram/messenger/MessagesController;->setDialogHistoryTTL(JI)V
 
-    .line 332
+    .line 359
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$2;->this$0:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatAvatarContainer;->access$000(Lorg/telegram/ui/Components/ChatAvatarContainer;)Lorg/telegram/ui/ChatActivity;
@@ -109,7 +109,7 @@
 
     move-result-object p1
 
-    .line 333
+    .line 360
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$2;->this$0:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->access$000(Lorg/telegram/ui/Components/ChatAvatarContainer;)Lorg/telegram/ui/ChatActivity;
@@ -124,7 +124,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 335
+    .line 362
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$2;->this$0:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
@@ -138,7 +138,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 337
+    .line 364
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$2;->this$0:Lorg/telegram/ui/Components/ChatAvatarContainer;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ChatAvatarContainer;->access$000(Lorg/telegram/ui/Components/ChatAvatarContainer;)Lorg/telegram/ui/ChatActivity;

@@ -28,7 +28,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 108
+    .line 103
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/IStoryPart;-><init>()V
 
     return-void
@@ -39,21 +39,21 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 114
+    .line 109
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
-    .line 115
+    .line 110
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->height:I
 
-    .line 116
+    .line 111
     new-instance v0, Ljava/io/File;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
@@ -64,21 +64,21 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;->file:Ljava/io/File;
 
-    .line 117
+    .line 112
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;->fileDeletable:Z
 
-    .line 118
+    .line 113
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;->orientantion:I
 
-    .line 119
+    .line 114
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -94,7 +94,7 @@
     :goto_0
     if-ge v2, v0, :cond_0
 
-    .line 122
+    .line 117
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readFloat(Z)F
 
     move-result v3
@@ -105,7 +105,7 @@
 
     goto :goto_0
 
-    .line 124
+    .line 119
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->matrix:Landroid/graphics/Matrix;
 
@@ -117,17 +117,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 4
 
-    .line 128
+    .line 123
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->width:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 129
+    .line 124
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->height:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 130
+    .line 125
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;->file:Ljava/io/File;
 
     if-nez v0, :cond_0
@@ -144,17 +144,17 @@
     :goto_0
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 131
+    .line 126
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;->fileDeletable:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V
 
-    .line 132
+    .line 127
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;->orientantion:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 133
+    .line 128
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$Part;->invert:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
@@ -163,7 +163,7 @@
 
     new-array v1, v0, [F
 
-    .line 135
+    .line 130
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/IStoryPart;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2, v1}, Landroid/graphics/Matrix;->getValues([F)V
@@ -173,7 +173,7 @@
     :goto_1
     if-ge v2, v0, :cond_1
 
-    .line 137
+    .line 132
     aget v3, v1, v2
 
     invoke-virtual {p1, v3}, Lorg/telegram/tgnet/AbstractSerializedData;->writeFloat(F)V

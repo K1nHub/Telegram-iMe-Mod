@@ -24,13 +24,13 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.p042ui.Components.AnimatedFileDrawable;
-import org.telegram.p042ui.Components.AttachableDrawable;
-import org.telegram.p042ui.Components.AvatarDrawable;
-import org.telegram.p042ui.Components.ClipRoundedDrawable;
-import org.telegram.p042ui.Components.RLottieDrawable;
-import org.telegram.p042ui.Components.RecyclableDrawable;
-import org.telegram.p042ui.Components.VectorAvatarThumbDrawable;
+import org.telegram.p043ui.Components.AnimatedFileDrawable;
+import org.telegram.p043ui.Components.AttachableDrawable;
+import org.telegram.p043ui.Components.AvatarDrawable;
+import org.telegram.p043ui.Components.ClipRoundedDrawable;
+import org.telegram.p043ui.Components.RLottieDrawable;
+import org.telegram.p043ui.Components.RecyclableDrawable;
+import org.telegram.p043ui.Components.VectorAvatarThumbDrawable;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive;
@@ -198,7 +198,7 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
     }
 
     public void setAnimation(int i, int i2, int i3) {
-        this.currentImageDrawable = new RLottieDrawable(i, "" + i, AndroidUtilities.m102dp(i2), AndroidUtilities.m102dp(i3), false, null);
+        this.currentImageDrawable = new RLottieDrawable(i, "" + i, AndroidUtilities.m104dp(i2), AndroidUtilities.m104dp(i3), false, null);
     }
 
     public boolean updateThumbShaderMatrix() {
@@ -568,8 +568,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
                 if (tLRPC$Document == null) {
                     tLRPC$Document = ((MessageObject) obj).getDocument();
                 }
-                if (tLRPC$Document != null && tLRPC$Document.dc_id != 0 && tLRPC$Document.f1608id != 0) {
-                    key = "q_" + tLRPC$Document.dc_id + "_" + tLRPC$Document.f1608id;
+                if (tLRPC$Document != null && tLRPC$Document.dc_id != 0 && tLRPC$Document.f1610id != 0) {
+                    key = "q_" + tLRPC$Document.dc_id + "_" + tLRPC$Document.f1610id;
                     this.currentKeyQuality = true;
                 }
             }
@@ -1475,9 +1475,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             android.graphics.drawable.Drawable r0 = r5.currentMediaDrawable
             boolean r1 = r0 instanceof android.graphics.drawable.BitmapDrawable
             if (r1 == 0) goto L4e
-            boolean r1 = r0 instanceof org.telegram.p042ui.Components.AnimatedFileDrawable
+            boolean r1 = r0 instanceof org.telegram.p043ui.Components.AnimatedFileDrawable
             if (r1 != 0) goto L4e
-            boolean r1 = r0 instanceof org.telegram.p042ui.Components.RLottieDrawable
+            boolean r1 = r0 instanceof org.telegram.p043ui.Components.RLottieDrawable
             if (r1 != 0) goto L4e
             android.graphics.drawable.BitmapDrawable r0 = (android.graphics.drawable.BitmapDrawable) r0
             android.graphics.Bitmap r0 = r0.getBitmap()
@@ -1487,9 +1487,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             android.graphics.drawable.Drawable r1 = r5.currentImageDrawable
             boolean r4 = r1 instanceof android.graphics.drawable.BitmapDrawable
             if (r4 == 0) goto L65
-            boolean r4 = r1 instanceof org.telegram.p042ui.Components.AnimatedFileDrawable
+            boolean r4 = r1 instanceof org.telegram.p043ui.Components.AnimatedFileDrawable
             if (r4 != 0) goto L65
-            boolean r4 = r0 instanceof org.telegram.p042ui.Components.RLottieDrawable
+            boolean r4 = r0 instanceof org.telegram.p043ui.Components.RLottieDrawable
             if (r4 != 0) goto L65
             android.graphics.drawable.BitmapDrawable r1 = (android.graphics.drawable.BitmapDrawable) r1
             android.graphics.Bitmap r0 = r1.getBitmap()
@@ -1499,9 +1499,9 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
             android.graphics.drawable.Drawable r1 = r5.currentThumbDrawable
             boolean r4 = r1 instanceof android.graphics.drawable.BitmapDrawable
             if (r4 == 0) goto L7c
-            boolean r4 = r1 instanceof org.telegram.p042ui.Components.AnimatedFileDrawable
+            boolean r4 = r1 instanceof org.telegram.p043ui.Components.AnimatedFileDrawable
             if (r4 != 0) goto L7c
-            boolean r0 = r0 instanceof org.telegram.p042ui.Components.RLottieDrawable
+            boolean r0 = r0 instanceof org.telegram.p043ui.Components.RLottieDrawable
             if (r0 != 0) goto L7c
             android.graphics.drawable.BitmapDrawable r1 = (android.graphics.drawable.BitmapDrawable) r1
             android.graphics.Bitmap r0 = r1.getBitmap()
@@ -1743,8 +1743,8 @@ public class ImageReceiver implements NotificationCenter.NotificationCenterDeleg
         animation.setParentView(this.parentView);
     }
 
-    public void setImageX(int i) {
-        this.imageX = i;
+    public void setImageX(float f) {
+        this.imageX = f;
     }
 
     public void setImageY(float f) {

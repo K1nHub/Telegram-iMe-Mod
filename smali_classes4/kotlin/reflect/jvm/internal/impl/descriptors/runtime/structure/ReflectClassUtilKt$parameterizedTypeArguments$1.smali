@@ -72,7 +72,7 @@
 .method public final invoke(Ljava/lang/reflect/ParameterizedType;)Ljava/lang/reflect/ParameterizedType;
     .locals 1
 
-    const-string v0, "it"
+    const-string/jumbo v0, "it"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

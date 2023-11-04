@@ -10,27 +10,27 @@ public final class Result<T> implements Serializable {
     private final Object value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ Result m1934boximpl(Object obj) {
+    public static final /* synthetic */ Result m1939boximpl(Object obj) {
         return new Result(obj);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static <T> Object m1935constructorimpl(Object obj) {
+    public static <T> Object m1940constructorimpl(Object obj) {
         return obj;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1936equalsimpl(Object obj, Object obj2) {
-        return (obj2 instanceof Result) && Intrinsics.areEqual(obj, ((Result) obj2).m1943unboximpl());
+    public static boolean m1941equalsimpl(Object obj, Object obj2) {
+        return (obj2 instanceof Result) && Intrinsics.areEqual(obj, ((Result) obj2).m1948unboximpl());
     }
 
     /* renamed from: equals-impl0  reason: not valid java name */
-    public static final boolean m1937equalsimpl0(Object obj, Object obj2) {
+    public static final boolean m1942equalsimpl0(Object obj, Object obj2) {
         return Intrinsics.areEqual(obj, obj2);
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1939hashCodeimpl(Object obj) {
+    public static int m1944hashCodeimpl(Object obj) {
         if (obj == null) {
             return 0;
         }
@@ -38,15 +38,15 @@ public final class Result<T> implements Serializable {
     }
 
     public boolean equals(Object obj) {
-        return m1936equalsimpl(this.value, obj);
+        return m1941equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m1939hashCodeimpl(this.value);
+        return m1944hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ Object m1943unboximpl() {
+    public final /* synthetic */ Object m1948unboximpl() {
         return this.value;
     }
 
@@ -55,17 +55,17 @@ public final class Result<T> implements Serializable {
     }
 
     /* renamed from: isSuccess-impl  reason: not valid java name */
-    public static final boolean m1941isSuccessimpl(Object obj) {
+    public static final boolean m1946isSuccessimpl(Object obj) {
         return !(obj instanceof Failure);
     }
 
     /* renamed from: isFailure-impl  reason: not valid java name */
-    public static final boolean m1940isFailureimpl(Object obj) {
+    public static final boolean m1945isFailureimpl(Object obj) {
         return obj instanceof Failure;
     }
 
     /* renamed from: exceptionOrNull-impl  reason: not valid java name */
-    public static final Throwable m1938exceptionOrNullimpl(Object obj) {
+    public static final Throwable m1943exceptionOrNullimpl(Object obj) {
         if (obj instanceof Failure) {
             return ((Failure) obj).exception;
         }
@@ -73,11 +73,11 @@ public final class Result<T> implements Serializable {
     }
 
     public String toString() {
-        return m1942toStringimpl(this.value);
+        return m1947toStringimpl(this.value);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1942toStringimpl(Object obj) {
+    public static String m1947toStringimpl(Object obj) {
         if (obj instanceof Failure) {
             return ((Failure) obj).toString();
         }

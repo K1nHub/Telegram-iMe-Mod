@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;)V
     .locals 0
 
-    .line 662
+    .line 742
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$2;->this$0:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 665
+    .line 745
     iget-object v0, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$2;->this$0:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -53,7 +53,7 @@
 
     iput p1, v0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->checkBoxProgress:F
 
-    .line 666
+    .line 746
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$2;->this$0:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

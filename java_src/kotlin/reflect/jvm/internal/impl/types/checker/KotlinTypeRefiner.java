@@ -72,9 +72,9 @@ public abstract class KotlinTypeRefiner extends AbstractTypeRefiner {
         @Override // kotlin.reflect.jvm.internal.impl.types.checker.KotlinTypeRefiner
         public Collection<KotlinType> refineSupertypes(ClassDescriptor classDescriptor) {
             Intrinsics.checkNotNullParameter(classDescriptor, "classDescriptor");
-            Collection<KotlinType> mo2047getSupertypes = classDescriptor.getTypeConstructor().mo2047getSupertypes();
-            Intrinsics.checkNotNullExpressionValue(mo2047getSupertypes, "classDescriptor.typeConstructor.supertypes");
-            return mo2047getSupertypes;
+            Collection<KotlinType> mo2052getSupertypes = classDescriptor.getTypeConstructor().mo2052getSupertypes();
+            Intrinsics.checkNotNullExpressionValue(mo2052getSupertypes, "classDescriptor.typeConstructor.supertypes");
+            return mo2052getSupertypes;
         }
 
         @Override // kotlin.reflect.jvm.internal.impl.types.checker.KotlinTypeRefiner

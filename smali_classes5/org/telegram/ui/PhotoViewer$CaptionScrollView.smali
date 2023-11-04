@@ -68,10 +68,10 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;Landroid/widget/FrameLayout;)V
     .locals 4
 
-    .line 3691
+    .line 3690
     invoke-direct {p0, p1}, Landroidx/core/widget/NestedScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 3667
+    .line 3666
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -82,51 +82,51 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 3683
+    .line 3682
     iput v1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->backgroundAlpha:F
 
     const/4 v2, -0x1
 
-    .line 3685
+    .line 3684
     iput v2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->pendingTopMargin:I
 
-    .line 3692
+    .line 3691
     iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->captionTextViewSwitcher:Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;
 
-    .line 3693
+    .line 3692
     iput-object p3, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->captionContainer:Landroid/widget/FrameLayout;
 
     const/4 p3, 0x0
 
-    .line 3695
+    .line 3694
     invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
     const/4 v2, 0x2
 
-    .line 3696
+    .line 3695
     invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->setOverScrollMode(I)V
 
     const/high16 v2, -0x1000000
 
-    .line 3698
+    .line 3697
     invoke-virtual {p1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
     const/16 p1, 0xc
 
-    .line 3699
+    .line 3698
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setFadingEdgeLength(I)V
 
-    .line 3700
+    .line 3699
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setVerticalFadingEdgeEnabled(Z)V
 
-    .line 3701
+    .line 3700
     invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 3703
+    .line 3702
     new-instance p1, Landroidx/dynamicanimation/animation/SpringAnimation;
 
     sget-object v2, Landroidx/dynamicanimation/animation/DynamicAnimation;->TRANSLATION_Y:Landroidx/dynamicanimation/animation/DynamicAnimation$ViewProperty;
@@ -137,7 +137,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 3704
+    .line 3703
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object p2
@@ -146,24 +146,24 @@
 
     invoke-virtual {p2, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 3705
+    .line 3704
     invoke-virtual {p1, v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->setMinimumVisibleChange(F)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 3706
+    .line 3705
     new-instance p2, Lorg/telegram/ui/PhotoViewer$CaptionScrollView$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/PhotoViewer$CaptionScrollView;)V
 
     invoke-virtual {p1, p2}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 3711
+    .line 3710
     new-instance p2, Lorg/telegram/ui/PhotoViewer$CaptionScrollView$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PhotoViewer$CaptionScrollView;)V
 
     invoke-virtual {p1, p2}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 3714
+    .line 3713
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object p1
@@ -172,7 +172,7 @@
 
     const/4 p1, 0x0
 
-    .line 3717
+    .line 3716
     :try_start_0
     const-class p2, Landroidx/core/widget/NestedScrollView;
 
@@ -186,7 +186,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->abortAnimatedScrollMethod:Ljava/lang/reflect/Method;
 
-    .line 3718
+    .line 3717
     invoke-virtual {p2, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -196,13 +196,13 @@
     :catch_0
     move-exception p2
 
-    .line 3720
+    .line 3719
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->abortAnimatedScrollMethod:Ljava/lang/reflect/Method;
 
-    .line 3721
+    .line 3720
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3725
+    .line 3724
     :goto_0
     :try_start_1
     const-class p2, Landroidx/core/widget/NestedScrollView;
@@ -213,10 +213,10 @@
 
     move-result-object p2
 
-    .line 3726
+    .line 3725
     invoke-virtual {p2, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
-    .line 3727
+    .line 3726
     invoke-virtual {p2, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p2
@@ -232,10 +232,10 @@
     :catch_1
     move-exception p2
 
-    .line 3729
+    .line 3728
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->scroller:Landroid/widget/OverScroller;
 
-    .line 3730
+    .line 3729
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -245,13 +245,13 @@
 .method private synthetic lambda$new$0(Landroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 0
 
-    .line 3707
+    .line 3706
     iput p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->overScrollY:F
 
-    .line 3708
+    .line 3707
     iput p3, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->velocityY:F
 
-    .line 3709
+    .line 3708
     invoke-virtual {p0}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->onScrollUpdate()V
 
     return-void
@@ -260,7 +260,7 @@
 .method private synthetic lambda$new$1(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
-    .line 3712
+    .line 3711
     invoke-virtual {p0}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->onScrollEnd()V
 
     return-void
@@ -269,7 +269,7 @@
 .method private startSpringAnimationIfNotRunning(F)V
     .locals 1
 
-    .line 3915
+    .line 3914
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->isRunning()Z
@@ -278,12 +278,12 @@
 
     if-nez v0, :cond_0
 
-    .line 3916
+    .line 3915
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {v0, p1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->setStartVelocity(F)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 3917
+    .line 3916
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
@@ -295,24 +295,24 @@
 .method private updateTopMargin(II)V
     .locals 0
 
-    .line 3770
+    .line 3769
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->calculateNewContainerMarginTop(II)I
 
     move-result p1
 
     if-ltz p1, :cond_1
 
-    .line 3772
+    .line 3771
     iget-boolean p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->dontChangeTopMargin:Z
 
     if-eqz p2, :cond_0
 
-    .line 3773
+    .line 3772
     iput p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->pendingTopMargin:I
 
     goto :goto_0
 
-    .line 3775
+    .line 3774
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->captionContainer:Landroid/widget/FrameLayout;
 
@@ -326,7 +326,7 @@
 
     const/4 p1, -0x1
 
-    .line 3776
+    .line 3775
     iput p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->pendingTopMargin:I
 
     :cond_1
@@ -341,15 +341,15 @@
 
     const/4 v0, 0x0
 
-    .line 3749
+    .line 3748
     iput-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->dontChangeTopMargin:Z
 
-    .line 3750
+    .line 3749
     iget v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->pendingTopMargin:I
 
     if-ltz v0, :cond_0
 
-    .line 3751
+    .line 3750
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->captionContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -364,10 +364,10 @@
 
     const/4 v0, -0x1
 
-    .line 3752
+    .line 3751
     iput v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->pendingTopMargin:I
 
-    .line 3753
+    .line 3752
     invoke-virtual {p0}, Landroidx/core/widget/NestedScrollView;->requestLayout()V
 
     :cond_0
@@ -385,7 +385,7 @@
 
     goto/16 :goto_6
 
-    .line 3786
+    .line 3785
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->captionTextViewSwitcher:Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;
 
@@ -393,17 +393,17 @@
 
     move-result-object v1
 
-    .line 3787
+    .line 3786
     invoke-virtual {v1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v2
 
-    .line 3789
+    .line 3788
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     move-result v3
 
-    .line 3790
+    .line 3789
     sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v5, v4, Landroid/graphics/Point;->x:I
@@ -421,7 +421,7 @@
     :cond_1
     const/4 v4, 0x0
 
-    .line 3792
+    .line 3791
     :goto_0
     iget v5, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->textHash:I
 
@@ -437,19 +437,19 @@
 
     return v0
 
-    .line 3796
+    .line 3795
     :cond_2
     iput v3, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->textHash:I
 
-    .line 3797
+    .line 3796
     iput-boolean v4, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->isLandscape:Z
 
-    .line 3798
+    .line 3797
     iput p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->prevHeight:I
 
     const/high16 v0, 0x40000000    # 2.0f
 
-    .line 3800
+    .line 3799
     invoke-static {p1, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
@@ -462,12 +462,12 @@
 
     invoke-virtual {v1, p1, v0}, Landroid/widget/TextView;->measure(II)V
 
-    .line 3802
+    .line 3801
     invoke-virtual {v1}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
     move-result-object p1
 
-    .line 3803
+    .line 3802
     invoke-virtual {p1}, Landroid/text/Layout;->getLineCount()I
 
     move-result v0
@@ -485,7 +485,7 @@
 
     if-gt v0, v5, :cond_5
 
-    .line 3806
+    .line 3805
     :cond_4
     invoke-virtual {v1}, Landroid/widget/TextView;->getMeasuredHeight()I
 
@@ -504,7 +504,7 @@
     :cond_6
     move v3, v5
 
-    .line 3809
+    .line 3808
     :goto_2
     invoke-static {v3, v0}, Ljava/lang/Math;->min(II)I
 
@@ -515,7 +515,7 @@
 
     add-int/lit8 v3, v0, -0x1
 
-    .line 3813
+    .line 3812
     invoke-virtual {p1, v3}, Landroid/text/Layout;->getLineStart(I)I
 
     move-result v4
@@ -527,7 +527,7 @@
 
     if-ge v4, v5, :cond_8
 
-    .line 3814
+    .line 3813
     invoke-interface {v2, v4}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v5
@@ -550,7 +550,7 @@
 
     goto :goto_3
 
-    .line 3821
+    .line 3820
     :cond_9
     :goto_5
     invoke-virtual {v1}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
@@ -569,7 +569,7 @@
 
     const/16 p1, 0x8
 
-    .line 3822
+    .line 3821
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -584,10 +584,10 @@
 .method public computeScroll()V
     .locals 2
 
-    .line 3934
+    .line 3933
     invoke-super {p0}, Landroidx/core/widget/NestedScrollView;->computeScroll()V
 
-    .line 3935
+    .line 3934
     iget-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->nestedScrollStarted:Z
 
     if-nez v0, :cond_0
@@ -610,10 +610,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 3936
+    .line 3935
     invoke-direct {p0, v1}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->startSpringAnimationIfNotRunning(F)V
 
-    .line 3938
+    .line 3937
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->onScrollUpdate()V
 
@@ -627,10 +627,10 @@
 
     const/4 p4, 0x0
 
-    .line 3848
+    .line 3847
     aput p4, p3, p1
 
-    .line 3850
+    .line 3849
     iget-boolean p5, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->nestedScrollStarted:Z
 
     if-eqz p5, :cond_5
@@ -665,10 +665,10 @@
 
     if-gez p5, :cond_2
 
-    .line 3855
+    .line 3854
     iput v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->overScrollY:F
 
-    .line 3856
+    .line 3855
     aget p2, p3, p1
 
     int-to-float p2, p2
@@ -683,11 +683,11 @@
 
     goto :goto_0
 
-    .line 3858
+    .line 3857
     :cond_2
     iput v1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->overScrollY:F
 
-    .line 3859
+    .line 3858
     aget p4, p3, p1
 
     add-int/2addr p4, p2
@@ -701,10 +701,10 @@
 
     if-lez p5, :cond_4
 
-    .line 3863
+    .line 3862
     iput v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->overScrollY:F
 
-    .line 3864
+    .line 3863
     aget p2, p3, p1
 
     int-to-float p2, p2
@@ -719,22 +719,22 @@
 
     goto :goto_0
 
-    .line 3866
+    .line 3865
     :cond_4
     iput v1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->overScrollY:F
 
-    .line 3867
+    .line 3866
     aget p4, p3, p1
 
     add-int/2addr p4, p2
 
     aput p4, p3, p1
 
-    .line 3870
+    .line 3869
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->onScrollUpdate()V
 
-    .line 3872
+    .line 3871
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->captionTextViewSwitcher:Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;
 
     iget p3, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->overScrollY:F
@@ -752,7 +752,7 @@
 
     if-eqz p4, :cond_7
 
-    .line 3882
+    .line 3881
     invoke-virtual {p0}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->isStatusBarVisible()Z
 
     move-result p1
@@ -777,7 +777,7 @@
 
     const/high16 p3, 0x3f800000    # 1.0f
 
-    .line 3883
+    .line 3882
     iget p4, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->overScrollY:F
 
     neg-float p4, p4
@@ -808,12 +808,12 @@
 
     if-eqz p1, :cond_6
 
-    .line 3886
+    .line 3885
     iget-boolean p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->nestedScrollStarted:Z
 
     if-nez p2, :cond_5
 
-    .line 3887
+    .line 3886
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {p2}, Landroidx/dynamicanimation/animation/DynamicAnimation;->isRunning()Z
@@ -822,7 +822,7 @@
 
     if-nez p2, :cond_6
 
-    .line 3889
+    .line 3888
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->scroller:Landroid/widget/OverScroller;
 
     if-eqz p2, :cond_1
@@ -836,7 +836,7 @@
     :cond_1
     const/high16 p2, 0x7fc00000    # Float.NaN
 
-    .line 3890
+    .line 3889
     :goto_1
     invoke-static {p2}, Ljava/lang/Float;->isNaN(F)Z
 
@@ -844,7 +844,7 @@
 
     if-nez p3, :cond_3
 
-    .line 3891
+    .line 3890
     sget-object p3, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget p4, p3, Landroid/graphics/Point;->x:I
@@ -873,7 +873,7 @@
 
     float-to-int p1, p1
 
-    .line 3893
+    .line 3892
     iget p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->velocitySign:F
 
     neg-float p2, p2
@@ -888,7 +888,7 @@
     :goto_3
     if-eqz p1, :cond_4
 
-    .line 3899
+    .line 3898
     iget p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->overScrollY:F
 
     int-to-float p1, p1
@@ -897,18 +897,18 @@
 
     iput p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->overScrollY:F
 
-    .line 3900
+    .line 3899
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->captionTextViewSwitcher:Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->setTranslationY(F)V
 
-    .line 3902
+    .line 3901
     :cond_4
     invoke-direct {p0, p3}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->startSpringAnimationIfNotRunning(F)V
 
     goto :goto_4
 
-    .line 3905
+    .line 3904
     :cond_5
     iget p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->overScrollY:F
 
@@ -918,12 +918,12 @@
 
     iput p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->overScrollY:F
 
-    .line 3906
+    .line 3905
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->captionTextViewSwitcher:Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;->setTranslationY(F)V
 
-    .line 3910
+    .line 3909
     :cond_6
     :goto_4
     invoke-virtual {p0}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->onScrollUpdate()V
@@ -935,22 +935,22 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 11
 
-    .line 3968
+    .line 3967
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v0
 
-    .line 3969
+    .line 3968
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v1
 
-    .line 3970
+    .line 3969
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getScrollY()I
 
     move-result v2
 
-    .line 3972
+    .line 3971
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v3
@@ -959,10 +959,10 @@
 
     const/4 v4, 0x0
 
-    .line 3973
+    .line 3972
     invoke-virtual {p1, v4, v2, v0, v1}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 3975
+    .line 3974
     iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->paint:Landroid/graphics/Paint;
 
     iget v4, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->backgroundAlpha:F
@@ -975,7 +975,7 @@
 
     invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 3976
+    .line 3975
     iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->captionContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getTop()I
@@ -1004,10 +1004,10 @@
 
     invoke-virtual/range {v5 .. v10}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 3978
+    .line 3977
     invoke-super {p0, p1}, Landroidx/core/widget/NestedScrollView;->draw(Landroid/graphics/Canvas;)V
 
-    .line 3979
+    .line 3978
     invoke-virtual {p1, v3}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     return-void
@@ -1016,12 +1016,12 @@
 .method public fling(I)V
     .locals 0
 
-    .line 3841
+    .line 3840
     invoke-super {p0, p1}, Landroidx/core/widget/NestedScrollView;->fling(I)V
 
     int-to-float p1, p1
 
-    .line 3842
+    .line 3841
     invoke-static {p1}, Ljava/lang/Math;->signum(F)F
 
     move-result p1
@@ -1030,7 +1030,7 @@
 
     const/4 p1, 0x0
 
-    .line 3843
+    .line 3842
     iput p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->velocityY:F
 
     return-void
@@ -1047,12 +1047,12 @@
 .method public getPendingMarginTopDiff()I
     .locals 2
 
-    .line 3758
+    .line 3757
     iget v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->pendingTopMargin:I
 
     if-ltz v0, :cond_0
 
-    .line 3759
+    .line 3758
     iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->captionContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1092,7 +1092,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 3744
+    .line 3743
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
@@ -1103,7 +1103,7 @@
 
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->updateTopMargin(II)V
 
-    .line 3745
+    .line 3744
     invoke-super {p0, p1, p2}, Landroidx/core/widget/NestedScrollView;->onMeasure(II)V
 
     return-void
@@ -1130,7 +1130,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    .line 3736
+    .line 3735
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -1171,7 +1171,7 @@
 
     return p1
 
-    .line 3739
+    .line 3738
     :cond_0
     invoke-super {p0, p1}, Landroidx/core/widget/NestedScrollView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -1185,7 +1185,7 @@
 
     const/4 v0, 0x0
 
-    .line 3826
+    .line 3825
     invoke-virtual {p0, v0, v0}, Landroidx/core/widget/NestedScrollView;->scrollTo(II)V
 
     return-void
@@ -1198,15 +1198,15 @@
 
     if-nez p2, :cond_0
 
-    .line 3924
+    .line 3923
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->springAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {p2}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    .line 3925
+    .line 3924
     iput-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->nestedScrollStarted:Z
 
-    .line 3926
+    .line 3925
     iget-object p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->captionTextViewSwitcher:Lorg/telegram/ui/PhotoViewer$CaptionTextViewSwitcher;
 
     invoke-virtual {p2}, Landroid/widget/ViewSwitcher;->getTranslationY()F
@@ -1215,7 +1215,7 @@
 
     iput p2, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->overScrollY:F
 
-    .line 3927
+    .line 3926
     invoke-virtual {p0}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->onScrollStart()V
 
     :cond_0
@@ -1225,7 +1225,7 @@
 .method public stopNestedScroll(I)V
     .locals 1
 
-    .line 3943
+    .line 3942
     iget-boolean v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->nestedScrollStarted:Z
 
     if-eqz v0, :cond_1
@@ -1234,10 +1234,10 @@
 
     const/4 p1, 0x0
 
-    .line 3944
+    .line 3943
     iput-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->nestedScrollStarted:Z
 
-    .line 3945
+    .line 3944
     iget p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->overScrollY:F
 
     const/4 v0, 0x0
@@ -1256,12 +1256,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 3946
+    .line 3945
     iget p1, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->velocityY:F
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->startSpringAnimationIfNotRunning(F)V
 
-    .line 3948
+    .line 3947
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->onScrollEnd()V
 
@@ -1272,7 +1272,7 @@
 .method public stopScrolling()V
     .locals 2
 
-    .line 3830
+    .line 3829
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$CaptionScrollView;->abortAnimatedScrollMethod:Ljava/lang/reflect/Method;
 
     if-eqz v0, :cond_0
@@ -1282,7 +1282,7 @@
     :try_start_0
     new-array v1, v1, [Ljava/lang/Object;
 
-    .line 3832
+    .line 3831
     invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1292,7 +1292,7 @@
     :catch_0
     move-exception v0
 
-    .line 3834
+    .line 3833
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -1303,7 +1303,7 @@
 .method public updateTopMargin()V
     .locals 2
 
-    .line 3766
+    .line 3765
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v0

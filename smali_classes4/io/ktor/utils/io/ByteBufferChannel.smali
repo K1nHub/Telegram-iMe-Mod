@@ -6465,7 +6465,7 @@
 .method public attachJob(Lkotlinx/coroutines/Job;)V
     .locals 9
 
-    const-string v0, "job"
+    const-string/jumbo v0, "job"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

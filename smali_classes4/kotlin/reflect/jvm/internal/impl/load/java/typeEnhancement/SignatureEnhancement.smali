@@ -134,7 +134,7 @@
     .line 1621
     check-cast v4, Lkotlin/reflect/jvm/internal/impl/descriptors/CallableMemberDescriptor;
 
-    const-string v5, "it"
+    const-string/jumbo v5, "it"
 
     .line 214
     invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -872,7 +872,7 @@
 
     move-result-object v2
 
-    const-string v3, "it.type"
+    const-string/jumbo v3, "it.type"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

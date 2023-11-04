@@ -28,7 +28,7 @@
     .line 160
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v1, "java.lang.Void"
+    const-string/jumbo v1, "java.lang.Void"
 
     invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -279,7 +279,7 @@
         }
     .end annotation
 
-    const-string v0, "klass"
+    const-string/jumbo v0, "klass"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -295,7 +295,7 @@
 
     move-result-object p1
 
-    const-string v0, "klass.componentType"
+    const-string/jumbo v0, "klass.componentType"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -1,19 +1,18 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_folder extends TLObject {
-    public static int constructor = -11252123;
     public boolean autofill_new_broadcasts;
     public boolean autofill_new_correspondents;
     public boolean autofill_public_groups;
     public int flags;
 
     /* renamed from: id */
-    public int f1656id;
+    public int f1657id;
     public TLRPC$ChatPhoto photo;
     public String title;
 
     public static TLRPC$TL_folder TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
-        if (constructor != i) {
+        if (-11252123 != i) {
             if (z) {
                 throw new RuntimeException(String.format("can't parse magic %x in TL_folder", Integer.valueOf(i)));
             }
@@ -31,7 +30,7 @@ public class TLRPC$TL_folder extends TLObject {
         this.autofill_new_broadcasts = (readInt32 & 1) != 0;
         this.autofill_public_groups = (readInt32 & 2) != 0;
         this.autofill_new_correspondents = (readInt32 & 4) != 0;
-        this.f1656id = abstractSerializedData.readInt32(z);
+        this.f1657id = abstractSerializedData.readInt32(z);
         this.title = abstractSerializedData.readString(z);
         if ((this.flags & 8) != 0) {
             this.photo = TLRPC$ChatPhoto.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
@@ -40,7 +39,7 @@ public class TLRPC$TL_folder extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-11252123);
         int i = this.autofill_new_broadcasts ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         int i2 = this.autofill_public_groups ? i | 2 : i & (-3);
@@ -48,7 +47,7 @@ public class TLRPC$TL_folder extends TLObject {
         int i3 = this.autofill_new_correspondents ? i2 | 4 : i2 & (-5);
         this.flags = i3;
         abstractSerializedData.writeInt32(i3);
-        abstractSerializedData.writeInt32(this.f1656id);
+        abstractSerializedData.writeInt32(this.f1657id);
         abstractSerializedData.writeString(this.title);
         if ((this.flags & 8) != 0) {
             this.photo.serializeToStream(abstractSerializedData);

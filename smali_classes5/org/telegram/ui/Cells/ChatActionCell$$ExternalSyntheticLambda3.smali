@@ -2,40 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Cells/ChatActionCell;
+.field public final synthetic f$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Cells/ChatActionCell;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/RLottieDrawable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Cells/ChatActionCell$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Cells/ChatActionCell;
+    iput-object p1, p0, Lorg/telegram/ui/Cells/ChatActionCell$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSetImage(Lorg/telegram/messenger/ImageReceiver;ZZZ)V
+.method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatActionCell$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Cells/ChatActionCell;
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatActionCell$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/Cells/ChatActionCell;->$r8$lambda$HMRtj1arEEULlRmGY60s-uwgyzM(Lorg/telegram/ui/Cells/ChatActionCell;Lorg/telegram/messenger/ImageReceiver;ZZZ)V
-
-    return-void
-.end method
-
-.method public synthetic onAnimationReady(Lorg/telegram/messenger/ImageReceiver;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate$-CC;->$default$onAnimationReady(Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;Lorg/telegram/messenger/ImageReceiver;)V
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->restart()Z
 
     return-void
 .end method

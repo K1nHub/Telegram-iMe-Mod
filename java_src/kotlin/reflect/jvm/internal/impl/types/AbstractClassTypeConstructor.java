@@ -100,7 +100,7 @@ public abstract class AbstractClassTypeConstructor extends AbstractTypeConstruct
 
     @Override // kotlin.reflect.jvm.internal.impl.types.ClassifierBasedTypeConstructor, kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getDeclarationDescriptor */
-    public abstract ClassDescriptor mo2046getDeclarationDescriptor();
+    public abstract ClassDescriptor mo2051getDeclarationDescriptor();
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public AbstractClassTypeConstructor(StorageManager storageManager) {
@@ -112,7 +112,7 @@ public abstract class AbstractClassTypeConstructor extends AbstractTypeConstruct
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     public KotlinBuiltIns getBuiltIns() {
-        KotlinBuiltIns builtIns = DescriptorUtilsKt.getBuiltIns(mo2046getDeclarationDescriptor());
+        KotlinBuiltIns builtIns = DescriptorUtilsKt.getBuiltIns(mo2051getDeclarationDescriptor());
         if (builtIns == null) {
             $$$reportNull$$$0(1);
         }
@@ -124,12 +124,12 @@ public abstract class AbstractClassTypeConstructor extends AbstractTypeConstruct
         if (classifierDescriptor == null) {
             $$$reportNull$$$0(2);
         }
-        return (classifierDescriptor instanceof ClassDescriptor) && areFqNamesEqual(mo2046getDeclarationDescriptor(), classifierDescriptor);
+        return (classifierDescriptor instanceof ClassDescriptor) && areFqNamesEqual(mo2051getDeclarationDescriptor(), classifierDescriptor);
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.types.AbstractTypeConstructor
     protected Collection<KotlinType> getAdditionalNeighboursInSupertypeGraph(boolean z) {
-        DeclarationDescriptor containingDeclaration = mo2046getDeclarationDescriptor().getContainingDeclaration();
+        DeclarationDescriptor containingDeclaration = mo2051getDeclarationDescriptor().getContainingDeclaration();
         if (!(containingDeclaration instanceof ClassDescriptor)) {
             List emptyList = Collections.emptyList();
             if (emptyList == null) {
@@ -140,9 +140,9 @@ public abstract class AbstractClassTypeConstructor extends AbstractTypeConstruct
         SmartList smartList = new SmartList();
         ClassDescriptor classDescriptor = (ClassDescriptor) containingDeclaration;
         smartList.add(classDescriptor.getDefaultType());
-        ClassDescriptor mo2039getCompanionObjectDescriptor = classDescriptor.mo2039getCompanionObjectDescriptor();
-        if (z && mo2039getCompanionObjectDescriptor != null) {
-            smartList.add(mo2039getCompanionObjectDescriptor.getDefaultType());
+        ClassDescriptor mo2044getCompanionObjectDescriptor = classDescriptor.mo2044getCompanionObjectDescriptor();
+        if (z && mo2044getCompanionObjectDescriptor != null) {
+            smartList.add(mo2044getCompanionObjectDescriptor.getDefaultType());
         }
         return smartList;
     }
@@ -150,7 +150,7 @@ public abstract class AbstractClassTypeConstructor extends AbstractTypeConstruct
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // kotlin.reflect.jvm.internal.impl.types.AbstractTypeConstructor
     public KotlinType defaultSupertypeIfEmpty() {
-        if (KotlinBuiltIns.isSpecialClassWithNoSupertypes(mo2046getDeclarationDescriptor())) {
+        if (KotlinBuiltIns.isSpecialClassWithNoSupertypes(mo2051getDeclarationDescriptor())) {
             return null;
         }
         return getBuiltIns().getAnyType();

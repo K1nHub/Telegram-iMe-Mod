@@ -50,7 +50,7 @@ public final class AnnotationUtilKt {
         FqName fqName = StandardNames.FqNames.replaceWith;
         Name name = REPLACE_WITH_IMPORTS_NAME;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m144to(REPLACE_WITH_EXPRESSION_NAME, new StringValue(replaceWith)), TuplesKt.m144to(name, new ArrayValue(emptyList, new Function1<ModuleDescriptor, KotlinType>() { // from class: kotlin.reflect.jvm.internal.impl.descriptors.annotations.AnnotationUtilKt$createDeprecatedAnnotation$replaceWithAnnotation$1
+        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m146to(REPLACE_WITH_EXPRESSION_NAME, new StringValue(replaceWith)), TuplesKt.m146to(name, new ArrayValue(emptyList, new Function1<ModuleDescriptor, KotlinType>() { // from class: kotlin.reflect.jvm.internal.impl.descriptors.annotations.AnnotationUtilKt$createDeprecatedAnnotation$replaceWithAnnotation$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -71,7 +71,7 @@ public final class AnnotationUtilKt {
         Intrinsics.checkNotNullExpressionValue(classId, "topLevel(StandardNames.FqNames.deprecationLevel)");
         Name identifier = Name.identifier(level);
         Intrinsics.checkNotNullExpressionValue(identifier, "identifier(level)");
-        mapOf2 = MapsKt__MapsKt.mapOf(TuplesKt.m144to(DEPRECATED_MESSAGE_NAME, new StringValue(message)), TuplesKt.m144to(DEPRECATED_REPLACE_WITH_NAME, new AnnotationValue(builtInAnnotationDescriptor)), TuplesKt.m144to(name2, new EnumValue(classId, identifier)));
+        mapOf2 = MapsKt__MapsKt.mapOf(TuplesKt.m146to(DEPRECATED_MESSAGE_NAME, new StringValue(message)), TuplesKt.m146to(DEPRECATED_REPLACE_WITH_NAME, new AnnotationValue(builtInAnnotationDescriptor)), TuplesKt.m146to(name2, new EnumValue(classId, identifier)));
         return new BuiltInAnnotationDescriptor(kotlinBuiltIns, fqName2, mapOf2);
     }
 

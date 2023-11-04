@@ -37,7 +37,7 @@ public abstract class ValueClassRepresentation<Type extends SimpleTypeMarker> {
             Iterator<T> it = underlyingPropertyNamesToTypes.iterator();
             while (it.hasNext()) {
                 Pair pair = (Pair) it.next();
-                arrayList.add(TuplesKt.m144to((Name) pair.component1(), transform.invoke((SimpleTypeMarker) pair.component2())));
+                arrayList.add(TuplesKt.m146to((Name) pair.component1(), transform.invoke((SimpleTypeMarker) pair.component2())));
             }
             return new MultiFieldValueClassRepresentation(arrayList);
         } else {

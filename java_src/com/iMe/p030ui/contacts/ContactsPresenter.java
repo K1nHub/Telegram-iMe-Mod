@@ -34,7 +34,7 @@ public final class ContactsPresenter extends BasePresenter<ContactsView> {
     }
 
     public final void deleteSelectedContacts() {
-        Completable observeOn = this.contactInteractor.deleteSelectedContacts().observeOn(this.schedulersProvider.mo1009ui());
+        Completable observeOn = this.contactInteractor.deleteSelectedContacts().observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "contactInteractor\n      …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");

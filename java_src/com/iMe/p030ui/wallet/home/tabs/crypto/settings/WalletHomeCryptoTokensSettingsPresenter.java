@@ -59,7 +59,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import timber.log.Timber;
 /* compiled from: WalletHomeCryptoTokensSettingsPresenter.kt */
 @InjectViewState
@@ -158,7 +158,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                 break;
             }
         }
-        return TuplesKt.m144to(tokenDetailed, (TokenDisplaySettings) obj);
+        return TuplesKt.m146to(tokenDetailed, (TokenDisplaySettings) obj);
     }
 
     public static /* synthetic */ void saveSettings$default(WalletHomeCryptoTokensSettingsPresenter walletHomeCryptoTokensSettingsPresenter, boolean z, int i, Object obj) {
@@ -222,7 +222,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
         ref$BooleanRef.element = tokenDisplaySettings.isVisible();
         tokenDisplaySettings.setVisible(z);
         if (tokenDisplaySettings instanceof TokenDisplaySettings.Crypto) {
-            Observable<Result<Boolean>> observeOn = this.walletInteractor.setTokenVisibility(new Token(((TokenDisplaySettings.Crypto) tokenDisplaySettings).getTokenAddress(), getNetworkId()), z).observeOn(this.schedulersProvider.mo1009ui());
+            Observable<Result<Boolean>> observeOn = this.walletInteractor.setTokenVisibility(new Token(((TokenDisplaySettings.Crypto) tokenDisplaySettings).getTokenAddress(), getNetworkId()), z).observeOn(this.schedulersProvider.mo1010ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
             Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter$switchTokenVisibility$$inlined$subscribeWithErrorHandle$default$1
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -232,12 +232,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                    m1769invoke(result);
+                    m1774invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1769invoke(Result<? extends Boolean> it) {
+                public final void m1774invoke(Result<? extends Boolean> it) {
                     List list;
                     ResourceManager resourceManager;
                     RxEventBus rxEventBus;
@@ -383,7 +383,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
             ((WalletHomeCryptoTokensSettingsView) getViewState()).onLoadMoreComplete();
             return;
         }
-        Observable<Result<List<FoundTokenItem>>> observeOn = getSearchObservable().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<List<FoundTokenItem>>> observeOn = getSearchObservable().observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "getSearchObservable()\n  …(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends FoundTokenItem>>, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter$searchByQuery$$inlined$subscribeWithErrorHandle$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -393,12 +393,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends FoundTokenItem>> result) {
-                m1765invoke(result);
+                m1770invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1765invoke(Result<? extends List<? extends FoundTokenItem>> it) {
+            public final void m1770invoke(Result<? extends List<? extends FoundTokenItem>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends FoundTokenItem>> result = it;
                 if (result instanceof Result.Success) {
@@ -494,7 +494,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
             this.tokenVisibilitySubject.onNext(foundTokenItem);
             return;
         }
-        ((WalletHomeCryptoTokensSettingsView) getViewState()).showToast(this.resourceManager.getString(C3630R.string.token_search_coin));
+        ((WalletHomeCryptoTokensSettingsView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.token_search_coin));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -603,7 +603,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
     }
 
     private final void loadTokens() {
-        Observable<Result<Map<TokenDetailed, Boolean>>> observeOn = this.walletInteractor.getDisplayedTokens(getNetworkId()).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Map<TokenDetailed, Boolean>>> observeOn = this.walletInteractor.getDisplayedTokens(getNetworkId()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
         Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Map<TokenDetailed, ? extends Boolean>>, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter$loadTokens$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -612,12 +612,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Map<TokenDetailed, ? extends Boolean>> result) {
-                m1764invoke(result);
+                m1769invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1764invoke(Result<? extends Map<TokenDetailed, ? extends Boolean>> it) {
+            public final void m1769invoke(Result<? extends Map<TokenDetailed, ? extends Boolean>> it) {
                 ResourceManager resourceManager;
                 CryptoPreferenceHelper cryptoPreferenceHelper;
                 List mutableList;
@@ -694,7 +694,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
     private final void subscribeToEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.TokensSettingsChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo1009ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.TokensSettingsChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.TokensSettingsChanged, Unit>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter$subscribeToEvents$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -703,12 +703,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.TokensSettingsChanged tokensSettingsChanged) {
-                m1766invoke(tokensSettingsChanged);
+                m1771invoke(tokensSettingsChanged);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1766invoke(DomainRxEvents.TokensSettingsChanged it) {
+            public final void m1771invoke(DomainRxEvents.TokensSettingsChanged it) {
                 String str;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents.TokensSettingsChanged tokensSettingsChanged = it;
@@ -758,7 +758,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
     }
 
     private final void subscribeToQueryChanges() {
-        Observable<String> observeOn = this.querySubject.debounce(500L, TimeUnit.MILLISECONDS).distinctUntilChanged().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<String> observeOn = this.querySubject.debounce(500L, TimeUnit.MILLISECONDS).distinctUntilChanged().observeOn(this.schedulersProvider.mo1010ui());
         final Function1<String, Boolean> function1 = new Function1<String, Boolean>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter$subscribeToQueryChanges$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -785,7 +785,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                 subscribeToQueryChanges$lambda$23 = WalletHomeCryptoTokensSettingsPresenter.subscribeToQueryChanges$lambda$23(Function1.this, obj);
                 return subscribeToQueryChanges$lambda$23;
             }
-        }).observeOn(this.schedulersProvider.mo1010io());
+        }).observeOn(this.schedulersProvider.mo1011io());
         final Function1<String, ObservableSource<? extends Result<? extends List<? extends FoundTokenItem>>>> function12 = new Function1<String, ObservableSource<? extends Result<? extends List<? extends FoundTokenItem>>>>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter$subscribeToQueryChanges$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -824,12 +824,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends FoundTokenItem>> result) {
-                m1767invoke(result);
+                m1772invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1767invoke(Result<? extends List<? extends FoundTokenItem>> it) {
+            public final void m1772invoke(Result<? extends List<? extends FoundTokenItem>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends FoundTokenItem>> result = it;
                 if (result instanceof Result.Success) {
@@ -882,7 +882,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
     }
 
     private final void subscribeToTokenVisibilitySwitch() {
-        Observable<FoundTokenItem> observeOn = this.tokenVisibilitySubject.observeOn(this.schedulersProvider.mo1009ui());
+        Observable<FoundTokenItem> observeOn = this.tokenVisibilitySubject.observeOn(this.schedulersProvider.mo1010ui());
         final Function1<FoundTokenItem, FoundTokenItem> function1 = new Function1<FoundTokenItem, FoundTokenItem>() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter$subscribeToTokenVisibilitySwitch$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -910,8 +910,8 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                 subscribeToTokenVisibilitySwitch$lambda$26 = WalletHomeCryptoTokensSettingsPresenter.subscribeToTokenVisibilitySwitch$lambda$26(Function1.this, obj);
                 return subscribeToTokenVisibilitySwitch$lambda$26;
             }
-        }).debounce(200L, TimeUnit.MILLISECONDS).observeOn(this.schedulersProvider.mo1010io());
-        final C2392xee15b4fa c2392xee15b4fa = new C2392xee15b4fa(this);
+        }).debounce(200L, TimeUnit.MILLISECONDS).observeOn(this.schedulersProvider.mo1011io());
+        final C2396xee15b4fa c2396xee15b4fa = new C2396xee15b4fa(this);
         Observable flatMap = observeOn2.flatMap(new Function() { // from class: com.iMe.ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSettingsPresenter$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -930,12 +930,12 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> pair) {
-                m1768invoke(pair);
+                m1773invoke(pair);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1768invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> it) {
+            public final void m1773invoke(Pair<? extends Result<? extends Boolean>, ? extends FoundTokenItem> it) {
                 ResourceManager resourceManager;
                 List<BaseNode> list;
                 FoundTokenItem copy;

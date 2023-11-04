@@ -26,12 +26,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;Landroid/graphics/Bitmap;)V
     .locals 9
 
-    .line 1453
+    .line 1468
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$BitmapFrame;->this$1:Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1451
+    .line 1466
     new-instance v8, Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-object v2, p1, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->this$0:Lorg/telegram/ui/Stories/recorder/TimelineView;
@@ -50,7 +50,7 @@
 
     iput-object v8, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$BitmapFrame;->alpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 1454
+    .line 1469
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$BitmapFrame;->bitmap:Landroid/graphics/Bitmap;
 
     return-void
@@ -61,7 +61,7 @@
 .method public getAlpha()F
     .locals 2
 
-    .line 1458
+    .line 1473
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$BitmapFrame;->alpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/high16 v1, 0x3f800000    # 1.0f

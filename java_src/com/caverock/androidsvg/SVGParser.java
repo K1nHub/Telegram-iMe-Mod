@@ -665,7 +665,7 @@ public class SVGParser {
         private SAXHandler() {
         }
 
-        /* synthetic */ SAXHandler(SVGParser sVGParser, C04641 c04641) {
+        /* synthetic */ SAXHandler(SVGParser sVGParser, C04701 c04701) {
             this();
         }
 
@@ -714,13 +714,13 @@ public class SVGParser {
                 str2 = str3;
             }
             SVGElem fromString = SVGElem.fromString(str2);
-            switch (C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGElem[fromString.ordinal()]) {
+            switch (C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGElem[fromString.ordinal()]) {
                 case 1:
                     svg(attributes);
                     return;
                 case 2:
                 case 3:
-                    m1122g(attributes);
+                    m1123g(attributes);
                     return;
                 case 4:
                     defs(attributes);
@@ -881,7 +881,7 @@ public class SVGParser {
             if (str2.length() <= 0) {
                 str2 = str3;
             }
-            int i2 = C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGElem[SVGElem.fromString(str2).ordinal()];
+            int i2 = C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGElem[SVGElem.fromString(str2).ordinal()];
             if (i2 != 1 && i2 != 2 && i2 != 4 && i2 != 5 && i2 != 13 && i2 != 14) {
                 switch (i2) {
                     case 16:
@@ -973,7 +973,7 @@ public class SVGParser {
     private void parseAttributesSVG(SVG.Svg svg, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            int i2 = C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
+            int i2 = C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 1) {
                 svg.f123x = parseLength(trim);
             } else if (i2 == 2) {
@@ -999,7 +999,7 @@ public class SVGParser {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.caverock.androidsvg.SVGParser$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C04641 {
+    public static /* synthetic */ class C04701 {
         static final /* synthetic */ int[] $SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr;
         static final /* synthetic */ int[] $SwitchMap$com$caverock$androidsvg$SVGParser$SVGElem;
 
@@ -1492,7 +1492,7 @@ public class SVGParser {
     }
 
     /* renamed from: g */
-    private void m1122g(Attributes attributes) throws SVGParseException {
+    private void m1123g(Attributes attributes) throws SVGParseException {
         debug("<g>", new Object[0]);
         if (this.currentElement == null) {
             throw new SVGParseException("Invalid document. Root element must be <svg>");
@@ -1543,7 +1543,7 @@ public class SVGParser {
     private void parseAttributesUse(SVG.Use use, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            int i2 = C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
+            int i2 = C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 1) {
                 use.f147x = parseLength(trim);
             } else if (i2 == 2) {
@@ -1586,7 +1586,7 @@ public class SVGParser {
     private void parseAttributesImage(SVG.Image image, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            int i2 = C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
+            int i2 = C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 1) {
                 image.f108x = parseLength(trim);
             } else if (i2 == 2) {
@@ -1632,7 +1632,7 @@ public class SVGParser {
     private void parseAttributesPath(SVG.Path path, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            int i2 = C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
+            int i2 = C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 8) {
                 path.f116d = parsePath(trim);
             } else if (i2 != 9) {
@@ -1666,7 +1666,7 @@ public class SVGParser {
     private void parseAttributesRect(SVG.Rect rect, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            int i2 = C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
+            int i2 = C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 1) {
                 rect.f121x = parseLength(trim);
             } else if (i2 == 2) {
@@ -1720,7 +1720,7 @@ public class SVGParser {
     private void parseAttributesCircle(SVG.Circle circle, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            switch (C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
+            switch (C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
                 case 12:
                     circle.f101cx = parseLength(trim);
                     break;
@@ -1757,7 +1757,7 @@ public class SVGParser {
     private void parseAttributesEllipse(SVG.Ellipse ellipse, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            switch (C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
+            switch (C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
                 case 10:
                     SVG.Length parseLength = parseLength(trim);
                     ellipse.f106rx = parseLength;
@@ -1801,7 +1801,7 @@ public class SVGParser {
     private void parseAttributesLine(SVG.Line line, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            switch (C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
+            switch (C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
                 case 15:
                     line.f110x1 = parseLength(trim);
                     break;
@@ -1900,7 +1900,7 @@ public class SVGParser {
     private void parseAttributesTextPosition(SVG.TextPositionedContainer textPositionedContainer, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            int i2 = C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
+            int i2 = C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 1) {
                 textPositionedContainer.f137x = parseLengthList(trim);
             } else if (i2 == 2) {
@@ -1967,7 +1967,7 @@ public class SVGParser {
     private void parseAttributesTRef(SVG.TRef tRef, Attributes attributes) {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            if (C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()] == 6 && ("".equals(attributes.getURI(i)) || "http://www.w3.org/1999/xlink".equals(attributes.getURI(i)))) {
+            if (C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()] == 6 && ("".equals(attributes.getURI(i)) || "http://www.w3.org/1999/xlink".equals(attributes.getURI(i)))) {
                 tRef.href = trim;
             }
         }
@@ -1992,7 +1992,7 @@ public class SVGParser {
     private void parseAttributesConditional(SVG.SvgConditional svgConditional, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            switch (C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
+            switch (C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
                 case 21:
                     svgConditional.setRequiredFeatures(parseRequiredFeatures(trim));
                     break;
@@ -2049,7 +2049,7 @@ public class SVGParser {
     private void parseAttributesMarker(SVG.Marker marker, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            switch (C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
+            switch (C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
                 case 26:
                     marker.refX = parseLength(trim);
                     break;
@@ -2124,7 +2124,7 @@ public class SVGParser {
             if (r0 >= r1) goto L90
             java.lang.String r1 = r6.getValue(r0)
             java.lang.String r1 = r1.trim()
-            int[] r2 = com.caverock.androidsvg.SVGParser.C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr
+            int[] r2 = com.caverock.androidsvg.SVGParser.C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr
             java.lang.String r3 = r6.getLocalName(r0)
             com.caverock.androidsvg.SVGParser$SVGAttr r3 = com.caverock.androidsvg.SVGParser.SVGAttr.fromString(r3)
             int r3 = r3.ordinal()
@@ -2201,7 +2201,7 @@ public class SVGParser {
     private void parseAttributesLinearGradient(SVG.SvgLinearGradient svgLinearGradient, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            switch (C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
+            switch (C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()]) {
                 case 15:
                     svgLinearGradient.f126x1 = parseLength(trim);
                     break;
@@ -2250,7 +2250,7 @@ public class SVGParser {
             if (r0 >= r1) goto L5e
             java.lang.String r1 = r6.getValue(r0)
             java.lang.String r1 = r1.trim()
-            int[] r2 = com.caverock.androidsvg.SVGParser.C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr
+            int[] r2 = com.caverock.androidsvg.SVGParser.C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr
             java.lang.String r3 = r6.getLocalName(r0)
             com.caverock.androidsvg.SVGParser$SVGAttr r3 = com.caverock.androidsvg.SVGParser.SVGAttr.fromString(r3)
             int r3 = r3.ordinal()
@@ -2324,7 +2324,7 @@ public class SVGParser {
     private void parseAttributesStop(SVG.Stop stop, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            if (C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()] == 37) {
+            if (C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()] == 37) {
                 stop.offset = parseGradientOffset(trim);
             }
         }
@@ -2392,7 +2392,7 @@ public class SVGParser {
     private void parseAttributesClipPath(SVG.ClipPath clipPath, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            if (C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()] == 38) {
+            if (C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()] == 38) {
                 if ("objectBoundingBox".equals(trim)) {
                     clipPath.clipPathUnitsAreUser = Boolean.FALSE;
                 } else if ("userSpaceOnUse".equals(trim)) {
@@ -2429,7 +2429,7 @@ public class SVGParser {
     private void parseAttributesTextPath(SVG.TextPath textPath, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            int i2 = C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
+            int i2 = C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 != 6) {
                 if (i2 == 39) {
                     textPath.startOffset = parseLength(trim);
@@ -2473,7 +2473,7 @@ public class SVGParser {
             if (r0 >= r1) goto Ld3
             java.lang.String r1 = r7.getValue(r0)
             java.lang.String r1 = r1.trim()
-            int[] r2 = com.caverock.androidsvg.SVGParser.C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr
+            int[] r2 = com.caverock.androidsvg.SVGParser.C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr
             java.lang.String r3 = r7.getLocalName(r0)
             com.caverock.androidsvg.SVGParser$SVGAttr r3 = com.caverock.androidsvg.SVGParser.SVGAttr.fromString(r3)
             int r3 = r3.ordinal()
@@ -2620,7 +2620,7 @@ public class SVGParser {
     private void parseAttributesMask(SVG.Mask mask, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            int i2 = C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
+            int i2 = C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 1) {
                 mask.f114x = parseLength(trim);
             } else if (i2 == 2) {
@@ -2996,7 +2996,7 @@ public class SVGParser {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
             if (trim.length() != 0) {
-                int i2 = C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
+                int i2 = C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
                 if (i2 == 45) {
                     parseStyle(svgElementBase, trim);
                 } else if (i2 == 46) {
@@ -3041,7 +3041,7 @@ public class SVGParser {
             return;
         }
         try {
-            switch (C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(str).ordinal()]) {
+            switch (C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(str).ordinal()]) {
                 case 47:
                     SVG.SvgPaint parsePaintSpecifier = parsePaintSpecifier(str2);
                     style.fill = parsePaintSpecifier;
@@ -3333,7 +3333,7 @@ public class SVGParser {
     private void parseAttributesViewBox(SVG.SvgViewBoxContainer svgViewBoxContainer, Attributes attributes) throws SVGParseException {
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            int i2 = C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
+            int i2 = C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 7) {
                 parsePreserveAspectRatio(svgViewBoxContainer, trim);
             } else if (i2 == 87) {
@@ -4248,7 +4248,7 @@ public class SVGParser {
         boolean z = true;
         for (int i = 0; i < attributes.getLength(); i++) {
             String trim = attributes.getValue(i).trim();
-            int i2 = C04641.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
+            int i2 = C04701.$SwitchMap$com$caverock$androidsvg$SVGParser$SVGAttr[SVGAttr.fromString(attributes.getLocalName(i)).ordinal()];
             if (i2 == 88) {
                 z = trim.equals("text/css");
             } else if (i2 == 89) {

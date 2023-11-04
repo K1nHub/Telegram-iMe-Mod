@@ -33,7 +33,7 @@ public final class InlineClassRepresentation<Type extends SimpleTypeMarker> exte
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ValueClassRepresentation
     public List<Pair<Name, Type>> getUnderlyingPropertyNamesToTypes() {
         List<Pair<Name, Type>> listOf;
-        listOf = CollectionsKt__CollectionsJVMKt.listOf(TuplesKt.m144to(this.underlyingPropertyName, this.underlyingType));
+        listOf = CollectionsKt__CollectionsJVMKt.listOf(TuplesKt.m146to(this.underlyingPropertyName, this.underlyingType));
         return listOf;
     }
 

@@ -23,7 +23,7 @@ import org.ton.tlb.providers.TlbConstructorProvider;
 public final class BlockCreateStatsExt implements BlockCreateStats {
     private final HashmapAugE<CreatorStats, UInt> counters;
     public static final Companion Companion = new Companion(null);
-    private static final KSerializer<Object>[] $childSerializers = {new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(HashmapAugE.class), new Annotation[]{new C7466xfa365a14("@type")})};
+    private static final KSerializer<Object>[] $childSerializers = {new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(HashmapAugE.class), new Annotation[]{new C7541xfa365a14("@type")})};
 
     public boolean equals(Object obj) {
         if (this == obj) {

@@ -49,7 +49,7 @@ public final class MsgExportDeq implements OutMsg {
     }
 
     public int hashCode() {
-        return (this.outMsg.hashCode() * 31) + ULong.m1991hashCodeimpl(this.importBlockLt);
+        return (this.outMsg.hashCode() * 31) + ULong.m1996hashCodeimpl(this.importBlockLt);
     }
 
     private MsgExportDeq(int i, CellRef<MsgEnvelope> cellRef, ULong uLong, SerializationConstructorMarker serializationConstructorMarker) {
@@ -57,7 +57,7 @@ public final class MsgExportDeq implements OutMsg {
             PluginExceptionsKt.throwMissingFieldException(i, 3, MsgExportDeq$$serializer.INSTANCE.getDescriptor());
         }
         this.outMsg = cellRef;
-        this.importBlockLt = uLong.m1993unboximpl();
+        this.importBlockLt = uLong.m1998unboximpl();
     }
 
     private MsgExportDeq(CellRef<MsgEnvelope> outMsg, long j) {
@@ -68,7 +68,7 @@ public final class MsgExportDeq implements OutMsg {
 
     public static final /* synthetic */ void write$Self(MsgExportDeq msgExportDeq, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         compositeEncoder.encodeSerializableElement(serialDescriptor, 0, $childSerializers[0], msgExportDeq.outMsg);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1988boximpl(msgExportDeq.importBlockLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1993boximpl(msgExportDeq.importBlockLt));
     }
 
     public final CellRef<MsgEnvelope> getOutMsg() {
@@ -76,7 +76,7 @@ public final class MsgExportDeq implements OutMsg {
     }
 
     /* renamed from: getImportBlockLt-s-VKNKU  reason: not valid java name */
-    public final long m4974getImportBlockLtsVKNKU() {
+    public final long m5128getImportBlockLtsVKNKU() {
         return this.importBlockLt;
     }
 
@@ -131,7 +131,7 @@ public final class MsgExportDeq implements OutMsg {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("msg_export_deq");
         open.field("out_msg", this.outMsg);
-        open.field("import_block_lt", ULong.m1988boximpl(this.importBlockLt));
+        open.field("import_block_lt", ULong.m1993boximpl(this.importBlockLt));
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

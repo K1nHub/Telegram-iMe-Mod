@@ -8,7 +8,7 @@ import p033j$.util.function.Consumer;
 public final /* synthetic */ class Iterable$CC {
     public static void $default$forEach(Iterable iterable, Consumer consumer) {
         if (DesugarCollections.f676a.isInstance(iterable)) {
-            DesugarCollections.m689c(iterable, consumer);
+            DesugarCollections.m690c(iterable, consumer);
             return;
         }
         Objects.requireNonNull(consumer);

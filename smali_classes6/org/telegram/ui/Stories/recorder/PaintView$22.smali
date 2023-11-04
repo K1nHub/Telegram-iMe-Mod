@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
     .locals 0
 
-    .line 1738
+    .line 1744
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$22;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput p5, p0, Lorg/telegram/ui/Stories/recorder/PaintView$22;->val$wasSelectedIndex:I
@@ -39,7 +39,7 @@
 .method public canClickWidget(Ljava/lang/Integer;)Z
     .locals 6
 
-    .line 1752
+    .line 1758
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
@@ -56,7 +56,7 @@
 
     move v3, v2
 
-    .line 1754
+    .line 1760
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/PaintView$22;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -68,7 +68,7 @@
 
     if-ge v2, v4, :cond_1
 
-    .line 1755
+    .line 1761
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/PaintView$22;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-object v4, v4, Lorg/telegram/ui/Stories/recorder/PaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
@@ -91,7 +91,7 @@
     :cond_1
     if-lt v3, v1, :cond_2
 
-    .line 1759
+    .line 1765
     iget v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -104,7 +104,7 @@
 
     if-nez v2, :cond_2
 
-    .line 1760
+    .line 1766
     sget v0, Lorg/telegram/messenger/R$string;->StoryPremiumWidgets:I
 
     const-string v1, "StoryPremiumWidgets"
@@ -118,12 +118,12 @@
 
     if-lt v3, v2, :cond_3
 
-    .line 1764
+    .line 1770
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
 
-    .line 1765
+    .line 1771
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -138,7 +138,7 @@
 
     const-string v4, "LimitReached"
 
-    .line 1766
+    .line 1772
     invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
@@ -147,17 +147,17 @@
 
     const-string v5, "StoryReactionsWidgetLimit"
 
-    .line 1767
+    .line 1773
     invoke-static {v5, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1765
+    .line 1771
     invoke-virtual {v0, v2, v3, v4}, Lorg/telegram/ui/Components/BulletinFactory;->createSimpleBulletin(ILjava/lang/CharSequence;Ljava/lang/CharSequence;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v0
 
-    .line 1768
+    .line 1774
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Bulletin;->show(Z)Lorg/telegram/ui/Components/Bulletin;
 
     return p1
@@ -177,7 +177,7 @@
 .method protected checkAudioPermission(Ljava/lang/Runnable;)Z
     .locals 1
 
-    .line 1777
+    .line 1783
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$22;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->checkAudioPermission(Ljava/lang/Runnable;)Z
@@ -190,10 +190,10 @@
 .method public onDismissAnimationStart()V
     .locals 2
 
-    .line 1741
+    .line 1747
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->onDismissAnimationStart()V
 
-    .line 1742
+    .line 1748
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$22;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$22;->val$wasSelectedIndex:I

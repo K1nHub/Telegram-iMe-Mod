@@ -132,7 +132,7 @@
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p2, "keepAliveDuration <= 0: "
+    const-string/jumbo p2, "keepAliveDuration <= 0: "
 
     invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

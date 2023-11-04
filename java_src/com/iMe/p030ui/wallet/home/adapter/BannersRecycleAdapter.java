@@ -12,9 +12,9 @@ import kotlin.collections.CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.RLottieImageView;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: BannersRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.home.adapter.BannersRecycleAdapter */
 /* loaded from: classes4.dex */
@@ -33,7 +33,7 @@ public final class BannersRecycleAdapter extends BaseQuickAdapter<SlideItem, Bas
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BannersRecycleAdapter(ResourceManager resourceManager) {
-        super(C3630R.layout.fork_recycle_item_wallet_banner_slide, null, 2, null);
+        super(C3634R.layout.fork_recycle_item_wallet_banner_slide, null, 2, null);
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
     }
@@ -49,7 +49,7 @@ public final class BannersRecycleAdapter extends BaseQuickAdapter<SlideItem, Bas
     }
 
     public final void pauseAnimation() {
-        View viewByPosition = getViewByPosition(this.currentAnimatedBanner, C3630R.C3633id.image_banner_image);
+        View viewByPosition = getViewByPosition(this.currentAnimatedBanner, C3634R.C3637id.image_banner_image);
         if (viewByPosition == null || !(viewByPosition instanceof RLottieImageView)) {
             return;
         }
@@ -57,7 +57,7 @@ public final class BannersRecycleAdapter extends BaseQuickAdapter<SlideItem, Bas
     }
 
     public final void resumeAnimation() {
-        View viewByPosition = getViewByPosition(this.currentAnimatedBanner, C3630R.C3633id.image_banner_image);
+        View viewByPosition = getViewByPosition(this.currentAnimatedBanner, C3634R.C3637id.image_banner_image);
         if (viewByPosition == null || !(viewByPosition instanceof RLottieImageView)) {
             return;
         }
@@ -71,7 +71,7 @@ public final class BannersRecycleAdapter extends BaseQuickAdapter<SlideItem, Bas
         Intrinsics.checkNotNullParameter(payloads, "payloads");
         final Object firstOrNull = CollectionsKt.firstOrNull(payloads);
         if (firstOrNull instanceof Boolean) {
-            BaseQuickAdapterExtKt.applyForView(holder, C3630R.C3633id.image_banner_image, new Function1<RLottieImageView, Unit>() { // from class: com.iMe.ui.wallet.home.adapter.BannersRecycleAdapter$convert$1$1
+            BaseQuickAdapterExtKt.applyForView(holder, C3634R.C3637id.image_banner_image, new Function1<RLottieImageView, Unit>() { // from class: com.iMe.ui.wallet.home.adapter.BannersRecycleAdapter$convert$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {
@@ -102,12 +102,12 @@ public final class BannersRecycleAdapter extends BaseQuickAdapter<SlideItem, Bas
     public void convert(final BaseViewHolder holder, final SlideItem item) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3630R.C3633id.card_banner_slide;
+        int i = C3634R.C3637id.card_banner_slide;
         BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(holder, i, false), i, Theme.key_windowBackgroundWhite);
         int i2 = Theme.key_chat_messagePanelText;
-        int i3 = C3630R.C3633id.text_banner_title;
-        int i4 = C3630R.C3633id.text_banner_description;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i2, i3, i4), i3).setText(i3, this.resourceManager.getString(item.getSlide().getTitle())).setText(i4, this.resourceManager.getString(item.getSlide().getShortDescription())), C3630R.C3633id.image_banner_image, new Function1<RLottieImageView, Unit>() { // from class: com.iMe.ui.wallet.home.adapter.BannersRecycleAdapter$convert$2
+        int i3 = C3634R.C3637id.text_banner_title;
+        int i4 = C3634R.C3637id.text_banner_description;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i2, i3, i4), i3).setText(i3, this.resourceManager.getString(item.getSlide().getTitle())).setText(i4, this.resourceManager.getString(item.getSlide().getShortDescription())), C3634R.C3637id.image_banner_image, new Function1<RLottieImageView, Unit>() { // from class: com.iMe.ui.wallet.home.adapter.BannersRecycleAdapter$convert$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {

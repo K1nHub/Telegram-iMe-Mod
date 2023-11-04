@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 269
+    .line 270
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -50,14 +50,14 @@
 .method public getColor(I)I
     .locals 2
 
-    .line 275
+    .line 276
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isPinnedPlayerThemeOverridden()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 276
+    .line 277
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
 
     move-result-object v0
@@ -68,7 +68,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 278
+    .line 279
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
 
     move-result-object p1
@@ -79,7 +79,7 @@
 
     return p1
 
-    .line 280
+    .line 281
     :cond_0
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$100()Landroid/util/SparseIntArray;
 
@@ -93,7 +93,7 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 282
+    .line 283
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
 
     move-result-object v1
@@ -104,7 +104,7 @@
 
     if-ltz v0, :cond_1
 
-    .line 284
+    .line 285
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
 
     move-result-object p1
@@ -115,7 +115,7 @@
 
     return p1
 
-    .line 287
+    .line 288
     :cond_1
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getDefaultColor(I)I
 
@@ -123,7 +123,7 @@
 
     return p1
 
-    .line 289
+    .line 290
     :cond_2
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 

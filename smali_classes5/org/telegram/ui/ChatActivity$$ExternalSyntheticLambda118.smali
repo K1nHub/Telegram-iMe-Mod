@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:[Z
 
-.field public final synthetic f$1:Ljava/lang/Runnable;
-
 
 # direct methods
-.method public synthetic constructor <init>([ZLjava/lang/Runnable;)V
+.method public synthetic constructor <init>([Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda118;->f$0:[Z
-
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda118;->f$1:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda118;->f$0:[Z
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda118;->f$1:Ljava/lang/Runnable;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$kRivEMYeevAOR_1v9BKtbE4H7mo([ZLjava/lang/Runnable;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$5rtVIFb6BDVocYGGWCB2h38-eB4([ZLandroid/view/View;)V
 
     return-void
 .end method

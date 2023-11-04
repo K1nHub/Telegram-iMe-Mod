@@ -1,11 +1,10 @@
 package org.telegram.tgnet;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import org.telegram.messenger.LiteMode;
+import org.telegram.tgnet.p042tl.TL_stories$PeerStories;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_userFull extends TLRPC$UserFull {
-    public static int constructor = -1179571092;
-
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         int readInt32 = abstractSerializedData.readInt32(z);
@@ -19,8 +18,8 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
         this.voice_messages_forbidden = (1048576 & readInt32) != 0;
         this.translations_disabled = (8388608 & readInt32) != 0;
         this.stories_pinned_available = (67108864 & readInt32) != 0;
-        this.blocked_my_stories_from = (readInt32 & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0;
-        this.f1763id = abstractSerializedData.readInt64(z);
+        this.blocked_my_stories_from = (readInt32 & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0;
+        this.f1750id = abstractSerializedData.readInt64(z);
         if ((this.flags & 2) != 0) {
             this.about = abstractSerializedData.readString(z);
         }
@@ -81,13 +80,13 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
             this.wallpaper = TLRPC$WallPaper.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
         if ((this.flags & ConnectionsManager.FileTypeVideo) != 0) {
-            this.stories = TLRPC$PeerStories.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
+            this.stories = TL_stories$PeerStories.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-1179571092);
         int i = this.blocked ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         int i2 = this.phone_calls_available ? i | 16 : i & (-17);
@@ -106,10 +105,10 @@ public class TLRPC$TL_userFull extends TLRPC$UserFull {
         this.flags = i8;
         int i9 = this.stories_pinned_available ? i8 | ConnectionsManager.FileTypeFile : i8 & (-67108865);
         this.flags = i9;
-        int i10 = this.blocked_my_stories_from ? i9 | C0479C.BUFFER_FLAG_FIRST_SAMPLE : i9 & (-134217729);
+        int i10 = this.blocked_my_stories_from ? i9 | C0485C.BUFFER_FLAG_FIRST_SAMPLE : i9 & (-134217729);
         this.flags = i10;
         abstractSerializedData.writeInt32(i10);
-        abstractSerializedData.writeInt64(this.f1763id);
+        abstractSerializedData.writeInt64(this.f1750id);
         if ((this.flags & 2) != 0) {
             abstractSerializedData.writeString(this.about);
         }

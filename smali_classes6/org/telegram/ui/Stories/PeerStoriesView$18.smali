@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 2265
+    .line 2326
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,16 +36,16 @@
 
 # virtual methods
 .method public didPressedButton(IZZIZLjava/lang/String;Z)V
-    .locals 25
+    .locals 26
 
     move-object/from16 v0, p0
 
     move/from16 v1, p1
 
-    .line 2269
+    .line 2330
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6500(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryViewer;
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Stories/StoryViewer;
 
     move-result-object v2
 
@@ -55,18 +55,18 @@
 
     return-void
 
-    .line 2272
+    .line 2333
     :cond_0
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v3, v2, Lorg/telegram/ui/Stories/PeerStoriesView;->currentStory:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
 
-    iget-object v3, v3, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v3, v3, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     if-eqz v3, :cond_f
 
-    .line 2273
-    instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_storyItemSkipped;
+    .line 2334
+    instance-of v4, v3, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemSkipped;
 
     if-eqz v4, :cond_1
 
@@ -85,8 +85,8 @@
 
     if-ne v1, v15, :cond_2
 
-    .line 2276
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
+    .line 2337
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6700(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
 
     move-result-object v2
 
@@ -106,20 +106,20 @@
 
     goto :goto_0
 
-    .line 2328
+    .line 2389
     :cond_2
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6700(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
 
     move-result-object v2
 
     if-eqz v2, :cond_3
 
-    .line 2329
+    .line 2390
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6700(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
 
     move-result-object v2
 
@@ -134,20 +134,20 @@
 
     if-eq v1, v4, :cond_5
 
-    .line 2278
+    .line 2339
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v4}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
+    invoke-static {v4}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6700(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
 
     move-result-object v4
 
     invoke-virtual {v4, v2}, Lorg/telegram/ui/Components/ChatAttachAlert;->dismiss(Z)V
 
-    .line 2280
+    .line 2341
     :cond_5
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v4}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
+    invoke-static {v4}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6700(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
 
     move-result-object v4
 
@@ -159,10 +159,10 @@
 
     move-result-object v14
 
-    .line 2281
+    .line 2342
     iget-object v4, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v4}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
+    invoke-static {v4}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6700(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/Components/ChatAttachAlert;
 
     move-result-object v4
 
@@ -174,7 +174,7 @@
 
     move-result-object v13
 
-    .line 2282
+    .line 2343
     invoke-virtual {v14}, Ljava/util/HashMap;->isEmpty()Z
 
     move-result v4
@@ -188,7 +188,7 @@
     :goto_1
     int-to-double v4, v11
 
-    .line 2283
+    .line 2344
     invoke-virtual {v14}, Ljava/util/HashMap;->size()I
 
     move-result v6
@@ -209,7 +209,7 @@
 
     if-gez v4, :cond_e
 
-    .line 2284
+    .line 2345
     invoke-virtual {v14}, Ljava/util/HashMap;->size()I
 
     move-result v4
@@ -224,7 +224,7 @@
 
     move-result v4
 
-    .line 2285
+    .line 2346
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
@@ -236,7 +236,7 @@
 
     add-int v8, v5, v7
 
-    .line 2287
+    .line 2348
     invoke-virtual {v13}, Ljava/util/ArrayList;->size()I
 
     move-result v9
@@ -245,7 +245,7 @@
 
     goto :goto_5
 
-    .line 2290
+    .line 2351
     :cond_6
     invoke-virtual {v13, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -257,12 +257,12 @@
 
     check-cast v8, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 2292
+    .line 2353
     new-instance v9, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;
 
     invoke-direct {v9}, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;-><init>()V
 
-    .line 2293
+    .line 2354
     iget-boolean v10, v8, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     if-nez v10, :cond_7
@@ -271,31 +271,31 @@
 
     if-eqz v2, :cond_7
 
-    .line 2294
+    .line 2355
     iput-object v2, v9, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->path:Ljava/lang/String;
 
     goto :goto_3
 
-    .line 2295
+    .line 2356
     :cond_7
     iget-object v2, v8, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
     if-eqz v2, :cond_8
 
-    .line 2296
+    .line 2357
     iput-object v2, v9, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->path:Ljava/lang/String;
 
-    .line 2298
+    .line 2359
     :cond_8
     :goto_3
     iget-object v2, v8, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
 
     iput-object v2, v9, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->thumbPath:Ljava/lang/String;
 
-    .line 2299
+    .line 2360
     iput-boolean v10, v9, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->isVideo:Z
 
-    .line 2300
+    .line 2361
     iget-object v2, v8, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
     if-eqz v2, :cond_9
@@ -312,32 +312,32 @@
     :goto_4
     iput-object v2, v9, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->caption:Ljava/lang/String;
 
-    .line 2301
+    .line 2362
     iget-object v2, v8, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
 
     iput-object v2, v9, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->entities:Ljava/util/ArrayList;
 
-    .line 2302
+    .line 2363
     iget-object v2, v8, Lorg/telegram/messenger/MediaController$MediaEditState;->stickers:Ljava/util/ArrayList;
 
     iput-object v2, v9, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->masks:Ljava/util/ArrayList;
 
-    .line 2303
+    .line 2364
     iget v2, v8, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
 
     iput v2, v9, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->ttl:I
 
-    .line 2304
+    .line 2365
     iget-object v2, v8, Lorg/telegram/messenger/MediaController$MediaEditState;->editedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
     iput-object v2, v9, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    .line 2305
+    .line 2366
     iget-boolean v2, v8, Lorg/telegram/messenger/MediaController$PhotoEntry;->canDeleteAfter:Z
 
     iput-boolean v2, v9, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->canDeleteAfter:Z
 
-    .line 2306
+    .line 2367
     iget-object v2, v8, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
     invoke-static {v2}, Lorg/telegram/messenger/SendMessagesHelper;->checkUpdateStickersOrder(Ljava/lang/CharSequence;)Z
@@ -346,15 +346,15 @@
 
     iput-boolean v2, v9, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->updateStickersOrder:Z
 
-    .line 2307
+    .line 2368
     iget-boolean v2, v8, Lorg/telegram/messenger/MediaController$PhotoEntry;->hasSpoiler:Z
 
     iput-boolean v2, v9, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->hasMediaSpoilers:Z
 
-    .line 2308
+    .line 2369
     invoke-virtual {v6, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2309
+    .line 2370
     invoke-virtual {v8}, Lorg/telegram/messenger/MediaController$PhotoEntry;->reset()V
 
     :goto_5
@@ -367,7 +367,7 @@
     :cond_a
     if-nez v11, :cond_b
 
-    .line 2313
+    .line 2374
     invoke-virtual {v6, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -376,30 +376,32 @@
 
     iget-boolean v2, v2, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->updateStickersOrder:Z
 
-    move/from16 v16, v2
+    move/from16 v17, v2
 
     goto :goto_6
 
     :cond_b
-    move/from16 v16, v12
+    move/from16 v17, v12
 
-    .line 2315
+    .line 2376
     :goto_6
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object v4
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5400(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v7
 
     const/4 v2, 0x0
 
     const/4 v9, 0x0
+
+    const/16 v16, 0x0
 
     if-eq v1, v15, :cond_d
 
@@ -408,20 +410,20 @@
     goto :goto_7
 
     :cond_c
-    move/from16 v17, v12
+    move/from16 v18, v12
 
     goto :goto_8
 
     :cond_d
     :goto_7
-    const/16 v17, 0x1
+    const/16 v18, 0x1
 
     :goto_8
-    const/16 v18, 0x0
-
     const/16 v19, 0x0
 
     const/16 v20, 0x0
+
+    const/16 v21, 0x0
 
     move-object v5, v6
 
@@ -433,45 +435,47 @@
 
     move v2, v11
 
-    move/from16 v11, v17
+    move-object/from16 v11, v16
 
-    move/from16 v21, v12
+    move/from16 v22, v12
 
-    move/from16 v12, p2
+    move/from16 v12, v18
 
-    move-object/from16 v22, v13
+    move-object/from16 v23, v13
 
-    move-object/from16 v13, v18
+    move/from16 v13, p2
 
-    move-object/from16 v23, v14
+    move-object/from16 v24, v14
 
-    move/from16 v14, p3
+    move-object/from16 v14, v19
 
-    move/from16 v24, v15
+    move/from16 v25, v15
 
-    move/from16 v15, p4
+    move/from16 v15, p3
 
-    move-object/from16 v17, v19
+    move/from16 v16, p4
 
     move-object/from16 v18, v20
 
-    invoke-static/range {v4 .. v18}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingMedia(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;ZZLorg/telegram/messenger/MessageObject;ZIZLandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;)V
+    move-object/from16 v19, v21
+
+    invoke-static/range {v4 .. v19}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingMedia(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;ZZLorg/telegram/messenger/MessageObject;ZIZLandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;)V
 
     add-int/lit8 v11, v2, 0x1
 
-    move/from16 v12, v21
+    move/from16 v12, v22
 
-    move-object/from16 v13, v22
+    move-object/from16 v13, v23
 
-    move-object/from16 v14, v23
+    move-object/from16 v14, v24
 
-    move/from16 v15, v24
+    move/from16 v15, v25
 
     const/4 v2, 0x1
 
     goto/16 :goto_1
 
-    .line 2317
+    .line 2378
     :cond_e
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
@@ -481,10 +485,10 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setFieldText(Ljava/lang/CharSequence;)V
 
-    .line 2318
+    .line 2379
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5600(Lorg/telegram/ui/Stories/PeerStoriesView;)V
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5700(Lorg/telegram/ui/Stories/PeerStoriesView;)V
 
     :cond_f
     :goto_9
@@ -502,10 +506,10 @@
 .method public doOnIdle(Ljava/lang/Runnable;)V
     .locals 1
 
-    .line 2346
+    .line 2407
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$3900(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$4000(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v0
 
@@ -521,7 +525,7 @@
 .method public needEnterComment()Z
     .locals 1
 
-    .line 2361
+    .line 2422
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->needEnterText()Z
@@ -534,7 +538,7 @@
 .method public onCameraOpened()V
     .locals 1
 
-    .line 2341
+    .line 2402
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -575,25 +579,25 @@
 
     move-object/from16 v0, p0
 
-    .line 2351
+    .line 2412
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView;->currentStory:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
 
-    iget-object v10, v2, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v10, v2, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     if-eqz v10, :cond_2
 
-    .line 2352
-    instance-of v2, v10, Lorg/telegram/tgnet/TLRPC$TL_storyItemSkipped;
+    .line 2413
+    instance-of v2, v10, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemSkipped;
 
     if-eqz v2, :cond_0
 
     goto :goto_1
 
-    .line 2355
+    .line 2416
     :cond_0
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object v3
 
@@ -611,7 +615,7 @@
     :goto_0
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5400(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v6
 
@@ -631,12 +635,12 @@
 
     move/from16 v12, p4
 
-    invoke-static/range {v3 .. v15}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingAudioDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/lang/CharSequence;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;ZILorg/telegram/messenger/MessageObject;Ljava/lang/String;Z)V
+    invoke-static/range {v3 .. v15}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingAudioDocuments(Lorg/telegram/messenger/AccountInstance;Ljava/util/ArrayList;Ljava/lang/CharSequence;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;ZILorg/telegram/messenger/MessageObject;Ljava/lang/String;Z)V
 
-    .line 2356
+    .line 2417
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$18;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5600(Lorg/telegram/ui/Stories/PeerStoriesView;)V
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5700(Lorg/telegram/ui/Stories/PeerStoriesView;)V
 
     :cond_2
     :goto_1

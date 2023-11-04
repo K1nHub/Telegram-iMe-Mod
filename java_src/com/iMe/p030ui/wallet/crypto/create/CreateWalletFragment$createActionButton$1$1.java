@@ -15,7 +15,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CreateWalletFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createActionButton$1$1 */
@@ -93,13 +93,13 @@ public final class CreateWalletFragment$createActionButton$1$1 extends Lambda im
                     createWalletScreenType2 = createWalletFragment2.screenType;
                     if (!Intrinsics.areEqual(((CreateWalletScreenType.WordsCheck) createWalletScreenType2).getSecretWords().get(intValue), ((CreateWalletFragment.NumericEditText) createWalletFragment2.editTexts.get(i)).getText().toString())) {
                         resourceManager = createWalletFragment2.getResourceManager();
-                        String string = resourceManager.getString(C3630R.string.wallet_backup_test_time_alert_title);
+                        String string = resourceManager.getString(C3634R.string.wallet_backup_test_time_alert_title);
                         resourceManager2 = createWalletFragment2.getResourceManager();
-                        String string2 = resourceManager2.getString(C3630R.string.wallet_backup_test_time_alert_text);
+                        String string2 = resourceManager2.getString(C3634R.string.wallet_backup_test_time_alert_text);
                         resourceManager3 = createWalletFragment2.getResourceManager();
-                        String string3 = resourceManager3.getString(C3630R.string.wallet_backup_test_time_alert_button_see);
+                        String string3 = resourceManager3.getString(C3634R.string.wallet_backup_test_time_alert_button_see);
                         resourceManager4 = createWalletFragment2.getResourceManager();
-                        createWalletFragment2.showAlertDialog(new DialogModel(string, string2, string3, resourceManager4.getString(C3630R.string.wallet_backup_test_time_alert_button_try)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createActionButton$1$1$$ExternalSyntheticLambda1
+                        createWalletFragment2.showAlertDialog(new DialogModel(string, string2, string3, resourceManager4.getString(C3634R.string.wallet_backup_test_time_alert_button_try)), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$createActionButton$1$1$$ExternalSyntheticLambda1
                             @Override // com.iMe.fork.utils.Callbacks$Callback
                             public final void invoke() {
                                 CreateWalletFragment$createActionButton$1$1.invoke$lambda$2$lambda$1();

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/messenger/Emoji$EmojiSpan;)V
     .locals 0
 
-    .line 689
+    .line 747
     iput-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$3;->val$e:Lorg/telegram/messenger/Emoji$EmojiSpan;
 
     invoke-direct {p0}, Landroid/text/style/ReplacementSpan;-><init>()V
@@ -41,7 +41,7 @@
 .method public getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
     .locals 6
 
-    .line 692
+    .line 750
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$3;->val$e:Lorg/telegram/messenger/Emoji$EmojiSpan;
 
     move-object v1, p1

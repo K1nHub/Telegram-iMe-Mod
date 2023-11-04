@@ -10,7 +10,7 @@ import java.util.Locale;
 import java.util.Objects;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.p042ui.Components.voip.VoIPHelper;
+import org.telegram.p043ui.Components.voip.VoIPHelper;
 /* loaded from: classes4.dex */
 public class VoIPController {
     public static final int DATA_SAVING_ALWAYS = 2;

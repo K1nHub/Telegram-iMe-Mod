@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$OnDispatchKeyEventListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
+.method public final onDispatchKeyEvent(Landroid/view/KeyEvent;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda18;->f$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$xAZRHKYK5GDwd962jQFAkrltgrc(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;I)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$6nH8WkiXiOBBRQvQpv9a74H9Ji0(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/KeyEvent;)V
 
     return-void
 .end method

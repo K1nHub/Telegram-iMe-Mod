@@ -46,26 +46,26 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$ObjectRef;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.BottomSheet;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Cells.CheckBoxCell;
-import org.telegram.p042ui.Cells.DividerCell;
-import org.telegram.p042ui.Cells.RadioButtonCell;
-import org.telegram.p042ui.Cells.RadioColorCell;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.StorageDiagramView;
-import org.telegram.p042ui.LaunchActivity;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.CheckBoxCell;
+import org.telegram.p043ui.Cells.DividerCell;
+import org.telegram.p043ui.Cells.RadioButtonCell;
+import org.telegram.p043ui.Cells.RadioColorCell;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.StorageDiagramView;
+import org.telegram.p043ui.LaunchActivity;
 /* compiled from: DialogsFactory.kt */
 /* loaded from: classes4.dex */
 public final class DialogsFactoryKt {
     public static /* synthetic */ Dialog showSuccessAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3630R.string.common_ok);
+            charSequence3 = baseFragment.getParentActivity().getString(C3634R.string.common_ok);
             Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         if ((i & 8) != 0) {
@@ -96,7 +96,7 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ Dialog showErrorAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3630R.string.common_ok);
+            charSequence3 = baseFragment.getParentActivity().getString(C3634R.string.common_ok);
             Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         if ((i & 8) != 0) {
@@ -149,7 +149,7 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ Dialog createSuccessAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Function2 function2, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3630R.string.common_ok);
+            charSequence3 = baseFragment.getParentActivity().getString(C3634R.string.common_ok);
             Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         CharSequence charSequence4 = charSequence3;
@@ -181,8 +181,8 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(description, "description");
         Intrinsics.checkNotNullParameter(buttonText, "buttonText");
         Intrinsics.checkNotNullParameter(dialogApplyAction, "dialogApplyAction");
-        AlertDialog createDialog$default = createDialog$default(baseFragment, C3630R.C3632drawable.fork_ic_alert_success, 0, title, description, buttonText, callbacks$Callback, 2, null);
-        AppCompatTextView descriptionView = (AppCompatTextView) createDialog$default.getCustomView().findViewById(C3630R.C3633id.text_alert_description);
+        AlertDialog createDialog$default = createDialog$default(baseFragment, C3634R.C3636drawable.fork_ic_alert_success, 0, title, description, buttonText, callbacks$Callback, 2, null);
+        AppCompatTextView descriptionView = (AppCompatTextView) createDialog$default.getCustomView().findViewById(C3634R.C3637id.text_alert_description);
         Intrinsics.checkNotNullExpressionValue(descriptionView, "descriptionView");
         dialogApplyAction.invoke(descriptionView, createDialog$default);
         return createDialog$default;
@@ -190,7 +190,7 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ Dialog createErrorAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Function2 function2, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3630R.string.common_ok);
+            charSequence3 = baseFragment.getParentActivity().getString(C3634R.string.common_ok);
             Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         CharSequence charSequence4 = charSequence3;
@@ -222,8 +222,8 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(description, "description");
         Intrinsics.checkNotNullParameter(buttonText, "buttonText");
         Intrinsics.checkNotNullParameter(dialogApplyAction, "dialogApplyAction");
-        AlertDialog createDialog$default = createDialog$default(baseFragment, C3630R.C3632drawable.fork_ic_alert_error, 0, title, description, buttonText, callbacks$Callback, 2, null);
-        AppCompatTextView descriptionView = (AppCompatTextView) createDialog$default.getCustomView().findViewById(C3630R.C3633id.text_alert_description);
+        AlertDialog createDialog$default = createDialog$default(baseFragment, C3634R.C3636drawable.fork_ic_alert_error, 0, title, description, buttonText, callbacks$Callback, 2, null);
+        AppCompatTextView descriptionView = (AppCompatTextView) createDialog$default.getCustomView().findViewById(C3634R.C3637id.text_alert_description);
         Intrinsics.checkNotNullExpressionValue(descriptionView, "descriptionView");
         dialogApplyAction.invoke(descriptionView, createDialog$default);
         return createDialog$default;
@@ -259,11 +259,11 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ AlertDialog createDialogInfoWithAnimation$default(BaseFragment baseFragment, int i, String str, String str2, int i2, String str3, Callbacks$Callback callbacks$Callback, int i3, Object obj) {
         if ((i3 & 1) != 0) {
-            i = C3630R.raw.fork_common_info;
+            i = C3634R.raw.fork_common_info;
         }
         int i4 = i;
         if ((i3 & 2) != 0) {
-            str = LocaleController.getInternalString(C3630R.string.wallet_crypto_buy_information_dialog_title);
+            str = LocaleController.getInternalString(C3634R.string.wallet_crypto_buy_information_dialog_title);
             Intrinsics.checkNotNullExpressionValue(str, "getInternalString(\n     …mation_dialog_title\n    )");
         }
         String str4 = str;
@@ -272,7 +272,7 @@ public final class DialogsFactoryKt {
         }
         int i5 = i2;
         if ((i3 & 16) != 0) {
-            str3 = LocaleController.getString("OK", C3630R.string.OK);
+            str3 = LocaleController.getString("OK", C3634R.string.OK);
             Intrinsics.checkNotNullExpressionValue(str3, "getString(\"OK\", R.string.OK)");
         }
         String str5 = str3;
@@ -301,7 +301,7 @@ public final class DialogsFactoryKt {
         if (window != null) {
             window.setGravity(80);
             WindowManager.LayoutParams attributes = window.getAttributes();
-            attributes.y = AndroidUtilities.m103dp(16.0f);
+            attributes.y = AndroidUtilities.m105dp(16.0f);
             window.setAttributes(attributes);
         }
     }
@@ -330,16 +330,16 @@ public final class DialogsFactoryKt {
     public static final BottomSheet createForgotPinOptionsBottomSheetDialog(BaseFragment baseFragment, DialogInterface.OnClickListener listener) {
         Intrinsics.checkNotNullParameter(baseFragment, "<this>");
         Intrinsics.checkNotNullParameter(listener, "listener");
-        String internalString = LocaleController.getInternalString(C3630R.string.wallet_enter_eth_password_forgot_option_restore);
+        String internalString = LocaleController.getInternalString(C3634R.string.wallet_enter_eth_password_forgot_option_restore);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…rd_forgot_option_restore)");
-        String internalString2 = LocaleController.getInternalString(C3630R.string.wallet_enter_eth_password_forgot_option_delete);
+        String internalString2 = LocaleController.getInternalString(C3634R.string.wallet_enter_eth_password_forgot_option_delete);
         Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…ord_forgot_option_delete)");
-        return createOptionsBottomSheetDialog(baseFragment, null, new String[]{internalString, internalString2}, new int[]{C3630R.C3632drawable.fork_ic_wallet_restore, C3630R.C3632drawable.msg_delete}, listener);
+        return createOptionsBottomSheetDialog(baseFragment, null, new String[]{internalString, internalString2}, new int[]{C3634R.C3636drawable.fork_ic_wallet_restore, C3634R.C3636drawable.msg_delete}, listener);
     }
 
     public static /* synthetic */ BottomSheet createDiagramDialog$default(BaseFragment baseFragment, StatisticDiagramModel statisticDiagramModel, CharSequence charSequence, Function0 function0, int i, Object obj) {
         if ((i & 2) != 0) {
-            charSequence = LocaleController.getInternalString(C3630R.string.common_close);
+            charSequence = LocaleController.getInternalString(C3634R.string.common_close);
             Intrinsics.checkNotNullExpressionValue(charSequence, "getInternalString(R.string.common_close)");
         }
         if ((i & 4) != 0) {
@@ -369,7 +369,7 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(buttonActionListener, "buttonActionListener");
         ArrayList arrayList = new ArrayList();
         final ?? r6 = new BottomSheet(baseFragment.getParentActivity()) { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$createDiagramDialog$cacheBottomSheet$1
-            @Override // org.telegram.p042ui.ActionBar.BottomSheet
+            @Override // org.telegram.p043ui.ActionBar.BottomSheet
             protected boolean canDismissWithSwipe() {
                 return false;
             }
@@ -465,7 +465,7 @@ public final class DialogsFactoryKt {
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda1
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogsFactoryKt.m1006x416736b6(Callbacks$Callback1.this, builder, view);
+                    DialogsFactoryKt.m1007x416736b6(Callbacks$Callback1.this, builder, view);
                 }
             });
             linearLayout.addView(radioColorCell);
@@ -481,7 +481,7 @@ public final class DialogsFactoryKt {
     }
 
     /* renamed from: createSingleChooserDialog$lambda$20$lambda$19$lambda$18$lambda$17 */
-    public static final void m1006x416736b6(Callbacks$Callback1 selectedListener, AlertDialog.Builder builder, View v) {
+    public static final void m1007x416736b6(Callbacks$Callback1 selectedListener, AlertDialog.Builder builder, View v) {
         Intrinsics.checkNotNullParameter(selectedListener, "$selectedListener");
         Intrinsics.checkNotNullParameter(builder, "$builder");
         Intrinsics.checkNotNullParameter(v, "v");
@@ -508,13 +508,13 @@ public final class DialogsFactoryKt {
             }
             DialogChooseItem dialogChooseItem = (DialogChooseItem) obj;
             RadioButtonCell radioButtonCell = new RadioButtonCell(baseFragment.getParentActivity());
-            radioButtonCell.setPadding(AndroidUtilities.m103dp(4.0f), 0, AndroidUtilities.m103dp(4.0f), 0);
+            radioButtonCell.setPadding(AndroidUtilities.m105dp(4.0f), 0, AndroidUtilities.m105dp(4.0f), 0);
             radioButtonCell.setTag(Integer.valueOf(i2));
             radioButtonCell.setTextAndValue(dialogChooseItem.getTitle(resourceManager), dialogChooseItem.getValue(resourceManager), false, i2 == i);
             radioButtonCell.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogsFactoryKt.m1005xfc427701(Function1.this, builder, view);
+                    DialogsFactoryKt.m1006xfc427701(Function1.this, builder, view);
                 }
             });
             linearLayout.addView(radioButtonCell);
@@ -530,7 +530,7 @@ public final class DialogsFactoryKt {
     }
 
     /* renamed from: createTwoLineSingleChooserDialog$lambda$25$lambda$24$lambda$23$lambda$22 */
-    public static final void m1005xfc427701(Function1 selectedListener, AlertDialog.Builder builder, View v) {
+    public static final void m1006xfc427701(Function1 selectedListener, AlertDialog.Builder builder, View v) {
         Intrinsics.checkNotNullParameter(selectedListener, "$selectedListener");
         Intrinsics.checkNotNullParameter(builder, "$builder");
         Intrinsics.checkNotNullParameter(v, "v");
@@ -544,7 +544,7 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(baseFragment, "<this>");
         Activity parentActivity = baseFragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        return DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3630R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3630R.string.app_update_dialog_description), LocaleController.getInternalString(C3630R.string.common_cancel), LocaleController.getInternalString(C3630R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda8
+        return DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3634R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3634R.string.app_update_dialog_description), LocaleController.getInternalString(C3634R.string.common_cancel), LocaleController.getInternalString(C3634R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda8
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 DialogsFactoryKt.createUpdateAppDialog$lambda$27(BaseFragment.this);
@@ -561,7 +561,7 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(baseFragment, "<this>");
         Activity parentActivity = baseFragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        return DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3630R.string.binance_not_verified_dialog_title), LocaleController.getInternalString(C3630R.string.binance_not_verified_dialog_description), LocaleController.getInternalString(C3630R.string.common_cancel), LocaleController.getInternalString(C3630R.string.binance_not_verified_dialog_positive_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda9
+        return DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3634R.string.binance_not_verified_dialog_title), LocaleController.getInternalString(C3634R.string.binance_not_verified_dialog_description), LocaleController.getInternalString(C3634R.string.common_cancel), LocaleController.getInternalString(C3634R.string.binance_not_verified_dialog_positive_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda9
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 DialogsFactoryKt.createBinanceVerificationRequiredDialog$lambda$28(BaseFragment.this);
@@ -571,7 +571,7 @@ public final class DialogsFactoryKt {
 
     public static final void createBinanceVerificationRequiredDialog$lambda$28(BaseFragment this_createBinanceVerificationRequiredDialog) {
         Intrinsics.checkNotNullParameter(this_createBinanceVerificationRequiredDialog, "$this_createBinanceVerificationRequiredDialog");
-        Browser.openUrl(this_createBinanceVerificationRequiredDialog.getParentActivity(), LocaleController.getInternalString(C3630R.string.wallet_binance_verify_profile_website));
+        Browser.openUrl(this_createBinanceVerificationRequiredDialog.getParentActivity(), LocaleController.getInternalString(C3634R.string.wallet_binance_verify_profile_website));
     }
 
     public static final AlertDialog createWalletCreatedRequiredDialog(BaseFragment baseFragment, Callbacks$Callback positiveAction) {
@@ -587,11 +587,11 @@ public final class DialogsFactoryKt {
         Activity parentActivity = baseFragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         if (blockchainType != null) {
-            internalString = blockchainType.name() + ' ' + LocaleController.getInternalString(C3630R.string.wallet_crypto_wallet_not_created_dialog_title);
+            internalString = blockchainType.name() + ' ' + LocaleController.getInternalString(C3634R.string.wallet_crypto_wallet_not_created_dialog_title);
         } else {
-            internalString = LocaleController.getInternalString(C3630R.string.wallet_crypto_wallet_not_created_dialog_title);
+            internalString = LocaleController.getInternalString(C3634R.string.wallet_crypto_wallet_not_created_dialog_title);
         }
-        return DialogUtils.createDialog$default(parentActivity, new DialogModel(internalString, LocaleController.getInternalString(C3630R.string.wallet_crypto_wallet_not_created_dialog_description), LocaleController.getInternalString(C3630R.string.common_cancel), LocaleController.getInternalString(C3630R.string.common_ok)), positiveAction, null, 8, null);
+        return DialogUtils.createDialog$default(parentActivity, new DialogModel(internalString, LocaleController.getInternalString(C3634R.string.wallet_crypto_wallet_not_created_dialog_description), LocaleController.getInternalString(C3634R.string.common_cancel), LocaleController.getInternalString(C3634R.string.common_ok)), positiveAction, null, 8, null);
     }
 
     public static final AlertDialog createSelectTokensSortingDialog(BaseFragment baseFragment, ResourceManager resourceManager, TokenSortingData selectedType, boolean z, final Callbacks$Callback1<TokenSortingData> onSelected) {
@@ -634,7 +634,7 @@ public final class DialogsFactoryKt {
             i = i2;
         }
         final CheckBoxCell checkBoxCell = new CheckBoxCell(baseFragment.getParentActivity(), 4);
-        checkBoxCell.setText(resourceManager.getString(C3630R.string.wallet_home_crypto_tokens_settings_only_positive), null, true, false);
+        checkBoxCell.setText(resourceManager.getString(C3634R.string.wallet_home_crypto_tokens_settings_only_positive), null, true, false);
         checkBoxCell.updateTextViewMarginForSorting();
         checkBoxCell.setChecked(selectedType.isPositiveBalances(), true);
         ViewExtKt.setHorizontalPadding(checkBoxCell, 6);
@@ -655,14 +655,14 @@ public final class DialogsFactoryKt {
         dividerCell.setBackgroundColor(baseFragment.getThemedColor(Theme.key_windowBackgroundGray));
         linearLayout.addView(dividerCell);
         linearLayout.addView(checkBoxCell);
-        builder.setTitle(resourceManager.getString(C3630R.string.choose_tokens_order_type_dialog_title));
-        builder.setPositiveButton(resourceManager.getString(C3630R.string.contacts_filter_apply_button), new DialogInterface.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda0
+        builder.setTitle(resourceManager.getString(C3634R.string.choose_tokens_order_type_dialog_title));
+        builder.setPositiveButton(resourceManager.getString(C3634R.string.contacts_filter_apply_button), new DialogInterface.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i3) {
                 DialogsFactoryKt.createSelectTokensSortingDialog$lambda$41$lambda$40(arrayList, onSelected, checkBoxCell, dialogInterface, i3);
             }
         });
-        builder.setNegativeButton(resourceManager.getString(C3630R.string.common_cancel), null);
+        builder.setNegativeButton(resourceManager.getString(C3634R.string.common_cancel), null);
         builder.setView(linearLayout);
         AlertDialog create = builder.create();
         Intrinsics.checkNotNullExpressionValue(create, "builder.apply {\n        …earLayout)\n    }.create()");
@@ -680,7 +680,7 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         Intrinsics.checkNotNullParameter(selectedType, "selectedType");
         Intrinsics.checkNotNullParameter(onSelected, "onSelected");
-        DialogModel dialogModel = new DialogModel(resourceManager.getString(C3630R.string.choose_tokens_order_type_dialog_title), null, resourceManager.getString(C3630R.string.common_cancel), null, 10, null);
+        DialogModel dialogModel = new DialogModel(resourceManager.getString(C3634R.string.choose_tokens_order_type_dialog_title), null, resourceManager.getString(C3634R.string.common_cancel), null, 10, null);
         List<String> titles = StakingOrderType.Companion.getTitles(resourceManager);
         indexOf = ArraysKt___ArraysKt.indexOf(StakingOrderType.values(), selectedType);
         baseFragment.showDialog(createSingleChooserDialog$default(baseFragment, dialogModel, null, null, titles, indexOf, new Callbacks$Callback1() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda6
@@ -719,15 +719,15 @@ public final class DialogsFactoryKt {
         }
         Context context = baseFragment.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
-        String internalString = LocaleController.getInternalString(C3630R.string.settings_tools_chat_profile_id_telegram);
-        String internalString2 = LocaleController.getInternalString(C3630R.string.settings_tools_chat_profile_id_telegram_description);
+        String internalString = LocaleController.getInternalString(C3634R.string.settings_tools_chat_profile_id_telegram);
+        String internalString2 = LocaleController.getInternalString(C3634R.string.settings_tools_chat_profile_id_telegram_description);
         Iterable<ChatProfileTelegramIdMode> iterable = (Iterable) ref$ObjectRef.element;
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(iterable, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (ChatProfileTelegramIdMode chatProfileTelegramIdMode : iterable) {
-            arrayList.add(TuplesKt.m144to(chatProfileTelegramIdMode.getTitle(), Boolean.valueOf(baseFragment.getChatProfileController().isChatProfileEnabled() ? Intrinsics.areEqual(baseFragment.getChatProfileController().getSelectedChatProfileTelegramIdMode(), chatProfileTelegramIdMode.name()) : chatProfileTelegramIdMode == ChatProfileTelegramIdMode.DISABLED)));
+            arrayList.add(TuplesKt.m146to(chatProfileTelegramIdMode.getTitle(), Boolean.valueOf(baseFragment.getChatProfileController().isChatProfileEnabled() ? Intrinsics.areEqual(baseFragment.getChatProfileController().getSelectedChatProfileTelegramIdMode(), chatProfileTelegramIdMode.name()) : chatProfileTelegramIdMode == ChatProfileTelegramIdMode.DISABLED)));
         }
-        baseFragment.showDialog(DialogUtils.createDialogWithRadioCellsList$default(context, new RadioCellsListDialogModel(internalString, internalString2, arrayList, LocaleController.getString("Cancel", C3630R.string.Cancel)), new Callbacks$Callback1() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda7
+        baseFragment.showDialog(DialogUtils.createDialogWithRadioCellsList$default(context, new RadioCellsListDialogModel(internalString, internalString2, arrayList, LocaleController.getString("Cancel", C3634R.string.Cancel)), new Callbacks$Callback1() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda7
             @Override // com.iMe.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
                 DialogsFactoryKt.showChatProfileTelegramIdDialog$lambda$45(BaseFragment.this, onItemSelectedAction, ref$ObjectRef, (Integer) obj);
@@ -760,7 +760,7 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(onReplenishClickAction, "onReplenishClickAction");
         Context context = baseFragment.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
-        baseFragment.showDialog(DialogUtils.createDialog$default(context, new DialogModel(resourceManager.getString(C3630R.string.staking_programme_level_required_title), resourceManager.getString(C3630R.string.staking_programme_level_required_description, minimalRank.name(), resourceManager.getString(minimalRank.getDescriptionResId())), LocaleController.getString("Cancel", C3630R.string.Cancel), resourceManager.getString(C3630R.string.wallet_common_error_not_enough_money_btn_txt)), onReplenishClickAction, null, 8, null));
+        baseFragment.showDialog(DialogUtils.createDialog$default(context, new DialogModel(resourceManager.getString(C3634R.string.staking_programme_level_required_title), resourceManager.getString(C3634R.string.staking_programme_level_required_description, minimalRank.name(), resourceManager.getString(minimalRank.getDescriptionResId())), LocaleController.getString("Cancel", C3634R.string.Cancel), resourceManager.getString(C3634R.string.wallet_common_error_not_enough_money_btn_txt)), onReplenishClickAction, null, 8, null));
     }
 
     public static final void createSelectTokensSortingDialog$lambda$41$lambda$40(List radioColorCells, Callbacks$Callback1 onSelected, CheckBoxCell checkBoxView, DialogInterface dialogInterface, int i) {

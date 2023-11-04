@@ -24,7 +24,10 @@
 .method public abstract getContentViewHeight()I
 .end method
 
-.method public abstract getReplyToStory()Lorg/telegram/tgnet/TLRPC$StoryItem;
+.method public abstract getReplyQuote()Lorg/telegram/ui/ChatActivity$ReplyQuote;
+.end method
+
+.method public abstract getReplyToStory()Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 .end method
 
 .method public abstract getSendAsPeers()Lorg/telegram/tgnet/TLRPC$TL_channels_sendAsPeers;
@@ -99,7 +102,7 @@
 .method public abstract onSwitchRecordMode(Z)V
 .end method
 
-.method public abstract onTextChanged(Ljava/lang/CharSequence;Z)V
+.method public abstract onTextChanged(Ljava/lang/CharSequence;ZZ)V
 .end method
 
 .method public abstract onTextSelectionChanged(II)V

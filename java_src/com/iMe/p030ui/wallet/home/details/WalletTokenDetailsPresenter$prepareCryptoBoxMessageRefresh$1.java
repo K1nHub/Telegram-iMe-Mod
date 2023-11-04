@@ -43,7 +43,7 @@ public final class WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1 
         Intrinsics.checkNotNullParameter(chat, "chat");
         telegramApi = this.this$0.telegramApi;
         Observable<TLRPC$ChatFull> fullChatInfoById = telegramApi.getFullChatInfoById(this.$isWithBotApiPrefix ? this.$chatId : -this.$chatId, chat);
-        final C23071 c23071 = new C23071(this.this$0, chat);
+        final C23111 c23111 = new C23111(this.this$0, chat);
         Observable<R> flatMap = fullChatInfoById.flatMap(new Function() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -60,7 +60,7 @@ public final class WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1 
             @Override // kotlin.jvm.functions.Function1
             public final Pair<Boolean, Boolean> invoke(Boolean it) {
                 Intrinsics.checkNotNullParameter(it, "it");
-                return TuplesKt.m144to(it, Boolean.valueOf(TLRPC$Chat.this.creator));
+                return TuplesKt.m146to(it, Boolean.valueOf(TLRPC$Chat.this.creator));
             }
         };
         return flatMap.map(new Function() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1$$ExternalSyntheticLambda1
@@ -77,12 +77,12 @@ public final class WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1 
     /* compiled from: WalletTokenDetailsPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1$1 */
     /* loaded from: classes4.dex */
-    public static final class C23071 extends Lambda implements Function1<TLRPC$ChatFull, ObservableSource<? extends Boolean>> {
+    public static final class C23111 extends Lambda implements Function1<TLRPC$ChatFull, ObservableSource<? extends Boolean>> {
         final /* synthetic */ TLRPC$Chat $chat;
         final /* synthetic */ WalletTokenDetailsPresenter this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C23071(WalletTokenDetailsPresenter walletTokenDetailsPresenter, TLRPC$Chat tLRPC$Chat) {
+        C23111(WalletTokenDetailsPresenter walletTokenDetailsPresenter, TLRPC$Chat tLRPC$Chat) {
             super(1);
             this.this$0 = walletTokenDetailsPresenter;
             this.$chat = tLRPC$Chat;
@@ -124,12 +124,12 @@ public final class WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1 
             telegramApi = this.this$0.telegramApi;
             walletBotUsername = this.this$0.getWalletBotUsername();
             Observable<TLRPC$User> userInfoByUsername = telegramApi.getUserInfoByUsername(walletBotUsername);
-            final C23081 c23081 = new C23081(this.this$0, this.$chat);
+            final C23121 c23121 = new C23121(this.this$0, this.$chat);
             return userInfoByUsername.flatMap(new Function() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1$1$$ExternalSyntheticLambda0
                 @Override // io.reactivex.functions.Function
                 public final Object apply(Object obj) {
                     ObservableSource invoke$lambda$1;
-                    invoke$lambda$1 = WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1.C23071.invoke$lambda$1(Function1.this, obj);
+                    invoke$lambda$1 = WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1.C23111.invoke$lambda$1(Function1.this, obj);
                     return invoke$lambda$1;
                 }
             });
@@ -139,12 +139,12 @@ public final class WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1 
         /* compiled from: WalletTokenDetailsPresenter.kt */
         /* renamed from: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1$1$1 */
         /* loaded from: classes4.dex */
-        public static final class C23081 extends Lambda implements Function1<TLRPC$User, ObservableSource<? extends Boolean>> {
+        public static final class C23121 extends Lambda implements Function1<TLRPC$User, ObservableSource<? extends Boolean>> {
             final /* synthetic */ TLRPC$Chat $chat;
             final /* synthetic */ WalletTokenDetailsPresenter this$0;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            C23081(WalletTokenDetailsPresenter walletTokenDetailsPresenter, TLRPC$Chat tLRPC$Chat) {
+            C23121(WalletTokenDetailsPresenter walletTokenDetailsPresenter, TLRPC$Chat tLRPC$Chat) {
                 super(1);
                 this.this$0 = walletTokenDetailsPresenter;
                 this.$chat = tLRPC$Chat;
@@ -158,7 +158,7 @@ public final class WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1 
                 TLRPC$Chat chat = this.$chat;
                 Intrinsics.checkNotNullExpressionValue(chat, "chat");
                 Observable<TLRPC$ChannelParticipant> chatParticipant = telegramApi.getChatParticipant(chat, botUser);
-                final C23091 c23091 = new Function1<Throwable, TLRPC$ChannelParticipant>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter.prepareCryptoBoxMessageRefresh.1.1.1.1
+                final C23131 c23131 = new Function1<Throwable, TLRPC$ChannelParticipant>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter.prepareCryptoBoxMessageRefresh.1.1.1.1
                     @Override // kotlin.jvm.functions.Function1
                     public final TLRPC$ChannelParticipant invoke(Throwable it) {
                         Intrinsics.checkNotNullParameter(it, "it");
@@ -169,11 +169,11 @@ public final class WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1 
                     @Override // io.reactivex.functions.Function
                     public final Object apply(Object obj) {
                         TLRPC$ChannelParticipant invoke$lambda$0;
-                        invoke$lambda$0 = WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1.C23071.C23081.invoke$lambda$0(Function1.this, obj);
+                        invoke$lambda$0 = WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1.C23111.C23121.invoke$lambda$0(Function1.this, obj);
                         return invoke$lambda$0;
                     }
                 });
-                final C23102 c23102 = new Function1<TLRPC$ChannelParticipant, Boolean>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter.prepareCryptoBoxMessageRefresh.1.1.1.2
+                final C23142 c23142 = new Function1<TLRPC$ChannelParticipant, Boolean>() { // from class: com.iMe.ui.wallet.home.details.WalletTokenDetailsPresenter.prepareCryptoBoxMessageRefresh.1.1.1.2
                     @Override // kotlin.jvm.functions.Function1
                     public final Boolean invoke(TLRPC$ChannelParticipant it) {
                         Intrinsics.checkNotNullParameter(it, "it");
@@ -189,7 +189,7 @@ public final class WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1 
                     @Override // io.reactivex.functions.Function
                     public final Object apply(Object obj) {
                         Boolean invoke$lambda$1;
-                        invoke$lambda$1 = WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1.C23071.C23081.invoke$lambda$1(Function1.this, obj);
+                        invoke$lambda$1 = WalletTokenDetailsPresenter$prepareCryptoBoxMessageRefresh$1.C23111.C23121.invoke$lambda$1(Function1.this, obj);
                         return invoke$lambda$1;
                     }
                 });

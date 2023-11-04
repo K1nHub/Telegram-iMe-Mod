@@ -13,7 +13,7 @@ import org.ton.bitstring.BitString;
 import org.ton.cell.Cell;
 import org.ton.cell.CellDescriptor;
 /* compiled from: BagOfCellsUtils.kt */
-@DebugMetadata(m143c = "org.ton.boc.BagOfCellsUtilsKt$readBagOfCell$3$1$1", m142f = "BagOfCellsUtils.kt", m141l = {114}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.ton.boc.BagOfCellsUtilsKt$readBagOfCell$3$1$1", m144f = "BagOfCellsUtils.kt", m143l = {114}, m142m = "invokeSuspend")
 /* loaded from: classes6.dex */
 final class BagOfCellsUtilsKt$readBagOfCell$3$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ BitString[] $cellBits;

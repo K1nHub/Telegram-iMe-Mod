@@ -22,7 +22,7 @@ public abstract class InternalUnderlyingValOfInlineClass implements Caller<Metho
 
     @Override // kotlin.reflect.jvm.internal.calls.Caller
     /* renamed from: getMember  reason: avoid collision after fix types in other method */
-    public final Method mo2038getMember() {
+    public final Method mo2043getMember() {
         return null;
     }
 

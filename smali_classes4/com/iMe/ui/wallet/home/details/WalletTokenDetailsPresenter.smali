@@ -2,13 +2,17 @@
 .super Lcom/iMe/ui/base/mvp/base/BasePresenter;
 .source "WalletTokenDetailsPresenter.kt"
 
+# interfaces
+.implements Lcom/iMe/manager/wallet/create/WalletCreateManagerDelegate;
+
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/iMe/ui/base/mvp/base/BasePresenter<",
         "Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;",
-        ">;"
+        ">;",
+        "Lcom/iMe/manager/wallet/create/WalletCreateManagerDelegate;"
     }
 .end annotation
 
@@ -4285,6 +4289,20 @@
 
     .line 130
     invoke-interface {v0, v1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;->showStatisticDialog(Lcom/iMe/model/statistic/StatisticDiagramModel;)V
+
+    return-void
+.end method
+
+.method public startWalletCreationFlow(Lcom/iMe/model/wallet/crypto/create/WalletCreationType;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
+    .locals 1
+
+    const-string/jumbo v0, "walletCreationType"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;->walletCreateManager:Lcom/iMe/manager/wallet/create/WalletCreateManager;
+
+    invoke-virtual {v0, p1, p2}, Lcom/iMe/manager/wallet/create/WalletCreateManager;->startWalletCreationFlow(Lcom/iMe/model/wallet/crypto/create/WalletCreationType;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
     return-void
 .end method

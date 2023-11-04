@@ -15,17 +15,17 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.RLottieImageView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: AnimatedHeaderProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.AnimatedHeaderProvider */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class AnimatedHeaderProvider extends BaseNodeProvider<AnimatedHeaderItem> {
     private final Lazy buttonCornerRadius$delegate;
     private final int itemViewType = IdFabric$ViewTypes.ANIMATED_HEADER;
-    private final int layoutId = C3630R.layout.fork_recycle_item_animated_header;
+    private final int layoutId = C3634R.layout.fork_recycle_item_animated_header;
 
     static {
         new Companion(null);
@@ -62,9 +62,9 @@ public final class AnimatedHeaderProvider extends BaseNodeProvider<AnimatedHeade
     public void convert(BaseViewHolder helper, final AnimatedHeaderItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, C3630R.C3633id.linear_root, Theme.key_windowBackgroundWhite);
-        int i = C3630R.C3633id.text_description;
-        BaseViewHolder applyForView = BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedTextColor(themedBackgroundColor, i, Theme.key_windowBackgroundWhiteBlackText).setText(i, item.getDescriptionText()), C3630R.C3633id.image_header, new Function1<RLottieImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.AnimatedHeaderProvider$convert$1$1
+        BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, C3634R.C3637id.linear_root, Theme.key_windowBackgroundWhite);
+        int i = C3634R.C3637id.text_description;
+        BaseViewHolder applyForView = BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedTextColor(themedBackgroundColor, i, Theme.key_windowBackgroundWhiteBlackText).setText(i, item.getDescriptionText()), C3634R.C3637id.image_header, new Function1<RLottieImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.AnimatedHeaderProvider$convert$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -84,7 +84,7 @@ public final class AnimatedHeaderProvider extends BaseNodeProvider<AnimatedHeade
                 applyForView2.playAnimation();
             }
         });
-        int i2 = C3630R.C3633id.button_action;
+        int i2 = C3634R.C3637id.button_action;
         BaseViewHolder visibleElseGone = BaseQuickAdapterExtKt.setVisibleElseGone(applyForView, i2, item.getButton() != null);
         if (item.getButton() != null) {
             BaseViewHolder applyForView2 = BaseQuickAdapterExtKt.applyForView(visibleElseGone, i2, new Function1<FrameLayout, Unit>() { // from class: com.iMe.ui.adapter.provider.AnimatedHeaderProvider$convert$1$2$1
@@ -108,7 +108,7 @@ public final class AnimatedHeaderProvider extends BaseNodeProvider<AnimatedHeade
                     applyForView3.setBackground(Theme.createSimpleSelectorRoundRectDrawable(buttonCornerRadius, Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
                 }
             });
-            int i3 = C3630R.C3633id.text_action;
+            int i3 = C3634R.C3637id.text_action;
             BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(applyForView2, i3, Theme.key_featuredStickers_buttonText), i3).setText(i3, item.getButton().getText()), i3, new Function1<TextView, Unit>() { // from class: com.iMe.ui.adapter.provider.AnimatedHeaderProvider$convert$1$2$2
                 /* JADX INFO: Access modifiers changed from: package-private */
                 {
@@ -135,7 +135,7 @@ public final class AnimatedHeaderProvider extends BaseNodeProvider<AnimatedHeade
 
     /* compiled from: AnimatedHeaderProvider.kt */
     /* renamed from: com.iMe.ui.adapter.provider.AnimatedHeaderProvider$Companion */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

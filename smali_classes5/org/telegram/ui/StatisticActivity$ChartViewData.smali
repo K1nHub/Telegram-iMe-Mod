@@ -64,13 +64,13 @@
 .method public constructor <init>(Ljava/lang/String;I)V
     .locals 0
 
-    .line 1926
+    .line 1947
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1927
+    .line 1948
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->title:Ljava/lang/String;
 
-    .line 1928
+    .line 1949
     iput p2, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->graphType:I
 
     return-void
@@ -81,16 +81,16 @@
 
     const/4 v0, 0x0
 
-    .line 1964
+    .line 1985
     iput-boolean v0, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->loading:Z
 
-    .line 1965
+    .line 1986
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->chartData:Lorg/telegram/ui/Charts/data/ChartData;
 
-    .line 1966
+    .line 1987
     iput-object p2, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->zoomToken:Ljava/lang/String;
 
-    .line 1968
+    .line 1989
     invoke-virtual {p3}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result p1
@@ -102,12 +102,12 @@
 
     if-ge p2, p1, :cond_1
 
-    .line 1971
+    .line 1992
     invoke-virtual {p3, p2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 1972
+    .line 1993
     instance-of v3, v2, Lorg/telegram/ui/StatisticActivity$ChartCell;
 
     if-eqz v3, :cond_0
@@ -118,7 +118,7 @@
 
     if-ne v3, p0, :cond_0
 
-    .line 1973
+    .line 1994
     invoke-virtual {v2, p0, v1}, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->updateData(Lorg/telegram/ui/StatisticActivity$ChartViewData;Z)V
 
     move v0, v1
@@ -136,10 +136,10 @@
 
     const/4 p1, 0x0
 
-    .line 1979
+    .line 2000
     invoke-virtual {p3, p1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 1980
+    .line 2001
     invoke-virtual {p4}, Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;->update()V
 
     :cond_2
@@ -153,14 +153,14 @@
 
     if-nez p4, :cond_3
 
-    .line 1940
+    .line 1961
     instance-of p4, p3, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;
 
     const/4 v1, 0x1
 
     if-eqz p4, :cond_1
 
-    .line 1941
+    .line 1962
     move-object p4, p3
 
     check-cast p4, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;
@@ -169,7 +169,7 @@
 
     iget-object p4, p4, Lorg/telegram/tgnet/TLRPC$TL_dataJSON;->data:Ljava/lang/String;
 
-    .line 1943
+    .line 1964
     :try_start_0
     new-instance v2, Lorg/json/JSONObject;
 
@@ -185,7 +185,7 @@
     :try_end_0
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 1944
+    .line 1965
     :try_start_1
     move-object v2, p3
 
@@ -193,7 +193,7 @@
 
     iget-object v0, v2, Lorg/telegram/tgnet/TLRPC$TL_statsGraph;->zoom_token:Ljava/lang/String;
 
-    .line 1945
+    .line 1966
     iget v2, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->graphType:I
 
     const/4 v3, 0x4
@@ -208,21 +208,21 @@
 
     if-lez v3, :cond_0
 
-    .line 1946
+    .line 1967
     array-length v3, v2
 
     sub-int/2addr v3, v1
 
     aget-wide v3, v2, v3
 
-    .line 1947
+    .line 1968
     new-instance v2, Lorg/telegram/ui/Charts/data/StackLinearChartData;
 
     invoke-direct {v2, p4, v3, v4}, Lorg/telegram/ui/Charts/data/StackLinearChartData;-><init>(Lorg/telegram/ui/Charts/data/ChartData;J)V
 
     iput-object v2, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->childChartData:Lorg/telegram/ui/Charts/data/ChartData;
 
-    .line 1948
+    .line 1969
     iput-wide v3, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->activeZoom:J
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_0
@@ -252,7 +252,7 @@
 
     move-object p4, v0
 
-    .line 1951
+    .line 1972
     :goto_0
     invoke-virtual {v2}, Lorg/json/JSONException;->printStackTrace()V
 
@@ -261,7 +261,7 @@
     :cond_1
     move-object p4, v0
 
-    .line 1954
+    .line 1975
     :goto_1
     instance-of v2, p3, Lorg/telegram/tgnet/TLRPC$TL_statsGraphError;
 
@@ -269,13 +269,13 @@
 
     const/4 v2, 0x0
 
-    .line 1955
+    .line 1976
     iput-boolean v2, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->isEmpty:Z
 
-    .line 1956
+    .line 1977
     iput-boolean v1, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->isError:Z
 
-    .line 1957
+    .line 1978
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_statsGraphError;
 
     iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$TL_statsGraphError;->error:Ljava/lang/String;
@@ -294,7 +294,7 @@
 
     move-object v4, v3
 
-    .line 1963
+    .line 1984
     :goto_2
     new-instance p3, Lorg/telegram/ui/StatisticActivity$ChartViewData$$ExternalSyntheticLambda0;
 
@@ -318,27 +318,27 @@
 .method public load(IIILorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/StatisticActivity$Adapter;Lorg/telegram/ui/StatisticActivity$DiffUtilsCallback;)V
     .locals 9
 
-    .line 1932
+    .line 1953
     iget-boolean p5, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->loading:Z
 
     if-nez p5, :cond_0
 
     const/4 p5, 0x1
 
-    .line 1933
+    .line 1954
     iput-boolean p5, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->loading:Z
 
-    .line 1934
+    .line 1955
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_stats_loadAsyncGraph;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_stats_loadAsyncGraph;-><init>()V
 
-    .line 1935
+    .line 1956
     iget-object p5, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->token:Ljava/lang/String;
 
     iput-object p5, v1, Lorg/telegram/tgnet/TLRPC$TL_stats_loadAsyncGraph;->token:Ljava/lang/String;
 
-    .line 1936
+    .line 1957
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v0
@@ -363,7 +363,7 @@
 
     move-result p3
 
-    .line 1984
+    .line 2005
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p1
@@ -377,12 +377,12 @@
 .method public setup(Lorg/telegram/ui/Charts/data/ChartData;)V
     .locals 0
 
-    .line 1900
+    .line 1921
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->chartData:Lorg/telegram/ui/Charts/data/ChartData;
 
     const/4 p1, 0x0
 
-    .line 1901
+    .line 1922
     iput-boolean p1, p0, Lorg/telegram/ui/StatisticActivity$ChartViewData;->loading:Z
 
     return-void

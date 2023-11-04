@@ -56,7 +56,7 @@
 
     move-result-object v3
 
-    const-string v4, "kClass"
+    const-string/jumbo v4, "kClass"
 
     const-string v5, "getKClass()Lorg/jetbrains/kotlin/descriptors/ClassDescriptor;"
 
@@ -77,7 +77,7 @@
 
     move-result-object v3
 
-    const-string v4, "kProperty"
+    const-string/jumbo v4, "kProperty"
 
     const-string v5, "getKProperty()Lorg/jetbrains/kotlin/descriptors/ClassDescriptor;"
 
@@ -98,7 +98,7 @@
 
     move-result-object v3
 
-    const-string v4, "kProperty0"
+    const-string/jumbo v4, "kProperty0"
 
     const-string v5, "getKProperty0()Lorg/jetbrains/kotlin/descriptors/ClassDescriptor;"
 
@@ -119,7 +119,7 @@
 
     move-result-object v3
 
-    const-string v4, "kProperty1"
+    const-string/jumbo v4, "kProperty1"
 
     const-string v5, "getKProperty1()Lorg/jetbrains/kotlin/descriptors/ClassDescriptor;"
 
@@ -140,7 +140,7 @@
 
     move-result-object v3
 
-    const-string v4, "kProperty2"
+    const-string/jumbo v4, "kProperty2"
 
     const-string v5, "getKProperty2()Lorg/jetbrains/kotlin/descriptors/ClassDescriptor;"
 
@@ -161,7 +161,7 @@
 
     move-result-object v3
 
-    const-string v4, "kMutableProperty0"
+    const-string/jumbo v4, "kMutableProperty0"
 
     const-string v5, "getKMutableProperty0()Lorg/jetbrains/kotlin/descriptors/ClassDescriptor;"
 
@@ -182,7 +182,7 @@
 
     move-result-object v3
 
-    const-string v4, "kMutableProperty1"
+    const-string/jumbo v4, "kMutableProperty1"
 
     const-string v5, "getKMutableProperty1()Lorg/jetbrains/kotlin/descriptors/ClassDescriptor;"
 
@@ -203,7 +203,7 @@
 
     move-result-object v0
 
-    const-string v3, "kMutableProperty2"
+    const-string/jumbo v3, "kMutableProperty2"
 
     const-string v4, "getKMutableProperty2()Lorg/jetbrains/kotlin/descriptors/ClassDescriptor;"
 

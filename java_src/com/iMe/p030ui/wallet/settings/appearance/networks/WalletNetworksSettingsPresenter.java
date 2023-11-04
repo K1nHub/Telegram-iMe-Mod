@@ -175,7 +175,7 @@ public final class WalletNetworksSettingsPresenter extends BasePresenter<WalletN
             public final void accept(Object obj) {
                 WalletNetworksSettingsPresenter.subscribeToQueryChanges$lambda$5(Function1.this, obj);
             }
-        }).observeOn(this.schedulersProvider.mo1009ui());
+        }).observeOn(this.schedulersProvider.mo1010ui());
         final Function1<String, Boolean> function12 = new Function1<String, Boolean>() { // from class: com.iMe.ui.wallet.settings.appearance.networks.WalletNetworksSettingsPresenter$subscribeToQueryChanges$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -204,7 +204,7 @@ public final class WalletNetworksSettingsPresenter extends BasePresenter<WalletN
                 subscribeToQueryChanges$lambda$6 = WalletNetworksSettingsPresenter.subscribeToQueryChanges$lambda$6(Function1.this, obj);
                 return subscribeToQueryChanges$lambda$6;
             }
-        }).observeOn(this.schedulersProvider.mo1010io());
+        }).observeOn(this.schedulersProvider.mo1011io());
         final Function1<String, List<? extends NetworkSettingsItem>> function13 = new Function1<String, List<? extends NetworkSettingsItem>>() { // from class: com.iMe.ui.wallet.settings.appearance.networks.WalletNetworksSettingsPresenter$subscribeToQueryChanges$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -259,12 +259,12 @@ public final class WalletNetworksSettingsPresenter extends BasePresenter<WalletN
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(List<? extends NetworkSettingsItem> list) {
-                m1802invoke(list);
+                m1807invoke(list);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1802invoke(List<? extends NetworkSettingsItem> it) {
+            public final void m1807invoke(List<? extends NetworkSettingsItem> it) {
                 List list;
                 List<NetworkSettingsItem> mutableList;
                 Intrinsics.checkNotNullExpressionValue(it, "it");

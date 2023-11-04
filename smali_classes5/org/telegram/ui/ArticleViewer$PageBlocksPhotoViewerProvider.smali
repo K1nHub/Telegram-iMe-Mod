@@ -42,7 +42,7 @@
         }
     .end annotation
 
-    .line 11691
+    .line 11715
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$PageBlocksPhotoViewerProvider;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$EmptyPhotoViewerProvider;-><init>()V
@@ -51,10 +51,10 @@
 
     new-array p1, p1, [I
 
-    .line 11688
+    .line 11712
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$PageBlocksPhotoViewerProvider;->tempArr:[I
 
-    .line 11692
+    .line 11716
     iput-object p2, p0, Lorg/telegram/ui/ArticleViewer$PageBlocksPhotoViewerProvider;->pageBlocks:Ljava/util/List;
 
     return-void
@@ -63,7 +63,7 @@
 .method private getImageReceiverFromListView(Landroid/view/ViewGroup;Lorg/telegram/tgnet/TLRPC$PageBlock;[I)Lorg/telegram/messenger/ImageReceiver;
     .locals 3
 
-    .line 11716
+    .line 11740
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -73,7 +73,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 11718
+    .line 11742
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -100,55 +100,55 @@
 .method private getImageReceiverView(Landroid/view/View;Lorg/telegram/tgnet/TLRPC$PageBlock;[I)Lorg/telegram/messenger/ImageReceiver;
     .locals 2
 
-    .line 11727
+    .line 11751
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;
 
     if-eqz v0, :cond_0
 
-    .line 11728
+    .line 11752
     move-object v0, p1
 
     check-cast v0, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;
 
-    .line 11729
+    .line 11753
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;->access$17400(Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
 
     move-result-object v1
 
     if-ne v1, p2, :cond_7
 
-    .line 11730
+    .line 11754
     invoke-virtual {p1, p3}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 11731
+    .line 11755
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;->access$22000(Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object p1
 
     return-object p1
 
-    .line 11733
+    .line 11757
     :cond_0
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;
 
     if-eqz v0, :cond_3
 
-    .line 11734
+    .line 11758
     move-object v0, p1
 
     check-cast v0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;
 
-    .line 11735
+    .line 11759
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$17600(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     move-result-object v1
 
     if-ne v1, p2, :cond_7
 
-    .line 11736
+    .line 11760
     invoke-virtual {p1, p3}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 11737
+    .line 11761
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$PageBlocksPhotoViewerProvider;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     iget-object p2, p1, Lorg/telegram/ui/ArticleViewer;->currentPlayer:Lorg/telegram/ui/ArticleViewer$BlockVideoCell;
@@ -173,14 +173,14 @@
 
     if-eqz p1, :cond_2
 
-    .line 11738
+    .line 11762
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 p2, 0x18
 
     if-lt p1, p2, :cond_1
 
-    .line 11739
+    .line 11763
     new-instance p1, Landroid/view/Surface;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$14300(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Landroid/view/TextureView;
@@ -193,7 +193,7 @@
 
     invoke-direct {p1, p2}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
 
-    .line 11740
+    .line 11764
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$14300(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Landroid/view/TextureView;
 
     move-result-object p2
@@ -216,13 +216,13 @@
 
     move-result-object p2
 
-    .line 11741
+    .line 11765
     invoke-static {p1, p2}, Lorg/telegram/messenger/AndroidUtilities;->getBitmapFromSurface(Landroid/view/Surface;Landroid/graphics/Bitmap;)V
 
-    .line 11742
+    .line 11766
     invoke-virtual {p1}, Landroid/view/Surface;->release()V
 
-    .line 11743
+    .line 11767
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$22100(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object p1
@@ -231,7 +231,7 @@
 
     goto :goto_0
 
-    .line 11745
+    .line 11769
     :cond_1
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$22100(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Lorg/telegram/messenger/ImageReceiver;
 
@@ -250,10 +250,10 @@
     :goto_0
     const/4 p1, 0x0
 
-    .line 11747
+    .line 11771
     invoke-static {v0, p1}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$22202(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;Z)Z
 
-    .line 11748
+    .line 11772
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$14300(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Landroid/view/TextureView;
 
     move-result-object p1
@@ -262,7 +262,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/TextureView;->setAlpha(F)V
 
-    .line 11750
+    .line 11774
     :cond_2
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$22100(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Lorg/telegram/messenger/ImageReceiver;
 
@@ -270,13 +270,13 @@
 
     return-object p1
 
-    .line 11752
+    .line 11776
     :cond_3
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
     if-eqz v0, :cond_4
 
-    .line 11753
+    .line 11777
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$22300(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -291,13 +291,13 @@
 
     return-object p1
 
-    .line 11757
+    .line 11781
     :cond_4
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
     if-eqz v0, :cond_5
 
-    .line 11758
+    .line 11782
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;
 
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;->access$18000(Lorg/telegram/ui/ArticleViewer$BlockSlideshowCell;)Landroidx/viewpager/widget/ViewPager;
@@ -312,23 +312,23 @@
 
     return-object p1
 
-    .line 11762
+    .line 11786
     :cond_5
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$BlockListItemCell;
 
     if-eqz v0, :cond_6
 
-    .line 11763
+    .line 11787
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockListItemCell;
 
-    .line 11764
+    .line 11788
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockListItemCell;->access$6100(Lorg/telegram/ui/ArticleViewer$BlockListItemCell;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object v0
 
     if-eqz v0, :cond_7
 
-    .line 11765
+    .line 11789
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockListItemCell;->access$6100(Lorg/telegram/ui/ArticleViewer$BlockListItemCell;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object p1
@@ -343,23 +343,23 @@
 
     return-object p1
 
-    .line 11770
+    .line 11794
     :cond_6
     instance-of v0, p1, Lorg/telegram/ui/ArticleViewer$BlockOrderedListItemCell;
 
     if-eqz v0, :cond_7
 
-    .line 11771
+    .line 11795
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockOrderedListItemCell;
 
-    .line 11772
+    .line 11796
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockOrderedListItemCell;->access$6200(Lorg/telegram/ui/ArticleViewer$BlockOrderedListItemCell;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object v0
 
     if-eqz v0, :cond_7
 
-    .line 11773
+    .line 11797
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockOrderedListItemCell;->access$6200(Lorg/telegram/ui/ArticleViewer$BlockOrderedListItemCell;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object p1
@@ -383,7 +383,7 @@
 .method private getViewFromListView(Landroid/view/ViewGroup;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/ui/ArticleViewer$BlockVideoCell;
     .locals 4
 
-    .line 11822
+    .line 11846
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -393,20 +393,20 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 11824
+    .line 11848
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 11825
+    .line 11849
     instance-of v3, v2, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;
 
     if-eqz v3, :cond_0
 
-    .line 11826
+    .line 11850
     check-cast v2, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;
 
-    .line 11827
+    .line 11851
     invoke-static {v2}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$17600(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     move-result-object v3
@@ -435,7 +435,7 @@
 
     if-ltz p3, :cond_2
 
-    .line 11697
+    .line 11721
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$PageBlocksPhotoViewerProvider;->pageBlocks:Ljava/util/List;
 
     invoke-interface {p2}, Ljava/util/List;->size()I
@@ -446,7 +446,7 @@
 
     goto :goto_0
 
-    .line 11700
+    .line 11724
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$PageBlocksPhotoViewerProvider;->this$0:Lorg/telegram/ui/ArticleViewer;
 
@@ -476,13 +476,13 @@
 
     return-object p1
 
-    .line 11704
+    .line 11728
     :cond_1
     new-instance p1, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
 
     invoke-direct {p1}, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;-><init>()V
 
-    .line 11705
+    .line 11729
     iget-object p3, p0, Lorg/telegram/ui/ArticleViewer$PageBlocksPhotoViewerProvider;->tempArr:[I
 
     aget v0, p3, p4
@@ -491,12 +491,12 @@
 
     const/4 v0, 0x1
 
-    .line 11706
+    .line 11730
     aget p3, p3, v0
 
     iput p3, p1, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewY:I
 
-    .line 11707
+    .line 11731
     iget-object p3, p0, Lorg/telegram/ui/ArticleViewer$PageBlocksPhotoViewerProvider;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {p3}, Lorg/telegram/ui/ArticleViewer;->access$3300(Lorg/telegram/ui/ArticleViewer;)[Lorg/telegram/ui/Components/RecyclerListView;
@@ -507,24 +507,24 @@
 
     iput-object p3, p1, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->parentView:Landroid/view/View;
 
-    .line 11708
+    .line 11732
     iput-object p2, p1, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 11709
+    .line 11733
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getBitmapSafe()Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     move-result-object p3
 
     iput-object p3, p1, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->thumb:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
-    .line 11710
+    .line 11734
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
 
     move-result-object p2
 
     iput-object p2, p1, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->radius:[I
 
-    .line 11711
+    .line 11735
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$PageBlocksPhotoViewerProvider;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {p2}, Lorg/telegram/ui/ArticleViewer;->access$2700(Lorg/telegram/ui/ArticleViewer;)I
@@ -541,10 +541,10 @@
 .method public onClose()V
     .locals 1
 
-    .line 11784
+    .line 11808
     invoke-super {p0}, Lorg/telegram/ui/PhotoViewer$EmptyPhotoViewerProvider;->onClose()V
 
-    .line 11785
+    .line 11809
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$PageBlocksPhotoViewerProvider;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer;->access$9200(Lorg/telegram/ui/ArticleViewer;)V
@@ -555,7 +555,7 @@
 .method public onReleasePlayerBeforeClose(I)V
     .locals 8
 
-    .line 11790
+    .line 11814
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v0
@@ -564,7 +564,7 @@
 
     move-result-object v0
 
-    .line 11791
+    .line 11815
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v1
@@ -573,7 +573,7 @@
 
     move-result-object v1
 
-    .line 11792
+    .line 11816
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v2
@@ -582,7 +582,7 @@
 
     move-result-object v2
 
-    .line 11793
+    .line 11817
     iget-object v3, p0, Lorg/telegram/ui/ArticleViewer$PageBlocksPhotoViewerProvider;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v3}, Lorg/telegram/ui/ArticleViewer;->access$3300(Lorg/telegram/ui/ArticleViewer;)[Lorg/telegram/ui/Components/RecyclerListView;
@@ -613,38 +613,38 @@
 
     if-eqz v1, :cond_1
 
-    .line 11795
+    .line 11819
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->getCurrentPosition()J
 
     move-result-wide v5
 
     iput-wide v5, p1, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->playFrom:J
 
-    .line 11796
+    .line 11820
     invoke-static {p1, v4}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$22202(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;Z)Z
 
-    .line 11797
+    .line 11821
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$14300(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Landroid/view/TextureView;
 
     move-result-object v5
 
     invoke-virtual {v5, v3}, Landroid/view/TextureView;->setAlpha(F)V
 
-    .line 11798
+    .line 11822
     invoke-virtual {v1}, Landroid/view/TextureView;->getSurfaceTexture()Landroid/graphics/SurfaceTexture;
 
     move-result-object v5
 
     if-eqz v5, :cond_1
 
-    .line 11799
+    .line 11823
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v6, 0x18
 
     if-lt v5, v6, :cond_0
 
-    .line 11800
+    .line 11824
     new-instance v5, Landroid/view/Surface;
 
     invoke-virtual {v1}, Landroid/view/TextureView;->getSurfaceTexture()Landroid/graphics/SurfaceTexture;
@@ -653,7 +653,7 @@
 
     invoke-direct {v5, v6}, Landroid/view/Surface;-><init>(Landroid/graphics/SurfaceTexture;)V
 
-    .line 11801
+    .line 11825
     invoke-virtual {v1}, Landroid/view/TextureView;->getMeasuredWidth()I
 
     move-result v6
@@ -668,13 +668,13 @@
 
     move-result-object v1
 
-    .line 11802
+    .line 11826
     invoke-static {v5, v1}, Lorg/telegram/messenger/AndroidUtilities;->getBitmapFromSurface(Landroid/view/Surface;Landroid/graphics/Bitmap;)V
 
-    .line 11803
+    .line 11827
     invoke-virtual {v5}, Landroid/view/Surface;->release()V
 
-    .line 11804
+    .line 11828
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$22100(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v5
@@ -683,7 +683,7 @@
 
     goto :goto_0
 
-    .line 11806
+    .line 11830
     :cond_0
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$22100(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Lorg/telegram/messenger/ImageReceiver;
 
@@ -703,24 +703,24 @@
 
     if-eqz v2, :cond_2
 
-    .line 11811
+    .line 11835
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->getCurrentPosition()J
 
     move-result-wide v0
 
     iput-wide v0, p1, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->playFrom:J
 
-    .line 11812
+    .line 11836
     invoke-static {p1, v4}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$22202(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;Z)Z
 
-    .line 11813
+    .line 11837
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$14300(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Landroid/view/TextureView;
 
     move-result-object v0
 
     invoke-virtual {v0, v3}, Landroid/view/TextureView;->setAlpha(F)V
 
-    .line 11814
+    .line 11838
     invoke-virtual {v2}, Landroid/view/SurfaceView;->getMeasuredWidth()I
 
     move-result v0
@@ -735,17 +735,17 @@
 
     move-result-object v0
 
-    .line 11815
+    .line 11839
     invoke-static {v2, v0}, Lorg/telegram/messenger/AndroidUtilities;->getBitmapFromSurface(Landroid/view/SurfaceView;Landroid/graphics/Bitmap;)V
 
-    .line 11816
+    .line 11840
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$22100(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object p1
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 11818
+    .line 11842
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$PageBlocksPhotoViewerProvider;->this$0:Lorg/telegram/ui/ArticleViewer;
 

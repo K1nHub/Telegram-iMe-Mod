@@ -8,7 +8,7 @@ public abstract class TLRPC$GroupCall extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public long f1615id;
+    public long f1617id;
     public boolean join_date_asc;
     public boolean join_muted;
     public boolean listeners_hidden;

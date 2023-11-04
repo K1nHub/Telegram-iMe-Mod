@@ -18,28 +18,28 @@ import java.util.List;
 /* loaded from: classes3.dex */
 public class SleepClassifyEvent extends AbstractSafeParcelable {
     public static final Parcelable.Creator<SleepClassifyEvent> CREATOR = new zzaf();
-    @SafeParcelable.Field(getter = "getTimestampSec", m1089id = 1)
+    @SafeParcelable.Field(getter = "getTimestampSec", m1090id = 1)
     private final int zza;
-    @SafeParcelable.Field(getter = "getConfidence", m1089id = 2)
+    @SafeParcelable.Field(getter = "getConfidence", m1090id = 2)
     private final int zzb;
-    @SafeParcelable.Field(getter = "getMotion", m1089id = 3)
+    @SafeParcelable.Field(getter = "getMotion", m1090id = 3)
     private final int zzc;
-    @SafeParcelable.Field(getter = "getLight", m1089id = 4)
+    @SafeParcelable.Field(getter = "getLight", m1090id = 4)
     private final int zzd;
-    @SafeParcelable.Field(getter = "getNoise", m1089id = 5)
+    @SafeParcelable.Field(getter = "getNoise", m1090id = 5)
     private final int zze;
-    @SafeParcelable.Field(getter = "getLightDiff", m1089id = 6)
+    @SafeParcelable.Field(getter = "getLightDiff", m1090id = 6)
     private final int zzf;
-    @SafeParcelable.Field(getter = "getNightOrDay", m1089id = 7)
+    @SafeParcelable.Field(getter = "getNightOrDay", m1090id = 7)
     private final int zzg;
-    @SafeParcelable.Field(getter = "getConfidenceOverwrittenByAlarmClockTrigger", m1089id = 8)
+    @SafeParcelable.Field(getter = "getConfidenceOverwrittenByAlarmClockTrigger", m1090id = 8)
     private final boolean zzh;
-    @SafeParcelable.Field(getter = "getPresenceConfidence", m1089id = 9)
+    @SafeParcelable.Field(getter = "getPresenceConfidence", m1090id = 9)
     private final int zzi;
 
     @ShowFirstParty
     @SafeParcelable.Constructor
-    public SleepClassifyEvent(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) int i2, @SafeParcelable.Param(m1088id = 3) int i3, @SafeParcelable.Param(m1088id = 4) int i4, @SafeParcelable.Param(m1088id = 5) int i5, @SafeParcelable.Param(m1088id = 6) int i6, @SafeParcelable.Param(m1088id = 7) int i7, @SafeParcelable.Param(m1088id = 8) boolean z, @SafeParcelable.Param(m1088id = 9) int i8) {
+    public SleepClassifyEvent(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) int i2, @SafeParcelable.Param(m1089id = 3) int i3, @SafeParcelable.Param(m1089id = 4) int i4, @SafeParcelable.Param(m1089id = 5) int i5, @SafeParcelable.Param(m1089id = 6) int i6, @SafeParcelable.Param(m1089id = 7) int i7, @SafeParcelable.Param(m1089id = 8) boolean z, @SafeParcelable.Param(m1089id = 9) int i8) {
         this.zza = i;
         this.zzb = i2;
         this.zzc = i3;

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public final run()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChannelBoostLayout$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/ChannelBoostLayout;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChannelBoostLayout;->$r8$lambda$vIVuDwCrUrrF7l8THW_PtromGlA(Lorg/telegram/ui/ChannelBoostLayout;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0}, Lorg/telegram/ui/ChannelBoostLayout;->$r8$lambda$mo-VfeNBx_Mb-HhC6SI9X8z-Ohs(Lorg/telegram/ui/ChannelBoostLayout;)V
 
     return-void
 .end method

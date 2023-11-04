@@ -34,7 +34,7 @@ public final class NftInteractor {
     }
 
     public final Observable<Result<List<NftToken>>> getOwnNftItems(String str, String str2, String str3) {
-        Observable<Result<List<NftToken>>> subscribeOn = this.nftRepository.getOwnNftItems(str, str2, str3).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<List<NftToken>>> subscribeOn = this.nftRepository.getOwnNftItems(str, str2, str3).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "nftRepository\n          …(schedulersProvider.io())");
         return subscribeOn;
     }

@@ -8,7 +8,7 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field public final synthetic f$1:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
 .field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;
 
@@ -16,14 +16,14 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;Lorg/telegram/tgnet/RequestDelegate;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;Lorg/telegram/tgnet/RequestDelegate;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     iput-object p3, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda9;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;
 
@@ -39,7 +39,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryEntry$$ExternalSyntheticLambda9;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;
 
@@ -49,7 +49,7 @@
 
     move-object v5, p2
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->$r8$lambda$7RtcvAkQ2oVb-QprWqNM63tT1OY(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->$r8$lambda$dNwSAno90t6Hq9inS_c4qkS6KCg(Lorg/telegram/ui/Stories/recorder/StoryEntry;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/tgnet/TLRPC$TL_messages_getAttachedStickers;Lorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

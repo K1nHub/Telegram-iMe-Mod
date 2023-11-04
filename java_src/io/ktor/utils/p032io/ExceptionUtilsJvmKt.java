@@ -25,7 +25,7 @@ public final class ExceptionUtilsJvmKt {
     private static final WeakHashMap<Class<? extends Throwable>, Function1<Throwable, Throwable>> exceptionCtors = new WeakHashMap<>();
 
     public static final <E extends Throwable> E tryCopyException(E exception, Throwable cause) {
-        Object m1935constructorimpl;
+        Object m1940constructorimpl;
         List<Constructor> sortedWith;
         ReentrantReadWriteLock.ReadLock readLock;
         int readHoldCount;
@@ -35,12 +35,12 @@ public final class ExceptionUtilsJvmKt {
         if (exception instanceof CopyableThrowable) {
             try {
                 Result.Companion companion = Result.Companion;
-                m1935constructorimpl = Result.m1935constructorimpl(((CopyableThrowable) exception).createCopy());
+                m1940constructorimpl = Result.m1940constructorimpl(((CopyableThrowable) exception).createCopy());
             } catch (Throwable th) {
                 Result.Companion companion2 = Result.Companion;
-                m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th));
+                m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
             }
-            return (E) (Result.m1940isFailureimpl(m1935constructorimpl) ? null : m1935constructorimpl);
+            return (E) (Result.m1945isFailureimpl(m1940constructorimpl) ? null : m1940constructorimpl);
         }
         ReentrantReadWriteLock reentrantReadWriteLock = cacheLock;
         ReentrantReadWriteLock.ReadLock readLock2 = reentrantReadWriteLock.readLock();
@@ -147,21 +147,21 @@ public final class ExceptionUtilsJvmKt {
 
                         @Override // kotlin.jvm.functions.Function1
                         public final Throwable invoke(Throwable e) {
-                            Object m1935constructorimpl;
+                            Object m1940constructorimpl;
                             Intrinsics.checkNotNullParameter(e, "e");
                             try {
                                 Result.Companion companion = Result.Companion;
                                 Object newInstance = constructor.newInstance(e.getMessage(), e);
                                 Intrinsics.checkNotNull(newInstance, "null cannot be cast to non-null type kotlin.Throwable");
-                                m1935constructorimpl = Result.m1935constructorimpl((Throwable) newInstance);
+                                m1940constructorimpl = Result.m1940constructorimpl((Throwable) newInstance);
                             } catch (Throwable th) {
                                 Result.Companion companion2 = Result.Companion;
-                                m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th));
+                                m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
                             }
-                            if (Result.m1940isFailureimpl(m1935constructorimpl)) {
-                                m1935constructorimpl = null;
+                            if (Result.m1945isFailureimpl(m1940constructorimpl)) {
+                                m1940constructorimpl = null;
                             }
-                            return (Throwable) m1935constructorimpl;
+                            return (Throwable) m1940constructorimpl;
                         }
                     };
                 }
@@ -177,21 +177,21 @@ public final class ExceptionUtilsJvmKt {
 
                     @Override // kotlin.jvm.functions.Function1
                     public final Throwable invoke(Throwable e) {
-                        Object m1935constructorimpl;
+                        Object m1940constructorimpl;
                         Intrinsics.checkNotNullParameter(e, "e");
                         try {
                             Result.Companion companion = Result.Companion;
                             Object newInstance = constructor.newInstance(e);
                             Intrinsics.checkNotNull(newInstance, "null cannot be cast to non-null type kotlin.Throwable");
-                            m1935constructorimpl = Result.m1935constructorimpl((Throwable) newInstance);
+                            m1940constructorimpl = Result.m1940constructorimpl((Throwable) newInstance);
                         } catch (Throwable th) {
                             Result.Companion companion2 = Result.Companion;
-                            m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th));
+                            m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
                         }
-                        if (Result.m1940isFailureimpl(m1935constructorimpl)) {
-                            m1935constructorimpl = null;
+                        if (Result.m1945isFailureimpl(m1940constructorimpl)) {
+                            m1940constructorimpl = null;
                         }
-                        return (Throwable) m1935constructorimpl;
+                        return (Throwable) m1940constructorimpl;
                     }
                 };
             }
@@ -204,7 +204,7 @@ public final class ExceptionUtilsJvmKt {
 
                     @Override // kotlin.jvm.functions.Function1
                     public final Throwable invoke(Throwable e) {
-                        Object m1935constructorimpl;
+                        Object m1940constructorimpl;
                         Intrinsics.checkNotNullParameter(e, "e");
                         try {
                             Result.Companion companion = Result.Companion;
@@ -212,15 +212,15 @@ public final class ExceptionUtilsJvmKt {
                             Intrinsics.checkNotNull(newInstance, "null cannot be cast to non-null type kotlin.Throwable");
                             Throwable th = (Throwable) newInstance;
                             th.initCause(e);
-                            m1935constructorimpl = Result.m1935constructorimpl(th);
+                            m1940constructorimpl = Result.m1940constructorimpl(th);
                         } catch (Throwable th2) {
                             Result.Companion companion2 = Result.Companion;
-                            m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th2));
+                            m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th2));
                         }
-                        if (Result.m1940isFailureimpl(m1935constructorimpl)) {
-                            m1935constructorimpl = null;
+                        if (Result.m1945isFailureimpl(m1940constructorimpl)) {
+                            m1940constructorimpl = null;
                         }
-                        return (Throwable) m1935constructorimpl;
+                        return (Throwable) m1940constructorimpl;
                     }
                 };
             }
@@ -234,7 +234,7 @@ public final class ExceptionUtilsJvmKt {
 
             @Override // kotlin.jvm.functions.Function1
             public final Throwable invoke(Throwable e) {
-                Object m1935constructorimpl;
+                Object m1940constructorimpl;
                 Intrinsics.checkNotNullParameter(e, "e");
                 try {
                     Result.Companion companion = Result.Companion;
@@ -242,34 +242,34 @@ public final class ExceptionUtilsJvmKt {
                     Intrinsics.checkNotNull(newInstance, "null cannot be cast to non-null type kotlin.Throwable");
                     Throwable th = (Throwable) newInstance;
                     th.initCause(e);
-                    m1935constructorimpl = Result.m1935constructorimpl(th);
+                    m1940constructorimpl = Result.m1940constructorimpl(th);
                 } catch (Throwable th2) {
                     Result.Companion companion2 = Result.Companion;
-                    m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th2));
+                    m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th2));
                 }
-                if (Result.m1940isFailureimpl(m1935constructorimpl)) {
-                    m1935constructorimpl = null;
+                if (Result.m1945isFailureimpl(m1940constructorimpl)) {
+                    m1940constructorimpl = null;
                 }
-                return (Throwable) m1935constructorimpl;
+                return (Throwable) m1940constructorimpl;
             }
         };
     }
 
     private static final int fieldsCountOrDefault(Class<?> cls, int i) {
-        Integer m1935constructorimpl;
+        Integer m1940constructorimpl;
         JvmClassMappingKt.getKotlinClass(cls);
         try {
             Result.Companion companion = Result.Companion;
-            m1935constructorimpl = Result.m1935constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
+            m1940constructorimpl = Result.m1940constructorimpl(Integer.valueOf(fieldsCount$default(cls, 0, 1, null)));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th));
+            m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
         }
         Integer valueOf = Integer.valueOf(i);
-        if (Result.m1940isFailureimpl(m1935constructorimpl)) {
-            m1935constructorimpl = valueOf;
+        if (Result.m1945isFailureimpl(m1940constructorimpl)) {
+            m1940constructorimpl = valueOf;
         }
-        return ((Number) m1935constructorimpl).intValue();
+        return ((Number) m1940constructorimpl).intValue();
     }
 
     static /* synthetic */ int fieldsCount$default(Class cls, int i, int i2, Object obj) {

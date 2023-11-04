@@ -40,7 +40,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
     }
 
     public final void loadKiklikoTags() {
-        Observable<Result<List<TagResponse>>> observeOn = this.kiklikoInteractor.getTags().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<List<TagResponse>>> observeOn = this.kiklikoInteractor.getTags().observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.getTag…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends TagResponse>>, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$loadKiklikoTags$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -49,12 +49,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TagResponse>> result) {
-                m1593invoke(result);
+                m1598invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1593invoke(Result<? extends List<? extends TagResponse>> it) {
+            public final void m1598invoke(Result<? extends List<? extends TagResponse>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends TagResponse>> result = it;
                 if (result instanceof Result.Success) {
@@ -99,7 +99,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         }
         AnalyticsManagerKt.getAnalytics();
         AnalyticsManager.trackEvent(AnalyticsEvent.SearchClip.INSTANCE);
-        Observable<Result<SearchResponse>> observeOn = this.kiklikoInteractor.searchByKeyword(keyword, page).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<SearchResponse>> observeOn = this.kiklikoInteractor.searchByKeyword(keyword, page).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.search…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends SearchResponse>, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$searchByKeyword$$inlined$subscribeWithErrorHandle$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -109,12 +109,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SearchResponse> result) {
-                m1597invoke(result);
+                m1602invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1597invoke(Result<? extends SearchResponse> it) {
+            public final void m1602invoke(Result<? extends SearchResponse> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SearchResponse> result = it;
                 if (result instanceof Result.Success) {
@@ -160,7 +160,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         }
         AnalyticsManagerKt.getAnalytics();
         AnalyticsManager.trackEvent(new AnalyticsEvent.SelectClipCategory(tag));
-        Observable<Result<SearchResponse>> observeOn = this.kiklikoInteractor.searchByTag(tag, page).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<SearchResponse>> observeOn = this.kiklikoInteractor.searchByTag(tag, page).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.search…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends SearchResponse>, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$searchByTag$$inlined$subscribeWithErrorHandle$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -170,12 +170,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SearchResponse> result) {
-                m1598invoke(result);
+                m1603invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1598invoke(Result<? extends SearchResponse> it) {
+            public final void m1603invoke(Result<? extends SearchResponse> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SearchResponse> result = it;
                 if (result instanceof Result.Success) {
@@ -216,7 +216,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Intrinsics.checkNotNullParameter(page, "page");
         AnalyticsManagerKt.getAnalytics();
         AnalyticsManager.trackEvent(new AnalyticsEvent.SelectClipCategory(AnalyticsEvent.SelectClipCategory.categoryTrending));
-        Observable<Result<SearchResponse>> observeOn = this.kiklikoInteractor.getTrending(page).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<SearchResponse>> observeOn = this.kiklikoInteractor.getTrending(page).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.getTre…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends SearchResponse>, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$getTrending$$inlined$subscribeWithErrorHandle$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -226,12 +226,12 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SearchResponse> result) {
-                m1592invoke(result);
+                m1597invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1592invoke(Result<? extends SearchResponse> it) {
+            public final void m1597invoke(Result<? extends SearchResponse> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SearchResponse> result = it;
                 if (result instanceof Result.Success) {
@@ -270,17 +270,17 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
 
     public final void onGifWasSent(String slug) {
         Intrinsics.checkNotNullParameter(slug, "slug");
-        Observable<Result<Boolean>> observeOn = this.kiklikoInteractor.share(slug).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Boolean>> observeOn = this.kiklikoInteractor.share(slug).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.share(…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$onGifWasSent$$inlined$subscribeWithErrorHandle$default$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1595invoke(result);
+                m1600invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1595invoke(Result<? extends Boolean> it) {
+            public final void m1600invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
             }
         }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$onGifWasSent$$inlined$subscribeWithErrorHandle$default$2
@@ -316,17 +316,17 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Intrinsics.checkNotNullParameter(slug, "slug");
         AnalyticsManagerKt.getAnalytics();
         AnalyticsManager.trackEvent(AnalyticsEvent.PreviewClip.INSTANCE);
-        Observable<Result<Boolean>> observeOn = this.kiklikoInteractor.view(slug).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Boolean>> observeOn = this.kiklikoInteractor.view(slug).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.view(s…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$onGifPreviewAsOpened$$inlined$subscribeWithErrorHandle$default$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1594invoke(result);
+                m1599invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1594invoke(Result<? extends Boolean> it) {
+            public final void m1599invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
             }
         }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$onGifPreviewAsOpened$$inlined$subscribeWithErrorHandle$default$2
@@ -361,17 +361,17 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
     public final void report(String slug, String reason) {
         Intrinsics.checkNotNullParameter(slug, "slug");
         Intrinsics.checkNotNullParameter(reason, "reason");
-        Observable<Result<Boolean>> observeOn = this.kiklikoInteractor.report(slug, reason).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Boolean>> observeOn = this.kiklikoInteractor.report(slug, reason).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.report…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$report$$inlined$subscribeWithErrorHandle$default$1
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1596invoke(result);
+                m1601invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1596invoke(Result<? extends Boolean> it) {
+            public final void m1601invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
             }
         }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.kikliko.EmojiViewPresenter$report$$inlined$subscribeWithErrorHandle$default$2

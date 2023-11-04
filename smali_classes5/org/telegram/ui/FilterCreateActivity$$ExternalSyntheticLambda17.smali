@@ -8,18 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportedChatlistInvite;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLObject;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportedChatlistInvite;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda17;->f$1:Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportedChatlistInvite;
+    iput-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda17;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+
+    iput-object p3, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda17;->f$2:Lorg/telegram/tgnet/TLObject;
 
     return-void
 .end method
@@ -27,13 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda17;->f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda17;->f$1:Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportedChatlistInvite;
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda17;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$oUxLIOY8emBgUP77ekUf0HpvNEE(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportedChatlistInvite;)V
+    iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda17;->f$2:Lorg/telegram/tgnet/TLObject;
+
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$a1zX4rvWV2JXEmyvsYRaodLOjdw(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method

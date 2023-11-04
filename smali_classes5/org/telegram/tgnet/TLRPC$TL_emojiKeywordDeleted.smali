@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x236df622
-
-
 # instance fields
 .field public emoticons:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -22,19 +18,13 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 1
 
-    .line 43213
+    .line 43577
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$EmojiKeyword;-><init>()V
 
-    .line 43217
+    .line 43581
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -49,14 +39,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 43220
+    .line 43584
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiKeywordDeleted;->keyword:Ljava/lang/String;
 
-    .line 43221
+    .line 43585
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -71,7 +61,7 @@
 
     return-void
 
-    .line 43224
+    .line 43588
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -95,7 +85,7 @@
 
     throw p1
 
-    .line 43228
+    .line 43592
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -104,7 +94,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 43230
+    .line 43594
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiKeywordDeleted;->emoticons:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
@@ -124,29 +114,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 43235
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_emojiKeywordDeleted;->constructor:I
+    const v0, 0x236df622    # 1.2899916E-17f
 
+    .line 43599
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 43236
+    .line 43600
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiKeywordDeleted;->keyword:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
     const v0, 0x1cb5c415
 
-    .line 43237
+    .line 43601
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 43238
+    .line 43602
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiKeywordDeleted;->emoticons:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 43239
+    .line 43603
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -154,7 +144,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 43241
+    .line 43605
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiKeywordDeleted;->emoticons:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

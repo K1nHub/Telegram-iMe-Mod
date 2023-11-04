@@ -1,19 +1,18 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_inputMediaGame extends TLRPC$InputMedia {
-    public static int constructor = -750828557;
 
     /* renamed from: id */
-    public TLRPC$InputGame f1669id;
+    public TLRPC$InputGame f1670id;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1669id = TLRPC$InputGame.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
+        this.f1670id = TLRPC$InputGame.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
-        this.f1669id.serializeToStream(abstractSerializedData);
+        abstractSerializedData.writeInt32(-750828557);
+        this.f1670id.serializeToStream(abstractSerializedData);
     }
 }

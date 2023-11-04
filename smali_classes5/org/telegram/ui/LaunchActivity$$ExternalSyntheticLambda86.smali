@@ -57,7 +57,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda86;->f$5:Ljava/lang/Runnable;
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$UC3xgV919D3focSTvg5tOnofrBQ(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;ILjava/lang/String;Ljava/lang/Runnable;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$-EtIHsXngY-ZXgnqRxIh-7ksfAI(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;ILjava/lang/String;Ljava/lang/Runnable;)V
 
     return-void
 .end method

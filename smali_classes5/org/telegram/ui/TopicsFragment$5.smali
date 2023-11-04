@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 733
+    .line 737
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$5;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;-><init>(Lorg/telegram/ui/TopicsFragment;Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public emptyViewIsVisible()Z
     .locals 4
 
-    .line 742
+    .line 746
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -52,7 +52,7 @@
 
     goto :goto_0
 
-    .line 745
+    .line 749
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$5;->this$0:Lorg/telegram/ui/TopicsFragment;
 
@@ -108,7 +108,7 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 746
+    .line 750
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -126,7 +126,7 @@
     :cond_1
     return v1
 
-    .line 748
+    .line 752
     :cond_2
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
@@ -148,10 +148,10 @@
 .method protected onLayout(ZIIII)V
     .locals 0
 
-    .line 736
+    .line 740
     invoke-super/range {p0 .. p5}, Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;->onLayout(ZIIII)V
 
-    .line 737
+    .line 741
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$5;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$3000(Lorg/telegram/ui/TopicsFragment;)V

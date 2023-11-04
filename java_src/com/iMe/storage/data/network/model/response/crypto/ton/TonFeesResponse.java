@@ -50,7 +50,7 @@ public final class TonFeesResponse {
     }
 
     public int hashCode() {
-        return (((Float.floatToIntBits(this.duration) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.fee)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.feeInDollars);
+        return (((Float.floatToIntBits(this.duration) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.fee)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.feeInDollars);
     }
 
     public String toString() {

@@ -3,18 +3,17 @@ package org.telegram.tgnet;
 import java.util.ArrayList;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_help_termsOfService extends TLObject {
-    public static int constructor = 2013922064;
     public ArrayList<TLRPC$MessageEntity> entities = new ArrayList<>();
     public int flags;
 
     /* renamed from: id */
-    public TLRPC$TL_dataJSON f1662id;
+    public TLRPC$TL_dataJSON f1663id;
     public int min_age_confirm;
     public boolean popup;
     public String text;
 
     public static TLRPC$TL_help_termsOfService TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
-        if (constructor != i) {
+        if (2013922064 != i) {
             if (z) {
                 throw new RuntimeException(String.format("can't parse magic %x in TL_help_termsOfService", Integer.valueOf(i)));
             }
@@ -30,7 +29,7 @@ public class TLRPC$TL_help_termsOfService extends TLObject {
         int readInt32 = abstractSerializedData.readInt32(z);
         this.flags = readInt32;
         this.popup = (readInt32 & 1) != 0;
-        this.f1662id = TLRPC$TL_dataJSON.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
+        this.f1663id = TLRPC$TL_dataJSON.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         this.text = abstractSerializedData.readString(z);
         int readInt322 = abstractSerializedData.readInt32(z);
         if (readInt322 != 481674261) {
@@ -54,11 +53,11 @@ public class TLRPC$TL_help_termsOfService extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(2013922064);
         int i = this.popup ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         abstractSerializedData.writeInt32(i);
-        this.f1662id.serializeToStream(abstractSerializedData);
+        this.f1663id.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeString(this.text);
         abstractSerializedData.writeInt32(481674261);
         int size = this.entities.size();

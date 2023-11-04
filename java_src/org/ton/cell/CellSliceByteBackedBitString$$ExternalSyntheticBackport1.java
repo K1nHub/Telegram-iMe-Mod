@@ -25,14 +25,14 @@ public final /* synthetic */ class CellSliceByteBackedBitString$$ExternalSynthet
                 j >>>= numberOfTrailingZeros;
             } while (j != 0);
         } else {
-            long m129m = (i & 1) == 0 ? (j >>> 1) / (i >>> 1) : UStringsKt$$ExternalSyntheticBackport3.m129m(j, i);
+            long m131m = (i & 1) == 0 ? (j >>> 1) / (i >>> 1) : UStringsKt$$ExternalSyntheticBackport3.m131m(j, i);
             long j2 = i;
             i3 = 63;
-            cArr[63] = Character.forDigit((int) (j - (m129m * j2)), i);
-            while (m129m > 0) {
+            cArr[63] = Character.forDigit((int) (j - (m131m * j2)), i);
+            while (m131m > 0) {
                 i3--;
-                cArr[i3] = Character.forDigit((int) (m129m % j2), i);
-                m129m /= j2;
+                cArr[i3] = Character.forDigit((int) (m131m % j2), i);
+                m131m /= j2;
             }
         }
         return new String(cArr, i3, 64 - i3);

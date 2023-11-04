@@ -62,7 +62,7 @@ public final class DefaultExtractorsFactory implements ExtractorsFactory {
     private boolean constantBitrateSeekingEnabled = true;
     private int tsMode = 1;
     private int tsTimestampSearchBytes = TsExtractor.DEFAULT_TIMESTAMP_SEARCH_BYTES;
-    private ImmutableList<Format> tsSubtitleFormats = ImmutableList.m1054of();
+    private ImmutableList<Format> tsSubtitleFormats = ImmutableList.m1055of();
 
     public synchronized DefaultExtractorsFactory setConstantBitrateSeekingEnabled(boolean z) {
         this.constantBitrateSeekingEnabled = z;

@@ -34,45 +34,45 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;Landroid/content/Context;I)V
     .locals 9
 
-    .line 575
+    .line 579
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
-    .line 576
+    .line 580
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x1
 
-    .line 577
+    .line 581
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 578
+    .line 582
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->getViewForPosition(Landroid/content/Context;I)Landroid/view/View;
 
     move-result-object p3
 
     iput-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topView:Landroid/view/View;
 
-    .line 579
+    .line 583
     invoke-virtual {p0, p3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 580
+    .line 584
     iget-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topView:Landroid/view/View;
 
     check-cast p3, Lorg/telegram/ui/Components/Premium/PagerHeaderView;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topHeader:Lorg/telegram/ui/Components/Premium/PagerHeaderView;
 
-    .line 582
+    .line 586
     new-instance p3, Landroid/widget/TextView;
 
     invoke-direct {p3, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
-    .line 583
+    .line 587
     invoke-virtual {p3, v0}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 584
+    .line 588
     iget-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
@@ -83,14 +83,14 @@
 
     invoke-virtual {p3, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 585
+    .line 589
     iget-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     const/high16 v2, 0x41a00000    # 20.0f
 
     invoke-virtual {p3, v0, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 586
+    .line 590
     iget-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     const-string v2, "fonts/rmedium.ttf"
@@ -101,7 +101,7 @@
 
     invoke-virtual {p3, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 588
+    .line 592
     iget-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     const/4 v2, -0x1
@@ -124,24 +124,24 @@
 
     invoke-virtual {p0, p3, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 590
+    .line 594
     new-instance p3, Landroid/widget/TextView;
 
     invoke-direct {p3, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object p3, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
-    .line 591
+    .line 595
     invoke-virtual {p3, v0}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 592
+    .line 596
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     const/high16 p3, 0x41700000    # 15.0f
 
     invoke-virtual {p2, v0, p3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 593
+    .line 597
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->access$1200(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;I)I
@@ -150,21 +150,21 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 594
+    .line 598
     invoke-static {p1}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->access$1300(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)Z
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 595
+    .line 599
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     const/4 p2, 0x2
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 597
+    .line 601
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
@@ -190,7 +190,7 @@
 
     const/4 p1, 0x0
 
-    .line 598
+    .line 602
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->setClipChildren(Z)V
 
     return-void
@@ -201,24 +201,24 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 3
 
-    .line 630
+    .line 634
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topView:Landroid/view/View;
 
     if-ne p2, v0, :cond_3
 
-    .line 631
+    .line 635
     instance-of v0, p2, Lorg/telegram/ui/Components/Premium/BaseListPageView;
 
     if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
-    .line 632
+    .line 636
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->setTranslationY(F)V
 
     goto :goto_0
 
-    .line 634
+    .line 638
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
@@ -228,7 +228,7 @@
 
     invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->setTranslationY(F)V
 
-    .line 636
+    .line 640
     :goto_0
     instance-of v1, p2, Lorg/telegram/ui/Components/Premium/CarouselView;
 
@@ -238,11 +238,11 @@
 
     goto :goto_1
 
-    .line 639
+    .line 643
     :cond_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 640
+    .line 644
     invoke-virtual {p2}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -255,17 +255,17 @@
 
     invoke-virtual {p1, v2, v2, v0, v1}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 641
+    .line 645
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/LinearLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p2
 
-    .line 642
+    .line 646
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return p2
 
-    .line 637
+    .line 641
     :cond_2
     :goto_1
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/LinearLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
@@ -274,7 +274,7 @@
 
     return p1
 
-    .line 645
+    .line 649
     :cond_3
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/LinearLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -286,21 +286,21 @@
 .method protected onMeasure(II)V
     .locals 5
 
-    .line 603
+    .line 607
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 604
+    .line 608
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topView:Landroid/view/View;
 
     instance-of v2, v0, Lorg/telegram/ui/Components/Premium/BaseListPageView;
 
     if-eqz v2, :cond_0
 
-    .line 605
+    .line 609
     check-cast v0, Lorg/telegram/ui/Components/Premium/BaseListPageView;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
@@ -309,7 +309,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/Premium/BaseListPageView;->setTopOffset(I)V
 
-    .line 607
+    .line 611
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topView:Landroid/view/View;
 
@@ -323,7 +323,7 @@
 
     iput v3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 608
+    .line 612
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->access$1400(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)Z
@@ -344,7 +344,7 @@
     :goto_0
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 609
+    .line 613
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -353,7 +353,7 @@
 
     check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 610
+    .line 614
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->access$1500(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)Z
@@ -364,14 +364,14 @@
 
     const/16 v2, 0x14
 
-    .line 611
+    .line 615
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 612
+    .line 616
     iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
     goto :goto_1
@@ -379,21 +379,21 @@
     :cond_2
     const/16 v2, 0xa
 
-    .line 614
+    .line 618
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
     iput v4, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
 
-    .line 615
+    .line 619
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     iput v2, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 617
+    .line 621
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topView:Landroid/view/View;
 
@@ -405,15 +405,15 @@
 
     iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 618
+    .line 622
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
-    .line 619
+    .line 623
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topViewOnFullHeight:Z
 
     if-eqz v0, :cond_3
 
-    .line 620
+    .line 624
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -434,7 +434,7 @@
 
     iput v1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 621
+    .line 625
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -449,17 +449,17 @@
 
     iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
 
-    .line 622
+    .line 626
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 623
+    .line 627
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 624
+    .line 628
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
     :cond_3
@@ -469,7 +469,7 @@
 .method setFeatureDate(Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;)V
     .locals 3
 
-    .line 650
+    .line 654
     iget v0, p1, Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;->type:I
 
     if-eqz v0, :cond_9
@@ -480,7 +480,7 @@
 
     goto/16 :goto_1
 
-    .line 654
+    .line 658
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
@@ -492,7 +492,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 655
+    .line 659
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->access$1600(Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;)I
@@ -503,7 +503,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 656
+    .line 660
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->AdditionalReactions:I
@@ -516,7 +516,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 657
+    .line 661
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->AdditionalReactionsDescription:I
@@ -535,7 +535,7 @@
 
     goto/16 :goto_0
 
-    .line 658
+    .line 662
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
@@ -547,7 +547,7 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 659
+    .line 663
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->PremiumPreviewNoAds:I
@@ -560,7 +560,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 660
+    .line 664
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->PremiumPreviewNoAdsDescription2:I
@@ -579,7 +579,7 @@
 
     goto/16 :goto_0
 
-    .line 661
+    .line 665
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
@@ -591,7 +591,7 @@
 
     if-ne p1, v0, :cond_3
 
-    .line 662
+    .line 666
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->PremiumPreviewAppIcon:I
@@ -604,7 +604,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 663
+    .line 667
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->PremiumPreviewAppIconDescription2:I
@@ -623,7 +623,7 @@
 
     goto/16 :goto_0
 
-    .line 664
+    .line 668
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
@@ -635,7 +635,7 @@
 
     if-ne p1, v0, :cond_4
 
-    .line 665
+    .line 669
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->PremiumPreviewDownloadSpeed:I
@@ -646,7 +646,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 666
+    .line 670
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->PremiumPreviewDownloadSpeedDescription2:I
@@ -663,7 +663,7 @@
 
     goto :goto_0
 
-    .line 667
+    .line 671
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
@@ -675,7 +675,7 @@
 
     if-ne p1, v0, :cond_5
 
-    .line 668
+    .line 672
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->PremiumPreviewAdvancedChatManagement:I
@@ -686,7 +686,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 669
+    .line 673
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->PremiumPreviewAdvancedChatManagementDescription2:I
@@ -703,7 +703,7 @@
 
     goto :goto_0
 
-    .line 670
+    .line 674
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
@@ -715,7 +715,7 @@
 
     if-ne p1, v0, :cond_6
 
-    .line 671
+    .line 675
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->PremiumPreviewVoiceToText:I
@@ -726,7 +726,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 672
+    .line 676
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->PremiumPreviewVoiceToTextDescription2:I
@@ -743,7 +743,7 @@
 
     goto :goto_0
 
-    .line 673
+    .line 677
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->this$0:Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
@@ -755,7 +755,7 @@
 
     if-ne p1, v0, :cond_7
 
-    .line 674
+    .line 678
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->PremiumPreviewTranslations:I
@@ -766,7 +766,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 675
+    .line 679
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->PremiumPreviewTranslationsDescription:I
@@ -781,14 +781,14 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 677
+    .line 681
     :cond_7
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topViewOnFullHeight:Z
 
     goto :goto_2
 
-    .line 679
+    .line 683
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
 
@@ -796,7 +796,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 680
+    .line 684
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     iget-object p1, p1, Lorg/telegram/ui/PremiumPreviewFragment$PremiumFeatureData;->description:Ljava/lang/String;
@@ -807,12 +807,12 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 681
+    .line 685
     iput-boolean v1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topViewOnFullHeight:Z
 
     goto :goto_2
 
-    .line 651
+    .line 655
     :cond_9
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->title:Landroid/widget/TextView;
@@ -821,17 +821,17 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 652
+    .line 656
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->description:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/4 p1, 0x1
 
-    .line 653
+    .line 657
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet$ViewPage;->topViewOnFullHeight:Z
 
-    .line 683
+    .line 687
     :goto_2
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->requestLayout()V
 

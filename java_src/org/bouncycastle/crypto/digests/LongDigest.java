@@ -57,7 +57,7 @@ public abstract class LongDigest implements ExtendedDigest, Memoable {
     }
 
     /* renamed from: Ch */
-    private long m113Ch(long j, long j2, long j3) {
+    private long m115Ch(long j, long j2, long j3) {
         return ((~j) & j3) ^ (j2 & j);
     }
 
@@ -159,36 +159,36 @@ public abstract class LongDigest implements ExtendedDigest, Memoable {
             long j16 = j12;
             long[] jArr3 = f1409K;
             int i4 = i2 + 1;
-            long Sum1 = j13 + Sum1(j12) + m113Ch(j12, j8, j15) + jArr3[i2] + this.f1418W[i2];
+            long Sum1 = j13 + Sum1(j12) + m115Ch(j12, j8, j15) + jArr3[i2] + this.f1418W[i2];
             long j17 = j9 + Sum1;
             long Sum0 = Sum1 + Sum0(j14) + Maj(j14, j10, j11);
             int i5 = i4 + 1;
-            long Sum12 = j15 + Sum1(j17) + m113Ch(j17, j16, j8) + jArr3[i4] + this.f1418W[i4];
+            long Sum12 = j15 + Sum1(j17) + m115Ch(j17, j16, j8) + jArr3[i4] + this.f1418W[i4];
             long j18 = j11 + Sum12;
             long Sum02 = Sum12 + Sum0(Sum0) + Maj(Sum0, j14, j10);
             int i6 = i5 + 1;
-            long Sum13 = j8 + Sum1(j18) + m113Ch(j18, j17, j16) + jArr3[i5] + this.f1418W[i5];
+            long Sum13 = j8 + Sum1(j18) + m115Ch(j18, j17, j16) + jArr3[i5] + this.f1418W[i5];
             long j19 = j10 + Sum13;
             long Sum03 = Sum13 + Sum0(Sum02) + Maj(Sum02, Sum0, j14);
             int i7 = i6 + 1;
-            long Sum14 = j16 + Sum1(j19) + m113Ch(j19, j18, j17) + jArr3[i6] + this.f1418W[i6];
+            long Sum14 = j16 + Sum1(j19) + m115Ch(j19, j18, j17) + jArr3[i6] + this.f1418W[i6];
             long j20 = j14 + Sum14;
             long Sum04 = Sum14 + Sum0(Sum03) + Maj(Sum03, Sum02, Sum0);
             int i8 = i7 + 1;
-            long Sum15 = j17 + Sum1(j20) + m113Ch(j20, j19, j18) + jArr3[i7] + this.f1418W[i7];
+            long Sum15 = j17 + Sum1(j20) + m115Ch(j20, j19, j18) + jArr3[i7] + this.f1418W[i7];
             long j21 = Sum0 + Sum15;
             long Sum05 = Sum15 + Sum0(Sum04) + Maj(Sum04, Sum03, Sum02);
             int i9 = i8 + 1;
-            long Sum16 = j18 + Sum1(j21) + m113Ch(j21, j20, j19) + jArr3[i8] + this.f1418W[i8];
+            long Sum16 = j18 + Sum1(j21) + m115Ch(j21, j20, j19) + jArr3[i8] + this.f1418W[i8];
             long j22 = Sum02 + Sum16;
             long Sum06 = Sum16 + Sum0(Sum05) + Maj(Sum05, Sum04, Sum03);
             j15 = j22;
             int i10 = i9 + 1;
-            long Sum17 = j19 + Sum1(j22) + m113Ch(j22, j21, j20) + jArr3[i9] + this.f1418W[i9];
+            long Sum17 = j19 + Sum1(j22) + m115Ch(j22, j21, j20) + jArr3[i9] + this.f1418W[i9];
             long j23 = Sum03 + Sum17;
             j8 = j23;
             j10 = Sum17 + Sum0(Sum06) + Maj(Sum06, Sum05, Sum04);
-            long Sum18 = j20 + Sum1(j23) + m113Ch(j23, j15, j21) + jArr3[i10] + this.f1418W[i10];
+            long Sum18 = j20 + Sum1(j23) + m115Ch(j23, j15, j21) + jArr3[i10] + this.f1418W[i10];
             long Sum07 = Sum18 + Sum0(j10) + Maj(j10, Sum06, Sum05);
             i3++;
             j12 = Sum04 + Sum18;

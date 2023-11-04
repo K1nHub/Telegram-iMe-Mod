@@ -10,6 +10,6 @@ public final class BlockCreateStatsTlbCombinator extends TlbCombinator<BlockCrea
     public static final BlockCreateStatsTlbCombinator INSTANCE = new BlockCreateStatsTlbCombinator();
 
     private BlockCreateStatsTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(BlockCreateStats.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(BlockCreateStatsRegular.class), BlockCreateStatsRegular.Companion.tlbConstructor()), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(BlockCreateStatsExt.class), BlockCreateStatsExt.Companion.tlbConstructor()));
+        super(Reflection.getOrCreateKotlinClass(BlockCreateStats.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(BlockCreateStatsRegular.class), BlockCreateStatsRegular.Companion.tlbConstructor()), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(BlockCreateStatsExt.class), BlockCreateStatsExt.Companion.tlbConstructor()));
     }
 }

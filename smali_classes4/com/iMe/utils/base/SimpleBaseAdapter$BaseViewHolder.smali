@@ -18,7 +18,7 @@
 .method public constructor <init>(Landroid/view/View;)V
     .locals 1
 
-    const-string v0, "itemView"
+    const-string/jumbo v0, "itemView"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

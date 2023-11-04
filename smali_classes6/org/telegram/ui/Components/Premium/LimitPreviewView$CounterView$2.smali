@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;)V
     .locals 0
 
-    .line 714
+    .line 717
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$2;->this$1:Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$2;->val$layout:Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;
@@ -39,14 +39,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 717
+    .line 720
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$2;->val$layout:Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;
 
     const/4 v0, 0x0
 
     iput-object v0, p1, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$AnimatedLayout;->valueAnimator:Landroid/animation/ValueAnimator;
 
-    .line 718
+    .line 721
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView$2;->this$1:Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;->access$900(Lorg/telegram/ui/Components/Premium/LimitPreviewView$CounterView;)V

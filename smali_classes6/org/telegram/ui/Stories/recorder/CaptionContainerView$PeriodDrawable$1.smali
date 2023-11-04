@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;ZZZ)V
     .locals 0
 
-    .line 1007
+    .line 1026
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;-><init>(ZZZ)V
@@ -35,7 +35,7 @@
 .method public invalidateSelf()V
     .locals 1
 
-    .line 1010
+    .line 1029
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable$1;->this$0:Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V

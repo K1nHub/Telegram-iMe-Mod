@@ -10,6 +10,6 @@ final class FutureSplitMergeTlbCombinator extends TlbCombinator<FutureSplitMerge
     public static final FutureSplitMergeTlbCombinator INSTANCE = new FutureSplitMergeTlbCombinator();
 
     private FutureSplitMergeTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(FutureSplitMerge.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmNone.class), FutureSplitMerge.FsmNone.INSTANCE), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmSplit.class), FutureSplitMerge.FsmSplit.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmMerge.class), FutureSplitMerge.FsmMerge.Companion));
+        super(Reflection.getOrCreateKotlinClass(FutureSplitMerge.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmNone.class), FutureSplitMerge.FsmNone.INSTANCE), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmSplit.class), FutureSplitMerge.FsmSplit.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(FutureSplitMerge.FsmMerge.class), FutureSplitMerge.FsmMerge.Companion));
     }
 }

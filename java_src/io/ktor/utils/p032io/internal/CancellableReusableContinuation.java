@@ -24,7 +24,7 @@ public final class CancellableReusableContinuation<T> implements Continuation<T>
     public final void close(T value) {
         Intrinsics.checkNotNullParameter(value, "value");
         Result.Companion companion = Result.Companion;
-        resumeWith(Result.m1935constructorimpl(value));
+        resumeWith(Result.m1940constructorimpl(value));
         JobRelation jobRelation = (JobRelation) jobCancellationHandler$FU.getAndSet(this, null);
         if (jobRelation != null) {
             jobRelation.dispose();
@@ -34,7 +34,7 @@ public final class CancellableReusableContinuation<T> implements Continuation<T>
     public final void close(Throwable cause) {
         Intrinsics.checkNotNullParameter(cause, "cause");
         Result.Companion companion = Result.Companion;
-        resumeWith(Result.m1935constructorimpl(ResultKt.createFailure(cause)));
+        resumeWith(Result.m1940constructorimpl(ResultKt.createFailure(cause)));
         JobRelation jobRelation = (JobRelation) jobCancellationHandler$FU.getAndSet(this, null);
         if (jobRelation != null) {
             jobRelation.dispose();
@@ -168,7 +168,7 @@ public final class CancellableReusableContinuation<T> implements Continuation<T>
         } while (!state$FU.compareAndSet(this, obj, null));
         Intrinsics.checkNotNull(obj, "null cannot be cast to non-null type kotlin.coroutines.Continuation<T of io.ktor.utils.io.internal.CancellableReusableContinuation>");
         Result.Companion companion = Result.Companion;
-        continuation.resumeWith(Result.m1935constructorimpl(ResultKt.createFailure(th)));
+        continuation.resumeWith(Result.m1940constructorimpl(ResultKt.createFailure(th)));
     }
 
     @Override // kotlin.coroutines.Continuation
@@ -178,7 +178,7 @@ public final class CancellableReusableContinuation<T> implements Continuation<T>
         do {
             obj2 = this.state;
             if (obj2 == null) {
-                obj3 = Result.m1938exceptionOrNullimpl(obj);
+                obj3 = Result.m1943exceptionOrNullimpl(obj);
                 if (obj3 == null) {
                     ResultKt.throwOnFailure(obj);
                     obj3 = obj;

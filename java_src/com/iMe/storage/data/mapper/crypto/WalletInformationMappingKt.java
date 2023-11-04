@@ -29,8 +29,8 @@ public final class WalletInformationMappingKt {
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (RemoteWalletInfoResponse remoteWalletInfoResponse : wallets) {
-            Pair m144to = TuplesKt.m144to(BlockchainType.Companion.mapByBackendName(remoteWalletInfoResponse.getPlatform()), remoteWalletInfoResponse.getAddress());
-            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
+            Pair m146to = TuplesKt.m146to(BlockchainType.Companion.mapByBackendName(remoteWalletInfoResponse.getPlatform()), remoteWalletInfoResponse.getAddress());
+            linkedHashMap.put(m146to.getFirst(), m146to.getSecond());
         }
         boolean isVisible = cryptoWalletsInfoResponse.isVisible();
         List<String> allowedUsers = cryptoWalletsInfoResponse.getAllowedUsers();

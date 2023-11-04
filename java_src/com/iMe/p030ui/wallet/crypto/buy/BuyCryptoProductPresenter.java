@@ -32,7 +32,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SpreadBuilder;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import timber.log.Timber;
 /* compiled from: BuyCryptoProductPresenter.kt */
 @InjectViewState
@@ -56,7 +56,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
         this.resourceManager = resourceManager;
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.schedulersProvider = schedulersProvider;
-        resourceManager.getString(C3630R.string.common_dash);
+        resourceManager.getString(C3634R.string.common_dash);
     }
 
     public final void loadAvailableProducts() {
@@ -64,7 +64,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
         if (tokenDetailed == null) {
             return;
         }
-        Observable observeOn = SimplexInteractor.getAllAvailablePurchasesQuotes$default(this.simplexInteractor, null, DigitalCurrency.Companion.map(tokenDetailed.getTicker()), this.cryptoPreferenceHelper.getNetworkId(), 1, null).observeOn(this.schedulersProvider.mo1009ui());
+        Observable observeOn = SimplexInteractor.getAllAvailablePurchasesQuotes$default(this.simplexInteractor, null, DigitalCurrency.Companion.map(tokenDetailed.getTicker()), this.cryptoPreferenceHelper.getNetworkId(), 1, null).observeOn(this.schedulersProvider.mo1010ui());
         final Function1<Disposable, Unit> function1 = new Function1<Disposable, Unit>() { // from class: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductPresenter$loadAvailableProducts$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -102,12 +102,12 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<BuyingCryptoQuote>> result) {
-                m1619invoke(result);
+                m1624invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1619invoke(Result<? extends List<BuyingCryptoQuote>> it) {
+            public final void m1624invoke(Result<? extends List<BuyingCryptoQuote>> it) {
                 ResourceManager resourceManager;
                 TokenDetailed tokenDetailed2;
                 List sortedWith;
@@ -182,7 +182,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
         List<BaseNode> mutableListOf;
         SpreadBuilder spreadBuilder = new SpreadBuilder(2);
         spreadBuilder.addSpread(cryptoBuyItemArr);
-        spreadBuilder.add(new CryptoBuyFooterItem(C3630R.string.wallet_crypto_buy_footer_title, C3630R.string.wallet_crypto_buy_footer_description));
+        spreadBuilder.add(new CryptoBuyFooterItem(C3634R.string.wallet_crypto_buy_footer_title, C3634R.string.wallet_crypto_buy_footer_description));
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(spreadBuilder.toArray(new BaseNode[spreadBuilder.size()]));
         ((BuyCryptoProductView) getViewState()).showUiItems(mutableListOf);
     }

@@ -36,7 +36,7 @@
     goto :goto_0
 
     :pswitch_0
-    const-string v2, "javaClass"
+    const-string/jumbo v2, "javaClass"
 
     aput-object v2, v0, v1
 
@@ -123,8 +123,6 @@
     invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

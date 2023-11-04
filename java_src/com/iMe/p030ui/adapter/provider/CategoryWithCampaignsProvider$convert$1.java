@@ -33,7 +33,7 @@ import org.koin.p041mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CategoryWithCampaignsProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CategoryWithCampaignsProvider$convert$1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CategoryWithCampaignsProvider$convert$1 extends Lambda implements Function1<RecyclerView, Unit> {
     final /* synthetic */ BaseViewHolder $helper;
     final /* synthetic */ CategoryWithCampaignsItem $item;

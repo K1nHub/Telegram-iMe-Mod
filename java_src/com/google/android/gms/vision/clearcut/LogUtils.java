@@ -7,7 +7,7 @@ import com.google.android.gms.common.wrappers.Wrappers;
 import com.google.android.gms.internal.vision.zzfi;
 import com.google.android.gms.internal.vision.zzjb;
 import com.google.android.gms.internal.vision.zzs;
-import com.google.android.gms.vision.C0718L;
+import com.google.android.gms.vision.C0724L;
 import java.util.ArrayList;
 import java.util.List;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
@@ -24,7 +24,7 @@ public class LogUtils {
     }
 
     public static zzfi.zza zza(Context context) {
-        zzfi.zza.C7741zza zza = zzfi.zza.zza().zza(context.getPackageName());
+        zzfi.zza.C7816zza zza = zzfi.zza.zza().zza(context.getPackageName());
         String zzb = zzb(context);
         if (zzb != null) {
             zza.zzb(zzb);
@@ -36,7 +36,7 @@ public class LogUtils {
         try {
             return Wrappers.packageManager(context).getPackageInfo(context.getPackageName(), 0).versionName;
         } catch (PackageManager.NameNotFoundException e) {
-            C0718L.m1065e(e, "Unable to find calling package info for %s", context.getPackageName());
+            C0724L.m1066e(e, "Unable to find calling package info for %s", context.getPackageName());
             return null;
         }
     }

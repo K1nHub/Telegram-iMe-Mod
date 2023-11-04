@@ -22,43 +22,43 @@ import com.google.android.gms.maps.model.LatLngBounds;
 public final class GoogleMapOptions extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<GoogleMapOptions> CREATOR = new zzab();
     private static final Integer zza = Integer.valueOf(Color.argb(255, 236, 233, 225));
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getZOrderOnTopForParcel", m1089id = 2, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getZOrderOnTopForParcel", m1090id = 2, type = "byte")
     private Boolean zzb;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getUseViewLifecycleInFragmentForParcel", m1089id = 3, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getUseViewLifecycleInFragmentForParcel", m1090id = 3, type = "byte")
     private Boolean zzc;
-    @SafeParcelable.Field(getter = "getMapType", m1089id = 4)
+    @SafeParcelable.Field(getter = "getMapType", m1090id = 4)
     private int zzd;
-    @SafeParcelable.Field(getter = "getCamera", m1089id = 5)
+    @SafeParcelable.Field(getter = "getCamera", m1090id = 5)
     private CameraPosition zze;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getZoomControlsEnabledForParcel", m1089id = 6, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getZoomControlsEnabledForParcel", m1090id = 6, type = "byte")
     private Boolean zzf;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getCompassEnabledForParcel", m1089id = 7, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getCompassEnabledForParcel", m1090id = 7, type = "byte")
     private Boolean zzg;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getScrollGesturesEnabledForParcel", m1089id = 8, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getScrollGesturesEnabledForParcel", m1090id = 8, type = "byte")
     private Boolean zzh;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getZoomGesturesEnabledForParcel", m1089id = 9, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getZoomGesturesEnabledForParcel", m1090id = 9, type = "byte")
     private Boolean zzi;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getTiltGesturesEnabledForParcel", m1089id = 10, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getTiltGesturesEnabledForParcel", m1090id = 10, type = "byte")
     private Boolean zzj;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getRotateGesturesEnabledForParcel", m1089id = 11, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getRotateGesturesEnabledForParcel", m1090id = 11, type = "byte")
     private Boolean zzk;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getLiteModeForParcel", m1089id = 12, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getLiteModeForParcel", m1090id = 12, type = "byte")
     private Boolean zzl;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getMapToolbarEnabledForParcel", m1089id = 14, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getMapToolbarEnabledForParcel", m1090id = 14, type = "byte")
     private Boolean zzm;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getAmbientEnabledForParcel", m1089id = 15, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getAmbientEnabledForParcel", m1090id = 15, type = "byte")
     private Boolean zzn;
-    @SafeParcelable.Field(getter = "getMinZoomPreference", m1089id = 16)
+    @SafeParcelable.Field(getter = "getMinZoomPreference", m1090id = 16)
     private Float zzo;
-    @SafeParcelable.Field(getter = "getMaxZoomPreference", m1089id = 17)
+    @SafeParcelable.Field(getter = "getMaxZoomPreference", m1090id = 17)
     private Float zzp;
-    @SafeParcelable.Field(getter = "getLatLngBoundsForCameraTarget", m1089id = 18)
+    @SafeParcelable.Field(getter = "getLatLngBoundsForCameraTarget", m1090id = 18)
     private LatLngBounds zzq;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getScrollGesturesEnabledDuringRotateOrZoomForParcel", m1089id = 19, type = "byte")
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getScrollGesturesEnabledDuringRotateOrZoomForParcel", m1090id = 19, type = "byte")
     private Boolean zzr;
-    @SafeParcelable.Field(getter = "getBackgroundColor", m1089id = 20)
+    @SafeParcelable.Field(getter = "getBackgroundColor", m1090id = 20)
     private Integer zzs;
-    @SafeParcelable.Field(getter = "getMapId", m1089id = 21)
+    @SafeParcelable.Field(getter = "getMapId", m1090id = 21)
     private String zzt;
 
     public GoogleMapOptions() {
@@ -75,72 +75,72 @@ public final class GoogleMapOptions extends AbstractSafeParcelable implements Re
         if (context == null || attributeSet == null) {
             return null;
         }
-        TypedArray obtainAttributes = context.getResources().obtainAttributes(attributeSet, C0709R.styleable.MapAttrs);
+        TypedArray obtainAttributes = context.getResources().obtainAttributes(attributeSet, C0715R.styleable.MapAttrs);
         GoogleMapOptions googleMapOptions = new GoogleMapOptions();
-        int i = C0709R.styleable.MapAttrs_mapType;
+        int i = C0715R.styleable.MapAttrs_mapType;
         if (obtainAttributes.hasValue(i)) {
             googleMapOptions.mapType(obtainAttributes.getInt(i, -1));
         }
-        int i2 = C0709R.styleable.MapAttrs_zOrderOnTop;
+        int i2 = C0715R.styleable.MapAttrs_zOrderOnTop;
         if (obtainAttributes.hasValue(i2)) {
             googleMapOptions.zOrderOnTop(obtainAttributes.getBoolean(i2, false));
         }
-        int i3 = C0709R.styleable.MapAttrs_useViewLifecycle;
+        int i3 = C0715R.styleable.MapAttrs_useViewLifecycle;
         if (obtainAttributes.hasValue(i3)) {
             googleMapOptions.useViewLifecycleInFragment(obtainAttributes.getBoolean(i3, false));
         }
-        int i4 = C0709R.styleable.MapAttrs_uiCompass;
+        int i4 = C0715R.styleable.MapAttrs_uiCompass;
         if (obtainAttributes.hasValue(i4)) {
             googleMapOptions.compassEnabled(obtainAttributes.getBoolean(i4, true));
         }
-        int i5 = C0709R.styleable.MapAttrs_uiRotateGestures;
+        int i5 = C0715R.styleable.MapAttrs_uiRotateGestures;
         if (obtainAttributes.hasValue(i5)) {
             googleMapOptions.rotateGesturesEnabled(obtainAttributes.getBoolean(i5, true));
         }
-        int i6 = C0709R.styleable.MapAttrs_uiScrollGesturesDuringRotateOrZoom;
+        int i6 = C0715R.styleable.MapAttrs_uiScrollGesturesDuringRotateOrZoom;
         if (obtainAttributes.hasValue(i6)) {
             googleMapOptions.scrollGesturesEnabledDuringRotateOrZoom(obtainAttributes.getBoolean(i6, true));
         }
-        int i7 = C0709R.styleable.MapAttrs_uiScrollGestures;
+        int i7 = C0715R.styleable.MapAttrs_uiScrollGestures;
         if (obtainAttributes.hasValue(i7)) {
             googleMapOptions.scrollGesturesEnabled(obtainAttributes.getBoolean(i7, true));
         }
-        int i8 = C0709R.styleable.MapAttrs_uiTiltGestures;
+        int i8 = C0715R.styleable.MapAttrs_uiTiltGestures;
         if (obtainAttributes.hasValue(i8)) {
             googleMapOptions.tiltGesturesEnabled(obtainAttributes.getBoolean(i8, true));
         }
-        int i9 = C0709R.styleable.MapAttrs_uiZoomGestures;
+        int i9 = C0715R.styleable.MapAttrs_uiZoomGestures;
         if (obtainAttributes.hasValue(i9)) {
             googleMapOptions.zoomGesturesEnabled(obtainAttributes.getBoolean(i9, true));
         }
-        int i10 = C0709R.styleable.MapAttrs_uiZoomControls;
+        int i10 = C0715R.styleable.MapAttrs_uiZoomControls;
         if (obtainAttributes.hasValue(i10)) {
             googleMapOptions.zoomControlsEnabled(obtainAttributes.getBoolean(i10, true));
         }
-        int i11 = C0709R.styleable.MapAttrs_liteMode;
+        int i11 = C0715R.styleable.MapAttrs_liteMode;
         if (obtainAttributes.hasValue(i11)) {
             googleMapOptions.liteMode(obtainAttributes.getBoolean(i11, false));
         }
-        int i12 = C0709R.styleable.MapAttrs_uiMapToolbar;
+        int i12 = C0715R.styleable.MapAttrs_uiMapToolbar;
         if (obtainAttributes.hasValue(i12)) {
             googleMapOptions.mapToolbarEnabled(obtainAttributes.getBoolean(i12, true));
         }
-        int i13 = C0709R.styleable.MapAttrs_ambientEnabled;
+        int i13 = C0715R.styleable.MapAttrs_ambientEnabled;
         if (obtainAttributes.hasValue(i13)) {
             googleMapOptions.ambientEnabled(obtainAttributes.getBoolean(i13, false));
         }
-        int i14 = C0709R.styleable.MapAttrs_cameraMinZoomPreference;
+        int i14 = C0715R.styleable.MapAttrs_cameraMinZoomPreference;
         if (obtainAttributes.hasValue(i14)) {
             googleMapOptions.minZoomPreference(obtainAttributes.getFloat(i14, Float.NEGATIVE_INFINITY));
         }
         if (obtainAttributes.hasValue(i14)) {
-            googleMapOptions.maxZoomPreference(obtainAttributes.getFloat(C0709R.styleable.MapAttrs_cameraMaxZoomPreference, Float.POSITIVE_INFINITY));
+            googleMapOptions.maxZoomPreference(obtainAttributes.getFloat(C0715R.styleable.MapAttrs_cameraMaxZoomPreference, Float.POSITIVE_INFINITY));
         }
-        int i15 = C0709R.styleable.MapAttrs_backgroundColor;
+        int i15 = C0715R.styleable.MapAttrs_backgroundColor;
         if (obtainAttributes.hasValue(i15)) {
             googleMapOptions.backgroundColor(Integer.valueOf(obtainAttributes.getColor(i15, zza.intValue())));
         }
-        int i16 = C0709R.styleable.MapAttrs_mapId;
+        int i16 = C0715R.styleable.MapAttrs_mapId;
         if (obtainAttributes.hasValue(i16) && (string = obtainAttributes.getString(i16)) != null && !string.isEmpty()) {
             googleMapOptions.mapId(string);
         }
@@ -154,22 +154,22 @@ public final class GoogleMapOptions extends AbstractSafeParcelable implements Re
         if (context == null || attributeSet == null) {
             return null;
         }
-        TypedArray obtainAttributes = context.getResources().obtainAttributes(attributeSet, C0709R.styleable.MapAttrs);
-        int i = C0709R.styleable.MapAttrs_cameraTargetLat;
+        TypedArray obtainAttributes = context.getResources().obtainAttributes(attributeSet, C0715R.styleable.MapAttrs);
+        int i = C0715R.styleable.MapAttrs_cameraTargetLat;
         float f = obtainAttributes.hasValue(i) ? obtainAttributes.getFloat(i, BitmapDescriptorFactory.HUE_RED) : 0.0f;
-        int i2 = C0709R.styleable.MapAttrs_cameraTargetLng;
+        int i2 = C0715R.styleable.MapAttrs_cameraTargetLng;
         LatLng latLng = new LatLng(f, obtainAttributes.hasValue(i2) ? obtainAttributes.getFloat(i2, BitmapDescriptorFactory.HUE_RED) : 0.0f);
         CameraPosition.Builder builder = CameraPosition.builder();
         builder.target(latLng);
-        int i3 = C0709R.styleable.MapAttrs_cameraZoom;
+        int i3 = C0715R.styleable.MapAttrs_cameraZoom;
         if (obtainAttributes.hasValue(i3)) {
             builder.zoom(obtainAttributes.getFloat(i3, BitmapDescriptorFactory.HUE_RED));
         }
-        int i4 = C0709R.styleable.MapAttrs_cameraBearing;
+        int i4 = C0715R.styleable.MapAttrs_cameraBearing;
         if (obtainAttributes.hasValue(i4)) {
             builder.bearing(obtainAttributes.getFloat(i4, BitmapDescriptorFactory.HUE_RED));
         }
-        int i5 = C0709R.styleable.MapAttrs_cameraTilt;
+        int i5 = C0715R.styleable.MapAttrs_cameraTilt;
         if (obtainAttributes.hasValue(i5)) {
             builder.tilt(obtainAttributes.getFloat(i5, BitmapDescriptorFactory.HUE_RED));
         }
@@ -181,14 +181,14 @@ public final class GoogleMapOptions extends AbstractSafeParcelable implements Re
         if (context == null || attributeSet == null) {
             return null;
         }
-        TypedArray obtainAttributes = context.getResources().obtainAttributes(attributeSet, C0709R.styleable.MapAttrs);
-        int i = C0709R.styleable.MapAttrs_latLngBoundsSouthWestLatitude;
+        TypedArray obtainAttributes = context.getResources().obtainAttributes(attributeSet, C0715R.styleable.MapAttrs);
+        int i = C0715R.styleable.MapAttrs_latLngBoundsSouthWestLatitude;
         Float valueOf = obtainAttributes.hasValue(i) ? Float.valueOf(obtainAttributes.getFloat(i, BitmapDescriptorFactory.HUE_RED)) : null;
-        int i2 = C0709R.styleable.MapAttrs_latLngBoundsSouthWestLongitude;
+        int i2 = C0715R.styleable.MapAttrs_latLngBoundsSouthWestLongitude;
         Float valueOf2 = obtainAttributes.hasValue(i2) ? Float.valueOf(obtainAttributes.getFloat(i2, BitmapDescriptorFactory.HUE_RED)) : null;
-        int i3 = C0709R.styleable.MapAttrs_latLngBoundsNorthEastLatitude;
+        int i3 = C0715R.styleable.MapAttrs_latLngBoundsNorthEastLatitude;
         Float valueOf3 = obtainAttributes.hasValue(i3) ? Float.valueOf(obtainAttributes.getFloat(i3, BitmapDescriptorFactory.HUE_RED)) : null;
-        int i4 = C0709R.styleable.MapAttrs_latLngBoundsNorthEastLongitude;
+        int i4 = C0715R.styleable.MapAttrs_latLngBoundsNorthEastLongitude;
         Float valueOf4 = obtainAttributes.hasValue(i4) ? Float.valueOf(obtainAttributes.getFloat(i4, BitmapDescriptorFactory.HUE_RED)) : null;
         obtainAttributes.recycle();
         if (valueOf == null || valueOf2 == null || valueOf3 == null || valueOf4 == null) {
@@ -399,7 +399,7 @@ public final class GoogleMapOptions extends AbstractSafeParcelable implements Re
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public GoogleMapOptions(@SafeParcelable.Param(m1088id = 2) byte b, @SafeParcelable.Param(m1088id = 3) byte b2, @SafeParcelable.Param(m1088id = 4) int i, @SafeParcelable.Param(m1088id = 5) CameraPosition cameraPosition, @SafeParcelable.Param(m1088id = 6) byte b3, @SafeParcelable.Param(m1088id = 7) byte b4, @SafeParcelable.Param(m1088id = 8) byte b5, @SafeParcelable.Param(m1088id = 9) byte b6, @SafeParcelable.Param(m1088id = 10) byte b7, @SafeParcelable.Param(m1088id = 11) byte b8, @SafeParcelable.Param(m1088id = 12) byte b9, @SafeParcelable.Param(m1088id = 14) byte b10, @SafeParcelable.Param(m1088id = 15) byte b11, @SafeParcelable.Param(m1088id = 16) Float f, @SafeParcelable.Param(m1088id = 17) Float f2, @SafeParcelable.Param(m1088id = 18) LatLngBounds latLngBounds, @SafeParcelable.Param(m1088id = 19) byte b12, @SafeParcelable.Param(m1088id = 20) Integer num, @SafeParcelable.Param(m1088id = 21) String str) {
+    public GoogleMapOptions(@SafeParcelable.Param(m1089id = 2) byte b, @SafeParcelable.Param(m1089id = 3) byte b2, @SafeParcelable.Param(m1089id = 4) int i, @SafeParcelable.Param(m1089id = 5) CameraPosition cameraPosition, @SafeParcelable.Param(m1089id = 6) byte b3, @SafeParcelable.Param(m1089id = 7) byte b4, @SafeParcelable.Param(m1089id = 8) byte b5, @SafeParcelable.Param(m1089id = 9) byte b6, @SafeParcelable.Param(m1089id = 10) byte b7, @SafeParcelable.Param(m1089id = 11) byte b8, @SafeParcelable.Param(m1089id = 12) byte b9, @SafeParcelable.Param(m1089id = 14) byte b10, @SafeParcelable.Param(m1089id = 15) byte b11, @SafeParcelable.Param(m1089id = 16) Float f, @SafeParcelable.Param(m1089id = 17) Float f2, @SafeParcelable.Param(m1089id = 18) LatLngBounds latLngBounds, @SafeParcelable.Param(m1089id = 19) byte b12, @SafeParcelable.Param(m1089id = 20) Integer num, @SafeParcelable.Param(m1089id = 21) String str) {
         this.zzd = -1;
         this.zzo = null;
         this.zzp = null;

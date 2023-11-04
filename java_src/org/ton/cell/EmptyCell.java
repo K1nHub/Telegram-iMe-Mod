@@ -39,8 +39,8 @@ public final class EmptyCell implements Cell {
 
     @Override // org.ton.cell.Cell
     /* renamed from: getLevelMask-Kat384U */
-    public int mo5052getLevelMaskKat384U() {
-        return Cell.DefaultImpls.m5053getLevelMaskKat384U(this);
+    public int mo5206getLevelMaskKat384U() {
+        return Cell.DefaultImpls.m5207getLevelMaskKat384U(this);
     }
 
     @Override // org.ton.cell.Cell

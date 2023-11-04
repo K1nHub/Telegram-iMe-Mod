@@ -52,7 +52,7 @@ public final class CryptoBoxCreationExecuteRequest {
     }
 
     public int hashCode() {
-        return (((ProfileData$$ExternalSyntheticBackport0.m1017m(this.chatId) * 31) + this.description.hashCode()) * 31) + this.signedTransactionBody.hashCode();
+        return (((ProfileData$$ExternalSyntheticBackport0.m1018m(this.chatId) * 31) + this.description.hashCode()) * 31) + this.signedTransactionBody.hashCode();
     }
 
     public String toString() {

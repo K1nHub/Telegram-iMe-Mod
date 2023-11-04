@@ -8,8 +8,8 @@ public abstract class CharMatcher implements Predicate<Character> {
     }
 
     /* renamed from: is */
-    public static CharMatcher m1059is(char c) {
-        return new C0886Is(c);
+    public static CharMatcher m1060is(char c) {
+        return new C0892Is(c);
     }
 
     protected CharMatcher() {
@@ -89,10 +89,10 @@ public abstract class CharMatcher implements Predicate<Character> {
 
     /* renamed from: com.google.common.base.CharMatcher$Is */
     /* loaded from: classes3.dex */
-    private static final class C0886Is extends FastMatcher {
+    private static final class C0892Is extends FastMatcher {
         private final char match;
 
-        C0886Is(char c) {
+        C0892Is(char c) {
             this.match = c;
         }
 

@@ -96,7 +96,7 @@
     .line 69
     new-instance v0, Ljava/util/Locale;
 
-    const-string v1, "ja"
+    const-string/jumbo v1, "ja"
 
     const-string v2, "JP"
 

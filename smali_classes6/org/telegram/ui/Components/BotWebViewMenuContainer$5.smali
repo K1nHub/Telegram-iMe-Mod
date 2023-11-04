@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)V
     .locals 0
 
-    .line 529
+    .line 544
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 533
+    .line 548
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -52,20 +52,20 @@
 
     if-nez p1, :cond_3
 
-    .line 534
+    .line 549
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->onCheckDismissByUser()Z
 
     goto/16 :goto_0
 
-    .line 536
+    .line 551
     :cond_0
     sget v0, Lorg/telegram/messenger/R$id;->menu_reload_page:I
 
     if-ne p1, v0, :cond_2
 
-    .line 537
+    .line 552
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -80,7 +80,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 538
+    .line 553
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -97,7 +97,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 539
+    .line 554
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -118,27 +118,27 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 542
+    .line 557
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     const/4 v1, 0x0
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1702(Lorg/telegram/ui/Components/BotWebViewMenuContainer;Z)Z
+    invoke-static {p1, v1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1902(Lorg/telegram/ui/Components/BotWebViewMenuContainer;Z)Z
 
-    .line 543
+    .line 558
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1600(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebProgressView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1800(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebProgressView;
 
     move-result-object p1
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebProgressView;->setLoadProgress(F)V
 
-    .line 544
+    .line 559
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1600(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebProgressView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1800(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebProgressView;
 
     move-result-object p1
 
@@ -146,16 +146,16 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 545
+    .line 560
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1600(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebProgressView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1800(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebProgressView;
 
     move-result-object p1
 
     invoke-virtual {p1, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 547
+    .line 562
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -174,7 +174,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1800(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)J
+    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1200(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)J
 
     move-result-wide v1
 
@@ -188,7 +188,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->setBotUser(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 548
+    .line 563
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -203,19 +203,19 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1800(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)J
+    invoke-static {v1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1200(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)J
 
     move-result-wide v1
 
     iget-object v3, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1900(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
+    invoke-static {v3}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1100(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     move-result-object v3
 
     invoke-virtual {p1, v0, v1, v2, v3}, Lorg/telegram/ui/Components/BotWebViewContainer;->loadFlickerAndSettingsItem(IJLorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
 
-    .line 549
+    .line 564
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -226,13 +226,13 @@
 
     goto :goto_0
 
-    .line 550
+    .line 565
     :cond_2
     sget v0, Lorg/telegram/messenger/R$id;->menu_settings:I
 
     if-ne p1, v0, :cond_3
 
-    .line 551
+    .line 566
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$5;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;

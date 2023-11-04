@@ -253,7 +253,7 @@ public final class RtspMediaTrack {
     private static void processAacFmtpAttribute(Format.Builder builder, ImmutableMap<String, String> immutableMap, int i, int i2) {
         Assertions.checkArgument(immutableMap.containsKey("profile-level-id"));
         builder.setCodecs(AAC_CODECS_PREFIX + ((String) Assertions.checkNotNull(immutableMap.get("profile-level-id"))));
-        builder.setInitializationData(ImmutableList.m1053of(AacUtil.buildAacLcAudioSpecificConfig(i2, i)));
+        builder.setInitializationData(ImmutableList.m1054of(AacUtil.buildAacLcAudioSpecificConfig(i2, i)));
     }
 
     private static AacUtil.Config parseAacStreamMuxConfig(String str) {
@@ -274,7 +274,7 @@ public final class RtspMediaTrack {
         String str = immutableMap.get(PARAMETER_MP4A_CONFIG);
         if (str != null) {
             byte[] bytesFromHexString = Util.getBytesFromHexString(str);
-            builder.setInitializationData(ImmutableList.m1053of(bytesFromHexString));
+            builder.setInitializationData(ImmutableList.m1054of(bytesFromHexString));
             Pair<Integer, Integer> videoResolutionFromMpeg4VideoConfig = CodecSpecificDataUtil.getVideoResolutionFromMpeg4VideoConfig(bytesFromHexString);
             builder.setWidth(((Integer) videoResolutionFromMpeg4VideoConfig.first).intValue()).setHeight(((Integer) videoResolutionFromMpeg4VideoConfig.second).intValue());
         } else {
@@ -304,9 +304,9 @@ public final class RtspMediaTrack {
         Assertions.checkArgument(immutableMap.containsKey(PARAMETER_SPROP_PARAMS));
         String[] split = Util.split((String) Assertions.checkNotNull(immutableMap.get(PARAMETER_SPROP_PARAMS)), ",");
         Assertions.checkArgument(split.length == 2);
-        ImmutableList m1052of = ImmutableList.m1052of(getInitializationDataFromParameterSet(split[0]), getInitializationDataFromParameterSet(split[1]));
-        builder.setInitializationData(m1052of);
-        byte[] bArr = m1052of.get(0);
+        ImmutableList m1053of = ImmutableList.m1053of(getInitializationDataFromParameterSet(split[0]), getInitializationDataFromParameterSet(split[1]));
+        builder.setInitializationData(m1053of);
+        byte[] bArr = m1053of.get(0);
         NalUnitUtil.SpsData parseSpsNalUnit = NalUnitUtil.parseSpsNalUnit(bArr, NalUnitUtil.NAL_START_CODE.length, bArr.length);
         builder.setPixelWidthHeightRatio(parseSpsNalUnit.pixelWidthHeightRatio);
         builder.setHeight(parseSpsNalUnit.height);
@@ -328,9 +328,9 @@ public final class RtspMediaTrack {
         Assertions.checkArgument(immutableMap.containsKey(PARAMETER_H265_SPROP_VPS));
         Assertions.checkArgument(immutableMap.containsKey(PARAMETER_H265_SPROP_SPS));
         Assertions.checkArgument(immutableMap.containsKey(PARAMETER_H265_SPROP_PPS));
-        ImmutableList m1051of = ImmutableList.m1051of(getInitializationDataFromParameterSet((String) Assertions.checkNotNull(immutableMap.get(PARAMETER_H265_SPROP_VPS))), getInitializationDataFromParameterSet((String) Assertions.checkNotNull(immutableMap.get(PARAMETER_H265_SPROP_SPS))), getInitializationDataFromParameterSet((String) Assertions.checkNotNull(immutableMap.get(PARAMETER_H265_SPROP_PPS))));
-        builder.setInitializationData(m1051of);
-        byte[] bArr = m1051of.get(1);
+        ImmutableList m1052of = ImmutableList.m1052of(getInitializationDataFromParameterSet((String) Assertions.checkNotNull(immutableMap.get(PARAMETER_H265_SPROP_VPS))), getInitializationDataFromParameterSet((String) Assertions.checkNotNull(immutableMap.get(PARAMETER_H265_SPROP_SPS))), getInitializationDataFromParameterSet((String) Assertions.checkNotNull(immutableMap.get(PARAMETER_H265_SPROP_PPS))));
+        builder.setInitializationData(m1052of);
+        byte[] bArr = m1052of.get(1);
         NalUnitUtil.H265SpsData parseH265SpsNalUnit = NalUnitUtil.parseH265SpsNalUnit(bArr, NalUnitUtil.NAL_START_CODE.length, bArr.length);
         builder.setPixelWidthHeightRatio(parseH265SpsNalUnit.pixelWidthHeightRatio);
         builder.setHeight(parseH265SpsNalUnit.height).setWidth(parseH265SpsNalUnit.width);

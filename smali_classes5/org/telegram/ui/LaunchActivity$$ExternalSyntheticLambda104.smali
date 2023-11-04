@@ -35,7 +35,7 @@
 .method public final run()Z
     .locals 1
 
-    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$Qv6A9QqiVesj4_K-QAScAE1xc9M()Z
+    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$VTseAN9Scdn1waesj4hIC7WLkQo()Z
 
     move-result v0
 

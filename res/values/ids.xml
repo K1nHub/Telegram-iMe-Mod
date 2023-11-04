@@ -396,6 +396,7 @@
     <item type="id" name="menu_link" />
     <item type="id" name="menu_mono" />
     <item type="id" name="menu_open_bot" />
+    <item type="id" name="menu_quote" />
     <item type="id" name="menu_regular" />
     <item type="id" name="menu_reload_page" />
     <item type="id" name="menu_settings" />

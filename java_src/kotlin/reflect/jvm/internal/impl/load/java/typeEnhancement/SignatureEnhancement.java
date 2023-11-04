@@ -63,14 +63,14 @@ public final class SignatureEnhancement {
         return companion.create(plus);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:102:0x01de  */
-    /* JADX WARN: Removed duplicated region for block: B:103:0x01ec  */
-    /* JADX WARN: Removed duplicated region for block: B:105:0x01f0 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:109:0x01fa  */
-    /* JADX WARN: Removed duplicated region for block: B:122:0x0219  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x0227  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x023f  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x0269  */
+    /* JADX WARN: Removed duplicated region for block: B:102:0x01df  */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x01ed  */
+    /* JADX WARN: Removed duplicated region for block: B:105:0x01f1 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x01fb  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x021a  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x0228  */
+    /* JADX WARN: Removed duplicated region for block: B:130:0x0240  */
+    /* JADX WARN: Removed duplicated region for block: B:138:0x026a  */
     /* JADX WARN: Removed duplicated region for block: B:23:0x0058  */
     /* JADX WARN: Removed duplicated region for block: B:31:0x007e  */
     /* JADX WARN: Removed duplicated region for block: B:34:0x0084  */
@@ -93,7 +93,7 @@ public final class SignatureEnhancement {
     */
     private final <D extends kotlin.reflect.jvm.internal.impl.descriptors.CallableMemberDescriptor> D enhanceSignature(D r21, kotlin.reflect.jvm.internal.impl.load.java.lazy.LazyJavaResolverContext r22) {
         /*
-            Method dump skipped, instructions count: 635
+            Method dump skipped, instructions count: 636
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlin.reflect.jvm.internal.impl.load.java.typeEnhancement.SignatureEnhancement.enhanceSignature(kotlin.reflect.jvm.internal.impl.descriptors.CallableMemberDescriptor, kotlin.reflect.jvm.internal.impl.load.java.lazy.LazyJavaResolverContext):kotlin.reflect.jvm.internal.impl.descriptors.CallableMemberDescriptor");
@@ -113,13 +113,13 @@ public final class SignatureEnhancement {
         return TypeUtils.contains(kotlinType, new Function1<UnwrappedType, Boolean>() { // from class: kotlin.reflect.jvm.internal.impl.load.java.typeEnhancement.SignatureEnhancement$containsFunctionN$1
             @Override // kotlin.jvm.functions.Function1
             public final Boolean invoke(UnwrappedType unwrappedType) {
-                ClassifierDescriptor mo2046getDeclarationDescriptor = unwrappedType.getConstructor().mo2046getDeclarationDescriptor();
-                if (mo2046getDeclarationDescriptor == null) {
+                ClassifierDescriptor mo2051getDeclarationDescriptor = unwrappedType.getConstructor().mo2051getDeclarationDescriptor();
+                if (mo2051getDeclarationDescriptor == null) {
                     return Boolean.FALSE;
                 }
-                Name name = mo2046getDeclarationDescriptor.getName();
+                Name name = mo2051getDeclarationDescriptor.getName();
                 JavaToKotlinClassMap javaToKotlinClassMap = JavaToKotlinClassMap.INSTANCE;
-                return Boolean.valueOf(Intrinsics.areEqual(name, javaToKotlinClassMap.getFUNCTION_N_FQ_NAME().shortName()) && Intrinsics.areEqual(DescriptorUtilsKt.fqNameOrNull(mo2046getDeclarationDescriptor), javaToKotlinClassMap.getFUNCTION_N_FQ_NAME()));
+                return Boolean.valueOf(Intrinsics.areEqual(name, javaToKotlinClassMap.getFUNCTION_N_FQ_NAME().shortName()) && Intrinsics.areEqual(DescriptorUtilsKt.fqNameOrNull(mo2051getDeclarationDescriptor), javaToKotlinClassMap.getFUNCTION_N_FQ_NAME()));
             }
         });
     }

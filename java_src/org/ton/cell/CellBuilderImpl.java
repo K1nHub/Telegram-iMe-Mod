@@ -108,20 +108,20 @@ final class CellBuilderImpl implements CellBuilder {
 
     @Override // org.ton.cell.CellBuilder
     /* renamed from: storeUInt16-xj2QHRw */
-    public CellBuilder mo5055storeUInt16xj2QHRw(short s) {
-        return CellBuilder.DefaultImpls.m5058storeUInt16xj2QHRw(this, s);
+    public CellBuilder mo5209storeUInt16xj2QHRw(short s) {
+        return CellBuilder.DefaultImpls.m5212storeUInt16xj2QHRw(this, s);
     }
 
     @Override // org.ton.cell.CellBuilder
     /* renamed from: storeUInt32-WZ4Q5Ns */
-    public CellBuilder mo5056storeUInt32WZ4Q5Ns(int i) {
-        return CellBuilder.DefaultImpls.m5059storeUInt32WZ4Q5Ns(this, i);
+    public CellBuilder mo5210storeUInt32WZ4Q5Ns(int i) {
+        return CellBuilder.DefaultImpls.m5213storeUInt32WZ4Q5Ns(this, i);
     }
 
     @Override // org.ton.cell.CellBuilder
     /* renamed from: storeUInt64-VKZWuLQ */
-    public CellBuilder mo5057storeUInt64VKZWuLQ(long j) {
-        return CellBuilder.DefaultImpls.m5060storeUInt64VKZWuLQ(this, j);
+    public CellBuilder mo5211storeUInt64VKZWuLQ(long j) {
+        return CellBuilder.DefaultImpls.m5214storeUInt64VKZWuLQ(this, j);
     }
 
     @Override // org.ton.cell.CellBuilder
@@ -163,13 +163,13 @@ final class CellBuilderImpl implements CellBuilder {
     }
 
     /* renamed from: getLevelMask-5JiA7ZA  reason: not valid java name */
-    public LevelMask m5062getLevelMask5JiA7ZA() {
+    public LevelMask m5216getLevelMask5JiA7ZA() {
         return this.levelMask;
     }
 
     @Override // org.ton.cell.CellBuilder
     /* renamed from: setLevelMask-fuO3_sE */
-    public void mo5054setLevelMaskfuO3_sE(LevelMask levelMask) {
+    public void mo5208setLevelMaskfuO3_sE(LevelMask levelMask) {
         this.levelMask = levelMask;
     }
 
@@ -278,27 +278,27 @@ final class CellBuilderImpl implements CellBuilder {
 
     @Override // org.ton.cell.CellBuilder
     public Cell build() {
-        int m5075constructorimpl$default = LevelMask.m5075constructorimpl$default(0, 1, null);
+        int m5229constructorimpl$default = LevelMask.m5229constructorimpl$default(0, 1, null);
         for (Cell cell : getRefs()) {
-            m5075constructorimpl$default = LevelMask.m5082orCd1l96I(m5075constructorimpl$default, cell.mo5052getLevelMaskKat384U());
+            m5229constructorimpl$default = LevelMask.m5236orCd1l96I(m5229constructorimpl$default, cell.mo5206getLevelMaskKat384U());
         }
-        LevelMask m5062getLevelMask5JiA7ZA = m5062getLevelMask5JiA7ZA();
-        int m5085unboximpl = m5062getLevelMask5JiA7ZA != null ? m5062getLevelMask5JiA7ZA.m5085unboximpl() : m5075constructorimpl$default;
+        LevelMask m5216getLevelMask5JiA7ZA = m5216getLevelMask5JiA7ZA();
+        int m5239unboximpl = m5216getLevelMask5JiA7ZA != null ? m5216getLevelMask5JiA7ZA.m5239unboximpl() : m5229constructorimpl$default;
         CellDescriptor.Companion companion = CellDescriptor.Companion;
-        CellDescriptor fromBytes = companion.fromBytes(companion.m5064computeD1dYmMkqQ(m5085unboximpl, isExotic(), getRefs().size()), companion.computeD2(getBitsPosition()));
-        List<Pair<byte[], Integer>> m5061computeHashes4AIc1cU = m5061computeHashes4AIc1cU(fromBytes, m5075constructorimpl$default);
+        CellDescriptor fromBytes = companion.fromBytes(companion.m5218computeD1dYmMkqQ(m5239unboximpl, isExotic(), getRefs().size()), companion.computeD2(getBitsPosition()));
+        List<Pair<byte[], Integer>> m5215computeHashes4AIc1cU = m5215computeHashes4AIc1cU(fromBytes, m5229constructorimpl$default);
         int i = WhenMappings.$EnumSwitchMapping$0[fromBytes.getCellType().ordinal()];
         if (i != 1) {
             if (i == 2) {
                 throw new NotImplementedError(null, 1, null);
             }
             EmptyCell emptyCell = EmptyCell.INSTANCE;
-            return Intrinsics.areEqual(fromBytes, emptyCell.getDescriptor()) ? emptyCell : new DataCell(fromBytes, getBits(), getRefs(), m5061computeHashes4AIc1cU);
+            return Intrinsics.areEqual(fromBytes, emptyCell.getDescriptor()) ? emptyCell : new DataCell(fromBytes, getBits(), getRefs(), m5215computeHashes4AIc1cU);
         }
-        if (!(m5061computeHashes4AIc1cU.size() == 1)) {
+        if (!(m5215computeHashes4AIc1cU.size() == 1)) {
             throw new IllegalStateException("Check failed.".toString());
         }
-        Pair<byte[], Integer> pair = m5061computeHashes4AIc1cU.get(0);
+        Pair<byte[], Integer> pair = m5215computeHashes4AIc1cU.get(0);
         byte[] component1 = pair.component1();
         return new PrunedBranchCell(BitString.Companion.m43of(component1, component1.length * 8), pair.component2().intValue(), fromBytes, getBits());
     }
@@ -338,11 +338,11 @@ final class CellBuilderImpl implements CellBuilder {
     /* JADX WARN: Type inference failed for: r8v8 */
     /* JADX WARN: Type inference failed for: r8v9 */
     /* renamed from: computeHashes-4AIc1cU  reason: not valid java name */
-    private final List<Pair<byte[], Integer>> m5061computeHashes4AIc1cU(CellDescriptor cellDescriptor, int i) {
+    private final List<Pair<byte[], Integer>> m5215computeHashes4AIc1cU(CellDescriptor cellDescriptor, int i) {
         byte b;
-        int m5086levelspGXSBY;
+        int m5240levelspGXSBY;
         int i2 = i;
-        int m5079getLevelimpl = LevelMask.m5079getLevelimpl(cellDescriptor.mo5063getLevelMaskKat384U()) + 1;
+        int m5233getLevelimpl = LevelMask.m5233getLevelimpl(cellDescriptor.mo5217getLevelMaskKat384U()) + 1;
         byte[] byteArray = getBits().toByteArray(true);
         int i3 = WhenMappings.$EnumSwitchMapping$0[cellDescriptor.getCellType().ordinal()];
         if (i3 == 1) {
@@ -351,17 +351,17 @@ final class CellBuilderImpl implements CellBuilder {
             if ((b2 == cellType.getValue()) == false) {
                 throw new IllegalStateException(("Cell type mismatch, expected: " + cellType + ' ' + cellType.getValue() + ", actual: " + ((int) byteArray[0])).toString());
             }
-            int m5079getLevelimpl2 = (LevelMask.m5079getLevelimpl(cellDescriptor.mo5063getLevelMaskKat384U()) * 272) + 16;
-            if ((getBitsPosition() == m5079getLevelimpl2) == false) {
-                throw new IllegalStateException(("Invalid bit length, expected: " + m5079getLevelimpl2 + ", actual: " + getBitsPosition()).toString());
+            int m5233getLevelimpl2 = (LevelMask.m5233getLevelimpl(cellDescriptor.mo5217getLevelMaskKat384U()) * 272) + 16;
+            if ((getBitsPosition() == m5233getLevelimpl2) == false) {
+                throw new IllegalStateException(("Invalid bit length, expected: " + m5233getLevelimpl2 + ", actual: " + getBitsPosition()).toString());
             } else if (!getRefs().isEmpty()) {
                 throw new IllegalStateException("Pruned branch contains non empty references".toString());
             } else {
-                if ((cellDescriptor.mo5063getLevelMaskKat384U() == byteArray[1]) == false) {
-                    throw new IllegalStateException(("Invalid level mask in pruned branch, expected: " + cellDescriptor.mo5063getLevelMaskKat384U() + ", actual: " + ((int) b)).toString());
+                if ((cellDescriptor.mo5217getLevelMaskKat384U() == byteArray[1]) == false) {
+                    throw new IllegalStateException(("Invalid level mask in pruned branch, expected: " + cellDescriptor.mo5217getLevelMaskKat384U() + ", actual: " + ((int) b)).toString());
                 }
-                i2 = cellDescriptor.mo5063getLevelMaskKat384U();
-                m5079getLevelimpl = 1;
+                i2 = cellDescriptor.mo5217getLevelMaskKat384U();
+                m5233getLevelimpl = 1;
             }
         } else if (i3 == 2) {
             byte b3 = byteArray[0];
@@ -374,7 +374,7 @@ final class CellBuilderImpl implements CellBuilder {
             } else if (!getRefs().isEmpty()) {
                 throw new IllegalStateException(("Invalid library reference count, expected: 0, actual: " + getRefs().size()).toString());
             } else {
-                i2 = LevelMask.m5075constructorimpl$default(0, 1, null);
+                i2 = LevelMask.m5229constructorimpl$default(0, 1, null);
             }
         } else if (i3 != 3) {
             if (i3 == 4) {
@@ -389,7 +389,7 @@ final class CellBuilderImpl implements CellBuilder {
                 if ((getRefs().size() == 1) == false) {
                     throw new IllegalStateException(("Invalid merkle proof reference count, expected: 1, actual: " + getRefs().size()).toString());
                 }
-                i2 = LevelMask.m5084virtualizespGXSBY(i2, 1);
+                i2 = LevelMask.m5238virtualizespGXSBY(i2, 1);
             } else if (i3 == 5) {
                 byte b5 = byteArray[0];
                 CellType cellType4 = CellType.MERKLE_UPDATE;
@@ -403,26 +403,26 @@ final class CellBuilderImpl implements CellBuilder {
                 if ((getRefs().size() == 2) == false) {
                     throw new IllegalStateException(("Invalid merkle update reference count, expected: 2, actual: " + getRefs().size()).toString());
                 }
-                i2 = LevelMask.m5084virtualizespGXSBY(i2, 1);
+                i2 = LevelMask.m5238virtualizespGXSBY(i2, 1);
             } else {
                 throw new NoWhenBranchMatchedException();
             }
         }
-        if (!LevelMask.m5077equalsimpl0(cellDescriptor.mo5063getLevelMaskKat384U(), i2)) {
-            throw new IllegalStateException(("Invalid level mask, expected: " + m5062getLevelMask5JiA7ZA() + ", actual: " + ((Object) LevelMask.m5083toStringimpl(i2))).toString());
+        if (!LevelMask.m5231equalsimpl0(cellDescriptor.mo5217getLevelMaskKat384U(), i2)) {
+            throw new IllegalStateException(("Invalid level mask, expected: " + m5216getLevelMask5JiA7ZA() + ", actual: " + ((Object) LevelMask.m5237toStringimpl(i2))).toString());
         }
         boolean isMerkle = cellDescriptor.getCellType().isMerkle();
-        ArrayList arrayList = new ArrayList(m5079getLevelimpl);
+        ArrayList arrayList = new ArrayList(m5233getLevelimpl);
         byte component1 = cellDescriptor.component1();
         byte component2 = cellDescriptor.component2();
-        for (int i4 = 0; i4 < m5079getLevelimpl; i4++) {
+        for (int i4 = 0; i4 < m5233getLevelimpl; i4++) {
             SHA256Digest sHA256Digest = new SHA256Digest();
             if (cellDescriptor.getCellType() == CellType.PRUNED_BRANCH) {
-                m5086levelspGXSBY = cellDescriptor.mo5063getLevelMaskKat384U();
+                m5240levelspGXSBY = cellDescriptor.mo5217getLevelMaskKat384U();
             } else {
-                m5086levelspGXSBY = LevelMask.Companion.m5086levelspGXSBY(i4);
+                m5240levelspGXSBY = LevelMask.Companion.m5240levelspGXSBY(i4);
             }
-            component1 = (byte) (((byte) (component1 & 15)) | ((byte) (m5086levelspGXSBY << 5)));
+            component1 = (byte) (((byte) (component1 & 15)) | ((byte) (m5240levelspGXSBY << 5)));
             sHA256Digest.update(component1);
             sHA256Digest.update(component2);
             if (i4 == 0) {
@@ -440,7 +440,7 @@ final class CellBuilderImpl implements CellBuilder {
             for (Cell cell2 : getRefs()) {
                 sHA256Digest.update(BitString.DefaultImpls.toByteArray$default(cell2.hash(i4 + (isMerkle ? 1 : 0)), false, 1, null));
             }
-            arrayList.add(TuplesKt.m144to(sHA256Digest.build(), Integer.valueOf(i5)));
+            arrayList.add(TuplesKt.m146to(sHA256Digest.build(), Integer.valueOf(i5)));
         }
         return arrayList;
     }

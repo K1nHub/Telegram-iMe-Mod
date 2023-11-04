@@ -216,7 +216,7 @@
 .method public consumeLeadingMatchingValue(Ljava/lang/String;Z)Ljava/lang/String;
     .locals 4
 
-    const-string v0, "keyToMatch"
+    const-string/jumbo v0, "keyToMatch"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

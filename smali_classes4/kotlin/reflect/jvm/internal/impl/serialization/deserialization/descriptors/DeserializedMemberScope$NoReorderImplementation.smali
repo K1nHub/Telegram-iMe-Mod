@@ -1461,7 +1461,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "kindFilter"
+    const-string/jumbo v0, "kindFilter"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1484,7 +1484,7 @@
 
     move-result p4
 
-    const-string v0, "it.name"
+    const-string/jumbo v0, "it.name"
 
     if-eqz p4, :cond_1
 

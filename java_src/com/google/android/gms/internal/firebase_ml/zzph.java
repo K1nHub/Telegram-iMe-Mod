@@ -39,7 +39,7 @@ public final class zzph {
         }
         try {
             zzpl zzplVar = new zzpl(str);
-            zzass.m1099d("RmModelInfoRetriever", str.length() != 0 ? "Checking model URL: ".concat(str) : new String("Checking model URL: "));
+            zzass.m1100d("RmModelInfoRetriever", str.length() != 0 ? "Checking model URL: ".concat(str) : new String("Checking model URL: "));
             HttpsURLConnection httpsURLConnection = (HttpsURLConnection) zzplVar.openConnection();
             httpsURLConnection.setConnectTimeout(2000);
             httpsURLConnection.connect();

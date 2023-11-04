@@ -37,7 +37,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoriesController;JLcom/google/android/exoplayer2/util/Consumer;)V
     .locals 0
 
-    .line 1419
+    .line 1515
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController$1;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     iput-wide p2, p0, Lorg/telegram/ui/Stories/StoriesController$1;->val$hash:J
@@ -54,11 +54,11 @@
 
     if-eqz p1, :cond_0
 
-    .line 1425
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_stories_stories;
+    .line 1521
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_stories;
 
-    .line 1426
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_stories;->stories:Ljava/util/ArrayList;
+    .line 1522
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_stories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -66,8 +66,8 @@
 
     if-lez v0, :cond_0
 
-    .line 1427
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_stories;->stories:Ljava/util/ArrayList;
+    .line 1523
+    iget-object p1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_stories;->stories:Ljava/util/ArrayList;
 
     const/4 v0, 0x0
 
@@ -75,9 +75,9 @@
 
     move-result-object p1
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    .line 1428
+    .line 1524
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$1;->this$0:Lorg/telegram/ui/Stories/StoriesController;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoriesController;->resolvedStories:Landroidx/collection/LongSparseArray;
@@ -89,7 +89,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 1431
+    .line 1527
     :goto_0
     invoke-interface {p4, p1}, Lcom/google/android/exoplayer2/util/Consumer;->accept(Ljava/lang/Object;)V
 
@@ -101,7 +101,7 @@
 .method public run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 6
 
-    .line 1422
+    .line 1518
     iget-wide v3, p0, Lorg/telegram/ui/Stories/StoriesController$1;->val$hash:J
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController$1;->val$consumer:Lcom/google/android/exoplayer2/util/Consumer;

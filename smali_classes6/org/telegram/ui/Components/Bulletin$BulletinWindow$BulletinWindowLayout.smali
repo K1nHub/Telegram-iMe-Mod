@@ -22,10 +22,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/Bulletin$BulletinWindow;Landroid/content/Context;)V
     .locals 0
 
-    .line 1849
+    .line 1857
     iput-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
-    .line 1850
+    .line 1858
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -36,10 +36,10 @@
 .method public addView(Landroid/view/View;)V
     .locals 0
 
-    .line 1855
+    .line 1863
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 1856
+    .line 1864
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
     invoke-virtual {p1}, Landroid/app/Dialog;->show()V
@@ -50,7 +50,7 @@
 .method public getLayout()Landroid/view/WindowManager$LayoutParams;
     .locals 1
 
-    .line 1884
+    .line 1892
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Bulletin$BulletinWindow;->access$2200(Lorg/telegram/ui/Components/Bulletin$BulletinWindow;)Landroid/view/WindowManager$LayoutParams;
@@ -63,10 +63,10 @@
 .method public removeView(Landroid/view/View;)V
     .locals 0
 
-    .line 1861
+    .line 1869
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 1863
+    .line 1871
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
@@ -74,7 +74,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1867
+    .line 1875
     :catch_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
@@ -90,7 +90,7 @@
 .method public setTouchable(Z)V
     .locals 1
 
-    .line 1871
+    .line 1879
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Bulletin$BulletinWindow;->access$2200(Lorg/telegram/ui/Components/Bulletin$BulletinWindow;)Landroid/view/WindowManager$LayoutParams;
@@ -104,7 +104,7 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 1875
+    .line 1883
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/Bulletin$BulletinWindow;->access$2200(Lorg/telegram/ui/Components/Bulletin$BulletinWindow;)Landroid/view/WindowManager$LayoutParams;
@@ -119,7 +119,7 @@
 
     goto :goto_0
 
-    .line 1877
+    .line 1885
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
@@ -133,7 +133,7 @@
 
     iput v0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1879
+    .line 1887
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
@@ -155,7 +155,7 @@
 .method public updateLayout()V
     .locals 2
 
-    .line 1888
+    .line 1896
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;->this$0:Lorg/telegram/ui/Components/Bulletin$BulletinWindow;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;

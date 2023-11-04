@@ -6,7 +6,7 @@ public abstract class TLRPC$InputFileLocation extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public long f1619id;
+    public long f1621id;
     public int local_id;
     public long secret;
     public String thumb_size;

@@ -1778,7 +1778,7 @@
 .method public final onCryptoBoxActionClick(Lcom/iMe/model/wallet/transaction/CryptoBoxActionItem;)V
     .locals 3
 
-    const-string v0, "item"
+    const-string/jumbo v0, "item"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1902,7 +1902,7 @@
 .method public final onStakingOperationClick(Lcom/iMe/model/wallet/transaction/StakingOperationItem;)V
     .locals 3
 
-    const-string v0, "item"
+    const-string/jumbo v0, "item"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

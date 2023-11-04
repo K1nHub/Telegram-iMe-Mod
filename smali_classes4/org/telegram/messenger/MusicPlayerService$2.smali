@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MusicPlayerService;)V
     .locals 0
 
-    .line 112
+    .line 114
     iput-object p1, p0, Lorg/telegram/messenger/MusicPlayerService$2;->this$0:Lorg/telegram/messenger/MusicPlayerService;
 
     invoke-direct {p0}, Landroid/media/session/MediaSession$Callback;-><init>()V
@@ -35,7 +35,7 @@
 .method public onPause()V
     .locals 2
 
-    .line 120
+    .line 122
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0
@@ -56,7 +56,7 @@
 .method public onPlay()V
     .locals 2
 
-    .line 115
+    .line 117
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0
@@ -77,7 +77,7 @@
 .method public onSeekTo(J)V
     .locals 5
 
-    .line 135
+    .line 137
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0
@@ -88,7 +88,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 137
+    .line 139
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v1
@@ -109,7 +109,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/MediaController;->seekToProgress(Lorg/telegram/messenger/MessageObject;F)Z
 
-    .line 138
+    .line 140
     iget-object v0, p0, Lorg/telegram/messenger/MusicPlayerService$2;->this$0:Lorg/telegram/messenger/MusicPlayerService;
 
     invoke-static {v0, p1, p2}, Lorg/telegram/messenger/MusicPlayerService;->access$000(Lorg/telegram/messenger/MusicPlayerService;J)V
@@ -121,7 +121,7 @@
 .method public onSkipToNext()V
     .locals 1
 
-    .line 125
+    .line 127
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0
@@ -134,7 +134,7 @@
 .method public onSkipToPrevious()V
     .locals 1
 
-    .line 130
+    .line 132
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0

@@ -1,11 +1,9 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_audio_layer45 extends TLRPC$Audio {
-    public static int constructor = -102543275;
-
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1595id = abstractSerializedData.readInt64(z);
+        this.f1597id = abstractSerializedData.readInt64(z);
         this.access_hash = abstractSerializedData.readInt64(z);
         this.date = abstractSerializedData.readInt32(z);
         this.duration = abstractSerializedData.readInt32(z);
@@ -16,8 +14,8 @@ public class TLRPC$TL_audio_layer45 extends TLRPC$Audio {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1595id);
+        abstractSerializedData.writeInt32(-102543275);
+        abstractSerializedData.writeInt64(this.f1597id);
         abstractSerializedData.writeInt64(this.access_hash);
         abstractSerializedData.writeInt32(this.date);
         abstractSerializedData.writeInt32(this.duration);

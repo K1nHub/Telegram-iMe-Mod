@@ -40,7 +40,7 @@
 
     move-result-object v0
 
-    const-string v1, "kotlin.ULong"
+    const-string/jumbo v1, "kotlin.ULong"
 
     invoke-static {v1, v0}, Lkotlinx/serialization/internal/InlineClassDescriptorKt;->InlinePrimitiveDescriptor(Ljava/lang/String;Lkotlinx/serialization/KSerializer;)Lkotlinx/serialization/descriptors/SerialDescriptor;
 

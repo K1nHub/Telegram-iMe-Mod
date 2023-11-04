@@ -31,6 +31,8 @@
 
 .field private audioManager:Landroid/media/AudioManager;
 
+.field private foregroundServiceIsStarted:Z
+
 .field private headsetPlugReceiver:Landroid/content/BroadcastReceiver;
 
 .field private imageReceiver:Lorg/telegram/messenger/ImageReceiver;
@@ -58,7 +60,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 60
+    .line 61
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x1
@@ -85,7 +87,7 @@
 
     const-string/jumbo v0, "ro.miui.ui.version.code"
 
-    .line 61
+    .line 62
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getSystemProperty(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -111,10 +113,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 46
+    .line 47
     invoke-direct {p0}, Landroid/app/Service;-><init>()V
 
-    .line 71
+    .line 73
     new-instance v0, Lorg/telegram/messenger/MusicPlayerService$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/MusicPlayerService$1;-><init>(Lorg/telegram/messenger/MusicPlayerService;)V
@@ -127,7 +129,7 @@
 .method static synthetic access$000(Lorg/telegram/messenger/MusicPlayerService;J)V
     .locals 0
 
-    .line 46
+    .line 47
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/MusicPlayerService;->updatePlaybackState(J)V
 
     return-void
@@ -136,30 +138,30 @@
 .method static synthetic access$100(Lorg/telegram/messenger/MusicPlayerService;)Landroid/media/RemoteControlClient;
     .locals 0
 
-    .line 46
+    .line 47
     iget-object p0, p0, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
     return-object p0
 .end method
 
 .method private createNotification(Lorg/telegram/messenger/MessageObject;Z)V
-    .locals 23
+    .locals 22
 
     move-object/from16 v1, p0
 
     move-object/from16 v0, p1
 
-    .line 215
+    .line 217
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getMusicTitle()Ljava/lang/String;
 
     move-result-object v2
 
-    .line 216
+    .line 218
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getMusicAuthor()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 217
+    .line 219
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v4
@@ -168,7 +170,7 @@
 
     move-result-object v4
 
-    .line 219
+    .line 221
     new-instance v5, Landroid/content/Intent;
 
     sget-object v6, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -179,15 +181,15 @@
 
     const-string v6, "com.tmessages.openplayer"
 
-    .line 220
+    .line 222
     invoke-virtual {v5, v6}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
     const-string v6, "android.intent.category.LAUNCHER"
 
-    .line 221
+    .line 223
     invoke-virtual {v5, v6}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 222
+    .line 224
     sget-object v6, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const/high16 v7, 0x2000000
@@ -204,17 +206,17 @@
 
     const/4 v6, 0x1
 
-    .line 226
+    .line 228
     invoke-virtual {v0, v6}, Lorg/telegram/messenger/MessageObject;->getArtworkUrl(Z)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 227
+    .line 229
     invoke-virtual {v0, v8}, Lorg/telegram/messenger/MessageObject;->getArtworkUrl(Z)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 228
+    .line 230
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
     move-result-wide v10
@@ -229,7 +231,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 230
+    .line 232
     invoke-virtual {v4}, Lorg/telegram/messenger/audioinfo/AudioInfo;->getSmallCover()Landroid/graphics/Bitmap;
 
     move-result-object v13
@@ -242,7 +244,7 @@
     :goto_0
     if-eqz v4, :cond_1
 
-    .line 231
+    .line 233
     invoke-virtual {v4}, Lorg/telegram/messenger/audioinfo/AudioInfo;->getCover()Landroid/graphics/Bitmap;
 
     move-result-object v14
@@ -252,18 +254,18 @@
     :cond_1
     move-object v14, v12
 
-    .line 233
+    .line 235
     :goto_1
     iput-object v12, v1, Lorg/telegram/messenger/MusicPlayerService;->loadingFilePath:Ljava/lang/String;
 
-    .line 234
+    .line 236
     iget-object v15, v1, Lorg/telegram/messenger/MusicPlayerService;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v15, v12}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/drawable/Drawable;)V
 
     if-nez v13, :cond_3
 
-    .line 235
+    .line 237
     invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v15
@@ -272,7 +274,7 @@
 
     xor-int/lit8 v0, p2, 0x1
 
-    .line 236
+    .line 238
     invoke-direct {v1, v9, v6, v0}, Lorg/telegram/messenger/MusicPlayerService;->loadArtworkFromUrl(Ljava/lang/String;ZZ)Landroid/graphics/Bitmap;
 
     move-result-object v14
@@ -281,7 +283,7 @@
 
     xor-int/lit8 v0, p2, 0x1
 
-    .line 238
+    .line 240
     invoke-direct {v1, v7, v8, v0}, Lorg/telegram/messenger/MusicPlayerService;->loadArtworkFromUrl(Ljava/lang/String;ZZ)Landroid/graphics/Bitmap;
 
     move-result-object v13
@@ -293,14 +295,14 @@
     :cond_2
     xor-int/lit8 v0, p2, 0x1
 
-    .line 240
+    .line 242
     invoke-direct {v1, v9, v8, v0}, Lorg/telegram/messenger/MusicPlayerService;->loadArtworkFromUrl(Ljava/lang/String;ZZ)Landroid/graphics/Bitmap;
 
     move-result-object v13
 
     goto :goto_2
 
-    .line 243
+    .line 245
     :cond_3
     sget v7, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -322,17 +324,17 @@
 
     iput-object v0, v1, Lorg/telegram/messenger/MusicPlayerService;->loadingFilePath:Ljava/lang/String;
 
-    .line 246
+    .line 248
     :goto_2
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v7, 0x15
 
-    move-object/from16 v17, v13
+    move-object/from16 p2, v13
 
-    if-lt v0, v7, :cond_f
+    if-lt v0, v7, :cond_11
 
-    .line 247
+    .line 249
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v7
@@ -343,10 +345,10 @@
 
     xor-int/2addr v7, v6
 
-    .line 249
+    .line 251
     invoke-virtual/range {p0 .. p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v13
+    move-result-object v12
 
     new-instance v6, Landroid/content/Intent;
 
@@ -370,38 +372,38 @@
 
     move-result v15
 
-    invoke-static {v13, v8, v6, v15}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    invoke-static {v12, v8, v6, v15}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v6
 
-    .line 251
+    .line 253
     invoke-virtual/range {p0 .. p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v13
+    move-result-object v12
 
     new-instance v15, Landroid/content/Intent;
 
     invoke-virtual/range {p0 .. p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v12
+    move-result-object v13
 
-    invoke-direct {v15, v1, v12}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-direct {v15, v1, v13}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    new-instance v13, Ljava/lang/StringBuilder;
 
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Service;->getPackageName()Ljava/lang/String;
 
     move-result-object v8
 
-    invoke-virtual {v12, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v8, ".STOP_PLAYER"
 
-    invoke-virtual {v12, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v13, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v8
 
@@ -411,15 +413,15 @@
 
     invoke-direct {v1, v9}, Lorg/telegram/messenger/MusicPlayerService;->fixIntentFlags(I)I
 
-    move-result v12
+    move-result v13
 
     const/4 v15, 0x0
 
-    invoke-static {v13, v15, v8, v12}, Landroid/app/PendingIntent;->getService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    invoke-static {v12, v15, v8, v13}, Landroid/app/PendingIntent;->getService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v8
 
-    .line 252
+    .line 254
     invoke-virtual/range {p0 .. p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v12
@@ -460,7 +462,7 @@
 
     move-result-object v9
 
-    .line 253
+    .line 255
     invoke-virtual/range {p0 .. p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v12
@@ -473,7 +475,7 @@
 
     new-instance v13, Landroid/content/ComponentName;
 
-    move-wide/from16 v21, v10
+    move-wide/from16 v20, v10
 
     const-class v10, Lorg/telegram/messenger/MusicPlayerReceiver;
 
@@ -495,7 +497,7 @@
 
     move-result-object v10
 
-    .line 254
+    .line 256
     invoke-virtual/range {p0 .. p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v12
@@ -526,36 +528,36 @@
 
     invoke-static {v12, v15, v11, v13}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
-    .line 256
+    .line 258
     new-instance v11, Landroid/app/Notification$Builder;
 
     invoke-direct {v11, v1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 257
+    .line 259
     sget v12, Lorg/telegram/messenger/R$drawable;->player:I
 
     invoke-virtual {v11, v12}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
     move-result-object v12
 
-    .line 258
+    .line 260
     invoke-virtual {v12, v7}, Landroid/app/Notification$Builder;->setOngoing(Z)Landroid/app/Notification$Builder;
 
     move-result-object v12
 
-    .line 259
+    .line 261
     invoke-virtual {v12, v2}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     move-result-object v12
 
-    .line 260
+    .line 262
     invoke-virtual {v12, v3}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     move-result-object v12
 
     if-eqz v4, :cond_5
 
-    .line 261
+    .line 263
     invoke-virtual {v4}, Lorg/telegram/messenger/audioinfo/AudioInfo;->getAlbum()Ljava/lang/String;
 
     move-result-object v13
@@ -570,33 +572,33 @@
 
     move-result-object v12
 
-    .line 262
+    .line 264
     invoke-virtual {v12, v5}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
     move-result-object v5
 
-    .line 263
+    .line 265
     invoke-virtual {v5, v8}, Landroid/app/Notification$Builder;->setDeleteIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
     move-result-object v5
 
     const/4 v8, 0x0
 
-    .line 264
+    .line 266
     invoke-virtual {v5, v8}, Landroid/app/Notification$Builder;->setShowWhen(Z)Landroid/app/Notification$Builder;
 
     move-result-object v5
 
     const-string/jumbo v8, "transport"
 
-    .line 265
+    .line 267
     invoke-virtual {v5, v8}, Landroid/app/Notification$Builder;->setCategory(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
     move-result-object v5
 
     const/4 v8, 0x2
 
-    .line 266
+    .line 268
     invoke-virtual {v5, v8}, Landroid/app/Notification$Builder;->setPriority(I)Landroid/app/Notification$Builder;
 
     move-result-object v5
@@ -607,7 +609,7 @@
 
     iget-object v12, v1, Lorg/telegram/messenger/MusicPlayerService;->mediaSession:Landroid/media/session/MediaSession;
 
-    .line 268
+    .line 270
     invoke-virtual {v12}, Landroid/media/session/MediaSession;->getSessionToken()Landroid/media/session/MediaSession$Token;
 
     move-result-object v12
@@ -622,164 +624,170 @@
 
     fill-array-data v13, :array_0
 
-    .line 269
+    .line 271
     invoke-virtual {v8, v13}, Landroid/app/Notification$MediaStyle;->setShowActionsInCompactView([I)Landroid/app/Notification$MediaStyle;
 
     move-result-object v8
 
-    .line 267
+    .line 269
     invoke-virtual {v5, v8}, Landroid/app/Notification$Builder;->setStyle(Landroid/app/Notification$Style;)Landroid/app/Notification$Builder;
 
     const/16 v5, 0x1a
 
     if-lt v0, v5, :cond_6
 
-    .line 271
+    .line 273
     invoke-static {}, Lorg/telegram/messenger/NotificationsController;->checkOtherNotificationsChannel()V
 
-    .line 272
-    sget-object v0, Lorg/telegram/messenger/NotificationsController;->OTHER_NOTIFICATIONS_CHANNEL:Ljava/lang/String;
+    .line 274
+    sget-object v5, Lorg/telegram/messenger/NotificationsController;->OTHER_NOTIFICATIONS_CHANNEL:Ljava/lang/String;
 
-    invoke-virtual {v11, v0}, Landroid/app/Notification$Builder;->setChannelId(Ljava/lang/String;)Landroid/app/Notification$Builder;
+    invoke-virtual {v11, v5}, Landroid/app/Notification$Builder;->setChannelId(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
     :cond_6
-    if-eqz v17, :cond_7
+    if-eqz p2, :cond_7
 
-    move-object/from16 v13, v17
+    move-object/from16 v13, p2
 
-    .line 275
+    .line 277
     invoke-virtual {v11, v13}, Landroid/app/Notification$Builder;->setLargeIcon(Landroid/graphics/Bitmap;)Landroid/app/Notification$Builder;
 
     goto :goto_5
 
-    .line 277
+    .line 279
     :cond_7
-    iget-object v0, v1, Lorg/telegram/messenger/MusicPlayerService;->albumArtPlaceholder:Landroid/graphics/Bitmap;
+    iget-object v5, v1, Lorg/telegram/messenger/MusicPlayerService;->albumArtPlaceholder:Landroid/graphics/Bitmap;
 
-    invoke-virtual {v11, v0}, Landroid/app/Notification$Builder;->setLargeIcon(Landroid/graphics/Bitmap;)Landroid/app/Notification$Builder;
+    invoke-virtual {v11, v5}, Landroid/app/Notification$Builder;->setLargeIcon(Landroid/graphics/Bitmap;)Landroid/app/Notification$Builder;
 
-    .line 280
+    .line 282
     :goto_5
-    sget v0, Lorg/telegram/messenger/R$string;->Next:I
+    sget v5, Lorg/telegram/messenger/R$string;->Next:I
 
-    const-string v5, "Next"
-
-    invoke-static {v5, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 281
-    sget v5, Lorg/telegram/messenger/R$string;->AccDescrPrevious:I
-
-    const-string v8, "AccDescrPrevious"
+    const-string v8, "Next"
 
     invoke-static {v8, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v5
 
     .line 283
-    invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
+    sget v8, Lorg/telegram/messenger/R$string;->AccDescrPrevious:I
+
+    const-string v13, "AccDescrPrevious"
+
+    invoke-static {v13, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v8
-
-    invoke-virtual {v8}, Lorg/telegram/messenger/MediaController;->isDownloadingCurrentMessage()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_8
-
-    .line 284
-    iget-object v8, v1, Lorg/telegram/messenger/MusicPlayerService;->playbackState:Landroid/media/session/PlaybackState$Builder;
-
-    const/4 v9, 0x6
-
-    const-wide/16 v12, 0x0
-
-    const/high16 v15, 0x3f800000    # 1.0f
-
-    invoke-virtual {v8, v9, v12, v13, v15}, Landroid/media/session/PlaybackState$Builder;->setState(IJF)Landroid/media/session/PlaybackState$Builder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v12, v13}, Landroid/media/session/PlaybackState$Builder;->setActions(J)Landroid/media/session/PlaybackState$Builder;
 
     .line 285
-    new-instance v8, Landroid/app/Notification$Action$Builder;
+    invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
-    sget v9, Lorg/telegram/messenger/R$drawable;->ic_action_previous:I
+    move-result-object v13
 
-    invoke-direct {v8, v9, v5, v6}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
+    invoke-virtual {v13}, Lorg/telegram/messenger/MediaController;->isDownloadingCurrentMessage()Z
 
-    invoke-virtual {v8}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
+    move-result v13
 
-    move-result-object v5
-
-    invoke-virtual {v11, v5}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    new-instance v6, Landroid/app/Notification$Action$Builder;
-
-    sget v8, Lorg/telegram/messenger/R$drawable;->loading_animation2:I
-
-    sget v9, Lorg/telegram/messenger/R$string;->Loading:I
-
-    const-string v12, "Loading"
+    if-eqz v13, :cond_8
 
     .line 286
-    invoke-static {v12, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    iget-object v9, v1, Lorg/telegram/messenger/MusicPlayerService;->playbackState:Landroid/media/session/PlaybackState$Builder;
+
+    const/4 v13, 0x6
+
+    move-object v15, v2
+
+    move-object/from16 v19, v3
+
+    const-wide/16 v2, 0x0
+
+    const/high16 v12, 0x3f800000    # 1.0f
+
+    invoke-virtual {v9, v13, v2, v3, v12}, Landroid/media/session/PlaybackState$Builder;->setState(IJF)Landroid/media/session/PlaybackState$Builder;
 
     move-result-object v9
 
-    const/4 v12, 0x0
-
-    invoke-direct {v6, v8, v9, v12}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
-
-    invoke-virtual {v6}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
-
-    move-result-object v5
-
-    new-instance v6, Landroid/app/Notification$Action$Builder;
-
-    sget v8, Lorg/telegram/messenger/R$drawable;->ic_action_next:I
-
-    invoke-direct {v6, v8, v0, v10}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
+    invoke-virtual {v9, v2, v3}, Landroid/media/session/PlaybackState$Builder;->setActions(J)Landroid/media/session/PlaybackState$Builder;
 
     .line 287
-    invoke-virtual {v6}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
+    new-instance v2, Landroid/app/Notification$Action$Builder;
 
-    move-result-object v0
+    sget v3, Lorg/telegram/messenger/R$drawable;->ic_action_previous:I
 
-    invoke-virtual {v5, v0}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
+    invoke-direct {v2, v3, v8, v6}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    move-object/from16 v16, v2
+    invoke-virtual {v2}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
 
-    move-object/from16 v20, v3
+    move-result-object v2
 
-    goto :goto_a
+    invoke-virtual {v11, v2}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
 
-    :cond_8
-    const/4 v12, 0x0
+    move-result-object v2
 
-    const/high16 v15, 0x3f800000    # 1.0f
+    new-instance v3, Landroid/app/Notification$Action$Builder;
+
+    sget v6, Lorg/telegram/messenger/R$drawable;->loading_animation2:I
+
+    sget v8, Lorg/telegram/messenger/R$string;->Loading:I
+
+    const-string v9, "Loading"
+
+    .line 288
+    invoke-static {v9, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v8
+
+    const/4 v13, 0x0
+
+    invoke-direct {v3, v6, v8, v13}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
+
+    invoke-virtual {v3}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
+
+    move-result-object v2
+
+    new-instance v3, Landroid/app/Notification$Action$Builder;
+
+    sget v6, Lorg/telegram/messenger/R$drawable;->ic_action_next:I
+
+    invoke-direct {v3, v6, v5, v10}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
     .line 289
-    iget-object v8, v1, Lorg/telegram/messenger/MusicPlayerService;->playbackState:Landroid/media/session/PlaybackState$Builder;
+    invoke-virtual {v3}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
+
+    move-object/from16 v16, v14
+
+    goto/16 :goto_a
+
+    :cond_8
+    move-object v15, v2
+
+    move-object/from16 v19, v3
+
+    const/high16 v12, 0x3f800000    # 1.0f
+
+    const/4 v13, 0x0
+
+    .line 291
+    iget-object v2, v1, Lorg/telegram/messenger/MusicPlayerService;->playbackState:Landroid/media/session/PlaybackState$Builder;
 
     if-eqz v7, :cond_9
 
-    const/4 v13, 0x3
+    const/4 v3, 0x3
 
     goto :goto_6
 
     :cond_9
-    const/4 v13, 0x2
+    const/4 v3, 0x2
 
-    .line 290
+    .line 292
     :goto_6
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -791,39 +799,37 @@
 
     iget v12, v12, Lorg/telegram/messenger/MessageObject;->audioProgressSec:I
 
-    move-object/from16 v16, v2
+    move-object/from16 v16, v14
 
-    move-object/from16 v20, v3
+    int-to-long v13, v12
 
-    int-to-long v2, v12
+    const-wide/16 v17, 0x3e8
 
-    const-wide/16 v18, 0x3e8
-
-    mul-long v2, v2, v18
+    mul-long v13, v13, v17
 
     if-eqz v7, :cond_a
 
-    move v12, v15
+    const/high16 v12, 0x3f800000    # 1.0f
 
     goto :goto_7
 
     :cond_a
     const/4 v12, 0x0
 
-    .line 289
+    .line 291
     :goto_7
-    invoke-virtual {v8, v13, v2, v3, v12}, Landroid/media/session/PlaybackState$Builder;->setState(IJF)Landroid/media/session/PlaybackState$Builder;
+    invoke-virtual {v2, v3, v13, v14, v12}, Landroid/media/session/PlaybackState$Builder;->setState(IJF)Landroid/media/session/PlaybackState$Builder;
 
     move-result-object v2
 
     const-wide/16 v12, 0x336
 
-    .line 292
+    .line 294
     invoke-virtual {v2, v12, v13}, Landroid/media/session/PlaybackState$Builder;->setActions(J)Landroid/media/session/PlaybackState$Builder;
 
     if-eqz v7, :cond_b
 
-    .line 293
+    .line 295
     sget v2, Lorg/telegram/messenger/R$string;->AccActionPause:I
 
     const-string v3, "AccActionPause"
@@ -840,12 +846,12 @@
 
     move-result-object v2
 
-    .line 294
+    .line 296
     new-instance v3, Landroid/app/Notification$Action$Builder;
 
-    sget v8, Lorg/telegram/messenger/R$drawable;->ic_action_previous:I
+    sget v12, Lorg/telegram/messenger/R$drawable;->ic_action_previous:I
 
-    invoke-direct {v3, v8, v5, v6}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
+    invoke-direct {v3, v12, v8, v6}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
     invoke-virtual {v3}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
 
@@ -855,22 +861,22 @@
 
     move-result-object v3
 
-    new-instance v5, Landroid/app/Notification$Action$Builder;
+    new-instance v6, Landroid/app/Notification$Action$Builder;
 
     if-eqz v7, :cond_c
 
-    .line 295
-    sget v6, Lorg/telegram/messenger/R$drawable;->ic_action_pause:I
+    .line 297
+    sget v8, Lorg/telegram/messenger/R$drawable;->ic_action_pause:I
 
     goto :goto_9
 
     :cond_c
-    sget v6, Lorg/telegram/messenger/R$drawable;->ic_action_play:I
+    sget v8, Lorg/telegram/messenger/R$drawable;->ic_action_play:I
 
     :goto_9
-    invoke-direct {v5, v6, v2, v9}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
+    invoke-direct {v6, v8, v2, v9}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    invoke-virtual {v5}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
+    invoke-virtual {v6}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
 
     move-result-object v2
 
@@ -880,78 +886,80 @@
 
     new-instance v3, Landroid/app/Notification$Action$Builder;
 
-    sget v5, Lorg/telegram/messenger/R$drawable;->ic_action_next:I
+    sget v6, Lorg/telegram/messenger/R$drawable;->ic_action_next:I
 
-    invoke-direct {v3, v5, v0, v10}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
+    invoke-direct {v3, v6, v5, v10}, Landroid/app/Notification$Action$Builder;-><init>(ILjava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
-    .line 296
+    .line 298
     invoke-virtual {v3}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
 
-    move-result-object v0
+    move-result-object v3
 
-    invoke-virtual {v2, v0}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
+    invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
 
-    .line 299
+    .line 301
     :goto_a
-    iget-object v0, v1, Lorg/telegram/messenger/MusicPlayerService;->mediaSession:Landroid/media/session/MediaSession;
+    iget-object v2, v1, Lorg/telegram/messenger/MusicPlayerService;->mediaSession:Landroid/media/session/MediaSession;
 
-    iget-object v2, v1, Lorg/telegram/messenger/MusicPlayerService;->playbackState:Landroid/media/session/PlaybackState$Builder;
+    iget-object v3, v1, Lorg/telegram/messenger/MusicPlayerService;->playbackState:Landroid/media/session/PlaybackState$Builder;
 
-    invoke-virtual {v2}, Landroid/media/session/PlaybackState$Builder;->build()Landroid/media/session/PlaybackState;
+    invoke-virtual {v3}, Landroid/media/session/PlaybackState$Builder;->build()Landroid/media/session/PlaybackState;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Landroid/media/session/MediaSession;->setPlaybackState(Landroid/media/session/PlaybackState;)V
+
+    .line 302
+    new-instance v2, Landroid/media/MediaMetadata$Builder;
+
+    invoke-direct {v2}, Landroid/media/MediaMetadata$Builder;-><init>()V
+
+    const-string v3, "android.media.metadata.ALBUM_ART"
+
+    move-object/from16 v14, v16
+
+    .line 303
+    invoke-virtual {v2, v3, v14}, Landroid/media/MediaMetadata$Builder;->putBitmap(Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/media/MediaMetadata$Builder;
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Landroid/media/session/MediaSession;->setPlaybackState(Landroid/media/session/PlaybackState;)V
+    const-string v3, "android.media.metadata.ALBUM_ARTIST"
 
-    .line 300
-    new-instance v0, Landroid/media/MediaMetadata$Builder;
-
-    invoke-direct {v0}, Landroid/media/MediaMetadata$Builder;-><init>()V
-
-    const-string v2, "android.media.metadata.ALBUM_ART"
-
-    .line 301
-    invoke-virtual {v0, v2, v14}, Landroid/media/MediaMetadata$Builder;->putBitmap(Ljava/lang/String;Landroid/graphics/Bitmap;)Landroid/media/MediaMetadata$Builder;
-
-    move-result-object v0
-
-    const-string v2, "android.media.metadata.ALBUM_ARTIST"
-
-    move-object/from16 v3, v20
-
-    .line 302
-    invoke-virtual {v0, v2, v3}, Landroid/media/MediaMetadata$Builder;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaMetadata$Builder;
-
-    move-result-object v0
-
-    const-string v2, "android.media.metadata.ARTIST"
-
-    .line 303
-    invoke-virtual {v0, v2, v3}, Landroid/media/MediaMetadata$Builder;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaMetadata$Builder;
-
-    move-result-object v0
-
-    const-string v2, "android.media.metadata.DURATION"
-
-    move-wide/from16 v5, v21
+    move-object/from16 v6, v19
 
     .line 304
-    invoke-virtual {v0, v2, v5, v6}, Landroid/media/MediaMetadata$Builder;->putLong(Ljava/lang/String;J)Landroid/media/MediaMetadata$Builder;
+    invoke-virtual {v2, v3, v6}, Landroid/media/MediaMetadata$Builder;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaMetadata$Builder;
 
-    move-result-object v0
+    move-result-object v2
 
-    const-string v2, "android.media.metadata.TITLE"
-
-    move-object/from16 v6, v16
+    const-string v3, "android.media.metadata.ARTIST"
 
     .line 305
-    invoke-virtual {v0, v2, v6}, Landroid/media/MediaMetadata$Builder;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaMetadata$Builder;
+    invoke-virtual {v2, v3, v6}, Landroid/media/MediaMetadata$Builder;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaMetadata$Builder;
 
-    move-result-object v0
+    move-result-object v2
+
+    const-string v3, "android.media.metadata.DURATION"
+
+    move-wide/from16 v8, v20
+
+    .line 306
+    invoke-virtual {v2, v3, v8, v9}, Landroid/media/MediaMetadata$Builder;->putLong(Ljava/lang/String;J)Landroid/media/MediaMetadata$Builder;
+
+    move-result-object v2
+
+    const-string v3, "android.media.metadata.TITLE"
+
+    move-object v8, v15
+
+    .line 307
+    invoke-virtual {v2, v3, v8}, Landroid/media/MediaMetadata$Builder;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaMetadata$Builder;
+
+    move-result-object v2
 
     if-eqz v4, :cond_d
 
-    .line 306
+    .line 308
     invoke-virtual {v4}, Lorg/telegram/messenger/audioinfo/AudioInfo;->getAlbum()Ljava/lang/String;
 
     move-result-object v12
@@ -962,516 +970,547 @@
     const/4 v12, 0x0
 
     :goto_b
-    const-string v2, "android.media.metadata.ALBUM"
+    const-string v3, "android.media.metadata.ALBUM"
 
-    invoke-virtual {v0, v2, v12}, Landroid/media/MediaMetadata$Builder;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaMetadata$Builder;
+    invoke-virtual {v2, v3, v12}, Landroid/media/MediaMetadata$Builder;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/media/MediaMetadata$Builder;
 
-    move-result-object v0
-
-    .line 308
-    iget-object v2, v1, Lorg/telegram/messenger/MusicPlayerService;->mediaSession:Landroid/media/session/MediaSession;
-
-    invoke-virtual {v0}, Landroid/media/MediaMetadata$Builder;->build()Landroid/media/MediaMetadata;
-
-    move-result-object v0
-
-    invoke-virtual {v2, v0}, Landroid/media/session/MediaSession;->setMetadata(Landroid/media/MediaMetadata;)V
-
-    const/4 v0, 0x1
+    move-result-object v2
 
     .line 310
-    invoke-virtual {v11, v0}, Landroid/app/Notification$Builder;->setVisibility(I)Landroid/app/Notification$Builder;
+    iget-object v3, v1, Lorg/telegram/messenger/MusicPlayerService;->mediaSession:Landroid/media/session/MediaSession;
+
+    invoke-virtual {v2}, Landroid/media/MediaMetadata$Builder;->build()Landroid/media/MediaMetadata;
+
+    move-result-object v2
+
+    invoke-virtual {v3, v2}, Landroid/media/session/MediaSession;->setMetadata(Landroid/media/MediaMetadata;)V
+
+    const/4 v2, 0x1
 
     .line 312
+    invoke-virtual {v11, v2}, Landroid/app/Notification$Builder;->setVisibility(I)Landroid/app/Notification$Builder;
+
+    .line 314
     invoke-virtual {v11}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
 
-    move-result-object v0
+    move-result-object v3
 
-    if-eqz v7, :cond_e
+    const/16 v5, 0x1f
 
-    const/4 v2, 0x5
+    const-string/jumbo v9, "notification"
 
-    .line 316
-    :try_start_0
-    invoke-virtual {v1, v2, v0}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    if-lt v0, v5, :cond_f
+
+    .line 317
+    iget-boolean v0, v1, Lorg/telegram/messenger/MusicPlayerService;->foregroundServiceIsStarted:Z
+
+    if-nez v0, :cond_e
+
+    .line 318
+    iput-boolean v2, v1, Lorg/telegram/messenger/MusicPlayerService;->foregroundServiceIsStarted:Z
+
+    const/4 v0, 0x5
+
+    .line 319
+    invoke-virtual {v1, v0, v3}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
 
     goto/16 :goto_11
 
     :cond_e
-    const/4 v2, 0x5
-
-    const/4 v5, 0x0
-
-    .line 320
-    invoke-virtual {v1, v5}, Landroid/app/Service;->stopForeground(Z)V
-
-    const-string/jumbo v5, "notification"
+    const/4 v0, 0x5
 
     .line 321
-    invoke-virtual {v1, v5}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v1, v9}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v2
 
-    check-cast v5, Landroid/app/NotificationManager;
+    check-cast v2, Landroid/app/NotificationManager;
 
     .line 322
-    invoke-virtual {v5, v2, v0}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+    invoke-virtual {v2, v0, v3}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
 
     goto/16 :goto_11
 
     :cond_f
-    move-object v6, v2
+    const/4 v0, 0x5
 
-    move-object/from16 v13, v17
-
-    const/high16 v15, 0x3f800000    # 1.0f
+    if-eqz v7, :cond_10
 
     .line 326
-    new-instance v0, Landroid/widget/RemoteViews;
+    invoke-virtual {v1, v0, v3}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
+
+    goto/16 :goto_11
+
+    :cond_10
+    const/4 v2, 0x0
+
+    .line 328
+    invoke-virtual {v1, v2}, Landroid/app/Service;->stopForeground(Z)V
+
+    .line 329
+    invoke-virtual {v1, v9}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/app/NotificationManager;
+
+    .line 330
+    invoke-virtual {v2, v0, v3}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+
+    goto/16 :goto_11
+
+    :cond_11
+    move-object/from16 v13, p2
+
+    move-object v8, v2
+
+    move-object v6, v3
+
+    const/4 v0, 0x0
+
+    .line 335
+    new-instance v2, Landroid/widget/RemoteViews;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    invoke-virtual {v3}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
     sget v7, Lorg/telegram/messenger/R$layout;->player_small_notification:I
 
-    invoke-direct {v0, v2, v7}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v2, v3, v7}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
-    .line 328
-    sget-boolean v2, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
+    .line 337
+    sget-boolean v3, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
 
-    if-eqz v2, :cond_10
+    if-eqz v3, :cond_12
 
-    .line 329
+    .line 338
     new-instance v12, Landroid/widget/RemoteViews;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    sget v7, Lorg/telegram/messenger/R$layout;->player_big_notification:I
-
-    invoke-direct {v12, v2, v7}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
-
-    goto :goto_c
-
-    :cond_10
-    const/4 v12, 0x0
-
-    .line 332
-    :goto_c
-    new-instance v2, Landroidx/core/app/NotificationCompat$Builder;
-
-    invoke-virtual/range {p0 .. p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v7
-
-    invoke-direct {v2, v7}, Landroidx/core/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;)V
-
-    sget v7, Lorg/telegram/messenger/R$drawable;->player:I
-
-    .line 333
-    invoke-virtual {v2, v7}, Landroidx/core/app/NotificationCompat$Builder;->setSmallIcon(I)Landroidx/core/app/NotificationCompat$Builder;
-
-    move-result-object v2
-
-    .line 334
-    invoke-virtual {v2, v5}, Landroidx/core/app/NotificationCompat$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroidx/core/app/NotificationCompat$Builder;
-
-    move-result-object v2
-
-    sget-object v5, Lorg/telegram/messenger/NotificationsController;->OTHER_NOTIFICATIONS_CHANNEL:Ljava/lang/String;
-
-    .line 335
-    invoke-virtual {v2, v5}, Landroidx/core/app/NotificationCompat$Builder;->setChannelId(Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
-
-    move-result-object v2
-
-    .line 336
-    invoke-virtual {v2, v6}, Landroidx/core/app/NotificationCompat$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
-
-    move-result-object v2
-
-    .line 338
-    iput-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
-
-    .line 339
-    sget-boolean v5, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
-
-    if-eqz v5, :cond_11
-
-    .line 340
-    iput-object v12, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
-
-    .line 343
-    :cond_11
-    invoke-virtual {v1, v0}, Lorg/telegram/messenger/MusicPlayerService;->setListeners(Landroid/widget/RemoteViews;)V
-
-    .line 344
-    sget-boolean v0, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
-
-    if-eqz v0, :cond_12
-
-    .line 345
-    invoke-virtual {v1, v12}, Lorg/telegram/messenger/MusicPlayerService;->setListeners(Landroid/widget/RemoteViews;)V
-
-    :cond_12
-    if-eqz v13, :cond_13
-
-    .line 349
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
-
-    sget v5, Lorg/telegram/messenger/R$id;->player_album_art:I
-
-    invoke-virtual {v0, v5, v13}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
-
-    .line 350
-    sget-boolean v0, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
-
-    if-eqz v0, :cond_14
-
-    .line 351
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
-
-    invoke-virtual {v0, v5, v13}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
-
-    goto :goto_d
-
-    .line 354
-    :cond_13
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
-
-    sget v5, Lorg/telegram/messenger/R$id;->player_album_art:I
-
-    sget v7, Lorg/telegram/messenger/R$drawable;->nocover_small:I
-
-    invoke-virtual {v0, v5, v7}, Landroid/widget/RemoteViews;->setImageViewResource(II)V
-
-    .line 355
-    sget-boolean v0, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
-
-    if-eqz v0, :cond_14
-
-    .line 356
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
-
-    sget v7, Lorg/telegram/messenger/R$drawable;->nocover_big:I
-
-    invoke-virtual {v0, v5, v7}, Landroid/widget/RemoteViews;->setImageViewResource(II)V
-
-    .line 359
-    :cond_14
-    :goto_d
-    invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/MediaController;->isDownloadingCurrentMessage()Z
+    sget v3, Lorg/telegram/messenger/R$layout;->player_big_notification:I
 
-    move-result v0
+    invoke-direct {v12, v0, v3}, Landroid/widget/RemoteViews;-><init>(Ljava/lang/String;I)V
 
-    if-eqz v0, :cond_15
+    goto :goto_c
+
+    :cond_12
+    move-object v12, v0
+
+    .line 341
+    :goto_c
+    new-instance v0, Landroidx/core/app/NotificationCompat$Builder;
+
+    invoke-virtual/range {p0 .. p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-direct {v0, v3}, Landroidx/core/app/NotificationCompat$Builder;-><init>(Landroid/content/Context;)V
+
+    sget v3, Lorg/telegram/messenger/R$drawable;->player:I
+
+    .line 342
+    invoke-virtual {v0, v3}, Landroidx/core/app/NotificationCompat$Builder;->setSmallIcon(I)Landroidx/core/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    .line 343
+    invoke-virtual {v0, v5}, Landroidx/core/app/NotificationCompat$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroidx/core/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    sget-object v3, Lorg/telegram/messenger/NotificationsController;->OTHER_NOTIFICATIONS_CHANNEL:Ljava/lang/String;
+
+    .line 344
+    invoke-virtual {v0, v3}, Landroidx/core/app/NotificationCompat$Builder;->setChannelId(Ljava/lang/String;)Landroidx/core/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    .line 345
+    invoke-virtual {v0, v8}, Landroidx/core/app/NotificationCompat$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroidx/core/app/NotificationCompat$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroidx/core/app/NotificationCompat$Builder;->build()Landroid/app/Notification;
+
+    move-result-object v0
+
+    .line 347
+    iput-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+
+    .line 348
+    sget-boolean v3, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
+
+    if-eqz v3, :cond_13
+
+    .line 349
+    iput-object v12, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+
+    .line 352
+    :cond_13
+    invoke-virtual {v1, v2}, Lorg/telegram/messenger/MusicPlayerService;->setListeners(Landroid/widget/RemoteViews;)V
+
+    .line 353
+    sget-boolean v2, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
+
+    if-eqz v2, :cond_14
+
+    .line 354
+    invoke-virtual {v1, v12}, Lorg/telegram/messenger/MusicPlayerService;->setListeners(Landroid/widget/RemoteViews;)V
+
+    :cond_14
+    if-eqz v13, :cond_15
+
+    .line 358
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+
+    sget v3, Lorg/telegram/messenger/R$id;->player_album_art:I
+
+    invoke-virtual {v2, v3, v13}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
+
+    .line 359
+    sget-boolean v2, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
+
+    if-eqz v2, :cond_16
 
     .line 360
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
-    sget v5, Lorg/telegram/messenger/R$id;->player_pause:I
+    invoke-virtual {v2, v3, v13}, Landroid/widget/RemoteViews;->setImageViewBitmap(ILandroid/graphics/Bitmap;)V
 
-    const/16 v7, 0x8
+    goto :goto_d
 
-    invoke-virtual {v0, v5, v7}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    .line 363
+    :cond_15
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
-    .line 361
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+    sget v3, Lorg/telegram/messenger/R$id;->player_album_art:I
 
-    sget v8, Lorg/telegram/messenger/R$id;->player_play:I
+    sget v5, Lorg/telegram/messenger/R$drawable;->nocover_small:I
 
-    invoke-virtual {v0, v8, v7}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v2, v3, v5}, Landroid/widget/RemoteViews;->setImageViewResource(II)V
 
-    .line 362
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+    .line 364
+    sget-boolean v2, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
+
+    if-eqz v2, :cond_16
+
+    .line 365
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+
+    sget v5, Lorg/telegram/messenger/R$drawable;->nocover_big:I
+
+    invoke-virtual {v2, v3, v5}, Landroid/widget/RemoteViews;->setImageViewResource(II)V
+
+    .line 368
+    :cond_16
+    :goto_d
+    invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lorg/telegram/messenger/MediaController;->isDownloadingCurrentMessage()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_17
+
+    .line 369
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+
+    sget v3, Lorg/telegram/messenger/R$id;->player_pause:I
+
+    const/16 v5, 0x8
+
+    invoke-virtual {v2, v3, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    .line 370
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+
+    sget v7, Lorg/telegram/messenger/R$id;->player_play:I
+
+    invoke-virtual {v2, v7, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    .line 371
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
     sget v9, Lorg/telegram/messenger/R$id;->player_next:I
 
-    invoke-virtual {v0, v9, v7}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v2, v9, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 363
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+    .line 372
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
     sget v10, Lorg/telegram/messenger/R$id;->player_previous:I
 
-    invoke-virtual {v0, v10, v7}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v2, v10, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 364
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+    .line 373
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
     sget v11, Lorg/telegram/messenger/R$id;->player_progress_bar:I
 
     const/4 v12, 0x0
 
-    invoke-virtual {v0, v11, v12}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v2, v11, v12}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 365
-    sget-boolean v0, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
+    .line 374
+    sget-boolean v2, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
 
-    if-eqz v0, :cond_18
+    if-eqz v2, :cond_1a
 
-    .line 366
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+    .line 375
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
-    invoke-virtual {v0, v5, v7}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v2, v3, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 367
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+    .line 376
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
-    invoke-virtual {v0, v8, v7}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v2, v7, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 368
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+    .line 377
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
-    invoke-virtual {v0, v9, v7}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v2, v9, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 369
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+    .line 378
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
-    invoke-virtual {v0, v10, v7}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v2, v10, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 370
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+    .line 379
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v0, v11, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v2, v11, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     goto/16 :goto_f
 
-    :cond_15
-    const/4 v5, 0x0
+    :cond_17
+    const/4 v3, 0x0
 
-    const/16 v7, 0x8
-
-    .line 373
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
-
-    sget v8, Lorg/telegram/messenger/R$id;->player_progress_bar:I
-
-    invoke-virtual {v0, v8, v7}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
-
-    .line 374
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
-
-    sget v7, Lorg/telegram/messenger/R$id;->player_next:I
-
-    invoke-virtual {v0, v7, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
-
-    .line 375
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
-
-    sget v9, Lorg/telegram/messenger/R$id;->player_previous:I
-
-    invoke-virtual {v0, v9, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
-
-    .line 376
-    sget-boolean v0, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
-
-    if-eqz v0, :cond_16
-
-    .line 377
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
-
-    invoke-virtual {v0, v7, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
-
-    .line 378
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
-
-    invoke-virtual {v0, v9, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
-
-    .line 379
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
-
-    const/16 v5, 0x8
-
-    invoke-virtual {v0, v8, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
-
-    goto :goto_e
-
-    :cond_16
     const/16 v5, 0x8
 
     .line 382
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+
+    sget v7, Lorg/telegram/messenger/R$id;->player_progress_bar:I
+
+    invoke-virtual {v2, v7, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    .line 383
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+
+    sget v5, Lorg/telegram/messenger/R$id;->player_next:I
+
+    invoke-virtual {v2, v5, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    .line 384
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+
+    sget v9, Lorg/telegram/messenger/R$id;->player_previous:I
+
+    invoke-virtual {v2, v9, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    .line 385
+    sget-boolean v2, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
+
+    if-eqz v2, :cond_18
+
+    .line 386
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+
+    invoke-virtual {v2, v5, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    .line 387
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+
+    invoke-virtual {v2, v9, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    .line 388
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+
+    const/16 v3, 0x8
+
+    invoke-virtual {v2, v7, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+
+    goto :goto_e
+
+    :cond_18
+    const/16 v3, 0x8
+
+    .line 391
     :goto_e
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/MediaController;->isMessagePaused()Z
+    invoke-virtual {v2}, Lorg/telegram/messenger/MediaController;->isMessagePaused()Z
 
-    move-result v0
+    move-result v2
 
-    if-eqz v0, :cond_17
+    if-eqz v2, :cond_19
 
-    .line 383
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+    .line 392
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
-    sget v7, Lorg/telegram/messenger/R$id;->player_pause:I
+    sget v5, Lorg/telegram/messenger/R$id;->player_pause:I
 
-    invoke-virtual {v0, v7, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v2, v5, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 384
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+    .line 393
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
-    sget v8, Lorg/telegram/messenger/R$id;->player_play:I
+    sget v7, Lorg/telegram/messenger/R$id;->player_play:I
 
     const/4 v9, 0x0
 
-    invoke-virtual {v0, v8, v9}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v2, v7, v9}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 385
-    sget-boolean v0, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
+    .line 394
+    sget-boolean v2, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
 
-    if-eqz v0, :cond_18
+    if-eqz v2, :cond_1a
 
-    .line 386
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+    .line 395
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
-    invoke-virtual {v0, v7, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v2, v5, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 387
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+    .line 396
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
-    invoke-virtual {v0, v8, v9}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
+    invoke-virtual {v2, v7, v9}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     goto :goto_f
 
-    :cond_17
+    :cond_19
     const/4 v9, 0x0
 
-    .line 390
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
-
-    sget v7, Lorg/telegram/messenger/R$id;->player_pause:I
-
-    invoke-virtual {v0, v7, v9}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
-
-    .line 391
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
-
-    sget v8, Lorg/telegram/messenger/R$id;->player_play:I
-
-    invoke-virtual {v0, v8, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
-
-    .line 392
-    sget-boolean v0, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
-
-    if-eqz v0, :cond_18
-
-    .line 393
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
-
-    invoke-virtual {v0, v7, v9}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
-
-    .line 394
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
-
-    invoke-virtual {v0, v8, v5}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
-
     .line 399
-    :cond_18
-    :goto_f
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
-    sget v5, Lorg/telegram/messenger/R$id;->player_song_name:I
+    sget v5, Lorg/telegram/messenger/R$id;->player_pause:I
 
-    invoke-virtual {v0, v5, v6}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
+    invoke-virtual {v2, v5, v9}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 400
-    iget-object v0, v2, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
-    sget v7, Lorg/telegram/messenger/R$id;->player_author_name:I
+    sget v7, Lorg/telegram/messenger/R$id;->player_play:I
 
-    invoke-virtual {v0, v7, v3}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
+    invoke-virtual {v2, v7, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 401
-    sget-boolean v0, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
+    sget-boolean v2, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
 
-    if-eqz v0, :cond_1a
+    if-eqz v2, :cond_1a
 
     .line 402
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
-    invoke-virtual {v0, v5, v6}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
+    invoke-virtual {v2, v5, v9}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
     .line 403
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
 
-    invoke-virtual {v0, v7, v3}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
+    invoke-virtual {v2, v7, v3}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    .line 404
-    iget-object v0, v2, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+    .line 408
+    :cond_1a
+    :goto_f
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
 
-    sget v5, Lorg/telegram/messenger/R$id;->player_album_title:I
+    sget v3, Lorg/telegram/messenger/R$id;->player_song_name:I
 
-    if-eqz v4, :cond_19
+    invoke-virtual {v2, v3, v8}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
+
+    .line 409
+    iget-object v2, v0, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+
+    sget v5, Lorg/telegram/messenger/R$id;->player_author_name:I
+
+    invoke-virtual {v2, v5, v6}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
+
+    .line 410
+    sget-boolean v2, Lorg/telegram/messenger/MusicPlayerService;->supportBigNotifications:Z
+
+    if-eqz v2, :cond_1c
+
+    .line 411
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+
+    invoke-virtual {v2, v3, v8}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
+
+    .line 412
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+
+    invoke-virtual {v2, v5, v6}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
+
+    .line 413
+    iget-object v2, v0, Landroid/app/Notification;->bigContentView:Landroid/widget/RemoteViews;
+
+    sget v3, Lorg/telegram/messenger/R$id;->player_album_title:I
+
+    if-eqz v4, :cond_1b
 
     invoke-virtual {v4}, Lorg/telegram/messenger/audioinfo/AudioInfo;->getAlbum()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-static {v7}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v7
+    move-result v5
 
-    if-nez v7, :cond_19
+    if-nez v5, :cond_1b
 
     invoke-virtual {v4}, Lorg/telegram/messenger/audioinfo/AudioInfo;->getAlbum()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v5
 
     goto :goto_10
 
-    :cond_19
-    const-string v7, ""
+    :cond_1b
+    const-string v5, ""
 
     :goto_10
-    invoke-virtual {v0, v5, v7}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
+    invoke-virtual {v2, v3, v5}, Landroid/widget/RemoteViews;->setTextViewText(ILjava/lang/CharSequence;)V
 
-    .line 406
-    :cond_1a
-    iget v0, v2, Landroid/app/Notification;->flags:I
+    .line 415
+    :cond_1c
+    iget v2, v0, Landroid/app/Notification;->flags:I
 
-    const/4 v5, 0x2
+    const/4 v3, 0x2
 
-    or-int/2addr v0, v5
+    or-int/2addr v2, v3
 
-    iput v0, v2, Landroid/app/Notification;->flags:I
+    iput v2, v0, Landroid/app/Notification;->flags:I
 
-    const/4 v0, 0x5
+    const/4 v2, 0x5
 
-    .line 407
-    invoke-virtual {v1, v0, v2}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
+    .line 416
+    invoke-virtual {v1, v2, v0}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
 
-    .line 410
-    :catch_0
+    .line 419
     :goto_11
     iget-object v0, v1, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_25
 
-    .line 411
+    .line 420
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0
@@ -1484,38 +1523,38 @@
 
     move-result v0
 
-    .line 412
+    .line 421
     iget v2, v1, Lorg/telegram/messenger/MusicPlayerService;->notificationMessageID:I
 
-    const/16 v5, 0x9
+    const/16 v3, 0x9
 
-    if-eq v2, v0, :cond_1d
+    if-eq v2, v0, :cond_1f
 
-    .line 413
+    .line 422
     iput v0, v1, Lorg/telegram/messenger/MusicPlayerService;->notificationMessageID:I
 
-    .line 414
+    .line 423
     iget-object v0, v1, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/media/RemoteControlClient;->editMetadata(Z)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    move-result-object v7
+    move-result-object v5
 
-    const/4 v8, 0x2
+    const/4 v7, 0x2
 
-    .line 415
-    invoke-virtual {v7, v8, v3}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
+    .line 424
+    invoke-virtual {v5, v7, v6}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
     const/4 v0, 0x7
 
-    .line 416
-    invoke-virtual {v7, v0, v6}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
+    .line 425
+    invoke-virtual {v5, v0, v8}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    if-eqz v4, :cond_1b
+    if-eqz v4, :cond_1d
 
-    .line 417
+    .line 426
     invoke-virtual {v4}, Lorg/telegram/messenger/audioinfo/AudioInfo;->getAlbum()Ljava/lang/String;
 
     move-result-object v0
@@ -1524,17 +1563,17 @@
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1d
 
-    .line 418
+    .line 427
     invoke-virtual {v4}, Lorg/telegram/messenger/audioinfo/AudioInfo;->getAlbum()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v7, v2, v0}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
+    invoke-virtual {v5, v2, v0}, Landroid/media/RemoteControlClient$MetadataEditor;->putString(ILjava/lang/String;)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    .line 420
-    :cond_1b
+    .line 429
+    :cond_1d
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0
@@ -1545,23 +1584,23 @@
 
     iget v0, v0, Lorg/telegram/messenger/MessageObject;->audioPlayerDuration:I
 
-    int-to-long v2, v0
+    int-to-long v8, v0
 
-    const-wide/16 v9, 0x3e8
+    const-wide/16 v10, 0x3e8
 
-    mul-long/2addr v2, v9
+    mul-long/2addr v8, v10
 
-    invoke-virtual {v7, v5, v2, v3}, Landroid/media/RemoteControlClient$MetadataEditor;->putLong(IJ)Landroid/media/RemoteControlClient$MetadataEditor;
+    invoke-virtual {v5, v3, v8, v9}, Landroid/media/RemoteControlClient$MetadataEditor;->putLong(IJ)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    if-eqz v14, :cond_1c
+    if-eqz v14, :cond_1e
 
     const/16 v0, 0x64
 
-    .line 423
-    :try_start_1
-    invoke-virtual {v7, v0, v14}, Landroid/media/RemoteControlClient$MetadataEditor;->putBitmap(ILandroid/graphics/Bitmap;)Landroid/media/RemoteControlClient$MetadataEditor;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .line 432
+    :try_start_0
+    invoke-virtual {v5, v0, v14}, Landroid/media/RemoteControlClient$MetadataEditor;->putBitmap(ILandroid/graphics/Bitmap;)Landroid/media/RemoteControlClient$MetadataEditor;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_12
 
@@ -1570,29 +1609,29 @@
 
     move-object v2, v0
 
-    .line 425
+    .line 434
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 428
-    :cond_1c
+    .line 437
+    :cond_1e
     :goto_12
-    invoke-virtual {v7}, Landroid/media/RemoteControlClient$MetadataEditor;->apply()V
+    invoke-virtual {v5}, Landroid/media/RemoteControlClient$MetadataEditor;->apply()V
 
-    .line 429
+    .line 438
     new-instance v0, Lorg/telegram/messenger/MusicPlayerService$3;
 
     invoke-direct {v0, v1}, Lorg/telegram/messenger/MusicPlayerService$3;-><init>(Lorg/telegram/messenger/MusicPlayerService;)V
 
-    const-wide/16 v2, 0x3e8
+    const-wide/16 v4, 0x3e8
 
-    invoke-static {v0, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
+    invoke-static {v0, v4, v5}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     goto :goto_13
 
-    :cond_1d
-    const/4 v8, 0x2
+    :cond_1f
+    const/4 v7, 0x2
 
-    .line 452
+    .line 461
     :goto_13
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -1602,19 +1641,19 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1e
+    if-eqz v0, :cond_20
 
-    .line 453
+    .line 462
     iget-object v0, v1, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/media/RemoteControlClient;->setPlaybackState(I)V
 
-    goto :goto_16
+    goto :goto_17
 
-    .line 455
-    :cond_1e
+    .line 464
+    :cond_20
     iget-object v0, v1, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
     const/4 v2, 0x0
@@ -1623,7 +1662,7 @@
 
     move-result-object v0
 
-    .line 456
+    .line 465
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v2
@@ -1634,25 +1673,25 @@
 
     iget v2, v2, Lorg/telegram/messenger/MessageObject;->audioPlayerDuration:I
 
-    int-to-long v2, v2
+    int-to-long v4, v2
 
-    const-wide/16 v6, 0x3e8
+    const-wide/16 v8, 0x3e8
 
-    mul-long/2addr v2, v6
+    mul-long/2addr v4, v8
 
-    invoke-virtual {v0, v5, v2, v3}, Landroid/media/RemoteControlClient$MetadataEditor;->putLong(IJ)Landroid/media/RemoteControlClient$MetadataEditor;
+    invoke-virtual {v0, v3, v4, v5}, Landroid/media/RemoteControlClient$MetadataEditor;->putLong(IJ)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    .line 457
+    .line 466
     invoke-virtual {v0}, Landroid/media/RemoteControlClient$MetadataEditor;->apply()V
 
-    .line 458
+    .line 467
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x12
 
-    if-lt v0, v2, :cond_21
+    if-lt v0, v2, :cond_23
 
-    .line 459
+    .line 468
     iget-object v0, v1, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
@@ -1663,16 +1702,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1f
+    if-eqz v2, :cond_21
 
-    move v9, v8
+    move v9, v7
 
     goto :goto_14
 
-    :cond_1f
+    :cond_21
     const/4 v9, 0x3
 
-    .line 460
+    .line 469
     :goto_14
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -1696,7 +1735,7 @@
 
     move-result-wide v2
 
-    .line 461
+    .line 470
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v4
@@ -1705,18 +1744,23 @@
 
     move-result v4
 
-    if-eqz v4, :cond_20
+    if-eqz v4, :cond_22
 
-    const/4 v15, 0x0
+    const/4 v4, 0x0
 
-    .line 459
-    :cond_20
-    invoke-virtual {v0, v9, v2, v3, v15}, Landroid/media/RemoteControlClient;->setPlaybackState(IJF)V
+    goto :goto_15
 
-    goto :goto_16
+    :cond_22
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 463
-    :cond_21
+    .line 468
+    :goto_15
+    invoke-virtual {v0, v9, v2, v3, v4}, Landroid/media/RemoteControlClient;->setPlaybackState(IJF)V
+
+    goto :goto_17
+
+    .line 472
+    :cond_23
     iget-object v0, v1, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
@@ -1727,21 +1771,23 @@
 
     move-result v2
 
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_24
 
-    move v9, v8
+    move v9, v7
 
-    goto :goto_15
+    goto :goto_16
 
-    :cond_22
+    :cond_24
     const/4 v9, 0x3
 
-    :goto_15
+    :goto_16
     invoke-virtual {v0, v9}, Landroid/media/RemoteControlClient;->setPlaybackState(I)V
 
-    :cond_23
-    :goto_16
+    :cond_25
+    :goto_17
     return-void
+
+    nop
 
     :array_0
     .array-data 4
@@ -1754,7 +1800,7 @@
 .method private fixIntentFlags(I)I
     .locals 2
 
-    .line 499
+    .line 508
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1f
@@ -1780,7 +1826,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 96
+    .line 98
     iget-object p1, p0, Lorg/telegram/messenger/MusicPlayerService;->loadingFilePath:Ljava/lang/String;
 
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1789,7 +1835,7 @@
 
     if-nez p1, :cond_1
 
-    .line 97
+    .line 99
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -1802,13 +1848,13 @@
 
     const/4 p2, 0x1
 
-    .line 99
+    .line 101
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/MusicPlayerService;->createNotification(Lorg/telegram/messenger/MessageObject;Z)V
 
     :cond_0
     const/4 p1, 0x0
 
-    .line 101
+    .line 103
     iput-object p1, p0, Lorg/telegram/messenger/MusicPlayerService;->loadingFilePath:Ljava/lang/String;
 
     :cond_1
@@ -1818,17 +1864,17 @@
 .method private loadArtworkFromUrl(Ljava/lang/String;ZZ)Landroid/graphics/Bitmap;
     .locals 10
 
-    .line 193
+    .line 195
     invoke-static {p1}, Lorg/telegram/messenger/ImageLoader;->getHttpFileName(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v0, "jpg"
+    const-string/jumbo v0, "jpg"
 
-    .line 198
+    .line 200
     invoke-static {p1, v0}, Lorg/telegram/messenger/ImageLoader;->getHttpFilePath(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v0
 
-    .line 199
+    .line 201
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v1
@@ -1837,7 +1883,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 200
+    .line 202
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object p1
@@ -1875,7 +1921,7 @@
     :cond_2
     if-eqz p3, :cond_3
 
-    .line 203
+    .line 205
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object p3
@@ -1884,7 +1930,7 @@
 
     if-nez p2, :cond_4
 
-    .line 205
+    .line 207
     iget-object v3, p0, Lorg/telegram/messenger/MusicPlayerService;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v6, 0x0
@@ -1901,7 +1947,7 @@
 
     goto :goto_2
 
-    .line 208
+    .line 210
     :cond_3
     iput-object v2, p0, Lorg/telegram/messenger/MusicPlayerService;->loadingFilePath:Ljava/lang/String;
 
@@ -1913,7 +1959,7 @@
 .method private updatePlaybackState(J)V
     .locals 4
 
-    .line 470
+    .line 479
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -1922,7 +1968,7 @@
 
     return-void
 
-    .line 473
+    .line 482
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -1934,7 +1980,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    .line 474
+    .line 483
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v1
@@ -1947,7 +1993,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 475
+    .line 484
     iget-object p1, p0, Lorg/telegram/messenger/MusicPlayerService;->playbackState:Landroid/media/session/PlaybackState$Builder;
 
     const/4 p2, 0x6
@@ -1962,7 +2008,7 @@
 
     goto :goto_2
 
-    .line 477
+    .line 486
     :cond_1
     iget-object v1, p0, Lorg/telegram/messenger/MusicPlayerService;->playbackState:Landroid/media/session/PlaybackState$Builder;
 
@@ -1990,10 +2036,10 @@
 
     const-wide/16 v0, 0x336
 
-    .line 480
+    .line 489
     invoke-virtual {p1, v0, v1}, Landroid/media/session/PlaybackState$Builder;->setActions(J)Landroid/media/session/PlaybackState$Builder;
 
-    .line 482
+    .line 491
     :goto_2
     iget-object p1, p0, Lorg/telegram/messenger/MusicPlayerService;->mediaSession:Landroid/media/session/MediaSession;
 
@@ -2013,14 +2059,14 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 2
 
-    .line 529
+    .line 539
     sget p2, Lorg/telegram/messenger/NotificationCenter;->messagePlayingPlayStateChanged:I
 
     const/4 v0, 0x0
 
     if-ne p1, p2, :cond_1
 
-    .line 530
+    .line 540
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -2031,24 +2077,24 @@
 
     if-eqz p1, :cond_0
 
-    .line 532
+    .line 542
     invoke-direct {p0, p1, v0}, Lorg/telegram/messenger/MusicPlayerService;->createNotification(Lorg/telegram/messenger/MessageObject;Z)V
 
     goto/16 :goto_2
 
-    .line 534
+    .line 544
     :cond_0
     invoke-virtual {p0}, Landroid/app/Service;->stopSelf()V
 
     goto/16 :goto_2
 
-    .line 536
+    .line 546
     :cond_1
     sget p2, Lorg/telegram/messenger/NotificationCenter;->messagePlayingDidSeek:I
 
     if-ne p1, p2, :cond_4
 
-    .line 537
+    .line 547
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -2057,7 +2103,7 @@
 
     move-result-object p1
 
-    .line 538
+    .line 548
     iget-object p2, p0, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
     if-eqz p2, :cond_6
@@ -2068,7 +2114,7 @@
 
     if-lt p2, v0, :cond_6
 
-    .line 539
+    .line 549
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->audioPlayerDuration:I
 
     int-to-float p1, p1
@@ -2095,7 +2141,7 @@
 
     mul-long/2addr p1, v0
 
-    .line 540
+    .line 550
     iget-object p3, p0, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
@@ -2115,7 +2161,7 @@
     :cond_2
     const/4 v0, 0x3
 
-    .line 542
+    .line 552
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -2134,24 +2180,24 @@
     :cond_3
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 540
+    .line 550
     :goto_1
     invoke-virtual {p3, v0, p1, p2, v1}, Landroid/media/RemoteControlClient;->setPlaybackState(IJF)V
 
     goto :goto_2
 
-    .line 544
+    .line 554
     :cond_4
     sget p2, Lorg/telegram/messenger/NotificationCenter;->httpFileDidLoad:I
 
     if-ne p1, p2, :cond_5
 
-    .line 545
+    .line 555
     aget-object p1, p3, v0
 
     check-cast p1, Ljava/lang/String;
 
-    .line 546
+    .line 556
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p2
@@ -2162,7 +2208,7 @@
 
     if-eqz p2, :cond_6
 
-    .line 547
+    .line 557
     iget-object p3, p0, Lorg/telegram/messenger/MusicPlayerService;->loadingFilePath:Ljava/lang/String;
 
     if-eqz p3, :cond_6
@@ -2173,23 +2219,23 @@
 
     if-eqz p1, :cond_6
 
-    .line 548
+    .line 558
     invoke-direct {p0, p2, v0}, Lorg/telegram/messenger/MusicPlayerService;->createNotification(Lorg/telegram/messenger/MessageObject;Z)V
 
     goto :goto_2
 
-    .line 550
+    .line 560
     :cond_5
     sget p2, Lorg/telegram/messenger/NotificationCenter;->fileLoaded:I
 
     if-ne p1, p2, :cond_6
 
-    .line 551
+    .line 561
     aget-object p1, p3, v0
 
     check-cast p1, Ljava/lang/String;
 
-    .line 552
+    .line 562
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p2
@@ -2200,7 +2246,7 @@
 
     if-eqz p2, :cond_6
 
-    .line 553
+    .line 563
     iget-object p3, p0, Lorg/telegram/messenger/MusicPlayerService;->loadingFilePath:Ljava/lang/String;
 
     if-eqz p3, :cond_6
@@ -2211,7 +2257,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 554
+    .line 564
     invoke-direct {p0, p2, v0}, Lorg/telegram/messenger/MusicPlayerService;->createNotification(Lorg/telegram/messenger/MessageObject;Z)V
 
     :cond_6
@@ -2232,7 +2278,7 @@
 
     const-string v0, "audio"
 
-    .line 87
+    .line 89
     invoke-virtual {p0, v0}, Landroid/app/Service;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
@@ -2250,7 +2296,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 89
+    .line 91
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v2
@@ -2259,7 +2305,7 @@
 
     invoke-virtual {v2, p0, v3}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 90
+    .line 92
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v2
@@ -2268,7 +2314,7 @@
 
     invoke-virtual {v2, p0, v3}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 91
+    .line 93
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v2
@@ -2277,7 +2323,7 @@
 
     invoke-virtual {v2, p0, v3}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 92
+    .line 94
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v2
@@ -2290,7 +2336,7 @@
 
     goto :goto_0
 
-    .line 94
+    .line 96
     :cond_0
     new-instance v1, Lorg/telegram/messenger/ImageReceiver;
 
@@ -2300,21 +2346,21 @@
 
     iput-object v1, p0, Lorg/telegram/messenger/MusicPlayerService;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 95
+    .line 97
     new-instance v2, Lorg/telegram/messenger/MusicPlayerService$$ExternalSyntheticLambda1;
 
     invoke-direct {v2, p0}, Lorg/telegram/messenger/MusicPlayerService$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/messenger/MusicPlayerService;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setDelegate(Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;)V
 
-    .line 105
+    .line 107
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x15
 
     if-lt v1, v2, :cond_1
 
-    .line 106
+    .line 108
     new-instance v1, Landroid/media/session/MediaSession;
 
     const-string/jumbo v2, "telegramAudioPlayer"
@@ -2323,7 +2369,7 @@
 
     iput-object v1, p0, Lorg/telegram/messenger/MusicPlayerService;->mediaSession:Landroid/media/session/MediaSession;
 
-    .line 107
+    .line 109
     new-instance v1, Landroid/media/session/PlaybackState$Builder;
 
     invoke-direct {v1}, Landroid/media/session/PlaybackState$Builder;-><init>()V
@@ -2332,7 +2378,7 @@
 
     const/16 v1, 0x66
 
-    .line 108
+    .line 110
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -2349,7 +2395,7 @@
 
     iput-object v1, p0, Lorg/telegram/messenger/MusicPlayerService;->albumArtPlaceholder:Landroid/graphics/Bitmap;
 
-    .line 109
+    .line 111
     invoke-virtual {p0}, Landroid/app/Service;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -2360,7 +2406,7 @@
 
     move-result-object v1
 
-    .line 110
+    .line 112
     iget-object v2, p0, Lorg/telegram/messenger/MusicPlayerService;->albumArtPlaceholder:Landroid/graphics/Bitmap;
 
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getWidth()I
@@ -2375,7 +2421,7 @@
 
     invoke-virtual {v1, v0, v0, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 111
+    .line 113
     new-instance v0, Landroid/graphics/Canvas;
 
     iget-object v2, p0, Lorg/telegram/messenger/MusicPlayerService;->albumArtPlaceholder:Landroid/graphics/Bitmap;
@@ -2384,7 +2430,7 @@
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 112
+    .line 114
     iget-object v0, p0, Lorg/telegram/messenger/MusicPlayerService;->mediaSession:Landroid/media/session/MediaSession;
 
     new-instance v1, Lorg/telegram/messenger/MusicPlayerService$2;
@@ -2393,14 +2439,14 @@
 
     invoke-virtual {v0, v1}, Landroid/media/session/MediaSession;->setCallback(Landroid/media/session/MediaSession$Callback;)V
 
-    .line 147
+    .line 149
     iget-object v0, p0, Lorg/telegram/messenger/MusicPlayerService;->mediaSession:Landroid/media/session/MediaSession;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/media/session/MediaSession;->setActive(Z)V
 
-    .line 150
+    .line 152
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/MusicPlayerService;->headsetPlugReceiver:Landroid/content/BroadcastReceiver;
 
@@ -2412,7 +2458,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/app/Service;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 152
+    .line 154
     invoke-super {p0}, Landroid/app/Service;->onCreate()V
 
     return-void
@@ -2421,40 +2467,43 @@
 .method public onDestroy()V
     .locals 3
 
-    .line 508
+    .line 517
     iget-object v0, p0, Lorg/telegram/messenger/MusicPlayerService;->headsetPlugReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {p0, v0}, Landroid/app/Service;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 509
+    .line 518
     invoke-super {p0}, Landroid/app/Service;->onDestroy()V
 
-    .line 510
-    iget-object v0, p0, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
+    const/4 v0, 0x1
 
-    if-eqz v0, :cond_0
+    .line 519
+    invoke-virtual {p0, v0}, Landroid/app/Service;->stopForeground(Z)V
 
-    const/4 v1, 0x1
+    .line 520
+    iget-object v1, p0, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
-    .line 511
-    invoke-virtual {v0, v1}, Landroid/media/RemoteControlClient;->editMetadata(Z)Landroid/media/RemoteControlClient$MetadataEditor;
+    if-eqz v1, :cond_0
+
+    .line 521
+    invoke-virtual {v1, v0}, Landroid/media/RemoteControlClient;->editMetadata(Z)Landroid/media/RemoteControlClient$MetadataEditor;
 
     move-result-object v0
 
-    .line 512
+    .line 522
     invoke-virtual {v0}, Landroid/media/RemoteControlClient$MetadataEditor;->clear()V
 
-    .line 513
+    .line 523
     invoke-virtual {v0}, Landroid/media/RemoteControlClient$MetadataEditor;->apply()V
 
-    .line 514
+    .line 524
     iget-object v0, p0, Lorg/telegram/messenger/MusicPlayerService;->audioManager:Landroid/media/AudioManager;
 
     iget-object v1, p0, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
     invoke-virtual {v0, v1}, Landroid/media/AudioManager;->unregisterRemoteControlClient(Landroid/media/RemoteControlClient;)V
 
-    .line 516
+    .line 526
     :cond_0
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -2462,7 +2511,7 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 517
+    .line 527
     iget-object v0, p0, Lorg/telegram/messenger/MusicPlayerService;->mediaSession:Landroid/media/session/MediaSession;
 
     invoke-virtual {v0}, Landroid/media/session/MediaSession;->release()V
@@ -2475,7 +2524,7 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 520
+    .line 530
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -2484,7 +2533,7 @@
 
     invoke-virtual {v1, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 521
+    .line 531
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -2493,7 +2542,7 @@
 
     invoke-virtual {v1, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 522
+    .line 532
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -2502,7 +2551,7 @@
 
     invoke-virtual {v1, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 523
+    .line 533
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -2526,7 +2575,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 159
+    .line 161
     :try_start_0
     new-instance p3, Ljava/lang/StringBuilder;
 
@@ -2556,7 +2605,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 160
+    .line 162
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -2567,7 +2616,7 @@
 
     return p1
 
-    .line 163
+    .line 165
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -2579,7 +2628,7 @@
 
     if-nez p1, :cond_1
 
-    .line 165
+    .line 167
     new-instance p1, Lorg/telegram/messenger/MusicPlayerService$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/messenger/MusicPlayerService$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/MusicPlayerService;)V
@@ -2588,7 +2637,7 @@
 
     return p2
 
-    .line 168
+    .line 170
     :cond_1
     sget-boolean p3, Lorg/telegram/messenger/MusicPlayerService;->supportLockScreenControls:Z
 
@@ -2596,7 +2645,7 @@
 
     if-eqz p3, :cond_3
 
-    .line 169
+    .line 171
     new-instance p3, Landroid/content/ComponentName;
 
     invoke-virtual {p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
@@ -2613,30 +2662,30 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 171
+    .line 173
     :try_start_1
     iget-object v1, p0, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
     if-nez v1, :cond_2
 
-    .line 172
+    .line 174
     iget-object v1, p0, Lorg/telegram/messenger/MusicPlayerService;->audioManager:Landroid/media/AudioManager;
 
     invoke-virtual {v1, p3}, Landroid/media/AudioManager;->registerMediaButtonEventReceiver(Landroid/content/ComponentName;)V
 
-    .line 173
+    .line 175
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.MEDIA_BUTTON"
 
     invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 174
+    .line 176
     invoke-virtual {v1, p3}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     const/high16 p3, 0x2000000
 
-    .line 175
+    .line 177
     invoke-direct {p0, p3}, Lorg/telegram/messenger/MusicPlayerService;->fixIntentFlags(I)I
 
     move-result p3
@@ -2645,19 +2694,19 @@
 
     move-result-object p3
 
-    .line 176
+    .line 178
     new-instance v1, Landroid/media/RemoteControlClient;
 
     invoke-direct {v1, p3}, Landroid/media/RemoteControlClient;-><init>(Landroid/app/PendingIntent;)V
 
     iput-object v1, p0, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
-    .line 177
+    .line 179
     iget-object p3, p0, Lorg/telegram/messenger/MusicPlayerService;->audioManager:Landroid/media/AudioManager;
 
     invoke-virtual {p3, v1}, Landroid/media/AudioManager;->registerRemoteControlClient(Landroid/media/RemoteControlClient;)V
 
-    .line 179
+    .line 181
     :cond_2
     iget-object p3, p0, Lorg/telegram/messenger/MusicPlayerService;->remoteControlClient:Landroid/media/RemoteControlClient;
 
@@ -2672,11 +2721,11 @@
     :catch_0
     move-exception p3
 
-    .line 182
+    .line 184
     :try_start_2
     invoke-static {p3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 185
+    .line 187
     :cond_3
     :goto_0
     invoke-direct {p0, p1, v0}, Lorg/telegram/messenger/MusicPlayerService;->createNotification(Lorg/telegram/messenger/MessageObject;Z)V
@@ -2688,7 +2737,7 @@
     :catch_1
     move-exception p1
 
-    .line 187
+    .line 189
     invoke-virtual {p1}, Ljava/lang/Exception;->printStackTrace()V
 
     :goto_1
@@ -2698,7 +2747,7 @@
 .method public setListeners(Landroid/widget/RemoteViews;)V
     .locals 5
 
-    .line 486
+    .line 495
     invoke-virtual {p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2721,12 +2770,12 @@
 
     move-result-object v0
 
-    .line 487
+    .line 496
     sget v1, Lorg/telegram/messenger/R$id;->player_previous:I
 
     invoke-virtual {p1, v1, v0}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
-    .line 488
+    .line 497
     invoke-virtual {p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2745,12 +2794,12 @@
 
     move-result-object v0
 
-    .line 489
+    .line 498
     sget v1, Lorg/telegram/messenger/R$id;->player_close:I
 
     invoke-virtual {p1, v1, v0}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
-    .line 490
+    .line 499
     invoke-virtual {p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2769,12 +2818,12 @@
 
     move-result-object v0
 
-    .line 491
+    .line 500
     sget v1, Lorg/telegram/messenger/R$id;->player_pause:I
 
     invoke-virtual {p1, v1, v0}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
-    .line 492
+    .line 501
     invoke-virtual {p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2793,12 +2842,12 @@
 
     move-result-object v0
 
-    .line 493
+    .line 502
     sget v1, Lorg/telegram/messenger/R$id;->player_next:I
 
     invoke-virtual {p1, v1, v0}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
 
-    .line 494
+    .line 503
     invoke-virtual {p0}, Landroid/app/Service;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2817,7 +2866,7 @@
 
     move-result-object v0
 
-    .line 495
+    .line 504
     sget v1, Lorg/telegram/messenger/R$id;->player_play:I
 
     invoke-virtual {p1, v1, v0}, Landroid/widget/RemoteViews;->setOnClickPendingIntent(ILandroid/app/PendingIntent;)V

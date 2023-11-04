@@ -235,7 +235,7 @@
 
     move-result-object p0
 
-    const-string p1, "java.lang.String.format(format, *args)"
+    const-string/jumbo p1, "java.lang.String.format(format, *args)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -286,7 +286,7 @@
 
     move-result-object p1
 
-    const-string p2, "java.lang.String.format(format, *args)"
+    const-string/jumbo p2, "java.lang.String.format(format, *args)"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

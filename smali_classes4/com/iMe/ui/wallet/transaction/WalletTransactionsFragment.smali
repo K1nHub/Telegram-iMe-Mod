@@ -1139,7 +1139,7 @@
         }
     .end annotation
 
-    const-string v0, "items"
+    const-string/jumbo v0, "items"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1201,7 +1201,7 @@
 .method public openCryptoBoxActionDetails(Lcom/iMe/model/wallet/transaction/CryptoBoxActionItem;Lcom/iMe/storage/domain/model/crypto/Network;)V
     .locals 7
 
-    const-string v0, "item"
+    const-string/jumbo v0, "item"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1239,7 +1239,7 @@
 .method public openStakingOperationDetails(Lcom/iMe/model/wallet/transaction/StakingOperationItem;Lcom/iMe/storage/domain/model/crypto/Network;)V
     .locals 7
 
-    const-string v0, "item"
+    const-string/jumbo v0, "item"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1285,7 +1285,7 @@
         }
     .end annotation
 
-    const-string v0, "items"
+    const-string/jumbo v0, "items"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1310,7 +1310,7 @@
         }
     .end annotation
 
-    const-string v0, "items"
+    const-string/jumbo v0, "items"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

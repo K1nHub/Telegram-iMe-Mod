@@ -406,8 +406,8 @@ public final class JavaTypeResolver {
                         typeParameterUpperBoundEraser = JavaTypeResolver.this.typeParameterUpperBoundEraser;
                         TypeParameterDescriptor typeParameterDescriptor2 = typeParameterDescriptor;
                         JavaTypeAttributes javaTypeAttributes2 = javaTypeAttributes;
-                        ClassifierDescriptor mo2046getDeclarationDescriptor = typeConstructor.mo2046getDeclarationDescriptor();
-                        return typeParameterUpperBoundEraser.getErasedUpperBound(typeParameterDescriptor2, javaTypeAttributes2.withDefaultType(mo2046getDeclarationDescriptor != null ? mo2046getDeclarationDescriptor.getDefaultType() : null).markIsRaw(javaClassifierType.isRaw()));
+                        ClassifierDescriptor mo2051getDeclarationDescriptor = typeConstructor.mo2051getDeclarationDescriptor();
+                        return typeParameterUpperBoundEraser.getErasedUpperBound(typeParameterDescriptor2, javaTypeAttributes2.withDefaultType(mo2051getDeclarationDescriptor != null ? mo2051getDeclarationDescriptor.getDefaultType() : null).markIsRaw(javaClassifierType.isRaw()));
                     }
                 }));
             }

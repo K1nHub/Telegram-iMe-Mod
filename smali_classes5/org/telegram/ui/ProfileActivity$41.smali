@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ProfileActivity;->lambda$processOnClickOrPress$49([ZLjava/lang/String;I[Ljava/lang/String;Ljava/lang/String;FFLandroid/view/View;)V
+    value = Lorg/telegram/ui/ProfileActivity;->lambda$processOnClickOrPress$50([ZLjava/lang/String;I[Ljava/lang/String;Ljava/lang/String;FFLandroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,10 +22,10 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 6212
+    .line 6250
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 6213
+    .line 6251
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
@@ -40,15 +40,15 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 5
 
-    .line 6217
+    .line 6255
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 6218
+    .line 6256
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$41;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 6219
+    .line 6257
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p2}, Landroid/view/View;->getLeft()I
@@ -77,7 +77,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 6220
+    .line 6258
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$41;->path:Landroid/graphics/Path;
 
     const/4 v2, 0x6
@@ -98,17 +98,17 @@
 
     invoke-virtual {v1, v0, v3, v2, v4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 6221
+    .line 6259
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$41;->path:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 6222
+    .line 6260
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p2
 
-    .line 6223
+    .line 6261
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return p2

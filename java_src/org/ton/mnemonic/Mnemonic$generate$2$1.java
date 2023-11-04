@@ -10,7 +10,7 @@ import kotlin.random.Random;
 import kotlinx.coroutines.CancellableContinuation;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: Mnemonic.kt */
-@DebugMetadata(m143c = "org.ton.mnemonic.Mnemonic$generate$2$1", m142f = "Mnemonic.kt", m141l = {}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.ton.mnemonic.Mnemonic$generate$2$1", m144f = "Mnemonic.kt", m143l = {}, m142m = "invokeSuspend")
 /* loaded from: classes6.dex */
 final class Mnemonic$generate$2$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ CancellableContinuation<List<String>> $continuation;
@@ -49,7 +49,7 @@ final class Mnemonic$generate$2$1 extends SuspendLambda implements Function2<Cor
         r0 = r21.$continuation;
         r2 = kotlin.Result.Companion;
         r2 = kotlin.collections.ArraysKt___ArraysKt.toList(r11);
-        r0.resumeWith(kotlin.Result.m1935constructorimpl(r2));
+        r0.resumeWith(kotlin.Result.m1940constructorimpl(r2));
      */
     /* JADX WARN: Multi-variable type inference failed */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

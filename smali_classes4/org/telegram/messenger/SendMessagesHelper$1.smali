@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/SendMessagesHelper;)V
     .locals 0
 
-    .line 595
+    .line 640
     iput-object p1, p0, Lorg/telegram/messenger/SendMessagesHelper$1;->this$0:Lorg/telegram/messenger/SendMessagesHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,12 +38,12 @@
 .method public onLocationAcquired(Landroid/location/Location;)V
     .locals 1
 
-    .line 598
+    .line 643
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$1;->this$0:Lorg/telegram/messenger/SendMessagesHelper;
 
     invoke-static {v0, p1}, Lorg/telegram/messenger/SendMessagesHelper;->access$400(Lorg/telegram/messenger/SendMessagesHelper;Landroid/location/Location;)V
 
-    .line 599
+    .line 644
     iget-object p1, p0, Lorg/telegram/messenger/SendMessagesHelper$1;->this$0:Lorg/telegram/messenger/SendMessagesHelper;
 
     invoke-static {p1}, Lorg/telegram/messenger/SendMessagesHelper;->access$500(Lorg/telegram/messenger/SendMessagesHelper;)Ljava/util/HashMap;
@@ -58,7 +58,7 @@
 .method public onUnableLocationAcquire()V
     .locals 5
 
-    .line 604
+    .line 649
     new-instance v0, Ljava/util/HashMap;
 
     iget-object v1, p0, Lorg/telegram/messenger/SendMessagesHelper$1;->this$0:Lorg/telegram/messenger/SendMessagesHelper;
@@ -69,7 +69,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
-    .line 605
+    .line 650
     iget-object v1, p0, Lorg/telegram/messenger/SendMessagesHelper$1;->this$0:Lorg/telegram/messenger/SendMessagesHelper;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
@@ -88,7 +88,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 606
+    .line 651
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$1;->this$0:Lorg/telegram/messenger/SendMessagesHelper;
 
     invoke-static {v0}, Lorg/telegram/messenger/SendMessagesHelper;->access$500(Lorg/telegram/messenger/SendMessagesHelper;)Ljava/util/HashMap;

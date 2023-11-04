@@ -38,7 +38,7 @@
 .method private constructor <init>(Lorg/telegram/ui/CachedMediaLayout;Z)V
     .locals 1
 
-    .line 661
+    .line 662
     iput-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     if-eqz p2, :cond_0
@@ -50,18 +50,18 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 662
+    .line 663
     :goto_0
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/CachedMediaLayout$BaseFilesAdapter;-><init>(Lorg/telegram/ui/CachedMediaLayout;I)V
 
-    .line 666
+    .line 667
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;->photoEntries:Ljava/util/ArrayList;
 
-    .line 663
+    .line 664
     iput-boolean p2, p0, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;->isStories:Z
 
     return-void
@@ -70,7 +70,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/CachedMediaLayout;ZLorg/telegram/ui/CachedMediaLayout$1;)V
     .locals 0
 
-    .line 656
+    .line 657
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;-><init>(Lorg/telegram/ui/CachedMediaLayout;Z)V
 
     return-void
@@ -89,7 +89,7 @@
         }
     .end annotation
 
-    .line 735
+    .line 736
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;->photoEntries:Ljava/util/ArrayList;
 
     return-object v0
@@ -108,14 +108,14 @@
 
     move-object/from16 v0, p0
 
-    .line 699
+    .line 700
     iget-object v1, v0, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;->thumb:Lorg/telegram/ui/Components/CombinedDrawable;
 
     const/4 v2, 0x1
 
     if-nez v1, :cond_0
 
-    .line 700
+    .line 701
     new-instance v1, Lorg/telegram/ui/Components/CombinedDrawable;
 
     new-instance v3, Landroid/graphics/drawable/ColorDrawable;
@@ -134,18 +134,18 @@
 
     iput-object v1, v0, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;->thumb:Lorg/telegram/ui/Components/CombinedDrawable;
 
-    .line 701
+    .line 702
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/CombinedDrawable;->setFullsize(Z)V
 
     :cond_0
     move-object/from16 v1, p1
 
-    .line 703
+    .line 704
     iget-object v1, v1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast v1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
-    .line 704
+    .line 705
     iget-object v3, v0, Lorg/telegram/ui/CachedMediaLayout$BaseAdapter;->itemInners:Ljava/util/ArrayList;
 
     move/from16 v4, p2
@@ -158,7 +158,7 @@
 
     iget-object v3, v3, Lorg/telegram/ui/CachedMediaLayout$ItemInner;->file:Lorg/telegram/ui/Storage/CacheModel$FileInfo;
 
-    .line 705
+    .line 706
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
     move-result-object v4
@@ -174,13 +174,13 @@
     :cond_1
     move v4, v5
 
-    .line 706
+    .line 707
     :goto_0
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     const/high16 v6, 0x42c80000    # 100.0f
 
-    .line 707
+    .line 708
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getRealScreenSize()Landroid/graphics/Point;
 
     move-result-object v7
@@ -199,14 +199,14 @@
 
     float-to-int v6, v6
 
-    .line 708
+    .line 709
     iget-boolean v7, v0, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;->isStories:Z
 
     const-string v8, "_"
 
     if-eqz v7, :cond_3
 
-    .line 709
+    .line 710
     iget-object v7, v3, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->file:Ljava/io/File;
 
     invoke-virtual {v7}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -221,7 +221,7 @@
 
     if-eqz v7, :cond_2
 
-    .line 711
+    .line 712
     iget-object v9, v1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v7, v3, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->file:Ljava/io/File;
@@ -264,7 +264,7 @@
 
     goto :goto_1
 
-    .line 713
+    .line 714
     :cond_2
     iget-object v7, v1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -309,7 +309,7 @@
     :goto_1
     new-array v6, v2, [Ljava/lang/Object;
 
-    .line 715
+    .line 716
     iget-object v7, v3, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->file:Ljava/io/File;
 
     invoke-virtual {v7}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -324,10 +324,10 @@
 
     iput v5, v1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->storyId:I
 
-    .line 716
+    .line 717
     iput-boolean v2, v1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->isStory:Z
 
-    .line 717
+    .line 718
     iget-wide v5, v3, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->size:J
 
     invoke-static {v5, v6}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
@@ -338,13 +338,13 @@
 
     goto/16 :goto_2
 
-    .line 718
+    .line 719
     :cond_3
     iget v7, v3, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->type:I
 
     if-ne v7, v2, :cond_4
 
-    .line 719
+    .line 720
     iget-object v9, v1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -395,7 +395,7 @@
 
     invoke-virtual/range {v9 .. v15}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
-    .line 720
+    .line 721
     iget-wide v5, v3, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->size:J
 
     invoke-static {v5, v6}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
@@ -406,7 +406,7 @@
 
     goto :goto_2
 
-    .line 722
+    .line 723
     :cond_4
     iget-object v2, v1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
@@ -460,7 +460,7 @@
 
     invoke-virtual/range {v6 .. v12}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
 
-    .line 723
+    .line 724
     iget-wide v6, v3, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->size:J
 
     invoke-static {v6, v7}, Lorg/telegram/messenger/AndroidUtilities;->formatFileSize(J)Ljava/lang/String;
@@ -469,7 +469,7 @@
 
     invoke-virtual {v1, v2, v5}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setVideoText(Ljava/lang/String;Z)V
 
-    .line 725
+    .line 726
     :goto_2
     iget-object v2, v0, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
@@ -487,12 +487,12 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    .line 680
+    .line 681
     iget-object p2, p0, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;->sharedResources:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;
 
     if-nez p2, :cond_0
 
-    .line 681
+    .line 682
     new-instance p2, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -505,7 +505,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;->sharedResources:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$SharedResources;
 
-    .line 683
+    .line 684
     :cond_0
     new-instance p2, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter$1;
 
@@ -527,10 +527,10 @@
 
     const/4 p1, 0x1
 
-    .line 690
+    .line 691
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->setStyle(I)V
 
-    .line 691
+    .line 692
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -543,17 +543,17 @@
 
     move-object/from16 v0, p0
 
-    .line 670
+    .line 671
     invoke-super/range {p0 .. p0}, Lorg/telegram/ui/CachedMediaLayout$BaseFilesAdapter;->update()V
 
-    .line 671
+    .line 672
     iget-object v1, v0, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;->photoEntries:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
     const/4 v2, 0x0
 
-    .line 672
+    .line 673
     :goto_0
     iget-object v3, v0, Lorg/telegram/ui/CachedMediaLayout$BaseAdapter;->itemInners:Ljava/util/ArrayList;
 
@@ -563,7 +563,7 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 673
+    .line 674
     iget-object v3, v0, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;->photoEntries:Ljava/util/ArrayList;
 
     new-instance v14, Lorg/telegram/messenger/MediaController$PhotoEntry;

@@ -12,9 +12,9 @@ import kotlinx.serialization.internal.PluginExceptionsKt;
 import kotlinx.serialization.internal.SerializationConstructorMarker;
 import org.ton.bitstring.BitString;
 import org.ton.bitstring.FiftHexBitStringSerializer;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: AdnlMessageAnswer.kt */
 @Serializable
 /* loaded from: classes6.dex */
@@ -98,7 +98,7 @@ public final class AdnlMessageAnswer {
             return AdnlMessageAnswer$$serializer.INSTANCE;
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, AdnlMessageAnswer value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
@@ -106,7 +106,7 @@ public final class AdnlMessageAnswer {
             TlWriter.writeBytes$default(writer, value.getAnswer(), 0, 0, 6, (Object) null);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public AdnlMessageAnswer decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return new AdnlMessageAnswer(reader.readRaw(32), reader.readBytes());

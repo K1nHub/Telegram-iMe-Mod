@@ -12,13 +12,15 @@
 
 .field public final synthetic f$2:J
 
-.field public final synthetic f$3:[I
+.field public final synthetic f$3:Z
 
-.field public final synthetic f$4:Ljava/lang/Runnable;
+.field public final synthetic f$4:[I
+
+.field public final synthetic f$5:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesStorage;Ljava/util/ArrayList;J[ILjava/lang/Runnable;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesStorage;Ljava/util/ArrayList;JZ[ILjava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,9 +31,11 @@
 
     iput-wide p3, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda16;->f$2:J
 
-    iput-object p5, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda16;->f$3:[I
+    iput-boolean p5, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda16;->f$3:Z
 
-    iput-object p6, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda16;->f$4:Ljava/lang/Runnable;
+    iput-object p6, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda16;->f$4:[I
+
+    iput-object p7, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda16;->f$5:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -39,7 +43,7 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 8
+    .locals 9
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/Stories/StoriesStorage;
 
@@ -47,15 +51,17 @@
 
     iget-wide v2, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda16;->f$2:J
 
-    iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda16;->f$3:[I
+    iget-boolean v4, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda16;->f$3:Z
 
-    iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda16;->f$4:Ljava/lang/Runnable;
+    iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda16;->f$4:[I
 
-    move-object v6, p1
+    iget-object v6, p0, Lorg/telegram/ui/Stories/StoriesStorage$$ExternalSyntheticLambda16;->f$5:Ljava/lang/Runnable;
 
-    move-object v7, p2
+    move-object v7, p1
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Stories/StoriesStorage;->$r8$lambda$itpeWXFVIGaJ2NgR00_aO8vI3cM(Lorg/telegram/ui/Stories/StoriesStorage;Ljava/util/ArrayList;J[ILjava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    move-object v8, p2
+
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Stories/StoriesStorage;->$r8$lambda$W6d-OtIYCjwJBgDuXzHr_djdyV0(Lorg/telegram/ui/Stories/StoriesStorage;Ljava/util/ArrayList;JZ[ILjava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

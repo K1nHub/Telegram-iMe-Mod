@@ -192,7 +192,7 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
             if (i < 0) {
                 CollectionsKt__CollectionsKt.throwIndexOverflow();
             }
-            arrayList.add(TuplesKt.m144to((Class) obj, Integer.valueOf(i)));
+            arrayList.add(TuplesKt.m146to((Class) obj, Integer.valueOf(i)));
             i = i2;
         }
         map = MapsKt__MapsKt.toMap(arrayList);
@@ -248,8 +248,8 @@ public final class ClassReference implements KClass<Object>, ClassBasedDeclarati
             substringAfterLast$default2 = StringsKt__StringsKt.substringAfterLast$default(kotlinName, '.', null, 2, null);
             sb.append(substringAfterLast$default2);
             sb.append("CompanionObject");
-            Pair m144to = TuplesKt.m144to(sb.toString(), kotlinName + ".Companion");
-            hashMap3.put(m144to.getFirst(), m144to.getSecond());
+            Pair m146to = TuplesKt.m146to(sb.toString(), kotlinName + ".Companion");
+            hashMap3.put(m146to.getFirst(), m146to.getSecond());
         }
         for (Map.Entry<Class<? extends Function<?>>, Integer> entry : FUNCTION_CLASSES.entrySet()) {
             int intValue = entry.getValue().intValue();

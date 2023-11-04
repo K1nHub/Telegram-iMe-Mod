@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Cells/ChatMessageCell$9;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Lorg/telegram/ui/Components/Forum/MessageTopicButton;
 .source "ChatMessageCell.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Cells/ChatMessageCell;->startRevealMedia(FFF)V
+    value = Lorg/telegram/ui/Cells/ChatMessageCell;->setMessageObjectInternal(Lorg/telegram/messenger/MessageObject;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,37 +19,42 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;)V
+.method constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 10706
+    .line 14089
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$9;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/Forum/MessageTopicButton;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+.method protected onClick()V
+    .locals 2
 
-    .line 10709
-    iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$9;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+    .line 14092
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$9;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
 
-    move-result-object p1
+    move-result-object v0
 
-    const/4 v0, 0x1
+    if-eqz v0, :cond_0
 
-    iput-boolean v0, p1, Lorg/telegram/messenger/MessageObject;->isMediaSpoilersRevealed:Z
+    .line 14093
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$9;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 10710
-    iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$9;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$100(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V
+    move-result-object v0
 
+    iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$9;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-interface {v0, v1}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;->didPressTopicButton(Lorg/telegram/ui/Cells/ChatMessageCell;)V
+
+    :cond_0
     return-void
 .end method

@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 83
+    .line 85
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public run()V
     .locals 5
 
-    .line 86
+    .line 88
     sget-object v0, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v0}, Ljava/security/SecureRandom;->nextInt()I
@@ -53,16 +53,16 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 88
+    .line 90
     sput v1, Lorg/telegram/ui/Stories/StoriesUtilities;->debugState:I
 
     goto :goto_0
 
-    .line 90
+    .line 92
     :cond_0
     sput v2, Lorg/telegram/ui/Stories/StoriesUtilities;->debugState:I
 
-    .line 92
+    .line 94
     :goto_0
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -84,14 +84,14 @@
 
     invoke-virtual {v0, v2, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 93
+    .line 95
     sget-object v0, Lorg/telegram/ui/Stories/StoriesUtilities;->debugRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x3e8
 
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 94
+    .line 96
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v0

@@ -23,7 +23,7 @@
 
 .field public final highlightAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
-.field public final mediaArea:Lorg/telegram/tgnet/TLRPC$MediaArea;
+.field public final mediaArea:Lorg/telegram/tgnet/tl/TL_stories$MediaArea;
 
 .field private final shineRunnable:Ljava/lang/Runnable;
 
@@ -45,13 +45,13 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/view/View;Lorg/telegram/tgnet/TLRPC$MediaArea;)V
+.method public constructor <init>(Landroid/content/Context;Landroid/view/View;Lorg/telegram/tgnet/tl/TL_stories$MediaArea;)V
     .locals 8
 
-    .line 448
+    .line 469
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 454
+    .line 475
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -60,14 +60,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->gradientPaint:Landroid/graphics/Paint;
 
-    .line 455
+    .line 476
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1, v0}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->strokeGradientPaint:Landroid/graphics/Paint;
 
-    .line 457
+    .line 478
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
@@ -76,20 +76,20 @@
 
     const/4 v0, 0x0
 
-    .line 459
+    .line 480
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->shining:Z
 
-    .line 495
+    .line 516
     new-instance v0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->shineRunnable:Ljava/lang/Runnable;
 
-    .line 449
-    iput-object p3, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->mediaArea:Lorg/telegram/tgnet/TLRPC$MediaArea;
+    .line 470
+    iput-object p3, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->mediaArea:Lorg/telegram/tgnet/tl/TL_stories$MediaArea;
 
-    .line 450
+    .line 471
     new-instance p3, Lorg/telegram/ui/Components/AnimatedFloat;
 
     new-instance v7, Landroid/view/animation/LinearInterpolator;
@@ -108,7 +108,7 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->highlightAlpha:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 451
+    .line 472
     sget-object p2, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
@@ -123,17 +123,17 @@
 
     const/4 v1, 0x1
 
-    .line 503
+    .line 524
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->shining:Z
 
-    .line 504
+    .line 525
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
     iput-wide v1, v0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->startTime:J
 
-    .line 505
+    .line 526
     new-instance v1, Landroid/graphics/LinearGradient;
 
     const/4 v2, 0x4
@@ -162,7 +162,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->gradient:Landroid/graphics/LinearGradient;
 
-    .line 506
+    .line 527
     new-instance v1, Landroid/graphics/LinearGradient;
 
     new-array v3, v2, [I
@@ -193,7 +193,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->strokeGradient:Landroid/graphics/LinearGradient;
 
-    .line 507
+    .line 528
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -236,10 +236,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 464
+    .line 485
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 466
+    .line 487
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->shining:Z
 
     if-eqz v0, :cond_1
@@ -248,7 +248,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 467
+    .line 488
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -259,7 +259,7 @@
 
     mul-float/2addr v0, v1
 
-    .line 468
+    .line 489
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -274,7 +274,7 @@
 
     div-float/2addr v1, v2
 
-    .line 469
+    .line 490
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -295,18 +295,18 @@
 
     const/4 p1, 0x0
 
-    .line 472
+    .line 493
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->shining:Z
 
     return-void
 
-    .line 476
+    .line 497
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
 
-    .line 477
+    .line 498
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->gradientMatrix:Landroid/graphics/Matrix;
 
     const/high16 v4, 0x42200000    # 40.0f
@@ -315,28 +315,28 @@
 
     invoke-virtual {v1, v0, v3}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 478
+    .line 499
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->gradientMatrix:Landroid/graphics/Matrix;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v2, v1}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 479
+    .line 500
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->gradient:Landroid/graphics/LinearGradient;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v2}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 480
+    .line 501
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->gradientPaint:Landroid/graphics/Paint;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->gradient:Landroid/graphics/LinearGradient;
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 481
+    .line 502
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/view/View;->getWidth()I
@@ -353,7 +353,7 @@
 
     invoke-virtual {v0, v1, v1, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 482
+    .line 503
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
@@ -376,14 +376,14 @@
 
     invoke-virtual {p1, v0, v1, v3, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 484
+    .line 505
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->strokeGradient:Landroid/graphics/LinearGradient;
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->gradientMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v1, v3}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 485
+    .line 506
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->strokeGradientPaint:Landroid/graphics/Paint;
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->strokeGradient:Landroid/graphics/LinearGradient;
@@ -392,12 +392,12 @@
 
     const/high16 v1, 0x3fc00000    # 1.5f
 
-    .line 486
+    .line 507
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v1
 
-    .line 487
+    .line 508
     iget-object v3, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->strokeGradientPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v3, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
@@ -406,10 +406,10 @@
 
     div-float/2addr v1, v3
 
-    .line 488
+    .line 509
     invoke-virtual {v0, v1, v1}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 489
+    .line 510
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v3
@@ -434,7 +434,7 @@
 
     invoke-virtual {p1, v0, v3, v4, v1}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 491
+    .line 512
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_1
@@ -444,12 +444,12 @@
 .method public shine()V
     .locals 3
 
-    .line 498
+    .line 519
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->shineRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 499
+    .line 520
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryMediaAreasView$AreaView;->shineRunnable:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x190

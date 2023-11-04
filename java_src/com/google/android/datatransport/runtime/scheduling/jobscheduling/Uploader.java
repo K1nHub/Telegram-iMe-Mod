@@ -128,7 +128,7 @@ public class Uploader {
                     return;
                 }
                 if (transportBackend == null) {
-                    Logging.m1119d("Uploader", "Unknown backend for %s, deleting event batch for it...", transportContext);
+                    Logging.m1120d("Uploader", "Unknown backend for %s, deleting event batch for it...", transportContext);
                     send = BackendResponse.fatalError();
                 } else {
                     ArrayList arrayList = new ArrayList();
@@ -139,7 +139,7 @@ public class Uploader {
                         SynchronizationGuard synchronizationGuard = this.guard;
                         final ClientHealthMetricsStore clientHealthMetricsStore = this.clientHealthMetricsStore;
                         Objects.requireNonNull(clientHealthMetricsStore);
-                        arrayList.add(transportBackend.decorate(EventInternal.builder().setEventMillis(this.clock.getTime()).setUptimeMillis(this.uptimeClock.getTime()).setTransportName("GDT_CLIENT_METRICS").setEncodedPayload(new EncodedPayload(Encoding.m1121of("proto"), ((ClientMetrics) synchronizationGuard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda7
+                        arrayList.add(transportBackend.decorate(EventInternal.builder().setEventMillis(this.clock.getTime()).setUptimeMillis(this.uptimeClock.getTime()).setTransportName("GDT_CLIENT_METRICS").setEncodedPayload(new EncodedPayload(Encoding.m1122of("proto"), ((ClientMetrics) synchronizationGuard.runCriticalSection(new SynchronizationGuard.CriticalSection() { // from class: com.google.android.datatransport.runtime.scheduling.jobscheduling.Uploader$$ExternalSyntheticLambda7
                             @Override // com.google.android.datatransport.runtime.synchronization.SynchronizationGuard.CriticalSection
                             public final Object execute() {
                                 return ClientHealthMetricsStore.this.loadClientMetrics();

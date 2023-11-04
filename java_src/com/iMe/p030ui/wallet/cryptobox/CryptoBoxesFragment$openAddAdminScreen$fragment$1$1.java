@@ -2,20 +2,20 @@ package com.iMe.p030ui.wallet.cryptobox;
 
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ChatRightsEditActivity;
-import org.telegram.p042ui.Components.BulletinFactory;
+import org.telegram.p043ui.ChatRightsEditActivity;
+import org.telegram.p043ui.Components.BulletinFactory;
 import org.telegram.tgnet.TLRPC$TL_chatAdminRights;
 import org.telegram.tgnet.TLRPC$TL_chatBannedRights;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: CryptoBoxesFragment.kt */
 /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesFragment$openAddAdminScreen$fragment$1$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CryptoBoxesFragment$openAddAdminScreen$fragment$1$1 implements ChatRightsEditActivity.ChatRightsEditActivityDelegate {
     final /* synthetic */ ChatRightsEditActivity $this_apply;
     final /* synthetic */ long $walletBotId;
     final /* synthetic */ CryptoBoxesFragment this$0;
 
-    @Override // org.telegram.p042ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
+    @Override // org.telegram.p043ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
     public void didChangeOwner(TLRPC$User tLRPC$User) {
     }
 
@@ -26,7 +26,7 @@ public final class CryptoBoxesFragment$openAddAdminScreen$fragment$1$1 implement
         this.this$0 = cryptoBoxesFragment;
     }
 
-    @Override // org.telegram.p042ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
+    @Override // org.telegram.p043ui.ChatRightsEditActivity.ChatRightsEditActivityDelegate
     public void didSetRights(int i, TLRPC$TL_chatAdminRights tLRPC$TL_chatAdminRights, TLRPC$TL_chatBannedRights tLRPC$TL_chatBannedRights, String str) {
         final TLRPC$User user = this.$this_apply.getMessagesController().getUser(Long.valueOf(this.$walletBotId));
         if (user != null) {

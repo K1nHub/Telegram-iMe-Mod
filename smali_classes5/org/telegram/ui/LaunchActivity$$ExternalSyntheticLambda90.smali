@@ -63,7 +63,7 @@
 
     iget-object v6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda90;->f$6:Lorg/telegram/tgnet/TLRPC$TL_account_sendConfirmPhoneCode;
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$hlMMBT0UmlR-EzW4ePDxr7LNqd4(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/String;Landroid/os/Bundle;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_account_sendConfirmPhoneCode;)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$f8z1gbq8xy2UqD5k5zasrBjD-n4(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/String;Landroid/os/Bundle;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_account_sendConfirmPhoneCode;)V
 
     return-void
 .end method

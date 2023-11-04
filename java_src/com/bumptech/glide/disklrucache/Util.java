@@ -1,13 +1,13 @@
 package com.bumptech.glide.disklrucache;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 /* loaded from: classes.dex */
 final class Util {
-    static final Charset US_ASCII = Charset.forName(C0479C.ASCII_NAME);
+    static final Charset US_ASCII = Charset.forName(C0485C.ASCII_NAME);
 
     static {
         Charset.forName("UTF-8");

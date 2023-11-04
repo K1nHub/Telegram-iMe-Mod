@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTonFragmentInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TonFragmentInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extensions/ObservableExtKt\n*L\n1#1,182:1\n16#2,7:183\n16#2,7:190\n16#2,7:197\n16#2,7:204\n*S KotlinDebug\n*F\n+ 1 TonFragmentInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor\n*L\n36#1:183,7\n87#1:190,7\n90#1:197,7\n119#1:204,7\n*E\n"
+    value = "SMAP\nTonFragmentInteractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TonFragmentInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extensions/ObservableExtKt\n*L\n1#1,202:1\n16#2,7:203\n16#2,7:210\n16#2,7:217\n16#2,7:224\n*S KotlinDebug\n*F\n+ 1 TonFragmentInteractor.kt\ncom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor\n*L\n71#1:203,7\n74#1:210,7\n104#1:217,7\n122#1:224,7\n*E\n"
 .end annotation
 
 
@@ -26,6 +26,16 @@
 
 
 # direct methods
+.method public static synthetic $r8$lambda$HTmFRymadxazVFqqTstzV5EjliM(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    .locals 0
+
+    invoke-static {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->checkAndPrepareSession$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static synthetic $r8$lambda$gx569wEkJfBWfQ7lfAkP2xFXJvY(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
     .locals 0
 
@@ -87,19 +97,19 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 26
+    .line 27
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 27
+    .line 28
     iput-object p1, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 28
+    .line 29
     iput-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 29
+    .line 30
     iput-object p3, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->tonController:Lcom/iMe/storage/domain/manager/ton/TonController;
 
-    .line 30
+    .line 31
     iput-object p4, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->tonFragmentRepository:Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;
 
     return-void
@@ -108,7 +118,7 @@
 .method public static final synthetic access$getCryptoAccessManager$p(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
     .locals 0
 
-    .line 26
+    .line 27
     iget-object p0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     return-object p0
@@ -117,7 +127,7 @@
 .method public static final synthetic access$getSchedulersProvider$p(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
     .locals 0
 
-    .line 26
+    .line 27
     iget-object p0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     return-object p0
@@ -126,7 +136,7 @@
 .method public static final synthetic access$getSessionMessage(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    .line 26
+    .line 27
     invoke-direct {p0, p1, p2, p3}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->getSessionMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
@@ -137,7 +147,7 @@
 .method public static final synthetic access$getTonController$p(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)Lcom/iMe/storage/domain/manager/ton/TonController;
     .locals 0
 
-    .line 26
+    .line 27
     iget-object p0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->tonController:Lcom/iMe/storage/domain/manager/ton/TonController;
 
     return-object p0
@@ -146,8 +156,19 @@
 .method public static final synthetic access$getTonFragmentRepository$p(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;
     .locals 0
 
-    .line 26
+    .line 27
     iget-object p0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->tonFragmentRepository:Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;
+
+    return-object p0
+.end method
+
+.method public static final synthetic access$initSession(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)Lio/reactivex/Observable;
+    .locals 0
+
+    .line 27
+    invoke-direct {p0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->initSession()Lio/reactivex/Observable;
+
+    move-result-object p0
 
     return-object p0
 .end method
@@ -155,10 +176,27 @@
 .method public static final synthetic access$preparePremiumBuyTransaction(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;Ljava/lang/String;)Lio/reactivex/Observable;
     .locals 0
 
-    .line 26
+    .line 27
     invoke-direct {p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->preparePremiumBuyTransaction(Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p0
+
+    return-object p0
+.end method
+
+.method private static final checkAndPrepareSession$lambda$0(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Lio/reactivex/ObservableSource;
+    .locals 1
+
+    const-string v0, "$tmp0"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 37
+    invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Lio/reactivex/ObservableSource;
 
     return-object p0
 .end method
@@ -177,15 +215,15 @@
         }
     .end annotation
 
-    .line 137
+    .line 157
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->tonFragmentRepository:Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;
 
-    .line 138
+    .line 158
     invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;->getRecipientByUsername(Ljava/lang/String;I)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 142
+    .line 162
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -206,7 +244,7 @@
 .method private final getSessionMessage(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    .line 176
+    .line 196
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -244,10 +282,10 @@
         }
     .end annotation
 
-    .line 171
-    new-instance v0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda2;
+    .line 191
+    new-instance v0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda3;
 
-    invoke-direct {v0, p0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda2;-><init>(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)V
+    invoke-direct {v0, p0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda3;-><init>(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)V
 
     invoke-static {v0}, Lio/reactivex/Observable;->fromCallable(Ljava/util/concurrent/Callable;)Lio/reactivex/Observable;
 
@@ -267,7 +305,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 172
+    .line 192
     iget-object p0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -302,6 +340,61 @@
     return-object p0
 .end method
 
+.method private final initSession()Lio/reactivex/Observable;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lio/reactivex/Observable<",
+            "Lcom/iMe/storage/domain/model/Result<",
+            "Ljava/lang/Boolean;",
+            ">;>;"
+        }
+    .end annotation
+
+    .line 120
+    iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->tonFragmentRepository:Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;
+
+    .line 121
+    invoke-interface {v0}, Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;->getSessionData()Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    .line 16
+    new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$initSession$$inlined$flatMapSuccess$1;
+
+    invoke-direct {v1, p0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$initSession$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)V
+
+    new-instance v2, Lcom/iMe/storage/domain/utils/extensions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+
+    invoke-direct {v2, v1}, Lcom/iMe/storage/domain/utils/extensions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    invoke-virtual {v0, v2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    const-string v1, "crossinline body: (T) ->\u2026e.empty()\n        }\n    }"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 151
+    iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
+
+    invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->subscribeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+
+    move-result-object v0
+
+    const-string v1, "tonFragmentRepository\n  \u2026(schedulersProvider.io())"
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
 .method private final preparePremiumBuyTransaction(Ljava/lang/String;)Lio/reactivex/Observable;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -316,25 +409,25 @@
         }
     .end annotation
 
-    .line 147
+    .line 167
     invoke-direct {p0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->getTonPublicKeyBytes()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 148
+    .line 168
     new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$preparePremiumBuyTransaction$1;
 
     invoke-direct {v1, p0, p1}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$preparePremiumBuyTransaction$1;-><init>(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;Ljava/lang/String;)V
 
-    new-instance p1, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda0;
+    new-instance p1, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda1;
 
-    invoke-direct {p1, v1}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {p1, v1}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 154
+    .line 174
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -347,7 +440,7 @@
 
     const-string v0, "private fun preparePremi\u2026(schedulersProvider.io())"
 
-    .line 148
+    .line 168
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
@@ -360,7 +453,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 148
+    .line 168
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -385,25 +478,25 @@
         }
     .end annotation
 
-    .line 160
+    .line 180
     invoke-direct {p0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->getTonPublicKeyBytes()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 161
+    .line 181
     new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$prepareProductBuyTransaction$1;
 
     invoke-direct {v1, p0, p1, p2}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$prepareProductBuyTransaction$1;-><init>(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance p1, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda1;
+    new-instance p1, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda2;
 
-    invoke-direct {p1, v1}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda1;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {p1, v1}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda2;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {v0, p1}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 168
+    .line 188
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -416,7 +509,7 @@
 
     const-string p2, "private fun prepareProdu\u2026(schedulersProvider.io())"
 
-    .line 161
+    .line 181
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
@@ -429,7 +522,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 161
+    .line 181
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -464,7 +557,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 118
+    .line 103
     invoke-direct {p0, p1, p2}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->prepareProductBuyTransaction(Ljava/lang/String;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -486,7 +579,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 131
+    .line 117
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -516,32 +609,28 @@
         }
     .end annotation
 
-    .line 34
+    .line 35
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->tonFragmentRepository:Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;
 
-    .line 35
+    .line 36
     invoke-interface {v0}, Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;->getSessionAuthState()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 16
-    new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$checkAndPrepareSession$$inlined$flatMapSuccess$1;
+    .line 37
+    new-instance v1, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$checkAndPrepareSession$1;
 
-    invoke-direct {v1, p0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$checkAndPrepareSession$$inlined$flatMapSuccess$1;-><init>(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)V
+    invoke-direct {v1, p0}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$checkAndPrepareSession$1;-><init>(Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;)V
 
-    new-instance v2, Lcom/iMe/storage/domain/utils/extensions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
+    new-instance v2, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda0;
 
-    invoke-direct {v2, v1}, Lcom/iMe/storage/domain/utils/extensions/ObservableExtKt$sam$i$io_reactivex_functions_Function$0;-><init>(Lkotlin/jvm/functions/Function1;)V
+    invoke-direct {v2, v1}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor$$ExternalSyntheticLambda0;-><init>(Lkotlin/jvm/functions/Function1;)V
 
     invoke-virtual {v0, v2}, Lio/reactivex/Observable;->flatMap(Lio/reactivex/functions/Function;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    const-string v1, "crossinline body: (T) ->\u2026e.empty()\n        }\n    }"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 74
+    .line 58
     sget-object v1, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v2, 0x0
@@ -556,7 +645,7 @@
 
     move-result-object v0
 
-    .line 75
+    .line 59
     iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -567,8 +656,9 @@
 
     move-result-object v0
 
-    const-string v1, "tonFragmentRepository\n  \u2026(schedulersProvider.io())"
+    const-string v1, "fun checkAndPrepareSessi\u2026(schedulersProvider.io())"
 
+    .line 37
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object v0
@@ -587,15 +677,15 @@
         }
     .end annotation
 
-    .line 78
+    .line 62
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->tonFragmentRepository:Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;
 
-    .line 79
+    .line 63
     invoke-interface {v0}, Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;->getPremiumPrices()Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 80
+    .line 64
     iget-object v1, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -637,15 +727,15 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 109
+    .line 94
     iget-object v0, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->tonFragmentRepository:Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;
 
-    .line 110
+    .line 95
     invoke-interface {v0, p1, p2}, Lcom/iMe/storage/domain/repository/crypto/ton/TonFragmentRepository;->getUsernames(Lcom/iMe/storage/domain/model/crypto/ton/TonFragmentProductsSortingType;Ljava/lang/String;)Lio/reactivex/Observable;
 
     move-result-object p1
 
-    .line 111
+    .line 96
     sget-object p2, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
 
     const/4 v0, 0x0
@@ -660,7 +750,7 @@
 
     move-result-object p1
 
-    .line 112
+    .line 97
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -696,7 +786,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 86
+    .line 70
     invoke-direct {p0, p1, p2}, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->getRecipientByUsername(Ljava/lang/String;I)Lio/reactivex/Observable;
 
     move-result-object p1
@@ -733,7 +823,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 103
+    .line 88
     iget-object p2, p0, Lcom/iMe/storage/domain/interactor/crypto/fragment/TonFragmentInteractor;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {p2}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;

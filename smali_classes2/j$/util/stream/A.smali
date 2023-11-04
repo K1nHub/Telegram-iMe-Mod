@@ -75,16 +75,12 @@
     return-void
 .end method
 
-.method public b(Lj$/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
-    .locals 1
+.method public synthetic andThen(Lj$/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
+    .locals 0
 
-    .line 1
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0, p1}, Lj$/util/function/BiConsumer$-CC;->$default$andThen(Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
 
-    .line 2
-    new-instance v0, Lj$/util/concurrent/a;
+    move-result-object p1
 
-    invoke-direct {v0, p0, p1}, Lj$/util/concurrent/a;-><init>(Lj$/util/function/BiConsumer;Lj$/util/function/BiConsumer;)V
-
-    return-object v0
+    return-object p1
 .end method

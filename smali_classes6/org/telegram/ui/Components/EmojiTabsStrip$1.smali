@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/EmojiTabsStrip;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;ZZZILjava/lang/Runnable;)V
+    value = Lorg/telegram/ui/Components/EmojiTabsStrip;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;ZZZILjava/lang/Runnable;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -44,21 +44,21 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiTabsStrip;Landroid/content/Context;Z)V
     .locals 0
 
-    .line 122
+    .line 128
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     iput-boolean p3, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->val$includeAnimated:Z
 
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 124
+    .line 130
     new-instance p1, Landroidx/collection/LongSparseArray;
 
     invoke-direct {p1}, Landroidx/collection/LongSparseArray;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->lastX:Landroidx/collection/LongSparseArray;
 
-    .line 205
+    .line 211
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -67,28 +67,28 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->paint:Landroid/graphics/Paint;
 
-    .line 206
+    .line 212
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->from:Landroid/graphics/RectF;
 
-    .line 207
+    .line 213
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->to:Landroid/graphics/RectF;
 
-    .line 208
+    .line 214
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->rect:Landroid/graphics/RectF;
 
-    .line 209
+    .line 215
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
@@ -101,7 +101,7 @@
 .method private getChildBounds(ILandroid/graphics/RectF;)V
     .locals 6
 
-    .line 281
+    .line 287
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result v0
@@ -122,7 +122,7 @@
 
     return-void
 
-    .line 285
+    .line 291
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
@@ -150,7 +150,7 @@
 
     invoke-virtual {p2, v0, v1, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 287
+    .line 293
     invoke-virtual {p2}, Landroid/graphics/RectF;->centerX()F
 
     move-result v0
@@ -171,7 +171,7 @@
 
     sub-float/2addr v0, v1
 
-    .line 288
+    .line 294
     invoke-virtual {p2}, Landroid/graphics/RectF;->centerY()F
 
     move-result v1
@@ -190,7 +190,7 @@
 
     sub-float/2addr v1, v3
 
-    .line 289
+    .line 295
     invoke-virtual {p2}, Landroid/graphics/RectF;->centerX()F
 
     move-result v3
@@ -209,7 +209,7 @@
 
     add-float/2addr v3, v4
 
-    .line 290
+    .line 296
     invoke-virtual {p2}, Landroid/graphics/RectF;->centerY()F
 
     move-result v4
@@ -228,7 +228,7 @@
 
     add-float/2addr v4, v5
 
-    .line 286
+    .line 292
     invoke-virtual {p2, v0, v1, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
     return-void
@@ -239,7 +239,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 213
+    .line 219
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$200(Lorg/telegram/ui/Components/EmojiTabsStrip;)Ljava/util/HashMap;
@@ -270,7 +270,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 214
+    .line 220
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -279,17 +279,17 @@
 
     if-eqz v3, :cond_0
 
-    .line 216
+    .line 222
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/graphics/Rect;
 
-    .line 217
+    .line 223
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 218
+    .line 224
     iget v4, v1, Landroid/graphics/Rect;->left:I
 
     int-to-float v4, v4
@@ -300,7 +300,7 @@
 
     invoke-virtual {p1, v4, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 219
+    .line 225
     invoke-virtual {v3}, Landroid/view/View;->getScaleX()F
 
     move-result v4
@@ -327,15 +327,15 @@
 
     invoke-virtual {p1, v4, v5, v6, v1}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 220
+    .line 226
     invoke-virtual {v3, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 221
+    .line 227
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_0
 
-    .line 225
+    .line 231
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
@@ -345,7 +345,7 @@
 
     if-nez v0, :cond_2
 
-    .line 226
+    .line 232
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     new-instance v1, Lorg/telegram/ui/Components/AnimatedFloat;
@@ -358,7 +358,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$302(Lorg/telegram/ui/Components/EmojiTabsStrip;Lorg/telegram/ui/Components/AnimatedFloat;)Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 228
+    .line 234
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
@@ -390,7 +390,7 @@
 
     move-result v0
 
-    .line 230
+    .line 236
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$500(Lorg/telegram/ui/Components/EmojiTabsStrip;)F
@@ -419,17 +419,17 @@
 
     double-to-int v5, v5
 
-    .line 231
+    .line 237
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->from:Landroid/graphics/RectF;
 
     invoke-direct {p0, v1, v6}, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->getChildBounds(ILandroid/graphics/RectF;)V
 
-    .line 232
+    .line 238
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->to:Landroid/graphics/RectF;
 
     invoke-direct {p0, v5, v6}, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->getChildBounds(ILandroid/graphics/RectF;)V
 
-    .line 233
+    .line 239
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->from:Landroid/graphics/RectF;
 
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->to:Landroid/graphics/RectF;
@@ -448,7 +448,7 @@
 
     invoke-static {v5, v6, v7, v1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(Landroid/graphics/RectF;Landroid/graphics/RectF;FLandroid/graphics/RectF;)V
 
-    .line 234
+    .line 240
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$600(Lorg/telegram/ui/Components/EmojiTabsStrip;)Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;
@@ -481,7 +481,7 @@
     :goto_2
     const/high16 v1, 0x40800000    # 4.0f
 
-    .line 235
+    .line 241
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$700(Lorg/telegram/ui/Components/EmojiTabsStrip;)F
@@ -500,7 +500,7 @@
 
     mul-float/2addr v5, v1
 
-    .line 236
+    .line 242
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v1}, Landroid/graphics/RectF;->width()F
@@ -517,7 +517,7 @@
 
     mul-float/2addr v1, v6
 
-    .line 237
+    .line 243
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v6}, Landroid/graphics/RectF;->height()F
@@ -534,7 +534,7 @@
 
     mul-float/2addr v6, v5
 
-    .line 238
+    .line 244
     iget-object v5, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v5}, Landroid/graphics/RectF;->centerX()F
@@ -573,7 +573,7 @@
 
     const/high16 v5, 0x41800000    # 16.0f
 
-    .line 239
+    .line 245
     invoke-static {v1, v5, v3}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v1
@@ -584,7 +584,7 @@
 
     int-to-float v1, v1
 
-    .line 240
+    .line 246
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->paint:Landroid/graphics/Paint;
 
     iget-object v7, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
@@ -595,7 +595,7 @@
 
     invoke-virtual {v6, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 241
+    .line 247
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$900(Lorg/telegram/ui/Components/EmojiTabsStrip;)Z
@@ -606,7 +606,7 @@
 
     if-eqz v6, :cond_5
 
-    .line 242
+    .line 248
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v6}, Landroid/graphics/Paint;->getAlpha()I
@@ -629,7 +629,7 @@
 
     goto :goto_3
 
-    .line 244
+    .line 250
     :cond_5
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->paint:Landroid/graphics/Paint;
 
@@ -645,13 +645,13 @@
 
     invoke-virtual {v3, v0}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 247
+    .line 253
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 248
+    .line 254
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->path:Landroid/graphics/Path;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->rect:Landroid/graphics/RectF;
@@ -660,14 +660,14 @@
 
     invoke-virtual {v0, v3, v1, v1, v4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 249
+    .line 255
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->path:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 251
+    .line 257
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$900(Lorg/telegram/ui/Components/EmojiTabsStrip;)Z
@@ -678,17 +678,17 @@
 
     if-eqz v0, :cond_6
 
-    .line 252
+    .line 258
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->path:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 253
+    .line 259
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->rect:Landroid/graphics/RectF;
 
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->getChildBounds(ILandroid/graphics/RectF;)V
 
-    .line 254
+    .line 260
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->path:Landroid/graphics/Path;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->rect:Landroid/graphics/RectF;
@@ -705,7 +705,7 @@
 
     invoke-virtual {v0, v3, v4, v5, v6}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 255
+    .line 261
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->paint:Landroid/graphics/Paint;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
@@ -716,7 +716,7 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 256
+    .line 262
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0}, Landroid/graphics/Paint;->getAlpha()I
@@ -731,14 +731,14 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 257
+    .line 263
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->path:Landroid/graphics/Path;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v3}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 260
+    .line 266
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
@@ -748,7 +748,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 261
+    .line 267
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->path:Landroid/graphics/Path;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
@@ -807,11 +807,11 @@
 
     invoke-virtual {v0, v3, v5, v2, v4}, Landroid/graphics/Path;->addCircle(FFFLandroid/graphics/Path$Direction;)V
 
-    .line 264
+    .line 270
     :cond_7
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 265
+    .line 271
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$1002(Lorg/telegram/ui/Components/EmojiTabsStrip;Z)Z
@@ -822,7 +822,7 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 1
 
-    .line 270
+    .line 276
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$600(Lorg/telegram/ui/Components/EmojiTabsStrip;)Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabsView;
@@ -831,25 +831,25 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 271
+    .line 277
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 272
+    .line 278
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->path:Landroid/graphics/Path;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 273
+    .line 279
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/LinearLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p2
 
-    .line 274
+    .line 280
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return p2
 
-    .line 277
+    .line 283
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/LinearLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
@@ -863,17 +863,17 @@
 
     sub-int/2addr p5, p3
 
-    .line 128
+    .line 134
     div-int/lit8 p5, p5, 0x2
 
-    .line 129
+    .line 135
     iget-boolean p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->val$includeAnimated:Z
 
     const/4 p3, 0x0
 
     if-eqz p1, :cond_d
 
-    .line 130
+    .line 136
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getPaddingLeft()I
 
     move-result p1
@@ -902,7 +902,7 @@
 
     move v0, p3
 
-    .line 131
+    .line 137
     :goto_1
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
@@ -912,12 +912,12 @@
 
     if-ge v0, v2, :cond_9
 
-    .line 132
+    .line 138
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 133
+    .line 139
     iget-object v4, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$100(Lorg/telegram/ui/Components/EmojiTabsStrip;)Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
@@ -943,7 +943,7 @@
     :cond_1
     if-eqz v2, :cond_8
 
-    .line 137
+    .line 143
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v4
@@ -968,7 +968,7 @@
 
     invoke-virtual {v2, p1, v4, v5, v6}, Landroid/view/View;->layout(IIII)V
 
-    .line 138
+    .line 144
     instance-of v4, v2, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
 
     if-eqz v4, :cond_2
@@ -1003,7 +1003,7 @@
     :cond_3
     const/4 v5, 0x0
 
-    .line 139
+    .line 145
     :goto_2
     iget-object v6, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
@@ -1021,19 +1021,19 @@
 
     if-eqz v6, :cond_5
 
-    .line 140
+    .line 146
     iput-boolean p3, v4, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->newly:Z
 
-    .line 141
+    .line 147
     invoke-virtual {v2, v3}, Landroid/view/View;->setScaleX(F)V
 
-    .line 142
+    .line 148
     invoke-virtual {v2, v3}, Landroid/view/View;->setScaleY(F)V
 
-    .line 143
+    .line 149
     invoke-virtual {v2, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 144
+    .line 150
     invoke-virtual {v2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v4
@@ -1081,7 +1081,7 @@
     :cond_5
     if-eqz v5, :cond_7
 
-    .line 147
+    .line 153
     iget-object v4, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->lastX:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
@@ -1096,7 +1096,7 @@
 
     if-eqz v4, :cond_6
 
-    .line 148
+    .line 154
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
     move-result v6
@@ -1121,7 +1121,7 @@
 
     if-ge v6, v7, :cond_6
 
-    .line 149
+    .line 155
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
     move-result v4
@@ -1132,7 +1132,7 @@
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 150
+    .line 156
     invoke-virtual {v2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v4
@@ -1155,7 +1155,7 @@
 
     invoke-virtual {v3}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 152
+    .line 158
     :cond_6
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->lastX:Landroidx/collection/LongSparseArray;
 
@@ -1169,7 +1169,7 @@
 
     invoke-virtual {v3, v4, v5, v6}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 154
+    .line 160
     :cond_7
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -1191,7 +1191,7 @@
 
     goto/16 :goto_1
 
-    .line 157
+    .line 163
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
@@ -1201,7 +1201,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 158
+    .line 164
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$000(Lorg/telegram/ui/Components/EmojiTabsStrip;)Z
@@ -1217,7 +1217,7 @@
     :cond_a
     add-int/2addr p1, p3
 
-    .line 159
+    .line 165
     iget-object p3, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$100(Lorg/telegram/ui/Components/EmojiTabsStrip;)Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
@@ -1226,7 +1226,7 @@
 
     iget-object p3, p3, Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;->id:Ljava/lang/Long;
 
-    .line 160
+    .line 166
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$100(Lorg/telegram/ui/Components/EmojiTabsStrip;)Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
@@ -1253,7 +1253,7 @@
 
     if-gt v0, v1, :cond_b
 
-    .line 161
+    .line 167
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$100(Lorg/telegram/ui/Components/EmojiTabsStrip;)Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
@@ -1320,7 +1320,7 @@
 
     goto :goto_5
 
-    .line 163
+    .line 169
     :cond_b
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
@@ -1373,7 +1373,7 @@
     :goto_5
     if-eqz p3, :cond_f
 
-    .line 166
+    .line 172
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->lastX:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {p3}, Ljava/lang/Long;->longValue()J
@@ -1404,7 +1404,7 @@
 
     if-eq p2, p1, :cond_c
 
-    .line 167
+    .line 173
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$100(Lorg/telegram/ui/Components/EmojiTabsStrip;)Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
@@ -1433,7 +1433,7 @@
 
     invoke-virtual {p2, p4}, Landroid/view/ViewGroup;->setTranslationX(F)V
 
-    .line 168
+    .line 174
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$100(Lorg/telegram/ui/Components/EmojiTabsStrip;)Lorg/telegram/ui/Components/EmojiTabsStrip$EmojiTabButton;
@@ -1456,7 +1456,7 @@
 
     invoke-virtual {p2}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 170
+    .line 176
     :cond_c
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->lastX:Landroidx/collection/LongSparseArray;
 
@@ -1472,7 +1472,7 @@
 
     goto :goto_7
 
-    .line 174
+    .line 180
     :cond_d
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
@@ -1492,7 +1492,7 @@
 
     sub-int/2addr p4, p2
 
-    .line 175
+    .line 181
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getPaddingLeft()I
 
     move-result p2
@@ -1529,7 +1529,7 @@
 
     float-to-int p2, p2
 
-    .line 176
+    .line 182
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getPaddingLeft()I
 
     move-result p4
@@ -1537,7 +1537,7 @@
     :goto_6
     if-ge p3, p1, :cond_f
 
-    .line 178
+    .line 184
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->this$0:Lorg/telegram/ui/Components/EmojiTabsStrip;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiTabsStrip;->access$000(Lorg/telegram/ui/Components/EmojiTabsStrip;)Z
@@ -1554,7 +1554,7 @@
 
     if-eqz v0, :cond_e
 
-    .line 180
+    .line 186
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v2
@@ -1579,7 +1579,7 @@
 
     invoke-virtual {v0, p4, v2, v3, v4}, Landroid/view/View;->layout(IIII)V
 
-    .line 181
+    .line 187
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -1605,12 +1605,12 @@
 
     const/high16 v1, -0x80000000
 
-    .line 189
+    .line 195
     invoke-static {v0, v1}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
 
-    .line 190
+    .line 196
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getPaddingLeft()I
 
     move-result v1
@@ -1661,7 +1661,7 @@
 
     move v3, v2
 
-    .line 191
+    .line 197
     :goto_1
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
 
@@ -1669,17 +1669,17 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 192
+    .line 198
     invoke-virtual {p0, v3}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
     if-eqz v4, :cond_2
 
-    .line 194
+    .line 200
     invoke-virtual {v4, v0, p2}, Landroid/view/View;->measure(II)V
 
-    .line 195
+    .line 201
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
@@ -1713,13 +1713,13 @@
 
     goto :goto_1
 
-    .line 198
+    .line 204
     :cond_3
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$1;->val$includeAnimated:Z
 
     if-nez v0, :cond_4
 
-    .line 199
+    .line 205
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -1732,7 +1732,7 @@
 
     return-void
 
-    .line 202
+    .line 208
     :cond_4
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 

@@ -382,7 +382,7 @@
         }
     .end annotation
 
-    const-string v0, "key == null"
+    const-string/jumbo v0, "key == null"
 
     .line 55
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
@@ -644,7 +644,7 @@
     :cond_4
     new-instance p1, Ljava/lang/NullPointerException;
 
-    const-string p2, "key == null || value == null"
+    const-string/jumbo p2, "key == null || value == null"
 
     invoke-direct {p1, p2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -661,7 +661,7 @@
         }
     .end annotation
 
-    const-string v0, "key == null"
+    const-string/jumbo v0, "key == null"
 
     .line 167
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

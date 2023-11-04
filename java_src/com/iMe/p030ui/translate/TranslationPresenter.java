@@ -91,7 +91,7 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
     }
 
     public final void loadLanguages(final boolean z) {
-        Observable<Result<List<TranslationLanguage>>> observeOn = this.translationInteractor.languages().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<List<TranslationLanguage>>> observeOn = this.translationInteractor.languages().observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<TranslationLanguage>>, Unit>() { // from class: com.iMe.ui.translate.TranslationPresenter$loadLanguages$$inlined$subscribeWithErrorHandle$default$1
@@ -102,12 +102,12 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<TranslationLanguage>> result) {
-                m1610invoke(result);
+                m1615invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1610invoke(Result<? extends List<TranslationLanguage>> it) {
+            public final void m1615invoke(Result<? extends List<TranslationLanguage>> it) {
                 ResourceManager resourceManager;
                 int collectionSizeOrDefault;
                 String currentLanguage;
@@ -195,7 +195,7 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
             TranslationInteractor translationInteractor = this.translationInteractor;
             String languageCode = this.targetLanguage.getLanguageCode();
             Intrinsics.checkNotNull(languageCode);
-            Observable<Result<Translation>> observeOn = translationInteractor.translate(text, languageCode, this.sourceLanguage.getLanguageCode()).observeOn(this.schedulersProvider.mo1009ui());
+            Observable<Result<Translation>> observeOn = translationInteractor.translate(text, languageCode, this.sourceLanguage.getLanguageCode()).observeOn(this.schedulersProvider.mo1010ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
             final BaseView baseView = (BaseView) getViewState();
             Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Translation>, Unit>() { // from class: com.iMe.ui.translate.TranslationPresenter$translate$$inlined$subscribeWithErrorHandle$default$1
@@ -206,12 +206,12 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Translation> result) {
-                    m1611invoke(result);
+                    m1616invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1611invoke(Result<? extends Translation> it) {
+                public final void m1616invoke(Result<? extends Translation> it) {
                     ResourceManager resourceManager;
                     TranslationLanguageUiModel translationLanguageUiModel;
                     TranslationLanguageUiModel translationLanguageUiModel2;
@@ -310,7 +310,7 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
         TranslationInteractor translationInteractor = this.translationInteractor;
         String languageCode = this.sourceLanguage.getLanguageCode();
         Intrinsics.checkNotNull(languageCode);
-        Observable<Result<Translation>> observeOn = translationInteractor.translate(text, languageCode, this.outLanguage.getLanguageCode()).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Translation>> observeOn = translationInteractor.translate(text, languageCode, this.outLanguage.getLanguageCode()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Translation>, Unit>() { // from class: com.iMe.ui.translate.TranslationPresenter$translateSource$$inlined$subscribeWithErrorHandle$default$1
@@ -321,12 +321,12 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Translation> result) {
-                m1612invoke(result);
+                m1617invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1612invoke(Result<? extends Translation> it) {
+            public final void m1617invoke(Result<? extends Translation> it) {
                 ResourceManager resourceManager;
                 TranslationLanguageUiModel translationLanguageUiModel;
                 TranslationLanguageUiModel translationLanguageUiModel2;

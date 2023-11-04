@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.analytics;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import com.google.android.exoplayer2.source.rtsp.RtspMediaSource;
@@ -187,15 +187,15 @@ public final class PlaybackStats {
         long j9 = 0;
         long j10 = 0;
         int i3 = -1;
-        long j11 = C0479C.TIME_UNSET;
+        long j11 = C0485C.TIME_UNSET;
         int i4 = 0;
         int i5 = 0;
         int i6 = 0;
-        long j12 = C0479C.TIME_UNSET;
+        long j12 = C0485C.TIME_UNSET;
         int i7 = 0;
         int i8 = 0;
         int i9 = 0;
-        long j13 = C0479C.TIME_UNSET;
+        long j13 = C0485C.TIME_UNSET;
         int i10 = 0;
         int i11 = 0;
         int i12 = 0;
@@ -219,11 +219,11 @@ public final class PlaybackStats {
                 i23++;
                 i2 = 16;
             }
-            if (j12 == C0479C.TIME_UNSET) {
+            if (j12 == C0485C.TIME_UNSET) {
                 j12 = playbackStats.firstReportedTimeMs;
             } else {
                 long j16 = playbackStats.firstReportedTimeMs;
-                if (j16 != C0479C.TIME_UNSET) {
+                if (j16 != C0485C.TIME_UNSET) {
                     j12 = Math.min(j12, j16);
                 }
             }
@@ -231,11 +231,11 @@ public final class PlaybackStats {
             i7 += playbackStats.abandonedBeforeReadyCount;
             i8 += playbackStats.endedCount;
             i9 += playbackStats.backgroundJoiningCount;
-            if (j13 == C0479C.TIME_UNSET) {
+            if (j13 == C0485C.TIME_UNSET) {
                 j13 = playbackStats.totalValidJoinTimeMs;
             } else {
                 long j17 = playbackStats.totalValidJoinTimeMs;
-                if (j17 != C0479C.TIME_UNSET) {
+                if (j17 != C0485C.TIME_UNSET) {
                     j13 += j17;
                 }
             }
@@ -244,13 +244,13 @@ public final class PlaybackStats {
             i12 += playbackStats.totalPauseBufferCount;
             i13 += playbackStats.totalSeekCount;
             i14 += playbackStats.totalRebufferCount;
-            if (j11 == C0479C.TIME_UNSET) {
+            if (j11 == C0485C.TIME_UNSET) {
                 j11 = playbackStats.maxRebufferTimeMs;
                 i = i22;
             } else {
                 i = i22;
                 long j18 = playbackStats.maxRebufferTimeMs;
-                if (j18 != C0479C.TIME_UNSET) {
+                if (j18 != C0485C.TIME_UNSET) {
                     j11 = Math.max(j11, j18);
                 }
             }
@@ -365,7 +365,7 @@ public final class PlaybackStats {
     public long getMediaTimeMsAtRealtimeMs(long j) {
         long j2;
         if (this.mediaTimeHistory.isEmpty()) {
-            return C0479C.TIME_UNSET;
+            return C0485C.TIME_UNSET;
         }
         int i = 0;
         while (i < this.mediaTimeHistory.size() && this.mediaTimeHistory.get(i)[0] <= j) {
@@ -391,7 +391,7 @@ public final class PlaybackStats {
 
     public long getMeanJoinTimeMs() {
         int i = this.validJoinTimeCount;
-        return i == 0 ? C0479C.TIME_UNSET : this.totalValidJoinTimeMs / i;
+        return i == 0 ? C0485C.TIME_UNSET : this.totalValidJoinTimeMs / i;
     }
 
     public long getTotalJoinTimeMs() {
@@ -403,7 +403,7 @@ public final class PlaybackStats {
     }
 
     public long getMeanPlayTimeMs() {
-        return this.foregroundPlaybackCount == 0 ? C0479C.TIME_UNSET : getTotalPlayTimeMs() / this.foregroundPlaybackCount;
+        return this.foregroundPlaybackCount == 0 ? C0485C.TIME_UNSET : getTotalPlayTimeMs() / this.foregroundPlaybackCount;
     }
 
     public long getTotalPausedTimeMs() {
@@ -411,7 +411,7 @@ public final class PlaybackStats {
     }
 
     public long getMeanPausedTimeMs() {
-        return this.foregroundPlaybackCount == 0 ? C0479C.TIME_UNSET : getTotalPausedTimeMs() / this.foregroundPlaybackCount;
+        return this.foregroundPlaybackCount == 0 ? C0485C.TIME_UNSET : getTotalPausedTimeMs() / this.foregroundPlaybackCount;
     }
 
     public long getTotalRebufferTimeMs() {
@@ -419,11 +419,11 @@ public final class PlaybackStats {
     }
 
     public long getMeanRebufferTimeMs() {
-        return this.foregroundPlaybackCount == 0 ? C0479C.TIME_UNSET : getTotalRebufferTimeMs() / this.foregroundPlaybackCount;
+        return this.foregroundPlaybackCount == 0 ? C0485C.TIME_UNSET : getTotalRebufferTimeMs() / this.foregroundPlaybackCount;
     }
 
     public long getMeanSingleRebufferTimeMs() {
-        return this.totalRebufferCount == 0 ? C0479C.TIME_UNSET : (getPlaybackStateDurationMs(6) + getPlaybackStateDurationMs(7)) / this.totalRebufferCount;
+        return this.totalRebufferCount == 0 ? C0485C.TIME_UNSET : (getPlaybackStateDurationMs(6) + getPlaybackStateDurationMs(7)) / this.totalRebufferCount;
     }
 
     public long getTotalSeekTimeMs() {
@@ -431,11 +431,11 @@ public final class PlaybackStats {
     }
 
     public long getMeanSeekTimeMs() {
-        return this.foregroundPlaybackCount == 0 ? C0479C.TIME_UNSET : getTotalSeekTimeMs() / this.foregroundPlaybackCount;
+        return this.foregroundPlaybackCount == 0 ? C0485C.TIME_UNSET : getTotalSeekTimeMs() / this.foregroundPlaybackCount;
     }
 
     public long getMeanSingleSeekTimeMs() {
-        return this.totalSeekCount == 0 ? C0479C.TIME_UNSET : getTotalSeekTimeMs() / this.totalSeekCount;
+        return this.totalSeekCount == 0 ? C0485C.TIME_UNSET : getTotalSeekTimeMs() / this.totalSeekCount;
     }
 
     public long getTotalWaitTimeMs() {
@@ -443,7 +443,7 @@ public final class PlaybackStats {
     }
 
     public long getMeanWaitTimeMs() {
-        return this.foregroundPlaybackCount == 0 ? C0479C.TIME_UNSET : getTotalWaitTimeMs() / this.foregroundPlaybackCount;
+        return this.foregroundPlaybackCount == 0 ? C0485C.TIME_UNSET : getTotalWaitTimeMs() / this.foregroundPlaybackCount;
     }
 
     public long getTotalPlayAndWaitTimeMs() {
@@ -451,7 +451,7 @@ public final class PlaybackStats {
     }
 
     public long getMeanPlayAndWaitTimeMs() {
-        return this.foregroundPlaybackCount == 0 ? C0479C.TIME_UNSET : getTotalPlayAndWaitTimeMs() / this.foregroundPlaybackCount;
+        return this.foregroundPlaybackCount == 0 ? C0485C.TIME_UNSET : getTotalPlayAndWaitTimeMs() / this.foregroundPlaybackCount;
     }
 
     public long getTotalElapsedTimeMs() {
@@ -463,7 +463,7 @@ public final class PlaybackStats {
     }
 
     public long getMeanElapsedTimeMs() {
-        return this.playbackCount == 0 ? C0479C.TIME_UNSET : getTotalElapsedTimeMs() / this.playbackCount;
+        return this.playbackCount == 0 ? C0485C.TIME_UNSET : getTotalElapsedTimeMs() / this.playbackCount;
     }
 
     public float getAbandonedBeforeReadyRatio() {

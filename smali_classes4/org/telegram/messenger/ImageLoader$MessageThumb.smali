@@ -24,13 +24,13 @@
 .method public constructor <init>(Ljava/lang/String;Landroid/graphics/drawable/BitmapDrawable;)V
     .locals 0
 
-    .line 4439
+    .line 4440
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4440
+    .line 4441
     iput-object p1, p0, Lorg/telegram/messenger/ImageLoader$MessageThumb;->key:Ljava/lang/String;
 
-    .line 4441
+    .line 4442
     iput-object p2, p0, Lorg/telegram/messenger/ImageLoader$MessageThumb;->drawable:Landroid/graphics/drawable/BitmapDrawable;
 
     return-void

@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 30221
+    .line 30665
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 
     goto/16 :goto_0
 
-    .line 30312
+    .line 30756
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
@@ -46,7 +46,7 @@
 
     goto/16 :goto_0
 
-    .line 30306
+    .line 30750
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDetails;
 
@@ -54,7 +54,7 @@
 
     goto/16 :goto_0
 
-    .line 30330
+    .line 30774
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTitle;
 
@@ -62,7 +62,7 @@
 
     goto/16 :goto_0
 
-    .line 30285
+    .line 30729
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
 
@@ -70,7 +70,7 @@
 
     goto/16 :goto_0
 
-    .line 30318
+    .line 30762
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPullquote;
 
@@ -78,7 +78,7 @@
 
     goto/16 :goto_0
 
-    .line 30249
+    .line 30693
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockFooter;
 
@@ -86,7 +86,7 @@
 
     goto/16 :goto_0
 
-    .line 30243
+    .line 30687
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockParagraph;
 
@@ -94,7 +94,7 @@
 
     goto/16 :goto_0
 
-    .line 30288
+    .line 30732
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate_layer60;
 
@@ -102,7 +102,7 @@
 
     goto/16 :goto_0
 
-    .line 30291
+    .line 30735
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockList_layer82;
 
@@ -110,7 +110,7 @@
 
     goto/16 :goto_0
 
-    .line 30342
+    .line 30786
     :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCover;
 
@@ -118,7 +118,7 @@
 
     goto/16 :goto_0
 
-    .line 30339
+    .line 30783
     :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio_layer82;
 
@@ -126,7 +126,7 @@
 
     goto/16 :goto_0
 
-    .line 30333
+    .line 30777
     :sswitch_b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost_layer82;
 
@@ -134,7 +134,7 @@
 
     goto/16 :goto_0
 
-    .line 30303
+    .line 30747
     :sswitch_c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockBlockquote;
 
@@ -142,7 +142,7 @@
 
     goto/16 :goto_0
 
-    .line 30246
+    .line 30690
     :sswitch_d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockKicker;
 
@@ -150,7 +150,7 @@
 
     goto/16 :goto_0
 
-    .line 30276
+    .line 30720
     :sswitch_e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
 
@@ -158,7 +158,7 @@
 
     goto/16 :goto_0
 
-    .line 30258
+    .line 30702
     :sswitch_f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockRelatedArticles;
 
@@ -166,7 +166,7 @@
 
     goto/16 :goto_0
 
-    .line 30282
+    .line 30726
     :sswitch_10
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockUnsupported;
 
@@ -174,7 +174,7 @@
 
     goto/16 :goto_0
 
-    .line 30297
+    .line 30741
     :sswitch_11
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow_layer82;
 
@@ -182,7 +182,7 @@
 
     goto/16 :goto_0
 
-    .line 30336
+    .line 30780
     :sswitch_12
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage_layer82;
 
@@ -190,7 +190,7 @@
 
     goto/16 :goto_0
 
-    .line 30264
+    .line 30708
     :sswitch_13
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSlideshow;
 
@@ -198,7 +198,7 @@
 
     goto/16 :goto_0
 
-    .line 30240
+    .line 30684
     :sswitch_14
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbedPost;
 
@@ -206,7 +206,7 @@
 
     goto/16 :goto_0
 
-    .line 30261
+    .line 30705
     :sswitch_15
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubheader;
 
@@ -214,7 +214,7 @@
 
     goto/16 :goto_0
 
-    .line 30309
+    .line 30753
     :sswitch_16
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockChannel;
 
@@ -222,7 +222,7 @@
 
     goto/16 :goto_0
 
-    .line 30327
+    .line 30771
     :sswitch_17
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto_layer82;
 
@@ -230,7 +230,7 @@
 
     goto :goto_0
 
-    .line 30279
+    .line 30723
     :sswitch_18
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockList;
 
@@ -238,7 +238,7 @@
 
     goto :goto_0
 
-    .line 30273
+    .line 30717
     :sswitch_19
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockDivider;
 
@@ -246,7 +246,7 @@
 
     goto :goto_0
 
-    .line 30237
+    .line 30681
     :sswitch_1a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo_layer82;
 
@@ -254,7 +254,7 @@
 
     goto :goto_0
 
-    .line 30315
+    .line 30759
     :sswitch_1b
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed_layer60;
 
@@ -262,7 +262,7 @@
 
     goto :goto_0
 
-    .line 30267
+    .line 30711
     :sswitch_1c
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAnchor;
 
@@ -270,7 +270,7 @@
 
     goto :goto_0
 
-    .line 30345
+    .line 30789
     :sswitch_1d
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed_layer82;
 
@@ -278,7 +278,7 @@
 
     goto :goto_0
 
-    .line 30255
+    .line 30699
     :sswitch_1e
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPreformatted;
 
@@ -286,7 +286,7 @@
 
     goto :goto_0
 
-    .line 30252
+    .line 30696
     :sswitch_1f
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockHeader;
 
@@ -294,7 +294,7 @@
 
     goto :goto_0
 
-    .line 30324
+    .line 30768
     :sswitch_20
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockTable;
 
@@ -302,7 +302,7 @@
 
     goto :goto_0
 
-    .line 30348
+    .line 30792
     :sswitch_21
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate;
 
@@ -310,7 +310,7 @@
 
     goto :goto_0
 
-    .line 30294
+    .line 30738
     :sswitch_22
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;
 
@@ -318,7 +318,7 @@
 
     goto :goto_0
 
-    .line 30270
+    .line 30714
     :sswitch_23
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockMap;
 
@@ -326,7 +326,7 @@
 
     goto :goto_0
 
-    .line 30234
+    .line 30678
     :sswitch_24
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockOrderedList;
 
@@ -334,7 +334,7 @@
 
     goto :goto_0
 
-    .line 30300
+    .line 30744
     :sswitch_25
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockSubtitle;
 
@@ -342,7 +342,7 @@
 
     goto :goto_0
 
-    .line 30321
+    .line 30765
     :sswitch_26
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockAudio;
 
@@ -355,7 +355,7 @@
 
     goto :goto_1
 
-    .line 30352
+    .line 30796
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -385,7 +385,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 30355
+    .line 30799
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

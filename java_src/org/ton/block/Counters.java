@@ -48,7 +48,7 @@ public final class Counters implements TlbObject {
     }
 
     public int hashCode() {
-        return (((((UInt.m1969hashCodeimpl(this.lastUpdated) * 31) + ULong.m1991hashCodeimpl(this.total)) * 31) + ULong.m1991hashCodeimpl(this.cnt2048)) * 31) + ULong.m1991hashCodeimpl(this.cnt65536);
+        return (((((UInt.m1974hashCodeimpl(this.lastUpdated) * 31) + ULong.m1996hashCodeimpl(this.total)) * 31) + ULong.m1996hashCodeimpl(this.cnt2048)) * 31) + ULong.m1996hashCodeimpl(this.cnt65536);
     }
 
     private Counters(int i, long j, long j2, long j3) {
@@ -62,37 +62,37 @@ public final class Counters implements TlbObject {
         if (15 != (i & 15)) {
             PluginExceptionsKt.throwMissingFieldException(i, 15, Counters$$serializer.INSTANCE.getDescriptor());
         }
-        this.lastUpdated = uInt.m1971unboximpl();
-        this.total = uLong.m1993unboximpl();
-        this.cnt2048 = uLong2.m1993unboximpl();
-        this.cnt65536 = uLong3.m1993unboximpl();
+        this.lastUpdated = uInt.m1976unboximpl();
+        this.total = uLong.m1998unboximpl();
+        this.cnt2048 = uLong2.m1998unboximpl();
+        this.cnt65536 = uLong3.m1998unboximpl();
     }
 
     public static final /* synthetic */ void write$Self(Counters counters, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, UIntSerializer.INSTANCE, UInt.m1966boximpl(counters.lastUpdated));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, UIntSerializer.INSTANCE, UInt.m1971boximpl(counters.lastUpdated));
         ULongSerializer uLongSerializer = ULongSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uLongSerializer, ULong.m1988boximpl(counters.total));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uLongSerializer, ULong.m1988boximpl(counters.cnt2048));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, uLongSerializer, ULong.m1988boximpl(counters.cnt65536));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uLongSerializer, ULong.m1993boximpl(counters.total));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, uLongSerializer, ULong.m1993boximpl(counters.cnt2048));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, uLongSerializer, ULong.m1993boximpl(counters.cnt65536));
     }
 
     /* renamed from: getLastUpdated-pVg5ArA  reason: not valid java name */
-    public final int m4949getLastUpdatedpVg5ArA() {
+    public final int m5103getLastUpdatedpVg5ArA() {
         return this.lastUpdated;
     }
 
     /* renamed from: getTotal-s-VKNKU  reason: not valid java name */
-    public final long m4950getTotalsVKNKU() {
+    public final long m5104getTotalsVKNKU() {
         return this.total;
     }
 
     /* renamed from: getCnt2048-s-VKNKU  reason: not valid java name */
-    public final long m4947getCnt2048sVKNKU() {
+    public final long m5101getCnt2048sVKNKU() {
         return this.cnt2048;
     }
 
     /* renamed from: getCnt65536-s-VKNKU  reason: not valid java name */
-    public final long m4948getCnt65536sVKNKU() {
+    public final long m5102getCnt65536sVKNKU() {
         return this.cnt65536;
     }
 
@@ -146,10 +146,10 @@ public final class Counters implements TlbObject {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("counters");
-        open.field("last_updated", UInt.m1966boximpl(this.lastUpdated));
-        open.field("total", ULong.m1988boximpl(this.total));
-        open.field("cnt2048", ULong.m1988boximpl(this.cnt2048));
-        open.field("cnt65536", ULong.m1988boximpl(this.cnt65536));
+        open.field("last_updated", UInt.m1971boximpl(this.lastUpdated));
+        open.field("total", ULong.m1993boximpl(this.total));
+        open.field("cnt2048", ULong.m1993boximpl(this.cnt2048));
+        open.field("cnt65536", ULong.m1993boximpl(this.cnt65536));
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

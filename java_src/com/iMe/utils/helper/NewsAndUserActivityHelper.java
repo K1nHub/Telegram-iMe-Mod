@@ -255,7 +255,7 @@ public final class NewsAndUserActivityHelper implements KoinComponent, Notificat
         NewsAndUserActivityHelper newsAndUserActivityHelper = INSTANCE;
         if (DateExtKt.isDayAgo(newsAndUserActivityHelper.getPreferenceHelper().getLastMarkActivityTime())) {
             newsAndUserActivityHelper.getPreferenceHelper().setLastMarkActivityTime(DateExtKt.now());
-            Disposable subscribe = newsAndUserActivityHelper.getNotificationInteractor().sendActivityMark().observeOn(newsAndUserActivityHelper.getSchedulersProvider().mo1009ui()).subscribe();
+            Disposable subscribe = newsAndUserActivityHelper.getNotificationInteractor().sendActivityMark().observeOn(newsAndUserActivityHelper.getSchedulersProvider().mo1010ui()).subscribe();
             Intrinsics.checkNotNullExpressionValue(subscribe, "notificationInteractor\n …             .subscribe()");
             RxExtKt.autoDispose(subscribe, subscriptions);
         }
@@ -313,7 +313,7 @@ public final class NewsAndUserActivityHelper implements KoinComponent, Notificat
     }
 
     private final void prepareAndStartSubscribeFlow() {
-        Observable<TLRPC$User> observeOn = getTelegramApi().getUserInfoByUsername(AppConfiguration$Bots.getNewsBotUsername()).observeOn(getSchedulersProvider().mo1009ui());
+        Observable<TLRPC$User> observeOn = getTelegramApi().getUserInfoByUsername(AppConfiguration$Bots.getNewsBotUsername()).observeOn(getSchedulersProvider().mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "telegramApi\n            …(schedulersProvider.ui())");
         RxExtKt.autoDispose(subscribeWithCommonErrorHandling(observeOn, new Callbacks$Callback1() { // from class: com.iMe.utils.helper.NewsAndUserActivityHelper$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback1
@@ -343,7 +343,7 @@ public final class NewsAndUserActivityHelper implements KoinComponent, Notificat
         getNotificationsController().muteDialog(j, 0, true);
         getMessagesController().setNewsBotHidden(true);
         getNotificationCenter().addObservers(this, activatingBotEvents);
-        getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.m90of("/start", j, null, null, null, false, null, null, null, true, 0, null, false, null));
+        getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.m91of("/start", j, null, null, null, false, null, null, null, true, 0, null, false, null));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

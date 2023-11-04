@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$45\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,898:1\n129#2,5:899\n129#2,5:904\n129#2,5:909\n129#2,5:914\n129#2,5:919\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$45\n*L\n554#1:899,5\n555#1:904,5\n556#1:909,5\n557#1:914,5\n558#1:919,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$45\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,901:1\n129#2,5:902\n129#2,5:907\n129#2,5:912\n129#2,5:917\n129#2,5:922\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$45\n*L\n557#1:902,5\n558#1:907,5\n559#1:912,5\n560#1:917,5\n561#1:922,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 554
+    .line 557
     move-object v3, p2
 
     check-cast v3, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
@@ -101,7 +101,7 @@
 
     move-result-object p2
 
-    .line 555
+    .line 558
     move-object v4, p2
 
     check-cast v4, Lcom/iMe/storage/domain/interactor/crypto/CryptoWalletInteractor;
@@ -117,7 +117,7 @@
 
     move-result-object p2
 
-    .line 556
+    .line 559
     move-object v2, p2
 
     check-cast v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -133,7 +133,7 @@
 
     move-result-object p2
 
-    .line 557
+    .line 560
     move-object v6, p2
 
     check-cast v6, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
@@ -149,12 +149,12 @@
 
     move-result-object p1
 
-    .line 558
+    .line 561
     move-object v5, p1
 
     check-cast v5, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 553
+    .line 556
     new-instance p1, Lcom/iMe/ui/wallet/crypto/address_mismatch/AddressMismatchPresenter;
 
     move-object v1, p1
@@ -167,7 +167,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 552
+    .line 555
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

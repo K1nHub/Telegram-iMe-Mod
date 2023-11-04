@@ -158,9 +158,9 @@ public final class DeserializedTypeAliasDescriptor extends AbstractTypeAliasDesc
         if (KotlinTypeKt.isError(getExpandedType())) {
             return null;
         }
-        ClassifierDescriptor mo2046getDeclarationDescriptor = getExpandedType().getConstructor().mo2046getDeclarationDescriptor();
-        if (mo2046getDeclarationDescriptor instanceof ClassDescriptor) {
-            return (ClassDescriptor) mo2046getDeclarationDescriptor;
+        ClassifierDescriptor mo2051getDeclarationDescriptor = getExpandedType().getConstructor().mo2051getDeclarationDescriptor();
+        if (mo2051getDeclarationDescriptor instanceof ClassDescriptor) {
+            return (ClassDescriptor) mo2051getDeclarationDescriptor;
         }
         return null;
     }

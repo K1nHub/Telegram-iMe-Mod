@@ -21,13 +21,13 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p042ui.ActionBar.SimpleTextView;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.CubicBezierInterpolator;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.SimpleTextView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.CubicBezierInterpolator;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TopicProfileCell.kt */
 /* renamed from: com.iMe.ui.topics.TopicProfileCell */
 /* loaded from: classes3.dex */
@@ -140,7 +140,7 @@ public final class TopicProfileCell extends FrameLayout {
         Property property = FrameLayout.TRANSLATION_X;
         float[] fArr = new float[1];
         float f = BitmapDescriptorFactory.HUE_RED;
-        fArr[0] = AndroidUtilities.m103dp(topicModel != null ? -48.0f : 0.0f);
+        fArr[0] = AndroidUtilities.m105dp(topicModel != null ? -48.0f : 0.0f);
         objectAnimatorArr[0] = ObjectAnimator.ofFloat(selectTopicTextView, property, fArr);
         SimpleTextView selectTopicTextView2 = getSelectTopicTextView();
         Property property2 = FrameLayout.ALPHA;
@@ -150,7 +150,7 @@ public final class TopicProfileCell extends FrameLayout {
         TopicView topicView = getTopicView();
         Property property3 = FrameLayout.TRANSLATION_X;
         float[] fArr3 = new float[1];
-        fArr3[0] = AndroidUtilities.m103dp(topicModel != null ? 0.0f : -48.0f);
+        fArr3[0] = AndroidUtilities.m105dp(topicModel != null ? 0.0f : -48.0f);
         objectAnimatorArr[2] = ObjectAnimator.ofFloat(topicView, property3, fArr3);
         TopicView topicView2 = getTopicView();
         Property property4 = FrameLayout.ALPHA;
@@ -181,13 +181,13 @@ public final class TopicProfileCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m102dp(48), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m104dp(48), 1073741824));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final SimpleTextView initSelectTopicTextView() {
         SimpleTextView simpleTextView = new SimpleTextView(getContext());
-        simpleTextView.setText(LocaleController.getInternalString(C3630R.string.topics_select));
+        simpleTextView.setText(LocaleController.getInternalString(C3634R.string.topics_select));
         simpleTextView.setTextSize(16);
         return simpleTextView;
     }
@@ -196,7 +196,7 @@ public final class TopicProfileCell extends FrameLayout {
     public final ImageView initDeleteImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(C3630R.C3632drawable.msg_add);
+        imageView.setImageResource(C3634R.C3636drawable.msg_add);
         return imageView;
     }
 

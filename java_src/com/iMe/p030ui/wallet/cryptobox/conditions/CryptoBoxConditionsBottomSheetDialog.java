@@ -18,6 +18,7 @@ import com.iMe.p030ui.base.mvp.MvpBottomSheet;
 import com.iMe.p030ui.custom.DetailsIconCellView;
 import com.iMe.p030ui.custom.ImageHeaderView;
 import com.iMe.p030ui.wallet.crypto.create.intro.CreateWalletIntroFragment;
+import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxInfo;
 import com.iMe.storage.domain.utils.system.ResourceManager;
@@ -38,21 +39,21 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkContentCryptoboxConditionsBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ChatActivity;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.Premium.PremiumButtonView;
-import org.telegram.p042ui.LaunchActivity;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ChatActivity;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.Premium.PremiumButtonView;
+import org.telegram.p043ui.LaunchActivity;
 import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: CryptoBoxConditionsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsBottomSheetDialog */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet implements CryptoBoxConditionsView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(CryptoBoxConditionsBottomSheetDialog.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/cryptobox/conditions/CryptoBoxConditionsPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(CryptoBoxConditionsBottomSheetDialog.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkContentCryptoboxConditionsBinding;", 0)), Reflection.property1(new PropertyReference1Impl(CryptoBoxConditionsBottomSheetDialog.class, "actionButton", "getActionButton()Lorg/telegram/ui/Components/Premium/PremiumButtonView;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -66,7 +67,7 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
         return Companion.newInstance(baseFragment, cryptoBoxInfo, tLRPC$Chat);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -76,7 +77,7 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public CryptoBoxConditionsBottomSheetDialog(final com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxInfo r4, final org.telegram.tgnet.TLRPC$Chat r5, org.telegram.p042ui.ActionBar.BaseFragment r6) {
+    public CryptoBoxConditionsBottomSheetDialog(final com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxInfo r4, final org.telegram.tgnet.TLRPC$Chat r5, org.telegram.p043ui.ActionBar.BaseFragment r6) {
         /*
             r3 = this;
             java.lang.String r0 = "cryptoBoxInfo"
@@ -168,13 +169,13 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
         Intrinsics.checkNotNullParameter(explorer, "explorer");
         ForkContentCryptoboxConditionsBinding binding = getBinding();
         binding.viewHeader.setupViewData(new ImageHeaderView.IconData.RemoteImage(tokenLogoUrl), networkIconUrl, name, description);
-        binding.viewRewardPerUserCell.setupViewData(getResourceManager().getString(C3630R.string.cryptobox_conditions_reward_per_user), rewardPerUserText, C3630R.C3632drawable.fork_ic_cryptobox, true);
-        binding.viewMembersCell.setupViewData(getResourceManager().getString(C3630R.string.cryptobox_details_members), membersText, C3630R.C3632drawable.msg_groups, true);
-        binding.viewBalanceCell.setupViewData(getResourceManager().getString(C3630R.string.cryptobox_details_balance), balanceText, C3630R.C3632drawable.fork_ic_donations_24, true);
+        binding.viewRewardPerUserCell.setupViewData(getResourceManager().getString(C3634R.string.cryptobox_conditions_reward_per_user), rewardPerUserText, C3634R.C3636drawable.fork_ic_cryptobox, true);
+        binding.viewMembersCell.setupViewData(getResourceManager().getString(C3634R.string.cryptobox_details_members), membersText, C3634R.C3636drawable.msg_groups, true);
+        binding.viewBalanceCell.setupViewData(getResourceManager().getString(C3634R.string.cryptobox_details_balance), balanceText, C3634R.C3636drawable.fork_ic_donations_24, true);
         DetailsIconCellView viewStartDateCell = binding.viewStartDateCell;
         Intrinsics.checkNotNullExpressionValue(viewStartDateCell, "viewStartDateCell");
-        DetailsIconCellView.setupViewData$default(viewStartDateCell, getResourceManager().getString(C3630R.string.staking_conditions_start), startDate, C3630R.C3632drawable.fork_ic_start, false, 8, null);
-        binding.itemMoreOptions.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3630R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
+        DetailsIconCellView.setupViewData$default(viewStartDateCell, getResourceManager().getString(C3634R.string.staking_conditions_start), startDate, C3634R.C3636drawable.fork_ic_start, false, 8, null);
+        binding.itemMoreOptions.addSubItem(IdFabric$Menu.SCAN_ADDRESS, 0, getResourceManager().getString(C3634R.string.wallet_transaction_details_action_open_etherscan, explorer.getName())).setIcon(explorer.getLogoUrl());
     }
 
     @Override // com.iMe.p030ui.wallet.cryptobox.conditions.CryptoBoxConditionsView
@@ -182,12 +183,12 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
         Integer num;
         Intrinsics.checkNotNullParameter(buttonType, "buttonType");
         PremiumButtonView actionButton = getActionButton();
-        if (Intrinsics.areEqual(buttonType, CryptoBoxActionButtonType.C1528Ok.INSTANCE)) {
+        if (Intrinsics.areEqual(buttonType, CryptoBoxActionButtonType.C1534Ok.INSTANCE)) {
             num = Integer.valueOf(getThemedColor(Theme.key_featuredStickers_addButton));
             actionButton.setOverlayColor(num.intValue());
         } else {
             if (Intrinsics.areEqual(buttonType, CryptoBoxActionButtonType.Taken.INSTANCE) ? true : Intrinsics.areEqual(buttonType, CryptoBoxActionButtonType.Finished.INSTANCE) ? true : Intrinsics.areEqual(buttonType, CryptoBoxActionButtonType.Stopped.INSTANCE)) {
-                num = Integer.valueOf(getResourceManager().getColor(C3630R.C3631color.cell_button_green));
+                num = Integer.valueOf(getResourceManager().getColor(C3634R.C3635color.cell_button_green));
                 actionButton.setOverlayColor(num.intValue());
             } else {
                 num = null;
@@ -267,10 +268,11 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
     }
 
     @Override // com.iMe.manager.wallet.create.WalletCreateManagerView
-    public void openCreateWalletIntroScreen(String linkedWalletAddress, WalletCreationType.Initial walletCreationType) {
+    public void openCreateWalletIntroScreen(BlockchainType blockchainType, String linkedWalletAddress, WalletCreationType.Initial walletCreationType) {
+        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         Intrinsics.checkNotNullParameter(linkedWalletAddress, "linkedWalletAddress");
         Intrinsics.checkNotNullParameter(walletCreationType, "walletCreationType");
-        this.fragment.presentFragment(CreateWalletIntroFragment.Companion.newInstance(walletCreationType, linkedWalletAddress));
+        this.fragment.presentFragment(CreateWalletIntroFragment.Companion.newInstance(linkedWalletAddress, walletCreationType, blockchainType));
     }
 
     @Override // com.iMe.manager.wallet.create.WalletCreateManagerView
@@ -283,7 +285,7 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
 
     @Override // com.iMe.p030ui.wallet.cryptobox.conditions.CryptoBoxConditionsView
     public void showParticipationSuccess() {
-        DialogsFactoryKt.showSuccessAlert(this.fragment, getResourceManager().getString(C3630R.string.cryptobox_participation_success_title), getResourceManager().getString(C3630R.string.cryptobox_participation_success_description), getResourceManager().getString(C3630R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsBottomSheetDialog$$ExternalSyntheticLambda0
+        DialogsFactoryKt.showSuccessAlert(this.fragment, getResourceManager().getString(C3634R.string.cryptobox_participation_success_title), getResourceManager().getString(C3634R.string.cryptobox_participation_success_description), getResourceManager().getString(C3634R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 CryptoBoxConditionsBottomSheetDialog.this.dismiss();
@@ -292,7 +294,7 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
     }
 
     public final PremiumButtonView initActionButton() {
-        return new PremiumButtonView(getContext(), AndroidUtilities.m102dp(4), true, this.resourcesProvider);
+        return new PremiumButtonView(getContext(), AndroidUtilities.m104dp(4), true, this.resourcesProvider);
     }
 
     private final void setupViews() {
@@ -301,11 +303,11 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
         final ActionBarMenuItem setupViews$lambda$12$lambda$11 = binding.itemMoreOptions;
         setupViews$lambda$12$lambda$11.setLongClickEnabled(false);
         setupViews$lambda$12$lambda$11.setSubMenuOpenSide(2);
-        setupViews$lambda$12$lambda$11.setIcon(C3630R.C3632drawable.ic_ab_other);
+        setupViews$lambda$12$lambda$11.setIcon(C3634R.C3636drawable.ic_ab_other);
         setupViews$lambda$12$lambda$11.setIconColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayIcon));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$12$lambda$11, "setupViews$lambda$12$lambda$11");
         ViewExtKt.setCircleRippleBackground(setupViews$lambda$12$lambda$11);
-        setupViews$lambda$12$lambda$11.addSubItem(IdFabric$Menu.COPY, C3630R.C3632drawable.msg_copy, getResourceManager().getString(C3630R.string.cryptobox_copy_name));
+        setupViews$lambda$12$lambda$11.addSubItem(IdFabric$Menu.COPY, C3634R.C3636drawable.msg_copy, getResourceManager().getString(C3634R.string.cryptobox_copy_name));
         ViewExtKt.safeThrottledClick$default(setupViews$lambda$12$lambda$11, 0L, new Function1<View, Unit>() { // from class: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsBottomSheetDialog$setupViews$1$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -325,12 +327,12 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
             }
         }, 1, null);
         setupViews$lambda$12$lambda$11.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsBottomSheetDialog$$ExternalSyntheticLambda3
-            @Override // org.telegram.p042ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
                 CryptoBoxConditionsBottomSheetDialog.setupViews$lambda$12$lambda$11$lambda$10(CryptoBoxConditionsBottomSheetDialog.this, i);
             }
         });
-        setupViews$lambda$12$lambda$11.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3630R.string.AccDescrMoreOptions));
+        setupViews$lambda$12$lambda$11.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
     }
 
     public static final void setupViews$lambda$12$lambda$11$lambda$10(CryptoBoxConditionsBottomSheetDialog this$0, int i) {
@@ -385,7 +387,7 @@ public final class CryptoBoxConditionsBottomSheetDialog extends MvpBottomSheet i
 
     /* compiled from: CryptoBoxConditionsBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsBottomSheetDialog$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

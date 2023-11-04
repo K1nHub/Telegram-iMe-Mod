@@ -13,13 +13,13 @@ import java.util.Collection;
 /* loaded from: classes3.dex */
 public final class CardRequirements extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CardRequirements> CREATOR = new zzg();
-    @SafeParcelable.Field(m1089id = 1)
+    @SafeParcelable.Field(m1090id = 1)
     ArrayList zza;
-    @SafeParcelable.Field(defaultValue = "true", m1089id = 2)
+    @SafeParcelable.Field(defaultValue = "true", m1090id = 2)
     boolean zzb;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     boolean zzc;
-    @SafeParcelable.Field(m1089id = 4)
+    @SafeParcelable.Field(m1090id = 4)
     int zzd;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
@@ -108,7 +108,7 @@ public final class CardRequirements extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public CardRequirements(@SafeParcelable.Param(m1088id = 1) ArrayList arrayList, @SafeParcelable.Param(m1088id = 2) boolean z, @SafeParcelable.Param(m1088id = 3) boolean z2, @SafeParcelable.Param(m1088id = 4) int i) {
+    public CardRequirements(@SafeParcelable.Param(m1089id = 1) ArrayList arrayList, @SafeParcelable.Param(m1089id = 2) boolean z, @SafeParcelable.Param(m1089id = 3) boolean z2, @SafeParcelable.Param(m1089id = 4) int i) {
         this.zza = arrayList;
         this.zzb = z;
         this.zzc = z2;

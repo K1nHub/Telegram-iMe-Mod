@@ -29,7 +29,7 @@ public final class NewCapturedTypeConstructor implements CapturedTypeConstructor
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getDeclarationDescriptor */
-    public ClassifierDescriptor mo2046getDeclarationDescriptor() {
+    public ClassifierDescriptor mo2051getDeclarationDescriptor() {
         return null;
     }
 
@@ -118,7 +118,7 @@ public final class NewCapturedTypeConstructor implements CapturedTypeConstructor
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getSupertypes */
-    public List<UnwrappedType> mo2047getSupertypes() {
+    public List<UnwrappedType> mo2052getSupertypes() {
         List<UnwrappedType> emptyList;
         List<UnwrappedType> list = get_supertypes();
         if (list == null) {
@@ -157,11 +157,11 @@ public final class NewCapturedTypeConstructor implements CapturedTypeConstructor
             @Override // kotlin.jvm.functions.Function0
             public final List<? extends UnwrappedType> invoke() {
                 int collectionSizeOrDefault;
-                List<UnwrappedType> mo2047getSupertypes = NewCapturedTypeConstructor.this.mo2047getSupertypes();
+                List<UnwrappedType> mo2052getSupertypes = NewCapturedTypeConstructor.this.mo2052getSupertypes();
                 KotlinTypeRefiner kotlinTypeRefiner2 = kotlinTypeRefiner;
-                collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(mo2047getSupertypes, 10);
+                collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(mo2052getSupertypes, 10);
                 ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-                for (UnwrappedType unwrappedType : mo2047getSupertypes) {
+                for (UnwrappedType unwrappedType : mo2052getSupertypes) {
                     arrayList.add(unwrappedType.refine(kotlinTypeRefiner2));
                 }
                 return arrayList;

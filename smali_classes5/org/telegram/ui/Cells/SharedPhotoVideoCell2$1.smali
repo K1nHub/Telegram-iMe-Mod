@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;)V
     .locals 0
 
-    .line 510
+    .line 590
     iput-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$1;->this$0:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 514
+    .line 594
     iget-object p1, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2$1;->this$0:Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     iget-object v0, p1, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;->currentMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -44,10 +44,10 @@
 
     const/4 v1, 0x1
 
-    .line 515
+    .line 595
     iput-boolean v1, v0, Lorg/telegram/messenger/MessageObject;->isMediaSpoilersRevealedInSharedMedia:Z
 
-    .line 516
+    .line 596
     :cond_0
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 

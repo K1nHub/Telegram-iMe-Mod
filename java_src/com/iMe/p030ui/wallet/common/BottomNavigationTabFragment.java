@@ -30,7 +30,7 @@ public abstract class BottomNavigationTabFragment extends WalletAuthBaseFragment
         this.bottomNavigationDelegate = bottomNavigationDelegate;
     }
 
-    @Override // com.iMe.p030ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         BottomNavigationDelegate bottomNavigationDelegate = this.bottomNavigationDelegate;
@@ -54,7 +54,7 @@ public abstract class BottomNavigationTabFragment extends WalletAuthBaseFragment
         }
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onDestroyView() {
         super.onDestroyView();
         clearView();

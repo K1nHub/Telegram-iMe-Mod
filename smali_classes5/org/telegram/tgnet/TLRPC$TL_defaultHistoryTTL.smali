@@ -3,21 +3,11 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x43b46b20
-
-
 # instance fields
 .field public period:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
@@ -29,7 +19,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_defaultHistoryTTL;
     .locals 1
 
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_defaultHistoryTTL;->constructor:I
+    const v0, 0x43b46b20
 
     if-eq v0, p1, :cond_1
 
@@ -91,7 +81,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_defaultHistoryTTL;->constructor:I
+    const v0, 0x43b46b20
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 

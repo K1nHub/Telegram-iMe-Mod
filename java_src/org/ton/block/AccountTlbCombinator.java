@@ -10,6 +10,6 @@ public final class AccountTlbCombinator extends TlbCombinator<Account> {
     public static final AccountTlbCombinator INSTANCE = new AccountTlbCombinator();
 
     private AccountTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(Account.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AccountNone.class), AccountNone.INSTANCE), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AccountInfo.class), AccountInfo.Companion));
+        super(Reflection.getOrCreateKotlinClass(Account.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AccountNone.class), AccountNone.INSTANCE), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AccountInfo.class), AccountInfo.Companion));
     }
 }

@@ -117,7 +117,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 705
+    .line 694
     new-instance v0, Lorg/telegram/ui/Components/SimpleFloatPropertyCompat;
 
     sget-object v1, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$$ExternalSyntheticLambda4;->INSTANCE:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$$ExternalSyntheticLambda4;
@@ -136,10 +136,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 3
 
-    .line 735
+    .line 724
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 711
+    .line 700
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v0
@@ -150,25 +150,25 @@
 
     const/4 v0, 0x0
 
-    .line 712
+    .line 701
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetY:F
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 713
+    .line 702
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->pendingOffsetY:F
 
     const/high16 v0, -0x31000000
 
-    .line 714
+    .line 703
     iput v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->pendingSwipeOffsetY:F
 
-    .line 732
+    .line 721
     sget-object v0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$$ExternalSyntheticLambda3;->INSTANCE:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$$ExternalSyntheticLambda3;
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isKeyboardVisible:Lorg/telegram/messenger/GenericProvider;
 
-    .line 737
+    .line 726
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v0
@@ -177,7 +177,7 @@
 
     move-result v0
 
-    .line 738
+    .line 727
     new-instance v1, Landroidx/core/view/GestureDetectorCompat;
 
     new-instance v2, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$1;
@@ -188,52 +188,133 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->gestureDetector:Landroidx/core/view/GestureDetectorCompat;
 
-    .line 813
+    .line 802
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->updateStickyRange()V
 
     return-void
 .end method
 
-.method static synthetic access$1000(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)Landroid/webkit/WebView;
+.method static synthetic access$1000(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$Delegate;
     .locals 0
 
-    .line 704
-    iget-object p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->webView:Landroid/webkit/WebView;
+    .line 693
+    iget-object p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->delegate:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$Delegate;
 
     return-object p0
 .end method
 
-.method static synthetic access$1102(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;Z)Z
+.method static synthetic access$1100(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)F
     .locals 0
 
-    .line 704
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->flingInProgress:Z
+    .line 693
+    iget p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetY:F
 
-    return p1
+    return p0
 .end method
 
 .method static synthetic access$1200(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)F
     .locals 0
 
-    .line 704
+    .line 693
+    iget p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->topActionBarOffsetY:F
+
+    return p0
+.end method
+
+.method static synthetic access$1300(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)Z
+    .locals 0
+
+    .line 693
+    iget-boolean p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isScrolling:Z
+
+    return p0
+.end method
+
+.method static synthetic access$1302(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;Z)Z
+    .locals 0
+
+    .line 693
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isScrolling:Z
+
+    return p1
+.end method
+
+.method static synthetic access$1400(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)Lorg/telegram/messenger/GenericProvider;
+    .locals 0
+
+    .line 693
+    iget-object p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isKeyboardVisible:Lorg/telegram/messenger/GenericProvider;
+
+    return-object p0
+.end method
+
+.method static synthetic access$1500(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)V
+    .locals 0
+
+    .line 693
+    invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->invalidateTranslation()V
+
+    return-void
+.end method
+
+.method static synthetic access$500(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)Z
+    .locals 0
+
+    .line 693
+    iget-boolean p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isSwipeDisallowed:Z
+
+    return p0
+.end method
+
+.method static synthetic access$502(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;Z)Z
+    .locals 0
+
+    .line 693
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isSwipeDisallowed:Z
+
+    return p1
+.end method
+
+.method static synthetic access$600(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)Landroid/webkit/WebView;
+    .locals 0
+
+    .line 693
+    iget-object p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->webView:Landroid/webkit/WebView;
+
+    return-object p0
+.end method
+
+.method static synthetic access$702(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;Z)Z
+    .locals 0
+
+    .line 693
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->flingInProgress:Z
+
+    return p1
+.end method
+
+.method static synthetic access$800(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)F
+    .locals 0
+
+    .line 693
     iget p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->swipeOffsetY:F
 
     return p0
 .end method
 
-.method static synthetic access$1202(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;F)F
+.method static synthetic access$802(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;F)F
     .locals 0
 
-    .line 704
+    .line 693
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->swipeOffsetY:F
 
     return p1
 .end method
 
-.method static synthetic access$1224(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;F)F
+.method static synthetic access$824(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;F)F
     .locals 1
 
-    .line 704
+    .line 693
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->swipeOffsetY:F
 
     sub-float/2addr v0, p1
@@ -243,100 +324,19 @@
     return v0
 .end method
 
-.method static synthetic access$1300(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)I
+.method static synthetic access$900(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)I
     .locals 0
 
-    .line 704
+    .line 693
     iget p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->swipeStickyRange:I
 
     return p0
 .end method
 
-.method static synthetic access$1400(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$Delegate;
-    .locals 0
-
-    .line 704
-    iget-object p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->delegate:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$Delegate;
-
-    return-object p0
-.end method
-
-.method static synthetic access$1500(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)F
-    .locals 0
-
-    .line 704
-    iget p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetY:F
-
-    return p0
-.end method
-
-.method static synthetic access$1600(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)F
-    .locals 0
-
-    .line 704
-    iget p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->topActionBarOffsetY:F
-
-    return p0
-.end method
-
-.method static synthetic access$1700(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)Z
-    .locals 0
-
-    .line 704
-    iget-boolean p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isScrolling:Z
-
-    return p0
-.end method
-
-.method static synthetic access$1702(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;Z)Z
-    .locals 0
-
-    .line 704
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isScrolling:Z
-
-    return p1
-.end method
-
-.method static synthetic access$1800(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)Lorg/telegram/messenger/GenericProvider;
-    .locals 0
-
-    .line 704
-    iget-object p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isKeyboardVisible:Lorg/telegram/messenger/GenericProvider;
-
-    return-object p0
-.end method
-
-.method static synthetic access$1900(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)V
-    .locals 0
-
-    .line 704
-    invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->invalidateTranslation()V
-
-    return-void
-.end method
-
-.method static synthetic access$900(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;)Z
-    .locals 0
-
-    .line 704
-    iget-boolean p0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isSwipeDisallowed:Z
-
-    return p0
-.end method
-
-.method static synthetic access$902(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;Z)Z
-    .locals 0
-
-    .line 704
-    iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isSwipeDisallowed:Z
-
-    return p1
-.end method
-
 .method private invalidateTranslation()V
     .locals 3
 
-    .line 922
+    .line 911
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->topActionBarOffsetY:F
 
     iget v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetY:F
@@ -351,15 +351,15 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 923
+    .line 912
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->scrollListener:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 924
+    .line 913
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 927
+    .line 916
     :cond_0
     invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->getVisibleBulletin()Lorg/telegram/ui/Components/Bulletin;
 
@@ -367,12 +367,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 928
+    .line 917
     invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->getVisibleBulletin()Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v0
 
-    .line 929
+    .line 918
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->updatePosition()V
 
     :cond_1
@@ -382,7 +382,7 @@
 .method private static synthetic lambda$new$0(Ljava/lang/Void;)Ljava/lang/Boolean;
     .locals 0
 
-    .line 732
+    .line 721
     sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     return-object p0
@@ -391,7 +391,7 @@
 .method private synthetic lambda$setOffsetY$1(FFZFLandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 0
 
-    .line 888
+    .line 877
     iput p6, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetY:F
 
     sub-float/2addr p6, p1
@@ -400,7 +400,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 893
+    .line 882
     iget p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->swipeOffsetY:F
 
     const/4 p5, 0x0
@@ -441,7 +441,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->swipeOffsetY:F
 
-    .line 895
+    .line 884
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->scrollAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
@@ -465,7 +465,7 @@
 
     if-nez p1, :cond_1
 
-    .line 896
+    .line 885
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->scrollAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
@@ -480,7 +480,7 @@
 
     invoke-virtual {p1, p2}, Landroidx/dynamicanimation/animation/SpringForce;->setFinalPosition(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 898
+    .line 887
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->invalidateTranslation()V
 
@@ -492,20 +492,20 @@
 
     const/4 p2, 0x0
 
-    .line 901
+    .line 890
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetYAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-nez p3, :cond_0
 
-    .line 904
+    .line 893
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetY:F
 
-    .line 905
+    .line 894
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->invalidateTranslation()V
 
     goto :goto_0
 
-    .line 907
+    .line 896
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->pendingOffsetY:F
 
@@ -516,31 +516,31 @@
 .method private synthetic lambda$stickTo$3(Ljava/lang/Runnable;Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
-    .line 1019
+    .line 1008
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->scrollAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-ne p2, p3, :cond_3
 
     const/4 p2, 0x0
 
-    .line 1020
+    .line 1009
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->scrollAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz p1, :cond_0
 
-    .line 1023
+    .line 1012
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 1026
+    .line 1015
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->scrollEndListener:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_1
 
-    .line 1027
+    .line 1016
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 1030
+    .line 1019
     :cond_1
     iget p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->pendingOffsetY:F
 
@@ -550,27 +550,27 @@
 
     if-eqz p3, :cond_2
 
-    .line 1031
+    .line 1020
     iget-boolean p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isSwipeOffsetAnimationDisallowed:Z
 
     const/4 p4, 0x1
 
-    .line 1032
+    .line 1021
     iput-boolean p4, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isSwipeOffsetAnimationDisallowed:Z
 
-    .line 1033
+    .line 1022
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->setOffsetY(F)V
 
-    .line 1034
+    .line 1023
     iput p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->pendingOffsetY:F
 
-    .line 1035
+    .line 1024
     iput-boolean p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isSwipeOffsetAnimationDisallowed:Z
 
     :cond_2
     const/high16 p1, -0x31000000
 
-    .line 1037
+    .line 1026
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->pendingSwipeOffsetY:F
 
     :cond_3
@@ -580,7 +580,7 @@
 .method private updateStickyRange()V
     .locals 2
 
-    .line 827
+    .line 816
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -611,7 +611,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 6
 
-    .line 951
+    .line 940
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isScrolling:Z
 
     const/4 v1, 0x0
@@ -626,25 +626,25 @@
 
     return v1
 
-    .line 955
+    .line 944
     :cond_0
     invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object v0
 
-    .line 956
+    .line 945
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionIndex()I
 
     move-result v2
 
-    .line 957
+    .line 946
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0x1d
 
     if-lt v3, v4, :cond_1
 
-    .line 958
+    .line 947
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getRawX(I)F
 
     move-result v3
@@ -657,7 +657,7 @@
 
     goto :goto_0
 
-    .line 960
+    .line 949
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
@@ -679,7 +679,7 @@
 
     sub-float/2addr v4, v5
 
-    .line 961
+    .line 950
     invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v5
@@ -694,7 +694,7 @@
 
     invoke-virtual {v0, v5, v2}, Landroid/view/MotionEvent;->setLocation(FF)V
 
-    .line 963
+    .line 952
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->gestureDetector:Landroidx/core/view/GestureDetectorCompat;
 
@@ -702,10 +702,10 @@
 
     move-result v2
 
-    .line 964
+    .line 953
     invoke-virtual {v0}, Landroid/view/MotionEvent;->recycle()V
 
-    .line 966
+    .line 955
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -722,24 +722,24 @@
 
     if-ne v0, v4, :cond_6
 
-    .line 967
+    .line 956
     :cond_2
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isSwipeDisallowed:Z
 
-    .line 968
+    .line 957
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isScrolling:Z
 
-    .line 970
+    .line 959
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->flingInProgress:Z
 
     if-eqz v0, :cond_3
 
-    .line 971
+    .line 960
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->flingInProgress:Z
 
     goto :goto_1
 
-    .line 973
+    .line 962
     :cond_3
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->swipeOffsetY:F
 
@@ -753,7 +753,7 @@
 
     if-gtz v5, :cond_4
 
-    .line 974
+    .line 963
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetY:F
 
     neg-float v0, v0
@@ -783,21 +783,21 @@
 
     const/4 v0, 0x0
 
-    .line 976
+    .line 965
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->stickTo(F)V
 
     goto :goto_1
 
-    .line 978
+    .line 967
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->delegate:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$Delegate;
 
     if-eqz v0, :cond_6
 
-    .line 979
+    .line 968
     invoke-interface {v0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$Delegate;->onDismiss()V
 
-    .line 985
+    .line 974
     :cond_6
     :goto_1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
@@ -808,7 +808,7 @@
 
     if-nez v2, :cond_7
 
-    .line 986
+    .line 975
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
@@ -832,7 +832,7 @@
 .method public getOffsetY()F
     .locals 1
 
-    .line 938
+    .line 927
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetY:F
 
     return v0
@@ -841,7 +841,7 @@
 .method public getSwipeOffsetY()F
     .locals 1
 
-    .line 942
+    .line 931
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->swipeOffsetY:F
 
     return v0
@@ -850,7 +850,7 @@
 .method public getTopActionBarOffsetY()F
     .locals 1
 
-    .line 934
+    .line 923
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->topActionBarOffsetY:F
 
     return v0
@@ -859,7 +859,7 @@
 .method public isSwipeInProgress()Z
     .locals 1
 
-    .line 1044
+    .line 1033
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isScrolling:Z
 
     return v0
@@ -868,10 +868,10 @@
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
     .locals 0
 
-    .line 822
+    .line 811
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 823
+    .line 812
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->updateStickyRange()V
 
     return-void
@@ -880,19 +880,19 @@
 .method public requestDisallowInterceptTouchEvent(Z)V
     .locals 0
 
-    .line 832
+    .line 821
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->requestDisallowInterceptTouchEvent(Z)V
 
     if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    .line 835
+    .line 824
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isSwipeDisallowed:Z
 
     const/4 p1, 0x0
 
-    .line 836
+    .line 825
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isScrolling:Z
 
     :cond_0
@@ -902,7 +902,7 @@
 .method public setDelegate(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$Delegate;)V
     .locals 0
 
-    .line 946
+    .line 935
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->delegate:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$Delegate;
 
     return-void
@@ -920,7 +920,7 @@
         }
     .end annotation
 
-    .line 817
+    .line 806
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isKeyboardVisible:Lorg/telegram/messenger/GenericProvider;
 
     return-void
@@ -929,7 +929,7 @@
 .method public setOffsetY(F)V
     .locals 8
 
-    .line 867
+    .line 856
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->pendingSwipeOffsetY:F
 
     const/high16 v1, -0x31000000
@@ -938,27 +938,27 @@
 
     if-eqz v0, :cond_0
 
-    .line 868
+    .line 857
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->pendingOffsetY:F
 
     return-void
 
-    .line 872
+    .line 861
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetYAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz v0, :cond_1
 
-    .line 873
+    .line 862
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    .line 876
+    .line 865
     :cond_1
     iget v3, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetY:F
 
     sub-float v4, p1, v3
 
-    .line 878
+    .line 867
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->swipeOffsetY:F
 
     add-float/2addr v0, v3
@@ -992,21 +992,21 @@
 
     move v5, v0
 
-    .line 879
+    .line 868
     :goto_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isSwipeOffsetAnimationDisallowed:Z
 
     if-nez v0, :cond_4
 
-    .line 880
+    .line 869
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetYAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz v0, :cond_3
 
-    .line 881
+    .line 870
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    .line 883
+    .line 872
     :cond_3
     new-instance v0, Landroidx/dynamicanimation/animation/SpringAnimation;
 
@@ -1022,19 +1022,19 @@
 
     const/high16 v2, 0x44af0000    # 1400.0f
 
-    .line 885
+    .line 874
     invoke-virtual {v1, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v1
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 886
+    .line 875
     invoke-virtual {v1, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v1
 
-    .line 884
+    .line 873
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/SpringAnimation;->setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
 
     move-result-object v0
@@ -1049,7 +1049,7 @@
 
     invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;FFZF)V
 
-    .line 887
+    .line 876
     invoke-virtual {v0, v7}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
     move-result-object v0
@@ -1060,7 +1060,7 @@
 
     invoke-direct {v1, p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;F)V
 
-    .line 900
+    .line 889
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
     move-result-object p1
@@ -1069,18 +1069,18 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetYAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 910
+    .line 899
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
     goto :goto_1
 
-    .line 912
+    .line 901
     :cond_4
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetY:F
 
     if-eqz v5, :cond_5
 
-    .line 915
+    .line 904
     iget p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->swipeOffsetY:F
 
     const/4 v0, 0x0
@@ -1119,7 +1119,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->swipeOffsetY:F
 
-    .line 917
+    .line 906
     :cond_5
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->invalidateTranslation()V
 
@@ -1130,7 +1130,7 @@
 .method public setScrollEndListener(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 849
+    .line 838
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->scrollEndListener:Ljava/lang/Runnable;
 
     return-void
@@ -1139,7 +1139,7 @@
 .method public setScrollListener(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 845
+    .line 834
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->scrollListener:Ljava/lang/Runnable;
 
     return-void
@@ -1148,7 +1148,7 @@
 .method public setSwipeOffsetAnimationDisallowed(Z)V
     .locals 0
 
-    .line 841
+    .line 830
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->isSwipeOffsetAnimationDisallowed:Z
 
     return-void
@@ -1157,10 +1157,10 @@
 .method public setSwipeOffsetY(F)V
     .locals 0
 
-    .line 862
+    .line 851
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->swipeOffsetY:F
 
-    .line 863
+    .line 852
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->invalidateTranslation()V
 
     return-void
@@ -1169,10 +1169,10 @@
 .method public setTopActionBarOffsetY(F)V
     .locals 0
 
-    .line 857
+    .line 846
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->topActionBarOffsetY:F
 
-    .line 858
+    .line 847
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->invalidateTranslation()V
 
     return-void
@@ -1181,7 +1181,7 @@
 .method public setWebView(Landroid/webkit/WebView;)V
     .locals 0
 
-    .line 853
+    .line 842
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->webView:Landroid/webkit/WebView;
 
     return-void
@@ -1192,7 +1192,7 @@
 
     const/4 v0, 0x0
 
-    .line 993
+    .line 982
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->stickTo(FLjava/lang/Runnable;)V
 
     return-void
@@ -1201,7 +1201,7 @@
 .method public stickTo(FLjava/lang/Runnable;)V
     .locals 2
 
-    .line 997
+    .line 986
     iget v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->swipeOffsetY:F
 
     cmpl-float v0, v0, p1
@@ -1226,28 +1226,28 @@
 
     goto :goto_0
 
-    .line 1006
+    .line 995
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->pendingSwipeOffsetY:F
 
-    .line 1008
+    .line 997
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->offsetYAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz v0, :cond_1
 
-    .line 1009
+    .line 998
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    .line 1011
+    .line 1000
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->scrollAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz v0, :cond_2
 
-    .line 1012
+    .line 1001
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    .line 1014
+    .line 1003
     :cond_2
     new-instance v0, Landroidx/dynamicanimation/animation/SpringAnimation;
 
@@ -1261,19 +1261,19 @@
 
     const/high16 p1, 0x44af0000    # 1400.0f
 
-    .line 1016
+    .line 1005
     invoke-virtual {v1, p1}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object p1
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 1017
+    .line 1006
     invoke-virtual {p1, v1}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object p1
 
-    .line 1015
+    .line 1004
     invoke-virtual {v0, p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
 
     move-result-object p1
@@ -1282,7 +1282,7 @@
 
     invoke-direct {v0, p0, p2}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;Ljava/lang/Runnable;)V
 
-    .line 1018
+    .line 1007
     invoke-virtual {p1, v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
     move-result-object p1
@@ -1291,7 +1291,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->scrollAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 1040
+    .line 1029
     invoke-virtual {p1}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
 
     return-void
@@ -1300,16 +1300,16 @@
     :goto_0
     if-eqz p2, :cond_4
 
-    .line 999
+    .line 988
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
-    .line 1001
+    .line 990
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->scrollEndListener:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_5
 
-    .line 1002
+    .line 991
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_5

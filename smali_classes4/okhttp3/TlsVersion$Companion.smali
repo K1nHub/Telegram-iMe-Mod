@@ -38,7 +38,7 @@
 .method public final forJavaName(Ljava/lang/String;)Lokhttp3/TlsVersion;
     .locals 3
 
-    const-string v0, "javaName"
+    const-string/jumbo v0, "javaName"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -152,8 +152,6 @@
     invoke-direct {v0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
-
-    nop
 
     :pswitch_data_0
     .packed-switch -0x1dfc3f27

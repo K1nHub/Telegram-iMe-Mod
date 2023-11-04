@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$28\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n*L\n1#1,898:1\n44#2:899\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$28\n*L\n411#1:899\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$28\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n*L\n1#1,901:1\n44#2:902\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$28\n*L\n414#1:902\n*E\n"
 .end annotation
 
 
@@ -87,7 +87,7 @@
 
     check-cast p1, Lcom/iMe/model/wallet/crypto/tutorial/TutorialType;
 
-    .line 412
+    .line 415
     new-instance p2, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialPresenter;
 
     invoke-direct {p2, p1}, Lcom/iMe/ui/wallet/crypto/tutorial/CreateWalletTutorialPresenter;-><init>(Lcom/iMe/model/wallet/crypto/tutorial/TutorialType;)V
@@ -98,7 +98,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 411
+    .line 414
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

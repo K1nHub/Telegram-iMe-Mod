@@ -8,30 +8,26 @@ public abstract class TLRPC$BotApp extends TLObject {
     public long hash;
 
     /* renamed from: id */
-    public long f1597id;
+    public long f1599id;
     public TLRPC$Photo photo;
     public String short_name;
     public String title;
 
     public static TLRPC$BotApp TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         TLRPC$BotApp tLRPC$BotApp = i != -1778593322 ? i != 1571189943 ? null : new TLRPC$BotApp() { // from class: org.telegram.tgnet.TLRPC$TL_botAppNotModified
-            public static int constructor = 1571189943;
-
             @Override // org.telegram.tgnet.TLObject
             public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
             }
 
             @Override // org.telegram.tgnet.TLObject
             public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                abstractSerializedData2.writeInt32(constructor);
+                abstractSerializedData2.writeInt32(1571189943);
             }
         } : new TLRPC$BotApp() { // from class: org.telegram.tgnet.TLRPC$TL_botApp
-            public static int constructor = -1778593322;
-
             @Override // org.telegram.tgnet.TLObject
             public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                 this.flags = abstractSerializedData2.readInt32(z2);
-                this.f1597id = abstractSerializedData2.readInt64(z2);
+                this.f1599id = abstractSerializedData2.readInt64(z2);
                 this.access_hash = abstractSerializedData2.readInt64(z2);
                 this.short_name = abstractSerializedData2.readString(z2);
                 this.title = abstractSerializedData2.readString(z2);
@@ -45,9 +41,9 @@ public abstract class TLRPC$BotApp extends TLObject {
 
             @Override // org.telegram.tgnet.TLObject
             public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                abstractSerializedData2.writeInt32(constructor);
+                abstractSerializedData2.writeInt32(-1778593322);
                 abstractSerializedData2.writeInt32(this.flags);
-                abstractSerializedData2.writeInt64(this.f1597id);
+                abstractSerializedData2.writeInt64(this.f1599id);
                 abstractSerializedData2.writeInt64(this.access_hash);
                 abstractSerializedData2.writeString(this.short_name);
                 abstractSerializedData2.writeString(this.title);

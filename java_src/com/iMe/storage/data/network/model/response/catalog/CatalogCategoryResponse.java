@@ -45,7 +45,7 @@ public final class CatalogCategoryResponse {
     }
 
     public int hashCode() {
-        return (ProfileData$$ExternalSyntheticBackport0.m1017m(this.f316id) * 31) + this.title.hashCode();
+        return (ProfileData$$ExternalSyntheticBackport0.m1018m(this.f316id) * 31) + this.title.hashCode();
     }
 
     public String toString() {

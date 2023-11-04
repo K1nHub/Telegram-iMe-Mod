@@ -10,9 +10,9 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class CreditCardExpirationDate extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CreditCardExpirationDate> CREATOR = new zzj();
-    @SafeParcelable.Field(m1089id = 1)
+    @SafeParcelable.Field(m1090id = 1)
     int zza;
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     int zzb;
 
     CreditCardExpirationDate() {
@@ -36,7 +36,7 @@ public final class CreditCardExpirationDate extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public CreditCardExpirationDate(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) int i2) {
+    public CreditCardExpirationDate(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) int i2) {
         this.zza = i;
         this.zzb = i2;
     }

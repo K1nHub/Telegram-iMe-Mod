@@ -52,7 +52,7 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                     if (BuildVars.DEBUG_PRIVATE_VERSION) {
                         throw new RuntimeException("infinity stream reading!!!");
                     }
-                    FileLog.m97e(new RuntimeException("infinity stream reading!!!"));
+                    FileLog.m99e(new RuntimeException("infinity stream reading!!!"));
                 }
                 return 0;
             } else if (i2 == 0) {
@@ -110,7 +110,7 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                     } catch (Exception e2) {
                         e = e2;
                         j3 = j2;
-                        FileLog.m96e((Throwable) e, false);
+                        FileLog.m98e((Throwable) e, false);
                         return (int) j3;
                     }
                 }

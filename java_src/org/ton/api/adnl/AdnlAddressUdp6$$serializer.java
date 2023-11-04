@@ -24,7 +24,7 @@ public final class AdnlAddressUdp6$$serializer implements GeneratedSerializer<Ad
         PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor = new PluginGeneratedSerialDescriptor("adnl.address.udp6", adnlAddressUdp6$$serializer, 2);
         pluginGeneratedSerialDescriptor.addElement("ip", false);
         pluginGeneratedSerialDescriptor.addElement("port", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7424x63816b8c("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7499x63816b8c("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

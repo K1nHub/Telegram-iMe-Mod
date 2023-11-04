@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet$SearchAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 831
+    .line 834
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$SearchAdapter$1;->this$1:Lorg/telegram/ui/Components/InviteMembersBottomSheet$SearchAdapter;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -37,7 +37,7 @@
 
     const/16 p2, 0x30
 
-    .line 834
+    .line 837
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

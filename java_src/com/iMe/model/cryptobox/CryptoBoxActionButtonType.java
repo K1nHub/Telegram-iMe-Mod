@@ -2,7 +2,7 @@ package com.iMe.model.cryptobox;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* compiled from: CryptoBoxActionButtonType.kt */
 /* loaded from: classes3.dex */
 public abstract class CryptoBoxActionButtonType {
@@ -23,11 +23,11 @@ public abstract class CryptoBoxActionButtonType {
     /* compiled from: CryptoBoxActionButtonType.kt */
     /* renamed from: com.iMe.model.cryptobox.CryptoBoxActionButtonType$Ok */
     /* loaded from: classes3.dex */
-    public static final class C1528Ok extends CryptoBoxActionButtonType {
-        public static final C1528Ok INSTANCE = new C1528Ok();
+    public static final class C1534Ok extends CryptoBoxActionButtonType {
+        public static final C1534Ok INSTANCE = new C1534Ok();
 
-        private C1528Ok() {
-            super(C3630R.string.common_ok, null);
+        private C1534Ok() {
+            super(C3634R.string.common_ok, null);
         }
     }
 
@@ -37,7 +37,7 @@ public abstract class CryptoBoxActionButtonType {
         public static final Loading INSTANCE = new Loading();
 
         private Loading() {
-            super(C3630R.string.common_progress_state_title, null);
+            super(C3634R.string.common_progress_state_title, null);
         }
     }
 
@@ -47,7 +47,7 @@ public abstract class CryptoBoxActionButtonType {
         public static final InProgress INSTANCE = new InProgress();
 
         private InProgress() {
-            super(C3630R.string.cryptobox_in_progress, null);
+            super(C3634R.string.cryptobox_in_progress, null);
         }
     }
 
@@ -57,7 +57,7 @@ public abstract class CryptoBoxActionButtonType {
         public static final Taken INSTANCE = new Taken();
 
         private Taken() {
-            super(C3630R.string.cryptobox_taken, null);
+            super(C3634R.string.cryptobox_taken, null);
         }
     }
 
@@ -67,7 +67,7 @@ public abstract class CryptoBoxActionButtonType {
         public static final Get INSTANCE = new Get();
 
         private Get() {
-            super(C3630R.string.cryptobox_get, null);
+            super(C3634R.string.cryptobox_get, null);
         }
     }
 
@@ -77,7 +77,7 @@ public abstract class CryptoBoxActionButtonType {
         public static final Finished INSTANCE = new Finished();
 
         private Finished() {
-            super(C3630R.string.cryptobox_finished, null);
+            super(C3634R.string.cryptobox_finished, null);
         }
     }
 
@@ -87,7 +87,7 @@ public abstract class CryptoBoxActionButtonType {
         public static final Stopped INSTANCE = new Stopped();
 
         private Stopped() {
-            super(C3630R.string.cryptobox_stopped, null);
+            super(C3634R.string.cryptobox_stopped, null);
         }
     }
 
@@ -132,7 +132,7 @@ public abstract class CryptoBoxActionButtonType {
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             public Subscribe(String chatName, long j) {
-                super(C3630R.string.cryptobox_subscribe, C3630R.string.cryptobox_participation_info_subscribe, null);
+                super(C3634R.string.cryptobox_subscribe, C3634R.string.cryptobox_participation_info_subscribe, null);
                 Intrinsics.checkNotNullParameter(chatName, "chatName");
                 this.chatName = chatName;
                 this.chatId = j;
@@ -145,7 +145,7 @@ public abstract class CryptoBoxActionButtonType {
             public static final CreateWallet INSTANCE = new CreateWallet();
 
             private CreateWallet() {
-                super(C3630R.string.cryptobox_create, C3630R.string.cryptobox_participation_info_create, null);
+                super(C3634R.string.cryptobox_create, C3634R.string.cryptobox_participation_info_create, null);
             }
         }
 
@@ -155,7 +155,7 @@ public abstract class CryptoBoxActionButtonType {
             public static final ActivateWallet INSTANCE = new ActivateWallet();
 
             private ActivateWallet() {
-                super(C3630R.string.cryptobox_activate, C3630R.string.cryptobox_participation_info_activate, null);
+                super(C3634R.string.cryptobox_activate, C3634R.string.cryptobox_participation_info_activate, null);
             }
         }
 
@@ -165,7 +165,7 @@ public abstract class CryptoBoxActionButtonType {
             public static final Forwarded INSTANCE = new Forwarded();
 
             private Forwarded() {
-                super(C3630R.string.common_ok, C3630R.string.cryptobox_participation_info_forwarded, null);
+                super(C3634R.string.common_ok, C3634R.string.cryptobox_participation_info_forwarded, null);
             }
         }
     }

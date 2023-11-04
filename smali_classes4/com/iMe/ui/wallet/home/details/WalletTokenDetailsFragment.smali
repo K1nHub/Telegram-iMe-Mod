@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nWalletTokenDetailsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTokenDetailsFragment.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 View.kt\nandroidx/core/view/ViewKt\n+ 6 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 7 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1172:1\n13#2,4:1173\n56#3,6:1177\n56#3,6:1183\n1855#4,2:1189\n1855#4,2:1191\n1855#4,2:1193\n1855#4,2:1195\n1549#4:1205\n1620#4,3:1206\n1855#4,2:1209\n1549#4:1211\n1620#4,3:1212\n1549#4:1215\n1620#4,3:1216\n262#5,2:1197\n262#5,2:1199\n262#5,2:1201\n262#5,2:1203\n162#5,8:1223\n260#5:1231\n162#5,8:1232\n162#5,8:1240\n68#5,2:1248\n315#5:1250\n329#5,4:1251\n316#5:1255\n315#5:1256\n329#5,4:1257\n316#5:1261\n379#5,2:1262\n71#5:1264\n40#5:1265\n56#5:1266\n75#5:1267\n260#5:1268\n11335#6:1219\n11670#6,3:1220\n1#7:1269\n*S KotlinDebug\n*F\n+ 1 WalletTokenDetailsFragment.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment\n*L\n130#1:1173,4\n133#1:1177,6\n136#1:1183,6\n171#1:1189,2\n186#1:1191,2\n192#1:1193,2\n196#1:1195,2\n615#1:1205\n615#1:1206,3\n643#1:1209,2\n655#1:1211\n655#1:1212,3\n676#1:1215\n676#1:1216,3\n324#1:1197,2\n369#1:1199,2\n371#1:1201,2\n554#1:1203,2\n996#1:1223,8\n1004#1:1231\n1020#1:1232,8\n1022#1:1240,8\n1023#1:1248,2\n1024#1:1250\n1024#1:1251,4\n1024#1:1255\n1035#1:1256\n1035#1:1257,4\n1035#1:1261\n1041#1:1262,2\n1023#1:1264\n1023#1:1265\n1023#1:1266\n1023#1:1267\n1067#1:1268\n691#1:1219\n691#1:1220,3\n*E\n"
+    value = "SMAP\nWalletTokenDetailsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 WalletTokenDetailsFragment.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment\n+ 2 Delegates.kt\nmoxy/ktx/DelegatesKt\n+ 3 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 View.kt\nandroidx/core/view/ViewKt\n+ 6 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 7 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1177:1\n13#2,4:1178\n56#3,6:1182\n56#3,6:1188\n1855#4,2:1194\n1855#4,2:1196\n1855#4,2:1198\n1855#4,2:1200\n1549#4:1210\n1620#4,3:1211\n1855#4,2:1214\n1549#4:1216\n1620#4,3:1217\n1549#4:1220\n1620#4,3:1221\n262#5,2:1202\n262#5,2:1204\n262#5,2:1206\n262#5,2:1208\n162#5,8:1228\n260#5:1236\n162#5,8:1237\n162#5,8:1245\n68#5,2:1253\n315#5:1255\n329#5,4:1256\n316#5:1260\n315#5:1261\n329#5,4:1262\n316#5:1266\n379#5,2:1267\n71#5:1269\n40#5:1270\n56#5:1271\n75#5:1272\n260#5:1273\n11335#6:1224\n11670#6,3:1225\n1#7:1274\n*S KotlinDebug\n*F\n+ 1 WalletTokenDetailsFragment.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment\n*L\n130#1:1178,4\n133#1:1182,6\n136#1:1188,6\n171#1:1194,2\n186#1:1196,2\n192#1:1198,2\n196#1:1200,2\n620#1:1210\n620#1:1211,3\n648#1:1214,2\n660#1:1216\n660#1:1217,3\n681#1:1220\n681#1:1221,3\n324#1:1202,2\n369#1:1204,2\n371#1:1206,2\n559#1:1208,2\n1001#1:1228,8\n1009#1:1236\n1025#1:1237,8\n1027#1:1245,8\n1028#1:1253,2\n1029#1:1255\n1029#1:1256,4\n1029#1:1260\n1040#1:1261\n1040#1:1262,4\n1040#1:1266\n1046#1:1267,2\n1028#1:1269\n1028#1:1270\n1028#1:1271\n1028#1:1272\n1072#1:1273\n696#1:1224\n696#1:1225,3\n*E\n"
 .end annotation
 
 
@@ -555,10 +555,10 @@
         }
     .end annotation
 
-    .line 650
+    .line 655
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
-    .line 651
+    .line 656
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;
 
     const/16 v2, 0xa
@@ -575,22 +575,22 @@
 
     new-array v0, v3, [Lcom/iMe/model/wallet/home/pay/BinanceTransactionsGroup;
 
-    .line 652
+    .line 657
     sget-object v1, Lcom/iMe/model/wallet/home/pay/BinanceTransactionsGroup$All;->INSTANCE:Lcom/iMe/model/wallet/home/pay/BinanceTransactionsGroup$All;
 
     aput-object v1, v0, v6
 
-    .line 653
+    .line 658
     sget-object v1, Lcom/iMe/model/wallet/home/pay/BinanceTransactionsGroup$Incoming;->INSTANCE:Lcom/iMe/model/wallet/home/pay/BinanceTransactionsGroup$Incoming;
 
     aput-object v1, v0, v5
 
-    .line 654
+    .line 659
     sget-object v1, Lcom/iMe/model/wallet/home/pay/BinanceTransactionsGroup$Outgoing;->INSTANCE:Lcom/iMe/model/wallet/home/pay/BinanceTransactionsGroup$Outgoing;
 
     aput-object v1, v0, v4
 
-    .line 651
+    .line 656
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -623,18 +623,18 @@
     .line 1621
     check-cast v2, Lcom/iMe/model/wallet/home/pay/BinanceTransactionsGroup;
 
-    .line 656
+    .line 661
     new-instance v3, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;
 
-    .line 657
+    .line 662
     invoke-virtual {v2}, Lcom/iMe/model/wallet/home/pay/BinanceTransactionsGroup;->getId()I
 
     move-result v4
 
-    .line 658
+    .line 663
     new-instance v12, Lcom/iMe/fork/utils/TabbedFragmentPage;
 
-    .line 659
+    .line 664
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v5
@@ -649,15 +649,15 @@
 
     const/4 v7, 0x0
 
-    .line 660
+    .line 665
     sget-object v5, Lcom/iMe/ui/wallet/home/tabs/binancepay/history/WalletBinancePayHistoryFragment;->Companion:Lcom/iMe/ui/wallet/home/tabs/binancepay/history/WalletBinancePayHistoryFragment$Companion;
 
-    .line 661
+    .line 666
     new-instance v8, Lcom/iMe/ui/wallet/home/tabs/binancepay/history/WalletBinancePayHistoryFragment$ScreenType$TokenDetailsTab;
 
     invoke-direct {v8, v2}, Lcom/iMe/ui/wallet/home/tabs/binancepay/history/WalletBinancePayHistoryFragment$ScreenType$TokenDetailsTab;-><init>(Lcom/iMe/model/wallet/home/pay/BinanceTransactionsGroup;)V
 
-    .line 662
+    .line 667
     iget-object v9, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
     check-cast v9, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;
@@ -670,12 +670,12 @@
 
     move-result-object v9
 
-    .line 660
+    .line 665
     invoke-virtual {v5, v8, v9}, Lcom/iMe/ui/wallet/home/tabs/binancepay/history/WalletBinancePayHistoryFragment$Companion;->newInstance(Lcom/iMe/ui/wallet/home/tabs/binancepay/history/WalletBinancePayHistoryFragment$ScreenType;Ljava/lang/String;)Lcom/iMe/ui/wallet/home/tabs/binancepay/history/WalletBinancePayHistoryFragment;
 
     move-result-object v8
 
-    .line 664
+    .line 669
     new-instance v9, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$initPageTabs$1$1;
 
     invoke-direct {v9, p0, v2}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$initPageTabs$1$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;Lcom/iMe/model/wallet/home/pay/BinanceTransactionsGroup;)V
@@ -686,10 +686,10 @@
 
     move-object v5, v12
 
-    .line 658
+    .line 663
     invoke-direct/range {v5 .. v11}, Lcom/iMe/fork/utils/TabbedFragmentPage;-><init>(Ljava/lang/String;ILorg/telegram/ui/ActionBar/BaseFragment;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 656
+    .line 661
     invoke-direct {v3, v4, v12}, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;-><init>(ILcom/iMe/fork/utils/TabbedFragmentPage;)V
 
     .line 1621
@@ -697,7 +697,7 @@
 
     goto :goto_0
 
-    .line 670
+    .line 675
     :cond_0
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;
 
@@ -709,22 +709,22 @@
 
     new-array v0, v0, [Lcom/iMe/model/wallet/details/TransactionsGroup;
 
-    .line 671
+    .line 676
     sget-object v1, Lcom/iMe/model/wallet/details/TransactionsGroup$All;->INSTANCE:Lcom/iMe/model/wallet/details/TransactionsGroup$All;
 
     aput-object v1, v0, v6
 
-    .line 672
+    .line 677
     sget-object v1, Lcom/iMe/model/wallet/details/TransactionsGroup$Incoming;->INSTANCE:Lcom/iMe/model/wallet/details/TransactionsGroup$Incoming;
 
     aput-object v1, v0, v5
 
-    .line 673
+    .line 678
     sget-object v1, Lcom/iMe/model/wallet/details/TransactionsGroup$Outgoing;->INSTANCE:Lcom/iMe/model/wallet/details/TransactionsGroup$Outgoing;
 
     aput-object v1, v0, v4
 
-    .line 674
+    .line 679
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getCryptoPreferenceHelper()Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     move-result-object v1
@@ -742,7 +742,7 @@
     :cond_1
     aput-object v7, v0, v3
 
-    .line 670
+    .line 675
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -775,18 +775,18 @@
     .line 1621
     check-cast v2, Lcom/iMe/model/wallet/details/TransactionsGroup;
 
-    .line 677
+    .line 682
     new-instance v3, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;
 
-    .line 678
+    .line 683
     invoke-virtual {v2}, Lcom/iMe/model/wallet/details/TransactionsGroup;->getId()I
 
     move-result v4
 
-    .line 679
+    .line 684
     new-instance v12, Lcom/iMe/fork/utils/TabbedFragmentPage;
 
-    .line 680
+    .line 685
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v5
@@ -801,15 +801,15 @@
 
     const/4 v7, 0x0
 
-    .line 681
+    .line 686
     sget-object v5, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;->Companion:Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;
 
-    .line 682
+    .line 687
     new-instance v8, Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType$TokenDetailsTab;
 
     invoke-direct {v8, v2}, Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType$TokenDetailsTab;-><init>(Lcom/iMe/model/wallet/details/TransactionsGroup;)V
 
-    .line 683
+    .line 688
     iget-object v9, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
     check-cast v9, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;
@@ -830,12 +830,12 @@
 
     move-result-object v9
 
-    .line 681
+    .line 686
     invoke-virtual {v5, v8, v9}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;->newInstance(Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;
 
     move-result-object v8
 
-    .line 685
+    .line 690
     new-instance v9, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$initPageTabs$2$1;
 
     invoke-direct {v9, p0, v2}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$initPageTabs$2$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;Lcom/iMe/model/wallet/details/TransactionsGroup;)V
@@ -846,10 +846,10 @@
 
     move-object v5, v12
 
-    .line 679
+    .line 684
     invoke-direct/range {v5 .. v11}, Lcom/iMe/fork/utils/TabbedFragmentPage;-><init>(Ljava/lang/String;ILorg/telegram/ui/ActionBar/BaseFragment;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 677
+    .line 682
     invoke-direct {v3, v4, v12}, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;-><init>(ILcom/iMe/fork/utils/TabbedFragmentPage;)V
 
     .line 1621
@@ -857,7 +857,7 @@
 
     goto :goto_1
 
-    .line 691
+    .line 696
     :cond_2
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
 
@@ -882,18 +882,18 @@
 
     aget-object v3, v0, v6
 
-    .line 692
+    .line 697
     new-instance v4, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;
 
-    .line 693
+    .line 698
     invoke-virtual {v3}, Lcom/iMe/model/wallet/details/StakingOperationsGroup;->getId()I
 
     move-result v5
 
-    .line 694
+    .line 699
     new-instance v14, Lcom/iMe/fork/utils/TabbedFragmentPage;
 
-    .line 695
+    .line 700
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v7
@@ -908,13 +908,13 @@
 
     const/4 v9, 0x0
 
-    .line 696
+    .line 701
     sget-object v7, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;->Companion:Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;
 
-    .line 697
+    .line 702
     new-instance v10, Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType$StakingDetailsTab;
 
-    .line 698
+    .line 703
     iget-object v11, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
     check-cast v11, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
@@ -923,15 +923,15 @@
 
     move-result-object v11
 
-    .line 699
+    .line 704
     invoke-virtual {v3}, Lcom/iMe/model/wallet/details/StakingOperationsGroup;->getStakingOperationType()Lcom/iMe/storage/domain/model/staking/StakingOperationType;
 
     move-result-object v12
 
-    .line 697
+    .line 702
     invoke-direct {v10, v11, v12}, Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType$StakingDetailsTab;-><init>(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/storage/domain/model/staking/StakingOperationType;)V
 
-    .line 701
+    .line 706
     iget-object v11, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
     check-cast v11, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
@@ -952,12 +952,12 @@
 
     move-result-object v11
 
-    .line 696
+    .line 701
     invoke-virtual {v7, v10, v11}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;->newInstance(Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;)Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;
 
     move-result-object v10
 
-    .line 703
+    .line 708
     new-instance v11, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$initPageTabs$3$1;
 
     invoke-direct {v11, p0, v3}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$initPageTabs$3$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;Lcom/iMe/model/wallet/details/StakingOperationsGroup;)V
@@ -968,10 +968,10 @@
 
     move-object v7, v14
 
-    .line 694
+    .line 699
     invoke-direct/range {v7 .. v13}, Lcom/iMe/fork/utils/TabbedFragmentPage;-><init>(Ljava/lang/String;ILorg/telegram/ui/ActionBar/BaseFragment;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 692
+    .line 697
     invoke-direct {v4, v5, v14}, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;-><init>(ILcom/iMe/fork/utils/TabbedFragmentPage;)V
 
     .line 11671
@@ -981,22 +981,22 @@
 
     goto :goto_2
 
-    .line 709
+    .line 714
     :cond_3
     instance-of v0, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
 
     if-eqz v0, :cond_5
 
-    .line 710
+    .line 715
     new-instance v0, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;
 
-    .line 711
+    .line 716
     sget v1, Lorg/telegram/messenger/R$id;->wallet_token_details_transactions_all:I
 
-    .line 712
+    .line 717
     new-instance v2, Lcom/iMe/fork/utils/TabbedFragmentPage;
 
-    .line 713
+    .line 718
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v3
@@ -1009,10 +1009,10 @@
 
     const/4 v10, 0x0
 
-    .line 714
+    .line 719
     sget-object v3, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;->Companion:Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;
 
-    .line 715
+    .line 720
     new-instance v5, Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType$CryptoBoxDetailsTab;
 
     iget-object v6, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
@@ -1025,12 +1025,12 @@
 
     invoke-direct {v5, v6}, Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType$CryptoBoxDetailsTab;-><init>(Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxInfo;)V
 
-    .line 714
+    .line 719
     invoke-static {v3, v5, v7, v4, v7}, Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;->newInstance$default(Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment$Companion;Lcom/iMe/model/wallet/transaction/WalletTransactionsScreenType;Lcom/iMe/storage/domain/model/wallet/token/Token;ILjava/lang/Object;)Lcom/iMe/ui/wallet/transaction/WalletTransactionsFragment;
 
     move-result-object v11
 
-    .line 709
+    .line 714
     new-instance v12, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$initPageTabs$4;
 
     invoke-direct {v12, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$initPageTabs$4;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;)V
@@ -1041,13 +1041,13 @@
 
     move-object v8, v2
 
-    .line 712
+    .line 717
     invoke-direct/range {v8 .. v14}, Lcom/iMe/fork/utils/TabbedFragmentPage;-><init>(Ljava/lang/String;ILorg/telegram/ui/ActionBar/BaseFragment;Lkotlin/jvm/functions/Function0;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 710
+    .line 715
     invoke-direct {v0, v1, v2}, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;-><init>(ILcom/iMe/fork/utils/TabbedFragmentPage;)V
 
-    .line 709
+    .line 714
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v1
@@ -1066,15 +1066,15 @@
 .method private final onSubItemClick(I)V
     .locals 2
 
-    .line 1111
+    .line 1116
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
-    .line 1112
+    .line 1117
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;
 
     if-eqz v1, :cond_0
 
-    .line 1113
+    .line 1118
     sget v0, Lcom/iMe/common/IdFabric$Menu;->TOKEN_STATISTICS:I
 
     if-ne p1, v0, :cond_6
@@ -1095,7 +1095,7 @@
 
     goto/16 :goto_0
 
-    .line 1116
+    .line 1121
     :cond_0
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;
 
@@ -1115,7 +1115,7 @@
 
     move-result-object v0
 
-    .line 1118
+    .line 1123
     sget v1, Lcom/iMe/common/IdFabric$Menu;->TOKEN_INFORMATION:I
 
     if-ne p1, v1, :cond_1
@@ -1128,7 +1128,7 @@
 
     goto :goto_0
 
-    .line 1119
+    .line 1124
     :cond_1
     sget v1, Lcom/iMe/common/IdFabric$Menu;->TOKEN_SITE:I
 
@@ -1142,7 +1142,7 @@
 
     goto :goto_0
 
-    .line 1123
+    .line 1128
     :cond_2
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
 
@@ -1154,7 +1154,7 @@
 
     move-result-object v0
 
-    .line 1125
+    .line 1130
     sget v1, Lcom/iMe/common/IdFabric$Menu;->SMART_CONTRACT:I
 
     if-ne p1, v1, :cond_3
@@ -1167,7 +1167,7 @@
 
     goto :goto_0
 
-    .line 1126
+    .line 1131
     :cond_3
     sget v1, Lcom/iMe/common/IdFabric$Menu;->STAKING_WEBSITE:I
 
@@ -1181,13 +1181,13 @@
 
     goto :goto_0
 
-    .line 1130
+    .line 1135
     :cond_4
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
 
     if-eqz v1, :cond_6
 
-    .line 1131
+    .line 1136
     sget v1, Lcom/iMe/common/IdFabric$Menu;->COPY:I
 
     if-ne p1, v1, :cond_5
@@ -1200,7 +1200,7 @@
 
     goto :goto_0
 
-    .line 1132
+    .line 1137
     :cond_5
     sget v1, Lcom/iMe/common/IdFabric$Menu;->SMART_CONTRACT:I
 
@@ -1226,7 +1226,7 @@
 .method private final openUrl(Ljava/lang/String;)V
     .locals 1
 
-    .line 1138
+    .line 1143
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -1239,99 +1239,99 @@
 .method private final setupActionBar()V
     .locals 5
 
-    .line 882
+    .line 887
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAddToContainer(Z)V
 
-    .line 883
+    .line 888
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
 
-    .line 884
+    .line 889
     iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->itemBack:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 885
+    .line 890
     invoke-virtual {v2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setLongClickEnabled(Z)V
 
-    .line 886
+    .line 891
     sget v3, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIcon(I)V
 
     const-string/jumbo v3, "setupActionBar$lambda$56$lambda$52"
 
-    .line 887
+    .line 892
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setCircleRippleBackground(Landroid/view/View;)V
 
-    .line 888
+    .line 893
     new-instance v3, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda0;
 
     invoke-direct {v3, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;)V
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 893
+    .line 898
     sget v3, Lorg/telegram/messenger/R$string;->AccDescrGoBack:I
 
     const-string v4, "AccDescrMoreOptions"
 
-    .line 891
+    .line 896
     invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 896
+    .line 901
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->itemMoreOptions:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 897
+    .line 902
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setLongClickEnabled(Z)V
 
     const/4 v1, 0x2
 
-    .line 898
+    .line 903
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setSubMenuOpenSide(I)V
 
-    .line 899
+    .line 904
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_other:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIcon(I)V
 
     const-string/jumbo v1, "setupActionBar$lambda$56$lambda$55"
 
-    .line 900
+    .line 905
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setCircleRippleBackground(Landroid/view/View;)V
 
-    .line 901
+    .line 906
     invoke-direct {p0, v0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->setupMenuItems(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
 
-    .line 902
+    .line 907
     new-instance v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, v0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 903
+    .line 908
     new-instance v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda9;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda9;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setDelegate(Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;)V
 
-    .line 906
+    .line 911
     sget v1, Lorg/telegram/messenger/R$string;->AccDescrMoreOptions:I
 
-    .line 904
+    .line 909
     invoke-static {v4, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
@@ -1348,7 +1348,7 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 889
+    .line 894
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     return-void
@@ -1361,7 +1361,7 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 902
+    .line 907
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->toggleSubMenu()V
 
     return-void
@@ -1374,7 +1374,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 903
+    .line 908
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->onSubItemClick(I)V
 
     return-void
@@ -1383,27 +1383,27 @@
 .method private final setupCollapsingToolbar()V
     .locals 10
 
-    .line 1016
+    .line 1021
     new-instance v4, Lkotlin/jvm/internal/Ref$FloatRef;
 
     invoke-direct {v4}, Lkotlin/jvm/internal/Ref$FloatRef;-><init>()V
 
-    .line 1017
+    .line 1022
     new-instance v2, Lkotlin/jvm/internal/Ref$FloatRef;
 
     invoke-direct {v2}, Lkotlin/jvm/internal/Ref$FloatRef;-><init>()V
 
-    .line 1018
+    .line 1023
     new-instance v5, Lkotlin/jvm/internal/Ref$BooleanRef;
 
     invoke-direct {v5}, Lkotlin/jvm/internal/Ref$BooleanRef;-><init>()V
 
-    .line 1019
+    .line 1024
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v1
 
-    .line 1020
+    .line 1025
     iget-object v0, v1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
     const-string/jumbo v3, "toolbar"
@@ -1430,12 +1430,12 @@
     .line 168
     invoke-virtual {v0, v7, v6, v8, v9}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 1021
+    .line 1026
     iget-object v0, v1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->constraintLayoutHeader:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     const-string/jumbo v6, "setupCollapsingToolbar$lambda$81$lambda$70"
 
-    .line 1022
+    .line 1027
     invoke-static {v0, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     iget-object v6, v1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->constraintLayoutHeader:Landroidx/constraintlayout/widget/ConstraintLayout;
@@ -1481,7 +1481,7 @@
 
     if-nez v6, :cond_1
 
-    .line 1024
+    .line 1029
     iget-object v0, v1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1495,7 +1495,7 @@
 
     invoke-static {v3, v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 1025
+    .line 1030
     iget v8, v3, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     sget v9, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
@@ -1507,10 +1507,10 @@
     .line 331
     invoke-virtual {v0, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1027
+    .line 1032
     iget-object v0, v1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->imageLogo:Landroidx/appcompat/widget/AppCompatImageView;
 
-    .line 1028
+    .line 1033
     invoke-virtual {v0}, Landroid/widget/ImageView;->getMeasuredHeight()I
 
     move-result v3
@@ -1519,7 +1519,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setPivotX(F)V
 
-    .line 1029
+    .line 1034
     invoke-virtual {v0}, Landroid/widget/ImageView;->getPivotX()F
 
     move-result v3
@@ -1532,24 +1532,24 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setPivotY(F)V
 
-    .line 1031
+    .line 1036
     iget-object v0, v1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->headerUnderlay:Landroid/view/View;
 
-    .line 1032
+    .line 1037
     iget-object v3, v1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
     invoke-virtual {v3}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v3
 
-    .line 1033
+    .line 1038
     sget v8, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     add-int/2addr v3, v8
 
     const/16 v8, 0xa
 
-    .line 1034
+    .line 1039
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -1558,7 +1558,7 @@
 
     const-string/jumbo v8, "setupCollapsingToolbar$l\u2026da$70$lambda$69$lambda$68"
 
-    .line 1035
+    .line 1040
     invoke-static {v0, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 329
@@ -1568,7 +1568,7 @@
 
     invoke-static {v8, v6}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 1036
+    .line 1041
     iput v3, v8, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 331
@@ -1576,16 +1576,16 @@
 
     int-to-float v3, v3
 
-    .line 1038
+    .line 1043
     invoke-virtual {v0, v3}, Landroid/view/View;->setPivotY(F)V
 
-    .line 1039
+    .line 1044
     invoke-virtual {v0, v7}, Landroid/view/View;->setScaleY(F)V
 
-    .line 1041
+    .line 1046
     iget-object v0, v1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->itemBack:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    const-string v3, "itemBack"
+    const-string/jumbo v3, "itemBack"
 
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1613,7 +1613,7 @@
     :goto_0
     mul-int/lit8 v0, v0, 0x3
 
-    .line 1041
+    .line 1046
     iget-object v3, v1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->itemBack:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getWidth()I
@@ -1626,7 +1626,7 @@
 
     iput v0, v4, Lkotlin/jvm/internal/Ref$FloatRef;->element:F
 
-    .line 1042
+    .line 1047
     invoke-static {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->access$updateHeaderMaxTranslation(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;)V
 
     goto :goto_1
@@ -1639,17 +1639,17 @@
 
     invoke-virtual {v0, v3}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 1045
+    .line 1050
     :goto_1
     iget-object v0, v1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    .line 1046
+    .line 1051
     invoke-virtual {v0, v7}, Landroid/widget/TextView;->setPivotX(F)V
 
-    .line 1047
+    .line 1052
     invoke-virtual {v0, v7}, Landroid/widget/TextView;->setPivotY(F)V
 
-    .line 1049
+    .line 1054
     iget-object v6, v1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->appbar:Lcom/google/android/material/appbar/AppBarLayout;
 
     new-instance v7, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda4;
@@ -1688,7 +1688,7 @@
 
     invoke-static {p4, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1051
+    .line 1056
     invoke-static {p6}, Ljava/lang/Math;->abs(I)I
 
     move-result p5
@@ -1705,7 +1705,7 @@
 
     div-float/2addr p5, p6
 
-    .line 1052
+    .line 1057
     iget p6, p1, Lkotlin/jvm/internal/Ref$FloatRef;->element:F
 
     cmpg-float p6, p5, p6
@@ -1728,7 +1728,7 @@
 
     return-void
 
-    .line 1055
+    .line 1060
     :cond_1
     invoke-static {p5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -1742,19 +1742,19 @@
 
     if-eqz p6, :cond_2
 
-    .line 1056
+    .line 1061
     iget-object p6, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->horizontalActionButtons:Lcom/iMe/ui/custom/HorizontalActionButtonsView;
 
     invoke-virtual {p6, v2}, Landroid/widget/LinearLayout;->setElevation(F)V
 
-    .line 1057
+    .line 1062
     iget-object p6, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->dividerActionButtons:Landroid/view/View;
 
     invoke-virtual {p6, v2}, Landroid/view/View;->setElevation(F)V
 
     goto :goto_1
 
-    .line 1059
+    .line 1064
     :cond_2
     iget-object p6, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->horizontalActionButtons:Lcom/iMe/ui/custom/HorizontalActionButtonsView;
 
@@ -1762,12 +1762,12 @@
 
     invoke-virtual {p6, v3}, Landroid/widget/LinearLayout;->setElevation(F)V
 
-    .line 1060
+    .line 1065
     iget-object p6, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->dividerActionButtons:Landroid/view/View;
 
     invoke-virtual {p6, v3}, Landroid/view/View;->setElevation(F)V
 
-    .line 1062
+    .line 1067
     :goto_1
     invoke-virtual {p0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->getRoot()Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
@@ -1812,14 +1812,14 @@
     :cond_4
     move v3, v0
 
-    .line 1063
+    .line 1068
     :goto_3
     iput-boolean v3, p2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->isAppBarCollapsed:Z
 
-    .line 1064
+    .line 1069
     iput p5, p1, Lkotlin/jvm/internal/Ref$FloatRef;->element:F
 
-    .line 1065
+    .line 1070
     iget p1, p3, Lkotlin/jvm/internal/Ref$FloatRef;->element:F
 
     mul-float/2addr p1, p5
@@ -1834,7 +1834,7 @@
 
     sub-float v3, p3, v3
 
-    .line 1067
+    .line 1072
     iget-object v4, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->accountRankBadge:Lcom/iMe/fork/ui/view/AccountLevelBadgeView;
 
     const-string v5, "accountRankBadge"
@@ -1858,21 +1858,21 @@
     :goto_4
     if-eqz v4, :cond_6
 
-    .line 1068
+    .line 1073
     iget-object v4, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->accountRankBadge:Lcom/iMe/fork/ui/view/AccountLevelBadgeView;
 
     sub-float/2addr p3, p5
 
     invoke-virtual {v4, p3}, Landroid/widget/LinearLayout;->setAlpha(F)V
 
-    .line 1070
+    .line 1075
     :cond_6
     iget-object p3, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    .line 1071
+    .line 1076
     invoke-virtual {p3, p1}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 1072
+    .line 1077
     invoke-direct {p2}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getTitleTextTranslationY()I
 
     move-result v4
@@ -1883,21 +1883,21 @@
 
     invoke-virtual {p3, v4}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    .line 1074
+    .line 1079
     iget-object p3, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    .line 1075
+    .line 1080
     invoke-virtual {p3, v3}, Landroid/widget/TextView;->setScaleX(F)V
 
-    .line 1076
+    .line 1081
     invoke-virtual {p3, v3}, Landroid/widget/TextView;->setScaleY(F)V
 
-    .line 1077
+    .line 1082
     invoke-virtual {p3, p1}, Landroid/widget/TextView;->setTranslationX(F)V
 
     const/16 v4, 0x18
 
-    .line 1078
+    .line 1083
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -1908,21 +1908,21 @@
 
     invoke-virtual {p3, v4}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    .line 1080
+    .line 1085
     iget-object p3, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->imageLogo:Landroidx/appcompat/widget/AppCompatImageView;
 
-    .line 1081
+    .line 1086
     invoke-virtual {p3, v3}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 1082
+    .line 1087
     invoke-virtual {p3, v3}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 1083
+    .line 1088
     invoke-virtual {p3, p1}, Landroid/widget/ImageView;->setTranslationX(F)V
 
     const/16 p1, 0x16
 
-    .line 1084
+    .line 1089
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -1933,7 +1933,7 @@
 
     invoke-virtual {p3, p1}, Landroid/widget/ImageView;->setTranslationY(F)V
 
-    .line 1086
+    .line 1091
     iget-object p1, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->constraintLayoutHeader:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     iget p3, p2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->headerMaxTranslationY:F
@@ -1942,30 +1942,30 @@
 
     invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->setTranslationY(F)V
 
-    .line 1087
+    .line 1092
     invoke-direct {p2}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->setupCollapsingToolbarColors()V
 
-    .line 1088
+    .line 1093
     iget-object p0, p0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->headerUnderlay:Landroid/view/View;
 
-    .line 1089
+    .line 1094
     iget-boolean p1, p2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->isAppBarCollapsed:Z
 
     const-wide/16 p2, 0x64
 
     if-eqz p1, :cond_7
 
-    .line 1090
+    .line 1095
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
-    .line 1091
+    .line 1096
     invoke-virtual {p0, p6}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
-    .line 1092
+    .line 1097
     new-instance p1, Landroid/view/animation/AccelerateDecelerateInterpolator;
 
     invoke-direct {p1}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
@@ -1974,12 +1974,12 @@
 
     move-result-object p0
 
-    .line 1093
+    .line 1098
     invoke-virtual {p0, p2, p3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     goto :goto_5
 
-    .line 1094
+    .line 1099
     :cond_7
     invoke-virtual {p0}, Landroid/view/View;->getScaleY()F
 
@@ -1998,17 +1998,17 @@
 
     if-nez p1, :cond_9
 
-    .line 1095
+    .line 1100
     invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
-    .line 1096
+    .line 1101
     invoke-virtual {p0, v2}, Landroid/view/ViewPropertyAnimator;->scaleY(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p0
 
-    .line 1097
+    .line 1102
     new-instance p1, Landroid/view/animation/AccelerateDecelerateInterpolator;
 
     invoke-direct {p1}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
@@ -2017,7 +2017,7 @@
 
     move-result-object p0
 
-    .line 1098
+    .line 1103
     new-instance p1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda8;
 
     invoke-direct {p1, p4}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda8;-><init>(Lkotlin/jvm/internal/Ref$BooleanRef;)V
@@ -2026,7 +2026,7 @@
 
     move-result-object p0
 
-    .line 1099
+    .line 1104
     new-instance p1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda7;
 
     invoke-direct {p1, p4}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda7;-><init>(Lkotlin/jvm/internal/Ref$BooleanRef;)V
@@ -2035,12 +2035,12 @@
 
     move-result-object p0
 
-    .line 1100
+    .line 1105
     invoke-virtual {p0, p2, p3}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     goto :goto_5
 
-    .line 1102
+    .line 1107
     :cond_9
     invoke-virtual {p0, v2}, Landroid/view/View;->setScaleY(F)V
 
@@ -2057,7 +2057,7 @@
 
     const/4 v0, 0x1
 
-    .line 1098
+    .line 1103
     iput-boolean v0, p0, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
     return-void
@@ -2072,7 +2072,7 @@
 
     const/4 v0, 0x0
 
-    .line 1099
+    .line 1104
     iput-boolean v0, p0, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
     return-void
@@ -2081,7 +2081,7 @@
 .method private final setupCollapsingToolbarColors()V
     .locals 4
 
-    .line 862
+    .line 867
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -2090,74 +2090,33 @@
 
     move-result-object v0
 
-    .line 863
+    .line 868
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->isLightStatusBar()Z
 
     move-result v1
 
-    .line 864
+    .line 869
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->isLightStatusBar()Z
 
     move-result v2
 
-    .line 861
+    .line 866
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->setLightStatusBar(Landroid/view/Window;ZZ)V
 
-    .line 866
+    .line 871
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
 
-    .line 867
+    .line 872
     iget-boolean v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->isAppBarCollapsed:Z
 
     if-eqz v1, :cond_0
 
-    .line 868
+    .line 873
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->itemBack:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefaultIcon:I
-
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
-
-    move-result v3
-
-    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIconColor(I)V
-
-    .line 869
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->itemMoreOptions:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
-
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
-
-    move-result v3
-
-    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIconColor(I)V
-
-    .line 870
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
-
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
-
-    move-result v3
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 871
-    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
-
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    goto :goto_0
-
-    .line 873
-    :cond_0
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->itemBack:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
-
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
@@ -2170,14 +2129,12 @@
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
-    move-result v2
+    move-result v3
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIconColor(I)V
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIconColor(I)V
 
     .line 875
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
-
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
@@ -2194,6 +2151,49 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
+    goto :goto_0
+
+    .line 878
+    :cond_0
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->itemBack:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
+
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
+
+    move-result v3
+
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIconColor(I)V
+
+    .line 879
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->itemMoreOptions:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIconColor(I)V
+
+    .line 880
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
+
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
+
+    move-result v3
+
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 881
+    iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
+
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+
     :goto_0
     return-void
 .end method
@@ -2201,12 +2201,12 @@
 .method private final setupColors()V
     .locals 8
 
-    .line 727
+    .line 732
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
 
-    .line 728
+    .line 733
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v1
@@ -2215,7 +2215,7 @@
 
     move-result-object v1
 
-    .line 729
+    .line 734
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2228,7 +2228,7 @@
 
     new-array v4, v3, [I
 
-    .line 730
+    .line 735
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
     invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2241,7 +2241,7 @@
 
     invoke-virtual {v1, v4}, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->setColorSchemeColors([I)V
 
-    .line 733
+    .line 738
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->appbar:Lcom/google/android/material/appbar/AppBarLayout;
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
@@ -2252,7 +2252,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 734
+    .line 739
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->constraintLayoutHeader:Landroidx/constraintlayout/widget/ConstraintLayout;
 
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2261,7 +2261,7 @@
 
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
-    .line 735
+    .line 740
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->dividerActionButtons:Landroid/view/View;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
@@ -2272,7 +2272,7 @@
 
     invoke-virtual {v1, v5}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 736
+    .line 741
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->headerUnderlay:Landroid/view/View;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefault:I
@@ -2283,7 +2283,7 @@
 
     invoke-virtual {v1, v7}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 737
+    .line 742
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->linearContent:Landroid/widget/LinearLayout;
 
     invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2292,7 +2292,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 738
+    .line 743
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->linearHeader:Landroid/widget/LinearLayout;
 
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2301,23 +2301,23 @@
 
     invoke-virtual {v1, v4}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 739
+    .line 744
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->horizontalActionButtons:Lcom/iMe/ui/custom/HorizontalActionButtonsView;
 
-    .line 740
+    .line 745
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 741
+    .line 746
     invoke-virtual {v1}, Lcom/iMe/ui/custom/HorizontalActionButtonsView;->setupColors()V
 
-    .line 743
+    .line 748
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->itemMoreOptions:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    .line 744
+    .line 749
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2326,7 +2326,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->redrawPopup(I)V
 
-    .line 745
+    .line 750
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2335,7 +2335,7 @@
 
     invoke-virtual {v1, v2, v6}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setPopupItemsColor(IZ)V
 
-    .line 746
+    .line 751
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItemIcon:I
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2344,7 +2344,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setPopupItemsColor(IZ)V
 
-    .line 747
+    .line 752
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2355,12 +2355,12 @@
 
     const-string/jumbo v2, "setupColors$lambda$39$lambda$37"
 
-    .line 748
+    .line 753
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setCircleRippleBackground(Landroid/view/View;)V
 
-    .line 750
+    .line 755
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string/jumbo v2, "textSubtitle"
@@ -2369,17 +2369,17 @@
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 751
+    .line 756
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textTransactions:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string/jumbo v1, "setupColors$lambda$39$lambda$38"
 
-    .line 752
+    .line 757
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 753
+    .line 758
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabSelectedText:I
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2388,13 +2388,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 756
+    .line 761
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->setupCollapsingToolbarColors()V
 
-    .line 757
+    .line 762
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
-    .line 758
+    .line 763
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
 
     if-eqz v1, :cond_0
@@ -2403,7 +2403,7 @@
 
     goto :goto_1
 
-    .line 759
+    .line 764
     :cond_0
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
 
@@ -2413,7 +2413,7 @@
 
     goto :goto_1
 
-    .line 760
+    .line 765
     :cond_1
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;
 
@@ -2421,7 +2421,7 @@
 
     goto :goto_0
 
-    .line 761
+    .line 766
     :cond_2
     instance-of v3, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;
 
@@ -2438,12 +2438,12 @@
 .method private final setupCryptoBoxScreenColors()V
     .locals 7
 
-    .line 811
+    .line 816
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
 
-    .line 812
+    .line 817
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string/jumbo v2, "textTitle"
@@ -2452,14 +2452,14 @@
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 813
+    .line 818
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     sget-object v2, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 815
+    .line 820
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->dividerCryptoboxDescription:Landroid/view/View;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
@@ -2470,7 +2470,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 816
+    .line 821
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->linearCryptoboxDescription:Landroidx/appcompat/widget/LinearLayoutCompat;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -2481,17 +2481,17 @@
 
     invoke-virtual {v1, v4}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
-    .line 817
+    .line 822
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textCryptoboxDescriptionTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string/jumbo v4, "setupCryptoBoxScreenColors$lambda$49$lambda$45"
 
-    .line 818
+    .line 823
     invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 819
+    .line 824
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabSelectedText:I
 
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2500,7 +2500,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 821
+    .line 826
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textCryptoboxDescription:Landroidx/appcompat/widget/AppCompatTextView;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -2511,7 +2511,7 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 823
+    .line 828
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->dividerCryptoboxInfo:Landroid/view/View;
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2520,7 +2520,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 824
+    .line 829
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->linearCryptoboxInfo:Landroidx/appcompat/widget/LinearLayoutCompat;
 
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2529,29 +2529,29 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
-    .line 825
+    .line 830
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textCryptoboxInfo:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string/jumbo v2, "setupCryptoBoxScreenColors$lambda$49$lambda$46"
 
-    .line 826
+    .line 831
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 827
+    .line 832
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 829
+    .line 834
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->imageCryptoboxInfo:Landroidx/appcompat/widget/AppCompatImageView;
 
     const-string/jumbo v2, "setupCryptoBoxScreenColors$lambda$49$lambda$47"
 
-    .line 830
+    .line 835
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2560,18 +2560,18 @@
 
     invoke-static {v1, v2}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
 
-    .line 831
+    .line 836
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setCircleRippleBackground(Landroid/view/View;)V
 
-    .line 833
+    .line 838
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->viewChatCell:Lorg/telegram/ui/Cells/TextDetailCell;
 
-    .line 834
+    .line 839
     invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
-    .line 836
+    .line 841
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2580,27 +2580,11 @@
 
     const/4 v6, 0x1
 
-    .line 833
-    invoke-virtual {v1, v2, v6, v4}, Lorg/telegram/ui/Cells/TextDetailCell;->setupColors(IZI)V
-
-    .line 838
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->viewMembersCell:Lorg/telegram/ui/Cells/TextDetailCell;
-
-    .line 839
-    invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
-
-    move-result v2
-
-    .line 841
-    invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
-
-    move-result v4
-
     .line 838
     invoke-virtual {v1, v2, v6, v4}, Lorg/telegram/ui/Cells/TextDetailCell;->setupColors(IZI)V
 
     .line 843
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->viewBalanceCell:Lorg/telegram/ui/Cells/TextDetailCell;
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->viewMembersCell:Lorg/telegram/ui/Cells/TextDetailCell;
 
     .line 844
     invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2616,9 +2600,25 @@
     invoke-virtual {v1, v2, v6, v4}, Lorg/telegram/ui/Cells/TextDetailCell;->setupColors(IZI)V
 
     .line 848
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->viewBalanceCell:Lorg/telegram/ui/Cells/TextDetailCell;
+
+    .line 849
+    invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
+
+    move-result v2
+
+    .line 851
+    invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
+
+    move-result v4
+
+    .line 848
+    invoke-virtual {v1, v2, v6, v4}, Lorg/telegram/ui/Cells/TextDetailCell;->setupColors(IZI)V
+
+    .line 853
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->viewStatusCell:Lorg/telegram/ui/Cells/TextDetailCell;
 
-    .line 850
+    .line 855
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
@@ -2629,12 +2629,12 @@
 
     move-result v1
 
-    .line 852
+    .line 857
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
-    .line 853
+    .line 858
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2645,12 +2645,12 @@
 
     move-result-object v3
 
-    .line 849
+    .line 854
     invoke-virtual {v0, v1, v6, v2, v3}, Lorg/telegram/ui/Cells/TextDetailCell;->setupColors(IZILjava/lang/Integer;)V
 
     const-string/jumbo v1, "setupCryptoBoxScreenColors$lambda$49$lambda$48"
 
-    .line 855
+    .line 860
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v1, 0x0
@@ -2665,12 +2665,12 @@
 .method private final setupCryptoScreenColors()V
     .locals 4
 
-    .line 766
+    .line 771
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
 
-    .line 767
+    .line 772
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->linearCryptoInfo:Landroidx/appcompat/widget/LinearLayoutCompat;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -2681,17 +2681,17 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
-    .line 768
+    .line 773
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textCryptoWalletAddressTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string/jumbo v2, "setupCryptoScreenColors$lambda$41$lambda$40"
 
-    .line 769
+    .line 774
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 770
+    .line 775
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2700,7 +2700,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 772
+    .line 777
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textCryptoWalletAddressValue:Landroidx/appcompat/widget/AppCompatTextView;
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -2709,7 +2709,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 773
+    .line 778
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->dividerCrypto:Landroid/view/View;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
@@ -2726,12 +2726,12 @@
 .method private final setupListeners()V
     .locals 15
 
-    .line 968
+    .line 973
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
 
-    .line 969
+    .line 974
     invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->getRoot()Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
     move-result-object v1
@@ -2742,7 +2742,7 @@
 
     invoke-virtual {v1, v2}, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->setOnRefreshListener(Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout$OnRefreshListener;)V
 
-    .line 970
+    .line 975
     iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->accountRankBadge:Lcom/iMe/fork/ui/view/AccountLevelBadgeView;
 
     const-string v1, "accountRankBadge"
@@ -2761,7 +2761,7 @@
 
     invoke-static/range {v3 .. v8}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
-    .line 971
+    .line 976
     iget-object v9, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->imageStakingInfo:Landroidx/appcompat/widget/AppCompatImageView;
 
     const-string v1, "imageStakingInfo"
@@ -2780,7 +2780,7 @@
 
     invoke-static/range {v9 .. v14}, Lcom/iMe/utils/extentions/common/ViewExtKt;->safeThrottledClick$default(Landroid/view/View;JLkotlin/jvm/functions/Function1;ILjava/lang/Object;)V
 
-    .line 972
+    .line 977
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->viewStatusCell:Lorg/telegram/ui/Cells/TextDetailCell;
 
     const-string/jumbo v0, "viewStatusCell"
@@ -2809,7 +2809,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 969
+    .line 974
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getPresenter()Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;
 
     move-result-object p0
@@ -2822,21 +2822,21 @@
 .method private final setupMenuItems(Lorg/telegram/ui/ActionBar/ActionBarMenuItem;)V
     .locals 5
 
-    .line 914
+    .line 919
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
-    .line 915
+    .line 920
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;
 
     if-eqz v1, :cond_0
 
-    .line 916
+    .line 921
     sget v0, Lcom/iMe/common/IdFabric$Menu;->TOKEN_STATISTICS:I
 
-    .line 917
+    .line 922
     sget v1, Lorg/telegram/messenger/R$drawable;->fork_ic_token_statistic:I
 
-    .line 918
+    .line 923
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v2
@@ -2847,12 +2847,12 @@
 
     move-result-object v2
 
-    .line 915
+    .line 920
     invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     goto/16 :goto_1
 
-    .line 921
+    .line 926
     :cond_0
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Crypto;
 
@@ -2872,20 +2872,20 @@
 
     move-result-object v0
 
-    .line 922
+    .line 927
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->isCoin()Z
 
     move-result v1
 
     if-nez v1, :cond_1
 
-    .line 924
+    .line 929
     sget v1, Lcom/iMe/common/IdFabric$Menu;->TOKEN_INFORMATION:I
 
-    .line 925
+    .line 930
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_info:I
 
-    .line 926
+    .line 931
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v3
@@ -2896,10 +2896,10 @@
 
     move-result-object v3
 
-    .line 923
+    .line 928
     invoke-virtual {p1, v1, v2, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 929
+    .line 934
     :cond_1
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;->getWebsite()Ljava/lang/String;
 
@@ -2921,13 +2921,13 @@
     :goto_0
     if-eqz v0, :cond_5
 
-    .line 931
+    .line 936
     sget v0, Lcom/iMe/common/IdFabric$Menu;->TOKEN_SITE:I
 
-    .line 932
+    .line 937
     sget v1, Lorg/telegram/messenger/R$drawable;->fork_ic_web_26:I
 
-    .line 933
+    .line 938
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v2
@@ -2938,12 +2938,12 @@
 
     move-result-object v2
 
-    .line 930
+    .line 935
     invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     goto :goto_1
 
-    .line 938
+    .line 943
     :cond_3
     instance-of v1, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Staking;
 
@@ -2951,10 +2951,10 @@
 
     if-eqz v1, :cond_4
 
-    .line 940
+    .line 945
     sget v0, Lcom/iMe/common/IdFabric$Menu;->SMART_CONTRACT:I
 
-    .line 942
+    .line 947
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
@@ -2965,20 +2965,20 @@
 
     move-result-object v1
 
-    .line 939
+    .line 944
     invoke-virtual {p1, v0, v2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->contractItem:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 945
+    .line 950
     sget v0, Lcom/iMe/common/IdFabric$Menu;->STAKING_WEBSITE:I
 
-    .line 946
+    .line 951
     sget v1, Lorg/telegram/messenger/R$drawable;->fork_ic_web_26:I
 
-    .line 947
+    .line 952
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v2
@@ -2989,24 +2989,24 @@
 
     move-result-object v2
 
-    .line 944
+    .line 949
     invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     goto :goto_1
 
-    .line 951
+    .line 956
     :cond_4
     instance-of v0, v0, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
 
     if-eqz v0, :cond_6
 
-    .line 953
+    .line 958
     sget v0, Lcom/iMe/common/IdFabric$Menu;->COPY:I
 
-    .line 954
+    .line 959
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_copy:I
 
-    .line 955
+    .line 960
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v3
@@ -3017,13 +3017,13 @@
 
     move-result-object v3
 
-    .line 952
+    .line 957
     invoke-virtual {p1, v0, v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 958
+    .line 963
     sget v0, Lcom/iMe/common/IdFabric$Menu;->SMART_CONTRACT:I
 
-    .line 960
+    .line 965
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v1
@@ -3034,7 +3034,7 @@
 
     move-result-object v1
 
-    .line 957
+    .line 962
     invoke-virtual {p1, v0, v2, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addSubItem(IILjava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     move-result-object p1
@@ -3056,12 +3056,12 @@
 .method private final setupStakingScreenColors()V
     .locals 7
 
-    .line 778
+    .line 783
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
 
-    .line 779
+    .line 784
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->dividerStaking:Landroid/view/View;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
@@ -3072,7 +3072,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 780
+    .line 785
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->linearStakingInfo:Landroidx/appcompat/widget/LinearLayoutCompat;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -3083,17 +3083,17 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
-    .line 781
+    .line 786
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textStakingInfo:Landroidx/appcompat/widget/AppCompatTextView;
 
     const-string/jumbo v2, "setupStakingScreenColors$lambda$44$lambda$42"
 
-    .line 782
+    .line 787
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    .line 783
+    .line 788
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabSelectedText:I
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -3102,12 +3102,12 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 785
+    .line 790
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->imageStakingInfo:Landroidx/appcompat/widget/AppCompatImageView;
 
     const-string/jumbo v3, "setupStakingScreenColors$lambda$44$lambda$43"
 
-    .line 786
+    .line 791
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -3116,20 +3116,20 @@
 
     invoke-static {v1, v2}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->setImageColor(Landroid/widget/ImageView;I)V
 
-    .line 787
+    .line 792
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setCircleRippleBackground(Landroid/view/View;)V
 
-    .line 789
+    .line 794
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->viewAnnualPercentageCell:Lorg/telegram/ui/Cells/TextDetailCell;
 
-    .line 790
+    .line 795
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v3
 
-    .line 792
+    .line 797
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
@@ -3138,49 +3138,49 @@
 
     const/4 v6, 0x1
 
-    .line 789
+    .line 794
     invoke-virtual {v1, v3, v6, v5}, Lorg/telegram/ui/Cells/TextDetailCell;->setupColors(IZI)V
 
-    .line 794
+    .line 799
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->viewProfitCell:Lorg/telegram/ui/Cells/TextDetailCell;
 
-    .line 796
+    .line 801
     iget-boolean v3, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->isProfitTextColored:Z
 
     if-eqz v3, :cond_0
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inGreenCall:I
 
-    .line 795
+    .line 800
     :cond_0
     invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
-    .line 800
+    .line 805
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v3
 
-    .line 794
+    .line 799
     invoke-virtual {v1, v2, v6, v3}, Lorg/telegram/ui/Cells/TextDetailCell;->setupColors(IZI)V
 
-    .line 802
+    .line 807
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->viewFinishedCell:Lorg/telegram/ui/Cells/TextDetailCell;
 
-    .line 803
+    .line 808
     iget v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->statusTextColorKey:I
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 
-    .line 805
+    .line 810
     invoke-virtual {p0, v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
-    .line 802
+    .line 807
     invoke-virtual {v0, v1, v6, v2}, Lorg/telegram/ui/Cells/TextDetailCell;->setupColors(IZI)V
 
     return-void
@@ -3206,12 +3206,12 @@
 .method private final setupViews()V
     .locals 6
 
-    .line 979
+    .line 984
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
 
-    .line 980
+    .line 985
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v1
@@ -3220,7 +3220,7 @@
 
     move-result-object v1
 
-    .line 981
+    .line 986
     iget-object v2, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
     instance-of v2, v2, Lcom/iMe/model/wallet/details/TokenDetailsArgs$Binance;
@@ -3233,18 +3233,18 @@
 
     const/4 v2, 0x0
 
-    .line 984
+    .line 989
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     mul-int/lit8 v5, v4, 0x2
 
-    .line 982
+    .line 987
     invoke-virtual {v1, v2, v4, v5}, Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;->setProgressViewOffset(ZII)V
 
-    .line 988
+    .line 993
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textTransactions:Landroidx/appcompat/widget/AppCompatTextView;
 
-    .line 989
+    .line 994
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v2
@@ -3255,39 +3255,39 @@
 
     move-result-object v2
 
-    .line 988
+    .line 993
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 991
+    .line 996
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->args:Lcom/iMe/model/wallet/details/TokenDetailsArgs;
 
     instance-of v1, v1, Lcom/iMe/model/wallet/details/TokenDetailsArgs$CryptoBox;
 
     if-eqz v1, :cond_0
 
-    .line 992
+    .line 997
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
     const/high16 v1, 0x41900000    # 18.0f
 
-    .line 993
+    .line 998
     invoke-virtual {v0, v3, v1}, Landroidx/appcompat/widget/AppCompatTextView;->setTextSize(IF)V
 
     const-string/jumbo v1, "setupViews$lambda$63$lambda$62"
 
-    .line 994
+    .line 999
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->singleLine(Landroid/widget/TextView;)V
 
-    .line 995
+    .line 1000
     sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     const/16 v1, 0xaa
 
-    .line 996
+    .line 1001
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -3325,7 +3325,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 574
+    .line 579
     sget-object v0, Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment;->Companion:Lcom/iMe/ui/wallet/swap/WalletSwapProtocolsFragment$Companion;
 
     sget-object v1, Lcom/iMe/model/common/ScreenType;->FULLSCREEN:Lcom/iMe/model/common/ScreenType;
@@ -3342,17 +3342,17 @@
 .method private final showQrReceiveDialog(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 2
 
-    .line 1148
+    .line 1153
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
 
-    .line 1147
+    .line 1152
     new-instance v1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$showQrReceiveDialog$1;
 
     invoke-direct {v1, p2, p1, p3, v0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$showQrReceiveDialog$1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;)V
 
-    .line 1159
+    .line 1164
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object p2
@@ -3363,7 +3363,7 @@
 
     move-result-object p2
 
-    .line 1160
+    .line 1165
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object p3
@@ -3374,10 +3374,10 @@
 
     move-result-object p3
 
-    .line 1158
+    .line 1163
     invoke-virtual {v1, p2, p3, p1}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->setupWalletTypeReceive(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1146
+    .line 1151
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
@@ -3399,12 +3399,12 @@
 .method private final updateHeaderMaxTranslation()V
     .locals 3
 
-    .line 1003
+    .line 1008
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
 
-    .line 1004
+    .line 1009
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->horizontalActionButtons:Lcom/iMe/ui/custom/HorizontalActionButtonsView;
 
     const-string v2, "horizontalActionButtons"
@@ -3430,7 +3430,7 @@
     :goto_0
     if-eqz v1, :cond_1
 
-    .line 1005
+    .line 1010
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->dividerActionButtons:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
@@ -3445,7 +3445,7 @@
 
     add-int/2addr v2, v1
 
-    .line 1008
+    .line 1013
     :cond_1
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->linearCryptoInfo:Landroidx/appcompat/widget/LinearLayoutCompat;
 
@@ -3455,7 +3455,7 @@
 
     add-int/2addr v2, v1
 
-    .line 1009
+    .line 1014
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->linearStakingInfo:Landroidx/appcompat/widget/LinearLayoutCompat;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -3464,7 +3464,7 @@
 
     add-int/2addr v2, v1
 
-    .line 1010
+    .line 1015
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->linearCryptoboxInfo:Landroidx/appcompat/widget/LinearLayoutCompat;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -3473,7 +3473,7 @@
 
     add-int/2addr v2, v1
 
-    .line 1011
+    .line 1016
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->linearCryptoboxDescription:Landroidx/appcompat/widget/LinearLayoutCompat;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -3484,7 +3484,7 @@
 
     int-to-float v0, v2
 
-    .line 1007
+    .line 1012
     iput v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->headerMaxTranslationY:F
 
     return-void
@@ -3520,7 +3520,7 @@
 .method public getFragmentContainer()Landroid/view/ViewGroup;
     .locals 2
 
-    .line 628
+    .line 633
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
@@ -3546,7 +3546,7 @@
         }
     .end annotation
 
-    .line 615
+    .line 620
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getPageTabs()Ljava/util/List;
 
     move-result-object v0
@@ -3581,7 +3581,7 @@
     .line 1621
     check-cast v2, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;
 
-    .line 615
+    .line 620
     invoke-virtual {v2}, Lcom/iMe/model/wallet/details/WalletTokenDetailsNavigationTab;->getPage()Lcom/iMe/fork/utils/TabbedFragmentPage;
 
     move-result-object v2
@@ -3632,7 +3632,7 @@
         }
     .end annotation
 
-    .line 633
+    .line 638
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
@@ -3641,38 +3641,38 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 635
+    .line 640
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 636
+    .line 641
     invoke-virtual {v0}, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->getRoot()Landroidx/swiperefreshlayout/widget/SwipeRefreshLayout;
 
     move-result-object v3
 
-    .line 637
+    .line 642
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    .line 638
+    .line 643
     new-instance v5, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda10;
 
     invoke-direct {v5, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$$ExternalSyntheticLambda10;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;)V
 
-    .line 639
+    .line 644
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    .line 635
+    .line 640
     invoke-direct {v2, v3, v4, v5, v6}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;ILorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v3, 0x0
 
     aput-object v2, v1, v3
 
-    .line 634
+    .line 639
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 642
+    .line 647
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->transactionsPager:Lcom/iMe/fork/ui/view/TabbedViewPager;
 
     invoke-virtual {v0}, Lcom/iMe/fork/ui/view/TabbedViewPager;->getThemeDescription()Ljava/util/List;
@@ -3681,7 +3681,7 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 643
+    .line 648
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getNavigationRouter()Lcom/iMe/navigation/common/router/base/NavigationRouter;
 
     move-result-object v0
@@ -3708,7 +3708,7 @@
 
     check-cast v2, Lcom/iMe/ui/base/mvp/MvpFragment;
 
-    .line 644
+    .line 649
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemeDescriptions()Ljava/util/ArrayList;
 
     move-result-object v2
@@ -3955,7 +3955,7 @@
 
     invoke-static {p2, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 623
+    .line 628
     invoke-virtual {p2}, Lcom/iMe/fork/utils/TabbedFragmentPage;->getFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p2
@@ -3964,7 +3964,7 @@
 
     invoke-virtual {p2}, Lcom/iMe/ui/base/mvp/MvpFragment;->onPause()V
 
-    .line 624
+    .line 629
     invoke-virtual {p1}, Lcom/iMe/fork/utils/TabbedFragmentPage;->getFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p1
@@ -3973,7 +3973,7 @@
 
     invoke-virtual {p1}, Lcom/iMe/ui/base/mvp/MvpFragment;->onResume()V
 
-    .line 625
+    .line 630
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getPresenter()Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsPresenter;
 
     move-result-object p1
@@ -4070,45 +4070,45 @@
 .method public onSetupNavigationRouter()V
     .locals 8
 
-    .line 596
+    .line 601
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getNavigationRouter()Lcom/iMe/navigation/common/router/base/NavigationRouter;
 
     move-result-object v0
 
-    .line 597
+    .line 602
     new-instance v1, Lcom/iMe/navigation/common/configuration/NavigationConfiguration;
 
-    .line 599
+    .line 604
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getPageTabs()Ljava/util/List;
 
     move-result-object v2
 
-    .line 597
+    .line 602
     invoke-direct {v1, p0, v2}, Lcom/iMe/navigation/common/configuration/NavigationConfiguration;-><init>(Lcom/iMe/navigation/common/configuration/NavigationViewConfiguration;Ljava/util/List;)V
 
-    .line 596
+    .line 601
     invoke-interface {v0, v1}, Lcom/iMe/navigation/common/router/base/NavigationRouter;->init(Lcom/iMe/navigation/common/configuration/NavigationConfiguration;)V
 
-    .line 602
+    .line 607
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->transactionsPager:Lcom/iMe/fork/ui/view/TabbedViewPager;
 
-    .line 603
+    .line 608
     sget-object v1, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;->TITLE:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;
 
     invoke-virtual {v0, p0, v1}, Lcom/iMe/fork/ui/view/TabbedViewPager;->init(Lcom/iMe/fork/utils/TabbedViewPagerDelegate;Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabType;)V
 
-    .line 604
+    .line 609
     invoke-virtual {v0}, Lcom/iMe/fork/ui/view/TabbedViewPager;->getTabsView()Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     move-result-object v2
 
     const/4 v0, 0x2
 
-    .line 605
+    .line 610
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -4117,20 +4117,20 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->setElevation(F)V
 
-    .line 607
+    .line 612
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabSelectedLine:I
 
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabSelectedText:I
 
-    .line 608
+    .line 613
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabText:I
 
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabSelector:I
 
-    .line 609
+    .line 614
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefault:I
 
-    .line 606
+    .line 611
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->setColors(IIIII)V
 
     return-void
@@ -4139,14 +4139,14 @@
 .method public onTabSelected(I)V
     .locals 2
 
-    .line 587
+    .line 592
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->transactionsPager:Lcom/iMe/fork/ui/view/TabbedViewPager;
 
-    .line 588
+    .line 593
     invoke-virtual {v0}, Lcom/iMe/fork/ui/view/TabbedViewPager;->getPager()Lorg/telegram/ui/Components/ViewPagerFixed;
 
     move-result-object v1
@@ -4155,14 +4155,14 @@
 
     if-eq v1, p1, :cond_0
 
-    .line 589
+    .line 594
     invoke-virtual {v0}, Lcom/iMe/fork/ui/view/TabbedViewPager;->getPager()Lorg/telegram/ui/Components/ViewPagerFixed;
 
     move-result-object v1
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/ViewPagerFixed;->setPosition(I)V
 
-    .line 590
+    .line 595
     invoke-virtual {v0}, Lcom/iMe/fork/ui/view/TabbedViewPager;->getTabsView()Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     move-result-object v0
@@ -4399,25 +4399,29 @@
     return-void
 .end method
 
-.method public openCreateWalletIntroScreen(Ljava/lang/String;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;)V
+.method public openCreateWalletIntroScreen(Lcom/iMe/storage/domain/model/crypto/BlockchainType;Ljava/lang/String;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;)V
     .locals 1
 
-    const-string/jumbo v0, "linkedWalletAddress"
+    const-string v0, "blockchainType"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string/jumbo v0, "walletCreationType"
+    const-string/jumbo v0, "linkedWalletAddress"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 540
+    const-string/jumbo v0, "walletCreationType"
+
+    invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 541
     sget-object v0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;->Companion:Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$Companion;
 
-    invoke-virtual {v0, p2, p1}, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$Companion;->newInstance(Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Ljava/lang/String;)Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;
+    invoke-virtual {v0, p2, p3, p1}, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$Companion;->newInstance(Ljava/lang/String;Lcom/iMe/model/wallet/crypto/create/WalletCreationType$Initial;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment;
 
     move-result-object p1
 
-    .line 539
+    .line 540
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
@@ -4543,10 +4547,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 546
+    .line 551
     sget-object v0, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment;->Companion:Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$Companion;
 
-    .line 547
+    .line 552
     new-instance v1, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$ScreenType$View;
 
     const/4 v2, 0x0
@@ -4555,12 +4559,12 @@
 
     invoke-direct {v1, p1, v2, v3, v2}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$ScreenType$View;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenDetailed;Ljava/lang/Boolean;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 546
+    .line 551
     invoke-virtual {v0, v1}, Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$Companion;->newInstance(Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment$ScreenType;)Lcom/iMe/ui/wallet/crypto/token/TokenManagementFragment;
 
     move-result-object p1
 
-    .line 545
+    .line 550
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     return-void
@@ -5030,7 +5034,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 553
+    .line 558
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
@@ -5039,7 +5043,7 @@
 
     const-string/jumbo v1, "setupRankBadge$lambda$23"
 
-    .line 554
+    .line 559
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz p1, :cond_0
@@ -5055,7 +5059,7 @@
     :goto_0
     invoke-virtual {v0, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 555
+    .line 560
     invoke-virtual {v0, p2}, Lcom/iMe/fork/ui/view/AccountLevelBadgeView;->setAccountLevel(Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
 
     return-void
@@ -5509,10 +5513,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 561
+    .line 566
     new-instance v0, Lcom/iMe/fork/ui/dialog/AccountLevelAlert;
 
-    .line 562
+    .line 567
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -5521,20 +5525,20 @@
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 564
+    .line 569
     new-instance v2, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$showAccountLevelDialog$1;
 
     invoke-direct {v2, p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$showAccountLevelDialog$1;-><init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;)V
 
-    .line 561
+    .line 566
     invoke-direct {v0, v1, p1, v2}, Lcom/iMe/fork/ui/dialog/AccountLevelAlert;-><init>(Landroid/content/Context;Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;Lcom/iMe/fork/ui/dialog/AccountLevelAlert$OnVisibilityChangedListener;)V
 
-    .line 568
+    .line 573
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 560
+    .line 565
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showDialog(Landroid/app/Dialog;)Landroid/app/Dialog;
 
     return-void
@@ -5753,7 +5757,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 573
+    .line 578
     invoke-virtual {p0}, Lcom/iMe/ui/base/wallet_auth/WalletAuthBaseFragment;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     move-result-object v0
@@ -5770,7 +5774,7 @@
 .method public showRefreshing(Z)V
     .locals 1
 
-    .line 583
+    .line 588
     invoke-direct {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     move-result-object v0
@@ -5825,7 +5829,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "items"
+    const-string/jumbo v0, "items"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -5850,7 +5854,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 579
+    .line 584
     sget-object v0, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;->Companion:Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog$Companion;
 
     invoke-virtual {v0, p1, p0}, Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog$Companion;->newInstance(Lcom/iMe/model/staking/StakingDetailsItem;Lorg/telegram/ui/ActionBar/BaseFragment;)Lcom/iMe/ui/wallet/staking/conditions/StakingConditionsBottomSheetDialog;

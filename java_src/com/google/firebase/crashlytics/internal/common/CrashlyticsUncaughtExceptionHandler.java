@@ -44,13 +44,13 @@ class CrashlyticsUncaughtExceptionHandler implements Thread.UncaughtExceptionHan
                 if (shouldRecordUncaughtException(thread, th)) {
                     this.crashListener.onUncaughtException(this.settingsDataProvider, thread, th);
                 } else {
-                    Logger.getLogger().m1038d("Uncaught exception will not be recorded by Crashlytics.");
+                    Logger.getLogger().m1039d("Uncaught exception will not be recorded by Crashlytics.");
                 }
             } catch (Exception e) {
-                Logger.getLogger().m1035e("An error occurred in the uncaught exception handler", e);
+                Logger.getLogger().m1036e("An error occurred in the uncaught exception handler", e);
             }
         } finally {
-            Logger.getLogger().m1038d(r0);
+            Logger.getLogger().m1039d(r0);
             this.defaultHandler.uncaughtException(thread, th);
             this.isHandlingException.set(false);
         }
@@ -63,13 +63,13 @@ class CrashlyticsUncaughtExceptionHandler implements Thread.UncaughtExceptionHan
 
     private boolean shouldRecordUncaughtException(Thread thread, Throwable th) {
         if (thread == null) {
-            Logger.getLogger().m1036e("Crashlytics will not record uncaught exception; null thread");
+            Logger.getLogger().m1037e("Crashlytics will not record uncaught exception; null thread");
             return false;
         } else if (th == null) {
-            Logger.getLogger().m1036e("Crashlytics will not record uncaught exception; null throwable");
+            Logger.getLogger().m1037e("Crashlytics will not record uncaught exception; null throwable");
             return false;
         } else if (this.nativeComponent.hasCrashDataForCurrentSession()) {
-            Logger.getLogger().m1038d("Crashlytics will not record uncaught exception; native crash exists for session.");
+            Logger.getLogger().m1039d("Crashlytics will not record uncaught exception; native crash exists for session.");
             return false;
         } else {
             return true;

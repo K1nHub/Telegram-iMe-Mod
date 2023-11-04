@@ -73,7 +73,7 @@ public final class Cookie {
     }
 
     public int hashCode() {
-        return ((((((((((((((((527 + this.name.hashCode()) * 31) + this.value.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.expiresAt)) * 31) + this.domain.hashCode()) * 31) + this.path.hashCode()) * 31) + JsonLiteral$$ExternalSyntheticBackport0.m126m(this.secure)) * 31) + JsonLiteral$$ExternalSyntheticBackport0.m126m(this.httpOnly)) * 31) + JsonLiteral$$ExternalSyntheticBackport0.m126m(this.persistent)) * 31) + JsonLiteral$$ExternalSyntheticBackport0.m126m(this.hostOnly);
+        return ((((((((((((((((527 + this.name.hashCode()) * 31) + this.value.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.expiresAt)) * 31) + this.domain.hashCode()) * 31) + this.path.hashCode()) * 31) + JsonLiteral$$ExternalSyntheticBackport0.m128m(this.secure)) * 31) + JsonLiteral$$ExternalSyntheticBackport0.m128m(this.httpOnly)) * 31) + JsonLiteral$$ExternalSyntheticBackport0.m128m(this.persistent)) * 31) + JsonLiteral$$ExternalSyntheticBackport0.m128m(this.hostOnly);
     }
 
     public String toString() {

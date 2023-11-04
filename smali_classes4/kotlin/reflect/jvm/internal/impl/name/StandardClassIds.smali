@@ -150,7 +150,7 @@
     .line 9
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v1, "kotlin"
+    const-string/jumbo v1, "kotlin"
 
     invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -207,7 +207,7 @@
 
     sput-object v3, Lkotlin/reflect/jvm/internal/impl/name/StandardClassIds;->BASE_RANGES_PACKAGE:Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v4, "jvm"
+    const-string/jumbo v4, "jvm"
 
     .line 13
     invoke-static {v4}, Lkotlin/reflect/jvm/internal/impl/name/Name;->identifier(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;

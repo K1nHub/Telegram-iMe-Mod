@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->sendInternal(Ljava/lang/String;JLcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    value = Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->sendInternal(Ljava/lang/String;JILcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,15 +17,17 @@
     c = "com.iMe.storage.data.manager.ton.TonControllerImpl"
     f = "TonControllerImpl.kt"
     l = {
-        0x9f,
-        0xa2,
-        0xa1
+        0xa6,
+        0xa9,
+        0xa8
     }
     m = "sendInternal"
 .end annotation
 
 
 # instance fields
+.field I$0:I
+
 .field J$0:J
 
 .field L$0:Ljava/lang/Object;
@@ -67,7 +69,7 @@
 
 # virtual methods
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+    .locals 7
 
     iput-object p1, p0, Lcom/iMe/storage/data/manager/ton/TonControllerImpl$sendInternal$1;->result:Ljava/lang/Object;
 
@@ -87,9 +89,11 @@
 
     const/4 v4, 0x0
 
-    move-object v5, p0
+    const/4 v5, 0x0
 
-    invoke-static/range {v0 .. v5}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->access$sendInternal(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;Ljava/lang/String;JLcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    move-object v6, p0
+
+    invoke-static/range {v0 .. v6}, Lcom/iMe/storage/data/manager/ton/TonControllerImpl;->access$sendInternal(Lcom/iMe/storage/data/manager/ton/TonControllerImpl;Ljava/lang/String;JILcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 

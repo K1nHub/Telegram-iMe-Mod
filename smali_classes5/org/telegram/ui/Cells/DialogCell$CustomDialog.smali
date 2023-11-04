@@ -42,12 +42,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 350
+    .line 371
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 361
+    .line 382
     iput v0, p0, Lorg/telegram/ui/Cells/DialogCell$CustomDialog;->sent:I
 
     return-void

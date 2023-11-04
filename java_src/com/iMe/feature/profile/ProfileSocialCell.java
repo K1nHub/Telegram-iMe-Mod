@@ -35,9 +35,9 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkProfileSocialCellBinding;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 import timber.log.Timber;
 /* compiled from: ProfileSocialCell.kt */
 /* loaded from: classes3.dex */
@@ -123,7 +123,7 @@ public final class ProfileSocialCell extends ConstraintLayout implements KoinCom
         inflate.textTitle.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         inflate.textSubTitle.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         TextView lambda$1$lambda$0 = inflate.buttonAdd;
-        lambda$1$lambda$0.setText(getResource().getString(C3630R.string.social_cell_add_button));
+        lambda$1$lambda$0.setText(getResource().getString(C3634R.string.social_cell_add_button));
         lambda$1$lambda$0.setBackground(Theme.createSimpleSelectorRoundRectDrawable(4, Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground)));
         lambda$1$lambda$0.setTextColor(Theme.getColor(Theme.key_chats_actionIcon));
         Intrinsics.checkNotNullExpressionValue(lambda$1$lambda$0, "lambda$1$lambda$0");
@@ -162,8 +162,8 @@ public final class ProfileSocialCell extends ConstraintLayout implements KoinCom
                 LinearLayout linearImages = forkProfileSocialCellBinding.linearImages;
                 Intrinsics.checkNotNullExpressionValue(linearImages, "linearImages");
                 ViewExtKt.gone$default(linearImages, false, 1, null);
-                forkProfileSocialCellBinding.textTitle.setText(getResource().getString(C3630R.string.social_cell_not_connected));
-                forkProfileSocialCellBinding.textSubTitle.setText(getResource().getString(C3630R.string.social_cell_social_networks));
+                forkProfileSocialCellBinding.textTitle.setText(getResource().getString(C3634R.string.social_cell_not_connected));
+                forkProfileSocialCellBinding.textSubTitle.setText(getResource().getString(C3634R.string.social_cell_social_networks));
                 return;
             } else if (i == 3) {
                 ForkProfileSocialCellBinding forkProfileSocialCellBinding2 = this.binding;
@@ -179,8 +179,8 @@ public final class ProfileSocialCell extends ConstraintLayout implements KoinCom
                 LinearLayout linearImages2 = forkProfileSocialCellBinding2.linearImages;
                 Intrinsics.checkNotNullExpressionValue(linearImages2, "linearImages");
                 ViewExtKt.invisible$default(linearImages2, false, 1, null);
-                forkProfileSocialCellBinding2.textTitle.setText(getResource().getString(C3630R.string.social_cell_not_connected));
-                forkProfileSocialCellBinding2.textSubTitle.setText(getResource().getString(C3630R.string.social_cell_social_networks));
+                forkProfileSocialCellBinding2.textTitle.setText(getResource().getString(C3634R.string.social_cell_not_connected));
+                forkProfileSocialCellBinding2.textSubTitle.setText(getResource().getString(C3634R.string.social_cell_social_networks));
                 return;
             } else {
                 Timber.m7e("updateState is not handled", new Object[0]);
@@ -289,8 +289,8 @@ public final class ProfileSocialCell extends ConstraintLayout implements KoinCom
         TextView textView = forkProfileSocialCellBinding3.textTitle;
         Intrinsics.checkNotNullExpressionValue(textView, str2);
         ViewExtKt.visible(textView, arrayList2.isEmpty());
-        forkProfileSocialCellBinding3.textTitle.setText(getResource().getString(C3630R.string.social_cell_not_connected));
-        forkProfileSocialCellBinding3.textSubTitle.setText(getResource().getString(C3630R.string.social_cell_social_networks));
+        forkProfileSocialCellBinding3.textTitle.setText(getResource().getString(C3634R.string.social_cell_not_connected));
+        forkProfileSocialCellBinding3.textSubTitle.setText(getResource().getString(C3634R.string.social_cell_social_networks));
     }
 
     private final void buildImageViews() {

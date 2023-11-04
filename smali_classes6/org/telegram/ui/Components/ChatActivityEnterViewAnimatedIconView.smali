@@ -225,9 +225,9 @@
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
     .line 61
-    new-instance v0, Lorg/telegram/ui/Cells/ChatActionCell$$ExternalSyntheticLambda2;
+    new-instance v0, Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView$$ExternalSyntheticLambda1;
 
-    invoke-direct {v0, p2}, Lorg/telegram/ui/Cells/ChatActionCell$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/RLottieDrawable;)V
+    invoke-direct {v0, p2}, Lorg/telegram/ui/Components/ChatActivityEnterViewAnimatedIconView$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 

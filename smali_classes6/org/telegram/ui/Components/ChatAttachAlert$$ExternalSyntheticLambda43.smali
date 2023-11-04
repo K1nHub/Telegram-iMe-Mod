@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/ChatAttachAlertLocationLayout$LocationActivityDelegate;
+.implements Lorg/telegram/ui/Components/ChatAttachAlertAudioLayout$AudioSelectDelegate;
 
 
 # instance fields
@@ -22,14 +22,14 @@
 
 
 # virtual methods
-.method public final didSelectLocation(Lorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
-    .locals 6
+.method public final didSelectAudio(Ljava/util/ArrayList;Ljava/lang/CharSequence;ZILjava/lang/String;ZZ)V
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlert$$ExternalSyntheticLambda43;->f$0:Lorg/telegram/ui/Components/ChatAttachAlert;
 
     move-object v1, p1
 
-    move v2, p2
+    move-object v2, p2
 
     move v3, p3
 
@@ -37,7 +37,11 @@
 
     move-object v5, p5
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/ChatAttachAlert;->$r8$lambda$u-3IOvNTdmBjzIIdDRGgNMfPQSU(Lorg/telegram/ui/Components/ChatAttachAlert;Lorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
+    move v6, p6
+
+    move v7, p7
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/ChatAttachAlert;->$r8$lambda$U9ibERmn0sa953xzFP2zL9eqTu0(Lorg/telegram/ui/Components/ChatAttachAlert;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZILjava/lang/String;ZZ)V
 
     return-void
 .end method

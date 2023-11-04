@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
-    invoke-static {v0}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->$r8$lambda$XiSZw3WICRN6KQQCzNpSMFeNMdE(Lorg/telegram/messenger/video/VideoPlayerHolderBase;)V
+    invoke-static {v0}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->$r8$lambda$MDWi0Yr_UJ_u2_Qpc5BHAQ8eFf0(Lorg/telegram/messenger/video/VideoPlayerHolderBase;)V
 
     return-void
 .end method

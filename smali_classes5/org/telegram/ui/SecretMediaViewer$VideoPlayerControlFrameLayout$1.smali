@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/SecretMediaViewer$VideoPlayerControlFrameLayout;Ljava/lang/String;)V
     .locals 0
 
-    .line 2679
+    .line 2678
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
 
     return-void
@@ -37,7 +37,7 @@
 .method public get(Lorg/telegram/ui/SecretMediaViewer$VideoPlayerControlFrameLayout;)Ljava/lang/Float;
     .locals 0
 
-    .line 2687
+    .line 2686
     invoke-virtual {p1}, Lorg/telegram/ui/SecretMediaViewer$VideoPlayerControlFrameLayout;->getProgress()F
 
     move-result p1
@@ -52,7 +52,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 2679
+    .line 2678
     check-cast p1, Lorg/telegram/ui/SecretMediaViewer$VideoPlayerControlFrameLayout;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/SecretMediaViewer$VideoPlayerControlFrameLayout$1;->get(Lorg/telegram/ui/SecretMediaViewer$VideoPlayerControlFrameLayout;)Ljava/lang/Float;
@@ -65,7 +65,7 @@
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 2679
+    .line 2678
     check-cast p1, Lorg/telegram/ui/SecretMediaViewer$VideoPlayerControlFrameLayout;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/SecretMediaViewer$VideoPlayerControlFrameLayout$1;->setValue(Lorg/telegram/ui/SecretMediaViewer$VideoPlayerControlFrameLayout;F)V
@@ -76,7 +76,7 @@
 .method public setValue(Lorg/telegram/ui/SecretMediaViewer$VideoPlayerControlFrameLayout;F)V
     .locals 0
 
-    .line 2682
+    .line 2681
     invoke-virtual {p1, p2}, Lorg/telegram/ui/SecretMediaViewer$VideoPlayerControlFrameLayout;->setProgress(F)V
 
     return-void

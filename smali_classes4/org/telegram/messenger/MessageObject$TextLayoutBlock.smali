@@ -25,11 +25,25 @@
 
 .field public charactersOffset:I
 
+.field public code:Z
+
 .field public directionFlags:B
+
+.field public first:Z
 
 .field public height:I
 
 .field public heightByOffset:I
+
+.field public last:Z
+
+.field public maxRight:F
+
+.field public padBottom:I
+
+.field public padTop:I
+
+.field public quote:Z
 
 .field public spoilers:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
@@ -60,17 +74,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 860
+    .line 861
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 863
+    .line 866
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->spoilersPatchedTextLayout:Ljava/util/concurrent/atomic/AtomicReference;
 
-    .line 871
+    .line 875
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -85,7 +99,7 @@
 .method public isRtl()Z
     .locals 2
 
-    .line 874
+    .line 882
     iget-byte v0, p0, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
 
     and-int/lit8 v1, v0, 0x1

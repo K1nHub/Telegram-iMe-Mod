@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilterCreateActivity$ListAdapter;Lorg/telegram/ui/Cells/PollEditTextCell;)V
     .locals 0
 
-    .line 1535
+    .line 1536
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/FilterCreateActivity$ListAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$1;->val$cell:Lorg/telegram/ui/Cells/PollEditTextCell;
@@ -42,7 +42,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 3
 
-    .line 1548
+    .line 1549
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$1;->val$cell:Lorg/telegram/ui/Cells/PollEditTextCell;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -53,13 +53,13 @@
 
     return-void
 
-    .line 1551
+    .line 1552
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 1552
+    .line 1553
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/FilterCreateActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
@@ -76,7 +76,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1553
+    .line 1554
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/FilterCreateActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
@@ -89,14 +89,14 @@
 
     invoke-static {v0, v2}, Lorg/telegram/ui/FilterCreateActivity;->access$702(Lorg/telegram/ui/FilterCreateActivity;Z)Z
 
-    .line 1554
+    .line 1555
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/FilterCreateActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/FilterCreateActivity;->access$602(Lorg/telegram/ui/FilterCreateActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 1556
+    .line 1557
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/FilterCreateActivity$ListAdapter;
 
@@ -120,7 +120,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 1558
+    .line 1559
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/FilterCreateActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
@@ -129,7 +129,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/FilterCreateActivity;->access$1000(Lorg/telegram/ui/FilterCreateActivity;Landroid/view/View;)V
 
-    .line 1560
+    .line 1561
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/FilterCreateActivity$ListAdapter;
 

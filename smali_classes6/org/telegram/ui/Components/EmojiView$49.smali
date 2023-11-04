@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Z)V
     .locals 0
 
-    .line 5424
+    .line 5428
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$49;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/EmojiView$49;->val$show:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 5427
+    .line 5431
     iget-boolean p1, p0, Lorg/telegram/ui/Components/EmojiView$49;->val$show:Z
 
     if-nez p1, :cond_0
 
-    .line 5428
+    .line 5432
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$49;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$15600(Lorg/telegram/ui/Components/EmojiView;)Landroid/widget/ImageView;

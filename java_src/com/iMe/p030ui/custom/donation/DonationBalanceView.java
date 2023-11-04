@@ -16,7 +16,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.databinding.ForkRecycleItemWalletTokenBalanceBinding;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: DonationBalanceView.kt */
 /* renamed from: com.iMe.ui.custom.donation.DonationBalanceView */
 /* loaded from: classes3.dex */

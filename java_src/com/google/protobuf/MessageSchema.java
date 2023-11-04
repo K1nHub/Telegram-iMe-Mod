@@ -862,7 +862,7 @@ public final class MessageSchema<T> implements Schema<T> {
                     i4 = i8;
                 }
             } else {
-                i = (!this.useCachedSizeField || type < FieldType.DOUBLE_LIST_PACKED.m1018id() || type > FieldType.SINT64_LIST_PACKED.m1018id()) ? 0 : this.buffer[i5 + 2] & i3;
+                i = (!this.useCachedSizeField || type < FieldType.DOUBLE_LIST_PACKED.m1019id() || type > FieldType.SINT64_LIST_PACKED.m1019id()) ? 0 : this.buffer[i5 + 2] & i3;
                 i2 = 0;
             }
             long offset = offset(typeAndOffsetAt);
@@ -1382,7 +1382,7 @@ public final class MessageSchema<T> implements Schema<T> {
             int type = type(typeAndOffsetAt);
             int numberAt = numberAt(i2);
             long offset = offset(typeAndOffsetAt);
-            int i3 = (type < FieldType.DOUBLE_LIST_PACKED.m1018id() || type > FieldType.SINT64_LIST_PACKED.m1018id()) ? 0 : this.buffer[i2 + 2] & 1048575;
+            int i3 = (type < FieldType.DOUBLE_LIST_PACKED.m1019id() || type > FieldType.SINT64_LIST_PACKED.m1019id()) ? 0 : this.buffer[i2 + 2] & 1048575;
             switch (type) {
                 case 0:
                     if (isFieldPresent(t, i2)) {
@@ -2021,7 +2021,7 @@ public final class MessageSchema<T> implements Schema<T> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.protobuf.MessageSchema$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C11261 {
+    public static /* synthetic */ class C11321 {
         static final /* synthetic */ int[] $SwitchMap$com$google$protobuf$WireFormat$FieldType;
 
         static {
@@ -2099,7 +2099,7 @@ public final class MessageSchema<T> implements Schema<T> {
     }
 
     private int decodeMapEntryValue(byte[] bArr, int i, int i2, WireFormat.FieldType fieldType, Class<?> cls, ArrayDecoders.Registers registers) throws IOException {
-        switch (C11261.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
+        switch (C11321.$SwitchMap$com$google$protobuf$WireFormat$FieldType[fieldType.ordinal()]) {
             case 1:
                 int decodeVarint64 = ArrayDecoders.decodeVarint64(bArr, i, registers);
                 registers.object1 = Boolean.valueOf(registers.long1 != 0);

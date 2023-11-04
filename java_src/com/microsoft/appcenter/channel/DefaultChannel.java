@@ -2,7 +2,7 @@ package com.microsoft.appcenter.channel;
 
 import android.content.Context;
 import android.os.Handler;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.microsoft.appcenter.CancellationException;
 import com.microsoft.appcenter.channel.Channel;
 import com.microsoft.appcenter.http.HttpClient;
@@ -264,7 +264,7 @@ public class DefaultChannel implements Channel {
                 DefaultChannel.this.mAppCenterHandler.post(new Runnable() { // from class: com.microsoft.appcenter.channel.DefaultChannel.1.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        C25741 c25741 = C25741.this;
+                        C25781 c25781 = C25781.this;
                         DefaultChannel.this.handleSendingSuccess(groupState, batchId);
                     }
                 });
@@ -275,7 +275,7 @@ public class DefaultChannel implements Channel {
                 DefaultChannel.this.mAppCenterHandler.post(new Runnable() { // from class: com.microsoft.appcenter.channel.DefaultChannel.1.2
                     @Override // java.lang.Runnable
                     public void run() {
-                        C25741 c25741 = C25741.this;
+                        C25781 c25781 = C25781.this;
                         DefaultChannel.this.handleSendingFailure(groupState, batchId, e);
                     }
                 });
@@ -420,7 +420,7 @@ public class DefaultChannel implements Channel {
     }
 
     private Long resolveTriggerInterval(GroupState groupState) {
-        if (groupState.mBatchTimeInterval > C0479C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS) {
+        if (groupState.mBatchTimeInterval > C0485C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS) {
             return resolveCustomTriggerInterval(groupState);
         }
         return resolveDefaultTriggerInterval(groupState);

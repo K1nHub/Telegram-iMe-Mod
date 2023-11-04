@@ -40,14 +40,14 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentWalletNetworksSettingsBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.C3702ActionBar;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
 /* compiled from: WalletNetworksSettingsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.settings.appearance.networks.WalletNetworksSettingsFragment */
 /* loaded from: classes4.dex */
@@ -58,7 +58,7 @@ public final class WalletNetworksSettingsFragment extends WalletAuthBaseFragment
     private final Lazy networkRecycleAdapter$delegate;
     private final MoxyKtxDelegate presenter$delegate;
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return true;
     }
@@ -163,7 +163,7 @@ public final class WalletNetworksSettingsFragment extends WalletAuthBaseFragment
         return root;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isLightStatusBar() {
         return ColorUtils.calculateLuminance(getThemedColor(Theme.key_actionBarActionModeDefault)) > 0.699999988079071d;
     }
@@ -182,19 +182,19 @@ public final class WalletNetworksSettingsFragment extends WalletAuthBaseFragment
         getBinding().getRoot().setInternalState(GlobalState.Empty.NetworksSearchResult.INSTANCE);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         GlobalStateLayout root = getBinding().getRoot();
         int i = ThemeDescription.FLAG_BACKGROUND;
         final WalletNetworksSettingsRecycleAdapter networkRecycleAdapter = getNetworkRecycleAdapter();
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(root, i, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.settings.appearance.networks.WalletNetworksSettingsFragment$$ExternalSyntheticLambda1
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletNetworksSettingsRecycleAdapter.this.notifyDataSetChanged();
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -203,28 +203,28 @@ public final class WalletNetworksSettingsFragment extends WalletAuthBaseFragment
     }
 
     private final void setupActionBar() {
-        C3702ActionBar c3702ActionBar = this.actionBar;
-        c3702ActionBar.setCastShadows(false);
-        c3702ActionBar.setBackButtonImage(C3630R.C3632drawable.ic_ab_back);
-        c3702ActionBar.setAllowOverlayTitle(true);
-        c3702ActionBar.setTitle(getResourceManager().getString(C3630R.string.networks_settings_title));
-        c3702ActionBar.setActionBarMenuOnItemClick(new C3702ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.settings.appearance.networks.WalletNetworksSettingsFragment$setupActionBar$1$1
-            @Override // org.telegram.p042ui.ActionBar.C3702ActionBar.ActionBarMenuOnItemClick
+        C3706ActionBar c3706ActionBar = this.actionBar;
+        c3706ActionBar.setCastShadows(false);
+        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        c3706ActionBar.setAllowOverlayTitle(true);
+        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.networks_settings_title));
+        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.settings.appearance.networks.WalletNetworksSettingsFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletNetworksSettingsFragment.this.finishFragment();
                 }
             }
         });
-        ActionBarMenuItem actionBarMenuItemSearchListener = c3702ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3630R.C3632drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.ui.wallet.settings.appearance.networks.WalletNetworksSettingsFragment$setupActionBar$1$2
-            @Override // org.telegram.p042ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
+        ActionBarMenuItem actionBarMenuItemSearchListener = c3706ActionBar.createMenu().addItem(IdFabric$Menu.SEARCH, C3634R.C3636drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: com.iMe.ui.wallet.settings.appearance.networks.WalletNetworksSettingsFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchCollapse() {
                 WalletNetworksSettingsPresenter presenter;
                 presenter = WalletNetworksSettingsFragment.this.getPresenter();
                 presenter.onQueryUpdate("");
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onTextChanged(EditText editText) {
                 WalletNetworksSettingsPresenter presenter;
                 Intrinsics.checkNotNullParameter(editText, "editText");
@@ -235,8 +235,8 @@ public final class WalletNetworksSettingsFragment extends WalletAuthBaseFragment
         EditTextBoldCursor searchField = actionBarMenuItemSearchListener.getSearchField();
         searchField.setFilters(new InputFilter.LengthFilter[]{new InputFilter.LengthFilter(32)});
         searchField.setImeOptions(Integer.MIN_VALUE);
-        actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3630R.string.wallet_network_type_dialog_search_hint));
-        actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3630R.string.Search));
+        actionBarMenuItemSearchListener.setSearchFieldHint(getResourceManager().getString(C3634R.string.wallet_network_type_dialog_search_hint));
+        actionBarMenuItemSearchListener.setContentDescription(LocaleController.getString("Search", C3634R.string.Search));
     }
 
     private final void setupRecycleView() {
@@ -249,15 +249,15 @@ public final class WalletNetworksSettingsFragment extends WalletAuthBaseFragment
 
     private final void setupColors() {
         getBinding().getRoot().setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
-        C3702ActionBar c3702ActionBar = this.actionBar;
-        c3702ActionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefault));
+        C3706ActionBar c3706ActionBar = this.actionBar;
+        c3706ActionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefault));
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        c3702ActionBar.setTitleColor(getThemedColor(i));
-        c3702ActionBar.setItemsColor(getThemedColor(i), false);
-        c3702ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefaultSelector), false);
-        c3702ActionBar.setSearchTextColor(getThemedColor(i), false);
-        c3702ActionBar.setSearchTextColor(getThemedColor(Theme.key_windowBackgroundWhiteHintText), true);
-        c3702ActionBar.setSearchCursorColor(getThemedColor(i));
+        c3706ActionBar.setTitleColor(getThemedColor(i));
+        c3706ActionBar.setItemsColor(getThemedColor(i), false);
+        c3706ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefaultSelector), false);
+        c3706ActionBar.setSearchTextColor(getThemedColor(i), false);
+        c3706ActionBar.setSearchTextColor(getThemedColor(Theme.key_windowBackgroundWhiteHintText), true);
+        c3706ActionBar.setSearchCursorColor(getThemedColor(i));
     }
 
     private final void setupListeners() {

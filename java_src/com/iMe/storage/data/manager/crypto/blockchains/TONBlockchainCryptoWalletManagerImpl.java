@@ -30,7 +30,7 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
 
     @Override // com.iMe.storage.domain.manager.crypto.BlockchainCryptoWalletManager
     public Observable<Result<Wallet>> createWallet() {
-        Observable<Result<Wallet>> subscribeOn = this.tonController.createWallet().subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Wallet>> subscribeOn = this.tonController.createWallet().subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -40,7 +40,7 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
         Intrinsics.checkNotNullParameter(guid, "guid");
         Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
         Intrinsics.checkNotNullParameter(password, "password");
-        Observable<Result<Wallet.TON>> subscribeOn = this.tonController.importWallet(StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Wallet.TON>> subscribeOn = this.tonController.importWallet(StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
         Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Wallet.TON>, Result<? extends Wallet>>() { // from class: com.iMe.storage.data.manager.crypto.blockchains.TONBlockchainCryptoWalletManagerImpl$importWallet$$inlined$mapSuccess$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -82,7 +82,7 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
         Intrinsics.checkNotNullParameter(oldGuid, "oldGuid");
         Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
         Intrinsics.checkNotNullParameter(password, "password");
-        Observable<Result<Wallet.TON>> subscribeOn = this.tonController.importWallet(StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Wallet.TON>> subscribeOn = this.tonController.importWallet(StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
         Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Wallet.TON>, Result<? extends Wallet>>() { // from class: com.iMe.storage.data.manager.crypto.blockchains.TONBlockchainCryptoWalletManagerImpl$unlockWallet$$inlined$mapSuccess$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -122,7 +122,7 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
     @Override // com.iMe.storage.domain.manager.crypto.BlockchainCryptoWalletManager
     public Observable<Result<String>> generateAddressByMnemonic(String mnemonic) {
         Intrinsics.checkNotNullParameter(mnemonic, "mnemonic");
-        Observable<Result<Wallet.TON>> subscribeOn = this.tonController.importWallet(StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Wallet.TON>> subscribeOn = this.tonController.importWallet(StringExtKt.splitBySpace(mnemonic)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
         Observable map = subscribeOn.map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Wallet.TON>, Result<? extends String>>() { // from class: com.iMe.storage.data.manager.crypto.blockchains.TONBlockchainCryptoWalletManagerImpl$generateAddressByMnemonic$$inlined$mapSuccess$1
             /* JADX WARN: Multi-variable type inference failed */
@@ -155,7 +155,7 @@ public final class TONBlockchainCryptoWalletManagerImpl extends BlockchainCrypto
     @Override // com.iMe.storage.domain.manager.crypto.BlockchainCryptoWalletManager
     public Observable<Result<Boolean>> isValidAddress(String address) {
         Intrinsics.checkNotNullParameter(address, "address");
-        Observable<Result<Boolean>> subscribeOn = this.tonController.isValidAddress(address).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Boolean>> subscribeOn = this.tonController.isValidAddress(address).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonController\n          …(schedulersProvider.io())");
         return subscribeOn;
     }

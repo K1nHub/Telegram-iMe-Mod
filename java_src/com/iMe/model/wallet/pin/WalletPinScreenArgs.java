@@ -13,7 +13,7 @@ public final class WalletPinScreenArgs {
     private final String seed;
 
     /* renamed from: wallet  reason: collision with root package name */
-    private final Wallet f2164wallet;
+    private final Wallet f2176wallet;
 
     public static /* synthetic */ WalletPinScreenArgs copy$default(WalletPinScreenArgs walletPinScreenArgs, String str, String str2, Wallet wallet2, CreatePinCodeScreenType createPinCodeScreenType, int i, Object obj) {
         if ((i & 1) != 0) {
@@ -23,7 +23,7 @@ public final class WalletPinScreenArgs {
             str2 = walletPinScreenArgs.seed;
         }
         if ((i & 4) != 0) {
-            wallet2 = walletPinScreenArgs.f2164wallet;
+            wallet2 = walletPinScreenArgs.f2176wallet;
         }
         if ((i & 8) != 0) {
             createPinCodeScreenType = walletPinScreenArgs.screenType;
@@ -40,7 +40,7 @@ public final class WalletPinScreenArgs {
     }
 
     public final Wallet component3() {
-        return this.f2164wallet;
+        return this.f2176wallet;
     }
 
     public final CreatePinCodeScreenType component4() {
@@ -60,19 +60,19 @@ public final class WalletPinScreenArgs {
         }
         if (obj instanceof WalletPinScreenArgs) {
             WalletPinScreenArgs walletPinScreenArgs = (WalletPinScreenArgs) obj;
-            return Intrinsics.areEqual(this.password, walletPinScreenArgs.password) && Intrinsics.areEqual(this.seed, walletPinScreenArgs.seed) && Intrinsics.areEqual(this.f2164wallet, walletPinScreenArgs.f2164wallet) && Intrinsics.areEqual(this.screenType, walletPinScreenArgs.screenType);
+            return Intrinsics.areEqual(this.password, walletPinScreenArgs.password) && Intrinsics.areEqual(this.seed, walletPinScreenArgs.seed) && Intrinsics.areEqual(this.f2176wallet, walletPinScreenArgs.f2176wallet) && Intrinsics.areEqual(this.screenType, walletPinScreenArgs.screenType);
         }
         return false;
     }
 
     public int hashCode() {
         int hashCode = ((this.password.hashCode() * 31) + this.seed.hashCode()) * 31;
-        Wallet wallet2 = this.f2164wallet;
+        Wallet wallet2 = this.f2176wallet;
         return ((hashCode + (wallet2 == null ? 0 : wallet2.hashCode())) * 31) + this.screenType.hashCode();
     }
 
     public String toString() {
-        return "WalletPinScreenArgs(password=" + this.password + ", seed=" + this.seed + ", wallet=" + this.f2164wallet + ", screenType=" + this.screenType + ')';
+        return "WalletPinScreenArgs(password=" + this.password + ", seed=" + this.seed + ", wallet=" + this.f2176wallet + ", screenType=" + this.screenType + ')';
     }
 
     public WalletPinScreenArgs(String password, String seed, Wallet wallet2, CreatePinCodeScreenType screenType) {
@@ -81,7 +81,7 @@ public final class WalletPinScreenArgs {
         Intrinsics.checkNotNullParameter(screenType, "screenType");
         this.password = password;
         this.seed = seed;
-        this.f2164wallet = wallet2;
+        this.f2176wallet = wallet2;
         this.screenType = screenType;
     }
 
@@ -98,7 +98,7 @@ public final class WalletPinScreenArgs {
     }
 
     public final Wallet getWallet() {
-        return this.f2164wallet;
+        return this.f2176wallet;
     }
 
     public final CreatePinCodeScreenType getScreenType() {

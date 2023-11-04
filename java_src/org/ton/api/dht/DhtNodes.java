@@ -17,16 +17,16 @@ import kotlinx.serialization.internal.ArrayListSerializer;
 import kotlinx.serialization.internal.PluginExceptionsKt;
 import kotlinx.serialization.internal.SerializationConstructorMarker;
 import kotlinx.serialization.json.JsonClassDiscriminator;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 import p033j$.lang.Iterable$CC;
 import p033j$.util.Collection;
 import p033j$.util.Spliterator;
 import p033j$.util.function.Consumer;
 import p033j$.util.function.IntFunction;
 import p033j$.util.function.Predicate;
-import p033j$.util.stream.AbstractC3082o1;
+import p033j$.util.stream.AbstractC3086o1;
 import p033j$.util.stream.Stream;
 import p033j$.wrappers.C$r8$wrapper$java$util$function$Predicate$VWRP;
 /* compiled from: DhtNodes.kt */
@@ -76,7 +76,7 @@ public final class DhtNodes implements Collection<DhtNode>, KMappedMarker, p033j
         return (obj instanceof DhtNodes) && Intrinsics.areEqual(this.nodes, ((DhtNodes) obj).nodes);
     }
 
-    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2670e
+    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2674e
     public /* synthetic */ void forEach(Consumer consumer) {
         Iterable$CC.$default$forEach(this, consumer);
     }
@@ -102,9 +102,9 @@ public final class DhtNodes implements Collection<DhtNode>, KMappedMarker, p033j
 
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream parallelStream() {
-        Stream m398y;
-        m398y = AbstractC3082o1.m398y(Collection.EL.m694b(this), true);
-        return m398y;
+        Stream m399y;
+        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), true);
+        return m399y;
     }
 
     @Override // java.util.Collection, p033j$.util.Collection
@@ -132,16 +132,16 @@ public final class DhtNodes implements Collection<DhtNode>, KMappedMarker, p033j
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.Collection, java.lang.Iterable, p033j$.util.Collection, p033j$.lang.InterfaceC2670e
+    @Override // java.util.Collection, java.lang.Iterable, p033j$.util.Collection, p033j$.lang.InterfaceC2674e
     public /* synthetic */ Spliterator spliterator() {
         return Collection.CC.$default$spliterator(this);
     }
 
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream stream() {
-        Stream m398y;
-        m398y = AbstractC3082o1.m398y(Collection.EL.m694b(this), false);
-        return m398y;
+        Stream m399y;
+        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), false);
+        return m399y;
     }
 
     @Override // java.util.Collection, p033j$.util.Collection
@@ -236,7 +236,7 @@ public final class DhtNodes implements Collection<DhtNode>, KMappedMarker, p033j
             return DhtNodes$$serializer.INSTANCE;
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, DhtNodes value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
@@ -247,7 +247,7 @@ public final class DhtNodes implements Collection<DhtNode>, KMappedMarker, p033j
             }
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public DhtNodes decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return new DhtNodes(reader.readVector(new Function1<TlReader, DhtNode>() { // from class: org.ton.api.dht.DhtNodes$Companion$decode$nodes$1

@@ -50,7 +50,7 @@ public final class CryptoBoxParticipationResultResponse {
         if (z) {
             r0 = 1;
         }
-        return (r0 * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.expectedDurationSec);
+        return (r0 * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.expectedDurationSec);
     }
 
     public String toString() {

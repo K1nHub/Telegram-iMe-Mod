@@ -47,9 +47,9 @@
 
     move-object v5, p1
 
-    check-cast v5, Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;
+    check-cast v5, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$7jv8vbhtWugVBROjUohAIpEg5mI(Lorg/telegram/ui/Stories/StoriesController;Lcom/google/android/exoplayer2/util/Consumer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;JLorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$FYkp4Xp3IbrpSLEYMtrbNp9RTFA(Lorg/telegram/ui/Stories/StoriesController;Lcom/google/android/exoplayer2/util/Consumer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;JLorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
 
     return-void
 .end method

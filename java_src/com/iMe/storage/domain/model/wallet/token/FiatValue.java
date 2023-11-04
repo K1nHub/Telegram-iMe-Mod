@@ -55,7 +55,7 @@ public final class FiatValue {
     }
 
     public int hashCode() {
-        return (((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.value) * 31) + this.symbol.hashCode()) * 31) + this.ticker.hashCode();
+        return (((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.value) * 31) + this.symbol.hashCode()) * 31) + this.ticker.hashCode();
     }
 
     public String toString() {

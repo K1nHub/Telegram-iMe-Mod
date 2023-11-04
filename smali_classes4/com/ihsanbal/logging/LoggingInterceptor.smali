@@ -164,7 +164,7 @@
 
     if-eqz p1, :cond_1
 
-    const-string v0, "json"
+    const-string/jumbo v0, "json"
 
     .line 145
     invoke-virtual {p1, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z

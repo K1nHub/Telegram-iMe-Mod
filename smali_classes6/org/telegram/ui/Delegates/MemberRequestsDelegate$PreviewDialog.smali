@@ -90,15 +90,15 @@
 .method public constructor <init>(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;Landroid/content/Context;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Z)V
     .locals 8
 
-    .line 697
+    .line 745
     iput-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
-    .line 698
+    .line 746
     sget v0, Lorg/telegram/messenger/R$style;->TransparentDialog2:I
 
     invoke-direct {p0, p2, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
-    .line 684
+    .line 732
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -119,7 +119,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->pagerShadowDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 685
+    .line 733
     new-instance v1, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -130,7 +130,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->nameText:Landroid/widget/TextView;
 
-    .line 686
+    .line 734
     new-instance v2, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -141,7 +141,7 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->bioText:Landroid/widget/TextView;
 
-    .line 947
+    .line 995
     new-instance v3, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$3;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -154,18 +154,18 @@
 
     const/4 v4, 0x1
 
-    .line 699
+    .line 747
     invoke-virtual {p0, v4}, Landroid/app/Dialog;->setCancelable(Z)V
 
     const/4 v5, 0x4
 
-    .line 700
+    .line 748
     invoke-virtual {v3, v5}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 702
+    .line 750
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
-    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$600(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$700(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v6
 
@@ -177,7 +177,7 @@
 
     move-result v5
 
-    .line 703
+    .line 751
     new-instance v6, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v7, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -186,41 +186,41 @@
 
     invoke-virtual {v0, v6}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 704
+    .line 752
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 705
+    .line 753
     new-instance v6, Landroid/graphics/Rect;
 
     invoke-direct {v6}, Landroid/graphics/Rect;-><init>()V
 
-    .line 706
+    .line 754
     invoke-virtual {v0, v6}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 707
+    .line 755
     iget v0, v6, Landroid/graphics/Rect;->top:I
 
     iput v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->shadowPaddingTop:I
 
-    .line 708
+    .line 756
     iget v0, v6, Landroid/graphics/Rect;->left:I
 
     iput v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->shadowPaddingLeft:I
 
-    .line 710
+    .line 758
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-direct {v0, p2, p4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    .line 711
+    .line 759
     invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setBackgroundColor(I)V
 
-    .line 712
+    .line 760
     invoke-virtual {v3, v0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 714
+    .line 762
     new-instance v5, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$1;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -231,10 +231,10 @@
 
     iput-object v5, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->pagerIndicator:Lorg/telegram/ui/AvatarPreviewPagerIndicator;
 
-    .line 723
+    .line 771
     new-instance v6, Lorg/telegram/ui/Components/ProfileGalleryView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$600(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$700(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v7
 
@@ -246,25 +246,25 @@
 
     iput-object v6, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->viewPager:Lorg/telegram/ui/Components/ProfileGalleryView;
 
-    .line 724
+    .line 772
     invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/ProfileGalleryView;->setCreateThumbFromParent(Z)V
 
-    .line 725
+    .line 773
     invoke-virtual {v3, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 727
+    .line 775
     invoke-virtual {v5, v6}, Lorg/telegram/ui/AvatarPreviewPagerIndicator;->setProfileGalleryView(Lorg/telegram/ui/Components/ProfileGalleryView;)V
 
-    .line 728
+    .line 776
     invoke-virtual {v3, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 730
+    .line 778
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 731
+    .line 779
     sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$600(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$700(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v5
 
@@ -280,25 +280,25 @@
 
     const/high16 p3, 0x41800000    # 16.0f
 
-    .line 732
+    .line 780
     invoke-virtual {v1, p3}, Landroid/widget/TextView;->setTextSize(F)V
 
     const-string p3, "fonts/rmedium.ttf"
 
-    .line 733
+    .line 781
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object p3
 
     invoke-virtual {v1, p3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 734
+    .line 782
     invoke-virtual {v3, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 736
+    .line 784
     sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$600(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$700(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p1
 
@@ -314,20 +314,20 @@
 
     const/high16 p1, 0x41600000    # 14.0f
 
-    .line 737
+    .line 785
     invoke-virtual {v2, p1}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 738
+    .line 786
     invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 740
+    .line 788
     new-instance p1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/4 p3, 0x0
 
     invoke-direct {p1, p2, v4, p3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 741
+    .line 789
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
     invoke-static {v1, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -342,7 +342,7 @@
 
     invoke-virtual {p1, v2, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 742
+    .line 790
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogButtonSelector:I
 
     invoke-static {v2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -353,7 +353,7 @@
 
     if-eqz p5, :cond_0
 
-    .line 743
+    .line 791
     sget p5, Lorg/telegram/messenger/R$string;->AddToChannel:I
 
     const-string v5, "AddToChannel"
@@ -374,22 +374,22 @@
 
     invoke-virtual {p1, p5, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 744
+    .line 792
     new-instance p5, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda2;
 
     invoke-direct {p5, p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)V
 
     invoke-virtual {p1, p5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 750
+    .line 798
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    .line 752
+    .line 800
     new-instance p1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-direct {p1, p2, p3, p3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 753
+    .line 801
     invoke-static {v1, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p5
@@ -400,14 +400,14 @@
 
     invoke-virtual {p1, p5, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 754
+    .line 802
     invoke-static {v2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p5
 
     invoke-virtual {p1, p5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
 
-    .line 755
+    .line 803
     sget p5, Lorg/telegram/messenger/R$string;->SendMessage:I
 
     const-string v1, "SendMessage"
@@ -420,22 +420,22 @@
 
     invoke-virtual {p1, p5, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 756
+    .line 804
     new-instance p5, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda3;
 
     invoke-direct {p5, p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)V
 
     invoke-virtual {p1, p5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 767
+    .line 815
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    .line 769
+    .line 817
     new-instance p1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-direct {p1, p2, p3, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 770
+    .line 818
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     invoke-static {p2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -450,14 +450,14 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 771
+    .line 819
     invoke-static {v2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
 
-    .line 772
+    .line 820
     sget p2, Lorg/telegram/messenger/R$string;->DismissRequest:I
 
     const-string p3, "DismissRequest"
@@ -470,78 +470,69 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 773
+    .line 821
     new-instance p2, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)V
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 779
+    .line 827
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
     return-void
 .end method
 
-.method static synthetic access$1100(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Landroid/view/ViewGroup;
+.method static synthetic access$1200(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 680
+    .line 728
     iget-object p0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->contentView:Landroid/view/ViewGroup;
 
     return-object p0
 .end method
 
-.method static synthetic access$1201(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)V
+.method static synthetic access$1301(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)V
     .locals 0
 
-    .line 680
+    .line 728
     invoke-super {p0}, Landroid/app/Dialog;->dismiss()V
 
     return-void
 .end method
 
-.method static synthetic access$1300(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Landroid/graphics/drawable/Drawable;
+.method static synthetic access$1400(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 680
+    .line 728
     iget-object p0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->pagerShadowDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p0
 .end method
 
-.method static synthetic access$1400(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
+.method static synthetic access$1500(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
     .locals 0
 
-    .line 680
+    .line 728
     iget-object p0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     return-object p0
 .end method
 
-.method static synthetic access$1500(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Lorg/telegram/ui/Components/ProfileGalleryView;
+.method static synthetic access$1600(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Lorg/telegram/ui/Components/ProfileGalleryView;
     .locals 0
 
-    .line 680
+    .line 728
     iget-object p0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->viewPager:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     return-object p0
 .end method
 
-.method static synthetic access$1600(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Lorg/telegram/ui/AvatarPreviewPagerIndicator;
+.method static synthetic access$1700(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Lorg/telegram/ui/AvatarPreviewPagerIndicator;
     .locals 0
 
-    .line 680
+    .line 728
     iget-object p0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->pagerIndicator:Lorg/telegram/ui/AvatarPreviewPagerIndicator;
-
-    return-object p0
-.end method
-
-.method static synthetic access$1700(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Landroid/widget/TextView;
-    .locals 0
-
-    .line 680
-    iget-object p0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->nameText:Landroid/widget/TextView;
 
     return-object p0
 .end method
@@ -549,28 +540,26 @@
 .method static synthetic access$1800(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Landroid/widget/TextView;
     .locals 0
 
-    .line 680
+    .line 728
+    iget-object p0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->nameText:Landroid/widget/TextView;
+
+    return-object p0
+.end method
+
+.method static synthetic access$1900(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)Landroid/widget/TextView;
+    .locals 0
+
+    .line 728
     iget-object p0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->bioText:Landroid/widget/TextView;
 
     return-object p0
 .end method
 
-.method static synthetic access$1900(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)I
-    .locals 0
-
-    .line 680
-    iget p0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->shadowPaddingLeft:I
-
-    return p0
-.end method
-
 .method static synthetic access$2000(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)I
     .locals 0
 
-    .line 680
-    invoke-direct {p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->getContentHeight()I
-
-    move-result p0
+    .line 728
+    iget p0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->shadowPaddingLeft:I
 
     return p0
 .end method
@@ -578,25 +567,36 @@
 .method static synthetic access$2100(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)I
     .locals 0
 
-    .line 680
+    .line 728
+    invoke-direct {p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->getContentHeight()I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method static synthetic access$2200(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)I
+    .locals 0
+
+    .line 728
     iget p0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->shadowPaddingTop:I
 
     return p0
 .end method
 
-.method static synthetic access$2201(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)V
+.method static synthetic access$2301(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)V
     .locals 0
 
-    .line 680
+    .line 728
     invoke-super {p0}, Landroid/app/Dialog;->dismiss()V
 
     return-void
 .end method
 
-.method static synthetic access$2300(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)V
+.method static synthetic access$2400(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)V
     .locals 0
 
-    .line 680
+    .line 728
     invoke-direct {p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->updateBackgroundBitmap()V
 
     return-void
@@ -605,7 +605,7 @@
 .method private getBlurredBitmap()Landroid/graphics/Bitmap;
     .locals 6
 
-    .line 903
+    .line 951
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->contentView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
@@ -620,7 +620,7 @@
 
     float-to-int v0, v0
 
-    .line 904
+    .line 952
     iget-object v2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->contentView:Landroid/view/ViewGroup;
 
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -633,30 +633,30 @@
 
     float-to-int v1, v2
 
-    .line 905
+    .line 953
     sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v0, v1, v2}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .line 906
+    .line 954
     new-instance v3, Landroid/graphics/Canvas;
 
     invoke-direct {v3, v2}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
     const v4, 0x3e2aaaab
 
-    .line 907
+    .line 955
     invoke-virtual {v3, v4, v4}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 909
+    .line 957
     invoke-virtual {v3}, Landroid/graphics/Canvas;->save()I
 
-    .line 911
+    .line 959
     iget-object v4, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
-    invoke-static {v4}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$600(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {v4}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$700(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v4
 
@@ -668,10 +668,10 @@
 
     if-eqz v4, :cond_0
 
-    .line 912
+    .line 960
     iget-object v4, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
-    invoke-static {v4}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$600(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {v4}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$700(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v4
 
@@ -696,17 +696,17 @@
 
     const/16 v5, 0x4c
 
-    .line 913
+    .line 961
     invoke-static {v4, v5}, Landroidx/core/graphics/ColorUtils;->setAlphaComponent(II)I
 
     move-result v4
 
     invoke-virtual {v3, v4}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 914
+    .line 962
     iget-object v4, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
-    invoke-static {v4}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$600(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {v4}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$700(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v4
 
@@ -716,7 +716,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 916
+    .line 964
     invoke-virtual {v4}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v4
@@ -730,7 +730,7 @@
     :cond_1
     const/4 v3, 0x7
 
-    .line 918
+    .line 966
     invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v0
@@ -749,7 +749,7 @@
 .method private getContentHeight()I
     .locals 4
 
-    .line 934
+    .line 982
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->viewPager:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -758,7 +758,7 @@
 
     const/16 v1, 0xc
 
-    .line 935
+    .line 983
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -773,7 +773,7 @@
 
     add-int/2addr v0, v2
 
-    .line 936
+    .line 984
     iget-object v2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->bioText:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getVisibility()I
@@ -786,7 +786,7 @@
 
     const/4 v2, 0x4
 
-    .line 937
+    .line 985
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -801,7 +801,7 @@
 
     add-int/2addr v0, v2
 
-    .line 939
+    .line 987
     :cond_0
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -823,7 +823,7 @@
 .method private getContentWidth()I
     .locals 1
 
-    .line 944
+    .line 992
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->viewPager:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
@@ -836,21 +836,21 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 1
 
-    .line 745
+    .line 793
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->importer:Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;
 
     if-eqz p1, :cond_0
 
-    .line 746
+    .line 794
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->onAddClicked(Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;)V
 
-    .line 748
+    .line 796
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
-    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$2400(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)V
+    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$2500(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)V
 
     return-void
 .end method
@@ -858,36 +858,36 @@
 .method private synthetic lambda$new$1(Landroid/view/View;)V
     .locals 3
 
-    .line 757
+    .line 805
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->importer:Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;
 
     if-eqz p1, :cond_0
 
-    .line 758
+    .line 806
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     const/4 v0, 0x1
 
     iput-boolean v0, p1, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->isNeedRestoreList:Z
 
-    .line 759
+    .line 807
     invoke-super {p0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 760
+    .line 808
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
-    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$600(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$700(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->dismissCurrentDialog()V
 
-    .line 761
+    .line 809
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 762
+    .line 810
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->importer:Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;
 
     iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;->user_id:J
@@ -896,15 +896,15 @@
 
     invoke-virtual {p1, v2, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 763
+    .line 811
     new-instance v0, Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 764
+    .line 812
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
-    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$600(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$700(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p1
 
@@ -917,21 +917,21 @@
 .method private synthetic lambda$new$2(Landroid/view/View;)V
     .locals 1
 
-    .line 774
+    .line 822
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->importer:Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;
 
     if-eqz p1, :cond_0
 
-    .line 775
+    .line 823
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->onDismissClicked(Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;)V
 
-    .line 777
+    .line 825
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
-    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$2400(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)V
+    invoke-static {p1}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$2500(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)V
 
     return-void
 .end method
@@ -939,7 +939,7 @@
 .method private synthetic lambda$runAnimation$4(FFFFILandroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 857
+    .line 905
     invoke-virtual {p6}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p6
@@ -960,17 +960,17 @@
 
     add-float/2addr p1, v1
 
-    .line 859
+    .line 907
     iget-object p6, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->contentView:Landroid/view/ViewGroup;
 
     invoke-virtual {p6, p1}, Landroid/view/ViewGroup;->setScaleX(F)V
 
-    .line 860
+    .line 908
     iget-object p6, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->contentView:Landroid/view/ViewGroup;
 
     invoke-virtual {p6, p1}, Landroid/view/ViewGroup;->setScaleY(F)V
 
-    .line 861
+    .line 909
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->contentView:Landroid/view/ViewGroup;
 
     iget p6, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->animationProgress:F
@@ -981,7 +981,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->setTranslationX(F)V
 
-    .line 862
+    .line 910
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->contentView:Landroid/view/ViewGroup;
 
     iget p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->animationProgress:F
@@ -992,7 +992,7 @@
 
     invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->setTranslationY(F)V
 
-    .line 864
+    .line 912
     iget p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->animationProgress:F
 
     sub-float p1, v0, p1
@@ -1001,12 +1001,12 @@
 
     float-to-int p1, p4
 
-    .line 865
+    .line 913
     iget-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->viewPager:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-virtual {p2, p1, p1}, Lorg/telegram/ui/Components/ProfileGalleryView;->setRoundRadius(II)V
 
-    .line 867
+    .line 915
     iget p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->animationProgress:F
 
     const/high16 p2, 0x40000000    # 2.0f
@@ -1021,7 +1021,7 @@
 
     move-result p1
 
-    .line 868
+    .line 916
     iget-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->pagerShadowDrawable:Landroid/graphics/drawable/Drawable;
 
     const/high16 p3, 0x437f0000    # 255.0f
@@ -1032,17 +1032,17 @@
 
     invoke-virtual {p2, p4}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 869
+    .line 917
     iget-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->nameText:Landroid/widget/TextView;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 870
+    .line 918
     iget-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->bioText:Landroid/widget/TextView;
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 871
+    .line 919
     iget-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     int-to-float p4, p5
@@ -1055,17 +1055,17 @@
 
     invoke-virtual {p2, p4}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 872
+    .line 920
     iget-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 873
+    .line 921
     iget-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->backgroundDrawable:Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz p2, :cond_0
 
-    .line 874
+    .line 922
     iget p4, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->animationProgress:F
 
     mul-float/2addr p4, p3
@@ -1074,7 +1074,7 @@
 
     invoke-virtual {p2, p3}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
 
-    .line 876
+    .line 924
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->pagerIndicator:Lorg/telegram/ui/AvatarPreviewPagerIndicator;
 
@@ -1086,12 +1086,12 @@
 .method private synthetic lambda$show$3()V
     .locals 1
 
-    .line 832
+    .line 880
     invoke-direct {p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->updateBackgroundBitmap()V
 
     const/4 v0, 0x1
 
-    .line 833
+    .line 881
     invoke-direct {p0, v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->runAnimation(Z)V
 
     return-void
@@ -1100,12 +1100,12 @@
 .method private runAnimation(Z)V
     .locals 12
 
-    .line 843
+    .line 891
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->animator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 844
+    .line 892
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_0
@@ -1113,12 +1113,12 @@
 
     new-array v1, v0, [I
 
-    .line 848
+    .line 896
     iget-object v2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 849
+    .line 897
     iget-object v2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v2}, Landroid/view/View;->getWidth()I
@@ -1139,7 +1139,7 @@
 
     div-float/2addr v2, v4
 
-    .line 850
+    .line 898
     iget-object v4, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v4}, Landroid/view/View;->getWidth()I
@@ -1156,7 +1156,7 @@
 
     const/4 v4, 0x0
 
-    .line 851
+    .line 899
     aget v6, v1, v4
 
     iget-object v7, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->viewPager:Lorg/telegram/ui/Components/ProfileGalleryView;
@@ -1187,7 +1187,7 @@
 
     const/4 v6, 0x1
 
-    .line 852
+    .line 900
     aget v1, v1, v6
 
     iget-object v7, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->viewPager:Lorg/telegram/ui/Components/ProfileGalleryView;
@@ -1214,7 +1214,7 @@
 
     int-to-float v9, v1
 
-    .line 854
+    .line 902
     iget-object v1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getTop()I
@@ -1251,14 +1251,14 @@
     :goto_1
     aput v3, v0, v6
 
-    .line 855
+    .line 903
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->animator:Landroid/animation/ValueAnimator;
 
-    .line 856
+    .line 904
     new-instance v1, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda0;
 
     move-object v5, v1
@@ -1271,7 +1271,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 878
+    .line 926
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->animator:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$2;
@@ -1280,21 +1280,21 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 896
+    .line 944
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->animator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0xdc
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 897
+    .line 945
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->animator:Landroid/animation/ValueAnimator;
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 898
+    .line 946
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->animator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -1305,7 +1305,7 @@
 .method private updateBackgroundBitmap()V
     .locals 4
 
-    .line 925
+    .line 973
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->backgroundDrawable:Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v0, :cond_0
@@ -1316,7 +1316,7 @@
 
     if-lt v1, v2, :cond_0
 
-    .line 926
+    .line 974
     invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getAlpha()I
 
     move-result v0
@@ -1326,7 +1326,7 @@
     :cond_0
     const/16 v0, 0xff
 
-    .line 928
+    .line 976
     :goto_0
     new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -1346,10 +1346,10 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->backgroundDrawable:Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 929
+    .line 977
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/BitmapDrawable;->setAlpha(I)V
 
-    .line 930
+    .line 978
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -1368,7 +1368,7 @@
 
     const/4 v0, 0x0
 
-    .line 839
+    .line 887
     invoke-direct {p0, v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->runAnimation(Z)V
 
     return-void
@@ -1377,10 +1377,10 @@
 .method protected onCreate(Landroid/os/Bundle;)V
     .locals 3
 
-    .line 784
+    .line 832
     invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
 
-    .line 785
+    .line 833
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object p1
@@ -1389,7 +1389,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/Window;->setWindowAnimations(I)V
 
-    .line 786
+    .line 834
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->contentView:Landroid/view/ViewGroup;
 
     new-instance v0, Landroid/view/ViewGroup$LayoutParams;
@@ -1400,7 +1400,7 @@
 
     invoke-virtual {p0, p1, v0}, Landroid/app/Dialog;->setContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 788
+    .line 836
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object p1
@@ -1409,18 +1409,18 @@
 
     move-result-object p1
 
-    .line 789
+    .line 837
     iput v1, p1, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    .line 790
+    .line 838
     iput v1, p1, Landroid/view/WindowManager$LayoutParams;->height:I
 
     const/4 v0, 0x0
 
-    .line 791
+    .line 839
     iput v0, p1, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
-    .line 792
+    .line 840
     iget v0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     and-int/lit8 v0, v0, -0x3
@@ -1429,10 +1429,10 @@
 
     const/16 v1, 0x33
 
-    .line 793
+    .line 841
     iput v1, p1, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 794
+    .line 842
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x15
@@ -1443,7 +1443,7 @@
 
     or-int/2addr v0, v2
 
-    .line 795
+    .line 843
     iput v0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     :cond_0
@@ -1453,10 +1453,10 @@
 
     const/4 v0, 0x1
 
-    .line 800
+    .line 848
     iput v0, p1, Landroid/view/WindowManager$LayoutParams;->layoutInDisplayCutoutMode:I
 
-    .line 802
+    .line 850
     :cond_1
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
@@ -1470,16 +1470,16 @@
 .method public setImporter(Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;Lorg/telegram/ui/Components/BackupImageView;)V
     .locals 8
 
-    .line 806
+    .line 854
     iput-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->importer:Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;
 
-    .line 807
+    .line 855
     iput-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 811
+    .line 859
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
-    invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$1000(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)I
+    invoke-static {v0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$1100(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)I
 
     move-result v0
 
@@ -1499,22 +1499,22 @@
 
     const/4 v1, 0x0
 
-    .line 812
+    .line 860
     invoke-static {v0, v1}, Lorg/telegram/messenger/ImageLocation;->getForUserOrChat(Lorg/telegram/tgnet/TLObject;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v2
 
     const/4 v3, 0x1
 
-    .line 813
+    .line 861
     invoke-static {v0, v3}, Lorg/telegram/messenger/ImageLocation;->getForUserOrChat(Lorg/telegram/tgnet/TLObject;I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v4
 
-    .line 814
+    .line 862
     iget-object v5, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
-    invoke-static {v5}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$1000(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)I
+    invoke-static {v5}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$1100(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)I
 
     move-result v5
 
@@ -1530,10 +1530,10 @@
 
     if-nez v5, :cond_0
 
-    .line 816
+    .line 864
     iget-object v5, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
-    invoke-static {v5}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$1000(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)I
+    invoke-static {v5}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$1100(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)I
 
     move-result v5
 
@@ -1543,30 +1543,30 @@
 
     invoke-virtual {v5, v0, v1, v1}, Lorg/telegram/messenger/MessagesController;->loadUserInfo(Lorg/telegram/tgnet/TLRPC$User;ZI)V
 
-    .line 818
+    .line 866
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->viewPager:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/Components/ProfileGalleryView;->setParentAvatarImage(Lorg/telegram/ui/Components/BackupImageView;)V
 
-    .line 819
+    .line 867
     iget-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->viewPager:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     iget-wide v5, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;->user_id:J
 
     invoke-virtual {p2, v5, v6, v3}, Lorg/telegram/ui/Components/ProfileGalleryView;->setData(JZ)V
 
-    .line 820
+    .line 868
     iget-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->viewPager:Lorg/telegram/ui/Components/ProfileGalleryView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p2, v0, v2, v4, v3}, Lorg/telegram/ui/Components/ProfileGalleryView;->initIfEmpty(Lorg/telegram/ui/Components/VectorAvatarThumbDrawable;Lorg/telegram/messenger/ImageLocation;Lorg/telegram/messenger/ImageLocation;Z)Z
 
-    .line 821
+    .line 869
     iget-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->this$0:Lorg/telegram/ui/Delegates/MemberRequestsDelegate;
 
-    invoke-static {p2}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$700(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Landroid/util/LongSparseArray;
+    invoke-static {p2}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate;->access$900(Lorg/telegram/ui/Delegates/MemberRequestsDelegate;)Landroid/util/LongSparseArray;
 
     move-result-object p2
 
@@ -1578,7 +1578,7 @@
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 822
+    .line 870
     iget-object v0, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->nameText:Landroid/widget/TextView;
 
     invoke-static {p2}, Lorg/telegram/messenger/UserObject;->getUserName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
@@ -1587,14 +1587,14 @@
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 823
+    .line 871
     iget-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->bioText:Landroid/widget/TextView;
 
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;->about:Ljava/lang/String;
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 824
+    .line 872
     iget-object p2, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->bioText:Landroid/widget/TextView;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;->about:Ljava/lang/String;
@@ -1610,7 +1610,7 @@
     :cond_1
     invoke-virtual {p2, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 825
+    .line 873
     iget-object p1, p0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;->contentView:Landroid/view/ViewGroup;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->requestLayout()V
@@ -1621,10 +1621,10 @@
 .method public show()V
     .locals 3
 
-    .line 830
+    .line 878
     invoke-super {p0}, Landroid/app/Dialog;->show()V
 
-    .line 831
+    .line 879
     new-instance v0, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Delegates/MemberRequestsDelegate$PreviewDialog;)V

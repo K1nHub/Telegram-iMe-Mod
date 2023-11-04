@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: CryptoAccountProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class CryptoAccountProvider$convert$1 extends Lambda implements Function1<AppCompatTextView, Unit> {
     final /* synthetic */ CryptoAccountItem $item;
     final /* synthetic */ CryptoAccountProvider this$0;

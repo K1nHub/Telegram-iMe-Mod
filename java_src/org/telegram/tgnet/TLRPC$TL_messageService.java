@@ -1,8 +1,6 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_messageService extends TLRPC$Message {
-    public static int constructor = 721967202;
-
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         int readInt32 = abstractSerializedData.readInt32(z);
@@ -13,7 +11,7 @@ public class TLRPC$TL_messageService extends TLRPC$Message {
         this.silent = (readInt32 & 8192) != 0;
         this.post = (readInt32 & 16384) != 0;
         this.legacy = (readInt32 & 524288) != 0;
-        this.f1624id = abstractSerializedData.readInt32(z);
+        this.f1626id = abstractSerializedData.readInt32(z);
         if ((this.flags & 256) != 0) {
             this.from_id = TLRPC$Peer.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
@@ -30,7 +28,7 @@ public class TLRPC$TL_messageService extends TLRPC$Message {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(721967202);
         int i = this.out ? this.flags | 2 : this.flags & (-3);
         this.flags = i;
         int i2 = this.mentioned ? i | 16 : i & (-17);
@@ -44,7 +42,7 @@ public class TLRPC$TL_messageService extends TLRPC$Message {
         int i6 = this.legacy ? i5 | 524288 : i5 & (-524289);
         this.flags = i6;
         abstractSerializedData.writeInt32(i6);
-        abstractSerializedData.writeInt32(this.f1624id);
+        abstractSerializedData.writeInt32(this.f1626id);
         if ((this.flags & 256) != 0) {
             this.from_id.serializeToStream(abstractSerializedData);
         }

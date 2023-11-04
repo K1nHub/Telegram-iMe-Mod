@@ -10,7 +10,7 @@ public final class QualifierKt {
     }
 
     /* renamed from: _q */
-    public static final StringQualifier m104_q(String name) {
+    public static final StringQualifier m106_q(String name) {
         Intrinsics.checkNotNullParameter(name, "name");
         return new StringQualifier(name);
     }

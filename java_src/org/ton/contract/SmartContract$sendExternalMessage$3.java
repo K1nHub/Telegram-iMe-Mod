@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import org.ton.contract.SmartContract;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SmartContract.kt */
-@DebugMetadata(m143c = "org.ton.contract.SmartContract$DefaultImpls", m142f = "SmartContract.kt", m141l = {36}, m140m = "sendExternalMessage")
+@DebugMetadata(m145c = "org.ton.contract.SmartContract$DefaultImpls", m144f = "SmartContract.kt", m143l = {36}, m142m = "sendExternalMessage")
 /* loaded from: classes6.dex */
 public final class SmartContract$sendExternalMessage$3<T> extends ContinuationImpl {
     int label;

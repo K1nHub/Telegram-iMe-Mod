@@ -3,15 +3,14 @@ package org.telegram.tgnet;
 import java.util.ArrayList;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_shippingOption extends TLObject {
-    public static int constructor = -1239335713;
 
     /* renamed from: id */
-    public String f1737id;
+    public String f1734id;
     public ArrayList<TLRPC$TL_labeledPrice> prices = new ArrayList<>();
     public String title;
 
     public static TLRPC$TL_shippingOption TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
-        if (constructor != i) {
+        if (-1239335713 != i) {
             if (z) {
                 throw new RuntimeException(String.format("can't parse magic %x in TL_shippingOption", Integer.valueOf(i)));
             }
@@ -24,7 +23,7 @@ public class TLRPC$TL_shippingOption extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1737id = abstractSerializedData.readString(z);
+        this.f1734id = abstractSerializedData.readString(z);
         this.title = abstractSerializedData.readString(z);
         int readInt32 = abstractSerializedData.readInt32(z);
         if (readInt32 != 481674261) {
@@ -45,8 +44,8 @@ public class TLRPC$TL_shippingOption extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeString(this.f1737id);
+        abstractSerializedData.writeInt32(-1239335713);
+        abstractSerializedData.writeString(this.f1734id);
         abstractSerializedData.writeString(this.title);
         abstractSerializedData.writeInt32(481674261);
         int size = this.prices.size();

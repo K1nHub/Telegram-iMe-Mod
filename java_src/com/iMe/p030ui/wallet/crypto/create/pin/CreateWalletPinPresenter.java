@@ -26,7 +26,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.FingerprintController;
 import timber.log.Timber;
 /* compiled from: CreateWalletPinPresenter.kt */
@@ -46,7 +46,7 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
     private final TelegramControllersGateway telegramControllersGateway;
 
     /* renamed from: wallet  reason: collision with root package name */
-    private final Wallet f2169wallet;
+    private final Wallet f2181wallet;
 
     /* compiled from: CreateWalletPinPresenter.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinPresenter$WhenMappings */
@@ -87,7 +87,7 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
         this.currentScreenStep = ScreenStep.FIRST_STEP;
         this.password = walletPinScreenArgs.getPassword();
         this.seed = walletPinScreenArgs.getSeed();
-        this.f2169wallet = walletPinScreenArgs.getWallet();
+        this.f2181wallet = walletPinScreenArgs.getWallet();
         this.screenType = walletPinScreenArgs.getScreenType();
         this.pin = "";
     }
@@ -123,11 +123,11 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
                 return;
             }
         }
-        onPinError(this.resourceManager.getString(C3630R.string.wallet_confirm_eth_pin_code_validation_not_match_error));
+        onPinError(this.resourceManager.getString(C3634R.string.wallet_confirm_eth_pin_code_validation_not_match_error));
     }
 
     private final void changePinCode() {
-        Completable observeOn = this.cryptoWalletInteractor.rewriteDataWithNewPin(this.pin).observeOn(this.schedulersProvider.mo1009ui());
+        Completable observeOn = this.cryptoWalletInteractor.rewriteDataWithNewPin(this.pin).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new Action() { // from class: com.iMe.ui.wallet.crypto.create.pin.CreateWalletPinPresenter$changePinCode$$inlined$subscribeWithErrorHandle$default$1
@@ -170,13 +170,13 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
             CreateWalletPinView createWalletPinView = (CreateWalletPinView) getViewState();
             String str = this.password;
             String str2 = this.pin;
-            Wallet wallet2 = this.f2169wallet;
+            Wallet wallet2 = this.f2181wallet;
             if (wallet2 == null) {
                 return;
             }
             createWalletPinView.onWalletCreateSuccess(str, str2, wallet2);
         } else if (Intrinsics.areEqual(initial, WalletCreationType.Initial.Import.INSTANCE)) {
-            Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.importWallet(this.seed, this.password, this.pin, this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo1009ui());
+            Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.importWallet(this.seed, this.password, this.pin, this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo1010ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -189,12 +189,12 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Wallet> result) {
-                    m1631invoke(result);
+                    m1636invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1631invoke(Result<? extends Wallet> it) {
+                public final void m1636invoke(Result<? extends Wallet> it) {
                     ResourceManager resourceManager;
                     Intrinsics.checkNotNullExpressionValue(it, "it");
                     Result<? extends Wallet> result = it;

@@ -15,9 +15,9 @@ public final class NaturalOrderComparator implements Comparator<Comparable<? sup
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ Comparator thenComparing(Function function) {
-        Comparator m692a;
-        m692a = Comparator.EL.m692a(this, Comparator.CC.comparing(function));
-        return m692a;
+        Comparator m693a;
+        m693a = Comparator.EL.m693a(this, Comparator.CC.comparing(function));
+        return m693a;
     }
 
     @Override // p033j$.util.Comparator
@@ -32,23 +32,23 @@ public final class NaturalOrderComparator implements Comparator<Comparable<? sup
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingDouble(ToDoubleFunction toDoubleFunction) {
-        java.util.Comparator m692a;
-        m692a = Comparator.EL.m692a(this, Comparator.CC.comparingDouble(toDoubleFunction));
-        return m692a;
+        java.util.Comparator m693a;
+        m693a = Comparator.EL.m693a(this, Comparator.CC.comparingDouble(toDoubleFunction));
+        return m693a;
     }
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingInt(ToIntFunction toIntFunction) {
-        java.util.Comparator m692a;
-        m692a = Comparator.EL.m692a(this, Comparator.CC.comparingInt(toIntFunction));
-        return m692a;
+        java.util.Comparator m693a;
+        m693a = Comparator.EL.m693a(this, Comparator.CC.comparingInt(toIntFunction));
+        return m693a;
     }
 
     @Override // p033j$.util.Comparator
     public /* synthetic */ java.util.Comparator thenComparingLong(ToLongFunction toLongFunction) {
-        java.util.Comparator m692a;
-        m692a = Comparator.EL.m692a(this, Comparator.CC.comparingLong(toLongFunction));
-        return m692a;
+        java.util.Comparator m693a;
+        m693a = Comparator.EL.m693a(this, Comparator.CC.comparingLong(toLongFunction));
+        return m693a;
     }
 
     private NaturalOrderComparator() {

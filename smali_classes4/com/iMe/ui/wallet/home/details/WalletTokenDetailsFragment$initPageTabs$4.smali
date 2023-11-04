@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/view/View;
     .locals 2
 
-    .line 718
+    .line 723
     iget-object v0, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$initPageTabs$4;->this$0:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;
 
     invoke-static {v0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->access$getNavigationRouter(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;)Lcom/iMe/navigation/common/router/base/NavigationRouter;
@@ -61,10 +61,10 @@
 
     check-cast v0, Lcom/iMe/navigation/common/router/base/BaseNavigationRouter;
 
-    .line 719
+    .line 724
     sget v1, Lorg/telegram/messenger/R$id;->wallet_token_details_transactions_all:I
 
-    .line 718
+    .line 723
     invoke-virtual {v0, v1}, Lcom/iMe/navigation/common/router/base/BaseNavigationRouter;->getViewByFragmentId(I)Landroid/view/View;
 
     move-result-object v0
@@ -75,7 +75,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 709
+    .line 714
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$initPageTabs$4;->invoke()Landroid/view/View;
 
     move-result-object v0

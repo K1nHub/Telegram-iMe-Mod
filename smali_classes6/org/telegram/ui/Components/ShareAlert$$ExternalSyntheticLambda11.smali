@@ -45,7 +45,7 @@
 
     move v5, p3
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$CvEbPi8MQP2LMsvio8RIudp5sM4(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;[ILandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$OCSAiVgFjwkvrE1olqKnPxpWH1U(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;[ILandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
 
     return-void
 .end method

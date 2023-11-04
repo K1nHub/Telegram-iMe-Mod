@@ -78,7 +78,7 @@
 .method constructor <init>(Lorg/telegram/ui/CachedMediaLayout;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    .line 126
+    .line 127
     iput-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     iput-object p2, p0, Lorg/telegram/ui/CachedMediaLayout$1;->val$context:Landroid/content/Context;
@@ -93,7 +93,7 @@
 .method private synthetic lambda$createView$0(Lorg/telegram/ui/CachedMediaLayout$ItemInner;Lorg/telegram/ui/CachedMediaLayout$BaseAdapter;Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;Landroid/view/View;)V
     .locals 0
 
-    .line 188
+    .line 189
     iget-object p5, p0, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     check-cast p2, Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;
@@ -102,12 +102,12 @@
 
     invoke-static {p5, p1, p2, p3, p4}, Lorg/telegram/ui/CachedMediaLayout;->access$600(Lorg/telegram/ui/CachedMediaLayout;Lorg/telegram/ui/CachedMediaLayout$ItemInner;Lorg/telegram/ui/CachedMediaLayout$MediaAdapter;Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;)V
 
-    .line 189
+    .line 190
     iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$1;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_0
 
-    .line 190
+    .line 191
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     :cond_0
@@ -117,7 +117,7 @@
 .method private synthetic lambda$createView$1(Lorg/telegram/ui/CachedMediaLayout$ItemInner;Landroid/view/View;Landroid/view/View;)V
     .locals 0
 
-    .line 195
+    .line 196
     iget-object p3, p0, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     iget-object p1, p1, Lorg/telegram/ui/CachedMediaLayout$ItemInner;->file:Lorg/telegram/ui/Storage/CacheModel$FileInfo;
@@ -126,12 +126,12 @@
 
     invoke-static {p3, p1, p2}, Lorg/telegram/ui/CachedMediaLayout;->access$700(Lorg/telegram/ui/CachedMediaLayout;Lorg/telegram/ui/Storage/CacheModel$FileInfo;Lorg/telegram/ui/CachedMediaLayout$CacheCell;)V
 
-    .line 196
+    .line 197
     iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$1;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_0
 
-    .line 197
+    .line 198
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     :cond_0
@@ -141,7 +141,7 @@
 .method private synthetic lambda$createView$2(Lorg/telegram/ui/CachedMediaLayout$ItemInner;Landroid/view/View;Landroid/view/View;)V
     .locals 0
 
-    .line 202
+    .line 203
     iget-object p3, p0, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     iget-object p1, p1, Lorg/telegram/ui/CachedMediaLayout$ItemInner;->file:Lorg/telegram/ui/Storage/CacheModel$FileInfo;
@@ -150,12 +150,12 @@
 
     invoke-static {p3, p1, p2}, Lorg/telegram/ui/CachedMediaLayout;->access$700(Lorg/telegram/ui/CachedMediaLayout;Lorg/telegram/ui/Storage/CacheModel$FileInfo;Lorg/telegram/ui/CachedMediaLayout$CacheCell;)V
 
-    .line 203
+    .line 204
     iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$1;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_0
 
-    .line 204
+    .line 205
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     :cond_0
@@ -165,12 +165,12 @@
 .method private synthetic lambda$createView$3(Lorg/telegram/ui/CachedMediaLayout$ItemInner;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/view/View;)V
     .locals 4
 
-    .line 210
+    .line 211
     new-instance p3, Landroid/os/Bundle;
 
     invoke-direct {p3}, Landroid/os/Bundle;-><init>()V
 
-    .line 211
+    .line 212
     iget-object v0, p1, Lorg/telegram/ui/CachedMediaLayout$ItemInner;->file:Lorg/telegram/ui/Storage/CacheModel$FileInfo;
 
     iget-wide v0, v0, Lorg/telegram/ui/Storage/CacheModel$FileInfo;->dialogId:J
@@ -183,7 +183,7 @@
 
     const-string v2, "user_id"
 
-    .line 212
+    .line 213
     invoke-virtual {p3, v2, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
     goto :goto_0
@@ -193,10 +193,10 @@
 
     const-string v2, "chat_id"
 
-    .line 214
+    .line 215
     invoke-virtual {p3, v2, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 216
+    .line 217
     :goto_0
     iget-object p1, p1, Lorg/telegram/ui/CachedMediaLayout$ItemInner;->file:Lorg/telegram/ui/Storage/CacheModel$FileInfo;
 
@@ -206,26 +206,26 @@
 
     invoke-virtual {p3, v0, p1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 217
+    .line 218
     new-instance p1, Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p1, p3}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 218
+    .line 219
     iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     iget-object p1, p1, Lorg/telegram/ui/CachedMediaLayout;->delegate:Lorg/telegram/ui/CachedMediaLayout$Delegate;
 
     invoke-interface {p1}, Lorg/telegram/ui/CachedMediaLayout$Delegate;->dismiss()V
 
-    .line 219
+    .line 220
     iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$1;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_1
 
-    .line 220
+    .line 221
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     :cond_1
@@ -235,14 +235,14 @@
 .method private synthetic lambda$createView$4(Lorg/telegram/ui/CachedMediaLayout$ItemInner;Landroid/view/View;)V
     .locals 2
 
-    .line 227
+    .line 228
     iget-object p2, p0, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     iget-object p2, p2, Lorg/telegram/ui/CachedMediaLayout;->delegate:Lorg/telegram/ui/CachedMediaLayout$Delegate;
 
     if-eqz p2, :cond_0
 
-    .line 228
+    .line 229
     iget-object v0, p1, Lorg/telegram/ui/CachedMediaLayout$ItemInner;->entities:Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
 
     iget-object p1, p1, Lorg/telegram/ui/CachedMediaLayout$ItemInner;->file:Lorg/telegram/ui/Storage/CacheModel$FileInfo;
@@ -251,13 +251,13 @@
 
     invoke-interface {p2, v0, p1, v1}, Lorg/telegram/ui/CachedMediaLayout$Delegate;->onItemSelected(Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;Lorg/telegram/ui/Storage/CacheModel$FileInfo;Z)V
 
-    .line 230
+    .line 231
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$1;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_1
 
-    .line 231
+    .line 232
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     :cond_1
@@ -273,7 +273,7 @@
 
     move-object/from16 v8, p3
 
-    .line 182
+    .line 183
     invoke-virtual/range {p1 .. p1}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -282,7 +282,7 @@
 
     check-cast v3, Lorg/telegram/ui/CachedMediaLayout$BaseAdapter;
 
-    .line 183
+    .line 184
     iget-object v0, v3, Lorg/telegram/ui/CachedMediaLayout$BaseAdapter;->itemInners:Ljava/util/ArrayList;
 
     move/from16 v1, p4
@@ -295,7 +295,7 @@
 
     check-cast v9, Lorg/telegram/ui/CachedMediaLayout$ItemInner;
 
-    .line 184
+    .line 185
     instance-of v0, v8, Lorg/telegram/ui/CachedMediaLayout$CacheCell;
 
     const/4 v10, 0x1
@@ -308,7 +308,7 @@
 
     goto :goto_0
 
-    .line 238
+    .line 239
     :cond_0
     iget-object v0, v6, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
@@ -316,7 +316,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 239
+    .line 240
     iget-object v1, v9, Lorg/telegram/ui/CachedMediaLayout$ItemInner;->entities:Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;
 
     iget-object v2, v9, Lorg/telegram/ui/CachedMediaLayout$ItemInner;->file:Lorg/telegram/ui/Storage/CacheModel$FileInfo;
@@ -326,7 +326,7 @@
     :cond_1
     return v10
 
-    .line 185
+    .line 186
     :cond_2
     :goto_0
     new-instance v11, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -339,7 +339,7 @@
 
     invoke-direct {v11, v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;)V
 
-    .line 186
+    .line 187
     instance-of v0, v8, Lorg/telegram/ui/Cells/SharedPhotoVideoCell2;
 
     const-string v1, "CacheOpenFile"
@@ -350,7 +350,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 187
+    .line 188
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_view_file:I
 
     sget v2, Lorg/telegram/messenger/R$string;->CacheOpenFile:I
@@ -381,7 +381,7 @@
 
     goto :goto_1
 
-    .line 193
+    .line 194
     :cond_3
     move-object v0, v8
 
@@ -397,7 +397,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 194
+    .line 195
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_played:I
 
     sget v1, Lorg/telegram/messenger/R$string;->PlayFile:I
@@ -420,7 +420,7 @@
 
     goto :goto_1
 
-    .line 201
+    .line 202
     :cond_4
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_view_file:I
 
@@ -440,7 +440,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 208
+    .line 209
     :goto_1
     iget-object v0, v9, Lorg/telegram/ui/CachedMediaLayout$ItemInner;->file:Lorg/telegram/ui/Storage/CacheModel$FileInfo;
 
@@ -456,7 +456,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 209
+    .line 210
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_viewintopic:I
 
     sget v1, Lorg/telegram/messenger/R$string;->ViewInChat:I
@@ -477,11 +477,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 224
+    .line 225
     :cond_5
     sget v0, Lorg/telegram/messenger/R$drawable;->msg_select:I
 
-    .line 225
+    .line 226
     iget-object v1, v6, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     iget-object v1, v1, Lorg/telegram/ui/CachedMediaLayout;->cacheModel:Lorg/telegram/ui/Storage/CacheModel;
@@ -512,7 +512,7 @@
 
     move-result-object v1
 
-    .line 224
+    .line 225
     invoke-static {v11, v0, v1, v13, v12}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->addItem(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;ILjava/lang/CharSequence;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     move-result-object v0
@@ -521,7 +521,7 @@
 
     invoke-direct {v1, v6, v9}, Lorg/telegram/ui/CachedMediaLayout$1$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/CachedMediaLayout$1;Lorg/telegram/ui/CachedMediaLayout$ItemInner;)V
 
-    .line 226
+    .line 227
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     move/from16 v0, p5
@@ -536,14 +536,14 @@
 
     int-to-float v1, v1
 
-    .line 234
+    .line 235
     invoke-static {v7, v11, v8, v0, v1}, Lorg/telegram/ui/Components/AlertsCreator;->createSimplePopup(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/view/View;Landroid/view/View;FF)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object v0
 
     iput-object v0, v6, Lorg/telegram/ui/CachedMediaLayout$1;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    .line 235
+    .line 236
     iget-object v0, v6, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getRootView()Landroid/view/View;
@@ -576,12 +576,12 @@
 .method public bindView(Landroid/view/View;II)V
     .locals 2
 
-    .line 249
+    .line 250
     move-object p3, p1
 
     check-cast p3, Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 250
+    .line 251
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
@@ -596,7 +596,7 @@
 
     invoke-virtual {p3, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 251
+    .line 252
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
@@ -631,7 +631,7 @@
 
     goto :goto_0
 
-    .line 254
+    .line 255
     :cond_0
     new-instance v0, Landroidx/recyclerview/widget/LinearLayoutManager;
 
@@ -645,7 +645,7 @@
 
     goto :goto_1
 
-    .line 252
+    .line 253
     :cond_1
     :goto_0
     new-instance v0, Landroidx/recyclerview/widget/GridLayoutManager;
@@ -660,7 +660,7 @@
 
     invoke-virtual {p3, v0}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 256
+    .line 257
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
@@ -686,14 +686,14 @@
 .method public createView(I)Landroid/view/View;
     .locals 2
 
-    .line 147
+    .line 148
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$1;->val$context:Landroid/content/Context;
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
-    .line 149
+    .line 150
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getItemAnimator()Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;
 
     move-result-object v0
@@ -702,16 +702,16 @@
 
     const/4 v1, 0x0
 
-    .line 150
+    .line 151
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/DefaultItemAnimator;->setDelayAnimations(Z)V
 
-    .line 151
+    .line 152
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/SimpleItemAnimator;->setSupportsChangeAnimations(Z)V
 
-    .line 152
+    .line 153
     invoke-virtual {p1, v1}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 153
+    .line 154
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/CachedMediaLayout;->access$500(Lorg/telegram/ui/CachedMediaLayout;)I
@@ -720,14 +720,14 @@
 
     invoke-virtual {p1, v1, v1, v1, v0}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 154
+    .line 155
     new-instance v0, Lorg/telegram/ui/CachedMediaLayout$1$1;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/CachedMediaLayout$1$1;-><init>(Lorg/telegram/ui/CachedMediaLayout$1;Lorg/telegram/ui/Components/RecyclerListView;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 181
+    .line 182
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$1;->val$parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     new-instance v1, Lorg/telegram/ui/CachedMediaLayout$1$$ExternalSyntheticLambda5;
@@ -742,7 +742,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 137
+    .line 138
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
@@ -757,7 +757,7 @@
 .method public getItemId(I)I
     .locals 1
 
-    .line 142
+    .line 143
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;
@@ -776,7 +776,7 @@
 .method public getItemTitle(I)Ljava/lang/String;
     .locals 1
 
-    .line 132
+    .line 133
     iget-object v0, p0, Lorg/telegram/ui/CachedMediaLayout$1;->this$0:Lorg/telegram/ui/CachedMediaLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/CachedMediaLayout;->pages:Ljava/util/ArrayList;

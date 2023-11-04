@@ -13,7 +13,7 @@ public final class WriteSessionImpl {
         Intrinsics.checkNotNullParameter(channel, "channel");
         this.current = channel.resolveChannelInstance$ktor_io();
         ChunkBuffer.Companion companion = ChunkBuffer.Companion;
-        companion.getEmpty().m1912getMemorySK3TCg8();
+        companion.getEmpty().m1917getMemorySK3TCg8();
         companion.getEmpty();
         RingBufferCapacity ringBufferCapacity = this.current.currentState$ktor_io().capacity;
     }

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewContainer;)V
     .locals 0
 
-    .line 1665
+    .line 1676
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$8;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,7 +46,7 @@
 .method public didFindQr(Ljava/lang/String;)V
     .locals 4
 
-    .line 1669
+    .line 1680
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$8;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
@@ -71,7 +71,7 @@
     :catch_0
     move-exception p1
 
-    .line 1671
+    .line 1682
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -81,7 +81,7 @@
 .method public getSubtitleText()Ljava/lang/String;
     .locals 1
 
-    .line 1677
+    .line 1688
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$8;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1700(Lorg/telegram/ui/Components/BotWebViewContainer;)Ljava/lang/String;
@@ -94,7 +94,7 @@
 .method public onDismiss()V
     .locals 3
 
-    .line 1682
+    .line 1693
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$8;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     const-string v1, "scan_qr_popup_closed"
@@ -103,7 +103,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->access$1600(Lorg/telegram/ui/Components/BotWebViewContainer;Ljava/lang/String;Lorg/json/JSONObject;)V
 
-    .line 1683
+    .line 1694
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$8;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     const/4 v1, 0x0

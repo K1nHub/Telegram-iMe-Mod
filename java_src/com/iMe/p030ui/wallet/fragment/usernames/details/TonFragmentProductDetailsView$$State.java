@@ -9,7 +9,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.fragment.usernames.details.TonFragmentProductDetailsView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class TonFragmentProductDetailsView$$State extends MvpViewState<TonFragmentProductDetailsView> implements TonFragmentProductDetailsView {
     @Override // com.iMe.p030ui.base.mvp.base.BaseView
     public /* synthetic */ void removeSelfFromStackImmediately() {
@@ -96,7 +96,7 @@ public class TonFragmentProductDetailsView$$State extends MvpViewState<TonFragme
 
     /* compiled from: TonFragmentProductDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.details.TonFragmentProductDetailsView$$State$RenderScreenDataCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class RenderScreenDataCommand extends ViewCommand<TonFragmentProductDetailsView> {
         public final String priceText;
         public final String titleText;
@@ -117,7 +117,7 @@ public class TonFragmentProductDetailsView$$State extends MvpViewState<TonFragme
 
     /* compiled from: TonFragmentProductDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.details.TonFragmentProductDetailsView$$State$RenderTimeLeftCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class RenderTimeLeftCommand extends ViewCommand<TonFragmentProductDetailsView> {
         public final String timeLeftText;
 
@@ -134,7 +134,7 @@ public class TonFragmentProductDetailsView$$State extends MvpViewState<TonFragme
 
     /* compiled from: TonFragmentProductDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.details.TonFragmentProductDetailsView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<TonFragmentProductDetailsView> {
         public final String text;
 
@@ -151,7 +151,7 @@ public class TonFragmentProductDetailsView$$State extends MvpViewState<TonFragme
 
     /* compiled from: TonFragmentProductDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.details.TonFragmentProductDetailsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<TonFragmentProductDetailsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -172,7 +172,7 @@ public class TonFragmentProductDetailsView$$State extends MvpViewState<TonFragme
 
     /* compiled from: TonFragmentProductDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.details.TonFragmentProductDetailsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<TonFragmentProductDetailsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -191,7 +191,7 @@ public class TonFragmentProductDetailsView$$State extends MvpViewState<TonFragme
 
     /* compiled from: TonFragmentProductDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.details.TonFragmentProductDetailsView$$State$FinishScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class FinishScreenCommand extends ViewCommand<TonFragmentProductDetailsView> {
         FinishScreenCommand(TonFragmentProductDetailsView$$State tonFragmentProductDetailsView$$State) {
             super("finishScreen", OneExecutionStateStrategy.class);

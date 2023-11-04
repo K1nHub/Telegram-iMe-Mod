@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.chunk;
 
 import android.media.MediaParser;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.analytics.PlayerId;
 import com.google.android.exoplayer2.extractor.ChunkIndex;
@@ -46,7 +46,7 @@ public final class MediaParserChunkExtractor implements ChunkExtractor {
         if (!MimeTypes.isText(format.containerMimeType)) {
             return new MediaParserChunkExtractor(i, format, list, playerId);
         }
-        Log.m1106w(TAG, "Ignoring an unsupported text track.");
+        Log.m1107w(TAG, "Ignoring an unsupported text track.");
         return null;
     }
 
@@ -77,7 +77,7 @@ public final class MediaParserChunkExtractor implements ChunkExtractor {
         this.outputConsumerAdapter.setMuxedCaptionFormats(list);
         this.trackOutputProviderAdapter = new TrackOutputProviderAdapter();
         this.dummyTrackOutput = new DummyTrackOutput();
-        this.pendingSeekUs = C0479C.TIME_UNSET;
+        this.pendingSeekUs = C0485C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.source.chunk.ChunkExtractor
@@ -113,11 +113,11 @@ public final class MediaParserChunkExtractor implements ChunkExtractor {
     private void maybeExecutePendingSeek() {
         MediaParser.SeekMap dummySeekMap = this.outputConsumerAdapter.getDummySeekMap();
         long j = this.pendingSeekUs;
-        if (j == C0479C.TIME_UNSET || dummySeekMap == null) {
+        if (j == C0485C.TIME_UNSET || dummySeekMap == null) {
             return;
         }
         this.mediaParser.seek((MediaParser.SeekPoint) dummySeekMap.getSeekPoints(j).first);
-        this.pendingSeekUs = C0479C.TIME_UNSET;
+        this.pendingSeekUs = C0485C.TIME_UNSET;
     }
 
     /* loaded from: classes.dex */

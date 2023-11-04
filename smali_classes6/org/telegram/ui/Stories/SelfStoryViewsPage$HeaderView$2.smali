@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage$HeaderView;)V
     .locals 0
 
-    .line 1376
+    .line 1377
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$HeaderView$2;->this$1:Lorg/telegram/ui/Stories/SelfStoryViewsPage$HeaderView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1379
+    .line 1380
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$HeaderView$2;->this$1:Lorg/telegram/ui/Stories/SelfStoryViewsPage$HeaderView;
 
     const/4 v0, 0x0
@@ -44,10 +44,10 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 1380
+    .line 1381
     iput v0, p1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$HeaderView;->animationProgress:F
 
-    .line 1381
+    .line 1382
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

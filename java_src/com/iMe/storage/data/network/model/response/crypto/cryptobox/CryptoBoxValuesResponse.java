@@ -44,7 +44,7 @@ public final class CryptoBoxValuesResponse {
     }
 
     public int hashCode() {
-        return (this.asToken.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.asUsd);
+        return (this.asToken.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.asUsd);
     }
 
     public String toString() {

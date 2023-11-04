@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.util.Pair;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.PlaybackParameters;
@@ -340,7 +340,7 @@ public final class DefaultAudioSink implements AudioSink {
         if (!MimeTypes.AUDIO_RAW.equals(format.sampleMimeType)) {
             return ((this.offloadDisabledUntilNextConfiguration || !useOffloadedPlayback(format, this.audioAttributes)) && !this.audioCapabilities.isPassthroughPlaybackSupported(format)) ? 0 : 2;
         } else if (!Util.isEncodingLinearPcm(format.pcmEncoding)) {
-            Log.m1106w(TAG, "Invalid PCM encoding: " + format.pcmEncoding);
+            Log.m1107w(TAG, "Invalid PCM encoding: " + format.pcmEncoding);
             return 0;
         } else {
             int i = format.pcmEncoding;
@@ -657,7 +657,7 @@ public final class DefaultAudioSink implements AudioSink {
                 this.inputBufferAccessUnitCount = 0;
                 return true;
             } else if (this.audioTrackPositionTracker.isStalled(getWrittenFrames())) {
-                Log.m1106w(TAG, "Resetting stalled audio track");
+                Log.m1107w(TAG, "Resetting stalled audio track");
                 flush();
                 return true;
             } else {
@@ -780,7 +780,7 @@ public final class DefaultAudioSink implements AudioSink {
                     writeNonBlockingV21 = 0;
                 }
             } else if (this.tunneling) {
-                Assertions.checkState(j != C0479C.TIME_UNSET);
+                Assertions.checkState(j != C0485C.TIME_UNSET);
                 writeNonBlockingV21 = writeNonBlockingWithAvSyncV21(this.audioTrack, byteBuffer, remaining2, j);
             } else {
                 writeNonBlockingV21 = writeNonBlockingV21(this.audioTrack, byteBuffer, remaining2);
@@ -1124,7 +1124,7 @@ public final class DefaultAudioSink implements AudioSink {
             try {
                 this.audioTrack.setPlaybackParams(new PlaybackParams().allowDefaults().setSpeed(playbackParameters.speed).setPitch(playbackParameters.pitch).setAudioFallbackMode(2));
             } catch (IllegalArgumentException e) {
-                Log.m1105w(TAG, "Failed to set playback params", e);
+                Log.m1106w(TAG, "Failed to set playback params", e);
             }
             playbackParameters = new PlaybackParameters(this.audioTrack.getPlaybackParams().getSpeed(), this.audioTrack.getPlaybackParams().getPitch());
             this.audioTrackPositionTracker.setAudioTrackPlaybackSpeed(playbackParameters.speed);
@@ -1137,7 +1137,7 @@ public final class DefaultAudioSink implements AudioSink {
         if (playbackParameters.equals(mediaPositionParameters.playbackParameters) && z == mediaPositionParameters.skipSilence) {
             return;
         }
-        MediaPositionParameters mediaPositionParameters2 = new MediaPositionParameters(playbackParameters, z, C0479C.TIME_UNSET, C0479C.TIME_UNSET);
+        MediaPositionParameters mediaPositionParameters2 = new MediaPositionParameters(playbackParameters, z, C0485C.TIME_UNSET, C0485C.TIME_UNSET);
         if (isAudioTrackInitialized()) {
             this.afterDrainParameters = mediaPositionParameters2;
         } else {
@@ -1427,7 +1427,7 @@ public final class DefaultAudioSink implements AudioSink {
         public void register(AudioTrack audioTrack) {
             Handler handler = this.handler;
             Objects.requireNonNull(handler);
-            audioTrack.registerStreamEventCallback(new ExecutorC0522x59586989(handler), this.callback);
+            audioTrack.registerStreamEventCallback(new ExecutorC0528x59586989(handler), this.callback);
         }
 
         public void unregister(AudioTrack audioTrack) {
@@ -1474,7 +1474,7 @@ public final class DefaultAudioSink implements AudioSink {
             if (DefaultAudioSink.failOnSpuriousAudioTimestamp) {
                 throw new InvalidAudioTrackTimestampException(str);
             }
-            Log.m1106w(DefaultAudioSink.TAG, str);
+            Log.m1107w(DefaultAudioSink.TAG, str);
         }
 
         @Override // com.google.android.exoplayer2.audio.AudioTrackPositionTracker.Listener
@@ -1483,12 +1483,12 @@ public final class DefaultAudioSink implements AudioSink {
             if (DefaultAudioSink.failOnSpuriousAudioTimestamp) {
                 throw new InvalidAudioTrackTimestampException(str);
             }
-            Log.m1106w(DefaultAudioSink.TAG, str);
+            Log.m1107w(DefaultAudioSink.TAG, str);
         }
 
         @Override // com.google.android.exoplayer2.audio.AudioTrackPositionTracker.Listener
         public void onInvalidLatency(long j) {
-            Log.m1106w(DefaultAudioSink.TAG, "Ignoring impossibly large audio latency: " + j);
+            Log.m1107w(DefaultAudioSink.TAG, "Ignoring impossibly large audio latency: " + j);
         }
 
         @Override // com.google.android.exoplayer2.audio.AudioTrackPositionTracker.Listener

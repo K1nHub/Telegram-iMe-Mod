@@ -165,7 +165,7 @@ public final class RepositoryModuleKt {
             List emptyList27;
             List emptyList28;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C16481 c16481 = new Function2<Scope, ParametersHolder, TranslationRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.1
+            C16541 c16541 = new Function2<Scope, ParametersHolder, TranslationRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final TranslationRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -177,13 +177,13 @@ public final class RepositoryModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationRepository.class), null, c16481, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TranslationRepository.class), null, c16541, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C16592 c16592 = new Function2<Scope, ParametersHolder, SessionRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.2
+            C16652 c16652 = new Function2<Scope, ParametersHolder, SessionRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final SessionRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -193,13 +193,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SessionRepository.class), null, c16592, kind, emptyList2));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(SessionRepository.class), null, c16652, kind, emptyList2));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
-            C16693 c16693 = new Function2<Scope, ParametersHolder, WalletRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.3
+            C16753 c16753 = new Function2<Scope, ParametersHolder, WalletRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -215,13 +215,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletRepository.class), null, c16693, kind, emptyList3));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(WalletRepository.class), null, c16753, kind, emptyList3));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);
             }
             new KoinDefinition(module, singleInstanceFactory3);
-            C16704 c16704 = new Function2<Scope, ParametersHolder, PushNotificationRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.4
+            C16764 c16764 = new Function2<Scope, ParametersHolder, PushNotificationRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final PushNotificationRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -231,13 +231,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(PushNotificationRepository.class), null, c16704, kind, emptyList4));
+            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(PushNotificationRepository.class), null, c16764, kind, emptyList4));
             module.indexPrimaryType(singleInstanceFactory4);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory4);
             }
             new KoinDefinition(module, singleInstanceFactory4);
-            C16715 c16715 = new Function2<Scope, ParametersHolder, CatalogRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.5
+            C16775 c16775 = new Function2<Scope, ParametersHolder, CatalogRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.5
                 @Override // kotlin.jvm.functions.Function2
                 public final CatalogRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -247,13 +247,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
             emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(CatalogRepository.class), null, c16715, kind, emptyList5));
+            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(CatalogRepository.class), null, c16775, kind, emptyList5));
             module.indexPrimaryType(singleInstanceFactory5);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory5);
             }
             new KoinDefinition(module, singleInstanceFactory5);
-            C16726 c16726 = new Function2<Scope, ParametersHolder, GoogleServicesRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.6
+            C16786 c16786 = new Function2<Scope, ParametersHolder, GoogleServicesRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.6
                 @Override // kotlin.jvm.functions.Function2
                 public final GoogleServicesRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -265,13 +265,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
             emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(GoogleServicesRepository.class), null, c16726, kind, emptyList6));
+            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(GoogleServicesRepository.class), null, c16786, kind, emptyList6));
             module.indexPrimaryType(singleInstanceFactory6);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory6);
             }
             new KoinDefinition(module, singleInstanceFactory6);
-            C16737 c16737 = new Function2<Scope, ParametersHolder, RemoteConfigRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.7
+            C16797 c16797 = new Function2<Scope, ParametersHolder, RemoteConfigRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.7
                 @Override // kotlin.jvm.functions.Function2
                 public final RemoteConfigRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -281,13 +281,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
             emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(RemoteConfigRepository.class), null, c16737, kind, emptyList7));
+            SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(RemoteConfigRepository.class), null, c16797, kind, emptyList7));
             module.indexPrimaryType(singleInstanceFactory7);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory7);
             }
             new KoinDefinition(module, singleInstanceFactory7);
-            C16748 c16748 = new Function2<Scope, ParametersHolder, DynamicLinksRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.8
+            C16808 c16808 = new Function2<Scope, ParametersHolder, DynamicLinksRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.8
                 @Override // kotlin.jvm.functions.Function2
                 public final DynamicLinksRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -297,13 +297,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
             emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(DynamicLinksRepository.class), null, c16748, kind, emptyList8));
+            SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(DynamicLinksRepository.class), null, c16808, kind, emptyList8));
             module.indexPrimaryType(singleInstanceFactory8);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory8);
             }
             new KoinDefinition(module, singleInstanceFactory8);
-            C16759 c16759 = new Function2<Scope, ParametersHolder, ReactionRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.9
+            C16819 c16819 = new Function2<Scope, ParametersHolder, ReactionRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.9
                 @Override // kotlin.jvm.functions.Function2
                 public final ReactionRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -313,13 +313,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
             emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(ReactionRepository.class), null, c16759, kind, emptyList9));
+            SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(ReactionRepository.class), null, c16819, kind, emptyList9));
             module.indexPrimaryType(singleInstanceFactory9);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory9);
             }
             new KoinDefinition(module, singleInstanceFactory9);
-            C164910 c164910 = new Function2<Scope, ParametersHolder, KiklikoRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.10
+            C165510 c165510 = new Function2<Scope, ParametersHolder, KiklikoRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.10
                 @Override // kotlin.jvm.functions.Function2
                 public final KiklikoRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -329,13 +329,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
             emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(KiklikoRepository.class), null, c164910, kind, emptyList10));
+            SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(KiklikoRepository.class), null, c165510, kind, emptyList10));
             module.indexPrimaryType(singleInstanceFactory10);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory10);
             }
             new KoinDefinition(module, singleInstanceFactory10);
-            C165011 c165011 = new Function2<Scope, ParametersHolder, TwitterRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.11
+            C165611 c165611 = new Function2<Scope, ParametersHolder, TwitterRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.11
                 @Override // kotlin.jvm.functions.Function2
                 public final TwitterRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -345,13 +345,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
             emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(TwitterRepository.class), null, c165011, kind, emptyList11));
+            SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(TwitterRepository.class), null, c165611, kind, emptyList11));
             module.indexPrimaryType(singleInstanceFactory11);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory11);
             }
             new KoinDefinition(module, singleInstanceFactory11);
-            C165112 c165112 = new Function2<Scope, ParametersHolder, CryptoWalletRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.12
+            C165712 c165712 = new Function2<Scope, ParametersHolder, CryptoWalletRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.12
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoWalletRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -362,13 +362,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
             emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(CryptoWalletRepository.class), null, c165112, kind, emptyList12));
+            SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(CryptoWalletRepository.class), null, c165712, kind, emptyList12));
             module.indexPrimaryType(singleInstanceFactory12);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory12);
             }
             new KoinDefinition(module, singleInstanceFactory12);
-            C165213 c165213 = new Function2<Scope, ParametersHolder, BinanceInternalRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.13
+            C165813 c165813 = new Function2<Scope, ParametersHolder, BinanceInternalRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.13
                 @Override // kotlin.jvm.functions.Function2
                 public final BinanceInternalRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -378,13 +378,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier13 = companion.getRootScopeQualifier();
             emptyList13 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(BinanceInternalRepository.class), null, c165213, kind, emptyList13));
+            SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(BinanceInternalRepository.class), null, c165813, kind, emptyList13));
             module.indexPrimaryType(singleInstanceFactory13);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory13);
             }
             new KoinDefinition(module, singleInstanceFactory13);
-            C165314 c165314 = new Function2<Scope, ParametersHolder, CryptoPermissionRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.14
+            C165914 c165914 = new Function2<Scope, ParametersHolder, CryptoPermissionRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.14
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoPermissionRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -397,13 +397,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier14 = companion.getRootScopeQualifier();
             emptyList14 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(CryptoPermissionRepository.class), null, c165314, kind, emptyList14));
+            SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(CryptoPermissionRepository.class), null, c165914, kind, emptyList14));
             module.indexPrimaryType(singleInstanceFactory14);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory14);
             }
             new KoinDefinition(module, singleInstanceFactory14);
-            C165415 c165415 = new Function2<Scope, ParametersHolder, AccountLevelRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.15
+            C166015 c166015 = new Function2<Scope, ParametersHolder, AccountLevelRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.15
                 @Override // kotlin.jvm.functions.Function2
                 public final AccountLevelRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -416,13 +416,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier15 = companion.getRootScopeQualifier();
             emptyList15 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(AccountLevelRepository.class), null, c165415, kind, emptyList15));
+            SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(AccountLevelRepository.class), null, c166015, kind, emptyList15));
             module.indexPrimaryType(singleInstanceFactory15);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory15);
             }
             new KoinDefinition(module, singleInstanceFactory15);
-            C165516 c165516 = new Function2<Scope, ParametersHolder, CryptoLocalWalletRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.16
+            C166116 c166116 = new Function2<Scope, ParametersHolder, CryptoLocalWalletRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.16
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoLocalWalletRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -432,13 +432,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier16 = companion.getRootScopeQualifier();
             emptyList16 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(CryptoLocalWalletRepository.class), null, c165516, kind, emptyList16));
+            SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(CryptoLocalWalletRepository.class), null, c166116, kind, emptyList16));
             module.indexPrimaryType(singleInstanceFactory16);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory16);
             }
             new KoinDefinition(module, singleInstanceFactory16);
-            C165617 c165617 = new Function2<Scope, ParametersHolder, PinCodeRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.17
+            C166217 c166217 = new Function2<Scope, ParametersHolder, PinCodeRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.17
                 @Override // kotlin.jvm.functions.Function2
                 public final PinCodeRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -448,13 +448,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier17 = companion.getRootScopeQualifier();
             emptyList17 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory17 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(PinCodeRepository.class), null, c165617, kind, emptyList17));
+            SingleInstanceFactory<?> singleInstanceFactory17 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier17, Reflection.getOrCreateKotlinClass(PinCodeRepository.class), null, c166217, kind, emptyList17));
             module.indexPrimaryType(singleInstanceFactory17);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory17);
             }
             new KoinDefinition(module, singleInstanceFactory17);
-            C165718 c165718 = new Function2<Scope, ParametersHolder, CryptoBoxRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.18
+            C166318 c166318 = new Function2<Scope, ParametersHolder, CryptoBoxRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.18
                 @Override // kotlin.jvm.functions.Function2
                 public final CryptoBoxRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -464,13 +464,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier18 = companion.getRootScopeQualifier();
             emptyList18 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory18 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(CryptoBoxRepository.class), null, c165718, kind, emptyList18));
+            SingleInstanceFactory<?> singleInstanceFactory18 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier18, Reflection.getOrCreateKotlinClass(CryptoBoxRepository.class), null, c166318, kind, emptyList18));
             module.indexPrimaryType(singleInstanceFactory18);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory18);
             }
             new KoinDefinition(module, singleInstanceFactory18);
-            C165819 c165819 = new Function2<Scope, ParametersHolder, SimplexRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.19
+            C166419 c166419 = new Function2<Scope, ParametersHolder, SimplexRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.19
                 @Override // kotlin.jvm.functions.Function2
                 public final SimplexRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -481,13 +481,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier19 = companion.getRootScopeQualifier();
             emptyList19 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory19 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(SimplexRepository.class), null, c165819, kind, emptyList19));
+            SingleInstanceFactory<?> singleInstanceFactory19 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier19, Reflection.getOrCreateKotlinClass(SimplexRepository.class), null, c166419, kind, emptyList19));
             module.indexPrimaryType(singleInstanceFactory19);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory19);
             }
             new KoinDefinition(module, singleInstanceFactory19);
-            C166020 c166020 = new Function2<Scope, ParametersHolder, SwapRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.20
+            C166620 c166620 = new Function2<Scope, ParametersHolder, SwapRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.20
                 @Override // kotlin.jvm.functions.Function2
                 public final SwapRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -499,13 +499,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier20 = companion.getRootScopeQualifier();
             emptyList20 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory20 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(SwapRepository.class), null, c166020, kind, emptyList20));
+            SingleInstanceFactory<?> singleInstanceFactory20 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier20, Reflection.getOrCreateKotlinClass(SwapRepository.class), null, c166620, kind, emptyList20));
             module.indexPrimaryType(singleInstanceFactory20);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory20);
             }
             new KoinDefinition(module, singleInstanceFactory20);
-            C166121 c166121 = new Function2<Scope, ParametersHolder, CancelRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.21
+            C166721 c166721 = new Function2<Scope, ParametersHolder, CancelRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.21
                 @Override // kotlin.jvm.functions.Function2
                 public final CancelRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -516,13 +516,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier21 = companion.getRootScopeQualifier();
             emptyList21 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory21 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(CancelRepository.class), null, c166121, kind, emptyList21));
+            SingleInstanceFactory<?> singleInstanceFactory21 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier21, Reflection.getOrCreateKotlinClass(CancelRepository.class), null, c166721, kind, emptyList21));
             module.indexPrimaryType(singleInstanceFactory21);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory21);
             }
             new KoinDefinition(module, singleInstanceFactory21);
-            C166222 c166222 = new Function2<Scope, ParametersHolder, DonationsRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.22
+            C166822 c166822 = new Function2<Scope, ParametersHolder, DonationsRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.22
                 @Override // kotlin.jvm.functions.Function2
                 public final DonationsRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -533,13 +533,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier22 = companion.getRootScopeQualifier();
             emptyList22 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory22 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(DonationsRepository.class), null, c166222, kind, emptyList22));
+            SingleInstanceFactory<?> singleInstanceFactory22 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier22, Reflection.getOrCreateKotlinClass(DonationsRepository.class), null, c166822, kind, emptyList22));
             module.indexPrimaryType(singleInstanceFactory22);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory22);
             }
             new KoinDefinition(module, singleInstanceFactory22);
-            C166323 c166323 = new Function2<Scope, ParametersHolder, BoostRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.23
+            C166923 c166923 = new Function2<Scope, ParametersHolder, BoostRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.23
                 @Override // kotlin.jvm.functions.Function2
                 public final BoostRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -550,13 +550,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier23 = companion.getRootScopeQualifier();
             emptyList23 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory23 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(BoostRepository.class), null, c166323, kind, emptyList23));
+            SingleInstanceFactory<?> singleInstanceFactory23 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier23, Reflection.getOrCreateKotlinClass(BoostRepository.class), null, c166923, kind, emptyList23));
             module.indexPrimaryType(singleInstanceFactory23);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory23);
             }
             new KoinDefinition(module, singleInstanceFactory23);
-            C166424 c166424 = new Function2<Scope, ParametersHolder, AirdropRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.24
+            C167024 c167024 = new Function2<Scope, ParametersHolder, AirdropRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.24
                 @Override // kotlin.jvm.functions.Function2
                 public final AirdropRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -567,13 +567,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier24 = companion.getRootScopeQualifier();
             emptyList24 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory24 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(AirdropRepository.class), null, c166424, kind, emptyList24));
+            SingleInstanceFactory<?> singleInstanceFactory24 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier24, Reflection.getOrCreateKotlinClass(AirdropRepository.class), null, c167024, kind, emptyList24));
             module.indexPrimaryType(singleInstanceFactory24);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory24);
             }
             new KoinDefinition(module, singleInstanceFactory24);
-            C166525 c166525 = new Function2<Scope, ParametersHolder, NftRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.25
+            C167125 c167125 = new Function2<Scope, ParametersHolder, NftRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.25
                 @Override // kotlin.jvm.functions.Function2
                 public final NftRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -584,13 +584,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier25 = companion.getRootScopeQualifier();
             emptyList25 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory25 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(NftRepository.class), null, c166525, kind, emptyList25));
+            SingleInstanceFactory<?> singleInstanceFactory25 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier25, Reflection.getOrCreateKotlinClass(NftRepository.class), null, c167125, kind, emptyList25));
             module.indexPrimaryType(singleInstanceFactory25);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory25);
             }
             new KoinDefinition(module, singleInstanceFactory25);
-            C166626 c166626 = new Function2<Scope, ParametersHolder, WalletConnectRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.26
+            C167226 c167226 = new Function2<Scope, ParametersHolder, WalletConnectRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.26
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletConnectRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -600,13 +600,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier26 = companion.getRootScopeQualifier();
             emptyList26 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory26 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(WalletConnectRepository.class), null, c166626, kind, emptyList26));
+            SingleInstanceFactory<?> singleInstanceFactory26 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier26, Reflection.getOrCreateKotlinClass(WalletConnectRepository.class), null, c167226, kind, emptyList26));
             module.indexPrimaryType(singleInstanceFactory26);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory26);
             }
             new KoinDefinition(module, singleInstanceFactory26);
-            C166727 c166727 = new Function2<Scope, ParametersHolder, TonConfigRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.27
+            C167327 c167327 = new Function2<Scope, ParametersHolder, TonConfigRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.27
                 @Override // kotlin.jvm.functions.Function2
                 public final TonConfigRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -616,13 +616,13 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier27 = companion.getRootScopeQualifier();
             emptyList27 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory27 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier27, Reflection.getOrCreateKotlinClass(TonConfigRepository.class), null, c166727, kind, emptyList27));
+            SingleInstanceFactory<?> singleInstanceFactory27 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier27, Reflection.getOrCreateKotlinClass(TonConfigRepository.class), null, c167327, kind, emptyList27));
             module.indexPrimaryType(singleInstanceFactory27);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory27);
             }
             new KoinDefinition(module, singleInstanceFactory27);
-            C166828 c166828 = new Function2<Scope, ParametersHolder, TonFragmentRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.28
+            C167428 c167428 = new Function2<Scope, ParametersHolder, TonFragmentRepository>() { // from class: com.iMe.storage.data.di.module.RepositoryModuleKt$repositoryModule$1.28
                 @Override // kotlin.jvm.functions.Function2
                 public final TonFragmentRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -632,7 +632,7 @@ public final class RepositoryModuleKt {
             };
             StringQualifier rootScopeQualifier28 = companion.getRootScopeQualifier();
             emptyList28 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory28 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier28, Reflection.getOrCreateKotlinClass(TonFragmentRepository.class), null, c166828, kind, emptyList28));
+            SingleInstanceFactory<?> singleInstanceFactory28 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier28, Reflection.getOrCreateKotlinClass(TonFragmentRepository.class), null, c167428, kind, emptyList28));
             module.indexPrimaryType(singleInstanceFactory28);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory28);

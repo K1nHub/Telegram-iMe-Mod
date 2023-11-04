@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.extractor.amr;
 
 import android.net.Uri;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.audio.SilenceSkippingAudioProcessor;
@@ -263,7 +263,7 @@ public final class AmrExtractor implements Extractor {
         }
         int i3 = this.flags;
         if ((i3 & 1) == 0 || j == -1 || ((i2 = this.firstSampleSize) != -1 && i2 != this.currentSampleSize)) {
-            SeekMap.Unseekable unseekable = new SeekMap.Unseekable(C0479C.TIME_UNSET);
+            SeekMap.Unseekable unseekable = new SeekMap.Unseekable(C0485C.TIME_UNSET);
             this.seekMap = unseekable;
             this.extractorOutput.seekMap(unseekable);
             this.hasOutputSeekMap = true;

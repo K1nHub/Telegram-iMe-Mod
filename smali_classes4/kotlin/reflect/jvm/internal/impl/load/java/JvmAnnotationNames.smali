@@ -46,7 +46,7 @@
     .line 27
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v1, "kotlin.Metadata"
+    const-string/jumbo v1, "kotlin.Metadata"
 
     invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -161,7 +161,7 @@
     .line 56
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v3, "java.lang.annotation.Repeatable"
+    const-string/jumbo v3, "java.lang.annotation.Repeatable"
 
     invoke-direct {v1, v3}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MusicPlayerService;)V
     .locals 0
 
-    .line 429
+    .line 438
     iput-object p1, p0, Lorg/telegram/messenger/MusicPlayerService$3;->this$0:Lorg/telegram/messenger/MusicPlayerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 8
 
-    .line 432
+    .line 441
     iget-object v0, p0, Lorg/telegram/messenger/MusicPlayerService$3;->this$0:Lorg/telegram/messenger/MusicPlayerService;
 
     invoke-static {v0}, Lorg/telegram/messenger/MusicPlayerService;->access$100(Lorg/telegram/messenger/MusicPlayerService;)Landroid/media/RemoteControlClient;
@@ -59,7 +59,7 @@
 
     goto/16 :goto_3
 
-    .line 435
+    .line 444
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -81,12 +81,12 @@
 
     const-wide/16 v0, 0x1f4
 
-    .line 436
+    .line 445
     invoke-static {p0, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-void
 
-    .line 439
+    .line 448
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/MusicPlayerService$3;->this$0:Lorg/telegram/messenger/MusicPlayerService;
 
@@ -102,7 +102,7 @@
 
     const/16 v1, 0x9
 
-    .line 440
+    .line 449
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v2
@@ -121,10 +121,10 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/media/RemoteControlClient$MetadataEditor;->putLong(IJ)Landroid/media/RemoteControlClient$MetadataEditor;
 
-    .line 441
+    .line 450
     invoke-virtual {v0}, Landroid/media/RemoteControlClient$MetadataEditor;->apply()V
 
-    .line 442
+    .line 451
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x12
@@ -135,7 +135,7 @@
 
     if-lt v0, v1, :cond_4
 
-    .line 443
+    .line 452
     iget-object v0, p0, Lorg/telegram/messenger/MusicPlayerService$3;->this$0:Lorg/telegram/messenger/MusicPlayerService;
 
     invoke-static {v0}, Lorg/telegram/messenger/MusicPlayerService;->access$100(Lorg/telegram/messenger/MusicPlayerService;)Landroid/media/RemoteControlClient;
@@ -157,7 +157,7 @@
     :cond_2
     move v2, v3
 
-    .line 444
+    .line 453
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
@@ -179,7 +179,7 @@
 
     move-result-wide v3
 
-    .line 445
+    .line 454
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v1
@@ -197,13 +197,13 @@
     :cond_3
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 443
+    .line 452
     :goto_1
     invoke-virtual {v0, v2, v3, v4, v1}, Landroid/media/RemoteControlClient;->setPlaybackState(IJF)V
 
     goto :goto_3
 
-    .line 447
+    .line 456
     :cond_4
     iget-object v0, p0, Lorg/telegram/messenger/MusicPlayerService$3;->this$0:Lorg/telegram/messenger/MusicPlayerService;
 

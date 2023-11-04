@@ -11,9 +11,9 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class UriData extends AbstractSafeParcelable {
     public static final Parcelable.Creator<UriData> CREATOR = new zzm();
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     String zza;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     String zzb;
 
     UriData() {
@@ -36,7 +36,7 @@ public final class UriData extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public UriData(@SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) String str2) {
+    public UriData(@SafeParcelable.Param(m1089id = 2) String str, @SafeParcelable.Param(m1089id = 3) String str2) {
         this.zza = str;
         this.zzb = str2;
     }

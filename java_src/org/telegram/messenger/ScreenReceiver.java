@@ -19,14 +19,14 @@ public class ScreenReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         if (intent.getAction().equals("android.intent.action.SCREEN_OFF")) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m100d("screen off");
+                FileLog.m102d("screen off");
             }
             ConnectionsManager.getInstance(UserConfig.selectedAccount).setAppPaused(true, true);
             ApplicationLoader.isScreenOn = false;
             resetWalletSession();
         } else if (intent.getAction().equals("android.intent.action.SCREEN_ON")) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m100d("screen on");
+                FileLog.m102d("screen on");
             }
             ConnectionsManager.getInstance(UserConfig.selectedAccount).setAppPaused(false, true);
             ApplicationLoader.isScreenOn = true;

@@ -1,7 +1,8 @@
 package org.telegram.messenger;
 
-import org.telegram.p042ui.Components.AvatarDrawable;
-import org.telegram.p042ui.Components.BackupImageView;
+import java.util.List;
+import org.telegram.p043ui.Components.AvatarDrawable;
+import org.telegram.p043ui.Components.BackupImageView;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$Dialog;
@@ -37,12 +38,28 @@ public class DialogObject {
         return i | 2305843009213693952L;
     }
 
+    public static boolean isAllDialogsOfSameSecret(List<Long> list) {
+        if (list == null || list.isEmpty()) {
+            return false;
+        }
+        Boolean bool = null;
+        for (Long l : list) {
+            boolean isEncryptedDialog = isEncryptedDialog(l.longValue());
+            if (bool == null) {
+                bool = Boolean.valueOf(isEncryptedDialog);
+            } else if (isEncryptedDialog != bool.booleanValue()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static boolean isChannel(TLRPC$Dialog tLRPC$Dialog) {
         return (tLRPC$Dialog == null || (tLRPC$Dialog.flags & 1) == 0) ? false : true;
     }
 
     public static void initDialog(TLRPC$Dialog tLRPC$Dialog) {
-        if (tLRPC$Dialog == null || tLRPC$Dialog.f1606id != 0) {
+        if (tLRPC$Dialog == null || tLRPC$Dialog.f1608id != 0) {
             return;
         }
         if (tLRPC$Dialog instanceof TLRPC$TL_dialog) {
@@ -52,17 +69,17 @@ public class DialogObject {
             }
             long j = tLRPC$Peer.user_id;
             if (j != 0) {
-                tLRPC$Dialog.f1606id = j;
+                tLRPC$Dialog.f1608id = j;
                 return;
             }
             long j2 = tLRPC$Peer.chat_id;
             if (j2 != 0) {
-                tLRPC$Dialog.f1606id = -j2;
+                tLRPC$Dialog.f1608id = -j2;
             } else {
-                tLRPC$Dialog.f1606id = -tLRPC$Peer.channel_id;
+                tLRPC$Dialog.f1608id = -tLRPC$Peer.channel_id;
             }
         } else if (tLRPC$Dialog instanceof TLRPC$TL_dialogFolder) {
-            tLRPC$Dialog.f1606id = makeFolderDialogId(((TLRPC$TL_dialogFolder) tLRPC$Dialog).folder.f1656id);
+            tLRPC$Dialog.f1608id = makeFolderDialogId(((TLRPC$TL_dialogFolder) tLRPC$Dialog).folder.f1657id);
         }
     }
 
@@ -112,7 +129,7 @@ public class DialogObject {
         if (tLObject instanceof TLRPC$User) {
             TLRPC$User tLRPC$User = (TLRPC$User) tLObject;
             if (UserObject.isReplyUser(tLRPC$User)) {
-                String string = LocaleController.getString("RepliesTitle", C3630R.string.RepliesTitle);
+                String string = LocaleController.getString("RepliesTitle", C3634R.string.RepliesTitle);
                 if (avatarDrawable != null) {
                     avatarDrawable.setAvatarType(12);
                 }
@@ -122,7 +139,7 @@ public class DialogObject {
                 }
                 return string;
             } else if (UserObject.isUserSelf(tLRPC$User)) {
-                String string2 = LocaleController.getString("SavedMessages", C3630R.string.SavedMessages);
+                String string2 = LocaleController.getString("SavedMessages", C3634R.string.SavedMessages);
                 if (avatarDrawable != null) {
                     avatarDrawable.setAvatarType(1);
                 }

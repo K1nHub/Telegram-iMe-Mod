@@ -88,11 +88,11 @@ public class UserConfig extends BaseController {
     }
 
     private void updateUserId() {
-        if (this.clientUserId == this.currentUser.f1762id) {
+        if (this.clientUserId == this.currentUser.f1749id) {
             return;
         }
         synchronized (this.sync) {
-            this.clientUserId = this.currentUser.f1762id;
+            this.clientUserId = this.currentUser.f1749id;
             Utilities.stageQueue.postRunnable(new Runnable() { // from class: org.telegram.messenger.UserConfig$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
@@ -265,7 +265,7 @@ public class UserConfig extends BaseController {
                     }
                     edit.apply();
                 } catch (Exception e) {
-                    FileLog.m97e(e);
+                    FileLog.m99e(e);
                 }
             }
         }
@@ -287,7 +287,7 @@ public class UserConfig extends BaseController {
         long j;
         synchronized (this.sync) {
             TLRPC$User tLRPC$User = this.currentUser;
-            j = tLRPC$User != null ? tLRPC$User.f1762id : 0L;
+            j = tLRPC$User != null ? tLRPC$User.f1749id : 0L;
         }
         return j;
     }
@@ -346,7 +346,7 @@ public class UserConfig extends BaseController {
         r2 = move-exception;
      */
     /* JADX WARN: Code restructure failed: missing block: B:26:0x01b4, code lost:
-        org.telegram.messenger.FileLog.m97e(r2);
+        org.telegram.messenger.FileLog.m99e(r2);
      */
     /* JADX WARN: Removed duplicated region for block: B:29:0x01c1 A[Catch: all -> 0x0239, TryCatch #0 {, blocks: (B:4:0x0003, B:6:0x0007, B:8:0x0009, B:10:0x0012, B:11:0x001b, B:13:0x0145, B:18:0x0151, B:19:0x0191, B:21:0x019a, B:23:0x01a0, B:27:0x01b7, B:29:0x01c1, B:30:0x01e9, B:32:0x01f2, B:34:0x01f8, B:35:0x020a, B:37:0x0213, B:39:0x0219, B:40:0x022b, B:42:0x022f, B:43:0x0235, B:44:0x0237, B:26:0x01b4), top: B:49:0x0003, inners: #1 }] */
     /* JADX WARN: Removed duplicated region for block: B:42:0x022f A[Catch: all -> 0x0239, TryCatch #0 {, blocks: (B:4:0x0003, B:6:0x0007, B:8:0x0009, B:10:0x0012, B:11:0x001b, B:13:0x0145, B:18:0x0151, B:19:0x0191, B:21:0x019a, B:23:0x01a0, B:27:0x01b7, B:29:0x01c1, B:30:0x01e9, B:32:0x01f2, B:34:0x01f8, B:35:0x020a, B:37:0x0213, B:39:0x0219, B:40:0x022b, B:42:0x022f, B:43:0x0235, B:44:0x0237, B:26:0x01b4), top: B:49:0x0003, inners: #1 }] */
@@ -605,8 +605,6 @@ public class UserConfig extends BaseController {
         }
         this.ttlIsLoading = true;
         getConnectionsManager().sendRequest(new TLObject() { // from class: org.telegram.tgnet.TLRPC$TL_messages_getDefaultHistoryTTL
-            public static int constructor = 1703637384;
-
             @Override // org.telegram.tgnet.TLObject
             public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
                 return TLRPC$TL_defaultHistoryTTL.TLdeserialize(abstractSerializedData, i, z);
@@ -614,7 +612,7 @@ public class UserConfig extends BaseController {
 
             @Override // org.telegram.tgnet.TLObject
             public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-                abstractSerializedData.writeInt32(constructor);
+                abstractSerializedData.writeInt32(1703637384);
             }
         }, new RequestDelegate() { // from class: org.telegram.messenger.UserConfig$$ExternalSyntheticLambda4
             @Override // org.telegram.tgnet.RequestDelegate

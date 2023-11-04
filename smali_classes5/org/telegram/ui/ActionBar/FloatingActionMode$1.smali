@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/FloatingActionMode;)V
     .locals 0
 
-    .line 63
+    .line 64
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$1;->this$0:Lorg/telegram/ui/ActionBar/FloatingActionMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 2
 
-    .line 65
+    .line 66
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$1;->this$0:Lorg/telegram/ui/ActionBar/FloatingActionMode;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/FloatingActionMode;->access$000(Lorg/telegram/ui/ActionBar/FloatingActionMode;)Z
@@ -47,7 +47,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 66
+    .line 67
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$1;->this$0:Lorg/telegram/ui/ActionBar/FloatingActionMode;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/FloatingActionMode;->access$100(Lorg/telegram/ui/ActionBar/FloatingActionMode;)Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;
@@ -58,7 +58,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;->setMoving(Z)V
 
-    .line 67
+    .line 68
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingActionMode$1;->this$0:Lorg/telegram/ui/ActionBar/FloatingActionMode;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/FloatingActionMode;->access$100(Lorg/telegram/ui/ActionBar/FloatingActionMode;)Lorg/telegram/ui/ActionBar/FloatingActionMode$FloatingToolbarVisibilityHelper;

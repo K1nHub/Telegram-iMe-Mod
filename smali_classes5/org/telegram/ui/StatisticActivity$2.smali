@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity;)V
     .locals 0
 
-    .line 339
+    .line 342
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$2;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 342
+    .line 345
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$2;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/StatisticActivity;->access$000(Lorg/telegram/ui/StatisticActivity;)Landroid/widget/LinearLayout;

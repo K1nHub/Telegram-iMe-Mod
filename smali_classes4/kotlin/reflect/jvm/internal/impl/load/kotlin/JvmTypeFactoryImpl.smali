@@ -458,7 +458,7 @@
 .method public getJavaLangClassType()Lkotlin/reflect/jvm/internal/impl/load/kotlin/JvmType;
     .locals 1
 
-    const-string v0, "java/lang/Class"
+    const-string/jumbo v0, "java/lang/Class"
 
     .line 168
     invoke-virtual {p0, v0}, Lkotlin/reflect/jvm/internal/impl/load/kotlin/JvmTypeFactoryImpl;->createObjectType(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/load/kotlin/JvmType$Object;

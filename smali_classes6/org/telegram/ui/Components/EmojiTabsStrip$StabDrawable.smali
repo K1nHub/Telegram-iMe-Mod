@@ -24,17 +24,17 @@
 .method public constructor <init>(I)V
     .locals 2
 
-    .line 405
+    .line 411
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 402
+    .line 408
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0}, Landroid/graphics/Paint;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$StabDrawable;->paint:Landroid/graphics/Paint;
 
-    .line 403
+    .line 409
     new-instance v1, Landroid/graphics/RectF;
 
     invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
@@ -43,10 +43,10 @@
 
     const/16 v1, 0x2d
 
-    .line 406
+    .line 412
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 407
+    .line 413
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
@@ -57,7 +57,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 412
+    .line 418
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$StabDrawable;->rectF:Landroid/graphics/RectF;
 
     const/16 v1, 0x1e
@@ -78,7 +78,7 @@
 
     invoke-virtual {v0, v3, v3, v2, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 413
+    .line 419
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$StabDrawable;->rectF:Landroid/graphics/RectF;
 
     const/high16 v1, 0x41000000    # 8.0f
@@ -109,7 +109,7 @@
 .method public setAlpha(I)V
     .locals 1
 
-    .line 418
+    .line 424
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiTabsStrip$StabDrawable;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V

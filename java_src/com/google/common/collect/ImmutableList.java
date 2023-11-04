@@ -20,32 +20,32 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
     }
 
     /* renamed from: of */
-    public static <E> ImmutableList<E> m1054of() {
+    public static <E> ImmutableList<E> m1055of() {
         return (ImmutableList<E>) RegularImmutableList.EMPTY;
     }
 
     /* renamed from: of */
-    public static <E> ImmutableList<E> m1053of(E e) {
+    public static <E> ImmutableList<E> m1054of(E e) {
         return construct(e);
     }
 
     /* renamed from: of */
-    public static <E> ImmutableList<E> m1052of(E e, E e2) {
+    public static <E> ImmutableList<E> m1053of(E e, E e2) {
         return construct(e, e2);
     }
 
     /* renamed from: of */
-    public static <E> ImmutableList<E> m1051of(E e, E e2, E e3) {
+    public static <E> ImmutableList<E> m1052of(E e, E e2, E e3) {
         return construct(e, e2, e3);
     }
 
     /* renamed from: of */
-    public static <E> ImmutableList<E> m1050of(E e, E e2, E e3, E e4) {
+    public static <E> ImmutableList<E> m1051of(E e, E e2, E e3, E e4) {
         return construct(e, e2, e3, e4);
     }
 
     /* renamed from: of */
-    public static <E> ImmutableList<E> m1049of(E e, E e2, E e3, E e4, E e5) {
+    public static <E> ImmutableList<E> m1050of(E e, E e2, E e3, E e4, E e5) {
         return construct(e, e2, e3, e4, e5);
     }
 
@@ -59,7 +59,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
 
     public static <E> ImmutableList<E> copyOf(E[] eArr) {
         if (eArr.length == 0) {
-            return m1054of();
+            return m1055of();
         }
         return construct((Object[]) eArr.clone());
     }
@@ -84,7 +84,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
     /* JADX INFO: Access modifiers changed from: package-private */
     public static <E> ImmutableList<E> asImmutableList(Object[] objArr, int i) {
         if (i == 0) {
-            return m1054of();
+            return m1055of();
         }
         return new RegularImmutableList(objArr, i);
     }
@@ -153,7 +153,7 @@ public abstract class ImmutableList<E> extends ImmutableCollection<E> implements
             return this;
         }
         if (i3 == 0) {
-            return m1054of();
+            return m1055of();
         }
         return subListUnchecked(i, i2);
     }

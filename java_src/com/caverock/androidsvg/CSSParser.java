@@ -170,7 +170,7 @@ public class CSSParser {
                 for (Attrib attrib : list) {
                     sb.append('[');
                     sb.append(attrib.name);
-                    int i = C04611.$SwitchMap$com$caverock$androidsvg$CSSParser$AttribOp[attrib.operation.ordinal()];
+                    int i = C04671.$SwitchMap$com$caverock$androidsvg$CSSParser$AttribOp[attrib.operation.ordinal()];
                     if (i == 1) {
                         sb.append('=');
                         sb.append(attrib.value);
@@ -304,7 +304,7 @@ public class CSSParser {
             this.specificity = 0;
         }
 
-        /* synthetic */ Selector(C04611 c04611) {
+        /* synthetic */ Selector(C04671 c04671) {
             this();
         }
 
@@ -627,7 +627,7 @@ public class CSSParser {
                 throw new CSSParseException("Invalid pseudo class");
             }
             PseudoClassIdents fromString = PseudoClassIdents.fromString(nextIdentifier);
-            switch (C04611.$SwitchMap$com$caverock$androidsvg$CSSParser$PseudoClassIdents[fromString.ordinal()]) {
+            switch (C04671.$SwitchMap$com$caverock$androidsvg$CSSParser$PseudoClassIdents[fromString.ordinal()]) {
                 case 1:
                     pseudoClassAnPlusB = new PseudoClassAnPlusB(0, 1, true, false, null);
                     selector.addedAttributeOrPseudo();
@@ -837,7 +837,7 @@ public class CSSParser {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.caverock.androidsvg.CSSParser$1 */
     /* loaded from: classes.dex */
-    public static /* synthetic */ class C04611 {
+    public static /* synthetic */ class C04671 {
         static final /* synthetic */ int[] $SwitchMap$com$caverock$androidsvg$CSSParser$AttribOp;
         static final /* synthetic */ int[] $SwitchMap$com$caverock$androidsvg$CSSParser$PseudoClassIdents;
 
@@ -1364,7 +1364,7 @@ public class CSSParser {
         private PseudoClassRoot() {
         }
 
-        /* synthetic */ PseudoClassRoot(C04611 c04611) {
+        /* synthetic */ PseudoClassRoot(C04671 c04671) {
             this();
         }
 
@@ -1384,7 +1384,7 @@ public class CSSParser {
         private PseudoClassEmpty() {
         }
 
-        /* synthetic */ PseudoClassEmpty(C04611 c04611) {
+        /* synthetic */ PseudoClassEmpty(C04671 c04671) {
             this();
         }
 
@@ -1439,7 +1439,7 @@ public class CSSParser {
         private PseudoClassTarget() {
         }
 
-        /* synthetic */ PseudoClassTarget(C04611 c04611) {
+        /* synthetic */ PseudoClassTarget(C04671 c04671) {
             this();
         }
 

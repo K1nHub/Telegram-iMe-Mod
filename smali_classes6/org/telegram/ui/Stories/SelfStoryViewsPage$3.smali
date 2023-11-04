@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
     .locals 0
 
-    .line 207
+    .line 208
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$3;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,19 +35,19 @@
 .method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
     .locals 1
 
-    .line 216
+    .line 217
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
 
     const/4 p1, 0x1
 
     if-nez p2, :cond_0
 
-    .line 218
+    .line 219
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$3;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->access$302(Lorg/telegram/ui/Stories/SelfStoryViewsPage;Z)Z
 
-    .line 219
+    .line 220
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$3;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
@@ -55,14 +55,14 @@
     :cond_0
     if-ne p2, p1, :cond_1
 
-    .line 222
+    .line 223
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$3;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     const/4 p2, 0x0
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->access$302(Lorg/telegram/ui/Stories/SelfStoryViewsPage;Z)Z
 
-    .line 223
+    .line 224
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$3;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->access$400(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)Lorg/telegram/ui/RecyclerListViewScroller;
@@ -71,7 +71,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/RecyclerListViewScroller;->cancel()V
 
-    .line 224
+    .line 225
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$3;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
@@ -83,12 +83,12 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 210
+    .line 211
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$3;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->access$200(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
 
-    .line 211
+    .line 212
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$3;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

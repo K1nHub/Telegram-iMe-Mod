@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$1;
-.super Landroid/view/View;
+.super Lorg/telegram/ui/Components/Premium/PremiumButtonView;
 .source "LimitReachedBottomSheet.java"
 
 
@@ -19,57 +19,36 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 198
+    .line 234
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
-    invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/Premium/PremiumButtonView;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 8
+.method public invalidate()V
+    .locals 1
 
-    .line 201
-    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
-
-    .line 202
+    .line 237
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
-    iget v1, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->chatEndRow:I
-
-    iget v0, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->chatStartRow:I
-
-    sub-int/2addr v1, v0
-
-    const/4 v0, 0x1
-
-    if-le v1, v0, :cond_0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    .line 203
-    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-static {v0}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Z
 
     move-result v0
 
-    int-to-float v5, v0
+    if-eqz v0, :cond_0
 
-    const/high16 v6, 0x3f800000    # 1.0f
+    return-void
 
-    sget-object v7, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
-
-    move-object v2, p1
-
-    invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
-
+    .line 240
     :cond_0
+    invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
+
     return-void
 .end method

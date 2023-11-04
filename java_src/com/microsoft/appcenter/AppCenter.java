@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Handler;
 import android.os.HandlerThread;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.microsoft.appcenter.channel.Channel;
 import com.microsoft.appcenter.channel.DefaultChannel;
 import com.microsoft.appcenter.channel.OneCollectorChannelListener;
@@ -239,7 +239,7 @@ public class AppCenter {
             defaultChannel.setMaxStorageSize(10485760L);
         }
         this.mChannel.setEnabled(isInstanceEnabled);
-        this.mChannel.addGroup("group_core", 50, C0479C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS, 3, null, null);
+        this.mChannel.addGroup("group_core", 50, C0485C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS, 3, null, null);
         this.mOneCollectorChannelListener = new OneCollectorChannelListener(this.mChannel, this.mLogSerializer, httpClient, IdHelper.getInstallId());
         if (this.mLogUrl != null) {
             if (this.mAppSecret != null) {

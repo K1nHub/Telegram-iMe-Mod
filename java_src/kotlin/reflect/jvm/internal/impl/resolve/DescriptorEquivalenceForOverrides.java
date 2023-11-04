@@ -159,10 +159,10 @@ public final class DescriptorEquivalenceForOverrides {
         if (Intrinsics.areEqual(c1, c2)) {
             return true;
         }
-        ClassifierDescriptor mo2046getDeclarationDescriptor = c1.mo2046getDeclarationDescriptor();
-        ClassifierDescriptor mo2046getDeclarationDescriptor2 = c2.mo2046getDeclarationDescriptor();
-        if ((mo2046getDeclarationDescriptor instanceof TypeParameterDescriptor) && (mo2046getDeclarationDescriptor2 instanceof TypeParameterDescriptor)) {
-            return INSTANCE.areTypeParametersEquivalent((TypeParameterDescriptor) mo2046getDeclarationDescriptor, (TypeParameterDescriptor) mo2046getDeclarationDescriptor2, z, new Function2<DeclarationDescriptor, DeclarationDescriptor, Boolean>() { // from class: kotlin.reflect.jvm.internal.impl.resolve.DescriptorEquivalenceForOverrides$areCallableDescriptorsEquivalent$overridingUtil$1$1
+        ClassifierDescriptor mo2051getDeclarationDescriptor = c1.mo2051getDeclarationDescriptor();
+        ClassifierDescriptor mo2051getDeclarationDescriptor2 = c2.mo2051getDeclarationDescriptor();
+        if ((mo2051getDeclarationDescriptor instanceof TypeParameterDescriptor) && (mo2051getDeclarationDescriptor2 instanceof TypeParameterDescriptor)) {
+            return INSTANCE.areTypeParametersEquivalent((TypeParameterDescriptor) mo2051getDeclarationDescriptor, (TypeParameterDescriptor) mo2051getDeclarationDescriptor2, z, new Function2<DeclarationDescriptor, DeclarationDescriptor, Boolean>() { // from class: kotlin.reflect.jvm.internal.impl.resolve.DescriptorEquivalenceForOverrides$areCallableDescriptorsEquivalent$overridingUtil$1$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
                 {

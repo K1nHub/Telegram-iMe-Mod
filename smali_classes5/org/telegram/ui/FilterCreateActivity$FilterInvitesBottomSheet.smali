@@ -33,7 +33,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;",
+            "Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;",
             ">;"
         }
     .end annotation
@@ -117,52 +117,52 @@
             "Lorg/telegram/ui/ActionBar/BaseFragment;",
             "Lorg/telegram/messenger/MessagesController$DialogFilter;",
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;",
+            "Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;",
             ">;)V"
         }
     .end annotation
 
     const/4 v0, 0x0
 
-    .line 2406
+    .line 2407
     invoke-direct {p0, p1, v0, v0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZ)V
 
-    .line 2397
+    .line 2398
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->invites:Ljava/util/ArrayList;
 
-    .line 2445
+    .line 2446
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->oldItems:Ljava/util/ArrayList;
 
-    .line 2446
+    .line 2447
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->items:Ljava/util/ArrayList;
 
-    .line 2408
+    .line 2409
     iput-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
     if-eqz p3, :cond_0
 
-    .line 2411
+    .line 2412
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->invites:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p3}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2413
+    .line 2414
     :cond_0
     invoke-direct {p0, v0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->updateRows(Z)V
 
-    .line 2415
+    .line 2416
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->getTitle()Ljava/lang/CharSequence;
@@ -171,7 +171,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 2417
+    .line 2418
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -180,7 +180,7 @@
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar(I)V
 
-    .line 2419
+    .line 2420
     new-instance p1, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -195,10 +195,10 @@
 
     const/4 p3, 0x1
 
-    .line 2420
+    .line 2421
     invoke-virtual {p1, p3, p2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2421
+    .line 2422
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->button:Landroid/widget/TextView;
 
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
@@ -209,7 +209,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2422
+    .line 2423
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->button:Landroid/widget/TextView;
 
     const-string p2, "fonts/rmedium.ttf"
@@ -220,7 +220,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2423
+    .line 2424
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->button:Landroid/widget/TextView;
 
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
@@ -237,7 +237,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 2424
+    .line 2425
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->button:Landroid/widget/TextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->FolderLinkShareButton:I
@@ -250,14 +250,14 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2425
+    .line 2426
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->button:Landroid/widget/TextView;
 
     const/16 p2, 0x11
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 2426
+    .line 2427
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->button:Landroid/widget/TextView;
 
     new-instance p2, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$$ExternalSyntheticLambda0;
@@ -266,7 +266,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2427
+    .line 2428
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->button:Landroid/widget/TextView;
@@ -291,7 +291,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2429
+    .line 2430
     new-instance p1, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -302,7 +302,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->bulletinContainer:Landroid/widget/FrameLayout;
 
-    .line 2430
+    .line 2431
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     const/16 v1, 0x64
@@ -323,7 +323,7 @@
 
     invoke-virtual {p2, p1, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2432
+    .line 2433
     invoke-direct {p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->updateCreateInviteButton()V
 
     return-void
@@ -332,7 +332,7 @@
 .method static synthetic access$2600(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 2369
+    .line 2370
     iget-object p0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object p0
@@ -341,7 +341,7 @@
 .method static synthetic access$2700(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)I
     .locals 0
 
-    .line 2369
+    .line 2370
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -350,7 +350,7 @@
 .method static synthetic access$2800(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)Lorg/telegram/messenger/MessagesController$DialogFilter;
     .locals 0
 
-    .line 2369
+    .line 2370
     iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
     return-object p0
@@ -359,7 +359,7 @@
 .method static synthetic access$2900(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
     .locals 0
 
-    .line 2369
+    .line 2370
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     return-object p0
@@ -368,7 +368,7 @@
 .method static synthetic access$3000(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 2369
+    .line 2370
     iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->bulletinContainer:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -377,7 +377,7 @@
 .method static synthetic access$3100(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 2369
+    .line 2370
     iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->invites:Ljava/util/ArrayList;
 
     return-object p0
@@ -386,7 +386,7 @@
 .method static synthetic access$3200(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)V
     .locals 0
 
-    .line 2369
+    .line 2370
     invoke-direct {p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->updateCreateInviteButton()V
 
     return-void
@@ -395,7 +395,7 @@
 .method static synthetic access$3300(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;Z)V
     .locals 0
 
-    .line 2369
+    .line 2370
     invoke-direct {p0, p1}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->updateRows(Z)V
 
     return-void
@@ -404,7 +404,7 @@
 .method static synthetic access$3400(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 2369
+    .line 2370
     iget-object p0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->items:Ljava/util/ArrayList;
 
     return-object p0
@@ -413,14 +413,14 @@
 .method private createLink()V
     .locals 7
 
-    .line 2684
+    .line 2685
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 2685
+    .line 2686
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
@@ -432,7 +432,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 2686
+    .line 2687
     iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
     iget-object v2, v2, Lorg/telegram/messenger/MessagesController$DialogFilter;->alwaysShow:Ljava/util/ArrayList;
@@ -453,7 +453,7 @@
 
     if-gez v4, :cond_0
 
-    .line 2688
+    .line 2689
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v4
@@ -472,14 +472,14 @@
 
     move-result-object v4
 
-    .line 2689
+    .line 2690
     invoke-static {v4}, Lorg/telegram/ui/FilterCreateActivity;->canAddToFolder(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 2690
+    .line 2691
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v4
@@ -499,7 +499,7 @@
 
     goto :goto_0
 
-    .line 2695
+    .line 2696
     :cond_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -507,10 +507,10 @@
 
     if-eqz v1, :cond_2
 
-    .line 2696
+    .line 2697
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 2697
+    .line 2698
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v0
@@ -521,41 +521,41 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v1, v2, v3}, Lorg/telegram/ui/FilterChatlistActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;)V
+    invoke-direct {v1, v2, v3}, Lorg/telegram/ui/FilterChatlistActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto :goto_1
 
-    .line 2699
-    :cond_2
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportChatlistInvite;
-
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportChatlistInvite;-><init>()V
-
     .line 2700
-    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_inputChatlistDialogFilter;
+    :cond_2
+    new-instance v1, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_exportChatlistInvite;
 
-    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_inputChatlistDialogFilter;-><init>()V
-
-    iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportChatlistInvite;->chatlist:Lorg/telegram/tgnet/TLRPC$TL_inputChatlistDialogFilter;
+    invoke-direct {v1}, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_exportChatlistInvite;-><init>()V
 
     .line 2701
+    new-instance v2, Lorg/telegram/tgnet/tl/TL_chatlists$TL_inputChatlistDialogFilter;
+
+    invoke-direct {v2}, Lorg/telegram/tgnet/tl/TL_chatlists$TL_inputChatlistDialogFilter;-><init>()V
+
+    iput-object v2, v1, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_exportChatlistInvite;->chatlist:Lorg/telegram/tgnet/tl/TL_chatlists$TL_inputChatlistDialogFilter;
+
+    .line 2702
     iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
     iget v3, v3, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
 
-    iput v3, v2, Lorg/telegram/tgnet/TLRPC$TL_inputChatlistDialogFilter;->filter_id:I
+    iput v3, v2, Lorg/telegram/tgnet/tl/TL_chatlists$TL_inputChatlistDialogFilter;->filter_id:I
 
-    .line 2702
-    iput-object v0, v1, Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportChatlistInvite;->peers:Ljava/util/ArrayList;
+    .line 2703
+    iput-object v0, v1, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_exportChatlistInvite;->peers:Ljava/util/ArrayList;
 
     const-string v0, ""
 
-    .line 2703
-    iput-object v0, v1, Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportChatlistInvite;->title:Ljava/lang/String;
-
     .line 2704
+    iput-object v0, v1, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_exportChatlistInvite;->title:Ljava/lang/String;
+
+    .line 2705
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v0
@@ -577,7 +577,7 @@
 .method private synthetic lambda$createLink$3(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
     .locals 3
 
-    .line 2706
+    .line 2707
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v0
@@ -596,19 +596,19 @@
 
     if-eqz p1, :cond_0
 
-    instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportedChatlistInvite;
+    instance-of p1, p2, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_exportedChatlistInvite;
 
     if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
-    .line 2709
+    .line 2710
     invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->hideNew(I)V
 
-    .line 2710
+    .line 2711
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 2712
+    .line 2713
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p1
@@ -621,10 +621,10 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/MessagesController;->loadRemoteFilters(Z)V
 
-    .line 2713
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportedChatlistInvite;
-
     .line 2714
+    check-cast p2, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_exportedChatlistInvite;
+
+    .line 2715
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p1
@@ -633,9 +633,9 @@
 
     iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportedChatlistInvite;->invite:Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+    iget-object p2, p2, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_exportedChatlistInvite;->invite:Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
-    invoke-direct {v0, v1, p2}, Lorg/telegram/ui/FilterChatlistActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;)V
+    invoke-direct {v0, v1, p2}, Lorg/telegram/ui/FilterChatlistActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -646,7 +646,7 @@
 .method private synthetic lambda$createLink$4(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 2704
+    .line 2705
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
@@ -659,7 +659,7 @@
 .method private synthetic lambda$new$2(Landroid/view/View;)V
     .locals 0
 
-    .line 2426
+    .line 2427
     invoke-direct {p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->createLink()V
 
     return-void
@@ -672,7 +672,7 @@
 
     if-ltz p2, :cond_2
 
-    .line 2726
+    .line 2727
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->items:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -683,7 +683,7 @@
 
     goto :goto_0
 
-    .line 2729
+    .line 2730
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->items:Ljava/util/ArrayList;
 
@@ -693,17 +693,17 @@
 
     check-cast p1, Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
-    .line 2730
+    .line 2731
     iget p2, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     const/4 v0, 0x7
 
     if-ne p2, v0, :cond_1
 
-    .line 2731
+    .line 2732
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 2732
+    .line 2733
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object p2
@@ -712,11 +712,11 @@
 
     iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$2300(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+    invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$2300(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
     move-result-object p1
 
-    invoke-direct {v0, v1, p1}, Lorg/telegram/ui/FilterChatlistActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;)V
+    invoke-direct {v0, v1, p1}, Lorg/telegram/ui/FilterChatlistActivity;-><init>(Lorg/telegram/messenger/MessagesController$DialogFilter;Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;)V
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -727,7 +727,7 @@
 
     if-ne p2, p1, :cond_2
 
-    .line 2734
+    .line 2735
     invoke-direct {p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->createLink()V
 
     :cond_2
@@ -740,7 +740,7 @@
 
     if-eqz p0, :cond_3
 
-    .line 2377
+    .line 2378
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -749,39 +749,39 @@
 
     goto :goto_1
 
-    .line 2380
+    .line 2381
     :cond_0
-    instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportedInvites;
+    instance-of v0, p1, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_exportedInvites;
 
     if-eqz v0, :cond_1
 
-    .line 2381
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportedInvites;
-
     .line 2382
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
-
-    move-result-object p3
-
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportedInvites;->chats:Ljava/util/ArrayList;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p3, v0, v1}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_exportedInvites;
 
     .line 2383
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p3
 
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportedInvites;->users:Ljava/util/ArrayList;
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_exportedInvites;->chats:Ljava/util/ArrayList;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p3, v0, v1}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
+
+    .line 2384
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object p3
+
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_exportedInvites;->users:Ljava/util/ArrayList;
 
     invoke-virtual {p3, v0, v1}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 2384
+    .line 2385
     new-instance p3, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
 
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_chatlists_exportedInvites;->invites:Ljava/util/ArrayList;
+    iget-object p1, p1, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_exportedInvites;->invites:Ljava/util/ArrayList;
 
     invoke-direct {p3, p0, p2, p1}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessagesController$DialogFilter;Ljava/util/ArrayList;)V
 
@@ -792,7 +792,7 @@
     :cond_1
     if-eqz p3, :cond_2
 
-    .line 2385
+    .line 2386
     iget-object p1, p3, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string p3, "FILTER_ID_INVALID"
@@ -809,7 +809,7 @@
 
     if-nez p1, :cond_2
 
-    .line 2386
+    .line 2387
     new-instance p1, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
 
     const/4 p3, 0x0
@@ -820,7 +820,7 @@
 
     goto :goto_0
 
-    .line 2388
+    .line 2389
     :cond_2
     invoke-static {p0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
 
@@ -847,7 +847,7 @@
 
     const-wide/16 p2, 0xc8
 
-    .line 2391
+    .line 2392
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -870,7 +870,7 @@
 .method private static synthetic lambda$show$1(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessagesController$DialogFilter;Ljava/lang/Runnable;JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 9
 
-    .line 2376
+    .line 2377
     new-instance v8, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$$ExternalSyntheticLambda1;
 
     move-object v0, v8
@@ -897,29 +897,29 @@
 .method public static show(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/messenger/MessagesController$DialogFilter;Ljava/lang/Runnable;)V
     .locals 9
 
-    .line 2372
+    .line 2373
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
-    .line 2373
-    new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_chatlists_getExportedInvites;
-
-    invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_chatlists_getExportedInvites;-><init>()V
-
     .line 2374
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputChatlistDialogFilter;
+    new-instance v6, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_getExportedInvites;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputChatlistDialogFilter;-><init>()V
-
-    iput-object v0, v6, Lorg/telegram/tgnet/TLRPC$TL_chatlists_getExportedInvites;->chatlist:Lorg/telegram/tgnet/TLRPC$TL_inputChatlistDialogFilter;
+    invoke-direct {v6}, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_getExportedInvites;-><init>()V
 
     .line 2375
-    iget v1, p1, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
+    new-instance v0, Lorg/telegram/tgnet/tl/TL_chatlists$TL_inputChatlistDialogFilter;
 
-    iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_inputChatlistDialogFilter;->filter_id:I
+    invoke-direct {v0}, Lorg/telegram/tgnet/tl/TL_chatlists$TL_inputChatlistDialogFilter;-><init>()V
+
+    iput-object v0, v6, Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_getExportedInvites;->chatlist:Lorg/telegram/tgnet/tl/TL_chatlists$TL_inputChatlistDialogFilter;
 
     .line 2376
+    iget v1, p1, Lorg/telegram/messenger/MessagesController$DialogFilter;->id:I
+
+    iput v1, v0, Lorg/telegram/tgnet/tl/TL_chatlists$TL_inputChatlistDialogFilter;->filter_id:I
+
+    .line 2377
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v7
@@ -944,7 +944,7 @@
 .method private updateCreateInviteButton()V
     .locals 5
 
-    .line 2436
+    .line 2437
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->button:Landroid/widget/TextView;
 
     iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->invites:Ljava/util/ArrayList;
@@ -967,7 +967,7 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 2437
+    .line 2438
     iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x6
@@ -1008,24 +1008,24 @@
 .method private updateRows(Z)V
     .locals 3
 
-    .line 2449
+    .line 2450
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->oldItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 2450
+    .line 2451
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->oldItems:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2452
+    .line 2453
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 2454
+    .line 2455
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->items:Ljava/util/ArrayList;
 
     const/4 v1, 0x0
@@ -1036,7 +1036,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2455
+    .line 2456
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->invites:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1045,7 +1045,7 @@
 
     if-nez v0, :cond_0
 
-    .line 2456
+    .line 2457
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->items:Ljava/util/ArrayList;
 
     invoke-static {v1}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->asShadow(Ljava/lang/CharSequence;)Lorg/telegram/ui/FilterCreateActivity$ItemInner;
@@ -1054,7 +1054,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2457
+    .line 2458
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->items:Ljava/util/ArrayList;
 
     invoke-static {}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->asCreateLink()Lorg/telegram/ui/FilterCreateActivity$ItemInner;
@@ -1065,7 +1065,7 @@
 
     const/4 v0, 0x0
 
-    .line 2458
+    .line 2459
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->invites:Ljava/util/ArrayList;
 
@@ -1075,7 +1075,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 2459
+    .line 2460
     iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->items:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->invites:Ljava/util/ArrayList;
@@ -1084,9 +1084,9 @@
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
-    invoke-static {v2}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->asLink(Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;)Lorg/telegram/ui/FilterCreateActivity$ItemInner;
+    invoke-static {v2}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->asLink(Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;)Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
     move-result-object v2
 
@@ -1096,7 +1096,7 @@
 
     goto :goto_0
 
-    .line 2463
+    .line 2464
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->adapter:Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;
 
@@ -1104,7 +1104,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 2465
+    .line 2466
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->oldItems:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->items:Ljava/util/ArrayList;
@@ -1113,7 +1113,7 @@
 
     goto :goto_1
 
-    .line 2467
+    .line 2468
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->notifyDataSetChanged()V
 
@@ -1127,7 +1127,7 @@
 .method protected createAdapter()Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
     .locals 1
 
-    .line 2474
+    .line 2475
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;-><init>(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)V
@@ -1140,7 +1140,7 @@
 .method protected getTitle()Ljava/lang/CharSequence;
     .locals 4
 
-    .line 2442
+    .line 2443
     sget v0, Lorg/telegram/messenger/R$string;->FolderLinkShareTitle:I
 
     const/4 v1, 0x1
@@ -1175,17 +1175,17 @@
 .method public onViewCreated(Landroid/widget/FrameLayout;)V
     .locals 2
 
-    .line 2722
+    .line 2723
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->onViewCreated(Landroid/widget/FrameLayout;)V
 
-    .line 2723
+    .line 2724
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v0, 0x2
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setOverScrollMode(I)V
 
-    .line 2724
+    .line 2725
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$$ExternalSyntheticLambda5;
@@ -1194,30 +1194,30 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 2738
+    .line 2739
     new-instance p1, Landroidx/recyclerview/widget/DefaultItemAnimator;
 
     invoke-direct {p1}, Landroidx/recyclerview/widget/DefaultItemAnimator;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 2739
+    .line 2740
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/SimpleItemAnimator;->setSupportsChangeAnimations(Z)V
 
-    .line 2740
+    .line 2741
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/DefaultItemAnimator;->setDelayAnimations(Z)V
 
-    .line 2741
+    .line 2742
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     const-wide/16 v0, 0x15e
 
-    .line 2742
+    .line 2743
     invoke-virtual {p1, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;->setDurations(J)V
 
-    .line 2743
+    .line 2744
     iget-object v0, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V

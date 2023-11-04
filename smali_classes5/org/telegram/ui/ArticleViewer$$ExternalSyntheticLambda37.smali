@@ -8,28 +8,28 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ArticleViewer;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$WebPage;
+.field public final synthetic f$1:I
 
-.field public final synthetic f$2:Lorg/telegram/messenger/MessageObject;
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$WebPage;
 
-.field public final synthetic f$3:I
+.field public final synthetic f$3:Lorg/telegram/messenger/MessageObject;
 
 .field public final synthetic f$4:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/tgnet/TLRPC$WebPage;Lorg/telegram/messenger/MessageObject;ILjava/lang/String;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ArticleViewer;ILorg/telegram/tgnet/TLRPC$WebPage;Lorg/telegram/messenger/MessageObject;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/ui/ArticleViewer;
 
-    iput-object p2, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$1:Lorg/telegram/tgnet/TLRPC$WebPage;
+    iput p2, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$1:I
 
-    iput-object p3, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$2:Lorg/telegram/messenger/MessageObject;
+    iput-object p3, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$2:Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    iput p4, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$3:I
+    iput-object p4, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$3:Lorg/telegram/messenger/MessageObject;
 
     iput-object p5, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$4:Ljava/lang/String;
 
@@ -43,11 +43,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/ui/ArticleViewer;
 
-    iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$1:Lorg/telegram/tgnet/TLRPC$WebPage;
+    iget v1, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$1:I
 
-    iget-object v2, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$2:Lorg/telegram/messenger/MessageObject;
+    iget-object v2, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$2:Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    iget v3, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$3:I
+    iget-object v3, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$3:Lorg/telegram/messenger/MessageObject;
 
     iget-object v4, p0, Lorg/telegram/ui/ArticleViewer$$ExternalSyntheticLambda37;->f$4:Ljava/lang/String;
 
@@ -55,7 +55,7 @@
 
     move-object v6, p2
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/ArticleViewer;->$r8$lambda$Gs7vF4JaNqnjbrcl5KKP17Fzy10(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/tgnet/TLRPC$WebPage;Lorg/telegram/messenger/MessageObject;ILjava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/ArticleViewer;->$r8$lambda$M9MyLhwOtH3B3Fqbr7kI6RGW0AA(Lorg/telegram/ui/ArticleViewer;ILorg/telegram/tgnet/TLRPC$WebPage;Lorg/telegram/messenger/MessageObject;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

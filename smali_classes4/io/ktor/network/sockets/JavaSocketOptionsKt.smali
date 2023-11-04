@@ -18,7 +18,7 @@
     .locals 1
 
     :try_start_0
-    const-string v0, "java.net.StandardSocketOptions"
+    const-string/jumbo v0, "java.net.StandardSocketOptions"
 
     .line 14
     invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;

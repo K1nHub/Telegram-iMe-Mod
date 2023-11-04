@@ -51,6 +51,7 @@ import com.iMe.p030ui.wallet.home.tabs.crypto.settings.WalletHomeCryptoTokensSet
 import com.iMe.p030ui.wallet.send.WalletSendFragment;
 import com.iMe.p030ui.wallet.swap.process.WalletSwapProcessFragment;
 import com.iMe.p030ui.wallet.transaction.WalletTransactionsFragment;
+import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.model.wallet.swap.SwapProtocol;
 import com.iMe.storage.domain.model.wallet.token.TokenDetailed;
@@ -86,19 +87,19 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeCryptoBinding;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.INavigationLayout;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.ActionIntroActivity;
-import org.telegram.p042ui.Components.ItemOptions;
-import org.telegram.p042ui.Components.QRCodeBottomSheet;
-import org.telegram.p042ui.Components.RLottieDrawable;
-import org.telegram.p042ui.ContentPreviewViewer;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.ActionIntroActivity;
+import org.telegram.p043ui.Components.ItemOptions;
+import org.telegram.p043ui.Components.QRCodeBottomSheet;
+import org.telegram.p043ui.Components.RLottieDrawable;
+import org.telegram.p043ui.ContentPreviewViewer;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$InputStickerSet;
 /* compiled from: WalletHomeCryptoFragment.kt */
@@ -244,16 +245,16 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         return root;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$$ExternalSyntheticLambda15
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletHomeCryptoFragment.getThemeDescriptions$lambda$0(WalletHomeCryptoFragment.this);
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -292,10 +293,11 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
     }
 
     @Override // com.iMe.manager.wallet.create.WalletCreateManagerView
-    public void openCreateWalletIntroScreen(String linkedWalletAddress, WalletCreationType.Initial walletCreationType) {
+    public void openCreateWalletIntroScreen(BlockchainType blockchainType, String linkedWalletAddress, WalletCreationType.Initial walletCreationType) {
+        Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         Intrinsics.checkNotNullParameter(linkedWalletAddress, "linkedWalletAddress");
         Intrinsics.checkNotNullParameter(walletCreationType, "walletCreationType");
-        presentFragment(CreateWalletIntroFragment.Companion.newInstance(walletCreationType, linkedWalletAddress));
+        presentFragment(CreateWalletIntroFragment.Companion.newInstance(linkedWalletAddress, walletCreationType, blockchainType));
     }
 
     @Override // com.iMe.p030ui.wallet.home.tabs.crypto.WalletHomeCryptoView
@@ -411,17 +413,17 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         final Activity parentActivity = getParentActivity();
         final String formatAddressQR = CryptoHelper.formatAddressQR(address, network.getBlockchainType());
         QRCodeBottomSheet qRCodeBottomSheet = new QRCodeBottomSheet(address, parentActivity, formatAddressQR) { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$showQrReceiveDialog$1
-            @Override // org.telegram.p042ui.Components.QRCodeBottomSheet
+            @Override // org.telegram.p043ui.Components.QRCodeBottomSheet
             public String getCustomQrCenterImageUrl() {
                 return network.getLogoUrl();
             }
 
-            @Override // org.telegram.p042ui.Components.QRCodeBottomSheet
+            @Override // org.telegram.p043ui.Components.QRCodeBottomSheet
             public int getType() {
                 return IdFabric$CustomType.QR_BOTTOM_SHEET_WALLET_RECEIVE;
             }
         };
-        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3630R.string.wallet_receive_dialog_title), getResourceManager().getString(C3630R.string.wallet_receive_dialog_btn_text), address);
+        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3634R.string.wallet_receive_dialog_title), getResourceManager().getString(C3634R.string.wallet_receive_dialog_btn_text), address);
         showDialog(qRCodeBottomSheet);
     }
 
@@ -481,13 +483,13 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         return false;
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         getBalancesRecycleAdapter().getBannerProvider().getBannersRecycleAdapter().resumeAnimation();
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onPause() {
         getBalancesRecycleAdapter().getBannerProvider().getBannersRecycleAdapter().pauseAnimation();
         ItemOptions itemOptions = this.itemOptions;
@@ -498,7 +500,7 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         super.onPause();
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         getMediaEditManager().finishLoading();
         super.onFragmentDestroy();
@@ -641,13 +643,13 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
         int id = view.getId();
-        if (id == C3630R.C3633id.network_type_view) {
+        if (id == C3634R.C3637id.network_type_view) {
             WalletHomeCryptoPresenter.startChooseNetworkDialog$default(this$0.getPresenter(), null, 1, null);
-        } else if (id == C3630R.C3633id.image_wallet_crypto_eye) {
+        } else if (id == C3634R.C3637id.image_wallet_crypto_eye) {
             this$0.getPresenter().switchHiddenBalance();
-        } else if (id == C3630R.C3633id.image_wallet_crypto_tokens_settings) {
+        } else if (id == C3634R.C3637id.image_wallet_crypto_tokens_settings) {
             this$0.getPresenter().openTokenSettingsScreen();
-        } else if (id == C3630R.C3633id.image_wallet_order_tokens) {
+        } else if (id == C3634R.C3637id.image_wallet_order_tokens) {
             this$0.getPresenter().onSelectTokensSortingClicked();
         }
     }
@@ -669,145 +671,145 @@ public final class WalletHomeCryptoFragment extends WalletHomeTabFragment implem
 
     private final void openNftDetails(View view) {
         ContentPreviewViewer.getInstanceForNft(getMediaEditManager()).showInstantly(view, 0, new ContentPreviewViewer.ContentPreviewViewerDelegate() { // from class: com.iMe.ui.wallet.home.tabs.crypto.WalletHomeCryptoFragment$openNftDetails$1
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ boolean can() {
                 return ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$can(this);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public boolean canSchedule() {
                 return false;
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ Boolean canSetAsStatus(TLRPC$Document tLRPC$Document) {
                 return ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$canSetAsStatus(this, tLRPC$Document);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ void copyEmoji(TLRPC$Document tLRPC$Document) {
                 ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$copyEmoji(this, tLRPC$Document);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ void editAnimatedSticker(TLRPC$Document tLRPC$Document, RLottieDrawable rLottieDrawable, boolean z) {
                 ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$editAnimatedSticker(this, tLRPC$Document, rLottieDrawable, z);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ void editMedia(TLRPC$Document tLRPC$Document, boolean z) {
                 ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$editMedia(this, tLRPC$Document, z);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public long getDialogId() {
                 return -1L;
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ String getQuery(boolean z) {
                 return ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$getQuery(this, z);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ void gifAddedOrDeleted() {
                 ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$gifAddedOrDeleted(this);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public boolean isInScheduleMode() {
                 return false;
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ boolean isPhotoEditor() {
                 return ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$isPhotoEditor(this);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ boolean isStoryReply() {
                 return ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$isStoryReply(this);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ boolean needCopy(TLRPC$Document tLRPC$Document) {
                 return ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$needCopy(this, tLRPC$Document);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ boolean needMenu() {
                 return ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$needMenu(this);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ boolean needOpen() {
                 return ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$needOpen(this);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ boolean needRemove() {
                 return ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$needRemove(this);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ boolean needRemoveFromRecent(TLRPC$Document tLRPC$Document) {
                 return ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$needRemoveFromRecent(this, tLRPC$Document);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public boolean needSend(int i) {
                 return false;
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ void openKiklikoReport(String str) {
                 ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$openKiklikoReport(this, str);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public void openSet(TLRPC$InputStickerSet tLRPC$InputStickerSet, boolean z) {
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ void remove(SendMessagesHelper.ImportingSticker importingSticker) {
                 ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$remove(this, importingSticker);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ void removeFromRecent(TLRPC$Document tLRPC$Document) {
                 ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$removeFromRecent(this, tLRPC$Document);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ void resetTouch() {
                 ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$resetTouch(this);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ void sendEmoji(TLRPC$Document tLRPC$Document) {
                 ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$sendEmoji(this, tLRPC$Document);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ void sendGif(Object obj, Object obj2, boolean z, int i) {
                 ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$sendGif(this, obj, obj2, z, i);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ void sendKiklikoVideo(String str, String str2, boolean z, boolean z2, int i) {
                 ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$sendKiklikoVideo(this, str, str2, z, z2, i);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public void sendSticker(TLRPC$Document tLRPC$Document, String str, Object obj, boolean z, int i) {
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ void setAsEmojiStatus(TLRPC$Document tLRPC$Document, Integer num) {
                 ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$setAsEmojiStatus(this, tLRPC$Document, num);
             }
 
-            @Override // org.telegram.p042ui.ContentPreviewViewer.ContentPreviewViewerDelegate
+            @Override // org.telegram.p043ui.ContentPreviewViewer.ContentPreviewViewerDelegate
             public /* synthetic */ void setKiklikoAvatar(String str) {
                 ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$setKiklikoAvatar(this, str);
             }

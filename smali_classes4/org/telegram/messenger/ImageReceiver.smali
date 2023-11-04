@@ -13126,10 +13126,8 @@
     return-void
 .end method
 
-.method public setImageX(I)V
+.method public setImageX(F)V
     .locals 0
-
-    int-to-float p1, p1
 
     .line 2323
     iput p1, p0, Lorg/telegram/messenger/ImageReceiver;->imageX:F

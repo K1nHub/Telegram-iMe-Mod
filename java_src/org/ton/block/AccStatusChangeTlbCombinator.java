@@ -35,7 +35,7 @@ final class AccStatusChangeTlbCombinator extends TlbCombinator<AccStatusChange> 
     }
 
     private AccStatusChangeTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(AccStatusChange.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AccStatusChange.class), AccStatusChangeUnchangedTlbConstructor.INSTANCE), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AccStatusChange.class), AccStatusChangeFrozenTlbConstructor.INSTANCE), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(AccStatusChange.class), AccStatusChangeDeletedTlbConstructor.INSTANCE));
+        super(Reflection.getOrCreateKotlinClass(AccStatusChange.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AccStatusChange.class), AccStatusChangeUnchangedTlbConstructor.INSTANCE), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AccStatusChange.class), AccStatusChangeFrozenTlbConstructor.INSTANCE), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(AccStatusChange.class), AccStatusChangeDeletedTlbConstructor.INSTANCE));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

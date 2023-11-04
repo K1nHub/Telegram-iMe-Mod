@@ -14,9 +14,9 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: AccountLevelBadgeView.kt */
 /* renamed from: com.iMe.fork.ui.view.AccountLevelBadgeView */
 /* loaded from: classes3.dex */
@@ -76,7 +76,7 @@ public final class AccountLevelBadgeView extends LinearLayout {
         this.iconView$delegate = lazy2;
         setGravity(17);
         setClipToPadding(false);
-        setPadding(AndroidUtilities.m103dp(4.0f), 0, AndroidUtilities.m103dp(14.0f), 0);
+        setPadding(AndroidUtilities.m105dp(4.0f), 0, AndroidUtilities.m105dp(14.0f), 0);
         addView(getIconView(), LayoutHelper.createLinear(-2, -2));
         addView(getNameTextView(), LayoutHelper.createLinear(-2, -2, 17, 8, 0, 0, 0));
     }
@@ -91,14 +91,14 @@ public final class AccountLevelBadgeView extends LinearLayout {
 
     public final void setAccountLevel(AccountLevel accountLevel) {
         Intrinsics.checkNotNullParameter(accountLevel, "accountLevel");
-        getIconView().setImageResource(C3630R.C3632drawable.fork_account_level_badge);
+        getIconView().setImageResource(C3634R.C3636drawable.fork_account_level_badge);
         getNameTextView().setText(accountLevel.name());
-        setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m103dp(19.0f), ContextCompat.getColor(getContext(), accountLevel.getColorResId())));
+        setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m105dp(19.0f), ContextCompat.getColor(getContext(), accountLevel.getColorResId())));
     }
 
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 0), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m103dp(20.0f), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 0), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m105dp(20.0f), 1073741824));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

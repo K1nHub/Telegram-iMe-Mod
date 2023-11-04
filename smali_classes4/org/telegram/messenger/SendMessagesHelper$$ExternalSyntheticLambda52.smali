@@ -10,23 +10,11 @@
 
 .field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Message;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$Peer;
-
-.field public final synthetic f$3:I
-
-.field public final synthetic f$4:I
-
-.field public final synthetic f$5:Ljava/util/ArrayList;
-
-.field public final synthetic f$6:J
-
-.field public final synthetic f$7:Lorg/telegram/tgnet/TLRPC$Message;
-
-.field public final synthetic f$8:I
+.field public final synthetic f$2:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/SendMessagesHelper;Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/tgnet/TLRPC$Peer;IILjava/util/ArrayList;JLorg/telegram/tgnet/TLRPC$Message;I)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/SendMessagesHelper;Lorg/telegram/tgnet/TLRPC$Message;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,19 +23,7 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$1:Lorg/telegram/tgnet/TLRPC$Message;
 
-    iput-object p3, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$2:Lorg/telegram/tgnet/TLRPC$Peer;
-
-    iput p4, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$3:I
-
-    iput p5, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$4:I
-
-    iput-object p6, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$5:Ljava/util/ArrayList;
-
-    iput-wide p7, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$6:J
-
-    iput-object p9, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$7:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iput p10, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$8:I
+    iput-boolean p3, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$2:Z
 
     return-void
 .end method
@@ -55,27 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 10
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$0:Lorg/telegram/messenger/SendMessagesHelper;
 
     iget-object v1, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$1:Lorg/telegram/tgnet/TLRPC$Message;
 
-    iget-object v2, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$2:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-boolean v2, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$2:Z
 
-    iget v3, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$3:I
-
-    iget v4, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$4:I
-
-    iget-object v5, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$5:Ljava/util/ArrayList;
-
-    iget-wide v6, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$6:J
-
-    iget-object v8, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$7:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iget v9, p0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda52;->f$8:I
-
-    invoke-static/range {v0 .. v9}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$xjkvcO-3-vfxsi6_IgeiBWgsSUg(Lorg/telegram/messenger/SendMessagesHelper;Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/tgnet/TLRPC$Peer;IILjava/util/ArrayList;JLorg/telegram/tgnet/TLRPC$Message;I)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$leDYxoZFn2EaYOvjRcE_RsSR0S4(Lorg/telegram/messenger/SendMessagesHelper;Lorg/telegram/tgnet/TLRPC$Message;Z)V
 
     return-void
 .end method

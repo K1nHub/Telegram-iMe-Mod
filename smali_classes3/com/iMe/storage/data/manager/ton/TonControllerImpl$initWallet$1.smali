@@ -17,8 +17,8 @@
     c = "com.iMe.storage.data.manager.ton.TonControllerImpl"
     f = "TonControllerImpl.kt"
     l = {
-        0x90,
-        0x8f
+        0x92,
+        0x91
     }
     m = "initWallet"
 .end annotation

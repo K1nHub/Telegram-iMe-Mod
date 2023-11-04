@@ -143,6 +143,8 @@
 
 .field private currentAspectRatioFrameLayoutRotation:I
 
+.field private currentForegroundConvertingVideo:Lorg/telegram/messenger/MediaController$VideoConvertMessage;
+
 .field private currentMusicPlaybackSpeed:F
 
 .field private currentPlaybackSpeed:F
@@ -174,6 +176,16 @@
 .field private flagSecureFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
 .field private forceLoopCurrentPlaylist:Z
+
+.field private foregroundConvertingMessages:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Lorg/telegram/messenger/MediaController$VideoConvertMessage;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private generatingWaveform:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -347,7 +359,7 @@
 
 .field private recordReplyingMsg:Lorg/telegram/messenger/MessageObject;
 
-.field private recordReplyingStory:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field private recordReplyingStory:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
 .field private recordReplyingTopMsg:Lorg/telegram/messenger/MessageObject;
 
@@ -557,10 +569,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$NjrPSDawbPoO3VbYxaNt_8K2VP8(Lorg/telegram/messenger/MediaController;IIJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public static synthetic $r8$lambda$MH3d_NRrIsBsW9fbwHVvTod15jk(Lorg/telegram/messenger/MediaController;IIJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p7}, Lorg/telegram/messenger/MediaController;->lambda$startRecording$27(IIJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-direct/range {p0 .. p7}, Lorg/telegram/messenger/MediaController;->lambda$startRecording$27(IIJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
     return-void
 .end method
@@ -854,7 +866,7 @@
 
     aput-object v9, v1, v8
 
-    .line 193
+    .line 198
     sget v10, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const-string v11, "date_modified"
@@ -933,24 +945,24 @@
 
     aput-object v21, v0, v20
 
-    .line 205
+    .line 210
     sput-object v0, Lorg/telegram/messenger/MediaController;->projectionVideo:[Ljava/lang/String;
 
-    .line 664
+    .line 704
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
     invoke-direct {v0}, Lj$/util/concurrent/ConcurrentHashMap;-><init>()V
 
     sput-object v0, Lorg/telegram/messenger/MediaController;->cachedEncoderBitrates:Lj$/util/concurrent/ConcurrentHashMap;
 
-    .line 692
+    .line 735
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     sput-object v0, Lorg/telegram/messenger/MediaController;->allMediaAlbums:Ljava/util/ArrayList;
 
-    .line 693
+    .line 736
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -963,17 +975,17 @@
 .method public constructor <init>()V
     .locals 6
 
-    .line 1079
+    .line 1122
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 607
+    .line 647
     new-instance v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/messenger/MediaController;)V
 
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->audioRecordFocusChangedListener:Landroid/media/AudioManager$OnAudioFocusChangeListener;
 
-    .line 621
+    .line 661
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -982,119 +994,126 @@
 
     const-wide/16 v0, 0x0
 
-    .line 639
+    .line 679
     iput-wide v0, p0, Lorg/telegram/messenger/MediaController;->lastTimestamp:J
 
     const/high16 v2, -0x3d380000    # -100.0f
 
-    .line 642
+    .line 682
     iput v2, p0, Lorg/telegram/messenger/MediaController;->lastProximityValue:F
 
     const/4 v2, 0x3
 
     new-array v3, v2, [F
 
-    .line 649
+    .line 689
     iput-object v3, p0, Lorg/telegram/messenger/MediaController;->gravity:[F
 
     new-array v3, v2, [F
 
-    .line 650
+    .line 690
     iput-object v3, p0, Lorg/telegram/messenger/MediaController;->gravityFast:[F
 
     new-array v3, v2, [F
 
-    .line 651
+    .line 691
     iput-object v3, p0, Lorg/telegram/messenger/MediaController;->linearAcceleration:[F
 
     const/4 v3, 0x0
 
-    .line 656
+    .line 696
     iput v3, p0, Lorg/telegram/messenger/MediaController;->audioFocus:I
 
-    .line 680
+    .line 706
+    new-instance v4, Ljava/util/ArrayList;
+
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v4, p0, Lorg/telegram/messenger/MediaController;->foregroundConvertingMessages:Ljava/util/ArrayList;
+
+    .line 723
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v4, p0, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
 
-    .line 681
+    .line 724
     new-instance v4, Ljava/lang/Object;
 
     invoke-direct {v4}, Ljava/lang/Object;-><init>()V
 
     iput-object v4, p0, Lorg/telegram/messenger/MediaController;->videoQueueSync:Ljava/lang/Object;
 
-    .line 682
+    .line 725
     new-instance v4, Ljava/util/HashMap;
 
     invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
     iput-object v4, p0, Lorg/telegram/messenger/MediaController;->generatingWaveform:Ljava/util/HashMap;
 
-    .line 696
+    .line 739
     iput-boolean v3, p0, Lorg/telegram/messenger/MediaController;->isSilent:Z
 
-    .line 697
+    .line 740
     iput-boolean v3, p0, Lorg/telegram/messenger/MediaController;->isPaused:Z
 
-    .line 698
+    .line 741
     iput-boolean v3, p0, Lorg/telegram/messenger/MediaController;->wasPlayingAudioBeforePause:Z
 
     const/4 v4, 0x0
 
-    .line 699
+    .line 742
     iput-object v4, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 700
+    .line 743
     iput-object v4, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 701
+    .line 744
     iput v3, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayerNum:I
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    .line 706
+    .line 749
     iput v5, p0, Lorg/telegram/messenger/MediaController;->currentPlaybackSpeed:F
 
-    .line 707
+    .line 750
     iput v5, p0, Lorg/telegram/messenger/MediaController;->currentMusicPlaybackSpeed:F
 
-    .line 708
+    .line 751
     iput v5, p0, Lorg/telegram/messenger/MediaController;->fastPlaybackSpeed:F
 
-    .line 709
+    .line 752
     iput v5, p0, Lorg/telegram/messenger/MediaController;->fastMusicPlaybackSpeed:F
 
-    .line 711
+    .line 754
     iput-wide v0, p0, Lorg/telegram/messenger/MediaController;->lastProgress:J
 
-    .line 715
+    .line 758
     iput-object v4, p0, Lorg/telegram/messenger/MediaController;->progressTimer:Ljava/util/Timer;
 
-    .line 716
+    .line 759
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->progressTimerSync:Ljava/lang/Object;
 
-    .line 736
+    .line 779
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
-    .line 737
+    .line 780
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->playlistMap:Ljava/util/HashMap;
 
-    .line 738
+    .line 781
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -1105,19 +1124,19 @@
 
     new-array v1, v0, [Z
 
-    .line 741
+    .line 784
     fill-array-data v1, :array_0
 
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->playlistEndReached:[Z
 
     new-array v1, v0, [I
 
-    .line 745
+    .line 788
     fill-array-data v1, :array_1
 
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->playlistMaxId:[I
 
-    .line 747
+    .line 790
     new-instance v1, Lorg/telegram/messenger/MediaController$1;
 
     invoke-direct {v1, p0}, Lorg/telegram/messenger/MediaController$1;-><init>(Lorg/telegram/messenger/MediaController;)V
@@ -1126,24 +1145,24 @@
 
     const/4 v1, -0x1
 
-    .line 759
+    .line 802
     iput v1, p0, Lorg/telegram/messenger/MediaController;->recordingGuid:I
 
     const/16 v1, 0x400
 
     new-array v1, v1, [S
 
-    .line 770
+    .line 813
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->recordSamples:[S
 
-    .line 773
+    .line 816
     new-instance v1, Ljava/lang/Object;
 
     invoke-direct {v1}, Ljava/lang/Object;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->sync:Ljava/lang/Object;
 
-    .line 775
+    .line 818
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -1152,29 +1171,29 @@
 
     const/16 v1, 0x500
 
-    .line 777
+    .line 820
     iput v1, p0, Lorg/telegram/messenger/MediaController;->recordBufferSize:I
 
     const v1, 0xbb80
 
-    .line 778
+    .line 821
     iput v1, p0, Lorg/telegram/messenger/MediaController;->sampleRate:I
 
-    .line 786
+    .line 829
     new-instance v1, Lorg/telegram/messenger/MediaController$2;
 
     invoke-direct {v1, p0}, Lorg/telegram/messenger/MediaController$2;-><init>(Lorg/telegram/messenger/MediaController;)V
 
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->recordRunnable:Ljava/lang/Runnable;
 
-    .line 880
+    .line 923
     new-instance v1, Lorg/telegram/messenger/MediaController$3;
 
     invoke-direct {v1, p0}, Lorg/telegram/messenger/MediaController$3;-><init>(Lorg/telegram/messenger/MediaController;)V
 
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->audioVolumeUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    .line 1080
+    .line 1123
     new-instance v1, Lorg/telegram/messenger/DispatchQueue;
 
     const-string/jumbo v4, "recordQueue"
@@ -1185,10 +1204,10 @@
 
     const/16 v4, 0xa
 
-    .line 1081
+    .line 1124
     invoke-virtual {v1, v4}, Ljava/lang/Thread;->setPriority(I)V
 
-    .line 1082
+    .line 1125
     new-instance v1, Lorg/telegram/messenger/DispatchQueue;
 
     const-string v5, "fileEncodingQueue"
@@ -1197,10 +1216,10 @@
 
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->fileEncodingQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    .line 1083
+    .line 1126
     invoke-virtual {v1, v4}, Ljava/lang/Thread;->setPriority(I)V
 
-    .line 1085
+    .line 1128
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->recordQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v4, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda10;
@@ -1209,7 +1228,7 @@
 
     invoke-virtual {v1, v4}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 1103
+    .line 1146
     sget-object v1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v4, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda14;
@@ -1220,14 +1239,14 @@
 
     const/16 v1, 0x780
 
-    .line 1164
+    .line 1207
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->fileBuffer:Ljava/nio/ByteBuffer;
 
-    .line 1166
+    .line 1209
     new-instance v1, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda13;
 
     invoke-direct {v1, p0}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/messenger/MediaController;)V
@@ -1252,7 +1271,7 @@
 
     aput-object v3, v1, v0
 
-    .line 1183
+    .line 1226
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x1c
@@ -1289,14 +1308,14 @@
 
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->mediaProjections:[Ljava/lang/String;
 
-    .line 1189
+    .line 1232
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 1191
+    .line 1234
     :try_start_0
     sget-object v1, Landroid/provider/MediaStore$Images$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
 
@@ -1313,10 +1332,10 @@
     :catch_0
     move-exception v1
 
-    .line 1193
+    .line 1236
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1196
+    .line 1239
     :goto_1
     :try_start_1
     sget-object v1, Landroid/provider/MediaStore$Images$Media;->INTERNAL_CONTENT_URI:Landroid/net/Uri;
@@ -1334,10 +1353,10 @@
     :catch_1
     move-exception v1
 
-    .line 1198
+    .line 1241
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1201
+    .line 1244
     :goto_2
     :try_start_2
     sget-object v1, Landroid/provider/MediaStore$Video$Media;->EXTERNAL_CONTENT_URI:Landroid/net/Uri;
@@ -1355,10 +1374,10 @@
     :catch_2
     move-exception v1
 
-    .line 1203
+    .line 1246
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1206
+    .line 1249
     :goto_3
     :try_start_3
     sget-object v1, Landroid/provider/MediaStore$Video$Media;->INTERNAL_CONTENT_URI:Landroid/net/Uri;
@@ -1376,13 +1395,11 @@
     :catch_3
     move-exception v0
 
-    .line 1208
+    .line 1251
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_4
     return-void
-
-    nop
 
     :array_0
     .array-data 1
@@ -1402,7 +1419,7 @@
 .method static synthetic access$000(Lorg/telegram/messenger/MediaController;)Lorg/telegram/messenger/MessageObject;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     return-object p0
@@ -1411,7 +1428,7 @@
 .method static synthetic access$100(Lorg/telegram/messenger/MediaController;)Landroid/media/AudioRecord;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->audioRecorder:Landroid/media/AudioRecord;
 
     return-object p0
@@ -1420,7 +1437,7 @@
 .method static synthetic access$1000(Lorg/telegram/messenger/MediaController;)I
     .locals 0
 
-    .line 112
+    .line 113
     iget p0, p0, Lorg/telegram/messenger/MediaController;->sendAfterDoneScheduleDate:I
 
     return p0
@@ -1429,7 +1446,7 @@
 .method static synthetic access$1100(Lorg/telegram/messenger/MediaController;)Ljava/lang/String;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->sendAfterDoneTemplateName:Ljava/lang/String;
 
     return-object p0
@@ -1438,7 +1455,7 @@
 .method static synthetic access$1200(Lorg/telegram/messenger/MediaController;IZILjava/lang/String;)V
     .locals 0
 
-    .line 112
+    .line 113
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/messenger/MediaController;->stopRecordingInternal(IZILjava/lang/String;)V
 
     return-void
@@ -1447,7 +1464,7 @@
 .method static synthetic access$1300(Lorg/telegram/messenger/MediaController;)I
     .locals 0
 
-    .line 112
+    .line 113
     iget p0, p0, Lorg/telegram/messenger/MediaController;->recordingGuid:I
 
     return p0
@@ -1456,7 +1473,7 @@
 .method static synthetic access$1400(Lorg/telegram/messenger/MediaController;)I
     .locals 0
 
-    .line 112
+    .line 113
     iget p0, p0, Lorg/telegram/messenger/MediaController;->recordingCurrentAccount:I
 
     return p0
@@ -1465,7 +1482,7 @@
 .method static synthetic access$1500(Lorg/telegram/messenger/MediaController;)Ljava/nio/ByteBuffer;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->fileBuffer:Ljava/nio/ByteBuffer;
 
     return-object p0
@@ -1474,7 +1491,7 @@
 .method static synthetic access$1600(Lorg/telegram/messenger/MediaController;Ljava/nio/ByteBuffer;I)I
     .locals 0
 
-    .line 112
+    .line 113
     invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/MediaController;->writeFrame(Ljava/nio/ByteBuffer;I)I
 
     move-result p0
@@ -1485,7 +1502,7 @@
 .method static synthetic access$1714(Lorg/telegram/messenger/MediaController;J)J
     .locals 2
 
-    .line 112
+    .line 113
     iget-wide v0, p0, Lorg/telegram/messenger/MediaController;->recordTimeCount:J
 
     add-long/2addr v0, p1
@@ -1498,7 +1515,7 @@
 .method static synthetic access$1808(Lorg/telegram/messenger/MediaController;)I
     .locals 2
 
-    .line 112
+    .line 113
     iget v0, p0, Lorg/telegram/messenger/MediaController;->writedFrame:I
 
     add-int/lit8 v1, v0, 0x1
@@ -1511,7 +1528,7 @@
 .method static synthetic access$1902(Lorg/telegram/messenger/MediaController;F)F
     .locals 0
 
-    .line 112
+    .line 113
     iput p1, p0, Lorg/telegram/messenger/MediaController;->audioVolume:F
 
     return p1
@@ -1520,7 +1537,7 @@
 .method static synthetic access$200(Lorg/telegram/messenger/MediaController;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->recordBuffers:Ljava/util/ArrayList;
 
     return-object p0
@@ -1529,7 +1546,7 @@
 .method static synthetic access$2000(Lorg/telegram/messenger/MediaController;)V
     .locals 0
 
-    .line 112
+    .line 113
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->setPlayerVolume()V
 
     return-void
@@ -1538,7 +1555,7 @@
 .method static synthetic access$2100(Lorg/telegram/messenger/MediaController;Landroid/net/Uri;)V
     .locals 0
 
-    .line 112
+    .line 113
     invoke-direct {p0, p1}, Lorg/telegram/messenger/MediaController;->processMediaObserver(Landroid/net/Uri;)V
 
     return-void
@@ -1547,7 +1564,7 @@
 .method static synthetic access$2200()Ljava/lang/Runnable;
     .locals 1
 
-    .line 112
+    .line 113
     sget-object v0, Lorg/telegram/messenger/MediaController;->refreshGalleryRunnable:Ljava/lang/Runnable;
 
     return-object v0
@@ -1556,7 +1573,7 @@
 .method static synthetic access$2202(Ljava/lang/Runnable;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 112
+    .line 113
     sput-object p0, Lorg/telegram/messenger/MediaController;->refreshGalleryRunnable:Ljava/lang/Runnable;
 
     return-object p0
@@ -1565,7 +1582,7 @@
 .method static synthetic access$2300(Lorg/telegram/messenger/MediaController;)I
     .locals 0
 
-    .line 112
+    .line 113
     iget p0, p0, Lorg/telegram/messenger/MediaController;->startObserverToken:I
 
     return p0
@@ -1574,7 +1591,7 @@
 .method static synthetic access$2400(Lorg/telegram/messenger/MediaController;)Lorg/telegram/messenger/MediaController$InternalObserver;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->internalObserver:Lorg/telegram/messenger/MediaController$InternalObserver;
 
     return-object p0
@@ -1583,7 +1600,7 @@
 .method static synthetic access$2402(Lorg/telegram/messenger/MediaController;Lorg/telegram/messenger/MediaController$InternalObserver;)Lorg/telegram/messenger/MediaController$InternalObserver;
     .locals 0
 
-    .line 112
+    .line 113
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->internalObserver:Lorg/telegram/messenger/MediaController$InternalObserver;
 
     return-object p1
@@ -1592,7 +1609,7 @@
 .method static synthetic access$2500(Lorg/telegram/messenger/MediaController;)Lorg/telegram/messenger/MediaController$ExternalObserver;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->externalObserver:Lorg/telegram/messenger/MediaController$ExternalObserver;
 
     return-object p0
@@ -1601,7 +1618,7 @@
 .method static synthetic access$2502(Lorg/telegram/messenger/MediaController;Lorg/telegram/messenger/MediaController$ExternalObserver;)Lorg/telegram/messenger/MediaController$ExternalObserver;
     .locals 0
 
-    .line 112
+    .line 113
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->externalObserver:Lorg/telegram/messenger/MediaController$ExternalObserver;
 
     return-object p1
@@ -1610,7 +1627,7 @@
 .method static synthetic access$2600(Lorg/telegram/messenger/MediaController;)Ljava/lang/Object;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->sync:Ljava/lang/Object;
 
     return-object p0
@@ -1619,7 +1636,7 @@
 .method static synthetic access$2700(Lorg/telegram/messenger/MediaController;)Lorg/telegram/ui/Components/VideoPlayer;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     return-object p0
@@ -1628,7 +1645,7 @@
 .method static synthetic access$2800(Lorg/telegram/messenger/MediaController;)Lorg/telegram/ui/Components/VideoPlayer;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     return-object p0
@@ -1637,7 +1654,7 @@
 .method static synthetic access$2900(Lorg/telegram/messenger/MediaController;)Z
     .locals 0
 
-    .line 112
+    .line 113
     iget-boolean p0, p0, Lorg/telegram/messenger/MediaController;->isPaused:Z
 
     return p0
@@ -1646,7 +1663,7 @@
 .method static synthetic access$300(Lorg/telegram/messenger/MediaController;)J
     .locals 2
 
-    .line 112
+    .line 113
     iget-wide v0, p0, Lorg/telegram/messenger/MediaController;->samplesCount:J
 
     return-wide v0
@@ -1655,7 +1672,7 @@
 .method static synthetic access$3000(Lorg/telegram/messenger/MediaController;)F
     .locals 0
 
-    .line 112
+    .line 113
     iget p0, p0, Lorg/telegram/messenger/MediaController;->seekToProgressPending:F
 
     return p0
@@ -1664,7 +1681,7 @@
 .method static synthetic access$3002(Lorg/telegram/messenger/MediaController;F)F
     .locals 0
 
-    .line 112
+    .line 113
     iput p1, p0, Lorg/telegram/messenger/MediaController;->seekToProgressPending:F
 
     return p1
@@ -1673,7 +1690,7 @@
 .method static synthetic access$302(Lorg/telegram/messenger/MediaController;J)J
     .locals 0
 
-    .line 112
+    .line 113
     iput-wide p1, p0, Lorg/telegram/messenger/MediaController;->samplesCount:J
 
     return-wide p1
@@ -1682,7 +1699,7 @@
 .method static synthetic access$3100(Lorg/telegram/messenger/MediaController;)J
     .locals 2
 
-    .line 112
+    .line 113
     iget-wide v0, p0, Lorg/telegram/messenger/MediaController;->lastProgress:J
 
     return-wide v0
@@ -1691,7 +1708,7 @@
 .method static synthetic access$3102(Lorg/telegram/messenger/MediaController;J)J
     .locals 0
 
-    .line 112
+    .line 113
     iput-wide p1, p0, Lorg/telegram/messenger/MediaController;->lastProgress:J
 
     return-wide p1
@@ -1700,7 +1717,7 @@
 .method static synthetic access$3200(Lorg/telegram/messenger/MediaController;)Ljava/lang/String;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->shouldSavePositionForCurrentAudio:Ljava/lang/String;
 
     return-object p0
@@ -1709,7 +1726,7 @@
 .method static synthetic access$3300(Lorg/telegram/messenger/MediaController;)J
     .locals 2
 
-    .line 112
+    .line 113
     iget-wide v0, p0, Lorg/telegram/messenger/MediaController;->lastSaveTime:J
 
     return-wide v0
@@ -1718,7 +1735,7 @@
 .method static synthetic access$3302(Lorg/telegram/messenger/MediaController;J)J
     .locals 0
 
-    .line 112
+    .line 113
     iput-wide p1, p0, Lorg/telegram/messenger/MediaController;->lastSaveTime:J
 
     return-wide p1
@@ -1727,7 +1744,7 @@
 .method static synthetic access$3500(Lorg/telegram/messenger/MediaController;)I
     .locals 0
 
-    .line 112
+    .line 113
     iget p0, p0, Lorg/telegram/messenger/MediaController;->playerNum:I
 
     return p0
@@ -1736,7 +1753,7 @@
 .method static synthetic access$3600(Lorg/telegram/messenger/MediaController;Lorg/telegram/messenger/MessageObject;[IZZI)V
     .locals 0
 
-    .line 112
+    .line 113
     invoke-direct/range {p0 .. p5}, Lorg/telegram/messenger/MediaController;->updateVideoState(Lorg/telegram/messenger/MessageObject;[IZZI)V
 
     return-void
@@ -1745,7 +1762,7 @@
 .method static synthetic access$3700(Lorg/telegram/messenger/MediaController;)I
     .locals 0
 
-    .line 112
+    .line 113
     iget p0, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayoutRotation:I
 
     return p0
@@ -1754,7 +1771,7 @@
 .method static synthetic access$3702(Lorg/telegram/messenger/MediaController;I)I
     .locals 0
 
-    .line 112
+    .line 113
     iput p1, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayoutRotation:I
 
     return p1
@@ -1763,7 +1780,7 @@
 .method static synthetic access$3800(Lorg/telegram/messenger/MediaController;)F
     .locals 0
 
-    .line 112
+    .line 113
     iget p0, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayoutRatio:F
 
     return p0
@@ -1772,7 +1789,7 @@
 .method static synthetic access$3802(Lorg/telegram/messenger/MediaController;F)F
     .locals 0
 
-    .line 112
+    .line 113
     iput p1, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayoutRatio:F
 
     return p1
@@ -1781,7 +1798,7 @@
 .method static synthetic access$3900(Lorg/telegram/messenger/MediaController;)Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     return-object p0
@@ -1790,7 +1807,7 @@
 .method static synthetic access$400(Lorg/telegram/messenger/MediaController;)[S
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->recordSamples:[S
 
     return-object p0
@@ -1799,7 +1816,7 @@
 .method static synthetic access$4000(Lorg/telegram/messenger/MediaController;)Z
     .locals 0
 
-    .line 112
+    .line 113
     iget-boolean p0, p0, Lorg/telegram/messenger/MediaController;->isDrawingWasReady:Z
 
     return p0
@@ -1808,7 +1825,7 @@
 .method static synthetic access$4002(Lorg/telegram/messenger/MediaController;Z)Z
     .locals 0
 
-    .line 112
+    .line 113
     iput-boolean p1, p0, Lorg/telegram/messenger/MediaController;->isDrawingWasReady:Z
 
     return p1
@@ -1817,7 +1834,7 @@
 .method static synthetic access$4100(Lorg/telegram/messenger/MediaController;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->currentTextureViewContainer:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -1826,7 +1843,7 @@
 .method static synthetic access$4200(Lorg/telegram/messenger/MediaController;)I
     .locals 0
 
-    .line 112
+    .line 113
     iget p0, p0, Lorg/telegram/messenger/MediaController;->pipSwitchingState:I
 
     return p0
@@ -1835,7 +1852,7 @@
 .method static synthetic access$4202(Lorg/telegram/messenger/MediaController;I)I
     .locals 0
 
-    .line 112
+    .line 113
     iput p1, p0, Lorg/telegram/messenger/MediaController;->pipSwitchingState:I
 
     return p1
@@ -1844,7 +1861,7 @@
 .method static synthetic access$4300(Lorg/telegram/messenger/MediaController;)Landroid/view/TextureView;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->currentTextureView:Landroid/view/TextureView;
 
     return-object p0
@@ -1853,7 +1870,7 @@
 .method static synthetic access$4400(Lorg/telegram/messenger/MediaController;)Landroid/app/Activity;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->baseActivity:Landroid/app/Activity;
 
     return-object p0
@@ -1862,7 +1879,7 @@
 .method static synthetic access$4500(Lorg/telegram/messenger/MediaController;)Lorg/telegram/ui/Components/PipRoundVideoView;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     return-object p0
@@ -1871,7 +1888,7 @@
 .method static synthetic access$4502(Lorg/telegram/messenger/MediaController;Lorg/telegram/ui/Components/PipRoundVideoView;)Lorg/telegram/ui/Components/PipRoundVideoView;
     .locals 0
 
-    .line 112
+    .line 113
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     return-object p1
@@ -1880,7 +1897,7 @@
 .method static synthetic access$4600(Lorg/telegram/messenger/MediaController;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     return-object p0
@@ -1889,7 +1906,7 @@
 .method static synthetic access$4700(Lorg/telegram/messenger/MediaController;Z)V
     .locals 0
 
-    .line 112
+    .line 113
     invoke-direct {p0, p1}, Lorg/telegram/messenger/MediaController;->playNextMessageWithoutOrder(Z)V
 
     return-void
@@ -1898,7 +1915,7 @@
 .method static synthetic access$4800(ILjava/io/File;Ljava/lang/String;)Landroid/net/Uri;
     .locals 0
 
-    .line 112
+    .line 113
     invoke-static {p0, p1, p2}, Lorg/telegram/messenger/MediaController;->saveFileInternal(ILjava/io/File;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p0
@@ -1909,7 +1926,7 @@
 .method static synthetic access$4900(Lorg/telegram/messenger/MediaController;Lorg/telegram/messenger/MediaController$VideoConvertMessage;)Z
     .locals 0
 
-    .line 112
+    .line 113
     invoke-direct {p0, p1}, Lorg/telegram/messenger/MediaController;->convertVideo(Lorg/telegram/messenger/MediaController$VideoConvertMessage;)Z
 
     move-result p0
@@ -1920,7 +1937,7 @@
 .method static synthetic access$500(Lorg/telegram/messenger/MediaController;)Lorg/telegram/messenger/DispatchQueue;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->fileEncodingQueue:Lorg/telegram/messenger/DispatchQueue;
 
     return-object p0
@@ -1929,7 +1946,7 @@
 .method static synthetic access$5000(Lorg/telegram/messenger/MediaController;Lorg/telegram/messenger/MediaController$VideoConvertMessage;Ljava/io/File;ZJJZF)V
     .locals 0
 
-    .line 112
+    .line 113
     invoke-direct/range {p0 .. p9}, Lorg/telegram/messenger/MediaController;->didWriteData(Lorg/telegram/messenger/MediaController$VideoConvertMessage;Ljava/io/File;ZJJZF)V
 
     return-void
@@ -1938,7 +1955,7 @@
 .method static synthetic access$5100(Lorg/telegram/messenger/MediaController;)I
     .locals 0
 
-    .line 112
+    .line 113
     iget p0, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayerNum:I
 
     return p0
@@ -1947,7 +1964,7 @@
 .method static synthetic access$5200(Lorg/telegram/messenger/MediaController;)Lorg/telegram/ui/Components/VideoPlayer;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     return-object p0
@@ -1956,7 +1973,7 @@
 .method static synthetic access$5202(Lorg/telegram/messenger/MediaController;Lorg/telegram/ui/Components/VideoPlayer;)Lorg/telegram/ui/Components/VideoPlayer;
     .locals 0
 
-    .line 112
+    .line 113
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     return-object p1
@@ -1965,7 +1982,7 @@
 .method static synthetic access$5300(Lorg/telegram/messenger/MediaController;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->recordStartRunnable:Ljava/lang/Runnable;
 
     return-object p0
@@ -1974,7 +1991,7 @@
 .method static synthetic access$5400(Lorg/telegram/messenger/MediaController;)Lorg/telegram/tgnet/TLRPC$TL_document;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->recordingAudio:Lorg/telegram/tgnet/TLRPC$TL_document;
 
     return-object p0
@@ -1983,7 +2000,7 @@
 .method static synthetic access$5502(Lorg/telegram/messenger/MediaController;Z)Z
     .locals 0
 
-    .line 112
+    .line 113
     iput-boolean p1, p0, Lorg/telegram/messenger/MediaController;->callInProgress:Z
 
     return p1
@@ -1992,7 +2009,7 @@
 .method static synthetic access$600(Lorg/telegram/messenger/MediaController;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->recordRunnable:Ljava/lang/Runnable;
 
     return-object p0
@@ -2001,7 +2018,7 @@
 .method static synthetic access$700(Lorg/telegram/messenger/MediaController;)Lorg/telegram/messenger/DispatchQueue;
     .locals 0
 
-    .line 112
+    .line 113
     iget-object p0, p0, Lorg/telegram/messenger/MediaController;->recordQueue:Lorg/telegram/messenger/DispatchQueue;
 
     return-object p0
@@ -2010,7 +2027,7 @@
 .method static synthetic access$800(Lorg/telegram/messenger/MediaController;)I
     .locals 0
 
-    .line 112
+    .line 113
     iget p0, p0, Lorg/telegram/messenger/MediaController;->sendAfterDone:I
 
     return p0
@@ -2019,7 +2036,7 @@
 .method static synthetic access$900(Lorg/telegram/messenger/MediaController;)Z
     .locals 0
 
-    .line 112
+    .line 113
     iget-boolean p0, p0, Lorg/telegram/messenger/MediaController;->sendAfterDoneNotify:Z
 
     return p0
@@ -2044,15 +2061,15 @@
         }
     .end annotation
 
-    .line 5018
+    .line 5072
     sget-object v0, Lorg/telegram/messenger/MediaController;->broadcastPhotosRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 5019
+    .line 5073
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 5021
+    .line 5075
     :cond_0
     new-instance v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda6;
 
@@ -2088,7 +2105,7 @@
 .method private buildShuffledPlayList()V
     .locals 7
 
-    .line 2276
+    .line 2319
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -2099,7 +2116,7 @@
 
     return-void
 
-    .line 2279
+    .line 2322
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -2107,12 +2124,12 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 2280
+    .line 2323
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->shuffledPlaylist:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 2282
+    .line 2325
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     iget v2, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
@@ -2123,12 +2140,12 @@
 
     check-cast v1, Lorg/telegram/messenger/MessageObject;
 
-    .line 2283
+    .line 2326
     iget v2, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 2285
+    .line 2328
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v2
@@ -2138,7 +2155,7 @@
     :goto_0
     if-ge v3, v2, :cond_1
 
-    .line 2287
+    .line 2330
     sget-object v4, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2149,7 +2166,7 @@
 
     move-result v4
 
-    .line 2288
+    .line 2331
     iget-object v5, p0, Lorg/telegram/messenger/MediaController;->shuffledPlaylist:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2160,20 +2177,20 @@
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2289
+    .line 2332
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 2291
+    .line 2334
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->shuffledPlaylist:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2292
+    .line 2335
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->shuffledPlaylist:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2190,7 +2207,7 @@
 .method private checkAudioFocus(Lorg/telegram/messenger/MessageObject;)V
     .locals 4
 
-    .line 2692
+    .line 2735
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isVoice()Z
 
     move-result v0
@@ -2216,7 +2233,7 @@
 
     goto :goto_1
 
-    .line 2693
+    .line 2736
     :cond_1
     :goto_0
     iget-boolean p1, p0, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
@@ -2230,18 +2247,18 @@
     :cond_2
     move p1, v1
 
-    .line 2701
+    .line 2744
     :goto_1
     iget v0, p0, Lorg/telegram/messenger/MediaController;->hasAudioFocus:I
 
     if-eq v0, p1, :cond_5
 
-    .line 2702
+    .line 2745
     iput p1, p0, Lorg/telegram/messenger/MediaController;->hasAudioFocus:I
 
     if-ne p1, v3, :cond_3
 
-    .line 2705
+    .line 2748
     sget-object p1, Lorg/telegram/messenger/NotificationsController;->audioManager:Landroid/media/AudioManager;
 
     const/4 v0, 0x0
@@ -2252,7 +2269,7 @@
 
     goto :goto_3
 
-    .line 2707
+    .line 2750
     :cond_3
     sget-object v0, Lorg/telegram/messenger/NotificationsController;->audioManager:Landroid/media/AudioManager;
 
@@ -2277,17 +2294,66 @@
     :goto_3
     if-ne p1, v2, :cond_5
 
-    .line 2710
+    .line 2753
     iput v1, p0, Lorg/telegram/messenger/MediaController;->audioFocus:I
 
     :cond_5
     return-void
 .end method
 
+.method private checkForegroundConvertMessage(Z)V
+    .locals 2
+
+    .line 5139
+    iget-object v0, p0, Lorg/telegram/messenger/MediaController;->foregroundConvertingMessages:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 5140
+    iget-object v0, p0, Lorg/telegram/messenger/MediaController;->foregroundConvertingMessages:Ljava/util/ArrayList;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;
+
+    iput-object v0, p0, Lorg/telegram/messenger/MediaController;->currentForegroundConvertingVideo:Lorg/telegram/messenger/MediaController$VideoConvertMessage;
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 5142
+    iput-object v0, p0, Lorg/telegram/messenger/MediaController;->currentForegroundConvertingVideo:Lorg/telegram/messenger/MediaController$VideoConvertMessage;
+
+    .line 5144
+    :goto_0
+    iget-object v0, p0, Lorg/telegram/messenger/MediaController;->currentForegroundConvertingVideo:Lorg/telegram/messenger/MediaController$VideoConvertMessage;
+
+    if-nez v0, :cond_1
+
+    if-eqz p1, :cond_2
+
+    .line 5145
+    :cond_1
+    invoke-static {p1}, Lorg/telegram/messenger/VideoEncodingService;->start(Z)V
+
+    :cond_2
+    return-void
+.end method
+
 .method public static checkGallery()V
     .locals 5
 
-    .line 957
+    .line 1000
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x18
@@ -2300,7 +2366,7 @@
 
     goto :goto_0
 
-    .line 960
+    .line 1003
     :cond_0
     iget-object v0, v0, Lorg/telegram/messenger/MediaController$AlbumEntry;->photos:Ljava/util/ArrayList;
 
@@ -2308,7 +2374,7 @@
 
     move-result v0
 
-    .line 961
+    .line 1004
     sget-object v1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v2, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda4;
@@ -2327,7 +2393,7 @@
 .method private checkIsNextMusicFileDownloaded(I)V
     .locals 5
 
-    .line 2640
+    .line 2683
     invoke-static {p1}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
 
     move-result-object v0
@@ -2340,7 +2406,7 @@
 
     return-void
 
-    .line 2643
+    .line 2686
     :cond_0
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->shuffleMusic:Z
 
@@ -2356,7 +2422,7 @@
     :goto_0
     if-eqz v0, :cond_9
 
-    .line 2644
+    .line 2687
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -2367,7 +2433,7 @@
 
     goto/16 :goto_4
 
-    .line 2648
+    .line 2691
     :cond_2
     sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->playOrderReversed:Z
 
@@ -2375,12 +2441,12 @@
 
     if-eqz v1, :cond_3
 
-    .line 2649
+    .line 2692
     iget v1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 2650
+    .line 2693
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -2391,7 +2457,7 @@
 
     goto :goto_1
 
-    .line 2654
+    .line 2697
     :cond_3
     iget v1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
@@ -2399,7 +2465,7 @@
 
     if-gez v1, :cond_4
 
-    .line 2656
+    .line 2699
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -2410,7 +2476,7 @@
     :goto_1
     if-ltz v1, :cond_9
 
-    .line 2659
+    .line 2702
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v3
@@ -2419,7 +2485,7 @@
 
     goto :goto_4
 
-    .line 2663
+    .line 2706
     :cond_5
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -2427,7 +2493,7 @@
 
     check-cast v0, Lorg/telegram/messenger/MessageObject;
 
-    .line 2665
+    .line 2708
     iget-object v1, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
@@ -2440,7 +2506,7 @@
 
     if-nez v1, :cond_7
 
-    .line 2666
+    .line 2709
     new-instance v1, Ljava/io/File;
 
     iget-object v4, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
@@ -2449,7 +2515,7 @@
 
     invoke-direct {v1, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 2667
+    .line 2710
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v4
@@ -2469,7 +2535,7 @@
 
     goto :goto_3
 
-    .line 2671
+    .line 2714
     :cond_8
     invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
 
@@ -2481,13 +2547,13 @@
 
     move-result-object v1
 
-    .line 2672
+    .line 2715
     :goto_3
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     if-eq v1, v3, :cond_9
 
-    .line 2673
+    .line 2716
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v1
@@ -2500,7 +2566,7 @@
 
     if-eqz v1, :cond_9
 
-    .line 2674
+    .line 2717
     invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
 
     move-result-object p1
@@ -2519,7 +2585,7 @@
 .method private checkIsNextVoiceFileDownloaded(I)V
     .locals 4
 
-    .line 2621
+    .line 2664
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_4
@@ -2534,7 +2600,7 @@
 
     goto :goto_2
 
-    .line 2624
+    .line 2667
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
@@ -2546,7 +2612,7 @@
 
     check-cast v0, Lorg/telegram/messenger/MessageObject;
 
-    .line 2626
+    .line 2669
     iget-object v1, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
@@ -2561,7 +2627,7 @@
 
     if-lez v1, :cond_2
 
-    .line 2627
+    .line 2670
     new-instance v1, Ljava/io/File;
 
     iget-object v3, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
@@ -2570,7 +2636,7 @@
 
     invoke-direct {v1, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 2628
+    .line 2671
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v3
@@ -2590,7 +2656,7 @@
 
     goto :goto_1
 
-    .line 2632
+    .line 2675
     :cond_3
     invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
 
@@ -2602,20 +2668,20 @@
 
     move-result-object v1
 
-    .line 2633
+    .line 2676
     :goto_1
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     if-eq v1, v2, :cond_4
 
-    .line 2634
+    .line 2677
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v1
 
     if-nez v1, :cond_4
 
-    .line 2635
+    .line 2678
     invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
 
     move-result-object p1
@@ -2646,7 +2712,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 1461
+    .line 1504
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
@@ -2680,7 +2746,7 @@
 
     move v5, v4
 
-    .line 1466
+    .line 1509
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -2688,14 +2754,14 @@
 
     if-ge v4, v6, :cond_4
 
-    .line 1467
+    .line 1510
     invoke-virtual {p1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
     check-cast v6, Ljava/lang/Long;
 
-    .line 1468
+    .line 1511
     iget-wide v7, p0, Lorg/telegram/messenger/MediaController;->lastMediaCheckTime:J
 
     cmp-long v7, v7, v2
@@ -2714,7 +2780,7 @@
 
     goto :goto_1
 
-    .line 1472
+    .line 1515
     :cond_1
     invoke-virtual {v6}, Ljava/lang/Long;->longValue()J
 
@@ -2726,7 +2792,7 @@
 
     if-ltz v7, :cond_3
 
-    .line 1473
+    .line 1516
     iget-wide v7, p0, Lorg/telegram/messenger/MediaController;->lastChatLeaveTime:J
 
     cmp-long v7, v7, v2
@@ -2745,7 +2811,7 @@
 
     if-gtz v7, :cond_3
 
-    .line 1474
+    .line 1517
     :cond_2
     iget-wide v7, p0, Lorg/telegram/messenger/MediaController;->lastMediaCheckTime:J
 
@@ -2770,14 +2836,14 @@
     :cond_4
     if-eqz v5, :cond_6
 
-    .line 1480
+    .line 1523
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->lastSecretChat:Lorg/telegram/tgnet/TLRPC$EncryptedChat;
 
     const/4 v0, 0x0
 
     if-eqz p1, :cond_5
 
-    .line 1481
+    .line 1524
     iget p1, p0, Lorg/telegram/messenger/MediaController;->lastChatAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/SecretChatHelper;->getInstance(I)Lorg/telegram/messenger/SecretChatHelper;
@@ -2792,7 +2858,7 @@
 
     goto :goto_2
 
-    .line 1483
+    .line 1526
     :cond_5
     iget p1, p0, Lorg/telegram/messenger/MediaController;->lastChatAccount:I
 
@@ -2816,28 +2882,28 @@
 
     const/4 v0, 0x0
 
-    .line 1363
+    .line 1406
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->isFromMusicPlaylist:Z
 
-    .line 1364
+    .line 1407
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 1365
+    .line 1408
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->playlistMap:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
-    .line 1366
+    .line 1409
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->shuffledPlaylist:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 1367
+    .line 1410
     iput v0, p0, Lorg/telegram/messenger/MediaController;->playlistClassGuid:I
 
-    .line 1368
+    .line 1411
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->playlistEndReached:[Z
 
     const/4 v2, 0x1
@@ -2848,10 +2914,10 @@
 
     const-wide/16 v3, 0x0
 
-    .line 1369
+    .line 1412
     iput-wide v3, p0, Lorg/telegram/messenger/MediaController;->playlistMergeDialogId:J
 
-    .line 1370
+    .line 1413
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->playlistMaxId:[I
 
     const v3, 0x7fffffff
@@ -2860,12 +2926,12 @@
 
     aput v3, v1, v0
 
-    .line 1371
+    .line 1414
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->loadingPlaylist:Z
 
     const/4 v0, 0x0
 
-    .line 1372
+    .line 1415
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->playlistGlobalSearchParams:Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;
 
     return-void
@@ -2878,10 +2944,10 @@
 
     move-object/from16 v0, p1
 
-    .line 5286
+    .line 5339
     iget-object v1, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 5287
+    .line 5340
     iget-object v2, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
     if-eqz v1, :cond_15
@@ -2890,46 +2956,46 @@
 
     goto/16 :goto_f
 
-    .line 5291
+    .line 5344
     :cond_0
     iget-object v4, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalPath:Ljava/lang/String;
 
-    .line 5292
+    .line 5345
     iget-wide v5, v2, Lorg/telegram/messenger/VideoEditedInfo;->startTime:J
 
-    .line 5293
+    .line 5346
     iget-wide v7, v2, Lorg/telegram/messenger/VideoEditedInfo;->avatarStartTime:J
 
-    .line 5294
+    .line 5347
     iget-wide v9, v2, Lorg/telegram/messenger/VideoEditedInfo;->endTime:J
 
-    .line 5295
+    .line 5348
     iget v12, v2, Lorg/telegram/messenger/VideoEditedInfo;->resultWidth:I
 
-    .line 5296
+    .line 5349
     iget v13, v2, Lorg/telegram/messenger/VideoEditedInfo;->resultHeight:I
 
-    .line 5297
+    .line 5350
     iget v14, v2, Lorg/telegram/messenger/VideoEditedInfo;->rotationValue:I
 
-    .line 5298
+    .line 5351
     iget v15, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalWidth:I
 
-    .line 5299
+    .line 5352
     iget v3, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalHeight:I
 
-    .line 5300
+    .line 5353
     iget v0, v2, Lorg/telegram/messenger/VideoEditedInfo;->framerate:I
 
-    .line 5301
+    .line 5354
     iget v11, v2, Lorg/telegram/messenger/VideoEditedInfo;->bitrate:I
 
     move/from16 v16, v11
 
-    .line 5302
+    .line 5355
     iget v11, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalBitrate:I
 
-    .line 5303
+    .line 5356
     invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
     move-result-wide v17
@@ -2957,7 +3023,7 @@
     :goto_0
     const/16 v17, 0x1
 
-    .line 5304
+    .line 5357
     :goto_1
     new-instance v11, Ljava/io/File;
 
@@ -2967,23 +3033,23 @@
 
     invoke-direct {v11, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 5305
+    .line 5358
     invoke-virtual {v11}, Ljava/io/File;->exists()Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 5306
+    .line 5359
     invoke-virtual {v11}, Ljava/io/File;->delete()Z
 
-    .line 5308
+    .line 5361
     :cond_3
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_4
 
-    .line 5309
+    .line 5362
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3124,7 +3190,7 @@
 
     move/from16 v18, v13
 
-    .line 5322
+    .line 5375
     iget-wide v12, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalDuration:J
 
     sub-long/2addr v12, v5
@@ -3136,7 +3202,7 @@
 
     move/from16 v18, v13
 
-    .line 5324
+    .line 5377
     iget-wide v12, v2, Lorg/telegram/messenger/VideoEditedInfo;->originalDuration:J
 
     :goto_4
@@ -3179,7 +3245,7 @@
 
     move/from16 v1, v18
 
-    .line 5339
+    .line 5392
     :goto_8
     iget-boolean v12, v2, Lorg/telegram/messenger/VideoEditedInfo;->shouldLimitFps:Z
 
@@ -3218,7 +3284,7 @@
 
     if-nez v0, :cond_10
 
-    .line 5343
+    .line 5396
     iget-object v0, v2, Lorg/telegram/messenger/VideoEditedInfo;->cropState:Lorg/telegram/messenger/MediaController$CropState;
 
     if-nez v0, :cond_10
@@ -3251,7 +3317,7 @@
 
     iget-object v0, v2, Lorg/telegram/messenger/VideoEditedInfo;->mixedSoundInfos:Ljava/util/ArrayList;
 
-    .line 5344
+    .line 5397
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
@@ -3269,7 +3335,7 @@
     :goto_a
     const/16 v29, 0x1
 
-    .line 5347
+    .line 5400
     :goto_b
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -3283,12 +3349,12 @@
 
     move-result-object v0
 
-    .line 5349
+    .line 5402
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v48
 
-    .line 5351
+    .line 5404
     new-instance v12, Lorg/telegram/messenger/MediaController$14;
 
     move-object/from16 v39, v12
@@ -3309,15 +3375,15 @@
 
     const/4 v8, 0x1
 
-    .line 5378
+    .line 5431
     iput-boolean v8, v2, Lorg/telegram/messenger/VideoEditedInfo;->videoConvertFirstWrite:Z
 
-    .line 5380
+    .line 5433
     new-instance v8, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;
 
     invoke-direct {v8}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;-><init>()V
 
-    .line 5381
+    .line 5434
     iget-object v12, v2, Lorg/telegram/messenger/VideoEditedInfo;->filterState:Lorg/telegram/messenger/MediaController$SavedFilterState;
 
     move-object/from16 v32, v12
@@ -3396,33 +3462,33 @@
 
     move-result-object v1
 
-    .line 5402
+    .line 5455
     iget-object v3, v1, Lorg/telegram/messenger/video/MediaCodecVideoConvertor$ConvertVideoParams;->soundInfos:Ljava/util/ArrayList;
 
     iget-object v5, v2, Lorg/telegram/messenger/VideoEditedInfo;->mixedSoundInfos:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v5}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 5403
+    .line 5456
     invoke-virtual {v8, v1}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->convertVideo(Lorg/telegram/messenger/video/MediaCodecVideoConvertor$ConvertVideoParams;)Z
 
     move-result v1
 
-    .line 5406
+    .line 5459
     iget-boolean v3, v2, Lorg/telegram/messenger/VideoEditedInfo;->canceled:Z
 
     if-nez v3, :cond_11
 
-    .line 5408
+    .line 5461
     iget-object v5, v4, Lorg/telegram/messenger/MediaController;->videoConvertSync:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 5409
+    .line 5462
     :try_start_0
     iget-boolean v3, v2, Lorg/telegram/messenger/VideoEditedInfo;->canceled:Z
 
-    .line 5410
+    .line 5463
     monitor-exit v5
 
     goto :goto_c
@@ -3436,14 +3502,14 @@
 
     throw v0
 
-    .line 5413
+    .line 5466
     :cond_11
     :goto_c
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v2, :cond_12
 
-    .line 5414
+    .line 5467
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -3472,7 +3538,7 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 5417
+    .line 5470
     :cond_12
     invoke-interface/range {v47 .. v47}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -3490,7 +3556,7 @@
 
     const/4 v5, 0x1
 
-    .line 5418
+    .line 5471
     invoke-virtual {v8}, Lorg/telegram/messenger/video/MediaCodecVideoConvertor;->getLastFrameTimestamp()J
 
     move-result-wide v8
@@ -3551,7 +3617,7 @@
 
     const-wide/16 v0, -0x1
 
-    .line 4720
+    .line 4774
     invoke-static {p0, p1, v0, v1}, Lorg/telegram/messenger/MediaController;->copyFileToCache(Landroid/net/Uri;Ljava/lang/String;J)Ljava/lang/String;
 
     move-result-object p0
@@ -3568,7 +3634,7 @@
 
     const/4 v4, 0x0
 
-    .line 4730
+    .line 4784
     :try_start_0
     invoke-static {p0}, Lorg/telegram/messenger/MediaController;->getFileName(Landroid/net/Uri;)Ljava/lang/String;
 
@@ -3580,15 +3646,15 @@
 
     if-nez v0, :cond_0
 
-    .line 4732
+    .line 4786
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getLastLocalId()I
 
     move-result v0
 
-    .line 4733
+    .line 4787
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
 
-    .line 4734
+    .line 4788
     sget-object v5, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const-string v6, "%d.%s"
@@ -3611,7 +3677,7 @@
 
     move-result-object v0
 
-    .line 4736
+    .line 4790
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getSharingDirectory()Ljava/io/File;
 
@@ -3620,11 +3686,11 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_9
     .catchall {:try_start_0 .. :try_end_0} :catchall_4
 
-    .line 4737
+    .line 4791
     :try_start_1
     invoke-virtual {v5}, Ljava/io/File;->mkdirs()Z
 
-    .line 4738
+    .line 4792
     invoke-static {v5}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
 
     move-result-object v6
@@ -3648,7 +3714,7 @@
 
     if-lez v0, :cond_1
 
-    .line 4798
+    .line 4852
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
     :cond_1
@@ -3657,7 +3723,7 @@
     :cond_2
     move v6, v3
 
-    .line 4743
+    .line 4797
     :goto_0
     :try_start_2
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getSharingDirectory()Ljava/io/File;
@@ -3666,7 +3732,7 @@
 
     if-nez v6, :cond_3
 
-    .line 4745
+    .line 4799
     new-instance v7, Ljava/io/File;
 
     invoke-direct {v7, v5, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
@@ -3679,7 +3745,7 @@
     :cond_3
     const-string v7, "."
 
-    .line 4747
+    .line 4801
     invoke-virtual {v0, v7}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
 
     move-result v7
@@ -3693,7 +3759,7 @@
 
     if-lez v7, :cond_4
 
-    .line 4749
+    .line 4803
     :try_start_3
     new-instance v10, Ljava/io/File;
 
@@ -3729,7 +3795,7 @@
 
     goto :goto_2
 
-    .line 4751
+    .line 4805
     :cond_4
     new-instance v7, Ljava/io/File;
 
@@ -3756,14 +3822,14 @@
     :goto_2
     add-int/lit8 v6, v6, 0x1
 
-    .line 4755
+    .line 4809
     invoke-virtual {v5}, Ljava/io/File;->exists()Z
 
     move-result v7
 
     if-nez v7, :cond_c
 
-    .line 4756
+    .line 4810
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -3779,13 +3845,13 @@
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_8
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
-    .line 4757
+    .line 4811
     :try_start_4
     instance-of v0, v6, Ljava/io/FileInputStream;
 
     if-eqz v0, :cond_7
 
-    .line 4758
+    .line 4812
     move-object v0, v6
 
     check-cast v0, Ljava/io/FileInputStream;
@@ -3793,7 +3859,7 @@
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_7
     .catchall {:try_start_4 .. :try_end_4} :catchall_2
 
-    .line 4760
+    .line 4814
     :try_start_5
     const-class v7, Ljava/io/FileDescriptor;
 
@@ -3805,7 +3871,7 @@
 
     move-result-object v7
 
-    .line 4761
+    .line 4815
     invoke-virtual {v0}, Ljava/io/FileInputStream;->getFD()Ljava/io/FileDescriptor;
 
     move-result-object v0
@@ -3822,7 +3888,7 @@
 
     move-result v0
 
-    .line 4762
+    .line 4816
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isInternalUri(I)Z
 
     move-result v0
@@ -3833,7 +3899,7 @@
 
     if-eqz v6, :cond_5
 
-    .line 4785
+    .line 4839
     :try_start_6
     invoke-virtual {v6}, Ljava/io/InputStream;->close()V
     :try_end_6
@@ -3846,7 +3912,7 @@
 
     move-object v6, v0
 
-    .line 4788
+    .line 4842
     invoke-static {v6}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_5
@@ -3861,7 +3927,7 @@
 
     if-lez v0, :cond_6
 
-    .line 4798
+    .line 4852
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
     :cond_6
@@ -3870,11 +3936,11 @@
     :catchall_0
     move-exception v0
 
-    .line 4766
+    .line 4820
     :try_start_7
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4769
+    .line 4823
     :cond_7
     new-instance v7, Ljava/io/FileOutputStream;
 
@@ -3893,7 +3959,7 @@
 
     move v8, v3
 
-    .line 4772
+    .line 4826
     :cond_8
     :try_start_9
     invoke-virtual {v6, v0}, Ljava/io/InputStream;->read([B)I
@@ -3904,7 +3970,7 @@
 
     if-eq v9, v10, :cond_a
 
-    .line 4773
+    .line 4827
     invoke-virtual {v7, v0, v3, v9}, Ljava/io/FileOutputStream;->write([BII)V
     :try_end_9
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_5
@@ -3922,7 +3988,7 @@
 
     if-lez v10, :cond_8
 
-    .line 4785
+    .line 4839
     :try_start_a
     invoke-virtual {v6}, Ljava/io/InputStream;->close()V
     :try_end_a
@@ -3935,10 +4001,10 @@
 
     move-object v1, v0
 
-    .line 4788
+    .line 4842
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4792
+    .line 4846
     :goto_4
     :try_start_b
     invoke-virtual {v7}, Ljava/io/FileOutputStream;->close()V
@@ -3952,7 +4018,7 @@
 
     move-object v1, v0
 
-    .line 4795
+    .line 4849
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_5
@@ -3960,13 +4026,13 @@
 
     if-lez v10, :cond_9
 
-    .line 4798
+    .line 4852
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
     :cond_9
     return-object v4
 
-    .line 4779
+    .line 4833
     :cond_a
     :try_start_c
     invoke-virtual {v5}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -3976,7 +4042,7 @@
     .catch Ljava/lang/Exception; {:try_start_c .. :try_end_c} :catch_5
     .catchall {:try_start_c .. :try_end_c} :catchall_1
 
-    .line 4785
+    .line 4839
     :try_start_d
     invoke-virtual {v6}, Ljava/io/InputStream;->close()V
     :try_end_d
@@ -3989,10 +4055,10 @@
 
     move-object v4, v0
 
-    .line 4788
+    .line 4842
     invoke-static {v4}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4792
+    .line 4846
     :goto_6
     :try_start_e
     invoke-virtual {v7}, Ljava/io/FileOutputStream;->close()V
@@ -4006,7 +4072,7 @@
 
     move-object v4, v0
 
-    .line 4795
+    .line 4849
     invoke-static {v4}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_7
@@ -4020,7 +4086,7 @@
 
     if-lez v0, :cond_b
 
-    .line 4798
+    .line 4852
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
     :cond_b
@@ -4103,7 +4169,7 @@
     :goto_8
     move-object v7, v6
 
-    .line 4781
+    .line 4835
     :goto_9
     :try_start_f
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -4112,7 +4178,7 @@
 
     if-eqz v6, :cond_d
 
-    .line 4785
+    .line 4839
     :try_start_10
     invoke-virtual {v6}, Ljava/io/InputStream;->close()V
     :try_end_10
@@ -4125,14 +4191,14 @@
 
     move-object v6, v0
 
-    .line 4788
+    .line 4842
     invoke-static {v6}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_d
     :goto_a
     if-eqz v7, :cond_e
 
-    .line 4792
+    .line 4846
     :try_start_11
     invoke-virtual {v7}, Ljava/io/FileOutputStream;->close()V
     :try_end_11
@@ -4145,7 +4211,7 @@
 
     move-object v6, v0
 
-    .line 4795
+    .line 4849
     invoke-static {v6}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_e
@@ -4160,7 +4226,7 @@
 
     if-lez v0, :cond_f
 
-    .line 4798
+    .line 4852
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
     :cond_f
@@ -4178,7 +4244,7 @@
     :goto_e
     if-eqz v4, :cond_10
 
-    .line 4785
+    .line 4839
     :try_start_12
     invoke-virtual {v4}, Ljava/io/InputStream;->close()V
     :try_end_12
@@ -4191,14 +4257,14 @@
 
     move-object v4, v0
 
-    .line 4788
+    .line 4842
     invoke-static {v4}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_10
     :goto_f
     if-eqz v7, :cond_11
 
-    .line 4792
+    .line 4846
     :try_start_13
     invoke-virtual {v7}, Ljava/io/FileOutputStream;->close()V
     :try_end_13
@@ -4211,7 +4277,7 @@
 
     move-object v4, v0
 
-    .line 4795
+    .line 4849
     invoke-static {v4}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_11
@@ -4226,10 +4292,10 @@
 
     if-lez v0, :cond_12
 
-    .line 4798
+    .line 4852
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
 
-    .line 4800
+    .line 4854
     :cond_12
     throw v6
 .end method
@@ -4239,7 +4305,7 @@
 
     move-object v4, p1
 
-    .line 5203
+    .line 5253
     iget-object v0, v4, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
     iget-boolean v9, v0, Lorg/telegram/messenger/VideoEditedInfo;->videoConvertFirstWrite:Z
@@ -4248,10 +4314,10 @@
 
     const/4 v1, 0x0
 
-    .line 5205
+    .line 5255
     iput-boolean v1, v0, Lorg/telegram/messenger/VideoEditedInfo;->videoConvertFirstWrite:Z
 
-    .line 5207
+    .line 5257
     :cond_0
     new-instance v12, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda34;
 
@@ -4285,7 +4351,7 @@
 
     const-string v0, "bitrate"
 
-    .line 5478
+    .line 5531
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4306,7 +4372,7 @@
 
     move-result-object v1
 
-    .line 5479
+    .line 5532
     sget-object v2, Lorg/telegram/messenger/MediaController;->cachedEncoderBitrates:Lj$/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v2, v1}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -4317,7 +4383,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 5480
+    .line 5533
     invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     move-result p0
@@ -4332,7 +4398,7 @@
     :try_start_0
     const-string/jumbo p3, "video/hevc"
 
-    .line 5485
+    .line 5538
     invoke-static {p3}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
 
     move-result-object p3
@@ -4350,13 +4416,13 @@
 
     if-nez p3, :cond_2
 
-    .line 5489
+    .line 5542
     :try_start_1
     invoke-static {v3}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
 
     move-result-object p3
 
-    .line 5491
+    .line 5544
     :cond_2
     invoke-static {v3, p0, p1}, Landroid/media/MediaFormat;->createVideoFormat(Ljava/lang/String;II)Landroid/media/MediaFormat;
 
@@ -4366,35 +4432,35 @@
 
     const v3, 0x7f000789
 
-    .line 5492
+    .line 5545
     invoke-virtual {p0, p1, v3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     const-string/jumbo p1, "max-bitrate"
 
-    .line 5493
+    .line 5546
     invoke-virtual {p0, p1, p2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 5494
+    .line 5547
     invoke-virtual {p0, v0, p2}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     const-string p1, "frame-rate"
 
     const/16 v3, 0x1e
 
-    .line 5495
+    .line 5548
     invoke-virtual {p0, p1, v3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     const-string p1, "i-frame-interval"
 
     const/4 v3, 0x1
 
-    .line 5496
+    .line 5549
     invoke-virtual {p0, p1, v3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 5497
+    .line 5550
     invoke-virtual {p3, p0, v2, v2, v3}, Landroid/media/MediaCodec;->configure(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
 
-    .line 5498
+    .line 5551
     invoke-virtual {p3}, Landroid/media/MediaCodec;->getOutputFormat()Landroid/media/MediaFormat;
 
     move-result-object p0
@@ -4403,7 +4469,7 @@
 
     move-result p0
 
-    .line 5499
+    .line 5552
     sget-object p1, Lorg/telegram/messenger/MediaController;->cachedEncoderBitrates:Lj$/util/concurrent/ConcurrentHashMap;
 
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4412,7 +4478,7 @@
 
     invoke-virtual {p1, v1, v0}, Lj$/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5500
+    .line 5553
     invoke-virtual {p3}, Landroid/media/MediaCodec;->release()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -4426,7 +4492,7 @@
 .method public static findTrack(Landroid/media/MediaExtractor;Z)I
     .locals 4
 
-    .line 5171
+    .line 5221
     invoke-virtual {p0}, Landroid/media/MediaExtractor;->getTrackCount()I
 
     move-result v0
@@ -4436,14 +4502,14 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 5173
+    .line 5223
     invoke-virtual {p0, v1}, Landroid/media/MediaExtractor;->getTrackFormat(I)Landroid/media/MediaFormat;
 
     move-result-object v2
 
     const-string/jumbo v3, "mime"
 
-    .line 5174
+    .line 5224
     invoke-virtual {v2, v3}, Landroid/media/MediaFormat;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
@@ -4452,7 +4518,7 @@
 
     const-string v3, "audio/"
 
-    .line 5176
+    .line 5226
     invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
@@ -4464,7 +4530,7 @@
     :cond_0
     const-string/jumbo v3, "video/"
 
-    .line 5180
+    .line 5230
     invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
@@ -4489,7 +4555,7 @@
 
     const/4 v0, 0x0
 
-    .line 1655
+    .line 1698
     :try_start_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -4499,7 +4565,7 @@
 
     if-lt v1, v2, :cond_3
 
-    .line 1656
+    .line 1699
     sget-object v1, Lorg/telegram/messenger/NotificationsController;->audioManager:Landroid/media/AudioManager;
 
     const/4 v2, 0x2
@@ -4508,7 +4574,7 @@
 
     move-result-object v1
 
-    .line 1657
+    .line 1700
     array-length v2, v1
 
     move v4, v0
@@ -4518,7 +4584,7 @@
 
     aget-object v5, v1, v4
 
-    .line 1658
+    .line 1701
     invoke-virtual {v5}, Landroid/media/AudioDeviceInfo;->getType()I
 
     move-result v6
@@ -4547,7 +4613,7 @@
 
     if-ne v6, v7, :cond_1
 
-    .line 1666
+    .line 1709
     :cond_0
     invoke-virtual {v5}, Landroid/media/AudioDeviceInfo;->isSink()Z
 
@@ -4565,7 +4631,7 @@
     :cond_2
     return v0
 
-    .line 1672
+    .line 1715
     :cond_3
     sget-object v1, Lorg/telegram/messenger/NotificationsController;->audioManager:Landroid/media/AudioManager;
 
@@ -4602,7 +4668,7 @@
     :catch_0
     move-exception v1
 
-    .line 1675
+    .line 1718
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return v0
@@ -4622,7 +4688,7 @@
     :cond_0
     const/4 v2, 0x0
 
-    .line 4696
+    .line 4750
     :try_start_0
     invoke-virtual {p0}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
@@ -4638,7 +4704,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 4697
+    .line 4751
     :try_start_1
     sget-object v3, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -4664,7 +4730,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 4698
+    .line 4752
     :try_start_2
     invoke-interface {v3}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -4672,7 +4738,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 4699
+    .line 4753
     invoke-interface {v3, v0}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v0
@@ -4685,7 +4751,7 @@
 
     move-object v2, v0
 
-    .line 4701
+    .line 4755
     :cond_1
     :try_start_3
     invoke-interface {v3}, Landroid/database/Cursor;->close()V
@@ -4699,7 +4765,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 4697
+    .line 4751
     :try_start_4
     invoke-interface {v3}, Landroid/database/Cursor;->close()V
     :try_end_4
@@ -4722,7 +4788,7 @@
     :catch_0
     move-exception v0
 
-    .line 4702
+    .line 4756
     :try_start_6
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -4730,14 +4796,14 @@
     :goto_1
     if-nez v2, :cond_4
 
-    .line 4706
+    .line 4760
     invoke-virtual {p0}, Landroid/net/Uri;->getPath()Ljava/lang/String;
 
     move-result-object v2
 
     const/16 p0, 0x2f
 
-    .line 4707
+    .line 4761
     invoke-virtual {v2, p0}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result p0
@@ -4748,7 +4814,7 @@
 
     add-int/lit8 p0, p0, 0x1
 
-    .line 4709
+    .line 4763
     invoke-virtual {v2, p0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v2
@@ -4761,7 +4827,7 @@
     :catch_1
     move-exception p0
 
-    .line 4714
+    .line 4768
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return-object v1
@@ -4770,30 +4836,30 @@
 .method public static getInstance()Lorg/telegram/messenger/MediaController;
     .locals 2
 
-    .line 1067
+    .line 1110
     sget-object v0, Lorg/telegram/messenger/MediaController;->Instance:Lorg/telegram/messenger/MediaController;
 
     if-nez v0, :cond_1
 
-    .line 1069
+    .line 1112
     const-class v1, Lorg/telegram/messenger/MediaController;
 
     monitor-enter v1
 
-    .line 1070
+    .line 1113
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/MediaController;->Instance:Lorg/telegram/messenger/MediaController;
 
     if-nez v0, :cond_0
 
-    .line 1072
+    .line 1115
     new-instance v0, Lorg/telegram/messenger/MediaController;
 
     invoke-direct {v0}, Lorg/telegram/messenger/MediaController;-><init>()V
 
     sput-object v0, Lorg/telegram/messenger/MediaController;->Instance:Lorg/telegram/messenger/MediaController;
 
-    .line 1074
+    .line 1117
     :cond_0
     monitor-exit v1
 
@@ -4823,7 +4889,7 @@
 
     const/4 v1, 0x0
 
-    .line 4598
+    .line 4652
     :try_start_0
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -4851,7 +4917,7 @@
     :goto_0
     if-nez v2, :cond_0
 
-    .line 4603
+    .line 4657
     :try_start_1
     new-instance v3, Ljava/io/File;
 
@@ -4861,14 +4927,14 @@
 
     invoke-direct {v3, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 4604
+    .line 4658
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
     move-result p0
 
     if-eqz p0, :cond_0
 
-    .line 4605
+    .line 4659
     new-instance p0, Ljava/io/FileInputStream;
 
     invoke-direct {p0, v3}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
@@ -4882,14 +4948,14 @@
 
     const/4 v4, 0x0
 
-    .line 4610
+    .line 4664
     invoke-virtual {v2, v3, v4, p0}, Ljava/io/InputStream;->read([BII)I
 
     move-result v5
 
     if-ne v5, p0, :cond_3
 
-    .line 4611
+    .line 4665
     aget-byte p0, v3, v4
 
     const/16 v5, -0x77
@@ -4955,7 +5021,7 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_4
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 4630
+    .line 4684
     :try_start_2
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_2
@@ -4966,13 +5032,13 @@
     :catch_1
     move-exception v0
 
-    .line 4633
+    .line 4687
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
     return-object p0
 
-    .line 4614
+    .line 4668
     :cond_1
     :try_start_3
     aget-byte p0, v3, v4
@@ -4992,7 +5058,7 @@
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_4
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 4630
+    .line 4684
     :try_start_4
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_4
@@ -5003,27 +5069,27 @@
     :catch_2
     move-exception v0
 
-    .line 4633
+    .line 4687
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_2
     return-object p0
 
-    .line 4617
+    .line 4671
     :cond_2
     :try_start_5
     new-instance p0, Ljava/lang/String;
 
     invoke-direct {p0, v3}, Ljava/lang/String;-><init>([B)V
 
-    .line 4619
+    .line 4673
     invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object p0
 
     const-string/jumbo v3, "riff"
 
-    .line 4620
+    .line 4674
     invoke-virtual {p0, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v3
@@ -5039,7 +5105,7 @@
 
     if-eqz p0, :cond_3
 
-    .line 4630
+    .line 4684
     :try_start_6
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_6
@@ -5050,13 +5116,13 @@
     :catch_3
     move-exception p0
 
-    .line 4633
+    .line 4687
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_3
     return-object v0
 
-    .line 4630
+    .line 4684
     :cond_3
     :try_start_7
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
@@ -5075,7 +5141,7 @@
     :catch_4
     move-exception p0
 
-    .line 4626
+    .line 4680
     :try_start_8
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_8
@@ -5083,7 +5149,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 4630
+    .line 4684
     :try_start_9
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_9
@@ -5094,7 +5160,7 @@
     :catch_5
     move-exception p0
 
-    .line 4633
+    .line 4687
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_4
@@ -5104,7 +5170,7 @@
     :goto_5
     if-eqz v1, :cond_5
 
-    .line 4630
+    .line 4684
     :try_start_a
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_a
@@ -5115,10 +5181,10 @@
     :catch_6
     move-exception v0
 
-    .line 4633
+    .line 4687
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4635
+    .line 4689
     :cond_5
     :goto_6
     throw p0
@@ -5127,18 +5193,18 @@
 .method public static getVideoBitrate(Ljava/lang/String;)I
     .locals 1
 
-    .line 5424
+    .line 5477
     new-instance v0, Landroid/media/MediaMetadataRetriever;
 
     invoke-direct {v0}, Landroid/media/MediaMetadataRetriever;-><init>()V
 
-    .line 5427
+    .line 5480
     :try_start_0
     invoke-virtual {v0, p0}, Landroid/media/MediaMetadataRetriever;->setDataSource(Ljava/lang/String;)V
 
     const/16 p0, 0x14
 
-    .line 5428
+    .line 5481
     invoke-virtual {v0, p0}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
 
     move-result-object p0
@@ -5154,12 +5220,12 @@
     :catch_0
     move-exception p0
 
-    .line 5430
+    .line 5483
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 p0, 0x0
 
-    .line 5434
+    .line 5487
     :goto_0
     :try_start_1
     invoke-virtual {v0}, Landroid/media/MediaMetadataRetriever;->release()V
@@ -5171,7 +5237,7 @@
     :catchall_0
     move-exception v0
 
-    .line 5436
+    .line 5489
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -5208,7 +5274,7 @@
 
     const/4 v1, 0x0
 
-    .line 4668
+    .line 4722
     :try_start_0
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -5224,21 +5290,21 @@
 
     new-array v2, p0, [B
 
-    .line 4670
+    .line 4724
     invoke-virtual {v1, v2, v0, p0}, Ljava/io/InputStream;->read([BII)I
 
     move-result v3
 
     if-ne v3, p0, :cond_0
 
-    .line 4671
+    .line 4725
     new-instance p0, Ljava/lang/String;
 
     invoke-direct {p0, v2}, Ljava/lang/String;-><init>([B)V
 
     const-string v2, "gif"
 
-    .line 4672
+    .line 4726
     invoke-virtual {p0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result p0
@@ -5250,7 +5316,7 @@
 
     const/4 p0, 0x1
 
-    .line 4681
+    .line 4735
     :try_start_1
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_1
@@ -5261,13 +5327,13 @@
     :catch_0
     move-exception v0
 
-    .line 4684
+    .line 4738
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
     return p0
 
-    .line 4681
+    .line 4735
     :cond_0
     :try_start_2
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
@@ -5284,7 +5350,7 @@
     :catch_1
     move-exception p0
 
-    .line 4677
+    .line 4731
     :try_start_3
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_3
@@ -5292,7 +5358,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 4681
+    .line 4735
     :try_start_4
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_4
@@ -5303,7 +5369,7 @@
     :catch_2
     move-exception p0
 
-    .line 4684
+    .line 4738
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -5313,7 +5379,7 @@
     :goto_2
     if-eqz v1, :cond_2
 
-    .line 4681
+    .line 4735
     :try_start_5
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_5
@@ -5324,10 +5390,10 @@
     :catch_3
     move-exception v0
 
-    .line 4684
+    .line 4738
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4686
+    .line 4740
     :cond_2
     :goto_3
     throw p0
@@ -5336,25 +5402,25 @@
 .method public static isH264Video(Ljava/lang/String;)Z
     .locals 3
 
-    .line 5189
+    .line 5239
     new-instance v0, Landroid/media/MediaExtractor;
 
     invoke-direct {v0}, Landroid/media/MediaExtractor;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 5191
+    .line 5241
     :try_start_0
     invoke-virtual {v0, p0}, Landroid/media/MediaExtractor;->setDataSource(Ljava/lang/String;)V
 
-    .line 5192
+    .line 5242
     invoke-static {v0, v1}, Lorg/telegram/messenger/MediaController;->findTrack(Landroid/media/MediaExtractor;Z)I
 
     move-result p0
 
     if-ltz p0, :cond_0
 
-    .line 5193
+    .line 5243
     invoke-virtual {v0, p0}, Landroid/media/MediaExtractor;->getTrackFormat(I)Landroid/media/MediaFormat;
 
     move-result-object p0
@@ -5378,7 +5444,7 @@
 
     const/4 v1, 0x1
 
-    .line 5197
+    .line 5247
     :cond_0
     invoke-virtual {v0}, Landroid/media/MediaExtractor;->release()V
 
@@ -5392,13 +5458,13 @@
     :catch_0
     move-exception p0
 
-    .line 5195
+    .line 5245
     :try_start_1
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 5197
+    .line 5247
     invoke-virtual {v0}, Landroid/media/MediaExtractor;->release()V
 
     return v1
@@ -5406,7 +5472,7 @@
     :goto_0
     invoke-virtual {v0}, Landroid/media/MediaExtractor;->release()V
 
-    .line 5198
+    .line 5248
     throw p0
 .end method
 
@@ -5419,7 +5485,7 @@
 
     if-gez v0, :cond_0
 
-    .line 1646
+    .line 1689
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->proximitySensor:Landroid/hardware/Sensor;
 
     invoke-virtual {v0}, Landroid/hardware/Sensor;->getMaximumRange()F
@@ -5478,7 +5544,7 @@
 .method private isSamePlayingMessage(Lorg/telegram/messenger/MessageObject;)Z
     .locals 7
 
-    .line 2230
+    .line 2273
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     const/4 v1, 0x1
@@ -5561,7 +5627,7 @@
 
     const/4 v1, 0x0
 
-    .line 4642
+    .line 4696
     :try_start_0
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -5577,26 +5643,26 @@
 
     new-array v2, p0, [B
 
-    .line 4644
+    .line 4698
     invoke-virtual {v1, v2, v0, p0}, Ljava/io/InputStream;->read([BII)I
 
     move-result v3
 
     if-ne v3, p0, :cond_0
 
-    .line 4645
+    .line 4699
     new-instance p0, Ljava/lang/String;
 
     invoke-direct {p0, v2}, Ljava/lang/String;-><init>([B)V
 
-    .line 4646
+    .line 4700
     invoke-virtual {p0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object p0
 
     const-string/jumbo v2, "riff"
 
-    .line 4647
+    .line 4701
     invoke-virtual {p0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
@@ -5616,7 +5682,7 @@
 
     const/4 p0, 0x1
 
-    .line 4656
+    .line 4710
     :try_start_1
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_1
@@ -5627,13 +5693,13 @@
     :catch_0
     move-exception v0
 
-    .line 4659
+    .line 4713
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
     return p0
 
-    .line 4656
+    .line 4710
     :cond_0
     :try_start_2
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
@@ -5650,7 +5716,7 @@
     :catch_1
     move-exception p0
 
-    .line 4652
+    .line 4706
     :try_start_3
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_3
@@ -5658,7 +5724,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 4656
+    .line 4710
     :try_start_4
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_4
@@ -5669,7 +5735,7 @@
     :catch_2
     move-exception p0
 
-    .line 4659
+    .line 4713
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -5679,7 +5745,7 @@
     :goto_2
     if-eqz v1, :cond_2
 
-    .line 4656
+    .line 4710
     :try_start_5
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_5
@@ -5690,10 +5756,10 @@
     :catch_3
     move-exception v0
 
-    .line 4659
+    .line 4713
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4661
+    .line 4715
     :cond_2
     :goto_3
     throw p0
@@ -5702,7 +5768,7 @@
 .method private static synthetic lambda$broadcastNewPhotos$43(ILjava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/Integer;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;)V
     .locals 9
 
-    .line 5022
+    .line 5076
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v0
@@ -5729,33 +5795,33 @@
 
     move-object v7, p6
 
-    .line 5023
+    .line 5077
     invoke-static/range {v1 .. v8}, Lorg/telegram/messenger/MediaController;->broadcastNewPhotos(ILjava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/Integer;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;I)V
 
     return-void
 
-    .line 5026
+    .line 5080
     :cond_0
     sput-object p1, Lorg/telegram/messenger/MediaController;->allMediaAlbums:Ljava/util/ArrayList;
 
-    .line 5027
+    .line 5081
     sput-object p2, Lorg/telegram/messenger/MediaController;->allPhotoAlbums:Ljava/util/ArrayList;
 
     const/4 v0, 0x0
 
-    .line 5028
+    .line 5082
     sput-object v0, Lorg/telegram/messenger/MediaController;->broadcastPhotosRunnable:Ljava/lang/Runnable;
 
-    .line 5029
+    .line 5083
     sput-object p5, Lorg/telegram/messenger/MediaController;->allPhotosAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    .line 5030
+    .line 5084
     sput-object p4, Lorg/telegram/messenger/MediaController;->allMediaAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    .line 5031
+    .line 5085
     sput-object p6, Lorg/telegram/messenger/MediaController;->allVideosAlbumEntry:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    .line 5032
+    .line 5086
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p4
@@ -5810,37 +5876,37 @@
 
     const/4 v8, 0x0
 
-    .line 965
+    .line 1008
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    .line 966
+    .line 1009
     sget v9, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v9, v6, :cond_0
 
-    .line 968
+    .line 1011
     invoke-virtual {v0, v4}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v9
 
     if-eqz v9, :cond_1
 
-    .line 969
+    .line 1012
     invoke-virtual {v0, v3}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v9
 
     if-eqz v9, :cond_1
 
-    .line 970
+    .line 1013
     invoke-virtual {v0, v1}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v9
 
     if-eqz v9, :cond_1
 
-    .line 972
+    .line 1015
     :cond_0
     invoke-virtual {v0, v5}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
@@ -5848,7 +5914,7 @@
 
     if-nez v9, :cond_2
 
-    .line 974
+    .line 1017
     :cond_1
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -5874,7 +5940,7 @@
 
     if-eqz v9, :cond_3
 
-    .line 976
+    .line 1019
     :try_start_1
     invoke-interface {v9}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -5882,7 +5948,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 977
+    .line 1020
     invoke-interface {v9, v8}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
@@ -5907,7 +5973,7 @@
     :goto_0
     if-eqz v9, :cond_4
 
-    .line 985
+    .line 1028
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
     :cond_4
@@ -5922,7 +5988,7 @@
 
     move-object v9, v7
 
-    .line 982
+    .line 1025
     :goto_1
     :try_start_2
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -5931,7 +5997,7 @@
 
     if-eqz v9, :cond_5
 
-    .line 985
+    .line 1028
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
     :cond_5
@@ -5939,38 +6005,38 @@
 
     move v9, v8
 
-    .line 989
+    .line 1032
     :goto_2
     :try_start_3
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    .line 990
+    .line 1033
     sget v11, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v11, v6, :cond_6
 
-    .line 992
+    .line 1035
     invoke-virtual {v0, v4}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v4
 
     if-eqz v4, :cond_7
 
-    .line 993
+    .line 1036
     invoke-virtual {v0, v3}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v3
 
     if-eqz v3, :cond_7
 
-    .line 994
+    .line 1037
     invoke-virtual {v0, v1}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v1
 
     if-eqz v1, :cond_7
 
-    .line 996
+    .line 1039
     :cond_6
     invoke-virtual {v0, v5}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
@@ -5978,7 +6044,7 @@
 
     if-nez v1, :cond_8
 
-    .line 998
+    .line 1041
     :cond_7
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -6002,14 +6068,14 @@
 
     if-eqz v10, :cond_8
 
-    .line 1000
+    .line 1043
     invoke-interface {v10}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_8
 
-    .line 1001
+    .line 1044
     invoke-interface {v10, v8}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
@@ -6026,7 +6092,7 @@
     :catchall_2
     move-exception v0
 
-    .line 1006
+    .line 1049
     :try_start_4
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_4
@@ -6034,7 +6100,7 @@
 
     if-eqz v10, :cond_9
 
-    .line 1009
+    .line 1052
     :goto_3
     invoke-interface {v10}, Landroid/database/Cursor;->close()V
 
@@ -6043,18 +6109,18 @@
 
     if-eq v1, v9, :cond_b
 
-    .line 1013
+    .line 1056
     sget-object v0, Lorg/telegram/messenger/MediaController;->refreshGalleryRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_a
 
-    .line 1014
+    .line 1057
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1015
+    .line 1058
     sput-object v7, Lorg/telegram/messenger/MediaController;->refreshGalleryRunnable:Ljava/lang/Runnable;
 
-    .line 1017
+    .line 1060
     :cond_a
     invoke-static {v8}, Lorg/telegram/messenger/MediaController;->loadGalleryPhotosAlbums(I)V
 
@@ -6068,10 +6134,10 @@
 
     if-eqz v10, :cond_c
 
-    .line 1009
+    .line 1052
     invoke-interface {v10}, Landroid/database/Cursor;->close()V
 
-    .line 1011
+    .line 1054
     :cond_c
     throw v1
 
@@ -6082,10 +6148,10 @@
 
     if-eqz v9, :cond_d
 
-    .line 985
+    .line 1028
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
-    .line 987
+    .line 1030
     :cond_d
     throw v1
 .end method
@@ -6093,7 +6159,7 @@
 .method private synthetic lambda$cleanupPlayer$10(Lorg/telegram/ui/Components/VideoPlayer;Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 2099
+    .line 2142
     iget v0, p0, Lorg/telegram/messenger/MediaController;->audioFocus:I
 
     const/4 v1, 0x1
@@ -6107,7 +6173,7 @@
     :cond_0
     const v0, 0x3e4ccccd    # 0.2f
 
-    .line 2104
+    .line 2147
     :goto_0
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
@@ -6133,104 +6199,133 @@
 
     move-object v0, p3
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
 
     if-nez p1, :cond_0
 
-    if-eqz p2, :cond_1
+    if-eqz p2, :cond_3
 
-    .line 5209
+    .line 5259
     :cond_0
-    iget-object v3, v1, Lorg/telegram/messenger/MediaController;->videoConvertSync:Ljava/lang/Object;
-
-    monitor-enter v3
-
-    .line 5210
-    :try_start_0
     iget-object v4, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    iput-boolean v2, v4, Lorg/telegram/messenger/VideoEditedInfo;->canceled:Z
+    iget-boolean v4, v4, Lorg/telegram/messenger/VideoEditedInfo;->canceled:Z
 
-    .line 5211
-    monitor-exit v3
+    .line 5260
+    iget-object v5, v1, Lorg/telegram/messenger/MediaController;->videoConvertSync:Ljava/lang/Object;
+
+    monitor-enter v5
+
+    .line 5261
+    :try_start_0
+    iget-object v6, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
+
+    iput-boolean v3, v6, Lorg/telegram/messenger/VideoEditedInfo;->canceled:Z
+
+    .line 5262
+    monitor-exit v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 5212
-    iget-object v3, v1, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
+    .line 5263
+    iget-object v5, v1, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
 
-    invoke-virtual {v3, p3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v5, p3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 5213
-    invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->startVideoConvertFromQueue()Z
+    .line 5264
+    iget-object v5, v1, Lorg/telegram/messenger/MediaController;->foregroundConvertingMessages:Ljava/util/ArrayList;
 
-    .line 5216
-    :cond_1
-    iget-object v3, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
+    invoke-virtual {v5, p3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    instance-of v3, v3, Lcom/iMe/fork/utils/AnimatedStickerEditedInfo;
+    if-nez v4, :cond_2
 
-    const/4 v4, 0x2
-
-    const/4 v5, 0x1
-
-    if-eqz v3, :cond_4
-
-    if-eqz p1, :cond_2
-
-    .line 5218
-    iget v0, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->currentAccount:I
-
-    invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v0
-
-    sget v3, Lorg/telegram/messenger/NotificationCenter;->gifStickerAvatarPreparingFailed:I
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-virtual {v0, v3, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    if-eqz p1, :cond_1
 
     goto :goto_0
 
-    :cond_2
-    if-eqz p2, :cond_3
+    :cond_1
+    move v4, v3
 
-    .line 5220
+    goto :goto_1
+
+    :cond_2
+    :goto_0
+    move v4, v2
+
+    .line 5265
+    :goto_1
+    invoke-direct {p0, v4}, Lorg/telegram/messenger/MediaController;->checkForegroundConvertMessage(Z)V
+
+    .line 5266
+    invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->startVideoConvertFromQueue()Z
+
+    .line 5269
+    :cond_3
+    iget-object v4, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
+
+    instance-of v4, v4, Lcom/iMe/fork/utils/AnimatedStickerEditedInfo;
+
+    const/4 v5, 0x2
+
+    if-eqz v4, :cond_6
+
+    if-eqz p1, :cond_4
+
+    .line 5271
     iget v0, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
 
-    sget v3, Lorg/telegram/messenger/NotificationCenter;->gifStickerAvatarPrepared:I
+    sget v2, Lorg/telegram/messenger/NotificationCenter;->gifStickerAvatarPreparingFailed:I
 
-    new-array v4, v4, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
+
+    invoke-virtual {v0, v2, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+
+    goto :goto_2
+
+    :cond_4
+    if-eqz p2, :cond_5
+
+    .line 5273
+    iget v0, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->currentAccount:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object v0
+
+    sget v4, Lorg/telegram/messenger/NotificationCenter;->gifStickerAvatarPrepared:I
+
+    new-array v5, v5, [Ljava/lang/Object;
 
     invoke-virtual {p4}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v6
 
-    aput-object v6, v4, v2
+    aput-object v6, v5, v3
 
-    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    sget-object v3, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    aput-object v2, v4, v5
+    aput-object v3, v5, v2
 
-    invoke-virtual {v0, v3, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    invoke-virtual {v0, v4, v5}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    :cond_3
-    :goto_0
+    :cond_5
+    :goto_2
     return-void
 
-    :cond_4
-    const/4 v3, 0x3
+    :cond_6
+    const/4 v4, 0x3
 
     const/4 v6, 0x4
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_7
 
-    .line 5226
+    .line 5279
     iget v7, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->currentAccount:I
 
     invoke-static {v7}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -6243,34 +6338,34 @@
 
     iget-object v0, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    aput-object v0, v6, v2
+    aput-object v0, v6, v3
 
     invoke-virtual {p4}, Ljava/io/File;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    aput-object v0, v6, v5
+    aput-object v0, v6, v2
 
     invoke-static/range {p5 .. p5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v0
 
-    aput-object v0, v6, v4
+    aput-object v0, v6, v5
 
     invoke-static/range {p6 .. p7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    aput-object v0, v6, v3
+    aput-object v0, v6, v4
 
     invoke-virtual {v7, v8, v6}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    goto :goto_2
+    goto :goto_4
 
-    :cond_5
-    if-eqz p8, :cond_6
+    :cond_7
+    if-eqz p8, :cond_8
 
-    .line 5229
+    .line 5282
     iget v7, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->currentAccount:I
 
     invoke-static {v7}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -6283,30 +6378,30 @@
 
     iget-object v10, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    aput-object v10, v9, v2
+    aput-object v10, v9, v3
 
     invoke-virtual {p4}, Ljava/io/File;->toString()Ljava/lang/String;
 
     move-result-object v10
 
-    aput-object v10, v9, v5
+    aput-object v10, v9, v2
 
     invoke-static/range {p5 .. p5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v10
 
-    aput-object v10, v9, v4
+    aput-object v10, v9, v5
 
     invoke-static/range {p6 .. p7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v10
 
-    aput-object v10, v9, v3
+    aput-object v10, v9, v4
 
     invoke-virtual {v7, v8, v9}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 5231
-    :cond_6
+    .line 5284
+    :cond_8
     iget v7, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->currentAccount:I
 
     invoke-static {v7}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -6321,37 +6416,37 @@
 
     iget-object v0, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    aput-object v0, v9, v2
+    aput-object v0, v9, v3
 
     invoke-virtual {p4}, Ljava/io/File;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    aput-object v0, v9, v5
+    aput-object v0, v9, v2
 
     invoke-static/range {p9 .. p10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    aput-object v0, v9, v4
+    aput-object v0, v9, v5
 
-    if-eqz p2, :cond_7
+    if-eqz p2, :cond_9
 
     invoke-virtual {p4}, Ljava/io/File;->length()J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    goto :goto_1
+    goto :goto_3
 
-    :cond_7
-    const-wide/16 v4, 0x0
+    :cond_9
+    const-wide/16 v2, 0x0
 
-    :goto_1
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    :goto_3
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v0
 
-    aput-object v0, v9, v3
+    aput-object v0, v9, v4
 
     invoke-static/range {p5 .. p5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
@@ -6369,15 +6464,15 @@
 
     invoke-virtual {v7, v8, v9}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    :goto_2
+    :goto_4
     return-void
 
     :catchall_0
     move-exception v0
 
-    .line 5211
+    .line 5262
     :try_start_1
-    monitor-exit v3
+    monitor-exit v5
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
@@ -6387,7 +6482,7 @@
 .method private synthetic lambda$generateWaveform$28(Ljava/lang/String;[BLorg/telegram/messenger/MessageObject;)V
     .locals 11
 
-    .line 3939
+    .line 3982
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->generatingWaveform:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -6403,7 +6498,7 @@
     :cond_0
     if-eqz p2, :cond_3
 
-    .line 3943
+    .line 3986
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v0
@@ -6414,7 +6509,7 @@
 
     move v1, v0
 
-    .line 3944
+    .line 3987
     :goto_0
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
 
@@ -6428,7 +6523,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 3945
+    .line 3988
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v2
@@ -6441,15 +6536,15 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;
 
-    .line 3946
+    .line 3989
     instance-of v3, v2, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;
 
     if-eqz v3, :cond_1
 
-    .line 3947
+    .line 3990
     iput-object p2, v2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->waveform:[B
 
-    .line 3948
+    .line 3991
     iget p2, v2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
     or-int/lit8 p2, p2, 0x4
@@ -6463,21 +6558,21 @@
 
     goto :goto_0
 
-    .line 3952
+    .line 3995
     :cond_2
     :goto_1
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_messages_messages;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_messages_messages;-><init>()V
 
-    .line 3953
+    .line 3996
     iget-object p2, v3, Lorg/telegram/tgnet/TLRPC$messages_Messages;->messages:Ljava/util/ArrayList;
 
     iget-object v1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3954
+    .line 3997
     iget p2, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -6500,15 +6595,15 @@
 
     invoke-virtual/range {v2 .. v10}, Lorg/telegram/messenger/MessagesStorage;->putMessages(Lorg/telegram/tgnet/TLRPC$messages_Messages;JIIZZI)V
 
-    .line 3955
+    .line 3998
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3956
+    .line 3999
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3957
+    .line 4000
     iget p3, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {p3}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -6544,7 +6639,7 @@
 .method private synthetic lambda$generateWaveform$29(Ljava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;)V
     .locals 1
 
-    .line 3933
+    .line 3976
     :try_start_0
     invoke-static {p1}, Lorg/telegram/messenger/MediaController;->getWaveform(Ljava/lang/String;)[B
 
@@ -6552,7 +6647,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3938
+    .line 3981
     new-instance v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda29;
 
     invoke-direct {v0, p0, p2, p1, p3}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda29;-><init>(Lorg/telegram/messenger/MediaController;Ljava/lang/String;[BLorg/telegram/messenger/MessageObject;)V
@@ -6564,7 +6659,7 @@
     :catch_0
     move-exception p1
 
-    .line 3935
+    .line 3978
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return-void
@@ -6573,7 +6668,7 @@
 .method private static synthetic lambda$loadGalleryPhotosAlbums$41(Lorg/telegram/messenger/MediaController$PhotoEntry;Lorg/telegram/messenger/MediaController$PhotoEntry;)I
     .locals 3
 
-    .line 5003
+    .line 5057
     iget-wide v0, p0, Lorg/telegram/messenger/MediaController$PhotoEntry;->dateTaken:J
 
     iget-wide p0, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->dateTaken:J
@@ -6636,35 +6731,35 @@
 
     move-object/from16 v16, v14
 
-    .line 4806
+    .line 4860
     new-instance v14, Ljava/util/ArrayList;
 
     invoke-direct {v14}, Ljava/util/ArrayList;-><init>()V
 
     move-object/from16 v17, v15
 
-    .line 4807
+    .line 4861
     new-instance v15, Ljava/util/ArrayList;
 
     invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
 
     move-object/from16 v18, v14
 
-    .line 4808
+    .line 4862
     new-instance v14, Landroid/util/SparseArray;
 
     invoke-direct {v14}, Landroid/util/SparseArray;-><init>()V
 
     move-object/from16 v19, v14
 
-    .line 4809
+    .line 4863
     new-instance v14, Landroid/util/SparseArray;
 
     invoke-direct {v14}, Landroid/util/SparseArray;-><init>()V
 
     const/16 v20, 0x0
 
-    .line 4815
+    .line 4869
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -6711,7 +6806,7 @@
 
     move-object/from16 v22, v14
 
-    .line 4817
+    .line 4871
     :goto_0
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -6720,11 +6815,11 @@
     :goto_1
     move-object/from16 v21, v14
 
-    .line 4824
+    .line 4878
     :try_start_2
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    .line 4825
+    .line 4879
     sget v14, Landroid/os/Build$VERSION;->SDK_INT:I
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_15
@@ -6739,7 +6834,7 @@
 
     if-ge v14, v1, :cond_0
 
-    .line 4827
+    .line 4881
     :try_start_3
     invoke-virtual {v0, v13}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
@@ -6793,21 +6888,21 @@
 
     if-lt v14, v1, :cond_1
 
-    .line 4829
+    .line 4883
     invoke-virtual {v0, v12}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 4830
+    .line 4884
     invoke-virtual {v0, v11}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v1
 
     if-eqz v1, :cond_2
 
-    .line 4831
+    .line 4885
     invoke-virtual {v0, v9}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v1
@@ -6854,7 +6949,7 @@
 
     goto/16 :goto_16
 
-    .line 4834
+    .line 4888
     :cond_2
     :goto_5
     :try_start_4
@@ -6902,7 +6997,7 @@
 
     if-eqz v1, :cond_e
 
-    .line 4836
+    .line 4890
     :try_start_5
     invoke-interface {v1, v8}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -6912,7 +7007,7 @@
 
     move-object/from16 v27, v8
 
-    .line 4837
+    .line 4891
     :try_start_6
     invoke-interface {v1, v7}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -6922,7 +7017,7 @@
 
     move-object/from16 v28, v7
 
-    .line 4838
+    .line 4892
     :try_start_7
     invoke-interface {v1, v6}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -6932,7 +7027,7 @@
 
     move-object/from16 v29, v6
 
-    .line 4839
+    .line 4893
     :try_start_8
     invoke-interface {v1, v5}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -6953,7 +7048,7 @@
     :cond_4
     move-object/from16 v5, v17
 
-    .line 4840
+    .line 4894
     :goto_7
     :try_start_9
     invoke-interface {v1, v5}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
@@ -6962,7 +7057,7 @@
 
     const-string/jumbo v14, "orientation"
 
-    .line 4841
+    .line 4895
     invoke-interface {v1, v14}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v14
@@ -6971,7 +7066,7 @@
 
     move-object/from16 v31, v10
 
-    .line 4842
+    .line 4896
     :try_start_a
     invoke-interface {v1, v4}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -6981,7 +7076,7 @@
 
     move-object/from16 v32, v4
 
-    .line 4843
+    .line 4897
     :try_start_b
     invoke-interface {v1, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -6991,7 +7086,7 @@
 
     move-object/from16 v33, v3
 
-    .line 4844
+    .line 4898
     :try_start_c
     invoke-interface {v1, v2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -7007,7 +7102,7 @@
 
     move-object/from16 v37, v36
 
-    .line 4846
+    .line 4900
     :goto_8
     :try_start_d
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
@@ -7020,13 +7115,13 @@
 
     move-object/from16 v38, v2
 
-    .line 4847
+    .line 4901
     :try_start_e
     invoke-interface {v1, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 4848
+    .line 4902
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v39
@@ -7037,7 +7132,7 @@
 
     goto :goto_8
 
-    .line 4852
+    .line 4906
     :cond_5
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
 
@@ -7045,39 +7140,39 @@
 
     move/from16 v51, v0
 
-    .line 4853
+    .line 4907
     invoke-interface {v1, v8}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
 
     move/from16 v52, v6
 
-    .line 4854
+    .line 4908
     invoke-interface {v1, v7}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 4855
+    .line 4909
     invoke-interface {v1, v5}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v42
 
-    .line 4856
+    .line 4910
     invoke-interface {v1, v14}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v45
 
-    .line 4857
+    .line 4911
     invoke-interface {v1, v10}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v47
 
-    .line 4858
+    .line 4912
     invoke-interface {v1, v4}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v48
 
-    .line 4859
+    .line 4913
     invoke-interface {v1, v3}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v49
@@ -7086,7 +7181,7 @@
 
     move-object/from16 v53, v1
 
-    .line 4861
+    .line 4915
     :try_start_f
     new-instance v1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
@@ -7104,7 +7199,7 @@
 
     move/from16 v39, v3
 
-    .line 4864
+    .line 4918
     new-instance v3, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     move/from16 v40, v4
@@ -7125,7 +7220,7 @@
     :try_end_f
     .catchall {:try_start_f .. :try_end_f} :catchall_9
 
-    .line 4865
+    .line 4919
     :try_start_10
     invoke-virtual {v15, v5, v3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
     :try_end_10
@@ -7152,7 +7247,7 @@
     :goto_9
     if-nez v35, :cond_7
 
-    .line 4868
+    .line 4922
     :try_start_11
     new-instance v4, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
@@ -7179,7 +7274,7 @@
 
     move-object/from16 v5, v18
 
-    .line 4869
+    .line 4923
     :try_start_13
     invoke-virtual {v5, v8, v4}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
     :try_end_13
@@ -7231,19 +7326,19 @@
 
     move-object/from16 v4, v35
 
-    .line 4871
+    .line 4925
     :goto_c
     :try_start_14
     invoke-virtual {v3, v1}, Lorg/telegram/messenger/MediaController$AlbumEntry;->addPhoto(Lorg/telegram/messenger/MediaController$PhotoEntry;)V
 
-    .line 4872
+    .line 4926
     invoke-virtual {v4, v1}, Lorg/telegram/messenger/MediaController$AlbumEntry;->addPhoto(Lorg/telegram/messenger/MediaController$PhotoEntry;)V
     :try_end_14
     .catchall {:try_start_14 .. :try_end_14} :catchall_8
 
     move-object/from16 v8, v19
 
-    .line 4874
+    .line 4928
     :try_start_15
     invoke-virtual {v8, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
@@ -7257,13 +7352,13 @@
 
     move-object/from16 v19, v3
 
-    .line 4876
+    .line 4930
     :try_start_16
     new-instance v3, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     invoke-direct {v3, v0, v6, v1}, Lorg/telegram/messenger/MediaController$AlbumEntry;-><init>(ILjava/lang/String;Lorg/telegram/messenger/MediaController$PhotoEntry;)V
 
-    .line 4877
+    .line 4931
     invoke-virtual {v8, v0, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
     :try_end_16
     .catchall {:try_start_16 .. :try_end_16} :catchall_5
@@ -7278,7 +7373,7 @@
 
     move-object/from16 v4, v21
 
-    .line 4878
+    .line 4932
     :try_start_17
     invoke-virtual {v2, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -7290,10 +7385,10 @@
 
     const/4 v10, 0x0
 
-    .line 4879
+    .line 4933
     invoke-virtual {v5, v10, v3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 4880
+    .line 4934
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
@@ -7310,7 +7405,7 @@
     :cond_9
     move/from16 v21, v10
 
-    .line 4882
+    .line 4936
     invoke-virtual {v5, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_d
@@ -7331,13 +7426,13 @@
 
     move-object/from16 v3, v18
 
-    .line 4885
+    .line 4939
     :goto_d
     invoke-virtual {v3, v1}, Lorg/telegram/messenger/MediaController$AlbumEntry;->addPhoto(Lorg/telegram/messenger/MediaController$PhotoEntry;)V
 
     move-object/from16 v3, v22
 
-    .line 4887
+    .line 4941
     invoke-virtual {v3, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v10
@@ -7346,12 +7441,12 @@
 
     if-nez v10, :cond_c
 
-    .line 4889
+    .line 4943
     new-instance v10, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     invoke-direct {v10, v0, v6, v1}, Lorg/telegram/messenger/MediaController$AlbumEntry;-><init>(ILjava/lang/String;Lorg/telegram/messenger/MediaController$PhotoEntry;)V
 
-    .line 4890
+    .line 4944
     invoke-virtual {v3, v0, v10}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     if-nez v37, :cond_b
@@ -7360,7 +7455,7 @@
 
     if-eqz v2, :cond_b
 
-    .line 4891
+    .line 4945
     invoke-virtual {v2, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
@@ -7369,10 +7464,10 @@
 
     const/4 v2, 0x0
 
-    .line 4892
+    .line 4946
     invoke-virtual {v15, v2, v10}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 4893
+    .line 4947
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -7381,11 +7476,11 @@
 
     goto :goto_e
 
-    .line 4895
+    .line 4949
     :cond_b
     invoke-virtual {v15, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4898
+    .line 4952
     :cond_c
     :goto_e
     invoke-virtual {v10, v1}, Lorg/telegram/messenger/MediaController$AlbumEntry;->addPhoto(Lorg/telegram/messenger/MediaController$PhotoEntry;)V
@@ -7682,7 +7777,7 @@
     :goto_16
     if-eqz v1, :cond_f
 
-    .line 4907
+    .line 4961
     :try_start_18
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
     :try_end_18
@@ -7763,7 +7858,7 @@
 
     move-object/from16 v36, v35
 
-    .line 4903
+    .line 4957
     :goto_19
     :try_start_19
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -7772,7 +7867,7 @@
 
     if-eqz v1, :cond_f
 
-    .line 4907
+    .line 4961
     :try_start_1a
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
     :try_end_1a
@@ -7785,7 +7880,7 @@
 
     move-object v2, v0
 
-    .line 4909
+    .line 4963
     :goto_1a
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -7793,11 +7888,11 @@
     :goto_1b
     move-object/from16 v21, v34
 
-    .line 4916
+    .line 4970
     :try_start_1b
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
-    .line 4917
+    .line 4971
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x17
@@ -7808,7 +7903,7 @@
 
     if-ge v2, v3, :cond_10
 
-    .line 4919
+    .line 4973
     invoke-virtual {v0, v13}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v3
@@ -7820,21 +7915,21 @@
 
     if-lt v2, v3, :cond_11
 
-    .line 4921
+    .line 4975
     invoke-virtual {v0, v12}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v3
 
     if-eqz v3, :cond_12
 
-    .line 4922
+    .line 4976
     invoke-virtual {v0, v11}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v3
 
     if-eqz v3, :cond_12
 
-    .line 4923
+    .line 4977
     invoke-virtual {v0, v9}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v0
@@ -7849,7 +7944,7 @@
 
     goto/16 :goto_2a
 
-    .line 4926
+    .line 4980
     :cond_12
     :goto_1d
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -7902,7 +7997,7 @@
 
     move-object/from16 v3, v27
 
-    .line 4928
+    .line 4982
     :try_start_1c
     invoke-interface {v1, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -7910,21 +8005,21 @@
 
     move-object/from16 v3, v28
 
-    .line 4929
+    .line 4983
     invoke-interface {v1, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v3
 
     move-object/from16 v6, v29
 
-    .line 4930
+    .line 4984
     invoke-interface {v1, v6}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v6
 
     move-object/from16 v9, v30
 
-    .line 4931
+    .line 4985
     invoke-interface {v1, v9}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v9
@@ -7940,7 +8035,7 @@
     :cond_14
     move-object/from16 v14, v17
 
-    .line 4932
+    .line 4986
     :goto_1f
     invoke-interface {v1, v14}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
@@ -7948,33 +8043,33 @@
 
     const-string v10, "duration"
 
-    .line 4933
+    .line 4987
     invoke-interface {v1, v10}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v10
 
     move-object/from16 v11, v32
 
-    .line 4934
+    .line 4988
     invoke-interface {v1, v11}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v11
 
     move-object/from16 v12, v33
 
-    .line 4935
+    .line 4989
     invoke-interface {v1, v12}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v12
 
     move-object/from16 v13, v38
 
-    .line 4936
+    .line 4990
     invoke-interface {v1, v13}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
     move-result v13
 
-    .line 4938
+    .line 4992
     :goto_20
     invoke-interface {v1}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -7982,12 +8077,12 @@
 
     if-eqz v14, :cond_1c
 
-    .line 4939
+    .line 4993
     invoke-interface {v1, v9}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v14
 
-    .line 4940
+    .line 4994
     invoke-static {v14}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v16
@@ -7996,7 +8091,7 @@
 
     goto :goto_20
 
-    .line 4944
+    .line 4998
     :cond_15
     invoke-interface {v1, v0}, Landroid/database/Cursor;->getInt(I)I
 
@@ -8004,39 +8099,39 @@
 
     move/from16 v16, v0
 
-    .line 4945
+    .line 4999
     invoke-interface {v1, v3}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
 
     move/from16 v17, v3
 
-    .line 4946
+    .line 5000
     invoke-interface {v1, v6}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 4947
+    .line 5001
     invoke-interface {v1, v2}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v40
 
-    .line 4948
+    .line 5002
     invoke-interface {v1, v10}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v18
 
-    .line 4949
+    .line 5003
     invoke-interface {v1, v11}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v45
 
-    .line 4950
+    .line 5004
     invoke-interface {v1, v12}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v46
 
-    .line 4951
+    .line 5005
     invoke-interface {v1, v13}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v47
@@ -8045,7 +8140,7 @@
 
     move-object/from16 v22, v1
 
-    .line 4953
+    .line 5007
     :try_start_1d
     new-instance v1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
@@ -8075,7 +8170,7 @@
 
     if-nez v20, :cond_18
 
-    .line 4956
+    .line 5010
     :try_start_1e
     new-instance v9, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
@@ -8100,7 +8195,7 @@
 
     const/4 v2, 0x1
 
-    .line 4957
+    .line 5011
     :try_start_20
     iput-boolean v2, v9, Lorg/telegram/messenger/MediaController$AlbumEntry;->videoOnly:Z
 
@@ -8116,7 +8211,7 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    .line 4965
+    .line 5019
     :cond_17
     invoke-virtual {v5, v2, v9}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
@@ -8145,7 +8240,7 @@
     :goto_23
     if-nez v35, :cond_19
 
-    .line 4968
+    .line 5022
     new-instance v2, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     sget v10, Lorg/telegram/messenger/R$string;->AllMedia:I
@@ -8165,7 +8260,7 @@
     :try_end_21
     .catchall {:try_start_21 .. :try_end_21} :catchall_19
 
-    .line 4969
+    .line 5023
     :try_start_22
     invoke-virtual {v5, v6, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
     :try_end_22
@@ -8200,15 +8295,15 @@
 
     move-object/from16 v2, v35
 
-    .line 4971
+    .line 5025
     :goto_25
     :try_start_23
     invoke-virtual {v9, v1}, Lorg/telegram/messenger/MediaController$AlbumEntry;->addPhoto(Lorg/telegram/messenger/MediaController$PhotoEntry;)V
 
-    .line 4972
+    .line 5026
     invoke-virtual {v2, v1}, Lorg/telegram/messenger/MediaController$AlbumEntry;->addPhoto(Lorg/telegram/messenger/MediaController$PhotoEntry;)V
 
-    .line 4974
+    .line 5028
     invoke-virtual {v8, v0}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -8217,12 +8312,12 @@
 
     if-nez v6, :cond_1b
 
-    .line 4976
+    .line 5030
     new-instance v6, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     invoke-direct {v6, v0, v3, v1}, Lorg/telegram/messenger/MediaController$AlbumEntry;-><init>(ILjava/lang/String;Lorg/telegram/messenger/MediaController$PhotoEntry;)V
 
-    .line 4977
+    .line 5031
     invoke-virtual {v8, v0, v6}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     if-nez v36, :cond_1a
@@ -8231,7 +8326,7 @@
 
     if-eqz v14, :cond_1a
 
-    .line 4978
+    .line 5032
     invoke-virtual {v14, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v3
@@ -8242,11 +8337,11 @@
 
     const/4 v3, 0x0
 
-    .line 4979
+    .line 5033
     :try_start_24
     invoke-virtual {v5, v3, v6}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 4980
+    .line 5034
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -8258,7 +8353,7 @@
     :cond_1a
     const/4 v3, 0x0
 
-    .line 4982
+    .line 5036
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_26
@@ -8266,7 +8361,7 @@
     :cond_1b
     const/4 v3, 0x0
 
-    .line 4986
+    .line 5040
     :goto_26
     invoke-virtual {v6, v1}, Lorg/telegram/messenger/MediaController$AlbumEntry;->addPhoto(Lorg/telegram/messenger/MediaController$PhotoEntry;)V
     :try_end_24
@@ -8335,7 +8430,7 @@
     :goto_2a
     if-eqz v1, :cond_1d
 
-    .line 4995
+    .line 5049
     :try_start_25
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
     :try_end_25
@@ -8356,7 +8451,7 @@
     :goto_2b
     const/4 v3, 0x0
 
-    .line 4991
+    .line 5045
     :goto_2c
     :try_start_26
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -8365,7 +8460,7 @@
 
     if-eqz v1, :cond_1d
 
-    .line 4995
+    .line 5049
     :try_start_27
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
     :try_end_27
@@ -8378,7 +8473,7 @@
 
     move-object v1, v0
 
-    .line 4997
+    .line 5051
     :goto_2d
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -8392,7 +8487,7 @@
 
     move v14, v3
 
-    .line 5001
+    .line 5055
     :goto_2f
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
@@ -8400,7 +8495,7 @@
 
     if-ge v14, v0, :cond_1e
 
-    .line 5002
+    .line 5056
     invoke-virtual {v5, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -8426,7 +8521,7 @@
 
     move-object/from16 v18, v15
 
-    .line 5011
+    .line 5065
     invoke-static/range {v16 .. v23}, Lorg/telegram/messenger/MediaController;->broadcastNewPhotos(ILjava/util/ArrayList;Ljava/util/ArrayList;Ljava/lang/Integer;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;Lorg/telegram/messenger/MediaController$AlbumEntry;I)V
 
     return-void
@@ -8438,7 +8533,7 @@
 
     if-eqz v1, :cond_1f
 
-    .line 4995
+    .line 5049
     :try_start_28
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
     :try_end_28
@@ -8451,10 +8546,10 @@
 
     move-object v1, v0
 
-    .line 4997
+    .line 5051
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 5000
+    .line 5054
     :cond_1f
     :goto_30
     throw v2
@@ -8466,7 +8561,7 @@
 
     if-eqz v1, :cond_20
 
-    .line 4907
+    .line 4961
     :try_start_29
     invoke-interface {v1}, Landroid/database/Cursor;->close()V
     :try_end_29
@@ -8479,10 +8574,10 @@
 
     move-object v1, v0
 
-    .line 4909
+    .line 4963
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4912
+    .line 4966
     :cond_20
     :goto_31
     throw v2
@@ -8491,7 +8586,7 @@
 .method private synthetic lambda$loadMoreMusic$11(ILorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;I)V
     .locals 6
 
-    .line 2348
+    .line 2391
     iget v0, p0, Lorg/telegram/messenger/MediaController;->playlistClassGuid:I
 
     if-ne v0, p1, :cond_6
@@ -8514,18 +8609,18 @@
     :cond_1
     const/4 p2, 0x0
 
-    .line 2354
+    .line 2397
     iput-boolean p2, p0, Lorg/telegram/messenger/MediaController;->loadingPlaylist:Z
 
-    .line 2356
+    .line 2399
     check-cast p3, Lorg/telegram/tgnet/TLRPC$messages_Messages;
 
-    .line 2357
+    .line 2400
     iget v0, p3, Lorg/telegram/tgnet/TLRPC$messages_Messages;->next_rate:I
 
     iput v0, p1, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->nextSearchRate:I
 
-    .line 2358
+    .line 2401
     invoke-static {p4}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p1
@@ -8538,7 +8633,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v2}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
-    .line 2359
+    .line 2402
     invoke-static {p4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -8547,7 +8642,7 @@
 
     invoke-virtual {p1, v0, p2}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 2360
+    .line 2403
     invoke-static {p4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -8556,7 +8651,7 @@
 
     invoke-virtual {p1, v0, p2}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
 
-    .line 2361
+    .line 2404
     iget-object p1, p3, Lorg/telegram/tgnet/TLRPC$messages_Messages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -8570,7 +8665,7 @@
     :goto_0
     if-ge v0, p1, :cond_3
 
-    .line 2364
+    .line 2407
     new-instance v3, Lorg/telegram/messenger/MessageObject;
 
     iget-object v4, p3, Lorg/telegram/tgnet/TLRPC$messages_Messages;->messages:Ljava/util/ArrayList;
@@ -8583,7 +8678,7 @@
 
     invoke-direct {v3, p4, v4, p2, v2}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 2365
+    .line 2408
     iget-object v4, p0, Lorg/telegram/messenger/MediaController;->playlistMap:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -8602,13 +8697,13 @@
 
     goto :goto_1
 
-    .line 2368
+    .line 2411
     :cond_2
     iget-object v4, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {v4, p2, v3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 2369
+    .line 2412
     iget-object v4, p0, Lorg/telegram/messenger/MediaController;->playlistMap:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -8628,14 +8723,14 @@
 
     goto :goto_0
 
-    .line 2372
+    .line 2415
     :cond_3
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->sortPlaylist()V
 
-    .line 2373
+    .line 2416
     iput-boolean p2, p0, Lorg/telegram/messenger/MediaController;->loadingPlaylist:Z
 
-    .line 2374
+    .line 2417
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playlistGlobalSearchParams:Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;
 
     iget-object p3, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
@@ -8660,18 +8755,18 @@
     :goto_2
     iput-boolean p3, p1, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->endReached:Z
 
-    .line 2375
+    .line 2418
     sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->shuffleMusic:Z
 
     if-eqz p1, :cond_5
 
-    .line 2376
+    .line 2419
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->buildShuffledPlayList()V
 
     :cond_5
     if-eqz v1, :cond_6
 
-    .line 2379
+    .line 2422
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
@@ -8700,7 +8795,7 @@
 .method private synthetic lambda$loadMoreMusic$12(IILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 7
 
-    .line 2347
+    .line 2390
     new-instance v6, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda23;
 
     move-object v0, v6
@@ -8731,7 +8826,7 @@
 
     const/4 p1, 0x0
 
-    .line 609
+    .line 649
     iput-boolean p1, p0, Lorg/telegram/messenger/MediaController;->hasRecordAudioFocus:Z
 
     :cond_0
@@ -8743,7 +8838,7 @@
 
     const v0, 0xbb80
 
-    .line 1087
+    .line 1130
     :try_start_0
     iput v0, p0, Lorg/telegram/messenger/MediaController;->sampleRate:I
 
@@ -8751,7 +8846,7 @@
 
     const/4 v2, 0x2
 
-    .line 1088
+    .line 1131
     invoke-static {v0, v1, v2}, Landroid/media/AudioRecord;->getMinBufferSize(III)I
 
     move-result v0
@@ -8760,7 +8855,7 @@
 
     const/16 v0, 0x500
 
-    .line 1092
+    .line 1135
     :cond_0
     iput v0, p0, Lorg/telegram/messenger/MediaController;->recordBufferSize:I
 
@@ -8771,21 +8866,21 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1095
+    .line 1138
     iget v1, p0, Lorg/telegram/messenger/MediaController;->recordBufferSize:I
 
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
-    .line 1096
+    .line 1139
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 1097
+    .line 1140
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->recordBuffers:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -8799,7 +8894,7 @@
     :catch_0
     move-exception v0
 
-    .line 1100
+    .line 1143
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -8811,7 +8906,7 @@
 
     const/16 v0, 0x20
 
-    .line 1105
+    .line 1148
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
@@ -8827,7 +8922,7 @@
 
     iput v1, p0, Lorg/telegram/messenger/MediaController;->currentPlaybackSpeed:F
 
-    .line 1106
+    .line 1149
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v1
@@ -8840,7 +8935,7 @@
 
     iput v1, p0, Lorg/telegram/messenger/MediaController;->currentMusicPlaybackSpeed:F
 
-    .line 1107
+    .line 1150
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v1
@@ -8855,7 +8950,7 @@
 
     iput v1, p0, Lorg/telegram/messenger/MediaController;->fastPlaybackSpeed:F
 
-    .line 1108
+    .line 1151
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v1
@@ -8868,7 +8963,7 @@
 
     iput v1, p0, Lorg/telegram/messenger/MediaController;->fastMusicPlaybackSpeed:F
 
-    .line 1109
+    .line 1152
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string/jumbo v2, "sensor"
@@ -8883,14 +8978,14 @@
 
     const/16 v2, 0xa
 
-    .line 1110
+    .line 1153
     invoke-virtual {v1, v2}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
 
     move-result-object v1
 
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->linearSensor:Landroid/hardware/Sensor;
 
-    .line 1111
+    .line 1154
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->sensorManager:Landroid/hardware/SensorManager;
 
     const/16 v2, 0x9
@@ -8901,14 +8996,14 @@
 
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->gravitySensor:Landroid/hardware/Sensor;
 
-    .line 1112
+    .line 1155
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->linearSensor:Landroid/hardware/Sensor;
 
     if-eqz v2, :cond_0
 
     if-nez v1, :cond_2
 
-    .line 1113
+    .line 1156
     :cond_0
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -8916,10 +9011,10 @@
 
     const-string v1, "gravity or linear sensor not found"
 
-    .line 1114
+    .line 1157
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1116
+    .line 1159
     :cond_1
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->sensorManager:Landroid/hardware/SensorManager;
 
@@ -8933,13 +9028,13 @@
 
     const/4 v1, 0x0
 
-    .line 1117
+    .line 1160
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->linearSensor:Landroid/hardware/Sensor;
 
-    .line 1118
+    .line 1161
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->gravitySensor:Landroid/hardware/Sensor;
 
-    .line 1120
+    .line 1163
     :cond_2
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->sensorManager:Landroid/hardware/SensorManager;
 
@@ -8951,7 +9046,7 @@
 
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->proximitySensor:Landroid/hardware/Sensor;
 
-    .line 1121
+    .line 1164
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string/jumbo v2, "power"
@@ -8964,7 +9059,7 @@
 
     const-string/jumbo v2, "telegram:proximity_lock"
 
-    .line 1122
+    .line 1165
     invoke-virtual {v1, v0, v2}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
 
     move-result-object v1
@@ -8978,17 +9073,17 @@
     :catch_0
     move-exception v1
 
-    .line 1124
+    .line 1167
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1128
+    .line 1171
     :goto_0
     :try_start_1
     new-instance v1, Lorg/telegram/messenger/MediaController$4;
 
     invoke-direct {v1, p0}, Lorg/telegram/messenger/MediaController$4;-><init>(Lorg/telegram/messenger/MediaController;)V
 
-    .line 1155
+    .line 1198
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string/jumbo v3, "phone"
@@ -9001,7 +9096,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 1157
+    .line 1200
     invoke-virtual {v2, v1, v0}, Landroid/telephony/TelephonyManager;->listen(Landroid/telephony/PhoneStateListener;I)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -9011,7 +9106,7 @@
     :catch_1
     move-exception v0
 
-    .line 1160
+    .line 1203
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_3
@@ -9029,7 +9124,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1168
+    .line 1211
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -9038,7 +9133,7 @@
 
     invoke-virtual {v1, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1169
+    .line 1212
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -9047,7 +9142,7 @@
 
     invoke-virtual {v1, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1170
+    .line 1213
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -9056,7 +9151,7 @@
 
     invoke-virtual {v1, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1171
+    .line 1214
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -9065,7 +9160,7 @@
 
     invoke-virtual {v1, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1172
+    .line 1215
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -9074,7 +9169,7 @@
 
     invoke-virtual {v1, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1173
+    .line 1216
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -9083,7 +9178,7 @@
 
     invoke-virtual {v1, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1174
+    .line 1217
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -9092,7 +9187,7 @@
 
     invoke-virtual {v1, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1175
+    .line 1218
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -9118,7 +9213,7 @@
 
     if-ne p1, v1, :cond_1
 
-    .line 1216
+    .line 1259
     invoke-virtual {p0}, Lorg/telegram/messenger/MediaController;->getPlayingMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object p1
@@ -9135,16 +9230,16 @@
 
     if-nez p1, :cond_0
 
-    .line 1217
+    .line 1260
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/MediaController;->pauseMessage(Lorg/telegram/messenger/MessageObject;)Z
 
-    .line 1219
+    .line 1262
     :cond_0
     iput v0, p0, Lorg/telegram/messenger/MediaController;->hasAudioFocus:I
 
-    .line 1220
+    .line 1263
     iput v0, p0, Lorg/telegram/messenger/MediaController;->audioFocus:I
 
     goto :goto_0
@@ -9156,18 +9251,18 @@
 
     const/4 p1, 0x2
 
-    .line 1222
+    .line 1265
     iput p1, p0, Lorg/telegram/messenger/MediaController;->audioFocus:I
 
-    .line 1223
+    .line 1266
     iget-boolean p1, p0, Lorg/telegram/messenger/MediaController;->resumeAudioOnFocusGain:Z
 
     if-eqz p1, :cond_4
 
-    .line 1224
+    .line 1267
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->resumeAudioOnFocusGain:Z
 
-    .line 1225
+    .line 1268
     invoke-virtual {p0}, Lorg/telegram/messenger/MediaController;->getPlayingMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object p1
@@ -9184,7 +9279,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 1226
+    .line 1269
     invoke-virtual {p0}, Lorg/telegram/messenger/MediaController;->getPlayingMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object p1
@@ -9198,7 +9293,7 @@
 
     if-ne p1, v2, :cond_3
 
-    .line 1230
+    .line 1273
     iput v1, p0, Lorg/telegram/messenger/MediaController;->audioFocus:I
 
     goto :goto_0
@@ -9208,10 +9303,10 @@
 
     if-ne p1, v2, :cond_4
 
-    .line 1232
+    .line 1275
     iput v0, p0, Lorg/telegram/messenger/MediaController;->audioFocus:I
 
-    .line 1233
+    .line 1276
     invoke-virtual {p0}, Lorg/telegram/messenger/MediaController;->getPlayingMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object p1
@@ -9228,15 +9323,15 @@
 
     if-nez p1, :cond_4
 
-    .line 1234
+    .line 1277
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/MediaController;->pauseMessage(Lorg/telegram/messenger/MessageObject;)Z
 
-    .line 1235
+    .line 1278
     iput-boolean v1, p0, Lorg/telegram/messenger/MediaController;->resumeAudioOnFocusGain:Z
 
-    .line 1238
+    .line 1281
     :cond_4
     :goto_0
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->setPlayerVolume()V
@@ -9249,7 +9344,7 @@
 
     const/4 v0, 0x1
 
-    .line 3062
+    .line 3105
     :try_start_0
     iget v1, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayerNum:I
 
@@ -9257,15 +9352,15 @@
 
     iput v1, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayerNum:I
 
-    .line 3063
+    .line 3106
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v2, :cond_0
 
-    .line 3064
+    .line 3107
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/VideoPlayer;->releasePlayer(Z)V
 
-    .line 3066
+    .line 3109
     :cond_0
     new-instance v2, Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -9275,14 +9370,14 @@
 
     iput-object v2, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 3067
+    .line 3110
     new-instance v3, Lorg/telegram/messenger/MediaController$8;
 
     invoke-direct {v3, p0, v1}, Lorg/telegram/messenger/MediaController$8;-><init>(Lorg/telegram/messenger/MediaController;I)V
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/VideoPlayer;->setDelegate(Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;)V
 
-    .line 3112
+    .line 3155
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-static {p1}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
@@ -9293,14 +9388,14 @@
 
     invoke-virtual {v1, p1, v2}, Lorg/telegram/ui/Components/VideoPlayer;->preparePlayer(Landroid/net/Uri;Ljava/lang/String;)V
 
-    .line 3113
+    .line 3156
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const/4 v1, 0x3
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/VideoPlayer;->setStreamType(I)V
 
-    .line 3114
+    .line 3157
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
@@ -9312,20 +9407,20 @@
     :catch_0
     move-exception p1
 
-    .line 3116
+    .line 3159
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3117
+    .line 3160
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz p1, :cond_1
 
-    .line 3118
+    .line 3161
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/VideoPlayer;->releasePlayer(Z)V
 
     const/4 p1, 0x0
 
-    .line 3119
+    .line 3162
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->emojiSoundPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     :cond_1
@@ -9336,7 +9431,7 @@
 .method private static synthetic lambda$playEmojiSound$18(Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$Document;)V
     .locals 2
 
-    .line 3124
+    .line 3167
     invoke-virtual {p0}, Lorg/telegram/messenger/AccountInstance;->getFileLoader()Lorg/telegram/messenger/FileLoader;
 
     move-result-object p0
@@ -9353,32 +9448,32 @@
 .method private synthetic lambda$playEmojiSound$19(Lorg/telegram/messenger/MessagesController$EmojiSound;Lorg/telegram/messenger/AccountInstance;Z)V
     .locals 3
 
-    .line 3049
+    .line 3092
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_document;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_document;-><init>()V
 
-    .line 3050
+    .line 3093
     iget-wide v1, p1, Lorg/telegram/messenger/MessagesController$EmojiSound;->accessHash:J
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$Document;->access_hash:J
 
-    .line 3051
+    .line 3094
     iget-wide v1, p1, Lorg/telegram/messenger/MessagesController$EmojiSound;->id:J
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
     const-string/jumbo v1, "sound/ogg"
 
-    .line 3052
+    .line 3095
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    .line 3053
+    .line 3096
     iget-object p1, p1, Lorg/telegram/messenger/MessagesController$EmojiSound;->fileReference:[B
 
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
-    .line 3054
+    .line 3097
     invoke-virtual {p2}, Lorg/telegram/messenger/AccountInstance;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p1
@@ -9389,7 +9484,7 @@
 
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$Document;->dc_id:I
 
-    .line 3055
+    .line 3098
     invoke-virtual {p2}, Lorg/telegram/messenger/AccountInstance;->getCurrentAccount()I
 
     move-result p1
@@ -9404,7 +9499,7 @@
 
     move-result-object p1
 
-    .line 3056
+    .line 3099
     invoke-virtual {p1}, Ljava/io/File;->exists()Z
 
     move-result v1
@@ -9415,7 +9510,7 @@
 
     return-void
 
-    .line 3060
+    .line 3103
     :cond_0
     new-instance p2, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda25;
 
@@ -9425,7 +9520,7 @@
 
     goto :goto_0
 
-    .line 3124
+    .line 3167
     :cond_1
     new-instance p1, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda7;
 
@@ -9442,7 +9537,7 @@
 
     const/4 v0, 0x1
 
-    .line 3360
+    .line 3403
     invoke-virtual {p0, v0, v0}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZ)V
 
     return-void
@@ -9451,7 +9546,7 @@
 .method private static synthetic lambda$playMessage$21(Lorg/telegram/messenger/MessageObject;Ljava/io/File;)V
     .locals 4
 
-    .line 3374
+    .line 3417
     iget v0, p0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -9488,7 +9583,7 @@
 .method private static synthetic lambda$playMessage$22(Lorg/telegram/messenger/MessageObject;Ljava/io/File;)V
     .locals 4
 
-    .line 3477
+    .line 3520
     iget v0, p0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -9525,7 +9620,7 @@
 .method private synthetic lambda$processMediaObserver$6(Ljava/util/ArrayList;)V
     .locals 3
 
-    .line 1443
+    .line 1486
     iget v0, p0, Lorg/telegram/messenger/MediaController;->lastChatAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -9540,7 +9635,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1444
+    .line 1487
     invoke-direct {p0, p1}, Lorg/telegram/messenger/MediaController;->checkScreenshots(Ljava/util/ArrayList;)V
 
     return-void
@@ -9553,7 +9648,7 @@
 
     const/4 v0, 0x1
 
-    .line 4384
+    .line 4438
     aput-boolean v0, p0, p1
 
     return-void
@@ -9564,12 +9659,12 @@
 
     const/4 v0, 0x0
 
-    .line 4386
+    .line 4440
     aget-boolean p0, p0, v0
 
     if-nez p0, :cond_0
 
-    .line 4387
+    .line 4441
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
     :cond_0
@@ -9579,7 +9674,7 @@
 .method private static synthetic lambda$saveFile$36(Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
-    .line 4454
+    .line 4508
     :try_start_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
     :try_end_0
@@ -9590,7 +9685,7 @@
     :catch_0
     move-exception p0
 
-    .line 4456
+    .line 4510
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -9600,7 +9695,7 @@
 .method private static synthetic lambda$saveFile$37(Lorg/telegram/ui/ActionBar/AlertDialog;I)V
     .locals 0
 
-    .line 4476
+    .line 4530
     :try_start_0
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->setProgress(I)V
     :try_end_0
@@ -9611,7 +9706,7 @@
     :catch_0
     move-exception p0
 
-    .line 4478
+    .line 4532
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -9621,7 +9716,7 @@
 .method private static synthetic lambda$saveFile$38(Lorg/telegram/messenger/Utilities$Callback;Landroid/net/Uri;)V
     .locals 0
 
-    .line 4503
+    .line 4557
     invoke-interface {p0, p1}, Lorg/telegram/messenger/Utilities$Callback;->run(Ljava/lang/Object;)V
 
     return-void
@@ -9630,7 +9725,7 @@
 .method private static synthetic lambda$saveFile$39(Lorg/telegram/ui/ActionBar/AlertDialog;[Z)V
     .locals 1
 
-    .line 4511
+    .line 4565
     :try_start_0
     invoke-virtual {p0}, Landroid/app/Dialog;->isShowing()Z
 
@@ -9638,7 +9733,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4512
+    .line 4566
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
     goto :goto_0
@@ -9648,7 +9743,7 @@
 
     const/4 v0, 0x1
 
-    .line 4514
+    .line 4568
     aput-boolean v0, p1, p0
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -9658,7 +9753,7 @@
     :catch_0
     move-exception p0
 
-    .line 4517
+    .line 4571
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -9678,7 +9773,7 @@
 
     move-object/from16 v4, p6
 
-    .line 4402
+    .line 4456
     :try_start_0
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -9692,7 +9787,7 @@
 
     const/4 v2, 0x0
 
-    .line 4403
+    .line 4457
     invoke-static {v1, v0, v2}, Lorg/telegram/messenger/MediaController;->saveFileInternal(ILjava/io/File;Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v0
@@ -9710,7 +9805,7 @@
 
     if-nez v1, :cond_1
 
-    .line 4408
+    .line 4462
     :try_start_1
     new-instance v2, Ljava/io/File;
 
@@ -9722,10 +9817,10 @@
 
     invoke-direct {v2, v9, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 4409
+    .line 4463
     invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
 
-    .line 4410
+    .line 4464
     new-instance v6, Ljava/io/File;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoader;->getFileExtension(Ljava/io/File;)Ljava/lang/String;
@@ -9743,7 +9838,7 @@
     :cond_1
     if-ne v1, v7, :cond_2
 
-    .line 4412
+    .line 4466
     new-instance v2, Ljava/io/File;
 
     sget-object v9, Landroid/os/Environment;->DIRECTORY_MOVIES:Ljava/lang/String;
@@ -9754,10 +9849,10 @@
 
     invoke-direct {v2, v9, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 4413
+    .line 4467
     invoke-virtual {v2}, Ljava/io/File;->mkdirs()Z
 
-    .line 4414
+    .line 4468
     new-instance v6, Ljava/io/File;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/FileLoader;->getFileExtension(Ljava/io/File;)Ljava/lang/String;
@@ -9775,7 +9870,7 @@
     :cond_2
     if-ne v1, v5, :cond_3
 
-    .line 4418
+    .line 4472
     sget-object v9, Landroid/os/Environment;->DIRECTORY_DOWNLOADS:Ljava/lang/String;
 
     invoke-static {v9}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
@@ -9784,7 +9879,7 @@
 
     goto :goto_0
 
-    .line 4420
+    .line 4474
     :cond_3
     sget-object v9, Landroid/os/Environment;->DIRECTORY_MUSIC:Ljava/lang/String;
 
@@ -9792,21 +9887,21 @@
 
     move-result-object v9
 
-    .line 4422
+    .line 4476
     :goto_0
     new-instance v10, Ljava/io/File;
 
     invoke-direct {v10, v9, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 4423
+    .line 4477
     invoke-virtual {v10}, Ljava/io/File;->mkdirs()Z
 
-    .line 4424
+    .line 4478
     new-instance v6, Ljava/io/File;
 
     invoke-direct {v6, v10, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 4425
+    .line 4479
     invoke-virtual {v6}, Ljava/io/File;->exists()Z
 
     move-result v9
@@ -9815,7 +9910,7 @@
 
     const/16 v9, 0x2e
 
-    .line 4426
+    .line 4480
     invoke-virtual {v2, v9}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v9
@@ -9837,7 +9932,7 @@
 
     if-eq v9, v6, :cond_4
 
-    .line 4430
+    .line 4484
     :try_start_2
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -9869,7 +9964,7 @@
 
     goto :goto_2
 
-    .line 4432
+    .line 4486
     :cond_4
     new-instance v6, Ljava/lang/StringBuilder;
 
@@ -9889,13 +9984,13 @@
 
     move-result-object v6
 
-    .line 4434
+    .line 4488
     :goto_2
     new-instance v12, Ljava/io/File;
 
     invoke-direct {v12, v10, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 4435
+    .line 4489
     invoke-virtual {v12}, Ljava/io/File;->exists()Z
 
     move-result v6
@@ -9913,7 +10008,7 @@
 
     goto :goto_1
 
-    .line 4441
+    .line 4495
     :cond_6
     :goto_3
     invoke-virtual {v6}, Ljava/io/File;->exists()Z
@@ -9922,10 +10017,10 @@
 
     if-nez v2, :cond_7
 
-    .line 4442
+    .line 4496
     invoke-virtual {v6}, Ljava/io/File;->createNewFile()Z
 
-    .line 4444
+    .line 4498
     :cond_7
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -9937,7 +10032,7 @@
 
     sub-long/2addr v9, v11
 
-    .line 4445
+    .line 4499
     :try_start_3
     new-instance v2, Ljava/io/FileInputStream;
 
@@ -9963,7 +10058,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_7
 
-    .line 4446
+    .line 4500
     :try_start_6
     invoke-virtual/range {v19 .. v19}, Ljava/nio/channels/FileChannel;->size()J
 
@@ -9971,7 +10066,7 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_4
 
-    .line 4448
+    .line 4502
     :try_start_7
     const-class v0, Ljava/io/FileDescriptor;
 
@@ -9983,7 +10078,7 @@
 
     move-result-object v0
 
-    .line 4449
+    .line 4503
     invoke-virtual {v2}, Ljava/io/FileInputStream;->getFD()Ljava/io/FileDescriptor;
 
     move-result-object v7
@@ -10000,7 +10095,7 @@
 
     move-result v0
 
-    .line 4450
+    .line 4504
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->isInternalUri(I)Z
 
     move-result v0
@@ -10009,7 +10104,7 @@
 
     if-eqz v3, :cond_8
 
-    .line 4452
+    .line 4506
     new-instance v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda38;
 
     invoke-direct {v0, v3}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda38;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;)V
@@ -10021,7 +10116,7 @@
     :cond_8
     if-eqz v20, :cond_9
 
-    .line 4484
+    .line 4538
     :try_start_8
     invoke-virtual/range {v20 .. v20}, Ljava/nio/channels/FileChannel;->close()V
     :try_end_8
@@ -10064,7 +10159,7 @@
     :catchall_2
     move-exception v0
 
-    .line 4463
+    .line 4517
     :try_start_b
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_b
@@ -10082,7 +10177,7 @@
 
     if-gez v0, :cond_e
 
-    .line 4466
+    .line 4520
     :try_start_c
     aget-boolean v0, p4, v8
 
@@ -10095,7 +10190,7 @@
 
     const-wide/16 v11, 0x1000
 
-    .line 4469
+    .line 4523
     invoke-static {v11, v12, v7, v8}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v17
@@ -10112,7 +10207,7 @@
 
     if-eqz v3, :cond_c
 
-    .line 4471
+    .line 4525
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v13
@@ -10125,7 +10220,7 @@
 
     if-gtz v0, :cond_d
 
-    .line 4472
+    .line 4526
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v9
@@ -10142,7 +10237,7 @@
 
     float-to-int v0, v0
 
-    .line 4474
+    .line 4528
     new-instance v13, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda39;
 
     invoke-direct {v13, v3, v0}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda39;-><init>(Lorg/telegram/ui/ActionBar/AlertDialog;I)V
@@ -10177,7 +10272,7 @@
     :goto_7
     if-eqz v20, :cond_f
 
-    .line 4484
+    .line 4538
     :try_start_d
     invoke-virtual/range {v20 .. v20}, Ljava/nio/channels/FileChannel;->close()V
     :try_end_d
@@ -10210,7 +10305,7 @@
 
     if-eqz v20, :cond_10
 
-    .line 4445
+    .line 4499
     :try_start_10
     invoke-virtual/range {v20 .. v20}, Ljava/nio/channels/FileChannel;->close()V
     :try_end_10
@@ -10313,7 +10408,7 @@
 
     move-object/from16 p2, v6
 
-    .line 4485
+    .line 4539
     :goto_10
     :try_start_16
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -10322,13 +10417,13 @@
 
     const/4 v7, 0x0
 
-    .line 4488
+    .line 4542
     :goto_11
     aget-boolean v0, p4, v2
 
     if-eqz v0, :cond_12
 
-    .line 4489
+    .line 4543
     invoke-virtual/range {p2 .. p2}, Ljava/io/File;->delete()Z
 
     move v8, v2
@@ -10345,7 +10440,7 @@
 
     if-ne v1, v2, :cond_13
 
-    .line 4494
+    .line 4548
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "download"
@@ -10358,7 +10453,7 @@
 
     check-cast v9, Landroid/app/DownloadManager;
 
-    .line 4495
+    .line 4549
     invoke-virtual/range {p2 .. p2}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object v10
@@ -10385,7 +10480,7 @@
 
     goto :goto_13
 
-    .line 4497
+    .line 4551
     :cond_13
     invoke-virtual/range {p2 .. p2}, Ljava/io/File;->getAbsoluteFile()Ljava/io/File;
 
@@ -10393,7 +10488,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->addMediaToGallery(Ljava/io/File;)V
 
-    .line 4500
+    .line 4554
     :cond_14
     :goto_13
     invoke-static/range {p2 .. p2}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
@@ -10408,7 +10503,7 @@
 
     if-eqz v4, :cond_16
 
-    .line 4503
+    .line 4557
     new-instance v1, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda37;
 
     invoke-direct {v1, v4, v0}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda37;-><init>(Lorg/telegram/messenger/Utilities$Callback;Landroid/net/Uri;)V
@@ -10422,14 +10517,14 @@
     :catch_2
     move-exception v0
 
-    .line 4506
+    .line 4560
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_16
     :goto_15
     if-eqz v3, :cond_17
 
-    .line 4509
+    .line 4563
     new-instance v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda40;
 
     move-object/from16 v1, p7
@@ -10447,7 +10542,7 @@
 
     const/4 v0, 0x1
 
-    .line 2742
+    .line 2785
     invoke-virtual {p0, v0, v0}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZ)V
 
     return-void
@@ -10456,7 +10551,7 @@
 .method private synthetic lambda$setPlaybackSpeed$16(Lorg/telegram/messenger/MessageObject;F)V
     .locals 1
 
-    .line 2822
+    .line 2865
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v0, :cond_1
@@ -10469,19 +10564,19 @@
 
     if-nez v0, :cond_1
 
-    .line 2823
+    .line 2866
     invoke-direct {p0, p1}, Lorg/telegram/messenger/MediaController;->isSamePlayingMessage(Lorg/telegram/messenger/MessageObject;)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 2824
+    .line 2867
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/MediaController;->seekToProgress(Lorg/telegram/messenger/MessageObject;F)Z
 
-    .line 2826
+    .line 2869
     :cond_0
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -10496,7 +10591,7 @@
 
     const/4 v0, 0x1
 
-    .line 2777
+    .line 2820
     invoke-virtual {p0, v0, v0}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZ)V
 
     return-void
@@ -10505,22 +10600,22 @@
 .method private static synthetic lambda$sortPlaylist$13(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;)I
     .locals 6
 
-    .line 2457
+    .line 2500
     invoke-virtual {p0}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v0
 
-    .line 2458
+    .line 2501
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v1
 
-    .line 2459
+    .line 2502
     iget-object p0, p0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-wide v2, p0, Lorg/telegram/tgnet/TLRPC$Message;->grouped_id:J
 
-    .line 2460
+    .line 2503
     iget-object p0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-wide p0, p0, Lorg/telegram/tgnet/TLRPC$Message;->grouped_id:J
@@ -10539,7 +10634,7 @@
 
     if-nez p0, :cond_0
 
-    .line 2463
+    .line 2506
     invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
 
     move-result p0
@@ -10549,7 +10644,7 @@
 
     return p0
 
-    .line 2465
+    .line 2508
     :cond_0
     invoke-static {v1, v0}, Ljava/lang/Integer;->compare(II)I
 
@@ -10566,14 +10661,14 @@
 
     if-nez p0, :cond_2
 
-    .line 2468
+    .line 2511
     invoke-static {v1, v0}, Ljava/lang/Integer;->compare(II)I
 
     move-result p0
 
     goto :goto_0
 
-    .line 2470
+    .line 2513
     :cond_2
     invoke-static {v0, v1}, Ljava/lang/Integer;->compare(II)I
 
@@ -10585,7 +10680,7 @@
 .method private synthetic lambda$startAudioAgain$7(Lorg/telegram/messenger/MessageObject;)V
     .locals 0
 
-    .line 1994
+    .line 2037
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/MediaController;->pauseMessage(Lorg/telegram/messenger/MessageObject;)Z
 
     return-void
@@ -10594,41 +10689,41 @@
 .method private synthetic lambda$startRaiseToEarSensors$8()V
     .locals 3
 
-    .line 2034
+    .line 2077
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->gravitySensor:Landroid/hardware/Sensor;
 
     const/16 v1, 0x7530
 
     if-eqz v0, :cond_0
 
-    .line 2035
+    .line 2078
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->sensorManager:Landroid/hardware/SensorManager;
 
     invoke-virtual {v2, p0, v0, v1}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
-    .line 2037
+    .line 2080
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->linearSensor:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_1
 
-    .line 2038
+    .line 2081
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->sensorManager:Landroid/hardware/SensorManager;
 
     invoke-virtual {v2, p0, v0, v1}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
-    .line 2040
+    .line 2083
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->accelerometerSensor:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_2
 
-    .line 2041
+    .line 2084
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->sensorManager:Landroid/hardware/SensorManager;
 
     invoke-virtual {v2, p0, v0, v1}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
 
-    .line 2043
+    .line 2086
     :cond_2
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->sensorManager:Landroid/hardware/SensorManager;
 
@@ -10646,10 +10741,10 @@
 
     const/4 v0, 0x0
 
-    .line 3834
+    .line 3877
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->recordStartRunnable:Ljava/lang/Runnable;
 
-    .line 3835
+    .line 3878
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -10678,10 +10773,10 @@
 
     const/4 v0, 0x0
 
-    .line 3871
+    .line 3914
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->recordStartRunnable:Ljava/lang/Runnable;
 
-    .line 3872
+    .line 3915
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -10710,10 +10805,10 @@
 
     const/4 v0, 0x0
 
-    .line 3909
+    .line 3952
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->recordStartRunnable:Ljava/lang/Runnable;
 
-    .line 3910
+    .line 3953
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -10742,10 +10837,10 @@
 
     const/4 v0, 0x0
 
-    .line 3917
+    .line 3960
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->recordStartRunnable:Ljava/lang/Runnable;
 
-    .line 3918
+    .line 3961
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -10775,15 +10870,15 @@
     return-void
 .end method
 
-.method private synthetic lambda$startRecording$27(IIJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method private synthetic lambda$startRecording$27(IIJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 8
 
-    .line 3832
+    .line 3875
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioRecorder:Landroid/media/AudioRecord;
 
     if-eqz v0, :cond_0
 
-    .line 3833
+    .line 3876
     new-instance p3, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda20;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/messenger/MediaController;II)V
@@ -10795,35 +10890,35 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 3840
+    .line 3883
     invoke-direct {p0, v0}, Lorg/telegram/messenger/MediaController;->setBluetoothScoOn(Z)V
 
     const/4 v1, 0x0
 
-    .line 3843
+    .line 3886
     iput v1, p0, Lorg/telegram/messenger/MediaController;->sendAfterDone:I
 
-    .line 3844
+    .line 3887
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_document;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_document;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/messenger/MediaController;->recordingAudio:Lorg/telegram/tgnet/TLRPC$TL_document;
 
-    .line 3845
+    .line 3888
     iput p2, p0, Lorg/telegram/messenger/MediaController;->recordingGuid:I
 
     new-array v3, v1, [B
 
-    .line 3846
+    .line 3889
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
     const/high16 v3, -0x80000000
 
-    .line 3847
+    .line 3890
     iput v3, v2, Lorg/telegram/tgnet/TLRPC$Document;->dc_id:I
 
-    .line 3848
+    .line 3891
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getLastLocalId()I
 
     move-result v3
@@ -10832,7 +10927,7 @@
 
     iput-wide v3, v2, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    .line 3849
+    .line 3892
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->recordingAudio:Lorg/telegram/tgnet/TLRPC$TL_document;
 
     invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -10845,7 +10940,7 @@
 
     iput-wide v3, v2, Lorg/telegram/tgnet/TLRPC$Document;->user_id:J
 
-    .line 3850
+    .line 3893
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->recordingAudio:Lorg/telegram/tgnet/TLRPC$TL_document;
 
     const-string v3, "audio/ogg"
@@ -10854,13 +10949,13 @@
 
     new-array v3, v1, [B
 
-    .line 3851
+    .line 3894
     iput-object v3, v2, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
-    .line 3852
+    .line 3895
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
 
-    .line 3854
+    .line 3897
     new-instance v2, Lorg/telegram/messenger/MediaController$13;
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getDirectory(I)Ljava/io/File;
@@ -10899,19 +10994,19 @@
 
     const/4 v0, 0x4
 
-    .line 3863
+    .line 3906
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getDirectory(I)Ljava/io/File;
 
     move-result-object v0
 
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    .line 3864
+    .line 3907
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_1
 
-    .line 3865
+    .line 3908
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10946,13 +11041,13 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 3867
+    .line 3910
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->recordingAudioFile:Ljava/io/File;
 
     invoke-static {v0}, Lorg/telegram/messenger/AutoDeleteMediaTask;->lockFile(Ljava/io/File;)V
 
-    .line 3869
+    .line 3912
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->recordingAudioFile:Ljava/io/File;
 
@@ -10968,27 +11063,27 @@
 
     if-nez v0, :cond_3
 
-    .line 3870
+    .line 3913
     new-instance p3, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda21;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/messenger/MediaController;II)V
 
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 3874
+    .line 3917
     sget-boolean p3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p3, :cond_2
 
     const-string p3, "cant init encoder"
 
-    .line 3875
+    .line 3918
     invoke-static {p3}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_2
     return-void
 
-    .line 3880
+    .line 3923
     :cond_3
     new-instance v0, Landroid/media/AudioRecord;
 
@@ -11008,7 +11103,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->audioRecorder:Landroid/media/AudioRecord;
 
-    .line 3881
+    .line 3924
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -11017,50 +11112,50 @@
 
     const-wide/16 v2, 0x0
 
-    .line 3882
+    .line 3925
     iput-wide v2, p0, Lorg/telegram/messenger/MediaController;->recordTimeCount:J
 
-    .line 3883
+    .line 3926
     iput v1, p0, Lorg/telegram/messenger/MediaController;->writedFrame:I
 
-    .line 3884
+    .line 3927
     iput-wide v2, p0, Lorg/telegram/messenger/MediaController;->samplesCount:J
 
-    .line 3885
+    .line 3928
     iput-wide p3, p0, Lorg/telegram/messenger/MediaController;->recordDialogId:J
 
-    .line 3886
+    .line 3929
     iput p1, p0, Lorg/telegram/messenger/MediaController;->recordingCurrentAccount:I
 
-    .line 3887
+    .line 3930
     iput-object p5, p0, Lorg/telegram/messenger/MediaController;->recordReplyingMsg:Lorg/telegram/messenger/MessageObject;
 
-    .line 3888
+    .line 3931
     iput-object p6, p0, Lorg/telegram/messenger/MediaController;->recordReplyingTopMsg:Lorg/telegram/messenger/MessageObject;
 
-    .line 3889
-    iput-object p7, p0, Lorg/telegram/messenger/MediaController;->recordReplyingStory:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    .line 3932
+    iput-object p7, p0, Lorg/telegram/messenger/MediaController;->recordReplyingStory:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    .line 3890
+    .line 3933
     iget-object p3, p0, Lorg/telegram/messenger/MediaController;->fileBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p3}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 3892
+    .line 3935
     iget-object p3, p0, Lorg/telegram/messenger/MediaController;->audioRecorder:Landroid/media/AudioRecord;
 
     invoke-virtual {p3}, Landroid/media/AudioRecord;->startRecording()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3915
+    .line 3958
     iget-object p3, p0, Lorg/telegram/messenger/MediaController;->recordQueue:Lorg/telegram/messenger/DispatchQueue;
 
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->recordRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p3, p4}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 3916
+    .line 3959
     new-instance p3, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda19;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/messenger/MediaController;II)V
@@ -11072,37 +11167,37 @@
     :catch_0
     move-exception p3
 
-    .line 3894
+    .line 3937
     invoke-static {p3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 p3, 0x0
 
-    .line 3895
+    .line 3938
     iput-object p3, p0, Lorg/telegram/messenger/MediaController;->recordingAudio:Lorg/telegram/tgnet/TLRPC$TL_document;
 
-    .line 3896
+    .line 3939
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->stopRecord()V
 
-    .line 3897
+    .line 3940
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->recordingAudioFile:Ljava/io/File;
 
     invoke-static {p4}, Lorg/telegram/messenger/AutoDeleteMediaTask;->unlockFile(Ljava/io/File;)V
 
-    .line 3898
+    .line 3941
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->recordingAudioFile:Ljava/io/File;
 
     invoke-virtual {p4}, Ljava/io/File;->delete()Z
 
-    .line 3899
+    .line 3942
     iput-object p3, p0, Lorg/telegram/messenger/MediaController;->recordingAudioFile:Ljava/io/File;
 
-    .line 3901
+    .line 3944
     :try_start_1
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->audioRecorder:Landroid/media/AudioRecord;
 
     invoke-virtual {p4}, Landroid/media/AudioRecord;->release()V
 
-    .line 3902
+    .line 3945
     iput-object p3, p0, Lorg/telegram/messenger/MediaController;->audioRecorder:Landroid/media/AudioRecord;
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -11112,14 +11207,14 @@
     :catch_1
     move-exception p3
 
-    .line 3904
+    .line 3947
     invoke-static {p3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3906
+    .line 3949
     :goto_0
     invoke-direct {p0, v1}, Lorg/telegram/messenger/MediaController;->setBluetoothScoOn(Z)V
 
-    .line 3908
+    .line 3951
     new-instance p3, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda18;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/messenger/MediaController;II)V
@@ -11132,39 +11227,39 @@
 .method private synthetic lambda$stopRaiseToEarSensors$9()V
     .locals 2
 
-    .line 2067
+    .line 2110
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->linearSensor:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_0
 
-    .line 2068
+    .line 2111
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->sensorManager:Landroid/hardware/SensorManager;
 
     invoke-virtual {v1, p0, v0}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;)V
 
-    .line 2070
+    .line 2113
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->gravitySensor:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_1
 
-    .line 2071
+    .line 2114
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->sensorManager:Landroid/hardware/SensorManager;
 
     invoke-virtual {v1, p0, v0}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;)V
 
-    .line 2073
+    .line 2116
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->accelerometerSensor:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_2
 
-    .line 2074
+    .line 2117
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->sensorManager:Landroid/hardware/SensorManager;
 
     invoke-virtual {v1, p0, v0}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;)V
 
-    .line 2076
+    .line 2119
     :cond_2
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->sensorManager:Landroid/hardware/SensorManager;
 
@@ -11178,7 +11273,7 @@
 .method private synthetic lambda$stopRecording$32(I)V
     .locals 6
 
-    .line 4067
+    .line 4110
     iget v0, p0, Lorg/telegram/messenger/MediaController;->recordingCurrentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -11222,7 +11317,7 @@
 .method private synthetic lambda$stopRecording$33(IZILjava/lang/String;)V
     .locals 3
 
-    .line 4035
+    .line 4078
     iget v0, p0, Lorg/telegram/messenger/MediaController;->sendAfterDone:I
 
     const/4 v1, 0x3
@@ -11231,15 +11326,15 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 4036
+    .line 4079
     iput v2, p0, Lorg/telegram/messenger/MediaController;->sendAfterDone:I
 
-    .line 4037
+    .line 4080
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/messenger/MediaController;->stopRecordingInternal(IZILjava/lang/String;)V
 
     return-void
 
-    .line 4040
+    .line 4083
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioRecorder:Landroid/media/AudioRecord;
 
@@ -11247,24 +11342,24 @@
 
     return-void
 
-    .line 4044
+    .line 4087
     :cond_1
     :try_start_0
     iput p1, p0, Lorg/telegram/messenger/MediaController;->sendAfterDone:I
 
-    .line 4045
+    .line 4088
     iput-boolean p2, p0, Lorg/telegram/messenger/MediaController;->sendAfterDoneNotify:Z
 
-    .line 4046
+    .line 4089
     iput p3, p0, Lorg/telegram/messenger/MediaController;->sendAfterDoneScheduleDate:I
 
-    .line 4047
+    .line 4090
     iput-object p4, p0, Lorg/telegram/messenger/MediaController;->sendAfterDoneTemplateName:Ljava/lang/String;
 
-    .line 4048
+    .line 4091
     invoke-virtual {v0}, Landroid/media/AudioRecord;->stop()V
 
-    .line 4049
+    .line 4092
     invoke-direct {p0, v2}, Lorg/telegram/messenger/MediaController;->setBluetoothScoOn(Z)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -11274,25 +11369,25 @@
     :catch_0
     move-exception p2
 
-    .line 4051
+    .line 4094
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4052
+    .line 4095
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->recordingAudioFile:Ljava/io/File;
 
     if-eqz p2, :cond_3
 
-    .line 4053
+    .line 4096
     sget-boolean p2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p2, :cond_2
 
     const-string p2, "delete voice file"
 
-    .line 4054
+    .line 4097
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 4056
+    .line 4099
     :cond_2
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->recordingAudioFile:Ljava/io/File;
 
@@ -11304,10 +11399,10 @@
 
     const/4 p2, 0x0
 
-    .line 4060
+    .line 4103
     invoke-direct {p0, v2, v2, v2, p2}, Lorg/telegram/messenger/MediaController;->stopRecordingInternal(IZILjava/lang/String;)V
 
-    .line 4063
+    .line 4106
     :cond_4
     :try_start_1
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->feedbackView:Landroid/view/View;
@@ -11318,7 +11413,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 4067
+    .line 4110
     :catch_1
     new-instance p2, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda17;
 
@@ -11338,14 +11433,14 @@
 
     move/from16 v12, p3
 
-    .line 3976
+    .line 4019
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     const-string v2, " writedFrames"
 
     if-eqz v1, :cond_0
 
-    .line 3977
+    .line 4020
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -11390,7 +11485,7 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 3979
+    .line 4022
     :cond_0
     invoke-virtual/range {p1 .. p1}, Ljava/io/File;->exists()Z
 
@@ -11398,12 +11493,12 @@
 
     if-nez v1, :cond_1
 
-    .line 3980
+    .line 4023
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->DEBUG_VERSION:Z
 
     if-eqz v1, :cond_1
 
-    .line 3981
+    .line 4024
     new-instance v1, Ljava/lang/RuntimeException;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -11432,7 +11527,7 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3983
+    .line 4026
     :cond_1
     iget v1, v0, Lorg/telegram/messenger/MediaController;->recordingCurrentAccount:I
 
@@ -11446,7 +11541,7 @@
 
     iput v1, v13, Lorg/telegram/tgnet/TLRPC$Document;->date:I
 
-    .line 3984
+    .line 4027
     invoke-virtual/range {p1 .. p1}, Ljava/io/File;->length()J
 
     move-result-wide v1
@@ -11457,17 +11552,17 @@
 
     iput-wide v1, v13, Lorg/telegram/tgnet/TLRPC$Document;->size:J
 
-    .line 3985
+    .line 4028
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;-><init>()V
 
     const/4 v15, 0x1
 
-    .line 3986
+    .line 4029
     iput-boolean v15, v1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->voice:Z
 
-    .line 3987
+    .line 4030
     iget-object v2, v0, Lorg/telegram/messenger/MediaController;->recordSamples:[S
 
     array-length v3, v2
@@ -11480,20 +11575,20 @@
 
     if-eqz v2, :cond_2
 
-    .line 3989
+    .line 4032
     iget v2, v1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
     or-int/lit8 v2, v2, 0x4
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
-    .line 3991
+    .line 4034
     :cond_2
     iget-wide v2, v0, Lorg/telegram/messenger/MediaController;->recordTimeCount:J
 
     const-wide/16 v4, 0x3e8
 
-    .line 3992
+    .line 4035
     div-long v4, v2, v4
 
     long-to-int v4, v4
@@ -11502,7 +11597,7 @@
 
     iput-wide v4, v1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
 
-    .line 3993
+    .line 4036
     iget-object v4, v13, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -11523,7 +11618,7 @@
 
     const/4 v2, 0x0
 
-    .line 3996
+    .line 4039
     invoke-virtual/range {p1 .. p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v3
@@ -11570,12 +11665,12 @@
 
     move-result-object v1
 
-    .line 3997
-    iget-object v2, v0, Lorg/telegram/messenger/MediaController;->recordReplyingStory:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    .line 4040
+    iget-object v2, v0, Lorg/telegram/messenger/MediaController;->recordReplyingStory:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iput-object v2, v1, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->replyToStoryItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object v2, v1, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->replyToStoryItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    .line 3998
+    .line 4041
     iget v2, v0, Lorg/telegram/messenger/MediaController;->recordingCurrentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
@@ -11589,7 +11684,7 @@
     :cond_3
     move/from16 v19, v15
 
-    .line 4000
+    .line 4043
     :goto_0
     iget v1, v0, Lorg/telegram/messenger/MediaController;->recordingCurrentAccount:I
 
@@ -11653,7 +11748,7 @@
 
     move/from16 v19, v15
 
-    .line 4002
+    .line 4045
     iget v1, v0, Lorg/telegram/messenger/MediaController;->recordingCurrentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -11686,13 +11781,13 @@
 
     invoke-virtual {v1, v6, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 4003
+    .line 4046
     invoke-static/range {p1 .. p1}, Lorg/telegram/messenger/AutoDeleteMediaTask;->unlockFile(Ljava/io/File;)V
 
-    .line 4004
+    .line 4047
     invoke-virtual/range {p1 .. p1}, Ljava/io/File;->delete()Z
 
-    .line 4006
+    .line 4049
     :goto_2
     invoke-virtual {v0, v5}, Lorg/telegram/messenger/MediaController;->requestAudioFocus(Z)V
 
@@ -11702,15 +11797,15 @@
 .method private synthetic lambda$stopRecordingInternal$31(Ljava/io/File;Lorg/telegram/tgnet/TLRPC$TL_document;IZILjava/lang/String;)V
     .locals 9
 
-    .line 3971
+    .line 4014
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->stopRecord()V
 
-    .line 3972
+    .line 4015
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
-    .line 3973
+    .line 4016
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11741,7 +11836,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 3975
+    .line 4018
     :cond_0
     new-instance v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda26;
 
@@ -11771,7 +11866,7 @@
 .method public static loadGalleryPhotosAlbums(I)V
     .locals 2
 
-    .line 4805
+    .line 4859
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda3;
@@ -11782,10 +11877,10 @@
 
     const/4 p0, 0x1
 
-    .line 5013
+    .line 5067
     invoke-virtual {v0, p0}, Ljava/lang/Thread;->setPriority(I)V
 
-    .line 5014
+    .line 5068
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     return-void
@@ -11794,7 +11889,7 @@
 .method public static makeVideoBitrate(IIIII)I
     .locals 5
 
-    .line 5445
+    .line 5498
     invoke-static {p3, p4}, Ljava/lang/Math;->min(II)I
 
     move-result v0
@@ -11812,7 +11907,7 @@
 
     goto :goto_1
 
-    .line 5449
+    .line 5502
     :cond_0
     invoke-static {p3, p4}, Ljava/lang/Math;->min(II)I
 
@@ -11826,7 +11921,7 @@
 
     goto :goto_0
 
-    .line 5453
+    .line 5506
     :cond_1
     invoke-static {p3, p4}, Ljava/lang/Math;->min(II)I
 
@@ -11866,7 +11961,7 @@
 
     div-float/2addr p1, v4
 
-    .line 5462
+    .line 5515
     invoke-static {p0, p1}, Ljava/lang/Math;->min(FF)F
 
     move-result p0
@@ -11881,7 +11976,7 @@
 
     float-to-int p0, p0
 
-    .line 5464
+    .line 5517
     invoke-static {v2}, Lorg/telegram/messenger/MediaController;->getVideoBitrateWithFactor(F)I
 
     move-result p1
@@ -11909,7 +12004,7 @@
 
     return v0
 
-    .line 5471
+    .line 5524
     :cond_4
     invoke-static {p0, p1}, Ljava/lang/Math;->max(II)I
 
@@ -11921,7 +12016,7 @@
 .method private playNextMessageWithoutOrder(Z)V
     .locals 7
 
-    .line 2503
+    .line 2546
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->shuffleMusic:Z
 
     if-eqz v0, :cond_0
@@ -11944,7 +12039,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 2505
+    .line 2548
     sget v5, Lorg/telegram/messenger/SharedConfig;->repeatMode:I
 
     if-eq v5, v2, :cond_1
@@ -11962,10 +12057,10 @@
 
     if-nez v5, :cond_2
 
-    .line 2506
+    .line 2549
     invoke-virtual {p0, v3, v3}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZ)V
 
-    .line 2507
+    .line 2550
     iget p1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -11974,18 +12069,18 @@
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    .line 2508
+    .line 2551
     iput v1, p1, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
-    .line 2509
+    .line 2552
     iput v3, p1, Lorg/telegram/messenger/MessageObject;->audioProgressSec:I
 
-    .line 2510
+    .line 2553
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/MediaController;->playMessage(Lorg/telegram/messenger/MessageObject;)Z
 
     return-void
 
-    .line 2514
+    .line 2557
     :cond_2
     sget-boolean v5, Lorg/telegram/messenger/SharedConfig;->playOrderReversed:Z
 
@@ -12007,7 +12102,7 @@
 
     if-eqz p1, :cond_7
 
-    .line 2515
+    .line 2558
     sget p1, Lorg/telegram/messenger/SharedConfig;->repeatMode:I
 
     if-nez p1, :cond_7
@@ -12016,7 +12111,7 @@
 
     if-nez p1, :cond_7
 
-    .line 2516
+    .line 2559
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-nez p1, :cond_4
@@ -12030,7 +12125,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 2519
+    .line 2562
     :try_start_0
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Components/VideoPlayer;->releasePlayer(Z)V
     :try_end_0
@@ -12041,42 +12136,42 @@
     :catch_0
     move-exception p1
 
-    .line 2521
+    .line 2564
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2523
+    .line 2566
     :goto_2
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 2524
+    .line 2567
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->unrefAudioVisualizeDrawable(Lorg/telegram/messenger/MessageObject;)V
 
     goto :goto_4
 
-    .line 2526
+    .line 2569
     :cond_5
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
-    .line 2527
+    .line 2570
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->currentTextureViewContainer:Landroid/widget/FrameLayout;
 
-    .line 2528
+    .line 2571
     iput-boolean v3, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayoutReady:Z
 
-    .line 2529
+    .line 2572
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->currentTextureView:Landroid/view/TextureView;
 
-    .line 2530
+    .line 2573
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Components/VideoPlayer;->releasePlayer(Z)V
 
-    .line 2531
+    .line 2574
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 2533
+    .line 2576
     :try_start_1
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->baseActivity:Landroid/app/Activity;
 
@@ -12095,16 +12190,16 @@
     :catch_1
     move-exception p1
 
-    .line 2535
+    .line 2578
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2537
+    .line 2580
     :goto_3
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->setLoadingRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 2538
+    .line 2581
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
@@ -12121,27 +12216,27 @@
 
     invoke-virtual {p1, v0, v4, v3}, Lorg/telegram/messenger/FileLoader;->removeLoadingVideo(Lorg/telegram/tgnet/TLRPC$Document;ZZ)V
 
-    .line 2540
+    .line 2583
     :goto_4
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->stopProgressTimer()V
 
     const-wide/16 v5, 0x0
 
-    .line 2541
+    .line 2584
     iput-wide v5, p0, Lorg/telegram/messenger/MediaController;->lastProgress:J
 
-    .line 2542
+    .line 2585
     iput-boolean v4, p0, Lorg/telegram/messenger/MediaController;->isPaused:Z
 
-    .line 2543
+    .line 2586
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iput v1, p1, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
-    .line 2544
+    .line 2587
     iput v3, p1, Lorg/telegram/messenger/MessageObject;->audioProgressSec:I
 
-    .line 2545
+    .line 2588
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -12172,7 +12267,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2546
+    .line 2589
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
@@ -12202,7 +12297,7 @@
     :cond_6
     return-void
 
-    .line 2550
+    .line 2593
     :cond_7
     iget p1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
@@ -12216,20 +12311,20 @@
 
     goto :goto_5
 
-    .line 2553
+    .line 2596
     :cond_8
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz p1, :cond_9
 
-    .line 2554
+    .line 2597
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->resetPlayingProgress()V
 
-    .line 2556
+    .line 2599
     :cond_9
     iput-boolean v4, p0, Lorg/telegram/messenger/MediaController;->playMusicAgain:Z
 
-    .line 2557
+    .line 2600
     iget p1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -12250,13 +12345,13 @@
 
     const/4 v0, 0x0
 
-    .line 1405
+    .line 1448
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getRealScreenSize()Landroid/graphics/Point;
 
     move-result-object v1
 
-    .line 1407
+    .line 1450
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -12277,14 +12372,14 @@
 
     move-result-object v0
 
-    .line 1408
+    .line 1451
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     if-eqz v0, :cond_a
 
-    .line 1410
+    .line 1453
     :cond_0
     :goto_0
     invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
@@ -12295,49 +12390,49 @@
 
     const/4 v2, 0x0
 
-    .line 1412
+    .line 1455
     invoke-interface {v0, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v2
 
     const/4 v3, 0x1
 
-    .line 1413
+    .line 1456
     invoke-interface {v0, v3}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
     const/4 v5, 0x2
 
-    .line 1414
+    .line 1457
     invoke-interface {v0, v5}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
     const/4 v6, 0x3
 
-    .line 1415
+    .line 1458
     invoke-interface {v0, v6}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v6
 
     const/4 v8, 0x4
 
-    .line 1416
+    .line 1459
     invoke-interface {v0, v8}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v8
 
     const/4 v9, 0x5
 
-    .line 1417
+    .line 1460
     invoke-interface {v0, v9}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v9
 
     const/4 v10, 0x6
 
-    .line 1418
+    .line 1461
     invoke-interface {v0, v10}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v10
@@ -12349,7 +12444,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 1419
+    .line 1462
     :try_start_1
     invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -12364,7 +12459,7 @@
     :cond_1
     if-eqz v4, :cond_2
 
-    .line 1420
+    .line 1463
     invoke-virtual {v4}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v4
@@ -12378,7 +12473,7 @@
     :cond_2
     if-eqz v5, :cond_3
 
-    .line 1421
+    .line 1464
     invoke-virtual {v5}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v4
@@ -12392,7 +12487,7 @@
     :cond_3
     if-eqz v8, :cond_0
 
-    .line 1422
+    .line 1465
     invoke-virtual {v8}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v4
@@ -12411,23 +12506,23 @@
 
     if-nez v10, :cond_6
 
-    .line 1425
+    .line 1468
     :cond_5
     :try_start_2
     new-instance v4, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v4}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 1426
+    .line 1469
     iput-boolean v3, v4, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 1427
+    .line 1470
     invoke-static {v2, v4}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 1428
+    .line 1471
     iget v9, v4, Landroid/graphics/BitmapFactory$Options;->outWidth:I
 
-    .line 1429
+    .line 1472
     iget v10, v4, Landroid/graphics/BitmapFactory$Options;->outHeight:I
 
     :cond_6
@@ -12435,7 +12530,7 @@
 
     if-lez v10, :cond_8
 
-    .line 1431
+    .line 1474
     iget v2, v1, Landroid/graphics/Point;->x:I
 
     if-ne v9, v2, :cond_7
@@ -12451,7 +12546,7 @@
 
     if-ne v9, v2, :cond_0
 
-    .line 1432
+    .line 1475
     :cond_8
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -12464,7 +12559,7 @@
 
     goto/16 :goto_0
 
-    .line 1435
+    .line 1478
     :catch_0
     :try_start_3
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -12475,11 +12570,11 @@
 
     goto/16 :goto_0
 
-    .line 1439
+    .line 1482
     :cond_9
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 1441
+    .line 1484
     :cond_a
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -12487,7 +12582,7 @@
 
     if-nez v1, :cond_b
 
-    .line 1442
+    .line 1485
     new-instance v1, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda30;
 
     invoke-direct {v1, p0, p1}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda30;-><init>(Lorg/telegram/messenger/MediaController;Ljava/util/ArrayList;)V
@@ -12500,7 +12595,7 @@
     :cond_b
     if-eqz v0, :cond_c
 
-    .line 1452
+    .line 1495
     :goto_1
     :try_start_4
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
@@ -12517,7 +12612,7 @@
     :catch_1
     move-exception p1
 
-    .line 1448
+    .line 1491
     :try_start_5
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_5
@@ -12535,13 +12630,13 @@
     :goto_3
     if-eqz v0, :cond_d
 
-    .line 1452
+    .line 1495
     :try_start_6
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_3
 
-    .line 1457
+    .line 1500
     :catch_3
     :cond_d
     throw p1
@@ -12550,7 +12645,7 @@
 .method private resumeAudio(Lorg/telegram/messenger/MessageObject;)Z
     .locals 6
 
-    .line 3727
+    .line 3770
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const/4 v1, 0x0
@@ -12576,27 +12671,27 @@
 
     goto/16 :goto_2
 
-    .line 3732
+    .line 3775
     :cond_1
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-direct {p0, v0}, Lorg/telegram/messenger/MediaController;->startProgressTimer(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 3733
+    .line 3776
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_2
 
-    .line 3734
+    .line 3777
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 3735
+    .line 3778
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 3737
+    .line 3780
     :cond_2
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isVoice()Z
 
@@ -12618,7 +12713,7 @@
 
     new-array v0, v0, [F
 
-    .line 3738
+    .line 3781
     iget v4, p0, Lorg/telegram/messenger/MediaController;->audioVolume:F
 
     aput v4, v0, v1
@@ -12631,61 +12726,61 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
-    .line 3739
+    .line 3782
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->audioVolumeUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 3740
+    .line 3783
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v4, 0x12c
 
     invoke-virtual {v0, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 3741
+    .line 3784
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 3743
+    .line 3786
     :cond_3
     iput v2, p0, Lorg/telegram/messenger/MediaController;->audioVolume:F
 
-    .line 3744
+    .line 3787
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->setPlayerVolume()V
 
-    .line 3746
+    .line 3789
     :goto_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v0, :cond_4
 
-    .line 3747
+    .line 3790
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
 
     goto :goto_1
 
-    .line 3748
+    .line 3791
     :cond_4
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v0, :cond_5
 
-    .line 3749
+    .line 3792
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
 
-    .line 3751
+    .line 3794
     :cond_5
     :goto_1
     invoke-direct {p0, p1}, Lorg/telegram/messenger/MediaController;->checkAudioFocus(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 3752
+    .line 3795
     iput-boolean v1, p0, Lorg/telegram/messenger/MediaController;->isPaused:Z
 
-    .line 3753
+    .line 3796
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
@@ -12719,7 +12814,7 @@
     :catch_0
     move-exception p1
 
-    .line 3755
+    .line 3798
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_6
@@ -12742,7 +12837,7 @@
 
     move-object v4, p4
 
-    .line 4348
+    .line 4402
     invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MediaController;->saveFile(Ljava/lang/String;Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/Utilities$Callback;)V
 
     return-void
@@ -12778,7 +12873,7 @@
 
     move-object v5, p5
 
-    .line 4352
+    .line 4406
     invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MediaController;->saveFile(Ljava/lang/String;Landroid/content/Context;ILjava/lang/String;Ljava/lang/String;Lorg/telegram/messenger/Utilities$Callback;Z)V
 
     return-void
@@ -12810,7 +12905,7 @@
 
     goto/16 :goto_3
 
-    .line 4361
+    .line 4415
     :cond_0
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -12820,12 +12915,12 @@
 
     if-nez v2, :cond_2
 
-    .line 4362
+    .line 4416
     new-instance v2, Ljava/io/File;
 
     invoke-direct {v2, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 4363
+    .line 4417
     invoke-virtual {v2}, Ljava/io/File;->exists()Z
 
     move-result v0
@@ -12867,7 +12962,7 @@
 
     aput-boolean v2, v9, v2
 
-    .line 4374
+    .line 4428
     invoke-virtual {v6}, Ljava/io/File;->exists()Z
 
     move-result v4
@@ -12878,7 +12973,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 4380
+    .line 4434
     :try_start_0
     new-instance v4, Lorg/telegram/ui/ActionBar/AlertDialog;
 
@@ -12888,7 +12983,7 @@
 
     const-string v1, "Loading"
 
-    .line 4381
+    .line 4435
     sget v5, Lorg/telegram/messenger/R$string;->Loading:I
 
     invoke-static {v1, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -12897,20 +12992,20 @@
 
     invoke-virtual {v4, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
 
-    .line 4382
+    .line 4436
     invoke-virtual {v4, v2}, Lorg/telegram/ui/ActionBar/AlertDialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 4383
+    .line 4437
     invoke-virtual {v4, v0}, Landroid/app/Dialog;->setCancelable(Z)V
 
-    .line 4384
+    .line 4438
     new-instance v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, v9}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda1;-><init>([Z)V
 
     invoke-virtual {v4, v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
-    .line 4385
+    .line 4439
     new-instance v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda41;
 
     invoke-direct {v0, v12, v4}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda41;-><init>([ZLorg/telegram/ui/ActionBar/AlertDialog;)V
@@ -12928,13 +13023,13 @@
     :catch_0
     move-exception v0
 
-    .line 4392
+    .line 4446
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_4
     move-object v8, v3
 
-    .line 4398
+    .line 4452
     :goto_2
     new-instance v0, Ljava/lang/Thread;
 
@@ -12954,7 +13049,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    .line 4521
+    .line 4575
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     :cond_5
@@ -12967,20 +13062,20 @@
 
     const/4 v0, 0x0
 
-    .line 4528
+    .line 4582
     :try_start_0
     new-instance v1, Landroid/content/ContentValues;
 
     invoke-direct {v1}, Landroid/content/ContentValues;-><init>()V
 
-    .line 4529
+    .line 4583
     invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getFileExtension(Ljava/io/File;)Ljava/lang/String;
 
     move-result-object v2
 
     if-eqz v2, :cond_0
 
-    .line 4532
+    .line 4586
     invoke-static {}, Landroid/webkit/MimeTypeMap;->getSingleton()Landroid/webkit/MimeTypeMap;
 
     move-result-object v3
@@ -13008,7 +13103,7 @@
 
     const-string v6, "image"
 
-    .line 4536
+    .line 4590
     invoke-virtual {v3, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v6
@@ -13020,7 +13115,7 @@
     :cond_2
     const-string/jumbo v6, "video"
 
-    .line 4539
+    .line 4593
     invoke-virtual {v3, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v6
@@ -13046,26 +13141,26 @@
 
     if-nez p2, :cond_4
 
-    .line 4545
+    .line 4599
     :try_start_1
     invoke-static {v4, v2}, Lorg/telegram/messenger/AndroidUtilities;->generateFileName(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 4547
+    .line 4601
     :cond_4
     invoke-static {v10}, Landroid/provider/MediaStore$Images$Media;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p0
 
-    .line 4548
+    .line 4602
     new-instance v2, Ljava/io/File;
 
     sget-object v4, Landroid/os/Environment;->DIRECTORY_PICTURES:Ljava/lang/String;
 
     invoke-direct {v2, v4, v9}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4549
+    .line 4603
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -13082,10 +13177,10 @@
 
     invoke-virtual {v1, v8, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4550
+    .line 4604
     invoke-virtual {v1, v7, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4551
+    .line 4605
     invoke-virtual {v1, v6, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_1
@@ -13095,12 +13190,12 @@
 
     if-nez p2, :cond_6
 
-    .line 4554
+    .line 4608
     invoke-static {v5, v2}, Lorg/telegram/messenger/AndroidUtilities;->generateFileName(ILjava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 4556
+    .line 4610
     :cond_6
     new-instance p0, Ljava/io/File;
 
@@ -13108,7 +13203,7 @@
 
     invoke-direct {p0, v2, v9}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4557
+    .line 4611
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -13125,12 +13220,12 @@
 
     invoke-virtual {v1, v8, p0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4558
+    .line 4612
     invoke-static {v10}, Landroid/provider/MediaStore$Video$Media;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p0
 
-    .line 4559
+    .line 4613
     invoke-virtual {v1, v7, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
@@ -13142,12 +13237,12 @@
 
     if-nez p2, :cond_8
 
-    .line 4562
+    .line 4616
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 4564
+    .line 4618
     :cond_8
     new-instance p0, Ljava/io/File;
 
@@ -13155,7 +13250,7 @@
 
     invoke-direct {p0, v2, v9}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4565
+    .line 4619
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -13172,12 +13267,12 @@
 
     invoke-virtual {v1, v8, p0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4566
+    .line 4620
     invoke-static {v10}, Landroid/provider/MediaStore$Downloads;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p0
 
-    .line 4567
+    .line 4621
     invoke-virtual {v1, v7, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_1
@@ -13185,12 +13280,12 @@
     :cond_9
     if-nez p2, :cond_a
 
-    .line 4570
+    .line 4624
     invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 4572
+    .line 4626
     :cond_a
     new-instance p0, Ljava/io/File;
 
@@ -13198,7 +13293,7 @@
 
     invoke-direct {p0, v2, v9}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4573
+    .line 4627
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -13215,19 +13310,19 @@
 
     invoke-virtual {v1, v8, p0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4574
+    .line 4628
     invoke-static {v10}, Landroid/provider/MediaStore$Audio$Media;->getContentUri(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p0
 
-    .line 4575
+    .line 4629
     invoke-virtual {v1, v7, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4578
+    .line 4632
     :goto_1
     invoke-virtual {v1, v6, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 4580
+    .line 4634
     sget-object p2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {p2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -13240,12 +13335,12 @@
 
     if-eqz p0, :cond_b
 
-    .line 4582
+    .line 4636
     new-instance p2, Ljava/io/FileInputStream;
 
     invoke-direct {p2, p1}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
 
-    .line 4583
+    .line 4637
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -13256,10 +13351,10 @@
 
     move-result-object p1
 
-    .line 4584
+    .line 4638
     invoke-static {p2, p1}, Lorg/telegram/messenger/AndroidUtilities;->copyFile(Ljava/io/InputStream;Ljava/io/OutputStream;)Z
 
-    .line 4585
+    .line 4639
     invoke-virtual {p2}, Ljava/io/FileInputStream;->close()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -13270,7 +13365,7 @@
     :catch_0
     move-exception p0
 
-    .line 4589
+    .line 4643
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return-object v0
@@ -13293,7 +13388,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 4341
+    .line 4395
     invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
@@ -13310,7 +13405,7 @@
 
     goto :goto_0
 
-    .line 4344
+    .line 4398
     :cond_0
     new-instance v0, Lorg/telegram/messenger/MediaController$MediaLoader;
 
@@ -13326,7 +13421,7 @@
 .method public static selectCodec(Ljava/lang/String;)Landroid/media/MediaCodecInfo;
     .locals 9
 
-    .line 5116
+    .line 5166
     invoke-static {}, Landroid/media/MediaCodecList;->getCodecCount()I
 
     move-result v0
@@ -13340,12 +13435,12 @@
     :goto_0
     if-ge v3, v0, :cond_5
 
-    .line 5119
+    .line 5169
     invoke-static {v3}, Landroid/media/MediaCodecList;->getCodecInfoAt(I)Landroid/media/MediaCodecInfo;
 
     move-result-object v4
 
-    .line 5120
+    .line 5170
     invoke-virtual {v4}, Landroid/media/MediaCodecInfo;->isEncoder()Z
 
     move-result v5
@@ -13354,13 +13449,13 @@
 
     goto :goto_2
 
-    .line 5123
+    .line 5173
     :cond_0
     invoke-virtual {v4}, Landroid/media/MediaCodecInfo;->getSupportedTypes()[Ljava/lang/String;
 
     move-result-object v5
 
-    .line 5124
+    .line 5174
     array-length v6, v5
 
     move v7, v1
@@ -13370,14 +13465,14 @@
 
     aget-object v8, v5, v7
 
-    .line 5125
+    .line 5175
     invoke-virtual {v8, p0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v8
 
     if-eqz v8, :cond_3
 
-    .line 5127
+    .line 5177
     invoke-virtual {v4}, Landroid/media/MediaCodecInfo;->getName()Ljava/lang/String;
 
     move-result-object v2
@@ -13386,7 +13481,7 @@
 
     const-string v8, "OMX.SEC.avc.enc"
 
-    .line 5129
+    .line 5179
     invoke-virtual {v2, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v8
@@ -13398,7 +13493,7 @@
     :cond_1
     const-string v8, "OMX.SEC.AVC.Encoder"
 
-    .line 5131
+    .line 5181
     invoke-virtual {v2, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
@@ -13428,7 +13523,7 @@
 .method public static selectColorFormat(Landroid/media/MediaCodecInfo;Ljava/lang/String;)I
     .locals 4
 
-    .line 5156
+    .line 5206
     invoke-virtual {p0, p1}, Landroid/media/MediaCodecInfo;->getCapabilitiesForType(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;
 
     move-result-object p1
@@ -13437,7 +13532,7 @@
 
     move v1, v0
 
-    .line 5158
+    .line 5208
     :goto_0
     iget-object v2, p1, Landroid/media/MediaCodecInfo$CodecCapabilities;->colorFormats:[I
 
@@ -13445,17 +13540,17 @@
 
     if-ge v0, v3, :cond_3
 
-    .line 5159
+    .line 5209
     aget v2, v2, v0
 
-    .line 5160
+    .line 5210
     invoke-static {v2}, Lorg/telegram/messenger/MediaController;->isRecognizedFormat(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    .line 5162
+    .line 5212
     invoke-virtual {p0}, Landroid/media/MediaCodecInfo;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -13496,7 +13591,7 @@
 .method private setBluetoothScoOn(Z)V
     .locals 3
 
-    .line 3150
+    .line 3193
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "audio"
@@ -13507,7 +13602,7 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 3151
+    .line 3194
     invoke-virtual {v0}, Landroid/media/AudioManager;->isBluetoothScoAvailableOffCall()Z
 
     move-result v1
@@ -13521,7 +13616,7 @@
     :cond_0
     if-nez p1, :cond_5
 
-    .line 3152
+    .line 3195
     :cond_1
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
@@ -13531,7 +13626,7 @@
 
     const/4 v2, 0x1
 
-    .line 3154
+    .line 3197
     :try_start_0
     invoke-virtual {v1, v2}, Landroid/bluetooth/BluetoothAdapter;->getProfileConnectionState(I)I
 
@@ -13555,14 +13650,14 @@
     :cond_3
     if-eqz p1, :cond_4
 
-    .line 3155
+    .line 3198
     invoke-virtual {v0}, Landroid/media/AudioManager;->isBluetoothScoOn()Z
 
     move-result v1
 
     if-nez v1, :cond_4
 
-    .line 3156
+    .line 3199
     invoke-virtual {v0}, Landroid/media/AudioManager;->startBluetoothSco()V
 
     goto :goto_2
@@ -13570,14 +13665,14 @@
     :cond_4
     if-nez p1, :cond_5
 
-    .line 3157
+    .line 3200
     invoke-virtual {v0}, Landroid/media/AudioManager;->isBluetoothScoOn()Z
 
     move-result p1
 
     if-eqz p1, :cond_5
 
-    .line 3158
+    .line 3201
     invoke-virtual {v0}, Landroid/media/AudioManager;->stopBluetoothSco()V
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
@@ -13585,7 +13680,7 @@
 
     goto :goto_2
 
-    .line 3163
+    .line 3206
     :goto_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -13598,7 +13693,7 @@
 .method private setPlayerVolume()V
     .locals 3
 
-    .line 1245
+    .line 1288
     :try_start_0
     iget-boolean v0, p0, Lorg/telegram/messenger/MediaController;->isSilent:Z
 
@@ -13608,7 +13703,7 @@
 
     goto :goto_0
 
-    .line 1247
+    .line 1290
     :cond_0
     iget v0, p0, Lorg/telegram/messenger/MediaController;->audioFocus:I
 
@@ -13623,13 +13718,13 @@
     :cond_1
     const v0, 0x3e4ccccd    # 0.2f
 
-    .line 1252
+    .line 1295
     :goto_0
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v1, :cond_2
 
-    .line 1253
+    .line 1296
     iget v2, p0, Lorg/telegram/messenger/MediaController;->audioVolume:F
 
     mul-float/2addr v0, v2
@@ -13638,13 +13733,13 @@
 
     goto :goto_1
 
-    .line 1254
+    .line 1297
     :cond_2
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v1, :cond_3
 
-    .line 1255
+    .line 1298
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/VideoPlayer;->setVolume(F)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -13654,7 +13749,7 @@
     :catch_0
     move-exception v0
 
-    .line 1258
+    .line 1301
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_3
@@ -13665,20 +13760,20 @@
 .method private setUseFrontSpeaker(Z)V
     .locals 1
 
-    .line 1945
+    .line 1988
     iput-boolean p1, p0, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
 
-    .line 1946
+    .line 1989
     sget-object v0, Lorg/telegram/messenger/NotificationsController;->audioManager:Landroid/media/AudioManager;
 
     if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
-    .line 1948
+    .line 1991
     invoke-virtual {v0, p1}, Landroid/media/AudioManager;->setBluetoothScoOn(Z)V
 
-    .line 1949
+    .line 1992
     invoke-virtual {v0, p1}, Landroid/media/AudioManager;->setSpeakerphoneOn(Z)V
 
     goto :goto_0
@@ -13686,7 +13781,7 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 1951
+    .line 1994
     invoke-virtual {v0, p1}, Landroid/media/AudioManager;->setSpeakerphoneOn(Z)V
 
     :goto_0
@@ -13696,7 +13791,7 @@
 .method private sortPlaylist()V
     .locals 2
 
-    .line 2456
+    .line 2499
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     sget-object v1, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda43;->INSTANCE:Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda43;
@@ -13709,14 +13804,14 @@
 .method private startAudioAgain(Z)V
     .locals 7
 
-    .line 1965
+    .line 2008
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1969
+    .line 2012
     :cond_0
     iget v0, v0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
@@ -13742,12 +13837,12 @@
 
     invoke-virtual {v0, v1, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1970
+    .line 2013
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v0, :cond_4
 
-    .line 1971
+    .line 2014
     iget-boolean v1, p0, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
 
     if-eqz v1, :cond_1
@@ -13762,7 +13857,7 @@
 
     if-nez p1, :cond_3
 
-    .line 1973
+    .line 2016
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->getCurrentPosition()J
@@ -13775,14 +13870,14 @@
 
     if-gez p1, :cond_2
 
-    .line 1974
+    .line 2017
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const-wide/16 v0, 0x0
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->seekTo(J)V
 
-    .line 1976
+    .line 2019
     :cond_2
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -13790,7 +13885,7 @@
 
     goto :goto_4
 
-    .line 1978
+    .line 2021
     :cond_3
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
@@ -13798,7 +13893,7 @@
 
     goto :goto_4
 
-    .line 1981
+    .line 2024
     :cond_4
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -13811,21 +13906,21 @@
     :cond_5
     move v1, v5
 
-    .line 1982
+    .line 2025
     :goto_1
     iget-object v3, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 1983
+    .line 2026
     iget v4, v3, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
-    .line 1984
+    .line 2027
     iget v6, v3, Lorg/telegram/messenger/MessageObject;->audioPlayerDuration:I
 
     if-nez p1, :cond_7
 
     if-eqz v0, :cond_7
 
-    .line 1985
+    .line 2028
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->isPlaying()Z
 
     move-result v0
@@ -13847,28 +13942,28 @@
     :cond_6
     const/4 v0, 0x0
 
-    .line 1988
+    .line 2031
     iput v0, v3, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
     goto :goto_3
 
-    .line 1986
+    .line 2029
     :cond_7
     :goto_2
     iput v4, v3, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
-    .line 1990
+    .line 2033
     :goto_3
     invoke-virtual {p0, v5, v2}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZ)V
 
-    .line 1991
+    .line 2034
     invoke-virtual {p0, v3}, Lorg/telegram/messenger/MediaController;->playMessage(Lorg/telegram/messenger/MessageObject;)Z
 
     if-eqz p1, :cond_9
 
     if-eqz v1, :cond_8
 
-    .line 1994
+    .line 2037
     new-instance p1, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda31;
 
     invoke-direct {p1, p0, v3}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda31;-><init>(Lorg/telegram/messenger/MediaController;Lorg/telegram/messenger/MessageObject;)V
@@ -13879,7 +13974,7 @@
 
     goto :goto_4
 
-    .line 1996
+    .line 2039
     :cond_8
     invoke-virtual {p0, v3}, Lorg/telegram/messenger/MediaController;->pauseMessage(Lorg/telegram/messenger/MessageObject;)Z
 
@@ -13891,12 +13986,12 @@
 .method private startProgressTimer(Lorg/telegram/messenger/MessageObject;)V
     .locals 7
 
-    .line 1267
+    .line 1310
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->progressTimerSync:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1268
+    .line 1311
     :try_start_0
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->progressTimer:Ljava/util/Timer;
     :try_end_0
@@ -13904,13 +13999,13 @@
 
     if-eqz v1, :cond_0
 
-    .line 1270
+    .line 1313
     :try_start_1
     invoke-virtual {v1}, Ljava/util/Timer;->cancel()V
 
     const/4 v1, 0x0
 
-    .line 1271
+    .line 1314
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->progressTimer:Ljava/util/Timer;
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -13921,23 +14016,23 @@
     :catch_0
     move-exception v1
 
-    .line 1273
+    .line 1316
     :try_start_2
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1276
+    .line 1319
     :cond_0
     :goto_0
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getFileName()Ljava/lang/String;
 
-    .line 1277
+    .line 1320
     new-instance v1, Ljava/util/Timer;
 
     invoke-direct {v1}, Ljava/util/Timer;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->progressTimer:Ljava/util/Timer;
 
-    .line 1278
+    .line 1321
     new-instance v2, Lorg/telegram/messenger/MediaController$5;
 
     invoke-direct {v2, p0, p1}, Lorg/telegram/messenger/MediaController$5;-><init>(Lorg/telegram/messenger/MediaController;Lorg/telegram/messenger/MessageObject;)V
@@ -13948,7 +14043,7 @@
 
     invoke-virtual/range {v1 .. v6}, Ljava/util/Timer;->schedule(Ljava/util/TimerTask;JJ)V
 
-    .line 1331
+    .line 1374
     monitor-exit v0
 
     return-void
@@ -13967,9 +14062,9 @@
 .end method
 
 .method private startVideoConvertFromQueue()Z
-    .locals 7
+    .locals 4
 
-    .line 5078
+    .line 5150
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -13978,9 +14073,9 @@
 
     const/4 v1, 0x0
 
-    if-nez v0, :cond_4
+    if-nez v0, :cond_1
 
-    .line 5079
+    .line 5151
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -13989,176 +14084,57 @@
 
     check-cast v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;
 
-    .line 5080
+    .line 5152
     iget-object v2, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    .line 5081
+    .line 5153
     iget-object v3, p0, Lorg/telegram/messenger/MediaController;->videoConvertSync:Ljava/lang/Object;
 
     monitor-enter v3
 
     if-eqz v2, :cond_0
 
-    .line 5083
+    .line 5155
     :try_start_0
     iput-boolean v1, v2, Lorg/telegram/messenger/VideoEditedInfo;->canceled:Z
 
-    .line 5085
+    .line 5157
     :cond_0
     monitor-exit v3
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 5086
-    iget-boolean v2, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->foreground:Z
+    .line 5158
+    invoke-static {v0}, Lorg/telegram/messenger/MediaController$VideoConvertRunnable;->runConversion(Lorg/telegram/messenger/MediaController$VideoConvertMessage;)V
 
-    const/4 v3, 0x1
+    const/4 v0, 0x1
 
-    if-eqz v2, :cond_3
+    return v0
 
-    .line 5087
-    iget-object v2, v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->messageObject:Lorg/telegram/messenger/MessageObject;
+    :catchall_0
+    move-exception v0
 
-    .line 5088
-    new-instance v4, Landroid/content/Intent;
-
-    sget-object v5, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
-
-    const-class v6, Lorg/telegram/messenger/VideoEncodingService;
-
-    invoke-direct {v4, v5, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const-string/jumbo v5, "path"
-
-    .line 5089
-    iget-object v6, v2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
-
-    invoke-virtual {v4, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    const-string v5, "currentAccount"
-
-    .line 5090
-    iget v6, v2, Lorg/telegram/messenger/MessageObject;->currentAccount:I
-
-    invoke-virtual {v4, v5, v6}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
-
-    .line 5091
-    iget-object v5, v2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
-
-    if-eqz v5, :cond_2
-
-    iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
-
-    if-eqz v5, :cond_2
-
-    .line 5092
-    :goto_0
-    iget-object v5, v2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
-
-    iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
-
-    iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
-
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
-
-    move-result v5
-
-    if-ge v1, v5, :cond_2
-
-    .line 5093
-    iget-object v5, v2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
-
-    iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
-
-    iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
-
-    iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
-
-    invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;
-
-    .line 5094
-    instance-of v5, v5, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAnimated;
-
-    if-eqz v5, :cond_1
-
-    const-string v1, "gif"
-
-    .line 5095
-    invoke-virtual {v4, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    goto :goto_1
-
-    :cond_1
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_0
-
-    .line 5100
-    :cond_2
-    :goto_1
-    invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->getId()I
-
-    move-result v1
-
-    if-eqz v1, :cond_3
-
-    .line 5102
+    .line 5157
     :try_start_1
-    sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
-
-    invoke-virtual {v1, v4}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+    monitor-exit v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    goto :goto_2
-
-    :catchall_0
-    move-exception v1
-
-    .line 5104
-    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    .line 5108
-    :cond_3
-    :goto_2
-    invoke-static {v0}, Lorg/telegram/messenger/MediaController$VideoConvertRunnable;->runConversion(Lorg/telegram/messenger/MediaController$VideoConvertMessage;)V
-
-    return v3
-
-    :catchall_1
-    move-exception v0
-
-    .line 5085
-    :try_start_2
-    monitor-exit v3
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
     throw v0
 
-    :cond_4
+    :cond_1
     return v1
 .end method
 
 .method private stopProgressTimer()V
     .locals 2
 
-    .line 1335
+    .line 1378
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->progressTimerSync:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1336
+    .line 1379
     :try_start_0
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->progressTimer:Ljava/util/Timer;
     :try_end_0
@@ -14166,13 +14142,13 @@
 
     if-eqz v1, :cond_0
 
-    .line 1338
+    .line 1381
     :try_start_1
     invoke-virtual {v1}, Ljava/util/Timer;->cancel()V
 
     const/4 v1, 0x0
 
-    .line 1339
+    .line 1382
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->progressTimer:Ljava/util/Timer;
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -14183,11 +14159,11 @@
     :catch_0
     move-exception v1
 
-    .line 1341
+    .line 1384
     :try_start_2
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1344
+    .line 1387
     :cond_0
     :goto_0
     monitor-exit v0
@@ -14214,18 +14190,18 @@
 
     if-eqz p1, :cond_1
 
-    .line 3965
+    .line 4008
     iget-object v4, p0, Lorg/telegram/messenger/MediaController;->recordingAudio:Lorg/telegram/tgnet/TLRPC$TL_document;
 
-    .line 3966
+    .line 4009
     iget-object v3, p0, Lorg/telegram/messenger/MediaController;->recordingAudioFile:Ljava/io/File;
 
-    .line 3967
+    .line 4010
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_0
 
-    .line 3968
+    .line 4011
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -14248,7 +14224,7 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 3970
+    .line 4013
     :cond_0
     iget-object v9, p0, Lorg/telegram/messenger/MediaController;->fileEncodingQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -14272,37 +14248,37 @@
 
     goto :goto_0
 
-    .line 4010
+    .line 4053
     :cond_1
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->recordingAudioFile:Ljava/io/File;
 
     invoke-static {p1}, Lorg/telegram/messenger/AutoDeleteMediaTask;->unlockFile(Ljava/io/File;)V
 
-    .line 4011
+    .line 4054
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->recordingAudioFile:Ljava/io/File;
 
     if-eqz p1, :cond_2
 
-    .line 4012
+    .line 4055
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
-    .line 4014
+    .line 4057
     :cond_2
     invoke-virtual {p0, v0}, Lorg/telegram/messenger/MediaController;->requestAudioFocus(Z)V
 
     :goto_0
     const/4 p1, 0x0
 
-    .line 4017
+    .line 4060
     :try_start_0
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->audioRecorder:Landroid/media/AudioRecord;
 
     if-eqz p2, :cond_3
 
-    .line 4018
+    .line 4061
     invoke-virtual {p2}, Landroid/media/AudioRecord;->release()V
 
-    .line 4019
+    .line 4062
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->audioRecorder:Landroid/media/AudioRecord;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -14312,18 +14288,18 @@
     :catch_0
     move-exception p2
 
-    .line 4022
+    .line 4065
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 4024
+    .line 4067
     :cond_3
     :goto_1
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->recordingAudio:Lorg/telegram/tgnet/TLRPC$TL_document;
 
-    .line 4025
+    .line 4068
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->recordingAudioFile:Ljava/io/File;
 
-    .line 4026
+    .line 4069
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->manualRecording:Z
 
     return-void
@@ -14340,10 +14316,10 @@
         }
     .end annotation
 
-    .line 2581
+    .line 2624
     iget v0, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
-    .line 2582
+    .line 2625
     sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -14369,7 +14345,7 @@
     :cond_0
     move v1, v3
 
-    .line 2584
+    .line 2627
     :goto_0
     iget v4, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
@@ -14379,7 +14355,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 2586
+    .line 2629
     :goto_1
     iget v4, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
@@ -14393,7 +14369,7 @@
 
     if-ltz v4, :cond_2
 
-    .line 2587
+    .line 2630
     invoke-virtual {p1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -14402,14 +14378,14 @@
 
     if-eqz v4, :cond_1
 
-    .line 2588
+    .line 2631
     iget-boolean v4, v4, Lorg/telegram/messenger/MessageObject;->mediaExists:Z
 
     if-eqz v4, :cond_1
 
     goto :goto_2
 
-    .line 2591
+    .line 2634
     :cond_1
     iget v4, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
@@ -14419,7 +14395,7 @@
 
     goto :goto_1
 
-    .line 2594
+    .line 2637
     :cond_2
     :goto_2
     iget v4, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
@@ -14441,7 +14417,7 @@
 
     goto :goto_9
 
-    .line 2595
+    .line 2638
     :cond_4
     :goto_3
     iget v4, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
@@ -14468,7 +14444,7 @@
 
     if-eqz v1, :cond_b
 
-    .line 2597
+    .line 2640
     :goto_5
     iget v1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
@@ -14491,7 +14467,7 @@
     :cond_6
     if-lt v1, v0, :cond_8
 
-    .line 2598
+    .line 2641
     :goto_6
     iget v1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
@@ -14503,14 +14479,14 @@
 
     if-eqz v1, :cond_7
 
-    .line 2599
+    .line 2642
     iget-boolean v1, v1, Lorg/telegram/messenger/MessageObject;->mediaExists:Z
 
     if-eqz v1, :cond_7
 
     goto :goto_7
 
-    .line 2602
+    .line 2645
     :cond_7
     iget v1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
@@ -14520,7 +14496,7 @@
 
     goto :goto_5
 
-    .line 2604
+    .line 2647
     :cond_8
     :goto_7
     iget p2, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
@@ -14535,7 +14511,7 @@
 
     if-gez p2, :cond_b
 
-    .line 2605
+    .line 2648
     :cond_9
     iget p2, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
@@ -14565,7 +14541,7 @@
 .method private updateVideoState(Lorg/telegram/messenger/MessageObject;[IZZI)V
     .locals 4
 
-    .line 2861
+    .line 2904
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-nez v0, :cond_0
@@ -14583,7 +14559,7 @@
 
     if-eq p5, v2, :cond_1
 
-    .line 2866
+    .line 2909
     :try_start_0
     iget-object v3, p0, Lorg/telegram/messenger/MediaController;->baseActivity:Landroid/app/Activity;
 
@@ -14600,12 +14576,12 @@
     :catch_0
     move-exception v0
 
-    .line 2868
+    .line 2911
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_0
 
-    .line 2872
+    .line 2915
     :cond_1
     :try_start_1
     iget-object v3, p0, Lorg/telegram/messenger/MediaController;->baseActivity:Landroid/app/Activity;
@@ -14623,7 +14599,7 @@
     :catch_1
     move-exception v0
 
-    .line 2874
+    .line 2917
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -14633,10 +14609,10 @@
 
     if-ne p5, v0, :cond_4
 
-    .line 2878
+    .line 2921
     iput-boolean v2, p0, Lorg/telegram/messenger/MediaController;->playerWasReady:Z
 
-    .line 2879
+    .line 2922
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz p2, :cond_3
@@ -14655,13 +14631,13 @@
 
     if-eqz p2, :cond_3
 
-    .line 2880
+    .line 2923
     :cond_2
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->setLoadingRunnable:Ljava/lang/Runnable;
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 2881
+    .line 2924
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -14676,7 +14652,7 @@
 
     invoke-virtual {p1, p2, v2, v3}, Lorg/telegram/messenger/FileLoader;->removeLoadingVideo(Lorg/telegram/tgnet/TLRPC$Document;ZZ)V
 
-    .line 2883
+    .line 2926
     :cond_3
     iput-boolean v2, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayoutReady:Z
 
@@ -14689,7 +14665,7 @@
 
     if-eqz p4, :cond_a
 
-    .line 2885
+    .line 2928
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz p1, :cond_a
@@ -14708,20 +14684,20 @@
 
     if-eqz p1, :cond_a
 
-    .line 2886
+    .line 2929
     :cond_5
     iget-boolean p1, p0, Lorg/telegram/messenger/MediaController;->playerWasReady:Z
 
     if-eqz p1, :cond_6
 
-    .line 2887
+    .line 2930
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->setLoadingRunnable:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     goto :goto_1
 
-    .line 2889
+    .line 2932
     :cond_6
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->setLoadingRunnable:Ljava/lang/Runnable;
 
@@ -14731,7 +14707,7 @@
 
     goto :goto_1
 
-    .line 2892
+    .line 2935
     :cond_7
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -14743,7 +14719,7 @@
 
     if-ne p5, v1, :cond_a
 
-    .line 2893
+    .line 2936
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isVideo()Z
@@ -14760,7 +14736,7 @@
 
     if-ge p1, v1, :cond_9
 
-    .line 2894
+    .line 2937
     :cond_8
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -14770,7 +14746,7 @@
 
     if-eqz p2, :cond_a
 
-    .line 2896
+    .line 2939
     aget p1, p2, v3
 
     add-int/2addr p1, v2
@@ -14779,7 +14755,7 @@
 
     goto :goto_1
 
-    .line 2899
+    .line 2942
     :cond_9
     invoke-virtual {p0, v2, v2, v2, v3}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZZZ)V
 
@@ -14798,7 +14774,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 5058
+    .line 5117
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -14809,7 +14785,7 @@
 
     const/4 v0, 0x0
 
-    .line 5059
+    .line 5118
     :goto_0
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
 
@@ -14819,7 +14795,7 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 5060
+    .line 5119
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -14828,10 +14804,10 @@
 
     check-cast v1, Lorg/telegram/messenger/MediaController$VideoConvertMessage;
 
-    .line 5061
+    .line 5120
     iget-object v2, v1, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 5062
+    .line 5121
     invoke-virtual {v2, p1}, Lorg/telegram/messenger/MessageObject;->equals(Lorg/telegram/messenger/MessageObject;)Z
 
     move-result v3
@@ -14844,40 +14820,52 @@
 
     if-ne v2, v3, :cond_1
 
+    const/4 p1, 0x1
+
     if-nez v0, :cond_0
 
-    .line 5064
-    iget-object p1, p0, Lorg/telegram/messenger/MediaController;->videoConvertSync:Ljava/lang/Object;
+    .line 5123
+    iget-object v2, p0, Lorg/telegram/messenger/MediaController;->videoConvertSync:Ljava/lang/Object;
 
-    monitor-enter p1
+    monitor-enter v2
 
-    .line 5065
+    .line 5124
     :try_start_0
     iget-object v0, v1, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    const/4 v1, 0x1
+    iput-boolean p1, v0, Lorg/telegram/messenger/VideoEditedInfo;->canceled:Z
 
-    iput-boolean v1, v0, Lorg/telegram/messenger/VideoEditedInfo;->canceled:Z
-
-    .line 5066
-    monitor-exit p1
+    .line 5125
+    monitor-exit v2
 
     goto :goto_1
 
     :catchall_0
-    move-exception v0
+    move-exception p1
 
-    monitor-exit p1
+    monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v0
+    throw p1
 
-    .line 5068
+    .line 5127
     :cond_0
-    iget-object p1, p0, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
+    iget-object v1, p0, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
 
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;
+
+    .line 5128
+    iget-object v1, p0, Lorg/telegram/messenger/MediaController;->foregroundConvertingMessages:Ljava/util/ArrayList;
+
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    .line 5129
+    invoke-direct {p0, p1}, Lorg/telegram/messenger/MediaController;->checkForegroundConvertMessage(Z)V
 
     goto :goto_1
 
@@ -14894,7 +14882,7 @@
 .method protected checkIsNextMediaFileDownloaded()V
     .locals 1
 
-    .line 2614
+    .line 2657
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v0, :cond_1
@@ -14907,7 +14895,7 @@
 
     goto :goto_0
 
-    .line 2617
+    .line 2660
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
@@ -14923,21 +14911,21 @@
 .method public checkVolumeBarUI()V
     .locals 6
 
-    .line 3131
+    .line 3174
     iget-boolean v0, p0, Lorg/telegram/messenger/MediaController;->isSilent:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 3135
+    .line 3178
     :cond_0
     :try_start_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 3136
+    .line 3179
     sget-wide v2, Lorg/telegram/messenger/MediaController;->volumeBarLastTimeShown:J
 
     sub-long v2, v0, v2
@@ -14954,7 +14942,7 @@
 
     return-void
 
-    .line 3139
+    .line 3182
     :cond_1
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -14966,7 +14954,7 @@
 
     check-cast v2, Landroid/media/AudioManager;
 
-    .line 3140
+    .line 3183
     iget-boolean v3, p0, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
 
     if-eqz v3, :cond_2
@@ -14978,7 +14966,7 @@
     :cond_2
     const/4 v3, 0x3
 
-    .line 3141
+    .line 3184
     :goto_0
     invoke-virtual {v2, v3}, Landroid/media/AudioManager;->getStreamVolume(I)I
 
@@ -14988,10 +14976,10 @@
 
     const/4 v5, 0x1
 
-    .line 3143
+    .line 3186
     invoke-virtual {v2, v3, v4, v5}, Landroid/media/AudioManager;->adjustStreamVolume(III)V
 
-    .line 3144
+    .line 3187
     sput-wide v0, Lorg/telegram/messenger/MediaController;->volumeBarLastTimeShown:J
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -15006,17 +14994,17 @@
 
     const/4 v0, 0x1
 
-    .line 1348
+    .line 1391
     invoke-virtual {p0, v0, v0}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZ)V
 
     const/4 v0, 0x0
 
-    .line 1349
+    .line 1392
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->audioInfo:Lorg/telegram/messenger/audioinfo/AudioInfo;
 
     const/4 v1, 0x0
 
-    .line 1350
+    .line 1393
     iput-boolean v1, p0, Lorg/telegram/messenger/MediaController;->playMusicAgain:Z
 
     :goto_0
@@ -15024,7 +15012,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 1352
+    .line 1395
     invoke-static {v1}, Lorg/telegram/messenger/DownloadController;->getInstance(I)Lorg/telegram/messenger/DownloadController;
 
     move-result-object v2
@@ -15035,27 +15023,27 @@
 
     goto :goto_0
 
-    .line 1354
+    .line 1397
     :cond_0
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 1355
+    .line 1398
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->generatingWaveform:Ljava/util/HashMap;
 
     invoke-virtual {v1}, Ljava/util/HashMap;->clear()V
 
-    .line 1356
+    .line 1399
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
-    .line 1357
+    .line 1400
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylistMap:Landroid/util/SparseArray;
 
-    .line 1358
+    .line 1401
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->clearPlaylist()V
 
-    .line 1359
+    .line 1402
     invoke-virtual {p0, v0}, Lorg/telegram/messenger/MediaController;->cancelVideoConvert(Lorg/telegram/messenger/MessageObject;)V
 
     return-void
@@ -15066,7 +15054,7 @@
 
     const/4 v0, 0x0
 
-    .line 2084
+    .line 2127
     invoke-virtual {p0, p1, p2, v0, v0}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZZZ)V
 
     return-void
@@ -15075,7 +15063,7 @@
 .method public cleanupPlayer(ZZZZ)V
     .locals 10
 
-    .line 2088
+    .line 2131
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const-wide/16 v1, 0x0
@@ -15090,20 +15078,20 @@
 
     if-eqz v0, :cond_2
 
-    .line 2089
+    .line 2132
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p4, :cond_0
 
-    .line 2090
+    .line 2133
     invoke-virtual {p4}, Landroid/animation/ValueAnimator;->removeAllUpdateListeners()V
 
-    .line 2091
+    .line 2134
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p4}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 2094
+    .line 2137
     :cond_0
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -15123,12 +15111,12 @@
 
     if-nez p4, :cond_1
 
-    .line 2095
+    .line 2138
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     new-array v0, v3, [F
 
-    .line 2096
+    .line 2139
     iget v7, p0, Lorg/telegram/messenger/MediaController;->audioVolume:F
 
     aput v7, v0, v6
@@ -15141,14 +15129,14 @@
 
     move-result-object v0
 
-    .line 2097
+    .line 2140
     new-instance v7, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda0;
 
     invoke-direct {v7, p0, p4}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/MediaController;Lorg/telegram/ui/Components/VideoPlayer;)V
 
     invoke-virtual {v0, v7}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 2106
+    .line 2149
     new-instance v7, Lorg/telegram/messenger/MediaController$6;
 
     invoke-direct {v7, p0, p4}, Lorg/telegram/messenger/MediaController$6;-><init>(Lorg/telegram/messenger/MediaController;Lorg/telegram/ui/Components/VideoPlayer;)V
@@ -15157,15 +15145,15 @@
 
     const-wide/16 v7, 0x12c
 
-    .line 2116
+    .line 2159
     invoke-virtual {v0, v7, v8}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 2117
+    .line 2160
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 2120
+    .line 2163
     :cond_1
     :try_start_0
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
@@ -15179,47 +15167,47 @@
     :catch_0
     move-exception p4
 
-    .line 2122
+    .line 2165
     invoke-static {p4}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2125
+    .line 2168
     :goto_0
     iput-object v5, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 2126
+    .line 2169
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-static {p4}, Lorg/telegram/ui/ActionBar/Theme;->unrefAudioVisualizeDrawable(Lorg/telegram/messenger/MessageObject;)V
 
     goto/16 :goto_3
 
-    .line 2127
+    .line 2170
     :cond_2
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v0, :cond_5
 
-    .line 2128
+    .line 2171
     iput-object v5, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
-    .line 2129
+    .line 2172
     iput-object v5, p0, Lorg/telegram/messenger/MediaController;->currentTextureViewContainer:Landroid/widget/FrameLayout;
 
-    .line 2130
+    .line 2173
     iput-boolean v6, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayoutReady:Z
 
-    .line 2131
+    .line 2174
     iput-boolean v6, p0, Lorg/telegram/messenger/MediaController;->isDrawingWasReady:Z
 
-    .line 2132
+    .line 2175
     iput-object v5, p0, Lorg/telegram/messenger/MediaController;->currentTextureView:Landroid/view/TextureView;
 
-    .line 2133
+    .line 2176
     iput-object v5, p0, Lorg/telegram/messenger/MediaController;->goingToShowMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz p4, :cond_3
 
-    .line 2135
+    .line 2178
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v0
@@ -15228,12 +15216,12 @@
 
     invoke-virtual {v0, v7}, Lorg/telegram/ui/PhotoViewer;->injectVideoPlayer(Lorg/telegram/ui/Components/VideoPlayer;)V
 
-    .line 2136
+    .line 2179
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->goingToShowMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 2137
+    .line 2180
     iget v0, v0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -15256,13 +15244,13 @@
 
     goto :goto_1
 
-    .line 2139
+    .line 2182
     :cond_3
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->getCurrentPosition()J
 
     move-result-wide v7
 
-    .line 2140
+    .line 2183
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v0, :cond_4
@@ -15277,14 +15265,14 @@
 
     if-lez v0, :cond_4
 
-    .line 2141
+    .line 2184
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     long-to-int v7, v7
 
     iput v7, v0, Lorg/telegram/messenger/MessageObject;->audioProgressMs:I
 
-    .line 2142
+    .line 2185
     iget v0, v0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -15305,16 +15293,16 @@
 
     invoke-virtual {v0, v7, v8}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2144
+    .line 2187
     :cond_4
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/VideoPlayer;->releasePlayer(Z)V
 
-    .line 2145
+    .line 2188
     iput-object v5, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 2148
+    .line 2191
     :goto_1
     :try_start_1
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->baseActivity:Landroid/app/Activity;
@@ -15334,10 +15322,10 @@
     :catch_1
     move-exception v0
 
-    .line 2150
+    .line 2193
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2152
+    .line 2195
     :goto_2
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
@@ -15345,12 +15333,12 @@
 
     if-nez p4, :cond_5
 
-    .line 2153
+    .line 2196
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->setLoadingRunnable:Ljava/lang/Runnable;
 
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 2154
+    .line 2197
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iget p4, p4, Lorg/telegram/messenger/MessageObject;->currentAccount:I
@@ -15367,28 +15355,28 @@
 
     invoke-virtual {p4, v0, v4, v6}, Lorg/telegram/messenger/FileLoader;->removeLoadingVideo(Lorg/telegram/tgnet/TLRPC$Document;ZZ)V
 
-    .line 2157
+    .line 2200
     :cond_5
     :goto_3
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->stopProgressTimer()V
 
-    .line 2158
+    .line 2201
     iput-wide v1, p0, Lorg/telegram/messenger/MediaController;->lastProgress:J
 
-    .line 2159
+    .line 2202
     iput-boolean v6, p0, Lorg/telegram/messenger/MediaController;->isPaused:Z
 
-    .line 2161
+    .line 2204
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz p4, :cond_f
 
-    .line 2162
+    .line 2205
     iget-boolean v0, p0, Lorg/telegram/messenger/MediaController;->downloadingCurrentMessage:Z
 
     if-eqz v0, :cond_6
 
-    .line 2163
+    .line 2206
     iget p4, p4, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {p4}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -15403,16 +15391,16 @@
 
     invoke-virtual {p4, v0}, Lorg/telegram/messenger/FileLoader;->cancelLoadFile(Lorg/telegram/tgnet/TLRPC$Document;)V
 
-    .line 2165
+    .line 2208
     :cond_6
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz p1, :cond_7
 
-    .line 2167
+    .line 2210
     invoke-virtual {p4}, Lorg/telegram/messenger/MessageObject;->resetPlayingProgress()V
 
-    .line 2168
+    .line 2211
     iget v0, p4, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -15443,45 +15431,45 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2170
+    .line 2213
     :cond_7
     iput-object v5, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 2171
+    .line 2214
     iput-boolean v6, p0, Lorg/telegram/messenger/MediaController;->downloadingCurrentMessage:Z
 
     if-eqz p1, :cond_e
 
-    .line 2173
+    .line 2216
     sget-object p1, Lorg/telegram/messenger/NotificationsController;->audioManager:Landroid/media/AudioManager;
 
     invoke-virtual {p1, p0}, Landroid/media/AudioManager;->abandonAudioFocus(Landroid/media/AudioManager$OnAudioFocusChangeListener;)I
 
-    .line 2174
+    .line 2217
     iput v6, p0, Lorg/telegram/messenger/MediaController;->hasAudioFocus:I
 
     const/4 p1, -0x1
 
-    .line 2176
+    .line 2219
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_9
 
     if-eqz p3, :cond_8
 
-    .line 2177
+    .line 2220
     invoke-virtual {v0, p4}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
 
     move-result p1
 
     if-ltz p1, :cond_8
 
-    .line 2178
+    .line 2221
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 2179
+    .line 2222
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylistMap:Landroid/util/SparseArray;
 
     invoke-virtual {p4}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -15490,7 +15478,7 @@
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 2180
+    .line 2223
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -15499,22 +15487,22 @@
 
     if-eqz v0, :cond_9
 
-    .line 2181
+    .line 2224
     iput-object v5, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
-    .line 2182
+    .line 2225
     iput-object v5, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylistMap:Landroid/util/SparseArray;
 
     goto :goto_4
 
-    .line 2185
+    .line 2228
     :cond_8
     iput-object v5, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
-    .line 2186
+    .line 2229
     iput-object v5, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylistMap:Landroid/util/SparseArray;
 
-    .line 2189
+    .line 2232
     :cond_9
     :goto_4
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
@@ -15527,7 +15515,7 @@
 
     if-ge p1, v0, :cond_b
 
-    .line 2190
+    .line 2233
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
     invoke-virtual {p4, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -15536,10 +15524,10 @@
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    .line 2191
+    .line 2234
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/MediaController;->playMessage(Lorg/telegram/messenger/MessageObject;)Z
 
-    .line 2193
+    .line 2236
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isRoundVideo()Z
 
     move-result p1
@@ -15550,10 +15538,10 @@
 
     if-eqz p1, :cond_a
 
-    .line 2194
+    .line 2237
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Components/PipRoundVideoView;->close(Z)V
 
-    .line 2195
+    .line 2238
     iput-object v5, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     :cond_a
@@ -15561,7 +15549,7 @@
 
     goto :goto_5
 
-    .line 2198
+    .line 2241
     :cond_b
     invoke-virtual {p4}, Lorg/telegram/messenger/MessageObject;->isVoice()Z
 
@@ -15582,10 +15570,10 @@
 
     if-eqz p1, :cond_d
 
-    .line 2199
+    .line 2242
     invoke-virtual {p0}, Lorg/telegram/messenger/MediaController;->startRecordingIfFromSpeaker()V
 
-    .line 2201
+    .line 2244
     :cond_d
     iget p1, p4, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
@@ -15615,18 +15603,18 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2202
+    .line 2245
     iput v6, p0, Lorg/telegram/messenger/MediaController;->pipSwitchingState:I
 
-    .line 2203
+    .line 2246
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     if-eqz p1, :cond_e
 
-    .line 2204
+    .line 2247
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Components/PipRoundVideoView;->close(Z)V
 
-    .line 2205
+    .line 2248
     iput-object v5, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     :cond_e
@@ -15635,7 +15623,7 @@
     :goto_5
     if-eqz p2, :cond_10
 
-    .line 2210
+    .line 2253
     new-instance p2, Landroid/content/Intent;
 
     sget-object p4, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -15644,7 +15632,7 @@
 
     invoke-direct {p2, p4, v0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2211
+    .line 2254
     sget-object p4, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {p4, p2}, Landroid/content/Context;->stopService(Landroid/content/Intent;)Z
@@ -15660,20 +15648,20 @@
 
     if-eqz p3, :cond_11
 
-    .line 2214
+    .line 2257
     invoke-static {v4}, Lorg/telegram/messenger/SharedConfig;->enabledRaiseTo(Z)Z
 
     move-result p1
 
     if-nez p1, :cond_11
 
-    .line 2215
+    .line 2258
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->raiseChat:Lorg/telegram/ui/ChatActivity;
 
-    .line 2216
+    .line 2259
     invoke-virtual {p0, p1, v6, v6}, Lorg/telegram/messenger/MediaController;->stopRaiseToEarSensors(Lorg/telegram/ui/ChatActivity;ZZ)V
 
-    .line 2217
+    .line 2260
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->raiseChat:Lorg/telegram/ui/ChatActivity;
 
     :cond_11
@@ -15683,7 +15671,7 @@
 .method public currentPlaylistIsGlobalSearch()Z
     .locals 1
 
-    .line 5538
+    .line 5591
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playlistGlobalSearchParams:Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;
 
     if-eqz v0, :cond_0
@@ -15702,7 +15690,7 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 6
 
-    .line 1501
+    .line 1544
     sget v0, Lorg/telegram/messenger/NotificationCenter;->fileLoaded:I
 
     const/4 v1, 0x1
@@ -15717,7 +15705,7 @@
 
     goto/16 :goto_7
 
-    .line 1519
+    .line 1562
     :cond_0
     sget p2, Lorg/telegram/messenger/NotificationCenter;->messagesDeleted:I
 
@@ -15725,7 +15713,7 @@
 
     if-ne p1, p2, :cond_4
 
-    .line 1520
+    .line 1563
     aget-object p1, p3, v0
 
     check-cast p1, Ljava/lang/Boolean;
@@ -15738,7 +15726,7 @@
 
     return-void
 
-    .line 1524
+    .line 1567
     :cond_1
     aget-object p1, p3, v1
 
@@ -15748,17 +15736,17 @@
 
     move-result-wide p1
 
-    .line 1525
+    .line 1568
     aget-object p3, p3, v2
 
     check-cast p3, Ljava/util/ArrayList;
 
-    .line 1526
+    .line 1569
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v0, :cond_2
 
-    .line 1527
+    .line 1570
     iget-object v3, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
@@ -15769,7 +15757,7 @@
 
     if-nez v3, :cond_2
 
-    .line 1528
+    .line 1571
     invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v0
@@ -15784,10 +15772,10 @@
 
     if-eqz v0, :cond_2
 
-    .line 1529
+    .line 1572
     invoke-virtual {p0, v1, v1}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZ)V
 
-    .line 1533
+    .line 1576
     :cond_2
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
@@ -15799,7 +15787,7 @@
 
     if-nez v0, :cond_1a
 
-    .line 1534
+    .line 1577
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -15808,7 +15796,7 @@
 
     check-cast v0, Lorg/telegram/messenger/MessageObject;
 
-    .line 1535
+    .line 1578
     iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
@@ -15819,7 +15807,7 @@
 
     if-nez p1, :cond_1a
 
-    .line 1536
+    .line 1579
     :goto_0
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -15827,14 +15815,14 @@
 
     if-ge v2, p1, :cond_1a
 
-    .line 1537
+    .line 1580
     invoke-virtual {p3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
     check-cast p1, Ljava/lang/Integer;
 
-    .line 1538
+    .line 1581
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylistMap:Landroid/util/SparseArray;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -15847,7 +15835,7 @@
 
     check-cast p2, Lorg/telegram/messenger/MessageObject;
 
-    .line 1539
+    .line 1582
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylistMap:Landroid/util/SparseArray;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
@@ -15858,7 +15846,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 1541
+    .line 1584
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -15868,13 +15856,13 @@
 
     goto :goto_0
 
-    .line 1546
+    .line 1589
     :cond_4
     sget p2, Lorg/telegram/messenger/NotificationCenter;->removeAllMessagesFromDialog:I
 
     if-ne p1, p2, :cond_5
 
-    .line 1547
+    .line 1590
     aget-object p1, p3, v2
 
     check-cast p1, Ljava/lang/Long;
@@ -15883,7 +15871,7 @@
 
     move-result-wide p1
 
-    .line 1548
+    .line 1591
     iget-object p3, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz p3, :cond_1a
@@ -15896,18 +15884,18 @@
 
     if-nez p1, :cond_1a
 
-    .line 1549
+    .line 1592
     invoke-virtual {p0, v2, v1}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZ)V
 
     goto/16 :goto_8
 
-    .line 1551
+    .line 1594
     :cond_5
     sget p2, Lorg/telegram/messenger/NotificationCenter;->musicDidLoad:I
 
     if-ne p1, p2, :cond_9
 
-    .line 1552
+    .line 1595
     aget-object p1, p3, v2
 
     check-cast p1, Ljava/lang/Long;
@@ -15916,7 +15904,7 @@
 
     move-result-wide p1
 
-    .line 1553
+    .line 1596
     iget-object v3, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v3, :cond_1a
@@ -15947,27 +15935,27 @@
 
     if-nez p1, :cond_1a
 
-    .line 1554
+    .line 1597
     aget-object p1, p3, v1
 
     check-cast p1, Ljava/util/ArrayList;
 
-    .line 1555
+    .line 1598
     aget-object p2, p3, v0
 
     check-cast p2, Ljava/util/ArrayList;
 
-    .line 1556
+    .line 1599
     iget-object p3, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {p3, v2, p1}, Ljava/util/ArrayList;->addAll(ILjava/util/Collection;)Z
 
-    .line 1557
+    .line 1600
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 1558
+    .line 1601
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -15979,7 +15967,7 @@
     :goto_1
     if-ge p2, p1, :cond_6
 
-    .line 1559
+    .line 1602
     iget-object p3, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {p3, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -15988,7 +15976,7 @@
 
     check-cast p3, Lorg/telegram/messenger/MessageObject;
 
-    .line 1560
+    .line 1603
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playlistMap:Ljava/util/HashMap;
 
     invoke-virtual {p3}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -16001,7 +15989,7 @@
 
     invoke-virtual {v0, v1, p3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1561
+    .line 1604
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playlistMaxId:[I
 
     aget v1, v0, v2
@@ -16020,27 +16008,27 @@
 
     goto :goto_1
 
-    .line 1563
+    .line 1606
     :cond_6
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->sortPlaylist()V
 
-    .line 1564
+    .line 1607
     sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->shuffleMusic:Z
 
     if-eqz p1, :cond_7
 
-    .line 1565
+    .line 1608
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->buildShuffledPlayList()V
 
     goto :goto_2
 
-    .line 1566
+    .line 1609
     :cond_7
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz p1, :cond_8
 
-    .line 1567
+    .line 1610
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
@@ -16049,10 +16037,10 @@
 
     if-ltz p1, :cond_8
 
-    .line 1569
+    .line 1612
     iput p1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
-    .line 1572
+    .line 1615
     :cond_8
     :goto_2
     invoke-static {}, Lorg/telegram/tgnet/ConnectionsManager;->generateClassGuid()I
@@ -16063,7 +16051,7 @@
 
     goto/16 :goto_8
 
-    .line 1574
+    .line 1617
     :cond_9
     sget p2, Lorg/telegram/messenger/NotificationCenter;->mediaDidLoad:I
 
@@ -16071,7 +16059,7 @@
 
     const/4 p1, 0x3
 
-    .line 1575
+    .line 1618
     aget-object p1, p3, p1
 
     check-cast p1, Ljava/lang/Integer;
@@ -16080,7 +16068,7 @@
 
     move-result p1
 
-    .line 1576
+    .line 1619
     iget p2, p0, Lorg/telegram/messenger/MediaController;->playlistClassGuid:I
 
     if-ne p1, p2, :cond_1a
@@ -16089,7 +16077,7 @@
 
     if-eqz p1, :cond_1a
 
-    .line 1577
+    .line 1620
     aget-object p1, p3, v2
 
     check-cast p1, Ljava/lang/Long;
@@ -16100,22 +16088,22 @@
 
     const/4 v3, 0x4
 
-    .line 1578
+    .line 1621
     aget-object v3, p3, v3
 
     check-cast v3, Ljava/lang/Integer;
 
     invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
 
-    .line 1580
+    .line 1623
     aget-object v0, p3, v0
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 1581
+    .line 1624
     invoke-static {p1, p2}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
-    .line 1582
+    .line 1625
     iget-wide v3, p0, Lorg/telegram/messenger/MediaController;->playlistMergeDialogId:J
 
     cmp-long p1, p1, v3
@@ -16129,7 +16117,7 @@
     :cond_a
     move p1, v2
 
-    .line 1583
+    .line 1626
     :goto_3
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -16137,7 +16125,7 @@
 
     if-nez p2, :cond_b
 
-    .line 1584
+    .line 1627
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->playlistEndReached:[Z
 
     const/4 v3, 0x5
@@ -16157,7 +16145,7 @@
 
     move p3, p2
 
-    .line 1587
+    .line 1630
     :goto_4
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -16165,14 +16153,14 @@
 
     if-ge p2, v3, :cond_d
 
-    .line 1588
+    .line 1631
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lorg/telegram/messenger/MessageObject;
 
-    .line 1589
+    .line 1632
     iget-object v4, p0, Lorg/telegram/messenger/MediaController;->playlistMap:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -16194,12 +16182,12 @@
     :cond_c
     add-int/lit8 p3, p3, 0x1
 
-    .line 1593
+    .line 1636
     iget-object v4, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2, v3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 1594
+    .line 1637
     iget-object v4, p0, Lorg/telegram/messenger/MediaController;->playlistMap:Ljava/util/HashMap;
 
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -16212,7 +16200,7 @@
 
     invoke-virtual {v4, v5, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1595
+    .line 1638
     iget-object v4, p0, Lorg/telegram/messenger/MediaController;->playlistMaxId:[I
 
     aget v5, v4, p1
@@ -16232,11 +16220,11 @@
 
     goto :goto_4
 
-    .line 1597
+    .line 1640
     :cond_d
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->sortPlaylist()V
 
-    .line 1598
+    .line 1641
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -16247,25 +16235,25 @@
 
     if-ltz p1, :cond_e
 
-    .line 1600
+    .line 1643
     iput p1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
-    .line 1602
+    .line 1645
     :cond_e
     iput-boolean v2, p0, Lorg/telegram/messenger/MediaController;->loadingPlaylist:Z
 
-    .line 1603
+    .line 1646
     sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->shuffleMusic:Z
 
     if-eqz p1, :cond_f
 
-    .line 1604
+    .line 1647
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->buildShuffledPlayList()V
 
     :cond_f
     if-eqz p3, :cond_1a
 
-    .line 1607
+    .line 1650
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
@@ -16288,13 +16276,13 @@
 
     goto/16 :goto_8
 
-    .line 1610
+    .line 1653
     :cond_10
     sget p2, Lorg/telegram/messenger/NotificationCenter;->didReceiveNewMessages:I
 
     if-ne p1, p2, :cond_15
 
-    .line 1611
+    .line 1654
     aget-object p1, p3, v0
 
     check-cast p1, Ljava/lang/Boolean;
@@ -16307,7 +16295,7 @@
 
     return-void
 
-    .line 1615
+    .line 1658
     :cond_11
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
@@ -16319,7 +16307,7 @@
 
     if-nez p1, :cond_1a
 
-    .line 1616
+    .line 1659
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -16328,7 +16316,7 @@
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    .line 1617
+    .line 1660
     aget-object p2, p3, v2
 
     check-cast p2, Ljava/lang/Long;
@@ -16337,7 +16325,7 @@
 
     move-result-wide v3
 
-    .line 1618
+    .line 1661
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
     move-result-wide p1
@@ -16346,12 +16334,12 @@
 
     if-nez p1, :cond_1a
 
-    .line 1619
+    .line 1662
     aget-object p1, p3, v1
 
     check-cast p1, Ljava/util/ArrayList;
 
-    .line 1620
+    .line 1663
     :goto_6
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -16359,14 +16347,14 @@
 
     if-ge v2, p2, :cond_1a
 
-    .line 1621
+    .line 1664
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Lorg/telegram/messenger/MessageObject;
 
-    .line 1622
+    .line 1665
     invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->isVoice()Z
 
     move-result p3
@@ -16396,13 +16384,13 @@
 
     if-nez p3, :cond_14
 
-    .line 1623
+    .line 1666
     :cond_13
     iget-object p3, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
     invoke-virtual {p3, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1624
+    .line 1667
     iget-object p3, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylistMap:Landroid/util/SparseArray;
 
     invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -16416,32 +16404,32 @@
 
     goto :goto_6
 
-    .line 1629
+    .line 1672
     :cond_15
     sget p2, Lorg/telegram/messenger/NotificationCenter;->playerDidStartPlaying:I
 
     if-ne p1, p2, :cond_1a
 
-    .line 1630
+    .line 1673
     aget-object p1, p3, v2
 
     check-cast p1, Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 1631
+    .line 1674
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/MediaController;->isCurrentPlayer(Lorg/telegram/ui/Components/VideoPlayer;)Z
 
     move-result p1
 
     if-nez p1, :cond_1a
 
-    .line 1632
+    .line 1675
     invoke-virtual {p0}, Lorg/telegram/messenger/MediaController;->getPlayingMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object p1
 
     if-eqz p1, :cond_17
 
-    .line 1633
+    .line 1676
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/MediaController;->isPlayingMessage(Lorg/telegram/messenger/MessageObject;)Z
 
     move-result p2
@@ -16466,24 +16454,24 @@
 
     if-eqz p2, :cond_17
 
-    .line 1634
+    .line 1677
     :cond_16
     iput-boolean v1, p0, Lorg/telegram/messenger/MediaController;->wasPlayingAudioBeforePause:Z
 
-    .line 1636
+    .line 1679
     :cond_17
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/MediaController;->pauseMessage(Lorg/telegram/messenger/MessageObject;)Z
 
     goto :goto_8
 
-    .line 1502
+    .line 1545
     :cond_18
     :goto_7
     aget-object p1, p3, v2
 
     check-cast p1, Ljava/lang/String;
 
-    .line 1503
+    .line 1546
     iget-object p3, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz p3, :cond_1a
@@ -16492,7 +16480,7 @@
 
     if-ne v0, p2, :cond_1a
 
-    .line 1504
+    .line 1547
     invoke-virtual {p3}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object p2
@@ -16501,35 +16489,35 @@
 
     move-result-object p2
 
-    .line 1505
+    .line 1548
     invoke-virtual {p2, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result p1
 
     if-eqz p1, :cond_1a
 
-    .line 1506
+    .line 1549
     iget-boolean p1, p0, Lorg/telegram/messenger/MediaController;->downloadingCurrentMessage:Z
 
     if-eqz p1, :cond_19
 
-    .line 1507
+    .line 1550
     iput-boolean v1, p0, Lorg/telegram/messenger/MediaController;->playMusicAgain:Z
 
-    .line 1508
+    .line 1551
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/MediaController;->playMessage(Lorg/telegram/messenger/MessageObject;)Z
 
     goto :goto_8
 
-    .line 1509
+    .line 1552
     :cond_19
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->audioInfo:Lorg/telegram/messenger/audioinfo/AudioInfo;
 
     if-nez p1, :cond_1a
 
-    .line 1511
+    .line 1554
     :try_start_0
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -16545,7 +16533,7 @@
 
     move-result-object p1
 
-    .line 1512
+    .line 1555
     invoke-static {p1}, Lorg/telegram/messenger/audioinfo/AudioInfo;->getAudioInfo(Ljava/io/File;)Lorg/telegram/messenger/audioinfo/AudioInfo;
 
     move-result-object p1
@@ -16559,7 +16547,7 @@
     :catch_0
     move-exception p1
 
-    .line 1514
+    .line 1557
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1a
@@ -16570,17 +16558,17 @@
 .method public exportAnimatedSticker(ILorg/telegram/tgnet/TLRPC$Document;JLjava/lang/String;)V
     .locals 3
 
-    .line 136
+    .line 137
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
     const-wide/16 v1, 0x1
 
-    .line 137
+    .line 138
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
-    .line 138
+    .line 139
     new-instance v1, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
@@ -16595,17 +16583,17 @@
 
     iput-object p5, v0, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
-    .line 139
+    .line 140
     new-instance p5, Lorg/telegram/messenger/MessageObject;
 
     const/4 v1, 0x0
 
     invoke-direct {p5, v1, v0, v1, v1}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 140
+    .line 141
     iput p1, p5, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
-    .line 142
+    .line 143
     new-instance p1, Lorg/telegram/messenger/MediaController$VideoConvertMessage;
 
     new-instance v0, Lcom/iMe/fork/utils/AnimatedStickerEditedInfo;
@@ -16614,7 +16602,7 @@
 
     invoke-direct {p1, p5, v0, v1}, Lorg/telegram/messenger/MediaController$VideoConvertMessage;-><init>(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/VideoEditedInfo;Z)V
 
-    .line 143
+    .line 144
     invoke-static {p1}, Lorg/telegram/messenger/MediaController$VideoConvertRunnable;->runConversion(Lorg/telegram/messenger/MediaController$VideoConvertMessage;)V
 
     return-void
@@ -16623,7 +16611,7 @@
 .method public findMessageInPlaylistAndPlay(Lorg/telegram/messenger/MessageObject;)Z
     .locals 2
 
-    .line 2480
+    .line 2523
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
@@ -16634,14 +16622,14 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 2482
+    .line 2525
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/MediaController;->playMessage(Lorg/telegram/messenger/MessageObject;)Z
 
     move-result p1
 
     return p1
 
-    .line 2484
+    .line 2527
     :cond_0
     invoke-virtual {p0, v0}, Lorg/telegram/messenger/MediaController;->playMessageAtIndex(I)V
 
@@ -16653,7 +16641,7 @@
 .method public generateWaveform(Lorg/telegram/messenger/MessageObject;)V
     .locals 4
 
-    .line 3924
+    .line 3967
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -16678,7 +16666,7 @@
 
     move-result-object v0
 
-    .line 3925
+    .line 3968
     iget v1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -16695,7 +16683,7 @@
 
     move-result-object v1
 
-    .line 3926
+    .line 3969
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->generatingWaveform:Ljava/util/HashMap;
 
     invoke-virtual {v2, v0}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -16706,13 +16694,13 @@
 
     return-void
 
-    .line 3929
+    .line 3972
     :cond_0
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->generatingWaveform:Ljava/util/HashMap;
 
     invoke-virtual {v2, v0, p1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 3930
+    .line 3973
     sget-object v2, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v3, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda28;
@@ -16727,8 +16715,17 @@
 .method public getAudioInfo()Lorg/telegram/messenger/audioinfo/AudioInfo;
     .locals 1
 
-    .line 3649
+    .line 3692
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioInfo:Lorg/telegram/messenger/audioinfo/AudioInfo;
+
+    return-object v0
+.end method
+
+.method public getCurrentForegroundConverMessage()Lorg/telegram/messenger/MediaController$VideoConvertMessage;
+    .locals 1
+
+    .line 177
+    iget-object v0, p0, Lorg/telegram/messenger/MediaController;->currentForegroundConvertingVideo:Lorg/telegram/messenger/MediaController$VideoConvertMessage;
 
     return-object v0
 .end method
@@ -16736,7 +16733,7 @@
 .method public getDuration()J
     .locals 2
 
-    .line 2261
+    .line 2304
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-nez v0, :cond_0
@@ -16745,7 +16742,7 @@
 
     return-wide v0
 
-    .line 2264
+    .line 2307
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->getDuration()J
 
@@ -16759,7 +16756,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2857
+    .line 2900
     iget p1, p0, Lorg/telegram/messenger/MediaController;->fastMusicPlaybackSpeed:F
 
     goto :goto_0
@@ -16776,7 +16773,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2853
+    .line 2896
     iget p1, p0, Lorg/telegram/messenger/MediaController;->currentMusicPlaybackSpeed:F
 
     goto :goto_0
@@ -16791,7 +16788,7 @@
 .method public getPlayingMessageObject()Lorg/telegram/messenger/MessageObject;
     .locals 1
 
-    .line 2268
+    .line 2311
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     return-object v0
@@ -16800,7 +16797,7 @@
 .method public getPlayingMessageObjectNum()I
     .locals 1
 
-    .line 2272
+    .line 2315
     iget v0, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
     return v0
@@ -16817,7 +16814,7 @@
         }
     .end annotation
 
-    .line 3766
+    .line 3809
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     return-object v0
@@ -16826,7 +16823,7 @@
 .method public getVideoPlayer()Lorg/telegram/ui/Components/VideoPlayer;
     .locals 1
 
-    .line 1263
+    .line 1306
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     return-object v0
@@ -16844,7 +16841,7 @@
 
     goto :goto_0
 
-    .line 2908
+    .line 2951
     :cond_0
     iget v0, p2, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
@@ -16862,30 +16859,30 @@
 
     const/4 v0, 0x0
 
-    .line 2909
+    .line 2952
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->playerWasReady:Z
 
     const/4 v8, 0x1
 
     const/4 v7, 0x0
 
-    .line 2912
+    .line 2955
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->clearPlaylist()V
 
-    .line 2913
+    .line 2956
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 2914
+    .line 2957
     iput-object p2, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 2915
+    .line 2958
     iget v1, p0, Lorg/telegram/messenger/MediaController;->playerNum:I
 
     add-int/lit8 v5, v1, 0x1
 
     iput v5, p0, Lorg/telegram/messenger/MediaController;->playerNum:I
 
-    .line 2916
+    .line 2959
     new-instance v1, Lorg/telegram/messenger/MediaController$7;
 
     move-object v3, v1
@@ -16898,59 +16895,59 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/VideoPlayer;->setDelegate(Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;)V
 
-    .line 3005
+    .line 3048
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayoutReady:Z
 
-    .line 3006
+    .line 3049
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->currentTextureView:Landroid/view/TextureView;
 
     if-eqz p1, :cond_1
 
-    .line 3007
+    .line 3050
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/VideoPlayer;->setTextureView(Landroid/view/TextureView;)V
 
-    .line 3010
+    .line 3053
     :cond_1
     invoke-direct {p0, p2}, Lorg/telegram/messenger/MediaController;->checkAudioFocus(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 3011
+    .line 3054
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->setPlayerVolume()V
 
-    .line 3013
+    .line 3056
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->isPaused:Z
 
     const-wide/16 v3, 0x0
 
-    .line 3014
+    .line 3057
     iput-wide v3, p0, Lorg/telegram/messenger/MediaController;->lastProgress:J
 
-    .line 3015
+    .line 3058
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 3016
+    .line 3059
     iput-object p2, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 3017
+    .line 3060
     invoke-static {v2}, Lorg/telegram/messenger/SharedConfig;->enabledRaiseTo(Z)Z
 
     move-result v1
 
     if-nez v1, :cond_2
 
-    .line 3018
+    .line 3061
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->raiseChat:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p0, v1}, Lorg/telegram/messenger/MediaController;->startRaiseToEarSensors(Lorg/telegram/ui/ChatActivity;)V
 
-    .line 3020
+    .line 3063
     :cond_2
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-direct {p0, v1}, Lorg/telegram/messenger/MediaController;->startProgressTimer(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 3021
+    .line 3064
     iget v1, p2, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -16977,12 +16974,12 @@
 .method public isBuffering()Z
     .locals 1
 
-    .line 169
+    .line 170
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v0, :cond_0
 
-    .line 170
+    .line 171
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->isBuffering()Z
 
     move-result v0
@@ -16998,7 +16995,7 @@
 .method public isCurrentPlayer(Lorg/telegram/ui/Components/VideoPlayer;)Z
     .locals 1
 
-    .line 3675
+    .line 3718
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eq v0, p1, :cond_1
@@ -17025,7 +17022,7 @@
 .method public isDownloadingCurrentMessage()Z
     .locals 1
 
-    .line 3792
+    .line 3835
     iget-boolean v0, p0, Lorg/telegram/messenger/MediaController;->downloadingCurrentMessage:Z
 
     return v0
@@ -17034,7 +17031,7 @@
 .method public isGoingToShowMessageObject(Lorg/telegram/messenger/MessageObject;)Z
     .locals 1
 
-    .line 2222
+    .line 2265
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->goingToShowMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-ne v0, p1, :cond_0
@@ -17053,7 +17050,7 @@
 .method public isMessagePaused()Z
     .locals 1
 
-    .line 3788
+    .line 3831
     iget-boolean v0, p0, Lorg/telegram/messenger/MediaController;->isPaused:Z
 
     if-nez v0, :cond_1
@@ -17080,7 +17077,7 @@
 .method public isPiPShown()Z
     .locals 1
 
-    .line 2716
+    .line 2759
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     if-eqz v0, :cond_0
@@ -17099,7 +17096,7 @@
 .method public isPlayingMessage(Lorg/telegram/messenger/MessageObject;)Z
     .locals 6
 
-    .line 3770
+    .line 3813
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const/4 v1, 0x0
@@ -17119,7 +17116,7 @@
 
     goto :goto_0
 
-    .line 3773
+    .line 3816
     :cond_1
     iget-wide v2, v0, Lorg/telegram/messenger/MessageObject;->eventId:J
 
@@ -17135,14 +17132,14 @@
 
     if-nez v0, :cond_2
 
-    .line 3774
+    .line 3817
     iget-boolean p1, p0, Lorg/telegram/messenger/MediaController;->downloadingCurrentMessage:Z
 
     xor-int/lit8 p1, p1, 0x1
 
     return p1
 
-    .line 3776
+    .line 3819
     :cond_2
     invoke-direct {p0, p1}, Lorg/telegram/messenger/MediaController;->isSamePlayingMessage(Lorg/telegram/messenger/MessageObject;)Z
 
@@ -17150,7 +17147,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 3777
+    .line 3820
     iget-boolean p1, p0, Lorg/telegram/messenger/MediaController;->downloadingCurrentMessage:Z
 
     xor-int/lit8 p1, p1, 0x1
@@ -17165,7 +17162,7 @@
 .method public isPlayingMessageAndReadyToDraw(Lorg/telegram/messenger/MessageObject;)Z
     .locals 1
 
-    .line 3784
+    .line 3827
     iget-boolean v0, p0, Lorg/telegram/messenger/MediaController;->isDrawingWasReady:Z
 
     if-eqz v0, :cond_0
@@ -17190,7 +17187,7 @@
 .method protected isRecordingAudio()Z
     .locals 1
 
-    .line 1642
+    .line 1685
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->recordStartRunnable:Ljava/lang/Runnable;
 
     if-nez v0, :cond_1
@@ -17217,7 +17214,7 @@
 .method public isRecordingOrListeningByProximity()Z
     .locals 1
 
-    .line 1650
+    .line 1693
     iget-boolean v0, p0, Lorg/telegram/messenger/MediaController;->proximityTouched:Z
 
     if-eqz v0, :cond_1
@@ -17261,7 +17258,7 @@
 .method public isStreamingCurrentAudio()Z
     .locals 1
 
-    .line 3671
+    .line 3714
     iget-boolean v0, p0, Lorg/telegram/messenger/MediaController;->isStreamingCurrentAudio:Z
 
     return v0
@@ -17270,7 +17267,7 @@
 .method public isVideoDrawingReady()Z
     .locals 1
 
-    .line 3762
+    .line 3805
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     if-eqz v0, :cond_0
@@ -17295,7 +17292,7 @@
 .method public loadMoreMusic()V
     .locals 14
 
-    .line 2296
+    .line 2339
     iget-boolean v0, p0, Lorg/telegram/messenger/MediaController;->loadingPlaylist:Z
 
     if-nez v0, :cond_b
@@ -17328,7 +17325,7 @@
 
     goto/16 :goto_4
 
-    .line 2299
+    .line 2342
     :cond_0
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->playlistGlobalSearchParams:Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;
 
@@ -17340,7 +17337,7 @@
 
     if-eqz v1, :cond_9
 
-    .line 2301
+    .line 2344
     iget-boolean v1, v1, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->endReached:Z
 
     if-nez v1, :cond_8
@@ -17353,7 +17350,7 @@
 
     if-nez v1, :cond_8
 
-    .line 2302
+    .line 2345
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -17364,7 +17361,7 @@
 
     iget v1, v1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
-    .line 2304
+    .line 2347
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->playlistGlobalSearchParams:Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;
 
     iget-wide v6, v2, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->dialogId:J
@@ -17377,22 +17374,22 @@
 
     if-eqz v2, :cond_3
 
-    .line 2305
+    .line 2348
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_messages_search;-><init>()V
 
-    .line 2306
+    .line 2349
     iget-object v9, p0, Lorg/telegram/messenger/MediaController;->playlistGlobalSearchParams:Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;
 
     iget-object v10, v9, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->query:Ljava/lang/String;
 
     iput-object v10, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->q:Ljava/lang/String;
 
-    .line 2307
+    .line 2350
     iput v6, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->limit:I
 
-    .line 2308
+    .line 2351
     iget-object v6, v9, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->filter:Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;
 
     if-nez v6, :cond_1
@@ -17409,7 +17406,7 @@
     :goto_0
     iput-object v6, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
 
-    .line 2309
+    .line 2352
     invoke-static {v1}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object v6
@@ -17428,7 +17425,7 @@
 
     iput-object v6, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 2310
+    .line 2353
     iget-object v6, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
@@ -17443,14 +17440,14 @@
 
     check-cast v6, Lorg/telegram/messenger/MessageObject;
 
-    .line 2311
+    .line 2354
     invoke-virtual {v6}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v6
 
     iput v6, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->offset_id:I
 
-    .line 2312
+    .line 2355
     iget-object v6, p0, Lorg/telegram/messenger/MediaController;->playlistGlobalSearchParams:Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;
 
     iget-wide v9, v6, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->minDate:J
@@ -17459,14 +17456,14 @@
 
     if-lez v11, :cond_2
 
-    .line 2313
+    .line 2356
     div-long/2addr v9, v7
 
     long-to-int v9, v9
 
     iput v9, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_search;->min_date:I
 
-    .line 2315
+    .line 2358
     :cond_2
     iget-wide v9, v6, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->maxDate:J
 
@@ -17474,7 +17471,7 @@
 
     if-lez v4, :cond_7
 
-    .line 2316
+    .line 2359
     div-long/2addr v9, v7
 
     long-to-int v4, v9
@@ -17483,30 +17480,30 @@
 
     goto :goto_3
 
-    .line 2320
+    .line 2363
     :cond_3
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;-><init>()V
 
-    .line 2321
+    .line 2364
     iput v6, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->limit:I
 
-    .line 2322
+    .line 2365
     iget-object v6, p0, Lorg/telegram/messenger/MediaController;->playlistGlobalSearchParams:Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;
 
     iget-object v9, v6, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->query:Ljava/lang/String;
 
     iput-object v9, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->q:Ljava/lang/String;
 
-    .line 2323
+    .line 2366
     iget-object v6, v6, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->filter:Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;
 
     iget-object v6, v6, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
 
     iput-object v6, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->filter:Lorg/telegram/tgnet/TLRPC$MessagesFilter;
 
-    .line 2324
+    .line 2367
     iget-object v6, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
@@ -17521,33 +17518,33 @@
 
     check-cast v6, Lorg/telegram/messenger/MessageObject;
 
-    .line 2325
+    .line 2368
     invoke-virtual {v6}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v9
 
     iput v9, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_id:I
 
-    .line 2326
+    .line 2369
     iget-object v9, p0, Lorg/telegram/messenger/MediaController;->playlistGlobalSearchParams:Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;
 
     iget v10, v9, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->nextSearchRate:I
 
     iput v10, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_rate:I
 
-    .line 2327
+    .line 2370
     iget v10, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->flags:I
 
     or-int/2addr v10, v3
 
     iput v10, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->flags:I
 
-    .line 2328
+    .line 2371
     iget v9, v9, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->folderId:I
 
     iput v9, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->folder_id:I
 
-    .line 2330
+    .line 2373
     iget-object v6, v6, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
@@ -17563,7 +17560,7 @@
 
     goto :goto_2
 
-    .line 2332
+    .line 2375
     :cond_4
     iget-wide v9, v6, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
@@ -17573,11 +17570,11 @@
 
     goto :goto_1
 
-    .line 2335
+    .line 2378
     :cond_5
     iget-wide v9, v6, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 2337
+    .line 2380
     :goto_2
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
@@ -17589,7 +17586,7 @@
 
     iput-object v6, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->offset_peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 2338
+    .line 2381
     iget-object v6, p0, Lorg/telegram/messenger/MediaController;->playlistGlobalSearchParams:Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;
 
     iget-wide v9, v6, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->minDate:J
@@ -17598,14 +17595,14 @@
 
     if-lez v11, :cond_6
 
-    .line 2339
+    .line 2382
     div-long/2addr v9, v7
 
     long-to-int v9, v9
 
     iput v9, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->min_date:I
 
-    .line 2341
+    .line 2384
     :cond_6
     iget-wide v9, v6, Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;->maxDate:J
 
@@ -17613,19 +17610,19 @@
 
     if-lez v4, :cond_7
 
-    .line 2342
+    .line 2385
     div-long/2addr v9, v7
 
     long-to-int v4, v9
 
     iput v4, v2, Lorg/telegram/tgnet/TLRPC$TL_messages_searchGlobal;->min_date:I
 
-    .line 2346
+    .line 2389
     :cond_7
     :goto_3
     iput-boolean v3, p0, Lorg/telegram/messenger/MediaController;->loadingPlaylist:Z
 
-    .line 2347
+    .line 2390
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v3
@@ -17639,7 +17636,7 @@
     :cond_8
     return-void
 
-    .line 2386
+    .line 2429
     :cond_9
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playlistEndReached:[Z
 
@@ -17647,10 +17644,10 @@
 
     if-nez v1, :cond_a
 
-    .line 2387
+    .line 2430
     iput-boolean v3, p0, Lorg/telegram/messenger/MediaController;->loadingPlaylist:Z
 
-    .line 2388
+    .line 2431
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iget v0, v0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
@@ -17691,7 +17688,7 @@
 
     goto :goto_4
 
-    .line 2389
+    .line 2432
     :cond_a
     iget-wide v6, p0, Lorg/telegram/messenger/MediaController;->playlistMergeDialogId:J
 
@@ -17703,10 +17700,10 @@
 
     if-nez v0, :cond_b
 
-    .line 2390
+    .line 2433
     iput-boolean v3, p0, Lorg/telegram/messenger/MediaController;->loadingPlaylist:Z
 
-    .line 2391
+    .line 2434
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iget v0, v0, Lorg/telegram/messenger/MessageObject;->currentAccount:I
@@ -17755,7 +17752,7 @@
 .method public onAudioFocusChange(I)V
     .locals 1
 
-    .line 1214
+    .line 1257
     new-instance v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda16;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/messenger/MediaController;I)V
@@ -17772,7 +17769,7 @@
 
     move-object/from16 v0, p1
 
-    .line 1682
+    .line 1725
     iget-boolean v1, v9, Lorg/telegram/messenger/MediaController;->sensorsStarted:Z
 
     if-eqz v1, :cond_36
@@ -17785,7 +17782,7 @@
 
     goto/16 :goto_11
 
-    .line 1685
+    .line 1728
     :cond_0
     iget-object v1, v0, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
@@ -17805,12 +17802,12 @@
 
     if-ne v1, v2, :cond_3
 
-    .line 1686
+    .line 1729
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_1
 
-    .line 1687
+    .line 1730
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -17843,7 +17840,7 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1689
+    .line 1732
     :cond_1
     iget v1, v9, Lorg/telegram/messenger/MediaController;->lastProximityValue:F
 
@@ -17855,21 +17852,21 @@
 
     if-eqz v1, :cond_2
 
-    .line 1690
+    .line 1733
     iput-boolean v12, v9, Lorg/telegram/messenger/MediaController;->proximityHasDifferentValues:Z
 
-    .line 1692
+    .line 1735
     :cond_2
     aget v1, v2, v13
 
     iput v1, v9, Lorg/telegram/messenger/MediaController;->lastProximityValue:F
 
-    .line 1693
+    .line 1736
     iget-boolean v1, v9, Lorg/telegram/messenger/MediaController;->proximityHasDifferentValues:Z
 
     if-eqz v1, :cond_7
 
-    .line 1694
+    .line 1737
     aget v1, v2, v13
 
     invoke-direct {v9, v1}, Lorg/telegram/messenger/MediaController;->isNearToSensor(F)Z
@@ -17880,7 +17877,7 @@
 
     goto/16 :goto_1
 
-    .line 1696
+    .line 1739
     :cond_3
     iget-object v1, v0, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
 
@@ -17888,7 +17885,7 @@
 
     if-ne v1, v2, :cond_5
 
-    .line 1697
+    .line 1740
     iget-wide v1, v9, Lorg/telegram/messenger/MediaController;->lastTimestamp:J
 
     cmp-long v4, v1, v10
@@ -17916,13 +17913,13 @@
 
     div-double v1, v5, v1
 
-    .line 1699
+    .line 1742
     :goto_0
     iget-wide v7, v0, Landroid/hardware/SensorEvent;->timestamp:J
 
     iput-wide v7, v9, Lorg/telegram/messenger/MediaController;->lastTimestamp:J
 
-    .line 1700
+    .line 1743
     iget-object v4, v9, Lorg/telegram/messenger/MediaController;->gravity:[F
 
     aget v7, v4, v13
@@ -17947,7 +17944,7 @@
 
     aput v7, v4, v13
 
-    .line 1701
+    .line 1744
     aget v7, v4, v12
 
     float-to-double v7, v7
@@ -17966,7 +17963,7 @@
 
     aput v7, v4, v12
 
-    .line 1702
+    .line 1745
     aget v7, v4, v3
 
     float-to-double v7, v7
@@ -17985,7 +17982,7 @@
 
     aput v1, v4, v3
 
-    .line 1703
+    .line 1746
     iget-object v1, v9, Lorg/telegram/messenger/MediaController;->gravityFast:[F
 
     aget v2, v4, v13
@@ -18004,7 +18001,7 @@
 
     aput v2, v1, v13
 
-    .line 1704
+    .line 1747
     aget v2, v4, v12
 
     mul-float/2addr v2, v5
@@ -18017,7 +18014,7 @@
 
     aput v2, v1, v12
 
-    .line 1705
+    .line 1748
     aget v2, v4, v3
 
     mul-float/2addr v2, v5
@@ -18030,7 +18027,7 @@
 
     aput v2, v1, v3
 
-    .line 1707
+    .line 1750
     iget-object v1, v9, Lorg/telegram/messenger/MediaController;->linearAcceleration:[F
 
     aget v2, v14, v13
@@ -18041,7 +18038,7 @@
 
     aput v2, v1, v13
 
-    .line 1708
+    .line 1751
     aget v2, v14, v12
 
     aget v5, v4, v12
@@ -18050,7 +18047,7 @@
 
     aput v2, v1, v12
 
-    .line 1709
+    .line 1752
     aget v2, v14, v3
 
     aget v4, v4, v3
@@ -18061,13 +18058,13 @@
 
     goto :goto_1
 
-    .line 1710
+    .line 1753
     :cond_5
     iget-object v2, v9, Lorg/telegram/messenger/MediaController;->linearSensor:Landroid/hardware/Sensor;
 
     if-ne v1, v2, :cond_6
 
-    .line 1711
+    .line 1754
     iget-object v1, v9, Lorg/telegram/messenger/MediaController;->linearAcceleration:[F
 
     iget-object v2, v0, Landroid/hardware/SensorEvent;->values:[F
@@ -18076,25 +18073,25 @@
 
     aput v4, v1, v13
 
-    .line 1712
+    .line 1755
     aget v4, v2, v12
 
     aput v4, v1, v12
 
-    .line 1713
+    .line 1756
     aget v2, v2, v3
 
     aput v2, v1, v3
 
     goto :goto_1
 
-    .line 1714
+    .line 1757
     :cond_6
     iget-object v2, v9, Lorg/telegram/messenger/MediaController;->gravitySensor:Landroid/hardware/Sensor;
 
     if-ne v1, v2, :cond_7
 
-    .line 1715
+    .line 1758
     iget-object v1, v9, Lorg/telegram/messenger/MediaController;->gravityFast:[F
 
     iget-object v2, v9, Lorg/telegram/messenger/MediaController;->gravity:[F
@@ -18107,21 +18104,21 @@
 
     aput v5, v1, v13
 
-    .line 1716
+    .line 1759
     aget v5, v4, v12
 
     aput v5, v2, v12
 
     aput v5, v1, v12
 
-    .line 1717
+    .line 1760
     aget v4, v4, v3
 
     aput v4, v2, v3
 
     aput v4, v1, v3
 
-    .line 1722
+    .line 1765
     :cond_7
     :goto_1
     iget-object v0, v0, Landroid/hardware/SensorEvent;->sensor:Landroid/hardware/Sensor;
@@ -18140,7 +18137,7 @@
 
     if-ne v0, v1, :cond_18
 
-    .line 1723
+    .line 1766
     :cond_8
     iget-object v0, v9, Lorg/telegram/messenger/MediaController;->gravity:[F
 
@@ -18168,7 +18165,7 @@
 
     add-float/2addr v1, v0
 
-    .line 1724
+    .line 1767
     iget v0, v9, Lorg/telegram/messenger/MediaController;->raisedToBack:I
 
     if-eq v0, v10, :cond_16
@@ -18179,7 +18176,7 @@
 
     if-lez v4, :cond_9
 
-    .line 1725
+    .line 1768
     iget v5, v9, Lorg/telegram/messenger/MediaController;->previousAccValue:F
 
     cmpl-float v5, v5, v2
@@ -18235,7 +18232,7 @@
     :goto_3
     move v4, v3
 
-    .line 1735
+    .line 1778
     :goto_4
     iget v5, v9, Lorg/telegram/messenger/MediaController;->raisedToTopSign:I
 
@@ -18245,7 +18242,7 @@
 
     if-eq v5, v4, :cond_11
 
-    .line 1736
+    .line 1779
     iget v4, v9, Lorg/telegram/messenger/MediaController;->raisedToTop:I
 
     if-ne v4, v10, :cond_e
@@ -18256,28 +18253,28 @@
 
     add-int/2addr v0, v12
 
-    .line 1738
+    .line 1781
     iput v0, v9, Lorg/telegram/messenger/MediaController;->raisedToBack:I
 
     if-ne v0, v10, :cond_16
 
-    .line 1740
+    .line 1783
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToTop:I
 
-    .line 1741
+    .line 1784
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToTopSign:I
 
-    .line 1742
+    .line 1785
     iput v13, v9, Lorg/telegram/messenger/MediaController;->countLess:I
 
-    .line 1743
+    .line 1786
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
     iput-wide v4, v9, Lorg/telegram/messenger/MediaController;->timeSinceRaise:J
 
-    .line 1744
+    .line 1787
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_16
@@ -18288,7 +18285,7 @@
 
     const-string/jumbo v0, "motion detected"
 
-    .line 1745
+    .line 1788
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     goto :goto_5
@@ -18296,14 +18293,14 @@
     :cond_e
     if-nez v2, :cond_f
 
-    .line 1751
+    .line 1794
     iget v2, v9, Lorg/telegram/messenger/MediaController;->countLess:I
 
     add-int/2addr v2, v12
 
     iput v2, v9, Lorg/telegram/messenger/MediaController;->countLess:I
 
-    .line 1753
+    .line 1796
     :cond_f
     iget v2, v9, Lorg/telegram/messenger/MediaController;->countLess:I
 
@@ -18313,17 +18310,17 @@
 
     if-eqz v0, :cond_16
 
-    .line 1754
+    .line 1797
     :cond_10
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToTop:I
 
-    .line 1755
+    .line 1798
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToTopSign:I
 
-    .line 1756
+    .line 1799
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToBack:I
 
-    .line 1757
+    .line 1800
     iput v13, v9, Lorg/telegram/messenger/MediaController;->countLess:I
 
     goto :goto_5
@@ -18337,7 +18334,7 @@
 
     if-ne v5, v4, :cond_13
 
-    .line 1762
+    .line 1805
     :cond_12
     iget v0, v9, Lorg/telegram/messenger/MediaController;->raisedToTop:I
 
@@ -18347,17 +18344,17 @@
 
     if-nez v2, :cond_16
 
-    .line 1763
+    .line 1806
     iput v4, v9, Lorg/telegram/messenger/MediaController;->raisedToTopSign:I
 
     add-int/2addr v0, v12
 
-    .line 1764
+    .line 1807
     iput v0, v9, Lorg/telegram/messenger/MediaController;->raisedToTop:I
 
     if-ne v0, v10, :cond_16
 
-    .line 1766
+    .line 1809
     iput v13, v9, Lorg/telegram/messenger/MediaController;->countLess:I
 
     goto :goto_5
@@ -18365,7 +18362,7 @@
     :cond_13
     if-nez v2, :cond_14
 
-    .line 1771
+    .line 1814
     iget v2, v9, Lorg/telegram/messenger/MediaController;->countLess:I
 
     add-int/2addr v2, v12
@@ -18375,7 +18372,7 @@
     :cond_14
     if-ne v5, v4, :cond_15
 
-    .line 1773
+    .line 1816
     iget v2, v9, Lorg/telegram/messenger/MediaController;->countLess:I
 
     if-eq v2, v6, :cond_15
@@ -18386,25 +18383,25 @@
 
     if-eqz v0, :cond_16
 
-    .line 1774
+    .line 1817
     :cond_15
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToBack:I
 
-    .line 1775
+    .line 1818
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToTop:I
 
-    .line 1776
+    .line 1819
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToTopSign:I
 
-    .line 1777
+    .line 1820
     iput v13, v9, Lorg/telegram/messenger/MediaController;->countLess:I
 
-    .line 1828
+    .line 1871
     :cond_16
     :goto_5
     iput v1, v9, Lorg/telegram/messenger/MediaController;->previousAccValue:F
 
-    .line 1829
+    .line 1872
     iget-object v0, v9, Lorg/telegram/messenger/MediaController;->gravityFast:[F
 
     aget v1, v0, v12
@@ -18451,7 +18448,7 @@
     :goto_6
     iput-boolean v0, v9, Lorg/telegram/messenger/MediaController;->accelerometerVertical:Z
 
-    .line 1834
+    .line 1877
     :cond_18
     iget v0, v9, Lorg/telegram/messenger/MediaController;->raisedToBack:I
 
@@ -18461,7 +18458,7 @@
 
     if-eqz v0, :cond_1a
 
-    .line 1835
+    .line 1878
     :cond_19
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -18469,7 +18466,7 @@
 
     iput-wide v0, v9, Lorg/telegram/messenger/MediaController;->lastAccelerometerDetected:J
 
-    .line 1837
+    .line 1880
     :cond_1a
     iget-boolean v0, v9, Lorg/telegram/messenger/MediaController;->manualRecording:Z
 
@@ -18512,7 +18509,7 @@
     :cond_1b
     move v0, v13
 
-    .line 1838
+    .line 1881
     :goto_7
     invoke-static {v13}, Lorg/telegram/messenger/SharedConfig;->enabledRaiseTo(Z)Z
 
@@ -18546,11 +18543,11 @@
     :cond_1d
     move v1, v13
 
-    .line 1839
+    .line 1882
     :goto_8
     iget-boolean v2, v9, Lorg/telegram/messenger/MediaController;->proximityTouched:Z
 
-    .line 1840
+    .line 1883
     iget v4, v9, Lorg/telegram/messenger/MediaController;->raisedToBack:I
 
     if-eq v4, v10, :cond_1f
@@ -18584,7 +18581,7 @@
     :goto_9
     move v4, v12
 
-    .line 1841
+    .line 1884
     :goto_a
     iget-boolean v5, v9, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
 
@@ -18610,7 +18607,7 @@
 
     if-eqz v5, :cond_24
 
-    .line 1846
+    .line 1889
     :cond_22
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/MediaController;->forbidRaiseToListen()Z
 
@@ -18646,13 +18643,13 @@
     :cond_24
     move v6, v13
 
-    .line 1847
+    .line 1890
     :goto_d
     iget-object v7, v9, Lorg/telegram/messenger/MediaController;->proximityWakeLock:Landroid/os/PowerManager$WakeLock;
 
     if-eqz v7, :cond_28
 
-    .line 1848
+    .line 1891
     invoke-virtual {v7}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
 
     move-result v7
@@ -18667,12 +18664,12 @@
 
     if-nez v6, :cond_26
 
-    .line 1850
+    .line 1893
     sget-boolean v7, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v7, :cond_25
 
-    .line 1851
+    .line 1894
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -18699,7 +18696,7 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1853
+    .line 1896
     :cond_25
     iget-object v2, v9, Lorg/telegram/messenger/MediaController;->proximityWakeLock:Landroid/os/PowerManager$WakeLock;
 
@@ -18712,12 +18709,12 @@
 
     if-eqz v6, :cond_28
 
-    .line 1855
+    .line 1898
     sget-boolean v7, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v7, :cond_27
 
-    .line 1856
+    .line 1899
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -18744,13 +18741,13 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1858
+    .line 1901
     :cond_27
     iget-object v2, v9, Lorg/telegram/messenger/MediaController;->proximityWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->acquire()V
 
-    .line 1861
+    .line 1904
     :cond_28
     :goto_e
     iget-boolean v2, v9, Lorg/telegram/messenger/MediaController;->proximityTouched:Z
@@ -18761,7 +18758,7 @@
 
     if-eqz v0, :cond_2b
 
-    .line 1862
+    .line 1905
     iget-object v0, v9, Lorg/telegram/messenger/MediaController;->recordStartRunnable:Ljava/lang/Runnable;
 
     if-nez v0, :cond_2b
@@ -18770,26 +18767,26 @@
 
     if-nez v0, :cond_2b
 
-    .line 1863
+    .line 1906
     iget-boolean v0, v9, Lorg/telegram/messenger/MediaController;->raiseToEarRecord:Z
 
     if-nez v0, :cond_2d
 
-    .line 1864
+    .line 1907
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_29
 
     const-string/jumbo v0, "start record"
 
-    .line 1865
+    .line 1908
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1867
+    .line 1910
     :cond_29
     iput-boolean v12, v9, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
 
-    .line 1868
+    .line 1911
     iget-object v0, v9, Lorg/telegram/messenger/MediaController;->raiseChat:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->playFirstUnreadVoiceMessage()Z
@@ -18798,13 +18795,13 @@
 
     if-nez v0, :cond_2a
 
-    .line 1869
+    .line 1912
     iput-boolean v12, v9, Lorg/telegram/messenger/MediaController;->raiseToEarRecord:Z
 
-    .line 1870
+    .line 1913
     iput-boolean v13, v9, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
 
-    .line 1871
+    .line 1914
     iget-object v0, v9, Lorg/telegram/messenger/MediaController;->raiseChat:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
@@ -18837,15 +18834,15 @@
 
     move-object/from16 v0, p0
 
-    invoke-virtual/range {v0 .. v8}, Lorg/telegram/messenger/MediaController;->startRecording(IJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;IZ)V
+    invoke-virtual/range {v0 .. v8}, Lorg/telegram/messenger/MediaController;->startRecording(IJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;IZ)V
 
-    .line 1873
+    .line 1916
     :cond_2a
     iget-boolean v0, v9, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
 
     if-eqz v0, :cond_2d
 
-    .line 1874
+    .line 1917
     invoke-direct {v9, v12}, Lorg/telegram/messenger/MediaController;->setUseFrontSpeaker(Z)V
 
     goto :goto_f
@@ -18853,40 +18850,40 @@
     :cond_2b
     if-eqz v1, :cond_2d
 
-    .line 1882
+    .line 1925
     iget-boolean v0, v9, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
 
     if-nez v0, :cond_2d
 
-    .line 1883
+    .line 1926
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_2c
 
     const-string/jumbo v0, "start listen"
 
-    .line 1884
+    .line 1927
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1889
+    .line 1932
     :cond_2c
     invoke-direct {v9, v12}, Lorg/telegram/messenger/MediaController;->setUseFrontSpeaker(Z)V
 
-    .line 1890
+    .line 1933
     invoke-direct {v9, v13}, Lorg/telegram/messenger/MediaController;->startAudioAgain(Z)V
 
-    .line 1894
+    .line 1937
     :cond_2d
     :goto_f
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToBack:I
 
-    .line 1895
+    .line 1938
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToTop:I
 
-    .line 1896
+    .line 1939
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToTopSign:I
 
-    .line 1897
+    .line 1940
     iput v13, v9, Lorg/telegram/messenger/MediaController;->countLess:I
 
     goto/16 :goto_10
@@ -18894,7 +18891,7 @@
     :cond_2e
     if-eqz v2, :cond_31
 
-    .line 1898
+    .line 1941
     iget-object v0, v9, Lorg/telegram/messenger/MediaController;->accelerometerSensor:Landroid/hardware/Sensor;
 
     if-eqz v0, :cond_2f
@@ -18914,7 +18911,7 @@
 
     if-nez v0, :cond_31
 
-    .line 1899
+    .line 1942
     iget-object v0, v9, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v0, :cond_35
@@ -18925,7 +18922,7 @@
 
     if-eqz v1, :cond_35
 
-    .line 1900
+    .line 1943
     iget-boolean v0, v9, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
 
     if-nez v0, :cond_35
@@ -18940,26 +18937,26 @@
 
     if-nez v0, :cond_35
 
-    .line 1901
+    .line 1944
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_30
 
     const-string/jumbo v0, "start listen by proximity only"
 
-    .line 1902
+    .line 1945
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1907
+    .line 1950
     :cond_30
     invoke-direct {v9, v12}, Lorg/telegram/messenger/MediaController;->setUseFrontSpeaker(Z)V
 
-    .line 1908
+    .line 1951
     invoke-direct {v9, v13}, Lorg/telegram/messenger/MediaController;->startAudioAgain(Z)V
 
     goto :goto_10
 
-    .line 1912
+    .line 1955
     :cond_31
     iget-boolean v0, v9, Lorg/telegram/messenger/MediaController;->proximityTouched:Z
 
@@ -18969,62 +18966,62 @@
 
     if-nez v0, :cond_35
 
-    .line 1913
+    .line 1956
     iget-boolean v0, v9, Lorg/telegram/messenger/MediaController;->raiseToEarRecord:Z
 
     if-eqz v0, :cond_33
 
-    .line 1914
+    .line 1957
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_32
 
     const-string/jumbo v0, "stop record"
 
-    .line 1915
+    .line 1958
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_32
     const/4 v0, 0x0
 
-    .line 1917
+    .line 1960
     invoke-virtual {v9, v3, v13, v13, v0}, Lorg/telegram/messenger/MediaController;->stopRecording(IZILjava/lang/String;)V
 
-    .line 1918
+    .line 1961
     iput-boolean v13, v9, Lorg/telegram/messenger/MediaController;->raiseToEarRecord:Z
 
-    .line 1919
+    .line 1962
     iput-boolean v13, v9, Lorg/telegram/messenger/MediaController;->ignoreOnPause:Z
 
     goto :goto_10
 
-    .line 1923
+    .line 1966
     :cond_33
     iget-boolean v0, v9, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
 
     if-eqz v0, :cond_35
 
-    .line 1924
+    .line 1967
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_34
 
     const-string/jumbo v0, "stop listen"
 
-    .line 1925
+    .line 1968
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1927
+    .line 1970
     :cond_34
     iput-boolean v13, v9, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
 
-    .line 1928
+    .line 1971
     invoke-direct {v9, v12}, Lorg/telegram/messenger/MediaController;->startAudioAgain(Z)V
 
-    .line 1929
+    .line 1972
     iput-boolean v13, v9, Lorg/telegram/messenger/MediaController;->ignoreOnPause:Z
 
-    .line 1935
+    .line 1978
     :cond_35
     :goto_10
     iget-wide v0, v9, Lorg/telegram/messenger/MediaController;->timeSinceRaise:J
@@ -19057,21 +19054,21 @@
 
     if-lez v0, :cond_36
 
-    .line 1936
+    .line 1979
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToBack:I
 
-    .line 1937
+    .line 1980
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToTop:I
 
-    .line 1938
+    .line 1981
     iput v13, v9, Lorg/telegram/messenger/MediaController;->raisedToTopSign:I
 
-    .line 1939
+    .line 1982
     iput v13, v9, Lorg/telegram/messenger/MediaController;->countLess:I
 
     const-wide/16 v0, 0x0
 
-    .line 1940
+    .line 1983
     iput-wide v0, v9, Lorg/telegram/messenger/MediaController;->timeSinceRaise:J
 
     :cond_36
@@ -19082,12 +19079,12 @@
 .method public pauseByRewind()V
     .locals 1
 
-    .line 5237
+    .line 5290
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v0, :cond_0
 
-    .line 5238
+    .line 5291
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
 
     :cond_0
@@ -19097,7 +19094,7 @@
 .method public pauseMessage(Lorg/telegram/messenger/MessageObject;)Z
     .locals 7
 
-    .line 3687
+    .line 3730
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const/4 v1, 0x0
@@ -19123,11 +19120,11 @@
 
     goto/16 :goto_1
 
-    .line 3690
+    .line 3733
     :cond_1
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->stopProgressTimer()V
 
-    .line 3692
+    .line 3735
     :try_start_0
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -19135,7 +19132,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 3693
+    .line 3736
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isVoice()Z
@@ -19172,15 +19169,15 @@
 
     if-eqz p1, :cond_3
 
-    .line 3694
+    .line 3737
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p1, :cond_2
 
-    .line 3695
+    .line 3738
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->removeAllUpdateListeners()V
 
-    .line 3696
+    .line 3739
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
@@ -19196,26 +19193,26 @@
 
     aput v2, p1, v0
 
-    .line 3698
+    .line 3741
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
-    .line 3699
+    .line 3742
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->audioVolumeUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {p1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 3700
+    .line 3743
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v2, 0x12c
 
     invoke-virtual {p1, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 3701
+    .line 3744
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v2, Lorg/telegram/messenger/MediaController$12;
@@ -19224,14 +19221,14 @@
 
     invoke-virtual {p1, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 3709
+    .line 3752
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 3711
+    .line 3754
     :cond_3
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -19239,21 +19236,21 @@
 
     goto :goto_0
 
-    .line 3713
+    .line 3756
     :cond_4
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz p1, :cond_5
 
-    .line 3714
+    .line 3757
     invoke-virtual {p1}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
 
-    .line 3716
+    .line 3759
     :cond_5
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->isPaused:Z
 
-    .line 3717
+    .line 3760
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
@@ -19287,10 +19284,10 @@
     :catch_0
     move-exception p1
 
-    .line 3719
+    .line 3762
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3720
+    .line 3763
     iput-boolean v1, p0, Lorg/telegram/messenger/MediaController;->isPaused:Z
 
     :cond_6
@@ -19305,7 +19302,7 @@
 
     return-void
 
-    .line 3048
+    .line 3091
     :cond_0
     sget-object p2, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -19323,7 +19320,7 @@
 
     const/4 v0, 0x0
 
-    .line 3169
+    .line 3212
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/MediaController;->playMessage(Lorg/telegram/messenger/MessageObject;Z)Z
 
     move-result p1
@@ -19342,7 +19339,7 @@
 
     const/4 v9, 0x0
 
-    .line 3198
+    .line 3241
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
@@ -19351,14 +19348,14 @@
 
     return v9
 
-    .line 3176
+    .line 3219
     :cond_0
     iput-boolean v0, v7, Lorg/telegram/messenger/MediaController;->isSilent:Z
 
-    .line 3177
+    .line 3220
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/MediaController;->checkVolumeBarUI()V
 
-    .line 3178
+    .line 3221
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const/4 v11, 0x1
@@ -19376,15 +19373,15 @@
 
     if-eqz v1, :cond_4
 
-    .line 3179
+    .line 3222
     iget-boolean v0, v7, Lorg/telegram/messenger/MediaController;->isPaused:Z
 
     if-eqz v0, :cond_2
 
-    .line 3180
+    .line 3223
     invoke-direct/range {p0 .. p1}, Lorg/telegram/messenger/MediaController;->resumeAudio(Lorg/telegram/messenger/MessageObject;)Z
 
-    .line 3182
+    .line 3225
     :cond_2
     invoke-static {v11}, Lorg/telegram/messenger/SharedConfig;->enabledRaiseTo(Z)Z
 
@@ -19392,7 +19389,7 @@
 
     if-nez v0, :cond_3
 
-    .line 3183
+    .line 3226
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->raiseChat:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v7, v0}, Lorg/telegram/messenger/MediaController;->startRaiseToEarSensors(Lorg/telegram/ui/ChatActivity;)V
@@ -19400,13 +19397,13 @@
     :cond_3
     return v11
 
-    .line 3188
+    .line 3231
     :cond_4
     iget-boolean v1, v7, Lorg/telegram/messenger/MediaController;->needHiddenPlay:Z
 
     if-nez v1, :cond_5
 
-    .line 3189
+    .line 3232
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isOut()Z
 
     move-result v1
@@ -19419,7 +19416,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 3190
+    .line 3233
     iget v1, v8, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -19428,13 +19425,13 @@
 
     invoke-virtual {v1, v8}, Lorg/telegram/messenger/MessagesController;->markMessageContentAsRead(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 3192
+    .line 3235
     :cond_5
     iget-boolean v1, v7, Lorg/telegram/messenger/MediaController;->playMusicAgain:Z
 
     xor-int/lit8 v2, v1, 0x1
 
-    .line 3193
+    .line 3236
     iget-object v12, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     const/4 v13, 0x2
@@ -19443,10 +19440,10 @@
 
     if-nez v1, :cond_6
 
-    .line 3197
+    .line 3240
     invoke-virtual {v12}, Lorg/telegram/messenger/MessageObject;->resetPlayingProgress()V
 
-    .line 3198
+    .line 3241
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iget v1, v1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
@@ -19478,29 +19475,29 @@
     :cond_6
     move v2, v9
 
-    .line 3201
+    .line 3244
     :cond_7
     invoke-virtual {v7, v2, v9}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZ)V
 
     const/4 v14, 0x0
 
-    .line 3202
+    .line 3245
     iput-object v14, v7, Lorg/telegram/messenger/MediaController;->shouldSavePositionForCurrentAudio:Ljava/lang/String;
 
     const-wide/16 v5, 0x0
 
-    .line 3203
+    .line 3246
     iput-wide v5, v7, Lorg/telegram/messenger/MediaController;->lastSaveTime:J
 
-    .line 3204
+    .line 3247
     iput-boolean v9, v7, Lorg/telegram/messenger/MediaController;->playMusicAgain:Z
 
     const/4 v15, 0x0
 
-    .line 3205
+    .line 3248
     iput v15, v7, Lorg/telegram/messenger/MediaController;->seekToProgressPending:F
 
-    .line 3208
+    .line 3251
     iget-object v1, v8, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
@@ -19513,7 +19510,7 @@
 
     if-lez v1, :cond_9
 
-    .line 3209
+    .line 3252
     new-instance v1, Ljava/io/File;
 
     iget-object v2, v8, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
@@ -19522,7 +19519,7 @@
 
     invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 3210
+    .line 3253
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v2
@@ -19549,7 +19546,7 @@
 
     goto :goto_2
 
-    .line 3215
+    .line 3258
     :cond_a
     iget v1, v8, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
@@ -19565,7 +19562,7 @@
 
     move-object v3, v1
 
-    .line 3216
+    .line 3259
     :goto_2
     sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->streamMedia:Z
 
@@ -19616,7 +19613,7 @@
     :goto_3
     if-eq v3, v4, :cond_e
 
-    .line 3217
+    .line 3260
     invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
     move-result v2
@@ -19625,7 +19622,7 @@
 
     if-nez v1, :cond_e
 
-    .line 3218
+    .line 3261
     iget v0, v8, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -19638,29 +19635,29 @@
 
     invoke-virtual {v0, v1, v8, v9, v9}, Lorg/telegram/messenger/FileLoader;->loadFile(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Object;II)V
 
-    .line 3219
+    .line 3262
     iput-boolean v11, v7, Lorg/telegram/messenger/MediaController;->downloadingCurrentMessage:Z
 
-    .line 3220
+    .line 3263
     iput-boolean v9, v7, Lorg/telegram/messenger/MediaController;->isPaused:Z
 
-    .line 3221
+    .line 3264
     iput-wide v5, v7, Lorg/telegram/messenger/MediaController;->lastProgress:J
 
-    .line 3222
+    .line 3265
     iput-object v14, v7, Lorg/telegram/messenger/MediaController;->audioInfo:Lorg/telegram/messenger/audioinfo/AudioInfo;
 
-    .line 3223
+    .line 3266
     iput-object v8, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 3224
+    .line 3267
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isMusic()Z
 
     move-result v0
 
     if-eqz v0, :cond_d
 
-    .line 3225
+    .line 3268
     new-instance v0, Landroid/content/Intent;
 
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -19669,7 +19666,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 3230
+    .line 3273
     :try_start_0
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -19682,12 +19679,12 @@
     :catchall_0
     move-exception v0
 
-    .line 3233
+    .line 3276
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_4
 
-    .line 3236
+    .line 3279
     :cond_d
     new-instance v0, Landroid/content/Intent;
 
@@ -19697,12 +19694,12 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 3237
+    .line 3280
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->stopService(Landroid/content/Intent;)Z
 
-    .line 3239
+    .line 3282
     :goto_4
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
@@ -19735,48 +19732,48 @@
     :cond_e
     move/from16 v16, v2
 
-    .line 3242
+    .line 3285
     iput-boolean v9, v7, Lorg/telegram/messenger/MediaController;->downloadingCurrentMessage:Z
 
-    .line 3244
+    .line 3287
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isMusic()Z
 
     move-result v1
 
     if-eqz v1, :cond_f
 
-    .line 3245
+    .line 3288
     iget v1, v8, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-direct {v7, v1}, Lorg/telegram/messenger/MediaController;->checkIsNextMusicFileDownloaded(I)V
 
     goto :goto_5
 
-    .line 3247
+    .line 3290
     :cond_f
     iget v1, v8, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-direct {v7, v1}, Lorg/telegram/messenger/MediaController;->checkIsNextVoiceFileDownloaded(I)V
 
-    .line 3249
+    .line 3292
     :goto_5
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     if-eqz v1, :cond_10
 
-    .line 3250
+    .line 3293
     iput-boolean v9, v7, Lorg/telegram/messenger/MediaController;->isDrawingWasReady:Z
 
-    .line 3251
+    .line 3294
     invoke-virtual {v1, v9}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->setDrawingReady(Z)V
 
-    .line 3253
+    .line 3296
     :cond_10
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isVideo()Z
 
     move-result v1
 
-    .line 3254
+    .line 3297
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isRoundVideo()Z
 
     move-result v2
@@ -19811,7 +19808,7 @@
 
     goto/16 :goto_c
 
-    .line 3410
+    .line 3453
     :cond_11
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
@@ -19819,15 +19816,15 @@
 
     const/4 v1, 0x1
 
-    .line 3411
+    .line 3454
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/PipRoundVideoView;->close(Z)V
 
     const/4 v1, 0x0
 
-    .line 3412
+    .line 3455
     iput-object v1, v7, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
-    .line 3415
+    .line 3458
     :cond_12
     :try_start_1
     new-instance v0, Lorg/telegram/ui/Components/VideoPlayer;
@@ -19836,7 +19833,7 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 3416
+    .line 3459
     iget v1, v7, Lorg/telegram/messenger/MediaController;->playerNum:I
 
     const/4 v2, 0x1
@@ -19845,14 +19842,14 @@
 
     iput v1, v7, Lorg/telegram/messenger/MediaController;->playerNum:I
 
-    .line 3417
+    .line 3460
     new-instance v2, Lorg/telegram/messenger/MediaController$10;
 
     invoke-direct {v2, v7, v1, v8}, Lorg/telegram/messenger/MediaController$10;-><init>(Lorg/telegram/messenger/MediaController;ILorg/telegram/messenger/MessageObject;)V
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/VideoPlayer;->setDelegate(Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;)V
 
-    .line 3464
+    .line 3507
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     new-instance v1, Lorg/telegram/messenger/MediaController$11;
@@ -19863,21 +19860,21 @@
 
     if-eqz v16, :cond_14
 
-    .line 3476
+    .line 3519
     iget-boolean v0, v8, Lorg/telegram/messenger/MessageObject;->mediaExists:Z
 
     if-nez v0, :cond_13
 
     if-eq v3, v4, :cond_13
 
-    .line 3477
+    .line 3520
     new-instance v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda36;
 
     invoke-direct {v0, v8, v3}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda36;-><init>(Lorg/telegram/messenger/MessageObject;Ljava/io/File;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 3479
+    .line 3522
     :cond_13
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -19889,12 +19886,12 @@
 
     const/4 v1, 0x0
 
-    .line 3480
+    .line 3523
     iput-boolean v1, v7, Lorg/telegram/messenger/MediaController;->isStreamingCurrentAudio:Z
 
     goto/16 :goto_7
 
-    .line 3482
+    .line 3525
     :cond_14
     iget v0, v8, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
@@ -19906,12 +19903,12 @@
 
     move-result v0
 
-    .line 3483
+    .line 3526
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v1
 
-    .line 3484
+    .line 3527
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -19954,7 +19951,7 @@
 
     iget-object v4, v1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    .line 3489
+    .line 3532
     invoke-static {v4, v11}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -19971,7 +19968,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3491
+    .line 3534
     invoke-static {v1}, Lorg/telegram/messenger/FileLoader;->getDocumentFileName(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/String;
 
     move-result-object v0
@@ -19986,7 +19983,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3492
+    .line 3535
     iget-object v0, v1, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
     if-eqz v0, :cond_15
@@ -20009,7 +20006,7 @@
 
     move-result-object v0
 
-    .line 3493
+    .line 3536
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -20034,17 +20031,17 @@
 
     move-result-object v0
 
-    .line 3494
+    .line 3537
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v1, v0, v10}, Lorg/telegram/ui/Components/VideoPlayer;->preparePlayer(Landroid/net/Uri;Ljava/lang/String;)V
 
     const/4 v1, 0x1
 
-    .line 3495
+    .line 3538
     iput-boolean v1, v7, Lorg/telegram/messenger/MediaController;->isStreamingCurrentAudio:Z
 
-    .line 3497
+    .line 3540
     :goto_7
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isVoice()Z
 
@@ -20056,7 +20053,7 @@
 
     if-eqz v0, :cond_19
 
-    .line 3498
+    .line 3541
     :try_start_2
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getFileName()Ljava/lang/String;
 
@@ -20064,7 +20061,7 @@
 
     if-eqz v0, :cond_17
 
-    .line 3499
+    .line 3542
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
     move-result-wide v2
@@ -20075,7 +20072,7 @@
 
     if-ltz v2, :cond_17
 
-    .line 3500
+    .line 3543
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const/4 v3, 0x0
@@ -20086,7 +20083,7 @@
 
     const/high16 v2, -0x40800000    # -1.0f
 
-    .line 3501
+    .line 3544
     invoke-interface {v1, v0, v2}, Landroid/content/SharedPreferences;->getFloat(Ljava/lang/String;F)F
 
     move-result v1
@@ -20103,16 +20100,16 @@
 
     if-gez v2, :cond_16
 
-    .line 3503
+    .line 3546
     iput v1, v7, Lorg/telegram/messenger/MediaController;->seekToProgressPending:F
 
     iput v1, v8, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
-    .line 3505
+    .line 3548
     :cond_16
     iput-object v0, v7, Lorg/telegram/messenger/MediaController;->shouldSavePositionForCurrentAudio:Ljava/lang/String;
 
-    .line 3507
+    .line 3550
     :cond_17
     iget v0, v7, Lorg/telegram/messenger/MediaController;->currentPlaybackSpeed:F
 
@@ -20128,7 +20125,7 @@
 
     if-lez v0, :cond_18
 
-    .line 3508
+    .line 3551
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     iget v1, v7, Lorg/telegram/messenger/MediaController;->currentPlaybackSpeed:F
@@ -20148,17 +20145,17 @@
     :cond_18
     const/4 v1, 0x0
 
-    .line 3510
+    .line 3553
     iput-object v1, v7, Lorg/telegram/messenger/MediaController;->audioInfo:Lorg/telegram/messenger/audioinfo/AudioInfo;
 
-    .line 3511
+    .line 3554
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/MediaController;->clearPlaylist()V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
 
     goto :goto_9
 
-    .line 3514
+    .line 3557
     :cond_19
     :try_start_3
     invoke-static {v3}, Lorg/telegram/messenger/audioinfo/AudioInfo;->getAudioInfo(Ljava/io/File;)Lorg/telegram/messenger/audioinfo/AudioInfo;
@@ -20174,17 +20171,17 @@
     :catch_0
     move-exception v0
 
-    .line 3516
+    .line 3559
     :try_start_4
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3518
+    .line 3561
     :goto_8
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getFileName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 3519
+    .line 3562
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -20201,7 +20198,7 @@
 
     if-ltz v2, :cond_1b
 
-    .line 3520
+    .line 3563
     sget-object v2, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const/4 v3, 0x0
@@ -20212,7 +20209,7 @@
 
     const/high16 v2, -0x40800000    # -1.0f
 
-    .line 3521
+    .line 3564
     invoke-interface {v1, v0, v2}, Landroid/content/SharedPreferences;->getFloat(Ljava/lang/String;F)F
 
     move-result v1
@@ -20229,16 +20226,16 @@
 
     if-gez v2, :cond_1a
 
-    .line 3523
+    .line 3566
     iput v1, v7, Lorg/telegram/messenger/MediaController;->seekToProgressPending:F
 
     iput v1, v8, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
-    .line 3525
+    .line 3568
     :cond_1a
     iput-object v0, v7, Lorg/telegram/messenger/MediaController;->shouldSavePositionForCurrentAudio:Ljava/lang/String;
 
-    .line 3526
+    .line 3569
     iget v0, v7, Lorg/telegram/messenger/MediaController;->currentMusicPlaybackSpeed:F
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -20253,7 +20250,7 @@
 
     if-lez v0, :cond_1b
 
-    .line 3527
+    .line 3570
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     iget v1, v7, Lorg/telegram/messenger/MediaController;->currentMusicPlaybackSpeed:F
@@ -20270,7 +20267,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->setPlaybackSpeed(F)V
 
-    .line 3531
+    .line 3574
     :cond_1b
     :goto_9
     iget v0, v8, Lorg/telegram/messenger/MessageObject;->forceSeekTo:F
@@ -20281,17 +20278,17 @@
 
     if-ltz v2, :cond_1c
 
-    .line 3532
+    .line 3575
     iput v0, v7, Lorg/telegram/messenger/MediaController;->seekToProgressPending:F
 
     iput v0, v8, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
     const/high16 v1, -0x40800000    # -1.0f
 
-    .line 3533
+    .line 3576
     iput v1, v8, Lorg/telegram/messenger/MessageObject;->forceSeekTo:F
 
-    .line 3535
+    .line 3578
     :cond_1c
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -20309,27 +20306,27 @@
     :goto_a
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->setStreamType(I)V
 
-    .line 3536
+    .line 3579
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
 
-    .line 3537
+    .line 3580
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isVoice()Z
 
     move-result v0
 
     if-nez v0, :cond_1f
 
-    .line 3538
+    .line 3581
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_1e
 
-    .line 3539
+    .line 3582
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 3540
+    .line 3583
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
@@ -20339,7 +20336,7 @@
 
     new-array v0, v1, [F
 
-    .line 3542
+    .line 3585
     iget v1, v7, Lorg/telegram/messenger/MediaController;->audioVolume:F
 
     const/4 v2, 0x0
@@ -20358,19 +20355,19 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
-    .line 3543
+    .line 3586
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->audioVolumeUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 3544
+    .line 3587
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0x12c
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 3545
+    .line 3588
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->audioVolumeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
@@ -20380,10 +20377,10 @@
     :cond_1f
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 3547
+    .line 3590
     iput v1, v7, Lorg/telegram/messenger/MediaController;->audioVolume:F
 
-    .line 3548
+    .line 3591
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/MediaController;->setPlayerVolume()V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
@@ -20393,10 +20390,10 @@
     :catch_1
     move-exception v0
 
-    .line 3551
+    .line 3594
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3552
+    .line 3595
     iget v0, v8, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -20433,31 +20430,31 @@
 
     invoke-virtual {v0, v1, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 3553
+    .line 3596
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v0, :cond_21
 
-    .line 3554
+    .line 3597
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/VideoPlayer;->releasePlayer(Z)V
 
     const/4 v1, 0x0
 
-    .line 3555
+    .line 3598
     iput-object v1, v7, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 3556
+    .line 3599
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->unrefAudioVisualizeDrawable(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 3557
+    .line 3600
     iput-boolean v13, v7, Lorg/telegram/messenger/MediaController;->isPaused:Z
 
-    .line 3558
+    .line 3601
     iput-object v1, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 3559
+    .line 3602
     iput-boolean v13, v7, Lorg/telegram/messenger/MediaController;->downloadingCurrentMessage:Z
 
     :cond_21
@@ -20469,7 +20466,7 @@
 
     const/4 v13, 0x0
 
-    .line 3255
+    .line 3298
     iget v2, v8, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -20488,12 +20485,12 @@
 
     invoke-virtual {v2, v3, v4}, Lorg/telegram/messenger/FileLoader;->setLoadingVideoForPlayer(Lorg/telegram/tgnet/TLRPC$Document;Z)V
 
-    .line 3256
+    .line 3299
     iput-boolean v13, v7, Lorg/telegram/messenger/MediaController;->playerWasReady:Z
 
     if-eqz v1, :cond_24
 
-    .line 3257
+    .line 3300
     iget-object v2, v8, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
@@ -20530,7 +20527,7 @@
     :goto_e
     if-eqz v1, :cond_25
 
-    .line 3258
+    .line 3301
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDuration()D
 
     move-result-wide v1
@@ -20558,28 +20555,28 @@
 
     const/16 v25, 0x0
 
-    .line 3259
+    .line 3302
     :goto_f
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/MediaController;->clearPlaylist()V
 
-    .line 3260
+    .line 3303
     new-instance v2, Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-direct {v2}, Lorg/telegram/ui/Components/VideoPlayer;-><init>()V
 
     iput-object v2, v7, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 3261
+    .line 3304
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/VideoPlayer;->setLooping(Z)V
 
-    .line 3262
+    .line 3305
     iget v0, v7, Lorg/telegram/messenger/MediaController;->playerNum:I
 
     add-int/lit8 v3, v0, 0x1
 
     iput v3, v7, Lorg/telegram/messenger/MediaController;->playerNum:I
 
-    .line 3263
+    .line 3306
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     new-instance v4, Lorg/telegram/messenger/MediaController$9;
@@ -20616,10 +20613,10 @@
 
     const/4 v1, 0x0
 
-    .line 3355
+    .line 3398
     iput-boolean v1, v7, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayoutReady:Z
 
-    .line 3356
+    .line 3399
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     if-nez v0, :cond_27
@@ -20644,27 +20641,27 @@
 
     goto :goto_10
 
-    .line 3368
+    .line 3411
     :cond_26
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->currentTextureView:Landroid/view/TextureView;
 
     if-eqz v0, :cond_29
 
-    .line 3369
+    .line 3412
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/VideoPlayer;->setTextureView(Landroid/view/TextureView;)V
 
     goto :goto_12
 
-    .line 3357
+    .line 3400
     :cond_27
     :goto_10
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     if-nez v0, :cond_28
 
-    .line 3359
+    .line 3402
     :try_start_5
     new-instance v0, Lorg/telegram/ui/Components/PipRoundVideoView;
 
@@ -20672,7 +20669,7 @@
 
     iput-object v0, v7, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
-    .line 3360
+    .line 3403
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->baseActivity:Landroid/app/Activity;
 
     new-instance v2, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda11;
@@ -20688,17 +20685,17 @@
     :catch_2
     const/4 v1, 0x0
 
-    .line 3362
+    .line 3405
     iput-object v1, v7, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
-    .line 3365
+    .line 3408
     :cond_28
     :goto_11
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     if-eqz v0, :cond_29
 
-    .line 3366
+    .line 3409
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PipRoundVideoView;->getTextureView()Landroid/view/TextureView;
@@ -20711,21 +20708,21 @@
     :goto_12
     if-eqz v16, :cond_2b
 
-    .line 3373
+    .line 3416
     iget-boolean v0, v8, Lorg/telegram/messenger/MessageObject;->mediaExists:Z
 
     if-nez v0, :cond_2a
 
     if-eq v11, v12, :cond_2a
 
-    .line 3374
+    .line 3417
     new-instance v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda35;
 
     invoke-direct {v0, v8, v11}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda35;-><init>(Lorg/telegram/messenger/MessageObject;Ljava/io/File;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 3376
+    .line 3419
     :cond_2a
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -20737,7 +20734,7 @@
 
     goto/16 :goto_14
 
-    .line 3379
+    .line 3422
     :cond_2b
     :try_start_6
     iget v0, v8, Lorg/telegram/messenger/MessageObject;->currentAccount:I
@@ -20750,12 +20747,12 @@
 
     move-result v0
 
-    .line 3380
+    .line 3423
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v1
 
-    .line 3381
+    .line 3424
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -20804,7 +20801,7 @@
 
     move-object/from16 v4, v26
 
-    .line 3386
+    .line 3429
     invoke-static {v3, v4}, Ljava/net/URLEncoder;->encode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
@@ -20821,7 +20818,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3388
+    .line 3431
     invoke-static {v1}, Lorg/telegram/messenger/FileLoader;->getDocumentFileName(Lorg/telegram/tgnet/TLRPC$Document;)Ljava/lang/String;
 
     move-result-object v0
@@ -20836,7 +20833,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3389
+    .line 3432
     iget-object v0, v1, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
     if-eqz v0, :cond_2c
@@ -20859,7 +20856,7 @@
 
     move-result-object v0
 
-    .line 3390
+    .line 3433
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -20884,7 +20881,7 @@
 
     move-result-object v0
 
-    .line 3391
+    .line 3434
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {v1, v0, v10}, Lorg/telegram/ui/Components/VideoPlayer;->preparePlayer(Landroid/net/Uri;Ljava/lang/String;)V
@@ -20896,10 +20893,10 @@
     :catch_3
     move-exception v0
 
-    .line 3393
+    .line 3436
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3396
+    .line 3439
     :goto_14
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/MessageObject;->isRoundVideo()Z
 
@@ -20907,7 +20904,7 @@
 
     if-eqz v0, :cond_2f
 
-    .line 3397
+    .line 3440
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     iget-boolean v1, v7, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
@@ -20924,7 +20921,7 @@
     :goto_15
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->setStreamType(I)V
 
-    .line 3398
+    .line 3441
     iget v0, v7, Lorg/telegram/messenger/MediaController;->currentPlaybackSpeed:F
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -20939,7 +20936,7 @@
 
     if-lez v0, :cond_2e
 
-    .line 3399
+    .line 3442
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     iget v1, v7, Lorg/telegram/messenger/MediaController;->currentPlaybackSpeed:F
@@ -20956,7 +20953,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->setPlaybackSpeed(F)V
 
-    .line 3402
+    .line 3445
     :cond_2e
     iget v0, v8, Lorg/telegram/messenger/MessageObject;->forceSeekTo:F
 
@@ -20966,19 +20963,19 @@
 
     if-ltz v2, :cond_30
 
-    .line 3403
+    .line 3446
     iput v0, v7, Lorg/telegram/messenger/MediaController;->seekToProgressPending:F
 
     iput v0, v8, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
     const/high16 v1, -0x40800000    # -1.0f
 
-    .line 3404
+    .line 3447
     iput v1, v8, Lorg/telegram/messenger/MessageObject;->forceSeekTo:F
 
     goto :goto_16
 
-    .line 3407
+    .line 3450
     :cond_2f
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -20986,42 +20983,42 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->setStreamType(I)V
 
-    .line 3564
+    .line 3607
     :cond_30
     :goto_16
     invoke-direct/range {p0 .. p1}, Lorg/telegram/messenger/MediaController;->checkAudioFocus(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 3565
+    .line 3608
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/MediaController;->setPlayerVolume()V
 
     const/4 v1, 0x0
 
-    .line 3567
+    .line 3610
     iput-boolean v1, v7, Lorg/telegram/messenger/MediaController;->isPaused:Z
 
     const-wide/16 v1, 0x0
 
-    .line 3568
+    .line 3611
     iput-wide v1, v7, Lorg/telegram/messenger/MediaController;->lastProgress:J
 
-    .line 3569
+    .line 3612
     iput-object v8, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     const/4 v1, 0x1
 
-    .line 3570
+    .line 3613
     invoke-static {v1}, Lorg/telegram/messenger/SharedConfig;->enabledRaiseTo(Z)Z
 
     move-result v0
 
     if-nez v0, :cond_31
 
-    .line 3571
+    .line 3614
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->raiseChat:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v7, v0}, Lorg/telegram/messenger/MediaController;->startRaiseToEarSensors(Lorg/telegram/ui/ChatActivity;)V
 
-    .line 3573
+    .line 3616
     :cond_31
     sget-boolean v0, Lorg/telegram/messenger/ApplicationLoader;->mainInterfacePaused:Z
 
@@ -21063,13 +21060,13 @@
     :cond_33
     const/4 v1, 0x0
 
-    .line 3576
+    .line 3619
     :goto_17
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-direct {v7, v0}, Lorg/telegram/messenger/MediaController;->startProgressTimer(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 3577
+    .line 3620
     iget v0, v8, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -21090,7 +21087,7 @@
 
     invoke-virtual {v0, v2, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 3579
+    .line 3622
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const-wide/16 v1, 0x3e8
@@ -21099,7 +21096,7 @@
 
     if-eqz v0, :cond_37
 
-    .line 3581
+    .line 3624
     :try_start_7
     iget-object v5, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
@@ -21111,7 +21108,7 @@
 
     if-eqz v5, :cond_36
 
-    .line 3582
+    .line 3625
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->getDuration()J
 
     move-result-wide v5
@@ -21120,7 +21117,7 @@
 
     if-nez v0, :cond_34
 
-    .line 3584
+    .line 3627
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()D
@@ -21134,7 +21131,7 @@
     :cond_34
     long-to-float v0, v5
 
-    .line 3586
+    .line 3629
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iget v2, v1, Lorg/telegram/messenger/MessageObject;->audioProgress:F
@@ -21143,19 +21140,19 @@
 
     float-to-int v0, v0
 
-    .line 3587
+    .line 3630
     iget v2, v1, Lorg/telegram/messenger/MessageObject;->audioProgressMs:I
 
     if-eqz v2, :cond_35
 
     const/4 v3, 0x0
 
-    .line 3589
+    .line 3632
     iput v3, v1, Lorg/telegram/messenger/MessageObject;->audioProgressMs:I
 
     move v0, v2
 
-    .line 3591
+    .line 3634
     :cond_35
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -21170,7 +21167,7 @@
     :catch_4
     move-exception v0
 
-    .line 3594
+    .line 3637
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     const/4 v2, 0x0
@@ -21179,10 +21176,10 @@
 
     const/4 v2, 0x0
 
-    .line 3595
+    .line 3638
     iput v2, v1, Lorg/telegram/messenger/MessageObject;->audioProgressSec:I
 
-    .line 3596
+    .line 3639
     iget v1, v8, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -21213,10 +21210,10 @@
 
     invoke-virtual {v1, v3, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 3597
+    .line 3640
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3599
+    .line 3642
     :cond_36
     :goto_18
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
@@ -21225,13 +21222,13 @@
 
     goto :goto_19
 
-    .line 3600
+    .line 3643
     :cond_37
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v0, :cond_39
 
-    .line 3602
+    .line 3645
     :try_start_8
     iget-object v5, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
@@ -21243,7 +21240,7 @@
 
     if-eqz v5, :cond_39
 
-    .line 3603
+    .line 3646
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->getDuration()J
 
     move-result-wide v5
@@ -21252,7 +21249,7 @@
 
     if-nez v0, :cond_38
 
-    .line 3605
+    .line 3648
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->getDuration()D
@@ -21266,7 +21263,7 @@
     :cond_38
     long-to-float v0, v5
 
-    .line 3607
+    .line 3650
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iget v1, v1, Lorg/telegram/messenger/MessageObject;->audioProgress:F
@@ -21275,7 +21272,7 @@
 
     float-to-int v0, v0
 
-    .line 3608
+    .line 3651
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     int-to-long v2, v0
@@ -21289,12 +21286,12 @@
     :catch_5
     move-exception v0
 
-    .line 3611
+    .line 3654
     iget-object v1, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/MessageObject;->resetPlayingProgress()V
 
-    .line 3612
+    .line 3655
     iget v1, v8, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -21327,10 +21324,10 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 3613
+    .line 3656
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 3617
+    .line 3660
     :cond_39
     :goto_19
     iget-object v0, v7, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
@@ -21343,7 +21340,7 @@
 
     if-eqz v0, :cond_3a
 
-    .line 3618
+    .line 3661
     new-instance v0, Landroid/content/Intent;
 
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -21352,7 +21349,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 3623
+    .line 3666
     :try_start_9
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -21365,12 +21362,12 @@
     :catchall_1
     move-exception v0
 
-    .line 3626
+    .line 3669
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_1a
 
-    .line 3629
+    .line 3672
     :cond_3a
     new-instance v0, Landroid/content/Intent;
 
@@ -21380,7 +21377,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 3630
+    .line 3673
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->stopService(Landroid/content/Intent;)Z
@@ -21394,7 +21391,7 @@
 .method public playMessageAtIndex(I)V
     .locals 2
 
-    .line 2490
+    .line 2533
     iget v0, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
     if-ltz v0, :cond_2
@@ -21409,16 +21406,16 @@
 
     goto :goto_0
 
-    .line 2493
+    .line 2536
     :cond_0
     iput p1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
     const/4 v0, 0x1
 
-    .line 2494
+    .line 2537
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->playMusicAgain:Z
 
-    .line 2495
+    .line 2538
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -21427,7 +21424,7 @@
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    .line 2496
+    .line 2539
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz v0, :cond_1
@@ -21438,12 +21435,12 @@
 
     if-nez v0, :cond_1
 
-    .line 2497
+    .line 2540
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->resetPlayingProgress()V
 
-    .line 2499
+    .line 2542
     :cond_1
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/MediaController;->playMessage(Lorg/telegram/messenger/MessageObject;)Z
 
@@ -21457,7 +21454,7 @@
 
     const/4 v0, 0x0
 
-    .line 2476
+    .line 2519
     invoke-direct {p0, v0}, Lorg/telegram/messenger/MediaController;->playNextMessageWithoutOrder(Z)V
 
     return-void
@@ -21466,7 +21463,7 @@
 .method public playPreviousMessage()V
     .locals 4
 
-    .line 2561
+    .line 2604
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->shuffleMusic:Z
 
     if-eqz v0, :cond_0
@@ -21478,7 +21475,7 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
-    .line 2562
+    .line 2605
     :goto_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -21498,7 +21495,7 @@
 
     goto :goto_2
 
-    .line 2565
+    .line 2608
     :cond_1
     iget v1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
@@ -21508,7 +21505,7 @@
 
     check-cast v1, Lorg/telegram/messenger/MessageObject;
 
-    .line 2566
+    .line 2609
     iget v2, v1, Lorg/telegram/messenger/MessageObject;->audioProgressSec:I
 
     const/16 v3, 0xa
@@ -21517,12 +21514,12 @@
 
     const/4 v0, 0x0
 
-    .line 2567
+    .line 2610
     invoke-virtual {p0, v1, v0}, Lorg/telegram/messenger/MediaController;->seekToProgress(Lorg/telegram/messenger/MessageObject;F)Z
 
     return-void
 
-    .line 2571
+    .line 2614
     :cond_2
     sget-boolean v1, Lorg/telegram/messenger/SharedConfig;->playOrderReversed:Z
 
@@ -21540,7 +21537,7 @@
     :goto_1
     invoke-direct {p0, v0, v1}, Lorg/telegram/messenger/MediaController;->traversePlaylist(Ljava/util/ArrayList;I)Z
 
-    .line 2572
+    .line 2615
     iget v1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -21551,11 +21548,11 @@
 
     return-void
 
-    .line 2575
+    .line 2618
     :cond_4
     iput-boolean v2, p0, Lorg/telegram/messenger/MediaController;->playMusicAgain:Z
 
-    .line 2576
+    .line 2619
     iget v1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -21576,7 +21573,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 3803
+    .line 3846
     iget-boolean p1, p0, Lorg/telegram/messenger/MediaController;->hasRecordAudioFocus:Z
 
     if-nez p1, :cond_1
@@ -21585,7 +21582,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 3804
+    .line 3847
     sget-object p1, Lorg/telegram/messenger/NotificationsController;->audioManager:Landroid/media/AudioManager;
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioRecordFocusChangedListener:Landroid/media/AudioManager$OnAudioFocusChangeListener;
@@ -21602,18 +21599,18 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 3806
+    .line 3849
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->hasRecordAudioFocus:Z
 
     goto :goto_0
 
-    .line 3810
+    .line 3853
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/messenger/MediaController;->hasRecordAudioFocus:Z
 
     if-eqz p1, :cond_1
 
-    .line 3811
+    .line 3854
     sget-object p1, Lorg/telegram/messenger/NotificationsController;->audioManager:Landroid/media/AudioManager;
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioRecordFocusChangedListener:Landroid/media/AudioManager$OnAudioFocusChangeListener;
@@ -21622,7 +21619,7 @@
 
     const/4 p1, 0x0
 
-    .line 3812
+    .line 3855
     iput-boolean p1, p0, Lorg/telegram/messenger/MediaController;->hasRecordAudioFocus:Z
 
     :cond_1
@@ -21635,7 +21632,7 @@
 
     const/4 v0, 0x0
 
-    .line 2226
+    .line 2269
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->goingToShowMessageObject:Lorg/telegram/messenger/MessageObject;
 
     return-void
@@ -21644,7 +21641,7 @@
 .method public resumeByRewind()V
     .locals 2
 
-    .line 5243
+    .line 5296
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v0, :cond_1
@@ -21657,27 +21654,27 @@
 
     if-nez v1, :cond_1
 
-    .line 5244
+    .line 5297
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->isBuffering()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 5245
+    .line 5298
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     const/4 v1, 0x0
 
-    .line 5246
+    .line 5299
     invoke-virtual {p0, v1, v1}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZ)V
 
-    .line 5247
+    .line 5300
     invoke-virtual {p0, v0}, Lorg/telegram/messenger/MediaController;->playMessage(Lorg/telegram/messenger/MessageObject;)Z
 
     goto :goto_0
 
-    .line 5249
+    .line 5302
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -21695,7 +21692,7 @@
 
     const/4 v1, 0x1
 
-    .line 5037
+    .line 5091
     invoke-virtual {p0, p1, v0, v1}, Lorg/telegram/messenger/MediaController;->scheduleVideoConvert(Lorg/telegram/messenger/MessageObject;ZZ)Z
 
     return-void
@@ -21706,9 +21703,9 @@
 
     const/4 v0, 0x0
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_5
 
-    .line 5041
+    .line 5095
     iget-object v1, p1, Lorg/telegram/messenger/MessageObject;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
     if-nez v1, :cond_0
@@ -21718,7 +21715,7 @@
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 5044
+    .line 5098
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -21732,30 +21729,45 @@
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 5047
+    .line 5101
     new-instance p2, Ljava/io/File;
 
-    iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+    iget-object v1, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
+    iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
-    invoke-direct {p2, v0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {p2, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {p2}, Ljava/io/File;->delete()Z
 
-    .line 5049
+    .line 5103
     :cond_2
-    iget-object p2, p0, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
-
-    new-instance v0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;
+    new-instance p2, Lorg/telegram/messenger/MediaController$VideoConvertMessage;
 
     iget-object v1, p1, Lorg/telegram/messenger/MessageObject;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    invoke-direct {v0, p1, v1, p3}, Lorg/telegram/messenger/MediaController$VideoConvertMessage;-><init>(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/VideoEditedInfo;Z)V
+    invoke-direct {p2, p1, v1, p3}, Lorg/telegram/messenger/MediaController$VideoConvertMessage;-><init>(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/VideoEditedInfo;Z)V
 
-    invoke-virtual {p2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 5104
+    iget-object p1, p0, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
 
-    .line 5050
+    invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 5105
+    iget-boolean p1, p2, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->foreground:Z
+
+    if-eqz p1, :cond_3
+
+    .line 5106
+    iget-object p1, p0, Lorg/telegram/messenger/MediaController;->foregroundConvertingMessages:Ljava/util/ArrayList;
+
+    invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 5107
+    invoke-direct {p0, v0}, Lorg/telegram/messenger/MediaController;->checkForegroundConvertMessage(Z)V
+
+    .line 5109
+    :cond_3
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->videoConvertQueue:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -21764,15 +21776,15 @@
 
     const/4 p2, 0x1
 
-    if-ne p1, p2, :cond_3
+    if-ne p1, p2, :cond_4
 
-    .line 5051
+    .line 5110
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->startVideoConvertFromQueue()Z
 
-    :cond_3
+    :cond_4
     return p2
 
-    :cond_4
+    :cond_5
     :goto_0
     return v0
 .end method
@@ -21780,10 +21792,10 @@
 .method public seekToProgress(Lorg/telegram/messenger/MessageObject;F)Z
     .locals 7
 
-    .line 2234
+    .line 2277
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 2235
+    .line 2278
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     const/4 v2, 0x0
@@ -21807,14 +21819,14 @@
 
     goto :goto_1
 
-    .line 2239
+    .line 2282
     :cond_1
     :try_start_0
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v1, :cond_3
 
-    .line 2240
+    .line 2283
     invoke-virtual {v1}, Lorg/telegram/ui/Components/VideoPlayer;->getDuration()J
 
     move-result-wide v3
@@ -21825,12 +21837,12 @@
 
     if-nez v1, :cond_2
 
-    .line 2242
+    .line 2285
     iput p2, p0, Lorg/telegram/messenger/MediaController;->seekToProgressPending:F
 
     goto :goto_0
 
-    .line 2244
+    .line 2287
     :cond_2
     iput p2, v0, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
@@ -21840,25 +21852,25 @@
 
     float-to-int v1, v1
 
-    .line 2246
+    .line 2289
     iget-object v3, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     int-to-long v4, v1
 
     invoke-virtual {v3, v4, v5}, Lorg/telegram/ui/Components/VideoPlayer;->seekTo(J)V
 
-    .line 2247
+    .line 2290
     iput-wide v4, p0, Lorg/telegram/messenger/MediaController;->lastProgress:J
 
     goto :goto_0
 
-    .line 2249
+    .line 2292
     :cond_3
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v1, :cond_4
 
-    .line 2250
+    .line 2293
     invoke-virtual {v1}, Lorg/telegram/ui/Components/VideoPlayer;->getDuration()J
 
     move-result-wide v3
@@ -21873,7 +21885,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2256
+    .line 2299
     :cond_4
     :goto_0
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
@@ -21913,7 +21925,7 @@
     :catch_0
     move-exception p1
 
-    .line 2253
+    .line 2296
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_5
@@ -21924,7 +21936,7 @@
 .method public setAllowStartRecord(Z)V
     .locals 0
 
-    .line 2012
+    .line 2055
     iput-boolean p1, p0, Lorg/telegram/messenger/MediaController;->allowStartRecord:Z
 
     return-void
@@ -21935,12 +21947,12 @@
 
     if-eqz p2, :cond_0
 
-    .line 2799
+    .line 2842
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->baseActivity:Landroid/app/Activity;
 
     goto :goto_0
 
-    .line 2800
+    .line 2843
     :cond_0
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->baseActivity:Landroid/app/Activity;
 
@@ -21948,7 +21960,7 @@
 
     const/4 p1, 0x0
 
-    .line 2801
+    .line 2844
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->baseActivity:Landroid/app/Activity;
 
     :cond_1
@@ -21959,7 +21971,7 @@
 .method public setCurrentVideoVisible(Z)V
     .locals 3
 
-    .line 2720
+    .line 2763
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     if-nez v0, :cond_0
@@ -21973,25 +21985,25 @@
 
     if-eqz p1, :cond_3
 
-    .line 2724
+    .line 2767
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     if-eqz p1, :cond_1
 
     const/4 v0, 0x2
 
-    .line 2725
+    .line 2768
     iput v0, p0, Lorg/telegram/messenger/MediaController;->pipSwitchingState:I
 
-    .line 2726
+    .line 2769
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/PipRoundVideoView;->close(Z)V
 
-    .line 2727
+    .line 2770
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     goto :goto_1
 
-    .line 2729
+    .line 2772
     :cond_1
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
@@ -21999,14 +22011,14 @@
 
     if-nez p1, :cond_2
 
-    .line 2730
+    .line 2773
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->currentTextureViewContainer:Landroid/widget/FrameLayout;
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 2732
+    .line 2775
     :cond_2
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -22016,7 +22028,7 @@
 
     goto :goto_1
 
-    .line 2735
+    .line 2778
     :cond_3
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
@@ -22024,10 +22036,10 @@
 
     if-eqz p1, :cond_4
 
-    .line 2736
+    .line 2779
     iput v2, p0, Lorg/telegram/messenger/MediaController;->pipSwitchingState:I
 
-    .line 2737
+    .line 2780
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->currentTextureViewContainer:Landroid/widget/FrameLayout;
 
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
@@ -22036,13 +22048,13 @@
 
     goto :goto_1
 
-    .line 2739
+    .line 2782
     :cond_4
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     if-nez p1, :cond_5
 
-    .line 2741
+    .line 2784
     :try_start_0
     new-instance p1, Lorg/telegram/ui/Components/PipRoundVideoView;
 
@@ -22050,7 +22062,7 @@
 
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
-    .line 2742
+    .line 2785
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->baseActivity:Landroid/app/Activity;
 
     new-instance v2, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda12;
@@ -22063,18 +22075,18 @@
 
     goto :goto_0
 
-    .line 2744
+    .line 2787
     :catch_0
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
-    .line 2747
+    .line 2790
     :cond_5
     :goto_0
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     if-eqz p1, :cond_6
 
-    .line 2748
+    .line 2791
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/PipRoundVideoView;->getTextureView()Landroid/view/TextureView;
@@ -22093,12 +22105,12 @@
 
     if-eqz p2, :cond_0
 
-    .line 2807
+    .line 2850
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->feedbackView:Landroid/view/View;
 
     goto :goto_0
 
-    .line 2808
+    .line 2851
     :cond_0
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->feedbackView:Landroid/view/View;
 
@@ -22106,7 +22118,7 @@
 
     const/4 p1, 0x0
 
-    .line 2809
+    .line 2852
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->feedbackView:Landroid/view/View;
 
     :cond_1
@@ -22117,7 +22129,7 @@
 .method public setInputFieldHasText(Z)V
     .locals 0
 
-    .line 2008
+    .line 2051
     iput-boolean p1, p0, Lorg/telegram/messenger/MediaController;->inputFieldHasText:Z
 
     return-void
@@ -22136,25 +22148,25 @@
         }
     .end annotation
 
-    .line 1489
+    .line 1532
     iput-wide p2, p0, Lorg/telegram/messenger/MediaController;->lastChatEnterTime:J
 
-    .line 1490
+    .line 1533
     iput-wide p4, p0, Lorg/telegram/messenger/MediaController;->lastChatLeaveTime:J
 
-    .line 1491
+    .line 1534
     iput p1, p0, Lorg/telegram/messenger/MediaController;->lastChatAccount:I
 
-    .line 1492
+    .line 1535
     iput-object p7, p0, Lorg/telegram/messenger/MediaController;->lastSecretChat:Lorg/telegram/tgnet/TLRPC$EncryptedChat;
 
-    .line 1493
+    .line 1536
     iput-object p6, p0, Lorg/telegram/messenger/MediaController;->lastUser:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 1494
+    .line 1537
     iput p9, p0, Lorg/telegram/messenger/MediaController;->lastMessageId:I
 
-    .line 1495
+    .line 1538
     iput-object p8, p0, Lorg/telegram/messenger/MediaController;->lastChatVisibleMessages:Ljava/util/ArrayList;
 
     return-void
@@ -22163,7 +22175,7 @@
 .method public setNeedHiddenPlay(Z)V
     .locals 0
 
-    .line 147
+    .line 148
     iput-boolean p1, p0, Lorg/telegram/messenger/MediaController;->needHiddenPlay:Z
 
     return-void
@@ -22172,31 +22184,31 @@
 .method public setPlaybackOrderType(I)V
     .locals 1
 
-    .line 3653
+    .line 3696
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->shuffleMusic:Z
 
-    .line 3654
+    .line 3697
     invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setPlaybackOrderType(I)V
 
-    .line 3655
+    .line 3698
     sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->shuffleMusic:Z
 
     if-eq v0, p1, :cond_1
 
     if-eqz p1, :cond_0
 
-    .line 3657
+    .line 3700
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->buildShuffledPlayList()V
 
     goto :goto_0
 
-    .line 3659
+    .line 3702
     :cond_0
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz p1, :cond_1
 
-    .line 3660
+    .line 3703
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
@@ -22209,12 +22221,12 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 3662
+    .line 3705
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->clearPlaylist()V
 
     const/4 p1, 0x1
 
-    .line 3663
+    .line 3706
     invoke-virtual {p0, p1, p1}, Lorg/telegram/messenger/MediaController;->cleanupPlayer(ZZ)V
 
     :cond_1
@@ -22231,7 +22243,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 2815
+    .line 2858
     iget v2, p0, Lorg/telegram/messenger/MediaController;->currentMusicPlaybackSpeed:F
 
     const/high16 v3, 0x40c00000    # 6.0f
@@ -22248,21 +22260,21 @@
 
     if-eqz v2, :cond_1
 
-    .line 2817
+    .line 2860
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v2, :cond_0
 
-    .line 2818
+    .line 2861
     invoke-virtual {v2}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
 
-    .line 2819
+    .line 2862
     :cond_0
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     iget v3, v2, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
-    .line 2821
+    .line 2864
     new-instance v4, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda32;
 
     invoke-direct {v4, p0, v2, v3}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda32;-><init>(Lorg/telegram/messenger/MediaController;Lorg/telegram/messenger/MessageObject;F)V
@@ -22271,13 +22283,13 @@
 
     invoke-static {v4, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 2830
+    .line 2873
     :cond_1
     iput p2, p0, Lorg/telegram/messenger/MediaController;->currentMusicPlaybackSpeed:F
 
     sub-float v1, p2, v1
 
-    .line 2831
+    .line 2874
     invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
     move-result v1
@@ -22286,18 +22298,18 @@
 
     if-lez v0, :cond_3
 
-    .line 2832
+    .line 2875
     iput p2, p0, Lorg/telegram/messenger/MediaController;->fastMusicPlaybackSpeed:F
 
     goto :goto_0
 
-    .line 2835
+    .line 2878
     :cond_2
     iput p2, p0, Lorg/telegram/messenger/MediaController;->currentPlaybackSpeed:F
 
     sub-float v1, p2, v1
 
-    .line 2836
+    .line 2879
     invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
     move-result v1
@@ -22306,10 +22318,10 @@
 
     if-lez v0, :cond_3
 
-    .line 2837
+    .line 2880
     iput p2, p0, Lorg/telegram/messenger/MediaController;->fastPlaybackSpeed:F
 
-    .line 2840
+    .line 2883
     :cond_3
     :goto_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->audioPlayer:Lorg/telegram/ui/Components/VideoPlayer;
@@ -22320,7 +22332,7 @@
 
     mul-float v2, p2, v1
 
-    .line 2841
+    .line 2884
     invoke-static {v2}, Ljava/lang/Math;->round(F)I
 
     move-result v2
@@ -22333,7 +22345,7 @@
 
     goto :goto_1
 
-    .line 2842
+    .line 2885
     :cond_4
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -22341,7 +22353,7 @@
 
     mul-float v2, p2, v1
 
-    .line 2843
+    .line 2886
     invoke-static {v2}, Ljava/lang/Math;->round(F)I
 
     move-result v2
@@ -22352,7 +22364,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/VideoPlayer;->setPlaybackSpeed(F)V
 
-    .line 2845
+    .line 2888
     :cond_5
     :goto_1
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
@@ -22372,7 +22384,7 @@
     :cond_6
     const-string/jumbo v1, "playbackSpeed"
 
-    .line 2846
+    .line 2889
     :goto_2
     invoke-interface {v0, v1, p2}, Landroid/content/SharedPreferences$Editor;->putFloat(Ljava/lang/String;F)Landroid/content/SharedPreferences$Editor;
 
@@ -22390,7 +22402,7 @@
     :goto_3
     if-eqz p1, :cond_8
 
-    .line 2847
+    .line 2890
     iget p1, p0, Lorg/telegram/messenger/MediaController;->fastMusicPlaybackSpeed:F
 
     goto :goto_4
@@ -22403,10 +22415,10 @@
 
     move-result-object p1
 
-    .line 2848
+    .line 2891
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 2849
+    .line 2892
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -22445,7 +22457,7 @@
 
     move-wide v3, p3
 
-    .line 127
+    .line 128
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/messenger/MediaController;->setPlaylist(Ljava/util/ArrayList;Lorg/telegram/messenger/MessageObject;JZ)Z
 
     move-result p1
@@ -22480,7 +22492,7 @@
 
     move-object v6, p5
 
-    .line 2396
+    .line 2439
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/messenger/MediaController;->setPlaylist(Ljava/util/ArrayList;Lorg/telegram/messenger/MessageObject;JZLorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;)Z
 
     move-result p1
@@ -22515,7 +22527,7 @@
 
     move v7, p5
 
-    .line 2400
+    .line 2443
     invoke-virtual/range {v0 .. v7}, Lorg/telegram/messenger/MediaController;->setPlaylist(Ljava/util/ArrayList;Lorg/telegram/messenger/MessageObject;JZLorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;Z)Z
 
     move-result p1
@@ -22552,7 +22564,7 @@
 
     move-object v6, p6
 
-    .line 132
+    .line 133
     invoke-virtual/range {v0 .. v7}, Lorg/telegram/messenger/MediaController;->setPlaylist(Ljava/util/ArrayList;Lorg/telegram/messenger/MessageObject;JZLorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;Z)Z
 
     move-result p1
@@ -22575,12 +22587,12 @@
         }
     .end annotation
 
-    .line 2404
+    .line 2447
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-ne v0, p2, :cond_1
 
-    .line 2405
+    .line 2448
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
@@ -22589,10 +22601,10 @@
 
     if-ltz p1, :cond_0
 
-    .line 2407
+    .line 2450
     iput p1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
-    .line 2409
+    .line 2452
     :cond_0
     invoke-virtual {p0, p2}, Lorg/telegram/messenger/MediaController;->playMessage(Lorg/telegram/messenger/MessageObject;)Z
 
@@ -22600,19 +22612,19 @@
 
     return p1
 
-    .line 2411
+    .line 2454
     :cond_1
     iput-boolean p7, p0, Lorg/telegram/messenger/MediaController;->isFromMusicPlaylist:Z
 
     xor-int/lit8 p7, p5, 0x1
 
-    .line 2412
+    .line 2455
     iput-boolean p7, p0, Lorg/telegram/messenger/MediaController;->forceLoopCurrentPlaylist:Z
 
-    .line 2413
+    .line 2456
     iput-wide p3, p0, Lorg/telegram/messenger/MediaController;->playlistMergeDialogId:J
 
-    .line 2414
+    .line 2457
     iget-object p3, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {p3}, Ljava/util/ArrayList;->isEmpty()Z
@@ -22625,13 +22637,13 @@
 
     iput-boolean p3, p0, Lorg/telegram/messenger/MediaController;->playMusicAgain:Z
 
-    .line 2415
+    .line 2458
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->clearPlaylist()V
 
-    .line 2416
+    .line 2459
     iput-object p6, p0, Lorg/telegram/messenger/MediaController;->playlistGlobalSearchParams:Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;
 
-    .line 2417
+    .line 2460
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p3
@@ -22663,7 +22675,7 @@
 
     const/high16 p7, -0x80000000
 
-    .line 2420
+    .line 2463
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
@@ -22673,21 +22685,21 @@
     :goto_0
     if-ltz v0, :cond_6
 
-    .line 2421
+    .line 2464
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p4
 
     check-cast p4, Lorg/telegram/messenger/MessageObject;
 
-    .line 2422
+    .line 2465
     invoke-virtual {p4}, Lorg/telegram/messenger/MessageObject;->isMusic()Z
 
     move-result v1
 
     if-eqz v1, :cond_5
 
-    .line 2423
+    .line 2466
     invoke-virtual {p4}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v1
@@ -22696,24 +22708,24 @@
 
     if-eqz p6, :cond_4
 
-    .line 2425
+    .line 2468
     :cond_3
     invoke-static {p3, v1}, Ljava/lang/Math;->min(II)I
 
     move-result p3
 
-    .line 2426
+    .line 2469
     invoke-static {p7, v1}, Ljava/lang/Math;->max(II)I
 
     move-result p7
 
-    .line 2428
+    .line 2471
     :cond_4
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2429
+    .line 2472
     iget-object v2, p0, Lorg/telegram/messenger/MediaController;->playlistMap:Ljava/util/HashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -22727,11 +22739,11 @@
 
     goto :goto_0
 
-    .line 2432
+    .line 2475
     :cond_6
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->sortPlaylist()V
 
-    .line 2433
+    .line 2476
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
@@ -22744,10 +22756,10 @@
 
     if-ne p1, p4, :cond_7
 
-    .line 2435
+    .line 2478
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->clearPlaylist()V
 
-    .line 2436
+    .line 2479
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
@@ -22756,12 +22768,12 @@
 
     iput p1, p0, Lorg/telegram/messenger/MediaController;->currentPlaylistNum:I
 
-    .line 2437
+    .line 2480
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playlist:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2438
+    .line 2481
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playlistMap:Ljava/util/HashMap;
 
     invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -22774,7 +22786,7 @@
 
     invoke-virtual {p1, p4, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2440
+    .line 2483
     :cond_7
     invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->isMusic()Z
 
@@ -22790,23 +22802,23 @@
 
     if-nez p1, :cond_a
 
-    .line 2441
+    .line 2484
     sget-boolean p1, Lorg/telegram/messenger/SharedConfig;->shuffleMusic:Z
 
     if-eqz p1, :cond_8
 
-    .line 2442
+    .line 2485
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->buildShuffledPlayList()V
 
     :cond_8
     if-eqz p5, :cond_a
 
-    .line 2445
+    .line 2488
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playlistGlobalSearchParams:Lorg/telegram/messenger/MediaController$PlaylistGlobalSearchParams;
 
     if-nez p1, :cond_9
 
-    .line 2446
+    .line 2489
     iget p1, p2, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -22825,7 +22837,7 @@
 
     goto :goto_1
 
-    .line 2448
+    .line 2491
     :cond_9
     invoke-static {}, Lorg/telegram/tgnet/ConnectionsManager;->generateClassGuid()I
 
@@ -22833,7 +22845,7 @@
 
     iput p1, p0, Lorg/telegram/messenger/MediaController;->playlistClassGuid:I
 
-    .line 2452
+    .line 2495
     :cond_a
     :goto_1
     invoke-virtual {p0, p2}, Lorg/telegram/messenger/MediaController;->playMessage(Lorg/telegram/messenger/MessageObject;)Z
@@ -22843,17 +22855,17 @@
     return p1
 .end method
 
-.method public setReplyingMessage(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public setReplyingMessage(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 0
 
-    .line 3796
+    .line 3839
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->recordReplyingMsg:Lorg/telegram/messenger/MessageObject;
 
-    .line 3797
+    .line 3840
     iput-object p2, p0, Lorg/telegram/messenger/MediaController;->recordReplyingTopMsg:Lorg/telegram/messenger/MessageObject;
 
-    .line 3798
-    iput-object p3, p0, Lorg/telegram/messenger/MediaController;->recordReplyingStory:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    .line 3841
+    iput-object p3, p0, Lorg/telegram/messenger/MediaController;->recordReplyingStory:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     return-void
 .end method
@@ -22873,7 +22885,7 @@
 
     move v4, p4
 
-    .line 2755
+    .line 2798
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/messenger/MediaController;->setTextureView(Landroid/view/TextureView;Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;Landroid/widget/FrameLayout;ZLjava/lang/Runnable;)V
 
     return-void
@@ -22893,26 +22905,26 @@
 
     if-nez p4, :cond_1
 
-    .line 2762
+    .line 2805
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->currentTextureView:Landroid/view/TextureView;
 
     if-ne p4, p1, :cond_1
 
-    .line 2763
+    .line 2806
     iput v0, p0, Lorg/telegram/messenger/MediaController;->pipSwitchingState:I
 
-    .line 2764
+    .line 2807
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->currentTextureView:Landroid/view/TextureView;
 
-    .line 2765
+    .line 2808
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
-    .line 2766
+    .line 2809
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->currentTextureViewContainer:Landroid/widget/FrameLayout;
 
     return-void
 
-    .line 2769
+    .line 2812
     :cond_1
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -22927,7 +22939,7 @@
     :cond_2
     if-eqz p2, :cond_3
 
-    .line 2772
+    .line 2815
     invoke-virtual {p2}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->isDrawingReady()Z
 
     move-result p4
@@ -22942,17 +22954,17 @@
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->isDrawingWasReady:Z
 
-    .line 2773
+    .line 2816
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->currentTextureView:Landroid/view/TextureView;
 
     if-eqz p5, :cond_4
 
-    .line 2774
+    .line 2817
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     if-nez p1, :cond_4
 
-    .line 2776
+    .line 2819
     :try_start_0
     new-instance p1, Lorg/telegram/ui/Components/PipRoundVideoView;
 
@@ -22960,7 +22972,7 @@
 
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
-    .line 2777
+    .line 2820
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->baseActivity:Landroid/app/Activity;
 
     new-instance p5, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda9;
@@ -22973,18 +22985,18 @@
 
     goto :goto_1
 
-    .line 2779
+    .line 2822
     :catch_0
     iput-object v1, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
-    .line 2782
+    .line 2825
     :cond_4
     :goto_1
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->pipRoundVideoView:Lorg/telegram/ui/Components/PipRoundVideoView;
 
     if-eqz p1, :cond_5
 
-    .line 2783
+    .line 2826
     iget-object p4, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/PipRoundVideoView;->getTextureView()Landroid/view/TextureView;
@@ -22995,7 +23007,7 @@
 
     goto :goto_2
 
-    .line 2785
+    .line 2828
     :cond_5
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
@@ -23003,21 +23015,21 @@
 
     invoke-virtual {p1, p4}, Lorg/telegram/ui/Components/VideoPlayer;->setTextureView(Landroid/view/TextureView;)V
 
-    .line 2787
+    .line 2830
     :goto_2
     iput-object p2, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
-    .line 2788
+    .line 2831
     iput-object p3, p0, Lorg/telegram/messenger/MediaController;->currentTextureViewContainer:Landroid/widget/FrameLayout;
 
-    .line 2789
+    .line 2832
     iget-boolean p1, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayoutReady:Z
 
     if-eqz p1, :cond_6
 
     if-eqz p2, :cond_6
 
-    .line 2790
+    .line 2833
     iget p1, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayoutRatio:F
 
     iget p3, p0, Lorg/telegram/messenger/MediaController;->currentAspectRatioFrameLayoutRotation:I
@@ -23042,7 +23054,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2679
+    .line 2722
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
@@ -23057,10 +23069,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 2681
+    .line 2724
     iput-boolean p2, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylistUnread:Z
 
-    .line 2682
+    .line 2725
     new-instance p1, Landroid/util/SparseArray;
 
     invoke-direct {p1}, Landroid/util/SparseArray;-><init>()V
@@ -23069,7 +23081,7 @@
 
     const/4 p1, 0x0
 
-    .line 2683
+    .line 2726
     :goto_1
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
@@ -23079,7 +23091,7 @@
 
     if-ge p1, p2, :cond_1
 
-    .line 2684
+    .line 2727
     iget-object p2, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylist:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -23088,7 +23100,7 @@
 
     check-cast p2, Lorg/telegram/messenger/MessageObject;
 
-    .line 2685
+    .line 2728
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->voiceMessagesPlaylistMap:Landroid/util/SparseArray;
 
     invoke-virtual {p2}, Lorg/telegram/messenger/MessageObject;->getId()I
@@ -23108,14 +23120,14 @@
 .method public startMediaObserver()V
     .locals 4
 
-    .line 1376
+    .line 1419
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->stopMediaObserverRunnable:Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 1377
+    .line 1420
     iget v0, p0, Lorg/telegram/messenger/MediaController;->startObserverToken:I
 
     add-int/lit8 v0, v0, 0x1
@@ -23124,13 +23136,13 @@
 
     const/4 v0, 0x0
 
-    .line 1379
+    .line 1422
     :try_start_0
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->internalObserver:Lorg/telegram/messenger/MediaController$InternalObserver;
 
     if-nez v1, :cond_0
 
-    .line 1380
+    .line 1423
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -23154,10 +23166,10 @@
     :catch_0
     move-exception v1
 
-    .line 1383
+    .line 1426
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1386
+    .line 1429
     :cond_0
     :goto_0
     :try_start_1
@@ -23165,7 +23177,7 @@
 
     if-nez v1, :cond_1
 
-    .line 1387
+    .line 1430
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -23189,7 +23201,7 @@
     :catch_1
     move-exception v0
 
-    .line 1390
+    .line 1433
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -23202,7 +23214,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 2016
+    .line 2059
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->accelerometerSensor:Landroid/hardware/Sensor;
 
     if-nez v0, :cond_0
@@ -23225,7 +23237,7 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 2019
+    .line 2062
     invoke-static {v0}, Lorg/telegram/messenger/SharedConfig;->enabledRaiseTo(Z)Z
 
     move-result v1
@@ -23253,16 +23265,16 @@
     :cond_2
     return-void
 
-    .line 2022
+    .line 2065
     :cond_3
     iput-object p1, p0, Lorg/telegram/messenger/MediaController;->raiseChat:Lorg/telegram/ui/ChatActivity;
 
-    .line 2023
+    .line 2066
     iget-boolean p1, p0, Lorg/telegram/messenger/MediaController;->sensorsStarted:Z
 
     if-nez p1, :cond_4
 
-    .line 2024
+    .line 2067
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->gravity:[F
 
     const/4 v1, 0x2
@@ -23277,7 +23289,7 @@
 
     aput v2, p1, v0
 
-    .line 2025
+    .line 2068
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->linearAcceleration:[F
 
     aput v2, p1, v1
@@ -23286,7 +23298,7 @@
 
     aput v2, p1, v0
 
-    .line 2026
+    .line 2069
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->gravityFast:[F
 
     aput v2, p1, v1
@@ -23297,25 +23309,25 @@
 
     const-wide/16 v4, 0x0
 
-    .line 2027
+    .line 2070
     iput-wide v4, p0, Lorg/telegram/messenger/MediaController;->lastTimestamp:J
 
-    .line 2028
+    .line 2071
     iput v2, p0, Lorg/telegram/messenger/MediaController;->previousAccValue:F
 
-    .line 2029
+    .line 2072
     iput v0, p0, Lorg/telegram/messenger/MediaController;->raisedToTop:I
 
-    .line 2030
+    .line 2073
     iput v0, p0, Lorg/telegram/messenger/MediaController;->raisedToTopSign:I
 
-    .line 2031
+    .line 2074
     iput v0, p0, Lorg/telegram/messenger/MediaController;->countLess:I
 
-    .line 2032
+    .line 2075
     iput v0, p0, Lorg/telegram/messenger/MediaController;->raisedToBack:I
 
-    .line 2033
+    .line 2076
     sget-object p1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v0, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda8;
@@ -23324,7 +23336,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 2045
+    .line 2088
     iput-boolean v3, p0, Lorg/telegram/messenger/MediaController;->sensorsStarted:Z
 
     :cond_4
@@ -23332,12 +23344,12 @@
     return-void
 .end method
 
-.method public startRecording(IJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;IZ)V
+.method public startRecording(IJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;IZ)V
     .locals 13
 
     move-object v9, p0
 
-    .line 3819
+    .line 3862
     iget-object v0, v9, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     const/4 v1, 0x1
@@ -23369,14 +23381,14 @@
 
     move/from16 v0, p8
 
-    .line 3822
+    .line 3865
     :goto_0
     iput-boolean v0, v9, Lorg/telegram/messenger/MediaController;->manualRecording:Z
 
-    .line 3823
+    .line 3866
     invoke-virtual {p0, v1}, Lorg/telegram/messenger/MediaController;->requestAudioFocus(Z)V
 
-    .line 3826
+    .line 3869
     :try_start_0
     iget-object v0, v9, Lorg/telegram/messenger/MediaController;->feedbackView:Landroid/view/View;
 
@@ -23388,7 +23400,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3831
+    .line 3874
     :catch_0
     iget-object v11, v9, Lorg/telegram/messenger/MediaController;->recordQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -23410,7 +23422,7 @@
 
     move-object/from16 v8, p6
 
-    invoke-direct/range {v0 .. v8}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/messenger/MediaController;IIJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-direct/range {v0 .. v8}, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/messenger/MediaController;IIJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
     iput-object v12, v9, Lorg/telegram/messenger/MediaController;->recordStartRunnable:Ljava/lang/Runnable;
 
@@ -23432,7 +23444,7 @@
 .method public startRecordingIfFromSpeaker()V
     .locals 11
 
-    .line 1956
+    .line 1999
     iget-boolean v0, p0, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
 
     if-eqz v0, :cond_1
@@ -23455,11 +23467,11 @@
 
     goto :goto_0
 
-    .line 1959
+    .line 2002
     :cond_0
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->raiseToEarRecord:Z
 
-    .line 1960
+    .line 2003
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->raiseChat:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
@@ -23492,9 +23504,9 @@
 
     move-object v2, p0
 
-    invoke-virtual/range {v2 .. v10}, Lorg/telegram/messenger/MediaController;->startRecording(IJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;IZ)V
+    invoke-virtual/range {v2 .. v10}, Lorg/telegram/messenger/MediaController;->startRecording(IJLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;IZ)V
 
-    .line 1961
+    .line 2004
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->ignoreOnPause:Z
 
     :cond_1
@@ -23505,12 +23517,12 @@
 .method public stopMediaObserver()V
     .locals 4
 
-    .line 1395
+    .line 1438
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->stopMediaObserverRunnable:Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;
 
     if-nez v0, :cond_0
 
-    .line 1396
+    .line 1439
     new-instance v0, Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;
 
     const/4 v1, 0x0
@@ -23519,7 +23531,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->stopMediaObserverRunnable:Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;
 
-    .line 1398
+    .line 1441
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->stopMediaObserverRunnable:Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;
 
@@ -23527,7 +23539,7 @@
 
     iput v1, v0, Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;->currentObserverToken:I
 
-    .line 1399
+    .line 1442
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->stopMediaObserverRunnable:Lorg/telegram/messenger/MediaController$StopMediaObserverRunnable;
@@ -23542,14 +23554,14 @@
 .method public stopRaiseToEarSensors(Lorg/telegram/ui/ChatActivity;ZZ)V
     .locals 2
 
-    .line 2050
+    .line 2093
     iget-boolean v0, p0, Lorg/telegram/messenger/MediaController;->ignoreOnPause:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 2051
+    .line 2094
     iput-boolean v1, p0, Lorg/telegram/messenger/MediaController;->ignoreOnPause:Z
 
     return-void
@@ -23568,11 +23580,11 @@
     :cond_1
     move p2, v1
 
-    .line 2055
+    .line 2098
     :goto_0
     invoke-virtual {p0, p2, v1, v1, v0}, Lorg/telegram/messenger/MediaController;->stopRecording(IZILjava/lang/String;)V
 
-    .line 2057
+    .line 2100
     :cond_2
     iget-boolean p2, p0, Lorg/telegram/messenger/MediaController;->sensorsStarted:Z
 
@@ -23605,26 +23617,26 @@
 
     goto :goto_1
 
-    .line 2060
+    .line 2103
     :cond_4
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->raiseChat:Lorg/telegram/ui/ChatActivity;
 
-    .line 2061
+    .line 2104
     iput-boolean v1, p0, Lorg/telegram/messenger/MediaController;->sensorsStarted:Z
 
-    .line 2062
+    .line 2105
     iput-boolean v1, p0, Lorg/telegram/messenger/MediaController;->accelerometerVertical:Z
 
-    .line 2063
+    .line 2106
     iput-boolean v1, p0, Lorg/telegram/messenger/MediaController;->proximityTouched:Z
 
-    .line 2064
+    .line 2107
     iput-boolean v1, p0, Lorg/telegram/messenger/MediaController;->raiseToEarRecord:Z
 
-    .line 2065
+    .line 2108
     iput-boolean v1, p0, Lorg/telegram/messenger/MediaController;->useFrontSpeaker:Z
 
-    .line 2066
+    .line 2109
     sget-object p1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p2, Lorg/telegram/messenger/MediaController$$ExternalSyntheticLambda15;
@@ -23633,7 +23645,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 2078
+    .line 2121
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->proximityWakeLock:Landroid/os/PowerManager$WakeLock;
 
     if-eqz p1, :cond_5
@@ -23644,7 +23656,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 2079
+    .line 2122
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->proximityWakeLock:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {p1}, Landroid/os/PowerManager$WakeLock;->release()V
@@ -23657,22 +23669,22 @@
 .method public stopRecording(IZILjava/lang/String;)V
     .locals 8
 
-    .line 4030
+    .line 4073
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->recordStartRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 4031
+    .line 4074
     iget-object v1, p0, Lorg/telegram/messenger/MediaController;->recordQueue:Lorg/telegram/messenger/DispatchQueue;
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/DispatchQueue;->cancelRunnable(Ljava/lang/Runnable;)V
 
     const/4 v0, 0x0
 
-    .line 4032
+    .line 4075
     iput-object v0, p0, Lorg/telegram/messenger/MediaController;->recordStartRunnable:Ljava/lang/Runnable;
 
-    .line 4034
+    .line 4077
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->recordQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -23700,14 +23712,14 @@
 .method public tryResumePausedAudio()V
     .locals 2
 
-    .line 3679
+    .line 3722
     invoke-virtual {p0}, Lorg/telegram/messenger/MediaController;->getPlayingMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 3680
+    .line 3723
     invoke-virtual {p0}, Lorg/telegram/messenger/MediaController;->isMessagePaused()Z
 
     move-result v1
@@ -23730,14 +23742,14 @@
 
     if-eqz v1, :cond_1
 
-    .line 3681
+    .line 3724
     :cond_0
     invoke-virtual {p0, v0}, Lorg/telegram/messenger/MediaController;->playMessage(Lorg/telegram/messenger/MessageObject;)Z
 
     :cond_1
     const/4 v0, 0x0
 
-    .line 3683
+    .line 3726
     iput-boolean v0, p0, Lorg/telegram/messenger/MediaController;->wasPlayingAudioBeforePause:Z
 
     return-void
@@ -23746,30 +23758,30 @@
 .method public updateSilent(Z)V
     .locals 4
 
-    .line 3637
+    .line 3680
     iput-boolean p1, p0, Lorg/telegram/messenger/MediaController;->isSilent:Z
 
-    .line 3638
+    .line 3681
     iget-object v0, p0, Lorg/telegram/messenger/MediaController;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
 
     if-eqz v0, :cond_0
 
-    .line 3639
+    .line 3682
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/VideoPlayer;->setLooping(Z)V
 
-    .line 3641
+    .line 3684
     :cond_0
     invoke-direct {p0}, Lorg/telegram/messenger/MediaController;->setPlayerVolume()V
 
-    .line 3642
+    .line 3685
     invoke-virtual {p0}, Lorg/telegram/messenger/MediaController;->checkVolumeBarUI()V
 
-    .line 3643
+    .line 3686
     iget-object p1, p0, Lorg/telegram/messenger/MediaController;->playingMessageObject:Lorg/telegram/messenger/MessageObject;
 
     if-eqz p1, :cond_2
 
-    .line 3644
+    .line 3687
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;

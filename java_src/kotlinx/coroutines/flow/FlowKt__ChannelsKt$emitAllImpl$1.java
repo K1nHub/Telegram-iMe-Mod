@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Channels.kt */
-@DebugMetadata(m143c = "kotlinx.coroutines.flow.FlowKt__ChannelsKt", m142f = "Channels.kt", m141l = {36, 37}, m140m = "emitAllImpl$FlowKt__ChannelsKt")
+@DebugMetadata(m145c = "kotlinx.coroutines.flow.FlowKt__ChannelsKt", m144f = "Channels.kt", m143l = {36, 37}, m142m = "emitAllImpl$FlowKt__ChannelsKt")
 /* loaded from: classes4.dex */
 public final class FlowKt__ChannelsKt$emitAllImpl$1<T> extends ContinuationImpl {
     Object L$0;

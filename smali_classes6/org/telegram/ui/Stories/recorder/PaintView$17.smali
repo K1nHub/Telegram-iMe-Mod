@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;Landroid/graphics/Paint;)V
     .locals 0
 
-    .line 1417
+    .line 1423
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->val$reactionBackgroundBlur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
@@ -58,12 +58,12 @@
 
     if-eqz p7, :cond_1
 
-    .line 1430
+    .line 1436
     iget-object p7, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->windowBackgroundBlur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
     if-nez p7, :cond_0
 
-    .line 1431
+    .line 1437
     new-instance p7, Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
@@ -88,7 +88,7 @@
 
     iput-object p7, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->windowBackgroundBlur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
-    .line 1433
+    .line 1439
     :cond_0
     iget-object p7, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->windowBackgroundBlur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
@@ -98,7 +98,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    .line 1434
+    .line 1440
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -109,7 +109,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    .line 1435
+    .line 1441
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v1
@@ -118,17 +118,17 @@
 
     add-float/2addr v1, p5
 
-    .line 1433
+    .line 1439
     invoke-virtual {p7, p4, p5, v0, v1}, Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;->setBounds(FFFF)V
 
-    .line 1436
+    .line 1442
     iget-object p4, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->windowBackgroundBlur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
     iget-object p4, p4, Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;->paint:Landroid/graphics/Paint;
 
     goto :goto_0
 
-    .line 1438
+    .line 1444
     :cond_1
     iget-object p7, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->val$reactionBackgroundBlur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
@@ -138,7 +138,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    .line 1439
+    .line 1445
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -149,7 +149,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    .line 1440
+    .line 1446
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v1
@@ -158,19 +158,19 @@
 
     add-float/2addr v1, p5
 
-    .line 1438
+    .line 1444
     invoke-virtual {p7, p4, p5, v0, v1}, Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;->setBounds(FFFF)V
 
-    .line 1441
+    .line 1447
     iget-object p4, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->val$reactionBackgroundBlur:Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;
 
     iget-object p4, p4, Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;->paint:Landroid/graphics/Paint;
 
-    .line 1443
+    .line 1449
     :goto_0
     invoke-virtual {p4, p6}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1444
+    .line 1450
     iget-object p5, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->val$backgroundPaint:Landroid/graphics/Paint;
 
     const p7, 0x3ecccccd    # 0.4f
@@ -183,10 +183,10 @@
 
     invoke-virtual {p5, p6}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1445
+    .line 1451
     invoke-virtual {p1, p2, p3, p3, p4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1446
+    .line 1452
     iget-object p4, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->val$backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, p2, p3, p3, p4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
@@ -215,7 +215,7 @@
 .method public onReactionClicked(Landroid/view/View;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZ)V
     .locals 0
 
-    .line 1452
+    .line 1458
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/PaintView;->reactionForEntity:Lorg/telegram/ui/Components/Paint/Views/ReactionWidgetEntityView;
@@ -227,10 +227,10 @@
     :cond_0
     const/4 p3, 0x1
 
-    .line 1455
+    .line 1461
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/Components/Paint/Views/ReactionWidgetEntityView;->setCurrentReaction(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;Z)V
 
-    .line 1456
+    .line 1462
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$17;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     const/4 p2, 0x0

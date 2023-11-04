@@ -66,13 +66,13 @@ public final class AccountActive$$serializer implements GeneratedSerializer<Acco
 
     @Override // kotlinx.serialization.DeserializationStrategy
     public /* bridge */ /* synthetic */ Object deserialize(Decoder decoder) {
-        return AccountActive.m4919boximpl(m4926deserializeP1cIiig(decoder));
+        return AccountActive.m5073boximpl(m5080deserializeP1cIiig(decoder));
     }
 
     /* renamed from: deserialize-P1cIiig  reason: not valid java name */
-    public StateInit m4926deserializeP1cIiig(Decoder decoder) {
+    public StateInit m5080deserializeP1cIiig(Decoder decoder) {
         Intrinsics.checkNotNullParameter(decoder, "decoder");
-        return AccountActive.m4920constructorimpl((StateInit) decoder.decodeInline(getDescriptor()).decodeSerializableValue(StateInit$$serializer.INSTANCE));
+        return AccountActive.m5074constructorimpl((StateInit) decoder.decodeInline(getDescriptor()).decodeSerializableValue(StateInit$$serializer.INSTANCE));
     }
 
     @Override // kotlinx.serialization.KSerializer, kotlinx.serialization.SerializationStrategy, kotlinx.serialization.DeserializationStrategy
@@ -82,11 +82,11 @@ public final class AccountActive$$serializer implements GeneratedSerializer<Acco
 
     @Override // kotlinx.serialization.SerializationStrategy
     public /* bridge */ /* synthetic */ void serialize(Encoder encoder, Object obj) {
-        m4927serializewKbCAR4(encoder, ((AccountActive) obj).m4925unboximpl());
+        m5081serializewKbCAR4(encoder, ((AccountActive) obj).m5079unboximpl());
     }
 
     /* renamed from: serialize-wKbCAR4  reason: not valid java name */
-    public void m4927serializewKbCAR4(Encoder encoder, StateInit value) {
+    public void m5081serializewKbCAR4(Encoder encoder, StateInit value) {
         Intrinsics.checkNotNullParameter(encoder, "encoder");
         Intrinsics.checkNotNullParameter(value, "value");
         Encoder encodeInline = encoder.encodeInline(getDescriptor());

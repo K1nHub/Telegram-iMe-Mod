@@ -991,7 +991,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "key length must be exactly 256 bytes but is "
+    const-string/jumbo v1, "key length must be exactly 256 bytes but is "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

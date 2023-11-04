@@ -22,15 +22,15 @@ public class DetectedActivity extends AbstractSafeParcelable {
     public static final int TILTING = 5;
     public static final int UNKNOWN = 4;
     public static final int WALKING = 7;
-    @SafeParcelable.Field(m1089id = 1)
+    @SafeParcelable.Field(m1090id = 1)
     int zzb;
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     int zzc;
     public static final Comparator zza = new zzk();
     public static final Parcelable.Creator<DetectedActivity> CREATOR = new zzl();
 
     @SafeParcelable.Constructor
-    public DetectedActivity(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) int i2) {
+    public DetectedActivity(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) int i2) {
         this.zzb = i;
         this.zzc = i2;
     }

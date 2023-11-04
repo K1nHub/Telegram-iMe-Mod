@@ -12,15 +12,11 @@
 
 .field public final synthetic f$2:J
 
-.field public final synthetic f$3:I
-
-.field public final synthetic f$4:Ljava/util/ArrayList;
-
-.field public final synthetic f$5:I
+.field public final synthetic f$3:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;IJILjava/util/ArrayList;I)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;IJJ)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,11 +27,7 @@
 
     iput-wide p3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda53;->f$2:J
 
-    iput p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda53;->f$3:I
-
-    iput-object p6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda53;->f$4:Ljava/util/ArrayList;
-
-    iput p7, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda53;->f$5:I
+    iput-wide p5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda53;->f$3:J
 
     return-void
 .end method
@@ -43,7 +35,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 7
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda53;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
@@ -51,13 +43,9 @@
 
     iget-wide v2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda53;->f$2:J
 
-    iget v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda53;->f$3:I
+    iget-wide v4, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda53;->f$3:J
 
-    iget-object v5, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda53;->f$4:Ljava/util/ArrayList;
-
-    iget v6, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda53;->f$5:I
-
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$XkHyBHigfLarm9VsvLyMsXCwOXA(Lorg/telegram/messenger/MessagesStorage;IJILjava/util/ArrayList;I)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$o4WJDU2AlvK9WQ030yhcSruexnE(Lorg/telegram/messenger/MessagesStorage;IJJ)V
 
     return-void
 .end method

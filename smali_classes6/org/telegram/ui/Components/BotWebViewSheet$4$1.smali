@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet$4;)V
     .locals 0
 
-    .line 574
+    .line 586
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -62,7 +62,7 @@
 .method public getTopOffset(I)I
     .locals 0
 
-    .line 577
+    .line 589
     sget p1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     return p1

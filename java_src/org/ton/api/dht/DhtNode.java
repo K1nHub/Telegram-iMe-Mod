@@ -28,9 +28,9 @@ import org.ton.api.pub.PublicKeyOverlay$$serializer;
 import org.ton.api.pub.PublicKeyUnencrypted;
 import org.ton.api.pub.PublicKeyUnencrypted$$serializer;
 import org.ton.crypto.Base64ByteArraySerializer;
-import org.ton.p044tl.TlCodec;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlCodec;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: DhtNode.kt */
 @JsonClassDiscriminator(discriminator = "@type")
 @Serializable
@@ -39,21 +39,21 @@ public final class DhtNode {
     private final AdnlAddressList addrList;
 
     /* renamed from: id */
-    private final PublicKey f2016id;
+    private final PublicKey f2028id;
     private final byte[] signature;
     private final int version;
     public static final Companion Companion = new Companion(null);
-    private static final KSerializer<Object>[] $childSerializers = {new SealedClassSerializer("org.ton.api.pub.PublicKey", Reflection.getOrCreateKotlinClass(PublicKey.class), new KClass[]{Reflection.getOrCreateKotlinClass(PublicKeyAes.class), Reflection.getOrCreateKotlinClass(PublicKeyEd25519.class), Reflection.getOrCreateKotlinClass(PublicKeyOverlay.class), Reflection.getOrCreateKotlinClass(PublicKeyUnencrypted.class)}, new KSerializer[]{PublicKeyAes$$serializer.INSTANCE, PublicKeyEd25519$$serializer.INSTANCE, PublicKeyOverlay$$serializer.INSTANCE, PublicKeyUnencrypted$$serializer.INSTANCE}, new Annotation[]{new C7430x6c935aed("@type")}), null, null, null};
+    private static final KSerializer<Object>[] $childSerializers = {new SealedClassSerializer("org.ton.api.pub.PublicKey", Reflection.getOrCreateKotlinClass(PublicKey.class), new KClass[]{Reflection.getOrCreateKotlinClass(PublicKeyAes.class), Reflection.getOrCreateKotlinClass(PublicKeyEd25519.class), Reflection.getOrCreateKotlinClass(PublicKeyOverlay.class), Reflection.getOrCreateKotlinClass(PublicKeyUnencrypted.class)}, new KSerializer[]{PublicKeyAes$$serializer.INSTANCE, PublicKeyEd25519$$serializer.INSTANCE, PublicKeyOverlay$$serializer.INSTANCE, PublicKeyUnencrypted$$serializer.INSTANCE}, new Annotation[]{new C7505x6c935aed("@type")}), null, null, null};
 
     public String toString() {
-        return "DhtNode(id=" + this.f2016id + ", addrList=" + this.addrList + ", version=" + this.version + ", signature=" + Arrays.toString(this.signature) + ')';
+        return "DhtNode(id=" + this.f2028id + ", addrList=" + this.addrList + ", version=" + this.version + ", signature=" + Arrays.toString(this.signature) + ')';
     }
 
     public /* synthetic */ DhtNode(int i, PublicKey publicKey, AdnlAddressList adnlAddressList, int i2, @Serializable(with = Base64ByteArraySerializer.class) byte[] bArr, SerializationConstructorMarker serializationConstructorMarker) {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, DhtNode$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2016id = publicKey;
+        this.f2028id = publicKey;
         this.addrList = adnlAddressList;
         if ((i & 4) == 0) {
             this.version = 0;
@@ -71,14 +71,14 @@ public final class DhtNode {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(addrList, "addrList");
         Intrinsics.checkNotNullParameter(signature, "signature");
-        this.f2016id = id;
+        this.f2028id = id;
         this.addrList = addrList;
         this.version = i;
         this.signature = signature;
     }
 
     public static final /* synthetic */ void write$Self(DhtNode dhtNode, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, $childSerializers[0], dhtNode.f2016id);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, $childSerializers[0], dhtNode.f2028id);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, AdnlAddressList$$serializer.INSTANCE, dhtNode.addrList);
         if (compositeEncoder.shouldEncodeElementDefault(serialDescriptor, 2) || dhtNode.version != 0) {
             compositeEncoder.encodeIntElement(serialDescriptor, 2, dhtNode.version);
@@ -89,7 +89,7 @@ public final class DhtNode {
     }
 
     public final PublicKey getId() {
-        return this.f2016id;
+        return this.f2028id;
     }
 
     public final AdnlAddressList getAddrList() {
@@ -110,13 +110,13 @@ public final class DhtNode {
         }
         if (obj instanceof DhtNode) {
             DhtNode dhtNode = (DhtNode) obj;
-            return Intrinsics.areEqual(this.f2016id, dhtNode.f2016id) && Intrinsics.areEqual(this.addrList, dhtNode.addrList) && this.version == dhtNode.version && Arrays.equals(getSignature(), dhtNode.getSignature());
+            return Intrinsics.areEqual(this.f2028id, dhtNode.f2028id) && Intrinsics.areEqual(this.addrList, dhtNode.addrList) && this.version == dhtNode.version && Arrays.equals(getSignature(), dhtNode.getSignature());
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((this.f2016id.hashCode() * 31) + this.addrList.hashCode()) * 31) + this.version) * 31) + Arrays.hashCode(getSignature());
+        return (((((this.f2028id.hashCode() * 31) + this.addrList.hashCode()) * 31) + this.version) * 31) + Arrays.hashCode(getSignature());
     }
 
     /* compiled from: DhtNode.kt */
@@ -128,53 +128,53 @@ public final class DhtNode {
             this();
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public DhtNode decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return this.$$delegate_0.decode(reader);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public DhtNode decodeBoxed(Input input) {
             Intrinsics.checkNotNullParameter(input, "input");
             return this.$$delegate_0.decodeBoxed(input);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public DhtNode decodeBoxed(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return this.$$delegate_0.decodeBoxed(reader);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(Output output, DhtNode value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encode(output, (Output) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, DhtNode value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encode(writer, value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encodeBoxed(Output output, DhtNode value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encodeBoxed(output, (Output) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encodeBoxed(TlWriter writer, DhtNode value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encodeBoxed(writer, (TlWriter) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public byte[] encodeToByteArray(DhtNode value, boolean z) {
             Intrinsics.checkNotNullParameter(value, "value");
             return this.$$delegate_0.encodeToByteArray(value, z);

@@ -586,7 +586,7 @@
 
     move-result-object p1
 
-    const-string p2, "jClass.safeClassLoader.l\u2026d - 1).replace(\'/\', \'.\'))"
+    const-string/jumbo p2, "jClass.safeClassLoader.l\u2026d - 1).replace(\'/\', \'.\'))"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

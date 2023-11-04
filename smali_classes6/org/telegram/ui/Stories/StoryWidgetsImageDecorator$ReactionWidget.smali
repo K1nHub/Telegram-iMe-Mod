@@ -17,7 +17,7 @@
 # instance fields
 .field imageHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
-.field mediaArea:Lorg/telegram/tgnet/TLRPC$TL_mediaAreaSuggestedReaction;
+.field mediaArea:Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaSuggestedReaction;
 
 .field storyReactionWidgetBackground:Lorg/telegram/ui/Stories/StoryReactionWidgetBackground;
 
@@ -25,7 +25,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator;Lorg/telegram/tgnet/TLRPC$TL_mediaAreaSuggestedReaction;)V
+.method public constructor <init>(Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator;Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaSuggestedReaction;)V
     .locals 2
 
     .line 90
@@ -50,10 +50,10 @@
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator$ReactionWidget;->imageHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
     .line 91
-    iput-object p2, p0, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator$ReactionWidget;->mediaArea:Lorg/telegram/tgnet/TLRPC$TL_mediaAreaSuggestedReaction;
+    iput-object p2, p0, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator$ReactionWidget;->mediaArea:Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaSuggestedReaction;
 
     .line 92
-    iget-boolean p1, p2, Lorg/telegram/tgnet/TLRPC$MediaArea;->flipped:Z
+    iget-boolean p1, p2, Lorg/telegram/tgnet/tl/TL_stories$MediaArea;->flipped:Z
 
     if-eqz p1, :cond_0
 
@@ -68,7 +68,7 @@
 
     .line 95
     :cond_0
-    iget-boolean p1, p2, Lorg/telegram/tgnet/TLRPC$MediaArea;->dark:Z
+    iget-boolean p1, p2, Lorg/telegram/tgnet/tl/TL_stories$MediaArea;->dark:Z
 
     if-eqz p1, :cond_1
 
@@ -86,7 +86,7 @@
     .line 99
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator$ReactionWidget;->imageHolder:Lorg/telegram/ui/Components/Reactions/ReactionImageHolder;
 
-    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$MediaArea;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
+    iget-object p2, p2, Lorg/telegram/tgnet/tl/TL_stories$MediaArea;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->fromTLReaction(Lorg/telegram/tgnet/TLRPC$Reaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
@@ -113,11 +113,11 @@
 
     float-to-double v3, v2
 
-    iget-object v5, p0, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator$ReactionWidget;->mediaArea:Lorg/telegram/tgnet/TLRPC$TL_mediaAreaSuggestedReaction;
+    iget-object v5, p0, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator$ReactionWidget;->mediaArea:Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaSuggestedReaction;
 
-    iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$MediaArea;->coordinates:Lorg/telegram/tgnet/TLRPC$TL_mediaAreaCoordinates;
+    iget-object v5, v5, Lorg/telegram/tgnet/tl/TL_stories$MediaArea;->coordinates:Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaCoordinates;
 
-    iget-wide v6, v5, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaCoordinates;->x:D
+    iget-wide v6, v5, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaCoordinates;->x:D
 
     mul-double/2addr v3, v6
 
@@ -138,7 +138,7 @@
 
     float-to-double v8, p2
 
-    iget-wide v10, v5, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaCoordinates;->y:D
+    iget-wide v10, v5, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaCoordinates;->y:D
 
     mul-double/2addr v8, v10
 
@@ -151,7 +151,7 @@
     float-to-double v2, v2
 
     .line 105
-    iget-wide v8, v5, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaCoordinates;->w:D
+    iget-wide v8, v5, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaCoordinates;->w:D
 
     mul-double/2addr v2, v8
 
@@ -162,7 +162,7 @@
     float-to-double v3, p2
 
     .line 106
-    iget-wide v8, v5, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaCoordinates;->h:D
+    iget-wide v8, v5, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaCoordinates;->h:D
 
     mul-double/2addr v3, v8
 
@@ -212,11 +212,11 @@
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     .line 116
-    iget-object p2, p0, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator$ReactionWidget;->mediaArea:Lorg/telegram/tgnet/TLRPC$TL_mediaAreaSuggestedReaction;
+    iget-object p2, p0, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator$ReactionWidget;->mediaArea:Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaSuggestedReaction;
 
-    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$MediaArea;->coordinates:Lorg/telegram/tgnet/TLRPC$TL_mediaAreaCoordinates;
+    iget-object p2, p2, Lorg/telegram/tgnet/tl/TL_stories$MediaArea;->coordinates:Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaCoordinates;
 
-    iget-wide v2, p2, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaCoordinates;->rotation:D
+    iget-wide v2, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaCoordinates;->rotation:D
 
     const-wide/16 v5, 0x0
 

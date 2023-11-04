@@ -32,15 +32,15 @@
 .method public constructor <init>(Lorg/telegram/messenger/ContactsController;)V
     .locals 0
 
-    .line 186
+    .line 187
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController$MyContentObserver;->this$0:Lorg/telegram/messenger/ContactsController;
 
     const/4 p1, 0x0
 
-    .line 187
+    .line 188
     invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 177
+    .line 178
     sget-object p1, Lorg/telegram/messenger/ContactsController$MyContentObserver$$ExternalSyntheticLambda0;->INSTANCE:Lorg/telegram/messenger/ContactsController$MyContentObserver$$ExternalSyntheticLambda0;
 
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController$MyContentObserver;->checkRunnable:Ljava/lang/Runnable;
@@ -58,7 +58,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 179
+    .line 180
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
     move-result-object v1
@@ -69,14 +69,14 @@
 
     if-eqz v1, :cond_0
 
-    .line 180
+    .line 181
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v1
 
     invoke-virtual {v1}, Lorg/telegram/tgnet/ConnectionsManager;->resumeNetworkMaybe()V
 
-    .line 181
+    .line 182
     invoke-static {v0}, Lorg/telegram/messenger/ContactsController;->getInstance(I)Lorg/telegram/messenger/ContactsController;
 
     move-result-object v1
@@ -105,10 +105,10 @@
 .method public onChange(Z)V
     .locals 3
 
-    .line 192
+    .line 193
     invoke-super {p0, p1}, Landroid/database/ContentObserver;->onChange(Z)V
 
-    .line 193
+    .line 194
     iget-object p1, p0, Lorg/telegram/messenger/ContactsController$MyContentObserver;->this$0:Lorg/telegram/messenger/ContactsController;
 
     invoke-static {p1}, Lorg/telegram/messenger/ContactsController;->access$000(Lorg/telegram/messenger/ContactsController;)Ljava/lang/Object;
@@ -117,7 +117,7 @@
 
     monitor-enter p1
 
-    .line 194
+    .line 195
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$MyContentObserver;->this$0:Lorg/telegram/messenger/ContactsController;
 
@@ -127,25 +127,25 @@
 
     if-eqz v0, :cond_0
 
-    .line 195
+    .line 196
     monitor-exit p1
 
     return-void
 
-    .line 197
+    .line 198
     :cond_0
     monitor-exit p1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 198
+    .line 199
     sget-object p1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$MyContentObserver;->checkRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/DispatchQueue;->cancelRunnable(Ljava/lang/Runnable;)V
 
-    .line 199
+    .line 200
     sget-object p1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController$MyContentObserver;->checkRunnable:Ljava/lang/Runnable;
@@ -159,7 +159,7 @@
     :catchall_0
     move-exception v0
 
-    .line 197
+    .line 198
     :try_start_1
     monitor-exit p1
     :try_end_1

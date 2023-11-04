@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x323c7a74
-
-
 # instance fields
 .field public hash:J
 
@@ -22,19 +18,13 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 1
 
-    .line 27947
+    .line 28228
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$account_WallPapers;-><init>()V
 
-    .line 27951
+    .line 28232
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -49,14 +39,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 27954
+    .line 28235
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_wallPapers;->hash:J
 
-    .line 27955
+    .line 28236
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -71,7 +61,7 @@
 
     return-void
 
-    .line 27958
+    .line 28239
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -95,7 +85,7 @@
 
     throw p1
 
-    .line 27962
+    .line 28243
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -104,7 +94,7 @@
     :goto_0
     if-ge v1, v0, :cond_3
 
-    .line 27964
+    .line 28245
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v2
@@ -117,7 +107,7 @@
 
     return-void
 
-    .line 27968
+    .line 28249
     :cond_2
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_account_wallPapers;->wallpapers:Ljava/util/ArrayList;
 
@@ -134,29 +124,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 27973
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_wallPapers;->constructor:I
+    const v0, -0x323c7a74
 
+    .line 28254
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 27974
+    .line 28255
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_wallPapers;->hash:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
     const v0, 0x1cb5c415
 
-    .line 27975
+    .line 28256
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 27976
+    .line 28257
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_wallPapers;->wallpapers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 27977
+    .line 28258
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -164,7 +154,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 27979
+    .line 28260
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_account_wallPapers;->wallpapers:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

@@ -33,7 +33,7 @@
 
     sput-object v0, Lokhttp3/internal/platform/Jdk9Platform;->Companion:Lokhttp3/internal/platform/Jdk9Platform$Companion;
 
-    const-string v0, "java.specification.version"
+    const-string/jumbo v0, "java.specification.version"
 
     .line 69
     invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;

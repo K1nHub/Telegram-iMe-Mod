@@ -31,12 +31,12 @@ public final class Metadata {
         private final String originalName;
 
         /* renamed from: of */
-        public static <T> Key<T> m997of(String str, AsciiMarshaller<T> asciiMarshaller) {
-            return m996of(str, false, asciiMarshaller);
+        public static <T> Key<T> m998of(String str, AsciiMarshaller<T> asciiMarshaller) {
+            return m997of(str, false, asciiMarshaller);
         }
 
         /* renamed from: of */
-        static <T> Key<T> m996of(String str, boolean z, AsciiMarshaller<T> asciiMarshaller) {
+        static <T> Key<T> m997of(String str, boolean z, AsciiMarshaller<T> asciiMarshaller) {
             return new AsciiKey(str, z, asciiMarshaller);
         }
 

@@ -70,7 +70,7 @@
         }
     .end annotation
 
-    const-string v0, "it"
+    const-string/jumbo v0, "it"
 
     .line 112
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

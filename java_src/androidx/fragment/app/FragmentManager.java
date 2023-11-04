@@ -383,7 +383,7 @@ public abstract class FragmentManager {
 
     /* renamed from: androidx.fragment.app.FragmentManager$6 */
     /* loaded from: classes.dex */
-    class C02026 implements LifecycleEventObserver {
+    class C02086 implements LifecycleEventObserver {
         final /* synthetic */ FragmentManager this$0;
         final /* synthetic */ Lifecycle val$lifecycle;
         final /* synthetic */ FragmentResultListener val$listener;
@@ -972,7 +972,7 @@ public abstract class FragmentManager {
         this.mTmpAddedFragments.clear();
         if (!z && this.mCurState >= 1) {
             for (int i4 = i; i4 < i2; i4++) {
-                Iterator<FragmentTransaction.C0212Op> it = arrayList.get(i4).mOps.iterator();
+                Iterator<FragmentTransaction.C0218Op> it = arrayList.get(i4).mOps.iterator();
                 while (it.hasNext()) {
                     Fragment fragment = it.next().mFragment;
                     if (fragment != null && fragment.mFragmentManager != null) {
@@ -993,7 +993,7 @@ public abstract class FragmentManager {
                     }
                 }
             } else {
-                Iterator<FragmentTransaction.C0212Op> it2 = backStackRecord2.mOps.iterator();
+                Iterator<FragmentTransaction.C0218Op> it2 = backStackRecord2.mOps.iterator();
                 while (it2.hasNext()) {
                     Fragment fragment3 = it2.next().mFragment;
                     if (fragment3 != null) {
@@ -1025,7 +1025,7 @@ public abstract class FragmentManager {
         ViewGroup viewGroup;
         HashSet hashSet = new HashSet();
         while (i < i2) {
-            Iterator<FragmentTransaction.C0212Op> it = arrayList.get(i).mOps.iterator();
+            Iterator<FragmentTransaction.C0218Op> it = arrayList.get(i).mOps.iterator();
             while (it.hasNext()) {
                 Fragment fragment = it.next().mFragment;
                 if (fragment != null && (viewGroup = fragment.mContainer) != null) {
@@ -1150,7 +1150,7 @@ public abstract class FragmentManager {
         while (it.hasNext()) {
             BackStackRecord next = it.next();
             if (next.mBeingSaved) {
-                Iterator<FragmentTransaction.C0212Op> it2 = next.mOps.iterator();
+                Iterator<FragmentTransaction.C0218Op> it2 = next.mOps.iterator();
                 while (it2.hasNext()) {
                     Fragment fragment = it2.next().mFragment;
                     if (fragment != null) {
@@ -1184,9 +1184,9 @@ public abstract class FragmentManager {
             BackStackRecord backStackRecord2 = this.mBackStack.get(i3);
             HashSet hashSet2 = new HashSet();
             HashSet hashSet3 = new HashSet();
-            Iterator<FragmentTransaction.C0212Op> it = backStackRecord2.mOps.iterator();
+            Iterator<FragmentTransaction.C0218Op> it = backStackRecord2.mOps.iterator();
             while (it.hasNext()) {
-                FragmentTransaction.C0212Op next = it.next();
+                FragmentTransaction.C0218Op next = it.next();
                 Fragment fragment = next.mFragment;
                 if (fragment != null) {
                     if (!next.mFromExpandedOp || (i = next.mCmd) == 1 || i == 2 || i == 8) {
@@ -1669,8 +1669,8 @@ public abstract class FragmentManager {
                         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
                         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
                         for (String str3 : input) {
-                            Pair m144to = TuplesKt.m144to(str3, Boolean.TRUE);
-                            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
+                            Pair m146to = TuplesKt.m146to(str3, Boolean.TRUE);
+                            linkedHashMap.put(m146to.getFirst(), m146to.getSecond());
                         }
                         return new ActivityResultContract.SynchronousResult<>(linkedHashMap);
                     }

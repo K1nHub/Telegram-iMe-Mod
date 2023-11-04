@@ -19,11 +19,11 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: SelectableHeaderProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.SelectableHeaderProvider */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class SelectableHeaderProvider extends BaseNodeProvider<SelectableHeaderItem> {
     private final int itemViewType;
     private final int layoutId;
@@ -39,7 +39,7 @@ public final class SelectableHeaderProvider extends BaseNodeProvider<SelectableH
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.SELECTABLE_HEADER;
-        this.layoutId = C3630R.layout.fork_recycle_item_wallet_dashboard_header_with_icon;
+        this.layoutId = C3634R.layout.fork_recycle_item_wallet_dashboard_header_with_icon;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -56,11 +56,11 @@ public final class SelectableHeaderProvider extends BaseNodeProvider<SelectableH
     public void convert(final BaseViewHolder helper, final SelectableHeaderItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3630R.C3633id.text_wallet_header;
+        int i = C3634R.C3637id.text_wallet_header;
         int i2 = Theme.key_windowBackgroundWhiteGrayText2;
         BaseViewHolder text = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(helper, i, i2), i).setText(i, this.resourceManager.getString(item.getTitleResId()));
-        int i3 = C3630R.C3633id.header_info_icon;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedImageColor(text.setImageResource(i3, item.getIcon()), i3, i2), C3630R.C3633id.linear_root, new Function1<LinearLayout, Unit>() { // from class: com.iMe.ui.adapter.provider.SelectableHeaderProvider$convert$1
+        int i3 = C3634R.C3637id.header_info_icon;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedImageColor(text.setImageResource(i3, item.getIcon()), i3, i2), C3634R.C3637id.linear_root, new Function1<LinearLayout, Unit>() { // from class: com.iMe.ui.adapter.provider.SelectableHeaderProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
             {
@@ -117,8 +117,8 @@ public final class SelectableHeaderProvider extends BaseNodeProvider<SelectableH
                             arrayList.add(resourceManager.getString(intValue));
                         }
                         SelectableHeaderProvider selectableHeaderProvider3 = SelectableHeaderProvider.this;
-                        View view = baseViewHolder.getView(C3630R.C3633id.text_wallet_header);
-                        Integer valueOf = Integer.valueOf(AndroidUtilities.m102dp(10));
+                        View view = baseViewHolder.getView(C3634R.C3637id.text_wallet_header);
+                        Integer valueOf = Integer.valueOf(AndroidUtilities.m104dp(10));
                         final BaseViewHolder baseViewHolder2 = baseViewHolder;
                         final SelectableHeaderItem selectableHeaderItem2 = selectableHeaderItem;
                         final SelectableHeaderProvider selectableHeaderProvider4 = SelectableHeaderProvider.this;
@@ -136,7 +136,7 @@ public final class SelectableHeaderProvider extends BaseNodeProvider<SelectableH
 
                             public final void invoke(int i4, String value) {
                                 Intrinsics.checkNotNullParameter(value, "value");
-                                BaseViewHolder.this.setText(C3630R.C3633id.text_wallet_header, value);
+                                BaseViewHolder.this.setText(C3634R.C3637id.text_wallet_header, value);
                                 selectableHeaderItem2.getOnSelected().invoke(Integer.valueOf(i4), value);
                                 selectableHeaderProvider4.popupWindow = null;
                             }
@@ -153,6 +153,6 @@ public final class SelectableHeaderProvider extends BaseNodeProvider<SelectableH
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        helper.setText(C3630R.C3633id.text_wallet_header, this.resourceManager.getString(item.getTitleResId()));
+        helper.setText(C3634R.C3637id.text_wallet_header, this.resourceManager.getString(item.getTitleResId()));
     }
 }

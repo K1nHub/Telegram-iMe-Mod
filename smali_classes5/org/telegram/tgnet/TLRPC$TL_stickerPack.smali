@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x12b299d4
-
-
 # instance fields
 .field public documents:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -22,19 +18,13 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 1
 
-    .line 51366
+    .line 52125
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 51370
+    .line 52129
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -47,8 +37,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_stickerPack;
     .locals 1
 
-    .line 51373
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;->constructor:I
+    const v0, 0x12b299d4
 
     if-eq v0, p1, :cond_1
 
@@ -58,7 +47,7 @@
 
     return-object p0
 
-    .line 51375
+    .line 52134
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -84,13 +73,13 @@
 
     throw p0
 
-    .line 51380
+    .line 52139
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;-><init>()V
 
-    .line 51381
+    .line 52140
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -101,14 +90,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 5
 
-    .line 51386
+    .line 52145
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;->emoticon:Ljava/lang/String;
 
-    .line 51387
+    .line 52146
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -123,7 +112,7 @@
 
     return-void
 
-    .line 51390
+    .line 52149
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -147,7 +136,7 @@
 
     throw p1
 
-    .line 51394
+    .line 52153
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -156,7 +145,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 51396
+    .line 52155
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
@@ -180,29 +169,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 4
 
-    .line 51401
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;->constructor:I
+    const v0, 0x12b299d4
 
+    .line 52160
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 51402
+    .line 52161
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;->emoticon:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
     const v0, 0x1cb5c415
 
-    .line 51403
+    .line 52162
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 51404
+    .line 52163
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 51405
+    .line 52164
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -210,7 +199,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 51407
+    .line 52166
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_stickerPack;->documents:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

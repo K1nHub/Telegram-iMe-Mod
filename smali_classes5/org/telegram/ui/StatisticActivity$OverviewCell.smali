@@ -30,34 +30,34 @@
 
     move-object/from16 v1, p1
 
-    .line 2504
+    .line 2525
     invoke-direct/range {p0 .. p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v2, 0x4
 
     new-array v3, v2, [Landroid/widget/TextView;
 
-    .line 2498
+    .line 2519
     iput-object v3, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     new-array v3, v2, [Landroid/widget/TextView;
 
-    .line 2499
+    .line 2520
     iput-object v3, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     new-array v3, v2, [Landroid/widget/TextView;
 
-    .line 2500
+    .line 2521
     iput-object v3, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     const/4 v3, 0x1
 
-    .line 2505
+    .line 2526
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/16 v4, 0x10
 
-    .line 2506
+    .line 2527
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -81,12 +81,12 @@
 
     if-ge v5, v6, :cond_2
 
-    .line 2508
+    .line 2529
     new-instance v7, Landroid/widget/LinearLayout;
 
     invoke-direct {v7, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 2509
+    .line 2530
     invoke-virtual {v7, v8}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     move v9, v8
@@ -94,23 +94,23 @@
     :goto_1
     if-ge v9, v6, :cond_0
 
-    .line 2512
+    .line 2533
     new-instance v10, Landroid/widget/LinearLayout;
 
     invoke-direct {v10, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 2513
+    .line 2534
     invoke-virtual {v10, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 2515
+    .line 2536
     new-instance v11, Landroid/widget/LinearLayout;
 
     invoke-direct {v11, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 2516
+    .line 2537
     invoke-virtual {v11, v8}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 2517
+    .line 2538
     iget-object v12, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     mul-int/lit8 v13, v5, 0x2
@@ -123,7 +123,7 @@
 
     aput-object v14, v12, v13
 
-    .line 2518
+    .line 2539
     iget-object v12, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     new-instance v14, Landroid/widget/TextView;
@@ -132,7 +132,7 @@
 
     aput-object v14, v12, v13
 
-    .line 2519
+    .line 2540
     iget-object v12, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     new-instance v14, Landroid/widget/TextView;
@@ -141,7 +141,7 @@
 
     aput-object v14, v12, v13
 
-    .line 2521
+    .line 2542
     iget-object v12, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     aget-object v12, v12, v13
@@ -154,7 +154,7 @@
 
     invoke-virtual {v12, v14}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 2522
+    .line 2543
     iget-object v12, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     aget-object v12, v12, v13
@@ -163,7 +163,7 @@
 
     invoke-virtual {v12, v3, v14}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2523
+    .line 2544
     iget-object v12, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     aget-object v12, v12, v13
@@ -172,14 +172,14 @@
 
     invoke-virtual {v12, v3, v14}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2524
+    .line 2545
     iget-object v12, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v12, v12, v13
 
     invoke-virtual {v12, v3, v14}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2526
+    .line 2547
     iget-object v12, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v12, v12, v13
@@ -190,24 +190,24 @@
 
     invoke-virtual {v12, v14, v8, v8, v8}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 2528
+    .line 2549
     iget-object v12, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     aget-object v12, v12, v13
 
     invoke-virtual {v11, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 2529
+    .line 2550
     iget-object v12, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v12, v12, v13
 
     invoke-virtual {v11, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 2531
+    .line 2552
     invoke-virtual {v10, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 2532
+    .line 2553
     iget-object v11, v0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     aget-object v11, v11, v13
@@ -220,7 +220,7 @@
 
     const/high16 v13, 0x3f800000    # 1.0f
 
-    .line 2533
+    .line 2554
     invoke-static {v11, v12, v13}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v11
@@ -253,7 +253,7 @@
     :cond_1
     move/from16 v16, v8
 
-    .line 2535
+    .line 2556
     :goto_2
     invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
@@ -272,7 +272,7 @@
 .method static synthetic access$4600(Lorg/telegram/ui/StatisticActivity$OverviewCell;)V
     .locals 0
 
-    .line 2496
+    .line 2517
     invoke-direct {p0}, Lorg/telegram/ui/StatisticActivity$OverviewCell;->updateColors()V
 
     return-void
@@ -288,7 +288,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 2596
+    .line 2617
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     aget-object v1, v1, v0
@@ -301,7 +301,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2597
+    .line 2618
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     aget-object v1, v1, v0
@@ -314,7 +314,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2599
+    .line 2620
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v1, v1, v0
@@ -327,7 +327,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 2601
+    .line 2622
     iget-object v2, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v2, v2, v0
@@ -344,7 +344,7 @@
 
     goto :goto_1
 
-    .line 2603
+    .line 2624
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
@@ -370,28 +370,28 @@
 .method public setData(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
-    .line 2587
+    .line 2608
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     aget-object v0, v0, p1
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2588
+    .line 2609
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object p2, p2, p1
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2589
+    .line 2610
     iget-object p2, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     aget-object p1, p2, p1
 
     invoke-virtual {p1, p4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2591
+    .line 2612
     invoke-direct {p0}, Lorg/telegram/ui/StatisticActivity$OverviewCell;->updateColors()V
 
     return-void
@@ -400,7 +400,7 @@
 .method public setData(Lorg/telegram/ui/StatisticActivity$OverviewChannelData;)V
     .locals 6
 
-    .line 2540
+    .line 2561
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     const/4 v1, 0x0
@@ -411,7 +411,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2541
+    .line 2562
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     const/4 v2, 0x1
@@ -422,7 +422,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2542
+    .line 2563
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     const/4 v3, 0x2
@@ -433,7 +433,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2543
+    .line 2564
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     const/4 v4, 0x3
@@ -444,7 +444,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2545
+    .line 2566
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v1
@@ -453,7 +453,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2546
+    .line 2567
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v1
@@ -476,7 +476,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 2547
+    .line 2568
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v2
@@ -485,7 +485,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2548
+    .line 2569
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
@@ -494,7 +494,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2549
+    .line 2570
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
@@ -517,7 +517,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 2550
+    .line 2571
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v4
@@ -526,7 +526,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2551
+    .line 2572
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v4
@@ -549,7 +549,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 2553
+    .line 2574
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     aget-object v0, v0, v1
@@ -558,7 +558,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2554
+    .line 2575
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     aget-object v0, v0, v2
@@ -567,7 +567,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2555
+    .line 2576
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
@@ -576,7 +576,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2556
+    .line 2577
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     aget-object v0, v0, v4
@@ -585,7 +585,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2558
+    .line 2579
     invoke-direct {p0}, Lorg/telegram/ui/StatisticActivity$OverviewCell;->updateColors()V
 
     return-void
@@ -594,7 +594,7 @@
 .method public setData(Lorg/telegram/ui/StatisticActivity$OverviewChatData;)V
     .locals 6
 
-    .line 2562
+    .line 2583
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     const/4 v1, 0x0
@@ -605,7 +605,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2563
+    .line 2584
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     const/4 v2, 0x1
@@ -616,7 +616,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2564
+    .line 2585
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     const/4 v3, 0x2
@@ -627,7 +627,7 @@
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2565
+    .line 2586
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
 
     const/4 v4, 0x3
@@ -638,7 +638,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2567
+    .line 2588
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v1
@@ -647,7 +647,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2568
+    .line 2589
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v1
@@ -670,7 +670,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 2570
+    .line 2591
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v2
@@ -679,7 +679,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2571
+    .line 2592
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v2
@@ -702,7 +702,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 2573
+    .line 2594
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
@@ -711,7 +711,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2574
+    .line 2595
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
@@ -734,7 +734,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 2575
+    .line 2596
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v4
@@ -743,7 +743,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2576
+    .line 2597
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->secondary:[Landroid/widget/TextView;
 
     aget-object v0, v0, v4
@@ -766,7 +766,7 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 2578
+    .line 2599
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     aget-object v0, v0, v1
@@ -775,7 +775,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2579
+    .line 2600
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     aget-object v0, v0, v2
@@ -784,7 +784,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2580
+    .line 2601
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     aget-object v0, v0, v3
@@ -793,7 +793,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2581
+    .line 2602
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
 
     aget-object v0, v0, v4
@@ -802,7 +802,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2583
+    .line 2604
     invoke-direct {p0}, Lorg/telegram/ui/StatisticActivity$OverviewCell;->updateColors()V
 
     return-void

@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 2779
+    .line 2788
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$22;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-direct {p0}, Lorg/json/JSONObject;-><init>()V
@@ -36,10 +36,10 @@
 
     const-string v0, "DIRECT"
 
-    .line 2780
+    .line 2789
     invoke-virtual {p0, p1, v0}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    .line 2781
+    .line 2790
     new-instance p1, Lorg/telegram/ui/PaymentFormActivity$22$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/PaymentFormActivity$22$1;-><init>(Lorg/telegram/ui/PaymentFormActivity$22;)V

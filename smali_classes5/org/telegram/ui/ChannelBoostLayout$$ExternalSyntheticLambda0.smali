@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChannelBoostLayout$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/ChannelBoostLayout;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChannelBoostLayout;->$r8$lambda$yT5XZoRxXrrfmZRU4XJqRaE9W4A(Lorg/telegram/ui/ChannelBoostLayout;Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChannelBoostLayout;->$r8$lambda$cQYZaGxBDc0UvWakvIeF5_mBBck(Lorg/telegram/ui/ChannelBoostLayout;Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
 
     return-void
 .end method

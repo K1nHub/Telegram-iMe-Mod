@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 CreateWalletIntroPresenter.kt\ncom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroPresenter\n*L\n1#1,132:1\n61#2,16:133\n*E\n"
+    value = "SMAP\nRxExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt$subscribeWithErrorHandle$2\n+ 2 CreateWalletIntroPresenter.kt\ncom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroPresenter\n*L\n1#1,132:1\n69#2,16:133\n*E\n"
 .end annotation
 
 

@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 /* renamed from: com.google.android.exoplayer2.extractor.ts.TsUtil */
 /* loaded from: classes.dex */
@@ -31,7 +31,7 @@ public final class TsUtil {
     public static long readPcrFromPacket(ParsableByteArray parsableByteArray, int i, int i2) {
         parsableByteArray.setPosition(i);
         if (parsableByteArray.bytesLeft() < 5) {
-            return C0479C.TIME_UNSET;
+            return C0485C.TIME_UNSET;
         }
         int readInt = parsableByteArray.readInt();
         if ((8388608 & readInt) == 0 && ((2096896 & readInt) >> 8) == i2) {
@@ -42,9 +42,9 @@ public final class TsUtil {
                     return readPcrValueFromPcrBytes(bArr);
                 }
             }
-            return C0479C.TIME_UNSET;
+            return C0485C.TIME_UNSET;
         }
-        return C0479C.TIME_UNSET;
+        return C0485C.TIME_UNSET;
     }
 
     private static long readPcrValueFromPcrBytes(byte[] bArr) {

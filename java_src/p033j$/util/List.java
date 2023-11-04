@@ -15,7 +15,7 @@ public interface List<E> extends Collection<E> {
     public final /* synthetic */ class CC {
         public static void $default$replaceAll(java.util.List list, UnaryOperator unaryOperator) {
             if (DesugarCollections.f677b.isInstance(list)) {
-                DesugarCollections.m687e(list, unaryOperator);
+                DesugarCollections.m688e(list, unaryOperator);
                 return;
             }
             Objects.requireNonNull(unaryOperator);
@@ -27,7 +27,7 @@ public interface List<E> extends Collection<E> {
 
         public static Spliterator $default$spliterator(java.util.List list) {
             Objects.requireNonNull(list);
-            return new C2766D(list, 16);
+            return new C2770D(list, 16);
         }
     }
 
@@ -92,7 +92,7 @@ public interface List<E> extends Collection<E> {
 
     void sort(Comparator<? super E> comparator);
 
-    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2670e
+    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2674e
     Spliterator<E> spliterator();
 
     java.util.List<E> subList(int i, int i2);

@@ -24,17 +24,17 @@ public final class ReflectLambdaKt {
         if (metadata == null) {
             return null;
         }
-        String[] m151d1 = metadata.m151d1();
-        if (m151d1.length == 0) {
-            m151d1 = null;
+        String[] m153d1 = metadata.m153d1();
+        if (m153d1.length == 0) {
+            m153d1 = null;
         }
-        if (m151d1 == null) {
+        if (m153d1 == null) {
             return null;
         }
-        Pair<JvmNameResolver, ProtoBuf$Function> readFunctionDataFrom = JvmProtoBufUtil.readFunctionDataFrom(m151d1, metadata.m150d2());
+        Pair<JvmNameResolver, ProtoBuf$Function> readFunctionDataFrom = JvmProtoBufUtil.readFunctionDataFrom(m153d1, metadata.m152d2());
         JvmNameResolver component1 = readFunctionDataFrom.component1();
         ProtoBuf$Function component2 = readFunctionDataFrom.component2();
-        JvmMetadataVersion jvmMetadataVersion = new JvmMetadataVersion(metadata.m148mv(), (metadata.m146xi() & 8) != 0);
+        JvmMetadataVersion jvmMetadataVersion = new JvmMetadataVersion(metadata.m150mv(), (metadata.m148xi() & 8) != 0);
         Class<?> cls = function.getClass();
         ProtoBuf$TypeTable typeTable = component2.getTypeTable();
         Intrinsics.checkNotNullExpressionValue(typeTable, "proto.typeTable");

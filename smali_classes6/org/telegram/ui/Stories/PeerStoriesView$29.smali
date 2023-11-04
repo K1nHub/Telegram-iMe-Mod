@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 4309
+    .line 4367
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$29;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 2
 
-    .line 4312
+    .line 4370
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$29;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->isActive:Z
@@ -51,7 +51,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4313
+    .line 4371
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$29;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->delegate:Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;

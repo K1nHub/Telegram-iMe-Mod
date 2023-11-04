@@ -38,7 +38,7 @@
         }
     .end annotation
 
-    const-string v0, "kSerializer"
+    const-string/jumbo v0, "kSerializer"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

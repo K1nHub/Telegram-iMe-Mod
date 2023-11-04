@@ -209,7 +209,7 @@
 .method public containsKey(Ljava/lang/String;)Z
     .locals 1
 
-    const-string v0, "key"
+    const-string/jumbo v0, "key"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -327,7 +327,7 @@
 .method public get(Ljava/lang/String;)Lkotlinx/serialization/json/JsonElement;
     .locals 1
 
-    const-string v0, "key"
+    const-string/jumbo v0, "key"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

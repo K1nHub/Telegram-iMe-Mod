@@ -89,7 +89,7 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
     public final void loadCategoriesPreviews() {
         String str = this.categoriesCursor;
         final boolean z = str == null;
-        Observable<Result<CategoriesPreviewsCursored>> observeOn = this.catalogInteractor.getCatalogPreview(this.chatType, str).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<CategoriesPreviewsCursored>> observeOn = this.catalogInteractor.getCatalogPreview(this.chatType, str).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "catalogInteractor\n      …(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends CategoriesPreviewsCursored>, Unit>() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllPresenter$loadCategoriesPreviews$$inlined$subscribeWithErrorHandle$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -99,12 +99,12 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CategoriesPreviewsCursored> result) {
-                m1576invoke(result);
+                m1581invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1576invoke(Result<? extends CategoriesPreviewsCursored> it) {
+            public final void m1581invoke(Result<? extends CategoriesPreviewsCursored> it) {
                 List<BaseNode> mapNewDataToUiItems;
                 String str2;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -173,13 +173,13 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
         if (str == null || str.length() == 0) {
             ((CatalogAllView) getViewState()).onNestedLoadMoreComplete(j);
         } else {
-            this.loadMoreChannelsSubject.onNext(TuplesKt.m144to(Long.valueOf(j), str));
+            this.loadMoreChannelsSubject.onNext(TuplesKt.m146to(Long.valueOf(j), str));
         }
     }
 
     public final void onChannelClick(final CampaignItem campaign) {
         Intrinsics.checkNotNullParameter(campaign, "campaign");
-        Observable<TLRPC$Chat> observeOn = this.telegramApi.getChatInfoByUsername(campaign.getShortname()).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<TLRPC$Chat> observeOn = this.telegramApi.getChatInfoByUsername(campaign.getShortname()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "telegramApi\n            …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -191,12 +191,12 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(TLRPC$Chat tLRPC$Chat) {
-                m1578invoke(tLRPC$Chat);
+                m1583invoke(tLRPC$Chat);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1578invoke(TLRPC$Chat it) {
+            public final void m1583invoke(TLRPC$Chat it) {
                 ChatType chatType;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 CatalogAllView catalogAllView = (CatalogAllView) CatalogAllPresenter.this.getViewState();
@@ -279,7 +279,7 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
                 subscribeToLoadMoreEvents$lambda$3 = CatalogAllPresenter.subscribeToLoadMoreEvents$lambda$3(Function1.this, obj);
                 return subscribeToLoadMoreEvents$lambda$3;
             }
-        })).subscribeOn(this.schedulersProvider.mo1010io()).observeOn(this.schedulersProvider.mo1009ui());
+        })).subscribeOn(this.schedulersProvider.mo1011io()).observeOn(this.schedulersProvider.mo1010ui());
         final Function1<Pair<? extends Long, ? extends String>, Unit> function1 = new Function1<Pair<? extends Long, ? extends String>, Unit>() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllPresenter$subscribeToLoadMoreEvents$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -327,7 +327,7 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void loadMoreChannels(final long j, String str) {
-        Observable<Result<CampaignsCursored>> observeOn = this.catalogInteractor.getCampaignsByCategoryId(j, this.chatType, str).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<CampaignsCursored>> observeOn = this.catalogInteractor.getCampaignsByCategoryId(j, this.chatType, str).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "catalogInteractor\n      …(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends CampaignsCursored>, Unit>() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllPresenter$loadMoreChannels$$inlined$subscribeWithErrorHandle$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -337,12 +337,12 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends CampaignsCursored> result) {
-                m1577invoke(result);
+                m1582invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1577invoke(Result<? extends CampaignsCursored> it) {
+            public final void m1582invoke(Result<? extends CampaignsCursored> it) {
                 ResourceManager resourceManager;
                 List list;
                 Object obj;
@@ -436,8 +436,8 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (CategoryPreview categoryPreview : list) {
-            Pair m144to = TuplesKt.m144to(new CategoryWithCampaignsItem(categoryPreview.getCategory(), CatalogCampaignsUiMappingKt.mapToUi(categoryPreview.getItems()), categoryPreview.getMeta().getNextCursor() == null), categoryPreview.getMeta().getNextCursor());
-            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
+            Pair m146to = TuplesKt.m146to(new CategoryWithCampaignsItem(categoryPreview.getCategory(), CatalogCampaignsUiMappingKt.mapToUi(categoryPreview.getItems()), categoryPreview.getMeta().getNextCursor() == null), categoryPreview.getMeta().getNextCursor());
+            linkedHashMap.put(m146to.getFirst(), m146to.getSecond());
         }
         for (Map.Entry entry : linkedHashMap.entrySet()) {
             Map.EL.putIfAbsent(this.categoriesChannelsCursors, Long.valueOf(((CategoryWithCampaignsItem) entry.getKey()).getCategory().getId()), entry.getValue());

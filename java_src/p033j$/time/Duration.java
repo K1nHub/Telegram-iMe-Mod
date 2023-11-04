@@ -1,10 +1,10 @@
 package p033j$.time;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.regex.Pattern;
-import p033j$.lang.AbstractC2669d;
+import p033j$.lang.AbstractC2673d;
 /* renamed from: j$.time.Duration */
 /* loaded from: classes2.dex */
 public final class Duration implements Comparable<Duration>, Serializable {
@@ -19,7 +19,7 @@ public final class Duration implements Comparable<Duration>, Serializable {
     private final int f483b;
 
     static {
-        BigInteger.valueOf(C0479C.NANOS_PER_SECOND);
+        BigInteger.valueOf(C0485C.NANOS_PER_SECOND);
         Pattern.compile("([-+]?)P(?:([-+]?[0-9]+)D)?(T(?:([-+]?[0-9]+)H)?(?:([-+]?[0-9]+)M)?(?:([-+]?[0-9]+)(?:[.,]([0-9]{0,9}))?S)?)?", 2);
     }
 
@@ -29,33 +29,33 @@ public final class Duration implements Comparable<Duration>, Serializable {
     }
 
     /* renamed from: a */
-    private static Duration m983a(long j, int i) {
+    private static Duration m984a(long j, int i) {
         return (((long) i) | j) == 0 ? f481c : new Duration(j, i);
     }
 
     /* renamed from: c */
-    public static Duration m981c(long j) {
-        long j2 = j / C0479C.NANOS_PER_SECOND;
-        int i = (int) (j % C0479C.NANOS_PER_SECOND);
+    public static Duration m982c(long j) {
+        long j2 = j / C0485C.NANOS_PER_SECOND;
+        int i = (int) (j % C0485C.NANOS_PER_SECOND);
         if (i < 0) {
-            i = (int) (i + C0479C.NANOS_PER_SECOND);
+            i = (int) (i + C0485C.NANOS_PER_SECOND);
             j2--;
         }
-        return m983a(j2, i);
+        return m984a(j2, i);
     }
 
     /* renamed from: d */
-    public static Duration m980d(long j) {
-        return m983a(j, 0);
+    public static Duration m981d(long j) {
+        return m984a(j, 0);
     }
 
     /* renamed from: e */
-    public static Duration m979e(long j, long j2) {
-        return m983a(AbstractC2669d.m989c(j, AbstractC2669d.m987e(j2, C0479C.NANOS_PER_SECOND)), (int) AbstractC2669d.m988d(j2, C0479C.NANOS_PER_SECOND));
+    public static Duration m980e(long j, long j2) {
+        return m984a(AbstractC2673d.m990c(j, AbstractC2673d.m988e(j2, C0485C.NANOS_PER_SECOND)), (int) AbstractC2673d.m989d(j2, C0485C.NANOS_PER_SECOND));
     }
 
     /* renamed from: b */
-    public long m982b() {
+    public long m983b() {
         return this.f482a;
     }
 
@@ -83,7 +83,7 @@ public final class Duration implements Comparable<Duration>, Serializable {
     }
 
     public long toMillis() {
-        return AbstractC2669d.m989c(AbstractC2669d.m986f(this.f482a, 1000L), this.f483b / 1000000);
+        return AbstractC2673d.m990c(AbstractC2673d.m987f(this.f482a, 1000L), this.f483b / 1000000);
     }
 
     public String toString() {
@@ -119,7 +119,7 @@ public final class Duration implements Comparable<Duration>, Serializable {
             if (i2 < 0) {
                 sb.append(2000000000 - this.f483b);
             } else {
-                sb.append(this.f483b + C0479C.NANOS_PER_SECOND);
+                sb.append(this.f483b + C0485C.NANOS_PER_SECOND);
             }
             while (sb.charAt(sb.length() - 1) == '0') {
                 sb.setLength(sb.length() - 1);

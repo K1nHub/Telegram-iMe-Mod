@@ -40,9 +40,9 @@ public final class JavaAnnotationTargetMapper {
     static {
         Map<String, EnumSet<KotlinTarget>> mapOf;
         Map<String, KotlinRetention> mapOf2;
-        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m144to("PACKAGE", EnumSet.noneOf(KotlinTarget.class)), TuplesKt.m144to("TYPE", EnumSet.of(KotlinTarget.CLASS, KotlinTarget.FILE)), TuplesKt.m144to("ANNOTATION_TYPE", EnumSet.of(KotlinTarget.ANNOTATION_CLASS)), TuplesKt.m144to("TYPE_PARAMETER", EnumSet.of(KotlinTarget.TYPE_PARAMETER)), TuplesKt.m144to("FIELD", EnumSet.of(KotlinTarget.FIELD)), TuplesKt.m144to("LOCAL_VARIABLE", EnumSet.of(KotlinTarget.LOCAL_VARIABLE)), TuplesKt.m144to("PARAMETER", EnumSet.of(KotlinTarget.VALUE_PARAMETER)), TuplesKt.m144to("CONSTRUCTOR", EnumSet.of(KotlinTarget.CONSTRUCTOR)), TuplesKt.m144to("METHOD", EnumSet.of(KotlinTarget.FUNCTION, KotlinTarget.PROPERTY_GETTER, KotlinTarget.PROPERTY_SETTER)), TuplesKt.m144to("TYPE_USE", EnumSet.of(KotlinTarget.TYPE)));
+        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m146to("PACKAGE", EnumSet.noneOf(KotlinTarget.class)), TuplesKt.m146to("TYPE", EnumSet.of(KotlinTarget.CLASS, KotlinTarget.FILE)), TuplesKt.m146to("ANNOTATION_TYPE", EnumSet.of(KotlinTarget.ANNOTATION_CLASS)), TuplesKt.m146to("TYPE_PARAMETER", EnumSet.of(KotlinTarget.TYPE_PARAMETER)), TuplesKt.m146to("FIELD", EnumSet.of(KotlinTarget.FIELD)), TuplesKt.m146to("LOCAL_VARIABLE", EnumSet.of(KotlinTarget.LOCAL_VARIABLE)), TuplesKt.m146to("PARAMETER", EnumSet.of(KotlinTarget.VALUE_PARAMETER)), TuplesKt.m146to("CONSTRUCTOR", EnumSet.of(KotlinTarget.CONSTRUCTOR)), TuplesKt.m146to("METHOD", EnumSet.of(KotlinTarget.FUNCTION, KotlinTarget.PROPERTY_GETTER, KotlinTarget.PROPERTY_SETTER)), TuplesKt.m146to("TYPE_USE", EnumSet.of(KotlinTarget.TYPE)));
         targetNameLists = mapOf;
-        mapOf2 = MapsKt__MapsKt.mapOf(TuplesKt.m144to("RUNTIME", KotlinRetention.RUNTIME), TuplesKt.m144to("CLASS", KotlinRetention.BINARY), TuplesKt.m144to("SOURCE", KotlinRetention.SOURCE));
+        mapOf2 = MapsKt__MapsKt.mapOf(TuplesKt.m146to("RUNTIME", KotlinRetention.RUNTIME), TuplesKt.m146to("CLASS", KotlinRetention.BINARY), TuplesKt.m146to("SOURCE", KotlinRetention.SOURCE));
         retentionNameList = mapOf2;
     }
 

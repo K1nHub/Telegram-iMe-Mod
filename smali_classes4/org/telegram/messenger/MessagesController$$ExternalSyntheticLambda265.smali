@@ -47,7 +47,7 @@
 
     move v5, p1
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$0H-AGYK22krli36sS2XeoGRhY4M(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Dialog;IJI)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$WcoyzfBQO6JqH_OyvbPaFL45B3w(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$Dialog;IJI)V
 
     return-void
 .end method

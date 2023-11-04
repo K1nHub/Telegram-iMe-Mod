@@ -17,7 +17,21 @@
 
 # virtual methods
 .method public abstract accept(Ljava/lang/Object;Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TT;TU;)V"
+        }
+    .end annotation
 .end method
 
-.method public abstract b(Lj$/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
+.method public abstract andThen(Lj$/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lj$/util/function/BiConsumer<",
+            "-TT;-TU;>;)",
+            "Lj$/util/function/BiConsumer<",
+            "TT;TU;>;"
+        }
+    .end annotation
 .end method

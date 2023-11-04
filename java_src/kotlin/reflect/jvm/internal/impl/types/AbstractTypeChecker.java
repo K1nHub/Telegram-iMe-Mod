@@ -148,14 +148,14 @@ public final class AbstractTypeChecker {
     private final Boolean checkSubtypeForIntegerLiteralType(TypeCheckerState typeCheckerState, SimpleTypeMarker simpleTypeMarker, SimpleTypeMarker simpleTypeMarker2) {
         TypeSystemContext typeSystemContext = typeCheckerState.getTypeSystemContext();
         if (typeSystemContext.isIntegerLiteralType(simpleTypeMarker) || typeSystemContext.isIntegerLiteralType(simpleTypeMarker2)) {
-            if (m134xdf0fda08(typeSystemContext, simpleTypeMarker) && m134xdf0fda08(typeSystemContext, simpleTypeMarker2)) {
+            if (m136xdf0fda08(typeSystemContext, simpleTypeMarker) && m136xdf0fda08(typeSystemContext, simpleTypeMarker2)) {
                 return Boolean.TRUE;
             }
             if (typeSystemContext.isIntegerLiteralType(simpleTypeMarker)) {
-                if (m133x5f8d759c(typeSystemContext, typeCheckerState, simpleTypeMarker, simpleTypeMarker2, false)) {
+                if (m135x5f8d759c(typeSystemContext, typeCheckerState, simpleTypeMarker, simpleTypeMarker2, false)) {
                     return Boolean.TRUE;
                 }
-            } else if (typeSystemContext.isIntegerLiteralType(simpleTypeMarker2) && (m135x8a873de1(typeSystemContext, simpleTypeMarker) || m133x5f8d759c(typeSystemContext, typeCheckerState, simpleTypeMarker2, simpleTypeMarker, true))) {
+            } else if (typeSystemContext.isIntegerLiteralType(simpleTypeMarker2) && (m137x8a873de1(typeSystemContext, simpleTypeMarker) || m135x5f8d759c(typeSystemContext, typeCheckerState, simpleTypeMarker2, simpleTypeMarker, true))) {
                 return Boolean.TRUE;
             }
             return null;
@@ -164,7 +164,7 @@ public final class AbstractTypeChecker {
     }
 
     /* renamed from: checkSubtypeForIntegerLiteralType$lambda$7$isTypeInIntegerLiteralType */
-    private static final boolean m133x5f8d759c(TypeSystemContext typeSystemContext, TypeCheckerState typeCheckerState, SimpleTypeMarker simpleTypeMarker, SimpleTypeMarker simpleTypeMarker2, boolean z) {
+    private static final boolean m135x5f8d759c(TypeSystemContext typeSystemContext, TypeCheckerState typeCheckerState, SimpleTypeMarker simpleTypeMarker, SimpleTypeMarker simpleTypeMarker2, boolean z) {
         boolean z2;
         Collection<KotlinTypeMarker> possibleIntegerTypes = typeSystemContext.possibleIntegerTypes(simpleTypeMarker);
         if (!(possibleIntegerTypes instanceof Collection) || !possibleIntegerTypes.isEmpty()) {
@@ -185,7 +185,7 @@ public final class AbstractTypeChecker {
     }
 
     /* renamed from: checkSubtypeForIntegerLiteralType$lambda$7$isIntegerLiteralTypeInIntersectionComponents */
-    private static final boolean m135x8a873de1(TypeSystemContext typeSystemContext, SimpleTypeMarker simpleTypeMarker) {
+    private static final boolean m137x8a873de1(TypeSystemContext typeSystemContext, SimpleTypeMarker simpleTypeMarker) {
         boolean z;
         boolean z2;
         TypeConstructorMarker typeConstructor = typeSystemContext.typeConstructor(simpleTypeMarker);
@@ -216,7 +216,7 @@ public final class AbstractTypeChecker {
     }
 
     /* renamed from: checkSubtypeForIntegerLiteralType$lambda$7$isCapturedIntegerLiteralType */
-    private static final boolean m136xef0f5f3b(TypeSystemContext typeSystemContext, SimpleTypeMarker simpleTypeMarker) {
+    private static final boolean m138xef0f5f3b(TypeSystemContext typeSystemContext, SimpleTypeMarker simpleTypeMarker) {
         if (simpleTypeMarker instanceof CapturedTypeMarker) {
             TypeArgumentMarker projection = typeSystemContext.projection(typeSystemContext.typeConstructor((CapturedTypeMarker) simpleTypeMarker));
             return !typeSystemContext.isStarProjection(projection) && typeSystemContext.isIntegerLiteralType(typeSystemContext.upperBoundIfFlexible(typeSystemContext.getType(projection)));
@@ -225,8 +225,8 @@ public final class AbstractTypeChecker {
     }
 
     /* renamed from: checkSubtypeForIntegerLiteralType$lambda$7$isIntegerLiteralTypeOrCapturedOne */
-    private static final boolean m134xdf0fda08(TypeSystemContext typeSystemContext, SimpleTypeMarker simpleTypeMarker) {
-        return typeSystemContext.isIntegerLiteralType(simpleTypeMarker) || m136xef0f5f3b(typeSystemContext, simpleTypeMarker);
+    private static final boolean m136xdf0fda08(TypeSystemContext typeSystemContext, SimpleTypeMarker simpleTypeMarker) {
+        return typeSystemContext.isIntegerLiteralType(simpleTypeMarker) || m138xef0f5f3b(typeSystemContext, simpleTypeMarker);
     }
 
     private final boolean hasNothingSupertype(TypeCheckerState typeCheckerState, SimpleTypeMarker simpleTypeMarker) {
@@ -272,12 +272,12 @@ public final class AbstractTypeChecker {
                 } else {
                     TypeSystemContext typeSystemContext2 = typeCheckerState.getTypeSystemContext();
                     for (KotlinTypeMarker kotlinTypeMarker : typeSystemContext2.supertypes(typeSystemContext2.typeConstructor(current))) {
-                        SimpleTypeMarker mo2050transformType = supertypesPolicy.mo2050transformType(typeCheckerState, kotlinTypeMarker);
-                        if (typeSystemContext.isNothingConstructor(typeSystemContext.typeConstructor(mo2050transformType))) {
+                        SimpleTypeMarker mo2055transformType = supertypesPolicy.mo2055transformType(typeCheckerState, kotlinTypeMarker);
+                        if (typeSystemContext.isNothingConstructor(typeSystemContext.typeConstructor(mo2055transformType))) {
                             typeCheckerState.clear();
                             return true;
                         }
-                        supertypesDeque.add(mo2050transformType);
+                        supertypesDeque.add(mo2055transformType);
                     }
                     continue;
                 }
@@ -658,7 +658,7 @@ public final class AbstractTypeChecker {
                     if (substitutionSupertypePolicy != null) {
                         TypeSystemContext typeSystemContext2 = typeCheckerState.getTypeSystemContext();
                         for (KotlinTypeMarker kotlinTypeMarker : typeSystemContext2.supertypes(typeSystemContext2.typeConstructor(current))) {
-                            supertypesDeque.add(substitutionSupertypePolicy.mo2050transformType(typeCheckerState, kotlinTypeMarker));
+                            supertypesDeque.add(substitutionSupertypePolicy.mo2055transformType(typeCheckerState, kotlinTypeMarker));
                         }
                     }
                 }
@@ -751,7 +751,7 @@ public final class AbstractTypeChecker {
                 if (supertypesPolicy != null) {
                     TypeSystemContext typeSystemContext2 = state.getTypeSystemContext();
                     for (KotlinTypeMarker kotlinTypeMarker : typeSystemContext2.supertypes(typeSystemContext2.typeConstructor(current))) {
-                        supertypesDeque.add(supertypesPolicy.mo2050transformType(state, kotlinTypeMarker));
+                        supertypesDeque.add(supertypesPolicy.mo2055transformType(state, kotlinTypeMarker));
                     }
                 }
             }

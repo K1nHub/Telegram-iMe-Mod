@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewContainer$4;)V
     .locals 0
 
-    .line 328
+    .line 329
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4$1;->this$1:Lorg/telegram/ui/Components/BotWebViewContainer$4;
 
     invoke-direct {p0}, Landroid/webkit/WebViewClient;-><init>()V
@@ -35,7 +35,7 @@
 .method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
     .locals 0
 
-    .line 331
+    .line 332
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$4$1;->this$1:Lorg/telegram/ui/Components/BotWebViewContainer$4;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/BotWebViewContainer$4;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;

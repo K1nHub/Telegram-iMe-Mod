@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: MessagePopupItem.kt */
 /* loaded from: classes3.dex */
@@ -71,35 +71,35 @@ public enum MessagePopupItem {
     public final String getTitle() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String internalString = LocaleController.getInternalString(C3630R.string.chat_message_popup_option_forward_cloud);
+                String internalString = LocaleController.getInternalString(C3634R.string.chat_message_popup_option_forward_cloud);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…pup_option_forward_cloud)");
                 return internalString;
             case 2:
-                String string = LocaleController.getString("ShareFile", C3630R.string.ShareFile);
+                String string = LocaleController.getString("ShareFile", C3634R.string.ShareFile);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"ShareFile\", R.string.ShareFile)");
                 return string;
             case 3:
-                String internalString2 = LocaleController.getInternalString(C3630R.string.chat_message_popup_option_forward_only_cloud);
+                String internalString2 = LocaleController.getInternalString(C3634R.string.chat_message_popup_option_forward_only_cloud);
                 Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString((R.str…tion_forward_only_cloud))");
                 return internalString2;
             case 4:
-                String internalString3 = LocaleController.getInternalString(C3630R.string.settings_interface_message_popup_item_forward_messengers);
+                String internalString3 = LocaleController.getInternalString(C3634R.string.settings_interface_message_popup_item_forward_messengers);
                 Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.stri…_item_forward_messengers)");
                 return internalString3;
             case 5:
-                String internalString4 = LocaleController.getInternalString(C3630R.string.chat_long_action_translate);
+                String internalString4 = LocaleController.getInternalString(C3634R.string.chat_long_action_translate);
                 Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(R.stri…at_long_action_translate)");
                 return internalString4;
             case 6:
-                String internalString5 = LocaleController.getInternalString(C3630R.string.chat_message_popup_option_copy_part);
+                String internalString5 = LocaleController.getInternalString(C3634R.string.chat_message_popup_option_copy_part);
                 Intrinsics.checkNotNullExpressionValue(internalString5, "getInternalString(R.stri…e_popup_option_copy_part)");
                 return internalString5;
             case 7:
-                String internalString6 = LocaleController.getInternalString(C3630R.string.chat_message_popup_option_copy_image);
+                String internalString6 = LocaleController.getInternalString(C3634R.string.chat_message_popup_option_copy_image);
                 Intrinsics.checkNotNullExpressionValue(internalString6, "getInternalString(R.stri…_popup_option_copy_image)");
                 return internalString6;
             case 8:
-                String internalString7 = LocaleController.getInternalString(C3630R.string.message_document_file_save_as);
+                String internalString7 = LocaleController.getInternalString(C3634R.string.message_document_file_save_as);
                 Intrinsics.checkNotNullExpressionValue(internalString7, "getInternalString(R.stri…ge_document_file_save_as)");
                 return internalString7;
             default:

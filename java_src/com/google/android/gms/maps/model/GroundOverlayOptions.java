@@ -15,29 +15,29 @@ import com.google.android.gms.dynamic.IObjectWrapper;
 public final class GroundOverlayOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<GroundOverlayOptions> CREATOR = new zzd();
     public static final float NO_DIMENSION = -1.0f;
-    @SafeParcelable.Field(getter = "getWrappedImageDescriptorImplBinder", m1089id = 2, type = "android.os.IBinder")
+    @SafeParcelable.Field(getter = "getWrappedImageDescriptorImplBinder", m1090id = 2, type = "android.os.IBinder")
     private BitmapDescriptor zza;
-    @SafeParcelable.Field(getter = "getLocation", m1089id = 3)
+    @SafeParcelable.Field(getter = "getLocation", m1090id = 3)
     private LatLng zzb;
-    @SafeParcelable.Field(getter = "getWidth", m1089id = 4)
+    @SafeParcelable.Field(getter = "getWidth", m1090id = 4)
     private float zzc;
-    @SafeParcelable.Field(getter = "getHeight", m1089id = 5)
+    @SafeParcelable.Field(getter = "getHeight", m1090id = 5)
     private float zzd;
-    @SafeParcelable.Field(getter = "getBounds", m1089id = 6)
+    @SafeParcelable.Field(getter = "getBounds", m1090id = 6)
     private LatLngBounds zze;
-    @SafeParcelable.Field(getter = "getBearing", m1089id = 7)
+    @SafeParcelable.Field(getter = "getBearing", m1090id = 7)
     private float zzf;
-    @SafeParcelable.Field(getter = "getZIndex", m1089id = 8)
+    @SafeParcelable.Field(getter = "getZIndex", m1090id = 8)
     private float zzg;
-    @SafeParcelable.Field(getter = "isVisible", m1089id = 9)
+    @SafeParcelable.Field(getter = "isVisible", m1090id = 9)
     private boolean zzh;
-    @SafeParcelable.Field(getter = "getTransparency", m1089id = 10)
+    @SafeParcelable.Field(getter = "getTransparency", m1090id = 10)
     private float zzi;
-    @SafeParcelable.Field(getter = "getAnchorU", m1089id = 11)
+    @SafeParcelable.Field(getter = "getAnchorU", m1090id = 11)
     private float zzj;
-    @SafeParcelable.Field(getter = "getAnchorV", m1089id = 12)
+    @SafeParcelable.Field(getter = "getAnchorV", m1090id = 12)
     private float zzk;
-    @SafeParcelable.Field(getter = "isClickable", m1089id = 13)
+    @SafeParcelable.Field(getter = "isClickable", m1090id = 13)
     private boolean zzl;
 
     public GroundOverlayOptions() {
@@ -180,7 +180,7 @@ public final class GroundOverlayOptions extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public GroundOverlayOptions(@SafeParcelable.Param(m1088id = 2) IBinder iBinder, @SafeParcelable.Param(m1088id = 3) LatLng latLng, @SafeParcelable.Param(m1088id = 4) float f, @SafeParcelable.Param(m1088id = 5) float f2, @SafeParcelable.Param(m1088id = 6) LatLngBounds latLngBounds, @SafeParcelable.Param(m1088id = 7) float f3, @SafeParcelable.Param(m1088id = 8) float f4, @SafeParcelable.Param(m1088id = 9) boolean z, @SafeParcelable.Param(m1088id = 10) float f5, @SafeParcelable.Param(m1088id = 11) float f6, @SafeParcelable.Param(m1088id = 12) float f7, @SafeParcelable.Param(m1088id = 13) boolean z2) {
+    public GroundOverlayOptions(@SafeParcelable.Param(m1089id = 2) IBinder iBinder, @SafeParcelable.Param(m1089id = 3) LatLng latLng, @SafeParcelable.Param(m1089id = 4) float f, @SafeParcelable.Param(m1089id = 5) float f2, @SafeParcelable.Param(m1089id = 6) LatLngBounds latLngBounds, @SafeParcelable.Param(m1089id = 7) float f3, @SafeParcelable.Param(m1089id = 8) float f4, @SafeParcelable.Param(m1089id = 9) boolean z, @SafeParcelable.Param(m1089id = 10) float f5, @SafeParcelable.Param(m1089id = 11) float f6, @SafeParcelable.Param(m1089id = 12) float f7, @SafeParcelable.Param(m1089id = 13) boolean z2) {
         this.zzh = true;
         this.zzi = BitmapDescriptorFactory.HUE_RED;
         this.zzj = 0.5f;

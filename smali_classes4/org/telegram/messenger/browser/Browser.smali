@@ -601,7 +601,7 @@
 
     const-string/jumbo v2, "s/"
 
-    const-string v5, "iv"
+    const-string/jumbo v5, "iv"
 
     if-eqz v1, :cond_e
 

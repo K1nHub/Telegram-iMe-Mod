@@ -183,7 +183,7 @@ public class DefaultLoadControl implements LoadControl {
             }
             this.isLoading = z;
             if (!z && j2 < 500000) {
-                Log.m1106w("DefaultLoadControl", "Target buffer size reached with less than 500ms of buffered media data.");
+                Log.m1107w("DefaultLoadControl", "Target buffer size reached with less than 500ms of buffered media data.");
             }
         } else if (j2 >= this.maxBufferUs || z2) {
             this.isLoading = false;
@@ -195,7 +195,7 @@ public class DefaultLoadControl implements LoadControl {
     public boolean shouldStartPlayback(long j, float f, boolean z, long j2) {
         long playoutDurationForMediaDuration = Util.getPlayoutDurationForMediaDuration(j, f);
         long j3 = z ? this.bufferForPlaybackAfterRebufferUs : this.bufferForPlaybackUs;
-        if (j2 != C0479C.TIME_UNSET) {
+        if (j2 != C0485C.TIME_UNSET) {
             j3 = Math.min(j2 / 2, j3);
         }
         return j3 <= 0 || playoutDurationForMediaDuration >= j3 || (!this.prioritizeTimeOverSizeThresholds && this.allocator.getTotalBytesAllocated() >= this.targetBufferBytes);

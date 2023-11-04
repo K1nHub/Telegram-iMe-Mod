@@ -13,7 +13,7 @@ import kotlinx.coroutines.sync.Mutex;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* JADX INFO: Add missing generic type declarations: [STATE] */
 /* compiled from: RealContainer.kt */
-@DebugMetadata(m143c = "org.orbitmvi.orbit.internal.RealContainer$pluginContext$3", m142f = "RealContainer.kt", m141l = {111}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.orbitmvi.orbit.internal.RealContainer$pluginContext$3", m144f = "RealContainer.kt", m143l = {111}, m142m = "invokeSuspend")
 /* loaded from: classes4.dex */
 public final class RealContainer$pluginContext$3<STATE> extends SuspendLambda implements Function2<Function1<? super STATE, ? extends STATE>, Continuation<? super Unit>, Object> {
     /* synthetic */ Object L$0;

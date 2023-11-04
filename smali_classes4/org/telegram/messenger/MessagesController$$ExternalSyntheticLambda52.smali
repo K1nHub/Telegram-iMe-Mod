@@ -33,7 +33,7 @@
 
     iget v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda52;->f$1:I
 
-    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$UXYuwBABg2XCRV_eT70XZiYAe64(Lorg/telegram/messenger/MessagesController;I)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$h9AydAh2bnqzzHr58vmmOXxYmW8(Lorg/telegram/messenger/MessagesController;I)V
 
     return-void
 .end method

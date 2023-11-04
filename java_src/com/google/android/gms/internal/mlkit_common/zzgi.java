@@ -5,7 +5,7 @@ import java.util.List;
 /* loaded from: classes.dex */
 public interface zzgi extends List {
     /* renamed from: a_ */
-    zzgi mo1073a_();
+    zzgi mo1074a_();
 
     Object zza(int i);
 

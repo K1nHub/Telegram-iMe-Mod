@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$82\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,898:1\n44#2:899\n129#3,5:900\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$82\n*L\n887#1:899\n890#1:900,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$82\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,901:1\n44#2:902\n129#3,5:903\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$82\n*L\n890#1:902\n893#1:903,5\n*E\n"
 .end annotation
 
 
@@ -87,7 +87,7 @@
 
     check-cast p2, Lcom/iMe/model/wallet/fragment/TonFragmentItem$Product;
 
-    .line 888
+    .line 891
     new-instance v0, Lcom/iMe/ui/wallet/fragment/usernames/details/TonFragmentProductDetailsPresenter;
 
     .line 133
@@ -105,7 +105,7 @@
 
     check-cast p1, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 888
+    .line 891
     invoke-direct {v0, p2, p1}, Lcom/iMe/ui/wallet/fragment/usernames/details/TonFragmentProductDetailsPresenter;-><init>(Lcom/iMe/model/wallet/fragment/TonFragmentItem$Product;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
 
     return-object v0
@@ -114,7 +114,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 887
+    .line 890
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

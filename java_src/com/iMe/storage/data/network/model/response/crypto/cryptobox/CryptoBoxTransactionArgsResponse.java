@@ -64,9 +64,9 @@ public final class CryptoBoxTransactionArgsResponse {
     }
 
     public int hashCode() {
-        int m1017m = ((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.chainId) * 31) + this.f325to.hashCode()) * 31) + this.nonce.hashCode()) * 31) + this.gasLimit.hashCode()) * 31) + this.gasPrice.hashCode()) * 31;
+        int m1018m = ((((((((ProfileData$$ExternalSyntheticBackport0.m1018m(this.chainId) * 31) + this.f325to.hashCode()) * 31) + this.nonce.hashCode()) * 31) + this.gasLimit.hashCode()) * 31) + this.gasPrice.hashCode()) * 31;
         String str = this.data;
-        int hashCode = (m1017m + (str == null ? 0 : str.hashCode())) * 31;
+        int hashCode = (m1018m + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.value;
         return hashCode + (str2 != null ? str2.hashCode() : 0);
     }

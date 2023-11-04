@@ -1,8 +1,9 @@
 package org.telegram.tgnet;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import java.util.ArrayList;
 import org.telegram.messenger.LiteMode;
+import org.telegram.tgnet.p042tl.TL_stories$PeerStories;
 /* loaded from: classes5.dex */
 public abstract class TLRPC$ChatFull extends TLObject {
     public String about;
@@ -31,7 +32,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
     public boolean hidden_prehistory;
 
     /* renamed from: id */
-    public long f1601id;
+    public long f1603id;
     public long inviterId;
     public int invitesCount;
     public int kicked_count;
@@ -53,7 +54,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
     public int slowmode_seconds;
     public int stats_dc;
     public TLRPC$StickerSet stickerset;
-    public TLRPC$PeerStories stories;
+    public TL_stories$PeerStories stories;
     public boolean stories_pinned_available;
     public String theme_emoticon;
     public boolean translations_disabled;
@@ -70,15 +71,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
         switch (i) {
             case -1977734781:
                 tLRPC$ChatFull = new TLRPC$TL_chatFull() { // from class: org.telegram.tgnet.TLRPC$TL_chatFull_layer131
-                    public static int constructor = -1977734781;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -124,13 +123,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-1977734781);
                         int i2 = this.can_set_username ? this.flags | 128 : this.flags & (-129);
                         this.flags = i2;
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -168,15 +167,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -1781833897:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer70
-                    public static int constructor = -1781833897;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_view_participants = (readInt32 & 8) != 0;
                         this.can_set_username = (readInt32 & 64) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -227,13 +224,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-1781833897);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -273,15 +270,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -1749097118:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer52
-                    public static int constructor = -1749097118;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_view_participants = (readInt32 & 8) != 0;
                         this.can_set_username = (readInt32 & 64) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -329,13 +324,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-1749097118);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -372,8 +367,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -1736252138:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer101
-                    public static int constructor = -1736252138;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -383,7 +376,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_set_stickers = (readInt32 & 128) != 0;
                         this.hidden_prehistory = (readInt32 & 1024) != 0;
                         this.can_view_stats = (readInt32 & 4096) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -450,7 +443,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-1736252138);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -462,7 +455,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i6 = this.can_view_stats ? i5 | 4096 : i5 & (-4097);
                         this.flags = i6;
                         abstractSerializedData2.writeInt32(i6);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -518,14 +511,12 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -1640751649:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer48
-                    public static int constructor = -1640751649;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_view_participants = (readInt32 & 8) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -570,11 +561,11 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-1640751649);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         abstractSerializedData2.writeInt32(i2);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -608,15 +599,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -1009430225:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer67
-                    public static int constructor = -1009430225;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_view_participants = (readInt32 & 8) != 0;
                         this.can_set_username = (readInt32 & 64) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -664,13 +653,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-1009430225);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -710,8 +699,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -877254512:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer89
-                    public static int constructor = -877254512;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -720,7 +707,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_set_username = (readInt32 & 64) != 0;
                         this.can_set_stickers = (readInt32 & 128) != 0;
                         this.hidden_prehistory = (readInt32 & 1024) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -780,7 +767,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-877254512);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -790,7 +777,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i5 = this.hidden_prehistory ? i4 | 1024 : i4 & (-1025);
                         this.flags = i5;
                         abstractSerializedData2.writeInt32(i5);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -839,15 +826,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -779165146:
                 tLRPC$ChatFull = new TLRPC$ChatFull() { // from class: org.telegram.tgnet.TLRPC$TL_chatFull_layer144
-                    public static int constructor = -779165146;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1601id = abstractSerializedData2.readInt64(z2);
+                        this.f1603id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -925,13 +910,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-779165146);
                         int i2 = this.can_set_username ? this.flags | 128 : this.flags & (-129);
                         this.flags = i2;
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt64(this.f1601id);
+                        abstractSerializedData2.writeInt64(this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -991,8 +976,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -516145888:
                 tLRPC$ChatFull = new TLRPC$ChatFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer139
-                    public static int constructor = -516145888;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -1005,7 +988,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1601id = abstractSerializedData2.readInt64(z2);
+                        this.f1603id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -1101,7 +1084,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as = TLRPC$Peer.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             this.theme_emoticon = abstractSerializedData2.readString(z2);
                         }
                         if ((this.flags & 268435456) != 0) {
@@ -1140,7 +1123,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-516145888);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -1158,7 +1141,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt64(this.f1601id);
+                        abstractSerializedData2.writeInt64(this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -1240,7 +1223,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as.serializeToStream(abstractSerializedData2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             abstractSerializedData2.writeString(this.theme_emoticon);
                         }
                         if ((this.flags & 268435456) != 0) {
@@ -1270,8 +1253,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -374179305:
                 tLRPC$ChatFull = new TLRPC$ChatFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer133
-                    public static int constructor = -374179305;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -1284,7 +1265,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1601id = abstractSerializedData2.readInt64(z2);
+                        this.f1603id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -1380,14 +1361,14 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as = TLRPC$Peer.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             this.theme_emoticon = abstractSerializedData2.readString(z2);
                         }
                     }
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-374179305);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -1405,7 +1386,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt64(this.f1601id);
+                        abstractSerializedData2.writeInt64(this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -1487,7 +1468,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as.serializeToStream(abstractSerializedData2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             abstractSerializedData2.writeString(this.theme_emoticon);
                         }
                     }
@@ -1495,8 +1476,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -362240487:
                 tLRPC$ChatFull = new TLRPC$ChatFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer144
-                    public static int constructor = -362240487;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -1512,7 +1491,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int readInt322 = abstractSerializedData2.readInt32(z2);
                         this.flags2 = readInt322;
                         this.can_delete_channel = (readInt322 & 1) != 0;
-                        this.f1601id = abstractSerializedData2.readInt64(z2);
+                        this.f1603id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -1608,7 +1587,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as = TLRPC$Peer.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             this.theme_emoticon = abstractSerializedData2.readString(z2);
                         }
                         if ((this.flags & 268435456) != 0) {
@@ -1647,7 +1626,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-362240487);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -1668,7 +1647,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i10 = this.can_delete_channel ? this.flags2 | 1 : this.flags2 & (-2);
                         this.flags2 = i10;
                         abstractSerializedData2.writeInt32(i10);
-                        abstractSerializedData2.writeInt64(this.f1601id);
+                        abstractSerializedData2.writeInt64(this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -1750,7 +1729,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as.serializeToStream(abstractSerializedData2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             abstractSerializedData2.writeString(this.theme_emoticon);
                         }
                         if ((this.flags & 268435456) != 0) {
@@ -1780,12 +1759,10 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -304961647:
                 tLRPC$ChatFull = new TLRPC$TL_chatFull() { // from class: org.telegram.tgnet.TLRPC$TL_chatFull_layer92
-                    public static int constructor = -304961647;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         this.flags = abstractSerializedData2.readInt32(z2);
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
                             this.chat_photo = TLRPC$Photo.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
@@ -1819,9 +1796,9 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-304961647);
                         abstractSerializedData2.writeInt32(this.flags);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
                             this.chat_photo.serializeToStream(abstractSerializedData2);
@@ -1844,8 +1821,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -281384243:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer122
-                    public static int constructor = -281384243;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -1858,7 +1833,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -1940,7 +1915,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-281384243);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -1958,7 +1933,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -2034,15 +2009,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -261341160:
                 tLRPC$ChatFull = new TLRPC$TL_chatFull() { // from class: org.telegram.tgnet.TLRPC$TL_chatFull_layer124
-                    public static int constructor = -261341160;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -2085,13 +2058,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-261341160);
                         int i2 = this.can_set_username ? this.flags | 128 : this.flags & (-129);
                         this.flags = i2;
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -2126,8 +2099,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -253335766:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer121
-                    public static int constructor = -253335766;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -2140,7 +2111,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -2219,7 +2190,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-253335766);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -2237,7 +2208,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -2305,8 +2276,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -231385849:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer162
-                    public static int constructor = -231385849;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -2325,7 +2294,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.antispam = (readInt322 & 2) != 0;
                         this.participants_hidden = (readInt322 & 4) != 0;
                         this.translations_disabled = (readInt322 & 8) != 0;
-                        this.f1601id = abstractSerializedData2.readInt64(z2);
+                        this.f1603id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -2421,7 +2390,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as = TLRPC$Peer.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             this.theme_emoticon = abstractSerializedData2.readString(z2);
                         }
                         if ((this.flags & 268435456) != 0) {
@@ -2450,7 +2419,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-231385849);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -2477,7 +2446,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i13 = this.translations_disabled ? i12 | 8 : i12 & (-9);
                         this.flags2 = i13;
                         abstractSerializedData2.writeInt32(i13);
-                        abstractSerializedData2.writeInt64(this.f1601id);
+                        abstractSerializedData2.writeInt64(this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -2559,7 +2528,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as.serializeToStream(abstractSerializedData2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             abstractSerializedData2.writeString(this.theme_emoticon);
                         }
                         if ((this.flags & 268435456) != 0) {
@@ -2584,15 +2553,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -213431562:
                 tLRPC$ChatFull = new TLRPC$TL_chatFull() { // from class: org.telegram.tgnet.TLRPC$TL_chatFull_layer123
-                    public static int constructor = -213431562;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -2632,13 +2599,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-213431562);
                         int i2 = this.can_set_username ? this.flags | 128 : this.flags & (-129);
                         this.flags = i2;
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -2670,14 +2637,12 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case -88925533:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_old
-                    public static int constructor = -88925533;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_view_participants = (readInt32 & 8) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -2701,11 +2666,11 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-88925533);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         abstractSerializedData2.writeInt32(i2);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -2727,8 +2692,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 56920439:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer99
-                    public static int constructor = 56920439;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -2738,7 +2701,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_set_stickers = (readInt32 & 128) != 0;
                         this.hidden_prehistory = (readInt32 & 1024) != 0;
                         this.can_view_stats = (readInt32 & 4096) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -2802,7 +2765,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(56920439);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -2814,7 +2777,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i6 = this.can_view_stats ? i5 | 4096 : i5 & (-4097);
                         this.flags = i6;
                         abstractSerializedData2.writeInt32(i6);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -2867,15 +2830,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 231260545:
                 tLRPC$ChatFull = new TLRPC$TL_chatFull() { // from class: org.telegram.tgnet.TLRPC$TL_chatFull_layer122
-                    public static int constructor = 231260545;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -2916,13 +2877,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(231260545);
                         int i2 = this.can_set_username ? this.flags | 128 : this.flags & (-129);
                         this.flags = i2;
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -2952,8 +2913,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 277964371:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer103
-                    public static int constructor = 277964371;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -2964,7 +2923,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.hidden_prehistory = (readInt32 & 1024) != 0;
                         this.can_view_stats = (readInt32 & 4096) != 0;
                         this.can_set_location = (readInt32 & 65536) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -3034,7 +2993,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(277964371);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -3048,7 +3007,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i7 = this.can_set_location ? i6 | 65536 : i6 & (-65537);
                         this.flags = i7;
                         abstractSerializedData2.writeInt32(i7);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -3107,8 +3066,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 401891279:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer71
-                    public static int constructor = 401891279;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -3116,7 +3073,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_view_participants = (readInt32 & 8) != 0;
                         this.can_set_username = (readInt32 & 64) != 0;
                         this.can_set_stickers = (readInt32 & 128) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -3170,7 +3127,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(401891279);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -3178,7 +3135,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i4 = this.can_set_stickers ? i3 | 128 : i3 & (-129);
                         this.flags = i4;
                         abstractSerializedData2.writeInt32(i4);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -3221,15 +3178,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 461151667:
                 tLRPC$ChatFull = new TLRPC$TL_chatFull() { // from class: org.telegram.tgnet.TLRPC$TL_chatFull_layer121
-                    public static int constructor = 461151667;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -3267,13 +3222,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(461151667);
                         int i2 = this.can_set_username ? this.flags | 128 : this.flags & (-129);
                         this.flags = i2;
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -3300,8 +3255,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 478652186:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer98
-                    public static int constructor = 478652186;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -3311,7 +3264,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_set_stickers = (readInt32 & 128) != 0;
                         this.hidden_prehistory = (readInt32 & 1024) != 0;
                         this.can_view_stats = (readInt32 & 4096) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -3371,7 +3324,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(478652186);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -3383,7 +3336,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i6 = this.can_view_stats ? i5 | 4096 : i5 & (-4097);
                         this.flags = i6;
                         abstractSerializedData2.writeInt32(i6);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -3432,14 +3385,12 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 581055962:
                 tLRPC$ChatFull = new TLRPC$TL_chatFull() { // from class: org.telegram.tgnet.TLRPC$TL_chatFull_layer98
-                    public static int constructor = 581055962;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -3474,11 +3425,11 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(581055962);
                         int i2 = this.can_set_username ? this.flags | 128 : this.flags & (-129);
                         this.flags = i2;
                         abstractSerializedData2.writeInt32(i2);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -3502,8 +3453,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 625524791:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer124
-                    public static int constructor = 625524791;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -3516,7 +3465,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -3613,7 +3562,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(625524791);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -3631,7 +3580,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -3715,8 +3664,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 763976820:
                 tLRPC$ChatFull = new TLRPC$ChatFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer110
-                    public static int constructor = 763976820;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -3728,7 +3675,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_view_stats = (readInt32 & 4096) != 0;
                         this.can_set_location = (65536 & readInt32) != 0;
                         this.has_scheduled = (readInt32 & 524288) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -3804,7 +3751,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(763976820);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -3820,7 +3767,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i8 = this.has_scheduled ? i7 | 524288 : i7 & (-524289);
                         this.flags = i8;
                         abstractSerializedData2.writeInt32(i8);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -3885,11 +3832,9 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 771925524:
                 tLRPC$ChatFull = new TLRPC$TL_chatFull() { // from class: org.telegram.tgnet.TLRPC$TL_chatFull_layer87
-                    public static int constructor = 771925524;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         this.chat_photo = TLRPC$Photo.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         this.notify_settings = TLRPC$PeerNotifySettings.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
@@ -3916,8 +3861,8 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32(771925524);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         this.participants.serializeToStream(abstractSerializedData2);
                         this.chat_photo.serializeToStream(abstractSerializedData2);
                         this.notify_settings.serializeToStream(abstractSerializedData2);
@@ -3933,8 +3878,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 793980732:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer132
-                    public static int constructor = 793980732;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -3947,7 +3890,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -4043,14 +3986,14 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as = TLRPC$Peer.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             this.theme_emoticon = abstractSerializedData2.readString(z2);
                         }
                     }
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(793980732);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -4068,7 +4011,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -4150,7 +4093,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as.serializeToStream(abstractSerializedData2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             abstractSerializedData2.writeString(this.theme_emoticon);
                         }
                     }
@@ -4158,15 +4101,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 1185349556:
                 tLRPC$ChatFull = new TLRPC$ChatFull() { // from class: org.telegram.tgnet.TLRPC$TL_chatFull_layer135
-                    public static int constructor = 1185349556;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1601id = abstractSerializedData2.readInt64(z2);
+                        this.f1603id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -4231,13 +4172,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1185349556);
                         int i2 = this.can_set_username ? this.flags | 128 : this.flags & (-129);
                         this.flags = i2;
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt64(this.f1601id);
+                        abstractSerializedData2.writeInt64(this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -4289,15 +4230,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 1235264985:
                 tLRPC$ChatFull = new TLRPC$TL_chatFull() { // from class: org.telegram.tgnet.TLRPC$TL_chatFull_layer132
-                    public static int constructor = 1235264985;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -4346,13 +4285,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_chatFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1235264985);
                         int i2 = this.can_set_username ? this.flags | 128 : this.flags & (-129);
                         this.flags = i2;
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -4393,15 +4332,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 1304281241:
                 tLRPC$ChatFull = new TLRPC$ChatFull() { // from class: org.telegram.tgnet.TLRPC$TL_chatFull_layer133
-                    public static int constructor = 1304281241;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.can_set_username = (readInt32 & 128) != 0;
                         this.has_scheduled = (readInt32 & 256) != 0;
-                        this.f1601id = abstractSerializedData2.readInt64(z2);
+                        this.f1603id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         this.participants = TLRPC$ChatParticipants.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         if ((this.flags & 4) != 0) {
@@ -4450,13 +4387,13 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1304281241);
                         int i2 = this.can_set_username ? this.flags | 128 : this.flags & (-129);
                         this.flags = i2;
                         int i3 = this.has_scheduled ? i2 | 256 : i2 & (-257);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt64(this.f1601id);
+                        abstractSerializedData2.writeInt64(this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         this.participants.serializeToStream(abstractSerializedData2);
                         if ((this.flags & 4) != 0) {
@@ -4497,8 +4434,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 1418477459:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer131
-                    public static int constructor = 1418477459;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -4511,7 +4446,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1601id = abstractSerializedData2.readInt64(z2);
+                        this.f1603id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -4611,7 +4546,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1418477459);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -4629,7 +4564,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt64(this.f1601id);
+                        abstractSerializedData2.writeInt64(this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -4716,8 +4651,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 1449537070:
                 tLRPC$ChatFull = new TLRPC$ChatFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer135
-                    public static int constructor = 1449537070;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -4730,7 +4663,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1601id = abstractSerializedData2.readInt64(z2);
+                        this.f1603id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -4826,7 +4759,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as = TLRPC$Peer.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             this.theme_emoticon = abstractSerializedData2.readString(z2);
                         }
                         if ((this.flags & 268435456) != 0) {
@@ -4852,7 +4785,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1449537070);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -4870,7 +4803,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt64(this.f1601id);
+                        abstractSerializedData2.writeInt64(this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -4952,7 +4885,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as.serializeToStream(abstractSerializedData2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             abstractSerializedData2.writeString(this.theme_emoticon);
                         }
                         if ((this.flags & 268435456) != 0) {
@@ -4974,8 +4907,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 1506802019:
                 tLRPC$ChatFull = new TLRPC$ChatFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer134
-                    public static int constructor = 1506802019;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -4988,7 +4919,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1601id = abstractSerializedData2.readInt64(z2);
+                        this.f1603id = abstractSerializedData2.readInt64(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -5084,7 +5015,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as = TLRPC$Peer.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             this.theme_emoticon = abstractSerializedData2.readString(z2);
                         }
                         if ((this.flags & 268435456) != 0) {
@@ -5107,7 +5038,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1506802019);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -5125,7 +5056,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt64(this.f1601id);
+                        abstractSerializedData2.writeInt64(this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -5207,7 +5138,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         if ((this.flags & ConnectionsManager.FileTypeFile) != 0) {
                             this.groupcall_default_join_as.serializeToStream(abstractSerializedData2);
                         }
-                        if ((this.flags & C0479C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
+                        if ((this.flags & C0485C.BUFFER_FLAG_FIRST_SAMPLE) != 0) {
                             abstractSerializedData2.writeString(this.theme_emoticon);
                         }
                         if ((this.flags & 268435456) != 0) {
@@ -5229,8 +5160,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 1991201921:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer72
-                    public static int constructor = 1991201921;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -5239,7 +5168,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.can_set_username = (readInt32 & 64) != 0;
                         this.can_set_stickers = (readInt32 & 128) != 0;
                         this.hidden_prehistory = (readInt32 & 1024) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -5296,7 +5225,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1991201921);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -5306,7 +5235,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i5 = this.hidden_prehistory ? i4 | 1024 : i4 & (-1025);
                         this.flags = i5;
                         abstractSerializedData2.writeInt32(i5);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);
@@ -5352,8 +5281,6 @@ public abstract class TLRPC$ChatFull extends TLObject {
                 break;
             case 2055070967:
                 tLRPC$ChatFull = new TLRPC$TL_channelFull() { // from class: org.telegram.tgnet.TLRPC$TL_channelFull_layer123
-                    public static int constructor = 2055070967;
-
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -5366,7 +5293,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         this.has_scheduled = (524288 & readInt32) != 0;
                         this.can_view_stats = (1048576 & readInt32) != 0;
                         this.blocked = (readInt32 & 4194304) != 0;
-                        this.f1601id = abstractSerializedData2.readInt32(z2);
+                        this.f1603id = abstractSerializedData2.readInt32(z2);
                         this.about = abstractSerializedData2.readString(z2);
                         if ((this.flags & 1) != 0) {
                             this.participants_count = abstractSerializedData2.readInt32(z2);
@@ -5447,7 +5374,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
 
                     @Override // org.telegram.tgnet.TLRPC$TL_channelFull, org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(2055070967);
                         int i2 = this.can_view_participants ? this.flags | 8 : this.flags & (-9);
                         this.flags = i2;
                         int i3 = this.can_set_username ? i2 | 64 : i2 & (-65);
@@ -5465,7 +5392,7 @@ public abstract class TLRPC$ChatFull extends TLObject {
                         int i9 = this.blocked ? i8 | 4194304 : i8 & (-4194305);
                         this.flags = i9;
                         abstractSerializedData2.writeInt32(i9);
-                        abstractSerializedData2.writeInt32((int) this.f1601id);
+                        abstractSerializedData2.writeInt32((int) this.f1603id);
                         abstractSerializedData2.writeString(this.about);
                         if ((this.flags & 1) != 0) {
                             abstractSerializedData2.writeInt32(this.participants_count);

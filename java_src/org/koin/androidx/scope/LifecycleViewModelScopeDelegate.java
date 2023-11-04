@@ -24,10 +24,10 @@ public final class LifecycleViewModelScopeDelegate implements ReadOnlyProperty<L
     }
 
     /* compiled from: LifecycleViewModelScopeDelegate.kt */
-    @Metadata(m152bv = {1, 0, 3}, m151d1 = {"\u0000\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000*\u0001\u0000\b\n\u0018\u00002\u00020\u0001¨\u0006\u0002"}, m150d2 = {"org/koin/androidx/scope/LifecycleViewModelScopeDelegate$2", "Landroidx/lifecycle/DefaultLifecycleObserver;", "koin-android_release"}, m149k = 1, m148mv = {1, 5, 1})
+    @Metadata(m154bv = {1, 0, 3}, m153d1 = {"\u0000\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000*\u0001\u0000\b\n\u0018\u00002\u00020\u0001¨\u0006\u0002"}, m152d2 = {"org/koin/androidx/scope/LifecycleViewModelScopeDelegate$2", "Landroidx/lifecycle/DefaultLifecycleObserver;", "koin-android_release"}, m151k = 1, m150mv = {1, 5, 1})
     /* renamed from: org.koin.androidx.scope.LifecycleViewModelScopeDelegate$2 */
     /* loaded from: classes4.dex */
-    public final class C35352 implements DefaultLifecycleObserver {
+    public final class C35392 implements DefaultLifecycleObserver {
         final /* synthetic */ ScopeHandlerViewModel $scopeViewModel;
         final /* synthetic */ LifecycleViewModelScopeDelegate this$0;
 

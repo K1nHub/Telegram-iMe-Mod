@@ -41,7 +41,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
 
     /* renamed from: kotlin.reflect.jvm.internal.impl.protobuf.UnmodifiableLazyStringList$1 */
     /* loaded from: classes4.dex */
-    class C34241 implements ListIterator<String>, Iterator {
+    class C34281 implements ListIterator<String>, Iterator {
         ListIterator<String> iter;
         final /* synthetic */ int val$index;
 
@@ -50,7 +50,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        C34241(int i) {
+        C34281(int i) {
             this.val$index = i;
             this.iter = UnmodifiableLazyStringList.this.list.listIterator(i);
         }
@@ -103,12 +103,12 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
 
     @Override // java.util.AbstractList, java.util.List
     public ListIterator<String> listIterator(int i) {
-        return new C34241(i);
+        return new C34281(i);
     }
 
     /* renamed from: kotlin.reflect.jvm.internal.impl.protobuf.UnmodifiableLazyStringList$2 */
     /* loaded from: classes4.dex */
-    class C34252 implements java.util.Iterator<String>, Iterator {
+    class C34292 implements java.util.Iterator<String>, Iterator {
         java.util.Iterator<String> iter;
 
         @Override // p033j$.util.Iterator
@@ -116,7 +116,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        C34252() {
+        C34292() {
             this.iter = UnmodifiableLazyStringList.this.list.iterator();
         }
 
@@ -138,7 +138,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
     public java.util.Iterator<String> iterator() {
-        return new C34252();
+        return new C34292();
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.protobuf.LazyStringList

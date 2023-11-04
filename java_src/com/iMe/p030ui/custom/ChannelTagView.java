@@ -8,7 +8,7 @@ import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ChannelTagView.kt */
 /* renamed from: com.iMe.ui.custom.ChannelTagView */
 /* loaded from: classes3.dex */
@@ -28,8 +28,8 @@ public class ChannelTagView extends AppCompatTextView {
         int i = Theme.key_chats_actionBackground;
         setTextColor(Theme.getColor(i));
         GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setCornerRadius(AndroidUtilities.m103dp(2.0f));
-        gradientDrawable.setStroke(AndroidUtilities.m103dp(1.0f), Theme.getColor(i));
+        gradientDrawable.setCornerRadius(AndroidUtilities.m105dp(2.0f));
+        gradientDrawable.setStroke(AndroidUtilities.m105dp(1.0f), Theme.getColor(i));
         setBackground(gradientDrawable);
         setGravity(17);
         setTextSize(1, 10.0f);

@@ -37,7 +37,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
         return (SmallSortedMap<FieldDescriptorType, Object>) new SmallSortedMap<FieldDescriptorType, Object>(i) { // from class: com.google.protobuf.SmallSortedMap.1
             @Override // com.google.protobuf.SmallSortedMap, java.util.AbstractMap, java.util.Map
             public /* bridge */ /* synthetic */ Object put(Object obj, Object obj2) {
-                return super.put((C11271<FieldDescriptorType>) ((FieldSet.FieldDescriptorLite) obj), (FieldSet.FieldDescriptorLite) obj2);
+                return super.put((C11331<FieldDescriptorType>) ((FieldSet.FieldDescriptorLite) obj), (FieldSet.FieldDescriptorLite) obj2);
             }
 
             @Override // com.google.protobuf.SmallSortedMap
@@ -507,7 +507,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
     /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes3.dex */
     public static class EmptySet {
-        private static final java.util.Iterator<Object> ITERATOR = new C11281();
+        private static final java.util.Iterator<Object> ITERATOR = new C11341();
         private static final Iterable<Object> ITERABLE = new Iterable<Object>() { // from class: com.google.protobuf.SmallSortedMap.EmptySet.2
             @Override // java.lang.Iterable
             public java.util.Iterator<Object> iterator() {
@@ -517,7 +517,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
 
         /* renamed from: com.google.protobuf.SmallSortedMap$EmptySet$1 */
         /* loaded from: classes3.dex */
-        static class C11281 implements java.util.Iterator<Object>, p033j$.util.Iterator {
+        static class C11341 implements java.util.Iterator<Object>, p033j$.util.Iterator {
             @Override // p033j$.util.Iterator
             public /* synthetic */ void forEachRemaining(Consumer consumer) {
                 Iterator.CC.$default$forEachRemaining(this, consumer);
@@ -528,7 +528,7 @@ public class SmallSortedMap<K extends Comparable<K>, V> extends AbstractMap<K, V
                 return false;
             }
 
-            C11281() {
+            C11341() {
             }
 
             @Override // java.util.Iterator, p033j$.util.Iterator

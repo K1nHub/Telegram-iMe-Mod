@@ -25,7 +25,7 @@ public final class ExecutorCoroutineDispatcherImpl extends ExecutorCoroutineDisp
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo2114dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public void mo2119dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         try {
             Executor executor = getExecutor();
             AbstractTimeSourceKt.getTimeSource();
@@ -33,20 +33,20 @@ public final class ExecutorCoroutineDispatcherImpl extends ExecutorCoroutineDisp
         } catch (RejectedExecutionException e) {
             AbstractTimeSourceKt.getTimeSource();
             cancelJobOnRejection(coroutineContext, e);
-            Dispatchers.getIO().mo2114dispatch(coroutineContext, runnable);
+            Dispatchers.getIO().mo2119dispatch(coroutineContext, runnable);
         }
     }
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo2115scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
+    public void mo2120scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
         Executor executor = getExecutor();
         ScheduledExecutorService scheduledExecutorService = executor instanceof ScheduledExecutorService ? (ScheduledExecutorService) executor : null;
         ScheduledFuture<?> scheduleBlock = scheduledExecutorService != null ? scheduleBlock(scheduledExecutorService, new ResumeUndispatchedRunnable(this, cancellableContinuation), cancellableContinuation.getContext(), j) : null;
         if (scheduleBlock != null) {
             JobKt.cancelFutureOnCancellation(cancellableContinuation, scheduleBlock);
         } else {
-            DefaultExecutor.INSTANCE.mo2115scheduleResumeAfterDelay(j, cancellableContinuation);
+            DefaultExecutor.INSTANCE.mo2120scheduleResumeAfterDelay(j, cancellableContinuation);
         }
     }
 

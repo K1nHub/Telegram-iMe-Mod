@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage$4;)V
     .locals 0
 
-    .line 328
+    .line 329
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$4$1;->this$1:Lorg/telegram/ui/Stories/SelfStoryViewsPage$4;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;-><init>()V
@@ -35,7 +35,7 @@
 .method public getContext()Landroid/content/Context;
     .locals 1
 
-    .line 336
+    .line 337
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$4$1;->this$1:Lorg/telegram/ui/Stories/SelfStoryViewsPage$4;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$4;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
@@ -50,7 +50,7 @@
 .method public getCurrentAccount()I
     .locals 1
 
-    .line 331
+    .line 332
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     return v0
@@ -59,7 +59,7 @@
 .method public getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 1
 
-    .line 341
+    .line 342
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$4$1;->this$1:Lorg/telegram/ui/Stories/SelfStoryViewsPage$4;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$4;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda43;->f$1:Lorg/telegram/ui/Components/Paint/Views/EntityView;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$U2QRCDc8xyO05YoHknjaZH0zKrE(Lorg/telegram/ui/Stories/recorder/PaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$ISIGeMLUMxX1Z92yvJLj4Q_TzcQ(Lorg/telegram/ui/Stories/recorder/PaintView;Lorg/telegram/ui/Components/Paint/Views/EntityView;)V
 
     return-void
 .end method

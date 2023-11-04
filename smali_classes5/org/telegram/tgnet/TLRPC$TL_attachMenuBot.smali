@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x26f27202
-
-
 # instance fields
 .field public bot_id:J
 
@@ -48,12 +44,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 1
 
@@ -315,7 +305,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 5
 
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_attachMenuBot;->constructor:I
+    const v0, -0x26f27202
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 

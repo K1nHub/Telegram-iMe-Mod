@@ -17,7 +17,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 View.kt\nandroidx/core/view/ViewKt$doOnNextLayout$1\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 WalletTokenDetailsFragment.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment\n*L\n1#1,432:1\n72#2:433\n315#2:435\n329#2,2:436\n331#2,2:440\n316#2:442\n315#2:452\n329#2,2:453\n331#2,2:457\n316#2:459\n379#2,2:464\n73#2:468\n1024#3:434\n1025#3,2:438\n1027#3,9:443\n1036#3,2:455\n1038#3,4:460\n1042#3,2:466\n*S KotlinDebug\n*F\n+ 1 WalletTokenDetailsFragment.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment\n*L\n1024#1:435\n1024#1:436,2\n1024#1:440,2\n1024#1:442\n1035#1:452\n1035#1:453,2\n1035#1:457,2\n1035#1:459\n1041#1:464,2\n*E\n"
+    value = "SMAP\nView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 View.kt\nandroidx/core/view/ViewKt$doOnNextLayout$1\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 WalletTokenDetailsFragment.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment\n*L\n1#1,432:1\n72#2:433\n315#2:435\n329#2,2:436\n331#2,2:440\n316#2:442\n315#2:452\n329#2,2:453\n331#2,2:457\n316#2:459\n379#2,2:464\n73#2:468\n1029#3:434\n1030#3,2:438\n1032#3,9:443\n1041#3,2:455\n1043#3,4:460\n1047#3,2:466\n*S KotlinDebug\n*F\n+ 1 WalletTokenDetailsFragment.kt\ncom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment\n*L\n1029#1:435\n1029#1:436,2\n1029#1:440,2\n1029#1:442\n1040#1:452\n1040#1:453,2\n1040#1:457,2\n1040#1:459\n1046#1:464,2\n*E\n"
 .end annotation
 
 
@@ -57,7 +57,7 @@
     .line 52
     invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 1024
+    .line 1029
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$setupCollapsingToolbar$lambda$81$lambda$70$$inlined$doOnLayout$1;->$this_with$inlined:Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
@@ -75,7 +75,7 @@
 
     invoke-static {p2, p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 1025
+    .line 1030
     iget p4, p2, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     sget p5, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
@@ -87,12 +87,12 @@
     .line 331
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1027
+    .line 1032
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$setupCollapsingToolbar$lambda$81$lambda$70$$inlined$doOnLayout$1;->$this_with$inlined:Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->imageLogo:Landroidx/appcompat/widget/AppCompatImageView;
 
-    .line 1028
+    .line 1033
     invoke-virtual {p1}, Landroid/widget/ImageView;->getMeasuredHeight()I
 
     move-result p2
@@ -101,7 +101,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setPivotX(F)V
 
-    .line 1029
+    .line 1034
     invoke-virtual {p1}, Landroid/widget/ImageView;->getPivotX()F
 
     move-result p2
@@ -114,26 +114,26 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setPivotY(F)V
 
-    .line 1031
+    .line 1036
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$setupCollapsingToolbar$lambda$81$lambda$70$$inlined$doOnLayout$1;->$this_with$inlined:Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     iget-object p2, p1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->headerUnderlay:Landroid/view/View;
 
-    .line 1032
+    .line 1037
     iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->toolbar:Lcom/google/android/material/appbar/MaterialToolbar;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result p1
 
-    .line 1033
+    .line 1038
     sget p4, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     add-int/2addr p1, p4
 
     const/16 p4, 0xa
 
-    .line 1034
+    .line 1039
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p4
@@ -142,7 +142,7 @@
 
     const-string/jumbo p4, "setupCollapsingToolbar$l\u2026da$70$lambda$69$lambda$68"
 
-    .line 1035
+    .line 1040
     invoke-static {p2, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 329
@@ -152,7 +152,7 @@
 
     invoke-static {p4, p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 1036
+    .line 1041
     iput p1, p4, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 331
@@ -160,22 +160,22 @@
 
     int-to-float p1, p1
 
-    .line 1038
+    .line 1043
     invoke-virtual {p2, p1}, Landroid/view/View;->setPivotY(F)V
 
     const/4 p1, 0x0
 
-    .line 1039
+    .line 1044
     invoke-virtual {p2, p1}, Landroid/view/View;->setScaleY(F)V
 
-    .line 1041
+    .line 1046
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$setupCollapsingToolbar$lambda$81$lambda$70$$inlined$doOnLayout$1;->$collapsedTranslationX$inlined:Lkotlin/jvm/internal/Ref$FloatRef;
 
     iget-object p2, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$setupCollapsingToolbar$lambda$81$lambda$70$$inlined$doOnLayout$1;->$this_with$inlined:Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     iget-object p2, p2, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->itemBack:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    const-string p3, "itemBack"
+    const-string/jumbo p3, "itemBack"
 
     invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -203,7 +203,7 @@
     :goto_0
     mul-int/lit8 p2, p2, 0x3
 
-    .line 1041
+    .line 1046
     iget-object p3, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$setupCollapsingToolbar$lambda$81$lambda$70$$inlined$doOnLayout$1;->$this_with$inlined:Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;
 
     iget-object p3, p3, Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;->itemBack:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -218,7 +218,7 @@
 
     iput p2, p1, Lkotlin/jvm/internal/Ref$FloatRef;->element:F
 
-    .line 1042
+    .line 1047
     iget-object p1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment$setupCollapsingToolbar$lambda$81$lambda$70$$inlined$doOnLayout$1;->this$0:Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;
 
     invoke-static {p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;->access$updateHeaderMaxTranslation(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsFragment;)V

@@ -342,47 +342,47 @@
 
     move/from16 v3, p3
 
-    .line 6323
+    .line 6329
     iput-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    .line 6324
+    .line 6330
     invoke-direct {v0, v2}, Lorg/telegram/ui/Components/SlideView;-><init>(Landroid/content/Context;)V
 
-    .line 6309
+    .line 6315
     new-instance v4, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda15;
 
     invoke-direct {v4, v0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)V
 
     iput-object v4, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorColorTimeout:Ljava/lang/Runnable;
 
-    .line 6320
+    .line 6326
     new-instance v4, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda7;
 
     invoke-direct {v4, v0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)V
 
     iput-object v4, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeTimeout:Ljava/lang/Runnable;
 
-    .line 6321
+    .line 6327
     new-instance v4, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda12;
 
     invoke-direct {v4, v0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)V
 
     iput-object v4, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->updateResetPendingDateCallback:Ljava/lang/Runnable;
 
-    .line 6325
+    .line 6331
     iput-boolean v3, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->isSetup:Z
 
     const/4 v4, 0x1
 
-    .line 6327
+    .line 6333
     invoke-virtual {v0, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 6329
+    .line 6335
     new-instance v5, Landroid/widget/FrameLayout;
 
     invoke-direct {v5, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 6330
+    .line 6336
     new-instance v6, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v6, v2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
@@ -395,7 +395,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 6331
+    .line 6337
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/LoginActivity;->access$3600(Lorg/telegram/ui/LoginActivity;)I
 
     move-result v8
@@ -404,7 +404,7 @@
 
     goto :goto_0
 
-    .line 6334
+    .line 6340
     :cond_0
     iget-object v8, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->inboxImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -414,7 +414,7 @@
 
     goto :goto_1
 
-    .line 6332
+    .line 6338
     :cond_1
     :goto_0
     iget-object v8, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->inboxImageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -423,7 +423,7 @@
 
     invoke-virtual {v8, v9, v7, v7}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    .line 6336
+    .line 6342
     :goto_1
     iget-object v8, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->inboxImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -431,7 +431,7 @@
 
     invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/RLottieImageView;->setAutoRepeat(Z)V
 
-    .line 6337
+    .line 6343
     iget-object v8, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->inboxImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-static {v7, v7, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
@@ -440,7 +440,7 @@
 
     invoke-virtual {v5, v8, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6338
+    .line 6344
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isSmallScreen()Z
 
     move-result v7
@@ -479,14 +479,14 @@
 
     const/4 v10, -0x2
 
-    .line 6339
+    .line 6345
     invoke-static {v7, v10, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v11
 
     invoke-virtual {v0, v5, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6341
+    .line 6347
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -495,10 +495,10 @@
 
     const/high16 v11, 0x41900000    # 18.0f
 
-    .line 6342
+    .line 6348
     invoke-virtual {v5, v4, v11}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 6343
+    .line 6349
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->titleView:Landroid/widget/TextView;
 
     const-string v11, "fonts/rmedium.ttf"
@@ -509,7 +509,7 @@
 
     invoke-virtual {v5, v11}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 6344
+    .line 6350
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->titleView:Landroid/widget/TextView;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/LoginActivity;->access$3600(Lorg/telegram/ui/LoginActivity;)I
@@ -539,14 +539,14 @@
 
     invoke-virtual {v5, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 6345
+    .line 6351
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->titleView:Landroid/widget/TextView;
 
     const/16 v11, 0x11
 
     invoke-virtual {v5, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 6346
+    .line 6352
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->titleView:Landroid/widget/TextView;
 
     const/4 v12, 0x2
@@ -561,7 +561,7 @@
 
     invoke-virtual {v5, v13, v14}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 6347
+    .line 6353
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->titleView:Landroid/widget/TextView;
 
     const/4 v15, -0x1
@@ -584,7 +584,7 @@
 
     invoke-virtual {v0, v5, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6349
+    .line 6355
     new-instance v5, Lorg/telegram/ui/Components/spoilers/SpoilersTextView;
 
     invoke-direct {v5, v2, v9}, Lorg/telegram/ui/Components/spoilers/SpoilersTextView;-><init>(Landroid/content/Context;Z)V
@@ -593,15 +593,15 @@
 
     const/high16 v13, 0x41600000    # 14.0f
 
-    .line 6350
+    .line 6356
     invoke-virtual {v5, v4, v13}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 6351
+    .line 6357
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->confirmTextView:Landroid/widget/TextView;
 
     invoke-virtual {v5, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 6352
+    .line 6358
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->confirmTextView:Landroid/widget/TextView;
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -612,7 +612,7 @@
 
     invoke-virtual {v5, v15, v14}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 6353
+    .line 6359
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->confirmTextView:Landroid/widget/TextView;
 
     const/4 v15, -0x2
@@ -629,7 +629,7 @@
 
     invoke-virtual {v0, v5, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6355
+    .line 6361
     new-instance v5, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$1;
 
     invoke-direct {v5, v0, v2, v1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$1;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Landroid/content/Context;Lorg/telegram/ui/LoginActivity;)V
@@ -656,29 +656,29 @@
 
     const/16 v21, 0x0
 
-    .line 6362
+    .line 6368
     invoke-static/range {v15 .. v21}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v15
 
     invoke-virtual {v0, v5, v15}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6364
+    .line 6370
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->signInWithGoogleView:Landroid/widget/TextView;
 
-    .line 6365
+    .line 6371
     invoke-virtual {v5, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 6366
+    .line 6372
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->signInWithGoogleView:Landroid/widget/TextView;
 
     invoke-virtual {v5, v4, v13}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 6367
+    .line 6373
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->signInWithGoogleView:Landroid/widget/TextView;
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -689,7 +689,7 @@
 
     invoke-virtual {v5, v15, v14}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 6368
+    .line 6374
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->signInWithGoogleView:Landroid/widget/TextView;
 
     const/16 v15, 0x10
@@ -712,19 +712,19 @@
 
     invoke-virtual {v5, v7, v10, v8, v13}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 6369
+    .line 6375
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->signInWithGoogleView:Landroid/widget/TextView;
 
     invoke-virtual {v5, v12}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 6371
+    .line 6377
     new-instance v5, Landroid/text/SpannableStringBuilder;
 
     const-string v7, "d "
 
     invoke-direct {v5, v7}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 6372
+    .line 6378
     sget v7, Lorg/telegram/messenger/R$drawable;->googleg_standard_color_18:I
 
     invoke-static {v2, v7}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -733,7 +733,7 @@
 
     const/16 v8, 0x9
 
-    .line 6373
+    .line 6379
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -752,7 +752,7 @@
 
     invoke-virtual {v7, v9, v8, v10, v13}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 6374
+    .line 6380
     new-instance v8, Landroid/text/style/ImageSpan;
 
     invoke-direct {v8, v7, v9}, Landroid/text/style/ImageSpan;-><init>(Landroid/graphics/drawable/Drawable;I)V
@@ -761,14 +761,14 @@
 
     invoke-virtual {v5, v8, v9, v4, v7}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 6375
+    .line 6381
     new-instance v8, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$2;
 
     invoke-direct {v8, v0, v1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$2;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Lorg/telegram/ui/LoginActivity;)V
 
     invoke-virtual {v5, v8, v4, v12, v7}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 6384
+    .line 6390
     sget v7, Lorg/telegram/messenger/R$string;->SignInWithGoogle:I
 
     invoke-static {v7}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -777,12 +777,12 @@
 
     invoke-virtual {v5, v7}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 6385
+    .line 6391
     iget-object v7, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->signInWithGoogleView:Landroid/widget/TextView;
 
     invoke-virtual {v7, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 6387
+    .line 6393
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->signInWithGoogleView:Landroid/widget/TextView;
 
     new-instance v7, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda2;
@@ -791,14 +791,14 @@
 
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 6419
+    .line 6425
     new-instance v5, Landroid/widget/FrameLayout;
 
     invoke-direct {v5, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailFrameLayout:Landroid/widget/FrameLayout;
 
-    .line 6420
+    .line 6426
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/LoginActivity;->access$3600(Lorg/telegram/ui/LoginActivity;)I
 
     move-result v7
@@ -819,14 +819,14 @@
     :goto_6
     invoke-static {v5, v7, v14, v9}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
-    .line 6422
+    .line 6428
     new-instance v5, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$4;
 
     invoke-direct {v5, v0, v2, v1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$4;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Landroid/content/Context;Lorg/telegram/ui/LoginActivity;)V
 
     iput-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailView:Landroid/widget/TextView;
 
-    .line 6428
+    .line 6434
     sget v7, Lorg/telegram/messenger/R$string;->LoginCantAccessThisEmail:I
 
     invoke-static {v7}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -835,19 +835,19 @@
 
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 6429
+    .line 6435
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailView:Landroid/widget/TextView;
 
     invoke-virtual {v5, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 6430
+    .line 6436
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailView:Landroid/widget/TextView;
 
     const/high16 v7, 0x41600000    # 14.0f
 
     invoke-virtual {v5, v4, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 6431
+    .line 6437
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailView:Landroid/widget/TextView;
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -868,12 +868,12 @@
 
     invoke-virtual {v5, v7, v8, v10, v13}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 6432
+    .line 6438
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailView:Landroid/widget/TextView;
 
     invoke-virtual {v5, v12}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 6433
+    .line 6439
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailView:Landroid/widget/TextView;
 
     new-instance v7, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda4;
@@ -882,31 +882,31 @@
 
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 6479
+    .line 6485
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailFrameLayout:Landroid/widget/FrameLayout;
 
     iget-object v7, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailView:Landroid/widget/TextView;
 
     invoke-virtual {v5, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 6481
+    .line 6487
     new-instance v5, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$5;
 
     invoke-direct {v5, v0, v2, v1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$5;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Landroid/content/Context;Lorg/telegram/ui/LoginActivity;)V
 
     iput-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailResetInView:Landroid/widget/TextView;
 
-    .line 6487
+    .line 6493
     invoke-virtual {v5, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 6488
+    .line 6494
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailResetInView:Landroid/widget/TextView;
 
     const/high16 v7, 0x41600000    # 14.0f
 
     invoke-virtual {v5, v4, v7}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 6489
+    .line 6495
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailResetInView:Landroid/widget/TextView;
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -917,12 +917,12 @@
 
     invoke-virtual {v5, v7, v14}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 6490
+    .line 6496
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailResetInView:Landroid/widget/TextView;
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 6491
+    .line 6497
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailResetInView:Landroid/widget/TextView;
 
     new-instance v6, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda3;
@@ -931,7 +931,7 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 6492
+    .line 6498
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailResetInView:Landroid/widget/TextView;
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -944,38 +944,38 @@
 
     invoke-virtual {v5, v9, v6, v9, v7}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 6493
+    .line 6499
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailResetInView:Landroid/widget/TextView;
 
     const/16 v6, 0x8
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 6494
+    .line 6500
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailFrameLayout:Landroid/widget/FrameLayout;
 
     iget-object v6, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailResetInView:Landroid/widget/TextView;
 
     invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 6496
+    .line 6502
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeView:Landroid/widget/TextView;
 
-    .line 6497
+    .line 6503
     invoke-virtual {v5, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 6498
+    .line 6504
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeView:Landroid/widget/TextView;
 
     const/high16 v6, 0x41600000    # 14.0f
 
     invoke-virtual {v5, v4, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 6499
+    .line 6505
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeView:Landroid/widget/TextView;
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -986,7 +986,7 @@
 
     invoke-virtual {v5, v6, v14}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 6500
+    .line 6506
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeView:Landroid/widget/TextView;
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1007,12 +1007,12 @@
 
     invoke-virtual {v5, v6, v7, v8, v10}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 6501
+    .line 6507
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeView:Landroid/widget/TextView;
 
     invoke-virtual {v5, v12}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 6502
+    .line 6508
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeView:Landroid/widget/TextView;
 
     sget v6, Lorg/telegram/messenger/R$string;->ResendCode:I
@@ -1023,7 +1023,7 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 6503
+    .line 6509
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeView:Landroid/widget/TextView;
 
     new-instance v6, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda1;
@@ -1032,68 +1032,68 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 6530
+    .line 6536
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeView:Landroid/widget/TextView;
 
     invoke-static {v5, v9, v14, v9}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
-    .line 6532
+    .line 6538
     new-instance v5, Lorg/telegram/ui/Components/LoginOrView;
 
     invoke-direct {v5, v2}, Lorg/telegram/ui/Components/LoginOrView;-><init>(Landroid/content/Context;)V
 
     iput-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->loginOrView:Lorg/telegram/ui/Components/LoginOrView;
 
-    .line 6533
+    .line 6539
     invoke-static {v5}, Lorg/telegram/ui/Components/VerticalPositionAutoAnimator;->attach(Landroid/view/View;)Lorg/telegram/ui/Components/VerticalPositionAutoAnimator;
 
-    .line 6535
+    .line 6541
     new-instance v5, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$6;
 
     invoke-direct {v5, v0, v2, v1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$6;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Landroid/content/Context;Lorg/telegram/ui/LoginActivity;)V
 
     iput-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorViewSwitcher:Landroid/widget/ViewSwitcher;
 
-    .line 6541
+    .line 6547
     sget v1, Lorg/telegram/messenger/R$anim;->text_in:I
 
     invoke-static {v2, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object v1
 
-    .line 6542
+    .line 6548
     sget-object v5, Lorg/telegram/ui/Components/Easings;->easeInOutQuad:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v1, v5}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 6543
+    .line 6549
     iget-object v6, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorViewSwitcher:Landroid/widget/ViewSwitcher;
 
     invoke-virtual {v6, v1}, Landroid/widget/ViewSwitcher;->setInAnimation(Landroid/view/animation/Animation;)V
 
-    .line 6545
+    .line 6551
     sget v1, Lorg/telegram/messenger/R$anim;->text_out:I
 
     invoke-static {v2, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object v1
 
-    .line 6546
+    .line 6552
     invoke-virtual {v1, v5}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 6547
+    .line 6553
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorViewSwitcher:Landroid/widget/ViewSwitcher;
 
     invoke-virtual {v5, v1}, Landroid/widget/ViewSwitcher;->setOutAnimation(Landroid/view/animation/Animation;)V
 
-    .line 6549
+    .line 6555
     new-instance v1, Landroid/widget/FrameLayout;
 
     invoke-direct {v1, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendFrameLayout:Landroid/widget/FrameLayout;
 
-    .line 6550
+    .line 6556
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeView:Landroid/widget/TextView;
 
     const/4 v6, -0x2
@@ -1104,21 +1104,21 @@
 
     invoke-virtual {v1, v5, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6551
+    .line 6557
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorViewSwitcher:Landroid/widget/ViewSwitcher;
 
     iget-object v5, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendFrameLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v5}, Landroid/widget/ViewSwitcher;->addView(Landroid/view/View;)V
 
-    .line 6553
+    .line 6559
     new-instance v1, Landroid/widget/TextView;
 
     invoke-direct {v1, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->wrongCodeView:Landroid/widget/TextView;
 
-    .line 6554
+    .line 6560
     sget v5, Lorg/telegram/messenger/R$string;->WrongCode:I
 
     const-string v6, "WrongCode"
@@ -1129,7 +1129,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 6555
+    .line 6561
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->wrongCodeView:Landroid/widget/TextView;
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1140,21 +1140,21 @@
 
     invoke-virtual {v1, v5, v14}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
-    .line 6556
+    .line 6562
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->wrongCodeView:Landroid/widget/TextView;
 
     const/high16 v5, 0x41700000    # 15.0f
 
     invoke-virtual {v1, v4, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 6557
+    .line 6563
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->wrongCodeView:Landroid/widget/TextView;
 
     const/16 v4, 0x31
 
     invoke-virtual {v1, v4}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 6558
+    .line 6564
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->wrongCodeView:Landroid/widget/TextView;
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1175,21 +1175,21 @@
 
     invoke-virtual {v1, v4, v5, v6, v7}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 6559
+    .line 6565
     iget-object v1, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorViewSwitcher:Landroid/widget/ViewSwitcher;
 
     iget-object v4, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->wrongCodeView:Landroid/widget/TextView;
 
     invoke-virtual {v1, v4}, Landroid/widget/ViewSwitcher;->addView(Landroid/view/View;)V
 
-    .line 6561
+    .line 6567
     new-instance v1, Landroid/widget/FrameLayout;
 
     invoke-direct {v1, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     if-eqz v3, :cond_8
 
-    .line 6563
+    .line 6569
     iget-object v2, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorViewSwitcher:Landroid/widget/ViewSwitcher;
 
     const/4 v15, -0x1
@@ -1214,7 +1214,7 @@
 
     goto :goto_7
 
-    .line 6565
+    .line 6571
     :cond_8
     iget-object v2, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorViewSwitcher:Landroid/widget/ViewSwitcher;
 
@@ -1230,7 +1230,7 @@
 
     invoke-virtual {v1, v2, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6566
+    .line 6572
     iget-object v2, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailFrameLayout:Landroid/widget/FrameLayout;
 
     invoke-static {v4, v5, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
@@ -1239,7 +1239,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6567
+    .line 6573
     iget-object v2, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->loginOrView:Lorg/telegram/ui/Components/LoginOrView;
 
     const/4 v15, -0x1
@@ -1262,7 +1262,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6568
+    .line 6574
     iget-object v2, v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->signInWithGoogleView:Landroid/widget/TextView;
 
     const/16 v16, -0x2
@@ -1278,7 +1278,7 @@
     :goto_7
     const/4 v2, -0x1
 
-    .line 6570
+    .line 6576
     invoke-static {v2, v9, v14}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
@@ -1288,28 +1288,28 @@
     return-void
 .end method
 
-.method static synthetic access$14600(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)Z
+.method static synthetic access$14700(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)Z
     .locals 0
 
-    .line 6279
+    .line 6285
     iget-boolean p0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->postedErrorColorTimeout:Z
 
     return p0
 .end method
 
-.method static synthetic access$14700(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)Ljava/lang/Runnable;
+.method static synthetic access$14800(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 6279
+    .line 6285
     iget-object p0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorColorTimeout:Ljava/lang/Runnable;
 
     return-object p0
 .end method
 
-.method static synthetic access$15402(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
+.method static synthetic access$15502(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;)Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
     .locals 0
 
-    .line 6279
+    .line 6285
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->googleAccount:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
     return-object p1
@@ -1318,12 +1318,12 @@
 .method private animateSuccess(Ljava/lang/Runnable;)V
     .locals 7
 
-    .line 7020
+    .line 7026
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->googleAccount:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
     if-eqz v0, :cond_0
 
-    .line 7021
+    .line 7027
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -1331,7 +1331,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 7024
+    .line 7030
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -1343,7 +1343,7 @@
 
     if-ge v0, v2, :cond_1
 
-    .line 7026
+    .line 7032
     new-instance v2, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda16;
 
     invoke-direct {v2, p0, v0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;I)V
@@ -1358,7 +1358,7 @@
 
     goto :goto_0
 
-    .line 7028
+    .line 7034
     :cond_1
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda19;
 
@@ -1388,15 +1388,15 @@
 
     const v0, 0x15180
 
-    .line 6781
+    .line 6787
     div-int v1, p1, v0
 
-    .line 6782
+    .line 6788
     rem-int/2addr p1, v0
 
     div-int/lit16 v0, p1, 0xe10
 
-    .line 6783
+    .line 6789
     rem-int/lit16 p1, p1, 0xe10
 
     div-int/lit8 p1, p1, 0x3c
@@ -1407,7 +1407,7 @@
 
     if-nez v0, :cond_0
 
-    .line 6786
+    .line 6792
     invoke-static {v2, p1}, Ljava/lang/Math;->max(II)I
 
     move-result p1
@@ -1425,7 +1425,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 6791
+    .line 6797
     sget p1, Lorg/telegram/messenger/R$string;->LoginEmailResetInDoublePattern:I
 
     new-array v4, v4, [Ljava/lang/Object;
@@ -1459,7 +1459,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 6793
+    .line 6799
     sget v1, Lorg/telegram/messenger/R$string;->LoginEmailResetInDoublePattern:I
 
     new-array v3, v4, [Ljava/lang/Object;
@@ -1489,7 +1489,7 @@
     :cond_2
     if-eqz v1, :cond_3
 
-    .line 6795
+    .line 6801
     sget p1, Lorg/telegram/messenger/R$string;->LoginEmailResetInSinglePattern:I
 
     new-array v0, v2, [Ljava/lang/Object;
@@ -1511,7 +1511,7 @@
     :cond_3
     if-eqz v0, :cond_4
 
-    .line 6797
+    .line 6803
     sget p1, Lorg/telegram/messenger/R$string;->LoginEmailResetInSinglePattern:I
 
     new-array v0, v2, [Ljava/lang/Object;
@@ -1530,7 +1530,7 @@
 
     goto :goto_0
 
-    .line 6799
+    .line 6805
     :cond_4
     sget v0, Lorg/telegram/messenger/R$string;->LoginEmailResetInSinglePattern:I
 
@@ -1557,20 +1557,20 @@
 
     const v0, 0x15180
 
-    .line 6761
+    .line 6767
     div-int v1, p1, v0
 
-    .line 6762
+    .line 6768
     rem-int/2addr p1, v0
 
     div-int/lit16 v0, p1, 0xe10
 
-    .line 6763
+    .line 6769
     rem-int/lit16 p1, p1, 0xe10
 
     div-int/lit8 v2, p1, 0x3c
 
-    .line 6764
+    .line 6770
     rem-int/lit8 p1, p1, 0x3c
 
     const/16 v3, 0x10
@@ -1586,7 +1586,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 6772
+    .line 6778
     sget p1, Lorg/telegram/messenger/R$string;->LoginEmailResetInSinglePattern:I
 
     new-array v0, v4, [Ljava/lang/Object;
@@ -1607,7 +1607,7 @@
 
     goto :goto_1
 
-    .line 6774
+    .line 6780
     :cond_1
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1675,7 +1675,7 @@
 
     move-result-object p1
 
-    .line 6775
+    .line 6781
     sget v0, Lorg/telegram/messenger/R$string;->LoginEmailResetInSinglePattern:I
 
     new-array v1, v4, [Ljava/lang/Object;
@@ -1693,7 +1693,7 @@
 .method private synthetic lambda$animateSuccess$24(I)V
     .locals 1
 
-    .line 7026
+    .line 7032
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     iget-object v0, v0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
@@ -1714,7 +1714,7 @@
 
     move v1, v0
 
-    .line 7029
+    .line 7035
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -1724,7 +1724,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 7030
+    .line 7036
     aget-object v2, v2, v1
 
     const/4 v3, 0x0
@@ -1735,11 +1735,11 @@
 
     goto :goto_0
 
-    .line 7032
+    .line 7038
     :cond_0
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 7033
+    .line 7039
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     iput-boolean v0, p1, Lorg/telegram/ui/CodeFieldContainer;->isFocusSuppressed:Z
@@ -1752,12 +1752,12 @@
 
     const/4 v0, 0x0
 
-    .line 6310
+    .line 6316
     iput-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->postedErrorColorTimeout:Z
 
     move v1, v0
 
-    .line 6311
+    .line 6317
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -1767,7 +1767,7 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 6312
+    .line 6318
     aget-object v2, v2, v1
 
     const/4 v3, 0x0
@@ -1778,7 +1778,7 @@
 
     goto :goto_0
 
-    .line 6315
+    .line 6321
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorViewSwitcher:Landroid/widget/ViewSwitcher;
 
@@ -1790,12 +1790,12 @@
 
     if-eq v1, v2, :cond_2
 
-    .line 6316
+    .line 6322
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorViewSwitcher:Landroid/widget/ViewSwitcher;
 
     invoke-virtual {v1}, Landroid/widget/ViewSwitcher;->showNext()V
 
-    .line 6317
+    .line 6323
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailFrameLayout:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeView:Landroid/widget/TextView;
@@ -1838,7 +1838,7 @@
 
     const/4 v0, 0x1
 
-    .line 6320
+    .line 6326
     invoke-direct {p0, v0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->showResendCodeView(Z)V
 
     return-void
@@ -1847,7 +1847,7 @@
 .method private synthetic lambda$new$10(Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$TL_auth_resendCode;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 7
 
-    .line 6520
+    .line 6526
     new-instance v6, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda21;
 
     move-object v0, v6
@@ -1872,7 +1872,7 @@
 .method private synthetic lambda$new$11(Landroid/view/View;)V
     .locals 3
 
-    .line 6504
+    .line 6510
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeView:Landroid/widget/TextView;
 
     invoke-virtual {p1}, Landroid/widget/TextView;->getVisibility()I
@@ -1898,54 +1898,54 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 6508
+    .line 6514
     invoke-direct {p0, p1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->showResendCodeView(Z)V
 
-    .line 6510
+    .line 6516
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_auth_resendCode;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_auth_resendCode;-><init>()V
 
-    .line 6511
+    .line 6517
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestPhone:Ljava/lang/String;
 
     iput-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_auth_resendCode;->phone_number:Ljava/lang/String;
 
-    .line 6512
+    .line 6518
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->phoneHash:Ljava/lang/String;
 
     iput-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_auth_resendCode;->phone_code_hash:Ljava/lang/String;
 
-    .line 6514
+    .line 6520
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 6515
+    .line 6521
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->phone:Ljava/lang/String;
 
     const-string v2, "phone"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6516
+    .line 6522
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailPhone:Ljava/lang/String;
 
     const-string v2, "ephone"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6517
+    .line 6523
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestPhone:Ljava/lang/String;
 
     const-string v2, "phoneFormated"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6519
+    .line 6525
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/LoginActivity;->access$15100(Lorg/telegram/ui/LoginActivity;)I
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity;->access$15200(Lorg/telegram/ui/LoginActivity;)I
 
     move-result v1
 
@@ -1969,7 +1969,7 @@
 .method private synthetic lambda$new$2(Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;Lcom/google/android/gms/tasks/Task;)V
     .locals 1
 
-    .line 6412
+    .line 6418
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -1980,7 +1980,7 @@
 
     return-void
 
-    .line 6415
+    .line 6421
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -2002,7 +2002,7 @@
 .method private synthetic lambda$new$3(Landroid/view/View;)V
     .locals 2
 
-    .line 6388
+    .line 6394
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -2015,7 +2015,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 6407
+    .line 6413
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -2026,27 +2026,27 @@
 
     sget-object v1, Lorg/telegram/messenger/BuildVars;->GOOGLE_AUTH_CLIENT_ID:Ljava/lang/String;
 
-    .line 6408
+    .line 6414
     invoke-virtual {v0, v1}, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions$Builder;->requestIdToken(Ljava/lang/String;)Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions$Builder;
 
     move-result-object v0
 
-    .line 6409
+    .line 6415
     invoke-virtual {v0}, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions$Builder;->requestEmail()Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions$Builder;
 
     move-result-object v0
 
-    .line 6410
+    .line 6416
     invoke-virtual {v0}, Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions$Builder;->build()Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;
 
     move-result-object v0
 
-    .line 6407
+    .line 6413
     invoke-static {p1, v0}, Lcom/google/android/gms/auth/api/signin/GoogleSignIn;->getClient(Landroid/content/Context;Lcom/google/android/gms/auth/api/signin/GoogleSignInOptions;)Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;
 
     move-result-object p1
 
-    .line 6411
+    .line 6417
     invoke-virtual {p1}, Lcom/google/android/gms/auth/api/signin/GoogleSignInClient;->signOut()Lcom/google/android/gms/tasks/Task;
 
     move-result-object v0
@@ -2063,24 +2063,24 @@
 .method private synthetic lambda$new$4(Lorg/telegram/tgnet/TLObject;Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_auth_resetLoginEmail;)V
     .locals 2
 
-    .line 6458
+    .line 6464
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCode;
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_1
 
-    .line 6459
+    .line 6465
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCode;
 
-    .line 6460
+    .line 6466
     iget-object p3, p1, Lorg/telegram/tgnet/TLRPC$auth_SentCode;->type:Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;
 
     instance-of p4, p3, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCodeTypeEmailCode;
 
     if-eqz p4, :cond_0
 
-    .line 6461
+    .line 6467
     iget-object p4, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->currentParams:Landroid/os/Bundle;
 
     const-string v0, "emailPattern"
@@ -2091,10 +2091,10 @@
 
     iput-object p4, p3, Lorg/telegram/tgnet/TLRPC$auth_SentCodeType;->email_pattern:Ljava/lang/String;
 
-    .line 6462
+    .line 6468
     iput-boolean v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resetRequestPending:Z
 
-    .line 6464
+    .line 6470
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -2105,14 +2105,14 @@
     :cond_1
     if-eqz p3, :cond_3
 
-    .line 6465
+    .line 6471
     iget-object p1, p3, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     if-eqz p1, :cond_3
 
     const-string p2, "PHONE_CODE_EXPIRED"
 
-    .line 6466
+    .line 6472
     invoke-virtual {p1, p2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -2121,17 +2121,17 @@
 
     if-eqz p1, :cond_2
 
-    .line 6467
+    .line 6473
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/SlideView;->onBackPressed(Z)Z
 
-    .line 6468
+    .line 6474
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 p3, 0x0
 
     invoke-virtual {p1, p2, v1, p3, v1}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
-    .line 6469
+    .line 6475
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     sget p2, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
@@ -2152,11 +2152,11 @@
 
     goto :goto_0
 
-    .line 6471
+    .line 6477
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity;->access$15300(Lorg/telegram/ui/LoginActivity;)I
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity;->access$15400(Lorg/telegram/ui/LoginActivity;)I
 
     move-result p1
 
@@ -2174,7 +2174,7 @@
 .method private synthetic lambda$new$5(Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$TL_auth_resetLoginEmail;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 7
 
-    .line 6457
+    .line 6463
     new-instance v6, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda23;
 
     move-object v0, v6
@@ -2199,48 +2199,48 @@
 .method private synthetic lambda$new$6(Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 6449
+    .line 6455
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 6450
+    .line 6456
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->phone:Ljava/lang/String;
 
     const-string v0, "phone"
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6451
+    .line 6457
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailPhone:Ljava/lang/String;
 
     const-string v0, "ephone"
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6452
+    .line 6458
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestPhone:Ljava/lang/String;
 
     const-string v0, "phoneFormated"
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6454
+    .line 6460
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_auth_resetLoginEmail;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_auth_resetLoginEmail;-><init>()V
 
-    .line 6455
+    .line 6461
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestPhone:Ljava/lang/String;
 
     iput-object v0, p2, Lorg/telegram/tgnet/TLRPC$TL_auth_resetLoginEmail;->phone_number:Ljava/lang/String;
 
-    .line 6456
+    .line 6462
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->phoneHash:Ljava/lang/String;
 
     iput-object v0, p2, Lorg/telegram/tgnet/TLRPC$TL_auth_resetLoginEmail;->phone_code_hash:Ljava/lang/String;
 
-    .line 6457
+    .line 6463
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -2261,7 +2261,7 @@
 .method private synthetic lambda$new$7(Landroid/content/Context;Landroid/view/View;)V
     .locals 6
 
-    .line 6434
+    .line 6440
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->currentParams:Landroid/os/Bundle;
 
     const-string v0, "emailPattern"
@@ -2270,14 +2270,14 @@
 
     move-result-object p2
 
-    .line 6435
+    .line 6441
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v0, p2}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     const/16 v1, 0x2a
 
-    .line 6436
+    .line 6442
     invoke-virtual {p2, v1}, Ljava/lang/String;->indexOf(I)I
 
     move-result v2
@@ -2298,34 +2298,34 @@
 
     if-eq p2, v4, :cond_0
 
-    .line 6438
+    .line 6444
     new-instance v4, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     invoke-direct {v4}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;-><init>()V
 
-    .line 6439
+    .line 6445
     iget v5, v4, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
     or-int/lit16 v5, v5, 0x100
 
     iput v5, v4, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
-    .line 6440
+    .line 6446
     iput v2, v4, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->start:I
 
     add-int/2addr p2, v1
 
-    .line 6441
+    .line 6447
     iput p2, v4, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->end:I
 
-    .line 6442
+    .line 6448
     new-instance v5, Lorg/telegram/ui/Components/TextStyleSpan;
 
     invoke-direct {v5, v4}, Lorg/telegram/ui/Components/TextStyleSpan;-><init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;)V
 
     invoke-virtual {v0, v5, v2, p2, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 6445
+    .line 6451
     :cond_0
     new-instance p2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -2333,7 +2333,7 @@
 
     sget p1, Lorg/telegram/messenger/R$string;->LoginEmailResetTitle:I
 
-    .line 6446
+    .line 6452
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p1
@@ -2344,7 +2344,7 @@
 
     sget p2, Lorg/telegram/messenger/R$string;->LoginEmailResetMessage:I
 
-    .line 6447
+    .line 6453
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p2
@@ -2377,7 +2377,7 @@
 
     sget p2, Lorg/telegram/messenger/R$string;->LoginEmailResetButton:I
 
-    .line 6448
+    .line 6454
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p2
@@ -2392,7 +2392,7 @@
 
     sget p2, Lorg/telegram/messenger/R$string;->Cancel:I
 
-    .line 6476
+    .line 6482
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p2
@@ -2403,7 +2403,7 @@
 
     move-result-object p1
 
-    .line 6477
+    .line 6483
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
@@ -2412,7 +2412,7 @@
 .method private synthetic lambda$new$8(Landroid/view/View;)V
     .locals 0
 
-    .line 6491
+    .line 6497
     invoke-direct {p0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestEmailReset()V
 
     return-void
@@ -2421,15 +2421,15 @@
 .method private synthetic lambda$new$9(Lorg/telegram/tgnet/TLObject;Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_auth_resendCode;)V
     .locals 1
 
-    .line 6521
+    .line 6527
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCode;
 
     if-eqz v0, :cond_0
 
-    .line 6522
+    .line 6528
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCode;
 
-    .line 6523
+    .line 6529
     iget-object p3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p3, p2, p1}, Lorg/telegram/ui/LoginActivity;->access$8800(Lorg/telegram/ui/LoginActivity;Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$auth_SentCode;)V
@@ -2439,15 +2439,15 @@
     :cond_0
     if-eqz p3, :cond_1
 
-    .line 6524
+    .line 6530
     iget-object p1, p3, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     if-eqz p1, :cond_1
 
-    .line 6525
+    .line 6531
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity;->access$15200(Lorg/telegram/ui/LoginActivity;)I
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity;->access$15300(Lorg/telegram/ui/LoginActivity;)I
 
     move-result p1
 
@@ -2467,7 +2467,7 @@
 .method private synthetic lambda$onNextPressed$17(Landroid/os/Bundle;)V
     .locals 4
 
-    .line 6942
+    .line 6948
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 v1, 0x5
@@ -2484,7 +2484,7 @@
 .method private synthetic lambda$onNextPressed$18(Lorg/telegram/tgnet/TLObject;Landroid/os/Bundle;)V
     .locals 2
 
-    .line 6945
+    .line 6951
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_account_emailVerified;
 
     if-eqz v0, :cond_0
@@ -2499,15 +2499,15 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 6946
+    .line 6952
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
-    .line 6947
+    .line 6953
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity;->access$14300(Lorg/telegram/ui/LoginActivity;)Ljava/lang/Runnable;
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity;->access$14400(Lorg/telegram/ui/LoginActivity;)Ljava/lang/Runnable;
 
     move-result-object p1
 
@@ -2515,13 +2515,13 @@
 
     goto :goto_0
 
-    .line 6948
+    .line 6954
     :cond_0
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_account_emailVerifiedLogin;
 
     if-eqz v0, :cond_1
 
-    .line 6949
+    .line 6955
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_account_emailVerifiedLogin;
@@ -2532,13 +2532,13 @@
 
     goto :goto_0
 
-    .line 6950
+    .line 6956
     :cond_1
     instance-of p2, p1, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;
 
     if-eqz p2, :cond_2
 
-    .line 6951
+    .line 6957
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_auth_authorization;
@@ -2553,7 +2553,7 @@
 .method private synthetic lambda$onNextPressed$19(Landroid/os/Bundle;)V
     .locals 4
 
-    .line 6975
+    .line 6981
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 v1, 0x6
@@ -2572,10 +2572,10 @@
 
     const/4 v0, 0x0
 
-    .line 6959
+    .line 6965
     iput-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->nextPressed:Z
 
-    .line 6960
+    .line 6966
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 v2, 0x1
@@ -2584,17 +2584,17 @@
 
     if-nez p1, :cond_1
 
-    .line 6962
+    .line 6968
     check-cast p2, Lorg/telegram/tgnet/TLRPC$account_Password;
 
-    .line 6963
+    .line 6969
     invoke-static {p2, v2}, Lorg/telegram/ui/TwoStepVerificationActivity;->canHandleCurrentPassword(Lorg/telegram/tgnet/TLRPC$account_Password;Z)Z
 
     move-result p1
 
     if-nez p1, :cond_0
 
-    .line 6964
+    .line 6970
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -2613,13 +2613,13 @@
 
     return-void
 
-    .line 6967
+    .line 6973
     :cond_0
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 6968
+    .line 6974
     new-instance v0, Lorg/telegram/tgnet/SerializedData;
 
     invoke-virtual {p2}, Lorg/telegram/tgnet/TLObject;->getObjectSize()I
@@ -2628,10 +2628,10 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/tgnet/SerializedData;-><init>(I)V
 
-    .line 6969
+    .line 6975
     invoke-virtual {p2, v0}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 6970
+    .line 6976
     invoke-virtual {v0}, Lorg/telegram/tgnet/SerializedData;->toByteArray()[B
 
     move-result-object p2
@@ -2644,14 +2644,14 @@
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6971
+    .line 6977
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestPhone:Ljava/lang/String;
 
     const-string v0, "phoneFormated"
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6972
+    .line 6978
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->phoneHash:Ljava/lang/String;
 
     const-string v0, "phoneHash"
@@ -2660,10 +2660,10 @@
 
     const-string p2, "code"
 
-    .line 6973
+    .line 6979
     invoke-virtual {p1, p2, p3}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6975
+    .line 6981
     new-instance p2, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda17;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Landroid/os/Bundle;)V
@@ -2672,7 +2672,7 @@
 
     goto :goto_0
 
-    .line 6977
+    .line 6983
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -2693,7 +2693,7 @@
 .method private synthetic lambda$onNextPressed$21(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 6958
+    .line 6964
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda25;
 
     invoke-direct {v0, p0, p3, p2, p1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda25;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;Ljava/lang/String;)V
@@ -2706,7 +2706,7 @@
 .method private synthetic lambda$onNextPressed$22(Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
     .locals 5
 
-    .line 6924
+    .line 6930
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     const/4 v1, 0x0
@@ -2719,41 +2719,41 @@
 
     if-nez p1, :cond_2
 
-    .line 6926
+    .line 6932
     iput-boolean v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->nextPressed:Z
 
-    .line 6927
+    .line 6933
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p1, v1, v2}, Lorg/telegram/ui/LoginActivity;->access$3400(Lorg/telegram/ui/LoginActivity;ZZ)V
 
-    .line 6929
+    .line 6935
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 6930
+    .line 6936
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->phone:Ljava/lang/String;
 
     const-string v2, "phone"
 
     invoke-virtual {p1, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6931
+    .line 6937
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailPhone:Ljava/lang/String;
 
     const-string v2, "ephone"
 
     invoke-virtual {p1, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6932
+    .line 6938
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestPhone:Ljava/lang/String;
 
     const-string v2, "phoneFormated"
 
     invoke-virtual {p1, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6933
+    .line 6939
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->phoneHash:Ljava/lang/String;
 
     const-string v2, "phoneHash"
@@ -2762,28 +2762,28 @@
 
     const-string v1, "code"
 
-    .line 6934
+    .line 6940
     invoke-virtual {p1, v1, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6937
+    .line 6943
     instance-of p2, p3, Lorg/telegram/tgnet/TLRPC$TL_auth_authorizationSignUpRequired;
 
     if-eqz p2, :cond_1
 
-    .line 6938
+    .line 6944
     check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_auth_authorizationSignUpRequired;
 
-    .line 6939
+    .line 6945
     iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$TL_auth_authorizationSignUpRequired;->terms_of_service:Lorg/telegram/tgnet/TLRPC$TL_help_termsOfService;
 
     if-eqz p2, :cond_0
 
-    .line 6940
+    .line 6946
     iget-object p3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p3, p2}, Lorg/telegram/ui/LoginActivity;->access$8702(Lorg/telegram/ui/LoginActivity;Lorg/telegram/tgnet/TLRPC$TL_help_termsOfService;)Lorg/telegram/tgnet/TLRPC$TL_help_termsOfService;
 
-    .line 6942
+    .line 6948
     :cond_0
     new-instance p2, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda18;
 
@@ -2793,7 +2793,7 @@
 
     goto/16 :goto_4
 
-    .line 6944
+    .line 6950
     :cond_1
     new-instance p2, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda20;
 
@@ -2803,7 +2803,7 @@
 
     goto/16 :goto_4
 
-    .line 6956
+    .line 6962
     :cond_2
     iget-object p3, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -2815,15 +2815,15 @@
 
     if-eqz p3, :cond_3
 
-    .line 6957
+    .line 6963
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_account_getPassword;-><init>()V
 
-    .line 6958
+    .line 6964
     iget-object p3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    invoke-static {p3}, Lorg/telegram/ui/LoginActivity;->access$14900(Lorg/telegram/ui/LoginActivity;)I
+    invoke-static {p3}, Lorg/telegram/ui/LoginActivity;->access$15000(Lorg/telegram/ui/LoginActivity;)I
 
     move-result p3
 
@@ -2841,16 +2841,16 @@
 
     goto/16 :goto_4
 
-    .line 6981
+    .line 6987
     :cond_3
     iput-boolean v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->nextPressed:Z
 
-    .line 6982
+    .line 6988
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p2, v1, v2}, Lorg/telegram/ui/LoginActivity;->access$3400(Lorg/telegram/ui/LoginActivity;ZZ)V
 
-    .line 6984
+    .line 6990
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string p3, "EMAIL_ADDRESS_INVALID"
@@ -2861,7 +2861,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 6985
+    .line 6991
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     sget p2, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
@@ -2880,7 +2880,7 @@
 
     goto/16 :goto_0
 
-    .line 6986
+    .line 6992
     :cond_4
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -2892,7 +2892,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 6987
+    .line 6993
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     sget p2, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
@@ -2913,7 +2913,7 @@
 
     goto/16 :goto_0
 
-    .line 6988
+    .line 6994
     :cond_5
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -2957,7 +2957,7 @@
 
     goto/16 :goto_1
 
-    .line 6991
+    .line 6997
     :cond_6
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -2969,7 +2969,7 @@
 
     if-eqz p2, :cond_7
 
-    .line 6992
+    .line 6998
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     sget p2, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
@@ -2988,7 +2988,7 @@
 
     goto :goto_0
 
-    .line 6993
+    .line 6999
     :cond_7
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -3000,15 +3000,15 @@
 
     if-eqz p2, :cond_8
 
-    .line 6994
+    .line 7000
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/SlideView;->onBackPressed(Z)Z
 
-    .line 6995
+    .line 7001
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-virtual {p1, v1, v2, v0, v2}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
-    .line 6996
+    .line 7002
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     sget p2, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
@@ -3029,7 +3029,7 @@
 
     goto :goto_0
 
-    .line 6997
+    .line 7003
     :cond_8
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -3041,7 +3041,7 @@
 
     if-eqz p2, :cond_9
 
-    .line 6998
+    .line 7004
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     sget p2, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
@@ -3062,7 +3062,7 @@
 
     goto :goto_0
 
-    .line 7000
+    .line 7006
     :cond_9
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
@@ -3105,7 +3105,7 @@
 
     goto :goto_2
 
-    .line 6989
+    .line 6995
     :cond_a
     :goto_1
     invoke-direct {p0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->shakeWrongCode()V
@@ -3113,7 +3113,7 @@
     :goto_2
     if-nez v2, :cond_d
 
-    .line 7004
+    .line 7010
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     iget-object p1, p1, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
@@ -3122,7 +3122,7 @@
 
     move p1, v1
 
-    .line 7005
+    .line 7011
     :goto_3
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -3132,7 +3132,7 @@
 
     if-ge p1, p3, :cond_b
 
-    .line 7006
+    .line 7012
     aget-object p2, p2, p1
 
     const-string p3, ""
@@ -3143,19 +3143,19 @@
 
     goto :goto_3
 
-    .line 7008
+    .line 7014
     :cond_b
     aget-object p1, p2, v1
 
     invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 7011
+    .line 7017
     :cond_c
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     iput-boolean v1, p1, Lorg/telegram/ui/CodeFieldContainer;->isFocusSuppressed:Z
 
-    .line 7015
+    .line 7021
     :cond_d
     :goto_4
     iput-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->googleAccount:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
@@ -3166,7 +3166,7 @@
 .method private synthetic lambda$onNextPressed$23(Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 6923
+    .line 6929
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda24;
 
     invoke-direct {v0, p0, p3, p1, p2}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda24;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;Lorg/telegram/tgnet/TLRPC$TL_error;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
@@ -3179,21 +3179,21 @@
 .method private synthetic lambda$onPasscodeError$15()V
     .locals 3
 
-    .line 6844
+    .line 6850
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lorg/telegram/ui/CodeFieldContainer;->isFocusSuppressed:Z
 
-    .line 6845
+    .line 6851
     iget-object v0, v0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v0, v0, v1
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 6847
+    .line 6853
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -3203,7 +3203,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 6848
+    .line 6854
     aget-object v0, v0, v1
 
     const/4 v2, 0x0
@@ -3221,7 +3221,7 @@
 .method private synthetic lambda$onPasscodeError$16()V
     .locals 3
 
-    .line 6843
+    .line 6849
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda9;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)V
@@ -3230,12 +3230,12 @@
 
     invoke-virtual {p0, v0, v1, v2}, Landroid/widget/LinearLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 6852
+    .line 6858
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorColorTimeout:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 6853
+    .line 6859
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorColorTimeout:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0xbb8
@@ -3244,7 +3244,7 @@
 
     const/4 v0, 0x1
 
-    .line 6854
+    .line 6860
     iput-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->postedErrorColorTimeout:Z
 
     return-void
@@ -3253,7 +3253,7 @@
 .method private synthetic lambda$onShow$28()V
     .locals 3
 
-    .line 7074
+    .line 7080
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->inboxImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->getAnimatedDrawable()Lorg/telegram/ui/Components/RLottieDrawable;
@@ -3264,12 +3264,12 @@
 
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 7075
+    .line 7081
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->inboxImageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    .line 7077
+    .line 7083
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     if-eqz v0, :cond_0
@@ -3280,10 +3280,10 @@
 
     const-string v2, ""
 
-    .line 7078
+    .line 7084
     invoke-virtual {v0, v2}, Lorg/telegram/ui/CodeFieldContainer;->setText(Ljava/lang/String;)V
 
-    .line 7079
+    .line 7085
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     iget-object v0, v0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
@@ -3299,7 +3299,7 @@
 .method private synthetic lambda$requestEmailReset$12(Lorg/telegram/tgnet/TLObject;Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLRPC$TL_auth_resetLoginEmail;)V
     .locals 4
 
-    .line 6589
+    .line 6595
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3313,18 +3313,18 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 6592
+    .line 6598
     iput-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestingEmailReset:Z
 
-    .line 6593
+    .line 6599
     instance-of v1, p1, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCode;
 
     if-eqz v1, :cond_1
 
-    .line 6594
+    .line 6600
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_auth_sentCode;
 
-    .line 6595
+    .line 6601
     iget-object p3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p3, p2, p1}, Lorg/telegram/ui/LoginActivity;->access$8800(Lorg/telegram/ui/LoginActivity;Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$auth_SentCode;)V
@@ -3334,14 +3334,14 @@
     :cond_1
     if-eqz p3, :cond_4
 
-    .line 6596
+    .line 6602
     iget-object p1, p3, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     if-eqz p1, :cond_4
 
     const-string p2, "TASK_ALREADY_EXISTS"
 
-    .line 6597
+    .line 6603
     invoke-virtual {p1, p2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -3352,7 +3352,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 6598
+    .line 6604
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
@@ -3363,7 +3363,7 @@
 
     sget p3, Lorg/telegram/messenger/R$string;->LoginEmailResetPremiumRequiredTitle:I
 
-    .line 6599
+    .line 6605
     invoke-static {p3}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p3
@@ -3376,7 +3376,7 @@
 
     new-array p4, v1, [Ljava/lang/Object;
 
-    .line 6600
+    .line 6606
     invoke-static {}, Lorg/telegram/PhoneFormat/PhoneFormat;->getInstance()Lorg/telegram/PhoneFormat/PhoneFormat;
 
     move-result-object v1
@@ -3421,7 +3421,7 @@
 
     sget p3, Lorg/telegram/messenger/R$string;->OK:I
 
-    .line 6601
+    .line 6607
     invoke-static {p3}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p3
@@ -3430,12 +3430,12 @@
 
     move-result-object p1
 
-    .line 6602
+    .line 6608
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     goto :goto_0
 
-    .line 6603
+    .line 6609
     :cond_2
     iget-object p1, p3, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -3447,15 +3447,15 @@
 
     if-eqz p1, :cond_3
 
-    .line 6604
+    .line 6610
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/SlideView;->onBackPressed(Z)Z
 
-    .line 6605
+    .line 6611
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-virtual {p1, v0, v1, p2, v1}, Lorg/telegram/ui/LoginActivity;->setPage(IZLandroid/os/Bundle;Z)V
 
-    .line 6606
+    .line 6612
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     sget p2, Lorg/telegram/messenger/R$string;->RestorePasswordNoEmailTitle:I
@@ -3476,11 +3476,11 @@
 
     goto :goto_0
 
-    .line 6608
+    .line 6614
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LoginActivity;->access$15000(Lorg/telegram/ui/LoginActivity;)I
+    invoke-static {p1}, Lorg/telegram/ui/LoginActivity;->access$15100(Lorg/telegram/ui/LoginActivity;)I
 
     move-result p1
 
@@ -3498,7 +3498,7 @@
 .method private synthetic lambda$requestEmailReset$13(Landroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$TL_auth_resetLoginEmail;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 7
 
-    .line 6588
+    .line 6594
     new-instance v6, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda22;
 
     move-object v0, v6
@@ -3525,7 +3525,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 6713
+    .line 6719
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/LoginActivity;->access$1300(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
@@ -3536,7 +3536,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;->setEditText(Landroid/widget/EditText;)V
 
-    .line 6714
+    .line 6720
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/LoginActivity;->access$1300(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
@@ -3554,21 +3554,21 @@
 .method private synthetic lambda$shakeWrongCode$26()V
     .locals 3
 
-    .line 7053
+    .line 7059
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lorg/telegram/ui/CodeFieldContainer;->isFocusSuppressed:Z
 
-    .line 7054
+    .line 7060
     iget-object v0, v0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     aget-object v0, v0, v1
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 7056
+    .line 7062
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -3578,7 +3578,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 7057
+    .line 7063
     aget-object v0, v0, v1
 
     const/4 v2, 0x0
@@ -3596,7 +3596,7 @@
 .method private synthetic lambda$shakeWrongCode$27()V
     .locals 3
 
-    .line 7052
+    .line 7058
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda13;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)V
@@ -3611,7 +3611,7 @@
 .method private onPasscodeError(Z)V
     .locals 5
 
-    .line 6827
+    .line 6833
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3622,7 +3622,7 @@
 
     return-void
 
-    .line 6831
+    .line 6837
     :cond_0
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
@@ -3640,7 +3640,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 6834
+    .line 6840
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     iget-object p1, p1, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
@@ -3656,14 +3656,14 @@
 
     const-string v4, ""
 
-    .line 6835
+    .line 6841
     invoke-virtual {v3, v4}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 6838
+    .line 6844
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -3680,14 +3680,14 @@
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 6839
+    .line 6845
     invoke-virtual {v3, v4}, Lorg/telegram/ui/CodeNumberField;->animateErrorProgress(F)V
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 6841
+    .line 6847
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -3697,7 +3697,7 @@
 
     invoke-virtual {p1}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 6842
+    .line 6848
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda11;
@@ -3712,7 +3712,7 @@
 .method private requestEmailReset()V
     .locals 4
 
-    .line 6575
+    .line 6581
     iget-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestingEmailReset:Z
 
     if-eqz v0, :cond_0
@@ -3722,51 +3722,51 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 6578
+    .line 6584
     iput-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestingEmailReset:Z
 
-    .line 6580
+    .line 6586
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 6581
+    .line 6587
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->phone:Ljava/lang/String;
 
     const-string v2, "phone"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6582
+    .line 6588
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailPhone:Ljava/lang/String;
 
     const-string v2, "ephone"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6583
+    .line 6589
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestPhone:Ljava/lang/String;
 
     const-string v2, "phoneFormated"
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 6585
+    .line 6591
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_auth_resetLoginEmail;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_auth_resetLoginEmail;-><init>()V
 
-    .line 6586
+    .line 6592
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestPhone:Ljava/lang/String;
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_auth_resetLoginEmail;->phone_number:Ljava/lang/String;
 
-    .line 6587
+    .line 6593
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->phoneHash:Ljava/lang/String;
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_auth_resetLoginEmail;->phone_code_hash:Ljava/lang/String;
 
-    .line 6588
+    .line 6594
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -3787,7 +3787,7 @@
 .method private shakeWrongCode()V
     .locals 5
 
-    .line 7039
+    .line 7045
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -3804,7 +3804,7 @@
 
     move v1, v0
 
-    .line 7042
+    .line 7048
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -3816,14 +3816,14 @@
 
     if-ge v1, v3, :cond_0
 
-    .line 7043
+    .line 7049
     aget-object v2, v2, v1
 
     const-string v3, ""
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 7044
+    .line 7050
     iget-object v2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     iget-object v2, v2, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
@@ -3836,7 +3836,7 @@
 
     goto :goto_0
 
-    .line 7046
+    .line 7052
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorViewSwitcher:Landroid/widget/ViewSwitcher;
 
@@ -3850,17 +3850,17 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 7047
+    .line 7053
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorViewSwitcher:Landroid/widget/ViewSwitcher;
 
     invoke-virtual {v1}, Landroid/widget/ViewSwitcher;->showNext()V
 
-    .line 7048
+    .line 7054
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailFrameLayout:Landroid/widget/FrameLayout;
 
     invoke-static {v1, v0, v4, v3}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
-    .line 7050
+    .line 7056
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -3870,7 +3870,7 @@
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 7051
+    .line 7057
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     const/high16 v1, 0x41200000    # 10.0f
@@ -3881,19 +3881,19 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->shakeViewSpring(Landroid/view/View;FLjava/lang/Runnable;)V
 
-    .line 7061
+    .line 7067
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorColorTimeout:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 7062
+    .line 7068
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorColorTimeout:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x1388
 
     invoke-virtual {p0, v0, v1, v2}, Landroid/widget/LinearLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 7063
+    .line 7069
     iput-boolean v3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->postedErrorColorTimeout:Z
 
     return-void
@@ -3902,12 +3902,12 @@
 .method private showResendCodeView(Z)V
     .locals 9
 
-    .line 6636
+    .line 6642
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeView:Landroid/widget/TextView;
 
     invoke-static {v0, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;Z)V
 
-    .line 6637
+    .line 6643
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailFrameLayout:Landroid/widget/FrameLayout;
 
     if-nez p1, :cond_0
@@ -3936,7 +3936,7 @@
     :goto_0
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;Z)V
 
-    .line 6639
+    .line 6645
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->loginOrView:Lorg/telegram/ui/Components/LoginOrView;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -3947,7 +3947,7 @@
 
     if-eq v0, v1, :cond_2
 
-    .line 6640
+    .line 6646
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->loginOrView:Lorg/telegram/ui/Components/LoginOrView;
 
     const/4 v2, -0x1
@@ -3978,7 +3978,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 6641
+    .line 6647
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->loginOrView:Lorg/telegram/ui/Components/LoginOrView;
 
     invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
@@ -3990,7 +3990,7 @@
 .method private updateResetPendingDate()V
     .locals 9
 
-    .line 6805
+    .line 6811
     iget v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resetPendingDate:I
 
     int-to-long v0, v0
@@ -4007,7 +4007,7 @@
 
     long-to-int v0, v0
 
-    .line 6806
+    .line 6812
     iget v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resetPendingDate:I
 
     const/4 v2, 0x0
@@ -4018,7 +4018,7 @@
 
     goto :goto_0
 
-    .line 6812
+    .line 6818
     :cond_0
     sget v1, Lorg/telegram/messenger/R$string;->LoginEmailResetInTime:I
 
@@ -4036,14 +4036,14 @@
 
     move-result-object v0
 
-    .line 6813
+    .line 6819
     invoke-static {v0}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v1
 
     const/16 v2, 0x2a
 
-    .line 6814
+    .line 6820
     invoke-virtual {v0, v2}, Ljava/lang/String;->indexOf(I)I
 
     move-result v6
@@ -4064,15 +4064,15 @@
 
     const-string v7, ""
 
-    .line 6816
+    .line 6822
     invoke-virtual {v1, v0, v2, v7}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     add-int/lit8 v2, v6, 0x1
 
-    .line 6817
+    .line 6823
     invoke-virtual {v1, v6, v2, v7}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 6818
+    .line 6824
     new-instance v2, Landroid/text/style/ForegroundColorSpan;
 
     iget-object v7, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
@@ -4091,27 +4091,27 @@
 
     invoke-virtual {v1, v2, v6, v0, v3}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 6821
+    .line 6827
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailResetInView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 6823
+    .line 6829
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->updateResetPendingDateCallback:Ljava/lang/Runnable;
 
     invoke-static {v0, v4, v5}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-void
 
-    .line 6807
+    .line 6813
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailResetInView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 6808
+    .line 6814
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailResetInView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->LoginEmailResetPleaseWait:I
@@ -4122,7 +4122,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 6809
+    .line 6815
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda8;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)V
@@ -4137,7 +4137,7 @@
 .method public getHeaderName()Ljava/lang/String;
     .locals 1
 
-    .line 6657
+    .line 6663
     sget v0, Lorg/telegram/messenger/R$string;->VerificationCode:I
 
     invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -4166,15 +4166,15 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 6630
+    .line 6636
     invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
 
-    .line 6631
+    .line 6637
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->errorColorTimeout:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 6632
+    .line 6638
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeTimeout:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
@@ -4185,15 +4185,15 @@
 .method public onHide()V
     .locals 1
 
-    .line 6753
+    .line 6759
     invoke-super {p0}, Lorg/telegram/ui/Components/SlideView;->onHide()V
 
-    .line 6755
+    .line 6761
     iget v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resetPendingDate:I
 
     if-eqz v0, :cond_0
 
-    .line 6756
+    .line 6762
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->updateResetPendingDateCallback:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
@@ -4205,27 +4205,27 @@
 .method public onNextPressed(Ljava/lang/String;)V
     .locals 6
 
-    .line 6860
+    .line 6866
     iget-boolean p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->nextPressed:Z
 
     if-eqz p1, :cond_0
 
     return-void
 
-    .line 6863
+    .line 6869
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeTimeout:Ljava/lang/Runnable;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 6865
+    .line 6871
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     const/4 v0, 0x1
 
     iput-boolean v0, p1, Lorg/telegram/ui/CodeFieldContainer;->isFocusSuppressed:Z
 
-    .line 6866
+    .line 6872
     iget-object p1, p1, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     const/4 v1, 0x0
@@ -4234,7 +4234,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 6867
+    .line 6873
     array-length v3, p1
 
     move v4, v2
@@ -4244,14 +4244,14 @@
 
     aget-object v5, p1, v4
 
-    .line 6868
+    .line 6874
     invoke-virtual {v5, v1}, Lorg/telegram/ui/CodeNumberField;->animateFocusedProgress(F)V
 
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 6872
+    .line 6878
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -4259,7 +4259,7 @@
 
     move-result-object p1
 
-    .line 6873
+    .line 6879
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v3
@@ -4270,21 +4270,21 @@
 
     if-nez v3, :cond_2
 
-    .line 6874
+    .line 6880
     invoke-direct {p0, v2}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->onPasscodeError(Z)V
 
     return-void
 
-    .line 6877
+    .line 6883
     :cond_2
     iput-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->nextPressed:Z
 
-    .line 6878
+    .line 6884
     iget-object v3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v3, v2}, Lorg/telegram/ui/LoginActivity;->access$7800(Lorg/telegram/ui/LoginActivity;I)V
 
-    .line 6881
+    .line 6887
     iget-object v3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/LoginActivity;->access$3600(Lorg/telegram/ui/LoginActivity;)I
@@ -4295,100 +4295,100 @@
 
     if-ne v3, v4, :cond_3
 
-    .line 6882
+    .line 6888
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_account_verifyEmail;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_account_verifyEmail;-><init>()V
 
-    .line 6883
+    .line 6889
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_emailVerifyPurposeLoginChange;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_emailVerifyPurposeLoginChange;-><init>()V
 
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$TL_account_verifyEmail;->purpose:Lorg/telegram/tgnet/TLRPC$EmailVerifyPurpose;
 
-    .line 6884
+    .line 6890
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_emailVerificationCode;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_emailVerificationCode;-><init>()V
 
-    .line 6885
+    .line 6891
     iput-object p1, v4, Lorg/telegram/tgnet/TLRPC$TL_emailVerificationCode;->code:Ljava/lang/String;
 
-    .line 6886
+    .line 6892
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$TL_account_verifyEmail;->verification:Lorg/telegram/tgnet/TLRPC$EmailVerification;
 
     goto :goto_2
 
-    .line 6888
+    .line 6894
     :cond_3
     iget-boolean v3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->isFromSetup:Z
 
     if-eqz v3, :cond_4
 
-    .line 6889
+    .line 6895
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_account_verifyEmail;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_account_verifyEmail;-><init>()V
 
-    .line 6890
+    .line 6896
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_emailVerifyPurposeLoginSetup;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_emailVerifyPurposeLoginSetup;-><init>()V
 
-    .line 6891
+    .line 6897
     iget-object v5, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestPhone:Ljava/lang/String;
 
     iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$TL_emailVerifyPurposeLoginSetup;->phone_number:Ljava/lang/String;
 
-    .line 6892
+    .line 6898
     iget-object v5, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->phoneHash:Ljava/lang/String;
 
     iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$TL_emailVerifyPurposeLoginSetup;->phone_code_hash:Ljava/lang/String;
 
-    .line 6893
+    .line 6899
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$TL_account_verifyEmail;->purpose:Lorg/telegram/tgnet/TLRPC$EmailVerifyPurpose;
 
-    .line 6894
+    .line 6900
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_emailVerificationCode;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_emailVerificationCode;-><init>()V
 
-    .line 6895
+    .line 6901
     iput-object p1, v4, Lorg/telegram/tgnet/TLRPC$TL_emailVerificationCode;->code:Ljava/lang/String;
 
-    .line 6896
+    .line 6902
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$TL_account_verifyEmail;->verification:Lorg/telegram/tgnet/TLRPC$EmailVerification;
 
     goto :goto_2
 
-    .line 6899
+    .line 6905
     :cond_4
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_auth_signIn;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_auth_signIn;-><init>()V
 
-    .line 6900
+    .line 6906
     iget-object v4, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestPhone:Ljava/lang/String;
 
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$TL_auth_signIn;->phone_number:Ljava/lang/String;
 
-    .line 6901
+    .line 6907
     iget-object v4, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->phoneHash:Ljava/lang/String;
 
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$TL_auth_signIn;->phone_code_hash:Ljava/lang/String;
 
-    .line 6902
+    .line 6908
     iget-object v4, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->googleAccount:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
     if-eqz v4, :cond_5
 
-    .line 6903
+    .line 6909
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_emailVerificationGoogle;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_emailVerificationGoogle;-><init>()V
 
-    .line 6904
+    .line 6910
     iget-object v5, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->googleAccount:Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;
 
     invoke-virtual {v5}, Lcom/google/android/gms/auth/api/signin/GoogleSignInAccount;->getIdToken()Ljava/lang/String;
@@ -4397,24 +4397,24 @@
 
     iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$TL_emailVerificationGoogle;->token:Ljava/lang/String;
 
-    .line 6905
+    .line 6911
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$TL_auth_signIn;->email_verification:Lorg/telegram/tgnet/TLRPC$EmailVerification;
 
     goto :goto_1
 
-    .line 6907
+    .line 6913
     :cond_5
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_emailVerificationCode;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_emailVerificationCode;-><init>()V
 
-    .line 6908
+    .line 6914
     iput-object p1, v4, Lorg/telegram/tgnet/TLRPC$TL_emailVerificationCode;->code:Ljava/lang/String;
 
-    .line 6909
+    .line 6915
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$TL_auth_signIn;->email_verification:Lorg/telegram/tgnet/TLRPC$EmailVerification;
 
-    .line 6911
+    .line 6917
     :goto_1
     iget v4, v3, Lorg/telegram/tgnet/TLRPC$TL_auth_signIn;->flags:I
 
@@ -4422,18 +4422,18 @@
 
     iput v4, v3, Lorg/telegram/tgnet/TLRPC$TL_auth_signIn;->flags:I
 
-    .line 6915
+    .line 6921
     :goto_2
     iget-object v4, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     iput-boolean v0, v4, Lorg/telegram/ui/CodeFieldContainer;->isFocusSuppressed:Z
 
-    .line 6916
+    .line 6922
     iget-object v0, v4, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
     if-eqz v0, :cond_6
 
-    .line 6917
+    .line 6923
     array-length v4, v0
 
     :goto_3
@@ -4441,18 +4441,18 @@
 
     aget-object v5, v0, v2
 
-    .line 6918
+    .line 6924
     invoke-virtual {v5, v1}, Lorg/telegram/ui/CodeNumberField;->animateFocusedProgress(F)V
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_3
 
-    .line 6923
+    .line 6929
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$14800(Lorg/telegram/ui/LoginActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$14900(Lorg/telegram/ui/LoginActivity;)I
 
     move-result v0
 
@@ -4474,35 +4474,35 @@
 .method public onShow()V
     .locals 3
 
-    .line 7068
+    .line 7074
     invoke-super {p0}, Lorg/telegram/ui/Components/SlideView;->onShow()V
 
-    .line 7069
+    .line 7075
     iget-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resetRequestPending:Z
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 7070
+    .line 7076
     iput-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resetRequestPending:Z
 
     return-void
 
-    .line 7073
+    .line 7079
     :cond_0
     new-instance v0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda14;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)V
 
-    .line 7081
+    .line 7087
     invoke-static {}, Lorg/telegram/ui/LoginActivity;->access$8400()I
 
     move-result v1
 
     int-to-long v1, v1
 
-    .line 7073
+    .line 7079
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     return-void
@@ -4513,7 +4513,7 @@
 
     const-string v0, "emailcode_params"
 
-    .line 7097
+    .line 7103
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v0
@@ -4524,20 +4524,20 @@
 
     const/4 v1, 0x1
 
-    .line 7099
+    .line 7105
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->setParams(Landroid/os/Bundle;Z)V
 
     :cond_0
     const-string v0, "emailcode_code"
 
-    .line 7101
+    .line 7107
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 7103
+    .line 7109
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/CodeFieldContainer;->setText(Ljava/lang/String;)V
@@ -4549,7 +4549,7 @@
 .method public saveStateParams(Landroid/os/Bundle;)V
     .locals 2
 
-    .line 7086
+    .line 7092
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     invoke-virtual {v0}, Lorg/telegram/ui/CodeFieldContainer;->getCode()Ljava/lang/String;
@@ -4558,7 +4558,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 7087
+    .line 7093
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -4567,10 +4567,10 @@
 
     const-string v1, "emailcode_code"
 
-    .line 7088
+    .line 7094
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 7090
+    .line 7096
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->currentParams:Landroid/os/Bundle;
 
@@ -4578,7 +4578,7 @@
 
     const-string v1, "emailcode_params"
 
-    .line 7091
+    .line 7097
     invoke-virtual {p1, v1, v0}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     :cond_1
@@ -4592,20 +4592,20 @@
 
     return-void
 
-    .line 6666
+    .line 6672
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->currentParams:Landroid/os/Bundle;
 
     const-string v0, "phoneFormated"
 
-    .line 6667
+    .line 6673
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->requestPhone:Ljava/lang/String;
 
-    .line 6668
+    .line 6674
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->currentParams:Landroid/os/Bundle;
 
     const-string v1, "phoneHash"
@@ -4616,7 +4616,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->phoneHash:Ljava/lang/String;
 
-    .line 6669
+    .line 6675
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->currentParams:Landroid/os/Bundle;
 
     const-string v1, "phone"
@@ -4627,7 +4627,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->phone:Ljava/lang/String;
 
-    .line 6670
+    .line 6676
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->currentParams:Landroid/os/Bundle;
 
     const-string v1, "ephone"
@@ -4638,7 +4638,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailPhone:Ljava/lang/String;
 
-    .line 6671
+    .line 6677
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->currentParams:Landroid/os/Bundle;
 
     const-string v1, "setup"
@@ -4649,7 +4649,7 @@
 
     iput-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->isFromSetup:Z
 
-    .line 6672
+    .line 6678
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->currentParams:Landroid/os/Bundle;
 
     const-string v1, "length"
@@ -4660,7 +4660,7 @@
 
     iput v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->length:I
 
-    .line 6673
+    .line 6679
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->currentParams:Landroid/os/Bundle;
 
     const-string v1, "email"
@@ -4671,7 +4671,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->email:Ljava/lang/String;
 
-    .line 6674
+    .line 6680
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->currentParams:Landroid/os/Bundle;
 
     const-string v1, "resetAvailablePeriod"
@@ -4682,7 +4682,7 @@
 
     iput v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resetAvailablePeriod:I
 
-    .line 6675
+    .line 6681
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->currentParams:Landroid/os/Bundle;
 
     const-string v1, "resetPendingDate"
@@ -4693,7 +4693,7 @@
 
     iput v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resetPendingDate:I
 
-    .line 6677
+    .line 6683
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$3600(Lorg/telegram/ui/LoginActivity;)I
@@ -4712,7 +4712,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 6678
+    .line 6684
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->confirmTextView:Landroid/widget/TextView;
 
     sget v6, Lorg/telegram/messenger/R$string;->CheckYourNewEmailSubtitle:I
@@ -4729,20 +4729,20 @@
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 6679
+    .line 6685
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailFrameLayout:Landroid/widget/FrameLayout;
 
     invoke-static {v0, v5, v3, v5}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
     goto :goto_2
 
-    .line 6680
+    .line 6686
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->isSetup:Z
 
     if-eqz v0, :cond_2
 
-    .line 6681
+    .line 6687
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->confirmTextView:Landroid/widget/TextView;
 
     sget v6, Lorg/telegram/messenger/R$string;->VerificationCodeSubtitle:I
@@ -4759,20 +4759,20 @@
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 6682
+    .line 6688
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailFrameLayout:Landroid/widget/FrameLayout;
 
     invoke-static {v0, v5, v3, v5}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
     goto :goto_2
 
-    .line 6684
+    .line 6690
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailFrameLayout:Landroid/widget/FrameLayout;
 
     invoke-static {v0, v4, v3, v5}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
-    .line 6686
+    .line 6692
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailView:Landroid/widget/TextView;
 
     iget v3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resetPendingDate:I
@@ -4789,7 +4789,7 @@
     :goto_0
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 6687
+    .line 6693
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailResetInView:Landroid/widget/TextView;
 
     iget v3, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resetPendingDate:I
@@ -4806,15 +4806,15 @@
     :goto_1
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 6688
+    .line 6694
     iget v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resetPendingDate:I
 
     if-eqz v0, :cond_5
 
-    .line 6689
+    .line 6695
     invoke-direct {p0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->updateResetPendingDate()V
 
-    .line 6693
+    .line 6699
     :cond_5
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
@@ -4823,7 +4823,7 @@
 
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/CodeFieldContainer;->setNumbersCount(II)V
 
-    .line 6694
+    .line 6700
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     iget-object v0, v0, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
@@ -4837,7 +4837,7 @@
 
     aget-object v7, v0, v6
 
-    .line 6695
+    .line 6701
     invoke-virtual {p0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->hasCustomKeyboard()Z
 
     move-result v8
@@ -4866,14 +4866,14 @@
     :goto_5
     invoke-virtual {v7, v8}, Lorg/telegram/ui/CodeNumberField;->setShowSoftInputOnFocusCompat(Z)V
 
-    .line 6696
+    .line 6702
     new-instance v8, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$7;
 
     invoke-direct {v8, p0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$7;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)V
 
     invoke-virtual {v7, v8}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 6711
+    .line 6717
     new-instance v8, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda5;
 
     invoke-direct {v8, p0}, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;)V
@@ -4884,7 +4884,7 @@
 
     goto :goto_3
 
-    .line 6718
+    .line 6724
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
@@ -4892,7 +4892,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/CodeFieldContainer;->setText(Ljava/lang/String;)V
 
-    .line 6720
+    .line 6726
     iget-boolean v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->isFromSetup:Z
 
     if-nez v0, :cond_a
@@ -4905,7 +4905,7 @@
 
     if-eq v0, v1, :cond_a
 
-    .line 6721
+    .line 6727
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->currentParams:Landroid/os/Bundle;
 
     const-string v1, "emailPattern"
@@ -4914,14 +4914,14 @@
 
     move-result-object v0
 
-    .line 6722
+    .line 6728
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v1, v0}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     const/16 v3, 0x2a
 
-    .line 6723
+    .line 6729
     invoke-virtual {v0, v3}, Ljava/lang/String;->indexOf(I)I
 
     move-result v6
@@ -4938,34 +4938,34 @@
 
     if-eq v0, v3, :cond_9
 
-    .line 6725
+    .line 6731
     new-instance v3, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     invoke-direct {v3}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;-><init>()V
 
-    .line 6726
+    .line 6732
     iget v7, v3, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
     or-int/lit16 v7, v7, 0x100
 
     iput v7, v3, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
-    .line 6727
+    .line 6733
     iput v6, v3, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->start:I
 
     add-int/2addr v0, v4
 
-    .line 6728
+    .line 6734
     iput v0, v3, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->end:I
 
-    .line 6729
+    .line 6735
     new-instance v7, Lorg/telegram/ui/Components/TextStyleSpan;
 
     invoke-direct {v7, v3}, Lorg/telegram/ui/Components/TextStyleSpan;-><init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;)V
 
     invoke-virtual {v1, v7, v6, v0, v5}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 6732
+    .line 6738
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->confirmTextView:Landroid/widget/TextView;
 
@@ -4988,7 +4988,7 @@
     :cond_a
     const-string v0, "googleSignInAllowed"
 
-    .line 6735
+    .line 6741
     invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;)Z
 
     move-result v0
@@ -5005,18 +5005,18 @@
 
     move v2, v5
 
-    .line 6736
+    .line 6742
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->loginOrView:Lorg/telegram/ui/Components/LoginOrView;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 6737
+    .line 6743
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->signInWithGoogleView:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 6739
+    .line 6745
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->this$0:Lorg/telegram/ui/LoginActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
@@ -5027,7 +5027,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/LoginActivity;->access$4800(Lorg/telegram/ui/LoginActivity;Landroid/view/View;)Z
 
-    .line 6740
+    .line 6746
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->requestFocus()Z
@@ -5036,14 +5036,14 @@
 
     const-string p2, "nextType"
 
-    .line 6742
+    .line 6748
     invoke-virtual {p1, p2}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
     move-result p2
 
     if-eqz p2, :cond_c
 
-    .line 6743
+    .line 6749
     iget-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeTimeout:Ljava/lang/Runnable;
 
     const-string v0, "timeout"
@@ -5056,13 +5056,13 @@
 
     invoke-static {p2, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 6746
+    .line 6752
     :cond_c
     iget p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resetPendingDate:I
 
     if-eqz p1, :cond_d
 
-    .line 6747
+    .line 6753
     iget-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->updateResetPendingDateCallback:Ljava/lang/Runnable;
 
     const-wide/16 v0, 0x3e8
@@ -5076,7 +5076,7 @@
 .method public updateColors()V
     .locals 4
 
-    .line 6616
+    .line 6622
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->titleView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -5087,7 +5087,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 6617
+    .line 6623
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->confirmTextView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText6:I
@@ -5098,7 +5098,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 6618
+    .line 6624
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->signInWithGoogleView:Landroid/widget/TextView;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
@@ -5109,12 +5109,12 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 6619
+    .line 6625
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->loginOrView:Lorg/telegram/ui/Components/LoginOrView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/LoginOrView;->updateColors()V
 
-    .line 6620
+    .line 6626
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->resendCodeView:Landroid/widget/TextView;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -5123,7 +5123,7 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 6621
+    .line 6627
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->cantAccessEmailView:Landroid/widget/TextView;
 
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -5132,7 +5132,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 6622
+    .line 6628
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->emailResetInView:Landroid/widget/TextView;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -5141,7 +5141,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 6623
+    .line 6629
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->wrongCodeView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
@@ -5152,7 +5152,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 6625
+    .line 6631
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityEmailCodeView;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->invalidate()V

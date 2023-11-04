@@ -1736,7 +1736,7 @@
     .line 129
     iget-object v0, v9, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->itemMoreOptions:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
-    const-string v3, "itemMoreOptions"
+    const-string/jumbo v3, "itemMoreOptions"
 
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

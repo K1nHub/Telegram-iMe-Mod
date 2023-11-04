@@ -1,11 +1,10 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_messages_getPollVotes extends TLObject {
-    public static int constructor = -1200736242;
     public int flags;
 
     /* renamed from: id */
-    public int f1704id;
+    public int f1701id;
     public int limit;
     public String offset;
     public byte[] option;
@@ -18,10 +17,10 @@ public class TLRPC$TL_messages_getPollVotes extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-1200736242);
         abstractSerializedData.writeInt32(this.flags);
         this.peer.serializeToStream(abstractSerializedData);
-        abstractSerializedData.writeInt32(this.f1704id);
+        abstractSerializedData.writeInt32(this.f1701id);
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeByteArray(this.option);
         }

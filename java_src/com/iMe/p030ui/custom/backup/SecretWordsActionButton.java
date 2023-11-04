@@ -13,9 +13,9 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Cells.DialogCell;
-import org.telegram.p042ui.Components.ColoredImageSpan;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.DialogCell;
+import org.telegram.p043ui.Components.ColoredImageSpan;
 /* compiled from: SecretWordsActionButton.kt */
 /* renamed from: com.iMe.ui.custom.backup.SecretWordsActionButton */
 /* loaded from: classes3.dex */
@@ -28,14 +28,14 @@ public final class SecretWordsActionButton extends TextView {
     public SecretWordsActionButton(Context context, AttributeSet attributeSet, int i) {
         super(context, attributeSet, i);
         Intrinsics.checkNotNullParameter(context, "context");
-        ViewExtKt.setPaddingHorizontal(this, AndroidUtilities.m102dp(10));
+        ViewExtKt.setPaddingHorizontal(this, AndroidUtilities.m104dp(10));
         setGravity(17);
         setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         setTextSize(1, 14.0f);
         setEllipsize(TextUtils.TruncateAt.END);
         com.iMe.utils.extentions.common.ViewExtKt.singleLine(this);
         com.iMe.utils.extentions.common.ViewExtKt.withMediumTypeface(this);
-        setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m102dp(4), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
+        setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m104dp(4), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
     }
 
     public final void setupView(int i, String buttonText) {
@@ -47,13 +47,13 @@ public final class SecretWordsActionButton extends TextView {
         Drawable drawable = ContextCompat.getDrawable(getContext(), i);
         Intrinsics.checkNotNull(drawable);
         spannableStringBuilder.setSpan(new ColoredImageSpan(drawable), 0, 1, 0);
-        spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m102dp(8)), 1, 2, 0);
+        spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m104dp(8)), 1, 2, 0);
         spannableStringBuilder.append((CharSequence) buttonText);
         setText(spannableStringBuilder);
     }
 
     @Override // android.widget.TextView, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m102dp(40), 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m104dp(40), 1073741824));
     }
 }

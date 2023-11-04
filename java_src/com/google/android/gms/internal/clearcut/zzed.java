@@ -144,7 +144,7 @@ final class zzed {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final boolean zzda() {
-        return this.zzoa > zzcb.zziw.m1078id();
+        return this.zzoa > zzcb.zziw.m1079id();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -178,7 +178,7 @@ final class zzed {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public final boolean zzde() {
-        return zzcz() && this.zzoa <= zzcb.zzhp.m1078id();
+        return zzcz() && this.zzoa <= zzcb.zzhp.m1079id();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

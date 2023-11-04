@@ -58,7 +58,7 @@ public final class WalletAccountSettingsPresenter extends BasePresenter<WalletAc
 
     private final void subscribeToRxEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1009ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.CryptoEvent, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.WalletAccountSettingsPresenter$subscribeToRxEvents$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -67,12 +67,12 @@ public final class WalletAccountSettingsPresenter extends BasePresenter<WalletAc
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.CryptoEvent cryptoEvent) {
-                m1639invoke(cryptoEvent);
+                m1644invoke(cryptoEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1639invoke(DomainRxEvents.CryptoEvent it) {
+            public final void m1644invoke(DomainRxEvents.CryptoEvent it) {
                 CryptoAccessManager cryptoAccessManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 DomainRxEvents.CryptoEvent cryptoEvent = it;

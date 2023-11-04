@@ -13,11 +13,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzo extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzo> CREATOR = new zzp();
-    @SafeParcelable.Field(m1089id = 1)
+    @SafeParcelable.Field(m1090id = 1)
     final PendingIntent zza;
 
     @SafeParcelable.Constructor
-    public zzo(@SafeParcelable.Param(m1088id = 1) PendingIntent pendingIntent) {
+    public zzo(@SafeParcelable.Param(m1089id = 1) PendingIntent pendingIntent) {
         this.zza = pendingIntent;
     }
 

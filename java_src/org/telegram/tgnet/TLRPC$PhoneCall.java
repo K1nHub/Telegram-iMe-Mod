@@ -14,7 +14,7 @@ public abstract class TLRPC$PhoneCall extends TLObject {
     public byte[] g_b;
 
     /* renamed from: id */
-    public long f1627id;
+    public long f1629id;
     public long key_fingerprint;
     public boolean need_debug;
     public boolean need_rating;
@@ -31,15 +31,13 @@ public abstract class TLRPC$PhoneCall extends TLObject {
         switch (i) {
             case -1770029977:
                 tLRPC$PhoneCall = new TLRPC$PhoneCall() { // from class: org.telegram.tgnet.TLRPC$TL_phoneCall
-                    public static int constructor = -1770029977;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.p2p_allowed = (readInt32 & 32) != 0;
                         this.video = (readInt32 & 64) != 0;
-                        this.f1627id = abstractSerializedData2.readInt64(z2);
+                        this.f1629id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt64(z2);
@@ -67,13 +65,13 @@ public abstract class TLRPC$PhoneCall extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-1770029977);
                         int i2 = this.p2p_allowed ? this.flags | 32 : this.flags & (-33);
                         this.flags = i2;
                         int i3 = this.video ? i2 | 64 : i2 & (-65);
                         this.flags = i3;
                         abstractSerializedData2.writeInt32(i3);
-                        abstractSerializedData2.writeInt64(this.f1627id);
+                        abstractSerializedData2.writeInt64(this.f1629id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt64(this.admin_id);
@@ -93,14 +91,12 @@ public abstract class TLRPC$PhoneCall extends TLObject {
                 break;
             case -987599081:
                 tLRPC$PhoneCall = new TLRPC$PhoneCall() { // from class: org.telegram.tgnet.TLRPC$TL_phoneCallWaiting
-                    public static int constructor = -987599081;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.video = (readInt32 & 64) != 0;
-                        this.f1627id = abstractSerializedData2.readInt64(z2);
+                        this.f1629id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt64(z2);
@@ -113,11 +109,11 @@ public abstract class TLRPC$PhoneCall extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(-987599081);
                         int i2 = this.video ? this.flags | 64 : this.flags & (-65);
                         this.flags = i2;
                         abstractSerializedData2.writeInt32(i2);
-                        abstractSerializedData2.writeInt64(this.f1627id);
+                        abstractSerializedData2.writeInt64(this.f1629id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt64(this.admin_id);
@@ -131,14 +127,12 @@ public abstract class TLRPC$PhoneCall extends TLObject {
                 break;
             case 347139340:
                 tLRPC$PhoneCall = new TLRPC$PhoneCall() { // from class: org.telegram.tgnet.TLRPC$TL_phoneCallRequested
-                    public static int constructor = 347139340;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.video = (readInt32 & 64) != 0;
-                        this.f1627id = abstractSerializedData2.readInt64(z2);
+                        this.f1629id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt64(z2);
@@ -149,11 +143,11 @@ public abstract class TLRPC$PhoneCall extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(347139340);
                         int i2 = this.video ? this.flags | 64 : this.flags & (-65);
                         this.flags = i2;
                         abstractSerializedData2.writeInt32(i2);
-                        abstractSerializedData2.writeInt64(this.f1627id);
+                        abstractSerializedData2.writeInt64(this.f1629id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt64(this.admin_id);
@@ -165,14 +159,12 @@ public abstract class TLRPC$PhoneCall extends TLObject {
                 break;
             case 912311057:
                 tLRPC$PhoneCall = new TLRPC$PhoneCall() { // from class: org.telegram.tgnet.TLRPC$TL_phoneCallAccepted
-                    public static int constructor = 912311057;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
                         this.flags = readInt32;
                         this.video = (readInt32 & 64) != 0;
-                        this.f1627id = abstractSerializedData2.readInt64(z2);
+                        this.f1629id = abstractSerializedData2.readInt64(z2);
                         this.access_hash = abstractSerializedData2.readInt64(z2);
                         this.date = abstractSerializedData2.readInt32(z2);
                         this.admin_id = abstractSerializedData2.readInt64(z2);
@@ -183,11 +175,11 @@ public abstract class TLRPC$PhoneCall extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(912311057);
                         int i2 = this.video ? this.flags | 64 : this.flags & (-65);
                         this.flags = i2;
                         abstractSerializedData2.writeInt32(i2);
-                        abstractSerializedData2.writeInt64(this.f1627id);
+                        abstractSerializedData2.writeInt64(this.f1629id);
                         abstractSerializedData2.writeInt64(this.access_hash);
                         abstractSerializedData2.writeInt32(this.date);
                         abstractSerializedData2.writeInt64(this.admin_id);
@@ -199,8 +191,6 @@ public abstract class TLRPC$PhoneCall extends TLObject {
                 break;
             case 1355435489:
                 tLRPC$PhoneCall = new TLRPC$PhoneCall() { // from class: org.telegram.tgnet.TLRPC$TL_phoneCallDiscarded
-                    public static int constructor = 1355435489;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
                         int readInt32 = abstractSerializedData2.readInt32(z2);
@@ -208,7 +198,7 @@ public abstract class TLRPC$PhoneCall extends TLObject {
                         this.need_rating = (readInt32 & 4) != 0;
                         this.need_debug = (readInt32 & 8) != 0;
                         this.video = (readInt32 & 64) != 0;
-                        this.f1627id = abstractSerializedData2.readInt64(z2);
+                        this.f1629id = abstractSerializedData2.readInt64(z2);
                         if ((this.flags & 1) != 0) {
                             this.reason = TLRPC$PhoneCallDiscardReason.TLdeserialize(abstractSerializedData2, abstractSerializedData2.readInt32(z2), z2);
                         }
@@ -219,7 +209,7 @@ public abstract class TLRPC$PhoneCall extends TLObject {
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
+                        abstractSerializedData2.writeInt32(1355435489);
                         int i2 = this.need_rating ? this.flags | 4 : this.flags & (-5);
                         this.flags = i2;
                         int i3 = this.need_debug ? i2 | 8 : i2 & (-9);
@@ -227,7 +217,7 @@ public abstract class TLRPC$PhoneCall extends TLObject {
                         int i4 = this.video ? i3 | 64 : i3 & (-65);
                         this.flags = i4;
                         abstractSerializedData2.writeInt32(i4);
-                        abstractSerializedData2.writeInt64(this.f1627id);
+                        abstractSerializedData2.writeInt64(this.f1629id);
                         if ((this.flags & 1) != 0) {
                             this.reason.serializeToStream(abstractSerializedData2);
                         }
@@ -239,17 +229,15 @@ public abstract class TLRPC$PhoneCall extends TLObject {
                 break;
             case 1399245077:
                 tLRPC$PhoneCall = new TLRPC$PhoneCall() { // from class: org.telegram.tgnet.TLRPC$TL_phoneCallEmpty
-                    public static int constructor = 1399245077;
-
                     @Override // org.telegram.tgnet.TLObject
                     public void readParams(AbstractSerializedData abstractSerializedData2, boolean z2) {
-                        this.f1627id = abstractSerializedData2.readInt64(z2);
+                        this.f1629id = abstractSerializedData2.readInt64(z2);
                     }
 
                     @Override // org.telegram.tgnet.TLObject
                     public void serializeToStream(AbstractSerializedData abstractSerializedData2) {
-                        abstractSerializedData2.writeInt32(constructor);
-                        abstractSerializedData2.writeInt64(this.f1627id);
+                        abstractSerializedData2.writeInt32(1399245077);
+                        abstractSerializedData2.writeInt64(this.f1629id);
                     }
                 };
                 break;

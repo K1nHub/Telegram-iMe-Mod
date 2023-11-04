@@ -26,12 +26,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 1413
+    .line 1414
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
-    .line 1414
+    .line 1415
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->sortByReactions:Z
 
     return-void
@@ -53,7 +53,7 @@
 
     if-eqz p1, :cond_6
 
-    .line 1431
+    .line 1432
     const-class v2, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -64,11 +64,11 @@
 
     goto :goto_2
 
-    .line 1432
+    .line 1433
     :cond_1
     check-cast p1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
 
-    .line 1433
+    .line 1434
     iget-object v2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->searchQuery:Ljava/lang/String;
 
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -104,7 +104,7 @@
     :cond_4
     move v2, v1
 
-    .line 1434
+    .line 1435
     :goto_0
     iget-boolean v3, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->sortByReactions:Z
 
@@ -140,7 +140,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 1439
+    .line 1440
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->sortByReactions:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -177,17 +177,17 @@
 .method public set(Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;)V
     .locals 1
 
-    .line 1423
+    .line 1424
     iget-boolean v0, p1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->sortByReactions:Z
 
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->sortByReactions:Z
 
-    .line 1424
+    .line 1425
     iget-boolean v0, p1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->contactsOnly:Z
 
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->contactsOnly:Z
 
-    .line 1425
+    .line 1426
     iget-object p1, p1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->searchQuery:Ljava/lang/String;
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;->searchQuery:Ljava/lang/String;

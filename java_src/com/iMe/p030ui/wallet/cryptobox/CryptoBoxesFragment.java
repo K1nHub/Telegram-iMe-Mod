@@ -57,19 +57,19 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkFragmentCryptoboxesBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.C3702ActionBar;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.ChatRightsEditActivity;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.ChatRightsEditActivity;
+import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: CryptoBoxesFragment.kt */
 /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CryptoBoxesFragment extends WalletAuthBaseFragment implements CryptoBoxesView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(CryptoBoxesFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/cryptobox/CryptoBoxesPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(CryptoBoxesFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentCryptoboxesBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -82,7 +82,7 @@ public final class CryptoBoxesFragment extends WalletAuthBaseFragment implements
         return Companion.newInstance(tLRPC$Chat);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return true;
     }
@@ -254,7 +254,7 @@ public final class CryptoBoxesFragment extends WalletAuthBaseFragment implements
     @Override // com.iMe.p030ui.wallet.cryptobox.CryptoBoxesView
     public void openAddAdminScreen(long j, TLRPC$Chat chat) {
         Intrinsics.checkNotNullParameter(chat, "chat");
-        ChatRightsEditActivity chatRightsEditActivity = new ChatRightsEditActivity(j, chat.f1600id, null, null, null, null, 0, true, true, null);
+        ChatRightsEditActivity chatRightsEditActivity = new ChatRightsEditActivity(j, chat.f1602id, null, null, null, null, 0, true, true, null);
         chatRightsEditActivity.setDelegate(new CryptoBoxesFragment$openAddAdminScreen$fragment$1$1(chatRightsEditActivity, j, this));
         presentFragment(chatRightsEditActivity);
     }
@@ -291,19 +291,19 @@ public final class CryptoBoxesFragment extends WalletAuthBaseFragment implements
         getBinding().getRoot().setRefreshing(z);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         SwipeRefreshLayout root = getBinding().getRoot();
         int i = ThemeDescription.FLAG_BACKGROUND;
         final CryptoBoxesRecycleAdapter cryptoBoxesAdapter = getCryptoBoxesAdapter();
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().recycleCryptoboxes, ThemeDescription.FLAG_BACKGROUND, Theme.key_windowBackgroundWhite), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, Theme.key_actionBarDefaultSelector), new ThemeDescription(root, i, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.cryptobox.CryptoBoxesFragment$$ExternalSyntheticLambda5
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 CryptoBoxesRecycleAdapter.this.notifyDataSetChanged();
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -312,20 +312,20 @@ public final class CryptoBoxesFragment extends WalletAuthBaseFragment implements
     }
 
     private final void setupActionBar() {
-        C3702ActionBar c3702ActionBar = this.actionBar;
-        c3702ActionBar.setBackButtonImage(C3630R.C3632drawable.ic_ab_back);
-        c3702ActionBar.setTitle(getResourceManager().getString(C3630R.string.cryptoboxes_title));
-        c3702ActionBar.setAllowOverlayTitle(true);
+        C3706ActionBar c3706ActionBar = this.actionBar;
+        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.cryptoboxes_title));
+        c3706ActionBar.setAllowOverlayTitle(true);
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
-        ActionBarMenuItem setupActionBar$lambda$4$lambda$3 = c3702ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
+        ActionBarMenuItem setupActionBar$lambda$4$lambda$3 = c3706ActionBar.createMenu().addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
         setupActionBar$lambda$4$lambda$3.disableRipple();
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$4$lambda$3, "setupActionBar$lambda$4$lambda$3");
-        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$4$lambda$3, AndroidUtilities.m102dp(14));
+        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$4$lambda$3, AndroidUtilities.m104dp(14));
         setupActionBar$lambda$4$lambda$3.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
-        c3702ActionBar.setActionBarMenuOnItemClick(new C3702ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.cryptobox.CryptoBoxesFragment$setupActionBar$1$2
-            @Override // org.telegram.p042ui.ActionBar.C3702ActionBar.ActionBarMenuOnItemClick
+        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.cryptobox.CryptoBoxesFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 CryptoBoxesPresenter presenter;
                 if (i == -1) {
@@ -384,9 +384,9 @@ public final class CryptoBoxesFragment extends WalletAuthBaseFragment implements
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
         int id = view.getId();
-        if (id == C3630R.C3633id.button_action) {
+        if (id == C3634R.C3637id.button_action) {
             this$0.getPresenter().onCreateCryptoBoxClick();
-        } else if (id == C3630R.C3633id.image_order) {
+        } else if (id == C3634R.C3637id.image_order) {
             this$0.getPresenter().onSelectOrderClick();
         }
     }
@@ -402,7 +402,7 @@ public final class CryptoBoxesFragment extends WalletAuthBaseFragment implements
         CryptoBoxesRecycleAdapter cryptoBoxesAdapter = getCryptoBoxesAdapter();
         GlobalStateProvider globalStateProvider = cryptoBoxesAdapter.getGlobalStateProvider();
         globalStateProvider.setWhiteBackground(true);
-        globalStateProvider.setCustomElevation(recyclerView.getResources().getDimension(C3630R.dimen.wallet_card_elevation));
+        globalStateProvider.setCustomElevation(recyclerView.getResources().getDimension(C3634R.dimen.wallet_card_elevation));
         globalStateProvider.setOnRetryButtonClickAction(new Function0<Unit>() { // from class: com.iMe.ui.wallet.cryptobox.CryptoBoxesFragment$setupRecycleView$1$1$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -430,7 +430,7 @@ public final class CryptoBoxesFragment extends WalletAuthBaseFragment implements
 
     /* compiled from: CryptoBoxesFragment.kt */
     /* renamed from: com.iMe.ui.wallet.cryptobox.CryptoBoxesFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -45,6 +45,8 @@
 
 .field private notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
+.field private onForegroundOpen:Ljava/lang/Runnable;
+
 .field private onHeightUpdateListener:Lorg/telegram/ui/Components/PopupSwipeBackLayout$IntCallback;
 
 .field private onSwipeBackProgressListeners:Ljava/util/ArrayList;
@@ -64,6 +66,8 @@
 .field overrideHeightIndex:Landroid/util/SparseIntArray;
 
 .field resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+.field public stickToRight:Z
 
 .field private toProgress:F
 
@@ -229,13 +233,13 @@
     return p0
 .end method
 
-.method static synthetic access$1002(Lorg/telegram/ui/Components/PopupSwipeBackLayout;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
+.method static synthetic access$1000(Lorg/telegram/ui/Components/PopupSwipeBackLayout;)Ljava/lang/Runnable;
     .locals 0
 
     .line 34
-    iput-object p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->foregroundAnimator:Landroid/animation/ValueAnimator;
+    iget-object p0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->onForegroundOpen:Ljava/lang/Runnable;
 
-    return-object p1
+    return-object p0
 .end method
 
 .method static synthetic access$102(Lorg/telegram/ui/Components/PopupSwipeBackLayout;Z)Z
@@ -245,6 +249,15 @@
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->isSwipeDisallowed:Z
 
     return p1
+.end method
+
+.method static synthetic access$1102(Lorg/telegram/ui/Components/PopupSwipeBackLayout;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
+    .locals 0
+
+    .line 34
+    iput-object p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->foregroundAnimator:Landroid/animation/ValueAnimator;
+
+    return-object p1
 .end method
 
 .method static synthetic access$200(Lorg/telegram/ui/Components/PopupSwipeBackLayout;)Z
@@ -411,7 +424,7 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 319
+    .line 323
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->start()V
 
     return-void
@@ -422,10 +435,10 @@
 
     const/4 v0, 0x0
 
-    .line 326
+    .line 335
     iput-boolean v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->isProcessingSwipe:Z
 
-    .line 327
+    .line 336
     iput-boolean v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->isSwipeDisallowed:Z
 
     return-void
@@ -438,7 +451,7 @@
 
     move v1, v0
 
-    .line 452
+    .line 478
     :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
@@ -446,7 +459,7 @@
 
     if-ge v1, v2, :cond_5
 
-    .line 453
+    .line 479
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -455,7 +468,7 @@
 
     if-nez v1, :cond_1
 
-    .line 456
+    .line 482
     iget v4, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->transitionProgress:F
 
     const/high16 v5, 0x3f800000    # 1.0f
@@ -470,10 +483,10 @@
 
     if-eq v4, v3, :cond_0
 
-    .line 457
+    .line 483
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 458
+    .line 484
     :cond_0
     iget v3, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->transitionProgress:F
 
@@ -487,18 +500,18 @@
 
     if-eqz v3, :cond_4
 
-    .line 459
+    .line 485
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_1
 
-    .line 460
+    .line 486
     :cond_1
     iget v4, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->currentForegroundIndex:I
 
     if-ne v1, v4, :cond_3
 
-    .line 461
+    .line 487
     iget v4, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->transitionProgress:F
 
     const/4 v5, 0x0
@@ -513,10 +526,10 @@
 
     if-eq v4, v3, :cond_2
 
-    .line 462
+    .line 488
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 463
+    .line 489
     :cond_2
     iget v3, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->transitionProgress:F
 
@@ -530,12 +543,12 @@
 
     if-eqz v3, :cond_4
 
-    .line 464
+    .line 490
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_1
 
-    .line 466
+    .line 492
     :cond_3
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
@@ -552,12 +565,12 @@
 .method private isDisallowedView(Landroid/view/MotionEvent;Landroid/view/View;)Z
     .locals 4
 
-    .line 435
+    .line 461
     iget-object v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->hitRect:Landroid/graphics/Rect;
 
     invoke-virtual {p2, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    .line 436
+    .line 462
     iget-object v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->hitRect:Landroid/graphics/Rect;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -595,7 +608,7 @@
     :cond_0
     return v1
 
-    .line 438
+    .line 464
     :cond_1
     instance-of v0, p2, Landroid/view/ViewGroup;
 
@@ -603,12 +616,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 439
+    .line 465
     check-cast p2, Landroid/view/ViewGroup;
 
     move v0, v2
 
-    .line 440
+    .line 466
     :goto_0
     invoke-virtual {p2}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -616,7 +629,7 @@
 
     if-ge v0, v3, :cond_3
 
-    .line 441
+    .line 467
     invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
@@ -663,7 +676,7 @@
 .method private synthetic lambda$setNewForegroundHeight$1(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 491
+    .line 517
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -676,7 +689,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->overrideForegroundHeight:F
 
-    .line 492
+    .line 518
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->invalidateTransforms()V
 
     return-void
@@ -790,10 +803,10 @@
 .method public addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
     .locals 0
 
-    .line 375
+    .line 397
     invoke-super {p0, p1, p2, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 376
+    .line 398
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->invalidateTransforms()V
 
     return-void
@@ -804,7 +817,7 @@
 
     const/4 v0, 0x1
 
-    .line 343
+    .line 352
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->closeForeground(Z)V
 
     return-void
@@ -813,7 +826,7 @@
 .method public closeForeground(Z)V
     .locals 1
 
-    .line 347
+    .line 356
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->isAnimationInProgress:Z
 
     if-eqz v0, :cond_0
@@ -827,18 +840,18 @@
 
     const/4 p1, -0x1
 
-    .line 351
+    .line 360
     iput p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->currentForegroundIndex:I
 
-    .line 352
+    .line 361
     iput v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->transitionProgress:F
 
-    .line 353
+    .line 362
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->invalidateTransforms()V
 
     return-void
 
-    .line 356
+    .line 365
     :cond_1
     invoke-direct {p0, v0, v0}, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->animateToState(FF)V
 
@@ -848,7 +861,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 381
+    .line 403
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result v0
@@ -860,12 +873,12 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 384
+    .line 406
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 385
+    .line 407
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
     move-result v1
@@ -884,7 +897,7 @@
 
     int-to-float v3, v3
 
-    .line 387
+    .line 409
     iget v4, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->currentForegroundIndex:I
 
     const/4 v5, -0x1
@@ -901,7 +914,7 @@
 
     goto :goto_1
 
-    .line 392
+    .line 414
     :cond_1
     iget v4, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->currentForegroundIndex:I
 
@@ -909,21 +922,21 @@
 
     move-result-object v4
 
-    .line 393
+    .line 415
     invoke-virtual {v4}, Landroid/view/View;->getTop()I
 
     move-result v5
 
     int-to-float v5, v5
 
-    .line 394
+    .line 416
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v7
 
     int-to-float v7, v7
 
-    .line 395
+    .line 417
     iget v8, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->overrideForegroundHeight:F
 
     cmpl-float v9, v8, v6
@@ -939,7 +952,7 @@
 
     int-to-float v8, v8
 
-    .line 396
+    .line 418
     :goto_0
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -967,7 +980,7 @@
 
     goto :goto_1
 
-    .line 401
+    .line 423
     :cond_3
     iget v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->transitionProgress:F
 
@@ -975,47 +988,77 @@
 
     move-result v1
 
-    .line 402
+    .line 424
     iget v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->transitionProgress:F
 
     invoke-static {v2, v7, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v2
 
-    .line 403
+    .line 425
     iget v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->transitionProgress:F
 
     invoke-static {v3, v8, v0}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v3
 
-    .line 407
+    .line 429
     :cond_4
     :goto_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v0
 
-    .line 408
+    .line 430
     iget-object v4, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->mPath:Landroid/graphics/Path;
 
     invoke-virtual {v4}, Landroid/graphics/Path;->rewind()V
 
     const/4 v4, 0x6
 
-    .line 409
+    .line 431
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    .line 410
+    .line 432
+    iget-boolean v5, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->stickToRight:Z
+
+    if-eqz v5, :cond_5
+
+    .line 433
+    iget-object v5, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->mRect:Landroid/graphics/RectF;
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
+
+    move-result v6
+
+    int-to-float v6, v6
+
+    sub-float/2addr v6, v2
+
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    add-float/2addr v3, v1
+
+    invoke-virtual {v5, v6, v1, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
+
+    goto :goto_2
+
+    .line 435
+    :cond_5
     iget-object v5, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->mRect:Landroid/graphics/RectF;
 
     add-float/2addr v3, v1
 
     invoke-virtual {v5, v6, v1, v2, v3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 411
+    .line 437
+    :goto_2
     iget-object v1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->mPath:Landroid/graphics/Path;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->mRect:Landroid/graphics/RectF;
@@ -1026,21 +1069,21 @@
 
     invoke-virtual {v1, v2, v3, v3, v4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 412
+    .line 438
     iget-object v1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->mPath:Landroid/graphics/Path;
 
     invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 413
+    .line 439
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 414
+    .line 440
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 416
+    .line 442
     iget-object p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->onHeightUpdateListener:Lorg/telegram/ui/Components/PopupSwipeBackLayout$IntCallback;
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_6
 
     iget p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->lastHeightReported:I
 
@@ -1054,9 +1097,9 @@
 
     cmpl-float p1, p1, v0
 
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_6
 
-    .line 417
+    .line 443
     iget-object p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->onHeightUpdateListener:Lorg/telegram/ui/Components/PopupSwipeBackLayout$IntCallback;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->mRect:Landroid/graphics/RectF;
@@ -1071,7 +1114,7 @@
 
     invoke-interface {p1, v0}, Lorg/telegram/ui/Components/PopupSwipeBackLayout$IntCallback;->run(I)V
 
-    :cond_5
+    :cond_6
     return-void
 .end method
 
@@ -1717,91 +1760,141 @@
 .end method
 
 .method protected onLayout(ZIIII)V
-    .locals 3
+    .locals 6
 
     const/4 p1, 0x0
 
-    move p2, p1
+    move v0, p1
 
-    .line 362
+    .line 376
     :goto_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
-    move-result p4
+    move-result v1
 
-    if-ge p2, p4, :cond_2
+    if-ge v0, v1, :cond_4
 
-    .line 363
-    invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
+    .line 377
+    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object p4
+    move-result-object v1
 
-    .line 364
-    invoke-virtual {p4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    .line 378
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v0
+    move-result-object v2
 
-    instance-of v0, v0, Landroid/widget/FrameLayout$LayoutParams;
+    instance-of v2, v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    if-eqz v0, :cond_0
+    if-eqz v2, :cond_0
 
-    invoke-virtual {p4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v0
+    move-result-object v2
 
-    check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
+    check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    iget v0, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+    iget v2, v2, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    const/16 v1, 0x50
+    const/16 v3, 0x50
 
-    if-ne v0, v1, :cond_0
+    if-ne v2, v3, :cond_0
 
-    const/4 v0, 0x1
+    const/4 v2, 0x1
 
     goto :goto_1
 
     :cond_0
-    move v0, p1
+    move v2, p1
 
     :goto_1
-    if-eqz v0, :cond_1
+    if-eqz v2, :cond_2
 
-    sub-int v0, p5, p3
+    .line 380
+    iget-boolean v2, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->stickToRight:Z
 
-    .line 366
-    invoke-virtual {p4}, Landroid/view/View;->getMeasuredHeight()I
+    if-eqz v2, :cond_1
 
-    move-result v1
+    sub-int v2, p4, p2
 
-    sub-int v1, v0, v1
+    .line 381
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
 
-    invoke-virtual {p4}, Landroid/view/View;->getMeasuredWidth()I
+    move-result v3
 
-    move-result v2
+    sub-int v3, v2, v3
 
-    invoke-virtual {p4, p1, v1, v2, v0}, Landroid/view/View;->layout(IIII)V
+    sub-int v4, p5, p3
+
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v5
+
+    sub-int v5, v4, v5
+
+    invoke-virtual {v1, v3, v5, v2, v4}, Landroid/view/View;->layout(IIII)V
 
     goto :goto_2
 
-    .line 368
     :cond_1
-    invoke-virtual {p4}, Landroid/view/View;->getMeasuredWidth()I
+    sub-int v2, p5, p3
 
-    move-result v0
+    .line 383
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
 
-    invoke-virtual {p4}, Landroid/view/View;->getMeasuredHeight()I
+    move-result v3
 
-    move-result v1
+    sub-int v3, v2, v3
 
-    invoke-virtual {p4, p1, p1, v0, v1}, Landroid/view/View;->layout(IIII)V
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v4
+
+    invoke-virtual {v1, p1, v3, v4, v2}, Landroid/view/View;->layout(IIII)V
+
+    goto :goto_2
+
+    .line 386
+    :cond_2
+    iget-boolean v2, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->stickToRight:Z
+
+    if-eqz v2, :cond_3
+
+    sub-int v2, p4, p2
+
+    .line 387
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v3
+
+    sub-int v3, v2, v3
+
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v4
+
+    invoke-virtual {v1, v3, p1, v2, v4}, Landroid/view/View;->layout(IIII)V
+
+    goto :goto_2
+
+    .line 389
+    :cond_3
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v3
+
+    invoke-virtual {v1, p1, p1, v2, v3}, Landroid/view/View;->layout(IIII)V
 
     :goto_2
-    add-int/lit8 p2, p2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    :cond_2
+    :cond_4
     return-void
 .end method
 
@@ -1820,18 +1913,18 @@
 .method public openForeground(I)V
     .locals 1
 
-    .line 334
+    .line 343
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->isAnimationInProgress:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 337
+    .line 346
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->currentForegroundIndex:I
 
-    .line 338
+    .line 347
     iget-object v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->overrideHeightIndex:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1}, Landroid/util/SparseIntArray;->get(I)I
@@ -1846,7 +1939,7 @@
 
     const/4 v0, 0x0
 
-    .line 339
+    .line 348
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->animateToState(FF)V
 
     return-void
@@ -1855,7 +1948,7 @@
 .method public setForegroundColor(I)V
     .locals 0
 
-    .line 511
+    .line 537
     iput p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->foregroundColor:I
 
     return-void
@@ -1864,12 +1957,12 @@
 .method public setNewForegroundHeight(IIZ)V
     .locals 2
 
-    .line 472
+    .line 498
     iget-object v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->overrideHeightIndex:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 473
+    .line 499
     iget v0, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->currentForegroundIndex:I
 
     if-eq p1, v0, :cond_0
@@ -1879,7 +1972,7 @@
     :cond_0
     if-ltz v0, :cond_5
 
-    .line 476
+    .line 502
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result p1
@@ -1888,31 +1981,31 @@
 
     goto :goto_1
 
-    .line 479
+    .line 505
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->foregroundAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p1, :cond_2
 
-    .line 480
+    .line 506
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 p1, 0x0
 
-    .line 481
+    .line 507
     iput-object p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->foregroundAnimator:Landroid/animation/ValueAnimator;
 
     :cond_2
     if-eqz p3, :cond_4
 
-    .line 484
+    .line 510
     iget p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->currentForegroundIndex:I
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object p1
 
-    .line 485
+    .line 511
     iget p3, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->overrideForegroundHeight:F
 
     const/4 v0, 0x0
@@ -1945,7 +2038,7 @@
 
     aput p1, p2, p3
 
-    .line 488
+    .line 514
     invoke-static {p2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
@@ -1956,32 +2049,32 @@
 
     move-result-object p1
 
-    .line 489
+    .line 515
     sget-object p2, Lorg/telegram/ui/Components/Easings;->easeInOutQuad:Landroid/view/animation/Interpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 490
+    .line 516
     new-instance p2, Lorg/telegram/ui/Components/PopupSwipeBackLayout$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/PopupSwipeBackLayout$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/PopupSwipeBackLayout;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 494
+    .line 520
     iput-boolean p3, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->isAnimationInProgress:Z
 
-    .line 495
+    .line 521
     new-instance p2, Lorg/telegram/ui/Components/PopupSwipeBackLayout$3;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/PopupSwipeBackLayout$3;-><init>(Lorg/telegram/ui/Components/PopupSwipeBackLayout;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 502
+    .line 528
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 503
+    .line 529
     iput-object p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->foregroundAnimator:Landroid/animation/ValueAnimator;
 
     goto :goto_1
@@ -1989,10 +2082,10 @@
     :cond_4
     int-to-float p1, p2
 
-    .line 505
+    .line 531
     iput p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->overrideForegroundHeight:F
 
-    .line 506
+    .line 532
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->invalidateTransforms()V
 
     :cond_5
@@ -2000,11 +2093,29 @@
     return-void
 .end method
 
+.method public setOnForegroundOpenFinished(Ljava/lang/Runnable;)V
+    .locals 0
+
+    .line 328
+    iput-object p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->onForegroundOpen:Ljava/lang/Runnable;
+
+    return-void
+.end method
+
 .method public setOnHeightUpdateListener(Lorg/telegram/ui/Components/PopupSwipeBackLayout$IntCallback;)V
     .locals 0
 
-    .line 426
+    .line 452
     iput-object p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->onHeightUpdateListener:Lorg/telegram/ui/Components/PopupSwipeBackLayout$IntCallback;
+
+    return-void
+.end method
+
+.method public setStickToRight(Z)V
+    .locals 0
+
+    .line 371
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->stickToRight:Z
 
     return-void
 .end method

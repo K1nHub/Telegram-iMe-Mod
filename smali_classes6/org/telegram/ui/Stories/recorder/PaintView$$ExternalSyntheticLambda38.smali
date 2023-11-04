@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-.field public final synthetic f$1:I
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;I)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda38;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
-
-    iput p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda38;->f$1:I
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda38;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    iget v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda38;->f$1:I
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$1wo-xGT50a-p0JJhUCxE0g_0ur4(Lorg/telegram/ui/Stories/recorder/PaintView;I)V
+    invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$LlHbwoMrI8-Kt_mxGgTrjzXOuuI(Lorg/telegram/ui/Stories/recorder/PaintView;)V
 
     return-void
 .end method

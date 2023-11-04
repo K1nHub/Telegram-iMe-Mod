@@ -7,7 +7,7 @@
 .method public constructor <init>(Lkotlinx/serialization/descriptors/SerialDescriptor;Lkotlinx/serialization/descriptors/SerialDescriptor;)V
     .locals 2
 
-    const-string v0, "keyDesc"
+    const-string/jumbo v0, "keyDesc"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

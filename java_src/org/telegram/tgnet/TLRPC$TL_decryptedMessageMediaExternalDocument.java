@@ -1,17 +1,16 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_decryptedMessageMediaExternalDocument extends TLRPC$DecryptedMessageMedia {
-    public static int constructor = -90853155;
     public TLRPC$PhotoSize thumb;
 
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
-        this.f1603id = abstractSerializedData.readInt64(z);
+        this.f1605id = abstractSerializedData.readInt64(z);
         this.access_hash = abstractSerializedData.readInt64(z);
         this.date = abstractSerializedData.readInt32(z);
         this.mime_type = abstractSerializedData.readString(z);
         this.size = abstractSerializedData.readInt32(z);
-        this.thumb = TLRPC$PhotoSize.TLdeserialize(0L, this.f1603id, 0L, abstractSerializedData, abstractSerializedData.readInt32(z), z);
+        this.thumb = TLRPC$PhotoSize.TLdeserialize(0L, this.f1605id, 0L, abstractSerializedData, abstractSerializedData.readInt32(z), z);
         this.dc_id = abstractSerializedData.readInt32(z);
         int readInt32 = abstractSerializedData.readInt32(z);
         if (readInt32 != 481674261) {
@@ -32,8 +31,8 @@ public class TLRPC$TL_decryptedMessageMediaExternalDocument extends TLRPC$Decryp
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
-        abstractSerializedData.writeInt64(this.f1603id);
+        abstractSerializedData.writeInt32(-90853155);
+        abstractSerializedData.writeInt64(this.f1605id);
         abstractSerializedData.writeInt64(this.access_hash);
         abstractSerializedData.writeInt32(this.date);
         abstractSerializedData.writeString(this.mime_type);

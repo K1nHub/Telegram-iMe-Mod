@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x65c27393
-
-
 # instance fields
 .field public hash:J
 
@@ -22,19 +18,13 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 1
 
-    .line 27661
+    .line 27942
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$account_Themes;-><init>()V
 
-    .line 27665
+    .line 27946
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -49,14 +39,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 27668
+    .line 27949
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_themes;->hash:J
 
-    .line 27669
+    .line 27950
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -71,7 +61,7 @@
 
     return-void
 
-    .line 27672
+    .line 27953
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -95,7 +85,7 @@
 
     throw p1
 
-    .line 27676
+    .line 27957
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -104,7 +94,7 @@
     :goto_0
     if-ge v1, v0, :cond_3
 
-    .line 27678
+    .line 27959
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v2
@@ -117,7 +107,7 @@
 
     return-void
 
-    .line 27682
+    .line 27963
     :cond_2
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_account_themes;->themes:Ljava/util/ArrayList;
 
@@ -134,29 +124,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 27687
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_themes;->constructor:I
+    const v0, -0x65c27393
 
+    .line 27968
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 27688
+    .line 27969
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_themes;->hash:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
     const v0, 0x1cb5c415
 
-    .line 27689
+    .line 27970
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 27690
+    .line 27971
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_themes;->themes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 27691
+    .line 27972
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -164,7 +154,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 27693
+    .line 27974
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_account_themes;->themes:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

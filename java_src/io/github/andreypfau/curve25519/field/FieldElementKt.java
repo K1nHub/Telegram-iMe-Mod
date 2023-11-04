@@ -4,5 +4,5 @@ import kotlin.ULong;
 /* compiled from: FieldElement.kt */
 /* loaded from: classes4.dex */
 public final class FieldElementKt {
-    private static final long LOW_51_BIT_MASK = ULong.m1989constructorimpl(ULong.m1989constructorimpl(2251799813685248L) - 1);
+    private static final long LOW_51_BIT_MASK = ULong.m1994constructorimpl(ULong.m1994constructorimpl(2251799813685248L) - 1);
 }

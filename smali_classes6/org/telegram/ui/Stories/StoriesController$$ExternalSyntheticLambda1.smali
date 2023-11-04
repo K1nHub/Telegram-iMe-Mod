@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Stories/StoriesController;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$PaENQwx6Ap5TFojWoQL2xSOCCaE(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$FgKbN6Y3jb2f8aaMDk7Avfzit8Y(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;)V
 
     return-void
 .end method

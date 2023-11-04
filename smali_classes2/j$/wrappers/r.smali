@@ -69,7 +69,7 @@
 
     move-result-object p1
 
-    invoke-interface {v0, p1}, Lj$/util/function/BiConsumer;->b(Lj$/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
+    invoke-interface {v0, p1}, Lj$/util/function/BiConsumer;->andThen(Lj$/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
 
     move-result-object p1
 

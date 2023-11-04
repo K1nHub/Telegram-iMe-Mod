@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 61534
+    .line 62318
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -16,41 +16,51 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$InputStorePaymentPurpose;
     .locals 1
 
-    const v0, -0x598ae19a
-
-    if-eq p1, v0, :cond_1
-
-    const v0, 0x616f7fe8
-
-    if-eq p1, v0, :cond_0
+    sparse-switch p1, :sswitch_data_0
 
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 61543
-    :cond_0
+    .line 62333
+    :sswitch_0
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumGiveaway;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumGiveaway;-><init>()V
+
+    goto :goto_0
+
+    .line 62324
+    :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentGiftPremium;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentGiftPremium;-><init>()V
 
     goto :goto_0
 
-    .line 61540
-    :cond_1
+    .line 62330
+    :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumSubscription;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumSubscription;-><init>()V
 
-    :goto_0
-    if-nez v0, :cond_3
+    goto :goto_0
 
-    if-nez p2, :cond_2
+    .line 62327
+    :sswitch_3
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumGiftCode;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_inputStorePaymentPremiumGiftCode;-><init>()V
+
+    :goto_0
+    if-nez v0, :cond_1
+
+    if-nez p2, :cond_0
 
     goto :goto_1
 
-    .line 61547
-    :cond_2
+    .line 62337
+    :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
     const/4 p2, 0x1
@@ -75,13 +85,23 @@
 
     throw p0
 
-    :cond_3
+    :cond_1
     :goto_1
-    if-eqz v0, :cond_4
+    if-eqz v0, :cond_2
 
-    .line 61550
+    .line 62340
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
-    :cond_4
+    :cond_2
     return-object v0
+
+    nop
+
+    :sswitch_data_0
+    .sparse-switch
+        -0x5c7fa0c1 -> :sswitch_3
+        -0x598ae19a -> :sswitch_2
+        0x616f7fe8 -> :sswitch_1
+        0x7c9375e6 -> :sswitch_0
+    .end sparse-switch
 .end method

@@ -3,9 +3,9 @@ package org.ton.lite.api.liteserver;
 import kotlin.jvm.internal.Intrinsics;
 import org.ton.api.tonnode.TonNodeBlockIdExt;
 import org.ton.api.tonnode.TonNodeZeroStateIdExt;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LiteServerMasterchainInfo.kt */
 /* loaded from: classes6.dex */
@@ -16,13 +16,13 @@ public final class LiteServerMasterchainInfoTlbConstructor extends TlConstructor
         super("liteServer.masterchainInfo last:tonNode.blockIdExt state_root_hash:int256 init:tonNode.zeroStateIdExt = liteServer.MasterchainInfo", null, 2, null);
     }
 
-    @Override // org.ton.p044tl.TlDecoder
+    @Override // org.ton.p045tl.TlDecoder
     public LiteServerMasterchainInfo decode(TlReader reader) {
         Intrinsics.checkNotNullParameter(reader, "reader");
         return new LiteServerMasterchainInfo(TonNodeBlockIdExt.Companion.decode(reader), reader.readRaw(32), TonNodeZeroStateIdExt.Companion.decode(reader));
     }
 
-    @Override // org.ton.p044tl.TlEncoder
+    @Override // org.ton.p045tl.TlEncoder
     public void encode(TlWriter writer, LiteServerMasterchainInfo value) {
         Intrinsics.checkNotNullParameter(writer, "writer");
         Intrinsics.checkNotNullParameter(value, "value");

@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.extractor.SeekMap;
 /* loaded from: classes.dex */
 public class ConstantBitrateSeekMap implements SeekMap {
@@ -24,7 +24,7 @@ public class ConstantBitrateSeekMap implements SeekMap {
         this.allowSeeksIfLengthUnknown = z;
         if (j == -1) {
             this.dataSize = -1L;
-            this.durationUs = C0479C.TIME_UNSET;
+            this.durationUs = C0485C.TIME_UNSET;
             return;
         }
         this.dataSize = j - j2;

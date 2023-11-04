@@ -3,21 +3,11 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x7780bcb4
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 2954
+    .line 2601
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$GroupCall;-><init>()V
 
     return-void
@@ -28,21 +18,21 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 2959
+    .line 2606
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->id:J
 
-    .line 2960
+    .line 2607
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->access_hash:J
 
-    .line 2961
+    .line 2608
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -55,22 +45,22 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 2965
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_groupCallDiscarded;->constructor:I
+    const v0, 0x7780bcb4
 
+    .line 2612
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2966
+    .line 2613
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 2967
+    .line 2614
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->access_hash:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 2968
+    .line 2615
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$GroupCall;->duration:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

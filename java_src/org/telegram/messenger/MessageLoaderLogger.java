@@ -39,6 +39,6 @@ public class MessageLoaderLogger {
 
     public void finish() {
         long currentTimeMillis = System.currentTimeMillis() - this.startTime;
-        FileLog.m100d("MessageLoaderLogger dialogId=" + this.dialogId + " index=" + this.loadIndex + " count=" + this.count + "  moveToStorageQueueTime=" + this.moveToStorageQueueTime + " getFromDatabaseTime=" + this.getFromDatabaseTime + " moveToStageQueueTime=" + this.moveToStageQueueTime + " stageQueueProccessing=" + this.stageQueueProccessing + " wasReload=" + this.reload + " totalTime=" + currentTimeMillis);
+        FileLog.m102d("MessageLoaderLogger dialogId=" + this.dialogId + " index=" + this.loadIndex + " count=" + this.count + "  moveToStorageQueueTime=" + this.moveToStorageQueueTime + " getFromDatabaseTime=" + this.getFromDatabaseTime + " moveToStageQueueTime=" + this.moveToStageQueueTime + " stageQueueProccessing=" + this.stageQueueProccessing + " wasReload=" + this.reload + " totalTime=" + currentTimeMillis);
     }
 }

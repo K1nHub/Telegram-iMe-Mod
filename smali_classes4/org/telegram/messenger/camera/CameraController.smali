@@ -239,17 +239,17 @@
 .method public constructor <init>()V
     .locals 8
 
-    .line 115
+    .line 116
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 88
+    .line 89
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->onFinishCameraInitRunnables:Ljava/util/ArrayList;
 
-    .line 116
+    .line 117
     new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
 
     sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
@@ -287,7 +287,7 @@
         }
     .end annotation
 
-    .line 880
+    .line 885
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -296,7 +296,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 881
+    .line 886
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -305,19 +305,19 @@
 
     invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 882
+    .line 887
     invoke-virtual {p3}, Lorg/telegram/messenger/camera/Size;->getWidth()I
 
     move-result v2
 
-    .line 883
+    .line 888
     invoke-virtual {p3}, Lorg/telegram/messenger/camera/Size;->getHeight()I
 
     move-result p3
 
     const/4 v3, 0x0
 
-    .line 884
+    .line 889
     :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -325,7 +325,7 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 885
+    .line 890
     invoke-interface {p0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -334,7 +334,7 @@
 
     if-eqz p4, :cond_0
 
-    .line 886
+    .line 891
     invoke-virtual {v4}, Lorg/telegram/messenger/camera/Size;->getHeight()I
 
     move-result v5
@@ -349,7 +349,7 @@
 
     goto :goto_1
 
-    .line 889
+    .line 894
     :cond_0
     invoke-virtual {v4}, Lorg/telegram/messenger/camera/Size;->getHeight()I
 
@@ -377,12 +377,12 @@
 
     if-lt v5, p2, :cond_1
 
-    .line 890
+    .line 895
     invoke-interface {v0, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 891
+    .line 896
     :cond_1
     invoke-virtual {v4}, Lorg/telegram/messenger/camera/Size;->getHeight()I
 
@@ -400,7 +400,7 @@
 
     if-gt v5, v6, :cond_2
 
-    .line 892
+    .line 897
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_2
@@ -409,7 +409,7 @@
 
     goto :goto_0
 
-    .line 895
+    .line 900
     :cond_3
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -417,7 +417,7 @@
 
     if-lez p1, :cond_4
 
-    .line 896
+    .line 901
     new-instance p0, Lorg/telegram/messenger/camera/CameraController$CompareSizesByArea;
 
     invoke-direct {p0}, Lorg/telegram/messenger/camera/CameraController$CompareSizesByArea;-><init>()V
@@ -430,7 +430,7 @@
 
     return-object p0
 
-    .line 897
+    .line 902
     :cond_4
     invoke-interface {v1}, Ljava/util/List;->size()I
 
@@ -438,7 +438,7 @@
 
     if-lez p1, :cond_5
 
-    .line 898
+    .line 903
     new-instance p0, Lorg/telegram/messenger/camera/CameraController$CompareSizesByArea;
 
     invoke-direct {p0}, Lorg/telegram/messenger/camera/CameraController$CompareSizesByArea;-><init>()V
@@ -451,7 +451,7 @@
 
     return-object p0
 
-    .line 900
+    .line 905
     :cond_5
     new-instance p1, Lorg/telegram/messenger/camera/CameraController$CompareSizesByArea;
 
@@ -473,7 +473,7 @@
 
     const-wide/16 v1, 0x0
 
-    .line 734
+    .line 739
     :try_start_0
     new-instance v3, Landroid/media/MediaMetadataRetriever;
 
@@ -482,7 +482,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_2
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 735
+    .line 740
     :try_start_1
     iget-object v4, p0, Lorg/telegram/messenger/camera/CameraController;->recordedFile:Ljava/lang/String;
 
@@ -490,14 +490,14 @@
 
     const/16 v4, 0x9
 
-    .line 736
+    .line 741
     invoke-virtual {v3, v4}, Landroid/media/MediaMetadataRetriever;->extractMetadata(I)Ljava/lang/String;
 
     move-result-object v4
 
     if-eqz v4, :cond_0
 
-    .line 738
+    .line 743
     invoke-static {v4}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v1
@@ -505,7 +505,7 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_6
 
-    .line 745
+    .line 750
     :cond_0
     :try_start_2
     invoke-virtual {v3}, Landroid/media/MediaMetadataRetriever;->release()V
@@ -534,7 +534,7 @@
 
     move-object v3, v0
 
-    .line 741
+    .line 746
     :goto_0
     :try_start_3
     invoke-static {v4}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -543,7 +543,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 745
+    .line 750
     :try_start_4
     invoke-virtual {v3}, Landroid/media/MediaMetadataRetriever;->release()V
     :try_end_4
@@ -554,7 +554,7 @@
     :catch_3
     move-exception v3
 
-    .line 748
+    .line 753
     :goto_1
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -564,7 +564,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 754
+    .line 759
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraController;->recordedFile:Ljava/lang/String;
 
     const/4 v1, 0x1
@@ -573,12 +573,12 @@
 
     move-result-object p1
 
-    .line 755
+    .line 760
     iget-boolean v1, p0, Lorg/telegram/messenger/camera/CameraController;->mirrorRecorderVideo:Z
 
     if-eqz v1, :cond_2
 
-    .line 756
+    .line 761
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v1
@@ -593,7 +593,7 @@
 
     move-result-object v1
 
-    .line 757
+    .line 762
     new-instance v2, Landroid/graphics/Canvas;
 
     invoke-direct {v2, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
@@ -602,7 +602,7 @@
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 758
+    .line 763
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v5
@@ -623,15 +623,15 @@
 
     const/4 v3, 0x0
 
-    .line 759
+    .line 764
     invoke-virtual {v2, p1, v3, v3, v0}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 760
+    .line 765
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
     move-object p1, v1
 
-    .line 763
+    .line 768
     :cond_2
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -655,7 +655,7 @@
 
     move-result-object v1
 
-    .line 764
+    .line 769
     new-instance v2, Ljava/io/File;
 
     const/4 v3, 0x4
@@ -666,7 +666,7 @@
 
     invoke-direct {v2, v3, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 767
+    .line 772
     :try_start_5
     new-instance v1, Ljava/io/FileOutputStream;
 
@@ -674,7 +674,7 @@
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
-    .line 768
+    .line 773
     :try_start_6
     sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -684,7 +684,7 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_1
 
-    .line 774
+    .line 779
     :goto_3
     :try_start_7
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
@@ -707,7 +707,7 @@
 
     move-object v0, v10
 
-    .line 770
+    .line 775
     :goto_4
     :try_start_8
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -732,13 +732,13 @@
 
     if-eqz v1, :cond_4
 
-    .line 774
+    .line 779
     :try_start_9
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_5
 
-    .line 777
+    .line 782
     :catchall_5
     :cond_4
     throw p1
@@ -748,11 +748,11 @@
 
     move-object v7, v6
 
-    .line 781
+    .line 786
     :goto_6
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
 
-    .line 784
+    .line 789
     new-instance p1, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda7;
 
     move-object v4, p1
@@ -773,7 +773,7 @@
     :goto_7
     if-eqz v0, :cond_6
 
-    .line 745
+    .line 750
     :try_start_a
     invoke-virtual {v0}, Landroid/media/MediaMetadataRetriever;->release()V
     :try_end_a
@@ -784,10 +784,10 @@
     :catch_4
     move-exception v0
 
-    .line 748
+    .line 753
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 750
+    .line 755
     :cond_6
     :goto_8
     throw p1
@@ -796,30 +796,30 @@
 .method public static getInstance()Lorg/telegram/messenger/camera/CameraController;
     .locals 2
 
-    .line 103
+    .line 104
     sget-object v0, Lorg/telegram/messenger/camera/CameraController;->Instance:Lorg/telegram/messenger/camera/CameraController;
 
     if-nez v0, :cond_1
 
-    .line 105
+    .line 106
     const-class v1, Lorg/telegram/messenger/camera/CameraController;
 
     monitor-enter v1
 
-    .line 106
+    .line 107
     :try_start_0
     sget-object v0, Lorg/telegram/messenger/camera/CameraController;->Instance:Lorg/telegram/messenger/camera/CameraController;
 
     if-nez v0, :cond_0
 
-    .line 108
+    .line 109
     new-instance v0, Lorg/telegram/messenger/camera/CameraController;
 
     invoke-direct {v0}, Lorg/telegram/messenger/camera/CameraController;-><init>()V
 
     sput-object v0, Lorg/telegram/messenger/camera/CameraController;->Instance:Lorg/telegram/messenger/camera/CameraController;
 
-    .line 110
+    .line 111
     :cond_0
     monitor-exit v1
 
@@ -856,7 +856,7 @@
     :goto_0
     add-int/lit8 v3, v2, 0x3
 
-    .line 337
+    .line 338
     array-length v4, p0
 
     const/4 v5, 0x4
@@ -879,7 +879,7 @@
 
     if-ne v2, v4, :cond_8
 
-    .line 338
+    .line 339
     aget-byte v2, p0, v3
 
     and-int/2addr v2, v4
@@ -910,7 +910,7 @@
 
     goto :goto_3
 
-    .line 352
+    .line 353
     :cond_3
     invoke-static {p0, v3, v8, v1}, Lorg/telegram/messenger/camera/CameraController;->pack([BIIZ)I
 
@@ -920,7 +920,7 @@
 
     add-int v9, v3, v4
 
-    .line 353
+    .line 354
     array-length v10, p0
 
     if-le v9, v10, :cond_4
@@ -936,7 +936,7 @@
 
     add-int/lit8 v2, v3, 0x2
 
-    .line 359
+    .line 360
     invoke-static {p0, v2, v5, v1}, Lorg/telegram/messenger/camera/CameraController;->pack([BIIZ)I
 
     move-result v2
@@ -947,7 +947,7 @@
 
     add-int/lit8 v2, v3, 0x6
 
-    .line 360
+    .line 361
     invoke-static {p0, v2, v8, v1}, Lorg/telegram/messenger/camera/CameraController;->pack([BIIZ)I
 
     move-result v2
@@ -989,7 +989,7 @@
     :goto_4
     if-le v4, v7, :cond_12
 
-    .line 371
+    .line 372
     invoke-static {p0, v2, v5, v1}, Lorg/telegram/messenger/camera/CameraController;->pack([BIIZ)I
 
     move-result v3
@@ -1017,7 +1017,7 @@
     :goto_5
     add-int/lit8 v9, v2, 0x4
 
-    .line 377
+    .line 378
     invoke-static {p0, v9, v5, v3}, Lorg/telegram/messenger/camera/CameraController;->pack([BIIZ)I
 
     move-result v5
@@ -1039,7 +1039,7 @@
 
     add-int/lit8 v5, v2, -0x2
 
-    .line 384
+    .line 385
     invoke-static {p0, v5, v8, v3}, Lorg/telegram/messenger/camera/CameraController;->pack([BIIZ)I
 
     move-result v5
@@ -1053,7 +1053,7 @@
 
     if-lt v4, v5, :cond_12
 
-    .line 386
+    .line 387
     invoke-static {p0, v2, v8, v3}, Lorg/telegram/messenger/camera/CameraController;->pack([BIIZ)I
 
     move-result v5
@@ -1064,7 +1064,7 @@
 
     add-int/2addr v2, v7
 
-    .line 388
+    .line 389
     invoke-static {p0, v2, v8, v3}, Lorg/telegram/messenger/camera/CameraController;->pack([BIIZ)I
 
     move-result p0
@@ -1118,7 +1118,7 @@
 .method private initCamera(Ljava/lang/Runnable;Z)V
     .locals 2
 
-    .line 128
+    .line 129
     iget-boolean v0, p0, Lorg/telegram/messenger/camera/CameraController;->cameraInitied:Z
 
     if-eqz v0, :cond_0
@@ -1128,7 +1128,7 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 131
+    .line 132
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->onFinishCameraInitRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
@@ -1137,12 +1137,12 @@
 
     if-nez v0, :cond_1
 
-    .line 132
+    .line 133
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->onFinishCameraInitRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 134
+    .line 135
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/messenger/camera/CameraController;->loadingCameras:Z
 
@@ -1157,10 +1157,10 @@
     :cond_2
     const/4 v0, 0x1
 
-    .line 137
+    .line 138
     iput-boolean v0, p0, Lorg/telegram/messenger/camera/CameraController;->loadingCameras:Z
 
-    .line 138
+    .line 139
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->threadPool:Ljava/util/concurrent/ThreadPoolExecutor;
 
     new-instance v1, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda16;
@@ -1179,10 +1179,10 @@
 
     if-eqz p0, :cond_0
 
-    .line 293
+    .line 294
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
-    .line 295
+    .line 296
     :cond_0
     iget-object p0, p1, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
@@ -1192,11 +1192,11 @@
 
     const/4 v0, 0x0
 
-    .line 297
+    .line 298
     :try_start_0
     invoke-virtual {p0}, Landroid/hardware/Camera;->stopPreview()V
 
-    .line 298
+    .line 299
     iget-object p0, p1, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
     iget-object p0, p0, Lorg/telegram/messenger/camera/CameraInfo;->camera:Landroid/hardware/Camera;
@@ -1210,10 +1210,10 @@
     :catch_0
     move-exception p0
 
-    .line 300
+    .line 301
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 303
+    .line 304
     :goto_0
     :try_start_1
     iget-object p0, p1, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
@@ -1229,10 +1229,10 @@
     :catch_1
     move-exception p0
 
-    .line 305
+    .line 306
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 307
+    .line 308
     :goto_1
     iget-object p0, p1, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
@@ -1241,13 +1241,13 @@
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 310
+    .line 311
     invoke-virtual {p2}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     :cond_2
     if-eqz p3, :cond_3
 
-    .line 313
+    .line 314
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     :cond_3
@@ -1257,7 +1257,7 @@
 .method private synthetic lambda$finishRecordingVideo$15(Ljava/io/File;Landroid/graphics/Bitmap;J)V
     .locals 4
 
-    .line 785
+    .line 790
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->onVideoTakeCallback:Lorg/telegram/messenger/camera/CameraController$VideoTakeCallback;
 
     if-eqz v0, :cond_2
@@ -1266,14 +1266,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 788
+    .line 793
     invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object p1
 
     if-eqz p2, :cond_1
 
-    .line 790
+    .line 795
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v1
@@ -1295,14 +1295,14 @@
     :cond_0
     move-object p1, v0
 
-    .line 793
+    .line 798
     :cond_1
     :goto_0
     iget-object p2, p0, Lorg/telegram/messenger/camera/CameraController;->onVideoTakeCallback:Lorg/telegram/messenger/camera/CameraController$VideoTakeCallback;
 
     invoke-interface {p2, p1, p3, p4}, Lorg/telegram/messenger/camera/CameraController$VideoTakeCallback;->onFinishVideoRecording(Ljava/lang/String;J)V
 
-    .line 794
+    .line 799
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->onVideoTakeCallback:Lorg/telegram/messenger/camera/CameraController$VideoTakeCallback;
 
     :cond_2
@@ -1312,14 +1312,14 @@
 .method private synthetic lambda$getErrorListener$18(Lorg/telegram/messenger/camera/CameraSession;ILandroid/hardware/Camera;)V
     .locals 2
 
-    .line 934
+    .line 939
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->errorCallbacks:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_1
 
     const/4 v0, 0x0
 
-    .line 935
+    .line 940
     :goto_0
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraController;->errorCallbacks:Ljava/util/ArrayList;
 
@@ -1329,7 +1329,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 936
+    .line 941
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraController;->errorCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1340,7 +1340,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 938
+    .line 943
     invoke-interface {v1, p2, p3, p1}, Lorg/telegram/messenger/camera/CameraController$ErrorCallback;->onError(ILandroid/hardware/Camera;Lorg/telegram/messenger/camera/CameraSession;)V
 
     :cond_0
@@ -1355,7 +1355,7 @@
 .method private static synthetic lambda$initCamera$0(Lorg/telegram/messenger/camera/Size;Lorg/telegram/messenger/camera/Size;)I
     .locals 4
 
-    .line 144
+    .line 145
     iget v0, p0, Lorg/telegram/messenger/camera/Size;->mWidth:I
 
     iget v1, p1, Lorg/telegram/messenger/camera/Size;->mWidth:I
@@ -1373,7 +1373,7 @@
 
     return v3
 
-    .line 149
+    .line 150
     :cond_1
     iget p0, p0, Lorg/telegram/messenger/camera/Size;->mHeight:I
 
@@ -1399,15 +1399,15 @@
 
     const/4 v0, 0x0
 
-    .line 257
+    .line 258
     iput-boolean v0, p0, Lorg/telegram/messenger/camera/CameraController;->loadingCameras:Z
 
     const/4 v1, 0x1
 
-    .line 258
+    .line 259
     iput-boolean v1, p0, Lorg/telegram/messenger/camera/CameraController;->cameraInitied:Z
 
-    .line 259
+    .line 260
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraController;->onFinishCameraInitRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1418,7 +1418,7 @@
 
     move v1, v0
 
-    .line 260
+    .line 261
     :goto_0
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraController;->onFinishCameraInitRunnables:Ljava/util/ArrayList;
 
@@ -1428,7 +1428,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 261
+    .line 262
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraController;->onFinishCameraInitRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1443,13 +1443,13 @@
 
     goto :goto_0
 
-    .line 263
+    .line 264
     :cond_0
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraController;->onFinishCameraInitRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 265
+    .line 266
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
@@ -1469,7 +1469,7 @@
 
     const/4 v0, 0x1
 
-    .line 274
+    .line 275
     invoke-direct {p0, p1, v0}, Lorg/telegram/messenger/camera/CameraController;->initCamera(Ljava/lang/Runnable;Z)V
 
     return-void
@@ -1478,22 +1478,22 @@
 .method private synthetic lambda$initCamera$3(ZLjava/lang/Exception;Ljava/lang/Runnable;)V
     .locals 1
 
-    .line 270
+    .line 271
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->onFinishCameraInitRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     const/4 v0, 0x0
 
-    .line 271
+    .line 272
     iput-boolean v0, p0, Lorg/telegram/messenger/camera/CameraController;->loadingCameras:Z
 
-    .line 272
+    .line 273
     iput-boolean v0, p0, Lorg/telegram/messenger/camera/CameraController;->cameraInitied:Z
 
     if-nez p1, :cond_0
 
-    .line 273
+    .line 274
     invoke-virtual {p2}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object p1
@@ -1508,7 +1508,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 274
+    .line 275
     new-instance p1, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda8;
 
     invoke-direct {p1, p0, p3}, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/messenger/camera/CameraController;Ljava/lang/Runnable;)V
@@ -1530,28 +1530,28 @@
 
     const-string v2, "APP_PAUSED"
 
-    .line 140
+    .line 141
     :try_start_0
     iget-object v3, v1, Lorg/telegram/messenger/camera/CameraController;->cameraInfos:Ljava/util/ArrayList;
 
     if-nez v3, :cond_13
 
-    .line 141
+    .line 142
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v3
 
     const/4 v4, 0x0
 
-    .line 142
+    .line 143
     invoke-interface {v3, v0, v4}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 143
+    .line 144
     sget-object v5, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda18;->INSTANCE:Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda18;
 
-    .line 157
+    .line 158
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
@@ -1560,7 +1560,7 @@
 
     if-eqz v4, :cond_3
 
-    .line 159
+    .line 160
     new-instance v0, Lorg/telegram/tgnet/SerializedData;
 
     invoke-static {v4, v7}, Landroid/util/Base64;->decode(Ljava/lang/String;I)[B
@@ -1569,7 +1569,7 @@
 
     invoke-direct {v0, v3}, Lorg/telegram/tgnet/SerializedData;-><init>([B)V
 
-    .line 160
+    .line 161
     invoke-virtual {v0, v7}, Lorg/telegram/tgnet/SerializedData;->readInt32(Z)I
 
     move-result v3
@@ -1579,7 +1579,7 @@
     :goto_0
     if-ge v4, v3, :cond_2
 
-    .line 162
+    .line 163
     new-instance v8, Lorg/telegram/messenger/camera/CameraInfo;
 
     invoke-virtual {v0, v7}, Lorg/telegram/tgnet/SerializedData;->readInt32(Z)I
@@ -1592,7 +1592,7 @@
 
     invoke-direct {v8, v9, v10}, Lorg/telegram/messenger/camera/CameraInfo;-><init>(II)V
 
-    .line 163
+    .line 164
     invoke-virtual {v0, v7}, Lorg/telegram/tgnet/SerializedData;->readInt32(Z)I
 
     move-result v9
@@ -1602,7 +1602,7 @@
     :goto_1
     if-ge v10, v9, :cond_0
 
-    .line 165
+    .line 166
     iget-object v11, v8, Lorg/telegram/messenger/camera/CameraInfo;->previewSizes:Ljava/util/ArrayList;
 
     new-instance v12, Lorg/telegram/messenger/camera/Size;
@@ -1623,7 +1623,7 @@
 
     goto :goto_1
 
-    .line 167
+    .line 168
     :cond_0
     invoke-virtual {v0, v7}, Lorg/telegram/tgnet/SerializedData;->readInt32(Z)I
 
@@ -1634,7 +1634,7 @@
     :goto_2
     if-ge v10, v9, :cond_1
 
-    .line 169
+    .line 170
     iget-object v11, v8, Lorg/telegram/messenger/camera/CameraInfo;->pictureSizes:Ljava/util/ArrayList;
 
     new-instance v12, Lorg/telegram/messenger/camera/Size;
@@ -1655,16 +1655,16 @@
 
     goto :goto_2
 
-    .line 171
+    .line 172
     :cond_1
     invoke-virtual {v6, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 173
+    .line 174
     iget-object v9, v8, Lorg/telegram/messenger/camera/CameraInfo;->previewSizes:Ljava/util/ArrayList;
 
     invoke-static {v9, v5}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 174
+    .line 175
     iget-object v8, v8, Lorg/telegram/messenger/camera/CameraInfo;->pictureSizes:Ljava/util/ArrayList;
 
     invoke-static {v8, v5}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
@@ -1673,7 +1673,7 @@
 
     goto :goto_0
 
-    .line 176
+    .line 177
     :cond_2
     invoke-virtual {v0}, Lorg/telegram/tgnet/SerializedData;->cleanup()V
 
@@ -1681,13 +1681,13 @@
 
     goto/16 :goto_d
 
-    .line 178
+    .line 179
     :cond_3
     invoke-static {}, Landroid/hardware/Camera;->getNumberOfCameras()I
 
     move-result v4
 
-    .line 179
+    .line 180
     new-instance v8, Landroid/hardware/Camera$CameraInfo;
 
     invoke-direct {v8}, Landroid/hardware/Camera$CameraInfo;-><init>()V
@@ -1701,18 +1701,18 @@
     :goto_3
     if-ge v10, v4, :cond_f
 
-    .line 183
+    .line 184
     :try_start_1
     invoke-static {v10, v8}, Landroid/hardware/Camera;->getCameraInfo(ILandroid/hardware/Camera$CameraInfo;)V
 
-    .line 184
+    .line 185
     new-instance v11, Lorg/telegram/messenger/camera/CameraInfo;
 
     iget v12, v8, Landroid/hardware/Camera$CameraInfo;->facing:I
 
     invoke-direct {v11, v10, v12}, Lorg/telegram/messenger/camera/CameraInfo;-><init>(II)V
 
-    .line 186
+    .line 187
     sget-boolean v12, Lorg/telegram/messenger/ApplicationLoader;->mainInterfacePaused:Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -1726,7 +1726,7 @@
 
     goto :goto_4
 
-    .line 187
+    .line 188
     :cond_4
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -1736,7 +1736,7 @@
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_3
 
-    .line 189
+    .line 190
     :cond_5
     :goto_4
     :try_start_3
@@ -1748,19 +1748,19 @@
 
     move-result-object v12
 
-    .line 190
+    .line 191
     invoke-virtual {v12}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
 
     move-result-object v13
 
-    .line 192
+    .line 193
     invoke-virtual {v13}, Landroid/hardware/Camera$Parameters;->getSupportedPreviewSizes()Ljava/util/List;
 
     move-result-object v14
 
     move v15, v7
 
-    .line 193
+    .line 194
     :goto_5
     invoke-interface {v14}, Ljava/util/List;->size()I
 
@@ -1776,7 +1776,7 @@
 
     if-ge v15, v7, :cond_9
 
-    .line 194
+    .line 195
     :try_start_4
     invoke-interface {v14, v15}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -1784,7 +1784,7 @@
 
     check-cast v7, Landroid/hardware/Camera$Size;
 
-    .line 195
+    .line 196
     iget v2, v7, Landroid/hardware/Camera$Size;->width:I
 
     move-object/from16 v18, v14
@@ -1801,7 +1801,7 @@
 
     goto :goto_6
 
-    .line 198
+    .line 199
     :cond_6
     iget v1, v7, Landroid/hardware/Camera$Size;->height:I
 
@@ -1811,7 +1811,7 @@
 
     if-ge v2, v14, :cond_7
 
-    .line 199
+    .line 200
     iget-object v14, v11, Lorg/telegram/messenger/camera/CameraInfo;->previewSizes:Ljava/util/ArrayList;
 
     move-object/from16 v19, v0
@@ -1822,12 +1822,12 @@
 
     invoke-virtual {v14, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 200
+    .line 201
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_8
 
-    .line 201
+    .line 202
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1877,14 +1877,14 @@
     :cond_9
     move-object/from16 v19, v0
 
-    .line 206
+    .line 207
     invoke-virtual {v13}, Landroid/hardware/Camera$Parameters;->getSupportedPictureSizes()Ljava/util/List;
 
     move-result-object v0
 
     const/4 v1, 0x0
 
-    .line 207
+    .line 208
     :goto_8
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -1892,14 +1892,14 @@
 
     if-ge v1, v2, :cond_e
 
-    .line 208
+    .line 209
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/hardware/Camera$Size;
 
-    .line 209
+    .line 210
     iget v7, v2, Landroid/hardware/Camera$Size;->width:I
 
     const/16 v13, 0x500
@@ -1920,7 +1920,7 @@
     :cond_b
     const-string/jumbo v7, "samsung"
 
-    .line 212
+    .line 213
     sget-object v15, Landroid/os/Build;->MANUFACTURER:Ljava/lang/String;
 
     invoke-virtual {v7, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1929,7 +1929,7 @@
 
     if-eqz v7, :cond_c
 
-    const-string v7, "jflteuc"
+    const-string/jumbo v7, "jflteuc"
 
     sget-object v15, Landroid/os/Build;->PRODUCT:Ljava/lang/String;
 
@@ -1945,7 +1945,7 @@
 
     if-ge v7, v15, :cond_d
 
-    .line 213
+    .line 214
     :cond_c
     iget-object v7, v11, Lorg/telegram/messenger/camera/CameraInfo;->pictureSizes:Ljava/util/ArrayList;
 
@@ -1959,12 +1959,12 @@
 
     invoke-virtual {v7, v15}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 214
+    .line 215
     sget-boolean v7, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v7, :cond_d
 
-    .line 215
+    .line 216
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -1995,24 +1995,24 @@
 
     goto :goto_8
 
-    .line 220
+    .line 221
     :cond_e
     invoke-virtual {v12}, Landroid/hardware/Camera;->release()V
 
-    .line 221
+    .line 222
     invoke-virtual {v6, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 223
+    .line 224
     iget-object v0, v11, Lorg/telegram/messenger/camera/CameraInfo;->previewSizes:Ljava/util/ArrayList;
 
     invoke-static {v0, v5}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 224
+    .line 225
     iget-object v0, v11, Lorg/telegram/messenger/camera/CameraInfo;->pictureSizes:Ljava/util/ArrayList;
 
     invoke-static {v0, v5}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 226
+    .line 227
     iget-object v0, v11, Lorg/telegram/messenger/camera/CameraInfo;->previewSizes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2059,12 +2059,12 @@
 
     move-object/from16 v17, v2
 
-    .line 229
+    .line 230
     new-instance v0, Lorg/telegram/tgnet/SerializedData;
 
     invoke-direct {v0, v9}, Lorg/telegram/tgnet/SerializedData;-><init>(I)V
 
-    .line 230
+    .line 231
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -2076,31 +2076,31 @@
     :goto_a
     if-ge v1, v4, :cond_12
 
-    .line 232
+    .line 233
     invoke-virtual {v6, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/messenger/camera/CameraInfo;
 
-    .line 233
+    .line 234
     iget v5, v2, Lorg/telegram/messenger/camera/CameraInfo;->cameraId:I
 
     invoke-virtual {v0, v5}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
 
-    .line 234
+    .line 235
     iget v5, v2, Lorg/telegram/messenger/camera/CameraInfo;->frontCamera:I
 
     invoke-virtual {v0, v5}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
 
-    .line 236
+    .line 237
     iget-object v5, v2, Lorg/telegram/messenger/camera/CameraInfo;->previewSizes:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     move-result v5
 
-    .line 237
+    .line 238
     invoke-virtual {v0, v5}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
 
     const/4 v7, 0x0
@@ -2108,7 +2108,7 @@
     :goto_b
     if-ge v7, v5, :cond_10
 
-    .line 239
+    .line 240
     iget-object v8, v2, Lorg/telegram/messenger/camera/CameraInfo;->previewSizes:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2117,12 +2117,12 @@
 
     check-cast v8, Lorg/telegram/messenger/camera/Size;
 
-    .line 240
+    .line 241
     iget v9, v8, Lorg/telegram/messenger/camera/Size;->mWidth:I
 
     invoke-virtual {v0, v9}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
 
-    .line 241
+    .line 242
     iget v8, v8, Lorg/telegram/messenger/camera/Size;->mHeight:I
 
     invoke-virtual {v0, v8}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
@@ -2131,7 +2131,7 @@
 
     goto :goto_b
 
-    .line 243
+    .line 244
     :cond_10
     iget-object v5, v2, Lorg/telegram/messenger/camera/CameraInfo;->pictureSizes:Ljava/util/ArrayList;
 
@@ -2139,7 +2139,7 @@
 
     move-result v5
 
-    .line 244
+    .line 245
     invoke-virtual {v0, v5}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
 
     const/4 v7, 0x0
@@ -2147,7 +2147,7 @@
     :goto_c
     if-ge v7, v5, :cond_11
 
-    .line 246
+    .line 247
     iget-object v8, v2, Lorg/telegram/messenger/camera/CameraInfo;->pictureSizes:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2156,12 +2156,12 @@
 
     check-cast v8, Lorg/telegram/messenger/camera/Size;
 
-    .line 247
+    .line 248
     iget v9, v8, Lorg/telegram/messenger/camera/Size;->mWidth:I
 
     invoke-virtual {v0, v9}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
 
-    .line 248
+    .line 249
     iget v8, v8, Lorg/telegram/messenger/camera/Size;->mHeight:I
 
     invoke-virtual {v0, v8}, Lorg/telegram/tgnet/SerializedData;->writeInt32(I)V
@@ -2175,7 +2175,7 @@
 
     goto :goto_a
 
-    .line 251
+    .line 252
     :cond_12
     invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
@@ -2199,14 +2199,14 @@
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 252
+    .line 253
     invoke-virtual {v0}, Lorg/telegram/tgnet/SerializedData;->cleanup()V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
 
     move-object/from16 v1, p0
 
-    .line 254
+    .line 255
     :goto_d
     :try_start_5
     iput-object v6, v1, Lorg/telegram/messenger/camera/CameraController;->cameraInfos:Ljava/util/ArrayList;
@@ -2224,7 +2224,7 @@
     :cond_13
     move-object/from16 v17, v2
 
-    .line 256
+    .line 257
     :goto_f
     new-instance v0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda4;
 
@@ -2246,7 +2246,7 @@
 
     move-object/from16 v17, v2
 
-    .line 268
+    .line 269
     :goto_10
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
@@ -2262,7 +2262,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
-    .line 269
+    .line 270
     new-instance v2, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda15;
 
     move/from16 v3, p1
@@ -2278,16 +2278,16 @@
 .end method
 
 .method private synthetic lambda$open$10(Lorg/telegram/messenger/camera/CameraSession;Ljava/lang/Runnable;Landroid/graphics/SurfaceTexture;Ljava/lang/Runnable;)V
-    .locals 6
+    .locals 7
 
-    .line 593
+    .line 594
     iget-object v0, p1, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
     iget-object v1, v0, Lorg/telegram/messenger/camera/CameraInfo;->camera:Landroid/hardware/Camera;
 
     if-nez v1, :cond_0
 
-    .line 596
+    .line 597
     :try_start_0
     iget v2, v0, Lorg/telegram/messenger/camera/CameraInfo;->cameraId:I
 
@@ -2299,7 +2299,7 @@
 
     move-object v1, v2
 
-    .line 598
+    .line 599
     :cond_0
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/camera/CameraController;->getErrorListener(Lorg/telegram/messenger/camera/CameraSession;)Landroid/hardware/Camera$ErrorCallback;
 
@@ -2307,83 +2307,124 @@
 
     invoke-virtual {v1, v0}, Landroid/hardware/Camera;->setErrorCallback(Landroid/hardware/Camera$ErrorCallback;)V
 
-    .line 599
+    .line 600
     invoke-virtual {v1}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
 
     move-result-object v0
 
-    .line 600
+    .line 602
     invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->getSupportedFlashModes()Ljava/util/List;
 
-    move-result-object v0
+    move-result-object v2
 
-    .line 602
-    iget-object v2, p1, Lorg/telegram/messenger/camera/CameraSession;->availableFlashModes:Ljava/util/ArrayList;
+    .line 603
+    iget-object v3, p1, Lorg/telegram/messenger/camera/CameraSession;->availableFlashModes:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+    invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    if-eqz v0, :cond_4
+    if-eqz v2, :cond_6
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    move v3, v2
-
-    .line 604
-    :goto_0
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    if-ge v3, v4, :cond_3
+    move v4, v3
 
     .line 605
-    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    :goto_0
+    invoke-interface {v2}, Ljava/util/List;->size()I
 
-    move-result-object v4
+    move-result v5
 
-    check-cast v4, Ljava/lang/String;
-
-    const-string/jumbo v5, "off"
+    if-ge v4, v5, :cond_3
 
     .line 606
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result v5
+    move-result-object v5
 
-    if-nez v5, :cond_1
+    check-cast v5, Ljava/lang/String;
 
-    const-string/jumbo v5, "on"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_1
-
-    const-string v5, "auto"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_2
+    const-string/jumbo v6, "off"
 
     .line 607
-    :cond_1
-    iget-object v5, p1, Lorg/telegram/messenger/camera/CameraSession;->availableFlashModes:Ljava/util/ArrayList;
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-result v6
+
+    if-nez v6, :cond_1
+
+    const-string/jumbo v6, "on"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_1
+
+    const-string v6, "auto"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_2
+
+    .line 608
+    :cond_1
+    iget-object v6, p1, Lorg/telegram/messenger/camera/CameraSession;->availableFlashModes:Ljava/util/ArrayList;
+
+    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_2
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 610
+    .line 611
     :cond_3
+    invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraSession;->getCurrentFlashMode()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->getFlashMode()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v2, v0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
     iget-object v0, p1, Lorg/telegram/messenger/camera/CameraSession;->availableFlashModes:Ljava/util/ArrayList;
 
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraSession;->getCurrentFlashMode()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_4
+
+    goto :goto_1
+
+    .line 614
+    :cond_4
+    invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraSession;->getCurrentFlashMode()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Lorg/telegram/messenger/camera/CameraSession;->checkFlashMode(Ljava/lang/String;)V
+
+    goto :goto_2
+
+    .line 612
+    :cond_5
+    :goto_1
+    iget-object v0, p1, Lorg/telegram/messenger/camera/CameraSession;->availableFlashModes:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -2391,64 +2432,65 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/camera/CameraSession;->checkFlashMode(Ljava/lang/String;)V
 
-    :cond_4
-    if-eqz p2, :cond_5
-
-    .line 614
-    invoke-interface {p2}, Ljava/lang/Runnable;->run()V
-
-    .line 617
-    :cond_5
-    invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraSession;->configurePhotoCamera()V
-
-    .line 618
-    invoke-virtual {v1, p3}, Landroid/hardware/Camera;->setPreviewTexture(Landroid/graphics/SurfaceTexture;)V
+    :cond_6
+    :goto_2
+    if-eqz p2, :cond_7
 
     .line 619
+    invoke-interface {p2}, Ljava/lang/Runnable;->run()V
+
+    .line 622
+    :cond_7
+    invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraSession;->configurePhotoCamera()V
+
+    .line 623
+    invoke-virtual {v1, p3}, Landroid/hardware/Camera;->setPreviewTexture(Landroid/graphics/SurfaceTexture;)V
+
+    .line 624
     invoke-virtual {v1}, Landroid/hardware/Camera;->startPreview()V
 
-    if-eqz p4, :cond_7
+    if-eqz p4, :cond_9
 
-    .line 621
+    .line 626
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    goto :goto_1
+    goto :goto_3
 
     :catch_0
     move-exception p2
 
-    .line 624
+    .line 629
     iget-object p1, p1, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
     const/4 p3, 0x0
 
     iput-object p3, p1, Lorg/telegram/messenger/camera/CameraInfo;->camera:Landroid/hardware/Camera;
 
-    if-eqz v1, :cond_6
+    if-eqz v1, :cond_8
 
-    .line 626
+    .line 631
     invoke-virtual {v1}, Landroid/hardware/Camera;->release()V
 
-    .line 628
-    :cond_6
+    .line 633
+    :cond_8
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    :cond_7
-    :goto_1
+    :cond_9
+    :goto_3
     return-void
 .end method
 
 .method private static synthetic lambda$openRound$9(Lorg/telegram/messenger/camera/CameraSession;Ljava/lang/Runnable;Landroid/graphics/SurfaceTexture;Ljava/lang/Runnable;)V
     .locals 3
 
-    .line 556
+    .line 557
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
     iget-object v0, v0, Lorg/telegram/messenger/camera/CameraInfo;->camera:Landroid/hardware/Camera;
 
-    .line 558
+    .line 559
     :try_start_0
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -2456,13 +2498,13 @@
 
     const-string/jumbo v1, "start creating round camera session"
 
-    .line 559
+    .line 560
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_0
     if-nez v0, :cond_1
 
-    .line 562
+    .line 563
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
     iget v2, v1, Lorg/telegram/messenger/camera/CameraInfo;->cameraId:I
@@ -2475,33 +2517,33 @@
 
     move-object v0, v2
 
-    .line 564
+    .line 565
     :cond_1
     invoke-virtual {v0}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
 
     const/4 v1, 0x1
 
-    .line 566
+    .line 567
     invoke-virtual {p0, v1}, Lorg/telegram/messenger/camera/CameraSession;->configureRoundCamera(Z)Z
 
     if-eqz p1, :cond_2
 
-    .line 568
+    .line 569
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 570
+    .line 571
     :cond_2
     invoke-virtual {v0, p2}, Landroid/hardware/Camera;->setPreviewTexture(Landroid/graphics/SurfaceTexture;)V
 
-    .line 571
+    .line 572
     invoke-virtual {v0}, Landroid/hardware/Camera;->startPreview()V
 
     if-eqz p3, :cond_3
 
-    .line 573
+    .line 574
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 575
+    .line 576
     :cond_3
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -2509,7 +2551,7 @@
 
     const-string/jumbo p1, "round camera session created"
 
-    .line 576
+    .line 577
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2519,7 +2561,7 @@
     :catch_0
     move-exception p1
 
-    .line 579
+    .line 580
     iget-object p0, p0, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
     const/4 p2, 0x0
@@ -2528,10 +2570,10 @@
 
     if-eqz v0, :cond_4
 
-    .line 581
+    .line 582
     invoke-virtual {v0}, Landroid/hardware/Camera;->release()V
 
-    .line 583
+    .line 584
     :cond_4
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -2543,7 +2585,7 @@
 .method private synthetic lambda$recordVideo$11(Z)V
     .locals 0
 
-    .line 659
+    .line 664
     invoke-direct {p0, p1}, Lorg/telegram/messenger/camera/CameraController;->finishRecordingVideo(Z)V
 
     return-void
@@ -2552,7 +2594,7 @@
 .method private synthetic lambda$recordVideo$12(Lorg/telegram/messenger/camera/CameraController$ICameraView;Ljava/io/File;ZLjava/lang/Runnable;)V
     .locals 1
 
-    .line 659
+    .line 664
     new-instance v0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda14;
 
     invoke-direct {v0, p0, p3}, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/messenger/camera/CameraController;Z)V
@@ -2561,7 +2603,7 @@
 
     if-eqz p4, :cond_0
 
-    .line 662
+    .line 667
     invoke-interface {p4}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -2573,13 +2615,13 @@
 
     if-eqz p1, :cond_1
 
-    .line 651
+    .line 656
     :try_start_0
     invoke-virtual {p1}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
 
     move-result-object v0
 
-    .line 652
+    .line 657
     invoke-virtual {p2}, Lorg/telegram/messenger/camera/CameraSession;->getCurrentFlashMode()Ljava/lang/String;
 
     move-result-object v1
@@ -2602,10 +2644,10 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setFlashMode(Ljava/lang/String;)V
 
-    .line 653
+    .line 658
     invoke-virtual {p1, v0}, Landroid/hardware/Camera;->setParameters(Landroid/hardware/Camera$Parameters;)V
 
-    .line 654
+    .line 659
     invoke-virtual {p2}, Lorg/telegram/messenger/camera/CameraSession;->onStartRecord()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2615,11 +2657,11 @@
     :catch_0
     move-exception p1
 
-    .line 656
+    .line 661
     :try_start_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 658
+    .line 663
     :goto_1
     new-instance p1, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda9;
 
@@ -2646,7 +2688,7 @@
     :catch_1
     move-exception p1
 
-    .line 667
+    .line 672
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1
@@ -2659,13 +2701,13 @@
 
     if-eqz p1, :cond_2
 
-    .line 679
+    .line 684
     :try_start_0
     invoke-virtual {p1}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
 
     move-result-object v0
 
-    .line 680
+    .line 685
     invoke-virtual {p2}, Lorg/telegram/messenger/camera/CameraSession;->getCurrentFlashMode()Ljava/lang/String;
 
     move-result-object v1
@@ -2688,7 +2730,7 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/hardware/Camera$Parameters;->setFlashMode(Ljava/lang/String;)V
 
-    .line 681
+    .line 686
     invoke-virtual {p1, v0}, Landroid/hardware/Camera;->setParameters(Landroid/hardware/Camera$Parameters;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2698,50 +2740,50 @@
     :catch_0
     move-exception v0
 
-    .line 683
+    .line 688
     :try_start_1
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 685
+    .line 690
     :goto_1
     invoke-virtual {p1}, Landroid/hardware/Camera;->unlock()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
 
-    .line 688
+    .line 693
     :try_start_2
     iput-boolean p3, p0, Lorg/telegram/messenger/camera/CameraController;->mirrorRecorderVideo:Z
 
-    .line 689
+    .line 694
     new-instance p3, Landroid/media/MediaRecorder;
 
     invoke-direct {p3}, Landroid/media/MediaRecorder;-><init>()V
 
     iput-object p3, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
-    .line 690
+    .line 695
     invoke-virtual {p3, p1}, Landroid/media/MediaRecorder;->setCamera(Landroid/hardware/Camera;)V
 
-    .line 691
+    .line 696
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     const/4 p3, 0x1
 
     invoke-virtual {p1, p3}, Landroid/media/MediaRecorder;->setVideoSource(I)V
 
-    .line 692
+    .line 697
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     const/4 v0, 0x5
 
     invoke-virtual {p1, v0}, Landroid/media/MediaRecorder;->setAudioSource(I)V
 
-    .line 693
+    .line 698
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     invoke-virtual {p2, p3, p1}, Lorg/telegram/messenger/camera/CameraSession;->configureRecorder(ILandroid/media/MediaRecorder;)V
 
-    .line 694
+    .line 699
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     invoke-virtual {p4}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
@@ -2750,28 +2792,28 @@
 
     invoke-virtual {p1, p2}, Landroid/media/MediaRecorder;->setOutputFile(Ljava/lang/String;)V
 
-    .line 695
+    .line 700
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     const-wide/32 p2, 0x40000000
 
     invoke-virtual {p1, p2, p3}, Landroid/media/MediaRecorder;->setMaxFileSize(J)V
 
-    .line 696
+    .line 701
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     const/16 p2, 0x1e
 
     invoke-virtual {p1, p2}, Landroid/media/MediaRecorder;->setVideoFrameRate(I)V
 
-    .line 697
+    .line 702
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Landroid/media/MediaRecorder;->setMaxDuration(I)V
 
-    .line 699
+    .line 704
     new-instance p1, Lorg/telegram/messenger/camera/Size;
 
     const/16 p3, 0x10
@@ -2780,7 +2822,7 @@
 
     invoke-direct {p1, p3, v0}, Lorg/telegram/messenger/camera/Size;-><init>(II)V
 
-    .line 700
+    .line 705
     invoke-virtual {p5}, Lorg/telegram/messenger/camera/CameraInfo;->getPictureSizes()Ljava/util/ArrayList;
 
     move-result-object p3
@@ -2793,7 +2835,7 @@
 
     move-result-object p1
 
-    .line 702
+    .line 707
     iget p2, p1, Lorg/telegram/messenger/camera/Size;->mHeight:I
 
     iget p3, p1, Lorg/telegram/messenger/camera/Size;->mWidth:I
@@ -2811,13 +2853,13 @@
     :cond_1
     const p2, 0x1b7740
 
-    .line 707
+    .line 712
     :goto_2
     iget-object p3, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     invoke-virtual {p3, p2}, Landroid/media/MediaRecorder;->setVideoEncodingBitRate(I)V
 
-    .line 708
+    .line 713
     iget-object p2, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/camera/Size;->getWidth()I
@@ -2830,25 +2872,25 @@
 
     invoke-virtual {p2, p3, p1}, Landroid/media/MediaRecorder;->setVideoSize(II)V
 
-    .line 709
+    .line 714
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     invoke-virtual {p1, p0}, Landroid/media/MediaRecorder;->setOnInfoListener(Landroid/media/MediaRecorder$OnInfoListener;)V
 
-    .line 710
+    .line 715
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     invoke-virtual {p1}, Landroid/media/MediaRecorder;->prepare()V
 
-    .line 711
+    .line 716
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     invoke-virtual {p1}, Landroid/media/MediaRecorder;->start()V
 
-    .line 713
+    .line 718
     iput-object p6, p0, Lorg/telegram/messenger/camera/CameraController;->onVideoTakeCallback:Lorg/telegram/messenger/camera/CameraController$VideoTakeCallback;
 
-    .line 714
+    .line 719
     invoke-virtual {p4}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object p1
@@ -2857,7 +2899,7 @@
 
     if-eqz p7, :cond_2
 
-    .line 716
+    .line 721
     invoke-static {p7}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
@@ -2867,7 +2909,7 @@
     :catch_1
     move-exception p1
 
-    .line 719
+    .line 724
     :try_start_3
     iget-object p2, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
@@ -2875,10 +2917,10 @@
 
     const/4 p2, 0x0
 
-    .line 720
+    .line 725
     iput-object p2, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
-    .line 721
+    .line 726
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
@@ -2888,7 +2930,7 @@
     :catch_2
     move-exception p1
 
-    .line 725
+    .line 730
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -2899,14 +2941,14 @@
 .method private synthetic lambda$startPreview$7(Lorg/telegram/messenger/camera/CameraSession;)V
     .locals 3
 
-    .line 508
+    .line 509
     iget-object v0, p1, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
     iget-object v1, v0, Lorg/telegram/messenger/camera/CameraInfo;->camera:Landroid/hardware/Camera;
 
     if-nez v1, :cond_0
 
-    .line 511
+    .line 512
     :try_start_0
     iget v2, v0, Lorg/telegram/messenger/camera/CameraInfo;->cameraId:I
 
@@ -2918,7 +2960,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 512
+    .line 513
     :try_start_1
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/camera/CameraController;->getErrorListener(Lorg/telegram/messenger/camera/CameraSession;)Landroid/hardware/Camera$ErrorCallback;
 
@@ -2939,7 +2981,7 @@
 
     goto :goto_1
 
-    .line 514
+    .line 515
     :cond_0
     :goto_0
     :try_start_2
@@ -2952,7 +2994,7 @@
     :catch_1
     move-exception v0
 
-    .line 516
+    .line 517
     :goto_1
     iget-object p1, p1, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
@@ -2962,10 +3004,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 518
+    .line 519
     invoke-virtual {v1}, Landroid/hardware/Camera;->release()V
 
-    .line 520
+    .line 521
     :cond_1
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -2976,14 +3018,14 @@
 .method private synthetic lambda$stopPreview$8(Lorg/telegram/messenger/camera/CameraSession;)V
     .locals 3
 
-    .line 530
+    .line 531
     iget-object v0, p1, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
     iget-object v1, v0, Lorg/telegram/messenger/camera/CameraInfo;->camera:Landroid/hardware/Camera;
 
     if-nez v1, :cond_0
 
-    .line 533
+    .line 534
     :try_start_0
     iget v2, v0, Lorg/telegram/messenger/camera/CameraInfo;->cameraId:I
 
@@ -2995,7 +3037,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 534
+    .line 535
     :try_start_1
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/camera/CameraController;->getErrorListener(Lorg/telegram/messenger/camera/CameraSession;)Landroid/hardware/Camera$ErrorCallback;
 
@@ -3016,7 +3058,7 @@
 
     goto :goto_1
 
-    .line 536
+    .line 537
     :cond_0
     :goto_0
     :try_start_2
@@ -3029,7 +3071,7 @@
     :catch_1
     move-exception v0
 
-    .line 538
+    .line 539
     :goto_1
     iget-object p1, p1, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
@@ -3039,10 +3081,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 540
+    .line 541
     invoke-virtual {v1}, Landroid/hardware/Camera;->release()V
 
-    .line 542
+    .line 543
     :cond_1
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -3053,20 +3095,20 @@
 .method private static synthetic lambda$stopVideoRecording$16(Landroid/hardware/Camera;Lorg/telegram/messenger/camera/CameraSession;)V
     .locals 1
 
-    .line 862
+    .line 867
     :try_start_0
     invoke-virtual {p0}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
 
     move-result-object v0
 
-    .line 863
+    .line 868
     invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraSession;->getCurrentFlashMode()Ljava/lang/String;
 
     move-result-object p1
 
     invoke-virtual {v0, p1}, Landroid/hardware/Camera$Parameters;->setFlashMode(Ljava/lang/String;)V
 
-    .line 864
+    .line 869
     invoke-virtual {p0, v0}, Landroid/hardware/Camera;->setParameters(Landroid/hardware/Camera$Parameters;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -3076,7 +3118,7 @@
     :catch_0
     move-exception p0
 
-    .line 866
+    .line 871
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -3086,28 +3128,28 @@
 .method private synthetic lambda$stopVideoRecording$17(Lorg/telegram/messenger/camera/CameraSession;ZZ)V
     .locals 4
 
-    .line 826
+    .line 831
     :try_start_0
     iget-object v0, p1, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
-    .line 827
+    .line 832
     iget-object v0, v0, Lorg/telegram/messenger/camera/CameraInfo;->camera:Landroid/hardware/Camera;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 828
+    .line 833
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     if-eqz v2, :cond_0
 
-    .line 830
+    .line 835
     iput-object v1, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_5
 
-    .line 832
+    .line 837
     :try_start_1
     invoke-virtual {v2}, Landroid/media/MediaRecorder;->stop()V
     :try_end_1
@@ -3118,13 +3160,13 @@
     :catch_0
     move-exception v3
 
-    .line 834
+    .line 839
     :try_start_2
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_5
 
-    .line 837
+    .line 842
     :goto_0
     :try_start_3
     invoke-virtual {v2}, Landroid/media/MediaRecorder;->release()V
@@ -3136,18 +3178,18 @@
     :catch_1
     move-exception v2
 
-    .line 839
+    .line 844
     :try_start_4
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_4
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_5
 
-    .line 842
+    .line 847
     :goto_1
     :try_start_5
     invoke-virtual {v0}, Landroid/hardware/Camera;->reconnect()V
 
-    .line 843
+    .line 848
     invoke-virtual {v0}, Landroid/hardware/Camera;->startPreview()V
     :try_end_5
     .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
@@ -3157,13 +3199,13 @@
     :catch_2
     move-exception v2
 
-    .line 845
+    .line 850
     :try_start_6
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_6
     .catch Ljava/lang/Exception; {:try_start_6 .. :try_end_6} :catch_5
 
-    .line 848
+    .line 853
     :goto_2
     :try_start_7
     invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraSession;->stopVideoRecording()V
@@ -3175,13 +3217,13 @@
     :catch_3
     move-exception v2
 
-    .line 850
+    .line 855
     :try_start_8
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_8} :catch_5
 
-    .line 854
+    .line 859
     :cond_0
     :goto_3
     :try_start_9
@@ -3191,10 +3233,10 @@
 
     const-string/jumbo v3, "off"
 
-    .line 855
+    .line 860
     invoke-virtual {v2, v3}, Landroid/hardware/Camera$Parameters;->setFlashMode(Ljava/lang/String;)V
 
-    .line 856
+    .line 861
     invoke-virtual {v0, v2}, Landroid/hardware/Camera;->setParameters(Landroid/hardware/Camera$Parameters;)V
     :try_end_9
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_9} :catch_4
@@ -3204,11 +3246,11 @@
     :catch_4
     move-exception v2
 
-    .line 858
+    .line 863
     :try_start_a
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 860
+    .line 865
     :goto_4
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraController;->threadPool:Ljava/util/concurrent/ThreadPoolExecutor;
 
@@ -3220,17 +3262,17 @@
 
     if-nez p2, :cond_1
 
-    .line 869
+    .line 874
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraController;->onVideoTakeCallback:Lorg/telegram/messenger/camera/CameraController$VideoTakeCallback;
 
     if-eqz p1, :cond_1
 
-    .line 870
+    .line 875
     invoke-direct {p0, p3}, Lorg/telegram/messenger/camera/CameraController;->finishRecordingVideo(Z)V
 
     goto :goto_5
 
-    .line 872
+    .line 877
     :cond_1
     iput-object v1, p0, Lorg/telegram/messenger/camera/CameraController;->onVideoTakeCallback:Lorg/telegram/messenger/camera/CameraController$VideoTakeCallback;
     :try_end_a
@@ -3250,7 +3292,7 @@
 
     move-object/from16 v3, p5
 
-    .line 434
+    .line 435
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getPhotoSize()I
 
     move-result v0
@@ -3263,7 +3305,7 @@
 
     float-to-int v0, v0
 
-    .line 435
+    .line 436
     sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
 
     const/4 v5, 0x3
@@ -3304,27 +3346,27 @@
 
     move-result-object v4
 
-    .line 437
+    .line 438
     :try_start_0
     new-instance v0, Landroid/graphics/BitmapFactory$Options;
 
     invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
 
-    .line 438
+    .line 439
     iput-boolean v8, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 439
+    .line 440
     array-length v5, v3
 
     invoke-static {v3, v7, v5, v0}, Landroid/graphics/BitmapFactory;->decodeByteArray([BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
 
-    .line 444
+    .line 445
     iput-boolean v7, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
-    .line 446
+    .line 447
     iput-boolean v8, v0, Landroid/graphics/BitmapFactory$Options;->inPurgeable:Z
 
-    .line 447
+    .line 448
     array-length v5, v3
 
     invoke-static {v3, v7, v5, v0}, Landroid/graphics/BitmapFactory;->decodeByteArray([BIILandroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
@@ -3338,7 +3380,7 @@
     :catchall_0
     move-exception v0
 
-    .line 449
+    .line 450
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     const/4 v0, 0x0
@@ -3346,7 +3388,7 @@
     :goto_0
     move-object v5, v0
 
-    .line 452
+    .line 453
     :try_start_1
     invoke-static/range {p5 .. p5}, Lorg/telegram/messenger/camera/CameraController;->getOrientation([B)I
 
@@ -3356,7 +3398,7 @@
 
     move-object/from16 v8, p1
 
-    .line 453
+    .line 454
     :try_start_2
     iget v0, v8, Lorg/telegram/messenger/camera/CameraInfo;->frontCamera:I
     :try_end_2
@@ -3366,7 +3408,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 455
+    .line 456
     :try_start_3
     new-instance v13, Landroid/graphics/Matrix;
 
@@ -3380,7 +3422,7 @@
 
     int-to-float v0, v6
 
-    .line 457
+    .line 458
     invoke-virtual {v13, v0}, Landroid/graphics/Matrix;->setRotate(F)V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_2
@@ -3390,7 +3432,7 @@
 
     const/high16 v6, 0x3f800000    # 1.0f
 
-    .line 460
+    .line 461
     :try_start_4
     invoke-virtual {v13, v0, v6}, Landroid/graphics/Matrix;->postScale(FF)Z
 
@@ -3398,7 +3440,7 @@
 
     const/4 v10, 0x0
 
-    .line 461
+    .line 462
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v11
@@ -3417,36 +3459,36 @@
 
     if-eq v0, v5, :cond_1
 
-    .line 463
+    .line 464
     invoke-virtual {v5}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 465
+    .line 466
     :cond_1
     new-instance v6, Ljava/io/FileOutputStream;
 
     invoke-direct {v6, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 466
+    .line 467
     sget-object v8, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v9, 0x50
 
     invoke-virtual {v0, v8, v9, v6}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 467
+    .line 468
     invoke-virtual {v6}, Ljava/io/FileOutputStream;->flush()V
 
-    .line 468
+    .line 469
     invoke-virtual {v6}, Ljava/io/FileOutputStream;->getFD()Ljava/io/FileDescriptor;
 
     move-result-object v8
 
     invoke-virtual {v8}, Ljava/io/FileDescriptor;->sync()V
 
-    .line 469
+    .line 470
     invoke-virtual {v6}, Ljava/io/FileOutputStream;->close()V
 
-    .line 471
+    .line 472
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v6
@@ -3459,7 +3501,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 474
+    .line 475
     invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -3481,36 +3523,36 @@
     :catchall_2
     move-exception v0
 
-    .line 478
+    .line 479
     :goto_1
     :try_start_5
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 481
+    .line 482
     :cond_3
     new-instance v0, Ljava/io/FileOutputStream;
 
     invoke-direct {v0, p0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 482
+    .line 483
     invoke-virtual {v0, v3}, Ljava/io/FileOutputStream;->write([B)V
 
-    .line 483
+    .line 484
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->flush()V
 
-    .line 484
+    .line 485
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->getFD()Ljava/io/FileDescriptor;
 
     move-result-object v1
 
     invoke-virtual {v1}, Ljava/io/FileDescriptor;->sync()V
 
-    .line 485
+    .line 486
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
 
     if-eqz v5, :cond_4
 
-    .line 487
+    .line 488
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v0
@@ -3535,7 +3577,7 @@
     :catch_1
     move-exception v0
 
-    .line 490
+    .line 491
     :goto_2
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -3545,7 +3587,7 @@
     :goto_3
     if-eqz v2, :cond_5
 
-    .line 493
+    .line 494
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
@@ -3582,7 +3624,7 @@
 
     shl-int/lit8 p2, v0, 0x8
 
-    .line 417
+    .line 418
     aget-byte v0, p0, p1
 
     and-int/lit16 v0, v0, 0xff
@@ -3604,25 +3646,25 @@
 .method public addOnErrorListener(Lorg/telegram/messenger/camera/CameraController$ErrorCallback;)V
     .locals 1
 
-    .line 919
+    .line 924
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->errorCallbacks:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
-    .line 920
+    .line 925
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->errorCallbacks:Ljava/util/ArrayList;
 
-    .line 922
+    .line 927
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->errorCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 923
+    .line 928
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->errorCallbacks:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -3633,7 +3675,7 @@
 .method public cancelOnInitRunnable(Ljava/lang/Runnable;)V
     .locals 1
 
-    .line 120
+    .line 121
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->onFinishCameraInitRunnables:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -3646,7 +3688,7 @@
 
     const/4 v0, 0x0
 
-    .line 286
+    .line 287
     invoke-virtual {p0, p1, p2, p3, v0}, Lorg/telegram/messenger/camera/CameraController;->close(Lorg/telegram/messenger/camera/CameraSession;Ljava/util/concurrent/CountDownLatch;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
 
     return-void
@@ -3655,10 +3697,10 @@
 .method public close(Lorg/telegram/messenger/camera/CameraSession;Ljava/util/concurrent/CountDownLatch;Ljava/lang/Runnable;Ljava/lang/Runnable;)V
     .locals 2
 
-    .line 290
+    .line 291
     invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraSession;->destroy()V
 
-    .line 291
+    .line 292
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->threadPool:Ljava/util/concurrent/ThreadPoolExecutor;
 
     new-instance v1, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda3;
@@ -3669,7 +3711,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 318
+    .line 319
     :try_start_0
     invoke-virtual {p2}, Ljava/util/concurrent/CountDownLatch;->await()V
     :try_end_0
@@ -3680,7 +3722,7 @@
     :catch_0
     move-exception p1
 
-    .line 320
+    .line 321
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -3699,7 +3741,7 @@
         }
     .end annotation
 
-    .line 326
+    .line 327
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->cameraInfos:Ljava/util/ArrayList;
 
     return-object v0
@@ -3708,7 +3750,7 @@
 .method public getErrorListener(Lorg/telegram/messenger/camera/CameraSession;)Landroid/hardware/Camera$ErrorCallback;
     .locals 1
 
-    .line 933
+    .line 938
     new-instance v0, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/camera/CameraController;Lorg/telegram/messenger/camera/CameraSession;)V
@@ -3719,7 +3761,7 @@
 .method public hasCamera(Lcom/iMe/fork/enums/VideoVoiceCamera;)Z
     .locals 3
 
-    .line 63
+    .line 64
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraController;->getCameras()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -3741,7 +3783,7 @@
 
     check-cast v1, Lorg/telegram/messenger/camera/CameraInfo;
 
-    .line 64
+    .line 65
     sget-object v2, Lcom/iMe/fork/enums/VideoVoiceCamera;->FRONT:Lcom/iMe/fork/enums/VideoVoiceCamera;
 
     if-ne p1, v2, :cond_1
@@ -3779,7 +3821,7 @@
 
     const/4 v0, 0x0
 
-    .line 124
+    .line 125
     invoke-direct {p0, p1, v0}, Lorg/telegram/messenger/camera/CameraController;->initCamera(Ljava/lang/Runnable;Z)V
 
     return-void
@@ -3788,7 +3830,7 @@
 .method public isCameraInitied()Z
     .locals 1
 
-    .line 282
+    .line 283
     iget-boolean v0, p0, Lorg/telegram/messenger/camera/CameraController;->cameraInitied:Z
 
     if-eqz v0, :cond_0
@@ -3831,30 +3873,30 @@
 
     if-ne p2, p1, :cond_2
 
-    .line 802
+    .line 807
     :cond_0
     iget-object p2, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     const/4 p3, 0x0
 
-    .line 803
+    .line 808
     iput-object p3, p0, Lorg/telegram/messenger/camera/CameraController;->recorder:Landroid/media/MediaRecorder;
 
     if-eqz p2, :cond_1
 
-    .line 805
+    .line 810
     invoke-virtual {p2}, Landroid/media/MediaRecorder;->stop()V
 
-    .line 806
+    .line 811
     invoke-virtual {p2}, Landroid/media/MediaRecorder;->release()V
 
-    .line 808
+    .line 813
     :cond_1
     iget-object p2, p0, Lorg/telegram/messenger/camera/CameraController;->onVideoTakeCallback:Lorg/telegram/messenger/camera/CameraController$VideoTakeCallback;
 
     if-eqz p2, :cond_2
 
-    .line 809
+    .line 814
     invoke-direct {p0, p1}, Lorg/telegram/messenger/camera/CameraController;->finishRecordingVideo(Z)V
 
     :cond_2
@@ -3870,7 +3912,7 @@
 
     goto :goto_0
 
-    .line 592
+    .line 593
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->threadPool:Ljava/util/concurrent/ThreadPoolExecutor;
 
@@ -3906,7 +3948,7 @@
 
     goto :goto_0
 
-    .line 555
+    .line 556
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->threadPool:Ljava/util/concurrent/ThreadPoolExecutor;
 
@@ -3918,14 +3960,14 @@
 
     return-void
 
-    .line 550
+    .line 551
     :cond_1
     :goto_0
     sget-boolean p3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p3, :cond_2
 
-    .line 551
+    .line 552
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -3971,7 +4013,7 @@
 
     move-object v6, p6
 
-    .line 634
+    .line 639
     invoke-virtual/range {v0 .. v7}, Lorg/telegram/messenger/camera/CameraController;->recordVideo(Lorg/telegram/messenger/camera/CameraSession;Ljava/io/File;ZLorg/telegram/messenger/camera/CameraController$VideoTakeCallback;Ljava/lang/Runnable;Lorg/telegram/messenger/camera/CameraController$ICameraView;Z)V
 
     return-void
@@ -3990,31 +4032,31 @@
 
     return-void
 
-    .line 641
+    .line 646
     :cond_0
     iget-object v6, v3, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
-    .line 642
+    .line 647
     iget-object v2, v6, Lorg/telegram/messenger/camera/CameraInfo;->camera:Landroid/hardware/Camera;
 
     if-eqz v4, :cond_1
 
-    .line 644
+    .line 649
     iput-object v4, v9, Lorg/telegram/messenger/camera/CameraController;->recordingCurrentCameraView:Lorg/telegram/messenger/camera/CameraController$ICameraView;
 
     move-object/from16 v7, p4
 
-    .line 645
+    .line 650
     iput-object v7, v9, Lorg/telegram/messenger/camera/CameraController;->onVideoTakeCallback:Lorg/telegram/messenger/camera/CameraController$VideoTakeCallback;
 
-    .line 646
+    .line 651
     invoke-virtual {p2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, v9, Lorg/telegram/messenger/camera/CameraController;->recordedFile:Ljava/lang/String;
 
-    .line 647
+    .line 652
     iget-object v8, v9, Lorg/telegram/messenger/camera/CameraController;->threadPool:Ljava/util/concurrent/ThreadPoolExecutor;
 
     new-instance v10, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda5;
@@ -4042,7 +4084,7 @@
     :cond_1
     move-object/from16 v7, p4
 
-    .line 675
+    .line 680
     iget-object v10, v9, Lorg/telegram/messenger/camera/CameraController;->threadPool:Ljava/util/concurrent/ThreadPoolExecutor;
 
     new-instance v11, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda6;
@@ -4069,12 +4111,12 @@
 .method public removeOnErrorListener(Lorg/telegram/messenger/camera/CameraController$ErrorCallback;)V
     .locals 1
 
-    .line 927
+    .line 932
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->errorCallbacks:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
 
-    .line 928
+    .line 933
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     :cond_0
@@ -4088,7 +4130,7 @@
 
     return-void
 
-    .line 507
+    .line 508
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->threadPool:Ljava/util/concurrent/ThreadPoolExecutor;
 
@@ -4108,7 +4150,7 @@
 
     return-void
 
-    .line 529
+    .line 530
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->threadPool:Ljava/util/concurrent/ThreadPoolExecutor;
 
@@ -4126,7 +4168,7 @@
 
     const/4 v0, 0x1
 
-    .line 815
+    .line 820
     invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/messenger/camera/CameraController;->stopVideoRecording(Lorg/telegram/messenger/camera/CameraSession;ZZ)V
 
     return-void
@@ -4135,22 +4177,22 @@
 .method public stopVideoRecording(Lorg/telegram/messenger/camera/CameraSession;ZZ)V
     .locals 2
 
-    .line 819
+    .line 824
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->recordingCurrentCameraView:Lorg/telegram/messenger/camera/CameraController$ICameraView;
 
     if-eqz v0, :cond_0
 
-    .line 820
+    .line 825
     invoke-interface {v0}, Lorg/telegram/messenger/camera/CameraController$ICameraView;->stopRecording()V
 
     const/4 p1, 0x0
 
-    .line 821
+    .line 826
     iput-object p1, p0, Lorg/telegram/messenger/camera/CameraController;->recordingCurrentCameraView:Lorg/telegram/messenger/camera/CameraController$ICameraView;
 
     return-void
 
-    .line 824
+    .line 829
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraController;->threadPool:Ljava/util/concurrent/ThreadPoolExecutor;
 
@@ -4183,19 +4225,19 @@
 
     return v0
 
-    .line 427
+    .line 428
     :cond_0
     iget-object v3, p3, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
 
-    .line 428
+    .line 429
     invoke-virtual {p3}, Lorg/telegram/messenger/camera/CameraSession;->isFlipFront()Z
 
     move-result v4
 
-    .line 429
+    .line 430
     iget-object p3, v3, Lorg/telegram/messenger/camera/CameraInfo;->camera:Landroid/hardware/Camera;
 
-    .line 431
+    .line 432
     :try_start_0
     new-instance v7, Lorg/telegram/messenger/camera/CameraController$$ExternalSyntheticLambda1;
 
@@ -4222,7 +4264,7 @@
     :catch_0
     move-exception p1
 
-    .line 498
+    .line 499
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return v0

@@ -19,7 +19,7 @@ public final class HashMapLabelTlbCombinator extends TlbNegatedCombinator<HmLabe
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public HashMapLabelTlbCombinator(int i, TlbNegatedConstructor<HmlLong> hmlLong, TlbNegatedConstructor<HmlShort> hmlShort, TlbNegatedConstructor<HmlSame> hmlSame) {
-        super(Reflection.getOrCreateKotlinClass(HmLabel.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(HmlLong.class), hmlLong), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(HmlShort.class), hmlShort), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(HmlSame.class), hmlSame));
+        super(Reflection.getOrCreateKotlinClass(HmLabel.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(HmlLong.class), hmlLong), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(HmlShort.class), hmlShort), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(HmlSame.class), hmlSame));
         Intrinsics.checkNotNullParameter(hmlLong, "hmlLong");
         Intrinsics.checkNotNullParameter(hmlShort, "hmlShort");
         Intrinsics.checkNotNullParameter(hmlSame, "hmlSame");

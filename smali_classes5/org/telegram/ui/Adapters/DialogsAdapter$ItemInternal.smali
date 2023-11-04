@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field chatlistUpdates:Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;
+.field chatlistUpdates:Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_chatlistUpdates;
 
 .field contact:Lorg/telegram/tgnet/TLRPC$TL_contact;
 
@@ -40,22 +40,22 @@
 
     const/4 v0, 0x1
 
-    .line 351
+    .line 347
     invoke-direct {p0, p2, v0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 352
+    .line 348
     iput p2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->emptyType:I
 
     const/16 v1, 0xa
 
     if-ne p2, v1, :cond_0
 
-    .line 354
+    .line 350
     iput v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->stableId:I
 
     goto :goto_0
 
-    .line 356
+    .line 352
     :cond_0
     iget p2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
@@ -65,12 +65,12 @@
 
     const/4 p1, 0x5
 
-    .line 357
+    .line 353
     iput p1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->stableId:I
 
     goto :goto_0
 
-    .line 359
+    .line 355
     :cond_1
     iget p2, p1, Lorg/telegram/ui/Adapters/DialogsAdapter;->stableIdPointer:I
 
@@ -89,13 +89,13 @@
 
     const/4 v0, 0x1
 
-    .line 365
+    .line 361
     invoke-direct {p0, p2, v0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 366
+    .line 362
     iput p3, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->emptyType:I
 
-    .line 367
+    .line 363
     iget p2, p1, Lorg/telegram/ui/Adapters/DialogsAdapter;->stableIdPointer:I
 
     add-int/lit8 p3, p2, 0x1
@@ -112,15 +112,15 @@
 
     const/4 v0, 0x1
 
-    .line 315
+    .line 311
     invoke-direct {p0, p2, v0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 316
+    .line 312
     iput-object p3, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->dialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     if-eqz p3, :cond_1
 
-    .line 318
+    .line 314
     iget-object p2, p1, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsStableIds:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     iget-wide v1, p3, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
@@ -133,12 +133,12 @@
 
     if-ltz p2, :cond_0
 
-    .line 320
+    .line 316
     iput p2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->stableId:I
 
     goto :goto_0
 
-    .line 322
+    .line 318
     :cond_0
     iget p2, p1, Lorg/telegram/ui/Adapters/DialogsAdapter;->stableIdPointer:I
 
@@ -148,7 +148,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->stableId:I
 
-    .line 323
+    .line 319
     iget-object v1, p1, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsStableIds:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     iget-wide v2, p3, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
@@ -164,12 +164,12 @@
 
     const/4 p2, 0x5
 
-    .line 327
+    .line 323
     iput p2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->stableId:I
 
     goto :goto_0
 
-    .line 329
+    .line 325
     :cond_2
     iget p2, p1, Lorg/telegram/ui/Adapters/DialogsAdapter;->stableIdPointer:I
 
@@ -182,7 +182,7 @@
     :goto_0
     if-eqz p3, :cond_8
 
-    .line 333
+    .line 329
     invoke-static {p1}, Lorg/telegram/ui/Adapters/DialogsAdapter;->access$100(Lorg/telegram/ui/Adapters/DialogsAdapter;)I
 
     move-result p2
@@ -201,7 +201,7 @@
 
     goto :goto_1
 
-    .line 337
+    .line 333
     :cond_3
     iget-boolean p2, p3, Lorg/telegram/tgnet/TLRPC$Dialog;->pinned:Z
 
@@ -209,7 +209,7 @@
 
     goto :goto_5
 
-    .line 334
+    .line 330
     :cond_4
     :goto_1
     invoke-static {p1}, Lorg/telegram/ui/Adapters/DialogsAdapter;->access$400(Lorg/telegram/ui/Adapters/DialogsAdapter;)I
@@ -264,7 +264,7 @@
 
     if-eqz p2, :cond_7
 
-    .line 335
+    .line 331
     iget-object p2, p2, Lorg/telegram/messenger/MessagesController$DialogFilter;->pinnedDialogs:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     iget-wide v1, p3, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
@@ -283,13 +283,13 @@
     :goto_4
     iput-boolean v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->pinned:Z
 
-    .line 339
+    .line 335
     :goto_5
     iget-boolean p2, p3, Lorg/telegram/tgnet/TLRPC$Dialog;->isFolder:Z
 
     iput-boolean p2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->isFolder:Z
 
-    .line 340
+    .line 336
     invoke-static {p1}, Lorg/telegram/ui/Adapters/DialogsAdapter;->access$400(Lorg/telegram/ui/Adapters/DialogsAdapter;)I
 
     move-result p1
@@ -315,13 +315,13 @@
 
     const/4 v0, 0x1
 
-    .line 345
+    .line 341
     invoke-direct {p0, p2, v0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 346
+    .line 342
     iput-object p3, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->recentMeUrl:Lorg/telegram/tgnet/TLRPC$RecentMeUrl;
 
-    .line 347
+    .line 343
     iget p2, p1, Lorg/telegram/ui/Adapters/DialogsAdapter;->stableIdPointer:I
 
     add-int/lit8 p3, p2, 0x1
@@ -338,15 +338,15 @@
 
     const/4 v0, 0x1
 
-    .line 371
+    .line 367
     invoke-direct {p0, p2, v0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 372
+    .line 368
     iput-object p3, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->contact:Lorg/telegram/tgnet/TLRPC$TL_contact;
 
     if-eqz p3, :cond_1
 
-    .line 374
+    .line 370
     iget-object p2, p1, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsStableIds:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     iget-wide v0, p3, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
@@ -359,12 +359,12 @@
 
     if-lez p2, :cond_0
 
-    .line 376
+    .line 372
     iput p2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->stableId:I
 
     goto :goto_0
 
-    .line 378
+    .line 374
     :cond_0
     iget p2, p1, Lorg/telegram/ui/Adapters/DialogsAdapter;->stableIdPointer:I
 
@@ -374,7 +374,7 @@
 
     iput p2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->stableId:I
 
-    .line 379
+    .line 375
     iget-object p1, p1, Lorg/telegram/ui/Adapters/DialogsAdapter;->dialogsStableIds:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     iget-object p3, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->contact:Lorg/telegram/tgnet/TLRPC$TL_contact;
@@ -385,7 +385,7 @@
 
     goto :goto_0
 
-    .line 382
+    .line 378
     :cond_1
     iget p2, p1, Lorg/telegram/ui/Adapters/DialogsAdapter;->stableIdPointer:I
 
@@ -399,20 +399,20 @@
     return-void
 .end method
 
-.method public constructor <init>(Lorg/telegram/ui/Adapters/DialogsAdapter;Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;)V
+.method public constructor <init>(Lorg/telegram/ui/Adapters/DialogsAdapter;Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_chatlistUpdates;)V
     .locals 2
 
     const/16 v0, 0x11
 
     const/4 v1, 0x1
 
-    .line 307
+    .line 303
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 308
-    iput-object p2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->chatlistUpdates:Lorg/telegram/tgnet/TLRPC$TL_chatlists_chatlistUpdates;
+    .line 304
+    iput-object p2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->chatlistUpdates:Lorg/telegram/tgnet/tl/TL_chatlists$TL_chatlists_chatlistUpdates;
 
-    .line 309
+    .line 305
     iget p2, p1, Lorg/telegram/ui/Adapters/DialogsAdapter;->stableIdPointer:I
 
     add-int/lit8 v0, p2, 0x1
@@ -427,7 +427,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;)I
     .locals 0
 
-    .line 295
+    .line 291
     iget p0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->stableId:I
 
     return p0
@@ -438,7 +438,7 @@
 .method compare(Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;)Z
     .locals 8
 
-    .line 387
+    .line 383
     iget v0, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v1, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -454,7 +454,7 @@
 
     if-nez v0, :cond_2
 
-    .line 391
+    .line 387
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->dialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     if-eqz v0, :cond_1
@@ -499,7 +499,7 @@
 
     if-ne v0, v3, :cond_4
 
-    .line 397
+    .line 393
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->dialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     if-eqz v0, :cond_3
@@ -532,7 +532,7 @@
 
     if-ne v0, v3, :cond_6
 
-    .line 400
+    .line 396
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->recentMeUrl:Lorg/telegram/tgnet/TLRPC$RecentMeUrl;
 
     if-eqz v0, :cond_5
@@ -561,7 +561,7 @@
 
     if-ne v0, v3, :cond_8
 
-    .line 403
+    .line 399
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->contact:Lorg/telegram/tgnet/TLRPC$TL_contact;
 
     if-eqz v0, :cond_7
@@ -588,7 +588,7 @@
 
     if-ne v0, v3, :cond_a
 
-    .line 406
+    .line 402
     iget v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->emptyType:I
 
     iget p1, p1, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->emptyType:I
@@ -618,7 +618,7 @@
 
     new-array v0, v0, [Ljava/lang/Object;
 
-    .line 416
+    .line 412
     iget-object v1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$ItemInternal;->dialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     const/4 v2, 0x0

@@ -81,6 +81,6 @@ public final class TONWalletTransferDataSourceImpl implements WalletTransferData
             throw new IllegalStateException("Incorrect transfer args passed");
         }
         TransferArgs.TON ton = (TransferArgs.TON) args;
-        return this.tonController.sendTransaction(ton.getRecipientAddress(), ton.getConvertedAmount().longValue(), new TonTransactionPayload.Message(ton.getMessage(), ton.isUnencrypted()), ton.getSendMode());
+        return this.tonController.sendTransaction(ton.getRecipientAddress(), ton.getConvertedAmount().longValue(), ton.getSeqno(), new TonTransactionPayload.Message(ton.getMessage(), ton.isUnencrypted()), ton.getSendMode());
     }
 }

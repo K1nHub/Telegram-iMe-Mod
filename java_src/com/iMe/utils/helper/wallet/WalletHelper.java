@@ -36,16 +36,16 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.browser.Browser;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.INavigationLayout;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.URLSpanNoUnderline;
-import org.telegram.p042ui.LaunchActivity;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.URLSpanNoUnderline;
+import org.telegram.p043ui.LaunchActivity;
 /* compiled from: WalletHelper.kt */
 /* loaded from: classes4.dex */
 public final class WalletHelper implements KoinComponent {
@@ -284,11 +284,11 @@ public final class WalletHelper implements KoinComponent {
         Intrinsics.checkNotNullParameter(launchActivity, "<this>");
         Intrinsics.checkNotNullParameter(botAuthButtonMessage, "botAuthButtonMessage");
         Intrinsics.checkNotNullParameter(activateClickAction, "activateClickAction");
-        int i = C3630R.raw.fork_auth;
-        String internalString = LocaleController.getInternalString(C3630R.string.auth_dialog_title);
+        int i = C3634R.raw.fork_auth;
+        String internalString = LocaleController.getInternalString(C3634R.string.auth_dialog_title);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.auth_dialog_title)");
         SpannableStringBuilder authSpannableStringBuilder = INSTANCE.getAuthSpannableStringBuilder();
-        String internalString2 = LocaleController.getInternalString(C3630R.string.common_next);
+        String internalString2 = LocaleController.getInternalString(C3634R.string.common_next);
         Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.string.common_next)");
         DialogsFactoryKt.createDialogWithAnimation(launchActivity, new AnimatedSpannableDialogModel(i, internalString, authSpannableStringBuilder, internalString2), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda4
             @Override // com.iMe.fork.utils.Callbacks$Callback
@@ -314,7 +314,7 @@ public final class WalletHelper implements KoinComponent {
     }
 
     private final void showAppUpdateDialog(final LaunchActivity launchActivity) {
-        DialogUtils.createDialog$default(launchActivity, new DialogModel(LocaleController.getInternalString(C3630R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3630R.string.wallet_app_update_dialog_description), LocaleController.getInternalString(C3630R.string.common_cancel), LocaleController.getInternalString(C3630R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda2
+        DialogUtils.createDialog$default(launchActivity, new DialogModel(LocaleController.getInternalString(C3634R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3634R.string.wallet_app_update_dialog_description), LocaleController.getInternalString(C3634R.string.common_cancel), LocaleController.getInternalString(C3634R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda2
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletHelper.showAppUpdateDialog$lambda$5(LaunchActivity.this);
@@ -329,11 +329,11 @@ public final class WalletHelper implements KoinComponent {
     }
 
     private final void showAuthDialog(final LaunchActivity launchActivity, final Callbacks$Callback callbacks$Callback) {
-        int i = C3630R.raw.fork_auth;
-        String internalString = LocaleController.getInternalString(C3630R.string.auth_dialog_title);
+        int i = C3634R.raw.fork_auth;
+        String internalString = LocaleController.getInternalString(C3634R.string.auth_dialog_title);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.auth_dialog_title)");
         SpannableStringBuilder authSpannableStringBuilder = getAuthSpannableStringBuilder();
-        String internalString2 = LocaleController.getInternalString(C3630R.string.common_next);
+        String internalString2 = LocaleController.getInternalString(C3634R.string.common_next);
         Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.string.common_next)");
         DialogsFactoryKt.createDialogWithAnimation(launchActivity, new AnimatedSpannableDialogModel(i, internalString, authSpannableStringBuilder, internalString2), new Callbacks$Callback() { // from class: com.iMe.utils.helper.wallet.WalletHelper$$ExternalSyntheticLambda3
             @Override // com.iMe.fork.utils.Callbacks$Callback
@@ -356,7 +356,7 @@ public final class WalletHelper implements KoinComponent {
         int indexOf$default;
         int lastIndexOf$default;
         List<Object> listOf;
-        String descriptionText = LocaleController.getInternalString(C3630R.string.auth_dialog_description);
+        String descriptionText = LocaleController.getInternalString(C3634R.string.auth_dialog_description);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(descriptionText);
         Intrinsics.checkNotNullExpressionValue(descriptionText, "descriptionText");
         indexOf$default = StringsKt__StringsKt.indexOf$default((CharSequence) descriptionText, "*", 0, false, 6, (Object) null);
@@ -364,7 +364,7 @@ public final class WalletHelper implements KoinComponent {
         if (indexOf$default != -1 && lastIndexOf$default != -1 && indexOf$default != lastIndexOf$default) {
             spannableStringBuilder.replace(lastIndexOf$default, lastIndexOf$default + 1, (CharSequence) "");
             spannableStringBuilder.replace(indexOf$default, indexOf$default + 1, (CharSequence) "");
-            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new Object[]{new URLSpanNoUnderline(LocaleController.getString("PrivacyPolicyUrl", C3630R.string.PrivacyPolicyUrl)), new ForegroundColorSpan(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText))});
+            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new Object[]{new URLSpanNoUnderline(LocaleController.getString("PrivacyPolicyUrl", C3634R.string.PrivacyPolicyUrl)), new ForegroundColorSpan(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText))});
             for (Object obj : listOf) {
                 spannableStringBuilder.setSpan(obj, indexOf$default, lastIndexOf$default - 1, 33);
             }

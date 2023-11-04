@@ -26,28 +26,28 @@
 .method public constructor <init>(Lorg/telegram/ui/SecretMediaViewer;I)V
     .locals 0
 
-    .line 307
+    .line 312
     iput-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$PhotoBackgroundDrawable;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
-    .line 308
+    .line 313
     invoke-direct {p0, p2}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
     return-void
 .end method
 
-.method static synthetic access$3902(Lorg/telegram/ui/SecretMediaViewer$PhotoBackgroundDrawable;I)I
+.method static synthetic access$3802(Lorg/telegram/ui/SecretMediaViewer$PhotoBackgroundDrawable;I)I
     .locals 0
 
-    .line 302
+    .line 307
     iput p1, p0, Lorg/telegram/ui/SecretMediaViewer$PhotoBackgroundDrawable;->frame:I
 
     return p1
 .end method
 
-.method static synthetic access$4002(Lorg/telegram/ui/SecretMediaViewer$PhotoBackgroundDrawable;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+.method static synthetic access$3902(Lorg/telegram/ui/SecretMediaViewer$PhotoBackgroundDrawable;Ljava/lang/Runnable;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 302
+    .line 307
     iput-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$PhotoBackgroundDrawable;->drawRunnable:Ljava/lang/Runnable;
 
     return-object p1
@@ -58,17 +58,17 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 1
 
-    .line 322
+    .line 327
     invoke-super {p0, p1}, Landroid/graphics/drawable/ColorDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 323
+    .line 328
     invoke-virtual {p0}, Landroid/graphics/drawable/ColorDrawable;->getAlpha()I
 
     move-result p1
 
     if-eqz p1, :cond_1
 
-    .line 324
+    .line 329
     iget p1, p0, Lorg/telegram/ui/SecretMediaViewer$PhotoBackgroundDrawable;->frame:I
 
     const/4 v0, 0x2
@@ -79,21 +79,21 @@
 
     if-eqz p1, :cond_0
 
-    .line 325
+    .line 330
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     const/4 p1, 0x0
 
-    .line 326
+    .line 331
     iput-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$PhotoBackgroundDrawable;->drawRunnable:Ljava/lang/Runnable;
 
     goto :goto_0
 
-    .line 328
+    .line 333
     :cond_0
     invoke-virtual {p0}, Landroid/graphics/drawable/ColorDrawable;->invalidateSelf()V
 
-    .line 330
+    .line 335
     :goto_0
     iget p1, p0, Lorg/telegram/ui/SecretMediaViewer$PhotoBackgroundDrawable;->frame:I
 
@@ -110,7 +110,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 314
+    .line 319
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$PhotoBackgroundDrawable;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$700(Lorg/telegram/ui/SecretMediaViewer;)Landroid/app/Activity;
@@ -121,7 +121,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 315
+    .line 320
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$PhotoBackgroundDrawable;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$700(Lorg/telegram/ui/SecretMediaViewer;)Landroid/app/Activity;
@@ -158,7 +158,7 @@
     :goto_1
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->setAllowDrawContent(Z)V
 
-    .line 317
+    .line 322
     :cond_2
     invoke-super {p0, p1}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
 
@@ -168,7 +168,7 @@
 .method public setBounds(IIII)V
     .locals 1
 
-    .line 336
+    .line 341
     sget v0, Lorg/telegram/messenger/AndroidUtilities;->navigationBarHeight:I
 
     add-int/2addr p4, v0
@@ -181,7 +181,7 @@
 .method public setBounds(Landroid/graphics/Rect;)V
     .locals 2
 
-    .line 341
+    .line 346
     iget v0, p1, Landroid/graphics/Rect;->bottom:I
 
     sget v1, Lorg/telegram/messenger/AndroidUtilities;->navigationBarHeight:I
@@ -190,7 +190,7 @@
 
     iput v0, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 342
+    .line 347
     invoke-super {p0, p1}, Landroid/graphics/drawable/ColorDrawable;->setBounds(Landroid/graphics/Rect;)V
 
     return-void

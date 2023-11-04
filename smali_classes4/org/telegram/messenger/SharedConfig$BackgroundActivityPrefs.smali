@@ -22,7 +22,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2167
+    .line 2206
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -31,7 +31,7 @@
 .method static synthetic access$002(Landroid/content/SharedPreferences;)Landroid/content/SharedPreferences;
     .locals 0
 
-    .line 2167
+    .line 2206
     sput-object p0, Lorg/telegram/messenger/SharedConfig$BackgroundActivityPrefs;->prefs:Landroid/content/SharedPreferences;
 
     return-object p0
@@ -40,7 +40,7 @@
 .method public static getDismissedCount()I
     .locals 3
 
-    .line 2179
+    .line 2218
     sget-object v0, Lorg/telegram/messenger/SharedConfig$BackgroundActivityPrefs;->prefs:Landroid/content/SharedPreferences;
 
     const-string v1, "dismissed_count"
@@ -57,7 +57,7 @@
 .method public static getLastCheckedBackgroundActivity()J
     .locals 4
 
-    .line 2171
+    .line 2210
     sget-object v0, Lorg/telegram/messenger/SharedConfig$BackgroundActivityPrefs;->prefs:Landroid/content/SharedPreferences;
 
     const-string/jumbo v1, "last_checked"
@@ -74,7 +74,7 @@
 .method public static increaseDismissedCount()V
     .locals 3
 
-    .line 2183
+    .line 2222
     sget-object v0, Lorg/telegram/messenger/SharedConfig$BackgroundActivityPrefs;->prefs:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -101,7 +101,7 @@
 .method public static setLastCheckedBackgroundActivity(J)V
     .locals 2
 
-    .line 2175
+    .line 2214
     sget-object v0, Lorg/telegram/messenger/SharedConfig$BackgroundActivityPrefs;->prefs:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;

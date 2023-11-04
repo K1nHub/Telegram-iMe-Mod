@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x60edfbe8
-
-
 # instance fields
 .field public change_info:Z
 
@@ -54,12 +50,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
@@ -72,8 +62,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
     .locals 1
 
-    .line 459
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->constructor:I
+    const v0, -0x60edfbe8
 
     if-eq v0, p1, :cond_1
 
@@ -486,9 +475,9 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 5
 
-    .line 505
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->constructor:I
+    const v0, -0x60edfbe8
 
+    .line 505
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     .line 506
@@ -536,6 +525,10 @@
     if-eqz v3, :cond_1
 
     iget-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_media:Z
+
+    if-eqz v4, :cond_1
+
+    iget-boolean v4, p0, Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;->send_stickers:Z
 
     if-eqz v4, :cond_1
 

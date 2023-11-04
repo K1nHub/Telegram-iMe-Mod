@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
 import com.google.android.exoplayer2.SeekParameters;
@@ -194,8 +194,8 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         long j = -9223372036854775807L;
         for (MediaPeriod mediaPeriod : this.enabledPeriods) {
             long readDiscontinuity = mediaPeriod.readDiscontinuity();
-            if (readDiscontinuity != C0479C.TIME_UNSET) {
-                if (j == C0479C.TIME_UNSET) {
+            if (readDiscontinuity != C0485C.TIME_UNSET) {
+                if (j == C0485C.TIME_UNSET) {
                     for (MediaPeriod mediaPeriod2 : this.enabledPeriods) {
                         if (mediaPeriod2 == mediaPeriod) {
                             break;
@@ -207,7 +207,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
                 } else if (readDiscontinuity != j) {
                     throw new IllegalStateException("Conflicting discontinuities.");
                 }
-            } else if (j != C0479C.TIME_UNSET && mediaPeriod.seekToUs(j) != j) {
+            } else if (j != C0485C.TIME_UNSET && mediaPeriod.seekToUs(j) != j) {
                 throw new IllegalStateException("Unexpected child seekToUs result.");
             }
         }
@@ -350,7 +350,7 @@ final class MergingMediaPeriod implements MediaPeriod, MediaPeriod.Callback {
         @Override // com.google.android.exoplayer2.source.MediaPeriod
         public long readDiscontinuity() {
             long readDiscontinuity = this.mediaPeriod.readDiscontinuity();
-            return readDiscontinuity == C0479C.TIME_UNSET ? C0479C.TIME_UNSET : this.timeOffsetUs + readDiscontinuity;
+            return readDiscontinuity == C0485C.TIME_UNSET ? C0485C.TIME_UNSET : this.timeOffsetUs + readDiscontinuity;
         }
 
         @Override // com.google.android.exoplayer2.source.MediaPeriod

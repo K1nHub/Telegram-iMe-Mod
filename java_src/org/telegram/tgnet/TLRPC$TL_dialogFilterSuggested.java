@@ -1,7 +1,6 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_dialogFilterSuggested extends TLObject {
-    public static int constructor = 2004110666;
     public String description;
     public TLRPC$DialogFilter filter;
 
@@ -13,7 +12,7 @@ public class TLRPC$TL_dialogFilterSuggested extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(2004110666);
         this.filter.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeString(this.description);
     }

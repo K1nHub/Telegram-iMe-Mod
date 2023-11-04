@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;)V
     .locals 0
 
-    .line 1959
+    .line 1965
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

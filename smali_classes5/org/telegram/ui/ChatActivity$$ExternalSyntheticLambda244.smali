@@ -8,18 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
-.field public final synthetic f$1:Lorg/telegram/messenger/MessageObject;
+.field public final synthetic f$1:J
+
+.field public final synthetic f$2:Lorg/telegram/messenger/MessageObject;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;JLorg/telegram/messenger/MessageObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda244;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda244;->f$1:Lorg/telegram/messenger/MessageObject;
+    iput-wide p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda244;->f$1:J
+
+    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda244;->f$2:Lorg/telegram/messenger/MessageObject;
 
     return-void
 .end method
@@ -27,13 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 4
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda244;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda244;->f$1:Lorg/telegram/messenger/MessageObject;
+    iget-wide v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda244;->f$1:J
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$5lWYHsL2vpfxnsXESJ1PUPRll88(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;)V
+    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda244;->f$2:Lorg/telegram/messenger/MessageObject;
+
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$iHwf80qr73qmGX1FJzF0oZODOQA(Lorg/telegram/ui/ChatActivity;JLorg/telegram/messenger/MessageObject;)V
 
     return-void
 .end method

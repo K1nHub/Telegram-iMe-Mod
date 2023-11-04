@@ -16,11 +16,11 @@ import com.google.firebase.crashlytics.internal.model.AutoValue_CrashlyticsRepor
 import com.google.firebase.crashlytics.internal.model.AutoValue_CrashlyticsReport_Session_Event_Log;
 import com.google.firebase.crashlytics.internal.model.AutoValue_CrashlyticsReport_Session_OperatingSystem;
 import com.google.firebase.crashlytics.internal.model.AutoValue_CrashlyticsReport_Session_User;
-import com.google.firebase.crashlytics.internal.model.C0974xfe724d07;
-import com.google.firebase.crashlytics.internal.model.C0976xc2f5febc;
-import com.google.firebase.crashlytics.internal.model.C0978x7c929f5b;
-import com.google.firebase.crashlytics.internal.model.C0980x7e3e3ebd;
-import com.google.firebase.crashlytics.internal.model.C0982xce3d994b;
+import com.google.firebase.crashlytics.internal.model.C0980xfe724d07;
+import com.google.firebase.crashlytics.internal.model.C0982xc2f5febc;
+import com.google.firebase.crashlytics.internal.model.C0984x7c929f5b;
+import com.google.firebase.crashlytics.internal.model.C0986x7e3e3ebd;
+import com.google.firebase.crashlytics.internal.model.C0988xce3d994b;
 import java.nio.charset.Charset;
 @AutoValue
 /* loaded from: classes3.dex */
@@ -517,7 +517,7 @@ public abstract class CrashlyticsReport {
                         public abstract String getName();
 
                         public static Builder builder() {
-                            return new C0980x7e3e3ebd.Builder();
+                            return new C0986x7e3e3ebd.Builder();
                         }
 
                         @AutoValue
@@ -551,7 +551,7 @@ public abstract class CrashlyticsReport {
                             public abstract String getSymbol();
 
                             public static Builder builder() {
-                                return new C0982xce3d994b.Builder();
+                                return new C0988xce3d994b.Builder();
                             }
                         }
                     }
@@ -587,7 +587,7 @@ public abstract class CrashlyticsReport {
                         public abstract String getType();
 
                         public static Builder builder() {
-                            return new C0976xc2f5febc.Builder();
+                            return new C0982xc2f5febc.Builder();
                         }
                     }
 
@@ -614,7 +614,7 @@ public abstract class CrashlyticsReport {
                         public abstract String getName();
 
                         public static Builder builder() {
-                            return new C0978x7c929f5b.Builder();
+                            return new C0984x7c929f5b.Builder();
                         }
                     }
 
@@ -630,7 +630,7 @@ public abstract class CrashlyticsReport {
                         public abstract String getUuid();
 
                         public static Builder builder() {
-                            return new C0974xfe724d07.Builder();
+                            return new C0980xfe724d07.Builder();
                         }
 
                         public byte[] getUuidUtf8Bytes() {

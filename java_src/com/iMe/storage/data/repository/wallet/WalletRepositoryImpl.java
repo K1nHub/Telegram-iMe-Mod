@@ -630,7 +630,7 @@ public final class WalletRepositoryImpl implements WalletRepository {
                         }
                         Completable andThen = rxDeleteByNetwork.andThen(walletTokensBalancesDao2.rxInsert((List) arrayList));
                         schedulersProvider = this.schedulersProvider;
-                        Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo1010io());
+                        Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo1011io());
                         Observable just = Observable.just(mapToDomain);
                         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
                         Observable andThen2 = subscribeOn.andThen(just);
@@ -719,7 +719,7 @@ public final class WalletRepositoryImpl implements WalletRepository {
                 }
                 Completable andThen = rxDeleteByMultipleNetworks.andThen(walletTokensBalancesDao2.rxInsert((List) arrayList));
                 schedulersProvider = this.schedulersProvider;
-                Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo1010io());
+                Completable subscribeOn = andThen.subscribeOn(schedulersProvider.mo1011io());
                 Observable just2 = Observable.just(mapToDomain);
                 Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
                 Observable andThen2 = subscribeOn.andThen(just2);
@@ -890,7 +890,7 @@ public final class WalletRepositoryImpl implements WalletRepository {
                     }
                     Completable rxInsert = walletTokensBalancesDao2.rxInsert((List) arrayList3);
                     schedulersProvider = this.schedulersProvider;
-                    Completable subscribeOn = rxInsert.subscribeOn(schedulersProvider.mo1010io());
+                    Completable subscribeOn = rxInsert.subscribeOn(schedulersProvider.mo1011io());
                     Observable just2 = Observable.just(mapToDomain);
                     Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
                     Observable andThen = subscribeOn.andThen(just2);

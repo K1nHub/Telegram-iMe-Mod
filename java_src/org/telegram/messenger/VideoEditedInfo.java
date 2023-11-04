@@ -10,22 +10,21 @@ import java.util.Iterator;
 import java.util.Locale;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
-import org.telegram.p042ui.Components.AnimatedFileDrawable;
-import org.telegram.p042ui.Components.Paint.PaintTypeface;
-import org.telegram.p042ui.Components.PhotoFilterView;
-import org.telegram.p042ui.Components.Point;
-import org.telegram.p042ui.Components.Reactions.ReactionsLayoutInBubble;
-import org.telegram.p042ui.Stories.recorder.StoryEntry;
+import org.telegram.p043ui.Components.AnimatedFileDrawable;
+import org.telegram.p043ui.Components.Paint.PaintTypeface;
+import org.telegram.p043ui.Components.PhotoFilterView;
+import org.telegram.p043ui.Components.Point;
+import org.telegram.p043ui.Components.Reactions.ReactionsLayoutInBubble;
+import org.telegram.p043ui.Stories.recorder.StoryEntry;
 import org.telegram.tgnet.AbstractSerializedData;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$InputEncryptedFile;
 import org.telegram.tgnet.TLRPC$InputFile;
-import org.telegram.tgnet.TLRPC$MediaArea;
 import org.telegram.tgnet.TLRPC$MessageMedia;
 import org.telegram.tgnet.TLRPC$TL_messageEntityCustomEmoji;
 import org.telegram.tgnet.TLRPC$TL_messageMediaVenue;
-import org.telegram.tgnet.TLRPC$TL_null;
+import org.telegram.tgnet.p042tl.TL_stories$MediaArea;
 /* loaded from: classes4.dex */
 public class VideoEditedInfo {
     public boolean alreadyScheduledConverting;
@@ -50,7 +49,7 @@ public class VideoEditedInfo {
     public boolean isStory;
 
     /* renamed from: iv */
-    public byte[] f1574iv;
+    public byte[] f1576iv;
     public byte[] key;
     public ArrayList<MediaEntity> mediaEntities;
     public boolean muted;
@@ -114,10 +113,10 @@ public class VideoEditedInfo {
         public static final int TYPE_TEXT = 1;
 
         /* renamed from: H */
-        public int f1575H;
+        public int f1577H;
 
         /* renamed from: W */
-        public int f1576W;
+        public int f1578W;
         public float additionalHeight;
         public float additionalWidth;
         public AnimatedFileDrawable animatedFileDrawable;
@@ -131,7 +130,7 @@ public class VideoEditedInfo {
         public int fontSize;
         public float framesPerDraw;
         public float height;
-        public TLRPC$MediaArea mediaArea;
+        public TL_stories$MediaArea mediaArea;
         public TLRPC$MessageMedia mediaGeo;
         public int[] metadata;
         public Object parentObject;
@@ -157,10 +156,10 @@ public class VideoEditedInfo {
         public float width;
 
         /* renamed from: x */
-        public float f1577x;
+        public float f1579x;
 
         /* renamed from: y */
-        public float f1578y;
+        public float f1580y;
 
         public MediaEntity() {
             this.text = "";
@@ -172,8 +171,8 @@ public class VideoEditedInfo {
             this.entities = new ArrayList<>();
             this.type = abstractSerializedData.readByte(false);
             this.subType = abstractSerializedData.readByte(false);
-            this.f1577x = abstractSerializedData.readFloat(false);
-            this.f1578y = abstractSerializedData.readFloat(false);
+            this.f1579x = abstractSerializedData.readFloat(false);
+            this.f1580y = abstractSerializedData.readFloat(false);
             this.rotation = abstractSerializedData.readFloat(false);
             this.width = abstractSerializedData.readFloat(false);
             this.height = abstractSerializedData.readFloat(false);
@@ -200,7 +199,7 @@ public class VideoEditedInfo {
             this.textViewY = abstractSerializedData.readFloat(false);
             if (z) {
                 int readInt322 = abstractSerializedData.readInt32(false);
-                if (readInt322 == TLRPC$TL_null.constructor) {
+                if (readInt322 == 1450380236) {
                     this.document = null;
                 } else {
                     this.document = TLRPC$Document.TLdeserialize(abstractSerializedData, readInt322, false);
@@ -208,7 +207,7 @@ public class VideoEditedInfo {
             }
             if (this.type == 3) {
                 this.density = abstractSerializedData.readFloat(false);
-                this.mediaArea = TLRPC$MediaArea.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(false), false);
+                this.mediaArea = TL_stories$MediaArea.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(false), false);
                 this.mediaGeo = TLRPC$MessageMedia.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(false), false);
                 if (abstractSerializedData.remaining() > 0 && abstractSerializedData.readInt32(false) == -559038737) {
                     String readString2 = abstractSerializedData.readString(false);
@@ -219,7 +218,7 @@ public class VideoEditedInfo {
                 }
             }
             if (this.type == 4) {
-                this.mediaArea = TLRPC$MediaArea.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(false), false);
+                this.mediaArea = TL_stories$MediaArea.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(false), false);
             }
         }
 
@@ -227,8 +226,8 @@ public class VideoEditedInfo {
             String key;
             abstractSerializedData.writeByte(this.type);
             abstractSerializedData.writeByte(this.subType);
-            abstractSerializedData.writeFloat(this.f1577x);
-            abstractSerializedData.writeFloat(this.f1578y);
+            abstractSerializedData.writeFloat(this.f1579x);
+            abstractSerializedData.writeFloat(this.f1580y);
             abstractSerializedData.writeFloat(this.rotation);
             abstractSerializedData.writeFloat(this.width);
             abstractSerializedData.writeFloat(this.height);
@@ -260,7 +259,7 @@ public class VideoEditedInfo {
             if (z) {
                 TLRPC$Document tLRPC$Document = this.document;
                 if (tLRPC$Document == null) {
-                    abstractSerializedData.writeInt32(TLRPC$TL_null.constructor);
+                    abstractSerializedData.writeInt32(1450380236);
                 } else {
                     tLRPC$Document.serializeToStream(abstractSerializedData);
                 }
@@ -284,7 +283,7 @@ public class VideoEditedInfo {
                     abstractSerializedData.writeInt32(-559038737);
                     abstractSerializedData.writeString(((TLRPC$TL_messageMediaVenue) this.mediaGeo).emoji);
                 } else {
-                    abstractSerializedData.writeInt32(TLRPC$TL_null.constructor);
+                    abstractSerializedData.writeInt32(1450380236);
                 }
             }
             if (this.type == 4) {
@@ -296,8 +295,8 @@ public class VideoEditedInfo {
             MediaEntity mediaEntity = new MediaEntity();
             mediaEntity.type = this.type;
             mediaEntity.subType = this.subType;
-            mediaEntity.f1577x = this.f1577x;
-            mediaEntity.f1578y = this.f1578y;
+            mediaEntity.f1579x = this.f1579x;
+            mediaEntity.f1580y = this.f1580y;
             mediaEntity.rotation = this.rotation;
             mediaEntity.width = this.width;
             mediaEntity.height = this.height;
@@ -335,8 +334,8 @@ public class VideoEditedInfo {
             mediaEntity.mediaArea = this.mediaArea;
             mediaEntity.mediaGeo = this.mediaGeo;
             mediaEntity.density = this.density;
-            mediaEntity.f1576W = this.f1576W;
-            mediaEntity.f1575H = this.f1575H;
+            mediaEntity.f1578W = this.f1578W;
+            mediaEntity.f1577H = this.f1577H;
             mediaEntity.visibleReaction = this.visibleReaction;
             return mediaEntity;
         }
@@ -388,8 +387,8 @@ public class VideoEditedInfo {
                 serializedData.writeFloat(this.filterState.blurExcludeSize);
                 Point point = this.filterState.blurExcludePoint;
                 if (point != null) {
-                    serializedData.writeFloat(point.f1887x);
-                    serializedData.writeFloat(this.filterState.blurExcludePoint.f1888y);
+                    serializedData.writeFloat(point.f1892x);
+                    serializedData.writeFloat(this.filterState.blurExcludePoint.f1893y);
                 } else {
                     serializedData.writeFloat(BitmapDescriptorFactory.HUE_RED);
                     serializedData.writeFloat(BitmapDescriptorFactory.HUE_RED);
@@ -597,7 +596,7 @@ public class VideoEditedInfo {
             }
             return true;
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
             return false;
         }
     }

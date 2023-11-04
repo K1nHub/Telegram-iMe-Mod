@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 287
+    .line 286
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$2;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,12 +48,12 @@
 .method public getAnimatedEmojiColorFilter()Landroid/graphics/ColorFilter;
     .locals 3
 
-    .line 350
+    .line 349
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$2;->animatedEmojiColorFilter:Landroid/graphics/ColorFilter;
 
     if-nez v0, :cond_0
 
-    .line 351
+    .line 350
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     const/4 v1, -0x1
@@ -64,7 +64,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$2;->animatedEmojiColorFilter:Landroid/graphics/ColorFilter;
 
-    .line 353
+    .line 352
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$2;->animatedEmojiColorFilter:Landroid/graphics/ColorFilter;
 
@@ -74,7 +74,7 @@
 .method public getColor(I)I
     .locals 3
 
-    .line 290
+    .line 289
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
     if-ne p1, v0, :cond_0
@@ -83,7 +83,7 @@
 
     return p1
 
-    .line 292
+    .line 291
     :cond_0
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
@@ -93,7 +93,7 @@
 
     return v1
 
-    .line 294
+    .line 293
     :cond_1
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
@@ -103,7 +103,7 @@
 
     return p1
 
-    .line 296
+    .line 295
     :cond_2
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
@@ -113,7 +113,7 @@
 
     return p1
 
-    .line 298
+    .line 297
     :cond_3
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray3:I
 
@@ -123,7 +123,7 @@
 
     return p1
 
-    .line 300
+    .line 299
     :cond_4
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackground:I
 
@@ -133,7 +133,7 @@
 
     return p1
 
-    .line 302
+    .line 301
     :cond_5
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelShadowLine:I
 
@@ -143,7 +143,7 @@
 
     return p1
 
-    .line 304
+    .line 303
     :cond_6
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiBottomPanelIcon:I
 
@@ -153,7 +153,7 @@
 
     return v2
 
-    .line 306
+    .line 305
     :cond_7
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackspace:I
 
@@ -161,7 +161,7 @@
 
     return v2
 
-    .line 308
+    .line 307
     :cond_8
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIcon:I
 
@@ -169,7 +169,7 @@
 
     return v2
 
-    .line 312
+    .line 311
     :cond_9
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
@@ -177,7 +177,7 @@
 
     return v1
 
-    .line 314
+    .line 313
     :cond_a
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addedIcon:I
 
@@ -187,7 +187,7 @@
 
     return p1
 
-    .line 316
+    .line 315
     :cond_b
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
@@ -197,7 +197,7 @@
 
     return p1
 
-    .line 318
+    .line 317
     :cond_c
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabSelectedText:I
 
@@ -205,7 +205,7 @@
 
     return v1
 
-    .line 320
+    .line 319
     :cond_d
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabText:I
 
@@ -213,7 +213,7 @@
 
     return v1
 
-    .line 322
+    .line 321
     :cond_e
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabSelectedLine:I
 
@@ -221,7 +221,7 @@
 
     return v1
 
-    .line 324
+    .line 323
     :cond_f
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabSelector:I
 
@@ -231,7 +231,7 @@
 
     return p1
 
-    .line 326
+    .line 325
     :cond_10
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchIcon:I
 
@@ -241,7 +241,7 @@
 
     goto :goto_0
 
-    .line 328
+    .line 327
     :cond_11
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchBackground:I
 
@@ -251,7 +251,7 @@
 
     return p1
 
-    .line 330
+    .line 329
     :cond_12
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
@@ -261,20 +261,20 @@
 
     return p1
 
-    .line 334
+    .line 333
     :cond_13
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$2;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-eqz v0, :cond_14
 
-    .line 335
+    .line 334
     invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(I)I
 
     move-result p1
 
     return p1
 
-    .line 337
+    .line 336
     :cond_14
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
@@ -322,7 +322,7 @@
 .method public getPaint(Ljava/lang/String;)Landroid/graphics/Paint;
     .locals 1
 
-    .line 343
+    .line 342
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$2;->val$resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getPaint(Ljava/lang/String;)Landroid/graphics/Paint;

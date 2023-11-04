@@ -8,14 +8,14 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.Theme;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BinanceAccountProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.BinanceAccountProvider$convert$1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class BinanceAccountProvider$convert$1 extends Lambda implements Function1<ActionBarMenuItem, Unit> {
     final /* synthetic */ BinanceAccountProvider this$0;
 
@@ -38,14 +38,14 @@ public final class BinanceAccountProvider$convert$1 extends Lambda implements Fu
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
         applyForView.setLongClickEnabled(false);
         applyForView.setSubMenuOpenSide(2);
-        applyForView.setIcon(C3630R.C3632drawable.ic_ab_other);
+        applyForView.setIcon(C3634R.C3636drawable.ic_ab_other);
         ViewExtKt.setCircleRippleBackground(applyForView);
         applyForView.removeAllSubItems();
         int i = IdFabric$Menu.RECEIVE;
-        int i2 = C3630R.C3632drawable.fork_ic_ask_transfer_24;
+        int i2 = C3634R.C3636drawable.fork_ic_ask_transfer_24;
         resourceManager = this.this$0.resourceManager;
-        applyForView.addSubItem(i, i2, resourceManager.getString(C3630R.string.wallet_binance_pay_action_receive));
-        applyForView.addSubItem(IdFabric$Menu.LOGOUT, C3630R.C3632drawable.msg_leave, LocaleController.getString("LogOut", C3630R.string.LogOut));
+        applyForView.addSubItem(i, i2, resourceManager.getString(C3634R.string.wallet_binance_pay_action_receive));
+        applyForView.addSubItem(IdFabric$Menu.LOGOUT, C3634R.C3636drawable.msg_leave, LocaleController.getString("LogOut", C3634R.string.LogOut));
         applyForView.redrawPopup(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground));
         applyForView.setPopupItemsColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem), false);
         applyForView.setPopupItemsColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon), true);
@@ -57,7 +57,7 @@ public final class BinanceAccountProvider$convert$1 extends Lambda implements Fu
             }
         });
         applyForView.setDelegate(this.this$0.getActionBarMenuItemDelegate());
-        applyForView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3630R.string.AccDescrMoreOptions));
+        applyForView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

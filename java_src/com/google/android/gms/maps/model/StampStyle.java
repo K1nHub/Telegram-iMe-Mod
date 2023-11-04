@@ -13,7 +13,7 @@ import com.google.android.gms.dynamic.IObjectWrapper;
 /* loaded from: classes3.dex */
 public class StampStyle extends AbstractSafeParcelable {
     public static final Parcelable.Creator<StampStyle> CREATOR = new zzo();
-    @SafeParcelable.Field(getter = "getWrappedStampBinder", m1089id = 2, type = "android.os.IBinder")
+    @SafeParcelable.Field(getter = "getWrappedStampBinder", m1090id = 2, type = "android.os.IBinder")
     protected final BitmapDescriptor zza;
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -32,7 +32,7 @@ public class StampStyle extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public StampStyle(@SafeParcelable.Param(m1088id = 2) IBinder iBinder) {
+    public StampStyle(@SafeParcelable.Param(m1089id = 2) IBinder iBinder) {
         this.zza = new BitmapDescriptor(IObjectWrapper.Stub.asInterface(iBinder));
     }
 

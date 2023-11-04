@@ -12,10 +12,10 @@ import com.iMe.fork.enums.ChatAttachAlertButton;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.CheckBoxSquare;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.RLottieImageView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.CheckBoxSquare;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: ChatAttachAlertButtonCell.kt */
 /* renamed from: com.iMe.fork.ui.view.ChatAttachAlertButtonCell */
 /* loaded from: classes3.dex */
@@ -57,7 +57,7 @@ public final class ChatAttachAlertButtonCell extends LinearLayout {
         Intrinsics.checkNotNullParameter(button, "button");
         this.titleView.setText(button.getTitle());
         this.lottieImageView.setAnimation(button.getIconResId(), 26, 26);
-        this.lottieImageView.setBackground(Theme.createCircleDrawable(AndroidUtilities.m102dp(46), button.getBackgroundColor()));
+        this.lottieImageView.setBackground(Theme.createCircleDrawable(AndroidUtilities.m104dp(46), button.getBackgroundColor()));
         this.checkBox.setChecked(z, false);
         this.needDivider = z2;
         setWillNotDraw(!z2);
@@ -65,7 +65,7 @@ public final class ChatAttachAlertButtonCell extends LinearLayout {
 
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m102dp(48) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m104dp(48) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     @Override // android.widget.LinearLayout, android.view.View

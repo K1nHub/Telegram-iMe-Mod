@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.iMe.utils.extentions.common.ImageViewExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* compiled from: MenuAdapter.kt */
 /* renamed from: com.iMe.ui.popupMenu.MenuAdapter */
 /* loaded from: classes3.dex */
@@ -47,7 +47,7 @@ public final class MenuAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
         if (view == null) {
-            view = LayoutInflater.from(this.context).inflate(C3630R.layout.fork_custom_menu_item, viewGroup, false);
+            view = LayoutInflater.from(this.context).inflate(C3634R.layout.fork_custom_menu_item, viewGroup, false);
             Intrinsics.checkNotNullExpressionValue(view, "from(context).inflate(R.…menu_item, parent, false)");
             viewHolder = new ViewHolder(view);
             view.setTag(viewHolder);
@@ -90,10 +90,10 @@ public final class MenuAdapter extends BaseAdapter {
 
         public ViewHolder(View view) {
             Intrinsics.checkNotNullParameter(view, "view");
-            View findViewById = view.findViewById(C3630R.C3633id.menu_item_icon);
+            View findViewById = view.findViewById(C3634R.C3637id.menu_item_icon);
             Intrinsics.checkNotNullExpressionValue(findViewById, "view.findViewById(R.id.menu_item_icon)");
             this.icon = (ImageView) findViewById;
-            View findViewById2 = view.findViewById(C3630R.C3633id.menu_item_title);
+            View findViewById2 = view.findViewById(C3634R.C3637id.menu_item_title);
             Intrinsics.checkNotNullExpressionValue(findViewById2, "view.findViewById(R.id.menu_item_title)");
             this.title = (TextView) findViewById2;
         }

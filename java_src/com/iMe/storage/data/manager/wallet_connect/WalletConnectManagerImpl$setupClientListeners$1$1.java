@@ -52,7 +52,7 @@ public final class WalletConnectManagerImpl$setupClientListeners$1$1 extends Lam
             walletConnectInteractor = this.this$0.walletConnectInteractor;
             Completable deleteWalletConnectSession = walletConnectInteractor.deleteWalletConnectSession(this.$sessionStoreItem.getSession().getKey());
             schedulersProvider = this.this$0.schedulersProvider;
-            Completable observeOn = deleteWalletConnectSession.observeOn(schedulersProvider.mo1009ui());
+            Completable observeOn = deleteWalletConnectSession.observeOn(schedulersProvider.mo1010ui());
             final WalletConnectManagerImpl walletConnectManagerImpl = this.this$0;
             final WCSessionStoreItem wCSessionStoreItem = this.$sessionStoreItem;
             Action action = new Action() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$setupClientListeners$1$1$$ExternalSyntheticLambda0

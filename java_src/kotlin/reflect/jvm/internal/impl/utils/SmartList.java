@@ -17,7 +17,7 @@ import p033j$.util.function.Consumer;
 import p033j$.util.function.IntFunction;
 import p033j$.util.function.Predicate;
 import p033j$.util.function.UnaryOperator;
-import p033j$.util.stream.AbstractC3082o1;
+import p033j$.util.stream.AbstractC3086o1;
 import p033j$.util.stream.Stream;
 /* loaded from: classes4.dex */
 public class SmartList<E> extends AbstractList<E> implements RandomAccess, List {
@@ -70,16 +70,16 @@ public class SmartList<E> extends AbstractList<E> implements RandomAccess, List 
         throw new IllegalStateException(format);
     }
 
-    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2670e
+    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2674e
     public /* synthetic */ void forEach(Consumer consumer) {
         Iterable$CC.$default$forEach(this, consumer);
     }
 
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream parallelStream() {
-        Stream m398y;
-        m398y = AbstractC3082o1.m398y(Collection.EL.m694b(this), true);
-        return m398y;
+        Stream m399y;
+        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), true);
+        return m399y;
     }
 
     @Override // p033j$.util.Collection
@@ -92,16 +92,16 @@ public class SmartList<E> extends AbstractList<E> implements RandomAccess, List 
         List.CC.$default$replaceAll(this, unaryOperator);
     }
 
-    @Override // java.util.Collection, java.lang.Iterable, java.util.List, p033j$.util.List, p033j$.util.Collection, p033j$.lang.InterfaceC2670e
+    @Override // java.util.Collection, java.lang.Iterable, java.util.List, p033j$.util.List, p033j$.util.Collection, p033j$.lang.InterfaceC2674e
     public /* synthetic */ Spliterator spliterator() {
         return List.CC.$default$spliterator(this);
     }
 
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream stream() {
-        Stream m398y;
-        m398y = AbstractC3082o1.m398y(Collection.EL.m694b(this), false);
-        return m398y;
+        Stream m399y;
+        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), false);
+        return m399y;
     }
 
     @Override // p033j$.util.Collection

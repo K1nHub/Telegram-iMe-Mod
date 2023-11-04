@@ -220,7 +220,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
                 return;
             }
         }
-        Observable<Result<List<SelectableTokenItem>>> observeOn = getSearchObservable().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<List<SelectableTokenItem>>> observeOn = getSearchObservable().observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "getSearchObservable()\n  …(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends SelectableTokenItem>>, Unit>() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$searchByQuery$$inlined$subscribeWithErrorHandle$default$1
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -230,12 +230,12 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends SelectableTokenItem>> result) {
-                m1852invoke(result);
+                m1857invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1852invoke(Result<? extends List<? extends SelectableTokenItem>> it) {
+            public final void m1857invoke(Result<? extends List<? extends SelectableTokenItem>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends SelectableTokenItem>> result = it;
                 if (result instanceof Result.Success) {
@@ -301,7 +301,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
     }
 
     private final void loadBinanceBalances(final List<TokenDetailed> list) {
-        Observable<Result<List<BinanceTokenBalanceInfo>>> observeOn = this.binanceInternalInteractor.getUserBalance().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<List<BinanceTokenBalanceInfo>>> observeOn = this.binanceInternalInteractor.getUserBalance().observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "binanceInternalInteracto…(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends BinanceTokenBalanceInfo>>, Unit>() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$loadBinanceBalances$$inlined$subscribeWithErrorHandle$default$1
@@ -312,12 +312,12 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> result) {
-                m1850invoke(result);
+                m1855invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1850invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> it) {
+            public final void m1855invoke(Result<? extends List<? extends BinanceTokenBalanceInfo>> it) {
                 ResourceManager resourceManager;
                 Result.Success success;
                 List<SelectableTokenItem> withExcludedSelectedToken;
@@ -406,7 +406,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
     }
 
     private final void loadInternalBalances(final List<TokenDetailed> list) {
-        Observable<Result<List<TokenBalance>>> observeOn = this.walletInteractor.getWalletBalance(true, this.networkId).distinctUntilChanged().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<List<TokenBalance>>> observeOn = this.walletInteractor.getWalletBalance(true, this.networkId).distinctUntilChanged().observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends TokenBalance>>, Unit>() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$loadInternalBalances$$inlined$subscribeWithErrorHandle$default$1
@@ -417,12 +417,12 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends TokenBalance>> result) {
-                m1851invoke(result);
+                m1856invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1851invoke(Result<? extends List<? extends TokenBalance>> it) {
+            public final void m1856invoke(Result<? extends List<? extends TokenBalance>> it) {
                 ResourceManager resourceManager;
                 List<SelectableTokenItem> withExcludedSelectedToken;
                 boolean z;
@@ -508,7 +508,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
     }
 
     private final void subscribeToQueryChanges() {
-        Observable<String> observeOn = this.querySubject.debounce(500L, TimeUnit.MILLISECONDS).distinctUntilChanged().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<String> observeOn = this.querySubject.debounce(500L, TimeUnit.MILLISECONDS).distinctUntilChanged().observeOn(this.schedulersProvider.mo1010ui());
         final Function1<String, Unit> function1 = new Function1<String, Unit>() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$subscribeToQueryChanges$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -531,7 +531,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
             public final void accept(Object obj) {
                 WalletSelectTokenPresenter.subscribeToQueryChanges$lambda$11(Function1.this, obj);
             }
-        }).observeOn(this.schedulersProvider.mo1010io());
+        }).observeOn(this.schedulersProvider.mo1011io());
         final Function1<String, ObservableSource<? extends Result<? extends List<? extends SelectableTokenItem>>>> function12 = new Function1<String, ObservableSource<? extends Result<? extends List<? extends SelectableTokenItem>>>>() { // from class: com.iMe.ui.wallet.swap.token.WalletSelectTokenPresenter$subscribeToQueryChanges$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -567,12 +567,12 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends SelectableTokenItem>> result) {
-                m1853invoke(result);
+                m1858invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1853invoke(Result<? extends List<? extends SelectableTokenItem>> it) {
+            public final void m1858invoke(Result<? extends List<? extends SelectableTokenItem>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends SelectableTokenItem>> result = it;
                 if (result instanceof Result.Success) {
@@ -691,7 +691,7 @@ public final class WalletSelectTokenPresenter extends BasePresenter<WalletSelect
                     collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(data3, 10);
                     ArrayList arrayList2 = new ArrayList(collectionSizeOrDefault2);
                     for (TokenDetailedWithRate tokenDetailedWithRate2 : data3) {
-                        arrayList2.add(TuplesKt.m144to(tokenDetailedWithRate2.getToken().getAddress(), tokenDetailedWithRate2.getRateToFiat()));
+                        arrayList2.add(TuplesKt.m146to(tokenDetailedWithRate2.getToken().getAddress(), tokenDetailedWithRate2.getRateToFiat()));
                     }
                     MapsKt__MapsKt.putAll(map, arrayList2);
                     collectionSizeOrDefault3 = CollectionsKt__IterablesKt.collectionSizeOrDefault(data3, 10);

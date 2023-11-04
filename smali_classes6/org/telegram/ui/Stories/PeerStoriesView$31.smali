@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;)V
     .locals 0
 
-    .line 5295
+    .line 5356
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,10 +48,10 @@
 .method public getClassGuid()I
     .locals 1
 
-    .line 5334
+    .line 5395
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$7600(Lorg/telegram/ui/Stories/PeerStoriesView;)I
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$7700(Lorg/telegram/ui/Stories/PeerStoriesView;)I
 
     move-result v0
 
@@ -61,10 +61,10 @@
 .method public getDialogId()J
     .locals 2
 
-    .line 5339
+    .line 5400
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5400(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v0}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v0
 
@@ -74,7 +74,7 @@
 .method public getFragmentView()Landroid/view/View;
     .locals 1
 
-    .line 5298
+    .line 5359
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     return-object v0
@@ -83,7 +83,7 @@
 .method public getParentActivity()Landroid/app/Activity;
     .locals 1
 
-    .line 5329
+    .line 5390
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -128,7 +128,7 @@
 .end method
 
 .method public sendMedia(Lorg/telegram/messenger/MediaController$PhotoEntry;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;)V
-    .locals 24
+    .locals 25
 
     move-object/from16 v0, p0
 
@@ -138,42 +138,42 @@
 
     return-void
 
-    .line 5306
+    .line 5367
     :cond_0
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v3, v2, Lorg/telegram/ui/Stories/PeerStoriesView;->currentStory:Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;
 
-    iget-object v3, v3, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v3, v3, Lorg/telegram/ui/Stories/PeerStoriesView$StoryItemHolder;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     if-eqz v3, :cond_6
 
-    .line 5307
-    instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_storyItemSkipped;
+    .line 5368
+    instance-of v4, v3, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemSkipped;
 
     if-eqz v4, :cond_1
 
     goto/16 :goto_1
 
-    .line 5310
+    .line 5371
     :cond_1
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5400(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v4
 
-    iput-wide v4, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+    iput-wide v4, v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
-    .line 5311
+    .line 5372
     iget-boolean v2, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     if-eqz v2, :cond_3
 
     if-eqz p2, :cond_2
 
-    .line 5313
+    .line 5374
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object v4
 
@@ -181,7 +181,7 @@
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5400(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v7
 
@@ -189,41 +189,43 @@
 
     const/4 v10, 0x0
 
-    iget-object v12, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
+    const/4 v12, 0x0
 
-    iget v13, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
+    iget-object v13, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
 
-    const/4 v14, 0x0
+    iget v14, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
+
+    const/4 v15, 0x0
 
     iget-boolean v2, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->hasSpoiler:Z
 
-    move/from16 v18, v2
+    move/from16 v19, v2
 
     iget-object v1, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
-    move-object/from16 v19, v1
+    move-object/from16 v20, v1
 
     move-object/from16 v6, p2
 
     move-object v11, v3
 
-    move/from16 v15, p3
+    move/from16 v16, p3
 
-    move/from16 v16, p4
+    move/from16 v17, p4
 
-    move/from16 v17, p5
+    move/from16 v18, p5
 
-    move-object/from16 v20, p6
+    move-object/from16 v21, p6
 
-    invoke-static/range {v4 .. v20}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingVideo(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Lorg/telegram/messenger/VideoEditedInfo;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;Ljava/util/ArrayList;ILorg/telegram/messenger/MessageObject;ZIZZLjava/lang/CharSequence;Ljava/lang/String;)V
+    invoke-static/range {v4 .. v21}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingVideo(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Lorg/telegram/messenger/VideoEditedInfo;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;Ljava/util/ArrayList;ILorg/telegram/messenger/MessageObject;ZIZZLjava/lang/CharSequence;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 5315
+    .line 5376
     :cond_2
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object v4
 
@@ -233,7 +235,7 @@
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5400(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v7
 
@@ -241,44 +243,46 @@
 
     const/4 v10, 0x0
 
-    iget-object v12, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
+    const/4 v12, 0x0
 
-    iget v13, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
+    iget-object v13, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
 
-    const/4 v14, 0x0
+    iget v14, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
+
+    const/4 v15, 0x0
 
     iget-boolean v2, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->hasSpoiler:Z
 
-    move/from16 v18, v2
+    move/from16 v19, v2
 
     iget-object v1, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
-    move-object/from16 v19, v1
+    move-object/from16 v20, v1
 
     move-object v11, v3
 
-    move/from16 v15, p3
+    move/from16 v16, p3
 
-    move/from16 v16, p4
+    move/from16 v17, p4
 
-    move/from16 v17, p5
+    move/from16 v18, p5
 
-    move-object/from16 v20, p6
+    move-object/from16 v21, p6
 
-    invoke-static/range {v4 .. v20}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingVideo(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Lorg/telegram/messenger/VideoEditedInfo;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;Ljava/util/ArrayList;ILorg/telegram/messenger/MessageObject;ZIZZLjava/lang/CharSequence;Ljava/lang/String;)V
+    invoke-static/range {v4 .. v21}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingVideo(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Lorg/telegram/messenger/VideoEditedInfo;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;Ljava/util/ArrayList;ILorg/telegram/messenger/MessageObject;ZIZZLjava/lang/CharSequence;Ljava/lang/String;)V
 
     goto/16 :goto_0
 
-    .line 5318
+    .line 5379
     :cond_3
     iget-object v2, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->imagePath:Ljava/lang/String;
 
     if-eqz v2, :cond_4
 
-    .line 5319
+    .line 5380
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object v4
 
@@ -290,7 +294,7 @@
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5400(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v8
 
@@ -298,48 +302,50 @@
 
     const/4 v11, 0x0
 
-    iget-object v13, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
+    const/4 v13, 0x0
 
-    iget-object v14, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->stickers:Ljava/util/ArrayList;
+    iget-object v14, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
 
-    const/4 v15, 0x0
+    iget-object v15, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->stickers:Ljava/util/ArrayList;
+
+    const/16 v16, 0x0
 
     iget v2, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
 
-    move/from16 v16, v2
+    move/from16 v17, v2
 
-    const/16 v17, 0x0
+    const/16 v18, 0x0
 
     iget-object v1, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
-    move-object/from16 v22, v1
+    move-object/from16 v23, v1
 
     move-object v12, v3
 
-    move-object/from16 v18, p2
+    move-object/from16 v19, p2
 
-    move/from16 v19, p3
+    move/from16 v20, p3
 
-    move/from16 v20, p4
+    move/from16 v21, p4
 
-    move/from16 v21, p5
+    move/from16 v22, p5
 
-    move-object/from16 v23, p6
+    move-object/from16 v24, p6
 
-    invoke-static/range {v4 .. v23}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingPhoto(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroidx/core/view/inputmethod/InputContentInfoCompat;ILorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/CharSequence;Ljava/lang/String;)V
+    invoke-static/range {v4 .. v24}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingPhoto(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroidx/core/view/inputmethod/InputContentInfoCompat;ILorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/CharSequence;Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 5320
+    .line 5381
     :cond_4
     iget-object v2, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
     if-eqz v2, :cond_5
 
-    .line 5321
+    .line 5382
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5600(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/messenger/AccountInstance;
 
     move-result-object v4
 
@@ -351,7 +357,7 @@
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5400(Lorg/telegram/ui/Stories/PeerStoriesView;)J
+    invoke-static {v2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5500(Lorg/telegram/ui/Stories/PeerStoriesView;)J
 
     move-result-wide v8
 
@@ -359,42 +365,44 @@
 
     const/4 v11, 0x0
 
-    iget-object v13, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
+    const/4 v13, 0x0
 
-    iget-object v14, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->stickers:Ljava/util/ArrayList;
+    iget-object v14, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
 
-    const/4 v15, 0x0
+    iget-object v15, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->stickers:Ljava/util/ArrayList;
+
+    const/16 v16, 0x0
 
     iget v2, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
 
-    move/from16 v16, v2
+    move/from16 v17, v2
 
-    const/16 v17, 0x0
+    const/16 v18, 0x0
 
     iget-object v1, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
-    move-object/from16 v22, v1
+    move-object/from16 v23, v1
 
     move-object v12, v3
 
-    move-object/from16 v18, p2
+    move-object/from16 v19, p2
 
-    move/from16 v19, p3
+    move/from16 v20, p3
 
-    move/from16 v20, p4
+    move/from16 v21, p4
 
-    move/from16 v21, p5
+    move/from16 v22, p5
 
-    move-object/from16 v23, p6
+    move-object/from16 v24, p6
 
-    invoke-static/range {v4 .. v23}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingPhoto(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroidx/core/view/inputmethod/InputContentInfoCompat;ILorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/CharSequence;Ljava/lang/String;)V
+    invoke-static/range {v4 .. v24}, Lorg/telegram/messenger/SendMessagesHelper;->prepareSendingPhoto(Lorg/telegram/messenger/AccountInstance;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;Ljava/util/ArrayList;Ljava/util/ArrayList;Landroidx/core/view/inputmethod/InputContentInfoCompat;ILorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/CharSequence;Ljava/lang/String;)V
 
-    .line 5324
+    .line 5385
     :cond_5
     :goto_0
     iget-object v1, v0, Lorg/telegram/ui/Stories/PeerStoriesView$31;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5600(Lorg/telegram/ui/Stories/PeerStoriesView;)V
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$5700(Lorg/telegram/ui/Stories/PeerStoriesView;)V
 
     :cond_6
     :goto_1

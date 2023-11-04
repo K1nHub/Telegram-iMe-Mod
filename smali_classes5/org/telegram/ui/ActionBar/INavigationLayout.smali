@@ -120,6 +120,9 @@
 .method public abstract getView()Landroid/view/ViewGroup;
 .end method
 
+.method public abstract getWindow()Landroid/view/Window;
+.end method
+
 .method public abstract hasIntegratedBlurInPreview()Z
 .end method
 
@@ -285,6 +288,9 @@
 .method public abstract setUseAlphaAnimations(Z)V
 .end method
 
+.method public abstract setWindow(Landroid/view/Window;)V
+.end method
+
 .method public abstract showLastFragment()V
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -297,4 +303,7 @@
 .end method
 
 .method public abstract updatePinnedPlayerVisible()V
+.end method
+
+.method public abstract updateTitleOverlay()V
 .end method

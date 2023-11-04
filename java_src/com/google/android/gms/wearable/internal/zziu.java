@@ -5,7 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
 import android.util.Log;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.gms.common.GooglePlayServicesUtilLight;
 import com.google.android.gms.common.internal.Preconditions;
 import com.google.android.gms.common.internal.ShowFirstParty;
@@ -54,7 +54,7 @@ public final class zziu {
 
     private static byte[] zzd(String str) {
         try {
-            return str.getBytes(C0479C.ISO88591_NAME);
+            return str.getBytes(C0485C.ISO88591_NAME);
         } catch (UnsupportedEncodingException e) {
             throw new AssertionError(e);
         }

@@ -28,11 +28,11 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.databinding.ForkRecycleItemWalletDonationTransactionBinding;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.AvatarDrawable;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.AvatarDrawable;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: DonationTransactionView.kt */
 /* renamed from: com.iMe.ui.custom.donation.DonationTransactionView */
@@ -135,7 +135,7 @@ public final class DonationTransactionView extends FrameLayout implements KoinCo
             ForkRecycleItemWalletDonationTransactionBinding forkRecycleItemWalletDonationTransactionBinding = this.binding;
             TLRPC$User user = TelegramControllersGateway.CC.getMessagesController$default(getTelegramControllersGateway(), 0, 1, null).getUser(Long.valueOf(Long.parseLong(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId())));
             AvatarDrawable avatarDrawable = new AvatarDrawable();
-            forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.getImageReceiver().setRoundRadius(getResources().getDimensionPixelSize(C3630R.dimen.telegram_avatar_size_medium) / 2);
+            forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.getImageReceiver().setRoundRadius(getResources().getDimensionPixelSize(C3634R.dimen.telegram_avatar_size_medium) / 2);
             if (user != null) {
                 avatarDrawable.setInfo(user);
                 forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.setForUserOrChat(user, avatarDrawable);
@@ -145,7 +145,7 @@ public final class DonationTransactionView extends FrameLayout implements KoinCo
                 substring = StringsKt__StringsKt.substring(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId(), new IntRange(0, 1));
                 avatarDrawable.setInfo(parseLong, null, null, substring);
                 forkRecycleItemWalletDonationTransactionBinding.imageUserAvatar.setImageDrawable(avatarDrawable);
-                forkRecycleItemWalletDonationTransactionBinding.textUserFullName.setText(getResourceManager().getString(C3630R.string.common_id, Long.valueOf(Long.parseLong(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId()))));
+                forkRecycleItemWalletDonationTransactionBinding.textUserFullName.setText(getResourceManager().getString(C3634R.string.common_id, Long.valueOf(Long.parseLong(((Transaction.Crypto.Donation) item.getTransaction()).getSenderAccountId()))));
             }
             forkRecycleItemWalletDonationTransactionBinding.textDate.setText(item.getTransactionDate());
             forkRecycleItemWalletDonationTransactionBinding.textCoinTicker.setText(item.getTransaction().getToken().getTicker());

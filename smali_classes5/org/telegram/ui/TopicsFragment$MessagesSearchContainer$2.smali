@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;Lorg/telegram/ui/TopicsFragment;)V
     .locals 0
 
-    .line 3226
+    .line 3234
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$2;->this$1:Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,17 +35,17 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 2
 
-    .line 3229
+    .line 3237
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 3230
+    .line 3238
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$2;->this$1:Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;
 
     iget-boolean v0, p1, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->canLoadMore:Z
 
     if-eqz v0, :cond_0
 
-    .line 3231
+    .line 3239
     iget-object p1, p1, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findLastVisibleItemPosition()I
@@ -54,19 +54,19 @@
 
     add-int/lit8 p1, p1, 0x5
 
-    .line 3232
+    .line 3240
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$2;->this$1:Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;
 
     iget v1, v0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->rowCount:I
 
     if-lt p1, v1, :cond_0
 
-    .line 3233
+    .line 3241
     iget-object p1, v0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->searchString:Ljava/lang/String;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;->access$7700(Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;Ljava/lang/String;)V
 
-    .line 3237
+    .line 3245
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer$2;->this$1:Lorg/telegram/ui/TopicsFragment$MessagesSearchContainer;
 
@@ -80,7 +80,7 @@
 
     if-eqz p3, :cond_2
 
-    .line 3238
+    .line 3246
     :cond_1
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$7800(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 

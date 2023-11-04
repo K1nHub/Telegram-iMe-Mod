@@ -166,9 +166,9 @@ public class SemaphoreImpl {
             kotlinx.coroutines.sync.SemaphoreImpl$tryResumeNextFromQueue$createNewSegment$1 r7 = kotlinx.coroutines.sync.SemaphoreImpl$tryResumeNextFromQueue$createNewSegment$1.INSTANCE
         L18:
             java.lang.Object r8 = kotlinx.coroutines.internal.ConcurrentLinkedListKt.findSegmentInternal(r2, r5, r7)
-            boolean r9 = kotlinx.coroutines.internal.SegmentOrClosed.m2118isClosedimpl(r8)
+            boolean r9 = kotlinx.coroutines.internal.SegmentOrClosed.m2123isClosedimpl(r8)
             if (r9 != 0) goto L5b
-            kotlinx.coroutines.internal.Segment r9 = kotlinx.coroutines.internal.SegmentOrClosed.m2117getSegmentimpl(r8)
+            kotlinx.coroutines.internal.Segment r9 = kotlinx.coroutines.internal.SegmentOrClosed.m2122getSegmentimpl(r8)
         L26:
             java.lang.Object r12 = r1.get(r15)
             kotlinx.coroutines.internal.Segment r12 = (kotlinx.coroutines.internal.Segment) r12
@@ -200,7 +200,7 @@ public class SemaphoreImpl {
             r9.remove()
             goto L26
         L5b:
-            kotlinx.coroutines.internal.Segment r1 = kotlinx.coroutines.internal.SegmentOrClosed.m2117getSegmentimpl(r8)
+            kotlinx.coroutines.internal.Segment r1 = kotlinx.coroutines.internal.SegmentOrClosed.m2122getSegmentimpl(r8)
             kotlinx.coroutines.sync.SemaphoreSegment r1 = (kotlinx.coroutines.sync.SemaphoreSegment) r1
             r1.cleanPrev()
             long r7 = r1.f1399id

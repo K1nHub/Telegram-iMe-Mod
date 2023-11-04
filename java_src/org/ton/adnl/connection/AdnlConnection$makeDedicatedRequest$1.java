@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AdnlConnection.kt */
-@DebugMetadata(m143c = "org.ton.adnl.connection.AdnlConnection", m142f = "AdnlConnection.kt", m141l = {57, 218, 76, 78, 79}, m140m = "makeDedicatedRequest")
+@DebugMetadata(m145c = "org.ton.adnl.connection.AdnlConnection", m144f = "AdnlConnection.kt", m143l = {57, 218, 76, 78, 79}, m142m = "makeDedicatedRequest")
 /* loaded from: classes6.dex */
 public final class AdnlConnection$makeDedicatedRequest$1 extends ContinuationImpl {
     Object L$0;

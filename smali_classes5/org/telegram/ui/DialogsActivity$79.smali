@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 16170
+    .line 16248
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$79;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 16173
+    .line 16251
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$79;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     iget-boolean v0, p1, Lorg/telegram/ui/DialogsActivity;->dialogStoriesCellVisible:Z
@@ -54,14 +54,14 @@
 
     if-nez v0, :cond_1
 
-    .line 16175
+    .line 16253
     iget-object p1, p1, Lorg/telegram/ui/DialogsActivity;->dialogStoriesCell:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     const/16 v0, 0x8
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 16177
+    .line 16255
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$79;->this$0:Lorg/telegram/ui/DialogsActivity;
 
@@ -71,7 +71,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 16178
+    .line 16256
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$79;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$41700(Lorg/telegram/ui/DialogsActivity;)Landroid/view/View;

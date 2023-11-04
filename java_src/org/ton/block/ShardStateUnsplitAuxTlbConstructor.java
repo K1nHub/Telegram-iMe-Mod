@@ -23,8 +23,8 @@ public final class ShardStateUnsplitAuxTlbConstructor extends org.ton.tlb.TlbCon
     public void storeTlb(CellBuilder cellBuilder, ShardStateUnsplitAux value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.storeUInt(value.m5047getOverloadHistorysVKNKU(), 64);
-        cellBuilder.storeUInt(value.m5048getUnderloadHistorysVKNKU(), 64);
+        cellBuilder.storeUInt(value.m5201getOverloadHistorysVKNKU(), 64);
+        cellBuilder.storeUInt(value.m5202getUnderloadHistorysVKNKU(), 64);
         CurrencyCollection.Companion companion = CurrencyCollection.Companion;
         companion.storeTlb(cellBuilder, (CellBuilder) value.getTotalBalance());
         companion.storeTlb(cellBuilder, (CellBuilder) value.getTotalValidatorFees());
@@ -35,9 +35,9 @@ public final class ShardStateUnsplitAuxTlbConstructor extends org.ton.tlb.TlbCon
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public ShardStateUnsplitAux loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        long m1989constructorimpl = ULong.m1989constructorimpl(cellSlice.loadUInt(64).longValue());
-        long m1989constructorimpl2 = ULong.m1989constructorimpl(cellSlice.loadUInt(64).longValue());
+        long m1994constructorimpl = ULong.m1994constructorimpl(cellSlice.loadUInt(64).longValue());
+        long m1994constructorimpl2 = ULong.m1994constructorimpl(cellSlice.loadUInt(64).longValue());
         CurrencyCollection.Companion companion = CurrencyCollection.Companion;
-        return new ShardStateUnsplitAux(m1989constructorimpl, m1989constructorimpl2, companion.loadTlb(cellSlice), companion.loadTlb(cellSlice), hashMapELibDesc.loadTlb(cellSlice), maybeBlkMasterInfo.loadTlb(cellSlice), null);
+        return new ShardStateUnsplitAux(m1994constructorimpl, m1994constructorimpl2, companion.loadTlb(cellSlice), companion.loadTlb(cellSlice), hashMapELibDesc.loadTlb(cellSlice), maybeBlkMasterInfo.loadTlb(cellSlice), null);
     }
 }

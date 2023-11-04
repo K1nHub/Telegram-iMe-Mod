@@ -49,7 +49,7 @@ public abstract class AppCompatDelegate {
 
     public abstract MenuInflater getMenuInflater();
 
-    public abstract AbstractC0019ActionBar getSupportActionBar();
+    public abstract AbstractC0025ActionBar getSupportActionBar();
 
     public abstract void installViewFactory();
 

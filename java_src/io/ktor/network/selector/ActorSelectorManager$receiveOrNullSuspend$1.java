@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ActorSelectorManager.kt */
-@DebugMetadata(m143c = "io.ktor.network.selector.ActorSelectorManager", m142f = "ActorSelectorManager.kt", m141l = {162}, m140m = "receiveOrNullSuspend")
+@DebugMetadata(m145c = "io.ktor.network.selector.ActorSelectorManager", m144f = "ActorSelectorManager.kt", m143l = {162}, m142m = "receiveOrNullSuspend")
 /* loaded from: classes4.dex */
 public final class ActorSelectorManager$receiveOrNullSuspend$1 extends ContinuationImpl {
     Object L$0;

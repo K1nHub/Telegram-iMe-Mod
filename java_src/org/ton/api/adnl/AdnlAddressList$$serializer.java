@@ -28,7 +28,7 @@ public final class AdnlAddressList$$serializer implements GeneratedSerializer<Ad
         pluginGeneratedSerialDescriptor.addElement("reinit_date", true);
         pluginGeneratedSerialDescriptor.addElement("priority", true);
         pluginGeneratedSerialDescriptor.addElement("expire_at", true);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7425x7048dd0e("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7500x7048dd0e("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

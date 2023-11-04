@@ -10,7 +10,7 @@ import kotlinx.serialization.Serializable;
 import kotlinx.serialization.json.JsonClassDiscriminator;
 import org.ton.api.adnl.AdnlIdShort;
 import org.ton.crypto.Encryptor;
-import org.ton.p044tl.TlCombinator;
+import org.ton.p045tl.TlCombinator;
 /* compiled from: pub.kt */
 @JsonClassDiscriminator(discriminator = "@type")
 @Serializable
@@ -26,11 +26,11 @@ public interface PublicKey extends Encryptor {
         static final /* synthetic */ Companion $$INSTANCE = new Companion();
 
         private Companion() {
-            super(Reflection.getOrCreateKotlinClass(PublicKey.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(PublicKeyEd25519.class), PublicKeyEd25519.Companion.tlConstructor()), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(PublicKeyUnencrypted.class), PublicKeyUnencrypted.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(PublicKeyAes.class), PublicKeyAes.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(PublicKeyOverlay.class), PublicKeyOverlay.Companion));
+            super(Reflection.getOrCreateKotlinClass(PublicKey.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(PublicKeyEd25519.class), PublicKeyEd25519.Companion.tlConstructor()), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(PublicKeyUnencrypted.class), PublicKeyUnencrypted.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(PublicKeyAes.class), PublicKeyAes.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(PublicKeyOverlay.class), PublicKeyOverlay.Companion));
         }
 
         public final KSerializer<PublicKey> serializer() {
-            return new SealedClassSerializer("org.ton.api.pub.PublicKey", Reflection.getOrCreateKotlinClass(PublicKey.class), new KClass[]{Reflection.getOrCreateKotlinClass(PublicKeyAes.class), Reflection.getOrCreateKotlinClass(PublicKeyEd25519.class), Reflection.getOrCreateKotlinClass(PublicKeyOverlay.class), Reflection.getOrCreateKotlinClass(PublicKeyUnencrypted.class)}, new KSerializer[]{PublicKeyAes$$serializer.INSTANCE, PublicKeyEd25519$$serializer.INSTANCE, PublicKeyOverlay$$serializer.INSTANCE, PublicKeyUnencrypted$$serializer.INSTANCE}, new Annotation[]{new C7439x79401cc9("@type")});
+            return new SealedClassSerializer("org.ton.api.pub.PublicKey", Reflection.getOrCreateKotlinClass(PublicKey.class), new KClass[]{Reflection.getOrCreateKotlinClass(PublicKeyAes.class), Reflection.getOrCreateKotlinClass(PublicKeyEd25519.class), Reflection.getOrCreateKotlinClass(PublicKeyOverlay.class), Reflection.getOrCreateKotlinClass(PublicKeyUnencrypted.class)}, new KSerializer[]{PublicKeyAes$$serializer.INSTANCE, PublicKeyEd25519$$serializer.INSTANCE, PublicKeyOverlay$$serializer.INSTANCE, PublicKeyUnencrypted$$serializer.INSTANCE}, new Annotation[]{new C7514x79401cc9("@type")});
         }
     }
 }

@@ -33,8 +33,8 @@ public interface SmartContract<T> {
             Maybe<CellRef<Cell>> data;
             CellRef<Cell> value;
             AccountState state = smartContract.getState();
-            StateInit m4925unboximpl = state instanceof AccountActive ? ((AccountActive) state).m4925unboximpl() : null;
-            if (m4925unboximpl == null || (data = m4925unboximpl.data()) == null || (value = data.getValue()) == null) {
+            StateInit m5079unboximpl = state instanceof AccountActive ? ((AccountActive) state).m5079unboximpl() : null;
+            if (m5079unboximpl == null || (data = m5079unboximpl.data()) == null || (value = data.getValue()) == null) {
                 return null;
             }
             return value.getValue();

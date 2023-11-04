@@ -320,6 +320,10 @@ public final class TelegramPreferenceKeys {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("selectedFormattingPanelType");
         }
 
+        public static final String isForwardingPreviewEditorHintShown() {
+            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isForwardingPreviewEditorHintShown");
+        }
+
         /* compiled from: TelegramPreferenceKeys.kt */
         /* loaded from: classes3.dex */
         public static final class Default {
@@ -400,6 +404,10 @@ public final class TelegramPreferenceKeys {
             }
 
             public static final boolean isFilterTabsAtBottomEnabled() {
+                return false;
+            }
+
+            public static final boolean isForwardingPreviewEditorHintShown() {
                 return false;
             }
 

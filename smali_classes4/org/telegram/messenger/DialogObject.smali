@@ -7,7 +7,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 16
+    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -18,7 +18,7 @@
 
     const/4 v0, 0x0
 
-    .line 106
+    .line 133
     invoke-static {v0, v0, p0}, Lorg/telegram/messenger/DialogObject;->setDialogPhotoTitle(Lorg/telegram/messenger/ImageReceiver;Lorg/telegram/ui/Components/AvatarDrawable;Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
 
     move-result-object p0
@@ -51,7 +51,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 78
+    .line 105
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$DraftMessage;->date:I
 
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->last_message_date:I
@@ -80,7 +80,7 @@
 
     return-wide v0
 
-    .line 68
+    .line 95
     :cond_0
     iget-wide v2, p0, Lorg/telegram/tgnet/TLRPC$InputPeer;->user_id:J
 
@@ -90,7 +90,7 @@
 
     return-wide v2
 
-    .line 70
+    .line 97
     :cond_1
     iget-wide v2, p0, Lorg/telegram/tgnet/TLRPC$InputPeer;->chat_id:J
 
@@ -102,7 +102,7 @@
 
     return-wide v0
 
-    .line 73
+    .line 100
     :cond_2
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$InputPeer;->channel_id:J
 
@@ -120,7 +120,7 @@
 
     return-wide v0
 
-    .line 55
+    .line 82
     :cond_0
     iget-wide v2, p0, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
@@ -130,7 +130,7 @@
 
     return-wide v2
 
-    .line 57
+    .line 84
     :cond_1
     iget-wide v2, p0, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
@@ -142,7 +142,7 @@
 
     return-wide v0
 
-    .line 60
+    .line 87
     :cond_2
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
@@ -154,12 +154,12 @@
 .method public static getPublicUsername(Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
     .locals 1
 
-    .line 159
+    .line 186
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v0, :cond_0
 
-    .line 160
+    .line 187
     check-cast p0, Lorg/telegram/tgnet/TLRPC$Chat;
 
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$Chat;)Ljava/lang/String;
@@ -168,13 +168,13 @@
 
     return-object p0
 
-    .line 161
+    .line 188
     :cond_0
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v0, :cond_1
 
-    .line 162
+    .line 189
     check-cast p0, Lorg/telegram/tgnet/TLRPC$User;
 
     invoke-static {p0}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
@@ -194,7 +194,7 @@
 
     if-eqz p0, :cond_5
 
-    .line 31
+    .line 58
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     const-wide/16 v2, 0x0
@@ -205,20 +205,20 @@
 
     goto :goto_0
 
-    .line 34
+    .line 61
     :cond_0
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_dialog;
 
     if-eqz v0, :cond_4
 
-    .line 35
+    .line 62
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     if-nez v0, :cond_1
 
     return-void
 
-    .line 38
+    .line 65
     :cond_1
     iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
@@ -226,12 +226,12 @@
 
     if-eqz v1, :cond_2
 
-    .line 39
+    .line 66
     iput-wide v4, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     goto :goto_0
 
-    .line 40
+    .line 67
     :cond_2
     iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
@@ -241,12 +241,12 @@
 
     neg-long v0, v4
 
-    .line 41
+    .line 68
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     goto :goto_0
 
-    .line 43
+    .line 70
     :cond_3
     iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$Peer;->channel_id:J
 
@@ -256,18 +256,18 @@
 
     goto :goto_0
 
-    .line 45
+    .line 72
     :cond_4
     instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$TL_dialogFolder;
 
     if-eqz v0, :cond_5
 
-    .line 46
+    .line 73
     move-object v0, p0
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_dialogFolder;
 
-    .line 47
+    .line 74
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_dialogFolder;->folder:Lorg/telegram/tgnet/TLRPC$TL_folder;
 
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$TL_folder;->id:I
@@ -283,6 +283,90 @@
     return-void
 .end method
 
+.method public static isAllDialogsOfSameSecret(Ljava/util/List;)Z
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Ljava/lang/Long;",
+            ">;)Z"
+        }
+    .end annotation
+
+    const/4 v0, 0x0
+
+    if-eqz p0, :cond_4
+
+    .line 26
+    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    goto :goto_1
+
+    :cond_0
+    const/4 v1, 0x0
+
+    .line 30
+    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    :cond_1
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Long;
+
+    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v2
+
+    .line 31
+    invoke-static {v2, v3}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
+
+    move-result v2
+
+    if-nez v1, :cond_2
+
+    .line 33
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    goto :goto_0
+
+    .line 34
+    :cond_2
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v3
+
+    if-eq v2, v3, :cond_1
+
+    return v0
+
+    :cond_3
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_4
+    :goto_1
+    return v0
+.end method
+
 .method public static isChannel(Lorg/telegram/tgnet/TLRPC$Dialog;)Z
     .locals 1
 
@@ -290,7 +374,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 19
+    .line 46
     iget p0, p0, Lorg/telegram/tgnet/TLRPC$Dialog;->flags:I
 
     and-int/2addr p0, v0
@@ -309,7 +393,7 @@
 .method public static isChatDialog(J)Z
     .locals 2
 
-    .line 82
+    .line 109
     invoke-static {p0, p1}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
     move-result v0
@@ -406,7 +490,7 @@
 .method public static isUserDialog(J)Z
     .locals 2
 
-    .line 86
+    .line 113
     invoke-static {p0, p1}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
 
     move-result v0
@@ -465,17 +549,17 @@
 .method public static setDialogPhotoTitle(Lorg/telegram/messenger/ImageReceiver;Lorg/telegram/ui/Components/AvatarDrawable;Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
     .locals 3
 
-    .line 111
+    .line 138
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v0, :cond_5
 
-    .line 112
+    .line 139
     move-object v0, p2
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 113
+    .line 140
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v1
@@ -484,7 +568,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 114
+    .line 141
     sget p2, Lorg/telegram/messenger/R$string;->RepliesTitle:I
 
     const-string v0, "RepliesTitle"
@@ -497,18 +581,18 @@
 
     const/16 v0, 0xc
 
-    .line 116
+    .line 143
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
     :cond_0
     if-eqz p0, :cond_9
 
-    .line 119
+    .line 146
     invoke-virtual {p0, v2, p1}, Lorg/telegram/messenger/ImageReceiver;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_1
 
-    .line 121
+    .line 148
     :cond_1
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
@@ -516,7 +600,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 122
+    .line 149
     sget p2, Lorg/telegram/messenger/R$string;->SavedMessages:I
 
     const-string v0, "SavedMessages"
@@ -529,18 +613,18 @@
 
     const/4 v0, 0x1
 
-    .line 124
+    .line 151
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
     :cond_2
     if-eqz p0, :cond_9
 
-    .line 127
+    .line 154
     invoke-virtual {p0, v2, p1}, Lorg/telegram/messenger/ImageReceiver;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_1
 
-    .line 130
+    .line 157
     :cond_3
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->getUserName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
@@ -548,40 +632,40 @@
 
     if-eqz p1, :cond_4
 
-    .line 132
+    .line 159
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
     :cond_4
     if-eqz p0, :cond_7
 
-    .line 135
+    .line 162
     invoke-virtual {p0, p2, p1}, Lorg/telegram/messenger/ImageReceiver;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
-    .line 138
+    .line 165
     :cond_5
     instance-of v0, p2, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v0, :cond_8
 
-    .line 139
+    .line 166
     move-object v0, p2
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 140
+    .line 167
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
     if-eqz p1, :cond_6
 
-    .line 142
+    .line 169
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
     :cond_6
     if-eqz p0, :cond_7
 
-    .line 145
+    .line 172
     invoke-virtual {p0, p2, p1}, Lorg/telegram/messenger/ImageReceiver;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Landroid/graphics/drawable/Drawable;)V
 
     :cond_7
@@ -603,7 +687,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 153
+    .line 180
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
@@ -621,7 +705,7 @@
     :cond_0
     const/4 p0, 0x0
 
-    .line 155
+    .line 182
     invoke-static {p0, p0, p1}, Lorg/telegram/messenger/DialogObject;->setDialogPhotoTitle(Lorg/telegram/messenger/ImageReceiver;Lorg/telegram/ui/Components/AvatarDrawable;Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
 
     move-result-object p0

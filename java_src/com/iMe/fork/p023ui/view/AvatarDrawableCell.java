@@ -17,17 +17,17 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserObject;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Cells.BaseCell;
-import org.telegram.p042ui.Components.AvatarDrawable;
-import org.telegram.p042ui.Components.BackupImageView;
-import org.telegram.p042ui.Components.CounterView;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.BaseCell;
+import org.telegram.p043ui.Components.AvatarDrawable;
+import org.telegram.p043ui.Components.BackupImageView;
+import org.telegram.p043ui.Components.CounterView;
+import org.telegram.p043ui.Components.LayoutHelper;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$Dialog;
 import org.telegram.tgnet.TLRPC$User;
@@ -140,7 +140,7 @@ public final class AvatarDrawableCell extends FrameLayout {
         Theme.dialogs_pinnedDrawable.setAlpha(255);
         pinnedImageView.setBackground(Theme.createCircleDrawable(20, Theme.getColor(this.backgroundColorKey)));
         pinnedImageView.setColorFilter(Theme.getColor(Theme.key_chats_pinnedIcon));
-        pinnedImageView.setImageResource(C3630R.C3632drawable.list_pin);
+        pinnedImageView.setImageResource(C3634R.C3636drawable.list_pin);
         Theme.dialogs_pinnedDrawable.setAlpha(alpha);
         CounterView counterView = getCounterView();
         counterView.setColors(Theme.key_chats_unreadCounterText, Theme.key_chats_unreadCounter);
@@ -159,7 +159,7 @@ public final class AvatarDrawableCell extends FrameLayout {
         }
         this.dialogId = j;
         MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
-        getImageView().setRoundRadius(AndroidUtilities.m102dp(messagesController.isForum(j) ? 10 : 20));
+        getImageView().setRoundRadius(AndroidUtilities.m104dp(messagesController.isForum(j) ? 10 : 20));
         if (DialogObject.isUserDialog(j)) {
             TLRPC$User user = messagesController.getUser(Long.valueOf(j));
             this.currentUser = user;
@@ -206,7 +206,7 @@ public final class AvatarDrawableCell extends FrameLayout {
             if (tLRPC$Chat != null) {
                 Intrinsics.checkNotNull(tLRPC$Chat, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.Chat");
                 if (tLRPC$Chat.forum) {
-                    drawCount(MessagesController.getInstance(this.currentAccount).getTopicsController().getForumUnreadCount(tLRPC$Chat.f1600id)[0]);
+                    drawCount(MessagesController.getInstance(this.currentAccount).getTopicsController().getForumUnreadCount(tLRPC$Chat.f1602id)[0]);
                 } else {
                     drawCount(tLRPC$Dialog.unread_count);
                 }
@@ -264,21 +264,21 @@ public final class AvatarDrawableCell extends FrameLayout {
         if (this.recentChatsController.isDrawStatusType(DrawStatusType.REACTION)) {
             this.showReactionProgress = tLRPC$Dialog.unread_reactions_count != 0 ? 1.0f : BitmapDescriptorFactory.HUE_RED;
             RectF rectF = new RectF();
-            int measuredHeight = getImageView().getMeasuredHeight() - AndroidUtilities.m102dp(5);
+            int measuredHeight = getImageView().getMeasuredHeight() - AndroidUtilities.m104dp(5);
             int measuredWidth = this.lastUnreadCount == 0 ? getImageView().getMeasuredWidth() : 0;
             if (!SharedConfig.isDialogsCompactModeEnabled) {
-                measuredWidth -= this.lastUnreadCount == 0 ? AndroidUtilities.m102dp(10) : 0;
+                measuredWidth -= this.lastUnreadCount == 0 ? AndroidUtilities.m104dp(10) : 0;
             }
             float f = measuredWidth;
             float f2 = measuredHeight;
-            rectF.set(f, f2, AndroidUtilities.m102dp(20) + f, AndroidUtilities.m102dp(20) + f2);
+            rectF.set(f, f2, AndroidUtilities.m104dp(20) + f, AndroidUtilities.m104dp(20) + f2);
             Paint paint = Theme.dialogs_reactionsCountPaint;
             canvas.save();
             float f3 = this.showReactionProgress;
             canvas.scale(f3, f3, rectF.centerX(), rectF.centerY());
             float f4 = AndroidUtilities.density;
             canvas.drawRoundRect(rectF, f4 * 11.5f, f4 * 11.5f, paint);
-            BaseCell.setDrawableBounds(Theme.dialogs_reactionsMentionDrawable, measuredWidth + AndroidUtilities.m103dp(3.5f), measuredHeight + AndroidUtilities.m102dp(4), AndroidUtilities.m102dp(12), AndroidUtilities.m102dp(12));
+            BaseCell.setDrawableBounds(Theme.dialogs_reactionsMentionDrawable, measuredWidth + AndroidUtilities.m105dp(3.5f), measuredHeight + AndroidUtilities.m104dp(4), AndroidUtilities.m104dp(12), AndroidUtilities.m104dp(12));
             Theme.dialogs_reactionsMentionDrawable.draw(canvas);
             canvas.restore();
         }
@@ -288,17 +288,17 @@ public final class AvatarDrawableCell extends FrameLayout {
         if (this.recentChatsController.isDrawStatusType(DrawStatusType.MENTIONS)) {
             this.showMentionProgress = tLRPC$Dialog.unread_mentions_count != 0 ? 1.0f : BitmapDescriptorFactory.HUE_RED;
             RectF rectF = new RectF();
-            int measuredHeight = getImageView().getMeasuredHeight() - AndroidUtilities.m102dp(5);
+            int measuredHeight = getImageView().getMeasuredHeight() - AndroidUtilities.m104dp(5);
             float f = 0;
             float f2 = measuredHeight;
-            rectF.set(f, f2, AndroidUtilities.m102dp(20) + f, AndroidUtilities.m102dp(20) + f2);
+            rectF.set(f, f2, AndroidUtilities.m104dp(20) + f, AndroidUtilities.m104dp(20) + f2);
             Paint paint = Theme.dialogs_countPaint;
             canvas.save();
             float f3 = this.showMentionProgress;
             canvas.scale(f3, f3, rectF.centerX(), rectF.centerY());
             float f4 = AndroidUtilities.density;
             canvas.drawRoundRect(rectF, f4 * 11.5f, f4 * 11.5f, paint);
-            BaseCell.setDrawableBounds(Theme.dialogs_mentionDrawable, AndroidUtilities.m102dp(4) + 0, measuredHeight + AndroidUtilities.m102dp(4), AndroidUtilities.m102dp(12), AndroidUtilities.m102dp(12));
+            BaseCell.setDrawableBounds(Theme.dialogs_mentionDrawable, AndroidUtilities.m104dp(4) + 0, measuredHeight + AndroidUtilities.m104dp(4), AndroidUtilities.m104dp(12), AndroidUtilities.m104dp(12));
             Theme.dialogs_mentionDrawable.draw(canvas);
             canvas.restore();
         }
@@ -307,17 +307,17 @@ public final class AvatarDrawableCell extends FrameLayout {
     private final void drawCount(int i) {
         if (this.recentChatsController.isDrawStatusType(DrawStatusType.UNREAD_COUNT_CHATS) && i != 0) {
             this.lastUnreadCount = i;
-            int measuredHeight = getImageView().getMeasuredHeight() - AndroidUtilities.m102dp(5);
+            int measuredHeight = getImageView().getMeasuredHeight() - AndroidUtilities.m104dp(5);
             int measuredWidth = getImageView().getMeasuredWidth();
             if (!SharedConfig.isDialogsCompactModeEnabled) {
-                measuredWidth -= AndroidUtilities.m102dp(10);
+                measuredWidth -= AndroidUtilities.m104dp(10);
             }
             getCounterView().setCountResentChats(true, MessagesController.getInstance(this.currentAccount).isDialogMuted(this.dialogId, 100), measuredWidth, measuredHeight);
             if (this.lastUnreadCount > 99) {
                 this.lastUnreadCount = 99;
             }
             getCounterView().setCount(this.lastUnreadCount, false);
-            getCounterView().counterDrawable.textPaint.setTextSize(AndroidUtilities.m102dp(10));
+            getCounterView().counterDrawable.textPaint.setTextSize(AndroidUtilities.m104dp(10));
             return;
         }
         float f = 0;

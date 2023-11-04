@@ -152,7 +152,7 @@ public enum KotlinTarget {
         FILE_LIST = listOf12;
         AnnotationUseSiteTarget annotationUseSiteTarget = AnnotationUseSiteTarget.CONSTRUCTOR_PARAMETER;
         KotlinTarget kotlinTarget10 = VALUE_PARAMETER;
-        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m144to(annotationUseSiteTarget, kotlinTarget10), TuplesKt.m144to(AnnotationUseSiteTarget.FIELD, kotlinTarget6), TuplesKt.m144to(AnnotationUseSiteTarget.PROPERTY, kotlinTarget5), TuplesKt.m144to(AnnotationUseSiteTarget.FILE, kotlinTarget9), TuplesKt.m144to(AnnotationUseSiteTarget.PROPERTY_GETTER, kotlinTarget8), TuplesKt.m144to(AnnotationUseSiteTarget.PROPERTY_SETTER, kotlinTarget7), TuplesKt.m144to(AnnotationUseSiteTarget.RECEIVER, kotlinTarget10), TuplesKt.m144to(AnnotationUseSiteTarget.SETTER_PARAMETER, kotlinTarget10), TuplesKt.m144to(AnnotationUseSiteTarget.PROPERTY_DELEGATE_FIELD, kotlinTarget6));
+        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m146to(annotationUseSiteTarget, kotlinTarget10), TuplesKt.m146to(AnnotationUseSiteTarget.FIELD, kotlinTarget6), TuplesKt.m146to(AnnotationUseSiteTarget.PROPERTY, kotlinTarget5), TuplesKt.m146to(AnnotationUseSiteTarget.FILE, kotlinTarget9), TuplesKt.m146to(AnnotationUseSiteTarget.PROPERTY_GETTER, kotlinTarget8), TuplesKt.m146to(AnnotationUseSiteTarget.PROPERTY_SETTER, kotlinTarget7), TuplesKt.m146to(AnnotationUseSiteTarget.RECEIVER, kotlinTarget10), TuplesKt.m146to(AnnotationUseSiteTarget.SETTER_PARAMETER, kotlinTarget10), TuplesKt.m146to(AnnotationUseSiteTarget.PROPERTY_DELEGATE_FIELD, kotlinTarget6));
         USE_SITE_MAPPING = mapOf;
     }
 

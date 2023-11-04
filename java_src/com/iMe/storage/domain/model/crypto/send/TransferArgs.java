@@ -99,9 +99,9 @@ public abstract class TransferArgs implements TransactionArgs {
         }
 
         public int hashCode() {
-            int m1011m = ((((((((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31;
+            int m1012m = ((((((((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31;
             String str = this.contractAddress;
-            return m1011m + (str == null ? 0 : str.hashCode());
+            return m1012m + (str == null ? 0 : str.hashCode());
         }
 
         public String toString() {
@@ -169,6 +169,7 @@ public abstract class TransferArgs implements TransactionArgs {
         private final String message;
         private final String recipientAddress;
         private final int sendMode;
+        private final int seqno;
 
         public final double component1() {
             return getAmount();
@@ -190,13 +191,17 @@ public abstract class TransferArgs implements TransactionArgs {
             return this.sendMode;
         }
 
-        public final boolean component6() {
+        public final int component6() {
+            return this.seqno;
+        }
+
+        public final boolean component7() {
             return this.isUnencrypted;
         }
 
-        public final TON copy(double d, int i, String recipientAddress, String str, int i2, boolean z) {
+        public final TON copy(double d, int i, String recipientAddress, String str, int i2, int i3, boolean z) {
             Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
-            return new TON(d, i, recipientAddress, str, i2, z);
+            return new TON(d, i, recipientAddress, str, i2, i3, z);
         }
 
         public boolean equals(Object obj) {
@@ -205,16 +210,16 @@ public abstract class TransferArgs implements TransactionArgs {
             }
             if (obj instanceof TON) {
                 TON ton = (TON) obj;
-                return Double.compare(getAmount(), ton.getAmount()) == 0 && getDecimals() == ton.getDecimals() && Intrinsics.areEqual(this.recipientAddress, ton.recipientAddress) && Intrinsics.areEqual(this.message, ton.message) && this.sendMode == ton.sendMode && this.isUnencrypted == ton.isUnencrypted;
+                return Double.compare(getAmount(), ton.getAmount()) == 0 && getDecimals() == ton.getDecimals() && Intrinsics.areEqual(this.recipientAddress, ton.recipientAddress) && Intrinsics.areEqual(this.message, ton.message) && this.sendMode == ton.sendMode && this.seqno == ton.seqno && this.isUnencrypted == ton.isUnencrypted;
             }
             return false;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         public int hashCode() {
-            int m1011m = ((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31;
+            int m1012m = ((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31;
             String str = this.message;
-            int hashCode = (((m1011m + (str == null ? 0 : str.hashCode())) * 31) + this.sendMode) * 31;
+            int hashCode = (((((m1012m + (str == null ? 0 : str.hashCode())) * 31) + this.sendMode) * 31) + this.seqno) * 31;
             boolean z = this.isUnencrypted;
             int i = z;
             if (z != 0) {
@@ -224,11 +229,11 @@ public abstract class TransferArgs implements TransactionArgs {
         }
 
         public String toString() {
-            return "TON(amount=" + getAmount() + ", decimals=" + getDecimals() + ", recipientAddress=" + this.recipientAddress + ", message=" + this.message + ", sendMode=" + this.sendMode + ", isUnencrypted=" + this.isUnencrypted + ')';
+            return "TON(amount=" + getAmount() + ", decimals=" + getDecimals() + ", recipientAddress=" + this.recipientAddress + ", message=" + this.message + ", sendMode=" + this.sendMode + ", seqno=" + this.seqno + ", isUnencrypted=" + this.isUnencrypted + ')';
         }
 
-        public /* synthetic */ TON(double d, int i, String str, String str2, int i2, boolean z, int i3, DefaultConstructorMarker defaultConstructorMarker) {
-            this(d, i, str, str2, i2, (i3 & 32) != 0 ? true : z);
+        public /* synthetic */ TON(double d, int i, String str, String str2, int i2, int i3, boolean z, int i4, DefaultConstructorMarker defaultConstructorMarker) {
+            this(d, i, str, str2, i2, i3, (i4 & 64) != 0 ? true : z);
         }
 
         @Override // com.iMe.storage.domain.model.crypto.send.TransferArgs
@@ -253,12 +258,16 @@ public abstract class TransferArgs implements TransactionArgs {
             return this.sendMode;
         }
 
+        public final int getSeqno() {
+            return this.seqno;
+        }
+
         public final boolean isUnencrypted() {
             return this.isUnencrypted;
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public TON(double d, int i, String recipientAddress, String str, int i2, boolean z) {
+        public TON(double d, int i, String recipientAddress, String str, int i2, int i3, boolean z) {
             super(d, i, null);
             Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
             this.amount = d;
@@ -266,6 +275,7 @@ public abstract class TransferArgs implements TransactionArgs {
             this.recipientAddress = recipientAddress;
             this.message = str;
             this.sendMode = i2;
+            this.seqno = i3;
             this.isUnencrypted = z;
         }
     }
@@ -323,9 +333,9 @@ public abstract class TransferArgs implements TransactionArgs {
         }
 
         public int hashCode() {
-            int m1011m = ((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31) + this.feeLimit.hashCode()) * 31;
+            int m1012m = ((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31) + this.feeLimit.hashCode()) * 31;
             String str = this.contractAddress;
-            return ((m1011m + (str == null ? 0 : str.hashCode())) * 31) + this.blockHeader.hashCode();
+            return ((m1012m + (str == null ? 0 : str.hashCode())) * 31) + this.blockHeader.hashCode();
         }
 
         public String toString() {
@@ -427,7 +437,7 @@ public abstract class TransferArgs implements TransactionArgs {
         }
 
         public int hashCode() {
-            return (((((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31) + this.utxos.hashCode()) * 31) + this.changeAddress.hashCode()) * 31) + this.byteFee.hashCode();
+            return (((((((((StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(getAmount()) * 31) + getDecimals()) * 31) + this.recipientAddress.hashCode()) * 31) + this.utxos.hashCode()) * 31) + this.changeAddress.hashCode()) * 31) + this.byteFee.hashCode();
         }
 
         public String toString() {

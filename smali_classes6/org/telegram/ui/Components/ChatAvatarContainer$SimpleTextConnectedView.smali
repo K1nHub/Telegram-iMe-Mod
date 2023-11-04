@@ -39,10 +39,10 @@
         }
     .end annotation
 
-    .line 122
+    .line 125
     invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
-    .line 123
+    .line 126
     iput-object p3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$SimpleTextConnectedView;->reference:Ljava/util/concurrent/atomic/AtomicReference;
 
     return-void
@@ -53,12 +53,12 @@
 .method public setText(Ljava/lang/CharSequence;)Z
     .locals 1
 
-    .line 139
+    .line 142
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$SimpleTextConnectedView;->reference:Ljava/util/concurrent/atomic/AtomicReference;
 
     if-eqz v0, :cond_0
 
-    .line 140
+    .line 143
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -67,10 +67,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 142
+    .line 145
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 145
+    .line 148
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
@@ -82,12 +82,12 @@
 .method public setTranslationY(F)V
     .locals 1
 
-    .line 128
+    .line 131
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer$SimpleTextConnectedView;->reference:Ljava/util/concurrent/atomic/AtomicReference;
 
     if-eqz v0, :cond_0
 
-    .line 129
+    .line 132
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object v0
@@ -96,10 +96,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 131
+    .line 134
     invoke-virtual {v0, p1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 134
+    .line 137
     :cond_0
     invoke-super {p0, p1}, Landroid/view/View;->setTranslationY(F)V
 

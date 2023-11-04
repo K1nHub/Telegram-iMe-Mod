@@ -86,7 +86,7 @@ public final class TrackGroupArray implements Bundleable {
             int i2 = i + 1;
             for (int i3 = i2; i3 < this.trackGroups.size(); i3++) {
                 if (this.trackGroups.get(i).equals(this.trackGroups.get(i3))) {
-                    Log.m1109e(TAG, "", new IllegalArgumentException("Multiple identical TrackGroups added to one TrackGroupArray."));
+                    Log.m1110e(TAG, "", new IllegalArgumentException("Multiple identical TrackGroups added to one TrackGroupArray."));
                 }
             }
             i = i2;

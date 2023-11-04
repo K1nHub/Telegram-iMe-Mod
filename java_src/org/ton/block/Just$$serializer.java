@@ -20,7 +20,7 @@ public final class Just$$serializer<X> implements GeneratedSerializer<Just<X>> {
     private Just$$serializer() {
         PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor = new PluginGeneratedSerialDescriptor("just", this, 1);
         pluginGeneratedSerialDescriptor.addElement(AppMeasurementSdk.ConditionalUserProperty.VALUE, false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7490x6b9840d7("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7565x6b9840d7("@type"));
         this.descriptor = pluginGeneratedSerialDescriptor;
     }
 

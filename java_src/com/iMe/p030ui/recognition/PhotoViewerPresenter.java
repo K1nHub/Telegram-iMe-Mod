@@ -43,7 +43,7 @@ public final class PhotoViewerPresenter extends BasePresenter<PhotoView> {
         if (bitmap == null) {
             return;
         }
-        Observable<Result<String>> observeOn = googleServicesInteractor.getPhotoText(bitmap).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<String>> observeOn = googleServicesInteractor.getPhotoText(bitmap).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "googleServicesInteractor…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -57,12 +57,12 @@ public final class PhotoViewerPresenter extends BasePresenter<PhotoView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1604invoke(result);
+                m1609invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1604invoke(Result<? extends String> it) {
+            public final void m1609invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;
@@ -116,7 +116,7 @@ public final class PhotoViewerPresenter extends BasePresenter<PhotoView> {
         if (bitmap == null) {
             return;
         }
-        Observable<Result<List<RecognizedImageModel>>> observeOn = googleServicesInteractor.getPhotoObjects(bitmap).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<List<RecognizedImageModel>>> observeOn = googleServicesInteractor.getPhotoObjects(bitmap).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "googleServicesInteractor…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -129,12 +129,12 @@ public final class PhotoViewerPresenter extends BasePresenter<PhotoView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends RecognizedImageModel>> result) {
-                m1603invoke(result);
+                m1608invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1603invoke(Result<? extends List<? extends RecognizedImageModel>> it) {
+            public final void m1608invoke(Result<? extends List<? extends RecognizedImageModel>> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends RecognizedImageModel>> result = it;

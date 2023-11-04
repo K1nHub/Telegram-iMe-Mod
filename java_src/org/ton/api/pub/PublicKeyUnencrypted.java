@@ -12,9 +12,9 @@ import org.ton.api.adnl.AdnlIdShort;
 import org.ton.crypto.Base64ByteArraySerializer;
 import org.ton.crypto.Encryptor;
 import org.ton.crypto.EncryptorNone;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: pub.kt */
 @Serializable
 /* loaded from: classes6.dex */
@@ -84,14 +84,14 @@ public final class PublicKeyUnencrypted implements PublicKey, Encryptor {
             return PublicKeyUnencrypted$$serializer.INSTANCE;
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter output, PublicKeyUnencrypted value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
             TlWriter.writeBytes$default(output, value.getData(), 0, 0, 6, (Object) null);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public PublicKeyUnencrypted decode(TlReader input) {
             Intrinsics.checkNotNullParameter(input, "input");
             return new PublicKeyUnencrypted(input.readBytes());

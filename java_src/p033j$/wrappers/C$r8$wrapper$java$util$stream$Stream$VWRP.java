@@ -2,7 +2,7 @@ package p033j$.wrappers;
 
 import java.util.Comparator;
 import java.util.Iterator;
-import p033j$.util.AbstractC2839k;
+import p033j$.util.AbstractC2843k;
 import p033j$.util.Optional;
 import p033j$.util.Spliterator;
 import p033j$.util.function.BiConsumer;
@@ -10,16 +10,16 @@ import p033j$.util.function.BiFunction;
 import p033j$.util.function.Consumer;
 import p033j$.util.function.Function;
 import p033j$.util.function.IntFunction;
-import p033j$.util.function.InterfaceC2812b;
-import p033j$.util.function.InterfaceC2834x;
+import p033j$.util.function.InterfaceC2816b;
+import p033j$.util.function.InterfaceC2838x;
 import p033j$.util.function.Predicate;
 import p033j$.util.function.ToDoubleFunction;
 import p033j$.util.function.ToIntFunction;
 import p033j$.util.function.ToLongFunction;
 import p033j$.util.stream.IntStream;
-import p033j$.util.stream.InterfaceC2965U;
-import p033j$.util.stream.InterfaceC3022e1;
-import p033j$.util.stream.InterfaceC3032g;
+import p033j$.util.stream.InterfaceC2969U;
+import p033j$.util.stream.InterfaceC3026e1;
+import p033j$.util.stream.InterfaceC3036g;
 import p033j$.util.stream.Stream;
 /* renamed from: j$.wrappers.$r8$wrapper$java$util$stream$Stream$-V-WRP */
 /* loaded from: classes2.dex */
@@ -36,70 +36,70 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$Stream$VWRP imp
         if (stream == null) {
             return null;
         }
-        return stream instanceof C3182L0 ? ((C3182L0) stream).f1285a : new C$r8$wrapper$java$util$stream$Stream$VWRP(stream);
+        return stream instanceof C3186L0 ? ((C3186L0) stream).f1285a : new C$r8$wrapper$java$util$stream$Stream$VWRP(stream);
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: A */
-    public /* synthetic */ Object mo315A(Object obj, BiFunction biFunction, InterfaceC2812b interfaceC2812b) {
-        return this.f1261a.reduce(obj, C3232s.m169a(biFunction), C3236u.m165a(interfaceC2812b));
+    public /* synthetic */ Object mo316A(Object obj, BiFunction biFunction, InterfaceC2816b interfaceC2816b) {
+        return this.f1261a.reduce(obj, C3236s.m171a(biFunction), C3240u.m167a(interfaceC2816b));
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: D */
-    public /* synthetic */ InterfaceC2965U mo314D(Function function) {
-        return C3174H0.m265m0(this.f1261a.flatMapToDouble(C3179K.m240a(function)));
+    public /* synthetic */ InterfaceC2969U mo315D(Function function) {
+        return C3178H0.m266m0(this.f1261a.flatMapToDouble(C3183K.m241a(function)));
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: S */
-    public /* synthetic */ Stream mo313S(Predicate predicate) {
-        return convert(this.f1261a.filter(C3237u0.m164a(predicate)));
+    public /* synthetic */ Stream mo314S(Predicate predicate) {
+        return convert(this.f1261a.filter(C3241u0.m166a(predicate)));
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: U */
-    public /* synthetic */ Stream mo312U(Consumer consumer) {
+    public /* synthetic */ Stream mo313U(Consumer consumer) {
         return convert(this.f1261a.peek(C$r8$wrapper$java$util$function$Consumer$WRP.convert(consumer)));
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: V */
-    public /* synthetic */ boolean mo311V(Predicate predicate) {
-        return this.f1261a.allMatch(C3237u0.m164a(predicate));
+    public /* synthetic */ boolean mo312V(Predicate predicate) {
+        return this.f1261a.allMatch(C3241u0.m166a(predicate));
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: W */
-    public /* synthetic */ InterfaceC3022e1 mo310W(Function function) {
-        return C3178J0.m245m0(this.f1261a.flatMapToLong(C3179K.m240a(function)));
+    public /* synthetic */ InterfaceC3026e1 mo311W(Function function) {
+        return C3182J0.m246m0(this.f1261a.flatMapToLong(C3183K.m241a(function)));
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: a */
-    public /* synthetic */ boolean mo309a(Predicate predicate) {
-        return this.f1261a.anyMatch(C3237u0.m164a(predicate));
+    public /* synthetic */ boolean mo310a(Predicate predicate) {
+        return this.f1261a.anyMatch(C3241u0.m166a(predicate));
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: a0 */
-    public /* synthetic */ Object mo308a0(C3170F0 c3170f0) {
-        return this.f1261a.collect(c3170f0 == null ? null : c3170f0.f1273a);
+    public /* synthetic */ Object mo309a0(C3174F0 c3174f0) {
+        return this.f1261a.collect(c3174f0 == null ? null : c3174f0.f1273a);
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: c */
-    public /* synthetic */ IntStream mo307c(Function function) {
-        return C$r8$wrapper$java$util$stream$IntStream$VWRP.convert(this.f1261a.flatMapToInt(C3179K.m240a(function)));
+    public /* synthetic */ IntStream mo308c(Function function) {
+        return C$r8$wrapper$java$util$stream$IntStream$VWRP.convert(this.f1261a.flatMapToInt(C3183K.m241a(function)));
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: c0 */
-    public /* synthetic */ boolean mo306c0(Predicate predicate) {
-        return this.f1261a.noneMatch(C3237u0.m164a(predicate));
+    public /* synthetic */ boolean mo307c0(Predicate predicate) {
+        return this.f1261a.noneMatch(C3241u0.m166a(predicate));
     }
 
-    @Override // p033j$.util.stream.Stream, p033j$.util.stream.InterfaceC3032g, java.lang.AutoCloseable
+    @Override // p033j$.util.stream.Stream, p033j$.util.stream.InterfaceC3036g, java.lang.AutoCloseable
     public /* synthetic */ void close() {
         this.f1261a.close();
     }
@@ -116,24 +116,24 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$Stream$VWRP imp
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: e */
-    public /* synthetic */ void mo305e(Consumer consumer) {
+    public /* synthetic */ void mo306e(Consumer consumer) {
         this.f1261a.forEachOrdered(C$r8$wrapper$java$util$function$Consumer$WRP.convert(consumer));
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: f0 */
-    public /* synthetic */ InterfaceC3022e1 mo304f0(ToLongFunction toLongFunction) {
-        return C3178J0.m245m0(this.f1261a.mapToLong(C3164C0.m290a(toLongFunction)));
+    public /* synthetic */ InterfaceC3026e1 mo305f0(ToLongFunction toLongFunction) {
+        return C3182J0.m246m0(this.f1261a.mapToLong(C3168C0.m291a(toLongFunction)));
     }
 
     @Override // p033j$.util.stream.Stream
     public /* synthetic */ Optional findAny() {
-        return AbstractC2839k.m596i(this.f1261a.findAny());
+        return AbstractC2843k.m597i(this.f1261a.findAny());
     }
 
     @Override // p033j$.util.stream.Stream
     public /* synthetic */ Optional findFirst() {
-        return AbstractC2839k.m596i(this.f1261a.findFirst());
+        return AbstractC2843k.m597i(this.f1261a.findFirst());
     }
 
     @Override // p033j$.util.stream.Stream
@@ -143,36 +143,36 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$Stream$VWRP imp
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: i */
-    public /* synthetic */ Object mo303i(InterfaceC2834x interfaceC2834x, BiConsumer biConsumer, BiConsumer biConsumer2) {
-        return this.f1261a.collect(C3241w0.m160a(interfaceC2834x), C3230r.m171a(biConsumer), C3230r.m171a(biConsumer2));
+    public /* synthetic */ Object mo304i(InterfaceC2838x interfaceC2838x, BiConsumer biConsumer, BiConsumer biConsumer2) {
+        return this.f1261a.collect(C3245w0.m162a(interfaceC2838x), C3234r.m173a(biConsumer), C3234r.m173a(biConsumer2));
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: i0 */
-    public /* synthetic */ InterfaceC2965U mo302i0(ToDoubleFunction toDoubleFunction) {
-        return C3174H0.m265m0(this.f1261a.mapToDouble(C3245y0.m155a(toDoubleFunction)));
+    public /* synthetic */ InterfaceC2969U mo303i0(ToDoubleFunction toDoubleFunction) {
+        return C3178H0.m266m0(this.f1261a.mapToDouble(C3249y0.m157a(toDoubleFunction)));
     }
 
-    @Override // p033j$.util.stream.InterfaceC3032g
+    @Override // p033j$.util.stream.InterfaceC3036g
     public /* synthetic */ boolean isParallel() {
         return this.f1261a.isParallel();
     }
 
-    @Override // p033j$.util.stream.InterfaceC3032g
+    @Override // p033j$.util.stream.InterfaceC3036g
     public /* synthetic */ Iterator iterator() {
         return this.f1261a.iterator();
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: l */
-    public /* synthetic */ IntStream mo301l(ToIntFunction toIntFunction) {
-        return C$r8$wrapper$java$util$stream$IntStream$VWRP.convert(this.f1261a.mapToInt(C3160A0.m295a(toIntFunction)));
+    public /* synthetic */ IntStream mo302l(ToIntFunction toIntFunction) {
+        return C$r8$wrapper$java$util$stream$IntStream$VWRP.convert(this.f1261a.mapToInt(C3164A0.m296a(toIntFunction)));
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: l0 */
-    public /* synthetic */ Object mo300l0(Object obj, InterfaceC2812b interfaceC2812b) {
-        return this.f1261a.reduce(obj, C3236u.m165a(interfaceC2812b));
+    public /* synthetic */ Object mo301l0(Object obj, InterfaceC2816b interfaceC2816b) {
+        return this.f1261a.reduce(obj, C3240u.m167a(interfaceC2816b));
     }
 
     @Override // p033j$.util.stream.Stream
@@ -182,45 +182,45 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$Stream$VWRP imp
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: m */
-    public /* synthetic */ Stream mo299m(Function function) {
-        return convert(this.f1261a.map(C3179K.m240a(function)));
+    public /* synthetic */ Stream mo300m(Function function) {
+        return convert(this.f1261a.map(C3183K.m241a(function)));
     }
 
     @Override // p033j$.util.stream.Stream
     public /* synthetic */ Optional max(Comparator comparator) {
-        return AbstractC2839k.m596i(this.f1261a.max(comparator));
+        return AbstractC2843k.m597i(this.f1261a.max(comparator));
     }
 
     @Override // p033j$.util.stream.Stream
     public /* synthetic */ Optional min(Comparator comparator) {
-        return AbstractC2839k.m596i(this.f1261a.min(comparator));
+        return AbstractC2843k.m597i(this.f1261a.min(comparator));
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: n */
-    public /* synthetic */ Stream mo298n(Function function) {
-        return convert(this.f1261a.flatMap(C3179K.m240a(function)));
+    public /* synthetic */ Stream mo299n(Function function) {
+        return convert(this.f1261a.flatMap(C3183K.m241a(function)));
     }
 
-    @Override // p033j$.util.stream.InterfaceC3032g
-    public /* synthetic */ InterfaceC3032g onClose(Runnable runnable) {
-        return C3166D0.m288m0(this.f1261a.onClose(runnable));
+    @Override // p033j$.util.stream.InterfaceC3036g
+    public /* synthetic */ InterfaceC3036g onClose(Runnable runnable) {
+        return C3170D0.m289m0(this.f1261a.onClose(runnable));
     }
 
-    @Override // p033j$.util.stream.InterfaceC3032g, p033j$.util.stream.IntStream
-    public /* synthetic */ InterfaceC3032g parallel() {
-        return C3166D0.m288m0(this.f1261a.parallel());
+    @Override // p033j$.util.stream.InterfaceC3036g, p033j$.util.stream.IntStream
+    public /* synthetic */ InterfaceC3036g parallel() {
+        return C3170D0.m289m0(this.f1261a.parallel());
     }
 
     @Override // p033j$.util.stream.Stream
     /* renamed from: s */
-    public /* synthetic */ Optional mo297s(InterfaceC2812b interfaceC2812b) {
-        return AbstractC2839k.m596i(this.f1261a.reduce(C3236u.m165a(interfaceC2812b)));
+    public /* synthetic */ Optional mo298s(InterfaceC2816b interfaceC2816b) {
+        return AbstractC2843k.m597i(this.f1261a.reduce(C3240u.m167a(interfaceC2816b)));
     }
 
-    @Override // p033j$.util.stream.InterfaceC3032g, p033j$.util.stream.IntStream
-    public /* synthetic */ InterfaceC3032g sequential() {
-        return C3166D0.m288m0(this.f1261a.sequential());
+    @Override // p033j$.util.stream.InterfaceC3036g, p033j$.util.stream.IntStream
+    public /* synthetic */ InterfaceC3036g sequential() {
+        return C3170D0.m289m0(this.f1261a.sequential());
     }
 
     @Override // p033j$.util.stream.Stream
@@ -238,9 +238,9 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$Stream$VWRP imp
         return convert(this.f1261a.sorted(comparator));
     }
 
-    @Override // p033j$.util.stream.InterfaceC3032g
+    @Override // p033j$.util.stream.InterfaceC3036g
     public /* synthetic */ Spliterator spliterator() {
-        return C3208g.m204a(this.f1261a.spliterator());
+        return C3212g.m205a(this.f1261a.spliterator());
     }
 
     @Override // p033j$.util.stream.Stream
@@ -250,11 +250,11 @@ public final /* synthetic */ class C$r8$wrapper$java$util$stream$Stream$VWRP imp
 
     @Override // p033j$.util.stream.Stream
     public /* synthetic */ Object[] toArray(IntFunction intFunction) {
-        return this.f1261a.toArray(C3187Q.m231a(intFunction));
+        return this.f1261a.toArray(C3191Q.m232a(intFunction));
     }
 
-    @Override // p033j$.util.stream.InterfaceC3032g
-    public /* synthetic */ InterfaceC3032g unordered() {
-        return C3166D0.m288m0(this.f1261a.unordered());
+    @Override // p033j$.util.stream.InterfaceC3036g
+    public /* synthetic */ InterfaceC3036g unordered() {
+        return C3170D0.m289m0(this.f1261a.unordered());
     }
 }

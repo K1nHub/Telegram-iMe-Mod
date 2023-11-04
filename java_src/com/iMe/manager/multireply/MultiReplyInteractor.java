@@ -18,7 +18,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p042ui.Components.URLSpanReplacement;
+import org.telegram.p043ui.Components.URLSpanReplacement;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;

@@ -595,7 +595,7 @@
 .end method
 
 .method public forEach(Lj$/util/function/BiConsumer;)V
-    .locals 3
+    .locals 2
 
     iget-object v0, p0, Lj$/util/DesugarCollections$a;->b:Ljava/lang/Object;
 
@@ -604,43 +604,15 @@
     :try_start_0
     iget-object v1, p0, Lj$/util/DesugarCollections$a;->a:Ljava/util/Map;
 
-    .line 1
-    instance-of v2, v1, Lj$/util/Map;
+    invoke-static {v1, p1}, Lj$/util/Map$-EL;->forEach(Ljava/util/Map;Lj$/util/function/BiConsumer;)V
 
-    if-eqz v2, :cond_0
-
-    check-cast v1, Lj$/util/Map;
-
-    invoke-interface {v1, p1}, Lj$/util/Map;->forEach(Lj$/util/function/BiConsumer;)V
-
-    goto :goto_0
-
-    :cond_0
-    instance-of v2, v1, Ljava/util/concurrent/ConcurrentMap;
-
-    if-eqz v2, :cond_1
-
-    check-cast v1, Ljava/util/concurrent/ConcurrentMap;
-
-    invoke-static {v1, p1}, Lj$/lang/d;->b(Ljava/util/concurrent/ConcurrentMap;Lj$/util/function/BiConsumer;)V
-
-    goto :goto_0
-
-    :catchall_0
-    move-exception p1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-static {v1, p1}, Lj$/util/Map$-CC;->$default$forEach(Ljava/util/Map;Lj$/util/function/BiConsumer;)V
-
-    .line 2
-    :goto_0
     monitor-exit v0
 
     return-void
 
-    :goto_1
+    :catchall_0
+    move-exception p1
+
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -648,16 +620,35 @@
     throw p1
 .end method
 
-.method public synthetic forEach(Ljava/util/function/BiConsumer;)V
-    .locals 0
+.method public forEach(Ljava/util/function/BiConsumer;)V
+    .locals 2
 
     invoke-static {p1}, Lj$/wrappers/q;->a(Ljava/util/function/BiConsumer;)Lj$/util/function/BiConsumer;
 
     move-result-object p1
 
-    invoke-virtual {p0, p1}, Lj$/util/DesugarCollections$a;->forEach(Lj$/util/function/BiConsumer;)V
+    .line 1
+    iget-object v0, p0, Lj$/util/DesugarCollections$a;->b:Ljava/lang/Object;
+
+    monitor-enter v0
+
+    :try_start_0
+    iget-object v1, p0, Lj$/util/DesugarCollections$a;->a:Ljava/util/Map;
+
+    invoke-static {v1, p1}, Lj$/util/Map$-EL;->forEach(Ljava/util/Map;Lj$/util/function/BiConsumer;)V
+
+    monitor-exit v0
 
     return-void
+
+    :catchall_0
+    move-exception p1
+
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    throw p1
 .end method
 
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;

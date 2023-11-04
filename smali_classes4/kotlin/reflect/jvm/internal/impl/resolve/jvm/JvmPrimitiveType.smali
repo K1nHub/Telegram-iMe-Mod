@@ -225,7 +225,7 @@
     :goto_3
     packed-switch p0, :pswitch_data_4
 
-    const-string v4, "isWrapperClassName"
+    const-string/jumbo v4, "isWrapperClassName"
 
     aput-object v4, v3, v1
 
@@ -274,8 +274,6 @@
 
     :goto_5
     throw p0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0xa
@@ -360,7 +358,7 @@
 
     const-string v5, "Z"
 
-    const-string v6, "java.lang.Boolean"
+    const-string/jumbo v6, "java.lang.Boolean"
 
     move-object v0, v7
 
@@ -381,7 +379,7 @@
 
     const-string v13, "C"
 
-    const-string v14, "java.lang.Character"
+    const-string/jumbo v14, "java.lang.Character"
 
     move-object v8, v0
 
@@ -402,7 +400,7 @@
 
     const-string v20, "B"
 
-    const-string v21, "java.lang.Byte"
+    const-string/jumbo v21, "java.lang.Byte"
 
     move-object v15, v1
 
@@ -423,7 +421,7 @@
 
     const-string v13, "S"
 
-    const-string v14, "java.lang.Short"
+    const-string/jumbo v14, "java.lang.Short"
 
     move-object v8, v2
 
@@ -444,7 +442,7 @@
 
     const-string v20, "I"
 
-    const-string v21, "java.lang.Integer"
+    const-string/jumbo v21, "java.lang.Integer"
 
     move-object v15, v3
 
@@ -465,7 +463,7 @@
 
     const-string v13, "F"
 
-    const-string v14, "java.lang.Float"
+    const-string/jumbo v14, "java.lang.Float"
 
     move-object v8, v4
 
@@ -486,7 +484,7 @@
 
     const-string v20, "J"
 
-    const-string v21, "java.lang.Long"
+    const-string/jumbo v21, "java.lang.Long"
 
     move-object v15, v5
 
@@ -507,7 +505,7 @@
 
     const-string v13, "D"
 
-    const-string v14, "java.lang.Double"
+    const-string/jumbo v14, "java.lang.Double"
 
     move-object v8, v6
 

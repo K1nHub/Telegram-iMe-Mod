@@ -80,7 +80,7 @@ final class LockFreeMPSCQueueCore<E> {
                 atomicReferenceArray.set(i4, obj);
                 i++;
             } else {
-                lockFreeMPSCQueueCore._state = Companion.m995wo(j, 1152921504606846976L);
+                lockFreeMPSCQueueCore._state = Companion.m996wo(j, 1152921504606846976L);
                 return lockFreeMPSCQueueCore;
             }
         }
@@ -111,7 +111,7 @@ final class LockFreeMPSCQueueCore<E> {
 
         /* JADX INFO: Access modifiers changed from: private */
         /* renamed from: wo */
-        public final long m995wo(long j, long j2) {
+        public final long m996wo(long j, long j2) {
             return j & (~j2);
         }
 
@@ -120,12 +120,12 @@ final class LockFreeMPSCQueueCore<E> {
 
         /* JADX INFO: Access modifiers changed from: private */
         public final long updateHead(long j, int i) {
-            return m995wo(j, 1073741823L) | (i << 0);
+            return m996wo(j, 1073741823L) | (i << 0);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public final long updateTail(long j, int i) {
-            return m995wo(j, 1152921503533105152L) | (i << 30);
+            return m996wo(j, 1152921503533105152L) | (i << 30);
         }
     }
 

@@ -52,7 +52,7 @@ public final class Schedulers {
     }
 
     /* renamed from: io */
-    public static Scheduler m992io() {
+    public static Scheduler m993io() {
         return RxJavaPlugins.onIoScheduler(f479IO);
     }
 

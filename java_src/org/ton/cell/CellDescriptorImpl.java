@@ -9,19 +9,19 @@ import kotlin.text.StringsKt__StringsKt;
 public final class CellDescriptorImpl implements CellDescriptor {
 
     /* renamed from: d1 */
-    private final byte f2043d1;
+    private final byte f2055d1;
 
     /* renamed from: d2 */
-    private final byte f2044d2;
+    private final byte f2056d2;
 
     @Override // org.ton.cell.CellDescriptor
     public final byte component1() {
-        return this.f2043d1;
+        return this.f2055d1;
     }
 
     @Override // org.ton.cell.CellDescriptor
     public final byte component2() {
-        return this.f2044d2;
+        return this.f2056d2;
     }
 
     public boolean equals(Object obj) {
@@ -30,32 +30,32 @@ public final class CellDescriptorImpl implements CellDescriptor {
         }
         if (obj instanceof CellDescriptorImpl) {
             CellDescriptorImpl cellDescriptorImpl = (CellDescriptorImpl) obj;
-            return this.f2043d1 == cellDescriptorImpl.f2043d1 && this.f2044d2 == cellDescriptorImpl.f2044d2;
+            return this.f2055d1 == cellDescriptorImpl.f2055d1 && this.f2056d2 == cellDescriptorImpl.f2056d2;
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.f2043d1 * 31) + this.f2044d2;
+        return (this.f2055d1 * 31) + this.f2056d2;
     }
 
     public CellDescriptorImpl(byte b, byte b2) {
-        this.f2043d1 = b;
-        this.f2044d2 = b2;
+        this.f2055d1 = b;
+        this.f2056d2 = b2;
     }
 
     public byte getD1() {
-        return this.f2043d1;
+        return this.f2055d1;
     }
 
     public byte getD2() {
-        return this.f2044d2;
+        return this.f2056d2;
     }
 
     @Override // org.ton.cell.CellDescriptor
     /* renamed from: getLevelMask-Kat384U */
-    public int mo5063getLevelMaskKat384U() {
-        return LevelMask.m5074constructorimpl(getD1() >>> 5);
+    public int mo5217getLevelMaskKat384U() {
+        return LevelMask.m5228constructorimpl(getD1() >>> 5);
     }
 
     @Override // org.ton.cell.CellDescriptor
@@ -105,11 +105,11 @@ public final class CellDescriptorImpl implements CellDescriptor {
 
     @Override // org.ton.cell.CellDescriptor
     public int getHashCount() {
-        int m5079getLevelimpl = LevelMask.m5079getLevelimpl(mo5063getLevelMaskKat384U());
-        if (isExotic() && getReferenceCount() == 0 && m5079getLevelimpl > 0) {
+        int m5233getLevelimpl = LevelMask.m5233getLevelimpl(mo5217getLevelMaskKat384U());
+        if (isExotic() && getReferenceCount() == 0 && m5233getLevelimpl > 0) {
             return 1;
         }
-        return 1 + m5079getLevelimpl;
+        return 1 + m5233getLevelimpl;
     }
 
     public String toString() {

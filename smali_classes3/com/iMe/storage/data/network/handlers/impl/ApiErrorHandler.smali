@@ -27,7 +27,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 18
+    .line 17
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,11 +36,11 @@
 .method private final getHttpError(Lretrofit2/HttpException;)Lcom/iMe/storage/data/network/model/error/ErrorModel;
     .locals 4
 
-    .line 68
+    .line 65
     :try_start_0
     new-instance v0, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
-    .line 69
+    .line 66
     invoke-virtual {p1}, Lretrofit2/HttpException;->response()Lretrofit2/Response;
 
     move-result-object v1
@@ -61,7 +61,7 @@
 
     move-result-object v1
 
-    .line 70
+    .line 67
     invoke-virtual {p1}, Lretrofit2/HttpException;->code()I
 
     move-result v2
@@ -70,10 +70,10 @@
 
     move-result-object v2
 
-    .line 71
+    .line 68
     sget-object v3, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->BAD_RESPONSE:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
-    .line 68
+    .line 65
     invoke-direct {v0, v1, v2, v3, p1}, Lcom/iMe/storage/data/network/model/error/ErrorModel;-><init>(Ljava/lang/String;Ljava/lang/Integer;Lcom/iMe/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -83,21 +83,21 @@
     :catchall_0
     move-exception v0
 
-    .line 75
+    .line 72
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 76
+    .line 73
     new-instance v1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
-    .line 77
+    .line 74
     invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 78
+    .line 75
     sget-object v2, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->NOT_DEFINED:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
-    .line 76
+    .line 73
     invoke-direct {v1, v0, v2, p1}, Lcom/iMe/storage/data/network/model/error/ErrorModel;-><init>(Ljava/lang/String;Lcom/iMe/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;)V
 
     move-object v0, v1
@@ -111,7 +111,7 @@
 .method public bridge synthetic handleError(Ljava/lang/Object;)Lcom/iMe/storage/data/network/model/error/ErrorModel;
     .locals 0
 
-    .line 18
+    .line 17
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;->handleError(Ljava/lang/Throwable;)Lcom/iMe/storage/data/network/model/error/ErrorModel;
@@ -126,19 +126,19 @@
 
     const-string v0, "ErrorHandler"
 
-    .line 22
+    .line 20
     invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;)V
 
-    .line 27
+    .line 25
     instance-of v0, p1, Lretrofit2/HttpException;
 
     if-eqz v0, :cond_1
 
-    .line 29
+    .line 27
     move-object v0, p1
 
     check-cast v0, Lretrofit2/HttpException;
@@ -151,7 +151,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 30
+    .line 28
     new-instance v1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
     invoke-virtual {v0}, Lretrofit2/HttpException;->message()Ljava/lang/String;
@@ -172,7 +172,7 @@
 
     goto :goto_2
 
-    .line 32
+    .line 30
     :cond_0
     invoke-direct {p0, v0}, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;->getHttpError(Lretrofit2/HttpException;)Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
@@ -180,7 +180,7 @@
 
     goto :goto_2
 
-    .line 37
+    .line 35
     :cond_1
     instance-of v0, p1, Ljava/net/SocketTimeoutException;
 
@@ -198,7 +198,7 @@
     :goto_0
     if-eqz v0, :cond_3
 
-    .line 38
+    .line 36
     new-instance v1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -211,7 +211,7 @@
 
     goto :goto_2
 
-    .line 41
+    .line 39
     :cond_3
     instance-of v0, p1, Lcom/google/firebase/FirebaseException;
 
@@ -219,7 +219,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 42
+    .line 40
     move-object v0, p1
 
     check-cast v0, Lcom/google/firebase/FirebaseException;
@@ -228,7 +228,7 @@
 
     move-result-object v3
 
-    .line 43
+    .line 41
     instance-of v4, v3, Ljava/net/SocketTimeoutException;
 
     if-eqz v4, :cond_4
@@ -243,20 +243,20 @@
 
     new-instance v1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
-    .line 44
+    .line 42
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 45
+    .line 43
     sget-object v2, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->NO_CONNECTION:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
-    .line 43
+    .line 41
     invoke-direct {v1, v0, v2, p1}, Lcom/iMe/storage/data/network/model/error/ErrorModel;-><init>(Ljava/lang/String;Lcom/iMe/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;)V
 
     goto :goto_2
 
-    .line 49
+    .line 47
     :cond_5
     new-instance v1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
@@ -266,7 +266,7 @@
 
     goto :goto_2
 
-    .line 53
+    .line 51
     :cond_6
     new-instance v1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
@@ -282,23 +282,5 @@
     invoke-direct {v1, v2, v0, p1}, Lcom/iMe/storage/data/network/model/error/ErrorModel;-><init>(Ljava/lang/String;Lcom/iMe/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;)V
 
     :goto_2
-    if-nez v1, :cond_8
-
-    .line 56
-    new-instance v1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    sget-object v2, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->BAD_RESPONSE:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
-
-    const-string v3, "No Defined Error!"
-
-    invoke-direct {v1, v3, v0, v2, p1}, Lcom/iMe/storage/data/network/model/error/ErrorModel;-><init>(Ljava/lang/String;Ljava/lang/Integer;Lcom/iMe/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;)V
-
-    :cond_8
     return-object v1
 .end method

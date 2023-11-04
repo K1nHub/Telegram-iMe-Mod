@@ -26,17 +26,17 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 13
 
-    .line 1901
+    .line 1902
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1903
+    .line 1904
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->textView:Landroid/widget/TextView;
 
-    .line 1904
+    .line 1905
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -45,7 +45,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1905
+    .line 1906
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->textView:Landroid/widget/TextView;
 
     const/4 v1, 0x1
@@ -54,7 +54,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1906
+    .line 1907
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->textView:Landroid/widget/TextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->CreateNewLink:I
@@ -67,7 +67,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1907
+    .line 1908
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->textView:Landroid/widget/TextView;
 
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -88,7 +88,7 @@
     :goto_0
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1908
+    .line 1909
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->textView:Landroid/widget/TextView;
 
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -119,7 +119,7 @@
     :goto_2
     invoke-virtual {v0, v6, v5, v1, v5}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1909
+    .line 1910
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->textView:Landroid/widget/TextView;
 
     const/4 v6, -0x1
@@ -168,14 +168,14 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1911
+    .line 1912
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->imageView:Landroid/widget/ImageView;
 
-    .line 1912
+    .line 1913
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -186,7 +186,7 @@
 
     move-result-object v0
 
-    .line 1913
+    .line 1914
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -197,7 +197,7 @@
 
     move-result-object p1
 
-    .line 1914
+    .line 1915
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
@@ -212,7 +212,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1915
+    .line 1916
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
@@ -227,7 +227,7 @@
 
     invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1916
+    .line 1917
     iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->imageView:Landroid/widget/ImageView;
 
     new-instance v6, Lorg/telegram/ui/Components/CombinedDrawable;
@@ -236,14 +236,14 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1917
+    .line 1918
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->imageView:Landroid/widget/ImageView;
 
     sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1918
+    .line 1919
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->imageView:Landroid/widget/ImageView;
 
     const/16 v6, 0x20
@@ -300,15 +300,15 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 1942
+    .line 1943
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 1944
+    .line 1945
     iget-boolean v0, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->needDivider:Z
 
     if-eqz v0, :cond_0
 
-    .line 1945
+    .line 1946
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getLeft()I
@@ -352,7 +352,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1951
+    .line 1952
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -381,12 +381,12 @@
 .method public setDivider(Z)V
     .locals 1
 
-    .line 1928
+    .line 1929
     iget-boolean v0, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->needDivider:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 1929
+    .line 1930
     iput-boolean p1, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->needDivider:Z
 
     xor-int/lit8 p1, p1, 0x1
@@ -400,10 +400,10 @@
 .method public setEnabled(Z)V
     .locals 4
 
-    .line 1935
+    .line 1936
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 1936
+    .line 1937
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->textView:Landroid/widget/TextView;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -422,7 +422,7 @@
     :goto_0
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 1937
+    .line 1938
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->imageView:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_1
@@ -441,7 +441,7 @@
 .method public setText(Ljava/lang/String;)V
     .locals 1
 
-    .line 1922
+    .line 1923
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V

@@ -23,7 +23,7 @@ public final class PublicKeyOverlay$$serializer implements GeneratedSerializer<P
         INSTANCE = publicKeyOverlay$$serializer;
         PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor = new PluginGeneratedSerialDescriptor("pub.overlay", publicKeyOverlay$$serializer, 1);
         pluginGeneratedSerialDescriptor.addElement(AppMeasurementSdk.ConditionalUserProperty.NAME, false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7439x79401cc9("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7514x79401cc9("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

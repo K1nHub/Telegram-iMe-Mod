@@ -42,17 +42,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 736
+    .line 737
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 739
+    .line 740
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MessageObject$VCardData;->emails:Ljava/util/ArrayList;
 
-    .line 740
+    .line 741
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -65,7 +65,7 @@
 .method public static parse(Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 16
 
-    .line 746
+    .line 747
     :try_start_0
     new-instance v0, Ljava/io/BufferedReader;
 
@@ -85,7 +85,7 @@
 
     const/4 v5, 0x0
 
-    .line 751
+    .line 752
     :cond_0
     :goto_0
     invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
@@ -96,7 +96,7 @@
 
     const-string v7, "PHOTO"
 
-    .line 752
+    .line 753
     invoke-virtual {v6, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v7
@@ -108,7 +108,7 @@
     :cond_1
     const/16 v7, 0x3a
 
-    .line 755
+    .line 756
     invoke-virtual {v6, v7}, Ljava/lang/String;->indexOf(I)I
 
     move-result v7
@@ -119,14 +119,14 @@
 
     const-string v7, "BEGIN:VCARD"
 
-    .line 756
+    .line 757
     invoke-virtual {v6, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v7
 
     if-eqz v7, :cond_2
 
-    .line 757
+    .line 758
     new-instance v4, Lorg/telegram/messenger/MessageObject$VCardData;
 
     invoke-direct {v4}, Lorg/telegram/messenger/MessageObject$VCardData;-><init>()V
@@ -136,7 +136,7 @@
     :cond_2
     const-string v7, "END:VCARD"
 
-    .line 758
+    .line 759
     invoke-virtual {v6, v7}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v7
@@ -151,7 +151,7 @@
     :goto_1
     if-eqz v5, :cond_4
 
-    .line 766
+    .line 767
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -169,7 +169,7 @@
     :cond_4
     const-string v7, "=QUOTED-PRINTABLE"
 
-    .line 770
+    .line 771
     invoke-virtual {v6, v7}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v7
@@ -187,7 +187,7 @@
 
     if-eqz v7, :cond_5
 
-    .line 771
+    .line 772
     invoke-virtual {v6}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -203,7 +203,7 @@
     :cond_5
     const-string v7, ":"
 
-    .line 774
+    .line 775
     invoke-virtual {v6, v7}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v7
@@ -214,7 +214,7 @@
 
     new-array v11, v10, [Ljava/lang/String;
 
-    .line 778
+    .line 779
     invoke-virtual {v6, v2, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v12
@@ -223,7 +223,7 @@
 
     add-int/lit8 v7, v7, 0x1
 
-    .line 779
+    .line 780
     invoke-virtual {v6, v7}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v6
@@ -239,14 +239,14 @@
     :cond_6
     new-array v11, v8, [Ljava/lang/String;
 
-    .line 782
+    .line 783
     invoke-virtual {v6}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v6
 
     aput-object v6, v11, v2
 
-    .line 784
+    .line 785
     :goto_2
     array-length v6, v11
 
@@ -256,7 +256,7 @@
 
     goto/16 :goto_0
 
-    .line 787
+    .line 788
     :cond_7
     aget-object v6, v11, v2
 
@@ -268,7 +268,7 @@
 
     if-eqz v6, :cond_d
 
-    .line 790
+    .line 791
     aget-object v6, v11, v2
 
     const-string v7, ";"
@@ -277,7 +277,7 @@
 
     move-result-object v6
 
-    .line 791
+    .line 792
     array-length v7, v6
 
     move v12, v2
@@ -291,19 +291,19 @@
 
     aget-object v15, v6, v12
 
-    .line 792
+    .line 793
     invoke-virtual {v15, v9}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v15
 
-    .line 793
+    .line 794
     array-length v1, v15
 
     if-eq v1, v10, :cond_8
 
     goto :goto_4
 
-    .line 796
+    .line 797
     :cond_8
     aget-object v1, v15, v2
 
@@ -315,12 +315,12 @@
 
     if-eqz v1, :cond_9
 
-    .line 797
+    .line 798
     aget-object v14, v15, v8
 
     goto :goto_4
 
-    .line 798
+    .line 799
     :cond_9
     aget-object v1, v15, v2
 
@@ -332,7 +332,7 @@
 
     if-eqz v1, :cond_a
 
-    .line 799
+    .line 800
     aget-object v13, v15, v8
 
     :cond_a
@@ -343,7 +343,7 @@
 
     goto :goto_3
 
-    .line 802
+    .line 803
     :cond_b
     aget-object v1, v11, v8
 
@@ -353,14 +353,14 @@
 
     const-string v1, "QUOTED-PRINTABLE"
 
-    .line 803
+    .line 804
     invoke-virtual {v13, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_c
 
-    .line 804
+    .line 805
     iget-object v1, v4, Lorg/telegram/messenger/MessageObject$VCardData;->company:Ljava/lang/String;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->getStringBytes(Ljava/lang/String;)[B
@@ -373,19 +373,19 @@
 
     if-eqz v1, :cond_c
 
-    .line 805
+    .line 806
     array-length v6, v1
 
     if-eqz v6, :cond_c
 
-    .line 806
+    .line 807
     new-instance v6, Ljava/lang/String;
 
     invoke-direct {v6, v1, v14}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
 
     iput-object v6, v4, Lorg/telegram/messenger/MessageObject$VCardData;->company:Ljava/lang/String;
 
-    .line 809
+    .line 810
     :cond_c
     iget-object v1, v4, Lorg/telegram/messenger/MessageObject$VCardData;->company:Ljava/lang/String;
 
@@ -401,7 +401,7 @@
 
     goto/16 :goto_0
 
-    .line 810
+    .line 811
     :cond_d
     aget-object v1, v11, v2
 
@@ -413,7 +413,7 @@
 
     if-eqz v1, :cond_e
 
-    .line 811
+    .line 812
     aget-object v1, v11, v8
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
@@ -422,7 +422,7 @@
 
     if-lez v1, :cond_0
 
-    .line 812
+    .line 813
     iget-object v1, v4, Lorg/telegram/messenger/MessageObject$VCardData;->phones:Ljava/util/ArrayList;
 
     aget-object v6, v11, v8
@@ -431,7 +431,7 @@
 
     goto/16 :goto_0
 
-    .line 814
+    .line 815
     :cond_e
     aget-object v1, v11, v2
 
@@ -443,17 +443,17 @@
 
     if-eqz v1, :cond_0
 
-    .line 815
+    .line 816
     aget-object v1, v11, v8
 
-    .line 816
+    .line 817
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v6
 
     if-lez v6, :cond_0
 
-    .line 817
+    .line 818
     iget-object v6, v4, Lorg/telegram/messenger/MessageObject$VCardData;->emails:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -462,7 +462,7 @@
 
     goto/16 :goto_0
 
-    .line 822
+    .line 823
     :cond_f
     :try_start_2
     invoke-virtual {v0}, Ljava/io/BufferedReader;->close()V
@@ -477,21 +477,21 @@
 
     move-object v1, v0
 
-    .line 824
+    .line 825
     :try_start_3
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_5
     if-eqz v3, :cond_18
 
-    .line 827
+    .line 828
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     move v1, v2
 
-    .line 828
+    .line 829
     :goto_6
     iget-object v3, v4, Lorg/telegram/messenger/MessageObject$VCardData;->phones:Ljava/util/ArrayList;
 
@@ -503,17 +503,17 @@
 
     if-ge v1, v3, :cond_13
 
-    .line 829
+    .line 830
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
 
     if-lez v3, :cond_10
 
-    .line 830
+    .line 831
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 832
+    .line 833
     :cond_10
     iget-object v3, v4, Lorg/telegram/messenger/MessageObject$VCardData;->phones:Ljava/util/ArrayList;
 
@@ -525,7 +525,7 @@
 
     const-string v5, "#"
 
-    .line 833
+    .line 834
     invoke-virtual {v3, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v5
@@ -542,7 +542,7 @@
 
     goto :goto_7
 
-    .line 836
+    .line 837
     :cond_11
     invoke-static {}, Lorg/telegram/PhoneFormat/PhoneFormat;->getInstance()Lorg/telegram/PhoneFormat/PhoneFormat;
 
@@ -556,7 +556,7 @@
 
     goto :goto_8
 
-    .line 834
+    .line 835
     :cond_12
     :goto_7
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -566,7 +566,7 @@
 
     goto :goto_6
 
-    .line 839
+    .line 840
     :cond_13
     :goto_9
     iget-object v1, v4, Lorg/telegram/messenger/MessageObject$VCardData;->emails:Ljava/util/ArrayList;
@@ -577,17 +577,17 @@
 
     if-ge v2, v1, :cond_15
 
-    .line 840
+    .line 841
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
 
     if-lez v1, :cond_14
 
-    .line 841
+    .line 842
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 843
+    .line 844
     :cond_14
     invoke-static {}, Lorg/telegram/PhoneFormat/PhoneFormat;->getInstance()Lorg/telegram/PhoneFormat/PhoneFormat;
 
@@ -611,7 +611,7 @@
 
     goto :goto_9
 
-    .line 845
+    .line 846
     :cond_15
     iget-object v1, v4, Lorg/telegram/messenger/MessageObject$VCardData;->company:Ljava/lang/String;
 
@@ -621,17 +621,17 @@
 
     if-nez v1, :cond_17
 
-    .line 846
+    .line 847
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v1
 
     if-lez v1, :cond_16
 
-    .line 847
+    .line 848
     invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 849
+    .line 850
     :cond_16
     iget-object v1, v4, Lorg/telegram/messenger/MessageObject$VCardData;->company:Ljava/lang/String;
 

@@ -9,7 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p030ui.custom.DividerView;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletConnectSessionBinding implements ViewBinding {
     private ForkRecycleItemWalletConnectSessionBinding(ConstraintLayout constraintLayout, ConstraintLayout constraintLayout2, AppCompatImageView appCompatImageView, AppCompatTextView appCompatTextView, AppCompatTextView appCompatTextView2, DividerView dividerView) {
@@ -20,7 +20,7 @@ public final class ForkRecycleItemWalletConnectSessionBinding implements ViewBin
     }
 
     public static ForkRecycleItemWalletConnectSessionBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_connect_session, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_recycle_item_wallet_connect_session, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -29,16 +29,16 @@ public final class ForkRecycleItemWalletConnectSessionBinding implements ViewBin
 
     public static ForkRecycleItemWalletConnectSessionBinding bind(View view) {
         ConstraintLayout constraintLayout = (ConstraintLayout) view;
-        int i = C3630R.C3633id.image_peer_icon;
+        int i = C3634R.C3637id.image_peer_icon;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3630R.C3633id.text_peer_name;
+            i = C3634R.C3637id.text_peer_name;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
-                i = C3630R.C3633id.text_peer_url;
+                i = C3634R.C3637id.text_peer_url;
                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView2 != null) {
-                    i = C3630R.C3633id.view_divider;
+                    i = C3634R.C3637id.view_divider;
                     DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
                     if (dividerView != null) {
                         return new ForkRecycleItemWalletConnectSessionBinding(constraintLayout, constraintLayout, appCompatImageView, appCompatTextView, appCompatTextView2, dividerView);

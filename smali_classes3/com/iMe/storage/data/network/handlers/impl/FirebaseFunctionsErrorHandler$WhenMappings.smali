@@ -506,6 +506,34 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_21 .. :try_end_21} :catch_21
 
     :catch_21
+    :try_start_22
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_CURRENT_TON_CONNECT_SESSION_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x23
+
+    aput v2, v0, v1
+    :try_end_22
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_22 .. :try_end_22} :catch_22
+
+    :catch_22
+    :try_start_23
+    sget-object v1, Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;->NO_CURRENT_AUTHORIZATION_FOUND:Lcom/iMe/storage/data/network/handlers/model/GlobalApiErrorCode;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0x24
+
+    aput v2, v0, v1
+    :try_end_23
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_23 .. :try_end_23} :catch_23
+
+    :catch_23
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

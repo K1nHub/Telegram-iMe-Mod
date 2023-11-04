@@ -12,22 +12,22 @@ import com.google.android.gms.vision.Frame;
 /* loaded from: classes3.dex */
 public final class zzs extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzs> CREATOR = new zzv();
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     public int zza;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     public int zzb;
-    @SafeParcelable.Field(m1089id = 4)
+    @SafeParcelable.Field(m1090id = 4)
     public int zzc;
-    @SafeParcelable.Field(m1089id = 5)
+    @SafeParcelable.Field(m1090id = 5)
     public long zzd;
-    @SafeParcelable.Field(m1089id = 6)
+    @SafeParcelable.Field(m1090id = 6)
     public int zze;
 
     public zzs() {
     }
 
     @SafeParcelable.Constructor
-    public zzs(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) int i2, @SafeParcelable.Param(m1088id = 4) int i3, @SafeParcelable.Param(m1088id = 5) long j, @SafeParcelable.Param(m1088id = 6) int i4) {
+    public zzs(@SafeParcelable.Param(m1089id = 2) int i, @SafeParcelable.Param(m1089id = 3) int i2, @SafeParcelable.Param(m1089id = 4) int i3, @SafeParcelable.Param(m1089id = 5) long j, @SafeParcelable.Param(m1089id = 6) int i4) {
         this.zza = i;
         this.zzb = i2;
         this.zzc = i3;

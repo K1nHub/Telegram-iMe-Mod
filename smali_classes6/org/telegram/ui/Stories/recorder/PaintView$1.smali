@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;)V
     .locals 0
 
-    .line 191
+    .line 190
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$1;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public get()F
     .locals 3
 
-    .line 194
+    .line 193
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$1;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$000(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/RenderView;
@@ -51,7 +51,7 @@
 
     if-nez v0, :cond_0
 
-    .line 196
+    .line 195
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$1;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$100(Lorg/telegram/ui/Stories/recorder/PaintView;)I
@@ -68,7 +68,7 @@
 
     return v0
 
-    .line 198
+    .line 197
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$1;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -104,7 +104,7 @@
 .method public set(F)V
     .locals 3
 
-    .line 203
+    .line 202
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$1;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$100(Lorg/telegram/ui/Stories/recorder/PaintView;)I
@@ -137,7 +137,7 @@
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/Components/Paint/PersistColorPalette;->setWeight(Ljava/lang/String;F)V
 
-    .line 204
+    .line 203
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$1;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$200(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/Swatch;
@@ -146,7 +146,7 @@
 
     iput p1, v0, Lorg/telegram/ui/Components/Paint/Swatch;->brushWeight:F
 
-    .line 205
+    .line 204
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$1;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$200(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/Swatch;

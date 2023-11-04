@@ -816,7 +816,7 @@
 
     move-result-object v2
 
-    const-string v3, "java.lang.Integer.toStri\u2026(this, checkRadix(radix))"
+    const-string/jumbo v3, "java.lang.Integer.toStri\u2026(this, checkRadix(radix))"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1064,7 +1064,7 @@
 
     move-result-object v2
 
-    const-string v3, "java.lang.Integer.toStri\u2026(this, checkRadix(radix))"
+    const-string/jumbo v3, "java.lang.Integer.toStri\u2026(this, checkRadix(radix))"
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

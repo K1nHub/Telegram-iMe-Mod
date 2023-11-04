@@ -3,7 +3,7 @@ package com.google.android.exoplayer2.source.dash;
 import android.util.Pair;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.SeekParameters;
 import com.google.android.exoplayer2.analytics.PlayerId;
@@ -83,7 +83,7 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod
     public long readDiscontinuity() {
-        return C0479C.TIME_UNSET;
+        return C0485C.TIME_UNSET;
     }
 
     public DashMediaPeriod(int i, DashManifest dashManifest, BaseUrlExclusionList baseUrlExclusionList, int i2, DashChunkSource.Factory factory, TransferListener transferListener, DrmSessionManager drmSessionManager, DrmSessionEventListener.EventDispatcher eventDispatcher, LoadErrorHandlingPolicy loadErrorHandlingPolicy, MediaSourceEventListener.EventDispatcher eventDispatcher2, long j, LoaderErrorThrower loaderErrorThrower, Allocator allocator, CompositeSequenceableLoaderFactory compositeSequenceableLoaderFactory, PlayerEmsgHandler.PlayerEmsgCallback playerEmsgCallback, PlayerId playerId) {
@@ -130,7 +130,7 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
             while (true) {
                 if (it.hasNext()) {
                     EventStream next = it.next();
-                    if (next.m1114id().equals(eventSampleStream.eventStreamId())) {
+                    if (next.m1115id().equals(eventSampleStream.eventStreamId())) {
                         boolean z = true;
                         eventSampleStream.updateEventStream(next, (dashManifest.dynamic && i == dashManifest.getPeriodCount() - 1) ? false : false);
                     }
@@ -511,7 +511,7 @@ public final class DashMediaPeriod implements MediaPeriod, SequenceableLoader.Ca
         EventStream eventStream;
         int i2 = 0;
         while (i2 < list.size()) {
-            trackGroupArr[i] = new TrackGroup(eventStream.m1114id() + ":" + i2, new Format.Builder().setId(list.get(i2).m1114id()).setSampleMimeType(MimeTypes.APPLICATION_EMSG).build());
+            trackGroupArr[i] = new TrackGroup(eventStream.m1115id() + ":" + i2, new Format.Builder().setId(list.get(i2).m1115id()).setSampleMimeType(MimeTypes.APPLICATION_EMSG).build());
             trackGroupInfoArr[i] = TrackGroupInfo.mpdEventTrack(i2);
             i2++;
             i++;

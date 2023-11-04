@@ -57,6 +57,9 @@
 .method public abstract didPressForkTranscribeButton(Lorg/telegram/ui/Cells/ChatMessageCell;)V
 .end method
 
+.method public abstract didPressGiveawayChatButton(Lorg/telegram/ui/Cells/ChatMessageCell;I)V
+.end method
+
 .method public abstract didPressHiddenForward(Lorg/telegram/ui/Cells/ChatMessageCell;)V
 .end method
 
@@ -79,6 +82,9 @@
 .end method
 
 .method public abstract didPressSideButton(Lorg/telegram/ui/Cells/ChatMessageCell;)V
+.end method
+
+.method public abstract didPressSponsoredClose()V
 .end method
 
 .method public abstract didPressTime(Lorg/telegram/ui/Cells/ChatMessageCell;)V
@@ -109,6 +115,9 @@
             ">;III)V"
         }
     .end annotation
+.end method
+
+.method public abstract didPressWebPage(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$WebPage;Ljava/lang/String;Z)V
 .end method
 
 .method public abstract didStartVideoStream(Lorg/telegram/messenger/MessageObject;)V

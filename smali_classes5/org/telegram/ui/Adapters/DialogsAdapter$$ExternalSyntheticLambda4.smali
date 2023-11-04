@@ -2,44 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
+.field public final synthetic f$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
-.field public final synthetic f$1:I
+.field public final synthetic f$1:Landroidx/recyclerview/widget/DiffUtil$Callback;
+
+.field public final synthetic f$2:Ljava/lang/Runnable;
+
+.field public final synthetic f$3:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;I)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Adapters/DialogsAdapter;Landroidx/recyclerview/widget/DiffUtil$Callback;Ljava/lang/Runnable;Ljava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/messenger/MessagesController;
+    iput-object p1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
-    iput p2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda4;->f$1:I
+    iput-object p2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda4;->f$1:Landroidx/recyclerview/widget/DiffUtil$Callback;
+
+    iput-object p3, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda4;->f$2:Ljava/lang/Runnable;
+
+    iput-object p4, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda4;->f$3:Ljava/util/ArrayList;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 2
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/messenger/MessagesController;
+    iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
-    iget v1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda4;->f$1:I
+    iget-object v1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda4;->f$1:Landroidx/recyclerview/widget/DiffUtil$Callback;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_contact;
+    iget-object v2, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda4;->f$2:Ljava/lang/Runnable;
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_contact;
+    iget-object v3, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$$ExternalSyntheticLambda4;->f$3:Ljava/util/ArrayList;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Adapters/DialogsAdapter;->$r8$lambda$yS6Mw2TD_4TG3UFXUY5dN0oiTsg(Lorg/telegram/messenger/MessagesController;ILorg/telegram/tgnet/TLRPC$TL_contact;Lorg/telegram/tgnet/TLRPC$TL_contact;)I
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Adapters/DialogsAdapter;->$r8$lambda$vSXKlhKdpkM4pHGqa0Xifd7Diwk(Lorg/telegram/ui/Adapters/DialogsAdapter;Landroidx/recyclerview/widget/DiffUtil$Callback;Ljava/lang/Runnable;Ljava/util/ArrayList;)V
 
-    move-result p1
-
-    return p1
+    return-void
 .end method

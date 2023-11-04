@@ -26,15 +26,15 @@
 .method public constructor <init>(Landroid/content/Context;Z)V
     .locals 7
 
-    .line 2552
+    .line 2550
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, -0x1
 
-    .line 2564
+    .line 2562
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$NoEmojiView;->lastI:I
 
-    .line 2554
+    .line 2552
     new-instance v0, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -45,14 +45,14 @@
 
     const/16 v2, 0x11
 
-    .line 2555
+    .line 2553
     invoke-static {v1, v1, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2557
+    .line 2555
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -63,17 +63,17 @@
 
     const/high16 v1, 0x41600000    # 14.0f
 
-    .line 2558
+    .line 2556
     invoke-virtual {v0, p1, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 2559
+    .line 2557
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$NoEmojiView;->textView:Landroid/widget/TextView;
 
     const v0, -0x828282
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2560
+    .line 2558
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$NoEmojiView;->textView:Landroid/widget/TextView;
 
     if-eqz p2, :cond_0
@@ -96,7 +96,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2561
+    .line 2559
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$NoEmojiView;->textView:Landroid/widget/TextView;
 
     const/4 v0, -0x2
@@ -127,7 +127,7 @@
 .method protected onMeasure(II)V
     .locals 3
 
-    .line 2579
+    .line 2577
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -140,7 +140,7 @@
 
     const/16 v0, 0xaa
 
-    .line 2580
+    .line 2578
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -177,7 +177,7 @@
 
     move-result p2
 
-    .line 2578
+    .line 2576
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -186,7 +186,7 @@
 .method public update()V
     .locals 2
 
-    .line 2573
+    .line 2571
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$NoEmojiView;->imageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -199,15 +199,15 @@
 .method public update(I)V
     .locals 1
 
-    .line 2566
+    .line 2564
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$NoEmojiView;->lastI:I
 
     if-eq v0, p1, :cond_0
 
-    .line 2567
+    .line 2565
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$NoEmojiView;->lastI:I
 
-    .line 2568
+    .line 2566
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$NoEmojiView;->update()V
 
     :cond_0

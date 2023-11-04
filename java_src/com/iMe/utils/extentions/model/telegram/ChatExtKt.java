@@ -9,6 +9,6 @@ public final class ChatExtKt {
     public static final long getBotApiId(TLRPC$Chat tLRPC$Chat) {
         Intrinsics.checkNotNullParameter(tLRPC$Chat, "<this>");
         String str = (ChatObject.isMegagroup(tLRPC$Chat) || ChatObject.isChannel(tLRPC$Chat)) ? "-100" : "-";
-        return Long.parseLong(str + Math.abs(tLRPC$Chat.f1600id));
+        return Long.parseLong(str + Math.abs(tLRPC$Chat.f1602id));
     }
 }

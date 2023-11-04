@@ -26,7 +26,7 @@
 
     move-object v0, p1
 
-    .line 2412
+    .line 2473
     iput-object v0, v8, Lorg/telegram/ui/Stories/PeerStoriesView$21;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     move-object v0, p0
@@ -55,10 +55,10 @@
 .method public dismissInternal()V
     .locals 2
 
-    .line 2416
+    .line 2477
     invoke-super {p0}, Lorg/telegram/ui/Components/ShareAlert;->dismissInternal()V
 
-    .line 2417
+    .line 2478
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$21;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     const/4 v1, 0x0
@@ -81,15 +81,15 @@
         }
     .end annotation
 
-    .line 2422
+    .line 2483
     invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/Components/ShareAlert;->onSend(Landroidx/collection/LongSparseArray;ILorg/telegram/tgnet/TLRPC$TL_forumTopic;)V
 
-    .line 2423
+    .line 2484
     iget-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$21;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iget-object v0, p2, Lorg/telegram/ui/Stories/PeerStoriesView;->storyContainer:Landroid/widget/FrameLayout;
 
-    invoke-static {p2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6300(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {p2}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6400(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object p2
 
@@ -99,7 +99,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 2425
+    .line 2486
     invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->size()I
 
     move-result v0
@@ -110,12 +110,12 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 2426
+    .line 2487
     invoke-virtual {p1, v2}, Landroidx/collection/LongSparseArray;->keyAt(I)J
 
     move-result-wide v3
 
-    .line 2427
+    .line 2488
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -130,7 +130,7 @@
 
     if-nez p1, :cond_0
 
-    .line 2428
+    .line 2489
     sget p1, Lorg/telegram/messenger/R$raw;->saved_messages:I
 
     sget p3, Lorg/telegram/messenger/R$string;->StorySharedToSavedMessages:I
@@ -168,7 +168,7 @@
 
     if-gez p1, :cond_2
 
-    .line 2430
+    .line 2491
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -185,7 +185,7 @@
 
     move-result-object p1
 
-    .line 2431
+    .line 2492
     sget v3, Lorg/telegram/messenger/R$raw;->forward:I
 
     sget v4, Lorg/telegram/messenger/R$string;->StorySharedTo:I
@@ -224,7 +224,7 @@
 
     goto :goto_1
 
-    .line 2433
+    .line 2494
     :cond_2
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -240,7 +240,7 @@
 
     move-result-object p1
 
-    .line 2434
+    .line 2495
     sget p3, Lorg/telegram/messenger/R$raw;->forward:I
 
     sget v3, Lorg/telegram/messenger/R$string;->StorySharedTo:I
@@ -271,7 +271,7 @@
 
     goto :goto_1
 
-    .line 2437
+    .line 2498
     :cond_3
     sget p3, Lorg/telegram/messenger/R$raw;->forward:I
 
@@ -311,7 +311,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->show()Lorg/telegram/ui/Components/Bulletin;
 
-    .line 2439
+    .line 2500
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$21;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 

@@ -13,21 +13,21 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 public class ConnectionTelemetryConfiguration extends AbstractSafeParcelable {
     @KeepForSdk
     public static final Parcelable.Creator<ConnectionTelemetryConfiguration> CREATOR = new zzl();
-    @SafeParcelable.Field(getter = "getRootTelemetryConfiguration", m1089id = 1)
+    @SafeParcelable.Field(getter = "getRootTelemetryConfiguration", m1090id = 1)
     private final RootTelemetryConfiguration zza;
-    @SafeParcelable.Field(getter = "getMethodInvocationTelemetryEnabled", m1089id = 2)
+    @SafeParcelable.Field(getter = "getMethodInvocationTelemetryEnabled", m1090id = 2)
     private final boolean zzb;
-    @SafeParcelable.Field(getter = "getMethodTimingTelemetryEnabled", m1089id = 3)
+    @SafeParcelable.Field(getter = "getMethodTimingTelemetryEnabled", m1090id = 3)
     private final boolean zzc;
-    @SafeParcelable.Field(getter = "getMethodInvocationMethodKeyAllowlist", m1089id = 4)
+    @SafeParcelable.Field(getter = "getMethodInvocationMethodKeyAllowlist", m1090id = 4)
     private final int[] zzd;
-    @SafeParcelable.Field(getter = "getMaxMethodInvocationsLogged", m1089id = 5)
+    @SafeParcelable.Field(getter = "getMaxMethodInvocationsLogged", m1090id = 5)
     private final int zze;
-    @SafeParcelable.Field(getter = "getMethodInvocationMethodKeyDisallowlist", m1089id = 6)
+    @SafeParcelable.Field(getter = "getMethodInvocationMethodKeyDisallowlist", m1090id = 6)
     private final int[] zzf;
 
     @SafeParcelable.Constructor
-    public ConnectionTelemetryConfiguration(@SafeParcelable.Param(m1088id = 1) RootTelemetryConfiguration rootTelemetryConfiguration, @SafeParcelable.Param(m1088id = 2) boolean z, @SafeParcelable.Param(m1088id = 3) boolean z2, @SafeParcelable.Param(m1088id = 4) int[] iArr, @SafeParcelable.Param(m1088id = 5) int i, @SafeParcelable.Param(m1088id = 6) int[] iArr2) {
+    public ConnectionTelemetryConfiguration(@SafeParcelable.Param(m1089id = 1) RootTelemetryConfiguration rootTelemetryConfiguration, @SafeParcelable.Param(m1089id = 2) boolean z, @SafeParcelable.Param(m1089id = 3) boolean z2, @SafeParcelable.Param(m1089id = 4) int[] iArr, @SafeParcelable.Param(m1089id = 5) int i, @SafeParcelable.Param(m1089id = 6) int[] iArr2) {
         this.zza = rootTelemetryConfiguration;
         this.zzb = z;
         this.zzc = z2;

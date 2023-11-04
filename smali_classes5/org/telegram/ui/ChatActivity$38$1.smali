@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$38;)V
     .locals 0
 
-    .line 8519
+    .line 8604
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,17 +35,17 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 8522
+    .line 8607
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity$38;->access$26102(Lorg/telegram/ui/ChatActivity$38;I)I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity$38;->access$25702(Lorg/telegram/ui/ChatActivity$38;I)I
 
-    .line 8523
+    .line 8608
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity$38;->access$26200(Lorg/telegram/ui/ChatActivity$38;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity$38;->access$25800(Lorg/telegram/ui/ChatActivity$38;)Landroid/view/View;
 
     move-result-object p1
 
@@ -53,7 +53,7 @@
 
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity$38;->access$26300(Lorg/telegram/ui/ChatActivity$38;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity$38;->access$25900(Lorg/telegram/ui/ChatActivity$38;)Landroid/view/View;
 
     move-result-object p1
 
@@ -63,16 +63,16 @@
 
     if-nez p1, :cond_0
 
-    .line 8524
+    .line 8609
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity$38;->access$26700(Lorg/telegram/ui/ChatActivity$38;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity$38;->access$26300(Lorg/telegram/ui/ChatActivity$38;)Landroid/view/View;
 
     move-result-object p1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity$38;->access$26400(Lorg/telegram/ui/ChatActivity$38;)I
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity$38;->access$26000(Lorg/telegram/ui/ChatActivity$38;)I
 
     move-result v0
 
@@ -82,7 +82,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity$38;->access$26500(Lorg/telegram/ui/ChatActivity$38;)F
+    invoke-static {v2}, Lorg/telegram/ui/ChatActivity$38;->access$26100(Lorg/telegram/ui/ChatActivity$38;)F
 
     move-result v2
 
@@ -90,7 +90,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChatActivity$38;->access$26600(Lorg/telegram/ui/ChatActivity$38;)Landroid/view/View;
+    invoke-static {v2}, Lorg/telegram/ui/ChatActivity$38;->access$26200(Lorg/telegram/ui/ChatActivity$38;)Landroid/view/View;
 
     move-result-object v2
 
@@ -108,25 +108,25 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 8525
+    .line 8610
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity$38;->access$26800(Lorg/telegram/ui/ChatActivity$38;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity$38;->access$26400(Lorg/telegram/ui/ChatActivity$38;)Landroid/view/View;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 8526
+    .line 8611
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity$38;->access$27000(Lorg/telegram/ui/ChatActivity$38;)Landroid/view/View;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity$38;->access$26600(Lorg/telegram/ui/ChatActivity$38;)Landroid/view/View;
 
     move-result-object p1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity$38;->access$26900(Lorg/telegram/ui/ChatActivity$38;)I
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity$38;->access$26500(Lorg/telegram/ui/ChatActivity$38;)I
 
     move-result v0
 
@@ -136,7 +136,7 @@
 
     goto :goto_0
 
-    .line 8529
+    .line 8614
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
 
@@ -150,7 +150,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
 
-    .line 8530
+    .line 8615
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$38;->this$0:Lorg/telegram/ui/ChatActivity;
@@ -159,10 +159,10 @@
 
     if-eqz p1, :cond_1
 
-    .line 8531
+    .line 8616
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 8534
+    .line 8619
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$38$1;->this$1:Lorg/telegram/ui/ChatActivity$38;
@@ -171,7 +171,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$26002(Lorg/telegram/ui/ChatActivity;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$25602(Lorg/telegram/ui/ChatActivity;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
     return-void
 .end method

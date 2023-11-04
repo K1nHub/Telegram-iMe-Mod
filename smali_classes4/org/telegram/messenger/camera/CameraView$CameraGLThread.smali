@@ -206,87 +206,87 @@
 .method public constructor <init>(Lorg/telegram/messenger/camera/CameraView;Landroid/graphics/SurfaceTexture;)V
     .locals 13
 
-    .line 1120
+    .line 1119
     iput-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     const-string v0, "CameraGLThread"
 
-    .line 1121
+    .line 1120
     invoke-direct {p0, v0}, Lorg/telegram/messenger/DispatchQueue;-><init>(Ljava/lang/String;)V
 
     const/4 v0, 0x2
 
     new-array v1, v0, [Lorg/telegram/messenger/camera/CameraSession;
 
-    .line 1068
+    .line 1067
     iput-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->currentSession:[Lorg/telegram/messenger/camera/CameraSession;
 
     new-array v1, v0, [Landroid/graphics/SurfaceTexture;
 
-    .line 1070
+    .line 1069
     iput-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     const/4 v1, 0x0
 
-    .line 1072
+    .line 1071
     iput v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->DO_RENDER_MESSAGE:I
 
     const/4 v2, 0x1
 
-    .line 1073
+    .line 1072
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->DO_SHUTDOWN_MESSAGE:I
 
-    .line 1074
+    .line 1073
     iput v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->DO_REINIT_MESSAGE:I
 
     const/4 v3, 0x3
 
-    .line 1075
+    .line 1074
     iput v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->DO_SETSESSION_MESSAGE:I
 
     const/4 v3, 0x4
 
-    .line 1076
+    .line 1075
     iput v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->DO_START_RECORDING:I
 
     const/4 v3, 0x5
 
-    .line 1077
+    .line 1076
     iput v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->DO_STOP_RECORDING:I
 
     const/4 v3, 0x6
 
-    .line 1079
+    .line 1078
     iput v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->DO_DUAL_START:I
 
     const/4 v3, 0x7
 
-    .line 1080
+    .line 1079
     iput v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->DO_DUAL_MOVE:I
 
     const/16 v3, 0x8
 
-    .line 1081
+    .line 1080
     iput v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->DO_DUAL_FLIP:I
 
     const/16 v3, 0x9
 
-    .line 1082
+    .line 1081
     iput v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->DO_DUAL_TOGGLE_SHAPE:I
 
     const/16 v3, 0xa
 
-    .line 1083
+    .line 1082
     iput v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->DO_DUAL_END:I
 
     const/16 v3, 0xb
 
-    .line 1084
+    .line 1083
     iput v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->BLUR_CAMERA1:I
 
     new-array v0, v0, [I
 
-    .line 1109
+    .line 1108
     fill-array-data v0, :array_0
 
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraId:[I
@@ -295,12 +295,12 @@
 
     new-array v0, v0, [F
 
-    .line 1111
+    .line 1110
     fill-array-data v0, :array_1
 
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->verticesData:[F
 
-    .line 1389
+    .line 1388
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     new-instance v3, Lorg/telegram/messenger/camera/CameraView$CameraGLThread$$ExternalSyntheticLambda6;
@@ -315,7 +315,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfade:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 1390
+    .line 1389
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     new-instance v6, Lorg/telegram/messenger/camera/CameraView$CameraGLThread$$ExternalSyntheticLambda4;
@@ -336,7 +336,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->camera1Appear:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 1391
+    .line 1390
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     new-instance v3, Lorg/telegram/messenger/camera/CameraView$CameraGLThread$$ExternalSyntheticLambda5;
@@ -349,7 +349,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->dualAppear:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 1392
+    .line 1391
     new-instance v0, Lorg/telegram/ui/Components/AnimatedFloat;
 
     new-instance v3, Lorg/telegram/messenger/camera/CameraView$CameraGLThread$$ExternalSyntheticLambda2;
@@ -360,7 +360,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shape:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 1395
+    .line 1394
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -377,39 +377,39 @@
 
     new-array v0, v2, [I
 
-    .line 1397
+    .line 1396
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->array:[I
 
-    .line 1847
+    .line 1846
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->updateTex1:Ljava/lang/Object;
 
-    .line 1848
+    .line 1847
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->updateTex2:Ljava/lang/Object;
 
-    .line 1849
+    .line 1848
     new-instance v0, Ljava/lang/Object;
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->updateTexBoth:Ljava/lang/Object;
 
-    .line 1122
+    .line 1121
     iput-object p2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
-    .line 1123
+    .line 1122
     iget-boolean p2, p1, Lorg/telegram/messenger/camera/CameraView;->dual:Z
 
     iput-boolean p2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->initDual:Z
 
-    .line 1124
+    .line 1123
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$300(Lorg/telegram/messenger/camera/CameraView;)Z
 
     move-result p2
@@ -418,7 +418,7 @@
 
     iput-boolean p2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->initDualReverse:Z
 
-    .line 1125
+    .line 1124
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$400(Lorg/telegram/messenger/camera/CameraView;)Landroid/graphics/Matrix;
 
     move-result-object p1
@@ -455,7 +455,7 @@
 .method static synthetic access$4100(Lorg/telegram/messenger/camera/CameraView$CameraGLThread;)[Lorg/telegram/messenger/camera/CameraSession;
     .locals 0
 
-    .line 1056
+    .line 1055
     iget-object p0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->currentSession:[Lorg/telegram/messenger/camera/CameraSession;
 
     return-object p0
@@ -464,7 +464,7 @@
 .method private applyDualMatrix(Landroid/graphics/Matrix;)V
     .locals 2
 
-    .line 1803
+    .line 1802
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->access$1200(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -483,7 +483,7 @@
 .method private getValues(Landroid/graphics/Matrix;[F)V
     .locals 7
 
-    .line 1808
+    .line 1807
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->m3x3:[F
 
     const/16 v1, 0x9
@@ -492,16 +492,16 @@
 
     new-array v0, v1, [F
 
-    .line 1809
+    .line 1808
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->m3x3:[F
 
-    .line 1811
+    .line 1810
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->m3x3:[F
 
     invoke-virtual {p1, v0}, Landroid/graphics/Matrix;->getValues([F)V
 
-    .line 1813
+    .line 1812
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->m3x3:[F
 
     const/4 v0, 0x0
@@ -512,7 +512,7 @@
 
     const/4 v0, 0x3
 
-    .line 1814
+    .line 1813
     aget v2, p1, v0
 
     const/4 v3, 0x1
@@ -523,82 +523,82 @@
 
     const/4 v4, 0x0
 
-    .line 1815
+    .line 1814
     aput v4, p2, v2
 
     const/4 v5, 0x6
 
-    .line 1816
+    .line 1815
     aget v6, p1, v5
 
     aput v6, p2, v0
 
-    .line 1818
+    .line 1817
     aget v0, p1, v3
 
     const/4 v3, 0x4
 
     aput v0, p2, v3
 
-    .line 1819
+    .line 1818
     aget v0, p1, v3
 
     const/4 v3, 0x5
 
     aput v0, p2, v3
 
-    .line 1820
+    .line 1819
     aput v4, p2, v5
 
     const/4 v0, 0x7
 
-    .line 1821
+    .line 1820
     aget v5, p1, v0
 
     aput v5, p2, v0
 
     const/16 v0, 0x8
 
-    .line 1823
+    .line 1822
     aput v4, p2, v0
 
-    .line 1824
+    .line 1823
     aput v4, p2, v1
 
     const/16 v1, 0xa
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    .line 1825
+    .line 1824
     aput v5, p2, v1
 
     const/16 v1, 0xb
 
-    .line 1826
+    .line 1825
     aput v4, p2, v1
 
     const/16 v1, 0xc
 
-    .line 1828
+    .line 1827
     aget v2, p1, v2
 
     aput v2, p2, v1
 
     const/16 v1, 0xd
 
-    .line 1829
+    .line 1828
     aget v2, p1, v3
 
     aput v2, p2, v1
 
     const/16 v1, 0xe
 
-    .line 1830
+    .line 1829
     aput v4, p2, v1
 
     const/16 v1, 0xf
 
-    .line 1831
+    .line 1830
     aget p1, p1, v0
 
     aput p1, p2, v1
@@ -609,17 +609,17 @@
 .method private initGL()Z
     .locals 14
 
-    .line 1129
+    .line 1128
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "CameraView start init gl"
 
-    .line 1130
+    .line 1129
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1132
+    .line 1131
     :cond_0
     invoke-static {}, Ljavax/microedition/khronos/egl/EGLContext;->getEGL()Ljavax/microedition/khronos/egl/EGL;
 
@@ -629,7 +629,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
-    .line 1134
+    .line 1133
     sget-object v1, Ljavax/microedition/khronos/egl/EGL10;->EGL_DEFAULT_DISPLAY:Ljava/lang/Object;
 
     invoke-interface {v0, v1}, Ljavax/microedition/khronos/egl/EGL10;->eglGetDisplay(Ljava/lang/Object;)Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -638,7 +638,7 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
-    .line 1135
+    .line 1134
     sget-object v1, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_DISPLAY:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     const/4 v2, 0x0
@@ -647,12 +647,12 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 1136
+    .line 1135
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_1
 
-    .line 1137
+    .line 1136
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -679,11 +679,11 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1139
+    .line 1138
     :cond_1
     iput-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
-    .line 1140
+    .line 1139
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->finish()V
 
     return v3
@@ -693,7 +693,7 @@
 
     new-array v4, v1, [I
 
-    .line 1145
+    .line 1144
     iget-object v5, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     invoke-interface {v5, v0, v4}, Ljavax/microedition/khronos/egl/EGL10;->eglInitialize(Ljavax/microedition/khronos/egl/EGLDisplay;[I)Z
@@ -702,12 +702,12 @@
 
     if-nez v0, :cond_4
 
-    .line 1146
+    .line 1145
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_3
 
-    .line 1147
+    .line 1146
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -734,7 +734,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1149
+    .line 1148
     :cond_3
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->finish()V
 
@@ -751,10 +751,10 @@
 
     new-array v6, v4, [I
 
-    .line 1155
+    .line 1154
     fill-array-data v6, :array_0
 
-    .line 1165
+    .line 1164
     iget-object v4, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v5, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -771,12 +771,12 @@
 
     if-nez v4, :cond_6
 
-    .line 1166
+    .line 1165
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_5
 
-    .line 1167
+    .line 1166
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -803,19 +803,19 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1169
+    .line 1168
     :cond_5
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->finish()V
 
     return v3
 
-    .line 1171
+    .line 1170
     :cond_6
     aget v4, v10, v3
 
     if-lez v4, :cond_19
 
-    .line 1172
+    .line 1171
     aget-object v4, v11, v3
 
     iput-object v4, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglConfig:Ljavax/microedition/khronos/egl/EGLConfig;
@@ -824,10 +824,10 @@
 
     new-array v6, v5, [I
 
-    .line 1180
+    .line 1179
     fill-array-data v6, :array_1
 
-    .line 1181
+    .line 1180
     iget-object v7, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v8, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -842,20 +842,20 @@
 
     if-eqz v4, :cond_17
 
-    .line 1182
+    .line 1181
     sget-object v6, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_CONTEXT:Ljavax/microedition/khronos/egl/EGLContext;
 
     if-ne v4, v6, :cond_7
 
     goto/16 :goto_4
 
-    .line 1191
+    .line 1190
     :cond_7
     iget-object v4, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->surfaceTexture:Landroid/graphics/SurfaceTexture;
 
     if-eqz v4, :cond_16
 
-    .line 1192
+    .line 1191
     iget-object v6, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v7, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -870,14 +870,14 @@
 
     if-eqz v4, :cond_14
 
-    .line 1198
+    .line 1197
     sget-object v6, Ljavax/microedition/khronos/egl/EGL10;->EGL_NO_SURFACE:Ljavax/microedition/khronos/egl/EGLSurface;
 
     if-ne v4, v6, :cond_8
 
     goto/16 :goto_3
 
-    .line 1205
+    .line 1204
     :cond_8
     iget-object v6, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
@@ -891,12 +891,12 @@
 
     if-nez v4, :cond_a
 
-    .line 1206
+    .line 1205
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_9
 
-    .line 1207
+    .line 1206
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -923,19 +923,19 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1209
+    .line 1208
     :cond_9
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->finish()V
 
     return v3
 
-    .line 1212
+    .line 1211
     :cond_a
     iget-object v4, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglContext:Ljavax/microedition/khronos/egl/EGLContext;
 
     invoke-virtual {v4}, Ljavax/microedition/khronos/egl/EGLContext;->getGL()Ljavax/microedition/khronos/opengles/GL;
 
-    .line 1214
+    .line 1213
     iget-object v4, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v4}, Lorg/telegram/messenger/camera/CameraView;->access$500(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -946,7 +946,7 @@
 
     invoke-static {v4, v3}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
-    .line 1216
+    .line 1215
     iget-object v4, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     const v6, 0x8b31
@@ -961,7 +961,7 @@
 
     move-result v4
 
-    .line 1217
+    .line 1216
     iget-object v6, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     const v7, 0x8b30
@@ -980,62 +980,62 @@
 
     if-eqz v2, :cond_12
 
-    .line 1219
+    .line 1218
     invoke-static {}, Landroid/opengl/GLES20;->glCreateProgram()I
 
     move-result v6
 
     iput v6, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
-    .line 1220
+    .line 1219
     invoke-static {v6, v4}, Landroid/opengl/GLES20;->glAttachShader(II)V
 
-    .line 1221
+    .line 1220
     iget v4, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     invoke-static {v4, v2}, Landroid/opengl/GLES20;->glAttachShader(II)V
 
-    .line 1222
+    .line 1221
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     invoke-static {v2}, Landroid/opengl/GLES20;->glLinkProgram(I)V
 
     new-array v2, v0, [I
 
-    .line 1224
+    .line 1223
     iget v4, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const v6, 0x8b82
 
     invoke-static {v4, v6, v2, v3}, Landroid/opengl/GLES20;->glGetProgramiv(II[II)V
 
-    .line 1225
+    .line 1224
     aget v2, v2, v3
 
     if-nez v2, :cond_c
 
-    .line 1226
+    .line 1225
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v2, :cond_b
 
     const-string v2, "failed link shader"
 
-    .line 1227
+    .line 1226
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1229
+    .line 1228
     :cond_b
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     invoke-static {v2}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
 
-    .line 1230
+    .line 1229
     iput v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     goto/16 :goto_0
 
-    .line 1232
+    .line 1231
     :cond_c
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
@@ -1047,7 +1047,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->positionHandle:I
 
-    .line 1233
+    .line 1232
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string v4, "aTextureCoord"
@@ -1058,7 +1058,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->textureHandle:I
 
-    .line 1234
+    .line 1233
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string/jumbo v4, "uMVPMatrix"
@@ -1069,7 +1069,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->vertexMatrixHandle:I
 
-    .line 1235
+    .line 1234
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string/jumbo v4, "uSTMatrix"
@@ -1080,7 +1080,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->textureMatrixHandle:I
 
-    .line 1236
+    .line 1235
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string v4, "cameraMatrix"
@@ -1091,7 +1091,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraMatrixHandle:I
 
-    .line 1237
+    .line 1236
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string/jumbo v4, "oppositeCameraMatrix"
@@ -1102,7 +1102,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->oppositeCameraMatrixHandle:I
 
-    .line 1239
+    .line 1238
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string/jumbo v4, "roundRadius"
@@ -1113,7 +1113,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->roundRadiusHandle:I
 
-    .line 1240
+    .line 1239
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string/jumbo v4, "pixelWH"
@@ -1124,7 +1124,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->pixelHandle:I
 
-    .line 1241
+    .line 1240
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string v4, "dual"
@@ -1135,7 +1135,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->dualHandle:I
 
-    .line 1242
+    .line 1241
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string/jumbo v4, "scale"
@@ -1146,7 +1146,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->scaleHandle:I
 
-    .line 1243
+    .line 1242
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string v4, "blur"
@@ -1157,7 +1157,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->blurHandle:I
 
-    .line 1244
+    .line 1243
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string v4, "alpha"
@@ -1168,7 +1168,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->alphaHandle:I
 
-    .line 1245
+    .line 1244
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string v4, "crossfade"
@@ -1179,7 +1179,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfadeHandle:I
 
-    .line 1246
+    .line 1245
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string/jumbo v4, "shapeFrom"
@@ -1190,7 +1190,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeFromHandle:I
 
-    .line 1247
+    .line 1246
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string/jumbo v4, "shapeTo"
@@ -1201,7 +1201,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeToHandle:I
 
-    .line 1248
+    .line 1247
     iget v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
     const-string/jumbo v4, "shapeT"
@@ -1212,7 +1212,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeHandle:I
 
-    .line 1258
+    .line 1257
     :goto_0
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -1224,7 +1224,7 @@
 
     invoke-static {v0, v2, v3}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
 
-    .line 1259
+    .line 1258
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v2}, Lorg/telegram/messenger/camera/CameraView;->access$700(Lorg/telegram/messenger/camera/CameraView;)[[I
@@ -1243,39 +1243,39 @@
 
     const/16 v6, 0x2601
 
-    .line 1260
+    .line 1259
     invoke-static {v4, v2, v6}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 v7, 0x2800
 
-    .line 1261
+    .line 1260
     invoke-static {v4, v7, v6}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 v8, 0x2802
 
     const v9, 0x812f
 
-    .line 1262
+    .line 1261
     invoke-static {v4, v8, v9}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 v10, 0x2803
 
-    .line 1263
+    .line 1262
     invoke-static {v4, v10, v9}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 v11, 0xbe2
 
-    .line 1265
+    .line 1264
     invoke-static {v11}, Landroid/opengl/GLES20;->glEnable(I)V
 
     const/16 v11, 0x302
 
     const/16 v12, 0x303
 
-    .line 1266
+    .line 1265
     invoke-static {v11, v12, v0, v12}, Landroid/opengl/GLES20;->glBlendFuncSeparate(IIII)V
 
-    .line 1268
+    .line 1267
     iget-object v11, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v11}, Lorg/telegram/messenger/camera/CameraView;->access$800(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -1286,14 +1286,14 @@
 
     invoke-static {v11, v3}, Landroid/opengl/Matrix;->setIdentityM([FI)V
 
-    .line 1270
+    .line 1269
     sget-boolean v11, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v11, :cond_d
 
     const-string v11, "gl initied"
 
-    .line 1271
+    .line 1270
     invoke-static {v11}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
     :cond_d
@@ -1329,7 +1329,7 @@
 
     aput v13, v11, v5
 
-    .line 1283
+    .line 1282
     iget-object v5, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iget-object v12, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->verticesData:[F
@@ -1356,7 +1356,7 @@
 
     invoke-static {v5, v1}, Lorg/telegram/messenger/camera/CameraView;->access$902(Lorg/telegram/messenger/camera/CameraView;Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer;
 
-    .line 1284
+    .line 1283
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v1}, Lorg/telegram/messenger/camera/CameraView;->access$900(Lorg/telegram/messenger/camera/CameraView;)Ljava/nio/FloatBuffer;
@@ -1371,7 +1371,7 @@
 
     invoke-virtual {v1, v3}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 1286
+    .line 1285
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     const/16 v5, 0x20
@@ -1394,7 +1394,7 @@
 
     invoke-static {v1, v5}, Lorg/telegram/messenger/camera/CameraView;->access$1002(Lorg/telegram/messenger/camera/CameraView;Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer;
 
-    .line 1287
+    .line 1286
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v1}, Lorg/telegram/messenger/camera/CameraView;->access$1000(Lorg/telegram/messenger/camera/CameraView;)Ljava/nio/FloatBuffer;
@@ -1407,7 +1407,7 @@
 
     invoke-virtual {v1, v3}, Ljava/nio/FloatBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 1289
+    .line 1288
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     new-instance v5, Landroid/graphics/SurfaceTexture;
@@ -1426,7 +1426,7 @@
 
     aput-object v5, v1, v3
 
-    .line 1290
+    .line 1289
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     aget-object v1, v1, v3
@@ -1437,12 +1437,12 @@
 
     invoke-virtual {v1, v5}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 
-    .line 1292
+    .line 1291
     iget-boolean v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->initDual:Z
 
     if-eqz v1, :cond_e
 
-    .line 1293
+    .line 1292
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v1}, Lorg/telegram/messenger/camera/CameraView;->access$700(Lorg/telegram/messenger/camera/CameraView;)[[I
@@ -1453,7 +1453,7 @@
 
     invoke-static {v0, v1, v3}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
 
-    .line 1294
+    .line 1293
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v1}, Lorg/telegram/messenger/camera/CameraView;->access$700(Lorg/telegram/messenger/camera/CameraView;)[[I
@@ -1466,19 +1466,19 @@
 
     invoke-static {v4, v1}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
-    .line 1295
+    .line 1294
     invoke-static {v4, v2, v6}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
-    .line 1296
+    .line 1295
     invoke-static {v4, v7, v6}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
-    .line 1297
+    .line 1296
     invoke-static {v4, v8, v9}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
-    .line 1298
+    .line 1297
     invoke-static {v4, v10, v9}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
-    .line 1300
+    .line 1299
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     new-instance v2, Landroid/graphics/SurfaceTexture;
@@ -1497,7 +1497,7 @@
 
     aput-object v2, v1, v0
 
-    .line 1301
+    .line 1300
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     aget-object v1, v1, v0
@@ -1508,18 +1508,18 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 
-    .line 1305
+    .line 1304
     :cond_e
     iget-boolean v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->initDual:Z
 
     if-eqz v1, :cond_10
 
-    .line 1306
+    .line 1305
     iget-boolean v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->initDualReverse:Z
 
     if-eqz v1, :cond_f
 
-    .line 1307
+    .line 1306
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
@@ -1528,7 +1528,7 @@
 
     invoke-static {v1, v2, v0}, Lorg/telegram/messenger/camera/CameraView;->access$1100(Lorg/telegram/messenger/camera/CameraView;Landroid/graphics/SurfaceTexture;I)V
 
-    .line 1308
+    .line 1307
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
@@ -1539,7 +1539,7 @@
 
     goto :goto_1
 
-    .line 1310
+    .line 1309
     :cond_f
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -1549,7 +1549,7 @@
 
     invoke-static {v1, v2, v3}, Lorg/telegram/messenger/camera/CameraView;->access$1100(Lorg/telegram/messenger/camera/CameraView;Landroid/graphics/SurfaceTexture;I)V
 
-    .line 1311
+    .line 1310
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
@@ -1560,7 +1560,7 @@
 
     goto :goto_1
 
-    .line 1314
+    .line 1313
     :cond_10
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -1570,16 +1570,16 @@
 
     invoke-static {v1, v2, v3}, Lorg/telegram/messenger/camera/CameraView;->access$1100(Lorg/telegram/messenger/camera/CameraView;Landroid/graphics/SurfaceTexture;I)V
 
-    .line 1317
+    .line 1316
     :goto_1
     new-instance v1, Landroid/graphics/Matrix;
 
     invoke-direct {v1}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 1318
+    .line 1317
     invoke-virtual {v1}, Landroid/graphics/Matrix;->reset()V
 
-    .line 1319
+    .line 1318
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v2}, Lorg/telegram/messenger/camera/CameraView;->access$1200(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -1590,12 +1590,12 @@
 
     invoke-direct {p0, v1, v2}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->getValues(Landroid/graphics/Matrix;[F)V
 
-    .line 1320
+    .line 1319
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->initDualMatrix:Landroid/graphics/Matrix;
 
     if-eqz v2, :cond_11
 
-    .line 1321
+    .line 1320
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v1}, Lorg/telegram/messenger/camera/CameraView;->access$1200(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -1608,7 +1608,7 @@
 
     goto :goto_2
 
-    .line 1323
+    .line 1322
     :cond_11
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -1620,7 +1620,7 @@
 
     invoke-direct {p0, v1, v2}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->getValues(Landroid/graphics/Matrix;[F)V
 
-    .line 1326
+    .line 1325
     :goto_2
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -1630,7 +1630,7 @@
 
     return v0
 
-    .line 1251
+    .line 1250
     :cond_12
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -1638,23 +1638,23 @@
 
     const-string v0, "failed creating shader"
 
-    .line 1252
+    .line 1251
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1254
+    .line 1253
     :cond_13
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->finish()V
 
     return v3
 
-    .line 1199
+    .line 1198
     :cond_14
     :goto_3
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_15
 
-    .line 1200
+    .line 1199
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1681,29 +1681,29 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1202
+    .line 1201
     :cond_15
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->finish()V
 
     return v3
 
-    .line 1194
+    .line 1193
     :cond_16
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->finish()V
 
     return v3
 
-    .line 1183
+    .line 1182
     :cond_17
     :goto_4
     iput-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglContext:Ljavax/microedition/khronos/egl/EGLContext;
 
-    .line 1184
+    .line 1183
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_18
 
-    .line 1185
+    .line 1184
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1730,13 +1730,13 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1187
+    .line 1186
     :cond_18
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->finish()V
 
     return v3
 
-    .line 1174
+    .line 1173
     :cond_19
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -1744,10 +1744,10 @@
 
     const-string v0, "eglConfig not initialized"
 
-    .line 1175
+    .line 1174
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1177
+    .line 1176
     :cond_1a
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->finish()V
 
@@ -1787,7 +1787,7 @@
 
     const/4 v0, 0x0
 
-    .line 1389
+    .line 1388
     invoke-virtual {p0, v0, v0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->requestRender(ZZ)V
 
     return-void
@@ -1798,7 +1798,7 @@
 
     const/4 v0, 0x0
 
-    .line 1390
+    .line 1389
     invoke-virtual {p0, v0, v0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->requestRender(ZZ)V
 
     return-void
@@ -1809,7 +1809,7 @@
 
     const/4 v0, 0x0
 
-    .line 1391
+    .line 1390
     invoke-virtual {p0, v0, v0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->requestRender(ZZ)V
 
     return-void
@@ -1820,7 +1820,7 @@
 
     const/4 v0, 0x0
 
-    .line 1392
+    .line 1391
     invoke-virtual {p0, v0, v0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->requestRender(ZZ)V
 
     return-void
@@ -1829,7 +1829,7 @@
 .method private synthetic lambda$onDraw$4()V
     .locals 2
 
-    .line 1586
+    .line 1585
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     const/4 v1, 0x0
@@ -1842,7 +1842,7 @@
 .method private synthetic lambda$onDraw$5()V
     .locals 2
 
-    .line 1592
+    .line 1591
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     const/4 v1, 0x1
@@ -1859,14 +1859,14 @@
 
     move/from16 v2, p1
 
-    .line 1400
+    .line 1399
     iget-boolean v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->initied:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1404
+    .line 1403
     :cond_0
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglContext:Ljavax/microedition/khronos/egl/EGLContext;
 
@@ -1898,7 +1898,7 @@
 
     if-nez v0, :cond_3
 
-    .line 1405
+    .line 1404
     :cond_1
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
@@ -1914,12 +1914,12 @@
 
     if-nez v0, :cond_3
 
-    .line 1406
+    .line 1405
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_2
 
-    .line 1407
+    .line 1406
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1949,7 +1949,7 @@
     :cond_2
     return-void
 
-    .line 1415
+    .line 1414
     :cond_3
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -1959,13 +1959,13 @@
 
     monitor-enter v3
 
-    .line 1416
+    .line 1415
     :try_start_0
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iget-boolean v4, v0, Lorg/telegram/messenger/camera/CameraView;->dual:Z
 
-    .line 1417
+    .line 1416
     iget-boolean v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->camera1Appeared:Z
 
     const/4 v5, 0x1
@@ -1981,7 +1981,7 @@
     :cond_4
     move v7, v6
 
-    .line 1418
+    .line 1417
     :goto_0
     monitor-exit v3
     :try_end_0
@@ -2008,7 +2008,7 @@
     :goto_1
     if-eqz v3, :cond_7
 
-    .line 1426
+    .line 1425
     :try_start_1
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
@@ -2018,7 +2018,7 @@
 
     if-ltz v2, :cond_7
 
-    .line 1427
+    .line 1426
     aget-object v0, v0, v6
 
     invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
@@ -2030,14 +2030,14 @@
     :catchall_0
     move-exception v0
 
-    .line 1430
+    .line 1429
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_7
     :goto_2
     if-eqz v8, :cond_8
 
-    .line 1435
+    .line 1434
     :try_start_2
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
@@ -2047,7 +2047,7 @@
 
     if-ltz p2, :cond_8
 
-    .line 1436
+    .line 1435
     aget-object v0, v0, v5
 
     invoke-virtual {v0}, Landroid/graphics/SurfaceTexture;->updateTexImage()V
@@ -2059,10 +2059,10 @@
     :catchall_1
     move-exception v0
 
-    .line 1439
+    .line 1438
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1444
+    .line 1443
     :cond_8
     :goto_3
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -2073,7 +2073,7 @@
 
     monitor-enter v9
 
-    .line 1445
+    .line 1444
     :try_start_3
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -2087,13 +2087,13 @@
 
     goto :goto_4
 
-    .line 1448
+    .line 1447
     :cond_9
     invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v10
 
-    .line 1449
+    .line 1448
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iget-wide v12, v0, Lorg/telegram/messenger/camera/CameraView;->nextFrameTimeNs:J
@@ -2106,7 +2106,7 @@
 
     goto :goto_4
 
-    .line 1452
+    .line 1451
     :cond_a
     sget-object v14, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
@@ -2130,7 +2130,7 @@
 
     iput-wide v12, v0, Lorg/telegram/messenger/camera/CameraView;->nextFrameTimeNs:J
 
-    .line 1454
+    .line 1453
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iget-wide v5, v0, Lorg/telegram/messenger/camera/CameraView;->nextFrameTimeNs:J
@@ -2143,13 +2143,13 @@
 
     const/4 v15, 0x1
 
-    .line 1458
+    .line 1457
     :goto_4
     monitor-exit v9
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_3
 
-    .line 1460
+    .line 1459
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->currentSession:[Lorg/telegram/messenger/camera/CameraSession;
 
     const/4 v5, 0x0
@@ -2168,7 +2168,7 @@
 
     goto/16 :goto_f
 
-    .line 1464
+    .line 1463
     :cond_b
     iget-boolean v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->recording:Z
 
@@ -2186,7 +2186,7 @@
 
     if-eqz v8, :cond_d
 
-    .line 1465
+    .line 1464
     :cond_c
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -2215,7 +2215,7 @@
 
     return-void
 
-    .line 1472
+    .line 1471
     :cond_e
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
@@ -2229,14 +2229,14 @@
 
     invoke-interface {v0, v5, v6, v9, v10}, Ljavax/microedition/khronos/egl/EGL10;->eglQuerySurface(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;I[I)Z
 
-    .line 1473
+    .line 1472
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->array:[I
 
     const/4 v5, 0x0
 
     aget v6, v0, v5
 
-    .line 1474
+    .line 1473
     iget-object v9, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v10, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -2247,12 +2247,12 @@
 
     invoke-interface {v9, v10, v11, v12, v0}, Ljavax/microedition/khronos/egl/EGL10;->eglQuerySurface(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;I[I)Z
 
-    .line 1475
+    .line 1474
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->array:[I
 
     aget v0, v0, v5
 
-    .line 1477
+    .line 1476
     invoke-static {v5, v5, v6, v0}, Landroid/opengl/GLES20;->glViewport(IIII)V
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -2261,15 +2261,15 @@
 
     if-eqz v4, :cond_f
 
-    .line 1479
+    .line 1478
     invoke-static {v5, v5, v5, v0}, Landroid/opengl/GLES20;->glClearColor(FFFF)V
 
     const/16 v6, 0x4000
 
-    .line 1480
+    .line 1479
     invoke-static {v6}, Landroid/opengl/GLES20;->glClear(I)V
 
-    .line 1482
+    .line 1481
     :cond_f
     iget-object v6, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -2283,7 +2283,7 @@
 
     invoke-static {v6, v9}, Lorg/telegram/messenger/camera/CameraView;->access$1902(Lorg/telegram/messenger/camera/CameraView;F)F
 
-    .line 1483
+    .line 1482
     iget-object v6, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iget-object v9, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfade:Lorg/telegram/ui/Components/AnimatedFloat;
@@ -2296,7 +2296,7 @@
 
     move-result v6
 
-    .line 1484
+    .line 1483
     iget-object v9, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->dualAppear:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v10, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->dualAppeared:Z
@@ -2315,7 +2315,7 @@
 
     move-result v9
 
-    .line 1485
+    .line 1484
     iget-object v10, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->camera1Appear:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->camera1Appeared:Z
@@ -2332,7 +2332,7 @@
 
     const/4 v11, 0x0
 
-    .line 1487
+    .line 1486
     iput-boolean v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfading:Z
 
     :cond_11
@@ -2347,7 +2347,7 @@
 
     if-ne v12, v11, :cond_13
 
-    .line 1490
+    .line 1489
     iget-boolean v13, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfading:Z
 
     if-nez v13, :cond_13
@@ -2370,7 +2370,7 @@
     :cond_14
     move v13, v12
 
-    .line 1494
+    .line 1493
     :goto_8
     iget-object v14, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
@@ -2383,7 +2383,7 @@
     :cond_15
     if-eqz v13, :cond_16
 
-    .line 1497
+    .line 1496
     iget-object v14, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->currentSession:[Lorg/telegram/messenger/camera/CameraSession;
 
     aget-object v15, v14, v13
@@ -2424,7 +2424,7 @@
 
     if-eqz v8, :cond_1b
 
-    .line 1502
+    .line 1501
     :cond_1a
     iget-object v14, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
@@ -2440,7 +2440,7 @@
 
     invoke-virtual {v14, v11}, Landroid/graphics/SurfaceTexture;->getTransformMatrix([F)V
 
-    .line 1505
+    .line 1504
     :cond_1b
     iget v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->drawProgram:I
 
@@ -2448,10 +2448,10 @@
 
     const v11, 0x84c0
 
-    .line 1506
+    .line 1505
     invoke-static {v11}, Landroid/opengl/GLES20;->glActiveTexture(I)V
 
-    .line 1507
+    .line 1506
     iget-object v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v11}, Lorg/telegram/messenger/camera/CameraView;->access$700(Lorg/telegram/messenger/camera/CameraView;)[[I
@@ -2468,7 +2468,7 @@
 
     invoke-static {v14, v11}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
-    .line 1509
+    .line 1508
     iget v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->positionHandle:I
 
     const/16 v18, 0x3
@@ -2489,12 +2489,12 @@
 
     invoke-static/range {v17 .. v22}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
 
-    .line 1510
+    .line 1509
     iget v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->positionHandle:I
 
     invoke-static {v11}, Landroid/opengl/GLES20;->glEnableVertexAttribArray(I)V
 
-    .line 1512
+    .line 1511
     iget v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->textureHandle:I
 
     const/16 v18, 0x2
@@ -2511,12 +2511,12 @@
 
     invoke-static/range {v17 .. v22}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
 
-    .line 1513
+    .line 1512
     iget v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->textureHandle:I
 
     invoke-static {v11}, Landroid/opengl/GLES20;->glEnableVertexAttribArray(I)V
 
-    .line 1515
+    .line 1514
     iget v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraMatrixHandle:I
 
     iget-object v15, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -2533,7 +2533,7 @@
 
     invoke-static {v11, v14, v5, v15, v5}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
 
-    .line 1516
+    .line 1515
     iget v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->oppositeCameraMatrixHandle:I
 
     iget-object v15, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -2548,7 +2548,7 @@
 
     invoke-static {v11, v14, v5, v15, v5}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
 
-    .line 1518
+    .line 1517
     iget v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->textureMatrixHandle:I
 
     iget-object v15, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -2561,7 +2561,7 @@
 
     invoke-static {v11, v14, v5, v15, v5}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
 
-    .line 1519
+    .line 1518
     iget v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->vertexMatrixHandle:I
 
     iget-object v15, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -2576,7 +2576,7 @@
 
     if-nez v13, :cond_1d
 
-    .line 1521
+    .line 1520
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->pixelHandle:I
 
     iget-object v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -2593,7 +2593,7 @@
 
     invoke-static {v5, v11, v14}, Landroid/opengl/GLES20;->glUniform2f(IFF)V
 
-    .line 1522
+    .line 1521
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->dualHandle:I
 
     if-eqz v4, :cond_1c
@@ -2610,7 +2610,7 @@
 
     goto :goto_a
 
-    .line 1524
+    .line 1523
     :cond_1d
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->pixelHandle:I
 
@@ -2628,12 +2628,12 @@
 
     invoke-static {v5, v11, v14}, Landroid/opengl/GLES20;->glUniform2f(IFF)V
 
-    .line 1525
+    .line 1524
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->dualHandle:I
 
     invoke-static {v5, v0}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1527
+    .line 1526
     :goto_a
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->blurHandle:I
 
@@ -2657,41 +2657,41 @@
 
     if-ne v13, v14, :cond_21
 
-    .line 1529
+    .line 1528
     iget v13, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->alphaHandle:I
 
     invoke-static {v13, v0}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
     if-gez v12, :cond_1f
 
-    .line 1531
+    .line 1530
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->roundRadiusHandle:I
 
     const/4 v13, 0x0
 
     invoke-static {v5, v13}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1532
+    .line 1531
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->scaleHandle:I
 
     invoke-static {v5, v0}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1533
+    .line 1532
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeFromHandle:I
 
     invoke-static {v5, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1534
+    .line 1533
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeToHandle:I
 
     invoke-static {v5, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1535
+    .line 1534
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeHandle:I
 
     invoke-static {v5, v13}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1536
+    .line 1535
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfadeHandle:I
 
     invoke-static {v5, v0}, Landroid/opengl/GLES20;->glUniform1f(IF)V
@@ -2700,13 +2700,13 @@
 
     goto/16 :goto_d
 
-    .line 1537
+    .line 1536
     :cond_1f
     iget-boolean v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfading:Z
 
     if-nez v11, :cond_20
 
-    .line 1538
+    .line 1537
     iget v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->roundRadiusHandle:I
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2717,12 +2717,12 @@
 
     invoke-static {v11, v5}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1539
+    .line 1538
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->scaleHandle:I
 
     invoke-static {v5, v9}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1540
+    .line 1539
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeFromHandle:I
 
     iget-object v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -2741,7 +2741,7 @@
 
     invoke-static {v5, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1541
+    .line 1540
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeToHandle:I
 
     iget-object v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -2760,7 +2760,7 @@
 
     invoke-static {v5, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1542
+    .line 1541
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeHandle:I
 
     iget-object v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -2787,7 +2787,7 @@
 
     invoke-static {v5, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1543
+    .line 1542
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfadeHandle:I
 
     const/4 v11, 0x0
@@ -2796,7 +2796,7 @@
 
     goto :goto_c
 
-    .line 1545
+    .line 1544
     :cond_20
     iget v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->roundRadiusHandle:I
 
@@ -2808,14 +2808,14 @@
 
     invoke-static {v11, v5}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1546
+    .line 1545
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->scaleHandle:I
 
     sub-float v11, v0, v6
 
     invoke-static {v5, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1547
+    .line 1546
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeFromHandle:I
 
     iget-object v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -2834,7 +2834,7 @@
 
     invoke-static {v5, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1548
+    .line 1547
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeToHandle:I
 
     iget-object v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -2853,7 +2853,7 @@
 
     invoke-static {v5, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1549
+    .line 1548
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeHandle:I
 
     iget-object v11, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -2880,12 +2880,12 @@
 
     invoke-static {v5, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1550
+    .line 1549
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeHandle:I
 
     invoke-static {v5, v6}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1551
+    .line 1550
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfadeHandle:I
 
     const/4 v11, 0x0
@@ -2897,18 +2897,18 @@
 
     goto :goto_d
 
-    .line 1554
+    .line 1553
     :cond_21
     iget v13, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->alphaHandle:I
 
     invoke-static {v13, v0}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1555
+    .line 1554
     iget-boolean v13, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfading:Z
 
     if-eqz v13, :cond_22
 
-    .line 1556
+    .line 1555
     iget v13, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->roundRadiusHandle:I
 
     const/16 v14, 0xc
@@ -2929,24 +2929,24 @@
 
     invoke-static {v13, v5}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1557
+    .line 1556
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->scaleHandle:I
 
     invoke-static {v5, v0}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1558
+    .line 1557
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeFromHandle:I
 
     iget v13, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeTo:F
 
     invoke-static {v5, v13}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1559
+    .line 1558
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeToHandle:I
 
     invoke-static {v5, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1560
+    .line 1559
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeHandle:I
 
     sub-float v11, v0, v6
@@ -2959,7 +2959,7 @@
 
     invoke-static {v5, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1561
+    .line 1560
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfadeHandle:I
 
     invoke-static {v5, v6}, Landroid/opengl/GLES20;->glUniform1f(IF)V
@@ -2969,32 +2969,32 @@
     :cond_22
     const/4 v13, 0x0
 
-    .line 1563
+    .line 1562
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->roundRadiusHandle:I
 
     invoke-static {v5, v13}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1564
+    .line 1563
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->scaleHandle:I
 
     invoke-static {v5, v0}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1565
+    .line 1564
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeFromHandle:I
 
     invoke-static {v5, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1566
+    .line 1565
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeToHandle:I
 
     invoke-static {v5, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1567
+    .line 1566
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeHandle:I
 
     invoke-static {v5, v13}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 1568
+    .line 1567
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfadeHandle:I
 
     invoke-static {v5, v13}, Landroid/opengl/GLES20;->glUniform1f(IF)V
@@ -3006,25 +3006,25 @@
 
     const/4 v14, 0x0
 
-    .line 1572
+    .line 1571
     invoke-static {v5, v14, v11}, Landroid/opengl/GLES20;->glDrawArrays(III)V
 
-    .line 1574
+    .line 1573
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->positionHandle:I
 
     invoke-static {v5}, Landroid/opengl/GLES20;->glDisableVertexAttribArray(I)V
 
-    .line 1575
+    .line 1574
     iget v5, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->textureHandle:I
 
     invoke-static {v5}, Landroid/opengl/GLES20;->glDisableVertexAttribArray(I)V
 
     const v5, 0x8d65
 
-    .line 1576
+    .line 1575
     invoke-static {v5, v14}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
-    .line 1577
+    .line 1576
     invoke-static {v14}, Landroid/opengl/GLES20;->glUseProgram(I)V
 
     :goto_e
@@ -3036,7 +3036,7 @@
 
     goto/16 :goto_6
 
-    .line 1580
+    .line 1579
     :cond_23
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
@@ -3046,7 +3046,7 @@
 
     invoke-interface {v0, v2, v3}, Ljavax/microedition/khronos/egl/EGL10;->eglSwapBuffers(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)Z
 
-    .line 1582
+    .line 1581
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->access$1400(Lorg/telegram/messenger/camera/CameraView;)Ljava/lang/Object;
@@ -3055,7 +3055,7 @@
 
     monitor-enter v2
 
-    .line 1583
+    .line 1582
     :try_start_4
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -3067,17 +3067,17 @@
 
     const/4 v3, 0x1
 
-    .line 1584
+    .line 1583
     iput-boolean v3, v0, Lorg/telegram/messenger/camera/CameraView;->firstFrameRendered:Z
 
-    .line 1585
+    .line 1584
     new-instance v0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, v1}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/messenger/camera/CameraView$CameraGLThread;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1589
+    .line 1588
     :cond_24
     iget-object v0, v1, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -3091,17 +3091,17 @@
 
     const/4 v3, 0x1
 
-    .line 1590
+    .line 1589
     iput-boolean v3, v0, Lorg/telegram/messenger/camera/CameraView;->firstFrame2Rendered:Z
 
-    .line 1591
+    .line 1590
     new-instance v0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, v1}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/messenger/camera/CameraView$CameraGLThread;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1595
+    .line 1594
     :cond_25
     monitor-exit v2
 
@@ -3123,7 +3123,7 @@
     :catchall_3
     move-exception v0
 
-    .line 1458
+    .line 1457
     :try_start_5
     monitor-exit v9
     :try_end_5
@@ -3134,7 +3134,7 @@
     :catchall_4
     move-exception v0
 
-    .line 1418
+    .line 1417
     :try_start_6
     monitor-exit v3
     :try_end_6
@@ -3146,7 +3146,7 @@
 .method private updTex(Landroid/graphics/SurfaceTexture;)V
     .locals 8
 
-    .line 1332
+    .line 1331
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     const/4 v1, 0x0
@@ -3157,7 +3157,7 @@
 
     if-ne p1, v2, :cond_1
 
-    .line 1333
+    .line 1332
     iget-boolean p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->ignoreCamera1Upd:Z
 
     if-nez p1, :cond_0
@@ -3172,27 +3172,27 @@
 
     if-lez p1, :cond_0
 
-    .line 1334
+    .line 1333
     iput-boolean v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->camera1Appeared:Z
 
-    .line 1336
+    .line 1335
     :cond_0
     invoke-virtual {p0, v3, v1}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->requestRender(ZZ)V
 
     goto :goto_1
 
-    .line 1337
+    .line 1336
     :cond_1
     aget-object v0, v0, v3
 
     if-ne p1, v0, :cond_3
 
-    .line 1338
+    .line 1337
     iget-boolean p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->dualAppeared:Z
 
     if-nez p1, :cond_2
 
-    .line 1339
+    .line 1338
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$1400(Lorg/telegram/messenger/camera/CameraView;)Ljava/lang/Object;
@@ -3201,20 +3201,20 @@
 
     monitor-enter p1
 
-    .line 1340
+    .line 1339
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0, v3}, Lorg/telegram/messenger/camera/CameraView;->access$1502(Lorg/telegram/messenger/camera/CameraView;Z)Z
 
-    .line 1341
+    .line 1340
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     const-wide/16 v4, 0x4b0
 
     invoke-static {v0, v4, v5}, Lorg/telegram/messenger/camera/CameraView;->access$1600(Lorg/telegram/messenger/camera/CameraView;J)V
 
-    .line 1342
+    .line 1341
     monitor-exit p1
 
     goto :goto_0
@@ -3228,12 +3228,12 @@
 
     throw v0
 
-    .line 1344
+    .line 1343
     :cond_2
     :goto_0
     iput-boolean v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->dualAppeared:Z
 
-    .line 1345
+    .line 1344
     invoke-virtual {p0, v1, v3}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->requestRender(ZZ)V
 
     :cond_3
@@ -3246,7 +3246,7 @@
 .method public finish()V
     .locals 5
 
-    .line 1357
+    .line 1356
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     const/4 v1, 0x0
@@ -3255,7 +3255,7 @@
 
     const/4 v0, 0x0
 
-    .line 1358
+    .line 1357
     :goto_0
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
@@ -3263,24 +3263,24 @@
 
     if-ge v0, v3, :cond_1
 
-    .line 1359
+    .line 1358
     aget-object v3, v2, v0
 
     if-eqz v3, :cond_0
 
-    .line 1360
+    .line 1359
     aget-object v2, v2, v0
 
     invoke-virtual {v2, v1}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 
-    .line 1361
+    .line 1360
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     aget-object v2, v2, v0
 
     invoke-virtual {v2}, Landroid/graphics/SurfaceTexture;->release()V
 
-    .line 1362
+    .line 1361
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     aput-object v1, v2, v0
@@ -3290,13 +3290,13 @@
 
     goto :goto_0
 
-    .line 1366
+    .line 1365
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
 
     if-eqz v0, :cond_2
 
-    .line 1367
+    .line 1366
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -3307,7 +3307,7 @@
 
     invoke-interface {v0, v2, v3, v3, v4}, Ljavax/microedition/khronos/egl/EGL10;->eglMakeCurrent(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLSurface;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
-    .line 1368
+    .line 1367
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
@@ -3316,37 +3316,37 @@
 
     invoke-interface {v0, v2, v3}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroySurface(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLSurface;)Z
 
-    .line 1369
+    .line 1368
     iput-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglSurface:Ljavax/microedition/khronos/egl/EGLSurface;
 
-    .line 1371
+    .line 1370
     :cond_2
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglContext:Ljavax/microedition/khronos/egl/EGLContext;
 
     if-eqz v0, :cond_3
 
-    .line 1372
+    .line 1371
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     invoke-interface {v2, v3, v0}, Ljavax/microedition/khronos/egl/EGL10;->eglDestroyContext(Ljavax/microedition/khronos/egl/EGLDisplay;Ljavax/microedition/khronos/egl/EGLContext;)Z
 
-    .line 1373
+    .line 1372
     iput-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglContext:Ljavax/microedition/khronos/egl/EGLContext;
 
-    .line 1375
+    .line 1374
     :cond_3
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     if-eqz v0, :cond_4
 
-    .line 1376
+    .line 1375
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
     invoke-interface {v2, v0}, Ljavax/microedition/khronos/egl/EGL10;->eglTerminate(Ljavax/microedition/khronos/egl/EGLDisplay;)Z
 
-    .line 1377
+    .line 1376
     iput-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->eglDisplay:Ljavax/microedition/khronos/egl/EGLDisplay;
 
     :cond_4
@@ -3356,7 +3356,7 @@
 .method public handleMessage(Landroid/os/Message;)V
     .locals 10
 
-    .line 1606
+    .line 1605
     iget v0, p1, Landroid/os/Message;->what:I
 
     const-wide/16 v1, 0x3c
@@ -3373,14 +3373,14 @@
 
     goto/16 :goto_4
 
-    .line 1784
+    .line 1783
     :pswitch_0
     iput-boolean v6, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->camera1Appeared:Z
 
-    .line 1785
+    .line 1784
     iput-boolean v5, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->ignoreCamera1Upd:Z
 
-    .line 1786
+    .line 1785
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -3389,12 +3389,12 @@
 
     iput-wide v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->camera1AppearedUntil:J
 
-    .line 1787
+    .line 1786
     invoke-virtual {p0, v6, v6}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->requestRender(ZZ)V
 
     goto/16 :goto_4
 
-    .line 1715
+    .line 1714
     :pswitch_1
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
@@ -3410,12 +3410,12 @@
 
     if-nez p1, :cond_1
 
-    .line 1716
+    .line 1715
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_0
 
-    .line 1717
+    .line 1716
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3445,7 +3445,7 @@
     :cond_0
     return-void
 
-    .line 1721
+    .line 1720
     :cond_1
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
@@ -3453,7 +3453,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1722
+    .line 1721
     aget-object p1, p1, v5
 
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -3466,26 +3466,26 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/SurfaceTexture;->getTransformMatrix([F)V
 
-    .line 1723
+    .line 1722
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     aget-object p1, p1, v5
 
     invoke-virtual {p1, v4}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 
-    .line 1724
+    .line 1723
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     aget-object p1, p1, v5
 
     invoke-virtual {p1}, Landroid/graphics/SurfaceTexture;->release()V
 
-    .line 1725
+    .line 1724
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     aput-object v4, p1, v5
 
-    .line 1727
+    .line 1726
     :cond_2
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -3499,7 +3499,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 1728
+    .line 1727
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$700(Lorg/telegram/messenger/camera/CameraView;)[[I
@@ -3510,7 +3510,7 @@
 
     invoke-static {v5, p1, v6}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
 
-    .line 1729
+    .line 1728
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$700(Lorg/telegram/messenger/camera/CameraView;)[[I
@@ -3521,25 +3521,25 @@
 
     aput v6, p1, v6
 
-    .line 1731
+    .line 1730
     :cond_3
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->currentSession:[Lorg/telegram/messenger/camera/CameraSession;
 
     aput-object v4, p1, v5
 
-    .line 1732
+    .line 1731
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraId:[I
 
     const/4 v0, -0x1
 
     aput v0, p1, v5
 
-    .line 1733
+    .line 1732
     invoke-virtual {p0, v6, v6}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->requestRender(ZZ)V
 
     goto/16 :goto_4
 
-    .line 1742
+    .line 1741
     :pswitch_2
     iget p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeTo:F
 
@@ -3547,44 +3547,44 @@
 
     iput p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->shapeTo:F
 
-    .line 1743
+    .line 1742
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0, p1}, Lorg/telegram/messenger/camera/CameraView;->access$1302(Lorg/telegram/messenger/camera/CameraView;F)F
 
-    .line 1744
+    .line 1743
     invoke-virtual {p0, v6, v6}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->requestRender(ZZ)V
 
     goto/16 :goto_4
 
-    .line 1748
+    .line 1747
     :pswitch_3
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraId:[I
 
     aget v0, p1, v6
 
-    .line 1749
+    .line 1748
     aget v1, p1, v5
 
     aput v1, p1, v6
 
-    .line 1750
+    .line 1749
     aput v0, p1, v5
 
-    .line 1752
+    .line 1751
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->currentSession:[Lorg/telegram/messenger/camera/CameraSession;
 
     aget-object v0, p1, v6
 
-    .line 1753
+    .line 1752
     aget-object v1, p1, v5
 
     aput-object v1, p1, v6
 
-    .line 1754
+    .line 1753
     aput-object v0, p1, v5
 
-    .line 1756
+    .line 1755
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$700(Lorg/telegram/messenger/camera/CameraView;)[[I
@@ -3593,7 +3593,7 @@
 
     aget-object p1, p1, v6
 
-    .line 1757
+    .line 1756
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->access$700(Lorg/telegram/messenger/camera/CameraView;)[[I
@@ -3610,7 +3610,7 @@
 
     aput-object v1, v0, v6
 
-    .line 1758
+    .line 1757
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->access$700(Lorg/telegram/messenger/camera/CameraView;)[[I
@@ -3619,20 +3619,20 @@
 
     aput-object p1, v0, v5
 
-    .line 1760
+    .line 1759
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     aget-object v0, p1, v6
 
-    .line 1761
+    .line 1760
     aget-object v1, p1, v5
 
     aput-object v1, p1, v6
 
-    .line 1762
+    .line 1761
     aput-object v0, p1, v5
 
-    .line 1764
+    .line 1763
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$800(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -3641,7 +3641,7 @@
 
     aget-object p1, p1, v6
 
-    .line 1765
+    .line 1764
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->access$800(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -3658,7 +3658,7 @@
 
     aput-object v1, v0, v6
 
-    .line 1766
+    .line 1765
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->access$800(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -3667,7 +3667,7 @@
 
     aput-object p1, v0, v5
 
-    .line 1768
+    .line 1767
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$500(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -3676,7 +3676,7 @@
 
     aget-object p1, p1, v6
 
-    .line 1769
+    .line 1768
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->access$500(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -3693,7 +3693,7 @@
 
     aput-object v1, v0, v6
 
-    .line 1770
+    .line 1769
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->access$500(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -3702,7 +3702,7 @@
 
     aput-object p1, v0, v5
 
-    .line 1772
+    .line 1771
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$2500(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -3711,7 +3711,7 @@
 
     aget-object p1, p1, v6
 
-    .line 1773
+    .line 1772
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->access$2500(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -3728,7 +3728,7 @@
 
     aput-object v1, v0, v6
 
-    .line 1774
+    .line 1773
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->access$2500(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -3737,25 +3737,25 @@
 
     aput-object p1, v0, v5
 
-    .line 1776
+    .line 1775
     iput-boolean v5, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfading:Z
 
-    .line 1777
+    .line 1776
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1, v3}, Lorg/telegram/messenger/camera/CameraView;->access$2002(Lorg/telegram/messenger/camera/CameraView;F)F
 
-    .line 1778
+    .line 1777
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->crossfade:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {p1, v3, v5}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
 
-    .line 1780
+    .line 1779
     invoke-virtual {p0, v5, v5}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->requestRender(ZZ)V
 
     goto/16 :goto_4
 
-    .line 1737
+    .line 1736
     :pswitch_4
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
@@ -3763,12 +3763,12 @@
 
     invoke-direct {p0, p1}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->applyDualMatrix(Landroid/graphics/Matrix;)V
 
-    .line 1738
+    .line 1737
     invoke-virtual {p0, v6, v6}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->requestRender(ZZ)V
 
     goto/16 :goto_4
 
-    .line 1707
+    .line 1706
     :pswitch_5
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -3778,7 +3778,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 1708
+    .line 1707
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$1800(Lorg/telegram/messenger/camera/CameraView;)Lorg/telegram/messenger/camera/CameraView$VideoRecorder;
@@ -3787,18 +3787,18 @@
 
     invoke-virtual {p1, v6}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->stopRecording(I)V
 
-    .line 1709
+    .line 1708
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1, v4}, Lorg/telegram/messenger/camera/CameraView;->access$1802(Lorg/telegram/messenger/camera/CameraView;Lorg/telegram/messenger/camera/CameraView$VideoRecorder;)Lorg/telegram/messenger/camera/CameraView$VideoRecorder;
 
-    .line 1711
+    .line 1710
     :cond_4
     iput-boolean v6, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->recording:Z
 
     goto/16 :goto_4
 
-    .line 1697
+    .line 1696
     :pswitch_6
     iget-boolean v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->initied:Z
 
@@ -3806,7 +3806,7 @@
 
     return-void
 
-    .line 1700
+    .line 1699
     :cond_5
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -3816,17 +3816,17 @@
 
     iput-object p1, v0, Lorg/telegram/messenger/camera/CameraView;->recordFile:Ljava/io/File;
 
-    .line 1701
+    .line 1700
     new-instance p1, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;
 
     invoke-direct {p1, v0, v4}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;-><init>(Lorg/telegram/messenger/camera/CameraView;Lorg/telegram/messenger/camera/CameraView$1;)V
 
     invoke-static {v0, p1}, Lorg/telegram/messenger/camera/CameraView;->access$1802(Lorg/telegram/messenger/camera/CameraView;Lorg/telegram/messenger/camera/CameraView$VideoRecorder;)Lorg/telegram/messenger/camera/CameraView$VideoRecorder;
 
-    .line 1702
+    .line 1701
     iput-boolean v5, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->recording:Z
 
-    .line 1703
+    .line 1702
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$1800(Lorg/telegram/messenger/camera/CameraView;)Lorg/telegram/messenger/camera/CameraView$VideoRecorder;
@@ -3845,11 +3845,11 @@
 
     goto/16 :goto_4
 
-    .line 1676
+    .line 1675
     :pswitch_7
     iget v0, p1, Landroid/os/Message;->arg1:I
 
-    .line 1677
+    .line 1676
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Lorg/telegram/messenger/camera/CameraSession;
@@ -3858,7 +3858,7 @@
 
     return-void
 
-    .line 1681
+    .line 1680
     :cond_6
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->currentSession:[Lorg/telegram/messenger/camera/CameraSession;
 
@@ -3866,10 +3866,10 @@
 
     if-eq v2, p1, :cond_7
 
-    .line 1682
+    .line 1681
     aput-object p1, v1, v0
 
-    .line 1683
+    .line 1682
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraId:[I
 
     iget-object p1, p1, Lorg/telegram/messenger/camera/CameraSession;->cameraInfo:Lorg/telegram/messenger/camera/CameraInfo;
@@ -3878,7 +3878,7 @@
 
     aput p1, v2, v0
 
-    .line 1686
+    .line 1685
     :cond_7
     aget-object p1, v1, v0
 
@@ -3886,12 +3886,12 @@
 
     move-result p1
 
-    .line 1687
+    .line 1686
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_8
 
-    .line 1688
+    .line 1687
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -3914,7 +3914,7 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1690
+    .line 1689
     :cond_8
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -3928,7 +3928,7 @@
 
     if-eqz p1, :cond_15
 
-    .line 1692
+    .line 1691
     iget-object v1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v1}, Lorg/telegram/messenger/camera/CameraView;->access$800(Lorg/telegram/messenger/camera/CameraView;)[[F
@@ -3963,7 +3963,7 @@
     :cond_9
     move v0, v5
 
-    .line 1626
+    .line 1625
     :goto_0
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->egl10:Ljavax/microedition/khronos/egl/EGL10;
 
@@ -3979,12 +3979,12 @@
 
     if-nez v3, :cond_b
 
-    .line 1627
+    .line 1626
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_a
 
-    .line 1628
+    .line 1627
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -4014,7 +4014,7 @@
     :cond_a
     return-void
 
-    .line 1633
+    .line 1632
     :cond_b
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
@@ -4022,7 +4022,7 @@
 
     if-eqz v7, :cond_c
 
-    .line 1634
+    .line 1633
     aget-object v3, v3, v0
 
     iget-object v7, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
@@ -4035,26 +4035,26 @@
 
     invoke-virtual {v3, v7}, Landroid/graphics/SurfaceTexture;->getTransformMatrix([F)V
 
-    .line 1635
+    .line 1634
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     aget-object v3, v3, v0
 
     invoke-virtual {v3, v4}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 
-    .line 1636
+    .line 1635
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     aget-object v3, v3, v0
 
     invoke-virtual {v3}, Landroid/graphics/SurfaceTexture;->release()V
 
-    .line 1637
+    .line 1636
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     aput-object v4, v3, v0
 
-    .line 1640
+    .line 1639
     :cond_c
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -4068,7 +4068,7 @@
 
     if-nez v3, :cond_d
 
-    .line 1641
+    .line 1640
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v3}, Lorg/telegram/messenger/camera/CameraView;->access$700(Lorg/telegram/messenger/camera/CameraView;)[[I
@@ -4079,7 +4079,7 @@
 
     invoke-static {v5, v3, v6}, Landroid/opengl/GLES20;->glGenTextures(I[II)V
 
-    .line 1644
+    .line 1643
     :cond_d
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraId:[I
 
@@ -4087,7 +4087,7 @@
 
     aput v4, v3, v0
 
-    .line 1646
+    .line 1645
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v3}, Lorg/telegram/messenger/camera/CameraView;->access$700(Lorg/telegram/messenger/camera/CameraView;)[[I
@@ -4106,36 +4106,36 @@
 
     const/16 v7, 0x2601
 
-    .line 1647
+    .line 1646
     invoke-static {v4, v3, v7}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 v3, 0x2800
 
-    .line 1648
+    .line 1647
     invoke-static {v4, v3, v7}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 v3, 0x2802
 
     const v7, 0x812f
 
-    .line 1649
+    .line 1648
     invoke-static {v4, v3, v7}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     const/16 v3, 0x2803
 
-    .line 1650
+    .line 1649
     invoke-static {v4, v3, v7}, Landroid/opengl/GLES20;->glTexParameteri(III)V
 
     if-ne v0, v5, :cond_e
 
-    .line 1653
+    .line 1652
     iget-object p1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast p1, Landroid/graphics/Matrix;
 
     invoke-direct {p0, p1}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->applyDualMatrix(Landroid/graphics/Matrix;)V
 
-    .line 1656
+    .line 1655
     :cond_e
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
@@ -4155,7 +4155,7 @@
 
     aput-object v3, p1, v0
 
-    .line 1657
+    .line 1656
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraSurface:[Landroid/graphics/SurfaceTexture;
 
     aget-object p1, p1, v0
@@ -4166,15 +4166,15 @@
 
     invoke-virtual {p1, v3}, Landroid/graphics/SurfaceTexture;->setOnFrameAvailableListener(Landroid/graphics/SurfaceTexture$OnFrameAvailableListener;)V
 
-    .line 1658
+    .line 1657
     iget-boolean p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->ignoreCamera1Upd:Z
 
     if-eqz p1, :cond_f
 
-    .line 1659
+    .line 1658
     iput-boolean v6, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->camera1Appeared:Z
 
-    .line 1660
+    .line 1659
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -4183,10 +4183,10 @@
 
     iput-wide v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->camera1AppearedUntil:J
 
-    .line 1661
+    .line 1660
     iput-boolean v6, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->ignoreCamera1Upd:Z
 
-    .line 1663
+    .line 1662
     :cond_f
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
@@ -4198,10 +4198,10 @@
 
     if-ne v0, v5, :cond_15
 
-    .line 1666
+    .line 1665
     iput-boolean v6, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->dualAppeared:Z
 
-    .line 1667
+    .line 1666
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {p1}, Lorg/telegram/messenger/camera/CameraView;->access$1400(Lorg/telegram/messenger/camera/CameraView;)Ljava/lang/Object;
@@ -4210,23 +4210,23 @@
 
     monitor-enter p1
 
-    .line 1668
+    .line 1667
     :try_start_0
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0, v6}, Lorg/telegram/messenger/camera/CameraView;->access$1502(Lorg/telegram/messenger/camera/CameraView;Z)Z
 
-    .line 1669
+    .line 1668
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iput-boolean v6, v0, Lorg/telegram/messenger/camera/CameraView;->firstFrame2Rendered:Z
 
-    .line 1670
+    .line 1669
     monitor-exit p1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1671
+    .line 1670
     iget-object p1, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->dualAppear:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/4 v0, 0x0
@@ -4238,7 +4238,7 @@
     :catchall_0
     move-exception v0
 
-    .line 1670
+    .line 1669
     :try_start_1
     monitor-exit p1
     :try_end_1
@@ -4246,16 +4246,16 @@
 
     throw v0
 
-    .line 1613
+    .line 1612
     :pswitch_9
     invoke-virtual {p0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->finish()V
 
-    .line 1614
+    .line 1613
     iget-boolean v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->recording:Z
 
     if-eqz v0, :cond_10
 
-    .line 1615
+    .line 1614
     iget-object v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     invoke-static {v0}, Lorg/telegram/messenger/camera/CameraView;->access$1800(Lorg/telegram/messenger/camera/CameraView;)Lorg/telegram/messenger/camera/CameraView$VideoRecorder;
@@ -4266,7 +4266,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/camera/CameraView$VideoRecorder;->stopRecording(I)V
 
-    .line 1617
+    .line 1616
     :cond_10
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
@@ -4274,12 +4274,12 @@
 
     if-eqz p1, :cond_15
 
-    .line 1619
+    .line 1618
     invoke-virtual {p1}, Landroid/os/Looper;->quit()V
 
     goto :goto_4
 
-    .line 1610
+    .line 1609
     :pswitch_a
     iget v0, p1, Landroid/os/Message;->arg1:I
 
@@ -4348,7 +4348,7 @@
 .method public pause(J)V
     .locals 2
 
-    .line 1844
+    .line 1843
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -4363,7 +4363,7 @@
 .method public reinitForNewCamera()V
     .locals 4
 
-    .line 1350
+    .line 1349
     invoke-virtual {p0}, Lorg/telegram/messenger/DispatchQueue;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -4372,7 +4372,7 @@
 
     const/4 v1, 0x2
 
-    .line 1352
+    .line 1351
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->this$0:Lorg/telegram/messenger/camera/CameraView;
 
     iget-object v2, v2, Lorg/telegram/messenger/camera/CameraView;->info:[Lorg/telegram/messenger/camera/CameraInfo;
@@ -4400,7 +4400,7 @@
 .method public requestRender(ZZ)V
     .locals 5
 
-    .line 1851
+    .line 1850
     iget-wide v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->pausedTime:J
 
     const-wide/16 v2, 0x0
@@ -4426,14 +4426,14 @@
 
     if-nez p2, :cond_1
 
-    .line 1854
+    .line 1853
     iget-boolean v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->recording:Z
 
     if-eqz v0, :cond_1
 
     return-void
 
-    .line 1858
+    .line 1857
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/messenger/DispatchQueue;->getHandler()Landroid/os/Handler;
 
@@ -4447,7 +4447,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 1860
+    .line 1859
     :cond_2
     iget-object v2, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->updateTexBoth:Ljava/lang/Object;
 
@@ -4464,7 +4464,7 @@
 
     if-nez p1, :cond_4
 
-    .line 1863
+    .line 1862
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->updateTex1:Ljava/lang/Object;
 
     invoke-virtual {v0, v1, v3}, Landroid/os/Handler;->hasMessages(ILjava/lang/Object;)Z
@@ -4478,7 +4478,7 @@
     :cond_4
     if-nez p2, :cond_5
 
-    .line 1866
+    .line 1865
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->updateTex2:Ljava/lang/Object;
 
     invoke-virtual {v0, v1, v3}, Landroid/os/Handler;->hasMessages(ILjava/lang/Object;)Z
@@ -4489,11 +4489,11 @@
 
     move p2, v2
 
-    .line 1869
+    .line 1868
     :cond_5
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
 
-    .line 1870
+    .line 1869
     iget-object v3, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->cameraId:[I
 
     aget v4, v3, v1
@@ -4532,14 +4532,14 @@
 .method public run()V
     .locals 1
 
-    .line 1600
+    .line 1599
     invoke-direct {p0}, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->initGL()Z
 
     move-result v0
 
     iput-boolean v0, p0, Lorg/telegram/messenger/camera/CameraView$CameraGLThread;->initied:Z
 
-    .line 1601
+    .line 1600
     invoke-super {p0}, Lorg/telegram/messenger/DispatchQueue;->run()V
 
     return-void
@@ -4548,7 +4548,7 @@
 .method public setCurrentSession(Lorg/telegram/messenger/camera/CameraSession;I)V
     .locals 3
 
-    .line 1382
+    .line 1381
     invoke-virtual {p0}, Lorg/telegram/messenger/DispatchQueue;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -4559,7 +4559,7 @@
 
     const/4 v2, 0x0
 
-    .line 1384
+    .line 1383
     invoke-virtual {v0, v1, p2, v2, p1}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p1
@@ -4573,7 +4573,7 @@
 .method public shutdown(I)V
     .locals 3
 
-    .line 1836
+    .line 1835
     invoke-virtual {p0}, Lorg/telegram/messenger/DispatchQueue;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -4584,7 +4584,7 @@
 
     const/4 v2, 0x0
 
-    .line 1838
+    .line 1837
     invoke-virtual {v0, v1, p1, v2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
 
     move-result-object p1
@@ -4598,7 +4598,7 @@
 .method public startRecording(Ljava/io/File;)Z
     .locals 2
 
-    .line 1875
+    .line 1874
     invoke-virtual {p0}, Lorg/telegram/messenger/DispatchQueue;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -4607,7 +4607,7 @@
 
     const/4 v1, 0x4
 
-    .line 1877
+    .line 1876
     invoke-virtual {v0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object p1
@@ -4627,7 +4627,7 @@
 .method public stopRecording()V
     .locals 2
 
-    .line 1884
+    .line 1883
     invoke-virtual {p0}, Lorg/telegram/messenger/DispatchQueue;->getHandler()Landroid/os/Handler;
 
     move-result-object v0
@@ -4636,7 +4636,7 @@
 
     const/4 v1, 0x5
 
-    .line 1886
+    .line 1885
     invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
     move-result-object v0

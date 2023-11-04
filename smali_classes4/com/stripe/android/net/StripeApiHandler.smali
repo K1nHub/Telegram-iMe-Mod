@@ -923,13 +923,13 @@
 
     const-string/jumbo v8, "os.arch"
 
-    const-string v9, "java.version"
+    const-string/jumbo v9, "java.version"
 
-    const-string v10, "java.vendor"
+    const-string/jumbo v10, "java.vendor"
 
-    const-string v11, "java.vm.version"
+    const-string/jumbo v11, "java.vm.version"
 
-    const-string v12, "java.vm.vendor"
+    const-string/jumbo v12, "java.vm.vendor"
 
     .line 147
     filled-new-array/range {v6 .. v12}, [Ljava/lang/String;

@@ -151,8 +151,8 @@ public final class MultiPanelController extends BaseController {
                 arrayList.add(BackupMappingKt.mapToBackup(multiPanelButtonState));
             }
             mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList);
-            Pair m144to = TuplesKt.m144to(name, mutableList);
-            linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
+            Pair m146to = TuplesKt.m146to(name, mutableList);
+            linkedHashMap.put(m146to.getFirst(), m146to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         return mutableMap;
@@ -194,8 +194,8 @@ public final class MultiPanelController extends BaseController {
                     }
                 }
                 mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) arrayList2);
-                Pair m144to = TuplesKt.m144to(mapNameToEnum, mutableList);
-                linkedHashMap.put(m144to.getFirst(), m144to.getSecond());
+                Pair m146to = TuplesKt.m146to(mapNameToEnum, mutableList);
+                linkedHashMap.put(m146to.getFirst(), m146to.getSecond());
             }
             mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
             this.buttonStates = mutableMap;

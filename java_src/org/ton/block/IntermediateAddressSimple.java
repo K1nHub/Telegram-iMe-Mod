@@ -43,11 +43,11 @@ public final class IntermediateAddressSimple implements IntermediateAddress {
     }
 
     public int hashCode() {
-        return (this.workchainId * 31) + ULong.m1991hashCodeimpl(this.addrPfx);
+        return (this.workchainId * 31) + ULong.m1996hashCodeimpl(this.addrPfx);
     }
 
     public String toString() {
-        return "IntermediateAddressSimple(workchainId=" + this.workchainId + ", addrPfx=" + ((Object) ULong.m1992toStringimpl(this.addrPfx)) + ')';
+        return "IntermediateAddressSimple(workchainId=" + this.workchainId + ", addrPfx=" + ((Object) ULong.m1997toStringimpl(this.addrPfx)) + ')';
     }
 
     private IntermediateAddressSimple(int i, int i2, ULong uLong, SerializationConstructorMarker serializationConstructorMarker) {
@@ -55,7 +55,7 @@ public final class IntermediateAddressSimple implements IntermediateAddress {
             PluginExceptionsKt.throwMissingFieldException(i, 3, IntermediateAddressSimple$$serializer.INSTANCE.getDescriptor());
         }
         this.workchainId = i2;
-        this.addrPfx = uLong.m1993unboximpl();
+        this.addrPfx = uLong.m1998unboximpl();
     }
 
     private IntermediateAddressSimple(int i, long j) {
@@ -65,7 +65,7 @@ public final class IntermediateAddressSimple implements IntermediateAddress {
 
     public static final /* synthetic */ void write$Self(IntermediateAddressSimple intermediateAddressSimple, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         compositeEncoder.encodeIntElement(serialDescriptor, 0, intermediateAddressSimple.workchainId);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1988boximpl(intermediateAddressSimple.addrPfx));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1993boximpl(intermediateAddressSimple.addrPfx));
     }
 
     public final int getWorkchainId() {
@@ -73,7 +73,7 @@ public final class IntermediateAddressSimple implements IntermediateAddress {
     }
 
     /* renamed from: getAddrPfx-s-VKNKU  reason: not valid java name */
-    public final long m4964getAddrPfxsVKNKU() {
+    public final long m5118getAddrPfxsVKNKU() {
         return this.addrPfx;
     }
 
@@ -124,7 +124,7 @@ public final class IntermediateAddressSimple implements IntermediateAddress {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("interm_addr_simple");
         open.field("workchain_id", Integer.valueOf(this.workchainId));
-        open.field("addr_pfx", ULong.m1988boximpl(this.addrPfx));
+        open.field("addr_pfx", ULong.m1993boximpl(this.addrPfx));
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

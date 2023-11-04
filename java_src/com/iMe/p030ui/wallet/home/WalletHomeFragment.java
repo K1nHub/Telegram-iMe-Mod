@@ -47,12 +47,12 @@ import org.koin.core.qualifier.StringQualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeBinding;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.Components.ViewPagerFixed;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.ViewPagerFixed;
 /* compiled from: WalletHomeFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.WalletHomeFragment */
 /* loaded from: classes4.dex */
@@ -202,7 +202,7 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
         return (List) this.pageTabs$delegate.getValue();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return getBinding().walletHomeViewPager.isSwipeBackEnabled();
     }
@@ -221,7 +221,7 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
         getPresenter().setupNavigationRouter();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
@@ -236,7 +236,7 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
         return arrayListOf;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onActivityResultFragment(int i, int i2, Intent intent) {
         super.onActivityResultFragment(i, i2, intent);
         for (WalletHomeTabFragment walletHomeTabFragment : getHomeNavigationRouter().getScreenStack()) {
@@ -244,13 +244,13 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
         }
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         getHomeNavigationRouter().clean();
         super.onFragmentDestroy();
     }
 
-    @Override // com.iMe.p030ui.wallet.common.BottomNavigationTabFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.wallet.common.BottomNavigationTabFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onDestroyView() {
         for (WalletHomeTabFragment walletHomeTabFragment : getHomeNavigationRouter().getScreenStack()) {
             walletHomeTabFragment.onDestroyView();
@@ -258,7 +258,7 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
         super.onDestroyView();
     }
 
-    @Override // com.iMe.p030ui.wallet.common.BottomNavigationTabFragment, com.iMe.p030ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.wallet.common.BottomNavigationTabFragment, com.iMe.p030ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         for (WalletHomeTabFragment walletHomeTabFragment : getHomeNavigationRouter().getScreenStack()) {
@@ -266,7 +266,7 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
         }
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onPause() {
         for (WalletHomeTabFragment walletHomeTabFragment : getHomeNavigationRouter().getScreenStack()) {
             walletHomeTabFragment.onPause();
@@ -303,7 +303,7 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
         TabbedViewPager tabbedViewPager = getBinding().walletHomeViewPager;
         tabbedViewPager.init(this);
         ViewPagerFixed.TabsView tabsView = tabbedViewPager.getTabsView();
-        tabsView.setElevation(AndroidUtilities.m103dp(2.0f));
+        tabsView.setElevation(AndroidUtilities.m105dp(2.0f));
         tabsView.setColors(Theme.key_actionBarTabLine, Theme.key_actionBarTabActiveText, Theme.key_actionBarTabUnactiveText, Theme.key_actionBarTabSelector, Theme.key_actionBarDefault);
     }
 
@@ -340,7 +340,7 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
     /* JADX INFO: Access modifiers changed from: private */
     public final List<WalletHomeNavigationTab> initPageTabs() {
         List<WalletHomeNavigationTab> mutableListOf;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletHomeNavigationTab(C3630R.C3633id.wallet_home_crypto, new TabbedFragmentPage(getResourceManager().getString(C3630R.string.wallet_home_navigation_crypto), C3630R.C3632drawable.fork_ic_crypto_24, WalletHomeCryptoFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3630R.C3633id.wallet_home_binance_pay, new TabbedFragmentPage(getResourceManager().getString(C3630R.string.wallet_home_navigation_binance_pay), C3630R.C3632drawable.fork_ic_binance_pay_24, WalletHomeBinancePayFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3630R.C3633id.wallet_home_internal_points, new TabbedFragmentPage(getResourceManager().getString(C3630R.string.wallet_home_navigation_services), C3630R.C3632drawable.fork_ic_points_24, WalletHomeServicesFragment.Companion.newInstance(), null, 8, null)));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletHomeNavigationTab(C3634R.C3637id.wallet_home_crypto, new TabbedFragmentPage(getResourceManager().getString(C3634R.string.wallet_home_navigation_crypto), C3634R.C3636drawable.fork_ic_crypto_24, WalletHomeCryptoFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3634R.C3637id.wallet_home_binance_pay, new TabbedFragmentPage(getResourceManager().getString(C3634R.string.wallet_home_navigation_binance_pay), C3634R.C3636drawable.fork_ic_binance_pay_24, WalletHomeBinancePayFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3634R.C3637id.wallet_home_internal_points, new TabbedFragmentPage(getResourceManager().getString(C3634R.string.wallet_home_navigation_services), C3634R.C3636drawable.fork_ic_points_24, WalletHomeServicesFragment.Companion.newInstance(), null, 8, null)));
         for (WalletHomeNavigationTab walletHomeNavigationTab : mutableListOf) {
             walletHomeNavigationTab.getPage().getFragment().setParentView(this);
         }

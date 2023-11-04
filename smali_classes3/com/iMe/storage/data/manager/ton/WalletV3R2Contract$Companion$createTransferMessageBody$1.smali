@@ -53,7 +53,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 207
+    .line 212
     check-cast p1, Lorg/ton/cell/CellBuilder;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$createTransferMessageBody$1;->invoke(Lorg/ton/cell/CellBuilder;)V
@@ -70,12 +70,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 208
+    .line 213
     iget-object v0, p0, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$createTransferMessageBody$1;->$signature:Lorg/ton/bitstring/BitString;
 
     invoke-interface {p1, v0}, Lorg/ton/cell/CellBuilder;->storeBits(Lorg/ton/bitstring/BitString;)Lorg/ton/cell/CellBuilder;
 
-    .line 209
+    .line 214
     iget-object v0, p0, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$createTransferMessageBody$1;->$unsignedBody:Lorg/ton/cell/Cell;
 
     invoke-interface {v0}, Lorg/ton/cell/Cell;->getBits()Lorg/ton/bitstring/BitString;
@@ -84,7 +84,7 @@
 
     invoke-interface {p1, v0}, Lorg/ton/cell/CellBuilder;->storeBits(Lorg/ton/bitstring/BitString;)Lorg/ton/cell/CellBuilder;
 
-    .line 210
+    .line 215
     iget-object v0, p0, Lcom/iMe/storage/data/manager/ton/WalletV3R2Contract$Companion$createTransferMessageBody$1;->$unsignedBody:Lorg/ton/cell/Cell;
 
     invoke-interface {v0}, Lorg/ton/cell/Cell;->getRefs()Ljava/util/List;

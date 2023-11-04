@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p030ui.custom.NetworkTypeView;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletDashboardHeaderWithNetworkSwitcherBinding implements ViewBinding {
     private ForkRecycleItemWalletDashboardHeaderWithNetworkSwitcherBinding(RelativeLayout relativeLayout, RelativeLayout relativeLayout2, NetworkTypeView networkTypeView, AppCompatTextView appCompatTextView) {
@@ -19,7 +19,7 @@ public final class ForkRecycleItemWalletDashboardHeaderWithNetworkSwitcherBindin
     }
 
     public static ForkRecycleItemWalletDashboardHeaderWithNetworkSwitcherBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_dashboard_header_with_network_switcher, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_recycle_item_wallet_dashboard_header_with_network_switcher, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -28,10 +28,10 @@ public final class ForkRecycleItemWalletDashboardHeaderWithNetworkSwitcherBindin
 
     public static ForkRecycleItemWalletDashboardHeaderWithNetworkSwitcherBinding bind(View view) {
         RelativeLayout relativeLayout = (RelativeLayout) view;
-        int i = C3630R.C3633id.network_type_view;
+        int i = C3634R.C3637id.network_type_view;
         NetworkTypeView networkTypeView = (NetworkTypeView) ViewBindings.findChildViewById(view, i);
         if (networkTypeView != null) {
-            i = C3630R.C3633id.text_wallet_header;
+            i = C3634R.C3637id.text_wallet_header;
             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
             if (appCompatTextView != null) {
                 return new ForkRecycleItemWalletDashboardHeaderWithNetworkSwitcherBinding(relativeLayout, relativeLayout, networkTypeView, appCompatTextView);

@@ -1054,7 +1054,7 @@
     return-object v0
 
     :pswitch_10
-    const-string v0, "kava"
+    const-string/jumbo v0, "kava"
 
     return-object v0
 
@@ -1125,6 +1125,8 @@
     const-string v0, "bc"
 
     return-object v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x2

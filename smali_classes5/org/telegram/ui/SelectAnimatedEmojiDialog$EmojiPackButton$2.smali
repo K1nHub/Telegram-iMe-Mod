@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;Z)V
     .locals 0
 
-    .line 2626
+    .line 2636
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton$2;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;
 
     iput-boolean p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton$2;->val$show:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 2629
+    .line 2639
     iget-boolean p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton$2;->val$show:Z
 
     if-nez p1, :cond_0
 
-    .line 2630
+    .line 2640
     iget-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton$2;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;
 
     iget-object p1, p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiPackButton;->premiumButtonView:Lorg/telegram/ui/Components/Premium/PremiumButtonView;

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity$83;)V
     .locals 0
 
-    .line 12872
+    .line 13081
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$83$1;->this$1:Lorg/telegram/ui/ChatActivity$83;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,23 +35,23 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 12875
+    .line 13084
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$83$1;->this$1:Lorg/telegram/ui/ChatActivity$83;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$83;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$34700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/HintView;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$34600(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/HintView;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 12876
+    .line 13085
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$83$1;->this$1:Lorg/telegram/ui/ChatActivity$83;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity$83;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$34700(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/HintView;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$34600(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/HintView;
 
     move-result-object p1
 

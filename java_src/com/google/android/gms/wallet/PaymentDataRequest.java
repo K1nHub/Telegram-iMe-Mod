@@ -14,27 +14,27 @@ import java.util.Collection;
 /* loaded from: classes3.dex */
 public final class PaymentDataRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PaymentDataRequest> CREATOR = new zzac();
-    @SafeParcelable.Field(m1089id = 1)
+    @SafeParcelable.Field(m1090id = 1)
     boolean zza;
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     boolean zzb;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     CardRequirements zzc;
-    @SafeParcelable.Field(m1089id = 4)
+    @SafeParcelable.Field(m1090id = 4)
     boolean zzd;
-    @SafeParcelable.Field(m1089id = 5)
+    @SafeParcelable.Field(m1090id = 5)
     ShippingAddressRequirements zze;
-    @SafeParcelable.Field(m1089id = 6)
+    @SafeParcelable.Field(m1090id = 6)
     ArrayList zzf;
-    @SafeParcelable.Field(m1089id = 7)
+    @SafeParcelable.Field(m1090id = 7)
     PaymentMethodTokenizationParameters zzg;
-    @SafeParcelable.Field(m1089id = 8)
+    @SafeParcelable.Field(m1090id = 8)
     TransactionInfo zzh;
-    @SafeParcelable.Field(defaultValue = "true", m1089id = 9)
+    @SafeParcelable.Field(defaultValue = "true", m1090id = 9)
     boolean zzi;
-    @SafeParcelable.Field(m1089id = 10)
+    @SafeParcelable.Field(m1090id = 10)
     String zzj;
-    @SafeParcelable.Field(m1089id = 11)
+    @SafeParcelable.Field(m1090id = 11)
     Bundle zzk;
 
     /* compiled from: com.google.android.gms:play-services-wallet@@19.1.0 */
@@ -213,7 +213,7 @@ public final class PaymentDataRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PaymentDataRequest(@SafeParcelable.Param(m1088id = 1) boolean z, @SafeParcelable.Param(m1088id = 2) boolean z2, @SafeParcelable.Param(m1088id = 3) CardRequirements cardRequirements, @SafeParcelable.Param(m1088id = 4) boolean z3, @SafeParcelable.Param(m1088id = 5) ShippingAddressRequirements shippingAddressRequirements, @SafeParcelable.Param(m1088id = 6) ArrayList arrayList, @SafeParcelable.Param(m1088id = 7) PaymentMethodTokenizationParameters paymentMethodTokenizationParameters, @SafeParcelable.Param(m1088id = 8) TransactionInfo transactionInfo, @SafeParcelable.Param(m1088id = 9) boolean z4, @SafeParcelable.Param(m1088id = 10) String str, @SafeParcelable.Param(m1088id = 11) Bundle bundle) {
+    public PaymentDataRequest(@SafeParcelable.Param(m1089id = 1) boolean z, @SafeParcelable.Param(m1089id = 2) boolean z2, @SafeParcelable.Param(m1089id = 3) CardRequirements cardRequirements, @SafeParcelable.Param(m1089id = 4) boolean z3, @SafeParcelable.Param(m1089id = 5) ShippingAddressRequirements shippingAddressRequirements, @SafeParcelable.Param(m1089id = 6) ArrayList arrayList, @SafeParcelable.Param(m1089id = 7) PaymentMethodTokenizationParameters paymentMethodTokenizationParameters, @SafeParcelable.Param(m1089id = 8) TransactionInfo transactionInfo, @SafeParcelable.Param(m1089id = 9) boolean z4, @SafeParcelable.Param(m1089id = 10) String str, @SafeParcelable.Param(m1089id = 11) Bundle bundle) {
         this.zza = z;
         this.zzb = z2;
         this.zzc = cardRequirements;

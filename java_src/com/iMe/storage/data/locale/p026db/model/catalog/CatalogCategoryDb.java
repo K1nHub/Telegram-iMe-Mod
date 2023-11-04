@@ -24,7 +24,7 @@ public final class CatalogCategoryDb {
     }
 
     public int hashCode() {
-        return (((ProfileData$$ExternalSyntheticBackport0.m1017m(this.f308id) * 31) + this.title.hashCode()) * 31) + this.total;
+        return (((ProfileData$$ExternalSyntheticBackport0.m1018m(this.f308id) * 31) + this.title.hashCode()) * 31) + this.total;
     }
 
     public String toString() {

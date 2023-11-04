@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StealthModeAlert$1;)V
     .locals 0
 
-    .line 54
+    .line 51
     iput-object p1, p0, Lorg/telegram/ui/Stories/StealthModeAlert$1$1;->this$1:Lorg/telegram/ui/Stories/StealthModeAlert$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +68,7 @@
 .method public getTopOffset(I)I
     .locals 1
 
-    .line 57
+    .line 54
     iget-object p1, p0, Lorg/telegram/ui/Stories/StealthModeAlert$1$1;->this$1:Lorg/telegram/ui/Stories/StealthModeAlert$1;
 
     iget p1, p1, Lorg/telegram/ui/Stories/StealthModeAlert$1;->val$topOffset:F

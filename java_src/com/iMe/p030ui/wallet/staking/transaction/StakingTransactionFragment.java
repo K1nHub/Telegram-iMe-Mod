@@ -56,18 +56,18 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentStakingTransactionBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.C3702ActionBar;
-import org.telegram.p042ui.ActionBar.INavigationLayout;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.Components.EditTextBoldCursor;
-import org.telegram.p042ui.Components.LinkActionView;
-import org.telegram.p042ui.Components.RLottieImageView;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.INavigationLayout;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.Components.LinkActionView;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: StakingTransactionFragment.kt */
 /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionFragment */
 /* loaded from: classes4.dex */
@@ -205,7 +205,7 @@ public final class StakingTransactionFragment extends WalletAuthBaseFragment imp
         return root;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, Theme.key_actionBarDefaultSelector), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, Theme.key_windowBackgroundWhite));
@@ -355,7 +355,7 @@ public final class StakingTransactionFragment extends WalletAuthBaseFragment imp
     /* JADX INFO: Access modifiers changed from: private */
     public static final void renderStakingPercentage$lambda$8$lambda$7(StakingTransactionFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        showCommonInfoAlert$default(this$0, null, this$0.getResourceManager().getString(C3630R.string.staking_replenishment_percentage_info_alert), 1, null);
+        showCommonInfoAlert$default(this$0, null, this$0.getResourceManager().getString(C3634R.string.staking_replenishment_percentage_info_alert), 1, null);
     }
 
     @Override // com.iMe.p030ui.wallet.staking.transaction.StakingTransactionView
@@ -414,7 +414,7 @@ public final class StakingTransactionFragment extends WalletAuthBaseFragment imp
             ViewExtKt.gone$default(updateFeeView$lambda$12, false, 1, null);
         }
         if (this.screenType == StakingScreenType.STAKING_WITHDRAW_SCREEN_TYPE) {
-            updateFeeView$lambda$12.setPadding(updateFeeView$lambda$12.getPaddingLeft(), updateFeeView$lambda$12.getPaddingTop(), AndroidUtilities.m102dp(2), updateFeeView$lambda$12.getPaddingBottom());
+            updateFeeView$lambda$12.setPadding(updateFeeView$lambda$12.getPaddingLeft(), updateFeeView$lambda$12.getPaddingTop(), AndroidUtilities.m104dp(2), updateFeeView$lambda$12.getPaddingBottom());
         }
         StakingWithdrawalFeeView updateFeeView$lambda$13 = getBinding().stakingWithdrawalFeeView;
         if (feeType != null) {
@@ -423,7 +423,7 @@ public final class StakingTransactionFragment extends WalletAuthBaseFragment imp
             return;
         }
         Intrinsics.checkNotNullExpressionValue(updateFeeView$lambda$13, "updateFeeView$lambda$13");
-        updateFeeView$lambda$13.setPadding(updateFeeView$lambda$13.getPaddingLeft(), updateFeeView$lambda$13.getPaddingTop(), updateFeeView$lambda$13.getPaddingRight(), AndroidUtilities.m102dp(12));
+        updateFeeView$lambda$13.setPadding(updateFeeView$lambda$13.getPaddingLeft(), updateFeeView$lambda$13.getPaddingTop(), updateFeeView$lambda$13.getPaddingRight(), AndroidUtilities.m104dp(12));
     }
 
     @Override // com.iMe.p030ui.wallet.staking.transaction.StakingTransactionView
@@ -435,7 +435,7 @@ public final class StakingTransactionFragment extends WalletAuthBaseFragment imp
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void showCommonInfoAlert$default(StakingTransactionFragment stakingTransactionFragment, String str, String str2, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = stakingTransactionFragment.getResourceManager().getString(C3630R.string.wallet_crypto_buy_information_dialog_title);
+            str = stakingTransactionFragment.getResourceManager().getString(C3634R.string.wallet_crypto_buy_information_dialog_title);
         }
         stakingTransactionFragment.showCommonInfoAlert(str, str2);
     }
@@ -445,18 +445,18 @@ public final class StakingTransactionFragment extends WalletAuthBaseFragment imp
     }
 
     private final void setupActionBar() {
-        final C3702ActionBar c3702ActionBar = this.actionBar;
-        c3702ActionBar.setBackButtonImage(C3630R.C3632drawable.ic_ab_back);
-        c3702ActionBar.setTitle(getResourceManager().getString(this.screenType.getActionBarTitleTextId()));
+        final C3706ActionBar c3706ActionBar = this.actionBar;
+        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        c3706ActionBar.setTitle(getResourceManager().getString(this.screenType.getActionBarTitleTextId()));
         if (this.screenType != StakingScreenType.STAKING_REPLENISH_SCREEN_TYPE) {
-            c3702ActionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3630R.C3632drawable.msg_info);
+            c3706ActionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3634R.C3636drawable.msg_info);
         } else {
-            ActionBarMenuItem addItem = c3702ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3630R.C3632drawable.ic_ab_other);
-            addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3630R.string.AccDescrMoreOptions));
-            addItem.addSubItem(IdFabric$Menu.SMART_CONTRACT, C3630R.C3632drawable.fork_ic_web_26, getResourceManager().getString(C3630R.string.staking_details_contract_action));
-            addItem.addSubItem(IdFabric$Menu.STAKING_CONDITIONS, C3630R.C3632drawable.fork_ic_description_26, getResourceManager().getString(C3630R.string.staking_deposit_conditions));
+            ActionBarMenuItem addItem = c3706ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3634R.C3636drawable.ic_ab_other);
+            addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
+            addItem.addSubItem(IdFabric$Menu.SMART_CONTRACT, C3634R.C3636drawable.fork_ic_web_26, getResourceManager().getString(C3634R.string.staking_details_contract_action));
+            addItem.addSubItem(IdFabric$Menu.STAKING_CONDITIONS, C3634R.C3636drawable.fork_ic_description_26, getResourceManager().getString(C3634R.string.staking_deposit_conditions));
         }
-        c3702ActionBar.setActionBarMenuOnItemClick(new C3702ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.staking.transaction.StakingTransactionFragment$setupActionBar$1$2
+        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.staking.transaction.StakingTransactionFragment$setupActionBar$1$2
 
             /* compiled from: StakingTransactionFragment.kt */
             /* renamed from: com.iMe.ui.wallet.staking.transaction.StakingTransactionFragment$setupActionBar$1$2$WhenMappings */
@@ -478,7 +478,7 @@ public final class StakingTransactionFragment extends WalletAuthBaseFragment imp
                 }
             }
 
-            @Override // org.telegram.p042ui.ActionBar.C3702ActionBar.ActionBarMenuOnItemClick
+            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 StakingScreenType stakingScreenType;
                 ResourceManager resourceManager;
@@ -492,7 +492,7 @@ public final class StakingTransactionFragment extends WalletAuthBaseFragment imp
                     presenter2.startStakingConditionsDialog();
                 } else {
                     if (i == IdFabric$Menu.SMART_CONTRACT) {
-                        Context context = c3702ActionBar.getContext();
+                        Context context = c3706ActionBar.getContext();
                         stakingDetailsItem = StakingTransactionFragment.this.stakingDetails;
                         String contractUrl = stakingDetailsItem != null ? stakingDetailsItem.getContractUrl() : null;
                         if (contractUrl == null) {
@@ -505,7 +505,7 @@ public final class StakingTransactionFragment extends WalletAuthBaseFragment imp
                         if (i2 == 1) {
                             StakingTransactionFragment stakingTransactionFragment = StakingTransactionFragment.this;
                             resourceManager = stakingTransactionFragment.getResourceManager();
-                            StakingTransactionFragment.showCommonInfoAlert$default(stakingTransactionFragment, null, resourceManager.getString(C3630R.string.staking_profit_help_alert), 1, null);
+                            StakingTransactionFragment.showCommonInfoAlert$default(stakingTransactionFragment, null, resourceManager.getString(C3634R.string.staking_profit_help_alert), 1, null);
                         } else if (i2 != 2) {
                         } else {
                             presenter = StakingTransactionFragment.this.getPresenter();
@@ -527,8 +527,8 @@ public final class StakingTransactionFragment extends WalletAuthBaseFragment imp
         TitledInputFieldView titledInputFieldView = binding.inputAmount;
         titledInputFieldView.setCustomView(new TextView(titledInputFieldView.getContext()));
         Intrinsics.checkNotNullExpressionValue(titledInputFieldView, "this");
-        String string = getResourceManager().getString(C3630R.string.wallet_crypto_buy_amount_title);
-        String string2 = getResourceManager().getString(C3630R.string.wallet_binance_receive_amount_title);
+        String string = getResourceManager().getString(C3634R.string.wallet_crypto_buy_amount_title);
+        String string2 = getResourceManager().getString(C3634R.string.wallet_binance_receive_amount_title);
         StakingScreenType stakingScreenType = this.screenType;
         boolean z = stakingScreenType != StakingScreenType.STAKING_PROFIT_SCREEN_TYPE;
         boolean z2 = stakingScreenType == StakingScreenType.STAKING_REPLENISH_SCREEN_TYPE || stakingScreenType == StakingScreenType.STAKING_WITHDRAW_SCREEN_TYPE;
@@ -574,7 +574,7 @@ public final class StakingTransactionFragment extends WalletAuthBaseFragment imp
         titledInputFieldView.setupInputLayoutParams(-1, this.inputFieldHeight);
         TransactionActionButtonsView buttonSend = binding.buttonSend;
         Intrinsics.checkNotNullExpressionValue(buttonSend, "buttonSend");
-        buttonSend.setupViewData(getResourceManager().getString(C3630R.string.staking_action_button_loading), (r14 & 2) != 0, (r14 & 4) != 0 ? false : false, (r14 & 8) == 0 ? false : false, (r14 & 16) != 0 ? new Callbacks$Callback() { // from class: com.iMe.ui.custom.TransactionActionButtonsView$$ExternalSyntheticLambda1
+        buttonSend.setupViewData(getResourceManager().getString(C3634R.string.staking_action_button_loading), (r14 & 2) != 0, (r14 & 4) != 0 ? false : false, (r14 & 8) == 0 ? false : false, (r14 & 16) != 0 ? new Callbacks$Callback() { // from class: com.iMe.ui.custom.TransactionActionButtonsView$$ExternalSyntheticLambda1
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 TransactionActionButtonsView.setupViewData$lambda$0();
@@ -622,7 +622,7 @@ public final class StakingTransactionFragment extends WalletAuthBaseFragment imp
     /* JADX INFO: Access modifiers changed from: private */
     public static final void setupViews$lambda$24$lambda$23(StakingTransactionFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        this$0.showCommonInfoAlert(this$0.getResourceManager().getString(C3630R.string.wallet_swap_process_what_is_approve), this$0.getResourceManager().getString(C3630R.string.wallet_swap_process_what_is_approve_dialog_description));
+        this$0.showCommonInfoAlert(this$0.getResourceManager().getString(C3634R.string.wallet_swap_process_what_is_approve), this$0.getResourceManager().getString(C3634R.string.wallet_swap_process_what_is_approve_dialog_description));
     }
 
     private final void setupColors() {

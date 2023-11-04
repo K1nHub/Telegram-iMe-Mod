@@ -40,7 +40,7 @@ public final class SingleInstanceFactory<T> extends InstanceFactory<T> {
     @Override // org.koin.core.instance.InstanceFactory
     public T get(final InstanceContext context) {
         Intrinsics.checkNotNullParameter(context, "context");
-        KoinPlatformTools.INSTANCE.m2164synchronized(this, new Function0<Unit>(this) { // from class: org.koin.core.instance.SingleInstanceFactory$get$1
+        KoinPlatformTools.INSTANCE.m2169synchronized(this, new Function0<Unit>(this) { // from class: org.koin.core.instance.SingleInstanceFactory$get$1
             final /* synthetic */ SingleInstanceFactory<T> this$0;
 
             /* JADX INFO: Access modifiers changed from: package-private */

@@ -167,12 +167,12 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BaseNode>> result) {
-                m1645invoke(result);
+                m1650invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1645invoke(Result<? extends List<? extends BaseNode>> it) {
+            public final void m1650invoke(Result<? extends List<? extends BaseNode>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends BaseNode>> result = it;
                 if (result instanceof Result.Success) {
@@ -247,7 +247,7 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
     }
 
     private final void subscribeToQueryChanges() {
-        Observable<String> observeOn = this.querySubject.debounce(500L, TimeUnit.MILLISECONDS).distinctUntilChanged().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<String> observeOn = this.querySubject.debounce(500L, TimeUnit.MILLISECONDS).distinctUntilChanged().observeOn(this.schedulersProvider.mo1010ui());
         final Function1<String, Boolean> function1 = new Function1<String, Boolean>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$subscribeToQueryChanges$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -295,7 +295,7 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
                 subscribeToQueryChanges$lambda$3 = CustomTokensPresenter.subscribeToQueryChanges$lambda$3(Function1.this, obj);
                 return subscribeToQueryChanges$lambda$3;
             }
-        }).observeOn(this.schedulersProvider.mo1010io());
+        }).observeOn(this.schedulersProvider.mo1011io());
         final Function1<String, List<BaseNode>> function12 = new Function1<String, List<BaseNode>>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$subscribeToQueryChanges$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -327,12 +327,12 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(List<BaseNode> list) {
-                m1647invoke(list);
+                m1652invoke(list);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1647invoke(List<BaseNode> it) {
+            public final void m1652invoke(List<BaseNode> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 ((CustomTokensView) CustomTokensPresenter.this.getViewState()).renderItems(it);
             }
@@ -462,7 +462,7 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
 
     private final void subscribeToEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.TokensSettingsChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo1009ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.TokensSettingsChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.TokensSettingsChanged, Unit>() { // from class: com.iMe.ui.wallet.crypto.settings.custom_tokens.CustomTokensPresenter$subscribeToEvents$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -471,12 +471,12 @@ public final class CustomTokensPresenter extends BasePresenter<CustomTokensView>
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.TokensSettingsChanged tokensSettingsChanged) {
-                m1646invoke(tokensSettingsChanged);
+                m1651invoke(tokensSettingsChanged);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1646invoke(DomainRxEvents.TokensSettingsChanged it) {
+            public final void m1651invoke(DomainRxEvents.TokensSettingsChanged it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 CustomTokensPresenter.this.reload();
             }

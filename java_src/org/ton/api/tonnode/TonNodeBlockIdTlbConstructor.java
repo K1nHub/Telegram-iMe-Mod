@@ -1,9 +1,9 @@
 package org.ton.api.tonnode;
 
 import kotlin.jvm.internal.Intrinsics;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: TonNodeBlockId.kt */
 /* loaded from: classes6.dex */
 final class TonNodeBlockIdTlbConstructor extends TlConstructor<TonNodeBlockId> {
@@ -13,13 +13,13 @@ final class TonNodeBlockIdTlbConstructor extends TlConstructor<TonNodeBlockId> {
         super("tonNode.blockId workchain:int shard:long seqno:int = tonNode.BlockId", null, 2, null);
     }
 
-    @Override // org.ton.p044tl.TlDecoder
+    @Override // org.ton.p045tl.TlDecoder
     public TonNodeBlockId decode(TlReader reader) {
         Intrinsics.checkNotNullParameter(reader, "reader");
         return new TonNodeBlockIdImpl(reader.readInt(), reader.readLong(), reader.readInt());
     }
 
-    @Override // org.ton.p044tl.TlEncoder
+    @Override // org.ton.p045tl.TlEncoder
     public void encode(TlWriter writer, TonNodeBlockId value) {
         Intrinsics.checkNotNullParameter(writer, "writer");
         Intrinsics.checkNotNullParameter(value, "value");

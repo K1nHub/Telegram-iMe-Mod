@@ -17,17 +17,17 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-.field final synthetic val$animationEndRunnable:Ljava/lang/Runnable;
+.field final synthetic val$onAnimationEndRunnuble:Ljava/lang/Runnable;
 
 
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 10160
+    .line 10348
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->val$animationEndRunnable:Ljava/lang/Runnable;
+    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->val$onAnimationEndRunnuble:Ljava/lang/Runnable;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -37,14 +37,16 @@
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 0
+    .locals 1
 
-    .line 10163
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->val$animationEndRunnable:Ljava/lang/Runnable;
+    .line 10351
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+    const/4 v0, 0x0
 
-    .line 10164
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$102(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+
+    .line 10352
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$14600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/messenger/AnimationNotificationsLocker;
@@ -52,6 +54,11 @@
     move-result-object p1
 
     invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
+
+    .line 10353
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$70;->val$onAnimationEndRunnuble:Ljava/lang/Runnable;
+
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
 .end method

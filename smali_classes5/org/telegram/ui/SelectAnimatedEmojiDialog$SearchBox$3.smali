@@ -38,7 +38,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
     .locals 0
 
-    .line 4294
+    .line 4335
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$3;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/EditTextCaption;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -49,10 +49,10 @@
 .method private synthetic lambda$onFocusChanged$1()V
     .locals 1
 
-    .line 4312
+    .line 4353
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$3;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->access$8300(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;)Lorg/telegram/ui/Components/EditTextCaption;
+    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->access$8500(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;)Lorg/telegram/ui/Components/EditTextCaption;
 
     move-result-object v0
 
@@ -64,7 +64,7 @@
 .method private synthetic lambda$onTouchEvent$0()V
     .locals 0
 
-    .line 4300
+    .line 4341
     invoke-virtual {p0}, Landroid/widget/EditText;->requestFocus()Z
 
     return-void
@@ -75,7 +75,7 @@
 .method public invalidate()V
     .locals 1
 
-    .line 4320
+    .line 4361
     invoke-static {}, Lorg/telegram/ui/Components/Reactions/HwEmojis;->isHwEnabled()Z
 
     move-result v0
@@ -84,7 +84,7 @@
 
     return-void
 
-    .line 4323
+    .line 4364
     :cond_0
     invoke-super {p0}, Landroid/widget/EditText;->invalidate()V
 
@@ -96,14 +96,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 4310
+    .line 4351
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$3;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;
 
     iget-object v0, v0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-virtual {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->onInputFocus()V
 
-    .line 4311
+    .line 4352
     new-instance v0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$3$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$3$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$3;)V
@@ -112,7 +112,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 4315
+    .line 4356
     :cond_0
     invoke-super {p0, p1, p2, p3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onFocusChanged(ZILandroid/graphics/Rect;)V
 
@@ -122,7 +122,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 4298
+    .line 4339
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -141,7 +141,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4299
+    .line 4340
     new-instance p1, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$3$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$3$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$SearchBox$3;)V
@@ -154,7 +154,7 @@
 
     return p1
 
-    .line 4304
+    .line 4345
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onTouchEvent(Landroid/view/MotionEvent;)Z
 

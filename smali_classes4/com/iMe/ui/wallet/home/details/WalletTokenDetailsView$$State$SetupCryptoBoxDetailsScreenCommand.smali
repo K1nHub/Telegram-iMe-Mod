@@ -46,38 +46,38 @@
 .method constructor <init>(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxStatus;)V
     .locals 1
 
-    .line 1093
+    .line 1094
     const-class p1, Lmoxy/viewstate/strategy/AddToEndSingleStrategy;
 
     const-string/jumbo v0, "setupCryptoBoxDetailsScreen"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 
-    .line 1095
+    .line 1096
     iput-object p2, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State$SetupCryptoBoxDetailsScreenCommand;->explorerIconUrl:Ljava/lang/String;
 
-    .line 1096
+    .line 1097
     iput-object p3, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State$SetupCryptoBoxDetailsScreenCommand;->logoImageUrl:Ljava/lang/String;
 
-    .line 1097
+    .line 1098
     iput-wide p4, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State$SetupCryptoBoxDetailsScreenCommand;->chatId:J
 
-    .line 1098
+    .line 1099
     iput-object p6, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State$SetupCryptoBoxDetailsScreenCommand;->chatName:Ljava/lang/String;
 
-    .line 1099
+    .line 1100
     iput-object p7, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State$SetupCryptoBoxDetailsScreenCommand;->name:Ljava/lang/String;
 
-    .line 1100
+    .line 1101
     iput-object p8, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State$SetupCryptoBoxDetailsScreenCommand;->description:Ljava/lang/String;
 
-    .line 1101
+    .line 1102
     iput-object p9, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State$SetupCryptoBoxDetailsScreenCommand;->membersText:Ljava/lang/String;
 
-    .line 1102
+    .line 1103
     iput-object p10, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State$SetupCryptoBoxDetailsScreenCommand;->balanceText:Ljava/lang/String;
 
-    .line 1103
+    .line 1104
     iput-object p11, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State$SetupCryptoBoxDetailsScreenCommand;->status:Lcom/iMe/storage/domain/model/crypto/cryptobox/CryptoBoxStatus;
 
     return-void
@@ -88,7 +88,7 @@
 .method public apply(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;)V
     .locals 11
 
-    .line 1108
+    .line 1109
     iget-object v1, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State$SetupCryptoBoxDetailsScreenCommand;->explorerIconUrl:Ljava/lang/String;
 
     iget-object v2, p0, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State$SetupCryptoBoxDetailsScreenCommand;->logoImageUrl:Ljava/lang/String;
@@ -117,7 +117,7 @@
 .method public bridge synthetic apply(Lmoxy/MvpView;)V
     .locals 0
 
-    .line 1071
+    .line 1072
     check-cast p1, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView$$State$SetupCryptoBoxDetailsScreenCommand;->apply(Lcom/iMe/ui/wallet/home/details/WalletTokenDetailsView;)V

@@ -12,7 +12,7 @@ import kotlinx.coroutines.CoroutineScope;
 import kotlinx.coroutines.JobKt__JobKt;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Lifecycle.kt */
-@DebugMetadata(m143c = "androidx.lifecycle.LifecycleCoroutineScopeImpl$register$1", m142f = "Lifecycle.kt", m141l = {}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "androidx.lifecycle.LifecycleCoroutineScopeImpl$register$1", m144f = "Lifecycle.kt", m143l = {}, m142m = "invokeSuspend")
 /* loaded from: classes.dex */
 public final class LifecycleCoroutineScopeImpl$register$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;

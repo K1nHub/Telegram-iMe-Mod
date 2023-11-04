@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.measurement;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 /* compiled from: com.google.android.gms:play-services-measurement-impl@@19.0.2 */
 /* loaded from: classes.dex */
 public final class zzno implements zznn {
@@ -67,7 +67,7 @@ public final class zzno implements zznn {
         zzt = zzhrVar.zzc("measurement.upload.stale_data_deletion_interval", 86400000L);
         zzu = zzhrVar.zzc("measurement.sdk.attribution.cache.ttl", 604800000L);
         zzv = zzhrVar.zzc("measurement.upload.backoff_period", 43200000L);
-        zzw = zzhrVar.zzc("measurement.upload.initial_upload_delay_time", C0479C.DEFAULT_SEEK_FORWARD_INCREMENT_MS);
+        zzw = zzhrVar.zzc("measurement.upload.initial_upload_delay_time", C0485C.DEFAULT_SEEK_FORWARD_INCREMENT_MS);
         zzx = zzhrVar.zzc("measurement.upload.interval", 3600000L);
         zzy = zzhrVar.zzc("measurement.upload.max_bundle_size", 65536L);
         zzz = zzhrVar.zzc("measurement.upload.max_bundles", 100L);

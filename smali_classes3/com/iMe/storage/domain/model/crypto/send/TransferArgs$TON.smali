@@ -27,9 +27,11 @@
 
 .field private final sendMode:I
 
+.field private final seqno:I
+
 
 # direct methods
-.method public constructor <init>(DILjava/lang/String;Ljava/lang/String;IZ)V
+.method public constructor <init>(DILjava/lang/String;Ljava/lang/String;IIZ)V
     .locals 1
 
     const-string v0, "recipientAddress"
@@ -38,7 +40,7 @@
 
     const/4 v0, 0x0
 
-    .line 32
+    .line 33
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;-><init>(DILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     .line 26
@@ -57,26 +59,29 @@
     iput p6, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->sendMode:I
 
     .line 31
-    iput-boolean p7, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
+    iput p7, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->seqno:I
+
+    .line 32
+    iput-boolean p8, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
 
     return-void
 .end method
 
-.method public synthetic constructor <init>(DILjava/lang/String;Ljava/lang/String;IZILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .locals 9
+.method public synthetic constructor <init>(DILjava/lang/String;Ljava/lang/String;IIZILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .locals 10
 
-    and-int/lit8 v0, p8, 0x20
+    and-int/lit8 v0, p9, 0x40
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    move v8, v0
+    move v9, v0
 
     goto :goto_0
 
     :cond_0
-    move/from16 v8, p7
+    move/from16 v9, p8
 
     :goto_0
     move-object v1, p0
@@ -89,20 +94,22 @@
 
     move-object v6, p5
 
-    move v7, p6
+    move/from16 v7, p6
+
+    move/from16 v8, p7
 
     .line 25
-    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;-><init>(DILjava/lang/String;Ljava/lang/String;IZ)V
+    invoke-direct/range {v1 .. v9}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;-><init>(DILjava/lang/String;Ljava/lang/String;IIZ)V
 
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;DILjava/lang/String;Ljava/lang/String;IZILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
-    .locals 8
+.method public static synthetic copy$default(Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;DILjava/lang/String;Ljava/lang/String;IIZILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
+    .locals 9
 
     move-object v0, p0
 
-    and-int/lit8 v1, p8, 0x1
+    and-int/lit8 v1, p9, 0x1
 
     if-eqz v1, :cond_0
 
@@ -116,7 +123,7 @@
     move-wide v1, p1
 
     :goto_0
-    and-int/lit8 v3, p8, 0x2
+    and-int/lit8 v3, p9, 0x2
 
     if-eqz v3, :cond_1
 
@@ -130,7 +137,7 @@
     move v3, p3
 
     :goto_1
-    and-int/lit8 v4, p8, 0x4
+    and-int/lit8 v4, p9, 0x4
 
     if-eqz v4, :cond_2
 
@@ -142,7 +149,7 @@
     move-object v4, p4
 
     :goto_2
-    and-int/lit8 v5, p8, 0x8
+    and-int/lit8 v5, p9, 0x8
 
     if-eqz v5, :cond_3
 
@@ -154,7 +161,7 @@
     move-object v5, p5
 
     :goto_3
-    and-int/lit8 v6, p8, 0x10
+    and-int/lit8 v6, p9, 0x10
 
     if-eqz v6, :cond_4
 
@@ -166,18 +173,30 @@
     move v6, p6
 
     :goto_4
-    and-int/lit8 v7, p8, 0x20
+    and-int/lit8 v7, p9, 0x20
 
     if-eqz v7, :cond_5
 
-    iget-boolean v7, v0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
+    iget v7, v0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->seqno:I
 
     goto :goto_5
 
     :cond_5
-    move v7, p7
+    move/from16 v7, p7
 
     :goto_5
+    and-int/lit8 v8, p9, 0x40
+
+    if-eqz v8, :cond_6
+
+    iget-boolean v8, v0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
+
+    goto :goto_6
+
+    :cond_6
+    move/from16 v8, p8
+
+    :goto_6
     move-wide p1, v1
 
     move p3, v3
@@ -188,9 +207,11 @@
 
     move p6, v6
 
-    move p7, v7
+    move/from16 p7, v7
 
-    invoke-virtual/range {p0 .. p7}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->copy(DILjava/lang/String;Ljava/lang/String;IZ)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
+    move/from16 p8, v8
+
+    invoke-virtual/range {p0 .. p8}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->copy(DILjava/lang/String;Ljava/lang/String;IIZ)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
 
     move-result-object v0
 
@@ -243,7 +264,15 @@
     return v0
 .end method
 
-.method public final component6()Z
+.method public final component6()I
+    .locals 1
+
+    iget v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->seqno:I
+
+    return v0
+.end method
+
+.method public final component7()Z
     .locals 1
 
     iget-boolean v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
@@ -251,8 +280,8 @@
     return v0
 .end method
 
-.method public final copy(DILjava/lang/String;Ljava/lang/String;IZ)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
-    .locals 9
+.method public final copy(DILjava/lang/String;Ljava/lang/String;IIZ)Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;
+    .locals 10
 
     const-string v0, "recipientAddress"
 
@@ -270,11 +299,13 @@
 
     move-object v6, p5
 
-    move v7, p6
+    move/from16 v7, p6
 
     move/from16 v8, p7
 
-    invoke-direct/range {v1 .. v8}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;-><init>(DILjava/lang/String;Ljava/lang/String;IZ)V
+    move/from16 v9, p8
+
+    invoke-direct/range {v1 .. v9}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;-><init>(DILjava/lang/String;Ljava/lang/String;IIZ)V
 
     return-object v0
 .end method
@@ -365,15 +396,24 @@
     return v2
 
     :cond_6
-    iget-boolean v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
+    iget v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->seqno:I
 
-    iget-boolean p1, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
+    iget v3, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->seqno:I
 
-    if-eq v1, p1, :cond_7
+    if-eq v1, v3, :cond_7
 
     return v2
 
     :cond_7
+    iget-boolean v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
+
+    iget-boolean p1, p1, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
+
+    if-eq v1, p1, :cond_8
+
+    return v2
+
+    :cond_8
     return v0
 .end method
 
@@ -418,6 +458,15 @@
 
     .line 30
     iget v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->sendMode:I
+
+    return v0
+.end method
+
+.method public final getSeqno()I
+    .locals 1
+
+    .line 31
+    iget v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->seqno:I
 
     return v0
 .end method
@@ -477,6 +526,12 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
+    iget v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->seqno:I
+
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
     iget-boolean v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
 
     if-eqz v1, :cond_1
@@ -492,7 +547,7 @@
 .method public final isUnencrypted()Z
     .locals 1
 
-    .line 31
+    .line 32
     iget-boolean v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->isUnencrypted:Z
 
     return v0
@@ -546,6 +601,14 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->sendMode:I
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v1, ", seqno="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;->seqno:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 

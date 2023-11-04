@@ -18,7 +18,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Comparator<",
-            "Lorg/telegram/tgnet/TLRPC$StoryItem;",
+            "Lorg/telegram/tgnet/tl/TL_stories$StoryItem;",
             ">;"
         }
     .end annotation
@@ -40,7 +40,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroidx/collection/LongSparseArray<",
-            "Lorg/telegram/tgnet/TLRPC$PeerStories;",
+            "Lorg/telegram/tgnet/tl/TL_stories$PeerStories;",
             ">;"
         }
     .end annotation
@@ -84,7 +84,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$PeerStories;",
+            "Lorg/telegram/tgnet/tl/TL_stories$PeerStories;",
             ">;"
         }
     .end annotation
@@ -114,7 +114,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$PeerStories;",
+            "Lorg/telegram/tgnet/tl/TL_stories$PeerStories;",
             ">;"
         }
     .end annotation
@@ -160,7 +160,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Comparator<",
-            "Lorg/telegram/tgnet/TLRPC$PeerStories;",
+            "Lorg/telegram/tgnet/tl/TL_stories$PeerStories;",
             ">;"
         }
     .end annotation
@@ -180,7 +180,7 @@
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroidx/collection/LongSparseArray<",
-            "Lorg/telegram/tgnet/TLRPC$StoryItem;",
+            "Lorg/telegram/tgnet/tl/TL_stories$StoryItem;",
             ">;"
         }
     .end annotation
@@ -212,7 +212,7 @@
 
 .field private stateHidden:Ljava/lang/String;
 
-.field private stealthMode:Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
+.field private stealthMode:Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;
 
 .field private final storiesLists:[Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -278,10 +278,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$7jv8vbhtWugVBROjUohAIpEg5mI(Lorg/telegram/ui/Stories/StoriesController;Lcom/google/android/exoplayer2/util/Consumer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;JLorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;)V
+.method public static synthetic $r8$lambda$6kMUx9xjSwWQI90QAM-uKSYoiB8(Lorg/telegram/ui/Stories/StoriesController;JZLorg/telegram/tgnet/tl/TL_stories$PeerStories;JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Stories/StoriesController;->lambda$canSendStoryFor$30(Lcom/google/android/exoplayer2/util/Consumer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;JLorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;)V
+    invoke-direct/range {p0 .. p8}, Lorg/telegram/ui/Stories/StoriesController;->lambda$loadSkippedStories$20(JZLorg/telegram/tgnet/tl/TL_stories$PeerStories;JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
@@ -294,18 +294,34 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$J8pBDBIVYiE3uQNoYwzy2K5EpO0(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public static synthetic $r8$lambda$FYkp4Xp3IbrpSLEYMtrbNp9RTFA(Lorg/telegram/ui/Stories/StoriesController;Lcom/google/android/exoplayer2/util/Consumer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;JLorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->lambda$setStoryReaction$21(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Stories/StoriesController;->lambda$canSendStoryFor$30(Lcom/google/android/exoplayer2/util/Consumer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;JLorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$JeLhF_xm9oCK69nzT9gTkNSay9E(Lorg/telegram/ui/Stories/StoriesController;JLorg/telegram/tgnet/TLRPC$TL_updateStory;Lorg/telegram/tgnet/TLRPC$User;)V
+.method public static synthetic $r8$lambda$FgKbN6Y3jb2f8aaMDk7Avfzit8Y(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Stories/StoriesController;->lambda$processUpdate$10(JLorg/telegram/tgnet/TLRPC$TL_updateStory;Lorg/telegram/tgnet/TLRPC$User;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->lambda$loadStories$5(Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$FhOe7ICP7hckUM2oQRIGghgzx0Q(Lorg/telegram/ui/Stories/StoriesController;JLorg/telegram/tgnet/tl/TL_stories$TL_updateStory;Lorg/telegram/tgnet/TLRPC$User;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Stories/StoriesController;->lambda$processUpdate$10(JLorg/telegram/tgnet/tl/TL_stories$TL_updateStory;Lorg/telegram/tgnet/TLRPC$User;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$J8pBDBIVYiE3uQNoYwzy2K5EpO0(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->lambda$setStoryReaction$21(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method
@@ -334,20 +350,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$LWpvBlTVqLrZ4tw0FeKym6FPDwU(Lorg/telegram/tgnet/TLRPC$StoryItem;)I
+.method public static synthetic $r8$lambda$MWDZ_os6gPGJVRsEl3hDUkBI0Mc(Lorg/telegram/ui/Stories/StoriesController;JZLorg/telegram/tgnet/tl/TL_stories$PeerStories;JLorg/telegram/tgnet/TLObject;)V
     .locals 0
 
-    invoke-static {p0}, Lorg/telegram/ui/Stories/StoriesController;->lambda$static$0(Lorg/telegram/tgnet/TLRPC$StoryItem;)I
-
-    move-result p0
-
-    return p0
-.end method
-
-.method public static synthetic $r8$lambda$LgczgOoSCs1eVH0Jrk8dPEEstZE(Lorg/telegram/ui/Stories/StoriesController;JZLorg/telegram/tgnet/TLRPC$PeerStories;JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p8}, Lorg/telegram/ui/Stories/StoriesController;->lambda$loadSkippedStories$20(JZLorg/telegram/tgnet/TLRPC$PeerStories;JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-direct/range {p0 .. p7}, Lorg/telegram/ui/Stories/StoriesController;->lambda$loadSkippedStories$19(JZLorg/telegram/tgnet/tl/TL_stories$PeerStories;JLorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method
@@ -364,14 +370,6 @@
     .locals 0
 
     invoke-direct/range {p0 .. p6}, Lorg/telegram/ui/Stories/StoriesController;->lambda$canSendStoryFor$31(Lorg/telegram/tgnet/TLRPC$TL_error;ZJLcom/google/android/exoplayer2/util/Consumer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$PaENQwx6Ap5TFojWoQL2xSOCCaE(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->lambda$loadStories$5(Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;)V
 
     return-void
 .end method
@@ -440,28 +438,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ctg-C49nakNmN5Yw5t9WSVX5-GQ(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/TLRPC$PeerStories;Lorg/telegram/tgnet/TLRPC$PeerStories;)I
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->lambda$new$22(Lorg/telegram/tgnet/TLRPC$PeerStories;Lorg/telegram/tgnet/TLRPC$PeerStories;)I
-
-    move-result p0
-
-    return p0
-.end method
-
 .method public static synthetic $r8$lambda$eTLS-9F_FZ7g-9LWxuKZx4HSYqk(Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-static {p0}, Lorg/telegram/ui/Stories/StoriesController;->lambda$updateBlockedUsers$25(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$egExTxEg9pgK84EcnKRebH3XCTc(Lorg/telegram/ui/Stories/StoriesController;JZLorg/telegram/tgnet/TLRPC$PeerStories;JLorg/telegram/tgnet/TLObject;)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p7}, Lorg/telegram/ui/Stories/StoriesController;->lambda$loadSkippedStories$19(JZLorg/telegram/tgnet/TLRPC$PeerStories;JLorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method
@@ -514,26 +494,46 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$rsd_Z8Yp4G2Fpjlr_ogZ209sNw0(Lorg/telegram/ui/Stories/StoriesController;ZLorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;Lorg/telegram/tgnet/TLObject;Z)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Stories/StoriesController;->lambda$loadFromServer$7(ZLorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;Lorg/telegram/tgnet/TLObject;Z)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$s35_IzLT27uRalx9jLq-K0hqTAg(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/tl/TL_stories$PeerStories;Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)I
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->lambda$new$22(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static synthetic $r8$lambda$tfEL0_B7ddAiuqUQCJ4CxO7-lfE(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)I
+    .locals 0
+
+    invoke-static {p0}, Lorg/telegram/ui/Stories/StoriesController;->lambda$static$0(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static synthetic $r8$lambda$ti87kyj4VjBiVhskZmA5cZVI068(Lorg/telegram/ui/Stories/StoriesController;ZLorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    .locals 0
+
+    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Stories/StoriesController;->lambda$loadFromServer$8(ZLorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$vtE3bN0RQKzAMAEqHE6j9FuU_1A(Lorg/telegram/ui/Stories/StoriesController;JLorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->lambda$loadAllStoriesForDialog$11(JLorg/telegram/tgnet/TLObject;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$wY-GOquqDgKBfOJkOFgwbPtSqiM(Lorg/telegram/ui/Stories/StoriesController;ZLorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Stories/StoriesController;->lambda$loadFromServer$8(ZLorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$xYvpF9J32JZlzs27WnbZ3Wkz-bI(Lorg/telegram/ui/Stories/StoriesController;ZLorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;Lorg/telegram/tgnet/TLObject;Z)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Stories/StoriesController;->lambda$loadFromServer$7(ZLorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;Lorg/telegram/tgnet/TLObject;Z)V
 
     return-void
 .end method
@@ -549,7 +549,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 174
+    .line 175
     sget-object v0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda21;->INSTANCE:Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda21;
 
     invoke-static {v0}, Lj$/util/Comparator$-CC;->comparingInt(Lj$/util/function/ToIntFunction;)Ljava/util/Comparator;
@@ -564,66 +564,66 @@
 .method public constructor <init>(I)V
     .locals 5
 
-    .line 198
+    .line 199
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 159
-    new-instance v0, Landroidx/collection/LongSparseArray;
-
-    invoke-direct {v0}, Landroidx/collection/LongSparseArray;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingStoriesByDialogId:Landroidx/collection/LongSparseArray;
 
     .line 160
     new-instance v0, Landroidx/collection/LongSparseArray;
 
     invoke-direct {v0}, Landroidx/collection/LongSparseArray;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingAndEditingStories:Landroidx/collection/LongSparseArray;
+    iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingStoriesByDialogId:Landroidx/collection/LongSparseArray;
 
     .line 161
     new-instance v0, Landroidx/collection/LongSparseArray;
 
     invoke-direct {v0}, Landroidx/collection/LongSparseArray;-><init>()V
 
-    iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->editingStories:Landroidx/collection/LongSparseArray;
+    iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingAndEditingStories:Landroidx/collection/LongSparseArray;
 
     .line 162
+    new-instance v0, Landroidx/collection/LongSparseArray;
+
+    invoke-direct {v0}, Landroidx/collection/LongSparseArray;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->editingStories:Landroidx/collection/LongSparseArray;
+
+    .line 163
     new-instance v0, Lorg/telegram/messenger/support/LongSparseIntArray;
 
     invoke-direct {v0}, Lorg/telegram/messenger/support/LongSparseIntArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogIdToMaxReadId:Lorg/telegram/messenger/support/LongSparseIntArray;
 
-    .line 166
+    .line 167
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
-    .line 167
+    .line 168
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
-    .line 168
+    .line 169
     new-instance v0, Landroidx/collection/LongSparseArray;
 
     invoke-direct {v0}, Landroidx/collection/LongSparseArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
-    .line 169
+    .line 170
     new-instance v0, Lorg/telegram/messenger/support/LongSparseIntArray;
 
     invoke-direct {v0}, Lorg/telegram/messenger/support/LongSparseIntArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingDialogsStories:Lorg/telegram/messenger/support/LongSparseIntArray;
 
-    .line 172
+    .line 173
     new-instance v0, Landroidx/collection/LongSparseArray;
 
     invoke-direct {v0}, Landroidx/collection/LongSparseArray;-><init>()V
@@ -632,10 +632,10 @@
 
     const-string v0, ""
 
-    .line 181
+    .line 182
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->state:Ljava/lang/String;
 
-    .line 192
+    .line 193
     new-instance v1, Landroid/util/SparseArray;
 
     invoke-direct {v1}, Landroid/util/SparseArray;-><init>()V
@@ -644,27 +644,27 @@
 
     const/4 v1, 0x1
 
-    .line 194
+    .line 195
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMoreHidden:Z
 
-    .line 195
+    .line 196
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController;->firstLoad:Z
 
-    .line 994
+    .line 1055
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesLoading:Ljava/util/HashSet;
 
-    .line 1332
+    .line 1428
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingAllStories:Ljava/util/HashSet;
 
-    .line 1398
+    .line 1494
     new-instance v1, Landroidx/collection/LongSparseArray;
 
     invoke-direct {v1}, Landroidx/collection/LongSparseArray;-><init>()V
@@ -675,24 +675,24 @@
 
     new-array v1, v1, [Ljava/util/HashMap;
 
-    .line 2149
+    .line 2261
     iput-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesLists:[Ljava/util/HashMap;
 
-    .line 2828
+    .line 2961
     new-instance v1, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda20;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/Stories/StoriesController;)V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->peerStoriesComparator:Ljava/util/Comparator;
 
-    .line 2890
+    .line 3023
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
-    .line 2891
+    .line 3024
     new-instance v1, Landroidx/collection/LongSparseArray;
 
     invoke-direct {v1}, Landroidx/collection/LongSparseArray;-><init>()V
@@ -701,51 +701,51 @@
 
     const/4 v1, 0x0
 
-    .line 2894
+    .line 3027
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistFull:Z
 
-    .line 2895
+    .line 3028
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistLoadingReset:Z
 
-    .line 2896
+    .line 3029
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistLoading:Z
 
     const-wide/16 v2, 0x0
 
-    .line 2898
+    .line 3031
     iput-wide v2, p0, Lorg/telegram/ui/Stories/StoriesController;->lastBlocklistRequested:J
 
-    .line 3244
+    .line 3377
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->sendAs:Ljava/util/ArrayList;
 
-    .line 3245
+    .line 3378
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_inputPeerSelf;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_inputPeerSelf;-><init>()V
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3246
+    .line 3379
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingSendAs:Z
 
-    .line 3247
+    .line 3380
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController;->loadedSendAs:Z
 
-    .line 199
+    .line 200
     iput p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
-    .line 200
+    .line 201
     new-instance v2, Lorg/telegram/ui/Stories/StoriesStorage;
 
     invoke-direct {v2, p1}, Lorg/telegram/ui/Stories/StoriesStorage;-><init>(I)V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
-    .line 201
+    .line 202
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -756,7 +756,7 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
-    .line 203
+    .line 204
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isStoriesEnabled()Ljava/lang/String;
 
     move-result-object v3
@@ -771,7 +771,7 @@
 
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesController;->isEnabled:Z
 
-    .line 204
+    .line 205
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isStoriesBarEnabled()Ljava/lang/String;
@@ -788,7 +788,7 @@
 
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesController;->isBarEnabled:Z
 
-    .line 205
+    .line 206
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isStoriesContactsAvatarsEnabled()Ljava/lang/String;
@@ -805,7 +805,7 @@
 
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesController;->isContactsAvatarsEnabled:Z
 
-    .line 206
+    .line 207
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isStoriesChannelsAvatarsEnabled()Ljava/lang/String;
@@ -822,7 +822,7 @@
 
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesController;->isChannelsAvatarsEnabled:Z
 
-    .line 207
+    .line 208
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isStoriesProfileAvatarEnabled()Ljava/lang/String;
@@ -839,7 +839,7 @@
 
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesController;->isProfileAvatarEnabled:Z
 
-    .line 209
+    .line 210
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     const-string v3, "last_stories_state"
@@ -850,7 +850,7 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->state:Ljava/lang/String;
 
-    .line 210
+    .line 211
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     const-string v3, "last_stories_state_hidden"
@@ -861,7 +861,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->stateHidden:Ljava/lang/String;
 
-    .line 211
+    .line 212
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     const-string v2, "total_stores_hidden"
@@ -872,7 +872,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Stories/StoriesController;->totalStoriesCountHidden:I
 
-    .line 212
+    .line 213
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     const-string v2, "total_stores"
@@ -883,7 +883,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Stories/StoriesController;->totalStoriesCount:I
 
-    .line 213
+    .line 214
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     const-string v2, "read_loaded"
@@ -894,7 +894,7 @@
 
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesReadLoaded:Z
 
-    .line 214
+    .line 215
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     const-string v1, "stories_stealth_mode"
@@ -905,13 +905,13 @@
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->readStealthMode(Ljava/lang/String;)Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->readStealthMode(Ljava/lang/String;)Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;
 
     move-result-object v0
 
-    iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->stealthMode:Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
+    iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->stealthMode:Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;
 
-    .line 215
+    .line 216
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
     new-instance v1, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda0;
@@ -920,14 +920,14 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/StoriesStorage;->getMaxReadIds(Lcom/google/android/exoplayer2/util/Consumer;)V
 
-    .line 217
+    .line 218
     new-instance v0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Stories/StoriesController;I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->sortStoriesRunnable:Ljava/lang/Runnable;
 
-    .line 223
+    .line 224
     new-instance v0, Lorg/telegram/ui/Stories/recorder/DraftsController;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Stories/recorder/DraftsController;-><init>(I)V
@@ -940,7 +940,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Stories/StoriesController;)I
     .locals 0
 
-    .line 84
+    .line 85
     iget p0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     return p0
@@ -949,7 +949,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Stories/StoriesController;)Landroidx/collection/LongSparseArray;
     .locals 0
 
-    .line 84
+    .line 85
     iget-object p0, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingStoriesByDialogId:Landroidx/collection/LongSparseArray;
 
     return-object p0
@@ -958,7 +958,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Stories/StoriesController;)Landroidx/collection/LongSparseArray;
     .locals 0
 
-    .line 84
+    .line 85
     iget-object p0, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingAndEditingStories:Landroidx/collection/LongSparseArray;
 
     return-object p0
@@ -967,7 +967,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Stories/StoriesController;)Landroidx/collection/LongSparseArray;
     .locals 0
 
-    .line 84
+    .line 85
     iget-object p0, p0, Lorg/telegram/ui/Stories/StoriesController;->editingStories:Landroidx/collection/LongSparseArray;
 
     return-object p0
@@ -976,7 +976,7 @@
 .method static synthetic access$500(Ljava/util/List;)Ljava/lang/String;
     .locals 0
 
-    .line 84
+    .line 85
     invoke-static {p0}, Lorg/telegram/ui/Stories/StoriesController;->storyItemIds(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object p0
@@ -987,7 +987,7 @@
 .method static synthetic access$600(Ljava/util/List;)Ljava/lang/String;
     .locals 0
 
-    .line 84
+    .line 85
     invoke-static {p0}, Lorg/telegram/ui/Stories/StoriesController;->storyItemMessageIds(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object p0
@@ -1008,7 +1008,7 @@
         }
     .end annotation
 
-    .line 703
+    .line 704
     invoke-virtual {p4, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object v0
@@ -1017,32 +1017,32 @@
 
     if-nez v0, :cond_0
 
-    .line 705
+    .line 706
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 706
+    .line 707
     invoke-virtual {p4, p1, p2, v0}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 708
+    .line 709
     :cond_0
     invoke-virtual {v0, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-void
 .end method
 
-.method private addUserToHiddenList(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+.method private addUserToHiddenList(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
     .locals 6
 
-    .line 590
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    .line 591
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v0}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v0
 
-    .line 591
+    .line 592
     iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -1064,7 +1064,7 @@
 
     move v3, v2
 
-    .line 594
+    .line 595
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
@@ -1074,16 +1074,16 @@
 
     if-ge v2, v4, :cond_2
 
-    .line 595
+    .line 596
     iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v4, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v4, v4, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v4}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -1103,12 +1103,12 @@
     :cond_2
     if-nez v3, :cond_3
 
-    .line 600
+    .line 601
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 602
+    .line 603
     :cond_3
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -1121,22 +1121,22 @@
     return-void
 .end method
 
-.method private applyNewStories(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+.method private applyNewStories(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
     .locals 4
 
-    .line 777
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    .line 778
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v0}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v0
 
-    .line 778
+    .line 779
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v2, v0, v1, p1}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 779
+    .line 780
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -1149,7 +1149,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 780
+    .line 781
     iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1164,20 +1164,20 @@
 
     move-result-object v2
 
-    .line 781
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->applyToList(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    .line 782
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->applyToList(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
     if-eqz v2, :cond_0
 
-    .line 782
+    .line 783
     iget-boolean v2, v2, Lorg/telegram/tgnet/TLRPC$User;->stories_hidden:Z
 
     if-nez v2, :cond_0
 
-    .line 783
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->preloadUserStories(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    .line 784
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->preloadUserStories(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
-    .line 786
+    .line 787
     :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1195,15 +1195,15 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 787
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 788
+    iget-object p1, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {p0, v0, v1, p1}, Lorg/telegram/ui/Stories/StoriesController;->updateStoriesInLists(JLjava/util/List;)V
 
     return-void
 .end method
 
-.method public static applyStoryUpdate(Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/tgnet/TLRPC$StoryItem;)Lorg/telegram/tgnet/TLRPC$StoryItem;
+.method public static applyStoryUpdate(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
     .locals 1
 
     if-nez p1, :cond_0
@@ -1215,62 +1215,62 @@
 
     return-object p1
 
-    .line 797
+    .line 798
     :cond_1
-    iget-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->min:Z
+    iget-boolean v0, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->min:Z
 
     if-eqz v0, :cond_5
 
-    .line 798
-    iget-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->pinned:Z
-
-    iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$StoryItem;->pinned:Z
-
     .line 799
-    iget-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->isPublic:Z
+    iget-boolean v0, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->pinned:Z
 
-    iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$StoryItem;->isPublic:Z
+    iput-boolean v0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->pinned:Z
 
     .line 800
-    iget-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->close_friends:Z
+    iget-boolean v0, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->isPublic:Z
 
-    iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$StoryItem;->close_friends:Z
+    iput-boolean v0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->isPublic:Z
 
     .line 801
-    iget v0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->date:I
+    iget-boolean v0, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->close_friends:Z
+
+    iput-boolean v0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->close_friends:Z
+
+    .line 802
+    iget v0, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->date:I
 
     if-eqz v0, :cond_2
 
-    .line 802
-    iput v0, p0, Lorg/telegram/tgnet/TLRPC$StoryItem;->date:I
+    .line 803
+    iput v0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->date:I
 
-    .line 804
+    .line 805
     :cond_2
-    iget v0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->expire_date:I
+    iget v0, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->expire_date:I
 
     if-eqz v0, :cond_3
 
-    .line 805
-    iput v0, p0, Lorg/telegram/tgnet/TLRPC$StoryItem;->expire_date:I
-
-    .line 807
-    :cond_3
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->caption:Ljava/lang/String;
-
-    iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$StoryItem;->caption:Ljava/lang/String;
+    .line 806
+    iput v0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->expire_date:I
 
     .line 808
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->entities:Ljava/util/ArrayList;
+    :cond_3
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->caption:Ljava/lang/String;
 
-    iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$StoryItem;->entities:Ljava/util/ArrayList;
+    iput-object v0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->caption:Ljava/lang/String;
 
     .line 809
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->entities:Ljava/util/ArrayList;
+
+    iput-object v0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->entities:Ljava/util/ArrayList;
+
+    .line 810
+    iget-object p1, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     if-eqz p1, :cond_4
 
-    .line 810
-    iput-object p1, p0, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
+    .line 811
+    iput-object p1, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     :cond_4
     return-object p0
@@ -1279,11 +1279,11 @@
     return-object p1
 .end method
 
-.method private applyToList(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+.method private applyToList(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
     .locals 11
 
-    .line 947
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    .line 1008
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v0}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -1297,7 +1297,7 @@
 
     if-lez v2, :cond_1
 
-    .line 951
+    .line 1012
     iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1316,7 +1316,7 @@
 
     const-string p1, "StoriesController can\'t apply story user == null"
 
-    .line 953
+    .line 1014
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     return-void
@@ -1330,7 +1330,7 @@
 
     goto :goto_0
 
-    .line 957
+    .line 1018
     :cond_1
     iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -1352,7 +1352,7 @@
 
     const-string p1, "StoriesController can\'t apply story chat == null"
 
-    .line 959
+    .line 1020
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     return-void
@@ -1363,7 +1363,7 @@
 
     move v5, v4
 
-    .line 964
+    .line 1025
     :goto_1
     iget-object v6, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
@@ -1375,16 +1375,16 @@
 
     if-ge v5, v6, :cond_4
 
-    .line 965
+    .line 1026
     iget-object v6, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
-    check-cast v6, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v6, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v6, v6, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v6}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -1394,7 +1394,7 @@
 
     if-nez v6, :cond_3
 
-    .line 966
+    .line 1027
     iget-object v6, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -1414,7 +1414,7 @@
     :goto_2
     move v6, v4
 
-    .line 971
+    .line 1032
     :goto_3
     iget-object v8, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
@@ -1424,16 +1424,16 @@
 
     if-ge v6, v8, :cond_6
 
-    .line 972
+    .line 1033
     iget-object v8, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
-    check-cast v8, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v8, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v8, v8, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v8}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -1443,7 +1443,7 @@
 
     if-nez v8, :cond_5
 
-    .line 973
+    .line 1034
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -1461,7 +1461,7 @@
     :goto_4
     if-eqz v3, :cond_7
 
-    .line 978
+    .line 1039
     iget-boolean v3, v3, Lorg/telegram/tgnet/TLRPC$User;->stories_hidden:Z
 
     if-nez v3, :cond_9
@@ -1478,14 +1478,14 @@
     :cond_8
     move v7, v4
 
-    .line 979
+    .line 1040
     :cond_9
     :goto_5
     sget-boolean v2, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v2, :cond_a
 
-    .line 980
+    .line 1041
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1511,14 +1511,14 @@
     :cond_a
     if-eqz v7, :cond_b
 
-    .line 983
+    .line 1044
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v4, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     goto :goto_6
 
-    .line 985
+    .line 1046
     :cond_b
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
@@ -1527,10 +1527,10 @@
     :goto_6
     if-nez v5, :cond_c
 
-    .line 989
+    .line 1050
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Stories/StoriesController;->loadAllStoriesForDialog(J)V
 
-    .line 991
+    .line 1052
     :cond_c
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -1549,7 +1549,7 @@
         value = {
             "(",
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$PeerStories;",
+            "Lorg/telegram/tgnet/tl/TL_stories$PeerStories;",
             ">;)V"
         }
     .end annotation
@@ -1560,7 +1560,7 @@
 
     move v2, v1
 
-    .line 1521
+    .line 1617
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -1568,15 +1568,15 @@
 
     if-ge v1, v3, :cond_3
 
-    .line 1522
+    .line 1618
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v3, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    .line 1523
-    iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    .line 1619
+    iget-object v4, v3, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v4}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -1584,9 +1584,9 @@
 
     move v6, v0
 
-    .line 1524
+    .line 1620
     :goto_1
-    iget-object v7, v3, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v7, v3, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v7}, Ljava/util/ArrayList;->size()I
 
@@ -1596,25 +1596,25 @@
 
     if-ge v6, v7, :cond_1
 
-    .line 1525
+    .line 1621
     iget v7, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
-    iget-object v9, v3, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v9, v3, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v6}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
 
-    check-cast v9, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v9, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    invoke-static {v7, v9}, Lorg/telegram/ui/Stories/StoriesUtilities;->isExpired(ILorg/telegram/tgnet/TLRPC$StoryItem;)Z
+    invoke-static {v7, v9}, Lorg/telegram/ui/Stories/StoriesUtilities;->isExpired(ILorg/telegram/tgnet/tl/TL_stories$StoryItem;)Z
 
     move-result v7
 
     if-eqz v7, :cond_0
 
-    .line 1526
-    iget-object v7, v3, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1622
+    iget-object v7, v3, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
@@ -1625,9 +1625,9 @@
 
     goto :goto_1
 
-    .line 1530
+    .line 1626
     :cond_1
-    iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v6, v3, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -1641,12 +1641,12 @@
 
     if-nez v6, :cond_2
 
-    .line 1531
+    .line 1627
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v2, v4, v5}, Landroidx/collection/LongSparseArray;->remove(J)V
 
-    .line 1532
+    .line 1628
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     move v2, v8
@@ -1659,7 +1659,7 @@
     :cond_3
     if-eqz v2, :cond_4
 
-    .line 1537
+    .line 1633
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -1676,25 +1676,25 @@
     return-void
 .end method
 
-.method private findStory(JI)Lorg/telegram/tgnet/TLRPC$StoryItem;
+.method private findStory(JI)Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
     .locals 1
 
-    .line 1619
+    .line 1715
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     if-eqz p1, :cond_1
 
     const/4 p2, 0x0
 
-    .line 1621
+    .line 1717
     :goto_0
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -1702,27 +1702,27 @@
 
     if-ge p2, v0, :cond_1
 
-    .line 1622
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1718
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v0, v0, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v0, v0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     if-ne v0, p3, :cond_0
 
-    .line 1623
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1719
+    iget-object p1, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     return-object p1
 
@@ -1743,7 +1743,7 @@
         value = {
             "(",
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$PeerStories;",
+            "Lorg/telegram/tgnet/tl/TL_stories$PeerStories;",
             ">;)V"
         }
     .end annotation
@@ -1752,7 +1752,7 @@
 
     move v1, v0
 
-    .line 283
+    .line 284
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -1760,15 +1760,15 @@
 
     if-ge v1, v2, :cond_4
 
-    .line 284
+    .line 285
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    .line 285
-    iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    .line 286
+    iget-object v3, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v3}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -1782,7 +1782,7 @@
 
     if-lez v5, :cond_0
 
-    .line 288
+    .line 289
     iget v5, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1799,14 +1799,14 @@
 
     if-eqz v5, :cond_0
 
-    .line 289
+    .line 290
     invoke-direct {p0, v5}, Lorg/telegram/ui/Stories/StoriesController;->isContactOrService(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v5
 
     if-nez v5, :cond_0
 
-    .line 290
+    .line 291
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     add-int/lit8 v1, v1, -0x1
@@ -1821,9 +1821,9 @@
     :goto_1
     move v7, v0
 
-    .line 295
+    .line 296
     :goto_2
-    iget-object v8, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v8, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
@@ -1831,19 +1831,19 @@
 
     if-ge v7, v8, :cond_2
 
-    .line 296
-    iget-object v8, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 297
+    iget-object v8, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
-    instance-of v8, v8, Lorg/telegram/tgnet/TLRPC$TL_storyItemDeleted;
+    instance-of v8, v8, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemDeleted;
 
     if-eqz v8, :cond_1
 
-    .line 297
-    iget-object v8, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 298
+    iget-object v8, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
@@ -1857,8 +1857,8 @@
     :cond_2
     if-nez v5, :cond_3
 
-    .line 301
-    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 302
+    iget-object v2, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -1872,7 +1872,7 @@
 
     if-nez v2, :cond_3
 
-    .line 302
+    .line 303
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     add-int/lit8 v1, v1, -0x1
@@ -1889,7 +1889,7 @@
 .method private getSelfUserId()J
     .locals 2
 
-    .line 1170
+    .line 1250
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -1906,21 +1906,21 @@
 .method private getStoriesList(JIZ)Lorg/telegram/ui/Stories/StoriesController$StoriesList;
     .locals 9
 
-    .line 2158
+    .line 2270
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesLists:[Ljava/util/HashMap;
 
     aget-object v1, v0, p3
 
     if-nez v1, :cond_0
 
-    .line 2159
+    .line 2271
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     aput-object v1, v0, p3
 
-    .line 2161
+    .line 2273
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesLists:[Ljava/util/HashMap;
 
@@ -1940,7 +1940,7 @@
 
     if-eqz p4, :cond_1
 
-    .line 2163
+    .line 2275
     iget-object p4, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesLists:[Ljava/util/HashMap;
 
     aget-object p4, p4, p3
@@ -1980,7 +1980,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 943
+    .line 1004
     iget-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$User;->contact:Z
 
     if-nez v0, :cond_0
@@ -2014,7 +2014,7 @@
 .method private isPremium(J)Z
     .locals 1
 
-    .line 2865
+    .line 2998
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2035,7 +2035,7 @@
 
     return p1
 
-    .line 2869
+    .line 3002
     :cond_0
     iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$User;->premium:Z
 
@@ -2045,7 +2045,7 @@
 .method private synthetic lambda$canSendStoryFor$29(J)V
     .locals 3
 
-    .line 3123
+    .line 3256
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2062,17 +2062,17 @@
 
     move-result-object v0
 
-    .line 3124
+    .line 3257
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
     const-string v2, "chat_id"
 
-    .line 3125
+    .line 3258
     invoke-virtual {v1, v2, p1, p2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 3126
+    .line 3259
     iget-boolean p1, v0, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
     const-string p2, "is_megagroup"
@@ -2083,47 +2083,47 @@
 
     const/4 p2, 0x1
 
-    .line 3127
+    .line 3260
     invoke-virtual {v1, p1, p2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     const-string p1, "only_boosts"
 
-    .line 3128
+    .line 3261
     invoke-virtual {v1, p1, p2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 3129
+    .line 3262
     new-instance p1, Lorg/telegram/ui/StatisticActivity;
 
     invoke-direct {p1, v1}, Lorg/telegram/ui/StatisticActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 3130
+    .line 3263
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 3132
+    .line 3265
     invoke-static {}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVisible()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 3133
+    .line 3266
     new-instance v1, Lorg/telegram/ui/ActionBar/BaseFragment$BottomSheetParams;
 
     invoke-direct {v1}, Lorg/telegram/ui/ActionBar/BaseFragment$BottomSheetParams;-><init>()V
 
-    .line 3134
+    .line 3267
     iput-boolean p2, v1, Lorg/telegram/ui/ActionBar/BaseFragment$BottomSheetParams;->transitionFromLeft:Z
 
-    .line 3135
+    .line 3268
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->showAsSheet(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/BaseFragment$BottomSheetParams;)[Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     goto :goto_0
 
-    .line 3137
+    .line 3270
     :cond_0
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
@@ -2132,25 +2132,25 @@
     return-void
 .end method
 
-.method private synthetic lambda$canSendStoryFor$30(Lcom/google/android/exoplayer2/util/Consumer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;JLorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;)V
+.method private synthetic lambda$canSendStoryFor$30(Lcom/google/android/exoplayer2/util/Consumer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;JLorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
     .locals 7
 
     if-nez p5, :cond_0
 
-    .line 3114
+    .line 3247
     sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-interface {p1, p2}, Lcom/google/android/exoplayer2/util/Consumer;->accept(Ljava/lang/Object;)V
 
     return-void
 
-    .line 3117
+    .line 3250
     :cond_0
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v1
 
-    .line 3118
+    .line 3251
     new-instance v6, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -2169,31 +2169,31 @@
 
     const/4 p2, 0x0
 
-    .line 3119
-    invoke-virtual {v6, p5, p2}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->setBoostsStats(Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;Z)V
+    .line 3252
+    invoke-virtual {v6, p5, p2}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->setBoostsStats(Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;Z)V
 
-    .line 3120
+    .line 3253
     invoke-virtual {v6, p3, p4}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->setDialogId(J)V
 
-    .line 3121
+    .line 3254
     invoke-virtual {p0, p3, p4}, Lorg/telegram/ui/Stories/StoriesController;->canPostStories(J)Z
 
     move-result p2
 
     if-eqz p2, :cond_1
 
-    .line 3122
+    .line 3255
     new-instance p2, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda8;
 
     invoke-direct {p2, p0, p3, p4}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Stories/StoriesController;J)V
 
     invoke-virtual {v6, p2}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->showStatisticButtonInLink(Ljava/lang/Runnable;)V
 
-    .line 3142
+    .line 3275
     :cond_1
     invoke-virtual {v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
-    .line 3143
+    .line 3276
     sget-object p2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     invoke-interface {p1, p2}, Lcom/google/android/exoplayer2/util/Consumer;->accept(Ljava/lang/Object;)V
@@ -2206,7 +2206,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 3109
+    .line 3242
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     const-string v1, "BOOSTS_REQUIRED"
@@ -2219,14 +2219,14 @@
 
     if-eqz p2, :cond_0
 
-    .line 3111
+    .line 3244
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
 
-    .line 3112
+    .line 3245
     invoke-virtual {p1}, Lorg/telegram/messenger/MessagesController;->getBoostsController()Lorg/telegram/messenger/ChannelBoostsController;
 
     move-result-object p1
@@ -2249,7 +2249,7 @@
 
     goto :goto_0
 
-    .line 3146
+    .line 3279
     :cond_0
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
@@ -2257,7 +2257,7 @@
 
     goto :goto_0
 
-    .line 3149
+    .line 3282
     :cond_1
     invoke-static {}, Lorg/telegram/ui/Components/BulletinFactory;->global()Lorg/telegram/ui/Components/BulletinFactory;
 
@@ -2265,12 +2265,12 @@
 
     if-eqz p2, :cond_2
 
-    .line 3151
+    .line 3284
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/BulletinFactory;->createErrorBulletin(Ljava/lang/CharSequence;)Lorg/telegram/ui/Components/Bulletin;
 
-    .line 3153
+    .line 3286
     :cond_2
     sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
@@ -2278,7 +2278,7 @@
 
     goto :goto_0
 
-    .line 3156
+    .line 3289
     :cond_3
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
@@ -2291,7 +2291,7 @@
 .method private synthetic lambda$canSendStoryFor$32(ZJLcom/google/android/exoplayer2/util/Consumer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 8
 
-    .line 3107
+    .line 3240
     new-instance p6, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda16;
 
     move-object v0, p6
@@ -2320,20 +2320,20 @@
 
     const/4 v0, 0x1
 
-    .line 3093
+    .line 3226
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storyLimitFetched:Z
 
-    .line 3094
+    .line 3227
     instance-of p1, p1, Lorg/telegram/tgnet/TLRPC$TL_boolTrue;
 
     if-eqz p1, :cond_0
 
     const/4 p1, 0x0
 
-    .line 3095
+    .line 3228
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->storyLimitCached:Lorg/telegram/ui/Stories/StoriesController$StoryLimit;
 
-    .line 3096
+    .line 3229
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2350,7 +2350,7 @@
 
     goto :goto_0
 
-    .line 3098
+    .line 3231
     :cond_0
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Stories/StoriesController;->checkStoryError(Lorg/telegram/tgnet/TLRPC$TL_error;)Z
 
@@ -2361,7 +2361,7 @@
 .method private synthetic lambda$checkStoryLimit$28(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 3092
+    .line 3225
     new-instance v0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda15;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
@@ -2374,7 +2374,7 @@
 .method private synthetic lambda$deleteStories$14(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 1130
+    .line 1209
     new-instance p1, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda5;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Stories/StoriesController;)V
@@ -2389,7 +2389,7 @@
 
     if-nez p2, :cond_0
 
-    .line 1096
+    .line 1171
     new-instance p1, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda5;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Stories/StoriesController;)V
@@ -2403,7 +2403,7 @@
 .method private synthetic lambda$loadAllStoriesForDialog$11(JLorg/telegram/tgnet/TLObject;)V
     .locals 6
 
-    .line 1005
+    .line 1066
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesLoading:Ljava/util/HashSet;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2416,24 +2416,24 @@
 
     return-void
 
-    .line 1009
+    .line 1070
     :cond_0
-    check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_stories_peerStories;
+    check-cast p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_peerStories;
 
-    .line 1010
+    .line 1071
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
 
-    iget-object v1, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_peerStories;->users:Ljava/util/ArrayList;
+    iget-object v1, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_peerStories;->users:Ljava/util/ArrayList;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 1011
+    .line 1072
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2448,24 +2448,24 @@
 
     move-result-object v0
 
-    .line 1012
-    iget-object v1, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_peerStories;->stories:Lorg/telegram/tgnet/TLRPC$PeerStories;
+    .line 1073
+    iget-object v1, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_peerStories;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    .line 1013
-    iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    .line 1074
+    iget-object v3, v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v3}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v3
 
-    .line 1014
+    .line 1075
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v5, v3, v4, v1}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
     if-eqz v0, :cond_2
 
-    .line 1015
+    .line 1076
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->isContactOrService(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v3
@@ -2476,16 +2476,16 @@
 
     if-eqz v0, :cond_2
 
-    .line 1016
+    .line 1077
     :cond_1
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Stories/StoriesController;->applyToList(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Stories/StoriesController;->applyToList(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
-    .line 1017
+    .line 1078
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/StoriesStorage;->putPeerStories(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/StoriesStorage;->putPeerStories(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
-    .line 1020
+    .line 1081
     :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2501,9 +2501,9 @@
 
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p1, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_peerStories;->stories:Lorg/telegram/tgnet/TLRPC$PeerStories;
+    iget-object p1, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_peerStories;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object p1, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -2517,7 +2517,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1021
+    .line 1082
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2536,7 +2536,7 @@
 .method private synthetic lambda$loadAllStoriesForDialog$12(JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 1004
+    .line 1065
     new-instance p4, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda10;
 
     invoke-direct {p4, p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/Stories/StoriesController;JLorg/telegram/tgnet/TLObject;)V
@@ -2549,7 +2549,7 @@
 .method private synthetic lambda$loadBlocklist$23(Lorg/telegram/tgnet/TLObject;)V
     .locals 6
 
-    .line 2937
+    .line 3070
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_contacts_blocked;
 
     const/4 v1, 0x1
@@ -2558,10 +2558,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 2938
+    .line 3071
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_contacts_blocked;
 
-    .line 2939
+    .line 3072
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2572,7 +2572,7 @@
 
     invoke-virtual {v0, v3, v2}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 2940
+    .line 3073
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2583,12 +2583,12 @@
 
     invoke-virtual {v0, v3, v2}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
 
-    .line 2942
+    .line 3075
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
 
-    .line 2943
+    .line 3076
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$contacts_Blocked;->blocked:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -2608,14 +2608,14 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_peerBlocked;
 
-    .line 2944
+    .line 3077
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_peerBlocked;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v3}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v3
 
-    .line 2945
+    .line 3078
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2626,7 +2626,7 @@
 
     goto :goto_0
 
-    .line 2947
+    .line 3080
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
@@ -2642,21 +2642,21 @@
 
     iput p1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistCount:I
 
-    .line 2948
+    .line 3081
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistFull:Z
 
     goto :goto_3
 
-    .line 2949
+    .line 3082
     :cond_1
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_contacts_blockedSlice;
 
     if-eqz v0, :cond_4
 
-    .line 2950
+    .line 3083
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_contacts_blockedSlice;
 
-    .line 2951
+    .line 3084
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2667,7 +2667,7 @@
 
     invoke-virtual {v0, v3, v2}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 2952
+    .line 3085
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -2678,7 +2678,7 @@
 
     invoke-virtual {v0, v3, v2}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
 
-    .line 2954
+    .line 3087
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$contacts_Blocked;->blocked:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -2698,14 +2698,14 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_peerBlocked;
 
-    .line 2955
+    .line 3088
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$TL_peerBlocked;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v3}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v3
 
-    .line 2956
+    .line 3089
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2716,13 +2716,13 @@
 
     goto :goto_1
 
-    .line 2958
+    .line 3091
     :cond_2
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$contacts_Blocked;->count:I
 
     iput p1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistCount:I
 
-    .line 2959
+    .line 3092
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
     invoke-virtual {p1}, Ljava/util/HashSet;->size()I
@@ -2741,7 +2741,7 @@
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistFull:Z
 
-    .line 2963
+    .line 3096
     :goto_3
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -2755,10 +2755,10 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2964
+    .line 3097
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistLoading:Z
 
-    .line 2965
+    .line 3098
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -2772,7 +2772,7 @@
 .method private synthetic lambda$loadBlocklist$24(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 2936
+    .line 3069
     new-instance p2, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/TLObject;)V
@@ -2782,23 +2782,23 @@
     return-void
 .end method
 
-.method private synthetic lambda$loadFromServer$7(ZLorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;Lorg/telegram/tgnet/TLObject;Z)V
+.method private synthetic lambda$loadFromServer$7(ZLorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;Lorg/telegram/tgnet/TLObject;Z)V
     .locals 8
 
     const/4 v0, 0x0
 
     if-eqz p1, :cond_0
 
-    .line 457
+    .line 458
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingFromServerHidden:Z
 
     goto :goto_0
 
-    .line 459
+    .line 460
     :cond_0
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingFromServer:Z
 
-    .line 461
+    .line 462
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -2808,7 +2808,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;->state:Ljava/lang/String;
+    iget-object v2, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;->state:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2816,7 +2816,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean p2, p2, Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;->next:Z
+    iget-boolean p2, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;->next:Z
 
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -2832,8 +2832,8 @@
 
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 462
-    instance-of p2, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;
+    .line 463
+    instance-of p2, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;
 
     const-string v1, "last_stories_has_more"
 
@@ -2845,17 +2845,17 @@
 
     if-eqz p2, :cond_2
 
-    .line 463
-    check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;
-
     .line 464
+    check-cast p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;
+
+    .line 465
     iget p2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p2
 
-    iget-object v5, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->users:Ljava/util/ArrayList;
+    iget-object v5, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->users:Ljava/util/ArrayList;
 
     const/4 v6, 0x0
 
@@ -2865,22 +2865,22 @@
 
     if-nez p1, :cond_1
 
-    .line 466
-    iget p2, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->count:I
+    .line 467
+    iget p2, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->count:I
 
     iput p2, p0, Lorg/telegram/ui/Stories/StoriesController;->totalStoriesCount:I
 
-    .line 467
-    iget-boolean p2, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->has_more:Z
+    .line 468
+    iget-boolean p2, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->has_more:Z
 
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMore:Z
 
-    .line 468
-    iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->state:Ljava/lang/String;
+    .line 469
+    iget-object p2, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->state:Ljava/lang/String;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->state:Ljava/lang/String;
 
-    .line 469
+    .line 470
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -2895,7 +2895,7 @@
 
     iget-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMore:Z
 
-    .line 470
+    .line 471
     invoke-interface {p2, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
@@ -2904,33 +2904,33 @@
 
     const-string v2, "total_stores"
 
-    .line 471
+    .line 472
     invoke-interface {p2, v2, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
 
-    .line 472
+    .line 473
     invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     goto :goto_1
 
-    .line 474
+    .line 475
     :cond_1
-    iget p2, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->count:I
+    iget p2, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->count:I
 
     iput p2, p0, Lorg/telegram/ui/Stories/StoriesController;->totalStoriesCountHidden:I
 
-    .line 475
-    iget-boolean p2, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->has_more:Z
+    .line 476
+    iget-boolean p2, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->has_more:Z
 
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMoreHidden:Z
 
-    .line 476
-    iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->state:Ljava/lang/String;
+    .line 477
+    iget-object p2, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->state:Ljava/lang/String;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->stateHidden:Ljava/lang/String;
 
-    .line 477
+    .line 478
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -2945,7 +2945,7 @@
 
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMoreHidden:Z
 
-    .line 478
+    .line 479
     invoke-interface {p2, v3, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
@@ -2954,29 +2954,29 @@
 
     const-string v2, "total_stores_hidden"
 
-    .line 479
+    .line 480
     invoke-interface {p2, v2, v1}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
 
-    .line 480
+    .line 481
     invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 482
+    .line 483
     :goto_1
-    invoke-direct {p0, p3, p1, v0, p4}, Lorg/telegram/ui/Stories/StoriesController;->processAllStoriesResponse(Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;ZZZ)V
+    invoke-direct {p0, p3, p1, v0, p4}, Lorg/telegram/ui/Stories/StoriesController;->processAllStoriesResponse(Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;ZZZ)V
 
     goto :goto_4
 
-    .line 483
+    .line 484
     :cond_2
-    instance-of p2, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStoriesNotModified;
+    instance-of p2, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStoriesNotModified;
 
     if-eqz p2, :cond_5
 
     if-nez p1, :cond_3
 
-    .line 485
+    .line 486
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-interface {p2, v1, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -2985,14 +2985,14 @@
 
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMore:Z
 
-    .line 486
-    check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStoriesNotModified;
+    .line 487
+    check-cast p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStoriesNotModified;
 
-    iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStoriesNotModified;->state:Ljava/lang/String;
+    iget-object p2, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStoriesNotModified;->state:Ljava/lang/String;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->state:Ljava/lang/String;
 
-    .line 487
+    .line 488
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -3009,7 +3009,7 @@
 
     goto :goto_2
 
-    .line 489
+    .line 490
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
@@ -3019,14 +3019,14 @@
 
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMoreHidden:Z
 
-    .line 490
-    check-cast p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStoriesNotModified;
+    .line 491
+    check-cast p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStoriesNotModified;
 
-    iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$TL_stories_allStoriesNotModified;->state:Ljava/lang/String;
+    iget-object p2, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStoriesNotModified;->state:Ljava/lang/String;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->stateHidden:Ljava/lang/String;
 
-    .line 491
+    .line 492
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-interface {p2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -3044,7 +3044,7 @@
     :goto_2
     if-eqz p1, :cond_4
 
-    .line 493
+    .line 494
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMoreHidden:Z
 
     goto :goto_3
@@ -3055,7 +3055,7 @@
     :goto_3
     if-eqz p1, :cond_5
 
-    .line 495
+    .line 496
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -3073,10 +3073,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$loadFromServer$8(ZLorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$loadFromServer$8(ZLorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;ZLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 6
 
-    .line 455
+    .line 456
     new-instance p5, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda17;
 
     move-object v0, p5
@@ -3091,7 +3091,7 @@
 
     move v5, p3
 
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/Stories/StoriesController;ZLorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;Lorg/telegram/tgnet/TLObject;Z)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/Stories/StoriesController;ZLorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;Lorg/telegram/tgnet/TLObject;Z)V
 
     invoke-static {p5}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -3101,12 +3101,12 @@
 .method private synthetic lambda$loadSendAs$33(Lorg/telegram/tgnet/TLObject;)V
     .locals 3
 
-    .line 3255
+    .line 3388
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->sendAs:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 3256
+    .line 3389
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->sendAs:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_inputPeerSelf;
@@ -3115,19 +3115,19 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3257
+    .line 3390
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_messages_chats;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 3258
+    .line 3391
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_messages_chats;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$messages_Chats;->chats:Ljava/util/ArrayList;
 
-    .line 3259
+    .line 3392
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -3136,7 +3136,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
 
-    .line 3260
+    .line 3393
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -3154,28 +3154,28 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 3261
+    .line 3394
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInputPeer(Lorg/telegram/tgnet/TLRPC$Chat;)Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     move-result-object v0
 
-    .line 3262
+    .line 3395
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->sendAs:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 3265
+    .line 3398
     :cond_0
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingSendAs:Z
 
     const/4 p1, 0x1
 
-    .line 3266
+    .line 3399
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesController;->loadedSendAs:Z
 
-    .line 3267
+    .line 3400
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -3194,7 +3194,7 @@
 .method private synthetic lambda$loadSendAs$34(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 3254
+    .line 3387
     new-instance p2, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda14;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/TLObject;)V
@@ -3204,10 +3204,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$loadSkippedStories$19(JZLorg/telegram/tgnet/TLRPC$PeerStories;JLorg/telegram/tgnet/TLObject;)V
+.method private synthetic lambda$loadSkippedStories$19(JZLorg/telegram/tgnet/tl/TL_stories$PeerStories;JLorg/telegram/tgnet/TLObject;)V
     .locals 3
 
-    .line 1363
+    .line 1459
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingAllStories:Ljava/util/HashSet;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -3220,9 +3220,9 @@
 
     goto :goto_0
 
-    .line 1364
+    .line 1460
     :cond_0
-    invoke-virtual {p0, p5, p6}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/TLRPC$PeerStories;
+    invoke-virtual {p0, p5, p6}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     move-result-object p4
 
@@ -3231,22 +3231,22 @@
 
     return-void
 
-    .line 1368
+    .line 1464
     :cond_1
-    instance-of p1, p7, Lorg/telegram/tgnet/TLRPC$TL_stories_stories;
+    instance-of p1, p7, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_stories;
 
     const/4 p2, 0x0
 
     if-eqz p1, :cond_5
 
-    .line 1369
-    check-cast p7, Lorg/telegram/tgnet/TLRPC$TL_stories_stories;
+    .line 1465
+    check-cast p7, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_stories;
 
     move p1, p2
 
-    .line 1370
+    .line 1466
     :goto_1
-    iget-object v0, p7, Lorg/telegram/tgnet/TLRPC$TL_stories_stories;->stories:Ljava/util/ArrayList;
+    iget-object v0, p7, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_stories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -3256,9 +3256,9 @@
 
     move v0, p2
 
-    .line 1371
+    .line 1467
     :goto_2
-    iget-object v1, p4, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v1, p4, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -3266,52 +3266,52 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 1372
-    iget-object v1, p4, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1468
+    iget-object v1, p4, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v1, v1, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v1, v1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
-    iget-object v2, p7, Lorg/telegram/tgnet/TLRPC$TL_stories_stories;->stories:Ljava/util/ArrayList;
+    iget-object v2, p7, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_stories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v2, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v2, v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     if-ne v1, v2, :cond_2
 
-    .line 1373
-    iget-object v1, p4, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1469
+    iget-object v1, p4, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
-    iget-object v2, p7, Lorg/telegram/tgnet/TLRPC$TL_stories_stories;->stories:Ljava/util/ArrayList;
+    iget-object v2, p7, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_stories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     invoke-virtual {v1, v0, v2}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 1374
-    iget-object v1, p7, Lorg/telegram/tgnet/TLRPC$TL_stories_stories;->stories:Ljava/util/ArrayList;
+    .line 1470
+    iget-object v1, p7, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_stories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    invoke-direct {p0, p5, p6, v1}, Lorg/telegram/ui/Stories/StoriesController;->preloadStory(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-direct {p0, p5, p6, v1}, Lorg/telegram/ui/Stories/StoriesController;->preloadStory(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
     :cond_2
     add-int/lit8 v0, v0, 0x1
@@ -3326,12 +3326,12 @@
     :cond_4
     if-nez p3, :cond_5
 
-    .line 1379
+    .line 1475
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
-    invoke-virtual {p1, p4}, Lorg/telegram/ui/Stories/StoriesStorage;->updateStories(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    invoke-virtual {p1, p4}, Lorg/telegram/ui/Stories/StoriesStorage;->updateStories(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
-    .line 1382
+    .line 1478
     :cond_5
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -3348,10 +3348,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$loadSkippedStories$20(JZLorg/telegram/tgnet/TLRPC$PeerStories;JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method private synthetic lambda$loadSkippedStories$20(JZLorg/telegram/tgnet/tl/TL_stories$PeerStories;JLorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 10
 
-    .line 1362
+    .line 1458
     new-instance v9, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda12;
 
     move-object v0, v9
@@ -3368,41 +3368,41 @@
 
     move-object/from16 v8, p7
 
-    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/Stories/StoriesController;JZLorg/telegram/tgnet/TLRPC$PeerStories;JLorg/telegram/tgnet/TLObject;)V
+    invoke-direct/range {v0 .. v8}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/Stories/StoriesController;JZLorg/telegram/tgnet/tl/TL_stories$PeerStories;JLorg/telegram/tgnet/TLObject;)V
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$loadStories$5(Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;)V
+.method private synthetic lambda$loadStories$5(Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;)V
     .locals 2
 
     const/4 v0, 0x0
 
-    .line 348
+    .line 349
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingFromDatabase:Z
 
     if-eqz p1, :cond_0
 
     const/4 v1, 0x1
 
-    .line 350
-    invoke-direct {p0, p1, v0, v1, v0}, Lorg/telegram/ui/Stories/StoriesController;->processAllStoriesResponse(Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;ZZZ)V
-
     .line 351
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->loadFromServer(Z)V
+    invoke-direct {p0, p1, v0, v1, v0}, Lorg/telegram/ui/Stories/StoriesController;->processAllStoriesResponse(Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;ZZZ)V
 
     .line 352
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->loadFromServer(Z)V
+
+    .line 353
     invoke-direct {p0, v1}, Lorg/telegram/ui/Stories/StoriesController;->loadFromServer(Z)V
 
     goto :goto_0
 
-    .line 354
+    .line 355
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesController;->cleanup()V
 
-    .line 355
+    .line 356
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesController;->loadStories()V
 
     :goto_0
@@ -3414,10 +3414,10 @@
 
     const/4 v0, 0x1
 
-    .line 271
+    .line 272
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesReadLoaded:Z
 
-    .line 272
+    .line 273
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -3438,14 +3438,14 @@
 .method private synthetic lambda$loadStoriesRead$4(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 6
 
-    .line 265
+    .line 266
     check-cast p1, Lorg/telegram/tgnet/TLRPC$Updates;
 
     if-nez p1, :cond_0
 
     return-void
 
-    .line 269
+    .line 270
     :cond_0
     iget p2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -3465,7 +3465,7 @@
 
     invoke-virtual/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->processUpdateArray(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;ZI)Z
 
-    .line 270
+    .line 271
     new-instance p1, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda6;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Stories/StoriesController;)V
@@ -3478,7 +3478,7 @@
 .method private synthetic lambda$markStoriesAsReadFromServer$18(JI)V
     .locals 3
 
-    .line 1216
+    .line 1309
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogIdToMaxReadId:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     const/4 v1, 0x0
@@ -3491,18 +3491,18 @@
 
     move-result v0
 
-    .line 1217
+    .line 1310
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogIdToMaxReadId:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     invoke-virtual {v2, p1, p2, v0}, Lorg/telegram/messenger/support/LongSparseIntArray;->put(JI)V
 
-    .line 1218
+    .line 1311
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
     invoke-virtual {v2, p1, p2, v0}, Lorg/telegram/ui/Stories/StoriesStorage;->updateMaxReadId(JI)V
 
-    .line 1219
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/TLRPC$PeerStories;
+    .line 1312
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     move-result-object p1
 
@@ -3510,23 +3510,23 @@
 
     return-void
 
-    .line 1223
+    .line 1316
     :cond_0
-    iget p2, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->max_read_id:I
+    iget p2, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->max_read_id:I
 
     if-le p3, p2, :cond_1
 
-    .line 1224
-    iput p3, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->max_read_id:I
+    .line 1317
+    iput p3, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->max_read_id:I
 
-    .line 1225
+    .line 1318
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->peerStoriesComparator:Ljava/util/Comparator;
 
     invoke-static {p1, p2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 1226
+    .line 1319
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -3552,7 +3552,7 @@
 .method private synthetic lambda$new$1(Lorg/telegram/messenger/support/LongSparseIntArray;)V
     .locals 0
 
-    .line 215
+    .line 216
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogIdToMaxReadId:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     return-void
@@ -3561,17 +3561,17 @@
 .method private synthetic lambda$new$2(I)V
     .locals 2
 
-    .line 218
+    .line 219
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->sortDialogStories(Ljava/util/ArrayList;)V
 
-    .line 219
+    .line 220
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->sortDialogStories(Ljava/util/ArrayList;)V
 
-    .line 220
+    .line 221
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -3587,39 +3587,39 @@
     return-void
 .end method
 
-.method private synthetic lambda$new$22(Lorg/telegram/tgnet/TLRPC$PeerStories;Lorg/telegram/tgnet/TLRPC$PeerStories;)I
+.method private synthetic lambda$new$22(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)I
     .locals 8
 
-    .line 2829
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    .line 2962
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v0}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v0
 
-    .line 2830
-    iget-object v2, p2, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    .line 2963
+    iget-object v2, p2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v2}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v2
 
-    .line 2831
+    .line 2964
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/Stories/StoriesController;->hasUploadingStories(J)Z
 
     move-result v4
 
-    .line 2832
+    .line 2965
     invoke-virtual {p0, v2, v3}, Lorg/telegram/ui/Stories/StoriesController;->hasUploadingStories(J)Z
 
     move-result v5
 
-    .line 2833
+    .line 2966
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/Stories/StoriesController;->hasUnreadStories(J)Z
 
     move-result v6
 
-    .line 2834
+    .line 2967
     invoke-virtual {p0, v2, v3}, Lorg/telegram/ui/Stories/StoriesController;->hasUnreadStories(J)Z
 
     move-result v7
@@ -3628,32 +3628,32 @@
 
     if-ne v6, v7, :cond_4
 
-    .line 2837
+    .line 2970
     invoke-static {v0, v1}, Lorg/telegram/messenger/UserObject;->isService(J)Z
 
     move-result v4
 
-    .line 2838
+    .line 2971
     invoke-static {v2, v3}, Lorg/telegram/messenger/UserObject;->isService(J)Z
 
     move-result v5
 
     if-ne v4, v5, :cond_3
 
-    .line 2840
+    .line 2973
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Stories/StoriesController;->isPremium(J)Z
 
     move-result v0
 
-    .line 2841
+    .line 2974
     invoke-direct {p0, v2, v3}, Lorg/telegram/ui/Stories/StoriesController;->isPremium(J)Z
 
     move-result v1
 
     if-ne v0, v1, :cond_2
 
-    .line 2843
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 2976
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -3668,7 +3668,7 @@
     goto :goto_0
 
     :cond_0
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object p1, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -3680,13 +3680,13 @@
 
     move-result-object p1
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget p1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->date:I
+    iget p1, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->date:I
 
-    .line 2844
+    .line 2977
     :goto_0
-    iget-object v0, p2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v0, p2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -3697,7 +3697,7 @@
     goto :goto_1
 
     :cond_1
-    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object p2, p2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -3709,9 +3709,9 @@
 
     move-result-object p2
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast p2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v1, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->date:I
+    iget v1, p2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->date:I
 
     :goto_1
     sub-int/2addr v1, p1
@@ -3745,50 +3745,59 @@
     return-void
 .end method
 
-.method private synthetic lambda$processUpdate$10(JLorg/telegram/tgnet/TLRPC$TL_updateStory;Lorg/telegram/tgnet/TLRPC$User;)V
+.method private synthetic lambda$processUpdate$10(JLorg/telegram/tgnet/tl/TL_stories$TL_updateStory;Lorg/telegram/tgnet/TLRPC$User;)V
     .locals 10
 
-    .line 839
+    .line 840
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v1, "StoriesController update stories for dialog "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    .line 841
+    iget-object v0, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_updateStory;->story:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
+
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/ui/Stories/StoriesController;->updateStoriesInLists(JLjava/util/List;)V
+
+    .line 842
+    iget-object v0, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_updateStory;->story:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
+
+    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/Stories/StoriesController;->updateStoriesForFullPeer(JLjava/util/List;)V
+
+    .line 843
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    .line 840
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "StoriesController update stories for dialog "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
-
-    .line 841
-    iget-object v1, p3, Lorg/telegram/tgnet/TLRPC$TL_updateStory;->story:Lorg/telegram/tgnet/TLRPC$StoryItem;
-
-    invoke-static {v1}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v1
-
-    invoke-virtual {p0, p1, p2, v1}, Lorg/telegram/ui/Stories/StoriesController;->updateStoriesInLists(JLjava/util/List;)V
-
-    .line 843
+    .line 844
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 844
+    .line 845
     iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->totalStoriesCount:I
 
     const-wide/16 v3, 0x0
@@ -3799,31 +3808,31 @@
 
     if-eqz v0, :cond_d
 
-    .line 848
-    iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$TL_updateStory;->story:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    .line 850
+    iget-object p3, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_updateStory;->story:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    .line 849
-    instance-of v7, p3, Lorg/telegram/tgnet/TLRPC$TL_storyItemDeleted;
+    .line 851
+    instance-of v7, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemDeleted;
 
     if-eqz v7, :cond_0
 
-    .line 850
+    .line 852
     iget v7, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v7}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
 
     move-result-object v7
 
-    iget v8, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v8, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-virtual {v7, p1, p2, v8}, Lorg/telegram/messenger/NotificationsController;->processDeleteStory(JI)V
 
     :cond_0
     move v7, v5
 
-    .line 853
+    .line 855
     :goto_0
-    iget-object v8, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v8, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
@@ -3831,32 +3840,32 @@
 
     if-ge v7, v8, :cond_5
 
-    .line 854
-    iget-object v8, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 856
+    iget-object v8, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
-    check-cast v8, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v8, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v8, v8, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v8, v8, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
-    iget v9, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v9, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     if-ne v8, v9, :cond_4
 
-    .line 856
-    instance-of v8, p3, Lorg/telegram/tgnet/TLRPC$TL_storyItemDeleted;
+    .line 858
+    instance-of v8, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemDeleted;
 
     if-eqz v8, :cond_1
 
-    .line 857
-    iget-object v8, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 859
+    iget-object v8, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 858
+    .line 860
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -3865,7 +3874,7 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v8, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v8, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -3879,51 +3888,51 @@
 
     goto :goto_1
 
-    .line 861
+    .line 863
     :cond_1
-    iget-object v8, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v8, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v8, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
-    check-cast v8, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v8, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    .line 862
-    invoke-static {v8, p3}, Lorg/telegram/ui/Stories/StoriesController;->applyStoryUpdate(Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/tgnet/TLRPC$StoryItem;)Lorg/telegram/tgnet/TLRPC$StoryItem;
+    .line 864
+    invoke-static {v8, p3}, Lorg/telegram/ui/Stories/StoriesController;->applyStoryUpdate(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     move-result-object p3
 
-    .line 863
+    .line 865
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 864
-    iget-object v9, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 866
+    iget-object v9, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v9, v7, p3}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 865
-    iget-object v7, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->attachPath:Ljava/lang/String;
+    .line 867
+    iget-object v7, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->attachPath:Ljava/lang/String;
 
     if-nez v7, :cond_2
 
-    .line 866
-    iget-object v7, v8, Lorg/telegram/tgnet/TLRPC$StoryItem;->attachPath:Ljava/lang/String;
-
-    iput-object v7, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->attachPath:Ljava/lang/String;
-
     .line 868
+    iget-object v7, v8, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->attachPath:Ljava/lang/String;
+
+    iput-object v7, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->attachPath:Ljava/lang/String;
+
+    .line 870
     :cond_2
-    iget-object v7, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->firstFramePath:Ljava/lang/String;
+    iget-object v7, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->firstFramePath:Ljava/lang/String;
 
     if-nez v7, :cond_3
 
-    .line 869
-    iget-object v7, v8, Lorg/telegram/tgnet/TLRPC$StoryItem;->firstFramePath:Ljava/lang/String;
-
-    iput-object v7, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->firstFramePath:Ljava/lang/String;
-
     .line 871
+    iget-object v7, v8, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->firstFramePath:Ljava/lang/String;
+
+    iput-object v7, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->firstFramePath:Ljava/lang/String;
+
+    .line 873
     :cond_3
     new-instance v7, Ljava/lang/StringBuilder;
 
@@ -3933,7 +3942,7 @@
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v8, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v8, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -3963,23 +3972,23 @@
     :goto_2
     if-nez v7, :cond_a
 
-    .line 877
-    instance-of v7, p3, Lorg/telegram/tgnet/TLRPC$TL_storyItemDeleted;
+    .line 879
+    instance-of v7, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemDeleted;
 
     if-eqz v7, :cond_6
 
     const-string p1, "StoriesController can\'t add new story DELETED"
 
-    .line 878
+    .line 880
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     return-void
 
-    .line 881
+    .line 883
     :cond_6
     iget v7, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
-    invoke-static {v7, p3}, Lorg/telegram/ui/Stories/StoriesUtilities;->isExpired(ILorg/telegram/tgnet/TLRPC$StoryItem;)Z
+    invoke-static {v7, p3}, Lorg/telegram/ui/Stories/StoriesUtilities;->isExpired(ILorg/telegram/tgnet/tl/TL_stories$StoryItem;)Z
 
     move-result v7
 
@@ -3987,7 +3996,7 @@
 
     const-string p1, "StoriesController can\'t add new story isExpired"
 
-    .line 882
+    .line 884
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     return-void
@@ -3999,7 +4008,7 @@
 
     if-eqz p4, :cond_8
 
-    .line 885
+    .line 887
     iget-boolean v3, p4, Lorg/telegram/tgnet/TLRPC$User;->self:Z
 
     if-nez v3, :cond_9
@@ -4013,21 +4022,21 @@
     :cond_8
     const-string p1, "StoriesController can\'t add new story user is not contact"
 
-    .line 886
+    .line 888
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     return-void
 
-    .line 889
+    .line 891
     :cond_9
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 891
-    iget-object p4, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 893
+    iget-object p4, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {p4, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 892
+    .line 894
     new-instance p4, Ljava/lang/StringBuilder;
 
     invoke-direct {p4}, Ljava/lang/StringBuilder;-><init>()V
@@ -4036,7 +4045,7 @@
 
     invoke-virtual {p4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v1, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-virtual {p4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -4044,7 +4053,7 @@
 
     invoke-virtual {p4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v1, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -4058,11 +4067,11 @@
 
     invoke-static {p4}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 893
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->preloadStory(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
-
     .line 895
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->applyToList(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->preloadStory(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
+
+    .line 897
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->applyToList(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
     move p3, v6
 
@@ -4076,8 +4085,8 @@
     :goto_3
     if-eqz v8, :cond_c
 
-    .line 898
-    iget-object p3, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 900
+    iget-object p3, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {p3}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -4091,20 +4100,20 @@
 
     if-nez p1, :cond_b
 
-    .line 899
+    .line 901
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 900
+    .line 902
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 901
+    .line 903
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
-    iget-object p2, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object p2, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {p2}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -4112,7 +4121,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroidx/collection/LongSparseArray;->remove(J)V
 
-    .line 902
+    .line 904
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->totalStoriesCount:I
 
     sub-int/2addr p1, v6
@@ -4121,9 +4130,9 @@
 
     goto/16 :goto_4
 
-    .line 904
+    .line 906
     :cond_b
-    iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object p1, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     sget-object p2, Lorg/telegram/ui/Stories/StoriesController;->storiesComparator:Ljava/util/Comparator;
 
@@ -4136,17 +4145,17 @@
 
     goto/16 :goto_4
 
-    .line 909
+    .line 911
     :cond_d
-    iget-object v0, p3, Lorg/telegram/tgnet/TLRPC$TL_updateStory;->story:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v0, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_updateStory;->story:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_storyItemDeleted;
+    instance-of v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemDeleted;
 
     const-string v7, "StoriesController can\'t add user "
 
     if-eqz v1, :cond_e
 
-    .line 910
+    .line 912
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -4167,17 +4176,17 @@
 
     return-void
 
-    .line 913
+    .line 915
     :cond_e
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
-    invoke-static {v1, v0}, Lorg/telegram/ui/Stories/StoriesUtilities;->isExpired(ILorg/telegram/tgnet/TLRPC$StoryItem;)Z
+    invoke-static {v1, v0}, Lorg/telegram/ui/Stories/StoriesUtilities;->isExpired(ILorg/telegram/tgnet/tl/TL_stories$StoryItem;)Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    .line 914
+    .line 916
     new-instance p3, Ljava/lang/StringBuilder;
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
@@ -4205,7 +4214,7 @@
 
     if-eqz p4, :cond_10
 
-    .line 917
+    .line 919
     iget-boolean v0, p4, Lorg/telegram/tgnet/TLRPC$User;->self:Z
 
     if-nez v0, :cond_11
@@ -4219,30 +4228,30 @@
     :cond_10
     const-string p1, "StoriesController can\'t add user cause is not contact"
 
-    .line 918
+    .line 920
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     return-void
 
-    .line 921
-    :cond_11
-    new-instance p4, Lorg/telegram/tgnet/TLRPC$TL_peerStories;
-
-    invoke-direct {p4}, Lorg/telegram/tgnet/TLRPC$TL_peerStories;-><init>()V
-
-    .line 922
-    iget-object v0, p3, Lorg/telegram/tgnet/TLRPC$TL_updateStory;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
-
-    iput-object v0, p4, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
-
     .line 923
-    iget-object v0, p4, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    :cond_11
+    new-instance p4, Lorg/telegram/tgnet/tl/TL_stories$TL_peerStories;
 
-    iget-object v1, p3, Lorg/telegram/tgnet/TLRPC$TL_updateStory;->story:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    invoke-direct {p4}, Lorg/telegram/tgnet/tl/TL_stories$TL_peerStories;-><init>()V
+
+    .line 924
+    iget-object v0, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_updateStory;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    iput-object v0, p4, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    .line 925
+    iget-object v0, p4, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
+
+    iget-object v1, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_updateStory;->story:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 924
+    .line 926
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4251,9 +4260,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object p3, p3, Lorg/telegram/tgnet/TLRPC$TL_updateStory;->story:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object p3, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_updateStory;->story:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget p3, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget p3, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -4263,26 +4272,26 @@
 
     invoke-static {p3}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 925
-    invoke-direct {p0, p4}, Lorg/telegram/ui/Stories/StoriesController;->applyNewStories(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
-
     .line 927
+    invoke-direct {p0, p4}, Lorg/telegram/ui/Stories/StoriesController;->applyNewStories(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
+
+    .line 929
     iget p3, p0, Lorg/telegram/ui/Stories/StoriesController;->totalStoriesCount:I
 
     add-int/2addr p3, v6
 
     iput p3, p0, Lorg/telegram/ui/Stories/StoriesController;->totalStoriesCount:I
 
-    .line 928
+    .line 930
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->loadAllStoriesForDialog(J)V
 
-    .line 930
+    .line 932
     :goto_4
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->totalStoriesCount:I
 
     if-eq v2, p1, :cond_12
 
-    .line 931
+    .line 933
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -4299,20 +4308,20 @@
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 933
+    .line 935
     :cond_12
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->fixDeletedAndNonContactsStories(Ljava/util/ArrayList;)V
 
-    .line 934
+    .line 936
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->fixDeletedAndNonContactsStories(Ljava/util/ArrayList;)V
 
     if-eqz v6, :cond_13
 
-    .line 936
+    .line 938
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -4325,7 +4334,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 938
+    .line 940
     :cond_13
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -4344,11 +4353,11 @@
     return-void
 .end method
 
-.method private static synthetic lambda$static$0(Lorg/telegram/tgnet/TLRPC$StoryItem;)I
+.method private static synthetic lambda$static$0(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)I
     .locals 0
 
-    .line 174
-    iget p0, p0, Lorg/telegram/tgnet/TLRPC$StoryItem;->date:I
+    .line 175
+    iget p0, p0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->date:I
 
     return p0
 .end method
@@ -4364,7 +4373,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 2994
+    .line 3127
     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -4374,7 +4383,7 @@
 .method private static synthetic lambda$updateBlockedUsers$26(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 2992
+    .line 3125
     new-instance p1, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda3;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda3;-><init>(Ljava/lang/Runnable;)V
@@ -4398,7 +4407,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 1164
+    .line 1244
     :goto_0
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -4413,7 +4422,7 @@
 .method private static synthetic lambda$updateStoriesPinned$16(Lorg/telegram/messenger/Utilities$Callback;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 1162
+    .line 1242
     new-instance p1, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda4;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/messenger/Utilities$Callback;Lorg/telegram/tgnet/TLRPC$TL_error;)V
@@ -4426,7 +4435,7 @@
 .method private loadAllStoriesForDialog(J)V
     .locals 3
 
-    .line 997
+    .line 1058
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesLoading:Ljava/util/HashSet;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -4441,7 +4450,7 @@
 
     return-void
 
-    .line 1000
+    .line 1061
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesLoading:Ljava/util/HashSet;
 
@@ -4451,7 +4460,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1001
+    .line 1062
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -4468,12 +4477,12 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1002
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getPeerStories;
+    .line 1063
+    new-instance v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getPeerStories;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_getPeerStories;-><init>()V
+    invoke-direct {v0}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getPeerStories;-><init>()V
 
-    .line 1003
+    .line 1064
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -4484,9 +4493,9 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getPeerStories;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getPeerStories;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 1004
+    .line 1065
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -4507,7 +4516,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 434
+    .line 435
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingFromServerHidden:Z
 
     if-nez v0, :cond_2
@@ -4532,24 +4541,24 @@
 
     if-eqz p1, :cond_4
 
-    .line 438
+    .line 439
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingFromServerHidden:Z
 
     goto :goto_0
 
-    .line 440
+    .line 441
     :cond_4
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingFromServer:Z
 
-    .line 442
+    .line 443
     :goto_0
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;
+    new-instance v1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;
 
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;-><init>()V
+    invoke-direct {v1}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;-><init>()V
 
     if-eqz p1, :cond_5
 
-    .line 443
+    .line 444
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->stateHidden:Ljava/lang/String;
 
     goto :goto_1
@@ -4560,7 +4569,7 @@
     :goto_1
     if-eqz p1, :cond_6
 
-    .line 444
+    .line 445
     iget-boolean v3, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMoreHidden:Z
 
     goto :goto_2
@@ -4568,7 +4577,7 @@
     :cond_6
     iget-boolean v3, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMore:Z
 
-    .line 445
+    .line 446
     :goto_2
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -4576,41 +4585,41 @@
 
     if-nez v4, :cond_7
 
-    .line 446
-    iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;->state:Ljava/lang/String;
-
     .line 447
-    iget v4, v1, Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;->flags:I
+    iput-object v2, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;->state:Ljava/lang/String;
+
+    .line 448
+    iget v4, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;->flags:I
 
     or-int/2addr v4, v0
 
-    iput v4, v1, Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;->flags:I
+    iput v4, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;->flags:I
 
     :cond_7
     const/4 v4, 0x0
 
     if-eqz v3, :cond_8
 
-    .line 450
+    .line 451
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-nez v2, :cond_8
 
-    .line 451
-    iput-boolean v0, v1, Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;->next:Z
+    .line 452
+    iput-boolean v0, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;->next:Z
 
     goto :goto_3
 
     :cond_8
     move v0, v4
 
-    .line 453
+    .line 454
     :goto_3
-    iput-boolean p1, v1, Lorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;->include_hidden:Z
+    iput-boolean p1, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;->include_hidden:Z
 
-    .line 455
+    .line 456
     iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -4619,7 +4628,7 @@
 
     new-instance v3, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda34;
 
-    invoke-direct {v3, p0, p1, v1, v0}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda34;-><init>(Lorg/telegram/ui/Stories/StoriesController;ZLorg/telegram/tgnet/TLRPC$TL_stories_getAllStories;Z)V
+    invoke-direct {v3, p0, p1, v1, v0}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda34;-><init>(Lorg/telegram/ui/Stories/StoriesController;ZLorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllStories;Z)V
 
     invoke-virtual {v2, v1, v3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
@@ -4629,20 +4638,20 @@
 .method private loadStoriesRead()V
     .locals 3
 
-    .line 260
+    .line 261
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesReadLoaded:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 263
-    :cond_0
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_getAllReadPeerStories;
-
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_getAllReadPeerStories;-><init>()V
-
     .line 264
+    :cond_0
+    new-instance v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllReadPeerStories;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getAllReadPeerStories;-><init>()V
+
+    .line 265
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -4658,17 +4667,17 @@
     return-void
 .end method
 
-.method private preloadStory(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method private preloadStory(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 7
 
-    .line 632
-    iget-object v0, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->attachPath:Ljava/lang/String;
+    .line 633
+    iget-object v0, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->attachPath:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 635
+    .line 636
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -4684,9 +4693,9 @@
 
     return-void
 
-    .line 639
+    .line 640
     :cond_1
-    iget-object v0, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
+    iget-object v0, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     const/4 v1, 0x1
 
@@ -4709,14 +4718,14 @@
     :cond_2
     move v0, v2
 
-    .line 640
+    .line 641
     :goto_0
-    iput-wide p1, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+    iput-wide p1, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
     if-eqz v0, :cond_3
 
-    .line 642
-    iget-object p1, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
+    .line 643
+    iget-object p1, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
@@ -4728,27 +4737,27 @@
 
     move-result-object p1
 
-    .line 643
+    .line 644
     iget p2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
 
     move-result-object p2
 
-    iget-object v0, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
+    iget-object v0, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-virtual {p2, v0, p3, v2, v1}, Lorg/telegram/messenger/FileLoader;->loadFile(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Object;II)V
 
-    .line 644
+    .line 645
     iget p2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
 
     move-result-object v0
 
-    iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
+    iget-object p2, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
@@ -4768,9 +4777,9 @@
 
     goto :goto_2
 
-    .line 646
+    .line 647
     :cond_3
-    iget-object p1, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
+    iget-object p1, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     if-nez p1, :cond_4
 
@@ -4784,19 +4793,19 @@
     :goto_1
     if-eqz p1, :cond_5
 
-    .line 647
+    .line 648
     iget-object p2, p1, Lorg/telegram/tgnet/TLRPC$Photo;->sizes:Ljava/util/ArrayList;
 
     if-eqz p2, :cond_5
 
     const v0, 0x7fffffff
 
-    .line 648
+    .line 649
     invoke-static {p2, v0}, Lorg/telegram/messenger/FileLoader;->getClosestPhotoSizeWithSize(Ljava/util/ArrayList;I)Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     move-result-object p2
 
-    .line 649
+    .line 650
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -4822,27 +4831,27 @@
     return-void
 .end method
 
-.method private processAllStoriesResponse(Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;ZZZ)V
+.method private processAllStoriesResponse(Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;ZZZ)V
     .locals 10
 
     if-nez p4, :cond_1
 
     if-nez p2, :cond_0
 
-    .line 505
+    .line 506
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
     goto :goto_0
 
-    .line 507
+    .line 508
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 510
+    .line 511
     :cond_1
     :goto_0
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
@@ -4851,16 +4860,16 @@
 
     if-eqz v0, :cond_4
 
-    .line 511
+    .line 512
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     move v2, v1
 
-    .line 512
+    .line 513
     :goto_1
-    iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->peer_stories:Ljava/util/ArrayList;
+    iget-object v3, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->peer_stories:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -4868,7 +4877,7 @@
 
     if-ge v2, v3, :cond_3
 
-    .line 513
+    .line 514
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
@@ -4877,33 +4886,33 @@
 
     const-string v3, ", "
 
-    .line 514
+    .line 515
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 516
+    .line 517
     :cond_2
-    iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->peer_stories:Ljava/util/ArrayList;
+    iget-object v3, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->peer_stories:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v3, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v3, v3, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v3}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v3
 
-    .line 517
+    .line 518
     invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 519
+    .line 520
     :cond_3
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -4937,7 +4946,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 521
+    .line 522
     :cond_4
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -4945,26 +4954,26 @@
 
     move-result-object v0
 
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->users:Ljava/util/ArrayList;
+    iget-object v2, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2, p3}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 522
+    .line 523
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
 
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->chats:Ljava/util/ArrayList;
+    iget-object v2, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->chats:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2, p3}, Lorg/telegram/messenger/MessagesController;->putChats(Ljava/util/ArrayList;Z)V
 
     move v0, v1
 
-    .line 524
+    .line 525
     :goto_2
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->peer_stories:Ljava/util/ArrayList;
+    iget-object v2, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->peer_stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -4972,17 +4981,17 @@
 
     if-ge v0, v2, :cond_11
 
-    .line 525
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->peer_stories:Ljava/util/ArrayList;
+    .line 526
+    iget-object v2, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->peer_stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    .line 526
-    iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    .line 527
+    iget-object v3, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v3}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -4990,9 +4999,9 @@
 
     move v5, v1
 
-    .line 527
+    .line 528
     :goto_3
-    iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v6, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
@@ -5000,38 +5009,38 @@
 
     if-ge v5, v6, :cond_6
 
-    .line 528
-    iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 529
+    iget-object v6, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
-    instance-of v6, v6, Lorg/telegram/tgnet/TLRPC$TL_storyItemDeleted;
+    instance-of v6, v6, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemDeleted;
 
     if-eqz v6, :cond_5
 
-    .line 529
+    .line 530
     iget v6, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v6}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
 
     move-result-object v6
 
-    iget-object v7, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v7, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
-    check-cast v7, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v7, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v7, v7, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v7, v7, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-virtual {v6, v3, v4, v7}, Lorg/telegram/messenger/NotificationsController;->processDeleteStory(JI)V
 
-    .line 530
-    iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 531
+    iget-object v6, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
@@ -5042,9 +5051,9 @@
 
     goto :goto_3
 
-    .line 534
+    .line 535
     :cond_6
-    iget-object v5, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v5, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -5052,7 +5061,7 @@
 
     if-nez v5, :cond_10
 
-    .line 535
+    .line 536
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v5, v3, v4, v2}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
@@ -5066,7 +5075,7 @@
 
     if-nez v5, :cond_7
 
-    .line 537
+    .line 538
     iget-object v6, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     goto :goto_5
@@ -5077,7 +5086,7 @@
     :goto_5
     move v7, v1
 
-    .line 538
+    .line 539
     :goto_6
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
@@ -5085,14 +5094,14 @@
 
     if-ge v7, v8, :cond_9
 
-    .line 539
+    .line 540
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v8
 
-    check-cast v8, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v8, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v8, v8, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v8}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -5102,7 +5111,7 @@
 
     if-nez v8, :cond_8
 
-    .line 540
+    .line 541
     invoke-virtual {v6, v7}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     goto :goto_7
@@ -5125,7 +5134,7 @@
 
     if-lez v5, :cond_d
 
-    .line 546
+    .line 547
     iget v5, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5144,29 +5153,29 @@
 
     goto :goto_8
 
-    .line 550
+    .line 551
     :cond_b
     iget-boolean v3, v3, Lorg/telegram/tgnet/TLRPC$User;->stories_hidden:Z
 
     if-eqz v3, :cond_c
 
-    .line 551
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Stories/StoriesController;->addUserToHiddenList(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    .line 552
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Stories/StoriesController;->addUserToHiddenList(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
     goto :goto_8
 
-    .line 553
+    .line 554
     :cond_c
     iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 554
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/Stories/StoriesController;->preloadUserStories(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    .line 555
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/Stories/StoriesController;->preloadUserStories(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
     goto :goto_8
 
-    .line 557
+    .line 558
     :cond_d
     iget v5, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -5188,29 +5197,29 @@
 
     goto :goto_8
 
-    .line 561
+    .line 562
     :cond_e
     iget-boolean v3, v3, Lorg/telegram/tgnet/TLRPC$Chat;->stories_hidden:Z
 
     if-eqz v3, :cond_f
 
-    .line 562
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Stories/StoriesController;->addUserToHiddenList(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    .line 563
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Stories/StoriesController;->addUserToHiddenList(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
     goto :goto_8
 
-    .line 564
+    .line 565
     :cond_f
     iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 565
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/Stories/StoriesController;->preloadUserStories(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    .line 566
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/Stories/StoriesController;->preloadUserStories(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
     goto :goto_8
 
-    .line 569
+    .line 570
     :cond_10
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
@@ -5224,23 +5233,23 @@
     :cond_11
     if-nez p3, :cond_12
 
-    .line 573
+    .line 574
     iget-object p3, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_allStories;->peer_stories:Ljava/util/ArrayList;
+    iget-object p1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_allStories;->peer_stories:Ljava/util/ArrayList;
 
     sget-object v0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda19;->INSTANCE:Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda19;
 
     invoke-virtual {p3, p1, p4, p2, v0}, Lorg/telegram/ui/Stories/StoriesStorage;->saveAllStories(Ljava/util/ArrayList;ZZLjava/lang/Runnable;)V
 
-    .line 585
+    .line 586
     :cond_12
     invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesController;->sortUserStories()V
 
     return-void
 .end method
 
-.method private readStealthMode(Ljava/lang/String;)Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
+.method private readStealthMode(Ljava/lang/String;)Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;
     .locals 3
 
     const/4 v0, 0x0
@@ -5249,7 +5258,7 @@
 
     return-object v0
 
-    .line 230
+    .line 231
     :cond_0
     new-instance v1, Lorg/telegram/tgnet/SerializedData;
 
@@ -5261,13 +5270,13 @@
 
     const/4 p1, 0x1
 
-    .line 232
+    .line 233
     :try_start_0
     invoke-virtual {v1, p1}, Lorg/telegram/tgnet/SerializedData;->readInt32(Z)I
 
     move-result v2
 
-    invoke-static {v1, v2, p1}, Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
+    invoke-static {v1, v2, p1}, Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;
 
     move-result-object p1
     :try_end_0
@@ -5278,7 +5287,7 @@
     :catchall_0
     move-exception p1
 
-    .line 236
+    .line 237
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     return-object v0
@@ -5290,15 +5299,15 @@
         value = {
             "(",
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$PeerStories;",
+            "Lorg/telegram/tgnet/tl/TL_stories$PeerStories;",
             ">;)V"
         }
     .end annotation
 
-    .line 278
+    .line 279
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->fixDeletedAndNonContactsStories(Ljava/util/ArrayList;)V
 
-    .line 279
+    .line 280
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->peerStoriesComparator:Ljava/util/Comparator;
 
     invoke-static {p1, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
@@ -5309,12 +5318,12 @@
 .method private sortUserStories()V
     .locals 1
 
-    .line 606
+    .line 607
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->sortStoriesRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 607
+    .line 608
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->sortStoriesRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
@@ -5328,7 +5337,7 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "Lorg/telegram/tgnet/TLRPC$StoryItem;",
+            "Lorg/telegram/tgnet/tl/TL_stories$StoryItem;",
             ">;)",
             "Ljava/lang/String;"
         }
@@ -5346,7 +5355,7 @@
 
     const/4 v1, 0x0
 
-    .line 2174
+    .line 2286
     :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -5356,7 +5365,7 @@
 
     if-lez v1, :cond_1
 
-    .line 2175
+    .line 2287
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -5371,7 +5380,7 @@
 
     move-result-object v0
 
-    .line 2176
+    .line 2288
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -5383,9 +5392,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v0, v0, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v0, v0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -5397,9 +5406,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget-wide v3, v0, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+    iget-wide v3, v0, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
     invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -5446,7 +5455,7 @@
 
     const/4 v2, 0x0
 
-    .line 2190
+    .line 2302
     :goto_0
     invoke-interface {p0}, Ljava/util/List;->size()I
 
@@ -5456,7 +5465,7 @@
 
     if-lez v2, :cond_1
 
-    .line 2191
+    .line 2303
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5471,7 +5480,7 @@
 
     move-result-object v1
 
-    .line 2192
+    .line 2304
     :cond_1
     invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -5479,11 +5488,11 @@
 
     check-cast v3, Lorg/telegram/messenger/MessageObject;
 
-    iget-object v3, v3, Lorg/telegram/messenger/MessageObject;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v3, v3, Lorg/telegram/messenger/MessageObject;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     if-nez v3, :cond_2
 
-    .line 2194
+    .line 2306
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5498,7 +5507,7 @@
 
     goto :goto_1
 
-    .line 2196
+    .line 2308
     :cond_2
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -5506,7 +5515,7 @@
 
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget v1, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v1, v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -5514,7 +5523,7 @@
 
     invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v5, v3, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+    iget-wide v5, v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
     invoke-virtual {v4, v5, v6}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -5538,10 +5547,336 @@
     return-object p0
 .end method
 
-.method private writeStealthMode(Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;)V
+.method private updateStoriesForFullPeer(JLjava/util/List;)V
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Ljava/util/List<",
+            "Lorg/telegram/tgnet/tl/TL_stories$StoryItem;",
+            ">;)V"
+        }
+    .end annotation
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, p1, v0
+
+    if-lez v0, :cond_2
+
+    .line 947
+    iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1, p2}, Lorg/telegram/messenger/MessagesController;->getUserFull(J)Lorg/telegram/tgnet/TLRPC$UserFull;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    return-void
+
+    .line 951
+    :cond_0
+    iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
+
+    if-nez v1, :cond_1
+
+    .line 952
+    new-instance v1, Lorg/telegram/tgnet/tl/TL_stories$TL_peerStories;
+
+    invoke-direct {v1}, Lorg/telegram/tgnet/tl/TL_stories$TL_peerStories;-><init>()V
+
+    iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
+
+    .line 953
+    iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
+
+    invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1, p2}, Lorg/telegram/messenger/MessagesController;->getPeer(J)Lorg/telegram/tgnet/TLRPC$Peer;
+
+    move-result-object v2
+
+    iput-object v2, v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    .line 954
+    iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
+
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getMaxStoriesReadId(J)I
+
+    move-result p1
+
+    iput p1, v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->max_read_id:I
+
+    .line 956
+    :cond_1
+    iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$UserFull;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
+
+    goto :goto_0
+
+    .line 958
+    :cond_2
+    iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
+
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
+
+    neg-long v1, p1
+
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/MessagesController;->getChatFull(J)Lorg/telegram/tgnet/TLRPC$ChatFull;
+
+    move-result-object v0
+
+    if-nez v0, :cond_3
+
+    return-void
+
+    .line 962
+    :cond_3
+    iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
+
+    if-nez v1, :cond_4
+
+    .line 963
+    new-instance v1, Lorg/telegram/tgnet/tl/TL_stories$TL_peerStories;
+
+    invoke-direct {v1}, Lorg/telegram/tgnet/tl/TL_stories$TL_peerStories;-><init>()V
+
+    iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
+
+    .line 964
+    iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
+
+    invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v2
+
+    invoke-virtual {v2, p1, p2}, Lorg/telegram/messenger/MessagesController;->getPeer(J)Lorg/telegram/tgnet/TLRPC$Peer;
+
+    move-result-object v2
+
+    iput-object v2, v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    .line 965
+    iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
+
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getMaxStoriesReadId(J)I
+
+    move-result p1
+
+    iput p1, v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->max_read_id:I
+
+    .line 967
+    :cond_4
+    iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
+
+    :goto_0
+    const/4 p2, 0x0
+
+    move v0, p2
+
+    .line 969
+    :goto_1
+    invoke-interface {p3}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_c
+
+    .line 971
+    invoke-interface {p3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
+
+    move v2, p2
+
+    .line 972
+    :goto_2
+    iget-object v3, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
+
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+
+    move-result v3
+
+    const/4 v4, 0x1
+
+    if-ge v2, v3, :cond_9
+
+    .line 973
+    iget-object v3, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
+
+    iget v3, v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
+
+    iget v5, v1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
+
+    if-ne v3, v5, :cond_8
+
+    .line 975
+    instance-of v3, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemDeleted;
+
+    if-eqz v3, :cond_5
+
+    .line 976
+    iget-object v3, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    goto :goto_3
+
+    .line 978
+    :cond_5
+    iget-object v3, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
+
+    .line 979
+    invoke-static {v3, v1}, Lorg/telegram/ui/Stories/StoriesController;->applyStoryUpdate(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
+
+    move-result-object v1
+
+    .line 980
+    iget-object v5, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
+
+    invoke-virtual {v5, v2, v1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    .line 981
+    iget-object v2, v1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->attachPath:Ljava/lang/String;
+
+    if-nez v2, :cond_6
+
+    .line 982
+    iget-object v2, v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->attachPath:Ljava/lang/String;
+
+    iput-object v2, v1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->attachPath:Ljava/lang/String;
+
+    .line 984
+    :cond_6
+    iget-object v2, v1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->firstFramePath:Ljava/lang/String;
+
+    if-nez v2, :cond_7
+
+    .line 985
+    iget-object v2, v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->firstFramePath:Ljava/lang/String;
+
+    iput-object v2, v1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->firstFramePath:Ljava/lang/String;
+
+    .line 987
+    :cond_7
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "StoriesController update story for full peer storyId="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v3, v1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    goto :goto_3
+
+    :cond_8
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_2
+
+    :cond_9
+    move v4, p2
+
+    :goto_3
+    if-nez v4, :cond_b
+
+    .line 993
+    instance-of v2, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemDeleted;
+
+    if-eqz v2, :cond_a
+
+    .line 994
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "StoriesController story is not found, but already deleted storyId="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v1, v1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    goto :goto_4
+
+    .line 996
+    :cond_a
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, " StoriesController add new story for full peer storyId="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v3, v1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    .line 997
+    iget-object v2, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
+
+    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_b
+    :goto_4
+    add-int/lit8 v0, v0, 0x1
+
+    goto/16 :goto_1
+
+    :cond_c
+    return-void
+.end method
+
+.method private writeStealthMode(Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;)V
     .locals 4
 
-    .line 242
+    .line 243
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5560,7 +5895,7 @@
 
     if-nez p1, :cond_0
 
-    .line 244
+    .line 245
     invoke-interface {v0, v1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
@@ -5569,7 +5904,7 @@
 
     return-void
 
-    .line 247
+    .line 248
     :cond_0
     new-instance v2, Lorg/telegram/tgnet/SerializedData;
 
@@ -5579,10 +5914,10 @@
 
     invoke-direct {v2, v3}, Lorg/telegram/tgnet/SerializedData;-><init>(I)V
 
-    .line 248
-    invoke-virtual {p1, v2}, Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
-
     .line 249
+    invoke-virtual {p1, v2}, Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
+
+    .line 250
     invoke-virtual {v2}, Lorg/telegram/tgnet/SerializedData;->toByteArray()[B
 
     move-result-object p1
@@ -5602,13 +5937,13 @@
 
 
 # virtual methods
-.method public applyStoryViewsBlocked(Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;)V
+.method public applyStoryViewsBlocked(Lorg/telegram/tgnet/tl/TL_stories$TL_stories_storyViewsList;)V
     .locals 5
 
     if-eqz p1, :cond_2
 
-    .line 3023
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->views:Ljava/util/ArrayList;
+    .line 3156
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_storyViewsList;->views:Ljava/util/ArrayList;
 
     if-nez v0, :cond_0
 
@@ -5617,9 +5952,9 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 3026
+    .line 3159
     :goto_0
-    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->views:Ljava/util/ArrayList;
+    iget-object v1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_storyViewsList;->views:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -5627,19 +5962,19 @@
 
     if-ge v0, v1, :cond_2
 
-    .line 3027
-    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_storyViewsList;->views:Ljava/util/ArrayList;
+    .line 3160
+    iget-object v1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_storyViewsList;->views:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_storyView;
+    check-cast v1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
-    .line 3028
+    .line 3161
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->blockedOverride:Landroidx/collection/LongSparseArray;
 
-    iget-wide v3, v1, Lorg/telegram/tgnet/TLRPC$TL_storyView;->user_id:J
+    iget-wide v3, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->user_id:J
 
     invoke-virtual {v2, v3, v4}, Landroidx/collection/LongSparseArray;->containsKey(J)Z
 
@@ -5647,12 +5982,12 @@
 
     if-eqz v2, :cond_1
 
-    .line 3029
+    .line 3162
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->blockedOverride:Landroidx/collection/LongSparseArray;
 
-    iget-wide v3, v1, Lorg/telegram/tgnet/TLRPC$TL_storyView;->user_id:J
+    iget-wide v3, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->user_id:J
 
-    iget-boolean v1, v1, Lorg/telegram/tgnet/TLRPC$TL_storyView;->blocked_my_stories_from:Z
+    iget-boolean v1, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->blocked_my_stories_from:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -5670,7 +6005,7 @@
     return-void
 .end method
 
-.method public canDeleteStory(Lorg/telegram/tgnet/TLRPC$StoryItem;)Z
+.method public canDeleteStory(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)Z
     .locals 5
 
     const/4 v0, 0x0
@@ -5679,9 +6014,9 @@
 
     return v0
 
-    .line 3327
+    .line 3460
     :cond_0
-    iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+    iget-wide v1, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
     invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesController;->getSelfUserId()J
 
@@ -5693,9 +6028,9 @@
 
     return v0
 
-    .line 3330
+    .line 3463
     :cond_1
-    iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+    iget-wide v1, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
     const-wide/16 v3, 0x0
 
@@ -5703,14 +6038,14 @@
 
     if-gez v1, :cond_6
 
-    .line 3331
+    .line 3464
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
 
-    iget-wide v2, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+    iget-wide v2, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
     neg-long v2, v2
 
@@ -5726,7 +6061,7 @@
 
     return v0
 
-    .line 3335
+    .line 3468
     :cond_2
     iget-boolean v2, v1, Lorg/telegram/tgnet/TLRPC$Chat;->creator:Z
 
@@ -5736,9 +6071,9 @@
 
     return v3
 
-    .line 3338
+    .line 3471
     :cond_3
-    iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->out:Z
+    iget-boolean p1, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->out:Z
 
     if-eqz p1, :cond_5
 
@@ -5760,7 +6095,7 @@
     :cond_5
     if-nez p1, :cond_6
 
-    .line 3341
+    .line 3474
     iget-object p1, v1, Lorg/telegram/tgnet/TLRPC$Chat;->admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
     if-eqz p1, :cond_6
@@ -5786,7 +6121,7 @@
 
     if-gez v0, :cond_2
 
-    .line 3278
+    .line 3411
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5807,7 +6142,7 @@
 
     return v1
 
-    .line 3282
+    .line 3415
     :cond_0
     iget-boolean p2, p1, Lorg/telegram/tgnet/TLRPC$Chat;->creator:Z
 
@@ -5828,7 +6163,7 @@
     return v1
 .end method
 
-.method public canEditStory(Lorg/telegram/tgnet/TLRPC$StoryItem;)Z
+.method public canEditStory(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)Z
     .locals 5
 
     const/4 v0, 0x0
@@ -5837,9 +6172,9 @@
 
     return v0
 
-    .line 3302
+    .line 3435
     :cond_0
-    iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+    iget-wide v1, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
     invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesController;->getSelfUserId()J
 
@@ -5851,9 +6186,9 @@
 
     return v0
 
-    .line 3305
+    .line 3438
     :cond_1
-    iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+    iget-wide v1, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
     const-wide/16 v3, 0x0
 
@@ -5861,14 +6196,14 @@
 
     if-gez v1, :cond_6
 
-    .line 3306
+    .line 3439
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
 
-    iget-wide v2, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+    iget-wide v2, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
     neg-long v2, v2
 
@@ -5884,7 +6219,7 @@
 
     return v0
 
-    .line 3310
+    .line 3443
     :cond_2
     iget-boolean v2, v1, Lorg/telegram/tgnet/TLRPC$Chat;->creator:Z
 
@@ -5894,9 +6229,9 @@
 
     return v3
 
-    .line 3313
+    .line 3446
     :cond_3
-    iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->out:Z
+    iget-boolean p1, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->out:Z
 
     if-eqz p1, :cond_5
 
@@ -5918,7 +6253,7 @@
     :cond_5
     if-nez p1, :cond_6
 
-    .line 3316
+    .line 3449
     iget-object p1, v1, Lorg/telegram/tgnet/TLRPC$Chat;->admin_rights:Lorg/telegram/tgnet/TLRPC$TL_chatAdminRights;
 
     if-eqz p1, :cond_6
@@ -5944,7 +6279,7 @@
 
     if-gez v0, :cond_2
 
-    .line 3289
+    .line 3422
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5963,7 +6298,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 3290
+    .line 3423
     invoke-static {p1}, Lorg/telegram/messenger/ChatObject;->isChannelAndNotMegaGroup(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result p2
@@ -5972,7 +6307,7 @@
 
     goto :goto_0
 
-    .line 3293
+    .line 3426
     :cond_0
     iget-boolean p2, p1, Lorg/telegram/tgnet/TLRPC$Chat;->creator:Z
 
@@ -6007,12 +6342,12 @@
         }
     .end annotation
 
-    .line 3105
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_canSendStory;
+    .line 3238
+    new-instance v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_canSendStory;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_canSendStory;-><init>()V
+    invoke-direct {v0}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_canSendStory;-><init>()V
 
-    .line 3106
+    .line 3239
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -6023,9 +6358,9 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_canSendStory;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_canSendStory;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 3107
+    .line 3240
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -6058,12 +6393,12 @@
 .method public checkExpiredStories()V
     .locals 1
 
-    .line 1515
+    .line 1611
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->checkExpireStories(Ljava/util/ArrayList;)V
 
-    .line 1516
+    .line 1612
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->checkExpireStories(Ljava/util/ArrayList;)V
@@ -6074,8 +6409,8 @@
 .method public checkExpiredStories(J)V
     .locals 5
 
-    .line 1542
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/TLRPC$PeerStories;
+    .line 1638
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     move-result-object v0
 
@@ -6088,9 +6423,9 @@
 
     move v2, v1
 
-    .line 1546
+    .line 1642
     :goto_0
-    iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v3, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -6098,25 +6433,25 @@
 
     if-ge v2, v3, :cond_2
 
-    .line 1547
+    .line 1643
     iget v3, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
-    iget-object v4, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v4, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v4, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    invoke-static {v3, v4}, Lorg/telegram/ui/Stories/StoriesUtilities;->isExpired(ILorg/telegram/tgnet/TLRPC$StoryItem;)Z
+    invoke-static {v3, v4}, Lorg/telegram/ui/Stories/StoriesUtilities;->isExpired(ILorg/telegram/tgnet/tl/TL_stories$StoryItem;)Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 1548
-    iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1644
+    iget-object v3, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
@@ -6127,9 +6462,9 @@
 
     goto :goto_0
 
-    .line 1552
+    .line 1648
     :cond_2
-    iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v2, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -6143,17 +6478,17 @@
 
     if-nez p1, :cond_3
 
-    .line 1553
+    .line 1649
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 1554
+    .line 1650
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 1555
+    .line 1651
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -6179,14 +6514,14 @@
 
     if-eqz p1, :cond_3
 
-    .line 3163
+    .line 3296
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
     if-eqz v2, :cond_3
 
     const-string v3, "STORY_SEND_FLOOD_WEEKLY_"
 
-    .line 3164
+    .line 3297
     invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
@@ -6195,7 +6530,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 3167
+    .line 3300
     :try_start_0
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -6211,7 +6546,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3169
+    .line 3302
     :catch_0
     new-instance p1, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;
 
@@ -6223,7 +6558,7 @@
 
     goto :goto_0
 
-    .line 3171
+    .line 3304
     :cond_0
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -6235,7 +6570,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 3174
+    .line 3307
     :try_start_1
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -6251,7 +6586,7 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 3176
+    .line 3309
     :catch_1
     new-instance p1, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;
 
@@ -6263,7 +6598,7 @@
 
     goto :goto_0
 
-    .line 3178
+    .line 3311
     :cond_1
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -6275,7 +6610,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 3179
+    .line 3312
     new-instance p1, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;
 
     invoke-direct {p1, v1, v3, v4}, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;-><init>(IJ)V
@@ -6284,7 +6619,7 @@
 
     goto :goto_0
 
-    .line 3181
+    .line 3314
     :cond_2
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
 
@@ -6296,14 +6631,14 @@
 
     if-eqz p1, :cond_3
 
-    .line 3182
+    .line 3315
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
 
-    .line 3183
+    .line 3316
     iget-object v2, p1, Lorg/telegram/messenger/MessagesController;->storiesPosting:Ljava/lang/String;
 
     const-string v3, "enabled"
@@ -6314,7 +6649,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 3184
+    .line 3317
     invoke-virtual {p1}, Lorg/telegram/messenger/MessagesController;->getMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v2
@@ -6335,7 +6670,7 @@
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 3185
+    .line 3318
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -6357,7 +6692,7 @@
     :goto_0
     if-eqz v1, :cond_5
 
-    .line 3191
+    .line 3324
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -6377,7 +6712,7 @@
 .method public checkStoryLimit()Lorg/telegram/ui/Stories/StoriesController$StoryLimit;
     .locals 4
 
-    .line 3078
+    .line 3211
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -6390,7 +6725,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3079
+    .line 3212
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -6401,7 +6736,7 @@
 
     goto :goto_0
 
-    .line 3080
+    .line 3213
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -6411,7 +6746,7 @@
 
     iget v0, v0, Lorg/telegram/messenger/MessagesController;->storyExpiringLimitDefault:I
 
-    .line 3082
+    .line 3215
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesController;->getMyStoriesCount()I
 
@@ -6419,7 +6754,7 @@
 
     if-lt v1, v0, :cond_1
 
-    .line 3083
+    .line 3216
     new-instance v0, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;
 
     const/4 v1, 0x1
@@ -6430,24 +6765,24 @@
 
     return-object v0
 
-    .line 3086
+    .line 3219
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storyLimitFetched:Z
 
     if-eqz v0, :cond_2
 
-    .line 3087
+    .line 3220
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storyLimitCached:Lorg/telegram/ui/Stories/StoriesController$StoryLimit;
 
     return-object v0
 
-    .line 3090
+    .line 3223
     :cond_2
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_canSendStory;
+    new-instance v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_canSendStory;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_canSendStory;-><init>()V
+    invoke-direct {v0}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_canSendStory;-><init>()V
 
-    .line 3091
+    .line 3224
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -6468,9 +6803,9 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_canSendStory;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_canSendStory;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 3092
+    .line 3225
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -6495,18 +6830,18 @@
 
     const/4 v0, 0x0
 
-    .line 1301
+    .line 1397
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesReadLoaded:Z
 
     const-string v1, ""
 
-    .line 1302
+    .line 1398
     iput-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->stateHidden:Ljava/lang/String;
 
-    .line 1303
+    .line 1399
     iput-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->state:Ljava/lang/String;
 
-    .line 1304
+    .line 1400
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -6515,43 +6850,43 @@
 
     const-string v2, "stories_loaded"
 
-    .line 1305
+    .line 1401
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
     const-string v2, "last_stories_state"
 
-    .line 1306
+    .line 1402
     invoke-interface {v1, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
     const-string v2, "stories_loaded_hidden"
 
-    .line 1307
+    .line 1403
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
     const-string v2, "last_stories_state_hidden"
 
-    .line 1308
+    .line 1404
     invoke-interface {v1, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
     const-string v2, "read_loaded"
 
-    .line 1309
+    .line 1405
     invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 1310
+    .line 1406
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 1311
+    .line 1407
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->draftsController:Lorg/telegram/ui/Stories/recorder/DraftsController;
 
     invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
@@ -6562,141 +6897,151 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1313
+    .line 1409
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesController;->loadStories()V
 
-    .line 1314
+    .line 1410
     invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesController;->loadStoriesRead()V
 
     return-void
 .end method
 
-.method public deleteStories(Ljava/util/ArrayList;)V
+.method public deleteStories(JLjava/util/ArrayList;)V
     .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(",
+            "(J",
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$StoryItem;",
+            "Lorg/telegram/tgnet/tl/TL_stories$StoryItem;",
             ">;)V"
         }
     .end annotation
 
-    if-nez p1, :cond_0
+    if-nez p3, :cond_0
 
     return-void
 
-    .line 1109
+    .line 1184
     :cond_0
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_deleteStories;
+    new-instance v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_deleteStories;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_deleteStories;-><init>()V
+    invoke-direct {v0}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_deleteStories;-><init>()V
 
-    .line 1110
-    iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
+    .line 1185
+    iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesController;->getSelfUserId()J
-
-    move-result-wide v2
-
-    invoke-virtual {v1, v2, v3}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+    invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
 
-    check-cast v1, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    invoke-virtual {v1, p1, p2}, Lorg/telegram/messenger/MessagesController;->getInputPeer(J)Lorg/telegram/tgnet/TLRPC$InputPeer;
+
+    move-result-object v1
+
+    iput-object v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_deleteStories;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+
+    if-nez v1, :cond_1
+
+    return-void
+
+    .line 1189
+    :cond_1
+    iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
+
+    invoke-virtual {v1, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     const/4 v2, 0x0
 
     move v3, v2
 
-    .line 1111
+    .line 1190
     :goto_0
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    if-ge v3, v4, :cond_4
+    if-ge v3, v4, :cond_5
 
-    .line 1112
-    invoke-virtual {p1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    .line 1191
+    invoke-virtual {p3, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v4, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    .line 1113
-    instance-of v5, v4, Lorg/telegram/tgnet/TLRPC$TL_storyItemDeleted;
+    .line 1192
+    instance-of v5, v4, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemDeleted;
 
-    if-eqz v5, :cond_1
+    if-eqz v5, :cond_2
 
     goto :goto_3
 
-    :cond_1
-    if-eqz v1, :cond_3
+    :cond_2
+    if-eqz v1, :cond_4
 
     move v5, v2
 
-    .line 1117
+    .line 1196
     :goto_1
-    iget-object v6, v1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v6, v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
     move-result v6
 
-    if-ge v5, v6, :cond_3
+    if-ge v5, v6, :cond_4
 
-    .line 1118
-    iget-object v6, v1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1197
+    iget-object v6, v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
-    check-cast v6, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v6, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v6, v6, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v6, v6, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
-    iget v7, v4, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v7, v4, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
-    if-ne v6, v7, :cond_2
+    if-ne v6, v7, :cond_3
 
-    .line 1119
-    iget-object v6, v1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1198
+    iget-object v6, v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 1120
-    iget-object v5, v1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1199
+    iget-object v5, v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v5}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v5
 
-    if-eqz v5, :cond_3
+    if-eqz v5, :cond_4
 
-    .line 1121
+    .line 1200
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesController;->getSelfUserId()J
-
-    move-result-wide v6
-
-    invoke-virtual {v5, v6, v7}, Landroidx/collection/LongSparseArray;->remove(J)V
+    invoke-virtual {v5, p1, p2}, Landroidx/collection/LongSparseArray;->remove(J)V
 
     goto :goto_2
 
-    :cond_2
+    :cond_3
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 1127
-    :cond_3
+    .line 1206
+    :cond_4
     :goto_2
-    iget-object v5, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_deleteStories;->id:Ljava/util/ArrayList;
+    iget-object v5, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_deleteStories;->id:Ljava/util/ArrayList;
 
-    iget v4, v4, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v4, v4, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -6709,8 +7054,8 @@
 
     goto :goto_0
 
-    .line 1129
-    :cond_4
+    .line 1208
+    :cond_5
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -6723,47 +7068,39 @@
 
     invoke-virtual {v1, v0, v3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 1132
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesController;->getSelfUserId()J
+    .line 1211
+    invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->updateDeletedStoriesInLists(JLjava/util/List;)V
 
-    move-result-wide v3
+    .line 1212
+    iget-object p3, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
-    invoke-virtual {p0, v3, v4, p1}, Lorg/telegram/ui/Stories/StoriesController;->updateDeletedStoriesInLists(JLjava/util/List;)V
+    iget-object v0, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_deleteStories;->id:Ljava/util/ArrayList;
 
-    .line 1133
-    iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
+    invoke-virtual {p3, p1, p2, v0}, Lorg/telegram/ui/Stories/StoriesStorage;->deleteStories(JLjava/util/ArrayList;)V
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesController;->getSelfUserId()J
-
-    move-result-wide v3
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_deleteStories;->id:Ljava/util/ArrayList;
-
-    invoke-virtual {p1, v3, v4, v0}, Lorg/telegram/ui/Stories/StoriesStorage;->deleteStories(JLjava/util/ArrayList;)V
-
-    .line 1134
+    .line 1213
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
 
-    sget v0, Lorg/telegram/messenger/NotificationCenter;->storiesUpdated:I
+    sget p2, Lorg/telegram/messenger/NotificationCenter;->storiesUpdated:I
 
-    new-array v1, v2, [Ljava/lang/Object;
+    new-array p3, v2, [Ljava/lang/Object;
 
-    invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public deleteStory(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
-    .locals 9
+.method public deleteStory(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
+    .locals 12
 
-    if-eqz p3, :cond_a
+    if-eqz p3, :cond_c
 
-    .line 1048
-    instance-of v0, p3, Lorg/telegram/tgnet/TLRPC$TL_storyItemDeleted;
+    .line 1109
+    instance-of v0, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemDeleted;
 
     if-eqz v0, :cond_0
 
@@ -6777,208 +7114,261 @@
     :goto_0
     const/4 v2, 0x2
 
-    if-ge v1, v2, :cond_9
+    const/4 v3, 0x1
+
+    if-ge v1, v2, :cond_b
+
+    const-wide/16 v4, 0x0
 
     const/4 v2, 0x0
 
     if-nez v1, :cond_1
 
-    .line 1056
-    iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
+    .line 1117
+    iget-object v6, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
-    invoke-virtual {v3, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+    invoke-virtual {v6, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v6
 
-    check-cast v3, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v6, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    move-object v4, v2
+    move-object v7, v2
 
-    move-object v2, v3
+    move-object v2, v6
 
-    move-object v3, v4
+    move-object v6, v7
 
     goto :goto_1
 
     :cond_1
-    const-wide/16 v3, 0x0
+    cmp-long v6, p1, v4
 
-    cmp-long v3, p1, v3
+    if-ltz v6, :cond_3
 
-    if-ltz v3, :cond_3
+    .line 1120
+    iget v6, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
-    .line 1059
-    iget v3, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
+    invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    move-result-object v6
 
-    move-result-object v3
+    invoke-virtual {v6, p1, p2}, Lorg/telegram/messenger/MessagesController;->getUserFull(J)Lorg/telegram/tgnet/TLRPC$UserFull;
 
-    invoke-virtual {v3, p1, p2}, Lorg/telegram/messenger/MessagesController;->getUserFull(J)Lorg/telegram/tgnet/TLRPC$UserFull;
+    move-result-object v6
 
-    move-result-object v3
+    if-eqz v6, :cond_2
 
-    if-eqz v3, :cond_2
+    .line 1122
+    iget-object v7, v6, Lorg/telegram/tgnet/TLRPC$UserFull;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    .line 1061
-    iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$UserFull;->stories:Lorg/telegram/tgnet/TLRPC$PeerStories;
+    move-object v11, v7
 
-    move-object v8, v4
+    move-object v7, v2
 
-    move-object v4, v2
-
-    move-object v2, v8
+    move-object v2, v11
 
     goto :goto_1
 
     :cond_2
-    move-object v4, v2
+    move-object v7, v2
 
     goto :goto_1
 
-    .line 1064
+    .line 1125
     :cond_3
-    iget v3, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
+    iget v6, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
-    invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v3
+    move-result-object v6
 
-    neg-long v4, p1
+    neg-long v7, p1
 
-    invoke-virtual {v3, v4, v5}, Lorg/telegram/messenger/MessagesController;->getChatFull(J)Lorg/telegram/tgnet/TLRPC$ChatFull;
+    invoke-virtual {v6, v7, v8}, Lorg/telegram/messenger/MessagesController;->getChatFull(J)Lorg/telegram/tgnet/TLRPC$ChatFull;
 
-    move-result-object v3
+    move-result-object v6
 
-    if-eqz v3, :cond_4
+    if-eqz v6, :cond_4
 
-    .line 1066
-    iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$ChatFull;->stories:Lorg/telegram/tgnet/TLRPC$PeerStories;
+    .line 1127
+    iget-object v7, v6, Lorg/telegram/tgnet/TLRPC$ChatFull;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    move-object v8, v3
+    move-object v11, v6
 
-    move-object v3, v2
+    move-object v6, v2
 
-    move-object v2, v4
+    move-object v2, v7
 
-    move-object v4, v8
+    move-object v7, v11
 
     goto :goto_1
 
     :cond_4
-    move-object v4, v3
+    move-object v7, v6
 
-    move-object v3, v2
+    move-object v6, v2
 
     :goto_1
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_8
 
-    move v5, v0
+    move v8, v0
 
-    .line 1072
+    .line 1133
     :goto_2
-    iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v9, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
-    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v9}, Ljava/util/ArrayList;->size()I
 
-    move-result v6
+    move-result v9
 
-    if-ge v5, v6, :cond_6
+    if-ge v8, v9, :cond_8
 
-    .line 1073
-    iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1134
+    iget-object v9, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
-    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v9, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v9
 
-    check-cast v6, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v9, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v6, v6, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v9, v9, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
-    iget v7, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v10, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
-    if-ne v6, v7, :cond_5
+    if-ne v9, v10, :cond_7
 
-    .line 1074
-    iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1135
+    iget-object v9, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
-    invoke-virtual {v6, v5}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v9, v8}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 1075
-    iget-object v5, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1136
+    iget-object v8, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
-    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v8}, Ljava/util/ArrayList;->size()I
 
-    move-result v5
+    move-result v8
 
-    if-nez v5, :cond_6
+    if-nez v8, :cond_8
 
+    .line 1137
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->hasUploadingStories(J)Z
 
-    move-result v5
+    move-result v8
 
-    if-nez v5, :cond_6
+    if-nez v8, :cond_5
 
-    .line 1076
-    iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
+    .line 1138
+    iget-object v8, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
-    invoke-virtual {v5, p1, p2}, Landroidx/collection/LongSparseArray;->remove(J)V
+    invoke-virtual {v8, p1, p2}, Landroidx/collection/LongSparseArray;->remove(J)V
 
-    .line 1077
-    iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
+    .line 1139
+    iget-object v8, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 1078
-    iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
+    .line 1140
+    iget-object v8, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    :cond_5
+    cmp-long v2, p1, v4
+
+    if-lez v2, :cond_6
+
+    .line 1143
+    iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
+
+    invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v2
+
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_8
+
+    .line 1145
+    iput-boolean v3, v2, Lorg/telegram/tgnet/TLRPC$User;->stories_unavailable:Z
 
     goto :goto_3
 
-    :cond_5
-    add-int/lit8 v5, v5, 0x1
+    .line 1148
+    :cond_6
+    iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
+
+    invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v2
+
+    neg-long v4, p1
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+
+    move-result-object v2
+
+    if-eqz v2, :cond_8
+
+    .line 1150
+    iput-boolean v3, v2, Lorg/telegram/tgnet/TLRPC$Chat;->stories_unavailable:Z
+
+    goto :goto_3
+
+    :cond_7
+    add-int/lit8 v8, v8, 0x1
 
     goto :goto_2
 
-    :cond_6
-    :goto_3
-    if-eqz v4, :cond_7
-
-    .line 1085
-    iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
-
-    invoke-static {v2}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v4, v0}, Lorg/telegram/messenger/MessagesStorage;->updateChatInfo(Lorg/telegram/tgnet/TLRPC$ChatFull;Z)V
-
-    :cond_7
-    if-eqz v3, :cond_8
-
-    .line 1088
-    iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
-
-    invoke-static {v2}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v3, v0}, Lorg/telegram/messenger/MessagesStorage;->updateUserInfo(Lorg/telegram/tgnet/TLRPC$UserFull;Z)V
-
     :cond_8
+    :goto_3
+    if-eqz v7, :cond_9
+
+    .line 1160
+    iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
+
+    invoke-static {v2}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v7, v0}, Lorg/telegram/messenger/MessagesStorage;->updateChatInfo(Lorg/telegram/tgnet/TLRPC$ChatFull;Z)V
+
+    :cond_9
+    if-eqz v6, :cond_a
+
+    .line 1163
+    iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
+
+    invoke-static {v2}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v6, v0}, Lorg/telegram/messenger/MessagesStorage;->updateUserInfo(Lorg/telegram/tgnet/TLRPC$UserFull;Z)V
+
+    :cond_a
     add-int/lit8 v1, v1, 0x1
 
     goto/16 :goto_0
 
-    .line 1091
-    :cond_9
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_stories_deleteStories;
+    .line 1166
+    :cond_b
+    new-instance v1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_deleteStories;
 
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_stories_deleteStories;-><init>()V
+    invoke-direct {v1}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_deleteStories;-><init>()V
 
-    .line 1092
+    .line 1167
     iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -6989,40 +7379,40 @@
 
     move-result-object v2
 
-    iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_stories_deleteStories;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object v2, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_deleteStories;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 1093
-    iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$TL_stories_deleteStories;->id:Ljava/util/ArrayList;
+    .line 1168
+    iget-object v2, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_deleteStories;->id:Ljava/util/ArrayList;
 
-    iget v3, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v4, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1094
+    .line 1169
     iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v2
 
-    new-instance v3, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda28;
+    new-instance v4, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda28;
 
-    invoke-direct {v3, p0}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda28;-><init>(Lorg/telegram/ui/Stories/StoriesController;)V
+    invoke-direct {v4, p0}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda28;-><init>(Lorg/telegram/ui/Stories/StoriesController;)V
 
-    invoke-virtual {v2, v1, v3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+    invoke-virtual {v2, v1, v4}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 1099
+    .line 1174
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
-    iget v2, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v2, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-virtual {v1, p1, p2, v2}, Lorg/telegram/ui/Stories/StoriesStorage;->deleteStory(JI)V
 
-    .line 1100
+    .line 1175
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -7031,11 +7421,11 @@
 
     sget v2, Lorg/telegram/messenger/NotificationCenter;->storiesUpdated:I
 
-    new-array v3, v0, [Ljava/lang/Object;
+    new-array v4, v0, [Ljava/lang/Object;
 
-    invoke-virtual {v1, v2, v3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    invoke-virtual {v1, v2, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1101
+    .line 1176
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -7044,20 +7434,18 @@
 
     invoke-virtual {v1}, Lorg/telegram/messenger/MessagesController;->checkArchiveFolder()V
 
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Lorg/telegram/tgnet/TLRPC$StoryItem;
+    new-array v1, v3, [Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     aput-object p3, v1, v0
 
-    .line 1102
+    .line 1177
     invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p3
 
     invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->updateDeletedStoriesInLists(JLjava/util/List;)V
 
-    :cond_a
+    :cond_c
     :goto_4
     return-void
 .end method
@@ -7065,7 +7453,7 @@
 .method public destroyStoryList(Lorg/telegram/ui/Stories/StoriesController$StoriesList;)V
     .locals 3
 
-    .line 2229
+    .line 2341
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesLists:[Ljava/util/HashMap;
 
     iget v1, p1, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->type:I
@@ -7074,7 +7462,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 2230
+    .line 2342
     aget-object v0, v0, v1
 
     iget-wide v1, p1, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->dialogId:J
@@ -7103,7 +7491,7 @@
         }
     .end annotation
 
-    .line 1395
+    .line 1491
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
     invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesStorage;->fillMessagesWithStories(Landroidx/collection/LongSparseArray;Ljava/lang/Runnable;I)V
@@ -7111,7 +7499,7 @@
     return-void
 .end method
 
-.method public findEditingStory(JLorg/telegram/tgnet/TLRPC$StoryItem;)Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
+.method public findEditingStory(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
     .locals 2
 
     const/4 v0, 0x0
@@ -7120,7 +7508,7 @@
 
     return-object v0
 
-    .line 757
+    .line 758
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->editingStories:Landroidx/collection/LongSparseArray;
 
@@ -7132,7 +7520,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 758
+    .line 759
     invoke-virtual {p1}, Ljava/util/HashMap;->isEmpty()Z
 
     move-result p2
@@ -7141,9 +7529,9 @@
 
     goto :goto_0
 
-    .line 761
+    .line 762
     :cond_1
-    iget p2, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget p2, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -7165,7 +7553,7 @@
 .method public getBlocklistCount()I
     .locals 1
 
-    .line 2970
+    .line 3103
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistCount:I
 
     return v0
@@ -7177,12 +7565,12 @@
         value = {
             "()",
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$PeerStories;",
+            "Lorg/telegram/tgnet/tl/TL_stories$PeerStories;",
             ">;"
         }
     .end annotation
 
-    .line 721
+    .line 722
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     return-object v0
@@ -7191,7 +7579,7 @@
 .method public getDraftsController()Lorg/telegram/ui/Stories/recorder/DraftsController;
     .locals 1
 
-    .line 310
+    .line 311
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->draftsController:Lorg/telegram/ui/Stories/recorder/DraftsController;
 
     return-object v0
@@ -7200,7 +7588,7 @@
 .method public getEditingStory(J)Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
     .locals 1
 
-    .line 765
+    .line 766
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->editingStories:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -7213,7 +7601,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 766
+    .line 767
     invoke-virtual {p1}, Ljava/util/HashMap;->isEmpty()Z
 
     move-result v0
@@ -7222,13 +7610,13 @@
 
     goto :goto_0
 
-    .line 769
+    .line 770
     :cond_0
     invoke-virtual {p1}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
     move-result-object p1
 
-    .line 770
+    .line 771
     invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
 
     move-result v0
@@ -7237,7 +7625,7 @@
 
     return-object p2
 
-    .line 773
+    .line 774
     :cond_1
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
@@ -7262,44 +7650,90 @@
         value = {
             "()",
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$PeerStories;",
+            "Lorg/telegram/tgnet/tl/TL_stories$PeerStories;",
             ">;"
         }
     .end annotation
 
-    .line 1438
+    .line 1534
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     return-object v0
 .end method
 
+.method public getMaxStoriesReadId(J)I
+    .locals 3
+
+    .line 1296
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    .line 1298
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStoriesFromFullPeer(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
+
+    move-result-object v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_1
+
+    .line 1301
+    iget v0, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->max_read_id:I
+
+    iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogIdToMaxReadId:Lorg/telegram/messenger/support/LongSparseIntArray;
+
+    invoke-virtual {v2, p1, p2, v1}, Lorg/telegram/messenger/support/LongSparseIntArray;->get(JI)I
+
+    move-result p1
+
+    invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
+
+    move-result p1
+
+    return p1
+
+    .line 1303
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogIdToMaxReadId:Lorg/telegram/messenger/support/LongSparseIntArray;
+
+    invoke-virtual {v0, p1, p2, v1}, Lorg/telegram/messenger/support/LongSparseIntArray;->get(JI)I
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public getMyStoriesCount()I
     .locals 3
 
-    .line 745
+    .line 746
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingAndEditingStories:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->size()I
 
     move-result v0
 
-    .line 746
+    .line 747
     invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesController;->getSelfUserId()J
 
     move-result-wide v1
 
-    invoke-virtual {p0, v1, v2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/TLRPC$PeerStories;
+    invoke-virtual {p0, v1, v2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 747
-    iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 748
+    iget-object v1, v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     if-eqz v1, :cond_0
 
-    .line 748
+    .line 749
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -7313,7 +7747,7 @@
 .method public getSelfStoriesCount()I
     .locals 3
 
-    .line 1039
+    .line 1100
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
@@ -7328,14 +7762,14 @@
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 1041
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1102
+    iget-object v0, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -7343,7 +7777,7 @@
 
     add-int/2addr v1, v0
 
-    .line 1043
+    .line 1104
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingStoriesByDialogId:Landroidx/collection/LongSparseArray;
 
@@ -7356,31 +7790,31 @@
     return v1
 .end method
 
-.method public getStealthMode()Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
+.method public getStealthMode()Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;
     .locals 1
 
-    .line 1564
-    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->stealthMode:Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
+    .line 1660
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->stealthMode:Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;
 
     return-object v0
 .end method
 
-.method public getStories(J)Lorg/telegram/tgnet/TLRPC$PeerStories;
+.method public getStories(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
     .locals 1
 
-    .line 725
+    .line 726
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     return-object p1
 .end method
 
-.method public getStoriesFromFullPeer(J)Lorg/telegram/tgnet/TLRPC$PeerStories;
+.method public getStoriesFromFullPeer(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
     .locals 2
 
     const-wide/16 v0, 0x0
@@ -7391,7 +7825,7 @@
 
     if-lez v0, :cond_1
 
-    .line 332
+    .line 333
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -7406,14 +7840,14 @@
 
     goto :goto_0
 
-    .line 333
+    .line 334
     :cond_0
-    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$UserFull;->stories:Lorg/telegram/tgnet/TLRPC$PeerStories;
+    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$UserFull;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     :goto_0
     return-object v1
 
-    .line 335
+    .line 336
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -7431,9 +7865,9 @@
 
     goto :goto_1
 
-    .line 336
+    .line 337
     :cond_2
-    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->stories:Lorg/telegram/tgnet/TLRPC$PeerStories;
+    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->stories:Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     :goto_1
     return-object v1
@@ -7444,7 +7878,7 @@
 
     const/4 v0, 0x1
 
-    .line 2153
+    .line 2265
     invoke-direct {p0, p1, p2, p3, v0}, Lorg/telegram/ui/Stories/StoriesController;->getStoriesList(JIZ)Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
     move-result-object p1
@@ -7455,7 +7889,7 @@
 .method public getStoriesStorage()Lorg/telegram/ui/Stories/StoriesStorage;
     .locals 1
 
-    .line 1507
+    .line 1603
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
     return-object v0
@@ -7468,7 +7902,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1453
+    .line 1549
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMoreHidden:Z
 
     if-eqz p1, :cond_0
@@ -7491,7 +7925,7 @@
     :goto_0
     return p1
 
-    .line 1455
+    .line 1551
     :cond_1
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMore:Z
 
@@ -7521,7 +7955,7 @@
 
     const/4 v0, 0x0
 
-    .line 1253
+    .line 1349
     invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/ui/Stories/StoriesController;->getUnreadState(JI)I
 
     move-result p1
@@ -7542,7 +7976,7 @@
 
     return v1
 
-    .line 1260
+    .line 1356
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
@@ -7550,12 +7984,12 @@
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     if-nez v0, :cond_1
 
-    .line 1262
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStoriesFromFullPeer(J)Lorg/telegram/tgnet/TLRPC$PeerStories;
+    .line 1358
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStoriesFromFullPeer(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     move-result-object v0
 
@@ -7564,7 +7998,7 @@
 
     return v1
 
-    .line 1267
+    .line 1363
     :cond_2
     iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -7582,7 +8016,7 @@
 
     if-nez v2, :cond_3
 
-    .line 1268
+    .line 1364
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingStoriesByDialogId:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v2, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -7599,9 +8033,9 @@
 
     return v3
 
-    .line 1273
+    .line 1369
     :cond_3
-    iget v2, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->max_read_id:I
+    iget v2, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->max_read_id:I
 
     iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogIdToMaxReadId:Lorg/telegram/messenger/support/LongSparseIntArray;
 
@@ -7617,9 +8051,9 @@
 
     move v5, v4
 
-    .line 1274
+    .line 1370
     :goto_0
-    iget-object v6, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v6, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
@@ -7629,42 +8063,42 @@
 
     if-eqz p3, :cond_4
 
-    .line 1275
-    iget-object v6, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1371
+    iget-object v6, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
-    check-cast v6, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v6, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v6, v6, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v6, v6, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     if-ne v6, p3, :cond_6
 
     :cond_4
-    iget-object v6, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v6, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
-    check-cast v6, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v6, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v6, v6, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v6, v6, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     if-le v6, v2, :cond_6
 
-    .line 1277
-    iget-object v5, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1373
+    iget-object v5, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
-    check-cast v5, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v5, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget-boolean v5, v5, Lorg/telegram/tgnet/TLRPC$StoryItem;->close_friends:Z
+    iget-boolean v5, v5, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->close_friends:Z
 
     if-eqz v5, :cond_5
 
@@ -7680,7 +8114,7 @@
 
     goto :goto_0
 
-    .line 1282
+    .line 1378
     :cond_7
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->isLastUploadingFailed(J)Z
 
@@ -7702,22 +8136,22 @@
 .method public getUnreadStoriesCount(J)I
     .locals 3
 
-    .line 1442
+    .line 1538
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     const/4 p2, 0x0
 
     move v0, p2
 
-    .line 1443
+    .line 1539
     :goto_0
-    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v1, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -7725,23 +8159,23 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1444
-    iget v1, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->max_read_id:I
+    .line 1540
+    iget v1, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->max_read_id:I
 
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v2, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v2, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v2, v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     if-ge v1, v2, :cond_0
 
-    .line 1445
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1541
+    iget-object p1, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -7771,7 +8205,7 @@
         }
     .end annotation
 
-    .line 741
+    .line 742
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingAndEditingStories:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -7794,7 +8228,7 @@
         }
     .end annotation
 
-    .line 729
+    .line 730
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingStoriesByDialogId:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -7809,7 +8243,7 @@
 .method public hasHiddenStories()Z
     .locals 1
 
-    .line 1511
+    .line 1607
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -7824,7 +8258,7 @@
 .method public hasLoadingStories()Z
     .locals 1
 
-    .line 1560
+    .line 1656
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingDialogsStories:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/support/LongSparseIntArray;->size()I
@@ -7847,7 +8281,7 @@
 .method public hasOnlySelfStories()Z
     .locals 7
 
-    .line 2881
+    .line 3014
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesController;->hasSelfStories()Z
 
     move-result v0
@@ -7886,9 +8320,9 @@
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v0, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v0}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -7919,7 +8353,7 @@
 .method public hasSelfStories()Z
     .locals 4
 
-    .line 1026
+    .line 1087
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -7928,21 +8362,21 @@
 
     iget-wide v0, v0, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    .line 1027
+    .line 1088
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v2, v0, v1}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     const/4 v3, 0x1
 
     if-eqz v2, :cond_0
 
-    .line 1028
-    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1089
+    iget-object v2, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -7952,7 +8386,7 @@
 
     return v3
 
-    .line 1031
+    .line 1092
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingStoriesByDialogId:Landroidx/collection/LongSparseArray;
 
@@ -7979,7 +8413,7 @@
 .method public hasStories()Z
     .locals 1
 
-    .line 341
+    .line 342
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
@@ -8022,7 +8456,7 @@
 
     return v1
 
-    .line 317
+    .line 318
     :cond_0
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->hasUploadingStories(J)Z
 
@@ -8034,7 +8468,7 @@
 
     return v2
 
-    .line 320
+    .line 321
     :cond_1
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->isLastUploadingFailed(J)Z
 
@@ -8044,7 +8478,7 @@
 
     return v2
 
-    .line 323
+    .line 324
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
@@ -8052,20 +8486,20 @@
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     if-nez v0, :cond_3
 
-    .line 325
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStoriesFromFullPeer(J)Lorg/telegram/tgnet/TLRPC$PeerStories;
+    .line 326
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStoriesFromFullPeer(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     move-result-object v0
 
     :cond_3
     if-eqz v0, :cond_4
 
-    .line 327
-    iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 328
+    iget-object p1, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -8082,14 +8516,14 @@
 .method public hasStoryLimit()Z
     .locals 2
 
-    .line 3197
+    .line 3330
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesController;->checkStoryLimit()Lorg/telegram/ui/Stories/StoriesController$StoryLimit;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 3198
+    .line 3331
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;->active(I)Z
@@ -8112,23 +8546,31 @@
 .method public hasUnreadStories(J)Z
     .locals 4
 
-    .line 1232
+    .line 1325
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/tgnet/TLRPC$PeerStories;
-
-    const/4 v1, 0x0
+    check-cast v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     if-nez v0, :cond_0
 
+    .line 1327
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStoriesFromFullPeer(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
+
+    move-result-object v0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_1
+
     return v1
 
-    .line 1236
-    :cond_0
+    .line 1332
+    :cond_1
     iget v2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -8143,9 +8585,9 @@
 
     const/4 v3, 0x1
 
-    if-nez v2, :cond_1
+    if-nez v2, :cond_2
 
-    .line 1237
+    .line 1333
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingStoriesByDialogId:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v2, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -8158,53 +8600,53 @@
 
     move-result p1
 
-    if-nez p1, :cond_1
+    if-nez p1, :cond_2
 
     return v3
 
-    :cond_1
+    :cond_2
     move p1, v1
 
-    .line 1241
+    .line 1337
     :goto_0
-    iget-object p2, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object p2, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
     move-result p2
 
-    if-ge p1, p2, :cond_3
+    if-ge p1, p2, :cond_4
 
-    .line 1245
-    iget-object p2, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1341
+    iget-object p2, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast p2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget p2, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget p2, p2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
-    iget v2, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->max_read_id:I
+    iget v2, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->max_read_id:I
 
-    if-le p2, v2, :cond_2
+    if-le p2, v2, :cond_3
 
     return v3
 
-    :cond_2
+    :cond_3
     add-int/lit8 p1, p1, 0x1
 
     goto :goto_0
 
-    :cond_3
+    :cond_4
     return v1
 .end method
 
 .method public hasUploadingStories(J)Z
     .locals 2
 
-    .line 1293
+    .line 1389
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingStoriesByDialogId:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -8213,7 +8655,7 @@
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 1294
+    .line 1390
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->editingStories:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v1, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -8224,7 +8666,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1295
+    .line 1391
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p2
@@ -8257,12 +8699,12 @@
 
     const/4 v0, 0x0
 
-    .line 3202
+    .line 3335
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storyLimitFetched:Z
 
     const/4 v0, 0x0
 
-    .line 3203
+    .line 3336
     iput-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storyLimitCached:Lorg/telegram/ui/Stories/StoriesController$StoryLimit;
 
     return-void
@@ -8271,7 +8713,7 @@
 .method public isBarEnabled()Z
     .locals 1
 
-    .line 102
+    .line 103
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->isEnabled:Z
 
     if-eqz v0, :cond_0
@@ -8291,7 +8733,7 @@
     return v0
 .end method
 
-.method public isBlocked(Lorg/telegram/tgnet/TLRPC$TL_storyView;)Z
+.method public isBlocked(Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;)Z
     .locals 5
 
     const/4 v0, 0x0
@@ -8300,11 +8742,11 @@
 
     return v0
 
-    .line 3003
+    .line 3136
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blockedOverride:Landroidx/collection/LongSparseArray;
 
-    iget-wide v2, p1, Lorg/telegram/tgnet/TLRPC$TL_storyView;->user_id:J
+    iget-wide v2, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->user_id:J
 
     invoke-virtual {v1, v2, v3}, Landroidx/collection/LongSparseArray;->containsKey(J)Z
 
@@ -8312,10 +8754,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 3004
+    .line 3137
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->blockedOverride:Landroidx/collection/LongSparseArray;
 
-    iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$TL_storyView;->user_id:J
+    iget-wide v1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->user_id:J
 
     invoke-virtual {v0, v1, v2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
@@ -8329,7 +8771,7 @@
 
     return p1
 
-    .line 3006
+    .line 3139
     :cond_1
     iget-wide v1, p0, Lorg/telegram/ui/Stories/StoriesController;->lastBlocklistRequested:J
 
@@ -8341,12 +8783,12 @@
 
     if-nez v1, :cond_4
 
-    .line 3007
-    iget-boolean v1, p1, Lorg/telegram/tgnet/TLRPC$TL_storyView;->blocked_my_stories_from:Z
+    .line 3140
+    iget-boolean v1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->blocked_my_stories_from:Z
 
     if-nez v1, :cond_2
 
-    iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$TL_storyView;->blocked:Z
+    iget-boolean p1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->blocked:Z
 
     if-eqz p1, :cond_3
 
@@ -8356,11 +8798,11 @@
     :cond_3
     return v0
 
-    .line 3009
+    .line 3142
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
-    iget-wide v3, p1, Lorg/telegram/tgnet/TLRPC$TL_storyView;->user_id:J
+    iget-wide v3, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->user_id:J
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -8374,13 +8816,13 @@
 
     return v2
 
-    .line 3012
+    .line 3145
     :cond_5
-    iget-boolean v1, p1, Lorg/telegram/tgnet/TLRPC$TL_storyView;->blocked_my_stories_from:Z
+    iget-boolean v1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->blocked_my_stories_from:Z
 
     if-nez v1, :cond_6
 
-    iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$TL_storyView;->blocked:Z
+    iget-boolean p1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->blocked:Z
 
     if-eqz p1, :cond_7
 
@@ -8394,7 +8836,7 @@
 .method public isChannelsAvatarsEnabled()Z
     .locals 1
 
-    .line 110
+    .line 111
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->isEnabled:Z
 
     if-eqz v0, :cond_0
@@ -8417,7 +8859,7 @@
 .method public isContactsAvatarsEnabled()Z
     .locals 1
 
-    .line 106
+    .line 107
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->isEnabled:Z
 
     if-eqz v0, :cond_0
@@ -8440,7 +8882,7 @@
 .method public isEnabled()Z
     .locals 1
 
-    .line 98
+    .line 99
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->isEnabled:Z
 
     return v0
@@ -8449,7 +8891,7 @@
 .method public isLastUploadingFailed(J)Z
     .locals 1
 
-    .line 733
+    .line 734
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingStoriesByDialogId:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -8460,14 +8902,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 734
+    .line 735
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p2
 
     if-nez p2, :cond_0
 
-    .line 735
+    .line 736
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result p2
@@ -8493,7 +8935,7 @@
 .method public isLoading(J)Z
     .locals 2
 
-    .line 1485
+    .line 1581
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingDialogsStories:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     const/4 v1, 0x0
@@ -8515,7 +8957,7 @@
 .method public isProfileAvatarEnabled()Z
     .locals 1
 
-    .line 114
+    .line 115
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->isEnabled:Z
 
     if-eqz v0, :cond_0
@@ -8538,15 +8980,15 @@
 .method public loadAllStories()V
     .locals 1
 
-    .line 253
+    .line 254
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->firstLoad:Z
 
     if-nez v0, :cond_0
 
-    .line 254
+    .line 255
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/StoriesController;->loadStories()V
 
-    .line 255
+    .line 256
     invoke-direct {p0}, Lorg/telegram/ui/Stories/StoriesController;->loadStoriesRead()V
 
     :cond_0
@@ -8556,7 +8998,7 @@
 .method public loadBlocklist(Z)V
     .locals 7
 
-    .line 2906
+    .line 3039
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistLoading:Z
 
     const/4 v1, 0x1
@@ -8567,12 +9009,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 2907
+    .line 3040
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistLoadingReset:Z
 
     if-nez v0, :cond_0
 
-    .line 2908
+    .line 3041
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -8583,10 +9025,10 @@
 
     invoke-virtual {v0, v3, v1}, Lorg/telegram/tgnet/ConnectionsManager;->cancelRequest(IZ)V
 
-    .line 2909
+    .line 3042
     iput v2, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistReqId:I
 
-    .line 2910
+    .line 3043
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistLoadingReset:Z
 
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistLoading:Z
@@ -8600,7 +9042,7 @@
     :goto_0
     if-eqz p1, :cond_2
 
-    .line 2916
+    .line 3049
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
@@ -8620,44 +9062,44 @@
     :cond_2
     if-nez p1, :cond_3
 
-    .line 2920
+    .line 3053
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistFull:Z
 
     if-eqz v0, :cond_3
 
     return-void
 
-    .line 2924
+    .line 3057
     :cond_3
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistLoading:Z
 
-    .line 2925
+    .line 3058
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistLoadingReset:Z
 
-    .line 2926
+    .line 3059
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;-><init>()V
 
-    .line 2927
+    .line 3060
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;->my_stories_from:Z
 
     if-eqz p1, :cond_4
 
-    .line 2929
+    .line 3062
     iput v2, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;->offset:I
 
     const/16 p1, 0x64
 
-    .line 2930
+    .line 3063
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;->limit:I
 
-    .line 2931
+    .line 3064
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistFull:Z
 
     goto :goto_1
 
-    .line 2933
+    .line 3066
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
@@ -8669,10 +9111,10 @@
 
     const/16 p1, 0x19
 
-    .line 2934
+    .line 3067
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_getBlocked;->limit:I
 
-    .line 2936
+    .line 3069
     :goto_1
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -8692,7 +9134,7 @@
 .method public loadBlocklistAtFirst()V
     .locals 4
 
-    .line 2901
+    .line 3034
     iget-wide v0, p0, Lorg/telegram/ui/Stories/StoriesController;->lastBlocklistRequested:J
 
     const-wide/16 v2, 0x0
@@ -8703,7 +9145,7 @@
 
     const/4 v0, 0x0
 
-    .line 2902
+    .line 3035
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->loadBlocklist(Z)V
 
     :cond_0
@@ -8713,14 +9155,14 @@
 .method public loadHiddenStories()V
     .locals 1
 
-    .line 366
+    .line 367
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMoreHidden:Z
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    .line 367
+    .line 368
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->loadFromServer(Z)V
 
     :cond_0
@@ -8730,12 +9172,12 @@
 .method public loadNextStories(Z)V
     .locals 1
 
-    .line 1389
+    .line 1485
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->hasMore:Z
 
     if-eqz v0, :cond_0
 
-    .line 1390
+    .line 1486
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->loadFromServer(Z)V
 
     :cond_0
@@ -8745,7 +9187,7 @@
 .method public loadSendAs()V
     .locals 3
 
-    .line 3250
+    .line 3383
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingSendAs:Z
 
     if-nez v0, :cond_1
@@ -8759,19 +9201,19 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 3253
+    .line 3386
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingSendAs:Z
 
-    .line 3254
+    .line 3387
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v0
 
-    new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_stories_getChatsToSend;
+    new-instance v1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getChatsToSend;
 
-    invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_stories_getChatsToSend;-><init>()V
+    invoke-direct {v1}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getChatsToSend;-><init>()V
 
     new-instance v2, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda25;
 
@@ -8787,28 +9229,28 @@
 .method loadSkippedStories(J)V
     .locals 0
 
-    .line 1335
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/TLRPC$PeerStories;
+    .line 1431
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     move-result-object p1
 
     const/4 p2, 0x0
 
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->loadSkippedStories(Lorg/telegram/tgnet/TLRPC$PeerStories;Z)V
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->loadSkippedStories(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;Z)V
 
     return-void
 .end method
 
-.method loadSkippedStories(Lorg/telegram/tgnet/TLRPC$PeerStories;Z)V
+.method loadSkippedStories(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;Z)V
     .locals 11
 
     if-nez p1, :cond_0
 
     return-void
 
-    .line 1342
+    .line 1438
     :cond_0
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v0}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -8828,7 +9270,7 @@
 
     mul-long v3, v7, v0
 
-    .line 1344
+    .line 1440
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingAllStories:Ljava/util/HashSet;
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -8848,9 +9290,9 @@
 
     const/4 v1, 0x0
 
-    .line 1349
+    .line 1445
     :goto_1
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v2, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -8858,35 +9300,35 @@
 
     if-ge v1, v2, :cond_5
 
-    .line 1350
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1446
+    iget-object v2, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    instance-of v2, v2, Lorg/telegram/tgnet/TLRPC$TL_storyItemSkipped;
+    instance-of v2, v2, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemSkipped;
 
     if-eqz v2, :cond_4
 
     if-nez v0, :cond_3
 
-    .line 1352
+    .line 1448
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1354
+    .line 1450
     :cond_3
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v2, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v2, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v2, v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -8902,7 +9344,7 @@
     :cond_5
     if-eqz v0, :cond_6
 
-    .line 1358
+    .line 1454
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingAllStories:Ljava/util/HashSet;
 
     invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -8911,15 +9353,15 @@
 
     invoke-virtual {v1, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1359
-    new-instance v9, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoriesByID;
+    .line 1455
+    new-instance v9, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getStoriesByID;
 
-    invoke-direct {v9}, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoriesByID;-><init>()V
+    invoke-direct {v9}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getStoriesByID;-><init>()V
 
-    .line 1360
-    iput-object v0, v9, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoriesByID;->id:Ljava/util/ArrayList;
+    .line 1456
+    iput-object v0, v9, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getStoriesByID;->id:Ljava/util/ArrayList;
 
-    .line 1361
+    .line 1457
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -8930,9 +9372,9 @@
 
     move-result-object v0
 
-    iput-object v0, v9, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoriesByID;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object v0, v9, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getStoriesByID;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 1362
+    .line 1458
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -8949,7 +9391,7 @@
 
     move-object v6, p1
 
-    invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda32;-><init>(Lorg/telegram/ui/Stories/StoriesController;JZLorg/telegram/tgnet/TLRPC$PeerStories;J)V
+    invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda32;-><init>(Lorg/telegram/ui/Stories/StoriesController;JZLorg/telegram/tgnet/tl/TL_stories$PeerStories;J)V
 
     invoke-virtual {v0, v9, v10}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
@@ -8960,7 +9402,7 @@
 .method public loadStories()V
     .locals 3
 
-    .line 345
+    .line 346
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoriesController;->firstLoad:Z
 
     const/4 v1, 0x1
@@ -8969,10 +9411,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 346
+    .line 347
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingFromDatabase:Z
 
-    .line 347
+    .line 348
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
     new-instance v1, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda1;
@@ -8983,14 +9425,14 @@
 
     goto :goto_0
 
-    .line 359
+    .line 360
     :cond_0
     invoke-direct {p0, v2}, Lorg/telegram/ui/Stories/StoriesController;->loadFromServer(Z)V
 
-    .line 360
+    .line 361
     invoke-direct {p0, v1}, Lorg/telegram/ui/Stories/StoriesController;->loadFromServer(Z)V
 
-    .line 362
+    .line 363
     :goto_0
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/StoriesController;->firstLoad:Z
 
@@ -9000,7 +9442,7 @@
 .method public markStoriesAsReadFromServer(JI)V
     .locals 1
 
-    .line 1215
+    .line 1308
     new-instance v0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/Stories/StoriesController;JI)V
@@ -9010,33 +9452,33 @@
     return-void
 .end method
 
-.method public markStoryAsRead(JLorg/telegram/tgnet/TLRPC$StoryItem;)Z
+.method public markStoryAsRead(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)Z
     .locals 1
 
-    .line 1180
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/TLRPC$PeerStories;
+    .line 1261
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 1182
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStoriesFromFullPeer(J)Lorg/telegram/tgnet/TLRPC$PeerStories;
+    .line 1263
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStoriesFromFullPeer(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     move-result-object v0
 
     :cond_0
     const/4 p1, 0x0
 
-    .line 1184
-    invoke-virtual {p0, v0, p3, p1}, Lorg/telegram/ui/Stories/StoriesController;->markStoryAsRead(Lorg/telegram/tgnet/TLRPC$PeerStories;Lorg/telegram/tgnet/TLRPC$StoryItem;Z)Z
+    .line 1265
+    invoke-virtual {p0, v0, p3, p1}, Lorg/telegram/ui/Stories/StoriesController;->markStoryAsRead(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Z)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public markStoryAsRead(Lorg/telegram/tgnet/TLRPC$PeerStories;Lorg/telegram/tgnet/TLRPC$StoryItem;Z)Z
+.method public markStoryAsRead(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Z)Z
     .locals 6
 
     const/4 v0, 0x0
@@ -9047,23 +9489,23 @@
 
     goto :goto_0
 
-    .line 1191
+    .line 1272
     :cond_0
-    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v1, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v1}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v1
 
-    .line 1192
-    iget-boolean v3, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->justUploaded:Z
+    .line 1273
+    iget-boolean v3, p2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->justUploaded:Z
 
     if-eqz v3, :cond_1
 
-    .line 1193
-    iput-boolean v0, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->justUploaded:Z
+    .line 1274
+    iput-boolean v0, p2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->justUploaded:Z
 
-    .line 1195
+    .line 1276
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogIdToMaxReadId:Lorg/telegram/messenger/support/LongSparseIntArray;
 
@@ -9071,10 +9513,10 @@
 
     move-result v3
 
-    .line 1196
-    iget v4, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->max_read_id:I
+    .line 1277
+    iget v4, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->max_read_id:I
 
-    iget v5, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v5, p2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-static {v3, v5}, Ljava/lang/Math;->max(II)I
 
@@ -9084,7 +9526,7 @@
 
     move-result v4
 
-    .line 1197
+    .line 1278
     iget v5, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
@@ -9093,10 +9535,10 @@
 
     invoke-virtual {v5, v1, v2, v4}, Lorg/telegram/messenger/NotificationsController;->processReadStories(JI)V
 
-    .line 1198
-    iput v4, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->max_read_id:I
+    .line 1279
+    iput v4, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->max_read_id:I
 
-    .line 1199
+    .line 1280
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogIdToMaxReadId:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     invoke-virtual {p1, v1, v2, v4}, Lorg/telegram/messenger/support/LongSparseIntArray;->put(JI)V
@@ -9105,18 +9547,18 @@
 
     if-nez p3, :cond_2
 
-    .line 1202
+    .line 1283
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
     invoke-virtual {p1, v1, v2, v4}, Lorg/telegram/ui/Stories/StoriesStorage;->updateMaxReadId(JI)V
 
-    .line 1204
+    .line 1285
     :cond_2
-    new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_stories_readStories;
+    new-instance p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_readStories;
 
-    invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_stories_readStories;-><init>()V
+    invoke-direct {p1}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_readStories;-><init>()V
 
-    .line 1205
+    .line 1286
     iget p3, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -9127,14 +9569,14 @@
 
     move-result-object p3
 
-    iput-object p3, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_readStories;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object p3, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_readStories;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 1206
-    iget p2, p2, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    .line 1287
+    iget p2, p2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
-    iput p2, p1, Lorg/telegram/tgnet/TLRPC$TL_stories_readStories;->max_id:I
+    iput p2, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_readStories;->max_id:I
 
-    .line 1207
+    .line 1288
     iget p2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -9144,6 +9586,19 @@
     sget-object p3, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda37;->INSTANCE:Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda37;
 
     invoke-virtual {p2, p1, p3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+
+    .line 1289
+    iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
+
+    invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object p1
+
+    sget p2, Lorg/telegram/messenger/NotificationCenter;->storiesReadUpdated:I
+
+    new-array p3, v0, [Ljava/lang/Object;
+
+    invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
     const/4 p1, 0x1
 
@@ -9157,7 +9612,7 @@
 .method public onPremiumChanged()V
     .locals 1
 
-    .line 1631
+    .line 1727
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->selfViewsModel:Landroid/util/SparseArray;
 
     invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
@@ -9168,7 +9623,7 @@
 .method public pollViewsForSelfStories(JZ)V
     .locals 2
 
-    .line 1318
+    .line 1414
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->pollingViewsForSelfStoriesRequester:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -9179,35 +9634,35 @@
 
     if-nez v0, :cond_0
 
-    .line 1320
+    .line 1416
     new-instance v0, Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester;
 
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-direct {v0, p0, p1, p2, v1}, Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester;-><init>(Lorg/telegram/ui/Stories/StoriesController;JI)V
 
-    .line 1321
+    .line 1417
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->pollingViewsForSelfStoriesRequester:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v1, p1, p2, v0}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 1323
+    .line 1419
     :cond_0
     invoke-virtual {v0, p3}, Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester;->start(Z)V
 
     return-void
 .end method
 
-.method public preloadUserStories(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+.method public preloadUserStories(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
     .locals 5
 
     const/4 v0, 0x0
 
     move v1, v0
 
-    .line 612
+    .line 613
     :goto_0
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v2, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -9215,18 +9670,18 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 613
-    iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 614
+    iget-object v2, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v2, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v2, v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
-    iget v3, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->max_read_id:I
+    iget v3, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->max_read_id:I
 
     if-le v2, v3, :cond_0
 
@@ -9239,10 +9694,10 @@
 
     goto :goto_0
 
-    .line 618
+    .line 619
     :cond_1
     :goto_1
-    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v1, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -9252,29 +9707,29 @@
 
     return-void
 
-    .line 621
+    .line 622
     :cond_2
-    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v1, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v1}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v1
 
-    .line 622
-    iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 623
+    iget-object v3, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    invoke-direct {p0, v1, v2, v3}, Lorg/telegram/ui/Stories/StoriesController;->preloadStory(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-direct {p0, v1, v2, v3}, Lorg/telegram/ui/Stories/StoriesController;->preloadStory(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
     if-lez v0, :cond_3
 
-    .line 624
-    iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 625
+    iget-object v3, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     add-int/lit8 v4, v0, -0x1
 
@@ -9282,13 +9737,13 @@
 
     move-result-object v3
 
-    check-cast v3, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    invoke-direct {p0, v1, v2, v3}, Lorg/telegram/ui/Stories/StoriesController;->preloadStory(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-direct {p0, v1, v2, v3}, Lorg/telegram/ui/Stories/StoriesController;->preloadStory(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
-    .line 626
+    .line 627
     :cond_3
-    iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v3, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -9298,8 +9753,8 @@
 
     if-ge v0, v3, :cond_4
 
-    .line 627
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 628
+    iget-object p1, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     add-int/lit8 v0, v0, 0x1
 
@@ -9307,27 +9762,27 @@
 
     move-result-object p1
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    invoke-direct {p0, v1, v2, p1}, Lorg/telegram/ui/Stories/StoriesController;->preloadStory(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-direct {p0, v1, v2, p1}, Lorg/telegram/ui/Stories/StoriesController;->preloadStory(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
     :cond_4
     return-void
 .end method
 
-.method public processUpdate(Lorg/telegram/tgnet/TLRPC$TL_updateStory;)V
+.method public processUpdate(Lorg/telegram/tgnet/tl/TL_stories$TL_updateStory;)V
     .locals 7
 
-    .line 820
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_updateStory;->story:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    .line 821
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_updateStory;->story:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 823
+    .line 824
     :cond_0
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_updateStory;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_updateStory;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v0}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -9341,7 +9796,7 @@
 
     const-string p1, "StoriesController can\'t update story dialogId == 0"
 
-    .line 825
+    .line 826
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     return-void
@@ -9351,7 +9806,7 @@
 
     if-lez v0, :cond_4
 
-    .line 830
+    .line 831
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -9368,7 +9823,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 831
+    .line 832
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->isContactOrService(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v1
@@ -9379,26 +9834,26 @@
 
     if-eqz v1, :cond_3
 
-    .line 832
+    .line 833
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
-    invoke-virtual {v1, p1}, Lorg/telegram/ui/Stories/StoriesStorage;->processUpdate(Lorg/telegram/tgnet/TLRPC$TL_updateStory;)V
+    invoke-virtual {v1, p1}, Lorg/telegram/ui/Stories/StoriesStorage;->processUpdate(Lorg/telegram/tgnet/tl/TL_stories$TL_updateStory;)V
 
     :cond_3
     move-object v6, v0
 
     goto :goto_0
 
-    .line 835
+    .line 836
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
-    invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/StoriesStorage;->processUpdate(Lorg/telegram/tgnet/TLRPC$TL_updateStory;)V
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/StoriesStorage;->processUpdate(Lorg/telegram/tgnet/tl/TL_stories$TL_updateStory;)V
 
     move-object v6, v1
 
-    .line 838
+    .line 839
     :goto_0
     new-instance v0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda11;
 
@@ -9408,17 +9863,17 @@
 
     move-object v5, p1
 
-    invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Stories/StoriesController;JLorg/telegram/tgnet/TLRPC$TL_updateStory;Lorg/telegram/tgnet/TLRPC$User;)V
+    invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Stories/StoriesController;JLorg/telegram/tgnet/tl/TL_stories$TL_updateStory;Lorg/telegram/tgnet/TLRPC$User;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method public putStories(JLorg/telegram/tgnet/TLRPC$PeerStories;)V
+.method public putStories(JLorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
     .locals 2
 
-    .line 1460
+    .line 1556
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0, p1, p2, p3}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
@@ -9429,7 +9884,7 @@
 
     if-lez v0, :cond_1
 
-    .line 1462
+    .line 1558
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -9444,7 +9899,7 @@
 
     move-result-object p1
 
-    .line 1463
+    .line 1559
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->isContactOrService(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result p2
@@ -9455,18 +9910,18 @@
 
     if-eqz p1, :cond_2
 
-    .line 1464
+    .line 1560
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
-    invoke-virtual {p1, p3}, Lorg/telegram/ui/Stories/StoriesStorage;->putPeerStories(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    invoke-virtual {p1, p3}, Lorg/telegram/ui/Stories/StoriesStorage;->putPeerStories(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
-    .line 1465
-    invoke-direct {p0, p3}, Lorg/telegram/ui/Stories/StoriesController;->applyToList(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    .line 1561
+    invoke-direct {p0, p3}, Lorg/telegram/ui/Stories/StoriesController;->applyToList(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
     goto :goto_0
 
-    .line 1468
+    .line 1564
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -9484,20 +9939,20 @@
 
     move-result-object p1
 
-    .line 1469
+    .line 1565
     invoke-static {p1}, Lorg/telegram/messenger/ChatObject;->isInChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result p1
 
     if-eqz p1, :cond_2
 
-    .line 1470
+    .line 1566
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
-    invoke-virtual {p1, p3}, Lorg/telegram/ui/Stories/StoriesStorage;->putPeerStories(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    invoke-virtual {p1, p3}, Lorg/telegram/ui/Stories/StoriesStorage;->putPeerStories(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
-    .line 1471
-    invoke-direct {p0, p3}, Lorg/telegram/ui/Stories/StoriesController;->applyToList(Lorg/telegram/tgnet/TLRPC$PeerStories;)V
+    .line 1567
+    invoke-direct {p0, p3}, Lorg/telegram/ui/Stories/StoriesController;->applyToList(Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
 
     :cond_2
     :goto_0
@@ -9515,7 +9970,7 @@
         }
     .end annotation
 
-    .line 712
+    .line 713
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -9533,22 +9988,22 @@
 
     check-cast v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 713
+    .line 714
     new-instance v1, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;-><init>(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 714
+    .line 715
     iget-wide v2, v1, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->dialogId:J
 
-    .line 715
+    .line 716
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingStoriesByDialogId:Landroidx/collection/LongSparseArray;
 
     invoke-direct {p0, v2, v3, v1, v0}, Lorg/telegram/ui/Stories/StoriesController;->addUploadingStoryToList(JLorg/telegram/ui/Stories/StoriesController$UploadingStory;Landroidx/collection/LongSparseArray;)V
 
     goto :goto_0
 
-    .line 717
+    .line 718
     :cond_0
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -9574,7 +10029,7 @@
 
     move v1, v0
 
-    .line 1489
+    .line 1585
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
@@ -9584,16 +10039,16 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 1490
+    .line 1586
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v2, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v2}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -9603,7 +10058,7 @@
 
     if-nez v2, :cond_0
 
-    .line 1491
+    .line 1587
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -9619,7 +10074,7 @@
     :goto_1
     move v1, v0
 
-    .line 1495
+    .line 1591
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
@@ -9629,16 +10084,16 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 1496
+    .line 1592
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v2, v2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v2}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -9648,7 +10103,7 @@
 
     if-nez v2, :cond_2
 
-    .line 1497
+    .line 1593
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
@@ -9660,14 +10115,14 @@
 
     goto :goto_2
 
-    .line 1501
+    .line 1597
     :cond_3
     :goto_3
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
     invoke-virtual {v1, p1, p2}, Lorg/telegram/ui/Stories/StoriesStorage;->deleteAllUserStories(J)V
 
-    .line 1502
+    .line 1598
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -9676,7 +10131,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/messenger/MessagesController;->checkArchiveFolder()V
 
-    .line 1503
+    .line 1599
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -9698,13 +10153,13 @@
         value = {
             "(JI",
             "Lcom/google/android/exoplayer2/util/Consumer<",
-            "Lorg/telegram/tgnet/TLRPC$StoryItem;",
+            "Lorg/telegram/tgnet/tl/TL_stories$StoryItem;",
             ">;)V"
         }
     .end annotation
 
-    .line 1401
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/TLRPC$PeerStories;
+    .line 1497
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     move-result-object v0
 
@@ -9712,9 +10167,9 @@
 
     const/4 v1, 0x0
 
-    .line 1403
+    .line 1499
     :goto_0
-    iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v2, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
@@ -9722,37 +10177,37 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 1404
-    iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1500
+    iget-object v2, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v2, v2, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v2, v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     if-ne v2, p3, :cond_0
 
-    iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v2, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    instance-of v2, v2, Lorg/telegram/tgnet/TLRPC$TL_storyItemSkipped;
+    instance-of v2, v2, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemSkipped;
 
     if-nez v2, :cond_0
 
-    .line 1405
-    iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1501
+    iget-object p1, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     invoke-interface {p4, p1}, Lcom/google/android/exoplayer2/util/Consumer;->accept(Ljava/lang/Object;)V
 
@@ -9772,30 +10227,30 @@
 
     shl-long/2addr v0, v2
 
-    .line 1411
+    .line 1507
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->resolvedStories:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v2, v0, v1}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v2, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     if-eqz v2, :cond_2
 
-    .line 1413
+    .line 1509
     invoke-interface {p4, v2}, Lcom/google/android/exoplayer2/util/Consumer;->accept(Ljava/lang/Object;)V
 
     return-void
 
-    .line 1416
+    .line 1512
     :cond_2
-    new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoriesByID;
+    new-instance v2, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getStoriesByID;
 
-    invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoriesByID;-><init>()V
+    invoke-direct {v2}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getStoriesByID;-><init>()V
 
-    .line 1417
-    iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoriesByID;->id:Ljava/util/ArrayList;
+    .line 1513
+    iget-object v3, v2, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getStoriesByID;->id:Ljava/util/ArrayList;
 
     invoke-static {p3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -9803,7 +10258,7 @@
 
     invoke-virtual {v3, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1418
+    .line 1514
     iget p3, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -9814,9 +10269,9 @@
 
     move-result-object p1
 
-    iput-object p1, v2, Lorg/telegram/tgnet/TLRPC$TL_stories_getStoriesByID;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object p1, v2, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getStoriesByID;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 1419
+    .line 1515
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -9835,7 +10290,7 @@
 .method public restoreBackup(Lcom/iMe/fork/models/backup/Backup;)V
     .locals 2
 
-    .line 144
+    .line 145
     sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isStoriesEnabled()Ljava/lang/Boolean;
@@ -9848,7 +10303,7 @@
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Stories/StoriesController;->setEnabled(Z)V
 
-    .line 145
+    .line 146
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isStoriesBarEnabled()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -9859,7 +10314,7 @@
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Stories/StoriesController;->setBarEnabled(Z)V
 
-    .line 146
+    .line 147
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isStoriesAvatarsEnabled()Ljava/lang/Boolean;
 
     move-result-object v1
@@ -9870,7 +10325,7 @@
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Stories/StoriesController;->setContactsAvatarsEnabled(Z)V
 
-    .line 147
+    .line 148
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isStoriesProfileAvatarEnabled()Ljava/lang/Boolean;
 
     move-result-object p1
@@ -9887,12 +10342,12 @@
 .method public scheduleSort()V
     .locals 1
 
-    .line 2875
+    .line 3008
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->sortStoriesRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 2876
+    .line 3009
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->sortStoriesRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
@@ -9903,10 +10358,10 @@
 .method public setBarEnabled(Z)V
     .locals 2
 
-    .line 124
+    .line 125
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesController;->isBarEnabled:Z
 
-    .line 125
+    .line 126
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -9929,10 +10384,10 @@
 .method public setChannelsAvatarsEnabled(Z)V
     .locals 2
 
-    .line 139
+    .line 140
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesController;->isChannelsAvatarsEnabled:Z
 
-    .line 140
+    .line 141
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -9955,10 +10410,10 @@
 .method public setContactsAvatarsEnabled(Z)V
     .locals 2
 
-    .line 129
+    .line 130
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesController;->isContactsAvatarsEnabled:Z
 
-    .line 130
+    .line 131
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -9981,10 +10436,10 @@
 .method public setEnabled(Z)V
     .locals 2
 
-    .line 118
+    .line 119
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesController;->isEnabled:Z
 
-    .line 119
+    .line 120
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -10001,7 +10456,7 @@
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 120
+    .line 121
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -10024,7 +10479,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 1478
+    .line 1574
     iget-object p3, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingDialogsStories:Lorg/telegram/messenger/support/LongSparseIntArray;
 
     const/4 v0, 0x1
@@ -10033,7 +10488,7 @@
 
     goto :goto_0
 
-    .line 1480
+    .line 1576
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/Stories/StoriesController;->loadingDialogsStories:Lorg/telegram/messenger/support/LongSparseIntArray;
 
@@ -10046,10 +10501,10 @@
 .method public setProfileAvatarEnabled(Z)V
     .locals 2
 
-    .line 134
+    .line 135
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/StoriesController;->isProfileAvatarEnabled:Z
 
-    .line 135
+    .line 136
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->mainSettings:Landroid/content/SharedPreferences;
 
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -10069,13 +10524,13 @@
     return-void
 .end method
 
-.method public setStealthMode(Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;)V
+.method public setStealthMode(Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;)V
     .locals 3
 
-    .line 1568
-    iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->stealthMode:Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;
+    .line 1664
+    iput-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->stealthMode:Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;
 
-    .line 1569
+    .line 1665
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -10090,31 +10545,31 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1570
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->writeStealthMode(Lorg/telegram/tgnet/TLRPC$TL_storiesStealthMode;)V
+    .line 1666
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/StoriesController;->writeStealthMode(Lorg/telegram/tgnet/tl/TL_stories$TL_storiesStealthMode;)V
 
     return-void
 .end method
 
-.method public setStoryReaction(JLorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
+.method public setStoryReaction(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
     .locals 5
 
     if-nez p3, :cond_0
 
     return-void
 
-    .line 1577
+    .line 1673
     :cond_0
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendReaction;
+    new-instance v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_sendReaction;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_sendReaction;-><init>()V
+    invoke-direct {v0}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_sendReaction;-><init>()V
 
-    .line 1578
-    iget v1, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    .line 1674
+    iget v1, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
-    iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendReaction;->story_id:I
+    iput v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_sendReaction;->story_id:I
 
-    .line 1579
+    .line 1675
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -10125,34 +10580,34 @@
 
     move-result-object v1
 
-    iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendReaction;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_sendReaction;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     if-nez p4, :cond_1
 
-    .line 1581
+    .line 1677
     new-instance p4, Lorg/telegram/tgnet/TLRPC$TL_reactionEmpty;
 
     invoke-direct {p4}, Lorg/telegram/tgnet/TLRPC$TL_reactionEmpty;-><init>()V
 
-    iput-object p4, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
+    iput-object p4, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_sendReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
-    .line 1583
-    iget p4, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->flags:I
+    .line 1679
+    iget p4, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->flags:I
 
     const v1, -0x8001
 
     and-int/2addr p4, v1
 
-    iput p4, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->flags:I
+    iput p4, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->flags:I
 
     const/4 p4, 0x0
 
-    .line 1584
-    iput-object p4, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->sent_reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
+    .line 1680
+    iput-object p4, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->sent_reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     goto :goto_0
 
-    .line 1585
+    .line 1681
     :cond_1
     iget-wide v1, p4, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
@@ -10164,66 +10619,66 @@
 
     if-eqz v1, :cond_2
 
-    .line 1586
+    .line 1682
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_reactionCustomEmoji;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_reactionCustomEmoji;-><init>()V
 
-    .line 1587
+    .line 1683
     iget-wide v3, p4, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->documentId:J
 
     iput-wide v3, v1, Lorg/telegram/tgnet/TLRPC$TL_reactionCustomEmoji;->document_id:J
 
-    .line 1588
-    iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
+    .line 1684
+    iput-object v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_sendReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
-    .line 1590
-    iget p4, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->flags:I
+    .line 1686
+    iget p4, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->flags:I
 
     or-int/2addr p4, v2
 
-    iput p4, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->flags:I
+    iput p4, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->flags:I
 
-    .line 1591
-    iput-object v1, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->sent_reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
+    .line 1687
+    iput-object v1, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->sent_reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     goto :goto_0
 
-    .line 1592
+    .line 1688
     :cond_2
     iget-object v1, p4, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
     if-eqz v1, :cond_3
 
-    .line 1593
+    .line 1689
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;-><init>()V
 
-    .line 1594
+    .line 1690
     iget-object p4, p4, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
     iput-object p4, v1, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;->emoticon:Ljava/lang/String;
 
-    .line 1595
-    iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_sendReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
+    .line 1691
+    iput-object v1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_sendReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
-    .line 1596
-    iget p4, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->flags:I
+    .line 1692
+    iget p4, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->flags:I
 
     or-int/2addr p4, v2
 
-    iput p4, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->flags:I
+    iput p4, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->flags:I
 
-    .line 1597
-    iput-object v1, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->sent_reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
+    .line 1693
+    iput-object v1, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->sent_reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
-    .line 1599
+    .line 1695
     :cond_3
     :goto_0
-    invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->updateStoryItem(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->updateStoryItem(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
-    .line 1600
+    .line 1696
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -10240,12 +10695,12 @@
 .method public sortHiddenStories()V
     .locals 3
 
-    .line 2885
+    .line 3018
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/StoriesController;->sortDialogStories(Ljava/util/ArrayList;)V
 
-    .line 2886
+    .line 3019
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -10270,7 +10725,7 @@
 
     move v1, v0
 
-    .line 1327
+    .line 1423
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->pollingViewsForSelfStoriesRequester:Landroidx/collection/LongSparseArray;
 
@@ -10280,7 +10735,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 1328
+    .line 1424
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->pollingViewsForSelfStoriesRequester:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v2, v1}, Landroidx/collection/LongSparseArray;->valueAt(I)Ljava/lang/Object;
@@ -10304,19 +10759,19 @@
 
     if-eqz p3, :cond_0
 
-    .line 377
+    .line 378
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
-    .line 378
+    .line 379
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     goto :goto_0
 
-    .line 380
+    .line 381
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
-    .line 381
+    .line 382
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     :goto_0
@@ -10324,7 +10779,7 @@
 
     move v3, v2
 
-    .line 385
+    .line 386
     :goto_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -10334,14 +10789,14 @@
 
     if-ge v3, v4, :cond_2
 
-    .line 386
+    .line 387
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v4, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v4, v4, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v4}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -10351,12 +10806,12 @@
 
     if-nez v4, :cond_1
 
-    .line 388
+    .line 389
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     goto :goto_2
 
@@ -10375,7 +10830,7 @@
 
     move v4, v2
 
-    .line 397
+    .line 398
     :goto_3
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -10383,14 +10838,14 @@
 
     if-ge v4, v6, :cond_4
 
-    .line 398
+    .line 399
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
-    check-cast v6, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v6, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v6, v6, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v6}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -10415,15 +10870,15 @@
     :goto_4
     if-nez v4, :cond_5
 
-    .line 404
+    .line 405
     invoke-virtual {v1, v2, v0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 405
+    .line 406
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->sortStoriesRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 406
+    .line 407
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->sortStoriesRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
@@ -10431,7 +10886,7 @@
     :cond_5
     if-eqz p5, :cond_6
 
-    .line 410
+    .line 411
     iget p5, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p5}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -10444,7 +10899,7 @@
 
     invoke-virtual {p5, v0, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 412
+    .line 413
     :cond_6
     iget p5, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -10462,7 +10917,7 @@
 
     if-ltz p4, :cond_7
 
-    .line 415
+    .line 416
     iget p4, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -10477,10 +10932,10 @@
 
     move-result-object p4
 
-    .line 416
+    .line 417
     iput-boolean p3, p4, Lorg/telegram/tgnet/TLRPC$User;->stories_hidden:Z
 
-    .line 417
+    .line 418
     iget p5, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p5}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -10493,7 +10948,7 @@
 
     invoke-virtual {p5, v0, v5, v2, v3}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
-    .line 418
+    .line 419
     iget p5, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -10504,7 +10959,7 @@
 
     goto :goto_5
 
-    .line 420
+    .line 421
     :cond_7
     iget p4, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -10522,10 +10977,10 @@
 
     move-result-object p4
 
-    .line 421
+    .line 422
     iput-boolean p3, p4, Lorg/telegram/tgnet/TLRPC$Chat;->stories_hidden:Z
 
-    .line 422
+    .line 423
     iget p5, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p5}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
@@ -10538,7 +10993,7 @@
 
     invoke-virtual {p5, v5, v0, v2, v3}, Lorg/telegram/messenger/MessagesStorage;->putUsersAndChats(Ljava/util/List;Ljava/util/List;ZZ)V
 
-    .line 423
+    .line 424
     iget p5, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -10547,13 +11002,13 @@
 
     invoke-virtual {p5, p4, v2}, Lorg/telegram/messenger/MessagesController;->putChat(Lorg/telegram/tgnet/TLRPC$Chat;Z)V
 
-    .line 425
-    :goto_5
-    new-instance p4, Lorg/telegram/tgnet/TLRPC$TL_stories_togglePeerStoriesHidden;
-
-    invoke-direct {p4}, Lorg/telegram/tgnet/TLRPC$TL_stories_togglePeerStoriesHidden;-><init>()V
-
     .line 426
+    :goto_5
+    new-instance p4, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_togglePeerStoriesHidden;
+
+    invoke-direct {p4}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_togglePeerStoriesHidden;-><init>()V
+
+    .line 427
     iget p5, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -10564,12 +11019,12 @@
 
     move-result-object p1
 
-    iput-object p1, p4, Lorg/telegram/tgnet/TLRPC$TL_stories_togglePeerStoriesHidden;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
-
-    .line 427
-    iput-boolean p3, p4, Lorg/telegram/tgnet/TLRPC$TL_stories_togglePeerStoriesHidden;->hidden:Z
+    iput-object p1, p4, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_togglePeerStoriesHidden;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     .line 428
+    iput-boolean p3, p4, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_togglePeerStoriesHidden;->hidden:Z
+
+    .line 429
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -10589,7 +11044,7 @@
 
     const/4 v0, 0x1
 
-    .line 3035
+    .line 3168
     invoke-virtual {p0, p1, p2, p3, v0}, Lorg/telegram/ui/Stories/StoriesController;->updateBlockUser(JZZ)V
 
     return-void
@@ -10598,7 +11053,7 @@
 .method public updateBlockUser(JZZ)V
     .locals 3
 
-    .line 3039
+    .line 3172
     iget v0, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -10611,14 +11066,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 3040
+    .line 3173
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_inputPeerEmpty;
 
     if-eqz v1, :cond_0
 
     goto :goto_2
 
-    .line 3044
+    .line 3177
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blockedOverride:Landroidx/collection/LongSparseArray;
 
@@ -10628,7 +11083,7 @@
 
     invoke-virtual {v1, p1, p2, v2}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 3045
+    .line 3178
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -10645,7 +11100,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 3047
+    .line 3180
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -10654,7 +11109,7 @@
 
     invoke-virtual {v1, p1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 3048
+    .line 3181
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistCount:I
 
     add-int/2addr p1, v2
@@ -10663,7 +11118,7 @@
 
     goto :goto_0
 
-    .line 3050
+    .line 3183
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
@@ -10673,7 +11128,7 @@
 
     invoke-virtual {v1, p1}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 3051
+    .line 3184
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistCount:I
 
     sub-int/2addr p1, v2
@@ -10686,32 +11141,32 @@
 
     if-eqz p3, :cond_3
 
-    .line 3058
+    .line 3191
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_contacts_block;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_contacts_block;-><init>()V
 
-    .line 3059
+    .line 3192
     iput-boolean v2, p1, Lorg/telegram/tgnet/TLRPC$TL_contacts_block;->my_stories_from:Z
 
-    .line 3060
+    .line 3193
     iput-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_contacts_block;->id:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
     goto :goto_1
 
-    .line 3063
+    .line 3196
     :cond_3
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;-><init>()V
 
-    .line 3064
+    .line 3197
     iput-boolean v2, p1, Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;->my_stories_from:Z
 
-    .line 3065
+    .line 3198
     iput-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_contacts_unblock;->id:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 3068
+    .line 3201
     :goto_1
     iget p2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -10723,7 +11178,7 @@
 
     invoke-virtual {p2, p1, p3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 3071
+    .line 3204
     :cond_4
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
@@ -10757,17 +11212,17 @@
         }
     .end annotation
 
-    .line 2974
+    .line 3107
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_setBlocked;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_contacts_setBlocked;-><init>()V
 
     const/4 v1, 0x1
 
-    .line 2975
+    .line 3108
     iput-boolean v1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_setBlocked;->my_stories_from:Z
 
-    .line 2976
+    .line 3109
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
     invoke-virtual {v1}, Ljava/util/HashSet;->size()I
@@ -10776,7 +11231,7 @@
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_setBlocked;->limit:I
 
-    .line 2977
+    .line 3110
     iget v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistCount:I
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
@@ -10793,16 +11248,16 @@
 
     const/4 v1, 0x0
 
-    .line 2979
+    .line 3112
     iput v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistCount:I
 
-    .line 2981
+    .line 3114
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
     invoke-virtual {v1}, Ljava/util/HashSet;->clear()V
 
-    .line 2982
+    .line 3115
     invoke-virtual {p1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -10825,7 +11280,7 @@
 
     move-result-wide v1
 
-    .line 2983
+    .line 3116
     iget v3, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -10838,14 +11293,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 2984
+    .line 3117
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_inputPeerEmpty;
 
     if-eqz v4, :cond_2
 
     goto :goto_0
 
-    .line 2987
+    .line 3120
     :cond_2
     iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
 
@@ -10855,14 +11310,14 @@
 
     invoke-virtual {v4, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 2988
+    .line 3121
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_setBlocked;->id:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 2990
+    .line 3123
     :cond_3
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistCount:I
 
@@ -10876,7 +11331,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklistCount:I
 
-    .line 2991
+    .line 3124
     iget p1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_setBlocked;->limit:I
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoriesController;->blocklist:Ljava/util/HashSet;
@@ -10891,7 +11346,7 @@
 
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_setBlocked;->limit:I
 
-    .line 2992
+    .line 3125
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -10913,12 +11368,12 @@
         value = {
             "(J",
             "Ljava/util/List<",
-            "Lorg/telegram/tgnet/TLRPC$StoryItem;",
+            "Lorg/telegram/tgnet/tl/TL_stories$StoryItem;",
             ">;)V"
         }
     .end annotation
 
-    .line 2217
+    .line 2329
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -10961,30 +11416,84 @@
 
     const/4 v0, 0x0
 
-    .line 2218
+    .line 2330
     invoke-direct {p0, p1, p2, v0, v0}, Lorg/telegram/ui/Stories/StoriesController;->getStoriesList(JIZ)Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
     move-result-object v1
 
     const/4 v2, 0x1
 
-    .line 2219
+    .line 2331
     invoke-direct {p0, p1, p2, v2, v0}, Lorg/telegram/ui/Stories/StoriesController;->getStoriesList(JIZ)Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
     move-result-object p1
 
     if-eqz v1, :cond_0
 
-    .line 2221
+    .line 2333
     invoke-virtual {v1, p3}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->updateDeletedStories(Ljava/util/List;)V
 
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 2224
+    .line 2336
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->updateDeletedStories(Ljava/util/List;)V
 
     :cond_1
+    return-void
+.end method
+
+.method public updateStoriesFromFullPeer(JLorg/telegram/tgnet/tl/TL_stories$PeerStories;)V
+    .locals 3
+
+    if-nez p3, :cond_0
+
+    return-void
+
+    .line 1734
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
+
+    invoke-virtual {v0, p1, p2}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
+
+    if-nez v0, :cond_1
+
+    return-void
+
+    .line 1738
+    :cond_1
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "StoriesController update stories from full peer "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    .line 1739
+    iget-object p1, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
+
+    .line 1740
+    iget-object p1, v0, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
+
+    iget-object p2, p3, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
+
+    invoke-virtual {p1, p2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
+
     return-void
 .end method
 
@@ -10994,12 +11503,12 @@
         value = {
             "(J",
             "Ljava/util/List<",
-            "Lorg/telegram/tgnet/TLRPC$StoryItem;",
+            "Lorg/telegram/tgnet/tl/TL_stories$StoryItem;",
             ">;)V"
         }
     .end annotation
 
-    .line 2205
+    .line 2317
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11042,27 +11551,27 @@
 
     const/4 v0, 0x0
 
-    .line 2206
+    .line 2318
     invoke-direct {p0, p1, p2, v0, v0}, Lorg/telegram/ui/Stories/StoriesController;->getStoriesList(JIZ)Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
     move-result-object v1
 
     const/4 v2, 0x1
 
-    .line 2207
+    .line 2319
     invoke-direct {p0, p1, p2, v2, v0}, Lorg/telegram/ui/Stories/StoriesController;->getStoriesList(JIZ)Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
     move-result-object p1
 
     if-eqz v1, :cond_0
 
-    .line 2209
+    .line 2321
     invoke-virtual {v1, p3}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->updateStories(Ljava/util/List;)V
 
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 2212
+    .line 2324
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Stories/StoriesController$StoriesList;->updateStories(Ljava/util/List;)V
 
     :cond_1
@@ -11075,7 +11584,7 @@
         value = {
             "(J",
             "Ljava/util/ArrayList<",
-            "Lorg/telegram/tgnet/TLRPC$StoryItem;",
+            "Lorg/telegram/tgnet/tl/TL_stories$StoryItem;",
             ">;Z",
             "Lorg/telegram/messenger/Utilities$Callback<",
             "Ljava/lang/Boolean;",
@@ -11083,13 +11592,13 @@
         }
     .end annotation
 
-    .line 1138
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_stories_togglePinned;
+    .line 1217
+    new-instance v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_togglePinned;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_stories_togglePinned;-><init>()V
+    invoke-direct {v0}, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_togglePinned;-><init>()V
 
-    .line 1139
-    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/TLRPC$PeerStories;
+    .line 1218
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->getStories(J)Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
     move-result-object v1
 
@@ -11097,7 +11606,7 @@
 
     move v3, v2
 
-    .line 1140
+    .line 1219
     :goto_0
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -11105,28 +11614,28 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 1141
+    .line 1220
     invoke-virtual {p3, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v4, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v4, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    .line 1142
-    instance-of v5, v4, Lorg/telegram/tgnet/TLRPC$TL_storyItemDeleted;
+    .line 1221
+    instance-of v5, v4, Lorg/telegram/tgnet/tl/TL_stories$TL_storyItemDeleted;
 
     if-eqz v5, :cond_0
 
     goto :goto_2
 
-    .line 1145
+    .line 1224
     :cond_0
-    iput-boolean p4, v4, Lorg/telegram/tgnet/TLRPC$StoryItem;->pinned:Z
+    iput-boolean p4, v4, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->pinned:Z
 
-    .line 1147
-    iget-object v5, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_togglePinned;->id:Ljava/util/ArrayList;
+    .line 1226
+    iget-object v5, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_togglePinned;->id:Ljava/util/ArrayList;
 
-    iget v6, v4, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v6, v4, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -11138,9 +11647,9 @@
 
     move v5, v2
 
-    .line 1149
+    .line 1228
     :goto_1
-    iget-object v6, v1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    iget-object v6, v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
 
@@ -11148,36 +11657,36 @@
 
     if-ge v5, v6, :cond_2
 
-    .line 1150
-    iget-object v6, v1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1229
+    iget-object v6, v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
-    check-cast v6, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v6, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget v6, v6, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v6, v6, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
-    iget v7, v4, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v7, v4, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     if-ne v6, v7, :cond_1
 
-    .line 1151
-    iget-object v6, v1, Lorg/telegram/tgnet/TLRPC$PeerStories;->stories:Ljava/util/ArrayList;
+    .line 1230
+    iget-object v6, v1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->stories:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v6
 
-    check-cast v6, Lorg/telegram/tgnet/TLRPC$StoryItem;
+    check-cast v6, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iput-boolean p4, v6, Lorg/telegram/tgnet/TLRPC$StoryItem;->pinned:Z
+    iput-boolean p4, v6, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->pinned:Z
 
-    .line 1152
+    .line 1231
     iget-object v6, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
-    invoke-virtual {v6, p1, p2, v4}, Lorg/telegram/ui/Stories/StoriesStorage;->updateStoryItem(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-virtual {v6, p1, p2, v4}, Lorg/telegram/ui/Stories/StoriesStorage;->updateStoryItem(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
     :cond_1
     add-int/lit8 v5, v5, 0x1
@@ -11193,16 +11702,19 @@
     :cond_3
     const-string v1, "StoriesController updateStoriesPinned"
 
-    .line 1157
+    .line 1236
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1158
+    .line 1237
     invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->updateStoriesInLists(JLjava/util/List;)V
 
-    .line 1160
-    iput-boolean p4, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_togglePinned;->pinned:Z
+    .line 1238
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->updateStoriesForFullPeer(JLjava/util/List;)V
 
-    .line 1161
+    .line 1240
+    iput-boolean p4, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_togglePinned;->pinned:Z
+
+    .line 1241
     iget p3, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -11213,9 +11725,9 @@
 
     move-result-object p1
 
-    iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_stories_togglePinned;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+    iput-object p1, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_stories_togglePinned;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 1162
+    .line 1242
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -11231,10 +11743,10 @@
     return-void
 .end method
 
-.method public updateStoryItem(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public updateStoryItem(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 4
 
-    .line 1174
+    .line 1254
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -11260,7 +11772,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget v2, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->id:I
+    iget v2, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->id:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -11268,7 +11780,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v2, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->dialogId:J
+    iget-wide v2, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->dialogId:J
 
     invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -11285,17 +11797,24 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1175
+    .line 1255
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController;->storiesStorage:Lorg/telegram/ui/Stories/StoriesStorage;
 
-    invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesStorage;->updateStoryItem(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-virtual {v0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesStorage;->updateStoryItem(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
-    .line 1176
+    .line 1256
+    invoke-static {p3}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/ui/Stories/StoriesController;->updateStoriesInLists(JLjava/util/List;)V
+
+    .line 1257
     invoke-static {p3}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p3
 
-    invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->updateStoriesInLists(JLjava/util/List;)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->updateStoriesForFullPeer(JLjava/util/List;)V
 
     return-void
 .end method
@@ -11303,42 +11822,42 @@
 .method public updateStoryReaction(JILorg/telegram/tgnet/TLRPC$Reaction;)V
     .locals 1
 
-    .line 1606
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->findStory(JI)Lorg/telegram/tgnet/TLRPC$StoryItem;
+    .line 1702
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->findStory(JI)Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     move-result-object p3
 
     if-eqz p3, :cond_1
 
-    .line 1608
-    iput-object p4, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->sent_reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
+    .line 1704
+    iput-object p4, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->sent_reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     if-eqz p4, :cond_0
 
-    .line 1610
-    iget p4, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->flags:I
+    .line 1706
+    iget p4, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->flags:I
 
     const v0, 0x8000
 
     or-int/2addr p4, v0
 
-    iput p4, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->flags:I
+    iput p4, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->flags:I
 
     goto :goto_0
 
-    .line 1612
+    .line 1708
     :cond_0
-    iget p4, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->flags:I
+    iget p4, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->flags:I
 
     const v0, -0x8001
 
     and-int/2addr p4, v0
 
-    iput p4, p3, Lorg/telegram/tgnet/TLRPC$StoryItem;->flags:I
+    iput p4, p3, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->flags:I
 
-    .line 1614
+    .line 1710
     :goto_0
-    invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->updateStoryItem(JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/StoriesController;->updateStoryItem(JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
     :cond_1
     return-void
@@ -11347,7 +11866,7 @@
 .method public uploadStory(Lorg/telegram/ui/Stories/recorder/StoryEntry;Z)V
     .locals 7
 
-    .line 655
+    .line 656
     new-instance v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;-><init>(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
@@ -11356,15 +11875,15 @@
 
     if-eqz p2, :cond_6
 
-    .line 657
+    .line 658
     iget-wide v2, v0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->dialogId:J
 
-    .line 658
+    .line 659
     iget-boolean p2, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isEdit:Z
 
     if-eqz p2, :cond_1
 
-    .line 659
+    .line 660
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->editingStories:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {p2, v2, v3}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -11375,17 +11894,17 @@
 
     if-nez p2, :cond_0
 
-    .line 661
+    .line 662
     new-instance p2, Ljava/util/HashMap;
 
     invoke-direct {p2}, Ljava/util/HashMap;-><init>()V
 
-    .line 662
+    .line 663
     iget-object v4, p0, Lorg/telegram/ui/Stories/StoriesController;->editingStories:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v4, v2, v3, p2}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 664
+    .line 665
     :cond_0
     iget p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editStoryId:I
 
@@ -11397,19 +11916,19 @@
 
     goto :goto_0
 
-    .line 666
+    .line 667
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingStoriesByDialogId:Landroidx/collection/LongSparseArray;
 
     invoke-direct {p0, v2, v3, v0, p1}, Lorg/telegram/ui/Stories/StoriesController;->addUploadingStoryToList(JLorg/telegram/ui/Stories/StoriesController$UploadingStory;Landroidx/collection/LongSparseArray;)V
 
-    .line 668
+    .line 669
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->uploadingAndEditingStories:Landroidx/collection/LongSparseArray;
 
     invoke-direct {p0, v2, v3, v0, p1}, Lorg/telegram/ui/Stories/StoriesController;->addUploadingStoryToList(JLorg/telegram/ui/Stories/StoriesController$UploadingStory;Landroidx/collection/LongSparseArray;)V
 
-    .line 669
+    .line 670
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -11424,7 +11943,7 @@
 
     move p1, v1
 
-    .line 671
+    .line 672
     :goto_1
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
@@ -11436,16 +11955,16 @@
 
     if-ge p1, p2, :cond_3
 
-    .line 672
+    .line 673
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast p2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object p2, p2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {p2}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -11455,16 +11974,16 @@
 
     if-nez p2, :cond_2
 
-    .line 674
+    .line 675
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    .line 675
+    .line 676
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-virtual {p2, v1, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
@@ -11486,7 +12005,7 @@
 
     move p2, v1
 
-    .line 680
+    .line 681
     :goto_3
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
@@ -11496,16 +12015,16 @@
 
     if-ge p2, v5, :cond_5
 
-    .line 681
+    .line 682
     iget-object v5, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {v5, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
-    check-cast v5, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast v5, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    iget-object v5, v5, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iget-object v5, v5, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v5}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
@@ -11515,16 +12034,16 @@
 
     if-nez v5, :cond_4
 
-    .line 683
+    .line 684
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    .line 684
+    .line 685
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->hiddenListStories:Ljava/util/ArrayList;
 
     invoke-virtual {p2, v1, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
@@ -11542,12 +12061,12 @@
     :goto_4
     if-nez v4, :cond_6
 
-    .line 690
-    new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_peerStories;
-
-    invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_peerStories;-><init>()V
-
     .line 691
+    new-instance p1, Lorg/telegram/tgnet/tl/TL_stories$TL_peerStories;
+
+    invoke-direct {p1}, Lorg/telegram/tgnet/tl/TL_stories$TL_peerStories;-><init>()V
+
+    .line 692
     iget p2, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -11558,26 +12077,26 @@
 
     move-result-object p2
 
-    iput-object p2, p1, Lorg/telegram/tgnet/TLRPC$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
+    iput-object p2, p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 692
+    .line 693
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->allStoriesMap:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {p2, v2, v3, p1}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 693
+    .line 694
     iget-object p2, p0, Lorg/telegram/ui/Stories/StoriesController;->dialogListStories:Ljava/util/ArrayList;
 
     invoke-virtual {p2, v1, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 694
+    .line 695
     invoke-direct {p0, v2, v3}, Lorg/telegram/ui/Stories/StoriesController;->loadAllStoriesForDialog(J)V
 
-    .line 698
+    .line 699
     :cond_6
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->start()V
 
-    .line 699
+    .line 700
     iget p1, p0, Lorg/telegram/ui/Stories/StoriesController;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;

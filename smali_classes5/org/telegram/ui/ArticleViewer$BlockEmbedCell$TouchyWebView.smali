@@ -22,15 +22,15 @@
 .method public constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;Landroid/content/Context;)V
     .locals 0
 
-    .line 7367
+    .line 7391
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$TouchyWebView;->this$1:Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;
 
-    .line 7368
+    .line 7392
     invoke-direct {p0, p2}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x0
 
-    .line 7369
+    .line 7393
     invoke-virtual {p0, p1}, Landroid/webkit/WebView;->setFocusable(Z)V
 
     return-void
@@ -41,14 +41,14 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 7374
+    .line 7398
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$TouchyWebView;->this$1:Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;->access$15202(Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;Z)Z
 
-    .line 7375
+    .line 7399
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$TouchyWebView;->this$1:Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;->access$15300(Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;
@@ -57,7 +57,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 7376
+    .line 7400
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$TouchyWebView;->this$1:Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;->access$15300(Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockEmbed;
@@ -68,12 +68,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 7377
+    .line 7401
     invoke-virtual {p0, v1}, Landroid/webkit/WebView;->requestDisallowInterceptTouchEvent(Z)V
 
     goto :goto_0
 
-    .line 7379
+    .line 7403
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockEmbedCell$TouchyWebView;->this$1:Lorg/telegram/ui/ArticleViewer$BlockEmbedCell;
 
@@ -85,7 +85,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ArticleViewer$WindowView;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 7382
+    .line 7406
     :cond_1
     :goto_0
     invoke-super {p0, p1}, Landroid/webkit/WebView;->onTouchEvent(Landroid/view/MotionEvent;)Z

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 13119
+    .line 13328
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$86;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
 .method public startPhotoSelectActivity()V
     .locals 6
 
-    .line 13128
+    .line 13337
     :try_start_0
     new-instance v0, Landroid/content/Intent;
 
@@ -62,22 +62,22 @@
 
     const-string v1, "video/*"
 
-    .line 13129
+    .line 13338
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
     const-string v1, "android.intent.action.GET_CONTENT"
 
-    .line 13130
+    .line 13339
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
     const-string v1, "android.intent.extra.sizeLimit"
 
     const-wide/32 v2, 0x7d000000
 
-    .line 13131
+    .line 13340
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 13133
+    .line 13342
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.intent.action.PICK"
@@ -86,12 +86,12 @@
 
     const-string v2, "image/*"
 
-    .line 13134
+    .line 13343
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
     const/4 v2, 0x0
 
-    .line 13135
+    .line 13344
     invoke-static {v1, v2}, Landroid/content/Intent;->createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
 
     move-result-object v1
@@ -106,10 +106,10 @@
 
     aput-object v0, v4, v5
 
-    .line 13136
+    .line 13345
     invoke-virtual {v1, v2, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;[Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 13138
+    .line 13347
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$86;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0, v1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->startActivityForResult(Landroid/content/Intent;I)V
@@ -121,7 +121,7 @@
     :catch_0
     move-exception v0
 
-    .line 13140
+    .line 13349
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0

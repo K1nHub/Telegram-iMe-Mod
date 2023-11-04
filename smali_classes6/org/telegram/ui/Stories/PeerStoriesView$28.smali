@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/content/Context;)V
     .locals 0
 
-    .line 3566
+    .line 3624
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public setTranslationY(F)V
     .locals 0
 
-    .line 3569
+    .line 3627
     invoke-super {p0, p1}, Landroid/widget/TextView;->setTranslationY(F)V
 
     return-void

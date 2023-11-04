@@ -21,10 +21,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$5UGbbQGKshCdJslIB4lyxl4B_Bg(Lorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/TLRPC$TL_mediaAreaGeoPoint;)V
+.method public static synthetic $r8$lambda$NNb-0rHNtdvrDojL07md4MKb974(Lorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaGeoPoint;)V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/Stories/recorder/PaintView$23;->lambda$didSelectLocation$0(Lorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/TLRPC$TL_mediaAreaGeoPoint;)V
+    invoke-static {p0, p1}, Lorg/telegram/ui/Stories/recorder/PaintView$23;->lambda$didSelectLocation$0(Lorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaGeoPoint;)V
 
     return-void
 .end method
@@ -32,7 +32,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Landroid/os/Bundle;Lorg/telegram/messenger/Utilities$Callback2;)V
     .locals 0
 
-    .line 1823
+    .line 1829
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$23;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput-object p3, p0, Lorg/telegram/ui/Stories/recorder/PaintView$23;->val$onLocationSelected:Lorg/telegram/messenger/Utilities$Callback2;
@@ -42,10 +42,10 @@
     return-void
 .end method
 
-.method private static synthetic lambda$didSelectLocation$0(Lorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/TLRPC$TL_mediaAreaGeoPoint;)V
+.method private static synthetic lambda$didSelectLocation$0(Lorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaGeoPoint;)V
     .locals 4
 
-    .line 1868
+    .line 1874
     :try_start_0
     new-instance v0, Landroid/location/Geocoder;
 
@@ -61,7 +61,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/location/Geocoder;-><init>(Landroid/content/Context;Ljava/util/Locale;)V
 
-    .line 1869
+    .line 1875
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$MessageMedia;->title:Ljava/lang/String;
 
     const/4 v1, 0x1
@@ -70,7 +70,7 @@
 
     move-result-object p0
 
-    .line 1870
+    .line 1876
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v0
@@ -79,9 +79,9 @@
 
     return-void
 
-    .line 1873
+    .line 1879
     :cond_0
-    iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaGeoPoint;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
+    iget-object v0, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaGeoPoint;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
 
     const/4 v1, 0x0
 
@@ -97,8 +97,8 @@
 
     iput-wide v2, v0, Lorg/telegram/tgnet/TLRPC$GeoPoint;->lat:D
 
-    .line 1874
-    iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaGeoPoint;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
+    .line 1880
+    iget-object p1, p1, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaGeoPoint;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
 
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -123,35 +123,35 @@
 .method public didSelectLocation(Lorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
     .locals 2
 
-    .line 1857
+    .line 1863
     instance-of p2, p1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaGeo;
 
     if-eqz p2, :cond_0
 
-    .line 1858
-    new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaGeoPoint;
+    .line 1864
+    new-instance p2, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaGeoPoint;
 
-    invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaGeoPoint;-><init>()V
+    invoke-direct {p2}, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaGeoPoint;-><init>()V
 
-    .line 1859
+    .line 1865
     iget-object p3, p1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
 
-    iput-object p3, p2, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaGeoPoint;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
+    iput-object p3, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaGeoPoint;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
 
     goto :goto_1
 
-    .line 1861
+    .line 1867
     :cond_0
     instance-of p2, p1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;
 
     if-eqz p2, :cond_3
 
-    .line 1862
+    .line 1868
     move-object p2, p1
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;
 
-    .line 1863
+    .line 1869
     iget-wide p3, p2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;->query_id:J
 
     const-wide/16 v0, -0x1
@@ -168,48 +168,48 @@
 
     goto :goto_0
 
-    .line 1879
+    .line 1885
     :cond_1
-    new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_inputMediaAreaVenue;
+    new-instance p3, Lorg/telegram/tgnet/tl/TL_stories$TL_inputMediaAreaVenue;
 
-    invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_inputMediaAreaVenue;-><init>()V
+    invoke-direct {p3}, Lorg/telegram/tgnet/tl/TL_stories$TL_inputMediaAreaVenue;-><init>()V
 
-    .line 1880
+    .line 1886
     iget-wide p4, p2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;->query_id:J
 
-    iput-wide p4, p3, Lorg/telegram/tgnet/TLRPC$TL_inputMediaAreaVenue;->query_id:J
+    iput-wide p4, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_inputMediaAreaVenue;->query_id:J
 
-    .line 1881
+    .line 1887
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;->result_id:Ljava/lang/String;
 
-    iput-object p2, p3, Lorg/telegram/tgnet/TLRPC$TL_inputMediaAreaVenue;->result_id:Ljava/lang/String;
+    iput-object p2, p3, Lorg/telegram/tgnet/tl/TL_stories$TL_inputMediaAreaVenue;->result_id:Ljava/lang/String;
 
     move-object p2, p3
 
     goto :goto_1
 
-    .line 1864
+    .line 1870
     :cond_2
     :goto_0
-    new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaGeoPoint;
+    new-instance p2, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaGeoPoint;
 
-    invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaGeoPoint;-><init>()V
+    invoke-direct {p2}, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaGeoPoint;-><init>()V
 
-    .line 1865
+    .line 1871
     iget-object p3, p1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
 
-    iput-object p3, p2, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaGeoPoint;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
+    iput-object p3, p2, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaGeoPoint;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
 
-    .line 1866
+    .line 1872
     sget-object p3, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p4, Lorg/telegram/ui/Stories/recorder/PaintView$23$$ExternalSyntheticLambda0;
 
-    invoke-direct {p4, p1, p2}, Lorg/telegram/ui/Stories/recorder/PaintView$23$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/TLRPC$TL_mediaAreaGeoPoint;)V
+    invoke-direct {p4, p1, p2}, Lorg/telegram/ui/Stories/recorder/PaintView$23$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaGeoPoint;)V
 
     invoke-virtual {p3, p4}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 1887
+    .line 1893
     :goto_1
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/PaintView$23;->val$onLocationSelected:Lorg/telegram/messenger/Utilities$Callback2;
 
@@ -222,7 +222,7 @@
 .method public getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
     .locals 1
 
-    .line 1846
+    .line 1852
     iget v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -247,7 +247,7 @@
 .method public getParentActivity()Landroid/app/Activity;
     .locals 1
 
-    .line 1841
+    .line 1847
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$23;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -264,7 +264,7 @@
 .method public getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 1
 
-    .line 1831
+    .line 1837
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$23;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$3900(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;

@@ -15,11 +15,11 @@ import java.util.regex.Pattern;
 import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
-import org.telegram.p042ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BaseFragment;
 import org.telegram.tgnet.TLRPC$Dialog;
 /* compiled from: ReactionHelper.kt */
 /* loaded from: classes4.dex */
@@ -40,7 +40,7 @@ public final class ReactionHelper {
         if (parentActivity == null) {
             return;
         }
-        DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3630R.string.chat_reaction_dialog_title), LocaleController.getInternalString(C3630R.string.chat_reaction_dialog_text), LocaleController.getInternalString(C3630R.string.common_cancel), LocaleController.getInternalString(C3630R.string.chat_reaction_start)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.reaction.ReactionHelper$$ExternalSyntheticLambda0
+        DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3634R.string.chat_reaction_dialog_title), LocaleController.getInternalString(C3634R.string.chat_reaction_dialog_text), LocaleController.getInternalString(C3634R.string.common_cancel), LocaleController.getInternalString(C3634R.string.chat_reaction_start)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.reaction.ReactionHelper$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 ReactionHelper.showReactionActivationAlert$lambda$0(BaseFragment.this);
@@ -65,7 +65,7 @@ public final class ReactionHelper {
                 if (!it.hasNext()) {
                     break;
                 }
-                if (((TLRPC$Dialog) it.next()).f1606id == AppConfiguration$Reaction.getBotId()) {
+                if (((TLRPC$Dialog) it.next()).f1608id == AppConfiguration$Reaction.getBotId()) {
                     z = true;
                     continue;
                 } else {

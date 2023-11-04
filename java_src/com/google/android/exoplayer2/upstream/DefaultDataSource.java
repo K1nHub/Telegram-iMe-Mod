@@ -201,7 +201,7 @@ public final class DefaultDataSource implements DataSource {
                 this.rtmpDataSource = dataSource;
                 addListenersToDataSource(dataSource);
             } catch (ClassNotFoundException unused) {
-                Log.m1106w(TAG, "Attempting to play RTMP stream without depending on the RTMP extension");
+                Log.m1107w(TAG, "Attempting to play RTMP stream without depending on the RTMP extension");
             } catch (Exception e) {
                 throw new RuntimeException("Error instantiating RTMP extension", e);
             }

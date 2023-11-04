@@ -19,13 +19,13 @@ public final class zzo extends zzbz {
     private static final HashMap zzc;
     @SafeParcelable.Indicator
     final Set zza;
-    @SafeParcelable.VersionField(m1086id = 1)
+    @SafeParcelable.VersionField(m1087id = 1)
     final int zzb;
-    @SafeParcelable.Field(getter = "getAuthenticatorDatas", m1089id = 2)
+    @SafeParcelable.Field(getter = "getAuthenticatorDatas", m1090id = 2)
     private ArrayList zzd;
-    @SafeParcelable.Field(getter = "getRequestType", m1089id = 3)
+    @SafeParcelable.Field(getter = "getRequestType", m1090id = 3)
     private int zze;
-    @SafeParcelable.Field(getter = "getProgress", m1089id = 4)
+    @SafeParcelable.Field(getter = "getProgress", m1090id = 4)
     private zzs zzf;
 
     static {
@@ -109,7 +109,7 @@ public final class zzo extends zzbz {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzo(@SafeParcelable.Indicator Set set, @SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) ArrayList arrayList, @SafeParcelable.Param(m1088id = 3) int i2, @SafeParcelable.Param(m1088id = 4) zzs zzsVar) {
+    public zzo(@SafeParcelable.Indicator Set set, @SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) ArrayList arrayList, @SafeParcelable.Param(m1089id = 3) int i2, @SafeParcelable.Param(m1089id = 4) zzs zzsVar) {
         this.zza = set;
         this.zzb = i;
         this.zzd = arrayList;

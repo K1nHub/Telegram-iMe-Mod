@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Adapters/DialogsAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 668
+    .line 678
     iput-object p1, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$3;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/DialogsRequestedEmptyCell;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected onButtonClick()V
     .locals 1
 
-    .line 671
+    .line 681
     iget-object v0, p0, Lorg/telegram/ui/Adapters/DialogsAdapter$3;->this$0:Lorg/telegram/ui/Adapters/DialogsAdapter;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Adapters/DialogsAdapter;->onCreateGroupForThisClick()V

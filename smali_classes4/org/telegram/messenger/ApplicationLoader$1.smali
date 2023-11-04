@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 260
+    .line 279
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .locals 1
 
-    .line 264
+    .line 283
     :try_start_0
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->access$000()Landroid/net/ConnectivityManager;
 
@@ -43,7 +43,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 269
+    .line 288
     :catchall_0
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isConnectionSlow()Z
 
@@ -56,14 +56,14 @@
 
     if-ge p2, v0, :cond_0
 
-    .line 271
+    .line 290
     invoke-static {p2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/telegram/tgnet/ConnectionsManager;->checkConnection()V
 
-    .line 272
+    .line 291
     invoke-static {p2}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
 
     move-result-object v0

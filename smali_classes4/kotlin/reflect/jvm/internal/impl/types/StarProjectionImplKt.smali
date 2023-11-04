@@ -86,7 +86,7 @@
     .line 64
     instance-of v1, v0, Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptorWithTypeParameters;
 
-    const-string v2, "it.typeConstructor"
+    const-string/jumbo v2, "it.typeConstructor"
 
     const-string/jumbo v3, "upperBounds"
 

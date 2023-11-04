@@ -18,11 +18,11 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectSwitchNetworkBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: WalletConnectSwitchNetworkBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkBottomSheetDialog */
 /* loaded from: classes3.dex */
@@ -37,12 +37,12 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
         return Companion.newInstance(j, walletConnectSessionItem, str, baseFragment);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithTouchOutside() {
         return false;
     }
@@ -52,7 +52,7 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public WalletConnectSwitchNetworkBottomSheetDialog(final long r9, final com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r11, final java.lang.String r12, final org.telegram.p042ui.ActionBar.BaseFragment r13) {
+    public WalletConnectSwitchNetworkBottomSheetDialog(final long r9, final com.iMe.model.wallet.crypto.wallet_connect.WalletConnectSessionItem r11, final java.lang.String r12, final org.telegram.p043ui.ActionBar.BaseFragment r13) {
         /*
             r8 = this;
             java.lang.String r0 = "sessionItem"
@@ -137,8 +137,8 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
         Intrinsics.checkNotNullParameter(networkLogoUrl, "networkLogoUrl");
         Intrinsics.checkNotNullParameter(networkName, "networkName");
         ForkContentWalletConnectSwitchNetworkBinding binding = getBinding();
-        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3630R.string.wallet_connect_switch_network_title, name), url);
-        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3630R.string.wallet_connect_session_details_network), networkName, networkLogoUrl, true);
+        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3634R.string.wallet_connect_switch_network_title, name), url);
+        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3634R.string.wallet_connect_session_details_network), networkName, networkLogoUrl, true);
     }
 
     @Override // android.app.Dialog
@@ -161,10 +161,10 @@ public final class WalletConnectSwitchNetworkBottomSheetDialog extends MvpBottom
     private final void setupViews() {
         ForkContentWalletConnectSwitchNetworkBinding binding = getBinding();
         binding.viewNetworkCell.setIconTinted(false);
-        binding.buttonChangeNetwork.setText(getResourceManager().getString(C3630R.string.wallet_connect_switch_network));
+        binding.buttonChangeNetwork.setText(getResourceManager().getString(C3634R.string.wallet_connect_switch_network));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3630R.C3632drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3634R.C3636drawable.ic_close_white);
     }
 
     private final void setupListeners() {

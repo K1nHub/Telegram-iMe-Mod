@@ -26,11 +26,11 @@
 
 .field public static final light:I = 0x7f0901f1
 
-.field public static final none:I = 0x7f090283
+.field public static final none:I = 0x7f090284
 
-.field public static final standard:I = 0x7f090341
+.field public static final standard:I = 0x7f090342
 
-.field public static final wide:I = 0x7f090496
+.field public static final wide:I = 0x7f090497
 
 
 # direct methods

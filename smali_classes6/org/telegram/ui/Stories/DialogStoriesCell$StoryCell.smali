@@ -116,34 +116,34 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell;Landroid/content/Context;)V
     .locals 9
 
-    .line 1107
+    .line 1108
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
-    .line 1108
+    .line 1109
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1076
+    .line 1077
     new-instance p2, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {p2}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    .line 1077
+    .line 1078
     new-instance p2, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p2, p0}, Lorg/telegram/messenger/ImageReceiver;-><init>(Landroid/view/View;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 1078
+    .line 1079
     new-instance p2, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p2, p0}, Lorg/telegram/messenger/ImageReceiver;-><init>(Landroid/view/View;)V
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfageToAvatarImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 1079
+    .line 1080
     new-instance p2, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {p2}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
@@ -152,10 +152,10 @@
 
     const/4 p2, 0x1
 
-    .line 1080
+    .line 1081
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->drawAvatar:Z
 
-    .line 1093
+    .line 1094
     new-instance v0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
     invoke-direct {v0, p2}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;-><init>(Z)V
@@ -164,16 +164,16 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 1094
+    .line 1095
     iput v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textAlpha:F
 
-    .line 1095
+    .line 1096
     iput v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textAlphaTransition:F
 
-    .line 1099
+    .line 1100
     iput v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->bounceScale:F
 
-    .line 1105
+    .line 1106
     new-instance v1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object v8, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -190,7 +190,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->failT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 1109
+    .line 1110
     invoke-static {p1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$600(Lorg/telegram/ui/Stories/DialogStoriesCell;)I
 
     move-result p1
@@ -209,17 +209,17 @@
     :goto_0
     iput-boolean p1, v0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->isArchive:Z
 
-    .line 1110
+    .line 1111
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setInvalidateAll(Z)V
 
-    .line 1111
+    .line 1112
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setAllowLoadingOnAttachedOnly(Z)V
 
-    .line 1113
+    .line 1114
     new-instance p1, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -230,22 +230,22 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textViewContainer:Landroid/widget/FrameLayout;
 
-    .line 1114
+    .line 1115
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 1115
+    .line 1116
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->mini:Z
 
     if-nez p1, :cond_1
 
-    .line 1116
+    .line 1117
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 1118
+    .line 1119
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->createTextView()V
 
-    .line 1119
+    .line 1120
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textViewContainer:Landroid/widget/FrameLayout;
 
     const/4 p2, -0x1
@@ -258,7 +258,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1120
+    .line 1121
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     const/16 p2, 0x30
@@ -271,7 +271,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    .line 1121
+    .line 1122
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfageToAvatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -288,7 +288,7 @@
 .method static synthetic access$1302(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;F)F
     .locals 0
 
-    .line 1067
+    .line 1068
     iput p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->bounceScale:F
 
     return p1
@@ -297,7 +297,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;Z)V
     .locals 0
 
-    .line 1067
+    .line 1068
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->setClipInParent(Z)V
 
     return-void
@@ -306,7 +306,7 @@
 .method static synthetic access$502(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;Z)Z
     .locals 0
 
-    .line 1067
+    .line 1068
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->mini:Z
 
     return p1
@@ -315,7 +315,7 @@
 .method private animateBounce()V
     .locals 6
 
-    .line 1448
+    .line 1449
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
@@ -324,7 +324,7 @@
 
     new-array v2, v1, [F
 
-    .line 1449
+    .line 1450
     fill-array-data v2, :array_0
 
     invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -333,17 +333,17 @@
 
     const-wide/16 v3, 0x64
 
-    .line 1450
+    .line 1451
     invoke-virtual {v2, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1451
+    .line 1452
     sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     new-array v3, v1, [F
 
-    .line 1453
+    .line 1454
     fill-array-data v3, :array_1
 
     invoke-static {v3}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -352,30 +352,30 @@
 
     const-wide/16 v4, 0xfa
 
-    .line 1454
+    .line 1455
     invoke-virtual {v3, v4, v5}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1455
+    .line 1456
     new-instance v4, Landroid/view/animation/OvershootInterpolator;
 
     invoke-direct {v4}, Landroid/view/animation/OvershootInterpolator;-><init>()V
 
     invoke-virtual {v3, v4}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1457
+    .line 1458
     new-instance v4, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$$ExternalSyntheticLambda0;
 
     invoke-direct {v4, p0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;)V
 
     const/4 v5, 0x0
 
-    .line 1461
+    .line 1462
     invoke-direct {p0, v5}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->setClipInParent(Z)V
 
-    .line 1462
+    .line 1463
     invoke-virtual {v2, v4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1463
+    .line 1464
     invoke-virtual {v3, v4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     new-array v1, v1, [Landroid/animation/Animator;
@@ -386,27 +386,18 @@
 
     aput-object v3, v1, v2
 
-    .line 1464
+    .line 1465
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playSequentially([Landroid/animation/Animator;)V
 
-    .line 1465
+    .line 1466
     new-instance v1, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$4;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$4;-><init>(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1473
+    .line 1474
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
-
-    .line 1475
-    iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
-
-    invoke-static {v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$900(Lorg/telegram/ui/Stories/DialogStoriesCell;)Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
 
     .line 1476
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
@@ -415,7 +406,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
+    if-eqz v0, :cond_0
 
     .line 1477
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
@@ -424,9 +415,18 @@
 
     move-result-object v0
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     .line 1478
+    iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
+
+    invoke-static {v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$900(Lorg/telegram/ui/Stories/DialogStoriesCell;)Ljava/lang/Runnable;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
+
+    .line 1479
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     const/4 v1, 0x0
@@ -452,7 +452,7 @@
 .method private createTextView()V
     .locals 9
 
-    .line 1125
+    .line 1126
     new-instance v0, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -465,28 +465,28 @@
 
     const-string v1, "fonts/rmedium.ttf"
 
-    .line 1126
+    .line 1127
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1127
+    .line 1128
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/16 v1, 0x11
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
 
-    .line 1128
+    .line 1129
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/16 v1, 0xb
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    .line 1129
+    .line 1130
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
@@ -497,19 +497,19 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 1130
+    .line 1131
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
 
-    .line 1132
+    .line 1133
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setMaxLines(I)V
 
-    .line 1135
+    .line 1136
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textViewContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -534,7 +534,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1136
+    .line 1137
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     const/16 v1, 0x30
@@ -547,7 +547,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius(I)V
 
-    .line 1137
+    .line 1138
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfageToAvatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -564,7 +564,7 @@
 .method private getArcProgress(FF)F
     .locals 3
 
-    .line 1492
+    .line 1493
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isLast:Z
 
     const/4 v0, 0x0
@@ -583,7 +583,7 @@
 
     goto :goto_0
 
-    .line 1495
+    .line 1496
     :cond_0
     sget-object p1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
@@ -593,7 +593,7 @@
 
     move-result p1
 
-    .line 1496
+    .line 1497
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -612,7 +612,7 @@
 
     const/high16 v1, 0x40600000    # 3.5f
 
-    .line 1497
+    .line 1498
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v1
@@ -633,7 +633,7 @@
 
     float-to-double p1, p1
 
-    .line 1500
+    .line 1501
     invoke-static {p1, p2}, Ljava/lang/Math;->acos(D)D
 
     move-result-wide p1
@@ -656,7 +656,7 @@
 .method private synthetic lambda$animateBounce$2(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1458
+    .line 1459
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -669,7 +669,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->bounceScale:F
 
-    .line 1459
+    .line 1460
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->invalidate()V
 
     return-void
@@ -678,7 +678,7 @@
 .method private synthetic lambda$dispatchDraw$1(Landroid/animation/ValueAnimator;)V
     .locals 3
 
-    .line 1370
+    .line 1371
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
@@ -709,7 +709,7 @@
 
     iput p1, v0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToSegments:F
 
-    .line 1371
+    .line 1372
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->invalidate()V
 
     return-void
@@ -718,7 +718,7 @@
 .method private synthetic lambda$setDialogId$0()V
     .locals 2
 
-    .line 1215
+    .line 1216
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$800(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/animation/ValueAnimator;
@@ -727,7 +727,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1216
+    .line 1217
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$800(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/animation/ValueAnimator;
@@ -736,7 +736,7 @@
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 1218
+    .line 1219
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -750,14 +750,14 @@
 .method private setClipInParent(Z)V
     .locals 1
 
-    .line 1483
+    .line 1484
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1484
+    .line 1485
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -766,7 +766,7 @@
 
     invoke-virtual {v0, p1}, Landroid/view/ViewGroup;->setClipChildren(Z)V
 
-    .line 1486
+    .line 1487
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
@@ -798,7 +798,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1487
+    .line 1488
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -830,7 +830,7 @@
 
     const/16 v1, 0x30
 
-    .line 1272
+    .line 1273
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -839,7 +839,7 @@
 
     const/16 v2, 0x1c
 
-    .line 1273
+    .line 1274
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -848,7 +848,7 @@
 
     const/16 v3, 0x8
 
-    .line 1274
+    .line 1275
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -875,14 +875,14 @@
 
     mul-float/2addr v3, v4
 
-    .line 1275
+    .line 1276
     iget-boolean v4, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->selectedForOverscroll:Z
 
     const/16 v10, 0x10
 
     if-eqz v4, :cond_0
 
-    .line 1276
+    .line 1277
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -910,7 +910,7 @@
     :cond_0
     add-float/2addr v1, v3
 
-    .line 1279
+    .line 1280
     iget v3, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressToCollapsed:F
 
     invoke-static {v1, v2, v3}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
@@ -921,7 +921,7 @@
 
     div-float v12, v11, v1
 
-    .line 1282
+    .line 1283
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v3
@@ -932,7 +932,7 @@
 
     sub-float v13, v3, v12
 
-    .line 1283
+    .line 1284
     iget v3, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressToCollapsed:F
 
     invoke-static {v13, v9, v3}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
@@ -941,7 +941,7 @@
 
     const/4 v3, 0x5
 
-    .line 1284
+    .line 1285
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -964,7 +964,7 @@
 
     move-result v15
 
-    .line 1286
+    .line 1287
     iget v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressToCollapsed:F
 
     div-float/2addr v1, v5
@@ -973,19 +973,19 @@
 
     move-result v16
 
-    .line 1288
+    .line 1289
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
     const/4 v2, 0x1
 
     iput-boolean v2, v1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->drawSegments:Z
 
-    .line 1289
+    .line 1290
     iget-boolean v3, v1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->forceAnimateProgressToSegments:Z
 
     if-nez v3, :cond_1
 
-    .line 1290
+    .line 1291
     iget-object v3, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {v3}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$300(Lorg/telegram/ui/Stories/DialogStoriesCell;)F
@@ -996,7 +996,7 @@
 
     iput v3, v1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToSegments:F
 
-    .line 1292
+    .line 1293
     :cond_1
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
@@ -1008,12 +1008,12 @@
 
     invoke-virtual {v1, v14, v15, v3, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1293
+    .line 1294
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, v8}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 1294
+    .line 1295
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     float-to-int v3, v12
@@ -1022,15 +1022,15 @@
 
     add-float v5, v14, v12
 
-    .line 1296
+    .line 1297
     iput v5, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cx:F
 
     add-float v4, v15, v12
 
-    .line 1297
+    .line 1298
     iput v4, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cy:F
 
-    .line 1298
+    .line 1299
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$600(Lorg/telegram/ui/Stories/DialogStoriesCell;)I
@@ -1039,7 +1039,7 @@
 
     if-nez v1, :cond_2
 
-    .line 1299
+    .line 1300
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/DialogStoriesCell;->backgroundPaint:Landroid/graphics/Paint;
@@ -1054,7 +1054,7 @@
 
     goto :goto_0
 
-    .line 1301
+    .line 1302
     :cond_2
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -1068,7 +1068,7 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1303
+    .line 1304
     :goto_0
     iget v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressToCollapsed:F
 
@@ -1078,7 +1078,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 1304
+    .line 1305
     iget v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cx:F
 
     iget v10, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cy:F
@@ -1097,11 +1097,11 @@
 
     invoke-virtual {v7, v1, v10, v8, v9}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1307
+    .line 1308
     :cond_3
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1308
+    .line 1309
     iget v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->bounceScale:F
 
     iget v8, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cx:F
@@ -1110,19 +1110,19 @@
 
     invoke-virtual {v7, v1, v1, v8, v9}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1309
+    .line 1310
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     if-nez v1, :cond_4
 
-    .line 1310
+    .line 1311
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/DialogStoriesCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
-    .line 1312
+    .line 1313
     :cond_4
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -1138,7 +1138,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 1313
+    .line 1314
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v9
@@ -1155,7 +1155,7 @@
     :goto_1
     if-nez v9, :cond_7
 
-    .line 1314
+    .line 1315
     iget-boolean v10, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressWasDrawn:Z
 
     if-eqz v10, :cond_6
@@ -1192,7 +1192,7 @@
 
     if-nez v9, :cond_8
 
-    .line 1320
+    .line 1321
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$1200(Lorg/telegram/ui/Stories/DialogStoriesCell;)Z
@@ -1208,7 +1208,7 @@
 
     const/4 v4, 0x0
 
-    .line 1322
+    .line 1323
     :goto_4
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -1216,7 +1216,7 @@
 
     if-ge v5, v9, :cond_9
 
-    .line 1323
+    .line 1324
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v9
@@ -1231,7 +1231,7 @@
 
     goto :goto_4
 
-    .line 1325
+    .line 1326
     :cond_9
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -1241,7 +1241,7 @@
 
     div-float/2addr v4, v5
 
-    .line 1326
+    .line 1327
     iget-object v5, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -1262,28 +1262,28 @@
 
     invoke-static {v5, v1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$1202(Lorg/telegram/ui/Stories/DialogStoriesCell;Z)Z
 
-    .line 1328
+    .line 1329
     :goto_5
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->invalidate()V
 
-    .line 1329
+    .line 1330
     iget-object v5, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     if-nez v5, :cond_b
 
-    .line 1330
+    .line 1331
     iget-object v5, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v9, v5, Lorg/telegram/ui/Stories/DialogStoriesCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     if-eqz v9, :cond_a
 
-    .line 1331
+    .line 1332
     iput-object v9, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     goto :goto_6
 
-    .line 1333
+    .line 1334
     :cond_a
     new-instance v9, Lorg/telegram/ui/Components/RadialProgress;
 
@@ -1295,20 +1295,20 @@
 
     const/4 v5, 0x0
 
-    .line 1334
+    .line 1335
     invoke-virtual {v9, v5, v2, v8}, Lorg/telegram/ui/Components/RadialProgress;->setBackground(Landroid/graphics/drawable/Drawable;ZZ)V
 
-    .line 1337
+    .line 1338
     :cond_b
     :goto_6
     iget-boolean v5, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->drawAvatar:Z
 
     if-eqz v5, :cond_c
 
-    .line 1338
+    .line 1339
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1339
+    .line 1340
     iget-object v5, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->getScale()F
@@ -1339,7 +1339,7 @@
 
     invoke-virtual {v7, v5, v9, v10, v12}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1340
+    .line 1341
     iget-object v5, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v9, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
@@ -1348,15 +1348,15 @@
 
     invoke-virtual {v5, v9}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(Landroid/graphics/RectF;)V
 
-    .line 1341
+    .line 1342
     iget-object v5, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v5, v7}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 1342
+    .line 1343
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1344
+    .line 1345
     :cond_c
     iget-object v5, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
@@ -1364,7 +1364,7 @@
 
     if-eqz v1, :cond_d
 
-    .line 1346
+    .line 1347
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/StoriesUtilities;->getCloseFriendsPaint(Lorg/telegram/messenger/ImageReceiver;)Landroid/graphics/Paint;
@@ -1373,31 +1373,31 @@
 
     goto :goto_7
 
-    .line 1347
+    .line 1348
     :cond_d
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Stories/StoriesUtilities;->getActiveCirclePaint(Lorg/telegram/messenger/ImageReceiver;Z)Landroid/graphics/Paint;
+    invoke-static {v1, v2}, Lorg/telegram/ui/Stories/StoriesUtilities;->getUnreadCirclePaint(Lorg/telegram/messenger/ImageReceiver;Z)Landroid/graphics/Paint;
 
     move-result-object v1
 
     :goto_7
     const/16 v5, 0xff
 
-    .line 1348
+    .line 1349
     invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1349
+    .line 1350
     iget-object v5, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     invoke-virtual {v5, v1}, Lorg/telegram/ui/Components/RadialProgress;->setPaint(Landroid/graphics/Paint;)V
 
-    .line 1350
+    .line 1351
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     iget-object v5, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 1351
+    .line 1352
     invoke-virtual {v5}, Lorg/telegram/messenger/ImageReceiver;->getImageX()F
 
     move-result v5
@@ -1432,7 +1432,7 @@
 
     iget-object v10, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 1352
+    .line 1353
     invoke-virtual {v10}, Lorg/telegram/messenger/ImageReceiver;->getImageX2()F
 
     move-result v10
@@ -1463,10 +1463,10 @@
 
     float-to-int v8, v12
 
-    .line 1350
+    .line 1351
     invoke-virtual {v1, v5, v9, v10, v8}, Lorg/telegram/ui/Components/RadialProgress;->setProgressRect(IIII)V
 
-    .line 1354
+    .line 1355
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     const/4 v5, 0x0
@@ -1481,7 +1481,7 @@
 
     invoke-virtual {v1, v4, v5}, Lorg/telegram/ui/Components/RadialProgress;->setProgress(FZ)V
 
-    .line 1355
+    .line 1356
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->getVisible()Z
@@ -1490,21 +1490,21 @@
 
     if-eqz v1, :cond_e
 
-    .line 1356
+    .line 1357
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress;
 
     invoke-virtual {v1, v7}, Lorg/telegram/ui/Components/RadialProgress;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1358
+    .line 1359
     :cond_e
     iput-boolean v2, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressWasDrawn:Z
 
-    .line 1359
+    .line 1360
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iput-boolean v2, v1, Lorg/telegram/ui/Stories/DialogStoriesCell;->drawCircleForce:Z
 
-    .line 1360
+    .line 1361
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->invalidate()V
 
     move/from16 v19, v3
@@ -1515,7 +1515,7 @@
 
     goto/16 :goto_c
 
-    .line 1362
+    .line 1363
     :cond_f
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->failT:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -1525,46 +1525,46 @@
 
     move-result v1
 
-    .line 1363
+    .line 1364
     iget-boolean v9, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->drawAvatar:Z
 
     if-eqz v9, :cond_14
 
-    .line 1364
+    .line 1365
     iget-boolean v9, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressWasDrawn:Z
 
     if-eqz v9, :cond_10
 
-    .line 1365
+    .line 1366
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->animateBounce()V
 
-    .line 1366
+    .line 1367
     iget-object v9, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
     iput-boolean v2, v9, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->forceAnimateProgressToSegments:Z
 
     const/4 v10, 0x0
 
-    .line 1367
+    .line 1368
     iput v10, v9, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToSegments:F
 
     new-array v9, v3, [F
 
-    .line 1368
+    .line 1369
     fill-array-data v9, :array_0
 
     invoke-static {v9}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v9
 
-    .line 1369
+    .line 1370
     new-instance v10, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$$ExternalSyntheticLambda1;
 
     invoke-direct {v10, v0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;)V
 
     invoke-virtual {v9, v10}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1373
+    .line 1374
     new-instance v10, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$3;
 
     invoke-direct {v10, v0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$3;-><init>(Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;)V
@@ -1575,10 +1575,10 @@
 
     const-wide/16 v3, 0x64
 
-    .line 1380
+    .line 1381
     invoke-virtual {v9, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1381
+    .line 1382
     invoke-virtual {v9}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_8
@@ -1586,7 +1586,7 @@
     :cond_10
     move/from16 v17, v4
 
-    .line 1383
+    .line 1384
     :goto_8
     iget-object v3, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
@@ -1594,14 +1594,14 @@
 
     mul-float v9, v1, v4
 
-    .line 1385
+    .line 1386
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressWasDrawn:Z
 
     xor-int/2addr v1, v2
 
     iput-boolean v1, v3, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->animate:Z
 
-    .line 1386
+    .line 1387
     iget v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cx:F
 
     invoke-direct {v0, v1, v12}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->getArcProgress(FF)F
@@ -1610,14 +1610,14 @@
 
     iput v1, v3, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->progressToArc:F
 
-    .line 1387
+    .line 1388
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
     iget-boolean v2, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isLast:Z
 
     iput-boolean v2, v1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->isLast:Z
 
-    .line 1388
+    .line 1389
     iget-boolean v2, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isFirst:Z
 
     iput-boolean v2, v1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->isFirst:Z
@@ -1626,10 +1626,10 @@
 
     sub-float v3, v2, v9
 
-    .line 1389
+    .line 1390
     iput v3, v1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->alpha:F
 
-    .line 1391
+    .line 1392
     iget-boolean v2, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isSelf:Z
 
     if-nez v2, :cond_11
@@ -1638,12 +1638,12 @@
 
     if-eqz v3, :cond_11
 
-    .line 1392
+    .line 1393
     iget-wide v3, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfadeToDialogId:J
 
     iput-wide v3, v1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->crossfadeToDialog:J
 
-    .line 1393
+    .line 1394
     iget v3, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressToCollapsed2:F
 
     iput v3, v1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->crossfadeToDialogProgress:F
@@ -1653,13 +1653,13 @@
     :cond_11
     const-wide/16 v3, 0x0
 
-    .line 1395
+    .line 1396
     iput-wide v3, v1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->crossfadeToDialog:J
 
     :goto_9
     if-eqz v2, :cond_12
 
-    .line 1398
+    .line 1399
     iget-wide v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->dialogId:J
 
     iget-object v4, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
@@ -1707,7 +1707,7 @@
 
     move v13, v5
 
-    .line 1400
+    .line 1401
     iget-wide v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->dialogId:J
 
     iget-object v4, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
@@ -1733,14 +1733,14 @@
 
     if-lez v2, :cond_13
 
-    .line 1405
+    .line 1406
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/StoriesUtilities;->getErrorPaint(Lorg/telegram/messenger/ImageReceiver;)Landroid/graphics/Paint;
 
     move-result-object v1
 
-    .line 1406
+    .line 1407
     invoke-static/range {v19 .. v19}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1755,12 +1755,12 @@
 
     float-to-int v2, v2
 
-    .line 1407
+    .line 1408
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAlpha(I)V
 
     const/4 v2, 0x4
 
-    .line 1408
+    .line 1409
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1795,23 +1795,23 @@
 
     move v2, v8
 
-    .line 1411
+    .line 1412
     :goto_b
     iput-boolean v2, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressWasDrawn:Z
 
-    .line 1412
+    .line 1413
     iget-boolean v2, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->drawAvatar:Z
 
     if-eqz v2, :cond_15
 
-    .line 1413
+    .line 1414
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     const/high16 v2, 0x3f800000    # 1.0f
 
     sub-float v8, v2, v16
 
-    .line 1415
+    .line 1416
     iget v2, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cx:F
 
     const/16 v3, 0x10
@@ -1836,7 +1836,7 @@
 
     invoke-virtual {v7, v8, v8, v2, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 1416
+    .line 1417
     iget v2, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cx:F
 
     iget v3, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cy:F
@@ -1845,22 +1845,22 @@
 
     invoke-virtual {v0, v7, v2, v3, v4}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->drawPlus(Landroid/graphics/Canvas;FFF)V
 
-    .line 1417
+    .line 1418
     iget v2, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cx:F
 
     iget v3, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cy:F
 
     invoke-virtual {v0, v7, v2, v3, v1}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->drawFail(Landroid/graphics/Canvas;FFF)V
 
-    .line 1418
+    .line 1419
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1421
+    .line 1422
     :cond_15
     :goto_c
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1423
+    .line 1424
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfadeToDialog:Z
 
     if-eqz v1, :cond_16
@@ -1873,24 +1873,24 @@
 
     if-lez v1, :cond_16
 
-    .line 1424
+    .line 1425
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfageToAvatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, v14, v15, v11, v11}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 1425
+    .line 1426
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfageToAvatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     iget v2, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressToCollapsed2:F
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/ImageReceiver;->setAlpha(F)V
 
-    .line 1426
+    .line 1427
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfageToAvatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v1, v7}, Lorg/telegram/messenger/ImageReceiver;->draw(Landroid/graphics/Canvas;)Z
 
-    .line 1428
+    .line 1429
     :cond_16
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textViewContainer:Landroid/widget/FrameLayout;
 
@@ -1914,29 +1914,29 @@
 
     invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1429
+    .line 1430
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textViewContainer:Landroid/widget/FrameLayout;
 
     sub-float v14, v14, v17
 
     invoke-virtual {v1, v14}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 1430
+    .line 1431
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->mini:Z
 
     if-nez v1, :cond_1a
 
-    .line 1432
+    .line 1433
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isSelf:Z
 
     if-eqz v1, :cond_17
 
-    .line 1433
+    .line 1434
     iput v4, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textAlpha:F
 
     goto :goto_f
 
-    .line 1435
+    .line 1436
     :cond_17
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
@@ -1946,16 +1946,16 @@
 
     if-eqz v2, :cond_18
 
-    .line 1436
+    .line 1437
     iget v2, v1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->currentState:I
 
     goto :goto_d
 
-    .line 1438
+    .line 1439
     :cond_18
     iget v2, v1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->currentState:I
 
-    .line 1440
+    .line 1441
     :goto_d
     iget v1, v1, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->globalState:I
 
@@ -1973,7 +1973,7 @@
     :goto_e
     iput v8, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textAlpha:F
 
-    .line 1442
+    .line 1443
     :goto_f
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textViewContainer:Landroid/widget/FrameLayout;
 
@@ -1985,7 +1985,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1444
+    .line 1445
     :cond_1a
     invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -2014,7 +2014,7 @@
     :cond_0
     const/16 v0, 0x11
 
-    .line 1573
+    .line 1574
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2023,7 +2023,7 @@
 
     add-float/2addr p2, v1
 
-    .line 1574
+    .line 1575
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -2032,7 +2032,7 @@
 
     add-float/2addr p3, v0
 
-    .line 1575
+    .line 1576
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->addCirclePaint:Landroid/graphics/Paint;
@@ -2049,7 +2049,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1576
+    .line 1577
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$600(Lorg/telegram/ui/Stories/DialogStoriesCell;)I
@@ -2058,7 +2058,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1577
+    .line 1578
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->backgroundPaint:Landroid/graphics/Paint;
@@ -2077,7 +2077,7 @@
 
     goto :goto_0
 
-    .line 1579
+    .line 1580
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -2098,7 +2098,7 @@
     :goto_0
     const/16 v0, 0x9
 
-    .line 1581
+    .line 1582
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -2115,7 +2115,7 @@
 
     const/4 v1, 0x2
 
-    .line 1582
+    .line 1583
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2130,14 +2130,14 @@
 
     invoke-virtual {p1, p2, p3, v1, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1583
+    .line 1584
     iget-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/DialogStoriesCell;->addCirclePaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, p2, p3, v0, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1585
+    .line 1586
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->addCirclePaint:Landroid/graphics/Paint;
@@ -2152,7 +2152,7 @@
 
     invoke-virtual {v1, p4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1587
+    .line 1588
     sget-object p4, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/4 v0, 0x1
@@ -2193,7 +2193,7 @@
 
     const/4 v1, 0x3
 
-    .line 1588
+    .line 1589
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -2212,7 +2212,7 @@
 
     invoke-virtual {p1, p4, v3, v4, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 1590
+    .line 1591
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -2245,7 +2245,7 @@
 
     invoke-virtual {p4, v3, v4, p2, p3}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1591
+    .line 1592
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -2270,7 +2270,7 @@
 .method public drawPlus(Landroid/graphics/Canvas;FFF)V
     .locals 4
 
-    .line 1541
+    .line 1542
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isSelf:Z
 
     if-eqz v0, :cond_4
@@ -2308,7 +2308,7 @@
     :cond_0
     const/16 v0, 0x10
 
-    .line 1544
+    .line 1545
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2317,7 +2317,7 @@
 
     add-float/2addr p2, v1
 
-    .line 1545
+    .line 1546
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -2326,7 +2326,7 @@
 
     add-float/2addr p3, v0
 
-    .line 1546
+    .line 1547
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->addCirclePaint:Landroid/graphics/Paint;
@@ -2341,7 +2341,7 @@
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1547
+    .line 1548
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$600(Lorg/telegram/ui/Stories/DialogStoriesCell;)I
@@ -2350,7 +2350,7 @@
 
     if-nez v0, :cond_1
 
-    .line 1548
+    .line 1549
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->backgroundPaint:Landroid/graphics/Paint;
@@ -2369,7 +2369,7 @@
 
     goto :goto_0
 
-    .line 1550
+    .line 1551
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -2390,7 +2390,7 @@
     :goto_0
     const/16 v0, 0xb
 
-    .line 1552
+    .line 1553
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -2405,7 +2405,7 @@
 
     const/16 v0, 0x9
 
-    .line 1553
+    .line 1554
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -2418,7 +2418,7 @@
 
     invoke-virtual {p1, p2, p3, v0, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1555
+    .line 1556
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$600(Lorg/telegram/ui/Stories/DialogStoriesCell;)I
@@ -2439,7 +2439,7 @@
 
     move-result v0
 
-    .line 1556
+    .line 1557
     iget-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$1500(Lorg/telegram/ui/Stories/DialogStoriesCell;)I
@@ -2448,7 +2448,7 @@
 
     if-eq v0, v1, :cond_3
 
-    .line 1557
+    .line 1558
     iget-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$1600(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/graphics/drawable/Drawable;
@@ -2469,7 +2469,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1559
+    .line 1560
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -2485,7 +2485,7 @@
 
     invoke-virtual {v0, p4}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 1560
+    .line 1561
     iget-object p4, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {p4}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$1600(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/graphics/drawable/Drawable;
@@ -2494,7 +2494,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
-    .line 1561
+    .line 1562
     invoke-static {v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$1600(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -2515,7 +2515,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
-    .line 1562
+    .line 1563
     invoke-static {v2}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$1600(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
@@ -2534,7 +2534,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
-    .line 1563
+    .line 1564
     invoke-static {v3}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$1600(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2553,7 +2553,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
-    .line 1564
+    .line 1565
     invoke-static {v3}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$1600(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
@@ -2570,10 +2570,10 @@
 
     float-to-int p3, p3
 
-    .line 1560
+    .line 1561
     invoke-virtual {p4, v0, v2, p2, p3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1566
+    .line 1567
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$1600(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/graphics/drawable/Drawable;
@@ -2592,7 +2592,7 @@
 
     const/16 v0, 0x30
 
-    .line 1260
+    .line 1261
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -2601,14 +2601,14 @@
 
     const/16 v1, 0x1c
 
-    .line 1261
+    .line 1262
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     int-to-float v1, v1
 
-    .line 1263
+    .line 1264
     iget v2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressToCollapsed:F
 
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
@@ -2621,7 +2621,7 @@
 
     const/4 v3, 0x5
 
-    .line 1266
+    .line 1267
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -2656,7 +2656,7 @@
 .method public invalidate()V
     .locals 3
 
-    .line 1519
+    .line 1520
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->mini:Z
 
     if-nez v0, :cond_0
@@ -2671,7 +2671,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1520
+    .line 1521
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
@@ -2683,16 +2683,16 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 1521
+    .line 1522
     invoke-virtual {v2}, Landroid/view/ViewGroup;->invalidate()V
 
     goto :goto_0
 
-    .line 1523
+    .line 1524
     :cond_1
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1526
+    .line 1527
     :cond_2
     :goto_0
     invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
@@ -2703,7 +2703,7 @@
 .method public invalidate(IIII)V
     .locals 2
 
-    .line 1531
+    .line 1532
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->mini:Z
 
     if-nez v0, :cond_0
@@ -2718,7 +2718,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1532
+    .line 1533
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
@@ -2730,16 +2730,16 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1533
+    .line 1534
     invoke-virtual {v1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 1535
+    .line 1536
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1537
+    .line 1538
     :cond_2
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->invalidate(IIII)V
 
@@ -2749,15 +2749,15 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 1596
+    .line 1597
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 1597
+    .line 1598
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 1598
+    .line 1599
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfageToAvatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
@@ -2768,35 +2768,35 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 1603
+    .line 1604
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 1604
+    .line 1605
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 1605
+    .line 1606
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfageToAvatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 1606
+    .line 1607
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->onDetachFromWindow()V
 
-    .line 1607
+    .line 1608
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cancellable:Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;
 
     if-eqz v0, :cond_0
 
-    .line 1608
+    .line 1609
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 1609
+    .line 1610
     iput-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cancellable:Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;
 
     :cond_0
@@ -2806,7 +2806,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1256
+    .line 1257
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->mini:Z
 
     if-eqz p1, :cond_0
@@ -2849,14 +2849,14 @@
 .method public setCrossfadeTo(J)V
     .locals 2
 
-    .line 1629
+    .line 1630
     iget-wide v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfadeToDialogId:J
 
     cmp-long v0, v0, p1
 
     if-eqz v0, :cond_3
 
-    .line 1630
+    .line 1631
     iput-wide p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfadeToDialogId:J
 
     const-wide/16 v0, -0x1
@@ -2872,7 +2872,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1631
+    .line 1632
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfadeToDialog:Z
 
@@ -2886,7 +2886,7 @@
 
     if-lez v0, :cond_1
 
-    .line 1635
+    .line 1636
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget v0, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->currentAccount:I
@@ -2905,12 +2905,12 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 1636
+    .line 1637
     iput-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     goto :goto_1
 
-    .line 1638
+    .line 1639
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -2932,18 +2932,18 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 1639
+    .line 1640
     iput-object v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     :goto_1
     if-eqz p1, :cond_3
 
-    .line 1642
+    .line 1643
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfadeAvatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLObject;)V
 
-    .line 1643
+    .line 1644
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfageToAvatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfadeAvatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
@@ -2952,7 +2952,7 @@
 
     goto :goto_2
 
-    .line 1646
+    .line 1647
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->crossfageToAvatarImage:Lorg/telegram/messenger/ImageReceiver;
 
@@ -2966,7 +2966,7 @@
 .method public setDialogId(J)V
     .locals 8
 
-    .line 1141
+    .line 1142
     iget-wide v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->dialogId:J
 
     cmp-long v2, v0, p1
@@ -2989,31 +2989,31 @@
 
     if-nez v2, :cond_1
 
-    .line 1143
+    .line 1144
     iget-object v6, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cancellable:Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;
 
     if-eqz v6, :cond_1
 
-    .line 1144
+    .line 1145
     iget-object v6, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v6, v6, Lorg/telegram/ui/Stories/DialogStoriesCell;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
 
     invoke-virtual {v6, v0, v1, v4}, Lorg/telegram/ui/Stories/StoriesController;->setLoading(JZ)V
 
-    .line 1145
+    .line 1146
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cancellable:Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;->cancel()V
 
-    .line 1146
+    .line 1147
     iput-object v5, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->cancellable:Lorg/telegram/ui/Stories/StoriesUtilities$EnsureStoryFileLoadedObject;
 
-    .line 1149
+    .line 1150
     :cond_1
     iput-wide p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->dialogId:J
 
-    .line 1151
+    .line 1152
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget v0, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->currentAccount:I
@@ -3040,7 +3040,7 @@
     :goto_1
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isSelf:Z
 
-    .line 1152
+    .line 1153
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
@@ -3057,7 +3057,7 @@
 
     if-lez v0, :cond_3
 
-    .line 1155
+    .line 1156
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget v0, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->currentAccount:I
@@ -3076,12 +3076,12 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 1156
+    .line 1157
     iput-object v5, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     goto :goto_2
 
-    .line 1158
+    .line 1159
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -3103,7 +3103,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 1159
+    .line 1160
     iput-object v5, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     :goto_2
@@ -3111,45 +3111,45 @@
 
     if-nez v0, :cond_4
 
-    .line 1163
+    .line 1164
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 1164
+    .line 1165
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->clearImage()V
 
     return-void
 
-    .line 1167
+    .line 1168
     :cond_4
     iget-object v6, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v6, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLObject;)V
 
-    .line 1168
+    .line 1169
     iget-object v6, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarImage:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v7, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v6, v0, v7}, Lorg/telegram/messenger/ImageReceiver;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Landroid/graphics/drawable/Drawable;)V
 
-    .line 1169
+    .line 1170
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->mini:Z
 
     if-eqz v0, :cond_5
 
     return-void
 
-    .line 1172
+    .line 1173
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1173
+    .line 1174
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/DialogStoriesCell;->storiesController:Lorg/telegram/ui/Stories/StoriesController;
@@ -3160,7 +3160,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 1174
+    .line 1175
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->FailedStory:I
@@ -3173,12 +3173,12 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 1175
+    .line 1176
     iput-boolean v4, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isUploadingState:Z
 
     goto/16 :goto_4
 
-    .line 1176
+    .line 1177
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -3194,17 +3194,17 @@
 
     if-nez v0, :cond_7
 
-    .line 1177
+    .line 1178
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {p1, v3, v4}, Lorg/telegram/ui/Stories/StoriesUtilities;->applyUploadingStr(Lorg/telegram/ui/ActionBar/SimpleTextView;ZZ)V
 
-    .line 1178
+    .line 1179
     iput-boolean v3, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isUploadingState:Z
 
     goto/16 :goto_4
 
-    .line 1179
+    .line 1180
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -3216,17 +3216,17 @@
 
     if-eqz p1, :cond_8
 
-    .line 1180
+    .line 1181
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {p1, v3, v4}, Lorg/telegram/ui/Stories/StoriesUtilities;->applyUploadingStr(Lorg/telegram/ui/ActionBar/SimpleTextView;ZZ)V
 
-    .line 1181
+    .line 1182
     iput-boolean v3, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isUploadingState:Z
 
     goto/16 :goto_4
 
-    .line 1183
+    .line 1184
     :cond_8
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isSelf:Z
 
@@ -3234,7 +3234,7 @@
 
     if-eqz v2, :cond_a
 
-    .line 1184
+    .line 1185
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isUploadingState:Z
 
     if-eqz p1, :cond_a
@@ -3243,20 +3243,11 @@
 
     if-nez p1, :cond_a
 
-    .line 1185
+    .line 1186
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    .line 1186
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->createTextView()V
-
     .line 1187
-    iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
-
-    invoke-static {p2}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$800(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/animation/ValueAnimator;
-
-    move-result-object p2
-
-    if-eqz p2, :cond_9
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->createTextView()V
 
     .line 1188
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
@@ -3265,14 +3256,23 @@
 
     move-result-object p2
 
-    invoke-virtual {p2}, Landroid/animation/ValueAnimator;->cancel()V
+    if-eqz p2, :cond_9
 
     .line 1189
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
+    invoke-static {p2}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$800(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/animation/ValueAnimator;
+
+    move-result-object p2
+
+    invoke-virtual {p2}, Landroid/animation/ValueAnimator;->cancel()V
+
+    .line 1190
+    iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
+
     invoke-static {p2, v5}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$802(Lorg/telegram/ui/Stories/DialogStoriesCell;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 1191
+    .line 1192
     :cond_9
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -3288,7 +3288,7 @@
 
     invoke-static {p2, v0}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$802(Lorg/telegram/ui/Stories/DialogStoriesCell;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 1192
+    .line 1193
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$800(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/animation/ValueAnimator;
@@ -3301,7 +3301,7 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1203
+    .line 1204
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {p2}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$800(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/animation/ValueAnimator;
@@ -3314,7 +3314,7 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1211
+    .line 1212
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$800(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/animation/ValueAnimator;
@@ -3325,14 +3325,14 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1212
+    .line 1213
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1213
+    .line 1214
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 p2, 0x5
@@ -3345,7 +3345,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1214
+    .line 1215
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     new-instance p2, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell$$ExternalSyntheticLambda2;
@@ -3354,7 +3354,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$902(Lorg/telegram/ui/Stories/DialogStoriesCell;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 1221
+    .line 1222
     :cond_a
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
@@ -3366,10 +3366,10 @@
 
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 1222
+    .line 1223
     iput-boolean v4, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->isUploadingState:Z
 
-    .line 1223
+    .line 1224
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->MyStory:I
@@ -3384,13 +3384,13 @@
 
     goto/16 :goto_4
 
-    .line 1224
+    .line 1225
     :cond_b
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz p1, :cond_10
 
-    .line 1225
+    .line 1226
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     if-nez p1, :cond_c
@@ -3405,19 +3405,19 @@
     :goto_3
     const-string p1, " "
 
-    .line 1226
+    .line 1227
     invoke-virtual {v1, p1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result p1
 
     if-lez p1, :cond_d
 
-    .line 1228
+    .line 1229
     invoke-virtual {v1, v4, p1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1230
+    .line 1231
     :cond_d
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->user:Lorg/telegram/tgnet/TLRPC$User;
 
@@ -3425,12 +3425,12 @@
 
     if-eqz p1, :cond_f
 
-    .line 1231
+    .line 1232
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->verifiedDrawable:Landroid/graphics/drawable/Drawable;
 
     if-nez p1, :cond_e
 
-    .line 1232
+    .line 1233
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/DialogStoriesCell;->access$1000(Lorg/telegram/ui/Stories/DialogStoriesCell;)Landroid/graphics/drawable/Drawable;
@@ -3439,7 +3439,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->verifiedDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 1235
+    .line 1236
     :cond_e
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -3455,12 +3455,12 @@
 
     move-result-object p1
 
-    .line 1236
+    .line 1237
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 1237
+    .line 1238
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->verifiedDrawable:Landroid/graphics/drawable/Drawable;
@@ -3469,7 +3469,7 @@
 
     goto :goto_4
 
-    .line 1240
+    .line 1241
     :cond_f
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -3485,25 +3485,25 @@
 
     move-result-object p1
 
-    .line 1241
+    .line 1242
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 1242
+    .line 1243
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_4
 
-    .line 1245
+    .line 1246
     :cond_10
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->chat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
-    .line 1246
+    .line 1247
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getPaint()Landroid/graphics/Paint;
@@ -3518,12 +3518,12 @@
 
     move-result-object p1
 
-    .line 1247
+    .line 1248
     iget-object p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 1248
+    .line 1249
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
@@ -3543,19 +3543,19 @@
 .method public setPressed(Z)V
     .locals 4
 
-    .line 1508
+    .line 1509
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setPressed(Z)V
 
     if-eqz p1, :cond_0
 
-    .line 1509
+    .line 1510
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->buttonBounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     if-nez v1, :cond_0
 
-    .line 1510
+    .line 1511
     new-instance v1, Lorg/telegram/ui/Components/ButtonBounce;
 
     const/high16 v2, 0x3fc00000    # 1.5f
@@ -3566,7 +3566,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;->buttonBounce:Lorg/telegram/ui/Components/ButtonBounce;
 
-    .line 1512
+    .line 1513
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->params:Lorg/telegram/ui/Stories/StoriesUtilities$AvatarStoryParams;
 
@@ -3574,7 +3574,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1513
+    .line 1514
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/ButtonBounce;->setPressed(Z)V
 
     :cond_1
@@ -3584,7 +3584,7 @@
 .method public setProgressToCollapsed(FFFZ)V
     .locals 3
 
-    .line 1614
+    .line 1615
     iget v0, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressToCollapsed:F
 
     cmpl-float v0, v0, p1
@@ -3611,44 +3611,44 @@
 
     if-eq p3, p4, :cond_1
 
-    .line 1615
+    .line 1616
     :cond_0
     iput-boolean p4, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->selectedForOverscroll:Z
 
-    .line 1616
+    .line 1617
     iput p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressToCollapsed:F
 
-    .line 1617
+    .line 1618
     iput p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->progressToCollapsed2:F
 
     const/high16 p2, 0x3f000000    # 0.5f
 
     div-float/2addr p1, p2
 
-    .line 1618
+    .line 1619
     invoke-static {p1, v2, v1}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     const/16 p1, 0x30
 
-    .line 1619
+    .line 1620
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     const/16 p1, 0x1c
 
-    .line 1620
+    .line 1621
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    .line 1621
+    .line 1622
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->invalidate()V
 
-    .line 1622
+    .line 1623
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->this$0:Lorg/telegram/ui/Stories/DialogStoriesCell;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/DialogStoriesCell;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
-    .line 1624
+    .line 1625
     :cond_1
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->mini:Z
 
@@ -3674,7 +3674,7 @@
     :goto_0
     iput v1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textAlphaTransition:F
 
-    .line 1625
+    .line 1626
     iget-object p1, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textViewContainer:Landroid/widget/FrameLayout;
 
     iget p2, p0, Lorg/telegram/ui/Stories/DialogStoriesCell$StoryCell;->textAlpha:F

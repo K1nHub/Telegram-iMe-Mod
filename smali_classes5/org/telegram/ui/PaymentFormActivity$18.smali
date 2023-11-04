@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/PaymentFormActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 2358
+    .line 2367
     iput-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$18;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/PaymentFormActivity$18;->val$context:Landroid/content/Context;
@@ -39,24 +39,24 @@
 .method public onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
     .locals 1
 
-    .line 2362
+    .line 2371
     invoke-super {p0, p1, p2}, Landroid/webkit/WebViewClient;->onPageFinished(Landroid/webkit/WebView;Ljava/lang/String;)V
 
-    .line 2363
+    .line 2372
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$18;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     const/4 p2, 0x0
 
     invoke-static {p1, p2}, Lorg/telegram/ui/PaymentFormActivity;->access$2402(Lorg/telegram/ui/PaymentFormActivity;Z)Z
 
-    .line 2364
+    .line 2373
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$18;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     const/4 v0, 0x1
 
     invoke-static {p1, v0, p2}, Lorg/telegram/ui/PaymentFormActivity;->access$2500(Lorg/telegram/ui/PaymentFormActivity;ZZ)V
 
-    .line 2365
+    .line 2374
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$18;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$2600(Lorg/telegram/ui/PaymentFormActivity;)V
@@ -67,7 +67,7 @@
 .method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
     .locals 3
 
-    .line 2371
+    .line 2380
     :try_start_0
     invoke-static {p2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
@@ -75,7 +75,7 @@
 
     const-string p2, "t.me"
 
-    .line 2372
+    .line 2381
     invoke-virtual {p1}, Landroid/net/Uri;->getHost()Ljava/lang/String;
 
     move-result-object v0
@@ -88,14 +88,14 @@
 
     if-eqz p2, :cond_0
 
-    .line 2373
+    .line 2382
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$18;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/PaymentFormActivity;->access$200(Lorg/telegram/ui/PaymentFormActivity;)V
 
     return v0
 
-    .line 2377
+    .line 2386
     :cond_0
     invoke-static {}, Lorg/telegram/ui/PaymentFormActivity;->access$3400()Ljava/util/List;
 
@@ -113,7 +113,7 @@
 
     return v0
 
-    .line 2380
+    .line 2389
     :cond_1
     invoke-static {}, Lorg/telegram/ui/PaymentFormActivity;->access$3500()Ljava/util/List;
 
@@ -131,7 +131,7 @@
 
     if-nez p2, :cond_3
 
-    .line 2382
+    .line 2391
     :try_start_1
     iget-object p2, p0, Lorg/telegram/ui/PaymentFormActivity$18;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
@@ -143,7 +143,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 2383
+    .line 2392
     iget-object p2, p0, Lorg/telegram/ui/PaymentFormActivity$18;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getContext()Landroid/content/Context;
@@ -167,7 +167,7 @@
 
     goto :goto_0
 
-    .line 2386
+    .line 2395
     :catch_0
     :try_start_2
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
@@ -178,7 +178,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/PaymentFormActivity$18;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    .line 2387
+    .line 2396
     invoke-static {p2}, Lorg/telegram/ui/PaymentFormActivity;->access$3600(Lorg/telegram/ui/PaymentFormActivity;)Ljava/lang/String;
 
     move-result-object p2
@@ -189,7 +189,7 @@
 
     sget p2, Lorg/telegram/messenger/R$string;->PaymentAppNotFoundForDeeplink:I
 
-    .line 2388
+    .line 2397
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p2
@@ -200,7 +200,7 @@
 
     sget p2, Lorg/telegram/messenger/R$string;->OK:I
 
-    .line 2389
+    .line 2398
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p2
@@ -211,7 +211,7 @@
 
     move-result-object p1
 
-    .line 2390
+    .line 2399
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1

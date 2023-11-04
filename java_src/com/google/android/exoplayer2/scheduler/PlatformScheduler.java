@@ -52,7 +52,7 @@ public final class PlatformScheduler implements Scheduler {
     private static JobInfo buildJobInfo(int i, ComponentName componentName, Requirements requirements, String str, String str2) {
         Requirements filterRequirements = requirements.filterRequirements(SUPPORTED_REQUIREMENTS);
         if (!filterRequirements.equals(requirements)) {
-            Log.m1106w(TAG, "Ignoring unsupported requirements: " + (filterRequirements.getRequirements() ^ requirements.getRequirements()));
+            Log.m1107w(TAG, "Ignoring unsupported requirements: " + (filterRequirements.getRequirements() ^ requirements.getRequirements()));
         }
         JobInfo.Builder builder = new JobInfo.Builder(i, componentName);
         if (requirements.isUnmeteredNetworkRequired()) {
@@ -89,7 +89,7 @@ public final class PlatformScheduler implements Scheduler {
                 Util.startForegroundService(this, new Intent((String) Assertions.checkNotNull(extras.getString(PlatformScheduler.KEY_SERVICE_ACTION))).setPackage((String) Assertions.checkNotNull(extras.getString(PlatformScheduler.KEY_SERVICE_PACKAGE))));
                 return false;
             }
-            Log.m1106w(PlatformScheduler.TAG, "Requirements not met: " + notMetRequirements);
+            Log.m1107w(PlatformScheduler.TAG, "Requirements not met: " + notMetRequirements);
             jobFinished(jobParameters, true);
             return false;
         }

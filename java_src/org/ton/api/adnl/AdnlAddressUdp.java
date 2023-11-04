@@ -9,9 +9,9 @@ import kotlinx.serialization.encoding.CompositeEncoder;
 import kotlinx.serialization.internal.PluginExceptionsKt;
 import kotlinx.serialization.internal.SerializationConstructorMarker;
 import kotlinx.serialization.json.Json;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: AdnlAddress.kt */
 @Serializable
 /* loaded from: classes6.dex */
@@ -19,7 +19,7 @@ public final class AdnlAddressUdp implements AdnlAddress {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: ip */
-    private final int f2013ip;
+    private final int f2025ip;
     private final int port;
 
     public boolean equals(Object obj) {
@@ -28,17 +28,17 @@ public final class AdnlAddressUdp implements AdnlAddress {
         }
         if (obj instanceof AdnlAddressUdp) {
             AdnlAddressUdp adnlAddressUdp = (AdnlAddressUdp) obj;
-            return this.f2013ip == adnlAddressUdp.f2013ip && this.port == adnlAddressUdp.port;
+            return this.f2025ip == adnlAddressUdp.f2025ip && this.port == adnlAddressUdp.port;
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.f2013ip * 31) + this.port;
+        return (this.f2025ip * 31) + this.port;
     }
 
     public AdnlAddressUdp(int i, int i2) {
-        this.f2013ip = i;
+        this.f2025ip = i;
         this.port = i2;
     }
 
@@ -46,7 +46,7 @@ public final class AdnlAddressUdp implements AdnlAddress {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, AdnlAddressUdp$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2013ip = i2;
+        this.f2025ip = i2;
         this.port = i3;
     }
 
@@ -56,7 +56,7 @@ public final class AdnlAddressUdp implements AdnlAddress {
     }
 
     public int getIp() {
-        return this.f2013ip;
+        return this.f2025ip;
     }
 
     public int getPort() {
@@ -78,7 +78,7 @@ public final class AdnlAddressUdp implements AdnlAddress {
             return AdnlAddressUdp$$serializer.INSTANCE;
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, AdnlAddressUdp value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
@@ -86,7 +86,7 @@ public final class AdnlAddressUdp implements AdnlAddress {
             writer.writeInt(value.getPort());
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public AdnlAddressUdp decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return new AdnlAddressUdp(reader.readInt(), reader.readInt());

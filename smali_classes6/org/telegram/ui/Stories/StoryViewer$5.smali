@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Stories/StoryViewer;->open(Landroid/content/Context;Lorg/telegram/tgnet/TLRPC$StoryItem;Ljava/util/ArrayList;ILorg/telegram/ui/Stories/StoriesController$StoriesList;Lorg/telegram/tgnet/TLRPC$PeerStories;Lorg/telegram/ui/Stories/StoryViewer$PlaceProvider;Z)V
+    value = Lorg/telegram/ui/Stories/StoryViewer;->open(Landroid/content/Context;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Ljava/util/ArrayList;ILorg/telegram/ui/Stories/StoriesController$StoriesList;Lorg/telegram/tgnet/tl/TL_stories$PeerStories;Lorg/telegram/ui/Stories/StoryViewer$PlaceProvider;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -42,10 +42,18 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$ZdpDUzM7TUbODZCEf2Kkx-FECuo(Lorg/telegram/ui/Stories/StoryViewer$5;Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/StoryViewer$5;->lambda$preparePlayer$2(Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;)V
+
+    return-void
+.end method
+
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;Lorg/telegram/ui/Stories/StoriesController$StoriesList;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 1149
+    .line 1194
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->val$storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
@@ -57,10 +65,46 @@
     return-void
 .end method
 
+.method private synthetic lambda$preparePlayer$2(Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;)V
+    .locals 2
+
+    .line 1510
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+
+    iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 1511
+    iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView;->storyContainer:Landroid/widget/FrameLayout;
+
+    if-eqz v0, :cond_0
+
+    iget-object v1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+
+    iget-object v1, v1, Lorg/telegram/ui/Stories/StoryViewer;->currentPlayerScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, v1, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->player:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
+
+    if-ne v1, p1, :cond_0
+
+    .line 1512
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    :cond_0
+    return-void
+.end method
+
 .method private synthetic lambda$switchToNextAndRemoveCurrentPeer$0(Lorg/telegram/ui/Stories/StoriesController$StoriesList;Ljava/util/ArrayList;)V
     .locals 4
 
-    .line 1203
+    .line 1248
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -77,7 +121,7 @@
 .method private synthetic lambda$switchToNextAndRemoveCurrentPeer$1(Ljava/util/ArrayList;I)V
     .locals 2
 
-    .line 1219
+    .line 1264
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -94,10 +138,10 @@
 .method public getKeyboardHeight()I
     .locals 1
 
-    .line 1431
+    .line 1486
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$2200(Lorg/telegram/ui/Stories/StoryViewer;)I
+    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$2300(Lorg/telegram/ui/Stories/StoryViewer;)I
 
     move-result v0
 
@@ -107,7 +151,7 @@
 .method public getProgressToDismiss()F
     .locals 1
 
-    .line 1355
+    .line 1400
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->progressToDismiss:F
@@ -118,10 +162,10 @@
 .method public isClosed()Z
     .locals 1
 
-    .line 1350
+    .line 1395
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$1300(Lorg/telegram/ui/Stories/StoryViewer;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$1400(Lorg/telegram/ui/Stories/StoryViewer;)Z
 
     move-result v0
 
@@ -131,7 +175,7 @@
 .method public onPeerSelected(JI)V
     .locals 3
 
-    .line 1153
+    .line 1198
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget v1, v0, Lorg/telegram/ui/Stories/StoryViewer;->lastPosition:I
@@ -144,11 +188,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 1154
+    .line 1199
     :cond_0
     iput-wide p1, v0, Lorg/telegram/ui/Stories/StoryViewer;->lastDialogId:J
 
-    .line 1155
+    .line 1200
     iput p3, v0, Lorg/telegram/ui/Stories/StoryViewer;->lastPosition:I
 
     :cond_1
@@ -169,7 +213,7 @@
         }
     .end annotation
 
-    .line 1436
+    .line 1491
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->deviceIsHigh()Z
 
     move-result v0
@@ -184,11 +228,11 @@
 
     goto/16 :goto_3
 
-    .line 1439
+    .line 1494
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$1300(Lorg/telegram/ui/Stories/StoryViewer;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$1400(Lorg/telegram/ui/Stories/StoryViewer;)Z
 
     move-result v0
 
@@ -201,7 +245,7 @@
 
     move v1, v0
 
-    .line 1442
+    .line 1497
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -215,7 +259,7 @@
 
     move v2, v0
 
-    .line 1444
+    .line 1499
     :goto_1
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -223,7 +267,7 @@
 
     if-ge v2, v3, :cond_3
 
-    .line 1445
+    .line 1500
     invoke-virtual {p2, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -248,7 +292,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 1447
+    .line 1502
     invoke-virtual {p2, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     :cond_2
@@ -264,7 +308,7 @@
     :cond_4
     move v1, v0
 
-    .line 1451
+    .line 1506
     :goto_2
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -272,34 +316,41 @@
 
     if-ge v1, v2, :cond_6
 
-    .line 1452
+    .line 1507
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/net/Uri;
 
-    .line 1453
+    .line 1508
     new-instance v3, Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
 
     iget-object v4, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v4}, Lorg/telegram/ui/Stories/StoryViewer;->access$3200(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/SurfaceView;
+    invoke-static {v4}, Lorg/telegram/ui/Stories/StoryViewer;->access$3400(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/SurfaceView;
 
     move-result-object v5
 
     iget-object v6, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v6}, Lorg/telegram/ui/Stories/StoryViewer;->access$3300(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/TextureView;
+    invoke-static {v6}, Lorg/telegram/ui/Stories/StoryViewer;->access$3500(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/TextureView;
 
     move-result-object v6
 
     invoke-direct {v3, v4, v5, v6}, Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;-><init>(Lorg/telegram/ui/Stories/StoryViewer;Landroid/view/SurfaceView;Landroid/view/TextureView;)V
 
-    .line 1454
+    .line 1509
+    new-instance v4, Lorg/telegram/ui/Stories/StoryViewer$5$$ExternalSyntheticLambda2;
+
+    invoke-direct {v4, p0, v3}, Lorg/telegram/ui/Stories/StoryViewer$5$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Stories/StoryViewer$5;Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;)V
+
+    invoke-virtual {v3, v4}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->setOnSeekUpdate(Ljava/lang/Runnable;)V
+
+    .line 1515
     iput-object v2, v3, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->uri:Landroid/net/Uri;
 
-    .line 1455
+    .line 1516
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -308,24 +359,24 @@
 
     iput-object v4, v3, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 1456
+    .line 1517
     invoke-static {v4, v0}, Lorg/telegram/messenger/FileStreamLoadOperation;->setPriorityForDocument(Lorg/telegram/tgnet/TLRPC$Document;I)V
 
-    .line 1457
-    invoke-static {}, Lorg/telegram/ui/Stories/StoryViewer;->access$3500()Z
+    .line 1518
+    invoke-static {}, Lorg/telegram/ui/Stories/StoryViewer;->access$3700()Z
 
     move-result v4
 
     invoke-virtual {v3, v2, v4}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->preparePlayer(Landroid/net/Uri;Z)V
 
-    .line 1458
+    .line 1519
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/StoryViewer;->preparedPlayers:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1459
+    .line 1520
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/StoryViewer;->preparedPlayers:Ljava/util/ArrayList;
@@ -338,7 +389,7 @@
 
     if-le v2, v3, :cond_5
 
-    .line 1460
+    .line 1521
     iget-object v2, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/StoryViewer;->preparedPlayers:Ljava/util/ArrayList;
@@ -351,7 +402,7 @@
 
     const/4 v3, 0x0
 
-    .line 1461
+    .line 1522
     invoke-virtual {v2, v3}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->release(Ljava/lang/Runnable;)Z
 
     :cond_5
@@ -367,19 +418,19 @@
 .method public releasePlayer(Ljava/lang/Runnable;)Z
     .locals 2
 
-    .line 1245
+    .line 1290
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->playerHolder:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
 
     if-eqz v0, :cond_0
 
-    .line 1246
+    .line 1291
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->release(Ljava/lang/Runnable;)Z
 
     move-result p1
 
-    .line 1247
+    .line 1292
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     const/4 v1, 0x0
@@ -397,10 +448,10 @@
 .method public requestAdjust(Z)V
     .locals 1
 
-    .line 1256
+    .line 1301
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3000(Lorg/telegram/ui/Stories/StoryViewer;Z)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3200(Lorg/telegram/ui/Stories/StoryViewer;Z)V
 
     return-void
 .end method
@@ -414,10 +465,10 @@
 
     move-object/from16 v1, p5
 
-    .line 1275
+    .line 1320
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v2}, Lorg/telegram/ui/Stories/StoryViewer;->access$1300(Lorg/telegram/ui/Stories/StoryViewer;)Z
+    invoke-static {v2}, Lorg/telegram/ui/Stories/StoryViewer;->access$1400(Lorg/telegram/ui/Stories/StoryViewer;)Z
 
     move-result v2
 
@@ -439,7 +490,7 @@
 
     goto/16 :goto_8
 
-    .line 1280
+    .line 1325
     :cond_0
     iget-object v2, v2, Lorg/telegram/ui/Stories/StoryViewer;->lastUri:Landroid/net/Uri;
 
@@ -461,13 +512,13 @@
 
     goto :goto_1
 
-    .line 1281
+    .line 1326
     :cond_2
     invoke-virtual/range {p2 .. p2}, Landroid/net/Uri;->getAuthority()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 1282
+    .line 1327
     :goto_1
     invoke-static {v2, v4}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -477,7 +528,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 1283
+    .line 1328
     iget-object v4, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v5, v4, Lorg/telegram/ui/Stories/StoryViewer;->playerHolder:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
@@ -489,35 +540,35 @@
     :cond_3
     if-eqz v2, :cond_b
 
-    .line 1330
+    .line 1375
     iput-object v1, v4, Lorg/telegram/ui/Stories/StoryViewer;->currentPlayerScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
 
-    .line 1331
+    .line 1376
     iput-object v5, v1, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->player:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
 
-    .line 1332
+    .line 1377
     iget-boolean v2, v5, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->firstFrameRendered:Z
 
     iput-boolean v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->firstFrameRendered:Z
 
-    .line 1333
+    .line 1378
     iget-object v2, v4, Lorg/telegram/ui/Stories/StoryViewer;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     iput-object v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->renderView:Landroid/view/View;
 
-    .line 1334
-    invoke-static {v4}, Lorg/telegram/ui/Stories/StoryViewer;->access$3300(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/TextureView;
+    .line 1379
+    invoke-static {v4}, Lorg/telegram/ui/Stories/StoryViewer;->access$3500(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/TextureView;
 
     move-result-object v2
 
     iput-object v2, v1, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->textureView:Landroid/view/TextureView;
 
-    .line 1335
+    .line 1380
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v2, v1, Lorg/telegram/ui/Stories/StoryViewer;->currentPlayerScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3200(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/SurfaceView;
+    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3400(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/SurfaceView;
 
     move-result-object v1
 
@@ -525,27 +576,27 @@
 
     goto/16 :goto_6
 
-    .line 1284
+    .line 1329
     :cond_4
     :goto_2
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iput-object v7, v2, Lorg/telegram/ui/Stories/StoryViewer;->lastUri:Landroid/net/Uri;
 
-    .line 1285
+    .line 1330
     iget-object v2, v2, Lorg/telegram/ui/Stories/StoryViewer;->playerHolder:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
 
     if-eqz v2, :cond_5
 
-    .line 1286
+    .line 1331
     invoke-virtual {v2, v3}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->release(Ljava/lang/Runnable;)Z
 
-    .line 1287
+    .line 1332
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iput-object v3, v2, Lorg/telegram/ui/Stories/StoryViewer;->playerHolder:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
 
-    .line 1289
+    .line 1334
     :cond_5
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -553,25 +604,25 @@
 
     if-eqz v2, :cond_6
 
-    .line 1290
+    .line 1335
     iput-object v3, v2, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->player:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
 
-    .line 1291
+    .line 1336
     iput-boolean v8, v2, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->firstFrameRendered:Z
 
-    .line 1292
+    .line 1337
     iput-object v3, v2, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->renderView:Landroid/view/View;
 
-    .line 1293
+    .line 1338
     iput-object v3, v2, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->textureView:Landroid/view/TextureView;
 
-    .line 1294
+    .line 1339
     iput-object v3, v2, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->surfaceView:Landroid/view/SurfaceView;
 
-    .line 1295
+    .line 1340
     invoke-virtual {v2}, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->invalidate()V
 
-    .line 1296
+    .line 1341
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iput-object v3, v2, Lorg/telegram/ui/Stories/StoryViewer;->currentPlayerScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
@@ -579,14 +630,14 @@
     :cond_6
     if-eqz v7, :cond_b
 
-    .line 1299
+    .line 1344
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iput-object v1, v2, Lorg/telegram/ui/Stories/StoryViewer;->currentPlayerScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
 
     move v1, v8
 
-    .line 1300
+    .line 1345
     :goto_3
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -598,7 +649,7 @@
 
     if-ge v1, v2, :cond_8
 
-    .line 1301
+    .line 1346
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v2, v2, Lorg/telegram/ui/Stories/StoryViewer;->preparedPlayers:Ljava/util/ArrayList;
@@ -617,7 +668,7 @@
 
     if-eqz v2, :cond_7
 
-    .line 1302
+    .line 1347
     iget-object v2, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v3, v2, Lorg/telegram/ui/Stories/StoryViewer;->preparedPlayers:Ljava/util/ArrayList;
@@ -637,7 +688,7 @@
 
     goto :goto_3
 
-    .line 1306
+    .line 1351
     :cond_8
     :goto_4
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
@@ -646,16 +697,16 @@
 
     if-nez v2, :cond_9
 
-    .line 1307
+    .line 1352
     new-instance v2, Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3200(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/SurfaceView;
+    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3400(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/SurfaceView;
 
     move-result-object v3
 
     iget-object v4, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v4}, Lorg/telegram/ui/Stories/StoryViewer;->access$3300(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/TextureView;
+    invoke-static {v4}, Lorg/telegram/ui/Stories/StoryViewer;->access$3500(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/TextureView;
 
     move-result-object v4
 
@@ -663,7 +714,7 @@
 
     iput-object v2, v1, Lorg/telegram/ui/Stories/StoryViewer;->playerHolder:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
 
-    .line 1308
+    .line 1353
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/StoryViewer;->playerHolder:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
@@ -672,7 +723,7 @@
 
     iput-object v2, v1, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 1314
+    .line 1359
     :cond_9
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -680,38 +731,38 @@
 
     iput-object v7, v2, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->uri:Landroid/net/Uri;
 
-    .line 1315
+    .line 1360
     iget-object v3, v1, Lorg/telegram/ui/Stories/StoryViewer;->currentPlayerScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
 
     iput-object v2, v3, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->player:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
 
-    .line 1316
+    .line 1361
     iput-boolean v8, v3, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->firstFrameRendered:Z
 
-    .line 1317
+    .line 1362
     iget-object v2, v1, Lorg/telegram/ui/Stories/StoryViewer;->aspectRatioFrameLayout:Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
 
     iput-object v2, v3, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->renderView:Landroid/view/View;
 
-    .line 1318
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3300(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/TextureView;
+    .line 1363
+    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3500(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/TextureView;
 
     move-result-object v1
 
     iput-object v1, v3, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->textureView:Landroid/view/TextureView;
 
-    .line 1319
+    .line 1364
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v2, v1, Lorg/telegram/ui/Stories/StoryViewer;->currentPlayerScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3200(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/SurfaceView;
+    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3400(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/SurfaceView;
 
     move-result-object v1
 
     iput-object v1, v2, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->surfaceView:Landroid/view/SurfaceView;
 
-    .line 1320
+    .line 1365
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/StoryViewer;->playerHolder:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
@@ -722,7 +773,7 @@
 
     invoke-static {v1, v2}, Lorg/telegram/messenger/FileStreamLoadOperation;->setPriorityForDocument(Lorg/telegram/tgnet/TLRPC$Document;I)V
 
-    .line 1321
+    .line 1366
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget v1, v1, Lorg/telegram/ui/Stories/StoryViewer;->currentAccount:I
@@ -755,10 +806,10 @@
 
     if-nez v1, :cond_a
 
-    .line 1322
+    .line 1367
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3400(Lorg/telegram/ui/Stories/StoryViewer;)J
+    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3600(Lorg/telegram/ui/Stories/StoryViewer;)J
 
     move-result-wide v1
 
@@ -766,14 +817,14 @@
 
     if-eqz v1, :cond_a
 
-    .line 1323
+    .line 1368
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3400(Lorg/telegram/ui/Stories/StoryViewer;)J
+    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3600(Lorg/telegram/ui/Stories/StoryViewer;)J
 
     move-result-wide v1
 
-    .line 1324
+    .line 1369
     iget-object v3, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v3, v3, Lorg/telegram/ui/Stories/StoryViewer;->currentPlayerScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
@@ -789,7 +840,7 @@
     :cond_a
     move-wide/from16 v4, p3
 
-    .line 1326
+    .line 1371
     :goto_5
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -801,7 +852,7 @@
 
     move-result v3
 
-    invoke-static {}, Lorg/telegram/ui/Stories/StoryViewer;->access$3500()Z
+    invoke-static {}, Lorg/telegram/ui/Stories/StoryViewer;->access$3700()Z
 
     move-result v6
 
@@ -813,14 +864,14 @@
 
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->start(ZLandroid/net/Uri;JZ)V
 
-    .line 1327
+    .line 1372
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/StoryViewer;->currentPlayerScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->invalidate()V
 
-    .line 1337
+    .line 1382
     :cond_b
     :goto_6
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
@@ -831,8 +882,8 @@
 
     if-nez v7, :cond_c
 
-    .line 1339
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3200(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/SurfaceView;
+    .line 1384
+    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3400(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/SurfaceView;
 
     move-result-object v1
 
@@ -842,34 +893,34 @@
 
     goto :goto_7
 
-    .line 1341
+    .line 1386
     :cond_c
-    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3200(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/SurfaceView;
+    invoke-static {v1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3400(Lorg/telegram/ui/Stories/StoryViewer;)Landroid/view/SurfaceView;
 
     move-result-object v1
 
     invoke-virtual {v1, v8}, Landroid/view/SurfaceView;->setVisibility(I)V
 
-    .line 1344
+    .line 1389
     :cond_d
     :goto_7
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v1, v9, v10}, Lorg/telegram/ui/Stories/StoryViewer;->access$3402(Lorg/telegram/ui/Stories/StoryViewer;J)J
+    invoke-static {v1, v9, v10}, Lorg/telegram/ui/Stories/StoryViewer;->access$3602(Lorg/telegram/ui/Stories/StoryViewer;J)J
 
-    .line 1345
+    .line 1390
     iget-object v1, v0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
 
     return-void
 
-    .line 1276
+    .line 1321
     :cond_e
     :goto_8
     iput-boolean v8, v1, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->firstFrameRendered:Z
 
-    .line 1277
+    .line 1322
     iput-object v3, v1, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->player:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
 
     return-void
@@ -878,16 +929,16 @@
 .method public setAllowTouchesByViewPager(Z)V
     .locals 1
 
-    .line 1269
+    .line 1314
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3100(Lorg/telegram/ui/Stories/StoryViewer;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3300(Lorg/telegram/ui/Stories/StoryViewer;)Z
 
     move-result v0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$3102(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
+    invoke-static {p1, v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$3302(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
 
-    .line 1270
+    .line 1315
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
@@ -898,12 +949,12 @@
 .method public setBulletinIsVisible(Z)V
     .locals 1
 
-    .line 1395
+    .line 1440
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3802(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$4002(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
 
-    .line 1396
+    .line 1441
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
@@ -914,10 +965,10 @@
 .method public setHideEnterViewProgress(F)V
     .locals 1
 
-    .line 1227
+    .line 1272
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$2900(Lorg/telegram/ui/Stories/StoryViewer;)F
+    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$3100(Lorg/telegram/ui/Stories/StoryViewer;)F
 
     move-result v0
 
@@ -925,12 +976,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 1228
+    .line 1273
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$2902(Lorg/telegram/ui/Stories/StoryViewer;F)F
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3102(Lorg/telegram/ui/Stories/StoryViewer;F)F
 
-    .line 1229
+    .line 1274
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->containerView:Lorg/telegram/ui/Stories/HwFrameLayout;
@@ -944,12 +995,12 @@
 .method public setIsCaption(Z)V
     .locals 1
 
-    .line 1372
+    .line 1417
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$202(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
 
-    .line 1373
+    .line 1418
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
@@ -960,7 +1011,7 @@
 .method public setIsCaptionPartVisible(Z)V
     .locals 1
 
-    .line 1378
+    .line 1423
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$302(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
@@ -971,12 +1022,12 @@
 .method public setIsHintVisible(Z)V
     .locals 1
 
-    .line 1407
+    .line 1462
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$402(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
 
-    .line 1408
+    .line 1463
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
@@ -985,14 +1036,62 @@
 .end method
 
 .method public setIsInPinchToZoom(Z)V
-    .locals 1
+    .locals 2
 
-    .line 1401
+    .line 1446
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3902(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
+    invoke-static {v0}, Lorg/telegram/ui/Stories/StoryViewer;->access$2600(Lorg/telegram/ui/Stories/StoryViewer;)Z
 
-    .line 1402
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    if-eqz p1, :cond_1
+
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+
+    iget-boolean v1, v0, Lorg/telegram/ui/Stories/StoryViewer;->inSeekingMode:Z
+
+    if-eqz v1, :cond_1
+
+    const/4 v1, 0x0
+
+    .line 1447
+    iput-boolean v1, v0, Lorg/telegram/ui/Stories/StoryViewer;->inSeekingMode:Z
+
+    .line 1448
+    iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->currentPlayerScope:Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, v0, Lorg/telegram/ui/Stories/PeerStoriesView$VideoPlayerSharedScope;->player:Lorg/telegram/ui/Stories/StoryViewer$VideoPlayerHolder;
+
+    if-eqz v0, :cond_0
+
+    .line 1449
+    invoke-virtual {v0, v1}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->setSeeking(Z)V
+
+    .line 1451
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoryViewer;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_1
+
+    .line 1453
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
+
+    .line 1456
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$2602(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
+
+    .line 1457
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
@@ -1003,12 +1102,12 @@
 .method public setIsInSelectionMode(Z)V
     .locals 1
 
-    .line 1419
+    .line 1474
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$502(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
 
-    .line 1420
+    .line 1475
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
@@ -1019,12 +1118,12 @@
 .method public setIsLikesReaction(Z)V
     .locals 1
 
-    .line 1425
+    .line 1480
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$1802(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$1902(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
 
-    .line 1426
+    .line 1481
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
@@ -1035,12 +1134,12 @@
 .method public setIsRecording(Z)V
     .locals 1
 
-    .line 1360
+    .line 1405
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$2102(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$2202(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
 
-    .line 1361
+    .line 1406
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
@@ -1051,12 +1150,12 @@
 .method public setIsSwiping(Z)V
     .locals 1
 
-    .line 1413
+    .line 1468
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$4002(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$4102(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
 
-    .line 1414
+    .line 1469
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
@@ -1067,12 +1166,12 @@
 .method public setIsWaiting(Z)V
     .locals 1
 
-    .line 1366
+    .line 1411
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3602(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3802(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
 
-    .line 1367
+    .line 1412
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
@@ -1083,17 +1182,17 @@
 .method public setKeyboardVisible(Z)V
     .locals 2
 
-    .line 1261
+    .line 1306
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/StoryViewer;->keyboardVisible:Z
 
     if-eq v1, p1, :cond_0
 
-    .line 1262
+    .line 1307
     iput-boolean p1, v0, Lorg/telegram/ui/Stories/StoryViewer;->keyboardVisible:Z
 
-    .line 1263
+    .line 1308
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
 
     :cond_0
@@ -1103,12 +1202,12 @@
 .method public setPopupIsVisible(Z)V
     .locals 1
 
-    .line 1383
+    .line 1428
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3702(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->access$3902(Lorg/telegram/ui/Stories/StoryViewer;Z)Z
 
-    .line 1384
+    .line 1429
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
@@ -1119,12 +1218,12 @@
 .method public setTranslating(Z)V
     .locals 1
 
-    .line 1389
+    .line 1434
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iput-boolean p1, v0, Lorg/telegram/ui/Stories/StoryViewer;->isTranslating:Z
 
-    .line 1390
+    .line 1435
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/StoryViewer;->updatePlayingMode()V
 
     return-void
@@ -1133,7 +1232,7 @@
 .method public shouldSwitchToNext()V
     .locals 2
 
-    .line 1177
+    .line 1222
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -1144,14 +1243,14 @@
 
     const/4 v1, 0x1
 
-    .line 1178
+    .line 1223
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->switchToNext(Z)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1179
+    .line 1224
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -1162,7 +1261,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1180
+    .line 1225
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/StoryViewer;->close(Z)V
@@ -1174,7 +1273,7 @@
 .method public showDialog(Landroid/app/Dialog;)V
     .locals 1
 
-    .line 1235
+    .line 1280
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->showDialog(Landroid/app/Dialog;)V
@@ -1185,7 +1284,7 @@
 .method public switchToNextAndRemoveCurrentPeer()V
     .locals 5
 
-    .line 1187
+    .line 1232
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->val$storiesList:Lorg/telegram/ui/Stories/StoriesController$StoriesList;
 
     const/4 v1, 0x1
@@ -1194,7 +1293,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1188
+    .line 1233
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -1205,7 +1304,7 @@
 
     return-void
 
-    .line 1191
+    .line 1236
     :cond_0
     new-instance v0, Ljava/util/ArrayList;
 
@@ -1217,7 +1316,7 @@
 
     invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 1192
+    .line 1237
     iget-object v3, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v3, v3, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -1252,10 +1351,10 @@
     :goto_0
     if-ltz v3, :cond_3
 
-    .line 1194
+    .line 1239
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 1199
+    .line 1244
     iget-object v3, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v3, v3, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -1266,14 +1365,14 @@
 
     if-nez v1, :cond_2
 
-    .line 1200
+    .line 1245
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Stories/StoryViewer;->close(Z)V
 
     goto :goto_1
 
-    .line 1202
+    .line 1247
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -1289,7 +1388,7 @@
 
     goto :goto_1
 
-    .line 1196
+    .line 1241
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -1297,7 +1396,7 @@
 
     return-void
 
-    .line 1207
+    .line 1252
     :cond_4
     new-instance v0, Ljava/util/ArrayList;
 
@@ -1305,7 +1404,7 @@
 
     invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 1208
+    .line 1253
     iget-object v3, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v3, v3, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -1328,10 +1427,10 @@
 
     if-ltz v3, :cond_6
 
-    .line 1210
+    .line 1255
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 1215
+    .line 1260
     iget-object v4, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object v4, v4, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
@@ -1342,14 +1441,14 @@
 
     if-nez v1, :cond_5
 
-    .line 1216
+    .line 1261
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Stories/StoryViewer;->close(Z)V
 
     goto :goto_1
 
-    .line 1218
+    .line 1263
     :cond_5
     iget-object v1, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -1364,7 +1463,7 @@
     :goto_1
     return-void
 
-    .line 1212
+    .line 1257
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoryViewer$5;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 

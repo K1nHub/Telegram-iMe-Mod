@@ -6,6 +6,6 @@ import com.google.firebase.crashlytics.internal.Logger;
 public class UnavailableAnalyticsEventLogger implements AnalyticsEventLogger {
     @Override // com.google.firebase.crashlytics.internal.analytics.AnalyticsEventLogger
     public void logEvent(String str, Bundle bundle) {
-        Logger.getLogger().m1038d("Skipping logging Crashlytics event to Firebase, no Firebase Analytics");
+        Logger.getLogger().m1039d("Skipping logging Crashlytics event to Firebase, no Firebase Analytics");
     }
 }

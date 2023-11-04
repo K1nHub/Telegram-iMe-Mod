@@ -13,13 +13,13 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzq extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzq> CREATOR = new zzr();
-    @SafeParcelable.Field(m1089id = 1)
+    @SafeParcelable.Field(m1090id = 1)
     String[] zza;
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     int[] zzb;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     RemoteViews zzc;
-    @SafeParcelable.Field(m1089id = 4)
+    @SafeParcelable.Field(m1090id = 4)
     byte[] zzd;
 
     private zzq() {
@@ -36,7 +36,7 @@ public final class zzq extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public zzq(@SafeParcelable.Param(m1088id = 1) String[] strArr, @SafeParcelable.Param(m1088id = 2) int[] iArr, @SafeParcelable.Param(m1088id = 3) RemoteViews remoteViews, @SafeParcelable.Param(m1088id = 4) byte[] bArr) {
+    public zzq(@SafeParcelable.Param(m1089id = 1) String[] strArr, @SafeParcelable.Param(m1089id = 2) int[] iArr, @SafeParcelable.Param(m1089id = 3) RemoteViews remoteViews, @SafeParcelable.Param(m1089id = 4) byte[] bArr) {
         this.zza = strArr;
         this.zzb = iArr;
         this.zzc = remoteViews;

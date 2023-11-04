@@ -132,7 +132,7 @@
     :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "iteration count must be at least 1."
+    const-string/jumbo p2, "iteration count must be at least 1."
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

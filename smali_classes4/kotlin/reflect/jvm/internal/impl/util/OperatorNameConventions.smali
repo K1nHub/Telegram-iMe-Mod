@@ -233,7 +233,7 @@
 
     sput-object v6, Lkotlin/reflect/jvm/internal/impl/util/OperatorNameConventions;->INVOKE:Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    const-string v6, "iterator"
+    const-string/jumbo v6, "iterator"
 
     .line 31
     invoke-static {v6}, Lkotlin/reflect/jvm/internal/impl/name/Name;->identifier(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;

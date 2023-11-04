@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$29\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,898:1\n44#2:899\n129#3,5:900\n129#3,5:905\n129#3,5:910\n129#3,5:915\n129#3,5:920\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$29\n*L\n414#1:899\n417#1:900,5\n418#1:905,5\n419#1:910,5\n420#1:915,5\n421#1:920,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$29\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,901:1\n44#2:902\n129#3,5:903\n129#3,5:908\n129#3,5:913\n129#3,5:918\n129#3,5:923\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$29\n*L\n417#1:902\n420#1:903,5\n421#1:908,5\n422#1:913,5\n423#1:918,5\n424#1:923,5\n*E\n"
 .end annotation
 
 
@@ -102,7 +102,7 @@
 
     move-result-object p2
 
-    .line 417
+    .line 420
     move-object v4, p2
 
     check-cast v4, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
@@ -118,7 +118,7 @@
 
     move-result-object p2
 
-    .line 418
+    .line 421
     move-object v3, p2
 
     check-cast v3, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -134,7 +134,7 @@
 
     move-result-object p2
 
-    .line 419
+    .line 422
     move-object v6, p2
 
     check-cast v6, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
@@ -150,7 +150,7 @@
 
     move-result-object p2
 
-    .line 420
+    .line 423
     move-object v5, p2
 
     check-cast v5, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
@@ -166,12 +166,12 @@
 
     move-result-object p1
 
-    .line 421
+    .line 424
     move-object v2, p1
 
     check-cast v2, Lcom/iMe/storage/domain/interactor/crypto/simplex/SimplexInteractor;
 
-    .line 415
+    .line 418
     new-instance p1, Lcom/iMe/ui/wallet/crypto/buy/BuyCryptoProductPresenter;
 
     move-object v0, p1
@@ -184,7 +184,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 414
+    .line 417
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

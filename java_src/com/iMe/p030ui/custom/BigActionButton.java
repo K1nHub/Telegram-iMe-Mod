@@ -29,7 +29,7 @@ public final class BigActionButton extends ActionButton {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // com.iMe.p030ui.custom.ActionButton
     public int calculateButtonHeight() {
-        return AndroidUtilities.m103dp(48.0f);
+        return AndroidUtilities.m105dp(48.0f);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

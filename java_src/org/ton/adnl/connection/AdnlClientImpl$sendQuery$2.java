@@ -19,10 +19,10 @@ import kotlinx.coroutines.CompletableJob;
 import kotlinx.coroutines.CoroutineScope;
 import org.ton.api.adnl.message.AdnlMessageAnswer;
 import org.ton.api.adnl.message.AdnlMessageQuery;
-import org.ton.p044tl.ByteString;
+import org.ton.p045tl.ByteString;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AdnlClientImpl.kt */
-@DebugMetadata(m143c = "org.ton.adnl.connection.AdnlClientImpl$sendQuery$2", m142f = "AdnlClientImpl.kt", m141l = {23}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.ton.adnl.connection.AdnlClientImpl$sendQuery$2", m144f = "AdnlClientImpl.kt", m143l = {23}, m142m = "invokeSuspend")
 /* loaded from: classes6.dex */
 public final class AdnlClientImpl$sendQuery$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super ByteReadPacket>, Object> {
     final /* synthetic */ AdnlConnection $adnlConnection;

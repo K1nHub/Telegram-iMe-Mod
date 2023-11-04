@@ -15,408 +15,535 @@
 
 # direct methods
 .method public static fromHTML(Ljava/lang/String;)Landroid/text/Spannable;
-    .locals 11
+    .locals 17
 
-    const/4 v0, 0x0
+    move-object/from16 v0, p0
 
-    .line 37
+    const/4 v1, 0x0
+
+    .line 41
     :try_start_0
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    const/16 v2, 0x18
+    const/16 v3, 0x18
 
-    const-string v3, "</inject>"
+    const-string v4, "</inject>"
 
-    const-string v4, "<inject>"
+    const-string v5, "<inject>"
 
-    if-lt v1, v2, :cond_0
+    if-lt v2, v3, :cond_0
 
-    .line 38
+    .line 42
     :try_start_1
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v0
 
-    const/16 v1, 0x3f
+    const/16 v2, 0x3f
+
+    new-instance v3, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;
+
+    new-instance v4, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagHandler;
+
+    invoke-direct {v4, v1}, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagHandler;-><init>(Lorg/telegram/messenger/utils/CopyUtilities$1;)V
+
+    invoke-direct {v3, v4, v1}, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;-><init>(Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler$TagHandler;Lorg/telegram/messenger/utils/CopyUtilities$1;)V
+
+    invoke-static {v0, v2, v1, v3}, Landroid/text/Html;->fromHtml(Ljava/lang/String;ILandroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 44
+    :cond_0
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
 
     new-instance v2, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;
 
     new-instance v3, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagHandler;
 
-    invoke-direct {v3, v0}, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagHandler;-><init>(Lorg/telegram/messenger/utils/CopyUtilities$1;)V
+    invoke-direct {v3, v1}, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagHandler;-><init>(Lorg/telegram/messenger/utils/CopyUtilities$1;)V
 
-    invoke-direct {v2, v3, v0}, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;-><init>(Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler$TagHandler;Lorg/telegram/messenger/utils/CopyUtilities$1;)V
+    invoke-direct {v2, v3, v1}, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;-><init>(Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler$TagHandler;Lorg/telegram/messenger/utils/CopyUtilities$1;)V
 
-    invoke-static {p0, v1, v0, v2}, Landroid/text/Html;->fromHtml(Ljava/lang/String;ILandroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;
+    invoke-static {v0, v1, v2}, Landroid/text/Html;->fromHtml(Ljava/lang/String;Landroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;
 
-    move-result-object p0
-
-    goto :goto_0
-
-    .line 40
-    :cond_0
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object p0
-
-    new-instance v1, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;
-
-    new-instance v2, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagHandler;
-
-    invoke-direct {v2, v0}, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagHandler;-><init>(Lorg/telegram/messenger/utils/CopyUtilities$1;)V
-
-    invoke-direct {v1, v2, v0}, Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler;-><init>(Lorg/telegram/messenger/utils/CopyUtilities$HTMLTagAttributesHandler$TagHandler;Lorg/telegram/messenger/utils/CopyUtilities$1;)V
-
-    invoke-static {p0, v0, v1}, Landroid/text/Html;->fromHtml(Ljava/lang/String;Landroid/text/Html$ImageGetter;Landroid/text/Html$TagHandler;)Landroid/text/Spanned;
-
-    move-result-object p0
+    move-result-object v0
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     :goto_0
-    if-nez p0, :cond_1
+    if-nez v0, :cond_1
 
-    return-object v0
-
-    .line 50
-    :cond_1
-    invoke-interface {p0}, Landroid/text/Spanned;->length()I
-
-    move-result v1
-
-    const-class v2, Ljava/lang/Object;
-
-    const/4 v3, 0x0
-
-    invoke-interface {p0, v3, v1, v2}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
-
-    move-result-object v1
-
-    .line 51
-    new-instance v2, Ljava/util/ArrayList;
-
-    array-length v4, v1
-
-    invoke-direct {v2, v4}, Ljava/util/ArrayList;-><init>(I)V
-
-    move v4, v3
-
-    .line 52
-    :goto_1
-    array-length v5, v1
-
-    if-ge v4, v5, :cond_9
-
-    .line 53
-    aget-object v5, v1, v4
+    return-object v1
 
     .line 54
-    invoke-interface {p0, v5}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
+    :cond_1
+    invoke-interface {v0}, Landroid/text/Spanned;->length()I
 
-    move-result v6
+    move-result v2
+
+    const-class v3, Ljava/lang/Object;
+
+    const/4 v4, 0x0
+
+    invoke-interface {v0, v4, v2, v3}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object v2
 
     .line 55
-    invoke-interface {p0, v5}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
+    new-instance v3, Ljava/util/ArrayList;
 
-    move-result v7
+    array-length v5, v2
+
+    invoke-direct {v3, v5}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 56
-    instance-of v8, v5, Landroid/text/style/StyleSpan;
+    new-instance v5, Ljava/util/ArrayList;
 
-    if-eqz v8, :cond_3
+    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
     .line 57
-    check-cast v5, Landroid/text/style/StyleSpan;
+    new-instance v6, Ljava/util/ArrayList;
 
-    invoke-virtual {v5}, Landroid/text/style/StyleSpan;->getStyle()I
+    invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
-    move-result v5
+    move v7, v4
 
-    and-int/lit8 v8, v5, 0x1
+    .line 58
+    :goto_1
+    array-length v8, v2
 
-    if-lez v8, :cond_2
+    if-ge v7, v8, :cond_b
 
     .line 59
-    new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_messageEntityBold;
+    aget-object v8, v2, v7
 
-    invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityBold;-><init>()V
+    .line 60
+    invoke-interface {v0, v8}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
 
-    invoke-static {v8, v6, v7}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
+    move-result v9
+
+    .line 61
+    invoke-interface {v0, v8}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
+
+    move-result v10
+
+    .line 62
+    instance-of v11, v8, Landroid/text/style/StyleSpan;
+
+    if-eqz v11, :cond_3
+
+    .line 63
+    check-cast v8, Landroid/text/style/StyleSpan;
+
+    invoke-virtual {v8}, Landroid/text/style/StyleSpan;->getStyle()I
+
+    move-result v8
+
+    and-int/lit8 v11, v8, 0x1
+
+    if-lez v11, :cond_2
+
+    .line 65
+    new-instance v11, Lorg/telegram/tgnet/TLRPC$TL_messageEntityBold;
+
+    invoke-direct {v11}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityBold;-><init>()V
+
+    invoke-static {v11, v9, v10}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
+
+    move-result-object v11
+
+    invoke-virtual {v3, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_2
+    and-int/lit8 v8, v8, 0x2
+
+    if-lez v8, :cond_a
+
+    .line 68
+    new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_messageEntityItalic;
+
+    invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityItalic;-><init>()V
+
+    invoke-static {v8, v9, v10}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
 
     move-result-object v8
 
-    invoke-virtual {v2, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    :cond_2
-    and-int/lit8 v5, v5, 0x2
-
-    if-lez v5, :cond_8
-
-    .line 62
-    new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityItalic;
-
-    invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityItalic;-><init>()V
-
-    invoke-static {v5, v6, v7}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_2
-
-    .line 64
-    :cond_3
-    instance-of v8, v5, Landroid/text/style/UnderlineSpan;
-
-    if-eqz v8, :cond_4
-
-    .line 65
-    new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityUnderline;
-
-    invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityUnderline;-><init>()V
-
-    invoke-static {v5, v6, v7}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_2
-
-    .line 66
-    :cond_4
-    instance-of v8, v5, Landroid/text/style/StrikethroughSpan;
-
-    if-eqz v8, :cond_5
-
-    .line 67
-    new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityStrike;
-
-    invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityStrike;-><init>()V
-
-    invoke-static {v5, v6, v7}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    goto :goto_2
-
-    .line 68
-    :cond_5
-    instance-of v8, v5, Lorg/telegram/messenger/utils/CopyUtilities$ParsedSpan;
-
-    if-eqz v8, :cond_7
-
-    .line 69
-    check-cast v5, Lorg/telegram/messenger/utils/CopyUtilities$ParsedSpan;
+    goto/16 :goto_2
 
     .line 70
-    iget v5, v5, Lorg/telegram/messenger/utils/CopyUtilities$ParsedSpan;->type:I
+    :cond_3
+    instance-of v11, v8, Landroid/text/style/UnderlineSpan;
 
-    if-nez v5, :cond_6
+    if-eqz v11, :cond_4
 
     .line 71
-    new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntitySpoiler;
+    new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_messageEntityUnderline;
 
-    invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageEntitySpoiler;-><init>()V
+    invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityUnderline;-><init>()V
 
-    invoke-static {v5, v6, v7}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
+    invoke-static {v8, v9, v10}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
 
-    move-result-object v5
+    move-result-object v8
 
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2
+
+    .line 72
+    :cond_4
+    instance-of v11, v8, Landroid/text/style/StrikethroughSpan;
+
+    if-eqz v11, :cond_5
+
+    .line 73
+    new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_messageEntityStrike;
+
+    invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityStrike;-><init>()V
+
+    invoke-static {v8, v9, v10}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
+
+    move-result-object v8
+
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2
+
+    .line 74
+    :cond_5
+    instance-of v11, v8, Lorg/telegram/messenger/utils/CopyUtilities$ParsedSpan;
+
+    if-eqz v11, :cond_9
+
+    .line 75
+    check-cast v8, Lorg/telegram/messenger/utils/CopyUtilities$ParsedSpan;
+
+    .line 76
+    iget v11, v8, Lorg/telegram/messenger/utils/CopyUtilities$ParsedSpan;->type:I
+
+    if-nez v11, :cond_6
+
+    .line 77
+    new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_messageEntitySpoiler;
+
+    invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_messageEntitySpoiler;-><init>()V
+
+    invoke-static {v8, v9, v10}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
+
+    move-result-object v8
+
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
     :cond_6
-    const/4 v8, 0x1
+    const/4 v12, 0x1
 
-    if-ne v5, v8, :cond_8
+    if-ne v11, v12, :cond_8
 
-    .line 73
-    new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEntityPre;
+    .line 79
+    iget-object v11, v8, Lorg/telegram/messenger/utils/CopyUtilities$ParsedSpan;->lng:Ljava/lang/String;
 
-    invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityPre;-><init>()V
+    invoke-static {v11}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    invoke-static {v5, v6, v7}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
+    move-result v11
 
-    move-result-object v5
+    if-nez v11, :cond_7
 
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 80
+    invoke-virtual {v5, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_2
 
-    .line 75
+    .line 82
     :cond_7
-    instance-of v8, v5, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
+    new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_messageEntityPre;
 
-    if-eqz v8, :cond_8
+    invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityPre;-><init>()V
 
-    .line 76
-    new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;
+    invoke-static {v8, v9, v10}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
 
-    invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;-><init>()V
+    move-result-object v8
 
-    .line 77
-    check-cast v5, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    iget-wide v9, v5, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->documentId:J
-
-    iput-wide v9, v8, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document_id:J
-
-    .line 78
-    iget-object v5, v5, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->document:Lorg/telegram/tgnet/TLRPC$Document;
-
-    iput-object v5, v8, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document:Lorg/telegram/tgnet/TLRPC$Document;
-
-    .line 79
-    invoke-static {v8, v6, v7}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
-
-    move-result-object v5
-
-    invoke-virtual {v2, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    goto :goto_2
 
     :cond_8
+    const/4 v9, 0x2
+
+    if-ne v11, v9, :cond_a
+
+    .line 85
+    invoke-virtual {v6, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2
+
+    .line 87
+    :cond_9
+    instance-of v11, v8, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
+
+    if-eqz v11, :cond_a
+
+    .line 88
+    new-instance v11, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;
+
+    invoke-direct {v11}, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;-><init>()V
+
+    .line 89
+    check-cast v8, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
+
+    iget-wide v12, v8, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->documentId:J
+
+    iput-wide v12, v11, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document_id:J
+
+    .line 90
+    iget-object v8, v8, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->document:Lorg/telegram/tgnet/TLRPC$Document;
+
+    iput-object v8, v11, Lorg/telegram/tgnet/TLRPC$TL_messageEntityCustomEmoji;->document:Lorg/telegram/tgnet/TLRPC$Document;
+
+    .line 91
+    invoke-static {v11, v9, v10}, Lorg/telegram/messenger/utils/CopyUtilities;->setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
+
+    move-result-object v8
+
+    invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_a
     :goto_2
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v7, v7, 0x1
 
     goto/16 :goto_1
 
-    .line 83
-    :cond_9
-    new-instance v4, Landroid/text/SpannableString;
+    .line 95
+    :cond_b
+    new-instance v7, Landroid/text/SpannableString;
 
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v8
 
-    invoke-direct {v4, v5}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v7, v8}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 84
-    invoke-static {v2, v4, v4}, Lorg/telegram/messenger/MediaDataController;->addTextStyleRuns(Ljava/util/ArrayList;Ljava/lang/CharSequence;Landroid/text/Spannable;)V
+    .line 96
+    invoke-static {v3, v7, v7}, Lorg/telegram/messenger/MediaDataController;->addTextStyleRuns(Ljava/util/ArrayList;Ljava/lang/CharSequence;Landroid/text/Spannable;)V
 
-    .line 85
+    move v8, v4
+
+    .line 97
     :goto_3
-    array-length v5, v1
+    array-length v9, v2
 
-    if-ge v3, v5, :cond_c
+    const/16 v10, 0x21
 
-    .line 86
-    aget-object v5, v1, v3
+    if-ge v8, v9, :cond_e
 
-    .line 87
-    instance-of v6, v5, Landroid/text/style/URLSpan;
+    .line 98
+    aget-object v9, v2, v8
 
-    if-eqz v6, :cond_b
+    .line 99
+    instance-of v11, v9, Landroid/text/style/URLSpan;
 
-    .line 88
-    invoke-interface {p0, v5}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
+    if-eqz v11, :cond_d
 
-    move-result v6
+    .line 100
+    invoke-interface {v0, v9}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
 
-    .line 89
-    invoke-interface {p0, v5}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
+    move-result v11
 
-    move-result v7
+    .line 101
+    invoke-interface {v0, v9}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
 
-    .line 90
-    invoke-interface {p0, v6, v7}, Landroid/text/Spanned;->subSequence(II)Ljava/lang/CharSequence;
+    move-result v12
 
-    move-result-object v8
+    .line 102
+    invoke-interface {v0, v11, v12}, Landroid/text/Spanned;->subSequence(II)Ljava/lang/CharSequence;
 
-    invoke-interface {v8}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    move-result-object v13
 
-    move-result-object v8
+    invoke-interface {v13}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    .line 91
-    check-cast v5, Landroid/text/style/URLSpan;
+    move-result-object v13
 
-    invoke-virtual {v5}, Landroid/text/style/URLSpan;->getURL()Ljava/lang/String;
+    .line 103
+    check-cast v9, Landroid/text/style/URLSpan;
 
-    move-result-object v5
+    invoke-virtual {v9}, Landroid/text/style/URLSpan;->getURL()Ljava/lang/String;
 
-    .line 92
-    invoke-virtual {v8, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v9
 
-    move-result v8
+    .line 104
+    invoke-virtual {v13, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const/16 v9, 0x21
+    move-result v13
 
-    if-eqz v8, :cond_a
+    if-eqz v13, :cond_c
 
-    .line 93
-    new-instance v8, Landroid/text/style/URLSpan;
+    .line 105
+    new-instance v13, Landroid/text/style/URLSpan;
 
-    invoke-direct {v8, v5}, Landroid/text/style/URLSpan;-><init>(Ljava/lang/String;)V
+    invoke-direct {v13, v9}, Landroid/text/style/URLSpan;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v4, v8, v6, v7, v9}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v7, v13, v11, v12, v10}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
     goto :goto_4
 
-    .line 95
-    :cond_a
-    new-instance v8, Lorg/telegram/ui/Components/URLSpanReplacement;
+    .line 107
+    :cond_c
+    new-instance v13, Lorg/telegram/ui/Components/URLSpanReplacement;
 
-    invoke-direct {v8, v5}, Lorg/telegram/ui/Components/URLSpanReplacement;-><init>(Ljava/lang/String;)V
+    invoke-direct {v13, v9}, Lorg/telegram/ui/Components/URLSpanReplacement;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v4, v8, v6, v7, v9}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+    invoke-virtual {v7, v13, v11, v12, v10}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    :cond_b
+    :cond_d
     :goto_4
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v8, v8, 0x1
 
     goto :goto_3
 
-    .line 99
-    :cond_c
-    invoke-static {v2, v4, v0}, Lorg/telegram/messenger/MediaDataController;->addAnimatedEmojiSpans(Ljava/util/ArrayList;Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;)V
+    .line 111
+    :cond_e
+    invoke-static {v3, v7, v1}, Lorg/telegram/messenger/MediaDataController;->addAnimatedEmojiSpans(Ljava/util/ArrayList;Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;)V
 
-    return-object v4
+    move v1, v4
+
+    .line 112
+    :goto_5
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-ge v1, v2, :cond_f
+
+    .line 113
+    invoke-virtual {v5, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lorg/telegram/messenger/utils/CopyUtilities$ParsedSpan;
+
+    .line 114
+    invoke-interface {v0, v2}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
+
+    move-result v3
+
+    .line 115
+    invoke-interface {v0, v2}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
+
+    move-result v8
+
+    .line 116
+    new-instance v9, Lorg/telegram/messenger/CodeHighlighting$Span;
+
+    const/4 v12, 0x1
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    iget-object v15, v2, Lorg/telegram/messenger/utils/CopyUtilities$ParsedSpan;->lng:Ljava/lang/String;
+
+    invoke-virtual {v7, v3, v8}, Landroid/text/SpannableString;->subSequence(II)Ljava/lang/CharSequence;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v16
+
+    move-object v11, v9
+
+    invoke-direct/range {v11 .. v16}, Lorg/telegram/messenger/CodeHighlighting$Span;-><init>(ZILorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;Ljava/lang/String;Ljava/lang/String;)V
+
+    invoke-virtual {v7, v9, v3, v8, v10}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_5
+
+    .line 127
+    :cond_f
+    :goto_6
+    invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
+
+    move-result v1
+
+    if-ge v4, v1, :cond_10
+
+    .line 128
+    invoke-virtual {v6, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lorg/telegram/messenger/utils/CopyUtilities$ParsedSpan;
+
+    .line 129
+    invoke-interface {v0, v1}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
+
+    move-result v2
+
+    invoke-interface {v0, v1}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
+
+    move-result v1
+
+    invoke-static {v7, v2, v1}, Lorg/telegram/ui/Components/QuoteSpan;->putQuote(Landroid/text/Spannable;II)I
+
+    add-int/lit8 v4, v4, 0x1
+
+    goto :goto_6
+
+    :cond_10
+    return-object v7
 
     :catch_0
-    move-exception p0
+    move-exception v0
 
-    const-string v1, "Html.fromHtml"
+    const-string v2, "Html.fromHtml"
 
-    .line 43
-    invoke-static {v1, p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .line 47
+    invoke-static {v2, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    return-object v0
+    return-object v1
 .end method
 
 .method private static setEntityStartEnd(Lorg/telegram/tgnet/TLRPC$MessageEntity;II)Lorg/telegram/tgnet/TLRPC$MessageEntity;
     .locals 0
 
-    .line 104
+    .line 135
     iput p1, p0, Lorg/telegram/tgnet/TLRPC$MessageEntity;->offset:I
 
     sub-int/2addr p2, p1
 
-    .line 105
+    .line 136
     iput p2, p0, Lorg/telegram/tgnet/TLRPC$MessageEntity;->length:I
 
     return-object p0

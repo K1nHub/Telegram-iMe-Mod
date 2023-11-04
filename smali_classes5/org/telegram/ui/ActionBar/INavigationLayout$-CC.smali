@@ -223,34 +223,6 @@
     throw v0
 .end method
 
-.method public static $default$getWindow(Lorg/telegram/ui/ActionBar/INavigationLayout;)Landroid/view/Window;
-    .locals 1
-    .param p0, "_this"    # Lorg/telegram/ui/ActionBar/INavigationLayout;
-
-    .line 296
-    invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getParentActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 297
-    invoke-interface {p0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getParentActivity()Landroid/app/Activity;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object v0
-
-    return-object v0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
 .method public static $default$hasIntegratedBlurInPreview(Lorg/telegram/ui/ActionBar/INavigationLayout;)Z
     .locals 1
 

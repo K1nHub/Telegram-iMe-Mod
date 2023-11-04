@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    value = Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;II)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/content/Context;)V
     .locals 0
 
-    .line 720
+    .line 745
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 721
+    .line 746
     new-instance p1, Landroid/graphics/Rect;
 
     invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
@@ -44,7 +44,7 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 10
 
-    .line 729
+    .line 754
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     iget-object v0, v0, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->emojiGridView:Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiListView;
@@ -67,7 +67,7 @@
 
     move v1, v0
 
-    .line 730
+    .line 755
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
@@ -79,7 +79,7 @@
 
     if-ge v1, v2, :cond_4
 
-    .line 731
+    .line 756
     iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     iget-object v2, v2, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->emojiGridView:Lorg/telegram/ui/SelectAnimatedEmojiDialog$EmojiListView;
@@ -88,17 +88,17 @@
 
     move-result-object v2
 
-    .line 732
+    .line 757
     instance-of v3, v2, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
 
     if-eqz v3, :cond_1
 
-    .line 733
+    .line 758
     move-object v3, v2
 
     check-cast v3, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;
 
-    .line 734
+    .line 759
     invoke-virtual {v3}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->getAnimatedScale()F
 
     move-result v4
@@ -109,7 +109,7 @@
 
     if-nez v4, :cond_0
 
-    .line 735
+    .line 760
     iget-object v3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2}, Landroid/view/View;->getLeft()I
@@ -130,23 +130,23 @@
 
     invoke-virtual {v3, v4, v5, v6, v2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 736
+    .line 761
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 737
+    .line 762
     iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
-    .line 738
+    .line 763
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
-    .line 739
+    .line 764
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto/16 :goto_1
 
-    .line 740
+    .line 765
     :cond_0
     invoke-virtual {v3}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->getAnimatedScale()F
 
@@ -158,7 +158,7 @@
 
     if-lez v4, :cond_3
 
-    .line 741
+    .line 766
     iget-object v4, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {v2}, Landroid/view/View;->getLeft()I
@@ -179,10 +179,10 @@
 
     invoke-virtual {v4, v5, v6, v7, v2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 742
+    .line 767
     iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->rect:Landroid/graphics/Rect;
 
-    .line 743
+    .line 768
     invoke-virtual {v2}, Landroid/graphics/Rect;->centerX()I
 
     move-result v4
@@ -213,7 +213,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->rect:Landroid/graphics/Rect;
 
-    .line 744
+    .line 769
     invoke-virtual {v5}, Landroid/graphics/Rect;->centerY()I
 
     move-result v5
@@ -242,7 +242,7 @@
 
     iget-object v7, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->rect:Landroid/graphics/Rect;
 
-    .line 745
+    .line 770
     invoke-virtual {v7}, Landroid/graphics/Rect;->centerX()I
 
     move-result v7
@@ -271,7 +271,7 @@
 
     iget-object v8, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->rect:Landroid/graphics/Rect;
 
-    .line 746
+    .line 771
     invoke-virtual {v8}, Landroid/graphics/Rect;->centerY()I
 
     move-result v8
@@ -298,18 +298,18 @@
 
     float-to-int v6, v8
 
-    .line 742
+    .line 767
     invoke-virtual {v2, v4, v5, v7, v6}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 748
+    .line 773
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 749
+    .line 774
     iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
-    .line 750
+    .line 775
     invoke-virtual {v3}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$ImageViewEmoji;->getAnimatedScale()F
 
     move-result v2
@@ -336,15 +336,15 @@
 
     invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 751
+    .line 776
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
-    .line 752
+    .line 777
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_1
 
-    .line 754
+    .line 779
     :cond_1
     instance-of v3, v2, Landroid/widget/TextView;
 
@@ -362,7 +362,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 755
+    .line 780
     :cond_2
     iget-object v3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->rect:Landroid/graphics/Rect;
 
@@ -384,18 +384,18 @@
 
     invoke-virtual {v3, v4, v5, v6, v2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 756
+    .line 781
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 757
+    .line 782
     iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$12;->rect:Landroid/graphics/Rect;
 
     invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->clipRect(Landroid/graphics/Rect;)Z
 
-    .line 758
+    .line 783
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
-    .line 759
+    .line 784
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_3
@@ -407,7 +407,7 @@
     :cond_4
     return v0
 
-    .line 766
+    .line 791
     :cond_5
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 

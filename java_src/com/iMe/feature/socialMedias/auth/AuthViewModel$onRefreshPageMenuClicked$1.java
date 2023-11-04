@@ -14,7 +14,7 @@ import org.orbitmvi.orbit.syntax.simple.SimpleContext;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntax;
 import org.orbitmvi.orbit.syntax.simple.SimpleSyntaxExtensionsKt;
 /* compiled from: AuthViewModel.kt */
-@DebugMetadata(m143c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onRefreshPageMenuClicked$1", m142f = "AuthViewModel.kt", m141l = {49, 50}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "com.iMe.feature.socialMedias.auth.AuthViewModel$onRefreshPageMenuClicked$1", m144f = "AuthViewModel.kt", m143l = {49, 50}, m142m = "invokeSuspend")
 /* loaded from: classes3.dex */
 final class AuthViewModel$onRefreshPageMenuClicked$1 extends SuspendLambda implements Function2<SimpleSyntax<AuthState, AuthSideEffects>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;
@@ -46,7 +46,7 @@ final class AuthViewModel$onRefreshPageMenuClicked$1 extends SuspendLambda imple
         if (i == 0) {
             ResultKt.throwOnFailure(obj);
             simpleSyntax = (SimpleSyntax) this.L$0;
-            C13821 c13821 = new Function1<SimpleContext<AuthState>, AuthState>() { // from class: com.iMe.feature.socialMedias.auth.AuthViewModel$onRefreshPageMenuClicked$1.1
+            C13881 c13881 = new Function1<SimpleContext<AuthState>, AuthState>() { // from class: com.iMe.feature.socialMedias.auth.AuthViewModel$onRefreshPageMenuClicked$1.1
                 @Override // kotlin.jvm.functions.Function1
                 public final AuthState invoke(SimpleContext<AuthState> reduce) {
                     Intrinsics.checkNotNullParameter(reduce, "$this$reduce");
@@ -55,7 +55,7 @@ final class AuthViewModel$onRefreshPageMenuClicked$1 extends SuspendLambda imple
             };
             this.L$0 = simpleSyntax;
             this.label = 1;
-            if (SimpleSyntaxExtensionsKt.reduce(simpleSyntax, c13821, this) == coroutine_suspended) {
+            if (SimpleSyntaxExtensionsKt.reduce(simpleSyntax, c13881, this) == coroutine_suspended) {
                 return coroutine_suspended;
             }
         } else if (i != 1) {

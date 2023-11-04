@@ -39,7 +39,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
     .locals 0
 
-    .line 6195
+    .line 6165
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 .method private synthetic lambda$seekTo$0()V
     .locals 4
 
-    .line 6259
+    .line 6229
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer$27;->seekTo:I
@@ -59,7 +59,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/PhotoViewer;->access$4000(Lorg/telegram/ui/PhotoViewer;J)V
 
-    .line 6260
+    .line 6230
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$3000(Lorg/telegram/ui/PhotoViewer;)I
@@ -70,7 +70,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 6261
+    .line 6231
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iget v1, p0, Lorg/telegram/ui/PhotoViewer$27;->seekTo:I
@@ -79,7 +79,7 @@
 
     invoke-static {v0, v1, v2}, Lorg/telegram/ui/PhotoViewer;->access$18902(Lorg/telegram/ui/PhotoViewer;J)J
 
-    .line 6262
+    .line 6232
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$19000(Lorg/telegram/ui/PhotoViewer;)J
@@ -96,7 +96,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 6263
+    .line 6233
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const-wide/16 v1, -0x1
@@ -106,7 +106,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 6266
+    .line 6236
     iput-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->seekToRunnable:Ljava/lang/Runnable;
 
     return-void
@@ -115,7 +115,7 @@
 .method private seekTo(F)V
     .locals 4
 
-    .line 6247
+    .line 6217
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$18800(Lorg/telegram/ui/PhotoViewer;)F
@@ -128,7 +128,7 @@
 
     iput p1, p0, Lorg/telegram/ui/PhotoViewer$27;->seekTo:I
 
-    .line 6248
+    .line 6218
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
     move-result p1
@@ -137,7 +137,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 6249
+    .line 6219
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iget v0, p0, Lorg/telegram/ui/PhotoViewer$27;->seekTo:I
@@ -146,7 +146,7 @@
 
     invoke-static {p1, v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$4000(Lorg/telegram/ui/PhotoViewer;J)V
 
-    .line 6250
+    .line 6220
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$3000(Lorg/telegram/ui/PhotoViewer;)I
@@ -157,7 +157,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 6251
+    .line 6221
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iget v0, p0, Lorg/telegram/ui/PhotoViewer$27;->seekTo:I
@@ -166,7 +166,7 @@
 
     invoke-static {p1, v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$18902(Lorg/telegram/ui/PhotoViewer;J)J
 
-    .line 6252
+    .line 6222
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$19000(Lorg/telegram/ui/PhotoViewer;)J
@@ -183,7 +183,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 6253
+    .line 6223
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const-wide/16 v0, -0x1
@@ -193,18 +193,18 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 6256
+    .line 6226
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->seekToRunnable:Ljava/lang/Runnable;
 
     goto :goto_0
 
-    .line 6257
+    .line 6227
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->seekToRunnable:Ljava/lang/Runnable;
 
     if-nez p1, :cond_2
 
-    .line 6258
+    .line 6228
     new-instance p1, Lorg/telegram/ui/PhotoViewer$27$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/PhotoViewer$27$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PhotoViewer$27;)V
@@ -223,7 +223,7 @@
 .method private updateAvatarStartTime(I)V
     .locals 4
 
-    .line 6272
+    .line 6242
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$3000(Lorg/telegram/ui/PhotoViewer;)I
@@ -241,7 +241,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 6276
+    .line 6246
     iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v2}, Lorg/telegram/ui/PhotoViewer;->access$1500(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/PhotoCropView;
@@ -290,7 +290,7 @@
 
     if-gez v2, :cond_4
 
-    .line 6277
+    .line 6247
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -304,7 +304,7 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 6279
+    .line 6249
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$18800(Lorg/telegram/ui/PhotoViewer;)F
@@ -331,7 +331,7 @@
 
     goto :goto_0
 
-    .line 6281
+    .line 6251
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -357,7 +357,7 @@
 
     invoke-static {p1, v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$19202(Lorg/telegram/ui/PhotoViewer;J)J
 
-    .line 6283
+    .line 6253
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -367,7 +367,7 @@
 
     goto :goto_1
 
-    .line 6286
+    .line 6256
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -381,7 +381,7 @@
 
     invoke-static {p1, v1}, Lorg/telegram/ui/PhotoViewer;->access$19102(Lorg/telegram/ui/PhotoViewer;F)F
 
-    .line 6287
+    .line 6257
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$18800(Lorg/telegram/ui/PhotoViewer;)F
@@ -412,17 +412,17 @@
 .method public didStartDragging(I)V
     .locals 2
 
-    .line 6293
+    .line 6263
     sget v0, Lorg/telegram/ui/Components/VideoTimelinePlayView;->TYPE_PROGRESS:I
 
     if-ne p1, v0, :cond_1
 
-    .line 6294
+    .line 6264
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$2800(Lorg/telegram/ui/PhotoViewer;)V
 
-    .line 6295
+    .line 6265
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$3000(Lorg/telegram/ui/PhotoViewer;)I
@@ -433,19 +433,19 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 6296
+    .line 6266
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$19400(Lorg/telegram/ui/PhotoViewer;)V
 
-    .line 6297
+    .line 6267
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const-wide/16 v0, -0x1
 
     invoke-static {p1, v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$19302(Lorg/telegram/ui/PhotoViewer;J)J
 
-    .line 6299
+    .line 6269
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -457,19 +457,19 @@
 
     if-eqz p1, :cond_1
 
-    .line 6300
+    .line 6270
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$2702(Lorg/telegram/ui/PhotoViewer;Z)Z
 
-    .line 6301
+    .line 6271
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$3300(Lorg/telegram/ui/PhotoViewer;)V
 
-    .line 6302
+    .line 6272
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$1400(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
@@ -485,26 +485,26 @@
 .method public didStopDragging(I)V
     .locals 4
 
-    .line 6309
+    .line 6279
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->seekToRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 6310
+    .line 6280
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 6311
+    .line 6281
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->seekToRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 6313
+    .line 6283
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$2800(Lorg/telegram/ui/PhotoViewer;)V
 
-    .line 6314
+    .line 6284
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$3000(Lorg/telegram/ui/PhotoViewer;)I
@@ -527,12 +527,12 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 6315
+    .line 6285
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$19400(Lorg/telegram/ui/PhotoViewer;)V
 
-    .line 6316
+    .line 6286
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$19200(Lorg/telegram/ui/PhotoViewer;)J
@@ -541,7 +541,7 @@
 
     invoke-static {p1, v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$19302(Lorg/telegram/ui/PhotoViewer;J)J
 
-    .line 6317
+    .line 6287
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$19000(Lorg/telegram/ui/PhotoViewer;)J
@@ -556,14 +556,14 @@
 
     if-nez p1, :cond_3
 
-    .line 6318
+    .line 6288
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$19700(Lorg/telegram/ui/PhotoViewer;)V
 
     goto :goto_0
 
-    .line 6321
+    .line 6291
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -577,7 +577,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 6322
+    .line 6292
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -585,7 +585,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$2702(Lorg/telegram/ui/PhotoViewer;Z)Z
 
-    .line 6323
+    .line 6293
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$3200(Lorg/telegram/ui/PhotoViewer;)V
@@ -598,7 +598,7 @@
 .method public onLeftProgressChanged(F)V
     .locals 2
 
-    .line 6203
+    .line 6173
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -609,7 +609,7 @@
 
     return-void
 
-    .line 6206
+    .line 6176
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -623,14 +623,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 6207
+    .line 6177
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$2702(Lorg/telegram/ui/PhotoViewer;Z)Z
 
-    .line 6208
+    .line 6178
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -639,7 +639,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
 
-    .line 6209
+    .line 6179
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1400(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
@@ -651,13 +651,13 @@
     :cond_1
     const/4 v0, 0x1
 
-    .line 6211
+    .line 6181
     invoke-direct {p0, v0}, Lorg/telegram/ui/PhotoViewer$27;->updateAvatarStartTime(I)V
 
-    .line 6212
+    .line 6182
     invoke-direct {p0, p1}, Lorg/telegram/ui/PhotoViewer$27;->seekTo(F)V
 
-    .line 6213
+    .line 6183
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1200(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayerSeekBar;
@@ -668,7 +668,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->setProgress(F)V
 
-    .line 6214
+    .line 6184
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1900(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoTimelinePlayView;
@@ -677,7 +677,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/VideoTimelinePlayView;->setProgress(F)V
 
-    .line 6215
+    .line 6185
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$18700(Lorg/telegram/ui/PhotoViewer;)V
@@ -688,7 +688,7 @@
 .method public onPlayProgressChanged(F)V
     .locals 2
 
-    .line 6237
+    .line 6207
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -699,7 +699,7 @@
 
     return-void
 
-    .line 6240
+    .line 6210
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -713,10 +713,10 @@
 
     const/4 v0, 0x0
 
-    .line 6241
+    .line 6211
     invoke-direct {p0, v0}, Lorg/telegram/ui/PhotoViewer$27;->updateAvatarStartTime(I)V
 
-    .line 6243
+    .line 6213
     :cond_1
     invoke-direct {p0, p1}, Lorg/telegram/ui/PhotoViewer$27;->seekTo(F)V
 
@@ -726,7 +726,7 @@
 .method public onRightProgressChanged(F)V
     .locals 2
 
-    .line 6220
+    .line 6190
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -737,7 +737,7 @@
 
     return-void
 
-    .line 6223
+    .line 6193
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -751,14 +751,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 6224
+    .line 6194
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$2702(Lorg/telegram/ui/PhotoViewer;Z)Z
 
-    .line 6225
+    .line 6195
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -767,7 +767,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
 
-    .line 6226
+    .line 6196
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1400(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$FrameLayoutDrawer;
@@ -779,13 +779,13 @@
     :cond_1
     const/4 v0, 0x2
 
-    .line 6228
+    .line 6198
     invoke-direct {p0, v0}, Lorg/telegram/ui/PhotoViewer$27;->updateAvatarStartTime(I)V
 
-    .line 6229
+    .line 6199
     invoke-direct {p0, p1}, Lorg/telegram/ui/PhotoViewer$27;->seekTo(F)V
 
-    .line 6230
+    .line 6200
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1200(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoPlayerSeekBar;
@@ -796,7 +796,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/VideoPlayerSeekBar;->setProgress(F)V
 
-    .line 6231
+    .line 6201
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1900(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/VideoTimelinePlayView;
@@ -805,7 +805,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/VideoTimelinePlayView;->setProgress(F)V
 
-    .line 6232
+    .line 6202
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$18700(Lorg/telegram/ui/PhotoViewer;)V

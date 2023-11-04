@@ -26,11 +26,11 @@ public final class ShardStateUnsplitTlbConstructor extends org.ton.tlb.TlbConstr
         Intrinsics.checkNotNullParameter(value, "value");
         cellBuilder.storeInt(value.getGlobalId(), 32);
         ShardIdent.Companion.storeTlb(cellBuilder, (CellBuilder) value.getShardId());
-        cellBuilder.storeUInt(value.m5046getSeqNopVg5ArA(), 32);
+        cellBuilder.storeUInt(value.m5200getSeqNopVg5ArA(), 32);
         cellBuilder.storeInt(value.getVertSeqNo(), 32);
-        cellBuilder.storeUInt(value.m5044getGenUtimepVg5ArA(), 32);
-        cellBuilder.storeUInt(value.m5043getGenLtsVKNKU(), 64);
-        cellBuilder.storeUInt(value.m5045getMinRefMcSeqnopVg5ArA(), 32);
+        cellBuilder.storeUInt(value.m5198getGenUtimepVg5ArA(), 32);
+        cellBuilder.storeUInt(value.m5197getGenLtsVKNKU(), 64);
+        cellBuilder.storeUInt(value.m5199getMinRefMcSeqnopVg5ArA(), 32);
         cellBuilder.storeRef(value.getOutMsgQueueInfo().toCell(OutMsgQueueInfo.Companion));
         cellBuilder.storeBit(value.getBeforeSplit());
         cellBuilder.storeRef(value.getAccounts().toCell(ShardAccounts.Companion));
@@ -43,14 +43,14 @@ public final class ShardStateUnsplitTlbConstructor extends org.ton.tlb.TlbConstr
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
         int intValue = cellSlice.loadInt(32).intValue();
         ShardIdent loadTlb = ShardIdent.Companion.loadTlb(cellSlice);
-        int m1967constructorimpl = UInt.m1967constructorimpl(cellSlice.loadUInt(32).intValue());
+        int m1972constructorimpl = UInt.m1972constructorimpl(cellSlice.loadUInt(32).intValue());
         int intValue2 = cellSlice.loadInt(32).intValue();
-        int m1967constructorimpl2 = UInt.m1967constructorimpl(cellSlice.loadUInt(32).intValue());
-        long m1989constructorimpl = ULong.m1989constructorimpl(cellSlice.loadUInt(64).longValue());
-        int m1967constructorimpl3 = UInt.m1967constructorimpl(cellSlice.loadUInt(32).intValue());
+        int m1972constructorimpl2 = UInt.m1972constructorimpl(cellSlice.loadUInt(32).intValue());
+        long m1994constructorimpl = ULong.m1994constructorimpl(cellSlice.loadUInt(64).longValue());
+        int m1972constructorimpl3 = UInt.m1972constructorimpl(cellSlice.loadUInt(32).intValue());
         OutMsgQueueInfo.Companion companion = OutMsgQueueInfo.Companion;
         Cell loadRef = cellSlice.loadRef();
         CellRef.Companion companion2 = CellRef.Companion;
-        return new ShardStateUnsplit(intValue, loadTlb, m1967constructorimpl, intValue2, m1967constructorimpl2, m1989constructorimpl, m1967constructorimpl3, companion2.valueOf(loadRef, (TlbCodec) companion), cellSlice.loadBit(), companion2.valueOf(cellSlice.loadRef(), (TlbCodec) ShardAccounts.Companion), companion2.valueOf(cellSlice.loadRef(), (TlbCodec) ShardStateUnsplitAux.Companion), maybeMcExtra.loadTlb(cellSlice), null);
+        return new ShardStateUnsplit(intValue, loadTlb, m1972constructorimpl, intValue2, m1972constructorimpl2, m1994constructorimpl, m1972constructorimpl3, companion2.valueOf(loadRef, (TlbCodec) companion), cellSlice.loadBit(), companion2.valueOf(cellSlice.loadRef(), (TlbCodec) ShardAccounts.Companion), companion2.valueOf(cellSlice.loadRef(), (TlbCodec) ShardStateUnsplitAux.Companion), maybeMcExtra.loadTlb(cellSlice), null);
     }
 }

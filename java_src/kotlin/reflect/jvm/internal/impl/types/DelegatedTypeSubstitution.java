@@ -14,9 +14,9 @@ public class DelegatedTypeSubstitution extends TypeSubstitution {
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeSubstitution
     /* renamed from: get */
-    public TypeProjection mo2051get(KotlinType key) {
+    public TypeProjection mo2056get(KotlinType key) {
         Intrinsics.checkNotNullParameter(key, "key");
-        return this.substitution.mo2051get(key);
+        return this.substitution.mo2056get(key);
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeSubstitution

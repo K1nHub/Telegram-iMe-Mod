@@ -12,9 +12,9 @@ public class FirebaseClientGrpcMetadataProvider implements GrpcMetadataProvider 
 
     static {
         Metadata.AsciiMarshaller<String> asciiMarshaller = Metadata.ASCII_STRING_MARSHALLER;
-        Metadata.Key.m997of("x-firebase-client-log-type", asciiMarshaller);
-        Metadata.Key.m997of("x-firebase-client", asciiMarshaller);
-        Metadata.Key.m997of("x-firebase-gmpid", asciiMarshaller);
+        Metadata.Key.m998of("x-firebase-client-log-type", asciiMarshaller);
+        Metadata.Key.m998of("x-firebase-client", asciiMarshaller);
+        Metadata.Key.m998of("x-firebase-gmpid", asciiMarshaller);
     }
 
     public FirebaseClientGrpcMetadataProvider(Provider<UserAgentPublisher> provider, Provider<HeartBeatInfo> provider2, FirebaseOptions firebaseOptions) {

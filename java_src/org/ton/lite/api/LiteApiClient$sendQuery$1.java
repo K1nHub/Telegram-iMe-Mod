@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import org.ton.lite.api.LiteApiClient;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: LiteApiClient.kt */
-@DebugMetadata(m143c = "org.ton.lite.api.LiteApiClient$DefaultImpls", m142f = "LiteApiClient.kt", m141l = {26}, m140m = "sendQuery")
+@DebugMetadata(m145c = "org.ton.lite.api.LiteApiClient$DefaultImpls", m144f = "LiteApiClient.kt", m143l = {26}, m142m = "sendQuery")
 /* loaded from: classes6.dex */
 public final class LiteApiClient$sendQuery$1<Q, A> extends ContinuationImpl {
     Object L$0;

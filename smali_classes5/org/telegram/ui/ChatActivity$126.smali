@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/graphics/Rect;)V
     .locals 0
 
-    .line 28121
+    .line 28956
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$126;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$126;->val$rect:Landroid/graphics/Rect;
@@ -40,7 +40,7 @@
 
     new-array p1, p1, [I
 
-    .line 28123
+    .line 28958
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$126;->pos:[I
 
     return-void
@@ -51,7 +51,7 @@
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 7
 
-    .line 28127
+    .line 28962
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result p1
@@ -60,7 +60,7 @@
 
     if-nez p1, :cond_0
 
-    .line 28128
+    .line 28963
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$126;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->scrimPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -73,7 +73,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 28129
+    .line 28964
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$126;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatActivity;->scrimPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -82,12 +82,12 @@
 
     move-result-object p1
 
-    .line 28130
+    .line 28965
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$126;->pos:[I
 
     invoke-virtual {p1, v1}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 28131
+    .line 28966
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$126;->val$rect:Landroid/graphics/Rect;
 
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$126;->pos:[I
@@ -118,7 +118,7 @@
 
     invoke-virtual {v1, v3, v5, v2, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 28132
+    .line 28967
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$126;->val$rect:Landroid/graphics/Rect;
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
@@ -139,14 +139,14 @@
 
     if-nez p1, :cond_1
 
-    .line 28133
+    .line 28968
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$126;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->closeMenu()V
 
     goto :goto_0
 
-    .line 28136
+    .line 28971
     :cond_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
@@ -156,7 +156,7 @@
 
     if-ne p1, p2, :cond_1
 
-    .line 28137
+    .line 28972
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$126;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->closeMenu()V

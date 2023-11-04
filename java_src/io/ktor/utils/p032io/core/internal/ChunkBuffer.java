@@ -99,7 +99,7 @@ public class ChunkBuffer extends Buffer {
             chunkBuffer = this;
         }
         chunkBuffer.acquire$ktor_io();
-        ChunkBuffer chunkBuffer2 = new ChunkBuffer(m1912getMemorySK3TCg8(), chunkBuffer, this.parentPool, null);
+        ChunkBuffer chunkBuffer2 = new ChunkBuffer(m1917getMemorySK3TCg8(), chunkBuffer, this.parentPool, null);
         duplicateTo(chunkBuffer2);
         return chunkBuffer2;
     }
@@ -188,17 +188,17 @@ public class ChunkBuffer extends Buffer {
             }
         };
         EmptyPool = objectPool;
-        Empty = new ChunkBuffer(Memory.Companion.m1908getEmptySK3TCg8(), null, objectPool, null);
+        Empty = new ChunkBuffer(Memory.Companion.m1913getEmptySK3TCg8(), null, objectPool, null);
         new NoPoolImpl<ChunkBuffer>() { // from class: io.ktor.utils.io.core.internal.ChunkBuffer$Companion$NoPool$1
             @Override // io.ktor.utils.p032io.pool.ObjectPool
             public ChunkBuffer borrow() {
-                return new ChunkBuffer(DefaultAllocator.INSTANCE.mo1903allocgFvZug(4096), null, this, null);
+                return new ChunkBuffer(DefaultAllocator.INSTANCE.mo1908allocgFvZug(4096), null, this, null);
             }
 
             @Override // io.ktor.utils.p032io.pool.NoPoolImpl, io.ktor.utils.p032io.pool.ObjectPool
             public void recycle(ChunkBuffer instance) {
                 Intrinsics.checkNotNullParameter(instance, "instance");
-                DefaultAllocator.INSTANCE.mo1904free3GNKZMM(instance.m1912getMemorySK3TCg8());
+                DefaultAllocator.INSTANCE.mo1909free3GNKZMM(instance.m1917getMemorySK3TCg8());
             }
         };
         new NoPoolImpl<ChunkBuffer>() { // from class: io.ktor.utils.io.core.internal.ChunkBuffer$Companion$NoPoolManuallyManaged$1

@@ -40,9 +40,9 @@ public final class JavaDescriptorResolver {
         if (outerClass != null) {
             ClassDescriptor resolveClass = resolveClass(outerClass);
             MemberScope unsubstitutedInnerClassesScope = resolveClass != null ? resolveClass.getUnsubstitutedInnerClassesScope() : null;
-            ClassifierDescriptor mo2048getContributedClassifier = unsubstitutedInnerClassesScope != null ? unsubstitutedInnerClassesScope.mo2048getContributedClassifier(javaClass.getName(), NoLookupLocation.FROM_JAVA_LOADER) : null;
-            if (mo2048getContributedClassifier instanceof ClassDescriptor) {
-                return (ClassDescriptor) mo2048getContributedClassifier;
+            ClassifierDescriptor mo2053getContributedClassifier = unsubstitutedInnerClassesScope != null ? unsubstitutedInnerClassesScope.mo2053getContributedClassifier(javaClass.getName(), NoLookupLocation.FROM_JAVA_LOADER) : null;
+            if (mo2053getContributedClassifier instanceof ClassDescriptor) {
+                return (ClassDescriptor) mo2053getContributedClassifier;
             }
             return null;
         } else if (fqName == null) {

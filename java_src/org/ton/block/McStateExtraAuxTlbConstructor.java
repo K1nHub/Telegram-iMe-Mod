@@ -20,7 +20,7 @@ public final class McStateExtraAuxTlbConstructor extends org.ton.tlb.TlbConstruc
     public McStateExtraAux loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
         int intValue = cellSlice.loadUInt(16).intValue();
-        return new McStateExtraAux(intValue, ValidatorInfo.Companion.loadTlb(cellSlice), OldMcBlocksInfo.Companion.loadTlb(cellSlice).m4984unboximpl(), cellSlice.loadBit(), maybeExtBlkRef.loadTlb(cellSlice), (intValue & 1) != 0 ? BlockCreateStats.Companion.loadTlb(cellSlice) : null, null);
+        return new McStateExtraAux(intValue, ValidatorInfo.Companion.loadTlb(cellSlice), OldMcBlocksInfo.Companion.loadTlb(cellSlice).m5138unboximpl(), cellSlice.loadBit(), maybeExtBlkRef.loadTlb(cellSlice), (intValue & 1) != 0 ? BlockCreateStats.Companion.loadTlb(cellSlice) : null, null);
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
@@ -29,7 +29,7 @@ public final class McStateExtraAuxTlbConstructor extends org.ton.tlb.TlbConstruc
         Intrinsics.checkNotNullParameter(value, "value");
         cellBuilder.storeUInt(value.getFlags(), 16);
         ValidatorInfo.Companion.storeTlb(cellBuilder, (CellBuilder) value.getValidatorInfo());
-        OldMcBlocksInfo.Companion.storeTlb(cellBuilder, OldMcBlocksInfo.m4977boximpl(value.m4969getPrevBlocksD6f0ERk()));
+        OldMcBlocksInfo.Companion.storeTlb(cellBuilder, OldMcBlocksInfo.m5131boximpl(value.m5123getPrevBlocksD6f0ERk()));
         cellBuilder.storeBit(value.getAfterKeyBlock());
         maybeExtBlkRef.storeTlb(cellBuilder, value.getLastKeyBlock());
         if ((value.getFlags() & 1) != 0) {

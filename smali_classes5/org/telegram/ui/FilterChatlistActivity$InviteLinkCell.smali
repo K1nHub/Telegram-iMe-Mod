@@ -146,22 +146,22 @@
 
     move-object/from16 v1, p1
 
-    .line 937
+    .line 938
     invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v2, 0x2
 
     new-array v3, v2, [F
 
-    .line 1144
+    .line 1145
     iput-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->point:[F
 
     move-object/from16 v3, p2
 
-    .line 939
+    .line 940
     iput-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 941
+    .line 942
     new-instance v3, Landroid/widget/FrameLayout;
 
     invoke-direct {v3, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -170,7 +170,7 @@
 
     const/16 v4, 0x8
 
-    .line 942
+    .line 943
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -201,7 +201,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 943
+    .line 944
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->linkBox:Landroid/widget/FrameLayout;
 
     new-instance v5, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda8;
@@ -210,7 +210,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 944
+    .line 945
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->linkBox:Landroid/widget/FrameLayout;
 
     const/4 v5, -0x1
@@ -233,7 +233,7 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 946
+    .line 947
     new-instance v3, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-direct {v3, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
@@ -242,10 +242,10 @@
 
     const/16 v5, 0x10
 
-    .line 947
+    .line 948
     invoke-virtual {v3, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    .line 948
+    .line 949
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->spoilerTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
@@ -256,26 +256,26 @@
 
     invoke-virtual {v3, v7}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 949
+    .line 950
     new-instance v3, Landroid/text/SpannableString;
 
     const-string v7, "t.me/folder/N3k/dImA/bIo"
 
     invoke-direct {v3, v7}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 950
+    .line 951
     new-instance v7, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
     invoke-direct {v7}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;-><init>()V
 
-    .line 951
+    .line 952
     iget v8, v7, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
     or-int/lit16 v8, v8, 0x100
 
     iput v8, v7, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
-    .line 952
+    .line 953
     new-instance v8, Lorg/telegram/ui/Components/TextStyleSpan;
 
     invoke-direct {v8, v7}, Lorg/telegram/ui/Components/TextStyleSpan;-><init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;)V
@@ -290,19 +290,19 @@
 
     invoke-virtual {v3, v8, v9, v7, v10}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 953
+    .line 954
     iget-object v7, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->spoilerTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v7, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 954
+    .line 955
     iget-object v7, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->spoilerTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/high16 v8, 0x3f800000    # 1.0f
 
     invoke-virtual {v7, v8}, Landroid/view/View;->setAlpha(F)V
 
-    .line 955
+    .line 956
     iget-object v7, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->linkBox:Landroid/widget/FrameLayout;
 
     iget-object v10, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->spoilerTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -327,17 +327,17 @@
 
     invoke-virtual {v7, v10, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 957
+    .line 958
     new-instance v7, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-direct {v7, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
     iput-object v7, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    .line 958
+    .line 959
     invoke-virtual {v7, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    .line 959
+    .line 960
     iget-object v5, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -346,19 +346,19 @@
 
     invoke-virtual {v5, v6}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 960
+    .line 961
     iget-object v5, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v5, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 961
+    .line 962
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v5, 0x0
 
     invoke-virtual {v3, v5}, Landroid/view/View;->setAlpha(F)V
 
-    .line 962
+    .line 963
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->linkBox:Landroid/widget/FrameLayout;
 
     iget-object v6, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -383,14 +383,14 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 964
+    .line 965
     new-instance v3, Landroid/widget/ImageView;
 
     invoke-direct {v3, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->optionsIcon:Landroid/widget/ImageView;
 
-    .line 965
+    .line 966
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
 
     move-result-object v6
@@ -407,14 +407,14 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 966
+    .line 967
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->optionsIcon:Landroid/widget/ImageView;
 
     sget-object v6, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 967
+    .line 968
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->optionsIcon:Landroid/widget/ImageView;
 
     new-instance v6, Landroid/graphics/PorterDuffColorFilter;
@@ -431,17 +431,17 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 968
+    .line 969
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->optionsIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v5}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 969
+    .line 970
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->optionsIcon:Landroid/widget/ImageView;
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 970
+    .line 971
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->optionsIcon:Landroid/widget/ImageView;
 
     sget v6, Lorg/telegram/messenger/R$string;->AccDescrMoreOptions:I
@@ -454,7 +454,7 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 971
+    .line 972
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->optionsIcon:Landroid/widget/ImageView;
 
     new-instance v6, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda4;
@@ -463,7 +463,7 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 978
+    .line 979
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->linkBox:Landroid/widget/FrameLayout;
 
     iget-object v6, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->optionsIcon:Landroid/widget/ImageView;
@@ -488,7 +488,7 @@
 
     invoke-virtual {v3, v6, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 980
+    .line 981
     new-instance v3, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;
 
     invoke-direct {v3, v0, v1}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;-><init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;Landroid/content/Context;)V
@@ -509,14 +509,14 @@
 
     const/16 v16, 0x0
 
-    .line 981
+    .line 982
     invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v0, v3, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 983
+    .line 984
     new-instance v3, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$1;
 
     invoke-direct {v3, v0, v1}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$1;-><init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;Landroid/content/Context;)V
@@ -525,10 +525,10 @@
 
     const/16 v6, 0x11
 
-    .line 992
+    .line 993
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 993
+    .line 994
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copyButton:Landroid/widget/TextView;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
@@ -539,7 +539,7 @@
 
     invoke-virtual {v3, v10}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 994
+    .line 995
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copyButton:Landroid/widget/TextView;
 
     const v10, 0x30ffffff
@@ -550,7 +550,7 @@
 
     invoke-virtual {v3, v11}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 995
+    .line 996
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copyButton:Landroid/widget/TextView;
 
     const-string v11, "fonts/rmedium.ttf"
@@ -561,21 +561,21 @@
 
     invoke-virtual {v3, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 996
+    .line 997
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copyButton:Landroid/widget/TextView;
 
     const/high16 v12, 0x41600000    # 14.0f
 
     invoke-virtual {v3, v12}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 997
+    .line 998
     new-instance v3, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v3}, Landroid/text/SpannableStringBuilder;-><init>()V
 
     const-string v13, ".."
 
-    .line 998
+    .line 999
     invoke-virtual {v3, v13}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v14
@@ -594,7 +594,7 @@
 
     invoke-virtual {v14, v15, v9, v8, v9}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 999
+    .line 1000
     new-instance v14, Lorg/telegram/ui/Cells/DialogCell$FixedWidthSpan;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -605,7 +605,7 @@
 
     invoke-virtual {v3, v14, v8, v2, v9}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1000
+    .line 1001
     sget v14, Lorg/telegram/messenger/R$string;->LinkActionCopy:I
 
     const-string v15, "LinkActionCopy"
@@ -618,7 +618,7 @@
 
     const-string v14, "."
 
-    .line 1001
+    .line 1002
     invoke-virtual {v3, v14}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v15
@@ -645,12 +645,12 @@
 
     invoke-virtual {v15, v2, v10, v12, v9}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1002
+    .line 1003
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copyButton:Landroid/widget/TextView;
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1003
+    .line 1004
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copyButton:Landroid/widget/TextView;
 
     new-instance v3, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda1;
@@ -659,17 +659,17 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1004
+    .line 1005
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copyButton:Landroid/widget/TextView;
 
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 1005
+    .line 1006
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copyButton:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1006
+    .line 1007
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->buttonsBox:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;
 
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copyButton:Landroid/widget/TextView;
@@ -684,17 +684,17 @@
 
     invoke-virtual {v2, v3, v12}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1008
+    .line 1009
     new-instance v2, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$2;
 
     invoke-direct {v2, v0, v1}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$2;-><init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
 
-    .line 1017
+    .line 1018
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1018
+    .line 1019
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -703,7 +703,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1019
+    .line 1020
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
 
     const v3, 0x30ffffff
@@ -714,7 +714,7 @@
 
     invoke-virtual {v2, v12}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1020
+    .line 1021
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -723,19 +723,19 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1021
+    .line 1022
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
 
     const/high16 v3, 0x41600000    # 14.0f
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1022
+    .line 1023
     new-instance v2, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v2}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 1023
+    .line 1024
     invoke-virtual {v2, v13}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v3
@@ -752,7 +752,7 @@
 
     invoke-virtual {v3, v12, v9, v8, v9}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1024
+    .line 1025
     new-instance v3, Lorg/telegram/ui/Cells/DialogCell$FixedWidthSpan;
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -765,7 +765,7 @@
 
     invoke-virtual {v2, v3, v8, v12, v9}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1025
+    .line 1026
     sget v3, Lorg/telegram/messenger/R$string;->LinkActionShare:I
 
     const-string v12, "LinkActionShare"
@@ -776,7 +776,7 @@
 
     invoke-virtual {v2, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 1026
+    .line 1027
     invoke-virtual {v2, v14}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v3
@@ -803,12 +803,12 @@
 
     invoke-virtual {v3, v12, v13, v8, v9}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 1027
+    .line 1028
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
 
     invoke-virtual {v3, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1028
+    .line 1029
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
 
     new-instance v3, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda2;
@@ -817,17 +817,17 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1029
+    .line 1030
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
 
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 1030
+    .line 1031
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
 
     invoke-virtual {v2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1031
+    .line 1032
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->buttonsBox:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;
 
     iget-object v3, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
@@ -840,17 +840,17 @@
 
     invoke-virtual {v2, v3, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1033
+    .line 1034
     new-instance v2, Landroid/widget/TextView;
 
     invoke-direct {v2, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
 
-    .line 1034
+    .line 1035
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1035
+    .line 1036
     iget-object v1, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -859,7 +859,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1036
+    .line 1037
     iget-object v1, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
 
     const v2, 0x30ffffff
@@ -870,7 +870,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1037
+    .line 1038
     iget-object v1, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -879,21 +879,21 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1038
+    .line 1039
     iget-object v1, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
 
     const/high16 v2, 0x41600000    # 14.0f
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 1039
+    .line 1040
     iget-object v1, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
 
     const-string v2, "Generate Invite Link"
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1040
+    .line 1041
     iget-object v1, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
 
     new-instance v2, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda3;
@@ -902,19 +902,19 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1041
+    .line 1042
     iget-object v1, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
 
     const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 1042
+    .line 1043
     iget-object v1, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
 
     invoke-virtual {v1, v9}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1043
+    .line 1044
     iget-object v1, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->buttonsBox:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;
 
     iget-object v2, v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
@@ -931,7 +931,7 @@
 .method static synthetic access$2400(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;)[F
     .locals 0
 
-    .line 881
+    .line 882
     iget-object p0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->point:[F
 
     return-object p0
@@ -940,7 +940,7 @@
 .method static synthetic access$2500(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;Landroid/widget/FrameLayout;Landroid/widget/FrameLayout;[F)V
     .locals 0
 
-    .line 881
+    .line 882
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->getPointOnScreen(Landroid/widget/FrameLayout;Landroid/widget/FrameLayout;[F)V
 
     return-void
@@ -949,7 +949,7 @@
 .method static synthetic access$2602(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
     .locals 0
 
-    .line 881
+    .line 882
     iput-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     return-object p1
@@ -965,26 +965,26 @@
     :cond_0
     if-eq p1, p2, :cond_3
 
-    .line 1330
+    .line 1331
     invoke-virtual {p1}, Landroid/view/View;->getY()F
 
     move-result v2
 
     add-float/2addr v0, v2
 
-    .line 1331
+    .line 1332
     invoke-virtual {p1}, Landroid/view/View;->getX()F
 
     move-result v2
 
     add-float/2addr v1, v2
 
-    .line 1332
+    .line 1333
     instance-of v2, p1, Landroid/widget/ScrollView;
 
     if-eqz v2, :cond_1
 
-    .line 1333
+    .line 1334
     invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
 
     move-result v2
@@ -993,7 +993,7 @@
 
     sub-float/2addr v0, v2
 
-    .line 1335
+    .line 1336
     :cond_1
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -1005,7 +1005,7 @@
 
     goto :goto_0
 
-    .line 1338
+    .line 1339
     :cond_2
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -1013,14 +1013,14 @@
 
     check-cast p1, Landroid/view/View;
 
-    .line 1339
+    .line 1340
     instance-of v2, p1, Landroid/view/ViewGroup;
 
     if-nez v2, :cond_0
 
     return-void
 
-    .line 1343
+    .line 1344
     :cond_3
     :goto_0
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getPaddingLeft()I
@@ -1031,7 +1031,7 @@
 
     sub-float/2addr v1, p1
 
-    .line 1344
+    .line 1345
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result p1
@@ -1042,12 +1042,12 @@
 
     const/4 p1, 0x0
 
-    .line 1345
+    .line 1346
     aput v1, p3, p1
 
     const/4 p1, 0x1
 
-    .line 1346
+    .line 1347
     aput v0, p3, p1
 
     return-void
@@ -1056,7 +1056,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 0
 
-    .line 943
+    .line 944
     invoke-virtual {p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copy()V
 
     return-void
@@ -1065,7 +1065,7 @@
 .method private synthetic lambda$new$1()V
     .locals 2
 
-    .line 974
+    .line 975
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->linkBox:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -1084,7 +1084,7 @@
 .method private synthetic lambda$new$2(Landroid/view/View;)V
     .locals 2
 
-    .line 972
+    .line 973
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x15
@@ -1101,7 +1101,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 973
+    .line 974
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->linkBox:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getBackground()Landroid/graphics/drawable/Drawable;
@@ -1116,7 +1116,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
-    .line 974
+    .line 975
     new-instance p1, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda9;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;)V
@@ -1125,7 +1125,7 @@
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/widget/FrameLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 976
+    .line 977
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->options()V
 
@@ -1143,7 +1143,7 @@
 .method private synthetic lambda$new$3(Landroid/view/View;)V
     .locals 0
 
-    .line 1003
+    .line 1004
     invoke-virtual {p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copy()V
 
     return-void
@@ -1152,7 +1152,7 @@
 .method private synthetic lambda$new$4(Landroid/view/View;)V
     .locals 0
 
-    .line 1028
+    .line 1029
     invoke-virtual {p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->share()V
 
     return-void
@@ -1161,7 +1161,7 @@
 .method private synthetic lambda$new$5(Landroid/view/View;)V
     .locals 0
 
-    .line 1040
+    .line 1041
     invoke-virtual {p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generate()V
 
     return-void
@@ -1170,7 +1170,7 @@
 .method private synthetic lambda$options$10(Landroid/view/KeyEvent;)V
     .locals 2
 
-    .line 1271
+    .line 1272
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v0
@@ -1193,7 +1193,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1272
+    .line 1273
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/4 v0, 0x1
@@ -1207,15 +1207,15 @@
 .method private synthetic lambda$options$7(Landroid/view/View;)V
     .locals 0
 
-    .line 1158
+    .line 1159
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_0
 
-    .line 1159
+    .line 1160
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
-    .line 1161
+    .line 1162
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->editname()V
 
@@ -1225,15 +1225,15 @@
 .method private synthetic lambda$options$8(Landroid/view/View;)V
     .locals 0
 
-    .line 1168
+    .line 1169
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_0
 
-    .line 1169
+    .line 1170
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
-    .line 1171
+    .line 1172
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->qrcode()V
 
@@ -1243,15 +1243,15 @@
 .method private synthetic lambda$options$9(Landroid/view/View;)V
     .locals 0
 
-    .line 1199
+    .line 1200
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_0
 
-    .line 1200
+    .line 1201
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
-    .line 1202
+    .line 1203
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->deleteLink()V
 
@@ -1261,7 +1261,7 @@
 .method private synthetic lambda$setLink$6(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1082
+    .line 1083
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -1274,7 +1274,7 @@
 
     iput p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAlpha:F
 
-    .line 1083
+    .line 1084
     invoke-direct {p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->updateChangeAlpha()V
 
     return-void
@@ -1283,35 +1283,35 @@
 .method private updateChangeAlpha()V
     .locals 3
 
-    .line 1124
+    .line 1125
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->buttonsBox:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;
 
     iget v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAlpha:F
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->setT(F)V
 
-    .line 1126
+    .line 1127
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copyButton:Landroid/widget/TextView;
 
     iget v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAlpha:F
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 1127
+    .line 1128
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
 
     iget v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAlpha:F
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 1128
+    .line 1129
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->optionsIcon:Landroid/widget/ImageView;
 
     iget v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAlpha:F
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 1129
+    .line 1130
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
 
     iget v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAlpha:F
@@ -1322,14 +1322,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 1131
+    .line 1132
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAlpha:F
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1132
+    .line 1133
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->spoilerTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAlpha:F
@@ -1346,18 +1346,18 @@
 .method public copy()V
     .locals 3
 
-    .line 1286
+    .line 1287
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->lastUrl:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1290
+    .line 1291
     :cond_0
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->addToClipboard(Ljava/lang/CharSequence;)Z
 
-    .line 1291
+    .line 1292
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BulletinFactory;->of(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/BulletinFactory;
@@ -1402,7 +1402,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1138
+    .line 1139
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -1415,7 +1415,7 @@
 
     const/16 v0, 0x7f
 
-    .line 1139
+    .line 1140
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1424,7 +1424,7 @@
 
     move-result p2
 
-    .line 1137
+    .line 1138
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -1433,7 +1433,7 @@
 .method public options()V
     .locals 11
 
-    .line 1147
+    .line 1148
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-nez v0, :cond_2
@@ -1444,7 +1444,7 @@
 
     goto/16 :goto_0
 
-    .line 1150
+    .line 1151
     :cond_0
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
@@ -1454,7 +1454,7 @@
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;)V
 
-    .line 1154
+    .line 1155
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -1467,7 +1467,7 @@
 
     invoke-direct {v1, v2, v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 1155
+    .line 1156
     sget v2, Lorg/telegram/messenger/R$string;->EditName:I
 
     const-string v5, "EditName"
@@ -1484,21 +1484,21 @@
 
     const/16 v5, 0x30
 
-    .line 1156
+    .line 1157
     invoke-static {v2, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v0, v1, v6}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;Landroid/widget/LinearLayout$LayoutParams;)V
 
-    .line 1157
+    .line 1158
     new-instance v6, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda6;
 
     invoke-direct {v6, p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;)V
 
     invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1164
+    .line 1165
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -1507,7 +1507,7 @@
 
     invoke-direct {v1, v6, v4, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 1165
+    .line 1166
     sget v6, Lorg/telegram/messenger/R$string;->GetQRCode:I
 
     const-string v7, "GetQRCode"
@@ -1520,21 +1520,21 @@
 
     invoke-virtual {v1, v6, v7}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 1166
+    .line 1167
     invoke-static {v2, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v0, v1, v6}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;Landroid/widget/LinearLayout$LayoutParams;)V
 
-    .line 1167
+    .line 1168
     new-instance v6, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda7;
 
     invoke-direct {v6, p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;)V
 
     invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1174
+    .line 1175
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -1543,7 +1543,7 @@
 
     invoke-direct {v1, v6, v4, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 1195
+    .line 1196
     sget v6, Lorg/telegram/messenger/R$string;->DeleteLink:I
 
     const-string v7, "DeleteLink"
@@ -1556,7 +1556,7 @@
 
     invoke-virtual {v1, v6, v7}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 1196
+    .line 1197
     sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1569,7 +1569,7 @@
 
     invoke-virtual {v1, v7, v8}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setColors(II)Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 1197
+    .line 1198
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
@@ -1582,21 +1582,21 @@
 
     invoke-virtual {v1, v6}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setSelectorColor(I)V
 
-    .line 1198
+    .line 1199
     new-instance v6, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda5;
 
     invoke-direct {v6, p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;)V
 
     invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1204
+    .line 1205
     invoke-static {v2, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v0, v1, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;Landroid/widget/LinearLayout$LayoutParams;)V
 
-    .line 1206
+    .line 1207
     iget-object v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -1609,19 +1609,19 @@
 
     if-eqz v1, :cond_2
 
-    .line 1211
+    .line 1212
     iget-object v5, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->linkBox:Landroid/widget/FrameLayout;
 
     iget-object v6, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->point:[F
 
     invoke-direct {p0, v5, v1, v6}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->getPointOnScreen(Landroid/widget/FrameLayout;Landroid/widget/FrameLayout;[F)V
 
-    .line 1212
+    .line 1213
     iget-object v5, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->point:[F
 
     aget v5, v5, v3
 
-    .line 1215
+    .line 1216
     new-instance v6, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$4;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -1630,19 +1630,19 @@
 
     invoke-direct {v6, p0, v7, v1}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$4;-><init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;Landroid/content/Context;Landroid/widget/FrameLayout;)V
 
-    .line 1233
+    .line 1234
     new-instance v7, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$5;
 
     invoke-direct {v7, p0, v6}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$5;-><init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;Landroid/view/View;)V
 
-    .line 1240
+    .line 1241
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v8
 
     invoke-virtual {v8, v7}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 1241
+    .line 1242
     invoke-static {v2, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
@@ -1651,10 +1651,10 @@
 
     const/4 v2, 0x0
 
-    .line 1242
+    .line 1243
     invoke-virtual {v6, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1243
+    .line 1244
     invoke-virtual {v6}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v8
@@ -1669,7 +1669,7 @@
 
     invoke-virtual {v8, v9, v10}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 1244
+    .line 1245
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v8
@@ -1688,7 +1688,7 @@
 
     invoke-virtual {v0, v8, v9}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 1246
+    .line 1247
     new-instance v8, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/4 v9, -0x2
@@ -1697,24 +1697,24 @@
 
     iput-object v8, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    .line 1247
+    .line 1248
     new-instance v9, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;
 
     invoke-direct {v9, p0, v6, v1, v7}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;-><init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;Landroid/view/View;Landroid/widget/FrameLayout;Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
     invoke-virtual {v8, v9}, Landroid/widget/PopupWindow;->setOnDismissListener(Landroid/widget/PopupWindow$OnDismissListener;)V
 
-    .line 1263
+    .line 1264
     iget-object v6, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v6, v3}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    .line 1264
+    .line 1265
     iget-object v6, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v6, v3}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
-    .line 1265
+    .line 1266
     iget-object v3, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     new-instance v6, Landroid/graphics/drawable/ColorDrawable;
@@ -1723,40 +1723,40 @@
 
     invoke-virtual {v3, v6}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1266
+    .line 1267
     iget-object v3, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     sget v6, Lorg/telegram/messenger/R$style;->PopupContextAnimation:I
 
     invoke-virtual {v3, v6}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    .line 1267
+    .line 1268
     iget-object v3, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/4 v6, 0x2
 
     invoke-virtual {v3, v6}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 1268
+    .line 1269
     iget-object v3, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v3, v4}, Landroid/widget/PopupWindow;->setSoftInputMode(I)V
 
-    .line 1270
+    .line 1271
     new-instance v3, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda10;
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;)V
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setDispatchKeyEventListener(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$OnDispatchKeyEventListener;)V
 
-    .line 1276
+    .line 1277
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 1277
+    .line 1278
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v3
@@ -1765,7 +1765,7 @@
 
     add-float/2addr v5, v3
 
-    .line 1278
+    .line 1279
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getPaddingLeft()I
 
     move-result v3
@@ -1774,7 +1774,7 @@
 
     sub-float/2addr v2, v3
 
-    .line 1280
+    .line 1281
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->actionBarPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
@@ -1836,14 +1836,14 @@
 .method public qrcode()V
     .locals 7
 
-    .line 1316
+    .line 1317
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->lastUrl:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1320
+    .line 1321
     :cond_0
     new-instance v0, Lorg/telegram/ui/Components/QRCodeBottomSheet;
 
@@ -1875,12 +1875,12 @@
 
     invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/Components/QRCodeBottomSheet;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 1321
+    .line 1322
     sget v1, Lorg/telegram/messenger/R$raw;->qr_code_logo:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->setCenterAnimation(I)V
 
-    .line 1322
+    .line 1323
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
     return-void
@@ -1889,7 +1889,7 @@
 .method public setLink(Ljava/lang/String;Z)V
     .locals 5
 
-    .line 1059
+    .line 1060
     iput-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->lastUrl:Ljava/lang/String;
 
     const/16 v0, 0x8
@@ -1898,7 +1898,7 @@
 
     const-string v1, "http://"
 
-    .line 1061
+    .line 1062
     invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
@@ -1907,7 +1907,7 @@
 
     const/4 v1, 0x7
 
-    .line 1062
+    .line 1063
     invoke-virtual {p1, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
@@ -1915,25 +1915,25 @@
     :cond_0
     const-string v1, "https://"
 
-    .line 1063
+    .line 1064
     invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v1
 
     if-eqz v1, :cond_1
 
-    .line 1064
+    .line 1065
     invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 1067
+    .line 1068
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 1068
+    .line 1069
     iget v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAlpha:F
 
     const/4 v2, 0x1
@@ -1956,17 +1956,17 @@
 
     if-eqz v1, :cond_8
 
-    .line 1069
+    .line 1070
     iget-object v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v1, :cond_3
 
-    .line 1070
+    .line 1071
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v1, 0x0
 
-    .line 1071
+    .line 1072
     iput-object v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAnimator:Landroid/animation/ValueAnimator;
 
     :cond_3
@@ -1976,22 +1976,22 @@
 
     if-eqz p2, :cond_5
 
-    .line 1075
+    .line 1076
     iget-object p2, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
 
     invoke-virtual {p2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1076
+    .line 1077
     iget-object p2, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->optionsIcon:Landroid/widget/ImageView;
 
     invoke-virtual {p2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1077
+    .line 1078
     iget-object p2, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copyButton:Landroid/widget/TextView;
 
     invoke-virtual {p2, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1078
+    .line 1079
     iget-object p2, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
 
     invoke-virtual {p2, v3}, Landroid/widget/TextView;->setVisibility(I)V
@@ -2000,7 +2000,7 @@
 
     new-array p2, p2, [F
 
-    .line 1080
+    .line 1081
     iget v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAlpha:F
 
     aput v0, p2, v3
@@ -2021,14 +2021,14 @@
 
     iput-object p2, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1081
+    .line 1082
     new-instance v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;)V
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1085
+    .line 1086
     iget-object p2, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$3;
@@ -2037,21 +2037,21 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1101
+    .line 1102
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1102
+    .line 1103
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x140
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1103
+    .line 1104
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -2066,54 +2066,54 @@
     :cond_6
     move v1, v4
 
-    .line 1105
+    .line 1106
     :goto_2
     iput v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->changeAlpha:F
 
-    .line 1106
+    .line 1107
     invoke-direct {p0}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->updateChangeAlpha()V
 
     if-nez p1, :cond_7
 
-    .line 1109
+    .line 1110
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
 
     invoke-virtual {p1, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1110
+    .line 1111
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->optionsIcon:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1111
+    .line 1112
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copyButton:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1112
+    .line 1113
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_3
 
-    .line 1114
+    .line 1115
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->generateButton:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1115
+    .line 1116
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->optionsIcon:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1116
+    .line 1117
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->copyButton:Landroid/widget/TextView;
 
     invoke-virtual {p1, v3}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 1117
+    .line 1118
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->shareButton:Landroid/widget/TextView;
 
     invoke-virtual {p1, v3}, Landroid/widget/TextView;->setVisibility(I)V
@@ -2126,14 +2126,14 @@
 .method protected share()V
     .locals 4
 
-    .line 1295
+    .line 1296
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->lastUrl:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1300
+    .line 1301
     :cond_0
     :try_start_0
     new-instance v0, Landroid/content/Intent;
@@ -2144,17 +2144,17 @@
 
     const-string v1, "text/plain"
 
-    .line 1301
+    .line 1302
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
     const-string v1, "android.intent.extra.TEXT"
 
-    .line 1302
+    .line 1303
     iget-object v2, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->lastUrl:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1303
+    .line 1304
     iget-object v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     const-string v2, "InviteToGroupByLink"
@@ -2180,7 +2180,7 @@
     :catch_0
     move-exception v0
 
-    .line 1305
+    .line 1306
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0

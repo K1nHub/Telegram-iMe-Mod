@@ -63,7 +63,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsJVMKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import timber.log.Timber;
 /* compiled from: StakingTransactionPresenter.kt */
@@ -294,7 +294,7 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
     }
 
     private final void setupSafeWithdrawal() {
-        ((StakingTransactionView) getViewState()).setupSafeWithdrawal(this.isSafeWithdrawalSelected, this.resourceManager.getString(C3630R.string.staking_withdraw_safe_withdrawal_help_alert_title), getSafeWithdrawalHelpAlertText());
+        ((StakingTransactionView) getViewState()).setupSafeWithdrawal(this.isSafeWithdrawalSelected, this.resourceManager.getString(C3634R.string.staking_withdraw_safe_withdrawal_help_alert_title), getSafeWithdrawalHelpAlertText());
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -361,7 +361,7 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
                 checkTokensApproval$lambda$4 = StakingTransactionPresenter.checkTokensApproval$lambda$4(Function1.this, obj);
                 return checkTokensApproval$lambda$4;
             }
-        }).observeOn(this.schedulersProvider.mo1009ui());
+        }).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "private fun checkTokensA…y { autoDispose() }\n    }");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends StakingApprovalInfo>, Unit>() { // from class: com.iMe.ui.wallet.staking.transaction.StakingTransactionPresenter$checkTokensApproval$$inlined$subscribeWithErrorHandle$default$1
@@ -372,12 +372,12 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingApprovalInfo> result) {
-                m1821invoke(result);
+                m1826invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1821invoke(Result<? extends StakingApprovalInfo> it) {
+            public final void m1826invoke(Result<? extends StakingApprovalInfo> it) {
                 ResourceManager resourceManager;
                 Disposable disposable;
                 StakingScreenType stakingScreenType;
@@ -456,7 +456,7 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         if (stakingDetailsItem == null) {
             return;
         }
-        Observable<Result<Pair<String, StakingTransactionAction>>> observeOn = this.stakingInteractor.sendApprovalPrepare(stakingDetailsItem.getId(), stakingApprovalTokenType).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Pair<String, StakingTransactionAction>>> observeOn = this.stakingInteractor.sendApprovalPrepare(stakingDetailsItem.getId(), stakingApprovalTokenType).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "stakingInteractor\n      …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Pair<? extends String, ? extends StakingTransactionAction>>, Unit>() { // from class: com.iMe.ui.wallet.staking.transaction.StakingTransactionPresenter$prepareTokenApproval$$inlined$subscribeWithErrorHandle$default$1
@@ -467,12 +467,12 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Pair<? extends String, ? extends StakingTransactionAction>> result) {
-                m1826invoke(result);
+                m1831invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1826invoke(Result<? extends Pair<? extends String, ? extends StakingTransactionAction>> it) {
+            public final void m1831invoke(Result<? extends Pair<? extends String, ? extends StakingTransactionAction>> it) {
                 ResourceManager resourceManager;
                 TransactionStep.ApprovalNeeded approvalNeeded;
                 DialogModel feeDialogModel;
@@ -547,7 +547,7 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         if (stakingTransactionAction == null || (transaction = stakingTransactionAction.getTransaction()) == null) {
             return;
         }
-        Observable<Result<StakingOperation>> observeOn = stakingInteractor.sendApprovalExecute(str, transaction).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<StakingOperation>> observeOn = stakingInteractor.sendApprovalExecute(str, transaction).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "stakingInteractor\n      …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -560,12 +560,12 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingOperation> result) {
-                m1823invoke(result);
+                m1828invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1823invoke(Result<? extends StakingOperation> it) {
+            public final void m1828invoke(Result<? extends StakingOperation> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends StakingOperation> result = it;
@@ -613,7 +613,7 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         if (stakingDetailsItem == null) {
             return;
         }
-        Observable<Result<Pair<String, StakingTransactionAction>>> observeOn = getPrepareActionObservableByScreenType(stakingDetailsItem.getId()).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Pair<String, StakingTransactionAction>>> observeOn = getPrepareActionObservableByScreenType(stakingDetailsItem.getId()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "getPrepareActionObservab…(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Pair<? extends String, ? extends StakingTransactionAction>>, Unit>() { // from class: com.iMe.ui.wallet.staking.transaction.StakingTransactionPresenter$prepareAction$$inlined$subscribeWithErrorHandle$default$1
@@ -623,12 +623,12 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Pair<? extends String, ? extends StakingTransactionAction>> result) {
-                m1825invoke(result);
+                m1830invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1825invoke(Result<? extends Pair<? extends String, ? extends StakingTransactionAction>> it) {
+            public final void m1830invoke(Result<? extends Pair<? extends String, ? extends StakingTransactionAction>> it) {
                 StakingScreenType stakingScreenType;
                 ResourceManager resourceManager;
                 ResourceManager resourceManager2;
@@ -664,17 +664,17 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
                         StakingTransactionPresenter.this.runNoEnoughMoneyFlow();
                     } else if (status == FirebaseFunctionsErrorHandler.StakingErrorStatus.ERR_STAKING_FINISHED) {
                         resourceManager6 = StakingTransactionPresenter.this.resourceManager;
-                        ((StakingTransactionView) StakingTransactionPresenter.this.getViewState()).showToast(resourceManager6.getString(C3630R.string.staking_replenishment_already_finished));
+                        ((StakingTransactionView) StakingTransactionPresenter.this.getViewState()).showToast(resourceManager6.getString(C3634R.string.staking_replenishment_already_finished));
                     } else if (status == FirebaseFunctionsErrorHandler.StakingErrorStatus.ERR_STAKING_CLAIM_OVERLAP) {
                         resourceManager4 = StakingTransactionPresenter.this.resourceManager;
-                        String string = resourceManager4.getString(C3630R.string.staking_profit_error_title);
+                        String string = resourceManager4.getString(C3634R.string.staking_profit_error_title);
                         resourceManager5 = StakingTransactionPresenter.this.resourceManager;
-                        ((StakingTransactionView) StakingTransactionPresenter.this.getViewState()).showActionError(string, resourceManager5.getString(C3630R.string.staking_profit_overlap_error_description));
+                        ((StakingTransactionView) StakingTransactionPresenter.this.getViewState()).showActionError(string, resourceManager5.getString(C3634R.string.staking_profit_overlap_error_description));
                     } else if (status == FirebaseFunctionsErrorHandler.StakingErrorStatus.ERR_STAKING_WITHDRAWAL_OVER_LIMIT) {
                         resourceManager2 = StakingTransactionPresenter.this.resourceManager;
-                        String string2 = resourceManager2.getString(C3630R.string.staking_withdraw_error_title);
+                        String string2 = resourceManager2.getString(C3634R.string.staking_withdraw_error_title);
                         resourceManager3 = StakingTransactionPresenter.this.resourceManager;
-                        ((StakingTransactionView) StakingTransactionPresenter.this.getViewState()).showActionError(string2, resourceManager3.getString(C3630R.string.staking_withdraw_over_limit_error_description));
+                        ((StakingTransactionView) StakingTransactionPresenter.this.getViewState()).showActionError(string2, resourceManager3.getString(C3634R.string.staking_withdraw_over_limit_error_description));
                     } else {
                         resourceManager = StakingTransactionPresenter.this.resourceManager;
                         ((StakingTransactionView) StakingTransactionPresenter.this.getViewState()).showErrorToast(error, resourceManager);
@@ -737,7 +737,7 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         if (stakingTransactionAction == null || (transaction = stakingTransactionAction.getTransaction()) == null) {
             return;
         }
-        Observable<Result<StakingOperation>> observeOn = getExecuteActionObservableByScreenType(transaction).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<StakingOperation>> observeOn = getExecuteActionObservableByScreenType(transaction).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "getExecuteActionObservab…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -750,12 +750,12 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends StakingOperation> result) {
-                m1822invoke(result);
+                m1827invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1822invoke(Result<? extends StakingOperation> it) {
+            public final void m1827invoke(Result<? extends StakingOperation> it) {
                 ResourceManager resourceManager;
                 StakingScreenType stakingScreenType;
                 RxEventBus rxEventBus;
@@ -874,7 +874,7 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         if (tokenDetailed == null || (indexedToken = TokenExtKt.toIndexedToken(tokenDetailed)) == null) {
             return;
         }
-        Observable observeOn = WalletInteractor.getTokenBalance$default(walletInteractor, indexedToken, false, this.token.getNetworkId(), 2, null).observeOn(this.schedulersProvider.mo1009ui());
+        Observable observeOn = WalletInteractor.getTokenBalance$default(walletInteractor, indexedToken, false, this.token.getNetworkId(), 2, null).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends TokenBalance>, Unit>() { // from class: com.iMe.ui.wallet.staking.transaction.StakingTransactionPresenter$loadBalance$$inlined$subscribeWithErrorHandle$default$1
@@ -884,12 +884,12 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TokenBalance> result) {
-                m1824invoke(result);
+                m1829invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1824invoke(Result<? extends TokenBalance> it) {
+            public final void m1829invoke(Result<? extends TokenBalance> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends TokenBalance> result = it;
@@ -935,18 +935,18 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         TokenBalance tokenBalance = this.tokenBalance;
         if (tokenBalance != null) {
             ResourceManager resourceManager = this.resourceManager;
-            int i = C3630R.string.wallet_swap_process_my_balance;
+            int i = C3634R.string.wallet_swap_process_my_balance;
             ((StakingTransactionView) getViewState()).showBalance(resourceManager.getString(i, BalanceFormatter.format$default(Double.valueOf(tokenBalance.getTotal()), null, 2, null) + ' ' + tokenBalance.getToken().getTicker()));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void showAmountError(boolean z) {
-        ((StakingTransactionView) getViewState()).setupAmountInputErrorState(z, this.resourceManager.getString(C3630R.string.wallet_amount_send_error_insufficient_funds), (FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(this.cryptoPreferenceHelper.getNetworkId()) && this.screenType == StakingScreenType.STAKING_REPLENISH_SCREEN_TYPE) ? this.resourceManager.getString(C3630R.string.wallet_token_details_action_buy) : "");
+        ((StakingTransactionView) getViewState()).setupAmountInputErrorState(z, this.resourceManager.getString(C3634R.string.wallet_amount_send_error_insufficient_funds), (FeatureAvailableManager$Token.INSTANCE.isPurchaseAvailable(this.cryptoPreferenceHelper.getNetworkId()) && this.screenType == StakingScreenType.STAKING_REPLENISH_SCREEN_TYPE) ? this.resourceManager.getString(C3634R.string.wallet_token_details_action_buy) : "");
     }
 
     private final void subscribeToAmountSubject() {
-        Observable<String> observeOn = this.amountSubject.observeOn(this.schedulersProvider.mo1010io()).debounce(300L, TimeUnit.MILLISECONDS).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<String> observeOn = this.amountSubject.observeOn(this.schedulersProvider.mo1011io()).debounce(300L, TimeUnit.MILLISECONDS).observeOn(this.schedulersProvider.mo1010ui());
         final Function1<String, Unit> function1 = new Function1<String, Unit>() { // from class: com.iMe.ui.wallet.staking.transaction.StakingTransactionPresenter$subscribeToAmountSubject$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -1030,7 +1030,7 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
                 immediateWithdrawalFeePercentage = stakingDetailsItem.getImmediateWithdrawalFeePercentage();
             }
             ResourceManager resourceManager = this.resourceManager;
-            int i = C3630R.string.staking_withdraw_fee_value;
+            int i = C3634R.string.staking_withdraw_fee_value;
             Object[] objArr = new Object[2];
             objArr[0] = BalanceFormatter.formatPercents$default(BalanceFormatter.INSTANCE, Double.valueOf(immediateWithdrawalFeePercentage), 0, 2, null);
             TokenBalance tokenBalance = this.feeTokenBalance;
@@ -1052,12 +1052,12 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
     }
 
     private final String getWithdrawalTimeText() {
-        return this.isSafeWithdrawalSelected ? getSafeWithdrawalReceiveTimeText() : this.resourceManager.getString(C3630R.string.staking_withdraw_time_immediate);
+        return this.isSafeWithdrawalSelected ? getSafeWithdrawalReceiveTimeText() : this.resourceManager.getString(C3634R.string.staking_withdraw_time_immediate);
     }
 
     private final String getSafeWithdrawalHelpAlertText() {
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3630R.string.staking_withdraw_safe_withdrawal_help_alert_description;
+        int i = C3634R.string.staking_withdraw_safe_withdrawal_help_alert_description;
         Object[] objArr = new Object[2];
         objArr[0] = getWithdrawalTimeText();
         BalanceFormatter balanceFormatter = BalanceFormatter.INSTANCE;
@@ -1083,7 +1083,7 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
 
     private final String getWithdrawalHelpAlertText() {
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3630R.string.staking_withdraw_help_alert;
+        int i = C3634R.string.staking_withdraw_help_alert;
         Object[] objArr = new Object[3];
         objArr[0] = getWithdrawalTimeText();
         BalanceFormatter balanceFormatter = BalanceFormatter.INSTANCE;
@@ -1095,16 +1095,16 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
     }
 
     private final DialogModel getApproveConfirmationDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3630R.string.wallet_swap_process_confirm_approve_alert_title), this.resourceManager.getString(C3630R.string.wallet_swap_process_confirm_approve_alert_description, str), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.wallet_swap_process_confirm_approve_alert_action));
+        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_swap_process_confirm_approve_alert_title), this.resourceManager.getString(C3634R.string.wallet_swap_process_confirm_approve_alert_description, str), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_swap_process_confirm_approve_alert_action));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogModel getFeeDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3630R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3630R.string.common_cancel), 6, null);
+        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3634R.string.common_cancel), 6, null);
     }
 
     private final DialogModel getSendConfirmationDialogModel() {
-        return new DialogModel(this.resourceManager.getString(this.screenType.getConfirmTitleTextId()), getConfirmMessage(), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(this.screenType.getButtonTextId()));
+        return new DialogModel(this.resourceManager.getString(this.screenType.getConfirmTitleTextId()), getConfirmMessage(), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(this.screenType.getButtonTextId()));
     }
 
     private final String getConfirmMessage() {
@@ -1129,13 +1129,13 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         ResourceManager resourceManager = this.resourceManager;
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.screenType.ordinal()];
         if (i2 == 2) {
-            i = C3630R.string.staking_replenishment_success_title;
+            i = C3634R.string.staking_replenishment_success_title;
         } else if (i2 == 3) {
-            i = C3630R.string.staking_profit_success_title;
+            i = C3634R.string.staking_profit_success_title;
         } else if (this.isSafeWithdrawalSelected) {
-            i = C3630R.string.staking_withdraw_safe_success_title;
+            i = C3634R.string.staking_withdraw_safe_success_title;
         } else {
-            i = C3630R.string.staking_withdraw_immediate_success_title;
+            i = C3634R.string.staking_withdraw_immediate_success_title;
         }
         return resourceManager.getString(i);
     }
@@ -1146,13 +1146,13 @@ public final class StakingTransactionPresenter extends BasePresenter<StakingTran
         ResourceManager resourceManager = this.resourceManager;
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.screenType.ordinal()];
         if (i2 == 2) {
-            i = C3630R.string.staking_replenishment_success_description;
+            i = C3634R.string.staking_replenishment_success_description;
         } else if (i2 == 3) {
-            i = C3630R.string.staking_profit_success_description;
+            i = C3634R.string.staking_profit_success_description;
         } else if (this.isSafeWithdrawalSelected) {
-            i = C3630R.string.staking_withdraw_safe_success_description;
+            i = C3634R.string.staking_withdraw_safe_success_description;
         } else {
-            i = C3630R.string.staking_withdraw_immediate_success_description;
+            i = C3634R.string.staking_withdraw_immediate_success_description;
         }
         Object[] objArr = new Object[2];
         Double valueOf = Double.valueOf(d);

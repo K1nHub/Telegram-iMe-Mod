@@ -256,7 +256,7 @@ public class MessagingAnalytics {
             return;
         }
         try {
-            Transport transport = transportFactory.getTransport("FCM_CLIENT_EVENT_LOGGING", MessagingClientEventExtension.class, Encoding.m1121of("proto"), new Transformer() { // from class: com.google.firebase.messaging.MessagingAnalytics$$ExternalSyntheticLambda0
+            Transport transport = transportFactory.getTransport("FCM_CLIENT_EVENT_LOGGING", MessagingClientEventExtension.class, Encoding.m1122of("proto"), new Transformer() { // from class: com.google.firebase.messaging.MessagingAnalytics$$ExternalSyntheticLambda0
                 @Override // com.google.android.datatransport.Transformer
                 public final Object apply(Object obj) {
                     return ((MessagingClientEventExtension) obj).toByteArray();

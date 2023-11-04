@@ -25,10 +25,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 1444
+    .line 1445
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$RecyclerListViewInner;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
-    .line 1445
+    .line 1446
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -39,7 +39,7 @@
 .method public updateClip([I)V
     .locals 2
 
-    .line 1450
+    .line 1451
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$RecyclerListViewInner;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->access$800(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)I
@@ -54,7 +54,7 @@
 
     aput v0, p1, v1
 
-    .line 1451
+    .line 1452
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
     move-result v0

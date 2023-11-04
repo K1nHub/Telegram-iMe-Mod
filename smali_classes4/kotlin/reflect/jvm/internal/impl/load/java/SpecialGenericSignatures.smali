@@ -199,7 +199,7 @@
 
     invoke-static {v6, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v4, "java/util/Collection"
+    const-string/jumbo v4, "java/util/Collection"
 
     const-string v7, "Ljava/util/Collection;"
 
@@ -772,7 +772,7 @@
 
     invoke-static {v3, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v4, "java/util/List"
+    const-string/jumbo v4, "java/util/List"
 
     const-string/jumbo v5, "removeAt"
 

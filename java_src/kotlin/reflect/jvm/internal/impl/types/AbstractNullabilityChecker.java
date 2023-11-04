@@ -86,11 +86,11 @@ public final class AbstractNullabilityChecker {
                     } else {
                         TypeSystemContext typeSystemContext2 = typeCheckerState.getTypeSystemContext();
                         for (KotlinTypeMarker kotlinTypeMarker : typeSystemContext2.supertypes(typeSystemContext2.typeConstructor(current))) {
-                            SimpleTypeMarker mo2050transformType = supertypesPolicy2.mo2050transformType(typeCheckerState, kotlinTypeMarker);
-                            if ((typeSystemContext.isClassType(mo2050transformType) && !typeSystemContext.isMarkedNullable(mo2050transformType)) || typeSystemContext.isDefinitelyNotNullType(mo2050transformType)) {
+                            SimpleTypeMarker mo2055transformType = supertypesPolicy2.mo2055transformType(typeCheckerState, kotlinTypeMarker);
+                            if ((typeSystemContext.isClassType(mo2055transformType) && !typeSystemContext.isMarkedNullable(mo2055transformType)) || typeSystemContext.isDefinitelyNotNullType(mo2055transformType)) {
                                 typeCheckerState.clear();
                             } else {
-                                supertypesDeque.add(mo2050transformType);
+                                supertypesDeque.add(mo2055transformType);
                             }
                         }
                         continue;
@@ -140,12 +140,12 @@ public final class AbstractNullabilityChecker {
                 } else {
                     TypeSystemContext typeSystemContext2 = state.getTypeSystemContext();
                     for (KotlinTypeMarker kotlinTypeMarker : typeSystemContext2.supertypes(typeSystemContext2.typeConstructor(current))) {
-                        SimpleTypeMarker mo2050transformType = supertypesPolicy.mo2050transformType(state, kotlinTypeMarker);
-                        if (INSTANCE.isApplicableAsEndNode(state, mo2050transformType, end)) {
+                        SimpleTypeMarker mo2055transformType = supertypesPolicy.mo2055transformType(state, kotlinTypeMarker);
+                        if (INSTANCE.isApplicableAsEndNode(state, mo2055transformType, end)) {
                             state.clear();
                             return true;
                         }
-                        supertypesDeque.add(mo2050transformType);
+                        supertypesDeque.add(mo2055transformType);
                     }
                     continue;
                 }

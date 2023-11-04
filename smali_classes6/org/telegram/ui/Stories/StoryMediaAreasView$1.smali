@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryMediaAreasView;I)V
     .locals 0
 
-    .line 198
+    .line 188
     invoke-direct {p0, p2}, Lorg/telegram/ui/LocationActivity;-><init>(I)V
 
     return-void

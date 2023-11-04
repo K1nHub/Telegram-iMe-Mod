@@ -39,7 +39,7 @@ public class CommonTabsNavigationRouter<T extends MvpFragment> extends BaseNavig
                 MvpFragment fragment = navigationTab.getFragment();
                 fragment.setParentFragment(settings.getViewConfiguration().getParentFragment());
                 fragment.onViewCreated();
-                arrayList.add(TuplesKt.m144to(valueOf, fragment));
+                arrayList.add(TuplesKt.m146to(valueOf, fragment));
             }
             MapsKt__MapsKt.putAll(fragmentsStack, arrayList);
         }

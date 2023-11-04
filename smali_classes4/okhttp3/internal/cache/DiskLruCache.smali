@@ -109,17 +109,17 @@
 
     invoke-direct {v0, v1}, Lokhttp3/internal/cache/DiskLruCache$Companion;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    const-string v0, "journal"
+    const-string/jumbo v0, "journal"
 
     .line 1052
     sput-object v0, Lokhttp3/internal/cache/DiskLruCache;->JOURNAL_FILE:Ljava/lang/String;
 
-    const-string v0, "journal.tmp"
+    const-string/jumbo v0, "journal.tmp"
 
     .line 1053
     sput-object v0, Lokhttp3/internal/cache/DiskLruCache;->JOURNAL_FILE_TEMP:Ljava/lang/String;
 
-    const-string v0, "journal.bkp"
+    const-string/jumbo v0, "journal.bkp"
 
     .line 1054
     sput-object v0, Lokhttp3/internal/cache/DiskLruCache;->JOURNAL_FILE_BACKUP:Ljava/lang/String;
@@ -1257,7 +1257,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "keys must match regex [a-z0-9_-]{1,120}: \""
+    const-string/jumbo v1, "keys must match regex [a-z0-9_-]{1,120}: \""
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1860,7 +1860,7 @@
     monitor-enter p0
 
     :try_start_0
-    const-string v0, "key"
+    const-string/jumbo v0, "key"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2133,7 +2133,7 @@
     monitor-enter p0
 
     :try_start_0
-    const-string v0, "key"
+    const-string/jumbo v0, "key"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2817,7 +2817,7 @@
     monitor-enter p0
 
     :try_start_0
-    const-string v0, "key"
+    const-string/jumbo v0, "key"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

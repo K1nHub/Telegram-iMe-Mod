@@ -7,9 +7,9 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NoPermissionMusicCell.kt */
 /* renamed from: com.iMe.ui.music.NoPermissionMusicCell$requestButton$2 */
@@ -36,17 +36,17 @@ public final class NoPermissionMusicCell$requestButton$2 extends Lambda implemen
         NoPermissionMusicCell noPermissionMusicCell = this.this$0;
         final Activity activity = this.$context;
         textView.setGravity(17);
-        int m103dp = AndroidUtilities.m103dp(4.0f);
+        int m105dp = AndroidUtilities.m105dp(4.0f);
         i = noPermissionMusicCell.buttonDefaultColor;
         int color = Theme.getColor(i);
         i2 = noPermissionMusicCell.buttonPressedColor;
-        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(m103dp, color, Theme.getColor(i2)));
-        textView.setText(LocaleController.getString("PeopleNearbyAllowAccess", C3630R.string.PeopleNearbyAllowAccess));
+        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(m105dp, color, Theme.getColor(i2)));
+        textView.setText(LocaleController.getString("PeopleNearbyAllowAccess", C3634R.string.PeopleNearbyAllowAccess));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setTextSize(1, 14.0f);
         i3 = noPermissionMusicCell.buttonTextColor;
         textView.setTextColor(Theme.getColor(i3));
-        textView.setPadding(AndroidUtilities.m103dp(34.0f), 0, AndroidUtilities.m103dp(34.0f), 0);
+        textView.setPadding(AndroidUtilities.m105dp(34.0f), 0, AndroidUtilities.m105dp(34.0f), 0);
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.music.NoPermissionMusicCell$requestButton$2$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {

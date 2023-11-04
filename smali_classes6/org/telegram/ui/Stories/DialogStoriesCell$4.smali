@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/DialogStoriesCell;)V
     .locals 0
 
-    .line 285
+    .line 286
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
 
     return-void
@@ -29,12 +29,12 @@
 .method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
     .locals 1
 
-    .line 288
+    .line 289
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildLayoutPosition(Landroid/view/View;)I
 
     move-result p2
 
-    .line 289
+    .line 290
     invoke-virtual {p1}, Landroid/graphics/Rect;->setEmpty()V
 
     const/high16 p3, 0x42040000    # 33.0f
@@ -45,7 +45,7 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 291
+    .line 292
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -67,7 +67,7 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 293
+    .line 294
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

@@ -51,7 +51,7 @@
 
     iget-boolean v6, p0, Lorg/telegram/messenger/MediaDataController$$ExternalSyntheticLambda49;->f$4:Z
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$cVZ971__zYluCjDwfyMTTYJHBNk(Lorg/telegram/messenger/MediaDataController;JJLjava/util/ArrayList;Z)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$NEHRC7QL1-sO5tGfwdF8Krntjl8(Lorg/telegram/messenger/MediaDataController;JJLjava/util/ArrayList;Z)V
 
     return-void
 .end method

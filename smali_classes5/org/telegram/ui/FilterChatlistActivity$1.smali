@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilterChatlistActivity;)V
     .locals 0
 
-    .line 144
+    .line 145
     iput-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$1;->this$0:Lorg/telegram/ui/FilterChatlistActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 148
+    .line 149
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$1;->this$0:Lorg/telegram/ui/FilterChatlistActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FilterChatlistActivity;->access$000(Lorg/telegram/ui/FilterChatlistActivity;)Z
@@ -48,7 +48,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 149
+    .line 150
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$1;->this$0:Lorg/telegram/ui/FilterChatlistActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
@@ -60,7 +60,7 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 152
+    .line 153
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$1;->this$0:Lorg/telegram/ui/FilterChatlistActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FilterChatlistActivity;->access$100(Lorg/telegram/ui/FilterChatlistActivity;)F
@@ -81,14 +81,14 @@
 
     if-gez p1, :cond_1
 
-    .line 153
+    .line 154
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$1;->this$0:Lorg/telegram/ui/FilterChatlistActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FilterChatlistActivity;->access$200(Lorg/telegram/ui/FilterChatlistActivity;)V
 
     goto :goto_0
 
-    .line 154
+    .line 155
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$1;->this$0:Lorg/telegram/ui/FilterChatlistActivity;
 
@@ -108,7 +108,7 @@
 
     if-gez p1, :cond_2
 
-    .line 155
+    .line 156
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$1;->this$0:Lorg/telegram/ui/FilterChatlistActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FilterChatlistActivity;->access$300(Lorg/telegram/ui/FilterChatlistActivity;)V

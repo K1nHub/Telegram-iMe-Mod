@@ -53,13 +53,13 @@ public final class StakingWithdrawPrepareRequest {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1017m = ((ProfileData$$ExternalSyntheticBackport0.m1017m(this.stakingId) * 31) + this.amount.hashCode()) * 31;
+        int m1018m = ((ProfileData$$ExternalSyntheticBackport0.m1018m(this.stakingId) * 31) + this.amount.hashCode()) * 31;
         boolean z = this.safe;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return m1017m + i;
+        return m1018m + i;
     }
 
     public String toString() {

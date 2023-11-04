@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda102;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$4-8Cq-8OFMx5dQGLoIB6Lu6S2JE(Lorg/telegram/ui/LaunchActivity;)Lorg/koin/core/parameter/ParametersHolder;
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$ValxIGkYXqwSgqYvCO5usraIfI0(Lorg/telegram/ui/LaunchActivity;)Lorg/koin/core/parameter/ParametersHolder;
 
     move-result-object v0
 

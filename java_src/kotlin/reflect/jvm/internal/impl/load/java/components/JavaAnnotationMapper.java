@@ -38,7 +38,7 @@ public final class JavaAnnotationMapper {
         Name identifier3 = Name.identifier(AppMeasurementSdk.ConditionalUserProperty.VALUE);
         Intrinsics.checkNotNullExpressionValue(identifier3, "identifier(\"value\")");
         RETENTION_ANNOTATION_VALUE = identifier3;
-        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m144to(StandardNames.FqNames.target, JvmAnnotationNames.TARGET_ANNOTATION), TuplesKt.m144to(StandardNames.FqNames.retention, JvmAnnotationNames.RETENTION_ANNOTATION), TuplesKt.m144to(StandardNames.FqNames.mustBeDocumented, JvmAnnotationNames.DOCUMENTED_ANNOTATION));
+        mapOf = MapsKt__MapsKt.mapOf(TuplesKt.m146to(StandardNames.FqNames.target, JvmAnnotationNames.TARGET_ANNOTATION), TuplesKt.m146to(StandardNames.FqNames.retention, JvmAnnotationNames.RETENTION_ANNOTATION), TuplesKt.m146to(StandardNames.FqNames.mustBeDocumented, JvmAnnotationNames.DOCUMENTED_ANNOTATION));
         kotlinToJavaNameMap = mapOf;
     }
 

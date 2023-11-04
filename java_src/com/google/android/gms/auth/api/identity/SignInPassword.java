@@ -12,13 +12,13 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class SignInPassword extends AbstractSafeParcelable {
     public static final Parcelable.Creator<SignInPassword> CREATOR = new zbp();
-    @SafeParcelable.Field(getter = "getId", m1089id = 1)
+    @SafeParcelable.Field(getter = "getId", m1090id = 1)
     private final String zba;
-    @SafeParcelable.Field(getter = "getPassword", m1089id = 2)
+    @SafeParcelable.Field(getter = "getPassword", m1090id = 2)
     private final String zbb;
 
     @SafeParcelable.Constructor
-    public SignInPassword(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) String str2) {
+    public SignInPassword(@SafeParcelable.Param(m1089id = 1) String str, @SafeParcelable.Param(m1089id = 2) String str2) {
         this.zba = Preconditions.checkNotEmpty(((String) Preconditions.checkNotNull(str, "Account identifier cannot be null")).trim(), "Account identifier cannot be empty");
         this.zbb = Preconditions.checkNotEmpty(str2);
     }

@@ -68,7 +68,7 @@ public final class BoostInteractor {
                             }
                             Observable<Result<String>> boost = boostRepository2.boost(data2, str);
                             schedulersProvider2 = BoostInteractor.this.schedulersProvider;
-                            Observable<Result<String>> subscribeOn = boost.subscribeOn(schedulersProvider2.mo1010io());
+                            Observable<Result<String>> subscribeOn = boost.subscribeOn(schedulersProvider2.mo1011io());
                             Intrinsics.checkNotNullExpressionValue(subscribeOn, "boostRepository\n        …(schedulersProvider.io())");
                             return subscribeOn;
                         } else if (result2 instanceof Result.Error) {
@@ -82,13 +82,13 @@ public final class BoostInteractor {
                 }));
                 Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
                 schedulersProvider = BoostInteractor.this.schedulersProvider;
-                Observable subscribeOn = flatMap2.subscribeOn(schedulersProvider.mo1010io());
+                Observable subscribeOn = flatMap2.subscribeOn(schedulersProvider.mo1011io());
                 Intrinsics.checkNotNullExpressionValue(subscribeOn, "boostRepository\n        …(schedulersProvider.io())");
                 return subscribeOn;
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<String>> startWith = flatMap.subscribeOn(this.schedulersProvider.mo1010io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
+        Observable<Result<String>> startWith = flatMap.subscribeOn(this.schedulersProvider.mo1011io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "boostRepository\n        …artWith(Result.loading())");
         return startWith;
     }

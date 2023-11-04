@@ -2,7 +2,7 @@ package com.google.android.gms.common.internal;
 
 import android.content.Context;
 import android.content.res.Resources;
-import com.google.android.gms.common.C0704R;
+import com.google.android.gms.common.C0710R;
 import com.google.android.gms.common.annotation.KeepForSdk;
 /* compiled from: com.google.android.gms:play-services-basement@@18.1.0 */
 @KeepForSdk
@@ -15,7 +15,7 @@ public class StringResourceValueReader {
         Preconditions.checkNotNull(context);
         Resources resources = context.getResources();
         this.zza = resources;
-        this.zzb = resources.getResourcePackageName(C0704R.string.common_google_play_services_unknown_issue);
+        this.zzb = resources.getResourcePackageName(C0710R.string.common_google_play_services_unknown_issue);
     }
 
     @KeepForSdk

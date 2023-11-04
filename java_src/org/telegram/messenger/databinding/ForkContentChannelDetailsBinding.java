@@ -12,8 +12,8 @@ import androidx.viewbinding.ViewBindings;
 import com.google.android.flexbox.FlexboxLayout;
 import com.iMe.p030ui.custom.BigActionButton;
 import com.iMe.p030ui.topics.TopicView;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
 /* loaded from: classes4.dex */
 public final class ForkContentChannelDetailsBinding implements ViewBinding {
     public final ActionBarMenuItem buttonMore;
@@ -63,7 +63,7 @@ public final class ForkContentChannelDetailsBinding implements ViewBinding {
     }
 
     public static ForkContentChannelDetailsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_content_channel_details, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_content_channel_details, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -71,55 +71,55 @@ public final class ForkContentChannelDetailsBinding implements ViewBinding {
     }
 
     public static ForkContentChannelDetailsBinding bind(View view) {
-        int i = C3630R.C3633id.button_more;
+        int i = C3634R.C3637id.button_more;
         ActionBarMenuItem actionBarMenuItem = (ActionBarMenuItem) ViewBindings.findChildViewById(view, i);
         if (actionBarMenuItem != null) {
-            i = C3630R.C3633id.button_subscribe;
+            i = C3634R.C3637id.button_subscribe;
             BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
             if (bigActionButton != null) {
-                i = C3630R.C3633id.constraint_root;
+                i = C3634R.C3637id.constraint_root;
                 ConstraintLayout constraintLayout = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
                 if (constraintLayout != null) {
-                    i = C3630R.C3633id.constraint_tags;
+                    i = C3634R.C3637id.constraint_tags;
                     ConstraintLayout constraintLayout2 = (ConstraintLayout) ViewBindings.findChildViewById(view, i);
                     if (constraintLayout2 != null) {
-                        i = C3630R.C3633id.flexbox_tags;
+                        i = C3634R.C3637id.flexbox_tags;
                         FlexboxLayout flexboxLayout = (FlexboxLayout) ViewBindings.findChildViewById(view, i);
                         if (flexboxLayout != null) {
-                            i = C3630R.C3633id.image_avatar;
+                            i = C3634R.C3637id.image_avatar;
                             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                             if (appCompatImageView != null) {
-                                i = C3630R.C3633id.image_language;
+                                i = C3634R.C3637id.image_language;
                                 AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatImageView2 != null) {
-                                    i = C3630R.C3633id.image_tags;
+                                    i = C3634R.C3637id.image_tags;
                                     AppCompatImageView appCompatImageView3 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                     if (appCompatImageView3 != null) {
-                                        i = C3630R.C3633id.image_verified;
+                                        i = C3634R.C3637id.image_verified;
                                         AppCompatImageView appCompatImageView4 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                                         if (appCompatImageView4 != null) {
-                                            i = C3630R.C3633id.text_description;
+                                            i = C3634R.C3637id.text_description;
                                             AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                             if (appCompatTextView != null) {
-                                                i = C3630R.C3633id.text_language_title;
+                                                i = C3634R.C3637id.text_language_title;
                                                 AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                 if (appCompatTextView2 != null) {
-                                                    i = C3630R.C3633id.text_language_value;
+                                                    i = C3634R.C3637id.text_language_value;
                                                     AppCompatTextView appCompatTextView3 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                     if (appCompatTextView3 != null) {
-                                                        i = C3630R.C3633id.text_name;
+                                                        i = C3634R.C3637id.text_name;
                                                         AppCompatTextView appCompatTextView4 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                         if (appCompatTextView4 != null) {
-                                                            i = C3630R.C3633id.text_nickname;
+                                                            i = C3634R.C3637id.text_nickname;
                                                             AppCompatTextView appCompatTextView5 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                             if (appCompatTextView5 != null) {
-                                                                i = C3630R.C3633id.text_subscribers_count;
+                                                                i = C3634R.C3637id.text_subscribers_count;
                                                                 AppCompatTextView appCompatTextView6 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                 if (appCompatTextView6 != null) {
-                                                                    i = C3630R.C3633id.text_tags;
+                                                                    i = C3634R.C3637id.text_tags;
                                                                     AppCompatTextView appCompatTextView7 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                                                     if (appCompatTextView7 != null) {
-                                                                        i = C3630R.C3633id.topic;
+                                                                        i = C3634R.C3637id.topic;
                                                                         TopicView topicView = (TopicView) ViewBindings.findChildViewById(view, i);
                                                                         if (topicView != null) {
                                                                             return new ForkContentChannelDetailsBinding((NestedScrollView) view, actionBarMenuItem, bigActionButton, constraintLayout, constraintLayout2, flexboxLayout, appCompatImageView, appCompatImageView2, appCompatImageView3, appCompatImageView4, appCompatTextView, appCompatTextView2, appCompatTextView3, appCompatTextView4, appCompatTextView5, appCompatTextView6, appCompatTextView7, topicView);

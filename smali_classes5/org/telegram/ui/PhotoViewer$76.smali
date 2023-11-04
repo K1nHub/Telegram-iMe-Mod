@@ -37,7 +37,7 @@
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;Ljava/lang/String;I)V
     .locals 0
 
-    .line 18396
+    .line 18399
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iput-object p2, p0, Lorg/telegram/ui/PhotoViewer$76;->val$videoPath:Ljava/lang/String;
@@ -52,7 +52,7 @@
 .method private synthetic lambda$run$0(Ljava/lang/Runnable;[I)V
     .locals 4
 
-    .line 18424
+    .line 18427
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$4900(Lorg/telegram/ui/PhotoViewer;)Landroid/app/Activity;
@@ -71,7 +71,7 @@
 
     goto/16 :goto_1
 
-    .line 18427
+    .line 18430
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -79,7 +79,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$30402(Lorg/telegram/ui/PhotoViewer;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 18428
+    .line 18431
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v0, 0x5
@@ -90,7 +90,7 @@
 
     invoke-static {p1, v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$31502(Lorg/telegram/ui/PhotoViewer;J)J
 
-    .line 18429
+    .line 18432
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v0, 0x4
@@ -101,7 +101,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$18802(Lorg/telegram/ui/PhotoViewer;F)F
 
-    .line 18430
+    .line 18433
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v0, 0x7
@@ -110,7 +110,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$31602(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 18431
+    .line 18434
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$30600(Lorg/telegram/ui/PhotoViewer;)I
@@ -139,7 +139,7 @@
 
     invoke-static {p1, v2, v3}, Lorg/telegram/ui/PhotoViewer;->access$31702(Lorg/telegram/ui/PhotoViewer;J)J
 
-    .line 18433
+    .line 18436
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$25600(Lorg/telegram/ui/PhotoViewer;)Z
@@ -150,19 +150,19 @@
 
     if-eqz p1, :cond_4
 
-    .line 18434
+    .line 18437
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     aget p2, p2, v1
 
     invoke-static {p1, p2}, Lorg/telegram/ui/PhotoViewer;->access$31802(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 18435
+    .line 18438
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$31900(Lorg/telegram/ui/PhotoViewer;)V
 
-    .line 18437
+    .line 18440
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$20100(Lorg/telegram/ui/PhotoViewer;)I
@@ -181,7 +181,7 @@
 
     if-le p1, p2, :cond_1
 
-    .line 18438
+    .line 18441
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$29600(Lorg/telegram/ui/PhotoViewer;)I
@@ -192,7 +192,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/PhotoViewer;->access$20102(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 18441
+    .line 18444
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -235,12 +235,12 @@
 
     invoke-virtual {p1, v0, p2, v1}, Lorg/telegram/ui/Components/VideoCompressButton;->setState(ZZI)V
 
-    .line 18442
+    .line 18445
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_3
 
-    .line 18443
+    .line 18446
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -299,7 +299,7 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 18445
+    .line 18448
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -311,7 +311,7 @@
 
     goto :goto_0
 
-    .line 18447
+    .line 18450
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -343,18 +343,18 @@
 
     invoke-virtual {p1, v0, p2, v1}, Lorg/telegram/ui/Components/VideoCompressButton;->setState(ZZI)V
 
-    .line 18448
+    .line 18451
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/PhotoViewer;->access$29602(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 18451
+    .line 18454
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$18700(Lorg/telegram/ui/PhotoViewer;)V
 
-    .line 18452
+    .line 18455
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-virtual {p1}, Lorg/telegram/ui/PhotoViewer;->updateMuteButton()V
@@ -369,7 +369,7 @@
 .method public run()V
     .locals 7
 
-    .line 18399
+    .line 18402
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$30400(Lorg/telegram/ui/PhotoViewer;)Ljava/lang/Runnable;
@@ -380,7 +380,7 @@
 
     return-void
 
-    .line 18402
+    .line 18405
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$76;->val$videoPath:Ljava/lang/String;
 
@@ -392,14 +392,14 @@
 
     new-array v1, v1, [I
 
-    .line 18404
+    .line 18407
     iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$76;->val$videoPath:Ljava/lang/String;
 
     invoke-static {v2, v1}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->getVideoInfo(Ljava/lang/String;[I)V
 
     const/16 v2, 0xa
 
-    .line 18406
+    .line 18409
     aget v2, v1, v2
 
     const/4 v3, 0x1
@@ -415,7 +415,7 @@
     :cond_1
     move v2, v4
 
-    .line 18407
+    .line 18410
     :goto_0
     iget-object v5, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -437,7 +437,7 @@
     :cond_3
     invoke-static {v5, v4}, Lorg/telegram/ui/PhotoViewer;->access$25602(Lorg/telegram/ui/PhotoViewer;Z)Z
 
-    .line 18408
+    .line 18411
     iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v4, -0x1
@@ -455,7 +455,7 @@
 
     invoke-static {v2, v0}, Lorg/telegram/ui/PhotoViewer;->access$30502(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 18410
+    .line 18413
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$25600(Lorg/telegram/ui/PhotoViewer;)Z
@@ -464,7 +464,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 18411
+    .line 18414
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     aget v2, v1, v3
@@ -475,7 +475,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/ui/PhotoViewer;->access$30702(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 18412
+    .line 18415
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     const/4 v2, 0x2
@@ -488,7 +488,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/ui/PhotoViewer;->access$30902(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 18413
+    .line 18416
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$30800(Lorg/telegram/ui/PhotoViewer;)I
@@ -503,7 +503,7 @@
 
     invoke-static {v0, v2, v3}, Lorg/telegram/ui/PhotoViewer;->access$31100(Lorg/telegram/ui/PhotoViewer;II)V
 
-    .line 18414
+    .line 18417
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iget v2, p0, Lorg/telegram/ui/PhotoViewer$76;->val$compressQuality:I
@@ -517,12 +517,12 @@
     :cond_5
     invoke-static {v0, v2}, Lorg/telegram/ui/PhotoViewer;->access$20102(Lorg/telegram/ui/PhotoViewer;I)I
 
-    .line 18415
+    .line 18418
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$31300(Lorg/telegram/ui/PhotoViewer;)V
 
-    .line 18416
+    .line 18419
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$76;->val$videoPath:Ljava/lang/String;
@@ -533,7 +533,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/ui/PhotoViewer;->access$31402(Lorg/telegram/ui/PhotoViewer;Z)Z
 
-    .line 18419
+    .line 18422
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$76;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -545,7 +545,7 @@
 
     return-void
 
-    .line 18423
+    .line 18426
     :cond_7
     new-instance v0, Lorg/telegram/ui/PhotoViewer$76$$ExternalSyntheticLambda0;
 

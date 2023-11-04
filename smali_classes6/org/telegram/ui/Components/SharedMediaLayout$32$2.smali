@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout$32;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
     .locals 0
 
-    .line 5322
+    .line 5342
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$32$2;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$32;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$32$2;->val$layoutManager:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 5325
+    .line 5345
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$32$2;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$32;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/SharedMediaLayout$32;->val$finalProgressView:Landroid/view/View;
@@ -48,7 +48,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 5326
+    .line 5346
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$32$2;->val$layoutManager:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$32$2;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$32;
@@ -57,7 +57,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->stopIgnoringView(Landroid/view/View;)V
 
-    .line 5327
+    .line 5347
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$32$2;->this$1:Lorg/telegram/ui/Components/SharedMediaLayout$32;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/SharedMediaLayout$32;->val$finalListView:Lorg/telegram/ui/Components/RecyclerListView;

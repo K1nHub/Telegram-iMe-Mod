@@ -147,9 +147,9 @@ public final class StakingOperation {
     }
 
     public int hashCode() {
-        int m1017m = ((((((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.f374id) * 31) + this.stakingId) * 31) + this.transaction.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.issuer.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
+        int m1018m = ((((((((((((ProfileData$$ExternalSyntheticBackport0.m1018m(this.f374id) * 31) + this.stakingId) * 31) + this.transaction.hashCode()) * 31) + this.type.hashCode()) * 31) + this.status.hashCode()) * 31) + this.issuer.hashCode()) * 31) + this.issuedAt.hashCode()) * 31;
         String str = this.settledAt;
-        int hashCode = (m1017m + (str == null ? 0 : str.hashCode())) * 31;
+        int hashCode = (m1018m + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.failReason;
         int hashCode2 = (hashCode + (str2 == null ? 0 : str2.hashCode())) * 31;
         StakingOperationCost stakingOperationCost = this.amount;

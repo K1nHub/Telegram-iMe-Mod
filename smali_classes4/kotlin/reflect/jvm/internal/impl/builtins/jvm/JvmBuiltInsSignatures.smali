@@ -102,7 +102,7 @@
 
     move-result-object v2
 
-    const-string v4, "java/lang/annotation/Annotation.annotationType()Ljava/lang/Class;"
+    const-string/jumbo v4, "java/lang/annotation/Annotation.annotationType()Ljava/lang/Class;"
 
     invoke-static {v2, v4}, Lkotlin/collections/SetsKt;->plus(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/Set;
 
@@ -783,7 +783,7 @@
 
     move-result-object v3
 
-    const-string v4, "it.wrapperFqName.shortName().asString()"
+    const-string/jumbo v4, "it.wrapperFqName.shortName().asString()"
 
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -889,7 +889,7 @@
 
     move-result-object v6
 
-    const-string v7, "it.wrapperFqName.shortName().asString()"
+    const-string/jumbo v7, "it.wrapperFqName.shortName().asString()"
 
     invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

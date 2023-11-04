@@ -29,42 +29,45 @@
 .method public constructor <init>(Landroid/app/Activity;Z)V
     .locals 2
 
-    .line 35
+    .line 36
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 30
+    .line 31
     new-instance v0, Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-direct {v0}, Lorg/telegram/messenger/AnimationNotificationsLocker;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
-    .line 36
+    .line 37
     iput-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->activity:Landroid/app/Activity;
 
     const/16 v0, 0x700
 
-    .line 37
+    .line 38
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setSystemUiVisibility(I)V
 
     const/4 v0, 0x1
 
-    .line 38
+    .line 39
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setFitsSystemWindows(Z)V
 
-    .line 40
+    .line 41
     invoke-virtual {p1}, Landroid/app/Activity;->getRequestedOrientation()I
 
     move-result v1
 
     iput v1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->orientationBefore:I
 
-    .line 41
+    .line 42
     invoke-virtual {p1, v0}, Landroid/app/Activity;->setRequestedOrientation(I)V
+
+    .line 43
+    sput-boolean v0, Lorg/webrtc/OrientationHelper;->cameraRotationDisabled:Z
 
     if-nez p2, :cond_0
 
-    .line 43
+    .line 45
     iput-boolean v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->runEnterTransition:Z
 
     :cond_0
@@ -74,7 +77,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/voip/VoIPWindowView;)Lorg/telegram/messenger/AnimationNotificationsLocker;
     .locals 0
 
-    .line 24
+    .line 25
     iget-object p0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     return-object p0
@@ -83,7 +86,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/voip/VoIPWindowView;)I
     .locals 0
 
-    .line 24
+    .line 25
     iget p0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->orientationBefore:I
 
     return p0
@@ -94,47 +97,47 @@
 .method public createWindowLayoutParams()Landroid/view/WindowManager$LayoutParams;
     .locals 4
 
-    .line 175
+    .line 179
     new-instance v0, Landroid/view/WindowManager$LayoutParams;
 
     invoke-direct {v0}, Landroid/view/WindowManager$LayoutParams;-><init>()V
 
     const/4 v1, -0x1
 
-    .line 176
+    .line 180
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->height:I
 
     const/4 v2, -0x2
 
-    .line 177
+    .line 181
     iput v2, v0, Landroid/view/WindowManager$LayoutParams;->format:I
 
-    .line 178
+    .line 182
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->width:I
 
     const/16 v1, 0x33
 
-    .line 179
+    .line 183
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
     const/16 v1, 0x63
 
-    .line 180
+    .line 184
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->type:I
 
     const/4 v1, 0x1
 
-    .line 181
+    .line 185
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->screenOrientation:I
 
-    .line 183
+    .line 187
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x1c
 
     if-lt v2, v3, :cond_0
 
-    .line 184
+    .line 188
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->layoutInDisplayCutoutMode:I
 
     :cond_0
@@ -144,7 +147,7 @@
 
     const v1, -0x7ffcff00
 
-    .line 187
+    .line 191
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     goto :goto_0
@@ -152,10 +155,10 @@
     :cond_1
     const/high16 v1, 0x20000
 
-    .line 192
+    .line 196
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 194
+    .line 198
     :goto_0
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
@@ -173,7 +176,7 @@
 
     const-wide/16 v0, 0x96
 
-    .line 124
+    .line 126
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finish(J)V
 
     return-void
@@ -182,25 +185,25 @@
 .method public finish(J)V
     .locals 2
 
-    .line 128
+    .line 130
     iget-boolean v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finished:Z
 
     if-nez v0, :cond_1
 
     const/4 v0, 0x1
 
-    .line 129
+    .line 131
     iput-boolean v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->finished:Z
 
-    .line 130
+    .line 132
     invoke-static {}, Lorg/telegram/ui/VoIPFragment;->clearInstance()V
 
-    .line 132
+    .line 134
     iget-boolean v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->lockOnScreen:Z
 
     if-eqz v0, :cond_0
 
-    .line 134
+    .line 136
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->activity:Landroid/app/Activity;
 
@@ -212,23 +215,23 @@
 
     check-cast p1, Landroid/view/WindowManager;
 
-    .line 135
+    .line 137
     invoke-interface {p1, p0}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 140
+    .line 142
     :cond_0
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    .line 141
+    .line 143
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
 
-    .line 142
+    .line 144
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -251,7 +254,7 @@
 
     move-result-object v0
 
-    .line 158
+    .line 162
     invoke-virtual {v0, p1, p2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -273,21 +276,21 @@
 .method public finishImmediate()V
     .locals 2
 
-    .line 216
+    .line 220
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 217
+    .line 221
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->activity:Landroid/app/Activity;
 
     iget v1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->orientationBefore:I
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
-    .line 218
+    .line 222
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->activity:Landroid/app/Activity;
 
     const-string v1, "window"
@@ -300,11 +303,16 @@
 
     const/16 v1, 0x8
 
-    .line 219
+    .line 223
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 220
+    .line 224
     invoke-interface {v0, p0}, Landroid/view/WindowManager;->removeView(Landroid/view/View;)V
+
+    const/4 v0, 0x0
+
+    .line 226
+    sput-boolean v0, Lorg/webrtc/OrientationHelper;->cameraRotationDisabled:Z
 
     :cond_0
     return-void
@@ -313,7 +321,7 @@
 .method public isLockOnScreen()Z
     .locals 1
 
-    .line 201
+    .line 205
     iget-boolean v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->lockOnScreen:Z
 
     return v0
@@ -322,7 +330,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 62
+    .line 64
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -333,20 +341,20 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 52
+    .line 54
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 54
+    .line 56
     iget-boolean p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->runEnterTransition:Z
 
     if-nez p1, :cond_0
 
     const/4 p1, 0x1
 
-    .line 55
+    .line 57
     iput-boolean p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->runEnterTransition:Z
 
-    .line 56
+    .line 58
     invoke-virtual {p0}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->startEnterTransition()V
 
     :cond_0
@@ -356,7 +364,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 7
 
-    .line 71
+    .line 73
     iget-boolean v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->lockOnScreen:Z
 
     const/4 v1, 0x0
@@ -365,7 +373,7 @@
 
     return v1
 
-    .line 74
+    .line 76
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -373,33 +381,33 @@
 
     if-nez v0, :cond_2
 
-    .line 75
+    .line 77
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->startX:F
 
-    .line 76
+    .line 78
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->startY:F
 
-    .line 78
+    .line 80
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->velocityTracker:Landroid/view/VelocityTracker;
 
     if-nez p1, :cond_1
 
-    .line 79
+    .line 81
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->velocityTracker:Landroid/view/VelocityTracker;
 
-    .line 81
+    .line 83
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->velocityTracker:Landroid/view/VelocityTracker;
 
@@ -407,7 +415,7 @@
 
     goto/16 :goto_3
 
-    .line 82
+    .line 84
     :cond_2
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -423,7 +431,7 @@
 
     if-ne v0, v2, :cond_7
 
-    .line 83
+    .line 85
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
@@ -432,7 +440,7 @@
 
     sub-float/2addr v0, v1
 
-    .line 84
+    .line 86
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v1
@@ -441,7 +449,7 @@
 
     sub-float/2addr v1, v2
 
-    .line 85
+    .line 87
     iget-boolean v2, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->startDragging:Z
 
     if-nez v2, :cond_3
@@ -470,19 +478,19 @@
 
     if-lez v1, :cond_3
 
-    .line 86
+    .line 88
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->startX:F
 
-    .line 88
+    .line 90
     iput-boolean v5, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->startDragging:Z
 
     move v0, v4
 
-    .line 90
+    .line 92
     :cond_3
     iget-boolean v1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->startDragging:Z
 
@@ -497,35 +505,35 @@
     :cond_4
     move v4, v0
 
-    .line 94
+    .line 96
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->velocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v0, :cond_5
 
-    .line 95
+    .line 97
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->velocityTracker:Landroid/view/VelocityTracker;
 
-    .line 97
+    .line 99
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->velocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 98
+    .line 100
     invoke-virtual {p0, v4}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 100
+    .line 102
     :cond_6
     iget-boolean p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->startDragging:Z
 
     return p1
 
-    .line 101
+    .line 103
     :cond_7
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -541,25 +549,25 @@
 
     if-ne p1, v0, :cond_d
 
-    .line 102
+    .line 104
     :cond_8
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTranslationX()F
 
     move-result p1
 
-    .line 103
+    .line 105
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->velocityTracker:Landroid/view/VelocityTracker;
 
     if-nez v0, :cond_9
 
-    .line 104
+    .line 106
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->velocityTracker:Landroid/view/VelocityTracker;
 
-    .line 107
+    .line 109
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->velocityTracker:Landroid/view/VelocityTracker;
 
@@ -567,21 +575,21 @@
 
     invoke-virtual {v0, v2}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
 
-    .line 108
+    .line 110
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->velocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->getXVelocity()F
 
     move-result v0
 
-    .line 109
+    .line 111
     iget-object v2, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->velocityTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v2}, Landroid/view/VelocityTracker;->getYVelocity()F
 
     move-result v2
 
-    .line 111
+    .line 113
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v6
@@ -613,7 +621,7 @@
     :goto_1
     if-nez v5, :cond_c
 
-    .line 113
+    .line 115
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p1
@@ -628,7 +636,7 @@
 
     const/high16 v0, 0x43480000    # 200.0f
 
-    .line 114
+    .line 116
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v2
@@ -653,7 +661,7 @@
 
     goto :goto_2
 
-    .line 116
+    .line 118
     :cond_c
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
@@ -665,7 +673,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 118
+    .line 120
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->startDragging:Z
 
@@ -679,7 +687,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 206
+    .line 210
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getSystemUiVisibility()I
 
     move-result p1
@@ -690,7 +698,7 @@
 
     goto :goto_0
 
-    .line 208
+    .line 212
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getSystemUiVisibility()I
 
@@ -698,7 +706,7 @@
 
     and-int/lit8 p1, p1, -0x5
 
-    .line 210
+    .line 214
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setSystemUiVisibility(I)V
 
     :goto_0
@@ -708,7 +716,7 @@
 .method public setLockOnScreen(Z)V
     .locals 0
 
-    .line 171
+    .line 175
     iput-boolean p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->lockOnScreen:Z
 
     return-void
@@ -717,12 +725,12 @@
 .method public startEnterTransition()V
     .locals 3
 
-    .line 164
+    .line 168
     iget-boolean v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView;->lockOnScreen:Z
 
     if-nez v0, :cond_0
 
-    .line 165
+    .line 169
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -731,7 +739,7 @@
 
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 166
+    .line 170
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0

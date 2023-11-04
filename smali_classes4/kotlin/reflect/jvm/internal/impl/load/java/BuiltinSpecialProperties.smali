@@ -171,14 +171,14 @@
 
     aput-object v2, v0, v3
 
-    const-string v2, "keys"
+    const-string/jumbo v2, "keys"
 
     .line 20
     invoke-static {v1, v2}, Lkotlin/reflect/jvm/internal/impl/load/java/BuiltinSpecialPropertiesKt;->access$child(Lkotlin/reflect/jvm/internal/impl/name/FqName;Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
     move-result-object v2
 
-    const-string v3, "keySet"
+    const-string/jumbo v3, "keySet"
 
     invoke-static {v3}, Lkotlin/reflect/jvm/internal/impl/name/Name;->identifier(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;
 

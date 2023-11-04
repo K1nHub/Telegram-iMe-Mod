@@ -58,7 +58,7 @@ public abstract class SocialAuthResult {
         }
 
         public int hashCode() {
-            return (this.status.hashCode() * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.socialId);
+            return (this.status.hashCode() * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.socialId);
         }
 
         public String toString() {
@@ -117,7 +117,7 @@ public abstract class SocialAuthResult {
         }
 
         public int hashCode() {
-            return ProfileData$$ExternalSyntheticBackport0.m1017m(this.socialId);
+            return ProfileData$$ExternalSyntheticBackport0.m1018m(this.socialId);
         }
 
         public String toString() {

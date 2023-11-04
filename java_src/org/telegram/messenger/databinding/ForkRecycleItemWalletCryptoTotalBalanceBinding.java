@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemWalletCryptoTotalBalanceBinding implements ViewBinding {
     private ForkRecycleItemWalletCryptoTotalBalanceBinding(LinearLayout linearLayout, LinearLayout linearLayout2, AppCompatImageView appCompatImageView, AppCompatImageView appCompatImageView2, AppCompatImageView appCompatImageView3, AppCompatTextView appCompatTextView) {
@@ -19,7 +19,7 @@ public final class ForkRecycleItemWalletCryptoTotalBalanceBinding implements Vie
     }
 
     public static ForkRecycleItemWalletCryptoTotalBalanceBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_wallet_crypto_total_balance, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_recycle_item_wallet_crypto_total_balance, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -28,16 +28,16 @@ public final class ForkRecycleItemWalletCryptoTotalBalanceBinding implements Vie
 
     public static ForkRecycleItemWalletCryptoTotalBalanceBinding bind(View view) {
         LinearLayout linearLayout = (LinearLayout) view;
-        int i = C3630R.C3633id.image_wallet_crypto_eye;
+        int i = C3634R.C3637id.image_wallet_crypto_eye;
         AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
         if (appCompatImageView != null) {
-            i = C3630R.C3633id.image_wallet_crypto_tokens_settings;
+            i = C3634R.C3637id.image_wallet_crypto_tokens_settings;
             AppCompatImageView appCompatImageView2 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView2 != null) {
-                i = C3630R.C3633id.image_wallet_order_tokens;
+                i = C3634R.C3637id.image_wallet_order_tokens;
                 AppCompatImageView appCompatImageView3 = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
                 if (appCompatImageView3 != null) {
-                    i = C3630R.C3633id.text_wallet_crypto_total_balance;
+                    i = C3634R.C3637id.text_wallet_crypto_total_balance;
                     AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView != null) {
                         return new ForkRecycleItemWalletCryptoTotalBalanceBinding(linearLayout, linearLayout, appCompatImageView, appCompatImageView2, appCompatImageView3, appCompatTextView);

@@ -22,7 +22,7 @@ public class DispatchQueuePriority {
                 try {
                     countDownLatch.await();
                 } catch (InterruptedException e) {
-                    FileLog.m97e(e);
+                    FileLog.m99e(e);
                 }
             }
         }

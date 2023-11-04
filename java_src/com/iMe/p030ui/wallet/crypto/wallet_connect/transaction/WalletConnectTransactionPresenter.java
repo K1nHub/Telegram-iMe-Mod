@@ -34,7 +34,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import timber.log.Timber;
 /* compiled from: WalletConnectTransactionPresenter.kt */
 @InjectViewState
@@ -108,10 +108,10 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
     public final DialogModel getSendConfirmationDialogModel() {
         WalletConnectTransactionScreenType walletConnectTransactionScreenType = this.screenType;
         if (walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Send) {
-            return new DialogModel(this.resourceManager.getString(C3630R.string.wallet_amount_confirm_alert_title), getConfirmMessage(), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.wallet_amount_confirm_alert_ok_btn));
+            return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_amount_confirm_alert_title), getConfirmMessage(), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_amount_confirm_alert_ok_btn));
         }
         if (walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Sign) {
-            return new DialogModel(this.resourceManager.getString(C3630R.string.wallet_connect_message_sign_confirm_title), getConfirmMessage(), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.wallet_connect_transaction_button_sign));
+            return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_connect_message_sign_confirm_title), getConfirmMessage(), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.wallet_connect_transaction_button_sign));
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -150,7 +150,7 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
     }
 
     private final void subscribeToTransactionProcessingWithResultsHandle(Observable<Result<String>> observable) {
-        Observable<Result<String>> observeOn = observable.observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<String>> observeOn = observable.observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "processingObservable\n   …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -163,12 +163,12 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1666invoke(result);
+                m1671invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1666invoke(Result<? extends String> it) {
+            public final void m1671invoke(Result<? extends String> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends String> result = it;
@@ -226,7 +226,7 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
     }
 
     private final DialogModel getFeeDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3630R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3630R.string.common_cancel), 6, null);
+        return new DialogModel(this.resourceManager.getString(C3634R.string.wallet_amount_send_fee_dialog_title), null, null, this.resourceManager.getString(C3634R.string.common_cancel), 6, null);
     }
 
     private final String getConfirmMessage() {
@@ -234,11 +234,11 @@ public final class WalletConnectTransactionPresenter extends BasePresenter<Walle
         ResourceManager resourceManager = this.resourceManager;
         WalletConnectTransactionScreenType walletConnectTransactionScreenType = this.screenType;
         if (walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Send) {
-            i = C3630R.string.wallet_amount_send_confirm_alert_description;
+            i = C3634R.string.wallet_amount_send_confirm_alert_description;
         } else if (!(walletConnectTransactionScreenType instanceof WalletConnectTransactionScreenType.Sign)) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3630R.string.wallet_connect_transaction_confirm_sign_description;
+            i = C3634R.string.wallet_connect_transaction_confirm_sign_description;
         }
         return resourceManager.getString(i, BalanceFormatter.format(Double.valueOf(getAmount().doubleValue()), Integer.valueOf(getToken().getDecimals())), getToken().getTicker());
     }

@@ -18,12 +18,12 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.AvatarDrawable;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.AvatarDrawable;
 /* compiled from: CryptoBoxProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CryptoBoxProvider */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxProvider extends BaseNodeProvider<CryptoBoxItem> {
     private final int itemViewType;
     private final int layoutId;
@@ -33,7 +33,7 @@ public final class CryptoBoxProvider extends BaseNodeProvider<CryptoBoxItem> {
         Lazy lazy;
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.itemViewType = IdFabric$ViewTypes.CRYPTOBOX;
-        this.layoutId = C3630R.layout.fork_recycle_item_cryptobox;
+        this.layoutId = C3634R.layout.fork_recycle_item_cryptobox;
         lazy = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxProvider$networkIconCornerSize$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -43,7 +43,7 @@ public final class CryptoBoxProvider extends BaseNodeProvider<CryptoBoxItem> {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(ResourceManager.this.getDimens(C3630R.dimen.icon_size_default) / 2);
+                return Float.valueOf(ResourceManager.this.getDimens(C3634R.dimen.icon_size_default) / 2);
             }
         });
         this.networkIconCornerSize$delegate = lazy;
@@ -74,19 +74,19 @@ public final class CryptoBoxProvider extends BaseNodeProvider<CryptoBoxItem> {
         boolean isBlank;
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseViewHolder rippleBackground = BaseQuickAdapterExtKt.setRippleBackground(helper, C3630R.C3633id.constraint_root, true);
+        BaseViewHolder rippleBackground = BaseQuickAdapterExtKt.setRippleBackground(helper, C3634R.C3637id.constraint_root, true);
         int i = Theme.key_windowBackgroundWhiteBlackText;
-        int i2 = C3630R.C3633id.text_name;
-        int i3 = C3630R.C3633id.text_description;
+        int i2 = C3634R.C3637id.text_name;
+        int i3 = C3634R.C3637id.text_description;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(rippleBackground, i, i2, i3);
-        int i4 = C3630R.C3633id.text_creation_time;
+        int i4 = C3634R.C3637id.text_creation_time;
         BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i4, Theme.key_windowBackgroundWhiteGrayText2);
-        int i5 = C3630R.C3633id.text_status;
+        int i5 = C3634R.C3637id.text_status;
         BaseViewHolder mediumTypeface = BaseQuickAdapterExtKt.setMediumTypeface(themedTextColor2.setTextColor(i5, getContext().getColor(item.getStatusColorResId())), i2);
-        int i6 = C3630R.C3633id.image_token_logo;
+        int i6 = C3634R.C3637id.image_token_logo;
         BaseViewHolder text = BaseQuickAdapterExtKt.loadImage$default(mediumTypeface, i6, item.getTokenLogoUrl(), null, false, 12, null).setText(i2, item.getName()).setText(i3, item.getDescription()).setText(i4, item.getCreationTimeText()).setText(i5, item.getStatusText());
         isBlank = StringsKt__StringsJVMKt.isBlank(item.getDescription());
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setVisibleElseGone(text, i3, true ^ isBlank), C3630R.C3633id.image_logo, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxProvider$convert$1$1
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setVisibleElseGone(text, i3, true ^ isBlank), C3634R.C3637id.image_logo, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxProvider$convert$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -141,10 +141,10 @@ public final class CryptoBoxProvider extends BaseNodeProvider<CryptoBoxItem> {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        int i = C3630R.C3633id.text_status;
+        int i = C3634R.C3637id.text_status;
         BaseViewHolder textColor = helper.setTextColor(i, getContext().getColor(item.getStatusColorResId()));
-        int i2 = C3630R.C3633id.image_logo;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.loadImage$default(textColor, i2, item.getChatAvatarUrl(), null, false, 12, null).setText(C3630R.C3633id.text_name, item.getName()).setText(C3630R.C3633id.text_description, item.getDescription()).setText(C3630R.C3633id.text_creation_time, item.getCreationTimeText()).setText(i, item.getStatusText()), i2, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxProvider$convert$2$1
+        int i2 = C3634R.C3637id.image_logo;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.loadImage$default(textColor, i2, item.getChatAvatarUrl(), null, false, 12, null).setText(C3634R.C3637id.text_name, item.getName()).setText(C3634R.C3637id.text_description, item.getDescription()).setText(C3634R.C3637id.text_creation_time, item.getCreationTimeText()).setText(i, item.getStatusText()), i2, new Function1<AppCompatImageView, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxProvider$convert$2$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);

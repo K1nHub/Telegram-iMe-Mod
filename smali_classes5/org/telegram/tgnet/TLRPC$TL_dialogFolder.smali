@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x71bd134c
-
-
 # instance fields
 .field public folder:Lorg/telegram/tgnet/TLRPC$TL_folder;
 
@@ -20,12 +16,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
@@ -115,7 +105,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_dialogFolder;->constructor:I
+    const v0, 0x71bd134c
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 

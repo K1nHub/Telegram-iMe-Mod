@@ -12,8 +12,8 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.databinding.ForkContentTitledInputFieldBinding;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.LinkActionView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LinkActionView;
 /* compiled from: TitledInputFieldView.kt */
 /* renamed from: com.iMe.ui.custom.TitledInputFieldView */
 /* loaded from: classes3.dex */
@@ -102,8 +102,8 @@ public final class TitledInputFieldView extends FrameLayout {
     private final void setupView() {
         setupColors();
         LinkActionView inputView = getInputView();
-        int m102dp = AndroidUtilities.m102dp(-4);
-        ViewExtKt.setMargins$default(inputView, m102dp, 0, m102dp, 0, 10, null);
+        int m104dp = AndroidUtilities.m104dp(-4);
+        ViewExtKt.setMargins$default(inputView, m104dp, 0, m104dp, 0, 10, null);
         inputView.hideAvatarsContainer();
         inputView.setOptionsViewClickable(false);
         addView(this.binding.getRoot());

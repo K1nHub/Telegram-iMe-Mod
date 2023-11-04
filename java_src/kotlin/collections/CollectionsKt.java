@@ -65,6 +65,28 @@ public final class CollectionsKt extends CollectionsKt___CollectionsKt {
         return (T) CollectionsKt___CollectionsKt.lastOrNull((List<? extends Object>) list);
     }
 
+    /* JADX WARN: Failed to check method usage
+    java.lang.NullPointerException: Cannot invoke "jadx.core.dex.nodes.MethodNode.getTopParentClass()" because "m" is null
+    	at jadx.core.codegen.ClassGen.lambda$skipMethod$3(ClassGen.java:331)
+    	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:178)
+    	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+    	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+    	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+    	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+    	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+    	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+    	at jadx.core.codegen.ClassGen.skipMethod(ClassGen.java:332)
+    	at jadx.core.codegen.ClassGen.addMethod(ClassGen.java:298)
+    	at jadx.core.codegen.ClassGen.lambda$addInnerClsAndMethods$2(ClassGen.java:272)
+    	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+    	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+    	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:395)
+    	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:258)
+     */
+    public static /* bridge */ /* synthetic */ <T> List<T> listOf(T t) {
+        return CollectionsKt__CollectionsJVMKt.listOf(t);
+    }
+
     public static /* bridge */ /* synthetic */ <T extends Comparable<? super T>> T maxOrNull(Iterable<? extends T> iterable) {
         return (T) CollectionsKt___CollectionsKt.maxOrNull(iterable);
     }

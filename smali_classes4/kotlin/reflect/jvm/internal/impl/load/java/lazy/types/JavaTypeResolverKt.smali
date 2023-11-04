@@ -14,7 +14,7 @@
     .line 42
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v1, "java.lang.Class"
+    const-string/jumbo v1, "java.lang.Class"
 
     invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 

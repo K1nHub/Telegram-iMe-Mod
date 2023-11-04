@@ -22,7 +22,7 @@ public final /* synthetic */ class C$r8$wrapper$java$util$function$UnaryOperator
 
     @Override // p033j$.util.function.Function
     public /* synthetic */ Function andThen(Function function) {
-        return C$r8$wrapper$java$util$function$Function$VWRP.convert(this.f1258a.andThen(C3179K.m240a(function)));
+        return C$r8$wrapper$java$util$function$Function$VWRP.convert(this.f1258a.andThen(C3183K.m241a(function)));
     }
 
     @Override // p033j$.util.function.Function
@@ -32,6 +32,6 @@ public final /* synthetic */ class C$r8$wrapper$java$util$function$UnaryOperator
 
     @Override // p033j$.util.function.Function
     public /* synthetic */ Function compose(Function function) {
-        return C$r8$wrapper$java$util$function$Function$VWRP.convert(this.f1258a.compose(C3179K.m240a(function)));
+        return C$r8$wrapper$java$util$function$Function$VWRP.convert(this.f1258a.compose(C3183K.m241a(function)));
     }
 }

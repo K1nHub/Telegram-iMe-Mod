@@ -27,11 +27,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/StoriesController$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/Stories/StoriesController;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$PeerStories;
+    check-cast p2, Lorg/telegram/tgnet/tl/TL_stories$PeerStories;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$ctg-C49nakNmN5Yw5t9WSVX5-GQ(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/TLRPC$PeerStories;Lorg/telegram/tgnet/TLRPC$PeerStories;)I
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Stories/StoriesController;->$r8$lambda$s35_IzLT27uRalx9jLq-K0hqTAg(Lorg/telegram/ui/Stories/StoriesController;Lorg/telegram/tgnet/tl/TL_stories$PeerStories;Lorg/telegram/tgnet/tl/TL_stories$PeerStories;)I
 
     move-result p1
 

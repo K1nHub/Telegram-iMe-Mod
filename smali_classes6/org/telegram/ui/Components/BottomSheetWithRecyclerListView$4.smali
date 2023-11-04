@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$4;
-.super Lorg/telegram/ui/ActionBar/ActionBar;
+.super Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;
 .source "BottomSheetWithRecyclerListView.java"
 
 
@@ -17,59 +17,33 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;
 
-.field final synthetic val$containerView:Landroid/widget/FrameLayout;
-
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;Landroid/content/Context;Landroid/widget/FrameLayout;)V
+.method constructor <init>(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;)V
     .locals 0
 
-    .line 191
+    .line 165
     iput-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$4;->this$0:Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$4;->val$containerView:Landroid/widget/FrameLayout;
-
-    invoke-direct {p0, p2}, Lorg/telegram/ui/ActionBar/ActionBar;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public setAlpha(F)V
+.method public onItemClick(I)V
     .locals 1
 
-    .line 194
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getAlpha()F
+    const/4 v0, -0x1
 
-    move-result v0
+    if-ne p1, v0, :cond_0
 
-    cmpl-float v0, v0, p1
-
-    if-eqz v0, :cond_0
-
-    .line 195
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
-
-    .line 196
-    iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$4;->val$containerView:Landroid/widget/FrameLayout;
-
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
-
-    :cond_0
-    return-void
-.end method
-
-.method public setTag(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 202
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
-
-    .line 203
+    .line 169
     iget-object p1, p0, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView$4;->this$0:Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;->access$400(Lorg/telegram/ui/Components/BottomSheetWithRecyclerListView;)V
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
+    :cond_0
     return-void
 .end method

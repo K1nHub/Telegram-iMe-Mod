@@ -76,10 +76,10 @@
 
     move-object/from16 v5, p7
 
-    .line 1241
+    .line 1242
     invoke-direct {v0, v4}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 1210
+    .line 1211
     new-instance v4, Landroid/text/TextPaint;
 
     const/4 v6, 0x1
@@ -88,21 +88,21 @@
 
     iput-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->paint:Landroid/text/TextPaint;
 
-    .line 1211
+    .line 1212
     new-instance v4, Landroid/text/TextPaint;
 
     invoke-direct {v4, v6}, Landroid/text/TextPaint;-><init>(I)V
 
     iput-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->selectedTextPaint:Landroid/text/TextPaint;
 
-    .line 1212
+    .line 1213
     new-instance v4, Landroid/graphics/Paint;
 
     invoke-direct {v4, v6}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->selectedPaint:Landroid/graphics/Paint;
 
-    .line 1213
+    .line 1214
     new-instance v4, Landroid/graphics/Path;
 
     invoke-direct {v4}, Landroid/graphics/Path;-><init>()V
@@ -113,10 +113,10 @@
 
     new-array v4, v4, [F
 
-    .line 1214
+    .line 1215
     iput-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->radii:[F
 
-    .line 1228
+    .line 1229
     new-instance v4, Landroid/graphics/Paint;
 
     invoke-direct {v4, v6}, Landroid/graphics/Paint;-><init>(I)V
@@ -129,7 +129,7 @@
 
     iput-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightPaint:Landroid/graphics/Paint;
 
-    .line 1229
+    .line 1230
     new-instance v4, Landroid/graphics/Matrix;
 
     invoke-direct {v4}, Landroid/graphics/Matrix;-><init>()V
@@ -142,7 +142,7 @@
 
     iput-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightMatrix:Landroid/graphics/Matrix;
 
-    .line 1243
+    .line 1244
     iget-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->paint:Landroid/text/TextPaint;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_profile_tabText:I
@@ -159,7 +159,7 @@
 
     invoke-virtual {v4, v7}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 1244
+    .line 1245
     iget-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->paint:Landroid/text/TextPaint;
 
     const v7, 0x417547ae    # 15.33f
@@ -172,7 +172,7 @@
 
     invoke-virtual {v4, v7}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 1245
+    .line 1246
     iget-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->paint:Landroid/text/TextPaint;
 
     const-string v7, "fonts/rmedium.ttf"
@@ -183,7 +183,7 @@
 
     invoke-virtual {v4, v8}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 1247
+    .line 1248
     iget-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->selectedTextPaint:Landroid/text/TextPaint;
 
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText2:I
@@ -194,7 +194,7 @@
 
     invoke-virtual {v4, v8}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 1248
+    .line 1249
     iget-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->selectedTextPaint:Landroid/text/TextPaint;
 
     const/16 v8, 0x11
@@ -207,7 +207,7 @@
 
     invoke-virtual {v4, v8}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 1249
+    .line 1250
     iget-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->selectedTextPaint:Landroid/text/TextPaint;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -216,7 +216,7 @@
 
     invoke-virtual {v4, v8}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 1251
+    .line 1252
     iget-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->selectedPaint:Landroid/graphics/Paint;
 
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_unread:I
@@ -227,7 +227,7 @@
 
     invoke-virtual {v4, v8}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1253
+    .line 1254
     new-instance v9, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const/4 v4, 0x0
@@ -236,7 +236,7 @@
 
     iput-object v9, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    .line 1254
+    .line 1255
     sget-object v15, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     const v10, 0x3e99999a    # 0.3f
@@ -247,12 +247,12 @@
 
     invoke-virtual/range {v9 .. v15}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
-    .line 1255
+    .line 1256
     iget-object v8, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v8, v0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 1256
+    .line 1257
     iget-object v8, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     const v9, 0x413a8f5c    # 11.66f
@@ -265,7 +265,7 @@
 
     invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextSize(F)V
 
-    .line 1257
+    .line 1258
     iget-object v8, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -276,7 +276,7 @@
 
     invoke-virtual {v8, v9}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
-    .line 1258
+    .line 1259
     iget-object v8, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -285,21 +285,21 @@
 
     invoke-virtual {v8, v7}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1259
+    .line 1260
     iget-object v7, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v7, v6}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
     if-eqz v1, :cond_0
 
-    .line 1262
+    .line 1263
     invoke-direct {v0, v1, v4}, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->makeLayout(Ljava/lang/CharSequence;Z)Landroid/text/StaticLayout;
 
     move-result-object v1
 
     iput-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftFolder2:Landroid/text/StaticLayout;
 
-    .line 1263
+    .line 1264
     invoke-virtual {v1, v4}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v1
@@ -309,14 +309,14 @@
     :cond_0
     if-eqz v2, :cond_1
 
-    .line 1266
+    .line 1267
     invoke-direct {v0, v2, v4}, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->makeLayout(Ljava/lang/CharSequence;Z)Landroid/text/StaticLayout;
 
     move-result-object v1
 
     iput-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftFolder:Landroid/text/StaticLayout;
 
-    .line 1267
+    .line 1268
     invoke-virtual {v1, v4}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v1
@@ -326,14 +326,14 @@
     :cond_1
     move-object/from16 v1, p5
 
-    .line 1269
+    .line 1270
     invoke-direct {v0, v1, v6}, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->makeLayout(Ljava/lang/CharSequence;Z)Landroid/text/StaticLayout;
 
     move-result-object v1
 
     iput-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->middleFolder:Landroid/text/StaticLayout;
 
-    .line 1270
+    .line 1271
     invoke-virtual {v1, v4}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v1
@@ -342,14 +342,14 @@
 
     if-eqz v3, :cond_2
 
-    .line 1272
+    .line 1273
     invoke-direct {v0, v3, v4}, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->makeLayout(Ljava/lang/CharSequence;Z)Landroid/text/StaticLayout;
 
     move-result-object v1
 
     iput-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightFolder:Landroid/text/StaticLayout;
 
-    .line 1273
+    .line 1274
     invoke-virtual {v1, v4}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v1
@@ -359,21 +359,21 @@
     :cond_2
     if-eqz v5, :cond_3
 
-    .line 1276
+    .line 1277
     invoke-direct {v0, v5, v4}, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->makeLayout(Ljava/lang/CharSequence;Z)Landroid/text/StaticLayout;
 
     move-result-object v1
 
     iput-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightFolder2:Landroid/text/StaticLayout;
 
-    .line 1277
+    .line 1278
     invoke-virtual {v1, v4}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v1
 
     iput v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightFolder2Width:F
 
-    .line 1280
+    .line 1281
     :cond_3
     iget-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->radii:[F
 
@@ -395,7 +395,7 @@
 
     aput v3, v1, v4
 
-    .line 1281
+    .line 1282
     iget-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->radii:[F
 
     const/4 v3, 0x4
@@ -420,7 +420,7 @@
 
     aput v6, v1, v3
 
-    .line 1283
+    .line 1284
     new-instance v1, Landroid/graphics/LinearGradient;
 
     const/4 v9, 0x0
@@ -453,12 +453,12 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftGradient:Landroid/graphics/LinearGradient;
 
-    .line 1284
+    .line 1285
     iget-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v4, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 1285
+    .line 1286
     iget-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftPaint:Landroid/graphics/Paint;
 
     new-instance v4, Landroid/graphics/PorterDuffXfermode;
@@ -469,7 +469,7 @@
 
     invoke-virtual {v1, v4}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 1286
+    .line 1287
     new-instance v1, Landroid/graphics/LinearGradient;
 
     const/4 v7, 0x0
@@ -498,12 +498,12 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightGradient:Landroid/graphics/LinearGradient;
 
-    .line 1287
+    .line 1288
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 1288
+    .line 1289
     iget-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightPaint:Landroid/graphics/Paint;
 
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
@@ -544,7 +544,7 @@
 .method private isCountEmpty()Z
     .locals 1
 
-    .line 1398
+    .line 1399
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->getText()Ljava/lang/CharSequence;
@@ -585,7 +585,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1292
+    .line 1293
     invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -598,7 +598,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1293
+    .line 1294
     :cond_0
     sget p1, Lorg/telegram/messenger/R$string;->FilterAllChats:I
 
@@ -611,7 +611,7 @@
     :cond_1
     move-object v1, p1
 
-    .line 1295
+    .line 1296
     new-instance p1, Landroid/text/StaticLayout;
 
     if-eqz p2, :cond_2
@@ -654,10 +654,10 @@
 
     move-object/from16 v8, p1
 
-    .line 1300
+    .line 1301
     invoke-super/range {p0 .. p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 1302
+    .line 1303
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -682,7 +682,7 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 1304
+    .line 1305
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -693,7 +693,7 @@
 
     div-float v7, v1, v2
 
-    .line 1305
+    .line 1306
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
@@ -702,10 +702,10 @@
 
     div-float/2addr v1, v2
 
-    .line 1307
+    .line 1308
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1308
+    .line 1309
     iget v3, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->middleFolderWidth:F
 
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->isCountEmpty()Z
@@ -744,7 +744,7 @@
 
     sub-float v11, v7, v10
 
-    .line 1310
+    .line 1311
     iget-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->middleFolder:Landroid/text/StaticLayout;
 
     invoke-virtual {v4}, Landroid/text/StaticLayout;->getHeight()I
@@ -759,22 +759,22 @@
 
     invoke-virtual {v8, v11, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1311
+    .line 1312
     iget-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->middleFolder:Landroid/text/StaticLayout;
 
     invoke-virtual {v4, v8}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1312
+    .line 1313
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1314
+    .line 1315
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->isCountEmpty()Z
 
     move-result v4
 
     if-nez v4, :cond_1
 
-    .line 1315
+    .line 1316
     sget-object v4, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
     iget v6, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->middleFolderWidth:F
@@ -783,7 +783,7 @@
 
     const v12, 0x40951eb8    # 4.66f
 
-    .line 1316
+    .line 1317
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v12
@@ -796,7 +796,7 @@
 
     const/16 v12, 0x9
 
-    .line 1317
+    .line 1318
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
@@ -811,7 +811,7 @@
 
     add-float/2addr v14, v11
 
-    .line 1318
+    .line 1319
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v5
@@ -830,7 +830,7 @@
 
     float-to-int v5, v14
 
-    .line 1319
+    .line 1320
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v14
@@ -841,15 +841,15 @@
 
     float-to-int v14, v14
 
-    .line 1315
+    .line 1316
     invoke-virtual {v4, v6, v13, v5, v14}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1321
+    .line 1322
     sget-object v5, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {v5, v4}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 1322
+    .line 1323
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -868,7 +868,7 @@
 
     const v5, 0x3ea8f5c3    # 0.33f
 
-    .line 1324
+    .line 1325
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v5
@@ -885,12 +885,12 @@
 
     invoke-virtual {v4, v5, v6}, Landroid/graphics/Rect;->offset(II)V
 
-    .line 1325
+    .line 1326
     iget-object v5, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v5, v4}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 1326
+    .line 1327
     iget-object v4, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
@@ -898,7 +898,7 @@
     :cond_1
     const/16 v4, 0x1e
 
-    .line 1329
+    .line 1330
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -907,12 +907,12 @@
 
     sub-float v5, v11, v4
 
-    .line 1331
+    .line 1332
     iget v6, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftFolderWidth:F
 
     sub-float/2addr v5, v6
 
-    .line 1334
+    .line 1335
     iget-object v12, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftFolder2:Landroid/text/StaticLayout;
 
     const/16 v13, 0x40
@@ -931,17 +931,17 @@
 
     if-gez v6, :cond_2
 
-    .line 1335
+    .line 1336
     iget v6, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftFolder2Width:F
 
     add-float/2addr v6, v4
 
     sub-float v6, v5, v6
 
-    .line 1336
+    .line 1337
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1337
+    .line 1338
     iget-object v12, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftFolder2:Landroid/text/StaticLayout;
 
     invoke-virtual {v12}, Landroid/text/StaticLayout;->getHeight()I
@@ -964,12 +964,12 @@
 
     invoke-virtual {v8, v6, v12}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1338
+    .line 1339
     iget-object v12, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftFolder2:Landroid/text/StaticLayout;
 
     invoke-virtual {v12, v8}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1339
+    .line 1340
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     move v12, v6
@@ -979,16 +979,16 @@
     :cond_2
     move v12, v5
 
-    .line 1342
+    .line 1343
     :goto_1
     iget-object v6, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftFolder:Landroid/text/StaticLayout;
 
     if-eqz v6, :cond_3
 
-    .line 1343
+    .line 1344
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 1344
+    .line 1345
     iget-object v6, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftFolder:Landroid/text/StaticLayout;
 
     invoke-virtual {v6}, Landroid/text/StaticLayout;->getHeight()I
@@ -1011,28 +1011,28 @@
 
     invoke-virtual {v8, v5, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1345
+    .line 1346
     iget-object v5, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftFolder:Landroid/text/StaticLayout;
 
     invoke-virtual {v5, v8}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1346
+    .line 1347
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_3
     add-float/2addr v3, v11
 
-    .line 1350
+    .line 1351
     iget-object v5, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightFolder:Landroid/text/StaticLayout;
 
     if-eqz v5, :cond_4
 
-    .line 1351
+    .line 1352
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     add-float v5, v3, v4
 
-    .line 1352
+    .line 1353
     iget-object v6, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightFolder:Landroid/text/StaticLayout;
 
     invoke-virtual {v6}, Landroid/text/StaticLayout;->getHeight()I
@@ -1055,22 +1055,22 @@
 
     invoke-virtual {v8, v5, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1353
+    .line 1354
     iget-object v5, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightFolder:Landroid/text/StaticLayout;
 
     invoke-virtual {v5, v8}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1354
+    .line 1355
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1355
+    .line 1356
     iget v5, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightFolderWidth:F
 
     add-float/2addr v5, v4
 
     add-float/2addr v3, v5
 
-    .line 1358
+    .line 1359
     :cond_4
     iget-object v5, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightFolder2:Landroid/text/StaticLayout;
 
@@ -1088,12 +1088,12 @@
 
     if-gez v5, :cond_5
 
-    .line 1359
+    .line 1360
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     add-float v5, v3, v4
 
-    .line 1360
+    .line 1361
     iget-object v6, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightFolder2:Landroid/text/StaticLayout;
 
     invoke-virtual {v6}, Landroid/text/StaticLayout;->getHeight()I
@@ -1116,15 +1116,15 @@
 
     invoke-virtual {v8, v5, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1361
+    .line 1362
     iget-object v5, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightFolder2:Landroid/text/StaticLayout;
 
     invoke-virtual {v5, v8}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1362
+    .line 1363
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1363
+    .line 1364
     iget v5, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightFolder2Width:F
 
     add-float/2addr v4, v5
@@ -1134,7 +1134,7 @@
     :cond_5
     move v13, v3
 
-    .line 1366
+    .line 1367
     iget-object v3, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->middleFolder:Landroid/text/StaticLayout;
 
     invoke-virtual {v3}, Landroid/text/StaticLayout;->getHeight()I
@@ -1159,7 +1159,7 @@
 
     const/4 v2, 0x0
 
-    .line 1367
+    .line 1368
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -1178,12 +1178,12 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 1369
+    .line 1370
     iget-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
 
-    .line 1370
+    .line 1371
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/4 v2, 0x4
@@ -1216,7 +1216,7 @@
 
     invoke-virtual {v1, v3, v4, v2, v14}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 1371
+    .line 1372
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->path:Landroid/graphics/Path;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->radii:[F
@@ -1225,19 +1225,19 @@
 
     invoke-virtual {v2, v1, v3, v4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 1372
+    .line 1373
     iget-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->path:Landroid/graphics/Path;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->selectedPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v1, v2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 1374
+    .line 1375
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     const/16 v1, 0x8
 
-    .line 1375
+    .line 1376
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -1248,12 +1248,12 @@
 
     move-result v2
 
-    .line 1376
+    .line 1377
     iget-object v3, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v3}, Landroid/graphics/Matrix;->reset()V
 
-    .line 1377
+    .line 1378
     iget-object v3, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftMatrix:Landroid/graphics/Matrix;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1270,14 +1270,14 @@
 
     invoke-virtual {v3, v2, v9}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 1378
+    .line 1379
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftGradient:Landroid/graphics/LinearGradient;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->leftMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2, v3}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
 
-    .line 1380
+    .line 1381
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -1294,12 +1294,12 @@
 
     move-result v1
 
-    .line 1381
+    .line 1382
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightMatrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v2}, Landroid/graphics/Matrix;->reset()V
 
-    .line 1382
+    .line 1383
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightMatrix:Landroid/graphics/Matrix;
 
     const/16 v3, 0x58
@@ -1318,7 +1318,7 @@
 
     invoke-virtual {v2, v1, v9}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 1383
+    .line 1384
     iget-object v1, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightGradient:Landroid/graphics/LinearGradient;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->rightMatrix:Landroid/graphics/Matrix;
@@ -1329,7 +1329,7 @@
 
     const/4 v3, 0x0
 
-    .line 1385
+    .line 1386
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
@@ -1344,7 +1344,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 1386
+    .line 1387
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -1365,10 +1365,10 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 1387
+    .line 1388
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 1389
+    .line 1390
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -1379,12 +1379,12 @@
 
     if-eqz p2, :cond_0
 
-    .line 1403
+    .line 1404
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->cancelAnimation()V
 
-    .line 1405
+    .line 1406
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
@@ -1412,7 +1412,7 @@
     :goto_0
     invoke-virtual {v0, p1, p2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 1406
+    .line 1407
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -1421,7 +1421,7 @@
 .method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    .line 1394
+    .line 1395
     iget-object v0, p0, Lorg/telegram/ui/Components/FolderBottomSheet$TitleCell$FoldersPreview;->countText:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     if-eq p1, v0, :cond_1

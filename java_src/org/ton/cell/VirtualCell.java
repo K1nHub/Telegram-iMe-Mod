@@ -50,8 +50,8 @@ public final class VirtualCell implements Cell {
 
     @Override // org.ton.cell.Cell
     /* renamed from: getLevelMask-Kat384U */
-    public int mo5052getLevelMaskKat384U() {
-        return LevelMask.m5084virtualizespGXSBY(this.cell.mo5052getLevelMaskKat384U(), this.offset);
+    public int mo5206getLevelMaskKat384U() {
+        return LevelMask.m5238virtualizespGXSBY(this.cell.mo5206getLevelMaskKat384U(), this.offset);
     }
 
     @Override // org.ton.cell.Cell
@@ -61,12 +61,12 @@ public final class VirtualCell implements Cell {
 
     @Override // org.ton.cell.Cell
     public BitString hash(int i) {
-        return this.cell.hash(LevelMask.m5079getLevelimpl(LevelMask.m5072applyspGXSBY(mo5052getLevelMaskKat384U(), i)));
+        return this.cell.hash(LevelMask.m5233getLevelimpl(LevelMask.m5226applyspGXSBY(mo5206getLevelMaskKat384U(), i)));
     }
 
     @Override // org.ton.cell.Cell
     public int depth(int i) {
-        return this.cell.depth(LevelMask.m5079getLevelimpl(LevelMask.m5072applyspGXSBY(mo5052getLevelMaskKat384U(), i)));
+        return this.cell.depth(LevelMask.m5233getLevelimpl(LevelMask.m5226applyspGXSBY(mo5206getLevelMaskKat384U(), i)));
     }
 
     @Override // org.ton.cell.Cell

@@ -89,7 +89,7 @@ public class AudioDecoder {
         try {
             return this.extractor.getTrackFormat(this.trackIndex);
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
             return null;
         }
     }
@@ -98,7 +98,7 @@ public class AudioDecoder {
         try {
             return getMediaFormat().getLong("durationUs");
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
             return -1L;
         }
     }
@@ -107,7 +107,7 @@ public class AudioDecoder {
         try {
             return getMediaFormat().getInteger("sample-rate");
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
             return -1;
         }
     }
@@ -124,7 +124,7 @@ public class AudioDecoder {
         try {
             return getMediaFormat().getInteger("channel-count");
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
             return -1;
         }
     }

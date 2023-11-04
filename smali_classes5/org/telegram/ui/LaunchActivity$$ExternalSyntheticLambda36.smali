@@ -6,16 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:I
+.field public final synthetic f$0:Lorg/telegram/messenger/browser/Browser$Progress;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/browser/Browser$Progress;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda36;->f$0:I
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/messenger/browser/Browser$Progress;
 
     return-void
 .end method
@@ -25,9 +25,9 @@
 .method public final run()V
     .locals 1
 
-    iget v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda36;->f$0:I
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/messenger/browser/Browser$Progress;
 
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$YXFkwDefV-FtW6Sd83_S-DqoVW0(I)V
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$2Oj4FXDXfrihvxIJyfhGJLwmxKM(Lorg/telegram/messenger/browser/Browser$Progress;)V
 
     return-void
 .end method

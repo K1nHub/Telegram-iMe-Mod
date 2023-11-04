@@ -4,7 +4,7 @@ import android.view.View;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p042ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BaseFragment;
 /*  JADX ERROR: JadxRuntimeException in pass: ClassModifier
     jadx.core.utils.exceptions.JadxRuntimeException: Not class type: T extends org.telegram.ui.ActionBar.BaseFragment
     	at jadx.core.dex.info.ClassInfo.checkClassType(ClassInfo.java:53)

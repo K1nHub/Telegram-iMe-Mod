@@ -16,7 +16,7 @@ import kotlinx.datetime.Clock$System;
 import kotlinx.datetime.Instant;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AdnlConnection.kt */
-@DebugMetadata(m143c = "org.ton.adnl.connection.AdnlConnection$timeout$1", m142f = "AdnlConnection.kt", m141l = {37}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.ton.adnl.connection.AdnlConnection$timeout$1", m144f = "AdnlConnection.kt", m143l = {37}, m142m = "invokeSuspend")
 /* loaded from: classes6.dex */
 public final class AdnlConnection$timeout$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;
@@ -45,7 +45,7 @@ public final class AdnlConnection$timeout$1 extends SuspendLambda implements Fun
         AdnlConnection$timeout$1 adnlConnection$timeout$1;
         Function0 function0;
         AtomicRef atomicRef;
-        long m2119minus5sfh64U;
+        long m2124minus5sfh64U;
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
         int i = this.label;
         if (i == 0) {
@@ -63,16 +63,16 @@ public final class AdnlConnection$timeout$1 extends SuspendLambda implements Fun
         do {
             try {
                 atomicRef = adnlConnection$timeout$1.this$0.lastActivity;
-                m2119minus5sfh64U = ((Instant) atomicRef.getValue()).m2121plusLRDsOJo(AdnlConnection.Companion.m4917getMAX_IDLE_TIMEUwyO8pc()).m2119minus5sfh64U(Clock$System.INSTANCE.now());
+                m2124minus5sfh64U = ((Instant) atomicRef.getValue()).m2126plusLRDsOJo(AdnlConnection.Companion.m5071getMAX_IDLE_TIMEUwyO8pc()).m2124minus5sfh64U(Clock$System.INSTANCE.now());
             } catch (Throwable unused2) {
             }
-            if (Duration.m2057compareToLRDsOJo(m2119minus5sfh64U, Duration.Companion.m2087getZEROUwyO8pc()) <= 0) {
+            if (Duration.m2062compareToLRDsOJo(m2124minus5sfh64U, Duration.Companion.m2092getZEROUwyO8pc()) <= 0) {
                 function0 = adnlConnection$timeout$1.this$0.onDone;
                 function0.invoke();
                 return Unit.INSTANCE;
             }
             adnlConnection$timeout$1.label = 1;
-        } while (DelayKt.m2089delayVtjQ1oo(m2119minus5sfh64U, adnlConnection$timeout$1) != coroutine_suspended);
+        } while (DelayKt.m2094delayVtjQ1oo(m2124minus5sfh64U, adnlConnection$timeout$1) != coroutine_suspended);
         return coroutine_suspended;
     }
 }

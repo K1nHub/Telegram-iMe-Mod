@@ -8,41 +8,41 @@ public final class UInt implements Comparable<UInt> {
     private final int data;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ UInt m1966boximpl(int i) {
+    public static final /* synthetic */ UInt m1971boximpl(int i) {
         return new UInt(i);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static int m1967constructorimpl(int i) {
+    public static int m1972constructorimpl(int i) {
         return i;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m1968equalsimpl(int i, Object obj) {
-        return (obj instanceof UInt) && i == ((UInt) obj).m1971unboximpl();
+    public static boolean m1973equalsimpl(int i, Object obj) {
+        return (obj instanceof UInt) && i == ((UInt) obj).m1976unboximpl();
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m1969hashCodeimpl(int i) {
+    public static int m1974hashCodeimpl(int i) {
         return i;
     }
 
     public boolean equals(Object obj) {
-        return m1968equalsimpl(this.data, obj);
+        return m1973equalsimpl(this.data, obj);
     }
 
     public int hashCode() {
-        return m1969hashCodeimpl(this.data);
+        return m1974hashCodeimpl(this.data);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ int m1971unboximpl() {
+    public final /* synthetic */ int m1976unboximpl() {
         return this.data;
     }
 
     @Override // java.lang.Comparable
     public /* bridge */ /* synthetic */ int compareTo(UInt uInt) {
-        return UnsignedKt.uintCompare(m1971unboximpl(), uInt.m1971unboximpl());
+        return UnsignedKt.uintCompare(m1976unboximpl(), uInt.m1976unboximpl());
     }
 
     private /* synthetic */ UInt(int i) {
@@ -61,11 +61,11 @@ public final class UInt implements Comparable<UInt> {
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m1970toStringimpl(int i) {
+    public static String m1975toStringimpl(int i) {
         return String.valueOf(i & 4294967295L);
     }
 
     public String toString() {
-        return m1970toStringimpl(this.data);
+        return m1975toStringimpl(this.data);
     }
 }

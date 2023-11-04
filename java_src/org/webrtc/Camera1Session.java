@@ -230,8 +230,8 @@ public class Camera1Session implements CameraSession {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.webrtc.Camera1Session$2 */
     /* loaded from: classes6.dex */
-    public class C75712 implements Camera.PreviewCallback {
-        C75712() {
+    public class C76462 implements Camera.PreviewCallback {
+        C76462() {
         }
 
         @Override // android.hardware.Camera.PreviewCallback
@@ -250,7 +250,7 @@ public class Camera1Session implements CameraSession {
                 VideoFrame videoFrame = new VideoFrame(new NV21Buffer(bArr, Camera1Session.this.captureFormat.width, Camera1Session.this.captureFormat.height, new Runnable() { // from class: org.webrtc.Camera1Session$2$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        Camera1Session.C75712.this.lambda$onPreviewFrame$1(bArr);
+                        Camera1Session.C76462.this.lambda$onPreviewFrame$1(bArr);
                     }
                 }), Camera1Session.this.getFrameOrientation(), nanos);
                 Camera1Session.this.events.onFrameCaptured(Camera1Session.this, videoFrame);
@@ -265,7 +265,7 @@ public class Camera1Session implements CameraSession {
             Camera1Session.this.cameraThreadHandler.post(new Runnable() { // from class: org.webrtc.Camera1Session$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    Camera1Session.C75712.this.lambda$onPreviewFrame$0(bArr);
+                    Camera1Session.C76462.this.lambda$onPreviewFrame$0(bArr);
                 }
             });
         }
@@ -279,7 +279,7 @@ public class Camera1Session implements CameraSession {
     }
 
     private void listenForBytebufferFrames() {
-        this.camera.setPreviewCallbackWithBuffer(new C75712());
+        this.camera.setPreviewCallbackWithBuffer(new C76462());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

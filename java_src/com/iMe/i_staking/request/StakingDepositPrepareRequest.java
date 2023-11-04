@@ -44,7 +44,7 @@ public final class StakingDepositPrepareRequest {
     }
 
     public int hashCode() {
-        return (ProfileData$$ExternalSyntheticBackport0.m1017m(this.stakingId) * 31) + this.amount.hashCode();
+        return (ProfileData$$ExternalSyntheticBackport0.m1018m(this.stakingId) * 31) + this.amount.hashCode();
     }
 
     public String toString() {

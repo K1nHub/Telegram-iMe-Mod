@@ -33,7 +33,7 @@ public class HttpGetRequest {
         inputStream = null;
         try {
             String createUrlWithParams = createUrlWithParams(this.url, this.queryParams);
-            Logger.getLogger().m1032v("GET Request URL: " + createUrlWithParams);
+            Logger.getLogger().m1033v("GET Request URL: " + createUrlWithParams);
             httpsURLConnection = (HttpsURLConnection) new URL(createUrlWithParams).openConnection();
             try {
                 httpsURLConnection.setReadTimeout(10000);

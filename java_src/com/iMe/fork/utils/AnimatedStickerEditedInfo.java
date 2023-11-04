@@ -78,8 +78,8 @@ public final class AnimatedStickerEditedInfo extends VideoEditedInfo {
         mediaEntity.viewHeight = 640;
         mediaEntity.width = 0.75f;
         mediaEntity.height = 0.75f;
-        mediaEntity.f1577x = 0.125f;
-        mediaEntity.f1578y = 0.125f;
+        mediaEntity.f1579x = 0.125f;
+        mediaEntity.f1580y = 0.125f;
         Unit unit = Unit.INSTANCE;
         mediaEntityArr[0] = mediaEntity;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(mediaEntityArr);

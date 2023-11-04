@@ -140,7 +140,7 @@ public class zzl {
                 }
                 Logger logger = zzd;
                 String valueOf = String.valueOf(zza2);
-                logger.m1079w("isUserRecoverableError status: " + valueOf, new Object[0]);
+                logger.m1080w("isUserRecoverableError status: " + valueOf, new Object[0]);
                 throw new UserRecoverableAuthException(string, intent);
             } catch (ApiException e) {
                 zzl(e, "google accounts access request");
@@ -184,7 +184,13 @@ public class zzl {
     }
 
     /*  JADX ERROR: NullPointerException in pass: MarkMethodsForInline
-        java.lang.NullPointerException
+        java.lang.NullPointerException: Cannot invoke "jadx.core.dex.instructions.args.InsnArg.isRegister()" because "arg" is null
+        	at jadx.core.dex.instructions.args.RegisterArg.sameRegAndSVar(RegisterArg.java:173)
+        	at jadx.core.dex.instructions.args.InsnArg.isSameVar(InsnArg.java:269)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.isSyntheticAccessPattern(MarkMethodsForInline.java:118)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.inlineMth(MarkMethodsForInline.java:86)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.process(MarkMethodsForInline.java:53)
+        	at jadx.core.dex.visitors.MarkMethodsForInline.visit(MarkMethodsForInline.java:37)
         */
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* bridge */ /* synthetic */ java.lang.Object zzd(java.lang.Object r0) {
@@ -245,7 +251,7 @@ public class zzl {
             }
             throw new GoogleAuthException(string);
         }
-        zzd.m1079w("isUserRecoverableError status: ".concat(String.valueOf(zza2)), new Object[0]);
+        zzd.m1080w("isUserRecoverableError status: ".concat(String.valueOf(zza2)), new Object[0]);
         throw new UserRecoverableAuthException(string, intent);
     }
 
@@ -277,11 +283,11 @@ public class zzl {
             return Tasks.await(task);
         } catch (InterruptedException e) {
             String format = String.format("Interrupted while waiting for the task of %s to finish.", str);
-            zzd.m1079w(format, new Object[0]);
+            zzd.m1080w(format, new Object[0]);
             throw new IOException(format, e);
         } catch (CancellationException e2) {
             String format2 = String.format("Canceled while waiting for the task of %s to finish.", str);
-            zzd.m1079w(format2, new Object[0]);
+            zzd.m1080w(format2, new Object[0]);
             throw new IOException(format2, e2);
         } catch (ExecutionException e3) {
             Throwable cause = e3.getCause();
@@ -289,7 +295,7 @@ public class zzl {
                 throw ((ApiException) cause);
             }
             String format3 = String.format("Unable to get a result for %s due to ExecutionException.", str);
-            zzd.m1079w(format3, new Object[0]);
+            zzd.m1080w(format3, new Object[0]);
             throw new IOException(format3, e3);
         }
     }
@@ -298,7 +304,7 @@ public class zzl {
         if (obj != null) {
             return obj;
         }
-        zzd.m1079w("Service call returned null.", new Object[0]);
+        zzd.m1080w("Service call returned null.", new Object[0]);
         throw new IOException("Service unavailable.");
     }
 
@@ -317,7 +323,7 @@ public class zzl {
     }
 
     private static void zzl(ApiException apiException, String str) {
-        zzd.m1079w("%s failed via GoogleAuthServiceClient, falling back to previous approach:\n%s", str, Log.getStackTraceString(apiException));
+        zzd.m1080w("%s failed via GoogleAuthServiceClient, falling back to previous approach:\n%s", str, Log.getStackTraceString(apiException));
     }
 
     private static void zzm(Context context, Bundle bundle) {

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1$1;)V
     .locals 0
 
-    .line 218
+    .line 308
     iput-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1$1$1;->this$3:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1$1;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 221
+    .line 311
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 222
+    .line 312
     iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1$1$1;->this$3:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1$1;->this$2:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1;
@@ -51,7 +51,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->resetAnimation()V
 
-    .line 223
+    .line 313
     iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1$1$1;->this$3:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1$1;->this$2:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1;
@@ -66,7 +66,7 @@
 
     iput-boolean v0, p1, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateChange:Z
 
-    .line 224
+    .line 314
     iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1$1$1;->this$3:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1$1;
 
     iget-object p1, p1, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1$1;->this$2:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$1$1;

@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: SharedFlow.kt */
-@DebugMetadata(m143c = "kotlinx.coroutines.flow.SharedFlowImpl", m142f = "SharedFlow.kt", m141l = {372, 379, 382}, m140m = "collect$suspendImpl")
+@DebugMetadata(m145c = "kotlinx.coroutines.flow.SharedFlowImpl", m144f = "SharedFlow.kt", m143l = {372, 379, 382}, m142m = "collect$suspendImpl")
 /* loaded from: classes4.dex */
 public final class SharedFlowImpl$collect$1<T> extends ContinuationImpl {
     Object L$0;

@@ -853,7 +853,7 @@
 
     move-result-object v4
 
-    const-string v8, "jvmType.primitiveType"
+    const-string/jumbo v8, "jvmType.primitiveType"
 
     invoke-static {v4, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1160,7 +1160,7 @@
 
     move-result-object p1
 
-    const-string v1, "javaClassId.asSingleFqName().toUnsafe()"
+    const-string/jumbo v1, "javaClassId.asSingleFqName().toUnsafe()"
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

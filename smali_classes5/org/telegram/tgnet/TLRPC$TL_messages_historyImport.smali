@@ -3,25 +3,15 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x1662af0b
-
-
 # instance fields
 .field public id:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 11456
+    .line 11206
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -30,8 +20,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_messages_historyImport;
     .locals 1
 
-    .line 11462
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImport;->constructor:I
+    const v0, 0x1662af0b
 
     if-eq v0, p1, :cond_1
 
@@ -41,7 +30,7 @@
 
     return-object p0
 
-    .line 11464
+    .line 11214
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -67,13 +56,13 @@
 
     throw p0
 
-    .line 11469
+    .line 11219
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImport;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImport;-><init>()V
 
-    .line 11470
+    .line 11220
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImport;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -84,7 +73,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 0
 
-    .line 11475
+    .line 11225
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide p1
@@ -97,12 +86,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 11479
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImport;->constructor:I
+    const v0, 0x1662af0b
 
+    .line 11229
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 11480
+    .line 11230
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImport;->id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V

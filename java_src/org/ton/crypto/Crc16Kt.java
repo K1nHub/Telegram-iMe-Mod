@@ -14,7 +14,7 @@ public final class Crc16Kt {
         for (byte[] bArr : byteArrays) {
             for (byte b : bArr) {
                 int i = s & 65535;
-                s = UShort.m2011constructorimpl((short) (UShort.m2011constructorimpl((short) (i << 8)) ^ UShortArray.m2022getMh2AYeg(CRC16_TABLE, (b ^ (i >>> 8)) & 255)));
+                s = UShort.m2016constructorimpl((short) (UShort.m2016constructorimpl((short) (i << 8)) ^ UShortArray.m2027getMh2AYeg(CRC16_TABLE, (b ^ (i >>> 8)) & 255)));
             }
         }
         return s & 65535;

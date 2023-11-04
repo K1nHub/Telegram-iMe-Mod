@@ -52,23 +52,23 @@
 .method public constructor <init>(Lorg/telegram/ui/TopicsFragment;Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;ZZ)V
     .locals 0
 
-    .line 2864
+    .line 2872
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->this$0:Lorg/telegram/ui/TopicsFragment;
 
-    .line 2865
+    .line 2873
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/Cells/DialogCell;-><init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;ZZ)V
 
     const/4 p2, -0x1
 
-    .line 2862
+    .line 2870
     iput p2, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->position:I
 
     const/4 p2, 0x0
 
-    .line 2866
+    .line 2874
     iput-boolean p2, p0, Lorg/telegram/ui/Cells/DialogCell;->drawAvatar:Z
 
-    .line 2867
+    .line 2875
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->isInPreviewMode()Z
 
     move-result p1
@@ -87,22 +87,22 @@
 
     const/high16 p1, 0x41c00000    # 24.0f
 
-    .line 2868
+    .line 2876
     iput p1, p0, Lorg/telegram/ui/Cells/DialogCell;->chekBoxPaddingTop:F
 
     const/16 p1, 0x40
 
-    .line 2869
+    .line 2877
     iput p1, p0, Lorg/telegram/ui/Cells/DialogCell;->heightDefault:I
 
     const/16 p1, 0x4c
 
-    .line 2870
+    .line 2878
     iput p1, p0, Lorg/telegram/ui/Cells/DialogCell;->heightThreeLines:I
 
     const/4 p1, 0x1
 
-    .line 2871
+    .line 2879
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/DialogCell;->forbidVerified:Z
 
     return-void
@@ -111,7 +111,7 @@
 .method static synthetic access$2100(Lorg/telegram/ui/TopicsFragment$TopicDialogCell;)Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
     .locals 0
 
-    .line 2859
+    .line 2867
     iget-object p0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->currentTopic:Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
     return-object p0
@@ -120,7 +120,7 @@
 .method private synthetic lambda$updateHidden$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 3030
+    .line 3038
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -133,7 +133,7 @@
 
     iput p1, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->hiddenT:F
 
-    .line 3031
+    .line 3039
     invoke-direct {p0}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->setHiddenT()V
 
     return-void
@@ -142,21 +142,21 @@
 .method private setHiddenT()V
     .locals 4
 
-    .line 3042
+    .line 3050
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->forumIcon:Landroid/graphics/drawable/Drawable;
 
     instance-of v1, v0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;
 
     if-eqz v1, :cond_0
 
-    .line 3043
+    .line 3051
     check-cast v0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;
 
     iget-object v1, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_archivePullDownBackground:I
 
-    .line 3044
+    .line 3052
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
@@ -175,10 +175,10 @@
 
     move-result v1
 
-    .line 3043
+    .line 3051
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->setColor(I)V
 
-    .line 3047
+    .line 3055
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell;->topicIconInName:[Landroid/graphics/drawable/Drawable;
 
@@ -192,7 +192,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 3048
+    .line 3056
     aget-object v0, v0, v1
 
     check-cast v0, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;
@@ -201,7 +201,7 @@
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_archivePullDownBackground:I
 
-    .line 3049
+    .line 3057
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
@@ -220,10 +220,10 @@
 
     move-result v1
 
-    .line 3048
+    .line 3056
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;->setColor(I)V
 
-    .line 3052
+    .line 3060
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/DialogCell;->invalidate()V
 
@@ -233,7 +233,7 @@
 .method private updateHidden(ZZ)V
     .locals 4
 
-    .line 3017
+    .line 3025
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->hidden:Ljava/lang/Boolean;
 
     const/4 v1, 0x0
@@ -242,21 +242,21 @@
 
     move p2, v1
 
-    .line 3021
+    .line 3029
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->hiddenAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_1
 
-    .line 3022
+    .line 3030
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 3023
+    .line 3031
     iput-object v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->hiddenAnimator:Landroid/animation/ValueAnimator;
 
-    .line 3026
+    .line 3034
     :cond_1
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -274,7 +274,7 @@
 
     new-array p2, p2, [F
 
-    .line 3028
+    .line 3036
     iget v3, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->hiddenT:F
 
     aput v3, p2, v1
@@ -297,21 +297,21 @@
 
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->hiddenAnimator:Landroid/animation/ValueAnimator;
 
-    .line 3029
+    .line 3037
     new-instance p2, Lorg/telegram/ui/TopicsFragment$TopicDialogCell$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/TopicsFragment$TopicDialogCell;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 3033
+    .line 3041
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->hiddenAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 3034
+    .line 3042
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->hiddenAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -326,11 +326,11 @@
     :cond_4
     move v0, v2
 
-    .line 3036
+    .line 3044
     :goto_1
     iput v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->hiddenT:F
 
-    .line 3037
+    .line 3045
     invoke-direct {p0}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->setHiddenT()V
 
     :goto_2
@@ -342,10 +342,10 @@
 .method public buildLayout()V
     .locals 0
 
-    .line 2924
+    .line 2932
     invoke-super {p0}, Lorg/telegram/ui/Cells/DialogCell;->buildLayout()V
 
-    .line 2925
+    .line 2933
     invoke-direct {p0}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->setHiddenT()V
 
     return-void
@@ -354,7 +354,7 @@
 .method protected drawLock2()Z
     .locals 1
 
-    .line 3057
+    .line 3065
     iget-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->closed:Z
 
     return v0
@@ -363,20 +363,20 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 2930
+    .line 2938
     invoke-super {p0}, Lorg/telegram/ui/Cells/DialogCell;->onAttachedToWindow()V
 
     const/4 v0, 0x1
 
-    .line 2931
+    .line 2939
     iput-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->attached:Z
 
-    .line 2932
+    .line 2940
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 2933
+    .line 2941
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->addView(Landroid/view/View;)V
 
     :cond_0
@@ -386,20 +386,20 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 2939
+    .line 2947
     invoke-super {p0}, Lorg/telegram/ui/Cells/DialogCell;->onDetachedFromWindow()V
 
     const/4 v0, 0x0
 
-    .line 2940
+    .line 2948
     iput-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->attached:Z
 
-    .line 2941
+    .line 2949
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 2942
+    .line 2950
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->removeView(Landroid/view/View;)V
 
     :cond_0
@@ -409,7 +409,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 10
 
-    .line 2883
+    .line 2891
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/DialogCell;->inPreviewMode:Z
 
     const/4 v1, 0x0
@@ -442,10 +442,10 @@
     :goto_0
     iput v0, p0, Lorg/telegram/ui/Cells/DialogCell;->xOffset:F
 
-    .line 2884
+    .line 2892
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2885
+    .line 2893
     iget v0, p0, Lorg/telegram/ui/Cells/DialogCell;->xOffset:F
 
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isDialogsCompactModeEnabled:Z
@@ -474,7 +474,7 @@
 
     invoke-virtual {p1, v0, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2886
+    .line 2894
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
@@ -485,26 +485,26 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 2887
+    .line 2895
     invoke-super {p0, p1}, Lorg/telegram/ui/Cells/DialogCell;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 2888
+    .line 2896
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2889
+    .line 2897
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2890
+    .line 2898
     iget v0, p0, Lorg/telegram/ui/Cells/DialogCell;->translationX:F
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2891
+    .line 2899
     iget-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->drawDivider:Z
 
     if-eqz v0, :cond_4
 
-    .line 2892
+    .line 2900
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/DialogCell;->fullSeparator:Z
 
     if-eqz v0, :cond_2
@@ -518,13 +518,13 @@
 
     move-result v3
 
-    .line 2893
+    .line 2901
     :goto_2
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v0, :cond_3
 
-    .line 2894
+    .line 2902
     iget v0, p0, Lorg/telegram/ui/Cells/DialogCell;->translationX:F
 
     sub-float v5, v1, v0
@@ -564,7 +564,7 @@
     :cond_3
     int-to-float v0, v3
 
-    .line 2896
+    .line 2904
     iget v2, p0, Lorg/telegram/ui/Cells/DialogCell;->translationX:F
 
     sub-float v4, v0, v2
@@ -597,7 +597,7 @@
 
     invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 2899
+    .line 2907
     :cond_4
     :goto_3
     iget-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->isGeneral:Z
@@ -626,34 +626,34 @@
     :cond_6
     const/16 v0, 0xa
 
-    .line 2900
+    .line 2908
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    .line 2901
+    .line 2909
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     const/16 v2, 0x1c
 
-    .line 2902
+    .line 2910
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    .line 2903
+    .line 2911
     iget-object v3, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v3, :cond_8
 
-    .line 2904
+    .line 2912
     sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v4, :cond_7
 
-    .line 2905
+    .line 2913
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v4
@@ -679,10 +679,10 @@
 
     add-int/2addr v2, v0
 
-    .line 2907
+    .line 2915
     invoke-virtual {v3, v1, v0, v4, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 2909
+    .line 2917
     :goto_4
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
@@ -690,13 +690,13 @@
 
     goto :goto_6
 
-    .line 2911
+    .line 2919
     :cond_8
     sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v3, :cond_9
 
-    .line 2912
+    .line 2920
     iget-object v3, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->forumIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getWidth()I
@@ -719,7 +719,7 @@
 
     goto :goto_5
 
-    .line 2914
+    .line 2922
     :cond_9
     iget-object v3, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->forumIcon:Landroid/graphics/drawable/Drawable;
 
@@ -729,13 +729,13 @@
 
     invoke-virtual {v3, v1, v0, v4, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 2916
+    .line 2924
     :goto_5
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->forumIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2919
+    .line 2927
     :cond_a
     :goto_6
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
@@ -746,7 +746,7 @@
 .method public setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
     .locals 2
 
-    .line 2947
+    .line 2955
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-ne v0, p1, :cond_0
@@ -756,34 +756,34 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 2950
+    .line 2958
     iget-boolean v1, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->attached:Z
 
     if-eqz v1, :cond_1
 
-    .line 2951
+    .line 2959
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->removeView(Landroid/view/View;)V
 
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 2954
+    .line 2962
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_animatedEmojiTextColorFilter:Landroid/graphics/PorterDuffColorFilter;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 2956
+    .line 2964
     :cond_2
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz p1, :cond_3
 
-    .line 2957
+    .line 2965
     iget-boolean v0, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->attached:Z
 
     if-eqz v0, :cond_3
 
-    .line 2958
+    .line 2966
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->addView(Landroid/view/View;)V
 
     :cond_3
@@ -793,7 +793,7 @@
 .method public setForumIcon(Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 2963
+    .line 2971
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->forumIcon:Landroid/graphics/drawable/Drawable;
 
     return-void
@@ -802,7 +802,7 @@
 .method public setTopicIcon(Lorg/telegram/tgnet/TLRPC$TL_forumTopic;)V
     .locals 7
 
-    .line 2967
+    .line 2975
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->currentTopic:Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
 
     const/4 v0, 0x0
@@ -811,7 +811,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2968
+    .line 2976
     iget-boolean v2, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->closed:Z
 
     if-eqz v2, :cond_0
@@ -826,14 +826,14 @@
     :goto_0
     iput-boolean v2, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->closed:Z
 
-    .line 2969
+    .line 2977
     iget-boolean v2, p0, Lorg/telegram/ui/Cells/DialogCell;->inPreviewMode:Z
 
     if-eqz v2, :cond_2
 
     if-eqz p1, :cond_1
 
-    .line 2970
+    .line 2978
     iget-boolean v2, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->hidden:Z
 
     if-eqz v2, :cond_1
@@ -851,7 +851,7 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    .line 2972
+    .line 2980
     iget v2, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->id:I
 
     if-ne v2, v1, :cond_3
@@ -868,7 +868,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 2973
+    .line 2981
     iget-object v2, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v2}, Lorg/telegram/ui/TopicsFragment;->access$1800(Lorg/telegram/ui/TopicsFragment;)Landroid/view/View;
@@ -877,75 +877,75 @@
 
     if-eq p0, v2, :cond_5
 
-    .line 2974
+    .line 2982
     iget-boolean v2, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->hidden:Z
 
     if-eqz v2, :cond_4
 
-    .line 2975
+    .line 2983
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/DialogCell;->overrideSwipeAction:Z
 
-    .line 2976
+    .line 2984
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_archivePinBackground:I
 
     iput v2, p0, Lorg/telegram/ui/Cells/DialogCell;->overrideSwipeActionBackgroundColorKey:I
 
-    .line 2977
+    .line 2985
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_archiveBackground:I
 
     iput v2, p0, Lorg/telegram/ui/Cells/DialogCell;->overrideSwipeActionRevealBackgroundColorKey:I
 
     const-string v2, "Unhide"
 
-    .line 2978
+    .line 2986
     iput-object v2, p0, Lorg/telegram/ui/Cells/DialogCell;->overrideSwipeActionStringKey:Ljava/lang/String;
 
-    .line 2979
+    .line 2987
     sget v2, Lorg/telegram/messenger/R$string;->Unhide:I
 
     iput v2, p0, Lorg/telegram/ui/Cells/DialogCell;->overrideSwipeActionStringId:I
 
-    .line 2980
+    .line 2988
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_unpinArchiveDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iput-object v2, p0, Lorg/telegram/ui/Cells/DialogCell;->overrideSwipeActionDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     goto :goto_3
 
-    .line 2982
+    .line 2990
     :cond_4
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/DialogCell;->overrideSwipeAction:Z
 
-    .line 2983
+    .line 2991
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_archiveBackground:I
 
     iput v2, p0, Lorg/telegram/ui/Cells/DialogCell;->overrideSwipeActionBackgroundColorKey:I
 
-    .line 2984
+    .line 2992
     sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_archivePinBackground:I
 
     iput v2, p0, Lorg/telegram/ui/Cells/DialogCell;->overrideSwipeActionRevealBackgroundColorKey:I
 
     const-string v2, "Hide"
 
-    .line 2985
+    .line 2993
     iput-object v2, p0, Lorg/telegram/ui/Cells/DialogCell;->overrideSwipeActionStringKey:Ljava/lang/String;
 
-    .line 2986
+    .line 2994
     sget v2, Lorg/telegram/messenger/R$string;->Hide:I
 
     iput v2, p0, Lorg/telegram/ui/Cells/DialogCell;->overrideSwipeActionStringId:I
 
-    .line 2987
+    .line 2995
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_pinArchiveDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     iput-object v2, p0, Lorg/telegram/ui/Cells/DialogCell;->overrideSwipeActionDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    .line 2989
+    .line 2997
     :goto_3
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/DialogCell;->invalidate()V
 
-    .line 2992
+    .line 3000
     :cond_5
     iget-boolean v2, p0, Lorg/telegram/ui/Cells/DialogCell;->inPreviewMode:Z
 
@@ -958,15 +958,15 @@
 
     if-eqz p1, :cond_7
 
-    .line 2995
+    .line 3003
     iget v3, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->id:I
 
     if-ne v3, v1, :cond_7
 
-    .line 2996
+    .line 3004
     invoke-virtual {p0, v2}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
 
-    .line 2997
+    .line 3005
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -981,7 +981,7 @@
 
     move-result v4
 
-    invoke-static {v2, v3, v4}, Lorg/telegram/ui/Components/Forum/ForumUtilities;->createGeneralTopicDrawable(Landroid/content/Context;FI)Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;
+    invoke-static {v2, v3, v4, v0}, Lorg/telegram/ui/Components/Forum/ForumUtilities;->createGeneralTopicDrawable(Landroid/content/Context;FIZ)Lorg/telegram/ui/Components/Forum/ForumUtilities$GeneralTopicDrawable;
 
     move-result-object v2
 
@@ -992,7 +992,7 @@
     :cond_7
     if-eqz p1, :cond_a
 
-    .line 2998
+    .line 3006
     iget-wide v3, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->icon_emoji_id:J
 
     const-wide/16 v5, 0x0
@@ -1001,10 +1001,10 @@
 
     if-eqz v3, :cond_a
 
-    .line 2999
+    .line 3007
     invoke-virtual {p0, v2}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->setForumIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 3000
+    .line 3008
     iget-object v2, p0, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz v2, :cond_8
@@ -1019,7 +1019,7 @@
 
     if-eqz v2, :cond_b
 
-    .line 3001
+    .line 3009
     :cond_8
     new-instance v2, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
@@ -1053,12 +1053,12 @@
 
     goto :goto_5
 
-    .line 3004
+    .line 3012
     :cond_a
     invoke-virtual {p0, v2}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->setAnimatedEmojiDrawable(Lorg/telegram/ui/Components/AnimatedEmojiDrawable;)V
 
-    .line 3005
-    invoke-static {p1}, Lorg/telegram/ui/Components/Forum/ForumUtilities;->createTopicDrawable(Lorg/telegram/tgnet/TLRPC$TL_forumTopic;)Landroid/graphics/drawable/Drawable;
+    .line 3013
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/Forum/ForumUtilities;->createTopicDrawable(Lorg/telegram/tgnet/TLRPC$TL_forumTopic;Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -1068,7 +1068,7 @@
     :goto_5
     if-eqz p1, :cond_c
 
-    .line 3007
+    .line 3015
     iget-boolean p1, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->hidden:Z
 
     if-eqz p1, :cond_c
@@ -1078,7 +1078,7 @@
     :cond_c
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->updateHidden(ZZ)V
 
-    .line 3009
+    .line 3017
     invoke-virtual {p0}, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;->buildLayout()V
 
     return-void

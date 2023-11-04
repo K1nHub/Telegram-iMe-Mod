@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilterChatlistActivity$ListAdapter$1;Lorg/telegram/ui/Components/EditTextBoldCursor;)V
     .locals 0
 
-    .line 565
+    .line 566
     iput-object p2, p0, Lorg/telegram/ui/FilterChatlistActivity$ListAdapter$1$1;->val$editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,14 +40,14 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .locals 2
 
-    .line 575
+    .line 576
     iget-boolean v0, p0, Lorg/telegram/ui/FilterChatlistActivity$ListAdapter$1$1;->ignoreTextChange:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 578
+    .line 579
     :cond_0
     invoke-interface {p1}, Landroid/text/Editable;->length()I
 
@@ -59,22 +59,22 @@
 
     const/4 v0, 0x1
 
-    .line 579
+    .line 580
     iput-boolean v0, p0, Lorg/telegram/ui/FilterChatlistActivity$ListAdapter$1$1;->ignoreTextChange:Z
 
-    .line 580
+    .line 581
     invoke-interface {p1}, Landroid/text/Editable;->length()I
 
     move-result v0
 
     invoke-interface {p1, v1, v0}, Landroid/text/Editable;->delete(II)Landroid/text/Editable;
 
-    .line 581
+    .line 582
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$ListAdapter$1$1;->val$editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->shakeView(Landroid/view/View;)V
 
-    .line 582
+    .line 583
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$ListAdapter$1$1;->val$editText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v0, 0x3
@@ -85,7 +85,7 @@
 
     const/4 p1, 0x0
 
-    .line 583
+    .line 584
     iput-boolean p1, p0, Lorg/telegram/ui/FilterChatlistActivity$ListAdapter$1$1;->ignoreTextChange:Z
 
     :cond_1

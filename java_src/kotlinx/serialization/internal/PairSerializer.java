@@ -73,6 +73,6 @@ public final class PairSerializer<K, V> extends KeyValueSerializer<K, V, Pair<? 
 
     @Override // kotlinx.serialization.internal.KeyValueSerializer
     protected Pair<K, V> toResult(K k, V v) {
-        return kotlin.TuplesKt.m144to(k, v);
+        return kotlin.TuplesKt.m146to(k, v);
     }
 }

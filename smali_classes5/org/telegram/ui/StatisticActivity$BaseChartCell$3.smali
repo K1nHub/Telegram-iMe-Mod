@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity$BaseChartCell;)V
     .locals 0
 
-    .line 1578
+    .line 1599
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell$3;->this$0:Lorg/telegram/ui/StatisticActivity$BaseChartCell;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 1581
+    .line 1602
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell$3;->this$0:Lorg/telegram/ui/StatisticActivity$BaseChartCell;
 
     iget-object p1, p1, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
@@ -44,7 +44,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1583
+    .line 1604
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell$3;->this$0:Lorg/telegram/ui/StatisticActivity$BaseChartCell;
 
     iget-object v0, p1, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
@@ -53,38 +53,38 @@
 
     iput v1, v0, Lorg/telegram/ui/Charts/BaseChartView;->transitionMode:I
 
-    .line 1584
+    .line 1605
     iget-object p1, p1, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->zoomedChartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     iput v1, p1, Lorg/telegram/ui/Charts/BaseChartView;->transitionMode:I
 
     const/4 v2, 0x1
 
-    .line 1586
+    .line 1607
     iput-boolean v2, v0, Lorg/telegram/ui/Charts/BaseChartView;->enabled:Z
 
-    .line 1587
+    .line 1608
     iput-boolean v1, p1, Lorg/telegram/ui/Charts/BaseChartView;->enabled:Z
 
-    .line 1589
+    .line 1610
     instance-of p1, v0, Lorg/telegram/ui/Charts/StackLinearChartView;
 
     if-nez p1, :cond_0
 
-    .line 1590
+    .line 1611
     iput-boolean v2, v0, Lorg/telegram/ui/Charts/BaseChartView;->legendShowing:Z
 
-    .line 1591
+    .line 1612
     invoke-virtual {v0}, Lorg/telegram/ui/Charts/BaseChartView;->moveLegend()V
 
-    .line 1592
+    .line 1613
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell$3;->this$0:Lorg/telegram/ui/StatisticActivity$BaseChartCell;
 
     iget-object p1, p1, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Charts/BaseChartView;->animateLegend(Z)V
 
-    .line 1593
+    .line 1614
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell$3;->this$0:Lorg/telegram/ui/StatisticActivity$BaseChartCell;
 
     iget-object p1, p1, Lorg/telegram/ui/StatisticActivity$BaseChartCell;->chartView:Lorg/telegram/ui/Charts/BaseChartView;
@@ -93,14 +93,14 @@
 
     goto :goto_0
 
-    .line 1595
+    .line 1616
     :cond_0
     iput-boolean v1, v0, Lorg/telegram/ui/Charts/BaseChartView;->legendShowing:Z
 
-    .line 1596
+    .line 1617
     invoke-virtual {v0}, Lorg/telegram/ui/Charts/BaseChartView;->clearSelection()V
 
-    .line 1598
+    .line 1619
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/StatisticActivity$BaseChartCell$3;->this$0:Lorg/telegram/ui/StatisticActivity$BaseChartCell;
 

@@ -4,9 +4,9 @@ import java.util.Collection;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.ton.api.tonnode.TonNodeBlockIdExt;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ValidatorConfigGlobal.kt */
 /* loaded from: classes6.dex */
@@ -17,7 +17,7 @@ public final class ValidatorConfigGlobalTlConstructor extends TlConstructor<Vali
         super("validator.config.global zero_state:tonNode.blockIdExt init_block:tonNode.blockIdExt hardforks:(vector tonNode.blockIdExt) = validator.config.Global", null, 2, null);
     }
 
-    @Override // org.ton.p044tl.TlEncoder
+    @Override // org.ton.p045tl.TlEncoder
     public void encode(TlWriter writer, ValidatorConfigGlobal value) {
         Intrinsics.checkNotNullParameter(writer, "writer");
         Intrinsics.checkNotNullParameter(value, "value");
@@ -31,7 +31,7 @@ public final class ValidatorConfigGlobalTlConstructor extends TlConstructor<Vali
         }
     }
 
-    @Override // org.ton.p044tl.TlDecoder
+    @Override // org.ton.p045tl.TlDecoder
     public ValidatorConfigGlobal decode(TlReader reader) {
         Intrinsics.checkNotNullParameter(reader, "reader");
         TonNodeBlockIdExt.Companion companion = TonNodeBlockIdExt.Companion;

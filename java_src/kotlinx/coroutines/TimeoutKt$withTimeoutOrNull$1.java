@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Timeout.kt */
-@DebugMetadata(m143c = "kotlinx.coroutines.TimeoutKt", m142f = "Timeout.kt", m141l = {104}, m140m = "withTimeoutOrNull")
+@DebugMetadata(m145c = "kotlinx.coroutines.TimeoutKt", m144f = "Timeout.kt", m143l = {104}, m142m = "withTimeoutOrNull")
 /* loaded from: classes4.dex */
 public final class TimeoutKt$withTimeoutOrNull$1<T> extends ContinuationImpl {
     long J$0;

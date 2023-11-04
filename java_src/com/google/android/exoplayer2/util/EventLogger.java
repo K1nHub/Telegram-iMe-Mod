@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.util;
 
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.DeviceInfo;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.MediaItem;
@@ -571,11 +571,11 @@ public class EventLogger implements AnalyticsListener {
     }
 
     protected void logd(String str) {
-        Log.m1112d(this.tag, str);
+        Log.m1113d(this.tag, str);
     }
 
     protected void loge(String str) {
-        Log.m1110e(this.tag, str);
+        Log.m1111e(this.tag, str);
     }
 
     private void logd(AnalyticsListener.EventTime eventTime, String str) {
@@ -631,6 +631,6 @@ public class EventLogger implements AnalyticsListener {
     }
 
     private static String getTimeString(long j) {
-        return j == C0479C.TIME_UNSET ? "?" : TIME_FORMAT.format(((float) j) / 1000.0f);
+        return j == C0485C.TIME_UNSET ? "?" : TIME_FORMAT.format(((float) j) / 1000.0f);
     }
 }

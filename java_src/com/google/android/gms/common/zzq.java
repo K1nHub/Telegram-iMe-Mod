@@ -10,18 +10,18 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zzq extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzq> CREATOR = new zzr();
-    @SafeParcelable.Field(getter = "getResult", m1089id = 1)
+    @SafeParcelable.Field(getter = "getResult", m1090id = 1)
     private final boolean zza;
-    @SafeParcelable.Field(getter = "getErrorMessage", m1089id = 2)
+    @SafeParcelable.Field(getter = "getErrorMessage", m1090id = 2)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getStatusValue", m1089id = 3)
+    @SafeParcelable.Field(getter = "getStatusValue", m1090id = 3)
     private final int zzc;
-    @SafeParcelable.Field(getter = "getFirstPartyStatusValue", m1089id = 4)
+    @SafeParcelable.Field(getter = "getFirstPartyStatusValue", m1090id = 4)
     private final int zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzq(@SafeParcelable.Param(m1088id = 1) boolean z, @SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) int i, @SafeParcelable.Param(m1088id = 4) int i2) {
+    public zzq(@SafeParcelable.Param(m1089id = 1) boolean z, @SafeParcelable.Param(m1089id = 2) String str, @SafeParcelable.Param(m1089id = 3) int i, @SafeParcelable.Param(m1089id = 4) int i2) {
         this.zza = z;
         this.zzb = str;
         this.zzc = zzy.zza(i) - 1;

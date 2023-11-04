@@ -15,7 +15,7 @@ import org.ton.cell.Cell;
 import org.ton.cell.CellDescriptor;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BagOfCellsUtils.kt */
-@DebugMetadata(m143c = "org.ton.boc.BagOfCellsUtilsKt$readBagOfCell$3", m142f = "BagOfCellsUtils.kt", m141l = {}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.ton.boc.BagOfCellsUtilsKt$readBagOfCell$3", m144f = "BagOfCellsUtils.kt", m143l = {}, m142m = "invokeSuspend")
 /* loaded from: classes6.dex */
 public final class BagOfCellsUtilsKt$readBagOfCell$3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ BitString[] $cellBits;

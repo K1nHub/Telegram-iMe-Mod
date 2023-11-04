@@ -1,8 +1,6 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_decryptedMessage_layer45 extends TLRPC$TL_decryptedMessage {
-    public static int constructor = 917541342;
-
     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessage, org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         this.flags = abstractSerializedData.readInt32(z);
@@ -39,7 +37,7 @@ public class TLRPC$TL_decryptedMessage_layer45 extends TLRPC$TL_decryptedMessage
 
     @Override // org.telegram.tgnet.TLRPC$TL_decryptedMessage, org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(917541342);
         abstractSerializedData.writeInt32(this.flags);
         abstractSerializedData.writeInt64(this.random_id);
         abstractSerializedData.writeInt32(this.ttl);

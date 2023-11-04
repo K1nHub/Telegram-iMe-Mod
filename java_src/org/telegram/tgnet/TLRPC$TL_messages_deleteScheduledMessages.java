@@ -3,14 +3,13 @@ package org.telegram.tgnet;
 import java.util.ArrayList;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_messages_deleteScheduledMessages extends TLObject {
-    public static int constructor = 1504586518;
 
     /* renamed from: id */
-    public ArrayList<Integer> f1692id = new ArrayList<>();
+    public ArrayList<Integer> f1689id = new ArrayList<>();
     public TLRPC$InputPeer peer;
 
     public static TLRPC$TL_messages_deleteScheduledMessages TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
-        if (constructor != i) {
+        if (1504586518 != i) {
             if (z) {
                 throw new RuntimeException(String.format("can't parse magic %x in TL_messages_deleteScheduledMessages", Integer.valueOf(i)));
             }
@@ -38,19 +37,19 @@ public class TLRPC$TL_messages_deleteScheduledMessages extends TLObject {
         }
         int readInt322 = abstractSerializedData.readInt32(z);
         for (int i = 0; i < readInt322; i++) {
-            this.f1692id.add(Integer.valueOf(abstractSerializedData.readInt32(z)));
+            this.f1689id.add(Integer.valueOf(abstractSerializedData.readInt32(z)));
         }
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(1504586518);
         this.peer.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeInt32(481674261);
-        int size = this.f1692id.size();
+        int size = this.f1689id.size();
         abstractSerializedData.writeInt32(size);
         for (int i = 0; i < size; i++) {
-            abstractSerializedData.writeInt32(this.f1692id.get(i).intValue());
+            abstractSerializedData.writeInt32(this.f1689id.get(i).intValue());
         }
     }
 }

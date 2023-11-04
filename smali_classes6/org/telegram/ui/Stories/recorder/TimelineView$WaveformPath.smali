@@ -42,7 +42,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/TimelineView;)V
     .locals 0
 
-    .line 847
+    .line 862
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;->this$0:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     invoke-direct {p0}, Landroid/graphics/Path;-><init>()V
@@ -59,7 +59,7 @@
 
     move/from16 v2, p10
 
-    .line 906
+    .line 921
     iget-object v3, v0, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;->this$0:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     invoke-static {v3}, Lorg/telegram/ui/Stories/recorder/TimelineView;->access$100(Lorg/telegram/ui/Stories/recorder/TimelineView;)Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;
@@ -70,7 +70,7 @@
 
     const v3, 0x405554ca
 
-    .line 907
+    .line 922
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v3
@@ -81,7 +81,7 @@
 
     int-to-float v3, v3
 
-    .line 908
+    .line 923
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;->this$0:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     invoke-static {v4}, Lorg/telegram/ui/Stories/recorder/TimelineView;->access$200(Lorg/telegram/ui/Stories/recorder/TimelineView;)I
@@ -104,7 +104,7 @@
 
     move-result v4
 
-    .line 909
+    .line 924
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;->this$0:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     invoke-static {v5}, Lorg/telegram/ui/Stories/recorder/TimelineView;->access$000(Lorg/telegram/ui/Stories/recorder/TimelineView;)Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;
@@ -154,7 +154,7 @@
 
     const/4 v8, 0x2
 
-    .line 911
+    .line 926
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -173,7 +173,7 @@
 
     goto :goto_1
 
-    .line 912
+    .line 927
     :cond_0
     iget-object v9, v0, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;->this$0:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
@@ -243,7 +243,7 @@
     :cond_4
     const v6, 0x3f28f5c3    # 0.66f
 
-    .line 924
+    .line 939
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v6
@@ -262,7 +262,7 @@
 
     move-result v6
 
-    .line 925
+    .line 940
     sget-object v8, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     sub-float v9, v2, v6
@@ -275,14 +275,14 @@
 
     sub-float v10, v2, v10
 
-    .line 927
+    .line 942
     invoke-static {v9, v10, v1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v9
 
     const v10, 0x3fd47ae1    # 1.66f
 
-    .line 928
+    .line 943
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v10
@@ -295,15 +295,15 @@
 
     sub-float v6, v2, v6
 
-    .line 929
+    .line 944
     invoke-static {v2, v6, v1}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
     move-result v6
 
-    .line 925
+    .line 940
     invoke-virtual {v8, v7, v9, v10, v6}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 931
+    .line 946
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;->this$0:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     invoke-static {v6}, Lorg/telegram/ui/Stories/recorder/TimelineView;->access$100(Lorg/telegram/ui/Stories/recorder/TimelineView;)Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;
@@ -352,7 +352,7 @@
 
     move/from16 v10, p10
 
-    .line 869
+    .line 884
     iget-object v0, v11, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;->this$0:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->access$000(Lorg/telegram/ui/Stories/recorder/TimelineView;)Lorg/telegram/ui/Stories/recorder/TimelineView$AudioWaveformLoader;
@@ -361,12 +361,12 @@
 
     if-nez v0, :cond_0
 
-    .line 870
+    .line 885
     invoke-virtual {p0}, Landroid/graphics/Path;->rewind()V
 
     return-void
 
-    .line 873
+    .line 888
     :cond_0
     iget v0, v11, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;->lastWaveformCount:I
 
@@ -386,7 +386,7 @@
 
     sub-float/2addr v0, v5
 
-    .line 874
+    .line 889
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -407,7 +407,7 @@
 
     sub-float/2addr v0, v9
 
-    .line 876
+    .line 891
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -422,7 +422,7 @@
 
     sub-float/2addr v0, v8
 
-    .line 877
+    .line 892
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -435,7 +435,7 @@
 
     sub-float/2addr v0, v4
 
-    .line 878
+    .line 893
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -450,7 +450,7 @@
 
     sub-float/2addr v0, v10
 
-    .line 879
+    .line 894
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -463,7 +463,7 @@
 
     sub-float/2addr v0, v1
 
-    .line 880
+    .line 895
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -476,7 +476,7 @@
 
     sub-float/2addr v0, v2
 
-    .line 881
+    .line 896
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -489,7 +489,7 @@
 
     sub-float/2addr v0, v3
 
-    .line 882
+    .line 897
     invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
     move-result v0
@@ -498,7 +498,7 @@
 
     if-lez v0, :cond_2
 
-    .line 884
+    .line 899
     :cond_1
     iget-object v0, v11, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;->this$0:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
@@ -512,7 +512,7 @@
 
     iput v0, v11, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;->lastWaveformCount:I
 
-    .line 885
+    .line 900
     iput v1, v11, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;->lastStart:F
 
     iput v2, v11, Lorg/telegram/ui/Stories/recorder/TimelineView$WaveformPath;->lastLeft:F

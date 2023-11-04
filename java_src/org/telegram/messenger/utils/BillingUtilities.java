@@ -15,8 +15,12 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC$InputStorePaymentPurpose;
+import org.telegram.tgnet.TLRPC$TL_inputStorePaymentPremiumGiftCode;
+import org.telegram.tgnet.TLRPC$TL_inputStorePaymentPremiumGiveaway;
 /* loaded from: classes4.dex */
 public class BillingUtilities {
+    private static TLRPC$InputStorePaymentPurpose remPaymentPurpose;
+
     public static void extractCurrencyExp(Map<String, Integer> map) {
         if (map.isEmpty()) {
             try {
@@ -29,7 +33,7 @@ public class BillingUtilities {
                 }
                 open.close();
             } catch (Exception e) {
-                FileLog.m97e(e);
+                FileLog.m99e(e);
             }
         }
     }
@@ -40,6 +44,11 @@ public class BillingUtilities {
         tLRPC$InputStorePaymentPurpose.serializeToStream(serializedData);
         String encodeToString2 = Base64.encodeToString(serializedData.toByteArray(), 0);
         serializedData.cleanup();
+        if ((tLRPC$InputStorePaymentPurpose instanceof TLRPC$TL_inputStorePaymentPremiumGiftCode) || (tLRPC$InputStorePaymentPurpose instanceof TLRPC$TL_inputStorePaymentPremiumGiveaway)) {
+            remPaymentPurpose = tLRPC$InputStorePaymentPurpose;
+            return Pair.create(encodeToString, encodeToString);
+        }
+        remPaymentPurpose = null;
         return Pair.create(encodeToString, encodeToString2);
     }
 
@@ -56,27 +65,33 @@ public class BillingUtilities {
     public static Pair<AccountInstance, TLRPC$InputStorePaymentPurpose> extractDeveloperPayload(Purchase purchase) {
         AccountIdentifiers accountIdentifiers = purchase.getAccountIdentifiers();
         if (accountIdentifiers == null) {
-            FileLog.m100d("Billing: Extract payload. No AccountIdentifiers");
+            FileLog.m102d("Billing: Extract payload. No AccountIdentifiers");
             return null;
         }
         String obfuscatedAccountId = accountIdentifiers.getObfuscatedAccountId();
         String obfuscatedProfileId = accountIdentifiers.getObfuscatedProfileId();
         if (obfuscatedAccountId == null || obfuscatedAccountId.isEmpty() || obfuscatedProfileId == null || obfuscatedProfileId.isEmpty()) {
-            FileLog.m100d("Billing: Extract payload. Empty AccountIdentifiers");
+            FileLog.m102d("Billing: Extract payload. Empty AccountIdentifiers");
             return null;
         }
         try {
-            SerializedData serializedData = new SerializedData(Base64.decode(obfuscatedProfileId, 0));
-            TLRPC$InputStorePaymentPurpose TLdeserialize = TLRPC$InputStorePaymentPurpose.TLdeserialize(serializedData, serializedData.readInt32(true), true);
-            serializedData.cleanup();
+            TLRPC$InputStorePaymentPurpose tLRPC$InputStorePaymentPurpose = remPaymentPurpose;
+            if (tLRPC$InputStorePaymentPurpose == null) {
+                SerializedData serializedData = new SerializedData(Base64.decode(obfuscatedProfileId, 0));
+                TLRPC$InputStorePaymentPurpose TLdeserialize = TLRPC$InputStorePaymentPurpose.TLdeserialize(serializedData, serializedData.readInt32(true), true);
+                serializedData.cleanup();
+                tLRPC$InputStorePaymentPurpose = TLdeserialize;
+            } else {
+                remPaymentPurpose = null;
+            }
             AccountInstance findAccountById = findAccountById(Long.parseLong(new String(Base64.decode(obfuscatedAccountId, 0), Charsets.UTF_8)));
             if (findAccountById == null) {
-                FileLog.m100d("Billing: Extract payload. AccountInstance not found");
+                FileLog.m102d("Billing: Extract payload. AccountInstance not found");
                 return null;
             }
-            return Pair.create(findAccountById, TLdeserialize);
+            return Pair.create(findAccountById, tLRPC$InputStorePaymentPurpose);
         } catch (Exception e) {
-            FileLog.m98e("Billing: Extract Payload", e);
+            FileLog.m100e("Billing: Extract Payload", e);
             return null;
         }
     }

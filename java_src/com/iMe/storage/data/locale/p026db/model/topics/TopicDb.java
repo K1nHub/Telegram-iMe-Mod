@@ -29,9 +29,9 @@ public final class TopicDb {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1017m = ProfileData$$ExternalSyntheticBackport0.m1017m(this.topicId) * 31;
+        int m1018m = ProfileData$$ExternalSyntheticBackport0.m1018m(this.topicId) * 31;
         String str = this.name;
-        int hashCode = (m1017m + (str == null ? 0 : str.hashCode())) * 31;
+        int hashCode = (m1018m + (str == null ? 0 : str.hashCode())) * 31;
         String str2 = this.icon;
         int hashCode2 = (((hashCode + (str2 != null ? str2.hashCode() : 0)) * 31) + this.order) * 31;
         boolean z = this.isHidden;
@@ -39,7 +39,7 @@ public final class TopicDb {
         if (z != 0) {
             i = 1;
         }
-        return ((((((hashCode2 + i) * 31) + this.presets.hashCode()) * 31) + this.dialogs.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.userId);
+        return ((((((hashCode2 + i) * 31) + this.presets.hashCode()) * 31) + this.dialogs.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.userId);
     }
 
     public String toString() {

@@ -22,11 +22,11 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkContentCryptoboxSuspensionBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CryptoBoxSuspensionBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.cryptobox.suspension.CryptoBoxSuspensionBottomSheetDialog */
 /* loaded from: classes3.dex */
@@ -38,12 +38,12 @@ public final class CryptoBoxSuspensionBottomSheetDialog extends MvpBottomSheet i
     private final MoxyKtxDelegate presenter$delegate;
     private final Lazy resourceManager$delegate;
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return true;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithTouchOutside() {
         return true;
     }
@@ -53,7 +53,7 @@ public final class CryptoBoxSuspensionBottomSheetDialog extends MvpBottomSheet i
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public CryptoBoxSuspensionBottomSheetDialog(final com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxTransactionAction r5, org.telegram.p042ui.ActionBar.BaseFragment r6) {
+    public CryptoBoxSuspensionBottomSheetDialog(final com.iMe.storage.domain.model.crypto.cryptobox.CryptoBoxTransactionAction r5, org.telegram.p043ui.ActionBar.BaseFragment r6) {
         /*
             r4 = this;
             java.lang.String r0 = "transactionAction"
@@ -138,13 +138,13 @@ public final class CryptoBoxSuspensionBottomSheetDialog extends MvpBottomSheet i
 
     @Override // com.iMe.p030ui.wallet.cryptobox.suspension.CryptoBoxSuspensionView
     public void showTransactionSuccess() {
-        DialogsFactoryKt.showSuccessAlert$default(this.fragment, getResourceManager().getString(C3630R.string.status_ok), getResourceManager().getString(C3630R.string.cryptobox_stop_success), getResourceManager().getString(C3630R.string.common_ok), null, 8, null);
+        DialogsFactoryKt.showSuccessAlert$default(this.fragment, getResourceManager().getString(C3634R.string.status_ok), getResourceManager().getString(C3634R.string.cryptobox_stop_success), getResourceManager().getString(C3634R.string.common_ok), null, 8, null);
     }
 
     @Override // com.iMe.p030ui.wallet.cryptobox.suspension.CryptoBoxSuspensionView
     public void showTransactionError(String message) {
         Intrinsics.checkNotNullParameter(message, "message");
-        DialogsFactoryKt.showErrorAlert$default(this.fragment, getResourceManager().getString(C3630R.string.common_error), message, getResourceManager().getString(C3630R.string.common_ok), null, 8, null);
+        DialogsFactoryKt.showErrorAlert$default(this.fragment, getResourceManager().getString(C3634R.string.common_error), message, getResourceManager().getString(C3634R.string.common_ok), null, 8, null);
     }
 
     private final void setupColors() {
@@ -167,12 +167,12 @@ public final class CryptoBoxSuspensionBottomSheetDialog extends MvpBottomSheet i
 
     private final void setupViews() {
         ForkContentCryptoboxSuspensionBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3630R.string.cryptobox_stop_confirmation_title));
-        binding.textDescription.setText(AndroidUtilities.replaceTags(getResourceManager().getString(C3630R.string.cryptobox_stop_confirmation_description)));
-        binding.buttonProcess.setText(getResourceManager().getString(C3630R.string.cryptobox_details_stop));
+        binding.textTitle.setText(getResourceManager().getString(C3634R.string.cryptobox_stop_confirmation_title));
+        binding.textDescription.setText(AndroidUtilities.replaceTags(getResourceManager().getString(C3634R.string.cryptobox_stop_confirmation_description)));
+        binding.buttonProcess.setText(getResourceManager().getString(C3634R.string.cryptobox_details_stop));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3630R.C3632drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3634R.C3636drawable.ic_close_white);
     }
 
     private final void setupListeners() {

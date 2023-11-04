@@ -1,9 +1,9 @@
 package org.ton.lite.api.liteserver.functions;
 
 import kotlin.jvm.internal.Intrinsics;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: LiteServerSendMessage.kt */
 /* loaded from: classes6.dex */
 final class LiteServerSendMessageTlConstructor extends TlConstructor<LiteServerSendMessage> {
@@ -13,13 +13,13 @@ final class LiteServerSendMessageTlConstructor extends TlConstructor<LiteServerS
         super("liteServer.sendMessage body:bytes = liteServer.SendMsgStatus", null, 2, null);
     }
 
-    @Override // org.ton.p044tl.TlDecoder
+    @Override // org.ton.p045tl.TlDecoder
     public LiteServerSendMessage decode(TlReader reader) {
         Intrinsics.checkNotNullParameter(reader, "reader");
         return new LiteServerSendMessage(reader.readBytes());
     }
 
-    @Override // org.ton.p044tl.TlEncoder
+    @Override // org.ton.p045tl.TlEncoder
     public void encode(TlWriter writer, LiteServerSendMessage value) {
         Intrinsics.checkNotNullParameter(writer, "writer");
         Intrinsics.checkNotNullParameter(value, "value");

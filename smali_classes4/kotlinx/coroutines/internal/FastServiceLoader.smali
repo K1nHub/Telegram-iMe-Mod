@@ -173,7 +173,7 @@
 
     move-result-object v0
 
-    const-string v1, "jar"
+    const-string/jumbo v1, "jar"
 
     const/4 v2, 0x0
 
@@ -188,7 +188,7 @@
 
     if-eqz v1, :cond_0
 
-    const-string p1, "jar:file:"
+    const-string/jumbo p1, "jar:file:"
 
     .line 114
     invoke-static {v0, p1, v4, v3, v4}, Lkotlin/text/StringsKt;->substringAfter$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Ljava/lang/String;

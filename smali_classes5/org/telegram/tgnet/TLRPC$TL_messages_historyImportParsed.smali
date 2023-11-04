@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x5e0fb7b9
-
-
 # instance fields
 .field public flags:I
 
@@ -18,16 +14,10 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 3626
+    .line 3273
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -36,8 +26,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;
     .locals 1
 
-    .line 3635
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;->constructor:I
+    const v0, 0x5e0fb7b9
 
     if-eq v0, p1, :cond_1
 
@@ -47,7 +36,7 @@
 
     return-object p0
 
-    .line 3637
+    .line 3284
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -73,13 +62,13 @@
 
     throw p0
 
-    .line 3642
+    .line 3289
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;-><init>()V
 
-    .line 3643
+    .line 3290
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -90,7 +79,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 3648
+    .line 3295
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -112,7 +101,7 @@
     :cond_0
     move v1, v2
 
-    .line 3649
+    .line 3296
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;->pm:Z
 
@@ -122,7 +111,7 @@
 
     move v2, v3
 
-    .line 3650
+    .line 3297
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;->group:Z
 
@@ -130,7 +119,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 3652
+    .line 3299
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -144,12 +133,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 3657
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;->constructor:I
+    const v0, 0x5e0fb7b9
 
+    .line 3304
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 3658
+    .line 3305
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;->pm:Z
 
     if-eqz v0, :cond_0
@@ -168,7 +157,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;->flags:I
 
-    .line 3659
+    .line 3306
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;->group:Z
 
     if-eqz v1, :cond_1
@@ -183,17 +172,17 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;->flags:I
 
-    .line 3660
+    .line 3307
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 3661
+    .line 3308
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;->flags:I
 
     and-int/lit8 v0, v0, 0x4
 
     if-eqz v0, :cond_2
 
-    .line 3662
+    .line 3309
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_historyImportParsed;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

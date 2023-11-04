@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InviteMembersBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 287
+    .line 290
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$2;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
     invoke-direct {p0, p2}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
@@ -35,17 +35,17 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 291
+    .line 294
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 292
+    .line 295
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 294
+    .line 297
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v1
@@ -56,7 +56,7 @@
 
     goto :goto_0
 
-    .line 297
+    .line 300
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$2;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 
@@ -70,7 +70,7 @@
 
     goto :goto_1
 
-    .line 295
+    .line 298
     :cond_1
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$2;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
@@ -83,7 +83,7 @@
 
     invoke-static {p2, v0}, Lorg/telegram/ui/Components/InviteMembersBottomSheet;->access$502(Lorg/telegram/ui/Components/InviteMembersBottomSheet;I)I
 
-    .line 299
+    .line 302
     :goto_1
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteMembersBottomSheet$2;->this$0:Lorg/telegram/ui/Components/InviteMembersBottomSheet;
 

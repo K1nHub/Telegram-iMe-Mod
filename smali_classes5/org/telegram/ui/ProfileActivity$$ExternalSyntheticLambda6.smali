@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/Cells/TextCheckCell;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$jbkLK5Fh7aomwJmYV_1upWSXPlA(Lorg/telegram/ui/Cells/TextCheckCell;Landroid/content/DialogInterface;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$BK7D1Vq8I9T9oj-8GnSR76_hY1c(Lorg/telegram/ui/Cells/TextCheckCell;Landroid/content/DialogInterface;)V
 
     return-void
 .end method

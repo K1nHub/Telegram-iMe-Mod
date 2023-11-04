@@ -83,12 +83,12 @@ public abstract class ImmutableMap<K, V> implements Map<K, V>, Serializable, p03
     }
 
     /* renamed from: of */
-    public static <K, V> ImmutableMap<K, V> m1047of() {
+    public static <K, V> ImmutableMap<K, V> m1048of() {
         return (ImmutableMap<K, V>) RegularImmutableMap.EMPTY;
     }
 
     /* renamed from: of */
-    public static <K, V> ImmutableMap<K, V> m1046of(K k, V v) {
+    public static <K, V> ImmutableMap<K, V> m1047of(K k, V v) {
         CollectPreconditions.checkEntryNotNull(k, v);
         return RegularImmutableMap.create(1, new Object[]{k, v});
     }

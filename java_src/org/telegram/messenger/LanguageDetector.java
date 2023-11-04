@@ -38,19 +38,19 @@ public class LanguageDetector {
                 if (exceptionCallback != null) {
                     exceptionCallback.run(e);
                 }
-                FileLog.m96e((Throwable) e, false);
+                FileLog.m98e((Throwable) e, false);
                 return;
             } catch (Exception e2) {
                 if (exceptionCallback != null) {
                     exceptionCallback.run(e2);
                 }
-                FileLog.m97e(e2);
+                FileLog.m99e(e2);
                 return;
             } catch (Throwable th) {
                 if (exceptionCallback != null) {
                     exceptionCallback.run(null);
                 }
-                FileLog.m96e(th, false);
+                FileLog.m98e(th, false);
                 return;
             }
         }

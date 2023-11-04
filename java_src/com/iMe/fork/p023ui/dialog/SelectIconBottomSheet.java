@@ -28,15 +28,15 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p042ui.ActionBar.BottomSheet;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.CheckBox2;
-import org.telegram.p042ui.Components.ExtendedGridLayoutManager;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.RecyclerListView;
-import org.telegram.p042ui.Components.ReportAlert;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.CheckBox2;
+import org.telegram.p043ui.Components.ExtendedGridLayoutManager;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.ReportAlert;
 /* compiled from: SelectIconBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.SelectIconBottomSheet */
 /* loaded from: classes3.dex */
@@ -75,7 +75,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
         new Companion(null);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -164,7 +164,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
             }
         });
         this.deleteButton$delegate = lazy4;
-        setTitle(LocaleController.getInternalString(C3630R.string.select_icon), true);
+        setTitle(LocaleController.getInternalString(C3634R.string.select_icon), true);
         setCustomView(getRootView());
         setupListeners();
     }
@@ -234,7 +234,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
                 SelectIconBottomSheet.initDeleteButton$lambda$3$lambda$2(SelectIconBottomSheet.this, view);
             }
         });
-        bottomSheetCell.setText(LocaleController.getString("Delete", C3630R.string.Delete));
+        bottomSheetCell.setText(LocaleController.getString("Delete", C3634R.string.Delete));
         return bottomSheetCell;
     }
 
@@ -247,7 +247,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
 
     private final void setupListeners() {
         getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.fork.ui.dialog.SelectIconBottomSheet$$ExternalSyntheticLambda1
-            @Override // org.telegram.p042ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 SelectIconBottomSheet.setupListeners$lambda$4(SelectIconBottomSheet.this, view, i);
             }
@@ -277,7 +277,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
     /* renamed from: com.iMe.fork.ui.dialog.SelectIconBottomSheet$GridAdapter */
     /* loaded from: classes3.dex */
     public final class GridAdapter extends RecyclerListView.SelectionAdapter {
-        @Override // org.telegram.p042ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return true;
@@ -407,7 +407,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
             if (z) {
                 gradientDrawable = new GradientDrawable();
                 gradientDrawable.setShape(1);
-                gradientDrawable.setStroke(AndroidUtilities.m103dp(2.0f), Theme.getColor(Theme.key_chats_actionBackground));
+                gradientDrawable.setStroke(AndroidUtilities.m105dp(2.0f), Theme.getColor(Theme.key_chats_actionBackground));
             } else {
                 gradientDrawable = null;
             }

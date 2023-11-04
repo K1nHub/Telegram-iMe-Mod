@@ -1526,7 +1526,7 @@
         }
     .end annotation
 
-    const-string v0, "kotlin"
+    const-string/jumbo v0, "kotlin"
 
     .line 84
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -1808,6 +1808,8 @@
 
     return-object p0
 
+    nop
+
     :sswitch_data_0
     .sparse-switch
         -0x35c13ccf -> :sswitch_8
@@ -1871,7 +1873,7 @@
 
     move-result-object v0
 
-    const-string v1, "javaClassId.packageFqName.asString()"
+    const-string/jumbo v1, "javaClassId.packageFqName.asString()"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1883,7 +1885,7 @@
 
     move-result-object p1
 
-    const-string v1, "javaClassId.relativeClassName.asString()"
+    const-string/jumbo v1, "javaClassId.relativeClassName.asString()"
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

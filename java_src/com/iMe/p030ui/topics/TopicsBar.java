@@ -27,9 +27,9 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.RecyclerListView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
 /* compiled from: TopicsBar.kt */
 /* renamed from: com.iMe.ui.topics.TopicsBar */
 /* loaded from: classes3.dex */
@@ -335,10 +335,10 @@ public final class TopicsBar extends FrameLayout {
                         Intrinsics.checkNotNullParameter(state2, "state");
                         Intrinsics.checkNotNullParameter(action, "action");
                         int calculateDxToMakeVisible = calculateDxToMakeVisible(targetView, getHorizontalSnapPreference());
-                        if (calculateDxToMakeVisible > 0 || (calculateDxToMakeVisible == 0 && targetView.getLeft() - AndroidUtilities.m102dp(21) < 0)) {
-                            calculateDxToMakeVisible += AndroidUtilities.m102dp(60);
-                        } else if (calculateDxToMakeVisible < 0 || targetView.getRight() + AndroidUtilities.m102dp(21) > RecyclerListView.this.getMeasuredWidth()) {
-                            calculateDxToMakeVisible -= AndroidUtilities.m102dp(60);
+                        if (calculateDxToMakeVisible > 0 || (calculateDxToMakeVisible == 0 && targetView.getLeft() - AndroidUtilities.m104dp(21) < 0)) {
+                            calculateDxToMakeVisible += AndroidUtilities.m104dp(60);
+                        } else if (calculateDxToMakeVisible < 0 || targetView.getRight() + AndroidUtilities.m104dp(21) > RecyclerListView.this.getMeasuredWidth()) {
+                            calculateDxToMakeVisible -= AndroidUtilities.m104dp(60);
                         }
                         int calculateDyToMakeVisible = calculateDyToMakeVisible(targetView, getVerticalSnapPreference());
                         int max = Math.max(180, calculateTimeForDeceleration((int) Math.sqrt((calculateDxToMakeVisible * calculateDxToMakeVisible) + (calculateDyToMakeVisible * calculateDyToMakeVisible))));
@@ -380,13 +380,13 @@ public final class TopicsBar extends FrameLayout {
 
     private final void setupListeners() {
         getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.ui.topics.TopicsBar$$ExternalSyntheticLambda0
-            @Override // org.telegram.p042ui.Components.RecyclerListView.OnItemClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
                 TopicsBar.setupListeners$lambda$3(TopicsBar.this, view, i);
             }
         });
         getListView().setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: com.iMe.ui.topics.TopicsBar$$ExternalSyntheticLambda1
-            @Override // org.telegram.p042ui.Components.RecyclerListView.OnItemLongClickListener
+            @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListener
             public final boolean onItemClick(View view, int i) {
                 boolean z;
                 z = TopicsBar.setupListeners$lambda$4(TopicsBar.this, view, i);
@@ -470,7 +470,7 @@ public final class TopicsBar extends FrameLayout {
     /* renamed from: com.iMe.ui.topics.TopicsBar$ListAdapter */
     /* loaded from: classes3.dex */
     public final class ListAdapter extends RecyclerListView.SelectionAdapter {
-        @Override // org.telegram.p042ui.Components.RecyclerListView.SelectionAdapter
+        @Override // org.telegram.p043ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             return false;
@@ -519,7 +519,7 @@ public final class TopicsBar extends FrameLayout {
                         if (!(f == BitmapDescriptorFactory.HUE_RED)) {
                             f2 = TopicsBar.this.editingAnimationProgress;
                             float f3 = f2 * (this.position % 2 == 0 ? 1.0f : -1.0f);
-                            canvas.translate(AndroidUtilities.m103dp(0.66f) * f3, BitmapDescriptorFactory.HUE_RED);
+                            canvas.translate(AndroidUtilities.m105dp(0.66f) * f3, BitmapDescriptorFactory.HUE_RED);
                             canvas.rotate(f3, getMeasuredWidth() / 2, getMeasuredHeight() / 2);
                         }
                     }
@@ -540,7 +540,7 @@ public final class TopicsBar extends FrameLayout {
             TopicModel topicModel = (TopicModel) topicsBar.data.get(holder.getAdapterPosition());
             topicView.setTopic(topicModel, topicModel.getTopicId() == topicsBar.selectedTopicId);
             topicView.position = holder.getAdapterPosition();
-            topicView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m102dp(4), Theme.getColor(Theme.key_windowBackgroundWhite)));
+            topicView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m104dp(4), Theme.getColor(Theme.key_windowBackgroundWhite)));
         }
     }
 }

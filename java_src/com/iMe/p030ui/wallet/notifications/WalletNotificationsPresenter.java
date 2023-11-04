@@ -24,7 +24,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import timber.log.Timber;
 /* compiled from: WalletNotificationsPresenter.kt */
 @InjectViewState
@@ -60,7 +60,7 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
     public final void markAllNotificationAsRead(final List<NotificationItem> notifications) {
         Intrinsics.checkNotNullParameter(notifications, "notifications");
-        Observable<Result<Boolean>> observeOn = this.walletNotificationInteractor.setAllNotificationsRead().observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Boolean>> observeOn = this.walletNotificationInteractor.setAllNotificationsRead().observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletNotificationIntera…(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -74,12 +74,12 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1779invoke(result);
+                m1784invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1779invoke(Result<? extends Boolean> it) {
+            public final void m1784invoke(Result<? extends Boolean> it) {
                 int collectionSizeOrDefault;
                 List<NotificationItem> mutableList;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -97,7 +97,7 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
                         ((WalletNotificationsView) this.getViewState()).onEmptyState();
                         return;
                     }
-                    ((WalletNotificationsView) this.getViewState()).showToast(this.getResourceManager().getString(C3630R.string.wallet_notifications_success_mark_all_notification_as_read));
+                    ((WalletNotificationsView) this.getViewState()).showToast(this.getResourceManager().getString(C3634R.string.wallet_notifications_success_mark_all_notification_as_read));
                     ((WalletNotificationsView) this.getViewState()).onLoadedNotifications(mutableList);
                 } else if (result instanceof Result.Error) {
                     ((WalletNotificationsView) this.getViewState()).showErrorToast((Result.Error) result, this.getResourceManager());
@@ -134,7 +134,7 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
     public final void loadMoreNotification(String lastId) {
         Intrinsics.checkNotNullParameter(lastId, "lastId");
-        Observable<Result<List<Notification>>> observeOn = this.walletNotificationInteractor.getNotifications(lastId).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<List<Notification>>> observeOn = this.walletNotificationInteractor.getNotifications(lastId).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletNotificationIntera…(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends Notification>>, Unit>() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsPresenter$loadMoreNotification$$inlined$subscribeWithErrorHandle$default$1
@@ -144,12 +144,12 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends Notification>> result) {
-                m1777invoke(result);
+                m1782invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1777invoke(Result<? extends List<? extends Notification>> it) {
+            public final void m1782invoke(Result<? extends List<? extends Notification>> it) {
                 int collectionSizeOrDefault;
                 List mutableList;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -212,7 +212,7 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
         if (z) {
             ((WalletNotificationsView) getViewState()).resetLoadMore();
         }
-        Observable doFinally = PushNotificationInteractor.getNotifications$default(this.walletNotificationInteractor, null, 1, null).observeOn(this.schedulersProvider.mo1009ui()).doFinally(new Action() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsPresenter$$ExternalSyntheticLambda0
+        Observable doFinally = PushNotificationInteractor.getNotifications$default(this.walletNotificationInteractor, null, 1, null).observeOn(this.schedulersProvider.mo1010ui()).doFinally(new Action() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
                 WalletNotificationsPresenter.loadNotification$lambda$4(WalletNotificationsPresenter.this);
@@ -228,12 +228,12 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends Notification>> result) {
-                m1778invoke(result);
+                m1783invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1778invoke(Result<? extends List<? extends Notification>> it) {
+            public final void m1783invoke(Result<? extends List<? extends Notification>> it) {
                 int collectionSizeOrDefault;
                 List<NotificationItem> mutableList;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -309,7 +309,7 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
     }
 
     private final void markNotificationAsRead(String str) {
-        Observable<Result<Boolean>> observeOn = this.walletNotificationInteractor.setNotificationsRead(str).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Boolean>> observeOn = this.walletNotificationInteractor.setNotificationsRead(str).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletNotificationIntera…(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsPresenter$markNotificationAsRead$$inlined$subscribeWithErrorHandle$default$1
@@ -319,12 +319,12 @@ public final class WalletNotificationsPresenter extends BasePresenter<WalletNoti
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1780invoke(result);
+                m1785invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1780invoke(Result<? extends Boolean> it) {
+            public final void m1785invoke(Result<? extends Boolean> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends Boolean> result = it;
                 if (result instanceof Result.Error) {

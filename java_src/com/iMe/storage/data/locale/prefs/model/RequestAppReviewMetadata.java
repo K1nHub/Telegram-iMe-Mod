@@ -24,7 +24,7 @@ public final class RequestAppReviewMetadata {
     }
 
     public int hashCode() {
-        return (ProfileData$$ExternalSyntheticBackport0.m1017m(this.lastRequestTime) * 31) + this.count;
+        return (ProfileData$$ExternalSyntheticBackport0.m1018m(this.lastRequestTime) * 31) + this.count;
     }
 
     public String toString() {

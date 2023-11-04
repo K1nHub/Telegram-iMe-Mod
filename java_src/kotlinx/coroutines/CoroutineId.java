@@ -22,7 +22,7 @@ public final class CoroutineId extends AbstractCoroutineContextElement implement
     }
 
     public int hashCode() {
-        return ProfileData$$ExternalSyntheticBackport0.m1017m(this.f1395id);
+        return ProfileData$$ExternalSyntheticBackport0.m1018m(this.f1395id);
     }
 
     public final long getId() {

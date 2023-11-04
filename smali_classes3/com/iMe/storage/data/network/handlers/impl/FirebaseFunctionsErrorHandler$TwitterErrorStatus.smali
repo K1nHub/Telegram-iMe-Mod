@@ -76,7 +76,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 111
+    .line 114
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
 
     const-string v1, "WRONG_TWITTER_ACCESS_TOKEN_ERROR"
@@ -87,7 +87,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;->WRONG_TWITTER_ACCESS_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
 
-    .line 112
+    .line 115
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
 
     const-string v1, "WRONG_TWITTER_REFRESH_TOKEN_ERROR"
@@ -98,7 +98,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;->WRONG_TWITTER_REFRESH_TOKEN_ERROR:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
 
-    .line 113
+    .line 116
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
 
     const-string v1, "TWITTER_USER_DISABLED_DIRECT_MESSAGES"
@@ -109,7 +109,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;->TWITTER_USER_DISABLED_DIRECT_MESSAGES:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
 
-    .line 114
+    .line 117
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$TwitterErrorStatus;
 
     const-string v1, "NO_OAUTH_ACCESS_GRANTED_ERROR"
@@ -137,7 +137,7 @@
         }
     .end annotation
 
-    .line 110
+    .line 113
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

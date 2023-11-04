@@ -12,16 +12,16 @@ import com.google.android.gms.common.internal.zav;
 /* loaded from: classes3.dex */
 public final class zak extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zak> CREATOR = new zal();
-    @SafeParcelable.VersionField(m1086id = 1)
+    @SafeParcelable.VersionField(m1087id = 1)
     final int zaa;
-    @SafeParcelable.Field(getter = "getConnectionResult", m1089id = 2)
+    @SafeParcelable.Field(getter = "getConnectionResult", m1090id = 2)
     private final ConnectionResult zab;
-    @SafeParcelable.Field(getter = "getResolveAccountResponse", m1089id = 3)
+    @SafeParcelable.Field(getter = "getResolveAccountResponse", m1090id = 3)
     private final zav zac;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zak(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) ConnectionResult connectionResult, @SafeParcelable.Param(m1088id = 3) zav zavVar) {
+    public zak(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) ConnectionResult connectionResult, @SafeParcelable.Param(m1089id = 3) zav zavVar) {
         this.zaa = i;
         this.zab = connectionResult;
         this.zac = zavVar;

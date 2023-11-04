@@ -29,7 +29,7 @@
 
     sput-object v0, Lkotlinx/serialization/internal/NothingSerialDescriptor;->kind:Lkotlinx/serialization/descriptors/SerialKind;
 
-    const-string v0, "kotlin.Nothing"
+    const-string/jumbo v0, "kotlin.Nothing"
 
     .line 17
     sput-object v0, Lkotlinx/serialization/internal/NothingSerialDescriptor;->serialName:Ljava/lang/String;

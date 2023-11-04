@@ -48,7 +48,7 @@ public final class InputPrimitivesKt {
         }
         int headPosition = input.getHeadPosition();
         input.setHeadPosition(headPosition + 4);
-        return input.m1914getHeadMemorySK3TCg8().getInt(headPosition);
+        return input.m1919getHeadMemorySK3TCg8().getInt(headPosition);
     }
 
     public static final long readLong(Input input) {
@@ -58,7 +58,7 @@ public final class InputPrimitivesKt {
         }
         int headPosition = input.getHeadPosition();
         input.setHeadPosition(headPosition + 8);
-        return input.m1914getHeadMemorySK3TCg8().getLong(headPosition);
+        return input.m1919getHeadMemorySK3TCg8().getLong(headPosition);
     }
 
     public static final short readShort(Input input) {
@@ -68,6 +68,6 @@ public final class InputPrimitivesKt {
         }
         int headPosition = input.getHeadPosition();
         input.setHeadPosition(headPosition + 2);
-        return input.m1914getHeadMemorySK3TCg8().getShort(headPosition);
+        return input.m1919getHeadMemorySK3TCg8().getShort(headPosition);
     }
 }

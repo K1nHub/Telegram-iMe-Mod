@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
     .locals 0
 
-    .line 758
+    .line 762
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$6;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/PullForegroundDrawable;-><init>(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)V
@@ -35,7 +35,7 @@
 .method protected getViewOffset()F
     .locals 1
 
-    .line 761
+    .line 765
     iget-object v0, p0, Lorg/telegram/ui/TopicsFragment$6;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {v0}, Lorg/telegram/ui/TopicsFragment;->access$1100(Lorg/telegram/ui/TopicsFragment;)Lorg/telegram/ui/TopicsFragment$TopicsRecyclerView;

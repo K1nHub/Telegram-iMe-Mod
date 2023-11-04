@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.rtsp.reader;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -20,9 +20,9 @@ final class RtpVp9Reader implements RtpPayloadReader {
     private final RtpPayloadFormat payloadFormat;
     private boolean reportedOutputFormat;
     private TrackOutput trackOutput;
-    private long firstReceivedTimestamp = C0479C.TIME_UNSET;
+    private long firstReceivedTimestamp = C0485C.TIME_UNSET;
     private int fragmentedSampleSizeBytes = -1;
-    private long fragmentedSampleTimeUs = C0479C.TIME_UNSET;
+    private long fragmentedSampleTimeUs = C0485C.TIME_UNSET;
     private long startTimeOffsetUs = 0;
     private int previousSequenceNumber = -1;
     private int width = -1;
@@ -41,7 +41,7 @@ final class RtpVp9Reader implements RtpPayloadReader {
 
     @Override // com.google.android.exoplayer2.source.rtsp.reader.RtpPayloadReader
     public void onReceivingFirstPacket(long j, int i) {
-        Assertions.checkState(this.firstReceivedTimestamp == C0479C.TIME_UNSET);
+        Assertions.checkState(this.firstReceivedTimestamp == C0485C.TIME_UNSET);
         this.firstReceivedTimestamp = j;
     }
 
@@ -94,11 +94,11 @@ final class RtpVp9Reader implements RtpPayloadReader {
         } else if (this.gotFirstPacketOfVp9Frame) {
             int nextSequenceNumber = RtpPacket.getNextSequenceNumber(this.previousSequenceNumber);
             if (i < nextSequenceNumber) {
-                Log.m1106w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
+                Log.m1107w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d. Dropping packet.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
                 return false;
             }
         } else {
-            Log.m1106w(TAG, "First payload octet of the RTP packet is not the beginning of a new VP9 partition, Dropping current packet.");
+            Log.m1107w(TAG, "First payload octet of the RTP packet is not the beginning of a new VP9 partition, Dropping current packet.");
             return false;
         }
         if ((readUnsignedByte & 128) == 0 || (parsableByteArray.readUnsignedByte() & 128) == 0 || parsableByteArray.bytesLeft() >= 1) {
@@ -150,7 +150,7 @@ final class RtpVp9Reader implements RtpPayloadReader {
         boolean z = this.isKeyFrame;
         ((TrackOutput) Assertions.checkNotNull(this.trackOutput)).sampleMetadata(j, z ? 1 : 0, this.fragmentedSampleSizeBytes, 0, null);
         this.fragmentedSampleSizeBytes = -1;
-        this.fragmentedSampleTimeUs = C0479C.TIME_UNSET;
+        this.fragmentedSampleTimeUs = C0485C.TIME_UNSET;
         this.gotFirstPacketOfVp9Frame = false;
     }
 }

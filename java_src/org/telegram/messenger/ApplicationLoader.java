@@ -16,6 +16,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.PowerManager;
 import android.os.SystemClock;
+import android.view.ViewGroup;
 import androidx.lifecycle.ProcessLifecycleOwner;
 import androidx.multidex.MultiDex;
 import com.google.android.gms.common.GooglePlayServicesUtil;
@@ -37,10 +38,12 @@ import java.io.File;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.PushListenerController;
 import org.telegram.messenger.voip.VideoCapturerDevice;
-import org.telegram.p042ui.Components.ForegroundDetector;
-import org.telegram.p042ui.LauncherIconController;
+import org.telegram.p043ui.Components.ForegroundDetector;
+import org.telegram.p043ui.IUpdateLayout;
+import org.telegram.p043ui.LauncherIconController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC$Document;
+import org.telegram.tgnet.TLRPC$TL_help_appUpdate;
 import org.telegram.tgnet.TLRPC$User;
 import timber.log.Timber;
 /* loaded from: classes4.dex */
@@ -75,10 +78,20 @@ public class ApplicationLoader extends Application {
         return false;
     }
 
-    protected void checkForUpdatesInternal() {
+    protected void checkForUpdatesInternal(boolean z) {
+    }
+
+    public void dismissAppUpdateDialog() {
+    }
+
+    public void dismissCheckAppUpdateDialog() {
     }
 
     protected boolean isHuaweiBuild() {
+        return false;
+    }
+
+    protected boolean isStandalone() {
         return false;
     }
 
@@ -101,7 +114,15 @@ public class ApplicationLoader extends Application {
         return false;
     }
 
+    public boolean showUpdateAppPopup(Context context, TLRPC$TL_help_appUpdate tLRPC$TL_help_appUpdate, int i, IUpdateLayout iUpdateLayout) {
+        return false;
+    }
+
     protected void startAppCenterInternal(Activity activity) {
+    }
+
+    public IUpdateLayout takeUpdateLayout(Activity activity, ViewGroup viewGroup, ViewGroup viewGroup2) {
+        return null;
     }
 
     public static void checkKoinInit() {
@@ -201,6 +222,10 @@ public class ApplicationLoader extends Application {
         return applicationLoaderInstance.isHuaweiBuild();
     }
 
+    public static boolean isStandaloneBuild() {
+        return applicationLoaderInstance.isStandalone();
+    }
+
     public static File getFilesDirFixed() {
         for (int i = 0; i < 10; i++) {
             File filesDir = applicationContext.getFilesDir();
@@ -213,7 +238,7 @@ public class ApplicationLoader extends Application {
             file.mkdirs();
             return file;
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
             return new File("/data/data/org.telegram.messenger/files".replace(BuildConfig.LIBRARY_PACKAGE_NAME, getApplicationId()));
         }
     }
@@ -268,7 +293,7 @@ public class ApplicationLoader extends Application {
         try {
             isScreenOn = ((PowerManager) applicationContext.getSystemService("power")).isScreenOn();
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m100d("screen state = " + isScreenOn);
+                FileLog.m102d("screen state = " + isScreenOn);
             }
         } catch (Exception e4) {
             e4.printStackTrace();
@@ -290,7 +315,7 @@ public class ApplicationLoader extends Application {
         }
         ((ApplicationLoader) applicationContext).initPushServices();
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m100d("app initied");
+            FileLog.m102d("app initied");
         }
         MediaController.getInstance();
         for (int i3 = 0; i3 < 5; i3++) {
@@ -317,8 +342,8 @@ public class ApplicationLoader extends Application {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             startTime = elapsedRealtime;
             sb.append(elapsedRealtime);
-            FileLog.m100d(sb.toString());
-            FileLog.m100d("buildVersion = " + BuildVars.BUILD_VERSION);
+            FileLog.m102d(sb.toString());
+            FileLog.m102d("buildVersion = " + BuildVars.BUILD_VERSION);
         }
         if (applicationContext == null) {
             applicationContext = getApplicationContext();
@@ -327,7 +352,7 @@ public class ApplicationLoader extends Application {
         try {
             ConnectionsManager.native_setJava(false);
             new ForegroundDetector(this) { // from class: org.telegram.messenger.ApplicationLoader.2
-                @Override // org.telegram.p042ui.Components.ForegroundDetector, android.app.Application.ActivityLifecycleCallbacks
+                @Override // org.telegram.p043ui.Components.ForegroundDetector, android.app.Application.ActivityLifecycleCallbacks
                 public void onActivityStarted(Activity activity) {
                     boolean isBackground = isBackground();
                     super.onActivityStarted(activity);
@@ -337,7 +362,7 @@ public class ApplicationLoader extends Application {
                 }
             };
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m100d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
+                FileLog.m102d("load libs time = " + (SystemClock.elapsedRealtime() - startTime));
             }
             applicationHandler = new Handler(applicationContext.getMainLooper());
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.ApplicationLoader$$ExternalSyntheticLambda2
@@ -402,7 +427,7 @@ public class ApplicationLoader extends Application {
             return;
         }
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m100d("No valid " + getPushProvider().getLogTitle() + " APK found.");
+            FileLog.m102d("No valid " + getPushProvider().getLogTitle() + " APK found.");
         }
         SharedConfig.pushStringStatus = "__NO_GOOGLE_PLAY_SERVICES__";
         PushListenerController.sendRegistrationToServer(getPushProvider().getPushType(), null);
@@ -412,7 +437,7 @@ public class ApplicationLoader extends Application {
         try {
             return GooglePlayServicesUtil.isGooglePlayServicesAvailable(this) == 0;
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
             return true;
         }
     }
@@ -453,7 +478,7 @@ public class ApplicationLoader extends Application {
             }
             return false;
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
             return false;
         }
     }
@@ -470,7 +495,7 @@ public class ApplicationLoader extends Application {
                 return true;
             }
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
         }
         return false;
     }
@@ -484,7 +509,7 @@ public class ApplicationLoader extends Application {
                 }
             }
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
         }
         return false;
     }
@@ -508,7 +533,7 @@ public class ApplicationLoader extends Application {
         try {
             ensureCurrentNetworkGet(false);
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
         }
         if (currentNetworkInfo == null) {
             return 0;
@@ -553,7 +578,7 @@ public class ApplicationLoader extends Application {
             }
             return true;
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
             return true;
         }
     }
@@ -577,7 +602,7 @@ public class ApplicationLoader extends Application {
             }
             return true;
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
             return true;
         }
     }
@@ -585,7 +610,7 @@ public class ApplicationLoader extends Application {
     public static boolean isNetworkOnline() {
         boolean isNetworkOnlineRealtime = isNetworkOnlineRealtime();
         if (BuildVars.DEBUG_PRIVATE_VERSION && isNetworkOnlineRealtime != isNetworkOnlineFast()) {
-            FileLog.m100d("network online mismatch");
+            FileLog.m102d("network online mismatch");
         }
         return isNetworkOnlineRealtime;
     }
@@ -594,8 +619,8 @@ public class ApplicationLoader extends Application {
         applicationLoaderInstance.startAppCenterInternal(activity);
     }
 
-    public static void checkForUpdates() {
-        applicationLoaderInstance.checkForUpdatesInternal();
+    public static void checkForUpdates(boolean z) {
+        applicationLoaderInstance.checkForUpdatesInternal(z);
     }
 
     public static void appCenterLog(Throwable th) {

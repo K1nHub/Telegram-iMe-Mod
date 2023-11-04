@@ -3,10 +3,10 @@ package org.telegram.messenger;
 import android.os.Build;
 /* loaded from: classes4.dex */
 public class NativeLoader {
-    private static final String LIB_NAME = "tmessages.46";
-    private static final String LIB_SO_NAME = "libtmessages.46.so";
-    private static final int LIB_VERSION = 46;
-    private static final String LOCALE_LIB_SO_NAME = "libtmessages.46loc.so";
+    private static final String LIB_NAME = "tmessages.47";
+    private static final String LIB_SO_NAME = "libtmessages.47.so";
+    private static final int LIB_VERSION = 47;
+    private static final String LOCALE_LIB_SO_NAME = "libtmessages.47loc.so";
     public static StringBuilder log = new StringBuilder();
     private static volatile boolean nativeLoaded = false;
 
@@ -89,13 +89,13 @@ public class NativeLoader {
             return
         L9:
             r1 = 1
-            java.lang.String r2 = "tmessages.46"
+            java.lang.String r2 = "tmessages.47"
             java.lang.System.loadLibrary(r2)     // Catch: java.lang.Throwable -> L1e java.lang.Error -> L21
             org.telegram.messenger.NativeLoader.nativeLoaded = r1     // Catch: java.lang.Throwable -> L1e java.lang.Error -> L21
             boolean r2 = org.telegram.messenger.BuildVars.LOGS_ENABLED     // Catch: java.lang.Throwable -> L1e java.lang.Error -> L21
             if (r2 == 0) goto L1c
             java.lang.String r2 = "loaded normal lib"
-            org.telegram.messenger.FileLog.m100d(r2)     // Catch: java.lang.Throwable -> L1e java.lang.Error -> L21
+            org.telegram.messenger.FileLog.m102d(r2)     // Catch: java.lang.Throwable -> L1e java.lang.Error -> L21
         L1c:
             monitor-exit(r0)
             return
@@ -104,7 +104,7 @@ public class NativeLoader {
             goto Lb5
         L21:
             r2 = move-exception
-            org.telegram.messenger.FileLog.m97e(r2)     // Catch: java.lang.Throwable -> L1e
+            org.telegram.messenger.FileLog.m99e(r2)     // Catch: java.lang.Throwable -> L1e
             java.lang.StringBuilder r3 = org.telegram.messenger.NativeLoader.log     // Catch: java.lang.Throwable -> L1e
             java.lang.String r4 = "128: "
             r3.append(r4)     // Catch: java.lang.Throwable -> L1e
@@ -118,14 +118,14 @@ public class NativeLoader {
             r3.<init>(r4, r5)     // Catch: java.lang.Throwable -> L1e
             r3.mkdirs()     // Catch: java.lang.Throwable -> L1e
             java.io.File r4 = new java.io.File     // Catch: java.lang.Throwable -> L1e
-            java.lang.String r5 = "libtmessages.46loc.so"
+            java.lang.String r5 = "libtmessages.47loc.so"
             r4.<init>(r3, r5)     // Catch: java.lang.Throwable -> L1e
             boolean r5 = r4.exists()     // Catch: java.lang.Throwable -> L1e
             if (r5 == 0) goto L7a
             boolean r5 = org.telegram.messenger.BuildVars.LOGS_ENABLED     // Catch: java.lang.Throwable -> L1e java.lang.Error -> L69
             if (r5 == 0) goto L5e
             java.lang.String r5 = "Load local lib"
-            org.telegram.messenger.FileLog.m100d(r5)     // Catch: java.lang.Throwable -> L1e java.lang.Error -> L69
+            org.telegram.messenger.FileLog.m102d(r5)     // Catch: java.lang.Throwable -> L1e java.lang.Error -> L69
         L5e:
             java.lang.String r5 = r4.getAbsolutePath()     // Catch: java.lang.Throwable -> L1e java.lang.Error -> L69
             java.lang.System.load(r5)     // Catch: java.lang.Throwable -> L1e java.lang.Error -> L69
@@ -138,7 +138,7 @@ public class NativeLoader {
             r6.append(r5)     // Catch: java.lang.Throwable -> L1e
             java.lang.String r7 = "\n"
             r6.append(r7)     // Catch: java.lang.Throwable -> L1e
-            org.telegram.messenger.FileLog.m97e(r5)     // Catch: java.lang.Throwable -> L1e
+            org.telegram.messenger.FileLog.m99e(r5)     // Catch: java.lang.Throwable -> L1e
             r4.delete()     // Catch: java.lang.Throwable -> L1e
         L7a:
             boolean r5 = org.telegram.messenger.BuildVars.LOGS_ENABLED     // Catch: java.lang.Throwable -> L1e
@@ -149,7 +149,7 @@ public class NativeLoader {
             r5.append(r6)     // Catch: java.lang.Throwable -> L1e
             r5.append(r2)     // Catch: java.lang.Throwable -> L1e
             java.lang.String r5 = r5.toString()     // Catch: java.lang.Throwable -> L1e
-            org.telegram.messenger.FileLog.m99e(r5)     // Catch: java.lang.Throwable -> L1e
+            org.telegram.messenger.FileLog.m101e(r5)     // Catch: java.lang.Throwable -> L1e
             java.lang.StringBuilder r5 = org.telegram.messenger.NativeLoader.log     // Catch: java.lang.Throwable -> L1e
             java.lang.StringBuilder r6 = new java.lang.StringBuilder     // Catch: java.lang.Throwable -> L1e
             r6.<init>()     // Catch: java.lang.Throwable -> L1e
@@ -174,13 +174,13 @@ public class NativeLoader {
             java.lang.String r8 = "\n"
             r2.append(r8)     // Catch: java.lang.Throwable -> Le5
         Lc7:
-            java.lang.String r8 = "tmessages.46"
+            java.lang.String r8 = "tmessages.47"
             java.lang.System.loadLibrary(r8)     // Catch: java.lang.Error -> Ld0 java.lang.Throwable -> Le5
             org.telegram.messenger.NativeLoader.nativeLoaded = r1     // Catch: java.lang.Error -> Ld0 java.lang.Throwable -> Le5
             goto Le3
         Ld0:
             r8 = move-exception
-            org.telegram.messenger.FileLog.m97e(r8)     // Catch: java.lang.Throwable -> Le5
+            org.telegram.messenger.FileLog.m99e(r8)     // Catch: java.lang.Throwable -> Le5
             java.lang.StringBuilder r1 = org.telegram.messenger.NativeLoader.log     // Catch: java.lang.Throwable -> Le5
             java.lang.String r2 = "184: "
             r1.append(r2)     // Catch: java.lang.Throwable -> Le5
@@ -215,7 +215,7 @@ public class NativeLoader {
                         } else if (str3.equalsIgnoreCase("mips")) {
                             str = "mips";
                         } else if (BuildVars.LOGS_ENABLED) {
-                            FileLog.m99e("Unsupported arch: " + str3);
+                            FileLog.m101e("Unsupported arch: " + str3);
                         }
                     }
                     str = "armeabi";
@@ -223,7 +223,7 @@ public class NativeLoader {
             }
             str2 = str;
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
         }
         String property = System.getProperty("os.arch");
         return (property == null || !property.contains("686")) ? str2 : "x86";

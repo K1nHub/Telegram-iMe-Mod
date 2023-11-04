@@ -186,7 +186,7 @@
     :cond_2
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "key sequence wrong size"
+    const-string/jumbo v0, "key sequence wrong size"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -388,7 +388,7 @@
     :cond_7
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "keySeq should be 5 or 6 in length"
+    const-string/jumbo v0, "keySeq should be 5 or 6 in length"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

@@ -10,7 +10,7 @@
 # instance fields
 .field private autoFocusCallback:Landroid/hardware/Camera$AutoFocusCallback;
 
-.field protected availableFlashModes:Ljava/util/ArrayList;
+.field public availableFlashModes:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",

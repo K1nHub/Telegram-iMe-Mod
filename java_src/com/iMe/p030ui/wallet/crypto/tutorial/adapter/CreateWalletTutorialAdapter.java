@@ -13,8 +13,8 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.databinding.ForkItemAdapterWalletEthTutorialBinding;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.RLottieImageView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.RLottieImageView;
 /* compiled from: CreateWalletTutorialAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.tutorial.adapter.CreateWalletTutorialAdapter */
 /* loaded from: classes3.dex */

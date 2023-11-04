@@ -5,7 +5,7 @@ import kotlin.text.UStringsKt$$ExternalSyntheticBackport3;
 /* loaded from: classes4.dex */
 public final /* synthetic */ class ComposerForUnsignedNumbers$$ExternalSyntheticBackport6 {
     /* renamed from: m */
-    public static /* synthetic */ String m119m(long j, int i) {
+    public static /* synthetic */ String m121m(long j, int i) {
         int i2 = (j > 0L ? 1 : (j == 0L ? 0 : -1));
         if (i2 == 0) {
             return SessionDescription.SUPPORTED_SDP_VERSION;
@@ -25,14 +25,14 @@ public final /* synthetic */ class ComposerForUnsignedNumbers$$ExternalSynthetic
                 j >>>= numberOfTrailingZeros;
             } while (j != 0);
         } else {
-            long m129m = (i & 1) == 0 ? (j >>> 1) / (i >>> 1) : UStringsKt$$ExternalSyntheticBackport3.m129m(j, i);
+            long m131m = (i & 1) == 0 ? (j >>> 1) / (i >>> 1) : UStringsKt$$ExternalSyntheticBackport3.m131m(j, i);
             long j2 = i;
             i3 = 63;
-            cArr[63] = Character.forDigit((int) (j - (m129m * j2)), i);
-            while (m129m > 0) {
+            cArr[63] = Character.forDigit((int) (j - (m131m * j2)), i);
+            while (m131m > 0) {
                 i3--;
-                cArr[i3] = Character.forDigit((int) (m129m % j2), i);
-                m129m /= j2;
+                cArr[i3] = Character.forDigit((int) (m131m % j2), i);
+                m131m /= j2;
             }
         }
         return new String(cArr, i3, 64 - i3);

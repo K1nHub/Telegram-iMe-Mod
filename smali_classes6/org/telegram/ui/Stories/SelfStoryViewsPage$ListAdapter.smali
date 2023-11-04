@@ -56,12 +56,12 @@
 .method private constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
     .locals 0
 
-    .line 719
+    .line 720
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 721
+    .line 722
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -74,7 +74,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;Lorg/telegram/ui/Stories/SelfStoryViewsPage$1;)V
     .locals 0
 
-    .line 719
+    .line 720
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;-><init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
 
     return-void
@@ -83,7 +83,7 @@
 .method private synthetic lambda$onCreateViewHolder$0()V
     .locals 1
 
-    .line 785
+    .line 786
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->access$1200(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
@@ -94,7 +94,7 @@
 .method private static synthetic lambda$onCreateViewHolder$1(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
     .locals 0
 
-    .line 840
+    .line 841
     invoke-static {p0}, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->access$1200(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
 
     return-void
@@ -103,7 +103,7 @@
 .method private static synthetic lambda$onCreateViewHolder$2(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
     .locals 0
 
-    .line 841
+    .line 842
     invoke-static {p0}, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->access$1200(Lorg/telegram/ui/Stories/SelfStoryViewsPage;)V
 
     return-void
@@ -114,7 +114,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 879
+    .line 880
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -127,7 +127,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 932
+    .line 933
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -144,7 +144,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 884
+    .line 885
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -165,7 +165,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 12
 
-    .line 858
+    .line 859
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -174,12 +174,12 @@
 
     if-ne v0, v1, :cond_6
 
-    .line 859
+    .line 860
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ReactedUserHolderView;
 
-    .line 860
+    .line 861
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     iget v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->currentAccount:I
@@ -196,9 +196,9 @@
 
     check-cast v2, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
 
-    iget-object v2, v2, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/TLRPC$TL_storyView;
+    iget-object v2, v2, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
-    iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$TL_storyView;->user_id:J
+    iget-wide v2, v2, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->user_id:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -208,7 +208,7 @@
 
     move-result-object v3
 
-    .line 862
+    .line 863
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->defaultModel:Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;
@@ -223,9 +223,9 @@
 
     check-cast v2, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
 
-    iget-object v2, v2, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/TLRPC$TL_storyView;
+    iget-object v2, v2, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
-    iget-wide v4, v2, Lorg/telegram/tgnet/TLRPC$TL_storyView;->user_id:J
+    iget-wide v4, v2, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->user_id:J
 
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -234,23 +234,6 @@
     invoke-virtual {v0, v2}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
     move-result v10
-
-    .line 864
-    iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
-
-    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
-
-    iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/TLRPC$TL_storyView;
-
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_storyView;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
-
-    const/4 v11, 0x0
-
-    if-eqz v0, :cond_0
 
     .line 865
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
@@ -261,9 +244,26 @@
 
     check-cast v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
 
-    iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/TLRPC$TL_storyView;
+    iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_storyView;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
+    iget-object v0, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
+
+    const/4 v11, 0x0
+
+    if-eqz v0, :cond_0
+
+    .line 866
+    iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
+
+    iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->fromTLReaction(Lorg/telegram/tgnet/TLRPC$Reaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
@@ -271,7 +271,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 866
+    .line 867
     iget-object v0, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->emojicon:Ljava/lang/String;
 
     if-eqz v0, :cond_0
@@ -300,7 +300,7 @@
 
     goto :goto_1
 
-    .line 870
+    .line 871
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
@@ -310,9 +310,9 @@
 
     check-cast v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
 
-    iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/TLRPC$TL_storyView;
+    iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
-    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_storyView;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
+    iget-object v0, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     :goto_1
     move-object v5, v0
@@ -325,9 +325,9 @@
 
     check-cast v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
 
-    iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/TLRPC$TL_storyView;
+    iget-object v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
-    iget v0, v0, Lorg/telegram/tgnet/TLRPC$TL_storyView;->date:I
+    iget v0, v0, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;->date:I
 
     int-to-long v7, v0
 
@@ -337,7 +337,7 @@
 
     invoke-virtual/range {v2 .. v10}, Lorg/telegram/ui/Cells/ReactedUserHolderView;->setUserReaction(Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$Reaction;ZJZZ)V
 
-    .line 871
+    .line 872
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -381,12 +381,12 @@
     :cond_3
     move v1, v11
 
-    .line 872
+    .line 873
     :cond_4
     :goto_3
     iput-boolean v1, p1, Lorg/telegram/ui/Cells/ReactedUserHolderView;->drawDivider:Z
 
-    .line 873
+    .line 874
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
@@ -397,9 +397,9 @@
 
     check-cast p2, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
 
-    iget-object p2, p2, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/TLRPC$TL_storyView;
+    iget-object p2, p2, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
-    invoke-static {v0, p2}, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->access$500(Lorg/telegram/ui/Stories/SelfStoryViewsPage;Lorg/telegram/tgnet/TLRPC$TL_storyView;)Z
+    invoke-static {v0, p2}, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->access$500(Lorg/telegram/ui/Stories/SelfStoryViewsPage;Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;)Z
 
     move-result p2
 
@@ -430,7 +430,7 @@
 
     packed-switch p2, :pswitch_data_0
 
-    .line 795
+    .line 796
     :pswitch_0
     new-instance p1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter$3;
 
@@ -444,7 +444,7 @@
 
     goto/16 :goto_5
 
-    .line 773
+    .line 774
     :pswitch_1
     new-instance p1, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -458,10 +458,10 @@
 
     const/high16 v1, 0x41500000    # 13.0f
 
-    .line 774
+    .line 775
     invoke-virtual {p1, v0, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 775
+    .line 776
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
@@ -474,7 +474,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 776
+    .line 777
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
@@ -489,39 +489,39 @@
 
     const/16 v1, 0x10
 
-    .line 777
+    .line 778
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     const/16 v2, 0x15
 
-    .line 778
+    .line 779
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    .line 779
+    .line 780
     invoke-virtual {p1, v2, v1, v2, v1}, Landroid/widget/TextView;->setPadding(IIII)V
 
     const v1, 0x7fffffff
 
-    .line 780
+    .line 781
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
     const/16 v1, 0x11
 
-    .line 781
+    .line 782
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 782
+    .line 783
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;->setDisablePaddingsOffsetY(Z)V
 
     const/16 v0, 0xb
 
     if-ne p2, v0, :cond_0
 
-    .line 784
+    .line 785
     sget p2, Lorg/telegram/messenger/R$string;->StoryViewsPremiumHint:I
 
     const-string v0, "StoryViewsPremiumHint"
@@ -542,7 +542,7 @@
 
     goto :goto_0
 
-    .line 788
+    .line 789
     :cond_0
     sget p2, Lorg/telegram/messenger/R$string;->ServerErrorViewersFull:I
 
@@ -554,7 +554,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 790
+    .line 791
     :goto_0
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -568,7 +568,7 @@
 
     goto/16 :goto_5
 
-    .line 763
+    .line 764
     :pswitch_2
     new-instance p2, Lorg/telegram/ui/Components/FlickerLoadingView;
 
@@ -584,26 +584,26 @@
 
     invoke-direct {p2, v2, v3}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 764
+    .line 765
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIsSingleCell(Z)V
 
-    .line 765
+    .line 766
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIgnoreHeightCheck(Z)V
 
     const/16 v0, 0x14
 
-    .line 766
+    .line 767
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/FlickerLoadingView;->setItemsCount(I)V
 
-    .line 767
+    .line 768
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
-    .line 768
+    .line 769
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/FlickerLoadingView;->showDate(Z)V
 
     goto/16 :goto_4
 
-    .line 811
+    .line 812
     :pswitch_3
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
@@ -643,7 +643,7 @@
     :cond_3
     move v9, v1
 
-    .line 818
+    .line 819
     :goto_2
     new-instance p1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter$4;
 
@@ -667,12 +667,12 @@
 
     if-ne p2, v2, :cond_4
 
-    .line 825
+    .line 826
     iget-object p2, p1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
 
     invoke-virtual {p2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 826
+    .line 827
     sget p2, Lorg/telegram/messenger/R$string;->NoResult:I
 
     const-string v0, "NoResult"
@@ -688,12 +688,12 @@
     :cond_4
     if-ne p2, v4, :cond_5
 
-    .line 828
+    .line 829
     iget-object p2, p1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
 
     invoke-virtual {p2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 829
+    .line 830
     sget p2, Lorg/telegram/messenger/R$string;->NoContactsViewed:I
 
     const-string v0, "NoContactsViewed"
@@ -709,12 +709,12 @@
     :cond_5
     if-ne p2, v3, :cond_6
 
-    .line 831
+    .line 832
     iget-object p2, p1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
 
     invoke-virtual {p2, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 832
+    .line 833
     iget-object p2, p1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->ServerErrorViewersTitle:I
@@ -727,7 +727,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 833
+    .line 834
     sget p2, Lorg/telegram/messenger/R$string;->ServerErrorViewers:I
 
     const-string v0, "ServerErrorViewers"
@@ -740,7 +740,7 @@
 
     goto/16 :goto_3
 
-    .line 834
+    .line 835
     :cond_6
     iget-object p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
@@ -750,17 +750,17 @@
 
     if-eqz p2, :cond_8
 
-    .line 835
+    .line 836
     iget-object p2, p1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
 
     invoke-virtual {p2, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 836
+    .line 837
     new-instance p2, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {p2}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 837
+    .line 838
     sget v0, Lorg/telegram/messenger/R$string;->ExpiredViewsStub:I
 
     const-string v2, "ExpiredViewsStub"
@@ -775,7 +775,7 @@
 
     invoke-virtual {p2, v0}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 838
+    .line 839
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     iget v0, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->currentAccount:I
@@ -790,10 +790,10 @@
 
     const-string v0, "\n\n"
 
-    .line 839
+    .line 840
     invoke-virtual {p2, v0}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 840
+    .line 841
     sget v0, Lorg/telegram/messenger/R$string;->ExpiredViewsStubPremiumDescription:I
 
     const-string v2, "ExpiredViewsStubPremiumDescription"
@@ -814,7 +814,7 @@
 
     invoke-virtual {p2, v0}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 841
+    .line 842
     sget v0, Lorg/telegram/messenger/R$string;->LearnMore:I
 
     const-string v2, "LearnMore"
@@ -831,7 +831,7 @@
 
     invoke-virtual {p1, v0, v3}, Lorg/telegram/ui/Components/StickerEmptyView;->createButtonLayout(Ljava/lang/CharSequence;Ljava/lang/Runnable;)V
 
-    .line 843
+    .line 844
     :cond_7
     iget-object v0, p1, Lorg/telegram/ui/Components/StickerEmptyView;->subtitle:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -839,13 +839,13 @@
 
     goto :goto_3
 
-    .line 845
+    .line 846
     :cond_8
     iget-object p2, p1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
 
     invoke-virtual {p2, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 846
+    .line 847
     iget-object p2, p1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
 
     sget v0, Lorg/telegram/messenger/R$string;->NoViews:I
@@ -858,7 +858,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 847
+    .line 848
     sget p2, Lorg/telegram/messenger/R$string;->NoViewsStub:I
 
     const-string v0, "NoViewsStub"
@@ -869,13 +869,13 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/StickerEmptyView;->setSubtitle(Ljava/lang/CharSequence;)V
 
-    .line 849
+    .line 850
     :goto_3
     invoke-virtual {p1, v1, v1}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
 
     goto :goto_5
 
-    .line 756
+    .line 757
     :pswitch_4
     new-instance p2, Lorg/telegram/ui/Components/FlickerLoadingView;
 
@@ -891,13 +891,13 @@
 
     invoke-direct {p2, v2, v3}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 757
+    .line 758
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIsSingleCell(Z)V
 
-    .line 758
+    .line 759
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
-    .line 759
+    .line 760
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/FlickerLoadingView;->showDate(Z)V
 
     :goto_4
@@ -905,7 +905,7 @@
 
     goto :goto_5
 
-    .line 737
+    .line 738
     :pswitch_5
     new-instance p1, Lorg/telegram/ui/Cells/FixedHeightEmptyCell;
 
@@ -921,7 +921,7 @@
 
     goto :goto_5
 
-    .line 740
+    .line 741
     :pswitch_6
     new-instance p1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter$2;
 
@@ -949,7 +949,7 @@
 
     goto :goto_5
 
-    .line 729
+    .line 730
     :pswitch_7
     new-instance p1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter$1;
 
@@ -961,7 +961,7 @@
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter$1;-><init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;Landroid/content/Context;)V
 
-    .line 853
+    .line 854
     :goto_5
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -992,17 +992,17 @@
 .method public updateRows()V
     .locals 9
 
-    .line 888
+    .line 889
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 889
+    .line 890
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->this$0:Lorg/telegram/ui/Stories/SelfStoryViewsPage;
 
     iget-object v1, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->currentModel:Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;
 
-    .line 890
+    .line 891
     iget-boolean v2, v0, Lorg/telegram/ui/Stories/SelfStoryViewsPage;->isSearchDebounce:Z
 
     const/4 v3, 0x6
@@ -1013,7 +1013,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 891
+    .line 892
     iget-object v1, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
@@ -1022,7 +1022,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 892
+    .line 893
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
@@ -1035,7 +1035,7 @@
 
     goto/16 :goto_1
 
-    .line 894
+    .line 895
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
@@ -1047,7 +1047,7 @@
 
     if-eqz v1, :cond_6
 
-    .line 895
+    .line 896
     iget-object v0, v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -1068,7 +1068,7 @@
 
     if-nez v0, :cond_6
 
-    .line 896
+    .line 897
     :cond_1
     iget-object v0, v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->state:Lorg/telegram/ui/Stories/SelfStoryViewsPage$FiltersState;
 
@@ -1080,7 +1080,7 @@
 
     if-nez v0, :cond_2
 
-    .line 897
+    .line 898
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
@@ -1095,7 +1095,7 @@
 
     goto/16 :goto_1
 
-    .line 898
+    .line 899
     :cond_2
     iget-boolean v0, v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->isExpiredViews:Z
 
@@ -1103,7 +1103,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 899
+    .line 900
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
@@ -1116,7 +1116,7 @@
 
     goto/16 :goto_1
 
-    .line 900
+    .line 901
     :cond_3
     iget v0, v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->totalCount:I
 
@@ -1128,7 +1128,7 @@
 
     if-eqz v1, :cond_4
 
-    .line 901
+    .line 902
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
@@ -1146,7 +1146,7 @@
     :cond_4
     if-lez v0, :cond_5
 
-    .line 903
+    .line 904
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
@@ -1161,7 +1161,7 @@
 
     goto/16 :goto_1
 
-    .line 905
+    .line 906
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
@@ -1178,7 +1178,7 @@
     :cond_6
     if-eqz v1, :cond_7
 
-    .line 909
+    .line 910
     :goto_0
     iget-object v0, v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
@@ -1188,7 +1188,7 @@
 
     if-ge v4, v0, :cond_7
 
-    .line 910
+    .line 911
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v2, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
@@ -1201,11 +1201,11 @@
 
     move-result-object v7
 
-    check-cast v7, Lorg/telegram/tgnet/TLRPC$TL_storyView;
+    check-cast v7, Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
     const/4 v8, 0x1
 
-    invoke-direct {v2, v6, v8, v7, v5}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;-><init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;ILorg/telegram/tgnet/TLRPC$TL_storyView;Lorg/telegram/ui/Stories/SelfStoryViewsPage$1;)V
+    invoke-direct {v2, v6, v8, v7, v5}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;-><init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;ILorg/telegram/tgnet/tl/TL_stories$TL_storyView;Lorg/telegram/ui/Stories/SelfStoryViewsPage$1;)V
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -1216,7 +1216,7 @@
     :cond_7
     if-eqz v1, :cond_a
 
-    .line 913
+    .line 914
     iget-boolean v0, v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->loading:Z
 
     if-nez v0, :cond_8
@@ -1225,7 +1225,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 914
+    .line 915
     :cond_8
     iget-object v0, v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
@@ -1235,7 +1235,7 @@
 
     if-eqz v0, :cond_9
 
-    .line 915
+    .line 916
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
@@ -1248,7 +1248,7 @@
 
     goto :goto_1
 
-    .line 917
+    .line 918
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
@@ -1267,12 +1267,12 @@
     :cond_a
     if-eqz v1, :cond_b
 
-    .line 919
+    .line 920
     iget-boolean v0, v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->showReactionOnly:Z
 
     if-eqz v0, :cond_b
 
-    .line 920
+    .line 921
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
@@ -1290,7 +1290,7 @@
     :cond_b
     if-eqz v1, :cond_c
 
-    .line 921
+    .line 922
     iget-object v0, v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ViewsModel;->views:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1317,7 +1317,7 @@
 
     if-nez v0, :cond_c
 
-    .line 922
+    .line 923
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;
@@ -1330,7 +1330,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 926
+    .line 927
     :cond_c
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$ListAdapter;->items:Ljava/util/ArrayList;
@@ -1345,7 +1345,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 927
+    .line 928
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void

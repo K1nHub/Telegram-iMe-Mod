@@ -13,21 +13,21 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelableSerialize
 /* loaded from: classes3.dex */
 public final class LocationSettingsStates extends AbstractSafeParcelable {
     public static final Parcelable.Creator<LocationSettingsStates> CREATOR = new zzab();
-    @SafeParcelable.Field(getter = "isGpsUsable", m1089id = 1)
+    @SafeParcelable.Field(getter = "isGpsUsable", m1090id = 1)
     private final boolean zza;
-    @SafeParcelable.Field(getter = "isNetworkLocationUsable", m1089id = 2)
+    @SafeParcelable.Field(getter = "isNetworkLocationUsable", m1090id = 2)
     private final boolean zzb;
-    @SafeParcelable.Field(getter = "isBleUsable", m1089id = 3)
+    @SafeParcelable.Field(getter = "isBleUsable", m1090id = 3)
     private final boolean zzc;
-    @SafeParcelable.Field(getter = "isGpsPresent", m1089id = 4)
+    @SafeParcelable.Field(getter = "isGpsPresent", m1090id = 4)
     private final boolean zzd;
-    @SafeParcelable.Field(getter = "isNetworkLocationPresent", m1089id = 5)
+    @SafeParcelable.Field(getter = "isNetworkLocationPresent", m1090id = 5)
     private final boolean zze;
-    @SafeParcelable.Field(getter = "isBlePresent", m1089id = 6)
+    @SafeParcelable.Field(getter = "isBlePresent", m1090id = 6)
     private final boolean zzf;
 
     @SafeParcelable.Constructor
-    public LocationSettingsStates(@SafeParcelable.Param(m1088id = 1) boolean z, @SafeParcelable.Param(m1088id = 2) boolean z2, @SafeParcelable.Param(m1088id = 3) boolean z3, @SafeParcelable.Param(m1088id = 4) boolean z4, @SafeParcelable.Param(m1088id = 5) boolean z5, @SafeParcelable.Param(m1088id = 6) boolean z6) {
+    public LocationSettingsStates(@SafeParcelable.Param(m1089id = 1) boolean z, @SafeParcelable.Param(m1089id = 2) boolean z2, @SafeParcelable.Param(m1089id = 3) boolean z3, @SafeParcelable.Param(m1089id = 4) boolean z4, @SafeParcelable.Param(m1089id = 5) boolean z5, @SafeParcelable.Param(m1089id = 6) boolean z6) {
         this.zza = z;
         this.zzb = z2;
         this.zzc = z3;

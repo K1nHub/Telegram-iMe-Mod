@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity$AvatarImageView;)V
     .locals 0
 
-    .line 260
+    .line 265
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$1;->val$avatarImage:Lorg/telegram/ui/ProfileActivity$AvatarImageView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;-><init>()V
@@ -35,14 +35,14 @@
 .method protected hide()V
     .locals 2
 
-    .line 269
+    .line 274
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$1;->val$avatarImage:Lorg/telegram/ui/ProfileActivity$AvatarImageView;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->drawAvatar:Z
 
-    .line 270
+    .line 275
     invoke-virtual {v0}, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->invalidate()V
 
     return-void
@@ -51,14 +51,14 @@
 .method protected show()V
     .locals 2
 
-    .line 263
+    .line 268
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$1;->val$avatarImage:Lorg/telegram/ui/ProfileActivity$AvatarImageView;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->drawAvatar:Z
 
-    .line 264
+    .line 269
     invoke-virtual {v0}, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->invalidate()V
 
     return-void

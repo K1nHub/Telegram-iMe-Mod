@@ -71,7 +71,7 @@ public final class DatabaseModuleKt {
             List emptyList15;
             List emptyList16;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C15751 c15751 = new Function2<Scope, ParametersHolder, AppMainDatabase>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.1
+            C15811 c15811 = new Function2<Scope, ParametersHolder, AppMainDatabase>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final AppMainDatabase invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -87,13 +87,13 @@ public final class DatabaseModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(AppMainDatabase.class), null, c15751, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(AppMainDatabase.class), null, c15811, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C15832 c15832 = new Function2<Scope, ParametersHolder, AppCacheDatabase>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.2
+            C15892 c15892 = new Function2<Scope, ParametersHolder, AppCacheDatabase>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final AppCacheDatabase invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -107,13 +107,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(AppCacheDatabase.class), null, c15832, kind, emptyList2));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(AppCacheDatabase.class), null, c15892, kind, emptyList2));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
-            C15843 c15843 = new Function2<Scope, ParametersHolder, HiddenChatsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.3
+            C15903 c15903 = new Function2<Scope, ParametersHolder, HiddenChatsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final HiddenChatsDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -123,13 +123,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(HiddenChatsDao.class), null, c15843, kind, emptyList3));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(HiddenChatsDao.class), null, c15903, kind, emptyList3));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);
             }
             new KoinDefinition(module, singleInstanceFactory3);
-            C15854 c15854 = new Function2<Scope, ParametersHolder, HistoryDialogDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.4
+            C15914 c15914 = new Function2<Scope, ParametersHolder, HistoryDialogDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final HistoryDialogDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -139,13 +139,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(HistoryDialogDao.class), null, c15854, kind, emptyList4));
+            SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(HistoryDialogDao.class), null, c15914, kind, emptyList4));
             module.indexPrimaryType(singleInstanceFactory4);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory4);
             }
             new KoinDefinition(module, singleInstanceFactory4);
-            C15865 c15865 = new Function2<Scope, ParametersHolder, FiltersDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.5
+            C15925 c15925 = new Function2<Scope, ParametersHolder, FiltersDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.5
                 @Override // kotlin.jvm.functions.Function2
                 public final FiltersDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -155,13 +155,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
             emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(FiltersDao.class), null, c15865, kind, emptyList5));
+            SingleInstanceFactory<?> singleInstanceFactory5 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(FiltersDao.class), null, c15925, kind, emptyList5));
             module.indexPrimaryType(singleInstanceFactory5);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory5);
             }
             new KoinDefinition(module, singleInstanceFactory5);
-            C15876 c15876 = new Function2<Scope, ParametersHolder, DialogTranslationSettingsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.6
+            C15936 c15936 = new Function2<Scope, ParametersHolder, DialogTranslationSettingsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.6
                 @Override // kotlin.jvm.functions.Function2
                 public final DialogTranslationSettingsDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -171,13 +171,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
             emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(DialogTranslationSettingsDao.class), null, c15876, kind, emptyList6));
+            SingleInstanceFactory<?> singleInstanceFactory6 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(DialogTranslationSettingsDao.class), null, c15936, kind, emptyList6));
             module.indexPrimaryType(singleInstanceFactory6);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory6);
             }
             new KoinDefinition(module, singleInstanceFactory6);
-            C15887 c15887 = new Function2<Scope, ParametersHolder, TopicsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.7
+            C15947 c15947 = new Function2<Scope, ParametersHolder, TopicsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.7
                 @Override // kotlin.jvm.functions.Function2
                 public final TopicsDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -187,13 +187,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
             emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(TopicsDao.class), null, c15887, kind, emptyList7));
+            SingleInstanceFactory<?> singleInstanceFactory7 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(TopicsDao.class), null, c15947, kind, emptyList7));
             module.indexPrimaryType(singleInstanceFactory7);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory7);
             }
             new KoinDefinition(module, singleInstanceFactory7);
-            C15898 c15898 = new Function2<Scope, ParametersHolder, WalletConnectSessionsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.8
+            C15958 c15958 = new Function2<Scope, ParametersHolder, WalletConnectSessionsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.8
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletConnectSessionsDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -203,13 +203,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
             emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(WalletConnectSessionsDao.class), null, c15898, kind, emptyList8));
+            SingleInstanceFactory<?> singleInstanceFactory8 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(WalletConnectSessionsDao.class), null, c15958, kind, emptyList8));
             module.indexPrimaryType(singleInstanceFactory8);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory8);
             }
             new KoinDefinition(module, singleInstanceFactory8);
-            C15909 c15909 = new Function2<Scope, ParametersHolder, TemplatesDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.9
+            C15969 c15969 = new Function2<Scope, ParametersHolder, TemplatesDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.9
                 @Override // kotlin.jvm.functions.Function2
                 public final TemplatesDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -219,13 +219,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier9 = companion.getRootScopeQualifier();
             emptyList9 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(TemplatesDao.class), null, c15909, kind, emptyList9));
+            SingleInstanceFactory<?> singleInstanceFactory9 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier9, Reflection.getOrCreateKotlinClass(TemplatesDao.class), null, c15969, kind, emptyList9));
             module.indexPrimaryType(singleInstanceFactory9);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory9);
             }
             new KoinDefinition(module, singleInstanceFactory9);
-            C157610 c157610 = new Function2<Scope, ParametersHolder, PlaylistsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.10
+            C158210 c158210 = new Function2<Scope, ParametersHolder, PlaylistsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.10
                 @Override // kotlin.jvm.functions.Function2
                 public final PlaylistsDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -235,13 +235,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier10 = companion.getRootScopeQualifier();
             emptyList10 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(PlaylistsDao.class), null, c157610, kind, emptyList10));
+            SingleInstanceFactory<?> singleInstanceFactory10 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier10, Reflection.getOrCreateKotlinClass(PlaylistsDao.class), null, c158210, kind, emptyList10));
             module.indexPrimaryType(singleInstanceFactory10);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory10);
             }
             new KoinDefinition(module, singleInstanceFactory10);
-            C157711 c157711 = new Function2<Scope, ParametersHolder, AlbumsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.11
+            C158311 c158311 = new Function2<Scope, ParametersHolder, AlbumsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.11
                 @Override // kotlin.jvm.functions.Function2
                 public final AlbumsDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -251,13 +251,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier11 = companion.getRootScopeQualifier();
             emptyList11 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(AlbumsDao.class), null, c157711, kind, emptyList11));
+            SingleInstanceFactory<?> singleInstanceFactory11 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier11, Reflection.getOrCreateKotlinClass(AlbumsDao.class), null, c158311, kind, emptyList11));
             module.indexPrimaryType(singleInstanceFactory11);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory11);
             }
             new KoinDefinition(module, singleInstanceFactory11);
-            C157812 c157812 = new Function2<Scope, ParametersHolder, CatalogCategoryDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.12
+            C158412 c158412 = new Function2<Scope, ParametersHolder, CatalogCategoryDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.12
                 @Override // kotlin.jvm.functions.Function2
                 public final CatalogCategoryDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -267,13 +267,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier12 = companion.getRootScopeQualifier();
             emptyList12 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(CatalogCategoryDao.class), null, c157812, kind, emptyList12));
+            SingleInstanceFactory<?> singleInstanceFactory12 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier12, Reflection.getOrCreateKotlinClass(CatalogCategoryDao.class), null, c158412, kind, emptyList12));
             module.indexPrimaryType(singleInstanceFactory12);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory12);
             }
             new KoinDefinition(module, singleInstanceFactory12);
-            C157913 c157913 = new Function2<Scope, ParametersHolder, CatalogLanguageDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.13
+            C158513 c158513 = new Function2<Scope, ParametersHolder, CatalogLanguageDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.13
                 @Override // kotlin.jvm.functions.Function2
                 public final CatalogLanguageDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -283,13 +283,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier13 = companion.getRootScopeQualifier();
             emptyList13 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(CatalogLanguageDao.class), null, c157913, kind, emptyList13));
+            SingleInstanceFactory<?> singleInstanceFactory13 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier13, Reflection.getOrCreateKotlinClass(CatalogLanguageDao.class), null, c158513, kind, emptyList13));
             module.indexPrimaryType(singleInstanceFactory13);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory13);
             }
             new KoinDefinition(module, singleInstanceFactory13);
-            C158014 c158014 = new Function2<Scope, ParametersHolder, WalletTokensBalancesDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.14
+            C158614 c158614 = new Function2<Scope, ParametersHolder, WalletTokensBalancesDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.14
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletTokensBalancesDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -299,13 +299,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier14 = companion.getRootScopeQualifier();
             emptyList14 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(WalletTokensBalancesDao.class), null, c158014, kind, emptyList14));
+            SingleInstanceFactory<?> singleInstanceFactory14 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier14, Reflection.getOrCreateKotlinClass(WalletTokensBalancesDao.class), null, c158614, kind, emptyList14));
             module.indexPrimaryType(singleInstanceFactory14);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory14);
             }
             new KoinDefinition(module, singleInstanceFactory14);
-            C158115 c158115 = new Function2<Scope, ParametersHolder, CloudAlbumsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.15
+            C158715 c158715 = new Function2<Scope, ParametersHolder, CloudAlbumsDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.15
                 @Override // kotlin.jvm.functions.Function2
                 public final CloudAlbumsDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -315,13 +315,13 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier15 = companion.getRootScopeQualifier();
             emptyList15 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(CloudAlbumsDao.class), null, c158115, kind, emptyList15));
+            SingleInstanceFactory<?> singleInstanceFactory15 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier15, Reflection.getOrCreateKotlinClass(CloudAlbumsDao.class), null, c158715, kind, emptyList15));
             module.indexPrimaryType(singleInstanceFactory15);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory15);
             }
             new KoinDefinition(module, singleInstanceFactory15);
-            C158216 c158216 = new Function2<Scope, ParametersHolder, SocialNetworkDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.16
+            C158816 c158816 = new Function2<Scope, ParametersHolder, SocialNetworkDao>() { // from class: com.iMe.storage.data.di.module.DatabaseModuleKt$databaseModule$1.16
                 @Override // kotlin.jvm.functions.Function2
                 public final SocialNetworkDao invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -331,7 +331,7 @@ public final class DatabaseModuleKt {
             };
             StringQualifier rootScopeQualifier16 = companion.getRootScopeQualifier();
             emptyList16 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(SocialNetworkDao.class), null, c158216, kind, emptyList16));
+            SingleInstanceFactory<?> singleInstanceFactory16 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier16, Reflection.getOrCreateKotlinClass(SocialNetworkDao.class), null, c158816, kind, emptyList16));
             module.indexPrimaryType(singleInstanceFactory16);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory16);

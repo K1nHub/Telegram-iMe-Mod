@@ -85,7 +85,7 @@ public final class SerialDescriptorImpl implements SerialDescriptor, CachedNames
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(withIndex, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
         for (IndexedValue indexedValue : withIndex) {
-            arrayList.add(TuplesKt.m144to(indexedValue.getValue(), Integer.valueOf(indexedValue.getIndex())));
+            arrayList.add(TuplesKt.m146to(indexedValue.getValue(), Integer.valueOf(indexedValue.getIndex())));
         }
         map = MapsKt__MapsKt.toMap(arrayList);
         this.name2Index = map;

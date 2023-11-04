@@ -16,13 +16,13 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 import kotlin.text.StringsKt__StringsJVMKt;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.BackupImageView;
-import org.telegram.p042ui.Components.LoadingDrawable;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.BackupImageView;
+import org.telegram.p043ui.Components.LoadingDrawable;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NftCollectionProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.NftCollectionProvider$convert$1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class NftCollectionProvider$convert$1 extends Lambda implements Function1<BackupImageView, Unit> {
     final /* synthetic */ NftCollectionItem $item;
     final /* synthetic */ NftCollectionProvider this$0;

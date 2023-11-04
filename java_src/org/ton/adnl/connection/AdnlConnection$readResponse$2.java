@@ -15,7 +15,7 @@ import kotlinx.datetime.Instant;
 import org.ton.crypto.AesCtr;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AdnlConnection.kt */
-@DebugMetadata(m143c = "org.ton.adnl.connection.AdnlConnection$readResponse$2", m142f = "AdnlConnection.kt", m141l = {141}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.ton.adnl.connection.AdnlConnection$readResponse$2", m144f = "AdnlConnection.kt", m143l = {141}, m142m = "invokeSuspend")
 /* loaded from: classes6.dex */
 public final class AdnlConnection$readResponse$2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super AdnlResponseData>, Object> {
     final /* synthetic */ CoroutineContext $callContext;

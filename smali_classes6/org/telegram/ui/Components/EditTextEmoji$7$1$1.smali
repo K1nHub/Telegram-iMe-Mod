@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EditTextEmoji$7$1;Landroid/content/Context;)V
     .locals 0
 
-    .line 667
+    .line 718
     iput-object p1, p0, Lorg/telegram/ui/Components/EditTextEmoji$7$1$1;->this$2:Lorg/telegram/ui/Components/EditTextEmoji$7$1;
 
     invoke-direct {p0, p2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public dismiss()V
     .locals 2
 
-    .line 670
+    .line 721
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$7$1$1;->this$2:Lorg/telegram/ui/Components/EditTextEmoji$7$1;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/EditTextEmoji$7$1;->this$1:Lorg/telegram/ui/Components/EditTextEmoji$7;
@@ -46,7 +46,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/EditTextEmoji;->hidePopup(Z)V
 
-    .line 671
+    .line 722
     iget-object v0, p0, Lorg/telegram/ui/Components/EditTextEmoji$7$1$1;->this$2:Lorg/telegram/ui/Components/EditTextEmoji$7$1;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/EditTextEmoji$7$1;->this$1:Lorg/telegram/ui/Components/EditTextEmoji$7;

@@ -46,25 +46,25 @@
 
     const/4 v0, 0x0
 
-    .line 41
+    .line 42
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs;-><init>(DILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 35
+    .line 36
     iput-wide p1, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->amount:D
 
-    .line 36
+    .line 37
     iput p3, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->decimals:I
 
-    .line 37
+    .line 38
     iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->recipientAddress:Ljava/lang/String;
 
-    .line 38
+    .line 39
     iput-object p5, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->feeLimit:Ljava/math/BigInteger;
 
-    .line 39
+    .line 40
     iput-object p6, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->contractAddress:Ljava/lang/String;
 
-    .line 40
+    .line 41
     iput-object p7, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->blockHeader:Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
 
     return-void
@@ -369,7 +369,7 @@
 .method public getAmount()D
     .locals 2
 
-    .line 35
+    .line 36
     iget-wide v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->amount:D
 
     return-wide v0
@@ -378,7 +378,7 @@
 .method public final getBlockHeader()Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
     .locals 1
 
-    .line 40
+    .line 41
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->blockHeader:Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
 
     return-object v0
@@ -387,7 +387,7 @@
 .method public final getContractAddress()Ljava/lang/String;
     .locals 1
 
-    .line 39
+    .line 40
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->contractAddress:Ljava/lang/String;
 
     return-object v0
@@ -396,7 +396,7 @@
 .method protected getDecimals()I
     .locals 1
 
-    .line 36
+    .line 37
     iget v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->decimals:I
 
     return v0
@@ -405,7 +405,7 @@
 .method public final getFeeLimit()Ljava/math/BigInteger;
     .locals 1
 
-    .line 38
+    .line 39
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->feeLimit:Ljava/math/BigInteger;
 
     return-object v0
@@ -414,7 +414,7 @@
 .method public final getRecipientAddress()Ljava/lang/String;
     .locals 1
 
-    .line 37
+    .line 38
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;->recipientAddress:Ljava/lang/String;
 
     return-object v0

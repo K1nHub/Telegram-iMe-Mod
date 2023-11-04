@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: Utils.kt */
-@DebugMetadata(m143c = "io.ktor.network.util.Timeout$initTimeoutJob$1", m142f = "Utils.kt", m141l = {57, 59, 60}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "io.ktor.network.util.Timeout$initTimeoutJob$1", m144f = "Utils.kt", m143l = {57, 59, 60}, m142m = "invokeSuspend")
 /* loaded from: classes4.dex */
 public final class Timeout$initTimeoutJob$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;

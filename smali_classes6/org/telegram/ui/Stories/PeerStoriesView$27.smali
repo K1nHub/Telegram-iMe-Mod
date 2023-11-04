@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView;Landroid/app/Activity;)V
     .locals 0
 
-    .line 3075
+    .line 3136
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$27;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/PeerStoriesView$27;->val$activity:Landroid/app/Activity;
@@ -39,7 +39,7 @@
 .method public getParentActivity()Landroid/app/Activity;
     .locals 1
 
-    .line 3083
+    .line 3144
     iget-object v0, p0, Lorg/telegram/ui/Stories/PeerStoriesView$27;->val$activity:Landroid/app/Activity;
 
     return-object v0
@@ -48,12 +48,12 @@
 .method public getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 2
 
-    .line 3088
+    .line 3149
     new-instance v0, Lorg/telegram/ui/Stories/PeerStoriesView$27$1;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$27;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6300(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-static {v1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$6400(Lorg/telegram/ui/Stories/PeerStoriesView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v1
 
@@ -73,19 +73,15 @@
 .method public presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
     .locals 1
 
-    .line 3100
+    .line 3160
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->storyViewer:Lorg/telegram/ui/Stories/StoryViewer;
 
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
-    const/4 p1, 0x0
-
-    return p1
-
-    .line 3104
-    :cond_0
+    .line 3161
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/StoryViewer;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
+    :cond_0
     const/4 p1, 0x1
 
     return p1

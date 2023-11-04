@@ -69,7 +69,7 @@ public final class CacheDataSink implements DataSink {
         Assertions.checkState(j > 0 || j == -1, "fragmentSize must be positive or C.LENGTH_UNSET.");
         int i2 = (j > (-1L) ? 1 : (j == (-1L) ? 0 : -1));
         if (i2 != 0 && j < MIN_RECOMMENDED_FRAGMENT_SIZE) {
-            Log.m1106w(TAG, "fragmentSize is below the minimum recommended value of 2097152. This may cause poor cache performance.");
+            Log.m1107w(TAG, "fragmentSize is below the minimum recommended value of 2097152. This may cause poor cache performance.");
         }
         this.cache = (Cache) Assertions.checkNotNull(cache);
         this.fragmentSize = i2 == 0 ? Long.MAX_VALUE : j;

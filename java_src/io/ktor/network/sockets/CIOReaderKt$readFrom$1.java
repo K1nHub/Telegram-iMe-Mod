@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CIOReader.kt */
-@DebugMetadata(m143c = "io.ktor.network.sockets.CIOReaderKt", m142f = "CIOReader.kt", m141l = {133}, m140m = "readFrom")
+@DebugMetadata(m145c = "io.ktor.network.sockets.CIOReaderKt", m144f = "CIOReader.kt", m143l = {133}, m142m = "readFrom")
 /* loaded from: classes4.dex */
 public final class CIOReaderKt$readFrom$1 extends ContinuationImpl {
     Object L$0;

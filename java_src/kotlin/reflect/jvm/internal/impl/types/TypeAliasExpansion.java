@@ -42,9 +42,9 @@ public final class TypeAliasExpansion {
 
     public final TypeProjection getReplacement(TypeConstructor constructor) {
         Intrinsics.checkNotNullParameter(constructor, "constructor");
-        ClassifierDescriptor mo2046getDeclarationDescriptor = constructor.mo2046getDeclarationDescriptor();
-        if (mo2046getDeclarationDescriptor instanceof TypeParameterDescriptor) {
-            return this.mapping.get(mo2046getDeclarationDescriptor);
+        ClassifierDescriptor mo2051getDeclarationDescriptor = constructor.mo2051getDeclarationDescriptor();
+        if (mo2051getDeclarationDescriptor instanceof TypeParameterDescriptor) {
+            return this.mapping.get(mo2051getDeclarationDescriptor);
         }
         return null;
     }

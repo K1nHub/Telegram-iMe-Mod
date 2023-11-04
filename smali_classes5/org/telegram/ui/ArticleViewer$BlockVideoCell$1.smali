@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)V
     .locals 0
 
-    .line 6583
+    .line 6601
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockVideoCell;
 
     invoke-direct {p0}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;-><init>()V
@@ -43,20 +43,20 @@
 .method public onRenderedFirstFrame()V
     .locals 2
 
-    .line 6591
+    .line 6609
     invoke-super {p0}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->onRenderedFirstFrame()V
 
-    .line 6592
+    .line 6610
     iget-boolean v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->firstFrameRendered:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    .line 6593
+    .line 6611
     iput-boolean v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->firstFrameRendered:Z
 
-    .line 6594
+    .line 6612
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockVideoCell$1;->this$1:Lorg/telegram/ui/ArticleViewer$BlockVideoCell;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$14300(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;)Landroid/view/TextureView;

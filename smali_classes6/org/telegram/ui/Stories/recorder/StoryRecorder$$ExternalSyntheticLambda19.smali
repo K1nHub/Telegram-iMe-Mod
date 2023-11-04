@@ -2,46 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;
+.implements Landroid/view/View$OnLongClickListener;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-.field public final synthetic f$1:F
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;F)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    iput p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda19;->f$1:F
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
-    .locals 6
+.method public final onLongClick(Landroid/view/View;)Z
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda19;->f$1:F
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$uzRD8zmNwO5HdmJhtLjvEsnktYM(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/view/View;)Z
 
-    move-object v2, p1
+    move-result p1
 
-    move v3, p2
-
-    move v4, p3
-
-    move v5, p4
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$BTk0P-RsygbDqhZsOBUse-8lFeM(Lorg/telegram/ui/Stories/recorder/StoryRecorder;FLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
-
-    return-void
+    return p1
 .end method

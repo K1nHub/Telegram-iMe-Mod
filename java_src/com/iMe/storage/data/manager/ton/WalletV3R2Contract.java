@@ -16,11 +16,12 @@ import kotlin.time.DurationUnit;
 import kotlinx.coroutines.CoroutineScopeKt;
 import kotlinx.datetime.Clock$System;
 import kotlinx.datetime.Instant;
-import org.ton.api.p043pk.PrivateKeyEd25519;
+import org.ton.api.p044pk.PrivateKeyEd25519;
 import org.ton.api.pub.PublicKeyEd25519;
 import org.ton.bitstring.BitString;
 import org.ton.block.AccountInfo;
 import org.ton.block.AccountState;
+import org.ton.block.AccountUninit;
 import org.ton.block.AddrNone;
 import org.ton.block.Coins;
 import org.ton.block.CommonMsgInfoRelaxed;
@@ -37,6 +38,7 @@ import org.ton.boc.BagOfCellsKt;
 import org.ton.cell.Cell;
 import org.ton.cell.CellBuilder;
 import org.ton.cell.CellSlice;
+import org.ton.contract.SmartContract;
 import org.ton.contract.wallet.WalletContract;
 import org.ton.contract.wallet.WalletTransfer;
 import org.ton.hashmap.HashMapE;
@@ -83,11 +85,40 @@ public final class WalletV3R2Contract implements WalletContract<Cell> {
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public WalletV3R2Contract(int i, StateInit init) {
+        this(SmartContract.Companion.address(i, init), AccountUninit.INSTANCE);
+        Intrinsics.checkNotNullParameter(init, "init");
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public WalletV3R2Contract(int i, PublicKeyEd25519 publicKey) {
+        this(i, Companion.createStateInit$default(Companion, publicKey, WalletContract.DEFAULT_WALLET_ID + i, 0, 4, null));
+        Intrinsics.checkNotNullParameter(publicKey, "publicKey");
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public WalletV3R2Contract(AccountInfo accountInfo) {
         this(accountInfo.addr(), accountInfo.storage().state());
         Intrinsics.checkNotNullParameter(accountInfo, "accountInfo");
     }
 
+    public final Object transfer(LiteApi liteApi, PrivateKeyEd25519 privateKeyEd25519, Integer num, WalletTransfer[] walletTransferArr, Continuation<? super Unit> continuation) {
+        Object coroutine_suspended;
+        Instant now = Clock$System.INSTANCE.now();
+        Duration.Companion companion = Duration.Companion;
+        Object transfer = transfer(liteApi, privateKeyEd25519, now.m2126plusLRDsOJo(DurationKt.toDuration(60, DurationUnit.SECONDS)), num, (WalletTransfer[]) Arrays.copyOf(walletTransferArr, walletTransferArr.length), continuation);
+        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        return transfer == coroutine_suspended ? transfer : Unit.INSTANCE;
+    }
+
+    public final Object transfer(LiteApi liteApi, PrivateKeyEd25519 privateKeyEd25519, Instant instant, Integer num, WalletTransfer[] walletTransferArr, Continuation<? super Unit> continuation) {
+        Object coroutine_suspended;
+        Object coroutineScope = CoroutineScopeKt.coroutineScope(new WalletV3R2Contract$transfer$3(num, this, privateKeyEd25519, instant, walletTransferArr, liteApi, null), continuation);
+        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        return coroutineScope == coroutine_suspended ? coroutineScope : Unit.INSTANCE;
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
     public final int getSeqno() {
         Cell data = getData();
         if (data == null) {
@@ -96,6 +127,7 @@ public final class WalletV3R2Contract implements WalletContract<Cell> {
         return data.beginParse().preloadInt(32).intValue();
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     public final int getSubWalletId() {
         Cell data = getData();
         if (data == null) {
@@ -104,22 +136,6 @@ public final class WalletV3R2Contract implements WalletContract<Cell> {
         CellSlice beginParse = data.beginParse();
         beginParse.skipBits(32);
         return beginParse.preloadInt(32).intValue();
-    }
-
-    public final Object transfer(LiteApi liteApi, PrivateKeyEd25519 privateKeyEd25519, WalletTransfer[] walletTransferArr, Continuation<? super Unit> continuation) {
-        Object coroutine_suspended;
-        Instant now = Clock$System.INSTANCE.now();
-        Duration.Companion companion = Duration.Companion;
-        Object transfer = transfer(liteApi, privateKeyEd25519, now.m2121plusLRDsOJo(DurationKt.toDuration(60, DurationUnit.SECONDS)), (WalletTransfer[]) Arrays.copyOf(walletTransferArr, walletTransferArr.length), continuation);
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        return transfer == coroutine_suspended ? transfer : Unit.INSTANCE;
-    }
-
-    public final Object transfer(LiteApi liteApi, PrivateKeyEd25519 privateKeyEd25519, Instant instant, WalletTransfer[] walletTransferArr, Continuation<? super Unit> continuation) {
-        Object coroutine_suspended;
-        Object coroutineScope = CoroutineScopeKt.coroutineScope(new WalletV3R2Contract$transfer$3(this, privateKeyEd25519, instant, walletTransferArr, liteApi, null), continuation);
-        coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        return coroutineScope == coroutine_suspended ? coroutineScope : Unit.INSTANCE;
     }
 
     /* compiled from: WalletV3R2Contract.kt */
@@ -281,6 +297,15 @@ public final class WalletV3R2Contract implements WalletContract<Cell> {
             throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.data.manager.ton.WalletV3R2Contract.Companion.loadContract(org.ton.lite.client.LiteClient, org.ton.api.tonnode.TonNodeBlockIdExt, org.ton.block.AddrStd, kotlin.coroutines.Continuation):java.lang.Object");
         }
 
+        public final StateInit createStateInit(PublicKeyEd25519 publicKey, int i, int i2) {
+            Intrinsics.checkNotNullParameter(publicKey, "publicKey");
+            CellBuilder beginCell = CellBuilder.Companion.beginCell();
+            beginCell.storeUInt(i2, 32);
+            beginCell.storeUInt(i, 32);
+            beginCell.storeBytes(publicKey.getKey().toByteArray());
+            return new StateInit(WalletV3R2Contract.CODE, beginCell.endCell(), (HashMapE) null, (UInt) null, (TickTock) null, 28, (DefaultConstructorMarker) null);
+        }
+
         public final Message<Cell> createTransferMessage(MsgAddressInt address, StateInit stateInit, PrivateKeyEd25519 privateKey, int i, int i2, int i3, WalletTransfer... transfers) {
             Intrinsics.checkNotNullParameter(address, "address");
             Intrinsics.checkNotNullParameter(privateKey, "privateKey");
@@ -293,31 +318,6 @@ public final class WalletV3R2Contract implements WalletContract<Cell> {
                 i2 = 0;
             }
             return companion.createStateInit(publicKeyEd25519, i, i2);
-        }
-
-        public final StateInit createStateInit(final PublicKeyEd25519 publicKey, final int i, final int i2) {
-            Intrinsics.checkNotNullParameter(publicKey, "publicKey");
-            return new StateInit(WalletV3R2Contract.CODE, CellBuilder.Companion.createCell(new Function1<CellBuilder, Unit>() { // from class: com.iMe.storage.data.manager.ton.WalletV3R2Contract$Companion$createStateInit$data$1
-                /* JADX INFO: Access modifiers changed from: package-private */
-                /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                {
-                    super(1);
-                }
-
-                @Override // kotlin.jvm.functions.Function1
-                public /* bridge */ /* synthetic */ Unit invoke(CellBuilder cellBuilder) {
-                    invoke2(cellBuilder);
-                    return Unit.INSTANCE;
-                }
-
-                /* renamed from: invoke  reason: avoid collision after fix types in other method */
-                public final void invoke2(CellBuilder createCell) {
-                    Intrinsics.checkNotNullParameter(createCell, "$this$createCell");
-                    createCell.storeUInt(i2, 32);
-                    createCell.storeUInt(i, 32);
-                    createCell.storeBytes(publicKey.getKey().toByteArray());
-                }
-            }), (HashMapE) null, (UInt) null, (TickTock) null, 28, (DefaultConstructorMarker) null);
         }
 
         private final Cell createTransferMessageBody(PrivateKeyEd25519 privateKeyEd25519, final int i, final int i2, final int i3, final WalletTransfer... walletTransferArr) {

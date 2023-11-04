@@ -44,7 +44,7 @@ public final class JsonLiteralSerializer implements KSerializer<JsonLiteral> {
             }
             ULong uLongOrNull = UStringsKt.toULongOrNull(value.getContent());
             if (uLongOrNull != null) {
-                encoder.encodeInline(BuiltinSerializersKt.serializer(ULong.Companion).getDescriptor()).encodeLong(uLongOrNull.m1993unboximpl());
+                encoder.encodeInline(BuiltinSerializersKt.serializer(ULong.Companion).getDescriptor()).encodeLong(uLongOrNull.m1998unboximpl());
                 return;
             }
             Double doubleOrNull = JsonElementKt.getDoubleOrNull(value);

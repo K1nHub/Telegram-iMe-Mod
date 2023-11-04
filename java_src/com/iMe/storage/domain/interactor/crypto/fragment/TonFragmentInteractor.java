@@ -1,6 +1,7 @@
 package com.iMe.storage.domain.interactor.crypto.fragment;
 
 import com.google.android.gms.common.util.Base64Utils;
+import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
 import com.iMe.storage.data.network.model.error.ErrorModel;
 import com.iMe.storage.data.network.model.error.IErrorStatus;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
@@ -52,130 +53,70 @@ public final class TonFragmentInteractor {
     }
 
     public final Observable<Result<Boolean>> checkAndPrepareSession() {
-        Observable<R> flatMap = this.tonFragmentRepository.getSessionAuthState().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$checkAndPrepareSession$$inlined$flatMapSuccess$1
+        Observable<Result<Boolean>> sessionAuthState = this.tonFragmentRepository.getSessionAuthState();
+        final Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends Boolean>>> function1 = new Function1<Result<? extends Boolean>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$checkAndPrepareSession$1
+            /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
             }
 
             @Override // kotlin.jvm.functions.Function1
-            public final ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends Boolean> result) {
-                TonFragmentRepository tonFragmentRepository;
-                SchedulersProvider schedulersProvider;
-                Intrinsics.checkNotNullParameter(result, "result");
-                if (!(result instanceof Result.Success)) {
-                    if (result instanceof Result.Error) {
-                        Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
-                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
-                        return Observable.just(error$default);
-                    }
-                    return Observable.empty();
-                }
-                Boolean data = result.getData();
-                Boolean bool = Boolean.TRUE;
-                if (Intrinsics.areEqual(data, bool)) {
-                    Observable just = Observable.just(Result.Companion.success(bool));
-                    Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-                    return just;
-                }
-                tonFragmentRepository = TonFragmentInteractor.this.tonFragmentRepository;
-                Observable<Result<TonFragmentSessionData>> sessionData = tonFragmentRepository.getSessionData();
-                final TonFragmentInteractor tonFragmentInteractor = TonFragmentInteractor.this;
-                Observable<R> flatMap2 = sessionData.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends TonFragmentSessionData>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$checkAndPrepareSession$lambda$2$$inlined$flatMapSuccess$1
-                    {
-                        super(1);
-                    }
-
-                    @Override // kotlin.jvm.functions.Function1
-                    public final ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends TonFragmentSessionData> result2) {
-                        CryptoAccessManager cryptoAccessManager;
-                        String sessionMessage;
-                        TonController tonController;
-                        SchedulersProvider schedulersProvider2;
-                        Intrinsics.checkNotNullParameter(result2, "result");
-                        if (!(result2 instanceof Result.Success)) {
-                            if (result2 instanceof Result.Error) {
-                                Result error$default2 = Result.Companion.error$default(Result.Companion, ((Result.Error) result2).getError(), null, 2, null);
-                                Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
-                                return Observable.just(error$default2);
-                            }
-                            return Observable.empty();
-                        }
-                        cryptoAccessManager = TonFragmentInteractor.this.cryptoAccessManager;
-                        final Wallet wallet2 = cryptoAccessManager.getWallet(BlockchainType.TON);
-                        if (wallet2 == null) {
-                            Observable just2 = Observable.just(Result.Companion.error$default(Result.Companion, new ErrorModel((IErrorStatus) null, (Throwable) null, 3, (DefaultConstructorMarker) null), null, 2, null));
-                            Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
-                            return just2;
-                        }
-                        TonFragmentInteractor tonFragmentInteractor2 = TonFragmentInteractor.this;
-                        String address = wallet2.getAddress();
-                        TonFragmentSessionData data2 = result2.getData();
-                        String clientId = data2 != null ? data2.getClientId() : null;
-                        if (clientId == null) {
-                            clientId = "";
-                        }
-                        sessionMessage = tonFragmentInteractor2.getSessionMessage("v3R2", address, clientId);
-                        byte[] bytes = sessionMessage.getBytes(Charsets.UTF_8);
-                        Intrinsics.checkNotNullExpressionValue(bytes, "this as java.lang.String).getBytes(charset)");
-                        tonController = TonFragmentInteractor.this.tonController;
-                        Observable<Result<byte[]>> signData = tonController.signData(bytes);
-                        final TonFragmentInteractor tonFragmentInteractor3 = TonFragmentInteractor.this;
-                        Observable<R> flatMap3 = signData.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends byte[]>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$checkAndPrepareSession$lambda$2$lambda$1$$inlined$flatMapSuccess$1
-                            /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                            {
-                                super(1);
-                            }
-
-                            @Override // kotlin.jvm.functions.Function1
-                            public final ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends byte[]> result3) {
-                                TonFragmentRepository tonFragmentRepository2;
-                                SchedulersProvider schedulersProvider3;
-                                Intrinsics.checkNotNullParameter(result3, "result");
-                                if (!(result3 instanceof Result.Success)) {
-                                    if (result3 instanceof Result.Error) {
-                                        Result error$default3 = Result.Companion.error$default(Result.Companion, ((Result.Error) result3).getError(), null, 2, null);
-                                        Intrinsics.checkNotNull(error$default3, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
-                                        return Observable.just(error$default3);
-                                    }
-                                    return Observable.empty();
-                                }
-                                byte[] orEmpty = CryptoExtKt.orEmpty(result3.getData());
-                                tonFragmentRepository2 = TonFragmentInteractor.this.tonFragmentRepository;
-                                String encodeUrlSafe = Base64Utils.encodeUrlSafe(orEmpty);
-                                Intrinsics.checkNotNullExpressionValue(encodeUrlSafe, "encodeUrlSafe(signatureBytes)");
-                                String address2 = wallet2.getAddress();
-                                String str = r3;
-                                String encodeUrlSafe2 = Base64Utils.encodeUrlSafe(CryptoExtKt.hexToByteArray$default(wallet2.getPublicKey(), false, 1, null));
-                                Intrinsics.checkNotNullExpressionValue(encodeUrlSafe2, "encodeUrlSafe(\n         …                        )");
-                                Observable<Result<Boolean>> sendSessionSignature = tonFragmentRepository2.sendSessionSignature(encodeUrlSafe, address2, str, encodeUrlSafe2);
-                                schedulersProvider3 = TonFragmentInteractor.this.schedulersProvider;
-                                Observable<Result<Boolean>> subscribeOn = sendSessionSignature.subscribeOn(schedulersProvider3.mo1010io());
-                                Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonFragmentRepository\n  …(schedulersProvider.io())");
-                                return subscribeOn;
-                            }
-                        }));
-                        Intrinsics.checkNotNullExpressionValue(flatMap3, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-                        schedulersProvider2 = TonFragmentInteractor.this.schedulersProvider;
-                        Observable subscribeOn = flatMap3.subscribeOn(schedulersProvider2.mo1010io());
-                        Intrinsics.checkNotNullExpressionValue(subscribeOn, "{\n                      …                        }");
-                        return subscribeOn;
-                    }
-                }));
-                Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-                schedulersProvider = TonFragmentInteractor.this.schedulersProvider;
-                Observable subscribeOn = flatMap2.subscribeOn(schedulersProvider.mo1010io());
-                Intrinsics.checkNotNullExpressionValue(subscribeOn, "{\n                    to…r.io())\n                }");
-                return subscribeOn;
+            public /* bridge */ /* synthetic */ ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends Boolean> result) {
+                return invoke2((Result<Boolean>) result);
             }
-        }));
-        Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<Boolean>> subscribeOn = flatMap.startWith((Observable<R>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
-        Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonFragmentRepository\n  …(schedulersProvider.io())");
+
+            /* renamed from: invoke  reason: avoid collision after fix types in other method */
+            public final ObservableSource<? extends Result<Boolean>> invoke2(Result<Boolean> authStateResult) {
+                Observable initSession;
+                Observable initSession2;
+                Intrinsics.checkNotNullParameter(authStateResult, "authStateResult");
+                if (authStateResult instanceof Result.Error) {
+                    IErrorStatus status = ((Result.Error) authStateResult).getError().getStatus();
+                    boolean z = true;
+                    if (status != FirebaseFunctionsErrorHandler.TonFragmentErrorStatus.NO_CURRENT_TON_CONNECT_SESSION_FOUND && status != FirebaseFunctionsErrorHandler.TonFragmentErrorStatus.NO_CURRENT_AUTHORIZATION_FOUND) {
+                        z = false;
+                    }
+                    if (!z) {
+                        Observable just = Observable.just(authStateResult);
+                        Intrinsics.checkNotNullExpressionValue(just, "just(this)");
+                        return just;
+                    }
+                    initSession2 = TonFragmentInteractor.this.initSession();
+                    return initSession2;
+                } else if (!(authStateResult instanceof Result.Success)) {
+                    Observable just2 = Observable.just(authStateResult);
+                    Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
+                    return just2;
+                } else if (((Boolean) ((Result.Success) authStateResult).getData()).booleanValue()) {
+                    Observable just3 = Observable.just(authStateResult);
+                    Intrinsics.checkNotNullExpressionValue(just3, "just(this)");
+                    return just3;
+                } else {
+                    initSession = TonFragmentInteractor.this.initSession();
+                    return initSession;
+                }
+            }
+        };
+        Observable<Result<Boolean>> subscribeOn = sessionAuthState.flatMap(new Function() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$$ExternalSyntheticLambda0
+            @Override // io.reactivex.functions.Function
+            public final Object apply(Object obj) {
+                ObservableSource checkAndPrepareSession$lambda$0;
+                checkAndPrepareSession$lambda$0 = TonFragmentInteractor.checkAndPrepareSession$lambda$0(Function1.this, obj);
+                return checkAndPrepareSession$lambda$0;
+            }
+        }).startWith((Observable<R>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
+        Intrinsics.checkNotNullExpressionValue(subscribeOn, "fun checkAndPrepareSessi…(schedulersProvider.io())");
         return subscribeOn;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final ObservableSource checkAndPrepareSession$lambda$0(Function1 tmp0, Object obj) {
+        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
+        return (ObservableSource) tmp0.invoke(obj);
+    }
+
     public final Observable<Result<List<PremiumPlan>>> getPremiumPlans() {
-        Observable<Result<List<PremiumPlan>>> subscribeOn = this.tonFragmentRepository.getPremiumPrices().subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<List<PremiumPlan>>> subscribeOn = this.tonFragmentRepository.getPremiumPrices().subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonFragmentRepository\n  …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -230,7 +171,7 @@ public final class TonFragmentInteractor {
                 Intrinsics.checkNotNull(data);
                 PremiumBuyTransactionParams premiumBuyTransactionParams = data;
                 tonController = TonFragmentInteractor.this.tonController;
-                Observable map = TonController.CC.sendTransaction$default(tonController, premiumBuyTransactionParams.getAddress(), premiumBuyTransactionParams.getAmount().longValue(), new TonTransactionPayload.Raw(premiumBuyTransactionParams.getPayload()), 0, 8, null).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends String>, Result<? extends Boolean>>() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$sendPremiumGift$lambda$6$lambda$5$$inlined$mapSuccess$1
+                Observable map = TonController.CC.sendTransaction$default(tonController, premiumBuyTransactionParams.getAddress(), premiumBuyTransactionParams.getAmount().longValue(), premiumBuyTransactionParams.getSeqno(), new TonTransactionPayload.Raw(premiumBuyTransactionParams.getPayload()), 0, 16, null).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends String>, Result<? extends Boolean>>() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$sendPremiumGift$lambda$4$lambda$3$$inlined$mapSuccess$1
                     /* JADX WARN: Multi-variable type inference failed */
                     @Override // kotlin.jvm.functions.Function1
                     public final Result<? extends Boolean> invoke(Result<? extends String> result2) {
@@ -255,7 +196,7 @@ public final class TonFragmentInteractor {
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<Boolean>> subscribeOn = flatMap2.subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Boolean>> subscribeOn = flatMap2.subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "getRecipientByUsername(u…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -263,7 +204,7 @@ public final class TonFragmentInteractor {
     public final Observable<Result<List<TonFragmentProduct>>> getUsernames(TonFragmentProductsSortingType sortingType, String searchQuery) {
         Intrinsics.checkNotNullParameter(sortingType, "sortingType");
         Intrinsics.checkNotNullParameter(searchQuery, "searchQuery");
-        Observable<Result<List<TonFragmentProduct>>> subscribeOn = this.tonFragmentRepository.getUsernames(sortingType, searchQuery).startWith((Observable<Result<List<TonFragmentProduct>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<List<TonFragmentProduct>>> subscribeOn = this.tonFragmentRepository.getUsernames(sortingType, searchQuery).startWith((Observable<Result<List<TonFragmentProduct>>>) Result.Companion.loading$default(Result.Companion, null, 1, null)).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonFragmentRepository\n  …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -292,7 +233,7 @@ public final class TonFragmentInteractor {
                 Intrinsics.checkNotNull(data);
                 ProductBuyTransactionParams productBuyTransactionParams = data;
                 tonController = TonFragmentInteractor.this.tonController;
-                Observable map = TonController.CC.sendTransaction$default(tonController, productBuyTransactionParams.getAddress(), productBuyTransactionParams.getAmount().longValue(), null, 0, 12, null).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends String>, Result<? extends Boolean>>() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$buyProduct$lambda$9$lambda$8$$inlined$mapSuccess$1
+                Observable map = TonController.CC.sendTransaction$default(tonController, productBuyTransactionParams.getAddress(), productBuyTransactionParams.getAmount().longValue(), productBuyTransactionParams.getSeqno(), null, 0, 24, null).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends String>, Result<? extends Boolean>>() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$buyProduct$lambda$7$lambda$6$$inlined$mapSuccess$1
                     /* JADX WARN: Multi-variable type inference failed */
                     @Override // kotlin.jvm.functions.Function1
                     public final Result<? extends Boolean> invoke(Result<? extends String> result2) {
@@ -317,13 +258,102 @@ public final class TonFragmentInteractor {
             }
         }));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable<Result<Boolean>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<Boolean>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "prepareProductBuyTransac…(schedulersProvider.io())");
         return subscribeOn;
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public final Observable<Result<Boolean>> initSession() {
+        Observable<R> flatMap = this.tonFragmentRepository.getSessionData().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends TonFragmentSessionData>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$initSession$$inlined$flatMapSuccess$1
+            {
+                super(1);
+            }
+
+            @Override // kotlin.jvm.functions.Function1
+            public final ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends TonFragmentSessionData> result) {
+                CryptoAccessManager cryptoAccessManager;
+                String sessionMessage;
+                TonController tonController;
+                SchedulersProvider schedulersProvider;
+                Intrinsics.checkNotNullParameter(result, "result");
+                if (!(result instanceof Result.Success)) {
+                    if (result instanceof Result.Error) {
+                        Result error$default = Result.Companion.error$default(Result.Companion, ((Result.Error) result).getError(), null, 2, null);
+                        Intrinsics.checkNotNull(error$default, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
+                        return Observable.just(error$default);
+                    }
+                    return Observable.empty();
+                }
+                cryptoAccessManager = TonFragmentInteractor.this.cryptoAccessManager;
+                final Wallet wallet2 = cryptoAccessManager.getWallet(BlockchainType.TON);
+                if (wallet2 == null) {
+                    Observable just = Observable.just(Result.Companion.error$default(Result.Companion, new ErrorModel((IErrorStatus) null, (Throwable) null, 3, (DefaultConstructorMarker) null), null, 2, null));
+                    Intrinsics.checkNotNullExpressionValue(just, "just(this)");
+                    return just;
+                }
+                TonFragmentInteractor tonFragmentInteractor = TonFragmentInteractor.this;
+                String address = wallet2.getAddress();
+                TonFragmentSessionData data = result.getData();
+                String clientId = data != null ? data.getClientId() : null;
+                if (clientId == null) {
+                    clientId = "";
+                }
+                sessionMessage = tonFragmentInteractor.getSessionMessage("v3R2", address, clientId);
+                byte[] bytes = sessionMessage.getBytes(Charsets.UTF_8);
+                Intrinsics.checkNotNullExpressionValue(bytes, "this as java.lang.String).getBytes(charset)");
+                tonController = TonFragmentInteractor.this.tonController;
+                Observable<Result<byte[]>> signData = tonController.signData(bytes);
+                final TonFragmentInteractor tonFragmentInteractor2 = TonFragmentInteractor.this;
+                Observable<R> flatMap2 = signData.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new Function1<Result<? extends byte[]>, ObservableSource<? extends Result<? extends Boolean>>>() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$initSession$lambda$9$$inlined$flatMapSuccess$1
+                    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+                    {
+                        super(1);
+                    }
+
+                    @Override // kotlin.jvm.functions.Function1
+                    public final ObservableSource<? extends Result<? extends Boolean>> invoke(Result<? extends byte[]> result2) {
+                        TonFragmentRepository tonFragmentRepository;
+                        SchedulersProvider schedulersProvider2;
+                        Intrinsics.checkNotNullParameter(result2, "result");
+                        if (!(result2 instanceof Result.Success)) {
+                            if (result2 instanceof Result.Error) {
+                                Result error$default2 = Result.Companion.error$default(Result.Companion, ((Result.Error) result2).getError(), null, 2, null);
+                                Intrinsics.checkNotNull(error$default2, "null cannot be cast to non-null type R of com.iMe.storage.domain.utils.extensions.ObservableExtKt.flatMapSuccess");
+                                return Observable.just(error$default2);
+                            }
+                            return Observable.empty();
+                        }
+                        byte[] orEmpty = CryptoExtKt.orEmpty(result2.getData());
+                        tonFragmentRepository = TonFragmentInteractor.this.tonFragmentRepository;
+                        String encodeUrlSafe = Base64Utils.encodeUrlSafe(orEmpty);
+                        Intrinsics.checkNotNullExpressionValue(encodeUrlSafe, "encodeUrlSafe(signatureBytes)");
+                        String address2 = wallet2.getAddress();
+                        String str = r3;
+                        String encodeUrlSafe2 = Base64Utils.encodeUrlSafe(CryptoExtKt.hexToByteArray$default(wallet2.getPublicKey(), false, 1, null));
+                        Intrinsics.checkNotNullExpressionValue(encodeUrlSafe2, "encodeUrlSafe(\n         …                        )");
+                        Observable<Result<Boolean>> sendSessionSignature = tonFragmentRepository.sendSessionSignature(encodeUrlSafe, address2, str, encodeUrlSafe2);
+                        schedulersProvider2 = TonFragmentInteractor.this.schedulersProvider;
+                        Observable<Result<Boolean>> subscribeOn = sendSessionSignature.subscribeOn(schedulersProvider2.mo1011io());
+                        Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonFragmentRepository\n  …(schedulersProvider.io())");
+                        return subscribeOn;
+                    }
+                }));
+                Intrinsics.checkNotNullExpressionValue(flatMap2, "crossinline body: (T) ->…e.empty()\n        }\n    }");
+                schedulersProvider = TonFragmentInteractor.this.schedulersProvider;
+                Observable subscribeOn = flatMap2.subscribeOn(schedulersProvider.mo1011io());
+                Intrinsics.checkNotNullExpressionValue(subscribeOn, "{\n                    va…r.io())\n                }");
+                return subscribeOn;
+            }
+        }));
+        Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
+        Observable<Result<Boolean>> subscribeOn = flatMap.subscribeOn(this.schedulersProvider.mo1011io());
+        Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonFragmentRepository\n  …(schedulersProvider.io())");
+        return subscribeOn;
+    }
+
     private final Observable<Result<String>> getRecipientByUsername(String str, int i) {
-        Observable<Result<String>> subscribeOn = this.tonFragmentRepository.getRecipientByUsername(str, i).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<String>> subscribeOn = this.tonFragmentRepository.getRecipientByUsername(str, i).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "tonFragmentRepository\n  …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -349,14 +379,14 @@ public final class TonFragmentInteractor {
                 return tonFragmentRepository.preparePremiumBuyTransaction(str2, encodeUrlSafe);
             }
         };
-        Observable<Result<PremiumBuyTransactionParams>> subscribeOn = tonPublicKeyBytes.flatMap(new Function() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$$ExternalSyntheticLambda0
+        Observable<Result<PremiumBuyTransactionParams>> subscribeOn = tonPublicKeyBytes.flatMap(new Function() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
                 ObservableSource preparePremiumBuyTransaction$lambda$10;
                 preparePremiumBuyTransaction$lambda$10 = TonFragmentInteractor.preparePremiumBuyTransaction$lambda$10(Function1.this, obj);
                 return preparePremiumBuyTransaction$lambda$10;
             }
-        }).subscribeOn(this.schedulersProvider.mo1010io());
+        }).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "private fun preparePremi…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -388,14 +418,14 @@ public final class TonFragmentInteractor {
                 return tonFragmentRepository.prepareProductBuyTransaction(str3, str4, encodeUrlSafe);
             }
         };
-        Observable<Result<ProductBuyTransactionParams>> subscribeOn = tonPublicKeyBytes.flatMap(new Function() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$$ExternalSyntheticLambda1
+        Observable<Result<ProductBuyTransactionParams>> subscribeOn = tonPublicKeyBytes.flatMap(new Function() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
                 ObservableSource prepareProductBuyTransaction$lambda$11;
                 prepareProductBuyTransaction$lambda$11 = TonFragmentInteractor.prepareProductBuyTransaction$lambda$11(Function1.this, obj);
                 return prepareProductBuyTransaction$lambda$11;
             }
-        }).subscribeOn(this.schedulersProvider.mo1010io());
+        }).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "private fun prepareProdu…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -407,7 +437,7 @@ public final class TonFragmentInteractor {
     }
 
     private final Observable<byte[]> getTonPublicKeyBytes() {
-        Observable<byte[]> fromCallable = Observable.fromCallable(new Callable() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$$ExternalSyntheticLambda2
+        Observable<byte[]> fromCallable = Observable.fromCallable(new Callable() { // from class: com.iMe.storage.domain.interactor.crypto.fragment.TonFragmentInteractor$$ExternalSyntheticLambda3
             @Override // java.util.concurrent.Callable
             public final Object call() {
                 byte[] tonPublicKeyBytes$lambda$12;

@@ -56,7 +56,7 @@ public class Track {
     public static class SamplePresentationTime {
 
         /* renamed from: dt */
-        private long f1589dt;
+        private long f1591dt;
         private int index;
         private long presentationTime;
 
@@ -358,13 +358,13 @@ public class Track {
             i2 = 0;
         }
         for (i = 1; i < arrayList.size(); i++) {
-            ((SamplePresentationTime) arrayList.get(i)).f1589dt = this.sampleDurations[i] + ((SamplePresentationTime) arrayList.get(i - 1)).f1589dt;
+            ((SamplePresentationTime) arrayList.get(i)).f1591dt = this.sampleDurations[i] + ((SamplePresentationTime) arrayList.get(i - 1)).f1591dt;
         }
         if (z) {
             this.sampleCompositions = new int[this.samplePresentationTimes.size()];
             for (int i4 = i2; i4 < this.samplePresentationTimes.size(); i4++) {
                 SamplePresentationTime samplePresentationTime2 = this.samplePresentationTimes.get(i4);
-                this.sampleCompositions[samplePresentationTime2.index] = (int) (samplePresentationTime2.presentationTime - samplePresentationTime2.f1589dt);
+                this.sampleCompositions[samplePresentationTime2.index] = (int) (samplePresentationTime2.presentationTime - samplePresentationTime2.f1591dt);
             }
         }
     }

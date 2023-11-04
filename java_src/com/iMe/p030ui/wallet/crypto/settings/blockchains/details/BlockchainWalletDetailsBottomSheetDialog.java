@@ -27,13 +27,13 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentBlockchainsWalletDetailsBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: BlockchainWalletDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog */
 /* loaded from: classes3.dex */
@@ -48,7 +48,7 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
     private final Function1<BlockchainManagementItem.Wallet, Unit> showBackupAction;
     private final BlockchainManagementItem.Wallet walletItem;
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -59,7 +59,7 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public BlockchainWalletDetailsBottomSheetDialog(final org.telegram.p042ui.ActionBar.BaseFragment r3, com.iMe.model.wallet.crypto.settings.BlockchainManagementItem.Wallet r4, kotlin.jvm.functions.Function1<? super com.iMe.model.wallet.crypto.settings.BlockchainManagementItem.Wallet, kotlin.Unit> r5, kotlin.jvm.functions.Function1<? super com.iMe.model.wallet.crypto.settings.BlockchainManagementItem.Wallet, kotlin.Unit> r6, com.iMe.model.dialog.DialogModel r7) {
+    public BlockchainWalletDetailsBottomSheetDialog(final org.telegram.p043ui.ActionBar.BaseFragment r3, com.iMe.model.wallet.crypto.settings.BlockchainManagementItem.Wallet r4, kotlin.jvm.functions.Function1<? super com.iMe.model.wallet.crypto.settings.BlockchainManagementItem.Wallet, kotlin.Unit> r5, kotlin.jvm.functions.Function1<? super com.iMe.model.wallet.crypto.settings.BlockchainManagementItem.Wallet, kotlin.Unit> r6, com.iMe.model.dialog.DialogModel r7) {
         /*
             r2 = this;
             java.lang.String r0 = "fragment"
@@ -151,8 +151,8 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         ImageHeaderView viewHeader = binding.viewHeader;
         Intrinsics.checkNotNullExpressionValue(viewHeader, "viewHeader");
         ImageHeaderView.setupViewData$default(viewHeader, new ImageHeaderView.IconData.ResourceDrawable(i), null, title, subtitle, 2, null);
-        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3630R.string.wallet_details_created), createdDate, C3630R.C3632drawable.msg_calendar2, true);
-        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3630R.string.wallet_connect_session_details_address), address, C3630R.C3632drawable.fork_ic_nav_wallet_24, true);
+        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3634R.string.wallet_details_created), createdDate, C3634R.C3636drawable.msg_calendar2, true);
+        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3634R.string.wallet_connect_session_details_address), address, C3634R.C3636drawable.fork_ic_nav_wallet_24, true);
     }
 
     @Override // com.iMe.p030ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsView
@@ -174,11 +174,11 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         final ActionBarMenuItem setupActionItem$lambda$4 = getBinding().itemMoreOptions;
         setupActionItem$lambda$4.setLongClickEnabled(false);
         setupActionItem$lambda$4.setSubMenuOpenSide(2);
-        setupActionItem$lambda$4.setIcon(C3630R.C3632drawable.ic_ab_other);
+        setupActionItem$lambda$4.setIcon(C3634R.C3636drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupActionItem$lambda$4, "setupActionItem$lambda$4");
         ViewExtKt.setCircleRippleBackground(setupActionItem$lambda$4);
-        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.INFO, C3630R.C3632drawable.msg_info, getResourceManager().getString(C3630R.string.wallet_crypto_buy_information_dialog_title));
-        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.COPY, C3630R.C3632drawable.msg_copy, getResourceManager().getString(C3630R.string.wallet_transaction_details_action_copy_address));
+        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.INFO, C3634R.C3636drawable.msg_info, getResourceManager().getString(C3634R.string.wallet_crypto_buy_information_dialog_title));
+        setupActionItem$lambda$4.addSubItem(IdFabric$Menu.COPY, C3634R.C3636drawable.msg_copy, getResourceManager().getString(C3634R.string.wallet_transaction_details_action_copy_address));
         setupActionItem$lambda$4.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -186,12 +186,12 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
             }
         });
         setupActionItem$lambda$4.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$$ExternalSyntheticLambda2
-            @Override // org.telegram.p042ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
                 BlockchainWalletDetailsBottomSheetDialog.setupActionItem$lambda$4$lambda$3(BlockchainWalletDetailsBottomSheetDialog.this, setupActionItem$lambda$4, i);
             }
         });
-        setupActionItem$lambda$4.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3630R.string.AccDescrMoreOptions));
+        setupActionItem$lambda$4.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3634R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -221,15 +221,15 @@ public final class BlockchainWalletDetailsBottomSheetDialog extends MvpBottomShe
         binding.buttonBackup.applyColors();
         BigActionButton setupColors$lambda$6$lambda$5 = binding.buttonReset;
         setupColors$lambda$6$lambda$5.setTextColor(Theme.getColor(Theme.key_text_RedRegular));
-        setupColors$lambda$6$lambda$5.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m102dp(4), 0, Theme.getColor(Theme.key_listSelector)));
+        setupColors$lambda$6$lambda$5.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m104dp(4), 0, Theme.getColor(Theme.key_listSelector)));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$6$lambda$5, "setupColors$lambda$6$lambda$5");
         ViewExtKt.withMediumTypeface(setupColors$lambda$6$lambda$5);
     }
 
     private final void setupTexts() {
         ForkContentBlockchainsWalletDetailsBinding binding = getBinding();
-        binding.buttonBackup.setText(getResourceManager().getString(C3630R.string.wallet_eth_account_settings_backup_title));
-        binding.buttonReset.setText(LocaleController.getString("Reset", C3630R.string.Reset));
+        binding.buttonBackup.setText(getResourceManager().getString(C3634R.string.wallet_eth_account_settings_backup_title));
+        binding.buttonReset.setText(LocaleController.getString("Reset", C3634R.string.Reset));
     }
 
     private final void setupListeners() {

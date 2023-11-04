@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field user:Lorg/telegram/tgnet/TLRPC$TL_storyView;
+.field user:Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
 .field final viewType:I
 
@@ -24,35 +24,35 @@
 .method private constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;I)V
     .locals 0
 
-    .line 945
+    .line 946
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 946
+    .line 947
     iput p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->viewType:I
 
     return-void
 .end method
 
-.method private constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;ILorg/telegram/tgnet/TLRPC$TL_storyView;)V
+.method private constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;ILorg/telegram/tgnet/tl/TL_stories$TL_storyView;)V
     .locals 0
-
-    .line 949
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 950
-    iput p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->viewType:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 951
-    iput-object p3, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/TLRPC$TL_storyView;
+    iput p2, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->viewType:I
+
+    .line 952
+    iput-object p3, p0, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;->user:Lorg/telegram/tgnet/tl/TL_stories$TL_storyView;
 
     return-void
 .end method
 
-.method synthetic constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;ILorg/telegram/tgnet/TLRPC$TL_storyView;Lorg/telegram/ui/Stories/SelfStoryViewsPage$1;)V
+.method synthetic constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;ILorg/telegram/tgnet/tl/TL_stories$TL_storyView;Lorg/telegram/ui/Stories/SelfStoryViewsPage$1;)V
     .locals 0
 
-    .line 941
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;-><init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;ILorg/telegram/tgnet/TLRPC$TL_storyView;)V
+    .line 942
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;-><init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;ILorg/telegram/tgnet/tl/TL_stories$TL_storyView;)V
 
     return-void
 .end method
@@ -60,7 +60,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;ILorg/telegram/ui/Stories/SelfStoryViewsPage$1;)V
     .locals 0
 
-    .line 941
+    .line 942
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/SelfStoryViewsPage$Item;-><init>(Lorg/telegram/ui/Stories/SelfStoryViewsPage;I)V
 
     return-void

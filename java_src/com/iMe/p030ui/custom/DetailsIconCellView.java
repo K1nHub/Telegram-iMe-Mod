@@ -11,7 +11,7 @@ import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.databinding.ForkContentDetailsIconCellBinding;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: DetailsIconCellView.kt */
 /* renamed from: com.iMe.ui.custom.DetailsIconCellView */
 /* loaded from: classes3.dex */

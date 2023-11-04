@@ -2,32 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda163;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda163;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda163;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda163;->INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda163;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda163;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final invoke()V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda163;->f$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$1sS8Gh-1XNKDCWvy-u5XgbeLzXw(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
+    invoke-static {}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$9LL90o0WU4THD69P2mrHP3haAOs()V
 
     return-void
 .end method

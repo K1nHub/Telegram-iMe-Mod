@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* loaded from: classes4.dex */
 public final class WidgetEdititemBinding implements ViewBinding {
     private WidgetEdititemBinding(FrameLayout frameLayout, FrameLayout frameLayout2, TextView textView) {
@@ -18,7 +18,7 @@ public final class WidgetEdititemBinding implements ViewBinding {
     }
 
     public static WidgetEdititemBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.widget_edititem, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.widget_edititem, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -27,7 +27,7 @@ public final class WidgetEdititemBinding implements ViewBinding {
 
     public static WidgetEdititemBinding bind(View view) {
         FrameLayout frameLayout = (FrameLayout) view;
-        int i = C3630R.C3633id.widget_edititem_text;
+        int i = C3634R.C3637id.widget_edititem_text;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
             return new WidgetEdititemBinding(frameLayout, frameLayout, textView);

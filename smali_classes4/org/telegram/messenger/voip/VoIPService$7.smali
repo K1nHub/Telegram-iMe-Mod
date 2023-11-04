@@ -33,7 +33,7 @@
 .method constructor <init>(Lorg/telegram/messenger/voip/VoIPService;)V
     .locals 0
 
-    .line 2500
+    .line 2501
     iput-object p1, p0, Lorg/telegram/messenger/voip/VoIPService$7;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 .method private synthetic lambda$run$0()V
     .locals 8
 
-    .line 2507
+    .line 2508
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$7;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-static {v0}, Lorg/telegram/messenger/voip/VoIPService;->access$3400(Lorg/telegram/messenger/voip/VoIPService;)I
@@ -53,7 +53,7 @@
 
     if-nez v0, :cond_0
 
-    .line 2508
+    .line 2509
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$7;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
     invoke-static {v0}, Lorg/telegram/messenger/voip/VoIPService;->access$800(Lorg/telegram/messenger/voip/VoIPService;)Landroid/media/SoundPool;
@@ -82,7 +82,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/voip/VoIPService;->access$3402(Lorg/telegram/messenger/voip/VoIPService;I)I
 
-    .line 2510
+    .line 2511
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$7;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
@@ -94,12 +94,12 @@
 
     const-wide/16 v0, 0x64
 
-    .line 2511
+    .line 2512
     invoke-static {p0, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     goto :goto_0
 
-    .line 2513
+    .line 2514
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/voip/VoIPService$7;->this$0:Lorg/telegram/messenger/voip/VoIPService;
 
@@ -116,7 +116,7 @@
 .method public run()V
     .locals 2
 
-    .line 2503
+    .line 2504
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->access$200()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
@@ -125,7 +125,7 @@
 
     return-void
 
-    .line 2506
+    .line 2507
     :cond_0
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 

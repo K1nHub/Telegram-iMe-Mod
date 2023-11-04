@@ -64,7 +64,7 @@ public class SelectableBase implements Selectable {
                 CancellableContinuation<Unit> removeSuspension = suspensions.removeSuspension(selectInterest);
                 if (removeSuspension != null) {
                     Result.Companion companion = Result.Companion;
-                    removeSuspension.resumeWith(Result.m1935constructorimpl(ResultKt.createFailure(new ClosedChannelCancellationException())));
+                    removeSuspension.resumeWith(Result.m1940constructorimpl(ResultKt.createFailure(new ClosedChannelCancellationException())));
                 }
             }
         }

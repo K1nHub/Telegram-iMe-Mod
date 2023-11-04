@@ -24,6 +24,8 @@
 
 .field private sizeWidth:I
 
+.field public spaceScaleX:F
+
 .field private topOffset:I
 
 .field private translateX:F
@@ -41,7 +43,7 @@
 
     const/4 v0, 0x0
 
-    .line 41
+    .line 42
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ColoredImageSpan;-><init>(II)V
 
     return-void
@@ -50,7 +52,7 @@
 .method public constructor <init>(II)V
     .locals 1
 
-    .line 49
+    .line 50
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-static {v0, p1}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -71,7 +73,7 @@
 
     const/4 v0, 0x0
 
-    .line 45
+    .line 46
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ColoredImageSpan;-><init>(Landroid/graphics/drawable/Drawable;I)V
 
     return-void
@@ -80,7 +82,7 @@
 .method public constructor <init>(Landroid/graphics/drawable/Drawable;I)V
     .locals 3
 
-    .line 52
+    .line 53
     invoke-direct {p0}, Landroid/text/style/ReplacementSpan;-><init>()V
 
     const/4 v0, 0x1
@@ -99,16 +101,19 @@
     iput v1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->alpha:F
 
     .line 37
+    iput v1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->spaceScaleX:F
+
+    .line 38
     iput v1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->scaleX:F
 
     iput v1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->scaleY:F
 
-    .line 53
+    .line 54
     iput-object p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->drawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p1, :cond_0
 
-    .line 55
+    .line 56
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v1
@@ -119,7 +124,7 @@
 
     invoke-virtual {p1, v0, v0, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 57
+    .line 58
     :cond_0
     iput p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->verticalAlignment:I
 
@@ -131,17 +136,17 @@
 .method public draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
     .locals 0
 
-    .line 92
+    .line 93
     iget-object p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->checkColorDelegate:Ljava/lang/Runnable;
 
     if-eqz p2, :cond_0
 
-    .line 93
+    .line 94
     invoke-interface {p2}, Ljava/lang/Runnable;->run()V
 
     goto :goto_1
 
-    .line 95
+    .line 96
     :cond_0
     iget p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->overrideColor:I
 
@@ -149,20 +154,20 @@
 
     goto :goto_0
 
-    .line 97
+    .line 98
     :cond_1
     iget-boolean p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->usePaintColor:Z
 
     if-eqz p2, :cond_2
 
-    .line 98
+    .line 99
     invoke-virtual {p9}, Landroid/graphics/Paint;->getColor()I
 
     move-result p2
 
     goto :goto_0
 
-    .line 100
+    .line 101
     :cond_2
     iget p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->colorKey:I
 
@@ -170,16 +175,16 @@
 
     move-result p2
 
-    .line 102
+    .line 103
     :goto_0
     iget p3, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->drawableColor:I
 
     if-eq p3, p2, :cond_3
 
-    .line 103
+    .line 104
     iput p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->drawableColor:I
 
-    .line 104
+    .line 105
     iget-object p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->drawable:Landroid/graphics/drawable/Drawable;
 
     new-instance p3, Landroid/graphics/PorterDuffColorFilter;
@@ -192,12 +197,12 @@
 
     invoke-virtual {p2, p3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 108
+    .line 109
     :cond_3
     :goto_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 109
+    .line 110
     iget-object p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->drawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p2, :cond_4
@@ -216,7 +221,7 @@
     :goto_2
     sub-int p2, p8, p2
 
-    .line 110
+    .line 111
     iget p3, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->verticalAlignment:I
 
     const/4 p4, 0x1
@@ -232,7 +237,7 @@
 
     sub-int/2addr p8, p6
 
-    .line 113
+    .line 114
     div-int/2addr p8, p4
 
     add-int/2addr p6, p8
@@ -266,7 +271,7 @@
 
     sub-int/2addr p8, p6
 
-    .line 116
+    .line 117
     iget p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->size:I
 
     if-eqz p2, :cond_8
@@ -283,12 +288,12 @@
     :goto_4
     sub-int/2addr p8, p2
 
-    .line 117
+    .line 118
     div-int/2addr p8, p4
 
     add-int/2addr p6, p8
 
-    .line 118
+    .line 119
     iget p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->topOffset:I
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -297,7 +302,7 @@
 
     add-int/2addr p2, p6
 
-    .line 120
+    .line 121
     :cond_9
     :goto_5
     iget p3, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->translateX:F
@@ -312,12 +317,12 @@
 
     invoke-virtual {p1, p5, p2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 121
+    .line 122
     iget-object p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->drawable:Landroid/graphics/drawable/Drawable;
 
     if-eqz p2, :cond_d
 
-    .line 122
+    .line 123
     iget p3, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->scaleX:F
 
     const/high16 p4, 0x3f800000    # 1.0f
@@ -332,7 +337,7 @@
 
     if-eqz p5, :cond_b
 
-    .line 123
+    .line 124
     :cond_a
     iget p5, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->scaleY:F
 
@@ -350,7 +355,7 @@
 
     invoke-virtual {p1, p3, p5, p6, p2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 125
+    .line 126
     :cond_b
     iget p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->alpha:F
 
@@ -358,7 +363,7 @@
 
     if-eqz p3, :cond_c
 
-    .line 126
+    .line 127
     iget-object p3, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->drawable:Landroid/graphics/drawable/Drawable;
 
     const/high16 p4, 0x437f0000    # 255.0f
@@ -369,13 +374,13 @@
 
     invoke-virtual {p3, p2}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 128
+    .line 129
     :cond_c
     iget-object p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->drawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 130
+    .line 131
     :cond_d
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
@@ -385,12 +390,12 @@
 .method public getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
     .locals 0
 
-    .line 84
+    .line 85
     iget p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->sizeWidth:I
 
     if-eqz p1, :cond_0
 
-    .line 85
+    .line 86
     iget p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->scaleX:F
 
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
@@ -408,13 +413,21 @@
 
     return p1
 
-    .line 86
+    .line 87
     :cond_0
     iget p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->scaleX:F
 
     invoke-static {p1}, Ljava/lang/Math;->abs(F)F
 
     move-result p1
+
+    iget p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->spaceScaleX:F
+
+    invoke-static {p2}, Ljava/lang/Math;->abs(F)F
+
+    move-result p2
+
+    mul-float/2addr p1, p2
 
     iget p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->size:I
 
@@ -435,7 +448,7 @@
 .method public setAlpha(F)V
     .locals 0
 
-    .line 160
+    .line 161
     iput p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->alpha:F
 
     return-void
@@ -444,7 +457,7 @@
 .method public setColorKey(I)V
     .locals 0
 
-    .line 134
+    .line 135
     iput p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->colorKey:I
 
     if-gez p1, :cond_0
@@ -456,7 +469,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 135
+    .line 136
     :goto_0
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->usePaintColor:Z
 
@@ -466,7 +479,7 @@
 .method public setOverrideColor(I)V
     .locals 0
 
-    .line 156
+    .line 157
     iput p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->overrideColor:I
 
     return-void
@@ -475,7 +488,7 @@
 .method public setScale(F)V
     .locals 0
 
-    .line 147
+    .line 148
     iput p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->scaleX:F
 
     return-void
@@ -484,10 +497,10 @@
 .method public setScale(FF)V
     .locals 0
 
-    .line 151
+    .line 152
     iput p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->scaleX:F
 
-    .line 152
+    .line 153
     iput p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->scaleY:F
 
     return-void
@@ -496,10 +509,10 @@
 .method public setSize(I)V
     .locals 2
 
-    .line 61
+    .line 62
     iput p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->size:I
 
-    .line 62
+    .line 63
     iget-object v0, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->drawable:Landroid/graphics/drawable/Drawable;
 
     const/4 v1, 0x0
@@ -512,7 +525,7 @@
 .method public setTopOffset(I)V
     .locals 0
 
-    .line 139
+    .line 140
     iput p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->topOffset:I
 
     return-void
@@ -521,7 +534,7 @@
 .method public setTranslateX(F)V
     .locals 0
 
-    .line 66
+    .line 67
     iput p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->translateX:F
 
     return-void
@@ -530,7 +543,7 @@
 .method public setWidth(I)V
     .locals 0
 
-    .line 79
+    .line 80
     iput p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->sizeWidth:I
 
     return-void
@@ -539,10 +552,10 @@
 .method public translate(FF)V
     .locals 0
 
-    .line 74
+    .line 75
     iput p1, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->translateX:F
 
-    .line 75
+    .line 76
     iput p2, p0, Lorg/telegram/ui/Components/ColoredImageSpan;->translateY:F
 
     return-void

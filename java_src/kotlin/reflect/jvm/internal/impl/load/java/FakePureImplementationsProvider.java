@@ -43,7 +43,7 @@ public final class FakePureImplementationsProvider {
         fakePureImplementationsProvider.implementedWith(classId2, fakePureImplementationsProvider.fqNameListOf("java.util.function.BinaryOperator"));
         ArrayList arrayList = new ArrayList(linkedHashMap.size());
         for (Map.Entry entry : linkedHashMap.entrySet()) {
-            arrayList.add(TuplesKt.m144to(((ClassId) entry.getKey()).asSingleFqName(), ((ClassId) entry.getValue()).asSingleFqName()));
+            arrayList.add(TuplesKt.m146to(((ClassId) entry.getKey()).asSingleFqName(), ((ClassId) entry.getValue()).asSingleFqName()));
         }
         map = MapsKt__MapsKt.toMap(arrayList);
         pureImplementationsFqNames = map;

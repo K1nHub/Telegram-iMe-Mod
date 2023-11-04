@@ -22,7 +22,7 @@
         }
     .end annotation
 
-    const-string v0, "klass"
+    const-string/jumbo v0, "klass"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -45,7 +45,7 @@
 
     move-result-object v0
 
-    const-string v1, "klass.containingDeclaration"
+    const-string/jumbo v1, "klass.containingDeclaration"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -544,7 +544,7 @@
 
     if-ne v0, v3, :cond_6
 
-    const-string p0, "java/lang/Object"
+    const-string/jumbo p0, "java/lang/Object"
 
     .line 97
     invoke-interface {p1, p0}, Lkotlin/reflect/jvm/internal/impl/load/kotlin/JvmTypeFactory;->createObjectType(Ljava/lang/String;)Ljava/lang/Object;

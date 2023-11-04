@@ -5,8 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.viewbinding.ViewBinding;
 import java.util.Objects;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.Cells.TextCell;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.Cells.TextCell;
 /* loaded from: classes4.dex */
 public final class ForkRecycleItemBlockchainManagementActionButtonBinding implements ViewBinding {
     private ForkRecycleItemBlockchainManagementActionButtonBinding(TextCell textCell, TextCell textCell2) {
@@ -17,7 +17,7 @@ public final class ForkRecycleItemBlockchainManagementActionButtonBinding implem
     }
 
     public static ForkRecycleItemBlockchainManagementActionButtonBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.fork_recycle_item_blockchain_management_action_button, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.fork_recycle_item_blockchain_management_action_button, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }

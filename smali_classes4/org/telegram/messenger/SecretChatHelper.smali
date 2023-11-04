@@ -174,6 +174,14 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$LHaSdu4BnCDBSYQsbJpEqHNPK6U(Lorg/telegram/messenger/SecretChatHelper;Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/messenger/SecretChatHelper;->lambda$performSendEncryptedRequest$5(Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;I)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$LcgZIfPKqhUes5RNRupcIDAPE0U(Lorg/telegram/messenger/SecretChatHelper;J)V
     .locals 0
 
@@ -186,14 +194,6 @@
     .locals 0
 
     invoke-direct {p0, p1}, Lorg/telegram/messenger/SecretChatHelper;->lambda$acceptSecretChat$21(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$N7SF7uV-4AhzKaWhgouxK1U8IQ0(Lorg/telegram/messenger/SecretChatHelper;Lorg/telegram/tgnet/TLRPC$Message;ILjava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/messenger/SecretChatHelper;->lambda$performSendEncryptedRequest$4(Lorg/telegram/tgnet/TLRPC$Message;ILjava/lang/String;)V
 
     return-void
 .end method
@@ -224,6 +224,14 @@
     return p0
 .end method
 
+.method public static synthetic $r8$lambda$WV1_CNyex9QwxeGZ1lXzoX2Ip04(Lorg/telegram/messenger/SecretChatHelper;Lorg/telegram/tgnet/TLRPC$Message;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/messenger/SecretChatHelper;->lambda$performSendEncryptedRequest$4(Lorg/telegram/tgnet/TLRPC$Message;I)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$ZP_7hSQNzwgpNhtDwISJmwxmaIo(Lorg/telegram/messenger/SecretChatHelper;J)V
     .locals 0
 
@@ -236,14 +244,6 @@
     .locals 0
 
     invoke-static {p0, p1}, Lorg/telegram/messenger/SecretChatHelper;->lambda$startSecretChat$24(Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$cDC8Au6RbOlLX7ARZcAAlj2kDik(Lorg/telegram/messenger/SecretChatHelper;Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;ILjava/lang/String;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/messenger/SecretChatHelper;->lambda$performSendEncryptedRequest$5(Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;ILjava/lang/String;)V
 
     return-void
 .end method
@@ -433,7 +433,7 @@
 .method private applyPeerLayer(Lorg/telegram/tgnet/TLRPC$EncryptedChat;I)V
     .locals 6
 
-    .line 790
+    .line 784
     iget v0, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->layer:I
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getPeerLayerVersion(I)I
@@ -444,7 +444,7 @@
 
     return-void
 
-    .line 794
+    .line 788
     :cond_0
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_hash:[B
 
@@ -454,7 +454,7 @@
 
     if-ne v1, v2, :cond_1
 
-    .line 796
+    .line 790
     :try_start_0
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->auth_key:[B
 
@@ -472,20 +472,20 @@
 
     new-array v3, v3, [B
 
-    .line 798
+    .line 792
     iget-object v4, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_hash:[B
 
     invoke-static {v4, v5, v3, v5, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     const/16 v4, 0x14
 
-    .line 799
+    .line 793
     invoke-static {v1, v5, v3, v2, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 800
+    .line 794
     iput-object v3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_hash:[B
 
-    .line 801
+    .line 795
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v1
@@ -499,10 +499,10 @@
     :catchall_0
     move-exception v1
 
-    .line 803
+    .line 797
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 806
+    .line 800
     :cond_1
     :goto_0
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->layer:I
@@ -513,24 +513,24 @@
 
     iput p2, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->layer:I
 
-    .line 807
+    .line 801
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p2
 
     invoke-virtual {p2, p1}, Lorg/telegram/messenger/MessagesStorage;->updateEncryptedChatLayer(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
 
-    .line 808
+    .line 802
     sget p2, Lorg/telegram/messenger/SecretChatHelper;->CURRENT_SECRET_CHAT_LAYER:I
 
     if-ge v0, p2, :cond_2
 
     const/4 p2, 0x0
 
-    .line 809
+    .line 803
     invoke-virtual {p0, p1, p2}, Lorg/telegram/messenger/SecretChatHelper;->sendNotifyLayerMessage(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$Message;)V
 
-    .line 811
+    .line 805
     :cond_2
     new-instance p2, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda16;
 
@@ -544,26 +544,26 @@
 .method private createDeleteMessage(IIIJLorg/telegram/tgnet/TLRPC$EncryptedChat;)Lorg/telegram/tgnet/TLRPC$Message;
     .locals 3
 
-    .line 1342
+    .line 1336
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messageService;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messageService;-><init>()V
 
-    .line 1343
+    .line 1337
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageEncryptedAction;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_messageEncryptedAction;-><init>()V
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
 
-    .line 1344
+    .line 1338
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionDeleteMessages;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionDeleteMessages;-><init>()V
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$MessageAction;->encryptedAction:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
-    .line 1345
+    .line 1339
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageAction;->encryptedAction:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
@@ -576,19 +576,19 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1346
+    .line 1340
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$Message;->local_id:I
 
-    .line 1347
+    .line 1341
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 1348
+    .line 1342
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v1
@@ -601,18 +601,18 @@
 
     const/4 p1, 0x1
 
-    .line 1349
+    .line 1343
     iput-boolean p1, v0, Lorg/telegram/tgnet/TLRPC$Message;->unread:Z
 
-    .line 1350
+    .line 1344
     iput-boolean p1, v0, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
     const/16 v1, 0x100
 
-    .line 1351
+    .line 1345
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 1352
+    .line 1346
     iget v1, p6, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     int-to-long v1, v1
@@ -623,23 +623,23 @@
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
-    .line 1353
+    .line 1347
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$Message;->send_state:I
 
-    .line 1354
+    .line 1348
     iput p3, v0, Lorg/telegram/tgnet/TLRPC$Message;->seq_in:I
 
-    .line 1355
+    .line 1349
     iput p2, v0, Lorg/telegram/tgnet/TLRPC$Message;->seq_out:I
 
-    .line 1356
+    .line 1350
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object p1, v0, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 1357
+    .line 1351
     iget-wide p1, p6, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->participant_id:J
 
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
@@ -654,7 +654,7 @@
 
     if-nez p1, :cond_0
 
-    .line 1358
+    .line 1352
     iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     iget-wide p2, p6, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->admin_id:J
@@ -663,7 +663,7 @@
 
     goto :goto_0
 
-    .line 1360
+    .line 1354
     :cond_0
     iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
@@ -674,10 +674,10 @@
     :goto_0
     const/4 p1, 0x0
 
-    .line 1362
+    .line 1356
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
-    .line 1363
+    .line 1357
     iput-wide p4, v0, Lorg/telegram/tgnet/TLRPC$Message;->random_id:J
 
     return-object v0
@@ -904,13 +904,13 @@
     :cond_0
     move/from16 v5, p5
 
-    .line 1496
+    .line 1490
     :goto_0
     invoke-static {v6, v1, v5, v2}, Lorg/telegram/messenger/MessageKeyData;->generateMessageKeyData([B[BZI)Lorg/telegram/messenger/MessageKeyData;
 
     move-result-object v12
 
-    .line 1497
+    .line 1491
     iget-object v13, v0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     iget-object v14, v12, Lorg/telegram/messenger/MessageKeyData;->aesKey:[B
@@ -933,7 +933,7 @@
 
     invoke-static/range {v13 .. v19}, Lorg/telegram/messenger/Utilities;->aesIgeEncryption(Ljava/nio/ByteBuffer;[B[BZZII)V
 
-    .line 1501
+    .line 1495
     invoke-virtual {v0, v3}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
 
     move-result v13
@@ -960,7 +960,7 @@
 
     const/16 v8, 0x20
 
-    .line 1504
+    .line 1498
     iget-object v9, v0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     const/16 v5, 0x18
@@ -983,7 +983,7 @@
 
     move-result-object v6
 
-    .line 1505
+    .line 1499
     invoke-static {v1, v3, v6, v4}, Lorg/telegram/messenger/Utilities;->arraysEquals([BI[BI)Z
 
     move-result v1
@@ -992,7 +992,7 @@
 
     if-eqz p6, :cond_5
 
-    .line 1507
+    .line 1501
     iget-object v1, v0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     iget-object v3, v12, Lorg/telegram/messenger/MessageKeyData;->aesKey:[B
@@ -1019,7 +1019,7 @@
 
     invoke-static/range {v18 .. v24}, Lorg/telegram/messenger/Utilities;->aesIgeEncryption(Ljava/nio/ByteBuffer;[B[BZZII)V
 
-    .line 1508
+    .line 1502
     invoke-virtual {v0, v5}, Lorg/telegram/tgnet/NativeByteBuffer;->position(I)V
 
     goto :goto_2
@@ -1029,7 +1029,7 @@
 
     add-int/lit8 v4, v13, 0x1c
 
-    .line 1514
+    .line 1508
     iget-object v6, v0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {v6}, Ljava/nio/ByteBuffer;->limit()I
@@ -1048,7 +1048,7 @@
 
     if-le v4, v6, :cond_4
 
-    .line 1515
+    .line 1509
     :cond_3
     iget-object v4, v0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
@@ -1056,7 +1056,7 @@
 
     move-result v4
 
-    .line 1517
+    .line 1511
     :cond_4
     iget-object v6, v0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
@@ -1064,7 +1064,7 @@
 
     move-result-object v4
 
-    .line 1518
+    .line 1512
     array-length v6, v4
 
     add-int/lit8 v6, v6, -0x10
@@ -1077,7 +1077,7 @@
 
     if-eqz p6, :cond_5
 
-    .line 1520
+    .line 1514
     iget-object v1, v0, Lorg/telegram/tgnet/NativeByteBuffer;->buffer:Ljava/nio/ByteBuffer;
 
     iget-object v3, v12, Lorg/telegram/messenger/MessageKeyData;->aesKey:[B
@@ -1104,7 +1104,7 @@
 
     invoke-static/range {v18 .. v24}, Lorg/telegram/messenger/Utilities;->aesIgeEncryption(Ljava/nio/ByteBuffer;[B[BZZII)V
 
-    .line 1521
+    .line 1515
     invoke-virtual {v0, v5}, Lorg/telegram/tgnet/NativeByteBuffer;->position(I)V
 
     :cond_5
@@ -1116,7 +1116,7 @@
 
     or-int/lit8 v3, v3, 0x1
 
-    .line 1529
+    .line 1523
     :cond_7
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/tgnet/NativeByteBuffer;->limit()I
 
@@ -1128,7 +1128,7 @@
 
     or-int/lit8 v3, v3, 0x1
 
-    .line 1532
+    .line 1526
     :cond_8
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/tgnet/NativeByteBuffer;->limit()I
 
@@ -1287,7 +1287,7 @@
 .method private synthetic lambda$acceptSecretChat$21(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
     .locals 4
 
-    .line 1913
+    .line 1907
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -1306,7 +1306,7 @@
 
     const/4 v0, 0x0
 
-    .line 1914
+    .line 1908
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/SecretChatHelper;->sendNotifyLayerMessage(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$Message;)V
 
     return-void
@@ -1315,7 +1315,7 @@
 .method private synthetic lambda$acceptSecretChat$22(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 2
 
-    .line 1900
+    .line 1894
     iget-object v0, p0, Lorg/telegram/messenger/SecretChatHelper;->acceptingChats:Landroid/util/SparseArray;
 
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
@@ -1324,52 +1324,52 @@
 
     if-nez p3, :cond_0
 
-    .line 1902
+    .line 1896
     check-cast p2, Lorg/telegram/tgnet/TLRPC$EncryptedChat;
 
-    .line 1903
+    .line 1897
     iget-object p3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->auth_key:[B
 
     iput-object p3, p2, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->auth_key:[B
 
-    .line 1904
+    .line 1898
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->user_id:J
 
     iput-wide v0, p2, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->user_id:J
 
-    .line 1905
+    .line 1899
     iget p3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
     iput p3, p2, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
-    .line 1906
+    .line 1900
     iget p3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_out:I
 
     iput p3, p2, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_out:I
 
-    .line 1907
+    .line 1901
     iget p3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_create_date:I
 
     iput p3, p2, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_create_date:I
 
-    .line 1908
+    .line 1902
     iget-short p3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_in:S
 
     iput-short p3, p2, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_in:S
 
-    .line 1909
+    .line 1903
     iget-short p1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_out:S
 
     iput-short p1, p2, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_out:S
 
-    .line 1910
+    .line 1904
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p1
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/MessagesStorage;->updateEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
 
-    .line 1911
+    .line 1905
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -1378,7 +1378,7 @@
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/MessagesController;->putEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Z)V
 
-    .line 1912
+    .line 1906
     new-instance p1, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda14;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/messenger/SecretChatHelper;Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
@@ -1394,19 +1394,19 @@
 
     if-nez p3, :cond_8
 
-    .line 1834
+    .line 1828
     move-object p3, p2
 
     check-cast p3, Lorg/telegram/tgnet/TLRPC$messages_DhConfig;
 
-    .line 1835
+    .line 1829
     instance-of p2, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_dhConfig;
 
     const/4 v0, 0x0
 
     if-eqz p2, :cond_1
 
-    .line 1836
+    .line 1830
     iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$messages_DhConfig;->p:[B
 
     iget v1, p3, Lorg/telegram/tgnet/TLRPC$messages_DhConfig;->g:I
@@ -1417,21 +1417,21 @@
 
     if-nez p2, :cond_0
 
-    .line 1837
+    .line 1831
     iget-object p2, p0, Lorg/telegram/messenger/SecretChatHelper;->acceptingChats:Landroid/util/SparseArray;
 
     iget p3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     invoke-virtual {p2, p3}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 1838
+    .line 1832
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/SecretChatHelper;->declineSecretChat(IZ)V
 
     return-void
 
-    .line 1842
+    .line 1836
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -1441,7 +1441,7 @@
 
     invoke-virtual {p2, v1}, Lorg/telegram/messenger/MessagesStorage;->setSecretPBytes([B)V
 
-    .line 1843
+    .line 1837
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p2
@@ -1450,7 +1450,7 @@
 
     invoke-virtual {p2, v1}, Lorg/telegram/messenger/MessagesStorage;->setSecretG(I)V
 
-    .line 1844
+    .line 1838
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p2
@@ -1459,7 +1459,7 @@
 
     invoke-virtual {p2, v1}, Lorg/telegram/messenger/MessagesStorage;->setLastSecretVersion(I)V
 
-    .line 1845
+    .line 1839
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p2
@@ -1500,7 +1500,7 @@
     :goto_0
     if-ge v2, p2, :cond_2
 
-    .line 1849
+    .line 1843
     sget-object v3, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v3}, Ljava/security/SecureRandom;->nextDouble()D
@@ -1529,19 +1529,19 @@
 
     goto :goto_0
 
-    .line 1851
+    .line 1845
     :cond_2
     iput-object v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->a_or_b:[B
 
     const/4 p3, -0x1
 
-    .line 1852
+    .line 1846
     iput p3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
-    .line 1853
+    .line 1847
     iput v0, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_out:I
 
-    .line 1854
+    .line 1848
     new-instance p3, Ljava/math/BigInteger;
 
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
@@ -1556,7 +1556,7 @@
 
     invoke-direct {p3, v3, v2}, Ljava/math/BigInteger;-><init>(I[B)V
 
-    .line 1855
+    .line 1849
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
@@ -1571,7 +1571,7 @@
 
     move-result-object v2
 
-    .line 1856
+    .line 1850
     new-instance v4, Ljava/math/BigInteger;
 
     invoke-direct {v4, v3, v1}, Ljava/math/BigInteger;-><init>(I[B)V
@@ -1580,53 +1580,53 @@
 
     move-result-object v2
 
-    .line 1857
+    .line 1851
     new-instance v4, Ljava/math/BigInteger;
 
     iget-object v5, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->g_a:[B
 
     invoke-direct {v4, v3, v5}, Ljava/math/BigInteger;-><init>(I[B)V
 
-    .line 1859
+    .line 1853
     invoke-static {v4, p3}, Lorg/telegram/messenger/Utilities;->isGoodGaAndGb(Ljava/math/BigInteger;Ljava/math/BigInteger;)Z
 
     move-result v5
 
     if-nez v5, :cond_3
 
-    .line 1860
+    .line 1854
     iget-object p2, p0, Lorg/telegram/messenger/SecretChatHelper;->acceptingChats:Landroid/util/SparseArray;
 
     iget p3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     invoke-virtual {p2, p3}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 1861
+    .line 1855
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/SecretChatHelper;->declineSecretChat(IZ)V
 
     return-void
 
-    .line 1865
+    .line 1859
     :cond_3
     invoke-virtual {v2}, Ljava/math/BigInteger;->toByteArray()[B
 
     move-result-object v2
 
-    .line 1866
+    .line 1860
     array-length v5, v2
 
     if-le v5, p2, :cond_4
 
     new-array v5, p2, [B
 
-    .line 1868
+    .line 1862
     invoke-static {v2, v3, v5, v0, p2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     move-object v2, v5
 
-    .line 1872
+    .line 1866
     :cond_4
     new-instance v5, Ljava/math/BigInteger;
 
@@ -1636,19 +1636,19 @@
 
     move-result-object p3
 
-    .line 1874
+    .line 1868
     invoke-virtual {p3}, Ljava/math/BigInteger;->toByteArray()[B
 
     move-result-object p3
 
-    .line 1875
+    .line 1869
     array-length v1, p3
 
     if-le v1, p2, :cond_6
 
     new-array v1, p2, [B
 
-    .line 1877
+    .line 1871
     array-length v3, p3
 
     sub-int/2addr v3, p2
@@ -1660,7 +1660,7 @@
 
     goto :goto_2
 
-    .line 1879
+    .line 1873
     :cond_6
     array-length v1, p3
 
@@ -1668,7 +1668,7 @@
 
     new-array v1, p2, [B
 
-    .line 1881
+    .line 1875
     array-length v3, p3
 
     rsub-int v3, v3, 0x100
@@ -1679,7 +1679,7 @@
 
     move v3, v0
 
-    .line 1882
+    .line 1876
     :goto_1
     array-length v4, p3
 
@@ -1687,14 +1687,14 @@
 
     if-ge v3, v4, :cond_5
 
-    .line 1883
+    .line 1877
     aput-byte v0, v1, v3
 
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1
 
-    .line 1887
+    .line 1881
     :cond_7
     :goto_2
     invoke-static {p3}, Lorg/telegram/messenger/Utilities;->computeSHA1([B)[B
@@ -1705,17 +1705,17 @@
 
     new-array v3, v1, [B
 
-    .line 1889
+    .line 1883
     array-length v4, p2
 
     sub-int/2addr v4, v1
 
     invoke-static {p2, v4, v3, v0, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 1890
+    .line 1884
     iput-object p3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->auth_key:[B
 
-    .line 1891
+    .line 1885
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p2
@@ -1726,39 +1726,39 @@
 
     iput p2, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_create_date:I
 
-    .line 1893
+    .line 1887
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptEncryption;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptEncryption;-><init>()V
 
-    .line 1894
+    .line 1888
     iput-object v2, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptEncryption;->g_b:[B
 
-    .line 1895
+    .line 1889
     new-instance p3, Lorg/telegram/tgnet/TLRPC$TL_inputEncryptedChat;
 
     invoke-direct {p3}, Lorg/telegram/tgnet/TLRPC$TL_inputEncryptedChat;-><init>()V
 
     iput-object p3, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptEncryption;->peer:Lorg/telegram/tgnet/TLRPC$TL_inputEncryptedChat;
 
-    .line 1896
+    .line 1890
     iget v0, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     iput v0, p3, Lorg/telegram/tgnet/TLRPC$TL_inputEncryptedChat;->chat_id:I
 
-    .line 1897
+    .line 1891
     iget-wide v0, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->access_hash:J
 
     iput-wide v0, p3, Lorg/telegram/tgnet/TLRPC$TL_inputEncryptedChat;->access_hash:J
 
-    .line 1898
+    .line 1892
     invoke-static {v3}, Lorg/telegram/messenger/Utilities;->bytesToLong([B)J
 
     move-result-wide v0
 
     iput-wide v0, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_acceptEncryption;->key_fingerprint:J
 
-    .line 1899
+    .line 1893
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p3
@@ -1773,7 +1773,7 @@
 
     goto :goto_3
 
-    .line 1919
+    .line 1913
     :cond_8
     iget-object p2, p0, Lorg/telegram/messenger/SecretChatHelper;->acceptingChats:Landroid/util/SparseArray;
 
@@ -1788,7 +1788,7 @@
 .method private synthetic lambda$applyPeerLayer$9(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
     .locals 4
 
-    .line 811
+    .line 805
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -1811,7 +1811,7 @@
 .method private static synthetic lambda$checkSecretHoles$16(Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;)I
     .locals 0
 
-    .line 1453
+    .line 1447
     iget-object p0, p0, Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;->layer:Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;
 
     iget p0, p0, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;->out_seq_no:I
@@ -1848,7 +1848,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 1819
+    .line 1813
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p3
@@ -1862,7 +1862,7 @@
 .method private synthetic lambda$decryptMessage$17(Lorg/telegram/tgnet/TLRPC$TL_encryptedChatDiscarded;)V
     .locals 4
 
-    .line 1659
+    .line 1653
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -1871,14 +1871,14 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/messenger/MessagesController;->putEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Z)V
 
-    .line 1660
+    .line 1654
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/MessagesStorage;->updateEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
 
-    .line 1661
+    .line 1655
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -1896,7 +1896,7 @@
     return-void
 .end method
 
-.method private synthetic lambda$performSendEncryptedRequest$4(Lorg/telegram/tgnet/TLRPC$Message;ILjava/lang/String;)V
+.method private synthetic lambda$performSendEncryptedRequest$4(Lorg/telegram/tgnet/TLRPC$Message;I)V
     .locals 6
 
     const/4 v0, 0x0
@@ -1983,34 +1983,6 @@
     invoke-virtual {p2, v1}, Lorg/telegram/messenger/SendMessagesHelper;->processSentMessage(I)V
 
     .line 764
-    invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->isVideoMessage(Lorg/telegram/tgnet/TLRPC$Message;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->isNewGifMessage(Lorg/telegram/tgnet/TLRPC$Message;)Z
-
-    move-result p2
-
-    if-nez p2, :cond_0
-
-    invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->isRoundVideoMessage(Lorg/telegram/tgnet/TLRPC$Message;)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_1
-
-    .line 765
-    :cond_0
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
-
-    move-result-object p2
-
-    invoke-virtual {p2, p3}, Lorg/telegram/messenger/SendMessagesHelper;->stopVideoService(Ljava/lang/String;)V
-
-    .line 767
-    :cond_1
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
 
     move-result-object p2
@@ -2022,7 +1994,7 @@
     return-void
 .end method
 
-.method private synthetic lambda$performSendEncryptedRequest$5(Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;ILjava/lang/String;)V
+.method private synthetic lambda$performSendEncryptedRequest$5(Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;I)V
     .locals 11
 
     .line 756
@@ -2066,7 +2038,7 @@
     .line 760
     new-instance p2, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda20;
 
-    invoke-direct {p2, p0, p1, p3, p4}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/messenger/SecretChatHelper;Lorg/telegram/tgnet/TLRPC$Message;ILjava/lang/String;)V
+    invoke-direct {p2, p0, p1, p3}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/messenger/SecretChatHelper;Lorg/telegram/tgnet/TLRPC$Message;I)V
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
@@ -2078,10 +2050,10 @@
 
     const/4 v0, 0x2
 
-    .line 773
+    .line 770
     iput v0, p1, Lorg/telegram/tgnet/TLRPC$Message;->send_state:I
 
-    .line 774
+    .line 771
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -2104,7 +2076,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 775
+    .line 772
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
 
     move-result-object v0
@@ -2113,37 +2085,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/SendMessagesHelper;->processSentMessage(I)V
 
-    .line 776
-    invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->isVideoMessage(Lorg/telegram/tgnet/TLRPC$Message;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->isNewGifMessage(Lorg/telegram/tgnet/TLRPC$Message;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-static {p1}, Lorg/telegram/messenger/MessageObject;->isRoundVideoMessage(Lorg/telegram/tgnet/TLRPC$Message;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 777
-    :cond_0
-    invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
-
-    move-result-object v0
-
-    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Lorg/telegram/messenger/SendMessagesHelper;->stopVideoService(Ljava/lang/String;)V
-
-    .line 779
-    :cond_1
+    .line 773
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
 
     move-result-object v0
@@ -2156,7 +2098,7 @@
 .end method
 
 .method private synthetic lambda$performSendEncryptedRequest$7(Lorg/telegram/tgnet/TLRPC$DecryptedMessage;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/messenger/MessageObject;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 8
+    .locals 6
 
     const/4 v0, 0x0
 
@@ -2294,12 +2236,10 @@
     if-nez p7, :cond_6
 
     .line 743
-    iget-object v7, p3, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
+    iget-object p2, p3, Lorg/telegram/tgnet/TLRPC$Message;->attachPath:Ljava/lang/String;
 
     .line 744
-    move-object v5, p6
-
-    check-cast v5, Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;
+    check-cast p6, Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;
 
     .line 745
     invoke-static {p3}, Lorg/telegram/messenger/SecretChatHelper;->isSecretVisibleMessage(Lorg/telegram/tgnet/TLRPC$Message;)Z
@@ -2309,7 +2249,7 @@
     if-eqz p2, :cond_4
 
     .line 746
-    iget p2, v5, Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;->date:I
+    iget p2, p6, Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;->date:I
 
     iput p2, p3, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
@@ -2317,11 +2257,11 @@
     if-eqz p4, :cond_5
 
     .line 749
-    iget-object p2, v5, Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;->file:Lorg/telegram/tgnet/TLRPC$EncryptedFile;
+    iget-object p2, p6, Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;->file:Lorg/telegram/tgnet/TLRPC$EncryptedFile;
 
-    instance-of p6, p2, Lorg/telegram/tgnet/TLRPC$TL_encryptedFile;
+    instance-of p7, p2, Lorg/telegram/tgnet/TLRPC$TL_encryptedFile;
 
-    if-eqz p6, :cond_5
+    if-eqz p7, :cond_5
 
     .line 750
     invoke-direct {p0, p4, p2, p1, p5}, Lorg/telegram/messenger/SecretChatHelper;->updateMediaPaths(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$EncryptedFile;Lorg/telegram/tgnet/TLRPC$DecryptedMessage;Ljava/lang/String;)V
@@ -2331,10 +2271,8 @@
 
     move-result v0
 
-    :cond_5
-    move v6, v0
-
     .line 755
+    :cond_5
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p1
@@ -2345,19 +2283,13 @@
 
     new-instance p2, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda21;
 
-    move-object v2, p2
-
-    move-object v3, p0
-
-    move-object v4, p3
-
-    invoke-direct/range {v2 .. v7}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/messenger/SecretChatHelper;Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;ILjava/lang/String;)V
+    invoke-direct {p2, p0, p3, p6, v0}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/messenger/SecretChatHelper;Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/tgnet/TLRPC$messages_SentEncryptedMessage;I)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
     goto :goto_1
 
-    .line 771
+    .line 768
     :cond_6
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -2365,7 +2297,7 @@
 
     invoke-virtual {p1, p3, v0}, Lorg/telegram/messenger/MessagesStorage;->markMessageAsSendError(Lorg/telegram/tgnet/TLRPC$Message;Z)V
 
-    .line 772
+    .line 769
     new-instance p1, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda19;
 
     invoke-direct {p1, p0, p3}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/messenger/SecretChatHelper;Lorg/telegram/tgnet/TLRPC$Message;)V
@@ -3026,7 +2958,7 @@
     :catch_0
     move-exception v0
 
-    .line 784
+    .line 778
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_8
@@ -3036,7 +2968,7 @@
 .method private synthetic lambda$processAcceptedSecretChat$18(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
     .locals 4
 
-    .line 1770
+    .line 1764
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -3055,7 +2987,7 @@
 
     const/4 v0, 0x0
 
-    .line 1771
+    .line 1765
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/SecretChatHelper;->sendNotifyLayerMessage(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$Message;)V
 
     return-void
@@ -3064,7 +2996,7 @@
 .method private synthetic lambda$processAcceptedSecretChat$19(Lorg/telegram/tgnet/TLRPC$TL_encryptedChatDiscarded;)V
     .locals 4
 
-    .line 1787
+    .line 1781
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -3073,7 +3005,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/messenger/MessagesController;->putEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Z)V
 
-    .line 1788
+    .line 1782
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -3094,7 +3026,7 @@
 .method private synthetic lambda$processDecryptedObject$10(J)V
     .locals 7
 
-    .line 1151
+    .line 1145
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationsController()Lorg/telegram/messenger/NotificationsController;
 
     move-result-object v0
@@ -3111,7 +3043,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/messenger/NotificationsController;->processReadMessages(Lorg/telegram/messenger/support/LongSparseIntArray;JIIZ)V
 
-    .line 1152
+    .line 1146
     new-instance v0, Lorg/telegram/messenger/support/LongSparseIntArray;
 
     const/4 v1, 0x1
@@ -3120,10 +3052,10 @@
 
     const/4 v1, 0x0
 
-    .line 1153
+    .line 1147
     invoke-virtual {v0, p1, p2, v1}, Lorg/telegram/messenger/support/LongSparseIntArray;->put(JI)V
 
-    .line 1154
+    .line 1148
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationsController()Lorg/telegram/messenger/NotificationsController;
 
     move-result-object p1
@@ -3136,7 +3068,7 @@
 .method private synthetic lambda$processDecryptedObject$11(J)V
     .locals 1
 
-    .line 1150
+    .line 1144
     new-instance v0, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda5;
 
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/messenger/SecretChatHelper;J)V
@@ -3149,7 +3081,7 @@
 .method private synthetic lambda$processDecryptedObject$12(J)V
     .locals 5
 
-    .line 1145
+    .line 1139
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -3166,10 +3098,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 1147
+    .line 1141
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_count:I
 
-    .line 1148
+    .line 1142
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -3180,7 +3112,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroidx/collection/LongSparseArray;->remove(J)V
 
-    .line 1150
+    .line 1144
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -3196,7 +3128,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 1156
+    .line 1150
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v0
@@ -3205,7 +3137,7 @@
 
     invoke-virtual {v0, p1, p2, v2}, Lorg/telegram/messenger/MessagesStorage;->deleteDialog(JI)V
 
-    .line 1157
+    .line 1151
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -3216,7 +3148,7 @@
 
     invoke-virtual {v0, v3, v4}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1158
+    .line 1152
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -3445,7 +3377,7 @@
 .method private static synthetic lambda$resendMessages$13(Lorg/telegram/tgnet/TLRPC$Message;Lorg/telegram/tgnet/TLRPC$Message;)I
     .locals 0
 
-    .line 1426
+    .line 1420
     iget p0, p0, Lorg/telegram/tgnet/TLRPC$Message;->seq_out:I
 
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$Message;->seq_out:I
@@ -3464,7 +3396,7 @@
 
     move v1, v0
 
-    .line 1431
+    .line 1425
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -3472,14 +3404,14 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 1432
+    .line 1426
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$Message;
 
-    .line 1433
+    .line 1427
     new-instance v3, Lorg/telegram/messenger/MessageObject;
 
     iget v4, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
@@ -3488,10 +3420,10 @@
 
     invoke-direct {v3, v4, v2, v0, v5}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 1434
+    .line 1428
     iput-boolean v5, v3, Lorg/telegram/messenger/MessageObject;->resendAsIs:Z
 
-    .line 1435
+    .line 1429
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
 
     move-result-object v2
@@ -3511,7 +3443,7 @@
 
     move-object/from16 v0, p2
 
-    .line 1374
+    .line 1368
     :try_start_0
     iget-wide v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->admin_id:J
 
@@ -3540,7 +3472,7 @@
     :cond_0
     move/from16 v8, p1
 
-    .line 1378
+    .line 1372
     :goto_0
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -3610,19 +3542,19 @@
 
     move-result-object v1
 
-    .line 1379
+    .line 1373
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
     move-result v2
 
-    .line 1380
+    .line 1374
     invoke-virtual {v1}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
     if-eqz v2, :cond_1
 
     return-void
 
-    .line 1385
+    .line 1379
     :cond_1
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
@@ -3632,12 +3564,12 @@
 
     move-result-wide v5
 
-    .line 1386
+    .line 1380
     new-instance v15, Landroid/util/SparseArray;
 
     invoke-direct {v15}, Landroid/util/SparseArray;-><init>()V
 
-    .line 1387
+    .line 1381
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
@@ -3651,14 +3583,14 @@
 
     const/4 v2, 0x0
 
-    .line 1389
+    .line 1383
     invoke-virtual {v15, v1, v2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
     add-int/lit8 v1, v1, 0x2
 
     goto :goto_1
 
-    .line 1391
+    .line 1385
     :cond_2
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -3702,7 +3634,7 @@
 
     move-result-object v14
 
-    .line 1392
+    .line 1386
     :goto_2
     invoke-virtual {v14}, Lorg/telegram/SQLite/SQLiteCursor;->next()Z
 
@@ -3710,7 +3642,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 1394
+    .line 1388
     invoke-virtual {v14, v11}, Lorg/telegram/SQLite/SQLiteCursor;->longValue(I)J
 
     move-result-wide v1
@@ -3721,7 +3653,7 @@
 
     if-nez v3, :cond_3
 
-    .line 1396
+    .line 1390
     sget-object v1, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v1}, Ljava/security/SecureRandom;->nextLong()J
@@ -3731,29 +3663,29 @@
     :cond_3
     move-wide v2, v1
 
-    .line 1398
+    .line 1392
     invoke-virtual {v14, v12}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v1
 
-    .line 1399
+    .line 1393
     invoke-virtual {v14, v13}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v12
 
-    .line 1400
+    .line 1394
     invoke-virtual {v14, v9}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v16
 
-    .line 1402
+    .line 1396
     invoke-virtual {v14, v10}, Lorg/telegram/SQLite/SQLiteCursor;->byteBufferValue(I)Lorg/telegram/tgnet/NativeByteBuffer;
 
     move-result-object v9
 
     if-eqz v9, :cond_4
 
-    .line 1404
+    .line 1398
     invoke-virtual {v9, v10}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt32(Z)I
 
     move-result v11
@@ -3762,7 +3694,7 @@
 
     move-result-object v11
 
-    .line 1405
+    .line 1399
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v13
@@ -3775,24 +3707,24 @@
 
     invoke-virtual {v11, v9, v7, v8}, Lorg/telegram/tgnet/TLRPC$Message;->readAttachPath(Lorg/telegram/tgnet/AbstractSerializedData;J)V
 
-    .line 1406
+    .line 1400
     invoke-virtual {v9}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
-    .line 1407
+    .line 1401
     iput-wide v2, v11, Lorg/telegram/tgnet/TLRPC$Message;->random_id:J
 
-    .line 1408
+    .line 1402
     iput-wide v5, v11, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
-    .line 1409
+    .line 1403
     iput v1, v11, Lorg/telegram/tgnet/TLRPC$Message;->seq_in:I
 
-    .line 1410
+    .line 1404
     iput v12, v11, Lorg/telegram/tgnet/TLRPC$Message;->seq_out:I
 
     const/4 v8, 0x4
 
-    .line 1411
+    .line 1405
     invoke-virtual {v14, v8}, Lorg/telegram/SQLite/SQLiteCursor;->intValue(I)I
 
     move-result v1
@@ -3832,16 +3764,16 @@
 
     move-object/from16 v7, p2
 
-    .line 1413
+    .line 1407
     invoke-direct/range {v1 .. v7}, Lorg/telegram/messenger/SecretChatHelper;->createDeleteMessage(IIIJLorg/telegram/tgnet/TLRPC$EncryptedChat;)Lorg/telegram/tgnet/TLRPC$Message;
 
     move-result-object v11
 
-    .line 1415
+    .line 1409
     :goto_3
     invoke-virtual {v9, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1416
+    .line 1410
     invoke-virtual {v15, v12}, Landroid/util/SparseArray;->remove(I)V
 
     move/from16 v4, p3
@@ -3867,10 +3799,10 @@
 
     move/from16 v22, v8
 
-    .line 1418
+    .line 1412
     invoke-virtual {v14}, Lorg/telegram/SQLite/SQLiteCursor;->dispose()V
 
-    .line 1419
+    .line 1413
     invoke-virtual {v15}, Landroid/util/SparseArray;->size()I
 
     move-result v1
@@ -3879,7 +3811,7 @@
 
     move v8, v10
 
-    .line 1420
+    .line 1414
     :goto_4
     invoke-virtual {v15}, Landroid/util/SparseArray;->size()I
 
@@ -3887,12 +3819,12 @@
 
     if-ge v8, v1, :cond_6
 
-    .line 1421
+    .line 1415
     invoke-virtual {v15, v8}, Landroid/util/SparseArray;->keyAt(I)I
 
     move-result v3
 
-    .line 1422
+    .line 1416
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v1
@@ -3923,7 +3855,7 @@
 
     goto :goto_4
 
-    .line 1424
+    .line 1418
     :cond_6
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
@@ -3931,21 +3863,21 @@
 
     invoke-virtual {v1, v10}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 1426
+    .line 1420
     :cond_7
     sget-object v1, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda25;->INSTANCE:Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda25;
 
     invoke-static {v9, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 1427
+    .line 1421
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1428
+    .line 1422
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1430
+    .line 1424
     new-instance v2, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda11;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
@@ -3957,7 +3889,7 @@
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1439
+    .line 1433
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
 
     move-result-object v16
@@ -3978,7 +3910,7 @@
 
     invoke-virtual/range {v16 .. v21}, Lorg/telegram/messenger/SendMessagesHelper;->processUnsentMessages(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
-    .line 1440
+    .line 1434
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v1
@@ -4047,7 +3979,7 @@
 
     move-object/from16 v3, p0
 
-    .line 1442
+    .line 1436
     :goto_5
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -4058,7 +3990,7 @@
 .method private static synthetic lambda$startSecretChat$24(Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
-    .line 1940
+    .line 1934
     :try_start_0
     check-cast p0, Landroid/app/Activity;
 
@@ -4068,7 +4000,7 @@
 
     if-nez p0, :cond_0
 
-    .line 1941
+    .line 1935
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -4078,7 +4010,7 @@
     :catch_0
     move-exception p0
 
-    .line 1944
+    .line 1938
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -4089,7 +4021,7 @@
 .method private synthetic lambda$startSecretChat$25()V
     .locals 7
 
-    .line 2001
+    .line 1995
     iget-object v0, p0, Lorg/telegram/messenger/SecretChatHelper;->delayedEncryptedChatUpdates:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -4098,7 +4030,7 @@
 
     if-nez v0, :cond_0
 
-    .line 2002
+    .line 1996
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -4115,7 +4047,7 @@
 
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/messenger/MessagesController;->processUpdateArray(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;ZI)Z
 
-    .line 2003
+    .line 1997
     iget-object v0, p0, Lorg/telegram/messenger/SecretChatHelper;->delayedEncryptedChatUpdates:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
@@ -4129,10 +4061,10 @@
 
     const/4 v0, 0x0
 
-    .line 1975
+    .line 1969
     iput-boolean v0, p0, Lorg/telegram/messenger/SecretChatHelper;->startingSecretChat:Z
 
-    .line 1976
+    .line 1970
     check-cast p1, Landroid/app/Activity;
 
     invoke-virtual {p1}, Landroid/app/Activity;->isFinishing()Z
@@ -4141,7 +4073,7 @@
 
     if-nez p1, :cond_0
 
-    .line 1978
+    .line 1972
     :try_start_0
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
     :try_end_0
@@ -4152,45 +4084,45 @@
     :catch_0
     move-exception p1
 
-    .line 1980
+    .line 1974
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1983
+    .line 1977
     :cond_0
     :goto_0
     check-cast p3, Lorg/telegram/tgnet/TLRPC$EncryptedChat;
 
-    .line 1984
+    .line 1978
     iget-wide p1, p3, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->participant_id:J
 
     iput-wide p1, p3, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->user_id:J
 
     const/4 p1, -0x2
 
-    .line 1985
+    .line 1979
     iput p1, p3, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
     const/4 p1, 0x1
 
-    .line 1986
+    .line 1980
     iput p1, p3, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_out:I
 
-    .line 1987
+    .line 1981
     iput-object p4, p3, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->a_or_b:[B
 
-    .line 1988
+    .line 1982
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p2
 
     invoke-virtual {p2, p3, v0}, Lorg/telegram/messenger/MessagesController;->putEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Z)V
 
-    .line 1989
+    .line 1983
     new-instance p2, Lorg/telegram/tgnet/TLRPC$TL_dialog;
 
     invoke-direct {p2}, Lorg/telegram/tgnet/TLRPC$TL_dialog;-><init>()V
 
-    .line 1990
+    .line 1984
     iget p4, p3, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     int-to-long v1, p4
@@ -4201,13 +4133,13 @@
 
     iput-wide v1, p2, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
-    .line 1991
+    .line 1985
     iput v0, p2, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_count:I
 
-    .line 1992
+    .line 1986
     iput v0, p2, Lorg/telegram/tgnet/TLRPC$Dialog;->top_message:I
 
-    .line 1993
+    .line 1987
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p4
@@ -4218,7 +4150,7 @@
 
     iput p4, p2, Lorg/telegram/tgnet/TLRPC$Dialog;->last_message_date:I
 
-    .line 1994
+    .line 1988
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p4
@@ -4229,7 +4161,7 @@
 
     invoke-virtual {p4, v1, v2, p2}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 1995
+    .line 1989
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p4
@@ -4238,7 +4170,7 @@
 
     invoke-virtual {p4, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1996
+    .line 1990
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p4
@@ -4247,14 +4179,14 @@
 
     invoke-virtual {p4, v1}, Lorg/telegram/messenger/MessagesController;->sortDialogs(Landroidx/collection/LongSparseArray;)V
 
-    .line 1997
+    .line 1991
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p4
 
     invoke-virtual {p4, p3, p5, p2}, Lorg/telegram/messenger/MessagesStorage;->putEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Dialog;)V
 
-    .line 1998
+    .line 1992
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p2
@@ -4265,7 +4197,7 @@
 
     invoke-virtual {p2, p4, p5}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1999
+    .line 1993
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p2
@@ -4278,7 +4210,7 @@
 
     invoke-virtual {p2, p4, p1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2000
+    .line 1994
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p2, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda2;
@@ -4293,7 +4225,7 @@
 .method private synthetic lambda$startSecretChat$27(Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 1
 
-    .line 2010
+    .line 2004
     move-object v0, p1
 
     check-cast v0, Landroid/app/Activity;
@@ -4306,10 +4238,10 @@
 
     const/4 v0, 0x0
 
-    .line 2011
+    .line 2005
     iput-boolean v0, p0, Lorg/telegram/messenger/SecretChatHelper;->startingSecretChat:Z
 
-    .line 2013
+    .line 2007
     :try_start_0
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
     :try_end_0
@@ -4320,16 +4252,16 @@
     :catch_0
     move-exception p2
 
-    .line 2015
+    .line 2009
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2017
+    .line 2011
     :goto_0
     new-instance p2, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 2018
+    .line 2012
     sget p1, Lorg/telegram/messenger/R$string;->AppName:I
 
     const-string v0, "AppName"
@@ -4340,7 +4272,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2019
+    .line 2013
     sget p1, Lorg/telegram/messenger/R$string;->CreateEncryptedChatError:I
 
     const-string v0, "CreateEncryptedChatError"
@@ -4351,7 +4283,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2020
+    .line 2014
     sget p1, Lorg/telegram/messenger/R$string;->OK:I
 
     const-string v0, "OK"
@@ -4364,7 +4296,7 @@
 
     invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 2021
+    .line 2015
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
@@ -4382,7 +4314,7 @@
 
     if-nez p6, :cond_0
 
-    .line 1974
+    .line 1968
     new-instance p6, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda10;
 
     move-object v0, p6
@@ -4405,13 +4337,13 @@
 
     goto :goto_0
 
-    .line 2008
+    .line 2002
     :cond_0
     iget-object p3, p0, Lorg/telegram/messenger/SecretChatHelper;->delayedEncryptedChatUpdates:Ljava/util/ArrayList;
 
     invoke-virtual {p3}, Ljava/util/ArrayList;->clear()V
 
-    .line 2009
+    .line 2003
     new-instance p3, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda8;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/messenger/SecretChatHelper;Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;)V
@@ -4427,10 +4359,10 @@
 
     const/4 v0, 0x0
 
-    .line 2029
+    .line 2023
     iput-boolean v0, p0, Lorg/telegram/messenger/SecretChatHelper;->startingSecretChat:Z
 
-    .line 2030
+    .line 2024
     check-cast p1, Landroid/app/Activity;
 
     invoke-virtual {p1}, Landroid/app/Activity;->isFinishing()Z
@@ -4439,7 +4371,7 @@
 
     if-nez p1, :cond_0
 
-    .line 2032
+    .line 2026
     :try_start_0
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
     :try_end_0
@@ -4450,7 +4382,7 @@
     :catch_0
     move-exception p1
 
-    .line 2034
+    .line 2028
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -4463,17 +4395,17 @@
 
     if-nez p5, :cond_4
 
-    .line 1935
+    .line 1929
     move-object p5, p4
 
     check-cast p5, Lorg/telegram/tgnet/TLRPC$messages_DhConfig;
 
-    .line 1936
+    .line 1930
     instance-of p4, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_dhConfig;
 
     if-eqz p4, :cond_1
 
-    .line 1937
+    .line 1931
     iget-object p4, p5, Lorg/telegram/tgnet/TLRPC$messages_DhConfig;->p:[B
 
     iget v0, p5, Lorg/telegram/tgnet/TLRPC$messages_DhConfig;->g:I
@@ -4484,7 +4416,7 @@
 
     if-nez p4, :cond_0
 
-    .line 1938
+    .line 1932
     new-instance p3, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda1;
 
     invoke-direct {p3, p1, p2}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda1;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;)V
@@ -4493,7 +4425,7 @@
 
     return-void
 
-    .line 1949
+    .line 1943
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -4503,7 +4435,7 @@
 
     invoke-virtual {p4, v0}, Lorg/telegram/messenger/MessagesStorage;->setSecretPBytes([B)V
 
-    .line 1950
+    .line 1944
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p4
@@ -4512,7 +4444,7 @@
 
     invoke-virtual {p4, v0}, Lorg/telegram/messenger/MessagesStorage;->setSecretG(I)V
 
-    .line 1951
+    .line 1945
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p4
@@ -4521,7 +4453,7 @@
 
     invoke-virtual {p4, v0}, Lorg/telegram/messenger/MessagesStorage;->setLastSecretVersion(I)V
 
-    .line 1952
+    .line 1946
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p4
@@ -4564,7 +4496,7 @@
     :goto_0
     if-ge v1, p4, :cond_2
 
-    .line 1956
+    .line 1950
     sget-object v2, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v2}, Ljava/security/SecureRandom;->nextDouble()D
@@ -4593,7 +4525,7 @@
 
     goto :goto_0
 
-    .line 1959
+    .line 1953
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -4609,7 +4541,7 @@
 
     move-result-object p5
 
-    .line 1960
+    .line 1954
     new-instance v1, Ljava/math/BigInteger;
 
     const/4 v2, 0x1
@@ -4632,33 +4564,33 @@
 
     move-result-object p5
 
-    .line 1961
+    .line 1955
     invoke-virtual {p5}, Ljava/math/BigInteger;->toByteArray()[B
 
     move-result-object p5
 
-    .line 1962
+    .line 1956
     array-length v1, p5
 
     if-le v1, p4, :cond_3
 
     new-array v1, p4, [B
 
-    .line 1964
+    .line 1958
     invoke-static {p5, v2, v1, v0, p4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     move-object p5, v1
 
-    .line 1968
+    .line 1962
     :cond_3
     new-instance p4, Lorg/telegram/tgnet/TLRPC$TL_messages_requestEncryption;
 
     invoke-direct {p4}, Lorg/telegram/tgnet/TLRPC$TL_messages_requestEncryption;-><init>()V
 
-    .line 1969
+    .line 1963
     iput-object p5, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_requestEncryption;->g_a:[B
 
-    .line 1970
+    .line 1964
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p5
@@ -4669,7 +4601,7 @@
 
     iput-object p5, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_requestEncryption;->user_id:Lorg/telegram/tgnet/TLRPC$InputUser;
 
-    .line 1971
+    .line 1965
     sget-object p5, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {p5}, Ljava/security/SecureRandom;->nextInt()I
@@ -4678,7 +4610,7 @@
 
     iput p5, p4, Lorg/telegram/tgnet/TLRPC$TL_messages_requestEncryption;->random_id:I
 
-    .line 1972
+    .line 1966
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p5
@@ -4703,13 +4635,13 @@
 
     goto :goto_1
 
-    .line 2027
+    .line 2021
     :cond_4
     iget-object p3, p0, Lorg/telegram/messenger/SecretChatHelper;->delayedEncryptedChatUpdates:Ljava/util/ArrayList;
 
     invoke-virtual {p3}, Ljava/util/ArrayList;->clear()V
 
-    .line 2028
+    .line 2022
     new-instance p3, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda9;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/messenger/SecretChatHelper;Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;)V
@@ -4723,7 +4655,7 @@
 .method private synthetic lambda$startSecretChat$31(ILandroid/content/DialogInterface;)V
     .locals 1
 
-    .line 2040
+    .line 2034
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p2
@@ -4746,7 +4678,7 @@
 
     goto :goto_0
 
-    .line 1371
+    .line 1365
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -5170,7 +5102,7 @@
 .method public acceptSecretChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
     .locals 3
 
-    .line 1825
+    .line 1819
     iget-object v0, p0, Lorg/telegram/messenger/SecretChatHelper;->acceptingChats:Landroid/util/SparseArray;
 
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
@@ -5183,7 +5115,7 @@
 
     return-void
 
-    .line 1828
+    .line 1822
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/SecretChatHelper;->acceptingChats:Landroid/util/SparseArray;
 
@@ -5191,17 +5123,17 @@
 
     invoke-virtual {v0, v1, p1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1829
+    .line 1823
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getDhConfig;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_getDhConfig;-><init>()V
 
     const/16 v1, 0x100
 
-    .line 1830
+    .line 1824
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getDhConfig;->random_length:I
 
-    .line 1831
+    .line 1825
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v1
@@ -5212,7 +5144,7 @@
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getDhConfig;->version:I
 
-    .line 1832
+    .line 1826
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v1
@@ -5238,7 +5170,7 @@
         }
     .end annotation
 
-    .line 1448
+    .line 1442
     iget-object v0, p0, Lorg/telegram/messenger/SecretChatHelper;->secretHolesQueue:Landroid/util/SparseArray;
 
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
@@ -5253,7 +5185,7 @@
 
     return-void
 
-    .line 1452
+    .line 1446
     :cond_0
     sget-object v1, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda24;->INSTANCE:Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda24;
 
@@ -5265,7 +5197,7 @@
 
     move v3, v2
 
-    .line 1462
+    .line 1456
     :goto_0
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -5273,14 +5205,14 @@
 
     if-lez v4, :cond_4
 
-    .line 1463
+    .line 1457
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;
 
-    .line 1464
+    .line 1458
     iget-object v5, v4, Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;->layer:Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;
 
     iget v6, v5, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;->out_seq_no:I
@@ -5293,35 +5225,35 @@
 
     if-ne v7, v6, :cond_4
 
-    .line 1465
+    .line 1459
     :cond_1
     iget v3, v5, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;->layer:I
 
     invoke-direct {p0, p1, v3}, Lorg/telegram/messenger/SecretChatHelper;->applyPeerLayer(Lorg/telegram/tgnet/TLRPC$EncryptedChat;I)V
 
-    .line 1466
+    .line 1460
     iget-object v3, v4, Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;->layer:Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;
 
     iget v5, v3, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;->out_seq_no:I
 
     iput v5, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
-    .line 1467
+    .line 1461
     iget v3, v3, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;->in_seq_no:I
 
     iput v3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->in_seq_no:I
 
-    .line 1468
+    .line 1462
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 1472
+    .line 1466
     iget v3, v4, Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;->decryptedWithVersion:I
 
     const/4 v5, 0x2
 
     if-ne v3, v5, :cond_2
 
-    .line 1473
+    .line 1467
     iget v3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->mtproto_seq:I
 
     iget v5, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
@@ -5332,7 +5264,7 @@
 
     iput v3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->mtproto_seq:I
 
-    .line 1476
+    .line 1470
     :cond_2
     iget-object v7, v4, Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;->file:Lorg/telegram/tgnet/TLRPC$EncryptedFile;
 
@@ -5354,7 +5286,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 1478
+    .line 1472
     invoke-virtual {p2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_3
@@ -5362,7 +5294,7 @@
 
     goto :goto_0
 
-    .line 1484
+    .line 1478
     :cond_4
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -5370,7 +5302,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 1485
+    .line 1479
     iget-object p2, p0, Lorg/telegram/messenger/SecretChatHelper;->secretHolesQueue:Landroid/util/SparseArray;
 
     iget v0, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
@@ -5380,7 +5312,7 @@
     :cond_5
     if-eqz v3, :cond_6
 
-    .line 1488
+    .line 1482
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p2
@@ -5442,7 +5374,7 @@
 
     const-wide/16 v0, 0x0
 
-    .line 1795
+    .line 1789
     invoke-virtual {p0, p1, p2, v0, v1}, Lorg/telegram/messenger/SecretChatHelper;->declineSecretChat(IZJ)V
 
     return-void
@@ -5459,7 +5391,7 @@
 
     const/4 p3, 0x0
 
-    .line 1803
+    .line 1797
     :try_start_0
     new-instance p4, Lorg/telegram/tgnet/NativeByteBuffer;
 
@@ -5471,14 +5403,14 @@
 
     const/16 p3, 0x64
 
-    .line 1804
+    .line 1798
     :try_start_1
     invoke-virtual {p4, p3}, Lorg/telegram/tgnet/NativeByteBuffer;->writeInt32(I)V
 
-    .line 1805
+    .line 1799
     invoke-virtual {p4, p1}, Lorg/telegram/tgnet/NativeByteBuffer;->writeInt32(I)V
 
-    .line 1806
+    .line 1800
     invoke-virtual {p4, p2}, Lorg/telegram/tgnet/NativeByteBuffer;->writeBool(Z)V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -5499,11 +5431,11 @@
 
     move-object p3, v2
 
-    .line 1808
+    .line 1802
     :goto_0
     invoke-static {p3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1810
+    .line 1804
     :goto_1
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -5513,19 +5445,19 @@
 
     move-result-wide p3
 
-    .line 1814
+    .line 1808
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_discardEncryption;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_discardEncryption;-><init>()V
 
-    .line 1815
+    .line 1809
     iput p1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_discardEncryption;->chat_id:I
 
-    .line 1816
+    .line 1810
     iput-boolean p2, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_discardEncryption;->delete_history:Z
 
-    .line 1817
+    .line 1811
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object p1
@@ -5558,7 +5490,7 @@
 
     const-string v9, " out_seq = "
 
-    .line 1550
+    .line 1544
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -5575,21 +5507,21 @@
 
     if-eqz v11, :cond_1c
 
-    .line 1551
+    .line 1545
     instance-of v1, v11, Lorg/telegram/tgnet/TLRPC$TL_encryptedChatDiscarded;
 
     if-eqz v1, :cond_0
 
     goto/16 :goto_9
 
-    .line 1556
+    .line 1550
     :cond_0
     :try_start_0
     instance-of v1, v11, Lorg/telegram/tgnet/TLRPC$TL_encryptedChatWaiting;
 
     if-eqz v1, :cond_2
 
-    .line 1557
+    .line 1551
     iget-object v1, v8, Lorg/telegram/messenger/SecretChatHelper;->pendingSecretMessages:Landroid/util/SparseArray;
 
     iget v2, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
@@ -5602,33 +5534,33 @@
 
     if-nez v1, :cond_1
 
-    .line 1559
+    .line 1553
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1560
+    .line 1554
     iget-object v2, v8, Lorg/telegram/messenger/SecretChatHelper;->pendingSecretMessages:Landroid/util/SparseArray;
 
     iget v3, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     invoke-virtual {v2, v3, v1}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1562
+    .line 1556
     :cond_1
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_updateNewEncryptedMessage;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_updateNewEncryptedMessage;-><init>()V
 
-    .line 1563
+    .line 1557
     iput-object v0, v2, Lorg/telegram/tgnet/TLRPC$TL_updateNewEncryptedMessage;->message:Lorg/telegram/tgnet/TLRPC$EncryptedMessage;
 
-    .line 1564
+    .line 1558
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-object v12
 
-    .line 1567
+    .line 1561
     :cond_2
     new-instance v13, Lorg/telegram/tgnet/NativeByteBuffer;
 
@@ -5638,36 +5570,36 @@
 
     invoke-direct {v13, v1}, Lorg/telegram/tgnet/NativeByteBuffer;-><init>(I)V
 
-    .line 1568
+    .line 1562
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedMessage;->bytes:[B
 
     invoke-virtual {v13, v1}, Lorg/telegram/tgnet/NativeByteBuffer;->writeBytes([B)V
 
     const/4 v14, 0x0
 
-    .line 1569
+    .line 1563
     invoke-virtual {v13, v14}, Lorg/telegram/tgnet/NativeByteBuffer;->position(I)V
 
-    .line 1570
+    .line 1564
     invoke-virtual {v13, v14}, Lorg/telegram/tgnet/NativeByteBuffer;->readInt64(Z)J
 
     move-result-wide v1
 
-    .line 1573
+    .line 1567
     iget-wide v3, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_fingerprint:J
 
     cmp-long v3, v3, v1
 
     if-nez v3, :cond_3
 
-    .line 1574
+    .line 1568
     iget-object v3, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->auth_key:[B
 
     move-object v15, v3
 
     goto :goto_0
 
-    .line 1575
+    .line 1569
     :cond_3
     iget-wide v3, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_key_fingerprint:J
 
@@ -5681,7 +5613,7 @@
 
     if-nez v3, :cond_4
 
-    .line 1576
+    .line 1570
     iget-object v3, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_auth_key:[B
 
     move-object v15, v3
@@ -5701,12 +5633,12 @@
 
     const/16 v1, 0x10
 
-    .line 1583
+    .line 1577
     invoke-virtual {v13, v1, v14}, Lorg/telegram/tgnet/NativeByteBuffer;->readData(IZ)[B
 
     move-result-object v16
 
-    .line 1585
+    .line 1579
     iget-wide v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->admin_id:J
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
@@ -5728,7 +5660,7 @@
     :cond_5
     move/from16 v17, v14
 
-    .line 1587
+    .line 1581
     :goto_2
     iget v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->mtproto_seq:I
 
@@ -5758,7 +5690,7 @@
 
     move/from16 v7, v18
 
-    .line 1591
+    .line 1585
     invoke-direct/range {v1 .. v7}, Lorg/telegram/messenger/SecretChatHelper;->decryptWithMtProtoVersion(Lorg/telegram/tgnet/NativeByteBuffer;[B[BIZZ)Z
 
     move-result v1
@@ -5787,7 +5719,7 @@
 
     move/from16 v7, v18
 
-    .line 1594
+    .line 1588
     invoke-direct/range {v1 .. v7}, Lorg/telegram/messenger/SecretChatHelper;->decryptWithMtProtoVersion(Lorg/telegram/tgnet/NativeByteBuffer;[B[BIZZ)Z
 
     move-result v1
@@ -5810,7 +5742,7 @@
 
     move v1, v15
 
-    .line 1605
+    .line 1599
     :goto_5
     invoke-static {}, Lorg/telegram/tgnet/TLClassStore;->Instance()Lorg/telegram/tgnet/TLClassStore;
 
@@ -5824,12 +5756,12 @@
 
     move-result-object v2
 
-    .line 1607
+    .line 1601
     invoke-virtual {v13}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
     if-nez v10, :cond_a
 
-    .line 1609
+    .line 1603
     iget-short v3, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_in:S
 
     const/4 v4, 0x1
@@ -5840,16 +5772,16 @@
 
     iput-short v3, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_in:S
 
-    .line 1611
+    .line 1605
     :cond_a
     instance-of v3, v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;
 
     if-eqz v3, :cond_17
 
-    .line 1612
+    .line 1606
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;
 
-    .line 1613
+    .line 1607
     iget v3, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
     if-nez v3, :cond_c
@@ -5858,7 +5790,7 @@
 
     if-nez v3, :cond_c
 
-    .line 1614
+    .line 1608
     iget-wide v3, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->admin_id:J
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
@@ -5875,12 +5807,12 @@
 
     const/4 v3, 0x1
 
-    .line 1615
+    .line 1609
     iput v3, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_out:I
 
     const/4 v3, -0x2
 
-    .line 1616
+    .line 1610
     iput v3, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
     goto :goto_6
@@ -5888,10 +5820,10 @@
     :cond_b
     const/4 v3, -0x1
 
-    .line 1618
+    .line 1612
     iput v3, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
-    .line 1621
+    .line 1615
     :cond_c
     :goto_6
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;->random_bytes:[B
@@ -5902,26 +5834,26 @@
 
     if-ge v3, v4, :cond_e
 
-    .line 1622
+    .line 1616
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_d
 
     const-string v0, "got random bytes less than needed"
 
-    .line 1623
+    .line 1617
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
     :cond_d
     return-object v12
 
-    .line 1627
+    .line 1621
     :cond_e
     sget-boolean v3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v3, :cond_f
 
-    .line 1628
+    .line 1622
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5946,7 +5878,7 @@
 
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1629
+    .line 1623
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -5971,7 +5903,7 @@
 
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 1631
+    .line 1625
     :cond_f
     iget v3, v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;->out_seq_no:I
 
@@ -5986,7 +5918,7 @@
 
     if-ne v1, v5, :cond_11
 
-    .line 1634
+    .line 1628
     iget v5, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->mtproto_seq:I
 
     if-eqz v5, :cond_11
@@ -6000,17 +5932,17 @@
 
     if-eq v4, v3, :cond_15
 
-    .line 1638
+    .line 1632
     sget-boolean v3, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v3, :cond_12
 
     const-string v3, "got hole"
 
-    .line 1639
+    .line 1633
     invoke-static {v3}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 1641
+    .line 1635
     :cond_12
     iget v3, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
@@ -6022,7 +5954,7 @@
 
     invoke-virtual {v8, v11, v3, v4, v12}, Lorg/telegram/messenger/SecretChatHelper;->sendResendMessage(Lorg/telegram/tgnet/TLRPC$EncryptedChat;IILorg/telegram/tgnet/TLRPC$Message;)V
 
-    .line 1642
+    .line 1636
     iget-object v3, v8, Lorg/telegram/messenger/SecretChatHelper;->secretHolesQueue:Landroid/util/SparseArray;
 
     iget v4, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
@@ -6035,19 +5967,19 @@
 
     if-nez v3, :cond_13
 
-    .line 1644
+    .line 1638
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1645
+    .line 1639
     iget-object v4, v8, Lorg/telegram/messenger/SecretChatHelper;->secretHolesQueue:Landroid/util/SparseArray;
 
     iget v5, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     invoke-virtual {v4, v5, v3}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 1647
+    .line 1641
     :cond_13
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -6057,98 +5989,98 @@
 
     if-lt v4, v5, :cond_14
 
-    .line 1648
+    .line 1642
     iget-object v0, v8, Lorg/telegram/messenger/SecretChatHelper;->secretHolesQueue:Landroid/util/SparseArray;
 
     iget v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 1649
+    .line 1643
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_encryptedChatDiscarded;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_encryptedChatDiscarded;-><init>()V
 
-    .line 1650
+    .line 1644
     iget v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
-    .line 1651
+    .line 1645
     iget-wide v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->user_id:J
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->user_id:J
 
-    .line 1652
+    .line 1646
     iget-object v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->auth_key:[B
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->auth_key:[B
 
-    .line 1653
+    .line 1647
     iget v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_create_date:I
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_create_date:I
 
-    .line 1654
+    .line 1648
     iget-short v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_in:S
 
     iput-short v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_in:S
 
-    .line 1655
+    .line 1649
     iget-short v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_out:S
 
     iput-short v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_out:S
 
-    .line 1656
+    .line 1650
     iget v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
-    .line 1657
+    .line 1651
     iget v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_out:I
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_out:I
 
-    .line 1658
+    .line 1652
     new-instance v1, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda22;
 
     invoke-direct {v1, v8, v0}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/messenger/SecretChatHelper;Lorg/telegram/tgnet/TLRPC$TL_encryptedChatDiscarded;)V
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1663
+    .line 1657
     iget v0, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     invoke-virtual {v8, v0, v14}, Lorg/telegram/messenger/SecretChatHelper;->declineSecretChat(IZ)V
 
     return-object v12
 
-    .line 1667
+    .line 1661
     :cond_14
     new-instance v4, Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;
 
     invoke-direct {v4}, Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;-><init>()V
 
-    .line 1668
+    .line 1662
     iput-object v2, v4, Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;->layer:Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;
 
-    .line 1669
+    .line 1663
     iget-object v2, v0, Lorg/telegram/tgnet/TLRPC$EncryptedMessage;->file:Lorg/telegram/tgnet/TLRPC$EncryptedFile;
 
     iput-object v2, v4, Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;->file:Lorg/telegram/tgnet/TLRPC$EncryptedFile;
 
-    .line 1670
+    .line 1664
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$EncryptedMessage;->date:I
 
     iput v0, v4, Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;->date:I
 
-    .line 1671
+    .line 1665
     iput-boolean v10, v4, Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;->new_key_used:Z
 
-    .line 1672
+    .line 1666
     iput v1, v4, Lorg/telegram/messenger/SecretChatHelper$TL_decryptedMessageHolder;->decryptedWithVersion:I
 
-    .line 1673
+    .line 1667
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-object v12
@@ -6156,7 +6088,7 @@
     :cond_15
     if-ne v1, v15, :cond_16
 
-    .line 1677
+    .line 1671
     iget v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->mtproto_seq:I
 
     invoke-static {v1, v4}, Ljava/lang/Math;->min(II)I
@@ -6165,23 +6097,23 @@
 
     iput v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->mtproto_seq:I
 
-    .line 1679
+    .line 1673
     :cond_16
     iget v1, v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;->layer:I
 
     invoke-direct {v8, v11, v1}, Lorg/telegram/messenger/SecretChatHelper;->applyPeerLayer(Lorg/telegram/tgnet/TLRPC$EncryptedChat;I)V
 
-    .line 1680
+    .line 1674
     iget v1, v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;->out_seq_no:I
 
     iput v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
-    .line 1681
+    .line 1675
     iget v1, v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;->in_seq_no:I
 
     iput v1, v11, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->in_seq_no:I
 
-    .line 1682
+    .line 1676
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v1
@@ -6190,14 +6122,14 @@
 
     invoke-virtual {v1, v11, v3}, Lorg/telegram/messenger/MessagesStorage;->updateEncryptedChatSeq(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Z)V
 
-    .line 1683
+    .line 1677
     iget-object v1, v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageLayer;->message:Lorg/telegram/tgnet/TLRPC$DecryptedMessage;
 
     move-object v5, v1
 
     goto :goto_7
 
-    .line 1684
+    .line 1678
     :cond_17
     instance-of v1, v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageService;
 
@@ -6218,13 +6150,13 @@
     :cond_18
     move-object v5, v2
 
-    .line 1687
+    .line 1681
     :goto_7
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1688
+    .line 1682
     iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$EncryptedMessage;->file:Lorg/telegram/tgnet/TLRPC$EncryptedFile;
 
     iget v4, v0, Lorg/telegram/tgnet/TLRPC$EncryptedMessage;->date:I
@@ -6241,10 +6173,10 @@
 
     if-eqz v0, :cond_19
 
-    .line 1690
+    .line 1684
     invoke-virtual {v7, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1692
+    .line 1686
     :cond_19
     invoke-virtual {v8, v11, v7}, Lorg/telegram/messenger/SecretChatHelper;->checkSecretHoles(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Ljava/util/ArrayList;)V
 
@@ -6254,11 +6186,11 @@
     :goto_8
     return-object v12
 
-    .line 1695
+    .line 1689
     :cond_1b
     invoke-virtual {v13}, Lorg/telegram/tgnet/NativeByteBuffer;->reuse()V
 
-    .line 1696
+    .line 1690
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_1c
@@ -6269,7 +6201,7 @@
 
     new-array v3, v3, [Ljava/lang/Object;
 
-    .line 1697
+    .line 1691
     invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v1
@@ -6289,7 +6221,7 @@
     :catch_0
     move-exception v0
 
-    .line 1701
+    .line 1695
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_1c
@@ -6442,7 +6374,7 @@
 .method public processAcceptedSecretChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
     .locals 9
 
-    .line 1730
+    .line 1724
     new-instance v0, Ljava/math/BigInteger;
 
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
@@ -6457,14 +6389,14 @@
 
     invoke-direct {v0, v2, v1}, Ljava/math/BigInteger;-><init>(I[B)V
 
-    .line 1731
+    .line 1725
     new-instance v1, Ljava/math/BigInteger;
 
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->g_a_or_b:[B
 
     invoke-direct {v1, v2, v3}, Ljava/math/BigInteger;-><init>(I[B)V
 
-    .line 1733
+    .line 1727
     invoke-static {v1, v0}, Lorg/telegram/messenger/Utilities;->isGoodGaAndGb(Ljava/math/BigInteger;Ljava/math/BigInteger;)Z
 
     move-result v3
@@ -6473,14 +6405,14 @@
 
     if-nez v3, :cond_0
 
-    .line 1734
+    .line 1728
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     invoke-virtual {p0, p1, v4}, Lorg/telegram/messenger/SecretChatHelper;->declineSecretChat(IZ)V
 
     return-void
 
-    .line 1738
+    .line 1732
     :cond_0
     new-instance v3, Ljava/math/BigInteger;
 
@@ -6492,12 +6424,12 @@
 
     move-result-object v0
 
-    .line 1740
+    .line 1734
     invoke-virtual {v0}, Ljava/math/BigInteger;->toByteArray()[B
 
     move-result-object v0
 
-    .line 1741
+    .line 1735
     array-length v1, v0
 
     const/16 v3, 0x100
@@ -6506,7 +6438,7 @@
 
     new-array v1, v3, [B
 
-    .line 1743
+    .line 1737
     array-length v5, v0
 
     sub-int/2addr v5, v3
@@ -6518,7 +6450,7 @@
 
     goto :goto_1
 
-    .line 1745
+    .line 1739
     :cond_2
     array-length v1, v0
 
@@ -6526,7 +6458,7 @@
 
     new-array v1, v3, [B
 
-    .line 1747
+    .line 1741
     array-length v5, v0
 
     rsub-int v5, v5, 0x100
@@ -6537,7 +6469,7 @@
 
     move v5, v4
 
-    .line 1748
+    .line 1742
     :goto_0
     array-length v6, v0
 
@@ -6545,14 +6477,14 @@
 
     if-ge v5, v6, :cond_1
 
-    .line 1749
+    .line 1743
     aput-byte v4, v1, v5
 
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
-    .line 1753
+    .line 1747
     :cond_3
     :goto_1
     invoke-static {v0}, Lorg/telegram/messenger/Utilities;->computeSHA1([B)[B
@@ -6563,29 +6495,29 @@
 
     new-array v5, v3, [B
 
-    .line 1755
+    .line 1749
     array-length v6, v1
 
     sub-int/2addr v6, v3
 
     invoke-static {v1, v6, v5, v4, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 1756
+    .line 1750
     invoke-static {v5}, Lorg/telegram/messenger/Utilities;->bytesToLong([B)J
 
     move-result-wide v5
 
-    .line 1757
+    .line 1751
     iget-wide v7, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_fingerprint:J
 
     cmp-long v1, v7, v5
 
     if-nez v1, :cond_5
 
-    .line 1758
+    .line 1752
     iput-object v0, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->auth_key:[B
 
-    .line 1759
+    .line 1753
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v0
@@ -6598,27 +6530,27 @@
 
     const/4 v0, -0x2
 
-    .line 1760
+    .line 1754
     iput v0, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
-    .line 1761
+    .line 1755
     iput v2, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_out:I
 
-    .line 1762
+    .line 1756
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/MessagesStorage;->updateEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
 
-    .line 1763
+    .line 1757
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, v4}, Lorg/telegram/messenger/MessagesController;->putEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Z)V
 
-    .line 1764
+    .line 1758
     iget-object v0, p0, Lorg/telegram/messenger/SecretChatHelper;->pendingSecretMessages:Landroid/util/SparseArray;
 
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
@@ -6633,7 +6565,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 1766
+    .line 1760
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -6648,14 +6580,14 @@
 
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/messenger/MessagesController;->processUpdateArray(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;ZI)Z
 
-    .line 1767
+    .line 1761
     iget-object v0, p0, Lorg/telegram/messenger/SecretChatHelper;->pendingSecretMessages:Landroid/util/SparseArray;
 
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     invoke-virtual {v0, v1}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 1769
+    .line 1763
     :cond_4
     new-instance v0, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda15;
 
@@ -6665,77 +6597,77 @@
 
     goto :goto_2
 
-    .line 1774
+    .line 1768
     :cond_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_encryptedChatDiscarded;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_encryptedChatDiscarded;-><init>()V
 
-    .line 1775
+    .line 1769
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
-    .line 1776
+    .line 1770
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->user_id:J
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->user_id:J
 
-    .line 1777
+    .line 1771
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->auth_key:[B
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->auth_key:[B
 
-    .line 1778
+    .line 1772
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_create_date:I
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_create_date:I
 
-    .line 1779
+    .line 1773
     iget-short v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_in:S
 
     iput-short v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_in:S
 
-    .line 1780
+    .line 1774
     iget-short v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_out:S
 
     iput-short v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_out:S
 
-    .line 1781
+    .line 1775
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_in:I
 
-    .line 1782
+    .line 1776
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_out:I
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->seq_out:I
 
-    .line 1783
+    .line 1777
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->admin_id:J
 
     iput-wide v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->admin_id:J
 
-    .line 1784
+    .line 1778
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->mtproto_seq:I
 
     iput v1, v0, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->mtproto_seq:I
 
-    .line 1785
+    .line 1779
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/MessagesStorage;->updateEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
 
-    .line 1786
+    .line 1780
     new-instance v1, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda23;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda23;-><init>(Lorg/telegram/messenger/SecretChatHelper;Lorg/telegram/tgnet/TLRPC$TL_encryptedChatDiscarded;)V
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1790
+    .line 1784
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     invoke-virtual {p0, p1, v4}, Lorg/telegram/messenger/SecretChatHelper;->declineSecretChat(IZ)V
@@ -6759,10 +6691,10 @@
 
     if-eqz v4, :cond_5c
 
-    .line 816
+    .line 810
     iget-wide v6, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->admin_id:J
 
-    .line 817
+    .line 811
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v8
@@ -6775,10 +6707,10 @@
 
     if-nez v8, :cond_0
 
-    .line 818
+    .line 812
     iget-wide v6, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->participant_id:J
 
-    .line 821
+    .line 815
     :cond_0
     iget-wide v8, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
@@ -6800,10 +6732,10 @@
 
     if-lt v8, v9, :cond_1
 
-    .line 822
+    .line 816
     invoke-virtual/range {p0 .. p1}, Lorg/telegram/messenger/SecretChatHelper;->requestNewSecretChatKey(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
 
-    .line 825
+    .line 819
     :cond_1
     iget-wide v8, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
@@ -6827,13 +6759,13 @@
 
     new-array v5, v14, [B
 
-    .line 826
+    .line 820
     iput-object v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_auth_key:[B
 
-    .line 827
+    .line 821
     iput-wide v10, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_key_fingerprint:J
 
-    .line 828
+    .line 822
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v5
@@ -6849,17 +6781,17 @@
 
     if-eqz p5, :cond_3
 
-    .line 830
+    .line 824
     iget-wide v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_key_fingerprint:J
 
     iput-wide v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_fingerprint:J
 
-    .line 831
+    .line 825
     iget-object v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_auth_key:[B
 
     iput-object v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->auth_key:[B
 
-    .line 832
+    .line 826
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v5
@@ -6872,29 +6804,29 @@
 
     new-array v5, v14, [B
 
-    .line 833
+    .line 827
     iput-object v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_auth_key:[B
 
-    .line 834
+    .line 828
     iput-wide v10, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_key_fingerprint:J
 
-    .line 835
+    .line 829
     iput-short v13, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_in:S
 
-    .line 836
+    .line 830
     iput-short v13, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_out:S
 
-    .line 837
+    .line 831
     iput-wide v10, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
-    .line 839
+    .line 833
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v5
 
     invoke-virtual {v5, v1}, Lorg/telegram/messenger/MessagesStorage;->updateEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
 
-    .line 842
+    .line 836
     :cond_3
     :goto_0
     instance-of v5, v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage;
@@ -6905,33 +6837,33 @@
 
     if-eqz v5, :cond_38
 
-    .line 843
+    .line 837
     check-cast v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessage;
 
-    .line 845
+    .line 839
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_message_secret;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_message_secret;-><init>()V
 
-    .line 846
+    .line 840
     iget v8, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->ttl:I
 
     iput v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->ttl:I
 
-    .line 847
+    .line 841
     iget-object v8, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->entities:Ljava/util/ArrayList;
 
     iput-object v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->entities:Ljava/util/ArrayList;
 
-    .line 848
+    .line 842
     iget-object v8, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->message:Ljava/lang/String;
 
     iput-object v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 849
+    .line 843
     iput v3, v5, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
-    .line 850
+    .line 844
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v8
@@ -6944,19 +6876,19 @@
 
     iput v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->local_id:I
 
-    .line 851
+    .line 845
     iget-boolean v8, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->silent:Z
 
     iput-boolean v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->silent:Z
 
-    .line 852
+    .line 846
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v8
 
     invoke-virtual {v8, v13}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 853
+    .line 847
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
@@ -6965,17 +6897,17 @@
 
     move-wide v14, v15
 
-    .line 854
+    .line 848
     iput-wide v14, v8, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 855
+    .line 849
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 856
+    .line 850
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v9
@@ -6986,20 +6918,20 @@
 
     iput-wide v14, v8, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 857
+    .line 851
     iget-wide v8, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->random_id:J
 
     iput-wide v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->random_id:J
 
-    .line 858
+    .line 852
     iput-boolean v7, v5, Lorg/telegram/tgnet/TLRPC$Message;->unread:Z
 
     const/16 v8, 0x300
 
-    .line 859
+    .line 853
     iput v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 860
+    .line 854
     iget-object v8, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->via_bot_name:Ljava/lang/String;
 
     if-eqz v8, :cond_4
@@ -7010,19 +6942,19 @@
 
     if-lez v8, :cond_4
 
-    .line 861
+    .line 855
     iget-object v8, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->via_bot_name:Ljava/lang/String;
 
     iput-object v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->via_bot_name:Ljava/lang/String;
 
-    .line 862
+    .line 856
     iget v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     or-int/lit16 v8, v8, 0x800
 
     iput v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 864
+    .line 858
     :cond_4
     iget-wide v8, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->grouped_id:J
 
@@ -7030,10 +6962,10 @@
 
     if-eqz v14, :cond_5
 
-    .line 865
+    .line 859
     iput-wide v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->grouped_id:J
 
-    .line 866
+    .line 860
     iget v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     const/high16 v9, 0x20000
@@ -7042,7 +6974,7 @@
 
     iput v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 868
+    .line 862
     :cond_5
     iget v1, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
@@ -7054,33 +6986,33 @@
 
     iput-wide v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
-    .line 869
+    .line 863
     iget-wide v8, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->reply_to_random_id:J
 
     cmp-long v1, v8, v10
 
     if-eqz v1, :cond_6
 
-    .line 870
+    .line 864
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;-><init>()V
 
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;
 
-    .line 871
+    .line 865
     iget-wide v8, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->reply_to_random_id:J
 
     iput-wide v8, v1, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->reply_to_random_id:J
 
-    .line 872
+    .line 866
     iget v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     or-int/2addr v1, v6
 
     iput v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 874
+    .line 868
     :cond_6
     iget-object v1, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
@@ -7094,27 +7026,27 @@
 
     goto/16 :goto_d
 
-    .line 876
+    .line 870
     :cond_7
     instance-of v8, v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaWebPage;
 
     if-eqz v8, :cond_8
 
-    .line 877
+    .line 871
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaWebPage;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaWebPage;-><init>()V
 
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 878
+    .line 872
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_webPageUrlPending;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_webPageUrlPending;-><init>()V
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
 
-    .line 879
+    .line 873
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->webpage:Lorg/telegram/tgnet/TLRPC$WebPage;
@@ -7127,7 +7059,7 @@
 
     goto/16 :goto_e
 
-    .line 880
+    .line 874
     :cond_8
     instance-of v8, v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaContact;
 
@@ -7135,61 +7067,61 @@
 
     if-eqz v8, :cond_9
 
-    .line 881
+    .line 875
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaContact;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaContact;-><init>()V
 
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 882
+    .line 876
     iget-object v2, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->last_name:Ljava/lang/String;
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->last_name:Ljava/lang/String;
 
-    .line 883
+    .line 877
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->first_name:Ljava/lang/String;
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->first_name:Ljava/lang/String;
 
-    .line 884
+    .line 878
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->phone_number:Ljava/lang/String;
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->phone_number:Ljava/lang/String;
 
-    .line 885
+    .line 879
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->user_id:J
 
     iput-wide v2, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->user_id:J
 
-    .line 886
+    .line 880
     iput-object v9, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->vcard:Ljava/lang/String;
 
     goto/16 :goto_e
 
-    .line 887
+    .line 881
     :cond_9
     instance-of v8, v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaGeoPoint;
 
     if-eqz v8, :cond_a
 
-    .line 888
+    .line 882
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaGeo;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaGeo;-><init>()V
 
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 889
+    .line 883
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_geoPoint;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_geoPoint;-><init>()V
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
 
-    .line 890
+    .line 884
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
@@ -7200,14 +7132,14 @@
 
     iput-wide v3, v1, Lorg/telegram/tgnet/TLRPC$GeoPoint;->lat:D
 
-    .line 891
+    .line 885
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->_long:D
 
     iput-wide v2, v1, Lorg/telegram/tgnet/TLRPC$GeoPoint;->_long:D
 
     goto/16 :goto_e
 
-    .line 892
+    .line 886
     :cond_a
     instance-of v8, v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaPhoto;
 
@@ -7219,7 +7151,7 @@
 
     if-eqz v8, :cond_11
 
-    .line 893
+    .line 887
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->key:[B
 
     if-eqz v3, :cond_10
@@ -7238,7 +7170,7 @@
 
     goto/16 :goto_1
 
-    .line 896
+    .line 890
     :cond_b
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPhoto;
 
@@ -7246,14 +7178,14 @@
 
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 897
+    .line 891
     iget v3, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v3, v3, 0x3
 
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 898
+    .line 892
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -7262,7 +7194,7 @@
 
     if-eqz v1, :cond_d
 
-    .line 899
+    .line 893
     iget-object v1, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->caption:Ljava/lang/String;
@@ -7274,7 +7206,7 @@
     :cond_c
     iput-object v9, v5, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 901
+    .line 895
     :cond_d
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -7284,7 +7216,7 @@
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 902
+    .line 896
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
@@ -7293,12 +7225,12 @@
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$Photo;->file_reference:[B
 
-    .line 903
+    .line 897
     iget v3, v5, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$Photo;->date:I
 
-    .line 904
+    .line 898
     iget-object v1, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     move-object v3, v1
@@ -7309,7 +7241,7 @@
 
     if-eqz v3, :cond_e
 
-    .line 905
+    .line 899
     array-length v7, v3
 
     if-eqz v7, :cond_e
@@ -7326,37 +7258,37 @@
 
     if-gt v1, v15, :cond_e
 
-    .line 906
+    .line 900
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize;-><init>()V
 
-    .line 907
+    .line 901
     iget-object v7, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget v8, v7, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->thumb_w:I
 
     iput v8, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
-    .line 908
+    .line 902
     iget v7, v7, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->thumb_h:I
 
     iput v7, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
-    .line 909
+    .line 903
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->bytes:[B
 
-    .line 910
+    .line 904
     iput-object v12, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
-    .line 911
+    .line 905
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_fileLocationUnavailable;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_fileLocationUnavailable;-><init>()V
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 912
+    .line 906
     iget-object v3, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
@@ -7365,94 +7297,94 @@
 
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 914
+    .line 908
     :cond_e
     iget v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->ttl:I
 
     if-eqz v1, :cond_f
 
-    .line 915
+    .line 909
     iget-object v3, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iput v1, v3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->ttl_seconds:I
 
-    .line 916
+    .line 910
     iget v1, v3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v1, v1, 0x4
 
     iput v1, v3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 919
+    .line 913
     :cond_f
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_photoSize_layer127;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_photoSize_layer127;-><init>()V
 
-    .line 920
+    .line 914
     iget-object v3, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget v7, v3, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->w:I
 
     iput v7, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
-    .line 921
+    .line 915
     iget v3, v3, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->h:I
 
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
     const-string/jumbo v3, "x"
 
-    .line 922
+    .line 916
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
-    .line 923
+    .line 917
     iget-wide v7, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->size:J
 
     long-to-int v3, v7
 
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
 
-    .line 924
+    .line 918
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_fileEncryptedLocation;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_fileEncryptedLocation;-><init>()V
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 925
+    .line 919
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget-object v7, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->key:[B
 
     iput-object v7, v3, Lorg/telegram/tgnet/TLRPC$FileLocation;->key:[B
 
-    .line 926
+    .line 920
     iget-object v4, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->iv:[B
 
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$FileLocation;->iv:[B
 
-    .line 927
+    .line 921
     iget v4, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->dc_id:I
 
     iput v4, v3, Lorg/telegram/tgnet/TLRPC$FileLocation;->dc_id:I
 
-    .line 928
+    .line 922
     iget-wide v7, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->id:J
 
     iput-wide v7, v3, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    .line 929
+    .line 923
     iget-wide v7, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->access_hash:J
 
     iput-wide v7, v3, Lorg/telegram/tgnet/TLRPC$FileLocation;->secret:J
 
-    .line 930
+    .line 924
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->key_fingerprint:I
 
     iput v2, v3, Lorg/telegram/tgnet/TLRPC$FileLocation;->local_id:I
 
-    .line 931
+    .line 925
     iget-object v2, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
@@ -7469,13 +7401,13 @@
 
     return-object v1
 
-    .line 932
+    .line 926
     :cond_11
     instance-of v8, v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaVideo;
 
     if-eqz v8, :cond_19
 
-    .line 933
+    .line 927
     iget-object v8, v1, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->key:[B
 
     if-eqz v8, :cond_18
@@ -7494,7 +7426,7 @@
 
     goto/16 :goto_3
 
-    .line 936
+    .line 930
     :cond_12
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
@@ -7502,21 +7434,21 @@
 
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 937
+    .line 931
     iget v8, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v8, v8, 0x3
 
     iput v8, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 938
+    .line 932
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_documentEncrypted;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_documentEncrypted;-><init>()V
 
     iput-object v8, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 939
+    .line 933
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -7527,17 +7459,17 @@
 
     iput-object v10, v1, Lorg/telegram/tgnet/TLRPC$Document;->key:[B
 
-    .line 940
+    .line 934
     iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->iv:[B
 
     iput-object v8, v1, Lorg/telegram/tgnet/TLRPC$Document;->iv:[B
 
-    .line 941
+    .line 935
     iget v8, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->dc_id:I
 
     iput v8, v1, Lorg/telegram/tgnet/TLRPC$Document;->dc_id:I
 
-    .line 942
+    .line 936
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -7546,7 +7478,7 @@
 
     if-eqz v1, :cond_14
 
-    .line 943
+    .line 937
     iget-object v1, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->caption:Ljava/lang/String;
@@ -7558,7 +7490,7 @@
     :cond_13
     iput-object v9, v5, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 945
+    .line 939
     :cond_14
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -7566,22 +7498,22 @@
 
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->date:I
 
-    .line 946
+    .line 940
     iget-wide v8, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->size:J
 
     iput-wide v8, v1, Lorg/telegram/tgnet/TLRPC$Document;->size:J
 
-    .line 947
+    .line 941
     iget-wide v8, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->id:J
 
     iput-wide v8, v1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    .line 948
+    .line 942
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->access_hash:J
 
     iput-wide v2, v1, Lorg/telegram/tgnet/TLRPC$Document;->access_hash:J
 
-    .line 949
+    .line 943
     iget-object v2, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->mime_type:Ljava/lang/String;
@@ -7592,10 +7524,10 @@
 
     const-string/jumbo v3, "video/mp4"
 
-    .line 951
+    .line 945
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    .line 953
+    .line 947
     :cond_15
     move-object v1, v2
 
@@ -7605,7 +7537,7 @@
 
     if-eqz v1, :cond_16
 
-    .line 955
+    .line 949
     array-length v3, v1
 
     if-eqz v3, :cond_16
@@ -7622,30 +7554,30 @@
 
     if-gt v2, v15, :cond_16
 
-    .line 956
+    .line 950
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize;-><init>()V
 
-    .line 957
+    .line 951
     iput-object v1, v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->bytes:[B
 
-    .line 958
+    .line 952
     iget-object v1, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget v3, v1, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->thumb_w:I
 
     iput v3, v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
-    .line 959
+    .line 953
     iget v1, v1, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->thumb_h:I
 
     iput v1, v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
-    .line 960
+    .line 954
     iput-object v12, v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
-    .line 961
+    .line 955
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_fileLocationUnavailable;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_fileLocationUnavailable;-><init>()V
@@ -7654,16 +7586,16 @@
 
     goto :goto_2
 
-    .line 963
+    .line 957
     :cond_16
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_photoSizeEmpty;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_photoSizeEmpty;-><init>()V
 
-    .line 964
+    .line 958
     iput-object v12, v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
-    .line 966
+    .line 960
     :goto_2
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -7673,7 +7605,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 967
+    .line 961
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -7684,34 +7616,34 @@
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$Document;->flags:I
 
-    .line 968
+    .line 962
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeVideo;-><init>()V
 
-    .line 969
+    .line 963
     iget-object v2, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget v3, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->w:I
 
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->w:I
 
-    .line 970
+    .line 964
     iget v3, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->h:I
 
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->h:I
 
-    .line 971
+    .line 965
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->duration:I
 
     int-to-double v2, v2
 
     iput-wide v2, v1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
 
-    .line 972
+    .line 966
     iput-boolean v13, v1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->supports_streaming:Z
 
-    .line 973
+    .line 967
     iget-object v2, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -7720,17 +7652,17 @@
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 974
+    .line 968
     iget v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->ttl:I
 
     if-eqz v1, :cond_17
 
-    .line 975
+    .line 969
     iget-object v2, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iput v1, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->ttl_seconds:I
 
-    .line 976
+    .line 970
     iget v3, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v3, v3, 0x4
@@ -7740,7 +7672,7 @@
     :cond_17
     if-eqz v1, :cond_35
 
-    .line 979
+    .line 973
     iget-object v2, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->duration:I
@@ -7761,13 +7693,13 @@
 
     return-object v1
 
-    .line 981
+    .line 975
     :cond_19
     instance-of v14, v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaDocument;
 
     if-eqz v14, :cond_29
 
-    .line 982
+    .line 976
     iget-object v14, v1, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->key:[B
 
     if-eqz v14, :cond_28
@@ -7786,7 +7718,7 @@
 
     goto/16 :goto_b
 
-    .line 985
+    .line 979
     :cond_1a
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
@@ -7794,14 +7726,14 @@
 
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 986
+    .line 980
     iget v8, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v8, v8, 0x3
 
     iput v8, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 987
+    .line 981
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -7810,7 +7742,7 @@
 
     if-eqz v1, :cond_1c
 
-    .line 988
+    .line 982
     iget-object v1, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->caption:Ljava/lang/String;
@@ -7825,7 +7757,7 @@
     :goto_4
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 990
+    .line 984
     :cond_1c
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -7835,7 +7767,7 @@
 
     iput-object v8, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 991
+    .line 985
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -7844,39 +7776,39 @@
 
     iput-wide v14, v1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    .line 992
+    .line 986
     iget-wide v14, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->access_hash:J
 
     iput-wide v14, v1, Lorg/telegram/tgnet/TLRPC$Document;->access_hash:J
 
-    .line 993
+    .line 987
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->date:I
 
-    .line 994
+    .line 988
     iget-object v3, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget-object v8, v3, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->mime_type:Ljava/lang/String;
 
     iput-object v8, v1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    .line 995
+    .line 989
     instance-of v8, v3, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaDocument_layer8;
 
     if-eqz v8, :cond_1d
 
-    .line 996
+    .line 990
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeFilename;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeFilename;-><init>()V
 
-    .line 997
+    .line 991
     iget-object v3, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->file_name:Ljava/lang/String;
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->file_name:Ljava/lang/String;
 
-    .line 998
+    .line 992
     iget-object v3, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -7887,19 +7819,19 @@
 
     goto :goto_5
 
-    .line 1000
+    .line 994
     :cond_1d
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->attributes:Ljava/util/ArrayList;
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
 
-    .line 1002
+    .line 996
     :goto_5
     iget v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->ttl:I
 
     if-lez v1, :cond_21
 
-    .line 1003
+    .line 997
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -7913,7 +7845,7 @@
     :goto_6
     if-ge v13, v1, :cond_20
 
-    .line 1004
+    .line 998
     iget-object v3, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -7926,7 +7858,7 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;
 
-    .line 1005
+    .line 999
     instance-of v8, v3, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;
 
     if-nez v8, :cond_1f
@@ -7942,7 +7874,7 @@
 
     goto :goto_6
 
-    .line 1006
+    .line 1000
     :cond_1f
     :goto_7
     iget-wide v13, v3, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
@@ -7963,7 +7895,7 @@
 
     iput v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->ttl:I
 
-    .line 1010
+    .line 1004
     :cond_20
     iget-object v1, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
@@ -7979,7 +7911,7 @@
 
     iput v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->ttl:I
 
-    .line 1012
+    .line 1006
     :cond_21
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -8009,7 +7941,7 @@
     :goto_8
     iput-wide v10, v1, Lorg/telegram/tgnet/TLRPC$Document;->size:J
 
-    .line 1013
+    .line 1007
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -8020,17 +7952,17 @@
 
     iput-object v8, v1, Lorg/telegram/tgnet/TLRPC$Document;->key:[B
 
-    .line 1014
+    .line 1008
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->iv:[B
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->iv:[B
 
-    .line 1015
+    .line 1009
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
     if-nez v3, :cond_23
 
-    .line 1016
+    .line 1010
     iput-object v9, v1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
     goto :goto_9
@@ -8038,7 +7970,7 @@
     :cond_23
     const-string v1, "application/x-tgsticker"
 
-    .line 1017
+    .line 1011
     invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -8059,7 +7991,7 @@
 
     if-eqz v1, :cond_25
 
-    .line 1018
+    .line 1012
     :cond_24
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -8069,7 +8001,7 @@
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    .line 1020
+    .line 1014
     :cond_25
     :goto_9
     iget-object v1, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
@@ -8080,7 +8012,7 @@
 
     if-eqz v1, :cond_26
 
-    .line 1022
+    .line 1016
     array-length v3, v1
 
     if-eqz v3, :cond_26
@@ -8091,30 +8023,30 @@
 
     if-gt v3, v8, :cond_26
 
-    .line 1023
+    .line 1017
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize;-><init>()V
 
-    .line 1024
+    .line 1018
     iput-object v1, v3, Lorg/telegram/tgnet/TLRPC$PhotoSize;->bytes:[B
 
-    .line 1025
+    .line 1019
     iget-object v1, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget v4, v1, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->thumb_w:I
 
     iput v4, v3, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
-    .line 1026
+    .line 1020
     iget v1, v1, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->thumb_h:I
 
     iput v1, v3, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
-    .line 1027
+    .line 1021
     iput-object v12, v3, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
-    .line 1028
+    .line 1022
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_fileLocationUnavailable;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_fileLocationUnavailable;-><init>()V
@@ -8123,16 +8055,16 @@
 
     goto :goto_a
 
-    .line 1030
+    .line 1024
     :cond_26
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_photoSizeEmpty;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_photoSizeEmpty;-><init>()V
 
-    .line 1031
+    .line 1025
     iput-object v12, v3, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
-    .line 1033
+    .line 1027
     :goto_a
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -8142,7 +8074,7 @@
 
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1034
+    .line 1028
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -8153,12 +8085,12 @@
 
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->flags:I
 
-    .line 1035
+    .line 1029
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->dc_id:I
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$Document;->dc_id:I
 
-    .line 1036
+    .line 1030
     invoke-static {v5}, Lorg/telegram/messenger/MessageObject;->isVoiceMessage(Lorg/telegram/tgnet/TLRPC$Message;)Z
 
     move-result v1
@@ -8171,7 +8103,7 @@
 
     if-eqz v1, :cond_35
 
-    .line 1037
+    .line 1031
     :cond_27
     iput-boolean v7, v5, Lorg/telegram/tgnet/TLRPC$Message;->media_unread:Z
 
@@ -8183,37 +8115,37 @@
 
     return-object v1
 
-    .line 1039
+    .line 1033
     :cond_29
     instance-of v10, v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaExternalDocument;
 
     if-eqz v10, :cond_2b
 
-    .line 1040
+    .line 1034
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;-><init>()V
 
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 1041
+    .line 1035
     iget v2, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v2, v2, 0x3
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 1042
+    .line 1036
     iput-object v9, v5, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 1043
+    .line 1037
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_document;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_document;-><init>()V
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 1044
+    .line 1038
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -8224,42 +8156,42 @@
 
     iput-wide v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    .line 1045
+    .line 1039
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->access_hash:J
 
     iput-wide v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->access_hash:J
 
     new-array v3, v13, [B
 
-    .line 1046
+    .line 1040
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
-    .line 1047
+    .line 1041
     iget v3, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->date:I
 
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->date:I
 
-    .line 1048
+    .line 1042
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->attributes:Ljava/util/ArrayList;
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->attributes:Ljava/util/ArrayList;
 
-    .line 1049
+    .line 1043
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->mime_type:Ljava/lang/String;
 
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    .line 1050
+    .line 1044
     iget v3, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->dc_id:I
 
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->dc_id:I
 
-    .line 1051
+    .line 1045
     iget-wide v3, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->size:J
 
     iput-wide v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->size:J
 
-    .line 1052
+    .line 1046
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaExternalDocument;
@@ -8268,7 +8200,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1053
+    .line 1047
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -8279,15 +8211,15 @@
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$Document;->flags:I
 
-    .line 1054
+    .line 1048
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
     if-nez v2, :cond_2a
 
-    .line 1055
+    .line 1049
     iput-object v9, v1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    .line 1057
+    .line 1051
     :cond_2a
     invoke-static {v5}, Lorg/telegram/messenger/MessageObject;->isAnimatedStickerMessage(Lorg/telegram/tgnet/TLRPC$Message;)Z
 
@@ -8295,10 +8227,10 @@
 
     if-eqz v1, :cond_35
 
-    .line 1058
+    .line 1052
     iput v13, v5, Lorg/telegram/tgnet/TLRPC$Message;->stickerVerified:I
 
-    .line 1059
+    .line 1053
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
 
     move-result-object v1
@@ -8307,13 +8239,13 @@
 
     goto/16 :goto_e
 
-    .line 1061
+    .line 1055
     :cond_2b
     instance-of v10, v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaAudio;
 
     if-eqz v10, :cond_32
 
-    .line 1062
+    .line 1056
     iget-object v10, v1, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->key:[B
 
     if-eqz v10, :cond_31
@@ -8332,7 +8264,7 @@
 
     goto/16 :goto_c
 
-    .line 1065
+    .line 1059
     :cond_2c
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
@@ -8340,21 +8272,21 @@
 
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 1066
+    .line 1060
     iget v8, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v8, v8, 0x3
 
     iput v8, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 1067
+    .line 1061
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_documentEncrypted;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_documentEncrypted;-><init>()V
 
     iput-object v8, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 1068
+    .line 1062
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -8365,40 +8297,40 @@
 
     iput-object v10, v1, Lorg/telegram/tgnet/TLRPC$Document;->key:[B
 
-    .line 1069
+    .line 1063
     iget-object v10, v8, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->iv:[B
 
     iput-object v10, v1, Lorg/telegram/tgnet/TLRPC$Document;->iv:[B
 
-    .line 1070
+    .line 1064
     iget-wide v10, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->id:J
 
     iput-wide v10, v1, Lorg/telegram/tgnet/TLRPC$Document;->id:J
 
-    .line 1071
+    .line 1065
     iget-wide v10, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->access_hash:J
 
     iput-wide v10, v1, Lorg/telegram/tgnet/TLRPC$Document;->access_hash:J
 
-    .line 1072
+    .line 1066
     iput v3, v1, Lorg/telegram/tgnet/TLRPC$Document;->date:I
 
-    .line 1073
+    .line 1067
     iget-wide v10, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->size:J
 
     iput-wide v10, v1, Lorg/telegram/tgnet/TLRPC$Document;->size:J
 
-    .line 1074
+    .line 1068
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$EncryptedFile;->dc_id:I
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$Document;->dc_id:I
 
-    .line 1075
+    .line 1069
     iget-object v2, v8, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->mime_type:Ljava/lang/String;
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    .line 1076
+    .line 1070
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -8407,7 +8339,7 @@
 
     if-eqz v1, :cond_2e
 
-    .line 1077
+    .line 1071
     iget-object v1, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->caption:Ljava/lang/String;
@@ -8419,7 +8351,7 @@
     :cond_2d
     iput-object v9, v5, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 1079
+    .line 1073
     :cond_2e
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -8431,16 +8363,16 @@
 
     const-string v2, "audio/ogg"
 
-    .line 1080
+    .line 1074
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$Document;->mime_type:Ljava/lang/String;
 
-    .line 1082
+    .line 1076
     :cond_2f
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;-><init>()V
 
-    .line 1083
+    .line 1077
     iget-object v2, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->duration:I
@@ -8449,10 +8381,10 @@
 
     iput-wide v2, v1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
 
-    .line 1084
+    .line 1078
     iput-boolean v7, v1, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->voice:Z
 
-    .line 1085
+    .line 1079
     iget-object v2, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -8461,12 +8393,12 @@
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1086
+    .line 1080
     iget v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->ttl:I
 
     if-eqz v1, :cond_30
 
-    .line 1087
+    .line 1081
     iget-object v2, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->media:Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->duration:I
@@ -8479,7 +8411,7 @@
 
     iput v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->ttl:I
 
-    .line 1089
+    .line 1083
     :cond_30
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -8493,15 +8425,15 @@
 
     if-eqz v1, :cond_35
 
-    .line 1090
+    .line 1084
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_photoSizeEmpty;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_photoSizeEmpty;-><init>()V
 
-    .line 1091
+    .line 1085
     iput-object v12, v1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
-    .line 1092
+    .line 1086
     iget-object v2, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -8518,27 +8450,27 @@
 
     return-object v1
 
-    .line 1094
+    .line 1088
     :cond_32
     instance-of v1, v1, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageMediaVenue;
 
     if-eqz v1, :cond_33
 
-    .line 1095
+    .line 1089
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaVenue;-><init>()V
 
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 1096
+    .line 1090
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_geoPoint;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_geoPoint;-><init>()V
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
 
-    .line 1097
+    .line 1091
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
@@ -8549,32 +8481,32 @@
 
     iput-wide v7, v2, Lorg/telegram/tgnet/TLRPC$GeoPoint;->lat:D
 
-    .line 1098
+    .line 1092
     iget-wide v7, v3, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->_long:D
 
     iput-wide v7, v2, Lorg/telegram/tgnet/TLRPC$GeoPoint;->_long:D
 
-    .line 1099
+    .line 1093
     iget-object v2, v3, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->title:Ljava/lang/String;
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->title:Ljava/lang/String;
 
-    .line 1100
+    .line 1094
     iget-object v2, v3, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->address:Ljava/lang/String;
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->address:Ljava/lang/String;
 
-    .line 1101
+    .line 1095
     iget-object v2, v3, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->provider:Ljava/lang/String;
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->provider:Ljava/lang/String;
 
-    .line 1102
+    .line 1096
     iget-object v2, v3, Lorg/telegram/tgnet/TLRPC$DecryptedMessageMedia;->venue_id:Ljava/lang/String;
 
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->venue_id:Ljava/lang/String;
 
-    .line 1103
+    .line 1097
     iput-object v9, v1, Lorg/telegram/tgnet/TLRPC$MessageMedia;->venue_type:Ljava/lang/String;
 
     goto :goto_e
@@ -8584,7 +8516,7 @@
 
     return-object v1
 
-    .line 875
+    .line 869
     :cond_34
     :goto_d
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;
@@ -8593,7 +8525,7 @@
 
     iput-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 1107
+    .line 1101
     :cond_35
     :goto_e
     iget v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->ttl:I
@@ -8606,17 +8538,17 @@
 
     if-nez v3, :cond_36
 
-    .line 1108
+    .line 1102
     iput v1, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->ttl_seconds:I
 
-    .line 1109
+    .line 1103
     iget v1, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v1, v1, 0x4
 
     iput v1, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 1111
+    .line 1105
     :cond_36
     iget-object v1, v5, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
@@ -8624,7 +8556,7 @@
 
     const/16 v2, 0x202e
 
-    .line 1112
+    .line 1106
     invoke-virtual {v1, v2, v6}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
 
     move-result-object v1
@@ -8637,17 +8569,17 @@
     :cond_38
     move-wide v8, v15
 
-    .line 1115
+    .line 1109
     instance-of v2, v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageService;
 
     if-eqz v2, :cond_5b
 
-    .line 1116
+    .line 1110
     move-object v2, v4
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageService;
 
-    .line 1117
+    .line 1111
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
     instance-of v5, v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionSetMessageTTL;
@@ -8660,13 +8592,13 @@
 
     goto/16 :goto_14
 
-    .line 1142
+    .line 1136
     :cond_39
     instance-of v3, v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionFlushHistory;
 
     if-eqz v3, :cond_3a
 
-    .line 1143
+    .line 1137
     iget v1, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     int-to-long v1, v1
@@ -8675,7 +8607,7 @@
 
     move-result-wide v1
 
-    .line 1144
+    .line 1138
     new-instance v3, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda4;
 
     invoke-direct {v3, v0, v1, v2}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/messenger/SecretChatHelper;J)V
@@ -8686,13 +8618,13 @@
 
     return-object v1
 
-    .line 1161
+    .line 1155
     :cond_3a
     instance-of v3, v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionDeleteMessages;
 
     if-eqz v3, :cond_3c
 
-    .line 1162
+    .line 1156
     iget-object v1, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->random_ids:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -8701,7 +8633,7 @@
 
     if-nez v1, :cond_3b
 
-    .line 1163
+    .line 1157
     iget-object v1, v0, Lorg/telegram/messenger/SecretChatHelper;->pendingEncMessagesToDelete:Ljava/util/ArrayList;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
@@ -8715,13 +8647,13 @@
 
     return-object v1
 
-    .line 1166
+    .line 1160
     :cond_3c
     instance-of v3, v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionReadMessages;
 
     if-eqz v3, :cond_3d
 
-    .line 1167
+    .line 1161
     iget-object v3, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->random_ids:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
@@ -8730,7 +8662,7 @@
 
     if-nez v3, :cond_5d
 
-    .line 1168
+    .line 1162
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v3
@@ -8739,7 +8671,7 @@
 
     move-result v7
 
-    .line 1169
+    .line 1163
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v4
@@ -8758,26 +8690,26 @@
 
     goto/16 :goto_16
 
-    .line 1171
+    .line 1165
     :cond_3d
     instance-of v3, v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionNotifyLayer;
 
     if-eqz v3, :cond_3e
 
-    .line 1172
+    .line 1166
     iget v2, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->layer:I
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/messenger/SecretChatHelper;->applyPeerLayer(Lorg/telegram/tgnet/TLRPC$EncryptedChat;I)V
 
     goto/16 :goto_16
 
-    .line 1173
+    .line 1167
     :cond_3e
     instance-of v3, v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionRequestKey;
 
     if-eqz v3, :cond_47
 
-    .line 1174
+    .line 1168
     iget-wide v8, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
     const-wide/16 v10, 0x0
@@ -8786,21 +8718,21 @@
 
     if-eqz v3, :cond_41
 
-    .line 1175
+    .line 1169
     iget-wide v3, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->exchange_id:J
 
     cmp-long v3, v8, v3
 
     if-lez v3, :cond_40
 
-    .line 1176
+    .line 1170
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_3f
 
     const-string/jumbo v1, "we already have request key with higher exchange_id"
 
-    .line 1177
+    .line 1171
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_3f
@@ -8811,18 +8743,18 @@
     :cond_40
     const/4 v3, 0x0
 
-    .line 1181
+    .line 1175
     invoke-virtual {v0, v1, v3, v8, v9}, Lorg/telegram/messenger/SecretChatHelper;->sendAbortKeyMessage(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$Message;J)V
 
     :cond_41
     new-array v3, v14, [B
 
-    .line 1186
+    .line 1180
     sget-object v4, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v4, v3}, Ljava/security/SecureRandom;->nextBytes([B)V
 
-    .line 1187
+    .line 1181
     new-instance v4, Ljava/math/BigInteger;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
@@ -8835,7 +8767,7 @@
 
     invoke-direct {v4, v7, v5}, Ljava/math/BigInteger;-><init>(I[B)V
 
-    .line 1188
+    .line 1182
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v5
@@ -8850,7 +8782,7 @@
 
     move-result-object v5
 
-    .line 1189
+    .line 1183
     new-instance v8, Ljava/math/BigInteger;
 
     invoke-direct {v8, v7, v3}, Ljava/math/BigInteger;-><init>(I[B)V
@@ -8859,7 +8791,7 @@
 
     move-result-object v5
 
-    .line 1190
+    .line 1184
     new-instance v8, Ljava/math/BigInteger;
 
     iget-object v9, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
@@ -8868,14 +8800,14 @@
 
     invoke-direct {v8, v7, v9}, Ljava/math/BigInteger;-><init>(I[B)V
 
-    .line 1192
+    .line 1186
     invoke-static {v8, v4}, Lorg/telegram/messenger/Utilities;->isGoodGaAndGb(Ljava/math/BigInteger;Ljava/math/BigInteger;)Z
 
     move-result v9
 
     if-nez v9, :cond_42
 
-    .line 1193
+    .line 1187
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->exchange_id:J
@@ -8886,25 +8818,25 @@
 
     return-object v4
 
-    .line 1197
+    .line 1191
     :cond_42
     invoke-virtual {v5}, Ljava/math/BigInteger;->toByteArray()[B
 
     move-result-object v5
 
-    .line 1198
+    .line 1192
     array-length v9, v5
 
     if-le v9, v14, :cond_43
 
     new-array v9, v14, [B
 
-    .line 1200
+    .line 1194
     invoke-static {v5, v7, v9, v13, v14}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     move-object v5, v9
 
-    .line 1204
+    .line 1198
     :cond_43
     new-instance v9, Ljava/math/BigInteger;
 
@@ -8914,19 +8846,19 @@
 
     move-result-object v3
 
-    .line 1206
+    .line 1200
     invoke-virtual {v3}, Ljava/math/BigInteger;->toByteArray()[B
 
     move-result-object v3
 
-    .line 1207
+    .line 1201
     array-length v4, v3
 
     if-le v4, v14, :cond_45
 
     new-array v4, v14, [B
 
-    .line 1209
+    .line 1203
     array-length v7, v3
 
     sub-int/2addr v7, v14
@@ -8938,7 +8870,7 @@
 
     goto :goto_10
 
-    .line 1211
+    .line 1205
     :cond_45
     array-length v4, v3
 
@@ -8946,7 +8878,7 @@
 
     new-array v4, v14, [B
 
-    .line 1213
+    .line 1207
     array-length v7, v3
 
     rsub-int v7, v7, 0x100
@@ -8957,7 +8889,7 @@
 
     move v7, v13
 
-    .line 1214
+    .line 1208
     :goto_f
     array-length v8, v3
 
@@ -8965,14 +8897,14 @@
 
     if-ge v7, v8, :cond_44
 
-    .line 1215
+    .line 1209
     aput-byte v13, v4, v7
 
     add-int/lit8 v7, v7, 0x1
 
     goto :goto_f
 
-    .line 1219
+    .line 1213
     :cond_46
     :goto_10
     invoke-static {v3}, Lorg/telegram/messenger/Utilities;->computeSHA1([B)[B
@@ -8981,34 +8913,34 @@
 
     new-array v7, v6, [B
 
-    .line 1221
+    .line 1215
     array-length v8, v4
 
     sub-int/2addr v8, v6
 
     invoke-static {v4, v8, v7, v13, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 1223
+    .line 1217
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
     iget-wide v8, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->exchange_id:J
 
     iput-wide v8, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
-    .line 1224
+    .line 1218
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_auth_key:[B
 
-    .line 1225
+    .line 1219
     invoke-static {v7}, Lorg/telegram/messenger/Utilities;->bytesToLong([B)J
 
     move-result-wide v2
 
     iput-wide v2, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_key_fingerprint:J
 
-    .line 1226
+    .line 1220
     iput-object v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->g_a_or_b:[B
 
-    .line 1228
+    .line 1222
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
@@ -9017,18 +8949,18 @@
 
     const/4 v2, 0x0
 
-    .line 1230
+    .line 1224
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/SecretChatHelper;->sendAcceptKeyMessage(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$Message;)V
 
     goto/16 :goto_16
 
-    .line 1231
+    .line 1225
     :cond_47
     instance-of v3, v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionAcceptKey;
 
     if-eqz v3, :cond_4e
 
-    .line 1232
+    .line 1226
     iget-wide v8, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
     iget-wide v3, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->exchange_id:J
@@ -9037,7 +8969,7 @@
 
     if-nez v3, :cond_4d
 
-    .line 1234
+    .line 1228
     new-instance v3, Ljava/math/BigInteger;
 
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
@@ -9050,7 +8982,7 @@
 
     invoke-direct {v3, v7, v4}, Ljava/math/BigInteger;-><init>(I[B)V
 
-    .line 1235
+    .line 1229
     new-instance v4, Ljava/math/BigInteger;
 
     iget-object v5, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
@@ -9059,7 +8991,7 @@
 
     invoke-direct {v4, v7, v5}, Ljava/math/BigInteger;-><init>(I[B)V
 
-    .line 1237
+    .line 1231
     invoke-static {v4, v3}, Lorg/telegram/messenger/Utilities;->isGoodGaAndGb(Ljava/math/BigInteger;Ljava/math/BigInteger;)Z
 
     move-result v5
@@ -9068,25 +9000,25 @@
 
     new-array v3, v14, [B
 
-    .line 1238
+    .line 1232
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_auth_key:[B
 
     const-wide/16 v3, 0x0
 
-    .line 1239
+    .line 1233
     iput-wide v3, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_key_fingerprint:J
 
-    .line 1240
+    .line 1234
     iput-wide v3, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
-    .line 1241
+    .line 1235
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v3
 
     invoke-virtual {v3, v1}, Lorg/telegram/messenger/MessagesStorage;->updateEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
 
-    .line 1243
+    .line 1237
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->exchange_id:J
@@ -9097,7 +9029,7 @@
 
     return-object v4
 
-    .line 1247
+    .line 1241
     :cond_48
     new-instance v5, Ljava/math/BigInteger;
 
@@ -9109,19 +9041,19 @@
 
     move-result-object v3
 
-    .line 1249
+    .line 1243
     invoke-virtual {v3}, Ljava/math/BigInteger;->toByteArray()[B
 
     move-result-object v3
 
-    .line 1250
+    .line 1244
     array-length v4, v3
 
     if-le v4, v14, :cond_4a
 
     new-array v4, v14, [B
 
-    .line 1252
+    .line 1246
     array-length v5, v3
 
     sub-int/2addr v5, v14
@@ -9133,7 +9065,7 @@
 
     goto :goto_12
 
-    .line 1254
+    .line 1248
     :cond_4a
     array-length v4, v3
 
@@ -9141,7 +9073,7 @@
 
     new-array v4, v14, [B
 
-    .line 1256
+    .line 1250
     array-length v5, v3
 
     rsub-int v5, v5, 0x100
@@ -9152,7 +9084,7 @@
 
     move v5, v13
 
-    .line 1257
+    .line 1251
     :goto_11
     array-length v7, v3
 
@@ -9160,14 +9092,14 @@
 
     if-ge v5, v7, :cond_49
 
-    .line 1258
+    .line 1252
     aput-byte v13, v4, v5
 
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_11
 
-    .line 1262
+    .line 1256
     :cond_4b
     :goto_12
     invoke-static {v3}, Lorg/telegram/messenger/Utilities;->computeSHA1([B)[B
@@ -9176,19 +9108,19 @@
 
     new-array v5, v6, [B
 
-    .line 1264
+    .line 1258
     array-length v7, v4
 
     sub-int/2addr v7, v6
 
     invoke-static {v4, v7, v5, v13, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 1265
+    .line 1259
     invoke-static {v5}, Lorg/telegram/messenger/Utilities;->bytesToLong([B)J
 
     move-result-wide v4
 
-    .line 1266
+    .line 1260
     iget-object v6, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
     iget-wide v6, v6, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->key_fingerprint:J
@@ -9197,13 +9129,13 @@
 
     if-nez v6, :cond_4c
 
-    .line 1267
+    .line 1261
     iput-object v3, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_auth_key:[B
 
-    .line 1268
+    .line 1262
     iput-wide v4, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_key_fingerprint:J
 
-    .line 1269
+    .line 1263
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
@@ -9212,7 +9144,7 @@
 
     const/4 v3, 0x0
 
-    .line 1270
+    .line 1264
     invoke-virtual {v0, v1, v3}, Lorg/telegram/messenger/SecretChatHelper;->sendCommitKeyMessage(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$Message;)V
 
     goto/16 :goto_16
@@ -9222,25 +9154,25 @@
 
     new-array v4, v14, [B
 
-    .line 1272
+    .line 1266
     iput-object v4, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_auth_key:[B
 
     const-wide/16 v4, 0x0
 
-    .line 1273
+    .line 1267
     iput-wide v4, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_key_fingerprint:J
 
-    .line 1274
+    .line 1268
     iput-wide v4, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
-    .line 1275
+    .line 1269
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v4
 
     invoke-virtual {v4, v1}, Lorg/telegram/messenger/MessagesStorage;->updateEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
 
-    .line 1276
+    .line 1270
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
     iget-wide v4, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->exchange_id:J
@@ -9256,23 +9188,23 @@
 
     new-array v6, v14, [B
 
-    .line 1279
+    .line 1273
     iput-object v6, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_auth_key:[B
 
-    .line 1280
+    .line 1274
     iput-wide v4, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_key_fingerprint:J
 
-    .line 1281
+    .line 1275
     iput-wide v4, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
-    .line 1282
+    .line 1276
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v4
 
     invoke-virtual {v4, v1}, Lorg/telegram/messenger/MessagesStorage;->updateEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
 
-    .line 1283
+    .line 1277
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
     iget-wide v4, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->exchange_id:J
@@ -9281,13 +9213,13 @@
 
     goto/16 :goto_16
 
-    .line 1285
+    .line 1279
     :cond_4e
     instance-of v3, v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionCommitKey;
 
     if-eqz v3, :cond_50
 
-    .line 1286
+    .line 1280
     iget-wide v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
     iget-wide v7, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->exchange_id:J
@@ -9304,21 +9236,21 @@
 
     if-nez v3, :cond_4f
 
-    .line 1287
+    .line 1281
     iget-wide v2, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_fingerprint:J
 
-    .line 1288
+    .line 1282
     iget-object v4, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->auth_key:[B
 
-    .line 1289
+    .line 1283
     iput-wide v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_fingerprint:J
 
-    .line 1290
+    .line 1284
     iget-object v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_auth_key:[B
 
     iput-object v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->auth_key:[B
 
-    .line 1291
+    .line 1285
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v5
@@ -9329,24 +9261,24 @@
 
     iput v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_create_date:I
 
-    .line 1292
+    .line 1286
     iput-object v4, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_auth_key:[B
 
-    .line 1293
+    .line 1287
     iput-wide v2, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_key_fingerprint:J
 
-    .line 1294
+    .line 1288
     iput-short v13, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_in:S
 
-    .line 1295
+    .line 1289
     iput-short v13, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->key_use_count_out:S
 
     const-wide/16 v3, 0x0
 
-    .line 1296
+    .line 1290
     iput-wide v3, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
-    .line 1298
+    .line 1292
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
@@ -9355,7 +9287,7 @@
 
     const/4 v2, 0x0
 
-    .line 1300
+    .line 1294
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/SecretChatHelper;->sendNoopMessage(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$Message;)V
 
     goto/16 :goto_16
@@ -9365,23 +9297,23 @@
 
     new-array v5, v14, [B
 
-    .line 1302
+    .line 1296
     iput-object v5, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_auth_key:[B
 
-    .line 1303
+    .line 1297
     iput-wide v3, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_key_fingerprint:J
 
-    .line 1304
+    .line 1298
     iput-wide v3, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
-    .line 1305
+    .line 1299
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v3
 
     invoke-virtual {v3, v1}, Lorg/telegram/messenger/MessagesStorage;->updateEncryptedChat(Lorg/telegram/tgnet/TLRPC$EncryptedChat;)V
 
-    .line 1306
+    .line 1300
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->exchange_id:J
@@ -9392,13 +9324,13 @@
 
     goto/16 :goto_16
 
-    .line 1308
+    .line 1302
     :cond_50
     instance-of v2, v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionAbortKey;
 
     if-eqz v2, :cond_51
 
-    .line 1309
+    .line 1303
     iget-wide v2, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
     iget-wide v4, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->exchange_id:J
@@ -9409,18 +9341,18 @@
 
     new-array v2, v14, [B
 
-    .line 1310
+    .line 1304
     iput-object v2, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_auth_key:[B
 
     const-wide/16 v2, 0x0
 
-    .line 1311
+    .line 1305
     iput-wide v2, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->future_key_fingerprint:J
 
-    .line 1312
+    .line 1306
     iput-wide v2, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
-    .line 1313
+    .line 1307
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
@@ -9429,7 +9361,7 @@
 
     goto/16 :goto_16
 
-    .line 1315
+    .line 1309
     :cond_51
     instance-of v2, v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionNoop;
 
@@ -9437,13 +9369,13 @@
 
     goto/16 :goto_16
 
-    .line 1317
+    .line 1311
     :cond_52
     instance-of v2, v4, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionResend;
 
     if-eqz v2, :cond_56
 
-    .line 1318
+    .line 1312
     iget v2, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->end_seq_no:I
 
     iget v3, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->in_seq_no:I
@@ -9459,10 +9391,10 @@
     :cond_53
     if-ge v5, v3, :cond_54
 
-    .line 1322
+    .line 1316
     iput v3, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->start_seq_no:I
 
-    .line 1324
+    .line 1318
     :cond_54
     iget v3, v4, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->start_seq_no:I
 
@@ -9481,28 +9413,28 @@
 
     return-object v1
 
-    .line 1118
+    .line 1112
     :cond_57
     :goto_14
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_messageService;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_messageService;-><init>()V
 
-    .line 1119
+    .line 1113
     iget-object v5, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
     instance-of v5, v5, Lorg/telegram/tgnet/TLRPC$TL_decryptedMessageActionSetMessageTTL;
 
     if-eqz v5, :cond_5a
 
-    .line 1120
+    .line 1114
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEncryptedAction;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageEncryptedAction;-><init>()V
 
     iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
 
-    .line 1121
+    .line 1115
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
     iget v6, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->ttl_seconds:I
@@ -9513,20 +9445,20 @@
 
     if-le v6, v10, :cond_59
 
-    .line 1122
+    .line 1116
     :cond_58
     iput v10, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->ttl_seconds:I
 
-    .line 1124
+    .line 1118
     :cond_59
     iget v6, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;->ttl_seconds:I
 
     iput v6, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->ttl:I
 
-    .line 1125
+    .line 1119
     iput-object v2, v5, Lorg/telegram/tgnet/TLRPC$MessageAction;->encryptedAction:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
-    .line 1126
+    .line 1120
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
@@ -9535,7 +9467,7 @@
 
     goto :goto_15
 
-    .line 1128
+    .line 1122
     :cond_5a
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageEncryptedAction;
 
@@ -9543,12 +9475,12 @@
 
     iput-object v5, v4, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
 
-    .line 1129
+    .line 1123
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$DecryptedMessage;->action:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
     iput-object v2, v5, Lorg/telegram/tgnet/TLRPC$MessageAction;->encryptedAction:Lorg/telegram/tgnet/TLRPC$DecryptedMessageAction;
 
-    .line 1131
+    .line 1125
     :goto_15
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
@@ -9562,40 +9494,40 @@
 
     iput v2, v4, Lorg/telegram/tgnet/TLRPC$Message;->local_id:I
 
-    .line 1132
+    .line 1126
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v2
 
     invoke-virtual {v2, v13}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
 
-    .line 1133
+    .line 1127
     iput-boolean v7, v4, Lorg/telegram/tgnet/TLRPC$Message;->unread:Z
 
-    .line 1134
+    .line 1128
     iput v14, v4, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 1135
+    .line 1129
     iput v3, v4, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
-    .line 1136
+    .line 1130
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v2, v4, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 1137
+    .line 1131
     iput-wide v8, v2, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 1138
+    .line 1132
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v2, v4, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 1139
+    .line 1133
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v3
@@ -9606,7 +9538,7 @@
 
     iput-wide v5, v2, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 1140
+    .line 1134
     iget v1, v1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->id:I
 
     int-to-long v1, v1
@@ -9619,13 +9551,13 @@
 
     return-object v4
 
-    .line 1329
+    .line 1323
     :cond_5b
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v1, :cond_5d
 
-    .line 1330
+    .line 1324
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -9644,7 +9576,7 @@
 
     goto :goto_16
 
-    .line 1334
+    .line 1328
     :cond_5c
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -9652,7 +9584,7 @@
 
     const-string/jumbo v1, "unknown TLObject"
 
-    .line 1335
+    .line 1329
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
     :cond_5d
@@ -10000,12 +9932,12 @@
 
     new-array v1, v0, [B
 
-    .line 1709
+    .line 1703
     sget-object v2, Lorg/telegram/messenger/Utilities;->random:Ljava/security/SecureRandom;
 
     invoke-virtual {v2, v1}, Ljava/security/SecureRandom;->nextBytes([B)V
 
-    .line 1711
+    .line 1705
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
@@ -10020,7 +9952,7 @@
 
     move-result-object v2
 
-    .line 1712
+    .line 1706
     new-instance v3, Ljava/math/BigInteger;
 
     const/4 v4, 0x1
@@ -10043,12 +9975,12 @@
 
     move-result-object v2
 
-    .line 1713
+    .line 1707
     invoke-virtual {v2}, Ljava/math/BigInteger;->toByteArray()[B
 
     move-result-object v2
 
-    .line 1714
+    .line 1708
     array-length v3, v2
 
     if-le v3, v0, :cond_0
@@ -10057,12 +9989,12 @@
 
     const/4 v5, 0x0
 
-    .line 1716
+    .line 1710
     invoke-static {v2, v4, v3, v5, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     move-object v2, v3
 
-    .line 1720
+    .line 1714
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getSendMessagesHelper()Lorg/telegram/messenger/SendMessagesHelper;
 
@@ -10074,13 +10006,13 @@
 
     iput-wide v3, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->exchange_id:J
 
-    .line 1721
+    .line 1715
     iput-object v1, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->a_or_b:[B
 
-    .line 1722
+    .line 1716
     iput-object v2, p1, Lorg/telegram/tgnet/TLRPC$EncryptedChat;->g_a:[B
 
-    .line 1724
+    .line 1718
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v0
@@ -10089,7 +10021,7 @@
 
     const/4 v0, 0x0
 
-    .line 1726
+    .line 1720
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/SecretChatHelper;->sendRequestKeyMessage(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/tgnet/TLRPC$Message;)V
 
     return-void
@@ -11135,27 +11067,27 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 1928
+    .line 1922
     iput-boolean v0, p0, Lorg/telegram/messenger/SecretChatHelper;->startingSecretChat:Z
 
-    .line 1929
+    .line 1923
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog;
 
     const/4 v1, 0x3
 
     invoke-direct {v0, p1, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;-><init>(Landroid/content/Context;I)V
 
-    .line 1930
+    .line 1924
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_messages_getDhConfig;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_messages_getDhConfig;-><init>()V
 
     const/16 v2, 0x100
 
-    .line 1931
+    .line 1925
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_getDhConfig;->random_length:I
 
-    .line 1932
+    .line 1926
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
@@ -11166,7 +11098,7 @@
 
     iput v2, v1, Lorg/telegram/tgnet/TLRPC$TL_messages_getDhConfig;->version:I
 
-    .line 1933
+    .line 1927
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v2
@@ -11181,14 +11113,14 @@
 
     move-result p1
 
-    .line 2040
+    .line 2034
     new-instance p2, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/messenger/SecretChatHelper$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/SecretChatHelper;I)V
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/ActionBar/AlertDialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
-    .line 2042
+    .line 2036
     :try_start_0
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
     :try_end_0

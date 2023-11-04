@@ -48,70 +48,70 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 761
+    .line 807
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method static synthetic access$1300(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;
+.method static synthetic access$1200(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;
     .locals 0
 
-    .line 761
+    .line 807
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->answer:Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;
 
     return-object p0
 .end method
 
-.method static synthetic access$1302(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;)Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;
+.method static synthetic access$1202(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;)Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;
     .locals 0
 
-    .line 761
+    .line 807
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->answer:Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;
 
     return-object p1
 .end method
 
-.method static synthetic access$1400(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)I
+.method static synthetic access$1300(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)I
     .locals 0
 
-    .line 761
+    .line 807
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->count:I
 
     return p0
 .end method
 
-.method static synthetic access$1402(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;I)I
+.method static synthetic access$1302(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;I)I
     .locals 0
 
-    .line 761
+    .line 807
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->count:I
 
     return p1
 .end method
 
-.method static synthetic access$2200(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)I
+.method static synthetic access$2000(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)I
     .locals 0
 
-    .line 761
+    .line 807
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->percent:I
 
     return p0
 .end method
 
-.method static synthetic access$2202(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;I)I
+.method static synthetic access$2002(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;I)I
     .locals 0
 
-    .line 761
+    .line 807
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->percent:I
 
     return p1
 .end method
 
-.method static synthetic access$2212(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;I)I
+.method static synthetic access$2012(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;I)I
     .locals 1
 
-    .line 761
+    .line 807
     iget v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->percent:I
 
     add-int/2addr v0, p1
@@ -121,136 +121,136 @@
     return v0
 .end method
 
-.method static synthetic access$2300(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)I
+.method static synthetic access$2100(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)I
     .locals 0
 
-    .line 761
+    .line 807
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->prevPercent:I
 
     return p0
 .end method
 
-.method static synthetic access$2302(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;I)I
+.method static synthetic access$2102(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;I)I
     .locals 0
 
-    .line 761
+    .line 807
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->prevPercent:I
 
     return p1
 .end method
 
-.method static synthetic access$2400(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)F
+.method static synthetic access$2200(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)F
     .locals 0
 
-    .line 761
+    .line 807
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->percentProgress:F
 
     return p0
 .end method
 
-.method static synthetic access$2402(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;F)F
+.method static synthetic access$2202(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;F)F
     .locals 0
 
-    .line 761
+    .line 807
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->percentProgress:F
 
     return p1
 .end method
 
-.method static synthetic access$2500(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)F
+.method static synthetic access$2300(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)F
     .locals 0
 
-    .line 761
+    .line 807
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->prevPercentProgress:F
 
     return p0
 .end method
 
-.method static synthetic access$2502(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;F)F
+.method static synthetic access$2302(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;F)F
     .locals 0
 
-    .line 761
+    .line 807
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->prevPercentProgress:F
 
     return p1
 .end method
 
-.method static synthetic access$2600(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)Landroid/text/StaticLayout;
+.method static synthetic access$2400(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 761
+    .line 807
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->title:Landroid/text/StaticLayout;
 
     return-object p0
 .end method
 
-.method static synthetic access$2602(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;Landroid/text/StaticLayout;)Landroid/text/StaticLayout;
+.method static synthetic access$2402(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;Landroid/text/StaticLayout;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 761
+    .line 807
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->title:Landroid/text/StaticLayout;
 
     return-object p1
 .end method
 
-.method static synthetic access$2700(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)Z
+.method static synthetic access$2500(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)Z
     .locals 0
 
-    .line 761
+    .line 807
     iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->chosen:Z
 
     return p0
 .end method
 
-.method static synthetic access$2702(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;Z)Z
+.method static synthetic access$2502(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;Z)Z
     .locals 0
 
-    .line 761
+    .line 807
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->chosen:Z
 
     return p1
 .end method
 
-.method static synthetic access$2800(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)Z
+.method static synthetic access$2600(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)Z
     .locals 0
 
-    .line 761
+    .line 807
     iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->correct:Z
 
     return p0
 .end method
 
-.method static synthetic access$2802(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;Z)Z
+.method static synthetic access$2602(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;Z)Z
     .locals 0
 
-    .line 761
+    .line 807
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->correct:Z
 
     return p1
 .end method
 
-.method static synthetic access$2900(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)F
+.method static synthetic access$2700(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)F
     .locals 0
 
-    .line 761
+    .line 807
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->decimal:F
 
     return p0
 .end method
 
-.method static synthetic access$2902(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;F)F
+.method static synthetic access$2702(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;F)F
     .locals 0
 
-    .line 761
+    .line 807
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->decimal:F
 
     return p1
 .end method
 
-.method static synthetic access$2924(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;F)F
+.method static synthetic access$2724(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;F)F
     .locals 1
 
-    .line 761
+    .line 807
     iget v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->decimal:F
 
     sub-float/2addr v0, p1
@@ -260,19 +260,19 @@
     return v0
 .end method
 
-.method static synthetic access$3000(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)Z
+.method static synthetic access$2800(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;)Z
     .locals 0
 
-    .line 761
+    .line 807
     iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->prevChosen:Z
 
     return p0
 .end method
 
-.method static synthetic access$3002(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;Z)Z
+.method static synthetic access$2802(Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;Z)Z
     .locals 0
 
-    .line 761
+    .line 807
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$PollButton;->prevChosen:Z
 
     return p1

@@ -220,14 +220,14 @@ public final class PlatformKt {
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0041, code lost:
         if (r5 == false) goto L17;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:41:0x0096, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:41:0x0097, code lost:
         if (r5 == false) goto L39;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:42:0x0098, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:42:0x0099, code lost:
         r6 = null;
      */
-    /* JADX WARN: Removed duplicated region for block: B:37:0x008e  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0093 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x008f  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0094 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -289,57 +289,57 @@ public final class PlatformKt {
             r5 = r4
             r6 = r3
         L5b:
-            if (r4 >= r1) goto L96
+            if (r4 >= r1) goto L97
             r8 = r11[r4]
             java.lang.String r9 = r8.getName()
             java.lang.String r10 = "serializer"
             boolean r9 = kotlin.jvm.internal.Intrinsics.areEqual(r9, r10)
-            if (r9 == 0) goto L8b
+            if (r9 == 0) goto L8c
             java.lang.Class[] r9 = r8.getParameterTypes()
             java.lang.String r10 = "it.parameterTypes"
             kotlin.jvm.internal.Intrinsics.checkNotNullExpressionValue(r9, r10)
             int r9 = r9.length
-            if (r9 != 0) goto L7a
+            if (r9 != 0) goto L7b
             r9 = r7
-            goto L7b
-        L7a:
-            r9 = r2
+            goto L7c
         L7b:
-            if (r9 == 0) goto L8b
+            r9 = r2
+        L7c:
+            if (r9 == 0) goto L8c
             java.lang.Class r9 = r8.getReturnType()
             java.lang.Class<kotlinx.serialization.KSerializer> r10 = kotlinx.serialization.KSerializer.class
             boolean r9 = kotlin.jvm.internal.Intrinsics.areEqual(r9, r10)
-            if (r9 == 0) goto L8b
+            if (r9 == 0) goto L8c
             r9 = r7
-            goto L8c
-        L8b:
-            r9 = r2
+            goto L8d
         L8c:
-            if (r9 == 0) goto L93
-            if (r5 == 0) goto L91
-            goto L98
-        L91:
+            r9 = r2
+        L8d:
+            if (r9 == 0) goto L94
+            if (r5 == 0) goto L92
+            goto L99
+        L92:
             r5 = r7
             r6 = r8
-        L93:
+        L94:
             int r4 = r4 + 1
             goto L5b
-        L96:
-            if (r5 != 0) goto L99
-        L98:
-            r6 = r3
+        L97:
+            if (r5 != 0) goto L9a
         L99:
+            r6 = r3
+        L9a:
             java.lang.reflect.Method r6 = (java.lang.reflect.Method) r6
-            if (r6 != 0) goto L9e
+            if (r6 != 0) goto L9f
             return r3
-        L9e:
+        L9f:
             java.lang.Object[] r11 = new java.lang.Object[r2]
             java.lang.Object r11 = r6.invoke(r0, r11)
             boolean r0 = r11 instanceof kotlinx.serialization.KSerializer
-            if (r0 == 0) goto Lab
+            if (r0 == 0) goto Lac
             r3 = r11
             kotlinx.serialization.KSerializer r3 = (kotlinx.serialization.KSerializer) r3
-        Lab:
+        Lac:
             return r3
         */
         throw new UnsupportedOperationException("Method not decompiled: kotlinx.serialization.internal.PlatformKt.findObjectSerializer(java.lang.Class):kotlinx.serialization.KSerializer");

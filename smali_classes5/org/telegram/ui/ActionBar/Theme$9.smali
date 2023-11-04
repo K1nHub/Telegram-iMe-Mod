@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 6934
+    .line 7063
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -38,7 +38,7 @@
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
     .locals 5
 
-    .line 6937
+    .line 7066
     iget-object p1, p1, Landroid/hardware/SensorEvent;->values:[F
 
     const/4 v0, 0x0
@@ -53,7 +53,7 @@
 
     const p1, 0x3dcccccd    # 0.1f
 
-    .line 6941
+    .line 7070
     :cond_0
     sget-boolean v1, Lorg/telegram/messenger/ApplicationLoader;->mainInterfacePaused:Z
 
@@ -74,8 +74,8 @@
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 6945
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->access$2902(F)F
+    .line 7074
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->access$2802(F)F
 
     goto :goto_0
 
@@ -84,7 +84,7 @@
 
     float-to-double v3, p1
 
-    .line 6947
+    .line 7076
     invoke-static {v3, v4}, Ljava/lang/Math;->log(D)D
 
     move-result-wide v3
@@ -105,11 +105,11 @@
 
     div-float/2addr p1, v1
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->access$2902(F)F
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->access$2802(F)F
 
-    .line 6949
+    .line 7078
     :goto_0
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2900()F
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2800()F
 
     move-result p1
 
@@ -121,7 +121,7 @@
 
     if-gtz p1, :cond_4
 
-    .line 6950
+    .line 7079
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p1
@@ -132,40 +132,40 @@
 
     if-nez p1, :cond_6
 
-    .line 6951
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2000()Z
+    .line 7080
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1900()Z
 
     move-result p1
 
     if-eqz p1, :cond_3
 
-    .line 6952
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->access$2002(Z)Z
+    .line 7081
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->access$1902(Z)Z
 
-    .line 6953
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$3000()Ljava/lang/Runnable;
+    .line 7082
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2900()Ljava/lang/Runnable;
 
     move-result-object p1
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 6955
+    .line 7084
     :cond_3
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2100()Z
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2000()Z
 
     move-result p1
 
     if-nez p1, :cond_6
 
-    .line 6956
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->access$2102(Z)Z
+    .line 7085
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->access$2002(Z)Z
 
-    .line 6957
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$3100()Ljava/lang/Runnable;
+    .line 7086
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$3000()Ljava/lang/Runnable;
 
     move-result-object p1
 
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$3200()J
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$3100()J
 
     move-result-wide v0
 
@@ -173,41 +173,41 @@
 
     goto :goto_1
 
-    .line 6961
+    .line 7090
     :cond_4
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2100()Z
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2000()Z
 
     move-result p1
 
     if-eqz p1, :cond_5
 
-    .line 6962
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->access$2102(Z)Z
+    .line 7091
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->access$2002(Z)Z
 
-    .line 6963
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$3100()Ljava/lang/Runnable;
+    .line 7092
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$3000()Ljava/lang/Runnable;
 
     move-result-object p1
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 6965
+    .line 7094
     :cond_5
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2000()Z
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$1900()Z
 
     move-result p1
 
     if-nez p1, :cond_6
 
-    .line 6966
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->access$2002(Z)Z
+    .line 7095
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->access$1902(Z)Z
 
-    .line 6967
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$3000()Ljava/lang/Runnable;
+    .line 7096
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2900()Ljava/lang/Runnable;
 
     move-result-object p1
 
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$3200()J
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$3100()J
 
     move-result-wide v0
 

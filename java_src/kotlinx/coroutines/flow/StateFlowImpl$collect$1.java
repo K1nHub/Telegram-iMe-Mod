@@ -6,7 +6,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StateFlow.kt */
-@DebugMetadata(m143c = "kotlinx.coroutines.flow.StateFlowImpl", m142f = "StateFlow.kt", m141l = {RendererCapabilities.MODE_SUPPORT_MASK, 396, 401}, m140m = "collect")
+@DebugMetadata(m145c = "kotlinx.coroutines.flow.StateFlowImpl", m144f = "StateFlow.kt", m143l = {RendererCapabilities.MODE_SUPPORT_MASK, 396, 401}, m142m = "collect")
 /* loaded from: classes4.dex */
 public final class StateFlowImpl$collect$1 extends ContinuationImpl {
     Object L$0;

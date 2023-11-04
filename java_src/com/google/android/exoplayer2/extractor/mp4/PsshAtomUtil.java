@@ -67,7 +67,7 @@ public final class PsshAtomUtil {
             return null;
         }
         if (!uuid.equals(parsePsshAtom.uuid)) {
-            Log.m1106w(TAG, "UUID mismatch. Expected: " + uuid + ", got: " + parsePsshAtom.uuid + ".");
+            Log.m1107w(TAG, "UUID mismatch. Expected: " + uuid + ", got: " + parsePsshAtom.uuid + ".");
             return null;
         }
         return parsePsshAtom.schemeData;
@@ -82,7 +82,7 @@ public final class PsshAtomUtil {
         if (parsableByteArray.readInt() == parsableByteArray.bytesLeft() + 4 && parsableByteArray.readInt() == 1886614376) {
             int parseFullAtomVersion = Atom.parseFullAtomVersion(parsableByteArray.readInt());
             if (parseFullAtomVersion > 1) {
-                Log.m1106w(TAG, "Unsupported pssh version: " + parseFullAtomVersion);
+                Log.m1107w(TAG, "Unsupported pssh version: " + parseFullAtomVersion);
                 return null;
             }
             UUID uuid = new UUID(parsableByteArray.readLong(), parsableByteArray.readLong());

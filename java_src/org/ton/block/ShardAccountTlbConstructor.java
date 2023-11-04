@@ -22,13 +22,13 @@ public final class ShardAccountTlbConstructor extends org.ton.tlb.TlbConstructor
         Intrinsics.checkNotNullParameter(value, "value");
         cellBuilder.storeRef(value.getAccount().toCell(Account.Companion));
         cellBuilder.storeBits(value.getLastTransHash());
-        cellBuilder.mo5057storeUInt64VKZWuLQ(value.m4994getLastTransLtsVKNKU());
+        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5148getLastTransLtsVKNKU());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public ShardAccount loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
         Account.Companion companion = Account.Companion;
-        return new ShardAccount(CellRef.Companion.valueOf(cellSlice.loadRef(), (TlbCodec) companion), cellSlice.loadBits(256), cellSlice.mo5067loadUInt64sVKNKU(), null);
+        return new ShardAccount(CellRef.Companion.valueOf(cellSlice.loadRef(), (TlbCodec) companion), cellSlice.loadBits(256), cellSlice.mo5221loadUInt64sVKNKU(), null);
     }
 }

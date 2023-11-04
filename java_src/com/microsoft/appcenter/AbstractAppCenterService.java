@@ -3,7 +3,7 @@ package com.microsoft.appcenter;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.microsoft.appcenter.channel.Channel;
 import com.microsoft.appcenter.utils.AppCenterLog;
 import com.microsoft.appcenter.utils.async.AppCenterFuture;
@@ -29,7 +29,7 @@ public abstract class AbstractAppCenterService implements AppCenterService {
     protected abstract int getTriggerCount();
 
     protected long getTriggerInterval() {
-        return C0479C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
+        return C0485C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
     }
 
     protected int getTriggerMaxParallelRequests() {

@@ -33,7 +33,7 @@
 
     iget v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda59;->f$1:I
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$i8gOwBHuk89AYraoFPwI-kvDXWU(Lorg/telegram/ui/ProfileActivity;ILjava/lang/Object;)I
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$dnJqamx6bxLTVKETERmu8ACeNhA(Lorg/telegram/ui/ProfileActivity;ILjava/lang/Object;)I
 
     move-result p1
 

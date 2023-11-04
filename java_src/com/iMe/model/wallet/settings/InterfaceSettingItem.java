@@ -2,7 +2,7 @@ package com.iMe.model.wallet.settings;
 
 import com.iMe.model.common.NoChildNode;
 import kotlin.jvm.internal.DefaultConstructorMarker;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* compiled from: InterfaceSettingItem.kt */
 /* loaded from: classes3.dex */
 public abstract class InterfaceSettingItem extends NoChildNode {
@@ -38,7 +38,7 @@ public abstract class InterfaceSettingItem extends NoChildNode {
         public static final Networks INSTANCE = new Networks();
 
         private Networks() {
-            super(C3630R.C3632drawable.fork_ic_network, C3630R.string.networks_settings_title, C3630R.string.networks_settings_subtitle, null);
+            super(C3634R.C3636drawable.fork_ic_network, C3634R.string.networks_settings_title, C3634R.string.networks_settings_subtitle, null);
         }
     }
 
@@ -92,7 +92,7 @@ public abstract class InterfaceSettingItem extends NoChildNode {
             }
 
             public Banners(boolean z) {
-                super(z, C3630R.C3632drawable.msg_sticker, C3630R.string.wallet_settings_interface_banners, C3630R.string.wallet_settings_interface_banners_description, null);
+                super(z, C3634R.C3636drawable.msg_sticker, C3634R.string.wallet_settings_interface_banners, C3634R.string.wallet_settings_interface_banners_description, null);
                 this.isEnabled = z;
             }
         }
@@ -108,7 +108,7 @@ public abstract class InterfaceSettingItem extends NoChildNode {
             }
 
             public Quotations(boolean z) {
-                super(z, C3630R.C3632drawable.fork_ic_quotation_26, C3630R.string.wallet_settings_interface_quotations, C3630R.string.wallet_settings_interface_quotations_description, null);
+                super(z, C3634R.C3636drawable.fork_ic_quotation_26, C3634R.string.wallet_settings_interface_quotations, C3634R.string.wallet_settings_interface_quotations_description, null);
                 this.isEnabled = z;
             }
         }

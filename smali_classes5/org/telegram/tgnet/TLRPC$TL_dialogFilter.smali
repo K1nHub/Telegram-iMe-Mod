@@ -3,21 +3,11 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x7438f7e8
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 22798
+    .line 22664
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$DialogFilter;-><init>()V
 
     return-void
@@ -28,7 +18,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 8
 
-    .line 22802
+    .line 22668
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -50,7 +40,7 @@
     :cond_0
     move v1, v2
 
-    .line 22803
+    .line 22669
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->contacts:Z
 
@@ -65,7 +55,7 @@
     :cond_1
     move v1, v2
 
-    .line 22804
+    .line 22670
     :goto_1
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->non_contacts:Z
 
@@ -80,7 +70,7 @@
     :cond_2
     move v1, v2
 
-    .line 22805
+    .line 22671
     :goto_2
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->groups:Z
 
@@ -95,7 +85,7 @@
     :cond_3
     move v1, v2
 
-    .line 22806
+    .line 22672
     :goto_3
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->broadcasts:Z
 
@@ -110,7 +100,7 @@
     :cond_4
     move v1, v2
 
-    .line 22807
+    .line 22673
     :goto_4
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->bots:Z
 
@@ -125,7 +115,7 @@
     :cond_5
     move v1, v2
 
-    .line 22808
+    .line 22674
     :goto_5
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_muted:Z
 
@@ -140,7 +130,7 @@
     :cond_6
     move v1, v2
 
-    .line 22809
+    .line 22675
     :goto_6
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_read:Z
 
@@ -155,25 +145,25 @@
     :cond_7
     move v0, v2
 
-    .line 22810
+    .line 22676
     :goto_7
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_archived:Z
 
-    .line 22811
+    .line 22677
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->id:I
 
-    .line 22812
+    .line 22678
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->title:Ljava/lang/String;
 
-    .line 22813
+    .line 22679
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->flags:I
 
     const/high16 v1, 0x2000000
@@ -182,14 +172,14 @@
 
     if-eqz v0, :cond_8
 
-    .line 22814
+    .line 22680
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->emoticon:Ljava/lang/String;
 
-    .line 22816
+    .line 22682
     :cond_8
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -205,7 +195,7 @@
 
     return-void
 
-    .line 22819
+    .line 22685
     :cond_9
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -225,7 +215,7 @@
 
     throw p1
 
-    .line 22823
+    .line 22689
     :cond_a
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -236,7 +226,7 @@
     :goto_8
     if-ge v5, v0, :cond_c
 
-    .line 22825
+    .line 22691
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v6
@@ -249,7 +239,7 @@
 
     return-void
 
-    .line 22829
+    .line 22695
     :cond_b
     iget-object v7, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->pinned_peers:Ljava/util/ArrayList;
 
@@ -259,7 +249,7 @@
 
     goto :goto_8
 
-    .line 22831
+    .line 22697
     :cond_c
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -271,7 +261,7 @@
 
     return-void
 
-    .line 22834
+    .line 22700
     :cond_d
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -291,7 +281,7 @@
 
     throw p1
 
-    .line 22838
+    .line 22704
     :cond_e
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -302,7 +292,7 @@
     :goto_9
     if-ge v5, v0, :cond_10
 
-    .line 22840
+    .line 22706
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v6
@@ -315,7 +305,7 @@
 
     return-void
 
-    .line 22844
+    .line 22710
     :cond_f
     iget-object v7, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->include_peers:Ljava/util/ArrayList;
 
@@ -325,7 +315,7 @@
 
     goto :goto_9
 
-    .line 22846
+    .line 22712
     :cond_10
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -337,7 +327,7 @@
 
     return-void
 
-    .line 22849
+    .line 22715
     :cond_11
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -357,7 +347,7 @@
 
     throw p1
 
-    .line 22853
+    .line 22719
     :cond_12
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -366,7 +356,7 @@
     :goto_a
     if-ge v2, v0, :cond_14
 
-    .line 22855
+    .line 22721
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -379,7 +369,7 @@
 
     return-void
 
-    .line 22859
+    .line 22725
     :cond_13
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_peers:Ljava/util/ArrayList;
 
@@ -396,12 +386,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 5
 
-    .line 22864
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_dialogFilter;->constructor:I
+    const v0, 0x7438f7e8
 
+    .line 22730
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 22865
+    .line 22731
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->contacts:Z
 
     if-eqz v0, :cond_0
@@ -420,7 +410,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->flags:I
 
-    .line 22866
+    .line 22732
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->non_contacts:Z
 
     if-eqz v1, :cond_1
@@ -435,7 +425,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->flags:I
 
-    .line 22867
+    .line 22733
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->groups:Z
 
     if-eqz v1, :cond_2
@@ -450,7 +440,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->flags:I
 
-    .line 22868
+    .line 22734
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->broadcasts:Z
 
     if-eqz v1, :cond_3
@@ -465,7 +455,7 @@
     :goto_3
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->flags:I
 
-    .line 22869
+    .line 22735
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->bots:Z
 
     if-eqz v1, :cond_4
@@ -480,7 +470,7 @@
     :goto_4
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->flags:I
 
-    .line 22870
+    .line 22736
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_muted:Z
 
     if-eqz v1, :cond_5
@@ -495,7 +485,7 @@
     :goto_5
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->flags:I
 
-    .line 22871
+    .line 22737
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_read:Z
 
     if-eqz v1, :cond_6
@@ -510,7 +500,7 @@
     :goto_6
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->flags:I
 
-    .line 22872
+    .line 22738
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_archived:Z
 
     if-eqz v1, :cond_7
@@ -525,20 +515,20 @@
     :goto_7
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->flags:I
 
-    .line 22873
+    .line 22739
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 22874
+    .line 22740
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 22875
+    .line 22741
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 22876
+    .line 22742
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->flags:I
 
     const/high16 v1, 0x2000000
@@ -547,7 +537,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 22877
+    .line 22743
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->emoticon:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
@@ -555,17 +545,17 @@
     :cond_8
     const v0, 0x1cb5c415
 
-    .line 22879
+    .line 22745
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 22880
+    .line 22746
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->pinned_peers:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 22881
+    .line 22747
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v2, 0x0
@@ -575,7 +565,7 @@
     :goto_8
     if-ge v3, v1, :cond_9
 
-    .line 22883
+    .line 22749
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->pinned_peers:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -590,18 +580,18 @@
 
     goto :goto_8
 
-    .line 22885
+    .line 22751
     :cond_9
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 22886
+    .line 22752
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->include_peers:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 22887
+    .line 22753
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     move v3, v2
@@ -609,7 +599,7 @@
     :goto_9
     if-ge v3, v1, :cond_a
 
-    .line 22889
+    .line 22755
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->include_peers:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -624,24 +614,24 @@
 
     goto :goto_9
 
-    .line 22891
+    .line 22757
     :cond_a
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 22892
+    .line 22758
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_peers:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 22893
+    .line 22759
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     :goto_a
     if-ge v2, v0, :cond_b
 
-    .line 22895
+    .line 22761
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$DialogFilter;->exclude_peers:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

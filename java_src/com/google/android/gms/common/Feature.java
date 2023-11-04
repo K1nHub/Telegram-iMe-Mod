@@ -14,16 +14,16 @@ import com.google.android.gms.measurement.api.AppMeasurementSdk;
 /* loaded from: classes.dex */
 public class Feature extends AbstractSafeParcelable {
     public static final Parcelable.Creator<Feature> CREATOR = new zzc();
-    @SafeParcelable.Field(getter = "getName", m1089id = 1)
+    @SafeParcelable.Field(getter = "getName", m1090id = 1)
     private final String zza;
-    @SafeParcelable.Field(getter = "getOldVersion", m1089id = 2)
+    @SafeParcelable.Field(getter = "getOldVersion", m1090id = 2)
     @Deprecated
     private final int zzb;
-    @SafeParcelable.Field(defaultValue = "-1", getter = "getVersion", m1089id = 3)
+    @SafeParcelable.Field(defaultValue = "-1", getter = "getVersion", m1090id = 3)
     private final long zzc;
 
     @SafeParcelable.Constructor
-    public Feature(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) long j) {
+    public Feature(@SafeParcelable.Param(m1089id = 1) String str, @SafeParcelable.Param(m1089id = 2) int i, @SafeParcelable.Param(m1089id = 3) long j) {
         this.zza = str;
         this.zzb = i;
         this.zzc = j;

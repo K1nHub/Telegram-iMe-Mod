@@ -34,10 +34,10 @@
 .method public constructor <init>(F)V
     .locals 2
 
-    .line 2280
+    .line 2281
     invoke-direct {p0}, Landroid/text/style/ReplacementSpan;-><init>()V
 
-    .line 2253
+    .line 2254
     new-instance v0, Landroid/text/TextPaint;
 
     const/4 v1, 0x1
@@ -46,7 +46,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->textPaint:Landroid/text/TextPaint;
 
-    .line 2254
+    .line 2255
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
@@ -55,10 +55,10 @@
 
     const/4 v0, 0x0
 
-    .line 2281
+    .line 2282
     iput-boolean v0, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->outline:Z
 
-    .line 2282
+    .line 2283
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->textPaint:Landroid/text/TextPaint;
 
     const-string v1, "fonts/rmedium.ttf"
@@ -69,14 +69,14 @@
 
     invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 2283
+    .line 2284
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->bgPaint:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 2284
+    .line 2285
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->textPaint:Landroid/text/TextPaint;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -93,10 +93,10 @@
 .method public constructor <init>(Z)V
     .locals 2
 
-    .line 2261
+    .line 2262
     invoke-direct {p0}, Landroid/text/style/ReplacementSpan;-><init>()V
 
-    .line 2253
+    .line 2254
     new-instance v0, Landroid/text/TextPaint;
 
     const/4 v1, 0x1
@@ -105,17 +105,17 @@
 
     iput-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->textPaint:Landroid/text/TextPaint;
 
-    .line 2254
+    .line 2255
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->bgPaint:Landroid/graphics/Paint;
 
-    .line 2262
+    .line 2263
     iput-boolean p1, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->outline:Z
 
-    .line 2264
+    .line 2265
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->textPaint:Landroid/text/TextPaint;
 
     const-string v1, "fonts/rmedium.ttf"
@@ -128,14 +128,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 2266
+    .line 2267
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->bgPaint:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 2267
+    .line 2268
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->bgPaint:Landroid/graphics/Paint;
 
     const v0, 0x3faa3d71    # 1.33f
@@ -146,7 +146,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 2268
+    .line 2269
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->textPaint:Landroid/text/TextPaint;
 
     const/16 v0, 0xa
@@ -159,14 +159,14 @@
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 2269
+    .line 2270
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->textPaint:Landroid/text/TextPaint;
 
     sget-object v0, Landroid/graphics/Paint$Style;->FILL_AND_STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 2270
+    .line 2271
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->textPaint:Landroid/text/TextPaint;
 
     const v0, 0x3e4ccccd    # 0.2f
@@ -177,14 +177,14 @@
 
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setStrokeWidth(F)V
 
-    .line 2271
+    .line 2272
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x15
 
     if-lt p1, v0, :cond_1
 
-    .line 2272
+    .line 2273
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->textPaint:Landroid/text/TextPaint;
 
     const v0, 0x3cf5c28f    # 0.03f
@@ -193,7 +193,7 @@
 
     goto :goto_0
 
-    .line 2275
+    .line 2276
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->bgPaint:Landroid/graphics/Paint;
 
@@ -201,7 +201,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 2276
+    .line 2277
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->textPaint:Landroid/text/TextPaint;
 
     const/16 v0, 0xc
@@ -224,38 +224,38 @@
 .method public draw(Landroid/graphics/Canvas;Ljava/lang/CharSequence;IIFIIILandroid/graphics/Paint;)V
     .locals 0
 
-    .line 2308
+    .line 2309
     invoke-virtual {p0}, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->makeLayout()Landroid/text/StaticLayout;
 
-    .line 2310
+    .line 2311
     iget p2, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->color:I
 
     if-nez p2, :cond_0
 
-    .line 2312
+    .line 2313
     invoke-virtual {p9}, Landroid/graphics/Paint;->getColor()I
 
     move-result p2
 
-    .line 2314
+    .line 2315
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->bgPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p3, p2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 2315
+    .line 2316
     iget-boolean p3, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->outline:Z
 
     if-eqz p3, :cond_1
 
-    .line 2316
+    .line 2317
     iget-object p3, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->textPaint:Landroid/text/TextPaint;
 
     invoke-virtual {p3, p2}, Landroid/text/TextPaint;->setColor(I)V
 
     goto :goto_1
 
-    .line 2318
+    .line 2319
     :cond_1
     iget-object p3, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->textPaint:Landroid/text/TextPaint;
 
@@ -282,7 +282,7 @@
     :goto_1
     const/4 p2, 0x2
 
-    .line 2321
+    .line 2322
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -307,7 +307,7 @@
 
     add-float/2addr p2, p3
 
-    .line 2322
+    .line 2323
     sget-object p3, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     iget p4, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->width:F
@@ -320,21 +320,21 @@
 
     invoke-virtual {p3, p5, p2, p4, p6}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2324
+    .line 2325
     iget-boolean p4, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->outline:Z
 
     if-eqz p4, :cond_3
 
     const p4, 0x406a3d71    # 3.66f
 
-    .line 2325
+    .line 2326
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p6
 
     int-to-float p6, p6
 
-    .line 2326
+    .line 2327
     iget p7, p3, Landroid/graphics/RectF;->left:F
 
     const/4 p8, 0x4
@@ -349,7 +349,7 @@
 
     iput p7, p3, Landroid/graphics/RectF;->left:F
 
-    .line 2327
+    .line 2328
     iget p7, p3, Landroid/graphics/RectF;->top:F
 
     const p8, 0x40151eb8    # 2.33f
@@ -364,7 +364,7 @@
 
     iput p7, p3, Landroid/graphics/RectF;->top:F
 
-    .line 2328
+    .line 2329
     iget p7, p3, Landroid/graphics/RectF;->right:F
 
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
@@ -377,7 +377,7 @@
 
     iput p7, p3, Landroid/graphics/RectF;->right:F
 
-    .line 2329
+    .line 2330
     iget p4, p3, Landroid/graphics/RectF;->bottom:F
 
     const p7, 0x3faa3d71    # 1.33f
@@ -397,7 +397,7 @@
     :cond_3
     const p4, 0x408ccccd    # 4.4f
 
-    .line 2331
+    .line 2332
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p4
@@ -406,7 +406,7 @@
 
     const/4 p4, -0x4
 
-    .line 2332
+    .line 2333
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p4
@@ -423,24 +423,24 @@
 
     invoke-virtual {p3, p4, p7}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 2334
+    .line 2335
     :goto_2
     iget-object p4, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->bgPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, p3, p6, p6, p4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 2336
+    .line 2337
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2337
+    .line 2338
     invoke-virtual {p1, p5, p2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2338
+    .line 2339
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {p2, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2339
+    .line 2340
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -449,12 +449,12 @@
 .method public getSize(Landroid/graphics/Paint;Ljava/lang/CharSequence;IILandroid/graphics/Paint$FontMetricsInt;)I
     .locals 0
 
-    .line 2302
+    .line 2303
     invoke-virtual {p0}, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->makeLayout()Landroid/text/StaticLayout;
 
     const/16 p1, 0xa
 
-    .line 2303
+    .line 2304
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -473,12 +473,12 @@
 .method public makeLayout()Landroid/text/StaticLayout;
     .locals 9
 
-    .line 2292
+    .line 2293
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->layout:Landroid/text/StaticLayout;
 
     if-nez v0, :cond_0
 
-    .line 2293
+    .line 2294
     new-instance v0, Landroid/text/StaticLayout;
 
     iget-object v3, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->textPaint:Landroid/text/TextPaint;
@@ -505,14 +505,14 @@
 
     const/4 v1, 0x0
 
-    .line 2294
+    .line 2295
     invoke-virtual {v0, v1}, Landroid/text/StaticLayout;->getLineWidth(I)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->width:F
 
-    .line 2295
+    .line 2296
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {v0}, Landroid/text/StaticLayout;->getHeight()I
@@ -523,7 +523,7 @@
 
     iput v0, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->height:F
 
-    .line 2297
+    .line 2298
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->layout:Landroid/text/StaticLayout;
 
@@ -533,7 +533,7 @@
 .method public setColor(I)V
     .locals 0
 
-    .line 2288
+    .line 2289
     iput p1, p0, Lorg/telegram/ui/FilterCreateActivity$NewSpan;->color:I
 
     return-void

@@ -10,25 +10,25 @@ public final class CacheByClassKt {
     private static final boolean useClassValue;
 
     static {
-        Object m1935constructorimpl;
+        Object m1940constructorimpl;
         try {
             Result.Companion companion = Result.Companion;
-            m1935constructorimpl = Result.m1935constructorimpl(Class.forName("java.lang.ClassValue"));
+            m1940constructorimpl = Result.m1940constructorimpl(Class.forName("java.lang.ClassValue"));
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1935constructorimpl = Result.m1935constructorimpl(ResultKt.createFailure(th));
+            m1940constructorimpl = Result.m1940constructorimpl(ResultKt.createFailure(th));
         }
-        if (Result.m1941isSuccessimpl(m1935constructorimpl)) {
+        if (Result.m1946isSuccessimpl(m1940constructorimpl)) {
             Result.Companion companion3 = Result.Companion;
-            Class cls = (Class) m1935constructorimpl;
-            m1935constructorimpl = Boolean.TRUE;
+            Class cls = (Class) m1940constructorimpl;
+            m1940constructorimpl = Boolean.TRUE;
         }
-        Object m1935constructorimpl2 = Result.m1935constructorimpl(m1935constructorimpl);
+        Object m1940constructorimpl2 = Result.m1940constructorimpl(m1940constructorimpl);
         Boolean bool = Boolean.FALSE;
-        if (Result.m1940isFailureimpl(m1935constructorimpl2)) {
-            m1935constructorimpl2 = bool;
+        if (Result.m1945isFailureimpl(m1940constructorimpl2)) {
+            m1940constructorimpl2 = bool;
         }
-        useClassValue = ((Boolean) m1935constructorimpl2).booleanValue();
+        useClassValue = ((Boolean) m1940constructorimpl2).booleanValue();
     }
 
     public static final <V> CacheByClass<V> createCache(Function1<? super Class<?>, ? extends V> compute) {

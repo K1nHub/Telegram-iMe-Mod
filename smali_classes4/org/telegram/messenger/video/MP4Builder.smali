@@ -12,6 +12,8 @@
 
 
 # instance fields
+.field private allowSyncFiles:Z
+
 .field private currentMp4Movie:Lorg/telegram/messenger/video/Mp4Movie;
 
 .field private dataOffset:J
@@ -78,14 +80,17 @@
     iput-boolean v1, p0, Lorg/telegram/messenger/video/MP4Builder;->writeNewMdat:Z
 
     .line 61
-    new-instance v1, Ljava/util/HashMap;
+    new-instance v2, Ljava/util/HashMap;
 
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v1, p0, Lorg/telegram/messenger/video/MP4Builder;->track2SampleSizes:Ljava/util/HashMap;
+    iput-object v2, p0, Lorg/telegram/messenger/video/MP4Builder;->track2SampleSizes:Ljava/util/HashMap;
 
     .line 62
     iput-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->sizeBuffer:Ljava/nio/ByteBuffer;
+
+    .line 65
+    iput-boolean v1, p0, Lorg/telegram/messenger/video/MP4Builder;->allowSyncFiles:Z
 
     return-void
 .end method
@@ -98,14 +103,14 @@
         }
     .end annotation
 
-    .line 86
+    .line 87
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
     invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->position()J
 
     move-result-wide v0
 
-    .line 87
+    .line 88
     iget-object v2, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
     iget-object v3, p0, Lorg/telegram/messenger/video/MP4Builder;->mdat:Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;
@@ -116,36 +121,41 @@
 
     invoke-virtual {v2, v3, v4}, Ljava/nio/channels/FileChannel;->position(J)Ljava/nio/channels/FileChannel;
 
-    .line 88
+    .line 89
     iget-object v2, p0, Lorg/telegram/messenger/video/MP4Builder;->mdat:Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;
 
     iget-object v3, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
     invoke-virtual {v2, v3}, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->getBox(Ljava/nio/channels/WritableByteChannel;)V
 
-    .line 89
+    .line 90
     iget-object v2, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
     invoke-virtual {v2, v0, v1}, Ljava/nio/channels/FileChannel;->position(J)Ljava/nio/channels/FileChannel;
 
-    .line 90
+    .line 91
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->mdat:Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;
 
     const-wide/16 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->setDataOffset(J)V
 
-    .line 91
+    .line 92
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->mdat:Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->setContentSize(J)V
 
-    .line 92
+    .line 93
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->fos:Ljava/io/FileOutputStream;
 
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->flush()V
 
-    .line 93
+    .line 94
+    iget-boolean v0, p0, Lorg/telegram/messenger/video/MP4Builder;->allowSyncFiles:Z
+
+    if-eqz v0, :cond_0
+
+    .line 95
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->fos:Ljava/io/FileOutputStream;
 
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->getFD()Ljava/io/FileDescriptor;
@@ -154,6 +164,7 @@
 
     invoke-virtual {v0}, Ljava/io/FileDescriptor;->sync()V
 
+    :cond_0
     return-void
 .end method
 
@@ -168,7 +179,7 @@
 
     return-wide p0
 
-    .line 281
+    .line 292
     :cond_0
     rem-long/2addr p0, p2
 
@@ -184,7 +195,7 @@
 .method public addTrack(Landroid/media/MediaFormat;Z)I
     .locals 1
 
-    .line 177
+    .line 182
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->currentMp4Movie:Lorg/telegram/messenger/video/Mp4Movie;
 
     invoke-virtual {v0, p1, p2}, Lorg/telegram/messenger/video/Mp4Movie;->addTrack(Landroid/media/MediaFormat;Z)I
@@ -197,7 +208,7 @@
 .method protected createCtts(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
     .locals 6
 
-    .line 399
+    .line 410
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getSampleCompositions()[I
 
     move-result-object p1
@@ -209,34 +220,34 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 404
+    .line 415
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     const/4 v2, 0x0
 
-    .line 406
+    .line 417
     :goto_0
     array-length v3, p1
 
     if-ge v2, v3, :cond_2
 
-    .line 407
+    .line 418
     aget v3, p1, v2
 
     const/4 v4, 0x1
 
     if-eqz v0, :cond_1
 
-    .line 408
+    .line 419
     invoke-virtual {v0}, Lcom/coremedia/iso/boxes/CompositionTimeToSample$Entry;->getOffset()I
 
     move-result v5
 
     if-ne v5, v3, :cond_1
 
-    .line 409
+    .line 420
     invoke-virtual {v0}, Lcom/coremedia/iso/boxes/CompositionTimeToSample$Entry;->getCount()I
 
     move-result v3
@@ -247,13 +258,13 @@
 
     goto :goto_1
 
-    .line 411
+    .line 422
     :cond_1
     new-instance v0, Lcom/coremedia/iso/boxes/CompositionTimeToSample$Entry;
 
     invoke-direct {v0, v4, v3}, Lcom/coremedia/iso/boxes/CompositionTimeToSample$Entry;-><init>(II)V
 
-    .line 412
+    .line 423
     invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_1
@@ -261,16 +272,16 @@
 
     goto :goto_0
 
-    .line 415
+    .line 426
     :cond_2
     new-instance p1, Lcom/coremedia/iso/boxes/CompositionTimeToSample;
 
     invoke-direct {p1}, Lcom/coremedia/iso/boxes/CompositionTimeToSample;-><init>()V
 
-    .line 416
+    .line 427
     invoke-virtual {p1, v1}, Lcom/coremedia/iso/boxes/CompositionTimeToSample;->setEntries(Ljava/util/List;)V
 
-    .line 417
+    .line 428
     invoke-virtual {p2, p1}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
     return-void
@@ -279,19 +290,19 @@
 .method protected createFileTypeBox(Z)Lcom/coremedia/iso/boxes/FileTypeBox;
     .locals 4
 
-    .line 204
+    .line 211
     new-instance v0, Ljava/util/LinkedList;
 
     invoke-direct {v0}, Ljava/util/LinkedList;-><init>()V
 
-    const-string v1, "isom"
+    const-string/jumbo v1, "isom"
 
-    .line 205
+    .line 212
     invoke-virtual {v0, v1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    const-string v2, "iso2"
+    const-string/jumbo v2, "iso2"
 
-    .line 206
+    .line 213
     invoke-virtual {v0, v2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     if-eqz p1, :cond_0
@@ -303,16 +314,16 @@
     :cond_0
     const-string p1, "avc1"
 
-    .line 207
+    .line 214
     :goto_0
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     const-string/jumbo p1, "mp41"
 
-    .line 208
+    .line 215
     invoke-virtual {v0, p1}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 209
+    .line 216
     new-instance p1, Lcom/coremedia/iso/boxes/FileTypeBox;
 
     const-wide/16 v2, 0x200
@@ -330,10 +341,10 @@
         }
     .end annotation
 
-    .line 67
+    .line 68
     iput-object p1, p0, Lorg/telegram/messenger/video/MP4Builder;->currentMp4Movie:Lorg/telegram/messenger/video/Mp4Movie;
 
-    .line 69
+    .line 70
     new-instance v0, Ljava/io/FileOutputStream;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Mp4Movie;->getCacheFile()Ljava/io/File;
@@ -344,24 +355,24 @@
 
     iput-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->fos:Ljava/io/FileOutputStream;
 
-    .line 70
+    .line 71
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->getChannel()Ljava/nio/channels/FileChannel;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
-    .line 72
+    .line 73
     invoke-virtual {p0, p3}, Lorg/telegram/messenger/video/MP4Builder;->createFileTypeBox(Z)Lcom/coremedia/iso/boxes/FileTypeBox;
 
     move-result-object p1
 
-    .line 73
+    .line 74
     iget-object p3, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
     invoke-virtual {p1, p3}, Lcom/googlecode/mp4parser/AbstractBox;->getBox(Ljava/nio/channels/WritableByteChannel;)V
 
-    .line 74
+    .line 75
     iget-wide v0, p0, Lorg/telegram/messenger/video/MP4Builder;->dataOffset:J
 
     invoke-virtual {p1}, Lcom/googlecode/mp4parser/AbstractBox;->getSize()J
@@ -372,17 +383,17 @@
 
     iput-wide v0, p0, Lorg/telegram/messenger/video/MP4Builder;->dataOffset:J
 
-    .line 75
+    .line 76
     iget-wide v2, p0, Lorg/telegram/messenger/video/MP4Builder;->wroteSinceLastMdat:J
 
     add-long/2addr v2, v0
 
     iput-wide v2, p0, Lorg/telegram/messenger/video/MP4Builder;->wroteSinceLastMdat:J
 
-    .line 76
+    .line 77
     iput-boolean p2, p0, Lorg/telegram/messenger/video/MP4Builder;->splitMdat:Z
 
-    .line 78
+    .line 79
     new-instance p1, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;
 
     const/4 p2, 0x0
@@ -393,7 +404,7 @@
 
     const/4 p1, 0x4
 
-    .line 80
+    .line 81
     invoke-static {p1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object p1
@@ -406,41 +417,41 @@
 .method protected createMovieBox(Lorg/telegram/messenger/video/Mp4Movie;)Lcom/coremedia/iso/boxes/MovieBox;
     .locals 12
 
-    .line 296
+    .line 307
     new-instance v0, Lcom/coremedia/iso/boxes/MovieBox;
 
     invoke-direct {v0}, Lcom/coremedia/iso/boxes/MovieBox;-><init>()V
 
-    .line 297
+    .line 308
     new-instance v1, Lcom/coremedia/iso/boxes/MovieHeaderBox;
 
     invoke-direct {v1}, Lcom/coremedia/iso/boxes/MovieHeaderBox;-><init>()V
 
-    .line 299
+    .line 310
     new-instance v2, Ljava/util/Date;
 
     invoke-direct {v2}, Ljava/util/Date;-><init>()V
 
     invoke-virtual {v1, v2}, Lcom/coremedia/iso/boxes/MovieHeaderBox;->setCreationTime(Ljava/util/Date;)V
 
-    .line 300
+    .line 311
     new-instance v2, Ljava/util/Date;
 
     invoke-direct {v2}, Ljava/util/Date;-><init>()V
 
     invoke-virtual {v1, v2}, Lcom/coremedia/iso/boxes/MovieHeaderBox;->setModificationTime(Ljava/util/Date;)V
 
-    .line 301
+    .line 312
     sget-object v2, Lcom/googlecode/mp4parser/util/Matrix;->ROTATE_0:Lcom/googlecode/mp4parser/util/Matrix;
 
     invoke-virtual {v1, v2}, Lcom/coremedia/iso/boxes/MovieHeaderBox;->setMatrix(Lcom/googlecode/mp4parser/util/Matrix;)V
 
-    .line 302
+    .line 313
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/video/MP4Builder;->getTimescale(Lorg/telegram/messenger/video/Mp4Movie;)J
 
     move-result-wide v2
 
-    .line 305
+    .line 316
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Mp4Movie;->getTracks()Ljava/util/ArrayList;
 
     move-result-object v4
@@ -465,10 +476,10 @@
 
     check-cast v7, Lorg/telegram/messenger/video/Track;
 
-    .line 306
+    .line 317
     invoke-virtual {v7}, Lorg/telegram/messenger/video/Track;->prepare()V
 
-    .line 307
+    .line 318
     invoke-virtual {v7}, Lorg/telegram/messenger/video/Track;->getDuration()J
 
     move-result-wide v8
@@ -491,14 +502,14 @@
 
     goto :goto_0
 
-    .line 313
+    .line 324
     :cond_1
     invoke-virtual {v1, v5, v6}, Lcom/coremedia/iso/boxes/MovieHeaderBox;->setDuration(J)V
 
-    .line 314
+    .line 325
     invoke-virtual {v1, v2, v3}, Lcom/coremedia/iso/boxes/MovieHeaderBox;->setTimescale(J)V
 
-    .line 315
+    .line 326
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Mp4Movie;->getTracks()Ljava/util/ArrayList;
 
     move-result-object v2
@@ -513,10 +524,10 @@
 
     invoke-virtual {v1, v2, v3}, Lcom/coremedia/iso/boxes/MovieHeaderBox;->setNextTrackId(J)V
 
-    .line 317
+    .line 328
     invoke-virtual {v0, v1}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
-    .line 318
+    .line 329
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Mp4Movie;->getTracks()Ljava/util/ArrayList;
 
     move-result-object v1
@@ -538,7 +549,7 @@
 
     check-cast v2, Lorg/telegram/messenger/video/Track;
 
-    .line 319
+    .line 330
     invoke-virtual {p0, v2, p1}, Lorg/telegram/messenger/video/MP4Builder;->createTrackBox(Lorg/telegram/messenger/video/Track;Lorg/telegram/messenger/video/Mp4Movie;)Lcom/coremedia/iso/boxes/TrackBox;
 
     move-result-object v2
@@ -560,30 +571,30 @@
 .method protected createStbl(Lorg/telegram/messenger/video/Track;)Lcom/coremedia/iso/boxes/Box;
     .locals 1
 
-    .line 381
+    .line 392
     new-instance v0, Lcom/coremedia/iso/boxes/SampleTableBox;
 
     invoke-direct {v0}, Lcom/coremedia/iso/boxes/SampleTableBox;-><init>()V
 
-    .line 383
+    .line 394
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/video/MP4Builder;->createStsd(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
 
-    .line 384
+    .line 395
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/video/MP4Builder;->createStts(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
 
-    .line 385
+    .line 396
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/video/MP4Builder;->createCtts(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
 
-    .line 386
+    .line 397
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/video/MP4Builder;->createStss(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
 
-    .line 387
+    .line 398
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/video/MP4Builder;->createStsc(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
 
-    .line 388
+    .line 399
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/video/MP4Builder;->createStsz(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
 
-    .line 389
+    .line 400
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/video/MP4Builder;->createStco(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
 
     return-object v0
@@ -592,12 +603,12 @@
 .method protected createStco(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
     .locals 9
 
-    .line 501
+    .line 512
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 503
+    .line 514
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getSamples()Ljava/util/ArrayList;
 
     move-result-object p1
@@ -623,7 +634,7 @@
 
     check-cast v5, Lorg/telegram/messenger/video/Sample;
 
-    .line 504
+    .line 515
     invoke-virtual {v5}, Lorg/telegram/messenger/video/Sample;->getOffset()J
 
     move-result-wide v6
@@ -643,14 +654,14 @@
 
     if-nez v3, :cond_1
 
-    .line 509
+    .line 520
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 511
+    .line 522
     :cond_1
     invoke-virtual {v5}, Lorg/telegram/messenger/video/Sample;->getSize()J
 
@@ -660,7 +671,7 @@
 
     goto :goto_0
 
-    .line 513
+    .line 524
     :cond_2
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -670,7 +681,7 @@
 
     const/4 v1, 0x0
 
-    .line 514
+    .line 525
     :goto_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -678,7 +689,7 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 515
+    .line 526
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -695,16 +706,16 @@
 
     goto :goto_1
 
-    .line 518
+    .line 529
     :cond_3
     new-instance v0, Lcom/coremedia/iso/boxes/StaticChunkOffsetBox;
 
     invoke-direct {v0}, Lcom/coremedia/iso/boxes/StaticChunkOffsetBox;-><init>()V
 
-    .line 519
+    .line 530
     invoke-virtual {v0, p1}, Lcom/coremedia/iso/boxes/StaticChunkOffsetBox;->setChunkOffsets([J)V
 
-    .line 520
+    .line 531
     invoke-virtual {p2, v0}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
     return-void
@@ -713,19 +724,19 @@
 .method protected createStsc(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
     .locals 16
 
-    .line 449
+    .line 460
     new-instance v0, Lcom/coremedia/iso/boxes/SampleToChunkBox;
 
     invoke-direct {v0}, Lcom/coremedia/iso/boxes/SampleToChunkBox;-><init>()V
 
-    .line 450
+    .line 461
     new-instance v1, Ljava/util/LinkedList;
 
     invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
 
     invoke-virtual {v0, v1}, Lcom/coremedia/iso/boxes/SampleToChunkBox;->setEntries(Ljava/util/List;)V
 
-    .line 458
+    .line 469
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/video/Track;->getSamples()Ljava/util/ArrayList;
 
     move-result-object v1
@@ -749,7 +760,7 @@
     :goto_0
     if-ge v5, v1, :cond_4
 
-    .line 460
+    .line 471
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/video/Track;->getSamples()Ljava/util/ArrayList;
 
     move-result-object v8
@@ -760,12 +771,12 @@
 
     check-cast v8, Lorg/telegram/messenger/video/Sample;
 
-    .line 461
+    .line 472
     invoke-virtual {v8}, Lorg/telegram/messenger/video/Sample;->getOffset()J
 
     move-result-wide v9
 
-    .line 462
+    .line 473
     invoke-virtual {v8}, Lorg/telegram/messenger/video/Sample;->getSize()J
 
     move-result-wide v11
@@ -778,7 +789,7 @@
 
     if-eq v5, v8, :cond_1
 
-    .line 469
+    .line 480
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/messenger/video/Track;->getSamples()Ljava/util/ArrayList;
 
     move-result-object v8
@@ -791,7 +802,7 @@
 
     check-cast v8, Lorg/telegram/messenger/video/Sample;
 
-    .line 470
+    .line 481
     invoke-virtual {v8}, Lorg/telegram/messenger/video/Sample;->getOffset()J
 
     move-result-wide v11
@@ -816,7 +827,7 @@
 
     if-eq v4, v6, :cond_2
 
-    .line 478
+    .line 489
     invoke-virtual {v0}, Lcom/coremedia/iso/boxes/SampleToChunkBox;->getEntries()Ljava/util/List;
 
     move-result-object v4
@@ -850,7 +861,7 @@
     :cond_4
     move-object/from16 v4, p2
 
-    .line 485
+    .line 496
     invoke-virtual {v4, v0}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
     return-void
@@ -859,7 +870,7 @@
 .method protected createStsd(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
     .locals 0
 
-    .line 395
+    .line 406
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getSampleDescriptionBox()Lcom/coremedia/iso/boxes/SampleDescriptionBox;
 
     move-result-object p1
@@ -872,27 +883,27 @@
 .method protected createStss(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
     .locals 1
 
-    .line 440
+    .line 451
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getSyncSamples()[J
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 441
+    .line 452
     array-length v0, p1
 
     if-lez v0, :cond_0
 
-    .line 442
+    .line 453
     new-instance v0, Lcom/coremedia/iso/boxes/SyncSampleBox;
 
     invoke-direct {v0}, Lcom/coremedia/iso/boxes/SyncSampleBox;-><init>()V
 
-    .line 443
+    .line 454
     invoke-virtual {v0, p1}, Lcom/coremedia/iso/boxes/SyncSampleBox;->setSampleNumber([J)V
 
-    .line 444
+    .line 455
     invoke-virtual {p2, v0}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
     :cond_0
@@ -902,12 +913,12 @@
 .method protected createStsz(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
     .locals 2
 
-    .line 489
+    .line 500
     new-instance v0, Lcom/coremedia/iso/boxes/SampleSizeBox;
 
     invoke-direct {v0}, Lcom/coremedia/iso/boxes/SampleSizeBox;-><init>()V
 
-    .line 490
+    .line 501
     iget-object v1, p0, Lorg/telegram/messenger/video/MP4Builder;->track2SampleSizes:Ljava/util/HashMap;
 
     invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -918,7 +929,7 @@
 
     invoke-virtual {v0, p1}, Lcom/coremedia/iso/boxes/SampleSizeBox;->setSampleSizes([J)V
 
-    .line 491
+    .line 502
     invoke-virtual {p2, v0}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
     return-void
@@ -927,12 +938,12 @@
 .method protected createStts(Lorg/telegram/messenger/video/Track;Lcom/coremedia/iso/boxes/SampleTableBox;)V
     .locals 9
 
-    .line 422
+    .line 433
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 423
+    .line 434
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getSampleDurations()[J
 
     move-result-object p1
@@ -941,20 +952,20 @@
 
     const/4 v2, 0x0
 
-    .line 425
+    .line 436
     :goto_0
     array-length v3, p1
 
     if-ge v2, v3, :cond_1
 
-    .line 426
+    .line 437
     aget-wide v3, p1, v2
 
     const-wide/16 v5, 0x1
 
     if-eqz v1, :cond_0
 
-    .line 427
+    .line 438
     invoke-virtual {v1}, Lcom/coremedia/iso/boxes/TimeToSampleBox$Entry;->getDelta()J
 
     move-result-wide v7
@@ -963,7 +974,7 @@
 
     if-nez v7, :cond_0
 
-    .line 428
+    .line 439
     invoke-virtual {v1}, Lcom/coremedia/iso/boxes/TimeToSampleBox$Entry;->getCount()J
 
     move-result-wide v3
@@ -974,13 +985,13 @@
 
     goto :goto_1
 
-    .line 430
+    .line 441
     :cond_0
     new-instance v1, Lcom/coremedia/iso/boxes/TimeToSampleBox$Entry;
 
     invoke-direct {v1, v5, v6, v3, v4}, Lcom/coremedia/iso/boxes/TimeToSampleBox$Entry;-><init>(JJ)V
 
-    .line 431
+    .line 442
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :goto_1
@@ -988,16 +999,16 @@
 
     goto :goto_0
 
-    .line 434
+    .line 445
     :cond_1
     new-instance p1, Lcom/coremedia/iso/boxes/TimeToSampleBox;
 
     invoke-direct {p1}, Lcom/coremedia/iso/boxes/TimeToSampleBox;-><init>()V
 
-    .line 435
+    .line 446
     invoke-virtual {p1, v0}, Lcom/coremedia/iso/boxes/TimeToSampleBox;->setEntries(Ljava/util/List;)V
 
-    .line 436
+    .line 447
     invoke-virtual {p2, p1}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
     return-void
@@ -1006,42 +1017,42 @@
 .method protected createTrackBox(Lorg/telegram/messenger/video/Track;Lorg/telegram/messenger/video/Mp4Movie;)Lcom/coremedia/iso/boxes/TrackBox;
     .locals 8
 
-    .line 325
+    .line 336
     new-instance v0, Lcom/coremedia/iso/boxes/TrackBox;
 
     invoke-direct {v0}, Lcom/coremedia/iso/boxes/TrackBox;-><init>()V
 
-    .line 326
+    .line 337
     new-instance v1, Lcom/coremedia/iso/boxes/TrackHeaderBox;
 
     invoke-direct {v1}, Lcom/coremedia/iso/boxes/TrackHeaderBox;-><init>()V
 
     const/4 v2, 0x1
 
-    .line 328
+    .line 339
     invoke-virtual {v1, v2}, Lcom/coremedia/iso/boxes/TrackHeaderBox;->setEnabled(Z)V
 
-    .line 329
+    .line 340
     invoke-virtual {v1, v2}, Lcom/coremedia/iso/boxes/TrackHeaderBox;->setInMovie(Z)V
 
-    .line 330
+    .line 341
     invoke-virtual {v1, v2}, Lcom/coremedia/iso/boxes/TrackHeaderBox;->setInPreview(Z)V
 
-    .line 331
+    .line 342
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->isAudio()Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 332
+    .line 343
     sget-object v3, Lcom/googlecode/mp4parser/util/Matrix;->ROTATE_0:Lcom/googlecode/mp4parser/util/Matrix;
 
     invoke-virtual {v1, v3}, Lcom/coremedia/iso/boxes/TrackHeaderBox;->setMatrix(Lcom/googlecode/mp4parser/util/Matrix;)V
 
     goto :goto_0
 
-    .line 334
+    .line 345
     :cond_0
     invoke-virtual {p2}, Lorg/telegram/messenger/video/Mp4Movie;->getMatrix()Lcom/googlecode/mp4parser/util/Matrix;
 
@@ -1052,17 +1063,17 @@
     :goto_0
     const/4 v3, 0x0
 
-    .line 336
+    .line 347
     invoke-virtual {v1, v3}, Lcom/coremedia/iso/boxes/TrackHeaderBox;->setAlternateGroup(I)V
 
-    .line 337
+    .line 348
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getCreationTime()Ljava/util/Date;
 
     move-result-object v4
 
     invoke-virtual {v1, v4}, Lcom/coremedia/iso/boxes/TrackHeaderBox;->setCreationTime(Ljava/util/Date;)V
 
-    .line 338
+    .line 349
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getDuration()J
 
     move-result-wide v4
@@ -1083,7 +1094,7 @@
 
     invoke-virtual {v1, v4, v5}, Lcom/coremedia/iso/boxes/TrackHeaderBox;->setDuration(J)V
 
-    .line 339
+    .line 350
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getHeight()I
 
     move-result p2
@@ -1092,7 +1103,7 @@
 
     invoke-virtual {v1, v4, v5}, Lcom/coremedia/iso/boxes/TrackHeaderBox;->setHeight(D)V
 
-    .line 340
+    .line 351
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getWidth()I
 
     move-result p2
@@ -1101,17 +1112,17 @@
 
     invoke-virtual {v1, v4, v5}, Lcom/coremedia/iso/boxes/TrackHeaderBox;->setWidth(D)V
 
-    .line 341
+    .line 352
     invoke-virtual {v1, v3}, Lcom/coremedia/iso/boxes/TrackHeaderBox;->setLayer(I)V
 
-    .line 342
+    .line 353
     new-instance p2, Ljava/util/Date;
 
     invoke-direct {p2}, Ljava/util/Date;-><init>()V
 
     invoke-virtual {v1, p2}, Lcom/coremedia/iso/boxes/TrackHeaderBox;->setModificationTime(Ljava/util/Date;)V
 
-    .line 343
+    .line 354
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getTrackId()J
 
     move-result-wide v3
@@ -1122,44 +1133,44 @@
 
     invoke-virtual {v1, v3, v4}, Lcom/coremedia/iso/boxes/TrackHeaderBox;->setTrackId(J)V
 
-    .line 344
+    .line 355
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getVolume()F
 
     move-result p2
 
     invoke-virtual {v1, p2}, Lcom/coremedia/iso/boxes/TrackHeaderBox;->setVolume(F)V
 
-    .line 346
+    .line 357
     invoke-virtual {v0, v1}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
-    .line 348
+    .line 359
     new-instance p2, Lcom/coremedia/iso/boxes/MediaBox;
 
     invoke-direct {p2}, Lcom/coremedia/iso/boxes/MediaBox;-><init>()V
 
-    .line 349
+    .line 360
     invoke-virtual {v0, p2}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
-    .line 350
+    .line 361
     new-instance v1, Lcom/coremedia/iso/boxes/MediaHeaderBox;
 
     invoke-direct {v1}, Lcom/coremedia/iso/boxes/MediaHeaderBox;-><init>()V
 
-    .line 351
+    .line 362
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getCreationTime()Ljava/util/Date;
 
     move-result-object v3
 
     invoke-virtual {v1, v3}, Lcom/coremedia/iso/boxes/MediaHeaderBox;->setCreationTime(Ljava/util/Date;)V
 
-    .line 352
+    .line 363
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getDuration()J
 
     move-result-wide v3
 
     invoke-virtual {v1, v3, v4}, Lcom/coremedia/iso/boxes/MediaHeaderBox;->setDuration(J)V
 
-    .line 353
+    .line 364
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getTimeScale()I
 
     move-result v3
@@ -1170,18 +1181,18 @@
 
     const-string v3, "eng"
 
-    .line 354
+    .line 365
     invoke-virtual {v1, v3}, Lcom/coremedia/iso/boxes/MediaHeaderBox;->setLanguage(Ljava/lang/String;)V
 
-    .line 355
+    .line 366
     invoke-virtual {p2, v1}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
-    .line 356
+    .line 367
     new-instance v1, Lcom/coremedia/iso/boxes/HandlerBox;
 
     invoke-direct {v1}, Lcom/coremedia/iso/boxes/HandlerBox;-><init>()V
 
-    .line 357
+    .line 368
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->isAudio()Z
 
     move-result v3
@@ -1198,64 +1209,64 @@
     :goto_1
     invoke-virtual {v1, v3}, Lcom/coremedia/iso/boxes/HandlerBox;->setName(Ljava/lang/String;)V
 
-    .line 358
+    .line 369
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getHandler()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v1, v3}, Lcom/coremedia/iso/boxes/HandlerBox;->setHandlerType(Ljava/lang/String;)V
 
-    .line 360
+    .line 371
     invoke-virtual {p2, v1}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
-    .line 362
+    .line 373
     new-instance v1, Lcom/coremedia/iso/boxes/MediaInformationBox;
 
     invoke-direct {v1}, Lcom/coremedia/iso/boxes/MediaInformationBox;-><init>()V
 
-    .line 363
+    .line 374
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Track;->getMediaHeaderBox()Lcom/coremedia/iso/boxes/AbstractMediaHeaderBox;
 
     move-result-object v3
 
     invoke-virtual {v1, v3}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
-    .line 365
+    .line 376
     new-instance v3, Lcom/coremedia/iso/boxes/DataInformationBox;
 
     invoke-direct {v3}, Lcom/coremedia/iso/boxes/DataInformationBox;-><init>()V
 
-    .line 366
+    .line 377
     new-instance v4, Lcom/coremedia/iso/boxes/DataReferenceBox;
 
     invoke-direct {v4}, Lcom/coremedia/iso/boxes/DataReferenceBox;-><init>()V
 
-    .line 367
+    .line 378
     invoke-virtual {v3, v4}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
-    .line 368
+    .line 379
     new-instance v5, Lcom/coremedia/iso/boxes/DataEntryUrlBox;
 
     invoke-direct {v5}, Lcom/coremedia/iso/boxes/DataEntryUrlBox;-><init>()V
 
-    .line 369
+    .line 380
     invoke-virtual {v5, v2}, Lcom/googlecode/mp4parser/AbstractFullBox;->setFlags(I)V
 
-    .line 370
+    .line 381
     invoke-virtual {v4, v5}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
-    .line 371
+    .line 382
     invoke-virtual {v1, v3}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
-    .line 373
+    .line 384
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/video/MP4Builder;->createStbl(Lorg/telegram/messenger/video/Track;)Lcom/coremedia/iso/boxes/Box;
 
     move-result-object p1
 
-    .line 374
+    .line 385
     invoke-virtual {v1, p1}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
-    .line 375
+    .line 386
     invoke-virtual {p2, v1}, Lcom/googlecode/mp4parser/BasicContainer;->addBox(Lcom/coremedia/iso/boxes/Box;)V
 
     return-object v0
@@ -1269,7 +1280,7 @@
         }
     .end annotation
 
-    .line 181
+    .line 186
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->mdat:Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->getContentSize()J
@@ -1282,10 +1293,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 182
+    .line 187
     invoke-direct {p0}, Lorg/telegram/messenger/video/MP4Builder;->flushCurrentMdat()V
 
-    .line 185
+    .line 190
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->currentMp4Movie:Lorg/telegram/messenger/video/Mp4Movie;
 
@@ -1310,12 +1321,12 @@
 
     check-cast v1, Lorg/telegram/messenger/video/Track;
 
-    .line 186
+    .line 191
     invoke-virtual {v1}, Lorg/telegram/messenger/video/Track;->getSamples()Ljava/util/ArrayList;
 
     move-result-object v2
 
-    .line 187
+    .line 192
     invoke-interface {v2}, Ljava/util/List;->size()I
 
     move-result v3
@@ -1327,7 +1338,7 @@
     :goto_1
     if-ge v5, v3, :cond_1
 
-    .line 189
+    .line 194
     invoke-interface {v2, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -1344,7 +1355,7 @@
 
     goto :goto_1
 
-    .line 191
+    .line 196
     :cond_1
     iget-object v2, p0, Lorg/telegram/messenger/video/MP4Builder;->track2SampleSizes:Ljava/util/HashMap;
 
@@ -1352,7 +1363,7 @@
 
     goto :goto_0
 
-    .line 194
+    .line 199
     :cond_2
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->currentMp4Movie:Lorg/telegram/messenger/video/Mp4Movie;
 
@@ -1360,17 +1371,22 @@
 
     move-result-object v0
 
-    .line 195
+    .line 200
     iget-object v1, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
     invoke-interface {v0, v1}, Lcom/coremedia/iso/boxes/Box;->getBox(Ljava/nio/channels/WritableByteChannel;)V
 
-    .line 196
+    .line 201
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->fos:Ljava/io/FileOutputStream;
 
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->flush()V
 
-    .line 197
+    .line 202
+    iget-boolean v0, p0, Lorg/telegram/messenger/video/MP4Builder;->allowSyncFiles:Z
+
+    if-eqz v0, :cond_3
+
+    .line 203
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->fos:Ljava/io/FileOutputStream;
 
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->getFD()Ljava/io/FileDescriptor;
@@ -1379,12 +1395,13 @@
 
     invoke-virtual {v0}, Ljava/io/FileDescriptor;->sync()V
 
-    .line 199
+    .line 206
+    :cond_3
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
     invoke-virtual {v0}, Ljava/nio/channels/FileChannel;->close()V
 
-    .line 200
+    .line 207
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->fos:Ljava/io/FileOutputStream;
 
     invoke-virtual {v0}, Ljava/io/FileOutputStream;->close()V
@@ -1395,7 +1412,7 @@
 .method public getLastFrameTimestamp(I)J
     .locals 2
 
-    .line 173
+    .line 178
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->currentMp4Movie:Lorg/telegram/messenger/video/Mp4Movie;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/video/Mp4Movie;->getLastFrameTimestamp(I)J
@@ -1408,7 +1425,7 @@
 .method public getTimescale(Lorg/telegram/messenger/video/Mp4Movie;)J
     .locals 4
 
-    .line 286
+    .line 297
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Mp4Movie;->getTracks()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -1419,7 +1436,7 @@
 
     if-nez v0, :cond_0
 
-    .line 287
+    .line 298
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Mp4Movie;->getTracks()Ljava/util/ArrayList;
 
     move-result-object v0
@@ -1445,7 +1462,7 @@
     :cond_0
     const-wide/16 v0, 0x0
 
-    .line 289
+    .line 300
     :goto_0
     invoke-virtual {p1}, Lorg/telegram/messenger/video/Mp4Movie;->getTracks()Ljava/util/ArrayList;
 
@@ -1468,7 +1485,7 @@
 
     check-cast v2, Lorg/telegram/messenger/video/Track;
 
-    .line 290
+    .line 301
     invoke-virtual {v2}, Lorg/telegram/messenger/video/Track;->getTimeScale()I
 
     move-result v2
@@ -1485,6 +1502,15 @@
     return-wide v0
 .end method
 
+.method public setAllowSyncFiles(Z)V
+    .locals 0
+
+    .line 220
+    iput-boolean p1, p0, Lorg/telegram/messenger/video/MP4Builder;->allowSyncFiles:Z
+
+    return-void
+.end method
+
 .method public writeSampleData(ILjava/nio/ByteBuffer;Landroid/media/MediaCodec$BufferInfo;Z)J
     .locals 8
     .annotation system Ldalvik/annotation/Throws;
@@ -1493,7 +1519,7 @@
         }
     .end annotation
 
-    .line 97
+    .line 100
     iget-boolean v0, p0, Lorg/telegram/messenger/video/MP4Builder;->writeNewMdat:Z
 
     const-wide/16 v1, 0x0
@@ -1502,26 +1528,26 @@
 
     if-eqz v0, :cond_0
 
-    .line 98
+    .line 101
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->mdat:Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->setContentSize(J)V
 
-    .line 99
+    .line 102
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->mdat:Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;
 
     iget-object v4, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
     invoke-virtual {v0, v4}, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->getBox(Ljava/nio/channels/WritableByteChannel;)V
 
-    .line 100
+    .line 103
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->mdat:Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;
 
     iget-wide v4, p0, Lorg/telegram/messenger/video/MP4Builder;->dataOffset:J
 
     invoke-virtual {v0, v4, v5}, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->setDataOffset(J)V
 
-    .line 101
+    .line 104
     iget-wide v4, p0, Lorg/telegram/messenger/video/MP4Builder;->dataOffset:J
 
     const-wide/16 v6, 0x10
@@ -1530,17 +1556,17 @@
 
     iput-wide v4, p0, Lorg/telegram/messenger/video/MP4Builder;->dataOffset:J
 
-    .line 102
+    .line 105
     iget-wide v4, p0, Lorg/telegram/messenger/video/MP4Builder;->wroteSinceLastMdat:J
 
     add-long/2addr v4, v6
 
     iput-wide v4, p0, Lorg/telegram/messenger/video/MP4Builder;->wroteSinceLastMdat:J
 
-    .line 103
+    .line 106
     iput-boolean v3, p0, Lorg/telegram/messenger/video/MP4Builder;->writeNewMdat:Z
 
-    .line 134
+    .line 137
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->mdat:Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;
 
@@ -1556,7 +1582,7 @@
 
     invoke-virtual {v0, v4, v5}, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->setContentSize(J)V
 
-    .line 135
+    .line 138
     iget-wide v4, p0, Lorg/telegram/messenger/video/MP4Builder;->wroteSinceLastMdat:J
 
     iget v0, p3, Landroid/media/MediaCodec$BufferInfo;->size:I
@@ -1575,18 +1601,18 @@
 
     if-ltz v0, :cond_2
 
-    .line 139
+    .line 142
     iget-boolean v0, p0, Lorg/telegram/messenger/video/MP4Builder;->splitMdat:Z
 
     if-eqz v0, :cond_1
 
-    .line 140
+    .line 143
     invoke-direct {p0}, Lorg/telegram/messenger/video/MP4Builder;->flushCurrentMdat()V
 
-    .line 141
+    .line 144
     iput-boolean v4, p0, Lorg/telegram/messenger/video/MP4Builder;->writeNewMdat:Z
 
-    .line 144
+    .line 147
     :cond_1
     iput-wide v1, p0, Lorg/telegram/messenger/video/MP4Builder;->wroteSinceLastMdat:J
 
@@ -1595,7 +1621,7 @@
     :cond_2
     move v4, v3
 
-    .line 147
+    .line 150
     :goto_0
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder;->currentMp4Movie:Lorg/telegram/messenger/video/Mp4Movie;
 
@@ -1605,12 +1631,12 @@
 
     if-eqz p4, :cond_3
 
-    .line 150
+    .line 153
     iget-object p1, p0, Lorg/telegram/messenger/video/MP4Builder;->sizeBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1, v3}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 151
+    .line 154
     iget-object p1, p0, Lorg/telegram/messenger/video/MP4Builder;->sizeBuffer:Ljava/nio/ByteBuffer;
 
     iget p4, p3, Landroid/media/MediaCodec$BufferInfo;->size:I
@@ -1619,19 +1645,19 @@
 
     invoke-virtual {p1, p4}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
 
-    .line 152
+    .line 155
     iget-object p1, p0, Lorg/telegram/messenger/video/MP4Builder;->sizeBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1, v3}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 153
+    .line 156
     iget-object p1, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
     iget-object p4, p0, Lorg/telegram/messenger/video/MP4Builder;->sizeBuffer:Ljava/nio/ByteBuffer;
 
     invoke-virtual {p1, p4}, Ljava/nio/channels/FileChannel;->write(Ljava/nio/ByteBuffer;)I
 
-    .line 155
+    .line 158
     iget p1, p3, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
     add-int/lit8 p1, p1, 0x4
@@ -1640,13 +1666,13 @@
 
     goto :goto_1
 
-    .line 157
+    .line 160
     :cond_3
     iget p1, p3, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
     invoke-virtual {p2, p1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 159
+    .line 162
     :goto_1
     iget p1, p3, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
@@ -1656,12 +1682,12 @@
 
     invoke-virtual {p2, p1}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    .line 160
+    .line 163
     iget-object p1, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
     invoke-virtual {p1, p2}, Ljava/nio/channels/FileChannel;->write(Ljava/nio/ByteBuffer;)I
 
-    .line 162
+    .line 165
     iget-wide p1, p0, Lorg/telegram/messenger/video/MP4Builder;->dataOffset:J
 
     iget p3, p3, Landroid/media/MediaCodec$BufferInfo;->size:I
@@ -1672,14 +1698,19 @@
 
     iput-wide p1, p0, Lorg/telegram/messenger/video/MP4Builder;->dataOffset:J
 
-    if-eqz v4, :cond_4
+    if-eqz v4, :cond_5
 
-    .line 165
+    .line 168
     iget-object p1, p0, Lorg/telegram/messenger/video/MP4Builder;->fos:Ljava/io/FileOutputStream;
 
     invoke-virtual {p1}, Ljava/io/FileOutputStream;->flush()V
 
-    .line 166
+    .line 169
+    iget-boolean p1, p0, Lorg/telegram/messenger/video/MP4Builder;->allowSyncFiles:Z
+
+    if-eqz p1, :cond_4
+
+    .line 170
     iget-object p1, p0, Lorg/telegram/messenger/video/MP4Builder;->fos:Ljava/io/FileOutputStream;
 
     invoke-virtual {p1}, Ljava/io/FileOutputStream;->getFD()Ljava/io/FileDescriptor;
@@ -1688,7 +1719,8 @@
 
     invoke-virtual {p1}, Ljava/io/FileDescriptor;->sync()V
 
-    .line 167
+    .line 172
+    :cond_4
     iget-object p1, p0, Lorg/telegram/messenger/video/MP4Builder;->fc:Ljava/nio/channels/FileChannel;
 
     invoke-virtual {p1}, Ljava/nio/channels/FileChannel;->position()J
@@ -1697,6 +1729,6 @@
 
     return-wide p1
 
-    :cond_4
+    :cond_5
     return-wide v1
 .end method

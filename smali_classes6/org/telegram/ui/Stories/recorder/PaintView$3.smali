@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Landroid/content/Context;Lorg/telegram/ui/Components/Paint/Painting;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Lorg/telegram/ui/Components/BlurringShader$BlurManager;Landroid/graphics/Bitmap;)V
     .locals 6
 
-    .line 387
+    .line 386
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$3;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput-object p7, p0, Lorg/telegram/ui/Stories/recorder/PaintView$3;->val$originalBitmap:Landroid/graphics/Bitmap;
@@ -51,7 +51,7 @@
 .method public selectBrush(Lorg/telegram/ui/Components/Paint/Brush;)V
     .locals 2
 
-    .line 390
+    .line 389
     sget-object v0, Lorg/telegram/ui/Components/Paint/Brush;->BRUSHES_LIST:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
@@ -64,14 +64,14 @@
 
     if-le v0, v1, :cond_0
 
-    .line 391
+    .line 390
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$3;->val$originalBitmap:Landroid/graphics/Bitmap;
 
     if-nez v1, :cond_0
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 394
+    .line 393
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$3;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -81,7 +81,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/Paint/Views/PaintToolsView;->select(I)V
 
-    .line 395
+    .line 394
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$3;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->onBrushSelected(Lorg/telegram/ui/Components/Paint/Brush;)V

@@ -84,13 +84,13 @@ public final class CampaignItem extends NoChildNode {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((((this.category.hashCode() * 31) + this.description.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.f282id)) * 31;
+        int hashCode = ((((this.category.hashCode() * 31) + this.description.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.f282id)) * 31;
         boolean z = this.isVerified;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return ((((((((((((hashCode + i) * 31) + this.language.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.membersCount)) * 31) + this.photo.hashCode()) * 31) + this.shortname.hashCode()) * 31) + this.tags.hashCode()) * 31) + this.title.hashCode();
+        return ((((((((((((hashCode + i) * 31) + this.language.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.membersCount)) * 31) + this.photo.hashCode()) * 31) + this.shortname.hashCode()) * 31) + this.tags.hashCode()) * 31) + this.title.hashCode();
     }
 
     public String toString() {

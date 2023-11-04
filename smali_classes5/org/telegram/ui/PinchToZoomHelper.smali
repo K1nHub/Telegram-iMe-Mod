@@ -22,7 +22,9 @@
 
 .field private childImage:Lorg/telegram/messenger/ImageReceiver;
 
-.field private childTextureView:Landroid/view/TextureView;
+.field private childTextureView:Landroid/view/View;
+
+.field private childTextureViewContainer:Landroid/view/View;
 
 .field clipBoundsListener:Lorg/telegram/ui/PinchToZoomHelper$ClipBoundsListener;
 
@@ -119,31 +121,31 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 118
+    .line 119
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 61
-    new-instance v0, Lorg/telegram/messenger/ImageReceiver;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
 
     .line 62
     new-instance v0, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {v0}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
 
+    iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
+
+    .line 63
+    new-instance v0, Lorg/telegram/messenger/ImageReceiver;
+
+    invoke-direct {v0}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
+
     iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 64
+    .line 65
     new-instance v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->mediaSpoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 66
+    .line 67
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
@@ -154,27 +156,27 @@
 
     new-array v0, v0, [F
 
-    .line 67
+    .line 68
     iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->spoilerRadii:[F
 
     const/4 v0, 0x2
 
     new-array v0, v0, [F
 
-    .line 108
+    .line 109
     iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->clipTopBottom:[F
 
     const/4 v0, 0x0
 
-    .line 119
+    .line 120
     iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->parentView:Landroid/view/ViewGroup;
 
-    .line 120
+    .line 121
     iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->fragmentView:Landroid/view/ViewGroup;
 
     const/4 v0, 0x1
 
-    .line 121
+    .line 122
     iput-boolean v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->isSimple:Z
 
     return-void
@@ -183,31 +185,31 @@
 .method public constructor <init>(Landroid/view/ViewGroup;Landroid/view/ViewGroup;)V
     .locals 1
 
-    .line 112
+    .line 113
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 61
-    new-instance v0, Lorg/telegram/messenger/ImageReceiver;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
 
     .line 62
     new-instance v0, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {v0}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
 
+    iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
+
+    .line 63
+    new-instance v0, Lorg/telegram/messenger/ImageReceiver;
+
+    invoke-direct {v0}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
+
     iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 64
+    .line 65
     new-instance v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->mediaSpoilerEffect:Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 66
+    .line 67
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
@@ -218,25 +220,25 @@
 
     new-array v0, v0, [F
 
-    .line 67
+    .line 68
     iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->spoilerRadii:[F
 
     const/4 v0, 0x2
 
     new-array v0, v0, [F
 
-    .line 108
+    .line 109
     iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->clipTopBottom:[F
 
-    .line 113
+    .line 114
     iput-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->parentView:Landroid/view/ViewGroup;
 
-    .line 114
+    .line 115
     iput-object p2, p0, Lorg/telegram/ui/PinchToZoomHelper;->fragmentView:Landroid/view/ViewGroup;
 
     const/4 p1, 0x0
 
-    .line 115
+    .line 116
     iput-boolean p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->isSimple:Z
 
     return-void
@@ -383,16 +385,25 @@
     return p0
 .end method
 
-.method static synthetic access$2300(Lorg/telegram/ui/PinchToZoomHelper;)Landroid/view/TextureView;
+.method static synthetic access$2300(Lorg/telegram/ui/PinchToZoomHelper;)Landroid/view/View;
     .locals 0
 
     .line 50
-    iget-object p0, p0, Lorg/telegram/ui/PinchToZoomHelper;->childTextureView:Landroid/view/TextureView;
+    iget-object p0, p0, Lorg/telegram/ui/PinchToZoomHelper;->childTextureViewContainer:Landroid/view/View;
 
     return-object p0
 .end method
 
-.method static synthetic access$2400(Lorg/telegram/ui/PinchToZoomHelper;)Z
+.method static synthetic access$2400(Lorg/telegram/ui/PinchToZoomHelper;)Landroid/view/View;
+    .locals 0
+
+    .line 50
+    iget-object p0, p0, Lorg/telegram/ui/PinchToZoomHelper;->childTextureView:Landroid/view/View;
+
+    return-object p0
+.end method
+
+.method static synthetic access$2500(Lorg/telegram/ui/PinchToZoomHelper;)Z
     .locals 0
 
     .line 50
@@ -401,7 +412,7 @@
     return p0
 .end method
 
-.method static synthetic access$2500(Lorg/telegram/ui/PinchToZoomHelper;)Lorg/telegram/messenger/ImageReceiver;
+.method static synthetic access$2600(Lorg/telegram/ui/PinchToZoomHelper;)Lorg/telegram/messenger/ImageReceiver;
     .locals 0
 
     .line 50
@@ -410,7 +421,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$2600(Lorg/telegram/ui/PinchToZoomHelper;)[F
+.method static synthetic access$2700(Lorg/telegram/ui/PinchToZoomHelper;)[F
     .locals 0
 
     .line 50
@@ -419,7 +430,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$2700(Lorg/telegram/ui/PinchToZoomHelper;)Landroid/graphics/Path;
+.method static synthetic access$2800(Lorg/telegram/ui/PinchToZoomHelper;)Landroid/graphics/Path;
     .locals 0
 
     .line 50
@@ -428,7 +439,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$2800(Lorg/telegram/ui/PinchToZoomHelper;)Lorg/telegram/ui/Components/spoilers/SpoilerEffect2;
+.method static synthetic access$2900(Lorg/telegram/ui/PinchToZoomHelper;)Lorg/telegram/ui/Components/spoilers/SpoilerEffect2;
     .locals 0
 
     .line 50
@@ -437,7 +448,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$2900(Lorg/telegram/ui/PinchToZoomHelper;)Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
+.method static synthetic access$3000(Lorg/telegram/ui/PinchToZoomHelper;)Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
     .locals 0
 
     .line 50
@@ -446,7 +457,7 @@
     return-object p0
 .end method
 
-.method static synthetic access$3000(Lorg/telegram/ui/PinchToZoomHelper;)Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
+.method static synthetic access$3100(Lorg/telegram/ui/PinchToZoomHelper;)Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
     .locals 0
 
     .line 50
@@ -516,7 +527,7 @@
 .method private checkPointerIds(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 813
+    .line 833
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v0
@@ -529,7 +540,7 @@
 
     return v1
 
-    .line 816
+    .line 836
     :cond_0
     iget v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->pointerId1:I
 
@@ -551,7 +562,7 @@
 
     return v3
 
-    .line 819
+    .line 839
     :cond_1
     iget v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->pointerId1:I
 
@@ -578,34 +589,34 @@
 .method private getFancyBlurFilter()Landroid/graphics/ColorMatrixColorFilter;
     .locals 2
 
-    .line 849
+    .line 869
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->fancyBlurFilter:Landroid/graphics/ColorMatrixColorFilter;
 
     if-nez v0, :cond_0
 
-    .line 850
+    .line 870
     new-instance v0, Landroid/graphics/ColorMatrix;
 
     invoke-direct {v0}, Landroid/graphics/ColorMatrix;-><init>()V
 
     const v1, 0x3f666666    # 0.9f
 
-    .line 851
+    .line 871
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->multiplyBrightnessColorMatrix(Landroid/graphics/ColorMatrix;F)V
 
     const v1, 0x3f19999a    # 0.6f
 
-    .line 852
+    .line 872
     invoke-static {v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->adjustSaturationColorMatrix(Landroid/graphics/ColorMatrix;F)V
 
-    .line 853
+    .line 873
     new-instance v1, Landroid/graphics/ColorMatrixColorFilter;
 
     invoke-direct {v1, v0}, Landroid/graphics/ColorMatrixColorFilter;-><init>(Landroid/graphics/ColorMatrix;)V
 
     iput-object v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->fancyBlurFilter:Landroid/graphics/ColorMatrixColorFilter;
 
-    .line 855
+    .line 875
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->fancyBlurFilter:Landroid/graphics/ColorMatrixColorFilter;
 
@@ -615,7 +626,7 @@
 .method private getImageLocation(Lorg/telegram/messenger/MessageObject;[I)Lorg/telegram/messenger/ImageLocation;
     .locals 6
 
-    .line 666
+    .line 686
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messageService;
@@ -628,7 +639,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 667
+    .line 687
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
 
     instance-of v0, v0, Lorg/telegram/tgnet/TLRPC$TL_messageActionUserUpdatedPhoto;
@@ -637,7 +648,7 @@
 
     return-object v2
 
-    .line 670
+    .line 690
     :cond_0
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->photoThumbs:Ljava/util/ArrayList;
 
@@ -653,20 +664,20 @@
 
     if-eqz p2, :cond_1
 
-    .line 673
+    .line 693
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
 
     aput v1, p2, v4
 
-    .line 674
+    .line 694
     aget v1, p2, v4
 
     if-nez v1, :cond_1
 
-    .line 675
+    .line 695
     aput v3, p2, v4
 
-    .line 678
+    .line 698
     :cond_1
     iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->photoThumbsObject:Lorg/telegram/tgnet/TLObject;
 
@@ -679,12 +690,12 @@
     :cond_2
     if-eqz p2, :cond_c
 
-    .line 680
+    .line 700
     aput v3, p2, v4
 
     goto/16 :goto_0
 
-    .line 683
+    .line 703
     :cond_3
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
@@ -705,7 +716,7 @@
 
     if-eqz v1, :cond_9
 
-    .line 684
+    .line 704
     :cond_5
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isGif()Z
 
@@ -713,7 +724,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 685
+    .line 705
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object p1
@@ -724,7 +735,7 @@
 
     return-object p1
 
-    .line 687
+    .line 707
     :cond_6
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->photoThumbs:Ljava/util/ArrayList;
 
@@ -742,20 +753,20 @@
 
     if-eqz p2, :cond_7
 
-    .line 690
+    .line 710
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
 
     aput v1, p2, v4
 
-    .line 691
+    .line 711
     aget v1, p2, v4
 
     if-nez v1, :cond_7
 
-    .line 692
+    .line 712
     aput v3, p2, v4
 
-    .line 695
+    .line 715
     :cond_7
     iget-object p1, p1, Lorg/telegram/messenger/MessageObject;->photoThumbsObject:Lorg/telegram/tgnet/TLObject;
 
@@ -768,18 +779,18 @@
     :cond_8
     if-eqz p2, :cond_c
 
-    .line 697
+    .line 717
     aput v3, p2, v4
 
     goto :goto_0
 
-    .line 700
+    .line 720
     :cond_9
     instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaInvoice;
 
     if-eqz v1, :cond_a
 
-    .line 701
+    .line 721
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaInvoice;
 
     iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$TL_messageMediaInvoice;->webPhoto:Lorg/telegram/tgnet/TLRPC$WebDocument;
@@ -794,7 +805,7 @@
 
     return-object p1
 
-    .line 702
+    .line 722
     :cond_a
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
 
@@ -802,12 +813,12 @@
 
     if-eqz v0, :cond_c
 
-    .line 703
+    .line 723
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object v0
 
-    .line 704
+    .line 724
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getDocument()Lorg/telegram/tgnet/TLRPC$Document;
 
     move-result-object p1
@@ -818,7 +829,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 705
+    .line 725
     iget-object p1, v0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
     const/16 v1, 0x5a
@@ -829,20 +840,20 @@
 
     if-eqz p2, :cond_b
 
-    .line 707
+    .line 727
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
 
     aput v1, p2, v4
 
-    .line 708
+    .line 728
     aget v1, p2, v4
 
     if-nez v1, :cond_b
 
-    .line 709
+    .line 729
     aput v3, p2, v4
 
-    .line 712
+    .line 732
     :cond_b
     invoke-static {p1, v0}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$PhotoSize;Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
 
@@ -858,7 +869,7 @@
 .method private synthetic lambda$finishZoom$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 309
+    .line 317
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -871,7 +882,7 @@
 
     iput p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->finishProgress:F
 
-    .line 310
+    .line 318
     invoke-virtual {p0}, Lorg/telegram/ui/PinchToZoomHelper;->invalidateViews()V
 
     return-void
@@ -884,7 +895,7 @@
 
     return-void
 
-    .line 247
+    .line 251
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isPhoto()Z
 
@@ -899,14 +910,14 @@
 
     new-array v1, v0, [I
 
-    .line 251
+    .line 255
     invoke-direct {p0, p1, v1}, Lorg/telegram/ui/PinchToZoomHelper;->getImageLocation(Lorg/telegram/messenger/MessageObject;[I)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v3
 
     if-eqz v3, :cond_3
 
-    .line 253
+    .line 257
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isWebpage()Z
 
     move-result v2
@@ -925,7 +936,7 @@
     :goto_0
     const/4 v0, 0x0
 
-    .line 258
+    .line 262
     iget-object v2, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v5, 0x0
@@ -946,14 +957,14 @@
 
     invoke-virtual/range {v2 .. v12}, Lorg/telegram/messenger/ImageReceiver;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;JLjava/lang/String;Ljava/lang/Object;I)V
 
-    .line 259
+    .line 263
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
 
     const/4 v0, 0x2
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setCrossfadeAlpha(B)V
 
-    .line 262
+    .line 266
     :cond_3
     invoke-direct {p0}, Lorg/telegram/ui/PinchToZoomHelper;->updateViewsLocation()Z
 
@@ -963,7 +974,7 @@
 .method private updateViewsLocation()Z
     .locals 7
 
-    .line 268
+    .line 272
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->child:Landroid/view/View;
 
     const/4 v1, 0x0
@@ -972,7 +983,7 @@
 
     move v3, v2
 
-    .line 269
+    .line 273
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/PinchToZoomHelper;->parentView:Landroid/view/ViewGroup;
 
@@ -984,7 +995,7 @@
 
     return v5
 
-    .line 273
+    .line 277
     :cond_0
     invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
@@ -994,7 +1005,7 @@
 
     add-float/2addr v2, v4
 
-    .line 274
+    .line 278
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
     move-result v4
@@ -1003,7 +1014,16 @@
 
     add-float/2addr v3, v4
 
-    .line 275
+    .line 279
+    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v4
+
+    instance-of v4, v4, Landroid/view/View;
+
+    if-eqz v4, :cond_1
+
+    .line 280
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -1012,13 +1032,13 @@
 
     goto :goto_0
 
-    .line 280
+    .line 288
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->child:Landroid/view/View;
 
     move v4, v1
 
-    .line 281
+    .line 289
     :goto_1
     iget-object v6, p0, Lorg/telegram/ui/PinchToZoomHelper;->fragmentView:Landroid/view/ViewGroup;
 
@@ -1028,7 +1048,7 @@
 
     return v5
 
-    .line 285
+    .line 293
     :cond_2
     invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
@@ -1038,7 +1058,7 @@
 
     add-float/2addr v1, v6
 
-    .line 286
+    .line 294
     invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
     move-result v6
@@ -1047,7 +1067,7 @@
 
     add-float/2addr v4, v6
 
-    .line 287
+    .line 295
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -1056,17 +1076,17 @@
 
     goto :goto_1
 
-    .line 290
+    .line 298
     :cond_3
     iput v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->fragmentOffsetX:F
 
-    .line 291
+    .line 299
     iput v4, p0, Lorg/telegram/ui/PinchToZoomHelper;->fragmentOffsetY:F
 
-    .line 293
+    .line 301
     iput v2, p0, Lorg/telegram/ui/PinchToZoomHelper;->parentOffsetX:F
 
-    .line 294
+    .line 302
     iput v3, p0, Lorg/telegram/ui/PinchToZoomHelper;->parentOffsetY:F
 
     const/4 v0, 0x1
@@ -1079,15 +1099,15 @@
 .method public applyTransform(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 835
+    .line 855
     iget-boolean v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->inOverlayMode:Z
 
     if-eqz v0, :cond_0
 
-    .line 836
+    .line 856
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 837
+    .line 857
     iget v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->pinchScale:F
 
     iget v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->finishProgress:F
@@ -1100,7 +1120,7 @@
 
     sub-float/2addr v0, v1
 
-    .line 838
+    .line 858
     iget v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->parentOffsetX:F
 
     iget v2, p0, Lorg/telegram/ui/PinchToZoomHelper;->pinchCenterX:F
@@ -1115,7 +1135,7 @@
 
     invoke-virtual {p1, v0, v0, v1, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 839
+    .line 859
     iget v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->parentOffsetX:F
 
     iget v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->pinchTranslationX:F
@@ -1140,10 +1160,10 @@
     return-void
 .end method
 
-.method public checkPinchToZoom(Landroid/view/MotionEvent;Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Landroid/view/TextureView;Lorg/telegram/messenger/MessageObject;)Z
-    .locals 7
+.method public checkPinchToZoom(Landroid/view/MotionEvent;Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Landroid/view/View;Landroid/view/View;Lorg/telegram/messenger/MessageObject;)Z
+    .locals 8
 
-    const/4 v6, 0x0
+    const/4 v7, 0x0
 
     move-object v0, p0
 
@@ -1157,27 +1177,29 @@
 
     move-object v5, p5
 
-    .line 744
-    invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/PinchToZoomHelper;->checkPinchToZoom(Landroid/view/MotionEvent;Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Landroid/view/TextureView;Lorg/telegram/messenger/MessageObject;I)Z
+    move-object v6, p6
+
+    .line 764
+    invoke-virtual/range {v0 .. v7}, Lorg/telegram/ui/PinchToZoomHelper;->checkPinchToZoom(Landroid/view/MotionEvent;Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Landroid/view/View;Landroid/view/View;Lorg/telegram/messenger/MessageObject;I)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public checkPinchToZoom(Landroid/view/MotionEvent;Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Landroid/view/TextureView;Lorg/telegram/messenger/MessageObject;I)Z
-    .locals 14
+.method public checkPinchToZoom(Landroid/view/MotionEvent;Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Landroid/view/View;Landroid/view/View;Lorg/telegram/messenger/MessageObject;I)Z
+    .locals 15
 
-    move-object v6, p0
+    move-object v7, p0
 
-    move-object v7, p1
+    move-object/from16 v8, p1
 
-    move-object/from16 v8, p2
+    move-object/from16 v9, p2
 
     move-object/from16 v2, p3
 
-    .line 748
-    invoke-virtual {p0, v8, v2}, Lorg/telegram/ui/PinchToZoomHelper;->zoomEnabled(Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;)Z
+    .line 768
+    invoke-virtual {p0, v9, v2}, Lorg/telegram/ui/PinchToZoomHelper;->zoomEnabled(Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;)Z
 
     move-result v0
 
@@ -1187,9 +1209,9 @@
 
     return v1
 
-    .line 751
+    .line 771
     :cond_0
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
@@ -1197,72 +1219,72 @@
 
     const/4 v4, 0x2
 
-    const/high16 v9, 0x40000000    # 2.0f
+    const/high16 v10, 0x40000000    # 2.0f
 
     const/4 v5, 0x1
 
     if-eqz v0, :cond_c
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
-    const/4 v10, 0x5
+    const/4 v6, 0x5
 
-    if-ne v0, v10, :cond_1
+    if-ne v0, v6, :cond_1
 
     goto/16 :goto_2
 
-    .line 762
+    .line 782
     :cond_1
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     if-ne v0, v4, :cond_8
 
-    iget-boolean v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->isInPinchToZoomTouchMode:Z
+    iget-boolean v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->isInPinchToZoomTouchMode:Z
 
     if-eqz v0, :cond_8
 
     const/4 v0, -0x1
 
-    move v10, v0
+    move v11, v0
 
-    move v11, v10
+    move v12, v11
 
     move v4, v1
 
-    .line 765
+    .line 785
     :goto_0
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
-    move-result v12
+    move-result v6
 
-    if-ge v4, v12, :cond_4
+    if-ge v4, v6, :cond_4
 
-    .line 766
-    iget v12, v6, Lorg/telegram/ui/PinchToZoomHelper;->pointerId1:I
+    .line 786
+    iget v6, v7, Lorg/telegram/ui/PinchToZoomHelper;->pointerId1:I
 
-    invoke-virtual {p1, v4}, Landroid/view/MotionEvent;->getPointerId(I)I
-
-    move-result v13
-
-    if-ne v12, v13, :cond_2
-
-    move v10, v4
-
-    .line 769
-    :cond_2
-    iget v12, v6, Lorg/telegram/ui/PinchToZoomHelper;->pointerId2:I
-
-    invoke-virtual {p1, v4}, Landroid/view/MotionEvent;->getPointerId(I)I
+    invoke-virtual {v8, v4}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v13
 
-    if-ne v12, v13, :cond_3
+    if-ne v6, v13, :cond_2
 
     move v11, v4
+
+    .line 789
+    :cond_2
+    iget v6, v7, Lorg/telegram/ui/PinchToZoomHelper;->pointerId2:I
+
+    invoke-virtual {v8, v4}, Landroid/view/MotionEvent;->getPointerId(I)I
+
+    move-result v13
+
+    if-ne v6, v13, :cond_3
+
+    move v12, v4
 
     :cond_3
     add-int/lit8 v4, v4, 0x1
@@ -1270,19 +1292,19 @@
     goto :goto_0
 
     :cond_4
-    if-eq v10, v0, :cond_7
+    if-eq v11, v0, :cond_7
 
-    if-ne v11, v0, :cond_5
+    if-ne v12, v0, :cond_5
 
     goto/16 :goto_1
 
-    .line 779
+    .line 799
     :cond_5
-    invoke-virtual {p1, v11}, Landroid/view/MotionEvent;->getX(I)F
+    invoke-virtual {v8, v12}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v0
 
-    invoke-virtual {p1, v10}, Landroid/view/MotionEvent;->getX(I)F
+    invoke-virtual {v8, v11}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v1
 
@@ -1290,29 +1312,29 @@
 
     float-to-double v0, v0
 
-    invoke-virtual {p1, v11}, Landroid/view/MotionEvent;->getY(I)F
+    invoke-virtual {v8, v12}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v4
 
-    invoke-virtual {p1, v10}, Landroid/view/MotionEvent;->getY(I)F
+    invoke-virtual {v8, v11}, Landroid/view/MotionEvent;->getY(I)F
 
-    move-result v12
+    move-result v6
 
-    sub-float/2addr v4, v12
+    sub-float/2addr v4, v6
 
-    float-to-double v12, v4
+    float-to-double v13, v4
 
-    invoke-static {v0, v1, v12, v13}, Ljava/lang/Math;->hypot(DD)D
+    invoke-static {v0, v1, v13, v14}, Ljava/lang/Math;->hypot(DD)D
 
     move-result-wide v0
 
     double-to-float v0, v0
 
-    iget v1, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartDistance:F
+    iget v1, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartDistance:F
 
     div-float/2addr v0, v1
 
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchScale:F
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchScale:F
 
     const v1, 0x3f80a3d7    # 1.005f
 
@@ -1320,19 +1342,19 @@
 
     if-lez v0, :cond_6
 
-    .line 780
+    .line 800
     invoke-virtual {p0}, Lorg/telegram/ui/PinchToZoomHelper;->isInOverlayMode()Z
 
     move-result v0
 
     if-nez v0, :cond_6
 
-    .line 781
-    invoke-virtual {p1, v11}, Landroid/view/MotionEvent;->getX(I)F
+    .line 801
+    invoke-virtual {v8, v12}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v0
 
-    invoke-virtual {p1, v10}, Landroid/view/MotionEvent;->getX(I)F
+    invoke-virtual {v8, v11}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v1
 
@@ -1340,72 +1362,72 @@
 
     float-to-double v0, v0
 
-    invoke-virtual {p1, v11}, Landroid/view/MotionEvent;->getY(I)F
+    invoke-virtual {v8, v12}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v4
 
-    invoke-virtual {p1, v10}, Landroid/view/MotionEvent;->getY(I)F
+    invoke-virtual {v8, v11}, Landroid/view/MotionEvent;->getY(I)F
 
-    move-result v12
+    move-result v6
 
-    sub-float/2addr v4, v12
+    sub-float/2addr v4, v6
 
-    float-to-double v12, v4
+    float-to-double v13, v4
 
-    invoke-static {v0, v1, v12, v13}, Ljava/lang/Math;->hypot(DD)D
+    invoke-static {v0, v1, v13, v14}, Ljava/lang/Math;->hypot(DD)D
 
     move-result-wide v0
 
     double-to-float v0, v0
 
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartDistance:F
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartDistance:F
 
-    .line 782
-    invoke-virtual {p1, v10}, Landroid/view/MotionEvent;->getX(I)F
+    .line 802
+    invoke-virtual {v8, v11}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v0
 
-    invoke-virtual {p1, v11}, Landroid/view/MotionEvent;->getX(I)F
+    invoke-virtual {v8, v12}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v1
 
     add-float/2addr v0, v1
 
-    div-float/2addr v0, v9
+    div-float/2addr v0, v10
 
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchCenterX:F
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchCenterX:F
 
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartCenterX:F
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartCenterX:F
 
-    .line 783
-    invoke-virtual {p1, v10}, Landroid/view/MotionEvent;->getY(I)F
+    .line 803
+    invoke-virtual {v8, v11}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v0
 
-    invoke-virtual {p1, v11}, Landroid/view/MotionEvent;->getY(I)F
+    invoke-virtual {v8, v12}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v1
 
     add-float/2addr v0, v1
 
-    div-float/2addr v0, v9
+    div-float/2addr v0, v10
 
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchCenterY:F
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchCenterY:F
 
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartCenterY:F
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartCenterY:F
 
-    .line 784
-    iput v3, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchScale:F
+    .line 804
+    iput v3, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchScale:F
 
     const/4 v0, 0x0
 
-    .line 785
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchTranslationX:F
+    .line 805
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchTranslationX:F
 
-    .line 786
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchTranslationY:F
+    .line 806
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchTranslationY:F
 
-    .line 787
+    .line 807
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -1422,95 +1444,97 @@
 
     move-object/from16 v4, p5
 
-    move/from16 v5, p6
+    move-object/from16 v5, p6
 
-    .line 788
-    invoke-virtual/range {v0 .. v5}, Lorg/telegram/ui/PinchToZoomHelper;->startZoom(Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Landroid/view/TextureView;Lorg/telegram/messenger/MessageObject;I)V
+    move/from16 v6, p7
 
-    .line 792
+    .line 808
+    invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/PinchToZoomHelper;->startZoom(Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Landroid/view/View;Landroid/view/View;Lorg/telegram/messenger/MessageObject;I)V
+
+    .line 812
     :cond_6
-    invoke-virtual {p1, v10}, Landroid/view/MotionEvent;->getX(I)F
+    invoke-virtual {v8, v11}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v0
 
-    invoke-virtual {p1, v11}, Landroid/view/MotionEvent;->getX(I)F
+    invoke-virtual {v8, v12}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v1
 
     add-float/2addr v0, v1
 
-    div-float/2addr v0, v9
+    div-float/2addr v0, v10
 
-    .line 793
-    invoke-virtual {p1, v10}, Landroid/view/MotionEvent;->getY(I)F
+    .line 813
+    invoke-virtual {v8, v11}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v1
 
-    invoke-virtual {p1, v11}, Landroid/view/MotionEvent;->getY(I)F
+    invoke-virtual {v8, v12}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v2
 
     add-float/2addr v1, v2
 
-    div-float/2addr v1, v9
+    div-float/2addr v1, v10
 
-    .line 797
-    iget v2, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartCenterX:F
+    .line 817
+    iget v2, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartCenterX:F
 
     sub-float/2addr v2, v0
 
-    .line 798
-    iget v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartCenterY:F
+    .line 818
+    iget v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartCenterY:F
 
     sub-float/2addr v0, v1
 
     neg-float v1, v2
 
-    .line 799
-    iget v2, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchScale:F
+    .line 819
+    iget v2, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchScale:F
 
     div-float/2addr v1, v2
 
-    iput v1, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchTranslationX:F
+    iput v1, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchTranslationX:F
 
     neg-float v0, v0
 
     div-float/2addr v0, v2
 
-    .line 800
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchTranslationY:F
+    .line 820
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchTranslationY:F
 
-    .line 801
+    .line 821
     invoke-virtual {p0}, Lorg/telegram/ui/PinchToZoomHelper;->invalidateViews()V
 
     goto/16 :goto_3
 
-    .line 774
+    .line 794
     :cond_7
     :goto_1
-    iput-boolean v1, v6, Lorg/telegram/ui/PinchToZoomHelper;->isInPinchToZoomTouchMode:Z
+    iput-boolean v1, v7, Lorg/telegram/ui/PinchToZoomHelper;->isInPinchToZoomTouchMode:Z
 
-    .line 775
+    .line 795
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 776
+    .line 796
     invoke-virtual {p0}, Lorg/telegram/ui/PinchToZoomHelper;->finishZoom()V
 
     return v1
 
-    .line 802
+    .line 822
     :cond_8
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
     if-eq v0, v5, :cond_a
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
@@ -1518,14 +1542,14 @@
 
     if-ne v0, v2, :cond_9
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/PinchToZoomHelper;->checkPointerIds(Landroid/view/MotionEvent;)Z
+    invoke-direct/range {p0 .. p1}, Lorg/telegram/ui/PinchToZoomHelper;->checkPointerIds(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
     if-nez v0, :cond_a
 
     :cond_9
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
 
@@ -1534,139 +1558,139 @@
     if-ne v0, v2, :cond_d
 
     :cond_a
-    iget-boolean v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->isInPinchToZoomTouchMode:Z
+    iget-boolean v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->isInPinchToZoomTouchMode:Z
 
     if-eqz v0, :cond_d
 
-    .line 803
-    iput-boolean v1, v6, Lorg/telegram/ui/PinchToZoomHelper;->isInPinchToZoomTouchMode:Z
+    .line 823
+    iput-boolean v1, v7, Lorg/telegram/ui/PinchToZoomHelper;->isInPinchToZoomTouchMode:Z
 
-    if-eqz v8, :cond_b
+    if-eqz v9, :cond_b
 
-    .line 804
+    .line 824
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     if-eqz v0, :cond_b
 
-    .line 805
+    .line 825
     invoke-virtual/range {p2 .. p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 807
+    .line 827
     :cond_b
     invoke-virtual {p0}, Lorg/telegram/ui/PinchToZoomHelper;->finishZoom()V
 
     goto :goto_3
 
-    .line 752
+    .line 772
     :cond_c
     :goto_2
-    iget-boolean v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->isInPinchToZoomTouchMode:Z
+    iget-boolean v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->isInPinchToZoomTouchMode:Z
 
     if-nez v0, :cond_d
 
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
+    invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
     move-result v0
 
     if-ne v0, v4, :cond_d
 
-    .line 753
-    invoke-virtual {p1, v5}, Landroid/view/MotionEvent;->getX(I)F
+    .line 773
+    invoke-virtual {v8, v5}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v0
 
-    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getX(I)F
+    invoke-virtual {v8, v1}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v2
 
     sub-float/2addr v0, v2
 
-    float-to-double v10, v0
+    float-to-double v11, v0
 
-    invoke-virtual {p1, v5}, Landroid/view/MotionEvent;->getY(I)F
+    invoke-virtual {v8, v5}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v0
 
-    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getY(I)F
+    invoke-virtual {v8, v1}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v2
 
     sub-float/2addr v0, v2
 
-    float-to-double v12, v0
+    float-to-double v13, v0
 
-    invoke-static {v10, v11, v12, v13}, Ljava/lang/Math;->hypot(DD)D
+    invoke-static {v11, v12, v13, v14}, Ljava/lang/Math;->hypot(DD)D
 
-    move-result-wide v10
+    move-result-wide v11
 
-    double-to-float v0, v10
+    double-to-float v0, v11
 
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartDistance:F
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartDistance:F
 
-    .line 754
-    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getX(I)F
+    .line 774
+    invoke-virtual {v8, v1}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v0
 
-    invoke-virtual {p1, v5}, Landroid/view/MotionEvent;->getX(I)F
+    invoke-virtual {v8, v5}, Landroid/view/MotionEvent;->getX(I)F
 
     move-result v2
 
     add-float/2addr v0, v2
 
-    div-float/2addr v0, v9
+    div-float/2addr v0, v10
 
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchCenterX:F
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchCenterX:F
 
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartCenterX:F
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartCenterX:F
 
-    .line 755
-    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getY(I)F
+    .line 775
+    invoke-virtual {v8, v1}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v0
 
-    invoke-virtual {p1, v5}, Landroid/view/MotionEvent;->getY(I)F
+    invoke-virtual {v8, v5}, Landroid/view/MotionEvent;->getY(I)F
 
     move-result v2
 
     add-float/2addr v0, v2
 
-    div-float/2addr v0, v9
+    div-float/2addr v0, v10
 
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchCenterY:F
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchCenterY:F
 
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartCenterY:F
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchStartCenterY:F
 
-    .line 756
-    iput v3, v6, Lorg/telegram/ui/PinchToZoomHelper;->pinchScale:F
+    .line 776
+    iput v3, v7, Lorg/telegram/ui/PinchToZoomHelper;->pinchScale:F
 
-    .line 758
-    invoke-virtual {p1, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
-
-    move-result v0
-
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pointerId1:I
-
-    .line 759
-    invoke-virtual {p1, v5}, Landroid/view/MotionEvent;->getPointerId(I)I
+    .line 778
+    invoke-virtual {v8, v1}, Landroid/view/MotionEvent;->getPointerId(I)I
 
     move-result v0
 
-    iput v0, v6, Lorg/telegram/ui/PinchToZoomHelper;->pointerId2:I
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pointerId1:I
 
-    .line 760
-    iput-boolean v5, v6, Lorg/telegram/ui/PinchToZoomHelper;->isInPinchToZoomTouchMode:Z
+    .line 779
+    invoke-virtual {v8, v5}, Landroid/view/MotionEvent;->getPointerId(I)I
 
-    .line 809
+    move-result v0
+
+    iput v0, v7, Lorg/telegram/ui/PinchToZoomHelper;->pointerId2:I
+
+    .line 780
+    iput-boolean v5, v7, Lorg/telegram/ui/PinchToZoomHelper;->isInPinchToZoomTouchMode:Z
+
+    .line 829
     :cond_d
     :goto_3
-    invoke-virtual {p0, v8}, Lorg/telegram/ui/PinchToZoomHelper;->isInOverlayModeFor(Landroid/view/View;)Z
+    invoke-virtual {p0, v9}, Lorg/telegram/ui/PinchToZoomHelper;->isInOverlayModeFor(Landroid/view/View;)Z
 
     move-result v0
 
@@ -1676,17 +1700,17 @@
 .method public clear()V
     .locals 3
 
-    .line 328
+    .line 336
     iget-boolean v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->inOverlayMode:Z
 
     if-eqz v0, :cond_1
 
-    .line 329
+    .line 337
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->callback:Lorg/telegram/ui/PinchToZoomHelper$Callback;
 
     if-eqz v0, :cond_0
 
-    .line 330
+    .line 338
     iget-object v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     invoke-interface {v0, v1}, Lorg/telegram/ui/PinchToZoomHelper$Callback;->onZoomFinished(Lorg/telegram/messenger/MessageObject;)V
@@ -1694,10 +1718,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 332
+    .line 340
     iput-boolean v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->inOverlayMode:Z
 
-    .line 334
+    .line 342
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
@@ -1711,14 +1735,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 335
+    .line 343
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->parentView:Landroid/view/ViewGroup;
 
     iget-object v2, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 336
+    .line 344
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-static {v0}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$300(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Lorg/telegram/ui/Components/BackupImageView;
@@ -1731,106 +1755,106 @@
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->clearImage()V
 
-    .line 337
+    .line 345
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->mediaSpoilerEffect2:Lorg/telegram/ui/Components/spoilers/SpoilerEffect2;
 
     if-eqz v0, :cond_2
 
-    .line 338
+    .line 346
     iget-object v2, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect2;->detach(Landroid/view/View;)V
 
-    .line 339
+    .line 347
     iput-object v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->mediaSpoilerEffect2:Lorg/telegram/ui/Components/spoilers/SpoilerEffect2;
 
-    .line 342
+    .line 350
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->childImage:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_3
 
-    .line 343
+    .line 351
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
-    .line 344
+    .line 352
     instance-of v2, v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     if-eqz v2, :cond_3
 
-    .line 345
+    .line 353
     check-cast v0, Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     iget-object v2, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->removeSecondParentView(Landroid/view/View;)V
 
-    .line 349
+    .line 357
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->child:Landroid/view/View;
 
     if-eqz v0, :cond_4
 
-    .line 350
+    .line 358
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 351
+    .line 359
     iput-object v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->child:Landroid/view/View;
 
-    .line 353
+    .line 361
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->childImage:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_5
 
-    .line 354
+    .line 362
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 355
+    .line 363
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->childImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->clearImage()V
 
-    .line 356
+    .line 364
     iput-object v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->childImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 358
+    .line 366
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_6
 
-    .line 359
+    .line 367
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 360
+    .line 368
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->clearImage()V
 
-    .line 361
+    .line 369
     iput-object v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 363
+    .line 371
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
 
     if-eqz v0, :cond_7
 
-    .line 364
+    .line 372
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->onDetachedFromWindow()V
 
-    .line 365
+    .line 373
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/ImageReceiver;->clearImage()V
 
-    .line 366
+    .line 374
     iput-object v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 369
+    .line 377
     :cond_7
     iput-object v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->messageObject:Lorg/telegram/messenger/MessageObject;
 
@@ -1846,7 +1870,7 @@
 .method public finishZoom()V
     .locals 3
 
-    .line 299
+    .line 307
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->finishTransition:Landroid/animation/ValueAnimator;
 
     if-nez v0, :cond_2
@@ -1857,20 +1881,20 @@
 
     goto :goto_0
 
-    .line 302
+    .line 310
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->isSimple:Z
 
     if-nez v0, :cond_1
 
-    .line 303
+    .line 311
     invoke-direct {p0}, Lorg/telegram/ui/PinchToZoomHelper;->updateViewsLocation()Z
 
     move-result v0
 
     if-nez v0, :cond_1
 
-    .line 304
+    .line 312
     invoke-virtual {p0}, Lorg/telegram/ui/PinchToZoomHelper;->clear()V
 
     :cond_1
@@ -1878,7 +1902,7 @@
 
     new-array v0, v0, [F
 
-    .line 307
+    .line 315
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -1887,14 +1911,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->finishTransition:Landroid/animation/ValueAnimator;
 
-    .line 308
+    .line 316
     new-instance v1, Lorg/telegram/ui/PinchToZoomHelper$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/PinchToZoomHelper$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PinchToZoomHelper;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 312
+    .line 320
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->finishTransition:Landroid/animation/ValueAnimator;
 
     new-instance v1, Lorg/telegram/ui/PinchToZoomHelper$1;
@@ -1903,21 +1927,21 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 322
+    .line 330
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->finishTransition:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0xdc
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 323
+    .line 331
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->finishTransition:Landroid/animation/ValueAnimator;
 
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 324
+    .line 332
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->finishTransition:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
@@ -1936,7 +1960,7 @@
 .method public getChild()Landroid/view/View;
     .locals 1
 
-    .line 844
+    .line 864
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->child:Landroid/view/View;
 
     return-object v0
@@ -1945,7 +1969,7 @@
 .method public getPhotoImage()Lorg/telegram/messenger/ImageReceiver;
     .locals 1
 
-    .line 400
+    .line 408
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->childImage:Lorg/telegram/messenger/ImageReceiver;
 
     return-object v0
@@ -1954,7 +1978,7 @@
 .method public getVideoBitmap(II)Landroid/graphics/Bitmap;
     .locals 1
 
-    .line 393
+    .line 401
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     if-nez v0, :cond_0
@@ -1963,7 +1987,7 @@
 
     return-object p1
 
-    .line 396
+    .line 404
     :cond_0
     invoke-static {v0}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$000(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Landroid/view/TextureView;
 
@@ -1979,7 +2003,7 @@
 .method protected invalidateViews()V
     .locals 1
 
-    .line 826
+    .line 846
     iget-boolean v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->isSimple:Z
 
     if-eqz v0, :cond_0
@@ -1988,16 +2012,16 @@
 
     if-eqz v0, :cond_0
 
-    .line 827
+    .line 847
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 829
+    .line 849
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     if-eqz v0, :cond_1
 
-    .line 830
+    .line 850
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_1
@@ -2007,7 +2031,7 @@
 .method public isInOverlayMode()Z
     .locals 1
 
-    .line 377
+    .line 385
     iget-boolean v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->inOverlayMode:Z
 
     return v0
@@ -2016,7 +2040,7 @@
 .method public isInOverlayModeFor(Landroid/view/View;)Z
     .locals 1
 
-    .line 381
+    .line 389
     iget-boolean v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->inOverlayMode:Z
 
     if-eqz v0, :cond_0
@@ -2039,7 +2063,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 385
+    .line 393
     invoke-direct {p0}, Lorg/telegram/ui/PinchToZoomHelper;->updateViewsLocation()Z
 
     move-result v0
@@ -2050,7 +2074,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 386
+    .line 394
     iget v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->fragmentOffsetX:F
 
     neg-float v0, v0
@@ -2061,7 +2085,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/view/MotionEvent;->offsetLocation(FF)V
 
-    .line 387
+    .line 395
     iget-object v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->child:Landroid/view/View;
 
     invoke-virtual {v0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
@@ -2079,7 +2103,7 @@
 .method public setCallback(Lorg/telegram/ui/PinchToZoomHelper$Callback;)V
     .locals 0
 
-    .line 736
+    .line 756
     iput-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->callback:Lorg/telegram/ui/PinchToZoomHelper$Callback;
 
     return-void
@@ -2088,22 +2112,22 @@
 .method public setClipBoundsListener(Lorg/telegram/ui/PinchToZoomHelper$ClipBoundsListener;)V
     .locals 0
 
-    .line 719
+    .line 739
     iput-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->clipBoundsListener:Lorg/telegram/ui/PinchToZoomHelper$ClipBoundsListener;
 
     return-void
 .end method
 
-.method public startZoom(Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Landroid/view/TextureView;Lorg/telegram/messenger/MessageObject;I)V
+.method public startZoom(Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;Landroid/view/View;Landroid/view/View;Lorg/telegram/messenger/MessageObject;I)V
     .locals 8
 
-    .line 125
+    .line 126
     iput-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->child:Landroid/view/View;
 
-    .line 126
-    iput-object p4, p0, Lorg/telegram/ui/PinchToZoomHelper;->messageObject:Lorg/telegram/messenger/MessageObject;
+    .line 127
+    iput-object p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 128
+    .line 129
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     const/4 v0, 0x0
@@ -2114,7 +2138,7 @@
 
     if-nez p1, :cond_0
 
-    .line 129
+    .line 130
     new-instance p1, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     iget-object v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->parentView:Landroid/view/ViewGroup;
@@ -2127,26 +2151,26 @@
 
     iput-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
-    .line 130
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setFocusable(Z)V
-
     .line 131
-    iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
-
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setFocusableInTouchMode(Z)V
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
     .line 132
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setFocusableInTouchMode(Z)V
+
+    .line 133
+    iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
+
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 135
+    .line 136
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
 
     if-nez p1, :cond_1
 
-    .line 136
+    .line 137
     new-instance p1, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p1}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
@@ -2155,35 +2179,35 @@
 
     const/4 v1, 0x2
 
-    .line 137
-    invoke-virtual {p1, v1}, Lorg/telegram/messenger/ImageReceiver;->setCrossfadeAlpha(B)V
-
     .line 138
-    iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
-
-    invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setCrossfadeWithOldImage(Z)V
+    invoke-virtual {p1, v1}, Lorg/telegram/messenger/ImageReceiver;->setCrossfadeAlpha(B)V
 
     .line 139
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
 
+    invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setCrossfadeWithOldImage(Z)V
+
+    .line 140
+    iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
+
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
 
-    .line 141
+    .line 142
     new-instance p1, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p1}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 142
+    .line 143
     invoke-virtual {p1, v1}, Lorg/telegram/messenger/ImageReceiver;->setCrossfadeAlpha(B)V
 
-    .line 143
+    .line 144
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setCrossfadeWithOldImage(Z)V
 
-    .line 144
+    .line 145
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
@@ -2191,41 +2215,41 @@
     :cond_1
     const/4 p1, 0x1
 
-    .line 147
+    .line 148
     iput-boolean p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->inOverlayMode:Z
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 148
+    .line 149
     iput v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->finishProgress:F
 
     const/4 v2, 0x0
 
-    .line 149
+    .line 150
     iput v2, p0, Lorg/telegram/ui/PinchToZoomHelper;->progressToFullView:F
 
-    .line 151
+    .line 152
     iget-boolean v3, p0, Lorg/telegram/ui/PinchToZoomHelper;->isSimple:Z
 
     if-nez v3, :cond_d
 
-    .line 152
+    .line 153
     iget-object v3, p0, Lorg/telegram/ui/PinchToZoomHelper;->parentView:Landroid/view/ViewGroup;
 
     iget-object v4, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    if-eqz p4, :cond_2
+    if-eqz p5, :cond_2
 
-    .line 154
-    invoke-virtual {p4}, Lorg/telegram/messenger/MessageObject;->hasMediaSpoilers()Z
+    .line 155
+    invoke-virtual {p5}, Lorg/telegram/messenger/MessageObject;->hasMediaSpoilers()Z
 
     move-result v3
 
     if-eqz v3, :cond_2
 
-    iget-boolean v3, p4, Lorg/telegram/messenger/MessageObject;->isMediaSpoilersRevealed:Z
+    iget-boolean v3, p5, Lorg/telegram/messenger/MessageObject;->isMediaSpoilersRevealed:Z
 
     if-nez v3, :cond_2
 
@@ -2241,7 +2265,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 156
+    .line 157
     iget-object v3, p0, Lorg/telegram/ui/PinchToZoomHelper;->mediaSpoilerEffect2:Lorg/telegram/ui/Components/spoilers/SpoilerEffect2;
 
     if-nez v3, :cond_3
@@ -2252,7 +2276,7 @@
 
     if-eqz v3, :cond_3
 
-    .line 157
+    .line 158
     iget-object v3, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect2;->getInstance(Landroid/view/View;)Lorg/telegram/ui/Components/spoilers/SpoilerEffect2;
@@ -2263,61 +2287,61 @@
 
     if-eqz v3, :cond_3
 
-    .line 159
+    .line 160
     iget-object v4, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
-    invoke-virtual {v3, v4, p5}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect2;->reassignAttach(Landroid/view/View;I)V
+    invoke-virtual {v3, v4, p6}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect2;->reassignAttach(Landroid/view/View;I)V
 
-    .line 163
+    .line 164
     :cond_3
-    iget-object p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
+    iget-object p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-virtual {p5}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
+    invoke-virtual {p6}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
 
-    move-result-object p5
+    move-result-object p6
 
     const/4 v3, 0x0
 
-    if-eqz p5, :cond_4
-
-    .line 164
-    iget-object p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
-
-    invoke-virtual {p5}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object p5
-
-    invoke-virtual {p5}, Landroid/graphics/Bitmap;->recycle()V
+    if-eqz p6, :cond_4
 
     .line 165
-    iget-object p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
+    iget-object p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-virtual {p5, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    invoke-virtual {p6}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
 
-    .line 168
+    move-result-object p6
+
+    invoke-virtual {p6}, Landroid/graphics/Bitmap;->recycle()V
+
+    .line 166
+    iget-object p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
+
+    invoke-virtual {p6, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/Bitmap;)V
+
+    .line 169
     :cond_4
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
 
-    move-result-object p5
+    move-result-object p6
 
-    if-eqz p5, :cond_5
+    if-eqz p6, :cond_5
 
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
 
-    move-result-object p5
+    move-result-object p6
 
-    invoke-virtual {p5}, Landroid/graphics/Bitmap;->isRecycled()Z
+    invoke-virtual {p6}, Landroid/graphics/Bitmap;->isRecycled()Z
 
-    move-result p5
+    move-result p6
 
-    if-nez p5, :cond_5
+    if-nez p6, :cond_5
 
-    iget-boolean p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->hasMediaSpoiler:Z
+    iget-boolean p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->hasMediaSpoiler:Z
 
-    if-eqz p5, :cond_5
+    if-eqz p6, :cond_5
 
-    .line 169
-    iget-object p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
+    .line 170
+    iget-object p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getBitmap()Landroid/graphics/Bitmap;
 
@@ -2327,79 +2351,79 @@
 
     move-result-object v3
 
-    invoke-virtual {p5, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    invoke-virtual {p6, v3}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 170
-    iget-object p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
+    .line 171
+    iget-object p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {p0}, Lorg/telegram/ui/PinchToZoomHelper;->getFancyBlurFilter()Landroid/graphics/ColorMatrixColorFilter;
 
     move-result-object v3
 
-    invoke-virtual {p5, v3}, Lorg/telegram/messenger/ImageReceiver;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {p6, v3}, Lorg/telegram/messenger/ImageReceiver;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     goto :goto_1
 
-    .line 172
+    .line 173
     :cond_5
-    iget-object p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
+    iget-object p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->blurImage:Lorg/telegram/messenger/ImageReceiver;
 
-    invoke-virtual {p5, v3}, Lorg/telegram/messenger/ImageReceiver;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {p6, v3}, Lorg/telegram/messenger/ImageReceiver;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 175
+    .line 176
     :goto_1
-    invoke-direct {p0, p4}, Lorg/telegram/ui/PinchToZoomHelper;->setFullImage(Lorg/telegram/messenger/MessageObject;)V
-
-    .line 177
-    invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getImageX()F
-
-    move-result p5
-
-    iput p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageX:F
+    invoke-direct {p0, p5}, Lorg/telegram/ui/PinchToZoomHelper;->setFullImage(Lorg/telegram/messenger/MessageObject;)V
 
     .line 178
-    invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getImageY()F
+    invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getImageX()F
 
-    move-result p5
+    move-result p6
 
-    iput p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageY:F
+    iput p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageX:F
 
     .line 179
-    invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getImageHeight()F
+    invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getImageY()F
 
-    move-result p5
+    move-result p6
 
-    iput p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageHeight:F
+    iput p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageY:F
 
     .line 180
-    invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getImageWidth()F
+    invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getImageHeight()F
 
-    move-result p5
+    move-result p6
 
-    iput p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageWidth:F
+    iput p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageHeight:F
 
     .line 181
-    invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getBitmapHeight()I
+    invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getImageWidth()F
 
-    move-result p5
+    move-result p6
 
-    int-to-float p5, p5
-
-    iput p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageHeight:F
+    iput p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageWidth:F
 
     .line 182
+    invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getBitmapHeight()I
+
+    move-result p6
+
+    int-to-float p6, p6
+
+    iput p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageHeight:F
+
+    .line 183
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getBitmapWidth()I
 
-    move-result p5
+    move-result p6
 
-    int-to-float p5, p5
+    int-to-float p6, p6
 
-    iput p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageWidth:F
+    iput p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageWidth:F
 
-    .line 184
+    .line 185
     iget v3, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageHeight:F
 
-    div-float v4, v3, p5
+    div-float v4, v3, p6
 
     iget v5, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageHeight:F
 
@@ -2411,7 +2435,7 @@
 
     if-eqz v4, :cond_7
 
-    div-float v4, v3, p5
+    div-float v4, v3, p6
 
     div-float v7, v5, v6
 
@@ -2419,87 +2443,87 @@
 
     if-gez v4, :cond_6
 
-    div-float/2addr p5, v3
+    div-float/2addr p6, v3
 
-    mul-float/2addr p5, v5
-
-    .line 186
-    iput p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageWidth:F
+    mul-float/2addr p6, v5
 
     .line 187
+    iput p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageWidth:F
+
+    .line 188
     iput v5, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageHeight:F
 
     goto :goto_2
 
     :cond_6
-    div-float/2addr v3, p5
+    div-float/2addr v3, p6
 
     mul-float/2addr v3, v6
 
-    .line 189
+    .line 190
     iput v3, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageHeight:F
 
-    .line 190
+    .line 191
     iput v6, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageWidth:F
 
     goto :goto_2
 
-    .line 193
+    .line 194
     :cond_7
     iput v5, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageHeight:F
 
-    .line 194
+    .line 195
     iput v6, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageWidth:F
 
     :goto_2
-    if-eqz p4, :cond_b
-
-    .line 198
-    invoke-virtual {p4}, Lorg/telegram/messenger/MessageObject;->isVideo()Z
-
-    move-result p5
-
-    if-eqz p5, :cond_b
-
-    invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
-
-    move-result-object p5
-
-    invoke-virtual {p5, p4}, Lorg/telegram/messenger/MediaController;->isPlayingMessage(Lorg/telegram/messenger/MessageObject;)Z
-
-    move-result p5
-
     if-eqz p5, :cond_b
 
     .line 199
-    iput-boolean p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->isHardwareVideo:Z
+    invoke-virtual {p5}, Lorg/telegram/messenger/MessageObject;->isVideo()Z
+
+    move-result p6
+
+    if-eqz p6, :cond_b
+
+    invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
+
+    move-result-object p6
+
+    invoke-virtual {p6, p5}, Lorg/telegram/messenger/MediaController;->isPlayingMessage(Lorg/telegram/messenger/MessageObject;)Z
+
+    move-result p6
+
+    if-eqz p6, :cond_b
 
     .line 200
+    iput-boolean p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->isHardwareVideo:Z
+
+    .line 201
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object p3
 
-    iget-object p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
+    iget-object p4, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
-    invoke-static {p5}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$000(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Landroid/view/TextureView;
+    invoke-static {p4}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$000(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Landroid/view/TextureView;
 
-    move-result-object p5
+    move-result-object p4
+
+    iget-object p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
+
+    invoke-static {p6}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$100(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
+
+    move-result-object p6
 
     iget-object v3, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
-    invoke-static {v3}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$100(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;
+    invoke-static {v3}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$200(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Landroid/widget/FrameLayout;
 
     move-result-object v3
 
-    iget-object v4, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
+    invoke-virtual {p3, p4, p6, v3, p1}, Lorg/telegram/messenger/MediaController;->setTextureView(Landroid/view/TextureView;Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;Landroid/widget/FrameLayout;Z)V
 
-    invoke-static {v4}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$200(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Landroid/widget/FrameLayout;
-
-    move-result-object v4
-
-    invoke-virtual {p3, p5, v3, v4, p1}, Lorg/telegram/messenger/MediaController;->setTextureView(Landroid/view/TextureView;Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;Landroid/widget/FrameLayout;Z)V
-
-    .line 201
+    .line 202
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-static {p1}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$200(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Landroid/widget/FrameLayout;
@@ -2512,27 +2536,27 @@
 
     check-cast p1, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 202
+    .line 203
     iget-object p3, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-static {p3}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$200(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Landroid/widget/FrameLayout;
 
     move-result-object p3
 
-    sget p5, Lorg/telegram/messenger/R$id;->parent_tag:I
+    sget p4, Lorg/telegram/messenger/R$id;->parent_tag:I
 
-    invoke-virtual {p3, p5, p2}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {p3, p4, p2}, Landroid/widget/FrameLayout;->setTag(ILjava/lang/Object;)V
 
-    .line 203
+    .line 204
     iget p3, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
     int-to-float p3, p3
 
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getImageWidth()F
 
-    move-result p5
+    move-result p4
 
-    cmpl-float p3, p3, p5
+    cmpl-float p3, p3, p4
 
     if-nez p3, :cond_8
 
@@ -2542,13 +2566,13 @@
 
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getImageHeight()F
 
-    move-result p5
+    move-result p4
 
-    cmpl-float p3, p3, p5
+    cmpl-float p3, p3, p4
 
     if-eqz p3, :cond_9
 
-    .line 204
+    .line 205
     :cond_8
     iget-object p3, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
@@ -2556,11 +2580,11 @@
 
     move-result-object p3
 
-    const/4 p5, 0x3
+    const/4 p4, 0x3
 
-    invoke-virtual {p3, p5}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->setResizeMode(I)V
+    invoke-virtual {p3, p4}, Lcom/google/android/exoplayer2/ui/AspectRatioFrameLayout;->setResizeMode(I)V
 
-    .line 205
+    .line 206
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getImageWidth()F
 
     move-result p3
@@ -2569,7 +2593,7 @@
 
     iput p3, p1, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 206
+    .line 207
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getImageHeight()F
 
     move-result p3
@@ -2578,7 +2602,7 @@
 
     iput p3, p1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
-    .line 207
+    .line 208
     iget-object p3, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-static {p3}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$200(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Landroid/widget/FrameLayout;
@@ -2587,7 +2611,7 @@
 
     invoke-virtual {p3, p1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 209
+    .line 210
     :cond_9
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
@@ -2597,7 +2621,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/TextureView;->setScaleX(F)V
 
-    .line 210
+    .line 211
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-static {p1}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$000(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Landroid/view/TextureView;
@@ -2606,12 +2630,12 @@
 
     invoke-virtual {p1, v1}, Landroid/view/TextureView;->setScaleY(F)V
 
-    .line 212
+    .line 213
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->callback:Lorg/telegram/ui/PinchToZoomHelper$Callback;
 
     if-eqz p1, :cond_a
 
-    .line 213
+    .line 214
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-static {p1}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$300(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Lorg/telegram/ui/Components/BackupImageView;
@@ -2624,21 +2648,21 @@
 
     move-result-object p3
 
-    iget p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageWidth:F
+    iget p4, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageWidth:F
 
-    float-to-int p5, p5
+    float-to-int p4, p4
 
-    iget v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageHeight:F
+    iget p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageHeight:F
 
-    float-to-int v1, v1
+    float-to-int p6, p6
 
-    invoke-virtual {p3, p5, v1}, Landroid/view/TextureView;->getBitmap(II)Landroid/graphics/Bitmap;
+    invoke-virtual {p3, p4, p6}, Landroid/view/TextureView;->getBitmap(II)Landroid/graphics/Bitmap;
 
     move-result-object p3
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Components/BackupImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 214
+    .line 215
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-static {p1}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$300(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Lorg/telegram/ui/Components/BackupImageView;
@@ -2649,13 +2673,13 @@
 
     float-to-int p3, p3
 
-    iget p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageHeight:F
+    iget p4, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImageHeight:F
 
-    float-to-int p5, p5
+    float-to-int p4, p4
 
-    invoke-virtual {p1, p3, p5}, Lorg/telegram/ui/Components/BackupImageView;->setSize(II)V
+    invoke-virtual {p1, p3, p4}, Lorg/telegram/ui/Components/BackupImageView;->setSize(II)V
 
-    .line 215
+    .line 216
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-static {p1}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$300(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Lorg/telegram/ui/Components/BackupImageView;
@@ -2672,7 +2696,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius([I)V
 
-    .line 217
+    .line 218
     :cond_a
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
@@ -2684,63 +2708,75 @@
 
     goto :goto_3
 
-    .line 219
+    .line 220
     :cond_b
     iput-boolean v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->isHardwareVideo:Z
 
-    .line 220
-    new-instance p5, Lorg/telegram/messenger/ImageReceiver;
-
-    invoke-direct {p5}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
-
-    iput-object p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->childImage:Lorg/telegram/messenger/ImageReceiver;
-
     .line 221
-    iput-object p3, p0, Lorg/telegram/ui/PinchToZoomHelper;->childTextureView:Landroid/view/TextureView;
+    new-instance p6, Lorg/telegram/messenger/ImageReceiver;
+
+    invoke-direct {p6}, Lorg/telegram/messenger/ImageReceiver;-><init>()V
+
+    iput-object p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->childImage:Lorg/telegram/messenger/ImageReceiver;
 
     .line 222
-    invoke-virtual {p5}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
+    iput-object p3, p0, Lorg/telegram/ui/PinchToZoomHelper;->childTextureViewContainer:Landroid/view/View;
 
     .line 223
+    iput-object p4, p0, Lorg/telegram/ui/PinchToZoomHelper;->childTextureView:Landroid/view/View;
+
+    .line 224
+    invoke-virtual {p6}, Lorg/telegram/messenger/ImageReceiver;->onAttachedToWindow()Z
+
+    .line 225
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p3
 
-    .line 224
-    iget-object p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->childImage:Lorg/telegram/messenger/ImageReceiver;
-
-    invoke-virtual {p5, p3}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/drawable/Drawable;)V
-
-    .line 225
-    instance-of p5, p3, Lorg/telegram/ui/Components/AnimatedFileDrawable;
-
-    if-eqz p5, :cond_c
-
     .line 226
-    check-cast p3, Lorg/telegram/ui/Components/AnimatedFileDrawable;
+    iget-object p4, p0, Lorg/telegram/ui/PinchToZoomHelper;->childImage:Lorg/telegram/messenger/ImageReceiver;
 
-    iget-object p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
+    invoke-virtual {p4, p3}, Lorg/telegram/messenger/ImageReceiver;->setImageBitmap(Landroid/graphics/drawable/Drawable;)V
 
-    invoke-virtual {p3, p5}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->addSecondParentView(Landroid/view/View;)V
+    .line 228
+    instance-of p4, p3, Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
-    .line 227
-    invoke-virtual {p3, p1}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->setInvalidateParentViewWithSecond(Z)V
+    if-eqz p4, :cond_c
 
     .line 229
+    check-cast p3, Lorg/telegram/ui/Components/AnimatedFileDrawable;
+
+    iget-object p4, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
+
+    invoke-virtual {p3, p4}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->addSecondParentView(Landroid/view/View;)V
+
+    .line 230
+    invoke-virtual {p3, p1}, Lorg/telegram/ui/Components/AnimatedFileDrawable;->setInvalidateParentViewWithSecond(Z)V
+
+    .line 232
     :cond_c
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->childImage:Lorg/telegram/messenger/ImageReceiver;
 
     iget p3, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageX:F
 
-    iget p5, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageY:F
+    iget p4, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageY:F
 
-    iget v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageWidth:F
+    iget p6, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageWidth:F
 
-    iget v1, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageHeight:F
+    iget v0, p0, Lorg/telegram/ui/PinchToZoomHelper;->imageHeight:F
 
-    invoke-virtual {p1, p3, p5, v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
+    invoke-virtual {p1, p3, p4, p6, v0}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 230
+    .line 233
+    iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->childImage:Lorg/telegram/messenger/ImageReceiver;
+
+    invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->isAspectFit()Z
+
+    move-result p3
+
+    invoke-virtual {p1, p3}, Lorg/telegram/messenger/ImageReceiver;->setAspectFit(Z)V
+
+    .line 234
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->childImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
@@ -2749,7 +2785,7 @@
 
     invoke-virtual {p1, p3}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius([I)V
 
-    .line 232
+    .line 236
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->fullImage:Lorg/telegram/messenger/ImageReceiver;
 
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
@@ -2758,7 +2794,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius([I)V
 
-    .line 233
+    .line 237
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->overlayView:Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;
 
     invoke-static {p1}, Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;->access$200(Lorg/telegram/ui/PinchToZoomHelper$ZoomOverlayView;)Landroid/widget/FrameLayout;
@@ -2769,17 +2805,17 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 237
+    .line 241
     :cond_d
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->callback:Lorg/telegram/ui/PinchToZoomHelper$Callback;
 
     if-eqz p1, :cond_e
 
-    .line 238
-    invoke-interface {p1, p4}, Lorg/telegram/ui/PinchToZoomHelper$Callback;->onZoomStarted(Lorg/telegram/messenger/MessageObject;)V
+    .line 242
+    invoke-interface {p1, p5}, Lorg/telegram/ui/PinchToZoomHelper$Callback;->onZoomStarted(Lorg/telegram/messenger/MessageObject;)V
 
-    .line 240
+    .line 244
     :cond_e
     iput v2, p0, Lorg/telegram/ui/PinchToZoomHelper;->enterProgress:F
 
@@ -2789,7 +2825,7 @@
 .method protected zoomEnabled(Landroid/view/View;Lorg/telegram/messenger/ImageReceiver;)Z
     .locals 1
 
-    .line 404
+    .line 412
     iget-boolean p1, p0, Lorg/telegram/ui/PinchToZoomHelper;->isSimple:Z
 
     const/4 v0, 0x1
@@ -2798,18 +2834,18 @@
 
     return v0
 
-    .line 407
+    .line 415
     :cond_0
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
-    .line 408
+    .line 416
     instance-of p1, p1, Lorg/telegram/ui/Components/AnimatedFileDrawable;
 
     if-eqz p1, :cond_2
 
-    .line 409
+    .line 417
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
@@ -2829,7 +2865,7 @@
     :cond_1
     return v0
 
-    .line 415
+    .line 423
     :cond_2
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->hasNotThumbOrOnlyStaticThumb()Z
 

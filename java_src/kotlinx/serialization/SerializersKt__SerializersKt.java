@@ -78,11 +78,11 @@ public final /* synthetic */ class SerializersKt__SerializersKt {
         } else {
             Object findParametrizedCachedSerializer = SerializersCacheKt.findParametrizedCachedSerializer(kclass, arrayList, isMarkedNullable);
             if (z) {
-                if (Result.m1940isFailureimpl(findParametrizedCachedSerializer)) {
+                if (Result.m1945isFailureimpl(findParametrizedCachedSerializer)) {
                     findParametrizedCachedSerializer = null;
                 }
                 kSerializer = (KSerializer) findParametrizedCachedSerializer;
-            } else if (Result.m1938exceptionOrNullimpl(findParametrizedCachedSerializer) != null) {
+            } else if (Result.m1943exceptionOrNullimpl(findParametrizedCachedSerializer) != null) {
                 return null;
             } else {
                 kSerializer = (KSerializer) findParametrizedCachedSerializer;

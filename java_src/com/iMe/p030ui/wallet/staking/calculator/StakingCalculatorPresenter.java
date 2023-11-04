@@ -48,9 +48,9 @@ import kotlin.ranges.LongProgression;
 import kotlin.ranges.LongRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.Charts.data.ChartData;
-import org.telegram.p042ui.StatisticActivity;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.Charts.data.ChartData;
+import org.telegram.p043ui.StatisticActivity;
 import timber.log.Timber;
 /* compiled from: StakingCalculatorPresenter.kt */
 @InjectViewState
@@ -134,7 +134,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         String str;
         StakingDetailsItem stakingDetailsItem = this.selectedStakingProgramme;
         if (stakingDetailsItem != null) {
-            str = '(' + this.resourceManager.getString(this.selectedAmount >= stakingDetailsItem.getCompoundAccrualThreshold().doubleValue() ? C3630R.string.staking_details_apy : C3630R.string.staking_details_apr) + ')';
+            str = '(' + this.resourceManager.getString(this.selectedAmount >= stakingDetailsItem.getCompoundAccrualThreshold().doubleValue() ? C3634R.string.staking_details_apy : C3634R.string.staking_details_apr) + ')';
         } else {
             str = null;
         }
@@ -234,12 +234,12 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends AccountLevel> result) {
-                m1807invoke(result);
+                m1812invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1807invoke(Result<? extends AccountLevel> it) {
+            public final void m1812invoke(Result<? extends AccountLevel> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends AccountLevel> result = it;
                 if (result instanceof Result.Success) {
@@ -300,7 +300,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         if (token2 == null || (indexedToken = TokenExtKt.toIndexedToken(token2)) == null || (token = getToken()) == null || (networkId = token.getNetworkId()) == null) {
             return;
         }
-        Observable observeOn = WalletInteractor.getTokenBalance$default(walletInteractor, indexedToken, false, networkId, 2, null).observeOn(this.schedulersProvider.mo1009ui());
+        Observable observeOn = WalletInteractor.getTokenBalance$default(walletInteractor, indexedToken, false, networkId, 2, null).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends TokenBalance>, Unit>() { // from class: com.iMe.ui.wallet.staking.calculator.StakingCalculatorPresenter$loadBalance$$inlined$subscribeWithErrorHandle$default$1
@@ -310,12 +310,12 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TokenBalance> result) {
-                m1808invoke(result);
+                m1813invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1808invoke(Result<? extends TokenBalance> it) {
+            public final void m1813invoke(Result<? extends TokenBalance> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends TokenBalance> result = it;
                 if (result instanceof Result.Success) {
@@ -360,11 +360,11 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         String message;
         StakingCalculatorView stakingCalculatorView = (StakingCalculatorView) getViewState();
         if (errorModel.isNoConnectionStatus()) {
-            message = this.resourceManager.getString(C3630R.string.common_error_no_internet);
+            message = this.resourceManager.getString(C3634R.string.common_error_no_internet);
         } else {
             message = errorModel.getMessage(this.resourceManager);
             if (message.length() == 0) {
-                message = this.resourceManager.getString(C3630R.string.common_error_unexpected);
+                message = this.resourceManager.getString(C3634R.string.common_error_unexpected);
             }
         }
         stakingCalculatorView.showToast(message);
@@ -394,7 +394,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
                 chartViewData = StakingCalculatorPresenter.setupAmountListener$lambda$12(Function1.this, obj);
                 return chartViewData;
             }
-        }).subscribeOn(this.schedulersProvider.mo1010io()).observeOn(this.schedulersProvider.mo1009ui());
+        }).subscribeOn(this.schedulersProvider.mo1011io()).observeOn(this.schedulersProvider.mo1010ui());
         final Function1<StatisticActivity.ChartViewData, Unit> function12 = new Function1<StatisticActivity.ChartViewData, Unit>() { // from class: com.iMe.ui.wallet.staking.calculator.StakingCalculatorPresenter$setupAmountListener$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -485,7 +485,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         sb.append(TokenBalanceExtKt.getTotalBalanceShortText(copy));
         this.tokenProfitText = sb.toString();
         ResourceManager resourceManager = this.resourceManager;
-        int i2 = C3630R.string.staking_details_profit;
+        int i2 = C3634R.string.staking_details_profit;
         StatisticActivity.ChartViewData chartViewData = new StatisticActivity.ChartViewData(resourceManager.getString(i2), 0);
         chartViewData.setup(new ChartData(TelegramStatisticsChartData.Companion.generateJSONObject(this.resourceManager.getString(i2), list, arrayList)));
         return chartViewData;

@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 /* loaded from: classes.dex */
 public final class MediaLoadData {
@@ -13,7 +13,7 @@ public final class MediaLoadData {
     public final int trackType;
 
     public MediaLoadData(int i) {
-        this(i, -1, null, 0, null, C0479C.TIME_UNSET, C0479C.TIME_UNSET);
+        this(i, -1, null, 0, null, C0485C.TIME_UNSET, C0485C.TIME_UNSET);
     }
 
     public MediaLoadData(int i, int i2, Format format, int i3, Object obj, long j, long j2) {

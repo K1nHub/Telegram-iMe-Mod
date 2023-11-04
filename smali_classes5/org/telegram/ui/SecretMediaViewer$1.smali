@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SecretMediaViewer;)V
     .locals 0
 
-    .line 559
+    .line 564
     iput-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$1;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/VideoPlayer;-><init>()V
@@ -35,10 +35,10 @@
 .method public pause()V
     .locals 2
 
-    .line 574
+    .line 579
     invoke-super {p0}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
 
-    .line 575
+    .line 580
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$1;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$900(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/Components/PlayPauseDrawable;
@@ -55,10 +55,10 @@
 .method public play()V
     .locals 2
 
-    .line 568
+    .line 573
     invoke-super {p0}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
 
-    .line 569
+    .line 574
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$1;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$900(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/Components/PlayPauseDrawable;
@@ -75,10 +75,10 @@
 .method public setPlayWhenReady(Z)V
     .locals 1
 
-    .line 562
+    .line 567
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/VideoPlayer;->setPlayWhenReady(Z)V
 
-    .line 563
+    .line 568
     iget-object v0, p0, Lorg/telegram/ui/SecretMediaViewer$1;->this$0:Lorg/telegram/ui/SecretMediaViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/SecretMediaViewer;->access$900(Lorg/telegram/ui/SecretMediaViewer;)Lorg/telegram/ui/Components/PlayPauseDrawable;

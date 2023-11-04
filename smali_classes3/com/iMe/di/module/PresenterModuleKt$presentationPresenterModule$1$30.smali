@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$30\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,898:1\n44#2:899\n129#3,5:900\n129#3,5:905\n129#3,5:910\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$30\n*L\n424#1:899\n427#1:900,5\n428#1:905,5\n429#1:910,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$30\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,901:1\n44#2:902\n129#3,5:903\n129#3,5:908\n129#3,5:913\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$30\n*L\n427#1:902\n430#1:903,5\n431#1:908,5\n432#1:913,5\n*E\n"
 .end annotation
 
 
@@ -100,7 +100,7 @@
 
     move-result-object v0
 
-    .line 427
+    .line 430
     check-cast v0, Lcom/iMe/utils/validator/wallet/CustomPriceValidator;
 
     .line 133
@@ -114,7 +114,7 @@
 
     move-result-object v2
 
-    .line 428
+    .line 431
     check-cast v2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
@@ -128,10 +128,10 @@
 
     move-result-object p1
 
-    .line 429
+    .line 432
     check-cast p1, Lcom/iMe/storage/domain/interactor/crypto/simplex/SimplexInteractor;
 
-    .line 425
+    .line 428
     new-instance v1, Lcom/iMe/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPricePresenter;
 
     invoke-direct {v1, p2, p1, v2, v0}, Lcom/iMe/ui/wallet/crypto/buy/customPrice/CryptoBuyCustomPricePresenter;-><init>(Lcom/iMe/model/wallet/crypto/buy/CryptoBuyItem;Lcom/iMe/storage/domain/interactor/crypto/simplex/SimplexInteractor;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/utils/validator/wallet/CustomPriceValidator;)V
@@ -142,7 +142,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 424
+    .line 427
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

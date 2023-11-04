@@ -11,15 +11,15 @@ import java.util.List;
 /* loaded from: classes3.dex */
 public final class ShortDynamicLinkImpl extends AbstractSafeParcelable {
     public static final Parcelable.Creator<ShortDynamicLinkImpl> CREATOR = new ShortDynamicLinkImplCreator();
-    @SafeParcelable.Field(getter = "getPreviewLink", m1089id = 2)
+    @SafeParcelable.Field(getter = "getPreviewLink", m1090id = 2)
     private final Uri previewLink;
-    @SafeParcelable.Field(getter = "getShortLink", m1089id = 1)
+    @SafeParcelable.Field(getter = "getShortLink", m1090id = 1)
     private final Uri shortLink;
-    @SafeParcelable.Field(getter = "getWarnings", m1089id = 3)
+    @SafeParcelable.Field(getter = "getWarnings", m1090id = 3)
     private final List<WarningImpl> warnings;
 
     @SafeParcelable.Constructor
-    public ShortDynamicLinkImpl(@SafeParcelable.Param(m1088id = 1) Uri uri, @SafeParcelable.Param(m1088id = 2) Uri uri2, @SafeParcelable.Param(m1088id = 3) List<WarningImpl> list) {
+    public ShortDynamicLinkImpl(@SafeParcelable.Param(m1089id = 1) Uri uri, @SafeParcelable.Param(m1089id = 2) Uri uri2, @SafeParcelable.Param(m1089id = 3) List<WarningImpl> list) {
         this.shortLink = uri;
         this.previewLink = uri2;
         this.warnings = list == null ? new ArrayList<>() : list;
@@ -46,12 +46,12 @@ public final class ShortDynamicLinkImpl extends AbstractSafeParcelable {
     /* loaded from: classes3.dex */
     public static class WarningImpl extends AbstractSafeParcelable {
         public static final Parcelable.Creator<WarningImpl> CREATOR = new WarningImplCreator();
-        @SafeParcelable.Field(getter = "getMessage", m1089id = 2)
+        @SafeParcelable.Field(getter = "getMessage", m1090id = 2)
         @SafeParcelable.Reserved({1})
         private final String message;
 
         @SafeParcelable.Constructor
-        public WarningImpl(@SafeParcelable.Param(m1088id = 2) String str) {
+        public WarningImpl(@SafeParcelable.Param(m1089id = 2) String str) {
             this.message = str;
         }
 

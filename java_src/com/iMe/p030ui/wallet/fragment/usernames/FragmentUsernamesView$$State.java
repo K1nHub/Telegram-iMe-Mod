@@ -13,7 +13,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class FragmentUsernamesView$$State extends MvpViewState<FragmentUsernamesView> implements FragmentUsernamesView {
     @Override // com.iMe.p030ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -157,7 +157,7 @@ public class FragmentUsernamesView$$State extends MvpViewState<FragmentUsernames
 
     /* compiled from: FragmentUsernamesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesView$$State$ShowConfirmationDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowConfirmationDialogCommand extends ViewCommand<FragmentUsernamesView> {
         public final DialogModel dialogModel;
 
@@ -174,7 +174,7 @@ public class FragmentUsernamesView$$State extends MvpViewState<FragmentUsernames
 
     /* compiled from: FragmentUsernamesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesView$$State$ShowActionSuccessCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowActionSuccessCommand extends ViewCommand<FragmentUsernamesView> {
         ShowActionSuccessCommand(FragmentUsernamesView$$State fragmentUsernamesView$$State) {
             super("showActionSuccess", OneExecutionStateStrategy.class);
@@ -188,7 +188,7 @@ public class FragmentUsernamesView$$State extends MvpViewState<FragmentUsernames
 
     /* compiled from: FragmentUsernamesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesView$$State$ShowActionErrorCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowActionErrorCommand extends ViewCommand<FragmentUsernamesView> {
         public final String message;
 
@@ -205,7 +205,7 @@ public class FragmentUsernamesView$$State extends MvpViewState<FragmentUsernames
 
     /* compiled from: FragmentUsernamesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesView$$State$ShowProductDetailsDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowProductDetailsDialogCommand extends ViewCommand<FragmentUsernamesView> {
         public final TonFragmentItem.Product productItem;
 
@@ -222,7 +222,7 @@ public class FragmentUsernamesView$$State extends MvpViewState<FragmentUsernames
 
     /* compiled from: FragmentUsernamesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesView$$State$ShowChooseSortingTypeDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowChooseSortingTypeDialogCommand extends ViewCommand<FragmentUsernamesView> {
         public final DialogModel dialogModel;
         public final int selectedPosition;
@@ -243,7 +243,7 @@ public class FragmentUsernamesView$$State extends MvpViewState<FragmentUsernames
 
     /* compiled from: FragmentUsernamesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesView$$State$RenderItemsCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class RenderItemsCommand extends ViewCommand<FragmentUsernamesView> {
         public final List<BaseNode> items;
 
@@ -260,7 +260,7 @@ public class FragmentUsernamesView$$State extends MvpViewState<FragmentUsernames
 
     /* compiled from: FragmentUsernamesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowToastCommand extends ViewCommand<FragmentUsernamesView> {
         public final String text;
 
@@ -277,7 +277,7 @@ public class FragmentUsernamesView$$State extends MvpViewState<FragmentUsernames
 
     /* compiled from: FragmentUsernamesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<FragmentUsernamesView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -298,7 +298,7 @@ public class FragmentUsernamesView$$State extends MvpViewState<FragmentUsernames
 
     /* compiled from: FragmentUsernamesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<FragmentUsernamesView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -317,7 +317,7 @@ public class FragmentUsernamesView$$State extends MvpViewState<FragmentUsernames
 
     /* compiled from: FragmentUsernamesView$$State.java */
     /* renamed from: com.iMe.ui.wallet.fragment.usernames.FragmentUsernamesView$$State$ShowRefreshingCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowRefreshingCommand extends ViewCommand<FragmentUsernamesView> {
         public final boolean show;
 

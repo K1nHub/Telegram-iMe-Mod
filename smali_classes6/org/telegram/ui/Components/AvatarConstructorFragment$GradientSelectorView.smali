@@ -38,13 +38,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/AvatarConstructorFragment;Landroid/content/Context;)V
     .locals 2
 
-    .line 1204
+    .line 1205
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
-    .line 1205
+    .line 1206
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 1195
+    .line 1196
     new-instance p1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     sget-object p2, Lorg/telegram/messenger/AndroidUtilities;->overshootInterpolator:Landroid/view/animation/OvershootInterpolator;
@@ -55,14 +55,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->progressToSelect:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 1199
+    .line 1200
     new-instance p1, Lorg/telegram/ui/Components/GradientTools;
 
     invoke-direct {p1}, Lorg/telegram/ui/Components/GradientTools;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->gradientTools:Lorg/telegram/ui/Components/GradientTools;
 
-    .line 1206
+    .line 1207
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->progressToSelect:Lorg/telegram/ui/Components/AnimatedFloat;
 
     invoke-virtual {p1, p0}, Lorg/telegram/ui/Components/AnimatedFloat;->setParent(Landroid/view/View;)V
@@ -75,10 +75,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 11
 
-    .line 1216
+    .line 1217
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 1217
+    .line 1218
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->progressToSelect:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->selected:Z
@@ -101,7 +101,7 @@
 
     invoke-virtual {v0, v1, v4}, Lorg/telegram/ui/Components/AnimatedFloat;->set(FZ)F
 
-    .line 1218
+    .line 1219
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -112,7 +112,7 @@
 
     div-float/2addr v0, v1
 
-    .line 1219
+    .line 1220
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v4
@@ -121,14 +121,14 @@
 
     div-float/2addr v4, v1
 
-    .line 1222
+    .line 1223
     iget-object v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->backgroundGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     const/4 v6, 0x1
 
     if-eqz v5, :cond_1
 
-    .line 1223
+    .line 1224
     iget-object v7, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->gradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget v8, v5, Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;->color1:I
@@ -141,7 +141,7 @@
 
     invoke-virtual {v7, v8, v9, v10, v5}, Lorg/telegram/ui/Components/GradientTools;->setColors(IIII)V
 
-    .line 1224
+    .line 1225
     iget-object v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->gradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -158,27 +158,27 @@
 
     invoke-virtual {v5, v3, v3, v7, v8}, Lorg/telegram/ui/Components/GradientTools;->setBounds(FFFF)V
 
-    .line 1225
+    .line 1226
     iget-object v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->gradientTools:Lorg/telegram/ui/Components/GradientTools;
 
     iget-object v5, v5, Lorg/telegram/ui/Components/GradientTools;->paint:Landroid/graphics/Paint;
 
     goto :goto_1
 
-    .line 1227
+    .line 1228
     :cond_1
     iget-object v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->defaultPaint:Landroid/graphics/Paint;
 
     if-nez v5, :cond_2
 
-    .line 1228
+    .line 1229
     new-instance v5, Landroid/graphics/Paint;
 
     invoke-direct {v5, v6}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->defaultPaint:Landroid/graphics/Paint;
 
-    .line 1229
+    .line 1230
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackground:I
 
     invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -187,11 +187,11 @@
 
     invoke-virtual {v5, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1231
+    .line 1232
     :cond_2
     iget-object v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->defaultPaint:Landroid/graphics/Paint;
 
-    .line 1233
+    .line 1234
     :goto_1
     iget-object v7, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->progressToSelect:Lorg/telegram/ui/Components/AnimatedFloat;
 
@@ -207,7 +207,7 @@
 
     const/16 v7, 0xf
 
-    .line 1234
+    .line 1235
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -218,7 +218,7 @@
 
     goto :goto_2
 
-    .line 1236
+    .line 1237
     :cond_3
     sget-object v7, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
@@ -226,7 +226,7 @@
 
     const/4 v7, 0x2
 
-    .line 1237
+    .line 1238
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -237,21 +237,21 @@
 
     const/high16 v7, 0x41580000    # 13.5f
 
-    .line 1238
+    .line 1239
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v7
 
     invoke-virtual {p1, v0, v4, v7, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1239
+    .line 1240
     sget-object v7, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v5, v7}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     const/16 v7, 0xa
 
-    .line 1240
+    .line 1241
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -278,23 +278,23 @@
 
     invoke-virtual {p1, v0, v4, v7, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1243
+    .line 1244
     :goto_2
     iget-boolean v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->isCustom:Z
 
     if-eqz v5, :cond_7
 
-    .line 1244
+    .line 1245
     iget-object v5, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->backgroundGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     if-nez v5, :cond_5
 
-    .line 1245
+    .line 1246
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->addIcon:Landroid/graphics/drawable/Drawable;
 
     if-nez v2, :cond_4
 
-    .line 1246
+    .line 1247
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -307,7 +307,7 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->addIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 1247
+    .line 1248
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchIcon:I
@@ -322,7 +322,7 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1249
+    .line 1250
     :cond_4
     iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->addIcon:Landroid/graphics/drawable/Drawable;
 
@@ -354,7 +354,7 @@
 
     iget-object v6, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->addIcon:Landroid/graphics/drawable/Drawable;
 
-    .line 1250
+    .line 1251
     invoke-virtual {v6}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v6
@@ -381,23 +381,23 @@
 
     float-to-int v1, v4
 
-    .line 1249
+    .line 1250
     invoke-virtual {v2, v3, v5, v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 1251
+    .line 1252
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->addIcon:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     goto :goto_3
 
-    .line 1253
+    .line 1254
     :cond_5
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->optionsPaint:Landroid/graphics/Paint;
 
     if-nez v1, :cond_6
 
-    .line 1254
+    .line 1255
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1, v6}, Landroid/graphics/Paint;-><init>(I)V
@@ -406,10 +406,10 @@
 
     const/4 v5, -0x1
 
-    .line 1255
+    .line 1256
     invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1257
+    .line 1258
     :cond_6
     iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->optionsPaint:Landroid/graphics/Paint;
 
@@ -435,7 +435,7 @@
 
     const/high16 v1, 0x3fc00000    # 1.5f
 
-    .line 1258
+    .line 1259
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
@@ -446,7 +446,7 @@
 
     invoke-virtual {p1, v0, v4, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1259
+    .line 1260
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -473,7 +473,7 @@
 
     invoke-virtual {p1, v2, v4, v3, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1260
+    .line 1261
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -508,7 +508,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 1211
+    .line 1212
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/AvatarConstructorFragment;->access$1900(Lorg/telegram/ui/Components/AvatarConstructorFragment;)I
@@ -539,7 +539,7 @@
 .method public setCustom(Z)V
     .locals 0
 
-    .line 1281
+    .line 1282
     iput-boolean p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->isCustom:Z
 
     return-void
@@ -548,7 +548,7 @@
 .method setGradient(Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;)V
     .locals 0
 
-    .line 1267
+    .line 1268
     iput-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->backgroundGradient:Lorg/telegram/ui/Components/AvatarConstructorFragment$BackgroundGradient;
 
     return-void
@@ -557,21 +557,21 @@
 .method setSelectedInternal(ZZ)V
     .locals 1
 
-    .line 1271
+    .line 1272
     iget-boolean v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->selected:Z
 
     if-eq v0, p1, :cond_0
 
-    .line 1272
+    .line 1273
     iput-boolean p1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->selected:Z
 
-    .line 1273
+    .line 1274
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     :cond_0
     if-nez p2, :cond_2
 
-    .line 1276
+    .line 1277
     iget-object p2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$GradientSelectorView;->progressToSelect:Lorg/telegram/ui/Components/AnimatedFloat;
 
     if-eqz p1, :cond_1

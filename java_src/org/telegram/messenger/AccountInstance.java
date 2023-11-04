@@ -17,7 +17,7 @@ import com.iMe.fork.controller.RecentChatsController;
 import com.iMe.fork.controller.TemplatesController;
 import com.iMe.fork.controller.ToolsController;
 import com.iMe.fork.controller.WalletFingerprintController;
-import org.telegram.p042ui.Components.Paint.PersistColorPalette;
+import org.telegram.p043ui.Components.Paint.PersistColorPalette;
 import org.telegram.tgnet.ConnectionsManager;
 /* loaded from: classes4.dex */
 public class AccountInstance {

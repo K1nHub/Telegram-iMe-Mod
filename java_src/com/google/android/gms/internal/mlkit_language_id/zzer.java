@@ -235,6 +235,6 @@ final class zzer extends zzdi<Integer> implements zzew<Integer>, zzgi {
     static {
         zzer zzerVar = new zzer(new int[0], 0);
         zza = zzerVar;
-        zzerVar.mo1072b_();
+        zzerVar.mo1073b_();
     }
 }

@@ -10,45 +10,45 @@ public final class DigestImpl implements Digest {
     private final MessageDigest digest;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ DigestImpl m5087boximpl(MessageDigest messageDigest) {
+    public static final /* synthetic */ DigestImpl m5241boximpl(MessageDigest messageDigest) {
         return new DigestImpl(messageDigest);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static MessageDigest m5089constructorimpl(MessageDigest digest) {
+    public static MessageDigest m5243constructorimpl(MessageDigest digest) {
         Intrinsics.checkNotNullParameter(digest, "digest");
         return digest;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m5090equalsimpl(MessageDigest messageDigest, Object obj) {
-        return (obj instanceof DigestImpl) && Intrinsics.areEqual(messageDigest, ((DigestImpl) obj).m5097unboximpl());
+    public static boolean m5244equalsimpl(MessageDigest messageDigest, Object obj) {
+        return (obj instanceof DigestImpl) && Intrinsics.areEqual(messageDigest, ((DigestImpl) obj).m5251unboximpl());
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m5093hashCodeimpl(MessageDigest messageDigest) {
+    public static int m5247hashCodeimpl(MessageDigest messageDigest) {
         return messageDigest.hashCode();
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m5095toStringimpl(MessageDigest messageDigest) {
+    public static String m5249toStringimpl(MessageDigest messageDigest) {
         return "DigestImpl(digest=" + messageDigest + ')';
     }
 
     public boolean equals(Object obj) {
-        return m5090equalsimpl(this.digest, obj);
+        return m5244equalsimpl(this.digest, obj);
     }
 
     public int hashCode() {
-        return m5093hashCodeimpl(this.digest);
+        return m5247hashCodeimpl(this.digest);
     }
 
     public String toString() {
-        return m5095toStringimpl(this.digest);
+        return m5249toStringimpl(this.digest);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ MessageDigest m5097unboximpl() {
+    public final /* synthetic */ MessageDigest m5251unboximpl() {
         return this.digest;
     }
 
@@ -72,7 +72,7 @@ public final class DigestImpl implements Digest {
     }
 
     /* renamed from: getAlgorithmName-impl  reason: not valid java name */
-    public static String m5091getAlgorithmNameimpl(MessageDigest messageDigest) {
+    public static String m5245getAlgorithmNameimpl(MessageDigest messageDigest) {
         String algorithm = messageDigest.getAlgorithm();
         Intrinsics.checkNotNullExpressionValue(algorithm, "digest.algorithm");
         return algorithm;
@@ -80,27 +80,27 @@ public final class DigestImpl implements Digest {
 
     @Override // org.ton.crypto.digest.Digest
     public String getAlgorithmName() {
-        return m5091getAlgorithmNameimpl(this.digest);
+        return m5245getAlgorithmNameimpl(this.digest);
     }
 
     /* renamed from: getDigestSize-impl  reason: not valid java name */
-    public static int m5092getDigestSizeimpl(MessageDigest messageDigest) {
+    public static int m5246getDigestSizeimpl(MessageDigest messageDigest) {
         return messageDigest.getDigestLength();
     }
 
     @Override // org.ton.crypto.digest.Digest
     public int getDigestSize() {
-        return m5092getDigestSizeimpl(this.digest);
+        return m5246getDigestSizeimpl(this.digest);
     }
 
     @Override // org.ton.crypto.digest.Digest
     public void update(byte[] input, int i, int i2) {
         Intrinsics.checkNotNullParameter(input, "input");
-        m5096updateimpl(this.digest, input, i, i2);
+        m5250updateimpl(this.digest, input, i, i2);
     }
 
     /* renamed from: update-impl  reason: not valid java name */
-    public static void m5096updateimpl(MessageDigest messageDigest, byte[] input, int i, int i2) {
+    public static void m5250updateimpl(MessageDigest messageDigest, byte[] input, int i, int i2) {
         Intrinsics.checkNotNullParameter(input, "input");
         messageDigest.update(input, i, i2);
     }
@@ -108,11 +108,11 @@ public final class DigestImpl implements Digest {
     @Override // org.ton.crypto.digest.Digest
     public byte[] build(byte[] output, int i) {
         Intrinsics.checkNotNullParameter(output, "output");
-        return m5088buildimpl(this.digest, output, i);
+        return m5242buildimpl(this.digest, output, i);
     }
 
     /* renamed from: build-impl  reason: not valid java name */
-    public static byte[] m5088buildimpl(MessageDigest messageDigest, byte[] output, int i) {
+    public static byte[] m5242buildimpl(MessageDigest messageDigest, byte[] output, int i) {
         Intrinsics.checkNotNullParameter(output, "output");
         messageDigest.digest(output, i, output.length - i);
         return output;
@@ -120,11 +120,11 @@ public final class DigestImpl implements Digest {
 
     @Override // org.ton.crypto.digest.Digest
     public void reset() {
-        m5094resetimpl(this.digest);
+        m5248resetimpl(this.digest);
     }
 
     /* renamed from: reset-impl  reason: not valid java name */
-    public static void m5094resetimpl(MessageDigest messageDigest) {
+    public static void m5248resetimpl(MessageDigest messageDigest) {
         messageDigest.reset();
     }
 }

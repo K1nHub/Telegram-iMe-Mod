@@ -10,17 +10,17 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public class DynamicLinkData extends AbstractSafeParcelable {
     public static final Parcelable.Creator<DynamicLinkData> CREATOR = new DynamicLinkDataCreator();
-    @SafeParcelable.Field(getter = "getClickTimestamp", m1089id = 4)
+    @SafeParcelable.Field(getter = "getClickTimestamp", m1090id = 4)
     private long clickTimestamp;
-    @SafeParcelable.Field(getter = "getDeepLink", m1089id = 2)
+    @SafeParcelable.Field(getter = "getDeepLink", m1090id = 2)
     private String deepLink;
-    @SafeParcelable.Field(getter = "getDynamicLink", m1089id = 1)
+    @SafeParcelable.Field(getter = "getDynamicLink", m1090id = 1)
     private String dynamicLink;
-    @SafeParcelable.Field(getter = "getExtensionBundle", m1089id = 5)
+    @SafeParcelable.Field(getter = "getExtensionBundle", m1090id = 5)
     private Bundle extensionBundle;
-    @SafeParcelable.Field(getter = "getMinVersion", m1089id = 3)
+    @SafeParcelable.Field(getter = "getMinVersion", m1090id = 3)
     private int minVersion;
-    @SafeParcelable.Field(getter = "getRedirectUrl", m1089id = 6)
+    @SafeParcelable.Field(getter = "getRedirectUrl", m1090id = 6)
     private Uri redirectUrl;
 
     public String getDynamicLink() {
@@ -53,7 +53,7 @@ public class DynamicLinkData extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public DynamicLinkData(@SafeParcelable.Param(m1088id = 1) String str, @SafeParcelable.Param(m1088id = 2) String str2, @SafeParcelable.Param(m1088id = 3) int i, @SafeParcelable.Param(m1088id = 4) long j, @SafeParcelable.Param(m1088id = 5) Bundle bundle, @SafeParcelable.Param(m1088id = 6) Uri uri) {
+    public DynamicLinkData(@SafeParcelable.Param(m1089id = 1) String str, @SafeParcelable.Param(m1089id = 2) String str2, @SafeParcelable.Param(m1089id = 3) int i, @SafeParcelable.Param(m1089id = 4) long j, @SafeParcelable.Param(m1089id = 5) Bundle bundle, @SafeParcelable.Param(m1089id = 6) Uri uri) {
         this.clickTimestamp = 0L;
         this.extensionBundle = null;
         this.dynamicLink = str;

@@ -26,11 +26,11 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                 return;
             }
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m100d("received disabled notification channel event for " + stringExtra + " state = " + booleanExtra);
+                FileLog.m102d("received disabled notification channel event for " + stringExtra + " state = " + booleanExtra);
             }
             if (SystemClock.elapsedRealtime() - AccountInstance.getInstance(intValue).getNotificationsController().lastNotificationChannelCreateTime <= 1000) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m100d("received disable notification event right after creating notification channel, ignoring");
+                    FileLog.m102d("received disable notification event right after creating notification channel, ignoring");
                     return;
                 }
                 return;
@@ -41,7 +41,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     return;
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m100d("apply channel{channel} " + stringExtra + " state");
+                    FileLog.m102d("apply channel{channel} " + stringExtra + " state");
                 }
                 notificationsSettings.edit().putInt(NotificationsController.getGlobalNotificationsKey(2), booleanExtra ? Integer.MAX_VALUE : 0).commit();
                 AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(2);
@@ -50,7 +50,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     return;
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m100d("apply channel{groups} " + stringExtra + " state");
+                    FileLog.m102d("apply channel{groups} " + stringExtra + " state");
                 }
                 notificationsSettings.edit().putInt(NotificationsController.getGlobalNotificationsKey(0), booleanExtra ? Integer.MAX_VALUE : 0).commit();
                 AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(0);
@@ -59,7 +59,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     return;
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m100d("apply channel{private} " + stringExtra + " state");
+                    FileLog.m102d("apply channel{private} " + stringExtra + " state");
                 }
                 notificationsSettings.edit().putInt(NotificationsController.getGlobalNotificationsKey(1), booleanExtra ? Integer.MAX_VALUE : 0).commit();
                 AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(1);
@@ -68,7 +68,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     return;
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m100d("apply channel{stories} " + stringExtra + " state");
+                    FileLog.m102d("apply channel{stories} " + stringExtra + " state");
                 }
                 notificationsSettings.edit().putBoolean(NotificationsController.getGlobalNotificationsKey(3), !booleanExtra).commit();
                 AccountInstance.getInstance(intValue).getNotificationsController().updateServerNotificationsSettings(1);
@@ -82,7 +82,7 @@ public class NotificationsDisabledReceiver extends BroadcastReceiver {
                     return;
                 }
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m100d("apply channel{else} " + stringExtra + " state");
+                    FileLog.m102d("apply channel{else} " + stringExtra + " state");
                 }
                 SharedPreferences.Editor edit = notificationsSettings.edit();
                 edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + sharedPrefKey, booleanExtra ? 2 : 0);

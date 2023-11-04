@@ -17,7 +17,7 @@
     c = "com.iMe.storage.data.manager.ton.TonControllerImpl"
     f = "TonControllerImpl.kt"
     l = {
-        0x7d
+        0x7e
     }
     m = "initLiteClient"
 .end annotation

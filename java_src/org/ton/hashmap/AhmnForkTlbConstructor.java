@@ -14,10 +14,10 @@ final class AhmnForkTlbConstructor<X, Y> extends TlbConstructor<HashmapAugNode.A
     private final TlbCodec<HashmapAug<X, Y>> hashmapAug;
 
     /* renamed from: n */
-    private final int f2066n;
+    private final int f2078n;
 
     /* renamed from: y */
-    private final TlbCodec<Y> f2067y;
+    private final TlbCodec<Y> f2079y;
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
     public /* bridge */ /* synthetic */ void storeTlb(CellBuilder cellBuilder, Object obj) {
@@ -29,8 +29,8 @@ final class AhmnForkTlbConstructor<X, Y> extends TlbConstructor<HashmapAugNode.A
         super("ahmn_fork#_ {n:#} {X:Type} {Y:Type} left:^(HashmapAug n X Y) right:^(HashmapAug n X Y) extra:Y = HashmapAugNode (n + 1) X Y", null, 2, null);
         Intrinsics.checkNotNullParameter(x, "x");
         Intrinsics.checkNotNullParameter(y, "y");
-        this.f2067y = y;
-        this.f2066n = i;
+        this.f2079y = y;
+        this.f2078n = i;
         this.hashmapAug = HashmapAug.Companion.tlbCodec(i - 1, x, y);
     }
 
@@ -40,18 +40,18 @@ final class AhmnForkTlbConstructor<X, Y> extends TlbConstructor<HashmapAugNode.A
         TlbCodec<HashmapAug<X, Y>> tlbCodec = this.hashmapAug;
         Cell loadRef = cellSlice.loadRef();
         CellRef.Companion companion = CellRef.Companion;
-        return new AhmnForkImpl(this.f2066n, companion.valueOf(loadRef, (TlbCodec) tlbCodec), companion.valueOf(cellSlice.loadRef(), (TlbCodec) this.hashmapAug), this.f2067y.loadTlb(cellSlice));
+        return new AhmnForkImpl(this.f2078n, companion.valueOf(loadRef, (TlbCodec) tlbCodec), companion.valueOf(cellSlice.loadRef(), (TlbCodec) this.hashmapAug), this.f2079y.loadTlb(cellSlice));
     }
 
     public void storeTlb(CellBuilder cellBuilder, HashmapAugNode.AhmnFork<X, Y> value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        if (value.getN() == this.f2066n) {
+        if (value.getN() == this.f2078n) {
             cellBuilder.storeRef(value.getLeft().toCell(this.hashmapAug));
             cellBuilder.storeRef(value.getRight().toCell(this.hashmapAug));
-            this.f2067y.storeTlb(cellBuilder, value.getExtra());
+            this.f2079y.storeTlb(cellBuilder, value.getExtra());
             return;
         }
-        throw new IllegalStateException(("n mismatch, expected: " + this.f2066n + ", actual: " + value.getN()).toString());
+        throw new IllegalStateException(("n mismatch, expected: " + this.f2078n + ", actual: " + value.getN()).toString());
     }
 }

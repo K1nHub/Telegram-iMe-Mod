@@ -78,9 +78,9 @@ public final class TopicModel {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1017m = ProfileData$$ExternalSyntheticBackport0.m1017m(this.topicId) * 31;
+        int m1018m = ProfileData$$ExternalSyntheticBackport0.m1018m(this.topicId) * 31;
         String str = this.name;
-        int hashCode = (m1017m + (str == null ? 0 : str.hashCode())) * 31;
+        int hashCode = (m1018m + (str == null ? 0 : str.hashCode())) * 31;
         Topic topic = this.icon;
         int hashCode2 = (((hashCode + (topic != null ? topic.hashCode() : 0)) * 31) + this.order) * 31;
         boolean z = this.isHidden;

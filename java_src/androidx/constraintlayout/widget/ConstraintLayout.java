@@ -187,7 +187,7 @@ public class ConstraintLayout extends ViewGroup {
                 int i6 = this.paddingTop + this.paddingBottom;
                 int i7 = this.paddingWidth;
                 View view = (View) widget.getCompanionWidget();
-                int[] iArr = C01091.f35x6d00e4a2;
+                int[] iArr = C01151.f35x6d00e4a2;
                 int i8 = iArr[dimensionBehaviour.ordinal()];
                 if (i8 == 1) {
                     makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(i4, 1073741824);
@@ -350,7 +350,7 @@ public class ConstraintLayout extends ViewGroup {
 
     /* renamed from: androidx.constraintlayout.widget.ConstraintLayout$1 */
     /* loaded from: classes.dex */
-    static /* synthetic */ class C01091 {
+    static /* synthetic */ class C01151 {
 
         /* renamed from: $SwitchMap$androidx$constraintlayout$core$widgets$ConstraintWidget$DimensionBehaviour */
         static final /* synthetic */ int[] f35x6d00e4a2;

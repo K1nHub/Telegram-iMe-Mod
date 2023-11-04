@@ -21,10 +21,10 @@ public final class CryptoSignatureSimple implements CryptoSignature {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: r */
-    private final BitString f2023r;
+    private final BitString f2035r;
 
     /* renamed from: s */
-    private final BitString f2024s;
+    private final BitString f2036s;
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -32,46 +32,46 @@ public final class CryptoSignatureSimple implements CryptoSignature {
         }
         if (obj instanceof CryptoSignatureSimple) {
             CryptoSignatureSimple cryptoSignatureSimple = (CryptoSignatureSimple) obj;
-            return Intrinsics.areEqual(this.f2023r, cryptoSignatureSimple.f2023r) && Intrinsics.areEqual(this.f2024s, cryptoSignatureSimple.f2024s);
+            return Intrinsics.areEqual(this.f2035r, cryptoSignatureSimple.f2035r) && Intrinsics.areEqual(this.f2036s, cryptoSignatureSimple.f2036s);
         }
         return false;
     }
 
     public int hashCode() {
-        return (this.f2023r.hashCode() * 31) + this.f2024s.hashCode();
+        return (this.f2035r.hashCode() * 31) + this.f2036s.hashCode();
     }
 
     public String toString() {
-        return "CryptoSignatureSimple(r=" + this.f2023r + ", s=" + this.f2024s + ')';
+        return "CryptoSignatureSimple(r=" + this.f2035r + ", s=" + this.f2036s + ')';
     }
 
     public /* synthetic */ CryptoSignatureSimple(int i, BitString bitString, BitString bitString2, SerializationConstructorMarker serializationConstructorMarker) {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, CryptoSignatureSimple$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2023r = bitString;
-        this.f2024s = bitString2;
+        this.f2035r = bitString;
+        this.f2036s = bitString2;
     }
 
     public CryptoSignatureSimple(BitString r, BitString s) {
         Intrinsics.checkNotNullParameter(r, "r");
         Intrinsics.checkNotNullParameter(s, "s");
-        this.f2023r = r;
-        this.f2024s = s;
+        this.f2035r = r;
+        this.f2036s = s;
     }
 
     public static final /* synthetic */ void write$Self(CryptoSignatureSimple cryptoSignatureSimple, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         FiftHexBitStringSerializer fiftHexBitStringSerializer = FiftHexBitStringSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, fiftHexBitStringSerializer, cryptoSignatureSimple.f2023r);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, fiftHexBitStringSerializer, cryptoSignatureSimple.f2024s);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, fiftHexBitStringSerializer, cryptoSignatureSimple.f2035r);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, fiftHexBitStringSerializer, cryptoSignatureSimple.f2036s);
     }
 
     public final BitString getR() {
-        return this.f2023r;
+        return this.f2035r;
     }
 
     public final BitString getS() {
-        return this.f2024s;
+        return this.f2036s;
     }
 
     /* compiled from: CryptoSignatureSimple.kt */

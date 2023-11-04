@@ -1,12 +1,12 @@
 package com.iMe.model.wallet.staking;
 
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* compiled from: StakingScreenType.kt */
 /* loaded from: classes3.dex */
 public enum StakingScreenType {
-    STAKING_REPLENISH_SCREEN_TYPE(C3630R.string.wallet_operation_deposit, C3630R.string.staking_replenishment_confirm_title, C3630R.string.staking_replenishment_confirm_description, C3630R.raw.fork_staking_replenish, C3630R.string.staking_replenishment_description, C3630R.string.staking_replenishment_title),
-    STAKING_PROFIT_SCREEN_TYPE(C3630R.string.staking_profit_get, C3630R.string.staking_profit_confirm_title, C3630R.string.staking_profit_confirm_description, C3630R.raw.fork_staking_profit, C3630R.string.staking_profit_description, C3630R.string.staking_profit_title),
-    STAKING_WITHDRAW_SCREEN_TYPE(C3630R.string.staking_details_withdraw, C3630R.string.staking_withdraw_confirm_title, C3630R.string.staking_withdraw_confirm_description, C3630R.raw.fork_staking_withdraw, C3630R.string.staking_withdraw_description, C3630R.string.staking_withdraw_title);
+    STAKING_REPLENISH_SCREEN_TYPE(C3634R.string.wallet_operation_deposit, C3634R.string.staking_replenishment_confirm_title, C3634R.string.staking_replenishment_confirm_description, C3634R.raw.fork_staking_replenish, C3634R.string.staking_replenishment_description, C3634R.string.staking_replenishment_title),
+    STAKING_PROFIT_SCREEN_TYPE(C3634R.string.staking_profit_get, C3634R.string.staking_profit_confirm_title, C3634R.string.staking_profit_confirm_description, C3634R.raw.fork_staking_profit, C3634R.string.staking_profit_description, C3634R.string.staking_profit_title),
+    STAKING_WITHDRAW_SCREEN_TYPE(C3634R.string.staking_details_withdraw, C3634R.string.staking_withdraw_confirm_title, C3634R.string.staking_withdraw_confirm_description, C3634R.raw.fork_staking_withdraw, C3634R.string.staking_withdraw_description, C3634R.string.staking_withdraw_title);
     
     private final int actionBarTitleTextId;
     private final int animationId;

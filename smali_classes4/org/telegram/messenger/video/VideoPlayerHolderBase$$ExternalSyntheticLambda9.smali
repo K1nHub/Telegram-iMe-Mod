@@ -8,30 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
-.field public final synthetic f$1:Z
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Document;
 
-.field public final synthetic f$2:Landroid/net/Uri;
-
-.field public final synthetic f$3:Z
-
-.field public final synthetic f$4:J
+.field public final synthetic f$2:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/video/VideoPlayerHolderBase;ZLandroid/net/Uri;ZJ)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/video/VideoPlayerHolderBase;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
-    iput-boolean p2, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$1:Z
+    iput-object p2, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/tgnet/TLRPC$Document;
 
-    iput-object p3, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$2:Landroid/net/Uri;
-
-    iput-boolean p4, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$3:Z
-
-    iput-wide p5, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$4:J
+    iput-object p3, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$2:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -39,19 +31,15 @@
 
 # virtual methods
 .method public final run()V
-    .locals 6
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/messenger/video/VideoPlayerHolderBase;
 
-    iget-boolean v1, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$1:Z
+    iget-object v1, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/tgnet/TLRPC$Document;
 
-    iget-object v2, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$2:Landroid/net/Uri;
+    iget-object v2, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$2:Ljava/lang/Runnable;
 
-    iget-boolean v3, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$3:Z
-
-    iget-wide v4, p0, Lorg/telegram/messenger/video/VideoPlayerHolderBase$$ExternalSyntheticLambda9;->f$4:J
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->$r8$lambda$VSCjtT78IiABxE5jzca3uHE7eYw(Lorg/telegram/messenger/video/VideoPlayerHolderBase;ZLandroid/net/Uri;ZJ)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/video/VideoPlayerHolderBase;->$r8$lambda$2UpeXtt-p6q5KAmx_zMF-TuDzsQ(Lorg/telegram/messenger/video/VideoPlayerHolderBase;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Runnable;)V
 
     return-void
 .end method

@@ -135,7 +135,7 @@
 .method private animatePendingRequests(ZZ)V
     .locals 5
 
-    .line 189
+    .line 190
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->root:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getVisibility()I
@@ -163,7 +163,7 @@
     :cond_1
     if-eqz p1, :cond_4
 
-    .line 194
+    .line 195
     iget v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->closePendingRequestsCount:I
 
     const/4 v3, -0x1
@@ -174,7 +174,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 195
+    .line 196
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -191,7 +191,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->closePendingRequestsCount:I
 
-    .line 197
+    .line 198
     :cond_2
     iget v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsCount:I
 
@@ -204,12 +204,12 @@
     :cond_3
     if-eqz v3, :cond_4
 
-    .line 200
+    .line 201
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v0, :cond_4
 
-    .line 201
+    .line 202
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -222,13 +222,13 @@
 
     invoke-virtual {v0, v3, v4, v2}, Lorg/telegram/messenger/MessagesController;->setChatPendingRequestsOnClose(JI)V
 
-    .line 204
+    .line 205
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_5
 
-    .line 205
+    .line 206
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_5
@@ -261,21 +261,21 @@
     :cond_7
     aput v0, p2, v1
 
-    .line 208
+    .line 209
     invoke-static {p2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p2
 
     iput-object p2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsAnimator:Landroid/animation/ValueAnimator;
 
-    .line 209
+    .line 210
     new-instance v0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;)V
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 216
+    .line 217
     iget-object p2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$3;
@@ -284,21 +284,21 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 233
+    .line 234
     iget-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0xc8
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 234
+    .line 235
     iget-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_4
 
-    .line 236
+    .line 237
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->root:Landroid/widget/FrameLayout;
 
@@ -316,7 +316,7 @@
 
     goto :goto_3
 
-    .line 237
+    .line 238
     :cond_a
     invoke-virtual {p0}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->getViewHeight()I
 
@@ -329,12 +329,12 @@
     :goto_3
     iput v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsEnterOffset:F
 
-    .line 238
+    .line 239
     iget-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->callback:Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$Callback;
 
     if-eqz p1, :cond_b
 
-    .line 239
+    .line 240
     invoke-interface {p1}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$Callback;->onEnterOffsetChanged()V
 
     :cond_b
@@ -345,7 +345,7 @@
 .method private synthetic lambda$animatePendingRequests$2(Landroid/animation/ValueAnimator;)V
     .locals 2
 
-    .line 210
+    .line 211
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -356,7 +356,7 @@
 
     move-result p1
 
-    .line 211
+    .line 212
     invoke-virtual {p0}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->getViewHeight()I
 
     move-result v0
@@ -373,12 +373,12 @@
 
     iput v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsEnterOffset:F
 
-    .line 212
+    .line 213
     iget-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->callback:Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$Callback;
 
     if-eqz p1, :cond_0
 
-    .line 213
+    .line 214
     invoke-interface {p1}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$Callback;->onEnterOffsetChanged()V
 
     :cond_0
@@ -397,7 +397,7 @@
 .method private synthetic lambda$getView$1(Landroid/view/View;)V
     .locals 3
 
-    .line 108
+    .line 109
     iget-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -412,7 +412,7 @@
 
     invoke-virtual {p1, v0, v1, v2}, Lorg/telegram/messenger/MessagesController;->setChatPendingRequestsOnClose(JI)V
 
-    .line 109
+    .line 110
     iget p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsCount:I
 
     iput p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->closePendingRequestsCount:I
@@ -421,7 +421,7 @@
 
     const/4 v0, 0x1
 
-    .line 110
+    .line 111
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->animatePendingRequests(ZZ)V
 
     return-void
@@ -438,7 +438,7 @@
         }
     .end annotation
 
-    .line 157
+    .line 158
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->root:Landroid/widget/FrameLayout;
 
     if-nez v0, :cond_0
@@ -450,12 +450,12 @@
 
     if-gtz p1, :cond_2
 
-    .line 161
+    .line 162
     iget-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz p1, :cond_1
 
-    .line 162
+    .line 163
     iget-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -468,28 +468,28 @@
 
     invoke-virtual {p1, v1, v2, v0}, Lorg/telegram/messenger/MessagesController;->setChatPendingRequestsOnClose(JI)V
 
-    .line 163
+    .line 164
     iput v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->closePendingRequestsCount:I
 
-    .line 165
+    .line 166
     :cond_1
     invoke-direct {p0, v0, p3}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->animatePendingRequests(ZZ)V
 
-    .line 166
+    .line 167
     iput v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsCount:I
 
     return-void
 
-    .line 169
+    .line 170
     :cond_2
     iget v1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsCount:I
 
     if-eq v1, p1, :cond_5
 
-    .line 170
+    .line 171
     iput p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsCount:I
 
-    .line 171
+    .line 172
     iget-object v1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->requestsCountTextView:Landroid/widget/TextView;
 
     new-array v2, v0, [Ljava/lang/Object;
@@ -504,12 +504,12 @@
 
     const/4 p1, 0x1
 
-    .line 172
+    .line 173
     invoke-direct {p0, p1, p3}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->animatePendingRequests(ZZ)V
 
     if-eqz p2, :cond_5
 
-    .line 174
+    .line 175
     invoke-interface {p2}, Ljava/util/List;->isEmpty()Z
 
     move-result p3
@@ -518,7 +518,7 @@
 
     const/4 p3, 0x3
 
-    .line 175
+    .line 176
     invoke-interface {p2}, Ljava/util/List;->size()I
 
     move-result v1
@@ -530,7 +530,7 @@
     :goto_0
     if-ge v0, p3, :cond_4
 
-    .line 177
+    .line 178
     iget-object v1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -549,7 +549,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 179
+    .line 180
     iget-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->avatarsView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     iget v3, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->currentAccount:I
@@ -561,13 +561,13 @@
 
     goto :goto_0
 
-    .line 182
+    .line 183
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->avatarsView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/AvatarsImageView;->setCount(I)V
 
-    .line 183
+    .line 184
     iget-object p2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->avatarsView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/AvatarsImageView;->commitTransition(Z)V
@@ -579,12 +579,12 @@
 .method private showBottomSheet()V
     .locals 4
 
-    .line 142
+    .line 143
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->bottomSheet:Lorg/telegram/ui/Components/MemberRequestsBottomSheet;
 
     if-nez v0, :cond_0
 
-    .line 143
+    .line 144
     new-instance v0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$2;
 
     iget-object v1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -597,7 +597,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->bottomSheet:Lorg/telegram/ui/Components/MemberRequestsBottomSheet;
 
-    .line 153
+    .line 154
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
@@ -625,7 +625,7 @@
 
     move-object/from16 v1, p1
 
-    .line 245
+    .line 246
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->root:Landroid/widget/FrameLayout;
@@ -648,7 +648,7 @@
 
     invoke-interface {v1, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 246
+    .line 247
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->requestsCountTextView:Landroid/widget/TextView;
@@ -671,7 +671,7 @@
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 247
+    .line 248
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->closeView:Landroid/widget/ImageView;
@@ -856,10 +856,21 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->avatarsView:Lorg/telegram/ui/Components/AvatarsImageView;
 
+    const/16 v3, 0x12
+
     .line 87
-    invoke-virtual {v2}, Lorg/telegram/ui/Components/AvatarsImageView;->reset()V
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/AvatarsImageView;->setAvatarsTextSize(I)V
 
     .line 88
+    iget-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->avatarsView:Lorg/telegram/ui/Components/AvatarsImageView;
+
+    invoke-virtual {v2}, Lorg/telegram/ui/Components/AvatarsImageView;->reset()V
+
+    .line 89
     iget-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->avatarsView:Lorg/telegram/ui/Components/AvatarsImageView;
 
     const/4 v3, -0x2
@@ -874,7 +885,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 90
+    .line 91
     new-instance v2, Landroid/widget/TextView;
 
     iget-object v3, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -887,31 +898,31 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->requestsCountTextView:Landroid/widget/TextView;
 
-    .line 91
+    .line 92
     sget-object v3, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 92
+    .line 93
     iget-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->requestsCountTextView:Landroid/widget/TextView;
 
     const/16 v3, 0x10
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 93
+    .line 94
     iget-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->requestsCountTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->setSingleLine()V
 
-    .line 94
+    .line 95
     iget-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->requestsCountTextView:Landroid/widget/TextView;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 95
+    .line 96
     iget-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->requestsCountTextView:Landroid/widget/TextView;
 
     iget-object v3, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -924,7 +935,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 96
+    .line 97
     iget-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->requestsCountTextView:Landroid/widget/TextView;
 
     const-string v3, "fonts/rmedium.ttf"
@@ -935,7 +946,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 97
+    .line 98
     iget-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->requestsCountTextView:Landroid/widget/TextView;
 
     const/4 v3, -0x1
@@ -952,7 +963,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 99
+    .line 100
     new-instance v0, Landroid/widget/ImageView;
 
     iget-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -965,14 +976,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->closeView:Landroid/widget/ImageView;
 
-    .line 100
+    .line 101
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x15
 
     if-lt v2, v3, :cond_0
 
-    .line 101
+    .line 102
     iget-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_inappPlayerClose:I
@@ -999,7 +1010,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 103
+    .line 104
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->closeView:Landroid/widget/ImageView;
 
@@ -1019,7 +1030,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 104
+    .line 105
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->closeView:Landroid/widget/ImageView;
 
     sget v2, Lorg/telegram/messenger/R$string;->Close:I
@@ -1032,21 +1043,21 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 105
+    .line 106
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->closeView:Landroid/widget/ImageView;
 
     sget v2, Lorg/telegram/messenger/R$drawable;->miniplayer_close:I
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 106
+    .line 107
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->closeView:Landroid/widget/ImageView;
 
     sget-object v2, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 107
+    .line 108
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->closeView:Landroid/widget/ImageView;
 
     new-instance v2, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$$ExternalSyntheticLambda1;
@@ -1055,7 +1066,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 112
+    .line 113
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->root:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->closeView:Landroid/widget/ImageView;
@@ -1080,19 +1091,19 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 113
+    .line 114
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->chatInfo:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     if-eqz v0, :cond_1
 
-    .line 114
+    .line 115
     iget v2, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->requests_pending:I
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->recent_requesters:Ljava/util/ArrayList;
 
     invoke-direct {p0, v2, v0, v1}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->setPendingRequests(ILjava/util/List;Z)V
 
-    .line 117
+    .line 118
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->root:Landroid/widget/FrameLayout;
 
@@ -1102,7 +1113,7 @@
 .method public getViewEnterOffset()F
     .locals 1
 
-    .line 132
+    .line 133
     iget v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->pendingRequestsEnterOffset:F
 
     return v0
@@ -1113,7 +1124,7 @@
 
     const/16 v0, 0x28
 
-    .line 128
+    .line 129
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1124,7 +1135,7 @@
 .method public onBackToScreen()V
     .locals 1
 
-    .line 136
+    .line 137
     iget-object v0, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->bottomSheet:Lorg/telegram/ui/Components/MemberRequestsBottomSheet;
 
     if-eqz v0, :cond_0
@@ -1135,7 +1146,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 137
+    .line 138
     invoke-direct {p0}, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->showBottomSheet()V
 
     :cond_0
@@ -1145,12 +1156,12 @@
 .method public setChatInfo(Lorg/telegram/tgnet/TLRPC$ChatFull;Z)V
     .locals 1
 
-    .line 121
+    .line 122
     iput-object p1, p0, Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate;->chatInfo:Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     if-eqz p1, :cond_0
 
-    .line 123
+    .line 124
     iget v0, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->requests_pending:I
 
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->recent_requesters:Ljava/util/ArrayList;

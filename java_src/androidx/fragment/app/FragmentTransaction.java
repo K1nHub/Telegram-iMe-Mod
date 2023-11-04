@@ -20,7 +20,7 @@ public abstract class FragmentTransaction {
     int mEnterAnim;
     int mExitAnim;
     String mName;
-    ArrayList<C0212Op> mOps;
+    ArrayList<C0218Op> mOps;
     int mPopEnterAnim;
     int mPopExitAnim;
     boolean mReorderingAllowed;
@@ -39,7 +39,7 @@ public abstract class FragmentTransaction {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: androidx.fragment.app.FragmentTransaction$Op */
     /* loaded from: classes.dex */
-    public static final class C0212Op {
+    public static final class C0218Op {
         int mCmd;
         Lifecycle.State mCurrentMaxState;
         int mEnterAnim;
@@ -51,11 +51,11 @@ public abstract class FragmentTransaction {
         int mPopExitAnim;
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0212Op() {
+        public C0218Op() {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0212Op(int i, Fragment fragment) {
+        public C0218Op(int i, Fragment fragment) {
             this.mCmd = i;
             this.mFragment = fragment;
             this.mFromExpandedOp = false;
@@ -65,7 +65,7 @@ public abstract class FragmentTransaction {
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
-        public C0212Op(int i, Fragment fragment, boolean z) {
+        public C0218Op(int i, Fragment fragment, boolean z) {
             this.mCmd = i;
             this.mFragment = fragment;
             this.mFromExpandedOp = z;
@@ -74,16 +74,16 @@ public abstract class FragmentTransaction {
             this.mCurrentMaxState = state;
         }
 
-        C0212Op(C0212Op c0212Op) {
-            this.mCmd = c0212Op.mCmd;
-            this.mFragment = c0212Op.mFragment;
-            this.mFromExpandedOp = c0212Op.mFromExpandedOp;
-            this.mEnterAnim = c0212Op.mEnterAnim;
-            this.mExitAnim = c0212Op.mExitAnim;
-            this.mPopEnterAnim = c0212Op.mPopEnterAnim;
-            this.mPopExitAnim = c0212Op.mPopExitAnim;
-            this.mOldMaxState = c0212Op.mOldMaxState;
-            this.mCurrentMaxState = c0212Op.mCurrentMaxState;
+        C0218Op(C0218Op c0218Op) {
+            this.mCmd = c0218Op.mCmd;
+            this.mFragment = c0218Op.mFragment;
+            this.mFromExpandedOp = c0218Op.mFromExpandedOp;
+            this.mEnterAnim = c0218Op.mEnterAnim;
+            this.mExitAnim = c0218Op.mExitAnim;
+            this.mPopEnterAnim = c0218Op.mPopEnterAnim;
+            this.mPopExitAnim = c0218Op.mPopExitAnim;
+            this.mOldMaxState = c0218Op.mOldMaxState;
+            this.mCurrentMaxState = c0218Op.mCurrentMaxState;
         }
     }
 
@@ -104,9 +104,9 @@ public abstract class FragmentTransaction {
     /* JADX INFO: Access modifiers changed from: package-private */
     public FragmentTransaction(FragmentFactory fragmentFactory, ClassLoader classLoader, FragmentTransaction fragmentTransaction) {
         this(fragmentFactory, classLoader);
-        Iterator<C0212Op> it = fragmentTransaction.mOps.iterator();
+        Iterator<C0218Op> it = fragmentTransaction.mOps.iterator();
         while (it.hasNext()) {
-            this.mOps.add(new C0212Op(it.next()));
+            this.mOps.add(new C0218Op(it.next()));
         }
         this.mEnterAnim = fragmentTransaction.mEnterAnim;
         this.mExitAnim = fragmentTransaction.mExitAnim;
@@ -134,12 +134,12 @@ public abstract class FragmentTransaction {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public void addOp(C0212Op c0212Op) {
-        this.mOps.add(c0212Op);
-        c0212Op.mEnterAnim = this.mEnterAnim;
-        c0212Op.mExitAnim = this.mExitAnim;
-        c0212Op.mPopEnterAnim = this.mPopEnterAnim;
-        c0212Op.mPopExitAnim = this.mPopExitAnim;
+    public void addOp(C0218Op c0218Op) {
+        this.mOps.add(c0218Op);
+        c0218Op.mEnterAnim = this.mEnterAnim;
+        c0218Op.mExitAnim = this.mExitAnim;
+        c0218Op.mPopEnterAnim = this.mPopEnterAnim;
+        c0218Op.mPopExitAnim = this.mPopExitAnim;
     }
 
     public FragmentTransaction add(Fragment fragment, String str) {
@@ -187,7 +187,7 @@ public abstract class FragmentTransaction {
             fragment.mFragmentId = i;
             fragment.mContainerId = i;
         }
-        addOp(new C0212Op(i2, fragment));
+        addOp(new C0218Op(i2, fragment));
     }
 
     public FragmentTransaction replace(int i, Fragment fragment) {
@@ -203,12 +203,12 @@ public abstract class FragmentTransaction {
     }
 
     public FragmentTransaction remove(Fragment fragment) {
-        addOp(new C0212Op(3, fragment));
+        addOp(new C0218Op(3, fragment));
         return this;
     }
 
     public FragmentTransaction setPrimaryNavigationFragment(Fragment fragment) {
-        addOp(new C0212Op(8, fragment));
+        addOp(new C0218Op(8, fragment));
         return this;
     }
 

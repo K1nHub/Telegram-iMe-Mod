@@ -29,10 +29,10 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentWalletChooseRecipientOptionsBinding;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: ChooseRecipientOptionsView.kt */
 /* renamed from: com.iMe.ui.custom.ChooseRecipientOptionsView */
 /* loaded from: classes3.dex */
@@ -103,7 +103,7 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
-                return Integer.valueOf(AndroidUtilities.m102dp(16));
+                return Integer.valueOf(AndroidUtilities.m104dp(16));
             }
         });
         this.iconSize$delegate = lazy2;
@@ -116,7 +116,7 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
-                return Integer.valueOf(ChooseRecipientOptionsView.this.getResources().getDimensionPixelOffset(C3630R.dimen.margin_half_small));
+                return Integer.valueOf(ChooseRecipientOptionsView.this.getResources().getDimensionPixelOffset(C3634R.dimen.margin_half_small));
             }
         });
         this.iconPadding$delegate = lazy3;
@@ -129,7 +129,7 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
-                return Integer.valueOf(ChooseRecipientOptionsView.this.getResources().getDimensionPixelOffset(C3630R.dimen.new_label_corner_radius));
+                return Integer.valueOf(ChooseRecipientOptionsView.this.getResources().getDimensionPixelOffset(C3634R.dimen.new_label_corner_radius));
             }
         });
         this.cornerSize$delegate = lazy4;
@@ -289,17 +289,17 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
     private final void setupViews() {
         ForkContentWalletChooseRecipientOptionsBinding forkContentWalletChooseRecipientOptionsBinding = this.binding;
         TextView setupViews$lambda$7$lambda$4 = forkContentWalletChooseRecipientOptionsBinding.textPaste;
-        setupViews$lambda$7$lambda$4.setText(LocaleController.getString("Paste", C3630R.string.Paste));
+        setupViews$lambda$7$lambda$4.setText(LocaleController.getString("Paste", C3634R.string.Paste));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$7$lambda$4, "setupViews$lambda$7$lambda$4");
-        setSizedStartIcon(setupViews$lambda$7$lambda$4, C3630R.C3632drawable.fork_ic_paste_24);
+        setSizedStartIcon(setupViews$lambda$7$lambda$4, C3634R.C3636drawable.fork_ic_paste_24);
         TextView setupViews$lambda$7$lambda$5 = forkContentWalletChooseRecipientOptionsBinding.textContacts;
-        setupViews$lambda$7$lambda$5.setText(LocaleController.getString("Contacts", C3630R.string.Contacts));
+        setupViews$lambda$7$lambda$5.setText(LocaleController.getString("Contacts", C3634R.string.Contacts));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$7$lambda$5, "setupViews$lambda$7$lambda$5");
-        setSizedStartIcon(setupViews$lambda$7$lambda$5, C3630R.C3632drawable.fork_drawer_social_telegram);
+        setSizedStartIcon(setupViews$lambda$7$lambda$5, C3634R.C3636drawable.fork_drawer_social_telegram);
         TextView setupViews$lambda$7$lambda$6 = forkContentWalletChooseRecipientOptionsBinding.textQr;
-        setupViews$lambda$7$lambda$6.setText(LocaleController.getString("QrCode", C3630R.string.QrCode));
+        setupViews$lambda$7$lambda$6.setText(LocaleController.getString("QrCode", C3634R.string.QrCode));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$7$lambda$6, "setupViews$lambda$7$lambda$6");
-        setSizedStartIcon(setupViews$lambda$7$lambda$6, C3630R.C3632drawable.msg_qrcode);
+        setSizedStartIcon(setupViews$lambda$7$lambda$6, C3634R.C3636drawable.msg_qrcode);
     }
 
     private final void setSizedStartIcon(TextView textView, int i) {

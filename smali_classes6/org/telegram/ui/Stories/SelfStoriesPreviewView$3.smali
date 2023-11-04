@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/SelfStoriesPreviewView;)V
     .locals 0
 
-    .line 310
+    .line 306
     iput-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$3;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 313
+    .line 309
     iget-object p1, p0, Lorg/telegram/ui/Stories/SelfStoriesPreviewView$3;->this$0:Lorg/telegram/ui/Stories/SelfStoriesPreviewView;
 
     const/4 v0, 0x0

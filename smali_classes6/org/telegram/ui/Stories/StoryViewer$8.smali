@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/StoryViewer;Z)V
     .locals 0
 
-    .line 1607
+    .line 1671
     iput-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->val$open:Z
@@ -39,14 +39,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1610
+    .line 1674
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->locker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
-    .line 1611
+    .line 1675
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->val$open:Z
@@ -65,7 +65,7 @@
     :goto_0
     iput v0, p1, Lorg/telegram/ui/Stories/StoryViewer;->selfStoriesViewsOffset:F
 
-    .line 1612
+    .line 1676
     iget-object p1, p1, Lorg/telegram/ui/Stories/StoryViewer;->storiesViewPager:Lorg/telegram/ui/Stories/StoriesViewPager;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesViewPager;->getCurrentPeerView()Lorg/telegram/ui/Stories/PeerStoriesView;
@@ -74,10 +74,10 @@
 
     if-eqz p1, :cond_1
 
-    .line 1614
+    .line 1678
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1616
+    .line 1680
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
@@ -85,7 +85,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/HwFrameLayout;->invalidate()V
 
-    .line 1617
+    .line 1681
     iget-object p1, p0, Lorg/telegram/ui/Stories/StoryViewer$8;->this$0:Lorg/telegram/ui/Stories/StoryViewer;
 
     const/4 v0, 0x0

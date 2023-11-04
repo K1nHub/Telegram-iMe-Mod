@@ -210,7 +210,7 @@
 
     move-result-object p1
 
-    const-string v2, "java.util.Arrays.toString(this)"
+    const-string/jumbo v2, "java.util.Arrays.toString(this)"
 
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

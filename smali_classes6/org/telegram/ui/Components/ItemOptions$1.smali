@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/ItemOptions$1;
-.super Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+.super Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 .source "ItemOptions.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ItemOptions;->show()Lorg/telegram/ui/Components/ItemOptions;
+    value = Lorg/telegram/ui/Components/ItemOptions;->init()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,37 +17,67 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-.field final synthetic val$container:Landroid/view/ViewGroup;
-
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ItemOptions;Landroid/view/View;IILandroid/view/ViewGroup;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ItemOptions;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 487
+    .line 164
     iput-object p1, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    iput-object p5, p0, Lorg/telegram/ui/Components/ItemOptions$1;->val$container:Landroid/view/ViewGroup;
-
-    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;-><init>(Landroid/view/View;II)V
+    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public dismiss()V
+.method protected onMeasure(II)V
     .locals 2
 
-    .line 490
-    invoke-super {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
-
-    .line 491
+    .line 167
     iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ItemOptions$1;->val$container:Landroid/view/ViewGroup;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$000(Lorg/telegram/ui/Components/ItemOptions;)Landroid/view/ViewGroup;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ItemOptions;->access$000(Lorg/telegram/ui/Components/ItemOptions;Landroid/view/ViewGroup;)V
+    move-result-object v0
+
+    if-ne p0, v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$100(Lorg/telegram/ui/Components/ItemOptions;)I
+
+    move-result v0
+
+    if-lez v0, :cond_0
+
+    .line 168
+    iget-object v0, p0, Lorg/telegram/ui/Components/ItemOptions$1;->this$0:Lorg/telegram/ui/Components/ItemOptions;
+
+    invoke-static {v0}, Lorg/telegram/ui/Components/ItemOptions;->access$100(Lorg/telegram/ui/Components/ItemOptions;)I
+
+    move-result v0
+
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
+
+    move-result p2
+
+    invoke-static {v0, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p2
+
+    .line 170
+    :cond_0
+    invoke-super {p0, p1, p2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->onMeasure(II)V
 
     return-void
 .end method

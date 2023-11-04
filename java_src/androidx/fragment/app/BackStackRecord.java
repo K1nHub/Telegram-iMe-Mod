@@ -84,8 +84,8 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
         printWriter.println("Operations:");
         int size = this.mOps.size();
         for (int i = 0; i < size; i++) {
-            FragmentTransaction.C0212Op c0212Op = this.mOps.get(i);
-            switch (c0212Op.mCmd) {
+            FragmentTransaction.C0218Op c0218Op = this.mOps.get(i);
+            switch (c0218Op.mCmd) {
                 case 0:
                     str2 = "NULL";
                     break;
@@ -120,7 +120,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                     str2 = "OP_SET_MAX_LIFECYCLE";
                     break;
                 default:
-                    str2 = "cmd=" + c0212Op.mCmd;
+                    str2 = "cmd=" + c0218Op.mCmd;
                     break;
             }
             printWriter.print(str);
@@ -129,21 +129,21 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
             printWriter.print(": ");
             printWriter.print(str2);
             printWriter.print(" ");
-            printWriter.println(c0212Op.mFragment);
+            printWriter.println(c0218Op.mFragment);
             if (z) {
-                if (c0212Op.mEnterAnim != 0 || c0212Op.mExitAnim != 0) {
+                if (c0218Op.mEnterAnim != 0 || c0218Op.mExitAnim != 0) {
                     printWriter.print(str);
                     printWriter.print("enterAnim=#");
-                    printWriter.print(Integer.toHexString(c0212Op.mEnterAnim));
+                    printWriter.print(Integer.toHexString(c0218Op.mEnterAnim));
                     printWriter.print(" exitAnim=#");
-                    printWriter.println(Integer.toHexString(c0212Op.mExitAnim));
+                    printWriter.println(Integer.toHexString(c0218Op.mExitAnim));
                 }
-                if (c0212Op.mPopEnterAnim != 0 || c0212Op.mPopExitAnim != 0) {
+                if (c0218Op.mPopEnterAnim != 0 || c0218Op.mPopExitAnim != 0) {
                     printWriter.print(str);
                     printWriter.print("popEnterAnim=#");
-                    printWriter.print(Integer.toHexString(c0212Op.mPopEnterAnim));
+                    printWriter.print(Integer.toHexString(c0218Op.mPopEnterAnim));
                     printWriter.print(" popExitAnim=#");
-                    printWriter.println(Integer.toHexString(c0212Op.mPopExitAnim));
+                    printWriter.println(Integer.toHexString(c0218Op.mPopExitAnim));
                 }
             }
         }
@@ -195,7 +195,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void bumpBackStackNesting(int i) {
-        FragmentTransaction.C0212Op c0212Op;
+        FragmentTransaction.C0218Op c0218Op;
         if (this.mAddToBackStack) {
             if (FragmentManager.isLoggingEnabled(2)) {
                 Log.v("FragmentManager", "Bump nesting in " + this + " by " + i);
@@ -206,7 +206,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                 if (fragment != null) {
                     fragment.mBackStackNesting += i;
                     if (FragmentManager.isLoggingEnabled(2)) {
-                        Log.v("FragmentManager", "Bump nesting of " + c0212Op.mFragment + " to " + c0212Op.mFragment.mBackStackNesting);
+                        Log.v("FragmentManager", "Bump nesting of " + c0218Op.mFragment + " to " + c0218Op.mFragment.mBackStackNesting);
                     }
                 }
             }
@@ -282,42 +282,42 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
     public void executeOps() {
         int size = this.mOps.size();
         for (int i = 0; i < size; i++) {
-            FragmentTransaction.C0212Op c0212Op = this.mOps.get(i);
-            Fragment fragment = c0212Op.mFragment;
+            FragmentTransaction.C0218Op c0218Op = this.mOps.get(i);
+            Fragment fragment = c0218Op.mFragment;
             if (fragment != null) {
                 fragment.mBeingSaved = this.mBeingSaved;
                 fragment.setPopDirection(false);
                 fragment.setNextTransition(this.mTransition);
                 fragment.setSharedElementNames(this.mSharedElementSourceNames, this.mSharedElementTargetNames);
             }
-            switch (c0212Op.mCmd) {
+            switch (c0218Op.mCmd) {
                 case 1:
-                    fragment.setAnimations(c0212Op.mEnterAnim, c0212Op.mExitAnim, c0212Op.mPopEnterAnim, c0212Op.mPopExitAnim);
+                    fragment.setAnimations(c0218Op.mEnterAnim, c0218Op.mExitAnim, c0218Op.mPopEnterAnim, c0218Op.mPopExitAnim);
                     this.mManager.setExitAnimationOrder(fragment, false);
                     this.mManager.addFragment(fragment);
                     break;
                 case 2:
                 default:
-                    throw new IllegalArgumentException("Unknown cmd: " + c0212Op.mCmd);
+                    throw new IllegalArgumentException("Unknown cmd: " + c0218Op.mCmd);
                 case 3:
-                    fragment.setAnimations(c0212Op.mEnterAnim, c0212Op.mExitAnim, c0212Op.mPopEnterAnim, c0212Op.mPopExitAnim);
+                    fragment.setAnimations(c0218Op.mEnterAnim, c0218Op.mExitAnim, c0218Op.mPopEnterAnim, c0218Op.mPopExitAnim);
                     this.mManager.removeFragment(fragment);
                     break;
                 case 4:
-                    fragment.setAnimations(c0212Op.mEnterAnim, c0212Op.mExitAnim, c0212Op.mPopEnterAnim, c0212Op.mPopExitAnim);
+                    fragment.setAnimations(c0218Op.mEnterAnim, c0218Op.mExitAnim, c0218Op.mPopEnterAnim, c0218Op.mPopExitAnim);
                     this.mManager.hideFragment(fragment);
                     break;
                 case 5:
-                    fragment.setAnimations(c0212Op.mEnterAnim, c0212Op.mExitAnim, c0212Op.mPopEnterAnim, c0212Op.mPopExitAnim);
+                    fragment.setAnimations(c0218Op.mEnterAnim, c0218Op.mExitAnim, c0218Op.mPopEnterAnim, c0218Op.mPopExitAnim);
                     this.mManager.setExitAnimationOrder(fragment, false);
                     this.mManager.showFragment(fragment);
                     break;
                 case 6:
-                    fragment.setAnimations(c0212Op.mEnterAnim, c0212Op.mExitAnim, c0212Op.mPopEnterAnim, c0212Op.mPopExitAnim);
+                    fragment.setAnimations(c0218Op.mEnterAnim, c0218Op.mExitAnim, c0218Op.mPopEnterAnim, c0218Op.mPopExitAnim);
                     this.mManager.detachFragment(fragment);
                     break;
                 case 7:
-                    fragment.setAnimations(c0212Op.mEnterAnim, c0212Op.mExitAnim, c0212Op.mPopEnterAnim, c0212Op.mPopExitAnim);
+                    fragment.setAnimations(c0218Op.mEnterAnim, c0218Op.mExitAnim, c0218Op.mPopEnterAnim, c0218Op.mPopExitAnim);
                     this.mManager.setExitAnimationOrder(fragment, false);
                     this.mManager.attachFragment(fragment);
                     break;
@@ -328,7 +328,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                     this.mManager.setPrimaryNavigationFragment(null);
                     break;
                 case 10:
-                    this.mManager.setMaxLifecycle(fragment, c0212Op.mCurrentMaxState);
+                    this.mManager.setMaxLifecycle(fragment, c0218Op.mCurrentMaxState);
                     break;
             }
         }
@@ -337,42 +337,42 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
     /* JADX INFO: Access modifiers changed from: package-private */
     public void executePopOps() {
         for (int size = this.mOps.size() - 1; size >= 0; size--) {
-            FragmentTransaction.C0212Op c0212Op = this.mOps.get(size);
-            Fragment fragment = c0212Op.mFragment;
+            FragmentTransaction.C0218Op c0218Op = this.mOps.get(size);
+            Fragment fragment = c0218Op.mFragment;
             if (fragment != null) {
                 fragment.mBeingSaved = this.mBeingSaved;
                 fragment.setPopDirection(true);
                 fragment.setNextTransition(FragmentManager.reverseTransit(this.mTransition));
                 fragment.setSharedElementNames(this.mSharedElementTargetNames, this.mSharedElementSourceNames);
             }
-            switch (c0212Op.mCmd) {
+            switch (c0218Op.mCmd) {
                 case 1:
-                    fragment.setAnimations(c0212Op.mEnterAnim, c0212Op.mExitAnim, c0212Op.mPopEnterAnim, c0212Op.mPopExitAnim);
+                    fragment.setAnimations(c0218Op.mEnterAnim, c0218Op.mExitAnim, c0218Op.mPopEnterAnim, c0218Op.mPopExitAnim);
                     this.mManager.setExitAnimationOrder(fragment, true);
                     this.mManager.removeFragment(fragment);
                     break;
                 case 2:
                 default:
-                    throw new IllegalArgumentException("Unknown cmd: " + c0212Op.mCmd);
+                    throw new IllegalArgumentException("Unknown cmd: " + c0218Op.mCmd);
                 case 3:
-                    fragment.setAnimations(c0212Op.mEnterAnim, c0212Op.mExitAnim, c0212Op.mPopEnterAnim, c0212Op.mPopExitAnim);
+                    fragment.setAnimations(c0218Op.mEnterAnim, c0218Op.mExitAnim, c0218Op.mPopEnterAnim, c0218Op.mPopExitAnim);
                     this.mManager.addFragment(fragment);
                     break;
                 case 4:
-                    fragment.setAnimations(c0212Op.mEnterAnim, c0212Op.mExitAnim, c0212Op.mPopEnterAnim, c0212Op.mPopExitAnim);
+                    fragment.setAnimations(c0218Op.mEnterAnim, c0218Op.mExitAnim, c0218Op.mPopEnterAnim, c0218Op.mPopExitAnim);
                     this.mManager.showFragment(fragment);
                     break;
                 case 5:
-                    fragment.setAnimations(c0212Op.mEnterAnim, c0212Op.mExitAnim, c0212Op.mPopEnterAnim, c0212Op.mPopExitAnim);
+                    fragment.setAnimations(c0218Op.mEnterAnim, c0218Op.mExitAnim, c0218Op.mPopEnterAnim, c0218Op.mPopExitAnim);
                     this.mManager.setExitAnimationOrder(fragment, true);
                     this.mManager.hideFragment(fragment);
                     break;
                 case 6:
-                    fragment.setAnimations(c0212Op.mEnterAnim, c0212Op.mExitAnim, c0212Op.mPopEnterAnim, c0212Op.mPopExitAnim);
+                    fragment.setAnimations(c0218Op.mEnterAnim, c0218Op.mExitAnim, c0218Op.mPopEnterAnim, c0218Op.mPopExitAnim);
                     this.mManager.attachFragment(fragment);
                     break;
                 case 7:
-                    fragment.setAnimations(c0212Op.mEnterAnim, c0212Op.mExitAnim, c0212Op.mPopEnterAnim, c0212Op.mPopExitAnim);
+                    fragment.setAnimations(c0218Op.mEnterAnim, c0218Op.mExitAnim, c0218Op.mPopEnterAnim, c0218Op.mPopExitAnim);
                     this.mManager.setExitAnimationOrder(fragment, true);
                     this.mManager.detachFragment(fragment);
                     break;
@@ -383,7 +383,7 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                     this.mManager.setPrimaryNavigationFragment(fragment);
                     break;
                 case 10:
-                    this.mManager.setMaxLifecycle(fragment, c0212Op.mOldMaxState);
+                    this.mManager.setMaxLifecycle(fragment, c0218Op.mOldMaxState);
                     break;
             }
         }
@@ -394,11 +394,11 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
         Fragment fragment2 = fragment;
         int i = 0;
         while (i < this.mOps.size()) {
-            FragmentTransaction.C0212Op c0212Op = this.mOps.get(i);
-            int i2 = c0212Op.mCmd;
+            FragmentTransaction.C0218Op c0218Op = this.mOps.get(i);
+            int i2 = c0218Op.mCmd;
             if (i2 != 1) {
                 if (i2 == 2) {
-                    Fragment fragment3 = c0212Op.mFragment;
+                    Fragment fragment3 = c0218Op.mFragment;
                     int i3 = fragment3.mContainerId;
                     boolean z = false;
                     for (int size = arrayList.size() - 1; size >= 0; size--) {
@@ -408,16 +408,16 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                                 z = true;
                             } else {
                                 if (fragment4 == fragment2) {
-                                    this.mOps.add(i, new FragmentTransaction.C0212Op(9, fragment4, true));
+                                    this.mOps.add(i, new FragmentTransaction.C0218Op(9, fragment4, true));
                                     i++;
                                     fragment2 = null;
                                 }
-                                FragmentTransaction.C0212Op c0212Op2 = new FragmentTransaction.C0212Op(3, fragment4, true);
-                                c0212Op2.mEnterAnim = c0212Op.mEnterAnim;
-                                c0212Op2.mPopEnterAnim = c0212Op.mPopEnterAnim;
-                                c0212Op2.mExitAnim = c0212Op.mExitAnim;
-                                c0212Op2.mPopExitAnim = c0212Op.mPopExitAnim;
-                                this.mOps.add(i, c0212Op2);
+                                FragmentTransaction.C0218Op c0218Op2 = new FragmentTransaction.C0218Op(3, fragment4, true);
+                                c0218Op2.mEnterAnim = c0218Op.mEnterAnim;
+                                c0218Op2.mPopEnterAnim = c0218Op.mPopEnterAnim;
+                                c0218Op2.mExitAnim = c0218Op.mExitAnim;
+                                c0218Op2.mPopExitAnim = c0218Op.mPopExitAnim;
+                                this.mOps.add(i, c0218Op2);
                                 arrayList.remove(fragment4);
                                 i++;
                             }
@@ -427,29 +427,29 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                         this.mOps.remove(i);
                         i--;
                     } else {
-                        c0212Op.mCmd = 1;
-                        c0212Op.mFromExpandedOp = true;
+                        c0218Op.mCmd = 1;
+                        c0218Op.mFromExpandedOp = true;
                         arrayList.add(fragment3);
                     }
                 } else if (i2 == 3 || i2 == 6) {
-                    arrayList.remove(c0212Op.mFragment);
-                    Fragment fragment5 = c0212Op.mFragment;
+                    arrayList.remove(c0218Op.mFragment);
+                    Fragment fragment5 = c0218Op.mFragment;
                     if (fragment5 == fragment2) {
-                        this.mOps.add(i, new FragmentTransaction.C0212Op(9, fragment5));
+                        this.mOps.add(i, new FragmentTransaction.C0218Op(9, fragment5));
                         i++;
                         fragment2 = null;
                     }
                 } else if (i2 != 7) {
                     if (i2 == 8) {
-                        this.mOps.add(i, new FragmentTransaction.C0212Op(9, fragment2, true));
-                        c0212Op.mFromExpandedOp = true;
+                        this.mOps.add(i, new FragmentTransaction.C0218Op(9, fragment2, true));
+                        c0218Op.mFromExpandedOp = true;
                         i++;
-                        fragment2 = c0212Op.mFragment;
+                        fragment2 = c0218Op.mFragment;
                     }
                 }
                 i++;
             }
-            arrayList.add(c0212Op.mFragment);
+            arrayList.add(c0218Op.mFragment);
             i++;
         }
         return fragment2;
@@ -458,8 +458,8 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
     /* JADX INFO: Access modifiers changed from: package-private */
     public Fragment trackAddedFragmentsInPop(ArrayList<Fragment> arrayList, Fragment fragment) {
         for (int size = this.mOps.size() - 1; size >= 0; size--) {
-            FragmentTransaction.C0212Op c0212Op = this.mOps.get(size);
-            int i = c0212Op.mCmd;
+            FragmentTransaction.C0218Op c0218Op = this.mOps.get(size);
+            int i = c0218Op.mCmd;
             if (i != 1) {
                 if (i != 3) {
                     switch (i) {
@@ -467,16 +467,16 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
                             fragment = null;
                             break;
                         case 9:
-                            fragment = c0212Op.mFragment;
+                            fragment = c0218Op.mFragment;
                             break;
                         case 10:
-                            c0212Op.mCurrentMaxState = c0212Op.mOldMaxState;
+                            c0218Op.mCurrentMaxState = c0218Op.mOldMaxState;
                             break;
                     }
                 }
-                arrayList.add(c0212Op.mFragment);
+                arrayList.add(c0218Op.mFragment);
             }
-            arrayList.remove(c0212Op.mFragment);
+            arrayList.remove(c0218Op.mFragment);
         }
         return fragment;
     }
@@ -485,19 +485,19 @@ public final class BackStackRecord extends FragmentTransaction implements Fragme
     public void collapseOps() {
         int size = this.mOps.size() - 1;
         while (size >= 0) {
-            FragmentTransaction.C0212Op c0212Op = this.mOps.get(size);
-            if (c0212Op.mFromExpandedOp) {
-                if (c0212Op.mCmd == 8) {
-                    c0212Op.mFromExpandedOp = false;
+            FragmentTransaction.C0218Op c0218Op = this.mOps.get(size);
+            if (c0218Op.mFromExpandedOp) {
+                if (c0218Op.mCmd == 8) {
+                    c0218Op.mFromExpandedOp = false;
                     this.mOps.remove(size - 1);
                     size--;
                 } else {
-                    int i = c0212Op.mFragment.mContainerId;
-                    c0212Op.mCmd = 2;
-                    c0212Op.mFromExpandedOp = false;
+                    int i = c0218Op.mFragment.mContainerId;
+                    c0218Op.mCmd = 2;
+                    c0218Op.mFromExpandedOp = false;
                     for (int i2 = size - 1; i2 >= 0; i2--) {
-                        FragmentTransaction.C0212Op c0212Op2 = this.mOps.get(i2);
-                        if (c0212Op2.mFromExpandedOp && c0212Op2.mFragment.mContainerId == i) {
+                        FragmentTransaction.C0218Op c0218Op2 = this.mOps.get(i2);
+                        if (c0218Op2.mFromExpandedOp && c0218Op2.mFragment.mContainerId == i) {
                             this.mOps.remove(i2);
                             size--;
                         }

@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x455b853d
-
-
 # instance fields
 .field public flags:I
 
@@ -18,16 +14,10 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 12263
+    .line 12013
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -36,8 +26,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_messageViews;
     .locals 1
 
-    .line 12272
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->constructor:I
+    const v0, 0x455b853d
 
     if-eq v0, p1, :cond_1
 
@@ -47,7 +36,7 @@
 
     return-object p0
 
-    .line 12274
+    .line 12024
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -73,13 +62,13 @@
 
     throw p0
 
-    .line 12279
+    .line 12029
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_messageViews;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_messageViews;-><init>()V
 
-    .line 12280
+    .line 12030
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -90,7 +79,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 12285
+    .line 12035
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -101,14 +90,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 12287
+    .line 12037
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->views:I
 
-    .line 12289
+    .line 12039
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->flags:I
 
@@ -116,14 +105,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 12290
+    .line 12040
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->forwards:I
 
-    .line 12292
+    .line 12042
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->flags:I
 
@@ -131,7 +120,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 12293
+    .line 12043
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -149,29 +138,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 12298
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->constructor:I
+    const v0, 0x455b853d
 
+    .line 12048
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 12299
+    .line 12049
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 12300
+    .line 12050
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 12301
+    .line 12051
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->views:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 12303
+    .line 12053
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->flags:I
 
@@ -179,12 +168,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 12304
+    .line 12054
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->forwards:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 12306
+    .line 12056
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->flags:I
 
@@ -192,7 +181,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 12307
+    .line 12057
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->replies:Lorg/telegram/tgnet/TLRPC$MessageReplies;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

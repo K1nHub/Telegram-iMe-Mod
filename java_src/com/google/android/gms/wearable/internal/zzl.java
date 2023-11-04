@@ -11,33 +11,33 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzl extends AbstractSafeParcelable implements com.google.android.gms.wearable.zzb {
     public static final Parcelable.Creator<zzl> CREATOR = new zzm();
-    @SafeParcelable.Field(getter = "getId", m1089id = 2)
+    @SafeParcelable.Field(getter = "getId", m1090id = 2)
     private final int zza;
-    @SafeParcelable.Field(getter = "getAppId", m1089id = 3)
+    @SafeParcelable.Field(getter = "getAppId", m1090id = 3)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getDateTime", m1089id = 4)
+    @SafeParcelable.Field(getter = "getDateTime", m1090id = 4)
     private final String zzc;
-    @SafeParcelable.Field(getter = "getNotificationText", m1089id = 5)
+    @SafeParcelable.Field(getter = "getNotificationText", m1090id = 5)
     private final String zzd;
-    @SafeParcelable.Field(getter = "getTitle", m1089id = 6)
+    @SafeParcelable.Field(getter = "getTitle", m1090id = 6)
     private final String zze;
-    @SafeParcelable.Field(getter = "getSubtitle", m1089id = 7)
+    @SafeParcelable.Field(getter = "getSubtitle", m1090id = 7)
     private final String zzf;
-    @SafeParcelable.Field(getter = "getDisplayName", m1089id = 8)
+    @SafeParcelable.Field(getter = "getDisplayName", m1090id = 8)
     private final String zzg;
-    @SafeParcelable.Field(getter = "getEventId", m1089id = 9)
+    @SafeParcelable.Field(getter = "getEventId", m1090id = 9)
     private final byte zzh;
-    @SafeParcelable.Field(getter = "getEventFlags", m1089id = 10)
+    @SafeParcelable.Field(getter = "getEventFlags", m1090id = 10)
     private final byte zzi;
-    @SafeParcelable.Field(getter = "getCategoryId", m1089id = 11)
+    @SafeParcelable.Field(getter = "getCategoryId", m1090id = 11)
     private final byte zzj;
-    @SafeParcelable.Field(getter = "getCategoryCount", m1089id = 12)
+    @SafeParcelable.Field(getter = "getCategoryCount", m1090id = 12)
     private final byte zzk;
-    @SafeParcelable.Field(getter = "getPackageName", m1089id = 13)
+    @SafeParcelable.Field(getter = "getPackageName", m1090id = 13)
     private final String zzl;
 
     @SafeParcelable.Constructor
-    public zzl(@SafeParcelable.Param(m1088id = 2) int i, @SafeParcelable.Param(m1088id = 3) String str, @SafeParcelable.Param(m1088id = 4) String str2, @SafeParcelable.Param(m1088id = 5) String str3, @SafeParcelable.Param(m1088id = 6) String str4, @SafeParcelable.Param(m1088id = 7) String str5, @SafeParcelable.Param(m1088id = 8) String str6, @SafeParcelable.Param(m1088id = 9) byte b, @SafeParcelable.Param(m1088id = 10) byte b2, @SafeParcelable.Param(m1088id = 11) byte b3, @SafeParcelable.Param(m1088id = 12) byte b4, @SafeParcelable.Param(m1088id = 13) String str7) {
+    public zzl(@SafeParcelable.Param(m1089id = 2) int i, @SafeParcelable.Param(m1089id = 3) String str, @SafeParcelable.Param(m1089id = 4) String str2, @SafeParcelable.Param(m1089id = 5) String str3, @SafeParcelable.Param(m1089id = 6) String str4, @SafeParcelable.Param(m1089id = 7) String str5, @SafeParcelable.Param(m1089id = 8) String str6, @SafeParcelable.Param(m1089id = 9) byte b, @SafeParcelable.Param(m1089id = 10) byte b2, @SafeParcelable.Param(m1089id = 11) byte b3, @SafeParcelable.Param(m1089id = 12) byte b4, @SafeParcelable.Param(m1089id = 13) String str7) {
         this.zza = i;
         this.zzb = str;
         this.zzc = str2;

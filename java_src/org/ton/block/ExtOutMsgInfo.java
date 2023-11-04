@@ -32,7 +32,7 @@ public final class ExtOutMsgInfo implements CommonMsgInfo {
     private final MsgAddressExt dest;
     private final MsgAddressInt src;
     public static final Companion Companion = new Companion(null);
-    private static final KSerializer<Object>[] $childSerializers = {new SealedClassSerializer("org.ton.block.MsgAddressInt", Reflection.getOrCreateKotlinClass(MsgAddressInt.class), new KClass[]{Reflection.getOrCreateKotlinClass(AddrStd.class), Reflection.getOrCreateKotlinClass(AddrVar.class)}, new KSerializer[]{AddrStd$$serializer.INSTANCE, AddrVar$$serializer.INSTANCE}, new Annotation[]{new C7478xb643addd("@type")}), new SealedClassSerializer("org.ton.block.MsgAddressExt", Reflection.getOrCreateKotlinClass(MsgAddressExt.class), new KClass[]{Reflection.getOrCreateKotlinClass(AddrExtern.class), Reflection.getOrCreateKotlinClass(AddrNone.class)}, new KSerializer[]{AddrExtern$$serializer.INSTANCE, new ObjectSerializer("addr_none", AddrNone.INSTANCE, new Annotation[]{new C7478xb643addd("@type")})}, new Annotation[]{new C7478xb643addd("@type")}), null, null};
+    private static final KSerializer<Object>[] $childSerializers = {new SealedClassSerializer("org.ton.block.MsgAddressInt", Reflection.getOrCreateKotlinClass(MsgAddressInt.class), new KClass[]{Reflection.getOrCreateKotlinClass(AddrStd.class), Reflection.getOrCreateKotlinClass(AddrVar.class)}, new KSerializer[]{AddrStd$$serializer.INSTANCE, AddrVar$$serializer.INSTANCE}, new Annotation[]{new C7553xb643addd("@type")}), new SealedClassSerializer("org.ton.block.MsgAddressExt", Reflection.getOrCreateKotlinClass(MsgAddressExt.class), new KClass[]{Reflection.getOrCreateKotlinClass(AddrExtern.class), Reflection.getOrCreateKotlinClass(AddrNone.class)}, new KSerializer[]{AddrExtern$$serializer.INSTANCE, new ObjectSerializer("addr_none", AddrNone.INSTANCE, new Annotation[]{new C7553xb643addd("@type")})}, new Annotation[]{new C7553xb643addd("@type")}), null, null};
 
     public /* synthetic */ ExtOutMsgInfo(int i, MsgAddressInt msgAddressInt, MsgAddressExt msgAddressExt, ULong uLong, UInt uInt, SerializationConstructorMarker serializationConstructorMarker, DefaultConstructorMarker defaultConstructorMarker) {
         this(i, msgAddressInt, msgAddressExt, uLong, uInt, serializationConstructorMarker);
@@ -54,7 +54,7 @@ public final class ExtOutMsgInfo implements CommonMsgInfo {
     }
 
     public int hashCode() {
-        return (((((this.src.hashCode() * 31) + this.dest.hashCode()) * 31) + ULong.m1991hashCodeimpl(this.createdLt)) * 31) + UInt.m1969hashCodeimpl(this.createdAt);
+        return (((((this.src.hashCode() * 31) + this.dest.hashCode()) * 31) + ULong.m1996hashCodeimpl(this.createdLt)) * 31) + UInt.m1974hashCodeimpl(this.createdAt);
     }
 
     private ExtOutMsgInfo(int i, MsgAddressInt msgAddressInt, MsgAddressExt msgAddressExt, ULong uLong, UInt uInt, SerializationConstructorMarker serializationConstructorMarker) {
@@ -63,8 +63,8 @@ public final class ExtOutMsgInfo implements CommonMsgInfo {
         }
         this.src = msgAddressInt;
         this.dest = msgAddressExt;
-        this.createdLt = uLong.m1993unboximpl();
-        this.createdAt = uInt.m1971unboximpl();
+        this.createdLt = uLong.m1998unboximpl();
+        this.createdAt = uInt.m1976unboximpl();
     }
 
     private ExtOutMsgInfo(MsgAddressInt src, MsgAddressExt dest, long j, int i) {
@@ -80,8 +80,8 @@ public final class ExtOutMsgInfo implements CommonMsgInfo {
         KSerializer<Object>[] kSerializerArr = $childSerializers;
         compositeEncoder.encodeSerializableElement(serialDescriptor, 0, kSerializerArr[0], extOutMsgInfo.src);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, kSerializerArr[1], extOutMsgInfo.dest);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, ULongSerializer.INSTANCE, ULong.m1988boximpl(extOutMsgInfo.createdLt));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, UIntSerializer.INSTANCE, UInt.m1966boximpl(extOutMsgInfo.createdAt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 2, ULongSerializer.INSTANCE, ULong.m1993boximpl(extOutMsgInfo.createdLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, UIntSerializer.INSTANCE, UInt.m1971boximpl(extOutMsgInfo.createdAt));
     }
 
     public final MsgAddressInt getSrc() {
@@ -93,12 +93,12 @@ public final class ExtOutMsgInfo implements CommonMsgInfo {
     }
 
     /* renamed from: getCreatedLt-s-VKNKU  reason: not valid java name */
-    public final long m4955getCreatedLtsVKNKU() {
+    public final long m5109getCreatedLtsVKNKU() {
         return this.createdLt;
     }
 
     /* renamed from: getCreatedAt-pVg5ArA  reason: not valid java name */
-    public final int m4954getCreatedAtpVg5ArA() {
+    public final int m5108getCreatedAtpVg5ArA() {
         return this.createdAt;
     }
 
@@ -154,8 +154,8 @@ public final class ExtOutMsgInfo implements CommonMsgInfo {
         TlbPrettyPrinter open = printer.open("ext_out_msg_info");
         open.field("src", this.src);
         open.field("dest", this.dest);
-        open.field("created_lt", ULong.m1988boximpl(this.createdLt));
-        open.field("created_at", UInt.m1966boximpl(this.createdAt));
+        open.field("created_lt", ULong.m1993boximpl(this.createdLt));
+        open.field("created_at", UInt.m1971boximpl(this.createdAt));
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

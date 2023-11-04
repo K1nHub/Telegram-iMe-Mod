@@ -18,11 +18,11 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.RadioButton;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RadioButton;
 /* compiled from: ImageRadioCell.kt */
 /* renamed from: com.iMe.fork.ui.view.ImageRadioCell */
 /* loaded from: classes3.dex */
@@ -125,7 +125,7 @@ public final class ImageRadioCell extends FrameLayout {
 
     public final void setImageUrl(String imageUrl) {
         Intrinsics.checkNotNullParameter(imageUrl, "imageUrl");
-        ImageViewExtKt.loadFrom$default(getImageView(), imageUrl, Integer.valueOf(C3630R.C3632drawable.fork_bg_white_circle), false, 4, null);
+        ImageViewExtKt.loadFrom$default(getImageView(), imageUrl, Integer.valueOf(C3634R.C3636drawable.fork_bg_white_circle), false, 4, null);
     }
 
     public final void setTextColor(int i) {
@@ -138,10 +138,10 @@ public final class ImageRadioCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m102dp(50) + (this.needDivider ? 1 : 0));
-        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m102dp(34);
-        getRadioButton().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m102dp(22), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m102dp(22), 1073741824));
-        getImageView().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m102dp(30), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m102dp(30), 1073741824));
+        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m104dp(50) + (this.needDivider ? 1 : 0));
+        int measuredWidth = ((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.m104dp(34);
+        getRadioButton().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m104dp(22), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m104dp(22), 1073741824));
+        getImageView().measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m104dp(30), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m104dp(30), 1073741824));
         getTextView().measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, 1073741824), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), 1073741824));
     }
 
@@ -149,7 +149,7 @@ public final class ImageRadioCell extends FrameLayout {
     protected void onDraw(Canvas canvas) {
         Intrinsics.checkNotNullParameter(canvas, "canvas");
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m102dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m102dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m104dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m104dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 
@@ -187,7 +187,7 @@ public final class ImageRadioCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final RadioButton initRadioButton() {
         RadioButton radioButton = new RadioButton(getContext());
-        radioButton.setSize(AndroidUtilities.m102dp(20));
+        radioButton.setSize(AndroidUtilities.m104dp(20));
         if (this.dialog) {
             radioButton.setColor(Theme.getColor(Theme.key_dialogRadioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
         } else {

@@ -76,7 +76,7 @@
 .method static constructor <clinit>()V
     .locals 4
 
-    .line 60
+    .line 61
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x1
@@ -95,7 +95,7 @@
     :goto_0
     sput-boolean v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->allowAnimation:Z
 
-    .line 61
+    .line 62
     new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
     invoke-direct {v0}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
@@ -104,7 +104,7 @@
 
     const/4 v0, 0x0
 
-    .line 74
+    .line 75
     :try_start_0
     const-class v2, Landroid/widget/PopupWindow;
 
@@ -114,16 +114,16 @@
 
     move-result-object v0
 
-    .line 75
+    .line 76
     invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
     :try_end_0
     .catch Ljava/lang/NoSuchFieldException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 79
+    .line 80
     :catch_0
     sput-object v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->superListenerField:Ljava/lang/reflect/Field;
 
-    .line 82
+    .line 83
     sget-object v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$$ExternalSyntheticLambda2;->INSTANCE:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$$ExternalSyntheticLambda2;
 
     sput-object v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->NOP:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
@@ -134,35 +134,35 @@
 .method public constructor <init>()V
     .locals 2
 
-    .line 665
+    .line 678
     invoke-direct {p0}, Landroid/widget/PopupWindow;-><init>()V
 
-    .line 63
+    .line 64
     sget-boolean v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->allowAnimation:Z
 
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->animationEnabled:Z
 
     const/16 v0, 0x96
 
-    .line 64
+    .line 65
     iput v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismissAnimationDuration:I
 
-    .line 66
+    .line 67
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     const-wide/16 v0, -0x1
 
-    .line 68
+    .line 69
     iput-wide v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->outEmptyTime:J
 
-    .line 88
+    .line 89
     new-instance v0, Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-direct {v0}, Lorg/telegram/messenger/AnimationNotificationsLocker;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
-    .line 666
+    .line 679
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->init()V
 
     return-void
@@ -171,35 +171,35 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
 
-    .line 670
+    .line 683
     invoke-direct {p0, p1}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;)V
 
-    .line 63
+    .line 64
     sget-boolean p1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->allowAnimation:Z
 
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->animationEnabled:Z
 
     const/16 p1, 0x96
 
-    .line 64
+    .line 65
     iput p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismissAnimationDuration:I
 
-    .line 66
+    .line 67
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     const-wide/16 v0, -0x1
 
-    .line 68
+    .line 69
     iput-wide v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->outEmptyTime:J
 
-    .line 88
+    .line 89
     new-instance p1, Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-direct {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
-    .line 671
+    .line 684
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->init()V
 
     return-void
@@ -208,35 +208,35 @@
 .method public constructor <init>(Landroid/view/View;II)V
     .locals 0
 
-    .line 690
+    .line 703
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;II)V
 
-    .line 63
+    .line 64
     sget-boolean p1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->allowAnimation:Z
 
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->animationEnabled:Z
 
     const/16 p1, 0x96
 
-    .line 64
+    .line 65
     iput p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismissAnimationDuration:I
 
-    .line 66
+    .line 67
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     const-wide/16 p1, -0x1
 
-    .line 68
+    .line 69
     iput-wide p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->outEmptyTime:J
 
-    .line 88
+    .line 89
     new-instance p1, Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-direct {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
-    .line 691
+    .line 704
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->init()V
 
     return-void
@@ -245,7 +245,7 @@
 .method static synthetic access$000()Z
     .locals 1
 
-    .line 56
+    .line 57
     sget-boolean v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->allowAnimation:Z
 
     return v0
@@ -254,7 +254,7 @@
 .method static synthetic access$1002(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 56
+    .line 57
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->windowAnimatorSet:Landroid/animation/AnimatorSet;
 
     return-object p1
@@ -263,7 +263,7 @@
 .method static synthetic access$1102(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Z)Z
     .locals 0
 
-    .line 56
+    .line 57
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->isClosingAnimated:Z
 
     return p1
@@ -272,7 +272,7 @@
 .method static synthetic access$1201(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
     .locals 0
 
-    .line 56
+    .line 57
     invoke-super {p0}, Landroid/widget/PopupWindow;->dismiss()V
 
     return-void
@@ -281,7 +281,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
     .locals 0
 
-    .line 56
+    .line 57
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->unregisterListener()V
 
     return-void
@@ -290,7 +290,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)Z
     .locals 0
 
-    .line 56
+    .line 57
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->pauseNotifications:Z
 
     return p0
@@ -299,7 +299,7 @@
 .method static synthetic access$1500(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)Lorg/telegram/messenger/AnimationNotificationsLocker;
     .locals 0
 
-    .line 56
+    .line 57
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     return-object p0
@@ -308,7 +308,7 @@
 .method static synthetic access$500()Landroid/view/animation/DecelerateInterpolator;
     .locals 1
 
-    .line 56
+    .line 57
     sget-object v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->decelerateInterpolator:Landroid/view/animation/DecelerateInterpolator;
 
     return-object v0
@@ -317,7 +317,7 @@
 .method private dismissDim()V
     .locals 5
 
-    .line 784
+    .line 797
     invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
 
     move-result-object v0
@@ -326,7 +326,7 @@
 
     move-result-object v0
 
-    .line 785
+    .line 798
     invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
 
     move-result-object v1
@@ -337,14 +337,14 @@
 
     const-string v2, "window"
 
-    .line 786
+    .line 799
     invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/WindowManager;
 
-    .line 788
+    .line 801
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
@@ -361,7 +361,7 @@
 
     goto :goto_0
 
-    .line 791
+    .line 804
     :cond_0
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -369,7 +369,7 @@
 
     check-cast v2, Landroid/view/WindowManager$LayoutParams;
 
-    .line 793
+    .line 806
     :try_start_0
     iget v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
@@ -379,15 +379,15 @@
 
     and-int/lit8 v3, v3, -0x3
 
-    .line 794
+    .line 807
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const/4 v3, 0x0
 
-    .line 795
+    .line 808
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
-    .line 796
+    .line 809
     invoke-interface {v1, v0, v2}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -401,12 +401,12 @@
 .method private init()V
     .locals 2
 
-    .line 712
+    .line 725
     invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 713
+    .line 726
     instance-of v1, v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     if-eqz v1, :cond_0
@@ -419,7 +419,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 714
+    .line 727
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getSwipeBack()Lorg/telegram/ui/Components/PopupSwipeBackLayout;
 
     move-result-object v0
@@ -430,13 +430,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 716
+    .line 729
     :cond_0
     sget-object v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->superListenerField:Ljava/lang/reflect/Field;
 
     if-eqz v0, :cond_1
 
-    .line 718
+    .line 731
     :try_start_0
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -446,7 +446,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
-    .line 719
+    .line 732
     sget-object v1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->NOP:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -458,7 +458,7 @@
     :catch_0
     const/4 v0, 0x0
 
-    .line 721
+    .line 734
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     :cond_1
@@ -469,7 +469,7 @@
 .method private synthetic lambda$init$1(Landroid/view/View;)V
     .locals 0
 
-    .line 714
+    .line 727
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
     return-void
@@ -478,12 +478,12 @@
 .method private static synthetic lambda$startAnimation$2(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;Landroid/animation/ValueAnimator;)V
     .locals 6
 
-    .line 847
+    .line 860
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemsCount()I
 
     move-result v0
 
-    .line 848
+    .line 861
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -499,19 +499,19 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 850
+    .line 863
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 851
+    .line 864
     instance-of v3, v2, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$GapView;
 
     if-eqz v3, :cond_0
 
     goto :goto_2
 
-    .line 854
+    .line 867
     :cond_0
     iget-boolean v3, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->shownFromBottom:Z
 
@@ -543,7 +543,7 @@
 
     const/4 v3, -0x6
 
-    .line 855
+    .line 868
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -572,12 +572,12 @@
 .method private registerListener(Landroid/view/View;)V
     .locals 2
 
-    .line 740
+    .line 753
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     if-eqz v0, :cond_2
 
-    .line 741
+    .line 754
     invoke-virtual {p1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
     move-result-object v0
@@ -593,7 +593,7 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 742
+    .line 755
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
@@ -601,27 +601,27 @@
 
     if-eqz v0, :cond_1
 
-    .line 743
+    .line 756
     invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 744
+    .line 757
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnScrollChangedListener(Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V
 
-    .line 746
+    .line 759
     :cond_1
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
     if-eqz p1, :cond_2
 
-    .line 747
+    .line 760
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     invoke-virtual {p1, v0}, Landroid/view/ViewTreeObserver;->addOnScrollChangedListener(Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V
@@ -635,20 +635,20 @@
 
     const/4 v0, 0x1
 
-    .line 814
+    .line 827
     invoke-static {p0, v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$602(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;Z)Z
 
     const/4 v1, 0x0
 
-    .line 815
+    .line 828
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 816
+    .line 829
     invoke-virtual {p0, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 817
+    .line 830
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v3
@@ -657,15 +657,15 @@
 
     invoke-virtual {p0, v3}, Landroid/widget/FrameLayout;->setPivotX(F)V
 
-    .line 818
+    .line 831
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->setPivotY(F)V
 
-    .line 819
+    .line 832
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemsCount()I
 
     move-result v3
 
-    .line 820
+    .line 833
     invoke-static {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$700(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)Ljava/util/HashMap;
 
     move-result-object v4
@@ -681,23 +681,23 @@
     :goto_0
     if-ge v5, v3, :cond_2
 
-    .line 823
+    .line 836
     invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemAt(I)Landroid/view/View;
 
     move-result-object v7
 
-    .line 824
+    .line 837
     instance-of v8, v7, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$GapView;
 
     if-eqz v8, :cond_0
 
     goto :goto_1
 
-    .line 827
+    .line 840
     :cond_0
     invoke-virtual {v7, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 828
+    .line 841
     invoke-virtual {v7}, Landroid/view/View;->getVisibility()I
 
     move-result v8
@@ -706,7 +706,7 @@
 
     goto :goto_1
 
-    .line 831
+    .line 844
     :cond_1
     invoke-static {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$700(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)Ljava/util/HashMap;
 
@@ -725,7 +725,7 @@
 
     goto :goto_0
 
-    .line 834
+    .line 847
     :cond_2
     iget-boolean v5, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->shownFromBottom:Z
 
@@ -733,16 +733,16 @@
 
     sub-int/2addr v3, v0
 
-    .line 835
+    .line 848
     invoke-static {p0, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$802(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;I)I
 
     goto :goto_2
 
-    .line 837
+    .line 850
     :cond_3
     invoke-static {p0, v4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$802(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;I)I
 
-    .line 840
+    .line 853
     :goto_2
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getSwipeBack()Lorg/telegram/ui/Components/PopupSwipeBackLayout;
 
@@ -750,19 +750,19 @@
 
     if-eqz v3, :cond_4
 
-    .line 841
+    .line 854
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getSwipeBack()Lorg/telegram/ui/Components/PopupSwipeBackLayout;
 
     move-result-object v2
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->invalidateTransforms()V
 
-    .line 842
+    .line 855
     invoke-static {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$900(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)F
 
     move-result v2
 
-    .line 844
+    .line 857
     :cond_4
     new-instance v3, Landroid/animation/AnimatorSet;
 
@@ -772,21 +772,21 @@
 
     new-array v7, v5, [F
 
-    .line 845
+    .line 858
     fill-array-data v7, :array_0
 
     invoke-static {v7}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v7
 
-    .line 846
+    .line 859
     new-instance v8, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$$ExternalSyntheticLambda0;
 
     invoke-direct {v8, p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)V
 
     invoke-virtual {v7, v8}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 859
+    .line 872
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->updateAnimation:Z
 
     const/4 v8, 0x3
@@ -801,7 +801,7 @@
 
     const-string v1, "backScaleY"
 
-    .line 861
+    .line 874
     invoke-static {p0, v1, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v1
@@ -814,7 +814,7 @@
 
     const-string v2, "backAlpha"
 
-    .line 862
+    .line 875
     invoke-static {p0, v2, v1}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Ljava/lang/String;[I)Landroid/animation/ObjectAnimator;
 
     move-result-object v1
@@ -823,7 +823,7 @@
 
     aput-object v7, v8, v5
 
-    .line 860
+    .line 873
     invoke-virtual {v3, v8}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     mul-int/lit8 v6, v6, 0x10
@@ -832,17 +832,17 @@
 
     int-to-long v0, v6
 
-    .line 865
+    .line 878
     invoke-virtual {v3, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 866
+    .line 879
     new-instance v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$1;-><init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)V
 
     invoke-virtual {v3, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 880
+    .line 893
     invoke-virtual {v3}, Landroid/animation/AnimatorSet;->start()V
 
     return-object v3
@@ -863,7 +863,7 @@
 .method private unregisterListener()V
     .locals 2
 
-    .line 731
+    .line 744
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     if-eqz v0, :cond_1
@@ -872,14 +872,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 732
+    .line 745
     invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 733
+    .line 746
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->mSuperScrollListener:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
@@ -889,7 +889,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 735
+    .line 748
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->mViewTreeObserver:Landroid/view/ViewTreeObserver;
 
     :cond_1
@@ -903,7 +903,7 @@
 
     const v0, 0x3e4ccccd    # 0.2f
 
-    .line 754
+    .line 767
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dimBehind(F)V
 
     return-void
@@ -912,7 +912,7 @@
 .method public dimBehind(F)V
     .locals 4
 
-    .line 758
+    .line 771
     invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
 
     move-result-object v0
@@ -921,7 +921,7 @@
 
     move-result-object v0
 
-    .line 759
+    .line 772
     invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
 
     move-result-object v1
@@ -932,31 +932,31 @@
 
     const-string v2, "window"
 
-    .line 760
+    .line 773
     invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
     check-cast v1, Landroid/view/WindowManager;
 
-    .line 761
+    .line 774
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
 
     check-cast v2, Landroid/view/WindowManager$LayoutParams;
 
-    .line 762
+    .line 775
     iget v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     or-int/lit8 v3, v3, 0x2
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 763
+    .line 776
     iput p1, v2, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
-    .line 764
+    .line 777
     invoke-interface {v1, v0, v2}, Landroid/view/WindowManager;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
@@ -967,7 +967,7 @@
 
     const/4 v0, 0x1
 
-    .line 985
+    .line 998
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss(Z)V
 
     return-void
@@ -978,13 +978,13 @@
 
     const/4 v0, 0x0
 
-    .line 993
+    .line 1006
     invoke-virtual {p0, v0}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
-    .line 994
+    .line 1007
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismissDim()V
 
-    .line 995
+    .line 1008
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->windowAnimatorSet:Landroid/animation/AnimatorSet;
 
     const/4 v2, 0x0
@@ -993,25 +993,25 @@
 
     if-eqz p1, :cond_0
 
-    .line 996
+    .line 1009
     iget-boolean v3, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->isClosingAnimated:Z
 
     if-eqz v3, :cond_0
 
     return-void
 
-    .line 999
+    .line 1012
     :cond_0
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 1000
+    .line 1013
     iput-object v2, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->windowAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 1002
+    .line 1015
     :cond_1
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->isClosingAnimated:Z
 
-    .line 1003
+    .line 1016
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->animationEnabled:Z
 
     if-eqz v1, :cond_a
@@ -1020,10 +1020,10 @@
 
     const/4 p1, 0x1
 
-    .line 1004
+    .line 1017
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->isClosingAnimated:Z
 
-    .line 1005
+    .line 1018
     invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
 
     move-result-object v1
@@ -1032,7 +1032,7 @@
 
     move v3, v0
 
-    .line 1007
+    .line 1020
     :goto_0
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -1040,7 +1040,7 @@
 
     if-ge v3, v4, :cond_3
 
-    .line 1008
+    .line 1021
     invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
@@ -1049,7 +1049,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 1009
+    .line 1022
     invoke-virtual {v1, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -1064,7 +1064,7 @@
     :cond_3
     if-eqz v2, :cond_5
 
-    .line 1013
+    .line 1026
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$400(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)Ljava/util/ArrayList;
 
     move-result-object v3
@@ -1081,7 +1081,7 @@
 
     if-nez v3, :cond_5
 
-    .line 1014
+    .line 1027
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$400(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)Ljava/util/ArrayList;
 
     move-result-object v3
@@ -1095,7 +1095,7 @@
     :goto_1
     if-ge v4, v3, :cond_4
 
-    .line 1015
+    .line 1028
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$400(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)Ljava/util/ArrayList;
 
     move-result-object v5
@@ -1106,17 +1106,17 @@
 
     check-cast v5, Landroid/animation/AnimatorSet;
 
-    .line 1016
+    .line 1029
     invoke-virtual {v5}, Landroid/animation/AnimatorSet;->removeAllListeners()V
 
-    .line 1017
+    .line 1030
     invoke-virtual {v5}, Landroid/animation/AnimatorSet;->cancel()V
 
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_1
 
-    .line 1019
+    .line 1032
     :cond_4
     invoke-static {v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$400(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)Ljava/util/ArrayList;
 
@@ -1124,7 +1124,7 @@
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->clear()V
 
-    .line 1022
+    .line 1035
     :cond_5
     new-instance v3, Landroid/animation/AnimatorSet;
 
@@ -1132,7 +1132,7 @@
 
     iput-object v3, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->windowAnimatorSet:Landroid/animation/AnimatorSet;
 
-    .line 1023
+    .line 1036
     iget-wide v4, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->outEmptyTime:J
 
     const-wide/16 v6, 0x0
@@ -1147,7 +1147,7 @@
 
     new-array v1, v5, [F
 
-    .line 1024
+    .line 1037
     fill-array-data v1, :array_0
 
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -1158,7 +1158,7 @@
 
     invoke-virtual {v3, p1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1025
+    .line 1038
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->windowAnimatorSet:Landroid/animation/AnimatorSet;
 
     iget-wide v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->outEmptyTime:J
@@ -1167,7 +1167,7 @@
 
     goto :goto_3
 
-    .line 1026
+    .line 1039
     :cond_6
     iget-boolean v4, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->scaleOut:Z
 
@@ -1179,7 +1179,7 @@
 
     new-array v2, v2, [Landroid/animation/Animator;
 
-    .line 1027
+    .line 1040
     sget-object v4, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
 
     new-array v7, p1, [F
@@ -1188,7 +1188,7 @@
 
     aput v8, v7, v0
 
-    .line 1028
+    .line 1041
     invoke-static {v1, v4, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v4
@@ -1201,7 +1201,7 @@
 
     aput v8, v7, v0
 
-    .line 1029
+    .line 1042
     invoke-static {v1, v4, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v4
@@ -1214,17 +1214,17 @@
 
     aput v6, p1, v0
 
-    .line 1030
+    .line 1043
     invoke-static {v1, v4, p1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p1
 
     aput-object p1, v2, v5
 
-    .line 1027
+    .line 1040
     invoke-virtual {v3, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1031
+    .line 1044
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->windowAnimatorSet:Landroid/animation/AnimatorSet;
 
     iget v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismissAnimationDuration:I
@@ -1238,14 +1238,14 @@
     :cond_7
     new-array v4, v5, [Landroid/animation/Animator;
 
-    .line 1033
+    .line 1046
     sget-object v5, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v7, p1, [F
 
     if-eqz v2, :cond_8
 
-    .line 1034
+    .line 1047
     iget-boolean v2, v2, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->shownFromBottom:Z
 
     if-eqz v2, :cond_8
@@ -1278,17 +1278,17 @@
 
     aput v6, v5, v0
 
-    .line 1035
+    .line 1048
     invoke-static {v1, v2, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     aput-object v0, v4, p1
 
-    .line 1033
+    .line 1046
     invoke-virtual {v3, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1036
+    .line 1049
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->windowAnimatorSet:Landroid/animation/AnimatorSet;
 
     iget v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismissAnimationDuration:I
@@ -1297,7 +1297,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1039
+    .line 1052
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->windowAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -1307,17 +1307,17 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1056
+    .line 1069
     iget-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->pauseNotifications:Z
 
     if-eqz p1, :cond_9
 
-    .line 1057
+    .line 1070
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
 
-    .line 1059
+    .line 1072
     :cond_9
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->windowAnimatorSet:Landroid/animation/AnimatorSet;
 
@@ -1325,14 +1325,14 @@
 
     goto :goto_4
 
-    .line 1062
+    .line 1075
     :cond_a
     :try_start_0
     invoke-super {p0}, Landroid/widget/PopupWindow;->dismiss()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1066
+    .line 1079
     :catch_0
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->unregisterListener()V
 
@@ -1349,7 +1349,7 @@
 .method public setAnimationEnabled(Z)V
     .locals 0
 
-    .line 695
+    .line 708
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->animationEnabled:Z
 
     return-void
@@ -1358,7 +1358,7 @@
 .method public setDismissAnimationDuration(I)V
     .locals 0
 
-    .line 727
+    .line 740
     iput p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismissAnimationDuration:I
 
     return-void
@@ -1367,7 +1367,7 @@
 .method public setLayoutInScreen(Z)V
     .locals 5
 
-    .line 701
+    .line 714
     :try_start_0
     sget-object p1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->layoutInScreenMethod:Ljava/lang/reflect/Method;
 
@@ -1377,7 +1377,7 @@
 
     if-nez p1, :cond_0
 
-    .line 702
+    .line 715
     const-class p1, Landroid/widget/PopupWindow;
 
     const-string v2, "setLayoutInScreenEnabled"
@@ -1394,10 +1394,10 @@
 
     sput-object p1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->layoutInScreenMethod:Ljava/lang/reflect/Method;
 
-    .line 703
+    .line 716
     invoke-virtual {p1, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
 
-    .line 705
+    .line 718
     :cond_0
     sget-object p1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->layoutInScreenMethod:Ljava/lang/reflect/Method;
 
@@ -1416,7 +1416,7 @@
     :catch_0
     move-exception p1
 
-    .line 707
+    .line 720
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -1426,7 +1426,7 @@
 .method public setPauseNotifications(Z)V
     .locals 0
 
-    .line 989
+    .line 1002
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->pauseNotifications:Z
 
     return-void
@@ -1435,7 +1435,7 @@
 .method public setScaleOut(Z)V
     .locals 0
 
-    .line 91
+    .line 92
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->scaleOut:Z
 
     return-void
@@ -1444,11 +1444,11 @@
 .method public showAsDropDown(Landroid/view/View;II)V
     .locals 0
 
-    .line 806
+    .line 819
     :try_start_0
     invoke-super {p0, p1, p2, p3}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;II)V
 
-    .line 807
+    .line 820
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->registerListener(Landroid/view/View;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1458,7 +1458,7 @@
     :catch_0
     move-exception p1
 
-    .line 809
+    .line 822
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -1468,10 +1468,10 @@
 .method public showAtLocation(Landroid/view/View;III)V
     .locals 0
 
-    .line 979
+    .line 992
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 980
+    .line 993
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->unregisterListener()V
 
     return-void
@@ -1480,19 +1480,19 @@
 .method public startAnimation()V
     .locals 11
 
-    .line 885
+    .line 898
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->animationEnabled:Z
 
     if-eqz v0, :cond_8
 
-    .line 886
+    .line 899
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->windowAnimatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 890
+    .line 903
     :cond_0
     invoke-virtual {p0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
 
@@ -1502,7 +1502,7 @@
 
     const/4 v1, 0x0
 
-    .line 892
+    .line 905
     instance-of v2, v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     const/4 v3, 0x0
@@ -1511,10 +1511,10 @@
 
     if-eqz v2, :cond_1
 
-    .line 893
+    .line 906
     check-cast v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    .line 894
+    .line 907
     invoke-static {v0, v4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$602(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;Z)Z
 
     goto :goto_1
@@ -1522,7 +1522,7 @@
     :cond_1
     move v2, v3
 
-    .line 896
+    .line 909
     :goto_0
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -1530,7 +1530,7 @@
 
     if-ge v2, v5, :cond_3
 
-    .line 897
+    .line 910
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
@@ -1539,14 +1539,14 @@
 
     if-eqz v5, :cond_2
 
-    .line 898
+    .line 911
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
     check-cast v1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    .line 899
+    .line 912
     invoke-static {v1, v4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$602(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;Z)Z
 
     :cond_2
@@ -1560,15 +1560,15 @@
     :goto_1
     const/4 v1, 0x0
 
-    .line 903
+    .line 916
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 904
+    .line 917
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 905
+    .line 918
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v5
@@ -1577,15 +1577,15 @@
 
     invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setPivotX(F)V
 
-    .line 906
+    .line 919
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setPivotY(F)V
 
-    .line 907
+    .line 920
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemsCount()I
 
     move-result v5
 
-    .line 908
+    .line 921
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$700(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)Ljava/util/HashMap;
 
     move-result-object v6
@@ -1599,15 +1599,15 @@
     :goto_2
     if-ge v6, v5, :cond_5
 
-    .line 911
+    .line 924
     invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemAt(I)Landroid/view/View;
 
     move-result-object v8
 
-    .line 912
+    .line 925
     invoke-virtual {v8, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 913
+    .line 926
     invoke-virtual {v8}, Landroid/view/View;->getVisibility()I
 
     move-result v9
@@ -1616,7 +1616,7 @@
 
     goto :goto_3
 
-    .line 916
+    .line 929
     :cond_4
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$700(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)Ljava/util/HashMap;
 
@@ -1635,7 +1635,7 @@
 
     goto :goto_2
 
-    .line 919
+    .line 932
     :cond_5
     iget-boolean v6, v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->shownFromBottom:Z
 
@@ -1643,16 +1643,16 @@
 
     sub-int/2addr v5, v4
 
-    .line 920
+    .line 933
     invoke-static {v0, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$802(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;I)I
 
     goto :goto_4
 
-    .line 922
+    .line 935
     :cond_6
     invoke-static {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$802(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;I)I
 
-    .line 925
+    .line 938
     :goto_4
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getSwipeBack()Lorg/telegram/ui/Components/PopupSwipeBackLayout;
 
@@ -1660,19 +1660,19 @@
 
     if-eqz v5, :cond_7
 
-    .line 926
+    .line 939
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getSwipeBack()Lorg/telegram/ui/Components/PopupSwipeBackLayout;
 
     move-result-object v2
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->invalidateTransforms()V
 
-    .line 927
+    .line 940
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$900(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)F
 
     move-result v2
 
-    .line 929
+    .line 942
     :cond_7
     new-instance v5, Landroid/animation/AnimatorSet;
 
@@ -1692,7 +1692,7 @@
 
     const-string v1, "backScaleY"
 
-    .line 931
+    .line 944
     invoke-static {v0, v1, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v1
@@ -1705,17 +1705,17 @@
 
     const-string v2, "backAlpha"
 
-    .line 932
+    .line 945
     invoke-static {v0, v2, v1}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Ljava/lang/String;[I)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     aput-object v0, v8, v4
 
-    .line 930
+    .line 943
     invoke-virtual {v5, v8}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 933
+    .line 946
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->windowAnimatorSet:Landroid/animation/AnimatorSet;
 
     mul-int/lit8 v7, v7, 0x10
@@ -1726,7 +1726,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 934
+    .line 947
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->windowAnimatorSet:Landroid/animation/AnimatorSet;
 
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$2;
@@ -1735,7 +1735,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 961
+    .line 974
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->windowAnimatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
@@ -1753,10 +1753,10 @@
 .method public update(Landroid/view/View;II)V
     .locals 0
 
-    .line 973
+    .line 986
     invoke-super {p0, p1, p2, p3}, Landroid/widget/PopupWindow;->update(Landroid/view/View;II)V
 
-    .line 974
+    .line 987
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->registerListener(Landroid/view/View;)V
 
     return-void
@@ -1765,10 +1765,10 @@
 .method public update(Landroid/view/View;IIII)V
     .locals 0
 
-    .line 967
+    .line 980
     invoke-super/range {p0 .. p5}, Landroid/widget/PopupWindow;->update(Landroid/view/View;IIII)V
 
-    .line 968
+    .line 981
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->registerListener(Landroid/view/View;)V
 
     return-void

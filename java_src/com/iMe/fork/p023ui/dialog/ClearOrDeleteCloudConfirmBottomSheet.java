@@ -11,15 +11,15 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.BottomSheet;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ChatActivity;
-import org.telegram.p042ui.Components.EditTextBoldCursor;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.ReportAlert;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.BottomSheet;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ChatActivity;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.ReportAlert;
 /* compiled from: ClearOrDeleteCloudConfirmBottomSheet.kt */
 /* renamed from: com.iMe.fork.ui.dialog.ClearOrDeleteCloudConfirmBottomSheet */
 /* loaded from: classes3.dex */
@@ -92,9 +92,9 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
         }
         setApplyBottomPadding(false);
         if (z) {
-            setTitle(LocaleController.getString("ClearHistory", C3630R.string.ClearHistory), true);
+            setTitle(LocaleController.getString("ClearHistory", C3634R.string.ClearHistory), true);
         } else {
-            setTitle(LocaleController.getString("DeleteChatUser", C3630R.string.DeleteChatUser), true);
+            setTitle(LocaleController.getString("DeleteChatUser", C3634R.string.DeleteChatUser), true);
         }
         getRootLinear().addView(getInputEditText(), LayoutHelper.createLinear(-1, 36, 51, 21, 10, 21, 10));
         getRootLinear().addView(getDoneButton(), LayoutHelper.createFrame(-1, 50, 51));
@@ -114,7 +114,7 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
         return (ReportAlert.BottomSheetCell) this.doneButton$delegate.getValue();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     public void dismissInternal() {
         super.dismissInternal();
         BaseFragment baseFragment = this.fragment;
@@ -137,14 +137,14 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
         editTextBoldCursor.setGravity(LocaleController.isRTL ? 5 : 3);
         editTextBoldCursor.setInputType(49152);
         editTextBoldCursor.setImeOptions(6);
-        editTextBoldCursor.setHint(LocaleController.getInternalString(C3630R.string.cloud_clear_or_delete_captcha_alert_message));
+        editTextBoldCursor.setHint(LocaleController.getInternalString(C3634R.string.cloud_clear_or_delete_captcha_alert_message));
         ViewExtKt.singleLine(editTextBoldCursor);
         editTextBoldCursor.setTextSize(1, 18.0f);
         editTextBoldCursor.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
         int i = Theme.key_windowBackgroundWhiteBlackText;
         editTextBoldCursor.setTextColor(Theme.getColor(i));
         editTextBoldCursor.setCursorColor(Theme.getColor(i));
-        editTextBoldCursor.setCursorSize(AndroidUtilities.m102dp(20));
+        editTextBoldCursor.setCursorSize(AndroidUtilities.m104dp(20));
         editTextBoldCursor.setCursorWidth(1.5f);
         ViewExtKt.onAction(editTextBoldCursor, 6, new Callbacks$Callback() { // from class: com.iMe.fork.ui.dialog.ClearOrDeleteCloudConfirmBottomSheet$$ExternalSyntheticLambda1
             @Override // com.iMe.fork.utils.Callbacks$Callback
@@ -171,7 +171,7 @@ public final class ClearOrDeleteCloudConfirmBottomSheet extends BottomSheet {
                 ClearOrDeleteCloudConfirmBottomSheet.initDoneButton$lambda$4$lambda$3(ClearOrDeleteCloudConfirmBottomSheet.this, view);
             }
         });
-        bottomSheetCell.setText(LocaleController.getInternalString(C3630R.string.cloud_clear_or_delete_captcha_alert_positive_button));
+        bottomSheetCell.setText(LocaleController.getInternalString(C3634R.string.cloud_clear_or_delete_captcha_alert_positive_button));
         return bottomSheetCell;
     }
 

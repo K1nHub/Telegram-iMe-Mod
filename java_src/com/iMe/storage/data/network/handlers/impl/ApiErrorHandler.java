@@ -28,33 +28,26 @@ public class ApiErrorHandler implements ErrorHandler<Throwable> {
 
     @Override // com.iMe.storage.data.network.handlers.ErrorHandler
     public ErrorModel handleError(Throwable th) {
-        ErrorModel errorModel;
         Timber.tag("ErrorHandler").mo1e(th);
         if (th instanceof HttpException) {
             HttpException httpException = (HttpException) th;
             if (httpException.code() == 401) {
-                errorModel = new ErrorModel(httpException.message(), Integer.valueOf(httpException.code()), ErrorStatus.UNAUTHORIZED, th);
-            } else {
-                errorModel = getHttpError(httpException);
+                return new ErrorModel(httpException.message(), Integer.valueOf(httpException.code()), ErrorStatus.UNAUTHORIZED, th);
             }
-        } else {
-            if (th instanceof SocketTimeoutException ? true : th instanceof IOException) {
-                errorModel = new ErrorModel(th.getMessage(), ErrorStatus.NO_CONNECTION, th);
-            } else {
-                if (th instanceof FirebaseException) {
-                    FirebaseException firebaseException = (FirebaseException) th;
-                    Throwable cause = firebaseException.getCause();
-                    if (cause instanceof SocketTimeoutException ? true : cause instanceof IOException) {
-                        errorModel = new ErrorModel(firebaseException.getMessage(), ErrorStatus.NO_CONNECTION, th);
-                    } else {
-                        errorModel = new ErrorModel(null, ErrorStatus.BAD_RESPONSE, th);
-                    }
-                } else {
-                    errorModel = new ErrorModel(th != null ? th.getMessage() : null, ErrorStatus.BAD_RESPONSE, th);
-                }
-            }
+            return getHttpError(httpException);
         }
-        return errorModel == null ? new ErrorModel("No Defined Error!", (Integer) 0, (IErrorStatus) ErrorStatus.BAD_RESPONSE, th) : errorModel;
+        if (th instanceof SocketTimeoutException ? true : th instanceof IOException) {
+            return new ErrorModel(th.getMessage(), ErrorStatus.NO_CONNECTION, th);
+        }
+        if (th instanceof FirebaseException) {
+            FirebaseException firebaseException = (FirebaseException) th;
+            Throwable cause = firebaseException.getCause();
+            if (cause instanceof SocketTimeoutException ? true : cause instanceof IOException) {
+                return new ErrorModel(firebaseException.getMessage(), ErrorStatus.NO_CONNECTION, th);
+            }
+            return new ErrorModel(null, ErrorStatus.BAD_RESPONSE, th);
+        }
+        return new ErrorModel(th != null ? th.getMessage() : null, ErrorStatus.BAD_RESPONSE, th);
     }
 
     private final ErrorModel getHttpError(HttpException httpException) {

@@ -154,7 +154,7 @@
 
     move-result v1
 
-    const-string v2, "just(this)"
+    const-string/jumbo v2, "just(this)"
 
     if-eqz v1, :cond_4
 

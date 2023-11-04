@@ -43,17 +43,17 @@ import kotlin.math.MathKt__MathJVMKt;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.C3702ActionBar;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.Components.AnimationProperties;
-import org.telegram.p042ui.Components.FragmentContextView;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.RecyclerListView;
-import org.telegram.p042ui.Components.ScrollSlidingTextTabStrip;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.AnimationProperties;
+import org.telegram.p043ui.Components.FragmentContextView;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.RecyclerListView;
+import org.telegram.p043ui.Components.ScrollSlidingTextTabStrip;
 /* compiled from: TelegramViewPagerFragment.kt */
 /* renamed from: com.iMe.ui.pager.TelegramViewPagerFragment */
 /* loaded from: classes3.dex */
@@ -122,7 +122,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             super("animationValue");
         }
 
-        @Override // org.telegram.p042ui.Components.AnimationProperties.FloatProperty
+        @Override // org.telegram.p043ui.Components.AnimationProperties.FloatProperty
         public void setValue(TelegramViewPagerFragment obj, float f) {
             Intrinsics.checkNotNullParameter(obj, "obj");
             obj.setScrollY(f);
@@ -212,30 +212,30 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
         return contentView;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean canBeginSlide() {
         return getScrollSlidingTextTabStrip().getCurrentTabId() == getScrollSlidingTextTabStrip().getFirstTabId();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent event) {
         Intrinsics.checkNotNullParameter(event, "event");
         return canBeginSlide();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         View view = this.fragmentView;
         int i = ThemeDescription.FLAG_BACKGROUND;
         final FloatingActionButton floatingActionButton = getFloatingActionButton();
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(view, i, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$$ExternalSyntheticLambda2
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 FloatingActionButton.this.updateColors();
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -278,17 +278,17 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
         ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = new ScrollSlidingTextTabStrip(getParentActivity());
         scrollSlidingTextTabStrip.setInitialTabId(getInitialTabId());
         scrollSlidingTextTabStrip.setDelegate(new ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$initTabLayout$1$1
-            @Override // org.telegram.p042ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+            @Override // org.telegram.p043ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
             public /* synthetic */ void onSamePageSelected() {
                 ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate.CC.$default$onSamePageSelected(this);
             }
 
-            @Override // org.telegram.p042ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+            @Override // org.telegram.p043ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
             public void onTabSelected(int i) {
                 TelegramViewPagerFragment.this.updateFab(i);
             }
 
-            @Override // org.telegram.p042ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+            @Override // org.telegram.p043ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
             public void onPageSelected(int i, boolean z) {
                 if (TelegramViewPagerFragment.this.getViewPages()[0].getSelectedType() == i) {
                     return;
@@ -299,7 +299,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                 TelegramViewPagerFragment.this.animatingForward = z;
             }
 
-            @Override // org.telegram.p042ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
+            @Override // org.telegram.p043ui.Components.ScrollSlidingTextTabStrip.ScrollSlidingTabStripDelegate
             public void onPageScrolled(float f) {
                 int i = (f > 1.0f ? 1 : (f == 1.0f ? 0 : -1));
                 if (i == 0) {
@@ -346,16 +346,16 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3702ActionBar c3702ActionBar = this.actionBar;
-        c3702ActionBar.setOccupyStatusBar(!AndroidUtilities.isTablet());
-        c3702ActionBar.setBackButtonImage(C3630R.C3632drawable.ic_ab_back);
-        c3702ActionBar.setTitle(getToolbarTitle());
-        c3702ActionBar.setExtraHeight(AndroidUtilities.m103dp(getAdditionalActionBarHeight() + 44.0f));
-        c3702ActionBar.setAllowOverlayTitle(false);
-        c3702ActionBar.setAddToContainer(false);
-        c3702ActionBar.setClipContent(true);
-        c3702ActionBar.setActionBarMenuOnItemClick(new C3702ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$setupActionBar$1$1
-            @Override // org.telegram.p042ui.ActionBar.C3702ActionBar.ActionBarMenuOnItemClick
+        C3706ActionBar c3706ActionBar = this.actionBar;
+        c3706ActionBar.setOccupyStatusBar(!AndroidUtilities.isTablet());
+        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        c3706ActionBar.setTitle(getToolbarTitle());
+        c3706ActionBar.setExtraHeight(AndroidUtilities.m105dp(getAdditionalActionBarHeight() + 44.0f));
+        c3706ActionBar.setAllowOverlayTitle(false);
+        c3706ActionBar.setAddToContainer(false);
+        c3706ActionBar.setClipContent(true);
+        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$setupActionBar$1$1
+            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     TelegramViewPagerFragment.this.finishFragment();
@@ -365,10 +365,10 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             }
         });
         ViewExtKt.visible$default(getScrollSlidingTextTabStrip(), false, 1, null);
-        ViewParent parent = c3702ActionBar.getParent();
+        ViewParent parent = c3706ActionBar.getParent();
         ViewGroup viewGroup = parent instanceof ViewGroup ? (ViewGroup) parent : null;
         if (viewGroup != null) {
-            viewGroup.removeView(c3702ActionBar);
+            viewGroup.removeView(c3706ActionBar);
         }
     }
 
@@ -521,7 +521,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             final TelegramViewPagerFragment telegramViewPagerFragment = this.this$0;
             final ?? r1 = new RecyclerListView(context) { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$ViewPage$initListView$1
                 /* JADX INFO: Access modifiers changed from: protected */
-                @Override // org.telegram.p042ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+                @Override // org.telegram.p043ui.Components.RecyclerListView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
                 public void onLayout(boolean z, int i, int i2, int i3, int i4) {
                     super.onLayout(z, i, i2, i3, i4);
                     TelegramViewPagerFragment.this.checkScroll(this);
@@ -538,7 +538,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                     Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
                     if (i != 1) {
                         int i2 = (int) (-((BaseFragment) TelegramViewPagerFragment.this).actionBar.getTranslationY());
-                        int currentActionBarHeight = C3702ActionBar.getCurrentActionBarHeight();
+                        int currentActionBarHeight = C3706ActionBar.getCurrentActionBarHeight();
                         if (i2 == 0 || i2 == currentActionBarHeight) {
                             return;
                         }
@@ -556,8 +556,8 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                     if (recyclerView == TelegramViewPagerFragment.this.getViewPages()[0].getListView()) {
                         float translationY = ((BaseFragment) TelegramViewPagerFragment.this).actionBar.getTranslationY();
                         float f = translationY - i2;
-                        if (f < (-C3702ActionBar.getCurrentActionBarHeight())) {
-                            f = -C3702ActionBar.getCurrentActionBarHeight();
+                        if (f < (-C3706ActionBar.getCurrentActionBarHeight())) {
+                            f = -C3706ActionBar.getCurrentActionBarHeight();
                         } else if (f > BitmapDescriptorFactory.HUE_RED) {
                             f = 0.0f;
                         }
@@ -569,35 +569,35 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
                 }
             });
             r1.setOnItemClickListener(new RecyclerListView.OnItemClickListenerExtended() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$ViewPage$$ExternalSyntheticLambda0
-                @Override // org.telegram.p042ui.Components.RecyclerListView.OnItemClickListenerExtended
+                @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListenerExtended
                 public /* synthetic */ boolean hasDoubleTap(View view, int i) {
                     return RecyclerListView.OnItemClickListenerExtended.CC.$default$hasDoubleTap(this, view, i);
                 }
 
-                @Override // org.telegram.p042ui.Components.RecyclerListView.OnItemClickListenerExtended
+                @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListenerExtended
                 public /* synthetic */ void onDoubleTap(View view, int i, float f, float f2) {
                     RecyclerListView.OnItemClickListenerExtended.CC.$default$onDoubleTap(this, view, i, f, f2);
                 }
 
-                @Override // org.telegram.p042ui.Components.RecyclerListView.OnItemClickListenerExtended
+                @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemClickListenerExtended
                 public final void onItemClick(View view, int i, float f, float f2) {
                     TelegramViewPagerFragment.ViewPage.initListView$lambda$2$lambda$0(TelegramViewPagerFragment.this, view, i, f, f2);
                 }
             });
             r1.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: com.iMe.ui.pager.TelegramViewPagerFragment$ViewPage$$ExternalSyntheticLambda1
-                @Override // org.telegram.p042ui.Components.RecyclerListView.OnItemLongClickListenerExtended
+                @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListenerExtended
                 public final boolean onItemClick(View view, int i, float f, float f2) {
                     boolean initListView$lambda$2$lambda$1;
                     initListView$lambda$2$lambda$1 = TelegramViewPagerFragment.ViewPage.initListView$lambda$2$lambda$1(TelegramViewPagerFragment$ViewPage$initListView$1.this, telegramViewPagerFragment2, view, i, f, f2);
                     return initListView$lambda$2$lambda$1;
                 }
 
-                @Override // org.telegram.p042ui.Components.RecyclerListView.OnItemLongClickListenerExtended
+                @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListenerExtended
                 public /* synthetic */ void onLongClickRelease() {
                     RecyclerListView.OnItemLongClickListenerExtended.CC.$default$onLongClickRelease(this);
                 }
 
-                @Override // org.telegram.p042ui.Components.RecyclerListView.OnItemLongClickListenerExtended
+                @Override // org.telegram.p043ui.Components.RecyclerListView.OnItemLongClickListenerExtended
                 public /* synthetic */ void onMove(float f, float f2) {
                     RecyclerListView.OnItemLongClickListenerExtended.CC.$default$onMove(this, f, f2);
                 }
@@ -672,7 +672,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             int measuredHeight = ((BaseFragment) this.this$0).actionBar.getMeasuredHeight();
             this.globalIgnoreLayout = true;
             for (ViewPage viewPage : this.this$0.getViewPages()) {
-                viewPage.getListView().setPadding(0, this.this$0.additionalPadding + measuredHeight, 0, AndroidUtilities.m103dp(4.0f));
+                viewPage.getListView().setPadding(0, this.this$0.additionalPadding + measuredHeight, 0, AndroidUtilities.m105dp(4.0f));
             }
             this.globalIgnoreLayout = false;
             TelegramViewPagerFragment telegramViewPagerFragment = this.this$0;
@@ -705,7 +705,7 @@ public abstract class TelegramViewPagerFragment extends MvpFragment {
             }
             int measuredHeight = ((BaseFragment) this.this$0).actionBar.getMeasuredHeight();
             for (ViewPage viewPage : this.this$0.getViewPages()) {
-                viewPage.getListView().setPadding(0, this.this$0.additionalPadding + measuredHeight, 0, AndroidUtilities.m103dp(4.0f));
+                viewPage.getListView().setPadding(0, this.this$0.additionalPadding + measuredHeight, 0, AndroidUtilities.m105dp(4.0f));
             }
             requestLayout();
         }

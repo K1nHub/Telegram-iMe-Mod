@@ -2,40 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnCancelListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda6;
+# instance fields
+.field public final synthetic f$0:I
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda6;
-
-    invoke-direct {v0}, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda6;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda6;->INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda6;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda6;->f$0:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onCancel(Landroid/content/DialogInterface;)V
-    .locals 0
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 1
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$wii1yMvWeg-d-YTyoUEndxTMozs(Landroid/content/DialogInterface;)V
+    iget v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda6;->f$0:I
+
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$syvZ91Qj3byUPK7XMKcOe0C8na4(ILandroid/content/DialogInterface;I)V
 
     return-void
 .end method

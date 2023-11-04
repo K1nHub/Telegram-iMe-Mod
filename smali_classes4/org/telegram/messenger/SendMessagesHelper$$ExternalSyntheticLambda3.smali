@@ -10,17 +10,19 @@
 
 .field public final synthetic f$1:Ljava/util/ArrayList;
 
-.field public final synthetic f$10:Lorg/telegram/messenger/MessageObject;
+.field public final synthetic f$10:Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
-.field public final synthetic f$11:Z
+.field public final synthetic f$11:Lorg/telegram/messenger/MessageObject;
 
 .field public final synthetic f$12:Z
 
-.field public final synthetic f$13:Landroidx/core/view/inputmethod/InputContentInfoCompat;
+.field public final synthetic f$13:Z
 
-.field public final synthetic f$14:Ljava/lang/String;
+.field public final synthetic f$14:Landroidx/core/view/inputmethod/InputContentInfoCompat;
 
-.field public final synthetic f$15:Ljava/util/ArrayList;
+.field public final synthetic f$15:Ljava/lang/String;
+
+.field public final synthetic f$16:Ljava/util/ArrayList;
 
 .field public final synthetic f$2:Ljava/lang/String;
 
@@ -36,11 +38,11 @@
 
 .field public final synthetic f$8:Lorg/telegram/messenger/MessageObject;
 
-.field public final synthetic f$9:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field public final synthetic f$9:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
 
 # direct methods
-.method public synthetic constructor <init>(JLjava/util/ArrayList;Ljava/lang/String;Lorg/telegram/messenger/AccountInstance;ILjava/util/ArrayList;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/messenger/MessageObject;ZZLandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;Ljava/util/ArrayList;)V
+.method public synthetic constructor <init>(JLjava/util/ArrayList;Ljava/lang/String;Lorg/telegram/messenger/AccountInstance;ILjava/util/ArrayList;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;Lorg/telegram/messenger/MessageObject;ZZLandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;Ljava/util/ArrayList;)V
     .locals 3
 
     move-object v0, p0
@@ -85,31 +87,35 @@
 
     move-object v1, p11
 
-    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$9:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$9:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     move-object v1, p12
 
-    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$10:Lorg/telegram/messenger/MessageObject;
+    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$10:Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
-    move/from16 v1, p13
+    move-object/from16 v1, p13
 
-    iput-boolean v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$11:Z
+    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$11:Lorg/telegram/messenger/MessageObject;
 
     move/from16 v1, p14
 
     iput-boolean v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$12:Z
 
-    move-object/from16 v1, p15
+    move/from16 v1, p15
 
-    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$13:Landroidx/core/view/inputmethod/InputContentInfoCompat;
+    iput-boolean v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$13:Z
 
     move-object/from16 v1, p16
 
-    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$14:Ljava/lang/String;
+    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$14:Landroidx/core/view/inputmethod/InputContentInfoCompat;
 
     move-object/from16 v1, p17
 
-    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$15:Ljava/util/ArrayList;
+    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$15:Ljava/lang/String;
+
+    move-object/from16 v1, p18
+
+    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$16:Ljava/util/ArrayList;
 
     return-void
 .end method
@@ -117,7 +123,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 20
+    .locals 21
 
     move-object/from16 v0, p0
 
@@ -139,29 +145,33 @@
 
     iget-object v10, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$8:Lorg/telegram/messenger/MessageObject;
 
-    iget-object v11, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$9:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v11, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$9:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iget-object v12, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$10:Lorg/telegram/messenger/MessageObject;
+    iget-object v12, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$10:Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
-    iget-boolean v13, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$11:Z
+    iget-object v13, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$11:Lorg/telegram/messenger/MessageObject;
 
     iget-boolean v14, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$12:Z
 
-    iget-object v15, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$13:Landroidx/core/view/inputmethod/InputContentInfoCompat;
+    iget-boolean v15, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$13:Z
 
-    move-wide/from16 v18, v1
+    move-wide/from16 v19, v1
 
-    iget-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$14:Ljava/lang/String;
+    iget-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$14:Landroidx/core/view/inputmethod/InputContentInfoCompat;
 
     move-object/from16 v16, v1
 
-    iget-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$15:Ljava/util/ArrayList;
+    iget-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$15:Ljava/lang/String;
 
     move-object/from16 v17, v1
 
-    move-wide/from16 v1, v18
+    iget-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda3;->f$16:Ljava/util/ArrayList;
 
-    invoke-static/range {v1 .. v17}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$ETgqVvtlD5Y_imkZxRAdp_NRPQA(JLjava/util/ArrayList;Ljava/lang/String;Lorg/telegram/messenger/AccountInstance;ILjava/util/ArrayList;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$StoryItem;Lorg/telegram/messenger/MessageObject;ZZLandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;Ljava/util/ArrayList;)V
+    move-object/from16 v18, v1
+
+    move-wide/from16 v1, v19
+
+    invoke-static/range {v1 .. v18}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$SUNbfD9QP9v9_mxLZm3Et58PZAU(JLjava/util/ArrayList;Ljava/lang/String;Lorg/telegram/messenger/AccountInstance;ILjava/util/ArrayList;Ljava/lang/String;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;Lorg/telegram/messenger/MessageObject;ZZLandroidx/core/view/inputmethod/InputContentInfoCompat;Ljava/lang/String;Ljava/util/ArrayList;)V
 
     return-void
 .end method

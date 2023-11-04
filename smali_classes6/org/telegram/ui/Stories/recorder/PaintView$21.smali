@@ -28,7 +28,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;Landroid/view/View;Landroid/view/View;I)V
     .locals 0
 
-    .line 1692
+    .line 1698
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->val$view:Landroid/view/View;
@@ -47,7 +47,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1712
+    .line 1718
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$2000(Lorg/telegram/ui/Stories/recorder/PaintView;)I
@@ -56,14 +56,14 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$3502(Lorg/telegram/ui/Stories/recorder/PaintView;I)I
 
-    .line 1713
+    .line 1719
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     const/4 v1, -0x1
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$2002(Lorg/telegram/ui/Stories/recorder/PaintView;I)I
 
-    .line 1714
+    .line 1720
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$3600(Lorg/telegram/ui/Stories/recorder/PaintView;)Landroid/widget/LinearLayout;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->invalidate()V
 
-    .line 1716
+    .line 1722
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->val$view:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -83,10 +83,10 @@
 
     const/16 v1, 0x8
 
-    .line 1717
+    .line 1723
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1720
+    .line 1726
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -96,7 +96,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 1721
+    .line 1727
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     const/4 v0, 0x0
@@ -110,7 +110,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 1695
+    .line 1701
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->val$view:Landroid/view/View;
 
     if-eqz p1, :cond_0
@@ -121,10 +121,10 @@
 
     const/4 v0, 0x0
 
-    .line 1696
+    .line 1702
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1698
+    .line 1704
     :cond_0
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->val$index:I
 
@@ -132,7 +132,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 1699
+    .line 1705
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$700(Lorg/telegram/ui/Stories/recorder/PaintView;)Lorg/telegram/ui/Components/Paint/Views/PaintWeightChooserView;
@@ -147,7 +147,7 @@
 
     goto :goto_1
 
-    .line 1701
+    .line 1707
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -159,7 +159,7 @@
 
     move-result-object p1
 
-    .line 1702
+    .line 1708
     instance-of v0, p1, Lorg/telegram/ui/Components/Paint/Brush$Blurer;
 
     if-nez v0, :cond_3
@@ -170,7 +170,7 @@
 
     goto :goto_0
 
-    .line 1705
+    .line 1711
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -186,7 +186,7 @@
 
     goto :goto_1
 
-    .line 1703
+    .line 1709
     :cond_3
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$21;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;

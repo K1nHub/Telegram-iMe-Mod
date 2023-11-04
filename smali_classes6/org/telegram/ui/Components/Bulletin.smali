@@ -1241,22 +1241,22 @@
 
     const/4 v0, 0x1
 
-    .line 1633
+    .line 1641
     iput-boolean v0, p0, Lorg/telegram/ui/Components/Bulletin;->loaded:Z
 
-    .line 1634
+    .line 1642
     iget-object v1, p0, Lorg/telegram/ui/Components/Bulletin;->layout:Lorg/telegram/ui/Components/Bulletin$Layout;
 
     instance-of v2, v1, Lorg/telegram/ui/Components/Bulletin$LoadingLayout;
 
     if-eqz v2, :cond_0
 
-    .line 1635
+    .line 1643
     check-cast v1, Lorg/telegram/ui/Components/Bulletin$LoadingLayout;
 
     invoke-interface {v1, p1}, Lorg/telegram/ui/Components/Bulletin$LoadingLayout;->onTextLoaded(Ljava/lang/CharSequence;)V
 
-    .line 1637
+    .line 1645
     :cond_0
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/Bulletin;->setCanHide(Z)V
 
@@ -1338,7 +1338,7 @@
 .method public setTag(I)Lorg/telegram/ui/Components/Bulletin;
     .locals 0
 
-    .line 1894
+    .line 1902
     iput p1, p0, Lorg/telegram/ui/Components/Bulletin;->tag:I
 
     return-object p0

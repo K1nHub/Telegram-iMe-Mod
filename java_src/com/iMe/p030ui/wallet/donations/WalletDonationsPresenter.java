@@ -35,8 +35,8 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ManageLinksActivity;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ManageLinksActivity;
 import timber.log.Timber;
 /* compiled from: WalletDonationsPresenter.kt */
 @InjectViewState
@@ -106,7 +106,7 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     public final String getCurrentDonationsAddress() {
         Result<String> result = this.addressInfoResultState;
         if ((result instanceof Result.Loading) || result == null) {
-            return this.resourceManager.getString(C3630R.string.common_progress_state_title);
+            return this.resourceManager.getString(C3634R.string.common_progress_state_title);
         }
         return this.currentDonationsAddress;
     }
@@ -150,11 +150,11 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     public final void linkAddress(final String address) {
         Intrinsics.checkNotNullParameter(address, "address");
         if ((address.length() > 0) && Intrinsics.areEqual(address, this.currentDonationsAddress)) {
-            ((WalletDonationsView) getViewState()).showToast(this.resourceManager.getString(C3630R.string.channel_donations_the_same_address_error));
+            ((WalletDonationsView) getViewState()).showToast(this.resourceManager.getString(C3634R.string.channel_donations_the_same_address_error));
         } else if (CryptoHelper.isWithEthereumPrefix(address)) {
             extractAddressForLink(address);
         } else {
-            Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(address, BlockchainType.EVM).observeOn(this.schedulersProvider.mo1009ui());
+            Observable<Result<Boolean>> observeOn = this.cryptoWalletInteractor.isValidAddress(address, BlockchainType.EVM).observeOn(this.schedulersProvider.mo1010ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
             Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends Boolean>, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$linkAddress$$inlined$subscribeWithErrorHandle$default$1
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -164,12 +164,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
                 @Override // kotlin.jvm.functions.Function1
                 public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                    m1699invoke(result);
+                    m1704invoke(result);
                     return Unit.INSTANCE;
                 }
 
                 /* renamed from: invoke  reason: collision with other method in class */
-                public final void m1699invoke(Result<? extends Boolean> it) {
+                public final void m1704invoke(Result<? extends Boolean> it) {
                     ResourceManager resourceManager;
                     ResourceManager resourceManager2;
                     DialogModel linkAddressDialogModel;
@@ -192,7 +192,7 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
                         });
                     } else {
                         resourceManager2 = WalletDonationsPresenter.this.resourceManager;
-                        ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).showToast(resourceManager2.getString(C3630R.string.channel_donations_incorrect_address_error));
+                        ((WalletDonationsView) WalletDonationsPresenter.this.getViewState()).showToast(resourceManager2.getString(C3634R.string.channel_donations_incorrect_address_error));
                     }
                 }
             }), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Throwable, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$linkAddress$$inlined$subscribeWithErrorHandle$default$2
@@ -237,7 +237,7 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     }
 
     private final void extractAddressForLink(String str) {
-        Observable<Result<SendCryptoQRData>> observeOn = CryptoHelper.extractAddressAndAmount(str, BlockchainType.EVM, this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<SendCryptoQRData>> observeOn = CryptoHelper.extractAddressAndAmount(str, BlockchainType.EVM, this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "extractAddressAndAmount(…(schedulersProvider.ui())");
         Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends SendCryptoQRData>, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$extractAddressForLink$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -246,12 +246,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends SendCryptoQRData> result) {
-                m1698invoke(result);
+                m1703invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1698invoke(Result<? extends SendCryptoQRData> it) {
+            public final void m1703invoke(Result<? extends SendCryptoQRData> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends SendCryptoQRData> result = it;
                 if (result instanceof Result.Success) {
@@ -299,7 +299,7 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void loadDonationAddress() {
-        Observable<Result<String>> observeOn = this.donationsInteractor.getDonationAddress(this.apiChatId).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<String>> observeOn = this.donationsInteractor.getDonationAddress(this.apiChatId).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends String>, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$loadDonationAddress$$inlined$subscribeWithErrorHandle$default$1
@@ -309,12 +309,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends String> result) {
-                m1700invoke(result);
+                m1705invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1700invoke(Result<? extends String> it) {
+            public final void m1705invoke(Result<? extends String> it) {
                 String str;
                 ResourceManager resourceManager;
                 String str2;
@@ -366,7 +366,7 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     }
 
     private final void loadDonationTransactions() {
-        Observable observeOn = DonationsInteractor.getDonationTransactionHistory$default(this.donationsInteractor, this.apiChatId, null, 0, null, 14, null).observeOn(this.schedulersProvider.mo1009ui());
+        Observable observeOn = DonationsInteractor.getDonationTransactionHistory$default(this.donationsInteractor, this.apiChatId, null, 0, null, 14, null).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends Transaction>>, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$loadDonationTransactions$$inlined$subscribeWithErrorHandle$default$1
@@ -376,12 +376,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends Transaction>> result) {
-                m1701invoke(result);
+                m1706invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1701invoke(Result<? extends List<? extends Transaction>> it) {
+            public final void m1706invoke(Result<? extends List<? extends Transaction>> it) {
                 ResourceManager resourceManager;
                 int collectionSizeOrDefault;
                 List mutableList;
@@ -439,7 +439,7 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     }
 
     private final void disableDonation() {
-        Observable<Result<Boolean>> observeOn = this.donationsInteractor.disableDonation(this.apiChatId).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Boolean>> observeOn = this.donationsInteractor.disableDonation(this.apiChatId).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -452,12 +452,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1697invoke(result);
+                m1702invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1697invoke(Result<? extends Boolean> it) {
+            public final void m1702invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 List list;
                 List<TransactionItem> list2;
@@ -509,7 +509,7 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     /* JADX INFO: Access modifiers changed from: private */
     public final void saveDonationAddress(final String str) {
         Wallet.EVM evm = (Wallet.EVM) this.accessManager.getWallet(BlockchainType.EVM);
-        Observable<Result<Boolean>> observeOn = this.donationsInteractor.enableDonationFor(this.apiChatId, str, Intrinsics.areEqual(evm != null ? evm.getAddress() : null, str)).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Result<Boolean>> observeOn = this.donationsInteractor.enableDonationFor(this.apiChatId, str, Intrinsics.areEqual(evm != null ? evm.getAddress() : null, str)).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
@@ -523,12 +523,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends Boolean> result) {
-                m1703invoke(result);
+                m1708invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1703invoke(Result<? extends Boolean> it) {
+            public final void m1708invoke(Result<? extends Boolean> it) {
                 ResourceManager resourceManager;
                 String str2;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -578,7 +578,7 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     }
 
     private final void loadDonationWalletBalance() {
-        Observable observeOn = DonationsInteractor.getDonationWalletBalance$default(this.donationsInteractor, this.apiChatId, null, 2, null).observeOn(this.schedulersProvider.mo1009ui());
+        Observable observeOn = DonationsInteractor.getDonationWalletBalance$default(this.donationsInteractor, this.apiChatId, null, 2, null).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "donationsInteractor\n    …(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends TokenBalance>, Unit>() { // from class: com.iMe.ui.wallet.donations.WalletDonationsPresenter$loadDonationWalletBalance$$inlined$subscribeWithErrorHandle$default$1
@@ -588,12 +588,12 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends TokenBalance> result) {
-                m1702invoke(result);
+                m1707invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1702invoke(Result<? extends TokenBalance> it) {
+            public final void m1707invoke(Result<? extends TokenBalance> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends TokenBalance> result = it;
@@ -641,17 +641,17 @@ public final class WalletDonationsPresenter extends BasePresenter<WalletDonation
     }
 
     private final DialogModel getUnlinkWalletAddressDialogModel(String str) {
-        return new DialogModel(this.resourceManager.getString(C3630R.string.channel_donations_unlink_address_dialog_title), this.resourceManager.getString(C3630R.string.channel_donations_unlink_address_dialog_description, str), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.channel_donations_unlink_address_dialog_positive_button));
+        return new DialogModel(this.resourceManager.getString(C3634R.string.channel_donations_unlink_address_dialog_title), this.resourceManager.getString(C3634R.string.channel_donations_unlink_address_dialog_description, str), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.channel_donations_unlink_address_dialog_positive_button));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogModel getLinkAddressDialogModel(String str, boolean z) {
         int i;
         if (z) {
-            i = C3630R.string.channel_donations_link_non_castodial_wallet_address_dialog_title;
+            i = C3634R.string.channel_donations_link_non_castodial_wallet_address_dialog_title;
         } else {
-            i = C3630R.string.channel_donations_link_address_dialog_title;
+            i = C3634R.string.channel_donations_link_address_dialog_title;
         }
-        return new DialogModel(this.resourceManager.getString(i), this.resourceManager.getString(C3630R.string.channel_donations_link_address_dialog_description, str), this.resourceManager.getString(C3630R.string.common_cancel), this.resourceManager.getString(C3630R.string.channel_donations_link_address_dialog_positive_button));
+        return new DialogModel(this.resourceManager.getString(i), this.resourceManager.getString(C3634R.string.channel_donations_link_address_dialog_description, str), this.resourceManager.getString(C3634R.string.common_cancel), this.resourceManager.getString(C3634R.string.channel_donations_link_address_dialog_positive_button));
     }
 }

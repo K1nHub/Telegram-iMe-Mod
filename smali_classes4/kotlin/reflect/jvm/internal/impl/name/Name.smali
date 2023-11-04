@@ -146,7 +146,7 @@
     goto :goto_4
 
     :pswitch_2
-    const-string v6, "isValidIdentifier"
+    const-string/jumbo v6, "isValidIdentifier"
 
     aput-object v6, v5, v3
 
@@ -184,8 +184,6 @@
 
     :goto_5
     throw p0
-
-    nop
 
     :pswitch_data_0
     .packed-switch 0x1

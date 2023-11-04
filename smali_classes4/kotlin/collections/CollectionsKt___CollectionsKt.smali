@@ -1460,7 +1460,7 @@
 
     move-result-object p0
 
-    const-string p1, "joinTo(StringBuilder(), \u2026ed, transform).toString()"
+    const-string/jumbo p1, "joinTo(StringBuilder(), \u2026ed, transform).toString()"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

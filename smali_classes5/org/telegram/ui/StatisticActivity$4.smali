@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity;Landroid/content/Context;Lorg/telegram/ui/Components/BottomPagerTabs;)V
     .locals 0
 
-    .line 440
+    .line 461
     iput-object p3, p0, Lorg/telegram/ui/StatisticActivity$4;->val$storiesTabsView:Lorg/telegram/ui/Components/BottomPagerTabs;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ViewPagerFixed;-><init>(Landroid/content/Context;)V
@@ -39,11 +39,11 @@
 
     return-void
 
-    .line 446
+    .line 467
     :cond_0
     iget p1, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentProgress:F
 
-    .line 447
+    .line 468
     iget v0, p0, Lorg/telegram/ui/Components/ViewPagerFixed;->currentPosition:I
 
     if-nez v0, :cond_1
@@ -52,7 +52,7 @@
 
     sub-float p1, v0, p1
 
-    .line 450
+    .line 471
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$4;->val$storiesTabsView:Lorg/telegram/ui/Components/BottomPagerTabs;
 
@@ -60,7 +60,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/BottomPagerTabs;->setScrolling(Z)V
 
-    .line 451
+    .line 472
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$4;->val$storiesTabsView:Lorg/telegram/ui/Components/BottomPagerTabs;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/BottomPagerTabs;->setProgress(F)V

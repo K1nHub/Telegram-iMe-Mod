@@ -785,7 +785,7 @@
     iput-object v1, p0, Lorg/telegram/ui/Components/NumberPicker;->mSelectionDivider:Landroid/graphics/Paint;
 
     .line 153
-    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogButton:I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/NumberPicker;->getThemedColor(I)I
 

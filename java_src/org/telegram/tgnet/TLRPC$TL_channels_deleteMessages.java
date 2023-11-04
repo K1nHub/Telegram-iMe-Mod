@@ -3,14 +3,13 @@ package org.telegram.tgnet;
 import java.util.ArrayList;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_channels_deleteMessages extends TLObject {
-    public static int constructor = -2067661490;
     public TLRPC$InputChannel channel;
 
     /* renamed from: id */
-    public ArrayList<Integer> f1639id = new ArrayList<>();
+    public ArrayList<Integer> f1640id = new ArrayList<>();
 
     public static TLRPC$TL_channels_deleteMessages TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
-        if (constructor != i) {
+        if (-2067661490 != i) {
             if (z) {
                 throw new RuntimeException(String.format("can't parse magic %x in TL_channels_deleteMessages", Integer.valueOf(i)));
             }
@@ -38,19 +37,19 @@ public class TLRPC$TL_channels_deleteMessages extends TLObject {
         }
         int readInt322 = abstractSerializedData.readInt32(z);
         for (int i = 0; i < readInt322; i++) {
-            this.f1639id.add(Integer.valueOf(abstractSerializedData.readInt32(z)));
+            this.f1640id.add(Integer.valueOf(abstractSerializedData.readInt32(z)));
         }
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-2067661490);
         this.channel.serializeToStream(abstractSerializedData);
         abstractSerializedData.writeInt32(481674261);
-        int size = this.f1639id.size();
+        int size = this.f1640id.size();
         abstractSerializedData.writeInt32(size);
         for (int i = 0; i < size; i++) {
-            abstractSerializedData.writeInt32(this.f1639id.get(i).intValue());
+            abstractSerializedData.writeInt32(this.f1640id.get(i).intValue());
         }
     }
 }

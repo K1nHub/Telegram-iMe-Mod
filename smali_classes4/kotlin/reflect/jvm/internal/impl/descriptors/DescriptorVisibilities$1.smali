@@ -66,7 +66,7 @@
     goto :goto_1
 
     :cond_2
-    const-string p0, "isVisible"
+    const-string/jumbo p0, "isVisible"
 
     aput-object p0, v0, v3
 

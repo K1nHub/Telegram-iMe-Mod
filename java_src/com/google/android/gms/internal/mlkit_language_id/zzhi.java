@@ -16,7 +16,7 @@ public final class zzhi extends AbstractList<String> implements zzfg, RandomAcce
 
     @Override // com.google.android.gms.internal.mlkit_language_id.zzfg
     /* renamed from: a_ */
-    public final zzfg mo1071a_() {
+    public final zzfg mo1072a_() {
         return this;
     }
 

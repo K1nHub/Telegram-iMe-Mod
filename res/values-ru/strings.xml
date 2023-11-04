@@ -689,8 +689,13 @@ Approval will be given for this smart contract:
     <string name="formatting_link_title">ССЫЛКА</string>
     <string name="forward_not_clicked_forum_toast">Пересылайте сообщения в темы по отдельности, не выбирая дополнительные чаты.</string>
     <string name="forwarding_editor_group">Сгруппировать сообщения</string>
+    <string name="forwarding_editor_hide_media">Скрыть медиа</string>
+    <string name="forwarding_editor_hide_preview">Скрыть предпросмотр</string>
+    <string name="forwarding_editor_hint">Нажмите для редактирования</string>
     <string name="forwarding_editor_move_down">Переместить вниз</string>
     <string name="forwarding_editor_move_up">Переместить наверх</string>
+    <string name="forwarding_editor_show_media">Показать медиа</string>
+    <string name="forwarding_editor_show_preview">Показать предпросмотр</string>
     <string name="forwarding_editor_ungroup">Разгруппировать сообщения</string>
     <string name="fragment_premium_balance">"Доступно: "</string>
     <string name="fragment_premium_choose_duration">Выберите длительность</string>

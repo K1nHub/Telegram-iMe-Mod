@@ -33,10 +33,10 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkContentStakingDashboardBinding;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.StorageDiagramView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.StorageDiagramView;
 /* compiled from: StakingDashboardView.kt */
 /* renamed from: com.iMe.ui.custom.StakingDashboardView */
 /* loaded from: classes3.dex */
@@ -158,8 +158,8 @@ public final class StakingDashboardView extends FrameLayout implements KoinCompo
             Intrinsics.checkNotNullExpressionValue(setupColors$lambda$6$lambda$4, "setupColors$lambda$6$lambda$4");
             ViewExtKt.withMediumTypeface(setupColors$lambda$6$lambda$4);
         }
-        forkContentStakingDashboardBinding.viewStakedDot.setBackground(Theme.createCircleDrawable(AndroidUtilities.m102dp(6), Theme.getColor(Theme.key_statisticChartLine_blue)));
-        forkContentStakingDashboardBinding.viewProfitDot.setBackground(Theme.createCircleDrawable(AndroidUtilities.m102dp(6), Theme.getColor(Theme.key_statisticChartLine_green)));
+        forkContentStakingDashboardBinding.viewStakedDot.setBackground(Theme.createCircleDrawable(AndroidUtilities.m104dp(6), Theme.getColor(Theme.key_statisticChartLine_blue)));
+        forkContentStakingDashboardBinding.viewProfitDot.setBackground(Theme.createCircleDrawable(AndroidUtilities.m104dp(6), Theme.getColor(Theme.key_statisticChartLine_green)));
         forkContentStakingDashboardBinding.divider.setBackgroundColor(Theme.getColor(Theme.key_divider));
         HorizontalActionButtonsView horizontalActionButtonsView = forkContentStakingDashboardBinding.horizontalActionButtons;
         horizontalActionButtonsView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
@@ -174,7 +174,7 @@ public final class StakingDashboardView extends FrameLayout implements KoinCompo
             StorageDiagramView.ClearViewData[] clearViewDataArr = new StorageDiagramView.ClearViewData[16];
             for (int i = 0; i < 16; i++) {
                 StorageDiagramView.ClearViewData clearViewData = new StorageDiagramView.ClearViewData(null);
-                clearViewData.setStrokeWidth(AndroidUtilities.m103dp(1.5f));
+                clearViewData.setStrokeWidth(AndroidUtilities.m105dp(1.5f));
                 clearViewData.setSize(1L);
                 clearViewData.colorKey = Theme.key_dialogIcon;
                 Unit unit = Unit.INSTANCE;
@@ -186,14 +186,14 @@ public final class StakingDashboardView extends FrameLayout implements KoinCompo
             ArrayList arrayList = new ArrayList();
             if (f2 > BitmapDescriptorFactory.HUE_RED) {
                 StorageDiagramView.ClearViewData clearViewData2 = new StorageDiagramView.ClearViewData(null);
-                clearViewData2.setStrokeWidth(AndroidUtilities.m102dp(3));
+                clearViewData2.setStrokeWidth(AndroidUtilities.m104dp(3));
                 clearViewData2.setSizeAsDouble(Double.valueOf(f2));
                 clearViewData2.colorKey = Theme.key_statisticChartLine_green;
                 arrayList.add(clearViewData2);
             }
             if (f > BitmapDescriptorFactory.HUE_RED) {
                 StorageDiagramView.ClearViewData clearViewData3 = new StorageDiagramView.ClearViewData(null);
-                clearViewData3.setStrokeWidth(AndroidUtilities.m102dp(3));
+                clearViewData3.setStrokeWidth(AndroidUtilities.m104dp(3));
                 clearViewData3.setSizeAsDouble(Double.valueOf(f));
                 clearViewData3.colorKey = Theme.key_statisticChartLine_blue;
                 arrayList.add(clearViewData3);
@@ -218,7 +218,7 @@ public final class StakingDashboardView extends FrameLayout implements KoinCompo
         ForkContentStakingDashboardBinding forkContentStakingDashboardBinding = this.binding;
         StorageDiagramView storageDiagramView = forkContentStakingDashboardBinding.viewDiagram;
         StorageDiagramView.ClearViewData clearViewData = new StorageDiagramView.ClearViewData(null);
-        clearViewData.setStrokeWidth(AndroidUtilities.m103dp(1.5f));
+        clearViewData.setStrokeWidth(AndroidUtilities.m105dp(1.5f));
         clearViewData.setSize(1L);
         clearViewData.colorKey = Theme.key_dialogIcon;
         Unit unit = Unit.INSTANCE;
@@ -227,7 +227,7 @@ public final class StakingDashboardView extends FrameLayout implements KoinCompo
         storageDiagramView.setCustomCenterText("_");
         TextView textView = forkContentStakingDashboardBinding.textStakedValue;
         ResourceManager resourceManager = getResourceManager();
-        int i = C3630R.string.common_progress_state_title;
+        int i = C3634R.string.common_progress_state_title;
         textView.setText(resourceManager.getString(i));
         forkContentStakingDashboardBinding.textProfitValue.setText(getResourceManager().getString(i));
     }
@@ -241,12 +241,12 @@ public final class StakingDashboardView extends FrameLayout implements KoinCompo
     private final void setupViews() {
         List<HorizontalActionButtonItem> listOf;
         ForkContentStakingDashboardBinding forkContentStakingDashboardBinding = this.binding;
-        forkContentStakingDashboardBinding.textHeader.setText(getResourceManager().getString(C3630R.string.staking_dashboard_header));
-        forkContentStakingDashboardBinding.viewDiagram.setCustomSize(AndroidUtilities.m102dp(75));
-        forkContentStakingDashboardBinding.textStakedTitle.setText(getResourceManager().getString(C3630R.string.staking_dashboard_staked_title));
-        forkContentStakingDashboardBinding.textProfitTitle.setText(getResourceManager().getString(C3630R.string.staking_dashboard_profit_title));
+        forkContentStakingDashboardBinding.textHeader.setText(getResourceManager().getString(C3634R.string.staking_dashboard_header));
+        forkContentStakingDashboardBinding.viewDiagram.setCustomSize(AndroidUtilities.m104dp(75));
+        forkContentStakingDashboardBinding.textStakedTitle.setText(getResourceManager().getString(C3634R.string.staking_dashboard_staked_title));
+        forkContentStakingDashboardBinding.textProfitTitle.setText(getResourceManager().getString(C3634R.string.staking_dashboard_profit_title));
         HorizontalActionButtonsView horizontalActionButtonsView = forkContentStakingDashboardBinding.horizontalActionButtons;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3630R.C3632drawable.fork_wallet_staking_dashboard_calculator, getResourceManager().getString(C3630R.string.staking_dashboard_calculator), false, new Function0<Unit>() { // from class: com.iMe.ui.custom.StakingDashboardView$setupViews$1$1
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3634R.C3636drawable.fork_wallet_staking_dashboard_calculator, getResourceManager().getString(C3634R.string.staking_dashboard_calculator), false, new Function0<Unit>() { // from class: com.iMe.ui.custom.StakingDashboardView$setupViews$1$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);
@@ -264,7 +264,7 @@ public final class StakingDashboardView extends FrameLayout implements KoinCompo
                 callbacks$Callback = StakingDashboardView.this.onCalculatorClick;
                 callbacks$Callback.invoke();
             }
-        }, 4, null), new HorizontalActionButtonItem(C3630R.C3632drawable.fork_wallet_staking_dashboard_history, getResourceManager().getString(C3630R.string.staking_dashboard_history), false, new Function0<Unit>() { // from class: com.iMe.ui.custom.StakingDashboardView$setupViews$1$2
+        }, 4, null), new HorizontalActionButtonItem(C3634R.C3636drawable.fork_wallet_staking_dashboard_history, getResourceManager().getString(C3634R.string.staking_dashboard_history), false, new Function0<Unit>() { // from class: com.iMe.ui.custom.StakingDashboardView$setupViews$1$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(0);

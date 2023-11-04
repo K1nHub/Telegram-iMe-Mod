@@ -1,8 +1,6 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_messages_clearAllDrafts extends TLObject {
-    public static int constructor = 2119757468;
-
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
         return TLRPC$Bool.TLdeserialize(abstractSerializedData, i, z);
@@ -10,6 +8,6 @@ public class TLRPC$TL_messages_clearAllDrafts extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(2119757468);
     }
 }

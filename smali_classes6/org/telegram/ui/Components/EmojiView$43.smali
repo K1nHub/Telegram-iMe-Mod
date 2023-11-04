@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 4695
+    .line 4699
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/TrendingStickersLayout$Delegate;-><init>()V
@@ -35,7 +35,7 @@
 .method public canSchedule()Z
     .locals 1
 
-    .line 4760
+    .line 4764
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -60,7 +60,7 @@
 .method editAnimatedSticker(Lorg/telegram/tgnet/TLRPC$Document;Lorg/telegram/ui/Components/RLottieDrawable;Z)V
     .locals 1
 
-    .line 4703
+    .line 4707
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -75,7 +75,7 @@
 .method editMedia(Lorg/telegram/tgnet/TLRPC$Document;Z)V
     .locals 1
 
-    .line 4708
+    .line 4712
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -90,7 +90,7 @@
 .method public getLastSearchKeyboardLanguage()[Ljava/lang/String;
     .locals 1
 
-    .line 4740
+    .line 4744
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$9300(Lorg/telegram/ui/Components/EmojiView;)[Ljava/lang/String;
@@ -103,7 +103,7 @@
 .method public isInScheduleMode()Z
     .locals 1
 
-    .line 4765
+    .line 4769
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -120,7 +120,7 @@
 .method public onListViewInterceptTouchEvent(Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/MotionEvent;)Z
     .locals 6
 
-    .line 4730
+    .line 4734
     invoke-static {}, Lorg/telegram/ui/ContentPreviewViewer;->getInstance()Lorg/telegram/ui/ContentPreviewViewer;
 
     move-result-object v0
@@ -153,7 +153,7 @@
 .method public onListViewTouchEvent(Lorg/telegram/ui/Components/RecyclerListView;Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;Landroid/view/MotionEvent;)Z
     .locals 7
 
-    .line 4735
+    .line 4739
     invoke-static {}, Lorg/telegram/ui/ContentPreviewViewer;->getInstance()Lorg/telegram/ui/ContentPreviewViewer;
 
     move-result-object v0
@@ -188,7 +188,7 @@
 .method public onStickerSelected(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Object;ZZILjava/lang/String;)V
     .locals 9
 
-    .line 4755
+    .line 4759
     iget-object p3, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -219,7 +219,7 @@
 .method public onStickerSetAdd(Lorg/telegram/tgnet/TLRPC$StickerSetCovered;Z)V
     .locals 1
 
-    .line 4717
+    .line 4721
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -230,7 +230,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 4719
+    .line 4723
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 p2, 0x1
@@ -244,7 +244,7 @@
 .method public onStickerSetRemove(Lorg/telegram/tgnet/TLRPC$StickerSetCovered;)V
     .locals 1
 
-    .line 4725
+    .line 4729
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$900(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiViewDelegate;
@@ -259,7 +259,7 @@
 .method public setLastSearchKeyboardLanguage([Ljava/lang/String;)V
     .locals 1
 
-    .line 4745
+    .line 4749
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$43;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/EmojiView;->access$9302(Lorg/telegram/ui/Components/EmojiView;[Ljava/lang/String;)[Ljava/lang/String;

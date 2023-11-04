@@ -16,23 +16,23 @@ import java.util.Set;
 /* loaded from: classes.dex */
 public final class CredentialRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CredentialRequest> CREATOR = new zbc();
-    @SafeParcelable.Field(m1089id = 1000)
+    @SafeParcelable.Field(m1090id = 1000)
     final int zba;
-    @SafeParcelable.Field(getter = "isPasswordLoginSupported", m1089id = 1)
+    @SafeParcelable.Field(getter = "isPasswordLoginSupported", m1090id = 1)
     private final boolean zbb;
-    @SafeParcelable.Field(getter = "getAccountTypes", m1089id = 2)
+    @SafeParcelable.Field(getter = "getAccountTypes", m1090id = 2)
     private final String[] zbc;
-    @SafeParcelable.Field(getter = "getCredentialPickerConfig", m1089id = 3)
+    @SafeParcelable.Field(getter = "getCredentialPickerConfig", m1090id = 3)
     private final CredentialPickerConfig zbd;
-    @SafeParcelable.Field(getter = "getCredentialHintPickerConfig", m1089id = 4)
+    @SafeParcelable.Field(getter = "getCredentialHintPickerConfig", m1090id = 4)
     private final CredentialPickerConfig zbe;
-    @SafeParcelable.Field(getter = "isIdTokenRequested", m1089id = 5)
+    @SafeParcelable.Field(getter = "isIdTokenRequested", m1090id = 5)
     private final boolean zbf;
-    @SafeParcelable.Field(getter = "getServerClientId", m1089id = 6)
+    @SafeParcelable.Field(getter = "getServerClientId", m1090id = 6)
     private final String zbg;
-    @SafeParcelable.Field(getter = "getIdTokenNonce", m1089id = 7)
+    @SafeParcelable.Field(getter = "getIdTokenNonce", m1090id = 7)
     private final String zbh;
-    @SafeParcelable.Field(getter = "getRequireUserMediation", m1089id = 8)
+    @SafeParcelable.Field(getter = "getRequireUserMediation", m1090id = 8)
     private final boolean zbi;
 
     /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
@@ -103,7 +103,7 @@ public final class CredentialRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public CredentialRequest(@SafeParcelable.Param(m1088id = 1000) int i, @SafeParcelable.Param(m1088id = 1) boolean z, @SafeParcelable.Param(m1088id = 2) String[] strArr, @SafeParcelable.Param(m1088id = 3) CredentialPickerConfig credentialPickerConfig, @SafeParcelable.Param(m1088id = 4) CredentialPickerConfig credentialPickerConfig2, @SafeParcelable.Param(m1088id = 5) boolean z2, @SafeParcelable.Param(m1088id = 6) String str, @SafeParcelable.Param(m1088id = 7) String str2, @SafeParcelable.Param(m1088id = 8) boolean z3) {
+    public CredentialRequest(@SafeParcelable.Param(m1089id = 1000) int i, @SafeParcelable.Param(m1089id = 1) boolean z, @SafeParcelable.Param(m1089id = 2) String[] strArr, @SafeParcelable.Param(m1089id = 3) CredentialPickerConfig credentialPickerConfig, @SafeParcelable.Param(m1089id = 4) CredentialPickerConfig credentialPickerConfig2, @SafeParcelable.Param(m1089id = 5) boolean z2, @SafeParcelable.Param(m1089id = 6) String str, @SafeParcelable.Param(m1089id = 7) String str2, @SafeParcelable.Param(m1089id = 8) boolean z3) {
         this.zba = i;
         this.zbb = z;
         this.zbc = (String[]) Preconditions.checkNotNull(strArr);

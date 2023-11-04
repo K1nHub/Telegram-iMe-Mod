@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x16d9703b
-
-
 # instance fields
 .field public status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
@@ -14,16 +10,10 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 2880
+    .line 2527
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,8 +22,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_contactStatus;
     .locals 1
 
-    .line 2887
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_contactStatus;->constructor:I
+    const v0, 0x16d9703b
 
     if-eq v0, p1, :cond_1
 
@@ -43,7 +32,7 @@
 
     return-object p0
 
-    .line 2889
+    .line 2536
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -69,13 +58,13 @@
 
     throw p0
 
-    .line 2894
+    .line 2541
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_contactStatus;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_contactStatus;-><init>()V
 
-    .line 2895
+    .line 2542
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_contactStatus;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -86,14 +75,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 2900
+    .line 2547
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_contactStatus;->user_id:J
 
-    .line 2901
+    .line 2548
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -110,17 +99,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 2905
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_contactStatus;->constructor:I
+    const v0, 0x16d9703b
 
+    .line 2552
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2906
+    .line 2553
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_contactStatus;->user_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 2907
+    .line 2554
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_contactStatus;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

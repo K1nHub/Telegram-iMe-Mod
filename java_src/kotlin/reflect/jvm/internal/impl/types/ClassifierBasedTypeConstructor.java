@@ -14,7 +14,7 @@ public abstract class ClassifierBasedTypeConstructor implements TypeConstructor 
 
     @Override // kotlin.reflect.jvm.internal.impl.types.TypeConstructor
     /* renamed from: getDeclarationDescriptor */
-    public abstract ClassifierDescriptor mo2046getDeclarationDescriptor();
+    public abstract ClassifierDescriptor mo2051getDeclarationDescriptor();
 
     protected abstract boolean isSameClassifier(ClassifierDescriptor classifierDescriptor);
 
@@ -24,9 +24,9 @@ public abstract class ClassifierBasedTypeConstructor implements TypeConstructor 
         if (i != 0) {
             return i;
         }
-        ClassifierDescriptor mo2046getDeclarationDescriptor = mo2046getDeclarationDescriptor();
-        if (hasMeaningfulFqName(mo2046getDeclarationDescriptor)) {
-            identityHashCode = DescriptorUtils.getFqName(mo2046getDeclarationDescriptor).hashCode();
+        ClassifierDescriptor mo2051getDeclarationDescriptor = mo2051getDeclarationDescriptor();
+        if (hasMeaningfulFqName(mo2051getDeclarationDescriptor)) {
+            identityHashCode = DescriptorUtils.getFqName(mo2051getDeclarationDescriptor).hashCode();
         } else {
             identityHashCode = System.identityHashCode(this);
         }
@@ -43,10 +43,10 @@ public abstract class ClassifierBasedTypeConstructor implements TypeConstructor 
             if (typeConstructor.getParameters().size() != getParameters().size()) {
                 return false;
             }
-            ClassifierDescriptor mo2046getDeclarationDescriptor = mo2046getDeclarationDescriptor();
-            ClassifierDescriptor mo2046getDeclarationDescriptor2 = typeConstructor.mo2046getDeclarationDescriptor();
-            if (mo2046getDeclarationDescriptor2 != null && hasMeaningfulFqName(mo2046getDeclarationDescriptor) && hasMeaningfulFqName(mo2046getDeclarationDescriptor2)) {
-                return isSameClassifier(mo2046getDeclarationDescriptor2);
+            ClassifierDescriptor mo2051getDeclarationDescriptor = mo2051getDeclarationDescriptor();
+            ClassifierDescriptor mo2051getDeclarationDescriptor2 = typeConstructor.mo2051getDeclarationDescriptor();
+            if (mo2051getDeclarationDescriptor2 != null && hasMeaningfulFqName(mo2051getDeclarationDescriptor) && hasMeaningfulFqName(mo2051getDeclarationDescriptor2)) {
+                return isSameClassifier(mo2051getDeclarationDescriptor2);
             }
             return false;
         }

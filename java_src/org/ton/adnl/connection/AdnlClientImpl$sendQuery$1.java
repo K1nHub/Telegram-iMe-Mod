@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AdnlClientImpl.kt */
-@DebugMetadata(m143c = "org.ton.adnl.connection.AdnlClientImpl", m142f = "AdnlClientImpl.kt", m141l = {22}, m140m = "sendQuery-8Mi8wO0")
+@DebugMetadata(m145c = "org.ton.adnl.connection.AdnlClientImpl", m144f = "AdnlClientImpl.kt", m143l = {22}, m142m = "sendQuery-8Mi8wO0")
 /* loaded from: classes6.dex */
 public final class AdnlClientImpl$sendQuery$1 extends ContinuationImpl {
     int label;
@@ -23,6 +23,6 @@ public final class AdnlClientImpl$sendQuery$1 extends ContinuationImpl {
     public final Object invokeSuspend(Object obj) {
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        return this.this$0.m4916sendQuery8Mi8wO0(null, 0L, this);
+        return this.this$0.m5070sendQuery8Mi8wO0(null, 0L, this);
     }
 }

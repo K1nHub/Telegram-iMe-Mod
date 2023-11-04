@@ -17,14 +17,14 @@ import java.util.List;
 @SafeParcelable.Reserved({1000})
 /* loaded from: classes3.dex */
 public final class LocationResult extends AbstractSafeParcelable implements ReflectedParcelable {
-    @SafeParcelable.Field(defaultValueUnchecked = "LocationResult.DEFAULT_LOCATIONS", getter = "getLocations", m1089id = 1)
+    @SafeParcelable.Field(defaultValueUnchecked = "LocationResult.DEFAULT_LOCATIONS", getter = "getLocations", m1090id = 1)
     private final List zzb;
     static final List zza = Collections.emptyList();
     public static final Parcelable.Creator<LocationResult> CREATOR = new zzy();
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public LocationResult(@SafeParcelable.Param(m1088id = 1) List list) {
+    public LocationResult(@SafeParcelable.Param(m1089id = 1) List list) {
         this.zzb = list;
     }
 

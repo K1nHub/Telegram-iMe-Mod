@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ActorSelectorManager.kt */
-@DebugMetadata(m143c = "io.ktor.network.selector.ActorSelectorManager", m142f = "ActorSelectorManager.kt", m141l = {69, 73, 89}, m140m = "process")
+@DebugMetadata(m145c = "io.ktor.network.selector.ActorSelectorManager", m144f = "ActorSelectorManager.kt", m143l = {69, 73, 89}, m142m = "process")
 /* loaded from: classes4.dex */
 public final class ActorSelectorManager$process$1 extends ContinuationImpl {
     Object L$0;

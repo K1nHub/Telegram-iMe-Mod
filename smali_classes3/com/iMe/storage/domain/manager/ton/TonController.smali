@@ -45,12 +45,12 @@
     .end annotation
 .end method
 
-.method public abstract sendTransaction(Ljava/lang/String;JLcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;I)Lio/reactivex/Observable;
+.method public abstract sendTransaction(Ljava/lang/String;JILcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;I)Lio/reactivex/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/lang/String;",
-            "J",
+            "JI",
             "Lcom/iMe/storage/domain/model/crypto/send/TonTransactionPayload;",
             "I)",
             "Lio/reactivex/Observable<",

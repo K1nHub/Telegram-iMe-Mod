@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$3;
-.super Landroid/transition/Visibility;
+.super Landroid/view/View;
 .source "LimitReachedBottomSheet.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->boostChannel()V
+    value = Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->lambda$onViewCreated$9(Landroid/content/Context;Landroid/view/View;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,160 +14,160 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic val$boostDrawable:Landroid/graphics/drawable/Drawable;
+
+.field final synthetic val$paint:Landroid/graphics/Paint;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)V
+.method constructor <init>(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Landroid/content/Context;Landroid/graphics/Paint;Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 409
-    invoke-direct {p0}, Landroid/transition/Visibility;-><init>()V
+    .line 336
+    iput-object p3, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$3;->val$paint:Landroid/graphics/Paint;
+
+    iput-object p4, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$3;->val$boostDrawable:Landroid/graphics/drawable/Drawable;
+
+    invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
-    .locals 3
+.method protected onDraw(Landroid/graphics/Canvas;)V
+    .locals 12
 
-    .line 412
-    new-instance p1, Landroid/animation/AnimatorSet;
+    .line 339
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
-    invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
+    move-result v0
 
-    const/4 p3, 0x2
+    int-to-float v0, v0
 
-    new-array p4, p3, [Landroid/animation/Animator;
+    const/high16 v1, 0x40000000    # 2.0f
 
-    .line 413
-    sget-object v0, Landroid/view/View;->ALPHA:Landroid/util/Property;
+    div-float/2addr v0, v1
 
-    new-array v1, p3, [F
-
-    fill-array-data v1, :array_0
-
-    .line 414
-    invoke-static {p2, v0, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    aput-object v0, p4, v1
-
-    sget-object v0, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
-
-    new-array p3, p3, [F
-
-    const/16 v2, 0x14
-
-    .line 415
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 340
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v2
 
     int-to-float v2, v2
 
-    aput v2, p3, v1
+    div-float/2addr v2, v1
 
-    const/4 v1, 0x0
+    .line 341
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
-    const/4 v2, 0x1
+    move-result v3
 
-    aput v1, p3, v2
+    int-to-float v3, v3
 
-    invoke-static {p2, v0, p3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    div-float/2addr v3, v1
 
-    move-result-object p2
+    iget-object v4, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$3;->val$paint:Landroid/graphics/Paint;
 
-    aput-object p2, p4, v2
+    invoke-virtual {p1, v0, v2, v3, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 413
-    invoke-virtual {p1, p4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+    .line 342
+    invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
-    .line 417
-    sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    move-result-object v5
 
-    invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
-    return-object p1
+    move-result v8
 
-    :array_0
-    .array-data 4
-        0x0
-        0x3f800000    # 1.0f
-    .end array-data
-.end method
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
-.method public onDisappear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
-    .locals 5
+    move-result v9
 
-    .line 423
-    new-instance p1, Landroid/animation/AnimatorSet;
+    const/16 v3, 0xa
 
-    invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    const/4 p3, 0x2
+    move-result v3
 
-    new-array p4, p3, [Landroid/animation/Animator;
+    neg-int v3, v3
 
-    .line 424
-    sget-object v0, Landroid/view/View;->ALPHA:Landroid/util/Property;
+    int-to-float v10, v3
 
-    new-array v1, p3, [F
+    const/4 v6, 0x0
 
-    .line 425
-    invoke-virtual {p2}, Landroid/view/View;->getAlpha()F
+    const/4 v7, 0x0
 
-    move-result v2
+    const/4 v11, 0x0
 
-    const/4 v3, 0x0
+    invoke-virtual/range {v5 .. v11}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->updateMainGradientMatrix(IIIIFF)V
 
-    aput v2, v1, v3
+    .line 343
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
-    const/4 v2, 0x1
+    move-result v3
 
-    const/4 v4, 0x0
+    int-to-float v3, v3
 
-    aput v4, v1, v2
+    div-float/2addr v3, v1
 
-    invoke-static {p2, v0, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    const/4 v4, 0x2
 
-    move-result-object v0
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    aput-object v0, p4, v3
+    move-result v4
 
-    sget-object v0, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
+    int-to-float v4, v4
 
-    new-array p3, p3, [F
+    sub-float/2addr v3, v4
 
-    aput v4, p3, v3
+    invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
-    const/16 v1, 0x14
+    move-result-object v4
 
-    .line 426
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {v4}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getMainGradientPaint()Landroid/graphics/Paint;
 
-    move-result v1
+    move-result-object v4
 
-    neg-int v1, v1
+    invoke-virtual {p1, v0, v2, v3, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    int-to-float v1, v1
+    const/16 v3, 0x12
 
-    aput v1, p3, v2
+    .line 344
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-static {p2, v0, p3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    move-result v3
 
-    move-result-object p2
+    int-to-float v3, v3
 
-    aput-object p2, p4, v2
+    div-float/2addr v3, v1
 
-    .line 424
-    invoke-virtual {p1, p4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+    .line 345
+    iget-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$3;->val$boostDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 428
-    sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    sub-float v4, v0, v3
 
-    invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    float-to-int v4, v4
 
-    return-object p1
+    sub-float v5, v2, v3
+
+    float-to-int v5, v5
+
+    add-float/2addr v0, v3
+
+    float-to-int v0, v0
+
+    add-float/2addr v2, v3
+
+    float-to-int v2, v2
+
+    invoke-virtual {v1, v4, v5, v0, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+
+    .line 351
+    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$3;->val$boostDrawable:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+
+    return-void
 .end method

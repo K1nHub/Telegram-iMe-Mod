@@ -10,19 +10,19 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzfz extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzfz> CREATOR = new zzfy();
-    @SafeParcelable.Field(getter = "getImageFormat", m1089id = 1)
+    @SafeParcelable.Field(getter = "getImageFormat", m1090id = 1)
     private final int zza;
-    @SafeParcelable.Field(getter = "getWidth", m1089id = 2)
+    @SafeParcelable.Field(getter = "getWidth", m1090id = 2)
     private final int zzb;
-    @SafeParcelable.Field(getter = "getHeight", m1089id = 3)
+    @SafeParcelable.Field(getter = "getHeight", m1090id = 3)
     private final int zzc;
-    @SafeParcelable.Field(getter = "getRotation", m1089id = 4)
+    @SafeParcelable.Field(getter = "getRotation", m1090id = 4)
     private final int zzd;
-    @SafeParcelable.Field(getter = "getTimestampMs", m1089id = 5)
+    @SafeParcelable.Field(getter = "getTimestampMs", m1090id = 5)
     private final long zze;
 
     @SafeParcelable.Constructor
-    public zzfz(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) int i2, @SafeParcelable.Param(m1088id = 3) int i3, @SafeParcelable.Param(m1088id = 4) int i4, @SafeParcelable.Param(m1088id = 5) long j) {
+    public zzfz(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) int i2, @SafeParcelable.Param(m1089id = 3) int i3, @SafeParcelable.Param(m1089id = 4) int i4, @SafeParcelable.Param(m1089id = 5) long j) {
         this.zza = i;
         this.zzb = i2;
         this.zzc = i3;

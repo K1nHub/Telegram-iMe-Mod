@@ -28,7 +28,7 @@
 
     move-object v0, p1
 
-    .line 6334
+    .line 6304
     iput-object v0, v8, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     move-object v0, p0
@@ -49,7 +49,7 @@
 
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Components/CaptionPhotoViewer;-><init>(Landroid/content/Context;Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/BlurringShader$BlurManager;Ljava/lang/Runnable;)V
 
-    .line 6335
+    .line 6305
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
@@ -64,7 +64,7 @@
 .method protected captionLimitToast()Z
     .locals 2
 
-    .line 6364
+    .line 6334
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$19800(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/Bulletin;
@@ -89,7 +89,7 @@
 
     return v0
 
-    .line 6367
+    .line 6337
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -123,15 +123,15 @@
 
     move/from16 v2, p7
 
-    .line 6349
+    .line 6319
     invoke-virtual {p2}, Landroid/graphics/Canvas;->save()I
 
-    .line 6350
+    .line 6320
     iget-object v3, v0, Lorg/telegram/ui/PhotoViewer$28;->path:Landroid/graphics/Path;
 
     invoke-virtual {v3}, Landroid/graphics/Path;->rewind()V
 
-    .line 6351
+    .line 6321
     iget-object v3, v0, Lorg/telegram/ui/PhotoViewer$28;->path:Landroid/graphics/Path;
 
     sget-object v4, Landroid/graphics/Path$Direction;->CW:Landroid/graphics/Path$Direction;
@@ -142,14 +142,14 @@
 
     invoke-virtual {v3, p3, p4, p4, v4}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 6352
+    .line 6322
     iget-object v3, v0, Lorg/telegram/ui/PhotoViewer$28;->path:Landroid/graphics/Path;
 
     invoke-virtual {p2, v3}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
     if-eqz p8, :cond_0
 
-    .line 6354
+    .line 6324
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getX()F
 
     move-result v3
@@ -194,11 +194,11 @@
 
     goto :goto_0
 
-    .line 6356
+    .line 6326
     :cond_0
     invoke-virtual {p2, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 6358
+    .line 6328
     :goto_0
     iget-object v1, v0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
 
@@ -255,7 +255,7 @@
 
     invoke-static/range {v1 .. v8}, Lorg/telegram/ui/PhotoViewer;->access$18600(Lorg/telegram/ui/PhotoViewer;Landroid/graphics/Canvas;Lorg/telegram/ui/Components/BlurringShader$StoryBlurDrawer;IIZZZ)V
 
-    .line 6359
+    .line 6329
     invoke-virtual {p2}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -264,7 +264,7 @@
 .method protected ignoreTouches()Z
     .locals 1
 
-    .line 6344
+    .line 6314
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->keyboardShown:Z
 
     if-nez v0, :cond_0
@@ -291,7 +291,7 @@
 .method public invalidate()V
     .locals 2
 
-    .line 6395
+    .line 6365
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->photoViewerBlur:Z
 
     if-eqz v0, :cond_1
@@ -329,7 +329,7 @@
     :cond_0
     return-void
 
-    .line 6398
+    .line 6368
     :cond_1
     invoke-super {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -339,10 +339,10 @@
 .method protected onUpdateShowKeyboard(F)V
     .locals 4
 
-    .line 6388
+    .line 6358
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/CaptionPhotoViewer;->onUpdateShowKeyboard(F)V
 
-    .line 6389
+    .line 6359
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$9400(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/ImageView;
@@ -383,7 +383,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 6390
+    .line 6360
     iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$2600(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/FrameLayout;
@@ -420,7 +420,7 @@
 .method protected setupMentionContainer()V
     .locals 4
 
-    .line 6372
+    .line 6342
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->getAdapter()Lorg/telegram/ui/Adapters/MentionsAdapter;
@@ -431,7 +431,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->setAllowStickers(Z)V
 
-    .line 6373
+    .line 6343
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->getAdapter()Lorg/telegram/ui/Adapters/MentionsAdapter;
@@ -440,7 +440,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->setAllowBots(Z)V
 
-    .line 6374
+    .line 6344
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->getAdapter()Lorg/telegram/ui/Adapters/MentionsAdapter;
@@ -449,7 +449,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->setAllowChats(Z)V
 
-    .line 6375
+    .line 6345
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->getAdapter()Lorg/telegram/ui/Adapters/MentionsAdapter;
@@ -460,7 +460,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Adapters/MentionsAdapter;->setSearchInDailogs(Z)V
 
-    .line 6376
+    .line 6346
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$12600(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
@@ -469,7 +469,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 6377
+    .line 6347
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->getAdapter()Lorg/telegram/ui/Adapters/MentionsAdapter;
@@ -486,7 +486,7 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/Adapters/MentionsAdapter;->setChatInfo(Lorg/telegram/tgnet/TLRPC$ChatFull;)V
 
-    .line 6378
+    .line 6348
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->getAdapter()Lorg/telegram/ui/Adapters/MentionsAdapter;
@@ -513,7 +513,7 @@
 
     goto :goto_1
 
-    .line 6380
+    .line 6350
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;
 
@@ -525,7 +525,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Adapters/MentionsAdapter;->setChatInfo(Lorg/telegram/tgnet/TLRPC$ChatFull;)V
 
-    .line 6381
+    .line 6351
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/MentionsContainerView;->getAdapter()Lorg/telegram/ui/Adapters/MentionsAdapter;
@@ -534,7 +534,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Adapters/MentionsAdapter;->setNeedUsernames(Z)V
 
-    .line 6383
+    .line 6353
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->mentionContainer:Lorg/telegram/ui/Components/MentionsContainerView;
 

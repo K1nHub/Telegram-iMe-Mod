@@ -2,32 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Lorg/telegram/messenger/GenericProvider;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/ShareAlert;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda16;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ShareAlert;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda16;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda16;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda16;->INSTANCE:Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda16;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/Components/ShareAlert;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
-    .locals 1
+.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda16;->f$0:Lorg/telegram/ui/Components/ShareAlert;
+    check-cast p1, Ljava/lang/Integer;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$Crt-ATv-QsQUlShbOPkkP0Nid7s(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;I)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$ye5xd1h77f0HMFf3cns-Mj6wC_g(Ljava/lang/Integer;)Ljava/lang/Integer;
 
-    return-void
+    move-result-object p1
+
+    return-object p1
 .end method

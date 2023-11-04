@@ -14,15 +14,15 @@ import kotlinx.serialization.Serializable;
 import kotlinx.serialization.internal.PluginExceptionsKt;
 import kotlinx.serialization.internal.SerializationConstructorMarker;
 import org.ton.api.adnl.AdnlIdShort;
-import org.ton.api.p043pk.PrivateKeyEd25519;
+import org.ton.api.p044pk.PrivateKeyEd25519;
 import org.ton.crypto.Ed25519;
 import org.ton.crypto.Encryptor;
 import org.ton.crypto.EncryptorEd25519;
-import org.ton.p044tl.ByteString;
-import org.ton.p044tl.TlCodec;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.ByteString;
+import org.ton.p045tl.TlCodec;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: ed25519.kt */
 @Polymorphic
 @Serializable
@@ -121,53 +121,53 @@ public final class PublicKeyEd25519 implements PublicKey, Encryptor {
             this();
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public PublicKeyEd25519 decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return this.$$delegate_0.decode(reader);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public PublicKeyEd25519 decodeBoxed(Input input) {
             Intrinsics.checkNotNullParameter(input, "input");
             return this.$$delegate_0.decodeBoxed(input);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public PublicKeyEd25519 decodeBoxed(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return this.$$delegate_0.decodeBoxed(reader);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(Output output, PublicKeyEd25519 value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encode(output, (Output) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, PublicKeyEd25519 value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encode(writer, value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encodeBoxed(Output output, PublicKeyEd25519 value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encodeBoxed(output, (Output) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encodeBoxed(TlWriter writer, PublicKeyEd25519 value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encodeBoxed(writer, (TlWriter) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public byte[] encodeToByteArray(PublicKeyEd25519 value, boolean z) {
             Intrinsics.checkNotNullParameter(value, "value");
             return this.$$delegate_0.encodeToByteArray(value, z);

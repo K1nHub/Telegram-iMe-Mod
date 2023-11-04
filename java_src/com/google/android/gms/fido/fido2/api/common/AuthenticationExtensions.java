@@ -12,23 +12,23 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class AuthenticationExtensions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<AuthenticationExtensions> CREATOR = new zzd();
-    @SafeParcelable.Field(getter = "getFidoAppIdExtension", m1089id = 2)
+    @SafeParcelable.Field(getter = "getFidoAppIdExtension", m1090id = 2)
     private final FidoAppIdExtension zza;
-    @SafeParcelable.Field(getter = "getCableAuthenticationExtension", m1089id = 3)
+    @SafeParcelable.Field(getter = "getCableAuthenticationExtension", m1090id = 3)
     private final zzp zzb;
-    @SafeParcelable.Field(getter = "getUserVerificationMethodExtension", m1089id = 4)
+    @SafeParcelable.Field(getter = "getUserVerificationMethodExtension", m1090id = 4)
     private final UserVerificationMethodExtension zzc;
-    @SafeParcelable.Field(getter = "getGoogleMultiAssertionExtension", m1089id = 5)
+    @SafeParcelable.Field(getter = "getGoogleMultiAssertionExtension", m1090id = 5)
     private final zzw zzd;
-    @SafeParcelable.Field(getter = "getGoogleSessionIdExtension", m1089id = 6)
+    @SafeParcelable.Field(getter = "getGoogleSessionIdExtension", m1090id = 6)
     private final zzy zze;
-    @SafeParcelable.Field(getter = "getGoogleSilentVerificationExtension", m1089id = 7)
+    @SafeParcelable.Field(getter = "getGoogleSilentVerificationExtension", m1090id = 7)
     private final zzaa zzf;
-    @SafeParcelable.Field(getter = "getDevicePublicKeyExtension", m1089id = 8)
+    @SafeParcelable.Field(getter = "getDevicePublicKeyExtension", m1090id = 8)
     private final zzr zzg;
-    @SafeParcelable.Field(getter = "getGoogleTunnelServerIdExtension", m1089id = 9)
+    @SafeParcelable.Field(getter = "getGoogleTunnelServerIdExtension", m1090id = 9)
     private final zzad zzh;
-    @SafeParcelable.Field(getter = "getGoogleThirdPartyPaymentExtension", m1089id = 10)
+    @SafeParcelable.Field(getter = "getGoogleThirdPartyPaymentExtension", m1090id = 10)
     private final GoogleThirdPartyPaymentExtension zzi;
 
     /* compiled from: com.google.android.gms:play-services-fido@@19.0.0 */
@@ -83,7 +83,7 @@ public class AuthenticationExtensions extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public AuthenticationExtensions(@SafeParcelable.Param(m1088id = 2) FidoAppIdExtension fidoAppIdExtension, @SafeParcelable.Param(m1088id = 3) zzp zzpVar, @SafeParcelable.Param(m1088id = 4) UserVerificationMethodExtension userVerificationMethodExtension, @SafeParcelable.Param(m1088id = 5) zzw zzwVar, @SafeParcelable.Param(m1088id = 6) zzy zzyVar, @SafeParcelable.Param(m1088id = 7) zzaa zzaaVar, @SafeParcelable.Param(m1088id = 8) zzr zzrVar, @SafeParcelable.Param(m1088id = 9) zzad zzadVar, @SafeParcelable.Param(m1088id = 10) GoogleThirdPartyPaymentExtension googleThirdPartyPaymentExtension) {
+    public AuthenticationExtensions(@SafeParcelable.Param(m1089id = 2) FidoAppIdExtension fidoAppIdExtension, @SafeParcelable.Param(m1089id = 3) zzp zzpVar, @SafeParcelable.Param(m1089id = 4) UserVerificationMethodExtension userVerificationMethodExtension, @SafeParcelable.Param(m1089id = 5) zzw zzwVar, @SafeParcelable.Param(m1089id = 6) zzy zzyVar, @SafeParcelable.Param(m1089id = 7) zzaa zzaaVar, @SafeParcelable.Param(m1089id = 8) zzr zzrVar, @SafeParcelable.Param(m1089id = 9) zzad zzadVar, @SafeParcelable.Param(m1089id = 10) GoogleThirdPartyPaymentExtension googleThirdPartyPaymentExtension) {
         this.zza = fidoAppIdExtension;
         this.zzc = userVerificationMethodExtension;
         this.zzb = zzpVar;

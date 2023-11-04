@@ -62,7 +62,7 @@ public final class TonFragmentPremiumPriceDataResponse {
     }
 
     public int hashCode() {
-        return (((((this.months * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.priceTon)) * 31) + this.discount.hashCode()) * 31) + this.priceUsd.hashCode();
+        return (((((this.months * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.priceTon)) * 31) + this.discount.hashCode()) * 31) + this.priceUsd.hashCode();
     }
 
     public String toString() {

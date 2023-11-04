@@ -51,7 +51,7 @@
     return-void
 .end method
 
-.method static synthetic access$3200(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;)F
+.method static synthetic access$3300(Lorg/telegram/ui/Components/EmojiPacksAlert$EmojiImageView;)F
     .locals 0
 
     .line 1463

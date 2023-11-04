@@ -45,9 +45,9 @@
 
 .field private forwardingOptionsButton:Landroid/widget/ImageView;
 
-.field private forwardingParams:Lorg/telegram/messenger/ForwardingMessagesParams;
+.field private forwardingParams:Lorg/telegram/messenger/MessagePreviewParams;
 
-.field private forwardingPreviewView:Lorg/telegram/ui/Components/ForwardingPreviewView;
+.field private forwardingPreviewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
 .field private frameLayout:Landroid/widget/FrameLayout;
 
@@ -178,7 +178,7 @@
 
 .field private sizeNotifierFrameLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
-.field storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
 .field private switchView:Lorg/telegram/ui/Components/ShareAlert$SwitchView;
 
@@ -202,28 +202,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$06x1S8jWkWg53EP-IZQKNCJ8B3Y(Lorg/telegram/ui/Components/ShareAlert;ZLorg/telegram/ui/Components/BulletinFactory;)Lorg/telegram/ui/Components/Bulletin;
+.method public static synthetic $r8$lambda$0drkURjZkfkShn2kdf-8fvuO538(Lorg/telegram/ui/Components/ShareAlert;Landroid/widget/ImageView;Landroid/view/View;)Z
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->lambda$copyLink$21(ZLorg/telegram/ui/Components/BulletinFactory;)Lorg/telegram/ui/Components/Bulletin;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method public static synthetic $r8$lambda$3rZDwWeTvKHCgzQbvwT4HK3LS_Q(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->lambda$onSendLongClick$20(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$40reoMky0xA7eoizm1x62yoyKfo(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$7(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$12(Landroid/widget/ImageView;Landroid/view/View;)Z
 
     move-result p0
 
@@ -238,26 +220,34 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$6AZ8WwhfIHZE8iOr0Xd4GhDCJ24(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->lambda$onSendLongClick$22(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$6nH8WkiXiOBBRQvQpv9a74H9Ji0(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/KeyEvent;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->lambda$onSendLongClick$21(Landroid/view/KeyEvent;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$8ifes3xxUX6rxBr98gseuAnGrcs(Lorg/telegram/ui/Components/ShareAlert;Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/ShareAlert;->lambda$collapseTopics$17(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$9lzhUkF-pypTKVusl6J_JdJIP6Q(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$11(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$Crt-ATv-QsQUlShbOPkkP0Nid7s(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$2(Landroid/view/View;I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$CvEbPi8MQP2LMsvio8RIudp5sM4(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;[ILandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Components/ShareAlert;->lambda$collapseTopics$13(Landroid/view/View;[ILandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
 
     return-void
 .end method
@@ -270,38 +260,54 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Gt9Q3ZZSgWWFP0tn-h-WED8JtKg(Lorg/telegram/ui/Components/ShareAlert;Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$GrCARCV1GUyRTnoEdPpJITCaycA(Lorg/telegram/ui/Components/ShareAlert;Ljava/util/concurrent/atomic/AtomicReference;Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;Lorg/telegram/tgnet/TLRPC$Dialog;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$6(Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/ShareAlert;->lambda$selectDialog$15(Ljava/util/concurrent/atomic/AtomicReference;Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;Lorg/telegram/tgnet/TLRPC$Dialog;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$KjJM3sA6855FNthcIaR_sc2YQaM(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/KeyEvent;)V
+.method public static synthetic $r8$lambda$L5-QlLNKYcSc9V2J4QxBGEta91o(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->lambda$onSendLongClick$18(Landroid/view/KeyEvent;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$PPsNVg9TMxlQyJ6XSWwJnGR9mbE(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$4(Landroid/view/View;I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$URK6ffMRkVqUeJT64ahMMwSe5dY(Lorg/telegram/ui/Components/ShareAlert;Landroid/widget/ImageView;Landroid/view/View;)Z
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$9(Landroid/widget/ImageView;Landroid/view/View;)Z
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$10(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p0
 
     return p0
+.end method
+
+.method public static synthetic $r8$lambda$M3vZudsuUCuxA_MOxCPbtTDSI08(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$5(Landroid/view/View;I)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$MjjcXkq1YIGFj7nU0RnnUsKBTbk(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$14(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$N3eXKCplmj5y9xrU8ByweQUN0Qw(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$13(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$OCSAiVgFjwkvrE1olqKnPxpWH1U(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;[ILandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+    .locals 0
+
+    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Components/ShareAlert;->lambda$collapseTopics$16(Landroid/view/View;[ILandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+
+    return-void
 .end method
 
 .method public static synthetic $r8$lambda$Vki5u1UcE86ZkBq1-dIzaqeyAfk(Lorg/telegram/ui/Components/ShareAlert;Lorg/telegram/tgnet/TLObject;Landroid/content/Context;)V
@@ -312,44 +318,58 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$WgoQ_w3Oez7WcsqxoLa4YF-jOVA(Lorg/telegram/ui/Components/ShareAlert;Ljava/util/concurrent/atomic/AtomicReference;Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;Lorg/telegram/tgnet/TLRPC$Dialog;)V
+.method public static synthetic $r8$lambda$WzrVuVuQA0wsPsct8x1Rhb1JKx0(Lorg/telegram/ui/Components/ShareAlert;Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/ShareAlert;->lambda$selectDialog$12(Ljava/util/concurrent/atomic/AtomicReference;Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;Lorg/telegram/tgnet/TLRPC$Dialog;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$9(Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$bt9XumdJhv4WTumqrS-8yq3mK7s(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$jLy3Cqoj4KvBZTCeS-HrOnXpKW4(Ljava/lang/Integer;)Ljava/lang/Integer;
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$10(Landroid/view/View;)V
+    invoke-static {p0}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$4(Ljava/lang/Integer;)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic $r8$lambda$j_AnPm6lfPZext7Wuzr9XXE-aJQ(Lorg/telegram/ui/Components/ShareAlert;ZLorg/telegram/ui/Components/BulletinFactory;)Lorg/telegram/ui/Components/Bulletin;
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->lambda$copyLink$24(ZLorg/telegram/ui/Components/BulletinFactory;)Lorg/telegram/ui/Components/Bulletin;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public static synthetic $r8$lambda$mLVFjlnPoDNEXn0N7WBhi16G8Rc(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->lambda$onSendLongClick$23(Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$mr7x7aO7yTOi0fS4-KuomH41mhI(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$o5f4Qtqqg-gH6_ukJ34ITgJaP2Q(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;I)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->lambda$onSendLongClick$19(Landroid/view/View;)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$7(Landroid/view/View;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$wIMbegXvlauZwlhrQx8bb9uvjqc(Lorg/telegram/ui/Components/ShareAlert;Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+.method public static synthetic $r8$lambda$odpiRi5M5-01wgbDF9Ql8p8jTwA(Ljava/lang/Integer;)Ljava/lang/Integer;
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/ShareAlert;->lambda$collapseTopics$14(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+    invoke-static {p0}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$2(Ljava/lang/Integer;)Ljava/lang/Integer;
 
-    return-void
-.end method
+    move-result-object p0
 
-.method public static synthetic $r8$lambda$wxFUwjMZZBvLopFp6c_nloycAYA(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$5(Landroid/view/View;)V
-
-    return-void
+    return-object p0
 .end method
 
 .method public static synthetic $r8$lambda$xAZRHKYK5GDwd962jQFAkrltgrc(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;I)V
@@ -358,6 +378,16 @@
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$3(Landroid/view/View;I)V
 
     return-void
+.end method
+
+.method public static synthetic $r8$lambda$ye5xd1h77f0HMFf3cns-Mj6wC_g(Ljava/lang/Integer;)Ljava/lang/Integer;
+    .locals 0
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/ShareAlert;->lambda$new$6(Ljava/lang/Integer;)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Ljava/util/ArrayList;Ljava/lang/String;ZLjava/lang/String;Z)V
@@ -392,7 +422,7 @@
 
     move v6, p6
 
-    .line 608
+    .line 612
     invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Components/ShareAlert;-><init>(Landroid/content/Context;Ljava/util/ArrayList;Ljava/lang/String;ZLjava/lang/String;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -440,7 +470,7 @@
 
     move-object/from16 v11, p7
 
-    .line 612
+    .line 616
     invoke-direct/range {v0 .. v11}, Lorg/telegram/ui/Components/ShareAlert;-><init>(Landroid/content/Context;Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;ZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -489,7 +519,7 @@
 
     move/from16 v10, p10
 
-    .line 616
+    .line 620
     invoke-direct/range {v0 .. v11}, Lorg/telegram/ui/Components/ShareAlert;-><init>(Landroid/content/Context;Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;ZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -528,34 +558,34 @@
 
     const/4 v5, 0x1
 
-    .line 620
+    .line 624
     invoke-direct {v0, v1, v5, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     const/4 v6, 0x2
 
     new-array v7, v6, [Ljava/lang/String;
 
-    .line 287
+    .line 291
     iput-object v7, v0, Lorg/telegram/ui/Components/ShareAlert;->sendingText:[Ljava/lang/String;
 
     new-array v7, v6, [Landroid/view/View;
 
-    .line 291
+    .line 295
     iput-object v7, v0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
 
     new-array v7, v6, [Landroid/animation/AnimatorSet;
 
-    .line 292
+    .line 296
     iput-object v7, v0, Lorg/telegram/ui/Components/ShareAlert;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
-    .line 293
+    .line 297
     new-instance v7, Landroidx/collection/LongSparseArray;
 
     invoke-direct {v7}, Landroidx/collection/LongSparseArray;-><init>()V
 
     iput-object v7, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
-    .line 294
+    .line 298
     new-instance v7, Ljava/util/HashMap;
 
     invoke-direct {v7}, Ljava/util/HashMap;-><init>()V
@@ -564,29 +594,29 @@
 
     const/4 v7, -0x1
 
-    .line 296
+    .line 300
     iput v7, v0, Lorg/telegram/ui/Components/ShareAlert;->containerViewTop:I
 
     const/4 v8, 0x0
 
-    .line 297
+    .line 301
     iput-boolean v8, v0, Lorg/telegram/ui/Components/ShareAlert;->fullyShown:Z
 
-    .line 304
+    .line 308
     new-instance v9, Landroid/graphics/RectF;
 
     invoke-direct {v9}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v9, v0, Lorg/telegram/ui/Components/ShareAlert;->rect:Landroid/graphics/RectF;
 
-    .line 305
+    .line 309
     new-instance v9, Landroid/graphics/Paint;
 
     invoke-direct {v9, v5}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v9, v0, Lorg/telegram/ui/Components/ShareAlert;->paint:Landroid/graphics/Paint;
 
-    .line 306
+    .line 310
     new-instance v9, Landroid/text/TextPaint;
 
     invoke-direct {v9, v5}, Landroid/text/TextPaint;-><init>(I)V
@@ -595,38 +625,38 @@
 
     new-array v9, v6, [Ljava/lang/String;
 
-    .line 313
+    .line 317
     iput-object v9, v0, Lorg/telegram/ui/Components/ShareAlert;->linkToCopy:[Ljava/lang/String;
 
-    .line 336
+    .line 340
     new-instance v9, Ljava/util/ArrayList;
 
     invoke-direct {v9}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v9, v0, Lorg/telegram/ui/Components/ShareAlert;->recentSearchObjects:Ljava/util/ArrayList;
 
-    .line 337
+    .line 341
     new-instance v9, Landroidx/collection/LongSparseArray;
 
     invoke-direct {v9}, Landroidx/collection/LongSparseArray;-><init>()V
 
-    .line 2017
+    .line 2024
     iput-boolean v5, v0, Lorg/telegram/ui/Components/ShareAlert;->showSendersName:Z
 
     const v9, 0x7fffffff
 
-    .line 2335
+    .line 2342
     iput v9, v0, Lorg/telegram/ui/Components/ShareAlert;->lastOffset:I
 
-    .line 621
+    .line 625
     iput-object v4, v0, Lorg/telegram/ui/Components/ShareAlert;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 623
+    .line 627
     instance-of v9, v1, Landroid/app/Activity;
 
     if-eqz v9, :cond_0
 
-    .line 624
+    .line 628
     move-object v9, v1
 
     check-cast v9, Landroid/app/Activity;
@@ -636,15 +666,15 @@
     :cond_0
     move/from16 v9, p10
 
-    .line 626
+    .line 630
     iput-boolean v9, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     move-object/from16 v9, p2
 
-    .line 628
+    .line 632
     iput-object v9, v0, Lorg/telegram/ui/Components/ShareAlert;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    .line 629
+    .line 633
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v9
@@ -661,7 +691,7 @@
 
     iput-object v9, v0, Lorg/telegram/ui/Components/ShareAlert;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 630
+    .line 634
     iget-boolean v9, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v9, :cond_1
@@ -680,7 +710,7 @@
 
     move-result v9
 
-    .line 631
+    .line 635
     iget-object v10, v0, Lorg/telegram/ui/Components/ShareAlert;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     new-instance v11, Landroid/graphics/PorterDuffColorFilter;
@@ -691,59 +721,59 @@
 
     invoke-virtual {v10, v11}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 632
+    .line 636
     invoke-virtual {v0, v9}, Lorg/telegram/ui/ActionBar/BottomSheet;->fixNavigationBar(I)V
 
     move/from16 v10, p9
 
-    .line 634
+    .line 638
     iput-boolean v10, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->isFullscreen:Z
 
-    .line 635
+    .line 639
     iget-object v10, v0, Lorg/telegram/ui/Components/ShareAlert;->linkToCopy:[Ljava/lang/String;
 
     aput-object p7, v10, v8
 
-    .line 636
+    .line 640
     aput-object p8, v10, v5
 
-    .line 637
+    .line 641
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->sendingMessageObjects:Ljava/util/ArrayList;
 
-    .line 638
+    .line 642
     new-instance v10, Lorg/telegram/ui/Components/ShareAlert$ShareSearchAdapter;
 
     invoke-direct {v10, v0, v1}, Lorg/telegram/ui/Components/ShareAlert$ShareSearchAdapter;-><init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;)V
 
     iput-object v10, v0, Lorg/telegram/ui/Components/ShareAlert;->searchAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareSearchAdapter;
 
-    .line 639
+    .line 643
     iput-boolean v3, v0, Lorg/telegram/ui/Components/ShareAlert;->isChannel:Z
 
-    .line 640
+    .line 644
     iget-object v10, v0, Lorg/telegram/ui/Components/ShareAlert;->sendingText:[Ljava/lang/String;
 
     aput-object p4, v10, v8
 
-    .line 641
+    .line 645
     aput-object p5, v10, v5
 
-    .line 642
+    .line 646
     iput-boolean v5, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->useSmoothKeyboard:Z
 
-    .line 644
+    .line 648
     new-instance v10, Lorg/telegram/ui/Components/ShareAlert$2;
 
     invoke-direct {v10, v0}, Lorg/telegram/ui/Components/ShareAlert$2;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
 
     invoke-super {v0, v10}, Lorg/telegram/ui/ActionBar/BottomSheet;->setDelegate(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetDelegateInterface;)V
 
-    .line 651
+    .line 655
     iget-object v10, v0, Lorg/telegram/ui/Components/ShareAlert;->sendingMessageObjects:Ljava/util/ArrayList;
 
     if-eqz v10, :cond_4
 
-    .line 652
+    .line 656
     invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
     move-result v10
@@ -753,7 +783,7 @@
     :goto_1
     if-ge v11, v10, :cond_4
 
-    .line 653
+    .line 657
     iget-object v12, v0, Lorg/telegram/ui/Components/ShareAlert;->sendingMessageObjects:Ljava/util/ArrayList;
 
     invoke-virtual {v12, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -764,14 +794,14 @@
 
     if-eqz v12, :cond_3
 
-    .line 654
+    .line 658
     invoke-virtual {v12}, Lorg/telegram/messenger/MessageObject;->isPoll()Z
 
     move-result v13
 
     if-eqz v13, :cond_3
 
-    .line 655
+    .line 659
     invoke-virtual {v12}, Lorg/telegram/messenger/MessageObject;->isPublicPoll()Z
 
     move-result v12
@@ -801,15 +831,15 @@
     :goto_3
     if-eqz v3, :cond_5
 
-    .line 664
+    .line 668
     iput-boolean v5, v0, Lorg/telegram/ui/Components/ShareAlert;->loadingLink:Z
 
-    .line 665
+    .line 669
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_channels_exportMessageLink;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_channels_exportMessageLink;-><init>()V
 
-    .line 666
+    .line 670
     invoke-virtual {v2, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v10
@@ -822,7 +852,7 @@
 
     iput v10, v3, Lorg/telegram/tgnet/TLRPC$TL_channels_exportMessageLink;->id:I
 
-    .line 667
+    .line 671
     iget v10, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v10}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -847,20 +877,20 @@
 
     iput-object v2, v3, Lorg/telegram/tgnet/TLRPC$TL_channels_exportMessageLink;->channel:Lorg/telegram/tgnet/TLRPC$InputChannel;
 
-    .line 668
+    .line 672
     iget v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v2
 
-    new-instance v10, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda14;
+    new-instance v10, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda17;
 
-    invoke-direct {v10, v0, v1}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;)V
+    invoke-direct {v10, v0, v1}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;)V
 
     invoke-virtual {v2, v3, v10}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 680
+    .line 684
     :cond_5
     new-instance v2, Lorg/telegram/ui/Components/ShareAlert$3;
 
@@ -868,32 +898,32 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->sizeNotifierFrameLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
-    .line 1104
+    .line 1108
     iput-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    .line 1105
+    .line 1109
     invoke-virtual {v2, v8}, Landroid/view/ViewGroup;->setWillNotDraw(Z)V
 
-    .line 1106
+    .line 1110
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {v2, v8}, Landroid/view/ViewGroup;->setClipChildren(Z)V
 
-    .line 1107
+    .line 1111
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget v3, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     invoke-virtual {v2, v3, v8, v3, v8}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 1109
+    .line 1113
     new-instance v2, Landroid/widget/FrameLayout;
 
     invoke-direct {v2, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout:Landroid/widget/FrameLayout;
 
-    .line 1110
+    .line 1114
     iget-boolean v3, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v3, :cond_6
@@ -912,7 +942,7 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1112
+    .line 1116
     iget-boolean v2, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v2, :cond_7
@@ -923,14 +953,14 @@
 
     if-eqz v2, :cond_7
 
-    .line 1113
+    .line 1117
     new-instance v2, Lorg/telegram/ui/Components/ShareAlert$4;
 
     invoke-direct {v2, v0, v1}, Lorg/telegram/ui/Components/ShareAlert$4;-><init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->switchView:Lorg/telegram/ui/Components/ShareAlert$SwitchView;
 
-    .line 1126
+    .line 1130
     iget-object v3, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout:Landroid/widget/FrameLayout;
 
     const/4 v10, -0x1
@@ -967,7 +997,7 @@
 
     invoke-virtual {v3, v2, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1129
+    .line 1133
     :cond_7
     new-instance v2, Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
@@ -975,7 +1005,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
-    .line 1130
+    .line 1134
     iget-object v3, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout:Landroid/widget/FrameLayout;
 
     const/16 v10, 0x3a
@@ -988,24 +1018,24 @@
 
     invoke-virtual {v3, v2, v12}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1131
+    .line 1135
     new-instance v2, Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-direct {v2, v1}, Lorg/telegram/ui/ActionBar/ActionBar;-><init>(Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 1132
+    .line 1136
     invoke-virtual {v2, v8}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V
 
-    .line 1133
+    .line 1137
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v3, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
-    .line 1134
+    .line 1138
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
@@ -1016,7 +1046,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitleColor(I)V
 
-    .line 1135
+    .line 1139
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray2:I
@@ -1027,7 +1057,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setSubtitleColor(I)V
 
-    .line 1136
+    .line 1140
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
@@ -1038,7 +1068,7 @@
 
     invoke-virtual {v2, v3, v8}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsColor(IZ)V
 
-    .line 1137
+    .line 1141
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarWhiteSelector:I
@@ -1049,7 +1079,7 @@
 
     invoke-virtual {v2, v3, v8}, Lorg/telegram/ui/ActionBar/ActionBar;->setItemsBackgroundColor(IZ)V
 
-    .line 1138
+    .line 1142
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     new-instance v3, Lorg/telegram/ui/Components/ShareAlert$5;
@@ -1058,14 +1088,14 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 1144
+    .line 1148
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1145
+    .line 1149
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout:Landroid/widget/FrameLayout;
 
     iget-object v12, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -1076,14 +1106,14 @@
 
     invoke-virtual {v2, v12, v13}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1147
+    .line 1151
     new-instance v2, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-direct {v2, v1, v4}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 1148
+    .line 1152
     new-instance v12, Landroidx/recyclerview/widget/GridLayoutManager;
 
     const/4 v13, 0x4
@@ -1094,7 +1124,7 @@
 
     invoke-virtual {v2, v12}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 1149
+    .line 1153
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     new-instance v12, Lorg/telegram/ui/Components/ShareAlert$6;
@@ -1103,7 +1133,7 @@
 
     invoke-virtual {v2, v12}, Landroidx/recyclerview/widget/GridLayoutManager;->setSpanSizeLookup(Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;)V
 
-    .line 1158
+    .line 1162
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v12, Lorg/telegram/ui/Components/ShareAlert$7;
@@ -1112,7 +1142,7 @@
 
     invoke-virtual {v2, v12}, Lorg/telegram/ui/Components/RecyclerListView;->setOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 1167
+    .line 1171
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v12, Lorg/telegram/ui/Components/ShareAlert$ShareTopicsAdapter;
@@ -1123,7 +1153,7 @@
 
     invoke-virtual {v2, v12}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 1168
+    .line 1172
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-boolean v12, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
@@ -1144,27 +1174,34 @@
 
     invoke-virtual {v2, v12}, Landroidx/recyclerview/widget/RecyclerView;->setGlowColor(I)V
 
-    .line 1169
+    .line 1173
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v8}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 1170
+    .line 1174
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v8}, Landroid/view/ViewGroup;->setHorizontalScrollBarEnabled(Z)V
 
-    .line 1171
+    .line 1175
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v6}, Landroid/view/ViewGroup;->setOverScrollMode(I)V
 
-    .line 1172
+    .line 1176
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v8}, Lorg/telegram/ui/Components/RecyclerListView;->setSelectorDrawableColor(I)V
 
-    .line 1173
+    .line 1177
+    iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    sget-object v12, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda15;->INSTANCE:Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda15;
+
+    invoke-virtual {v2, v12}, Lorg/telegram/ui/Components/RecyclerListView;->setItemSelectorColorProvider(Lorg/telegram/messenger/GenericProvider;)V
+
+    .line 1178
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/16 v12, 0x30
@@ -1175,12 +1212,12 @@
 
     invoke-virtual {v2, v8, v8, v8, v14}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 1174
+    .line 1179
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v8}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 1175
+    .line 1180
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v14, Lorg/telegram/ui/Components/ShareAlert$8;
@@ -1189,21 +1226,21 @@
 
     invoke-virtual {v2, v14}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 1189
+    .line 1194
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance v14, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda16;
+    new-instance v14, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda21;
 
-    invoke-direct {v14, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
+    invoke-direct {v14, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
 
     invoke-virtual {v2, v14}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 1227
+    .line 1232
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
-    .line 1228
+    .line 1233
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v14, v0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -1216,17 +1253,24 @@
 
     invoke-virtual {v2, v14, v10}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1230
+    .line 1235
     new-instance v2, Lorg/telegram/ui/Components/ShareAlert$9;
 
     invoke-direct {v2, v0, v1, v4}, Lorg/telegram/ui/Components/ShareAlert$9;-><init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 1249
+    .line 1254
     invoke-virtual {v2, v8}, Lorg/telegram/ui/Components/RecyclerListView;->setSelectorDrawableColor(I)V
 
-    .line 1250
+    .line 1255
+    iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    sget-object v10, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda14;->INSTANCE:Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda14;
+
+    invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/RecyclerListView;->setItemSelectorColorProvider(Lorg/telegram/messenger/GenericProvider;)V
+
+    .line 1256
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1235,12 +1279,12 @@
 
     invoke-virtual {v2, v8, v8, v8, v10}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 1251
+    .line 1257
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v8}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 1252
+    .line 1258
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v10, Landroidx/recyclerview/widget/GridLayoutManager;
@@ -1255,7 +1299,7 @@
 
     invoke-virtual {v2, v10}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 1253
+    .line 1259
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     new-instance v10, Lorg/telegram/ui/Components/ShareAlert$10;
@@ -1264,22 +1308,22 @@
 
     invoke-virtual {v2, v10}, Landroidx/recyclerview/widget/GridLayoutManager;->setSpanSizeLookup(Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;)V
 
-    .line 1262
+    .line 1268
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v8}, Landroid/view/ViewGroup;->setHorizontalScrollBarEnabled(Z)V
 
-    .line 1263
+    .line 1269
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v8}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 1264
+    .line 1270
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v6}, Landroid/view/ViewGroup;->setOverScrollMode(I)V
 
-    .line 1265
+    .line 1271
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v10, Lorg/telegram/ui/Components/ShareAlert$11;
@@ -1288,7 +1332,7 @@
 
     invoke-virtual {v2, v10}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 1279
+    .line 1285
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v10, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -1327,7 +1371,7 @@
 
     invoke-virtual {v2, v10, v14}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1280
+    .line 1286
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v10, Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
@@ -1338,7 +1382,7 @@
 
     invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 1281
+    .line 1287
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-boolean v10, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
@@ -1359,16 +1403,16 @@
 
     invoke-virtual {v2, v10}, Landroidx/recyclerview/widget/RecyclerView;->setGlowColor(I)V
 
-    .line 1282
+    .line 1288
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance v10, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda18;
+    new-instance v10, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda19;
 
-    invoke-direct {v10, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
+    invoke-direct {v10, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
 
     invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 1292
+    .line 1298
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v10, Lorg/telegram/ui/Components/ShareAlert$12;
@@ -1377,17 +1421,24 @@
 
     invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/RecyclerListView;->setOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 1302
+    .line 1308
     new-instance v2, Lorg/telegram/ui/Components/ShareAlert$13;
 
     invoke-direct {v2, v0, v1, v4}, Lorg/telegram/ui/Components/ShareAlert$13;-><init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 1321
+    .line 1327
+    sget-object v10, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda16;->INSTANCE:Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda16;
+
+    invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/RecyclerListView;->setItemSelectorColorProvider(Lorg/telegram/messenger/GenericProvider;)V
+
+    .line 1328
+    iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
+
     invoke-virtual {v2, v8}, Lorg/telegram/ui/Components/RecyclerListView;->setSelectorDrawableColor(I)V
 
-    .line 1322
+    .line 1329
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -1396,12 +1447,12 @@
 
     invoke-virtual {v2, v8, v8, v8, v10}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 1323
+    .line 1330
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v8}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 1324
+    .line 1331
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v10, Lorg/telegram/ui/Components/FillLastGridLayoutManager;
@@ -1418,7 +1469,7 @@
 
     invoke-virtual {v2, v10}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 1325
+    .line 1332
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchLayoutManager:Lorg/telegram/ui/Components/FillLastGridLayoutManager;
 
     new-instance v3, Lorg/telegram/ui/Components/ShareAlert$14;
@@ -1427,38 +1478,38 @@
 
     invoke-virtual {v2, v3}, Landroidx/recyclerview/widget/GridLayoutManager;->setSpanSizeLookup(Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;)V
 
-    .line 1331
+    .line 1338
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    new-instance v3, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda17;
+    new-instance v3, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda20;
 
-    invoke-direct {v3, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
+    invoke-direct {v3, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 1341
+    .line 1348
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v5}, Landroidx/recyclerview/widget/RecyclerView;->setHasFixedSize(Z)V
 
-    .line 1342
+    .line 1349
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 1343
+    .line 1350
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v8}, Landroid/view/ViewGroup;->setHorizontalScrollBarEnabled(Z)V
 
-    .line 1344
+    .line 1351
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v8}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 1345
+    .line 1352
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v3, Lorg/telegram/ui/Components/ShareAlert$15;
@@ -1467,7 +1518,7 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 1354
+    .line 1361
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v3, Lorg/telegram/ui/Components/ShareAlert$16;
@@ -1476,14 +1527,14 @@
 
     invoke-virtual {v2, v3}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 1368
+    .line 1375
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/ShareAlert;->searchAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareSearchAdapter;
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 1369
+    .line 1376
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-boolean v3, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
@@ -1504,7 +1555,7 @@
 
     invoke-virtual {v2, v3}, Landroidx/recyclerview/widget/RecyclerView;->setGlowColor(I)V
 
-    .line 1371
+    .line 1378
     new-instance v2, Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -1513,29 +1564,29 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->recyclerItemsEnterAnimator:Lorg/telegram/ui/Components/RecyclerItemsEnterAnimator;
 
-    .line 1373
+    .line 1380
     new-instance v2, Lorg/telegram/ui/Components/FlickerLoadingView;
 
     invoke-direct {v2, v1, v4}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     const/16 v3, 0xc
 
-    .line 1374
+    .line 1381
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
-    .line 1375
+    .line 1382
     iget-boolean v10, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v10, :cond_b
 
-    .line 1376
+    .line 1383
     sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_inviteMembersBackground:I
 
     sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_searchBackground:I
 
     invoke-virtual {v2, v10, v14, v7}, Lorg/telegram/ui/Components/FlickerLoadingView;->setColors(III)V
 
-    .line 1378
+    .line 1385
     :cond_b
     new-instance v10, Lorg/telegram/ui/Components/StickerEmptyView;
 
@@ -1543,25 +1594,25 @@
 
     iput-object v10, v0, Lorg/telegram/ui/Components/ShareAlert;->searchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
-    .line 1379
+    .line 1386
     invoke-virtual {v10, v2, v8}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;I)V
 
-    .line 1380
+    .line 1387
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/StickerEmptyView;->setAnimateLayoutChange(Z)V
 
-    .line 1381
+    .line 1388
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {v2, v8, v8}, Lorg/telegram/ui/Components/StickerEmptyView;->showProgress(ZZ)V
 
-    .line 1382
+    .line 1389
     iget-boolean v2, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v2, :cond_c
 
-    .line 1383
+    .line 1390
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
@@ -1574,7 +1625,7 @@
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1385
+    .line 1392
     :cond_c
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
@@ -1590,24 +1641,24 @@
 
     invoke-virtual {v2, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1386
+    .line 1393
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v10, v0, Lorg/telegram/ui/Components/ShareAlert;->searchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     invoke-virtual {v2, v10}, Lorg/telegram/ui/Components/RecyclerListView;->setEmptyView(Landroid/view/View;)V
 
-    .line 1387
+    .line 1394
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v8}, Lorg/telegram/ui/Components/RecyclerListView;->setHideIfEmpty(Z)V
 
-    .line 1388
+    .line 1395
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v5, v8}, Lorg/telegram/ui/Components/RecyclerListView;->setAnimateEmptyView(ZI)V
 
-    .line 1389
+    .line 1396
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v10, v0, Lorg/telegram/ui/Components/ShareAlert;->searchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
@@ -1646,7 +1697,7 @@
 
     invoke-virtual {v2, v10, v14}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1390
+    .line 1397
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v10, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -1665,7 +1716,7 @@
 
     invoke-virtual {v2, v10, v14}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1392
+    .line 1399
     new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getShadowHeight()I
@@ -1674,7 +1725,7 @@
 
     invoke-direct {v2, v7, v10, v15}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    .line 1393
+    .line 1400
     iget-boolean v10, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v10, :cond_d
@@ -1699,7 +1750,7 @@
 
     iput v10, v2, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 1394
+    .line 1401
     iget-object v10, v0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
 
     new-instance v14, Landroid/view/View;
@@ -1708,7 +1759,7 @@
 
     aput-object v14, v10, v8
 
-    .line 1395
+    .line 1402
     iget-object v10, v0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
 
     aget-object v10, v10, v8
@@ -1721,7 +1772,7 @@
 
     invoke-virtual {v10, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1396
+    .line 1403
     iget-object v3, v0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
 
     aget-object v3, v3, v8
@@ -1730,7 +1781,7 @@
 
     invoke-virtual {v3, v10}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1397
+    .line 1404
     iget-object v3, v0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
 
     aget-object v3, v3, v8
@@ -1741,7 +1792,7 @@
 
     invoke-virtual {v3, v13}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 1398
+    .line 1405
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v13, v0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
@@ -1750,7 +1801,7 @@
 
     invoke-virtual {v3, v13, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1400
+    .line 1407
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout:Landroid/widget/FrameLayout;
@@ -1779,7 +1830,7 @@
 
     invoke-virtual {v2, v3, v13}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1402
+    .line 1409
     new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getShadowHeight()I
@@ -1788,14 +1839,14 @@
 
     invoke-direct {v2, v7, v3, v11}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    .line 1403
+    .line 1410
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
     iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
-    .line 1404
+    .line 1411
     iget-object v3, v0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
 
     new-instance v13, Landroid/view/View;
@@ -1804,7 +1855,7 @@
 
     aput-object v13, v3, v5
 
-    .line 1405
+    .line 1412
     iget-object v3, v0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
 
     aget-object v3, v3, v5
@@ -1815,7 +1866,7 @@
 
     invoke-virtual {v3, v13}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1406
+    .line 1413
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v13, v0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
@@ -1824,7 +1875,7 @@
 
     invoke-virtual {v3, v13, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1408
+    .line 1415
     iget-boolean v2, v0, Lorg/telegram/ui/Components/ShareAlert;->isChannel:Z
 
     const-string v3, "fonts/rmedium.ttf"
@@ -1839,7 +1890,7 @@
 
     goto :goto_a
 
-    .line 1459
+    .line 1466
     :cond_f
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
 
@@ -1849,7 +1900,7 @@
 
     goto/16 :goto_12
 
-    .line 1409
+    .line 1416
     :cond_10
     :goto_a
     new-instance v2, Landroid/widget/TextView;
@@ -1858,7 +1909,7 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->pickerBottomLayout:Landroid/widget/TextView;
 
-    .line 1410
+    .line 1417
     iget-boolean v13, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v13, :cond_11
@@ -1897,7 +1948,7 @@
 
     invoke-virtual {v2, v13}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1411
+    .line 1418
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->pickerBottomLayout:Landroid/widget/TextView;
 
     iget-boolean v13, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
@@ -1918,14 +1969,14 @@
 
     invoke-virtual {v2, v13}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1412
+    .line 1419
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->pickerBottomLayout:Landroid/widget/TextView;
 
     const/high16 v13, 0x41600000    # 14.0f
 
     invoke-virtual {v2, v5, v13}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1413
+    .line 1420
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->pickerBottomLayout:Landroid/widget/TextView;
 
     const/16 v14, 0x12
@@ -1940,7 +1991,7 @@
 
     invoke-virtual {v2, v15, v8, v14, v8}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1414
+    .line 1421
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->pickerBottomLayout:Landroid/widget/TextView;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -1949,14 +2000,14 @@
 
     invoke-virtual {v2, v14}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1415
+    .line 1422
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->pickerBottomLayout:Landroid/widget/TextView;
 
     const/16 v14, 0x11
 
     invoke-virtual {v2, v14}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1416
+    .line 1423
     iget-boolean v2, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v2, :cond_14
@@ -1967,7 +2018,7 @@
 
     if-eqz v2, :cond_14
 
-    .line 1417
+    .line 1424
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->pickerBottomLayout:Landroid/widget/TextView;
 
     sget v14, Lorg/telegram/messenger/R$string;->VoipGroupCopySpeakerLink:I
@@ -1986,7 +2037,7 @@
 
     goto :goto_e
 
-    .line 1419
+    .line 1426
     :cond_14
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->pickerBottomLayout:Landroid/widget/TextView;
 
@@ -2004,17 +2055,17 @@
 
     invoke-virtual {v2, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1421
+    .line 1428
     :goto_e
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->pickerBottomLayout:Landroid/widget/TextView;
 
-    new-instance v14, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda5;
+    new-instance v14, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda0;
 
-    invoke-direct {v14, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
+    invoke-direct {v14, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
 
     invoke-virtual {v2, v14}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1432
+    .line 1439
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v14, v0, Lorg/telegram/ui/Components/ShareAlert;->pickerBottomLayout:Landroid/widget/TextView;
@@ -2025,7 +2076,7 @@
 
     invoke-virtual {v2, v14, v12}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1434
+    .line 1441
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-eqz v2, :cond_18
@@ -2062,7 +2113,7 @@
 
     if-lez v2, :cond_18
 
-    .line 1435
+    .line 1442
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->sendingMessageObjects:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2071,31 +2122,31 @@
 
     check-cast v2, Lorg/telegram/messenger/MessageObject;
 
-    .line 1436
+    .line 1443
     invoke-virtual {v2}, Lorg/telegram/messenger/MessageObject;->isForwarded()Z
 
     move-result v12
 
     if-nez v12, :cond_18
 
-    .line 1437
+    .line 1444
     new-instance v12, Landroid/widget/LinearLayout;
 
     invoke-direct {v12, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v12, v0, Lorg/telegram/ui/Components/ShareAlert;->sharesCountLayout:Landroid/widget/LinearLayout;
 
-    .line 1438
+    .line 1445
     invoke-virtual {v12, v8}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 1439
+    .line 1446
     iget-object v12, v0, Lorg/telegram/ui/Components/ShareAlert;->sharesCountLayout:Landroid/widget/LinearLayout;
 
     const/16 v14, 0x10
 
     invoke-virtual {v12, v14}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 1440
+    .line 1447
     iget-object v12, v0, Lorg/telegram/ui/Components/ShareAlert;->sharesCountLayout:Landroid/widget/LinearLayout;
 
     iget-boolean v15, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
@@ -2120,7 +2171,7 @@
 
     invoke-virtual {v12, v15}, Landroid/widget/LinearLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1441
+    .line 1448
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v15, v0, Lorg/telegram/ui/Components/ShareAlert;->sharesCountLayout:Landroid/widget/LinearLayout;
@@ -2159,7 +2210,7 @@
 
     invoke-virtual {v12, v15, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1442
+    .line 1449
     iget-object v6, v0, Lorg/telegram/ui/Components/ShareAlert;->sharesCountLayout:Landroid/widget/LinearLayout;
 
     new-instance v12, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda6;
@@ -2168,17 +2219,17 @@
 
     invoke-virtual {v6, v12}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1444
+    .line 1451
     new-instance v6, Landroid/widget/ImageView;
 
     invoke-direct {v6, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 1445
+    .line 1452
     sget v12, Lorg/telegram/messenger/R$drawable;->share_arrow:I
 
     invoke-virtual {v6, v12}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1446
+    .line 1453
     new-instance v12, Landroid/graphics/PorterDuffColorFilter;
 
     iget-boolean v15, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
@@ -2203,7 +2254,7 @@
 
     invoke-virtual {v6, v12}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1447
+    .line 1454
     iget-object v7, v0, Lorg/telegram/ui/Components/ShareAlert;->sharesCountLayout:Landroid/widget/LinearLayout;
 
     const/4 v12, -0x2
@@ -2240,14 +2291,14 @@
 
     invoke-virtual {v7, v6, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1449
+    .line 1456
     new-instance v6, Landroid/widget/TextView;
 
     invoke-direct {v6, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     new-array v7, v5, [Ljava/lang/Object;
 
-    .line 1450
+    .line 1457
     iget-object v2, v2, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$Message;->forwards:I
@@ -2266,10 +2317,10 @@
 
     invoke-virtual {v6, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1451
+    .line 1458
     invoke-virtual {v6, v5, v13}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1452
+    .line 1459
     iget-boolean v2, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v2, :cond_17
@@ -2288,17 +2339,17 @@
 
     invoke-virtual {v6, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1453
+    .line 1460
     invoke-virtual {v6, v14}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1454
+    .line 1461
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v2
 
     invoke-virtual {v6, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1455
+    .line 1462
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->sharesCountLayout:Landroid/widget/LinearLayout;
 
     const/4 v7, -0x2
@@ -2335,7 +2386,7 @@
 
     invoke-virtual {v2, v6, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1462
+    .line 1469
     :cond_18
     :goto_12
     new-instance v2, Lorg/telegram/ui/Components/ShareAlert$17;
@@ -2344,22 +2395,22 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
-    .line 1518
+    .line 1525
     invoke-virtual {v2, v8}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 1519
+    .line 1526
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v10}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1520
+    .line 1527
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
     const/4 v6, 0x4
 
     invoke-virtual {v2, v6}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1521
+    .line 1528
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
@@ -2374,14 +2425,14 @@
 
     invoke-virtual {v2, v6, v11}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1522
+    .line 1529
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
     sget-object v6, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda8;->INSTANCE:Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda8;
 
     invoke-virtual {v2, v6}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 1524
+    .line 1531
     new-instance v2, Lorg/telegram/ui/Components/ShareAlert$18;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/ShareAlert;->sizeNotifierFrameLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -2412,12 +2463,12 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
-    .line 1589
+    .line 1596
     iget-boolean v4, v0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v4, :cond_19
 
-    .line 1590
+    .line 1597
     invoke-virtual {v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getEditText()Lorg/telegram/ui/Components/EditTextCaption;
 
     move-result-object v2
@@ -2430,7 +2481,7 @@
 
     invoke-virtual {v2, v6}, Lorg/telegram/ui/Components/EditTextEffects;->setTextColor(I)V
 
-    .line 1591
+    .line 1598
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/EditTextEmoji;->getEditText()Lorg/telegram/ui/Components/EditTextCaption;
@@ -2443,13 +2494,13 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 1593
+    .line 1600
     :cond_19
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {v2, v9}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1594
+    .line 1601
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     sget v4, Lorg/telegram/messenger/R$string;->ShareComment:I
@@ -2462,12 +2513,12 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/ui/Components/EditTextEmoji;->setHint(Ljava/lang/CharSequence;)V
 
-    .line 1595
+    .line 1602
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/EditTextEmoji;->onResume()V
 
-    .line 1596
+    .line 1603
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     const/16 v4, 0x54
@@ -2478,7 +2529,7 @@
 
     invoke-virtual {v2, v8, v8, v4, v8}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 1597
+    .line 1604
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
     iget-object v4, v0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
@@ -2493,61 +2544,61 @@
 
     invoke-virtual {v2, v4, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1598
+    .line 1605
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v8}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 1599
+    .line 1606
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v8}, Landroid/widget/FrameLayout;->setClipToPadding(Z)V
 
-    .line 1600
+    .line 1607
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {v2, v8}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 1602
+    .line 1609
     new-instance v2, Lorg/telegram/ui/Components/ShareAlert$19;
 
     invoke-direct {v2, v0, v1}, Lorg/telegram/ui/Components/ShareAlert$19;-><init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
 
-    .line 1612
+    .line 1619
     invoke-virtual {v2, v5}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
-    .line 1613
+    .line 1620
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v5}, Landroid/widget/FrameLayout;->setFocusableInTouchMode(Z)V
 
-    .line 1614
+    .line 1621
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
 
     const/4 v4, 0x4
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1615
+    .line 1622
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
 
     const v4, 0x3e4ccccd    # 0.2f
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 1616
+    .line 1623
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 1617
+    .line 1624
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v10}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1618
+    .line 1625
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
@@ -2586,14 +2637,14 @@
 
     invoke-virtual {v2, v6, v7}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1620
+    .line 1627
     new-instance v2, Landroid/widget/ImageView;
 
     invoke-direct {v2, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     const/16 v6, 0x38
 
-    .line 1621
+    .line 1628
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -2628,7 +2679,7 @@
 
     if-ge v12, v13, :cond_1b
 
-    .line 1623
+    .line 1630
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v11
@@ -2643,7 +2694,7 @@
 
     move-result-object v11
 
-    .line 1624
+    .line 1631
     new-instance v14, Landroid/graphics/PorterDuffColorFilter;
 
     const/high16 v15, -0x1000000
@@ -2654,12 +2705,12 @@
 
     invoke-virtual {v11, v14}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1625
+    .line 1632
     new-instance v5, Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-direct {v5, v11, v7, v8, v8}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;II)V
 
-    .line 1626
+    .line 1633
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -2672,21 +2723,21 @@
 
     move-object v7, v5
 
-    .line 1629
+    .line 1636
     :cond_1b
     invoke-virtual {v2, v7}, Landroid/widget/ImageView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1630
+    .line 1637
     sget v5, Lorg/telegram/messenger/R$drawable;->attach_send:I
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setImageResource(I)V
 
     const/4 v5, 0x2
 
-    .line 1631
+    .line 1638
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setImportantForAccessibility(I)V
 
-    .line 1632
+    .line 1639
     new-instance v5, Landroid/graphics/PorterDuffColorFilter;
 
     sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingIcon:I
@@ -2701,21 +2752,21 @@
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1633
+    .line 1640
     sget-object v5, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     if-lt v12, v13, :cond_1c
 
-    .line 1635
+    .line 1642
     new-instance v5, Lorg/telegram/ui/Components/ShareAlert$20;
 
     invoke-direct {v5, v0}, Lorg/telegram/ui/Components/ShareAlert$20;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 1643
+    .line 1650
     :cond_1c
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
 
@@ -2777,26 +2828,26 @@
 
     invoke-virtual {v5, v2, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1644
-    new-instance v5, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda1;
+    .line 1651
+    new-instance v5, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda2;
 
-    invoke-direct {v5, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
+    invoke-direct {v5, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1645
+    .line 1652
     new-instance v5, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda7;
 
     invoke-direct {v5, v0, v2}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/widget/ImageView;)V
 
     invoke-virtual {v2, v5}, Landroid/widget/ImageView;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
-    .line 1650
+    .line 1657
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->sendingMessageObjects:Ljava/util/ArrayList;
 
     if-eqz v5, :cond_20
 
-    .line 1651
+    .line 1658
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2805,14 +2856,14 @@
 
     check-cast v5, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1652
+    .line 1659
     invoke-virtual {v2}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
 
     check-cast v2, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1653
+    .line 1660
     iget-object v6, v0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {v6}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2821,19 +2872,19 @@
 
     check-cast v6, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 1654
+    .line 1661
     iget v11, v6, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1655
+    .line 1662
     iget v12, v5, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1656
+    .line 1663
     iget v2, v2, Landroid/widget/FrameLayout$LayoutParams;->width:I
 
-    .line 1657
+    .line 1664
     iget v13, v5, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 1658
+    .line 1665
     iget v5, v5, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     int-to-float v14, v2
@@ -2856,17 +2907,17 @@
 
     sub-int/2addr v2, v14
 
-    .line 1661
+    .line 1668
     div-int/2addr v2, v15
 
     add-int/2addr v5, v2
 
     add-int/2addr v11, v14
 
-    .line 1662
+    .line 1669
     invoke-virtual {v6, v11}, Landroid/widget/FrameLayout$LayoutParams;->setMarginEnd(I)V
 
-    .line 1663
+    .line 1670
     new-instance v2, Landroid/widget/ImageView;
 
     invoke-direct {v2, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -2875,25 +2926,25 @@
 
     const/4 v6, 0x4
 
-    .line 1664
+    .line 1671
     invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1665
+    .line 1672
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 1666
+    .line 1673
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v4}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 1667
+    .line 1674
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     invoke-virtual {v2, v10}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 1668
+    .line 1675
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v9}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
@@ -2912,7 +2963,7 @@
 
     invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1669
+    .line 1676
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     new-instance v6, Lorg/telegram/ui/Components/ShareAlert$21;
@@ -2921,14 +2972,14 @@
 
     invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 1676
+    .line 1683
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     sget v6, Lorg/telegram/messenger/R$drawable;->fork_settings_filled:I
 
     invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1677
+    .line 1684
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     new-instance v6, Landroid/graphics/PorterDuffColorFilter;
@@ -2943,40 +2994,40 @@
 
     invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1678
+    .line 1685
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     sget-object v6, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1679
+    .line 1686
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
-    new-instance v6, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda3;
+    new-instance v6, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda4;
 
-    invoke-direct {v6, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
+    invoke-direct {v6, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
 
     invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1680
+    .line 1687
     new-instance v2, Landroid/widget/FrameLayout$LayoutParams;
 
     const/16 v6, 0x55
 
     invoke-direct {v2, v14, v14, v6}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    .line 1681
+    .line 1688
     invoke-virtual {v2, v8, v8, v13, v5}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 1682
+    .line 1689
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     invoke-virtual {v5, v6, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1686
+    .line 1693
     :cond_20
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->textPaint:Landroid/text/TextPaint;
 
@@ -2990,7 +3041,7 @@
 
     invoke-virtual {v2, v5}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    .line 1687
+    .line 1694
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->textPaint:Landroid/text/TextPaint;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
@@ -2999,27 +3050,27 @@
 
     invoke-virtual {v2, v3}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 1689
+    .line 1696
     new-instance v2, Lorg/telegram/ui/Components/ShareAlert$22;
 
     invoke-direct {v2, v0, v1}, Lorg/telegram/ui/Components/ShareAlert$22;-><init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
-    .line 1710
+    .line 1717
     invoke-virtual {v2, v10}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1711
+    .line 1718
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setScaleX(F)V
 
-    .line 1712
+    .line 1719
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
     invoke-virtual {v2, v4}, Landroid/view/View;->setScaleY(F)V
 
-    .line 1713
+    .line 1720
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
@@ -3058,36 +3109,36 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1715
+    .line 1722
     new-instance v2, Landroid/widget/FrameLayout;
 
     invoke-direct {v2, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->blurredView:Landroid/widget/FrameLayout;
 
-    .line 1716
-    new-instance v1, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda2;
+    .line 1723
+    new-instance v1, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda3;
 
-    invoke-direct {v1, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
+    invoke-direct {v1, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     const/16 v1, 0x8
 
-    .line 1721
+    .line 1728
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1722
+    .line 1729
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getContainer()Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     move-result-object v1
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 1725
+    .line 1732
     invoke-virtual {v0, v8}, Lorg/telegram/ui/Components/ShareAlert;->updateSelectedCount(I)V
 
-    .line 1727
+    .line 1734
     iget v1, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
@@ -3096,7 +3147,7 @@
 
     invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->loadDialogs(Lorg/telegram/messenger/AccountInstance;)V
 
-    .line 1728
+    .line 1735
     iget-object v1, v0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;->access$10500(Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;)Ljava/util/ArrayList;
@@ -3109,7 +3160,7 @@
 
     if-eqz v1, :cond_21
 
-    .line 1729
+    .line 1736
     iget v1, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -3120,7 +3171,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1732
+    .line 1739
     :cond_21
     iget v1, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -3130,7 +3181,7 @@
 
     invoke-static {v1, v8, v2}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter;->loadRecentSearch(IILorg/telegram/ui/Adapters/DialogsSearchAdapter$OnRecentSearchLoaded;)V
 
-    .line 1750
+    .line 1757
     iget v1, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -3141,14 +3192,14 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/MediaDataController;->loadHints(Z)V
 
-    .line 1752
+    .line 1759
     iget-object v1, v0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/high16 v3, 0x3f800000    # 1.0f
 
     invoke-static {v1, v2, v3, v8}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
-    .line 1753
+    .line 1760
     iget-object v1, v0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/high16 v2, 0x3f800000    # 1.0f
@@ -3161,7 +3212,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/ShareAlert;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->blurredView:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -3170,7 +3221,7 @@
 .method static synthetic access$10000(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -3181,7 +3232,7 @@
 .method static synthetic access$10100(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -3192,7 +3243,7 @@
 .method static synthetic access$10200(Lorg/telegram/ui/Components/ShareAlert;)Landroid/graphics/Paint;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->paint:Landroid/graphics/Paint;
 
     return-object p0
@@ -3201,7 +3252,7 @@
 .method static synthetic access$10300(Lorg/telegram/ui/Components/ShareAlert;)Landroid/graphics/RectF;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->rect:Landroid/graphics/RectF;
 
     return-object p0
@@ -3210,7 +3261,7 @@
 .method static synthetic access$10400(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -3221,7 +3272,7 @@
 .method static synthetic access$10600(Lorg/telegram/ui/Components/ShareAlert;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->recentSearchObjects:Ljava/util/ArrayList;
 
     return-object p0
@@ -3230,7 +3281,7 @@
 .method static synthetic access$10602(Lorg/telegram/ui/Components/ShareAlert;Ljava/util/ArrayList;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 127
+    .line 129
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->recentSearchObjects:Ljava/util/ArrayList;
 
     return-object p1
@@ -3239,7 +3290,7 @@
 .method static synthetic access$10702(Lorg/telegram/ui/Components/ShareAlert;Landroidx/collection/LongSparseArray;)Landroidx/collection/LongSparseArray;
     .locals 0
 
-    .line 127
+    .line 129
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->recentSearchObjectsById:Landroidx/collection/LongSparseArray;
 
     return-object p1
@@ -3248,7 +3299,7 @@
 .method static synthetic access$10800(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3257,7 +3308,7 @@
 .method static synthetic access$10900(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3266,7 +3317,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -3277,7 +3328,7 @@
 .method static synthetic access$11000(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3286,7 +3337,7 @@
 .method static synthetic access$11200(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3295,7 +3346,7 @@
 .method static synthetic access$11300(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3304,7 +3355,7 @@
 .method static synthetic access$11400(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3313,7 +3364,7 @@
 .method static synthetic access$11500(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3322,7 +3373,7 @@
 .method static synthetic access$11602(Lorg/telegram/ui/Components/ShareAlert;Z)Z
     .locals 0
 
-    .line 127
+    .line 129
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ShareAlert;->searchWasVisibleBeforeTopics:Z
 
     return p1
@@ -3331,7 +3382,7 @@
 .method static synthetic access$11700(Lorg/telegram/ui/Components/ShareAlert;)Z
     .locals 0
 
-    .line 127
+    .line 129
     iget-boolean p0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchIsVisible:Z
 
     return p0
@@ -3340,7 +3391,7 @@
 .method static synthetic access$11800(Lorg/telegram/ui/Components/ShareAlert;)Landroidx/dynamicanimation/animation/SpringAnimation;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     return-object p0
@@ -3349,7 +3400,7 @@
 .method static synthetic access$11802(Lorg/telegram/ui/Components/ShareAlert;Landroidx/dynamicanimation/animation/SpringAnimation;)Landroidx/dynamicanimation/animation/SpringAnimation;
     .locals 0
 
-    .line 127
+    .line 129
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     return-object p1
@@ -3358,7 +3409,7 @@
 .method static synthetic access$11900(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/ChatActivity;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     return-object p0
@@ -3367,7 +3418,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -3378,7 +3429,7 @@
 .method static synthetic access$12000(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;[IF)V
     .locals 0
 
-    .line 127
+    .line 129
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/ShareAlert;->invalidateTopicsAnimation(Landroid/view/View;[IF)V
 
     return-void
@@ -3387,7 +3438,7 @@
 .method static synthetic access$12200(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     return-object p0
@@ -3396,7 +3447,7 @@
 .method static synthetic access$12400(Lorg/telegram/ui/Components/ShareAlert;)[Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
     return-object p0
@@ -3405,7 +3456,7 @@
 .method static synthetic access$12500(Lorg/telegram/ui/Components/ShareAlert;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->animatorSet:Landroid/animation/AnimatorSet;
 
     return-object p0
@@ -3414,7 +3465,7 @@
 .method static synthetic access$12502(Lorg/telegram/ui/Components/ShareAlert;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 127
+    .line 129
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->animatorSet:Landroid/animation/AnimatorSet;
 
     return-object p1
@@ -3423,7 +3474,7 @@
 .method static synthetic access$12600(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3432,7 +3483,7 @@
 .method static synthetic access$12700(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3441,7 +3492,7 @@
 .method static synthetic access$12800(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3450,7 +3501,7 @@
 .method static synthetic access$12900(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3459,7 +3510,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -3470,7 +3521,7 @@
 .method static synthetic access$13000(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3479,7 +3530,7 @@
 .method static synthetic access$13100(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3488,7 +3539,7 @@
 .method static synthetic access$13200(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-object p0
@@ -3497,7 +3548,7 @@
 .method static synthetic access$13300(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/tgnet/TLRPC$Dialog;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedTopicDialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     return-object p0
@@ -3506,7 +3557,7 @@
 .method static synthetic access$13900(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3515,7 +3566,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -3526,7 +3577,7 @@
 .method static synthetic access$14002(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     iput p1, p0, Lorg/telegram/ui/Components/ShareAlert;->topBeforeSwitch:I
 
     return p1
@@ -3535,7 +3586,7 @@
 .method static synthetic access$14100(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3544,7 +3595,7 @@
 .method static synthetic access$14200(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3553,7 +3604,7 @@
 .method static synthetic access$14300(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3562,7 +3613,7 @@
 .method static synthetic access$14400(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3571,7 +3622,7 @@
 .method static synthetic access$14500(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3580,7 +3631,7 @@
 .method static synthetic access$14600(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -3591,7 +3642,7 @@
 .method static synthetic access$14700(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3600,7 +3651,7 @@
 .method static synthetic access$14800(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3609,7 +3660,7 @@
 .method static synthetic access$14900(Lorg/telegram/ui/Components/ShareAlert;Lorg/telegram/ui/Cells/ShareDialogCell;Lorg/telegram/tgnet/TLRPC$Dialog;)V
     .locals 0
 
-    .line 127
+    .line 129
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->selectDialog(Lorg/telegram/ui/Cells/ShareDialogCell;Lorg/telegram/tgnet/TLRPC$Dialog;)V
 
     return-void
@@ -3618,7 +3669,7 @@
 .method static synthetic access$1500(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -3629,7 +3680,7 @@
 .method static synthetic access$15000(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3638,7 +3689,7 @@
 .method static synthetic access$15100(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3647,7 +3698,7 @@
 .method static synthetic access$15200(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3656,7 +3707,7 @@
 .method static synthetic access$15300(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3665,7 +3716,7 @@
 .method static synthetic access$15400(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3674,7 +3725,7 @@
 .method static synthetic access$15500(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return p0
@@ -3683,7 +3734,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -3694,7 +3745,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/Components/ShareAlert;Z)V
     .locals 0
 
-    .line 127
+    .line 129
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->checkCurrentList(Z)V
 
     return-void
@@ -3703,7 +3754,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/Components/ShareAlert;)Z
     .locals 0
 
-    .line 127
+    .line 129
     iget-boolean p0, p0, Lorg/telegram/ui/Components/ShareAlert;->updateSearchAdapter:Z
 
     return p0
@@ -3712,7 +3763,7 @@
 .method static synthetic access$1902(Lorg/telegram/ui/Components/ShareAlert;Z)Z
     .locals 0
 
-    .line 127
+    .line 129
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ShareAlert;->updateSearchAdapter:Z
 
     return p1
@@ -3721,7 +3772,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/ShareAlert;)Z
     .locals 0
 
-    .line 127
+    .line 129
     iget-boolean p0, p0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     return p0
@@ -3730,7 +3781,7 @@
 .method static synthetic access$2000(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/StickerEmptyView;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     return-object p0
@@ -3739,7 +3790,7 @@
 .method static synthetic access$2100(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object p0
@@ -3748,7 +3799,7 @@
 .method static synthetic access$2200(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
     return-object p0
@@ -3757,7 +3808,7 @@
 .method static synthetic access$2300(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-direct {p0}, Lorg/telegram/ui/Components/ShareAlert;->getCurrentTop()I
 
     move-result p0
@@ -3768,7 +3819,7 @@
 .method static synthetic access$2400(Lorg/telegram/ui/Components/ShareAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     return-object p0
@@ -3777,7 +3828,7 @@
 .method static synthetic access$2500(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/ShareAlert$ShareSearchAdapter;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareSearchAdapter;
 
     return-object p0
@@ -3786,7 +3837,7 @@
 .method static synthetic access$2600(Lorg/telegram/ui/Components/ShareAlert;)Z
     .locals 0
 
-    .line 127
+    .line 129
     iget-boolean p0, p0, Lorg/telegram/ui/Components/ShareAlert;->fullyShown:Z
 
     return p0
@@ -3795,7 +3846,7 @@
 .method static synthetic access$2602(Lorg/telegram/ui/Components/ShareAlert;Z)Z
     .locals 0
 
-    .line 127
+    .line 129
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ShareAlert;->fullyShown:Z
 
     return p1
@@ -3804,7 +3855,7 @@
 .method static synthetic access$2700(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/Components/ShareAlert;->previousScrollOffsetY:I
 
     return p0
@@ -3813,7 +3864,7 @@
 .method static synthetic access$2702(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     iput p1, p0, Lorg/telegram/ui/Components/ShareAlert;->previousScrollOffsetY:I
 
     return p1
@@ -3822,7 +3873,7 @@
 .method static synthetic access$2800(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/Components/ShareAlert;->scrollOffsetY:I
 
     return p0
@@ -3831,7 +3882,7 @@
 .method static synthetic access$2802(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     iput p1, p0, Lorg/telegram/ui/Components/ShareAlert;->scrollOffsetY:I
 
     return p1
@@ -3840,7 +3891,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -3851,7 +3902,7 @@
 .method static synthetic access$3102(Lorg/telegram/ui/Components/ShareAlert;Z)Z
     .locals 0
 
-    .line 127
+    .line 129
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ShareAlert;->panTranslationMoveLayout:Z
 
     return p1
@@ -3860,7 +3911,7 @@
 .method static synthetic access$3600(Lorg/telegram/ui/Components/ShareAlert;)F
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/Components/ShareAlert;->currentPanTranslationY:F
 
     return p0
@@ -3869,7 +3920,7 @@
 .method static synthetic access$3602(Lorg/telegram/ui/Components/ShareAlert;F)F
     .locals 0
 
-    .line 127
+    .line 129
     iput p1, p0, Lorg/telegram/ui/Components/ShareAlert;->currentPanTranslationY:F
 
     return p1
@@ -3878,7 +3929,7 @@
 .method static synthetic access$3700(Lorg/telegram/ui/Components/ShareAlert;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -3887,7 +3938,7 @@
 .method static synthetic access$3800(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object p0
@@ -3896,7 +3947,7 @@
 .method static synthetic access$3900(Lorg/telegram/ui/Components/ShareAlert;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -3905,7 +3956,7 @@
 .method static synthetic access$4000(Lorg/telegram/ui/Components/ShareAlert;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -3914,7 +3965,7 @@
 .method static synthetic access$4100(Lorg/telegram/ui/Components/ShareAlert;)Landroid/widget/TextView;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->pickerBottomLayout:Landroid/widget/TextView;
 
     return-object p0
@@ -3923,7 +3974,7 @@
 .method static synthetic access$4200(Lorg/telegram/ui/Components/ShareAlert;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -3932,7 +3983,7 @@
 .method static synthetic access$4300(Lorg/telegram/ui/Components/ShareAlert;)[Landroid/view/View;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
 
     return-object p0
@@ -3941,7 +3992,7 @@
 .method static synthetic access$4400(Lorg/telegram/ui/Components/ShareAlert;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -3950,7 +4001,7 @@
 .method static synthetic access$4500(Lorg/telegram/ui/Components/ShareAlert;)Landroid/widget/LinearLayout;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->sharesCountLayout:Landroid/widget/LinearLayout;
 
     return-object p0
@@ -3959,7 +4010,7 @@
 .method static synthetic access$4600(Lorg/telegram/ui/Components/ShareAlert;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -3968,7 +4019,7 @@
 .method static synthetic access$4700(Lorg/telegram/ui/Components/ShareAlert;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -3977,7 +4028,7 @@
 .method static synthetic access$4800(Lorg/telegram/ui/Components/ShareAlert;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -3986,7 +4037,7 @@
 .method static synthetic access$4900(Lorg/telegram/ui/Components/ShareAlert;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -3995,7 +4046,7 @@
 .method static synthetic access$5000(Lorg/telegram/ui/Components/ShareAlert;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -4004,7 +4055,7 @@
 .method static synthetic access$5100(Lorg/telegram/ui/Components/ShareAlert;)Landroid/view/View;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
     return-object p0
@@ -4013,7 +4064,7 @@
 .method static synthetic access$5200(Lorg/telegram/ui/Components/ShareAlert;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -4022,7 +4073,7 @@
 .method static synthetic access$5300(Lorg/telegram/ui/Components/ShareAlert;)Landroid/widget/ImageView;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     return-object p0
@@ -4031,7 +4082,7 @@
 .method static synthetic access$5400(Lorg/telegram/ui/Components/ShareAlert;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -4040,17 +4091,17 @@
 .method static synthetic access$5500(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/EditTextEmoji;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     return-object p0
 .end method
 
-.method static synthetic access$5600(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/ForwardingPreviewView;
+.method static synthetic access$5600(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/MessagePreviewView;
     .locals 0
 
-    .line 127
-    iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/ForwardingPreviewView;
+    .line 129
+    iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
     return-object p0
 .end method
@@ -4058,7 +4109,7 @@
 .method static synthetic access$5700(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/FillLastGridLayoutManager;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchLayoutManager:Lorg/telegram/ui/Components/FillLastGridLayoutManager;
 
     return-object p0
@@ -4067,7 +4118,7 @@
 .method static synthetic access$5800(Lorg/telegram/ui/Components/ShareAlert;)Z
     .locals 0
 
-    .line 127
+    .line 129
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->isFullscreen:Z
 
     return p0
@@ -4076,7 +4127,7 @@
 .method static synthetic access$5900(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -4085,7 +4136,7 @@
 .method static synthetic access$6000(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -4094,7 +4145,7 @@
 .method static synthetic access$6100(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -4103,7 +4154,7 @@
 .method static synthetic access$6200(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-object p0
@@ -4112,7 +4163,7 @@
 .method static synthetic access$6300(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/Components/ShareAlert$ShareTopicsAdapter;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->shareTopicsAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareTopicsAdapter;
 
     return-object p0
@@ -4121,7 +4172,7 @@
 .method static synthetic access$6400(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -4130,7 +4181,7 @@
 .method static synthetic access$6500(Lorg/telegram/ui/Components/ShareAlert;)Z
     .locals 0
 
-    .line 127
+    .line 129
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->keyboardVisible:Z
 
     return p0
@@ -4139,7 +4190,7 @@
 .method static synthetic access$6600(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -4148,7 +4199,7 @@
 .method static synthetic access$6700(Lorg/telegram/ui/Components/ShareAlert;)Z
     .locals 0
 
-    .line 127
+    .line 129
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->keyboardVisible:Z
 
     return p0
@@ -4157,7 +4208,7 @@
 .method static synthetic access$6800(Lorg/telegram/ui/Components/ShareAlert;)Z
     .locals 0
 
-    .line 127
+    .line 129
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->keyboardVisible:Z
 
     return p0
@@ -4166,7 +4217,7 @@
 .method static synthetic access$6900(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -4175,7 +4226,7 @@
 .method static synthetic access$7000(Lorg/telegram/ui/Components/ShareAlert;)V
     .locals 0
 
-    .line 127
+    .line 129
     invoke-direct {p0}, Lorg/telegram/ui/Components/ShareAlert;->updateLayout()V
 
     return-void
@@ -4184,7 +4235,7 @@
 .method static synthetic access$7100(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -4195,7 +4246,7 @@
 .method static synthetic access$7200(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -4204,7 +4255,7 @@
 .method static synthetic access$7302(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     iput p1, p0, Lorg/telegram/ui/Components/ShareAlert;->containerViewTop:I
 
     return p1
@@ -4213,7 +4264,7 @@
 .method static synthetic access$7400(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -4222,7 +4273,7 @@
 .method static synthetic access$7500(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -4231,7 +4282,7 @@
 .method static synthetic access$7600(Lorg/telegram/ui/Components/ShareAlert;)Z
     .locals 0
 
-    .line 127
+    .line 129
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->isFullscreen:Z
 
     return p0
@@ -4240,7 +4291,7 @@
 .method static synthetic access$7700(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -4249,7 +4300,7 @@
 .method static synthetic access$7800(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -4258,7 +4309,7 @@
 .method static synthetic access$7900(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -4267,7 +4318,7 @@
 .method static synthetic access$800(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -4278,7 +4329,7 @@
 .method static synthetic access$8000(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -4287,7 +4338,7 @@
 .method static synthetic access$8100(Lorg/telegram/ui/Components/ShareAlert;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     return-object p0
@@ -4296,7 +4347,7 @@
 .method static synthetic access$8200(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -4307,7 +4358,7 @@
 .method static synthetic access$8300(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -4316,7 +4367,7 @@
 .method static synthetic access$8400(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -4325,7 +4376,7 @@
 .method static synthetic access$8500(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return p0
@@ -4334,7 +4385,7 @@
 .method static synthetic access$8600(Lorg/telegram/ui/Components/ShareAlert;)I
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return p0
@@ -4343,7 +4394,7 @@
 .method static synthetic access$8700(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -4354,7 +4405,7 @@
 .method static synthetic access$8800(Lorg/telegram/ui/Components/ShareAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     return-object p0
@@ -4363,7 +4414,7 @@
 .method static synthetic access$8900(Lorg/telegram/ui/Components/ShareAlert;)[Ljava/lang/String;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->linkToCopy:[Ljava/lang/String;
 
     return-object p0
@@ -4372,7 +4423,7 @@
 .method static synthetic access$900(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -4383,7 +4434,7 @@
 .method static synthetic access$9000(Lorg/telegram/ui/Components/ShareAlert;)F
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/Components/ShareAlert;->chatActivityEnterViewAnimateFromTop:F
 
     return p0
@@ -4392,7 +4443,7 @@
 .method static synthetic access$9002(Lorg/telegram/ui/Components/ShareAlert;F)F
     .locals 0
 
-    .line 127
+    .line 129
     iput p1, p0, Lorg/telegram/ui/Components/ShareAlert;->chatActivityEnterViewAnimateFromTop:F
 
     return p1
@@ -4401,7 +4452,7 @@
 .method static synthetic access$9100(Lorg/telegram/ui/Components/ShareAlert;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->topBackgroundAnimator:Landroid/animation/ValueAnimator;
 
     return-object p0
@@ -4410,7 +4461,7 @@
 .method static synthetic access$9102(Lorg/telegram/ui/Components/ShareAlert;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 127
+    .line 129
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->topBackgroundAnimator:Landroid/animation/ValueAnimator;
 
     return-object p1
@@ -4419,7 +4470,7 @@
 .method static synthetic access$9200(Lorg/telegram/ui/Components/ShareAlert;)F
     .locals 0
 
-    .line 127
+    .line 129
     iget p0, p0, Lorg/telegram/ui/Components/ShareAlert;->captionEditTextTopOffset:F
 
     return p0
@@ -4428,7 +4479,7 @@
 .method static synthetic access$9202(Lorg/telegram/ui/Components/ShareAlert;F)F
     .locals 0
 
-    .line 127
+    .line 129
     iput p1, p0, Lorg/telegram/ui/Components/ShareAlert;->captionEditTextTopOffset:F
 
     return p1
@@ -4437,7 +4488,7 @@
 .method static synthetic access$9302(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navBarColorKey:I
 
     return p1
@@ -4446,7 +4497,7 @@
 .method static synthetic access$9400(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -4457,7 +4508,7 @@
 .method static synthetic access$9502(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navBarColorKey:I
 
     return p1
@@ -4466,7 +4517,7 @@
 .method static synthetic access$9600(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
@@ -4477,7 +4528,7 @@
 .method static synthetic access$9702(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navBarColor:I
 
     return p1
@@ -4486,7 +4537,7 @@
 .method static synthetic access$9802(Lorg/telegram/ui/Components/ShareAlert;I)I
     .locals 0
 
-    .line 127
+    .line 129
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navBarColor:I
 
     return p1
@@ -4495,7 +4546,7 @@
 .method static synthetic access$9900(Lorg/telegram/ui/Components/ShareAlert;)Landroid/text/TextPaint;
     .locals 0
 
-    .line 127
+    .line 129
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert;->textPaint:Landroid/text/TextPaint;
 
     return-object p0
@@ -4504,7 +4555,7 @@
 .method private checkCurrentList(Z)V
     .locals 4
 
-    .line 3416
+    .line 3423
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert$SearchField;->access$000(Lorg/telegram/ui/Components/ShareAlert$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -4550,18 +4601,18 @@
 
     goto :goto_0
 
-    .line 3424
+    .line 3431
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedTopicDialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     if-nez v0, :cond_2
 
-    .line 3425
+    .line 3432
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v0, v2, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
-    .line 3426
+    .line 3433
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v0, v3}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;Z)V
@@ -4571,27 +4622,27 @@
 
     goto :goto_1
 
-    .line 3418
+    .line 3425
     :cond_3
     :goto_0
     iput-boolean v2, p0, Lorg/telegram/ui/Components/ShareAlert;->updateSearchAdapter:Z
 
-    .line 3419
+    .line 3426
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedTopicDialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     if-nez v0, :cond_4
 
-    .line 3420
+    .line 3427
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v0, v3, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
-    .line 3421
+    .line 3428
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v0, v2}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;Z)V
 
-    .line 3430
+    .line 3437
     :cond_4
     :goto_1
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchIsVisible:Z
@@ -4600,33 +4651,33 @@
 
     if-eqz p1, :cond_9
 
-    .line 3431
+    .line 3438
     :cond_5
     iput-boolean v2, p0, Lorg/telegram/ui/Components/ShareAlert;->searchIsVisible:Z
 
-    .line 3432
+    .line 3439
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->searchAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareSearchAdapter;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 3433
+    .line 3440
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 3434
+    .line 3441
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ShareAlert;->searchIsVisible:Z
 
     const v0, 0x7fffffff
 
     if-eqz p1, :cond_7
 
-    .line 3435
+    .line 3442
     iget p1, p0, Lorg/telegram/ui/Components/ShareAlert;->lastOffset:I
 
     if-ne p1, v0, :cond_6
 
-    .line 3436
+    .line 3443
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView;->getLayoutManager()Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
@@ -4647,7 +4698,7 @@
 
     goto :goto_2
 
-    .line 3438
+    .line 3445
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -4669,7 +4720,7 @@
 
     invoke-virtual {p1, v3, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 3440
+    .line 3447
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->searchAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareSearchAdapter;
 
@@ -4691,20 +4742,20 @@
 
     goto :goto_3
 
-    .line 3442
+    .line 3449
     :cond_7
     iget p1, p0, Lorg/telegram/ui/Components/ShareAlert;->lastOffset:I
 
     if-ne p1, v0, :cond_8
 
-    .line 3443
+    .line 3450
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {p1, v3, v3}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
     goto :goto_3
 
-    .line 3445
+    .line 3452
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
@@ -4718,7 +4769,7 @@
 .method private collapseTopics()V
     .locals 9
 
-    .line 1905
+    .line 1912
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedTopicDialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     if-nez v0, :cond_0
@@ -4728,14 +4779,14 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 1909
+    .line 1916
     iput-object v1, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedTopicDialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     const/4 v2, 0x0
 
     move v3, v2
 
-    .line 1912
+    .line 1919
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/ShareAlert;->getMainGridView()Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -4747,7 +4798,7 @@
 
     if-ge v3, v4, :cond_2
 
-    .line 1913
+    .line 1920
     invoke-direct {p0}, Lorg/telegram/ui/Components/ShareAlert;->getMainGridView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v4
@@ -4756,7 +4807,7 @@
 
     move-result-object v4
 
-    .line 1915
+    .line 1922
     instance-of v5, v4, Lorg/telegram/ui/Cells/ShareDialogCell;
 
     if-eqz v5, :cond_1
@@ -4787,16 +4838,16 @@
 
     return-void
 
-    .line 1924
+    .line 1931
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz v0, :cond_4
 
-    .line 1925
+    .line 1932
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    .line 1928
+    .line 1935
     :cond_4
     invoke-direct {p0}, Lorg/telegram/ui/Components/ShareAlert;->getMainGridView()Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -4804,12 +4855,12 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
-    .line 1929
+    .line 1936
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1931
+    .line 1938
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchIsVisible:Z
 
     if-nez v0, :cond_5
@@ -4818,7 +4869,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 1932
+    .line 1939
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->sizeNotifierFrameLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -4826,7 +4877,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->ignoreOnce()V
 
-    .line 1933
+    .line 1940
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert$SearchField;->access$000(Lorg/telegram/ui/Components/ShareAlert$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -4835,7 +4886,7 @@
 
     invoke-virtual {v0}, Landroid/widget/EditText;->requestFocus()Z
 
-    .line 1934
+    .line 1941
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert$SearchField;->access$000(Lorg/telegram/ui/Components/ShareAlert$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -4849,7 +4900,7 @@
 
     new-array v0, v0, [I
 
-    .line 1939
+    .line 1946
     new-instance v2, Landroidx/dynamicanimation/animation/SpringAnimation;
 
     new-instance v3, Landroidx/dynamicanimation/animation/FloatValueHolder;
@@ -4866,7 +4917,7 @@
 
     invoke-direct {v3, v4}, Landroidx/dynamicanimation/animation/SpringForce;-><init>(F)V
 
-    .line 1941
+    .line 1948
     iget-object v4, p0, Lorg/telegram/ui/Components/ShareAlert;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-eqz v4, :cond_7
@@ -4889,26 +4940,26 @@
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    .line 1942
+    .line 1949
     invoke-virtual {v3, v4}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v3
 
-    .line 1940
+    .line 1947
     invoke-virtual {v2, v3}, Landroidx/dynamicanimation/animation/SpringAnimation;->setSpring(Landroidx/dynamicanimation/animation/SpringForce;)Landroidx/dynamicanimation/animation/SpringAnimation;
 
     move-result-object v2
 
     iput-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 1943
+    .line 1950
     new-instance v3, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda11;
 
     invoke-direct {v3, p0, v1, v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/view/View;[I)V
 
     invoke-virtual {v2, v3}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addUpdateListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationUpdateListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 1948
+    .line 1955
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     new-instance v1, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda10;
@@ -4917,7 +4968,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 1958
+    .line 1965
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
@@ -4928,7 +4979,7 @@
 .method private copyLink(Landroid/content/Context;)V
     .locals 3
 
-    .line 2441
+    .line 2448
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->exportedMessageLink:Lorg/telegram/tgnet/TLRPC$TL_exportedMessageLink;
 
     const/4 v0, 0x0
@@ -4943,14 +4994,14 @@
 
     return-void
 
-    .line 2446
+    .line 2453
     :cond_0
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->switchView:Lorg/telegram/ui/Components/ShareAlert$SwitchView;
 
     if-eqz p1, :cond_1
 
-    .line 2447
+    .line 2454
     iget-object v1, p0, Lorg/telegram/ui/Components/ShareAlert;->linkToCopy:[Ljava/lang/String;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->access$12300(Lorg/telegram/ui/Components/ShareAlert$SwitchView;)I
@@ -4961,13 +5012,13 @@
 
     goto :goto_0
 
-    .line 2449
+    .line 2456
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->linkToCopy:[Ljava/lang/String;
 
     aget-object p1, p1, v0
 
-    .line 2451
+    .line 2458
     :goto_0
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -4985,7 +5036,7 @@
 
     goto :goto_1
 
-    .line 2452
+    .line 2459
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->exportedMessageLink:Lorg/telegram/tgnet/TLRPC$TL_exportedMessageLink;
 
@@ -4996,10 +5047,10 @@
 
     move-result-object p1
 
-    .line 2453
+    .line 2460
     invoke-virtual {v1, p1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
 
-    .line 2454
+    .line 2461
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->delegate:Lorg/telegram/ui/Components/ShareAlert$ShareAlertDelegate;
 
     if-eqz p1, :cond_3
@@ -5017,7 +5068,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 2455
+    .line 2462
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->exportedMessageLink:Lorg/telegram/tgnet/TLRPC$TL_exportedMessageLink;
 
     if-eqz p1, :cond_4
@@ -5034,7 +5085,7 @@
 
     const/4 v0, 0x1
 
-    .line 2456
+    .line 2463
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->parentActivity:Landroid/app/Activity;
 
@@ -5053,7 +5104,7 @@
     :catch_0
     move-exception p1
 
-    .line 2459
+    .line 2466
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_5
@@ -5068,12 +5119,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 599
+    .line 603
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 600
+    .line 604
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
@@ -5084,7 +5135,7 @@
     :goto_0
     move-object v5, v1
 
-    .line 604
+    .line 608
     new-instance v0, Lorg/telegram/ui/Components/ShareAlert;
 
     const/4 v4, 0x0
@@ -5115,7 +5166,7 @@
 .method private getCurrentTop()I
     .locals 4
 
-    .line 2275
+    .line 2282
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
@@ -5124,7 +5175,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2276
+    .line 2283
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x0
@@ -5133,7 +5184,7 @@
 
     move-result-object v0
 
-    .line 2277
+    .line 2284
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v2, v0}, Landroidx/recyclerview/widget/RecyclerView;->findContainingViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
@@ -5144,7 +5195,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 2279
+    .line 2286
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3}, Landroid/view/ViewGroup;->getPaddingTop()I
@@ -5181,7 +5232,7 @@
 .method private getMainGridView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 1
 
-    .line 2286
+    .line 2293
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchIsVisible:Z
 
     if-nez v0, :cond_1
@@ -5208,7 +5259,7 @@
 .method private invalidateTopicsAnimation(Landroid/view/View;[IF)V
     .locals 12
 
-    .line 1962
+    .line 1969
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroid/view/View;->getX()F
@@ -5229,7 +5280,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setPivotX(F)V
 
-    .line 1963
+    .line 1970
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p1}, Landroid/view/View;->getY()F
@@ -5248,7 +5299,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setPivotY(F)V
 
-    .line 1964
+    .line 1971
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/high16 v1, 0x3e800000    # 0.25f
@@ -5261,22 +5312,22 @@
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setScaleX(F)V
 
-    .line 1965
+    .line 1972
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setScaleY(F)V
 
-    .line 1966
+    .line 1973
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, p3}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 1968
+    .line 1975
     invoke-direct {p0}, Lorg/telegram/ui/Components/ShareAlert;->getMainGridView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
 
-    .line 1969
+    .line 1976
     invoke-virtual {p1}, Landroid/view/View;->getX()F
 
     move-result v2
@@ -5293,7 +5344,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setPivotX(F)V
 
-    .line 1970
+    .line 1977
     invoke-virtual {p1}, Landroid/view/View;->getY()F
 
     move-result v2
@@ -5314,18 +5365,18 @@
 
     add-float/2addr v1, v2
 
-    .line 1971
+    .line 1978
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setScaleX(F)V
 
-    .line 1972
+    .line 1979
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setScaleY(F)V
 
     sub-float v1, v2, p3
 
-    .line 1973
+    .line 1980
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 1975
+    .line 1982
     iget-object v4, p0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getWidth()I
@@ -5338,14 +5389,14 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/FrameLayout;->setPivotX(F)V
 
-    .line 1976
+    .line 1983
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setPivotY(F)V
 
-    .line 1977
+    .line 1984
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     const v4, 0x3dcccccd    # 0.1f
@@ -5358,17 +5409,17 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 1978
+    .line 1985
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 1979
+    .line 1986
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     invoke-virtual {v3, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1981
+    .line 1988
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/ActionBar;->getBackButton()Landroid/widget/ImageView;
@@ -5389,7 +5440,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    .line 1982
+    .line 1989
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/ActionBar;->getTitleTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -5406,7 +5457,7 @@
 
     invoke-virtual {v3, v5}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1983
+    .line 1990
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/ActionBar;->getSubtitleTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -5423,17 +5474,17 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1984
+    .line 1991
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v3, p3}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1986
+    .line 1993
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v3, p2}, Landroid/view/ViewGroup;->getLocationInWindow([I)V
 
-    .line 1987
+    .line 1994
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/CubicBezierInterpolator;->getInterpolation(F)F
@@ -5444,7 +5495,7 @@
 
     move v4, v3
 
-    .line 1988
+    .line 1995
     :goto_0
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -5452,17 +5503,17 @@
 
     if-ge v4, v5, :cond_2
 
-    .line 1989
+    .line 1996
     invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 1990
+    .line 1997
     instance-of v6, v5, Lorg/telegram/ui/Cells/ShareDialogCell;
 
     if-eqz v6, :cond_1
 
-    .line 1991
+    .line 1998
     invoke-virtual {v5}, Landroid/view/View;->getX()F
 
     move-result v6
@@ -5481,7 +5532,7 @@
 
     invoke-virtual {v5, v6}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 1992
+    .line 1999
     invoke-virtual {v5}, Landroid/view/View;->getY()F
 
     move-result v6
@@ -5500,7 +5551,7 @@
 
     if-eq v5, p1, :cond_0
 
-    .line 1995
+    .line 2002
     invoke-static {p3, v7}, Ljava/lang/Math;->min(FF)F
 
     move-result v6
@@ -5513,7 +5564,7 @@
 
     goto :goto_1
 
-    .line 1997
+    .line 2004
     :cond_0
     invoke-virtual {v5, v1}, Landroid/view/View;->setAlpha(F)V
 
@@ -5523,7 +5574,7 @@
 
     goto :goto_0
 
-    .line 2001
+    .line 2008
     :cond_2
     :goto_2
     iget-object p3, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -5534,19 +5585,19 @@
 
     if-ge v3, p3, :cond_4
 
-    .line 2002
+    .line 2009
     iget-object p3, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p3, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object p3
 
-    .line 2003
+    .line 2010
     instance-of v1, p3, Lorg/telegram/ui/Cells/ShareTopicCell;
 
     if-eqz v1, :cond_3
 
-    .line 2004
+    .line 2011
     invoke-virtual {p3}, Landroid/view/View;->getX()F
 
     move-result v1
@@ -5577,7 +5628,7 @@
 
     invoke-virtual {p3, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 2005
+    .line 2012
     invoke-virtual {p3}, Landroid/view/View;->getY()F
 
     move-result v1
@@ -5615,73 +5666,73 @@
 
     goto :goto_2
 
-    .line 2008
+    .line 2015
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->requestLayout()V
 
-    .line 2009
+    .line 2016
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
 
     return-void
 .end method
 
-.method private synthetic lambda$collapseTopics$13(Landroid/view/View;[ILandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
+.method private synthetic lambda$collapseTopics$16(Landroid/view/View;[ILandroidx/dynamicanimation/animation/DynamicAnimation;FF)V
     .locals 0
 
     const/high16 p3, 0x447a0000    # 1000.0f
 
     div-float/2addr p4, p3
 
-    .line 1946
+    .line 1953
     invoke-direct {p0, p1, p2, p4}, Lorg/telegram/ui/Components/ShareAlert;->invalidateTopicsAnimation(Landroid/view/View;[IF)V
 
     return-void
 .end method
 
-.method private synthetic lambda$collapseTopics$14(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+.method private synthetic lambda$collapseTopics$17(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
-    .line 1949
+    .line 1956
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/16 p2, 0x8
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
-    .line 1950
+    .line 1957
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsBackActionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1952
+    .line 1959
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->shareTopicsAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareTopicsAdapter;
 
     const/4 p2, 0x0
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/ShareAlert$ShareTopicsAdapter;->access$11102(Lorg/telegram/ui/Components/ShareAlert$ShareTopicsAdapter;Ljava/util/List;)Ljava/util/List;
 
-    .line 1953
+    .line 1960
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->shareTopicsAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareTopicsAdapter;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 1955
+    .line 1962
     iput-object p2, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsAnimation:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     const/4 p1, 0x0
 
-    .line 1956
+    .line 1963
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ShareAlert;->searchWasVisibleBeforeTopics:Z
 
     return-void
 .end method
 
-.method private synthetic lambda$copyLink$21(ZLorg/telegram/ui/Components/BulletinFactory;)Lorg/telegram/ui/Components/Bulletin;
+.method private synthetic lambda$copyLink$24(ZLorg/telegram/ui/Components/BulletinFactory;)Lorg/telegram/ui/Components/Bulletin;
     .locals 1
 
-    .line 2456
+    .line 2463
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Components/BulletinFactory;->createCopyLinkBulletin(ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/Bulletin;
@@ -5696,23 +5747,23 @@
 
     if-eqz p1, :cond_0
 
-    .line 670
+    .line 674
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_exportedMessageLink;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->exportedMessageLink:Lorg/telegram/tgnet/TLRPC$TL_exportedMessageLink;
 
-    .line 671
+    .line 675
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ShareAlert;->copyLinkOnEnd:Z
 
     if-eqz p1, :cond_0
 
-    .line 672
+    .line 676
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ShareAlert;->copyLink(Landroid/content/Context;)V
 
     :cond_0
     const/4 p1, 0x0
 
-    .line 675
+    .line 679
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ShareAlert;->loadingLink:Z
 
     return-void
@@ -5721,7 +5772,7 @@
 .method private synthetic lambda$new$1(Landroid/content/Context;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 668
+    .line 672
     new-instance p3, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda13;
 
     invoke-direct {p3, p0, p2, p1}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/Components/ShareAlert;Lorg/telegram/tgnet/TLObject;Landroid/content/Context;)V
@@ -5731,44 +5782,87 @@
     return-void
 .end method
 
-.method private synthetic lambda$new$10(Landroid/view/View;)V
+.method private static synthetic lambda$new$10(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 1679
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method private synthetic lambda$new$11(Landroid/view/View;)V
+    .locals 0
+
+    const/4 p1, 0x1
+
+    .line 1651
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->sendInternal(Z)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$new$12(Landroid/widget/ImageView;Landroid/view/View;)Z
+    .locals 0
+
+    .line 1653
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->onSendLongClick(Landroid/view/View;)Z
+
+    move-result p1
+
+    return p1
+.end method
+
+.method private synthetic lambda$new$13(Landroid/view/View;)V
+    .locals 0
+
+    .line 1686
     invoke-direct {p0}, Lorg/telegram/ui/Components/ShareAlert;->openForwardingPreview()V
 
     return-void
 .end method
 
-.method private synthetic lambda$new$11(Landroid/view/View;)V
+.method private synthetic lambda$new$14(Landroid/view/View;)V
     .locals 1
 
-    .line 1717
-    iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/ForwardingPreviewView;
+    .line 1724
+    iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
     if-eqz p1, :cond_0
 
-    invoke-virtual {p1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->isShowing()Z
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/MessagePreviewView;->isShowing()Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 1718
-    iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/ForwardingPreviewView;
+    .line 1725
+    iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->dismiss(Z)V
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/MessagePreviewView;->dismiss(Z)V
 
     :cond_0
     return-void
 .end method
 
-.method private synthetic lambda$new$2(Landroid/view/View;I)V
+.method private static synthetic lambda$new$2(Ljava/lang/Integer;)Ljava/lang/Integer;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    .line 1177
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private synthetic lambda$new$3(Landroid/view/View;I)V
     .locals 7
 
-    .line 1190
+    .line 1195
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->shareTopicsAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareTopicsAdapter;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/ShareAlert$ShareTopicsAdapter;->getItem(I)Lorg/telegram/tgnet/TLRPC$TL_forumTopic;
@@ -5777,33 +5871,33 @@
 
     if-eqz p1, :cond_6
 
-    .line 1191
+    .line 1196
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedTopicDialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     if-nez p2, :cond_0
 
     goto/16 :goto_1
 
-    .line 1195
+    .line 1200
     :cond_0
     iget-wide v0, p2, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
-    .line 1198
+    .line 1203
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v2, v0, v1, p2}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 1199
+    .line 1204
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogTopics:Ljava/util/Map;
 
     invoke-interface {v0, p2, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v0, 0x2
 
-    .line 1200
+    .line 1205
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ShareAlert;->updateSelectedCount(I)V
 
-    .line 1202
+    .line 1207
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchIsVisible:Z
 
     const/4 v1, 0x0
@@ -5816,7 +5910,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1203
+    .line 1208
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
@@ -5834,7 +5928,7 @@
 
     if-nez v0, :cond_2
 
-    .line 1205
+    .line 1210
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;->access$12100(Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;)Landroidx/collection/LongSparseArray;
@@ -5845,7 +5939,7 @@
 
     invoke-virtual {v0, v3, v4, p2}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 1206
+    .line 1211
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;->access$10500(Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;)Ljava/util/ArrayList;
@@ -5866,16 +5960,16 @@
 
     invoke-virtual {v0, v3, p2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 1208
+    .line 1213
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 1209
+    .line 1214
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ShareAlert;->updateSearchAdapter:Z
 
-    .line 1210
+    .line 1215
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/ShareAlert$SearchField;->access$000(Lorg/telegram/ui/Components/ShareAlert$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -5886,10 +5980,10 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1211
+    .line 1216
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/ShareAlert;->checkCurrentList(Z)V
 
-    .line 1213
+    .line 1218
     :cond_3
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/ShareAlert;->getMainGridView()Lorg/telegram/ui/Components/RecyclerListView;
@@ -5902,7 +5996,7 @@
 
     if-ge v1, p2, :cond_5
 
-    .line 1214
+    .line 1219
     invoke-direct {p0}, Lorg/telegram/ui/Components/ShareAlert;->getMainGridView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p2
@@ -5911,7 +6005,7 @@
 
     move-result-object p2
 
-    .line 1216
+    .line 1221
     instance-of v0, p2, Lorg/telegram/ui/Cells/ShareDialogCell;
 
     if-eqz v0, :cond_4
@@ -5932,10 +6026,10 @@
 
     if-eqz p2, :cond_4
 
-    .line 1220
+    .line 1225
     invoke-virtual {p2, p1, v2}, Lorg/telegram/ui/Cells/ShareDialogCell;->setTopic(Lorg/telegram/tgnet/TLRPC$TL_forumTopic;Z)V
 
-    .line 1221
+    .line 1226
     invoke-virtual {p2, v2, v2}, Lorg/telegram/ui/Cells/ShareDialogCell;->setChecked(ZZ)V
 
     :cond_4
@@ -5943,7 +6037,7 @@
 
     goto :goto_0
 
-    .line 1225
+    .line 1230
     :cond_5
     invoke-direct {p0}, Lorg/telegram/ui/Components/ShareAlert;->collapseTopics()V
 
@@ -5952,14 +6046,27 @@
     return-void
 .end method
 
-.method private synthetic lambda$new$3(Landroid/view/View;I)V
+.method private static synthetic lambda$new$4(Ljava/lang/Integer;)Ljava/lang/Integer;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    .line 1255
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private synthetic lambda$new$5(Landroid/view/View;I)V
     .locals 1
 
     if-gez p2, :cond_0
 
     return-void
 
-    .line 1286
+    .line 1292
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
@@ -5971,7 +6078,7 @@
 
     return-void
 
-    .line 1290
+    .line 1296
     :cond_1
     check-cast p1, Lorg/telegram/ui/Cells/ShareDialogCell;
 
@@ -5980,14 +6087,27 @@
     return-void
 .end method
 
-.method private synthetic lambda$new$4(Landroid/view/View;I)V
+.method private static synthetic lambda$new$6(Ljava/lang/Integer;)Ljava/lang/Integer;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    .line 1327
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method private synthetic lambda$new$7(Landroid/view/View;I)V
     .locals 1
 
     if-gez p2, :cond_0
 
     return-void
 
-    .line 1335
+    .line 1342
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareSearchAdapter;
 
@@ -5999,7 +6119,7 @@
 
     return-void
 
-    .line 1339
+    .line 1346
     :cond_1
     check-cast p1, Lorg/telegram/ui/Cells/ShareDialogCell;
 
@@ -6008,10 +6128,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$new$5(Landroid/view/View;)V
+.method private synthetic lambda$new$8(Landroid/view/View;)V
     .locals 3
 
-    .line 1422
+    .line 1429
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {p1}, Landroidx/collection/LongSparseArray;->size()I
@@ -6032,11 +6152,11 @@
 
     if-eqz p1, :cond_2
 
-    .line 1423
+    .line 1430
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ShareAlert;->dismiss()V
 
-    .line 1424
+    .line 1431
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->linkToCopy:[Ljava/lang/String;
 
     aget-object p1, p1, v0
@@ -6049,10 +6169,10 @@
 
     const/4 p1, 0x1
 
-    .line 1425
+    .line 1432
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ShareAlert;->copyLinkOnEnd:Z
 
-    .line 1426
+    .line 1433
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -6073,7 +6193,7 @@
 
     goto :goto_0
 
-    .line 1428
+    .line 1435
     :cond_1
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
@@ -6086,10 +6206,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$new$6(Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
+.method private synthetic lambda$new$9(Lorg/telegram/messenger/MessageObject;Landroid/view/View;)V
     .locals 1
 
-    .line 1442
+    .line 1449
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     new-instance v0, Lorg/telegram/ui/MessageStatisticActivity;
@@ -6101,40 +6221,10 @@
     return-void
 .end method
 
-.method private static synthetic lambda$new$7(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 0
-
-    const/4 p0, 0x1
-
-    return p0
-.end method
-
-.method private synthetic lambda$new$8(Landroid/view/View;)V
-    .locals 0
-
-    const/4 p1, 0x1
-
-    .line 1644
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->sendInternal(Z)V
-
-    return-void
-.end method
-
-.method private synthetic lambda$new$9(Landroid/widget/ImageView;Landroid/view/View;)Z
-    .locals 0
-
-    .line 1646
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->onSendLongClick(Landroid/view/View;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method private synthetic lambda$onSendLongClick$18(Landroid/view/KeyEvent;)V
+.method private synthetic lambda$onSendLongClick$21(Landroid/view/KeyEvent;)V
     .locals 2
 
-    .line 2104
+    .line 2111
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v0
@@ -6159,7 +6249,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2105
+    .line 2112
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
@@ -6168,10 +6258,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onSendLongClick$19(Landroid/view/View;)V
+.method private synthetic lambda$onSendLongClick$22(Landroid/view/View;)V
     .locals 0
 
-    .line 2123
+    .line 2130
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_0
@@ -6182,7 +6272,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2124
+    .line 2131
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
@@ -6190,16 +6280,16 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 2126
+    .line 2133
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->sendInternal(Z)V
 
     return-void
 .end method
 
-.method private synthetic lambda$onSendLongClick$20(Landroid/view/View;)V
+.method private synthetic lambda$onSendLongClick$23(Landroid/view/View;)V
     .locals 0
 
-    .line 2137
+    .line 2144
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     if-eqz p1, :cond_0
@@ -6210,7 +6300,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2138
+    .line 2145
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
@@ -6218,21 +6308,21 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 2140
+    .line 2147
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ShareAlert;->sendInternal(Z)V
 
     return-void
 .end method
 
-.method private synthetic lambda$selectDialog$12(Ljava/util/concurrent/atomic/AtomicReference;Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;Lorg/telegram/tgnet/TLRPC$Dialog;)V
+.method private synthetic lambda$selectDialog$15(Ljava/util/concurrent/atomic/AtomicReference;Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;Lorg/telegram/tgnet/TLRPC$Dialog;)V
     .locals 4
 
     const/4 v0, 0x0
 
-    .line 1863
+    .line 1870
     invoke-virtual {p1, v0}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 1864
+    .line 1871
     sget p1, Lorg/telegram/messenger/NotificationCenter;->topicsDidLoaded:I
 
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
@@ -6261,7 +6351,7 @@
 .method private onSendLongClick(Landroid/view/View;)Z
     .locals 10
 
-    .line 2020
+    .line 2027
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->parentActivity:Landroid/app/Activity;
 
     const/4 v1, 0x0
@@ -6270,7 +6360,7 @@
 
     return v1
 
-    .line 2023
+    .line 2030
     :cond_0
     new-instance v0, Landroid/widget/LinearLayout;
 
@@ -6282,10 +6372,10 @@
 
     const/4 v2, 0x1
 
-    .line 2024
+    .line 2031
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 2082
+    .line 2089
     new-instance v3, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     iget-object v4, p0, Lorg/telegram/ui/Components/ShareAlert;->parentActivity:Landroid/app/Activity;
@@ -6294,12 +6384,12 @@
 
     invoke-direct {v3, v4, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 2083
+    .line 2090
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v4, :cond_1
 
-    .line 2084
+    .line 2091
     sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_inviteMembersBackground:I
 
     invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -6308,28 +6398,28 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setBackgroundColor(I)V
 
-    .line 2086
+    .line 2093
     :cond_1
     invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setAnimationEnabled(Z)V
 
-    .line 2087
+    .line 2094
     new-instance v4, Lorg/telegram/ui/Components/ShareAlert$26;
 
     invoke-direct {v4, p0}, Lorg/telegram/ui/Components/ShareAlert$26;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
 
     invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 2103
-    new-instance v4, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda15;
+    .line 2110
+    new-instance v4, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda18;
 
-    invoke-direct {v4, p0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
+    invoke-direct {v4, p0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setDispatchKeyEventListener(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$OnDispatchKeyEventListener;)V
 
-    .line 2108
+    .line 2115
     invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setShownFromBottom(Z)V
 
-    .line 2110
+    .line 2117
     new-instance v4, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -6340,12 +6430,12 @@
 
     invoke-direct {v4, v5, v2, v2, v6}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 2111
+    .line 2118
     iget-boolean v5, p0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v5, :cond_2
 
-    .line 2112
+    .line 2119
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_nameText:I
 
     invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
@@ -6354,7 +6444,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextColor(I)V
 
-    .line 2113
+    .line 2120
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
     invoke-virtual {p0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
@@ -6363,7 +6453,7 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setIconColor(I)V
 
-    .line 2116
+    .line 2123
     :cond_2
     iget v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -6377,7 +6467,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 2117
+    .line 2124
     sget v5, Lorg/telegram/messenger/R$string;->send_with_sound:I
 
     invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -6390,7 +6480,7 @@
 
     goto :goto_0
 
-    .line 2119
+    .line 2126
     :cond_3
     sget v5, Lorg/telegram/messenger/R$string;->SendWithoutSound:I
 
@@ -6407,7 +6497,7 @@
     :goto_0
     const/16 v5, 0xc4
 
-    .line 2120
+    .line 2127
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -6418,21 +6508,21 @@
 
     const/16 v7, 0x30
 
-    .line 2121
+    .line 2128
     invoke-static {v6, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v8
 
     invoke-virtual {v3, v4, v8}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;Landroid/widget/LinearLayout$LayoutParams;)V
 
-    .line 2122
-    new-instance v8, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda4;
+    .line 2129
+    new-instance v8, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda1;
 
-    invoke-direct {v8, p0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
+    invoke-direct {v8, p0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
 
     invoke-virtual {v4, v8}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2128
+    .line 2135
     new-instance v4, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -6443,12 +6533,12 @@
 
     invoke-direct {v4, v8, v2, v2, v9}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 2129
+    .line 2136
     iget-boolean v8, p0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v8, :cond_4
 
-    .line 2130
+    .line 2137
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_nameText:I
 
     invoke-virtual {p0, v8}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
@@ -6457,7 +6547,7 @@
 
     invoke-virtual {v4, v8}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextColor(I)V
 
-    .line 2131
+    .line 2138
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
     invoke-virtual {p0, v8}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
@@ -6466,7 +6556,7 @@
 
     invoke-virtual {v4, v8}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setIconColor(I)V
 
-    .line 2133
+    .line 2140
     :cond_4
     sget v8, Lorg/telegram/messenger/R$string;->SendMessage:I
 
@@ -6480,28 +6570,28 @@
 
     invoke-virtual {v4, v8, v9}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 2134
+    .line 2141
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
     invoke-virtual {v4, v5}, Landroid/widget/FrameLayout;->setMinimumWidth(I)V
 
-    .line 2135
+    .line 2142
     invoke-static {v6, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v3, v4, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;Landroid/widget/LinearLayout$LayoutParams;)V
 
-    .line 2136
-    new-instance v5, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda0;
+    .line 2143
+    new-instance v5, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda5;
 
-    invoke-direct {v5, p0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
+    invoke-direct {v5, p0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Components/ShareAlert;)V
 
     invoke-virtual {v4, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 2142
+    .line 2149
     iget-boolean v4, p0, Lorg/telegram/ui/Components/ShareAlert;->darkTheme:Z
 
     if-eqz v4, :cond_5
@@ -6522,53 +6612,53 @@
 
     const/4 v4, -0x2
 
-    .line 2144
+    .line 2151
     invoke-static {v6, v4}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v0, v3, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2146
+    .line 2153
     new-instance v3, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-direct {v3, v0, v4, v4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;-><init>(Landroid/view/View;II)V
 
     iput-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    .line 2147
+    .line 2154
     invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setAnimationEnabled(Z)V
 
-    .line 2148
+    .line 2155
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     sget v4, Lorg/telegram/messenger/R$style;->PopupContextAnimation2:I
 
     invoke-virtual {v3, v4}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    .line 2149
+    .line 2156
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v3, v2}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    .line 2150
+    .line 2157
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v3, v2}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 2151
+    .line 2158
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/4 v4, 0x2
 
     invoke-virtual {v3, v4}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 2152
+    .line 2159
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v3, v1}, Landroid/widget/PopupWindow;->setSoftInputMode(I)V
 
-    .line 2153
+    .line 2160
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v3}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
@@ -6577,12 +6667,12 @@
 
     invoke-virtual {v3, v2}, Landroid/view/View;->setFocusableInTouchMode(Z)V
 
-    .line 2154
+    .line 2161
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->removeScheduledOrNoSoundHint()V
 
     const/16 v3, 0x3e8
 
-    .line 2156
+    .line 2163
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -6603,17 +6693,17 @@
 
     invoke-virtual {v0, v5, v3}, Landroid/widget/LinearLayout;->measure(II)V
 
-    .line 2157
+    .line 2164
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v3, v2}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
     new-array v3, v4, [I
 
-    .line 2159
+    .line 2166
     invoke-virtual {p1, v3}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 2161
+    .line 2168
     iget-boolean v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->keyboardVisible:Z
 
     if-eqz v5, :cond_6
@@ -6636,7 +6726,7 @@
 
     if-le v5, v6, :cond_6
 
-    .line 2162
+    .line 2169
     aget v5, v3, v2
 
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
@@ -6647,7 +6737,7 @@
 
     goto :goto_2
 
-    .line 2164
+    .line 2171
     :cond_6
     aget v5, v3, v2
 
@@ -6663,7 +6753,7 @@
 
     sub-int/2addr v5, v6
 
-    .line 2166
+    .line 2173
     :goto_2
     iget-object v6, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
@@ -6693,23 +6783,23 @@
 
     invoke-virtual {v6, p1, v7, v1, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 2167
+    .line 2174
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->sendPopupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dimBehind()V
 
     const/4 v0, 0x3
 
-    .line 2168
+    .line 2175
     invoke-virtual {p1, v0, v4}, Landroid/view/View;->performHapticFeedback(II)Z
 
     return v2
 .end method
 
 .method private openForwardingPreview()V
-    .locals 11
+    .locals 14
 
-    .line 180
+    .line 182
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->parentActivity:Landroid/app/Activity;
 
     instance-of v1, v0, Lorg/telegram/ui/LaunchActivity;
@@ -6718,7 +6808,7 @@
 
     return-void
 
-    .line 183
+    .line 185
     :cond_0
     check-cast v0, Lorg/telegram/ui/LaunchActivity;
 
@@ -6730,7 +6820,7 @@
 
     return-void
 
-    .line 187
+    .line 189
     :cond_1
     invoke-interface {v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->getLastFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
 
@@ -6740,7 +6830,7 @@
 
     return-void
 
-    .line 191
+    .line 193
     :cond_2
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFragmentView()Landroid/view/View;
 
@@ -6753,10 +6843,10 @@
     :cond_3
     const/4 v1, 0x0
 
-    .line 195
+    .line 197
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setAllowNestedScroll(Z)V
 
-    .line 196
+    .line 198
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -6769,7 +6859,7 @@
 
     float-to-int v2, v2
 
-    .line 197
+    .line 199
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v4
@@ -6780,27 +6870,27 @@
 
     float-to-int v3, v4
 
-    .line 198
+    .line 200
     sget-object v4, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v2, v3, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v4
 
-    .line 199
+    .line 201
     new-instance v5, Landroid/graphics/Canvas;
 
     invoke-direct {v5, v4}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
     const v6, 0x3e2aaaab
 
-    .line 200
+    .line 202
     invoke-virtual {v5, v6, v6}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 201
+    .line 203
     invoke-virtual {v0, v5}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 202
+    .line 204
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getLeft()I
@@ -6819,14 +6909,14 @@
 
     invoke-virtual {v5, v0, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 203
+    .line 205
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->draw(Landroid/graphics/Canvas;)V
 
     const/4 v0, 0x7
 
-    .line 204
+    .line 206
     invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v2
@@ -6839,7 +6929,7 @@
 
     invoke-static {v4, v0}, Lorg/telegram/messenger/Utilities;->stackBlurBitmap(Landroid/graphics/Bitmap;I)V
 
-    .line 205
+    .line 207
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->blurredView:Landroid/widget/FrameLayout;
 
     new-instance v2, Landroid/graphics/drawable/BitmapDrawable;
@@ -6848,22 +6938,22 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 206
+    .line 208
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->blurredView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v6}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 207
+    .line 209
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->blurredView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 210
+    .line 212
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->keyboardVisible:Z
 
     if-eqz v0, :cond_5
 
-    .line 211
+    .line 213
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->getEditText()Lorg/telegram/ui/Components/EditTextCaption;
@@ -6876,7 +6966,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 212
+    .line 214
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->getEditText()Lorg/telegram/ui/Components/EditTextCaption;
@@ -6885,7 +6975,7 @@
 
     goto :goto_0
 
-    .line 214
+    .line 216
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
@@ -6898,33 +6988,43 @@
     :cond_5
     const/4 v0, 0x0
 
-    .line 219
+    .line 221
     :goto_0
-    iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingParams:Lorg/telegram/messenger/ForwardingMessagesParams;
+    iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingParams:Lorg/telegram/messenger/MessagePreviewParams;
 
     if-nez v2, :cond_6
 
-    .line 220
-    new-instance v2, Lorg/telegram/messenger/ForwardingMessagesParams;
+    .line 222
+    iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->sendingMessageObjects:Ljava/util/ArrayList;
+    invoke-virtual {v2, v1}, Landroidx/collection/LongSparseArray;->keyAt(I)J
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
-
-    invoke-virtual {v4, v1}, Landroidx/collection/LongSparseArray;->keyAt(I)J
-
-    move-result-wide v4
-
-    invoke-direct {v2, v3, v4, v5}, Lorg/telegram/messenger/ForwardingMessagesParams;-><init>(Ljava/util/ArrayList;J)V
-
-    iput-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingParams:Lorg/telegram/messenger/ForwardingMessagesParams;
-
-    const/4 v1, 0x1
-
-    .line 221
-    iput-boolean v1, v2, Lorg/telegram/messenger/ForwardingMessagesParams;->isFromShareAlert:Z
+    move-result-wide v2
 
     .line 223
+    new-instance v4, Lorg/telegram/messenger/MessagePreviewParams;
+
+    invoke-static {v2, v3}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
+
+    move-result v5
+
+    invoke-direct {v4, v5, v1}, Lorg/telegram/messenger/MessagePreviewParams;-><init>(ZZ)V
+
+    iput-object v4, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingParams:Lorg/telegram/messenger/MessagePreviewParams;
+
+    .line 224
+    iget-object v1, p0, Lorg/telegram/ui/Components/ShareAlert;->sendingMessageObjects:Ljava/util/ArrayList;
+
+    invoke-virtual {v4, v1, v2, v3}, Lorg/telegram/messenger/MessagePreviewParams;->updateForward(Ljava/util/ArrayList;J)V
+
+    .line 225
+    iget-object v1, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingParams:Lorg/telegram/messenger/MessagePreviewParams;
+
+    const/4 v2, 0x1
+
+    iput-boolean v2, v1, Lorg/telegram/messenger/MessagePreviewParams;->isFromShareAlert:Z
+
+    .line 227
     :cond_6
     new-instance v1, Lorg/telegram/ui/Components/ShareAlert$1;
 
@@ -6932,32 +7032,38 @@
 
     move-result-object v4
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingParams:Lorg/telegram/messenger/ForwardingMessagesParams;
+    const/4 v5, 0x0
 
-    const/4 v6, 0x0
+    iget-object v6, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingParams:Lorg/telegram/messenger/MessagePreviewParams;
 
     const/4 v7, 0x0
 
-    iget v8, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
+    const/4 v8, 0x0
 
-    const/4 v9, 0x0
+    iget v9, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x1
+
+    const/4 v12, 0x0
 
     move-object v2, v1
 
     move-object v3, p0
 
-    move-object v10, v0
+    move-object v13, v0
 
-    invoke-direct/range {v2 .. v10}, Lorg/telegram/ui/Components/ShareAlert$1;-><init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;Lorg/telegram/messenger/ForwardingMessagesParams;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;ILorg/telegram/ui/Components/ForwardingPreviewView$ResourcesDelegate;Landroid/widget/EditText;)V
+    invoke-direct/range {v2 .. v13}, Lorg/telegram/ui/Components/ShareAlert$1;-><init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessagePreviewParams;Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/tgnet/TLRPC$Chat;ILorg/telegram/ui/Components/MessagePreviewView$ResourcesDelegate;IZLandroid/widget/EditText;)V
 
-    iput-object v1, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/ForwardingPreviewView;
+    iput-object v1, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
-    .line 259
+    .line 263
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getContainer()Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     move-result-object v1
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/ForwardingPreviewView;
+    iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
     const/4 v3, -0x2
 
@@ -6969,7 +7075,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 261
+    .line 265
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
     :cond_7
@@ -6981,7 +7087,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 2407
+    .line 2414
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
 
     aget-object v0, v0, p1
@@ -7005,7 +7111,7 @@
 
     if-nez v0, :cond_6
 
-    .line 2408
+    .line 2415
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
 
@@ -7031,14 +7137,14 @@
 
     if-eqz p2, :cond_3
 
-    .line 2410
+    .line 2417
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
 
     aget-object v2, v2, p1
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2412
+    .line 2419
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
@@ -7046,12 +7152,12 @@
 
     if-eqz v3, :cond_4
 
-    .line 2413
+    .line 2420
     aget-object v2, v2, p1
 
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 2415
+    .line 2422
     :cond_4
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
@@ -7061,7 +7167,7 @@
 
     aput-object v3, v2, p1
 
-    .line 2416
+    .line 2423
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
     aget-object v2, v2, p1
@@ -7096,7 +7202,7 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2417
+    .line 2424
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
     aget-object v0, v0, p1
@@ -7105,7 +7211,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2418
+    .line 2425
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
     aget-object v0, v0, p1
@@ -7116,7 +7222,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2436
+    .line 2443
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert;->shadowAnimation:[Landroid/animation/AnimatorSet;
 
     aget-object p1, p2, p1
@@ -7130,7 +7236,7 @@
 .method private selectDialog(Lorg/telegram/ui/Cells/ShareDialogCell;Lorg/telegram/tgnet/TLRPC$Dialog;)V
     .locals 8
 
-    .line 1757
+    .line 1764
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
@@ -7139,11 +7245,15 @@
 
     const/16 v1, 0x8
 
-    if-eq v0, v1, :cond_0
+    if-ne v0, v1, :cond_10
 
-    return-void
+    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->parentActivity:Landroid/app/Activity;
 
-    .line 1761
+    if-nez v0, :cond_0
+
+    goto/16 :goto_5
+
+    .line 1768
     :cond_0
     iget-wide v0, p2, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
@@ -7161,7 +7271,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 1762
+    .line 1769
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -7180,7 +7290,7 @@
 
     move-result-object v0
 
-    .line 1763
+    .line 1770
     invoke-static {v0}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v5
@@ -7207,7 +7317,7 @@
 
     if-ne v5, v4, :cond_7
 
-    .line 1764
+    .line 1771
     :cond_1
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -7215,7 +7325,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1765
+    .line 1772
     sget p2, Lorg/telegram/messenger/R$string;->SendMessageTitle:I
 
     invoke-static {v3, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -7224,17 +7334,17 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1766
+    .line 1773
     iget p2, p0, Lorg/telegram/ui/Components/ShareAlert;->hasPoll:I
 
     if-ne p2, v4, :cond_4
 
-    .line 1767
+    .line 1774
     iget-boolean p2, p0, Lorg/telegram/ui/Components/ShareAlert;->isChannel:Z
 
     if-eqz p2, :cond_2
 
-    .line 1768
+    .line 1775
     sget p2, Lorg/telegram/messenger/R$string;->PublicPollCantForward:I
 
     const-string v0, "PublicPollCantForward"
@@ -7250,14 +7360,14 @@
     :cond_2
     const/16 p2, 0xa
 
-    .line 1769
+    .line 1776
     invoke-static {v0, p2}, Lorg/telegram/messenger/ChatObject;->isActionBannedByDefault(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result p2
 
     if-eqz p2, :cond_3
 
-    .line 1770
+    .line 1777
     sget p2, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedPollsAll:I
 
     const-string v0, "ErrorSendRestrictedPollsAll"
@@ -7270,7 +7380,7 @@
 
     goto :goto_0
 
-    .line 1772
+    .line 1779
     :cond_3
     sget p2, Lorg/telegram/messenger/R$string;->ErrorSendRestrictedPolls:I
 
@@ -7284,7 +7394,7 @@
 
     goto :goto_0
 
-    .line 1775
+    .line 1782
     :cond_4
     sget p2, Lorg/telegram/messenger/R$string;->ChannelCantSendMessage:I
 
@@ -7296,7 +7406,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1777
+    .line 1784
     :goto_0
     sget p2, Lorg/telegram/messenger/R$string;->OK:I
 
@@ -7306,12 +7416,12 @@
 
     invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1778
+    .line 1785
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
 
-    .line 1781
+    .line 1788
     :cond_5
     iget-wide v5, p2, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
@@ -7325,14 +7435,14 @@
 
     if-eqz v0, :cond_7
 
-    .line 1782
+    .line 1789
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert;->parentActivity:Landroid/app/Activity;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1783
+    .line 1790
     sget p2, Lorg/telegram/messenger/R$string;->SendMessageTitle:I
 
     invoke-static {v3, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -7341,12 +7451,12 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1784
+    .line 1791
     iget p2, p0, Lorg/telegram/ui/Components/ShareAlert;->hasPoll:I
 
     if-eqz p2, :cond_6
 
-    .line 1785
+    .line 1792
     sget p2, Lorg/telegram/messenger/R$string;->PollCantForwardSecretChat:I
 
     const-string v0, "PollCantForwardSecretChat"
@@ -7359,7 +7469,7 @@
 
     goto :goto_1
 
-    .line 1787
+    .line 1794
     :cond_6
     sget p2, Lorg/telegram/messenger/R$string;->InvoiceCantForwardSecretChat:I
 
@@ -7371,7 +7481,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1789
+    .line 1796
     :goto_1
     sget p2, Lorg/telegram/messenger/R$string;->OK:I
 
@@ -7381,12 +7491,12 @@
 
     invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 1790
+    .line 1797
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->show()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
 
-    .line 1793
+    .line 1800
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
@@ -7402,30 +7512,30 @@
 
     if-ltz v0, :cond_9
 
-    .line 1794
+    .line 1801
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
     iget-wide v3, p2, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
     invoke-virtual {v0, v3, v4}, Landroidx/collection/LongSparseArray;->remove(J)V
 
-    .line 1795
+    .line 1802
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogTopics:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     if-eqz p1, :cond_8
 
-    .line 1797
+    .line 1804
     invoke-virtual {p1, v1, v2}, Lorg/telegram/ui/Cells/ShareDialogCell;->setChecked(ZZ)V
 
-    .line 1799
+    .line 1806
     :cond_8
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/ShareAlert;->updateSelectedCount(I)V
 
     goto/16 :goto_4
 
-    .line 1801
+    .line 1808
     :cond_9
     iget-wide v5, p2, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
@@ -7477,10 +7587,10 @@
 
     if-eqz v0, :cond_b
 
-    .line 1802
+    .line 1809
     iput-object p2, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedTopicDialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 1803
+    .line 1810
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsLayoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     iget v3, p0, Lorg/telegram/ui/Components/ShareAlert;->scrollOffsetY:I
@@ -7495,24 +7605,24 @@
 
     invoke-virtual {v0, v1, v3}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 1804
+    .line 1811
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    .line 1805
+    .line 1812
     new-instance v3, Lorg/telegram/ui/Components/ShareAlert$24;
 
     invoke-direct {v3, p0, p2, v0, p1}, Lorg/telegram/ui/Components/ShareAlert$24;-><init>(Lorg/telegram/ui/Components/ShareAlert;Lorg/telegram/tgnet/TLRPC$Dialog;Ljava/util/concurrent/atomic/AtomicReference;Lorg/telegram/ui/Cells/ShareDialogCell;)V
 
-    .line 1862
+    .line 1869
     new-instance p1, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda12;
 
     invoke-direct {p1, p0, v0, v3, p2}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/Components/ShareAlert;Ljava/util/concurrent/atomic/AtomicReference;Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;Lorg/telegram/tgnet/TLRPC$Dialog;)V
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 1866
+    .line 1873
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -7523,7 +7633,7 @@
 
     invoke-virtual {p1, v3, v4}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1867
+    .line 1874
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -7544,7 +7654,7 @@
 
     if-eqz p1, :cond_a
 
-    .line 1868
+    .line 1875
     sget p1, Lorg/telegram/messenger/NotificationCenter;->topicsDidLoaded:I
 
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
@@ -7565,7 +7675,7 @@
 
     goto :goto_2
 
-    .line 1870
+    .line 1877
     :cond_a
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -7583,7 +7693,7 @@
 
     invoke-virtual {p1, v1, v2}, Lorg/telegram/messenger/TopicsController;->loadTopics(J)V
 
-    .line 1871
+    .line 1878
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     move-result-object p1
@@ -7597,7 +7707,7 @@
     :goto_2
     return-void
 
-    .line 1876
+    .line 1883
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
@@ -7607,14 +7717,14 @@
 
     if-eqz p1, :cond_c
 
-    .line 1878
+    .line 1885
     invoke-virtual {p1, v2, v2}, Lorg/telegram/ui/Cells/ShareDialogCell;->setChecked(ZZ)V
 
-    .line 1880
+    .line 1887
     :cond_c
     invoke-virtual {p0, v4}, Lorg/telegram/ui/Components/ShareAlert;->updateSelectedCount(I)V
 
-    .line 1881
+    .line 1888
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -7623,12 +7733,12 @@
 
     iget-wide v3, p1, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    .line 1882
+    .line 1889
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ShareAlert;->searchIsVisible:Z
 
     if-eqz p1, :cond_f
 
-    .line 1883
+    .line 1890
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;->access$12100(Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;)Landroidx/collection/LongSparseArray;
@@ -7645,7 +7755,7 @@
 
     if-nez p1, :cond_d
 
-    .line 1885
+    .line 1892
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;->access$12100(Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;)Landroidx/collection/LongSparseArray;
@@ -7656,7 +7766,7 @@
 
     invoke-virtual {p1, v3, v4, p2}, Landroidx/collection/LongSparseArray;->put(JLjava/lang/Object;)V
 
-    .line 1886
+    .line 1893
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;->access$10500(Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;)Ljava/util/ArrayList;
@@ -7679,7 +7789,7 @@
 
     goto :goto_3
 
-    .line 1887
+    .line 1894
     :cond_d
     iget-wide v5, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->id:J
 
@@ -7687,7 +7797,7 @@
 
     if-eqz p2, :cond_e
 
-    .line 1888
+    .line 1895
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;->access$10500(Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;)Ljava/util/ArrayList;
@@ -7696,7 +7806,7 @@
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 1889
+    .line 1896
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;->access$10500(Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;)Ljava/util/ArrayList;
@@ -7717,17 +7827,17 @@
 
     invoke-virtual {p2, v0, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 1891
+    .line 1898
     :cond_e
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 1892
+    .line 1899
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ShareAlert;->updateSearchAdapter:Z
 
-    .line 1893
+    .line 1900
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert$SearchField;->access$000(Lorg/telegram/ui/Components/ShareAlert$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -7738,15 +7848,15 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1894
+    .line 1901
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/ShareAlert;->checkCurrentList(Z)V
 
-    .line 1895
+    .line 1902
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->searchView:Lorg/telegram/ui/Components/ShareAlert$SearchField;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ShareAlert$SearchField;->hideKeyboard()V
 
-    .line 1898
+    .line 1905
     :cond_f
     :goto_4
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->searchAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareSearchAdapter;
@@ -7757,7 +7867,7 @@
 
     if-eqz p1, :cond_10
 
-    .line 1899
+    .line 1906
     invoke-virtual {p1}, Lorg/telegram/ui/Adapters/DialogsSearchAdapter$CategoryAdapterRecycler;->getItemCount()I
 
     move-result p2
@@ -7765,13 +7875,14 @@
     invoke-virtual {p1, v1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeChanged(II)V
 
     :cond_10
+    :goto_5
     return-void
 .end method
 
 .method private showCommentTextView(Z)Z
     .locals 10
 
-    .line 2464
+    .line 2471
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -7796,16 +7907,16 @@
 
     return v1
 
-    .line 2467
+    .line 2474
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->animatorSet:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_2
 
-    .line 2468
+    .line 2475
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 2470
+    .line 2477
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
@@ -7823,7 +7934,7 @@
     :goto_1
     invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 2471
+    .line 2478
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->getEditText()Lorg/telegram/ui/Components/EditTextCaption;
@@ -7836,7 +7947,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 2472
+    .line 2479
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->getEditText()Lorg/telegram/ui/Components/EditTextCaption;
@@ -7845,7 +7956,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 2474
+    .line 2481
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
@@ -7853,26 +7964,26 @@
 
     if-eqz p1, :cond_6
 
-    .line 2477
+    .line 2484
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_5
 
-    .line 2478
+    .line 2485
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2481
+    .line 2488
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2482
+    .line 2489
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 2484
+    .line 2491
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->pickerBottomLayout:Landroid/widget/TextView;
 
@@ -7889,11 +8000,11 @@
     :cond_7
     move v4, v2
 
-    .line 2485
+    .line 2492
     :goto_2
     invoke-static {v0, v4}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
 
-    .line 2487
+    .line 2494
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->sharesCountLayout:Landroid/widget/LinearLayout;
 
@@ -7906,11 +8017,11 @@
     :cond_9
     move v3, v2
 
-    .line 2488
+    .line 2495
     :goto_3
     invoke-static {v0, v3}, Landroidx/core/view/ViewCompat;->setImportantForAccessibility(Landroid/view/View;I)V
 
-    .line 2490
+    .line 2497
     :cond_a
     new-instance v0, Landroid/animation/AnimatorSet;
 
@@ -7918,12 +8029,12 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->animatorSet:Landroid/animation/AnimatorSet;
 
-    .line 2491
+    .line 2498
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2492
+    .line 2499
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
     sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -7952,7 +8063,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2493
+    .line 2500
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
 
     sget-object v4, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -7979,7 +8090,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2494
+    .line 2501
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
 
     sget-object v4, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
@@ -8004,7 +8115,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2495
+    .line 2502
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->writeButtonContainer:Landroid/widget/FrameLayout;
 
     sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -8029,12 +8140,12 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2497
+    .line 2504
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     if-eqz v3, :cond_12
 
-    .line 2498
+    .line 2505
     sget-object v4, Landroid/view/View;->SCALE_X:Landroid/util/Property;
 
     new-array v5, v2, [F
@@ -8057,7 +8168,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2499
+    .line 2506
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     sget-object v4, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
@@ -8082,7 +8193,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2500
+    .line 2507
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingOptionsButton:Landroid/widget/ImageView;
 
     sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -8107,7 +8218,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2503
+    .line 2510
     :cond_12
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
@@ -8133,7 +8244,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2504
+    .line 2511
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
     sget-object v4, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
@@ -8153,7 +8264,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2505
+    .line 2512
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
     sget-object v4, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -8178,7 +8289,7 @@
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2506
+    .line 2513
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->pickerBottomLayout:Landroid/widget/TextView;
 
     if-eqz v3, :cond_16
@@ -8189,7 +8300,7 @@
 
     if-eqz v3, :cond_18
 
-    .line 2507
+    .line 2514
     :cond_16
     iget-object v3, p0, Lorg/telegram/ui/Components/ShareAlert;->shadow:[Landroid/view/View;
 
@@ -8212,13 +8323,13 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2510
+    .line 2517
     :cond_18
     iget-object v1, p0, Lorg/telegram/ui/Components/ShareAlert;->animatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1, v0}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 2511
+    .line 2518
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->animatorSet:Landroid/animation/AnimatorSet;
 
     new-instance v1, Landroid/view/animation/DecelerateInterpolator;
@@ -8227,14 +8338,14 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2512
+    .line 2519
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->animatorSet:Landroid/animation/AnimatorSet;
 
     const-wide/16 v3, 0xb4
 
     invoke-virtual {v0, v3, v4}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2513
+    .line 2520
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->animatorSet:Landroid/animation/AnimatorSet;
 
     new-instance v1, Lorg/telegram/ui/Components/ShareAlert$28;
@@ -8243,7 +8354,7 @@
 
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2537
+    .line 2544
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->animatorSet:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
@@ -8254,14 +8365,14 @@
 .method private updateLayout()V
     .locals 10
 
-    .line 2339
+    .line 2346
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ShareAlert;->panTranslationMoveLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 2344
+    .line 2351
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchIsVisible:Z
 
@@ -8274,7 +8385,7 @@
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 2346
+    .line 2353
     :goto_0
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -8287,14 +8398,14 @@
     :cond_2
     const/4 v1, 0x0
 
-    .line 2349
+    .line 2356
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     move v3, v1
 
-    .line 2350
+    .line 2357
     :goto_1
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -8302,7 +8413,7 @@
 
     if-ge v3, v4, :cond_4
 
-    .line 2351
+    .line 2358
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
@@ -8317,7 +8428,7 @@
 
     if-ge v4, v5, :cond_3
 
-    .line 2352
+    .line 2359
     invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -8327,7 +8438,7 @@
 
     goto :goto_1
 
-    .line 2355
+    .line 2362
     :cond_4
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/RecyclerView;->findContainingViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
@@ -8335,7 +8446,7 @@
 
     check-cast v0, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
-    .line 2357
+    .line 2364
     invoke-virtual {v2}, Landroid/view/View;->getTop()I
 
     move-result v3
@@ -8352,7 +8463,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 2358
+    .line 2365
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v5
@@ -8375,35 +8486,35 @@
 
     if-eqz v0, :cond_6
 
-    .line 2359
+    .line 2366
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v0
 
     if-nez v0, :cond_6
 
-    .line 2360
+    .line 2367
     invoke-virtual {v2}, Landroid/view/View;->getTop()I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/ShareAlert;->lastOffset:I
 
-    .line 2362
+    .line 2369
     invoke-direct {p0, v1, v1}, Lorg/telegram/ui/Components/ShareAlert;->runShadowAnimation(IZ)V
 
     goto :goto_3
 
-    .line 2364
+    .line 2371
     :cond_6
     iput v6, p0, Lorg/telegram/ui/Components/ShareAlert;->lastOffset:I
 
-    .line 2365
+    .line 2372
     invoke-direct {p0, v1, v7}, Lorg/telegram/ui/Components/ShareAlert;->runShadowAnimation(IZ)V
 
     move v3, v5
 
-    .line 2368
+    .line 2375
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -8413,10 +8524,10 @@
 
     if-nez v0, :cond_c
 
-    .line 2369
+    .line 2376
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 2371
+    .line 2378
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
@@ -8425,7 +8536,7 @@
 
     return-void
 
-    .line 2374
+    .line 2381
     :cond_7
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
@@ -8433,7 +8544,7 @@
 
     move v5, v1
 
-    .line 2375
+    .line 2382
     :goto_4
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -8441,7 +8552,7 @@
 
     if-ge v5, v8, :cond_9
 
-    .line 2376
+    .line 2383
     invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v8
@@ -8456,7 +8567,7 @@
 
     if-ge v8, v9, :cond_8
 
-    .line 2377
+    .line 2384
     invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -8466,7 +8577,7 @@
 
     goto :goto_4
 
-    .line 2380
+    .line 2387
     :cond_9
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/RecyclerView;->findContainingViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
@@ -8474,7 +8585,7 @@
 
     check-cast v0, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
-    .line 2382
+    .line 2389
     invoke-virtual {v2}, Landroid/view/View;->getTop()I
 
     move-result v5
@@ -8489,7 +8600,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 2383
+    .line 2390
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v4
@@ -8508,35 +8619,35 @@
 
     if-eqz v0, :cond_b
 
-    .line 2384
+    .line 2391
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v0
 
     if-nez v0, :cond_b
 
-    .line 2385
+    .line 2392
     invoke-virtual {v2}, Landroid/view/View;->getTop()I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/ShareAlert;->lastOffset:I
 
-    .line 2387
+    .line 2394
     invoke-direct {p0, v1, v1}, Lorg/telegram/ui/Components/ShareAlert;->runShadowAnimation(IZ)V
 
     goto :goto_6
 
-    .line 2389
+    .line 2396
     :cond_b
     iput v6, p0, Lorg/telegram/ui/Components/ShareAlert;->lastOffset:I
 
-    .line 2390
+    .line 2397
     invoke-direct {p0, v1, v7}, Lorg/telegram/ui/Components/ShareAlert;->runShadowAnimation(IZ)V
 
     move v5, v4
 
-    .line 2392
+    .line 2399
     :goto_6
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -8548,16 +8659,16 @@
 
     move-result v3
 
-    .line 2395
+    .line 2402
     :cond_c
     iget v0, p0, Lorg/telegram/ui/Components/ShareAlert;->scrollOffsetY:I
 
     if-eq v0, v3, :cond_d
 
-    .line 2396
+    .line 2403
     iput v0, p0, Lorg/telegram/ui/Components/ShareAlert;->previousScrollOffsetY:I
 
-    .line 2397
+    .line 2404
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     int-to-float v1, v3
@@ -8572,7 +8683,7 @@
 
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/RecyclerView;->setTopGlowOffset(I)V
 
-    .line 2398
+    .line 2405
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget v2, p0, Lorg/telegram/ui/Components/ShareAlert;->currentPanTranslationY:F
@@ -8585,7 +8696,7 @@
 
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/RecyclerView;->setTopGlowOffset(I)V
 
-    .line 2399
+    .line 2406
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->topicsGridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget v2, p0, Lorg/telegram/ui/Components/ShareAlert;->currentPanTranslationY:F
@@ -8598,7 +8709,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setTopGlowOffset(I)V
 
-    .line 2400
+    .line 2407
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout:Landroid/widget/FrameLayout;
 
     iget v1, p0, Lorg/telegram/ui/Components/ShareAlert;->scrollOffsetY:I
@@ -8611,7 +8722,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 2401
+    .line 2408
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->searchEmptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
     iget v1, p0, Lorg/telegram/ui/Components/ShareAlert;->scrollOffsetY:I
@@ -8624,7 +8735,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 2402
+    .line 2409
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->invalidate()V
@@ -8646,12 +8757,12 @@
 .method protected canDismissWithTouchOutside()Z
     .locals 1
 
-    .line 141
-    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/ForwardingPreviewView;
+    .line 143
+    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
     if-eqz v0, :cond_1
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->isShowing()Z
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/MessagePreviewView;->isShowing()Z
 
     move-result v0
 
@@ -8675,20 +8786,20 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 2322
+    .line 2329
     sget p2, Lorg/telegram/messenger/NotificationCenter;->dialogsNeedReload:I
 
     if-ne p1, p2, :cond_1
 
-    .line 2323
+    .line 2330
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->listAdapter:Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;
 
     if-eqz p1, :cond_0
 
-    .line 2324
+    .line 2331
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ShareAlert$ShareDialogsAdapter;->fetchDialogs()V
 
-    .line 2326
+    .line 2333
     :cond_0
     iget p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -8705,12 +8816,12 @@
 .method public dismiss()V
     .locals 2
 
-    .line 2567
+    .line 2574
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     if-eqz v0, :cond_0
 
-    .line 2568
+    .line 2575
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->getEditText()Lorg/telegram/ui/Components/EditTextCaption;
 
     move-result-object v0
@@ -8720,13 +8831,13 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 2570
+    .line 2577
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ShareAlert;->fullyShown:Z
 
-    .line 2571
+    .line 2578
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
-    .line 2572
+    .line 2579
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -8743,15 +8854,15 @@
 .method public dismissInternal()V
     .locals 1
 
-    .line 2295
+    .line 2302
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissInternal()V
 
-    .line 2296
+    .line 2303
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     if-eqz v0, :cond_0
 
-    .line 2297
+    .line 2304
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EditTextEmoji;->onDestroy()V
 
     :cond_0
@@ -8761,7 +8872,7 @@
 .method public getContainerViewHeight()I
     .locals 2
 
-    .line 2014
+    .line 2021
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -8778,38 +8889,38 @@
 .method public onBackPressed()V
     .locals 2
 
-    .line 2304
-    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/ForwardingPreviewView;
+    .line 2311
+    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/ForwardingPreviewView;->isShowing()Z
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/MessagePreviewView;->isShowing()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 2305
-    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/ForwardingPreviewView;
+    .line 2312
+    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ForwardingPreviewView;->dismiss(Z)V
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/MessagePreviewView;->dismiss(Z)V
 
     return-void
 
-    .line 2309
+    .line 2316
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedTopicDialog:Lorg/telegram/tgnet/TLRPC$Dialog;
 
     if-eqz v0, :cond_1
 
-    .line 2310
+    .line 2317
     invoke-direct {p0}, Lorg/telegram/ui/Components/ShareAlert;->collapseTopics()V
 
     return-void
 
-    .line 2313
+    .line 2320
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
@@ -8821,7 +8932,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 2314
+    .line 2321
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     const/4 v1, 0x1
@@ -8830,7 +8941,7 @@
 
     return-void
 
-    .line 2317
+    .line 2324
     :cond_2
     invoke-super {p0}, Landroid/app/Dialog;->onBackPressed()V
 
@@ -8844,7 +8955,7 @@
 
     sub-int/2addr p5, p3
 
-    .line 164
+    .line 166
     iget-object p3, p0, Lorg/telegram/ui/Components/ShareAlert;->blurredView:Landroid/widget/FrameLayout;
 
     const/4 v0, 0x1
@@ -8855,18 +8966,18 @@
 
     add-int/2addr p4, p2
 
-    .line 165
+    .line 167
     invoke-virtual {p3, p2, v1, p4, p5}, Landroid/widget/FrameLayout;->layout(IIII)V
 
     return v0
 
-    .line 168
+    .line 170
     :cond_0
-    iget-object p3, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/ForwardingPreviewView;
+    iget-object p3, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
     if-ne p1, p3, :cond_1
 
-    .line 169
+    .line 171
     sget p1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     add-int/2addr p4, p2
@@ -8882,7 +8993,7 @@
 .method public onCustomMeasure(Landroid/view/View;II)Z
     .locals 3
 
-    .line 146
+    .line 148
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->blurredView:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x1
@@ -8891,7 +9002,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 147
+    .line 149
     invoke-static {p2, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
@@ -8904,13 +9015,13 @@
 
     return v1
 
-    .line 150
+    .line 152
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/ForwardingPreviewView;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->forwardingPreviewView:Lorg/telegram/ui/Components/MessagePreviewView;
 
     if-ne p1, v0, :cond_1
 
-    .line 152
+    .line 154
     invoke-static {p2, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
@@ -8919,12 +9030,12 @@
 
     sub-int/2addr p3, p2
 
-    .line 153
+    .line 155
     invoke-static {p3, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
 
-    .line 151
+    .line 153
     invoke-virtual {v0, p1, p2}, Landroid/widget/FrameLayout;->measure(II)V
 
     return v1
@@ -8960,7 +9071,7 @@
 
     move v2, v1
 
-    .line 2174
+    .line 2181
     :goto_0
     iget-object v3, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
@@ -8972,14 +9083,14 @@
 
     if-ge v2, v3, :cond_2
 
-    .line 2175
+    .line 2182
     iget-object v3, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v3, v2}, Landroidx/collection/LongSparseArray;->keyAt(I)J
 
     move-result-wide v5
 
-    .line 2176
+    .line 2183
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v3
@@ -9024,7 +9135,7 @@
     :cond_2
     new-array v2, v4, [Ljava/lang/CharSequence;
 
-    .line 2181
+    .line 2188
     iget-object v3, v0, Lorg/telegram/ui/Components/ShareAlert;->commentTextView:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/EditTextEmoji;->getText()Landroid/text/Editable;
@@ -9033,7 +9144,7 @@
 
     aput-object v3, v2, v1
 
-    .line 2182
+    .line 2189
     iget v3, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -9044,21 +9155,21 @@
 
     move-result-object v3
 
-    .line 2183
+    .line 2190
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->sendingMessageObjects:Ljava/util/ArrayList;
 
     const/4 v15, 0x0
 
     if-eqz v5, :cond_e
 
-    .line 2184
+    .line 2191
     new-instance v14, Ljava/util/ArrayList;
 
     invoke-direct {v14}, Ljava/util/ArrayList;-><init>()V
 
     move v13, v1
 
-    .line 2185
+    .line 2192
     :goto_2
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
@@ -9068,14 +9179,14 @@
 
     if-ge v13, v5, :cond_a
 
-    .line 2186
+    .line 2193
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v5, v13}, Landroidx/collection/LongSparseArray;->keyAt(I)J
 
     move-result-wide v11
 
-    .line 2187
+    .line 2194
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogTopics:Ljava/util/Map;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
@@ -9092,7 +9203,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 2188
+    .line 2195
     new-instance v6, Lorg/telegram/messenger/MessageObject;
 
     iget v7, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
@@ -9111,10 +9222,10 @@
     :goto_3
     if-eqz v10, :cond_4
 
-    .line 2190
+    .line 2197
     iput-boolean v4, v10, Lorg/telegram/messenger/MessageObject;->isTopicMainMessage:Z
 
-    .line 2192
+    .line 2199
     :cond_4
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
@@ -9132,7 +9243,7 @@
 
     if-lez v5, :cond_6
 
-    .line 2193
+    .line 2200
     iget v5, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
@@ -9224,7 +9335,7 @@
 
     move-object/from16 v30, v14
 
-    .line 2195
+    .line 2202
     :goto_5
     iget v1, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -9242,7 +9353,7 @@
 
     const/16 v23, 0x0
 
-    iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->forwardingParams:Lorg/telegram/messenger/ForwardingMessagesParams;
+    iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->forwardingParams:Lorg/telegram/messenger/MessagePreviewParams;
 
     const/16 v26, 0x1
 
@@ -9254,13 +9365,13 @@
 
     move-object/from16 v25, v5
 
-    invoke-virtual/range {v16 .. v26}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Ljava/util/ArrayList;JZZZILorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/ForwardingMessagesParams;Z)I
+    invoke-virtual/range {v16 .. v26}, Lorg/telegram/messenger/SendMessagesHelper;->sendMessage(Ljava/util/ArrayList;JZZZILorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessagePreviewParams;Z)I
 
     move-result v1
 
     if-eqz v1, :cond_7
 
-    .line 2197
+    .line 2204
     invoke-static/range {v27 .. v28}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
@@ -9274,7 +9385,7 @@
     :cond_7
     move-object/from16 v6, v30
 
-    .line 2199
+    .line 2206
     :goto_6
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
@@ -9284,7 +9395,7 @@
 
     if-ne v5, v4, :cond_8
 
-    .line 2200
+    .line 2207
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     const/4 v15, 0x0
@@ -9310,7 +9421,7 @@
     :cond_a
     move-object v6, v14
 
-    .line 2207
+    .line 2214
     :goto_7
     invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -9334,7 +9445,7 @@
 
     move-result-wide v2
 
-    .line 2208
+    .line 2215
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v5, v2, v3}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -9343,21 +9454,21 @@
 
     check-cast v5, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 2209
+    .line 2216
     iget-object v6, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v6, v2, v3}, Landroidx/collection/LongSparseArray;->remove(J)V
 
     if-eqz v5, :cond_b
 
-    .line 2211
+    .line 2218
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogTopics:Ljava/util/Map;
 
     invoke-interface {v2, v5}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_8
 
-    .line 2214
+    .line 2221
     :cond_c
     iget-object v1, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
@@ -9367,7 +9478,7 @@
 
     if-nez v1, :cond_1a
 
-    .line 2215
+    .line 2222
     iget-object v1, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/ShareAlert;->sendingMessageObjects:Ljava/util/ArrayList;
@@ -9407,13 +9518,13 @@
 
     goto/16 :goto_12
 
-    .line 2219
+    .line 2226
     :cond_e
     iget-object v1, v0, Lorg/telegram/ui/Components/ShareAlert;->switchView:Lorg/telegram/ui/Components/ShareAlert$SwitchView;
 
     if-eqz v1, :cond_f
 
-    .line 2220
+    .line 2227
     invoke-static {v1}, Lorg/telegram/ui/Components/ShareAlert$SwitchView;->access$12300(Lorg/telegram/ui/Components/ShareAlert$SwitchView;)I
 
     move-result v1
@@ -9423,15 +9534,15 @@
     :cond_f
     const/4 v1, 0x0
 
-    .line 2224
+    .line 2231
     :goto_9
-    iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     if-eqz v5, :cond_15
 
     const/4 v14, 0x0
 
-    .line 2225
+    .line 2232
     :goto_a
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
@@ -9441,14 +9552,14 @@
 
     if-ge v14, v5, :cond_19
 
-    .line 2226
+    .line 2233
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v5, v14}, Landroidx/collection/LongSparseArray;->keyAt(I)J
 
     move-result-wide v6
 
-    .line 2227
+    .line 2234
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogTopics:Ljava/util/Map;
 
     iget-object v8, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
@@ -9465,7 +9576,7 @@
 
     if-eqz v5, :cond_10
 
-    .line 2228
+    .line 2235
     new-instance v8, Lorg/telegram/messenger/MessageObject;
 
     iget v9, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
@@ -9485,13 +9596,13 @@
 
     move-object v9, v15
 
-    .line 2231
+    .line 2238
     :goto_b
-    iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     if-nez v5, :cond_13
 
-    .line 2232
+    .line 2239
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -9508,7 +9619,7 @@
 
     if-lez v5, :cond_12
 
-    .line 2233
+    .line 2240
     aget-object v5, v2, v10
 
     if-nez v5, :cond_11
@@ -9572,7 +9683,7 @@
 
     move-object/from16 v22, v15
 
-    .line 2235
+    .line 2242
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->sendingText:[Ljava/lang/String;
 
     aget-object v27, v5, v1
@@ -9614,7 +9725,7 @@
 
     move-object/from16 v22, v15
 
-    .line 2238
+    .line 2245
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -9637,7 +9748,7 @@
 
     if-eqz v8, :cond_14
 
-    .line 2239
+    .line 2246
     iget v8, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v8}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
@@ -9711,17 +9822,17 @@
 
     move/from16 v37, p1
 
-    .line 2241
+    .line 2248
     invoke-static/range {v27 .. v41}, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->of(Ljava/lang/String;JLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$WebPage;ZLjava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$ReplyMarkup;Ljava/util/HashMap;ZILorg/telegram/messenger/MessageObject$SendAnimationData;ZLjava/lang/String;)Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;
 
     move-result-object v5
 
-    .line 2242
-    iget-object v6, v0, Lorg/telegram/ui/Components/ShareAlert;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    .line 2249
+    iget-object v6, v0, Lorg/telegram/ui/Components/ShareAlert;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    iput-object v6, v5, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->sendingStory:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object v6, v5, Lorg/telegram/messenger/SendMessagesHelper$SendMessageParams;->sendingStory:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    .line 2244
+    .line 2251
     :goto_d
     iget v6, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -9740,7 +9851,7 @@
     :cond_15
     move-object/from16 v22, v15
 
-    .line 2246
+    .line 2253
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->sendingText:[Ljava/lang/String;
 
     aget-object v5, v5, v1
@@ -9749,7 +9860,7 @@
 
     const/4 v15, 0x0
 
-    .line 2247
+    .line 2254
     :goto_e
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
@@ -9759,14 +9870,14 @@
 
     if-ge v15, v5, :cond_19
 
-    .line 2248
+    .line 2255
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v5, v15}, Landroidx/collection/LongSparseArray;->keyAt(I)J
 
     move-result-wide v13
 
-    .line 2249
+    .line 2256
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogTopics:Ljava/util/Map;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
@@ -9783,7 +9894,7 @@
 
     if-eqz v5, :cond_16
 
-    .line 2250
+    .line 2257
     new-instance v6, Lorg/telegram/messenger/MessageObject;
 
     iget v7, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
@@ -9803,7 +9914,7 @@
 
     move-object/from16 v31, v22
 
-    .line 2252
+    .line 2259
     :goto_f
     iget-object v5, v0, Lorg/telegram/ui/Components/ShareAlert;->frameLayout2:Landroid/widget/FrameLayout;
 
@@ -9821,7 +9932,7 @@
 
     if-lez v5, :cond_18
 
-    .line 2253
+    .line 2260
     iget v5, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/messenger/SendMessagesHelper;->getInstance(I)Lorg/telegram/messenger/SendMessagesHelper;
@@ -9901,7 +10012,7 @@
 
     move/from16 v26, v15
 
-    .line 2255
+    .line 2262
     :goto_11
     iget v4, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
@@ -9949,7 +10060,7 @@
 
     goto/16 :goto_e
 
-    .line 2258
+    .line 2265
     :cond_19
     iget-object v1, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
@@ -9971,17 +10082,17 @@
 
     invoke-virtual {v0, v1, v3, v2}, Lorg/telegram/ui/Components/ShareAlert;->onSend(Landroidx/collection/LongSparseArray;ILorg/telegram/tgnet/TLRPC$TL_forumTopic;)V
 
-    .line 2260
+    .line 2267
     :cond_1a
     :goto_12
     iget-object v1, v0, Lorg/telegram/ui/Components/ShareAlert;->delegate:Lorg/telegram/ui/Components/ShareAlert$ShareAlertDelegate;
 
     if-eqz v1, :cond_1b
 
-    .line 2261
+    .line 2268
     invoke-interface {v1}, Lorg/telegram/ui/Components/ShareAlert$ShareAlertDelegate;->didShare()V
 
-    .line 2263
+    .line 2270
     :cond_1b
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/ShareAlert;->dismiss()V
 
@@ -9991,17 +10102,17 @@
 .method public setDelegate(Lorg/telegram/ui/Components/ShareAlert$ShareAlertDelegate;)V
     .locals 0
 
-    .line 2290
+    .line 2297
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->delegate:Lorg/telegram/ui/Components/ShareAlert$ShareAlertDelegate;
 
     return-void
 .end method
 
-.method public setStoryToShare(Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public setStoryToShare(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 0
 
-    .line 342
-    iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->storyItem:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    .line 346
+    iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->storyItem:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     return-void
 .end method
@@ -10009,7 +10120,7 @@
 .method public updateSelectedCount(I)V
     .locals 11
 
-    .line 2542
+    .line 2549
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->size()I
@@ -10022,22 +10133,22 @@
 
     if-nez v0, :cond_0
 
-    .line 2543
+    .line 2550
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setPivotX(F)V
 
-    .line 2544
+    .line 2551
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setPivotY(F)V
 
-    .line 2545
+    .line 2552
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/ShareAlert;->showCommentTextView(Z)Z
 
     goto/16 :goto_2
 
-    .line 2547
+    .line 2554
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
@@ -10045,7 +10156,7 @@
 
     const/4 v0, 0x1
 
-    .line 2548
+    .line 2555
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/ShareAlert;->showCommentTextView(Z)Z
 
     move-result v3
@@ -10054,7 +10165,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 2549
+    .line 2556
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
     const/16 v3, 0x15
@@ -10067,7 +10178,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setPivotX(F)V
 
-    .line 2550
+    .line 2557
     iget-object v2, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
     const/16 v3, 0xc
@@ -10080,7 +10191,7 @@
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setPivotY(F)V
 
-    .line 2551
+    .line 2558
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
@@ -10089,7 +10200,7 @@
 
     new-array v4, v3, [Landroid/animation/Animator;
 
-    .line 2552
+    .line 2559
     iget-object v5, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
     sget-object v6, Landroid/view/View;->SCALE_X:Landroid/util/Property;
@@ -10116,7 +10227,7 @@
 
     aput v10, v7, v0
 
-    .line 2553
+    .line 2560
     invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
@@ -10141,17 +10252,17 @@
 
     aput v10, v3, v0
 
-    .line 2554
+    .line 2561
     invoke-static {v5, v6, v3}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p1
 
     aput-object p1, v4, v0
 
-    .line 2552
+    .line 2559
     invoke-virtual {v2, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2555
+    .line 2562
     new-instance p1, Landroid/view/animation/OvershootInterpolator;
 
     invoke-direct {p1}, Landroid/view/animation/OvershootInterpolator;-><init>()V
@@ -10160,21 +10271,21 @@
 
     const-wide/16 v0, 0xb4
 
-    .line 2556
+    .line 2563
     invoke-virtual {v2, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2557
+    .line 2564
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->start()V
 
     goto :goto_2
 
-    .line 2559
+    .line 2566
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setPivotX(F)V
 
-    .line 2560
+    .line 2567
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert;->selectedCountView:Landroid/view/View;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setPivotY(F)V

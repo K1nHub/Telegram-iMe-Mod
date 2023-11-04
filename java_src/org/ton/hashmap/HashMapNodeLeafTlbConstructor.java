@@ -12,7 +12,7 @@ import org.ton.tlb.TlbConstructor;
 public final class HashMapNodeLeafTlbConstructor<X> extends TlbConstructor<HmnLeaf<X>> {
 
     /* renamed from: x */
-    private final TlbCodec<X> f2076x;
+    private final TlbCodec<X> f2088x;
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer
     public /* bridge */ /* synthetic */ void storeTlb(CellBuilder cellBuilder, Object obj) {
@@ -23,18 +23,18 @@ public final class HashMapNodeLeafTlbConstructor<X> extends TlbConstructor<HmnLe
     public HashMapNodeLeafTlbConstructor(TlbCodec<X> x) {
         super("hmn_leaf#_ {X:Type} value:X = HashmapNode 0 X;", BitString.Companion.empty());
         Intrinsics.checkNotNullParameter(x, "x");
-        this.f2076x = x;
+        this.f2088x = x;
     }
 
     public void storeTlb(CellBuilder cellBuilder, HmnLeaf<X> value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        this.f2076x.storeTlb(cellBuilder, value.getValue());
+        this.f2088x.storeTlb(cellBuilder, value.getValue());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public HmnLeaf<X> loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new HmnLeaf<>(this.f2076x.loadTlb(cellSlice));
+        return new HmnLeaf<>(this.f2088x.loadTlb(cellSlice));
     }
 }

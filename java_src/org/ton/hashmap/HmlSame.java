@@ -20,10 +20,10 @@ public final class HmlSame implements HmLabel {
     public static final Companion Companion = new Companion(null);
 
     /* renamed from: n */
-    private final int f2081n;
+    private final int f2093n;
 
     /* renamed from: v */
-    private final boolean f2082v;
+    private final boolean f2094v;
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -31,7 +31,7 @@ public final class HmlSame implements HmLabel {
         }
         if (obj instanceof HmlSame) {
             HmlSame hmlSame = (HmlSame) obj;
-            return this.f2082v == hmlSame.f2082v && this.f2081n == hmlSame.f2081n;
+            return this.f2094v == hmlSame.f2094v && this.f2093n == hmlSame.f2093n;
         }
         return false;
     }
@@ -41,46 +41,46 @@ public final class HmlSame implements HmLabel {
     /* JADX WARN: Type inference failed for: r0v4 */
     /* JADX WARN: Type inference failed for: r0v5 */
     public int hashCode() {
-        boolean z = this.f2082v;
+        boolean z = this.f2094v;
         ?? r0 = z;
         if (z) {
             r0 = 1;
         }
-        return (r0 * 31) + this.f2081n;
+        return (r0 * 31) + this.f2093n;
     }
 
     public /* synthetic */ HmlSame(int i, boolean z, int i2, SerializationConstructorMarker serializationConstructorMarker) {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, HmlSame$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2082v = z;
-        this.f2081n = i2;
+        this.f2094v = z;
+        this.f2093n = i2;
     }
 
     public HmlSame(boolean z, int i) {
-        this.f2082v = z;
-        this.f2081n = i;
+        this.f2094v = z;
+        this.f2093n = i;
     }
 
     public static final /* synthetic */ void write$Self(HmlSame hmlSame, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
-        compositeEncoder.encodeBooleanElement(serialDescriptor, 0, hmlSame.f2082v);
-        compositeEncoder.encodeIntElement(serialDescriptor, 1, hmlSame.f2081n);
+        compositeEncoder.encodeBooleanElement(serialDescriptor, 0, hmlSame.f2094v);
+        compositeEncoder.encodeIntElement(serialDescriptor, 1, hmlSame.f2093n);
     }
 
     public final boolean getV() {
-        return this.f2082v;
+        return this.f2094v;
     }
 
     public final int getN() {
-        return this.f2081n;
+        return this.f2093n;
     }
 
     @Override // org.ton.hashmap.HmLabel
     public BitString toBitString() {
-        int i = this.f2081n;
+        int i = this.f2093n;
         boolean[] zArr = new boolean[i];
         for (int i2 = 0; i2 < i; i2++) {
-            zArr[i2] = this.f2082v;
+            zArr[i2] = this.f2094v;
         }
         return BitString.Companion.m42of(Arrays.copyOf(zArr, i));
     }
@@ -112,8 +112,8 @@ public final class HmlSame implements HmLabel {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("hml_same");
-        open.field("v", Boolean.valueOf(this.f2082v));
-        open.field("n", Integer.valueOf(this.f2081n));
+        open.field("v", Boolean.valueOf(this.f2094v));
+        open.field("n", Integer.valueOf(this.f2093n));
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;
     }

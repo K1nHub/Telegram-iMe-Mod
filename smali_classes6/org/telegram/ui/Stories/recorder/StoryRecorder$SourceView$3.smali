@@ -30,7 +30,7 @@
 .method constructor <init>(Landroid/widget/FrameLayout;)V
     .locals 0
 
-    .line 327
+    .line 332
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$3;->val$floatingButton:Landroid/widget/FrameLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;-><init>()V
@@ -43,7 +43,7 @@
 
     const/16 v0, 0x8
 
-    .line 335
+    .line 340
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     return-void
@@ -54,7 +54,7 @@
 .method protected hide()V
     .locals 2
 
-    .line 334
+    .line 339
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$3;->val$floatingButton:Landroid/widget/FrameLayout;
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$3$$ExternalSyntheticLambda0;
@@ -69,7 +69,7 @@
 .method protected show()V
     .locals 2
 
-    .line 330
+    .line 335
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView$3;->val$floatingButton:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x0

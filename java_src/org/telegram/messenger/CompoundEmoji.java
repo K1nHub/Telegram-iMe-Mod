@@ -17,8 +17,8 @@ import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Emoji;
-import org.telegram.p042ui.Components.AnimatedFloat;
-import org.telegram.p042ui.Components.CubicBezierInterpolator;
+import org.telegram.p043ui.Components.AnimatedFloat;
+import org.telegram.p043ui.Components.CubicBezierInterpolator;
 /* loaded from: classes4.dex */
 public class CompoundEmoji {
     public static List<String> skinTones = Arrays.asList("🏻", "🏼", "🏽", "🏾", "🏿");

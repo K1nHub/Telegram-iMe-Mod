@@ -11,7 +11,7 @@
 
 .field private adminTextView:Landroid/widget/TextView;
 
-.field private avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+.field protected avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
 .field public avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -43,13 +43,13 @@
 
 .field private lastStatus:I
 
-.field private nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+.field protected nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
 .field public needDivider:Z
 
 .field private premiumDrawable:Landroid/graphics/drawable/Drawable;
 
-.field private resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.field protected resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
 .field private selfAsSavedMessages:Z
 
@@ -57,7 +57,7 @@
 
 .field private statusOnlineColor:I
 
-.field private statusTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+.field protected statusTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
 .field private storiable:Z
 
@@ -3367,7 +3367,7 @@
 
     const/4 v8, 0x0
 
-    invoke-virtual {v3, v5, v6, v8}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
+    invoke-virtual {v3, v5, v6, v8}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)Z
 
     .line 574
     iget-object v3, v0, Lorg/telegram/ui/Cells/UserCell;->emojiStatus:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
@@ -3414,7 +3414,7 @@
 
     const/4 v8, 0x0
 
-    invoke-virtual {v3, v5, v6, v8}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
+    invoke-virtual {v3, v5, v6, v8}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)Z
 
     .line 578
     iget-object v3, v0, Lorg/telegram/ui/Cells/UserCell;->emojiStatus:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;

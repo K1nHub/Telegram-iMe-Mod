@@ -18,7 +18,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1778
+    .line 1807
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -26,12 +26,6 @@
 
 
 # virtual methods
-.method public onQuote(Ljava/lang/String;)V
-    .locals 0
-
-    return-void
-.end method
-
 .method public onStateChanged(Z)V
     .locals 0
 

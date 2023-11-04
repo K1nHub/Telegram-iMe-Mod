@@ -131,14 +131,6 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$KufEEtP5OYWU2cEZRkZdPL1q_Eo(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Landroid/view/View;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->lambda$onBackPressed$2(Landroid/view/View;)V
-
-    return-void
-.end method
-
 .method public static synthetic $r8$lambda$PL7rVvOgaM2SMwCMvWhSDPXYBaw(Landroid/view/MenuItem;Landroid/view/MenuItem;)I
     .locals 0
 
@@ -149,10 +141,18 @@
     return p0
 .end method
 
-.method public static synthetic $r8$lambda$Tv_Ox-NLEO8QiRsGO8U8ttxsi1o(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$QCSgru4w8UVAVM2sZQkuBjZG_P8(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Landroid/view/View;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->lambda$onBackPressed$1(Landroid/view/View;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->lambda$updateOverflowButtonClickListener$2(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$x3gvo88MLvkX5EsZsdWjqszDPrs(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Landroid/view/View;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->lambda$updateOverflowButtonClickListener$1(Landroid/view/View;)V
 
     return-void
 .end method
@@ -166,19 +166,19 @@
 
     move-object/from16 v2, p2
 
-    .line 346
+    .line 355
     iput-object v1, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     invoke-direct/range {p0 .. p0}, Ljava/lang/Object;-><init>()V
 
-    .line 301
+    .line 310
     new-instance v3, Landroid/graphics/Rect;
 
     invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mViewPortOnScreen:Landroid/graphics/Rect;
 
-    .line 302
+    .line 311
     new-instance v3, Landroid/graphics/Point;
 
     invoke-direct {v3}, Landroid/graphics/Point;-><init>()V
@@ -189,17 +189,17 @@
 
     new-array v4, v3, [I
 
-    .line 304
+    .line 313
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mTmpCoords:[I
 
-    .line 305
+    .line 314
     new-instance v4, Landroid/graphics/Region;
 
     invoke-direct {v4}, Landroid/graphics/Region;-><init>()V
 
     iput-object v4, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mTouchableRegion:Landroid/graphics/Region;
 
-    .line 315
+    .line 324
     new-instance v4, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$1;
 
     invoke-direct {v4, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$1;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
@@ -208,10 +208,10 @@
 
     const/4 v4, 0x1
 
-    .line 323
+    .line 332
     iput-boolean v4, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mDismissed:Z
 
-    .line 331
+    .line 340
     new-instance v5, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$2;
 
     invoke-direct {v5, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$2;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
@@ -220,25 +220,25 @@
 
     const/4 v5, -0x4
 
-    .line 1107
+    .line 1133
     iput v5, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->shiftDp:I
 
     move-object/from16 v5, p3
 
-    .line 347
+    .line 356
     iput-object v5, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mParent:Landroid/view/View;
 
-    .line 348
+    .line 357
     iput-object v2, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContext:Landroid/content/Context;
 
-    .line 349
+    .line 358
     invoke-static/range {p1 .. p2}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$600(Lorg/telegram/ui/ActionBar/FloatingToolbar;Landroid/content/Context;)Landroid/view/ViewGroup;
 
     move-result-object v5
 
     iput-object v5, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
-    .line 350
+    .line 359
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$700(Landroid/view/ViewGroup;)Landroid/widget/PopupWindow;
 
     move-result-object v6
@@ -247,7 +247,7 @@
 
     const/16 v6, 0x10
 
-    .line 351
+    .line 360
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -256,7 +256,7 @@
 
     const/16 v7, 0x8
 
-    .line 352
+    .line 361
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
@@ -265,21 +265,21 @@
 
     const/16 v8, 0x30
 
-    .line 353
+    .line 362
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
 
     iput v9, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mLineHeight:I
 
-    .line 354
+    .line 363
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
 
     iput v7, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mIconTextSpacing:I
 
-    .line 356
+    .line 365
     new-instance v9, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$LogAccelerateInterpolator;
 
     const/4 v10, 0x0
@@ -290,7 +290,7 @@
 
     const v9, 0x10c000d
 
-    .line 357
+    .line 366
     invoke-static {v2, v9}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
     move-result-object v9
@@ -299,7 +299,7 @@
 
     const v9, 0x10c000e
 
-    .line 358
+    .line 367
     invoke-static {v2, v9}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
     move-result-object v9
@@ -308,14 +308,14 @@
 
     const v9, 0x10c000f
 
-    .line 359
+    .line 368
     invoke-static {v2, v9}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
     move-result-object v9
 
     iput-object v9, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mFastOutLinearInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 361
+    .line 370
     sget v9, Lorg/telegram/messenger/R$drawable;->ft_avd_tooverflow:I
 
     invoke-virtual {v2, v9}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -328,10 +328,10 @@
 
     iput-object v9, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mArrow:Landroid/graphics/drawable/Drawable;
 
-    .line 362
+    .line 371
     invoke-virtual {v9, v4}, Landroid/graphics/drawable/Drawable;->setAutoMirrored(Z)V
 
-    .line 363
+    .line 372
     sget v10, Lorg/telegram/messenger/R$drawable;->ft_avd_toarrow:I
 
     invoke-virtual {v2, v10}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -344,10 +344,10 @@
 
     iput-object v10, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflow:Landroid/graphics/drawable/Drawable;
 
-    .line 364
+    .line 373
     invoke-virtual {v10, v4}, Landroid/graphics/drawable/Drawable;->setAutoMirrored(Z)V
 
-    .line 365
+    .line 374
     sget v11, Lorg/telegram/messenger/R$drawable;->ft_avd_toarrow_animation:I
 
     invoke-virtual {v2, v11}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -362,10 +362,10 @@
 
     iput-object v11, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mToArrow:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    .line 366
+    .line 375
     invoke-virtual {v11, v4}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setAutoMirrored(Z)V
 
-    .line 367
+    .line 376
     sget v12, Lorg/telegram/messenger/R$drawable;->ft_avd_tooverflow_animation:I
 
     invoke-virtual {v2, v12}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -380,24 +380,24 @@
 
     iput-object v12, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mToOverflow:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    .line 368
+    .line 377
     invoke-virtual {v12, v4}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setAutoMirrored(Z)V
 
-    .line 370
+    .line 379
     new-instance v13, Landroid/widget/FrameLayout;
 
     invoke-direct {v13, v2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v13, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
-    .line 371
+    .line 380
     new-instance v14, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$3;
 
     invoke-direct {v14, v0, v2, v1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$3;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Landroid/content/Context;Lorg/telegram/ui/ActionBar/FloatingToolbar;)V
 
     iput-object v14, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonIcon:Landroid/widget/ImageView;
 
-    .line 380
+    .line 389
     new-instance v15, Landroid/view/ViewGroup$LayoutParams;
 
     const/16 v16, 0x38
@@ -414,7 +414,7 @@
 
     invoke-virtual {v14, v15}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 381
+    .line 390
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -435,22 +435,22 @@
 
     invoke-virtual {v14, v3, v15, v6, v8}, Landroid/widget/ImageView;->setPaddingRelative(IIII)V
 
-    .line 382
+    .line 391
     sget-object v3, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v14, v3}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 383
+    .line 392
     invoke-virtual {v14, v10}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 384
+    .line 393
     new-instance v3, Landroid/widget/TextView;
 
     invoke-direct {v3, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonText:Landroid/widget/TextView;
 
-    .line 385
+    .line 394
     sget v6, Lorg/telegram/messenger/R$string;->Back:I
 
     invoke-static {v6}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -461,29 +461,29 @@
 
     const/high16 v6, 0x41800000    # 16.0f
 
-    .line 386
+    .line 395
     invoke-virtual {v3, v4, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const/4 v6, 0x0
 
-    .line 387
+    .line 396
     invoke-virtual {v3, v6}, Landroid/widget/TextView;->setAlpha(F)V
 
-    .line 388
+    .line 397
     new-instance v6, Landroid/view/View;
 
     invoke-direct {v6, v2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     iput-object v6, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonShadow:Landroid/view/View;
 
-    .line 390
+    .line 399
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$1000(Lorg/telegram/ui/ActionBar/FloatingToolbar;)I
 
     move-result v8
 
     if-nez v8, :cond_0
 
-    .line 391
+    .line 400
     sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     invoke-static {v1, v8}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$1100(Lorg/telegram/ui/ActionBar/FloatingToolbar;I)I
@@ -492,7 +492,7 @@
 
     move/from16 p3, v15
 
-    .line 392
+    .line 401
     sget v15, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
     move-object/from16 v16, v5
@@ -507,7 +507,7 @@
 
     invoke-virtual {v14, v5}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 393
+    .line 402
     invoke-static {v1, v15}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$1100(Lorg/telegram/ui/ActionBar/FloatingToolbar;I)I
 
     move-result v5
@@ -520,7 +520,7 @@
 
     invoke-virtual {v13, v5}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 394
+    .line 403
     invoke-static {v1, v8}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$1100(Lorg/telegram/ui/ActionBar/FloatingToolbar;I)I
 
     move-result v5
@@ -542,7 +542,7 @@
 
     const/4 v15, 0x2
 
-    .line 395
+    .line 404
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$1000(Lorg/telegram/ui/ActionBar/FloatingToolbar;)I
 
     move-result v5
@@ -551,14 +551,14 @@
 
     const v8, 0x20ffffff
 
-    .line 397
+    .line 406
     invoke-static {v8, v4}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
 
     invoke-virtual {v14, v5}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 398
+    .line 407
     invoke-static {v8, v15}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v5
@@ -567,14 +567,14 @@
 
     const/high16 v5, -0x1000000
 
-    .line 399
+    .line 408
     invoke-virtual {v6, v5}, Landroid/view/View;->setBackgroundColor(I)V
 
     const v15, -0x50506
 
     goto :goto_0
 
-    .line 401
+    .line 410
     :cond_1
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
@@ -582,7 +582,7 @@
 
     move-result v15
 
-    .line 402
+    .line 411
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
     invoke-static {v1, v5}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$1100(Lorg/telegram/ui/ActionBar/FloatingToolbar;I)I
@@ -595,7 +595,7 @@
 
     invoke-virtual {v14, v8}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 403
+    .line 412
     invoke-static {v1, v5}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$1100(Lorg/telegram/ui/ActionBar/FloatingToolbar;I)I
 
     move-result v5
@@ -608,7 +608,7 @@
 
     invoke-virtual {v13, v5}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 404
+    .line 413
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
     invoke-static {v1, v5}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$1100(Lorg/telegram/ui/ActionBar/FloatingToolbar;I)I
@@ -617,23 +617,23 @@
 
     invoke-virtual {v6, v5}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 406
+    .line 415
     :goto_0
     invoke-virtual {v10, v15}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    .line 407
+    .line 416
     invoke-virtual {v9, v15}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    .line 408
+    .line 417
     invoke-virtual {v11, v15}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setTint(I)V
 
-    .line 409
+    .line 418
     invoke-virtual {v12, v15}, Landroid/graphics/drawable/AnimatedVectorDrawable;->setTint(I)V
 
-    .line 410
+    .line 419
     invoke-virtual {v3, v15}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 411
+    .line 420
     new-instance v5, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda0;
 
     invoke-direct {v5, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
@@ -644,7 +644,7 @@
 
     const/4 v8, -0x2
 
-    .line 412
+    .line 421
     invoke-static {v8, v8, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v5
@@ -665,7 +665,7 @@
 
     const/16 v23, 0x0
 
-    .line 413
+    .line 422
     invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v5
@@ -676,7 +676,7 @@
 
     const/high16 v5, 0x3f800000    # 1.0f
 
-    .line 414
+    .line 423
     sget v8, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     div-float/2addr v5, v8
@@ -689,60 +689,60 @@
 
     invoke-virtual {v13, v6, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 415
+    .line 424
     invoke-direct {v0, v14}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->measure(Landroid/view/View;)Landroid/util/Size;
 
     move-result-object v3
 
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonSize:Landroid/util/Size;
 
-    .line 416
+    .line 425
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->createMainPanel()Landroid/view/ViewGroup;
 
     move-result-object v3
 
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
-    .line 417
+    .line 426
     new-instance v3, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;
 
     invoke-direct {v3, v0, v2, v7}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Landroid/content/Context;I)V
 
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelViewHelper:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;
 
-    .line 418
+    .line 427
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->createOverflowPanel()Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     move-result-object v2
 
     iput-object v2, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
-    .line 420
+    .line 429
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->createOverflowAnimationListener()Landroid/view/animation/Animation$AnimationListener;
 
     move-result-object v2
 
-    .line 421
+    .line 430
     new-instance v3, Landroid/view/animation/AnimationSet;
 
     invoke-direct {v3, v4}, Landroid/view/animation/AnimationSet;-><init>(Z)V
 
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowAnimation:Landroid/view/animation/AnimationSet;
 
-    .line 422
+    .line 431
     invoke-virtual {v3, v2}, Landroid/view/animation/AnimationSet;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 423
+    .line 432
     new-instance v3, Landroid/view/animation/AnimationSet;
 
     invoke-direct {v3, v4}, Landroid/view/animation/AnimationSet;-><init>(Z)V
 
     iput-object v3, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mCloseOverflowAnimation:Landroid/view/animation/AnimationSet;
 
-    .line 424
+    .line 433
     invoke-virtual {v3, v2}, Landroid/view/animation/AnimationSet;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 425
+    .line 434
     invoke-static/range {v16 .. v16}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$1200(Landroid/view/View;)Landroid/animation/AnimatorSet;
 
     move-result-object v2
@@ -751,7 +751,7 @@
 
     const/16 v2, 0x96
 
-    .line 426
+    .line 435
     new-instance v3, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$4;
 
     invoke-direct {v3, v0, v1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$4;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Lorg/telegram/ui/ActionBar/FloatingToolbar;)V
@@ -766,7 +766,7 @@
 
     const/4 v2, 0x0
 
-    .line 435
+    .line 444
     new-instance v3, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$5;
 
     invoke-direct {v3, v0, v1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$5;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Lorg/telegram/ui/ActionBar/FloatingToolbar;)V
@@ -783,7 +783,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/widget/PopupWindow;
     .locals 0
 
-    .line 266
+    .line 275
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mPopupWindow:Landroid/widget/PopupWindow;
 
     return-object p0
@@ -792,7 +792,7 @@
 .method static synthetic access$1500(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Landroid/view/View;I)V
     .locals 0
 
-    .line 266
+    .line 275
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setWidth(Landroid/view/View;I)V
 
     return-void
@@ -801,7 +801,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Z
     .locals 0
 
-    .line 266
+    .line 275
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->isInRTLMode()Z
 
     move-result p0
@@ -812,7 +812,7 @@
 .method static synthetic access$1700(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 266
+    .line 275
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     return-object p0
@@ -821,7 +821,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
     .locals 0
 
-    .line 266
+    .line 275
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     return-object p0
@@ -830,7 +830,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Landroid/view/View;I)V
     .locals 0
 
-    .line 266
+    .line 275
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setHeight(Landroid/view/View;I)V
 
     return-void
@@ -839,7 +839,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
     .locals 0
 
-    .line 266
+    .line 275
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setPanelsStatesAtRestingPosition()V
 
     return-void
@@ -848,7 +848,7 @@
 .method static synthetic access$2000(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Z
     .locals 0
 
-    .line 266
+    .line 275
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowUpwards:Z
 
     return p0
@@ -857,7 +857,7 @@
 .method static synthetic access$2100(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
     .locals 0
 
-    .line 266
+    .line 275
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->positionContentYCoordinatesIfOpeningOverflowUpwards()V
 
     return-void
@@ -866,7 +866,7 @@
 .method static synthetic access$2200(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 266
+    .line 275
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -875,7 +875,7 @@
 .method static synthetic access$2300(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/widget/TextView;
     .locals 0
 
-    .line 266
+    .line 275
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonText:Landroid/widget/TextView;
 
     return-object p0
@@ -884,16 +884,16 @@
 .method static synthetic access$2400(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/view/View;
     .locals 0
 
-    .line 266
+    .line 275
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonShadow:Landroid/view/View;
 
     return-object p0
 .end method
 
-.method static synthetic access$2800(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Z
+.method static synthetic access$2700(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Z
     .locals 0
 
-    .line 266
+    .line 275
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->isOverflowAnimating()Z
 
     move-result p0
@@ -901,11 +901,20 @@
     return p0
 .end method
 
+.method static synthetic access$2800(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/util/Size;
+    .locals 0
+
+    .line 275
+    iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanelSize:Landroid/util/Size;
+
+    return-object p0
+.end method
+
 .method static synthetic access$2900(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/util/Size;
     .locals 0
 
-    .line 266
-    iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanelSize:Landroid/util/Size;
+    .line 275
+    iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
     return-object p0
 .end method
@@ -913,43 +922,34 @@
 .method static synthetic access$300(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
     .locals 0
 
-    .line 266
+    .line 275
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setContentAreaAsTouchableSurface()V
 
     return-void
 .end method
 
-.method static synthetic access$3000(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/util/Size;
+.method static synthetic access$3000(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;
     .locals 0
 
-    .line 266
-    iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
-
-    return-object p0
-.end method
-
-.method static synthetic access$3100(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;
-    .locals 0
-
-    .line 266
+    .line 275
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelViewHelper:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;
 
     return-object p0
 .end method
 
-.method static synthetic access$3200(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/content/Context;
+.method static synthetic access$3100(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/content/Context;
     .locals 0
 
-    .line 266
+    .line 275
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContext:Landroid/content/Context;
 
     return-object p0
 .end method
 
-.method static synthetic access$3300(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/util/Size;
+.method static synthetic access$3200(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/util/Size;
     .locals 0
 
-    .line 266
+    .line 275
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonSize:Landroid/util/Size;
 
     return-object p0
@@ -958,7 +958,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 266
+    .line 275
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     return-object p0
@@ -967,7 +967,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Landroid/view/MenuItem$OnMenuItemClickListener;
     .locals 0
 
-    .line 266
+    .line 275
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOnMenuItemClickListener:Landroid/view/MenuItem$OnMenuItemClickListener;
 
     return-object p0
@@ -976,7 +976,7 @@
 .method static synthetic access$900(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)Z
     .locals 0
 
-    .line 266
+    .line 275
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mIsOverflowOpen:Z
 
     return p0
@@ -987,7 +987,7 @@
 
     const/4 v0, 0x2
 
-    .line 1060
+    .line 1086
     invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
     move-result p1
@@ -1008,7 +1008,7 @@
 
     move-result p1
 
-    .line 1062
+    .line 1088
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v0}, Landroid/widget/ListView;->getCount()I
@@ -1017,7 +1017,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 1063
+    .line 1089
     iget v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mLineHeight:I
 
     int-to-float v0, v0
@@ -1033,7 +1033,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1065
+    .line 1091
     :goto_0
     iget v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mLineHeight:I
 
@@ -1055,12 +1055,12 @@
 .method private cancelDismissAndHideAnimations()V
     .locals 1
 
-    .line 609
+    .line 624
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mDismissAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 610
+    .line 625
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mHideAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
@@ -1071,12 +1071,12 @@
 .method private cancelOverflowAnimations()V
     .locals 1
 
-    .line 614
+    .line 629
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->clearAnimation()V
 
-    .line 615
+    .line 630
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1085,7 +1085,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 616
+    .line 631
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v0}, Landroid/widget/ListView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1094,12 +1094,12 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 617
+    .line 632
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mToArrow:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->stop()V
 
-    .line 618
+    .line 633
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mToOverflow:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->stop()V
@@ -1112,23 +1112,26 @@
 
     const/4 v0, 0x0
 
-    .line 1031
+    .line 1056
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
-    .line 1032
+    .line 1057
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanelSize:Landroid/util/Size;
 
     const/4 v0, 0x0
 
-    .line 1033
+    .line 1058
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mIsOverflowOpen:Z
 
-    .line 1034
+    .line 1059
+    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->updateOverflowButtonClickListener()V
+
+    .line 1060
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    .line 1035
+    .line 1061
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
@@ -1137,15 +1140,15 @@
 
     check-cast v0, Landroid/widget/ArrayAdapter;
 
-    .line 1036
+    .line 1062
     invoke-virtual {v0}, Landroid/widget/ArrayAdapter;->clear()V
 
-    .line 1037
+    .line 1063
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v1, v0}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 1038
+    .line 1064
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
@@ -1156,28 +1159,28 @@
 .method private closeOverflow()V
     .locals 8
 
-    .line 690
+    .line 706
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanelSize:Landroid/util/Size;
 
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
 
     move-result v3
 
-    .line 691
+    .line 707
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v0
 
-    .line 692
+    .line 708
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getX()F
 
     move-result v5
 
-    .line 693
+    .line 709
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getWidth()I
@@ -1188,7 +1191,7 @@
 
     add-float v6, v5, v1
 
-    .line 694
+    .line 710
     new-instance v7, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$9;
 
     move-object v1, v7
@@ -1199,21 +1202,21 @@
 
     invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$9;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;IIFF)V
 
-    .line 710
+    .line 726
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanelSize:Landroid/util/Size;
 
     invoke-virtual {v1}, Landroid/util/Size;->getHeight()I
 
     move-result v1
 
-    .line 711
+    .line 727
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getHeight()I
 
     move-result v2
 
-    .line 712
+    .line 728
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v3}, Landroid/view/ViewGroup;->getY()F
@@ -1230,19 +1233,19 @@
 
     add-float/2addr v3, v4
 
-    .line 713
+    .line 729
     new-instance v4, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;
 
     invoke-direct {v4, p0, v1, v2, v3}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$10;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;IIF)V
 
-    .line 724
+    .line 740
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getX()F
 
     move-result v1
 
-    .line 725
+    .line 741
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->isInRTLMode()Z
 
     move-result v2
@@ -1280,20 +1283,20 @@
 
     sub-float/2addr v2, v3
 
-    .line 726
+    .line 742
     :goto_0
     new-instance v3, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$11;
 
     invoke-direct {v3, p0, v1, v2, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$11;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;FFI)V
 
-    .line 737
+    .line 753
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v7, v0}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     const/16 v0, 0xfa
 
-    .line 738
+    .line 754
     invoke-direct {p0, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->getAdjustedDuration(I)I
 
     move-result v1
@@ -1302,12 +1305,12 @@
 
     invoke-virtual {v7, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 739
+    .line 755
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mLogAccelerateInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v4, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 740
+    .line 756
     invoke-direct {p0, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->getAdjustedDuration(I)I
 
     move-result v1
@@ -1316,12 +1319,12 @@
 
     invoke-virtual {v4, v1, v2}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 741
+    .line 757
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v3, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 742
+    .line 758
     invoke-direct {p0, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->getAdjustedDuration(I)I
 
     move-result v0
@@ -1330,7 +1333,7 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 743
+    .line 759
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mCloseOverflowAnimation:Landroid/view/animation/AnimationSet;
 
     invoke-virtual {v0}, Landroid/view/animation/AnimationSet;->getAnimations()Ljava/util/List;
@@ -1339,22 +1342,22 @@
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 744
+    .line 760
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mCloseOverflowAnimation:Landroid/view/animation/AnimationSet;
 
     invoke-virtual {v0, v7}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    .line 745
+    .line 761
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mCloseOverflowAnimation:Landroid/view/animation/AnimationSet;
 
     invoke-virtual {v0, v4}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    .line 746
+    .line 762
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mCloseOverflowAnimation:Landroid/view/animation/AnimationSet;
 
     invoke-virtual {v0, v3}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    .line 747
+    .line 763
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mCloseOverflowAnimation:Landroid/view/animation/AnimationSet;
@@ -1363,10 +1366,13 @@
 
     const/4 v0, 0x0
 
-    .line 748
+    .line 764
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mIsOverflowOpen:Z
 
-    .line 749
+    .line 765
+    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->updateOverflowButtonClickListener()V
+
+    .line 766
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1375,7 +1381,7 @@
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 750
+    .line 767
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -1386,22 +1392,22 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mFastOutLinearInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 751
+    .line 768
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     const-wide/16 v1, 0x64
 
-    .line 752
+    .line 769
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 753
+    .line 770
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 754
+    .line 771
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v0}, Landroid/widget/ListView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1410,7 +1416,7 @@
 
     const/4 v1, 0x0
 
-    .line 755
+    .line 772
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -1421,19 +1427,19 @@
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mLinearOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 756
+    .line 773
     invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
     const-wide/16 v1, 0x96
 
-    .line 757
+    .line 774
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
 
-    .line 758
+    .line 775
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
     return-void
@@ -1442,7 +1448,7 @@
 .method private createMainPanel()Landroid/view/ViewGroup;
     .locals 2
 
-    .line 1091
+    .line 1117
     new-instance v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$12;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContext:Landroid/content/Context;
@@ -1455,7 +1461,7 @@
 .method private createOverflowAnimationListener()Landroid/view/animation/Animation$AnimationListener;
     .locals 1
 
-    .line 1141
+    .line 1167
     new-instance v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$14;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$14;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
@@ -1466,12 +1472,12 @@
 .method private createOverflowPanel()Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
     .locals 4
 
-    .line 1110
+    .line 1136
     new-instance v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-direct {v0, p0, p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
 
-    .line 1111
+    .line 1137
     new-instance v1, Landroid/view/ViewGroup$LayoutParams;
 
     const/4 v2, -0x1
@@ -1482,25 +1488,25 @@
 
     const/4 v1, 0x0
 
-    .line 1112
+    .line 1138
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setDivider(Landroid/graphics/drawable/Drawable;)V
 
     const/4 v1, 0x0
 
-    .line 1113
+    .line 1139
     invoke-virtual {v0, v1}, Landroid/widget/ListView;->setDividerHeight(I)V
 
-    .line 1114
+    .line 1140
     new-instance v2, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$13;
 
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContext:Landroid/content/Context;
 
     invoke-direct {v2, p0, v3, v1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$13;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Landroid/content/Context;I)V
 
-    .line 1120
+    .line 1146
     invoke-virtual {v0, v2}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 1121
+    .line 1147
     new-instance v1, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda3;
 
     invoke-direct {v1, p0, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;)V
@@ -1513,7 +1519,7 @@
 .method private getAdjustedDuration(I)I
     .locals 2
 
-    .line 1074
+    .line 1100
     iget v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mTransitionDurationScale:I
 
     const/16 v1, 0x96
@@ -1524,7 +1530,7 @@
 
     const/4 v0, 0x0
 
-    .line 1075
+    .line 1101
     invoke-static {p1, v0}, Ljava/lang/Math;->max(II)I
 
     move-result p1
@@ -1545,10 +1551,10 @@
 .method private getAdjustedToolbarWidth(I)I
     .locals 2
 
-    .line 881
+    .line 898
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->refreshViewPort()V
 
-    .line 882
+    .line 899
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mViewPortOnScreen:Landroid/graphics/Rect;
 
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
@@ -1569,12 +1575,12 @@
 
     const/16 p1, 0x190
 
-    .line 884
+    .line 901
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 886
+    .line 903
     :cond_0
     invoke-static {p1, v0}, Ljava/lang/Math;->min(II)I
 
@@ -1586,7 +1592,7 @@
 .method private getOverflowWidth()I
     .locals 5
 
-    .line 1051
+    .line 1077
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
@@ -1604,7 +1610,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 1053
+    .line 1079
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v3}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
@@ -1617,7 +1623,7 @@
 
     check-cast v3, Landroid/view/MenuItem;
 
-    .line 1054
+    .line 1080
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelViewHelper:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;
 
     invoke-virtual {v4, v3}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanelViewHelper;->calculateWidth(Landroid/view/MenuItem;)I
@@ -1639,7 +1645,7 @@
 .method private hasOverflow()Z
     .locals 1
 
-    .line 917
+    .line 934
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
     if-eqz v0, :cond_0
@@ -1666,7 +1672,7 @@
 .method private isOverflowAnimating()Z
     .locals 4
 
-    .line 1135
+    .line 1161
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowAnimation:Landroid/view/animation/AnimationSet;
 
     invoke-virtual {v0}, Landroid/view/animation/AnimationSet;->hasStarted()Z
@@ -1694,7 +1700,7 @@
     :cond_0
     move v0, v2
 
-    .line 1136
+    .line 1162
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mCloseOverflowAnimation:Landroid/view/animation/AnimationSet;
 
@@ -1737,7 +1743,7 @@
 .method private synthetic lambda$createOverflowPanel$4(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .locals 0
 
-    .line 1122
+    .line 1148
     invoke-virtual {p1}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
     move-result-object p1
@@ -1748,7 +1754,7 @@
 
     check-cast p1, Landroid/view/MenuItem;
 
-    .line 1123
+    .line 1149
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2500(Lorg/telegram/ui/ActionBar/FloatingToolbar;)Ljava/lang/Runnable;
@@ -1757,9 +1763,7 @@
 
     if-eqz p2, :cond_0
 
-    invoke-static {}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2600()Ljava/util/List;
-
-    move-result-object p2
+    sget-object p2, Lorg/telegram/ui/ActionBar/FloatingToolbar;->premiumOptions:Ljava/util/List;
 
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
@@ -1775,7 +1779,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 1124
+    .line 1150
     iget p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->shiftDp:I
 
     neg-int p1, p1
@@ -1786,12 +1790,12 @@
 
     invoke-static {p3, p1}, Lorg/telegram/messenger/AndroidUtilities;->shakeViewSpring(Landroid/view/View;F)V
 
-    .line 1125
+    .line 1151
     sget-object p1, Lorg/telegram/messenger/BotWebViewVibrationEffect;->APP_ERROR:Lorg/telegram/messenger/BotWebViewVibrationEffect;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/BotWebViewVibrationEffect;->vibrate()V
 
-    .line 1126
+    .line 1152
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2500(Lorg/telegram/ui/ActionBar/FloatingToolbar;)Ljava/lang/Runnable;
@@ -1802,13 +1806,13 @@
 
     goto :goto_0
 
-    .line 1127
+    .line 1153
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOnMenuItemClickListener:Landroid/view/MenuItem$OnMenuItemClickListener;
 
     if-eqz p2, :cond_1
 
-    .line 1128
+    .line 1154
     invoke-interface {p2, p1}, Landroid/view/MenuItem$OnMenuItemClickListener;->onMenuItemClick(Landroid/view/MenuItem;)Z
 
     :cond_1
@@ -1819,10 +1823,8 @@
 .method private static synthetic lambda$layoutOverflowPanelItems$3(Landroid/view/MenuItem;Landroid/view/MenuItem;)I
     .locals 1
 
-    .line 987
-    invoke-static {}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2600()Ljava/util/List;
-
-    move-result-object v0
+    .line 1004
+    sget-object v0, Lorg/telegram/ui/ActionBar/FloatingToolbar;->premiumOptions:Ljava/util/List;
 
     invoke-interface {p0}, Landroid/view/MenuItem;->getItemId()I
 
@@ -1836,11 +1838,7 @@
 
     move-result p0
 
-    .line 988
-    invoke-static {}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2600()Ljava/util/List;
-
-    move-result-object v0
-
+    .line 1005
     invoke-interface {p1}, Landroid/view/MenuItem;->getItemId()I
 
     move-result p1
@@ -1861,32 +1859,32 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 0
 
-    .line 411
+    .line 420
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->onBackPressed()V
 
     return-void
 .end method
 
-.method private synthetic lambda$onBackPressed$1(Landroid/view/View;)V
+.method private synthetic lambda$updateOverflowButtonClickListener$1(Landroid/view/View;)V
     .locals 0
 
-    .line 453
+    .line 469
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->onBackPressed()V
 
     return-void
 .end method
 
-.method private synthetic lambda$onBackPressed$2(Landroid/view/View;)V
+.method private synthetic lambda$updateOverflowButtonClickListener$2(Landroid/view/View;)V
     .locals 0
 
-    .line 459
+    .line 476
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->onBackPressed()V
 
     return-void
 .end method
 
 .method private layoutOverflowPanelItems(Ljava/util/List;)V
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1896,7 +1894,7 @@
         }
     .end annotation
 
-    .line 983
+    .line 1000
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
@@ -1905,10 +1903,10 @@
 
     check-cast v0, Landroid/widget/ArrayAdapter;
 
-    .line 984
+    .line 1001
     invoke-virtual {v0}, Landroid/widget/ArrayAdapter;->clear()V
 
-    .line 985
+    .line 1002
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2500(Lorg/telegram/ui/ActionBar/FloatingToolbar;)Ljava/lang/Runnable;
@@ -1917,18 +1915,18 @@
 
     if-eqz v1, :cond_0
 
-    .line 986
+    .line 1003
     sget-object v1, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda4;->INSTANCE:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda4;
 
     invoke-static {p1, v1}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
 
-    .line 992
+    .line 1009
     :cond_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 993
+    .line 1010
     sget v2, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1940,75 +1938,82 @@
     const/4 v3, 0x0
 
     :goto_0
-    if-ge v3, v1, :cond_3
+    if-ge v3, v1, :cond_4
 
-    .line 995
+    .line 1012
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Landroid/view/MenuItem;
 
-    .line 996
+    .line 1014
     iget-object v5, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2500(Lorg/telegram/ui/ActionBar/FloatingToolbar;)Ljava/lang/Runnable;
 
     move-result-object v5
 
-    if-eqz v5, :cond_1
+    const/4 v6, 0x1
 
-    if-eqz v2, :cond_2
+    if-nez v5, :cond_1
 
-    invoke-static {}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2600()Ljava/util/List;
+    goto :goto_1
 
-    move-result-object v5
+    .line 1016
+    :cond_1
+    sget-object v5, Lorg/telegram/ui/ActionBar/FloatingToolbar;->premiumOptions:Ljava/util/List;
 
     invoke-interface {v4}, Landroid/view/MenuItem;->getItemId()I
 
-    move-result v6
+    move-result v7
 
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-interface {v5, v6}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v5, v7}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     move-result v5
 
-    if-nez v5, :cond_2
+    if-eqz v5, :cond_2
 
-    .line 997
-    :cond_1
-    invoke-virtual {v0, v4}, Landroid/widget/ArrayAdapter;->add(Ljava/lang/Object;)V
+    xor-int/2addr v6, v2
 
     :cond_2
+    :goto_1
+    if-eqz v6, :cond_3
+
+    .line 1022
+    invoke-virtual {v0, v4}, Landroid/widget/ArrayAdapter;->add(Ljava/lang/Object;)V
+
+    :cond_3
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1000
-    :cond_3
+    .line 1025
+    :cond_4
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {p1, v0}, Landroid/widget/ListView;->setAdapter(Landroid/widget/ListAdapter;)V
 
-    .line 1001
+    .line 1026
     iget-boolean p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowUpwards:Z
 
-    if-eqz p1, :cond_4
+    if-eqz p1, :cond_5
 
-    .line 1002
+    .line 1027
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/widget/ListView;->setY(F)V
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 1004
-    :cond_4
+    .line 1029
+    :cond_5
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonSize:Landroid/util/Size;
@@ -2021,8 +2026,8 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ListView;->setY(F)V
 
-    .line 1006
-    :goto_1
+    .line 1031
+    :goto_2
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->getOverflowWidth()I
 
     move-result p1
@@ -2039,19 +2044,19 @@
 
     const/4 v0, 0x4
 
-    .line 1007
+    .line 1032
     invoke-direct {p0, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->calculateOverflowHeight(I)I
 
     move-result v0
 
-    .line 1008
+    .line 1033
     new-instance v1, Landroid/util/Size;
 
     invoke-direct {v1, p1, v0}, Landroid/util/Size;-><init>(II)V
 
     iput-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
-    .line 1009
+    .line 1034
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-direct {p0, p1, v1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setSize(Landroid/view/View;Landroid/util/Size;)V
@@ -2062,7 +2067,7 @@
 .method private maybeComputeTransitionDurationScale()V
     .locals 4
 
-    .line 1083
+    .line 1109
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanelSize:Landroid/util/Size;
 
     if-eqz v0, :cond_0
@@ -2071,7 +2076,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1084
+    .line 1110
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
 
     move-result v0
@@ -2084,7 +2089,7 @@
 
     sub-int/2addr v0, v1
 
-    .line 1085
+    .line 1111
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
     invoke-virtual {v1}, Landroid/util/Size;->getHeight()I
@@ -2107,7 +2112,7 @@
 
     int-to-double v0, v0
 
-    .line 1086
+    .line 1112
     invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v0
@@ -2145,10 +2150,10 @@
 
     const/4 v0, 0x0
 
-    .line 1164
+    .line 1190
     invoke-virtual {p1, v0, v0}, Landroid/view/View;->measure(II)V
 
-    .line 1165
+    .line 1191
     new-instance v0, Landroid/util/Size;
 
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
@@ -2165,99 +2170,45 @@
 .end method
 
 .method private onBackPressed()V
-    .locals 5
+    .locals 2
 
-    .line 446
+    .line 455
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mIsOverflowOpen:Z
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 447
+    .line 456
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonIcon:Landroid/widget/ImageView;
 
-    iget-object v4, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mToOverflow:Landroid/graphics/drawable/AnimatedVectorDrawable;
+    iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mToOverflow:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 448
+    .line 457
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mToOverflow:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
 
-    .line 449
+    .line 458
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->closeOverflow()V
-
-    .line 450
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setClickable(Z)V
-
-    .line 451
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 452
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonIcon:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setClickable(Z)V
-
-    .line 453
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonIcon:Landroid/widget/ImageView;
-
-    new-instance v1, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda2;
-
-    invoke-direct {v1, p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     goto :goto_0
 
-    .line 455
+    .line 460
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonIcon:Landroid/widget/ImageView;
 
-    iget-object v4, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mToArrow:Landroid/graphics/drawable/AnimatedVectorDrawable;
+    iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mToArrow:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
-    invoke-virtual {v0, v4}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 456
+    .line 461
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mToArrow:Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
 
-    .line 457
+    .line 462
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->openOverflow()V
-
-    .line 458
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setClickable(Z)V
-
-    .line 459
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
-
-    new-instance v3, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda1;
-
-    invoke-direct {v3, p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
-
-    invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 460
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonIcon:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setClickable(Z)V
-
-    .line 461
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonIcon:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     :goto_0
     return-void
@@ -2266,49 +2217,49 @@
 .method private openOverflow()V
     .locals 12
 
-    .line 622
+    .line 637
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
 
     move-result v0
 
-    .line 623
+    .line 638
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
     invoke-virtual {v1}, Landroid/util/Size;->getHeight()I
 
     move-result v7
 
-    .line 624
+    .line 639
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getWidth()I
 
     move-result v8
 
-    .line 625
+    .line 640
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getHeight()I
 
     move-result v9
 
-    .line 626
+    .line 641
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getY()F
 
     move-result v10
 
-    .line 627
+    .line 642
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getX()F
 
     move-result v5
 
-    .line 628
+    .line 643
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getWidth()I
@@ -2319,7 +2270,7 @@
 
     add-float v6, v5, v1
 
-    .line 629
+    .line 644
     new-instance v11, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$6;
 
     move-object v1, v11
@@ -2332,19 +2283,19 @@
 
     invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$6;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;IIFF)V
 
-    .line 645
+    .line 660
     new-instance v1, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$7;
 
     invoke-direct {v1, p0, v7, v9, v10}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$7;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;IIF)V
 
-    .line 657
+    .line 672
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getX()F
 
     move-result v2
 
-    .line 658
+    .line 673
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->isInRTLMode()Z
 
     move-result v3
@@ -2380,20 +2331,20 @@
 
     add-float/2addr v0, v3
 
-    .line 659
+    .line 674
     :goto_0
     new-instance v3, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$8;
 
     invoke-direct {v3, p0, v2, v0, v8}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$8;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;FFI)V
 
-    .line 670
+    .line 685
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mLogAccelerateInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v11, v0}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     const/16 v0, 0xfa
 
-    .line 671
+    .line 686
     invoke-direct {p0, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->getAdjustedDuration(I)I
 
     move-result v2
@@ -2402,12 +2353,12 @@
 
     invoke-virtual {v11, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 672
+    .line 687
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v1, v2}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 673
+    .line 688
     invoke-direct {p0, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->getAdjustedDuration(I)I
 
     move-result v2
@@ -2416,12 +2367,12 @@
 
     invoke-virtual {v1, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 674
+    .line 689
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mFastOutSlowInInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v3, v2}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
-    .line 675
+    .line 690
     invoke-direct {p0, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->getAdjustedDuration(I)I
 
     move-result v0
@@ -2430,7 +2381,7 @@
 
     invoke-virtual {v3, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 676
+    .line 691
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowAnimation:Landroid/view/animation/AnimationSet;
 
     invoke-virtual {v0}, Landroid/view/animation/AnimationSet;->getAnimations()Ljava/util/List;
@@ -2439,22 +2390,22 @@
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 677
+    .line 692
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowAnimation:Landroid/view/animation/AnimationSet;
 
     invoke-virtual {v0, v11}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    .line 678
+    .line 693
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowAnimation:Landroid/view/animation/AnimationSet;
 
     invoke-virtual {v0, v1}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    .line 679
+    .line 694
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowAnimation:Landroid/view/animation/AnimationSet;
 
     invoke-virtual {v0, v3}, Landroid/view/animation/AnimationSet;->addAnimation(Landroid/view/animation/Animation;)V
 
-    .line 680
+    .line 695
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowAnimation:Landroid/view/animation/AnimationSet;
@@ -2463,10 +2414,13 @@
 
     const/4 v0, 0x1
 
-    .line 681
+    .line 696
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mIsOverflowOpen:Z
 
-    .line 682
+    .line 697
+    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->updateOverflowButtonClickListener()V
+
+    .line 698
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->animate()Landroid/view/ViewPropertyAnimator;
@@ -2497,7 +2451,7 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 683
+    .line 699
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -2506,7 +2460,7 @@
 
     check-cast v0, Landroid/widget/RelativeLayout$LayoutParams;
 
-    .line 684
+    .line 700
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v1}, Landroid/widget/ListView;->getWidth()I
@@ -2515,12 +2469,12 @@
 
     iput v1, v0, Landroid/widget/RelativeLayout$LayoutParams;->width:I
 
-    .line 685
+    .line 701
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 686
+    .line 702
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -2533,12 +2487,12 @@
 .method private positionContentYCoordinatesIfOpeningOverflowUpwards()V
     .locals 3
 
-    .line 1042
+    .line 1068
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowUpwards:Z
 
     if-eqz v0, :cond_0
 
-    .line 1043
+    .line 1069
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
@@ -2559,7 +2513,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setY(F)V
 
-    .line 1044
+    .line 1070
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
@@ -2580,7 +2534,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setY(F)V
 
-    .line 1045
+    .line 1071
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
@@ -2608,26 +2562,26 @@
 .method private preparePopupContent()V
     .locals 2
 
-    .line 1013
+    .line 1038
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    .line 1014
+    .line 1039
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->hasOverflow()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1015
+    .line 1040
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 1017
+    .line 1042
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
@@ -2635,42 +2589,42 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 1018
+    .line 1043
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->hasOverflow()Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 1019
+    .line 1044
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 1021
+    .line 1046
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setPanelsStatesAtRestingPosition()V
 
-    .line 1022
+    .line 1047
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setContentAreaAsTouchableSurface()V
 
-    .line 1023
+    .line 1048
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->isInRTLMode()Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    .line 1024
+    .line 1049
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 1025
+    .line 1050
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mPreparePopupContentRTLHelper:Ljava/lang/Runnable;
@@ -2684,10 +2638,10 @@
 .method private refreshCoordinatesAndOverflowDirection(Landroid/graphics/Rect;)V
     .locals 12
 
-    .line 541
+    .line 556
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->refreshViewPort()V
 
-    .line 542
+    .line 557
     invoke-virtual {p1}, Landroid/graphics/Rect;->centerX()I
 
     move-result v0
@@ -2720,7 +2674,7 @@
 
     move-result v0
 
-    .line 544
+    .line 559
     iget v1, p1, Landroid/graphics/Rect;->top:I
 
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mViewPortOnScreen:Landroid/graphics/Rect;
@@ -2729,24 +2683,24 @@
 
     sub-int/2addr v1, v4
 
-    .line 545
+    .line 560
     iget v3, v3, Landroid/graphics/Rect;->bottom:I
 
     iget v4, p1, Landroid/graphics/Rect;->bottom:I
 
     sub-int/2addr v3, v4
 
-    .line 546
+    .line 561
     iget v4, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMarginVertical:I
 
     mul-int/2addr v4, v2
 
-    .line 547
+    .line 562
     iget v5, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mLineHeight:I
 
     add-int/2addr v5, v4
 
-    .line 548
+    .line 563
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->hasOverflow()Z
 
     move-result v6
@@ -2759,7 +2713,7 @@
 
     if-lt v1, v5, :cond_0
 
-    .line 550
+    .line 565
     iget p1, p1, Landroid/graphics/Rect;->top:I
 
     sub-int/2addr p1, v5
@@ -2769,18 +2723,18 @@
     :cond_0
     if-lt v3, v5, :cond_1
 
-    .line 552
+    .line 567
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
     goto/16 :goto_0
 
-    .line 553
+    .line 568
     :cond_1
     iget v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mLineHeight:I
 
     if-lt v3, v1, :cond_2
 
-    .line 554
+    .line 569
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMarginVertical:I
@@ -2789,7 +2743,7 @@
 
     goto/16 :goto_0
 
-    .line 556
+    .line 571
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mViewPortOnScreen:Landroid/graphics/Rect;
 
@@ -2805,7 +2759,7 @@
 
     goto :goto_0
 
-    .line 559
+    .line 574
     :cond_3
     invoke-direct {p0, v2}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->calculateOverflowHeight(I)I
 
@@ -2813,7 +2767,7 @@
 
     add-int/2addr v2, v4
 
-    .line 560
+    .line 575
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mViewPortOnScreen:Landroid/graphics/Rect;
 
     iget v9, v6, Landroid/graphics/Rect;->bottom:I
@@ -2824,7 +2778,7 @@
 
     add-int/2addr v9, v5
 
-    .line 561
+    .line 576
     iget v10, p1, Landroid/graphics/Rect;->bottom:I
 
     iget v11, v6, Landroid/graphics/Rect;->top:I
@@ -2837,10 +2791,10 @@
 
     sub-int/2addr v1, v4
 
-    .line 563
+    .line 578
     invoke-direct {p0, v1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->updateOverflowHeight(I)V
 
-    .line 564
+    .line 579
     iget p1, p1, Landroid/graphics/Rect;->top:I
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mPopupWindow:Landroid/widget/PopupWindow;
@@ -2851,7 +2805,7 @@
 
     sub-int/2addr p1, v1
 
-    .line 565
+    .line 580
     iput-boolean v7, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowUpwards:Z
 
     goto :goto_0
@@ -2863,15 +2817,15 @@
 
     sub-int/2addr v9, v4
 
-    .line 567
+    .line 582
     invoke-direct {p0, v9}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->updateOverflowHeight(I)V
 
-    .line 568
+    .line 583
     iget p1, p1, Landroid/graphics/Rect;->top:I
 
     sub-int/2addr p1, v5
 
-    .line 569
+    .line 584
     iput-boolean v8, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowUpwards:Z
 
     goto :goto_0
@@ -2881,13 +2835,13 @@
 
     sub-int/2addr v3, v4
 
-    .line 571
+    .line 586
     invoke-direct {p0, v3}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->updateOverflowHeight(I)V
 
-    .line 572
+    .line 587
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
-    .line 573
+    .line 588
     iput-boolean v8, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowUpwards:Z
 
     goto :goto_0
@@ -2895,7 +2849,7 @@
     :cond_6
     if-lt v3, v5, :cond_7
 
-    .line 574
+    .line 589
     invoke-virtual {v6}, Landroid/graphics/Rect;->height()I
 
     move-result v1
@@ -2904,10 +2858,10 @@
 
     sub-int/2addr v10, v4
 
-    .line 575
+    .line 590
     invoke-direct {p0, v10}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->updateOverflowHeight(I)V
 
-    .line 576
+    .line 591
     iget p1, p1, Landroid/graphics/Rect;->bottom:I
 
     add-int/2addr p1, v5
@@ -2920,12 +2874,12 @@
 
     sub-int/2addr p1, v1
 
-    .line 577
+    .line 592
     iput-boolean v7, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowUpwards:Z
 
     goto :goto_0
 
-    .line 579
+    .line 594
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mViewPortOnScreen:Landroid/graphics/Rect;
 
@@ -2937,15 +2891,15 @@
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->updateOverflowHeight(I)V
 
-    .line 580
+    .line 595
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mViewPortOnScreen:Landroid/graphics/Rect;
 
     iget p1, p1, Landroid/graphics/Rect;->top:I
 
-    .line 581
+    .line 596
     iput-boolean v8, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowUpwards:Z
 
-    .line 585
+    .line 600
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mParent:Landroid/view/View;
 
@@ -2957,15 +2911,15 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->getLocationOnScreen([I)V
 
-    .line 586
+    .line 601
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mTmpCoords:[I
 
     aget v2, v1, v8
 
-    .line 587
+    .line 602
     aget v1, v1, v7
 
-    .line 588
+    .line 603
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mParent:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getRootView()Landroid/view/View;
@@ -2976,19 +2930,19 @@
 
     invoke-virtual {v3, v4}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 589
+    .line 604
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mTmpCoords:[I
 
     aget v4, v3, v8
 
-    .line 590
+    .line 605
     aget v3, v3, v7
 
     sub-int/2addr v2, v4
 
     sub-int/2addr v1, v3
 
-    .line 593
+    .line 608
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mCoordsOnWindow:Landroid/graphics/Point;
 
     sub-int/2addr v0, v2
@@ -3011,7 +2965,7 @@
 .method private refreshViewPort()V
     .locals 2
 
-    .line 876
+    .line 893
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mParent:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mViewPortOnScreen:Landroid/graphics/Rect;
@@ -3024,7 +2978,7 @@
 .method private runDismissAnimation()V
     .locals 1
 
-    .line 601
+    .line 616
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mDismissAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
@@ -3035,7 +2989,7 @@
 .method private runHideAnimation()V
     .locals 1
 
-    .line 605
+    .line 620
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mHideAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
@@ -3046,7 +3000,7 @@
 .method private runShowAnimation()V
     .locals 1
 
-    .line 597
+    .line 612
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mShowAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
@@ -3057,10 +3011,10 @@
 .method private setButtonTagAndClickListener(Landroid/view/View;Landroid/view/MenuItem;)V
     .locals 0
 
-    .line 1069
+    .line 1095
     invoke-virtual {p1, p2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 1070
+    .line 1096
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMenuItemButtonOnClickListener:Landroid/view/View$OnClickListener;
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
@@ -3071,19 +3025,19 @@
 .method private setContentAreaAsTouchableSurface()V
     .locals 6
 
-    .line 896
+    .line 913
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mIsOverflowOpen:Z
 
     if-eqz v0, :cond_0
 
-    .line 897
+    .line 914
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
 
     move-result v0
 
-    .line 898
+    .line 915
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
     invoke-virtual {v1}, Landroid/util/Size;->getHeight()I
@@ -3092,7 +3046,7 @@
 
     goto :goto_0
 
-    .line 900
+    .line 917
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanelSize:Landroid/util/Size;
 
@@ -3100,14 +3054,14 @@
 
     move-result v0
 
-    .line 901
+    .line 918
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanelSize:Landroid/util/Size;
 
     invoke-virtual {v1}, Landroid/util/Size;->getHeight()I
 
     move-result v1
 
-    .line 903
+    .line 920
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mTouchableRegion:Landroid/graphics/Region;
 
@@ -3155,12 +3109,12 @@
 .method private setHeight(Landroid/view/View;I)V
     .locals 1
 
-    .line 1188
+    .line 1214
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 1189
+    .line 1215
     iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     invoke-direct {p0, p1, v0, p2}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setSize(Landroid/view/View;II)V
@@ -3171,19 +3125,19 @@
 .method private setPanelsStatesAtRestingPosition()V
     .locals 7
 
-    .line 762
+    .line 779
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 763
+    .line 780
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;->awakenScrollBars()Z
 
-    .line 764
+    .line 781
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mIsOverflowOpen:Z
 
     const-string v1, "AccDescrMoreOptions"
@@ -3198,42 +3152,42 @@
 
     if-eqz v0, :cond_2
 
-    .line 765
+    .line 782
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
-    .line 766
+    .line 783
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-direct {p0, v6, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setSize(Landroid/view/View;Landroid/util/Size;)V
 
-    .line 767
+    .line 784
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v6, v5}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 768
+    .line 785
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v6, v2}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 769
+    .line 786
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v2, v4}, Landroid/widget/ListView;->setAlpha(F)V
 
-    .line 770
+    .line 787
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v2, v3}, Landroid/widget/ListView;->setVisibility(I)V
 
-    .line 771
+    .line 788
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonIcon:Landroid/widget/ImageView;
 
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mArrow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 772
+    .line 789
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     sget v3, Lorg/telegram/messenger/R$string;->AccDescrMoreOptions:I
@@ -3244,14 +3198,14 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 774
+    .line 791
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->isInRTLMode()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 775
+    .line 792
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMarginHorizontal:I
@@ -3260,12 +3214,12 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setX(F)V
 
-    .line 776
+    .line 793
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->setX(F)V
 
-    .line 777
+    .line 794
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
@@ -3284,14 +3238,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setX(F)V
 
-    .line 778
+    .line 795
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v1, v5}, Landroid/widget/ListView;->setX(F)V
 
     goto :goto_0
 
-    .line 780
+    .line 797
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
@@ -3315,7 +3269,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setX(F)V
 
-    .line 781
+    .line 798
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
@@ -3328,23 +3282,23 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setX(F)V
 
-    .line 782
+    .line 799
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setX(F)V
 
-    .line 783
+    .line 800
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v1, v5}, Landroid/widget/ListView;->setX(F)V
 
-    .line 785
+    .line 802
     :goto_0
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowUpwards:Z
 
     if-eqz v1, :cond_1
 
-    .line 786
+    .line 803
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMarginVertical:I
@@ -3353,7 +3307,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setY(F)V
 
-    .line 787
+    .line 804
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
@@ -3372,7 +3326,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setY(F)V
 
-    .line 788
+    .line 805
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
@@ -3391,14 +3345,14 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setY(F)V
 
-    .line 789
+    .line 806
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v0, v5}, Landroid/widget/ListView;->setY(F)V
 
     goto/16 :goto_2
 
-    .line 791
+    .line 808
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
@@ -3408,17 +3362,17 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setY(F)V
 
-    .line 792
+    .line 809
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->setY(F)V
 
-    .line 793
+    .line 810
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setY(F)V
 
-    .line 794
+    .line 811
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonSize:Landroid/util/Size;
@@ -3433,43 +3387,43 @@
 
     goto/16 :goto_2
 
-    .line 797
+    .line 814
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanelSize:Landroid/util/Size;
 
-    .line 798
+    .line 815
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-direct {p0, v6, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setSize(Landroid/view/View;Landroid/util/Size;)V
 
-    .line 799
+    .line 816
     iget-object v6, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v6, v4}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 800
+    .line 817
     iget-object v4, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v4, v3}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 801
+    .line 818
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v3, v5}, Landroid/widget/ListView;->setAlpha(F)V
 
-    .line 802
+    .line 819
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v3, v2}, Landroid/widget/ListView;->setVisibility(I)V
 
-    .line 803
+    .line 820
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonIcon:Landroid/widget/ImageView;
 
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 804
+    .line 821
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     sget v3, Lorg/telegram/messenger/R$string;->AccDescrMoreOptions:I
@@ -3480,21 +3434,21 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 805
+    .line 822
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->hasOverflow()Z
 
     move-result v1
 
     if-eqz v1, :cond_5
 
-    .line 806
+    .line 823
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->isInRTLMode()Z
 
     move-result v1
 
     if-eqz v1, :cond_3
 
-    .line 807
+    .line 824
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMarginHorizontal:I
@@ -3503,24 +3457,24 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setX(F)V
 
-    .line 808
+    .line 825
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->setX(F)V
 
-    .line 809
+    .line 826
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setX(F)V
 
-    .line 810
+    .line 827
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v1, v5}, Landroid/widget/ListView;->setX(F)V
 
     goto :goto_1
 
-    .line 812
+    .line 829
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
@@ -3544,12 +3498,12 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setX(F)V
 
-    .line 813
+    .line 830
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->setX(F)V
 
-    .line 814
+    .line 831
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
@@ -3568,7 +3522,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setX(F)V
 
-    .line 815
+    .line 832
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
@@ -3587,13 +3541,13 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ListView;->setX(F)V
 
-    .line 817
+    .line 834
     :goto_1
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowUpwards:Z
 
     if-eqz v1, :cond_4
 
-    .line 818
+    .line 835
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMarginVertical:I
@@ -3616,17 +3570,17 @@
 
     invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setY(F)V
 
-    .line 819
+    .line 836
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->setY(F)V
 
-    .line 820
+    .line 837
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setY(F)V
 
-    .line 821
+    .line 838
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
@@ -3647,7 +3601,7 @@
 
     goto :goto_2
 
-    .line 823
+    .line 840
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
@@ -3657,17 +3611,17 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setY(F)V
 
-    .line 824
+    .line 841
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->setY(F)V
 
-    .line 825
+    .line 842
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v5}, Landroid/widget/FrameLayout;->setY(F)V
 
-    .line 826
+    .line 843
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonSize:Landroid/util/Size;
@@ -3682,7 +3636,7 @@
 
     goto :goto_2
 
-    .line 829
+    .line 846
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
@@ -3692,7 +3646,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setX(F)V
 
-    .line 830
+    .line 847
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     iget v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMarginVertical:I
@@ -3701,12 +3655,12 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setY(F)V
 
-    .line 831
+    .line 848
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->setX(F)V
 
-    .line 832
+    .line 849
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->setY(F)V
@@ -3718,34 +3672,34 @@
 .method private setSize(Landroid/view/View;II)V
     .locals 2
 
-    .line 1169
+    .line 1195
     invoke-virtual {p1, p2}, Landroid/view/View;->setMinimumWidth(I)V
 
-    .line 1170
+    .line 1196
     invoke-virtual {p1, p3}, Landroid/view/View;->setMinimumHeight(I)V
 
-    .line 1171
+    .line 1197
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     if-nez v0, :cond_0
 
-    .line 1172
+    .line 1198
     new-instance v0, Landroid/view/ViewGroup$LayoutParams;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, v1, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 1173
+    .line 1199
     :cond_0
     iput p2, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 1174
+    .line 1200
     iput p3, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 1175
+    .line 1201
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
@@ -3754,7 +3708,7 @@
 .method private setSize(Landroid/view/View;Landroid/util/Size;)V
     .locals 1
 
-    .line 1179
+    .line 1205
     invoke-virtual {p2}, Landroid/util/Size;->getWidth()I
 
     move-result v0
@@ -3777,12 +3731,12 @@
 .method private setWidth(Landroid/view/View;I)V
     .locals 1
 
-    .line 1183
+    .line 1209
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 1184
+    .line 1210
     iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setSize(Landroid/view/View;II)V
@@ -3793,7 +3747,7 @@
 .method private setZeroTouchableSurface()V
     .locals 1
 
-    .line 890
+    .line 907
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mTouchableRegion:Landroid/graphics/Region;
 
     invoke-virtual {v0}, Landroid/graphics/Region;->setEmpty()V
@@ -3801,17 +3755,86 @@
     return-void
 .end method
 
+.method private updateOverflowButtonClickListener()V
+    .locals 4
+
+    .line 467
+    iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mIsOverflowOpen:Z
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    if-eqz v0, :cond_0
+
+    .line 468
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setClickable(Z)V
+
+    .line 469
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
+
+    new-instance v1, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda2;
+
+    invoke-direct {v1, p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 470
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonIcon:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setClickable(Z)V
+
+    .line 471
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonIcon:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    goto :goto_0
+
+    .line 473
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setClickable(Z)V
+
+    .line 474
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 475
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonIcon:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setClickable(Z)V
+
+    .line 476
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonIcon:Landroid/widget/ImageView;
+
+    new-instance v1, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda1;
+
+    invoke-direct {v1, p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    :goto_0
+    return-void
+.end method
+
 .method private updateOverflowHeight(I)V
     .locals 2
 
-    .line 838
+    .line 855
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->hasOverflow()Z
 
     move-result v0
 
     if-eqz v0, :cond_3
 
-    .line 839
+    .line 856
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonSize:Landroid/util/Size;
 
     invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
@@ -3824,12 +3847,12 @@
 
     div-int/2addr p1, v0
 
-    .line 840
+    .line 857
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->calculateOverflowHeight(I)I
 
     move-result p1
 
-    .line 841
+    .line 858
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
     invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
@@ -3838,7 +3861,7 @@
 
     if-eq v0, p1, :cond_0
 
-    .line 842
+    .line 859
     new-instance v0, Landroid/util/Size;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
@@ -3851,7 +3874,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
-    .line 844
+    .line 861
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanel:Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup$OverflowPanel;
 
@@ -3859,24 +3882,24 @@
 
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setSize(Landroid/view/View;Landroid/util/Size;)V
 
-    .line 845
+    .line 862
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mIsOverflowOpen:Z
 
     if-eqz v0, :cond_1
 
-    .line 846
+    .line 863
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setSize(Landroid/view/View;Landroid/util/Size;)V
 
-    .line 847
+    .line 864
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOpenOverflowUpwards:Z
 
     if-eqz v0, :cond_2
 
-    .line 848
+    .line 865
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
     invoke-virtual {v0}, Landroid/util/Size;->getHeight()I
@@ -3885,7 +3908,7 @@
 
     sub-int/2addr v0, p1
 
-    .line 849
+    .line 866
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getY()F
@@ -3898,7 +3921,7 @@
 
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->setY(F)V
 
-    .line 850
+    .line 867
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButton:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getY()F
@@ -3911,7 +3934,7 @@
 
     goto :goto_0
 
-    .line 853
+    .line 870
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mContentContainer:Landroid/view/ViewGroup;
 
@@ -3919,7 +3942,7 @@
 
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setSize(Landroid/view/View;Landroid/util/Size;)V
 
-    .line 855
+    .line 872
     :cond_2
     :goto_0
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->updatePopupSize()V
@@ -3931,14 +3954,14 @@
 .method private updatePopupSize()V
     .locals 5
 
-    .line 862
+    .line 879
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanelSize:Landroid/util/Size;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 863
+    .line 880
     invoke-virtual {v0}, Landroid/util/Size;->getWidth()I
 
     move-result v0
@@ -3947,7 +3970,7 @@
 
     move-result v0
 
-    .line 864
+    .line 881
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanelSize:Landroid/util/Size;
 
     invoke-virtual {v2}, Landroid/util/Size;->getHeight()I
@@ -3969,13 +3992,13 @@
     :cond_0
     move v0, v1
 
-    .line 866
+    .line 883
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
     if-eqz v2, :cond_1
 
-    .line 867
+    .line 884
     invoke-virtual {v2}, Landroid/util/Size;->getWidth()I
 
     move-result v2
@@ -3984,7 +4007,7 @@
 
     move-result v1
 
-    .line 868
+    .line 885
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowPanelSize:Landroid/util/Size;
 
     invoke-virtual {v2}, Landroid/util/Size;->getHeight()I
@@ -3995,7 +4018,7 @@
 
     move-result v0
 
-    .line 870
+    .line 887
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mPopupWindow:Landroid/widget/PopupWindow;
 
@@ -4007,7 +4030,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/PopupWindow;->setWidth(I)V
 
-    .line 871
+    .line 888
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget v2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMarginVertical:I
@@ -4018,7 +4041,7 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/PopupWindow;->setHeight(I)V
 
-    .line 872
+    .line 889
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->maybeComputeTransitionDurationScale()V
 
     return-void
@@ -4029,7 +4052,7 @@
 .method public dismiss()V
     .locals 1
 
-    .line 503
+    .line 518
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mDismissed:Z
 
     if-eqz v0, :cond_0
@@ -4039,23 +4062,23 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 506
+    .line 521
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mHidden:Z
 
     const/4 v0, 0x1
 
-    .line 507
+    .line 522
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mDismissed:Z
 
-    .line 508
+    .line 523
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mHideAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 509
+    .line 524
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->runDismissAnimation()V
 
-    .line 510
+    .line 525
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setZeroTouchableSurface()V
 
     return-void
@@ -4064,7 +4087,7 @@
 .method public hide()V
     .locals 1
 
-    .line 514
+    .line 529
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->isShowing()Z
 
     move-result v0
@@ -4076,13 +4099,13 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 517
+    .line 532
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mHidden:Z
 
-    .line 518
+    .line 533
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->runHideAnimation()V
 
-    .line 519
+    .line 534
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setZeroTouchableSurface()V
 
     return-void
@@ -4091,7 +4114,7 @@
 .method public isShowing()Z
     .locals 1
 
-    .line 523
+    .line 538
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mDismissed:Z
 
     if-nez v0, :cond_0
@@ -4127,26 +4150,26 @@
 
     move-object/from16 v0, p0
 
-    .line 922
+    .line 939
     new-instance v1, Ljava/util/LinkedList;
 
     move-object/from16 v2, p1
 
     invoke-direct {v1, v2}, Ljava/util/LinkedList;-><init>(Ljava/util/Collection;)V
 
-    .line 932
+    .line 949
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v2}, Landroid/view/ViewGroup;->removeAllViews()V
 
-    .line 933
+    .line 950
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3, v3, v3, v3}, Landroid/view/ViewGroup;->setPaddingRelative(IIII)V
 
-    .line 935
+    .line 952
     invoke-virtual {v1}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -4157,7 +4180,7 @@
 
     move v11, v4
 
-    .line 936
+    .line 953
     :goto_0
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
@@ -4165,7 +4188,7 @@
 
     if-eqz v5, :cond_7
 
-    .line 937
+    .line 954
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v5
@@ -4174,7 +4197,7 @@
 
     check-cast v13, Landroid/view/MenuItem;
 
-    .line 938
+    .line 955
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v5
@@ -4183,7 +4206,7 @@
 
     if-eqz v13, :cond_0
 
-    .line 939
+    .line 956
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2500(Lorg/telegram/ui/ActionBar/FloatingToolbar;)Ljava/lang/Runnable;
@@ -4192,10 +4215,8 @@
 
     if-eqz v5, :cond_0
 
-    .line 940
-    invoke-static {}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2600()Ljava/util/List;
-
-    move-result-object v5
+    .line 957
+    sget-object v5, Lorg/telegram/ui/ActionBar/FloatingToolbar;->premiumOptions:Ljava/util/List;
 
     invoke-interface {v13}, Landroid/view/MenuItem;->getItemId()I
 
@@ -4213,7 +4234,7 @@
 
     goto :goto_0
 
-    .line 947
+    .line 964
     :cond_0
     iget-object v5, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->this$0:Lorg/telegram/ui/ActionBar/FloatingToolbar;
 
@@ -4227,16 +4248,16 @@
 
     move v10, v14
 
-    invoke-static/range {v5 .. v10}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2700(Lorg/telegram/ui/ActionBar/FloatingToolbar;Landroid/content/Context;Landroid/view/MenuItem;IZZ)Landroid/view/View;
+    invoke-static/range {v5 .. v10}, Lorg/telegram/ui/ActionBar/FloatingToolbar;->access$2600(Lorg/telegram/ui/ActionBar/FloatingToolbar;Landroid/content/Context;Landroid/view/MenuItem;IZZ)Landroid/view/View;
 
     move-result-object v5
 
-    .line 948
+    .line 965
     instance-of v6, v5, Landroid/widget/LinearLayout;
 
     if-eqz v6, :cond_1
 
-    .line 949
+    .line 966
     move-object v6, v5
 
     check-cast v6, Landroid/widget/LinearLayout;
@@ -4257,7 +4278,7 @@
     :cond_2
     move-wide v10, v8
 
-    .line 951
+    .line 968
     :goto_1
     invoke-virtual {v5}, Landroid/view/View;->getPaddingStart()I
 
@@ -4299,10 +4320,10 @@
 
     invoke-virtual {v5, v6, v7, v8, v9}, Landroid/view/View;->setPaddingRelative(IIII)V
 
-    .line 952
+    .line 969
     invoke-virtual {v5, v3, v3}, Landroid/view/View;->measure(II)V
 
-    .line 953
+    .line 970
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v6
@@ -4313,7 +4334,7 @@
 
     move-result v6
 
-    .line 954
+    .line 971
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonSize:Landroid/util/Size;
 
     invoke-virtual {v8}, Landroid/util/Size;->getWidth()I
@@ -4348,36 +4369,36 @@
 
     if-eqz v9, :cond_7
 
-    .line 957
+    .line 974
     :cond_6
     invoke-direct {v0, v5, v13}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setButtonTagAndClickListener(Landroid/view/View;Landroid/view/MenuItem;)V
 
-    .line 959
+    .line 976
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     invoke-virtual {v8, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
-    .line 960
+    .line 977
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v8
 
-    .line 961
+    .line 978
     iput v6, v8, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 962
+    .line 979
     invoke-virtual {v5, v8}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     sub-int/2addr v12, v6
 
-    .line 964
+    .line 981
     invoke-interface {v2}, Ljava/util/Iterator;->remove()V
 
     move v11, v3
 
     goto/16 :goto_0
 
-    .line 970
+    .line 987
     :cond_7
     invoke-virtual {v1}, Ljava/util/LinkedList;->isEmpty()Z
 
@@ -4385,7 +4406,7 @@
 
     if-nez v2, :cond_8
 
-    .line 971
+    .line 988
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOverflowButtonSize:Landroid/util/Size;
@@ -4396,7 +4417,7 @@
 
     invoke-virtual {v2, v3, v3, v4, v3}, Landroid/view/ViewGroup;->setPaddingRelative(IIII)V
 
-    .line 973
+    .line 990
     :cond_8
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mMainPanel:Landroid/view/ViewGroup;
 
@@ -4422,16 +4443,16 @@
         }
     .end annotation
 
-    .line 477
+    .line 492
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mOnMenuItemClickListener:Landroid/view/MenuItem$OnMenuItemClickListener;
 
-    .line 478
+    .line 493
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->cancelOverflowAnimations()V
 
-    .line 479
+    .line 494
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->clearPanels()V
 
-    .line 480
+    .line 495
     invoke-direct {p0, p3}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->getAdjustedToolbarWidth(I)I
 
     move-result p2
@@ -4440,17 +4461,17 @@
 
     move-result-object p1
 
-    .line 481
+    .line 496
     invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
 
     move-result p2
 
     if-nez p2, :cond_0
 
-    .line 482
+    .line 497
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->layoutOverflowPanelItems(Ljava/util/List;)V
 
-    .line 484
+    .line 499
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->updatePopupSize()V
 
@@ -4460,7 +4481,7 @@
 .method public show(Landroid/graphics/Rect;)V
     .locals 4
 
-    .line 488
+    .line 503
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->isShowing()Z
 
     move-result v0
@@ -4472,25 +4493,25 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 491
+    .line 506
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mHidden:Z
 
-    .line 492
+    .line 507
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mDismissed:Z
 
-    .line 493
+    .line 508
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->cancelDismissAndHideAnimations()V
 
-    .line 494
+    .line 509
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->cancelOverflowAnimations()V
 
-    .line 495
+    .line 510
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->refreshCoordinatesAndOverflowDirection(Landroid/graphics/Rect;)V
 
-    .line 496
+    .line 511
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->preparePopupContent()V
 
-    .line 497
+    .line 512
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mParent:Landroid/view/View;
@@ -4503,10 +4524,10 @@
 
     invoke-virtual {p1, v1, v0, v3, v2}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 498
+    .line 513
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->setTouchableSurfaceInsetsComputer()V
 
-    .line 499
+    .line 514
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->runShowAnimation()V
 
     return-void
@@ -4515,7 +4536,7 @@
 .method public updateCoordinates(Landroid/graphics/Rect;)V
     .locals 4
 
-    .line 531
+    .line 546
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->isShowing()Z
 
     move-result v0
@@ -4532,17 +4553,17 @@
 
     goto :goto_0
 
-    .line 534
+    .line 549
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->cancelOverflowAnimations()V
 
-    .line 535
+    .line 550
     invoke-direct {p0, p1}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->refreshCoordinatesAndOverflowDirection(Landroid/graphics/Rect;)V
 
-    .line 536
+    .line 551
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->preparePopupContent()V
 
-    .line 537
+    .line 552
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mPopupWindow:Landroid/widget/PopupWindow;
 
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/FloatingToolbar$FloatingToolbarPopup;->mCoordsOnWindow:Landroid/graphics/Point;

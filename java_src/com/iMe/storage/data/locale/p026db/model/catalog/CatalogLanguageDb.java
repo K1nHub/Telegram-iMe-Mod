@@ -24,7 +24,7 @@ public final class CatalogLanguageDb {
     }
 
     public int hashCode() {
-        return (((ProfileData$$ExternalSyntheticBackport0.m1017m(this.f309id) * 31) + this.nativeTitle.hashCode()) * 31) + this.title.hashCode();
+        return (((ProfileData$$ExternalSyntheticBackport0.m1018m(this.f309id) * 31) + this.nativeTitle.hashCode()) * 31) + this.title.hashCode();
     }
 
     public String toString() {

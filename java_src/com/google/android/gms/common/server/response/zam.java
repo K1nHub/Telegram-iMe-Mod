@@ -13,16 +13,16 @@ import com.google.android.gms.common.server.response.FastJsonResponse;
 /* loaded from: classes.dex */
 public final class zam extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zam> CREATOR = new zak();
-    @SafeParcelable.VersionField(m1086id = 1)
+    @SafeParcelable.VersionField(m1087id = 1)
     final int zaa;
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     final String zab;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     final FastJsonResponse.Field zac;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zam(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) String str, @SafeParcelable.Param(m1088id = 3) FastJsonResponse.Field field) {
+    public zam(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) String str, @SafeParcelable.Param(m1089id = 3) FastJsonResponse.Field field) {
         this.zaa = i;
         this.zab = str;
         this.zac = field;

@@ -18,9 +18,11 @@
 
 .field public final synthetic f$13:Ljava/lang/String;
 
-.field public final synthetic f$14:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field public final synthetic f$14:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-.field public final synthetic f$15:Z
+.field public final synthetic f$15:Lorg/telegram/ui/ChatActivity$ReplyQuote;
+
+.field public final synthetic f$16:Z
 
 .field public final synthetic f$2:J
 
@@ -40,7 +42,7 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/VideoEditedInfo;Ljava/lang/String;JILorg/telegram/messenger/AccountInstance;Ljava/lang/CharSequence;Lorg/telegram/messenger/MessageObject;ZLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Ljava/util/ArrayList;ZILjava/lang/String;Lorg/telegram/tgnet/TLRPC$StoryItem;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/VideoEditedInfo;Ljava/lang/String;JILorg/telegram/messenger/AccountInstance;Ljava/lang/CharSequence;Lorg/telegram/messenger/MessageObject;ZLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Ljava/util/ArrayList;ZILjava/lang/String;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;Z)V
     .locals 3
 
     move-object v0, p0
@@ -105,11 +107,15 @@
 
     move-object/from16 v1, p16
 
-    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda73;->f$14:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda73;->f$14:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    move/from16 v1, p17
+    move-object/from16 v1, p17
 
-    iput-boolean v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda73;->f$15:Z
+    iput-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda73;->f$15:Lorg/telegram/ui/ChatActivity$ReplyQuote;
+
+    move/from16 v1, p18
+
+    iput-boolean v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda73;->f$16:Z
 
     return-void
 .end method
@@ -117,7 +123,7 @@
 
 # virtual methods
 .method public final run()V
-    .locals 19
+    .locals 20
 
     move-object/from16 v0, p0
 
@@ -149,19 +155,23 @@
 
     iget-object v15, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda73;->f$13:Ljava/lang/String;
 
-    move-object/from16 v18, v1
+    move-object/from16 v19, v1
 
-    iget-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda73;->f$14:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda73;->f$14:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     move-object/from16 v16, v1
 
-    iget-boolean v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda73;->f$15:Z
+    iget-object v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda73;->f$15:Lorg/telegram/ui/ChatActivity$ReplyQuote;
 
-    move/from16 v17, v1
+    move-object/from16 v17, v1
 
-    move-object/from16 v1, v18
+    iget-boolean v1, v0, Lorg/telegram/messenger/SendMessagesHelper$$ExternalSyntheticLambda73;->f$16:Z
 
-    invoke-static/range {v1 .. v17}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$LNYeLvilM46sNO8YNlZnc_7mdN4(Lorg/telegram/messenger/VideoEditedInfo;Ljava/lang/String;JILorg/telegram/messenger/AccountInstance;Ljava/lang/CharSequence;Lorg/telegram/messenger/MessageObject;ZLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Ljava/util/ArrayList;ZILjava/lang/String;Lorg/telegram/tgnet/TLRPC$StoryItem;Z)V
+    move/from16 v18, v1
+
+    move-object/from16 v1, v19
+
+    invoke-static/range {v1 .. v18}, Lorg/telegram/messenger/SendMessagesHelper;->$r8$lambda$12HooC_ms7kB2eBuo1fSsnt1alI(Lorg/telegram/messenger/VideoEditedInfo;Ljava/lang/String;JILorg/telegram/messenger/AccountInstance;Ljava/lang/CharSequence;Lorg/telegram/messenger/MessageObject;ZLorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Ljava/util/ArrayList;ZILjava/lang/String;Lorg/telegram/tgnet/tl/TL_stories$StoryItem;Lorg/telegram/ui/ChatActivity$ReplyQuote;Z)V
 
     return-void
 .end method

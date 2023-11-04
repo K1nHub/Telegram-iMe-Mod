@@ -24,7 +24,7 @@ import org.ton.tlb.TlbPrettyPrinter;
 public final class SimpleLib implements TlbObject {
 
     /* renamed from: public  reason: not valid java name */
-    private final boolean f2163public;
+    private final boolean f2175public;
     private final Cell root;
     public static final Companion Companion = new Companion(null);
     private static final KSerializer<Object>[] $childSerializers = {null, new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Cell.class), new Annotation[]{new JsonClassDiscriminator("@type") { // from class: org.ton.block.SimpleLib$Companion$annotationImpl$kotlinx_serialization_json_JsonClassDiscriminator$0
@@ -67,7 +67,7 @@ public final class SimpleLib implements TlbObject {
         }
         if (obj instanceof SimpleLib) {
             SimpleLib simpleLib = (SimpleLib) obj;
-            return this.f2163public == simpleLib.f2163public && Intrinsics.areEqual(this.root, simpleLib.root);
+            return this.f2175public == simpleLib.f2175public && Intrinsics.areEqual(this.root, simpleLib.root);
         }
         return false;
     }
@@ -77,7 +77,7 @@ public final class SimpleLib implements TlbObject {
     /* JADX WARN: Type inference failed for: r0v4 */
     /* JADX WARN: Type inference failed for: r0v5 */
     public int hashCode() {
-        boolean z = this.f2163public;
+        boolean z = this.f2175public;
         ?? r0 = z;
         if (z) {
             r0 = 1;
@@ -86,31 +86,31 @@ public final class SimpleLib implements TlbObject {
     }
 
     public String toString() {
-        return "SimpleLib(public=" + this.f2163public + ", root=" + this.root + ')';
+        return "SimpleLib(public=" + this.f2175public + ", root=" + this.root + ')';
     }
 
     public /* synthetic */ SimpleLib(int i, boolean z, Cell cell, SerializationConstructorMarker serializationConstructorMarker) {
         if (3 != (i & 3)) {
             PluginExceptionsKt.throwMissingFieldException(i, 3, SimpleLib$$serializer.INSTANCE.getDescriptor());
         }
-        this.f2163public = z;
+        this.f2175public = z;
         this.root = cell;
     }
 
     public SimpleLib(boolean z, Cell root) {
         Intrinsics.checkNotNullParameter(root, "root");
-        this.f2163public = z;
+        this.f2175public = z;
         this.root = root;
     }
 
     public static final /* synthetic */ void write$Self(SimpleLib simpleLib, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         KSerializer<Object>[] kSerializerArr = $childSerializers;
-        compositeEncoder.encodeBooleanElement(serialDescriptor, 0, simpleLib.f2163public);
+        compositeEncoder.encodeBooleanElement(serialDescriptor, 0, simpleLib.f2175public);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, kSerializerArr[1], simpleLib.root);
     }
 
     public final boolean getPublic() {
-        return this.f2163public;
+        return this.f2175public;
     }
 
     public final Cell getRoot() {
@@ -158,7 +158,7 @@ public final class SimpleLib implements TlbObject {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("simple_lib");
-        open.field("public", Boolean.valueOf(this.f2163public));
+        open.field("public", Boolean.valueOf(this.f2175public));
         open.field("root", this.root);
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;

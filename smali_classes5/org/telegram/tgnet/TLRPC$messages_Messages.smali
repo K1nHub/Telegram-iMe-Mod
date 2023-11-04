@@ -71,31 +71,31 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 3717
+    .line 3364
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 3718
+    .line 3365
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$messages_Messages;->messages:Ljava/util/ArrayList;
 
-    .line 3719
+    .line 3366
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$messages_Messages;->chats:Ljava/util/ArrayList;
 
-    .line 3720
+    .line 3367
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$messages_Messages;->users:Ljava/util/ArrayList;
 
-    .line 3721
+    .line 3368
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -114,7 +114,7 @@
 
     goto :goto_0
 
-    .line 3743
+    .line 3390
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_messagesNotModified;
 
@@ -122,7 +122,7 @@
 
     goto :goto_0
 
-    .line 3734
+    .line 3381
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_messagesSlice;
 
@@ -130,7 +130,7 @@
 
     goto :goto_0
 
-    .line 3740
+    .line 3387
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_channelMessages;
 
@@ -138,7 +138,7 @@
 
     goto :goto_0
 
-    .line 3737
+    .line 3384
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_messages;
 
@@ -151,7 +151,7 @@
 
     goto :goto_1
 
-    .line 3747
+    .line 3394
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -181,7 +181,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 3750
+    .line 3397
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

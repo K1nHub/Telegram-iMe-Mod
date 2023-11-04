@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/VoIPFragment;Landroid/content/Context;ZZ)V
     .locals 0
 
-    .line 2252
+    .line 2253
     iput-object p1, p0, Lorg/telegram/ui/VoIPFragment$21;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;-><init>(Landroid/content/Context;ZZ)V
@@ -35,19 +35,19 @@
 .method public onDismiss(ZZ)V
     .locals 3
 
-    .line 2255
+    .line 2256
     iget-object v0, p0, Lorg/telegram/ui/VoIPFragment$21;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lorg/telegram/ui/VoIPFragment;->access$4602(Lorg/telegram/ui/VoIPFragment;Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;)Lorg/telegram/ui/Components/voip/PrivateVideoPreviewDialog;
 
-    .line 2256
+    .line 2257
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
-    .line 2257
+    .line 2258
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment$21;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/VoIPFragment;->access$3700(Lorg/telegram/ui/VoIPFragment;)Lorg/telegram/ui/Components/voip/VoIPWindowView;
@@ -60,7 +60,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 2259
+    .line 2260
     iget-object p2, p0, Lorg/telegram/ui/VoIPFragment$21;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     const/4 v1, 0x1
@@ -71,12 +71,12 @@
 
     if-nez p1, :cond_1
 
-    .line 2261
+    .line 2262
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/voip/VoIPService;->requestVideoCall(Z)V
 
     const/4 p1, 0x2
 
-    .line 2262
+    .line 2263
     invoke-virtual {v0, v2, p1}, Lorg/telegram/messenger/voip/VoIPService;->setVideoState(ZI)V
 
     goto :goto_0
@@ -84,10 +84,10 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 2266
+    .line 2267
     invoke-virtual {v0, v2, v2}, Lorg/telegram/messenger/voip/VoIPService;->setVideoState(ZI)V
 
-    .line 2269
+    .line 2270
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$21;->this$0:Lorg/telegram/ui/VoIPFragment;
@@ -98,7 +98,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/VoIPFragment;->access$2802(Lorg/telegram/ui/VoIPFragment;I)I
 
-    .line 2270
+    .line 2271
     iget-object p1, p0, Lorg/telegram/ui/VoIPFragment$21;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/VoIPFragment;->access$2900(Lorg/telegram/ui/VoIPFragment;)V

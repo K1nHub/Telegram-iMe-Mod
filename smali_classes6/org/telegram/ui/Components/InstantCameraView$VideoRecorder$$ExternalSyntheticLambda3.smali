@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->$r8$lambda$zKSWXu_h6ZQT19I2mxyRHkkZQZU(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->$r8$lambda$Zdb9k6-YImBJdh2nv77xhlv3HDM(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)V
 
     return-void
 .end method

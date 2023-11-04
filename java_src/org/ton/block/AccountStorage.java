@@ -116,14 +116,14 @@ public final class AccountStorage implements TlbObject {
     }
 
     public int hashCode() {
-        return (((ULong.m1991hashCodeimpl(this.lastTransLt) * 31) + this.balance.hashCode()) * 31) + this.state.hashCode();
+        return (((ULong.m1996hashCodeimpl(this.lastTransLt) * 31) + this.balance.hashCode()) * 31) + this.state.hashCode();
     }
 
     private AccountStorage(int i, ULong uLong, CurrencyCollection currencyCollection, AccountState accountState, SerializationConstructorMarker serializationConstructorMarker) {
         if (7 != (i & 7)) {
             PluginExceptionsKt.throwMissingFieldException(i, 7, AccountStorage$$serializer.INSTANCE.getDescriptor());
         }
-        this.lastTransLt = uLong.m1993unboximpl();
+        this.lastTransLt = uLong.m1998unboximpl();
         this.balance = currencyCollection;
         this.state = accountState;
     }
@@ -138,7 +138,7 @@ public final class AccountStorage implements TlbObject {
 
     public static final /* synthetic */ void write$Self(AccountStorage accountStorage, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         KSerializer<Object>[] kSerializerArr = $childSerializers;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, ULongSerializer.INSTANCE, ULong.m1988boximpl(accountStorage.lastTransLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, ULongSerializer.INSTANCE, ULong.m1993boximpl(accountStorage.lastTransLt));
         compositeEncoder.encodeSerializableElement(serialDescriptor, 1, CurrencyCollection$$serializer.INSTANCE, accountStorage.balance);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 2, kSerializerArr[2], accountStorage.state);
     }
@@ -205,7 +205,7 @@ public final class AccountStorage implements TlbObject {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("account_storage");
-        open.field("last_trans_lt", ULong.m1988boximpl(this.lastTransLt));
+        open.field("last_trans_lt", ULong.m1993boximpl(this.lastTransLt));
         open.field("balance", this.balance);
         open.field("state", this.state);
         TlbPrettyPrinter.close$default(open, null, 1, null);

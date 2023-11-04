@@ -1,7 +1,7 @@
 package com.binance.android.opensdk.api;
 
 import android.app.Activity;
-import com.binance.android.opensdk.p013b.C0380a;
+import com.binance.android.opensdk.p013b.C0386a;
 import kotlin.jvm.internal.Intrinsics;
 /* loaded from: classes.dex */
 public final class BinanceAPIFactory {
@@ -14,6 +14,6 @@ public final class BinanceAPIFactory {
 
     public static final BinanceAPI createAPI(Activity activity) {
         Intrinsics.checkParameterIsNotNull(activity, "activity");
-        return new C0380a(activity);
+        return new C0386a(activity);
     }
 }

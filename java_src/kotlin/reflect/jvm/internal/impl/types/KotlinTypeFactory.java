@@ -43,27 +43,27 @@ public final class KotlinTypeFactory {
     }
 
     private final MemberScope computeMemberScope(TypeConstructor typeConstructor, List<? extends TypeProjection> list, KotlinTypeRefiner kotlinTypeRefiner) {
-        ClassifierDescriptor mo2046getDeclarationDescriptor = typeConstructor.mo2046getDeclarationDescriptor();
-        if (mo2046getDeclarationDescriptor instanceof TypeParameterDescriptor) {
-            return ((TypeParameterDescriptor) mo2046getDeclarationDescriptor).getDefaultType().getMemberScope();
+        ClassifierDescriptor mo2051getDeclarationDescriptor = typeConstructor.mo2051getDeclarationDescriptor();
+        if (mo2051getDeclarationDescriptor instanceof TypeParameterDescriptor) {
+            return ((TypeParameterDescriptor) mo2051getDeclarationDescriptor).getDefaultType().getMemberScope();
         }
-        if (mo2046getDeclarationDescriptor instanceof ClassDescriptor) {
+        if (mo2051getDeclarationDescriptor instanceof ClassDescriptor) {
             if (kotlinTypeRefiner == null) {
-                kotlinTypeRefiner = DescriptorUtilsKt.getKotlinTypeRefiner(DescriptorUtilsKt.getModule(mo2046getDeclarationDescriptor));
+                kotlinTypeRefiner = DescriptorUtilsKt.getKotlinTypeRefiner(DescriptorUtilsKt.getModule(mo2051getDeclarationDescriptor));
             }
             if (list.isEmpty()) {
-                return ModuleAwareClassDescriptorKt.getRefinedUnsubstitutedMemberScopeIfPossible((ClassDescriptor) mo2046getDeclarationDescriptor, kotlinTypeRefiner);
+                return ModuleAwareClassDescriptorKt.getRefinedUnsubstitutedMemberScopeIfPossible((ClassDescriptor) mo2051getDeclarationDescriptor, kotlinTypeRefiner);
             }
-            return ModuleAwareClassDescriptorKt.getRefinedMemberScopeIfPossible((ClassDescriptor) mo2046getDeclarationDescriptor, TypeConstructorSubstitution.Companion.create(typeConstructor, list), kotlinTypeRefiner);
-        } else if (mo2046getDeclarationDescriptor instanceof TypeAliasDescriptor) {
+            return ModuleAwareClassDescriptorKt.getRefinedMemberScopeIfPossible((ClassDescriptor) mo2051getDeclarationDescriptor, TypeConstructorSubstitution.Companion.create(typeConstructor, list), kotlinTypeRefiner);
+        } else if (mo2051getDeclarationDescriptor instanceof TypeAliasDescriptor) {
             ErrorScopeKind errorScopeKind = ErrorScopeKind.SCOPE_FOR_ABBREVIATION_TYPE;
-            String name = ((TypeAliasDescriptor) mo2046getDeclarationDescriptor).getName().toString();
+            String name = ((TypeAliasDescriptor) mo2051getDeclarationDescriptor).getName().toString();
             Intrinsics.checkNotNullExpressionValue(name, "descriptor.name.toString()");
             return ErrorUtils.createErrorScope(errorScopeKind, true, name);
         } else if (typeConstructor instanceof IntersectionTypeConstructor) {
             return ((IntersectionTypeConstructor) typeConstructor).createScopeForKotlinType();
         } else {
-            throw new IllegalStateException("Unsupported classifier: " + mo2046getDeclarationDescriptor + " for constructor: " + typeConstructor);
+            throw new IllegalStateException("Unsupported classifier: " + mo2051getDeclarationDescriptor + " for constructor: " + typeConstructor);
         }
     }
 
@@ -78,10 +78,10 @@ public final class KotlinTypeFactory {
         Intrinsics.checkNotNullParameter(attributes, "attributes");
         Intrinsics.checkNotNullParameter(constructor, "constructor");
         Intrinsics.checkNotNullParameter(arguments, "arguments");
-        if (attributes.isEmpty() && arguments.isEmpty() && !z && constructor.mo2046getDeclarationDescriptor() != null) {
-            ClassifierDescriptor mo2046getDeclarationDescriptor = constructor.mo2046getDeclarationDescriptor();
-            Intrinsics.checkNotNull(mo2046getDeclarationDescriptor);
-            SimpleType defaultType = mo2046getDeclarationDescriptor.getDefaultType();
+        if (attributes.isEmpty() && arguments.isEmpty() && !z && constructor.mo2051getDeclarationDescriptor() != null) {
+            ClassifierDescriptor mo2051getDeclarationDescriptor = constructor.mo2051getDeclarationDescriptor();
+            Intrinsics.checkNotNull(mo2051getDeclarationDescriptor);
+            SimpleType defaultType = mo2051getDeclarationDescriptor.getDefaultType();
             Intrinsics.checkNotNullExpressionValue(defaultType, "constructor.declarationDescriptor!!.defaultType");
             return defaultType;
         }
@@ -122,8 +122,8 @@ public final class KotlinTypeFactory {
     /* JADX INFO: Access modifiers changed from: private */
     public final ExpandedTypeOrRefinedConstructor refineConstructor(TypeConstructor typeConstructor, KotlinTypeRefiner kotlinTypeRefiner, List<? extends TypeProjection> list) {
         ClassifierDescriptor refineDescriptor;
-        ClassifierDescriptor mo2046getDeclarationDescriptor = typeConstructor.mo2046getDeclarationDescriptor();
-        if (mo2046getDeclarationDescriptor == null || (refineDescriptor = kotlinTypeRefiner.refineDescriptor(mo2046getDeclarationDescriptor)) == null) {
+        ClassifierDescriptor mo2051getDeclarationDescriptor = typeConstructor.mo2051getDeclarationDescriptor();
+        if (mo2051getDeclarationDescriptor == null || (refineDescriptor = kotlinTypeRefiner.refineDescriptor(mo2051getDeclarationDescriptor)) == null) {
             return null;
         }
         if (refineDescriptor instanceof TypeAliasDescriptor) {

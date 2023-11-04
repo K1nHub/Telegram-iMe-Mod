@@ -10,7 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* loaded from: classes4.dex */
 public final class CallNotificationRtlBinding implements ViewBinding {
     private CallNotificationRtlBinding(RelativeLayout relativeLayout, FrameLayout frameLayout, TextView textView, LinearLayout linearLayout, FrameLayout frameLayout2, TextView textView2, ImageView imageView, TextView textView3, ImageView imageView2, TextView textView4, LinearLayout linearLayout2, TextView textView5) {
@@ -21,7 +21,7 @@ public final class CallNotificationRtlBinding implements ViewBinding {
     }
 
     public static CallNotificationRtlBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.call_notification_rtl, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.call_notification_rtl, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -29,37 +29,37 @@ public final class CallNotificationRtlBinding implements ViewBinding {
     }
 
     public static CallNotificationRtlBinding bind(View view) {
-        int i = C3630R.C3633id.answer_btn;
+        int i = C3634R.C3637id.answer_btn;
         FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
         if (frameLayout != null) {
-            i = C3630R.C3633id.answer_text;
+            i = C3634R.C3637id.answer_text;
             TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
             if (textView != null) {
-                i = C3630R.C3633id.buttons;
+                i = C3634R.C3637id.buttons;
                 LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                 if (linearLayout != null) {
-                    i = C3630R.C3633id.decline_btn;
+                    i = C3634R.C3637id.decline_btn;
                     FrameLayout frameLayout2 = (FrameLayout) ViewBindings.findChildViewById(view, i);
                     if (frameLayout2 != null) {
-                        i = C3630R.C3633id.decline_text;
+                        i = C3634R.C3637id.decline_text;
                         TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                         if (textView2 != null) {
-                            i = C3630R.C3633id.icon;
+                            i = C3634R.C3637id.icon;
                             ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
                             if (imageView != null) {
-                                i = C3630R.C3633id.name;
+                                i = C3634R.C3637id.name;
                                 TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                                 if (textView3 != null) {
-                                    i = C3630R.C3633id.photo;
+                                    i = C3634R.C3637id.photo;
                                     ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(view, i);
                                     if (imageView2 != null) {
-                                        i = C3630R.C3633id.subtitle;
+                                        i = C3634R.C3637id.subtitle;
                                         TextView textView4 = (TextView) ViewBindings.findChildViewById(view, i);
                                         if (textView4 != null) {
-                                            i = C3630R.C3633id.text_wrap;
+                                            i = C3634R.C3637id.text_wrap;
                                             LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                                             if (linearLayout2 != null) {
-                                                i = C3630R.C3633id.title;
+                                                i = C3634R.C3637id.title;
                                                 TextView textView5 = (TextView) ViewBindings.findChildViewById(view, i);
                                                 if (textView5 != null) {
                                                     return new CallNotificationRtlBinding((RelativeLayout) view, frameLayout, textView, linearLayout, frameLayout2, textView2, imageView, textView3, imageView2, textView4, linearLayout2, textView5);

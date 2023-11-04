@@ -12,7 +12,7 @@ import org.ton.adnl.network.TcpClient;
 import org.ton.api.liteserver.LiteServerDesc;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: AdnlConnection.kt */
-@DebugMetadata(m143c = "org.ton.adnl.connection.AdnlConnection$connect$2$tcpClient$1", m142f = "AdnlConnection.kt", m141l = {94}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.ton.adnl.connection.AdnlConnection$connect$2$tcpClient$1", m144f = "AdnlConnection.kt", m143l = {94}, m142m = "invokeSuspend")
 /* loaded from: classes6.dex */
 public final class AdnlConnection$connect$2$tcpClient$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super TcpClient>, Object> {
     int label;

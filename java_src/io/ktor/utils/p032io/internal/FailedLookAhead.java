@@ -17,7 +17,7 @@ public final class FailedLookAhead implements LookAheadSuspendSession {
 
     @Override // io.ktor.utils.p032io.LookAheadSession
     /* renamed from: consumed */
-    public Void mo1925consumed(int i) {
+    public Void mo1930consumed(int i) {
         throw this.cause;
     }
 

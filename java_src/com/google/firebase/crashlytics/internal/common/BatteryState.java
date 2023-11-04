@@ -36,7 +36,7 @@ class BatteryState {
                 f = getLevel(registerReceiver);
             }
         } catch (IllegalStateException e) {
-            Logger.getLogger().m1035e("An error occurred getting battery state.", e);
+            Logger.getLogger().m1036e("An error occurred getting battery state.", e);
         }
         return new BatteryState(f, z);
     }

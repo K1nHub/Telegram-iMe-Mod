@@ -5,6 +5,6 @@ import com.google.firebase.crashlytics.internal.Logger;
 public class DisabledBreadcrumbSource implements BreadcrumbSource {
     @Override // com.google.firebase.crashlytics.internal.breadcrumbs.BreadcrumbSource
     public void registerBreadcrumbHandler(BreadcrumbHandler breadcrumbHandler) {
-        Logger.getLogger().m1038d("Could not register handler for breadcrumbs events.");
+        Logger.getLogger().m1039d("Could not register handler for breadcrumbs events.");
     }
 }

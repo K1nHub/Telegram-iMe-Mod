@@ -3,17 +3,7 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = -0x61e65e0a
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
@@ -181,6 +171,12 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;
 
+    iget v1, v0, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->flags:I
+
+    or-int/lit8 v1, v1, 0x10
+
+    iput v1, v0, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->flags:I
+
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -210,7 +206,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageService_layer118;->constructor:I
+    const v0, -0x61e65e0a
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 

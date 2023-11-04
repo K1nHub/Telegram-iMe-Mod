@@ -74,12 +74,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/recorder/TimelineView;Ljava/lang/String;II)V
     .locals 8
 
-    .line 1304
+    .line 1319
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->this$0:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1296
+    .line 1311
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -88,10 +88,10 @@
 
     const/4 p1, 0x0
 
-    .line 1375
+    .line 1390
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->loading:Z
 
-    .line 1388
+    .line 1403
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x3
@@ -100,7 +100,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->bitmapPaint:Landroid/graphics/Paint;
 
-    .line 1305
+    .line 1320
     new-instance v0, Landroid/media/MediaMetadataRetriever;
 
     invoke-direct {v0}, Landroid/media/MediaMetadataRetriever;-><init>()V
@@ -109,11 +109,11 @@
 
     const-wide/32 v1, 0x1d4c0
 
-    .line 1310
+    .line 1325
     :try_start_0
     invoke-virtual {v0, p2}, Landroid/media/MediaMetadataRetriever;->setDataSource(Ljava/lang/String;)V
 
-    .line 1312
+    .line 1327
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->metadataRetriever:Landroid/media/MediaMetadataRetriever;
 
     const/16 v0, 0x9
@@ -124,7 +124,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 1314
+    .line 1329
     invoke-static {p2}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
     move-result-wide v3
@@ -139,7 +139,7 @@
     :cond_0
     move-wide v3, v1
 
-    .line 1316
+    .line 1331
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->metadataRetriever:Landroid/media/MediaMetadataRetriever;
 
@@ -151,7 +151,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 1318
+    .line 1333
     invoke-static {p2}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p2
@@ -163,7 +163,7 @@
     :cond_1
     move p2, p1
 
-    .line 1320
+    .line 1335
     :goto_1
     :try_start_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->metadataRetriever:Landroid/media/MediaMetadataRetriever;
@@ -176,12 +176,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 1322
+    .line 1337
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result p1
 
-    .line 1324
+    .line 1339
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->metadataRetriever:Landroid/media/MediaMetadataRetriever;
 
@@ -193,7 +193,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1326
+    .line 1341
     invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v0
@@ -241,10 +241,10 @@
     :goto_3
     const/4 v5, 0x0
 
-    .line 1334
+    .line 1349
     iput-object v5, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->metadataRetriever:Landroid/media/MediaMetadataRetriever;
 
-    .line 1335
+    .line 1350
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_3
@@ -273,14 +273,14 @@
 
     const/high16 p2, 0x3f100000    # 0.5625f
 
-    .line 1341
+    .line 1356
     invoke-static {v0, p1, p2}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result p1
 
     const/4 p2, 0x1
 
-    .line 1342
+    .line 1357
     invoke-static {p2, p4}, Ljava/lang/Math;->max(II)I
 
     move-result v0
@@ -293,7 +293,7 @@
 
     float-to-double v5, p4
 
-    .line 1343
+    .line 1358
     invoke-static {v5, v6}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide v5
@@ -306,7 +306,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->frameWidth:I
 
-    .line 1344
+    .line 1359
     invoke-static {v3, v4, v1, v2}, Ljava/lang/Math;->max(JJ)J
 
     move-result-wide v0
@@ -327,7 +327,7 @@
 
     float-to-double p1, p2
 
-    .line 1345
+    .line 1360
     invoke-static {p1, p2}, Ljava/lang/Math;->ceil(D)D
 
     move-result-wide p1
@@ -344,15 +344,15 @@
 
     float-to-long p1, p2
 
-    .line 1346
+    .line 1361
     iput-wide p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->frameIterator:J
 
     neg-long p1, p1
 
-    .line 1347
+    .line 1362
     iput-wide p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->nextFrame:J
 
-    .line 1348
+    .line 1363
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->load()V
 
     return-void
@@ -361,7 +361,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;)I
     .locals 0
 
-    .line 1290
+    .line 1305
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->count:I
 
     return p0
@@ -370,7 +370,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 1290
+    .line 1305
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->frames:Ljava/util/ArrayList;
 
     return-object p0
@@ -379,7 +379,7 @@
 .method private synthetic lambda$retrieveFrame$0(Landroid/graphics/Bitmap;)V
     .locals 0
 
-    .line 1418
+    .line 1433
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->receiveFrame(Landroid/graphics/Bitmap;)V
 
     return-void
@@ -388,7 +388,7 @@
 .method private receiveFrame(Landroid/graphics/Bitmap;)V
     .locals 2
 
-    .line 1422
+    .line 1437
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->loading:Z
 
     if-eqz v0, :cond_1
@@ -399,7 +399,7 @@
 
     goto :goto_0
 
-    .line 1425
+    .line 1440
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->frames:Ljava/util/ArrayList;
 
@@ -411,10 +411,10 @@
 
     const/4 p1, 0x0
 
-    .line 1426
+    .line 1441
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->loading:Z
 
-    .line 1427
+    .line 1442
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->this$0:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
@@ -427,7 +427,7 @@
 .method private retrieveFrame()V
     .locals 12
 
-    .line 1391
+    .line 1406
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->metadataRetriever:Landroid/media/MediaMetadataRetriever;
 
     if-nez v0, :cond_0
@@ -437,7 +437,7 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 1397
+    .line 1412
     :try_start_0
     iget-wide v2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->nextFrame:J
 
@@ -453,7 +453,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 1399
+    .line 1414
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->frameWidth:I
 
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->frameHeight:I
@@ -464,12 +464,12 @@
 
     move-result-object v0
 
-    .line 1400
+    .line 1415
     new-instance v2, Landroid/graphics/Canvas;
 
     invoke-direct {v2, v0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 1401
+    .line 1416
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->frameWidth:I
 
     int-to-float v3, v3
@@ -498,7 +498,7 @@
 
     move-result v3
 
-    .line 1402
+    .line 1417
     new-instance v4, Landroid/graphics/Rect;
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
@@ -513,10 +513,10 @@
 
     invoke-direct {v4, v7, v7, v5, v6}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 1403
+    .line 1418
     new-instance v5, Landroid/graphics/Rect;
 
-    .line 1404
+    .line 1419
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v6
@@ -539,7 +539,7 @@
 
     float-to-int v6, v6
 
-    .line 1405
+    .line 1420
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v8
@@ -560,7 +560,7 @@
 
     float-to-int v8, v8
 
-    .line 1406
+    .line 1421
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v9
@@ -581,7 +581,7 @@
 
     float-to-int v9, v9
 
-    .line 1407
+    .line 1422
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v10
@@ -604,12 +604,12 @@
 
     invoke-direct {v5, v6, v8, v9, v3}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    .line 1409
+    .line 1424
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->bitmapPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v2, v1, v4, v5, v3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
 
-    .line 1410
+    .line 1425
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -621,10 +621,10 @@
     :catch_0
     move-exception v0
 
-    .line 1414
+    .line 1429
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1418
+    .line 1433
     :cond_1
     :goto_0
     new-instance v0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$$ExternalSyntheticLambda1;
@@ -643,10 +643,10 @@
 
     const/4 v0, 0x1
 
-    .line 1431
+    .line 1446
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->destroyed:Z
 
-    .line 1432
+    .line 1447
     sget-object v0, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$$ExternalSyntheticLambda0;
@@ -655,7 +655,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->cancelRunnable(Ljava/lang/Runnable;)V
 
-    .line 1433
+    .line 1448
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->frames:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -676,28 +676,28 @@
 
     check-cast v1, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$BitmapFrame;
 
-    .line 1434
+    .line 1449
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$BitmapFrame;->bitmap:Landroid/graphics/Bitmap;
 
     if-eqz v1, :cond_0
 
-    .line 1435
+    .line 1450
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
     goto :goto_0
 
-    .line 1438
+    .line 1453
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->frames:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 1439
+    .line 1454
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->metadataRetriever:Landroid/media/MediaMetadataRetriever;
 
     if-eqz v0, :cond_2
 
-    .line 1441
+    .line 1456
     :try_start_0
     invoke-virtual {v0}, Landroid/media/MediaMetadataRetriever;->release()V
     :try_end_0
@@ -710,10 +710,10 @@
 
     const/4 v1, 0x0
 
-    .line 1443
+    .line 1458
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->metadataRetriever:Landroid/media/MediaMetadataRetriever;
 
-    .line 1444
+    .line 1459
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_2
@@ -724,7 +724,7 @@
 .method public getDuration()J
     .locals 2
 
-    .line 1356
+    .line 1371
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->duration:J
 
     return-wide v0
@@ -733,7 +733,7 @@
 .method public getFrameWidth()I
     .locals 1
 
-    .line 1352
+    .line 1367
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->frameWidth:I
 
     return v0
@@ -742,7 +742,7 @@
 .method public load()V
     .locals 4
 
-    .line 1379
+    .line 1394
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->loading:Z
 
     if-nez v0, :cond_1
@@ -766,10 +766,10 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 1382
+    .line 1397
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->loading:Z
 
-    .line 1383
+    .line 1398
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->nextFrame:J
 
     iget-wide v2, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->frameIterator:J
@@ -778,7 +778,7 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader;->nextFrame:J
 
-    .line 1384
+    .line 1399
     sget-object v0, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$$ExternalSyntheticLambda0;
@@ -787,7 +787,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->cancelRunnable(Ljava/lang/Runnable;)V
 
-    .line 1385
+    .line 1400
     sget-object v0, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/TimelineView$VideoThumbsLoader$$ExternalSyntheticLambda0;

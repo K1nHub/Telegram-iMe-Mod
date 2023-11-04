@@ -22,9 +22,9 @@ public final class ReadPackageFragmentKt {
             } else {
                 protoBuf$PackageFragment = null;
             }
-            Pair<ProtoBuf$PackageFragment, BuiltInsBinaryVersion> m144to = TuplesKt.m144to(protoBuf$PackageFragment, readFrom);
+            Pair<ProtoBuf$PackageFragment, BuiltInsBinaryVersion> m146to = TuplesKt.m146to(protoBuf$PackageFragment, readFrom);
             CloseableKt.closeFinally(inputStream, null);
-            return m144to;
+            return m146to;
         } finally {
         }
     }

@@ -3,7 +3,7 @@ package com.google.android.exoplayer2.extractor.mkv;
 import android.net.Uri;
 import android.util.Pair;
 import android.util.SparseArray;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.drm.DrmInitData;
 import com.google.android.exoplayer2.extractor.ChunkIndex;
@@ -422,12 +422,12 @@ public class MatroskaExtractor implements Extractor {
 
     MatroskaExtractor(EbmlReader ebmlReader, int i) {
         this.segmentContentPosition = -1L;
-        this.timecodeScale = C0479C.TIME_UNSET;
-        this.durationTimecode = C0479C.TIME_UNSET;
-        this.durationUs = C0479C.TIME_UNSET;
+        this.timecodeScale = C0485C.TIME_UNSET;
+        this.durationTimecode = C0485C.TIME_UNSET;
+        this.durationUs = C0485C.TIME_UNSET;
         this.cuesContentPosition = -1L;
         this.seekPositionAfterBuildingCues = -1L;
-        this.clusterTimecodeUs = C0479C.TIME_UNSET;
+        this.clusterTimecodeUs = C0485C.TIME_UNSET;
         this.reader = ebmlReader;
         ebmlReader.init(new InnerEbmlProcessor());
         this.seekForCuesEnabled = (i & 1) == 0;
@@ -458,7 +458,7 @@ public class MatroskaExtractor implements Extractor {
 
     @Override // com.google.android.exoplayer2.extractor.Extractor
     public void seek(long j, long j2) {
-        this.clusterTimecodeUs = C0479C.TIME_UNSET;
+        this.clusterTimecodeUs = C0485C.TIME_UNSET;
         this.blockState = 0;
         this.reader.reset();
         this.varintReader.reset();
@@ -585,7 +585,7 @@ public class MatroskaExtractor implements Extractor {
                 if (track3.cryptoData == null) {
                     throw ParserException.createForMalformedContainer("Encrypted Track found but ContentEncKeyID was not found", null);
                 }
-                track3.drmInitData = new DrmInitData(new DrmInitData.SchemeData(C0479C.UUID_NIL, MimeTypes.VIDEO_WEBM, this.currentTrack.cryptoData.encryptionKey));
+                track3.drmInitData = new DrmInitData(new DrmInitData.SchemeData(C0485C.UUID_NIL, MimeTypes.VIDEO_WEBM, this.currentTrack.cryptoData.encryptionKey));
             }
         } else if (i == ID_CONTENT_ENCODINGS) {
             assertInTrackEntry(i);
@@ -594,11 +594,11 @@ public class MatroskaExtractor implements Extractor {
                 throw ParserException.createForMalformedContainer("Combining encryption and compression is not supported", null);
             }
         } else if (i == 357149030) {
-            if (this.timecodeScale == C0479C.TIME_UNSET) {
+            if (this.timecodeScale == C0485C.TIME_UNSET) {
                 this.timecodeScale = 1000000L;
             }
             long j3 = this.durationTimecode;
-            if (j3 != C0479C.TIME_UNSET) {
+            if (j3 != C0485C.TIME_UNSET) {
                 this.durationUs = scaleTimecodeToUs(j3);
             }
         } else if (i == ID_TRACKS) {
@@ -945,11 +945,11 @@ public class MatroskaExtractor implements Extractor {
         } else {
             if (CODEC_ID_SUBRIP.equals(track.codecId) || CODEC_ID_ASS.equals(track.codecId) || CODEC_ID_VTT.equals(track.codecId)) {
                 if (this.blockSampleCount > 1) {
-                    Log.m1106w(TAG, "Skipping subtitle sample in laced block.");
+                    Log.m1107w(TAG, "Skipping subtitle sample in laced block.");
                 } else {
                     long j2 = this.blockDurationUs;
-                    if (j2 == C0479C.TIME_UNSET) {
-                        Log.m1106w(TAG, "Skipping subtitle sample with no duration.");
+                    if (j2 == C0485C.TIME_UNSET) {
+                        Log.m1107w(TAG, "Skipping subtitle sample with no duration.");
                     } else {
                         setSubtitleEndTime(track.codecId, j2, this.subtitleSample.getData());
                         int position = this.subtitleSample.getPosition();
@@ -1230,7 +1230,7 @@ public class MatroskaExtractor implements Extractor {
     }
 
     private static byte[] formatSubtitleTimecode(long j, String str, long j2) {
-        Assertions.checkArgument(j != C0479C.TIME_UNSET);
+        Assertions.checkArgument(j != C0485C.TIME_UNSET);
         int i = (int) (j / 3600000000L);
         long j3 = j - ((i * 3600) * 1000000);
         int i2 = (int) (j3 / 60000000);
@@ -1259,7 +1259,7 @@ public class MatroskaExtractor implements Extractor {
 
     private SeekMap buildSeekMap(LongArray longArray, LongArray longArray2) {
         int i;
-        if (this.segmentContentPosition == -1 || this.durationUs == C0479C.TIME_UNSET || longArray == null || longArray.size() == 0 || longArray2 == null || longArray2.size() != longArray.size()) {
+        if (this.segmentContentPosition == -1 || this.durationUs == C0485C.TIME_UNSET || longArray == null || longArray.size() == 0 || longArray2 == null || longArray2.size() != longArray.size()) {
             return new SeekMap.Unseekable(this.durationUs);
         }
         int size = longArray.size();
@@ -1286,7 +1286,7 @@ public class MatroskaExtractor implements Extractor {
         jArr2[i] = this.durationUs - jArr3[i];
         long j = jArr2[i];
         if (j <= 0) {
-            Log.m1106w(TAG, "Discarding last cue point with unexpected duration: " + j);
+            Log.m1107w(TAG, "Discarding last cue point with unexpected duration: " + j);
             iArr = Arrays.copyOf(iArr, i);
             jArr = Arrays.copyOf(jArr, i);
             jArr2 = Arrays.copyOf(jArr2, i);
@@ -1315,7 +1315,7 @@ public class MatroskaExtractor implements Extractor {
 
     private long scaleTimecodeToUs(long j) throws ParserException {
         long j2 = this.timecodeScale;
-        if (j2 == C0479C.TIME_UNSET) {
+        if (j2 == C0485C.TIME_UNSET) {
             throw ParserException.createForMalformedContainer("Can't scale timecode prior to timecodeScale being set.", null);
         }
         return Util.scaleLargeTimestamp(j, j2, 1000L);
@@ -1762,7 +1762,7 @@ public class MatroskaExtractor implements Extractor {
                     }
                     throw ParserException.createForMalformedContainer("Failed to find FourCC VC1 initialization data", null);
                 }
-                Log.m1106w(MatroskaExtractor.TAG, "Unknown FourCC. Setting mimeType to video/x-unknown");
+                Log.m1107w(MatroskaExtractor.TAG, "Unknown FourCC. Setting mimeType to video/x-unknown");
                 return new Pair<>(MimeTypes.VIDEO_UNKNOWN, null);
             } catch (ArrayIndexOutOfBoundsException unused) {
                 throw ParserException.createForMalformedContainer("Error parsing FourCC private data", null);

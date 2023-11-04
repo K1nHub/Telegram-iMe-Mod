@@ -14,7 +14,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* compiled from: CIOReader.kt */
-@DebugMetadata(m143c = "io.ktor.network.sockets.CIOReaderKt$attachForReadingImpl$1", m142f = "CIOReader.kt", m141l = {44, 44, 55}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "io.ktor.network.sockets.CIOReaderKt$attachForReadingImpl$1", m144f = "CIOReader.kt", m143l = {44, 44, 55}, m142m = "invokeSuspend")
 /* loaded from: classes4.dex */
 final class CIOReaderKt$attachForReadingImpl$1 extends SuspendLambda implements Function2<WriterScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ ByteBuffer $buffer;

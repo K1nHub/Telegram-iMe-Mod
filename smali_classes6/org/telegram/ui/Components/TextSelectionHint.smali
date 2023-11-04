@@ -1301,11 +1301,9 @@
 
     .line 81
     :cond_1
-    sget p1, Lorg/telegram/messenger/R$string;->TextSelectionHit:I
+    sget p1, Lorg/telegram/messenger/R$string;->TextSelectionHint:I
 
-    const-string p2, "TextSelectionHit"
-
-    invoke-static {p2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p1
 

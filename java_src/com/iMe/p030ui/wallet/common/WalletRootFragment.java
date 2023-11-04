@@ -58,14 +58,14 @@ import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkFragmentWalletGlobalBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenu;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.C3702ActionBar;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.ActionBar.ActionBarMenu;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.C3706ActionBar;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
 /* compiled from: WalletRootFragment.kt */
 /* renamed from: com.iMe.ui.wallet.common.WalletRootFragment */
 /* loaded from: classes3.dex */
@@ -214,7 +214,7 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
         return (ForkFragmentWalletGlobalBinding) this.binding$delegate.getValue(this, $$delegatedProperties[2]);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         WalletTabFragment currentScreen = getBottomNavigationRouter().getCurrentScreen();
         if (currentScreen != null) {
@@ -240,13 +240,13 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
         setupNavigationRouter();
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onFragmentDestroy() {
         getBottomNavigationRouter().clean();
         super.onFragmentDestroy();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onActivityResultFragment(int i, int i2, Intent intent) {
         super.onActivityResultFragment(i, i2, intent);
         for (WalletTabFragment walletTabFragment : getBottomNavigationRouter().getScreenStack()) {
@@ -254,7 +254,7 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
         }
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onDestroyView() {
         for (WalletTabFragment walletTabFragment : getBottomNavigationRouter().getScreenStack()) {
             walletTabFragment.onDestroyView();
@@ -287,7 +287,7 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
         });
     }
 
-    @Override // com.iMe.p030ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.wallet_auth.WalletAuthBaseFragment, com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onResume() {
         super.onResume();
         WalletTabFragment currentScreen = getBottomNavigationRouter().getCurrentScreen();
@@ -296,7 +296,7 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
         }
     }
 
-    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // com.iMe.p030ui.base.mvp.MvpFragment, org.telegram.p043ui.ActionBar.BaseFragment
     public void onPause() {
         WalletTabFragment currentScreen = getBottomNavigationRouter().getCurrentScreen();
         if (currentScreen != null) {
@@ -305,25 +305,25 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
         super.onPause();
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean onBackPressed() {
         backAction();
         return false;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3702ActionBar c3702ActionBar = this.actionBar;
+        C3706ActionBar c3706ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_AB_SELECTORCOLOR;
         int i2 = Theme.key_actionBarDefaultSelector;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, Theme.key_actionBarDefaultTitle), new ThemeDescription(c3702ActionBar, i, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, i2), new ThemeDescription(null, 0, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$$ExternalSyntheticLambda0
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, Theme.key_actionBarDefaultTitle), new ThemeDescription(c3706ActionBar, i, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, i2), new ThemeDescription(null, 0, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$$ExternalSyntheticLambda0
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletRootFragment.this.setupColors();
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -370,15 +370,15 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
     }
 
     private final void setupActionBar() {
-        C3702ActionBar c3702ActionBar = this.actionBar;
-        c3702ActionBar.setBackButtonImage(C3630R.C3632drawable.ic_ab_back);
-        c3702ActionBar.setTitle(getResourceManager().getString(C3630R.string.drawer_wallet_item_title));
-        c3702ActionBar.setAllowOverlayTitle(true);
-        ActionBarMenu createMenu = c3702ActionBar.createMenu();
-        this.notificationMenuItem = createMenu.addItem(IdFabric$Menu.NOTIFICATIONS, C3630R.C3632drawable.msg_notifications);
-        this.walletConnectMenuItem = createMenu.addItem(IdFabric$Menu.WALLET_CONNECT, C3630R.C3632drawable.fork_ic_wallet_connect);
-        c3702ActionBar.setActionBarMenuOnItemClick(new C3702ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$setupActionBar$1$2
-            @Override // org.telegram.p042ui.ActionBar.C3702ActionBar.ActionBarMenuOnItemClick
+        C3706ActionBar c3706ActionBar = this.actionBar;
+        c3706ActionBar.setBackButtonImage(C3634R.C3636drawable.ic_ab_back);
+        c3706ActionBar.setTitle(getResourceManager().getString(C3634R.string.drawer_wallet_item_title));
+        c3706ActionBar.setAllowOverlayTitle(true);
+        ActionBarMenu createMenu = c3706ActionBar.createMenu();
+        this.notificationMenuItem = createMenu.addItem(IdFabric$Menu.NOTIFICATIONS, C3634R.C3636drawable.msg_notifications);
+        this.walletConnectMenuItem = createMenu.addItem(IdFabric$Menu.WALLET_CONNECT, C3634R.C3636drawable.fork_ic_wallet_connect);
+        c3706ActionBar.setActionBarMenuOnItemClick(new C3706ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.common.WalletRootFragment$setupActionBar$1$2
+            @Override // org.telegram.p043ui.ActionBar.C3706ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletRootFragment.this.backAction();
@@ -396,14 +396,14 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
         if (getBottomNavigationRouter().getCurrentScreen() instanceof WalletHomeFragment) {
             finishFragment();
         } else {
-            getPresenter().selectTab(C3630R.C3633id.wallet_root_bottom_navigation_home);
+            getPresenter().selectTab(C3634R.C3637id.wallet_root_bottom_navigation_home);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void setupColors() {
         ForkFragmentWalletGlobalBinding binding = getBinding();
-        binding.cardBottomNavigationWrapper.setRadius(AndroidUtilities.m103dp(30.0f));
+        binding.cardBottomNavigationWrapper.setRadius(AndroidUtilities.m105dp(30.0f));
         RealtimeBlurView realtimeBlurView = binding.realtimeBlur;
         int i = Theme.key_chats_actionBackground;
         realtimeBlurView.setOverlayColor(ViewExtKt.withAlpha(Theme.getColor(i), 55));
@@ -423,7 +423,7 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
 
     private final List<WalletBottomNavigationTab> getTabs() {
         List<WalletBottomNavigationTab> mutableListOf;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletBottomNavigationTab(C3630R.C3633id.wallet_root_bottom_navigation_home, WalletHomeFragment.Companion.newInstance(), getResourceManager().getString(C3630R.string.drawer_wallet_item_title)), new WalletBottomNavigationTab(C3630R.C3633id.wallet_root_bottom_navigation_exchange, WalletSwapProtocolsFragment.Companion.newInstance$default(WalletSwapProtocolsFragment.Companion, ScreenType.TAB, null, 2, null), getResourceManager().getString(C3630R.string.wallet_navigation_exchange)), new WalletBottomNavigationTab(C3630R.C3633id.wallet_root_bottom_navigation_settings, WalletSettingsFragment.Companion.newInstance(), getResourceManager().getString(C3630R.string.wallet_settings_toolbar_title)));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletBottomNavigationTab(C3634R.C3637id.wallet_root_bottom_navigation_home, WalletHomeFragment.Companion.newInstance(), getResourceManager().getString(C3634R.string.drawer_wallet_item_title)), new WalletBottomNavigationTab(C3634R.C3637id.wallet_root_bottom_navigation_exchange, WalletSwapProtocolsFragment.Companion.newInstance$default(WalletSwapProtocolsFragment.Companion, ScreenType.TAB, null, 2, null), getResourceManager().getString(C3634R.string.wallet_navigation_exchange)), new WalletBottomNavigationTab(C3634R.C3637id.wallet_root_bottom_navigation_settings, WalletSettingsFragment.Companion.newInstance(), getResourceManager().getString(C3634R.string.wallet_settings_toolbar_title)));
         for (WalletBottomNavigationTab walletBottomNavigationTab : mutableListOf) {
             walletBottomNavigationTab.getFragment().setBottomNavigationDelegate(this);
         }
@@ -442,7 +442,7 @@ public final class WalletRootFragment extends WalletAuthBaseFragment implements 
                 return true;
             }
         });
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3630R.C3633id.wallet_root_bottom_navigation_home, getResourceManager().getString(C3630R.string.wallet_navigation_wallet), C3630R.C3632drawable.fork_ic_nav_wallet_24, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3630R.C3633id.wallet_root_bottom_navigation_exchange, getResourceManager().getString(C3630R.string.wallet_navigation_exchange), C3630R.C3632drawable.fork_ic_exchange_24, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3630R.C3633id.wallet_root_bottom_navigation_settings, getResourceManager().getString(C3630R.string.wallet_navigation_settings), C3630R.C3632drawable.msg_settings, true, getResourceManager().getColor(17170443), false, 32, null));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(C3634R.C3637id.wallet_root_bottom_navigation_home, getResourceManager().getString(C3634R.string.wallet_navigation_wallet), C3634R.C3636drawable.fork_ic_nav_wallet_24, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3634R.C3637id.wallet_root_bottom_navigation_exchange, getResourceManager().getString(C3634R.string.wallet_navigation_exchange), C3634R.C3636drawable.fork_ic_exchange_24, true, getResourceManager().getColor(17170443), false, 32, null), new MenuItem(C3634R.C3637id.wallet_root_bottom_navigation_settings, getResourceManager().getString(C3634R.string.wallet_navigation_settings), C3634R.C3636drawable.msg_settings, true, getResourceManager().getColor(17170443), false, 32, null));
         bubbleTabBar.setMenu(mutableListOf);
     }
 

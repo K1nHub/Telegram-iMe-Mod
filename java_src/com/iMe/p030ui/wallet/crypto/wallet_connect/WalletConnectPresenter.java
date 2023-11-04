@@ -33,7 +33,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import timber.log.Timber;
 /* compiled from: WalletConnectPresenter.kt */
@@ -100,7 +100,7 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
     }
 
     public final DialogModel getDisconnectAllConfirmationDialogModel() {
-        return new DialogModel(LocaleController.getString("AreYouSureSessionsTitle", C3630R.string.AreYouSureSessionsTitle), this.resourceManager.getString(C3630R.string.wallet_connect_terminate_all_description), LocaleController.getString("Cancel", C3630R.string.Cancel), LocaleController.getString("Terminate", C3630R.string.Terminate));
+        return new DialogModel(LocaleController.getString("AreYouSureSessionsTitle", C3634R.string.AreYouSureSessionsTitle), this.resourceManager.getString(C3634R.string.wallet_connect_terminate_all_description), LocaleController.getString("Cancel", C3634R.string.Cancel), LocaleController.getString("Terminate", C3634R.string.Terminate));
     }
 
     public final void showChangeNetworkHintIfNeeded() {
@@ -122,7 +122,7 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
 
     private final void subscribeToEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.NetworkUpdated.class).observeOn(rxEventBus.getSchedulersProvider().mo1009ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.NetworkUpdated.class).observeOn(rxEventBus.getSchedulersProvider().mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<DomainRxEvents.NetworkUpdated, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectPresenter$subscribeToEvents$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -131,12 +131,12 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(DomainRxEvents.NetworkUpdated networkUpdated) {
-                m1662invoke(networkUpdated);
+                m1667invoke(networkUpdated);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1662invoke(DomainRxEvents.NetworkUpdated it) {
+            public final void m1667invoke(DomainRxEvents.NetworkUpdated it) {
                 Network currentNetwork;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 currentNetwork = WalletConnectPresenter.this.getCurrentNetwork();
@@ -172,7 +172,7 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
     }
 
     private final void subscribeToSessionList() {
-        Flowable<Result<List<WCSessionStoreItem>>> observeOn = this.walletConnectInteractor.getWalletConnectSavedSessions().distinctUntilChanged().observeOn(this.schedulersProvider.mo1009ui());
+        Flowable<Result<List<WCSessionStoreItem>>> observeOn = this.walletConnectInteractor.getWalletConnectSavedSessions().distinctUntilChanged().observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletConnectInteractor\n…(schedulersProvider.ui())");
         final BaseView baseView = (BaseView) getViewState();
         Disposable subscribeWithErrorHandle = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends WCSessionStoreItem>>, Unit>() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectPresenter$subscribeToSessionList$$inlined$subscribeWithErrorHandle$default$1
@@ -182,12 +182,12 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends WCSessionStoreItem>> result) {
-                m1663invoke(result);
+                m1668invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1663invoke(Result<? extends List<? extends WCSessionStoreItem>> it) {
+            public final void m1668invoke(Result<? extends List<? extends WCSessionStoreItem>> it) {
                 ResourceManager resourceManager;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends WCSessionStoreItem>> result = it;

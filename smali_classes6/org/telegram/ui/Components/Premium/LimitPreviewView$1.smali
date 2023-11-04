@@ -395,9 +395,13 @@
     .line 197
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$1;->this$0:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
-    iget-object v0, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->staticGradient:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
+    iget-object v1, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->staticGradient:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
-    if-nez v0, :cond_7
+    if-nez v1, :cond_7
+
+    iget-boolean v0, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->invalidationEnabled:Z
+
+    if-eqz v0, :cond_7
 
     .line 198
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V

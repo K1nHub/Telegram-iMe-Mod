@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.webkit.WebView;
 import androidx.core.content.p009pm.ShortcutManagerCompat;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.audio.SilenceSkippingAudioProcessor;
 import com.google.android.exoplayer2.util.MimeTypes;
 import com.iMe.common.TelegramPreferenceKeys;
@@ -49,9 +49,9 @@ import java.util.Locale;
 import java.util.Set;
 import org.json.JSONObject;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.LaunchActivity;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.LaunchActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC$TL_help_appUpdate;
@@ -125,6 +125,7 @@ public class SharedConfig {
     public static boolean isFilesSendingPreviewAndCaptionEnabled = false;
     public static boolean isFilterTabsAtBottomEnabled = false;
     public static boolean isFloatingDebugActive = false;
+    public static boolean isForwardingPreviewEditorHintShown = false;
     public static boolean isHideChatKeyboardOnScrollEnabled = false;
     public static boolean isMainActionBarMenuEnabled = false;
     public static boolean isMessageQuickTranslateEnabled = false;
@@ -185,6 +186,7 @@ public class SharedConfig {
     private static HashMap<String, String> passportConfigMap;
     public static boolean pauseMusicOnMedia;
     public static boolean pauseMusicOnRecord;
+    public static boolean payByInvoice;
     public static TLRPC$TL_help_appUpdate pendingAppUpdate;
     public static int pendingAppUpdateBuildVersion;
     public static boolean photoViewerBlur;
@@ -206,6 +208,7 @@ public class SharedConfig {
     public static boolean readOnlyStorageDirAlertShowed;
     public static boolean recordViaSco;
     public static int repeatMode;
+    public static boolean replyingOptionsHintShown;
     public static boolean roundCamera16to9;
     public static boolean saveIncomingPhotos;
     public static boolean saveStreamMedia;
@@ -235,6 +238,7 @@ public class SharedConfig {
     public static boolean stickersReorderingHintUsed;
     public static String storageCacheDir;
     public static int storiesColumnsCount;
+    public static boolean storiesIntroShown;
     public static boolean storyReactionsLongPressHint;
     public static boolean streamAllVideo;
     public static boolean streamMedia;
@@ -571,6 +575,11 @@ public class SharedConfig {
         MessagesController.getGlobalMainSettings().edit().putBoolean(TelegramPreferenceKeys.Global.isChatAttachAlertWalletBotEnabled(), isChatAttachAlertWalletBotEnabled).apply();
     }
 
+    public static void setForwardingPreviewEditorHintShown(boolean z) {
+        isForwardingPreviewEditorHintShown = z;
+        MessagesController.getGlobalMainSettings().edit().putBoolean(TelegramPreferenceKeys.Global.isForwardingPreviewEditorHintShown(), isForwardingPreviewEditorHintShown).apply();
+    }
+
     public static boolean loopStickers() {
         return LiteMode.isEnabled(2);
     }
@@ -603,9 +612,9 @@ public class SharedConfig {
         });
         readOnlyStorageDirAlertShowed = true;
         AlertDialog.Builder builder = new AlertDialog.Builder(lastFragment.getParentActivity());
-        builder.setTitle(LocaleController.getString("SdCardError", C3630R.string.SdCardError));
-        builder.setSubtitle(LocaleController.getString("SdCardErrorDescription", C3630R.string.SdCardErrorDescription));
-        builder.setPositiveButton(LocaleController.getString("DoNotUseSDCard", C3630R.string.DoNotUseSDCard), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.SharedConfig$$ExternalSyntheticLambda0
+        builder.setTitle(LocaleController.getString("SdCardError", C3634R.string.SdCardError));
+        builder.setSubtitle(LocaleController.getString("SdCardErrorDescription", C3634R.string.SdCardErrorDescription));
+        builder.setPositiveButton(LocaleController.getString("DoNotUseSDCard", C3634R.string.DoNotUseSDCard), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.SharedConfig$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 SharedConfig.lambda$checkSdCard$1(dialogInterface, i);
@@ -652,6 +661,11 @@ public class SharedConfig {
             allowPreparingHevcPlayers = Boolean.valueOf(i2 >= 8);
         }
         return allowPreparingHevcPlayers.booleanValue();
+    }
+
+    public static void togglePaymentByInvoice() {
+        payByInvoice = !payByInvoice;
+        ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0).edit().putBoolean("payByInvoice", payByInvoice).apply();
     }
 
     public static void toggleSurfaceInStories() {
@@ -839,6 +853,7 @@ public class SharedConfig {
                 edit.putInt("scheduledHintShows", scheduledHintShows);
                 edit.putLong("scheduledHintSeenAt", scheduledHintSeenAt);
                 edit.putBoolean("forwardingOptionsHintShown", forwardingOptionsHintShown);
+                edit.putBoolean("replyingOptionsHintShown", replyingOptionsHintShown);
                 edit.putInt("lockRecordAudioVideoHint", lockRecordAudioVideoHint);
                 edit.putString("storageCacheDir", !TextUtils.isEmpty(storageCacheDir) ? storageCacheDir : "");
                 edit.putBoolean("proxyRotationEnabled", proxyRotationEnabled);
@@ -864,7 +879,7 @@ public class SharedConfig {
                 edit2.putBoolean("record_via_sco", recordViaSco);
                 edit2.apply();
             } catch (Exception e) {
-                FileLog.m97e(e);
+                FileLog.m99e(e);
             }
         }
     }
@@ -878,22 +893,22 @@ public class SharedConfig {
         return i;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x018e A[Catch: Exception -> 0x01aa, all -> 0x07fb, TryCatch #0 {Exception -> 0x01aa, blocks: (B:22:0x013f, B:24:0x0147, B:26:0x0157, B:27:0x016b, B:38:0x018e, B:40:0x0192, B:41:0x0194, B:43:0x0198, B:45:0x019e, B:47:0x01a2, B:36:0x0188), top: B:85:0x013f, outer: #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:40:0x0192 A[Catch: Exception -> 0x01aa, all -> 0x07fb, TryCatch #0 {Exception -> 0x01aa, blocks: (B:22:0x013f, B:24:0x0147, B:26:0x0157, B:27:0x016b, B:38:0x018e, B:40:0x0192, B:41:0x0194, B:43:0x0198, B:45:0x019e, B:47:0x01a2, B:36:0x0188), top: B:85:0x013f, outer: #2 }] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x05cd  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x05d0  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x05e0  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x05e2  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x07c0  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x07c2  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x07eb A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x018e A[Catch: Exception -> 0x01aa, all -> 0x0826, TryCatch #1 {Exception -> 0x01aa, blocks: (B:22:0x013f, B:24:0x0147, B:26:0x0157, B:27:0x016b, B:38:0x018e, B:40:0x0192, B:41:0x0194, B:43:0x0198, B:45:0x019e, B:47:0x01a2, B:36:0x0188), top: B:87:0x013f, outer: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x0192 A[Catch: Exception -> 0x01aa, all -> 0x0826, TryCatch #1 {Exception -> 0x01aa, blocks: (B:22:0x013f, B:24:0x0147, B:26:0x0157, B:27:0x016b, B:38:0x018e, B:40:0x0192, B:41:0x0194, B:43:0x0198, B:45:0x019e, B:47:0x01a2, B:36:0x0188), top: B:87:0x013f, outer: #2 }] */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x05db  */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x05de  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x05ee  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x05f0  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x07e2  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x07e4  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x0816 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public static void loadConfig() {
         /*
-            Method dump skipped, instructions count: 2046
+            Method dump skipped, instructions count: 2089
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.SharedConfig.loadConfig():void");
@@ -921,7 +936,7 @@ public class SharedConfig {
         }
         int badPasscodeTries2 = (sectionPasscodeData != null ? sectionPasscodeData.getBadPasscodeTries() : badPasscodeTries) + 1;
         if (badPasscodeTries2 >= 3) {
-            long j = badPasscodeTries2 != 3 ? badPasscodeTries2 != 4 ? badPasscodeTries2 != 5 ? badPasscodeTries2 != 6 ? badPasscodeTries2 != 7 ? 30000L : 25000L : SilenceSkippingAudioProcessor.DEFAULT_PADDING_SILENCE_US : C0479C.DEFAULT_SEEK_FORWARD_INCREMENT_MS : 10000L : 5000L;
+            long j = badPasscodeTries2 != 3 ? badPasscodeTries2 != 4 ? badPasscodeTries2 != 5 ? badPasscodeTries2 != 6 ? badPasscodeTries2 != 7 ? 30000L : 25000L : SilenceSkippingAudioProcessor.DEFAULT_PADDING_SILENCE_US : C0485C.DEFAULT_SEEK_FORWARD_INCREMENT_MS : 10000L : 5000L;
             if (sectionPasscodeData != null) {
                 sectionPasscodeData.setLastUptimeMillis(SystemClock.elapsedRealtime());
             } else {
@@ -976,7 +991,7 @@ public class SharedConfig {
                     passportConfigMap.put(next.toUpperCase(), jSONObject.getString(next).toUpperCase());
                 }
             } catch (Throwable th) {
-                FileLog.m97e(th);
+                FileLog.m99e(th);
             }
         }
         return passportConfigMap;
@@ -985,13 +1000,13 @@ public class SharedConfig {
     public static boolean isAppUpdateAvailable() {
         int i;
         TLRPC$TL_help_appUpdate tLRPC$TL_help_appUpdate = pendingAppUpdate;
-        if (tLRPC$TL_help_appUpdate == null || tLRPC$TL_help_appUpdate.document == null || !BuildVars.isStandaloneApp()) {
+        if (tLRPC$TL_help_appUpdate == null || tLRPC$TL_help_appUpdate.document == null || !ApplicationLoader.isStandaloneBuild()) {
             return false;
         }
         try {
             i = ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode;
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
             i = BuildVars.BUILD_VERSION;
         }
         return pendingAppUpdateBuildVersion == i;
@@ -1023,7 +1038,7 @@ public class SharedConfig {
             r1 = move-exception
             r2 = r0
         L1a:
-            org.telegram.messenger.FileLog.m97e(r1)
+            org.telegram.messenger.FileLog.m99e(r1)
             r1 = 0
         L1e:
             if (r2 != 0) goto L22
@@ -1100,7 +1115,7 @@ public class SharedConfig {
                         saveConfig();
                     }
                 } catch (Exception e) {
-                    FileLog.m97e(e);
+                    FileLog.m99e(e);
                 }
             }
             return equals;
@@ -1114,7 +1129,7 @@ public class SharedConfig {
             System.arraycopy(passcodeSalt2, 0, bArr3, bytes2.length + 16, 16);
             return passcodeHash2.equals(Utilities.bytesToHex(Utilities.computeSHA256(bArr3, 0, length2)));
         } catch (Exception e2) {
-            FileLog.m97e(e2);
+            FileLog.m99e(e2);
             return false;
         }
     }
@@ -1141,6 +1156,7 @@ public class SharedConfig {
         scheduledHintSeenAt = 0L;
         lockRecordAudioVideoHint = 0;
         forwardingOptionsHintShown = false;
+        replyingOptionsHintShown = false;
         messageSeenHintCount = 3;
         emojiInteractionsHintCount = 3;
         dayNightThemeSwitchHintCount = 3;
@@ -1174,6 +1190,13 @@ public class SharedConfig {
         storyReactionsLongPressHint = z;
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putBoolean("storyReactionsLongPressHint", storyReactionsLongPressHint);
+        edit.apply();
+    }
+
+    public static void setStoriesIntroShown(boolean z) {
+        storiesIntroShown = z;
+        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+        edit.putBoolean("storiesIntroShown", storiesIntroShown);
         edit.apply();
     }
 
@@ -1223,6 +1246,13 @@ public class SharedConfig {
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         forwardingOptionsHintShown = true;
         edit.putBoolean("forwardingOptionsHintShown", true);
+        edit.apply();
+    }
+
+    public static void replyingOptionsHintHintShowed() {
+        SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+        replyingOptionsHintShown = true;
+        edit.putBoolean("replyingOptionsHintShown", true);
         edit.apply();
     }
 
@@ -1298,7 +1328,7 @@ public class SharedConfig {
         try {
             logsDir = AndroidUtilities.getLogsDir();
         } catch (Throwable th) {
-            FileLog.m97e(th);
+            FileLog.m99e(th);
         }
         if (logsDir == null) {
             return;
@@ -1595,7 +1625,7 @@ public class SharedConfig {
                         }
                     }
                 } else {
-                    FileLog.m99e("Unknown proxy schema version: " + ((int) readByte));
+                    FileLog.m101e("Unknown proxy schema version: " + ((int) readByte));
                 }
             } else {
                 for (int i3 = 0; i3 < readInt32; i3++) {
@@ -1750,7 +1780,7 @@ public class SharedConfig {
                 AndroidUtilities.createEmptyFile(new File(file3, ".nomedia"));
             }
         } catch (Throwable th) {
-            FileLog.m97e(th);
+            FileLog.m99e(th);
         }
     }
 
@@ -1850,7 +1880,7 @@ public class SharedConfig {
             i3 = (i2 < 8 || memoryClass <= 160 || (ceil != -1 && ceil <= 2055) || (ceil == -1 && i2 == 8 && i <= 23)) ? 1 : 2;
         }
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m100d("device performance info selected_class = " + i3 + " (cpu_count = " + i2 + ", freq = " + ceil + ", memoryClass = " + memoryClass + ", android version " + i + ", manufacture " + Build.MANUFACTURER + ", screenRefreshRate=" + AndroidUtilities.screenRefreshRate + ")");
+            FileLog.m102d("device performance info selected_class = " + i3 + " (cpu_count = " + i2 + ", freq = " + ceil + ", memoryClass = " + memoryClass + ", android version " + i + ", manufacture " + Build.MANUFACTURER + ", screenRefreshRate=" + AndroidUtilities.screenRefreshRate + ")");
         }
         return i3;
     }

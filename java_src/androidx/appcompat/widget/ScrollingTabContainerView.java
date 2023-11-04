@@ -19,7 +19,7 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import androidx.appcompat.R$attr;
-import androidx.appcompat.app.AbstractC0019ActionBar;
+import androidx.appcompat.app.AbstractC0025ActionBar;
 import androidx.appcompat.view.ActionBarPolicy;
 import androidx.appcompat.widget.LinearLayoutCompat;
 /* loaded from: classes.dex */
@@ -196,7 +196,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
     }
 
-    TabView createTabView(AbstractC0019ActionBar.Tab tab, boolean z) {
+    TabView createTabView(AbstractC0025ActionBar.Tab tab, boolean z) {
         TabView tabView = new TabView(getContext(), tab, z);
         if (z) {
             tabView.setBackgroundDrawable(null);
@@ -222,7 +222,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         private final int[] BG_ATTRS;
         private View mCustomView;
         private ImageView mIconView;
-        private AbstractC0019ActionBar.Tab mTab;
+        private AbstractC0025ActionBar.Tab mTab;
         private TextView mTextView;
 
         /* JADX WARN: Illegal instructions before constructor call */
@@ -230,7 +230,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
             Code decompiled incorrectly, please refer to instructions dump.
             To view partially-correct add '--show-bad-code' argument
         */
-        public TabView(android.content.Context r6, androidx.appcompat.app.AbstractC0019ActionBar.Tab r7, boolean r8) {
+        public TabView(android.content.Context r6, androidx.appcompat.app.AbstractC0025ActionBar.Tab r7, boolean r8) {
             /*
                 r4 = this;
                 androidx.appcompat.widget.ScrollingTabContainerView.this = r5
@@ -261,7 +261,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
             throw new UnsupportedOperationException("Method not decompiled: androidx.appcompat.widget.ScrollingTabContainerView.TabView.<init>(androidx.appcompat.widget.ScrollingTabContainerView, android.content.Context, androidx.appcompat.app.ActionBar$Tab, boolean):void");
         }
 
-        public void bindTab(AbstractC0019ActionBar.Tab tab) {
+        public void bindTab(AbstractC0025ActionBar.Tab tab) {
             this.mTab = tab;
             update();
         }
@@ -300,7 +300,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         }
 
         public void update() {
-            AbstractC0019ActionBar.Tab tab = this.mTab;
+            AbstractC0025ActionBar.Tab tab = this.mTab;
             View customView = tab.getCustomView();
             if (customView != null) {
                 ViewParent parent = customView.getParent();
@@ -375,7 +375,7 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
             TooltipCompat.setTooltipText(this, z ? null : tab.getContentDescription());
         }
 
-        public AbstractC0019ActionBar.Tab getTab() {
+        public AbstractC0025ActionBar.Tab getTab() {
             return this.mTab;
         }
     }
@@ -404,9 +404,9 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
         @Override // android.widget.Adapter
         public View getView(int i, View view, ViewGroup viewGroup) {
             if (view == null) {
-                return ScrollingTabContainerView.this.createTabView((AbstractC0019ActionBar.Tab) getItem(i), true);
+                return ScrollingTabContainerView.this.createTabView((AbstractC0025ActionBar.Tab) getItem(i), true);
             }
-            ((TabView) view).bindTab((AbstractC0019ActionBar.Tab) getItem(i));
+            ((TabView) view).bindTab((AbstractC0025ActionBar.Tab) getItem(i));
             return view;
         }
     }

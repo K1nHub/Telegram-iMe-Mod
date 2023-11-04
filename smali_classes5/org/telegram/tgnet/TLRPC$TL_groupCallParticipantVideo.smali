@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x67753ac8
-
-
 # instance fields
 .field public audio_source:I
 
@@ -28,19 +24,13 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 1
 
-    .line 28675
+    .line 28956
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 28681
+    .line 28962
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -53,8 +43,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;
     .locals 1
 
-    .line 28685
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->constructor:I
+    const v0, 0x67753ac8
 
     if-eq v0, p1, :cond_1
 
@@ -64,7 +53,7 @@
 
     return-object p0
 
-    .line 28687
+    .line 28968
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -90,13 +79,13 @@
 
     throw p0
 
-    .line 28692
+    .line 28973
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;-><init>()V
 
-    .line 28693
+    .line 28974
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -107,7 +96,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 28698
+    .line 28979
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -129,18 +118,18 @@
     :cond_0
     move v0, v2
 
-    .line 28699
+    .line 28980
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->paused:Z
 
-    .line 28700
+    .line 28981
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->endpoint:Ljava/lang/String;
 
-    .line 28701
+    .line 28982
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -153,7 +142,7 @@
 
     return-void
 
-    .line 28704
+    .line 28985
     :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -175,7 +164,7 @@
 
     throw p1
 
-    .line 28708
+    .line 28989
     :cond_2
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -184,7 +173,7 @@
     :goto_1
     if-ge v2, v0, :cond_4
 
-    .line 28710
+    .line 28991
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -197,7 +186,7 @@
 
     return-void
 
-    .line 28714
+    .line 28995
     :cond_3
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->source_groups:Ljava/util/ArrayList;
 
@@ -207,7 +196,7 @@
 
     goto :goto_1
 
-    .line 28716
+    .line 28997
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->flags:I
 
@@ -215,7 +204,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 28717
+    .line 28998
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -229,12 +218,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 28722
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->constructor:I
+    const v0, 0x67753ac8
 
+    .line 29003
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 28723
+    .line 29004
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->paused:Z
 
     if-eqz v0, :cond_0
@@ -253,27 +242,27 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->flags:I
 
-    .line 28724
+    .line 29005
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 28725
+    .line 29006
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->endpoint:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
     const v0, 0x1cb5c415
 
-    .line 28726
+    .line 29007
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 28727
+    .line 29008
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->source_groups:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 28728
+    .line 29009
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -281,7 +270,7 @@
     :goto_1
     if-ge v1, v0, :cond_1
 
-    .line 28730
+    .line 29011
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->source_groups:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -296,7 +285,7 @@
 
     goto :goto_1
 
-    .line 28732
+    .line 29013
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->flags:I
 
@@ -304,7 +293,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 28733
+    .line 29014
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideo;->audio_source:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

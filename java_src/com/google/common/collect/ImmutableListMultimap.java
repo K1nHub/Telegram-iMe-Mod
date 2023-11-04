@@ -14,7 +14,7 @@ public class ImmutableListMultimap<K, V> extends ImmutableMultimap<K, V> impleme
     }
 
     /* renamed from: of */
-    public static <K, V> ImmutableListMultimap<K, V> m1048of() {
+    public static <K, V> ImmutableListMultimap<K, V> m1049of() {
         return EmptyImmutableListMultimap.INSTANCE;
     }
 
@@ -54,7 +54,7 @@ public class ImmutableListMultimap<K, V> extends ImmutableMultimap<K, V> impleme
     public static <K, V> ImmutableListMultimap<K, V> fromMapEntries(Collection<? extends Map.Entry<? extends K, ? extends Collection<? extends V>>> collection, Comparator<? super V> comparator) {
         ImmutableList sortedCopyOf;
         if (collection.isEmpty()) {
-            return m1048of();
+            return m1049of();
         }
         ImmutableMap.Builder builder = new ImmutableMap.Builder(collection.size());
         int i = 0;
@@ -82,6 +82,6 @@ public class ImmutableListMultimap<K, V> extends ImmutableMultimap<K, V> impleme
     @Override // com.google.common.collect.Multimap
     public ImmutableList<V> get(K k) {
         ImmutableList<V> immutableList = (ImmutableList) this.map.get(k);
-        return immutableList == null ? ImmutableList.m1054of() : immutableList;
+        return immutableList == null ? ImmutableList.m1055of() : immutableList;
     }
 }

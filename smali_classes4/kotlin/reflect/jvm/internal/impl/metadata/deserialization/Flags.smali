@@ -179,7 +179,7 @@
     goto :goto_0
 
     :cond_1
-    const-string v4, "kind"
+    const-string/jumbo v4, "kind"
 
     aput-object v4, v0, v2
 
@@ -241,6 +241,8 @@
     invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
+
+    nop
 
     :pswitch_data_0
     .packed-switch 0x3

@@ -144,697 +144,723 @@
 
     const/4 v0, 0x0
 
-    .line 150
+    .line 153
     invoke-direct {p0, p1, p2, p3, v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 10
+    .locals 16
 
-    .line 154
-    invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    move-object/from16 v6, p0
 
-    .line 76
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+    move-object/from16 v7, p1
 
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+    move-object/from16 v8, p2
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
-
-    .line 78
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
-
-    const/4 v0, 0x6
-
-    new-array v1, v0, [Lorg/telegram/ui/Components/StatusDrawable;
-
-    .line 82
-    iput-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
-
-    .line 83
-    new-instance v1, Lorg/telegram/ui/Components/AvatarDrawable;
-
-    invoke-direct {v1}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
-
-    iput-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    .line 84
-    sget v1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
-
-    iput v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
-
-    const/4 v1, 0x1
-
-    .line 85
-    iput-boolean v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->occupyStatusBar:Z
-
-    const/16 v2, 0x8
-
-    .line 86
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    iput v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->leftPadding:I
-
-    const/4 v3, -0x1
-
-    .line 89
-    iput v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastWidth:I
-
-    .line 90
-    iput v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->largerWidth:I
-
-    new-array v4, v1, [Z
-
-    .line 95
-    iput-object v4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->isOnline:[Z
-
-    new-array v4, v1, [Z
-
-    .line 96
-    iput-object v4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusMadeShorter:[Z
-
-    .line 100
-    iput v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->onlineCount:I
-
-    .line 103
-    iput v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
-
-    const/4 v3, 0x0
-
-    .line 109
-    iput-boolean v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->allowShorterStatus:Z
-
-    .line 597
-    iput-boolean v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableIsScamOrVerified:Z
-
-    const/4 v4, 0x0
-
-    .line 598
-    iput-object v4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableContentDescription:Ljava/lang/String;
-
-    if-eqz p2, :cond_0
+    move-object/from16 v9, p4
 
     .line 157
-    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
+    invoke-direct/range {p0 .. p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    move-result v4
+    .line 79
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
-    iput v4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    iput-object v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
+
+    .line 81
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+
+    iput-object v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
+
+    const/4 v10, 0x6
+
+    new-array v0, v10, [Lorg/telegram/ui/Components/StatusDrawable;
+
+    .line 85
+    iput-object v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
+
+    .line 86
+    new-instance v0, Lorg/telegram/ui/Components/AvatarDrawable;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
+
+    iput-object v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    .line 87
+    sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+
+    iput v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
+
+    const/4 v11, 0x1
+
+    .line 88
+    iput-boolean v11, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->occupyStatusBar:Z
+
+    const/16 v12, 0x8
+
+    .line 89
+    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    iput v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->leftPadding:I
+
+    const/4 v0, -0x1
+
+    .line 92
+    iput v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastWidth:I
+
+    .line 93
+    iput v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->largerWidth:I
+
+    new-array v1, v11, [Z
+
+    .line 98
+    iput-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->isOnline:[Z
+
+    new-array v1, v11, [Z
+
+    .line 99
+    iput-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusMadeShorter:[Z
+
+    .line 103
+    iput v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->onlineCount:I
+
+    .line 106
+    iput v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
+
+    const/4 v13, 0x0
+
+    .line 112
+    iput-boolean v13, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->allowShorterStatus:Z
+
+    .line 624
+    iput-boolean v13, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableIsScamOrVerified:Z
+
+    const/4 v0, 0x0
+
+    .line 625
+    iput-object v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableContentDescription:Ljava/lang/String;
+
+    if-eqz v8, :cond_0
 
     .line 160
+    invoke-virtual/range {p2 .. p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getCurrentAccount()I
+
+    move-result v0
+
+    iput v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
+
+    .line 163
     :cond_0
-    iput-object p4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iput-object v9, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 161
-    instance-of v4, p2, Lorg/telegram/ui/ChatActivity;
+    .line 164
+    instance-of v14, v8, Lorg/telegram/ui/ChatActivity;
 
-    if-eqz v4, :cond_1
-
-    .line 162
-    move-object v5, p2
-
-    check-cast v5, Lorg/telegram/ui/ChatActivity;
-
-    iput-object v5, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
+    if-eqz v14, :cond_1
 
     .line 165
+    move-object v0, v8
+
+    check-cast v0, Lorg/telegram/ui/ChatActivity;
+
+    iput-object v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
+
+    .line 168
     :cond_1
-    iget-object v5, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
+    iget-object v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    if-eqz v5, :cond_2
+    if-eqz v0, :cond_2
 
-    invoke-virtual {v5}, Lorg/telegram/ui/ChatActivity;->getChatMode()I
+    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getChatMode()I
 
-    move-result v5
+    move-result v0
 
-    if-nez v5, :cond_2
+    if-nez v0, :cond_2
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
+    iget-object v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {v5}, Lorg/telegram/ui/ChatActivity;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
+    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-static {v5}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
+    invoke-static {v0}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
-    move-result v5
+    move-result v0
 
-    if-nez v5, :cond_2
+    if-nez v0, :cond_2
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
+    iget-object v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {v5, v1, v3}, Lorg/telegram/ui/ChatActivity;->isTemplatesChannel(ZZ)Z
+    invoke-virtual {v0, v11, v13}, Lorg/telegram/ui/ChatActivity;->isTemplatesChannel(ZZ)Z
 
-    move-result v5
+    move-result v0
 
-    if-nez v5, :cond_2
+    if-nez v0, :cond_2
 
-    move v5, v1
+    move v15, v11
 
     goto :goto_0
 
     :cond_2
-    move v5, v3
+    move v15, v13
 
-    .line 166
+    .line 169
     :goto_0
-    new-instance v6, Lorg/telegram/ui/Components/ChatAvatarContainer$1;
+    new-instance v5, Lorg/telegram/ui/Components/ChatAvatarContainer$1;
 
-    invoke-direct {v6, p0, p1, v5, p4}, Lorg/telegram/ui/Components/ChatAvatarContainer$1;-><init>(Lorg/telegram/ui/Components/ChatAvatarContainer;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    move-object v0, v5
 
-    iput-object v6, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+    move-object/from16 v1, p0
 
-    const/4 v6, 0x2
+    move-object/from16 v2, p1
 
-    if-nez v4, :cond_3
+    move-object/from16 v3, p2
 
-    .line 196
-    instance-of v4, p2, Lorg/telegram/ui/TopicsFragment;
+    move v4, v15
 
-    if-eqz v4, :cond_5
+    move-object v10, v5
 
-    .line 197
+    move-object/from16 v5, p4
+
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/ChatAvatarContainer$1;-><init>(Lorg/telegram/ui/Components/ChatAvatarContainer;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    iput-object v10, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+
+    const/4 v0, 0x2
+
+    if-nez v14, :cond_3
+
+    .line 223
+    instance-of v1, v8, Lorg/telegram/ui/TopicsFragment;
+
+    if-eqz v1, :cond_5
+
+    .line 224
     :cond_3
-    new-instance v4, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
+    new-instance v1, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
 
-    invoke-direct {v4, p2}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    iput-object v4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->sharedMediaPreloader:Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
+    iput-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->sharedMediaPreloader:Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
 
-    .line 198
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
+    .line 225
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    if-eqz p2, :cond_5
+    if-eqz v1, :cond_5
 
-    invoke-virtual {p2}, Lorg/telegram/ui/ChatActivity;->isThreadChat()Z
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->isThreadChat()Z
 
-    move-result p2
+    move-result v1
 
-    if-nez p2, :cond_4
+    if-nez v1, :cond_4
 
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {p2}, Lorg/telegram/ui/ChatActivity;->getChatMode()I
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getChatMode()I
 
-    move-result p2
+    move-result v1
 
-    if-ne p2, v6, :cond_5
+    if-ne v1, v0, :cond_5
 
-    .line 199
+    .line 226
     :cond_4
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    invoke-virtual {p2, v2}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v1, v12}, Landroid/view/View;->setVisibility(I)V
 
-    .line 202
+    .line 229
     :cond_5
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    sget v4, Lorg/telegram/messenger/R$string;->AccDescrProfilePicture:I
+    sget v2, Lorg/telegram/messenger/R$string;->AccDescrProfilePicture:I
 
-    const-string v7, "AccDescrProfilePicture"
+    const-string v3, "AccDescrProfilePicture"
 
-    invoke-static {v7, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {p2, v4}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 203
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+    .line 230
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    const/16 v4, 0x15
+    const/16 v2, 0x15
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
+
+    .line 231
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+
+    invoke-virtual {v6, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+
+    if-eqz v15, :cond_6
+
+    .line 233
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+
+    new-instance v2, Lorg/telegram/ui/Components/ChatAvatarContainer$$ExternalSyntheticLambda0;
+
+    invoke-direct {v2, v6}, Lorg/telegram/ui/Components/ChatAvatarContainer$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatAvatarContainer;)V
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 240
+    :cond_6
+    new-instance v1, Lorg/telegram/ui/Components/ChatAvatarContainer$SimpleTextConnectedView;
+
+    iget-object v2, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-direct {v1, v6, v7, v2}, Lorg/telegram/ui/Components/ChatAvatarContainer$SimpleTextConnectedView;-><init>(Lorg/telegram/ui/Components/ChatAvatarContainer;Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicReference;)V
+
+    iput-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    .line 241
+    invoke-virtual {v1, v11}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setEllipsizeByGradient(Z)V
+
+    .line 242
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
+
+    invoke-direct {v6, v2}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getThemedColor(I)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
+
+    .line 243
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    const/16 v2, 0x12
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
+
+    .line 244
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    const/4 v2, 0x3
+
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
+
+    .line 245
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    const-string v3, "fonts/rmedium.ttf"
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 246
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    const v3, 0x3fa66666    # 1.3f
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result v3
+
+    neg-int v3, v3
+
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setLeftDrawableTopPadding(I)V
+
+    .line 247
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    invoke-virtual {v1, v13}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setCanHideRightDrawable(Z)V
+
+    .line 248
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    invoke-virtual {v1, v11}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawableOutside(Z)V
+
+    .line 249
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    const/4 v3, 0x6
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    const/16 v4, 0xc
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    invoke-virtual {p2, v4}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
+    invoke-virtual {v1, v13, v3, v13, v4}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 204
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+    .line 250
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v6, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    if-eqz v5, :cond_6
+    .line 252
+    new-instance v1, Lorg/telegram/ui/Components/ChatAvatarContainer$SimpleTextConnectedView;
 
-    .line 206
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+    iget-object v3, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
 
-    new-instance v4, Lorg/telegram/ui/Components/ChatAvatarContainer$$ExternalSyntheticLambda0;
+    invoke-direct {v1, v6, v7, v3}, Lorg/telegram/ui/Components/ChatAvatarContainer$SimpleTextConnectedView;-><init>(Lorg/telegram/ui/Components/ChatAvatarContainer;Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicReference;)V
 
-    invoke-direct {v4, p0}, Lorg/telegram/ui/Components/ChatAvatarContainer$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatAvatarContainer;)V
+    iput-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-virtual {p2, v4}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    .line 253
+    invoke-virtual {v1, v11}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setEllipsizeByGradient(Z)V
 
-    .line 213
-    :cond_6
-    new-instance p2, Lorg/telegram/ui/Components/ChatAvatarContainer$SimpleTextConnectedView;
+    .line 254
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubtitle:I
 
-    invoke-direct {p2, p0, p1, v4}, Lorg/telegram/ui/Components/ChatAvatarContainer$SimpleTextConnectedView;-><init>(Lorg/telegram/ui/Components/ChatAvatarContainer;Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicReference;)V
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    .line 214
-    invoke-virtual {p2, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setEllipsizeByGradient(Z)V
-
-    .line 215
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
-
-    invoke-direct {p0, v4}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getThemedColor(I)I
+    invoke-direct {v6, v3}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getThemedColor(I)I
 
     move-result v4
 
-    invoke-virtual {p2, v4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
+    invoke-virtual {v1, v4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 216
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    .line 255
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const/16 v4, 0x12
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-virtual {p2, v4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
+    move-result-object v3
 
-    .line 217
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-virtual {v1, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    const/4 v4, 0x3
+    .line 256
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-virtual {p2, v4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
+    const/16 v3, 0xe
 
-    .line 218
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    const-string v5, "fonts/rmedium.ttf"
+    .line 257
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
 
-    move-result-object v5
+    .line 258
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-virtual {p2, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTypeface(Landroid/graphics/Typeface;)V
+    const/16 v3, 0xa
 
-    .line 219
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    const v5, 0x3fa66666    # 1.3f
+    move-result v4
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-virtual {v1, v13, v13, v4, v13}, Landroid/view/View;->setPadding(IIII)V
 
-    move-result v5
+    .line 259
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    neg-int v5, v5
+    invoke-virtual {v6, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    invoke-virtual {p2, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setLeftDrawableTopPadding(I)V
+    .line 261
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    .line 220
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    const/4 v4, 0x5
 
-    invoke-virtual {p2, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setCanHideRightDrawable(Z)V
+    if-eqz v1, :cond_8
 
-    .line 221
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    .line 262
+    new-instance v1, Landroid/widget/ImageView;
 
-    invoke-virtual {p2, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawableOutside(Z)V
+    invoke-direct {v1, v7}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 222
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iput-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    const/16 v5, 0xc
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 263
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
-    invoke-virtual {p2, v3, v0, v3, v5}, Landroid/view/View;->setPadding(IIII)V
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    .line 223
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    move-result v3
 
-    invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
-
-    .line 225
-    new-instance p2, Lorg/telegram/ui/Components/ChatAvatarContainer$SimpleTextConnectedView;
-
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-direct {p2, p0, p1, v0}, Lorg/telegram/ui/Components/ChatAvatarContainer$SimpleTextConnectedView;-><init>(Lorg/telegram/ui/Components/ChatAvatarContainer;Landroid/content/Context;Ljava/util/concurrent/atomic/AtomicReference;)V
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    .line 226
-    invoke-virtual {p2, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setEllipsizeByGradient(Z)V
-
-    .line 227
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubtitle:I
-
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getThemedColor(I)I
-
-    move-result v5
-
-    invoke-virtual {p2, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
-
-    .line 228
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    .line 229
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    const/16 v0, 0xe
-
-    invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
-
-    .line 230
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    invoke-virtual {p2, v4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
-
-    .line 231
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    const/16 v0, 0xa
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v5
-
-    invoke-virtual {p2, v3, v3, v5, v3}, Landroid/view/View;->setPadding(IIII)V
-
-    .line 232
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
-
-    .line 234
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
-
-    const/4 v5, 0x5
-
-    if-eqz p2, :cond_8
-
-    .line 235
-    new-instance p2, Landroid/widget/ImageView;
-
-    invoke-direct {p2, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
-
-    .line 236
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v7
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v10
 
-    invoke-virtual {p2, v7, v0, v8, v9}, Landroid/widget/ImageView;->setPadding(IIII)V
+    invoke-virtual {v1, v5, v3, v8, v10}, Landroid/widget/ImageView;->setPadding(IIII)V
 
-    .line 237
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
+    .line 264
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
-    sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
+    sget-object v3, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
-    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 238
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
+    .line 265
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
-    const/4 v0, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setAlpha(F)V
+    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 239
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
+    .line 266
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
-    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleY(F)V
+    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 240
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
+    .line 267
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
-    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setScaleX(F)V
+    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 241
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
+    .line 268
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
-    invoke-virtual {p2, v2}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v1, v12}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 242
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
+    .line 269
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
-    new-instance v0, Lorg/telegram/ui/Components/TimerDrawable;
+    new-instance v3, Lorg/telegram/ui/Components/TimerDrawable;
 
-    invoke-direct {v0, p1, p4}, Lorg/telegram/ui/Components/TimerDrawable;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v3, v7, v9}, Lorg/telegram/ui/Components/TimerDrawable;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timerDrawable:Lorg/telegram/ui/Components/TimerDrawable;
+    iput-object v3, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->timerDrawable:Lorg/telegram/ui/Components/TimerDrawable;
 
-    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 243
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
+    .line 270
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
-    invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v6, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 244
-    iput-boolean p3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->secretChatTimer:Z
+    move/from16 v1, p3
 
-    .line 246
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
+    .line 271
+    iput-boolean v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->secretChatTimer:Z
 
-    new-instance p2, Lorg/telegram/ui/Components/ChatAvatarContainer$$ExternalSyntheticLambda2;
+    .line 273
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
-    invoke-direct {p2, p0, p4}, Lorg/telegram/ui/Components/ChatAvatarContainer$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/ChatAvatarContainer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    new-instance v3, Lorg/telegram/ui/Components/ChatAvatarContainer$$ExternalSyntheticLambda2;
 
-    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-direct {v3, v6, v9}, Lorg/telegram/ui/Components/ChatAvatarContainer$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/ChatAvatarContainer;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 253
-    iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->secretChatTimer:Z
+    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    if-eqz p1, :cond_7
+    .line 280
+    iget-boolean v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->secretChatTimer:Z
 
-    .line 254
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
+    if-eqz v1, :cond_7
 
-    sget p2, Lorg/telegram/messenger/R$string;->SetTimer:I
+    .line 281
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
-    const-string p3, "SetTimer"
+    sget v3, Lorg/telegram/messenger/R$string;->SetTimer:I
 
-    invoke-static {p3, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    const-string v5, "SetTimer"
 
-    move-result-object p2
+    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    move-result-object v3
+
+    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
     goto :goto_1
 
-    .line 256
+    .line 283
     :cond_7
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
-    sget p2, Lorg/telegram/messenger/R$string;->AccAutoDeleteTimer:I
+    sget v3, Lorg/telegram/messenger/R$string;->AccAutoDeleteTimer:I
 
-    const-string p3, "AccAutoDeleteTimer"
+    const-string v5, "AccAutoDeleteTimer"
 
-    invoke-static {p3, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object p2
+    move-result-object v3
 
-    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 260
+    .line 287
     :cond_8
     :goto_1
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    if-eqz p1, :cond_c
+    if-eqz v1, :cond_c
 
-    invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getChatMode()I
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getChatMode()I
 
-    move-result p1
+    move-result v1
 
-    if-nez p1, :cond_c
+    if-nez v1, :cond_c
 
-    .line 261
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
+    .line 288
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->isThreadChat()Z
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->isThreadChat()Z
 
-    move-result p1
+    move-result v1
 
-    if-eqz p1, :cond_9
+    if-eqz v1, :cond_9
 
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    iget-boolean p1, p1, Lorg/telegram/ui/ChatActivity;->isTopic:Z
+    iget-boolean v1, v1, Lorg/telegram/ui/ChatActivity;->isTopic:Z
 
-    if-eqz p1, :cond_a
+    if-eqz v1, :cond_a
 
     :cond_9
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
 
-    move-result-object p1
+    move-result-object v1
 
-    invoke-static {p1}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
+    invoke-static {v1}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
-    move-result p1
+    move-result v1
 
-    if-nez p1, :cond_a
+    if-nez v1, :cond_a
 
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {p1, v1, v3}, Lorg/telegram/ui/ChatActivity;->isTemplatesChannel(ZZ)Z
+    invoke-virtual {v1, v11, v13}, Lorg/telegram/ui/ChatActivity;->isTemplatesChannel(ZZ)Z
 
-    move-result p1
+    move-result v1
 
-    if-nez p1, :cond_a
+    if-nez v1, :cond_a
 
-    .line 262
-    new-instance p1, Lorg/telegram/ui/Components/ChatAvatarContainer$$ExternalSyntheticLambda1;
+    .line 289
+    new-instance v1, Lorg/telegram/ui/Components/ChatAvatarContainer$$ExternalSyntheticLambda1;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Components/ChatAvatarContainer$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/ChatAvatarContainer;)V
+    invoke-direct {v1, v6}, Lorg/telegram/ui/Components/ChatAvatarContainer$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/ChatAvatarContainer;)V
 
-    invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v6, v1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 265
+    .line 292
     :cond_a
-    iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getCurrentChat()Lorg/telegram/tgnet/TLRPC$Chat;
+    invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getCurrentChat()Lorg/telegram/tgnet/TLRPC$Chat;
 
-    move-result-object p1
+    move-result-object v1
 
-    .line 266
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
+    .line 293
+    iget-object v3, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
-    new-instance p3, Lorg/telegram/ui/Components/TypingDotsDrawable;
+    new-instance v5, Lorg/telegram/ui/Components/TypingDotsDrawable;
 
-    invoke-direct {p3, v1}, Lorg/telegram/ui/Components/TypingDotsDrawable;-><init>(Z)V
+    invoke-direct {v5, v11}, Lorg/telegram/ui/Components/TypingDotsDrawable;-><init>(Z)V
 
-    aput-object p3, p2, v3
+    aput-object v5, v3, v13
 
-    .line 267
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
+    .line 294
+    iget-object v3, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
-    new-instance p3, Lorg/telegram/ui/Components/RecordStatusDrawable;
+    new-instance v5, Lorg/telegram/ui/Components/RecordStatusDrawable;
 
-    invoke-direct {p3, v1}, Lorg/telegram/ui/Components/RecordStatusDrawable;-><init>(Z)V
+    invoke-direct {v5, v11}, Lorg/telegram/ui/Components/RecordStatusDrawable;-><init>(Z)V
 
-    aput-object p3, p2, v1
+    aput-object v5, v3, v11
 
-    .line 268
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
+    .line 295
+    iget-object v3, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
-    new-instance p3, Lorg/telegram/ui/Components/SendingFileDrawable;
+    new-instance v5, Lorg/telegram/ui/Components/SendingFileDrawable;
 
-    invoke-direct {p3, v1}, Lorg/telegram/ui/Components/SendingFileDrawable;-><init>(Z)V
+    invoke-direct {v5, v11}, Lorg/telegram/ui/Components/SendingFileDrawable;-><init>(Z)V
 
-    aput-object p3, p2, v6
+    aput-object v5, v3, v0
 
-    .line 269
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
+    .line 296
+    iget-object v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
-    new-instance p3, Lorg/telegram/ui/Components/PlayingGameDrawable;
+    new-instance v3, Lorg/telegram/ui/Components/PlayingGameDrawable;
 
-    invoke-direct {p3, v3, p4}, Lorg/telegram/ui/Components/PlayingGameDrawable;-><init>(ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v3, v13, v9}, Lorg/telegram/ui/Components/PlayingGameDrawable;-><init>(ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    aput-object p3, p2, v4
+    aput-object v3, v0, v2
 
-    .line 270
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
+    .line 297
+    iget-object v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
-    const/4 p3, 0x4
+    const/4 v2, 0x4
 
-    new-instance p4, Lorg/telegram/ui/Components/RoundStatusDrawable;
+    new-instance v3, Lorg/telegram/ui/Components/RoundStatusDrawable;
 
-    invoke-direct {p4, v1}, Lorg/telegram/ui/Components/RoundStatusDrawable;-><init>(Z)V
+    invoke-direct {v3, v11}, Lorg/telegram/ui/Components/RoundStatusDrawable;-><init>(Z)V
 
-    aput-object p4, p2, p3
+    aput-object v3, v0, v2
 
-    .line 271
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
+    .line 298
+    iget-object v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
-    new-instance p3, Lorg/telegram/ui/Components/ChoosingStickerStatusDrawable;
+    new-instance v2, Lorg/telegram/ui/Components/ChoosingStickerStatusDrawable;
 
-    invoke-direct {p3, v1}, Lorg/telegram/ui/Components/ChoosingStickerStatusDrawable;-><init>(Z)V
+    invoke-direct {v2, v11}, Lorg/telegram/ui/Components/ChoosingStickerStatusDrawable;-><init>(Z)V
 
-    aput-object p3, p2, v5
+    aput-object v2, v0, v4
 
-    move p2, v3
+    move v0, v13
 
-    .line 272
+    .line 299
     :goto_2
-    iget-object p3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
+    iget-object v2, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
-    array-length p4, p3
+    array-length v3, v2
 
-    if-ge p2, p4, :cond_c
+    if-ge v0, v3, :cond_c
 
-    .line 273
-    aget-object p3, p3, p2
+    .line 300
+    aget-object v2, v2, v0
 
-    if-eqz p1, :cond_b
+    if-eqz v1, :cond_b
 
-    move p4, v1
+    move v3, v11
 
     goto :goto_3
 
     :cond_b
-    move p4, v3
+    move v3, v13
 
     :goto_3
-    invoke-virtual {p3, p4}, Lorg/telegram/ui/Components/StatusDrawable;->setIsChat(Z)V
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/StatusDrawable;->setIsChat(Z)V
 
-    add-int/lit8 p2, p2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 277
+    .line 304
     :cond_c
-    new-instance p1, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+    new-instance v0, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
-    iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v1, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const/16 p3, 0x18
+    const/16 v2, 0x18
 
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result p3
+    move-result v2
 
-    invoke-direct {p1, p2, p3}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;-><init>(Landroid/view/View;I)V
+    invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;-><init>(Landroid/view/View;I)V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->emojiStatusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+    iput-object v0, v6, Lorg/telegram/ui/Components/ChatAvatarContainer;->emojiStatusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     return-void
 .end method
@@ -842,7 +868,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/ChatAvatarContainer;)Lorg/telegram/ui/ChatActivity;
     .locals 0
 
-    .line 64
+    .line 67
     iget-object p0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     return-object p0
@@ -851,7 +877,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/ChatAvatarContainer;)Landroid/widget/ImageView;
     .locals 0
 
-    .line 64
+    .line 67
     iget-object p0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     return-object p0
@@ -860,7 +886,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/ChatAvatarContainer;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 64
+    .line 67
     iget-object p0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     return-object p0
@@ -869,7 +895,7 @@
 .method static synthetic access$202(Lorg/telegram/ui/Components/ChatAvatarContainer;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 64
+    .line 67
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     return-object p1
@@ -878,7 +904,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/ChatAvatarContainer;)Lorg/telegram/ui/ActionBar/SimpleTextView;
     .locals 0
 
-    .line 64
+    .line 67
     iget-object p0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     return-object p0
@@ -887,10 +913,10 @@
 .method private fadeOutToLessWidth(I)V
     .locals 7
 
-    .line 459
+    .line 486
     iput p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->largerWidth:I
 
-    .line 460
+    .line 487
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -901,10 +927,10 @@
 
     if-eqz p1, :cond_0
 
-    .line 462
+    .line 489
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 464
+    .line 491
     :cond_0
     new-instance p1, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -914,12 +940,12 @@
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
-    .line 465
+    .line 492
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 466
+    .line 493
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getThemedColor(I)I
@@ -930,17 +956,17 @@
 
     const/16 v0, 0x12
 
-    .line 467
+    .line 494
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
     const/4 v0, 0x3
 
-    .line 468
+    .line 495
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
 
     const-string v1, "fonts/rmedium.ttf"
 
-    .line 469
+    .line 496
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v1
@@ -949,7 +975,7 @@
 
     const v1, 0x3fa66666    # 1.3f
 
-    .line 470
+    .line 497
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v1
@@ -958,7 +984,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setLeftDrawableTopPadding(I)V
 
-    .line 471
+    .line 498
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getRightDrawable()Landroid/graphics/drawable/Drawable;
@@ -967,7 +993,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 472
+    .line 499
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getRightDrawableOutside()Z
@@ -976,7 +1002,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawableOutside(Z)V
 
-    .line 473
+    .line 500
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getLeftDrawable()Landroid/graphics/drawable/Drawable;
@@ -985,7 +1011,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setLeftDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 474
+    .line 501
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getText()Ljava/lang/CharSequence;
@@ -994,7 +1020,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 475
+    .line 502
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v1
@@ -1025,13 +1051,13 @@
 
     move-result-object v1
 
-    .line 481
+    .line 508
     invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 482
+    .line 509
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 484
+    .line 511
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {p1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -1042,10 +1068,10 @@
 
     if-eqz p1, :cond_1
 
-    .line 486
+    .line 513
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 488
+    .line 515
     :cond_1
     new-instance p1, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -1055,12 +1081,12 @@
 
     invoke-direct {p1, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
-    .line 489
+    .line 516
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v1, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 490
+    .line 517
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubtitle:I
 
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getThemedColor(I)I
@@ -1069,7 +1095,7 @@
 
     invoke-virtual {p1, v6}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 491
+    .line 518
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -1078,13 +1104,13 @@
 
     const/16 v1, 0xe
 
-    .line 492
+    .line 519
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    .line 493
+    .line 520
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
 
-    .line 494
+    .line 521
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getText()Ljava/lang/CharSequence;
@@ -1093,7 +1119,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 495
+    .line 522
     invoke-virtual {p1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v0
@@ -1118,15 +1144,15 @@
 
     move-result-object v0
 
-    .line 504
+    .line 531
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 505
+    .line 532
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     const/4 p1, 0x0
 
-    .line 507
+    .line 534
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
     return-void
@@ -1135,7 +1161,7 @@
 .method public static getChatSubtitle(Lorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$ChatFull;I)Ljava/lang/CharSequence;
     .locals 8
 
-    .line 905
+    .line 932
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result v0
@@ -1156,12 +1182,12 @@
 
     if-eqz p1, :cond_4
 
-    .line 906
+    .line 933
     iget v0, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants_count:I
 
     if-eqz v0, :cond_4
 
-    .line 907
+    .line 934
     iget-boolean v7, p0, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
     if-eqz v7, :cond_1
@@ -1172,7 +1198,7 @@
 
     new-array v2, v6, [Ljava/lang/Object;
 
-    .line 909
+    .line 936
     invoke-static {v4, v0, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
@@ -1202,7 +1228,7 @@
     :cond_0
     new-array p0, v6, [Ljava/lang/Object;
 
-    .line 911
+    .line 938
     invoke-static {v4, v0, p0}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -1212,12 +1238,12 @@
     :cond_1
     new-array p2, v5, [I
 
-    .line 915
+    .line 942
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isAccessibilityScreenReaderEnabled()Z
 
     move-result v0
 
-    .line 916
+    .line 943
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants_count:I
 
     if-eqz v0, :cond_2
@@ -1235,7 +1261,7 @@
 
     move-result-object p1
 
-    .line 917
+    .line 944
     :goto_0
     iget-boolean p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
@@ -1243,7 +1269,7 @@
 
     if-eqz p0, :cond_3
 
-    .line 918
+    .line 945
     aget p0, p2, v6
 
     new-array v1, v6, [Ljava/lang/Object;
@@ -1272,7 +1298,7 @@
 
     goto/16 :goto_1
 
-    .line 920
+    .line 947
     :cond_3
     aget p0, p2, v6
 
@@ -1304,7 +1330,7 @@
 
     goto/16 :goto_1
 
-    .line 924
+    .line 951
     :cond_4
     iget-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$Chat;->megagroup:Z
 
@@ -1312,7 +1338,7 @@
 
     if-nez p1, :cond_5
 
-    .line 926
+    .line 953
     sget p0, Lorg/telegram/messenger/R$string;->Loading:I
 
     const-string p1, "Loading"
@@ -1327,13 +1353,13 @@
 
     goto/16 :goto_1
 
-    .line 928
+    .line 955
     :cond_5
     iget-boolean p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->has_geo:Z
 
     if-eqz p1, :cond_6
 
-    .line 929
+    .line 956
     sget p0, Lorg/telegram/messenger/R$string;->MegaLocation:I
 
     const-string p1, "MegaLocation"
@@ -1348,7 +1374,7 @@
 
     goto/16 :goto_1
 
-    .line 930
+    .line 957
     :cond_6
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -1356,7 +1382,7 @@
 
     if-eqz p0, :cond_7
 
-    .line 931
+    .line 958
     sget p0, Lorg/telegram/messenger/R$string;->MegaPublic:I
 
     const-string p1, "MegaPublic"
@@ -1371,7 +1397,7 @@
 
     goto/16 :goto_1
 
-    .line 933
+    .line 960
     :cond_7
     sget p0, Lorg/telegram/messenger/R$string;->MegaPrivate:I
 
@@ -1387,7 +1413,7 @@
 
     goto/16 :goto_1
 
-    .line 937
+    .line 964
     :cond_8
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -1395,7 +1421,7 @@
 
     if-eqz p0, :cond_9
 
-    .line 938
+    .line 965
     sget p0, Lorg/telegram/messenger/R$string;->ChannelPublic:I
 
     const-string p1, "ChannelPublic"
@@ -1410,7 +1436,7 @@
 
     goto :goto_1
 
-    .line 940
+    .line 967
     :cond_9
     sget p0, Lorg/telegram/messenger/R$string;->ChannelPrivate:I
 
@@ -1426,7 +1452,7 @@
 
     goto :goto_1
 
-    .line 945
+    .line 972
     :cond_a
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isKickedFromChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -1434,7 +1460,7 @@
 
     if-eqz v0, :cond_b
 
-    .line 946
+    .line 973
     sget p0, Lorg/telegram/messenger/R$string;->YouWereKicked:I
 
     const-string p1, "YouWereKicked"
@@ -1445,7 +1471,7 @@
 
     goto :goto_1
 
-    .line 947
+    .line 974
     :cond_b
     invoke-static {p0}, Lorg/telegram/messenger/ChatObject;->isLeftFromChat(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -1453,7 +1479,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 948
+    .line 975
     sget p0, Lorg/telegram/messenger/R$string;->YouLeft:I
 
     const-string p1, "YouLeft"
@@ -1464,18 +1490,18 @@
 
     goto :goto_1
 
-    .line 950
+    .line 977
     :cond_c
     iget p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
     if-eqz p1, :cond_d
 
-    .line 951
+    .line 978
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
 
     if-eqz p1, :cond_d
 
-    .line 952
+    .line 979
     iget-object p0, p1, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
 
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
@@ -1491,7 +1517,7 @@
 
     new-array v0, v6, [Ljava/lang/Object;
 
-    .line 955
+    .line 982
     invoke-static {v4, p0, v0}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -1515,7 +1541,7 @@
     :cond_e
     new-array p1, v6, [Ljava/lang/Object;
 
-    .line 957
+    .line 984
     invoke-static {v4, p0, p1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
@@ -1527,7 +1553,7 @@
 .method private getThemedColor(I)I
     .locals 1
 
-    .line 1179
+    .line 1206
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -1540,7 +1566,7 @@
 .method private synthetic lambda$fadeOutToLessWidth$3()V
     .locals 2
 
-    .line 476
+    .line 503
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -1551,10 +1577,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 478
+    .line 505
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 479
+    .line 506
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
 
     const/4 v1, 0x0
@@ -1568,7 +1594,7 @@
 .method private synthetic lambda$fadeOutToLessWidth$4()V
     .locals 2
 
-    .line 496
+    .line 523
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -1579,24 +1605,24 @@
 
     if-eqz v0, :cond_0
 
-    .line 498
+    .line 525
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 499
+    .line 526
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 500
+    .line 527
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->allowDrawStories:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    .line 501
+    .line 528
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
     :cond_0
@@ -1606,7 +1632,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 0
 
-    .line 207
+    .line 234
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->onAvatarClick()Z
 
     move-result p1
@@ -1615,7 +1641,7 @@
 
     const/4 p1, 0x1
 
-    .line 208
+    .line 235
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatAvatarContainer;->openProfile(Z)V
 
     :cond_0
@@ -1625,12 +1651,12 @@
 .method private synthetic lambda$new$1(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;)V
     .locals 2
 
-    .line 247
+    .line 274
     iget-boolean p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->secretChatTimer:Z
 
     if-eqz p2, :cond_0
 
-    .line 248
+    .line 275
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -1655,7 +1681,7 @@
 
     goto :goto_0
 
-    .line 250
+    .line 277
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->openSetTimer()Z
 
@@ -1668,7 +1694,7 @@
 
     const/4 p1, 0x0
 
-    .line 262
+    .line 289
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatAvatarContainer;->openProfile(Z)V
 
     return-void
@@ -1683,7 +1709,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 717
+    .line 744
     :try_start_0
     iget p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
@@ -1715,7 +1741,7 @@
 
     if-ne p1, v2, :cond_0
 
-    .line 719
+    .line 746
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
@@ -1726,7 +1752,7 @@
 
     invoke-virtual {v2, v3, v4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->replaceTextWithDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/String;)V
 
-    .line 720
+    .line 747
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
     aget-object v2, v2, p1
@@ -1739,20 +1765,20 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/StatusDrawable;->setColor(I)V
 
-    .line 721
+    .line 748
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setLeftDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
-    .line 723
+    .line 750
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v2, v1, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->replaceTextWithDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/String;)V
 
-    .line 724
+    .line 751
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
     aget-object v1, v1, p1
@@ -1765,7 +1791,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/StatusDrawable;->setColor(I)V
 
-    .line 725
+    .line 752
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
@@ -1774,7 +1800,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setLeftDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 727
+    .line 754
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
@@ -1782,7 +1808,7 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentTypingDrawable:Lorg/telegram/ui/Components/StatusDrawable;
 
-    .line 728
+    .line 755
     :goto_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
@@ -1792,14 +1818,14 @@
 
     if-ne v0, p1, :cond_1
 
-    .line 730
+    .line 757
     aget-object v1, v1, v0
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/StatusDrawable;->start()V
 
     goto :goto_2
 
-    .line 732
+    .line 759
     :cond_1
     aget-object v1, v1, v0
 
@@ -1815,26 +1841,26 @@
     :catch_0
     move-exception p1
 
-    .line 736
+    .line 763
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     goto :goto_4
 
-    .line 739
+    .line 766
     :cond_2
     iput-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentTypingDrawable:Lorg/telegram/ui/Components/StatusDrawable;
 
-    .line 740
+    .line 767
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setLeftDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 741
+    .line 768
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v1, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->replaceTextWithDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/String;)V
 
-    .line 742
+    .line 769
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->statusDrawables:[Lorg/telegram/ui/Components/StatusDrawable;
 
@@ -1842,7 +1868,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 743
+    .line 770
     aget-object p1, p1, v0
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/StatusDrawable;->stop()V
@@ -1859,7 +1885,7 @@
 .method private updateCurrentConnectionState()V
     .locals 3
 
-    .line 1119
+    .line 1146
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentConnectionState:I
 
     const/4 v1, 0x0
@@ -1868,7 +1894,7 @@
 
     if-ne v0, v2, :cond_0
 
-    .line 1120
+    .line 1147
     sget v0, Lorg/telegram/messenger/R$string;->WaitingForNetwork:I
 
     const-string v2, "WaitingForNetwork"
@@ -1884,7 +1910,7 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 1122
+    .line 1149
     sget v0, Lorg/telegram/messenger/R$string;->Connecting:I
 
     const-string v2, "Connecting"
@@ -1900,7 +1926,7 @@
 
     if-ne v0, v2, :cond_2
 
-    .line 1124
+    .line 1151
     sget v0, Lorg/telegram/messenger/R$string;->Updating:I
 
     const-string v2, "Updating"
@@ -1916,7 +1942,7 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 1126
+    .line 1153
     sget v0, Lorg/telegram/messenger/R$string;->ConnectingToProxy:I
 
     const-string v2, "ConnectingToProxy"
@@ -1933,25 +1959,25 @@
     :goto_0
     if-nez v0, :cond_5
 
-    .line 1129
+    .line 1156
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
     if-eqz v0, :cond_8
 
-    .line 1130
+    .line 1157
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 1131
+    .line 1158
     iput-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
-    .line 1132
+    .line 1159
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->overrideSubtitleColor:Ljava/lang/Integer;
 
     if-eqz v0, :cond_4
 
-    .line 1133
+    .line 1160
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -1962,13 +1988,13 @@
 
     goto :goto_1
 
-    .line 1134
+    .line 1161
     :cond_4
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
 
     if-ltz v0, :cond_8
 
-    .line 1135
+    .line 1162
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getThemedColor(I)I
@@ -1977,7 +2003,7 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 1136
+    .line 1163
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
@@ -1990,13 +2016,13 @@
 
     goto :goto_1
 
-    .line 1140
+    .line 1167
     :cond_5
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
     if-nez v1, :cond_6
 
-    .line 1141
+    .line 1168
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getText()Ljava/lang/CharSequence;
@@ -2005,18 +2031,18 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
-    .line 1143
+    .line 1170
     :cond_6
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 1144
+    .line 1171
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->overrideSubtitleColor:Ljava/lang/Integer;
 
     if-eqz v0, :cond_7
 
-    .line 1145
+    .line 1172
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
@@ -2027,7 +2053,7 @@
 
     goto :goto_1
 
-    .line 1147
+    .line 1174
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -2039,7 +2065,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 1148
+    .line 1175
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2058,20 +2084,20 @@
 .method public checkAndUpdateAvatar()V
     .locals 8
 
-    .line 1009
+    .line 1036
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1012
+    .line 1039
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v2
 
-    .line 1013
+    .line 1040
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getCurrentChat()Lorg/telegram/tgnet/TLRPC$Chat;
@@ -2084,43 +2110,43 @@
 
     if-eqz v2, :cond_3
 
-    .line 1015
+    .line 1042
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 1016
+    .line 1043
     invoke-static {v2}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v0
 
     if-eqz v0, :cond_1
 
-    .line 1017
+    .line 1044
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 1018
+    .line 1045
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const/16 v1, 0xc
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 1019
+    .line 1046
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz v0, :cond_7
 
-    .line 1020
+    .line 1047
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v0, v3, v3, v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto/16 :goto_2
 
-    .line 1022
+    .line 1049
     :cond_1
     invoke-static {v2}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
@@ -2128,31 +2154,31 @@
 
     if-eqz v0, :cond_2
 
-    .line 1023
+    .line 1050
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 1024
+    .line 1051
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 1025
+    .line 1052
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz v0, :cond_7
 
-    .line 1026
+    .line 1053
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v0, v3, v3, v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto :goto_2
 
-    .line 1029
+    .line 1056
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
@@ -2160,12 +2186,12 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 1030
+    .line 1057
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz v0, :cond_7
 
-    .line 1031
+    .line 1058
     iget-object v1, v0, Lorg/telegram/ui/Components/BackupImageView;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
@@ -2185,17 +2211,17 @@
     :cond_3
     if-eqz v0, :cond_7
 
-    .line 1035
+    .line 1062
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 1036
+    .line 1063
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz v2, :cond_5
 
-    .line 1038
+    .line 1065
     iget v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     iget-wide v4, v0, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -2206,19 +2232,19 @@
 
     if-eqz v2, :cond_4
 
-    .line 1039
+    .line 1066
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 1040
+    .line 1067
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const/16 v2, 0x65
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 1041
+    .line 1068
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
@@ -2227,7 +2253,7 @@
 
     goto :goto_0
 
-    .line 1043
+    .line 1070
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -2235,7 +2261,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 1045
+    .line 1072
     :cond_5
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -2266,12 +2292,12 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 0
 
-    .line 1100
+    .line 1127
     sget p2, Lorg/telegram/messenger/NotificationCenter;->didUpdateConnectionState:I
 
     if-ne p1, p2, :cond_0
 
-    .line 1101
+    .line 1128
     iget p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2282,43 +2308,43 @@
 
     move-result p1
 
-    .line 1102
+    .line 1129
     iget p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentConnectionState:I
 
     if-eq p2, p1, :cond_3
 
-    .line 1103
+    .line 1130
     iput p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentConnectionState:I
 
-    .line 1104
+    .line 1131
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->updateCurrentConnectionState()V
 
     goto :goto_0
 
-    .line 1106
+    .line 1133
     :cond_0
     sget p2, Lorg/telegram/messenger/NotificationCenter;->emojiLoaded:I
 
     if-ne p1, p2, :cond_3
 
-    .line 1107
+    .line 1134
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-eqz p1, :cond_1
 
-    .line 1108
+    .line 1135
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 1110
+    .line 1137
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-eqz p1, :cond_2
 
-    .line 1111
+    .line 1138
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 1113
+    .line 1140
     :cond_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -2330,7 +2356,7 @@
 .method public getAvatarImageView()Lorg/telegram/ui/Components/BackupImageView;
     .locals 1
 
-    .line 1175
+    .line 1202
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     return-object v0
@@ -2339,7 +2365,7 @@
 .method public getLastSubtitleColorKey()I
     .locals 1
 
-    .line 965
+    .line 992
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
 
     return v0
@@ -2348,7 +2374,7 @@
 .method public getSharedMediaPreloader()Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
     .locals 1
 
-    .line 1171
+    .line 1198
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->sharedMediaPreloader:Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
 
     return-object v0
@@ -2357,7 +2383,7 @@
 .method public getSubtitleTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
     .locals 1
 
-    .line 705
+    .line 732
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     return-object v0
@@ -2366,7 +2392,7 @@
 .method public getTimeItem()Landroid/widget/ImageView;
     .locals 1
 
-    .line 697
+    .line 724
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     return-object v0
@@ -2375,7 +2401,7 @@
 .method public getTitleTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
     .locals 1
 
-    .line 701
+    .line 728
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     return-object v0
@@ -2384,7 +2410,7 @@
 .method public hideSubtitle()V
     .locals 2
 
-    .line 115
+    .line 118
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/16 v1, 0x8
@@ -2397,7 +2423,7 @@
 .method public hideTimeItem(Z)V
     .locals 3
 
-    .line 559
+    .line 586
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_2
@@ -2410,13 +2436,13 @@
 
     goto :goto_0
 
-    .line 562
+    .line 589
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->clearAnimation()V
 
-    .line 563
+    .line 590
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
@@ -2427,7 +2453,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 565
+    .line 592
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -2460,12 +2486,12 @@
 
     move-result-object p1
 
-    .line 571
+    .line 598
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
     goto :goto_0
 
-    .line 573
+    .line 600
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
@@ -2473,17 +2499,17 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 574
+    .line 601
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 575
+    .line 602
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 576
+    .line 603
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setScaleX(F)V
@@ -2496,15 +2522,15 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 1074
+    .line 1101
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 1075
+    .line 1102
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_0
 
-    .line 1076
+    .line 1103
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2515,7 +2541,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1077
+    .line 1104
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -2524,7 +2550,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1078
+    .line 1105
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -2537,16 +2563,16 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentConnectionState:I
 
-    .line 1079
+    .line 1106
     invoke-direct {p0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->updateCurrentConnectionState()V
 
-    .line 1081
+    .line 1108
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->emojiStatusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 1082
+    .line 1109
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->attach()V
 
     :cond_1
@@ -2564,12 +2590,12 @@
 .method public onDestroy()V
     .locals 2
 
-    .line 709
+    .line 736
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->sharedMediaPreloader:Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
 
     if-eqz v0, :cond_0
 
-    .line 710
+    .line 737
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->onDestroy(Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -2581,15 +2607,15 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 1088
+    .line 1115
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 1089
+    .line 1116
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-eqz v0, :cond_0
 
-    .line 1090
+    .line 1117
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -2600,7 +2626,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1091
+    .line 1118
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -2609,13 +2635,13 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 1093
+    .line 1120
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->emojiStatusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     if-eqz v0, :cond_1
 
-    .line 1094
+    .line 1121
     invoke-virtual {v0}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->detach()V
 
     :cond_1
@@ -2625,15 +2651,15 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 4
 
-    .line 1155
+    .line 1182
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 1156
+    .line 1183
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 1157
+    .line 1184
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getText()Ljava/lang/CharSequence;
@@ -2642,17 +2668,17 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 1158
+    .line 1185
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableContentDescription:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
     const-string v1, ", "
 
-    .line 1159
+    .line 1186
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1160
+    .line 1187
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableContentDescription:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -2660,10 +2686,10 @@
     :cond_0
     const-string v1, "\n"
 
-    .line 1162
+    .line 1189
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1163
+    .line 1190
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getText()Ljava/lang/CharSequence;
@@ -2672,10 +2698,10 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 1164
+    .line 1191
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1165
+    .line 1192
     invoke-virtual {p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->isClickable()Z
 
     move-result v0
@@ -2688,7 +2714,7 @@
 
     if-lt v0, v1, :cond_1
 
-    .line 1166
+    .line 1193
     new-instance v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     const/16 v1, 0x10
@@ -2712,14 +2738,14 @@
 .method protected onLayout(ZIIII)V
     .locals 4
 
-    .line 512
+    .line 539
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result p1
 
     const/16 p2, 0x2a
 
-    .line 513
+    .line 540
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p3
@@ -2750,7 +2776,7 @@
     :goto_0
     add-int/2addr p1, p3
 
-    .line 514
+    .line 541
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget p5, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->leftPadding:I
@@ -2771,7 +2797,7 @@
 
     invoke-virtual {p3, p5, v0, v1, p2}, Landroid/view/View;->layout(IIII)V
 
-    .line 515
+    .line 542
     iget p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->leftPadding:I
 
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -2791,7 +2817,7 @@
     :cond_1
     add-int/2addr p2, p4
 
-    .line 516
+    .line 543
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {p3}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -2800,7 +2826,7 @@
 
     check-cast p3, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    .line 517
+    .line 544
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p4}, Landroid/view/View;->getVisibility()I
@@ -2811,7 +2837,7 @@
 
     if-eq p4, p5, :cond_2
 
-    .line 518
+    .line 545
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const p5, 0x3fa66666    # 1.3f
@@ -2872,7 +2898,7 @@
 
     if-eqz p3, :cond_3
 
-    .line 520
+    .line 547
     invoke-static {p5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p4
@@ -2901,7 +2927,7 @@
 
     goto :goto_1
 
-    .line 523
+    .line 550
     :cond_2
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -2963,7 +2989,7 @@
 
     if-eqz p3, :cond_3
 
-    .line 525
+    .line 552
     invoke-static {p5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p4
@@ -2990,14 +3016,14 @@
 
     invoke-virtual {p3, p2, p4, v0, v1}, Landroid/view/View;->layout(IIII)V
 
-    .line 528
+    .line 555
     :cond_3
     :goto_1
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     if-eqz p3, :cond_4
 
-    .line 529
+    .line 556
     iget p4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->leftPadding:I
 
     const/16 p5, 0x10
@@ -3036,7 +3062,7 @@
 
     invoke-virtual {p3, p4, p5, v0, v1}, Landroid/widget/ImageView;->layout(IIII)V
 
-    .line 531
+    .line 558
     :cond_4
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -3072,7 +3098,7 @@
 
     invoke-virtual {p3, p2, p5, v0, v1}, Landroid/view/View;->layout(IIII)V
 
-    .line 532
+    .line 559
     iget-object p3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-virtual {p3}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
@@ -3083,7 +3109,7 @@
 
     if-eqz p3, :cond_5
 
-    .line 534
+    .line 561
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p5
@@ -3117,7 +3143,7 @@
 .method protected onMeasure(II)V
     .locals 9
 
-    .line 438
+    .line 465
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -3130,7 +3156,7 @@
 
     add-int/2addr p1, v0
 
-    .line 439
+    .line 466
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -3159,7 +3185,7 @@
 
     sub-int v0, p1, v0
 
-    .line 440
+    .line 467
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/16 v4, 0x2a
@@ -3184,7 +3210,7 @@
 
     invoke-virtual {v3, v5, v4}, Landroid/view/View;->measure(II)V
 
-    .line 441
+    .line 468
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/high16 v4, -0x80000000
@@ -3213,7 +3239,7 @@
 
     invoke-virtual {v3, v5, v7}, Landroid/view/View;->measure(II)V
 
-    .line 442
+    .line 469
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {v0, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -3232,14 +3258,14 @@
 
     invoke-virtual {v3, v0, v5}, Landroid/view/View;->measure(II)V
 
-    .line 443
+    .line 470
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_1
 
     const/16 v3, 0x22
 
-    .line 444
+    .line 471
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -3258,7 +3284,7 @@
 
     invoke-virtual {v0, v5, v3}, Landroid/widget/ImageView;->measure(II)V
 
-    .line 446
+    .line 473
     :cond_1
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -3266,7 +3292,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
-    .line 447
+    .line 474
     iget p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastWidth:I
 
     const/4 v0, -0x1
@@ -3277,10 +3303,10 @@
 
     if-le p2, p1, :cond_2
 
-    .line 448
+    .line 475
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ChatAvatarContainer;->fadeOutToLessWidth(I)V
 
-    .line 450
+    .line 477
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextLargerCopyView:Ljava/util/concurrent/atomic/AtomicReference;
 
@@ -3292,7 +3318,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 452
+    .line 479
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->largerWidth:I
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -3317,7 +3343,7 @@
 
     sub-int/2addr v0, v1
 
-    .line 453
+    .line 480
     invoke-static {v0, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
@@ -3334,7 +3360,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/view/View;->measure(II)V
 
-    .line 455
+    .line 482
     :cond_4
     iput p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastWidth:I
 
@@ -3346,7 +3372,7 @@
 
     const/4 v0, 0x1
 
-    .line 369
+    .line 396
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->openProfile(ZZ)V
 
     return-void
@@ -3359,7 +3385,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 373
+    .line 400
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v1
@@ -3389,7 +3415,7 @@
     :cond_0
     move p1, v0
 
-    .line 376
+    .line 403
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -3397,45 +3423,45 @@
 
     move-result-object v1
 
-    .line 377
+    .line 404
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->getCurrentChat()Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object v2
 
-    .line 378
+    .line 405
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v3
 
-    .line 379
+    .line 406
     invoke-virtual {v3}, Lorg/telegram/messenger/ImageReceiver;->getImageKey()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 380
+    .line 407
     invoke-static {}, Lorg/telegram/messenger/ImageLoader;->getInstance()Lorg/telegram/messenger/ImageLoader;
 
     move-result-object v5
 
     if-eqz v4, :cond_2
 
-    .line 381
+    .line 408
     invoke-virtual {v5, v4, v0}, Lorg/telegram/messenger/ImageLoader;->isInMemCache(Ljava/lang/String;Z)Z
 
     move-result v6
 
     if-nez v6, :cond_2
 
-    .line 382
+    .line 409
     invoke-virtual {v3}, Lorg/telegram/messenger/ImageReceiver;->getDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
-    .line 383
+    .line 410
     instance-of v6, v3, Landroid/graphics/drawable/BitmapDrawable;
 
     if-eqz v6, :cond_2
@@ -3444,7 +3470,7 @@
 
     if-nez v6, :cond_2
 
-    .line 384
+    .line 411
     check-cast v3, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-virtual {v5, v3, v4, v0}, Lorg/telegram/messenger/ImageLoader;->putImageToCache(Landroid/graphics/drawable/BitmapDrawable;Ljava/lang/String;Z)V
@@ -3456,12 +3482,12 @@
 
     if-eqz v1, :cond_7
 
-    .line 389
+    .line 416
     new-instance v2, Landroid/os/Bundle;
 
     invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
-    .line 390
+    .line 417
     invoke-static {v1}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v5
@@ -3470,7 +3496,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 391
+    .line 418
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getDialogId()J
@@ -3483,7 +3509,7 @@
 
     new-array p2, p1, [I
 
-    .line 393
+    .line 420
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->sharedMediaPreloader:Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;->getLastMediaCount()[I
@@ -3492,14 +3518,14 @@
 
     invoke-static {v1, v0, p2, v0, p1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 394
+    .line 421
     new-instance p1, Lorg/telegram/ui/Components/MediaActivity;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->sharedMediaPreloader:Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
 
     invoke-direct {p1, v2, p2}, Lorg/telegram/ui/Components/MediaActivity;-><init>(Landroid/os/Bundle;Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;)V
 
-    .line 395
+    .line 422
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ChatActivity;->getCurrentChatInfo()Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -3508,14 +3534,14 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/MediaActivity;->setChatInfo(Lorg/telegram/tgnet/TLRPC$ChatFull;)V
 
-    .line 396
+    .line 423
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto/16 :goto_2
 
-    .line 398
+    .line 425
     :cond_3
     iget-wide v0, v1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
@@ -3523,7 +3549,7 @@
 
     invoke-virtual {v2, v5, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 399
+    .line 426
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->hasReportSpam()Z
@@ -3534,12 +3560,12 @@
 
     invoke-virtual {v2, v1, v0}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
-    .line 400
+    .line 427
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_4
 
-    .line 401
+    .line 428
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getDialogId()J
@@ -3548,7 +3574,7 @@
 
     invoke-virtual {v2, v6, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 403
+    .line 430
     :cond_4
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
@@ -3560,14 +3586,14 @@
 
     invoke-virtual {v2, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 404
+    .line 431
     new-instance v0, Lorg/telegram/ui/ProfileActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->sharedMediaPreloader:Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;
 
     invoke-direct {v0, v2, v1}, Lorg/telegram/ui/ProfileActivity;-><init>(Landroid/os/Bundle;Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;)V
 
-    .line 405
+    .line 432
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getCurrentUserInfo()Lorg/telegram/tgnet/TLRPC$UserFull;
@@ -3585,11 +3611,11 @@
     :cond_5
     move v3, v4
 
-    .line 407
+    .line 434
     :goto_0
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ProfileActivity;->setPlayProfileAnimation(I)V
 
-    .line 409
+    .line 436
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -3600,26 +3626,26 @@
     :cond_7
     if-eqz v2, :cond_b
 
-    .line 412
+    .line 439
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    .line 413
+    .line 440
     iget-wide v1, v2, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
     const-string v5, "chat_id"
 
     invoke-virtual {v0, v5, v1, v2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 414
+    .line 441
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     iget-boolean v2, v1, Lorg/telegram/ui/ChatActivity;->isTopic:Z
 
     if-eqz v2, :cond_8
 
-    .line 415
+    .line 442
     invoke-virtual {v1}, Lorg/telegram/ui/ChatActivity;->getThreadMessage()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v1
@@ -3632,7 +3658,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 417
+    .line 444
     :cond_8
     new-instance v1, Lorg/telegram/ui/ProfileActivity;
 
@@ -3640,7 +3666,7 @@
 
     invoke-direct {v1, v0, v2}, Lorg/telegram/ui/ProfileActivity;-><init>(Landroid/os/Bundle;Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaPreloader;)V
 
-    .line 418
+    .line 445
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getCurrentChatInfo()Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -3658,11 +3684,11 @@
     :cond_9
     move v3, v4
 
-    .line 420
+    .line 447
     :goto_1
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ProfileActivity;->setPlayProfileAnimation(I)V
 
-    .line 422
+    .line 449
     :cond_a
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -3676,7 +3702,7 @@
 .method public openSetTimer()Z
     .locals 12
 
-    .line 298
+    .line 325
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -3689,7 +3715,7 @@
 
     return v1
 
-    .line 301
+    .line 328
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -3701,14 +3727,14 @@
 
     const/16 v2, 0xd
 
-    .line 302
+    .line 329
     invoke-static {v0, v2}, Lorg/telegram/messenger/ChatObject;->canUserDoAdminAction(Lorg/telegram/tgnet/TLRPC$Chat;I)Z
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 303
+    .line 330
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getTag()Ljava/lang/Object;
@@ -3717,7 +3743,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 304
+    .line 331
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->showTimerHint()V
@@ -3725,7 +3751,7 @@
     :cond_1
     return v1
 
-    .line 308
+    .line 335
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -3733,7 +3759,7 @@
 
     move-result-object v0
 
-    .line 309
+    .line 336
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v2}, Lorg/telegram/ui/ChatActivity;->getCurrentUserInfo()Lorg/telegram/tgnet/TLRPC$UserFull;
@@ -3742,7 +3768,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 312
+    .line 339
     iget v0, v2, Lorg/telegram/tgnet/TLRPC$UserFull;->ttl_period:I
 
     goto :goto_0
@@ -3750,7 +3776,7 @@
     :cond_3
     if-eqz v0, :cond_4
 
-    .line 314
+    .line 341
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->ttl_period:I
 
     goto :goto_0
@@ -3763,7 +3789,7 @@
 
     new-array v3, v2, [Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    .line 318
+    .line 345
     new-instance v11, Lorg/telegram/ui/Components/AutoDeletePopupWrapper;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -3786,10 +3812,10 @@
 
     invoke-direct/range {v4 .. v10}, Lorg/telegram/ui/Components/AutoDeletePopupWrapper;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/PopupSwipeBackLayout;Lorg/telegram/ui/Components/AutoDeletePopupWrapper$Callback;ZILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 343
+    .line 370
     invoke-virtual {v11, v0}, Lorg/telegram/ui/Components/AutoDeletePopupWrapper;->updateItems(I)V
 
-    .line 345
+    .line 372
     new-instance v0, Lorg/telegram/ui/Components/ChatAvatarContainer$3;
 
     iget-object v4, v11, Lorg/telegram/ui/Components/AutoDeletePopupWrapper;->windowLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
@@ -3800,41 +3826,41 @@
 
     aput-object v0, v3, v1
 
-    .line 354
+    .line 381
     aget-object v0, v3, v1
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setPauseNotifications(Z)V
 
-    .line 355
+    .line 382
     aget-object v0, v3, v1
 
     const/16 v4, 0xdc
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setDismissAnimationDuration(I)V
 
-    .line 356
+    .line 383
     aget-object v0, v3, v1
 
     invoke-virtual {v0, v2}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
 
-    .line 357
+    .line 384
     aget-object v0, v3, v1
 
     invoke-virtual {v0, v2}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
 
-    .line 358
+    .line 385
     aget-object v0, v3, v1
 
     sget v4, Lorg/telegram/messenger/R$style;->PopupContextAnimation:I
 
     invoke-virtual {v0, v4}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
 
-    .line 359
+    .line 386
     aget-object v0, v3, v1
 
     invoke-virtual {v0, v2}, Landroid/widget/PopupWindow;->setFocusable(Z)V
 
-    .line 360
+    .line 387
     iget-object v0, v11, Lorg/telegram/ui/Components/AutoDeletePopupWrapper;->windowLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     const/16 v4, 0x3e8
@@ -3859,14 +3885,14 @@
 
     invoke-virtual {v0, v5, v4}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 361
+    .line 388
     aget-object v0, v3, v1
 
     const/4 v4, 0x2
 
     invoke-virtual {v0, v4}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
 
-    .line 362
+    .line 389
     aget-object v0, v3, v1
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
@@ -3875,7 +3901,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setFocusableInTouchMode(Z)V
 
-    .line 363
+    .line 390
     aget-object v0, v3, v1
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
@@ -3902,7 +3928,7 @@
 
     invoke-virtual {v0, v3, v1, v4, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->showAtLocation(Landroid/view/View;III)V
 
-    .line 364
+    .line 391
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ChatActivity;->dimBehindView(Z)V
@@ -3913,19 +3939,19 @@
 .method public setChatAvatar(Lorg/telegram/tgnet/TLRPC$Chat;)V
     .locals 3
 
-    .line 969
+    .line 996
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 970
+    .line 997
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz v0, :cond_2
 
     if-eqz p1, :cond_0
 
-    .line 972
+    .line 999
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     iget-wide v1, p1, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
@@ -3936,21 +3962,21 @@
 
     if-eqz v0, :cond_0
 
-    .line 973
+    .line 1000
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const/16 v1, 0x65
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 974
+    .line 1001
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const v1, 0x3f4ccccd    # 0.8f
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 975
+    .line 1002
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
@@ -3961,7 +3987,7 @@
 
     goto :goto_0
 
-    .line 977
+    .line 1004
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -3969,7 +3995,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 978
+    .line 1005
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -4000,7 +4026,7 @@
 .method public setLeftPadding(I)V
     .locals 0
 
-    .line 539
+    .line 566
     iput p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->leftPadding:I
 
     return-void
@@ -4009,7 +4035,7 @@
 .method public setOccupyStatusBar(Z)V
     .locals 0
 
-    .line 427
+    .line 454
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->occupyStatusBar:Z
 
     return-void
@@ -4018,7 +4044,7 @@
 .method public setOverrideSubtitleColor(Ljava/lang/Integer;)V
     .locals 0
 
-    .line 294
+    .line 321
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->overrideSubtitleColor:Ljava/lang/Integer;
 
     return-void
@@ -4027,19 +4053,19 @@
 .method public setSubtitle(Ljava/lang/CharSequence;)V
     .locals 1
 
-    .line 689
+    .line 716
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
     if-nez v0, :cond_0
 
-    .line 690
+    .line 717
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     goto :goto_0
 
-    .line 692
+    .line 719
     :cond_0
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
@@ -4050,7 +4076,7 @@
 .method public setTime(IZ)V
     .locals 1
 
-    .line 581
+    .line 608
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timerDrawable:Lorg/telegram/ui/Components/TimerDrawable;
 
     if-nez v0, :cond_0
@@ -4060,18 +4086,18 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 585
+    .line 612
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->secretChatTimer:Z
 
     if-nez v0, :cond_1
 
     return-void
 
-    .line 590
+    .line 617
     :cond_1
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/ChatAvatarContainer;->showTimeItem(Z)V
 
-    .line 591
+    .line 618
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timerDrawable:Lorg/telegram/ui/Components/TimerDrawable;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/TimerDrawable;->setTime(I)V
@@ -4098,7 +4124,7 @@
 
     move-object v1, p1
 
-    .line 613
+    .line 640
     invoke-virtual/range {v0 .. v7}, Lorg/telegram/ui/Components/ChatAvatarContainer;->setTitle(Ljava/lang/CharSequence;ZZZZLorg/telegram/tgnet/TLRPC$EmojiStatus;Z)V
 
     return-void
@@ -4111,7 +4137,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 618
+    .line 645
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getPaint()Landroid/graphics/Paint;
@@ -4132,7 +4158,7 @@
 
     move-result-object p1
 
-    .line 621
+    .line 648
     :cond_0
     iget v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
@@ -4144,7 +4170,7 @@
 
     move-result v1
 
-    .line 622
+    .line 649
     iget v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {v2}, Lcom/iMe/fork/controller/ForkCommonController;->getInstance(I)Lcom/iMe/fork/controller/ForkCommonController;
@@ -4175,7 +4201,7 @@
     :goto_1
     and-int/2addr p5, v4
 
-    .line 625
+    .line 652
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v4, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
@@ -4189,7 +4215,7 @@
     :cond_3
     if-eqz p4, :cond_4
 
-    .line 636
+    .line 663
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -4204,7 +4230,7 @@
 
     move-result-object p1
 
-    .line 637
+    .line 664
     new-instance p2, Landroid/graphics/PorterDuffColorFilter;
 
     sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_profile_verifiedBackground:I
@@ -4219,7 +4245,7 @@
 
     invoke-virtual {p1, p2}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 638
+    .line 665
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getResources()Landroid/content/res/Resources;
 
     move-result-object p2
@@ -4234,7 +4260,7 @@
 
     move-result-object p2
 
-    .line 639
+    .line 666
     new-instance p3, Landroid/graphics/PorterDuffColorFilter;
 
     sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_profile_verifiedCheck:I
@@ -4249,20 +4275,20 @@
 
     invoke-virtual {p2, p3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 640
+    .line 667
     new-instance p3, Lorg/telegram/ui/Components/CombinedDrawable;
 
     invoke-direct {p3, p1, p2}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 641
+    .line 668
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 643
+    .line 670
     iput-boolean v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableIsScamOrVerified:Z
 
-    .line 644
+    .line 671
     sget p1, Lorg/telegram/messenger/R$string;->AccDescrVerified:I
 
     const-string p2, "AccDescrVerified"
@@ -4278,7 +4304,7 @@
     :cond_4
     if-eqz p5, :cond_d
 
-    .line 646
+    .line 673
     instance-of p1, p6, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
 
     const-wide/16 p2, 0x3e8
@@ -4301,7 +4327,7 @@
 
     div-long/2addr p4, p2
 
-    .line 650
+    .line 677
     :cond_5
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -4315,7 +4341,7 @@
 
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    .line 651
+    .line 678
     invoke-virtual {p4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getRightDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object p4
@@ -4330,7 +4356,7 @@
 
     if-eqz p4, :cond_6
 
-    .line 652
+    .line 679
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getRightDrawable()Landroid/graphics/drawable/Drawable;
@@ -4354,21 +4380,21 @@
 
     if-eqz p1, :cond_7
 
-    .line 655
+    .line 682
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->emojiStatusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     check-cast p6, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
 
     iget-wide p2, p6, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;->document_id:J
 
-    invoke-virtual {p1, p2, p3, p7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
+    invoke-virtual {p1, p2, p3, p7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)Z
 
     goto :goto_3
 
     :cond_7
     if-eqz v2, :cond_8
 
-    .line 656
+    .line 683
     instance-of p1, p6, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
     if-eqz p1, :cond_8
@@ -4387,16 +4413,16 @@
 
     if-le p1, p2, :cond_8
 
-    .line 657
+    .line 684
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->emojiStatusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     iget-wide p2, p6, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->document_id:J
 
-    invoke-virtual {p1, p2, p3, p7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
+    invoke-virtual {p1, p2, p3, p7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)Z
 
     goto :goto_3
 
-    .line 659
+    .line 686
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->premiumStarDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -4420,30 +4446,30 @@
     :goto_2
     if-nez v1, :cond_b
 
-    .line 662
+    .line 689
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableIsScamOrVerified:Z
 
-    .line 663
+    .line 690
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-eqz p1, :cond_a
 
-    .line 664
+    .line 691
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->updateTitleIconsPublic()V
 
     :cond_a
     return-void
 
-    .line 668
+    .line 695
     :cond_b
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->premiumStarDrawable:Landroid/graphics/drawable/Drawable;
 
     if-nez p2, :cond_c
 
-    .line 669
+    .line 696
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->premiumStarDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 672
+    .line 699
     :cond_c
     new-instance p2, Landroid/graphics/PorterDuffColorFilter;
 
@@ -4459,12 +4485,12 @@
 
     invoke-virtual {p1, p2}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 673
+    .line 700
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->emojiStatusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-virtual {p2, p1, p7}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(Landroid/graphics/drawable/Drawable;Z)V
 
-    .line 675
+    .line 702
     :goto_3
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->emojiStatusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
@@ -4480,17 +4506,17 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->setColor(Ljava/lang/Integer;)V
 
-    .line 676
+    .line 703
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->emojiStatusDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 678
+    .line 705
     iput-boolean v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableIsScamOrVerified:Z
 
-    .line 679
+    .line 706
     sget p1, Lorg/telegram/messenger/R$string;->AccDescrPremium:I
 
     const-string p2, "AccDescrPremium"
@@ -4503,7 +4529,7 @@
 
     goto :goto_5
 
-    .line 680
+    .line 707
     :cond_d
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -4515,22 +4541,22 @@
 
     if-eqz p1, :cond_f
 
-    .line 681
+    .line 708
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 p2, 0x0
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 683
+    .line 710
     iput-boolean v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableIsScamOrVerified:Z
 
-    .line 684
+    .line 711
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableContentDescription:Ljava/lang/String;
 
     goto :goto_5
 
-    .line 627
+    .line 654
     :cond_e
     :goto_4
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -4543,7 +4569,7 @@
 
     if-nez p1, :cond_f
 
-    .line 628
+    .line 655
     new-instance p1, Lorg/telegram/ui/Components/ScamDrawable;
 
     const/16 p3, 0xb
@@ -4552,7 +4578,7 @@
 
     invoke-direct {p1, p3, p2}, Lorg/telegram/ui/Components/ScamDrawable;-><init>(II)V
 
-    .line 629
+    .line 656
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubtitle:I
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getThemedColor(I)I
@@ -4561,12 +4587,12 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/ScamDrawable;->setColor(I)V
 
-    .line 630
+    .line 657
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 632
+    .line 659
     sget p1, Lorg/telegram/messenger/R$string;->ScamMessage:I
 
     const-string p2, "ScamMessage"
@@ -4577,7 +4603,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableContentDescription:Ljava/lang/String;
 
-    .line 633
+    .line 660
     iput-boolean v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableIsScamOrVerified:Z
 
     :cond_f
@@ -4588,17 +4614,17 @@
 .method public setTitleColors(II)V
     .locals 1
 
-    .line 431
+    .line 458
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 432
+    .line 459
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 433
+    .line 460
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -4619,7 +4645,7 @@
 
     const/16 p1, 0xa
 
-    .line 285
+    .line 312
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -4629,7 +4655,7 @@
     :cond_0
     move p1, v0
 
-    .line 286
+    .line 313
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -4639,7 +4665,7 @@
 
     if-eq v1, p1, :cond_1
 
-    .line 287
+    .line 314
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v2, 0x6
@@ -4656,10 +4682,10 @@
 
     invoke-virtual {v1, v0, v2, p1, v3}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 288
+    .line 315
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 289
+    .line 316
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_1
@@ -4669,19 +4695,19 @@
 .method public setTitleIcons(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
     .locals 1
 
-    .line 601
+    .line 628
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setLeftDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 602
+    .line 629
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableIsScamOrVerified:Z
 
     if-nez p1, :cond_1
 
     if-eqz p2, :cond_0
 
-    .line 604
+    .line 631
     sget p1, Lorg/telegram/messenger/R$string;->NotificationsMuted:I
 
     const-string v0, "NotificationsMuted"
@@ -4697,10 +4723,10 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 606
+    .line 633
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->rightDrawableContentDescription:Ljava/lang/String;
 
-    .line 608
+    .line 635
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -4715,7 +4741,7 @@
 
     const/4 v0, 0x0
 
-    .line 983
+    .line 1010
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->setUserAvatar(Lorg/telegram/tgnet/TLRPC$User;Z)V
 
     return-void
@@ -4724,12 +4750,12 @@
 .method public setUserAvatar(Lorg/telegram/tgnet/TLRPC$User;Z)V
     .locals 3
 
-    .line 987
+    .line 1014
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 988
+    .line 1015
     invoke-static {p1}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v0
@@ -4740,31 +4766,31 @@
 
     if-eqz v0, :cond_0
 
-    .line 989
+    .line 1016
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const/16 v0, 0xc
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 990
+    .line 1017
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 991
+    .line 1018
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz p2, :cond_2
 
-    .line 992
+    .line 1019
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {p2, v2, v2, v0, p1}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 994
+    .line 1021
     :cond_0
     invoke-static {p1}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
@@ -4774,31 +4800,31 @@
 
     if-nez p2, :cond_1
 
-    .line 995
+    .line 1022
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     const/4 v0, 0x1
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 996
+    .line 1023
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 997
+    .line 1024
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz p2, :cond_2
 
-    .line 998
+    .line 1025
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {p2, v2, v2, v0, p1}, Lorg/telegram/ui/Components/BackupImageView;->setImage(Lorg/telegram/messenger/ImageLocation;Ljava/lang/String;Landroid/graphics/drawable/Drawable;Ljava/lang/Object;)V
 
     goto :goto_0
 
-    .line 1001
+    .line 1028
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
@@ -4806,12 +4832,12 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/AvatarDrawable;->setScaleSize(F)V
 
-    .line 1002
+    .line 1029
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     if-eqz p2, :cond_2
 
-    .line 1003
+    .line 1030
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
@@ -4824,7 +4850,7 @@
 .method public showTimeItem(Z)V
     .locals 3
 
-    .line 543
+    .line 570
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     if-eqz v0, :cond_2
@@ -4845,20 +4871,20 @@
 
     goto :goto_0
 
-    .line 546
+    .line 573
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->clearAnimation()V
 
-    .line 547
+    .line 574
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 548
+    .line 575
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     const/4 v1, 0x1
@@ -4873,7 +4899,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 550
+    .line 577
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     invoke-virtual {p1}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -4908,18 +4934,18 @@
 
     goto :goto_0
 
-    .line 552
+    .line 579
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 553
+    .line 580
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 554
+    .line 581
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->timeItem:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setScaleX(F)V
@@ -4932,12 +4958,12 @@
 .method public updateColors()V
     .locals 2
 
-    .line 1183
+    .line 1210
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentTypingDrawable:Lorg/telegram/ui/Components/StatusDrawable;
 
     if-eqz v0, :cond_0
 
-    .line 1184
+    .line 1211
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_status:I
 
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/ChatAvatarContainer;->getThemedColor(I)I
@@ -4953,7 +4979,7 @@
 .method public updateOnlineCount()V
     .locals 8
 
-    .line 1050
+    .line 1077
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-nez v0, :cond_0
@@ -4963,10 +4989,10 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 1053
+    .line 1080
     iput v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->onlineCount:I
 
-    .line 1054
+    .line 1081
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getCurrentChatInfo()Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     move-result-object v0
@@ -4975,7 +5001,7 @@
 
     return-void
 
-    .line 1058
+    .line 1085
     :cond_1
     iget v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
@@ -4987,7 +5013,7 @@
 
     move-result v2
 
-    .line 1059
+    .line 1086
     instance-of v3, v0, Lorg/telegram/tgnet/TLRPC$TL_chatFull;
 
     if-nez v3, :cond_3
@@ -5011,19 +5037,19 @@
     :cond_2
     if-eqz v3, :cond_6
 
-    .line 1067
+    .line 1094
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants_count:I
 
     if-le v1, v4, :cond_6
 
-    .line 1068
+    .line 1095
     iget v0, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->online_count:I
 
     iput v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->onlineCount:I
 
     goto :goto_1
 
-    .line 1060
+    .line 1087
     :cond_3
     :goto_0
     iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
@@ -5036,7 +5062,7 @@
 
     if-ge v1, v3, :cond_6
 
-    .line 1061
+    .line 1088
     iget-object v3, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->participants:Lorg/telegram/tgnet/TLRPC$ChatParticipants;
 
     iget-object v3, v3, Lorg/telegram/tgnet/TLRPC$ChatParticipants;->participants:Ljava/util/ArrayList;
@@ -5047,7 +5073,7 @@
 
     check-cast v3, Lorg/telegram/tgnet/TLRPC$ChatParticipant;
 
-    .line 1062
+    .line 1089
     iget v4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5066,7 +5092,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 1063
+    .line 1090
     iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$User;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
     if-eqz v4, :cond_5
@@ -5100,7 +5126,7 @@
 
     if-le v3, v4, :cond_5
 
-    .line 1064
+    .line 1091
     iget v3, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->onlineCount:I
 
     add-int/lit8 v3, v3, 0x1
@@ -5122,7 +5148,7 @@
 
     const/4 v0, 0x0
 
-    .line 749
+    .line 776
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAvatarContainer;->updateSubtitle(Z)V
 
     return-void
@@ -5131,20 +5157,20 @@
 .method public updateSubtitle(Z)V
     .locals 12
 
-    .line 753
+    .line 780
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 756
+    .line 783
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->getCurrentUser()Lorg/telegram/tgnet/TLRPC$User;
 
     move-result-object v0
 
-    .line 757
+    .line 784
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v1
@@ -5179,7 +5205,7 @@
 
     goto/16 :goto_b
 
-    .line 763
+    .line 790
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -5187,7 +5213,7 @@
 
     move-result-object v1
 
-    .line 764
+    .line 791
     iget v4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5216,7 +5242,7 @@
 
     const-string v6, "..."
 
-    .line 766
+    .line 793
     filled-new-array {v6}, [Ljava/lang/String;
 
     move-result-object v6
@@ -5240,7 +5266,7 @@
 
     if-eqz v4, :cond_8
 
-    .line 770
+    .line 797
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
     move-result v11
@@ -5259,7 +5285,7 @@
 
     goto/16 :goto_2
 
-    .line 855
+    .line 882
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -5269,7 +5295,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 856
+    .line 883
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -5278,25 +5304,25 @@
 
     if-eqz v0, :cond_6
 
-    .line 857
+    .line 884
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, v10}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 858
+    .line 885
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 859
+    .line 886
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_4
 
-    .line 860
+    .line 887
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 861
+    .line 888
     iput-object v10, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     :cond_4
@@ -5304,7 +5330,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 864
+    .line 891
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -5313,7 +5339,7 @@
 
     new-array v1, v8, [Landroid/animation/Animator;
 
-    .line 865
+    .line 892
     iget-object v5, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget-object v8, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -5322,7 +5348,7 @@
 
     aput v9, v10, v3
 
-    .line 866
+    .line 893
     invoke-static {v5, v8, v10}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
@@ -5337,17 +5363,17 @@
 
     aput v0, v9, v3
 
-    .line 867
+    .line 894
     invoke-static {v5, v8, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     aput-object v0, v1, v2
 
-    .line 865
+    .line 892
     invoke-virtual {p1, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 868
+    .line 895
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v0, Lorg/telegram/ui/Components/ChatAvatarContainer$6;
@@ -5356,30 +5382,30 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 874
+    .line 901
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1, v6, v7}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 875
+    .line 902
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     goto :goto_0
 
-    .line 877
+    .line 904
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v9}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 878
+    .line 905
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 883
+    .line 910
     :cond_6
     :goto_0
     iget p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
@@ -5412,7 +5438,7 @@
 
     if-ne p1, v0, :cond_7
 
-    .line 884
+    .line 911
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getTextPaint()Landroid/text/TextPaint;
@@ -5440,13 +5466,13 @@
     :cond_7
     move-object v5, v4
 
-    .line 887
+    .line 914
     :goto_1
     invoke-direct {p0, v2}, Lorg/telegram/ui/Components/ChatAvatarContainer;->setTypingAnimation(Z)V
 
     goto/16 :goto_8
 
-    .line 771
+    .line 798
     :cond_8
     :goto_2
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
@@ -5463,7 +5489,7 @@
 
     if-nez v4, :cond_c
 
-    .line 772
+    .line 799
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -5474,7 +5500,7 @@
 
     return-void
 
-    .line 775
+    .line 802
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -5484,15 +5510,15 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 776
+    .line 803
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_a
 
-    .line 777
+    .line 804
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 778
+    .line 805
     iput-object v10, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     :cond_a
@@ -5500,7 +5526,7 @@
 
     if-eqz p1, :cond_b
 
-    .line 781
+    .line 808
     new-instance p1, Landroid/animation/AnimatorSet;
 
     invoke-direct {p1}, Landroid/animation/AnimatorSet;-><init>()V
@@ -5509,14 +5535,14 @@
 
     new-array v1, v8, [Landroid/animation/Animator;
 
-    .line 782
+    .line 809
     iget-object v4, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget-object v5, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v8, v2, [F
 
-    .line 783
+    .line 810
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v0
@@ -5539,17 +5565,17 @@
 
     aput v9, v5, v3
 
-    .line 784
+    .line 811
     invoke-static {v0, v4, v5}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
     aput-object v0, v1, v2
 
-    .line 782
+    .line 809
     invoke-virtual {p1, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 785
+    .line 812
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v0, Lorg/telegram/ui/Components/ChatAvatarContainer$5;
@@ -5558,19 +5584,19 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 799
+    .line 826
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1, v6, v7}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 800
+    .line 827
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     goto :goto_3
 
-    .line 802
+    .line 829
     :cond_b
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -5582,12 +5608,12 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 803
+    .line 830
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v9}, Landroid/view/View;->setAlpha(F)V
 
-    .line 804
+    .line 831
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v0, 0x4
@@ -5597,11 +5623,11 @@
     :goto_3
     return-void
 
-    .line 808
+    .line 835
     :cond_c
     invoke-direct {p0, v3}, Lorg/telegram/ui/Components/ChatAvatarContainer;->setTypingAnimation(Z)V
 
-    .line 809
+    .line 836
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     iget-boolean v4, p1, Lorg/telegram/ui/ChatActivity;->isTopic:Z
@@ -5610,7 +5636,7 @@
 
     if-eqz v1, :cond_f
 
-    .line 810
+    .line 837
     iget p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5635,7 +5661,7 @@
 
     if-eqz p1, :cond_d
 
-    .line 813
+    .line 840
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$TL_forumTopic;->totalMessagesCount:I
 
     sub-int/2addr p1, v2
@@ -5650,7 +5676,7 @@
 
     new-array v0, v2, [Ljava/lang/Object;
 
-    .line 816
+    .line 843
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -5665,7 +5691,7 @@
 
     goto/16 :goto_5
 
-    .line 818
+    .line 845
     :cond_e
     sget p1, Lorg/telegram/messenger/R$string;->TopicProfileStatus:I
 
@@ -5686,12 +5712,12 @@
     :cond_f
     if-eqz v1, :cond_12
 
-    .line 821
+    .line 848
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getCurrentChatInfo()Lorg/telegram/tgnet/TLRPC$ChatFull;
 
     move-result-object p1
 
-    .line 823
+    .line 850
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/ChatActivity;->isTemplatesChannel(ZZ)Z
@@ -5702,7 +5728,7 @@
 
     goto/16 :goto_7
 
-    .line 825
+    .line 852
     :cond_10
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->parentFragment:Lorg/telegram/ui/ChatActivity;
 
@@ -5712,7 +5738,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 826
+    .line 853
     sget p1, Lorg/telegram/messenger/R$string;->cloud_album:I
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -5725,7 +5751,7 @@
 
     goto :goto_5
 
-    .line 828
+    .line 855
     :cond_11
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->onlineCount:I
 
@@ -5738,7 +5764,7 @@
     :cond_12
     if-eqz v0, :cond_1b
 
-    .line 830
+    .line 857
     iget p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5759,7 +5785,7 @@
 
     move-object v0, p1
 
-    .line 835
+    .line 862
     :cond_13
     invoke-static {v0}, Lorg/telegram/messenger/UserObject;->isReplyUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
@@ -5769,7 +5795,7 @@
 
     goto/16 :goto_7
 
-    .line 837
+    .line 864
     :cond_14
     iget-wide v1, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
@@ -5787,7 +5813,7 @@
 
     if-nez p1, :cond_15
 
-    .line 838
+    .line 865
     sget p1, Lorg/telegram/messenger/R$string;->ChatYourSelf:I
 
     const-string v0, "ChatYourSelf"
@@ -5801,7 +5827,7 @@
 
     goto :goto_7
 
-    .line 839
+    .line 866
     :cond_15
     iget-wide v1, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
@@ -5825,7 +5851,7 @@
 
     goto :goto_6
 
-    .line 841
+    .line 868
     :cond_16
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->isSupportUser(Lorg/telegram/tgnet/TLRPC$User;)Z
 
@@ -5833,7 +5859,7 @@
 
     if-eqz p1, :cond_17
 
-    .line 842
+    .line 869
     sget p1, Lorg/telegram/messenger/R$string;->SupportStatus:I
 
     const-string v0, "SupportStatus"
@@ -5844,13 +5870,13 @@
 
     goto :goto_5
 
-    .line 843
+    .line 870
     :cond_17
     iget-boolean p1, v0, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
     if-eqz p1, :cond_18
 
-    .line 844
+    .line 871
     sget p1, Lorg/telegram/messenger/R$string;->Bot:I
 
     const-string v0, "Bot"
@@ -5861,13 +5887,13 @@
 
     goto :goto_5
 
-    .line 846
+    .line 873
     :cond_18
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->isOnline:[Z
 
     aput-boolean v3, p1, v3
 
-    .line 847
+    .line 874
     iget v1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->currentAccount:I
 
     iget-boolean v2, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->allowShorterStatus:Z
@@ -5881,7 +5907,7 @@
 
     move-result-object p1
 
-    .line 848
+    .line 875
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->isOnline:[Z
 
     aget-boolean v0, v0, v3
@@ -5892,7 +5918,7 @@
 
     goto :goto_8
 
-    .line 840
+    .line 867
     :cond_1a
     :goto_6
     sget p1, Lorg/telegram/messenger/R$string;->ServiceNotifications:I
@@ -5912,7 +5938,7 @@
     :goto_8
     if-eqz v2, :cond_1c
 
-    .line 889
+    .line 916
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_status:I
 
     goto :goto_9
@@ -5923,22 +5949,22 @@
     :goto_9
     iput p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
 
-    .line 890
+    .line 917
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
     if-nez p1, :cond_1e
 
-    .line 891
+    .line 918
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 892
+    .line 919
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->overrideSubtitleColor:Ljava/lang/Integer;
 
     if-nez p1, :cond_1d
 
-    .line 893
+    .line 920
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
@@ -5949,7 +5975,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 894
+    .line 921
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitleColorKey:I
@@ -5962,7 +5988,7 @@
 
     goto :goto_a
 
-    .line 896
+    .line 923
     :cond_1d
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -5974,14 +6000,14 @@
 
     goto :goto_a
 
-    .line 899
+    .line 926
     :cond_1e
     iput-object v5, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->lastSubtitle:Ljava/lang/CharSequence;
 
     :goto_a
     return-void
 
-    .line 758
+    .line 785
     :cond_1f
     :goto_b
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -5994,7 +6020,7 @@
 
     if-eq p1, v0, :cond_20
 
-    .line 759
+    .line 786
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAvatarContainer;->subtitleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V

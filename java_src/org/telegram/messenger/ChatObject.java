@@ -18,7 +18,7 @@ import java.util.HashSet;
 import java.util.List;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.p042ui.GroupCallActivity;
+import org.telegram.p043ui.GroupCallActivity;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$Chat;
@@ -192,67 +192,67 @@ public class ChatObject {
     public static String getAllowedSendString(TLRPC$Chat tLRPC$Chat) {
         StringBuilder sb = new StringBuilder();
         if (canSendPhoto(tLRPC$Chat)) {
-            sb.append(LocaleController.getString("SendMediaPermissionPhotos", C3630R.string.SendMediaPermissionPhotos));
+            sb.append(LocaleController.getString("SendMediaPermissionPhotos", C3634R.string.SendMediaPermissionPhotos));
         }
         if (canSendVideo(tLRPC$Chat)) {
             if (sb.length() > 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("SendMediaPermissionVideos", C3630R.string.SendMediaPermissionVideos));
+            sb.append(LocaleController.getString("SendMediaPermissionVideos", C3634R.string.SendMediaPermissionVideos));
         }
         if (canSendStickers(tLRPC$Chat)) {
             if (sb.length() > 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("SendMediaPermissionStickersGifs", C3630R.string.SendMediaPermissionStickersGifs));
+            sb.append(LocaleController.getString("SendMediaPermissionStickersGifs", C3634R.string.SendMediaPermissionStickersGifs));
         }
         if (canSendGifs(tLRPC$Chat)) {
             if (sb.length() > 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getInternalString(C3630R.string.user_restrictions_send_gifs));
+            sb.append(LocaleController.getInternalString(C3634R.string.user_restrictions_send_gifs));
         }
         if (canSendGames(tLRPC$Chat)) {
             if (sb.length() > 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getInternalString(C3630R.string.user_restrictions_send_games));
+            sb.append(LocaleController.getInternalString(C3634R.string.user_restrictions_send_games));
         }
         if (canSendInline(tLRPC$Chat)) {
             if (sb.length() > 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getInternalString(C3630R.string.user_restrictions_send_inline));
+            sb.append(LocaleController.getInternalString(C3634R.string.user_restrictions_send_inline));
         }
         if (canSendMusic(tLRPC$Chat)) {
             if (sb.length() > 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("SendMediaPermissionMusic", C3630R.string.SendMediaPermissionMusic));
+            sb.append(LocaleController.getString("SendMediaPermissionMusic", C3634R.string.SendMediaPermissionMusic));
         }
         if (canSendDocument(tLRPC$Chat)) {
             if (sb.length() > 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("SendMediaPermissionFiles", C3630R.string.SendMediaPermissionFiles));
+            sb.append(LocaleController.getString("SendMediaPermissionFiles", C3634R.string.SendMediaPermissionFiles));
         }
         if (canSendVoice(tLRPC$Chat)) {
             if (sb.length() > 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("SendMediaPermissionVoice", C3630R.string.SendMediaPermissionVoice));
+            sb.append(LocaleController.getString("SendMediaPermissionVoice", C3634R.string.SendMediaPermissionVoice));
         }
         if (canSendRoundVideo(tLRPC$Chat)) {
             if (sb.length() > 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("SendMediaPermissionRound", C3630R.string.SendMediaPermissionRound));
+            sb.append(LocaleController.getString("SendMediaPermissionRound", C3634R.string.SendMediaPermissionRound));
         }
         if (canSendEmbed(tLRPC$Chat)) {
             if (sb.length() > 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("SendMediaEmbededLinks", C3630R.string.SendMediaEmbededLinks));
+            sb.append(LocaleController.getString("SendMediaEmbededLinks", C3634R.string.SendMediaEmbededLinks));
         }
         return sb.toString();
     }
@@ -327,7 +327,7 @@ public class ChatObject {
                             sb.append(keyAt);
                             sb.append(" ");
                             sb.append(user != null ? user.first_name : null);
-                            Log.m1112d("GroupCall", sb.toString());
+                            Log.m1113d("GroupCall", sb.toString());
                         } else {
                             TLRPC$Chat chat = MessagesController.getInstance(Call.this.currentAccount.getCurrentAccount()).getChat(Long.valueOf(-keyAt));
                             StringBuilder sb2 = new StringBuilder();
@@ -335,7 +335,7 @@ public class ChatObject {
                             sb2.append(keyAt);
                             sb2.append(" ");
                             sb2.append(chat != null ? chat.title : null);
-                            Log.m1112d("GroupCall", sb2.toString());
+                            Log.m1113d("GroupCall", sb2.toString());
                         }
                         i--;
                         z = true;
@@ -346,7 +346,7 @@ public class ChatObject {
                     AndroidUtilities.runOnUIThread(Call.this.updateCurrentSpeakingRunnable, 550L);
                 }
                 if (z) {
-                    Call.this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallSpeakingUsersUpdated, Long.valueOf(Call.this.chatId), Long.valueOf(Call.this.call.f1615id), Boolean.FALSE);
+                    Call.this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallSpeakingUsersUpdated, Long.valueOf(Call.this.chatId), Long.valueOf(Call.this.call.f1617id), Boolean.FALSE);
                 }
             }
         };
@@ -419,7 +419,7 @@ public class ChatObject {
         }
 
         public /* synthetic */ void lambda$createRtmpStreamParticipant$1() {
-            this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1615id), Boolean.FALSE);
+            this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1617id), Boolean.FALSE);
         }
 
         public void createNoVideoParticipant() {
@@ -469,14 +469,14 @@ public class ChatObject {
             this.sortedParticipants.add(tLRPC$TL_groupCallParticipant);
             sortParticipants();
             if (z) {
-                this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1615id), Boolean.FALSE);
+                this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1617id), Boolean.FALSE);
             }
         }
 
         public void migrateToChat(TLRPC$Chat tLRPC$Chat) {
-            this.chatId = tLRPC$Chat.f1600id;
+            this.chatId = tLRPC$Chat.f1602id;
             VoIPService sharedInstance = VoIPService.getSharedInstance();
-            if (sharedInstance == null || sharedInstance.getAccount() != this.currentAccount.getCurrentAccount() || sharedInstance.getChat() == null || sharedInstance.getChat().f1600id != (-this.chatId)) {
+            if (sharedInstance == null || sharedInstance.getAccount() != this.currentAccount.getCurrentAccount() || sharedInstance.getChat() == null || sharedInstance.getChat().f1602id != (-this.chatId)) {
                 return;
             }
             sharedInstance.migrateToChat(tLRPC$Chat);
@@ -526,7 +526,7 @@ public class ChatObject {
                 tLRPC$GroupCall.version = i;
                 tLRPC$GroupCall.participants_count = i2;
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m100d("new participants count " + this.call.participants_count);
+                    FileLog.m102d("new participants count " + this.call.participants_count);
                 }
             }
             long elapsedRealtime = SystemClock.elapsedRealtime();
@@ -576,7 +576,7 @@ public class ChatObject {
                 this.call.participants_count = this.participants.size();
             }
             sortParticipants();
-            this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1615id), Boolean.FALSE);
+            this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1617id), Boolean.FALSE);
             setParticiapantsVolume();
         }
 
@@ -635,7 +635,7 @@ public class ChatObject {
 
         private void setParticiapantsVolume() {
             VoIPService sharedInstance = VoIPService.getSharedInstance();
-            if (sharedInstance == null || sharedInstance.getAccount() != this.currentAccount.getCurrentAccount() || sharedInstance.getChat() == null || sharedInstance.getChat().f1600id != (-this.chatId)) {
+            if (sharedInstance == null || sharedInstance.getAccount() != this.currentAccount.getCurrentAccount() || sharedInstance.getChat() == null || sharedInstance.getChat().f1602id != (-this.chatId)) {
                 return;
             }
             sharedInstance.setParticipantsVolume();
@@ -695,7 +695,7 @@ public class ChatObject {
             }
             if (z) {
                 sortParticipants();
-                this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1615id), Boolean.FALSE);
+                this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1617id), Boolean.FALSE);
             }
         }
 
@@ -790,7 +790,7 @@ public class ChatObject {
                         this.call.participants_count = this.participants.size();
                     }
                     sortParticipants();
-                    this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1615id), Boolean.FALSE);
+                    this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1617id), Boolean.FALSE);
                     if (onParticipantsLoad != null) {
                         onParticipantsLoad.onLoad(arrayList);
                     } else {
@@ -908,7 +908,7 @@ public class ChatObject {
                                 sb.append(peerId);
                                 sb.append(" ");
                                 sb.append(user == null ? null : user.first_name);
-                                Log.m1112d("GroupCall", sb.toString());
+                                Log.m1113d("GroupCall", sb.toString());
                                 i = currentTime;
                                 j = elapsedRealtime;
                             } else {
@@ -920,7 +920,7 @@ public class ChatObject {
                                 sb2.append(peerId);
                                 sb2.append(" ");
                                 sb2.append(chat == null ? null : chat.title);
-                                Log.m1112d("GroupCall", sb2.toString());
+                                Log.m1113d("GroupCall", sb2.toString());
                             }
                             this.currentSpeakingPeers.put(peerId, tLRPC$TL_groupCallParticipant);
                             z4 = true;
@@ -944,7 +944,7 @@ public class ChatObject {
                                 sb3.append(peerId);
                                 sb3.append(" ");
                                 sb3.append(user2 == null ? null : user2.first_name);
-                                Log.m1112d("GroupCall", sb3.toString());
+                                Log.m1113d("GroupCall", sb3.toString());
                             } else {
                                 TLRPC$Chat chat2 = MessagesController.getInstance(this.currentAccount.getCurrentAccount()).getChat(Long.valueOf(-peerId));
                                 StringBuilder sb4 = new StringBuilder();
@@ -952,7 +952,7 @@ public class ChatObject {
                                 sb4.append(peerId);
                                 sb4.append(" ");
                                 sb4.append(chat2 == null ? null : chat2.title);
-                                Log.m1112d("GroupCall", sb4.toString());
+                                Log.m1113d("GroupCall", sb4.toString());
                             }
                             z4 = true;
                         }
@@ -996,20 +996,20 @@ public class ChatObject {
             }
             if (z5) {
                 sortParticipants();
-                this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1615id), Boolean.FALSE);
+                this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1617id), Boolean.FALSE);
             }
             if (z6) {
                 if (this.currentSpeakingPeers.size() > 0) {
                     AndroidUtilities.cancelRunOnUIThread(this.updateCurrentSpeakingRunnable);
                     AndroidUtilities.runOnUIThread(this.updateCurrentSpeakingRunnable, 550L);
                 }
-                this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallSpeakingUsersUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1615id), Boolean.FALSE);
+                this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallSpeakingUsersUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1617id), Boolean.FALSE);
             }
         }
 
         public void updateVisibleParticipants() {
             sortParticipants();
-            this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1615id), Boolean.FALSE, 0L);
+            this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1617id), Boolean.FALSE, 0L);
         }
 
         public void clearVideFramesInfo() {
@@ -1092,7 +1092,7 @@ public class ChatObject {
                     } else if (isValidUpdate == 1) {
                         if (this.updatesStartWaitTime != 0 && (z || Math.abs(System.currentTimeMillis() - this.updatesStartWaitTime) <= 1500)) {
                             if (BuildVars.LOGS_ENABLED) {
-                                FileLog.m100d("HOLE IN GROUP CALL UPDATES QUEUE - will wait more time");
+                                FileLog.m102d("HOLE IN GROUP CALL UPDATES QUEUE - will wait more time");
                             }
                             if (z) {
                                 this.updatesStartWaitTime = System.currentTimeMillis();
@@ -1101,7 +1101,7 @@ public class ChatObject {
                             return;
                         }
                         if (BuildVars.LOGS_ENABLED) {
-                            FileLog.m100d("HOLE IN GROUP CALL UPDATES QUEUE - reload participants");
+                            FileLog.m102d("HOLE IN GROUP CALL UPDATES QUEUE - reload participants");
                         }
                         this.updatesStartWaitTime = 0L;
                         this.updatesQueue.clear();
@@ -1114,7 +1114,7 @@ public class ChatObject {
                 }
                 this.updatesQueue.clear();
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m100d("GROUP CALL UPDATES QUEUE PROCEED - OK");
+                    FileLog.m102d("GROUP CALL UPDATES QUEUE PROCEED - OK");
                 }
             }
             this.updatesStartWaitTime = 0L;
@@ -1124,7 +1124,7 @@ public class ChatObject {
             this.checkQueueRunnable = null;
             if (this.updatesStartWaitTime != 0 && System.currentTimeMillis() - this.updatesStartWaitTime >= 1500) {
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m100d("QUEUE GROUP CALL UPDATES WAIT TIMEOUT - CHECK QUEUE");
+                    FileLog.m102d("QUEUE GROUP CALL UPDATES WAIT TIMEOUT - CHECK QUEUE");
                 }
                 processUpdatesQueue();
             }
@@ -1209,9 +1209,9 @@ public class ChatObject {
                 if (i != i2) {
                     tLRPC$GroupCall.participants_count = i2;
                     if (BuildVars.LOGS_ENABLED) {
-                        FileLog.m100d("new participants reload count " + this.call.participants_count);
+                        FileLog.m102d("new participants reload count " + this.call.participants_count);
                     }
-                    this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1615id), Boolean.FALSE);
+                    this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1617id), Boolean.FALSE);
                 }
             }
         }
@@ -1263,13 +1263,13 @@ public class ChatObject {
             this.call = tLRPC$TL_updateGroupCall.call;
             this.participants.get(getSelfId());
             this.recording = this.call.record_start_date != 0;
-            this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1615id), Boolean.FALSE);
+            this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1617id), Boolean.FALSE);
         }
 
         public TLRPC$TL_inputGroupCall getInputGroupCall() {
             TLRPC$TL_inputGroupCall tLRPC$TL_inputGroupCall = new TLRPC$TL_inputGroupCall();
             TLRPC$GroupCall tLRPC$GroupCall = this.call;
-            tLRPC$TL_inputGroupCall.f1667id = tLRPC$GroupCall.f1615id;
+            tLRPC$TL_inputGroupCall.f1668id = tLRPC$GroupCall.f1617id;
             tLRPC$TL_inputGroupCall.access_hash = tLRPC$GroupCall.access_hash;
             return tLRPC$TL_inputGroupCall;
         }
@@ -1555,7 +1555,7 @@ public class ChatObject {
                     ChatObject.Call.this.lambda$toggleRecord$13(tLObject, tLRPC$TL_error);
                 }
             });
-            this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1615id), Boolean.FALSE);
+            this.currentAccount.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(this.chatId), Long.valueOf(this.call.f1617id), Boolean.FALSE);
         }
 
         public /* synthetic */ void lambda$toggleRecord$13(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
@@ -1847,7 +1847,7 @@ public class ChatObject {
             long j = tLRPC$Peer.user_id;
             return j != 0 ? j : z ? -tLRPC$Peer.channel_id : tLRPC$Peer.channel_id;
         } else if (tLRPC$Chat != null && (tLRPC$TL_chatAdminRights = tLRPC$Chat.admin_rights) != null && tLRPC$TL_chatAdminRights.anonymous) {
-            long j2 = tLRPC$Chat.f1600id;
+            long j2 = tLRPC$Chat.f1602id;
             return z ? -j2 : j2;
         } else {
             return UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId();
@@ -1887,18 +1887,18 @@ public class ChatObject {
     }
 
     public static boolean canDeleteTopic(int i, TLRPC$Chat tLRPC$Chat, int i2) {
-        return (i2 == 1 || tLRPC$Chat == null || !canDeleteTopic(i, tLRPC$Chat, MessagesController.getInstance(i).getTopicsController().findTopic(tLRPC$Chat.f1600id, i2))) ? false : true;
+        return (i2 == 1 || tLRPC$Chat == null || !canDeleteTopic(i, tLRPC$Chat, MessagesController.getInstance(i).getTopicsController().findTopic(tLRPC$Chat.f1602id, i2))) ? false : true;
     }
 
     public static boolean canDeleteTopic(int i, TLRPC$Chat tLRPC$Chat, TLRPC$TL_forumTopic tLRPC$TL_forumTopic) {
         TLRPC$Message tLRPC$Message;
         TLRPC$Message tLRPC$Message2;
-        if (tLRPC$TL_forumTopic == null || tLRPC$TL_forumTopic.f1657id != 1) {
+        if (tLRPC$TL_forumTopic == null || tLRPC$TL_forumTopic.f1658id != 1) {
             if (!canUserDoAction(tLRPC$Chat, 13)) {
                 if (!isMyTopic(i, tLRPC$TL_forumTopic) || (tLRPC$Message = tLRPC$TL_forumTopic.topMessage) == null || (tLRPC$Message2 = tLRPC$TL_forumTopic.topicStartMessage) == null) {
                     return false;
                 }
-                int i2 = tLRPC$Message.f1624id - tLRPC$Message2.f1624id;
+                int i2 = tLRPC$Message.f1626id - tLRPC$Message2.f1626id;
                 ArrayList<MessageObject> arrayList = tLRPC$TL_forumTopic.groupedMessages;
                 if (i2 > Math.max(1, arrayList == null ? 0 : arrayList.size()) || !MessageObject.peersEqual(tLRPC$TL_forumTopic.from_id, tLRPC$TL_forumTopic.topMessage.from_id)) {
                     return false;
@@ -1911,7 +1911,7 @@ public class ChatObject {
 
     public static boolean isMyTopic(int i, TLRPC$TL_forumTopic tLRPC$TL_forumTopic) {
         if (tLRPC$TL_forumTopic != null) {
-            if (!tLRPC$TL_forumTopic.f1658my) {
+            if (!tLRPC$TL_forumTopic.f1659my) {
                 TLRPC$Peer tLRPC$Peer = tLRPC$TL_forumTopic.from_id;
                 if (!(tLRPC$Peer instanceof TLRPC$TL_peerUser) || tLRPC$Peer.user_id != UserConfig.getInstance(i).clientUserId) {
                 }
@@ -1922,7 +1922,7 @@ public class ChatObject {
     }
 
     public static boolean isMyTopic(int i, TLRPC$Chat tLRPC$Chat, int i2) {
-        return tLRPC$Chat != null && tLRPC$Chat.forum && isMyTopic(i, tLRPC$Chat.f1600id, i2);
+        return tLRPC$Chat != null && tLRPC$Chat.forum && isMyTopic(i, tLRPC$Chat.f1602id, i2);
     }
 
     public static boolean isMyTopic(int i, long j, int i2) {
@@ -2015,54 +2015,54 @@ public class ChatObject {
     public static String getRestrictedErrorText(TLRPC$Chat tLRPC$Chat, int i) {
         if (i == 23) {
             if (tLRPC$Chat == null || isActionBannedByDefault(tLRPC$Chat, i)) {
-                return LocaleController.getString("GlobalAttachGifRestricted", C3630R.string.GlobalAttachGifRestricted);
+                return LocaleController.getString("GlobalAttachGifRestricted", C3634R.string.GlobalAttachGifRestricted);
             }
-            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachGifRestrictedForever", C3630R.string.AttachGifRestrictedForever, new Object[0]) : LocaleController.formatString("AttachGifRestricted", C3630R.string.AttachGifRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
+            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachGifRestrictedForever", C3634R.string.AttachGifRestrictedForever, new Object[0]) : LocaleController.formatString("AttachGifRestricted", C3634R.string.AttachGifRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
         } else if (i == 8) {
             if (tLRPC$Chat == null || isActionBannedByDefault(tLRPC$Chat, i)) {
-                return LocaleController.getString("GlobalAttachStickersRestricted", C3630R.string.GlobalAttachStickersRestricted);
+                return LocaleController.getString("GlobalAttachStickersRestricted", C3634R.string.GlobalAttachStickersRestricted);
             }
-            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachStickersRestrictedForever", C3630R.string.AttachStickersRestrictedForever, new Object[0]) : LocaleController.formatString("AttachStickersRestricted", C3630R.string.AttachStickersRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
+            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachStickersRestrictedForever", C3634R.string.AttachStickersRestrictedForever, new Object[0]) : LocaleController.formatString("AttachStickersRestricted", C3634R.string.AttachStickersRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
         } else if (i == 16) {
             if (tLRPC$Chat == null || isActionBannedByDefault(tLRPC$Chat, i)) {
-                return LocaleController.getString("GlobalAttachPhotoRestricted", C3630R.string.GlobalAttachPhotoRestricted);
+                return LocaleController.getString("GlobalAttachPhotoRestricted", C3634R.string.GlobalAttachPhotoRestricted);
             }
-            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachPhotoRestrictedForever", C3630R.string.AttachPhotoRestrictedForever, new Object[0]) : LocaleController.formatString("AttachPhotoRestricted", C3630R.string.AttachPhotoRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
+            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachPhotoRestrictedForever", C3634R.string.AttachPhotoRestrictedForever, new Object[0]) : LocaleController.formatString("AttachPhotoRestricted", C3634R.string.AttachPhotoRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
         } else if (i == 17) {
             if (tLRPC$Chat == null || isActionBannedByDefault(tLRPC$Chat, i)) {
-                return LocaleController.getString("GlobalAttachVideoRestricted", C3630R.string.GlobalAttachVideoRestricted);
+                return LocaleController.getString("GlobalAttachVideoRestricted", C3634R.string.GlobalAttachVideoRestricted);
             }
-            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachVideoRestrictedForever", C3630R.string.AttachVideoRestrictedForever, new Object[0]) : LocaleController.formatString("AttachVideoRestricted", C3630R.string.AttachVideoRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
+            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachVideoRestrictedForever", C3634R.string.AttachVideoRestrictedForever, new Object[0]) : LocaleController.formatString("AttachVideoRestricted", C3634R.string.AttachVideoRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
         } else if (i == 19) {
             if (tLRPC$Chat == null || isActionBannedByDefault(tLRPC$Chat, i)) {
-                return LocaleController.getString("GlobalAttachDocumentsRestricted", C3630R.string.GlobalAttachDocumentsRestricted);
+                return LocaleController.getString("GlobalAttachDocumentsRestricted", C3634R.string.GlobalAttachDocumentsRestricted);
             }
-            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachDocumentsRestrictedForever", C3630R.string.AttachDocumentsRestrictedForever, new Object[0]) : LocaleController.formatString("AttachDocumentsRestricted", C3630R.string.AttachDocumentsRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
+            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachDocumentsRestrictedForever", C3634R.string.AttachDocumentsRestrictedForever, new Object[0]) : LocaleController.formatString("AttachDocumentsRestricted", C3634R.string.AttachDocumentsRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
         } else if (i == 7) {
             if (tLRPC$Chat == null || isActionBannedByDefault(tLRPC$Chat, i)) {
-                return LocaleController.getString("GlobalAttachMediaRestricted", C3630R.string.GlobalAttachMediaRestricted);
+                return LocaleController.getString("GlobalAttachMediaRestricted", C3634R.string.GlobalAttachMediaRestricted);
             }
-            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachMediaRestrictedForever", C3630R.string.AttachMediaRestrictedForever, new Object[0]) : LocaleController.formatString("AttachMediaRestricted", C3630R.string.AttachMediaRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
+            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachMediaRestrictedForever", C3634R.string.AttachMediaRestrictedForever, new Object[0]) : LocaleController.formatString("AttachMediaRestricted", C3634R.string.AttachMediaRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
         } else if (i == 18) {
             if (tLRPC$Chat == null || isActionBannedByDefault(tLRPC$Chat, i)) {
-                return LocaleController.getString("GlobalAttachAudioRestricted", C3630R.string.GlobalAttachAudioRestricted);
+                return LocaleController.getString("GlobalAttachAudioRestricted", C3634R.string.GlobalAttachAudioRestricted);
             }
-            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachAudioRestrictedForever", C3630R.string.AttachAudioRestrictedForever, new Object[0]) : LocaleController.formatString("AttachAudioRestricted", C3630R.string.AttachAudioRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
+            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachAudioRestrictedForever", C3634R.string.AttachAudioRestrictedForever, new Object[0]) : LocaleController.formatString("AttachAudioRestricted", C3634R.string.AttachAudioRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
         } else if (i == 22) {
             if (tLRPC$Chat == null || isActionBannedByDefault(tLRPC$Chat, i)) {
-                return LocaleController.getString("GlobalAttachPlainRestricted", C3630R.string.GlobalAttachPlainRestricted);
+                return LocaleController.getString("GlobalAttachPlainRestricted", C3634R.string.GlobalAttachPlainRestricted);
             }
-            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachPlainRestrictedForever", C3630R.string.AttachPlainRestrictedForever, new Object[0]) : LocaleController.formatString("AttachPlainRestricted", C3630R.string.AttachPlainRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
+            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachPlainRestrictedForever", C3634R.string.AttachPlainRestrictedForever, new Object[0]) : LocaleController.formatString("AttachPlainRestricted", C3634R.string.AttachPlainRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
         } else if (i == 21) {
             if (tLRPC$Chat == null || isActionBannedByDefault(tLRPC$Chat, i)) {
-                return LocaleController.getString("GlobalAttachRoundRestricted", C3630R.string.GlobalAttachRoundRestricted);
+                return LocaleController.getString("GlobalAttachRoundRestricted", C3634R.string.GlobalAttachRoundRestricted);
             }
-            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachRoundRestrictedForever", C3630R.string.AttachRoundRestrictedForever, new Object[0]) : LocaleController.formatString("AttachRoundRestricted", C3630R.string.AttachRoundRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
+            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachRoundRestrictedForever", C3634R.string.AttachRoundRestrictedForever, new Object[0]) : LocaleController.formatString("AttachRoundRestricted", C3634R.string.AttachRoundRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
         } else if (i == 20) {
             if (tLRPC$Chat == null || isActionBannedByDefault(tLRPC$Chat, i)) {
-                return LocaleController.getString("GlobalAttachVoiceRestricted", C3630R.string.GlobalAttachVoiceRestricted);
+                return LocaleController.getString("GlobalAttachVoiceRestricted", C3634R.string.GlobalAttachVoiceRestricted);
             }
-            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachVoiceRestrictedForever", C3630R.string.AttachVoiceRestrictedForever, new Object[0]) : LocaleController.formatString("AttachVoiceRestricted", C3630R.string.AttachVoiceRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
+            return AndroidUtilities.isBannedForever(tLRPC$Chat.banned_rights) ? LocaleController.formatString("AttachVoiceRestrictedForever", C3634R.string.AttachVoiceRestrictedForever, new Object[0]) : LocaleController.formatString("AttachVoiceRestricted", C3634R.string.AttachVoiceRestricted, LocaleController.formatDateForBan(tLRPC$Chat.banned_rights.until_date));
         } else {
             return "";
         }

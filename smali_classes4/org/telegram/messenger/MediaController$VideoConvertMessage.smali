@@ -1,4 +1,4 @@
-.class Lorg/telegram/messenger/MediaController$VideoConvertMessage;
+.class public Lorg/telegram/messenger/MediaController$VideoConvertMessage;
 .super Ljava/lang/Object;
 .source "MediaController.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
+    accessFlags = 0x9
     name = "VideoConvertMessage"
 .end annotation
 
@@ -28,21 +28,21 @@
 .method public constructor <init>(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/VideoEditedInfo;Z)V
     .locals 0
 
-    .line 672
+    .line 715
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 673
+    .line 716
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 674
+    .line 717
     iget p1, p1, Lorg/telegram/messenger/MessageObject;->currentAccount:I
 
     iput p1, p0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->currentAccount:I
 
-    .line 675
+    .line 718
     iput-object p2, p0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    .line 676
+    .line 719
     iput-boolean p3, p0, Lorg/telegram/messenger/MediaController$VideoConvertMessage;->foreground:Z
 
     return-void

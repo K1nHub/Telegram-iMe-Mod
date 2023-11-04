@@ -72,7 +72,7 @@
     .line 67
     iget-object v0, p0, Lkotlin/reflect/jvm/internal/impl/types/IntersectionTypeConstructor$makeDebugNameForIntersectionType$3;->$getProperTypeRelatedToStringify:Lkotlin/jvm/functions/Function1;
 
-    const-string v1, "it"
+    const-string/jumbo v1, "it"
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

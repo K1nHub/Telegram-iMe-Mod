@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;II)V
     .locals 0
 
-    .line 2544
+    .line 2545
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1$1;->this$1:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;
 
     invoke-direct {p0, p2, p3, p4, p5}, Lorg/telegram/ui/FilterCreateActivity$LinkCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;II)V
@@ -35,14 +35,14 @@
 .method public copy()V
     .locals 2
 
-    .line 2558
+    .line 2559
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$LinkCell;->lastUrl:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 2562
+    .line 2563
     :cond_0
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->addToClipboard(Ljava/lang/CharSequence;)Z
 
@@ -50,7 +50,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2563
+    .line 2564
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1$1;->this$1:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;
 
     iget-object v0, v0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
@@ -75,10 +75,10 @@
     return-void
 .end method
 
-.method protected onDelete(Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;)V
+.method protected onDelete(Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;)V
     .locals 1
 
-    .line 2569
+    .line 2570
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1$1;->this$1:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;
 
     iget-object v0, v0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
@@ -89,14 +89,14 @@
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 2570
+    .line 2571
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1$1;->this$1:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;
 
     iget-object p1, p1, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;->access$3200(Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;)V
 
-    .line 2571
+    .line 2572
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1$1;->this$1:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;
 
     iget-object p1, p1, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
@@ -111,7 +111,7 @@
 .method public options()V
     .locals 5
 
-    .line 2547
+    .line 2548
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1$1;->this$1:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;
 
     iget-object v0, v0, Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet$1;->this$0:Lorg/telegram/ui/FilterCreateActivity$FilterInvitesBottomSheet;
@@ -124,7 +124,7 @@
 
     move-result-object v0
 
-    .line 2548
+    .line 2549
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_copy:I
 
     sget v2, Lorg/telegram/messenger/R$string;->CopyLink:I
@@ -141,7 +141,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/Components/ItemOptions;->add(ILjava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 2549
+    .line 2550
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_qrcode:I
 
     sget v2, Lorg/telegram/messenger/R$string;->GetQRCode:I
@@ -158,7 +158,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/Components/ItemOptions;->add(ILjava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 2550
+    .line 2551
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_delete:I
 
     sget v2, Lorg/telegram/messenger/R$string;->DeleteLink:I
@@ -177,17 +177,17 @@
 
     invoke-virtual {v0, v1, v2, v4, v3}, Lorg/telegram/ui/Components/ItemOptions;->add(ILjava/lang/CharSequence;ZLjava/lang/Runnable;)Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 2551
+    .line 2552
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_0
 
     const/4 v1, 0x3
 
-    .line 2552
+    .line 2553
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ItemOptions;->setGravity(I)Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 2554
+    .line 2555
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ItemOptions;->show()Lorg/telegram/ui/Components/ItemOptions;
 

@@ -19,7 +19,7 @@ import android.view.animation.Interpolator;
 import androidx.appcompat.R$attr;
 import androidx.appcompat.R$id;
 import androidx.appcompat.R$styleable;
-import androidx.appcompat.app.AbstractC0019ActionBar;
+import androidx.appcompat.app.AbstractC0025ActionBar;
 import androidx.appcompat.view.ActionBarPolicy;
 import androidx.appcompat.view.ActionMode;
 import androidx.appcompat.view.SupportMenuInflater;
@@ -40,7 +40,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 /* loaded from: classes.dex */
-public class WindowDecorActionBar extends AbstractC0019ActionBar implements ActionBarOverlayLayout.ActionBarVisibilityCallback {
+public class WindowDecorActionBar extends AbstractC0025ActionBar implements ActionBarOverlayLayout.ActionBarVisibilityCallback {
     private static final Interpolator sHideInterpolator = new AccelerateInterpolator();
     private static final Interpolator sShowInterpolator = new DecelerateInterpolator();
     ActionModeImpl mActionMode;
@@ -61,7 +61,7 @@ public class WindowDecorActionBar extends AbstractC0019ActionBar implements Acti
     final ViewPropertyAnimatorListener mHideListener;
     boolean mHideOnContentScroll;
     private boolean mLastMenuVisibility;
-    private ArrayList<AbstractC0019ActionBar.OnMenuVisibilityListener> mMenuVisibilityListeners;
+    private ArrayList<AbstractC0025ActionBar.OnMenuVisibilityListener> mMenuVisibilityListeners;
     private boolean mNowShowing;
     ActionBarOverlayLayout mOverlayLayout;
     private boolean mShowHideAnimationEnabled;
@@ -223,7 +223,7 @@ public class WindowDecorActionBar extends AbstractC0019ActionBar implements Acti
         ViewCompat.setElevation(this.mContainerView, f);
     }
 
-    @Override // androidx.appcompat.app.AbstractC0019ActionBar
+    @Override // androidx.appcompat.app.AbstractC0025ActionBar
     public void onConfigurationChanged(Configuration configuration) {
         setHasEmbeddedTabs(ActionBarPolicy.get(this.mContext).hasEmbeddedTabs());
     }
@@ -273,7 +273,7 @@ public class WindowDecorActionBar extends AbstractC0019ActionBar implements Acti
         this.mCurWindowVisibility = i;
     }
 
-    @Override // androidx.appcompat.app.AbstractC0019ActionBar
+    @Override // androidx.appcompat.app.AbstractC0025ActionBar
     public void setShowHideAnimationEnabled(boolean z) {
         ViewPropertyAnimatorCompatSet viewPropertyAnimatorCompatSet;
         this.mShowHideAnimationEnabled = z;
@@ -283,7 +283,7 @@ public class WindowDecorActionBar extends AbstractC0019ActionBar implements Acti
         viewPropertyAnimatorCompatSet.cancel();
     }
 
-    @Override // androidx.appcompat.app.AbstractC0019ActionBar
+    @Override // androidx.appcompat.app.AbstractC0025ActionBar
     public void dispatchMenuVisibilityChanged(boolean z) {
         if (z == this.mLastMenuVisibility) {
             return;
@@ -303,7 +303,7 @@ public class WindowDecorActionBar extends AbstractC0019ActionBar implements Acti
         this.mDecorToolbar.setHomeButtonEnabled(z);
     }
 
-    @Override // androidx.appcompat.app.AbstractC0019ActionBar
+    @Override // androidx.appcompat.app.AbstractC0025ActionBar
     public void setWindowTitle(CharSequence charSequence) {
         this.mDecorToolbar.setWindowTitle(charSequence);
     }
@@ -320,12 +320,12 @@ public class WindowDecorActionBar extends AbstractC0019ActionBar implements Acti
         return this.mDecorToolbar.getNavigationMode();
     }
 
-    @Override // androidx.appcompat.app.AbstractC0019ActionBar
+    @Override // androidx.appcompat.app.AbstractC0025ActionBar
     public int getDisplayOptions() {
         return this.mDecorToolbar.getDisplayOptions();
     }
 
-    @Override // androidx.appcompat.app.AbstractC0019ActionBar
+    @Override // androidx.appcompat.app.AbstractC0025ActionBar
     public ActionMode startActionMode(ActionMode.Callback callback) {
         ActionModeImpl actionModeImpl = this.mActionMode;
         if (actionModeImpl != null) {
@@ -520,7 +520,7 @@ public class WindowDecorActionBar extends AbstractC0019ActionBar implements Acti
         return ViewCompat.isLaidOut(this.mContainerView);
     }
 
-    @Override // androidx.appcompat.app.AbstractC0019ActionBar
+    @Override // androidx.appcompat.app.AbstractC0025ActionBar
     public Context getThemedContext() {
         if (this.mThemedContext == null) {
             TypedValue typedValue = new TypedValue();
@@ -544,7 +544,7 @@ public class WindowDecorActionBar extends AbstractC0019ActionBar implements Acti
         }
     }
 
-    @Override // androidx.appcompat.app.AbstractC0019ActionBar
+    @Override // androidx.appcompat.app.AbstractC0025ActionBar
     public boolean collapseActionView() {
         DecorToolbar decorToolbar = this.mDecorToolbar;
         if (decorToolbar == null || !decorToolbar.hasExpandedActionView()) {
@@ -697,7 +697,7 @@ public class WindowDecorActionBar extends AbstractC0019ActionBar implements Acti
         }
     }
 
-    @Override // androidx.appcompat.app.AbstractC0019ActionBar
+    @Override // androidx.appcompat.app.AbstractC0025ActionBar
     public void setDefaultDisplayHomeAsUpEnabled(boolean z) {
         if (this.mDisplayHomeAsUpSet) {
             return;
@@ -705,7 +705,7 @@ public class WindowDecorActionBar extends AbstractC0019ActionBar implements Acti
         setDisplayHomeAsUpEnabled(z);
     }
 
-    @Override // androidx.appcompat.app.AbstractC0019ActionBar
+    @Override // androidx.appcompat.app.AbstractC0025ActionBar
     public boolean onKeyShortcut(int i, KeyEvent keyEvent) {
         Menu menu;
         ActionModeImpl actionModeImpl = this.mActionMode;

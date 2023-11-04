@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 1144
+    .line 1222
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$4;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -35,36 +35,36 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 1147
+    .line 1225
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->onMeasure(II)V
 
-    .line 1148
+    .line 1226
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$4;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$1800(Lorg/telegram/ui/ActionBar/BottomSheet;)Z
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2000(Lorg/telegram/ui/ActionBar/BottomSheet;)Z
 
     move-result p1
 
     if-eqz p1, :cond_2
 
-    .line 1149
+    .line 1227
     invoke-virtual {p0}, Landroid/widget/TextView;->getMeasuredHeight()I
 
     move-result p1
 
-    .line 1150
+    .line 1228
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$4;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$1900(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/view/View;
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2100(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/view/View;
 
     move-result-object p2
 
     if-eqz p2, :cond_0
 
-    .line 1151
+    .line 1229
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$4;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$1900(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/view/View;
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/BottomSheet;->access$2100(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/view/View;
 
     move-result-object p2
 
@@ -78,7 +78,7 @@
 
     goto :goto_1
 
-    .line 1152
+    .line 1230
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$4;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
@@ -88,7 +88,7 @@
 
     const/4 p2, 0x1
 
-    .line 1153
+    .line 1231
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$4;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
@@ -100,7 +100,7 @@
 
     if-ge p2, v0, :cond_2
 
-    .line 1154
+    .line 1232
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$4;->this$0:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
@@ -109,12 +109,12 @@
 
     move-result-object v0
 
-    .line 1155
+    .line 1233
     instance-of v1, v0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;
 
     if-eqz v1, :cond_1
 
-    .line 1156
+    .line 1234
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -125,7 +125,7 @@
 
     const/16 v0, 0x30
 
-    .line 1157
+    .line 1235
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0

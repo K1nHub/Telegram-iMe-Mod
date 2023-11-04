@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewContainer;)V
     .locals 0
 
-    .line 898
+    .line 895
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -58,7 +58,7 @@
 .method public getBottomOffset(I)I
     .locals 2
 
-    .line 901
+    .line 898
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -69,7 +69,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 902
+    .line 899
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewContainer;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -78,7 +78,7 @@
 
     check-cast p1, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
 
-    .line 903
+    .line 900
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->getOffsetY()F
 
     move-result v0

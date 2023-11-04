@@ -40,7 +40,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    const-string v0, "jctools.spsc.max.lookahead.step"
+    const-string/jumbo v0, "jctools.spsc.max.lookahead.step"
 
     const/16 v1, 0x1000
 

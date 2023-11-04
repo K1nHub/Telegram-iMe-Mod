@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TcpClientImpl.kt */
-@DebugMetadata(m143c = "org.ton.adnl.network.TcpClientImpl", m142f = "TcpClientImpl.kt", m141l = {21}, m140m = "connect")
+@DebugMetadata(m145c = "org.ton.adnl.network.TcpClientImpl", m144f = "TcpClientImpl.kt", m143l = {21}, m142m = "connect")
 /* loaded from: classes6.dex */
 public final class TcpClientImpl$connect$1 extends ContinuationImpl {
     Object L$0;

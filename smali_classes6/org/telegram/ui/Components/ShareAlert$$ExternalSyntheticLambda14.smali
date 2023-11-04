@@ -2,38 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/tgnet/RequestDelegate;
+.implements Lorg/telegram/messenger/GenericProvider;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/ShareAlert;
-
-.field public final synthetic f$1:Landroid/content/Context;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda14;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda14;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda14;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda14;->INSTANCE:Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda14;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/ui/Components/ShareAlert;
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda14;->f$1:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 2
+.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda14;->f$0:Lorg/telegram/ui/Components/ShareAlert;
+    check-cast p1, Ljava/lang/Integer;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ShareAlert$$ExternalSyntheticLambda14;->f$1:Landroid/content/Context;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$jLy3Cqoj4KvBZTCeS-HrOnXpKW4(Ljava/lang/Integer;)Ljava/lang/Integer;
 
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$FwxuZo6CliUuC7uPACVzrxBEdnU(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    move-result-object p1
 
-    return-void
+    return-object p1
 .end method

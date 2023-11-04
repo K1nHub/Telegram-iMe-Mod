@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$2;
-.super Lorg/telegram/ui/Components/BotWebViewContainer;
+.super Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
 .source "ChatAttachAlertBotWebViewLayout.java"
 
 
@@ -19,84 +19,56 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+.method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;Landroid/content/Context;)V
     .locals 0
 
-    .line 180
+    .line 196
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$2;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;
 
-    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/BotWebViewContainer;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 2
+.method protected onMeasure(II)V
+    .locals 1
 
-    .line 183
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+    .line 199
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    move-result v0
+    move-result p2
 
-    if-nez v0, :cond_0
-
-    .line 184
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$2;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;->access$500(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;)Z
+    invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    sub-int/2addr p2, v0
 
-    .line 185
+    const/16 v0, 0x54
+
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    sub-int/2addr p2, v0
+
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$2;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;
 
-    const/4 v1, 0x1
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;->access$300(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;)I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;->access$502(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;Z)Z
+    move-result v0
 
-    .line 186
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$2;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;
+    add-int/2addr p2, v0
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;)Lorg/telegram/ui/Components/BotWebViewContainer;
+    const/high16 v0, 0x40000000    # 2.0f
 
-    move-result-object v0
+    invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->restoreButtonData()V
+    move-result p2
 
-    .line 189
-    :cond_0
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public onWebViewCreated()V
-    .locals 2
-
-    .line 194
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$2;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;->access$600(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;)Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;
-
-    move-result-object v0
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$2;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;
-
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;)Lorg/telegram/ui/Components/BotWebViewContainer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->getWebView()Landroid/webkit/WebView;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$WebViewSwipeContainer;->setWebView(Landroid/webkit/WebView;)V
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
 .end method

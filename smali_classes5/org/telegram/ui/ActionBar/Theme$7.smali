@@ -26,7 +26,7 @@
 .method constructor <init>(II)V
     .locals 0
 
-    .line 5509
+    .line 5638
     iput p1, p0, Lorg/telegram/ui/ActionBar/Theme$7;->val$maskType:I
 
     iput p2, p0, Lorg/telegram/ui/ActionBar/Theme$7;->val$radius:I
@@ -41,12 +41,12 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 5
 
-    .line 5515
+    .line 5644
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 5516
+    .line 5645
     iget v1, p0, Lorg/telegram/ui/ActionBar/Theme$7;->val$maskType:I
 
     const/4 v2, 0x6
@@ -55,25 +55,25 @@
 
     if-ne v1, v3, :cond_2
 
-    .line 5517
+    .line 5646
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/Theme$7;->rect:Landroid/graphics/RectF;
 
     if-nez v1, :cond_0
 
-    .line 5518
+    .line 5647
     new-instance v1, Landroid/graphics/RectF;
 
     invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/ActionBar/Theme$7;->rect:Landroid/graphics/RectF;
 
-    .line 5520
+    .line 5649
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/Theme$7;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v1, v0}, Landroid/graphics/RectF;->set(Landroid/graphics/Rect;)V
 
-    .line 5521
+    .line 5650
     iget v0, p0, Lorg/telegram/ui/ActionBar/Theme$7;->val$radius:I
 
     if-gtz v0, :cond_1
@@ -85,10 +85,10 @@
     :cond_1
     int-to-float v0, v0
 
-    .line 5522
+    .line 5651
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/Theme$7;->rect:Landroid/graphics/RectF;
 
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2800()Landroid/graphics/Paint;
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2700()Landroid/graphics/Paint;
 
     move-result-object v2
 
@@ -110,7 +110,7 @@
 
     if-ne v1, v2, :cond_4
 
-    .line 5528
+    .line 5657
     invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
     move-result v1
@@ -127,7 +127,7 @@
 
     goto :goto_1
 
-    .line 5532
+    .line 5661
     :cond_4
     iget v1, v0, Landroid/graphics/Rect;->left:I
 
@@ -181,7 +181,7 @@
 
     goto :goto_1
 
-    .line 5526
+    .line 5655
     :cond_5
     :goto_0
     iget v1, p0, Lorg/telegram/ui/ActionBar/Theme$7;->val$radius:I
@@ -194,7 +194,7 @@
 
     move-result v1
 
-    .line 5534
+    .line 5663
     :cond_6
     :goto_1
     invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
@@ -211,7 +211,7 @@
 
     int-to-float v1, v1
 
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2800()Landroid/graphics/Paint;
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$2700()Landroid/graphics/Paint;
 
     move-result-object v3
 

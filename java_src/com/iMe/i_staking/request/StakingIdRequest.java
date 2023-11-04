@@ -29,7 +29,7 @@ public final class StakingIdRequest {
     }
 
     public int hashCode() {
-        return ProfileData$$ExternalSyntheticBackport0.m1017m(this.stakingId);
+        return ProfileData$$ExternalSyntheticBackport0.m1018m(this.stakingId);
     }
 
     public String toString() {

@@ -75,7 +75,7 @@
 
     move-object v11, p3
 
-    invoke-static/range {v0 .. v11}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$e2cQnZXJBdXvBuoPalVIFn8Bc5k(Lorg/telegram/ui/LaunchActivity;Ljava/lang/String;Ljava/lang/String;ILorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/tgnet/TLRPC$User;JZLorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Ljava/lang/String;)V
+    invoke-static/range {v0 .. v11}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$SwFmKoK9klCOgLN0XtAAWIpEjZM(Lorg/telegram/ui/LaunchActivity;Ljava/lang/String;Ljava/lang/String;ILorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/tgnet/TLRPC$User;JZLorg/telegram/tgnet/TLRPC$TL_chatAdminRights;Ljava/lang/String;)V
 
     return-void
 .end method

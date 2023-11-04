@@ -66,7 +66,7 @@
 
     move-result-object p1
 
-    const-string v1, "it.type"
+    const-string/jumbo v1, "it.type"
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewMenuContainer;I)V
     .locals 0
 
-    .line 623
+    .line 638
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     iput p2, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$6;->val$toY:I
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 626
+    .line 641
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -52,7 +52,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 627
+    .line 642
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$000(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Lorg/telegram/ui/Components/BotWebViewContainer;
@@ -67,22 +67,22 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setScrollY(I)V
 
-    .line 629
+    .line 644
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1500(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Landroid/animation/ValueAnimator;
+    invoke-static {v0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1700(Lorg/telegram/ui/Components/BotWebViewMenuContainer;)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
     if-ne p1, v0, :cond_1
 
-    .line 630
+    .line 645
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$6;->this$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1502(Lorg/telegram/ui/Components/BotWebViewMenuContainer;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/BotWebViewMenuContainer;->access$1702(Lorg/telegram/ui/Components/BotWebViewMenuContainer;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
     :cond_1
     return-void

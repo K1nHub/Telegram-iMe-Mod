@@ -62,7 +62,7 @@
     .line 18
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v1, "javax.annotation.meta.TypeQualifierNickname"
+    const-string/jumbo v1, "javax.annotation.meta.TypeQualifierNickname"
 
     invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -71,7 +71,7 @@
     .line 19
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v1, "javax.annotation.meta.TypeQualifier"
+    const-string/jumbo v1, "javax.annotation.meta.TypeQualifier"
 
     invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -80,7 +80,7 @@
     .line 20
     new-instance v0, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v1, "javax.annotation.meta.TypeQualifierDefault"
+    const-string/jumbo v1, "javax.annotation.meta.TypeQualifierDefault"
 
     invoke-direct {v0, v1}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -201,7 +201,7 @@
     .line 46
     new-instance v6, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v7, "javax.annotation.ParametersAreNullableByDefault"
+    const-string/jumbo v7, "javax.annotation.ParametersAreNullableByDefault"
 
     invoke-direct {v6, v7}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -241,7 +241,7 @@
     .line 51
     new-instance v6, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v7, "javax.annotation.ParametersAreNonnullByDefault"
+    const-string/jumbo v7, "javax.annotation.ParametersAreNonnullByDefault"
 
     invoke-direct {v6, v7}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 

@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.ext.opus;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.decoder.CryptoConfig;
 import com.google.android.exoplayer2.decoder.CryptoException;
 import com.google.android.exoplayer2.decoder.CryptoInfo;
@@ -207,14 +207,14 @@ public final class OpusDecoder extends SimpleDecoder<DecoderInputBuffer, SimpleD
 
     static int getPreSkipSamples(List<byte[]> list) {
         if (list.size() == 3) {
-            return (int) ((ByteBuffer.wrap(list.get(1)).order(ByteOrder.nativeOrder()).getLong() * 48000) / C0479C.NANOS_PER_SECOND);
+            return (int) ((ByteBuffer.wrap(list.get(1)).order(ByteOrder.nativeOrder()).getLong() * 48000) / C0485C.NANOS_PER_SECOND);
         }
         byte[] bArr = list.get(0);
         return (bArr[10] & 255) | ((bArr[11] & 255) << 8);
     }
 
     static int getSeekPreRollSamples(List<byte[]> list) {
-        return list.size() == 3 ? (int) ((ByteBuffer.wrap(list.get(2)).order(ByteOrder.nativeOrder()).getLong() * 48000) / C0479C.NANOS_PER_SECOND) : DEFAULT_SEEK_PRE_ROLL_SAMPLES;
+        return list.size() == 3 ? (int) ((ByteBuffer.wrap(list.get(2)).order(ByteOrder.nativeOrder()).getLong() * 48000) / C0485C.NANOS_PER_SECOND) : DEFAULT_SEEK_PRE_ROLL_SAMPLES;
     }
 
     static int getDiscardPaddingSamples(ByteBuffer byteBuffer) {
@@ -225,7 +225,7 @@ public final class OpusDecoder extends SimpleDecoder<DecoderInputBuffer, SimpleD
         if (j < 0) {
             return 0;
         }
-        return (int) ((j * 48000) / C0479C.NANOS_PER_SECOND);
+        return (int) ((j * 48000) / C0485C.NANOS_PER_SECOND);
     }
 
     private static int readSignedLittleEndian16(byte[] bArr, int i) {

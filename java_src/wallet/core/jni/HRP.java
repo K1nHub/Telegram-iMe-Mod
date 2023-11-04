@@ -117,7 +117,7 @@ public enum HRP {
 
     /* renamed from: wallet.core.jni.HRP$1 */
     /* loaded from: classes4.dex */
-    static /* synthetic */ class C76471 {
+    static /* synthetic */ class C77221 {
         static final /* synthetic */ int[] $SwitchMap$wallet$core$jni$HRP;
 
         static {
@@ -256,7 +256,7 @@ public enum HRP {
 
     @Override // java.lang.Enum
     public String toString() {
-        switch (C76471.$SwitchMap$wallet$core$jni$HRP[ordinal()]) {
+        switch (C77221.$SwitchMap$wallet$core$jni$HRP[ordinal()]) {
             case 2:
                 return "bc";
             case 3:

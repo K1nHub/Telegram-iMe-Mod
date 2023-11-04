@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.upstream;
 
 import android.content.Context;
 import android.os.Handler;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.extractor.p015ts.PsExtractor;
@@ -46,17 +46,17 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
     private int streamCount;
     private long totalBytesTransferred;
     private long totalElapsedTimeMs;
-    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_WIFI = ImmutableList.m1049of(4400000L, 3200000L, 2300000L, 1600000L, 810000L);
-    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_2G = ImmutableList.m1049of(1400000L, 990000L, 730000L, 510000L, 230000L);
-    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_3G = ImmutableList.m1049of(2100000L, 1400000L, 1000000L, 890000L, 640000L);
-    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_4G = ImmutableList.m1049of(2600000L, 1700000L, 1300000L, 1000000L, 700000L);
-    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_5G_NSA = ImmutableList.m1049of(5700000L, 3700000L, 2300000L, 1700000L, 990000L);
-    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_5G_SA = ImmutableList.m1049of(2800000L, 1800000L, 1400000L, 1100000L, 870000L);
+    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_WIFI = ImmutableList.m1050of(4400000L, 3200000L, 2300000L, 1600000L, 810000L);
+    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_2G = ImmutableList.m1050of(1400000L, 990000L, 730000L, 510000L, 230000L);
+    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_3G = ImmutableList.m1050of(2100000L, 1400000L, 1000000L, 890000L, 640000L);
+    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_4G = ImmutableList.m1050of(2600000L, 1700000L, 1300000L, 1000000L, 700000L);
+    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_5G_NSA = ImmutableList.m1050of(5700000L, 3700000L, 2300000L, 1700000L, 990000L);
+    public static final ImmutableList<Long> DEFAULT_INITIAL_BITRATE_ESTIMATES_5G_SA = ImmutableList.m1050of(2800000L, 1800000L, 1400000L, 1100000L, 870000L);
 
     @Override // com.google.android.exoplayer2.upstream.BandwidthMeter
     public /* synthetic */ long getTimeToFirstByteEstimateUs() {
         long j;
-        j = C0479C.TIME_UNSET;
+        j = C0485C.TIME_UNSET;
         return j;
     }
 
@@ -150,7 +150,7 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
 
     @Deprecated
     public DefaultBandwidthMeter() {
-        this(null, ImmutableMap.m1047of(), 2000, Clock.DEFAULT, false);
+        this(null, ImmutableMap.m1048of(), 2000, Clock.DEFAULT, false);
     }
 
     private DefaultBandwidthMeter(Context context, Map<Integer, Long> map, int i, Clock clock, boolean z) {
@@ -1988,9 +1988,9 @@ public final class DefaultBandwidthMeter implements BandwidthMeter, TransferList
                 return new int[]{1, 0, 0, 0, 2, 2};
             case 131:
                 return new int[]{2, 0, 0, 1, 1, 2};
-            case 134:
+            case TsExtractor.TS_STREAM_TYPE_SPLICE_INFO /* 134 */:
                 return new int[]{4, 2, 1, 3, 2, 2};
-            case TsExtractor.TS_STREAM_TYPE_E_AC3 /* 135 */:
+            case 135:
                 return new int[]{2, 0, 0, 1, 3, 2};
             case 136:
             case 217:

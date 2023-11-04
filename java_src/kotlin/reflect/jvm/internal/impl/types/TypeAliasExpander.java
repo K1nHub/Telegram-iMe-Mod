@@ -160,14 +160,14 @@ public final class TypeAliasExpander {
             return typeProjection;
         }
         TypeConstructor constructor = asSimpleType.getConstructor();
-        ClassifierDescriptor mo2046getDeclarationDescriptor = constructor.mo2046getDeclarationDescriptor();
+        ClassifierDescriptor mo2051getDeclarationDescriptor = constructor.mo2051getDeclarationDescriptor();
         constructor.getParameters().size();
         asSimpleType.getArguments().size();
-        if (mo2046getDeclarationDescriptor instanceof TypeParameterDescriptor) {
+        if (mo2051getDeclarationDescriptor instanceof TypeParameterDescriptor) {
             return typeProjection;
         }
-        if (mo2046getDeclarationDescriptor instanceof TypeAliasDescriptor) {
-            TypeAliasDescriptor typeAliasDescriptor = (TypeAliasDescriptor) mo2046getDeclarationDescriptor;
+        if (mo2051getDeclarationDescriptor instanceof TypeAliasDescriptor) {
+            TypeAliasDescriptor typeAliasDescriptor = (TypeAliasDescriptor) mo2051getDeclarationDescriptor;
             int i2 = 0;
             if (typeAliasExpansion.isRecursion(typeAliasDescriptor)) {
                 this.reportStrategy.recursiveTypeAlias(typeAliasDescriptor);

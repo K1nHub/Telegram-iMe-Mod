@@ -88,9 +88,9 @@ public final class LazyJavaPackageFragment extends PackageFragmentDescriptorImpl
                     KotlinClassFinder kotlinClassFinder = lazyJavaResolverContext2.getComponents().getKotlinClassFinder();
                     jvmMetadataVersion = lazyJavaPackageFragment.jvmMetadataVersion;
                     KotlinJvmBinaryClass findKotlinClass = KotlinClassFinderKt.findKotlinClass(kotlinClassFinder, classId, jvmMetadataVersion);
-                    Pair m144to = findKotlinClass != null ? TuplesKt.m144to(str, findKotlinClass) : null;
-                    if (m144to != null) {
-                        arrayList.add(m144to);
+                    Pair m146to = findKotlinClass != null ? TuplesKt.m146to(str, findKotlinClass) : null;
+                    if (m146to != null) {
+                        arrayList.add(m146to);
                     }
                 }
                 map = MapsKt__MapsKt.toMap(arrayList);

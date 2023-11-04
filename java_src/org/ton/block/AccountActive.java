@@ -18,36 +18,36 @@ public final class AccountActive implements AccountState {
     private final StateInit value;
 
     /* renamed from: box-impl  reason: not valid java name */
-    public static final /* synthetic */ AccountActive m4919boximpl(StateInit stateInit) {
+    public static final /* synthetic */ AccountActive m5073boximpl(StateInit stateInit) {
         return new AccountActive(stateInit);
     }
 
     /* renamed from: constructor-impl  reason: not valid java name */
-    public static StateInit m4920constructorimpl(StateInit value) {
+    public static StateInit m5074constructorimpl(StateInit value) {
         Intrinsics.checkNotNullParameter(value, "value");
         return value;
     }
 
     /* renamed from: equals-impl  reason: not valid java name */
-    public static boolean m4921equalsimpl(StateInit stateInit, Object obj) {
-        return (obj instanceof AccountActive) && Intrinsics.areEqual(stateInit, ((AccountActive) obj).m4925unboximpl());
+    public static boolean m5075equalsimpl(StateInit stateInit, Object obj) {
+        return (obj instanceof AccountActive) && Intrinsics.areEqual(stateInit, ((AccountActive) obj).m5079unboximpl());
     }
 
     /* renamed from: hashCode-impl  reason: not valid java name */
-    public static int m4922hashCodeimpl(StateInit stateInit) {
+    public static int m5076hashCodeimpl(StateInit stateInit) {
         return stateInit.hashCode();
     }
 
     public boolean equals(Object obj) {
-        return m4921equalsimpl(this.value, obj);
+        return m5075equalsimpl(this.value, obj);
     }
 
     public int hashCode() {
-        return m4922hashCodeimpl(this.value);
+        return m5076hashCodeimpl(this.value);
     }
 
     /* renamed from: unbox-impl  reason: not valid java name */
-    public final /* synthetic */ StateInit m4925unboximpl() {
+    public final /* synthetic */ StateInit m5079unboximpl() {
         return this.value;
     }
 
@@ -58,16 +58,16 @@ public final class AccountActive implements AccountState {
     @Override // org.ton.tlb.TlbObject
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
-        return m4923printimpl(this.value, printer);
+        return m5077printimpl(this.value, printer);
     }
 
     /* renamed from: toString-impl  reason: not valid java name */
-    public static String m4924toStringimpl(StateInit stateInit) {
-        return TlbObject.DefaultImpls.print$default(m4919boximpl(stateInit), null, 1, null).toString();
+    public static String m5078toStringimpl(StateInit stateInit) {
+        return TlbObject.DefaultImpls.print$default(m5073boximpl(stateInit), null, 1, null).toString();
     }
 
     public String toString() {
-        return m4924toStringimpl(this.value);
+        return m5078toStringimpl(this.value);
     }
 
     /* compiled from: AccountActive.kt */
@@ -80,22 +80,22 @@ public final class AccountActive implements AccountState {
         }
 
         /* renamed from: loadTlb-P1cIiig  reason: not valid java name */
-        public StateInit m4928loadTlbP1cIiig(Cell cell) {
+        public StateInit m5082loadTlbP1cIiig(Cell cell) {
             Intrinsics.checkNotNullParameter(cell, "cell");
-            return this.$$delegate_0.loadTlb(cell).m4925unboximpl();
+            return this.$$delegate_0.loadTlb(cell).m5079unboximpl();
         }
 
         /* renamed from: loadTlb-P1cIiig  reason: not valid java name */
-        public StateInit m4929loadTlbP1cIiig(CellSlice cellSlice) {
+        public StateInit m5083loadTlbP1cIiig(CellSlice cellSlice) {
             Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-            return this.$$delegate_0.m4931loadTlbP1cIiig(cellSlice);
+            return this.$$delegate_0.m5085loadTlbP1cIiig(cellSlice);
         }
 
         /* renamed from: storeTlb-wKbCAR4  reason: not valid java name */
-        public void m4930storeTlbwKbCAR4(CellBuilder cellBuilder, StateInit value) {
+        public void m5084storeTlbwKbCAR4(CellBuilder cellBuilder, StateInit value) {
             Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
             Intrinsics.checkNotNullParameter(value, "value");
-            this.$$delegate_0.m4932storeTlbwKbCAR4(cellBuilder, value);
+            this.$$delegate_0.m5086storeTlbwKbCAR4(cellBuilder, value);
         }
 
         @Override // org.ton.tlb.providers.TlbConstructorProvider
@@ -109,12 +109,12 @@ public final class AccountActive implements AccountState {
 
         @Override // org.ton.tlb.TlbLoader
         public /* bridge */ /* synthetic */ Object loadTlb(Cell cell) {
-            return AccountActive.m4919boximpl(m4928loadTlbP1cIiig(cell));
+            return AccountActive.m5073boximpl(m5082loadTlbP1cIiig(cell));
         }
 
         @Override // org.ton.tlb.TlbLoader
         public /* bridge */ /* synthetic */ Object loadTlb(CellSlice cellSlice) {
-            return AccountActive.m4919boximpl(m4929loadTlbP1cIiig(cellSlice));
+            return AccountActive.m5073boximpl(m5083loadTlbP1cIiig(cellSlice));
         }
 
         public final KSerializer<AccountActive> serializer() {
@@ -123,12 +123,12 @@ public final class AccountActive implements AccountState {
 
         @Override // org.ton.tlb.TlbStorer
         public /* bridge */ /* synthetic */ void storeTlb(CellBuilder cellBuilder, Object obj) {
-            m4930storeTlbwKbCAR4(cellBuilder, ((AccountActive) obj).m4925unboximpl());
+            m5084storeTlbwKbCAR4(cellBuilder, ((AccountActive) obj).m5079unboximpl());
         }
     }
 
     /* renamed from: print-impl  reason: not valid java name */
-    public static TlbPrettyPrinter m4923printimpl(StateInit stateInit, TlbPrettyPrinter printer) {
+    public static TlbPrettyPrinter m5077printimpl(StateInit stateInit, TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("account_active");
         stateInit.print(printer);

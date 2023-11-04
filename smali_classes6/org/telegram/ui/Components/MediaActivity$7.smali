@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/MediaActivity;)V
     .locals 0
 
-    .line 1149
+    .line 1139
     iput-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$7;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,19 +35,19 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1152
+    .line 1142
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$7;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$1900(Lorg/telegram/ui/Components/MediaActivity;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$2000(Lorg/telegram/ui/Components/MediaActivity;)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 1153
+    .line 1143
     iget-object p1, p0, Lorg/telegram/ui/Components/MediaActivity$7;->this$0:Lorg/telegram/ui/Components/MediaActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$2000(Lorg/telegram/ui/Components/MediaActivity;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/Components/MediaActivity;->access$2100(Lorg/telegram/ui/Components/MediaActivity;)Landroid/widget/FrameLayout;
 
     move-result-object p1
 

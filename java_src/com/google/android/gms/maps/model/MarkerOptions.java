@@ -13,33 +13,33 @@ import com.google.android.gms.dynamic.IObjectWrapper;
 /* loaded from: classes3.dex */
 public final class MarkerOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<MarkerOptions> CREATOR = new zzi();
-    @SafeParcelable.Field(getter = "getPosition", m1089id = 2)
+    @SafeParcelable.Field(getter = "getPosition", m1090id = 2)
     private LatLng zza;
-    @SafeParcelable.Field(getter = "getTitle", m1089id = 3)
+    @SafeParcelable.Field(getter = "getTitle", m1090id = 3)
     private String zzb;
-    @SafeParcelable.Field(getter = "getSnippet", m1089id = 4)
+    @SafeParcelable.Field(getter = "getSnippet", m1090id = 4)
     private String zzc;
-    @SafeParcelable.Field(getter = "getWrappedIconDescriptorImplBinder", m1089id = 5, type = "android.os.IBinder")
+    @SafeParcelable.Field(getter = "getWrappedIconDescriptorImplBinder", m1090id = 5, type = "android.os.IBinder")
     private BitmapDescriptor zzd;
-    @SafeParcelable.Field(getter = "getAnchorU", m1089id = 6)
+    @SafeParcelable.Field(getter = "getAnchorU", m1090id = 6)
     private float zze;
-    @SafeParcelable.Field(getter = "getAnchorV", m1089id = 7)
+    @SafeParcelable.Field(getter = "getAnchorV", m1090id = 7)
     private float zzf;
-    @SafeParcelable.Field(getter = "isDraggable", m1089id = 8)
+    @SafeParcelable.Field(getter = "isDraggable", m1090id = 8)
     private boolean zzg;
-    @SafeParcelable.Field(getter = "isVisible", m1089id = 9)
+    @SafeParcelable.Field(getter = "isVisible", m1090id = 9)
     private boolean zzh;
-    @SafeParcelable.Field(getter = "isFlat", m1089id = 10)
+    @SafeParcelable.Field(getter = "isFlat", m1090id = 10)
     private boolean zzi;
-    @SafeParcelable.Field(getter = "getRotation", m1089id = 11)
+    @SafeParcelable.Field(getter = "getRotation", m1090id = 11)
     private float zzj;
-    @SafeParcelable.Field(defaultValue = "0.5f", getter = "getInfoWindowAnchorU", m1089id = 12)
+    @SafeParcelable.Field(defaultValue = "0.5f", getter = "getInfoWindowAnchorU", m1090id = 12)
     private float zzk;
-    @SafeParcelable.Field(getter = "getInfoWindowAnchorV", m1089id = 13)
+    @SafeParcelable.Field(getter = "getInfoWindowAnchorV", m1090id = 13)
     private float zzl;
-    @SafeParcelable.Field(defaultValue = "1.0f", getter = "getAlpha", m1089id = 14)
+    @SafeParcelable.Field(defaultValue = "1.0f", getter = "getAlpha", m1090id = 14)
     private float zzm;
-    @SafeParcelable.Field(getter = "getZIndex", m1089id = 15)
+    @SafeParcelable.Field(getter = "getZIndex", m1090id = 15)
     private float zzn;
 
     public MarkerOptions() {
@@ -197,7 +197,7 @@ public final class MarkerOptions extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public MarkerOptions(@SafeParcelable.Param(m1088id = 2) LatLng latLng, @SafeParcelable.Param(m1088id = 3) String str, @SafeParcelable.Param(m1088id = 4) String str2, @SafeParcelable.Param(m1088id = 5) IBinder iBinder, @SafeParcelable.Param(m1088id = 6) float f, @SafeParcelable.Param(m1088id = 7) float f2, @SafeParcelable.Param(m1088id = 8) boolean z, @SafeParcelable.Param(m1088id = 9) boolean z2, @SafeParcelable.Param(m1088id = 10) boolean z3, @SafeParcelable.Param(m1088id = 11) float f3, @SafeParcelable.Param(m1088id = 12) float f4, @SafeParcelable.Param(m1088id = 13) float f5, @SafeParcelable.Param(m1088id = 14) float f6, @SafeParcelable.Param(m1088id = 15) float f7) {
+    public MarkerOptions(@SafeParcelable.Param(m1089id = 2) LatLng latLng, @SafeParcelable.Param(m1089id = 3) String str, @SafeParcelable.Param(m1089id = 4) String str2, @SafeParcelable.Param(m1089id = 5) IBinder iBinder, @SafeParcelable.Param(m1089id = 6) float f, @SafeParcelable.Param(m1089id = 7) float f2, @SafeParcelable.Param(m1089id = 8) boolean z, @SafeParcelable.Param(m1089id = 9) boolean z2, @SafeParcelable.Param(m1089id = 10) boolean z3, @SafeParcelable.Param(m1089id = 11) float f3, @SafeParcelable.Param(m1089id = 12) float f4, @SafeParcelable.Param(m1089id = 13) float f5, @SafeParcelable.Param(m1089id = 14) float f6, @SafeParcelable.Param(m1089id = 15) float f7) {
         this.zze = 0.5f;
         this.zzf = 1.0f;
         this.zzh = true;

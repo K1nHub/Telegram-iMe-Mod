@@ -30,17 +30,17 @@
 .method public constructor <init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;IILjava/lang/String;)V
     .locals 9
 
-    .line 2638
+    .line 2636
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$Button;->this$1:Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;
 
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;-><init>(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$1;)V
 
-    .line 2639
+    .line 2637
     iput p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->id:I
 
-    .line 2640
+    .line 2638
     invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object p2
@@ -59,7 +59,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$Button;->drawable:Landroid/graphics/drawable/Drawable;
 
-    .line 2641
+    .line 2639
     new-instance p3, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -70,12 +70,12 @@
 
     invoke-virtual {p2, p3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 2642
+    .line 2640
     invoke-virtual {p4}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
     move-result-object p2
 
-    .line 2643
+    .line 2641
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->access$6900(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;)Landroid/text/TextPaint;
 
     move-result-object p3
@@ -96,7 +96,7 @@
 
     move-result-object v2
 
-    .line 2644
+    .line 2642
     new-instance p2, Landroid/text/StaticLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;->access$6900(Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell;)Landroid/text/TextPaint;
@@ -119,7 +119,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$Button;->layout:Landroid/text/StaticLayout;
 
-    .line 2645
+    .line 2643
     invoke-virtual {p2}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result p1
@@ -144,7 +144,7 @@
     :goto_0
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$Button;->textWidth:F
 
-    .line 2646
+    .line 2644
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$Button;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {p1}, Landroid/text/StaticLayout;->getLineCount()I
@@ -164,7 +164,7 @@
 
     const p1, 0x42366666    # 45.6f
 
-    .line 2647
+    .line 2645
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result p1
@@ -177,7 +177,7 @@
 
     const/high16 p1, 0x42100000    # 36.0f
 
-    .line 2648
+    .line 2646
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result p1
@@ -192,7 +192,7 @@
 .method public draw(Landroid/graphics/Canvas;FF)V
     .locals 6
 
-    .line 2652
+    .line 2650
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
 
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->width:F
@@ -205,7 +205,7 @@
 
     invoke-virtual {v0, p2, p3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 2653
+    .line 2651
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounce:Lorg/telegram/ui/Components/ButtonBounce;
 
     const p3, 0x3d4ccccd    # 0.05f
@@ -214,10 +214,10 @@
 
     move-result p2
 
-    .line 2654
+    .line 2652
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 2655
+    .line 2653
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
 
     invoke-virtual {p3}, Landroid/graphics/RectF;->centerX()F
@@ -232,7 +232,7 @@
 
     invoke-virtual {p1, p2, p2, p3, v0}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 2656
+    .line 2654
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
 
     const/16 p3, 0x8
@@ -257,7 +257,7 @@
 
     invoke-virtual {p1, p2, v0, p3, v1}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 2657
+    .line 2655
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$Button;->drawable:Landroid/graphics/drawable/Drawable;
 
     iget-object p3, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
@@ -266,7 +266,7 @@
 
     const/4 v0, 0x6
 
-    .line 2658
+    .line 2656
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -291,7 +291,7 @@
 
     const/16 v1, 0x18
 
-    .line 2659
+    .line 2657
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -310,7 +310,7 @@
 
     const/16 v4, 0x1e
 
-    .line 2660
+    .line 2658
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -331,7 +331,7 @@
 
     add-float/2addr v4, v5
 
-    .line 2661
+    .line 2659
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -344,15 +344,15 @@
 
     float-to-int v1, v4
 
-    .line 2657
+    .line 2655
     invoke-virtual {p2, p3, v0, v3, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 2663
+    .line 2661
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$Button;->drawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2664
+    .line 2662
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$BaseWidget;->bounds:Landroid/graphics/RectF;
 
     iget p2, p2, Landroid/graphics/RectF;->left:F
@@ -395,12 +395,12 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 2665
+    .line 2663
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/EmojiBottomSheet$StoryWidgetsCell$Button;->layout:Landroid/text/StaticLayout;
 
     invoke-virtual {p2, p1}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2666
+    .line 2664
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void

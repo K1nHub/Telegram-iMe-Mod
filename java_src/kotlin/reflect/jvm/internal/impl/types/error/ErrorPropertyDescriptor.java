@@ -60,8 +60,8 @@ public final class ErrorPropertyDescriptor implements PropertyDescriptor {
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.VariableDescriptor
     /* renamed from: getCompileTimeInitializer */
-    public ConstantValue<?> mo2042getCompileTimeInitializer() {
-        return this.$$delegate_0.mo2042getCompileTimeInitializer();
+    public ConstantValue<?> mo2047getCompileTimeInitializer() {
+        return this.$$delegate_0.mo2047getCompileTimeInitializer();
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.DeclarationDescriptorNonRoot, kotlin.reflect.jvm.internal.impl.descriptors.DeclarationDescriptor

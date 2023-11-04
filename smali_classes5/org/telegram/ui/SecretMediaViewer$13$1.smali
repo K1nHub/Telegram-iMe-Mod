@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SecretMediaViewer$13;)V
     .locals 0
 
-    .line 1143
+    .line 1148
     iput-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$13$1;->this$1:Lorg/telegram/ui/SecretMediaViewer$13;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1146
+    .line 1151
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$13$1;->this$1:Lorg/telegram/ui/SecretMediaViewer$13;
 
     iget-object p1, p1, Lorg/telegram/ui/SecretMediaViewer$13;->this$0:Lorg/telegram/ui/SecretMediaViewer;
@@ -52,7 +52,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1147
+    .line 1152
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$13$1;->this$1:Lorg/telegram/ui/SecretMediaViewer$13;
 
     iget-object p1, p1, Lorg/telegram/ui/SecretMediaViewer$13;->this$0:Lorg/telegram/ui/SecretMediaViewer;
@@ -69,7 +69,7 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 0
 
-    .line 1152
+    .line 1157
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$13$1;->this$1:Lorg/telegram/ui/SecretMediaViewer$13;
 
     iget-object p1, p1, Lorg/telegram/ui/SecretMediaViewer$13;->this$0:Lorg/telegram/ui/SecretMediaViewer;

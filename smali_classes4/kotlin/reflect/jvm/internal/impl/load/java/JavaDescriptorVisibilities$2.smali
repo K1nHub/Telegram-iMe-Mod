@@ -46,7 +46,7 @@
 
     const/4 p0, 0x2
 
-    const-string v1, "isVisible"
+    const-string/jumbo v1, "isVisible"
 
     aput-object v1, v0, p0
 

@@ -89,7 +89,7 @@
 .method public static createFrame(FFI)Landroid/widget/FrameLayout$LayoutParams;
     .locals 1
 
-    .line 144
+    .line 150
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-static {p0}, Lorg/telegram/ui/Components/LayoutHelper;->getSize(F)I
@@ -108,7 +108,7 @@
 .method public static createFrame(IF)Landroid/widget/FrameLayout$LayoutParams;
     .locals 1
 
-    .line 140
+    .line 146
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     int-to-float p0, p0
@@ -182,7 +182,7 @@
 .method public static createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
     .locals 1
 
-    .line 136
+    .line 142
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     int-to-float p0, p0
@@ -227,10 +227,34 @@
     return-object p0
 .end method
 
+.method public static createFrameMarginPx(IFIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    .locals 1
+
+    .line 136
+    new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
+
+    int-to-float p0, p0
+
+    invoke-static {p0}, Lorg/telegram/ui/Components/LayoutHelper;->getSize(F)I
+
+    move-result p0
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/LayoutHelper;->getSize(F)I
+
+    move-result p1
+
+    invoke-direct {v0, p0, p1, p2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
+
+    .line 137
+    invoke-virtual {v0, p3, p4, p5, p6}, Landroid/widget/FrameLayout$LayoutParams;->setMargins(IIII)V
+
+    return-object v0
+.end method
+
 .method public static createFrameRelatively(FFI)Landroid/widget/FrameLayout$LayoutParams;
     .locals 1
 
-    .line 157
+    .line 163
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-static {p0}, Lorg/telegram/ui/Components/LayoutHelper;->getSize(F)I
@@ -253,7 +277,7 @@
 .method public static createFrameRelatively(FFIFFFF)Landroid/widget/FrameLayout$LayoutParams;
     .locals 1
 
-    .line 148
+    .line 154
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     invoke-static {p0}, Lorg/telegram/ui/Components/LayoutHelper;->getSize(F)I
@@ -270,7 +294,7 @@
 
     invoke-direct {v0, p0, p1, p2}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
 
-    .line 149
+    .line 155
     sget-boolean p0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p0, :cond_0
@@ -289,14 +313,14 @@
 
     iput p0, v0, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 150
+    .line 156
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p0
 
     iput p0, v0, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 151
+    .line 157
     sget-boolean p0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p0, :cond_1
@@ -313,7 +337,7 @@
 
     iput p0, v0, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
-    .line 152
+    .line 158
     invoke-static {p6}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p0
@@ -326,7 +350,7 @@
 .method public static createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
     .locals 1
 
-    .line 254
+    .line 260
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     int-to-float p0, p0
@@ -349,7 +373,7 @@
 .method public static createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
     .locals 1
 
-    .line 250
+    .line 256
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     int-to-float p0, p0
@@ -372,7 +396,7 @@
 .method public static createLinear(IIFFFF)Landroid/widget/LinearLayout$LayoutParams;
     .locals 1
 
-    .line 232
+    .line 238
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     int-to-float p0, p0
@@ -389,7 +413,7 @@
 
     invoke-direct {v0, p0, p1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 233
+    .line 239
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p0
@@ -414,7 +438,7 @@
 .method public static createLinear(IIFI)Landroid/widget/LinearLayout$LayoutParams;
     .locals 1
 
-    .line 238
+    .line 244
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     int-to-float p0, p0
@@ -431,7 +455,7 @@
 
     invoke-direct {v0, p0, p1, p2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
-    .line 239
+    .line 245
     iput p3, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
     return-object v0
@@ -440,7 +464,7 @@
 .method public static createLinear(IIFIIII)Landroid/widget/LinearLayout$LayoutParams;
     .locals 1
 
-    .line 219
+    .line 225
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     int-to-float p0, p0
@@ -457,7 +481,7 @@
 
     invoke-direct {v0, p0, p1, p2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
-    .line 220
+    .line 226
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p0
@@ -482,7 +506,7 @@
 .method public static createLinear(IIFIIIII)Landroid/widget/LinearLayout$LayoutParams;
     .locals 1
 
-    .line 212
+    .line 218
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     int-to-float p0, p0
@@ -499,7 +523,7 @@
 
     invoke-direct {v0, p0, p1, p2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
-    .line 213
+    .line 219
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p0
@@ -518,7 +542,7 @@
 
     invoke-virtual {v0, p0, p1, p2, p4}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 214
+    .line 220
     iput p3, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
     return-object v0
@@ -527,7 +551,7 @@
 .method public static createLinear(III)Landroid/widget/LinearLayout$LayoutParams;
     .locals 1
 
-    .line 244
+    .line 250
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     int-to-float p0, p0
@@ -544,7 +568,7 @@
 
     invoke-direct {v0, p0, p1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 245
+    .line 251
     iput p2, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
     return-object v0
@@ -576,7 +600,7 @@
 .method public static createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
     .locals 1
 
-    .line 225
+    .line 231
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     int-to-float p0, p0
@@ -593,7 +617,7 @@
 
     invoke-direct {v0, p0, p1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
-    .line 226
+    .line 232
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p0
@@ -612,7 +636,7 @@
 
     invoke-virtual {v0, p0, p1, p3, p4}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
 
-    .line 227
+    .line 233
     iput p2, v0, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
 
     return-object v0
@@ -621,7 +645,7 @@
 .method public static createLinearRelatively(FFIFFFF)Landroid/widget/LinearLayout$LayoutParams;
     .locals 1
 
-    .line 258
+    .line 264
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     invoke-static {p0}, Lorg/telegram/ui/Components/LayoutHelper;->getSize(F)I
@@ -640,7 +664,7 @@
 
     invoke-direct {v0, p0, p1, p2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
-    .line 259
+    .line 265
     sget-boolean p0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p0, :cond_0
@@ -659,14 +683,14 @@
 
     iput p0, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    .line 260
+    .line 266
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p0
 
     iput p0, v0, Landroid/widget/LinearLayout$LayoutParams;->topMargin:I
 
-    .line 261
+    .line 267
     sget-boolean p0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz p0, :cond_1
@@ -683,7 +707,7 @@
 
     iput p0, v0, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
-    .line 262
+    .line 268
     invoke-static {p6}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p0
@@ -784,7 +808,7 @@
 .method public static createRelative(FFIIIIIII)Landroid/widget/RelativeLayout$LayoutParams;
     .locals 1
 
-    .line 165
+    .line 171
     new-instance v0, Landroid/widget/RelativeLayout$LayoutParams;
 
     invoke-static {p0}, Lorg/telegram/ui/Components/LayoutHelper;->getSize(F)I
@@ -799,7 +823,7 @@
 
     if-ltz p6, :cond_0
 
-    .line 167
+    .line 173
     invoke-virtual {v0, p6}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(I)V
 
     :cond_0
@@ -807,10 +831,10 @@
 
     if-ltz p8, :cond_1
 
-    .line 170
+    .line 176
     invoke-virtual {v0, p7, p8}, Landroid/widget/RelativeLayout$LayoutParams;->addRule(II)V
 
-    .line 172
+    .line 178
     :cond_1
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -818,21 +842,21 @@
 
     iput p0, v0, Landroid/widget/RelativeLayout$LayoutParams;->leftMargin:I
 
-    .line 173
+    .line 179
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p0
 
     iput p0, v0, Landroid/widget/RelativeLayout$LayoutParams;->topMargin:I
 
-    .line 174
+    .line 180
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p0
 
     iput p0, v0, Landroid/widget/RelativeLayout$LayoutParams;->rightMargin:I
 
-    .line 175
+    .line 181
     invoke-static {p5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p0
@@ -863,7 +887,7 @@
 
     const/4 v8, -0x1
 
-    .line 196
+    .line 202
     invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createRelative(FFIIIIIII)Landroid/widget/RelativeLayout$LayoutParams;
 
     move-result-object p0
@@ -892,7 +916,7 @@
 
     move v6, p2
 
-    .line 200
+    .line 206
     invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createRelative(FFIIIIIII)Landroid/widget/RelativeLayout$LayoutParams;
 
     move-result-object p0
@@ -921,7 +945,7 @@
 
     move v6, p6
 
-    .line 184
+    .line 190
     invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createRelative(FFIIIIIII)Landroid/widget/RelativeLayout$LayoutParams;
 
     move-result-object p0

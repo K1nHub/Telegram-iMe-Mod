@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/ProfileStoriesView;)V
     .locals 0
 
-    .line 728
+    .line 753
     iput-object p1, p0, Lorg/telegram/ui/Stories/ProfileStoriesView$2;->this$0:Lorg/telegram/ui/Stories/ProfileStoriesView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 731
+    .line 756
     iget-object p1, p0, Lorg/telegram/ui/Stories/ProfileStoriesView$2;->this$0:Lorg/telegram/ui/Stories/ProfileStoriesView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/ProfileStoriesView;->access$300(Lorg/telegram/ui/Stories/ProfileStoriesView;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
@@ -52,7 +52,7 @@
 
     iput v0, p1, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->bounceScale:F
 
-    .line 732
+    .line 757
     iget-object p1, p0, Lorg/telegram/ui/Stories/ProfileStoriesView$2;->this$0:Lorg/telegram/ui/Stories/ProfileStoriesView;
 
     invoke-static {p1}, Lorg/telegram/ui/Stories/ProfileStoriesView;->access$300(Lorg/telegram/ui/Stories/ProfileStoriesView;)Lorg/telegram/ui/ProfileActivity$AvatarImageView;
@@ -61,7 +61,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/ProfileActivity$AvatarImageView;->invalidate()V
 
-    .line 733
+    .line 758
     iget-object p1, p0, Lorg/telegram/ui/Stories/ProfileStoriesView$2;->this$0:Lorg/telegram/ui/Stories/ProfileStoriesView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V

@@ -99,7 +99,7 @@ public class AppCompatActivity extends FragmentActivity implements AppCompatCall
         getDelegate().onPostCreate(bundle);
     }
 
-    public AbstractC0019ActionBar getSupportActionBar() {
+    public AbstractC0025ActionBar getSupportActionBar() {
         return getDelegate().getSupportActionBar();
     }
 
@@ -179,7 +179,7 @@ public class AppCompatActivity extends FragmentActivity implements AppCompatCall
         if (super.onMenuItemSelected(i, menuItem)) {
             return true;
         }
-        AbstractC0019ActionBar supportActionBar = getSupportActionBar();
+        AbstractC0025ActionBar supportActionBar = getSupportActionBar();
         if (menuItem.getItemId() != 16908332 || supportActionBar == null || (supportActionBar.getDisplayOptions() & 4) == 0) {
             return false;
         }
@@ -273,7 +273,7 @@ public class AppCompatActivity extends FragmentActivity implements AppCompatCall
     @Override // androidx.core.app.ComponentActivity, android.app.Activity, android.view.Window.Callback
     public boolean dispatchKeyEvent(KeyEvent keyEvent) {
         int keyCode = keyEvent.getKeyCode();
-        AbstractC0019ActionBar supportActionBar = getSupportActionBar();
+        AbstractC0025ActionBar supportActionBar = getSupportActionBar();
         if (keyCode == 82 && supportActionBar != null && supportActionBar.onMenuKeyEvent(keyEvent)) {
             return true;
         }
@@ -304,7 +304,7 @@ public class AppCompatActivity extends FragmentActivity implements AppCompatCall
 
     @Override // android.app.Activity
     public void openOptionsMenu() {
-        AbstractC0019ActionBar supportActionBar = getSupportActionBar();
+        AbstractC0025ActionBar supportActionBar = getSupportActionBar();
         if (getWindow().hasFeature(0)) {
             if (supportActionBar == null || !supportActionBar.openOptionsMenu()) {
                 super.openOptionsMenu();
@@ -314,7 +314,7 @@ public class AppCompatActivity extends FragmentActivity implements AppCompatCall
 
     @Override // android.app.Activity
     public void closeOptionsMenu() {
-        AbstractC0019ActionBar supportActionBar = getSupportActionBar();
+        AbstractC0025ActionBar supportActionBar = getSupportActionBar();
         if (getWindow().hasFeature(0)) {
             if (supportActionBar == null || !supportActionBar.closeOptionsMenu()) {
                 super.closeOptionsMenu();

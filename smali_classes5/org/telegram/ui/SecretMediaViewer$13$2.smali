@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SecretMediaViewer$13;)V
     .locals 0
 
-    .line 1161
+    .line 1166
     iput-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$13$2;->this$1:Lorg/telegram/ui/SecretMediaViewer$13;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1164
+    .line 1169
     iget-object p1, p0, Lorg/telegram/ui/SecretMediaViewer$13$2;->this$1:Lorg/telegram/ui/SecretMediaViewer$13;
 
     iget-object p1, p1, Lorg/telegram/ui/SecretMediaViewer$13;->this$0:Lorg/telegram/ui/SecretMediaViewer;

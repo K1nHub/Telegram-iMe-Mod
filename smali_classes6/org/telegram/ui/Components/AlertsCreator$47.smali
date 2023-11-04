@@ -24,7 +24,7 @@
 .method constructor <init>(Landroid/content/Context;Lorg/telegram/ui/Cells/CheckBoxCell;Lorg/telegram/ui/Cells/CheckBoxCell;)V
     .locals 0
 
-    .line 6191
+    .line 6192
     iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$47;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$47;->val$cell:Lorg/telegram/ui/Cells/CheckBoxCell;
@@ -39,10 +39,10 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 6194
+    .line 6195
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    .line 6195
+    .line 6196
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result p1
@@ -75,7 +75,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
-    .line 6196
+    .line 6197
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$47;->val$revokeByDefaultCheckBox:Lorg/telegram/ui/Cells/CheckBoxCell;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getVisibility()I

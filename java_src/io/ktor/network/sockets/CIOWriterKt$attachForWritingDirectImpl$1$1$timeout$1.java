@@ -10,7 +10,7 @@ import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
 /* compiled from: CIOWriter.kt */
-@DebugMetadata(m143c = "io.ktor.network.sockets.CIOWriterKt$attachForWritingDirectImpl$1$1$timeout$1", m142f = "CIOWriter.kt", m141l = {}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "io.ktor.network.sockets.CIOWriterKt$attachForWritingDirectImpl$1$1$timeout$1", m144f = "CIOWriter.kt", m143l = {}, m142m = "invokeSuspend")
 /* loaded from: classes4.dex */
 final class CIOWriterKt$attachForWritingDirectImpl$1$1$timeout$1 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
     final /* synthetic */ ByteChannel $channel;

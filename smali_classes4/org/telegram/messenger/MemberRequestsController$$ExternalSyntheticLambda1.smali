@@ -8,22 +8,30 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MemberRequestsController;
 
-.field public final synthetic f$1:J
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/RequestDelegate;
+.field public final synthetic f$2:Z
+
+.field public final synthetic f$3:J
+
+.field public final synthetic f$4:Lorg/telegram/tgnet/RequestDelegate;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MemberRequestsController;JLorg/telegram/tgnet/RequestDelegate;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MemberRequestsController;Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;ZJLorg/telegram/tgnet/RequestDelegate;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/messenger/MemberRequestsController;
 
-    iput-wide p2, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$1:J
+    iput-object p2, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$1:Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;
 
-    iput-object p4, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$2:Lorg/telegram/tgnet/RequestDelegate;
+    iput-boolean p3, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$2:Z
+
+    iput-wide p4, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$3:J
+
+    iput-object p6, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$4:Lorg/telegram/tgnet/RequestDelegate;
 
     return-void
 .end method
@@ -31,19 +39,23 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 6
+    .locals 8
 
     iget-object v0, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/messenger/MemberRequestsController;
 
-    iget-wide v1, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$1:J
+    iget-object v1, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$1:Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;
 
-    iget-object v3, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$2:Lorg/telegram/tgnet/RequestDelegate;
+    iget-boolean v2, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$2:Z
 
-    move-object v4, p1
+    iget-wide v3, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$3:J
 
-    move-object v5, p2
+    iget-object v5, p0, Lorg/telegram/messenger/MemberRequestsController$$ExternalSyntheticLambda1;->f$4:Lorg/telegram/tgnet/RequestDelegate;
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MemberRequestsController;->$r8$lambda$0ya6audeUMkB_jv4f4MhNb9uE2c(Lorg/telegram/messenger/MemberRequestsController;JLorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    move-object v6, p1
+
+    move-object v7, p2
+
+    invoke-static/range {v0 .. v7}, Lorg/telegram/messenger/MemberRequestsController;->$r8$lambda$r_Yhtn0PPGbAtUiJ911_odtxP5M(Lorg/telegram/messenger/MemberRequestsController;Lorg/telegram/tgnet/TLRPC$TL_chatInviteImporter;ZJLorg/telegram/tgnet/RequestDelegate;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

@@ -3939,7 +3939,6 @@ Das Passwort wird außerdem benötigt, wenn du dich mit Telegram von einem neuen
     <string name="TermsOfServiceLogin">"Mit der Registrierung
 stimmst du den *Nutzungsbedingungen* zu."</string>
     <string name="TextCopied">Text in die Zwischenablage kopiert</string>
-    <string name="TextSelectionHit">**Wort** gedrückt halten und Cursor bewegen, um noch mehr Text zu markieren.</string>
     <string name="TextSizeHeader">Textgröße für Nachrichten</string>
     <string name="Theme">Thema</string>
     <string name="ThemeArcticBlue">Arktis</string>

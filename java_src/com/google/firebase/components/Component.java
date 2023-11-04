@@ -75,7 +75,7 @@ public final class Component<T> {
 
     @SafeVarargs
     /* renamed from: of */
-    public static <T> Component<T> m1040of(final T t, Class<T> cls, Class<? super T>... clsArr) {
+    public static <T> Component<T> m1041of(final T t, Class<T> cls, Class<? super T>... clsArr) {
         return builder(cls, clsArr).factory(new ComponentFactory() { // from class: com.google.firebase.components.Component$$ExternalSyntheticLambda1
             @Override // com.google.firebase.components.ComponentFactory
             public final Object create(ComponentContainer componentContainer) {

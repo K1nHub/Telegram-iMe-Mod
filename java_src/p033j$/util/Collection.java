@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.SortedSet;
-import p033j$.lang.InterfaceC2670e;
+import p033j$.lang.InterfaceC2674e;
 import p033j$.util.List;
 import p033j$.util.function.Consumer;
 import p033j$.util.function.IntFunction;
@@ -14,14 +14,14 @@ import p033j$.util.function.Predicate;
 import p033j$.util.stream.Stream;
 /* renamed from: j$.util.Collection */
 /* loaded from: classes2.dex */
-public interface Collection<E> extends InterfaceC2670e {
+public interface Collection<E> extends InterfaceC2674e {
 
     /* renamed from: j$.util.Collection$-CC */
     /* loaded from: classes2.dex */
     public final /* synthetic */ class CC {
         public static boolean $default$removeIf(java.util.Collection collection, Predicate predicate) {
             if (DesugarCollections.f676a.isInstance(collection)) {
-                return DesugarCollections.m688d(collection, predicate);
+                return DesugarCollections.m689d(collection, predicate);
             }
             Objects.requireNonNull(predicate);
             boolean z = false;
@@ -37,11 +37,11 @@ public interface Collection<E> extends InterfaceC2670e {
 
         public static Spliterator $default$spliterator(java.util.Collection collection) {
             Objects.requireNonNull(collection);
-            return new C2766D(collection, 0);
+            return new C2770D(collection, 0);
         }
 
         /* renamed from: a */
-        public static void m696a(java.util.Collection collection, Consumer consumer) {
+        public static void m697a(java.util.Collection collection, Consumer consumer) {
             Objects.requireNonNull(consumer);
             Iterator<E> it = collection.iterator();
             while (it.hasNext()) {
@@ -54,32 +54,32 @@ public interface Collection<E> extends InterfaceC2670e {
     /* loaded from: classes2.dex */
     public final /* synthetic */ class EL {
         /* renamed from: a */
-        public static /* synthetic */ void m695a(java.util.Collection collection, Consumer consumer) {
+        public static /* synthetic */ void m696a(java.util.Collection collection, Consumer consumer) {
             if (collection instanceof Collection) {
                 ((Collection) collection).forEach(consumer);
             } else {
-                CC.m696a(collection, consumer);
+                CC.m697a(collection, consumer);
             }
         }
 
         /* renamed from: b */
-        public static Spliterator m694b(java.util.Collection collection) {
+        public static Spliterator m695b(java.util.Collection collection) {
             if (collection instanceof Collection) {
                 return ((Collection) collection).spliterator();
             }
             if (collection instanceof LinkedHashSet) {
                 LinkedHashSet linkedHashSet = (LinkedHashSet) collection;
                 Objects.requireNonNull(linkedHashSet);
-                return new C2766D(linkedHashSet, 17);
+                return new C2770D(linkedHashSet, 17);
             } else if (collection instanceof SortedSet) {
                 SortedSet sortedSet = (SortedSet) collection;
-                return new C2846q(sortedSet, sortedSet, 21);
+                return new C2850q(sortedSet, sortedSet, 21);
             } else if (!(collection instanceof Set)) {
                 return collection instanceof List ? List.CC.$default$spliterator((java.util.List) collection) : CC.$default$spliterator(collection);
             } else {
                 Set set = (Set) collection;
                 Objects.requireNonNull(set);
-                return new C2766D(set, 1);
+                return new C2770D(set, 1);
             }
         }
 
@@ -100,7 +100,7 @@ public interface Collection<E> extends InterfaceC2670e {
 
     boolean equals(Object obj);
 
-    @Override // p033j$.lang.InterfaceC2670e
+    @Override // p033j$.lang.InterfaceC2674e
     void forEach(Consumer<? super E> consumer);
 
     int hashCode();
@@ -121,7 +121,7 @@ public interface Collection<E> extends InterfaceC2670e {
 
     int size();
 
-    @Override // p033j$.lang.InterfaceC2670e
+    @Override // p033j$.lang.InterfaceC2674e
     Spliterator<E> spliterator();
 
     Stream<E> stream();

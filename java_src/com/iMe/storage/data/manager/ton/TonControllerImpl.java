@@ -36,7 +36,7 @@ import kotlinx.coroutines.rx2.RxSingleKt;
 import kotlinx.serialization.json.Json;
 import kotlinx.serialization.json.JsonBuilder;
 import kotlinx.serialization.json.JsonKt;
-import org.ton.api.p043pk.PrivateKeyEd25519;
+import org.ton.api.p044pk.PrivateKeyEd25519;
 import org.ton.block.AddrStd;
 import org.ton.cell.Cell;
 import org.ton.contract.wallet.WalletContract;
@@ -152,9 +152,9 @@ public final class TonControllerImpl implements TonController {
     }
 
     @Override // com.iMe.storage.domain.manager.ton.TonController
-    public Observable<Result<String>> sendTransaction(String to, long j, TonTransactionPayload tonTransactionPayload, int i) {
+    public Observable<Result<String>> sendTransaction(String to, long j, int i, TonTransactionPayload tonTransactionPayload, int i2) {
         Intrinsics.checkNotNullParameter(to, "to");
-        Observable<Result<String>> observable = RxSingleKt.rxSingle$default(null, new TonControllerImpl$sendTransaction$1(this, to, j, tonTransactionPayload, null), 1, null).onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda2
+        Observable<Result<String>> observable = RxSingleKt.rxSingle$default(null, new TonControllerImpl$sendTransaction$1(this, to, j, i, tonTransactionPayload, null), 1, null).onErrorReturn(new Function() { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
                 Result sendTransaction$lambda$3;
@@ -305,12 +305,12 @@ public final class TonControllerImpl implements TonController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0044  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0080 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0081  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x0088 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:27:0x0089  */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0047  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0082 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x0099 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:37:0x009a  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -336,66 +336,78 @@ public final class TonControllerImpl implements TonController {
             java.lang.Object r14 = r0.result
             java.lang.Object r1 = kotlin.coroutines.intrinsics.IntrinsicsKt.getCOROUTINE_SUSPENDED()
             int r2 = r0.label
-            r3 = 2
-            r4 = 1
-            if (r2 == 0) goto L44
-            if (r2 == r4) goto L38
-            if (r2 != r3) goto L30
+            r3 = 0
+            r4 = 2
+            r5 = 1
+            if (r2 == 0) goto L47
+            if (r2 == r5) goto L39
+            if (r2 != r4) goto L31
             java.lang.Object r0 = r0.L$0
             com.iMe.storage.data.manager.ton.TonControllerImpl r0 = (com.iMe.storage.data.manager.ton.TonControllerImpl) r0
-            kotlin.ResultKt.throwOnFailure(r14)
-            goto L82
-        L30:
+            kotlin.ResultKt.throwOnFailure(r14)     // Catch: java.lang.Exception -> L88
+            goto L84
+        L31:
             java.lang.IllegalStateException r14 = new java.lang.IllegalStateException
             java.lang.String r0 = "call to 'resume' before 'invoke' with coroutine"
             r14.<init>(r0)
             throw r14
-        L38:
+        L39:
             java.lang.Object r2 = r0.L$1
             com.iMe.storage.data.manager.ton.WalletV3R2Contract$Companion r2 = (com.iMe.storage.data.manager.ton.WalletV3R2Contract.Companion) r2
-            java.lang.Object r4 = r0.L$0
-            com.iMe.storage.data.manager.ton.TonControllerImpl r4 = (com.iMe.storage.data.manager.ton.TonControllerImpl) r4
+            java.lang.Object r5 = r0.L$0
+            com.iMe.storage.data.manager.ton.TonControllerImpl r5 = (com.iMe.storage.data.manager.ton.TonControllerImpl) r5
+            kotlin.ResultKt.throwOnFailure(r14)     // Catch: java.lang.Exception -> L45
+            goto L5a
+        L45:
+            r0 = r5
+            goto L88
+        L47:
             kotlin.ResultKt.throwOnFailure(r14)
-            goto L57
-        L44:
-            kotlin.ResultKt.throwOnFailure(r14)
-            com.iMe.storage.data.manager.ton.WalletV3R2Contract$Companion r2 = com.iMe.storage.data.manager.ton.WalletV3R2Contract.Companion
-            r0.L$0 = r13
-            r0.L$1 = r2
-            r0.label = r4
-            java.lang.Object r14 = r13.getLightClientSafe(r0)
-            if (r14 != r1) goto L56
+            com.iMe.storage.data.manager.ton.WalletV3R2Contract$Companion r2 = com.iMe.storage.data.manager.ton.WalletV3R2Contract.Companion     // Catch: java.lang.Exception -> L87
+            r0.L$0 = r13     // Catch: java.lang.Exception -> L87
+            r0.L$1 = r2     // Catch: java.lang.Exception -> L87
+            r0.label = r5     // Catch: java.lang.Exception -> L87
+            java.lang.Object r14 = r13.getLightClientSafe(r0)     // Catch: java.lang.Exception -> L87
+            if (r14 != r1) goto L59
             return r1
-        L56:
-            r4 = r13
-        L57:
-            org.ton.lite.client.LiteClient r14 = (org.ton.lite.client.LiteClient) r14
-            org.ton.contract.SmartContract$Companion r5 = org.ton.contract.SmartContract.Companion
-            r6 = 0
-            com.iMe.storage.data.manager.ton.WalletV3R2Contract$Companion r7 = com.iMe.storage.data.manager.ton.WalletV3R2Contract.Companion
-            org.ton.api.pk.PrivateKeyEd25519 r8 = r4.getPrivateKeySafe()
-            org.ton.api.pub.PublicKeyEd25519 r8 = r8.publicKey()
-            int r9 = org.ton.contract.wallet.WalletContract.DEFAULT_WALLET_ID
+        L59:
+            r5 = r13
+        L5a:
+            org.ton.lite.client.LiteClient r14 = (org.ton.lite.client.LiteClient) r14     // Catch: java.lang.Exception -> L45
+            org.ton.contract.SmartContract$Companion r6 = org.ton.contract.SmartContract.Companion     // Catch: java.lang.Exception -> L45
+            com.iMe.storage.data.manager.ton.WalletV3R2Contract$Companion r7 = com.iMe.storage.data.manager.ton.WalletV3R2Contract.Companion     // Catch: java.lang.Exception -> L45
+            org.ton.api.pk.PrivateKeyEd25519 r8 = r5.getPrivateKeySafe()     // Catch: java.lang.Exception -> L45
+            org.ton.api.pub.PublicKeyEd25519 r8 = r8.publicKey()     // Catch: java.lang.Exception -> L45
+            int r9 = org.ton.contract.wallet.WalletContract.DEFAULT_WALLET_ID     // Catch: java.lang.Exception -> L45
             r10 = 0
             r11 = 4
             r12 = 0
-            org.ton.block.StateInit r7 = com.iMe.storage.data.manager.ton.WalletV3R2Contract.Companion.createStateInit$default(r7, r8, r9, r10, r11, r12)
-            org.ton.block.AddrStd r5 = r5.address(r6, r7)
-            r0.L$0 = r4
-            r6 = 0
-            r0.L$1 = r6
-            r0.label = r3
-            java.lang.Object r14 = r2.loadContract(r14, r5, r0)
-            if (r14 != r1) goto L81
+            org.ton.block.StateInit r7 = com.iMe.storage.data.manager.ton.WalletV3R2Contract.Companion.createStateInit$default(r7, r8, r9, r10, r11, r12)     // Catch: java.lang.Exception -> L45
+            org.ton.block.AddrStd r6 = r6.address(r3, r7)     // Catch: java.lang.Exception -> L45
+            r0.L$0 = r5     // Catch: java.lang.Exception -> L45
+            r7 = 0
+            r0.L$1 = r7     // Catch: java.lang.Exception -> L45
+            r0.label = r4     // Catch: java.lang.Exception -> L45
+            java.lang.Object r14 = r2.loadContract(r14, r6, r0)     // Catch: java.lang.Exception -> L45
+            if (r14 != r1) goto L83
             return r1
-        L81:
-            r0 = r4
-        L82:
-            com.iMe.storage.data.manager.ton.WalletV3R2Contract r14 = (com.iMe.storage.data.manager.ton.WalletV3R2Contract) r14
+        L83:
+            r0 = r5
+        L84:
+            com.iMe.storage.data.manager.ton.WalletV3R2Contract r14 = (com.iMe.storage.data.manager.ton.WalletV3R2Contract) r14     // Catch: java.lang.Exception -> L88
+            goto L95
+        L87:
+            r0 = r13
+        L88:
+            com.iMe.storage.data.manager.ton.WalletV3R2Contract r14 = new com.iMe.storage.data.manager.ton.WalletV3R2Contract
+            org.ton.api.pk.PrivateKeyEd25519 r1 = r0.getPrivateKeySafe()
+            org.ton.api.pub.PublicKeyEd25519 r1 = r1.publicKey()
+            r14.<init>(r3, r1)
+        L95:
             r0.walletContract = r14
-            if (r14 == 0) goto L89
+            if (r14 == 0) goto L9a
             return r14
-        L89:
+        L9a:
             java.lang.Throwable r14 = new java.lang.Throwable
             java.lang.String r0 = "Wallet fetching error"
             r14.<init>(r0)
@@ -405,22 +417,22 @@ public final class TonControllerImpl implements TonController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0025  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0061  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00be  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00c3  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x00df A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0029  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x009c  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00e3  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00e8  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0110 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object sendInternal(java.lang.String r11, long r12, com.iMe.storage.domain.model.crypto.send.TonTransactionPayload r14, kotlin.coroutines.Continuation<? super com.iMe.storage.domain.model.Result<java.lang.String>> r15) {
+    public final java.lang.Object sendInternal(java.lang.String r18, long r19, int r21, com.iMe.storage.domain.model.crypto.send.TonTransactionPayload r22, kotlin.coroutines.Continuation<? super com.iMe.storage.domain.model.Result<java.lang.String>> r23) {
         /*
-            Method dump skipped, instructions count: 233
+            Method dump skipped, instructions count: 282
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.data.manager.ton.TonControllerImpl.sendInternal(java.lang.String, long, com.iMe.storage.domain.model.crypto.send.TonTransactionPayload, kotlin.coroutines.Continuation):java.lang.Object");
+        throw new UnsupportedOperationException("Method not decompiled: com.iMe.storage.data.manager.ton.TonControllerImpl.sendInternal(java.lang.String, long, int, com.iMe.storage.domain.model.crypto.send.TonTransactionPayload, kotlin.coroutines.Continuation):java.lang.Object");
     }
 
     private final Object fetchConfig(Continuation<? super String> continuation) {
@@ -501,7 +513,7 @@ public final class TonControllerImpl implements TonController {
             public final /* synthetic */ Object apply(Object obj) {
                 return this.function.invoke(obj);
             }
-        }).subscribeOn(this.schedulersProvider.mo1010io());
+        }).subscribeOn(this.schedulersProvider.mo1011io());
         final TonControllerImpl$fetchConfig$2$disposable$3 tonControllerImpl$fetchConfig$2$disposable$3 = new TonControllerImpl$fetchConfig$2$disposable$3(cancellableContinuationImpl);
         Consumer consumer = new Consumer(tonControllerImpl$fetchConfig$2$disposable$3) { // from class: com.iMe.storage.data.manager.ton.TonControllerImpl$sam$io_reactivex_functions_Consumer$0
             private final /* synthetic */ Function1 function;

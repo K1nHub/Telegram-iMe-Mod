@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;)V
     .locals 0
 
-    .line 1504
+    .line 1510
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$19;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,14 +35,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1507
+    .line 1513
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$19;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->access$3402(Lorg/telegram/ui/Stories/recorder/PaintView;F)F
 
-    .line 1508
+    .line 1514
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$19;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/PaintView;->reactionLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -51,7 +51,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->setAlpha(F)V
 
-    .line 1509
+    .line 1515
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$19;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/PaintView;->reactionLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -60,7 +60,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1510
+    .line 1516
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$19;->this$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/PaintView;->reactionLayout:Lorg/telegram/ui/Components/ReactionsContainerLayout;

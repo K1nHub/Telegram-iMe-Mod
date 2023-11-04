@@ -1,7 +1,6 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_webAuthorization extends TLObject {
-    public static int constructor = -1493633966;
     public long bot_id;
     public String browser;
     public int date_active;
@@ -10,12 +9,12 @@ public class TLRPC$TL_webAuthorization extends TLObject {
     public long hash;
 
     /* renamed from: ip */
-    public String f1759ip;
+    public String f1746ip;
     public String platform;
     public String region;
 
     public static TLRPC$TL_webAuthorization TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
-        if (constructor != i) {
+        if (-1493633966 != i) {
             if (z) {
                 throw new RuntimeException(String.format("can't parse magic %x in TL_webAuthorization", Integer.valueOf(i)));
             }
@@ -35,13 +34,13 @@ public class TLRPC$TL_webAuthorization extends TLObject {
         this.platform = abstractSerializedData.readString(z);
         this.date_created = abstractSerializedData.readInt32(z);
         this.date_active = abstractSerializedData.readInt32(z);
-        this.f1759ip = abstractSerializedData.readString(z);
+        this.f1746ip = abstractSerializedData.readString(z);
         this.region = abstractSerializedData.readString(z);
     }
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-1493633966);
         abstractSerializedData.writeInt64(this.hash);
         abstractSerializedData.writeInt64(this.bot_id);
         abstractSerializedData.writeString(this.domain);
@@ -49,7 +48,7 @@ public class TLRPC$TL_webAuthorization extends TLObject {
         abstractSerializedData.writeString(this.platform);
         abstractSerializedData.writeInt32(this.date_created);
         abstractSerializedData.writeInt32(this.date_active);
-        abstractSerializedData.writeString(this.f1759ip);
+        abstractSerializedData.writeString(this.f1746ip);
         abstractSerializedData.writeString(this.region);
     }
 }

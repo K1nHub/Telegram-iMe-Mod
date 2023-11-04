@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x53577479
-
-
 # instance fields
 .field public compare_sound:Z
 
@@ -16,16 +12,10 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 0
 
-    .line 56560
+    .line 57323
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -36,7 +26,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 56568
+    .line 57331
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$Updates;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$Updates;
 
     move-result-object p1
@@ -47,12 +37,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 56572
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_getNotifyExceptions;->constructor:I
+    const v0, 0x53577479
 
+    .line 57335
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 56573
+    .line 57336
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_getNotifyExceptions;->compare_sound:Z
 
     if-eqz v0, :cond_0
@@ -71,17 +61,17 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_getNotifyExceptions;->flags:I
 
-    .line 56574
+    .line 57337
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 56575
+    .line 57338
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_getNotifyExceptions;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_1
 
-    .line 56576
+    .line 57339
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_getNotifyExceptions;->peer:Lorg/telegram/tgnet/TLRPC$InputNotifyPeer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

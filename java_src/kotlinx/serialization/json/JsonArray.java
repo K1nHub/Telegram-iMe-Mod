@@ -20,7 +20,7 @@ import p033j$.util.function.Consumer;
 import p033j$.util.function.IntFunction;
 import p033j$.util.function.Predicate;
 import p033j$.util.function.UnaryOperator;
-import p033j$.util.stream.AbstractC3082o1;
+import p033j$.util.stream.AbstractC3086o1;
 import p033j$.util.stream.Stream;
 import p033j$.wrappers.C$r8$wrapper$java$util$function$UnaryOperator$VWRP;
 /* compiled from: JsonElement.kt */
@@ -66,7 +66,7 @@ public final class JsonArray extends JsonElement implements List<JsonElement>, K
         return this.content.containsAll(elements);
     }
 
-    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2670e
+    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2674e
     public /* synthetic */ void forEach(Consumer consumer) {
         Iterable$CC.$default$forEach(this, consumer);
     }
@@ -112,9 +112,9 @@ public final class JsonArray extends JsonElement implements List<JsonElement>, K
 
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream parallelStream() {
-        Stream m398y;
-        m398y = AbstractC3082o1.m398y(Collection.EL.m694b(this), true);
-        return m398y;
+        Stream m399y;
+        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), true);
+        return m399y;
     }
 
     @Override // java.util.List, p033j$.util.List
@@ -162,16 +162,16 @@ public final class JsonArray extends JsonElement implements List<JsonElement>, K
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.List, java.util.Collection, java.lang.Iterable, p033j$.util.List, p033j$.util.Collection, p033j$.lang.InterfaceC2670e
+    @Override // java.util.List, java.util.Collection, java.lang.Iterable, p033j$.util.List, p033j$.util.Collection, p033j$.lang.InterfaceC2674e
     public /* synthetic */ Spliterator spliterator() {
         return List.CC.$default$spliterator(this);
     }
 
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream stream() {
-        Stream m398y;
-        m398y = AbstractC3082o1.m398y(Collection.EL.m694b(this), false);
-        return m398y;
+        Stream m399y;
+        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), false);
+        return m399y;
     }
 
     @Override // java.util.List, p033j$.util.List

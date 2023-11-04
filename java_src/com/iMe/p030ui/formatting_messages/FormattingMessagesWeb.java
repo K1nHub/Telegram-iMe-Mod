@@ -17,12 +17,12 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.ChatActivityEnterView;
-import org.telegram.p042ui.Components.EditTextCaption;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.TextStyleSpan;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.ChatActivityEnterView;
+import org.telegram.p043ui.Components.EditTextCaption;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.TextStyleSpan;
 /* compiled from: FormattingMessagesWeb.kt */
 /* renamed from: com.iMe.ui.formatting_messages.FormattingMessagesWeb */
 /* loaded from: classes3.dex */
@@ -292,10 +292,10 @@ public final class FormattingMessagesWeb extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final ImageView initCloseButton() {
         ImageView imageView = new ImageView(getContext());
-        int m102dp = AndroidUtilities.m102dp(8);
-        imageView.setPadding(m102dp, m102dp, m102dp, m102dp);
+        int m104dp = AndroidUtilities.m104dp(8);
+        imageView.setPadding(m104dp, m104dp, m104dp, m104dp);
         imageView.setColorFilter(Theme.getColor(this.buttonTextColor));
-        imageView.setImageResource(C3630R.C3632drawable.pip_close);
+        imageView.setImageResource(C3634R.C3636drawable.pip_close);
         return imageView;
     }
 
@@ -367,9 +367,9 @@ public final class FormattingMessagesWeb extends LinearLayout {
         ImageView imageView = new ImageView(getContext());
         imageView.setTag(this.formattingTextController.getListTextStyleSpanFlags().get(5));
         setGravity(16);
-        int m102dp = AndroidUtilities.m102dp(12);
-        imageView.setPadding(m102dp, m102dp, m102dp, m102dp);
-        imageView.setImageResource(C3630R.C3632drawable.fork_wallet_crypto_cipher_eye);
+        int m104dp = AndroidUtilities.m104dp(12);
+        imageView.setPadding(m104dp, m104dp, m104dp, m104dp);
+        imageView.setImageResource(C3634R.C3636drawable.fork_wallet_crypto_cipher_eye);
         return imageView;
     }
 
@@ -377,11 +377,11 @@ public final class FormattingMessagesWeb extends LinearLayout {
     public final ImageView initLinkButton() {
         ImageView imageView = new ImageView(getContext());
         imageView.setTag(6);
-        int m102dp = AndroidUtilities.m102dp(12);
-        imageView.setPadding(m102dp, m102dp, m102dp, m102dp);
+        int m104dp = AndroidUtilities.m104dp(12);
+        imageView.setPadding(m104dp, m104dp, m104dp, m104dp);
         setGravity(16);
         imageView.setColorFilter(Theme.getColor(this.buttonTextColor));
-        imageView.setImageResource(C3630R.C3632drawable.msg_link_folder);
+        imageView.setImageResource(C3634R.C3636drawable.msg_link_folder);
         return imageView;
     }
 
@@ -452,9 +452,9 @@ public final class FormattingMessagesWeb extends LinearLayout {
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(0);
         linearLayout.setGravity(17);
-        linearLayout.addView(getCloseButton(), LayoutHelper.createLinear(-2, -2, AndroidUtilities.m102dp(1), 0, 0, 0));
-        linearLayout.addView(getBoldButton(), LayoutHelper.createLinear(0, 48, 0.5f, AndroidUtilities.m102dp(1), 0, AndroidUtilities.m102dp(1), 0));
-        LinearLayout.LayoutParams createLinear = LayoutHelper.createLinear(0, 48, 0.5f, 0, 0, AndroidUtilities.m102dp(1), 0);
+        linearLayout.addView(getCloseButton(), LayoutHelper.createLinear(-2, -2, AndroidUtilities.m104dp(1), 0, 0, 0));
+        linearLayout.addView(getBoldButton(), LayoutHelper.createLinear(0, 48, 0.5f, AndroidUtilities.m104dp(1), 0, AndroidUtilities.m104dp(1), 0));
+        LinearLayout.LayoutParams createLinear = LayoutHelper.createLinear(0, 48, 0.5f, 0, 0, AndroidUtilities.m104dp(1), 0);
         linearLayout.addView(getItalicButton(), createLinear);
         linearLayout.addView(getUnderlineButton(), createLinear);
         linearLayout.addView(getStrikeButton(), createLinear);
@@ -508,7 +508,7 @@ public final class FormattingMessagesWeb extends LinearLayout {
             r1 = r0
             android.widget.TextView r1 = (android.widget.TextView) r1
             int r2 = r6.buttonTextColor
-            int r2 = org.telegram.p042ui.ActionBar.Theme.getColor(r2)
+            int r2 = org.telegram.p043ui.ActionBar.Theme.getColor(r2)
             r1.setTextColor(r2)
             goto L3f
         L2f:
@@ -517,7 +517,7 @@ public final class FormattingMessagesWeb extends LinearLayout {
             r1 = r0
             android.widget.ImageView r1 = (android.widget.ImageView) r1
             int r2 = r6.buttonTextColor
-            int r2 = org.telegram.p042ui.ActionBar.Theme.getColor(r2)
+            int r2 = org.telegram.p043ui.ActionBar.Theme.getColor(r2)
             r1.setColorFilter(r2)
         L3f:
             java.lang.Object r1 = r0.getTag()

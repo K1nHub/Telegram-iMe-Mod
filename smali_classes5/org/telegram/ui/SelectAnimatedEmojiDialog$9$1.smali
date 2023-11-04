@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog$9;Landroid/content/Context;I)V
     .locals 0
 
-    .line 689
+    .line 714
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$9$1;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$9;
 
     invoke-direct {p0, p2, p3}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;-><init>(Landroid/content/Context;I)V
@@ -35,14 +35,14 @@
 .method public onEnd()V
     .locals 2
 
-    .line 692
+    .line 717
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$9$1;->this$1:Lorg/telegram/ui/SelectAnimatedEmojiDialog$9;
 
     iget-object v0, v0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$9;->this$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$502(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->access$602(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Z)Z
 
     return-void
 .end method

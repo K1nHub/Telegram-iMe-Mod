@@ -18,13 +18,13 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Cells.CheckBoxCell;
-import org.telegram.p042ui.Cells.RadioColorCell;
-import org.telegram.p042ui.Components.EditTextBoldCursor;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.CheckBoxCell;
+import org.telegram.p043ui.Cells.RadioColorCell;
+import org.telegram.p043ui.Components.EditTextBoldCursor;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: DialogUtils.kt */
 /* loaded from: classes4.dex */
 public final class DialogUtils {
@@ -189,7 +189,7 @@ public final class DialogUtils {
         builder.setSubtitle(model.getSubtitle());
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        int m102dp = AndroidUtilities.m102dp(2);
+        int m104dp = AndroidUtilities.m104dp(2);
         final int i = 0;
         for (Object obj : model.getItems()) {
             int i2 = i + 1;
@@ -198,13 +198,13 @@ public final class DialogUtils {
             }
             Pair pair = (Pair) obj;
             RadioColorCell radioColorCell = new RadioColorCell(context);
-            ViewExtKt.setHorizontalPadding(radioColorCell, Integer.valueOf(m102dp));
+            ViewExtKt.setHorizontalPadding(radioColorCell, Integer.valueOf(m104dp));
             radioColorCell.setCheckColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
             radioColorCell.setTextAndValue((CharSequence) pair.getFirst(), ((Boolean) pair.getSecond()).booleanValue());
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda13
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogUtils.m1007x4de0a121(Callbacks$Callback1.this, i, builder, view);
+                    DialogUtils.m1008x4de0a121(Callbacks$Callback1.this, i, builder, view);
                 }
             });
             linearLayout.addView(radioColorCell);
@@ -223,7 +223,7 @@ public final class DialogUtils {
     }
 
     /* renamed from: createDialogWithRadioCellsList$lambda$15$lambda$13$lambda$12$lambda$11$lambda$10 */
-    public static final void m1007x4de0a121(Callbacks$Callback1 itemSelectedListener, int i, AlertDialog.Builder this_apply, View view) {
+    public static final void m1008x4de0a121(Callbacks$Callback1 itemSelectedListener, int i, AlertDialog.Builder this_apply, View view) {
         Intrinsics.checkNotNullParameter(itemSelectedListener, "$itemSelectedListener");
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         itemSelectedListener.invoke(Integer.valueOf(i));

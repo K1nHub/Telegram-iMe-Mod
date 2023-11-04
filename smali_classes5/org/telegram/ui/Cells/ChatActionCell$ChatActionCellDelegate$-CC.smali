@@ -32,6 +32,12 @@
     return-void
 .end method
 
+.method public static $default$didOpenPremiumGiftChannel(Lorg/telegram/ui/Cells/ChatActionCell$ChatActionCellDelegate;Lorg/telegram/ui/Cells/ChatActionCell;Ljava/lang/String;Z)V
+    .locals 0
+
+    return-void
+.end method
+
 .method public static $default$didPressReplyMessage(Lorg/telegram/ui/Cells/ChatActionCell$ChatActionCellDelegate;Lorg/telegram/ui/Cells/ChatActionCell;I)V
     .locals 0
 

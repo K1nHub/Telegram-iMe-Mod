@@ -33,9 +33,9 @@
 
     iget-wide v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda33;->f$1:J
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;
+    check-cast p1, Lorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$_Wuh7EUo2D6WKCtkmSqzPJ8O5iw(Lorg/telegram/ui/ProfileActivity;JLorg/telegram/tgnet/TLRPC$TL_stories_boostsStatus;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$QvSwRDb_VR_Y4BtCFnKAw1h9CMo(Lorg/telegram/ui/ProfileActivity;JLorg/telegram/tgnet/tl/TL_stories$TL_premium_boostsStatus;)V
 
     return-void
 .end method

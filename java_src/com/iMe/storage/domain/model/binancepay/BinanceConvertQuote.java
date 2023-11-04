@@ -62,7 +62,7 @@ public final class BinanceConvertQuote {
     }
 
     public int hashCode() {
-        return (((((((((((this.quoteId.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.inputAmount)) * 31) + this.inputToken.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.outputAmount)) * 31) + this.outputToken.hashCode()) * 31) + this.inputTokenShortName.hashCode()) * 31) + this.outputTokenShortName.hashCode();
+        return (((((((((((this.quoteId.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.inputAmount)) * 31) + this.inputToken.hashCode()) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.outputAmount)) * 31) + this.outputToken.hashCode()) * 31) + this.inputTokenShortName.hashCode()) * 31) + this.outputTokenShortName.hashCode();
     }
 
     public String toString() {

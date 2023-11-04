@@ -73,8 +73,8 @@ public final class ReflectionTypes {
         List<Integer> listOf;
         Name identifier = Name.identifier(str);
         Intrinsics.checkNotNullExpressionValue(identifier, "identifier(className)");
-        ClassifierDescriptor mo2048getContributedClassifier = getKotlinReflectScope().mo2048getContributedClassifier(identifier, NoLookupLocation.FROM_REFLECTION);
-        ClassDescriptor classDescriptor = mo2048getContributedClassifier instanceof ClassDescriptor ? (ClassDescriptor) mo2048getContributedClassifier : null;
+        ClassifierDescriptor mo2053getContributedClassifier = getKotlinReflectScope().mo2053getContributedClassifier(identifier, NoLookupLocation.FROM_REFLECTION);
+        ClassDescriptor classDescriptor = mo2053getContributedClassifier instanceof ClassDescriptor ? (ClassDescriptor) mo2053getContributedClassifier : null;
         if (classDescriptor == null) {
             NotFoundClasses notFoundClasses = this.notFoundClasses;
             ClassId classId = new ClassId(StandardNames.KOTLIN_REFLECT_FQ_NAME, identifier);

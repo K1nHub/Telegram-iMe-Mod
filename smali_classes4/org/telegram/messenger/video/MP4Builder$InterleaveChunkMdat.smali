@@ -29,17 +29,17 @@
 .method private constructor <init>()V
     .locals 2
 
-    .line 212
+    .line 223
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const-wide/32 v0, 0x40000000
 
-    .line 214
+    .line 225
     iput-wide v0, p0, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->contentSize:J
 
     const-wide/16 v0, 0x0
 
-    .line 215
+    .line 226
     iput-wide v0, p0, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->dataOffset:J
 
     return-void
@@ -48,7 +48,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/video/MP4Builder$1;)V
     .locals 0
 
-    .line 212
+    .line 223
     invoke-direct {p0}, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;-><init>()V
 
     return-void
@@ -90,24 +90,24 @@
 
     const/16 v0, 0x10
 
-    .line 259
+    .line 270
     invoke-static {v0}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 260
+    .line 271
     invoke-virtual {p0}, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->getSize()J
 
     move-result-wide v1
 
-    .line 261
+    .line 272
     invoke-direct {p0, v1, v2}, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->isSmallBox(J)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 262
+    .line 273
     invoke-static {v0, v1, v2}, Lcom/coremedia/iso/IsoTypeWriter;->writeUInt32(Ljava/nio/ByteBuffer;J)V
 
     goto :goto_0
@@ -115,20 +115,20 @@
     :cond_0
     const-wide/16 v3, 0x1
 
-    .line 264
+    .line 275
     invoke-static {v0, v3, v4}, Lcom/coremedia/iso/IsoTypeWriter;->writeUInt32(Ljava/nio/ByteBuffer;J)V
 
     :goto_0
     const-string/jumbo v3, "mdat"
 
-    .line 266
+    .line 277
     invoke-static {v3}, Lcom/coremedia/iso/IsoFile;->fourCCtoBytes(Ljava/lang/String;)[B
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
-    .line 267
+    .line 278
     invoke-direct {p0, v1, v2}, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->isSmallBox(J)Z
 
     move-result v3
@@ -139,20 +139,20 @@
 
     new-array v1, v1, [B
 
-    .line 268
+    .line 279
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->put([B)Ljava/nio/ByteBuffer;
 
     goto :goto_1
 
-    .line 270
+    .line 281
     :cond_1
     invoke-static {v0, v1, v2}, Lcom/coremedia/iso/IsoTypeWriter;->writeUInt64(Ljava/nio/ByteBuffer;J)V
 
-    .line 272
+    .line 283
     :goto_1
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
-    .line 273
+    .line 284
     invoke-interface {p1, v0}, Ljava/nio/channels/WritableByteChannel;->write(Ljava/nio/ByteBuffer;)I
 
     return-void
@@ -161,7 +161,7 @@
 .method public getContentSize()J
     .locals 2
 
-    .line 238
+    .line 249
     iget-wide v0, p0, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->contentSize:J
 
     return-wide v0
@@ -170,7 +170,7 @@
 .method public getOffset()J
     .locals 2
 
-    .line 222
+    .line 233
     iget-wide v0, p0, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->dataOffset:J
 
     return-wide v0
@@ -179,7 +179,7 @@
 .method public getParent()Lcom/coremedia/iso/boxes/Container;
     .locals 1
 
-    .line 218
+    .line 229
     iget-object v0, p0, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->parent:Lcom/coremedia/iso/boxes/Container;
 
     return-object v0
@@ -188,7 +188,7 @@
 .method public getSize()J
     .locals 4
 
-    .line 246
+    .line 257
     iget-wide v0, p0, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->contentSize:J
 
     const-wide/16 v2, 0x10
@@ -215,7 +215,7 @@
 .method public setContentSize(J)V
     .locals 0
 
-    .line 234
+    .line 245
     iput-wide p1, p0, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->contentSize:J
 
     return-void
@@ -224,7 +224,7 @@
 .method public setDataOffset(J)V
     .locals 0
 
-    .line 226
+    .line 237
     iput-wide p1, p0, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->dataOffset:J
 
     return-void
@@ -233,7 +233,7 @@
 .method public setParent(Lcom/coremedia/iso/boxes/Container;)V
     .locals 0
 
-    .line 230
+    .line 241
     iput-object p1, p0, Lorg/telegram/messenger/video/MP4Builder$InterleaveChunkMdat;->parent:Lcom/coremedia/iso/boxes/Container;
 
     return-void

@@ -22,11 +22,11 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectNewSessionBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: WalletConnectNewSessionBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.new_session.WalletConnectNewSessionBottomSheetDialog */
 /* loaded from: classes3.dex */
@@ -41,12 +41,12 @@ public final class WalletConnectNewSessionBottomSheetDialog extends MvpBottomShe
         return Companion.newInstance(wCSessionStoreItem, baseFragment);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithTouchOutside() {
         return false;
     }
@@ -56,7 +56,7 @@ public final class WalletConnectNewSessionBottomSheetDialog extends MvpBottomShe
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public WalletConnectNewSessionBottomSheetDialog(final com.trustwallet.walletconnect.WCSessionStoreItem r6, final org.telegram.p042ui.ActionBar.BaseFragment r7) {
+    public WalletConnectNewSessionBottomSheetDialog(final com.trustwallet.walletconnect.WCSessionStoreItem r6, final org.telegram.p043ui.ActionBar.BaseFragment r7) {
         /*
             r5 = this;
             java.lang.String r0 = "sessionItem"
@@ -134,9 +134,9 @@ public final class WalletConnectNewSessionBottomSheetDialog extends MvpBottomShe
         Intrinsics.checkNotNullParameter(address, "address");
         Intrinsics.checkNotNullParameter(network, "network");
         ForkContentWalletConnectNewSessionBinding binding = getBinding();
-        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3630R.string.wallet_connect_new_session_title, name), url);
-        binding.viewWalletCell.setupViewData(getResourceManager().getString(C3630R.string.wallet_connect_new_session_wallet), address, C3630R.C3632drawable.fork_ic_nav_wallet_24, true);
-        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3630R.string.wallet_connect_session_details_network), network, C3630R.C3632drawable.msg_language, true);
+        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3634R.string.wallet_connect_new_session_title, name), url);
+        binding.viewWalletCell.setupViewData(getResourceManager().getString(C3634R.string.wallet_connect_new_session_wallet), address, C3634R.C3636drawable.fork_ic_nav_wallet_24, true);
+        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3634R.string.wallet_connect_session_details_network), network, C3634R.C3636drawable.msg_language, true);
     }
 
     @Override // android.app.Dialog
@@ -169,12 +169,12 @@ public final class WalletConnectNewSessionBottomSheetDialog extends MvpBottomShe
 
     private final void setupViews() {
         ForkContentWalletConnectNewSessionBinding binding = getBinding();
-        binding.textViewBalance.setText(getResourceManager().getString(C3630R.string.wallet_connect_new_session_view_balance));
-        binding.textTransactionsApproval.setText(getResourceManager().getString(C3630R.string.wallet_connect_new_transactions_approval));
-        binding.buttonConnect.setText(getResourceManager().getString(C3630R.string.wallet_connect_new_connection));
+        binding.textViewBalance.setText(getResourceManager().getString(C3634R.string.wallet_connect_new_session_view_balance));
+        binding.textTransactionsApproval.setText(getResourceManager().getString(C3634R.string.wallet_connect_new_transactions_approval));
+        binding.buttonConnect.setText(getResourceManager().getString(C3634R.string.wallet_connect_new_connection));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3630R.C3632drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3634R.C3636drawable.ic_close_white);
     }
 
     private final void setupListeners() {

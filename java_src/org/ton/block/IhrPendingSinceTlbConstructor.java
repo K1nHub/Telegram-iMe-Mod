@@ -17,12 +17,12 @@ public final class IhrPendingSinceTlbConstructor extends org.ton.tlb.TlbConstruc
     public void storeTlb(CellBuilder cellBuilder, IhrPendingSince value) {
         Intrinsics.checkNotNullParameter(cellBuilder, "cellBuilder");
         Intrinsics.checkNotNullParameter(value, "value");
-        cellBuilder.mo5057storeUInt64VKZWuLQ(value.m4962getImport_ltsVKNKU());
+        cellBuilder.mo5211storeUInt64VKZWuLQ(value.m5116getImport_ltsVKNKU());
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbLoader
     public IhrPendingSince loadTlb(CellSlice cellSlice) {
         Intrinsics.checkNotNullParameter(cellSlice, "cellSlice");
-        return new IhrPendingSince(cellSlice.mo5067loadUInt64sVKNKU(), null);
+        return new IhrPendingSince(cellSlice.mo5221loadUInt64sVKNKU(), null);
     }
 }

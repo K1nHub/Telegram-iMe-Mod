@@ -8,11 +8,11 @@ import kotlinx.serialization.descriptors.SerialDescriptor;
 import kotlinx.serialization.encoding.CompositeEncoder;
 import kotlinx.serialization.internal.PluginExceptionsKt;
 import kotlinx.serialization.internal.SerializationConstructorMarker;
-import org.ton.p044tl.ByteString;
-import org.ton.p044tl.ByteStringSerializer;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.ByteString;
+import org.ton.p045tl.ByteStringSerializer;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: TonNodeZeroStateIdExt.kt */
 @Serializable
 /* loaded from: classes6.dex */
@@ -110,13 +110,13 @@ public final class TonNodeZeroStateIdExt {
             return TonNodeZeroStateIdExt$$serializer.INSTANCE;
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public TonNodeZeroStateIdExt decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return new TonNodeZeroStateIdExt(reader.readInt(), reader.readByteString(32), reader.readByteString(32));
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, TonNodeZeroStateIdExt value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");

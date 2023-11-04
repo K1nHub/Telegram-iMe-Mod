@@ -3,13 +3,12 @@ package org.telegram.tgnet;
 import java.util.ArrayList;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_messages_translateText extends TLObject {
-    public static int constructor = 1662529584;
     public int flags;
     public TLRPC$InputPeer peer;
     public String to_lang;
 
     /* renamed from: id */
-    public ArrayList<Integer> f1720id = new ArrayList<>();
+    public ArrayList<Integer> f1717id = new ArrayList<>();
     public ArrayList<TLRPC$TL_textWithEntities> text = new ArrayList<>();
 
     @Override // org.telegram.tgnet.TLObject
@@ -19,17 +18,17 @@ public class TLRPC$TL_messages_translateText extends TLObject {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(1662529584);
         abstractSerializedData.writeInt32(this.flags);
         if ((this.flags & 1) != 0) {
             this.peer.serializeToStream(abstractSerializedData);
         }
         if ((this.flags & 1) != 0) {
             abstractSerializedData.writeInt32(481674261);
-            int size = this.f1720id.size();
+            int size = this.f1717id.size();
             abstractSerializedData.writeInt32(size);
             for (int i = 0; i < size; i++) {
-                abstractSerializedData.writeInt32(this.f1720id.get(i).intValue());
+                abstractSerializedData.writeInt32(this.f1717id.get(i).intValue());
             }
         }
         if ((this.flags & 2) != 0) {

@@ -34,7 +34,7 @@ public final class IntMsgInfo$$serializer implements GeneratedSerializer<IntMsgI
         pluginGeneratedSerialDescriptor.addElement("fwd_fee", false);
         pluginGeneratedSerialDescriptor.addElement("created_lt", false);
         pluginGeneratedSerialDescriptor.addElement("created_at", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7483x56daaf1f("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7558x56daaf1f("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

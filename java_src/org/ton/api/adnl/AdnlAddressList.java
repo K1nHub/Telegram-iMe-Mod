@@ -18,16 +18,16 @@ import kotlinx.serialization.internal.ArrayListSerializer;
 import kotlinx.serialization.internal.PluginExceptionsKt;
 import kotlinx.serialization.internal.SerializationConstructorMarker;
 import kotlinx.serialization.json.JsonClassDiscriminator;
-import org.ton.p044tl.TlConstructor;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlConstructor;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 import p033j$.lang.Iterable$CC;
 import p033j$.util.Collection;
 import p033j$.util.Spliterator;
 import p033j$.util.function.Consumer;
 import p033j$.util.function.IntFunction;
 import p033j$.util.function.Predicate;
-import p033j$.util.stream.AbstractC3082o1;
+import p033j$.util.stream.AbstractC3086o1;
 import p033j$.util.stream.Stream;
 import p033j$.wrappers.C$r8$wrapper$java$util$function$Predicate$VWRP;
 /* compiled from: AdnlAddressList.kt */
@@ -85,7 +85,7 @@ public final class AdnlAddressList implements Collection<AdnlAddress>, KMappedMa
         return false;
     }
 
-    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2670e
+    @Override // p033j$.util.Collection, p033j$.lang.InterfaceC2674e
     public /* synthetic */ void forEach(Consumer consumer) {
         Iterable$CC.$default$forEach(this, consumer);
     }
@@ -111,9 +111,9 @@ public final class AdnlAddressList implements Collection<AdnlAddress>, KMappedMa
 
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream parallelStream() {
-        Stream m398y;
-        m398y = AbstractC3082o1.m398y(Collection.EL.m694b(this), true);
-        return m398y;
+        Stream m399y;
+        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), true);
+        return m399y;
     }
 
     @Override // java.util.Collection, p033j$.util.Collection
@@ -141,16 +141,16 @@ public final class AdnlAddressList implements Collection<AdnlAddress>, KMappedMa
         throw new UnsupportedOperationException("Operation is not supported for read-only collection");
     }
 
-    @Override // java.util.Collection, java.lang.Iterable, p033j$.util.Collection, p033j$.lang.InterfaceC2670e
+    @Override // java.util.Collection, java.lang.Iterable, p033j$.util.Collection, p033j$.lang.InterfaceC2674e
     public /* synthetic */ Spliterator spliterator() {
         return Collection.CC.$default$spliterator(this);
     }
 
     @Override // java.util.Collection, p033j$.util.Collection
     public /* synthetic */ Stream stream() {
-        Stream m398y;
-        m398y = AbstractC3082o1.m398y(Collection.EL.m694b(this), false);
-        return m398y;
+        Stream m399y;
+        m399y = AbstractC3086o1.m399y(Collection.EL.m695b(this), false);
+        return m399y;
     }
 
     @Override // java.util.Collection, p033j$.util.Collection
@@ -371,7 +371,7 @@ public final class AdnlAddressList implements Collection<AdnlAddress>, KMappedMa
             return AdnlAddressList$$serializer.INSTANCE;
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, AdnlAddressList value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
@@ -386,7 +386,7 @@ public final class AdnlAddressList implements Collection<AdnlAddress>, KMappedMa
             writer.writeInt(value.getExpireAt());
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public AdnlAddressList decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return new AdnlAddressList(reader.readVector(new Function1<TlReader, AdnlAddress>() { // from class: org.ton.api.adnl.AdnlAddressList$Companion$decode$addrs$1
@@ -404,6 +404,6 @@ public final class AdnlAddressList implements Collection<AdnlAddress>, KMappedMa
         KClass[] kClassArr = {Reflection.getOrCreateKotlinClass(AdnlAddressTunnel.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp6.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp.class), Reflection.getOrCreateKotlinClass(AdnlAddressUdp6.class)};
         AdnlAddressUdp$$serializer adnlAddressUdp$$serializer = AdnlAddressUdp$$serializer.INSTANCE;
         AdnlAddressUdp6$$serializer adnlAddressUdp6$$serializer = AdnlAddressUdp6$$serializer.INSTANCE;
-        $childSerializers = new KSerializer[]{new ArrayListSerializer(new SealedClassSerializer("org.ton.api.adnl.AdnlAddress", orCreateKotlinClass, kClassArr, new KSerializer[]{AdnlAddressTunnel$$serializer.INSTANCE, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer}, new Annotation[]{new C7425x7048dd0e("@type")})), null, null, null, null};
+        $childSerializers = new KSerializer[]{new ArrayListSerializer(new SealedClassSerializer("org.ton.api.adnl.AdnlAddress", orCreateKotlinClass, kClassArr, new KSerializer[]{AdnlAddressTunnel$$serializer.INSTANCE, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer, adnlAddressUdp$$serializer, adnlAddressUdp6$$serializer}, new Annotation[]{new C7500x7048dd0e("@type")})), null, null, null, null};
     }
 }

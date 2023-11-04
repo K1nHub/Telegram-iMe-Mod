@@ -28,20 +28,20 @@
 .method public constructor <init>(Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;)V
     .locals 2
 
-    .line 1569
+    .line 1568
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1570
+    .line 1569
     iget v0, p1, Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;->date:I
 
     iput v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$Period;->date:I
 
-    .line 1571
+    .line 1570
     iget v1, p1, Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;->msg_id:I
 
     iput v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$Period;->maxId:I
 
-    .line 1572
+    .line 1571
     iget p1, p1, Lorg/telegram/tgnet/TLRPC$TL_searchResultPosition;->offset:I
 
     iput p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$Period;->startOffset:I
@@ -50,7 +50,7 @@
 
     const/4 p1, 0x1
 
-    .line 1573
+    .line 1572
     invoke-static {v0, v1, p1}, Lorg/telegram/messenger/LocaleController;->formatYearMont(JZ)Ljava/lang/String;
 
     move-result-object p1

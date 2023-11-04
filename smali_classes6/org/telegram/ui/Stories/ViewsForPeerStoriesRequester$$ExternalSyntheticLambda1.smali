@@ -10,11 +10,11 @@
 
 .field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_getStoriesViews;
+.field public final synthetic f$2:Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getStoriesViews;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_stories_getStoriesViews;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getStoriesViews;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester$$ExternalSyntheticLambda1;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    iput-object p3, p0, Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester$$ExternalSyntheticLambda1;->f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_getStoriesViews;
+    iput-object p3, p0, Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester$$ExternalSyntheticLambda1;->f$2:Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getStoriesViews;
 
     return-void
 .end method
@@ -37,9 +37,9 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester$$ExternalSyntheticLambda1;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    iget-object v2, p0, Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester$$ExternalSyntheticLambda1;->f$2:Lorg/telegram/tgnet/TLRPC$TL_stories_getStoriesViews;
+    iget-object v2, p0, Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester$$ExternalSyntheticLambda1;->f$2:Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getStoriesViews;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester;->$r8$lambda$Wu13NgmXQIoxwGkmBP3WIPvpn_M(Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_stories_getStoriesViews;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester;->$r8$lambda$oJ2f26v2jPTYTppBGd8FZqkE5eE(Lorg/telegram/ui/Stories/ViewsForPeerStoriesRequester;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/tl/TL_stories$TL_stories_getStoriesViews;)V
 
     return-void
 .end method

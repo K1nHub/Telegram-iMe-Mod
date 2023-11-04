@@ -13,13 +13,13 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.BotCommandsMenuView;
-import org.telegram.p042ui.Components.LayoutHelper;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.BotCommandsMenuView;
+import org.telegram.p043ui.Components.LayoutHelper;
 /* compiled from: TemplatesHeaderCell.kt */
 /* renamed from: com.iMe.fork.ui.view.TemplatesHeaderCell */
 /* loaded from: classes3.dex */
@@ -83,8 +83,8 @@ public final class TemplatesHeaderCell extends LinearLayout {
             }
         });
         this.createButton$delegate = lazy3;
-        int m102dp = AndroidUtilities.m102dp(8);
-        setPadding(m102dp, m102dp, m102dp, m102dp);
+        int m104dp = AndroidUtilities.m104dp(8);
+        setPadding(m104dp, m104dp, m104dp, m104dp);
         setGravity(16);
         addView(getHeaderTextView(), LayoutHelper.createLinear(0, -2, 1.0f, 16, 8, 0, 0, 0));
         addView(getSortButton(), LayoutHelper.createLinear(36, 36, 16, 8, 0, 8, 0));
@@ -107,12 +107,12 @@ public final class TemplatesHeaderCell extends LinearLayout {
     public final void bind(int i, final BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate templatesDelegate) {
         Intrinsics.checkNotNullParameter(templatesDelegate, "templatesDelegate");
         TextView headerTextView = getHeaderTextView();
-        headerTextView.setText(LocaleController.getInternalString(i > 0 ? C3630R.string.chat_templates : C3630R.string.chat_templates_list_header));
+        headerTextView.setText(LocaleController.getInternalString(i > 0 ? C3634R.string.chat_templates : C3634R.string.chat_templates_list_header));
         int i2 = Theme.key_windowBackgroundWhiteBlackText;
         headerTextView.setTextColor(Theme.getColor(i2));
         ActionBarMenuItem sortButton = getSortButton();
         sortButton.setVisibility(i > 1 ? 0 : 8);
-        sortButton.setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m102dp(48), 0, Theme.getColor(Theme.key_listSelector)));
+        sortButton.setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m104dp(48), 0, Theme.getColor(Theme.key_listSelector)));
         sortButton.setIconColor(Theme.getColor(i2));
         TextView createButton = getCreateButton();
         ViewExtKt.setRippleBackground(createButton, true);
@@ -142,15 +142,15 @@ public final class TemplatesHeaderCell extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final ActionBarMenuItem initSortButton() {
         final ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(getContext(), null, 0, Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
-        actionBarMenuItem.setAdditionalYOffset(-AndroidUtilities.m102dp(10));
-        actionBarMenuItem.setAdditionalXOffset(AndroidUtilities.m102dp(10));
+        actionBarMenuItem.setAdditionalYOffset(-AndroidUtilities.m104dp(10));
+        actionBarMenuItem.setAdditionalXOffset(AndroidUtilities.m104dp(10));
         actionBarMenuItem.setLongClickEnabled(false);
         actionBarMenuItem.setShowSubmenuByMove(false);
         actionBarMenuItem.setShowedFromBottom(true);
         actionBarMenuItem.setSubMenuOpenSide(2);
         actionBarMenuItem.setIcon(SharedConfig.selectedTemplatesSortingType.getIconResId());
         actionBarMenuItem.setDelegate(new ActionBarMenuItem.ActionBarMenuItemDelegate() { // from class: com.iMe.fork.ui.view.TemplatesHeaderCell$$ExternalSyntheticLambda2
-            @Override // org.telegram.p042ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
+            @Override // org.telegram.p043ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemDelegate
             public final void onItemClick(int i) {
                 TemplatesHeaderCell.initSortButton$lambda$7$lambda$5(ActionBarMenuItem.this, this, i);
             }
@@ -185,7 +185,7 @@ public final class TemplatesHeaderCell extends LinearLayout {
         TextView textView = new TextView(getContext());
         ViewExtKt.withMediumTypeface(textView);
         ViewExtKt.setHorizontalPadding(textView, 16);
-        String string = LocaleController.getString("Create", C3630R.string.Create);
+        String string = LocaleController.getString("Create", C3634R.string.Create);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Create\", R.string.Create)");
         String upperCase = string.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");

@@ -48,11 +48,11 @@ public class Flags {
     public static final BooleanFlagField SUSPEND_TYPE;
     public static final FlagField<ProtoBuf$Visibility> VISIBILITY;
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x003a  */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x003f  */
-    /* JADX WARN: Removed duplicated region for block: B:23:0x0044  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0049  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x004e  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0040  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x004a  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x004f  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
@@ -64,67 +64,67 @@ public class Flags {
             r1 = 1
             r2 = 0
             r3 = 2
-            if (r5 == r1) goto L2d
+            if (r5 == r1) goto L2e
             if (r5 == r3) goto L28
             r4 = 5
-            if (r5 == r4) goto L2d
+            if (r5 == r4) goto L2e
             r4 = 6
             if (r5 == r4) goto L22
             r4 = 8
-            if (r5 == r4) goto L2d
+            if (r5 == r4) goto L2e
             r4 = 9
             if (r5 == r4) goto L22
             r4 = 11
-            if (r5 == r4) goto L2d
+            if (r5 == r4) goto L2e
             java.lang.String r4 = "visibility"
             r0[r2] = r4
-            goto L32
+            goto L33
         L22:
             java.lang.String r4 = "memberKind"
             r0[r2] = r4
-            goto L32
+            goto L33
         L28:
             java.lang.String r4 = "kind"
             r0[r2] = r4
-            goto L32
-        L2d:
+            goto L33
+        L2e:
             java.lang.String r4 = "modality"
             r0[r2] = r4
-        L32:
+        L33:
             java.lang.String r2 = "kotlin/reflect/jvm/internal/impl/metadata/deserialization/Flags"
             r0[r1] = r2
             switch(r5) {
-                case 3: goto L4e;
-                case 4: goto L49;
-                case 5: goto L49;
-                case 6: goto L49;
-                case 7: goto L44;
-                case 8: goto L44;
-                case 9: goto L44;
-                case 10: goto L3f;
-                case 11: goto L3f;
-                default: goto L3a;
+                case 3: goto L4f;
+                case 4: goto L4a;
+                case 5: goto L4a;
+                case 6: goto L4a;
+                case 7: goto L45;
+                case 8: goto L45;
+                case 9: goto L45;
+                case 10: goto L40;
+                case 11: goto L40;
+                default: goto L3b;
             }
-        L3a:
+        L3b:
             java.lang.String r5 = "getClassFlags"
             r0[r3] = r5
-            goto L52
-        L3f:
+            goto L53
+        L40:
             java.lang.String r5 = "getAccessorFlags"
             r0[r3] = r5
-            goto L52
-        L44:
+            goto L53
+        L45:
             java.lang.String r5 = "getPropertyFlags"
             r0[r3] = r5
-            goto L52
-        L49:
+            goto L53
+        L4a:
             java.lang.String r5 = "getFunctionFlags"
             r0[r3] = r5
-            goto L52
-        L4e:
+            goto L53
+        L4f:
             java.lang.String r5 = "getConstructorFlags"
             r0[r3] = r5
-        L52:
+        L53:
             java.lang.String r5 = "Argument for @NotNull parameter '%s' of %s.%s must not be null"
             java.lang.String r5 = java.lang.String.format(r5, r0)
             java.lang.IllegalArgumentException r0 = new java.lang.IllegalArgumentException

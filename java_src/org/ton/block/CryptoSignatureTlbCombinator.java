@@ -10,6 +10,6 @@ public final class CryptoSignatureTlbCombinator extends TlbCombinator<CryptoSign
     public static final CryptoSignatureTlbCombinator INSTANCE = new CryptoSignatureTlbCombinator();
 
     private CryptoSignatureTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(CryptoSignature.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(CryptoSignatureSimple.class), CryptoSignatureSimple.Companion), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(ChainedSignature.class), ChainedSignature.Companion));
+        super(Reflection.getOrCreateKotlinClass(CryptoSignature.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(CryptoSignatureSimple.class), CryptoSignatureSimple.Companion), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(ChainedSignature.class), ChainedSignature.Companion));
     }
 }

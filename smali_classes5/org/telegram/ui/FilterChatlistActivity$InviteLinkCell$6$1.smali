@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;)V
     .locals 0
 
-    .line 1252
+    .line 1253
     iput-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6$1;->this$1:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1255
+    .line 1256
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6$1;->this$1:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;
 
     iget-object p1, p1, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;->val$dimView:Landroid/view/View;
@@ -46,7 +46,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1256
+    .line 1257
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6$1;->this$1:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;
 
     iget-object v0, p1, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;->val$finalContainer:Landroid/widget/FrameLayout;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 1258
+    .line 1259
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6$1;->this$1:Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$6;
 

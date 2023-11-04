@@ -30,10 +30,10 @@
 .method public constructor <init>()V
     .locals 12
 
-    .line 1017
+    .line 1036
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 1005
+    .line 1024
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -42,14 +42,14 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->strokePaint:Landroid/graphics/Paint;
 
-    .line 1006
+    .line 1025
     new-instance v2, Landroid/graphics/Paint;
 
     invoke-direct {v2, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->fillPaint:Landroid/graphics/Paint;
 
-    .line 1007
+    .line 1026
     new-instance v2, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable$1;
 
     const/4 v3, 0x0
@@ -58,10 +58,10 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
-    .line 1014
+    .line 1033
     iput-boolean v3, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->filled:Z
 
-    .line 1015
+    .line 1034
     new-instance v1, Lorg/telegram/ui/Components/AnimatedFloat;
 
     new-instance v5, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable$$ExternalSyntheticLambda0;
@@ -82,21 +82,21 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->fillT:Lorg/telegram/ui/Components/AnimatedFloat;
 
-    .line 1018
+    .line 1037
     sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     const v1, 0x3fd47ae1    # 1.66f
 
-    .line 1019
+    .line 1038
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 1020
+    .line 1039
     sget-object v1, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
@@ -111,12 +111,12 @@
 
     move-object v9, v11
 
-    .line 1022
+    .line 1041
     invoke-virtual/range {v3 .. v9}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setAnimationProperties(FJJLandroid/animation/TimeInterpolator;)V
 
     const-string v0, "fonts/num.otf"
 
-    .line 1023
+    .line 1042
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v0
@@ -125,7 +125,7 @@
 
     const/high16 v0, 0x41400000    # 12.0f
 
-    .line 1024
+    .line 1043
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v0
@@ -134,14 +134,14 @@
 
     const/16 v0, 0x11
 
-    .line 1025
+    .line 1044
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setGravity(I)V
 
     const/4 v0, -0x1
 
     const v1, -0xe56301
 
-    .line 1027
+    .line 1046
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->updateColors(II)V
 
     return-void
@@ -152,7 +152,7 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 1038
+    .line 1057
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -163,7 +163,7 @@
 
     int-to-float v0, v0
 
-    .line 1039
+    .line 1058
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v1
@@ -176,7 +176,7 @@
 
     const/high16 v2, 0x41a80000    # 21.0f
 
-    .line 1041
+    .line 1060
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v2
@@ -185,7 +185,7 @@
 
     div-float/2addr v2, v3
 
-    .line 1042
+    .line 1061
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->fillT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     iget-boolean v4, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->filled:Z
@@ -202,7 +202,7 @@
 
     if-lez v5, :cond_0
 
-    .line 1045
+    .line 1064
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->fillPaint:Landroid/graphics/Paint;
 
     mul-float v7, v3, v6
@@ -213,7 +213,7 @@
 
     const v5, 0x413547ae    # 11.33f
 
-    .line 1046
+    .line 1065
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v5
@@ -224,7 +224,7 @@
 
     invoke-virtual {p1, v0, v1, v5, v7}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 1049
+    .line 1068
     :cond_0
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->strokePaint:Landroid/graphics/Paint;
 
@@ -238,7 +238,7 @@
 
     invoke-virtual {v5, v3}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 1050
+    .line 1069
     sget-object v7, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     sub-float v3, v0, v2
@@ -257,7 +257,7 @@
 
     const/4 v10, 0x0
 
-    .line 1051
+    .line 1070
     iget-object v11, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->strokePaint:Landroid/graphics/Paint;
 
     move-object v6, p1
@@ -273,7 +273,7 @@
 
     if-ge v3, v5, :cond_1
 
-    .line 1060
+    .line 1079
     sget-object v7, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/high16 v5, 0x43870000    # 270.0f
@@ -298,21 +298,21 @@
 
     goto :goto_0
 
-    .line 1064
+    .line 1083
     :cond_1
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     const/high16 v2, -0x40800000    # -1.0f
 
-    .line 1065
+    .line 1084
     invoke-virtual {p1, v4, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 1066
+    .line 1085
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
 
     const/16 v3, 0x14
 
-    .line 1067
+    .line 1086
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -323,7 +323,7 @@
 
     float-to-int v4, v4
 
-    .line 1068
+    .line 1087
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -334,7 +334,7 @@
 
     float-to-int v5, v5
 
-    .line 1069
+    .line 1088
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -345,7 +345,7 @@
 
     float-to-int v0, v0
 
-    .line 1070
+    .line 1089
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -356,20 +356,20 @@
 
     float-to-int v1, v1
 
-    .line 1066
+    .line 1085
     invoke-virtual {v2, v4, v5, v0, v1}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 1072
+    .line 1091
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(Landroid/graphics/Rect;)V
 
-    .line 1073
+    .line 1092
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 1074
+    .line 1093
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -380,7 +380,7 @@
 
     const/16 v0, 0x18
 
-    .line 1093
+    .line 1112
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -393,7 +393,7 @@
 
     const/16 v0, 0x18
 
-    .line 1098
+    .line 1117
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -424,7 +424,7 @@
 .method public setValue(IZZ)V
     .locals 3
 
-    .line 1078
+    .line 1097
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -443,19 +443,19 @@
 
     invoke-virtual {v0, p1, p3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setText(Ljava/lang/CharSequence;Z)V
 
-    .line 1079
+    .line 1098
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->filled:Z
 
     if-nez p3, :cond_0
 
-    .line 1081
+    .line 1100
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->fillT:Lorg/telegram/ui/Components/AnimatedFloat;
 
     const/4 p3, 0x1
 
     invoke-virtual {p1, p2, p3}, Lorg/telegram/ui/Components/AnimatedFloat;->set(ZZ)F
 
-    .line 1083
+    .line 1102
     :cond_0
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
@@ -465,17 +465,17 @@
 .method public updateColors(II)V
     .locals 1
 
-    .line 1031
+    .line 1050
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->strokePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 1032
+    .line 1051
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->textDrawable:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setTextColor(I)V
 
-    .line 1033
+    .line 1052
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->fillPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V

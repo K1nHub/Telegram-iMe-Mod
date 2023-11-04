@@ -1,14 +1,12 @@
 package org.telegram.tgnet;
 /* loaded from: classes5.dex */
 public class TLRPC$TL_photo extends TLRPC$Photo {
-    public static int constructor = -82216347;
-
     @Override // org.telegram.tgnet.TLObject
     public void readParams(AbstractSerializedData abstractSerializedData, boolean z) {
         int readInt32 = abstractSerializedData.readInt32(z);
         this.flags = readInt32;
         this.has_stickers = (readInt32 & 1) != 0;
-        this.f1630id = abstractSerializedData.readInt64(z);
+        this.f1632id = abstractSerializedData.readInt64(z);
         this.access_hash = abstractSerializedData.readInt64(z);
         this.file_reference = abstractSerializedData.readByteArray(z);
         this.date = abstractSerializedData.readInt32(z);
@@ -21,7 +19,7 @@ public class TLRPC$TL_photo extends TLRPC$Photo {
         }
         int readInt323 = abstractSerializedData.readInt32(z);
         for (int i = 0; i < readInt323; i++) {
-            TLRPC$PhotoSize TLdeserialize = TLRPC$PhotoSize.TLdeserialize(this.f1630id, 0L, 0L, abstractSerializedData, abstractSerializedData.readInt32(z), z);
+            TLRPC$PhotoSize TLdeserialize = TLRPC$PhotoSize.TLdeserialize(this.f1632id, 0L, 0L, abstractSerializedData, abstractSerializedData.readInt32(z), z);
             if (TLdeserialize == null) {
                 return;
             }
@@ -37,7 +35,7 @@ public class TLRPC$TL_photo extends TLRPC$Photo {
             }
             int readInt325 = abstractSerializedData.readInt32(z);
             for (int i2 = 0; i2 < readInt325; i2++) {
-                TLRPC$VideoSize TLdeserialize2 = TLRPC$VideoSize.TLdeserialize(this.f1630id, 0L, abstractSerializedData, abstractSerializedData.readInt32(z), z);
+                TLRPC$VideoSize TLdeserialize2 = TLRPC$VideoSize.TLdeserialize(this.f1632id, 0L, abstractSerializedData, abstractSerializedData.readInt32(z), z);
                 if (TLdeserialize2 == null) {
                     return;
                 }
@@ -49,11 +47,11 @@ public class TLRPC$TL_photo extends TLRPC$Photo {
 
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
-        abstractSerializedData.writeInt32(constructor);
+        abstractSerializedData.writeInt32(-82216347);
         int i = this.has_stickers ? this.flags | 1 : this.flags & (-2);
         this.flags = i;
         abstractSerializedData.writeInt32(i);
-        abstractSerializedData.writeInt64(this.f1630id);
+        abstractSerializedData.writeInt64(this.f1632id);
         abstractSerializedData.writeInt64(this.access_hash);
         abstractSerializedData.writeByteArray(this.file_reference);
         abstractSerializedData.writeInt32(this.date);

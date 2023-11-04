@@ -168,13 +168,13 @@ public abstract class AbstractBinaryClassAnnotationAndConstantLoader<A, C> exten
             /* renamed from: kotlin.reflect.jvm.internal.impl.load.kotlin.AbstractBinaryClassAnnotationAndConstantLoader$loadAnnotationsAndInitializers$1$AnnotationVisitorForMethod */
             /* loaded from: classes4.dex */
             public final class AnnotationVisitorForMethod extends MemberAnnotationVisitor implements KotlinJvmBinaryClass.MethodAnnotationVisitor {
-                final /* synthetic */ C3357x2cf49cf1 this$0;
+                final /* synthetic */ C3361x2cf49cf1 this$0;
 
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                public AnnotationVisitorForMethod(C3357x2cf49cf1 c3357x2cf49cf1, MemberSignature signature) {
-                    super(c3357x2cf49cf1, signature);
+                public AnnotationVisitorForMethod(C3361x2cf49cf1 c3361x2cf49cf1, MemberSignature signature) {
+                    super(c3361x2cf49cf1, signature);
                     Intrinsics.checkNotNullParameter(signature, "signature");
-                    this.this$0 = c3357x2cf49cf1;
+                    this.this$0 = c3361x2cf49cf1;
                 }
 
                 @Override // kotlin.reflect.jvm.internal.impl.load.kotlin.KotlinJvmBinaryClass.MethodAnnotationVisitor
@@ -197,11 +197,11 @@ public abstract class AbstractBinaryClassAnnotationAndConstantLoader<A, C> exten
             public class MemberAnnotationVisitor implements KotlinJvmBinaryClass.AnnotationVisitor {
                 private final ArrayList<A> result;
                 private final MemberSignature signature;
-                final /* synthetic */ C3357x2cf49cf1 this$0;
+                final /* synthetic */ C3361x2cf49cf1 this$0;
 
-                public MemberAnnotationVisitor(C3357x2cf49cf1 c3357x2cf49cf1, MemberSignature signature) {
+                public MemberAnnotationVisitor(C3361x2cf49cf1 c3361x2cf49cf1, MemberSignature signature) {
                     Intrinsics.checkNotNullParameter(signature, "signature");
-                    this.this$0 = c3357x2cf49cf1;
+                    this.this$0 = c3361x2cf49cf1;
                     this.signature = signature;
                     this.result = new ArrayList<>();
                 }

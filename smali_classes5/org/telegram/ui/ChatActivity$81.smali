@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 12709
+    .line 12918
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$81;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/TextSelectionHint;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,10 +35,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 0
 
-    .line 12719
+    .line 12928
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/TextSelectionHint;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 12720
+    .line 12929
     invoke-virtual {p0}, Lorg/telegram/ui/ChatActivity$81;->updatePosition()V
 
     return-void
@@ -47,10 +47,10 @@
 .method protected onMeasure(II)V
     .locals 0
 
-    .line 12713
+    .line 12922
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/TextSelectionHint;->onMeasure(II)V
 
-    .line 12714
+    .line 12923
     invoke-virtual {p0}, Lorg/telegram/ui/ChatActivity$81;->updatePosition()V
 
     return-void
@@ -59,7 +59,7 @@
 .method public updatePosition()V
     .locals 4
 
-    .line 12724
+    .line 12933
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -74,7 +74,7 @@
 
     neg-int v0, v0
 
-    .line 12725
+    .line 12934
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$81;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, v1, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
@@ -99,7 +99,7 @@
 
     int-to-float v0, v1
 
-    .line 12726
+    .line 12935
     invoke-virtual {p0}, Lorg/telegram/ui/Components/TextSelectionHint;->getPrepareProgress()F
 
     move-result v1

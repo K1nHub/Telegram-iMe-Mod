@@ -23,7 +23,7 @@ public final class AdnlAddressUdp$$serializer implements GeneratedSerializer<Adn
         PluginGeneratedSerialDescriptor pluginGeneratedSerialDescriptor = new PluginGeneratedSerialDescriptor("adnl.address.udp", adnlAddressUdp$$serializer, 2);
         pluginGeneratedSerialDescriptor.addElement("ip", false);
         pluginGeneratedSerialDescriptor.addElement("port", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7424x63816b8c("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7499x63816b8c("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

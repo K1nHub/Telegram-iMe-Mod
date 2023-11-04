@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda8;->f$0:Landroidx/core/util/Consumer;
 
-    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$akGqjPsJrv4g6G1d4d2HgCrUMNE(Landroidx/core/util/Consumer;)V
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$FIuZW_rZ3rRuUr5g-Zz8kzAU0J8(Landroidx/core/util/Consumer;)V
 
     return-void
 .end method

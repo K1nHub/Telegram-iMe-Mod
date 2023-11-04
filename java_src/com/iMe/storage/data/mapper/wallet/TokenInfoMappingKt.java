@@ -10,6 +10,6 @@ import kotlin.jvm.internal.Intrinsics;
 public final class TokenInfoMappingKt {
     public static final Pair<TokenDetailed, Boolean> mapToDomain(TokenInfoResponse tokenInfoResponse) {
         Intrinsics.checkNotNullParameter(tokenInfoResponse, "<this>");
-        return TuplesKt.m144to(TokenMappingKt.mapToDomain(tokenInfoResponse.getToken()), Boolean.valueOf(tokenInfoResponse.isCustom()));
+        return TuplesKt.m146to(TokenMappingKt.mapToDomain(tokenInfoResponse.getToken()), Boolean.valueOf(tokenInfoResponse.isCustom()));
     }
 }

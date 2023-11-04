@@ -30,11 +30,11 @@ import java.util.Objects;
 public class BitmapTeleporter extends AbstractSafeParcelable implements ReflectedParcelable {
     @KeepForSdk
     public static final Parcelable.Creator<BitmapTeleporter> CREATOR = new zaa();
-    @SafeParcelable.VersionField(m1086id = 1)
+    @SafeParcelable.VersionField(m1087id = 1)
     final int zaa;
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     ParcelFileDescriptor zab;
-    @SafeParcelable.Field(m1089id = 3)
+    @SafeParcelable.Field(m1090id = 3)
     final int zac;
     private Bitmap zad;
     private boolean zae;
@@ -42,7 +42,7 @@ public class BitmapTeleporter extends AbstractSafeParcelable implements Reflecte
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public BitmapTeleporter(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) ParcelFileDescriptor parcelFileDescriptor, @SafeParcelable.Param(m1088id = 3) int i2) {
+    public BitmapTeleporter(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) ParcelFileDescriptor parcelFileDescriptor, @SafeParcelable.Param(m1089id = 3) int i2) {
         this.zaa = i;
         this.zab = parcelFileDescriptor;
         this.zac = i2;

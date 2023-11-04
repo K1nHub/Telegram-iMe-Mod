@@ -4,9 +4,9 @@ import android.text.TextUtils;
 import com.google.android.exoplayer2.util.Consumer;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.Components.BulletinFactory;
-import org.telegram.p042ui.LaunchActivity;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.Components.BulletinFactory;
+import org.telegram.p043ui.LaunchActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
@@ -35,7 +35,7 @@ public class UserNameResolver {
         if (cachedPeer != null) {
             if (System.currentTimeMillis() - cachedPeer.time < CACHE_TIME) {
                 consumer.accept(Long.valueOf(cachedPeer.peerId));
-                FileLog.m100d("resolve username from cache " + str + " " + cachedPeer.peerId);
+                FileLog.m102d("resolve username from cache " + str + " " + cachedPeer.peerId);
                 return;
             }
             this.resolvedCache.remove(str);
@@ -92,7 +92,7 @@ public class UserNameResolver {
             if (str2 == null || !str2.contains("FLOOD_WAIT") || (lastFragment = LaunchActivity.getLastFragment()) == null) {
                 return;
             }
-            BulletinFactory.m61of(lastFragment).createErrorBulletin(LocaleController.getString("FloodWait", C3630R.string.FloodWait)).show();
+            BulletinFactory.m62of(lastFragment).createErrorBulletin(LocaleController.getString("FloodWait", C3634R.string.FloodWait)).show();
             return;
         }
         TLRPC$TL_contacts_resolvedPeer tLRPC$TL_contacts_resolvedPeer = (TLRPC$TL_contacts_resolvedPeer) tLObject;
@@ -115,7 +115,7 @@ public class UserNameResolver {
         this.resolvedCache.remove(tLRPC$User.username);
         String str2 = tLRPC$User2.username;
         if (str2 != null) {
-            this.resolvedCache.put(str2, new CachedPeer(tLRPC$User2.f1762id));
+            this.resolvedCache.put(str2, new CachedPeer(tLRPC$User2.f1749id));
         }
     }
 
@@ -127,7 +127,7 @@ public class UserNameResolver {
         this.resolvedCache.remove(tLRPC$Chat.username);
         String str2 = tLRPC$Chat2.username;
         if (str2 != null) {
-            this.resolvedCache.put(str2, new CachedPeer(-tLRPC$Chat2.f1600id));
+            this.resolvedCache.put(str2, new CachedPeer(-tLRPC$Chat2.f1602id));
         }
     }
 

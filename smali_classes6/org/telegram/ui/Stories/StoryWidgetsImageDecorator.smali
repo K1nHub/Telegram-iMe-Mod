@@ -33,7 +33,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public constructor <init>(Lorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 4
 
     .line 18
@@ -43,7 +43,7 @@
 
     .line 19
     :goto_0
-    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->media_areas:Ljava/util/ArrayList;
+    iget-object v1, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media_areas:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -52,13 +52,13 @@
     if-ge v0, v1, :cond_2
 
     .line 20
-    iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->media_areas:Ljava/util/ArrayList;
+    iget-object v1, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media_areas:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
 
-    instance-of v1, v1, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaSuggestedReaction;
+    instance-of v1, v1, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaSuggestedReaction;
 
     if-eqz v1, :cond_1
 
@@ -80,15 +80,15 @@
 
     new-instance v2, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator$ReactionWidget;
 
-    iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$StoryItem;->media_areas:Ljava/util/ArrayList;
+    iget-object v3, p1, Lorg/telegram/tgnet/tl/TL_stories$StoryItem;->media_areas:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_mediaAreaSuggestedReaction;
+    check-cast v3, Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaSuggestedReaction;
 
-    invoke-direct {v2, p0, v3}, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator$ReactionWidget;-><init>(Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator;Lorg/telegram/tgnet/TLRPC$TL_mediaAreaSuggestedReaction;)V
+    invoke-direct {v2, p0, v3}, Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator$ReactionWidget;-><init>(Lorg/telegram/ui/Stories/StoryWidgetsImageDecorator;Lorg/telegram/tgnet/tl/TL_stories$TL_mediaAreaSuggestedReaction;)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

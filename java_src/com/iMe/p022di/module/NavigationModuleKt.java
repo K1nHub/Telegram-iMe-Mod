@@ -58,7 +58,7 @@ public final class NavigationModuleKt {
             List emptyList6;
             Intrinsics.checkNotNullParameter(module, "$this$module");
             StringQualifier common_bottom_navigator = NavigationModuleKt.getCOMMON_BOTTOM_NAVIGATOR();
-            C12481 c12481 = new Function2<Scope, ParametersHolder, NavigationRouter<MvpFragment>>() { // from class: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1.1
+            C12541 c12541 = new Function2<Scope, ParametersHolder, NavigationRouter<MvpFragment>>() { // from class: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final NavigationRouter<MvpFragment> invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -70,11 +70,11 @@ public final class NavigationModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Factory;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(NavigationRouter.class), common_bottom_navigator, c12481, kind, emptyList));
+            InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(NavigationRouter.class), common_bottom_navigator, c12541, kind, emptyList));
             module.indexPrimaryType(factoryInstanceFactory);
             new KoinDefinition(module, factoryInstanceFactory);
             StringQualifier common_tabs_navigator = NavigationModuleKt.getCOMMON_TABS_NAVIGATOR();
-            C12492 c12492 = new Function2<Scope, ParametersHolder, NavigationRouter<MvpFragment>>() { // from class: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1.2
+            C12552 c12552 = new Function2<Scope, ParametersHolder, NavigationRouter<MvpFragment>>() { // from class: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final NavigationRouter<MvpFragment> invoke(Scope factory, ParametersHolder parametersHolder) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -84,11 +84,11 @@ public final class NavigationModuleKt {
             };
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            InstanceFactory<?> factoryInstanceFactory2 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(NavigationRouter.class), common_tabs_navigator, c12492, kind, emptyList2));
+            InstanceFactory<?> factoryInstanceFactory2 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(NavigationRouter.class), common_tabs_navigator, c12552, kind, emptyList2));
             module.indexPrimaryType(factoryInstanceFactory2);
             new KoinDefinition(module, factoryInstanceFactory2);
             StringQualifier wallet_root_navigator = NavigationModuleKt.getWALLET_ROOT_NAVIGATOR();
-            C12503 c12503 = new Function2<Scope, ParametersHolder, NavigationRouter<WalletTabFragment>>() { // from class: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1.3
+            C12563 c12563 = new Function2<Scope, ParametersHolder, NavigationRouter<WalletTabFragment>>() { // from class: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final NavigationRouter<WalletTabFragment> invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -98,10 +98,10 @@ public final class NavigationModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            InstanceFactory<?> factoryInstanceFactory3 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(NavigationRouter.class), wallet_root_navigator, c12503, kind, emptyList3));
+            InstanceFactory<?> factoryInstanceFactory3 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(NavigationRouter.class), wallet_root_navigator, c12563, kind, emptyList3));
             module.indexPrimaryType(factoryInstanceFactory3);
             new KoinDefinition(module, factoryInstanceFactory3);
-            C12514 c12514 = new Function2<Scope, ParametersHolder, WalletFlowCoordinator>() { // from class: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1.4
+            C12574 c12574 = new Function2<Scope, ParametersHolder, WalletFlowCoordinator>() { // from class: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final WalletFlowCoordinator invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -112,13 +112,13 @@ public final class NavigationModuleKt {
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             Kind kind2 = Kind.Singleton;
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletFlowCoordinator.class), null, c12514, kind2, emptyList4));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(WalletFlowCoordinator.class), null, c12574, kind2, emptyList4));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C12525 c12525 = new Function2<Scope, ParametersHolder, PinCodeCoordinator>() { // from class: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1.5
+            C12585 c12585 = new Function2<Scope, ParametersHolder, PinCodeCoordinator>() { // from class: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1.5
                 @Override // kotlin.jvm.functions.Function2
                 public final PinCodeCoordinator invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -128,13 +128,13 @@ public final class NavigationModuleKt {
             };
             StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
             emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(PinCodeCoordinator.class), null, c12525, kind2, emptyList5));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(PinCodeCoordinator.class), null, c12585, kind2, emptyList5));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
-            C12536 c12536 = new Function2<Scope, ParametersHolder, TokenBuyCoordinator>() { // from class: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1.6
+            C12596 c12596 = new Function2<Scope, ParametersHolder, TokenBuyCoordinator>() { // from class: com.iMe.di.module.NavigationModuleKt$presentationNavigationModule$1.6
                 @Override // kotlin.jvm.functions.Function2
                 public final TokenBuyCoordinator invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -144,7 +144,7 @@ public final class NavigationModuleKt {
             };
             StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
             emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(TokenBuyCoordinator.class), null, c12536, kind2, emptyList6));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(TokenBuyCoordinator.class), null, c12596, kind2, emptyList6));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);

@@ -7,7 +7,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.ParcelFileDescriptor;
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.util.MimeTypes;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -110,9 +110,9 @@ public class NotificationImageProvider extends ContentProvider implements Notifi
                     this.fileStartTimes.put(str2, Long.valueOf(longValue));
                 }
                 while (!file.exists()) {
-                    if (System.currentTimeMillis() - longValue >= C0479C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS) {
+                    if (System.currentTimeMillis() - longValue >= C0485C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS) {
                         if (BuildVars.LOGS_ENABLED) {
-                            FileLog.m95w("Waiting for " + str2 + " to download timed out");
+                            FileLog.m97w("Waiting for " + str2 + " to download timed out");
                         }
                         if (TextUtils.isEmpty(queryParameter2)) {
                             throw new FileNotFoundException("Download timed out");

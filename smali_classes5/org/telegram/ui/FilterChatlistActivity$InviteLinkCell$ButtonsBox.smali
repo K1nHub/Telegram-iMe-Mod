@@ -28,10 +28,10 @@
 .method public constructor <init>(Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell;Landroid/content/Context;)V
     .locals 0
 
-    .line 900
+    .line 901
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 895
+    .line 896
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
@@ -42,10 +42,10 @@
 
     new-array p1, p1, [F
 
-    .line 896
+    .line 897
     iput-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->radii:[F
 
-    .line 897
+    .line 898
     new-instance p1, Landroid/graphics/Path;
 
     invoke-direct {p1}, Landroid/graphics/Path;-><init>()V
@@ -54,10 +54,10 @@
 
     const/4 p1, 0x0
 
-    .line 901
+    .line 902
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
-    .line 902
+    .line 903
     iget-object p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->paint:Landroid/graphics/Paint;
 
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
@@ -74,7 +74,7 @@
 .method private setRadii(FF)V
     .locals 2
 
-    .line 912
+    .line 913
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->radii:[F
 
     const/4 v1, 0x7
@@ -95,7 +95,7 @@
 
     const/4 p1, 0x5
 
-    .line 913
+    .line 914
     aput p2, v0, p1
 
     const/4 p1, 0x4
@@ -118,10 +118,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 918
+    .line 919
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 920
+    .line 921
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -132,12 +132,12 @@
 
     div-float/2addr v0, v1
 
-    .line 922
+    .line 923
     iget-object v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->path:Landroid/graphics/Path;
 
     invoke-virtual {v1}, Landroid/graphics/Path;->rewind()V
 
-    .line 923
+    .line 924
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     const/4 v2, 0x4
@@ -170,7 +170,7 @@
 
     const/16 v3, 0x8
 
-    .line 924
+    .line 925
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -191,7 +191,7 @@
 
     invoke-direct {p0, v4, v7}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->setRadii(FF)V
 
-    .line 925
+    .line 926
     iget-object v4, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->path:Landroid/graphics/Path;
 
     iget-object v7, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->radii:[F
@@ -200,19 +200,19 @@
 
     invoke-virtual {v4, v1, v7, v8}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 926
+    .line 927
     iget-object v4, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->path:Landroid/graphics/Path;
 
     iget-object v7, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v4, v7}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 928
+    .line 929
     iget-object v4, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->path:Landroid/graphics/Path;
 
     invoke-virtual {v4}, Landroid/graphics/Path;->rewind()V
 
-    .line 929
+    .line 930
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -241,7 +241,7 @@
 
     invoke-virtual {v1, v0, v6, v2, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 930
+    .line 931
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -262,7 +262,7 @@
 
     invoke-direct {p0, v0, v2}, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->setRadii(FF)V
 
-    .line 931
+    .line 932
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->path:Landroid/graphics/Path;
 
     iget-object v2, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->radii:[F
@@ -271,7 +271,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;[FLandroid/graphics/Path$Direction;)V
 
-    .line 932
+    .line 933
     iget-object v0, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->path:Landroid/graphics/Path;
 
     iget-object v1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->paint:Landroid/graphics/Paint;
@@ -284,10 +284,10 @@
 .method public setT(F)V
     .locals 0
 
-    .line 907
+    .line 908
     iput p1, p0, Lorg/telegram/ui/FilterChatlistActivity$InviteLinkCell$ButtonsBox;->t:F
 
-    .line 908
+    .line 909
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

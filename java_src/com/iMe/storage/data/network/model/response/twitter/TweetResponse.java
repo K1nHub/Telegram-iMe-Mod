@@ -113,7 +113,7 @@ public final class TweetResponse {
         if (z != 0) {
             i = 1;
         }
-        return ((((hashCode + i) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.createdAt)) * 31) + this.mediaInfo.hashCode();
+        return ((((hashCode + i) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.createdAt)) * 31) + this.mediaInfo.hashCode();
     }
 
     public String toString() {

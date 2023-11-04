@@ -13,11 +13,11 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class FidoAppIdExtension extends AbstractSafeParcelable {
     public static final Parcelable.Creator<FidoAppIdExtension> CREATOR = new zzu();
-    @SafeParcelable.Field(getter = "getAppId", m1089id = 2)
+    @SafeParcelable.Field(getter = "getAppId", m1090id = 2)
     private final String zza;
 
     @SafeParcelable.Constructor
-    public FidoAppIdExtension(@SafeParcelable.Param(m1088id = 2) String str) {
+    public FidoAppIdExtension(@SafeParcelable.Param(m1089id = 2) String str) {
         this.zza = (String) Preconditions.checkNotNull(str);
     }
 

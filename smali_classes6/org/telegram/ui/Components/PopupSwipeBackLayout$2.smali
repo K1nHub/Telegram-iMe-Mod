@@ -79,6 +79,41 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->access$502(Lorg/telegram/ui/Components/PopupSwipeBackLayout;Z)Z
 
+    .line 318
+    iget-object p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout$2;->this$0:Lorg/telegram/ui/Components/PopupSwipeBackLayout;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->access$1000(Lorg/telegram/ui/Components/PopupSwipeBackLayout;)Ljava/lang/Runnable;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_1
+
+    iget p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout$2;->val$f:F
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    sub-float/2addr p1, v0
+
+    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    const v0, 0x3c23d70a    # 0.01f
+
+    cmpg-float p1, p1, v0
+
+    if-gez p1, :cond_1
+
+    .line 319
+    iget-object p1, p0, Lorg/telegram/ui/Components/PopupSwipeBackLayout$2;->this$0:Lorg/telegram/ui/Components/PopupSwipeBackLayout;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/PopupSwipeBackLayout;->access$1000(Lorg/telegram/ui/Components/PopupSwipeBackLayout;)Ljava/lang/Runnable;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
+
+    :cond_1
     return-void
 .end method
 

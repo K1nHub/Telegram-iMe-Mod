@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/TextSelectionHelper;Landroid/view/ActionMode$Callback;)V
     .locals 0
 
-    .line 1535
+    .line 1544
     iput-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->val$callback:Landroid/view/ActionMode$Callback;
@@ -39,7 +39,7 @@
 .method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
     .locals 1
 
-    .line 1548
+    .line 1557
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->val$callback:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/view/ActionMode$Callback;->onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
@@ -52,7 +52,7 @@
 .method public onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
     .locals 1
 
-    .line 1538
+    .line 1547
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->val$callback:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/view/ActionMode$Callback;->onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
@@ -65,7 +65,7 @@
 .method public onDestroyActionMode(Landroid/view/ActionMode;)V
     .locals 1
 
-    .line 1553
+    .line 1562
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->val$callback:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p1}, Landroid/view/ActionMode$Callback;->onDestroyActionMode(Landroid/view/ActionMode;)V
@@ -76,7 +76,7 @@
 .method public onGetContentRect(Landroid/view/ActionMode;Landroid/view/View;Landroid/graphics/Rect;)V
     .locals 6
 
-    .line 1558
+    .line 1567
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->isInSelectionMode()Z
@@ -87,20 +87,20 @@
 
     return-void
 
-    .line 1561
+    .line 1570
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->pickStartView()V
 
-    .line 1564
+    .line 1573
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1500(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
+    invoke-static {p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->access$1400(Lorg/telegram/ui/Cells/TextSelectionHelper;)[I
 
     move-result-object p1
 
-    .line 1565
+    .line 1574
     iget-object p2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v0, p2, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
@@ -111,14 +111,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 1566
+    .line 1575
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getLineHeight()I
 
     move-result p2
 
     neg-int p2, p2
 
-    .line 1567
+    .line 1576
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
@@ -127,7 +127,7 @@
 
     move-result-object v0
 
-    .line 1568
+    .line 1577
     aget v3, v0, v1
 
     iget-object v4, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
@@ -136,7 +136,7 @@
 
     add-int/2addr v3, v5
 
-    .line 1569
+    .line 1578
     aget v0, v0, v2
 
     iget v4, v4, Lorg/telegram/ui/Cells/TextSelectionHelper;->textY:I
@@ -171,7 +171,7 @@
     :cond_2
     move v3, v1
 
-    .line 1573
+    .line 1582
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
@@ -181,26 +181,26 @@
 
     move-result p1
 
-    .line 1574
+    .line 1583
     iget-object p2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->pickEndView()V
 
-    .line 1575
+    .line 1584
     iget-object p2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
     iget-object v0, p2, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
 
     if-eqz v0, :cond_3
 
-    .line 1576
+    .line 1585
     iget p1, p2, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionEnd:I
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->offsetToCord(I)[I
 
     move-result-object p1
 
-    .line 1577
+    .line 1586
     aget p1, p1, v1
 
     iget-object p2, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->this$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
@@ -209,20 +209,20 @@
 
     add-int/2addr p1, p2
 
-    .line 1580
+    .line 1589
     :cond_3
     invoke-static {v3, p1}, Ljava/lang/Math;->min(II)I
 
     move-result p2
 
-    .line 1581
+    .line 1590
     invoke-static {v3, p1}, Ljava/lang/Math;->max(II)I
 
     move-result p1
 
     add-int/lit8 v0, v2, 0x1
 
-    .line 1579
+    .line 1588
     invoke-virtual {p3, p2, v2, p1, v0}, Landroid/graphics/Rect;->set(IIII)V
 
     return-void
@@ -231,7 +231,7 @@
 .method public onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
     .locals 1
 
-    .line 1543
+    .line 1552
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$5;->val$callback:Landroid/view/ActionMode$Callback;
 
     invoke-interface {v0, p1, p2}, Landroid/view/ActionMode$Callback;->onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z

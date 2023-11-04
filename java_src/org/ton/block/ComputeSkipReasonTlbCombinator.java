@@ -35,7 +35,7 @@ final class ComputeSkipReasonTlbCombinator extends TlbCombinator<ComputeSkipReas
     }
 
     private ComputeSkipReasonTlbCombinator() {
-        super(Reflection.getOrCreateKotlinClass(ComputeSkipReason.class), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(ComputeSkipReason.class), ComputeSkipReasonNoStateTlbConstructor.INSTANCE), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(ComputeSkipReason.class), ComputeSkipReasonBadStateTlbConstructor.INSTANCE), TuplesKt.m144to(Reflection.getOrCreateKotlinClass(ComputeSkipReason.class), ComputeSkipReasonNoGasTlbConstructor.INSTANCE));
+        super(Reflection.getOrCreateKotlinClass(ComputeSkipReason.class), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(ComputeSkipReason.class), ComputeSkipReasonNoStateTlbConstructor.INSTANCE), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(ComputeSkipReason.class), ComputeSkipReasonBadStateTlbConstructor.INSTANCE), TuplesKt.m146to(Reflection.getOrCreateKotlinClass(ComputeSkipReason.class), ComputeSkipReasonNoGasTlbConstructor.INSTANCE));
     }
 
     /* JADX INFO: Access modifiers changed from: protected */

@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 0
 
-    .line 491
+    .line 453
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$2;->val$onAuthSuccessAction:Lcom/iMe/fork/utils/Callbacks$Callback;
@@ -42,7 +42,7 @@
 .method public hideLoadingDialog()V
     .locals 1
 
-    .line 500
+    .line 462
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/LaunchActivity;->hideLoadingDialog()V
@@ -53,7 +53,7 @@
 .method public onAuthSuccess()V
     .locals 1
 
-    .line 510
+    .line 472
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->val$onAuthSuccessAction:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     invoke-interface {v0}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
@@ -64,7 +64,7 @@
 .method public showLoadingDialog(Lcom/iMe/fork/utils/Callbacks$Callback;)V
     .locals 2
 
-    .line 495
+    .line 457
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$2;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     const/4 v1, 0x1
@@ -77,7 +77,7 @@
 .method public showToast(Ljava/lang/String;)V
     .locals 0
 
-    .line 505
+    .line 467
     invoke-static {p1}, Lcom/iMe/utils/extentions/common/ContextExtKt;->toast(Ljava/lang/CharSequence;)V
 
     return-void

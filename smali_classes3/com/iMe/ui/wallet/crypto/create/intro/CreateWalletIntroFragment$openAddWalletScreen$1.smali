@@ -52,7 +52,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 140
+    .line 143
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$openAddWalletScreen$1;->invoke()Lorg/telegram/ui/ActionBar/BaseFragment;
 
     move-result-object v0
@@ -63,16 +63,16 @@
 .method public final invoke()Lorg/telegram/ui/ActionBar/BaseFragment;
     .locals 8
 
-    .line 142
+    .line 145
     sget-object v0, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;->Companion:Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$Companion;
 
-    .line 143
+    .line 146
     new-instance v7, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;
 
-    .line 145
+    .line 148
     iget-object v2, p0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$openAddWalletScreen$1;->$wallet:Lcom/iMe/storage/domain/model/crypto/Wallet;
 
-    .line 144
+    .line 147
     iget-object v3, p0, Lcom/iMe/ui/wallet/crypto/create/intro/CreateWalletIntroFragment$openAddWalletScreen$1;->$password:Ljava/lang/String;
 
     const/4 v4, 0x0
@@ -83,10 +83,10 @@
 
     move-object v1, v7
 
-    .line 143
+    .line 146
     invoke-direct/range {v1 .. v6}, Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType$SecretWords;-><init>(Lcom/iMe/storage/domain/model/crypto/Wallet;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 142
+    .line 145
     invoke-virtual {v0, v7}, Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment$Companion;->newInstance(Lcom/iMe/model/wallet/crypto/create/CreateWalletScreenType;)Lcom/iMe/ui/wallet/crypto/create/CreateWalletFragment;
 
     move-result-object v0

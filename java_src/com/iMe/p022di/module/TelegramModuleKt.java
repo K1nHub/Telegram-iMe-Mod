@@ -54,7 +54,7 @@ public final class TelegramModuleKt {
             List emptyList7;
             List emptyList8;
             Intrinsics.checkNotNullParameter(module, "$this$module");
-            C13361 c13361 = new Function2<Scope, ParametersHolder, TelegramApi>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.1
+            C13421 c13421 = new Function2<Scope, ParametersHolder, TelegramApi>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.1
                 @Override // kotlin.jvm.functions.Function2
                 public final TelegramApi invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -66,13 +66,13 @@ public final class TelegramModuleKt {
             StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
             Kind kind = Kind.Singleton;
             emptyList = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TelegramApi.class), null, c13361, kind, emptyList));
+            SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(TelegramApi.class), null, c13421, kind, emptyList));
             module.indexPrimaryType(singleInstanceFactory);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory);
             }
             new KoinDefinition(module, singleInstanceFactory);
-            C13372 c13372 = new Function2<Scope, ParametersHolder, TelegramGateway>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.2
+            C13432 c13432 = new Function2<Scope, ParametersHolder, TelegramGateway>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.2
                 @Override // kotlin.jvm.functions.Function2
                 public final TelegramGateway invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -83,10 +83,10 @@ public final class TelegramModuleKt {
             StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
             Kind kind2 = Kind.Factory;
             emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-            InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, c13372, kind2, emptyList2));
+            InstanceFactory<?> factoryInstanceFactory = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(TelegramGateway.class), null, c13432, kind2, emptyList2));
             module.indexPrimaryType(factoryInstanceFactory);
             new KoinDefinition(module, factoryInstanceFactory);
-            C13383 c13383 = new Function2<Scope, ParametersHolder, TelegramControllersGateway>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.3
+            C13443 c13443 = new Function2<Scope, ParametersHolder, TelegramControllersGateway>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.3
                 @Override // kotlin.jvm.functions.Function2
                 public final TelegramControllersGateway invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -96,10 +96,10 @@ public final class TelegramModuleKt {
             };
             StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
             emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-            InstanceFactory<?> factoryInstanceFactory2 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, c13383, kind2, emptyList3));
+            InstanceFactory<?> factoryInstanceFactory2 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(TelegramControllersGateway.class), null, c13443, kind2, emptyList3));
             module.indexPrimaryType(factoryInstanceFactory2);
             new KoinDefinition(module, factoryInstanceFactory2);
-            C13394 c13394 = new Function2<Scope, ParametersHolder, MessageLinkCache>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.4
+            C13454 c13454 = new Function2<Scope, ParametersHolder, MessageLinkCache>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.4
                 @Override // kotlin.jvm.functions.Function2
                 public final MessageLinkCache invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -109,13 +109,13 @@ public final class TelegramModuleKt {
             };
             StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
             emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(MessageLinkCache.class), null, c13394, kind, emptyList4));
+            SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(MessageLinkCache.class), null, c13454, kind, emptyList4));
             module.indexPrimaryType(singleInstanceFactory2);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory2);
             }
             new KoinDefinition(module, singleInstanceFactory2);
-            C13405 c13405 = new Function2<Scope, ParametersHolder, MultiReplyRepository>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.5
+            C13465 c13465 = new Function2<Scope, ParametersHolder, MultiReplyRepository>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.5
                 @Override // kotlin.jvm.functions.Function2
                 public final MultiReplyRepository invoke(Scope single, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(single, "$this$single");
@@ -125,13 +125,13 @@ public final class TelegramModuleKt {
             };
             StringQualifier rootScopeQualifier5 = companion.getRootScopeQualifier();
             emptyList5 = CollectionsKt__CollectionsKt.emptyList();
-            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(MultiReplyRepository.class), null, c13405, kind, emptyList5));
+            SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier5, Reflection.getOrCreateKotlinClass(MultiReplyRepository.class), null, c13465, kind, emptyList5));
             module.indexPrimaryType(singleInstanceFactory3);
             if (module.get_createdAtStart()) {
                 module.prepareForCreationAtStart(singleInstanceFactory3);
             }
             new KoinDefinition(module, singleInstanceFactory3);
-            C13416 c13416 = new Function2<Scope, ParametersHolder, MultiReplyInteractor>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.6
+            C13476 c13476 = new Function2<Scope, ParametersHolder, MultiReplyInteractor>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.6
                 @Override // kotlin.jvm.functions.Function2
                 public final MultiReplyInteractor invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -141,10 +141,10 @@ public final class TelegramModuleKt {
             };
             StringQualifier rootScopeQualifier6 = companion.getRootScopeQualifier();
             emptyList6 = CollectionsKt__CollectionsKt.emptyList();
-            InstanceFactory<?> factoryInstanceFactory3 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(MultiReplyInteractor.class), null, c13416, kind2, emptyList6));
+            InstanceFactory<?> factoryInstanceFactory3 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier6, Reflection.getOrCreateKotlinClass(MultiReplyInteractor.class), null, c13476, kind2, emptyList6));
             module.indexPrimaryType(factoryInstanceFactory3);
             new KoinDefinition(module, factoryInstanceFactory3);
-            C13427 c13427 = new Function2<Scope, ParametersHolder, ContactsInteractor>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.7
+            C13487 c13487 = new Function2<Scope, ParametersHolder, ContactsInteractor>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.7
                 @Override // kotlin.jvm.functions.Function2
                 public final ContactsInteractor invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -154,10 +154,10 @@ public final class TelegramModuleKt {
             };
             StringQualifier rootScopeQualifier7 = companion.getRootScopeQualifier();
             emptyList7 = CollectionsKt__CollectionsKt.emptyList();
-            InstanceFactory<?> factoryInstanceFactory4 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(ContactsInteractor.class), null, c13427, kind2, emptyList7));
+            InstanceFactory<?> factoryInstanceFactory4 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier7, Reflection.getOrCreateKotlinClass(ContactsInteractor.class), null, c13487, kind2, emptyList7));
             module.indexPrimaryType(factoryInstanceFactory4);
             new KoinDefinition(module, factoryInstanceFactory4);
-            C13438 c13438 = new Function2<Scope, ParametersHolder, SelectedContactsDataStore>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.8
+            C13498 c13498 = new Function2<Scope, ParametersHolder, SelectedContactsDataStore>() { // from class: com.iMe.di.module.TelegramModuleKt$telegramModule$1.8
                 @Override // kotlin.jvm.functions.Function2
                 public final SelectedContactsDataStore invoke(Scope factory, ParametersHolder it) {
                     Intrinsics.checkNotNullParameter(factory, "$this$factory");
@@ -167,7 +167,7 @@ public final class TelegramModuleKt {
             };
             StringQualifier rootScopeQualifier8 = companion.getRootScopeQualifier();
             emptyList8 = CollectionsKt__CollectionsKt.emptyList();
-            InstanceFactory<?> factoryInstanceFactory5 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(SelectedContactsDataStore.class), null, c13438, kind2, emptyList8));
+            InstanceFactory<?> factoryInstanceFactory5 = new FactoryInstanceFactory<>(new BeanDefinition(rootScopeQualifier8, Reflection.getOrCreateKotlinClass(SelectedContactsDataStore.class), null, c13498, kind2, emptyList8));
             module.indexPrimaryType(factoryInstanceFactory5);
             new KoinDefinition(module, factoryInstanceFactory5);
         }

@@ -73,7 +73,7 @@ public final class MediaItem implements Bundleable {
             this.clippingConfiguration = new ClippingConfiguration.Builder();
             this.drmConfiguration = new DrmConfiguration.Builder();
             this.streamKeys = Collections.emptyList();
-            this.subtitleConfigurations = ImmutableList.m1054of();
+            this.subtitleConfigurations = ImmutableList.m1055of();
             this.liveConfiguration = new LiveConfiguration.Builder();
             this.requestMetadata = RequestMetadata.EMPTY;
         }
@@ -180,7 +180,7 @@ public final class MediaItem implements Bundleable {
         public Builder setDrmLicenseRequestHeaders(Map<String, String> map) {
             DrmConfiguration.Builder builder = this.drmConfiguration;
             if (map == null) {
-                map = ImmutableMap.m1047of();
+                map = ImmutableMap.m1048of();
             }
             builder.setLicenseRequestHeaders(map);
             return this;
@@ -220,7 +220,7 @@ public final class MediaItem implements Bundleable {
         public Builder setDrmSessionForClearTypes(List<Integer> list) {
             DrmConfiguration.Builder builder = this.drmConfiguration;
             if (list == null) {
-                list = ImmutableList.m1054of();
+                list = ImmutableList.m1055of();
             }
             builder.setForcedSessionTrackTypes(list);
             return this;
@@ -250,7 +250,7 @@ public final class MediaItem implements Bundleable {
 
         @Deprecated
         public Builder setSubtitles(List<Subtitle> list) {
-            this.subtitleConfigurations = list != null ? ImmutableList.copyOf((Collection) list) : ImmutableList.m1054of();
+            this.subtitleConfigurations = list != null ? ImmutableList.copyOf((Collection) list) : ImmutableList.m1055of();
             return this;
         }
 
@@ -384,14 +384,14 @@ public final class MediaItem implements Bundleable {
 
             public Builder(UUID uuid) {
                 this.scheme = uuid;
-                this.licenseRequestHeaders = ImmutableMap.m1047of();
-                this.forcedSessionTrackTypes = ImmutableList.m1054of();
+                this.licenseRequestHeaders = ImmutableMap.m1048of();
+                this.forcedSessionTrackTypes = ImmutableList.m1055of();
             }
 
             @Deprecated
             private Builder() {
-                this.licenseRequestHeaders = ImmutableMap.m1047of();
-                this.forcedSessionTrackTypes = ImmutableList.m1054of();
+                this.licenseRequestHeaders = ImmutableMap.m1048of();
+                this.forcedSessionTrackTypes = ImmutableList.m1055of();
             }
 
             private Builder(DrmConfiguration drmConfiguration) {
@@ -453,13 +453,13 @@ public final class MediaItem implements Bundleable {
             }
 
             public Builder setForceSessionsForAudioAndVideoTracks(boolean z) {
-                ImmutableList m1054of;
+                ImmutableList m1055of;
                 if (z) {
-                    m1054of = ImmutableList.m1052of(2, 1);
+                    m1055of = ImmutableList.m1053of(2, 1);
                 } else {
-                    m1054of = ImmutableList.m1054of();
+                    m1055of = ImmutableList.m1055of();
                 }
-                setForcedSessionTrackTypes(m1054of);
+                setForcedSessionTrackTypes(m1055of);
                 return this;
             }
 
@@ -674,9 +674,9 @@ public final class MediaItem implements Bundleable {
             private long targetOffsetMs;
 
             public Builder() {
-                this.targetOffsetMs = C0479C.TIME_UNSET;
-                this.minOffsetMs = C0479C.TIME_UNSET;
-                this.maxOffsetMs = C0479C.TIME_UNSET;
+                this.targetOffsetMs = C0485C.TIME_UNSET;
+                this.minOffsetMs = C0485C.TIME_UNSET;
+                this.maxOffsetMs = C0485C.TIME_UNSET;
                 this.minPlaybackSpeed = -3.4028235E38f;
                 this.maxPlaybackSpeed = -3.4028235E38f;
             }

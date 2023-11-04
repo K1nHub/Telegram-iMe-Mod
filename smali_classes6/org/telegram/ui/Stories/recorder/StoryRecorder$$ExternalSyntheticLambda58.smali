@@ -27,9 +27,9 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda58;->f$0:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    check-cast p1, Ljava/lang/Integer;
+    check-cast p1, Ljava/lang/Float;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$H6q-F0LPPFKwntW2hqolJo8qwbo(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Integer;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->$r8$lambda$YlQ0P2eZpyMuq5a9CJeplXIZyM8(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Float;)V
 
     return-void
 .end method

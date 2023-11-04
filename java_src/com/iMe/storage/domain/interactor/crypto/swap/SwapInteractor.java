@@ -33,7 +33,7 @@ public final class SwapInteractor {
         Intrinsics.checkNotNullParameter(protocol, "protocol");
         Intrinsics.checkNotNullParameter(direction, "direction");
         Intrinsics.checkNotNullParameter(networkId, "networkId");
-        Observable<Result<CursoredData<TokenDetailedWithRate>>> subscribeOn = this.swapRepository.getAvailableTokensToSwap(protocol, direction, networkId, str, str2, num).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<CursoredData<TokenDetailedWithRate>>> subscribeOn = this.swapRepository.getAvailableTokensToSwap(protocol, direction, networkId, str, str2, num).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "swapRepository\n         …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -42,21 +42,21 @@ public final class SwapInteractor {
         Intrinsics.checkNotNullParameter(networkId, "networkId");
         Intrinsics.checkNotNullParameter(protocol, "protocol");
         Intrinsics.checkNotNullParameter(tokens, "tokens");
-        Observable<Result<List<TokenApproveData>>> startWith = this.swapRepository.getApproveTokensInfo(protocol, networkId, tokens).subscribeOn(this.schedulersProvider.mo1010io()).startWith((Observable<Result<List<TokenApproveData>>>) Result.Companion.loading$default(Result.Companion, null, 1, null));
+        Observable<Result<List<TokenApproveData>>> startWith = this.swapRepository.getApproveTokensInfo(protocol, networkId, tokens).subscribeOn(this.schedulersProvider.mo1011io()).startWith((Observable<Result<List<TokenApproveData>>>) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "swapRepository\n         …artWith(Result.loading())");
         return startWith;
     }
 
     public final Observable<Result<String>> approveToken(ApproveArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable<Result<String>> subscribeOn = this.swapRepository.approveToken(args).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<String>> subscribeOn = this.swapRepository.approveToken(args).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "swapRepository\n         …(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<String>> swap(SwapArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable<Result<String>> subscribeOn = this.swapRepository.swap(args).subscribeOn(this.schedulersProvider.mo1010io());
+        Observable<Result<String>> subscribeOn = this.swapRepository.swap(args).subscribeOn(this.schedulersProvider.mo1011io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "swapRepository\n         …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -67,7 +67,7 @@ public final class SwapInteractor {
         Intrinsics.checkNotNullParameter(outputToken, "outputToken");
         Intrinsics.checkNotNullParameter(amount, "amount");
         Intrinsics.checkNotNullParameter(tradeType, "tradeType");
-        Observable<Result<CryptoSwapMetadata>> startWith = this.swapRepository.getQuoteToSwap(protocol, inputToken, outputToken, amount, tradeType, f).subscribeOn(this.schedulersProvider.mo1010io()).startWith((Observable<Result<CryptoSwapMetadata>>) Result.Companion.loading$default(Result.Companion, null, 1, null));
+        Observable<Result<CryptoSwapMetadata>> startWith = this.swapRepository.getQuoteToSwap(protocol, inputToken, outputToken, amount, tradeType, f).subscribeOn(this.schedulersProvider.mo1011io()).startWith((Observable<Result<CryptoSwapMetadata>>) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "swapRepository\n         …artWith(Result.loading())");
         return startWith;
     }

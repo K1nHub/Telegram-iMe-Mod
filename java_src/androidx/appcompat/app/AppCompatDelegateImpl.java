@@ -99,7 +99,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
     private static boolean sInstalledExceptionHandler;
     private static final SimpleArrayMap<String, Integer> sLocalNightModes = new SimpleArrayMap<>();
     private static final int[] sWindowBackgroundStyleable;
-    AbstractC0019ActionBar mActionBar;
+    AbstractC0025ActionBar mActionBar;
     private ActionMenuPresenterCallback mActionMenuPresenterCallback;
     ActionMode mActionMode;
     PopupWindow mActionModePopup;
@@ -354,7 +354,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             } catch (IllegalArgumentException unused) {
             }
             if (str != null) {
-                AbstractC0019ActionBar peekSupportActionBar = peekSupportActionBar();
+                AbstractC0025ActionBar peekSupportActionBar = peekSupportActionBar();
                 if (peekSupportActionBar == null) {
                     this.mEnableDefaultActionBarUp = true;
                 } else {
@@ -373,12 +373,12 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
     }
 
     @Override // androidx.appcompat.app.AppCompatDelegate
-    public AbstractC0019ActionBar getSupportActionBar() {
+    public AbstractC0025ActionBar getSupportActionBar() {
         initWindowDecorActionBar();
         return this.mActionBar;
     }
 
-    final AbstractC0019ActionBar peekSupportActionBar() {
+    final AbstractC0025ActionBar peekSupportActionBar() {
         return this.mActionBar;
     }
 
@@ -395,15 +395,15 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             } else if (obj instanceof Dialog) {
                 this.mActionBar = new WindowDecorActionBar((Dialog) this.mHost);
             }
-            AbstractC0019ActionBar abstractC0019ActionBar = this.mActionBar;
-            if (abstractC0019ActionBar != null) {
-                abstractC0019ActionBar.setDefaultDisplayHomeAsUpEnabled(this.mEnableDefaultActionBarUp);
+            AbstractC0025ActionBar abstractC0025ActionBar = this.mActionBar;
+            if (abstractC0025ActionBar != null) {
+                abstractC0025ActionBar.setDefaultDisplayHomeAsUpEnabled(this.mEnableDefaultActionBarUp);
             }
         }
     }
 
     final Context getActionBarThemedContext() {
-        AbstractC0019ActionBar supportActionBar = getSupportActionBar();
+        AbstractC0025ActionBar supportActionBar = getSupportActionBar();
         Context themedContext = supportActionBar != null ? supportActionBar.getThemedContext() : null;
         return themedContext == null ? this.mContext : themedContext;
     }
@@ -412,8 +412,8 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
     public MenuInflater getMenuInflater() {
         if (this.mMenuInflater == null) {
             initWindowDecorActionBar();
-            AbstractC0019ActionBar abstractC0019ActionBar = this.mActionBar;
-            this.mMenuInflater = new SupportMenuInflater(abstractC0019ActionBar != null ? abstractC0019ActionBar.getThemedContext() : this.mContext);
+            AbstractC0025ActionBar abstractC0025ActionBar = this.mActionBar;
+            this.mMenuInflater = new SupportMenuInflater(abstractC0025ActionBar != null ? abstractC0025ActionBar.getThemedContext() : this.mContext);
         }
         return this.mMenuInflater;
     }
@@ -426,7 +426,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
 
     @Override // androidx.appcompat.app.AppCompatDelegate
     public void onConfigurationChanged(Configuration configuration) {
-        AbstractC0019ActionBar supportActionBar;
+        AbstractC0025ActionBar supportActionBar;
         if (this.mHasActionBar && this.mSubDecorInstalled && (supportActionBar = getSupportActionBar()) != null) {
             supportActionBar.onConfigurationChanged(configuration);
         }
@@ -442,7 +442,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
 
     @Override // androidx.appcompat.app.AppCompatDelegate
     public void onStop() {
-        AbstractC0019ActionBar supportActionBar = getSupportActionBar();
+        AbstractC0025ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
             supportActionBar.setShowHideAnimationEnabled(false);
         }
@@ -450,7 +450,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
 
     @Override // androidx.appcompat.app.AppCompatDelegate
     public void onPostResume() {
-        AbstractC0019ActionBar supportActionBar = getSupportActionBar();
+        AbstractC0025ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
             supportActionBar.setShowHideAnimationEnabled(true);
         }
@@ -833,7 +833,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
 
     void onPanelClosed(int i) {
         if (i == 108) {
-            AbstractC0019ActionBar supportActionBar = getSupportActionBar();
+            AbstractC0025ActionBar supportActionBar = getSupportActionBar();
             if (supportActionBar != null) {
                 supportActionBar.dispatchMenuVisibilityChanged(false);
             }
@@ -846,7 +846,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
     }
 
     void onMenuOpened(int i) {
-        AbstractC0019ActionBar supportActionBar;
+        AbstractC0025ActionBar supportActionBar;
         if (i != 108 || (supportActionBar = getSupportActionBar()) == null) {
             return;
         }
@@ -878,7 +878,7 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             actionMode.finish();
         }
         ActionModeCallbackWrapperV9 actionModeCallbackWrapperV9 = new ActionModeCallbackWrapperV9(callback);
-        AbstractC0019ActionBar supportActionBar = getSupportActionBar();
+        AbstractC0025ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar != null) {
             ActionMode startActionMode = supportActionBar.startActionMode(actionModeCallbackWrapperV9);
             this.mActionMode = startActionMode;
@@ -955,12 +955,12 @@ public class AppCompatDelegateImpl extends AppCompatDelegate implements MenuBuil
             actionMode.finish();
             return true;
         }
-        AbstractC0019ActionBar supportActionBar = getSupportActionBar();
+        AbstractC0025ActionBar supportActionBar = getSupportActionBar();
         return supportActionBar != null && supportActionBar.collapseActionView();
     }
 
     boolean onKeyShortcut(int i, KeyEvent keyEvent) {
-        AbstractC0019ActionBar supportActionBar = getSupportActionBar();
+        AbstractC0025ActionBar supportActionBar = getSupportActionBar();
         if (supportActionBar == null || !supportActionBar.onKeyShortcut(i, keyEvent)) {
             PanelFeatureState panelFeatureState = this.mPreparedPanel;
             if (panelFeatureState != null && performPanelShortcut(panelFeatureState, keyEvent.getKeyCode(), keyEvent, 1)) {

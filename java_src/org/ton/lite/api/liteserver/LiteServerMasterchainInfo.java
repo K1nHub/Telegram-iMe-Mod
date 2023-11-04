@@ -16,9 +16,9 @@ import org.ton.api.tonnode.TonNodeBlockIdExt$$serializer;
 import org.ton.api.tonnode.TonNodeZeroStateIdExt;
 import org.ton.api.tonnode.TonNodeZeroStateIdExt$$serializer;
 import org.ton.crypto.HexByteArraySerializer;
-import org.ton.p044tl.TlCodec;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.TlCodec;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: LiteServerMasterchainInfo.kt */
 @Serializable
 /* loaded from: classes6.dex */
@@ -100,53 +100,53 @@ public final class LiteServerMasterchainInfo {
             this();
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public LiteServerMasterchainInfo decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return this.$$delegate_0.decode(reader);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public LiteServerMasterchainInfo decodeBoxed(Input input) {
             Intrinsics.checkNotNullParameter(input, "input");
             return this.$$delegate_0.decodeBoxed(input);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public LiteServerMasterchainInfo decodeBoxed(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return this.$$delegate_0.decodeBoxed(reader);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(Output output, LiteServerMasterchainInfo value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encode(output, (Output) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, LiteServerMasterchainInfo value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encode(writer, value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encodeBoxed(Output output, LiteServerMasterchainInfo value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encodeBoxed(output, (Output) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encodeBoxed(TlWriter writer, LiteServerMasterchainInfo value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encodeBoxed(writer, (TlWriter) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public byte[] encodeToByteArray(LiteServerMasterchainInfo value, boolean z) {
             Intrinsics.checkNotNullParameter(value, "value");
             return this.$$delegate_0.encodeToByteArray(value, z);

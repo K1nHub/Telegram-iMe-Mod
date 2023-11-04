@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-import com.google.android.gms.vision.C0718L;
+import com.google.android.gms.vision.C0724L;
 import java.util.HashMap;
 /* compiled from: com.google.android.gms:play-services-vision-common@@19.1.3 */
 /* loaded from: classes3.dex */
@@ -24,7 +24,7 @@ public final class zzr {
                 return true;
             } catch (UnsatisfiedLinkError e) {
                 if ((intValue & 4) == 0) {
-                    C0718L.m1065e(e, "System.loadLibrary failed: %s", str2);
+                    C0724L.m1066e(e, "System.loadLibrary failed: %s", str2);
                     zzb.put(concat, Integer.valueOf(intValue | 4));
                 }
                 return false;

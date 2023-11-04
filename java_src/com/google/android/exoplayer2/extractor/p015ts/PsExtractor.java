@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.extractor.p015ts;
 
 import android.net.Uri;
 import android.util.SparseArray;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.ParserException;
 import com.google.android.exoplayer2.extractor.Extractor;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
@@ -99,10 +99,10 @@ public final class PsExtractor implements Extractor {
     @Override // com.google.android.exoplayer2.extractor.Extractor
     public void seek(long j, long j2) {
         boolean z = true;
-        boolean z2 = this.timestampAdjuster.getTimestampOffsetUs() == C0479C.TIME_UNSET;
+        boolean z2 = this.timestampAdjuster.getTimestampOffsetUs() == C0485C.TIME_UNSET;
         if (!z2) {
             long firstSampleTimestampUs = this.timestampAdjuster.getFirstSampleTimestampUs();
-            z2 = (firstSampleTimestampUs == C0479C.TIME_UNSET || firstSampleTimestampUs == 0 || firstSampleTimestampUs == j2) ? false : false;
+            z2 = (firstSampleTimestampUs == C0485C.TIME_UNSET || firstSampleTimestampUs == 0 || firstSampleTimestampUs == j2) ? false : false;
         }
         if (z2) {
             this.timestampAdjuster.reset(j2);
@@ -204,7 +204,7 @@ public final class PsExtractor implements Extractor {
             return;
         }
         this.hasOutputSeekMap = true;
-        if (this.durationReader.getDurationUs() != C0479C.TIME_UNSET) {
+        if (this.durationReader.getDurationUs() != C0485C.TIME_UNSET) {
             PsBinarySearchSeeker psBinarySearchSeeker = new PsBinarySearchSeeker(this.durationReader.getScrTimestampAdjuster(), this.durationReader.getDurationUs(), j);
             this.psBinarySearchSeeker = psBinarySearchSeeker;
             this.output.seekMap(psBinarySearchSeeker.getSeekMap());

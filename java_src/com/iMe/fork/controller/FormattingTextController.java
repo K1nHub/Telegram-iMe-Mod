@@ -27,15 +27,15 @@ import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BaseController;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.p042ui.ActionBar.AlertDialog;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Cells.RadioColorCell;
-import org.telegram.p042ui.Components.EditTextCaption;
-import org.telegram.p042ui.Components.TextStyleSpan;
-import org.telegram.p042ui.Components.URLSpanReplacement;
+import org.telegram.p043ui.ActionBar.AlertDialog;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Cells.RadioColorCell;
+import org.telegram.p043ui.Components.EditTextCaption;
+import org.telegram.p043ui.Components.TextStyleSpan;
+import org.telegram.p043ui.Components.URLSpanReplacement;
 import p033j$.util.concurrent.ConcurrentHashMap;
 import p033j$.util.concurrent.ConcurrentMap$EL;
 import p033j$.util.function.Function;
@@ -202,8 +202,8 @@ public final class FormattingTextController extends BaseController implements Ko
     public final AlertDialog createChooseSelectedFormattingPanelType(Context context) {
         Intrinsics.checkNotNullParameter(context, "context");
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(LocaleController.getInternalString(C3630R.string.settings_messages_formatting_title));
-        builder.setNegativeButton(LocaleController.getInternalString(C3630R.string.common_cancel), null);
+        builder.setTitle(LocaleController.getInternalString(C3634R.string.settings_messages_formatting_title));
+        builder.setNegativeButton(LocaleController.getInternalString(C3634R.string.common_cancel), null);
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         FormattingPanelType[] values = FormattingPanelType.values();
@@ -212,7 +212,7 @@ public final class FormattingTextController extends BaseController implements Ko
             FormattingPanelType formattingPanelType = values[i];
             RadioColorCell radioColorCell = new RadioColorCell(context);
             radioColorCell.setTag(formattingPanelType);
-            radioColorCell.setPadding(AndroidUtilities.m102dp(4), 0, AndroidUtilities.m102dp(4), 0);
+            radioColorCell.setPadding(AndroidUtilities.m104dp(4), 0, AndroidUtilities.m104dp(4), 0);
             radioColorCell.setCheckColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
             radioColorCell.setTextAndValue(formattingPanelType.getTitle(), this.formattingPanelType == formattingPanelType);
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.controller.FormattingTextController$$ExternalSyntheticLambda0

@@ -93,13 +93,13 @@ public final class LazyJavaClassDescriptor extends ClassDescriptorBase implement
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
     /* renamed from: getCompanionObjectDescriptor */
-    public ClassDescriptor mo2039getCompanionObjectDescriptor() {
+    public ClassDescriptor mo2044getCompanionObjectDescriptor() {
         return null;
     }
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.ClassDescriptor
     /* renamed from: getUnsubstitutedPrimaryConstructor */
-    public ClassConstructorDescriptor mo2040getUnsubstitutedPrimaryConstructor() {
+    public ClassConstructorDescriptor mo2045getUnsubstitutedPrimaryConstructor() {
         return null;
     }
 
@@ -350,8 +350,8 @@ public final class LazyJavaClassDescriptor extends ClassDescriptorBase implement
             Collection<JavaClassifierType> permittedTypes = this.jClass.getPermittedTypes();
             ArrayList arrayList = new ArrayList();
             for (JavaClassifierType javaClassifierType : permittedTypes) {
-                ClassifierDescriptor mo2046getDeclarationDescriptor = this.f1365c.getTypeResolver().transformJavaType(javaClassifierType, attributes$default).getConstructor().mo2046getDeclarationDescriptor();
-                ClassDescriptor classDescriptor = mo2046getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2046getDeclarationDescriptor : null;
+                ClassifierDescriptor mo2051getDeclarationDescriptor = this.f1365c.getTypeResolver().transformJavaType(javaClassifierType, attributes$default).getConstructor().mo2051getDeclarationDescriptor();
+                ClassDescriptor classDescriptor = mo2051getDeclarationDescriptor instanceof ClassDescriptor ? (ClassDescriptor) mo2051getDeclarationDescriptor : null;
                 if (classDescriptor != null) {
                     arrayList.add(classDescriptor);
                 }
@@ -422,7 +422,7 @@ public final class LazyJavaClassDescriptor extends ClassDescriptorBase implement
                 }
                 JavaClassifierType next = it.next();
                 KotlinType enhanceSuperType = LazyJavaClassDescriptor.this.f1365c.getComponents().getSignatureEnhancement().enhanceSuperType(LazyJavaClassDescriptor.this.f1365c.getTypeResolver().transformJavaType(next, JavaTypeAttributesKt.toAttributes$default(TypeUsage.SUPERTYPE, false, false, null, 7, null)), LazyJavaClassDescriptor.this.f1365c);
-                if (enhanceSuperType.getConstructor().mo2046getDeclarationDescriptor() instanceof NotFoundClasses.MockClassDescriptor) {
+                if (enhanceSuperType.getConstructor().mo2051getDeclarationDescriptor() instanceof NotFoundClasses.MockClassDescriptor) {
                     arrayList2.add(next);
                 }
                 if (!Intrinsics.areEqual(enhanceSuperType.getConstructor(), purelyImplementedSupertype != null ? purelyImplementedSupertype.getConstructor() : null) && !KotlinBuiltIns.isAnyOrNullableAny(enhanceSuperType)) {
@@ -434,14 +434,14 @@ public final class LazyJavaClassDescriptor extends ClassDescriptorBase implement
             CollectionsKt.addIfNotNull(arrayList, purelyImplementedSupertype);
             if (!arrayList2.isEmpty()) {
                 ErrorReporter errorReporter = LazyJavaClassDescriptor.this.f1365c.getComponents().getErrorReporter();
-                ClassDescriptor mo2046getDeclarationDescriptor = mo2046getDeclarationDescriptor();
+                ClassDescriptor mo2051getDeclarationDescriptor = mo2051getDeclarationDescriptor();
                 collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(arrayList2, 10);
                 ArrayList arrayList3 = new ArrayList(collectionSizeOrDefault);
                 for (JavaType javaType : arrayList2) {
                     Intrinsics.checkNotNull(javaType, "null cannot be cast to non-null type org.jetbrains.kotlin.load.java.structure.JavaClassifierType");
                     arrayList3.add(((JavaClassifierType) javaType).getPresentableText());
                 }
-                errorReporter.reportIncompleteHierarchy(mo2046getDeclarationDescriptor, arrayList3);
+                errorReporter.reportIncompleteHierarchy(mo2051getDeclarationDescriptor, arrayList3);
             }
             if (!arrayList.isEmpty()) {
                 list = CollectionsKt___CollectionsKt.toList(arrayList);
@@ -566,11 +566,11 @@ public final class LazyJavaClassDescriptor extends ClassDescriptorBase implement
             Annotations annotations = LazyJavaClassDescriptor.this.getAnnotations();
             FqName PURELY_IMPLEMENTS_ANNOTATION = JvmAnnotationNames.PURELY_IMPLEMENTS_ANNOTATION;
             Intrinsics.checkNotNullExpressionValue(PURELY_IMPLEMENTS_ANNOTATION, "PURELY_IMPLEMENTS_ANNOTATION");
-            AnnotationDescriptor mo2041findAnnotation = annotations.mo2041findAnnotation(PURELY_IMPLEMENTS_ANNOTATION);
-            if (mo2041findAnnotation == null) {
+            AnnotationDescriptor mo2046findAnnotation = annotations.mo2046findAnnotation(PURELY_IMPLEMENTS_ANNOTATION);
+            if (mo2046findAnnotation == null) {
                 return null;
             }
-            Object singleOrNull = kotlin.collections.CollectionsKt.singleOrNull(mo2041findAnnotation.getAllValueArguments().values());
+            Object singleOrNull = kotlin.collections.CollectionsKt.singleOrNull(mo2046findAnnotation.getAllValueArguments().values());
             StringValue stringValue = singleOrNull instanceof StringValue ? (StringValue) singleOrNull : null;
             if (stringValue == null || (value = stringValue.getValue()) == null || !FqNamesUtilKt.isValidJavaFqName(value)) {
                 return null;
@@ -586,7 +586,7 @@ public final class LazyJavaClassDescriptor extends ClassDescriptorBase implement
 
         @Override // kotlin.reflect.jvm.internal.impl.types.ClassifierBasedTypeConstructor, kotlin.reflect.jvm.internal.impl.types.TypeConstructor
         /* renamed from: getDeclarationDescriptor */
-        public ClassDescriptor mo2046getDeclarationDescriptor() {
+        public ClassDescriptor mo2051getDeclarationDescriptor() {
             return LazyJavaClassDescriptor.this;
         }
 

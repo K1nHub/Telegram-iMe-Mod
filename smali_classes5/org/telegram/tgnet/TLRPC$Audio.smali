@@ -29,7 +29,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 11161
+    .line 10911
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -44,7 +44,7 @@
 
     goto :goto_0
 
-    .line 11177
+    .line 10927
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_audioEmpty_layer45;
 
@@ -52,7 +52,7 @@
 
     goto :goto_0
 
-    .line 11186
+    .line 10936
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_audioEncrypted;
 
@@ -60,7 +60,7 @@
 
     goto :goto_0
 
-    .line 11183
+    .line 10933
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_audio_old;
 
@@ -68,7 +68,7 @@
 
     goto :goto_0
 
-    .line 11180
+    .line 10930
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_audio_layer45;
 
@@ -76,7 +76,7 @@
 
     goto :goto_0
 
-    .line 11189
+    .line 10939
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_audio_old2;
 
@@ -89,7 +89,7 @@
 
     goto :goto_1
 
-    .line 11193
+    .line 10943
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -119,7 +119,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 11196
+    .line 10946
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

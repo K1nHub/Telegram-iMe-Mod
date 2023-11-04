@@ -8,13 +8,13 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p042ui.Cells.StickerSetCell;
+import org.telegram.p043ui.Cells.StickerSetCell;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TwitterInviteProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TwitterInviteProvider$convert$1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class TwitterInviteProvider$convert$1 extends Lambda implements Function1<FrameLayout, Unit> {
     final /* synthetic */ TwitterInviteItem $item;
     final /* synthetic */ TwitterInviteProvider this$0;
@@ -43,8 +43,8 @@ public final class TwitterInviteProvider$convert$1 extends Lambda implements Fun
         final TwitterInviteProvider twitterInviteProvider = this.this$0;
         String nickname = twitterInviteItem.getNickname();
         resourceManager = twitterInviteProvider.resourceManager;
-        stickerSetCell.setText(nickname, resourceManager.getString(C3630R.string.twitter_search_invite_subtitle), C3630R.C3632drawable.fork_drawer_social_twitter, true);
-        stickerSetCell.setCustomButtonText(LocaleController.getString("Invite", C3630R.string.Invite));
+        stickerSetCell.setText(nickname, resourceManager.getString(C3634R.string.twitter_search_invite_subtitle), C3634R.C3636drawable.fork_drawer_social_twitter, true);
+        stickerSetCell.setCustomButtonText(LocaleController.getString("Invite", C3634R.string.Invite));
         stickerSetCell.setCustomButtonAction(new Callbacks$Callback() { // from class: com.iMe.ui.adapter.provider.TwitterInviteProvider$convert$1$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {

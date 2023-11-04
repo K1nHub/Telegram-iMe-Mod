@@ -45,7 +45,7 @@ public final class UnsignedTypes {
         CollectionsKt___CollectionsKt.toSet(arrayList2);
         arrayClassIdToUnsignedClassId = new HashMap<>();
         unsignedClassIdToArrayClassId = new HashMap<>();
-        MapsKt__MapsKt.hashMapOf(TuplesKt.m144to(UnsignedArrayType.UBYTEARRAY, Name.identifier("ubyteArrayOf")), TuplesKt.m144to(UnsignedArrayType.USHORTARRAY, Name.identifier("ushortArrayOf")), TuplesKt.m144to(UnsignedArrayType.UINTARRAY, Name.identifier("uintArrayOf")), TuplesKt.m144to(UnsignedArrayType.ULONGARRAY, Name.identifier("ulongArrayOf")));
+        MapsKt__MapsKt.hashMapOf(TuplesKt.m146to(UnsignedArrayType.UBYTEARRAY, Name.identifier("ubyteArrayOf")), TuplesKt.m146to(UnsignedArrayType.USHORTARRAY, Name.identifier("ushortArrayOf")), TuplesKt.m146to(UnsignedArrayType.UINTARRAY, Name.identifier("uintArrayOf")), TuplesKt.m146to(UnsignedArrayType.ULONGARRAY, Name.identifier("ulongArrayOf")));
         UnsignedType[] values4 = UnsignedType.values();
         LinkedHashSet linkedHashSet = new LinkedHashSet();
         for (UnsignedType unsignedType2 : values4) {
@@ -69,12 +69,12 @@ public final class UnsignedTypes {
     }
 
     public static final boolean isUnsignedType(KotlinType type) {
-        ClassifierDescriptor mo2046getDeclarationDescriptor;
+        ClassifierDescriptor mo2051getDeclarationDescriptor;
         Intrinsics.checkNotNullParameter(type, "type");
-        if (TypeUtils.noExpectedType(type) || (mo2046getDeclarationDescriptor = type.getConstructor().mo2046getDeclarationDescriptor()) == null) {
+        if (TypeUtils.noExpectedType(type) || (mo2051getDeclarationDescriptor = type.getConstructor().mo2051getDeclarationDescriptor()) == null) {
             return false;
         }
-        return INSTANCE.isUnsignedClass(mo2046getDeclarationDescriptor);
+        return INSTANCE.isUnsignedClass(mo2051getDeclarationDescriptor);
     }
 
     public final boolean isUnsignedClass(DeclarationDescriptor descriptor) {

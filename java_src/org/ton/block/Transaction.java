@@ -38,7 +38,7 @@ public final class Transaction implements TlbObject {
     private final AccountStatus endStatus;
 
     /* renamed from: lt */
-    private final long f2040lt;
+    private final long f2052lt;
     private final int now;
     private final AccountStatus origStatus;
     private final int outMsgCnt;
@@ -46,7 +46,7 @@ public final class Transaction implements TlbObject {
     private final long prevTransLt;
 
     /* renamed from: r1 */
-    private final CellRef<TransactionAux> f2041r1;
+    private final CellRef<TransactionAux> f2053r1;
     private final CellRef<HashUpdate> stateUpdate;
     private final CurrencyCollection totalFees;
 
@@ -64,13 +64,13 @@ public final class Transaction implements TlbObject {
         }
         if (obj instanceof Transaction) {
             Transaction transaction = (Transaction) obj;
-            return Intrinsics.areEqual(this.accountAddr, transaction.accountAddr) && this.f2040lt == transaction.f2040lt && Intrinsics.areEqual(this.prevTransHash, transaction.prevTransHash) && this.prevTransLt == transaction.prevTransLt && this.now == transaction.now && this.outMsgCnt == transaction.outMsgCnt && this.origStatus == transaction.origStatus && this.endStatus == transaction.endStatus && Intrinsics.areEqual(this.f2041r1, transaction.f2041r1) && Intrinsics.areEqual(this.totalFees, transaction.totalFees) && Intrinsics.areEqual(this.stateUpdate, transaction.stateUpdate) && Intrinsics.areEqual(this.description, transaction.description);
+            return Intrinsics.areEqual(this.accountAddr, transaction.accountAddr) && this.f2052lt == transaction.f2052lt && Intrinsics.areEqual(this.prevTransHash, transaction.prevTransHash) && this.prevTransLt == transaction.prevTransLt && this.now == transaction.now && this.outMsgCnt == transaction.outMsgCnt && this.origStatus == transaction.origStatus && this.endStatus == transaction.endStatus && Intrinsics.areEqual(this.f2053r1, transaction.f2053r1) && Intrinsics.areEqual(this.totalFees, transaction.totalFees) && Intrinsics.areEqual(this.stateUpdate, transaction.stateUpdate) && Intrinsics.areEqual(this.description, transaction.description);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((this.accountAddr.hashCode() * 31) + ULong.m1991hashCodeimpl(this.f2040lt)) * 31) + this.prevTransHash.hashCode()) * 31) + ULong.m1991hashCodeimpl(this.prevTransLt)) * 31) + UInt.m1969hashCodeimpl(this.now)) * 31) + this.outMsgCnt) * 31) + this.origStatus.hashCode()) * 31) + this.endStatus.hashCode()) * 31) + this.f2041r1.hashCode()) * 31) + this.totalFees.hashCode()) * 31) + this.stateUpdate.hashCode()) * 31) + this.description.hashCode();
+        return (((((((((((((((((((((this.accountAddr.hashCode() * 31) + ULong.m1996hashCodeimpl(this.f2052lt)) * 31) + this.prevTransHash.hashCode()) * 31) + ULong.m1996hashCodeimpl(this.prevTransLt)) * 31) + UInt.m1974hashCodeimpl(this.now)) * 31) + this.outMsgCnt) * 31) + this.origStatus.hashCode()) * 31) + this.endStatus.hashCode()) * 31) + this.f2053r1.hashCode()) * 31) + this.totalFees.hashCode()) * 31) + this.stateUpdate.hashCode()) * 31) + this.description.hashCode();
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -79,14 +79,14 @@ public final class Transaction implements TlbObject {
             PluginExceptionsKt.throwMissingFieldException(i, 4095, Transaction$$serializer.INSTANCE.getDescriptor());
         }
         this.accountAddr = bitString;
-        this.f2040lt = uLong.m1993unboximpl();
+        this.f2052lt = uLong.m1998unboximpl();
         this.prevTransHash = bitString2;
-        this.prevTransLt = uLong2.m1993unboximpl();
-        this.now = uInt.m1971unboximpl();
+        this.prevTransLt = uLong2.m1998unboximpl();
+        this.now = uInt.m1976unboximpl();
         this.outMsgCnt = i2;
         this.origStatus = accountStatus;
         this.endStatus = accountStatus2;
-        this.f2041r1 = cellRef;
+        this.f2053r1 = cellRef;
         this.totalFees = currencyCollection;
         this.stateUpdate = cellRef2;
         this.description = cellRef3;
@@ -110,14 +110,14 @@ public final class Transaction implements TlbObject {
         Intrinsics.checkNotNullParameter(stateUpdate, "stateUpdate");
         Intrinsics.checkNotNullParameter(description, "description");
         this.accountAddr = accountAddr;
-        this.f2040lt = j;
+        this.f2052lt = j;
         this.prevTransHash = prevTransHash;
         this.prevTransLt = j2;
         this.now = i;
         this.outMsgCnt = i2;
         this.origStatus = origStatus;
         this.endStatus = endStatus;
-        this.f2041r1 = r1;
+        this.f2053r1 = r1;
         this.totalFees = totalFees;
         this.stateUpdate = stateUpdate;
         this.description = description;
@@ -135,14 +135,14 @@ public final class Transaction implements TlbObject {
         FiftHexBitStringSerializer fiftHexBitStringSerializer = FiftHexBitStringSerializer.INSTANCE;
         compositeEncoder.encodeSerializableElement(serialDescriptor, 0, fiftHexBitStringSerializer, transaction.accountAddr);
         ULongSerializer uLongSerializer = ULongSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uLongSerializer, ULong.m1988boximpl(transaction.f2040lt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uLongSerializer, ULong.m1993boximpl(transaction.f2052lt));
         compositeEncoder.encodeSerializableElement(serialDescriptor, 2, fiftHexBitStringSerializer, transaction.prevTransHash);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, uLongSerializer, ULong.m1988boximpl(transaction.prevTransLt));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 4, UIntSerializer.INSTANCE, UInt.m1966boximpl(transaction.now));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 3, uLongSerializer, ULong.m1993boximpl(transaction.prevTransLt));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 4, UIntSerializer.INSTANCE, UInt.m1971boximpl(transaction.now));
         compositeEncoder.encodeIntElement(serialDescriptor, 5, transaction.outMsgCnt);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 6, kSerializerArr[6], transaction.origStatus);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 7, kSerializerArr[7], transaction.endStatus);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 8, kSerializerArr[8], transaction.f2041r1);
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 8, kSerializerArr[8], transaction.f2053r1);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 9, CurrencyCollection$$serializer.INSTANCE, transaction.totalFees);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 10, kSerializerArr[10], transaction.stateUpdate);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 11, kSerializerArr[11], transaction.description);
@@ -154,7 +154,7 @@ public final class Transaction implements TlbObject {
 
     /* renamed from: lt */
     public final long m36lt() {
-        return this.f2040lt;
+        return this.f2052lt;
     }
 
     public final BitString prevTransHash() {
@@ -183,7 +183,7 @@ public final class Transaction implements TlbObject {
 
     /* renamed from: r1 */
     public final CellRef<TransactionAux> m35r1() {
-        return this.f2041r1;
+        return this.f2053r1;
     }
 
     public final CurrencyCollection totalFees() {
@@ -203,14 +203,14 @@ public final class Transaction implements TlbObject {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("transaction");
         open.field("account_addr", this.accountAddr);
-        open.field("lt", ULong.m1988boximpl(this.f2040lt));
+        open.field("lt", ULong.m1993boximpl(this.f2052lt));
         open.field("prev_trans_hash", this.prevTransHash);
-        open.field("prev_trans_lt", ULong.m1988boximpl(this.prevTransLt));
-        open.field("now", UInt.m1966boximpl(this.now));
+        open.field("prev_trans_lt", ULong.m1993boximpl(this.prevTransLt));
+        open.field("now", UInt.m1971boximpl(this.now));
         open.field("outmsg_cnt", Integer.valueOf(this.outMsgCnt));
         open.field("orig_status", this.origStatus);
         open.field("end_status", this.endStatus);
-        open.field(this.f2041r1);
+        open.field(this.f2053r1);
         open.field("total_fees", this.totalFees);
         open.field("state_update", this.stateUpdate);
         open.field("description", this.description);

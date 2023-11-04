@@ -53,7 +53,7 @@
         }
     .end annotation
 
-    const-string v0, "job"
+    const-string/jumbo v0, "job"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

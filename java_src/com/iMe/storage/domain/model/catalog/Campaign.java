@@ -78,7 +78,7 @@ public final class Campaign {
     }
 
     public int hashCode() {
-        return (((((((((((((((this.category.hashCode() * 31) + this.channel.hashCode()) * 31) + this.countries.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.f339id)) * 31) + this.invalidReason.hashCode()) * 31) + this.language.hashCode()) * 31) + this.status.hashCode()) * 31) + this.tags.hashCode();
+        return (((((((((((((((this.category.hashCode() * 31) + this.channel.hashCode()) * 31) + this.countries.hashCode()) * 31) + this.createdAt.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.f339id)) * 31) + this.invalidReason.hashCode()) * 31) + this.language.hashCode()) * 31) + this.status.hashCode()) * 31) + this.tags.hashCode();
     }
 
     public String toString() {

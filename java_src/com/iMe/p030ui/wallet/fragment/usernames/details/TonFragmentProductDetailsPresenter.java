@@ -15,14 +15,14 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
 import p033j$.util.DesugarTimeZone;
 import timber.log.Timber;
 /* compiled from: TonFragmentProductDetailsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.fragment.usernames.details.TonFragmentProductDetailsPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class TonFragmentProductDetailsPresenter extends BasePresenter<TonFragmentProductDetailsView> {
     private final long expiresAt;
     private final TonFragmentItem.Product productItem;
@@ -49,7 +49,7 @@ public final class TonFragmentProductDetailsPresenter extends BasePresenter<TonF
         TonFragmentItem.Product product = this.productItem;
         ((TonFragmentProductDetailsView) getViewState()).renderScreenData(product.getTitle(), product.getUsername(), product.getPriceText());
         if (this.expiresAt < DateExtKt.now()) {
-            String string = LocaleController.getString("Expired", C3630R.string.Expired);
+            String string = LocaleController.getString("Expired", C3634R.string.Expired);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"Expired\", R.string.Expired)");
             ((TonFragmentProductDetailsView) getViewState()).renderTimeLeft(string);
             return;
@@ -59,7 +59,7 @@ public final class TonFragmentProductDetailsPresenter extends BasePresenter<TonF
     }
 
     private final void subscribeToTimeLeftUpdates() {
-        Observable<Long> observeOn = Observable.interval(1L, TimeUnit.SECONDS).subscribeOn(this.schedulersProvider.mo1010io()).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<Long> observeOn = Observable.interval(1L, TimeUnit.SECONDS).subscribeOn(this.schedulersProvider.mo1011io()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "interval(1, TimeUnit.SEC…(schedulersProvider.ui())");
         Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Long, Unit>() { // from class: com.iMe.ui.wallet.fragment.usernames.details.TonFragmentProductDetailsPresenter$subscribeToTimeLeftUpdates$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -68,12 +68,12 @@ public final class TonFragmentProductDetailsPresenter extends BasePresenter<TonF
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Long l) {
-                m1715invoke(l);
+                m1720invoke(l);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1715invoke(Long it) {
+            public final void m1720invoke(Long it) {
                 long j;
                 String formattedTimeLeft;
                 Intrinsics.checkNotNullExpressionValue(it, "it");
@@ -118,7 +118,7 @@ public final class TonFragmentProductDetailsPresenter extends BasePresenter<TonF
     public final String getFormattedTimeLeft() {
         long now = this.expiresAt - DateExtKt.now();
         if (now <= 0) {
-            String string = LocaleController.getString("Expired", C3630R.string.Expired);
+            String string = LocaleController.getString("Expired", C3634R.string.Expired);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"Expired\", R.string.Expired)");
             return string;
         }

@@ -1055,7 +1055,7 @@
 
     check-cast v5, Lkotlin/reflect/jvm/internal/impl/name/Name;
 
-    const-string v6, "it"
+    const-string/jumbo v6, "it"
 
     .line 486
     invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -1507,7 +1507,7 @@
 
     move-result-object v1
 
-    const-string v4, "klass.contextReceivers"
+    const-string/jumbo v4, "klass.contextReceivers"
 
     invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1520,7 +1520,7 @@
 
     move-result-object v1
 
-    const-string v4, "klass.visibility"
+    const-string/jumbo v4, "klass.visibility"
 
     invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1570,7 +1570,7 @@
 
     move-result-object v1
 
-    const-string v4, "klass.modality"
+    const-string/jumbo v4, "klass.modality"
 
     invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1780,7 +1780,7 @@
 
     move-result-object v0
 
-    const-string v1, "klass.declaredTypeParameters"
+    const-string/jumbo v1, "klass.declaredTypeParameters"
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2165,7 +2165,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "kotlin.Array<"
+    const-string/jumbo v4, "kotlin.Array<"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -4733,7 +4733,7 @@
 
     check-cast p1, Lkotlin/reflect/jvm/internal/impl/descriptors/ValueParameterDescriptor;
 
-    const-string v0, "it"
+    const-string/jumbo v0, "it"
 
     .line 980
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -5003,7 +5003,7 @@
 
     move-result-object v0
 
-    const-string p1, "klass.typeConstructor.supertypes"
+    const-string/jumbo p1, "klass.typeConstructor.supertypes"
 
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -6247,7 +6247,7 @@
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v6, "it"
+    const-string/jumbo v6, "it"
 
     invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -7280,7 +7280,7 @@
 .method public renderClassifierName(Lkotlin/reflect/jvm/internal/impl/descriptors/ClassifierDescriptor;)Ljava/lang/String;
     .locals 1
 
-    const-string v0, "klass"
+    const-string/jumbo v0, "klass"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

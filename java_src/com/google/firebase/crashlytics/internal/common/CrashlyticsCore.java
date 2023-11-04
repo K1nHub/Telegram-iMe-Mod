@@ -70,14 +70,14 @@ public class CrashlyticsCore {
             checkForPreviousCrash();
             this.controller.enableExceptionHandling(Thread.getDefaultUncaughtExceptionHandler(), settingsDataProvider);
             if (didPreviousInitializationFail && CommonUtils.canTryConnection(this.context)) {
-                Logger.getLogger().m1038d("Crashlytics did not finish previous background initialization. Initializing synchronously.");
+                Logger.getLogger().m1039d("Crashlytics did not finish previous background initialization. Initializing synchronously.");
                 finishInitSynchronously(settingsDataProvider);
                 return false;
             }
-            Logger.getLogger().m1038d("Successfully configured exception handler.");
+            Logger.getLogger().m1039d("Successfully configured exception handler.");
             return true;
         } catch (Exception e) {
-            Logger.getLogger().m1035e("Crashlytics was not started due to an exception during initialization", e);
+            Logger.getLogger().m1036e("Crashlytics was not started due to an exception during initialization", e);
             this.controller = null;
             return false;
         }
@@ -104,15 +104,15 @@ public class CrashlyticsCore {
                 }
             });
             if (!settingsDataProvider.getSettings().getFeaturesData().collectReports) {
-                Logger.getLogger().m1038d("Collection of crash reports disabled in Crashlytics settings.");
+                Logger.getLogger().m1039d("Collection of crash reports disabled in Crashlytics settings.");
                 return Tasks.forException(new RuntimeException("Collection of crash reports disabled in Crashlytics settings."));
             }
             if (!this.controller.finalizeSessions(settingsDataProvider)) {
-                Logger.getLogger().m1030w("Previous sessions could not be finalized.");
+                Logger.getLogger().m1031w("Previous sessions could not be finalized.");
             }
             return this.controller.submitAllReports(settingsDataProvider.getAppSettings());
         } catch (Exception e) {
-            Logger.getLogger().m1035e("Crashlytics encountered a problem during asynchronous initialization.", e);
+            Logger.getLogger().m1036e("Crashlytics encountered a problem during asynchronous initialization.", e);
             return Tasks.forException(e);
         } finally {
             markInitializationComplete();
@@ -134,22 +134,22 @@ public class CrashlyticsCore {
                 CrashlyticsCore.this.doBackgroundInitialization(settingsDataProvider);
             }
         });
-        Logger.getLogger().m1038d("Crashlytics detected incomplete initialization on previous app launch. Will initialize synchronously.");
+        Logger.getLogger().m1039d("Crashlytics detected incomplete initialization on previous app launch. Will initialize synchronously.");
         try {
             submit.get(4L, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
-            Logger.getLogger().m1035e("Crashlytics was interrupted during initialization.", e);
+            Logger.getLogger().m1036e("Crashlytics was interrupted during initialization.", e);
         } catch (ExecutionException e2) {
-            Logger.getLogger().m1035e("Crashlytics encountered a problem during initialization.", e2);
+            Logger.getLogger().m1036e("Crashlytics encountered a problem during initialization.", e2);
         } catch (TimeoutException e3) {
-            Logger.getLogger().m1035e("Crashlytics timed out during initialization.", e3);
+            Logger.getLogger().m1036e("Crashlytics timed out during initialization.", e3);
         }
     }
 
     void markInitializationStarted() {
         this.backgroundWorker.checkRunningOnThread();
         this.initializationMarker.create();
-        Logger.getLogger().m1032v("Initialization marker file was created.");
+        Logger.getLogger().m1033v("Initialization marker file was created.");
     }
 
     void markInitializationComplete() {
@@ -160,11 +160,11 @@ public class CrashlyticsCore {
                 try {
                     boolean remove = CrashlyticsCore.this.initializationMarker.remove();
                     if (!remove) {
-                        Logger.getLogger().m1030w("Initialization marker file was not properly removed.");
+                        Logger.getLogger().m1031w("Initialization marker file was not properly removed.");
                     }
                     return Boolean.valueOf(remove);
                 } catch (Exception e) {
-                    Logger.getLogger().m1035e("Problem encountered deleting Crashlytics initialization marker.", e);
+                    Logger.getLogger().m1036e("Problem encountered deleting Crashlytics initialization marker.", e);
                     return Boolean.FALSE;
                 }
             }
@@ -190,7 +190,7 @@ public class CrashlyticsCore {
 
     static boolean isBuildIdValid(String str, boolean z) {
         if (!z) {
-            Logger.getLogger().m1032v("Configured not to require a build ID.");
+            Logger.getLogger().m1033v("Configured not to require a build ID.");
             return true;
         } else if (TextUtils.isEmpty(str)) {
             Log.e("FirebaseCrashlytics", ".");

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$49\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,898:1\n44#2:899\n129#3,5:900\n129#3,5:905\n129#3,5:910\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$49\n*L\n599#1:899\n602#1:900,5\n603#1:905,5\n604#1:910,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$49\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,901:1\n44#2:902\n129#3,5:903\n129#3,5:908\n129#3,5:913\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$49\n*L\n602#1:902\n605#1:903,5\n606#1:908,5\n607#1:913,5\n*E\n"
 .end annotation
 
 
@@ -100,7 +100,7 @@
 
     move-result-object v0
 
-    .line 602
+    .line 605
     check-cast v0, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
@@ -114,7 +114,7 @@
 
     move-result-object v2
 
-    .line 603
+    .line 606
     check-cast v2, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     .line 133
@@ -128,10 +128,10 @@
 
     move-result-object p1
 
-    .line 604
+    .line 607
     check-cast p1, Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;
 
-    .line 600
+    .line 603
     new-instance v1, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;
 
     invoke-direct {v1, p2, p1, v2, v0}, Lcom/iMe/ui/wallet/swap/fee/WalletSwapFeePresenter;-><init>(Lcom/iMe/model/wallet/crypto/swap/SwapFeeScreenArgs;Lcom/iMe/storage/domain/interactor/crypto/swap/SwapInteractor;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
@@ -142,7 +142,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 599
+    .line 602
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

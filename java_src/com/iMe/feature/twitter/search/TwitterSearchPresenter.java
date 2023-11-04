@@ -133,7 +133,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
                 subscribeToQueryChanges$lambda$4 = TwitterSearchPresenter.subscribeToQueryChanges$lambda$4(Function1.this, obj);
                 return subscribeToQueryChanges$lambda$4;
             }
-        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo1009ui());
+        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo1010ui());
         final Function1<String, Boolean> function1 = new Function1<String, Boolean>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$subscribeToQueryChanges$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -163,7 +163,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
                 subscribeToQueryChanges$lambda$5 = TwitterSearchPresenter.subscribeToQueryChanges$lambda$5(Function1.this, obj);
                 return subscribeToQueryChanges$lambda$5;
             }
-        }).observeOn(this.schedulersProvider.mo1010io());
+        }).observeOn(this.schedulersProvider.mo1011io());
         final Function1<String, ObservableSource<? extends Result<? extends List<? extends BaseNode>>>> function12 = new Function1<String, ObservableSource<? extends Result<? extends List<? extends BaseNode>>>>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$subscribeToQueryChanges$3
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -190,7 +190,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
                 subscribeToQueryChanges$lambda$6 = TwitterSearchPresenter.subscribeToQueryChanges$lambda$6(Function1.this, obj);
                 return subscribeToQueryChanges$lambda$6;
             }
-        }).subscribeOn(this.schedulersProvider.mo1010io()).observeOn(this.schedulersProvider.mo1009ui());
+        }).subscribeOn(this.schedulersProvider.mo1011io()).observeOn(this.schedulersProvider.mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn3, "private fun subscribeToQ…     .autoDispose()\n    }");
         Disposable subscribe = observeOn3.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<Result<? extends List<? extends BaseNode>>, Unit>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$subscribeToQueryChanges$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -199,12 +199,12 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(Result<? extends List<? extends BaseNode>> result) {
-                m1430invoke(result);
+                m1435invoke(result);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1430invoke(Result<? extends List<? extends BaseNode>> it) {
+            public final void m1435invoke(Result<? extends List<? extends BaseNode>> it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 Result<? extends List<? extends BaseNode>> result = it;
                 if (result instanceof Result.Success) {
@@ -335,7 +335,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
             Intrinsics.checkNotNullExpressionValue(just, "just(this)");
             return just;
         }
-        Observable<List<TLRPC$User>> observeOn = this.telegramApi.getUsersByIds(arrayList).observeOn(this.schedulersProvider.mo1009ui());
+        Observable<List<TLRPC$User>> observeOn = this.telegramApi.getUsersByIds(arrayList).observeOn(this.schedulersProvider.mo1010ui());
         final Function1<List<? extends TLRPC$User>, Result<? extends List<? extends BaseNode>>> function1 = new Function1<List<? extends TLRPC$User>, Result<? extends List<? extends BaseNode>>>() { // from class: com.iMe.feature.twitter.search.TwitterSearchPresenter$flatMapSearchResult$2
             /* JADX INFO: Access modifiers changed from: package-private */
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -359,7 +359,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
                         }
                         obj = it.next();
                         Long telegramUserId2 = ((TwitterUserInfo) obj).getTelegramUserId();
-                        long j = tLRPC$User.f1762id;
+                        long j = tLRPC$User.f1749id;
                         if (telegramUserId2 != null && telegramUserId2.longValue() == j) {
                             z = true;
                             continue;

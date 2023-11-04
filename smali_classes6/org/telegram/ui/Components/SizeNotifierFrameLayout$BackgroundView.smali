@@ -22,10 +22,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/content/Context;)V
     .locals 0
 
-    .line 149
+    .line 155
     iput-object p1, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
-    .line 150
+    .line 156
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -40,7 +40,7 @@
 
     move-object/from16 v1, p1
 
-    .line 155
+    .line 161
     iget-object v2, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$000(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)Landroid/graphics/drawable/Drawable;
@@ -59,7 +59,7 @@
 
     goto/16 :goto_c
 
-    .line 158
+    .line 164
     :cond_0
     iget-object v2, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -67,14 +67,14 @@
 
     move-result-object v2
 
-    .line 159
+    .line 165
     iget-object v3, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->getNewDrawableMotion()Z
 
     move-result v3
 
-    .line 160
+    .line 166
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$000(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)Landroid/graphics/drawable/Drawable;
@@ -87,14 +87,14 @@
 
     if-eqz v2, :cond_4
 
-    .line 161
+    .line 167
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->isAnimatingColor()Z
 
     move-result v4
 
     if-eqz v4, :cond_1
 
-    .line 162
+    .line 168
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$000(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)Landroid/graphics/drawable/Drawable;
@@ -103,7 +103,7 @@
 
     invoke-static {v4, v6}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$202(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 163
+    .line 169
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$400(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)Z
@@ -112,31 +112,31 @@
 
     invoke-static {v4, v6}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$302(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Z)Z
 
-    .line 165
+    .line 171
     :cond_1
     instance-of v4, v2, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
     if-eqz v4, :cond_2
 
-    .line 166
+    .line 172
     move-object v4, v2
 
     check-cast v4, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    .line 167
+    .line 173
     iget-object v6, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     iget-object v6, v6, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->backgroundView:Landroid/view/View;
 
     invoke-virtual {v4, v6}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setParentView(Landroid/view/View;)V
 
-    .line 169
+    .line 175
     :cond_2
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4, v2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$002(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 170
+    .line 176
     iget-object v2, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     iget-boolean v4, v2, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->attached:Z
@@ -151,7 +151,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 171
+    .line 177
     iget-object v2, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$000(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)Landroid/graphics/drawable/Drawable;
@@ -160,25 +160,25 @@
 
     check-cast v2, Lorg/telegram/ui/ChatBackgroundDrawable;
 
-    invoke-virtual {v2}, Lorg/telegram/ui/ChatBackgroundDrawable;->onAttachedToWindow()V
+    invoke-virtual {v2, v0}, Lorg/telegram/ui/ChatBackgroundDrawable;->onAttachedToWindow(Landroid/view/View;)V
 
-    .line 173
+    .line 179
     :cond_3
     iget-object v2, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v2, v3}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$402(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Z)Z
 
-    .line 174
+    .line 180
     iget-object v2, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v2, v5}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$502(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;F)F
 
-    .line 175
+    .line 181
     iget-object v2, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$600(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
 
-    .line 177
+    .line 183
     :cond_4
     iget-object v2, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -211,7 +211,7 @@
 
     if-ge v3, v6, :cond_1e
 
-    .line 179
+    .line 185
     iget-object v7, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     if-nez v3, :cond_5
@@ -237,7 +237,7 @@
 
     if-ne v3, v8, :cond_7
 
-    .line 183
+    .line 189
     iget-object v8, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v8}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$200(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)Landroid/graphics/drawable/Drawable;
@@ -256,7 +256,7 @@
 
     const/high16 v8, 0x437f0000    # 255.0f
 
-    .line 184
+    .line 190
     iget-object v9, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v9}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$500(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)F
@@ -274,10 +274,10 @@
     :cond_7
     const/16 v8, 0xff
 
-    .line 186
+    .line 192
     invoke-virtual {v7, v8}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 191
+    .line 197
     :goto_2
     iget-object v8, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -297,21 +297,21 @@
     :goto_3
     if-eqz v8, :cond_9
 
-    .line 193
+    .line 199
     iget-object v8, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v8}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$800(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)F
 
     move-result v8
 
-    .line 194
+    .line 200
     iget-object v9, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v9}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$900(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)F
 
     move-result v9
 
-    .line 195
+    .line 201
     iget-object v10, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v10}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1000(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)F
@@ -327,7 +327,7 @@
 
     move v10, v9
 
-    .line 202
+    .line 207
     :goto_4
     instance-of v11, v7, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
@@ -335,19 +335,19 @@
 
     if-eqz v11, :cond_10
 
-    .line 203
+    .line 208
     move-object v11, v7
 
     check-cast v11, Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    .line 204
+    .line 209
     invoke-virtual {v11}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->hasPattern()Z
 
     move-result v13
 
     if-eqz v13, :cond_c
 
-    .line 205
+    .line 210
     iget-object v11, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-virtual {v11}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->isActionBarVisible()Z
@@ -388,7 +388,7 @@
     :goto_6
     add-int/2addr v11, v12
 
-    .line 206
+    .line 211
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v12
@@ -399,7 +399,7 @@
 
     sub-int/2addr v12, v11
 
-    .line 207
+    .line 212
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v13
@@ -416,7 +416,7 @@
 
     int-to-float v14, v12
 
-    .line 208
+    .line 213
     invoke-virtual {v7}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v15
@@ -425,12 +425,12 @@
 
     div-float/2addr v14, v15
 
-    .line 209
+    .line 214
     invoke-static {v13, v14}, Ljava/lang/Math;->max(FF)F
 
     move-result v13
 
-    .line 210
+    .line 215
     invoke-virtual {v7}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v14
@@ -449,7 +449,7 @@
 
     double-to-int v14, v14
 
-    .line 211
+    .line 216
     invoke-virtual {v7}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v15
@@ -468,7 +468,7 @@
 
     double-to-int v4, v4
 
-    .line 212
+    .line 217
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v5
@@ -481,7 +481,7 @@
 
     add-int/2addr v5, v8
 
-    .line 213
+    .line 218
     iget-object v8, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v8}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1200(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)I
@@ -500,10 +500,10 @@
 
     add-int/2addr v8, v6
 
-    .line 214
+    .line 219
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 215
+    .line 220
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v6
@@ -522,23 +522,23 @@
 
     add-int/2addr v4, v8
 
-    .line 216
+    .line 221
     invoke-virtual {v7, v5, v8, v14, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 217
+    .line 222
     invoke-virtual {v7, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 218
+    .line 223
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4, v1}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1400(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/graphics/Canvas;)V
 
-    .line 219
+    .line 224
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto/16 :goto_a
 
-    .line 221
+    .line 226
     :cond_c
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -548,10 +548,10 @@
 
     if-eqz v4, :cond_d
 
-    .line 222
+    .line 227
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 223
+    .line 228
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
@@ -574,7 +574,7 @@
 
     invoke-virtual {v1, v2, v2, v4, v5}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 225
+    .line 230
     :cond_d
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -584,7 +584,7 @@
 
     invoke-virtual {v11, v4}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setTranslationY(I)V
 
-    .line 226
+    .line 231
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v4
@@ -607,7 +607,7 @@
 
     float-to-int v4, v4
 
-    .line 227
+    .line 232
     iget-object v5, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1500(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)Z
@@ -618,7 +618,7 @@
 
     int-to-float v4, v4
 
-    .line 228
+    .line 233
     iget-object v5, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1600(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)F
@@ -631,7 +631,7 @@
 
     goto :goto_7
 
-    .line 229
+    .line 234
     :cond_e
     iget-object v5, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -641,7 +641,7 @@
 
     if-eqz v5, :cond_f
 
-    .line 230
+    .line 235
     iget-object v5, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1700(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)I
@@ -650,7 +650,7 @@
 
     sub-int/2addr v4, v5
 
-    .line 232
+    .line 237
     :cond_f
     :goto_7
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -659,28 +659,8 @@
 
     invoke-virtual {v7, v2, v2, v5, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 233
-    invoke-virtual {v7, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 234
-    iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
-
-    invoke-static {v4}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1300(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)I
-
-    move-result v4
-
-    if-eqz v4, :cond_1b
-
-    .line 235
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
-
-    goto/16 :goto_a
-
     .line 238
-    :cond_10
-    instance-of v4, v7, Landroid/graphics/drawable/ColorDrawable;
-
-    if-eqz v4, :cond_12
+    invoke-virtual {v7, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     .line 239
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -689,12 +669,32 @@
 
     move-result v4
 
-    if-eqz v4, :cond_11
+    if-eqz v4, :cond_1b
 
     .line 240
+    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
+
+    goto/16 :goto_a
+
+    .line 243
+    :cond_10
+    instance-of v4, v7, Landroid/graphics/drawable/ColorDrawable;
+
+    if-eqz v4, :cond_12
+
+    .line 244
+    iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
+
+    invoke-static {v4}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1300(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)I
+
+    move-result v4
+
+    if-eqz v4, :cond_11
+
+    .line 245
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 241
+    .line 246
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
@@ -713,7 +713,7 @@
 
     invoke-virtual {v1, v2, v2, v4, v5}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 243
+    .line 248
     :cond_11
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -729,15 +729,15 @@
 
     invoke-virtual {v7, v2, v2, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 244
+    .line 249
     invoke-virtual {v7, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 245
+    .line 250
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4, v1}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1400(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/graphics/Canvas;)V
 
-    .line 246
+    .line 251
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1300(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)I
@@ -746,18 +746,18 @@
 
     if-eqz v4, :cond_1b
 
-    .line 247
+    .line 252
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto/16 :goto_a
 
-    .line 249
+    .line 254
     :cond_12
     instance-of v4, v7, Landroid/graphics/drawable/GradientDrawable;
 
     if-eqz v4, :cond_14
 
-    .line 250
+    .line 255
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1300(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)I
@@ -766,10 +766,10 @@
 
     if-eqz v4, :cond_13
 
-    .line 251
+    .line 256
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 252
+    .line 257
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
@@ -792,7 +792,7 @@
 
     invoke-virtual {v1, v2, v2, v4, v5}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 254
+    .line 259
     :cond_13
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -822,15 +822,15 @@
 
     invoke-virtual {v7, v2, v4, v5, v6}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 255
+    .line 260
     invoke-virtual {v7, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 256
+    .line 261
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4, v1}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1400(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/graphics/Canvas;)V
 
-    .line 257
+    .line 262
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1300(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)I
@@ -839,12 +839,12 @@
 
     if-eqz v4, :cond_1b
 
-    .line 258
+    .line 263
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto/16 :goto_a
 
-    .line 260
+    .line 265
     :cond_14
     instance-of v4, v7, Landroid/graphics/drawable/BitmapDrawable;
 
@@ -852,12 +852,12 @@
 
     if-eqz v4, :cond_18
 
-    .line 261
+    .line 266
     move-object v4, v7
 
     check-cast v4, Landroid/graphics/drawable/BitmapDrawable;
 
-    .line 262
+    .line 267
     invoke-virtual {v4}, Landroid/graphics/drawable/BitmapDrawable;->getTileModeX()Landroid/graphics/Shader$TileMode;
 
     move-result-object v4
@@ -866,18 +866,18 @@
 
     if-ne v4, v11, :cond_15
 
-    .line 263
+    .line 268
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 264
+    .line 269
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     div-float/2addr v5, v4
 
-    .line 265
+    .line 270
     invoke-virtual {v1, v5, v5}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 266
+    .line 271
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
@@ -916,20 +916,20 @@
 
     invoke-virtual {v7, v2, v2, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 267
+    .line 272
     invoke-virtual {v7, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 268
+    .line 273
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4, v1}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1400(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/graphics/Canvas;)V
 
-    .line 269
+    .line 274
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto/16 :goto_a
 
-    .line 271
+    .line 276
     :cond_15
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -971,7 +971,7 @@
     :goto_9
     add-int/2addr v4, v5
 
-    .line 272
+    .line 277
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v5
@@ -982,7 +982,7 @@
 
     sub-int/2addr v5, v4
 
-    .line 273
+    .line 278
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v11
@@ -999,7 +999,7 @@
 
     int-to-float v12, v5
 
-    .line 274
+    .line 279
     invoke-virtual {v7}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v14
@@ -1008,12 +1008,12 @@
 
     div-float/2addr v12, v14
 
-    .line 275
+    .line 280
     invoke-static {v11, v12}, Ljava/lang/Math;->max(FF)F
 
     move-result v11
 
-    .line 276
+    .line 281
     invoke-virtual {v7}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v12
@@ -1032,7 +1032,7 @@
 
     double-to-int v12, v14
 
-    .line 277
+    .line 282
     invoke-virtual {v7}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v14
@@ -1051,7 +1051,7 @@
 
     double-to-int v8, v14
 
-    .line 278
+    .line 283
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v11
@@ -1064,7 +1064,7 @@
 
     add-int/2addr v11, v9
 
-    .line 279
+    .line 284
     iget-object v9, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v9}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1200(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)I
@@ -1083,10 +1083,10 @@
 
     add-int/2addr v9, v5
 
-    .line 280
+    .line 285
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 281
+    .line 286
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v5
@@ -1105,23 +1105,23 @@
 
     add-int/2addr v8, v9
 
-    .line 282
+    .line 287
     invoke-virtual {v7, v11, v9, v12, v8}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 283
+    .line 288
     invoke-virtual {v7, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 284
+    .line 289
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4, v1}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1400(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/graphics/Canvas;)V
 
-    .line 285
+    .line 290
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto/16 :goto_a
 
-    .line 288
+    .line 293
     :cond_18
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -1131,10 +1131,10 @@
 
     if-eqz v4, :cond_19
 
-    .line 289
+    .line 294
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 290
+    .line 295
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
@@ -1157,20 +1157,20 @@
 
     invoke-virtual {v1, v2, v2, v4, v6}, Landroid/graphics/Canvas;->clipRect(IIII)Z
 
-    .line 292
+    .line 297
     :cond_19
     instance-of v4, v7, Lorg/telegram/ui/ChatBackgroundDrawable;
 
     if-eqz v4, :cond_1a
 
-    .line 293
+    .line 298
     move-object v4, v7
 
     check-cast v4, Lorg/telegram/ui/ChatBackgroundDrawable;
 
     invoke-virtual {v4, v0}, Lorg/telegram/ui/ChatBackgroundDrawable;->setParent(Landroid/view/View;)V
 
-    .line 295
+    .line 300
     :cond_1a
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -1190,7 +1190,7 @@
 
     add-float/2addr v4, v9
 
-    .line 296
+    .line 301
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getRootView()Landroid/view/View;
 
     move-result-object v6
@@ -1211,10 +1211,10 @@
 
     float-to-int v5, v4
 
-    .line 297
+    .line 302
     iget-object v9, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
-    .line 299
+    .line 304
     invoke-static {v9}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1200(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)I
 
     move-result v9
@@ -1225,7 +1225,7 @@
 
     float-to-int v9, v9
 
-    .line 300
+    .line 305
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v10
@@ -1240,7 +1240,7 @@
 
     iget-object v10, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
-    .line 301
+    .line 306
     invoke-static {v10}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1200(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)I
 
     move-result v10
@@ -1265,18 +1265,18 @@
 
     float-to-int v6, v10
 
-    .line 297
+    .line 302
     invoke-virtual {v7, v5, v9, v4, v6}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 303
+    .line 309
     invoke-virtual {v7, v1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 304
+    .line 310
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4, v1}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1400(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/graphics/Canvas;)V
 
-    .line 305
+    .line 311
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$1300(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)I
@@ -1285,14 +1285,14 @@
 
     if-eqz v4, :cond_1b
 
-    .line 306
+    .line 312
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_1b
     :goto_a
     if-nez v3, :cond_1d
 
-    .line 309
+    .line 315
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$200(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)Landroid/graphics/drawable/Drawable;
@@ -1313,7 +1313,7 @@
 
     if-ltz v4, :cond_1d
 
-    .line 310
+    .line 316
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     iget-boolean v5, v4, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->attached:Z
@@ -1328,7 +1328,7 @@
 
     if-eqz v4, :cond_1c
 
-    .line 311
+    .line 317
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$200(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)Landroid/graphics/drawable/Drawable;
@@ -1337,9 +1337,13 @@
 
     check-cast v4, Lorg/telegram/ui/ChatBackgroundDrawable;
 
-    invoke-virtual {v4}, Lorg/telegram/ui/ChatBackgroundDrawable;->onDetachedFromWindow()V
+    iget-object v5, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
-    .line 313
+    iget-object v5, v5, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->backgroundView:Landroid/view/View;
+
+    invoke-virtual {v4, v5}, Lorg/telegram/ui/ChatBackgroundDrawable;->onDetachedFromWindow(Landroid/view/View;)V
+
+    .line 319
     :cond_1c
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -1347,17 +1351,17 @@
 
     invoke-static {v4, v5}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$202(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    .line 314
+    .line 320
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4, v2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$302(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Z)Z
 
-    .line 315
+    .line 321
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     invoke-static {v4}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->access$600(Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
 
-    .line 316
+    .line 322
     iget-object v4, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     iget-object v4, v4, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->backgroundView:Landroid/view/View;
@@ -1374,7 +1378,7 @@
 
     goto/16 :goto_0
 
-    .line 319
+    .line 325
     :cond_1e
     iget-object v1, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
@@ -1388,7 +1392,7 @@
 
     if-eqz v1, :cond_1f
 
-    .line 320
+    .line 326
     iget-object v1, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout$BackgroundView;->this$0:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->backgroundView:Landroid/view/View;

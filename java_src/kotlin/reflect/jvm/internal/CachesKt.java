@@ -87,13 +87,13 @@ public final class CachesKt {
     private static final <T> KType getOrCreateKTypeWithTypeArguments(Class<T> cls, List<KTypeProjection> list, boolean z) {
         List emptyList;
         ConcurrentHashMap<Pair<List<KTypeProjection>, Boolean>, KType> concurrentHashMap = CACHE_FOR_GENERIC_CLASSIFIERS.get(cls);
-        Pair<List<KTypeProjection>, Boolean> m144to = TuplesKt.m144to(list, Boolean.valueOf(z));
-        KType kType = concurrentHashMap.get(m144to);
+        Pair<List<KTypeProjection>, Boolean> m146to = TuplesKt.m146to(list, Boolean.valueOf(z));
+        KType kType = concurrentHashMap.get(m146to);
         if (kType == null) {
             KClassImpl orCreateKotlinClass = getOrCreateKotlinClass(cls);
             emptyList = CollectionsKt__CollectionsKt.emptyList();
             KType createType = KClassifiers.createType(orCreateKotlinClass, list, z, emptyList);
-            KType putIfAbsent = concurrentHashMap.putIfAbsent(m144to, createType);
+            KType putIfAbsent = concurrentHashMap.putIfAbsent(m146to, createType);
             kType = putIfAbsent == null ? createType : putIfAbsent;
         }
         Intrinsics.checkNotNullExpressionValue(kType, "cache.getOrPut(arguments…lable, emptyList())\n    }");

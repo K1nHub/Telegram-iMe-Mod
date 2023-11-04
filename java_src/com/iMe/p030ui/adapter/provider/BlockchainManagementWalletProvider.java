@@ -13,11 +13,11 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: BlockchainManagementWalletProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.BlockchainManagementWalletProvider */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class BlockchainManagementWalletProvider extends BaseNodeProvider<BlockchainManagementItem.Wallet> {
     private final Lazy itemElevation$delegate;
     private final int itemViewType;
@@ -29,7 +29,7 @@ public final class BlockchainManagementWalletProvider extends BaseNodeProvider<B
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.BLOCKCHAIN_WALLET;
-        this.layoutId = C3630R.layout.fork_recycle_item_blockchain_wallet;
+        this.layoutId = C3634R.layout.fork_recycle_item_blockchain_wallet;
         lazy = LazyKt__LazyJVMKt.lazy(new Function0<Float>() { // from class: com.iMe.ui.adapter.provider.BlockchainManagementWalletProvider$itemElevation$2
             /* JADX INFO: Access modifiers changed from: package-private */
             {
@@ -39,7 +39,7 @@ public final class BlockchainManagementWalletProvider extends BaseNodeProvider<B
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Float invoke() {
-                return Float.valueOf(BlockchainManagementWalletProvider.this.getContext().getResources().getDimension(C3630R.dimen.wallet_card_elevation));
+                return Float.valueOf(BlockchainManagementWalletProvider.this.getContext().getResources().getDimension(C3634R.dimen.wallet_card_elevation));
             }
         });
         this.itemElevation$delegate = lazy;
@@ -64,15 +64,15 @@ public final class BlockchainManagementWalletProvider extends BaseNodeProvider<B
     public void convert(BaseViewHolder helper, BlockchainManagementItem.Wallet item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3630R.C3633id.constraint_root;
+        int i = C3634R.C3637id.constraint_root;
         BaseViewHolder rippleForeground = BaseQuickAdapterExtKt.setRippleForeground(BaseQuickAdapterExtKt.setThemedBackgroundColor(helper, i, Theme.key_windowBackgroundWhite), i, false);
         int i2 = Theme.key_windowBackgroundWhiteBlackText;
-        int i3 = C3630R.C3633id.text_name;
-        int i4 = C3630R.C3633id.text_address;
-        BaseViewHolder imageResource = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(rippleForeground, i2, i3, i4), i3).setText(i3, this.resourceManager.getString(item.getBlockchainType().getTitleResId())).setText(i4, item.getAddress()).setImageResource(C3630R.C3633id.image_icon, item.getBlockchainType().getIconResId());
-        int i5 = C3630R.C3633id.image_info;
+        int i3 = C3634R.C3637id.text_name;
+        int i4 = C3634R.C3637id.text_address;
+        BaseViewHolder imageResource = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(rippleForeground, i2, i3, i4), i3).setText(i3, this.resourceManager.getString(item.getBlockchainType().getTitleResId())).setText(i4, item.getAddress()).setImageResource(C3634R.C3637id.image_icon, item.getBlockchainType().getIconResId());
+        int i5 = C3634R.C3637id.image_info;
         BaseViewHolder circleRippleBackground = BaseQuickAdapterExtKt.setCircleRippleBackground(BaseQuickAdapterExtKt.setThemedImageColor(imageResource, i5, Theme.key_actionBarActionModeDefaultIcon), i5);
-        int i6 = C3630R.C3633id.view_divider;
+        int i6 = C3634R.C3637id.view_divider;
         BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedBackgroundColor(BaseQuickAdapterExtKt.setVisibleElseGone(circleRippleBackground, i6, !item.isLastItem()), i6, Theme.key_divider), i, new Function1<ConstraintLayout, Unit>() { // from class: com.iMe.ui.adapter.provider.BlockchainManagementWalletProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {

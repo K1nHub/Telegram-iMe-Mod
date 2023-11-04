@@ -8,6 +8,7 @@ import com.iMe.model.wallet.crypto.create.WalletCreationType;
 import com.iMe.model.wallet.crypto.settings.BlockchainManagementItem;
 import com.iMe.p030ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
+import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Wallet;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
@@ -155,14 +156,14 @@ public class BlockchainsManagementView$$State extends MvpViewState<BlockchainsMa
     }
 
     @Override // com.iMe.manager.wallet.create.WalletCreateManagerView
-    public void openCreateWalletIntroScreen(String str, WalletCreationType.Initial initial) {
-        OpenCreateWalletIntroScreenCommand openCreateWalletIntroScreenCommand = new OpenCreateWalletIntroScreenCommand(this, str, initial);
+    public void openCreateWalletIntroScreen(BlockchainType blockchainType, String str, WalletCreationType.Initial initial) {
+        OpenCreateWalletIntroScreenCommand openCreateWalletIntroScreenCommand = new OpenCreateWalletIntroScreenCommand(this, blockchainType, str, initial);
         this.viewCommands.beforeApply(openCreateWalletIntroScreenCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.openCreateWalletIntroScreen(str, initial);
+            view.openCreateWalletIntroScreen(blockchainType, str, initial);
         }
         this.viewCommands.afterApply(openCreateWalletIntroScreenCommand);
     }
@@ -237,16 +238,16 @@ public class BlockchainsManagementView$$State extends MvpViewState<BlockchainsMa
     public class OpenBackupScreenCommand extends ViewCommand<BlockchainsManagementView> {
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f2171wallet;
+        public final Wallet f2183wallet;
 
         OpenBackupScreenCommand(BlockchainsManagementView$$State blockchainsManagementView$$State, Wallet wallet2) {
             super("openBackupScreen", OneExecutionStateStrategy.class);
-            this.f2171wallet = wallet2;
+            this.f2183wallet = wallet2;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(BlockchainsManagementView blockchainsManagementView) {
-            blockchainsManagementView.openBackupScreen(this.f2171wallet);
+            blockchainsManagementView.openBackupScreen(this.f2183wallet);
         }
     }
 
@@ -363,18 +364,20 @@ public class BlockchainsManagementView$$State extends MvpViewState<BlockchainsMa
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementView$$State$OpenCreateWalletIntroScreenCommand */
     /* loaded from: classes3.dex */
     public class OpenCreateWalletIntroScreenCommand extends ViewCommand<BlockchainsManagementView> {
+        public final BlockchainType blockchainType;
         public final String linkedWalletAddress;
         public final WalletCreationType.Initial walletCreationType;
 
-        OpenCreateWalletIntroScreenCommand(BlockchainsManagementView$$State blockchainsManagementView$$State, String str, WalletCreationType.Initial initial) {
+        OpenCreateWalletIntroScreenCommand(BlockchainsManagementView$$State blockchainsManagementView$$State, BlockchainType blockchainType, String str, WalletCreationType.Initial initial) {
             super("openCreateWalletIntroScreen", OneExecutionStateStrategy.class);
+            this.blockchainType = blockchainType;
             this.linkedWalletAddress = str;
             this.walletCreationType = initial;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(BlockchainsManagementView blockchainsManagementView) {
-            blockchainsManagementView.openCreateWalletIntroScreen(this.linkedWalletAddress, this.walletCreationType);
+            blockchainsManagementView.openCreateWalletIntroScreen(this.blockchainType, this.linkedWalletAddress, this.walletCreationType);
         }
     }
 

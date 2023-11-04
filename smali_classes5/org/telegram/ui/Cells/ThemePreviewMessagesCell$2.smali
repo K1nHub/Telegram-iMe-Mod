@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/INavigationLayout;I)V
+    value = Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/INavigationLayout;IJ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,11 +17,17 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
+
+
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;)V
     .locals 0
 
-    .line 254
+    .line 374
+    iput-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,10 +45,13 @@
     return v0
 .end method
 
-.method public synthetic canPerformActions()Z
+.method public canPerformActions()Z
     .locals 1
 
-    invoke-static {p0}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$canPerformActions(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;)Z
+    .line 378
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
+
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$100(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;)Z
 
     move-result v0
 
@@ -151,6 +160,14 @@
     return-void
 .end method
 
+.method public synthetic didPressGiveawayChatButton(Lorg/telegram/ui/Cells/ChatMessageCell;I)V
+    .locals 0
+
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$didPressGiveawayChatButton(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;I)V
+
+    return-void
+.end method
+
 .method public synthetic didPressHiddenForward(Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 0
 
@@ -175,11 +192,49 @@
     return-void
 .end method
 
-.method public synthetic didPressInstantButton(Lorg/telegram/ui/Cells/ChatMessageCell;I)V
-    .locals 0
+.method public didPressInstantButton(Lorg/telegram/ui/Cells/ChatMessageCell;I)V
+    .locals 2
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$didPressInstantButton(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;I)V
+    .line 403
+    iget-object p2, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
 
+    invoke-static {p2}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$100(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    .line 404
+    iget-object p2, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
+
+    const/4 v0, 0x2
+
+    invoke-static {p2, v0}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$202(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;I)I
+
+    .line 405
+    invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V
+
+    .line 407
+    iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
+
+    invoke-static {p1}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$300(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;)Ljava/lang/Runnable;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
+
+    .line 408
+    iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
+
+    invoke-static {p1}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$300(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;)Ljava/lang/Runnable;
+
+    move-result-object p1
+
+    const-wide/16 v0, 0x1388
+
+    invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
+
+    :cond_0
     return-void
 .end method
 
@@ -199,11 +254,49 @@
     return-void
 .end method
 
-.method public synthetic didPressReplyMessage(Lorg/telegram/ui/Cells/ChatMessageCell;I)V
-    .locals 0
+.method public didPressReplyMessage(Lorg/telegram/ui/Cells/ChatMessageCell;I)V
+    .locals 2
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$didPressReplyMessage(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;I)V
+    .line 383
+    iget-object p2, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
 
+    invoke-static {p2}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$100(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;)Z
+
+    move-result p2
+
+    if-eqz p2, :cond_0
+
+    .line 384
+    iget-object p2, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
+
+    const/4 v0, 0x0
+
+    invoke-static {p2, v0}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$202(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;I)I
+
+    .line 385
+    invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->invalidate()V
+
+    .line 387
+    iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
+
+    invoke-static {p1}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$300(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;)Ljava/lang/Runnable;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
+
+    .line 388
+    iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
+
+    invoke-static {p1}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$300(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;)Ljava/lang/Runnable;
+
+    move-result-object p1
+
+    const-wide/16 v0, 0x1388
+
+    invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
+
+    :cond_0
     return-void
 .end method
 
@@ -211,6 +304,14 @@
     .locals 0
 
     invoke-static {p0, p1}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$didPressSideButton(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;)V
+
+    return-void
+.end method
+
+.method public synthetic didPressSponsoredClose()V
+    .locals 0
+
+    invoke-static {p0}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$didPressSponsoredClose(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;)V
 
     return-void
 .end method
@@ -267,6 +368,14 @@
     .locals 0
 
     invoke-static/range {p0 .. p5}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$didPressVoteButtons(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;Ljava/util/ArrayList;III)V
+
+    return-void
+.end method
+
+.method public synthetic didPressWebPage(Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$WebPage;Ljava/lang/String;Z)V
+    .locals 0
+
+    invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$didPressWebPage(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/tgnet/TLRPC$WebPage;Ljava/lang/String;Z)V
 
     return-void
 .end method
@@ -377,13 +486,26 @@
     return v0
 .end method
 
-.method public synthetic isProgressLoading(Lorg/telegram/ui/Cells/ChatMessageCell;I)Z
+.method public isProgressLoading(Lorg/telegram/ui/Cells/ChatMessageCell;I)Z
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$isProgressLoading(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/ui/Cells/ChatMessageCell;I)Z
+    .line 414
+    iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
+
+    invoke-static {p1}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$200(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;)I
 
     move-result p1
 
+    if-ne p2, p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
     return p1
 .end method
 
@@ -417,11 +539,46 @@
     return p1
 .end method
 
-.method public synthetic needOpenWebView(Lorg/telegram/messenger/MessageObject;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V
+.method public needOpenWebView(Lorg/telegram/messenger/MessageObject;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V
     .locals 0
 
-    invoke-static/range {p0 .. p7}, Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate$-CC;->$default$needOpenWebView(Lorg/telegram/ui/Cells/ChatMessageCell$ChatMessageCellDelegate;Lorg/telegram/messenger/MessageObject;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)V
+    .line 394
+    iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
 
+    invoke-static {p1}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$100(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    .line 395
+    iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
+
+    const/4 p2, 0x2
+
+    invoke-static {p1, p2}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$202(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;I)I
+
+    .line 396
+    iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
+
+    invoke-static {p1}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$300(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;)Ljava/lang/Runnable;
+
+    move-result-object p1
+
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
+
+    .line 397
+    iget-object p1, p0, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell$2;->this$0:Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;
+
+    invoke-static {p1}, Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;->access$300(Lorg/telegram/ui/Cells/ThemePreviewMessagesCell;)Ljava/lang/Runnable;
+
+    move-result-object p1
+
+    const-wide/16 p2, 0x1388
+
+    invoke-static {p1, p2, p3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
+
+    :cond_0
     return-void
 .end method
 

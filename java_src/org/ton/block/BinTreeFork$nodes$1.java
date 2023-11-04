@@ -11,7 +11,7 @@ import kotlin.sequences.Sequence;
 import kotlin.sequences.SequenceScope;
 /* JADX INFO: Add missing generic type declarations: [X] */
 /* compiled from: BinTreeFork.kt */
-@DebugMetadata(m143c = "org.ton.block.BinTreeFork$nodes$1", m142f = "BinTreeFork.kt", m141l = {18, 19}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.ton.block.BinTreeFork$nodes$1", m144f = "BinTreeFork.kt", m143l = {18, 19}, m142m = "invokeSuspend")
 /* loaded from: classes6.dex */
 final class BinTreeFork$nodes$1<X> extends RestrictedSuspendLambda implements Function2<SequenceScope<? super X>, Continuation<? super Unit>, Object> {
     private /* synthetic */ Object L$0;

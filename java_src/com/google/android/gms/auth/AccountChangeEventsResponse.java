@@ -12,14 +12,14 @@ import java.util.List;
 /* loaded from: classes.dex */
 public class AccountChangeEventsResponse extends AbstractSafeParcelable {
     public static final Parcelable.Creator<AccountChangeEventsResponse> CREATOR = new zzc();
-    @SafeParcelable.VersionField(m1086id = 1)
+    @SafeParcelable.VersionField(m1087id = 1)
     final int zza;
-    @SafeParcelable.Field(m1089id = 2)
+    @SafeParcelable.Field(m1090id = 2)
     final List zzb;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public AccountChangeEventsResponse(@SafeParcelable.Param(m1088id = 1) int i, @SafeParcelable.Param(m1088id = 2) List list) {
+    public AccountChangeEventsResponse(@SafeParcelable.Param(m1089id = 1) int i, @SafeParcelable.Param(m1089id = 2) List list) {
         this.zza = i;
         this.zzb = (List) Preconditions.checkNotNull(list);
     }

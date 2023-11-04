@@ -2,36 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback2;
+.implements Ljava/lang/Runnable;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda46;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/recorder/PaintView;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda46;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda46;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda46;->INSTANCE:Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda46;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda46;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
+.method public final run()V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/PaintView$$ExternalSyntheticLambda46;->f$0:Lorg/telegram/ui/Stories/recorder/PaintView;
-
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$MessageMedia;
-
-    check-cast p2, Lorg/telegram/tgnet/TLRPC$MediaArea;
-
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$9qbMGE0UNUjgY78gDjNOXjLjJXM(Lorg/telegram/ui/Stories/recorder/PaintView;Lorg/telegram/tgnet/TLRPC$MessageMedia;Lorg/telegram/tgnet/TLRPC$MediaArea;)V
+    invoke-static {}, Lorg/telegram/ui/Stories/recorder/PaintView;->$r8$lambda$S4VLAIVY-NHqch8JELW8Dvu5o00()V
 
     return-void
 .end method

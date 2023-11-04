@@ -24,7 +24,7 @@
     .line 1219
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelShadowLine:I
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3700(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3800(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
 
     move-result p1
 

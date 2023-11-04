@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import com.google.android.exoplayer2.BaseRenderer;
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
 import com.google.android.exoplayer2.RendererCapabilities;
@@ -70,9 +70,9 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
         this.outputHandler = looper == null ? null : Util.createHandler(looper, this);
         this.decoderFactory = subtitleDecoderFactory;
         this.formatHolder = new FormatHolder();
-        this.finalStreamEndPositionUs = C0479C.TIME_UNSET;
-        this.outputStreamOffsetUs = C0479C.TIME_UNSET;
-        this.lastRendererPositionUs = C0479C.TIME_UNSET;
+        this.finalStreamEndPositionUs = C0485C.TIME_UNSET;
+        this.outputStreamOffsetUs = C0485C.TIME_UNSET;
+        this.lastRendererPositionUs = C0485C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.RendererCapabilities
@@ -109,7 +109,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
         clearOutput();
         this.inputStreamEnded = false;
         this.outputStreamEnded = false;
-        this.finalStreamEndPositionUs = C0479C.TIME_UNSET;
+        this.finalStreamEndPositionUs = C0485C.TIME_UNSET;
         if (this.decoderReplacementState != 0) {
             replaceDecoder();
             return;
@@ -124,7 +124,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
         this.lastRendererPositionUs = j;
         if (isCurrentStreamFinal()) {
             long j3 = this.finalStreamEndPositionUs;
-            if (j3 != C0479C.TIME_UNSET && j >= j3) {
+            if (j3 != C0485C.TIME_UNSET && j >= j3) {
                 releaseBuffers();
                 this.outputStreamEnded = true;
             }
@@ -232,10 +232,10 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
     @Override // com.google.android.exoplayer2.BaseRenderer
     protected void onDisabled() {
         this.streamFormat = null;
-        this.finalStreamEndPositionUs = C0479C.TIME_UNSET;
+        this.finalStreamEndPositionUs = C0485C.TIME_UNSET;
         clearOutput();
-        this.outputStreamOffsetUs = C0479C.TIME_UNSET;
-        this.lastRendererPositionUs = C0479C.TIME_UNSET;
+        this.outputStreamOffsetUs = C0485C.TIME_UNSET;
+        this.lastRendererPositionUs = C0485C.TIME_UNSET;
         releaseDecoder();
     }
 
@@ -297,7 +297,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
     }
 
     private void clearOutput() {
-        updateOutput(new CueGroup(ImmutableList.m1054of(), getPresentationTimeUs(this.lastRendererPositionUs)));
+        updateOutput(new CueGroup(ImmutableList.m1055of(), getPresentationTimeUs(this.lastRendererPositionUs)));
     }
 
     @Override // android.os.Handler.Callback
@@ -315,7 +315,7 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
     }
 
     private void handleDecoderError(SubtitleDecoderException subtitleDecoderException) {
-        Log.m1109e(TAG, "Subtitle decoding failed. streamFormat=" + this.streamFormat, subtitleDecoderException);
+        Log.m1110e(TAG, "Subtitle decoding failed. streamFormat=" + this.streamFormat, subtitleDecoderException);
         clearOutput();
         replaceDecoder();
     }
@@ -333,8 +333,8 @@ public final class TextRenderer extends BaseRenderer implements Handler.Callback
     }
 
     private long getPresentationTimeUs(long j) {
-        Assertions.checkState(j != C0479C.TIME_UNSET);
-        Assertions.checkState(this.outputStreamOffsetUs != C0479C.TIME_UNSET);
+        Assertions.checkState(j != C0485C.TIME_UNSET);
+        Assertions.checkState(this.outputStreamOffsetUs != C0485C.TIME_UNSET);
         return j - this.outputStreamOffsetUs;
     }
 }

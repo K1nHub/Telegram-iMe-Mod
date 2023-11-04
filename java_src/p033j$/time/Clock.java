@@ -8,25 +8,25 @@ public abstract class Clock {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: j$.time.Clock$a */
     /* loaded from: classes2.dex */
-    public static final class C2671a extends Clock implements Serializable {
+    public static final class C2675a extends Clock implements Serializable {
 
         /* renamed from: a */
-        private final AbstractC2724n f480a;
+        private final AbstractC2728n f480a;
 
-        C2671a(AbstractC2724n abstractC2724n) {
-            this.f480a = abstractC2724n;
+        C2675a(AbstractC2728n abstractC2728n) {
+            this.f480a = abstractC2728n;
         }
 
         @Override // p033j$.time.Clock
         /* renamed from: a */
-        public long mo984a() {
+        public long mo985a() {
             return System.currentTimeMillis();
         }
 
         @Override // p033j$.time.Clock
         public boolean equals(Object obj) {
-            if (obj instanceof C2671a) {
-                return this.f480a.equals(((C2671a) obj).f480a);
+            if (obj instanceof C2675a) {
+                return this.f480a.equals(((C2675a) obj).f480a);
             }
             return false;
         }
@@ -38,14 +38,14 @@ public abstract class Clock {
 
         @Override // p033j$.time.Clock
         public Instant instant() {
-            return Instant.m976l(System.currentTimeMillis());
+            return Instant.m977l(System.currentTimeMillis());
         }
 
         public String toString() {
-            StringBuilder m960a = AbstractC2675a.m960a("SystemClock[");
-            m960a.append(this.f480a);
-            m960a.append("]");
-            return m960a.toString();
+            StringBuilder m961a = AbstractC2679a.m961a("SystemClock[");
+            m961a.append(this.f480a);
+            m961a.append("]");
+            return m961a.toString();
         }
     }
 
@@ -53,12 +53,12 @@ public abstract class Clock {
     }
 
     public static Clock systemUTC() {
-        return new C2671a(C2725o.f610e);
+        return new C2675a(C2729o.f610e);
     }
 
     /* renamed from: a */
-    public long mo984a() {
-        return instant().m973o();
+    public long mo985a() {
+        return instant().m974o();
     }
 
     public boolean equals(Object obj) {

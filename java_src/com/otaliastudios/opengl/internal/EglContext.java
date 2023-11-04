@@ -7,17 +7,17 @@ import kotlin.jvm.internal.Intrinsics;
 public final class EglContext {
 
     /* renamed from: native  reason: not valid java name */
-    private final EGLContext f2158native;
+    private final EGLContext f2170native;
 
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
         }
-        return (obj instanceof EglContext) && Intrinsics.areEqual(this.f2158native, ((EglContext) obj).f2158native);
+        return (obj instanceof EglContext) && Intrinsics.areEqual(this.f2170native, ((EglContext) obj).f2170native);
     }
 
     public int hashCode() {
-        EGLContext eGLContext = this.f2158native;
+        EGLContext eGLContext = this.f2170native;
         if (eGLContext == null) {
             return 0;
         }
@@ -25,14 +25,14 @@ public final class EglContext {
     }
 
     public String toString() {
-        return "EglContext(native=" + this.f2158native + ')';
+        return "EglContext(native=" + this.f2170native + ')';
     }
 
     public EglContext(EGLContext eGLContext) {
-        this.f2158native = eGLContext;
+        this.f2170native = eGLContext;
     }
 
     public final EGLContext getNative() {
-        return this.f2158native;
+        return this.f2170native;
     }
 }

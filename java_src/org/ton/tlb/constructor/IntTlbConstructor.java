@@ -25,7 +25,7 @@ public final class IntTlbConstructor extends TlbConstructor<BigInteger> {
         }
 
         /* renamed from: int  reason: not valid java name */
-        public final TlbConstructor<Integer> m5100int(final int i) {
+        public final TlbConstructor<Integer> m5254int(final int i) {
             return number(new Function2<CellBuilder, Integer, Unit>() { // from class: org.ton.tlb.constructor.IntTlbConstructor$Companion$int$1
                 /* JADX INFO: Access modifiers changed from: package-private */
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

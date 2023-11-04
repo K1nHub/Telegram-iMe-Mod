@@ -24,7 +24,7 @@
 .method constructor <init>(Ljava/lang/String;Ljava/lang/Runnable;[Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
-    .line 1601
+    .line 1602
     iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$3;->val$open:Ljava/lang/Runnable;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$3;->val$dialog:[Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -39,12 +39,12 @@
 .method public onClick(Landroid/view/View;)V
     .locals 2
 
-    .line 1604
+    .line 1605
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$3;->val$open:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 1605
+    .line 1606
     iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$3;->val$dialog:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
     const/4 v0, 0x0
@@ -53,7 +53,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1606
+    .line 1607
     aget-object p1, p1, v0
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V

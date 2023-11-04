@@ -4,7 +4,7 @@ import com.iMe.feature.profile.ProfileData$$ExternalSyntheticBackport0;
 import com.iMe.model.common.NoChildNode;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: StakingProgrammeItem.kt */
 /* loaded from: classes3.dex */
 public final class StakingProgrammeItem extends NoChildNode {
@@ -74,13 +74,13 @@ public final class StakingProgrammeItem extends NoChildNode {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1017m = ((ProfileData$$ExternalSyntheticBackport0.m1017m(this.f293id) * 31) + this.name.hashCode()) * 31;
+        int m1018m = ((ProfileData$$ExternalSyntheticBackport0.m1018m(this.f293id) * 31) + this.name.hashCode()) * 31;
         boolean z = this.isParticipated;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return ((((((((((m1017m + i) * 31) + this.tokenBalance.hashCode()) * 31) + this.apr.hashCode()) * 31) + this.apy.hashCode()) * 31) + this.annualPercentageMode.hashCode()) * 31) + this.endsAt.hashCode();
+        return ((((((((((m1018m + i) * 31) + this.tokenBalance.hashCode()) * 31) + this.apr.hashCode()) * 31) + this.apy.hashCode()) * 31) + this.annualPercentageMode.hashCode()) * 31) + this.endsAt.hashCode();
     }
 
     public String toString() {

@@ -108,7 +108,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 89
+    .line 86
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     const-string v1, "NO_CONNECTION"
@@ -119,7 +119,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->NO_CONNECTION:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
-    .line 90
+    .line 87
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     const-string v1, "BAD_RESPONSE"
@@ -130,7 +130,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->BAD_RESPONSE:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
-    .line 91
+    .line 88
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     const-string v1, "TIMEOUT"
@@ -141,7 +141,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->TIMEOUT:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
-    .line 92
+    .line 89
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     const-string v1, "EMPTY_RESPONSE"
@@ -152,7 +152,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->EMPTY_RESPONSE:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
-    .line 93
+    .line 90
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     const-string v1, "NOT_DEFINED"
@@ -163,7 +163,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->NOT_DEFINED:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
-    .line 94
+    .line 91
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     const-string v1, "UNAUTHORIZED"
@@ -174,7 +174,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->UNAUTHORIZED:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
-    .line 95
+    .line 92
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     const-string v1, "PERMISSION_DENIED"
@@ -185,7 +185,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;->PERMISSION_DENIED:Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
-    .line 96
+    .line 93
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler$ErrorStatus;
 
     const-string v1, "RATE_LIMIT"
@@ -213,7 +213,7 @@
         }
     .end annotation
 
-    .line 88
+    .line 85
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

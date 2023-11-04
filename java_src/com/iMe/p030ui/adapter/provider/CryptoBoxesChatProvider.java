@@ -10,13 +10,13 @@ import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.LocaleController;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.Components.LinkActionView;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.Components.LinkActionView;
 /* compiled from: CryptoBoxesChatProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CryptoBoxesChatProvider */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class CryptoBoxesChatProvider extends BaseNodeProvider<CryptoBoxesChatItem> {
     private final int itemViewType;
     private final int layoutId;
@@ -26,7 +26,7 @@ public final class CryptoBoxesChatProvider extends BaseNodeProvider<CryptoBoxesC
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.CRYPTOBOXES_CHAT;
-        this.layoutId = C3630R.layout.fork_recycle_item_cryptoboxes_chat;
+        this.layoutId = C3634R.layout.fork_recycle_item_cryptoboxes_chat;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -43,8 +43,8 @@ public final class CryptoBoxesChatProvider extends BaseNodeProvider<CryptoBoxesC
     public void convert(BaseViewHolder helper, final CryptoBoxesChatItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3630R.C3633id.text_description;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedTextColor(helper, i, Theme.key_windowBackgroundWhiteGrayText2).setText(i, this.resourceManager.getString(C3630R.string.cryptoboxes_chat_filter_description)), C3630R.C3633id.input_chat, new Function1<TitledInputFieldView, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxesChatProvider$convert$1
+        int i = C3634R.C3637id.text_description;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setThemedTextColor(helper, i, Theme.key_windowBackgroundWhiteGrayText2).setText(i, this.resourceManager.getString(C3634R.string.cryptoboxes_chat_filter_description)), C3634R.C3637id.input_chat, new Function1<TitledInputFieldView, Unit>() { // from class: com.iMe.ui.adapter.provider.CryptoBoxesChatProvider$convert$1
             /* JADX INFO: Access modifiers changed from: package-private */
             {
                 super(1);
@@ -60,14 +60,14 @@ public final class CryptoBoxesChatProvider extends BaseNodeProvider<CryptoBoxesC
             public final void invoke2(TitledInputFieldView applyForView) {
                 Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
                 applyForView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
-                String string = LocaleController.getString("AccDescrChannel", C3630R.string.AccDescrChannel);
+                String string = LocaleController.getString("AccDescrChannel", C3634R.string.AccDescrChannel);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"AccDescrChann…R.string.AccDescrChannel)");
                 applyForView.setTitle(string);
                 LinkActionView inputView = applyForView.getInputView();
                 CryptoBoxesChatItem cryptoBoxesChatItem = CryptoBoxesChatItem.this;
                 inputView.hideAllActionButtons(true);
                 inputView.setMode(false);
-                inputView.setOptionsViewIcon(C3630R.C3632drawable.msg_channel);
+                inputView.setOptionsViewIcon(C3634R.C3636drawable.msg_channel);
                 inputView.setAvatar(cryptoBoxesChatItem.getChat());
                 inputView.setText(cryptoBoxesChatItem.getChat().title);
                 inputView.setFieldEnabled(false);

@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)V
     .locals 7
 
-    .line 1754
+    .line 1726
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$14;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iput-object p8, p0, Lorg/telegram/ui/LaunchActivity$14;->val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
@@ -55,7 +55,7 @@
 
     if-nez p2, :cond_0
 
-    .line 1766
+    .line 1738
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusEmpty;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusEmpty;-><init>()V
@@ -65,19 +65,19 @@
     :cond_0
     if-eqz p4, :cond_1
 
-    .line 1768
+    .line 1740
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;-><init>()V
 
-    .line 1769
+    .line 1741
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v0
 
     iput-wide v0, p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->document_id:J
 
-    .line 1770
+    .line 1742
     invoke-virtual {p4}, Ljava/lang/Integer;->intValue()I
 
     move-result p3
@@ -86,20 +86,20 @@
 
     goto :goto_0
 
-    .line 1772
+    .line 1744
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;-><init>()V
 
-    .line 1773
+    .line 1745
     invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
 
     move-result-wide p3
 
     iput-wide p3, p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;->document_id:J
 
-    .line 1775
+    .line 1747
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/LaunchActivity$14;->this$0:Lorg/telegram/ui/LaunchActivity;
 
@@ -111,7 +111,7 @@
 
     invoke-virtual {p3, p1}, Lorg/telegram/messenger/MessagesController;->updateEmojiStatus(Lorg/telegram/tgnet/TLRPC$EmojiStatus;)V
 
-    .line 1776
+    .line 1748
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$14;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iget p1, p1, Lorg/telegram/ui/BasePermissionsActivity;->currentAccount:I
@@ -130,7 +130,7 @@
 
     move p4, p3
 
-    .line 1778
+    .line 1750
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$14;->this$0:Lorg/telegram/ui/LaunchActivity;
 
@@ -144,7 +144,7 @@
 
     if-ge p4, v0, :cond_a
 
-    .line 1779
+    .line 1751
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$14;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$1000(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -155,12 +155,12 @@
 
     move-result-object v0
 
-    .line 1780
+    .line 1752
     instance-of v1, v0, Lorg/telegram/ui/Cells/DrawerUserCell;
 
     if-eqz v1, :cond_2
 
-    .line 1781
+    .line 1753
     check-cast v0, Lorg/telegram/ui/Cells/DrawerUserCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/DrawerUserCell;->getAccountNumber()I
@@ -171,7 +171,7 @@
 
     goto/16 :goto_6
 
-    .line 1782
+    .line 1754
     :cond_2
     instance-of v1, v0, Lorg/telegram/ui/Cells/DrawerProfileCell;
 
@@ -179,7 +179,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 1783
+    .line 1755
     iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$14;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iget v1, v1, Lorg/telegram/ui/BasePermissionsActivity;->currentAccount:I
@@ -194,7 +194,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 1784
+    .line 1756
     move-object v1, v0
 
     check-cast v1, Lorg/telegram/ui/Cells/DrawerProfileCell;
@@ -205,7 +205,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/Cells/DrawerProfileCell;->animateStateChange(J)V
 
-    .line 1786
+    .line 1758
     :cond_3
     check-cast v0, Lorg/telegram/ui/Cells/DrawerProfileCell;
 
@@ -223,7 +223,7 @@
 
     goto :goto_6
 
-    .line 1787
+    .line 1759
     :cond_4
     instance-of v1, v0, Lorg/telegram/ui/Cells/DrawerActionCell;
 
@@ -253,7 +253,7 @@
 
     if-ne v1, v2, :cond_9
 
-    .line 1788
+    .line 1760
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$User;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
 
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
@@ -268,7 +268,7 @@
 
     iget v1, v1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->until:I
 
-    .line 1790
+    .line 1762
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
@@ -292,13 +292,13 @@
     :goto_2
     const/4 v1, 0x1
 
-    .line 1791
+    .line 1763
     :goto_3
     check-cast v0, Lorg/telegram/ui/Cells/DrawerActionCell;
 
     if-eqz v1, :cond_7
 
-    .line 1793
+    .line 1765
     sget v2, Lorg/telegram/messenger/R$string;->ChangeEmojiStatus:I
 
     const-string v3, "ChangeEmojiStatus"
@@ -309,7 +309,7 @@
 
     goto :goto_4
 
-    .line 1794
+    .line 1766
     :cond_7
     sget v2, Lorg/telegram/messenger/R$string;->SetEmojiStatus:I
 
@@ -322,16 +322,16 @@
     :goto_4
     if-eqz v1, :cond_8
 
-    .line 1796
+    .line 1768
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_status_edit:I
 
     goto :goto_5
 
-    .line 1797
+    .line 1769
     :cond_8
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_status_set:I
 
-    .line 1791
+    .line 1763
     :goto_5
     invoke-virtual {v0, v2, v1}, Lorg/telegram/ui/Cells/DrawerActionCell;->updateTextAndIcon(Ljava/lang/String;I)V
 
@@ -341,7 +341,7 @@
 
     goto/16 :goto_1
 
-    .line 1802
+    .line 1774
     :cond_a
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$14;->val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 
@@ -349,14 +349,14 @@
 
     if-eqz p1, :cond_b
 
-    .line 1803
+    .line 1775
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$14;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     const/4 p2, 0x0
 
     invoke-static {p1, p2}, Lorg/telegram/ui/LaunchActivity;->access$702(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 
-    .line 1804
+    .line 1776
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$14;->val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 
     aget-object p1, p1, p3
@@ -370,14 +370,14 @@
 .method public onSettings()V
     .locals 1
 
-    .line 1757
+    .line 1729
     iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$14;->this$0:Lorg/telegram/ui/LaunchActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/LaunchActivity;->drawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
 
     if-eqz v0, :cond_0
 
-    .line 1758
+    .line 1730
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->closeDrawer()V
 
     :cond_0

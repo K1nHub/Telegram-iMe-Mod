@@ -8,26 +8,26 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
-.field public final synthetic f$1:Lorg/telegram/messenger/MessagesStorage;
+.field public final synthetic f$1:Ljava/util/ArrayList;
 
-.field public final synthetic f$2:I
+.field public final synthetic f$2:Ljava/util/ArrayList;
 
-.field public final synthetic f$3:Ljava/util/concurrent/CountDownLatch;
+.field public final synthetic f$3:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessagesStorage;ILjava/util/concurrent/CountDownLatch;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/ArrayList;I)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$1:Lorg/telegram/messenger/MessagesStorage;
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$1:Ljava/util/ArrayList;
 
-    iput p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$2:I
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$2:Ljava/util/ArrayList;
 
-    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$3:Ljava/util/concurrent/CountDownLatch;
+    iput p4, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$3:I
 
     return-void
 .end method
@@ -39,13 +39,13 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$1:Lorg/telegram/messenger/MessagesStorage;
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$1:Ljava/util/ArrayList;
 
-    iget v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$2:I
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$2:Ljava/util/ArrayList;
 
-    iget-object v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$3:Ljava/util/concurrent/CountDownLatch;
+    iget v3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda250;->f$3:I
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$x8wkFby5a-mk-hh9DuTb8MiRJ_g(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessagesStorage;ILjava/util/concurrent/CountDownLatch;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$Xlc56LTitWl1YiJs8JGyAdMGBS4(Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/ArrayList;I)V
 
     return-void
 .end method

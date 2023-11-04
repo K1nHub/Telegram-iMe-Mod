@@ -234,7 +234,7 @@
 
     if-nez p0, :cond_3
 
-    const-string p0, "java.lang.ClassNotFoundException"
+    const-string/jumbo p0, "java.lang.ClassNotFoundException"
 
     invoke-static {p0}, Lorg/aspectj/runtime/reflect/Factory;->class$(Ljava/lang/String;)Ljava/lang/Class;
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/DialogCell;)V
     .locals 0
 
-    .line 4696
+    .line 4709
     iput-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$5;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,16 +35,16 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 4699
+    .line 4712
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$5;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
-    invoke-static {p1}, Lorg/telegram/ui/Cells/DialogCell;->access$700(Lorg/telegram/ui/Cells/DialogCell;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Cells/DialogCell;->access$900(Lorg/telegram/ui/Cells/DialogCell;)Z
 
     move-result p1
 
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$5;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$800(Lorg/telegram/ui/Cells/DialogCell;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$1000(Lorg/telegram/ui/Cells/DialogCell;)Z
 
     move-result v0
 
@@ -64,7 +64,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$5;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$900(Lorg/telegram/ui/Cells/DialogCell;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$1100(Lorg/telegram/ui/Cells/DialogCell;)Z
 
     move-result v0
 
@@ -80,42 +80,42 @@
     :goto_1
     add-int/2addr p1, v0
 
-    .line 4700
+    .line 4713
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$5;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$1000(Lorg/telegram/ui/Cells/DialogCell;)I
+    invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$1200(Lorg/telegram/ui/Cells/DialogCell;)I
 
     move-result v0
 
     if-eq v0, p1, :cond_2
 
-    .line 4701
+    .line 4714
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$5;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$1000(Lorg/telegram/ui/Cells/DialogCell;)I
+    invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$1200(Lorg/telegram/ui/Cells/DialogCell;)I
 
     move-result v1
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Cells/DialogCell;->access$1100(Lorg/telegram/ui/Cells/DialogCell;II)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Cells/DialogCell;->access$1300(Lorg/telegram/ui/Cells/DialogCell;II)V
 
     goto :goto_2
 
-    .line 4703
+    .line 4716
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$5;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/Cells/DialogCell;->access$1202(Lorg/telegram/ui/Cells/DialogCell;Z)Z
+    invoke-static {p1, v1}, Lorg/telegram/ui/Cells/DialogCell;->access$1402(Lorg/telegram/ui/Cells/DialogCell;Z)Z
 
-    .line 4704
+    .line 4717
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$5;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
-    invoke-static {p1}, Lorg/telegram/ui/Cells/DialogCell;->access$1000(Lorg/telegram/ui/Cells/DialogCell;)I
+    invoke-static {p1}, Lorg/telegram/ui/Cells/DialogCell;->access$1200(Lorg/telegram/ui/Cells/DialogCell;)I
 
     move-result v0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Cells/DialogCell;->access$1302(Lorg/telegram/ui/Cells/DialogCell;I)I
+    invoke-static {p1, v0}, Lorg/telegram/ui/Cells/DialogCell;->access$1502(Lorg/telegram/ui/Cells/DialogCell;I)I
 
-    .line 4706
+    .line 4719
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$5;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 

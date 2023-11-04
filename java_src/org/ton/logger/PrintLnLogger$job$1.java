@@ -8,7 +8,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PrintLnLogger.kt */
-@DebugMetadata(m143c = "org.ton.logger.PrintLnLogger$job$1", m142f = "PrintLnLogger.kt", m141l = {16}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "org.ton.logger.PrintLnLogger$job$1", m144f = "PrintLnLogger.kt", m143l = {16}, m142m = "invokeSuspend")
 /* loaded from: classes6.dex */
 public final class PrintLnLogger$job$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     int label;

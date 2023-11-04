@@ -27,6 +27,9 @@
 .method public abstract didOpenPremiumGift(Lorg/telegram/ui/Cells/ChatActionCell;Lorg/telegram/tgnet/TLRPC$TL_premiumGiftOption;Z)V
 .end method
 
+.method public abstract didOpenPremiumGiftChannel(Lorg/telegram/ui/Cells/ChatActionCell;Ljava/lang/String;Z)V
+.end method
+
 .method public abstract didPressReplyMessage(Lorg/telegram/ui/Cells/ChatActionCell;I)V
 .end method
 

@@ -11,8 +11,8 @@ import com.iMe.utils.formatter.DateFormatter;
 import java.math.BigDecimal;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3630R;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.messenger.C3634R;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CryptoBoxActionItem.kt */
 /* loaded from: classes3.dex */
 public final class CryptoBoxActionItem extends NoChildNode {
@@ -141,7 +141,7 @@ public final class CryptoBoxActionItem extends NoChildNode {
     }
 
     /* renamed from: getAmount  reason: collision with other method in class */
-    public final BigDecimal m1534getAmount() {
+    public final BigDecimal m1539getAmount() {
         return this.amount;
     }
 
@@ -205,11 +205,11 @@ public final class CryptoBoxActionItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         int i2 = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i2 == 1) {
-            i = C3630R.string.cryptobox_action_type_create;
+            i = C3634R.string.cryptobox_action_type_create;
         } else if (i2 != 2) {
             throw new NoWhenBranchMatchedException();
         } else {
-            i = C3630R.string.cryptobox_action_type_stop;
+            i = C3634R.string.cryptobox_action_type_stop;
         }
         return resourceManager.getString(i);
     }
@@ -237,11 +237,11 @@ public final class CryptoBoxActionItem extends NoChildNode {
         int i = WhenMappings.$EnumSwitchMapping$0[this.type.ordinal()];
         if (i != 1) {
             if (i == 2) {
-                return C3630R.C3632drawable.fork_ic_transaction_staking_withdraw;
+                return C3634R.C3636drawable.fork_ic_transaction_staking_withdraw;
             }
             throw new NoWhenBranchMatchedException();
         }
-        return C3630R.C3632drawable.fork_ic_transaction_sent;
+        return C3634R.C3636drawable.fork_ic_transaction_sent;
     }
 
     public final String getTransactionTimeText() {

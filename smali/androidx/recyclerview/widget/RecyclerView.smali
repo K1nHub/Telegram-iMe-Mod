@@ -12807,6 +12807,70 @@
     return-void
 .end method
 
+.method public smoothScrollBy(IIILandroid/view/animation/Interpolator;)V
+    .locals 2
+
+    .line 2394
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView;->mLayout:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
+
+    if-nez v0, :cond_0
+
+    const-string p1, "RecyclerView"
+
+    const-string p2, "Cannot smooth scroll without a LayoutManager set. Call setLayoutManager with a non-null argument."
+
+    .line 2395
+    invoke-static {p1, p2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    return-void
+
+    .line 2399
+    :cond_0
+    iget-boolean v1, p0, Landroidx/recyclerview/widget/RecyclerView;->mLayoutSuppressed:Z
+
+    if-eqz v1, :cond_1
+
+    return-void
+
+    .line 2402
+    :cond_1
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->canScrollHorizontally()Z
+
+    move-result v0
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_2
+
+    move p1, v1
+
+    .line 2405
+    :cond_2
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView;->mLayout:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
+
+    invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->canScrollVertically()Z
+
+    move-result v0
+
+    if-nez v0, :cond_3
+
+    move p2, v1
+
+    :cond_3
+    if-nez p1, :cond_4
+
+    if-eqz p2, :cond_5
+
+    .line 2409
+    :cond_4
+    iget-object v0, p0, Landroidx/recyclerview/widget/RecyclerView;->mViewFlinger:Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;
+
+    invoke-virtual {v0, p1, p2, p3, p4}, Landroidx/recyclerview/widget/RecyclerView$ViewFlinger;->smoothScrollBy(IIILandroid/view/animation/Interpolator;)V
+
+    :cond_5
+    return-void
+.end method
+
 .method public smoothScrollBy(IILandroid/view/animation/Interpolator;)V
     .locals 2
 

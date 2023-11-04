@@ -37,7 +37,7 @@
 
 .field private awaitingPlayer:Z
 
-.field private backButton:Landroid/widget/ImageView;
+.field private backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
 .field private blurManager:Lorg/telegram/ui/Components/BlurringShader$BlurManager;
 
@@ -81,9 +81,11 @@
 
 .field private editModeAnimator:Landroid/animation/AnimatorSet;
 
-.field private flashButton:Landroid/widget/ImageView;
+.field private flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
 .field private flashButtonResId:I
+
+.field private flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
 
 .field private forceBackgroundVisible:Z
 
@@ -94,6 +96,18 @@
 .field private fromRounding:F
 
 .field private fromSourceView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
+
+.field private frontfaceFlashMode:I
+
+.field private frontfaceFlashModes:Ljava/util/ArrayList;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field private frozenDismissProgress:Ljava/lang/Float;
 
@@ -120,6 +134,8 @@
 .field private insetTop:I
 
 .field private isBackgroundVisible:Z
+
+.field private isDark:Z
 
 .field private isShown:Z
 
@@ -289,26 +305,26 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$0BfYqFKGB_L2MgAqMPXc9fhTiiI(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)V
+.method public static synthetic $r8$lambda$--ePl4TlgUdmIA2PEJFUYSsg1h4(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$22(Ljava/lang/Runnable;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$upload$31(Z)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$259eoVaX7xgiAzb0VUW4iQlbqxk(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Float;)V
+.method public static synthetic $r8$lambda$-qAyAKfx7lIwCGn93rbtjLH6Ozc(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/view/View;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$19(Ljava/lang/Float;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createFilterPhotoView$51(Landroid/view/View;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$2hGcniB4O_biQroAb32xZwn7gWY(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)V
+.method public static synthetic $r8$lambda$0JHLJWuYYYqtusMEkfomd-pl2PM(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/view/View;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$navigateToPreviewWithPlayerAwait$34(Ljava/lang/Runnable;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createFilterPhotoView$52(Landroid/view/View;)V
 
     return-void
 .end method
@@ -337,50 +353,42 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$5TXdA7XWZZsLL8gSCSlbZtcwRng(Lorg/telegram/ui/Stories/recorder/StoryRecorder;FFLandroid/animation/ValueAnimator;)V
+.method public static synthetic $r8$lambda$5HUvJRio1npY2JTx8Py6YYye-SM(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Float;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$animateContainerBack$35(FFLandroid/animation/ValueAnimator;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$16(Ljava/lang/Float;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$5v32TIsrhw-Z_QSeZS5KRts5LWg(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method public static synthetic $r8$lambda$6GzJOspRPVuxyolVi4AuCSX04MU(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$onResumeInternal$56()V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$animateGalleryListView$44(Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$6bJ_azckZs8hawVfXZcPSw3-JdI(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method public static synthetic $r8$lambda$7pEHF3-JGQ6Iwv8ithiRsRmH9eg(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$showZoomControls$32()V
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createPhotoPaintView$49()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$7VjecNGSCOhkEtMSkQVPvcEFzSY(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method public static synthetic $r8$lambda$8-T33d94e02-xppw4OBMZwgjqGA(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$destroyCameraView$54()V
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$17()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$8v7OTx-4P4NxlFzONRJocF05dzw(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$B3ReO-vh9e-QbjtfLVpmgm9bjpk(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createFilterPhotoView$48(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$BTk0P-RsygbDqhZsOBUse-8lFeM(Lorg/telegram/ui/Stories/recorder/StoryRecorder;FLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
-    .locals 0
-
-    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$animateGalleryListView$39(FLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$onRequestPermissionsResultInternal$62(Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
@@ -393,6 +401,22 @@
     return-void
 .end method
 
+.method public static synthetic $r8$lambda$C76ET4IS8ZIxMO6nFb3cE3PDovY(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$24(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$CVPHdBby2FsG9CsgEh6pEhT4DMo(Lorg/telegram/ui/Stories/recorder/StoryRecorder;F)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$21(F)V
+
+    return-void
+.end method
+
 .method public static synthetic $r8$lambda$DOr62jqUoJpTcCYnLdGwwFNAvFs(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
@@ -401,10 +425,26 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$DXzzp7YDCI9EObKBteh1uDmYN1s(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+.method public static synthetic $r8$lambda$DV3erswZiqvZTMli74I9ixneSVc(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$showVideoTimer$31(Z)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$saveLastCameraBitmap$54(Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$E6zn4NxR2Ur6JGvoaMq74FMRAoA(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$showZoomControls$36()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$ETF6aG7t7C5mk8I1vqYPP2vbXU8(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZLjava/lang/Object;Landroid/graphics/Bitmap;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createGalleryListView$41(ZLjava/lang/Object;Landroid/graphics/Bitmap;)V
 
     return-void
 .end method
@@ -417,58 +457,50 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$FP6ZjiMQByAZr3J8o9rFEryhZWs(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method public static synthetic $r8$lambda$FgaBTrpg5TgIJTxEqhxkhtggIc4(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$onNavigateStart$42()V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$navigateToPreviewWithPlayerAwait$38(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Gofa7uimueZNSvRe31KGe_046Yg(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Boolean;)V
+.method public static synthetic $r8$lambda$GFppmsQv2jE-ilATg0YNkXyBfRM(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$18(Ljava/lang/Boolean;)V
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$destroyCameraView$58()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$H6q-F0LPPFKwntW2hqolJo8qwbo(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Integer;)V
+.method public static synthetic $r8$lambda$Gkpch2gQaP0kpGXrwEn5nn0c7w4(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$25(Ljava/lang/Integer;)V
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$setCameraFlashModeIcon$34()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$IH7EV3RE1srNxJ0I37bA8-rjPYI(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZLandroid/content/DialogInterface;)V
+.method public static synthetic $r8$lambda$JA5JcScTstIb-hHPlIjJ9DAsDAo(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$showLimitReachedSheet$59(ZLandroid/content/DialogInterface;)V
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$destroyCameraView$57()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$IKwKwWVMMhAnWhOfwU5Mrwdui6o(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method public static synthetic $r8$lambda$KHxxsuJvmzVxtHLfbAmJRHEjoUM()V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$setCameraFlashModeIcon$30()V
+    invoke-static {}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$20()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Inc60C4dJu99ghFYc_uQ68WaceQ(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method public static synthetic $r8$lambda$KPfibGcQcXSNttxXAi2Sc18AeeI(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Boolean;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createPhotoPaintView$44()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$JyRMbtIQcBAxF4zKOmNuSS87qAE(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZLjava/lang/Object;Landroid/graphics/Bitmap;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createGalleryListView$37(ZLjava/lang/Object;Landroid/graphics/Bitmap;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$22(Ljava/lang/Boolean;)V
 
     return-void
 .end method
@@ -477,6 +509,14 @@
     .locals 0
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$openEdit$0(Z)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$L9u7UdLbTNrDtgrkylhLzsR4p48(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$showDismissEntry$56(Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
@@ -497,14 +537,20 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$MVyFMK3xiSqzRqAamTrU1GEmm8c(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+.method public static synthetic $r8$lambda$MXSfubT4S-v9FGxYQjLP-vMHtBc(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createFilterPhotoView$46(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$26(Ljava/lang/Runnable;)V
 
-    move-result-object p0
+    return-void
+.end method
 
-    return-object p0
+.method public static synthetic $r8$lambda$N1cks3i4i-bRR4W2lMRKs71WjK0(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;I)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$requestCameraPermission$59(Landroid/content/DialogInterface;I)V
+
+    return-void
 .end method
 
 .method public static synthetic $r8$lambda$NYwgnwhl8gQ_kr7BgbCdgCoemIs(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/view/View;)V
@@ -515,42 +561,26 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$NvI9Fua1xk9cuWpeFgQJS5hafuo(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$Qwl3J78posYGE1NnSPlrjsyKMkI(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$showDismissEntry$51(Landroid/content/DialogInterface;I)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$upload$30(Z)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$NxQiY192NoyL5dLo8sUeDeagVFw(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method public static synthetic $r8$lambda$TTSnUDpqjd_mfj0laIbBf09GfLw(Lorg/telegram/ui/Stories/recorder/StoryRecorder;FFLandroid/animation/ValueAnimator;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createCameraView$49()V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$animateContainerBack$39(FFLandroid/animation/ValueAnimator;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$PUE9r40TqgE8aVJaj0f48MgRrcQ(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method public static synthetic $r8$lambda$U7LNfw8ARWPsusvPCAefpJVjRFU(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Integer;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createPhotoPaintView$45()V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$TQSeNd7213gqXoEg9sNu7HA5qsc(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/animation/ValueAnimator;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$animateGalleryListView$40(Landroid/animation/ValueAnimator;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$TWVhCBCr-F0ovk5kvBD310-SzSA(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
-    .locals 0
-
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$uploadInternal$28()V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$29(Ljava/lang/Integer;)V
 
     return-void
 .end method
@@ -579,26 +609,50 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$Wgk8T0Jm2Rci4U9NvOJ_Gp1LpBQ(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+.method public static synthetic $r8$lambda$Wgu37d96fabzOdfzBvx2IDPkjTE(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/tgnet/TLRPC$InputPeer;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$upload$26(Z)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$25(Lorg/telegram/tgnet/TLRPC$InputPeer;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$YKvJy1-VzzeRVQDYeAZOfa0D0PQ(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+.method public static synthetic $r8$lambda$XllLIje_a3g5xnXreHe0fYid_tU(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$animateGalleryListView$38(Z)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$openPremium$64(Landroid/content/DialogInterface;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$YxDejv-t62tINfj464p5tlzhaLg(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method public static synthetic $r8$lambda$YlQ0P2eZpyMuq5a9CJeplXIZyM8(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Float;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createGalleryListView$36()V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$23(Ljava/lang/Float;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$ZZYS7yDWKrBAIyt6y27lUkoRmas(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;ZZLorg/telegram/tgnet/TLRPC$InputPeer;Ljava/lang/Runnable;)V
+    .locals 0
+
+    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$27(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;ZZLorg/telegram/tgnet/TLRPC$InputPeer;Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$ZlAG5VWNmaFmN3Nc88z5kDXZz5g(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$onResumeInternal$60()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$ZtZNc8yDteTU2YMUVxtY6leQ7Tc(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/ui/Components/FilterGLThread;)V
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$onNavigateStart$47(Lorg/telegram/ui/Components/FilterGLThread;)V
 
     return-void
 .end method
@@ -611,18 +665,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ahoL12dxPynRWH7FNwZNwkPxW40(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$bXExYC-yDUKsFX9U2_xuasmElcY(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createFilterPhotoView$47(Landroid/view/View;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$byMOlXdWliWbz_4gVvjmQF2fQEE(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/ui/Components/FilterGLThread;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$onNavigateStart$43(Lorg/telegram/ui/Components/FilterGLThread;)V
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$onNavigateStart$45()V
 
     return-void
 .end method
@@ -643,10 +689,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$cfhbh5JTqV1kvHW97gbCjciCUsA(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$d19JP0IHEH4UK_PdYFZwmJrmQrQ(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$showDismissEntry$52(Landroid/content/DialogInterface;I)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$showDismissEntry$55(Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
@@ -659,34 +705,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$dlFRKkZ3s5YJvrqlZF_29-8b06w(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$f3pGRpNCFXle2tSaKSoiQv27DNY(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$onRequestPermissionsResultInternal$58(Landroid/content/DialogInterface;I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$e1EGxDA1oBF3bUM3KmyfEUGkLKI(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/tgnet/TLRPC$InputPeer;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$21(Lorg/telegram/tgnet/TLRPC$InputPeer;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$eRJKQMjAfU-XQajJbuqQCmmBnMU(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;I)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$requestCameraPermission$55(Landroid/content/DialogInterface;I)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$ec834awT3K5RAt-iiEjK09EcSXk(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;)V
-    .locals 0
-
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$24(Landroid/content/DialogInterface;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$showVideoTimer$35(Z)V
 
     return-void
 .end method
@@ -695,6 +717,14 @@
     .locals 0
 
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openPremium()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$hFHRY-OoAcGde1b7sHHkVuIcqMM(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZLandroid/content/DialogInterface;)V
+    .locals 0
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$showLimitReachedSheet$63(ZLandroid/content/DialogInterface;)V
 
     return-void
 .end method
@@ -709,42 +739,58 @@
     return-object p0
 .end method
 
-.method public static synthetic $r8$lambda$jRwyAHIH0JYYpOz38cHshIgqjPc(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;I)V
+.method public static synthetic $r8$lambda$lOgIQ8PVSe8swSD0EwLRVfrFQUs(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;I)V
     .locals 0
 
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$onRequestPermissionsResultInternal$57(Landroid/content/DialogInterface;I)V
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$onRequestPermissionsResultInternal$61(Landroid/content/DialogInterface;I)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$jtWV5UUjIV5obxQrBtHDRd_PRNY(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+.method public static synthetic $r8$lambda$lVTR-rnPkqZYZQKftw6Fos3LQnw(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$upload$27(Z)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$28(Landroid/content/DialogInterface;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$k4EDTteLkVQkx7MgnJJNSuVH7xg(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/view/View;)V
+.method public static synthetic $r8$lambda$laNg-sXftlloRu3aT7z29mmf0cs(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$15(Landroid/view/View;)V
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createGalleryListView$40()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$kLHe8PCSKjk3psGetzBknkPH7_g(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method public static synthetic $r8$lambda$lsxBr-yu4dyrq1J7XsVmdNRtO8U(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$onNavigateStart$41()V
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$uploadInternal$32()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$kyaR2PZgVeoUQt571TgZHR4XZR0(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;)V
+.method public static synthetic $r8$lambda$lvNwZLq31DdzJfPXLtna2u0tXzQ(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZJ)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$20(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;)V
+    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$uploadInternal$33(ZJ)V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$mHKHQFrY6FwcGd5jLI1oIhL6PKk(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createCameraView$53()V
+
+    return-void
+.end method
+
+.method public static synthetic $r8$lambda$nzvDQexJ61Ya0qEWBqOOggwVgoc(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$onNavigateStart$46()V
 
     return-void
 .end method
@@ -757,74 +803,78 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$pqFAobAIGMcNbVYrp1BwAMWjbqk(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method public static synthetic $r8$lambda$plc6gRGtA1rbqz1TemKhyf-4b_M(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Float;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$showZoomControls$33()V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$15(Ljava/lang/Float;)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$r4zSVywbg9mhzjnBZ8PLYpG7Hn0()V
+.method public static synthetic $r8$lambda$qVWpW9IrzRdUOFBnmGEZ_zgWaL0(Lorg/telegram/ui/Stories/recorder/StoryRecorder;FLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
-    invoke-static {}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$16()V
+    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$animateGalleryListView$43(FLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$sYSsg_U4PUV32RFjNwRUoa1zy4I(Lorg/telegram/ui/Stories/recorder/StoryRecorder;F)V
+.method public static synthetic $r8$lambda$qj5PNTFXh-DnFAIsSEEYn2qMJcc(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$17(F)V
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createPhotoPaintView$48()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$vYZP0UY7BdUACrl8n2Xw0lApZR4(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method public static synthetic $r8$lambda$szISsMr4tMIrkHHM3lYPTwzUQVE(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$destroyCameraView$53()V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$animateGalleryListView$42(Z)V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$wWdZHij3bAVMs9IMH0604HdBBOE(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/DialogInterface;)V
+.method public static synthetic $r8$lambda$uzRD8zmNwO5HdmJhtLjvEsnktYM(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/view/View;)Z
     .locals 0
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$openPremium$60(Landroid/content/DialogInterface;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$18(Landroid/view/View;)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static synthetic $r8$lambda$x6FKjCilizh3k8vJHVJLbOHKpTg(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    .locals 0
+
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$showZoomControls$37()V
 
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$wrIs1ChPBvLo4b9K_NBF5JtV1pw(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;ZZLorg/telegram/tgnet/TLRPC$InputPeer;Ljava/lang/Runnable;)V
+.method public static synthetic $r8$lambda$xRLOWHOrDu7PqD4QXIoUvCqKlD8(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/view/View;)V
     .locals 0
 
-    invoke-direct/range {p0 .. p5}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$23(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;ZZLorg/telegram/tgnet/TLRPC$InputPeer;Ljava/lang/Runnable;)V
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$19(Landroid/view/View;)V
 
     return-void
+.end method
+
+.method public static synthetic $r8$lambda$xhr9ouc1YSxrDW4SEwwZAbc9lrI(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+    .locals 0
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$createFilterPhotoView$50(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public static synthetic $r8$lambda$xt81TfsIgg0Kg3Rj67noHYpYLfQ(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$initViews$11(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$zWtht50YMSyc-7BTq_Llw8Emxb4(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZJ)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$uploadInternal$29(ZJ)V
-
-    return-void
-.end method
-
-.method public static synthetic $r8$lambda$zYcg_bOq-9qkGA7t46DAR3GgBVM(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
-    .locals 0
-
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lambda$saveLastCameraBitmap$50(Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
 
     return-void
 .end method
@@ -840,17 +890,17 @@
 .method public constructor <init>(Landroid/app/Activity;I)V
     .locals 4
 
-    .line 189
+    .line 194
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 151
+    .line 155
     new-instance v0, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;
 
     invoke-direct {v0}, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 220
+    .line 225
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
@@ -859,10 +909,10 @@
 
     const/4 v0, 0x1
 
-    .line 225
+    .line 230
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->canChangePeer:Z
 
-    .line 553
+    .line 558
     new-instance v1, Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-direct {v1}, Lorg/telegram/messenger/AnimationNotificationsLocker;-><init>()V
@@ -871,96 +921,99 @@
 
     const/4 v1, 0x0
 
-    .line 1409
+    .line 1431
     iput v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
     const/4 v2, -0x1
 
-    .line 1414
+    .line 1436
     iput v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentEditMode:I
 
-    .line 1486
+    .line 1508
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVideo:Z
 
-    .line 1487
+    .line 1509
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->takingPhoto:Z
 
-    .line 1488
+    .line 1510
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->takingVideo:Z
 
-    .line 1489
+    .line 1511
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->stoppingTakingVideo:Z
 
-    .line 1490
+    .line 1512
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->awaitingPlayer:Z
 
     const/4 v3, -0x3
 
-    .line 1494
+    .line 1516
     iput v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->shiftDp:I
 
-    .line 2174
+    .line 2262
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->preparingUpload:Z
 
-    .line 2399
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;
+    .line 2483
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$11;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$11;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControlDelegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
-    .line 2703
+    .line 2871
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimerShown:Z
 
-    .line 2927
+    .line 3095
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyContainerViewTranslation2:Z
 
-    .line 190
+    .line 4322
+    iput v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashMode:I
+
+    .line 195
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
-    .line 191
+    .line 196
     iput p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
-    .line 193
+    .line 198
     new-instance p2, Landroid/view/WindowManager$LayoutParams;
 
     invoke-direct {p2}, Landroid/view/WindowManager$LayoutParams;-><init>()V
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
-    .line 194
+    .line 199
     iput v2, p2, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    .line 195
+    .line 200
     iput v2, p2, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    .line 196
+    .line 201
     iput v3, p2, Landroid/view/WindowManager$LayoutParams;->format:I
 
     const/16 v1, 0x33
 
-    .line 197
+    .line 202
     iput v1, p2, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
     const/16 v1, 0x63
 
-    .line 198
+    .line 203
     iput v1, p2, Landroid/view/WindowManager$LayoutParams;->type:I
 
-    .line 199
+    .line 204
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x1c
 
     if-lt v1, v2, :cond_0
 
-    .line 200
+    .line 205
     iput v0, p2, Landroid/view/WindowManager$LayoutParams;->layoutInDisplayCutoutMode:I
 
     :cond_0
     const v0, 0x8010100
 
-    .line 202
+    .line 207
     iput v0, p2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const/16 v2, 0x15
@@ -971,18 +1024,18 @@
 
     or-int/2addr v0, v1
 
-    .line 208
+    .line 213
     iput v0, p2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     :cond_1
     const/16 v0, 0x10
 
-    .line 210
+    .line 215
     iput v0, p2, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
     const-string p2, "window"
 
-    .line 212
+    .line 217
     invoke-virtual {p1, p2}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p1
@@ -991,7 +1044,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowManager:Landroid/view/WindowManager;
 
-    .line 214
+    .line 219
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->initViews()V
 
     return-void
@@ -1000,7 +1053,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/lang/Float;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frozenDismissProgress:Ljava/lang/Float;
 
     return-object p0
@@ -1009,7 +1062,7 @@
 .method static synthetic access$002(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Float;)Ljava/lang/Float;
     .locals 0
 
-    .line 149
+    .line 153
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frozenDismissProgress:Ljava/lang/Float;
 
     return-object p1
@@ -1018,89 +1071,118 @@
 .method static synthetic access$100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)F
     .locals 0
 
-    .line 149
+    .line 153
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openProgress:F
 
     return p0
 .end method
 
-.method static synthetic access$10000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method static synthetic access$10000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;II)V
     .locals 0
 
-    .line 149
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyGalleryListView()V
+    .line 153
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onNavigateEnd(II)V
 
     return-void
 .end method
 
-.method static synthetic access$10100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+.method static synthetic access$10102(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 149
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createGalleryListView(Z)V
+    .line 153
+    iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerViewBackAnimator:Landroid/animation/ValueAnimator;
 
-    return-void
+    return-object p1
 .end method
 
 .method static synthetic access$102(Lorg/telegram/ui/Stories/recorder/StoryRecorder;F)F
     .locals 0
 
-    .line 149
+    .line 153
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openProgress:F
 
     return p1
 .end method
 
-.method static synthetic access$10200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
+.method static synthetic access$10200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
+    .line 153
+    iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyContainerViewTranslation2:Z
+
+    return p0
+.end method
+
+.method static synthetic access$10300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/lang/Runnable;
+    .locals 0
+
+    .line 153
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryLayouted:Ljava/lang/Runnable;
 
     return-object p0
 .end method
 
-.method static synthetic access$10300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/app/Activity;
+.method static synthetic access$10302(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 149
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
-
-    return-object p0
-.end method
-
-.method static synthetic access$10402(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)Ljava/lang/Runnable;
-    .locals 0
-
-    .line 149
-    iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->audioGrantedCallback:Ljava/lang/Runnable;
+    .line 153
+    iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryLayouted:Ljava/lang/Runnable;
 
     return-object p1
 .end method
 
-.method static synthetic access$10500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/ToggleButton;
+.method static synthetic access$10400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
     .locals 0
 
-    .line 149
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
-
-    return-object p0
-.end method
-
-.method static synthetic access$10600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/String;Z)V
-    .locals 0
-
-    .line 149
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->setCameraFlashModeIcon(Ljava/lang/String;Z)V
+    .line 153
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyCameraView(Z)V
 
     return-void
 .end method
 
-.method static synthetic access$10700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.method static synthetic access$10500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/graphics/drawable/Drawable;
     .locals 0
 
-    .line 149
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    .line 153
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getCameraThumb()Landroid/graphics/drawable/Drawable;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method static synthetic access$10600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;II)V
+    .locals 0
+
+    .line 153
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onSwitchEditModeEnd(II)V
+
+    return-void
+.end method
+
+.method static synthetic access$10700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    .locals 0
+
+    .line 153
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyGalleryListView()V
+
+    return-void
+.end method
+
+.method static synthetic access$10800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+    .locals 0
+
+    .line 153
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createGalleryListView(Z)V
+
+    return-void
+.end method
+
+.method static synthetic access$10900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
+    .locals 0
+
+    .line 153
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     return-object p0
 .end method
@@ -1108,25 +1190,81 @@
 .method static synthetic access$1100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
     .locals 0
 
-    .line 149
+    .line 153
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->underControls:I
 
     return p0
 .end method
 
+.method static synthetic access$11000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/app/Activity;
+    .locals 0
+
+    .line 153
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
+
+    return-object p0
+.end method
+
 .method static synthetic access$1102(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
     .locals 0
 
-    .line 149
+    .line 153
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->underControls:I
 
     return p1
 .end method
 
+.method static synthetic access$11102(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)Ljava/lang/Runnable;
+    .locals 0
+
+    .line 153
+    iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->audioGrantedCallback:Ljava/lang/Runnable;
+
+    return-object p1
+.end method
+
+.method static synthetic access$11200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/ToggleButton;
+    .locals 0
+
+    .line 153
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
+
+    return-object p0
+.end method
+
+.method static synthetic access$11300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/lang/String;
+    .locals 0
+
+    .line 153
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getCurrentFlashMode()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method static synthetic access$11400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/String;Z)V
+    .locals 0
+
+    .line 153
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->setCameraFlashModeIcon(Ljava/lang/String;Z)V
+
+    return-void
+.end method
+
+.method static synthetic access$11500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    .locals 0
+
+    .line 153
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    return-object p0
+.end method
+
 .method static synthetic access$1200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
     .locals 0
 
-    .line 149
+    .line 153
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetBottom:I
 
     return p0
@@ -1135,7 +1273,7 @@
 .method static synthetic access$1202(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
     .locals 0
 
-    .line 149
+    .line 153
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetBottom:I
 
     return p1
@@ -1144,7 +1282,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)F
     .locals 0
 
-    .line 149
+    .line 153
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dismissProgress:F
 
     return p0
@@ -1153,7 +1291,7 @@
 .method static synthetic access$1302(Lorg/telegram/ui/Stories/recorder/StoryRecorder;F)F
     .locals 0
 
-    .line 149
+    .line 153
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dismissProgress:F
 
     return p1
@@ -1162,7 +1300,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
     .locals 0
 
-    .line 149
+    .line 153
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openType:I
 
     return p0
@@ -1171,7 +1309,7 @@
 .method static synthetic access$1500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)F
     .locals 0
 
-    .line 149
+    .line 153
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromRounding:F
 
     return p0
@@ -1180,7 +1318,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/graphics/RectF;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromRect:Landroid/graphics/RectF;
 
     return-object p0
@@ -1189,7 +1327,7 @@
 .method static synthetic access$1700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -1198,7 +1336,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->actionBarContainer:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -1207,7 +1345,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->controlContainer:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -1216,7 +1354,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     return-object p0
@@ -1225,7 +1363,7 @@
 .method static synthetic access$2000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     return-object p0
@@ -1234,7 +1372,7 @@
 .method static synthetic access$2100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PaintView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     return-object p0
@@ -1243,7 +1381,7 @@
 .method static synthetic access$2200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    .line 149
+    .line 153
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateContainerBack()V
 
     return-void
@@ -1252,7 +1390,7 @@
 .method static synthetic access$2300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/GalleryListView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     return-object p0
@@ -1261,7 +1399,7 @@
 .method static synthetic access$2302(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/ui/Stories/recorder/GalleryListView;)Lorg/telegram/ui/Stories/recorder/GalleryListView;
     .locals 0
 
-    .line 149
+    .line 153
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     return-object p1
@@ -1270,7 +1408,7 @@
 .method static synthetic access$2400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryClosing:Z
 
     return p0
@@ -1279,7 +1417,7 @@
 .method static synthetic access$2402(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
     .locals 0
 
-    .line 149
+    .line 153
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryClosing:Z
 
     return p1
@@ -1288,7 +1426,7 @@
 .method static synthetic access$2500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->takingVideo:Z
 
     return p0
@@ -1297,7 +1435,7 @@
 .method static synthetic access$2502(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
     .locals 0
 
-    .line 149
+    .line 153
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->takingVideo:Z
 
     return p1
@@ -1306,7 +1444,7 @@
 .method static synthetic access$2600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
     .locals 0
 
-    .line 149
+    .line 153
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateGalleryListView(Z)V
 
     return-void
@@ -1315,7 +1453,7 @@
 .method static synthetic access$2700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
     return-object p0
@@ -1324,7 +1462,7 @@
 .method static synthetic access$2800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->scrollingY:Z
 
     return p0
@@ -1333,7 +1471,7 @@
 .method static synthetic access$2802(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
     .locals 0
 
-    .line 149
+    .line 153
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->scrollingY:Z
 
     return p1
@@ -1342,7 +1480,7 @@
 .method static synthetic access$2900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->scrollingX:Z
 
     return p0
@@ -1351,7 +1489,7 @@
 .method static synthetic access$2902(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
     .locals 0
 
-    .line 149
+    .line 153
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->scrollingX:Z
 
     return p1
@@ -1360,7 +1498,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     return-object p0
@@ -1369,7 +1507,7 @@
 .method static synthetic access$3100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/DualCameraView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     return-object p0
@@ -1378,7 +1516,7 @@
 .method static synthetic access$3200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
     .locals 0
 
-    .line 149
+    .line 153
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
     return p0
@@ -1387,7 +1525,7 @@
 .method static synthetic access$3300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)F
     .locals 0
 
-    .line 149
+    .line 153
     iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraZoom:F
 
     return p0
@@ -1396,7 +1534,7 @@
 .method static synthetic access$3302(Lorg/telegram/ui/Stories/recorder/StoryRecorder;F)F
     .locals 0
 
-    .line 149
+    .line 153
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraZoom:F
 
     return p1
@@ -1405,7 +1543,7 @@
 .method static synthetic access$3316(Lorg/telegram/ui/Stories/recorder/StoryRecorder;F)F
     .locals 1
 
-    .line 149
+    .line 153
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraZoom:F
 
     add-float/2addr v0, p1
@@ -1418,7 +1556,7 @@
 .method static synthetic access$3400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/ZoomControlView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     return-object p0
@@ -1427,7 +1565,7 @@
 .method static synthetic access$3500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZZ)V
     .locals 0
 
-    .line 149
+    .line 153
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showZoomControls(ZZ)V
 
     return-void
@@ -1436,7 +1574,7 @@
 .method static synthetic access$3600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->wasGalleryOpen:Z
 
     return p0
@@ -1445,7 +1583,7 @@
 .method static synthetic access$3900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isGalleryOpen()Z
 
     move-result p0
@@ -1456,7 +1594,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromSourceView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
 
     return-object p0
@@ -1465,7 +1603,7 @@
 .method static synthetic access$4000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openCloseAnimator:Landroid/animation/ValueAnimator;
 
     return-object p0
@@ -1474,7 +1612,7 @@
 .method static synthetic access$4100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroidx/dynamicanimation/animation/SpringAnimation;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseSpringAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     return-object p0
@@ -1483,7 +1621,7 @@
 .method static synthetic access$4200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseAnimator:Landroid/animation/ValueAnimator;
 
     return-object p0
@@ -1492,7 +1630,7 @@
 .method static synthetic access$4202(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 149
+    .line 153
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseAnimator:Landroid/animation/ValueAnimator;
 
     return-object p1
@@ -1501,7 +1639,7 @@
 .method static synthetic access$4300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/RecordControl;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     return-object p0
@@ -1510,7 +1648,7 @@
 .method static synthetic access$4400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->takingPhoto:Z
 
     return p0
@@ -1519,7 +1657,7 @@
 .method static synthetic access$4402(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
     .locals 0
 
-    .line 149
+    .line 153
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->takingPhoto:Z
 
     return p1
@@ -1528,7 +1666,7 @@
 .method static synthetic access$4600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    .line 149
+    .line 153
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createGalleryListView()V
 
     return-void
@@ -1537,7 +1675,7 @@
 .method static synthetic access$4900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->awaitingPlayer:Z
 
     return p0
@@ -1546,7 +1684,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/StoryWaveEffectView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->waveEffect:Lorg/telegram/ui/Stories/StoryWaveEffectView;
 
     return-object p0
@@ -1555,71 +1693,55 @@
 .method static synthetic access$5000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
     .locals 0
 
-    .line 149
+    .line 153
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->saveCameraFace(Z)V
 
     return-void
 .end method
 
-.method static synthetic access$5100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/lang/Boolean;
+.method static synthetic access$5100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->useDisplayFlashlight()Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method static synthetic access$5200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/FlashViews;
+    .locals 0
+
+    .line 153
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    return-object p0
+.end method
+
+.method static synthetic access$5300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/lang/Boolean;
+    .locals 0
+
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListViewOpening:Ljava/lang/Boolean;
 
     return-object p0
 .end method
 
-.method static synthetic access$5102(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Boolean;)Ljava/lang/Boolean;
+.method static synthetic access$5302(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Boolean;)Ljava/lang/Boolean;
     .locals 0
 
-    .line 149
+    .line 153
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListViewOpening:Ljava/lang/Boolean;
 
     return-object p1
 .end method
 
-.method static synthetic access$5200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
-    .locals 0
-
-    .line 149
-    iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetTop:I
-
-    return p0
-.end method
-
-.method static synthetic access$5202(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
-    .locals 0
-
-    .line 149
-    iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetTop:I
-
-    return p1
-.end method
-
-.method static synthetic access$5300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
-    .locals 0
-
-    .line 149
-    iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetLeft:I
-
-    return p0
-.end method
-
-.method static synthetic access$5302(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
-    .locals 0
-
-    .line 149
-    iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetLeft:I
-
-    return p1
-.end method
-
 .method static synthetic access$5400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
     .locals 0
 
-    .line 149
-    iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetRight:I
+    .line 153
+    iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetTop:I
 
     return p0
 .end method
@@ -1627,8 +1749,8 @@
 .method static synthetic access$5402(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
     .locals 0
 
-    .line 149
-    iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetRight:I
+    .line 153
+    iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetTop:I
 
     return p1
 .end method
@@ -1636,8 +1758,8 @@
 .method static synthetic access$5500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
     .locals 0
 
-    .line 149
-    iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewW:I
+    .line 153
+    iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetLeft:I
 
     return p0
 .end method
@@ -1645,8 +1767,8 @@
 .method static synthetic access$5502(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
     .locals 0
 
-    .line 149
-    iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewW:I
+    .line 153
+    iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetLeft:I
 
     return p1
 .end method
@@ -1654,8 +1776,8 @@
 .method static synthetic access$5600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
     .locals 0
 
-    .line 149
-    iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewH:I
+    .line 153
+    iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetRight:I
 
     return p0
 .end method
@@ -1663,143 +1785,161 @@
 .method static synthetic access$5602(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
     .locals 0
 
-    .line 149
+    .line 153
+    iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->insetRight:I
+
+    return p1
+.end method
+
+.method static synthetic access$5700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
+    .locals 0
+
+    .line 153
+    iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewW:I
+
+    return p0
+.end method
+
+.method static synthetic access$5702(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
+    .locals 0
+
+    .line 153
+    iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewW:I
+
+    return p1
+.end method
+
+.method static synthetic access$5800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
+    .locals 0
+
+    .line 153
+    iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewH:I
+
+    return p0
+.end method
+
+.method static synthetic access$5802(Lorg/telegram/ui/Stories/recorder/StoryRecorder;I)I
+    .locals 0
+
+    .line 153
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewH:I
 
     return p1
 .end method
 
-.method static synthetic access$5700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
+.method static synthetic access$5900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->underStatusBar:Z
 
     return p0
 .end method
 
-.method static synthetic access$5702(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
+.method static synthetic access$5902(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
     .locals 0
 
-    .line 149
+    .line 153
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->underStatusBar:Z
 
     return p1
 .end method
 
-.method static synthetic access$5800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/CaptionStory;
-    .locals 0
-
-    .line 149
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
-
-    return-object p0
-.end method
-
-.method static synthetic access$5900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/FrameLayout;
-    .locals 0
-
-    .line 149
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navbarContainer:Landroid/widget/FrameLayout;
-
-    return-object p0
-.end method
-
 .method static synthetic access$600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/messenger/AnimationNotificationsLocker;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     return-object p0
 .end method
 
-.method static synthetic access$6000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PreviewView;
+.method static synthetic access$6000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/CaptionStory;
     .locals 0
 
-    .line 149
+    .line 153
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
+
+    return-object p0
+.end method
+
+.method static synthetic access$6100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/FrameLayout;
+    .locals 0
+
+    .line 153
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navbarContainer:Landroid/widget/FrameLayout;
+
+    return-object p0
+.end method
+
+.method static synthetic access$6200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PreviewView;
+    .locals 0
+
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     return-object p0
 .end method
 
-.method static synthetic access$6100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/ImageView;
+.method static synthetic access$6300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/ImageView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
     return-object p0
 .end method
 
-.method static synthetic access$6200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterView;
+.method static synthetic access$6400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     return-object p0
 .end method
 
-.method static synthetic access$6300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method static synthetic access$6500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    .line 149
+    .line 153
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyFilterMatrix()V
 
     return-void
 .end method
 
-.method static synthetic access$6400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryRecorder$Touchable;
+.method static synthetic access$6600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryRecorder$Touchable;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewTouchable:Lorg/telegram/ui/Stories/recorder/StoryRecorder$Touchable;
 
     return-object p0
 .end method
 
-.method static synthetic access$6500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
+.method static synthetic access$6700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewCurvesControl:Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
     return-object p0
 .end method
 
-.method static synthetic access$6600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterBlurControl;
+.method static synthetic access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterBlurControl;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewBlurControl:Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     return-object p0
 .end method
 
-.method static synthetic access$6700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
+.method static synthetic access$6900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterEnhanceView:Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
-
-    return-object p0
-.end method
-
-.method static synthetic access$6800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
-    .locals 0
-
-    .line 149
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewHighlight:Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
-
-    return-object p0
-.end method
-
-.method static synthetic access$6900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
-    .locals 0
-
-    .line 149
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->trash:Lorg/telegram/ui/Stories/recorder/TrashView;
 
     return-object p0
 .end method
@@ -1807,61 +1947,79 @@
 .method static synthetic access$700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    .line 149
+    .line 153
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->checkBackgroundVisibility()V
 
     return-void
 .end method
 
-.method static synthetic access$7100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+.method static synthetic access$7000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
     .locals 0
 
-    .line 149
+    .line 153
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewHighlight:Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
+
+    return-object p0
+.end method
+
+.method static synthetic access$7100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/TrashView;
+    .locals 0
+
+    .line 153
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->trash:Lorg/telegram/ui/Stories/recorder/TrashView;
+
+    return-object p0
+.end method
+
+.method static synthetic access$7300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    .locals 0
+
+    .line 153
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openPremium()V
 
     return-void
 .end method
 
-.method static synthetic access$7200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
+.method static synthetic access$7400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoError:Z
 
     return p0
 .end method
 
-.method static synthetic access$7300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryEntry;
+.method static synthetic access$7500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/StoryEntry;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     return-object p0
 .end method
 
-.method static synthetic access$7302(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/ui/Stories/recorder/StoryEntry;)Lorg/telegram/ui/Stories/recorder/StoryEntry;
+.method static synthetic access$7502(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Lorg/telegram/ui/Stories/recorder/StoryEntry;)Lorg/telegram/ui/Stories/recorder/StoryEntry;
     .locals 0
 
-    .line 149
+    .line 153
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     return-object p1
 .end method
 
-.method static synthetic access$7400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PreviewButtons;
+.method static synthetic access$7600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/PreviewButtons;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
     return-object p0
 .end method
 
-.method static synthetic access$7500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
+.method static synthetic access$7700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->requestAudioPermission()Z
 
     move-result p0
@@ -1869,154 +2027,190 @@
     return p0
 .end method
 
-.method static synthetic access$7600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/HintView2;
+.method static synthetic access$7800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/HintView2;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     return-object p0
 .end method
 
-.method static synthetic access$7700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/io/File;
+.method static synthetic access$7900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/io/File;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputFile:Ljava/io/File;
 
     return-object p0
 .end method
 
-.method static synthetic access$7702(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/io/File;)Ljava/io/File;
+.method static synthetic access$7902(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/io/File;)Ljava/io/File;
     .locals 0
 
-    .line 149
+    .line 153
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputFile:Ljava/io/File;
 
     return-object p1
 .end method
 
-.method static synthetic access$7800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
-    .locals 0
-
-    .line 149
-    iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
-
-    return p0
-.end method
-
-.method static synthetic access$7902(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
-    .locals 0
-
-    .line 149
-    iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromGallery:Z
-
-    return p1
-.end method
-
 .method static synthetic access$800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onFullyOpenListener:Ljava/lang/Runnable;
 
     return-object p0
 .end method
 
-.method static synthetic access$8000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
+.method static synthetic access$8000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
     .locals 0
 
-    .line 149
-    iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->stoppingTakingVideo:Z
+    .line 153
+    iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     return p0
-.end method
-
-.method static synthetic access$8002(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
-    .locals 0
-
-    .line 149
-    iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->stoppingTakingVideo:Z
-
-    return p1
 .end method
 
 .method static synthetic access$802(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 149
+    .line 153
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onFullyOpenListener:Ljava/lang/Runnable;
 
     return-object p1
 .end method
 
-.method static synthetic access$8100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/HintView2;
+.method static synthetic access$8100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
     .locals 0
 
-    .line 149
+    .line 153
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->checkFrontfaceFlashModes()V
+
+    return-void
+.end method
+
+.method static synthetic access$8202(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
+    .locals 0
+
+    .line 153
+    iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isDark:Z
+
+    return p1
+.end method
+
+.method static synthetic access$8300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)I
+    .locals 0
+
+    .line 153
+    iget p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashMode:I
+
+    return p0
+.end method
+
+.method static synthetic access$8400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    .locals 0
+
+    .line 153
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->checkIsDark()V
+
+    return-void
+.end method
+
+.method static synthetic access$8502(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
+    .locals 0
+
+    .line 153
+    iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromGallery:Z
+
+    return p1
+.end method
+
+.method static synthetic access$8600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
+    .locals 0
+
+    .line 153
+    iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->stoppingTakingVideo:Z
+
+    return p0
+.end method
+
+.method static synthetic access$8602(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
+    .locals 0
+
+    .line 153
+    iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->stoppingTakingVideo:Z
+
+    return p1
+.end method
+
+.method static synthetic access$8700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/HintView2;
+    .locals 0
+
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     return-object p0
 .end method
 
-.method static synthetic access$8200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/HintView2;
+.method static synthetic access$8800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/HintView2;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->savedDualHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     return-object p0
 .end method
 
-.method static synthetic access$8300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
+.method static synthetic access$8900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
     iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVideo:Z
 
     return p0
 .end method
 
-.method static synthetic access$8302(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
+.method static synthetic access$8902(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)Z
     .locals 0
 
-    .line 149
+    .line 153
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVideo:Z
 
     return p1
 .end method
 
-.method static synthetic access$8400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZZ)V
+.method static synthetic access$9000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZZ)V
     .locals 0
 
-    .line 149
+    .line 153
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showVideoTimer(ZZ)V
 
     return-void
 .end method
 
-.method static synthetic access$8500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/HintTextView;
+.method static synthetic access$9100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/HintTextView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->hintTextView:Lorg/telegram/ui/Stories/recorder/HintTextView;
 
     return-object p0
 .end method
 
-.method static synthetic access$8600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/VideoTimerView;
+.method static synthetic access$9200(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/VideoTimerView;
     .locals 0
 
-    .line 149
+    .line 153
     iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimerView:Lorg/telegram/ui/Stories/recorder/VideoTimerView;
 
     return-object p0
 .end method
 
-.method static synthetic access$8700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
+.method static synthetic access$9300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
     .locals 0
 
-    .line 149
+    .line 153
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->requestGalleryPermission()Z
 
     move-result p0
@@ -2024,148 +2218,83 @@
     return p0
 .end method
 
-.method static synthetic access$8800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZZ)V
+.method static synthetic access$9400(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 149
+    .line 153
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashModes:Ljava/util/ArrayList;
+
+    return-object p0
+.end method
+
+.method static synthetic access$9500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZZ)V
+    .locals 0
+
+    .line 153
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateRecording(ZZ)V
 
     return-void
 .end method
 
-.method static synthetic access$8900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+.method static synthetic access$9600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
     .locals 0
 
-    .line 149
+    .line 153
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->setAwakeLock(Z)V
 
     return-void
 .end method
 
-.method static synthetic access$9000(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/ImageView;
+.method static synthetic access$9700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
     .locals 0
 
-    .line 149
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 153
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     return-object p0
 .end method
 
-.method static synthetic access$9100(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/widget/ImageView;
+.method static synthetic access$9800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Lorg/telegram/ui/Stories/recorder/ToggleButton2;
     .locals 0
 
-    .line 149
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 153
+    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     return-object p0
 .end method
 
-.method static synthetic access$9202(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+.method static synthetic access$9902(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 149
+    .line 153
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlAnimation:Landroid/animation/AnimatorSet;
 
     return-object p1
 .end method
 
-.method static synthetic access$9300(Lorg/telegram/ui/Stories/recorder/StoryRecorder;II)V
-    .locals 0
-
-    .line 149
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onNavigateEnd(II)V
-
-    return-void
-.end method
-
-.method static synthetic access$9402(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
-    .locals 0
-
-    .line 149
-    iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerViewBackAnimator:Landroid/animation/ValueAnimator;
-
-    return-object p1
-.end method
-
-.method static synthetic access$9500(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Z
-    .locals 0
-
-    .line 149
-    iget-boolean p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyContainerViewTranslation2:Z
-
-    return p0
-.end method
-
-.method static synthetic access$9600(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Ljava/lang/Runnable;
-    .locals 0
-
-    .line 149
-    iget-object p0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryLayouted:Ljava/lang/Runnable;
-
-    return-object p0
-.end method
-
-.method static synthetic access$9602(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)Ljava/lang/Runnable;
-    .locals 0
-
-    .line 149
-    iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryLayouted:Ljava/lang/Runnable;
-
-    return-object p1
-.end method
-
-.method static synthetic access$9700(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
-    .locals 0
-
-    .line 149
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyCameraView(Z)V
-
-    return-void
-.end method
-
-.method static synthetic access$9800(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)Landroid/graphics/drawable/Drawable;
-    .locals 0
-
-    .line 149
-    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getCameraThumb()Landroid/graphics/drawable/Drawable;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method static synthetic access$9900(Lorg/telegram/ui/Stories/recorder/StoryRecorder;II)V
-    .locals 0
-
-    .line 149
-    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onSwitchEditModeEnd(II)V
-
-    return-void
-.end method
-
 .method private animateContainerBack()V
     .locals 4
 
-    .line 2929
+    .line 3097
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerViewBackAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 2930
+    .line 3098
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 2931
+    .line 3099
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerViewBackAnimator:Landroid/animation/ValueAnimator;
 
     :cond_0
     const/4 v0, 0x0
 
-    .line 2933
+    .line 3101
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyContainerViewTranslation2:Z
 
-    .line 2934
+    .line 3102
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;->getTranslationY1()F
@@ -2186,7 +2315,7 @@
 
     new-array v2, v2, [F
 
-    .line 2935
+    .line 3103
     fill-array-data v2, :array_0
 
     invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -2195,37 +2324,37 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerViewBackAnimator:Landroid/animation/ValueAnimator;
 
-    .line 2936
+    .line 3104
     new-instance v3, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda2;
 
     invoke-direct {v3, p0, v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;FF)V
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 2942
+    .line 3110
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerViewBackAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0x154
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 2943
+    .line 3111
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerViewBackAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2944
+    .line 3112
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerViewBackAnimator:Landroid/animation/ValueAnimator;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$14;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$15;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$14;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$15;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2952
+    .line 3120
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerViewBackAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
@@ -2242,10 +2371,10 @@
 .method private animateGalleryListView(Z)V
     .locals 7
 
-    .line 3100
+    .line 3268
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->wasGalleryOpen:Z
 
-    .line 3101
+    .line 3269
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListViewOpening:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_0
@@ -2258,7 +2387,7 @@
 
     return-void
 
-    .line 3105
+    .line 3273
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
@@ -2266,10 +2395,10 @@
 
     if-eqz p1, :cond_1
 
-    .line 3107
+    .line 3275
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createGalleryListView()V
 
-    .line 3109
+    .line 3277
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
@@ -2277,7 +2406,7 @@
 
     return-void
 
-    .line 3114
+    .line 3282
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
@@ -2285,16 +2414,16 @@
 
     if-eqz v0, :cond_3
 
-    .line 3115
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda47;
+    .line 3283
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda51;
 
-    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda47;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda51;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryLayouted:Ljava/lang/Runnable;
 
     return-void
 
-    .line 3119
+    .line 3287
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseAnimator:Landroid/animation/ValueAnimator;
 
@@ -2302,25 +2431,25 @@
 
     if-eqz v0, :cond_4
 
-    .line 3120
+    .line 3288
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 3121
+    .line 3289
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseAnimator:Landroid/animation/ValueAnimator;
 
-    .line 3123
+    .line 3291
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseSpringAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz v0, :cond_5
 
-    .line 3124
+    .line 3292
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    .line 3125
+    .line 3293
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseSpringAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 3128
+    .line 3296
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
@@ -2328,10 +2457,10 @@
 
     if-eqz p1, :cond_6
 
-    .line 3130
+    .line 3298
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createGalleryListView()V
 
-    .line 3132
+    .line 3300
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
@@ -2339,7 +2468,7 @@
 
     return-void
 
-    .line 3136
+    .line 3304
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
@@ -2347,7 +2476,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 3137
+    .line 3305
     iput-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->ignoreScroll:Z
 
     :cond_8
@@ -2355,15 +2484,15 @@
 
     if-eqz p1, :cond_9
 
-    .line 3140
+    .line 3308
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->draftSavedHint:Lorg/telegram/ui/Stories/recorder/DraftSavedHint;
 
     if-eqz v3, :cond_9
 
-    .line 3141
+    .line 3309
     invoke-virtual {v3, v0}, Lorg/telegram/ui/Stories/recorder/DraftSavedHint;->hide(Z)V
 
-    .line 3144
+    .line 3312
     :cond_9
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -2371,7 +2500,7 @@
 
     iput-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListViewOpening:Ljava/lang/Boolean;
 
-    .line 3146
+    .line 3314
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getTranslationY()F
@@ -2384,7 +2513,7 @@
 
     goto :goto_0
 
-    .line 3147
+    .line 3315
     :cond_a
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
@@ -2412,7 +2541,7 @@
 
     add-float/2addr v4, v5
 
-    .line 3148
+    .line 3316
     :goto_0
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
@@ -2422,14 +2551,14 @@
 
     invoke-static {v0, v5}, Ljava/lang/Math;->max(II)I
 
-    .line 3150
+    .line 3318
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     xor-int/lit8 v6, p1, 0x1
 
     iput-boolean v6, v5, Lorg/telegram/ui/Stories/recorder/GalleryListView;->ignoreScroll:Z
 
-    .line 3152
+    .line 3320
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerViewBackAnimator:Landroid/animation/ValueAnimator;
 
     if-nez v5, :cond_b
@@ -2446,7 +2575,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 3154
+    .line 3322
     new-instance v0, Landroidx/dynamicanimation/animation/SpringAnimation;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
@@ -2457,7 +2586,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseSpringAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 3155
+    .line 3323
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
 
     move-result-object v0
@@ -2466,7 +2595,7 @@
 
     invoke-virtual {v0, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setDampingRatio(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 3156
+    .line 3324
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseSpringAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringAnimation;->getSpring()Landroidx/dynamicanimation/animation/SpringForce;
@@ -2477,16 +2606,16 @@
 
     invoke-virtual {v0, v2}, Landroidx/dynamicanimation/animation/SpringForce;->setStiffness(F)Landroidx/dynamicanimation/animation/SpringForce;
 
-    .line 3157
+    .line 3325
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseSpringAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda19;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda20;
 
-    invoke-direct {v2, p0, v4}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;F)V
+    invoke-direct {v2, p0, v4}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;F)V
 
     invoke-virtual {v0, v2}, Landroidx/dynamicanimation/animation/DynamicAnimation;->addEndListener(Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;)Landroidx/dynamicanimation/animation/DynamicAnimation;
 
-    .line 3166
+    .line 3334
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseSpringAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     invoke-virtual {v0}, Landroidx/dynamicanimation/animation/SpringAnimation;->start()V
@@ -2502,44 +2631,44 @@
 
     aput v4, v5, v0
 
-    .line 3168
+    .line 3336
     invoke-static {v5}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseAnimator:Landroid/animation/ValueAnimator;
 
-    .line 3169
+    .line 3337
     new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 3172
+    .line 3340
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseAnimator:Landroid/animation/ValueAnimator;
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$16;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$17;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$16;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$17;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 3182
+    .line 3350
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v2, 0x1c2
 
     invoke-virtual {v0, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 3183
+    .line 3351
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 3184
+    .line 3352
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
@@ -2547,18 +2676,18 @@
     :goto_2
     if-nez p1, :cond_d
 
-    .line 3187
+    .line 3355
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->awaitingPlayer:Z
 
     if-nez v0, :cond_d
 
-    .line 3188
+    .line 3356
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lastGalleryScrollPosition:Landroid/os/Parcelable;
 
     :cond_d
     if-nez p1, :cond_e
 
-    .line 3191
+    .line 3359
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
     if-nez p1, :cond_e
@@ -2567,7 +2696,7 @@
 
     if-nez p1, :cond_e
 
-    .line 3192
+    .line 3360
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createCameraView()V
 
     :cond_e
@@ -2577,28 +2706,28 @@
 .method private animateOpenTo(FZLjava/lang/Runnable;)V
     .locals 5
 
-    .line 557
+    .line 562
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openCloseAnimator:Landroid/animation/ValueAnimator;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 558
+    .line 563
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 559
+    .line 564
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openCloseAnimator:Landroid/animation/ValueAnimator;
 
     :cond_0
     if-eqz p2, :cond_4
 
-    .line 563
+    .line 568
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     invoke-virtual {p2}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
 
-    .line 564
+    .line 569
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p2
@@ -2621,7 +2750,7 @@
 
     invoke-virtual {p2, v0, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 565
+    .line 570
     iget p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dismissProgress:F
 
     invoke-static {p2}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -2634,7 +2763,7 @@
 
     new-array p2, p2, [F
 
-    .line 566
+    .line 571
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openProgress:F
 
     aput v0, p2, v4
@@ -2647,14 +2776,14 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openCloseAnimator:Landroid/animation/ValueAnimator;
 
-    .line 567
+    .line 572
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 577
+    .line 582
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openCloseAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$1;
@@ -2669,19 +2798,19 @@
 
     if-gez p2, :cond_1
 
-    .line 602
+    .line 607
     iget-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->wasSend:Z
 
     if-eqz p2, :cond_1
 
-    .line 603
+    .line 608
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openCloseAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 p2, 0xfa
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 604
+    .line 609
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openCloseAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -2697,7 +2826,7 @@
 
     if-gtz p1, :cond_3
 
-    .line 606
+    .line 611
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;->getTranslationY1()F
@@ -2718,7 +2847,7 @@
 
     goto :goto_0
 
-    .line 610
+    .line 615
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openCloseAnimator:Landroid/animation/ValueAnimator;
 
@@ -2726,7 +2855,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 611
+    .line 616
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openCloseAnimator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
@@ -2735,7 +2864,7 @@
 
     goto :goto_1
 
-    .line 607
+    .line 612
     :cond_3
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openCloseAnimator:Landroid/animation/ValueAnimator;
@@ -2744,7 +2873,7 @@
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 608
+    .line 613
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openCloseAnimator:Landroid/animation/ValueAnimator;
 
     new-instance p2, Landroidx/interpolator/view/animation/FastOutSlowInInterpolator;
@@ -2753,7 +2882,7 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 614
+    .line 619
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openCloseAnimator:Landroid/animation/ValueAnimator;
 
@@ -2761,29 +2890,29 @@
 
     goto :goto_2
 
-    .line 616
+    .line 621
     :cond_4
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frozenDismissProgress:Ljava/lang/Float;
 
-    .line 617
+    .line 622
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openProgress:F
 
-    .line 618
+    .line 623
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 619
+    .line 624
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     if-eqz p3, :cond_5
 
-    .line 621
+    .line 626
     invoke-interface {p3}, Ljava/lang/Runnable;->run()V
 
-    .line 623
+    .line 628
     :cond_5
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->checkBackgroundVisibility()V
 
@@ -2796,42 +2925,42 @@
 
     if-eqz p1, :cond_3
 
-    .line 2640
+    .line 2780
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     if-eqz v0, :cond_0
 
-    .line 2641
+    .line 2781
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 2643
+    .line 2783
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->savedDualHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     if-eqz v0, :cond_1
 
-    .line 2644
+    .line 2784
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 2646
+    .line 2786
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     if-eqz v0, :cond_2
 
-    .line 2647
+    .line 2787
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 2649
+    .line 2789
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     if-eqz v0, :cond_3
 
-    .line 2650
+    .line 2790
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 2653
+    .line 2793
     :cond_3
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animatedRecording:Z
 
@@ -2839,21 +2968,21 @@
 
     return-void
 
-    .line 2656
+    .line 2796
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordingAnimator:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_5
 
-    .line 2657
+    .line 2797
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 2658
+    .line 2798
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordingAnimator:Landroid/animation/AnimatorSet;
 
-    .line 2660
+    .line 2800
     :cond_5
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animatedRecording:Z
 
@@ -2869,17 +2998,17 @@
 
     if-eqz p2, :cond_13
 
-    .line 2662
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 2802
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     invoke-virtual {p2, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2663
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 2803
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
-    invoke-virtual {p2, v4}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p2, v4}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2664
+    .line 2804
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -2897,7 +3026,7 @@
     :cond_6
     invoke-virtual {p2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2665
+    .line 2805
     new-instance p2, Landroid/animation/AnimatorSet;
 
     invoke-direct {p2}, Landroid/animation/AnimatorSet;-><init>()V
@@ -2908,8 +3037,8 @@
 
     new-array v1, v1, [Landroid/animation/Animator;
 
-    .line 2666
-    iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 2806
+    iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
@@ -2929,14 +3058,14 @@
     :goto_0
     aput v9, v8, v4
 
-    .line 2667
+    .line 2807
     invoke-static {v5, v6, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v5
 
     aput-object v5, v1, v4
 
-    iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
@@ -2944,7 +3073,7 @@
 
     if-nez p1, :cond_9
 
-    .line 2668
+    .line 2808
     iget v9, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
     if-eqz v9, :cond_8
@@ -2979,7 +3108,7 @@
 
     if-nez p1, :cond_b
 
-    .line 2669
+    .line 2809
     iget v10, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
     if-nez v10, :cond_b
@@ -3024,7 +3153,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 2670
+    .line 2810
     iget v10, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
     if-nez v10, :cond_c
@@ -3055,7 +3184,7 @@
 
     if-nez p1, :cond_e
 
-    .line 2671
+    .line 2811
     iget v10, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
     if-eqz v10, :cond_d
@@ -3094,7 +3223,7 @@
 
     if-nez p1, :cond_f
 
-    .line 2672
+    .line 2812
     iget v10, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
     if-eqz v10, :cond_10
@@ -3121,7 +3250,7 @@
 
     if-nez p1, :cond_11
 
-    .line 2673
+    .line 2813
     iget v8, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
     if-eqz v8, :cond_12
@@ -3142,42 +3271,42 @@
 
     aput-object v0, v1, v2
 
-    .line 2666
+    .line 2806
     invoke-virtual {p2, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2675
+    .line 2815
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordingAnimator:Landroid/animation/AnimatorSet;
 
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$11;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$12;
 
-    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$11;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$12;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
     invoke-virtual {p2, v0}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2686
+    .line 2826
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordingAnimator:Landroid/animation/AnimatorSet;
 
     const-wide/16 v0, 0x104
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2687
+    .line 2827
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordingAnimator:Landroid/animation/AnimatorSet;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2688
+    .line 2828
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordingAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     goto/16 :goto_14
 
-    .line 2690
+    .line 2830
     :cond_13
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     if-eqz p1, :cond_14
 
@@ -3191,8 +3320,8 @@
     :goto_8
     invoke-virtual {p2, v5}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 2691
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 2831
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     if-eqz p1, :cond_15
 
@@ -3206,8 +3335,8 @@
     :goto_9
     invoke-virtual {p2, v5}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2692
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 2832
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     if-nez p1, :cond_17
 
@@ -3227,10 +3356,10 @@
     move v5, v3
 
     :goto_b
-    invoke-virtual {p2, v5}, Landroid/widget/ImageView;->setAlpha(F)V
+    invoke-virtual {p2, v5}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2693
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 2833
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     if-nez p1, :cond_19
 
@@ -3250,9 +3379,9 @@
     move v5, v1
 
     :goto_d
-    invoke-virtual {p2, v5}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p2, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2694
+    .line 2834
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
 
     if-nez p1, :cond_1b
@@ -3275,7 +3404,7 @@
     :goto_f
     invoke-virtual {p2, v5}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2695
+    .line 2835
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
 
     if-nez p1, :cond_1d
@@ -3303,7 +3432,7 @@
     :goto_10
     invoke-virtual {p2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2696
+    .line 2836
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->hintTextView:Lorg/telegram/ui/Stories/recorder/HintTextView;
 
     if-eqz p1, :cond_1e
@@ -3322,7 +3451,7 @@
     :goto_11
     invoke-virtual {p2, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2697
+    .line 2837
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->hintTextView:Lorg/telegram/ui/Stories/recorder/HintTextView;
 
     if-nez p1, :cond_20
@@ -3349,7 +3478,7 @@
     :goto_13
     invoke-virtual {p2, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 2698
+    .line 2838
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
     if-nez p1, :cond_21
@@ -3364,7 +3493,7 @@
     :cond_22
     invoke-virtual {p2, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2699
+    .line 2839
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
     if-nez p1, :cond_23
@@ -3390,7 +3519,7 @@
 .method private applyFilter(Ljava/lang/Runnable;)V
     .locals 3
 
-    .line 3951
+    .line 4119
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     if-eqz v0, :cond_2
@@ -3401,7 +3530,7 @@
 
     goto :goto_0
 
-    .line 3957
+    .line 4125
     :cond_0
     iget-boolean v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedMedia:Z
 
@@ -3413,7 +3542,7 @@
 
     iput-boolean v0, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedMedia:Z
 
-    .line 3958
+    .line 4126
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
@@ -3422,7 +3551,7 @@
 
     if-nez p1, :cond_1
 
-    .line 3959
+    .line 4127
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
@@ -3433,7 +3562,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 3960
+    .line 4128
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->set(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
     :cond_1
@@ -3443,7 +3572,7 @@
     :goto_0
     if-eqz p1, :cond_3
 
-    .line 3953
+    .line 4121
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     :cond_3
@@ -3453,7 +3582,7 @@
 .method private applyFilterMatrix()V
     .locals 6
 
-    .line 4027
+    .line 4195
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz v0, :cond_1
@@ -3478,15 +3607,15 @@
 
     if-lez v0, :cond_1
 
-    .line 4028
+    .line 4196
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 4029
+    .line 4197
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    .line 4030
+    .line 4198
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget v1, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->orientation:I
@@ -3497,7 +3626,7 @@
 
     int-to-float v1, v1
 
-    .line 4031
+    .line 4199
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -3522,7 +3651,7 @@
 
     invoke-virtual {v0, v1, v2, v4}, Landroid/graphics/Matrix;->postRotate(FFF)Z
 
-    .line 4032
+    .line 4200
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget v1, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->orientation:I
@@ -3535,10 +3664,10 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 4033
+    .line 4201
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
-    .line 4034
+    .line 4202
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -3557,7 +3686,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
-    .line 4035
+    .line 4203
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v2
@@ -3576,7 +3705,7 @@
 
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
-    .line 4036
+    .line 4204
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v4
@@ -3587,7 +3716,7 @@
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
-    .line 4037
+    .line 4205
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v5
@@ -3596,14 +3725,14 @@
 
     div-float/2addr v5, v3
 
-    .line 4033
+    .line 4201
     invoke-virtual {v0, v1, v2, v4, v5}, Landroid/graphics/Matrix;->postScale(FFFF)Z
 
-    .line 4041
+    .line 4209
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
-    .line 4042
+    .line 4210
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -3624,7 +3753,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
-    .line 4043
+    .line 4211
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v3
@@ -3641,20 +3770,20 @@
 
     mul-float/2addr v2, v3
 
-    .line 4041
+    .line 4209
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 4045
+    .line 4213
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/IStoryPart;->matrix:Landroid/graphics/Matrix;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->postConcat(Landroid/graphics/Matrix;)Z
 
-    .line 4046
+    .line 4214
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
-    .line 4047
+    .line 4215
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -3671,7 +3800,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
-    .line 4048
+    .line 4216
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v2
@@ -3686,15 +3815,15 @@
 
     div-float/2addr v2, v3
 
-    .line 4046
+    .line 4214
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 4050
+    .line 4218
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewTextureView:Landroid/view/TextureView;
 
     invoke-virtual {v1, v0}, Landroid/view/TextureView;->setTransform(Landroid/graphics/Matrix;)V
 
-    .line 4051
+    .line 4219
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewTextureView:Landroid/view/TextureView;
 
     invoke-virtual {v0}, Landroid/view/TextureView;->invalidate()V
@@ -3708,7 +3837,7 @@
 
     move-object/from16 v0, p0
 
-    .line 3879
+    .line 4047
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz v1, :cond_a
@@ -3719,11 +3848,11 @@
 
     goto/16 :goto_2
 
-    .line 3883
+    .line 4051
     :cond_0
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->clearPaint()V
 
-    .line 3884
+    .line 4052
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedMedia:Z
@@ -3738,14 +3867,14 @@
 
     iput-boolean v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedMedia:Z
 
-    .line 3886
+    .line 4054
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
 
     if-nez v2, :cond_1
 
-    .line 3887
+    .line 4055
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
@@ -3754,11 +3883,11 @@
 
     goto :goto_0
 
-    .line 3889
+    .line 4057
     :cond_1
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 3891
+    .line 4059
     :goto_0
     iget-object v3, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -3778,14 +3907,14 @@
 
     invoke-virtual/range {v3 .. v9}, Lorg/telegram/ui/Stories/recorder/PaintView;->getBitmap(Ljava/util/ArrayList;IIZZZ)Landroid/graphics/Bitmap;
 
-    .line 3892
+    .line 4060
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
     if-nez v2, :cond_2
 
-    .line 3893
+    .line 4061
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Stories/recorder/PaintView;->getLcm()J
@@ -3802,7 +3931,7 @@
 
     iput-wide v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->averageDuration:J
 
-    .line 3895
+    .line 4063
     :cond_2
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -3810,7 +3939,7 @@
 
     move-result-object v1
 
-    .line 3896
+    .line 4064
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     const/4 v3, 0x0
@@ -3829,17 +3958,17 @@
     :goto_1
     iput-object v4, v2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->stickers:Ljava/util/List;
 
-    .line 3897
+    .line 4065
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean v2, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
-    .line 3898
+    .line 4066
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->wouldBeVideo()Z
 
     move-result v1
 
-    .line 3900
+    .line 4068
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     new-instance v5, Ljava/util/ArrayList;
@@ -3848,7 +3977,7 @@
 
     iput-object v5, v4, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
 
-    .line 3901
+    .line 4069
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -3871,7 +4000,7 @@
 
     move-result-object v2
 
-    .line 3902
+    .line 4070
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v5, v5, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
@@ -3882,12 +4011,12 @@
 
     if-eqz v5, :cond_4
 
-    .line 3903
+    .line 4071
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iput-object v3, v5, Lorg/telegram/ui/Stories/recorder/StoryEntry;->mediaEntities:Ljava/util/ArrayList;
 
-    .line 3907
+    .line 4075
     :cond_4
     :try_start_0
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -3896,12 +4025,12 @@
 
     if-eqz v5, :cond_5
 
-    .line 3908
+    .line 4076
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 3912
+    .line 4080
     :catch_0
     :cond_5
     :try_start_1
@@ -3911,12 +4040,12 @@
 
     if-eqz v5, :cond_6
 
-    .line 3913
+    .line 4081
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 3917
+    .line 4085
     :catch_1
     :cond_6
     :try_start_2
@@ -3926,25 +4055,25 @@
 
     if-eqz v5, :cond_7
 
-    .line 3918
+    .line 4086
     invoke-virtual {v5}, Ljava/io/File;->delete()Z
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 3921
+    .line 4089
     :catch_2
     :cond_7
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iput-object v3, v5, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintFile:Ljava/io/File;
 
-    .line 3922
+    .line 4090
     iput-object v3, v5, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintEntitiesFile:Ljava/io/File;
 
-    .line 3923
+    .line 4091
     iput-object v3, v5, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintBlurFile:Ljava/io/File;
 
-    .line 3925
+    .line 4093
     iget v3, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -3987,20 +4116,20 @@
 
     if-eqz v2, :cond_8
 
-    .line 3926
+    .line 4094
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v3
 
     if-nez v3, :cond_8
 
-    .line 3927
+    .line 4095
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->recycle()V
 
     :cond_8
     if-nez v1, :cond_9
 
-    .line 3932
+    .line 4100
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     new-instance v6, Ljava/util/ArrayList;
@@ -4023,7 +4152,7 @@
 
     move-result-object v1
 
-    .line 3933
+    .line 4101
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget v3, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
@@ -4066,17 +4195,17 @@
 
     if-eqz v1, :cond_9
 
-    .line 3934
+    .line 4102
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v2
 
     if-nez v2, :cond_9
 
-    .line 3935
+    .line 4103
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 3940
+    .line 4108
     :cond_9
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -4086,14 +4215,14 @@
 
     if-eqz v1, :cond_a
 
-    .line 3941
+    .line 4109
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->getBlurBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v1
 
-    .line 3942
+    .line 4110
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget v3, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
@@ -4136,14 +4265,14 @@
 
     if-eqz v1, :cond_a
 
-    .line 3943
+    .line 4111
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->isRecycled()Z
 
     move-result v2
 
     if-nez v2, :cond_a
 
-    .line 3944
+    .line 4112
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
 
     :cond_a
@@ -4154,14 +4283,14 @@
 .method public static cameraBtnSpan(Landroid/content/Context;)Ljava/lang/CharSequence;
     .locals 5
 
-    .line 4701
+    .line 4930
     new-instance v0, Landroid/text/SpannableString;
 
     const-string v1, "c"
 
     invoke-direct {v0, v1}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 4702
+    .line 4931
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -4178,14 +4307,14 @@
 
     const/16 v1, 0x23
 
-    .line 4703
+    .line 4932
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     neg-int v2, v1
 
-    .line 4704
+    .line 4933
     div-int/lit8 v3, v2, 0x4
 
     div-int/lit8 v1, v1, 0x4
@@ -4196,10 +4325,10 @@
 
     invoke-virtual {p0, v3, v2, v1, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 4705
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$23;
+    .line 4934
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$24;
 
-    invoke-direct {v1, p0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$23;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {v1, p0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$24;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     const/4 p0, 0x1
 
@@ -4213,7 +4342,7 @@
 .method private checkBackgroundVisibility()V
     .locals 3
 
-    .line 4575
+    .line 4804
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dismissProgress:F
 
     const/4 v1, 0x0
@@ -4245,7 +4374,7 @@
     :goto_0
     const/4 v0, 0x1
 
-    .line 4576
+    .line 4805
     :goto_1
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isBackgroundVisible:Z
 
@@ -4253,7 +4382,7 @@
 
     return-void
 
-    .line 4579
+    .line 4808
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
@@ -4261,17 +4390,226 @@
 
     if-eqz v2, :cond_3
 
-    .line 4580
+    .line 4809
     check-cast v1, Lorg/telegram/ui/LaunchActivity;
 
-    .line 4581
+    .line 4810
     iget-object v1, v1, Lorg/telegram/ui/LaunchActivity;->drawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->setAllowDrawContent(Z)V
 
-    .line 4583
+    .line 4812
     :cond_3
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isBackgroundVisible:Z
+
+    return-void
+.end method
+
+.method private checkFrontfaceFlashModes()V
+    .locals 4
+
+    .line 4325
+    iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashMode:I
+
+    if-gez v0, :cond_0
+
+    .line 4326
+    invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    const-string v2, "frontflash"
+
+    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v0
+
+    iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashMode:I
+
+    .line 4327
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashModes:Ljava/util/ArrayList;
+
+    const-string v1, "off"
+
+    .line 4328
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 4329
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashModes:Ljava/util/ArrayList;
+
+    const-string v1, "auto"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 4330
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashModes:Ljava/util/ArrayList;
+
+    const-string v1, "on"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 4332
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    const v2, 0x3f666666    # 0.9f
+
+    const-string v3, "frontflash_warmth"
+
+    invoke-interface {v1, v3, v2}, Landroid/content/SharedPreferences;->getFloat(Ljava/lang/String;F)F
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/FlashViews;->setWarmth(F)V
+
+    .line 4333
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    const-string v3, "frontflash_intensity"
+
+    invoke-interface {v1, v3, v2}, Landroid/content/SharedPreferences;->getFloat(Ljava/lang/String;F)F
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/FlashViews;->setIntensity(F)V
+
+    :cond_0
+    return-void
+.end method
+
+.method private checkIsDark()V
+    .locals 10
+
+    .line 2845
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_5
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getTextureView()Landroid/view/TextureView;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_2
+
+    .line 2849
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getTextureView()Landroid/view/TextureView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/TextureView;->getBitmap()Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    if-nez v0, :cond_1
+
+    .line 2851
+    iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isDark:Z
+
+    return-void
+
+    :cond_1
+    const/4 v2, 0x0
+
+    .line 2855
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v3
+
+    div-int/lit8 v3, v3, 0xc
+
+    .line 2856
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v4
+
+    div-int/lit8 v4, v4, 0xc
+
+    move v5, v1
+
+    :goto_0
+    const/16 v6, 0xa
+
+    if-ge v5, v6, :cond_3
+
+    move v7, v1
+
+    :goto_1
+    if-ge v7, v6, :cond_2
+
+    add-int/lit8 v8, v5, 0x1
+
+    mul-int/2addr v8, v3
+
+    add-int/lit8 v7, v7, 0x1
+
+    mul-int v9, v7, v4
+
+    .line 2859
+    invoke-virtual {v0, v8, v9}, Landroid/graphics/Bitmap;->getPixel(II)I
+
+    move-result v8
+
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->computePerceivedBrightness(I)F
+
+    move-result v8
+
+    add-float/2addr v2, v8
+
+    goto :goto_1
+
+    :cond_2
+    add-int/lit8 v5, v5, 0x1
+
+    goto :goto_0
+
+    :cond_3
+    const/high16 v3, 0x42c80000    # 100.0f
+
+    div-float/2addr v2, v3
+
+    .line 2863
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+
+    const v0, 0x3e6147ae    # 0.22f
+
+    cmpg-float v0, v2, v0
+
+    if-gez v0, :cond_4
+
+    const/4 v1, 0x1
+
+    .line 2864
+    :cond_4
+    iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isDark:Z
+
+    return-void
+
+    .line 2846
+    :cond_5
+    :goto_2
+    iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isDark:Z
 
     return-void
 .end method
@@ -4279,7 +4617,7 @@
 .method private createCameraView()V
     .locals 6
 
-    .line 4088
+    .line 4256
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     if-nez v0, :cond_4
@@ -4292,9 +4630,9 @@
 
     goto/16 :goto_2
 
-    .line 4091
+    .line 4259
     :cond_0
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$19;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$20;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getContext()Landroid/content/Context;
 
@@ -4306,37 +4644,37 @@
 
     const/4 v3, 0x0
 
-    invoke-direct {v0, p0, v1, v2, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$19;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;ZZ)V
+    invoke-direct {v0, p0, v1, v2, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$20;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;ZZ)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     const/4 v1, 0x1
 
-    .line 4130
+    .line 4298
     iput-boolean v1, v0, Lorg/telegram/messenger/camera/CameraView;->isStory:Z
 
-    .line 4131
+    .line 4299
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getCameraThumb()Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/camera/CameraView;->setThumbDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 4132
+    .line 4300
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->initTexture()V
 
-    .line 4133
+    .line 4301
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda64;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda68;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda64;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda68;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/camera/CameraView;->setDelegate(Lorg/telegram/messenger/camera/CameraView$CameraViewDelegate;)V
 
-    .line 4143
+    .line 4311
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -4361,8 +4699,8 @@
     :goto_0
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 4144
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 4312
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
@@ -4388,9 +4726,9 @@
     const/4 v2, 0x0
 
     :goto_1
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setTranslationX(F)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 4145
+    .line 4313
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -4405,7 +4743,7 @@
 
     invoke-virtual {v0, v2, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4146
+    .line 4314
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -4418,12 +4756,12 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 4147
+    .line 4315
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->show()Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 4148
+    .line 4316
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -4450,7 +4788,7 @@
 
     goto :goto_2
 
-    .line 4149
+    .line 4317
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
@@ -4482,7 +4820,7 @@
 
     if-ge v0, v1, :cond_4
 
-    .line 4150
+    .line 4318
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->show()Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -4495,7 +4833,7 @@
 .method private createFilterPhotoView()V
     .locals 15
 
-    .line 3967
+    .line 4135
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     if-nez v0, :cond_a
@@ -4506,7 +4844,7 @@
 
     goto/16 :goto_3
 
-    .line 3972
+    .line 4140
     :cond_0
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
@@ -4514,12 +4852,12 @@
 
     if-nez v1, :cond_2
 
-    .line 3973
+    .line 4141
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->filterFile:Ljava/io/File;
 
     if-nez v0, :cond_1
 
-    .line 3974
+    .line 4142
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->getPhotoBitmap()Landroid/graphics/Bitmap;
@@ -4528,11 +4866,11 @@
 
     goto :goto_0
 
-    .line 3976
+    .line 4144
     :cond_1
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda67;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda71;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda67;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda71;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     sget-object v1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -4557,7 +4895,7 @@
     :goto_1
     if-nez v6, :cond_3
 
-    .line 3979
+    .line 4147
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean v0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
@@ -4566,7 +4904,7 @@
 
     return-void
 
-    .line 3983
+    .line 4151
     :cond_3
     new-instance v0, Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -4614,22 +4952,22 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
-    .line 3984
+    .line 4152
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 3985
+    .line 4153
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterEnhanceView:Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
 
     if-eqz v0, :cond_5
 
-    .line 3986
+    .line 4154
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->setFilterView(Lorg/telegram/ui/Components/PhotoFilterView;)V
 
-    .line 3988
+    .line 4156
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -4643,10 +4981,10 @@
 
     const/4 v1, 0x0
 
-    .line 3990
+    .line 4158
     invoke-virtual {v0, v1}, Landroid/view/TextureView;->setOpaque(Z)V
 
-    .line 3992
+    .line 4160
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -4656,17 +4994,17 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/PreviewView;->setFilterTextureView(Landroid/view/TextureView;Lorg/telegram/ui/Components/PhotoFilterView;)V
 
-    .line 3993
+    .line 4161
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewTextureView:Landroid/view/TextureView;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_7
 
-    .line 3994
+    .line 4162
     invoke-virtual {v0, v1}, Landroid/view/TextureView;->setAlpha(F)V
 
-    .line 3995
+    .line 4163
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewTextureView:Landroid/view/TextureView;
 
     invoke-virtual {v0}, Landroid/view/TextureView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -4687,11 +5025,11 @@
 
     invoke-virtual {v0}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 3997
+    .line 4165
     :cond_7
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyFilterMatrix()V
 
-    .line 3998
+    .line 4166
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->getBlurControl()Lorg/telegram/ui/Components/PhotoFilterBlurControl;
@@ -4702,12 +5040,12 @@
 
     if-eqz v0, :cond_8
 
-    .line 4000
+    .line 4168
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 4002
+    .line 4170
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -4719,29 +5057,29 @@
 
     if-eqz v0, :cond_9
 
-    .line 4004
+    .line 4172
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 4006
+    .line 4174
     :cond_9
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->orderPreviewViews()V
 
-    .line 4008
+    .line 4176
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->getDoneTextView()Landroid/widget/TextView;
 
     move-result-object v0
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda16;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda11;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 4011
+    .line 4179
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->getCancelTextView()Landroid/widget/TextView;
@@ -4754,7 +5092,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 4014
+    .line 4182
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->getToolsView()Landroid/widget/FrameLayout;
@@ -4765,7 +5103,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 4015
+    .line 4183
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->getToolsView()Landroid/widget/FrameLayout;
@@ -4774,7 +5112,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 4016
+    .line 4184
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->getToolsView()Landroid/widget/FrameLayout;
@@ -4791,7 +5129,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 4017
+    .line 4185
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->init()V
@@ -4806,7 +5144,7 @@
 
     const/4 v0, 0x0
 
-    .line 2959
+    .line 3127
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createGalleryListView(Z)V
 
     return-void
@@ -4815,7 +5153,7 @@
 .method private createGalleryListView(Z)V
     .locals 8
 
-    .line 2980
+    .line 3148
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     if-nez v0, :cond_2
@@ -4828,9 +5166,9 @@
 
     goto :goto_0
 
-    .line 2984
+    .line 3152
     :cond_0
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$15;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$16;
 
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
@@ -4848,44 +5186,44 @@
 
     move v7, p1
 
-    invoke-direct/range {v1 .. v7}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$15;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ILandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/messenger/MediaController$AlbumEntry;Z)V
+    invoke-direct/range {v1 .. v7}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$16;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ILandroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/messenger/MediaController$AlbumEntry;Z)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    .line 3026
+    .line 3194
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->allowSearch(Z)V
 
-    .line 3027
+    .line 3195
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda33;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda37;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda33;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda37;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->setOnBackClickListener(Ljava/lang/Runnable;)V
 
-    .line 3031
+    .line 3199
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda52;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda54;
 
-    invoke-direct {v1, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda52;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+    invoke-direct {v1, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda54;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->setOnSelectListener(Lorg/telegram/messenger/Utilities$Callback2;)V
 
-    .line 3084
+    .line 3252
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lastGalleryScrollPosition:Landroid/os/Parcelable;
 
     if-eqz p1, :cond_1
 
-    .line 3085
+    .line 3253
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/GalleryListView;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    .line 3087
+    .line 3255
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
@@ -4911,14 +5249,14 @@
 
     move-object/from16 v15, p0
 
-    .line 3527
+    .line 3695
     iget-object v0, v15, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 3530
+    .line 3698
     :cond_0
     iget-object v0, v15, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -4926,7 +5264,7 @@
 
     move-result-object v0
 
-    .line 3533
+    .line 3701
     iget-object v1, v15, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     const/4 v2, 0x0
@@ -4946,7 +5284,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 3534
+    .line 3702
     invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v1
@@ -4963,7 +5301,7 @@
     :goto_0
     if-nez v1, :cond_3
 
-    .line 3537
+    .line 3705
     iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v1, Ljava/lang/Integer;
@@ -4989,7 +5327,7 @@
     :cond_3
     move-object v9, v1
 
-    .line 3542
+    .line 3710
     iget-object v1, v15, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     const/4 v3, 0x1
@@ -5011,7 +5349,7 @@
 
     if-eqz v1, :cond_5
 
-    .line 3543
+    .line 3711
     invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v1
@@ -5035,7 +5373,7 @@
     :goto_1
     if-nez v1, :cond_7
 
-    .line 3549
+    .line 3717
     iget-object v1, v0, Landroid/util/Pair;->first:Ljava/lang/Object;
 
     check-cast v1, Ljava/lang/Integer;
@@ -5065,7 +5403,7 @@
     :cond_7
     move-object v10, v1
 
-    .line 3552
+    .line 3720
     :goto_2
     iget-object v0, v15, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
@@ -5079,8 +5417,8 @@
 
     move-result v21
 
-    .line 3553
-    new-instance v13, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;
+    .line 3721
+    new-instance v13, Lorg/telegram/ui/Stories/recorder/StoryRecorder$19;
 
     iget-object v7, v15, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
@@ -5106,7 +5444,7 @@
 
     goto :goto_4
 
-    .line 3556
+    .line 3724
     :cond_9
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
@@ -5135,12 +5473,12 @@
 
     iget-object v0, v15, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
-    .line 3564
+    .line 3732
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->getOrientation()I
 
     move-result v23
 
-    .line 3565
+    .line 3733
     iget-object v0, v15, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-nez v0, :cond_b
@@ -5201,7 +5539,7 @@
 
     move/from16 v15, v21
 
-    invoke-direct/range {v0 .. v19}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;ZLjava/io/File;ZLorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;Landroid/app/Activity;ILandroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;ILjava/util/ArrayList;IILorg/telegram/messenger/MediaController$CropState;Ljava/lang/Runnable;Lorg/telegram/ui/Components/BlurringShader$BlurManager;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct/range {v0 .. v19}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$19;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;ZLjava/io/File;ZLorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;Landroid/app/Activity;ILandroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;ILjava/util/ArrayList;IILorg/telegram/messenger/MediaController$CropState;Ljava/lang/Runnable;Lorg/telegram/ui/Components/BlurringShader$BlurManager;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     move-object/from16 v0, p0
 
@@ -5209,19 +5547,19 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    .line 3715
+    .line 3883
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->blurManager:Lorg/telegram/ui/Components/BlurringShader$BlurManager;
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Stories/recorder/PaintView;->setBlurManager(Lorg/telegram/ui/Components/BlurringShader$BlurManager;)V
 
-    .line 3716
+    .line 3884
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 3717
+    .line 3885
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->getRenderView()Lorg/telegram/ui/Components/Paint/RenderView;
@@ -5232,7 +5570,7 @@
 
     if-eqz v1, :cond_c
 
-    .line 3719
+    .line 3887
     invoke-virtual {v1}, Lorg/telegram/ui/Components/Paint/RenderView;->getPainting()Lorg/telegram/ui/Components/Paint/Painting;
 
     move-result-object v1
@@ -5241,14 +5579,14 @@
 
     iput-boolean v4, v1, Lorg/telegram/ui/Components/Paint/Painting;->hasBlur:Z
 
-    .line 3720
+    .line 3888
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewRenderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 3722
+    .line 3890
     :cond_c
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -5260,12 +5598,12 @@
 
     if-eqz v1, :cond_d
 
-    .line 3724
+    .line 3892
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 3726
+    .line 3894
     :cond_d
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -5277,12 +5615,12 @@
 
     if-eqz v1, :cond_e
 
-    .line 3728
+    .line 3896
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 3730
+    .line 3898
     :cond_e
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -5294,12 +5632,12 @@
 
     if-eqz v1, :cond_f
 
-    .line 3732
+    .line 3900
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 3734
+    .line 3902
     :cond_f
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -5311,34 +5649,34 @@
 
     if-eqz v1, :cond_10
 
-    .line 3736
+    .line 3904
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 3738
+    .line 3906
     :cond_10
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->orderPreviewViews()V
 
-    .line 3739
+    .line 3907
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda29;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda41;
 
-    invoke-direct {v2, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda29;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v2, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda41;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Stories/recorder/PaintView;->setOnDoneButtonClickedListener(Ljava/lang/Runnable;)V
 
-    .line 3742
+    .line 3910
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda30;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda23;
 
-    invoke-direct {v2, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda30;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v2, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda23;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Stories/recorder/PaintView;->setOnCancelButtonClickedListener(Ljava/lang/Runnable;)V
 
-    .line 3745
+    .line 3913
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/PaintView;->init()V
@@ -5349,31 +5687,31 @@
 .method private destroyCameraView(Z)V
     .locals 2
 
-    .line 4252
+    .line 4481
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     if-eqz v0, :cond_1
 
     if-eqz p1, :cond_0
 
-    .line 4254
-    new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda40;
+    .line 4483
+    new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda30;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda40;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda30;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->saveLastCameraBitmap(Ljava/lang/Runnable;)V
 
     goto :goto_0
 
-    .line 4263
+    .line 4492
     :cond_0
-    new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda24;
+    new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda28;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda24;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda28;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->saveLastCameraBitmap(Ljava/lang/Runnable;)V
 
-    .line 4266
+    .line 4495
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     const/4 v0, 0x1
@@ -5382,14 +5720,14 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Stories/recorder/DualCameraView;->destroy(ZLjava/lang/Runnable;)V
 
-    .line 4267
+    .line 4496
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 4268
+    .line 4497
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     :cond_1
@@ -5400,14 +5738,14 @@
 .method private destroyGalleryListView()V
     .locals 2
 
-    .line 2963
+    .line 3131
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 2966
+    .line 3134
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
@@ -5415,33 +5753,33 @@
 
     const/4 v0, 0x0
 
-    .line 2967
+    .line 3135
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
-    .line 2968
+    .line 3136
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v1, :cond_1
 
-    .line 2969
+    .line 3137
     invoke-virtual {v1}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 2970
+    .line 3138
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseAnimator:Landroid/animation/ValueAnimator;
 
-    .line 2972
+    .line 3140
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseSpringAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
     if-eqz v1, :cond_2
 
-    .line 2973
+    .line 3141
     invoke-virtual {v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
 
-    .line 2974
+    .line 3142
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseSpringAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 2976
+    .line 3144
     :cond_2
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListViewOpening:Ljava/lang/Boolean;
 
@@ -5451,20 +5789,20 @@
 .method public static destroyInstance()V
     .locals 2
 
-    .line 180
+    .line 185
     sget-object v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->instance:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     if-eqz v0, :cond_0
 
     const/4 v1, 0x0
 
-    .line 181
+    .line 186
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->close(Z)V
 
     :cond_0
     const/4 v0, 0x0
 
-    .line 183
+    .line 188
     sput-object v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->instance:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     return-void
@@ -5473,78 +5811,78 @@
 .method private destroyPhotoFilterView()V
     .locals 3
 
-    .line 4056
+    .line 4224
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 4059
+    .line 4227
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->shutdown()V
 
-    .line 4060
+    .line 4228
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterEnhanceView:Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->setFilterView(Lorg/telegram/ui/Components/PhotoFilterView;)V
 
-    .line 4061
+    .line 4229
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 4062
+    .line 4230
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewTextureView:Landroid/view/TextureView;
 
     if-eqz v0, :cond_1
 
-    .line 4063
+    .line 4231
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 4064
+    .line 4232
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewTextureView:Landroid/view/TextureView;
 
-    .line 4066
+    .line 4234
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->setFilterTextureView(Landroid/view/TextureView;Lorg/telegram/ui/Components/PhotoFilterView;)V
 
-    .line 4067
+    .line 4235
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewBlurControl:Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     if-eqz v0, :cond_2
 
-    .line 4068
+    .line 4236
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 4069
+    .line 4237
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewBlurControl:Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
-    .line 4071
+    .line 4239
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewCurvesControl:Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
     if-eqz v0, :cond_3
 
-    .line 4072
+    .line 4240
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 4073
+    .line 4241
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewCurvesControl:Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
-    .line 4075
+    .line 4243
     :cond_3
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -5554,23 +5892,23 @@
 .method private destroyPhotoPaintView()V
     .locals 3
 
-    .line 3782
+    .line 3950
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 3785
+    .line 3953
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->onCleanupEntities()V
 
-    .line 3787
+    .line 3955
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->shutdown()V
 
-    .line 3788
+    .line 3956
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
@@ -5579,76 +5917,76 @@
 
     const/4 v0, 0x0
 
-    .line 3789
+    .line 3957
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
-    .line 3790
+    .line 3958
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewRenderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     if-eqz v1, :cond_1
 
-    .line 3791
+    .line 3959
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 3792
+    .line 3960
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewRenderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
-    .line 3794
+    .line 3962
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewTextDim:Landroid/view/View;
 
     if-eqz v1, :cond_2
 
-    .line 3795
+    .line 3963
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 3796
+    .line 3964
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewTextDim:Landroid/view/View;
 
-    .line 3798
+    .line 3966
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewRenderInputView:Landroid/view/View;
 
     if-eqz v1, :cond_3
 
-    .line 3799
+    .line 3967
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 3800
+    .line 3968
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewRenderInputView:Landroid/view/View;
 
-    .line 3802
+    .line 3970
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewEntitiesView:Landroid/view/View;
 
     if-eqz v1, :cond_4
 
-    .line 3803
+    .line 3971
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 3804
+    .line 3972
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewEntitiesView:Landroid/view/View;
 
-    .line 3806
+    .line 3974
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewSelectionContainerView:Landroid/view/View;
 
     if-eqz v1, :cond_5
 
-    .line 3807
+    .line 3975
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 3808
+    .line 3976
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewSelectionContainerView:Landroid/view/View;
 
     :cond_5
@@ -5658,7 +5996,7 @@
 .method private getCameraFace()Z
     .locals 3
 
-    .line 4481
+    .line 4710
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -5677,7 +6015,7 @@
 .method private getCameraThumb()Landroid/graphics/drawable/Drawable;
     .locals 3
 
-    .line 4157
+    .line 4386
     :try_start_0
     new-instance v0, Ljava/io/File;
 
@@ -5689,7 +6027,7 @@
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 4158
+    .line 4387
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
@@ -5708,14 +6046,14 @@
     :goto_0
     if-eqz v0, :cond_0
 
-    .line 4161
+    .line 4390
     new-instance v1, Landroid/graphics/drawable/BitmapDrawable;
 
     invoke-direct {v1, v0}, Landroid/graphics/drawable/BitmapDrawable;-><init>(Landroid/graphics/Bitmap;)V
 
     return-object v1
 
-    .line 4163
+    .line 4392
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getContext()Landroid/content/Context;
 
@@ -5734,15 +6072,92 @@
     return-object v0
 .end method
 
+.method private getCurrentFlashMode()Ljava/lang/String;
+    .locals 2
+
+    .line 4346
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    if-eqz v0, :cond_2
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    .line 4349
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->isFrontface()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lorg/telegram/messenger/camera/CameraSession;->availableFlashModes:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    .line 4350
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->checkFrontfaceFlashModes()V
+
+    .line 4351
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashModes:Ljava/util/ArrayList;
+
+    iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashMode:I
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    return-object v0
+
+    .line 4353
+    :cond_1
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraSession;->getCurrentFlashMode()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_2
+    :goto_0
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method private getDraftSavedHint()Lorg/telegram/ui/Stories/recorder/DraftSavedHint;
     .locals 9
 
-    .line 2167
+    .line 2255
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->draftSavedHint:Lorg/telegram/ui/Stories/recorder/DraftSavedHint;
 
     if-nez v0, :cond_0
 
-    .line 2168
+    .line 2256
     new-instance v0, Lorg/telegram/ui/Stories/recorder/DraftSavedHint;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getContext()Landroid/content/Context;
@@ -5753,7 +6168,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->draftSavedHint:Lorg/telegram/ui/Stories/recorder/DraftSavedHint;
 
-    .line 2169
+    .line 2257
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->controlContainer:Landroid/widget/FrameLayout;
 
     const/4 v2, -0x1
@@ -5776,7 +6191,7 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2171
+    .line 2259
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->draftSavedHint:Lorg/telegram/ui/Stories/recorder/DraftSavedHint;
 
@@ -5786,7 +6201,7 @@
 .method public static getInstance(Landroid/app/Activity;I)Lorg/telegram/ui/Stories/recorder/StoryRecorder;
     .locals 2
 
-    .line 169
+    .line 174
     sget-object v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->instance:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     if-eqz v0, :cond_1
@@ -5802,43 +6217,138 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 170
+    .line 175
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->close(Z)V
 
     const/4 v0, 0x0
 
-    .line 171
+    .line 176
     sput-object v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->instance:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    .line 173
+    .line 178
     :cond_1
     sget-object v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->instance:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     if-nez v0, :cond_2
 
-    .line 174
+    .line 179
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;-><init>(Landroid/app/Activity;I)V
 
     sput-object v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->instance:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    .line 176
+    .line 181
     :cond_2
     sget-object p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->instance:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     return-object p0
 .end method
 
+.method private getNextFlashMode()Ljava/lang/String;
+    .locals 3
+
+    .line 4357
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_1
+
+    .line 4360
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->isFrontface()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lorg/telegram/messenger/camera/CameraSession;->availableFlashModes:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 4361
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->checkFrontfaceFlashModes()V
+
+    .line 4362
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashModes:Ljava/util/ArrayList;
+
+    iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashMode:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v2
+
+    if-lt v1, v2, :cond_1
+
+    const/4 v1, 0x0
+
+    goto :goto_0
+
+    :cond_1
+    iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashMode:I
+
+    add-int/lit8 v1, v1, 0x1
+
+    :goto_0
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    return-object v0
+
+    .line 4364
+    :cond_2
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraSession;->getNextFlashMode()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_3
+    :goto_1
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method private getUiBlurBitmap()Landroid/graphics/Bitmap;
     .locals 2
 
-    .line 2112
+    .line 2200
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     if-eqz v0, :cond_0
 
-    .line 2113
+    .line 2201
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->getUiBlurBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
@@ -5851,7 +6361,7 @@
     :goto_0
     if-nez v0, :cond_1
 
-    .line 2115
+    .line 2203
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     if-eqz v1, :cond_1
@@ -5862,7 +6372,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 2116
+    .line 2204
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->getTextureView()Lorg/telegram/ui/Components/VideoEditTextureView;
@@ -5890,19 +6400,19 @@
         }
     .end annotation
 
-    .line 2122
+    .line 2210
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2123
+    .line 2211
     instance-of v1, p1, Landroid/text/Spanned;
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_1
 
-    .line 2124
+    .line 2212
     move-object v1, p1
 
     check-cast v1, Landroid/text/Spanned;
@@ -5921,18 +6431,18 @@
 
     move v3, v2
 
-    .line 2125
+    .line 2213
     :goto_0
     array-length v4, v1
 
     if-ge v3, v4, :cond_1
 
-    .line 2126
+    .line 2214
     aget-object v4, v1, v3
 
     if-eqz v4, :cond_0
 
-    .line 2129
+    .line 2217
     :try_start_0
     invoke-virtual {v4}, Landroid/text/style/URLSpan;->getURL()Ljava/lang/String;
 
@@ -5946,7 +6456,7 @@
 
     move-result-object v4
 
-    .line 2130
+    .line 2218
     iget v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5959,7 +6469,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 2131
+    .line 2219
     invoke-static {v4}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result v5
@@ -5978,7 +6488,7 @@
 
     if-nez v5, :cond_0
 
-    .line 2132
+    .line 2220
     invoke-static {v4}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v4
@@ -6000,7 +6510,7 @@
 
     move v3, v1
 
-    .line 2140
+    .line 2228
     :goto_1
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
@@ -6010,7 +6520,7 @@
 
     if-ge v2, v4, :cond_5
 
-    .line 2141
+    .line 2229
     invoke-interface {p1, v2}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v4
@@ -6030,7 +6540,7 @@
 
     if-eq v3, v1, :cond_3
 
-    .line 2146
+    .line 2234
     invoke-interface {p1, v3, v2}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -6039,7 +6549,7 @@
 
     move-result-object v3
 
-    .line 2147
+    .line 2235
     iget v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v4}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -6050,7 +6560,7 @@
 
     move-result-object v4
 
-    .line 2148
+    .line 2236
     instance-of v7, v4, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v7, :cond_3
@@ -6085,7 +6595,7 @@
 
     if-nez v4, :cond_3
 
-    .line 2149
+    .line 2237
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_3
@@ -6100,7 +6610,7 @@
     :cond_5
     if-eq v3, v1, :cond_6
 
-    .line 2156
+    .line 2244
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
@@ -6113,7 +6623,7 @@
 
     move-result-object p1
 
-    .line 2157
+    .line 2245
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -6124,7 +6634,7 @@
 
     move-result-object v1
 
-    .line 2158
+    .line 2246
     instance-of v2, v1, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v2, :cond_6
@@ -6159,7 +6669,7 @@
 
     if-nez v1, :cond_6
 
-    .line 2159
+    .line 2247
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_6
@@ -6169,7 +6679,7 @@
 .method private hidePhotoPaintView()V
     .locals 3
 
-    .line 3513
+    .line 3681
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-nez v0, :cond_0
@@ -6179,10 +6689,10 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 3516
+    .line 3684
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewTouchable:Lorg/telegram/ui/Stories/recorder/StoryRecorder$Touchable;
 
-    .line 3517
+    .line 3685
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->getTopLayout()Landroid/view/View;
 
     move-result-object v0
@@ -6191,7 +6701,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 3518
+    .line 3686
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->getTopLayout()Landroid/view/View;
@@ -6210,7 +6720,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 3519
+    .line 3687
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->getBottomLayout()Landroid/view/View;
@@ -6219,7 +6729,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 3520
+    .line 3688
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->getBottomLayout()Landroid/view/View;
@@ -6236,7 +6746,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 3521
+    .line 3689
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->getWeightChooserView()Landroid/view/View;
@@ -6255,14 +6765,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 3522
+    .line 3690
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3523
+    .line 3691
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/PaintView;->keyboardNotifier:Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;
@@ -6279,19 +6789,19 @@
 
     move-object/from16 v8, p0
 
-    .line 1503
+    .line 1525
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getContext()Landroid/content/Context;
 
     move-result-object v9
 
-    .line 1505
+    .line 1527
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     invoke-direct {v0, v8, v9}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;)V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
-    .line 1506
+    .line 1528
     sget v10, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v11, 0x15
@@ -6300,10 +6810,10 @@
 
     if-lt v10, v11, :cond_0
 
-    .line 1507
+    .line 1529
     invoke-virtual {v0, v12}, Landroid/widget/FrameLayout;->setFitsSystemWindows(Z)V
 
-    .line 1508
+    .line 1530
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$2;
@@ -6312,13 +6822,48 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnApplyWindowInsetsListener(Landroid/view/View$OnApplyWindowInsetsListener;)V
 
-    .line 1533
+    .line 1555
     :cond_0
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     invoke-virtual {v0, v12}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
-    .line 1535
+    .line 1557
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowManager:Landroid/view/WindowManager;
+
+    iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
+
+    iget-object v3, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowLayoutParams:Landroid/view/WindowManager$LayoutParams;
+
+    invoke-direct {v0, v9, v1, v2, v3}, Lorg/telegram/ui/Stories/recorder/FlashViews;-><init>(Landroid/content/Context;Landroid/view/WindowManager;Landroid/view/View;Landroid/view/WindowManager$LayoutParams;)V
+
+    iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    .line 1558
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;
+
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/FlashViews;->add(Lorg/telegram/ui/Stories/recorder/FlashViews$Invertable;)V
+
+    .line 1567
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
+
+    iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/FlashViews;->backgroundView:Landroid/view/View;
+
+    new-instance v2, Landroid/view/ViewGroup$LayoutParams;
+
+    const/4 v13, -0x1
+
+    invoke-direct {v2, v13, v13}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 1568
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
@@ -6329,18 +6874,31 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 1537
+    .line 1569
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$4;
 
-    invoke-direct {v1, v8, v9}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$3;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;)V
+    invoke-direct {v1, v8, v9}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$4;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;)V
 
     iput-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 1559
+    .line 1606
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
+
+    iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget-object v1, v1, Lorg/telegram/ui/Stories/recorder/FlashViews;->foregroundView:Landroid/view/View;
+
+    new-instance v2, Landroid/view/ViewGroup$LayoutParams;
+
+    invoke-direct {v2, v13, v13}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 1608
     new-instance v0, Lorg/telegram/ui/Components/BlurringShader$BlurManager;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
@@ -6349,7 +6907,7 @@
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->blurManager:Lorg/telegram/ui/Components/BlurringShader$BlurManager;
 
-    .line 1560
+    .line 1609
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     new-instance v1, Landroid/widget/FrameLayout;
@@ -6360,7 +6918,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 1561
+    .line 1610
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     new-instance v1, Landroid/widget/FrameLayout;
@@ -6371,32 +6929,32 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 1562
+    .line 1611
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$4;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$5;
 
-    invoke-direct {v1, v8, v9}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$4;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;)V
+    invoke-direct {v1, v8, v9}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$5;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;)V
 
     iput-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 1571
+    .line 1620
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
-    const/16 v13, 0x8
+    const/16 v14, 0x8
 
-    invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v0, v14}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1572
+    .line 1621
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
-    const/4 v14, 0x0
+    const/4 v15, 0x0
 
-    invoke-virtual {v0, v14}, Landroid/widget/FrameLayout;->setAlpha(F)V
+    invoke-virtual {v0, v15}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1573
+    .line 1622
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     new-instance v1, Landroid/widget/FrameLayout;
@@ -6407,57 +6965,55 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 1575
+    .line 1624
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$5;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$6;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$5;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$6;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/Bulletin;->addDelegate(Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/Bulletin$Delegate;)V
 
-    .line 1592
+    .line 1641
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, v9}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
-    .line 1593
+    .line 1642
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1594
+    .line 1643
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda13;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda14;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1599
+    .line 1648
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v12}, Landroid/widget/ImageView;->setClickable(Z)V
 
-    .line 1600
+    .line 1649
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
-    const/4 v15, -0x1
-
     const/16 v7, 0x77
 
-    invoke-static {v15, v15, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v13, v13, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1602
+    .line 1651
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openType:I
@@ -6478,21 +7034,21 @@
 
     if-lt v10, v11, :cond_2
 
-    .line 1604
+    .line 1653
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$6;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$7;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$6;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$7;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 1610
+    .line 1659
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v12}, Landroid/widget/FrameLayout;->setClipToOutline(Z)V
 
-    .line 1612
+    .line 1661
     :cond_2
     new-instance v0, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
 
@@ -6504,69 +7060,69 @@
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterEnhanceView:Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
 
-    .line 1613
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$7;
+    .line 1662
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->blurManager:Lorg/telegram/ui/Components/BlurringShader$BlurManager;
 
-    invoke-direct {v0, v8, v9, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$7;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;Lorg/telegram/ui/Components/BlurringShader$BlurManager;)V
+    invoke-direct {v0, v8, v9, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;Lorg/telegram/ui/Components/BlurringShader$BlurManager;)V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
-    .line 1673
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda20;
+    .line 1722
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda21;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda20;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/PreviewView;->invalidateBlur:Ljava/lang/Runnable;
 
-    .line 1674
+    .line 1723
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda26;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda27;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda26;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda27;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->setOnTapListener(Ljava/lang/Runnable;)V
 
-    .line 1687
+    .line 1736
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
-    invoke-virtual {v0, v13}, Lorg/telegram/ui/Stories/recorder/PreviewView;->setVisibility(I)V
+    invoke-virtual {v0, v14}, Lorg/telegram/ui/Stories/recorder/PreviewView;->setVisibility(I)V
 
-    .line 1688
+    .line 1737
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda34;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda33;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda34;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda33;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->whenError(Ljava/lang/Runnable;)V
 
-    .line 1693
+    .line 1742
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
-    invoke-static {v15, v15, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v13, v13, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1695
+    .line 1744
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterEnhanceView:Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
 
-    invoke-static {v15, v15, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v13, v13, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1697
-    new-instance v5, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;
+    .line 1746
+    new-instance v5, Lorg/telegram/ui/Stories/recorder/StoryRecorder$9;
 
     iget-object v4, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
@@ -6600,70 +7156,70 @@
 
     move-object/from16 v7, v16
 
-    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$8;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/BlurringShader$BlurManager;)V
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$9;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/content/Context;Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/BlurringShader$BlurManager;)V
 
     iput-object v11, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
-    .line 1748
+    .line 1797
     iget v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-virtual {v11, v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->setAccount(I)V
 
-    .line 1749
+    .line 1798
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
+
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda67;
+
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda67;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->setUiBlurBitmap(Lorg/telegram/messenger/Utilities$CallbackVoidReturn;)V
+
+    .line 1799
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
+
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;
+
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$10;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/Bulletin;->addDelegate(Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/Bulletin$Delegate;)V
+
+    .line 1805
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda63;
 
     invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda63;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->setUiBlurBitmap(Lorg/telegram/messenger/Utilities$CallbackVoidReturn;)V
-
-    .line 1750
-    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
-
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$9;
-
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$9;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/Bulletin;->addDelegate(Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/Bulletin$Delegate;)V
-
-    .line 1756
-    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
-
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda59;
-
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda59;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
-
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->setOnHeightUpdate(Lorg/telegram/messenger/Utilities$Callback;)V
 
-    .line 1765
+    .line 1814
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda57;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda61;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda57;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda61;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/CaptionStory;->setOnPeriodUpdate(Lorg/telegram/messenger/Utilities$Callback;)V
 
-    .line 1772
+    .line 1821
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda56;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda60;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda56;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda60;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/CaptionStory;->setOnPremiumHint(Lorg/telegram/messenger/Utilities$Callback;)V
 
-    .line 1773
+    .line 1822
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda53;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda55;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda53;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda55;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->setOnKeyboardOpen(Lorg/telegram/messenger/Utilities$Callback;)V
 
-    .line 1786
+    .line 1835
     new-instance v6, Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
@@ -6682,29 +7238,29 @@
 
     iput-object v6, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->timelineView:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
-    .line 1787
+    .line 1836
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v0, v6}, Lorg/telegram/ui/Stories/recorder/PreviewView;->setVideoTimelineView(Lorg/telegram/ui/Stories/recorder/TimelineView;)V
 
-    .line 1788
+    .line 1837
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->timelineView:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
-    invoke-virtual {v0, v13}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v14}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1789
+    .line 1838
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->timelineView:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
-    invoke-virtual {v0, v14}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v0, v15}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1790
+    .line 1839
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, v9}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimelineContainerView:Landroid/widget/FrameLayout;
 
-    .line 1791
+    .line 1840
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->timelineView:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     const/16 v19, -0x1
@@ -6727,22 +7283,22 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1792
+    .line 1841
     new-instance v0, Lorg/telegram/ui/Stories/recorder/VideoTimeView;
 
     invoke-direct {v0, v9}, Lorg/telegram/ui/Stories/recorder/VideoTimeView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimeView:Lorg/telegram/ui/Stories/recorder/VideoTimeView;
 
-    .line 1793
-    invoke-virtual {v0, v13}, Landroid/view/View;->setVisibility(I)V
+    .line 1842
+    invoke-virtual {v0, v14}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1794
+    .line 1843
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimeView:Lorg/telegram/ui/Stories/recorder/VideoTimeView;
 
     invoke-virtual {v0, v12, v12}, Lorg/telegram/ui/Stories/recorder/VideoTimeView;->show(ZZ)V
 
-    .line 1795
+    .line 1844
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimelineContainerView:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimeView:Lorg/telegram/ui/Stories/recorder/VideoTimeView;
@@ -6757,7 +7313,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1796
+    .line 1845
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimelineContainerView:Landroid/widget/FrameLayout;
@@ -6774,7 +7330,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1797
+    .line 1846
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
@@ -6791,14 +7347,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1799
-    new-instance v0, Landroid/widget/ImageView;
+    .line 1848
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
-    invoke-direct {v0, v9}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v9}, Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
-    .line 1800
+    .line 1849
     sget v1, Lorg/telegram/messenger/R$string;->AccDescrGoBack:I
 
     const-string v2, "AccDescrGoBack"
@@ -6809,33 +7365,33 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 1801
-    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 1850
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1802
-    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 1851
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->msg_photo_back:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1803
-    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 1852
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v2, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v1, v15, v2}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v1, v13, v2}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1804
-    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 1853
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     const v6, 0x20ffffff
 
@@ -6845,8 +7401,8 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1805
-    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 1854
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda18;
 
@@ -6854,10 +7410,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1811
+    .line 1860
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->actionBarContainer:Landroid/widget/FrameLayout;
 
-    iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     const/16 v2, 0x33
 
@@ -6869,7 +7425,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1813
+    .line 1861
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/FlashViews;->add(Lorg/telegram/ui/Stories/recorder/FlashViews$Invertable;)V
+
+    .line 1863
     new-instance v0, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-direct {v0, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
@@ -6878,22 +7441,22 @@
 
     const/16 v1, 0x14
 
-    .line 1814
+    .line 1864
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
-    .line 1815
+    .line 1865
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/16 v1, 0x13
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
 
-    .line 1816
+    .line 1866
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-virtual {v0, v15}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
+    invoke-virtual {v0, v13}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
-    .line 1817
+    .line 1867
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const-string v1, "fonts/rmedium.ttf"
@@ -6904,7 +7467,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1818
+    .line 1868
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget v1, Lorg/telegram/messenger/R$string;->RecorderNewStory:I
@@ -6917,7 +7480,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 1819
+    .line 1869
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/SimpleTextView;->getPaint()Landroid/graphics/Paint;
@@ -6932,26 +7495,26 @@
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    invoke-virtual {v0, v1, v14, v11, v2}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
+    invoke-virtual {v0, v1, v15, v11, v2}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
 
-    .line 1820
+    .line 1870
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-virtual {v0, v14}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v0, v15}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1821
+    .line 1871
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-virtual {v0, v13}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v14}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1822
+    .line 1872
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setEllipsizeByGradient(Z)V
 
-    .line 1823
+    .line 1873
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/16 v1, 0x90
@@ -6962,7 +7525,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightPadding(I)V
 
-    .line 1824
+    .line 1874
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->actionBarContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -6981,12 +7544,12 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1826
+    .line 1876
     new-instance v5, Lorg/telegram/ui/Stories/recorder/DownloadButton;
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda60;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda64;
 
-    invoke-direct {v2, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda60;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v2, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda64;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     iget v3, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
@@ -7000,15 +7563,15 @@
 
     move-object v1, v9
 
-    move-object v14, v5
+    move-object v15, v5
 
     move-object/from16 v5, v16
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Stories/recorder/DownloadButton;-><init>(Landroid/content/Context;Lorg/telegram/messenger/Utilities$Callback;ILandroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    iput-object v14, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->downloadButton:Lorg/telegram/ui/Stories/recorder/DownloadButton;
+    iput-object v15, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->downloadButton:Lorg/telegram/ui/Stories/recorder/DownloadButton;
 
-    .line 1830
+    .line 1880
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->actionBarContainer:Landroid/widget/FrameLayout;
 
     const/16 v1, 0x35
@@ -7017,9 +7580,9 @@
 
     move-result-object v2
 
-    invoke-virtual {v0, v14, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v15, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1832
+    .line 1882
     new-instance v0, Lorg/telegram/ui/Stories/recorder/HintView2;
 
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
@@ -7030,42 +7593,42 @@
 
     const/high16 v2, -0x3d780000    # -68.0f
 
-    .line 1833
+    .line 1883
     invoke-virtual {v0, v11, v2}, Lorg/telegram/ui/Stories/recorder/HintView2;->setJoint(FF)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
     const-wide/16 v4, 0x7d0
 
-    .line 1834
+    .line 1884
     invoke-virtual {v0, v4, v5}, Lorg/telegram/ui/Stories/recorder/HintView2;->setDuration(J)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
-    .line 1835
+    .line 1885
     invoke-virtual {v0, v12}, Lorg/telegram/ui/Stories/recorder/HintView2;->setBounce(Z)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
-    .line 1836
+    .line 1886
     invoke-virtual {v0, v3, v3, v12}, Lorg/telegram/ui/Stories/recorder/HintView2;->setAnimatedTextHacks(ZZZ)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 1837
-    invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 1887
+    invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
     invoke-virtual {v0, v2, v12, v3, v12}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 1838
+    .line 1888
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->actionBarContainer:Landroid/widget/FrameLayout;
 
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteHint:Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -7084,19 +7647,19 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1840
+    .line 1890
     new-instance v0, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, v9}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 1841
+    .line 1891
     sget-object v2, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 1842
+    .line 1892
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -7117,18 +7680,18 @@
     :goto_1
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setImageResource(I)V
 
-    .line 1843
+    .line 1893
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v2, v15, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v2, v13, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 1844
+    .line 1894
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -7137,28 +7700,28 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1845
+    .line 1895
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda11;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda13;
 
-    invoke-direct {v2, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda11;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v2, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1861
+    .line 1911
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
-    invoke-virtual {v0, v13}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v14}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1862
+    .line 1912
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 1863
+    .line 1913
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->actionBarContainer:Landroid/widget/FrameLayout;
 
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
@@ -7183,42 +7746,42 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1865
+    .line 1915
     new-instance v0, Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     invoke-direct {v0, v9}, Lorg/telegram/ui/Stories/recorder/PlayPauseButton;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
-    .line 1866
+    .line 1916
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1867
+    .line 1917
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
-    invoke-virtual {v0, v13}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v14}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1868
+    .line 1918
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1869
+    .line 1919
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda14;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda15;
 
-    invoke-direct {v2, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v2, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1874
+    .line 1924
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->actionBarContainer:Landroid/widget/FrameLayout;
 
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
@@ -7231,63 +7794,61 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1876
-    new-instance v0, Landroid/widget/ImageView;
+    .line 1926
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
-    invoke-direct {v0, v9}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v9}, Lorg/telegram/ui/Stories/recorder/ToggleButton2;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
-    .line 1877
-    sget-object v2, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    .line 1878
-    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
-
-    new-instance v2, Landroid/graphics/PorterDuffColorFilter;
-
-    sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-direct {v2, v15, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
-
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
-
-    .line 1879
-    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
-
+    .line 1927
     invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1880
-    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 1928
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda15;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda16;
 
-    invoke-direct {v2, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v2, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda16;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1896
-    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 1940
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
-    invoke-virtual {v0, v13}, Landroid/widget/ImageView;->setVisibility(I)V
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda19;
 
-    .line 1897
-    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    invoke-direct {v2, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda19;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+
+    .line 1977
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
+
+    invoke-virtual {v0, v14}, Landroid/view/View;->setVisibility(I)V
+
+    .line 1978
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setAlpha(F)V
+    invoke-virtual {v0, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1898
+    .line 1979
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
+
+    invoke-virtual {v0, v2}, Lorg/telegram/ui/Stories/recorder/FlashViews;->add(Lorg/telegram/ui/Stories/recorder/FlashViews$Invertable;)V
+
+    .line 1980
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->actionBarContainer:Landroid/widget/FrameLayout;
 
-    iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     invoke-static {v7, v7, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
@@ -7295,7 +7856,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1900
+    .line 1982
     new-instance v0, Lorg/telegram/ui/Stories/recorder/ToggleButton;
 
     sget v2, Lorg/telegram/messenger/R$drawable;->media_dual_camera2_shadow:I
@@ -7306,14 +7867,14 @@
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
 
-    .line 1901
+    .line 1983
     new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda17;
 
     invoke-direct {v2, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1915
+    .line 1997
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
 
     invoke-static {v9}, Lorg/telegram/ui/Stories/recorder/DualCameraView;->dualAvailableStatic(Landroid/content/Context;)Z
@@ -7327,12 +7888,19 @@
     goto :goto_2
 
     :cond_4
-    move v6, v13
+    move v6, v14
 
     :goto_2
     invoke-virtual {v0, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1916
+    .line 1998
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
+
+    invoke-virtual {v0, v2}, Lorg/telegram/ui/Stories/recorder/FlashViews;->add(Lorg/telegram/ui/Stories/recorder/FlashViews$Invertable;)V
+
+    .line 1999
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->actionBarContainer:Landroid/widget/FrameLayout;
 
     iget-object v2, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
@@ -7343,7 +7911,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1918
+    .line 2001
     new-instance v0, Lorg/telegram/ui/Stories/recorder/HintView2;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
@@ -7354,26 +7922,26 @@
 
     const/high16 v1, -0x3e600000    # -20.0f
 
-    .line 1919
+    .line 2002
     invoke-virtual {v0, v11, v1}, Lorg/telegram/ui/Stories/recorder/HintView2;->setJoint(FF)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
     const-wide/16 v3, 0x1388
 
-    .line 1920
+    .line 2003
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Stories/recorder/HintView2;->setDuration(J)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
-    .line 1921
+    .line 2004
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Stories/recorder/HintView2;->setCloseButton(Z)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
     sget v1, Lorg/telegram/messenger/R$string;->StoryCameraDualHint:I
 
-    .line 1922
+    .line 2005
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -7382,27 +7950,27 @@
 
     move-result-object v0
 
-    sget-object v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda51;->INSTANCE:Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda51;
+    sget-object v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda53;->INSTANCE:Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda53;
 
-    .line 1923
+    .line 2006
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/HintView2;->setOnHiddenListener(Ljava/lang/Runnable;)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 1924
-    invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 2007
+    invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     invoke-virtual {v0, v1, v12, v2, v12}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 1925
+    .line 2008
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->actionBarContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualHint:Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -7427,7 +7995,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1927
+    .line 2010
     new-instance v0, Lorg/telegram/ui/Stories/recorder/HintView2;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
@@ -7440,26 +8008,26 @@
 
     const/4 v2, 0x0
 
-    .line 1928
+    .line 2011
     invoke-virtual {v0, v2, v1}, Lorg/telegram/ui/Stories/recorder/HintView2;->setJoint(FF)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
-    .line 1929
+    .line 2012
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Stories/recorder/HintView2;->setDuration(J)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
     const/4 v1, 0x1
 
-    .line 1930
+    .line 2013
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/HintView2;->setMultilineText(Z)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->savedDualHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 1931
+    .line 2014
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->actionBarContainer:Landroid/widget/FrameLayout;
 
     const/16 v23, 0x0
@@ -7472,17 +8040,17 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1933
+    .line 2016
     new-instance v0, Lorg/telegram/ui/Stories/recorder/VideoTimerView;
 
     invoke-direct {v0, v9}, Lorg/telegram/ui/Stories/recorder/VideoTimerView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimerView:Lorg/telegram/ui/Stories/recorder/VideoTimerView;
 
-    .line 1934
+    .line 2017
     invoke-direct {v8, v12, v12}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showVideoTimer(ZZ)V
 
-    .line 1935
+    .line 2018
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->actionBarContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimerView:Lorg/telegram/ui/Stories/recorder/VideoTimerView;
@@ -7501,14 +8069,21 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
+    .line 2019
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimerView:Lorg/telegram/ui/Stories/recorder/VideoTimerView;
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/FlashViews;->add(Lorg/telegram/ui/Stories/recorder/FlashViews$Invertable;)V
+
     const/16 v0, 0x15
 
     if-lt v10, v0, :cond_5
 
-    .line 1938
+    .line 2022
     invoke-static {v12}, Lorg/telegram/messenger/MediaController;->loadGalleryPhotosAlbums(I)V
 
-    .line 1941
+    .line 2025
     :cond_5
     new-instance v0, Lorg/telegram/ui/Stories/recorder/RecordControl;
 
@@ -7516,19 +8091,19 @@
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
-    .line 1942
+    .line 2026
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControlDelegate:Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/RecordControl;->setDelegate(Lorg/telegram/ui/Stories/recorder/RecordControl$Delegate;)V
 
-    .line 1943
+    .line 2027
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     iget-boolean v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVideo:Z
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/RecordControl;->startAsVideo(Z)V
 
-    .line 1944
+    .line 2028
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->controlContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
@@ -7537,13 +8112,20 @@
 
     const/16 v5, 0x57
 
-    invoke-static {v15, v2, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v13, v2, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1945
+    .line 2029
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/FlashViews;->add(Lorg/telegram/ui/Stories/recorder/FlashViews$Invertable;)V
+
+    .line 2031
     new-instance v0, Lorg/telegram/ui/Stories/recorder/HintView2;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
@@ -7554,14 +8136,14 @@
 
     const/4 v1, 0x1
 
-    .line 1946
+    .line 2032
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/HintView2;->setMultilineText(Z)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
     sget v1, Lorg/telegram/messenger/R$string;->StoryCameraHint2:I
 
-    .line 1947
+    .line 2033
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -7572,26 +8154,26 @@
 
     const/high16 v1, 0x43a00000    # 320.0f
 
-    .line 1948
+    .line 2034
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/HintView2;->setMaxWidth(F)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
-    .line 1949
+    .line 2035
     invoke-virtual {v0, v3, v4}, Lorg/telegram/ui/Stories/recorder/HintView2;->setDuration(J)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
     sget-object v1, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
 
-    .line 1950
+    .line 2036
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/HintView2;->setTextAlign(Landroid/text/Layout$Alignment;)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     move-result-object v0
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 1951
+    .line 2037
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->controlContainer:Landroid/widget/FrameLayout;
 
     const/16 v19, -0x1
@@ -7614,22 +8196,22 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1953
+    .line 2039
     new-instance v0, Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-direct {v0, v9}, Lorg/telegram/ui/Components/ZoomControlView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
-    .line 1954
+    .line 2040
     iput-boolean v12, v0, Lorg/telegram/ui/Components/ZoomControlView;->enabledTouch:Z
 
     const/4 v1, 0x0
 
-    .line 1955
+    .line 2041
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1956
+    .line 2042
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->controlContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
@@ -7646,16 +8228,16 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1957
+    .line 2043
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda66;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda70;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda66;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda70;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ZoomControlView;->setDelegate(Lorg/telegram/ui/Components/ZoomControlView$ZoomControlViewDelegate;)V
 
-    .line 1963
+    .line 2049
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     const/4 v1, 0x0
@@ -7664,48 +8246,55 @@
 
     invoke-virtual {v0, v1, v12}, Lorg/telegram/ui/Components/ZoomControlView;->setZoom(FZ)V
 
-    .line 1965
+    .line 2051
     new-instance v0, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
     invoke-direct {v0, v9}, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
-    .line 1966
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda54;
+    .line 2052
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda56;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda54;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda56;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->setOnSwitchModeListener(Lorg/telegram/messenger/Utilities$Callback;)V
 
-    .line 1976
+    .line 2062
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda55;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda58;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda55;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda58;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->setOnSwitchingModeListener(Lorg/telegram/messenger/Utilities$Callback;)V
 
-    .line 1979
+    .line 2065
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navbarContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
-    invoke-static {v15, v15, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v13, v13, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1981
+    .line 2066
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/FlashViews;->add(Lorg/telegram/ui/Stories/recorder/FlashViews$Invertable;)V
+
+    .line 2068
     new-instance v0, Lorg/telegram/ui/Stories/recorder/HintTextView;
 
     invoke-direct {v0, v9}, Lorg/telegram/ui/Stories/recorder/HintTextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->hintTextView:Lorg/telegram/ui/Stories/recorder/HintTextView;
 
-    .line 1982
+    .line 2069
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navbarContainer:Landroid/widget/FrameLayout;
 
     const/16 v20, 0x20
@@ -7724,26 +8313,33 @@
 
     invoke-virtual {v1, v0, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1984
+    .line 2070
+    iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->hintTextView:Lorg/telegram/ui/Stories/recorder/HintTextView;
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/FlashViews;->add(Lorg/telegram/ui/Stories/recorder/FlashViews$Invertable;)V
+
+    .line 2072
     new-instance v0, Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
     invoke-direct {v0, v9}, Lorg/telegram/ui/Stories/recorder/PreviewButtons;-><init>(Landroid/content/Context;)V
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
-    .line 1985
-    invoke-virtual {v0, v13}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    .line 2073
+    invoke-virtual {v0, v14}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1986
+    .line 2074
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda58;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda62;
 
-    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda58;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, v8}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda62;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/PreviewButtons;->setOnClickListener(Lorg/telegram/messenger/Utilities$Callback;)V
 
-    .line 2099
+    .line 2187
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navbarContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
@@ -7752,13 +8348,13 @@
 
     const/16 v3, 0x17
 
-    invoke-static {v15, v2, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v13, v2, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2101
+    .line 2189
     new-instance v0, Lorg/telegram/ui/Stories/recorder/TrashView;
 
     invoke-direct {v0, v9}, Lorg/telegram/ui/Stories/recorder/TrashView;-><init>(Landroid/content/Context;)V
@@ -7767,15 +8363,15 @@
 
     const/4 v1, 0x0
 
-    .line 2102
+    .line 2190
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2103
+    .line 2191
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->trash:Lorg/telegram/ui/Stories/recorder/TrashView;
 
-    invoke-virtual {v0, v13}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v0, v14}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2104
+    .line 2192
     iget-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->trash:Lorg/telegram/ui/Stories/recorder/TrashView;
@@ -7796,7 +8392,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2106
+    .line 2194
     new-instance v0, Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
 
     iget v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
@@ -7807,12 +8403,12 @@
 
     iput-object v0, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewHighlight:Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
 
-    .line 2107
+    .line 2195
     iget-object v1, v8, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     const/16 v2, 0x77
 
-    invoke-static {v15, v15, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v13, v13, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
@@ -7824,7 +8420,7 @@
 .method private isGalleryOpen()Z
     .locals 4
 
-    .line 3091
+    .line 3259
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->scrollingY:Z
 
     if-nez v0, :cond_0
@@ -7887,7 +8483,7 @@
 .method public static isVisible()Z
     .locals 1
 
-    .line 187
+    .line 192
     sget-object v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->instance:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     if-eqz v0, :cond_0
@@ -7907,10 +8503,10 @@
     return v0
 .end method
 
-.method private synthetic lambda$animateContainerBack$35(FFLandroid/animation/ValueAnimator;)V
+.method private synthetic lambda$animateContainerBack$39(FFLandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 2937
+    .line 3105
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p3
@@ -7921,14 +8517,14 @@
 
     move-result p3
 
-    .line 2938
+    .line 3106
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     mul-float/2addr p1, p3
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;->setTranslationY(F)V
 
-    .line 2939
+    .line 3107
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     mul-float/2addr p2, p3
@@ -7938,29 +8534,29 @@
     return-void
 .end method
 
-.method private synthetic lambda$animateGalleryListView$38(Z)V
+.method private synthetic lambda$animateGalleryListView$42(Z)V
     .locals 0
 
-    .line 3115
+    .line 3283
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateGalleryListView(Z)V
 
     return-void
 .end method
 
-.method private synthetic lambda$animateGalleryListView$39(FLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+.method private synthetic lambda$animateGalleryListView$43(FLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
     .locals 0
 
     if-eqz p3, :cond_0
 
     return-void
 
-    .line 3161
+    .line 3329
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 3162
+    .line 3330
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     const/4 p2, 0x0
@@ -7969,19 +8565,19 @@
 
     const/4 p1, 0x0
 
-    .line 3163
+    .line 3331
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryOpenCloseSpringAnimator:Landroidx/dynamicanimation/animation/SpringAnimation;
 
-    .line 3164
+    .line 3332
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListViewOpening:Ljava/lang/Boolean;
 
     return-void
 .end method
 
-.method private synthetic lambda$animateGalleryListView$40(Landroid/animation/ValueAnimator;)V
+.method private synthetic lambda$animateGalleryListView$44(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 3170
+    .line 3338
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -8002,7 +8598,7 @@
 .method private synthetic lambda$animateOpenTo$2(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 568
+    .line 573
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -8015,15 +8611,15 @@
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openProgress:F
 
-    .line 569
+    .line 574
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->checkBackgroundVisibility()V
 
-    .line 570
+    .line 575
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 571
+    .line 576
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -8036,42 +8632,30 @@
 
     const/4 v0, 0x0
 
-    .line 533
+    .line 538
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onClosePrepareListener:Lorg/telegram/messenger/Utilities$Callback3;
 
     const/4 v0, 0x0
 
-    .line 534
+    .line 539
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->prepareClosing:Z
 
-    .line 535
+    .line 540
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->close(Z)V
 
     return-void
 .end method
 
-.method private synthetic lambda$createCameraView$49()V
+.method private synthetic lambda$createCameraView$53()V
     .locals 3
 
-    .line 4134
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
+    .line 4302
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getCurrentFlashMode()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraSession;->getCurrentFlashMode()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 4135
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
-
-    invoke-virtual {v1}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lorg/telegram/messenger/camera/CameraSession;->getNextFlashMode()Ljava/lang/String;
+    .line 4303
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getNextFlashMode()Ljava/lang/String;
 
     move-result-object v1
 
@@ -8085,7 +8669,7 @@
 
     move-object v0, v2
 
-    .line 4138
+    .line 4306
     :cond_0
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
@@ -8098,14 +8682,14 @@
 
     invoke-direct {p0, v2, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->setCameraFlashModeIcon(Ljava/lang/String;Z)V
 
-    .line 4139
+    .line 4307
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     if-eqz v0, :cond_2
 
     const/4 v1, 0x0
 
-    .line 4140
+    .line 4308
     iput v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraZoom:F
 
     const/4 v2, 0x0
@@ -8116,10 +8700,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$createFilterPhotoView$46(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
+.method private synthetic lambda$createFilterPhotoView$50(Landroid/graphics/BitmapFactory$Options;)Landroid/graphics/Bitmap;
     .locals 1
 
-    .line 3976
+    .line 4144
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
@@ -8135,54 +8719,54 @@
     return-object p1
 .end method
 
-.method private synthetic lambda$createFilterPhotoView$47(Landroid/view/View;)V
+.method private synthetic lambda$createFilterPhotoView$51(Landroid/view/View;)V
     .locals 1
 
     const/4 p1, -0x1
 
     const/4 v0, 0x1
 
-    .line 4009
+    .line 4177
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->switchToEditMode(IZ)V
 
     return-void
 .end method
 
-.method private synthetic lambda$createFilterPhotoView$48(Landroid/view/View;)V
+.method private synthetic lambda$createFilterPhotoView$52(Landroid/view/View;)V
     .locals 1
 
     const/4 p1, -0x1
 
     const/4 v0, 0x1
 
-    .line 4012
+    .line 4180
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->switchToEditMode(IZ)V
 
     return-void
 .end method
 
-.method private synthetic lambda$createGalleryListView$36()V
+.method private synthetic lambda$createGalleryListView$40()V
     .locals 1
 
     const/4 v0, 0x0
 
-    .line 3028
+    .line 3196
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateGalleryListView(Z)V
 
     const/4 v0, 0x0
 
-    .line 3029
+    .line 3197
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lastGallerySelectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     return-void
 .end method
 
-.method private synthetic lambda$createGalleryListView$37(ZLjava/lang/Object;Landroid/graphics/Bitmap;)V
+.method private synthetic lambda$createGalleryListView$41(ZLjava/lang/Object;Landroid/graphics/Bitmap;)V
     .locals 2
 
     if-eqz p2, :cond_8
 
-    .line 3032
+    .line 3200
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListViewOpening:Ljava/lang/Boolean;
 
     if-nez v0, :cond_8
@@ -8206,31 +8790,31 @@
 
     if-eqz p1, :cond_4
 
-    .line 3037
+    .line 3205
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-nez p1, :cond_1
 
     return-void
 
-    .line 3040
+    .line 3208
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createPhotoPaintView()V
 
-    .line 3041
+    .line 3209
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iput-boolean v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedMedia:Z
 
-    .line 3042
+    .line 3210
     instance-of p1, p2, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     if-eqz p1, :cond_2
 
-    .line 3043
+    .line 3211
     check-cast p2, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 3044
+    .line 3212
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-object p2, p2, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
@@ -8243,13 +8827,13 @@
 
     goto :goto_0
 
-    .line 3045
+    .line 3213
     :cond_2
     instance-of p1, p2, Lorg/telegram/tgnet/TLObject;
 
     if-eqz p1, :cond_3
 
-    .line 3046
+    .line 3214
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     check-cast p2, Lorg/telegram/tgnet/TLObject;
@@ -8260,64 +8844,64 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/recorder/PaintView;->appearAnimation(Landroid/view/View;)V
 
-    .line 3048
+    .line 3216
     :cond_3
     :goto_0
     invoke-direct {p0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateGalleryListView(Z)V
 
     goto :goto_2
 
-    .line 3050
+    .line 3218
     :cond_4
     instance-of p1, p2, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     if-eqz p1, :cond_5
 
-    .line 3051
+    .line 3219
     check-cast p2, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 3052
+    .line 3220
     iget-boolean p1, p2, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVideo:Z
 
-    .line 3053
+    .line 3221
     invoke-static {p2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->fromPhotoEntry(Lorg/telegram/messenger/MediaController$PhotoEntry;)Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 3054
+    .line 3222
     iget p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {p2, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacySelector;->applySaved(ILorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 3055
+    .line 3223
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iput-object p3, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->blurredVideoThumb:Landroid/graphics/Bitmap;
 
-    .line 3056
+    .line 3224
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromGallery:Z
 
     goto :goto_1
 
-    .line 3057
+    .line 3225
     :cond_5
     instance-of p1, p2, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz p1, :cond_7
 
-    .line 3058
+    .line 3226
     check-cast p2, Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 3059
+    .line 3227
     iget-object p1, p2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->file:Ljava/io/File;
 
     if-nez p1, :cond_6
 
-    .line 3060
+    .line 3228
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->downloadButton:Lorg/telegram/ui/Stories/recorder/DownloadButton;
 
     sget p3, Lorg/telegram/messenger/R$raw;->error:I
@@ -8326,7 +8910,7 @@
 
     invoke-virtual {p1, p3, v0}, Lorg/telegram/ui/Stories/recorder/DownloadButton;->showToast(ILjava/lang/CharSequence;)V
 
-    .line 3061
+    .line 3229
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -8345,53 +8929,53 @@
 
     return-void
 
-    .line 3065
+    .line 3233
     :cond_6
     iget-boolean p1, p2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVideo:Z
 
-    .line 3066
+    .line 3234
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 3067
+    .line 3235
     iput-object p3, p2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->blurredVideoThumb:Landroid/graphics/Bitmap;
 
-    .line 3068
+    .line 3236
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromGallery:Z
 
-    .line 3071
+    .line 3239
     :cond_7
     :goto_1
     invoke-direct {p0, v1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showVideoTimer(ZZ)V
 
-    .line 3072
+    .line 3240
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
     iget-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVideo:Z
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->switchMode(Z)V
 
-    .line 3073
+    .line 3241
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     iget-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVideo:Z
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/recorder/RecordControl;->startAsVideo(Z)V
 
-    .line 3075
+    .line 3243
     invoke-direct {p0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateGalleryListView(Z)V
 
-    .line 3076
+    .line 3244
     invoke-virtual {p0, v0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navigateTo(IZ)V
 
-    .line 3079
+    .line 3247
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     if-eqz p1, :cond_8
 
-    .line 3080
+    .line 3248
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/GalleryListView;->layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->onSaveInstanceState()Landroid/os/Parcelable;
@@ -8400,7 +8984,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lastGalleryScrollPosition:Landroid/os/Parcelable;
 
-    .line 3081
+    .line 3249
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->getSelectedAlbum()Lorg/telegram/messenger/MediaController$AlbumEntry;
@@ -8414,36 +8998,36 @@
     return-void
 .end method
 
-.method private synthetic lambda$createPhotoPaintView$44()V
+.method private synthetic lambda$createPhotoPaintView$48()V
     .locals 2
 
     const/4 v0, -0x1
 
     const/4 v1, 0x1
 
-    .line 3740
+    .line 3908
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->switchToEditMode(IZ)V
 
     return-void
 .end method
 
-.method private synthetic lambda$createPhotoPaintView$45()V
+.method private synthetic lambda$createPhotoPaintView$49()V
     .locals 2
 
     const/4 v0, -0x1
 
     const/4 v1, 0x1
 
-    .line 3743
+    .line 3911
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->switchToEditMode(IZ)V
 
     return-void
 .end method
 
-.method private synthetic lambda$destroyCameraView$53()V
+.method private synthetic lambda$destroyCameraView$57()V
     .locals 3
 
-    .line 4255
+    .line 4484
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getCameraThumb()Landroid/graphics/drawable/Drawable;
@@ -8452,7 +9036,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 4256
+    .line 4485
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     if-eqz v0, :cond_0
@@ -8461,27 +9045,27 @@
 
     const/4 v2, 0x0
 
-    .line 4257
+    .line 4486
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/DualCameraView;->destroy(ZLjava/lang/Runnable;)V
 
-    .line 4258
+    .line 4487
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 4259
+    .line 4488
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     :cond_0
     return-void
 .end method
 
-.method private synthetic lambda$destroyCameraView$54()V
+.method private synthetic lambda$destroyCameraView$58()V
     .locals 2
 
-    .line 4264
+    .line 4493
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getCameraThumb()Landroid/graphics/drawable/Drawable;
@@ -8496,14 +9080,14 @@
 .method private synthetic lambda$initViews$10(Landroid/view/View;)V
     .locals 0
 
-    .line 1806
+    .line 1855
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->awaitingPlayer:Z
 
     if-eqz p1, :cond_0
 
     return-void
 
-    .line 1809
+    .line 1858
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onBackPressed()Z
 
@@ -8513,10 +9097,10 @@
 .method private synthetic lambda$initViews$11(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 1827
+    .line 1877
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyPaint()V
 
-    .line 1828
+    .line 1878
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyFilter(Ljava/lang/Runnable;)V
 
     return-void
@@ -8525,7 +9109,7 @@
 .method private synthetic lambda$initViews$12(Landroid/view/View;)V
     .locals 3
 
-    .line 1846
+    .line 1896
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz p1, :cond_4
@@ -8536,7 +9120,7 @@
 
     goto :goto_3
 
-    .line 1849
+    .line 1899
     :cond_0
     iget-boolean v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->muted:Z
 
@@ -8546,7 +9130,7 @@
 
     iput-boolean v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->muted:Z
 
-    .line 1850
+    .line 1900
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->audioPath:Ljava/lang/String;
 
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -8555,10 +9139,10 @@
 
     xor-int/2addr p1, v1
 
-    .line 1851
+    .line 1901
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 1852
+    .line 1902
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean v2, v2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->muted:Z
@@ -8567,7 +9151,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1853
+    .line 1903
     sget p1, Lorg/telegram/messenger/R$string;->StoryOriginalSoundMuted:I
 
     goto :goto_0
@@ -8585,7 +9169,7 @@
     :cond_2
     if-eqz p1, :cond_3
 
-    .line 1854
+    .line 1904
     sget p1, Lorg/telegram/messenger/R$string;->StoryOriginalSoundNotMuted:I
 
     goto :goto_1
@@ -8601,27 +9185,27 @@
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 1855
+    .line 1905
     invoke-virtual {v2}, Lorg/telegram/ui/Stories/recorder/HintView2;->shown()Z
 
     move-result v2
 
-    .line 1851
+    .line 1901
     invoke-virtual {v0, p1, v2}, Lorg/telegram/ui/Stories/recorder/HintView2;->setText(Ljava/lang/CharSequence;Z)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 1857
+    .line 1907
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/HintView2;->show()Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 1858
+    .line 1908
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->muted:Z
 
     invoke-virtual {p0, p1, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->setIconMuted(ZZ)V
 
-    .line 1859
+    .line 1909
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -8638,21 +9222,21 @@
 .method private synthetic lambda$initViews$13(Landroid/view/View;)V
     .locals 2
 
-    .line 1870
+    .line 1920
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->isPlaying()Z
 
     move-result p1
 
-    .line 1871
+    .line 1921
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     xor-int/lit8 v1, p1, 0x1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->play(Z)V
 
-    .line 1872
+    .line 1922
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/PlayPauseButton;->drawable:Lorg/telegram/ui/Components/PlayPauseDrawable;
@@ -8669,71 +9253,294 @@
 .method private synthetic lambda$initViews$14(Landroid/view/View;)V
     .locals 1
 
-    .line 1881
+    .line 1929
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
-    if-eqz p1, :cond_3
+    if-eqz p1, :cond_2
 
-    iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->awaitingPlayer:Z
+    iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->awaitingPlayer:Z
 
-    if-eqz v0, :cond_0
+    if-eqz p1, :cond_0
 
     goto :goto_0
 
-    .line 1884
+    .line 1932
     :cond_0
-    invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getCurrentFlashMode()Ljava/lang/String;
 
     move-result-object p1
 
-    if-nez p1, :cond_1
+    .line 1933
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getNextFlashMode()Ljava/lang/String;
 
-    return-void
+    move-result-object v0
 
-    .line 1888
+    if-eqz p1, :cond_2
+
+    .line 1934
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_1
+
+    goto :goto_0
+
+    .line 1937
     :cond_1
-    invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraSession;->getCurrentFlashMode()Ljava/lang/String;
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->setCurrentFlashMode(Ljava/lang/String;)V
 
-    move-result-object v0
+    const/4 p1, 0x1
 
-    .line 1889
-    invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraSession;->getNextFlashMode()Ljava/lang/String;
+    .line 1938
+    invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->setCameraFlashModeIcon(Ljava/lang/String;Z)V
 
-    move-result-object p1
-
-    .line 1890
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    return-void
-
-    .line 1893
     :cond_2
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
-
-    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lorg/telegram/messenger/camera/CameraSession;->setCurrentFlashMode(Ljava/lang/String;)V
-
-    const/4 v0, 0x1
-
-    .line 1894
-    invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->setCameraFlashModeIcon(Ljava/lang/String;Z)V
-
-    :cond_3
     :goto_0
     return-void
 .end method
 
-.method private synthetic lambda$initViews$15(Landroid/view/View;)V
+.method private synthetic lambda$initViews$15(Ljava/lang/Float;)V
+    .locals 1
+
+    .line 1953
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/recorder/FlashViews;->setWarmth(F)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$initViews$16(Ljava/lang/Float;)V
+    .locals 1
+
+    .line 1962
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Stories/recorder/FlashViews;->setIntensity(F)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$initViews$17()V
     .locals 2
 
-    .line 1902
+    .line 1966
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->saveFrontFaceFlashMode()V
+
+    .line 1967
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/FlashViews;->previewEnd()V
+
+    .line 1968
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/ToggleButton2;->setSelected(Z)V
+
+    return-void
+.end method
+
+.method private synthetic lambda$initViews$18(Landroid/view/View;)Z
+    .locals 5
+
+    .line 1941
+    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    const/4 v0, 0x0
+
+    if-eqz p1, :cond_1
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/camera/CameraView;->isFrontface()Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    goto/16 :goto_0
+
+    .line 1945
+    :cond_0
+    invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->checkFrontfaceFlashModes()V
+
+    .line 1946
+    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {p1, v1}, Lorg/telegram/ui/Stories/recorder/ToggleButton2;->setSelected(Z)V
+
+    .line 1947
+    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/FlashViews;->previewStart()V
+
+    .line 1948
+    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
+
+    iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
+
+    invoke-static {p1, v2, v3}, Lorg/telegram/ui/Components/ItemOptions;->makeOptions(Landroid/view/ViewGroup;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;)Lorg/telegram/ui/Components/ItemOptions;
+
+    move-result-object p1
+
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/SliderView;
+
+    .line 1950
+    invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3, v1}, Lorg/telegram/ui/Stories/recorder/SliderView;-><init>(Landroid/content/Context;I)V
+
+    iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget v3, v3, Lorg/telegram/ui/Stories/recorder/FlashViews;->warmth:F
+
+    .line 1951
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Stories/recorder/SliderView;->setValue(F)Lorg/telegram/ui/Stories/recorder/SliderView;
+
+    move-result-object v2
+
+    new-instance v3, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda59;
+
+    invoke-direct {v3, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda59;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+
+    .line 1952
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Stories/recorder/SliderView;->setOnValueChange(Lorg/telegram/messenger/Utilities$Callback;)Lorg/telegram/ui/Stories/recorder/SliderView;
+
+    move-result-object v2
+
+    .line 1949
+    invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/ItemOptions;->addView(Landroid/view/View;)Lorg/telegram/ui/Components/ItemOptions;
+
+    move-result-object p1
+
+    .line 1956
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/ItemOptions;->addSpaceGap()Lorg/telegram/ui/Components/ItemOptions;
+
+    move-result-object p1
+
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/SliderView;
+
+    .line 1958
+    invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    const/4 v4, 0x2
+
+    invoke-direct {v2, v3, v4}, Lorg/telegram/ui/Stories/recorder/SliderView;-><init>(Landroid/content/Context;I)V
+
+    const v3, 0x3f266666    # 0.65f
+
+    const/high16 v4, 0x3f800000    # 1.0f
+
+    .line 1959
+    invoke-virtual {v2, v3, v4}, Lorg/telegram/ui/Stories/recorder/SliderView;->setMinMax(FF)Lorg/telegram/ui/Stories/recorder/SliderView;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget v3, v3, Lorg/telegram/ui/Stories/recorder/FlashViews;->intensity:F
+
+    .line 1960
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Stories/recorder/SliderView;->setValue(F)Lorg/telegram/ui/Stories/recorder/SliderView;
+
+    move-result-object v2
+
+    new-instance v3, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda57;
+
+    invoke-direct {v3, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda57;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+
+    .line 1961
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Stories/recorder/SliderView;->setOnValueChange(Lorg/telegram/messenger/Utilities$Callback;)Lorg/telegram/ui/Stories/recorder/SliderView;
+
+    move-result-object v2
+
+    .line 1957
+    invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/ItemOptions;->addView(Landroid/view/View;)Lorg/telegram/ui/Components/ItemOptions;
+
+    move-result-object p1
+
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda24;
+
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda24;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+
+    .line 1965
+    invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/ItemOptions;->setOnDismiss(Ljava/lang/Runnable;)Lorg/telegram/ui/Components/ItemOptions;
+
+    move-result-object p1
+
+    .line 1970
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ItemOptions;->setDimAlpha(I)Lorg/telegram/ui/Components/ItemOptions;
+
+    move-result-object p1
+
+    const/4 v0, 0x5
+
+    .line 1971
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ItemOptions;->setGravity(I)Lorg/telegram/ui/Components/ItemOptions;
+
+    move-result-object p1
+
+    const/16 v0, 0x2e
+
+    .line 1972
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    const/4 v2, 0x4
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    neg-int v2, v2
+
+    int-to-float v2, v2
+
+    invoke-virtual {p1, v0, v2}, Lorg/telegram/ui/Components/ItemOptions;->translate(FF)Lorg/telegram/ui/Components/ItemOptions;
+
+    move-result-object p1
+
+    const v0, -0x44e4e4e5
+
+    .line 1973
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ItemOptions;->setBackgroundColor(I)Lorg/telegram/ui/Components/ItemOptions;
+
+    move-result-object p1
+
+    .line 1974
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/ItemOptions;->show()Lorg/telegram/ui/Components/ItemOptions;
+
+    return v1
+
+    :cond_1
+    :goto_0
+    return v0
+.end method
+
+.method private synthetic lambda$initViews$19(Landroid/view/View;)V
+    .locals 2
+
+    .line 1984
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     if-eqz p1, :cond_2
@@ -8744,11 +9551,11 @@
 
     goto :goto_0
 
-    .line 1905
+    .line 1987
     :cond_0
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/DualCameraView;->toggleDual()V
 
-    .line 1906
+    .line 1988
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -8759,12 +9566,12 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/ToggleButton;->setValue(Z)V
 
-    .line 1908
+    .line 1990
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 1909
+    .line 1991
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object p1
@@ -8783,7 +9590,7 @@
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 1910
+    .line 1992
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->savedDualHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/HintView2;->shown()Z
@@ -8792,7 +9599,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1911
+    .line 1993
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object p1
@@ -8809,7 +9616,7 @@
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 1913
+    .line 1995
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->savedDualHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
@@ -8820,10 +9627,10 @@
     return-void
 .end method
 
-.method private static synthetic lambda$initViews$16()V
+.method private static synthetic lambda$initViews$20()V
     .locals 4
 
-    .line 1923
+    .line 2006
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -8855,15 +9662,15 @@
     return-void
 .end method
 
-.method private synthetic lambda$initViews$17(F)V
+.method private synthetic lambda$initViews$21(F)V
     .locals 1
 
-    .line 1958
+    .line 2044
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     if-eqz v0, :cond_0
 
-    .line 1959
+    .line 2045
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraZoom:F
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/camera/CameraView;->setZoom(F)V
@@ -8871,16 +9678,16 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 1961
+    .line 2047
     invoke-direct {p0, p1, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showZoomControls(ZZ)V
 
     return-void
 .end method
 
-.method private synthetic lambda$initViews$18(Ljava/lang/Boolean;)V
+.method private synthetic lambda$initViews$22(Ljava/lang/Boolean;)V
     .locals 1
 
-    .line 1967
+    .line 2053
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->takingPhoto:Z
 
     if-nez v0, :cond_1
@@ -8891,7 +9698,7 @@
 
     goto :goto_0
 
-    .line 1971
+    .line 2057
     :cond_0
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -8901,17 +9708,17 @@
 
     const/4 v0, 0x1
 
-    .line 1972
+    .line 2058
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showVideoTimer(ZZ)V
 
-    .line 1973
+    .line 2059
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVideo:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;->switchMode(Z)V
 
-    .line 1974
+    .line 2060
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVideo:Z
@@ -8923,10 +9730,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$initViews$19(Ljava/lang/Float;)V
+.method private synthetic lambda$initViews$23(Ljava/lang/Float;)V
     .locals 1
 
-    .line 1977
+    .line 2063
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
@@ -8938,25 +9745,25 @@
     return-void
 .end method
 
-.method private synthetic lambda$initViews$20(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;)V
+.method private synthetic lambda$initViews$24(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;)V
     .locals 1
 
-    .line 2041
+    .line 2129
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz v0, :cond_0
 
-    .line 2042
+    .line 2130
     iput-object p1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacy:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
     :cond_0
     return-void
 .end method
 
-.method private synthetic lambda$initViews$21(Lorg/telegram/tgnet/TLRPC$InputPeer;)V
+.method private synthetic lambda$initViews$25(Lorg/telegram/tgnet/TLRPC$InputPeer;)V
     .locals 1
 
-    .line 2048
+    .line 2136
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-nez v0, :cond_0
@@ -8966,7 +9773,7 @@
     :cond_0
     if-nez p1, :cond_1
 
-    .line 2051
+    .line 2139
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_inputPeerSelf;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_inputPeerSelf;-><init>()V
@@ -8977,31 +9784,31 @@
     return-void
 .end method
 
-.method private synthetic lambda$initViews$22(Ljava/lang/Runnable;)V
+.method private synthetic lambda$initViews$26(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 2067
+    .line 2155
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     const/4 p1, 0x1
 
-    .line 2068
+    .line 2156
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->upload(Z)V
 
     return-void
 .end method
 
-.method private synthetic lambda$initViews$23(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;ZZLorg/telegram/tgnet/TLRPC$InputPeer;Ljava/lang/Runnable;)V
+.method private synthetic lambda$initViews$27(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;ZZLorg/telegram/tgnet/TLRPC$InputPeer;Ljava/lang/Runnable;)V
     .locals 3
 
-    .line 2054
+    .line 2142
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 2057
+    .line 2145
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -9011,30 +9818,30 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
-    .line 2058
+    .line 2146
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iput-object p1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacy:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
-    .line 2059
+    .line 2147
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacySelector;->save(ILorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;)V
 
-    .line 2060
+    .line 2148
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iput-boolean p3, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->pinned:Z
 
-    .line 2061
+    .line 2149
     iput-boolean p2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->allowScreenshots:Z
 
-    .line 2062
+    .line 2150
     iget-object p2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacyRules:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->clear()V
 
-    .line 2063
+    .line 2151
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object p2, p2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacyRules:Ljava/util/ArrayList;
@@ -9043,28 +9850,28 @@
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2064
+    .line 2152
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iput-boolean v2, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedPrivacy:Z
 
-    .line 2065
+    .line 2153
     iput-object p4, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 2066
-    new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda42;
+    .line 2154
+    new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda45;
 
-    invoke-direct {p1, p0, p5}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda42;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)V
+    invoke-direct {p1, p0, p5}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda45;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)V
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyFilter(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$initViews$24(Landroid/content/DialogInterface;)V
+.method private synthetic lambda$initViews$28(Landroid/content/DialogInterface;)V
     .locals 2
 
-    .line 2072
+    .line 2160
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     const/4 v0, 0x3
@@ -9075,29 +9882,29 @@
 
     const/4 p1, 0x0
 
-    .line 2073
+    .line 2161
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->privacySheet:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     return-void
 .end method
 
-.method private synthetic lambda$initViews$25(Ljava/lang/Integer;)V
+.method private synthetic lambda$initViews$29(Ljava/lang/Integer;)V
     .locals 7
 
-    .line 1987
+    .line 2075
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1990
+    .line 2078
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->clearFocus()V
 
-    .line 1991
+    .line 2079
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -9112,36 +9919,36 @@
 
     if-ne v0, v1, :cond_9
 
-    .line 1992
+    .line 2080
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->privacySheet:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     const/4 v0, 0x0
 
     if-eqz p1, :cond_1
 
-    .line 1993
+    .line 2081
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->dismiss()V
 
-    .line 1994
+    .line 2082
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->privacySheet:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
-    .line 1996
+    .line 2084
     :cond_1
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoError:Z
 
     if-eqz p1, :cond_2
 
-    .line 1997
+    .line 2085
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->downloadButton:Lorg/telegram/ui/Stories/recorder/DownloadButton;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/DownloadButton;->showFailedVideo()V
 
-    .line 1998
+    .line 2086
     sget-object p1, Lorg/telegram/messenger/BotWebViewVibrationEffect;->APP_ERROR:Lorg/telegram/messenger/BotWebViewVibrationEffect;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/BotWebViewVibrationEffect;->vibrate()V
 
-    .line 1999
+    .line 2087
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/PreviewButtons;->shareButton:Lorg/telegram/ui/Stories/recorder/PreviewButtons$ShareButtonView;
@@ -9158,7 +9965,7 @@
 
     return-void
 
-    .line 2002
+    .line 2090
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
@@ -9170,12 +9977,12 @@
 
     if-eqz p1, :cond_3
 
-    .line 2003
+    .line 2091
     sget-object p1, Lorg/telegram/messenger/BotWebViewVibrationEffect;->APP_ERROR:Lorg/telegram/messenger/BotWebViewVibrationEffect;
 
     invoke-virtual {p1}, Lorg/telegram/messenger/BotWebViewVibrationEffect;->vibrate()V
 
-    .line 2004
+    .line 2092
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->limitTextView:Lorg/telegram/ui/Components/AnimatedTextView;
@@ -9190,14 +9997,14 @@
 
     invoke-static {p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->shakeViewSpring(Landroid/view/View;F)V
 
-    .line 2005
+    .line 2093
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->captionLimitToast()Z
 
     return-void
 
-    .line 2008
+    .line 2096
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -9205,7 +10012,7 @@
 
     if-nez p1, :cond_4
 
-    .line 2009
+    .line 2097
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -9220,7 +10027,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 2010
+    .line 2098
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;->active(I)Z
@@ -9229,12 +10036,12 @@
 
     if-eqz v1, :cond_4
 
-    .line 2011
+    .line 2099
     invoke-direct {p0, p1, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showLimitReachedSheet(Lorg/telegram/ui/Stories/StoriesController$StoryLimit;Z)V
 
     return-void
 
-    .line 2015
+    .line 2103
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -9250,7 +10057,7 @@
 
     iput-boolean v1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->captionEntitiesAllowed:Z
 
-    .line 2016
+    .line 2104
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     if-eqz p1, :cond_6
@@ -9261,12 +10068,12 @@
 
     if-nez v1, :cond_6
 
-    .line 2017
+    .line 2105
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->getText()Ljava/lang/CharSequence;
 
     move-result-object p1
 
-    .line 2018
+    .line 2106
     instance-of v1, p1, Landroid/text/Spannable;
 
     if-eqz v1, :cond_6
@@ -9275,7 +10082,7 @@
 
     check-cast v1, Landroid/text/Spannable;
 
-    .line 2019
+    .line 2107
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v5
@@ -9296,7 +10103,7 @@
 
     check-cast v1, Landroid/text/Spannable;
 
-    .line 2020
+    .line 2108
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
@@ -9313,7 +10120,7 @@
 
     if-lez p1, :cond_6
 
-    .line 2022
+    .line 2110
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
@@ -9343,7 +10150,7 @@
 
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Components/Bulletin;->show(Z)Lorg/telegram/ui/Components/Bulletin;
 
-    .line 2023
+    .line 2111
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->shiftDp:I
@@ -9358,7 +10165,7 @@
 
     return-void
 
-    .line 2027
+    .line 2115
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -9366,18 +10173,18 @@
 
     if-eqz v1, :cond_7
 
-    .line 2028
+    .line 2116
     iput-boolean v3, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedPrivacy:Z
 
-    .line 2029
+    .line 2117
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyFilter(Ljava/lang/Runnable;)V
 
-    .line 2030
+    .line 2118
     invoke-direct {p0, v4}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->upload(Z)V
 
     goto/16 :goto_0
 
-    .line 2032
+    .line 2120
     :cond_7
     iget-wide v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->selectedDialogId:J
 
@@ -9387,7 +10194,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 2033
+    .line 2121
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -9402,13 +10209,13 @@
 
     iput-object v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 2035
+    .line 2123
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {p1, v2, v4}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
-    .line 2036
+    .line 2124
     new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
@@ -9425,7 +10232,7 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->privacy:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;
 
-    .line 2037
+    .line 2125
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->setValue(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$StoryPrivacy;)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     move-result-object p1
@@ -9434,35 +10241,35 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 2038
+    .line 2126
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->setPeer(Lorg/telegram/tgnet/TLRPC$InputPeer;)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     move-result-object p1
 
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->canChangePeer:Z
 
-    .line 2039
+    .line 2127
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->setCanChangePeer(Z)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     move-result-object p1
 
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda62;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda66;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda62;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda66;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
-    .line 2040
+    .line 2128
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->whenDismiss(Lorg/telegram/messenger/Utilities$Callback;)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     move-result-object p1
 
-    .line 2045
+    .line 2133
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->isEdit(Z)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     move-result-object p1
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
-    .line 2046
+    .line 2134
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -9475,41 +10282,41 @@
 
     move-result-object p1
 
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda61;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda65;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda61;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda65;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
-    .line 2047
+    .line 2135
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->whenSelectedPeer(Lorg/telegram/messenger/Utilities$Callback;)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     move-result-object p1
 
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda68;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda72;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda68;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda72;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
-    .line 2053
+    .line 2141
     invoke-virtual {p1, v0, v3}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->whenSelectedRules(Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet$DoneCallback;Z)Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->privacySheet:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
-    .line 2071
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda8;
+    .line 2159
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda9;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {p1, v0}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 2075
+    .line 2163
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->privacySheet:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
     goto :goto_0
 
-    .line 2077
+    .line 2165
     :cond_9
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -9517,23 +10324,23 @@
 
     if-nez v0, :cond_a
 
-    .line 2078
+    .line 2166
     invoke-virtual {p0, v3, v4}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->switchToEditMode(IZ)V
 
-    .line 2079
+    .line 2167
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz p1, :cond_d
 
-    .line 2080
+    .line 2168
     iput-boolean v3, p1, Lorg/telegram/ui/Stories/recorder/PaintView;->enteredThroughText:Z
 
-    .line 2081
+    .line 2169
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->openPaint()V
 
     goto :goto_0
 
-    .line 2083
+    .line 2171
     :cond_a
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -9541,25 +10348,25 @@
 
     if-ne v0, v4, :cond_b
 
-    .line 2084
+    .line 2172
     invoke-virtual {p0, v3, v4}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->switchToEditMode(IZ)V
 
-    .line 2085
+    .line 2173
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz p1, :cond_d
 
-    .line 2086
+    .line 2174
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->openText()V
 
-    .line 2087
+    .line 2175
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput-boolean v4, p1, Lorg/telegram/ui/Stories/recorder/PaintView;->enteredThroughText:Z
 
     goto :goto_0
 
-    .line 2089
+    .line 2177
     :cond_b
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -9569,23 +10376,23 @@
 
     if-ne v0, v1, :cond_c
 
-    .line 2090
+    .line 2178
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createPhotoPaintView()V
 
-    .line 2091
+    .line 2179
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->hidePhotoPaintView()V
 
-    .line 2092
+    .line 2180
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz p1, :cond_d
 
-    .line 2093
+    .line 2181
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/PaintView;->openStickers()V
 
     goto :goto_0
 
-    .line 2095
+    .line 2183
     :cond_c
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
@@ -9593,7 +10400,7 @@
 
     if-ne p1, v2, :cond_d
 
-    .line 2096
+    .line 2184
     invoke-virtual {p0, v4, v4}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->switchToEditMode(IZ)V
 
     :cond_d
@@ -9604,14 +10411,14 @@
 .method private synthetic lambda$initViews$4(Landroid/view/View;)V
     .locals 0
 
-    .line 1595
+    .line 1644
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->noCameraPermission:Z
 
     if-eqz p1, :cond_0
 
     const/4 p1, 0x1
 
-    .line 1596
+    .line 1645
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->requestCameraPermission(Z)V
 
     :cond_0
@@ -9621,7 +10428,7 @@
 .method private synthetic lambda$initViews$5()V
     .locals 2
 
-    .line 1675
+    .line 1724
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentEditMode:I
 
     const/4 v1, -0x1
@@ -9642,7 +10449,7 @@
 
     goto :goto_0
 
-    .line 1678
+    .line 1727
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->timelineView:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
@@ -9657,18 +10464,18 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 1681
+    .line 1730
     invoke-virtual {p0, v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->switchToEditMode(IZ)V
 
-    .line 1682
+    .line 1731
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz v0, :cond_2
 
-    .line 1683
+    .line 1732
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->openText()V
 
-    .line 1684
+    .line 1733
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/PaintView;->enteredThroughText:Z
@@ -9683,17 +10490,17 @@
 
     const/4 v0, 0x1
 
-    .line 1689
+    .line 1738
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoError:Z
 
-    .line 1690
+    .line 1739
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/PreviewButtons;->setShareEnabled(Z)V
 
-    .line 1691
+    .line 1740
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->downloadButton:Lorg/telegram/ui/Stories/recorder/DownloadButton;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/DownloadButton;->showFailedVideo()V
@@ -9704,12 +10511,12 @@
 .method private synthetic lambda$initViews$7(Ljava/lang/Integer;)V
     .locals 2
 
-    .line 1757
+    .line 1806
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimelineContainerView:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_0
 
-    .line 1758
+    .line 1807
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->getEditTextHeight()I
@@ -9738,7 +10545,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1760
+    .line 1809
     :cond_0
     invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->getVisibleBulletin()Lorg/telegram/ui/Components/Bulletin;
 
@@ -9746,14 +10553,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 1761
+    .line 1810
     iget v0, p1, Lorg/telegram/ui/Components/Bulletin;->tag:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_1
 
-    .line 1762
+    .line 1811
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->updatePosition()V
 
     :cond_1
@@ -9763,19 +10570,19 @@
 .method private synthetic lambda$initViews$8(Ljava/lang/Integer;)V
     .locals 2
 
-    .line 1766
+    .line 1815
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz v0, :cond_0
 
-    .line 1767
+    .line 1816
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
     move-result v1
 
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->period:I
 
-    .line 1768
+    .line 1817
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -9803,7 +10610,7 @@
 .method private synthetic lambda$initViews$9(Ljava/lang/Boolean;)V
     .locals 3
 
-    .line 1774
+    .line 1823
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
@@ -9814,10 +10621,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 1775
+    .line 1824
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/TimelineView;->onBackPressed()Z
 
-    .line 1777
+    .line 1826
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -9829,12 +10636,12 @@
 
     invoke-virtual {v0, v2, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
-    .line 1778
+    .line 1827
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimelineContainerView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->clearAnimation()V
 
-    .line 1779
+    .line 1828
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimelineContainerView:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
@@ -9867,47 +10674,47 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1780
+    .line 1829
     invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->getVisibleBulletin()Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
 
     if-eqz p1, :cond_2
 
-    .line 1781
+    .line 1830
     iget v0, p1, Lorg/telegram/ui/Components/Bulletin;->tag:I
 
     if-ne v0, v2, :cond_2
 
-    .line 1782
+    .line 1831
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Bulletin;->updatePosition()V
 
     :cond_2
     return-void
 .end method
 
-.method private synthetic lambda$navigateToPreviewWithPlayerAwait$34(Ljava/lang/Runnable;)V
+.method private synthetic lambda$navigateToPreviewWithPlayerAwait$38(Ljava/lang/Runnable;)V
     .locals 2
 
     const/4 v0, 0x0
 
-    .line 2818
+    .line 2986
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateGalleryListView(Z)V
 
-    .line 2819
+    .line 2987
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->afterPlayerAwait:Ljava/lang/Runnable;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     const/4 v1, 0x0
 
-    .line 2820
+    .line 2988
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->afterPlayerAwait:Ljava/lang/Runnable;
 
-    .line 2821
+    .line 2989
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->awaitingPlayer:Z
 
-    .line 2822
+    .line 2990
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
@@ -9916,7 +10723,7 @@
 .method private synthetic lambda$onCloseDone$3()V
     .locals 2
 
-    .line 668
+    .line 673
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowManager:Landroid/view/WindowManager;
 
     if-eqz v0, :cond_0
@@ -9931,7 +10738,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 669
+    .line 674
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowManager:Landroid/view/WindowManager;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
@@ -9942,10 +10749,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onNavigateStart$41()V
+.method private synthetic lambda$onNavigateStart$45()V
     .locals 2
 
-    .line 3215
+    .line 3383
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getCameraThumb()Landroid/graphics/drawable/Drawable;
@@ -9957,10 +10764,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onNavigateStart$42()V
+.method private synthetic lambda$onNavigateStart$46()V
     .locals 4
 
-    .line 3262
+    .line 3430
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -9994,12 +10801,12 @@
     return-void
 .end method
 
-.method private synthetic lambda$onNavigateStart$43(Lorg/telegram/ui/Components/FilterGLThread;)V
+.method private synthetic lambda$onNavigateStart$47(Lorg/telegram/ui/Components/FilterGLThread;)V
     .locals 1
 
     if-eqz p1, :cond_0
 
-    .line 3278
+    .line 3446
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz v0, :cond_0
@@ -10008,7 +10815,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 3279
+    .line 3447
     invoke-static {v0}, Lorg/telegram/ui/Components/FilterShaders;->getFilterShadersDelegate(Lorg/telegram/messenger/MediaController$SavedFilterState;)Lorg/telegram/ui/Components/FilterShaders$FilterShadersDelegate;
 
     move-result-object v0
@@ -10019,10 +10826,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$onRequestPermissionsResultInternal$57(Landroid/content/DialogInterface;I)V
+.method private synthetic lambda$onRequestPermissionsResultInternal$61(Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 4440
+    .line 4669
     :try_start_0
     new-instance p1, Landroid/content/Intent;
 
@@ -10030,7 +10837,7 @@
 
     invoke-direct {p1, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 4441
+    .line 4670
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10057,7 +10864,7 @@
 
     invoke-virtual {p1, p2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 4442
+    .line 4671
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
     invoke-virtual {p2, p1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
@@ -10069,17 +10876,17 @@
     :catch_0
     move-exception p1
 
-    .line 4444
+    .line 4673
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
 .end method
 
-.method private synthetic lambda$onRequestPermissionsResultInternal$58(Landroid/content/DialogInterface;I)V
+.method private synthetic lambda$onRequestPermissionsResultInternal$62(Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 4458
+    .line 4687
     :try_start_0
     new-instance p1, Landroid/content/Intent;
 
@@ -10087,7 +10894,7 @@
 
     invoke-direct {p1, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 4459
+    .line 4688
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10114,7 +10921,7 @@
 
     invoke-virtual {p1, p2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 4460
+    .line 4689
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
     invoke-virtual {p2, p1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
@@ -10126,19 +10933,19 @@
     :catch_0
     move-exception p1
 
-    .line 4462
+    .line 4691
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
 .end method
 
-.method private synthetic lambda$onResumeInternal$56()V
+.method private synthetic lambda$onResumeInternal$60()V
     .locals 1
 
     const/4 v0, 0x0
 
-    .line 4370
+    .line 4599
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->requestCameraPermission(Z)V
 
     return-void
@@ -10147,7 +10954,7 @@
 .method private synthetic lambda$openEdit$0(Z)V
     .locals 2
 
-    .line 500
+    .line 505
     new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda35;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda35;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
@@ -10156,7 +10963,7 @@
 
     invoke-direct {p0, v1, p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateOpenTo(FZLjava/lang/Runnable;)V
 
-    .line 501
+    .line 506
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
     const/4 v0, 0x1
@@ -10166,10 +10973,10 @@
     return-void
 .end method
 
-.method private synthetic lambda$openPremium$60(Landroid/content/DialogInterface;)V
+.method private synthetic lambda$openPremium$64(Landroid/content/DialogInterface;)V
     .locals 2
 
-    .line 4627
+    .line 4856
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     if-eqz p1, :cond_0
@@ -10178,17 +10985,17 @@
 
     const/4 v1, 0x0
 
-    .line 4628
+    .line 4857
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
     :cond_0
     return-void
 .end method
 
-.method private synthetic lambda$requestCameraPermission$55(Landroid/content/DialogInterface;I)V
+.method private synthetic lambda$requestCameraPermission$59(Landroid/content/DialogInterface;I)V
     .locals 1
 
-    .line 4300
+    .line 4529
     :try_start_0
     new-instance p1, Landroid/content/Intent;
 
@@ -10196,7 +11003,7 @@
 
     invoke-direct {p1, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 4301
+    .line 4530
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -10223,7 +11030,7 @@
 
     invoke-virtual {p1, p2}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    .line 4302
+    .line 4531
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
     invoke-virtual {p2, p1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
@@ -10235,14 +11042,14 @@
     :catch_0
     move-exception p1
 
-    .line 4304
+    .line 4533
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
     return-void
 .end method
 
-.method private synthetic lambda$saveLastCameraBitmap$50(Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
+.method private synthetic lambda$saveLastCameraBitmap$54(Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
     .locals 9
 
     if-eqz p1, :cond_1
@@ -10251,7 +11058,7 @@
 
     const/4 v2, 0x0
 
-    .line 4177
+    .line 4406
     :try_start_0
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
@@ -10275,12 +11082,12 @@
 
     move-result-object v0
 
-    .line 4178
+    .line 4407
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
     const/16 p1, 0x50
 
-    .line 4180
+    .line 4409
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v1
@@ -10311,7 +11118,7 @@
 
     if-eq p1, v0, :cond_0
 
-    .line 4183
+    .line 4412
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
     :cond_0
@@ -10319,7 +11126,7 @@
 
     const/4 v5, 0x1
 
-    .line 4185
+    .line 4414
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v6
@@ -10336,7 +11143,7 @@
 
     invoke-static/range {v3 .. v8}, Lorg/telegram/messenger/Utilities;->blurBitmap(Ljava/lang/Object;IIIII)V
 
-    .line 4186
+    .line 4415
     new-instance v0, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
@@ -10347,27 +11154,27 @@
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 4187
+    .line 4416
     new-instance v1, Ljava/io/FileOutputStream;
 
     invoke-direct {v1, v0}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    .line 4188
+    .line 4417
     sget-object v0, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v2, 0x57
 
     invoke-virtual {p1, v0, v2, v1}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
-    .line 4189
+    .line 4418
     invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 4190
+    .line 4419
     invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4196
+    .line 4425
     :catchall_0
     :cond_1
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
@@ -10375,30 +11182,30 @@
     return-void
 .end method
 
-.method private synthetic lambda$setCameraFlashModeIcon$30()V
+.method private synthetic lambda$setCameraFlashModeIcon$34()V
     .locals 2
 
-    .line 2362
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 2450
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     const/16 v1, 0x8
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method
 
-.method private synthetic lambda$showDismissEntry$51(Landroid/content/DialogInterface;I)V
+.method private synthetic lambda$showDismissEntry$55(Landroid/content/DialogInterface;I)V
     .locals 2
 
-    .line 4208
+    .line 4437
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-nez p1, :cond_0
 
     return-void
 
-    .line 4211
+    .line 4440
     :cond_0
     iget p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
@@ -10412,7 +11219,7 @@
 
     iput-boolean p2, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->captionEntitiesAllowed:Z
 
-    .line 4212
+    .line 4441
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isDraft:Z
@@ -10425,22 +11232,22 @@
 
     const/4 p1, 0x0
 
-    .line 4213
+    .line 4442
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyFilter(Ljava/lang/Runnable;)V
 
-    .line 4214
+    .line 4443
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyPaint()V
 
-    .line 4215
+    .line 4444
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyPhotoFilterView()V
 
-    .line 4216
+    .line 4445
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 4217
+    .line 4446
     invoke-virtual {v0, p2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->destroy(Z)V
 
-    .line 4218
+    .line 4447
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->getText()Ljava/lang/CharSequence;
@@ -10449,13 +11256,13 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->caption:Ljava/lang/CharSequence;
 
-    .line 4219
+    .line 4448
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 4220
+    .line 4449
     invoke-direct {p0, v0, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->prepareThumb(Lorg/telegram/ui/Stories/recorder/StoryEntry;Z)Ljava/io/File;
 
-    .line 4221
+    .line 4450
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -10470,33 +11277,33 @@
 
     move-result-object p1
 
-    .line 4222
+    .line 4451
     iget-boolean v1, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isDraft:Z
 
     if-eqz v1, :cond_1
 
-    .line 4223
+    .line 4452
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController;->edit(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
     goto :goto_0
 
-    .line 4225
+    .line 4454
     :cond_1
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/DraftsController;->append(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
     :goto_0
     const/4 p1, 0x0
 
-    .line 4227
+    .line 4456
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navigateTo(IZ)V
 
     return-void
 .end method
 
-.method private synthetic lambda$showDismissEntry$52(Landroid/content/DialogInterface;I)V
+.method private synthetic lambda$showDismissEntry$56(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 4231
+    .line 4460
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz p1, :cond_0
@@ -10509,7 +11316,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 4232
+    .line 4461
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -10530,10 +11337,10 @@
 
     const/4 p1, 0x0
 
-    .line 4233
+    .line 4462
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 4235
+    .line 4464
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -10545,7 +11352,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 4236
+    .line 4465
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->close(Z)V
 
     goto :goto_0
@@ -10553,22 +11360,22 @@
     :cond_1
     const/4 p1, 0x0
 
-    .line 4238
+    .line 4467
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navigateTo(IZ)V
 
     :goto_0
     return-void
 .end method
 
-.method private synthetic lambda$showLimitReachedSheet$59(ZLandroid/content/DialogInterface;)V
+.method private synthetic lambda$showLimitReachedSheet$63(ZLandroid/content/DialogInterface;)V
     .locals 2
 
     const/4 p2, 0x0
 
-    .line 4561
+    .line 4790
     iput-boolean p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->shownLimitReached:Z
 
-    .line 4562
+    .line 4791
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     const/4 v0, 0x7
@@ -10579,19 +11386,19 @@
 
     if-eqz p1, :cond_0
 
-    .line 4564
+    .line 4793
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->close(Z)V
 
     :cond_0
     return-void
 .end method
 
-.method private synthetic lambda$showVideoTimer$31(Z)V
+.method private synthetic lambda$showVideoTimer$35(Z)V
     .locals 1
 
     if-nez p1, :cond_0
 
-    .line 2713
+    .line 2881
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimerView:Lorg/telegram/ui/Stories/recorder/VideoTimerView;
 
     const/4 v0, 0x0
@@ -10602,104 +11409,104 @@
     return-void
 .end method
 
-.method private synthetic lambda$showZoomControls$32()V
+.method private synthetic lambda$showZoomControls$36()V
     .locals 2
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    .line 2735
+    .line 2903
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showZoomControls(ZZ)V
 
     const/4 v0, 0x0
 
-    .line 2736
+    .line 2904
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlHideRunnable:Ljava/lang/Runnable;
 
     return-void
 .end method
 
-.method private synthetic lambda$showZoomControls$33()V
+.method private synthetic lambda$showZoomControls$37()V
     .locals 2
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    .line 2763
+    .line 2931
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showZoomControls(ZZ)V
 
     const/4 v0, 0x0
 
-    .line 2764
+    .line 2932
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlHideRunnable:Ljava/lang/Runnable;
 
     return-void
 .end method
 
-.method private synthetic lambda$upload$26(Z)V
+.method private synthetic lambda$upload$30(Z)V
     .locals 1
 
     const/4 v0, 0x0
 
-    .line 2183
+    .line 2271
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->preparingUpload:Z
 
-    .line 2184
+    .line 2272
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->uploadInternal(Z)V
 
     return-void
 .end method
 
-.method private synthetic lambda$upload$27(Z)V
+.method private synthetic lambda$upload$31(Z)V
     .locals 1
 
-    .line 2181
+    .line 2269
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyPaint()V
 
-    .line 2182
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda46;
+    .line 2270
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda48;
 
-    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda46;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda48;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$uploadInternal$28()V
+.method private synthetic lambda$uploadInternal$32()V
     .locals 1
 
     const/4 v0, 0x1
 
-    .line 2242
+    .line 2330
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->close(Z)V
 
     return-void
 .end method
 
-.method private synthetic lambda$uploadInternal$29(ZJ)V
+.method private synthetic lambda$uploadInternal$33(ZJ)V
     .locals 2
 
     const/4 v0, 0x1
 
     if-eqz p1, :cond_5
 
-    .line 2218
+    .line 2306
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromSourceView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
 
     const/4 v1, 0x0
 
     if-eqz p1, :cond_0
 
-    .line 2219
+    .line 2307
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->show()V
 
-    .line 2220
+    .line 2308
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromSourceView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
 
-    .line 2222
+    .line 2310
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->closingSourceProvider:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ClosingViewProvider;
 
@@ -10719,17 +11526,17 @@
 
     if-eqz p1, :cond_3
 
-    .line 2224
+    .line 2312
     iget p1, p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->type:I
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openType:I
 
-    .line 2225
+    .line 2313
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;->updateBackground()V
 
-    .line 2226
+    .line 2314
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     iget p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openType:I
@@ -10746,7 +11553,7 @@
     :goto_1
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 2227
+    .line 2315
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromRect:Landroid/graphics/RectF;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromSourceView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
@@ -10755,17 +11562,17 @@
 
     invoke-virtual {p1, p2}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
-    .line 2228
+    .line 2316
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromSourceView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
 
     iget p2, p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->rounding:F
 
     iput p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromRounding:F
 
-    .line 2229
+    .line 2317
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->hide()V
 
-    .line 2231
+    .line 2319
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
     move-result p1
@@ -10776,37 +11583,37 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
-    .line 2235
+    .line 2323
     :cond_3
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->closingSourceProvider:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ClosingViewProvider;
 
-    .line 2237
+    .line 2325
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
     instance-of p2, p1, Lorg/telegram/ui/LaunchActivity;
 
     if-eqz p2, :cond_4
 
-    .line 2238
+    .line 2326
     check-cast p1, Lorg/telegram/ui/LaunchActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/LaunchActivity;->drawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
 
-    new-instance p2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda31;
+    new-instance p2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda38;
 
-    invoke-direct {p2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda31;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {p2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda38;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->post(Ljava/lang/Runnable;)Z
 
     goto :goto_2
 
-    .line 2245
+    .line 2333
     :cond_4
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->close(Z)V
 
     goto :goto_2
 
-    .line 2248
+    .line 2336
     :cond_5
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->close(Z)V
 
@@ -10819,25 +11626,25 @@
 
     const/4 v0, 0x0
 
-    .line 648
+    .line 653
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isShown:Z
 
-    .line 649
+    .line 654
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->unlockOrientation(Landroid/app/Activity;)V
 
-    .line 650
+    .line 655
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     if-eqz v1, :cond_1
 
-    .line 651
+    .line 656
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->takingVideo:Z
 
     if-eqz v1, :cond_0
 
-    .line 652
+    .line 657
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object v1
@@ -10850,11 +11657,11 @@
 
     invoke-virtual {v1, v2, v0}, Lorg/telegram/messenger/camera/CameraController;->stopVideoRecording(Lorg/telegram/messenger/camera/CameraSession;Z)V
 
-    .line 654
+    .line 659
     :cond_0
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyCameraView(Z)V
 
-    .line 656
+    .line 661
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -10862,17 +11669,17 @@
 
     if-eqz v1, :cond_2
 
-    .line 657
+    .line 662
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Stories/recorder/PreviewView;->set(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 659
+    .line 664
     :cond_2
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyPhotoPaintView()V
 
-    .line 660
+    .line 665
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyPhotoFilterView()V
 
-    .line 661
+    .line 666
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputFile:Ljava/io/File;
 
     if-eqz v1, :cond_3
@@ -10881,86 +11688,86 @@
 
     if-nez v3, :cond_3
 
-    .line 663
+    .line 668
     :try_start_0
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 666
+    .line 671
     :catch_0
     :cond_3
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputFile:Ljava/io/File;
 
-    .line 667
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda38;
+    .line 672
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda40;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda38;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda40;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     const-wide/16 v3, 0x10
 
     invoke-static {v1, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 672
+    .line 677
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromSourceView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
 
     if-eqz v1, :cond_4
 
-    .line 673
+    .line 678
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->show()V
 
-    .line 675
+    .line 680
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->whenOpenDone:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_5
 
-    .line 676
+    .line 681
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->whenOpenDone:Ljava/lang/Runnable;
 
-    .line 678
+    .line 683
     :cond_5
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lastGalleryScrollPosition:Landroid/os/Parcelable;
 
-    .line 679
+    .line 684
     sget-object v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->instance:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     if-eqz v1, :cond_6
 
-    .line 680
+    .line 685
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->close(Z)V
 
-    .line 682
+    .line 687
     :cond_6
     sput-object v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->instance:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
-    .line 684
+    .line 689
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onCloseListener:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_7
 
-    .line 685
+    .line 690
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 686
+    .line 691
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onCloseListener:Ljava/lang/Runnable;
 
-    .line 688
+    .line 693
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     if-eqz v0, :cond_8
 
-    .line 689
+    .line 694
     invoke-static {v0}, Lorg/telegram/ui/Components/Bulletin;->removeDelegate(Landroid/widget/FrameLayout;)V
 
-    .line 691
+    .line 696
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     if-eqz v0, :cond_9
 
-    .line 692
+    .line 697
     invoke-static {v0}, Lorg/telegram/ui/Components/Bulletin;->removeDelegate(Landroid/widget/FrameLayout;)V
 
     :cond_9
@@ -10976,36 +11783,36 @@
 
     if-nez p1, :cond_0
 
-    .line 3322
+    .line 3490
     invoke-direct {p0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyCameraView(Z)V
 
-    .line 3323
+    .line 3491
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3324
+    .line 3492
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3325
+    .line 3493
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3326
+    .line 3494
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3327
+    .line 3495
     invoke-direct {p0, v1, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateRecording(ZZ)V
 
-    .line 3328
+    .line 3496
     invoke-direct {p0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->setAwakeLock(Z)V
 
-    .line 3330
+    .line 3498
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
@@ -11027,71 +11834,71 @@
 
     if-ne p1, v3, :cond_2
 
-    .line 3332
+    .line 3500
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3333
+    .line 3501
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->setVisibility(I)V
 
-    .line 3334
+    .line 3502
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3335
+    .line 3503
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3336
+    .line 3504
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3337
+    .line 3505
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->downloadButton:Lorg/telegram/ui/Stories/recorder/DownloadButton;
 
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3339
+    .line 3507
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->setVisibility(I)V
 
-    .line 3340
+    .line 3508
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->timelineView:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3341
+    .line 3509
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyPhotoPaintView()V
 
-    .line 3342
+    .line 3510
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyPhotoFilterView()V
 
-    .line 3343
+    .line 3511
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3344
+    .line 3512
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyGalleryListView()V
 
-    .line 3345
+    .line 3513
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->trash:Lorg/telegram/ui/Stories/recorder/TrashView;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 3346
+    .line 3514
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->trash:Lorg/telegram/ui/Stories/recorder/TrashView;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3347
+    .line 3515
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimeView:Lorg/telegram/ui/Stories/recorder/VideoTimeView;
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
@@ -11101,58 +11908,58 @@
 
     if-ne p2, v3, :cond_5
 
-    .line 3350
+    .line 3518
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createPhotoPaintView()V
 
-    .line 3351
+    .line 3519
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->hidePhotoPaintView()V
 
-    .line 3352
+    .line 3520
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createFilterPhotoView()V
 
-    .line 3353
+    .line 3521
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterEnhanceView:Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
 
     if-eqz v4, :cond_3
 
-    .line 3354
+    .line 3522
     invoke-virtual {v4, v1}, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->setAllowTouch(Z)V
 
-    .line 3356
+    .line 3524
     :cond_3
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v4, p1, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
-    .line 3357
+    .line 3525
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     const/4 v5, 0x3
 
     invoke-virtual {v4, v5, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
-    .line 3358
+    .line 3526
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     const/4 v5, 0x4
 
     invoke-virtual {v4, v5, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
-    .line 3359
+    .line 3527
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     const/4 v5, 0x5
 
     invoke-virtual {v4, v5, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
-    .line 3360
+    .line 3528
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     const/4 v5, 0x7
 
     invoke-virtual {v4, v5, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
-    .line 3361
+    .line 3529
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimeView:Lorg/telegram/ui/Stories/recorder/VideoTimeView;
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -11172,14 +11979,14 @@
     :cond_4
     invoke-virtual {v4, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3362
+    .line 3530
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     const/high16 v4, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 3363
+    .line 3531
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setTranslationY(F)V
@@ -11187,42 +11994,42 @@
     :cond_5
     if-nez p2, :cond_6
 
-    .line 3365
+    .line 3533
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showSavedDraftHint:Z
 
     if-eqz v0, :cond_6
 
-    .line 3366
+    .line 3534
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getDraftSavedHint()Lorg/telegram/ui/Stories/recorder/DraftSavedHint;
 
     move-result-object v0
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3367
+    .line 3535
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getDraftSavedHint()Lorg/telegram/ui/Stories/recorder/DraftSavedHint;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/DraftSavedHint;->show()V
 
-    .line 3368
+    .line 3536
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/RecordControl;->updateGalleryImage()V
 
-    .line 3370
+    .line 3538
     :cond_6
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showSavedDraftHint:Z
 
-    .line 3372
+    .line 3540
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterEnhanceView:Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
 
     if-eqz v0, :cond_9
 
     if-ne p2, v3, :cond_8
 
-    .line 3373
+    .line 3541
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentEditMode:I
 
     const/4 v4, -0x1
@@ -11242,7 +12049,7 @@
     :goto_1
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->setAllowTouch(Z)V
 
-    .line 3379
+    .line 3547
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
@@ -11257,14 +12064,14 @@
     :cond_a
     move v2, v1
 
-    .line 3380
+    .line 3548
     :goto_2
     iput-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->ignoreTouches:Z
 
     :cond_b
     if-ne p2, v3, :cond_c
 
-    .line 3384
+    .line 3552
     iget p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -11273,7 +12080,7 @@
 
     invoke-virtual {p2, v1}, Lorg/telegram/messenger/MediaDataController;->checkStickers(I)V
 
-    .line 3385
+    .line 3553
     iget p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -11282,7 +12089,7 @@
 
     invoke-virtual {p2, v1, v1, v3, v1}, Lorg/telegram/messenger/MediaDataController;->loadRecents(IZZZ)V
 
-    .line 3386
+    .line 3554
     iget p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -11291,7 +12098,7 @@
 
     invoke-virtual {p2, p1, v1, v3, v1}, Lorg/telegram/messenger/MediaDataController;->loadRecents(IZZZ)V
 
-    .line 3387
+    .line 3555
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -11304,7 +12111,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesController;->loadBlocklistAtFirst()V
 
-    .line 3388
+    .line 3556
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -11332,56 +12139,56 @@
 
     if-nez p2, :cond_1
 
-    .line 3198
+    .line 3366
     invoke-direct {p0, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->requestCameraPermission(Z)V
 
-    .line 3199
+    .line 3367
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     invoke-virtual {v3, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3200
+    .line 3368
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     if-eqz v3, :cond_0
 
-    .line 3201
+    .line 3369
     invoke-virtual {v3, v2}, Lorg/telegram/ui/Stories/recorder/RecordControl;->stopRecordingLoading(Z)V
 
-    .line 3203
+    .line 3371
     :cond_0
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
     invoke-virtual {v3, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3204
+    .line 3372
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-virtual {v3, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3205
+    .line 3373
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     const/4 v4, 0x0
 
     invoke-virtual {v3, v4}, Landroid/view/View;->setAlpha(F)V
 
-    .line 3206
+    .line 3374
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimerView:Lorg/telegram/ui/Stories/recorder/VideoTimerView;
 
     const-wide/16 v4, 0x0
 
     invoke-virtual {v3, v4, v5, v1}, Lorg/telegram/ui/Stories/recorder/VideoTimerView;->setDuration(JZ)V
 
-    .line 3208
+    .line 3376
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz v3, :cond_1
 
-    .line 3209
+    .line 3377
     invoke-virtual {v3, v2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->destroy(Z)V
 
-    .line 3210
+    .line 3378
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     :cond_1
@@ -11389,36 +12196,36 @@
 
     if-nez p1, :cond_3
 
-    .line 3214
+    .line 3382
     invoke-direct {p0, v0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->setCameraFlashModeIcon(Ljava/lang/String;Z)V
 
-    .line 3215
-    new-instance v4, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda37;
+    .line 3383
+    new-instance v4, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda34;
 
-    invoke-direct {v4, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda37;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v4, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda34;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-direct {p0, v4}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->saveLastCameraBitmap(Ljava/lang/Runnable;)V
 
-    .line 3216
+    .line 3384
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->draftSavedHint:Lorg/telegram/ui/Stories/recorder/DraftSavedHint;
 
     if-eqz v4, :cond_2
 
-    .line 3217
+    .line 3385
     invoke-virtual {v4, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3219
+    .line 3387
     :cond_2
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 3220
+    .line 3388
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     if-eqz v4, :cond_3
 
-    .line 3221
+    .line 3389
     invoke-virtual {v4}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
     :cond_3
@@ -11426,7 +12233,7 @@
 
     if-ne p1, v1, :cond_c
 
-    .line 3225
+    .line 3393
     :cond_4
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->downloadButton:Lorg/telegram/ui/Stories/recorder/DownloadButton;
 
@@ -11442,17 +12249,17 @@
     :goto_0
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Stories/recorder/DownloadButton;->setEntry(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 3226
+    .line 3394
     iget-boolean v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVideo:Z
 
     if-eqz v4, :cond_7
 
-    .line 3227
+    .line 3395
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3228
+    .line 3396
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz v4, :cond_6
@@ -11471,17 +12278,17 @@
     :goto_1
     invoke-virtual {p0, v4, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->setIconMuted(ZZ)V
 
-    .line 3229
+    .line 3397
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     invoke-virtual {v4, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3230
+    .line 3398
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v4, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->play(Z)V
 
-    .line 3231
+    .line 3399
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     iget-object v4, v4, Lorg/telegram/ui/Stories/recorder/PlayPauseButton;->drawable:Lorg/telegram/ui/Components/PlayPauseDrawable;
@@ -11494,7 +12301,7 @@
 
     invoke-virtual {v4, v5, v2}, Lorg/telegram/ui/Components/PlayPauseDrawable;->setPause(ZZ)V
 
-    .line 3232
+    .line 3400
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     const/16 v5, 0x90
@@ -11507,7 +12314,7 @@
 
     goto :goto_2
 
-    .line 3233
+    .line 3401
     :cond_7
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -11523,24 +12330,24 @@
 
     if-nez v4, :cond_8
 
-    .line 3234
+    .line 3402
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v4, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3235
+    .line 3403
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     invoke-virtual {v4, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3236
+    .line 3404
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     iget-object v4, v4, Lorg/telegram/ui/Stories/recorder/PlayPauseButton;->drawable:Lorg/telegram/ui/Components/PlayPauseDrawable;
 
     invoke-virtual {v4, v1, v2}, Lorg/telegram/ui/Components/PlayPauseDrawable;->setPause(ZZ)V
 
-    .line 3237
+    .line 3405
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -11551,7 +12358,7 @@
 
     goto :goto_2
 
-    .line 3239
+    .line 3407
     :cond_8
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
@@ -11561,33 +12368,33 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightPadding(I)V
 
-    .line 3241
+    .line 3409
     :goto_2
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->downloadButton:Lorg/telegram/ui/Stories/recorder/DownloadButton;
 
     invoke-virtual {v4, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3243
+    .line 3411
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
     invoke-virtual {v4, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3244
+    .line 3412
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v4, v2}, Lorg/telegram/ui/Stories/recorder/PreviewView;->setVisibility(I)V
 
-    .line 3245
+    .line 3413
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v4, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3246
+    .line 3414
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v4}, Landroid/widget/FrameLayout;->clearFocus()V
 
-    .line 3249
+    .line 3417
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -11604,7 +12411,7 @@
     :goto_3
     invoke-virtual {v4, v5, v2}, Lorg/telegram/ui/Stories/recorder/CaptionStory;->setPeriod(IZ)V
 
-    .line 3250
+    .line 3418
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     iget v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
@@ -11639,10 +12446,10 @@
     :cond_c
     if-ne p2, v1, :cond_18
 
-    .line 3253
+    .line 3421
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoError:Z
 
-    .line 3254
+    .line 3422
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -11671,30 +12478,30 @@
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Stories/recorder/PreviewButtons;->setShareText(Ljava/lang/String;)V
 
-    .line 3256
+    .line 3424
     iget-boolean v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewAlreadySet:Z
 
     if-nez v4, :cond_e
 
-    .line 3257
+    .line 3425
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-virtual {v4, v5}, Lorg/telegram/ui/Stories/recorder/PreviewView;->set(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 3258
+    .line 3426
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-virtual {v4, v5, v2}, Lorg/telegram/ui/Stories/recorder/PreviewView;->setupAudio(Lorg/telegram/ui/Stories/recorder/StoryEntry;Z)V
 
-    .line 3260
+    .line 3428
     :cond_e
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewAlreadySet:Z
 
-    .line 3261
+    .line 3429
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     iget-object v4, v4, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->editText:Lorg/telegram/ui/Components/EditTextEmoji;
@@ -11718,14 +12525,14 @@
     goto :goto_6
 
     :cond_f
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda27;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda39;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda27;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda39;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     :goto_6
     invoke-virtual {v4, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setOnPremiumMenuLockClickListener(Ljava/lang/Runnable;)V
 
-    .line 3264
+    .line 3432
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz v0, :cond_13
@@ -11738,22 +12545,22 @@
 
     if-eqz v4, :cond_13
 
-    .line 3265
+    .line 3433
     :cond_10
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintFile:Ljava/io/File;
 
     if-eqz v0, :cond_11
 
-    .line 3266
+    .line 3434
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyPhotoPaintView()V
 
-    .line 3267
+    .line 3435
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createPhotoPaintView()V
 
-    .line 3268
+    .line 3436
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->hidePhotoPaintView()V
 
-    .line 3274
+    .line 3442
     :cond_11
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -11765,7 +12572,7 @@
 
     if-eqz v0, :cond_12
 
-    .line 3275
+    .line 3443
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->getTextureView()Lorg/telegram/ui/Components/VideoEditTextureView;
@@ -11774,14 +12581,14 @@
 
     if-eqz v0, :cond_12
 
-    .line 3277
-    new-instance v4, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda65;
+    .line 3445
+    new-instance v4, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda69;
 
-    invoke-direct {v4, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda65;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v4, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda69;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/VideoEditTextureView;->setDelegate(Lorg/telegram/ui/Components/VideoEditTextureView$VideoEditTextureViewDelegate;)V
 
-    .line 3284
+    .line 3452
     :cond_12
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
@@ -11793,13 +12600,13 @@
 
     goto :goto_7
 
-    .line 3286
+    .line 3454
     :cond_13
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->clear()V
 
-    .line 3288
+    .line 3456
     :goto_7
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
@@ -11850,7 +12657,7 @@
     :goto_8
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Stories/recorder/PreviewButtons;->setShareEnabled(Z)V
 
-    .line 3289
+    .line 3457
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -11871,22 +12678,22 @@
     :goto_9
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/RLottieImageView;->setImageResource(I)V
 
-    .line 3290
+    .line 3458
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Stories/recorder/PreviewView;->setVisibility(I)V
 
-    .line 3291
+    .line 3459
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->timelineView:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3292
+    .line 3460
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3293
+    .line 3461
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     iget-object v4, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -11914,57 +12721,57 @@
     :cond_18
     if-ne p1, v1, :cond_19
 
-    .line 3299
+    .line 3467
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/CaptionStory;->hidePeriodPopup()V
 
-    .line 3300
+    .line 3468
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 3302
+    .line 3470
     :cond_19
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterEnhanceView:Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
 
     if-eqz p1, :cond_1a
 
-    .line 3303
+    .line 3471
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->setAllowTouch(Z)V
 
-    .line 3305
+    .line 3473
     :cond_1a
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v2}, Landroid/widget/ImageView;->setClickable(Z)V
 
-    .line 3306
+    .line 3474
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->savedDualHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     if-eqz p1, :cond_1b
 
-    .line 3307
+    .line 3475
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 3309
+    .line 3477
     :cond_1b
     invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->hideVisible()V
 
-    .line 3311
+    .line 3479
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     if-eqz p1, :cond_1c
 
-    .line 3312
+    .line 3480
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->closeKeyboard()V
 
-    .line 3313
+    .line 3481
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     iput-boolean v1, p1, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->ignoreTouches:Z
 
-    .line 3315
+    .line 3483
     :cond_1c
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -11977,7 +12784,7 @@
     :cond_1d
     move v1, v2
 
-    .line 3316
+    .line 3484
     :goto_b
     invoke-virtual {p1, v3, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
@@ -11990,72 +12797,72 @@
 
     const/4 v0, 0x1
 
-    .line 628
+    .line 633
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isShown:Z
 
     const/4 v1, 0x0
 
-    .line 629
+    .line 634
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->wasSend:Z
 
-    .line 630
+    .line 635
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openType:I
 
     if-ne v1, v0, :cond_0
 
-    .line 631
+    .line 636
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 632
+    .line 637
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 633
+    .line 638
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 634
+    .line 639
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->actionBarContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 635
+    .line 640
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->controlContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 636
+    .line 641
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     const/high16 v1, -0x1000000
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 639
+    .line 644
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->whenOpenDone:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_1
 
-    .line 640
+    .line 645
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     const/4 v0, 0x0
 
-    .line 641
+    .line 646
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->whenOpenDone:Ljava/lang/Runnable;
 
     goto :goto_0
 
-    .line 643
+    .line 648
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onResumeInternal()V
 
@@ -12066,12 +12873,12 @@
 .method public static onPause()V
     .locals 1
 
-    .line 4395
+    .line 4624
     sget-object v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->instance:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     if-eqz v0, :cond_0
 
-    .line 4396
+    .line 4625
     invoke-direct {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onPauseInternal()V
 
     :cond_0
@@ -12083,18 +12890,18 @@
 
     const/4 v0, 0x0
 
-    .line 4400
+    .line 4629
     invoke-direct {p0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyCameraView(Z)V
 
-    .line 4401
+    .line 4630
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     if-eqz v1, :cond_0
 
-    .line 4402
+    .line 4631
     invoke-virtual {v1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->onPause()V
 
-    .line 4404
+    .line 4633
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -12102,7 +12909,7 @@
 
     const/4 v2, 0x1
 
-    .line 4405
+    .line 4634
     invoke-virtual {v1, v0, v2}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
     :cond_1
@@ -12112,12 +12919,12 @@
 .method public static onRequestPermissionsResult(I[Ljava/lang/String;[I)V
     .locals 1
 
-    .line 4410
+    .line 4639
     sget-object v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->instance:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     if-eqz v0, :cond_0
 
-    .line 4411
+    .line 4640
     invoke-direct {v0, p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onRequestPermissionsResultInternal(I[Ljava/lang/String;[I)V
 
     :cond_0
@@ -12133,7 +12940,7 @@
 
     if-eqz p3, :cond_0
 
-    .line 4417
+    .line 4646
     array-length v1, p3
 
     if-ne v1, p2, :cond_0
@@ -12158,22 +12965,22 @@
 
     xor-int/lit8 p1, p3, 0x1
 
-    .line 4419
+    .line 4648
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->noCameraPermission:Z
 
     if-eqz p3, :cond_7
 
-    .line 4420
+    .line 4649
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
     if-nez p1, :cond_7
 
-    .line 4421
+    .line 4650
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 4422
+    .line 4651
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object p1
@@ -12184,20 +12991,20 @@
 
     if-eqz p1, :cond_1
 
-    .line 4423
+    .line 4652
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createCameraView()V
 
     goto/16 :goto_1
 
-    .line 4425
+    .line 4654
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object p1
 
-    new-instance p2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda32;
+    new-instance p2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda31;
 
-    invoke-direct {p2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda32;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {p2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda31;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/messenger/camera/CameraController;->initCamera(Ljava/lang/Runnable;)V
 
@@ -12210,10 +13017,10 @@
 
     if-eqz p3, :cond_7
 
-    .line 4430
+    .line 4659
     invoke-static {v0}, Lorg/telegram/messenger/MediaController;->loadGalleryPhotosAlbums(I)V
 
-    .line 4431
+    .line 4660
     invoke-direct {p0, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateGalleryListView(Z)V
 
     goto/16 :goto_1
@@ -12231,7 +13038,7 @@
 
     if-nez p3, :cond_7
 
-    .line 4435
+    .line 4664
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getContext()Landroid/content/Context;
@@ -12246,7 +13053,7 @@
 
     sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
 
-    .line 4436
+    .line 4665
     invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p3
@@ -12259,7 +13066,7 @@
 
     const-string p3, "PermissionNoCameraMicVideo"
 
-    .line 4437
+    .line 4666
     invoke-static {p3, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
@@ -12274,7 +13081,7 @@
 
     sget p2, Lorg/telegram/messenger/R$string;->PermissionOpenSettings:I
 
-    .line 4438
+    .line 4667
     invoke-static {v3, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
@@ -12289,7 +13096,7 @@
 
     sget p2, Lorg/telegram/messenger/R$string;->ContactsPermissionAlertNotNow:I
 
-    .line 4447
+    .line 4676
     invoke-static {v1, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
@@ -12298,12 +13105,12 @@
 
     move-result-object p1
 
-    .line 4448
+    .line 4677
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 4449
+    .line 4678
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
     goto :goto_1
@@ -12315,7 +13122,7 @@
 
     if-nez p3, :cond_5
 
-    .line 4453
+    .line 4682
     new-instance p1, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getContext()Landroid/content/Context;
@@ -12330,7 +13137,7 @@
 
     sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
 
-    .line 4454
+    .line 4683
     invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
@@ -12343,7 +13150,7 @@
 
     const-string v0, "PermissionNoAudioStorageStory"
 
-    .line 4455
+    .line 4684
     invoke-static {v0, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
@@ -12358,14 +13165,14 @@
 
     sget p2, Lorg/telegram/messenger/R$string;->PermissionOpenSettings:I
 
-    .line 4456
+    .line 4685
     invoke-static {v3, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda5;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda3;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -12373,7 +13180,7 @@
 
     sget p2, Lorg/telegram/messenger/R$string;->ContactsPermissionAlertNotNow:I
 
-    .line 4465
+    .line 4694
     invoke-static {v1, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
@@ -12382,26 +13189,26 @@
 
     move-result-object p1
 
-    .line 4466
+    .line 4695
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 4467
+    .line 4696
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
     :cond_5
     if-eqz p3, :cond_6
 
-    .line 4469
+    .line 4698
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->audioGrantedCallback:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_6
 
-    .line 4470
+    .line 4699
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
-    .line 4472
+    .line 4701
     :cond_6
     iput-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->audioGrantedCallback:Ljava/lang/Runnable;
 
@@ -12413,12 +13220,12 @@
 .method public static onResume()V
     .locals 1
 
-    .line 4360
+    .line 4589
     sget-object v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->instance:Lorg/telegram/ui/Stories/recorder/StoryRecorder;
 
     if-eqz v0, :cond_0
 
-    .line 4361
+    .line 4590
     invoke-direct {v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onResumeInternal()V
 
     :cond_0
@@ -12428,14 +13235,14 @@
 .method private onResumeInternal()V
     .locals 2
 
-    .line 4367
+    .line 4596
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_1
 
-    .line 4369
+    .line 4598
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openCloseAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
@@ -12446,66 +13253,66 @@
 
     if-eqz v0, :cond_0
 
-    .line 4370
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda22;
+    .line 4599
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda32;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda32;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->whenOpenDone:Ljava/lang/Runnable;
 
     goto :goto_0
 
-    .line 4372
+    .line 4601
     :cond_0
     invoke-direct {p0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->requestCameraPermission(Z)V
 
-    .line 4375
+    .line 4604
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     if-eqz v0, :cond_2
 
-    .line 4376
+    .line 4605
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->onResume()V
 
-    .line 4378
+    .line 4607
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     if-eqz v0, :cond_3
 
-    .line 4379
+    .line 4608
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/RecordControl;->updateGalleryImage()V
 
-    .line 4381
+    .line 4610
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewHighlight:Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
 
     if-eqz v0, :cond_4
 
-    .line 4382
+    .line 4611
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;->updateCount()V
 
-    .line 4384
+    .line 4613
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz v0, :cond_5
 
-    .line 4385
+    .line 4614
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/PaintView;->onResume()V
 
-    .line 4387
+    .line 4616
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     if-eqz v0, :cond_6
 
-    .line 4388
+    .line 4617
     invoke-virtual {v0, v1, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
-    .line 4391
+    .line 4620
     :cond_6
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
@@ -12533,20 +13340,20 @@
 
     if-nez p2, :cond_0
 
-    .line 3855
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 4023
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
     :cond_0
     if-nez p1, :cond_1
 
-    .line 3857
+    .line 4025
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz v1, :cond_1
 
-    .line 3858
+    .line 4026
     invoke-virtual {v1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     :cond_1
@@ -12554,37 +13361,37 @@
 
     if-ne p1, v1, :cond_2
 
-    .line 3861
+    .line 4029
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3862
+    .line 4030
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3863
+    .line 4031
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3864
+    .line 4032
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->downloadButton:Lorg/telegram/ui/Stories/recorder/DownloadButton;
 
     invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3866
+    .line 4034
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->timelineView:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3867
+    .line 4035
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3869
+    .line 4037
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -12608,16 +13415,16 @@
 
     if-nez p1, :cond_5
 
-    .line 3870
+    .line 4038
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz p1, :cond_5
 
-    .line 3871
+    .line 4039
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Stories/recorder/PaintView;->onAnimationStateChanged(Z)V
 
-    .line 3873
+    .line 4041
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterEnhanceView:Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
 
@@ -12632,7 +13439,7 @@
     :cond_6
     move v2, v3
 
-    .line 3874
+    .line 4042
     :cond_7
     :goto_1
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->setAllowTouch(Z)V
@@ -12650,53 +13457,53 @@
 
     if-ne p2, v0, :cond_3
 
-    .line 3814
-    iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 3982
+    iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3815
+    .line 3983
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 3816
+    .line 3984
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz v2, :cond_0
 
-    .line 3817
+    .line 3985
     invoke-virtual {v2}, Lorg/telegram/ui/Stories/recorder/PaintView;->clearSelection()V
 
-    .line 3819
+    .line 3987
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->downloadButton:Lorg/telegram/ui/Stories/recorder/DownloadButton;
 
     invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3820
+    .line 3988
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3822
+    .line 3990
     iget-boolean v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVideo:Z
 
     if-eqz v2, :cond_1
 
-    .line 3823
+    .line 3991
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3824
+    .line 3992
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
 
     goto :goto_0
 
-    .line 3825
+    .line 3993
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -12710,19 +13517,19 @@
 
     if-nez v2, :cond_2
 
-    .line 3826
+    .line 3994
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 3827
+    .line 3995
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     invoke-virtual {v2, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3829
+    .line 3997
     :cond_2
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->timelineView:Lorg/telegram/ui/Stories/recorder/TimelineView;
@@ -12732,12 +13539,12 @@
     :cond_3
     if-nez p2, :cond_4
 
-    .line 3831
+    .line 3999
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz v2, :cond_4
 
-    .line 3832
+    .line 4000
     invoke-virtual {v2, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     :cond_4
@@ -12747,22 +13554,22 @@
 
     if-nez p1, :cond_6
 
-    .line 3834
+    .line 4002
     :cond_5
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz v3, :cond_6
 
-    .line 3835
+    .line 4003
     invoke-virtual {v3, v2}, Lorg/telegram/ui/Stories/recorder/PaintView;->onAnimationStateChanged(Z)V
 
-    .line 3838
+    .line 4006
     :cond_6
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz v3, :cond_8
 
-    .line 3839
+    .line 4007
     iget-object v3, v3, Lorg/telegram/ui/Stories/recorder/PaintView;->keyboardNotifier:Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;
 
     if-eqz p2, :cond_7
@@ -12777,7 +13584,7 @@
     :goto_1
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;->ignore(Z)V
 
-    .line 3841
+    .line 4009
     :cond_8
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
@@ -12795,10 +13602,10 @@
     :goto_2
     invoke-virtual {v3, p2}, Lorg/telegram/ui/Stories/recorder/KeyboardNotifier;->ignore(Z)V
 
-    .line 3843
+    .line 4011
     invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->hideVisible()V
 
-    .line 3844
+    .line 4012
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     if-eqz p2, :cond_a
@@ -12807,19 +13614,19 @@
 
     const/4 p1, 0x0
 
-    .line 3845
+    .line 4013
     invoke-direct {p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->applyFilter(Ljava/lang/Runnable;)V
 
-    .line 3847
+    .line 4015
     :cond_a
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterEnhanceView:Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
 
     if-eqz p1, :cond_b
 
-    .line 3848
+    .line 4016
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;->setAllowTouch(Z)V
 
-    .line 3850
+    .line 4018
     :cond_b
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteHint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
@@ -12831,7 +13638,7 @@
 .method private openPremium()V
     .locals 4
 
-    .line 4592
+    .line 4821
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     if-eqz v0, :cond_0
@@ -12840,25 +13647,25 @@
 
     const/4 v2, 0x1
 
-    .line 4593
+    .line 4822
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
-    .line 4595
+    .line 4824
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     if-eqz v0, :cond_1
 
-    .line 4596
+    .line 4825
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/CaptionStory;->hidePeriodPopup()V
 
-    .line 4598
+    .line 4827
     :cond_1
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$21;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$22;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$21;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$22;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     const/16 v2, 0xe
 
@@ -12866,14 +13673,14 @@
 
     invoke-direct {v0, v1, v2, v3}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;IZ)V
 
-    .line 4626
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda9;
+    .line 4855
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda8;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda8;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 4631
+    .line 4860
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->show()V
 
     return-void
@@ -12882,93 +13689,93 @@
 .method private orderPreviewViews()V
     .locals 1
 
-    .line 3749
+    .line 3917
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewRenderView:Lorg/telegram/ui/Components/Paint/RenderView;
 
     if-eqz v0, :cond_0
 
-    .line 3750
+    .line 3918
     invoke-virtual {v0}, Landroid/view/TextureView;->bringToFront()V
 
-    .line 3752
+    .line 3920
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewRenderInputView:Landroid/view/View;
 
     if-eqz v0, :cond_1
 
-    .line 3753
+    .line 3921
     invoke-virtual {v0}, Landroid/view/View;->bringToFront()V
 
-    .line 3755
+    .line 3923
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewTextDim:Landroid/view/View;
 
     if-eqz v0, :cond_2
 
-    .line 3756
+    .line 3924
     invoke-virtual {v0}, Landroid/view/View;->bringToFront()V
 
-    .line 3758
+    .line 3926
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewEntitiesView:Landroid/view/View;
 
     if-eqz v0, :cond_3
 
-    .line 3759
+    .line 3927
     invoke-virtual {v0}, Landroid/view/View;->bringToFront()V
 
-    .line 3761
+    .line 3929
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintViewSelectionContainerView:Landroid/view/View;
 
     if-eqz v0, :cond_4
 
-    .line 3762
+    .line 3930
     invoke-virtual {v0}, Landroid/view/View;->bringToFront()V
 
-    .line 3764
+    .line 3932
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->trash:Lorg/telegram/ui/Stories/recorder/TrashView;
 
     if-eqz v0, :cond_5
 
-    .line 3765
+    .line 3933
     invoke-virtual {v0}, Landroid/view/View;->bringToFront()V
 
-    .line 3767
+    .line 3935
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterEnhanceView:Lorg/telegram/ui/Components/PhotoFilterView$EnhanceView;
 
     if-eqz v0, :cond_6
 
-    .line 3768
+    .line 3936
     invoke-virtual {v0}, Landroid/view/View;->bringToFront()V
 
-    .line 3770
+    .line 3938
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewBlurControl:Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     if-eqz v0, :cond_7
 
-    .line 3771
+    .line 3939
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->bringToFront()V
 
-    .line 3773
+    .line 3941
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewCurvesControl:Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
     if-eqz v0, :cond_8
 
-    .line 3774
+    .line 3942
     invoke-virtual {v0}, Landroid/view/View;->bringToFront()V
 
-    .line 3776
+    .line 3944
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewHighlight:Lorg/telegram/ui/Stories/recorder/PreviewHighlightView;
 
     if-eqz v0, :cond_9
 
-    .line 3777
+    .line 3945
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->bringToFront()V
 
     :cond_9
@@ -12978,7 +13785,7 @@
 .method private premiumText(Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 4
 
-    .line 4635
+    .line 4864
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkIn:I
 
     new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda36;
@@ -13003,7 +13810,7 @@
 
     if-eqz p1, :cond_b
 
-    .line 2260
+    .line 2348
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getWidth()I
@@ -13025,7 +13832,7 @@
     :cond_0
     if-eqz p2, :cond_1
 
-    .line 2266
+    .line 2354
     iget-object v1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->draftThumbFile:Ljava/io/File;
 
     goto :goto_0
@@ -13036,7 +13843,7 @@
     :goto_0
     if-eqz v1, :cond_2
 
-    .line 2268
+    .line 2356
     invoke-virtual {v1}, Ljava/io/File;->delete()Z
 
     :cond_2
@@ -13049,7 +13856,7 @@
     :cond_3
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 2273
+    .line 2361
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -13063,7 +13870,7 @@
 
     float-to-int v2, v2
 
-    .line 2274
+    .line 2362
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v3}, Landroid/widget/FrameLayout;->getHeight()I
@@ -13076,83 +13883,83 @@
 
     float-to-int v3, v3
 
-    .line 2275
+    .line 2363
     sget-object v4, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
     invoke-static {v2, v3, v4}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v3
 
-    .line 2276
+    .line 2364
     new-instance v4, Landroid/graphics/Canvas;
 
     invoke-direct {v4, v3}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    .line 2278
+    .line 2366
     invoke-virtual {v4}, Landroid/graphics/Canvas;->save()I
 
-    .line 2279
+    .line 2367
     invoke-virtual {v4, v1, v1}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 2280
+    .line 2368
     iget-object v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v5, v4}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2281
+    .line 2369
     invoke-virtual {v4}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2283
+    .line 2371
     new-instance v5, Landroid/graphics/Paint;
 
     const/4 v6, 0x2
 
     invoke-direct {v5, v6}, Landroid/graphics/Paint;-><init>(I)V
 
-    .line 2285
+    .line 2373
     iget-object v6, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     invoke-virtual {v6}, Lorg/telegram/ui/Stories/recorder/PreviewView;->getTextureView()Lorg/telegram/ui/Components/VideoEditTextureView;
 
     move-result-object v6
 
-    .line 2286
+    .line 2374
     iget-boolean v7, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
     if-eqz v7, :cond_5
 
     if-eqz v6, :cond_5
 
-    .line 2287
+    .line 2375
     invoke-virtual {v6}, Landroid/view/TextureView;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v7
 
-    .line 2288
+    .line 2376
     invoke-virtual {v6, v0}, Landroid/view/TextureView;->getTransform(Landroid/graphics/Matrix;)Landroid/graphics/Matrix;
 
     move-result-object v0
 
     if-eqz v0, :cond_4
 
-    .line 2290
+    .line 2378
     new-instance v6, Landroid/graphics/Matrix;
 
     invoke-direct {v6, v0}, Landroid/graphics/Matrix;-><init>(Landroid/graphics/Matrix;)V
 
-    .line 2291
+    .line 2379
     invoke-virtual {v6, v1, v1}, Landroid/graphics/Matrix;->postScale(FF)Z
 
     move-object v0, v6
 
-    .line 2293
+    .line 2381
     :cond_4
     invoke-virtual {v4, v7, v0, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Matrix;Landroid/graphics/Paint;)V
 
-    .line 2294
+    .line 2382
     invoke-virtual {v7}, Landroid/graphics/Bitmap;->recycle()V
 
-    .line 2297
+    .line 2385
     :cond_5
     iget-object v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintBlurFile:Ljava/io/File;
 
@@ -13160,7 +13967,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 2299
+    .line 2387
     :try_start_0
     invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
@@ -13170,12 +13977,12 @@
 
     move-result-object v0
 
-    .line 2300
+    .line 2388
     invoke-virtual {v4}, Landroid/graphics/Canvas;->save()I
 
     int-to-float v7, v2
 
-    .line 2301
+    .line 2389
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v8
@@ -13184,16 +13991,16 @@
 
     div-float/2addr v7, v8
 
-    .line 2302
+    .line 2390
     invoke-virtual {v4, v7, v7}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 2303
+    .line 2391
     invoke-virtual {v4, v0, v6, v6, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 2304
+    .line 2392
     invoke-virtual {v4}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2305
+    .line 2393
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -13203,17 +14010,17 @@
     :catch_0
     move-exception v0
 
-    .line 2307
+    .line 2395
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2311
+    .line 2399
     :cond_6
     :goto_2
     iget-object v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->paintFile:Ljava/io/File;
 
     if-eqz v0, :cond_7
 
-    .line 2313
+    .line 2401
     :try_start_1
     invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
@@ -13223,12 +14030,12 @@
 
     move-result-object v0
 
-    .line 2314
+    .line 2402
     invoke-virtual {v4}, Landroid/graphics/Canvas;->save()I
 
     int-to-float v2, v2
 
-    .line 2315
+    .line 2403
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v7
@@ -13237,16 +14044,16 @@
 
     div-float/2addr v2, v7
 
-    .line 2316
+    .line 2404
     invoke-virtual {v4, v2, v2}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 2317
+    .line 2405
     invoke-virtual {v4, v0, v6, v6, v5}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
-    .line 2318
+    .line 2406
     invoke-virtual {v4}, Landroid/graphics/Canvas;->restore()V
 
-    .line 2319
+    .line 2407
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -13256,10 +14063,10 @@
     :catch_1
     move-exception v0
 
-    .line 2321
+    .line 2409
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2325
+    .line 2413
     :cond_7
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
@@ -13274,30 +14081,30 @@
 
     if-eqz v0, :cond_8
 
-    .line 2326
+    .line 2414
     invoke-virtual {v4}, Landroid/graphics/Canvas;->save()I
 
-    .line 2327
+    .line 2415
     invoke-virtual {v4, v1, v1}, Landroid/graphics/Canvas;->scale(FF)V
 
-    .line 2328
+    .line 2416
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/PaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     iput-boolean v5, v0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->drawForThumb:Z
 
-    .line 2329
+    .line 2417
     invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2330
+    .line 2418
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/PaintView;->entitiesView:Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;
 
     iput-boolean v2, v0, Lorg/telegram/ui/Components/Paint/Views/EntitiesContainerView;->drawForThumb:Z
 
-    .line 2331
+    .line 2419
     invoke-virtual {v4}, Landroid/graphics/Canvas;->restore()V
 
     :cond_8
@@ -13305,19 +14112,19 @@
 
     const/16 v1, 0x16
 
-    .line 2334
+    .line 2422
     invoke-static {v3, v0, v1, v5}, Landroid/graphics/Bitmap;->createScaledBitmap(Landroid/graphics/Bitmap;IIZ)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 2336
+    .line 2424
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->makeCacheFile(IZ)Ljava/io/File;
 
     move-result-object v1
 
-    .line 2338
+    .line 2426
     :try_start_2
     sget-object v2, Landroid/graphics/Bitmap$CompressFormat;->JPEG:Landroid/graphics/Bitmap$CompressFormat;
 
@@ -13344,25 +14151,25 @@
     :catch_2
     move-exception v2
 
-    .line 2340
+    .line 2428
     invoke-virtual {v2}, Ljava/io/FileNotFoundException;->printStackTrace()V
 
-    .line 2342
+    .line 2430
     :goto_5
     invoke-virtual {v3}, Landroid/graphics/Bitmap;->recycle()V
 
     if-eqz p2, :cond_a
 
-    .line 2345
+    .line 2433
     iput-object v1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->draftThumbFile:Ljava/io/File;
 
     goto :goto_6
 
-    .line 2347
+    .line 2435
     :cond_a
     iput-object v1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->uploadThumbFile:Ljava/io/File;
 
-    .line 2349
+    .line 2437
     :goto_6
     iput-object v0, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->thumbBitmap:Landroid/graphics/Bitmap;
 
@@ -13376,7 +14183,7 @@
 .method private requestAudioPermission()Z
     .locals 4
 
-    .line 4349
+    .line 4578
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/4 v1, 0x1
@@ -13391,7 +14198,7 @@
 
     const-string v2, "android.permission.RECORD_AUDIO"
 
-    .line 4350
+    .line 4579
     invoke-virtual {v0, v2}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v0
@@ -13410,7 +14217,7 @@
     :goto_0
     if-nez v0, :cond_1
 
-    .line 4352
+    .line 4581
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
     filled-new-array {v2}, [Ljava/lang/String;
@@ -13430,7 +14237,7 @@
 .method private requestCameraPermission(Z)V
     .locals 6
 
-    .line 4281
+    .line 4510
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->requestedCameraPermission:Z
 
     if-eqz v0, :cond_0
@@ -13442,10 +14249,10 @@
     :cond_0
     const/4 p1, 0x0
 
-    .line 4284
+    .line 4513
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->noCameraPermission:Z
 
-    .line 4286
+    .line 4515
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
@@ -13458,7 +14265,7 @@
 
     const-string v1, "android.permission.CAMERA"
 
-    .line 4287
+    .line 4516
     invoke-virtual {v0, v1}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v0
@@ -13479,7 +14286,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 4289
+    .line 4518
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -13498,7 +14305,7 @@
 
     move-result-object v0
 
-    .line 4290
+    .line 4519
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
     const v4, 0x3dffffff    # 0.12499999f
@@ -13509,7 +14316,7 @@
 
     invoke-virtual {v0, v3}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 4291
+    .line 4520
     new-instance v3, Lorg/telegram/ui/Components/CombinedDrawable;
 
     new-instance v4, Landroid/graphics/drawable/ColorDrawable;
@@ -13522,7 +14329,7 @@
 
     const/16 v0, 0x40
 
-    .line 4292
+    .line 4521
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -13533,12 +14340,12 @@
 
     invoke-virtual {v3, v4, v0}, Lorg/telegram/ui/Components/CombinedDrawable;->setIconSize(II)V
 
-    .line 4293
+    .line 4522
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 4294
+    .line 4523
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->shouldShowRequestPermissionRationale(Ljava/lang/String;)Z
@@ -13547,7 +14354,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 4295
+    .line 4524
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getContext()Landroid/content/Context;
@@ -13564,7 +14371,7 @@
 
     sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTopBackground:I
 
-    .line 4296
+    .line 4525
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
@@ -13577,7 +14384,7 @@
 
     const-string v1, "PermissionNoCameraWithHint"
 
-    .line 4297
+    .line 4526
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -13594,14 +14401,14 @@
 
     const-string v1, "PermissionOpenSettings"
 
-    .line 4298
+    .line 4527
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda6;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda5;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
@@ -13611,7 +14418,7 @@
 
     const-string v1, "ContactsPermissionAlertNotNow"
 
-    .line 4307
+    .line 4536
     invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v0
@@ -13622,17 +14429,17 @@
 
     move-result-object p1
 
-    .line 4308
+    .line 4537
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object p1
 
-    .line 4309
+    .line 4538
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
     return-void
 
-    .line 4312
+    .line 4541
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
@@ -13644,16 +14451,16 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
 
-    .line 4313
+    .line 4542
     iput-boolean v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->requestedCameraPermission:Z
 
-    .line 4317
+    .line 4546
     :cond_3
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->noCameraPermission:Z
 
     if-nez p1, :cond_5
 
-    .line 4318
+    .line 4547
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object p1
@@ -13664,20 +14471,20 @@
 
     if-eqz p1, :cond_4
 
-    .line 4319
+    .line 4548
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createCameraView()V
 
     goto :goto_1
 
-    .line 4321
+    .line 4550
     :cond_4
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object p1
 
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda32;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda31;
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda32;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda31;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/camera/CameraController;->initCamera(Ljava/lang/Runnable;)V
 
@@ -13689,14 +14496,14 @@
 .method private requestGalleryPermission()Z
     .locals 6
 
-    .line 4327
+    .line 4556
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_5
 
-    .line 4329
+    .line 4558
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x21
@@ -13709,7 +14516,7 @@
 
     const-string v2, "android.permission.READ_MEDIA_IMAGES"
 
-    .line 4331
+    .line 4560
     invoke-virtual {v0, v2}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v0
@@ -13720,7 +14527,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
-    .line 4332
+    .line 4561
     invoke-virtual {v0, v3}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v0
@@ -13733,7 +14540,7 @@
     :cond_1
     if-eqz v5, :cond_4
 
-    .line 4335
+    .line 4564
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
     filled-new-array {v2, v3}, [Ljava/lang/String;
@@ -13751,7 +14558,7 @@
 
     const-string v2, "android.permission.READ_EXTERNAL_STORAGE"
 
-    .line 4338
+    .line 4567
     invoke-virtual {v0, v2}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v0
@@ -13763,7 +14570,7 @@
     :cond_3
     if-eqz v5, :cond_4
 
-    .line 4340
+    .line 4569
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
     filled-new-array {v2}, [Ljava/lang/String;
@@ -13785,7 +14592,7 @@
 .method private saveCameraFace(Z)V
     .locals 2
 
-    .line 4477
+    .line 4706
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -13805,10 +14612,56 @@
     return-void
 .end method
 
+.method private saveFrontFaceFlashMode()V
+    .locals 3
+
+    .line 4337
+    iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashMode:I
+
+    if-ltz v0, :cond_0
+
+    .line 4338
+    invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget v1, v1, Lorg/telegram/ui/Stories/recorder/FlashViews;->warmth:F
+
+    const-string v2, "frontflash_warmth"
+
+    .line 4339
+    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putFloat(Ljava/lang/String;F)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashViews:Lorg/telegram/ui/Stories/recorder/FlashViews;
+
+    iget v1, v1, Lorg/telegram/ui/Stories/recorder/FlashViews;->intensity:F
+
+    const-string v2, "frontflash_intensity"
+
+    .line 4340
+    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putFloat(Ljava/lang/String;F)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    .line 4341
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    :cond_0
+    return-void
+.end method
+
 .method private saveLastCameraBitmap(Ljava/lang/Runnable;)V
     .locals 3
 
-    .line 4168
+    .line 4397
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     if-eqz v0, :cond_1
@@ -13821,7 +14674,7 @@
 
     goto :goto_0
 
-    .line 4172
+    .line 4401
     :cond_0
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
@@ -13830,17 +14683,17 @@
 
     move-result-object v0
 
-    .line 4173
+    .line 4402
     invoke-virtual {v0}, Landroid/view/TextureView;->getBitmap()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 4174
+    .line 4403
     sget-object v1, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda41;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda43;
 
-    invoke-direct {v2, p0, v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda41;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
+    invoke-direct {v2, p0, v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda43;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Landroid/graphics/Bitmap;Ljava/lang/Runnable;)V
 
     invoke-virtual {v1, v2}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
     :try_end_0
@@ -13857,7 +14710,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2625
+    .line 2765
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
     iget v0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
@@ -13868,7 +14721,7 @@
 
     goto :goto_0
 
-    .line 2627
+    .line 2767
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowLayoutParams:Landroid/view/WindowManager$LayoutParams;
 
@@ -13878,7 +14731,7 @@
 
     iput v0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 2630
+    .line 2770
     :goto_0
     :try_start_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowManager:Landroid/view/WindowManager;
@@ -13896,7 +14749,7 @@
     :catch_0
     move-exception p1
 
-    .line 2632
+    .line 2772
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_1
@@ -13906,12 +14759,12 @@
 .method private setCameraFlashModeIcon(Ljava/lang/String;Z)V
     .locals 5
 
-    .line 2354
-    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 2442
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
-    invoke-virtual {v0}, Landroid/widget/ImageView;->clearAnimation()V
+    invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
 
-    .line 2355
+    .line 2443
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     if-eqz v0, :cond_0
@@ -13939,15 +14792,15 @@
 
     if-eqz p2, :cond_3
 
-    .line 2360
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 2448
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
-    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2361
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 2449
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
-    invoke-virtual {p2}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p2
 
@@ -13955,31 +14808,31 @@
 
     move-result-object p1
 
-    new-instance p2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda28;
+    new-instance p2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda29;
 
-    invoke-direct {p2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda28;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {p2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda29;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {p1, p2}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    .line 2363
+    .line 2451
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
     goto :goto_0
 
-    .line 2365
+    .line 2453
     :cond_3
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     const/16 v0, 0x8
 
-    invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2366
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 2454
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
-    invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setAlpha(F)V
+    invoke-virtual {p2, p1}, Landroid/view/View;->setAlpha(F)V
 
     :goto_0
     return-void
@@ -13987,7 +14840,7 @@
     :cond_4
     const/4 v1, -0x1
 
-    .line 2371
+    .line 2459
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
     move-result v2
@@ -14051,11 +14904,11 @@
 
     if-eq v1, v4, :cond_9
 
-    .line 2382
+    .line 2470
     sget p1, Lorg/telegram/messenger/R$drawable;->media_photo_flash_off2:I
 
-    .line 2383
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 2471
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrCameraFlashOff:I
 
@@ -14065,16 +14918,16 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
     goto :goto_2
 
-    .line 2377
+    .line 2465
     :cond_9
     sget p1, Lorg/telegram/messenger/R$drawable;->media_photo_flash_auto2:I
 
-    .line 2378
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 2466
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrCameraFlashAuto:I
 
@@ -14084,16 +14937,16 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
     goto :goto_2
 
-    .line 2373
+    .line 2461
     :cond_a
     sget p1, Lorg/telegram/messenger/R$drawable;->media_photo_flash_on2:I
 
-    .line 2374
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 2462
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     sget v2, Lorg/telegram/messenger/R$string;->AccDescrCameraFlashOn:I
 
@@ -14103,47 +14956,29 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
 
+    .line 2474
     :goto_2
-    if-eqz p2, :cond_b
-
-    .line 2386
-    iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButtonResId:I
-
-    if-eq v1, p1, :cond_b
-
-    .line 2387
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButtonResId:I
 
-    invoke-static {v1, p1}, Lorg/telegram/messenger/AndroidUtilities;->updateImageViewImageAnimated(Landroid/widget/ImageView;I)V
+    invoke-virtual {v1, p1, v0}, Lorg/telegram/ui/Stories/recorder/ToggleButton2;->setIcon(IZ)V
 
-    goto :goto_3
+    .line 2475
+    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
-    .line 2389
-    :cond_b
-    iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
-
-    iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButtonResId:I
-
-    invoke-virtual {v1, p1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 2391
-    :goto_3
-    iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
-
-    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    if-eqz p2, :cond_c
+    if-eqz p2, :cond_b
 
-    .line 2393
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 2477
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
-    invoke-virtual {p2}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
+    invoke-virtual {p2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p2
 
@@ -14153,22 +14988,111 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    goto :goto_4
+    goto :goto_3
 
-    .line 2395
-    :cond_c
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 2479
+    :cond_b
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
-    invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setAlpha(F)V
+    invoke-virtual {p2, p1}, Landroid/view/View;->setAlpha(F)V
 
-    :goto_4
+    :goto_3
+    return-void
+.end method
+
+.method private setCurrentFlashMode(Ljava/lang/String;)V
+    .locals 2
+
+    .line 4368
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    if-eqz v0, :cond_3
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    .line 4371
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->isFrontface()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lorg/telegram/messenger/camera/CameraSession;->availableFlashModes:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_2
+
+    .line 4372
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashModes:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
+
+    move-result p1
+
+    if-ltz p1, :cond_1
+
+    .line 4374
+    iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashMode:I
+
+    .line 4375
+    invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashMode:I
+
+    const-string v1, "frontflash"
+
+    invoke-interface {p1, v1, v0}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object p1
+
+    invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    :cond_1
+    return-void
+
+    .line 4379
+    :cond_2
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->getCameraSession()Lorg/telegram/messenger/camera/CameraSession;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lorg/telegram/messenger/camera/CameraSession;->setCurrentFlashMode(Ljava/lang/String;)V
+
+    :cond_3
+    :goto_0
     return-void
 .end method
 
 .method private showDismissEntry()V
     .locals 4
 
-    .line 4203
+    .line 4432
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->getContext()Landroid/content/Context;
@@ -14179,7 +15103,7 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 4204
+    .line 4433
     sget v1, Lorg/telegram/messenger/R$string;->DiscardChanges:I
 
     const-string v2, "DiscardChanges"
@@ -14190,7 +15114,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 4205
+    .line 4434
     sget v1, Lorg/telegram/messenger/R$string;->PhotoEditorDiscardAlert:I
 
     const-string v2, "PhotoEditorDiscardAlert"
@@ -14201,7 +15125,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 4206
+    .line 4435
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz v1, :cond_1
@@ -14210,7 +15134,7 @@
 
     if-nez v2, :cond_1
 
-    .line 4207
+    .line 4436
     iget-boolean v1, v1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isDraft:Z
 
     if-eqz v1, :cond_0
@@ -14227,13 +15151,13 @@
 
     move-result-object v1
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda3;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda6;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNeutralButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 4230
+    .line 4459
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -14271,7 +15195,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 4241
+    .line 4470
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
     const-string v2, "Cancel"
@@ -14284,27 +15208,27 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
-    .line 4242
+    .line 4471
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
-    .line 4243
+    .line 4472
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
     const/4 v1, -0x1
 
-    .line 4244
+    .line 4473
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 4245
+    .line 4474
     instance-of v1, v0, Landroid/widget/TextView;
 
     if-eqz v1, :cond_3
 
-    .line 4246
+    .line 4475
     move-object v1, v0
 
     check-cast v1, Landroid/widget/TextView;
@@ -14319,7 +15243,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 4247
+    .line 4476
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {v2, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
@@ -14347,24 +15271,24 @@
 .method private showLimitReachedSheet(Lorg/telegram/ui/Stories/StoriesController$StoryLimit;Z)V
     .locals 7
 
-    .line 4529
+    .line 4758
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->shownLimitReached:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 4532
+    .line 4761
     :cond_0
     new-instance v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$20;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$21;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$20;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v2, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$21;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
-    .line 4559
+    .line 4788
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;->getLimitReachedType()I
 
     move-result v4
@@ -14377,14 +15301,14 @@
 
     invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 4560
+    .line 4789
     new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda10;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
     invoke-virtual {v0, p1}, Landroid/app/Dialog;->setOnDismissListener(Landroid/content/DialogInterface$OnDismissListener;)V
 
-    .line 4567
+    .line 4796
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     const/4 p2, 0x7
@@ -14393,10 +15317,10 @@
 
     invoke-virtual {p1, p2, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->updatePauseReason(IZ)V
 
-    .line 4568
+    .line 4797
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->shownLimitReached:Z
 
-    .line 4569
+    .line 4798
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->show()V
 
     return-void
@@ -14405,21 +15329,21 @@
 .method private showPremiumPeriodBulletin(I)V
     .locals 5
 
-    .line 4639
+    .line 4868
     div-int/lit16 p1, p1, 0xe10
 
-    .line 4641
+    .line 4870
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$22;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$23;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$22;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$23;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/Bulletin$BulletinWindow;->make(Landroid/content/Context;Lorg/telegram/ui/Components/Bulletin$Delegate;)Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;
 
     move-result-object v0
 
-    .line 4652
+    .line 4881
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;->getLayout()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v1
@@ -14428,10 +15352,10 @@
 
     const/4 v2, -0x2
 
-    .line 4654
+    .line 4883
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    .line 4655
+    .line 4884
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getWidth()I
@@ -14440,7 +15364,7 @@
 
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->width:I
 
-    .line 4656
+    .line 4885
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getY()F
@@ -14461,16 +15385,16 @@
 
     iput v2, v1, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    .line 4657
+    .line 4886
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;->updateLayout()V
 
     :cond_0
     const/4 v1, 0x1
 
-    .line 4659
+    .line 4888
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$BulletinWindowLayout;->setTouchable(Z)V
 
-    .line 4660
+    .line 4889
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/BulletinFactory;->of(Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/Components/BulletinFactory;
@@ -14485,7 +15409,7 @@
 
     const-string v4, "StoryPeriodPremium"
 
-    .line 4661
+    .line 4890
     invoke-static {v4, p1, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
@@ -14500,7 +15424,7 @@
 
     move-result-object p1
 
-    .line 4662
+    .line 4891
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/Bulletin;->show(Z)Lorg/telegram/ui/Components/Bulletin;
 
     return-void
@@ -14509,14 +15433,14 @@
 .method private showVideoTimer(ZZ)V
     .locals 2
 
-    .line 2705
+    .line 2873
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimerShown:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 2709
+    .line 2877
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimerShown:Z
 
@@ -14526,7 +15450,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 2711
+    .line 2879
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimerView:Lorg/telegram/ui/Stories/recorder/VideoTimerView;
 
     invoke-virtual {p2}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
@@ -14557,26 +15481,26 @@
 
     move-result-object p2
 
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda44;
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda50;
 
-    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda44;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda50;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
     invoke-virtual {p2, v0}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
 
-    .line 2715
+    .line 2883
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
     goto :goto_2
 
-    .line 2717
+    .line 2885
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimerView:Lorg/telegram/ui/Stories/recorder/VideoTimerView;
 
     invoke-virtual {p2}, Landroid/view/View;->clearAnimation()V
 
-    .line 2718
+    .line 2886
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimerView:Lorg/telegram/ui/Stories/recorder/VideoTimerView;
 
     if-eqz p1, :cond_3
@@ -14591,7 +15515,7 @@
 
     if-nez p1, :cond_4
 
-    .line 2720
+    .line 2888
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimerView:Lorg/telegram/ui/Stories/recorder/VideoTimerView;
 
     const/4 p2, 0x0
@@ -14606,7 +15530,7 @@
 .method private showZoomControls(ZZ)V
     .locals 8
 
-    .line 2729
+    .line 2897
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-virtual {p2}, Landroid/view/View;->getTag()Ljava/lang/Object;
@@ -14633,19 +15557,19 @@
     :cond_1
     if-eqz p1, :cond_3
 
-    .line 2731
+    .line 2899
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlHideRunnable:Ljava/lang/Runnable;
 
     if-eqz p1, :cond_2
 
-    .line 2732
+    .line 2900
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 2734
+    .line 2902
     :cond_2
-    new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda23;
+    new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda26;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda23;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda26;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlHideRunnable:Ljava/lang/Runnable;
 
@@ -14654,16 +15578,16 @@
     :cond_3
     return-void
 
-    .line 2741
+    .line 2909
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz p2, :cond_5
 
-    .line 2742
+    .line 2910
     invoke-virtual {p2}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 2744
+    .line 2912
     :cond_5
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
@@ -14683,7 +15607,7 @@
     :goto_0
     invoke-virtual {p2, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
-    .line 2745
+    .line 2913
     new-instance p2, Landroid/animation/AnimatorSet;
 
     invoke-direct {p2}, Landroid/animation/AnimatorSet;-><init>()V
@@ -14692,19 +15616,19 @@
 
     const-wide/16 v3, 0xb4
 
-    .line 2746
+    .line 2914
     invoke-virtual {p2, v3, v4}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
     const/4 p2, 0x0
 
     if-eqz p1, :cond_7
 
-    .line 2748
+    .line 2916
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     invoke-virtual {v3, p2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 2750
+    .line 2918
     :cond_7
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlAnimation:Landroid/animation/AnimatorSet;
 
@@ -14736,26 +15660,26 @@
 
     invoke-virtual {v3, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 2751
+    .line 2919
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlAnimation:Landroid/animation/AnimatorSet;
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$12;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$13;
 
-    invoke-direct {v2, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$12;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+    invoke-direct {v2, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$13;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
     invoke-virtual {p2, v2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2760
+    .line 2928
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p2}, Landroid/animation/AnimatorSet;->start()V
 
     if-eqz p1, :cond_9
 
-    .line 2762
-    new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda39;
+    .line 2930
+    new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda42;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda39;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda42;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlHideRunnable:Ljava/lang/Runnable;
 
@@ -14768,7 +15692,7 @@
 .method private upload(Z)V
     .locals 2
 
-    .line 2176
+    .line 2264
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->preparingUpload:Z
 
     if-eqz v0, :cond_0
@@ -14778,15 +15702,15 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 2179
+    .line 2267
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->preparingUpload:Z
 
-    .line 2180
+    .line 2268
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda49;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda46;
 
-    invoke-direct {v1, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda49;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+    invoke-direct {v1, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda46;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
@@ -14796,37 +15720,37 @@
 .method private uploadInternal(Z)V
     .locals 5
 
-    .line 2190
+    .line 2278
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
-    .line 2191
+    .line 2279
     invoke-virtual {p0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->close(Z)V
 
     return-void
 
-    .line 2194
+    .line 2282
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->destroyPhotoFilterView()V
 
-    .line 2195
+    .line 2283
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     const/4 v2, 0x0
 
     invoke-direct {p0, v0, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->prepareThumb(Lorg/telegram/ui/Stories/recorder/StoryEntry;Z)Ljava/io/File;
 
-    .line 2196
+    .line 2284
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
 
-    .line 2197
+    .line 2285
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v3, v2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->caption:Ljava/lang/CharSequence;
@@ -14839,12 +15763,12 @@
 
     iput-boolean v3, v2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedCaption:Z
 
-    .line 2198
+    .line 2286
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iput-object v0, v2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->caption:Ljava/lang/CharSequence;
 
-    .line 2199
+    .line 2287
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -14859,7 +15783,7 @@
 
     invoke-virtual {v0, v2, p1}, Lorg/telegram/ui/Stories/StoriesController;->uploadStory(Lorg/telegram/ui/Stories/recorder/StoryEntry;Z)V
 
-    .line 2200
+    .line 2288
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isDraft:Z
@@ -14870,7 +15794,7 @@
 
     if-nez v0, :cond_1
 
-    .line 2201
+    .line 2289
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -14889,13 +15813,13 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Stories/recorder/DraftsController;->delete(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
-    .line 2203
+    .line 2291
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->cancelCheckStickers()V
 
-    .line 2205
+    .line 2293
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -14904,7 +15828,7 @@
 
     iget-wide v2, v0, Lorg/telegram/messenger/UserConfig;->clientUserId:J
 
-    .line 2206
+    .line 2294
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     iget-object v0, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
@@ -14915,7 +15839,7 @@
 
     if-nez v4, :cond_2
 
-    .line 2207
+    .line 2295
     invoke-static {v0}, Lorg/telegram/messenger/DialogObject;->getPeerDialogId(Lorg/telegram/tgnet/TLRPC$InputPeer;)J
 
     move-result-wide v2
@@ -14923,38 +15847,38 @@
     :cond_2
     const/4 v0, 0x0
 
-    .line 2209
+    .line 2297
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 2211
+    .line 2299
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->wasSend:Z
 
-    .line 2212
+    .line 2300
     iput-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->forceBackgroundVisible:Z
 
-    .line 2213
+    .line 2301
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->checkBackgroundVisibility()V
 
-    .line 2216
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda50;
+    .line 2304
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda52;
 
-    invoke-direct {v0, p0, p1, v2, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda50;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZJ)V
+    invoke-direct {v0, p0, p1, v2, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda52;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;ZJ)V
 
-    .line 2251
+    .line 2339
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->closingSourceProvider:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ClosingViewProvider;
 
     if-eqz p1, :cond_3
 
-    .line 2252
+    .line 2340
     invoke-interface {p1, v2, v3, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ClosingViewProvider;->preLayout(JLjava/lang/Runnable;)V
 
     goto :goto_0
 
-    .line 2254
+    .line 2342
     :cond_3
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 2256
+    .line 2344
     :goto_0
     invoke-static {}, Lorg/telegram/messenger/MessagesController;->getGlobalMainSettings()Landroid/content/SharedPreferences;
 
@@ -14977,12 +15901,59 @@
     return-void
 .end method
 
+.method private useDisplayFlashlight()Z
+    .locals 3
+
+    .line 2868
+    iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->takingPhoto:Z
+
+    const/4 v1, 0x1
+
+    if-nez v0, :cond_0
+
+    iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->takingVideo:Z
+
+    if-eqz v0, :cond_1
+
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
+
+    if-eqz v0, :cond_1
+
+    invoke-virtual {v0}, Lorg/telegram/messenger/camera/CameraView;->isFrontface()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1
+
+    iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->frontfaceFlashMode:I
+
+    const/4 v2, 0x2
+
+    if-eq v0, v2, :cond_2
+
+    if-ne v0, v1, :cond_1
+
+    iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isDark:Z
+
+    if-eqz v0, :cond_1
+
+    goto :goto_0
+
+    :cond_1
+    const/4 v1, 0x0
+
+    :cond_2
+    :goto_0
+    return v1
+.end method
+
 
 # virtual methods
 .method public addNotificationObservers()V
     .locals 2
 
-    .line 4516
+    .line 4745
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -14991,7 +15962,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 4517
+    .line 4746
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -15002,7 +15973,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 4518
+    .line 4747
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -15019,7 +15990,7 @@
 .method public canChangePeer(Z)Lorg/telegram/ui/Stories/recorder/StoryRecorder;
     .locals 0
 
-    .line 4696
+    .line 4925
     iput-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->canChangePeer:Z
 
     return-object p0
@@ -15028,14 +15999,14 @@
 .method public close(Z)V
     .locals 7
 
-    .line 510
+    .line 515
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isShown:Z
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 514
+    .line 519
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->privacySheet:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
@@ -15043,13 +16014,13 @@
 
     if-eqz v0, :cond_1
 
-    .line 515
+    .line 520
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;->dismiss()V
 
-    .line 516
+    .line 521
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->privacySheet:Lorg/telegram/ui/Stories/recorder/StoryPrivacyBottomSheet;
 
-    .line 519
+    .line 524
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -15061,7 +16032,7 @@
 
     if-nez v3, :cond_5
 
-    .line 520
+    .line 525
     iget-boolean v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->wasSend:Z
 
     if-eqz v3, :cond_2
@@ -15079,19 +16050,19 @@
 
     if-eqz v3, :cond_4
 
-    .line 521
+    .line 526
     :cond_3
     iput-boolean v2, v0, Lorg/telegram/ui/Stories/recorder/StoryEntry;->editedMedia:Z
 
-    .line 523
+    .line 528
     :cond_4
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Stories/recorder/StoryEntry;->destroy(Z)V
 
-    .line 525
+    .line 530
     :cond_5
     iput-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
-    .line 527
+    .line 532
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onClosePrepareListener:Lorg/telegram/messenger/Utilities$Callback3;
 
     const/4 v3, 0x1
@@ -15102,18 +16073,18 @@
 
     if-eqz v4, :cond_7
 
-    .line 528
+    .line 533
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->prepareClosing:Z
 
     if-eqz v1, :cond_6
 
     return-void
 
-    .line 531
+    .line 536
     :cond_6
     iput-boolean v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->prepareClosing:Z
 
-    .line 532
+    .line 537
     invoke-virtual {v4}, Lorg/telegram/ui/Stories/recorder/PreviewView;->release()J
 
     move-result-wide v1
@@ -15122,23 +16093,23 @@
 
     move-result-object v1
 
-    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda48;
+    new-instance v2, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda49;
 
-    invoke-direct {v2, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda48;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+    invoke-direct {v2, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda49;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
     iget-boolean p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->wasSend:Z
 
-    .line 536
+    .line 541
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object p1
 
-    .line 532
+    .line 537
     invoke-interface {v0, v1, v2, p1}, Lorg/telegram/messenger/Utilities$Callback3;->run(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 
-    .line 540
+    .line 545
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
@@ -15146,35 +16117,35 @@
 
     if-nez p1, :cond_8
 
-    .line 541
+    .line 546
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/PreviewView;->set(Lorg/telegram/ui/Stories/recorder/StoryEntry;)V
 
     :cond_8
     const/4 v0, 0x0
 
-    .line 544
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda21;
+    .line 549
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda22;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda21;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda22;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-direct {p0, v0, p1, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateOpenTo(FZLjava/lang/Runnable;)V
 
-    .line 545
+    .line 550
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openType:I
 
     if-ne p1, v3, :cond_9
 
-    .line 546
+    .line 551
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
 
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 547
+    .line 552
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
     invoke-virtual {p1, v2, v3}, Lorg/telegram/ui/Stories/recorder/PreviewButtons;->appear(ZZ)V
 
-    .line 550
+    .line 555
     :cond_9
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->removeNotificationObservers()V
 
@@ -15184,7 +16155,7 @@
 .method public closeToWhenSent(Lorg/telegram/ui/Stories/recorder/StoryRecorder$ClosingViewProvider;)Lorg/telegram/ui/Stories/recorder/StoryRecorder;
     .locals 0
 
-    .line 397
+    .line 402
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->closingSourceProvider:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ClosingViewProvider;
 
     return-object p0
@@ -15193,22 +16164,22 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 2
 
-    .line 4486
+    .line 4715
     sget p2, Lorg/telegram/messenger/NotificationCenter;->albumsDidLoad:I
 
     const/4 p3, 0x0
 
     if-ne p1, p2, :cond_2
 
-    .line 4487
+    .line 4716
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     if-eqz p1, :cond_0
 
-    .line 4488
+    .line 4717
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/RecordControl;->updateGalleryImage()V
 
-    .line 4490
+    .line 4719
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lastGallerySelectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
@@ -15218,7 +16189,7 @@
 
     if-eqz p1, :cond_7
 
-    .line 4491
+    .line 4720
     :goto_0
     sget-object p1, Lorg/telegram/messenger/MediaController;->allMediaAlbums:Ljava/util/ArrayList;
 
@@ -15228,7 +16199,7 @@
 
     if-ge p3, p1, :cond_7
 
-    .line 4492
+    .line 4721
     sget-object p1, Lorg/telegram/messenger/MediaController;->allMediaAlbums:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -15237,7 +16208,7 @@
 
     check-cast p1, Lorg/telegram/messenger/MediaController$AlbumEntry;
 
-    .line 4493
+    .line 4722
     iget p2, p1, Lorg/telegram/messenger/MediaController$AlbumEntry;->bucketId:I
 
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lastGallerySelectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
@@ -15252,7 +16223,7 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 4494
+    .line 4723
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lastGallerySelectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     goto :goto_1
@@ -15262,13 +16233,13 @@
 
     goto :goto_0
 
-    .line 4499
+    .line 4728
     :cond_2
     sget p2, Lorg/telegram/messenger/NotificationCenter;->storiesDraftsUpdated:I
 
     if-ne p1, p2, :cond_3
 
-    .line 4500
+    .line 4729
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     if-eqz p1, :cond_7
@@ -15277,25 +16248,25 @@
 
     if-nez p2, :cond_7
 
-    .line 4501
+    .line 4730
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/RecordControl;->updateGalleryImage()V
 
     goto :goto_1
 
-    .line 4503
+    .line 4732
     :cond_3
     sget p2, Lorg/telegram/messenger/NotificationCenter;->storiesLimitUpdate:I
 
     if-ne p1, p2, :cond_7
 
-    .line 4504
+    .line 4733
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
     const/4 p2, 0x1
 
     if-ne p1, p2, :cond_6
 
-    .line 4505
+    .line 4734
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoError:Z
@@ -15345,7 +16316,7 @@
     :cond_6
     if-nez p1, :cond_7
 
-    .line 4507
+    .line 4736
     iget p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -15362,7 +16333,7 @@
 
     if-eqz p1, :cond_7
 
-    .line 4508
+    .line 4737
     iget p3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;->active(I)Z
@@ -15371,7 +16342,7 @@
 
     if-eqz p3, :cond_7
 
-    .line 4509
+    .line 4738
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showLimitReachedSheet(Lorg/telegram/ui/Stories/StoriesController$StoryLimit;Z)V
 
     :cond_7
@@ -15382,7 +16353,7 @@
 .method public getContext()Landroid/content/Context;
     .locals 1
 
-    .line 1498
+    .line 1520
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
     return-object v0
@@ -15391,12 +16362,12 @@
 .method public invalidateBlur()V
     .locals 1
 
-    .line 4021
+    .line 4189
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     if-eqz v0, :cond_0
 
-    .line 4022
+    .line 4190
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->invalidateBlur()V
 
     :cond_0
@@ -15406,30 +16377,30 @@
 .method public navigateTo(IZ)V
     .locals 12
 
-    .line 2833
+    .line 3001
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
     if-ne p1, v0, :cond_0
 
     return-void
 
-    .line 2838
+    .line 3006
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
-    .line 2840
+    .line 3008
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->pageAnimator:Landroid/animation/AnimatorSet;
 
     if-eqz v1, :cond_1
 
-    .line 2841
+    .line 3009
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 2844
+    .line 3012
     :cond_1
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onNavigateStart(II)V
 
-    .line 2845
+    .line 3013
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
     const/4 v2, 0x0
@@ -15442,7 +16413,7 @@
 
     if-ne p1, v4, :cond_2
 
-    .line 2846
+    .line 3014
     iget v5, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openProgress:F
 
     cmpl-float v5, v5, v3
@@ -15462,7 +16433,7 @@
     :cond_3
     if-nez p1, :cond_4
 
-    .line 2848
+    .line 3016
     iget-boolean v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isVideo:Z
 
     if-eqz v1, :cond_4
@@ -15479,7 +16450,7 @@
 
     if-eq p1, v4, :cond_5
 
-    .line 2850
+    .line 3018
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->videoTimeView:Lorg/telegram/ui/Stories/recorder/VideoTimeView;
 
     invoke-virtual {v1, v2, p2}, Lorg/telegram/ui/Stories/recorder/VideoTimeView;->show(ZZ)V
@@ -15493,24 +16464,24 @@
 
     if-eqz p2, :cond_1a
 
-    .line 2853
+    .line 3021
     new-instance p2, Landroid/animation/AnimatorSet;
 
     invoke-direct {p2}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->pageAnimator:Landroid/animation/AnimatorSet;
 
-    .line 2855
+    .line 3023
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2857
+    .line 3025
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
     if-eqz v7, :cond_7
 
-    .line 2858
+    .line 3026
     sget-object v8, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v9, v4, [F
@@ -15533,13 +16504,13 @@
 
     invoke-virtual {p2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2860
+    .line 3028
     :cond_7
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
     invoke-virtual {v7, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2861
+    .line 3029
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
     sget-object v8, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -15564,7 +16535,7 @@
 
     invoke-virtual {p2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2862
+    .line 3030
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     sget-object v8, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -15589,7 +16560,7 @@
 
     invoke-virtual {p2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2864
+    .line 3032
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     sget-object v8, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -15614,8 +16585,8 @@
 
     invoke-virtual {p2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2865
-    iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 3033
+    iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     sget-object v8, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
@@ -15639,7 +16610,7 @@
 
     invoke-virtual {p2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2866
+    .line 3034
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
 
     sget-object v8, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -15674,7 +16645,7 @@
 
     invoke-virtual {p2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2867
+    .line 3035
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     sget-object v8, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -15705,7 +16676,7 @@
 
     invoke-virtual {p2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2868
+    .line 3036
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
     sget-object v8, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -15730,7 +16701,7 @@
 
     invoke-virtual {p2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2869
+    .line 3037
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
     sget-object v8, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -15759,13 +16730,13 @@
 
     invoke-virtual {p2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2870
-    iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 3038
+    iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     invoke-virtual {v7, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2871
-    iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 3039
+    iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     sget-object v8, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
@@ -15779,7 +16750,7 @@
 
     invoke-virtual {p2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2872
+    .line 3040
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->hintTextView:Lorg/telegram/ui/Stories/recorder/HintTextView;
 
     sget-object v8, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -15808,7 +16779,7 @@
 
     invoke-virtual {p2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2873
+    .line 3041
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     sget-object v8, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -15833,7 +16804,7 @@
 
     invoke-virtual {p2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2874
+    .line 3042
     iget-object v7, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     sget-object v8, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -15862,7 +16833,7 @@
 
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2875
+    .line 3043
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -15887,7 +16858,7 @@
 
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2877
+    .line 3045
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->timelineView:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -15912,7 +16883,7 @@
 
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2879
+    .line 3047
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -15941,7 +16912,7 @@
 
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2880
+    .line 3048
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -15970,7 +16941,7 @@
 
     iput v5, v1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 2881
+    .line 3049
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     sget-object v5, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -16012,7 +16983,7 @@
 
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2882
+    .line 3050
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->downloadButton:Lorg/telegram/ui/Stories/recorder/DownloadButton;
 
     sget-object v5, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -16035,7 +17006,7 @@
 
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2885
+    .line 3053
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->zoomControlView:Lorg/telegram/ui/Components/ZoomControlView;
 
     sget-object v5, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -16050,42 +17021,42 @@
 
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2887
+    .line 3055
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->pageAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1, p2}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 2888
+    .line 3056
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->pageAnimator:Landroid/animation/AnimatorSet;
 
-    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$13;
+    new-instance v1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$14;
 
-    invoke-direct {v1, p0, v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$13;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;II)V
+    invoke-direct {v1, p0, v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$14;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;II)V
 
     invoke-virtual {p2, v1}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 2894
+    .line 3062
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->pageAnimator:Landroid/animation/AnimatorSet;
 
     const-wide/16 v0, 0x1cc
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2895
+    .line 3063
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->pageAnimator:Landroid/animation/AnimatorSet;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2896
+    .line 3064
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->pageAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
 
     goto/16 :goto_25
 
-    .line 2898
+    .line 3066
     :cond_1a
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraView:Lorg/telegram/ui/Stories/recorder/DualCameraView;
 
@@ -16100,11 +17071,11 @@
     :cond_1b
     move v7, v3
 
-    .line 2899
+    .line 3067
     :goto_14
     invoke-virtual {p2, v7}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 2901
+    .line 3069
     :cond_1c
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
@@ -16120,7 +17091,7 @@
     :goto_15
     invoke-virtual {p2, v7}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 2902
+    .line 3070
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
     if-nez p1, :cond_1e
@@ -16135,7 +17106,7 @@
     :goto_16
     invoke-virtual {p2, v7}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2903
+    .line 3071
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     if-ne p1, v4, :cond_1f
@@ -16150,8 +17121,8 @@
     :goto_17
     invoke-virtual {p2, v7}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 2904
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Landroid/widget/ImageView;
+    .line 3072
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->flashButton:Lorg/telegram/ui/Stories/recorder/ToggleButton2;
 
     if-nez p1, :cond_20
 
@@ -16163,9 +17134,9 @@
     move v7, v3
 
     :goto_18
-    invoke-virtual {p2, v7}, Landroid/widget/ImageView;->setAlpha(F)V
+    invoke-virtual {p2, v7}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2905
+    .line 3073
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dualButton:Lorg/telegram/ui/Stories/recorder/ToggleButton;
 
     if-nez p1, :cond_21
@@ -16190,7 +17161,7 @@
     :goto_19
     invoke-virtual {p2, v7}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2906
+    .line 3074
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     if-nez p1, :cond_22
@@ -16205,7 +17176,7 @@
     :goto_1a
     invoke-virtual {p2, v7}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2907
+    .line 3075
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     const/16 v7, 0x10
@@ -16226,7 +17197,7 @@
     :goto_1b
     invoke-virtual {p2, v8}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 2908
+    .line 3076
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
     if-nez p1, :cond_24
@@ -16241,7 +17212,7 @@
     :goto_1c
     invoke-virtual {p2, v8}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2909
+    .line 3077
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->modeSwitcherView:Lorg/telegram/ui/Stories/recorder/PhotoVideoSwitcherView;
 
     if-nez p1, :cond_25
@@ -16260,17 +17231,17 @@
     :goto_1d
     invoke-virtual {p2, v7}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 2910
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 3078
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     invoke-virtual {p2, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2911
-    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 3079
+    iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     invoke-virtual {p2, v6}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 2912
+    .line 3080
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->hintTextView:Lorg/telegram/ui/Stories/recorder/HintTextView;
 
     if-nez p1, :cond_26
@@ -16289,7 +17260,7 @@
     :goto_1e
     invoke-virtual {p2, v7}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2913
+    .line 3081
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     if-ne p1, v4, :cond_27
@@ -16304,7 +17275,7 @@
     :goto_1f
     invoke-virtual {p2, v7}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 2914
+    .line 3082
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
     if-ne p1, v4, :cond_28
@@ -16323,7 +17294,7 @@
     :goto_20
     invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 2915
+    .line 3083
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     if-ne p1, v4, :cond_29
@@ -16342,7 +17313,7 @@
     :goto_21
     invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 2916
+    .line 3084
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -16366,7 +17337,7 @@
 
     iput v1, p2, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 2917
+    .line 3085
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     if-ne p1, v4, :cond_2c
@@ -16398,7 +17369,7 @@
     :goto_22
     invoke-virtual {p2, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2918
+    .line 3086
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->downloadButton:Lorg/telegram/ui/Stories/recorder/DownloadButton;
 
     if-ne p1, v4, :cond_2d
@@ -16413,7 +17384,7 @@
     :goto_23
     invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 2920
+    .line 3088
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->timelineView:Lorg/telegram/ui/Stories/recorder/TimelineView;
 
     if-ne p1, v4, :cond_2e
@@ -16428,7 +17399,7 @@
     :goto_24
     invoke-virtual {p2, v1}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2921
+    .line 3089
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-ne p1, v4, :cond_2f
@@ -16438,7 +17409,7 @@
     :cond_2f
     invoke-virtual {p2, v3}, Landroid/view/View;->setAlpha(F)V
 
-    .line 2922
+    .line 3090
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onNavigateEnd(II)V
 
     :goto_25
@@ -16448,7 +17419,7 @@
 .method public navigateToPreviewWithPlayerAwait(Ljava/lang/Runnable;J)V
     .locals 3
 
-    .line 2809
+    .line 2977
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->awaitingPlayer:Z
 
     if-nez v0, :cond_2
@@ -16459,46 +17430,46 @@
 
     goto :goto_0
 
-    .line 2812
+    .line 2980
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->afterPlayerAwait:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_1
 
-    .line 2813
+    .line 2981
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
     :cond_1
     const/4 v0, 0x1
 
-    .line 2815
+    .line 2983
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewAlreadySet:Z
 
-    .line 2816
+    .line 2984
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->awaitingPlayer:Z
 
-    .line 2817
-    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda43;
+    .line 2985
+    new-instance v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda44;
 
-    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda43;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)V
+    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda44;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Ljava/lang/Runnable;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->afterPlayerAwait:Ljava/lang/Runnable;
 
-    .line 2824
+    .line 2992
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 2825
+    .line 2993
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->setVisibility(I)V
 
-    .line 2826
+    .line 2994
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
@@ -16507,14 +17478,14 @@
 
     invoke-virtual {p1, v1, v2, p2, p3}, Lorg/telegram/ui/Stories/recorder/PreviewView;->set(Lorg/telegram/ui/Stories/recorder/StoryEntry;Ljava/lang/Runnable;J)V
 
-    .line 2827
+    .line 2995
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewView:Lorg/telegram/ui/Stories/recorder/PreviewView;
 
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Stories/recorder/PreviewView;->setupAudio(Lorg/telegram/ui/Stories/recorder/StoryEntry;Z)V
 
-    .line 2828
+    .line 2996
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->afterPlayerAwait:Ljava/lang/Runnable;
 
     const-wide/16 p2, 0x190
@@ -16529,21 +17500,21 @@
 .method public onBackPressed()Z
     .locals 4
 
-    .line 2770
+    .line 2938
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->takingVideo:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 2771
+    .line 2939
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->recordControl:Lorg/telegram/ui/Stories/recorder/RecordControl;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/RecordControl;->stopRecording()V
 
     return v1
 
-    .line 2774
+    .line 2942
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->takingPhoto:Z
 
@@ -16551,7 +17522,7 @@
 
     return v1
 
-    .line 2777
+    .line 2945
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
@@ -16563,13 +17534,13 @@
 
     return v1
 
-    .line 2779
+    .line 2947
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->galleryListView:Lorg/telegram/ui/Stories/recorder/GalleryListView;
 
     if-eqz v0, :cond_4
 
-    .line 2780
+    .line 2948
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/GalleryListView;->onBackPressed()Z
 
     move-result v0
@@ -16578,18 +17549,18 @@
 
     return v1
 
-    .line 2783
+    .line 2951
     :cond_3
     invoke-direct {p0, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateGalleryListView(Z)V
 
     const/4 v0, 0x0
 
-    .line 2784
+    .line 2952
     iput-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->lastGallerySelectedAlbum:Lorg/telegram/messenger/MediaController$AlbumEntry;
 
     return v1
 
-    .line 2786
+    .line 2954
     :cond_4
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentEditMode:I
 
@@ -16607,7 +17578,7 @@
 
     return v1
 
-    .line 2788
+    .line 2956
     :cond_5
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentEditMode:I
 
@@ -16617,12 +17588,12 @@
 
     if-le v0, v2, :cond_6
 
-    .line 2789
+    .line 2957
     invoke-virtual {p0, v2, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->switchToEditMode(IZ)V
 
     return v1
 
-    .line 2791
+    .line 2959
     :cond_6
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentPage:I
 
@@ -16657,7 +17628,7 @@
 
     if-eqz v0, :cond_f
 
-    .line 2792
+    .line 2960
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
@@ -16671,7 +17642,7 @@
 
     return v1
 
-    .line 2794
+    .line 2962
     :cond_9
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromGallery:Z
 
@@ -16714,20 +17685,20 @@
 
     if-nez v0, :cond_e
 
-    .line 2795
+    .line 2963
     :cond_d
     invoke-virtual {p0, v1, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navigateTo(IZ)V
 
     goto :goto_0
 
-    .line 2797
+    .line 2965
     :cond_e
     invoke-direct {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showDismissEntry()V
 
     :goto_0
     return v1
 
-    .line 2801
+    .line 2969
     :cond_f
     invoke-virtual {p0, v3}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->close(Z)V
 
@@ -16739,7 +17710,7 @@
 
     const/4 v0, 0x1
 
-    .line 402
+    .line 407
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->open(Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;Z)V
 
     return-void
@@ -16748,7 +17719,7 @@
 .method public open(Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;Z)V
     .locals 7
 
-    .line 406
+    .line 411
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isShown:Z
 
     if-eqz v0, :cond_0
@@ -16758,13 +17729,13 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 410
+    .line 415
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->prepareClosing:Z
 
-    .line 412
+    .line 417
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->forceBackgroundVisible:Z
 
-    .line 414
+    .line 419
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowManager:Landroid/view/WindowManager;
 
     if-eqz v1, :cond_1
@@ -16779,7 +17750,7 @@
 
     if-nez v1, :cond_1
 
-    .line 415
+    .line 420
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowManager:Landroid/view/WindowManager;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
@@ -16788,7 +17759,7 @@
 
     invoke-interface {v1, v2, v3}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 418
+    .line 423
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->cameraViewThumb:Landroid/widget/ImageView;
 
@@ -16798,7 +17769,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 420
+    .line 425
     iget v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -16817,7 +17788,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 421
+    .line 426
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Stories/StoriesController$StoryLimit;->active(I)Z
@@ -16826,54 +17797,54 @@
 
     if-eqz v3, :cond_2
 
-    .line 422
+    .line 427
     invoke-direct {p0, v1, v2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->showLimitReachedSheet(Lorg/telegram/ui/Stories/StoriesController$StoryLimit;Z)V
 
-    .line 425
+    .line 430
     :cond_2
     invoke-virtual {p0, v0, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navigateTo(IZ)V
 
     const/4 v1, -0x1
 
-    .line 426
+    .line 431
     invoke-virtual {p0, v1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->switchToEditMode(IZ)V
 
     const/4 v1, 0x0
 
     if-eqz p1, :cond_3
 
-    .line 429
+    .line 434
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromSourceView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
 
-    .line 430
+    .line 435
     iget v3, p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->type:I
 
     iput v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openType:I
 
-    .line 431
+    .line 436
     iget-object v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromRect:Landroid/graphics/RectF;
 
     iget-object v4, p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->screenRect:Landroid/graphics/RectF;
 
     invoke-virtual {v3, v4}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
-    .line 432
+    .line 437
     iget p1, p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->rounding:F
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromRounding:F
 
-    .line 433
+    .line 438
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromSourceView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->hide()V
 
     goto :goto_0
 
-    .line 435
+    .line 440
     :cond_3
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openType:I
 
-    .line 436
+    .line 441
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromRect:Landroid/graphics/RectF;
 
     const/16 v3, 0x64
@@ -16906,7 +17877,7 @@
 
     const/16 p1, 0x8
 
-    .line 437
+    .line 442
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -16915,13 +17886,13 @@
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromRounding:F
 
-    .line 439
+    .line 444
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;->updateBackground()V
 
-    .line 440
+    .line 445
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     iget v3, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openType:I
@@ -16936,49 +17907,49 @@
     :goto_1
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 442
+    .line 447
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 443
+    .line 448
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;->setTranslationY(F)V
 
-    .line 444
+    .line 449
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;->setTranslationY2(F)V
 
-    .line 445
+    .line 450
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 446
+    .line 451
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 447
+    .line 452
     iput v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dismissProgress:F
 
-    .line 449
+    .line 454
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
     invoke-static {p1, v2}, Lorg/telegram/messenger/AndroidUtilities;->lockOrientation(Landroid/app/Activity;I)V
 
-    .line 451
+    .line 456
     new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda35;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda35;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;)V
 
     invoke-direct {p0, v0, p2, p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->animateOpenTo(FZLjava/lang/Runnable;)V
 
-    .line 453
+    .line 458
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->addNotificationObservers()V
 
     return-void
@@ -16987,7 +17958,7 @@
 .method public openEdit(Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;Lorg/telegram/ui/Stories/recorder/StoryEntry;JZ)V
     .locals 6
 
-    .line 457
+    .line 462
     iget-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->isShown:Z
 
     if-eqz v0, :cond_0
@@ -16997,13 +17968,13 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 461
+    .line 466
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->prepareClosing:Z
 
-    .line 463
+    .line 468
     iput-boolean v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->forceBackgroundVisible:Z
 
-    .line 465
+    .line 470
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowManager:Landroid/view/WindowManager;
 
     if-eqz v1, :cond_1
@@ -17018,7 +17989,7 @@
 
     if-nez v1, :cond_1
 
-    .line 466
+    .line 471
     iget-object v1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowManager:Landroid/view/WindowManager;
 
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->windowView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$WindowView;
@@ -17027,7 +17998,7 @@
 
     invoke-interface {v1, v2, v3}, Landroid/view/WindowManager;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 469
+    .line 474
     :cond_1
     iput-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
@@ -17035,7 +18006,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 470
+    .line 475
     iget-boolean p2, p2, Lorg/telegram/ui/Stories/recorder/StoryEntry;->isVideo:Z
 
     if-eqz p2, :cond_2
@@ -17054,38 +18025,38 @@
 
     if-eqz p1, :cond_3
 
-    .line 473
+    .line 478
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromSourceView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
 
-    .line 474
+    .line 479
     iget v2, p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->type:I
 
     iput v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openType:I
 
-    .line 475
+    .line 480
     iget-object v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromRect:Landroid/graphics/RectF;
 
     iget-object v3, p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->screenRect:Landroid/graphics/RectF;
 
     invoke-virtual {v2, v3}, Landroid/graphics/RectF;->set(Landroid/graphics/RectF;)V
 
-    .line 476
+    .line 481
     iget p1, p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->rounding:F
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromRounding:F
 
-    .line 477
+    .line 482
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromSourceView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$SourceView;->hide()V
 
     goto :goto_1
 
-    .line 479
+    .line 484
     :cond_3
     iput v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openType:I
 
-    .line 480
+    .line 485
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromRect:Landroid/graphics/RectF;
 
     const/16 v2, 0x64
@@ -17118,7 +18089,7 @@
 
     const/16 p1, 0x8
 
-    .line 481
+    .line 486
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -17127,13 +18098,13 @@
 
     iput p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->fromRounding:F
 
-    .line 483
+    .line 488
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;->updateBackground()V
 
-    .line 484
+    .line 489
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     iget v2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->openType:I
@@ -17150,70 +18121,70 @@
     :goto_2
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 486
+    .line 491
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 487
+    .line 492
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;->setTranslationY(F)V
 
-    .line 488
+    .line 493
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;->setTranslationY2(F)V
 
-    .line 489
+    .line 494
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     const/high16 v2, 0x3f800000    # 1.0f
 
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 490
+    .line 495
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->containerView:Lorg/telegram/ui/Stories/recorder/StoryRecorder$ContainerView;
 
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 491
+    .line 496
     iput p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->dismissProgress:F
 
-    .line 493
+    .line 498
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->activity:Landroid/app/Activity;
 
     invoke-static {p1, v1}, Lorg/telegram/messenger/AndroidUtilities;->lockOrientation(Landroid/app/Activity;I)V
 
-    .line 495
+    .line 500
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->outputEntry:Lorg/telegram/ui/Stories/recorder/StoryEntry;
 
     if-eqz p1, :cond_5
 
-    .line 496
+    .line 501
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionEdit:Lorg/telegram/ui/Stories/recorder/CaptionStory;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/recorder/StoryEntry;->caption:Ljava/lang/CharSequence;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 499
+    .line 504
     :cond_5
-    new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda45;
+    new-instance p1, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda47;
 
-    invoke-direct {p1, p0, p5}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda45;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
+    invoke-direct {p1, p0, p5}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$$ExternalSyntheticLambda47;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;Z)V
 
     invoke-virtual {p0, p1, p3, p4}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navigateToPreviewWithPlayerAwait(Ljava/lang/Runnable;J)V
 
-    .line 503
+    .line 508
     invoke-virtual {p0, v1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->navigateTo(IZ)V
 
     const/4 p1, -0x1
 
-    .line 504
+    .line 509
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->switchToEditMode(IZ)V
 
-    .line 506
+    .line 511
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->addNotificationObservers()V
 
     return-void
@@ -17222,7 +18193,7 @@
 .method public removeNotificationObservers()V
     .locals 2
 
-    .line 4522
+    .line 4751
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -17231,7 +18202,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 4523
+    .line 4752
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -17242,7 +18213,7 @@
 
     invoke-virtual {v0, p0, v1}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 4524
+    .line 4753
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -17259,7 +18230,7 @@
 .method public selectedPeerId(J)Lorg/telegram/ui/Stories/recorder/StoryRecorder;
     .locals 0
 
-    .line 4691
+    .line 4920
     iput-wide p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->selectedDialogId:J
 
     return-object p0
@@ -17268,12 +18239,12 @@
 .method public setIconMuted(ZZ)V
     .locals 8
 
-    .line 4666
+    .line 4895
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButtonDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-nez v0, :cond_0
 
-    .line 4667
+    .line 4896
     new-instance v0, Lorg/telegram/ui/Components/RLottieDrawable;
 
     sget v2, Lorg/telegram/messenger/R$raw;->media_mute_unmute:I
@@ -17302,10 +18273,10 @@
 
     const/high16 v1, 0x3fc00000    # 1.5f
 
-    .line 4668
+    .line 4897
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->multiplySpeed(F)V
 
-    .line 4670
+    .line 4899
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -17319,7 +18290,7 @@
 
     if-nez p2, :cond_2
 
-    .line 4672
+    .line 4901
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButtonDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     if-eqz p1, :cond_1
@@ -17337,7 +18308,7 @@
     :cond_2
     if-eqz p1, :cond_4
 
-    .line 4676
+    .line 4905
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButtonDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->getCurrentFrame()I
@@ -17346,25 +18317,25 @@
 
     if-le p1, v0, :cond_3
 
-    .line 4677
+    .line 4906
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButtonDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, v1, v1}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(IZ)V
 
-    .line 4679
+    .line 4908
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButtonDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 4680
+    .line 4909
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButtonDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
 
     goto :goto_1
 
-    .line 4682
+    .line 4911
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButtonDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -17386,13 +18357,13 @@
 
     goto :goto_1
 
-    .line 4685
+    .line 4914
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButtonDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
-    .line 4686
+    .line 4915
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButtonDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
@@ -17405,7 +18376,7 @@
 .method public setOnFullyOpenListener(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 703
+    .line 708
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onFullyOpenListener:Ljava/lang/Runnable;
 
     return-void
@@ -17424,7 +18395,7 @@
         }
     .end annotation
 
-    .line 708
+    .line 713
     iput-object p1, p0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onClosePrepareListener:Lorg/telegram/messenger/Utilities$Callback3;
 
     return-void
@@ -17439,31 +18410,31 @@
 
     move/from16 v2, p2
 
-    .line 3394
+    .line 3562
     iget v3, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentEditMode:I
 
     if-ne v3, v1, :cond_0
 
     return-void
 
-    .line 3399
+    .line 3567
     :cond_0
     iput v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->currentEditMode:I
 
-    .line 3401
+    .line 3569
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->editModeAnimator:Landroid/animation/AnimatorSet;
 
     const/4 v5, 0x0
 
     if-eqz v4, :cond_1
 
-    .line 3402
+    .line 3570
     invoke-virtual {v4}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 3403
+    .line 3571
     iput-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->editModeAnimator:Landroid/animation/AnimatorSet;
 
-    .line 3406
+    .line 3574
     :cond_1
     iget-object v4, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewButtons:Lorg/telegram/ui/Stories/recorder/PreviewButtons;
 
@@ -17493,12 +18464,12 @@
     :goto_0
     invoke-virtual {v4, v10, v2}, Lorg/telegram/ui/Stories/recorder/PreviewButtons;->appear(ZZ)V
 
-    .line 3408
+    .line 3576
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3410
+    .line 3578
     iget-object v10, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     if-nez v10, :cond_3
@@ -17519,17 +18490,17 @@
 
     if-eqz v10, :cond_5
 
-    .line 3412
+    .line 3580
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createFilterPhotoView()V
 
-    .line 3414
+    .line 3582
     iget-object v10, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     iput-object v10, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewTouchable:Lorg/telegram/ui/Stories/recorder/StoryRecorder$Touchable;
 
     if-eqz v10, :cond_4
 
-    .line 3415
+    .line 3583
     invoke-virtual {v10}, Lorg/telegram/ui/Components/PhotoFilterView;->getToolsView()Landroid/widget/FrameLayout;
 
     move-result-object v10
@@ -17542,13 +18513,13 @@
     :goto_2
     if-eqz v10, :cond_6
 
-    .line 3417
+    .line 3585
     invoke-virtual {v10, v7}, Landroid/view/View;->setAlpha(F)V
 
-    .line 3418
+    .line 3586
     invoke-virtual {v10, v8}, Landroid/view/View;->setVisibility(I)V
 
-    .line 3419
+    .line 3587
     sget-object v13, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v14, v9, [F
@@ -17561,7 +18532,7 @@
 
     invoke-virtual {v4, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3420
+    .line 3588
     sget-object v13, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v14, v9, [F
@@ -17581,10 +18552,10 @@
 
     if-eqz v10, :cond_6
 
-    .line 3423
+    .line 3591
     iput-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewTouchable:Lorg/telegram/ui/Stories/recorder/StoryRecorder$Touchable;
 
-    .line 3425
+    .line 3593
     invoke-virtual {v10}, Lorg/telegram/ui/Components/PhotoFilterView;->getToolsView()Landroid/widget/FrameLayout;
 
     move-result-object v10
@@ -17609,7 +18580,7 @@
 
     invoke-virtual {v4, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3426
+    .line 3594
     iget-object v10, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterView:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-virtual {v10}, Lorg/telegram/ui/Components/PhotoFilterView;->getToolsView()Landroid/widget/FrameLayout;
@@ -17638,16 +18609,16 @@
 
     if-nez v1, :cond_7
 
-    .line 3430
+    .line 3598
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->createPhotoPaintView()V
 
-    .line 3431
+    .line 3599
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     iput-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewTouchable:Lorg/telegram/ui/Stories/recorder/StoryRecorder$Touchable;
 
-    .line 3432
-    iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 3600
+    iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     sget-object v15, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
@@ -17661,7 +18632,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3433
+    .line 3601
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Stories/recorder/PaintView;->getTopLayout()Landroid/view/View;
@@ -17682,7 +18653,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3434
+    .line 3602
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Stories/recorder/PaintView;->getTopLayout()Landroid/view/View;
@@ -17711,7 +18682,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3435
+    .line 3603
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Stories/recorder/PaintView;->getBottomLayout()Landroid/view/View;
@@ -17730,7 +18701,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3436
+    .line 3604
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Stories/recorder/PaintView;->getBottomLayout()Landroid/view/View;
@@ -17757,7 +18728,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3437
+    .line 3605
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Stories/recorder/PaintView;->getWeightChooserView()Landroid/view/View;
@@ -17791,16 +18762,16 @@
     :cond_7
     if-nez v3, :cond_8
 
-    .line 3438
+    .line 3606
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     if-eqz v6, :cond_8
 
-    .line 3439
+    .line 3607
     iput-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewTouchable:Lorg/telegram/ui/Stories/recorder/StoryRecorder$Touchable;
 
-    .line 3440
-    iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Landroid/widget/ImageView;
+    .line 3608
+    iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->backButton:Lorg/telegram/ui/Stories/recorder/FlashViews$ImageViewInvertable;
 
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
@@ -17816,7 +18787,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3441
+    .line 3609
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Stories/recorder/PaintView;->getTopLayout()Landroid/view/View;
@@ -17835,7 +18806,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3442
+    .line 3610
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Stories/recorder/PaintView;->getTopLayout()Landroid/view/View;
@@ -17862,7 +18833,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3443
+    .line 3611
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Stories/recorder/PaintView;->getBottomLayout()Landroid/view/View;
@@ -17881,7 +18852,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3444
+    .line 3612
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Stories/recorder/PaintView;->getBottomLayout()Landroid/view/View;
@@ -17906,7 +18877,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3445
+    .line 3613
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->paintView:Lorg/telegram/ui/Stories/recorder/PaintView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Stories/recorder/PaintView;->getWeightChooserView()Landroid/view/View;
@@ -17939,7 +18910,7 @@
     :goto_4
     const/high16 v15, 0x3f800000    # 1.0f
 
-    .line 3448
+    .line 3616
     :goto_5
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
@@ -17971,7 +18942,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3449
+    .line 3617
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->playButton:Lorg/telegram/ui/Stories/recorder/PlayPauseButton;
 
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -18015,7 +18986,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3450
+    .line 3618
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->downloadButton:Lorg/telegram/ui/Stories/recorder/DownloadButton;
 
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -18042,7 +19013,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3454
+    .line 3622
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
@@ -18073,7 +19044,7 @@
 
     if-ne v1, v9, :cond_e
 
-    .line 3458
+    .line 3626
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -18090,7 +19061,7 @@
 
     const/16 v5, 0xa4
 
-    .line 3459
+    .line 3627
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -18100,7 +19071,7 @@
     :cond_e
     if-nez v1, :cond_f
 
-    .line 3461
+    .line 3629
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
@@ -18117,7 +19088,7 @@
 
     const/16 v5, 0x28
 
-    .line 3462
+    .line 3630
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -18130,7 +19101,7 @@
     :goto_a
     if-lez v5, :cond_10
 
-    .line 3467
+    .line 3635
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v6}, Landroid/widget/FrameLayout;->getHeight()I
@@ -18160,7 +19131,7 @@
     :cond_10
     move v5, v15
 
-    .line 3471
+    .line 3639
     :goto_b
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
@@ -18176,7 +19147,7 @@
 
     invoke-virtual {v4, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3472
+    .line 3640
     iget-object v6, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     sget-object v10, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
@@ -18195,7 +19166,7 @@
 
     if-ne v1, v5, :cond_11
 
-    .line 3474
+    .line 3642
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->previewContainer:Landroid/widget/FrameLayout;
 
     sget-object v6, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
@@ -18210,13 +19181,13 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3477
+    .line 3645
     :cond_11
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewCurvesControl:Lorg/telegram/ui/Components/PhotoFilterCurvesControl;
 
     if-eqz v5, :cond_13
 
-    .line 3478
+    .line 3646
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v10, v9, [F
@@ -18239,13 +19210,13 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3480
+    .line 3648
     :cond_13
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->photoFilterViewBlurControl:Lorg/telegram/ui/Components/PhotoFilterBlurControl;
 
     if-eqz v5, :cond_15
 
-    .line 3481
+    .line 3649
     sget-object v6, Landroid/view/View;->ALPHA:Landroid/util/Property;
 
     new-array v10, v9, [F
@@ -18268,7 +19239,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3484
+    .line 3652
     :cond_15
     iget-object v5, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->captionContainer:Landroid/widget/FrameLayout;
 
@@ -18291,54 +19262,54 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3486
+    .line 3654
     invoke-direct {v0, v3, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onSwitchEditModeStart(II)V
 
     if-eqz v2, :cond_18
 
-    .line 3488
+    .line 3656
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->editModeAnimator:Landroid/animation/AnimatorSet;
 
-    .line 3489
+    .line 3657
     invoke-virtual {v2, v4}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 3490
+    .line 3658
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->editModeAnimator:Landroid/animation/AnimatorSet;
 
     const-wide/16 v4, 0x140
 
     invoke-virtual {v2, v4, v5}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 3491
+    .line 3659
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->editModeAnimator:Landroid/animation/AnimatorSet;
 
     sget-object v4, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v2, v4}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 3492
+    .line 3660
     iget-object v2, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->editModeAnimator:Landroid/animation/AnimatorSet;
 
-    new-instance v4, Lorg/telegram/ui/Stories/recorder/StoryRecorder$17;
+    new-instance v4, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;
 
-    invoke-direct {v4, v0, v3, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$17;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;II)V
+    invoke-direct {v4, v0, v3, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder$18;-><init>(Lorg/telegram/ui/Stories/recorder/StoryRecorder;II)V
 
     invoke-virtual {v2, v4}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
     if-eqz v11, :cond_17
 
-    .line 3499
+    .line 3667
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->editModeAnimator:Landroid/animation/AnimatorSet;
 
     const-wide/16 v2, 0x78
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/AnimatorSet;->setStartDelay(J)V
 
-    .line 3501
+    .line 3669
     :cond_17
     iget-object v1, v0, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->editModeAnimator:Landroid/animation/AnimatorSet;
 
@@ -18346,7 +19317,7 @@
 
     goto :goto_f
 
-    .line 3503
+    .line 3671
     :cond_18
     :goto_e
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
@@ -18355,7 +19326,7 @@
 
     if-ge v8, v2, :cond_19
 
-    .line 3504
+    .line 3672
     invoke-virtual {v4, v8}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -18364,17 +19335,17 @@
 
     const-wide/16 v5, 0x1
 
-    .line 3505
+    .line 3673
     invoke-virtual {v2, v5, v6}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 3506
+    .line 3674
     invoke-virtual {v2}, Landroid/animation/Animator;->start()V
 
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_e
 
-    .line 3508
+    .line 3676
     :cond_19
     invoke-direct {v0, v3, v1}, Lorg/telegram/ui/Stories/recorder/StoryRecorder;->onSwitchEditModeEnd(II)V
 

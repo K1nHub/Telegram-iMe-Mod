@@ -52,7 +52,7 @@ public final class OutputConvertToken {
     }
 
     public int hashCode() {
-        return (((this.tokenInfo.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.minLimit)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1011m(this.maxLimit);
+        return (((this.tokenInfo.hashCode() * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.minLimit)) * 31) + StakingDetailedMetadataResponse$$ExternalSyntheticBackport0.m1012m(this.maxLimit);
     }
 
     public String toString() {

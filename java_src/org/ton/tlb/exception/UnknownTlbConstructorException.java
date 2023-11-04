@@ -7,7 +7,7 @@ import org.ton.bitstring.BitString;
 public final class UnknownTlbConstructorException extends IllegalArgumentException {
 
     /* renamed from: id */
-    private final BitString f2091id;
+    private final BitString f2103id;
 
     public /* synthetic */ UnknownTlbConstructorException(BitString bitString, int i, DefaultConstructorMarker defaultConstructorMarker) {
         this((i & 1) != 0 ? null : bitString);
@@ -39,7 +39,7 @@ public final class UnknownTlbConstructorException extends IllegalArgumentExcepti
             java.lang.String r0 = "Unknown constructor"
         L27:
             r2.<init>(r0)
-            r2.f2091id = r3
+            r2.f2103id = r3
             return
         */
         throw new UnsupportedOperationException("Method not decompiled: org.ton.tlb.exception.UnknownTlbConstructorException.<init>(org.ton.bitstring.BitString):void");

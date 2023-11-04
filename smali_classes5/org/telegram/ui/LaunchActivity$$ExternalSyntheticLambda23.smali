@@ -2,40 +2,78 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lcom/google/android/exoplayer2/util/Consumer;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
+
+.field public final synthetic f$1:I
+
+.field public final synthetic f$2:J
+
+.field public final synthetic f$3:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+.field public final synthetic f$4:Lorg/telegram/ui/DialogsActivity;
+
+.field public final synthetic f$5:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+.field public final synthetic f$6:Lorg/telegram/tgnet/TLRPC$User;
+
+.field public final synthetic f$7:Ljava/lang/String;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;
-
-    invoke-direct {v0}, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->INSTANCE:Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;IJLjava/util/concurrent/atomic/AtomicBoolean;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/LaunchActivity;
+
+    iput p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$1:I
+
+    iput-wide p3, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$2:J
+
+    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$3:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    iput-object p6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$4:Lorg/telegram/ui/DialogsActivity;
+
+    iput-object p7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$5:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    iput-object p8, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$6:Lorg/telegram/tgnet/TLRPC$User;
+
+    iput-object p9, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$7:Ljava/lang/String;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 0
+.method public final accept(Ljava/lang/Object;)V
+    .locals 10
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$DrzYahGlvTLNhQ1A1NS0ezUwIXc(Landroid/view/View;)V
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/LaunchActivity;
+
+    iget v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$1:I
+
+    iget-wide v2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$2:J
+
+    iget-object v4, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$3:Ljava/util/concurrent/atomic/AtomicBoolean;
+
+    iget-object v5, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$4:Lorg/telegram/ui/DialogsActivity;
+
+    iget-object v6, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$5:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    iget-object v7, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$6:Lorg/telegram/tgnet/TLRPC$User;
+
+    iget-object v8, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda23;->f$7:Ljava/lang/String;
+
+    move-object v9, p1
+
+    check-cast v9, Ljava/lang/Boolean;
+
+    invoke-static/range {v0 .. v9}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$G9TuR53pCC0L92zLBpyE4uBDQZo(Lorg/telegram/ui/LaunchActivity;IJLjava/util/concurrent/atomic/AtomicBoolean;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Ljava/lang/Boolean;)V
 
     return-void
 .end method

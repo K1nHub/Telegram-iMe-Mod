@@ -33,7 +33,7 @@ public class FileUploadOperation {
     private boolean isLastPart;
 
     /* renamed from: iv */
-    private byte[] f1528iv;
+    private byte[] f1529iv;
     private byte[] ivChange;
     private byte[] key;
     protected long lastProgressUpdateTime;
@@ -76,7 +76,7 @@ public class FileUploadOperation {
         private long bytesOffset;
 
         /* renamed from: iv */
-        private byte[] f1529iv;
+        private byte[] f1530iv;
 
         private UploadCachedResult() {
         }
@@ -118,7 +118,7 @@ public class FileUploadOperation {
         this.preferences = ApplicationLoader.applicationContext.getSharedPreferences("uploadinfo", 0);
         this.slowNetwork = ApplicationLoader.isConnectionSlow();
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m100d("start upload on slow network = " + this.slowNetwork);
+            FileLog.m102d("start upload on slow network = " + this.slowNetwork);
         }
         int i = this.slowNetwork ? 1 : 8;
         for (int i2 = 0; i2 < i; i2++) {
@@ -144,7 +144,7 @@ public class FileUploadOperation {
         if (this.slowNetwork != z) {
             this.slowNetwork = z;
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m100d("network changed to slow = " + this.slowNetwork);
+                FileLog.m102d("network changed to slow = " + this.slowNetwork);
             }
             int i = 0;
             while (true) {
@@ -164,7 +164,7 @@ public class FileUploadOperation {
             this.uploadedBytesCount = 0L;
             this.saveInfoTimes = 0;
             this.key = null;
-            this.f1528iv = null;
+            this.f1529iv = null;
             this.ivChange = null;
             this.currentUploadRequetsCount = 0;
             this.lastSavedPartNum = 0;
@@ -220,7 +220,7 @@ public class FileUploadOperation {
                 this.stream = null;
             }
         } catch (Exception e) {
-            FileLog.m97e(e);
+            FileLog.m99e(e);
         }
         AutoDeleteMediaTask.unlockFile(this.uploadingFilePath);
     }
@@ -320,7 +320,7 @@ public class FileUploadOperation {
         edit.putLong(this.fileKey + "_id", this.currentFileId);
         edit.remove(this.fileKey + "_uploaded");
         if (this.isEncrypted) {
-            edit.putString(this.fileKey + "_iv", Utilities.bytesToHex(this.f1528iv));
+            edit.putString(this.fileKey + "_iv", Utilities.bytesToHex(this.f1529iv));
             edit.putString(this.fileKey + "_ivc", Utilities.bytesToHex(this.ivChange));
             edit.putString(this.fileKey + "_key", Utilities.bytesToHex(this.key));
         }

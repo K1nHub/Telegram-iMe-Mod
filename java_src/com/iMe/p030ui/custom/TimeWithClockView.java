@@ -19,7 +19,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: TimeWithClockView.kt */
 /* renamed from: com.iMe.ui.custom.TimeWithClockView */
 /* loaded from: classes3.dex */
@@ -50,7 +50,7 @@ public final class TimeWithClockView extends AppCompatTextView {
             /* JADX WARN: Can't rename method to resolve collision */
             @Override // kotlin.jvm.functions.Function0
             public final Integer invoke() {
-                return Integer.valueOf(AndroidUtilities.m103dp(6.0f));
+                return Integer.valueOf(AndroidUtilities.m105dp(6.0f));
             }
         });
         this.clockPadding$delegate = lazy;

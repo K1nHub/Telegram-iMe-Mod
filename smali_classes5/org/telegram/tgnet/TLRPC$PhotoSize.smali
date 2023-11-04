@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 48554
+    .line 49313
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -40,7 +40,7 @@
 
     goto :goto_0
 
-    .line 48571
+    .line 49330
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photoSize_layer127;
 
@@ -48,7 +48,7 @@
 
     goto :goto_0
 
-    .line 48586
+    .line 49345
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photoSize;
 
@@ -56,7 +56,7 @@
 
     goto :goto_0
 
-    .line 48577
+    .line 49336
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photoSizeProgressive_layer127;
 
@@ -64,7 +64,7 @@
 
     goto :goto_0
 
-    .line 48574
+    .line 49333
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photoSizeEmpty;
 
@@ -72,7 +72,7 @@
 
     goto :goto_0
 
-    .line 48589
+    .line 49348
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize;
 
@@ -80,7 +80,7 @@
 
     goto :goto_0
 
-    .line 48592
+    .line 49351
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photoSizeProgressive;
 
@@ -88,7 +88,7 @@
 
     goto :goto_0
 
-    .line 48583
+    .line 49342
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photoCachedSize_layer127;
 
@@ -96,7 +96,7 @@
 
     goto :goto_0
 
-    .line 48580
+    .line 49339
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photoStrippedSize;
 
@@ -104,7 +104,7 @@
 
     goto :goto_0
 
-    .line 48568
+    .line 49327
     :sswitch_8
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_photoPathSize;
 
@@ -119,7 +119,7 @@
 
     goto :goto_1
 
-    .line 48596
+    .line 49355
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -147,15 +147,15 @@
     :goto_1
     if-eqz v0, :cond_6
 
-    .line 48599
+    .line 49358
     invoke-virtual {v0, p6, p8}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
-    .line 48600
+    .line 49359
     iget-object p6, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     if-nez p6, :cond_6
 
-    .line 48601
+    .line 49360
     iget-object p6, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
     invoke-static {p6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -178,7 +178,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 48602
+    .line 49361
     :cond_2
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_fileLocationToBeDeprecated;
 
@@ -190,10 +190,10 @@
 
     neg-long p0, p0
 
-    .line 48604
+    .line 49363
     iput-wide p0, v2, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    .line 48605
+    .line 49364
     iget-object p0, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
@@ -211,10 +211,10 @@
 
     neg-long p0, p2
 
-    .line 48607
+    .line 49366
     iput-wide p0, v2, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    .line 48608
+    .line 49367
     iget-object p0, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
@@ -234,10 +234,10 @@
 
     neg-long p0, p4
 
-    .line 48610
+    .line 49369
     iput-wide p0, v2, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
 
-    .line 48611
+    .line 49370
     iget-object p0, v0, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
@@ -250,7 +250,7 @@
 
     goto :goto_2
 
-    .line 48614
+    .line 49373
     :cond_5
     new-instance p0, Lorg/telegram/tgnet/TLRPC$TL_fileLocationUnavailable;
 

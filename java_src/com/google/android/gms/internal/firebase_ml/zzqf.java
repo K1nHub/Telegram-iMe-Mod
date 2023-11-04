@@ -76,7 +76,7 @@ public final class zzqf implements zzno<zzit, zzqe> {
         } catch (PackageManager.NameNotFoundException e) {
             GmsLogger gmsLogger = zzass;
             String valueOf = String.valueOf(applicationContext.getPackageName());
-            gmsLogger.m1096e("ImageAnnotatorTask", valueOf.length() != 0 ? "No such package: ".concat(valueOf) : new String("No such package: "), e);
+            gmsLogger.m1097e("ImageAnnotatorTask", valueOf.length() != 0 ? "No such package: ".concat(valueOf) : new String("No such package: "), e);
             return apiKey;
         }
     }
@@ -88,14 +88,14 @@ public final class zzqf implements zzno<zzit, zzqe> {
             if (packageCertificateHashBytes == null) {
                 GmsLogger gmsLogger = zzass;
                 String valueOf = String.valueOf(str);
-                gmsLogger.m1097e("ImageAnnotatorTask", valueOf.length() != 0 ? "Could not get fingerprint hash: ".concat(valueOf) : new String("Could not get fingerprint hash: "));
+                gmsLogger.m1098e("ImageAnnotatorTask", valueOf.length() != 0 ? "Could not get fingerprint hash: ".concat(valueOf) : new String("Could not get fingerprint hash: "));
                 return null;
             }
             return Hex.bytesToStringUppercase(packageCertificateHashBytes, false);
         } catch (PackageManager.NameNotFoundException e) {
             GmsLogger gmsLogger2 = zzass;
             String valueOf2 = String.valueOf(str);
-            gmsLogger2.m1096e("ImageAnnotatorTask", valueOf2.length() != 0 ? "No such package: ".concat(valueOf2) : new String("No such package: "), e);
+            gmsLogger2.m1097e("ImageAnnotatorTask", valueOf2.length() != 0 ? "No such package: ".concat(valueOf2) : new String("No such package: "), e);
             return null;
         }
     }
@@ -121,7 +121,7 @@ public final class zzqf implements zzno<zzit, zzqe> {
                 String spatulaHeader = getSpatulaHeader();
                 this.zzbak = spatulaHeader;
                 if (TextUtils.isEmpty(spatulaHeader)) {
-                    zzass.m1097e("ImageAnnotatorTask", "Failed to contact Google Play services for certificate fingerprint matching. Please ensure you have latest Google Play services installed");
+                    zzass.m1098e("ImageAnnotatorTask", "Failed to contact Google Play services for certificate fingerprint matching. Please ensure you have latest Google Play services installed");
                     throw new FirebaseMLException("Failed to contact Google Play services for certificate fingerprint matching. Please ensure you have latest Google Play services installed", 14);
                 }
             }
@@ -136,7 +136,7 @@ public final class zzqf implements zzno<zzit, zzqe> {
             StringBuilder sb = new StringBuilder(valueOf.length() + 44);
             sb.append("batchAnnotateImages call failed with error: ");
             sb.append(valueOf);
-            gmsLogger.m1097e("ImageAnnotatorTask", sb.toString());
+            gmsLogger.m1098e("ImageAnnotatorTask", sb.toString());
             if (this.zzbal) {
                 Log.d("ImageAnnotatorTask", "If you are developing / testing on a simulator, either register your development app on Firebase console or turn off enforceCertFingerprintMatch()");
             }
@@ -170,7 +170,7 @@ public final class zzqf implements zzno<zzit, zzqe> {
             }
             throw new FirebaseMLException(message, i);
         } catch (IOException e2) {
-            zzass.m1096e("ImageAnnotatorTask", "batchAnnotateImages call failed with exception: ", e2);
+            zzass.m1097e("ImageAnnotatorTask", "batchAnnotateImages call failed with exception: ", e2);
             throw new FirebaseMLException("Cloud Vision batchAnnotateImages call failure", 13, e2);
         }
     }

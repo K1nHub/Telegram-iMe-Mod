@@ -241,7 +241,7 @@
     .line 51
     new-instance v1, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v2, "kotlin.Result"
+    const-string/jumbo v2, "kotlin.Result"
 
     invoke-direct {v1, v2}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 
@@ -275,7 +275,7 @@
 
     sput-object v2, Lkotlin/reflect/jvm/internal/impl/builtins/StandardNames;->PREFIXES:Ljava/util/List;
 
-    const-string v2, "kotlin"
+    const-string/jumbo v2, "kotlin"
 
     .line 62
     invoke-static {v2}, Lkotlin/reflect/jvm/internal/impl/name/Name;->identifier(Ljava/lang/String;)Lkotlin/reflect/jvm/internal/impl/name/Name;

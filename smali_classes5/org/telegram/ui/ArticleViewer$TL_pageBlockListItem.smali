@@ -32,12 +32,12 @@
 .method private constructor <init>(Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 411
+    .line 409
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$PageBlock;-><init>()V
 
     const p1, 0x7fffffff
 
-    .line 417
+    .line 415
     iput p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->index:I
 
     return-void
@@ -46,7 +46,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ArticleViewer;Lorg/telegram/ui/ArticleViewer$1;)V
     .locals 0
 
-    .line 411
+    .line 409
     invoke-direct {p0, p1}, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;-><init>(Lorg/telegram/ui/ArticleViewer;)V
 
     return-void
@@ -55,7 +55,7 @@
 .method static synthetic access$11200(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;)Lorg/telegram/tgnet/TLRPC$RichText;
     .locals 0
 
-    .line 411
+    .line 409
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->textItem:Lorg/telegram/tgnet/TLRPC$RichText;
 
     return-object p0
@@ -64,7 +64,7 @@
 .method static synthetic access$11202(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;Lorg/telegram/tgnet/TLRPC$RichText;)Lorg/telegram/tgnet/TLRPC$RichText;
     .locals 0
 
-    .line 411
+    .line 409
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->textItem:Lorg/telegram/tgnet/TLRPC$RichText;
 
     return-object p1
@@ -73,7 +73,7 @@
 .method static synthetic access$12500(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;)I
     .locals 0
 
-    .line 411
+    .line 409
     iget p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->index:I
 
     return p0
@@ -82,7 +82,7 @@
 .method static synthetic access$12502(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;I)I
     .locals 0
 
-    .line 411
+    .line 409
     iput p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->index:I
 
     return p1
@@ -91,7 +91,7 @@
 .method static synthetic access$12600(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;)Ljava/lang/String;
     .locals 0
 
-    .line 411
+    .line 409
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->num:Ljava/lang/String;
 
     return-object p0
@@ -100,7 +100,7 @@
 .method static synthetic access$12602(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    .line 411
+    .line 409
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->num:Ljava/lang/String;
 
     return-object p1
@@ -109,7 +109,7 @@
 .method static synthetic access$19400(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;)Lorg/telegram/ui/ArticleViewer$DrawingText;
     .locals 0
 
-    .line 411
+    .line 409
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->numLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     return-object p0
@@ -118,7 +118,7 @@
 .method static synthetic access$19402(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;Lorg/telegram/ui/ArticleViewer$DrawingText;)Lorg/telegram/ui/ArticleViewer$DrawingText;
     .locals 0
 
-    .line 411
+    .line 409
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->numLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     return-object p1
@@ -127,7 +127,7 @@
 .method static synthetic access$6300(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;)Lorg/telegram/tgnet/TLRPC$PageBlock;
     .locals 0
 
-    .line 411
+    .line 409
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->blockItem:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     return-object p0
@@ -136,7 +136,7 @@
 .method static synthetic access$6302(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;Lorg/telegram/tgnet/TLRPC$PageBlock;)Lorg/telegram/tgnet/TLRPC$PageBlock;
     .locals 0
 
-    .line 411
+    .line 409
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->blockItem:Lorg/telegram/tgnet/TLRPC$PageBlock;
 
     return-object p1
@@ -145,7 +145,7 @@
 .method static synthetic access$6800(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;)Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;
     .locals 0
 
-    .line 411
+    .line 409
     iget-object p0, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->parent:Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;
 
     return-object p0
@@ -154,7 +154,7 @@
 .method static synthetic access$6802(Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;)Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;
     .locals 0
 
-    .line 411
+    .line 409
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$TL_pageBlockListItem;->parent:Lorg/telegram/ui/ArticleViewer$TL_pageBlockListParent;
 
     return-object p1

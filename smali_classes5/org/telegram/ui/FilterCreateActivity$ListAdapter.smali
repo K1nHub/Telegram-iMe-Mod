@@ -40,12 +40,12 @@
 .method public constructor <init>(Lorg/telegram/ui/FilterCreateActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1490
+    .line 1491
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;-><init>()V
 
-    .line 1491
+    .line 1492
     iput-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -54,7 +54,7 @@
 .method private static synthetic lambda$onCreateViewHolder$0(Lorg/telegram/ui/FilterCreateActivity;)V
     .locals 0
 
-    .line 1534
+    .line 1535
     invoke-static {p0}, Lorg/telegram/ui/FilterCreateActivity;->access$2500(Lorg/telegram/ui/FilterCreateActivity;)V
 
     return-void
@@ -63,7 +63,7 @@
 .method private synthetic lambda$onCreateViewHolder$1(Lorg/telegram/ui/Cells/PollEditTextCell;Landroid/view/View;Z)V
     .locals 0
 
-    .line 1565
+    .line 1566
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/PollEditTextCell;->getTextView2()Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     move-result-object p1
@@ -106,7 +106,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1507
+    .line 1508
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity;->access$300(Lorg/telegram/ui/FilterCreateActivity;)Ljava/util/ArrayList;
@@ -123,7 +123,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 1746
+    .line 1747
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity;->access$300(Lorg/telegram/ui/FilterCreateActivity;)Ljava/util/ArrayList;
@@ -142,7 +142,7 @@
 
     return p1
 
-    .line 1750
+    .line 1751
     :cond_0
     iget p1, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
@@ -152,7 +152,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 1496
+    .line 1497
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -185,7 +185,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 10
 
-    .line 1647
+    .line 1648
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity;->access$300(Lorg/telegram/ui/FilterCreateActivity;)Ljava/util/ArrayList;
@@ -207,7 +207,7 @@
 
     add-int/2addr p2, v1
 
-    .line 1651
+    .line 1652
     iget-object v2, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/FilterCreateActivity;->access$300(Lorg/telegram/ui/FilterCreateActivity;)Ljava/util/ArrayList;
@@ -247,7 +247,7 @@
     :cond_1
     move v9, v3
 
-    .line 1653
+    .line 1654
     :goto_0
     iget p2, v0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
@@ -255,12 +255,12 @@
 
     if-ne p2, v2, :cond_2
 
-    .line 1654
+    .line 1655
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lcom/iMe/fork/ui/view/FloatingActionButtonsCell;
 
-    .line 1655
+    .line 1656
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/FilterCreateActivity;->access$1300(Lorg/telegram/ui/FilterCreateActivity;)Lcom/iMe/storage/domain/model/filters/FilterSettingsModel;
@@ -275,7 +275,7 @@
 
     goto/16 :goto_7
 
-    .line 1657
+    .line 1658
     :cond_2
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -307,7 +307,7 @@
 
     goto/16 :goto_7
 
-    .line 1737
+    .line 1738
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
@@ -317,7 +317,7 @@
 
     invoke-static {p2, p1}, Lorg/telegram/ui/FilterCreateActivity;->access$2402(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;)Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;
 
-    .line 1738
+    .line 1739
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->access$2400(Lorg/telegram/ui/FilterCreateActivity;)Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;
@@ -328,35 +328,35 @@
 
     goto/16 :goto_7
 
-    .line 1732
+    .line 1733
     :cond_4
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/FilterCreateActivity$LinkCell;
 
-    .line 1733
-    invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$2300(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;
+    .line 1734
+    invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$2300(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;
 
     move-result-object p2
 
-    invoke-virtual {p1, p2, v9}, Lorg/telegram/ui/FilterCreateActivity$LinkCell;->setInvite(Lorg/telegram/tgnet/TLRPC$TL_exportedChatlistInvite;Z)V
+    invoke-virtual {p1, p2, v9}, Lorg/telegram/ui/FilterCreateActivity$LinkCell;->setInvite(Lorg/telegram/tgnet/tl/TL_chatlists$TL_exportedChatlistInvite;Z)V
 
     goto/16 :goto_7
 
-    .line 1726
+    .line 1727
     :cond_5
     iget-object p2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p2, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 1727
+    .line 1728
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$1900(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Ljava/lang/CharSequence;
 
     move-result-object v0
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1728
+    .line 1729
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->mContext:Landroid/content/Context;
@@ -381,20 +381,20 @@
 
     goto/16 :goto_7
 
-    .line 1720
+    .line 1721
     :cond_7
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;
 
-    .line 1721
+    .line 1722
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$400(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Z
 
     move-result p2
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;->setRed(Z)V
 
-    .line 1722
+    .line 1723
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$2200(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)I
 
     move-result p2
@@ -407,7 +407,7 @@
 
     goto/16 :goto_7
 
-    .line 1716
+    .line 1717
     :cond_8
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -433,7 +433,7 @@
 
     goto/16 :goto_7
 
-    .line 1668
+    .line 1669
     :cond_a
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
@@ -441,14 +441,14 @@
 
     check-cast v4, Lorg/telegram/ui/Cells/UserCell;
 
-    .line 1669
+    .line 1670
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$2000(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Ljava/lang/String;
 
     move-result-object p1
 
     if-eqz p1, :cond_b
 
-    .line 1670
+    .line 1671
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$2000(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Ljava/lang/String;
 
     move-result-object v5
@@ -465,7 +465,7 @@
 
     return-void
 
-    .line 1673
+    .line 1674
     :cond_b
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$2100(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)J
 
@@ -477,7 +477,7 @@
 
     if-lez v0, :cond_e
 
-    .line 1675
+    .line 1676
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -494,12 +494,12 @@
 
     if-eqz v5, :cond_16
 
-    .line 1678
+    .line 1679
     iget-boolean p1, v5, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
     if-eqz p1, :cond_c
 
-    .line 1679
+    .line 1680
     sget p1, Lorg/telegram/messenger/R$string;->Bot:I
 
     const-string p2, "Bot"
@@ -513,13 +513,13 @@
 
     goto :goto_4
 
-    .line 1680
+    .line 1681
     :cond_c
     iget-boolean p1, v5, Lorg/telegram/tgnet/TLRPC$User;->contact:Z
 
     if-eqz p1, :cond_d
 
-    .line 1681
+    .line 1682
     sget p1, Lorg/telegram/messenger/R$string;->FilterContact:I
 
     const-string p2, "FilterContact"
@@ -530,7 +530,7 @@
 
     goto :goto_3
 
-    .line 1683
+    .line 1684
     :cond_d
     sget p1, Lorg/telegram/messenger/R$string;->FilterNonContact:I
 
@@ -547,12 +547,12 @@
 
     const/4 v8, 0x0
 
-    .line 1685
+    .line 1686
     invoke-virtual/range {v4 .. v9}, Lorg/telegram/ui/Cells/UserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;IZ)V
 
     goto/16 :goto_7
 
-    .line 1688
+    .line 1689
     :cond_e
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
@@ -572,19 +572,19 @@
 
     if-eqz v5, :cond_16
 
-    .line 1691
+    .line 1692
     iget p1, v5, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
     if-eqz p1, :cond_10
 
-    .line 1692
+    .line 1693
     invoke-static {v5}, Lorg/telegram/messenger/ChatObject;->isChannelAndNotMegaGroup(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result p1
 
     if-eqz p1, :cond_f
 
-    .line 1693
+    .line 1694
     iget p1, v5, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
     const-string p2, "Subscribers"
@@ -595,7 +595,7 @@
 
     goto :goto_5
 
-    .line 1695
+    .line 1696
     :cond_f
     iget p1, v5, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
@@ -610,7 +610,7 @@
 
     goto :goto_6
 
-    .line 1697
+    .line 1698
     :cond_10
     invoke-static {v5}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -618,7 +618,7 @@
 
     if-nez p1, :cond_12
 
-    .line 1698
+    .line 1699
     invoke-static {v5}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result p1
@@ -629,7 +629,7 @@
 
     if-nez p1, :cond_11
 
-    .line 1699
+    .line 1700
     sget p1, Lorg/telegram/messenger/R$string;->ChannelPrivate:I
 
     const-string p2, "ChannelPrivate"
@@ -640,7 +640,7 @@
 
     goto :goto_5
 
-    .line 1701
+    .line 1702
     :cond_11
     sget p1, Lorg/telegram/messenger/R$string;->MegaPrivate:I
 
@@ -652,7 +652,7 @@
 
     goto :goto_5
 
-    .line 1704
+    .line 1705
     :cond_12
     invoke-static {v5}, Lorg/telegram/messenger/ChatObject;->isChannel(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -664,7 +664,7 @@
 
     if-nez p1, :cond_13
 
-    .line 1705
+    .line 1706
     sget p1, Lorg/telegram/messenger/R$string;->ChannelPublic:I
 
     const-string p2, "ChannelPublic"
@@ -675,7 +675,7 @@
 
     goto :goto_5
 
-    .line 1707
+    .line 1708
     :cond_13
     sget p1, Lorg/telegram/messenger/R$string;->MegaPublic:I
 
@@ -692,25 +692,25 @@
 
     const/4 v8, 0x0
 
-    .line 1710
+    .line 1711
     invoke-virtual/range {v4 .. v9}, Lorg/telegram/ui/Cells/UserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;IZ)V
 
     goto :goto_7
 
-    .line 1659
+    .line 1660
     :cond_14
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 1660
+    .line 1661
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$1800(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Z
 
     move-result p2
 
     if-eqz p2, :cond_15
 
-    .line 1661
+    .line 1662
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$1900(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Ljava/lang/CharSequence;
 
     move-result-object p2
@@ -723,7 +723,7 @@
 
     goto :goto_7
 
-    .line 1663
+    .line 1664
     :cond_15
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$1900(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Ljava/lang/CharSequence;
 
@@ -739,19 +739,19 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 6
 
-    .line 1514
+    .line 1515
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->FLOATING_ACTION_BUTTON:I
 
     if-ne p2, p1, :cond_0
 
-    .line 1515
+    .line 1516
     new-instance p1, Lcom/iMe/fork/ui/view/FloatingActionButtonsCell;
 
     iget-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p1, p2}, Lcom/iMe/fork/ui/view/FloatingActionButtonsCell;-><init>(Landroid/content/Context;)V
 
-    .line 1516
+    .line 1517
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -767,7 +767,7 @@
 
     packed-switch p2, :pswitch_data_0
 
-    .line 1613
+    .line 1614
     :pswitch_0
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -777,7 +777,7 @@
 
     goto/16 :goto_1
 
-    .line 1608
+    .line 1609
     :pswitch_1
     new-instance p1, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;
 
@@ -785,7 +785,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/FilterCreateActivity$CreateLinkCell;-><init>(Landroid/content/Context;)V
 
-    .line 1609
+    .line 1610
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -796,7 +796,7 @@
 
     goto/16 :goto_1
 
-    .line 1595
+    .line 1596
     :pswitch_2
     new-instance p1, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$2;
 
@@ -824,7 +824,7 @@
 
     goto/16 :goto_1
 
-    .line 1592
+    .line 1593
     :pswitch_3
     new-instance p1, Lorg/telegram/ui/FilterCreateActivity$HintInnerCell;
 
@@ -836,7 +836,7 @@
 
     goto/16 :goto_1
 
-    .line 1588
+    .line 1589
     :pswitch_4
     new-instance p1, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;
 
@@ -844,7 +844,7 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/FilterCreateActivity$ButtonCell;-><init>(Landroid/content/Context;)V
 
-    .line 1589
+    .line 1590
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -855,7 +855,7 @@
 
     goto/16 :goto_1
 
-    .line 1585
+    .line 1586
     :pswitch_5
     new-instance p1, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
@@ -865,7 +865,7 @@
 
     goto/16 :goto_1
 
-    .line 1531
+    .line 1532
     :pswitch_6
     new-instance p2, Lorg/telegram/ui/Cells/PollEditTextCell;
 
@@ -875,10 +875,10 @@
 
     invoke-direct {p2, v0, v1}, Lorg/telegram/ui/Cells/PollEditTextCell;-><init>(Landroid/content/Context;Landroid/view/View$OnClickListener;)V
 
-    .line 1532
+    .line 1533
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/PollEditTextCell;->createErrorTextView()V
 
-    .line 1533
+    .line 1534
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -887,7 +887,7 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 1534
+    .line 1535
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     new-instance v2, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
@@ -908,22 +908,22 @@
 
     invoke-static {v0, v2}, Lorg/telegram/ui/FilterCreateActivity;->access$502(Lorg/telegram/ui/FilterCreateActivity;Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;)Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
 
-    .line 1535
+    .line 1536
     new-instance v0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$1;
 
     invoke-direct {v0, p0, p2}, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$1;-><init>(Lorg/telegram/ui/FilterCreateActivity$ListAdapter;Lorg/telegram/ui/Cells/PollEditTextCell;)V
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Cells/PollEditTextCell;->addTextWatcher(Landroid/text/TextWatcher;)V
 
-    .line 1563
+    .line 1564
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/PollEditTextCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v0
 
-    .line 1564
+    .line 1565
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/PollEditTextCell;->setShowNextButton(Z)V
 
-    .line 1565
+    .line 1566
     new-instance v2, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, p0, p2}, Lorg/telegram/ui/FilterCreateActivity$ListAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/FilterCreateActivity$ListAdapter;Lorg/telegram/ui/Cells/PollEditTextCell;)V
@@ -932,20 +932,20 @@
 
     const v2, 0x10000006
 
-    .line 1566
+    .line 1567
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 1569
+    .line 1570
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1570
+    .line 1571
     invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1571
+    .line 1572
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->access$1200(Lorg/telegram/ui/FilterCreateActivity;)Z
@@ -983,7 +983,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 1572
+    .line 1573
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
@@ -1005,7 +1005,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 1573
+    .line 1574
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->access$500(Lorg/telegram/ui/FilterCreateActivity;)Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
@@ -1034,7 +1034,7 @@
 
     goto :goto_0
 
-    .line 1575
+    .line 1576
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
@@ -1060,7 +1060,7 @@
 
     goto :goto_0
 
-    .line 1578
+    .line 1579
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
@@ -1072,7 +1072,7 @@
 
     invoke-virtual {p1, p2}, Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;->setIcon(I)V
 
-    .line 1580
+    .line 1581
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
@@ -1082,7 +1082,7 @@
 
     goto :goto_1
 
-    .line 1524
+    .line 1525
     :pswitch_7
     new-instance p2, Lorg/telegram/ui/Cells/UserCell;
 
@@ -1094,10 +1094,10 @@
 
     invoke-direct {p2, v0, v1, v2, v2}, Lorg/telegram/ui/Cells/UserCell;-><init>(Landroid/content/Context;IIZ)V
 
-    .line 1525
+    .line 1526
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Cells/UserCell;->setSelfAsSavedMessages(Z)V
 
-    .line 1526
+    .line 1527
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1110,7 +1110,7 @@
 
     goto :goto_1
 
-    .line 1520
+    .line 1521
     :pswitch_8
     new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -1120,7 +1120,7 @@
 
     invoke-direct {p1, p2, v0}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;I)V
 
-    .line 1521
+    .line 1522
     sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
@@ -1129,7 +1129,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1616
+    .line 1617
     :goto_1
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -1154,7 +1154,7 @@
 .method public onViewAttachedToWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 3
 
-    .line 1621
+    .line 1622
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -1163,14 +1163,14 @@
 
     if-ne v0, v1, :cond_2
 
-    .line 1623
+    .line 1624
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/FilterCreateActivity;->access$1000(Lorg/telegram/ui/FilterCreateActivity;Landroid/view/View;)V
 
-    .line 1625
+    .line 1626
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->access$500(Lorg/telegram/ui/FilterCreateActivity;)Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
@@ -1183,14 +1183,14 @@
 
     const/4 v0, 0x1
 
-    .line 1626
+    .line 1627
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1627
+    .line 1628
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity;->access$600(Lorg/telegram/ui/FilterCreateActivity;)Ljava/lang/String;
@@ -1245,7 +1245,7 @@
 
     const/4 v0, 0x0
 
-    .line 1628
+    .line 1629
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
     :cond_2
@@ -1255,7 +1255,7 @@
 .method public onViewDetachedFromWindow(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 1634
+    .line 1635
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -1264,7 +1264,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 1636
+    .line 1637
     iget-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$ListAdapter;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity;->access$500(Lorg/telegram/ui/FilterCreateActivity;)Lcom/iMe/fork/ui/view/PollEditTextCellWrapper;
@@ -1275,22 +1275,22 @@
 
     move-result-object p1
 
-    .line 1637
+    .line 1638
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/PollEditTextCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object p1
 
-    .line 1638
+    .line 1639
     invoke-virtual {p1}, Landroid/widget/EditText;->isFocused()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1639
+    .line 1640
     invoke-virtual {p1}, Landroid/widget/EditText;->clearFocus()V
 
-    .line 1640
+    .line 1641
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
     :cond_0

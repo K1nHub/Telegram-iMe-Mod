@@ -77,7 +77,7 @@
 
     move-object/from16 v1, p1
 
-    .line 50
+    .line 55
     invoke-direct/range {p0 .. p6}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;-><init>(Landroid/content/Context;Landroid/widget/FrameLayout;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;Landroid/widget/FrameLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/Components/BlurringShader$BlurManager;)V
 
     const/4 v2, 0x0
@@ -96,27 +96,27 @@
 
     move-object/from16 v3, p7
 
-    .line 51
+    .line 56
     iput-object v3, v0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->applyCaption:Ljava/lang/Runnable;
 
-    .line 53
+    .line 58
     new-instance v3, Landroid/widget/ImageView;
 
     invoke-direct {v3, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoButton:Landroid/widget/ImageView;
 
-    .line 54
+    .line 59
     sget v4, Lorg/telegram/messenger/R$drawable;->filled_add_photo:I
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 55
+    .line 60
     sget-object v4, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 56
+    .line 61
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
     sget-object v5, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
@@ -129,7 +129,7 @@
 
     const/16 v4, 0x12
 
-    .line 57
+    .line 62
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -144,7 +144,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 58
+    .line 63
     invoke-virtual {v0, v2, v2}, Lorg/telegram/ui/Components/CaptionPhotoViewer;->setAddPhotoVisible(ZZ)V
 
     const/16 v9, 0x2c
@@ -161,21 +161,21 @@
 
     const/16 v15, 0xa
 
-    .line 59
+    .line 64
     invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v5
 
     invoke-virtual {v0, v3, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 61
+    .line 66
     new-instance v3, Landroid/widget/ImageView;
 
     invoke-direct {v3, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, v0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerButton:Landroid/widget/ImageView;
 
-    .line 62
+    .line 67
     new-instance v5, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;
 
     invoke-direct {v5}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;-><init>()V
@@ -184,7 +184,7 @@
 
     invoke-virtual {v3, v5}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 63
+    .line 68
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -195,12 +195,12 @@
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 64
+    .line 69
     sget-object v4, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v3, v4}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 65
+    .line 70
     invoke-virtual {v0, v2, v2}, Lorg/telegram/ui/Components/CaptionPhotoViewer;->setTimerVisible(ZZ)V
 
     const/16 v11, 0x55
@@ -209,14 +209,14 @@
 
     const/16 v14, 0xb
 
-    .line 66
+    .line 71
     invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v4
 
     invoke-virtual {v0, v3, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 68
+    .line 73
     new-instance v4, Lorg/telegram/ui/Stories/recorder/HintView2;
 
     const/4 v5, 0x3
@@ -227,12 +227,12 @@
 
     const/high16 v1, 0x41400000    # 12.0f
 
-    .line 82
+    .line 87
     invoke-virtual {v4, v1}, Lorg/telegram/ui/Stories/recorder/HintView2;->setRounding(F)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     const/16 v1, 0xc
 
-    .line 83
+    .line 88
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -253,24 +253,24 @@
 
     const/high16 v2, -0x3e580000    # -21.0f
 
-    .line 84
+    .line 89
     invoke-virtual {v4, v1, v2}, Lorg/telegram/ui/Stories/recorder/HintView2;->setJoint(FF)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 85
+    .line 90
     invoke-virtual {v4, v8}, Lorg/telegram/ui/Stories/recorder/HintView2;->setMultilineText(Z)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     const/16 v1, 0x50
 
     const/16 v2, 0x55
 
-    .line 86
+    .line 91
     invoke-static {v6, v1, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {v0, v4, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 88
+    .line 93
     new-instance v1, Lorg/telegram/ui/Components/CaptionPhotoViewer$$ExternalSyntheticLambda0;
 
     move-object/from16 v2, p2
@@ -296,23 +296,23 @@
 .method private changeTimer(I)V
     .locals 9
 
-    .line 195
+    .line 200
     iget v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timer:I
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 198
+    .line 203
     :cond_0
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/CaptionPhotoViewer;->setTimer(I)V
 
-    .line 199
+    .line 204
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->onTTLChange:Lorg/telegram/messenger/Utilities$Callback;
 
     if-eqz v0, :cond_1
 
-    .line 200
+    .line 205
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -334,7 +334,7 @@
 
     if-nez p1, :cond_3
 
-    .line 204
+    .line 209
     iget-boolean v6, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->isVideo:Z
 
     if-eqz v6, :cond_2
@@ -351,7 +351,7 @@
 
     move-result-object v6
 
-    .line 205
+    .line 210
     iget-object v7, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -360,22 +360,22 @@
 
     invoke-virtual {v7, v8}, Lorg/telegram/ui/Stories/recorder/HintView2;->setMaxWidthPx(I)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 206
+    .line 211
     iget-object v7, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {v7, v5}, Lorg/telegram/ui/Stories/recorder/HintView2;->setMultilineText(Z)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 207
+    .line 212
     iget-object v7, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {v7, v1, v4, v0, v4}, Lorg/telegram/ui/Stories/recorder/HintView2;->setInnerPadding(IIII)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 208
+    .line 213
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {v0, v5}, Lorg/telegram/ui/Stories/recorder/HintView2;->setIconMargin(I)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 209
+    .line 214
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -395,7 +395,7 @@
 
     if-ne p1, v6, :cond_5
 
-    .line 211
+    .line 216
     iget-boolean v6, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->isVideo:Z
 
     if-eqz v6, :cond_4
@@ -412,7 +412,7 @@
 
     move-result-object v6
 
-    .line 212
+    .line 217
     iget-object v7, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -421,22 +421,22 @@
 
     invoke-virtual {v7, v8}, Lorg/telegram/ui/Stories/recorder/HintView2;->setMaxWidthPx(I)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 213
+    .line 218
     iget-object v7, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {v7, v5}, Lorg/telegram/ui/Stories/recorder/HintView2;->setMultilineText(Z)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 214
+    .line 219
     iget-object v7, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {v7, v1, v4, v0, v4}, Lorg/telegram/ui/Stories/recorder/HintView2;->setInnerPadding(IIII)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 215
+    .line 220
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {v0, v5}, Lorg/telegram/ui/Stories/recorder/HintView2;->setIconMargin(I)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 216
+    .line 221
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -454,7 +454,7 @@
     :cond_5
     if-lez p1, :cond_8
 
-    .line 218
+    .line 223
     iget-boolean v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->isVideo:Z
 
     if-eqz v0, :cond_6
@@ -477,12 +477,12 @@
 
     move-result-object v6
 
-    .line 219
+    .line 224
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Stories/recorder/HintView2;->setMultilineText(Z)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 220
+    .line 225
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->getTextPaint()Landroid/text/TextPaint;
@@ -495,7 +495,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/HintView2;->setMaxWidthPx(I)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 221
+    .line 226
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     const/16 v1, 0xc
@@ -506,19 +506,19 @@
 
     invoke-virtual {v0, v1, v4, v2, v4}, Lorg/telegram/ui/Stories/recorder/HintView2;->setInnerPadding(IIII)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 222
+    .line 227
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Stories/recorder/HintView2;->setIconMargin(I)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 223
+    .line 228
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {v0, v3, v3}, Lorg/telegram/ui/Stories/recorder/HintView2;->setIconTranslate(FF)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 227
+    .line 232
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
@@ -550,14 +550,14 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 228
+    .line 233
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {v0, v6}, Lorg/telegram/ui/Stories/recorder/HintView2;->setText(Ljava/lang/CharSequence;)Lorg/telegram/ui/Stories/recorder/HintView2;
 
     if-lez p1, :cond_7
 
-    .line 229
+    .line 234
     sget p1, Lorg/telegram/messenger/R$raw;->fire_on:I
 
     goto :goto_4
@@ -565,7 +565,7 @@
     :cond_7
     sget p1, Lorg/telegram/messenger/R$raw;->fire_off:I
 
-    .line 230
+    .line 235
     :goto_4
     new-instance v0, Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -593,15 +593,15 @@
 
     invoke-direct {v0, p1, v2, v3, v1}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;II)V
 
-    .line 231
+    .line 236
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->start()V
 
-    .line 232
+    .line 237
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Stories/recorder/HintView2;->setIcon(Landroid/graphics/drawable/Drawable;)Lorg/telegram/ui/Stories/recorder/HintView2;
 
-    .line 233
+    .line 238
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/HintView2;->show()Lorg/telegram/ui/Stories/recorder/HintView2;
@@ -613,7 +613,7 @@
 .method private synthetic lambda$new$0(I)V
     .locals 0
 
-    .line 109
+    .line 114
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/CaptionPhotoViewer;->changeTimer(I)V
 
     return-void
@@ -622,7 +622,7 @@
 .method private synthetic lambda$new$1(Landroid/widget/FrameLayout;Landroid/view/View;)V
     .locals 6
 
-    .line 89
+    .line 94
     iget-object p2, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerPopup:Lorg/telegram/ui/Components/ItemOptions;
 
     if-eqz p2, :cond_0
@@ -633,25 +633,25 @@
 
     if-eqz p2, :cond_0
 
-    .line 90
+    .line 95
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerPopup:Lorg/telegram/ui/Components/ItemOptions;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ItemOptions;->dismiss()V
 
     const/4 p1, 0x0
 
-    .line 91
+    .line 96
     iput-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerPopup:Lorg/telegram/ui/Components/ItemOptions;
 
     return-void
 
-    .line 94
+    .line 99
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     invoke-virtual {p2}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
-    .line 96
+    .line 101
     new-instance p2, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;
 
     invoke-direct {p2}, Lorg/telegram/ui/Stories/DarkThemeResourceProvider;-><init>()V
@@ -666,10 +666,10 @@
 
     const/4 p2, 0x0
 
-    .line 97
+    .line 102
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/ItemOptions;->setDimAlpha(I)Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 98
+    .line 103
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerPopup:Lorg/telegram/ui/Components/ItemOptions;
 
     sget v0, Lorg/telegram/messenger/R$string;->TimerPeriodHint:I
@@ -682,12 +682,12 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/ItemOptions;->addText(Ljava/lang/CharSequence;I)Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 99
+    .line 104
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerPopup:Lorg/telegram/ui/Components/ItemOptions;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ItemOptions;->addGap()Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 100
+    .line 105
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->values:[I
 
     array-length v0, p1
@@ -701,7 +701,7 @@
 
     if-nez v2, :cond_1
 
-    .line 103
+    .line 108
     sget v3, Lorg/telegram/messenger/R$string;->TimerPeriodDoNotDelete:I
 
     invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -715,7 +715,7 @@
 
     if-ne v2, v3, :cond_2
 
-    .line 105
+    .line 110
     sget v3, Lorg/telegram/messenger/R$string;->TimerPeriodOnce:I
 
     invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
@@ -729,12 +729,12 @@
 
     const-string v4, "Seconds"
 
-    .line 107
+    .line 112
     invoke-static {v4, v2, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 109
+    .line 114
     :goto_1
     iget-object v4, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerPopup:Lorg/telegram/ui/Components/ItemOptions;
 
@@ -744,12 +744,12 @@
 
     invoke-virtual {v4, p2, v3, v5}, Lorg/telegram/ui/Components/ItemOptions;->add(ILjava/lang/CharSequence;Ljava/lang/Runnable;)Lorg/telegram/ui/Components/ItemOptions;
 
-    .line 110
+    .line 115
     iget v3, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timer:I
 
     if-ne v3, v2, :cond_3
 
-    .line 111
+    .line 116
     iget-object v2, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerPopup:Lorg/telegram/ui/Components/ItemOptions;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/ItemOptions;->putCheck()Lorg/telegram/ui/Components/ItemOptions;
@@ -759,7 +759,7 @@
 
     goto :goto_0
 
-    .line 114
+    .line 119
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerPopup:Lorg/telegram/ui/Components/ItemOptions;
 
@@ -773,7 +773,7 @@
 
     if-nez p1, :cond_0
 
-    .line 129
+    .line 134
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerButton:Landroid/widget/ImageView;
 
     const/16 v0, 0x8
@@ -789,7 +789,7 @@
 
     if-nez p1, :cond_0
 
-    .line 168
+    .line 173
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerButton:Landroid/widget/ImageView;
 
     const/16 v0, 0x8
@@ -813,7 +813,7 @@
 .method protected afterUpdateShownKeyboard(Z)V
     .locals 4
 
-    .line 285
+    .line 290
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerButton:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
@@ -836,7 +836,7 @@
     :goto_0
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 286
+    .line 291
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoButton:Landroid/widget/ImageView;
 
     if-nez p1, :cond_1
@@ -855,12 +855,12 @@
 
     if-eqz p1, :cond_2
 
-    .line 288
+    .line 293
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerButton:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 289
+    .line 294
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoButton:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
@@ -874,7 +874,7 @@
 
     if-nez p1, :cond_2
 
-    .line 269
+    .line 274
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerButton:Landroid/widget/ImageView;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerVisible:Z
@@ -895,7 +895,7 @@
     :goto_0
     invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 270
+    .line 275
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoButton:Landroid/widget/ImageView;
 
     iget-boolean v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoVisible:Z
@@ -910,13 +910,13 @@
     :goto_1
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 272
+    .line 277
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     if-eqz p1, :cond_3
 
-    .line 273
+    .line 278
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
     :cond_3
@@ -926,7 +926,7 @@
 .method protected clipChild(Landroid/view/View;)Z
     .locals 1
 
-    .line 243
+    .line 248
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     if-eq p1, v0, :cond_0
@@ -945,7 +945,7 @@
 .method protected getCaptionDefaultLimit()I
     .locals 1
 
-    .line 258
+    .line 263
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -960,7 +960,7 @@
 .method protected getCaptionLimit()I
     .locals 1
 
-    .line 253
+    .line 258
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -991,7 +991,7 @@
 .method protected getCaptionPremiumLimit()I
     .locals 1
 
-    .line 263
+    .line 268
     iget v0, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1006,7 +1006,7 @@
 .method protected getEditTextLeft()I
     .locals 1
 
-    .line 146
+    .line 151
     iget-boolean v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoVisible:Z
 
     if-eqz v0, :cond_0
@@ -1026,10 +1026,18 @@
     return v0
 .end method
 
+.method protected getEditTextStyle()I
+    .locals 1
+
+    const/4 v0, 0x3
+
+    return v0
+.end method
+
 .method public hasTimer()Z
     .locals 1
 
-    .line 183
+    .line 188
     iget-boolean v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerVisible:Z
 
     if-eqz v0, :cond_0
@@ -1052,7 +1060,7 @@
 .method protected onEditHeightChange(I)V
     .locals 2
 
-    .line 238
+    .line 243
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     const/16 v1, 0x22
@@ -1085,12 +1093,12 @@
 .method protected onTextChange()V
     .locals 1
 
-    .line 156
+    .line 161
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->applyCaption:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 157
+    .line 162
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -1100,7 +1108,7 @@
 .method protected onUpdateShowKeyboard(F)V
     .locals 2
 
-    .line 279
+    .line 284
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerButton:Landroid/widget/ImageView;
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -1109,7 +1117,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 280
+    .line 285
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoButton:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v1}, Landroid/widget/ImageView;->setAlpha(F)V
@@ -1120,10 +1128,10 @@
 .method public setAddPhotoVisible(ZZ)V
     .locals 5
 
-    .line 123
+    .line 128
     iput-boolean p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoVisible:Z
 
-    .line 124
+    .line 129
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1142,12 +1150,12 @@
 
     if-eqz p2, :cond_2
 
-    .line 126
+    .line 131
     iget-object p2, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoButton:Landroid/widget/ImageView;
 
     invoke-virtual {p2, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 127
+    .line 132
     iget-object p2, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoButton:Landroid/widget/ImageView;
 
     invoke-virtual {p2}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1190,12 +1198,12 @@
 
     move-result-object p1
 
-    .line 131
+    .line 136
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
     goto :goto_5
 
-    .line 133
+    .line 138
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoButton:Landroid/widget/ImageView;
 
@@ -1211,7 +1219,7 @@
     :goto_2
     invoke-virtual {p2, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 134
+    .line 139
     iget-object p2, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoButton:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_4
@@ -1224,7 +1232,7 @@
     :goto_3
     invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 135
+    .line 140
     iget-object p2, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoButton:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_5
@@ -1241,11 +1249,11 @@
     :goto_4
     invoke-virtual {p2, v3}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    .line 137
+    .line 142
     :goto_5
     invoke-virtual {p0}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->updateEditTextLeft()V
 
-    .line 139
+    .line 144
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->editText:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1256,7 +1264,7 @@
 
     const/16 p2, 0xc
 
-    .line 140
+    .line 145
     iget-boolean v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoVisible:Z
 
     if-eqz v0, :cond_6
@@ -1276,7 +1284,7 @@
 
     iput p2, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 141
+    .line 146
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->editText:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -1287,7 +1295,7 @@
 .method public setIsVideo(Z)V
     .locals 0
 
-    .line 151
+    .line 156
     iput-boolean p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->isVideo:Z
 
     return-void
@@ -1296,7 +1304,7 @@
 .method public setOnAddPhotoClick(Landroid/view/View$OnClickListener;)V
     .locals 1
 
-    .line 119
+    .line 124
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
@@ -1315,7 +1323,7 @@
         }
     .end annotation
 
-    .line 248
+    .line 253
     iput-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->onTTLChange:Lorg/telegram/messenger/Utilities$Callback;
 
     return-void
@@ -1324,10 +1332,10 @@
 .method public setTimer(I)V
     .locals 3
 
-    .line 187
+    .line 192
     iput p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timer:I
 
-    .line 188
+    .line 193
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerDrawable:Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;
 
     const/4 v1, 0x1
@@ -1360,12 +1368,12 @@
     :goto_1
     invoke-virtual {v0, p1, v2, v1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;->setValue(IZZ)V
 
-    .line 189
+    .line 194
     iget-object p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->hint:Lorg/telegram/ui/Stories/recorder/HintView2;
 
     if-eqz p1, :cond_2
 
-    .line 190
+    .line 195
     invoke-virtual {p1}, Lorg/telegram/ui/Stories/recorder/HintView2;->hide()V
 
     :cond_2
@@ -1375,10 +1383,10 @@
 .method public setTimerVisible(ZZ)V
     .locals 5
 
-    .line 162
+    .line 167
     iput-boolean p1, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerVisible:Z
 
-    .line 163
+    .line 168
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerButton:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1397,12 +1405,12 @@
 
     if-eqz p2, :cond_2
 
-    .line 165
+    .line 170
     iget-object p2, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerButton:Landroid/widget/ImageView;
 
     invoke-virtual {p2, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 166
+    .line 171
     iget-object p2, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerButton:Landroid/widget/ImageView;
 
     invoke-virtual {p2}, Landroid/widget/ImageView;->animate()Landroid/view/ViewPropertyAnimator;
@@ -1445,12 +1453,12 @@
 
     move-result-object p1
 
-    .line 170
+    .line 175
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
     goto :goto_5
 
-    .line 172
+    .line 177
     :cond_2
     iget-object p2, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerButton:Landroid/widget/ImageView;
 
@@ -1466,7 +1474,7 @@
     :goto_2
     invoke-virtual {p2, v4}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 173
+    .line 178
     iget-object p2, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerButton:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_4
@@ -1479,7 +1487,7 @@
     :goto_3
     invoke-virtual {p2, v0}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 174
+    .line 179
     iget-object p2, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerButton:Landroid/widget/ImageView;
 
     if-eqz p1, :cond_5
@@ -1496,7 +1504,7 @@
     :goto_4
     invoke-virtual {p2, v3}, Landroid/widget/ImageView;->setTranslationX(F)V
 
-    .line 177
+    .line 182
     :goto_5
     iget-object p1, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->editText:Lorg/telegram/ui/Components/EditTextEmoji;
 
@@ -1508,7 +1516,7 @@
 
     const/16 p2, 0xc
 
-    .line 178
+    .line 183
     iget-boolean v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->addPhotoVisible:Z
 
     if-eqz v0, :cond_6
@@ -1528,7 +1536,7 @@
 
     iput p2, p1, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
 
-    .line 179
+    .line 184
     iget-object p2, p0, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->editText:Lorg/telegram/ui/Components/EditTextEmoji;
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -1545,10 +1553,10 @@
 .method public updateColors(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 2
 
-    .line 300
+    .line 305
     invoke-super {p0, p1}, Lorg/telegram/ui/Stories/recorder/CaptionContainerView;->updateColors(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 301
+    .line 306
     iget-object v0, p0, Lorg/telegram/ui/Components/CaptionPhotoViewer;->timerDrawable:Lorg/telegram/ui/Stories/recorder/CaptionContainerView$PeriodDrawable;
 
     sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I

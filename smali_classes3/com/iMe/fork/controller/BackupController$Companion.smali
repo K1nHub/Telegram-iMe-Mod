@@ -28,7 +28,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 796
+    .line 797
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,7 +49,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 804
+    .line 805
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -64,7 +64,7 @@
 .method public final getInstance(I)Lcom/iMe/fork/controller/BackupController;
     .locals 3
 
-    .line 804
+    .line 805
     invoke-static {}, Lcom/iMe/fork/controller/BackupController;->access$getAccountInstances$cp()Lj$/util/concurrent/ConcurrentHashMap;
 
     move-result-object v0
@@ -107,14 +107,14 @@
 
     const/4 v3, 0x0
 
-    .line 808
+    .line 809
     invoke-static {p1, v1, v0, v2, v3}, Lkotlin/text/StringsKt;->startsWith$default(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 809
+    .line 810
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V

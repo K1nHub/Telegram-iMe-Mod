@@ -604,7 +604,7 @@
 .method public final onItemClick(Lcom/iMe/model/wallet/settings/NetworkSettingsItem;)V
     .locals 7
 
-    const-string v0, "item"
+    const-string/jumbo v0, "item"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

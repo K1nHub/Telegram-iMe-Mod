@@ -48,7 +48,7 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
                 }
             } else if (_state$FU.compareAndSet(this, obj, StateFlowKt.access$getNONE$p())) {
                 Result.Companion companion = Result.Companion;
-                ((CancellableContinuationImpl) obj).resumeWith(Result.m1935constructorimpl(Unit.INSTANCE));
+                ((CancellableContinuationImpl) obj).resumeWith(Result.m1940constructorimpl(Unit.INSTANCE));
                 return;
             }
         }
@@ -78,7 +78,7 @@ public final class StateFlowSlot extends AbstractSharedFlowSlot<StateFlowImpl<?>
                     }
                 }
                 Result.Companion companion = Result.Companion;
-                cancellableContinuationImpl.resumeWith(Result.m1935constructorimpl(Unit.INSTANCE));
+                cancellableContinuationImpl.resumeWith(Result.m1940constructorimpl(Unit.INSTANCE));
             }
             Object result = cancellableContinuationImpl.getResult();
             coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();

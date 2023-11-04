@@ -10,11 +10,11 @@
 
 .field public final synthetic f$1:J
 
-.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$StoryItem;
+.field public final synthetic f$2:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,7 +23,7 @@
 
     iput-wide p2, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda2;->f$1:J
 
-    iput-object p4, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda2;->f$2:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iput-object p4, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda2;->f$2:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
     return-void
 .end method
@@ -37,9 +37,9 @@
 
     iget-wide v1, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda2;->f$1:J
 
-    iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda2;->f$2:Lorg/telegram/tgnet/TLRPC$StoryItem;
+    iget-object v3, p0, Lorg/telegram/ui/Stories/StoriesController$UploadingStory$$ExternalSyntheticLambda2;->f$2:Lorg/telegram/tgnet/tl/TL_stories$StoryItem;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->$r8$lambda$vtTOY6LVObnpqPxYYjy5yHeyQpY(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;JLorg/telegram/tgnet/TLRPC$StoryItem;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Stories/StoriesController$UploadingStory;->$r8$lambda$dbF18RLIIQ3sN5KgNBLaSMvPSiw(Lorg/telegram/ui/Stories/StoriesController$UploadingStory;JLorg/telegram/tgnet/tl/TL_stories$StoryItem;)V
 
     return-void
 .end method

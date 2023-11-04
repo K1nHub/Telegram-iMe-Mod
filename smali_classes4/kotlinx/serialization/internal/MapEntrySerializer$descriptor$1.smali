@@ -100,7 +100,7 @@
 
     move-result-object v3
 
-    const-string v2, "key"
+    const-string/jumbo v2, "key"
 
     const/4 v4, 0x0
 

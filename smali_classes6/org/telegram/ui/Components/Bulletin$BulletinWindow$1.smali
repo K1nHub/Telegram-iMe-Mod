@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Bulletin$BulletinWindow;Lorg/telegram/ui/Components/Bulletin$Delegate;)V
     .locals 0
 
-    .line 1788
+    .line 1796
     iput-object p2, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->val$delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -48,7 +48,7 @@
 .method public clipWithGradient(I)Z
     .locals 1
 
-    .line 1801
+    .line 1809
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->val$delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
 
     if-eqz v0, :cond_0
@@ -73,7 +73,7 @@
 .method public getBottomOffset(I)I
     .locals 1
 
-    .line 1791
+    .line 1799
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->val$delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
 
     if-nez v0, :cond_0
@@ -94,7 +94,7 @@
 .method public getTopOffset(I)I
     .locals 1
 
-    .line 1796
+    .line 1804
     iget-object v0, p0, Lorg/telegram/ui/Components/Bulletin$BulletinWindow$1;->val$delegate:Lorg/telegram/ui/Components/Bulletin$Delegate;
 
     if-nez v0, :cond_0

@@ -15,13 +15,13 @@ import java.io.IOException;
 @SafeParcelable.Reserved({1})
 /* loaded from: classes3.dex */
 public final class MapStyleOptions extends AbstractSafeParcelable {
-    @SafeParcelable.Field(getter = "getJson", m1089id = 2)
+    @SafeParcelable.Field(getter = "getJson", m1090id = 2)
     private String zzb;
     private static final String zza = MapStyleOptions.class.getSimpleName();
     public static final Parcelable.Creator<MapStyleOptions> CREATOR = new zzh();
 
     @SafeParcelable.Constructor
-    public MapStyleOptions(@SafeParcelable.Param(m1088id = 2) String str) {
+    public MapStyleOptions(@SafeParcelable.Param(m1089id = 2) String str) {
         Preconditions.checkNotNull(str, "json must not be null");
         this.zzb = str;
     }

@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.source.rtsp.reader;
 
-import com.google.android.exoplayer2.C0479C;
+import com.google.android.exoplayer2.C0485C;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
 import com.google.android.exoplayer2.source.rtsp.RtpPacket;
@@ -19,7 +19,7 @@ final class RtpAmrReader implements RtpPayloadReader {
     private final RtpPayloadFormat payloadFormat;
     private final int sampleRate;
     private TrackOutput trackOutput;
-    private long firstReceivedTimestamp = C0479C.TIME_UNSET;
+    private long firstReceivedTimestamp = C0485C.TIME_UNSET;
     private int previousSequenceNumber = -1;
     private long startTimeOffsetUs = 0;
 
@@ -47,7 +47,7 @@ final class RtpAmrReader implements RtpPayloadReader {
         Assertions.checkStateNotNull(this.trackOutput);
         int i2 = this.previousSequenceNumber;
         if (i2 != -1 && i != (nextSequenceNumber = RtpPacket.getNextSequenceNumber(i2))) {
-            Log.m1106w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
+            Log.m1107w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
         }
         parsableByteArray.skipBytes(1);
         int frameSize = getFrameSize((parsableByteArray.peekUnsignedByte() >> 3) & 15, this.isWideBand);

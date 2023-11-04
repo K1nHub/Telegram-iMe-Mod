@@ -7,6 +7,7 @@ import com.iMe.model.dialog.DialogModel;
 import com.iMe.model.wallet.crypto.create.WalletCreationType;
 import com.iMe.p030ui.base.mvp.base.BaseView;
 import com.iMe.storage.domain.model.Result;
+import com.iMe.storage.domain.model.crypto.BlockchainType;
 import com.iMe.storage.domain.model.crypto.Network;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import io.reactivex.disposables.Disposable;
@@ -15,7 +16,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxConditionsView> implements CryptoBoxConditionsView {
     @Override // com.iMe.p030ui.base.mvp.base.BaseView
     public /* synthetic */ void removeSelfFromStackImmediately() {
@@ -166,14 +167,14 @@ public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxCondit
     }
 
     @Override // com.iMe.manager.wallet.create.WalletCreateManagerView
-    public void openCreateWalletIntroScreen(String str, WalletCreationType.Initial initial) {
-        OpenCreateWalletIntroScreenCommand openCreateWalletIntroScreenCommand = new OpenCreateWalletIntroScreenCommand(this, str, initial);
+    public void openCreateWalletIntroScreen(BlockchainType blockchainType, String str, WalletCreationType.Initial initial) {
+        OpenCreateWalletIntroScreenCommand openCreateWalletIntroScreenCommand = new OpenCreateWalletIntroScreenCommand(this, blockchainType, str, initial);
         this.viewCommands.beforeApply(openCreateWalletIntroScreenCommand);
         if (hasNotView().booleanValue()) {
             return;
         }
         for (View view : this.views) {
-            view.openCreateWalletIntroScreen(str, initial);
+            view.openCreateWalletIntroScreen(blockchainType, str, initial);
         }
         this.viewCommands.afterApply(openCreateWalletIntroScreenCommand);
     }
@@ -193,7 +194,7 @@ public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxCondit
 
     /* compiled from: CryptoBoxConditionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State$StartActivationFlowCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class StartActivationFlowCommand extends ViewCommand<CryptoBoxConditionsView> {
         StartActivationFlowCommand(CryptoBoxConditionsView$$State cryptoBoxConditionsView$$State) {
             super("startActivationFlow", OneExecutionStateStrategy.class);
@@ -207,7 +208,7 @@ public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxCondit
 
     /* compiled from: CryptoBoxConditionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State$OpenAddressScanCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class OpenAddressScanCommand extends ViewCommand<CryptoBoxConditionsView> {
         public final String url;
 
@@ -224,7 +225,7 @@ public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxCondit
 
     /* compiled from: CryptoBoxConditionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State$CopyNameToClipboardCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class CopyNameToClipboardCommand extends ViewCommand<CryptoBoxConditionsView> {
         public final String name;
 
@@ -241,7 +242,7 @@ public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxCondit
 
     /* compiled from: CryptoBoxConditionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State$ShowParticipationSuccessCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowParticipationSuccessCommand extends ViewCommand<CryptoBoxConditionsView> {
         ShowParticipationSuccessCommand(CryptoBoxConditionsView$$State cryptoBoxConditionsView$$State) {
             super("showParticipationSuccess", OneExecutionStateStrategy.class);
@@ -255,7 +256,7 @@ public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxCondit
 
     /* compiled from: CryptoBoxConditionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State$RenderScreenDataCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class RenderScreenDataCommand extends ViewCommand<CryptoBoxConditionsView> {
         public final String balanceText;
         public final String description;
@@ -288,7 +289,7 @@ public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxCondit
 
     /* compiled from: CryptoBoxConditionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State$RenderButtonCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class RenderButtonCommand extends ViewCommand<CryptoBoxConditionsView> {
         public final CryptoBoxActionButtonType buttonType;
 
@@ -305,7 +306,7 @@ public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxCondit
 
     /* compiled from: CryptoBoxConditionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowToastCommand extends ViewCommand<CryptoBoxConditionsView> {
         public final String text;
 
@@ -322,7 +323,7 @@ public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxCondit
 
     /* compiled from: CryptoBoxConditionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CryptoBoxConditionsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -343,7 +344,7 @@ public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxCondit
 
     /* compiled from: CryptoBoxConditionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CryptoBoxConditionsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -362,7 +363,7 @@ public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxCondit
 
     /* compiled from: CryptoBoxConditionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State$FinishScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class FinishScreenCommand extends ViewCommand<CryptoBoxConditionsView> {
         FinishScreenCommand(CryptoBoxConditionsView$$State cryptoBoxConditionsView$$State) {
             super("finishScreen", OneExecutionStateStrategy.class);
@@ -376,7 +377,7 @@ public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxCondit
 
     /* compiled from: CryptoBoxConditionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State$ShowActivationConfirmationDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowActivationConfirmationDialogCommand extends ViewCommand<CryptoBoxConditionsView> {
         public final Callbacks$Callback action;
         public final DialogModel dialogModel;
@@ -395,26 +396,28 @@ public class CryptoBoxConditionsView$$State extends MvpViewState<CryptoBoxCondit
 
     /* compiled from: CryptoBoxConditionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State$OpenCreateWalletIntroScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class OpenCreateWalletIntroScreenCommand extends ViewCommand<CryptoBoxConditionsView> {
+        public final BlockchainType blockchainType;
         public final String linkedWalletAddress;
         public final WalletCreationType.Initial walletCreationType;
 
-        OpenCreateWalletIntroScreenCommand(CryptoBoxConditionsView$$State cryptoBoxConditionsView$$State, String str, WalletCreationType.Initial initial) {
+        OpenCreateWalletIntroScreenCommand(CryptoBoxConditionsView$$State cryptoBoxConditionsView$$State, BlockchainType blockchainType, String str, WalletCreationType.Initial initial) {
             super("openCreateWalletIntroScreen", OneExecutionStateStrategy.class);
+            this.blockchainType = blockchainType;
             this.linkedWalletAddress = str;
             this.walletCreationType = initial;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CryptoBoxConditionsView cryptoBoxConditionsView) {
-            cryptoBoxConditionsView.openCreateWalletIntroScreen(this.linkedWalletAddress, this.walletCreationType);
+            cryptoBoxConditionsView.openCreateWalletIntroScreen(this.blockchainType, this.linkedWalletAddress, this.walletCreationType);
         }
     }
 
     /* compiled from: CryptoBoxConditionsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.cryptobox.conditions.CryptoBoxConditionsView$$State$ShowSelectOptionsDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowSelectOptionsDialogCommand extends ViewCommand<CryptoBoxConditionsView> {
         public final String[] items;
         public final DialogInterface.OnClickListener listener;

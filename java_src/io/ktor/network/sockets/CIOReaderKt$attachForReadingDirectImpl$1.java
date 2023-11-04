@@ -13,7 +13,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CIOReader.kt */
-@DebugMetadata(m143c = "io.ktor.network.sockets.CIOReaderKt$attachForReadingDirectImpl$1", m142f = "CIOReader.kt", m141l = {96, 108, 109, 96, 108, 109}, m140m = "invokeSuspend")
+@DebugMetadata(m145c = "io.ktor.network.sockets.CIOReaderKt$attachForReadingDirectImpl$1", m144f = "CIOReader.kt", m143l = {96, 108, 109, 96, 108, 109}, m142m = "invokeSuspend")
 /* loaded from: classes4.dex */
 public final class CIOReaderKt$attachForReadingDirectImpl$1 extends SuspendLambda implements Function2<WriterScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ ByteChannel $channel;

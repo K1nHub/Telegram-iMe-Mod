@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->newInstanceInForwardingEditor(JLorg/telegram/messenger/ForwardingMessagesParams;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ChatActivity;
+    value = Lorg/telegram/ui/ChatActivity;->newInstanceInForwardingEditor(JLorg/telegram/messenger/MessagePreviewParams;Lcom/iMe/fork/utils/Callbacks$Callback1;)Lorg/telegram/ui/ChatActivity;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,15 +22,19 @@
 
 .field final synthetic val$dialogId:J
 
+.field final synthetic val$params:Lorg/telegram/messenger/MessagePreviewParams;
+
 
 # direct methods
-.method constructor <init>(JLcom/iMe/fork/utils/Callbacks$Callback1;)V
+.method constructor <init>(Lorg/telegram/messenger/MessagePreviewParams;JLcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 0
 
-    .line 590
-    iput-wide p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$dialogId:J
+    .line 586
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$params:Lorg/telegram/messenger/MessagePreviewParams;
 
-    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$2;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
+    iput-wide p2, p0, Lorg/telegram/ui/ChatActivity$2;->val$dialogId:J
+
+    iput-object p4, p0, Lorg/telegram/ui/ChatActivity$2;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -50,21 +54,30 @@
         }
     .end annotation
 
-    .line 593
-    new-instance v0, Lorg/telegram/messenger/ForwardingMessagesParams;
+    .line 589
+    new-instance v0, Lorg/telegram/messenger/MessagePreviewParams;
 
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$2;->val$params:Lorg/telegram/messenger/MessagePreviewParams;
+
+    iget-boolean v2, v1, Lorg/telegram/messenger/MessagePreviewParams;->secret:Z
+
+    iget-boolean v1, v1, Lorg/telegram/messenger/MessagePreviewParams;->noforwards:Z
+
+    invoke-direct {v0, v2, v1}, Lorg/telegram/messenger/MessagePreviewParams;-><init>(ZZ)V
+
+    .line 590
     iget-wide v1, p0, Lorg/telegram/ui/ChatActivity$2;->val$dialogId:J
 
-    invoke-direct {v0, p1, v1, v2}, Lorg/telegram/messenger/ForwardingMessagesParams;-><init>(Ljava/util/ArrayList;J)V
+    invoke-virtual {v0, p1, v1, v2}, Lorg/telegram/messenger/MessagePreviewParams;->updateForward(Ljava/util/ArrayList;J)V
 
     const/4 p1, 0x1
 
-    .line 594
-    iput-boolean p1, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->hideForwardSendersName:Z
+    .line 591
+    iput-boolean p1, v0, Lorg/telegram/messenger/MessagePreviewParams;->hideForwardSendersName:Z
 
-    iput-boolean p1, v0, Lorg/telegram/messenger/ForwardingMessagesParams;->needForceHideForwardAuthor:Z
+    iput-boolean p1, v0, Lorg/telegram/messenger/MessagePreviewParams;->isAuthorHiddenForce:Z
 
-    .line 595
+    .line 592
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$2;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
     invoke-interface {p1, v0}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V

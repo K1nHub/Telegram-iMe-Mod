@@ -984,29 +984,36 @@
 
     iput-object v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;
 
+    .line 4622
+    iget v10, v8, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->flags:I
+
+    or-int/lit8 v10, v10, 0x10
+
+    iput v10, v8, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->flags:I
+
     const/4 v10, 0x5
 
-    .line 4622
+    .line 4623
     iput v10, v8, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->reply_to_msg_id:I
 
-    .line 4623
+    .line 4624
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;-><init>()V
 
     iput-object v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 4624
+    .line 4625
     iput-boolean v3, v5, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 4625
+    .line 4626
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v8, v5, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 4626
+    .line 4627
     sget v10, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v10}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -1019,14 +1026,14 @@
 
     iput-wide v10, v8, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4627
+    .line 4628
     new-instance v8, Lorg/telegram/messenger/MessageObject;
 
     sget v10, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-direct {v8, v10, v5, v4, v3}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 4628
+    .line 4629
     sget v5, Lorg/telegram/messenger/R$string;->NewThemePreviewName:I
 
     const-string v10, "NewThemePreviewName"
@@ -1039,88 +1046,88 @@
 
     const-string v5, "Test User"
 
-    .line 4629
+    .line 4630
     iput-object v5, v7, Lorg/telegram/messenger/MessageObject;->customReplyName:Ljava/lang/String;
 
     const-wide/16 v10, 0x1
 
-    .line 4630
+    .line 4631
     iput-wide v10, v8, Lorg/telegram/messenger/MessageObject;->eventId:J
 
-    .line 4631
+    .line 4632
     invoke-virtual {v8}, Lorg/telegram/messenger/MessageObject;->resetLayout()V
 
-    .line 4632
+    .line 4633
     iput-object v9, v8, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 4633
+    .line 4634
     iput-object v8, v7, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 4634
+    .line 4635
     iget-object v5, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4636
+    .line 4637
     iget-object v5, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4638
+    .line 4639
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
     add-int/lit8 v2, v2, 0x78
 
-    .line 4639
+    .line 4640
     iput v2, v5, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     const-wide/16 v7, 0x1
 
-    .line 4640
+    .line 4641
     iput-wide v7, v5, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     const/16 v2, 0x103
 
-    .line 4641
+    .line 4642
     iput v2, v5, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 4642
+    .line 4643
     iput-boolean v3, v5, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 4643
+    .line 4644
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v2, v5, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 4644
+    .line 4645
     iput v4, v5, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 4645
+    .line 4646
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;-><init>()V
 
     iput-object v2, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 4646
+    .line 4647
     iget v7, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v7, v7, 0x3
 
     iput v7, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 4647
+    .line 4648
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_document;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_document;-><init>()V
 
     iput-object v7, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 4648
+    .line 4649
     iget-object v2, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v2, v2, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -1129,35 +1136,35 @@
 
     new-array v6, v3, [B
 
-    .line 4649
+    .line 4650
     iput-object v6, v2, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
-    .line 4650
+    .line 4651
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;-><init>()V
 
-    .line 4651
+    .line 4652
     iput v15, v2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
     const-wide/high16 v6, 0x4008000000000000L    # 3.0
 
-    .line 4652
+    .line 4653
     iput-wide v6, v2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
 
-    .line 4653
+    .line 4654
     iput-boolean v4, v2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->voice:Z
 
     const/16 v6, 0x3f
 
     new-array v6, v6, [B
 
-    .line 4654
+    .line 4655
     fill-array-data v6, :array_0
 
     iput-object v6, v2, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->waveform:[B
 
-    .line 4657
+    .line 4658
     iget-object v6, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -1166,10 +1173,10 @@
 
     invoke-virtual {v6, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4658
+    .line 4659
     iput-boolean v4, v5, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 4659
+    .line 4660
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
@@ -1178,10 +1185,10 @@
 
     const-wide/16 v6, 0x0
 
-    .line 4660
+    .line 4661
     iput-wide v6, v2, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4661
+    .line 4662
     new-instance v2, Lorg/telegram/messenger/MessageObject;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$9300(Lorg/telegram/ui/ThemePreviewActivity;)I
@@ -1190,72 +1197,72 @@
 
     invoke-direct {v2, v1, v5, v4, v3}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 4662
+    .line 4663
     iput v4, v2, Lorg/telegram/messenger/MessageObject;->audioProgressSec:I
 
     const v1, 0x3e99999a    # 0.3f
 
-    .line 4663
+    .line 4664
     iput v1, v2, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
-    .line 4664
+    .line 4665
     iput-boolean v4, v2, Lorg/telegram/messenger/MessageObject;->useCustomPhoto:Z
 
-    .line 4665
+    .line 4666
     iget-object v1, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_4
 
-    .line 4667
+    .line 4668
     :cond_8
     iget-boolean v7, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->showSecretMessages:Z
 
     if-eqz v7, :cond_9
 
-    .line 4668
+    .line 4669
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_user;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_user;-><init>()V
 
     const-wide/32 v6, 0x7fffffff
 
-    .line 4669
+    .line 4670
     iput-wide v6, v5, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     const-string v6, "Me"
 
-    .line 4670
+    .line 4671
     iput-object v6, v5, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    .line 4672
+    .line 4673
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_user;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_user;-><init>()V
 
     const-wide/32 v7, 0x7ffffffe
 
-    .line 4673
+    .line 4674
     iput-wide v7, v6, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     const-string v7, "Serj"
 
-    .line 4674
+    .line 4675
     iput-object v7, v6, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    .line 4676
+    .line 4677
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 4677
+    .line 4678
     invoke-virtual {v7, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4678
+    .line 4679
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4679
+    .line 4680
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$9400(Lorg/telegram/ui/ThemePreviewActivity;)I
 
     move-result v8
@@ -1266,47 +1273,47 @@
 
     invoke-virtual {v8, v7, v4}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 4681
+    .line 4682
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
     const-string v8, "Guess why Half-Life 3 was never released."
 
-    .line 4682
+    .line 4683
     iput-object v8, v7, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
     add-int/lit16 v8, v2, 0x3c0
 
-    .line 4683
+    .line 4684
     iput v8, v7, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     const-wide/16 v9, -0x1
 
-    .line 4684
+    .line 4685
     iput-wide v9, v7, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     const/16 v11, 0x103
 
-    .line 4685
+    .line 4686
     iput v11, v7, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
     const v11, 0x7ffffffe
 
-    .line 4686
+    .line 4687
     iput v11, v7, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 4687
+    .line 4688
     new-instance v11, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;
 
     invoke-direct {v11}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;-><init>()V
 
     iput-object v11, v7, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 4688
+    .line 4689
     iput-boolean v3, v7, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 4689
+    .line 4690
     new-instance v11, Lorg/telegram/tgnet/TLRPC$TL_peerChat;
 
     invoke-direct {v11}, Lorg/telegram/tgnet/TLRPC$TL_peerChat;-><init>()V
@@ -1315,22 +1322,22 @@
 
     const-wide/16 v12, 0x1
 
-    .line 4690
+    .line 4691
     iput-wide v12, v11, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
-    .line 4691
+    .line 4692
     new-instance v11, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v11}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v11, v7, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 4692
+    .line 4693
     iget-wide v12, v6, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iput-wide v12, v11, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4693
+    .line 4694
     iget-object v11, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     new-instance v12, Lorg/telegram/messenger/MessageObject;
@@ -1343,41 +1350,41 @@
 
     invoke-virtual {v11, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4695
+    .line 4696
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
     const-string v11, "No.\nAnd every unnecessary ping of the dev delays the release for 10 days.\nEvery request for ETA delays the release for 2 weeks."
 
-    .line 4696
+    .line 4697
     iput-object v11, v7, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 4699
+    .line 4700
     iput v8, v7, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
-    .line 4700
+    .line 4701
     iput-wide v9, v7, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     const/16 v8, 0x103
 
-    .line 4701
+    .line 4702
     iput v8, v7, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 4702
+    .line 4703
     iput v4, v7, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 4703
+    .line 4704
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;-><init>()V
 
     iput-object v8, v7, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 4704
+    .line 4705
     iput-boolean v3, v7, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 4705
+    .line 4706
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_peerChat;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_peerChat;-><init>()V
@@ -1386,22 +1393,22 @@
 
     const-wide/16 v11, 0x1
 
-    .line 4706
+    .line 4707
     iput-wide v11, v8, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
-    .line 4707
+    .line 4708
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v8, v7, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 4708
+    .line 4709
     iget-wide v11, v6, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iput-wide v11, v8, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4709
+    .line 4710
     iget-object v6, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     new-instance v8, Lorg/telegram/messenger/MessageObject;
@@ -1414,43 +1421,43 @@
 
     invoke-virtual {v6, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4711
+    .line 4712
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
     const-string v7, "Is source code for Android coming anytime soon?"
 
-    .line 4712
+    .line 4713
     iput-object v7, v6, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
     add-int/lit16 v2, v2, 0x258
 
-    .line 4713
+    .line 4714
     iput v2, v6, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
-    .line 4714
+    .line 4715
     iput-wide v9, v6, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     const/16 v2, 0x103
 
-    .line 4715
+    .line 4716
     iput v2, v6, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 4716
+    .line 4717
     iput v4, v6, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 4717
+    .line 4718
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;-><init>()V
 
     iput-object v2, v6, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 4718
+    .line 4719
     iput-boolean v3, v6, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 4719
+    .line 4720
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_peerChat;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_peerChat;-><init>()V
@@ -1459,22 +1466,22 @@
 
     const-wide/16 v7, 0x1
 
-    .line 4720
+    .line 4721
     iput-wide v7, v2, Lorg/telegram/tgnet/TLRPC$Peer;->chat_id:J
 
-    .line 4721
+    .line 4722
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v2, v6, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 4722
+    .line 4723
     iget-wide v7, v5, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iput-wide v7, v2, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4723
+    .line 4724
     iget-object v2, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     new-instance v5, Lorg/telegram/messenger/MessageObject;
@@ -1489,13 +1496,13 @@
 
     goto/16 :goto_4
 
-    .line 4725
+    .line 4726
     :cond_9
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
-    .line 4726
+    .line 4727
     sget v8, Lorg/telegram/messenger/R$string;->ThemePreviewLine1:I
 
     const-string v9, "ThemePreviewLine1"
@@ -1508,27 +1515,27 @@
 
     add-int/lit8 v8, v2, 0x3c
 
-    .line 4727
+    .line 4728
     iput v8, v7, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     const-wide/16 v9, 0x1
 
-    .line 4728
+    .line 4729
     iput-wide v9, v7, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     const/16 v9, 0x103
 
-    .line 4729
+    .line 4730
     iput v9, v7, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 4730
+    .line 4731
     new-instance v9, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v9}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v9, v7, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 4731
+    .line 4732
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$9800(Lorg/telegram/ui/ThemePreviewActivity;)I
 
     move-result v10
@@ -1543,20 +1550,20 @@
 
     iput-wide v10, v9, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4732
+    .line 4733
     iput v4, v7, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 4733
+    .line 4734
     new-instance v9, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;
 
     invoke-direct {v9}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;-><init>()V
 
     iput-object v9, v7, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 4734
+    .line 4735
     iput-boolean v4, v7, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 4735
+    .line 4736
     new-instance v9, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v9}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
@@ -1565,10 +1572,10 @@
 
     const-wide/16 v10, 0x0
 
-    .line 4736
+    .line 4737
     iput-wide v10, v9, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4737
+    .line 4738
     new-instance v9, Lorg/telegram/messenger/MessageObject;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$9900(Lorg/telegram/ui/ThemePreviewActivity;)I
@@ -1577,12 +1584,12 @@
 
     invoke-direct {v9, v10, v7, v4, v3}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 4739
+    .line 4740
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
-    .line 4740
+    .line 4741
     sget v10, Lorg/telegram/messenger/R$string;->ThemePreviewLine2:I
 
     const-string v11, "ThemePreviewLine2"
@@ -1595,27 +1602,27 @@
 
     add-int/lit16 v10, v2, 0x3c0
 
-    .line 4741
+    .line 4742
     iput v10, v7, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     const-wide/16 v10, 0x1
 
-    .line 4742
+    .line 4743
     iput-wide v10, v7, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     const/16 v10, 0x103
 
-    .line 4743
+    .line 4744
     iput v10, v7, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 4744
+    .line 4745
     new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v10}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v10, v7, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 4745
+    .line 4746
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$10000(Lorg/telegram/ui/ThemePreviewActivity;)I
 
     move-result v11
@@ -1630,20 +1637,20 @@
 
     iput-wide v11, v10, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4746
+    .line 4747
     iput v4, v7, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 4747
+    .line 4748
     new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;
 
     invoke-direct {v10}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;-><init>()V
 
     iput-object v10, v7, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 4748
+    .line 4749
     iput-boolean v4, v7, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 4749
+    .line 4750
     new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v10}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
@@ -1652,10 +1659,10 @@
 
     const-wide/16 v11, 0x0
 
-    .line 4750
+    .line 4751
     iput-wide v11, v10, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4751
+    .line 4752
     iget-object v10, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     new-instance v11, Lorg/telegram/messenger/MessageObject;
@@ -1668,27 +1675,27 @@
 
     invoke-virtual {v10, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4753
+    .line 4754
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
     add-int/lit16 v10, v2, 0x82
 
-    .line 4754
+    .line 4755
     iput v10, v7, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     const-wide/16 v10, 0x1
 
-    .line 4755
+    .line 4756
     iput-wide v10, v7, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     const/16 v10, 0x103
 
-    .line 4756
+    .line 4757
     iput v10, v7, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 4757
+    .line 4758
     new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v10}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
@@ -1697,31 +1704,31 @@
 
     const/4 v5, 0x5
 
-    .line 4758
+    .line 4759
     iput v5, v7, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 4759
+    .line 4760
     new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
     invoke-direct {v10}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;-><init>()V
 
     iput-object v10, v7, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 4760
+    .line 4761
     iget v11, v10, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v11, v11, 0x3
 
     iput v11, v10, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 4761
+    .line 4762
     new-instance v11, Lorg/telegram/tgnet/TLRPC$TL_document;
 
     invoke-direct {v11}, Lorg/telegram/tgnet/TLRPC$TL_document;-><init>()V
 
     iput-object v11, v10, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 4762
+    .line 4763
     iget-object v10, v7, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v10, v10, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -1732,20 +1739,20 @@
 
     new-array v11, v3, [B
 
-    .line 4763
+    .line 4764
     iput-object v11, v10, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
-    .line 4764
+    .line 4765
     new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;
 
     invoke-direct {v10}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;-><init>()V
 
     const-wide v11, 0x406e600000000000L    # 243.0
 
-    .line 4765
+    .line 4766
     iput-wide v11, v10, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
 
-    .line 4766
+    .line 4767
     sget v11, Lorg/telegram/messenger/R$string;->ThemePreviewSongPerformer:I
 
     const-string v12, "ThemePreviewSongPerformer"
@@ -1756,7 +1763,7 @@
 
     iput-object v11, v10, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->performer:Ljava/lang/String;
 
-    .line 4767
+    .line 4768
     sget v11, Lorg/telegram/messenger/R$string;->ThemePreviewSongTitle:I
 
     const-string v12, "ThemePreviewSongTitle"
@@ -1767,7 +1774,7 @@
 
     iput-object v11, v10, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->title:Ljava/lang/String;
 
-    .line 4768
+    .line 4769
     iget-object v11, v7, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v11, v11, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -1776,17 +1783,17 @@
 
     invoke-virtual {v11, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4769
+    .line 4770
     iput-boolean v3, v7, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 4770
+    .line 4771
     new-instance v10, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v10}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v10, v7, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 4771
+    .line 4772
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$10200(Lorg/telegram/ui/ThemePreviewActivity;)I
 
     move-result v11
@@ -1801,7 +1808,7 @@
 
     iput-wide v11, v10, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4772
+    .line 4773
     iget-object v10, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     new-instance v11, Lorg/telegram/messenger/MessageObject;
@@ -1814,12 +1821,12 @@
 
     invoke-virtual {v10, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4774
+    .line 4775
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
-    .line 4775
+    .line 4776
     sget v10, Lorg/telegram/messenger/R$string;->ThemePreviewLine3:I
 
     const-string v11, "ThemePreviewLine3"
@@ -1830,59 +1837,66 @@
 
     iput-object v10, v7, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 4776
+    .line 4777
     iput v8, v7, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     const-wide/16 v10, 0x1
 
-    .line 4777
+    .line 4778
     iput-wide v10, v7, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     const/16 v8, 0x109
 
-    .line 4778
+    .line 4779
     iput v8, v7, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 4779
+    .line 4780
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v8, v7, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 4780
+    .line 4781
     iput v4, v7, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 4781
+    .line 4782
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_messageReplyHeader;-><init>()V
 
     iput-object v8, v7, Lorg/telegram/tgnet/TLRPC$Message;->reply_to:Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;
 
+    .line 4783
+    iget v10, v8, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->flags:I
+
+    or-int/lit8 v10, v10, 0x10
+
+    iput v10, v8, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->flags:I
+
     const/4 v5, 0x5
 
-    .line 4782
+    .line 4784
     iput v5, v8, Lorg/telegram/tgnet/TLRPC$MessageReplyHeader;->reply_to_msg_id:I
 
-    .line 4783
+    .line 4785
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaEmpty;-><init>()V
 
     iput-object v5, v7, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 4784
+    .line 4786
     iput-boolean v3, v7, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 4785
+    .line 4787
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v5, v7, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 4786
+    .line 4788
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$10400(Lorg/telegram/ui/ThemePreviewActivity;)I
 
     move-result v8
@@ -1897,7 +1911,7 @@
 
     iput-wide v10, v5, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4787
+    .line 4789
     new-instance v5, Lorg/telegram/messenger/MessageObject;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$10500(Lorg/telegram/ui/ThemePreviewActivity;)I
@@ -1906,7 +1920,7 @@
 
     invoke-direct {v5, v8, v7, v4, v3}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 4788
+    .line 4790
     sget v7, Lorg/telegram/messenger/R$string;->ThemePreviewLine3Reply:I
 
     const-string v8, "ThemePreviewLine3Reply"
@@ -1917,42 +1931,42 @@
 
     iput-object v7, v5, Lorg/telegram/messenger/MessageObject;->customReplyName:Ljava/lang/String;
 
-    .line 4789
+    .line 4791
     iput-object v9, v5, Lorg/telegram/messenger/MessageObject;->replyMessageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 4790
+    .line 4792
     iget-object v7, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4792
+    .line 4794
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
     add-int/lit8 v7, v2, 0x78
 
-    .line 4793
+    .line 4795
     iput v7, v5, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     const-wide/16 v7, 0x1
 
-    .line 4794
+    .line 4796
     iput-wide v7, v5, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     const/16 v7, 0x103
 
-    .line 4795
+    .line 4797
     iput v7, v5, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 4796
+    .line 4798
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v7, v5, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 4797
+    .line 4799
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$10600(Lorg/telegram/ui/ThemePreviewActivity;)I
 
     move-result v8
@@ -1967,31 +1981,31 @@
 
     iput-wide v10, v7, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4798
+    .line 4800
     iput v4, v5, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 4799
+    .line 4801
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaDocument;-><init>()V
 
     iput-object v7, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 4800
+    .line 4802
     iget v8, v7, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v8, v8, 0x3
 
     iput v8, v7, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 4801
+    .line 4803
     new-instance v8, Lorg/telegram/tgnet/TLRPC$TL_document;
 
     invoke-direct {v8}, Lorg/telegram/tgnet/TLRPC$TL_document;-><init>()V
 
     iput-object v8, v7, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
-    .line 4802
+    .line 4804
     iget-object v7, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -2000,35 +2014,35 @@
 
     new-array v6, v3, [B
 
-    .line 4803
+    .line 4805
     iput-object v6, v7, Lorg/telegram/tgnet/TLRPC$Document;->file_reference:[B
 
-    .line 4804
+    .line 4806
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_documentAttributeAudio;-><init>()V
 
-    .line 4805
+    .line 4807
     iput v15, v6, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->flags:I
 
     const-wide/high16 v7, 0x4008000000000000L    # 3.0
 
-    .line 4806
+    .line 4808
     iput-wide v7, v6, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->duration:D
 
-    .line 4807
+    .line 4809
     iput-boolean v4, v6, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->voice:Z
 
     const/16 v7, 0x3f
 
     new-array v7, v7, [B
 
-    .line 4808
+    .line 4810
     fill-array-data v7, :array_1
 
     iput-object v7, v6, Lorg/telegram/tgnet/TLRPC$DocumentAttribute;->waveform:[B
 
-    .line 4811
+    .line 4813
     iget-object v7, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$MessageMedia;->document:Lorg/telegram/tgnet/TLRPC$Document;
@@ -2037,10 +2051,10 @@
 
     invoke-virtual {v7, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4812
+    .line 4814
     iput-boolean v4, v5, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 4813
+    .line 4815
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
@@ -2049,10 +2063,10 @@
 
     const-wide/16 v7, 0x0
 
-    .line 4814
+    .line 4816
     iput-wide v7, v6, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4815
+    .line 4817
     new-instance v6, Lorg/telegram/messenger/MessageObject;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$10700(Lorg/telegram/ui/ThemePreviewActivity;)I
@@ -2061,79 +2075,79 @@
 
     invoke-direct {v6, v7, v5, v4, v3}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 4816
+    .line 4818
     iput v4, v6, Lorg/telegram/messenger/MessageObject;->audioProgressSec:I
 
     const v5, 0x3e99999a    # 0.3f
 
-    .line 4817
+    .line 4819
     iput v5, v6, Lorg/telegram/messenger/MessageObject;->audioProgress:F
 
-    .line 4818
+    .line 4820
     iput-boolean v4, v6, Lorg/telegram/messenger/MessageObject;->useCustomPhoto:Z
-
-    .line 4819
-    iget-object v5, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
-
-    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 4821
     iget-object v5, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
-    invoke-virtual {v5, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 4823
+    iget-object v5, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
+
+    invoke-virtual {v5, v9}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 4825
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_message;
 
     invoke-direct {v5}, Lorg/telegram/tgnet/TLRPC$TL_message;-><init>()V
 
     add-int/lit8 v6, v2, 0xa
 
-    .line 4824
+    .line 4826
     iput v6, v5, Lorg/telegram/tgnet/TLRPC$Message;->date:I
 
     const-wide/16 v6, 0x1
 
-    .line 4825
+    .line 4827
     iput-wide v6, v5, Lorg/telegram/tgnet/TLRPC$Message;->dialog_id:J
 
     const/16 v6, 0x101
 
-    .line 4826
+    .line 4828
     iput v6, v5, Lorg/telegram/tgnet/TLRPC$Message;->flags:I
 
-    .line 4827
+    .line 4829
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v6, v5, Lorg/telegram/tgnet/TLRPC$Message;->from_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 4828
+    .line 4830
     iput v4, v5, Lorg/telegram/tgnet/TLRPC$Message;->id:I
 
-    .line 4829
+    .line 4831
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPhoto;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPhoto;-><init>()V
 
     iput-object v6, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
-    .line 4830
+    .line 4832
     iget v7, v6, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
     or-int/lit8 v7, v7, 0x3
 
     iput v7, v6, Lorg/telegram/tgnet/TLRPC$MessageMedia;->flags:I
 
-    .line 4831
+    .line 4833
     new-instance v7, Lorg/telegram/tgnet/TLRPC$TL_photo;
 
     invoke-direct {v7}, Lorg/telegram/tgnet/TLRPC$TL_photo;-><init>()V
 
     iput-object v7, v6, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 4832
+    .line 4834
     iget-object v6, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
@@ -2142,53 +2156,53 @@
 
     iput-object v7, v6, Lorg/telegram/tgnet/TLRPC$Photo;->file_reference:[B
 
-    .line 4833
+    .line 4835
     iput-boolean v3, v6, Lorg/telegram/tgnet/TLRPC$Photo;->has_stickers:Z
 
     const-wide/16 v7, 0x1
 
-    .line 4834
+    .line 4836
     iput-wide v7, v6, Lorg/telegram/tgnet/TLRPC$Photo;->id:J
 
     const-wide/16 v7, 0x0
 
-    .line 4835
+    .line 4837
     iput-wide v7, v6, Lorg/telegram/tgnet/TLRPC$Photo;->access_hash:J
 
-    .line 4836
+    .line 4838
     iput v2, v6, Lorg/telegram/tgnet/TLRPC$Photo;->date:I
 
-    .line 4837
+    .line 4839
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_photoSize;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_photoSize;-><init>()V
 
-    .line 4838
+    .line 4840
     iput v3, v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->size:I
 
     const/16 v6, 0x1f4
 
-    .line 4839
+    .line 4841
     iput v6, v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->w:I
 
     const/16 v6, 0x12e
 
-    .line 4840
+    .line 4842
     iput v6, v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->h:I
 
     const-string v6, "s"
 
-    .line 4841
+    .line 4843
     iput-object v6, v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->type:Ljava/lang/String;
 
-    .line 4842
+    .line 4844
     new-instance v6, Lorg/telegram/tgnet/TLRPC$TL_fileLocationUnavailable;
 
     invoke-direct {v6}, Lorg/telegram/tgnet/TLRPC$TL_fileLocationUnavailable;-><init>()V
 
     iput-object v6, v2, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
-    .line 4843
+    .line 4845
     iget-object v6, v5, Lorg/telegram/tgnet/TLRPC$Message;->media:Lorg/telegram/tgnet/TLRPC$MessageMedia;
 
     iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$MessageMedia;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
@@ -2197,7 +2211,7 @@
 
     invoke-virtual {v6, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 4844
+    .line 4846
     sget v2, Lorg/telegram/messenger/R$string;->ThemePreviewLine4:I
 
     const-string v6, "ThemePreviewLine4"
@@ -2208,17 +2222,17 @@
 
     iput-object v2, v5, Lorg/telegram/tgnet/TLRPC$Message;->message:Ljava/lang/String;
 
-    .line 4845
+    .line 4847
     iput-boolean v3, v5, Lorg/telegram/tgnet/TLRPC$Message;->out:Z
 
-    .line 4846
+    .line 4848
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_peerUser;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_peerUser;-><init>()V
 
     iput-object v2, v5, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 4847
+    .line 4849
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$10800(Lorg/telegram/ui/ThemePreviewActivity;)I
 
     move-result v6
@@ -2233,7 +2247,7 @@
 
     iput-wide v6, v2, Lorg/telegram/tgnet/TLRPC$Peer;->user_id:J
 
-    .line 4848
+    .line 4850
     new-instance v2, Lorg/telegram/messenger/MessageObject;
 
     invoke-static/range {p1 .. p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$10900(Lorg/telegram/ui/ThemePreviewActivity;)I
@@ -2242,10 +2256,10 @@
 
     invoke-direct {v2, v1, v5, v4, v3}, Lorg/telegram/messenger/MessageObject;-><init>(ILorg/telegram/tgnet/TLRPC$Message;ZZ)V
 
-    .line 4849
+    .line 4851
     iput-boolean v4, v2, Lorg/telegram/messenger/MessageObject;->useCustomPhoto:Z
 
-    .line 4850
+    .line 4852
     iget-object v1, v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -2403,7 +2417,7 @@
 .method private hasButtons()Z
     .locals 3
 
-    .line 4856
+    .line 4858
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$11000(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
@@ -2445,7 +2459,7 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    .line 4857
+    .line 4859
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$11100(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
 
     move-result-object v0
@@ -2493,14 +2507,14 @@
 .method public getItemCount()I
     .locals 2
 
-    .line 4862
+    .line 4864
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 4863
+    .line 4865
     invoke-direct {p0}, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->hasButtons()Z
 
     move-result v1
@@ -2516,7 +2530,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 5000
+    .line 5002
     invoke-direct {p0}, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->hasButtons()Z
 
     move-result v0
@@ -2525,7 +2539,7 @@
 
     if-nez p1, :cond_1
 
-    .line 5002
+    .line 5004
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$7200(Lorg/telegram/ui/ThemePreviewActivity;)I
@@ -2549,7 +2563,7 @@
     :cond_2
     if-ltz p1, :cond_3
 
-    .line 5010
+    .line 5012
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2558,7 +2572,7 @@
 
     if-ge p1, v0, :cond_3
 
-    .line 5011
+    .line 5013
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2588,7 +2602,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 9
 
-    .line 4960
+    .line 4962
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -2601,7 +2615,7 @@
 
     if-eq v0, v1, :cond_4
 
-    .line 4962
+    .line 4964
     invoke-direct {p0}, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->hasButtons()Z
 
     move-result v0
@@ -2610,7 +2624,7 @@
 
     add-int/lit8 p2, p2, -0x1
 
-    .line 4965
+    .line 4967
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
@@ -2620,25 +2634,25 @@
 
     check-cast v0, Lorg/telegram/messenger/MessageObject;
 
-    .line 4966
+    .line 4968
     iget-object v1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    .line 4968
+    .line 4970
     instance-of v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v2, :cond_3
 
-    .line 4969
+    .line 4971
     check-cast v1, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/4 v2, 0x0
 
-    .line 4970
+    .line 4972
     iput-boolean v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->isChat:Z
 
     add-int/lit8 v3, p2, -0x1
 
-    .line 4971
+    .line 4973
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->getItemViewType(I)I
 
     move-result v4
@@ -2647,12 +2661,12 @@
 
     add-int/2addr p2, v5
 
-    .line 4972
+    .line 4974
     invoke-virtual {p0, p2}, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->getItemViewType(I)I
 
     move-result v6
 
-    .line 4975
+    .line 4977
     iget-object v7, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v7, v7, Lorg/telegram/tgnet/TLRPC$Message;->reply_markup:Lorg/telegram/tgnet/TLRPC$ReplyMarkup;
@@ -2669,7 +2683,7 @@
 
     if-ne v4, v7, :cond_1
 
-    .line 4976
+    .line 4978
     iget-object v4, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2678,7 +2692,7 @@
 
     check-cast v3, Lorg/telegram/messenger/MessageObject;
 
-    .line 4977
+    .line 4979
     invoke-virtual {v3}, Lorg/telegram/messenger/MessageObject;->isOutOwner()Z
 
     move-result v4
@@ -2712,7 +2726,7 @@
     :cond_1
     move v3, v2
 
-    .line 4981
+    .line 4983
     :goto_0
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -2728,7 +2742,7 @@
 
     if-ge p2, p1, :cond_2
 
-    .line 4982
+    .line 4984
     iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2737,7 +2751,7 @@
 
     check-cast p1, Lorg/telegram/messenger/MessageObject;
 
-    .line 4983
+    .line 4985
     iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$Message;->reply_markup:Lorg/telegram/tgnet/TLRPC$ReplyMarkup;
@@ -2774,37 +2788,37 @@
 
     move v2, v5
 
-    .line 4987
+    .line 4989
     :cond_2
     iget-boolean p1, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->showSecretMessages:Z
 
     iput-boolean p1, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->isChat:Z
 
-    .line 4988
+    .line 4990
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Cells/ChatMessageCell;->setFullyDraw(Z)V
 
     const/4 p1, 0x0
 
-    .line 4989
+    .line 4991
     invoke-virtual {v1, v0, p1, v3, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject$GroupedMessages;ZZ)V
 
     goto :goto_1
 
-    .line 4990
+    .line 4992
     :cond_3
     instance-of p1, v1, Lorg/telegram/ui/Cells/ChatActionCell;
 
     if-eqz p1, :cond_4
 
-    .line 4991
+    .line 4993
     check-cast v1, Lorg/telegram/ui/Cells/ChatActionCell;
 
-    .line 4992
+    .line 4994
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Cells/ChatActionCell;->setMessageObject(Lorg/telegram/messenger/MessageObject;)V
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 4993
+    .line 4995
     invoke-virtual {v1, p1}, Landroid/view/ViewGroup;->setAlpha(F)V
 
     :cond_4
@@ -2819,7 +2833,7 @@
 
     if-nez p2, :cond_0
 
-    .line 4878
+    .line 4880
     new-instance p2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->mContext:Landroid/content/Context;
@@ -2834,7 +2848,7 @@
 
     invoke-direct {p2, v0, v1, v2, v3}, Lorg/telegram/ui/Cells/ChatMessageCell;-><init>(Landroid/content/Context;ZLorg/telegram/messenger/ChatMessageSharedResources;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 4914
+    .line 4916
     new-instance v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$2;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$2;-><init>(Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;)V
@@ -2848,14 +2862,14 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 4918
+    .line 4920
     new-instance p2, Lorg/telegram/ui/Cells/ChatActionCell;
 
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->mContext:Landroid/content/Context;
 
     invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/ChatActionCell;-><init>(Landroid/content/Context;)V
 
-    .line 4919
+    .line 4921
     new-instance v0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$3;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$3;-><init>(Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;)V
@@ -2873,7 +2887,7 @@
 
     if-ne p2, v0, :cond_3
 
-    .line 4923
+    .line 4925
     iget-object p2, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$11100(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
@@ -2886,7 +2900,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 4924
+    .line 4926
     iget-object p2, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$11100(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
@@ -2907,7 +2921,7 @@
 
     invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 4926
+    .line 4928
     :cond_2
     new-instance p2, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$4;
 
@@ -2915,7 +2929,7 @@
 
     invoke-direct {p2, p0, v0}, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$4;-><init>(Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;Landroid/content/Context;)V
 
-    .line 4932
+    .line 4934
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$11100(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
@@ -2935,7 +2949,7 @@
 
     if-ne p2, v0, :cond_4
 
-    .line 4935
+    .line 4937
     new-instance p2, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$5;
 
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
@@ -2948,7 +2962,7 @@
 
     goto :goto_0
 
-    .line 4942
+    .line 4944
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
@@ -2962,7 +2976,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 4943
+    .line 4945
     iget-object p2, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$11000(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
@@ -2983,7 +2997,7 @@
 
     invoke-virtual {p2, v0}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 4945
+    .line 4947
     :cond_5
     new-instance p2, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$6;
 
@@ -2991,7 +3005,7 @@
 
     invoke-direct {p2, p0, v0}, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$6;-><init>(Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;Landroid/content/Context;)V
 
-    .line 4951
+    .line 4953
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$11000(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
@@ -3004,7 +3018,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4954
+    .line 4956
     :goto_0
     new-instance v0, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -3014,7 +3028,7 @@
 
     invoke-virtual {p2, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 4955
+    .line 4957
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

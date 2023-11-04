@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/VoIPFragment;Landroid/content/Context;)V
     .locals 0
 
-    .line 843
+    .line 844
     iput-object p1, p0, Lorg/telegram/ui/VoIPFragment$6;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -35,15 +35,15 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 7
 
-    .line 846
+    .line 847
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 847
+    .line 848
     invoke-static {}, Lorg/telegram/messenger/voip/VoIPService;->getSharedInstance()Lorg/telegram/messenger/voip/VoIPService;
 
     move-result-object v0
 
-    .line 848
+    .line 849
     iget-object v1, p0, Lorg/telegram/ui/VoIPFragment$6;->this$0:Lorg/telegram/ui/VoIPFragment;
 
     invoke-static {v1}, Lorg/telegram/ui/VoIPFragment;->access$3400(Lorg/telegram/ui/VoIPFragment;)Landroid/widget/TextView;
@@ -56,24 +56,24 @@
 
     if-eqz v0, :cond_2
 
-    .line 849
+    .line 850
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
     if-nez v2, :cond_2
 
-    .line 850
+    .line 851
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
     const-string v1, ", "
 
-    .line 852
+    .line 853
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 853
+    .line 854
     iget-object v3, v0, Lorg/telegram/messenger/voip/VoIPService;->privateCall:Lorg/telegram/tgnet/TLRPC$PhoneCall;
 
     if-eqz v3, :cond_0
@@ -82,7 +82,7 @@
 
     if-eqz v3, :cond_0
 
-    .line 854
+    .line 855
     sget v3, Lorg/telegram/messenger/R$string;->VoipInVideoCallBranding:I
 
     const-string v4, "VoipInVideoCallBranding"
@@ -95,7 +95,7 @@
 
     goto :goto_0
 
-    .line 856
+    .line 857
     :cond_0
     sget v3, Lorg/telegram/messenger/R$string;->VoipInCallBranding:I
 
@@ -107,7 +107,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 859
+    .line 860
     :goto_0
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->getCallDuration()J
 
@@ -119,12 +119,12 @@
 
     if-lez v0, :cond_1
 
-    .line 861
+    .line 862
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-wide/16 v0, 0x3e8
 
-    .line 862
+    .line 863
     div-long/2addr v3, v0
 
     long-to-int v0, v3
@@ -135,7 +135,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 865
+    .line 866
     :cond_1
     invoke-virtual {p1, v2}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 

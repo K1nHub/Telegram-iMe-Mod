@@ -2040,6 +2040,16 @@
     .line 704
     invoke-virtual {v6, v2}, Landroid/text/StaticLayout;->getLineRight(I)F
 
+    move-result v7
+
+    invoke-virtual {v6, v2}, Landroid/text/StaticLayout;->getLineLeft(I)F
+
+    move-result v6
+
+    sub-float/2addr v7, v6
+
+    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
+
     move-result v6
 
     add-float/2addr v6, v0

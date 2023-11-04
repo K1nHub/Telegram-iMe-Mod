@@ -15,7 +15,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import timber.log.Timber;
 /* compiled from: WalletRootPresenter.kt */
 @InjectViewState
@@ -34,7 +34,7 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
         this.cryptoAccessManager = cryptoAccessManager;
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.rxEventBus = rxEventBus;
-        this.selectedTabId = C3630R.C3633id.wallet_root_bottom_navigation_home;
+        this.selectedTabId = C3634R.C3637id.wallet_root_bottom_navigation_home;
     }
 
     public final void selectTab(int i) {
@@ -48,16 +48,16 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
     @Override // moxy.MvpPresenter
     public void onFirstViewAttach() {
         listenEvents();
-        selectTab(C3630R.C3633id.wallet_root_bottom_navigation_home);
+        selectTab(C3634R.C3637id.wallet_root_bottom_navigation_home);
     }
 
     private final boolean isDefaultTabSelected() {
-        return this.selectedTabId == C3630R.C3633id.wallet_root_bottom_navigation_home;
+        return this.selectedTabId == C3634R.C3637id.wallet_root_bottom_navigation_home;
     }
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1009ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo1010ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n            .o…(schedulersProvider.ui())");
         Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new Function1<RxEvent, Unit>() { // from class: com.iMe.ui.wallet.common.WalletRootPresenter$listenEvents$$inlined$subscribeWithErrorHandle$default$1
             {
@@ -66,12 +66,12 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
 
             @Override // kotlin.jvm.functions.Function1
             public /* bridge */ /* synthetic */ Unit invoke(RxEvent rxEvent) {
-                m1614invoke(rxEvent);
+                m1619invoke(rxEvent);
                 return Unit.INSTANCE;
             }
 
             /* renamed from: invoke  reason: collision with other method in class */
-            public final void m1614invoke(RxEvent it) {
+            public final void m1619invoke(RxEvent it) {
                 Intrinsics.checkNotNullExpressionValue(it, "it");
                 RxEvent rxEvent = it;
                 if (Intrinsics.areEqual(rxEvent, DomainRxEvents.AllWalletsReset.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletReset.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletCreated.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.WalletRestored.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.SuccessSaveBackup.INSTANCE)) {
@@ -79,7 +79,7 @@ public final class WalletRootPresenter extends BasePresenter<WalletRootView> {
                     return;
                 }
                 if (Intrinsics.areEqual(rxEvent, AppRxEvents.BinanceOpenAuthScreen.INSTANCE) ? true : Intrinsics.areEqual(rxEvent, DomainRxEvents.SelectWalletCryptoTab.INSTANCE)) {
-                    WalletRootPresenter.this.selectTab(C3630R.C3633id.wallet_root_bottom_navigation_home);
+                    WalletRootPresenter.this.selectTab(C3634R.C3637id.wallet_root_bottom_navigation_home);
                 } else if (Intrinsics.areEqual(rxEvent, DomainRxEvents.NetworkUpdated.INSTANCE)) {
                     WalletRootPresenter.this.updateWalletConnectItemVisibility();
                 }

@@ -64,7 +64,7 @@ public abstract class VariableDescriptorWithInitializerImpl extends VariableDesc
 
     @Override // kotlin.reflect.jvm.internal.impl.descriptors.VariableDescriptor
     /* renamed from: getCompileTimeInitializer */
-    public ConstantValue<?> mo2042getCompileTimeInitializer() {
+    public ConstantValue<?> mo2047getCompileTimeInitializer() {
         NullableLazyValue<ConstantValue<?>> nullableLazyValue = this.compileTimeInitializer;
         if (nullableLazyValue != null) {
             return nullableLazyValue.invoke();

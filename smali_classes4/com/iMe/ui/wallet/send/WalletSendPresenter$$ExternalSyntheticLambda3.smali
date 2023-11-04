@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lcom/iMe/ui/wallet/send/WalletSendPresenter$$ExternalSyntheticLambda3;->f$0:Lkotlin/jvm/functions/Function1;
 
-    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/send/WalletSendPresenter;->$r8$lambda$SIDU2FGFM3ANQo1PcBtEnC5fJdA(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lcom/iMe/ui/wallet/send/WalletSendPresenter;->$r8$lambda$TqZaE2VciW0bq4K4nZJC64SGCB8(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
 
     move-result p1
 

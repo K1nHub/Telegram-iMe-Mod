@@ -291,7 +291,7 @@
     .line 34
     new-instance v3, Lkotlin/reflect/jvm/internal/impl/name/FqName;
 
-    const-string v5, "javax.annotation"
+    const-string/jumbo v5, "javax.annotation"
 
     invoke-direct {v3, v5}, Lkotlin/reflect/jvm/internal/impl/name/FqName;-><init>(Ljava/lang/String;)V
 

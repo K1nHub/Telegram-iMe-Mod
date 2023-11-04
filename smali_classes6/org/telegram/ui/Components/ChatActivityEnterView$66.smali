@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/Components/ChatActivityEnterView$66;
-.super Lorg/telegram/ui/Components/EmojiView;
+.super Ljava/lang/Object;
 .source "ChatActivityEnterView.java"
+
+# interfaces
+.implements Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->createEmojiView()V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->didPressedBotButton(Lorg/telegram/tgnet/TLRPC$KeyboardButton;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/MessageObject;Lorg/telegram/messenger/browser/Browser$Progress;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,110 +20,156 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
+.field final synthetic val$btn:Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonRequestPeer;
+
+.field final synthetic val$messageObject:Lorg/telegram/messenger/MessageObject;
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 12
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonRequestPeer;)V
+    .locals 0
 
-    move-object v11, p0
+    .line 9514
+    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    move-object v0, p1
+    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->val$messageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 9344
-    iput-object v0, v11, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    iput-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->val$btn:Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonRequestPeer;
 
-    move-object v0, p0
-
-    move-object v1, p2
-
-    move v2, p3
-
-    move/from16 v3, p4
-
-    move/from16 v4, p5
-
-    move-object/from16 v5, p6
-
-    move/from16 v6, p7
-
-    move-object/from16 v7, p8
-
-    move-object/from16 v8, p9
-
-    move/from16 v9, p10
-
-    move-object/from16 v10, p11
-
-    invoke-direct/range {v0 .. v10}, Lorg/telegram/ui/Components/EmojiView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLandroid/content/Context;ZLorg/telegram/tgnet/TLRPC$ChatFull;Landroid/view/ViewGroup;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public requestDisallowInterceptTouchEvent(Z)V
-    .locals 1
+.method public didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lorg/telegram/ui/DialogsActivity;",
+            "Ljava/util/ArrayList<",
+            "Lorg/telegram/messenger/MessagesStorage$TopicKey;",
+            ">;",
+            "Ljava/lang/CharSequence;",
+            "Z",
+            "Lorg/telegram/ui/TopicsFragment;",
+            "Lcom/iMe/fork/utils/Callbacks$Callback1<",
+            "Ljava/util/ArrayList<",
+            "Lorg/telegram/messenger/MessageObject;",
+            ">;>;)Z"
+        }
+    .end annotation
 
-    .line 9352
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    const/4 p3, 0x1
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$16800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
+    const/4 p4, 0x0
 
-    move-result v0
+    if-eqz p6, :cond_0
 
-    if-eqz v0, :cond_1
+    .line 9519
+    invoke-interface {p6, p4}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
-    if-eqz p1, :cond_0
-
-    goto :goto_0
+    return p3
 
     :cond_0
-    const/4 p1, 0x0
+    if-eqz p2, :cond_1
 
-    goto :goto_1
+    .line 9523
+    invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
 
+    move-result p5
+
+    if-nez p5, :cond_1
+
+    .line 9524
+    new-instance p5, Lorg/telegram/tgnet/TLRPC$TL_messages_sendBotRequestedPeer;
+
+    invoke-direct {p5}, Lorg/telegram/tgnet/TLRPC$TL_messages_sendBotRequestedPeer;-><init>()V
+
+    .line 9525
+    iget-object p6, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {p6}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$2800(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
+
+    move-result p6
+
+    invoke-static {p6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object p6
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->val$messageObject:Lorg/telegram/messenger/MessageObject;
+
+    iget-object v0, v0, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
+
+    iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
+
+    invoke-virtual {p6, v0}, Lorg/telegram/messenger/MessagesController;->getInputPeer(Lorg/telegram/tgnet/TLRPC$Peer;)Lorg/telegram/tgnet/TLRPC$InputPeer;
+
+    move-result-object p6
+
+    iput-object p6, p5, Lorg/telegram/tgnet/TLRPC$TL_messages_sendBotRequestedPeer;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+
+    .line 9526
+    iget-object p6, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->val$messageObject:Lorg/telegram/messenger/MessageObject;
+
+    invoke-virtual {p6}, Lorg/telegram/messenger/MessageObject;->getId()I
+
+    move-result p6
+
+    iput p6, p5, Lorg/telegram/tgnet/TLRPC$TL_messages_sendBotRequestedPeer;->msg_id:I
+
+    .line 9527
+    iget-object p6, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->val$btn:Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonRequestPeer;
+
+    iget p6, p6, Lorg/telegram/tgnet/TLRPC$KeyboardButton;->button_id:I
+
+    iput p6, p5, Lorg/telegram/tgnet/TLRPC$TL_messages_sendBotRequestedPeer;->button_id:I
+
+    .line 9528
+    iget-object p6, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {p6}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$2800(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
+
+    move-result p6
+
+    invoke-static {p6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object p6
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lorg/telegram/messenger/MessagesStorage$TopicKey;
+
+    iget-wide v0, p2, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
+
+    invoke-virtual {p6, v0, v1}, Lorg/telegram/messenger/MessagesController;->getInputPeer(J)Lorg/telegram/tgnet/TLRPC$InputPeer;
+
+    move-result-object p2
+
+    iput-object p2, p5, Lorg/telegram/tgnet/TLRPC$TL_messages_sendBotRequestedPeer;->requested_peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
+
+    .line 9529
+    iget-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {p2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$2800(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
+
+    move-result p2
+
+    invoke-static {p2}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+
+    move-result-object p2
+
+    invoke-virtual {p2, p5, p4}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
+
+    .line 9531
     :cond_1
-    :goto_0
-    const/4 p1, 0x1
+    invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity;->finishFragment()V
 
-    :goto_1
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->requestDisallowInterceptTouchEvent(Z)V
-
-    return-void
-.end method
-
-.method public setTranslationY(F)V
-    .locals 1
-
-    .line 9361
-    invoke-super {p0, p1}, Lorg/telegram/ui/Components/EmojiView;->setTranslationY(F)V
-
-    .line 9362
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$100(Lorg/telegram/ui/Components/ChatActivityEnterView;)Landroid/animation/AnimatorSet;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$200(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 9363
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$66;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->bottomPanelTranslationYChanged(F)V
-
-    :cond_0
-    return-void
+    return p3
 .end method

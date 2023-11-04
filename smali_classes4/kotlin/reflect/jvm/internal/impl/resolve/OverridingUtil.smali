@@ -643,7 +643,7 @@
     goto/16 :goto_4
 
     :pswitch_3e
-    const-string v13, "isVisibilityMoreSpecific"
+    const-string/jumbo v13, "isVisibilityMoreSpecific"
 
     aput-object v13, v12, v11
 
@@ -678,7 +678,7 @@
     goto :goto_4
 
     :pswitch_43
-    const-string v13, "isVisibleForOverride"
+    const-string/jumbo v13, "isVisibleForOverride"
 
     aput-object v13, v12, v11
 

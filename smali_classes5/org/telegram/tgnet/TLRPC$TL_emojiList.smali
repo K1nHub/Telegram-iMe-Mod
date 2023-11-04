@@ -3,10 +3,6 @@
 .source "TLRPC.java"
 
 
-# static fields
-.field public static constructor:I = 0x7a1e11d1
-
-
 # instance fields
 .field public document_id:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -22,12 +18,6 @@
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    return-void
-.end method
-
 .method public constructor <init>()V
     .locals 1
 
@@ -121,7 +111,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 4
 
-    sget v0, Lorg/telegram/tgnet/TLRPC$TL_emojiList;->constructor:I
+    const v0, 0x7a1e11d1
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 

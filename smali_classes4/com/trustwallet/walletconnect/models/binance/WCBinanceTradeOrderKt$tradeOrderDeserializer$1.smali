@@ -59,7 +59,7 @@
 .method public final invoke(Lcom/github/salomonbrys/kotson/DeserializerArg;)Lcom/trustwallet/walletconnect/models/binance/WCBinanceTradeOrder$Message;
     .locals 12
 
-    const-string v0, "it"
+    const-string/jumbo v0, "it"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

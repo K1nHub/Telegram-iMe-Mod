@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;)V
     .locals 0
 
-    .line 1327
+    .line 1339
     iput-object p1, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView$1;->this$0:Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1330
+    .line 1342
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView$1;->this$0:Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;
 
     const/4 v0, 0x0
@@ -48,14 +48,14 @@
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1335
+    .line 1347
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView$1;->this$0:Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;
 
     const/4 v0, 0x1
 
     iput-boolean v0, p1, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;->scrollingAnimation:Z
 
-    .line 1336
+    .line 1348
     invoke-virtual {p1}, Landroid/widget/HorizontalScrollView;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
@@ -64,7 +64,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1337
+    .line 1349
     iget-object p1, p0, Lorg/telegram/ui/Components/ScrollableHorizontalScrollView$1;->this$0:Lorg/telegram/ui/Components/ScrollableHorizontalScrollView;
 
     invoke-virtual {p1}, Landroid/widget/HorizontalScrollView;->getParent()Landroid/view/ViewParent;

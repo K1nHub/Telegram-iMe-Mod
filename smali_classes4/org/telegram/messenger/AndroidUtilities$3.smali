@@ -27,7 +27,7 @@
 .method constructor <init>(Landroid/view/View;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 958
+    .line 969
     iput-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$view:Landroid/view/View;
 
     iput-object p2, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$runnable:Ljava/lang/Runnable;
@@ -42,12 +42,12 @@
 .method public onLayoutChange(Landroid/view/View;IIIIIIII)V
     .locals 0
 
-    .line 961
+    .line 972
     iget-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$view:Landroid/view/View;
 
     invoke-virtual {p1, p0}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
 
-    .line 962
+    .line 973
     iget-object p1, p0, Lorg/telegram/messenger/AndroidUtilities$3;->val$runnable:Ljava/lang/Runnable;
 
     invoke-interface {p1}, Ljava/lang/Runnable;->run()V

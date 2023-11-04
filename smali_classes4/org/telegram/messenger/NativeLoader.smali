@@ -4,13 +4,13 @@
 
 
 # static fields
-.field private static final LIB_NAME:Ljava/lang/String; = "tmessages.46"
+.field private static final LIB_NAME:Ljava/lang/String; = "tmessages.47"
 
-.field private static final LIB_SO_NAME:Ljava/lang/String; = "libtmessages.46.so"
+.field private static final LIB_SO_NAME:Ljava/lang/String; = "libtmessages.47.so"
 
-.field private static final LIB_VERSION:I = 0x2e
+.field private static final LIB_VERSION:I = 0x2f
 
-.field private static final LOCALE_LIB_SO_NAME:Ljava/lang/String; = "libtmessages.46loc.so"
+.field private static final LOCALE_LIB_SO_NAME:Ljava/lang/String; = "libtmessages.47loc.so"
 
 .field public static log:Ljava/lang/StringBuilder; = null
 
@@ -300,7 +300,7 @@
     const/4 v1, 0x1
 
     :try_start_1
-    const-string/jumbo v2, "tmessages.46"
+    const-string/jumbo v2, "tmessages.47"
 
     .line 120
     invoke-static {v2}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
@@ -374,7 +374,7 @@
     .line 150
     new-instance v4, Ljava/io/File;
 
-    const-string/jumbo v5, "libtmessages.46loc.so"
+    const-string/jumbo v5, "libtmessages.47loc.so"
 
     invoke-direct {v4, v3, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -519,7 +519,7 @@
 
     :cond_5
     :try_start_6
-    const-string/jumbo p0, "tmessages.46"
+    const-string/jumbo p0, "tmessages.47"
 
     .line 180
     invoke-static {p0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
@@ -637,7 +637,7 @@
 
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v3, "libtmessages.46.so"
+    const-string/jumbo v3, "libtmessages.47.so"
 
     invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -776,7 +776,7 @@
 
     invoke-virtual {p2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo p3, "tmessages.46"
+    const-string/jumbo p3, "tmessages.47"
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -1528,8 +1528,10 @@
 
     add-int v4, v4, v26
 
+    int-to-float v4, v4
+
     .line 418
-    invoke-virtual {v2, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    invoke-virtual {v2, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     goto :goto_17
 
@@ -1538,8 +1540,10 @@
 
     add-int v4, v19, v4
 
+    int-to-float v4, v4
+
     .line 420
-    invoke-virtual {v2, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    invoke-virtual {v2, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     .line 423
     :goto_17
@@ -1743,7 +1747,9 @@
 
     float-to-int v4, v4
 
-    invoke-virtual {v2, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    int-to-float v4, v4
+
+    invoke-virtual {v2, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     goto :goto_1f
 
@@ -1811,7 +1817,9 @@
 
     float-to-int v4, v4
 
-    invoke-virtual {v2, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    int-to-float v4, v4
+
+    invoke-virtual {v2, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     :cond_26
     :goto_1f
@@ -2059,8 +2067,10 @@
 
     add-int/2addr v4, v7
 
+    int-to-float v4, v4
+
     .line 485
-    invoke-virtual {v3, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    invoke-virtual {v3, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     goto :goto_28
 
@@ -2069,8 +2079,10 @@
 
     add-int v4, v19, v4
 
+    int-to-float v4, v4
+
     .line 487
-    invoke-virtual {v3, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    invoke-virtual {v3, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     .line 490
     :goto_28
@@ -2290,7 +2302,9 @@
 
     float-to-int v4, v4
 
-    invoke-virtual {v3, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    int-to-float v4, v4
+
+    invoke-virtual {v3, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     goto :goto_30
 
@@ -2358,7 +2372,9 @@
 
     float-to-int v4, v4
 
-    invoke-virtual {v3, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(I)V
+    int-to-float v4, v4
+
+    invoke-virtual {v3, v4}, Lorg/telegram/messenger/ImageReceiver;->setImageX(F)V
 
     goto :goto_31
 

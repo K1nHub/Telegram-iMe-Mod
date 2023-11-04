@@ -828,7 +828,7 @@ public class CollectionsKt___CollectionsKt extends CollectionsKt___CollectionsJv
         collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(other, 10);
         ArrayList arrayList = new ArrayList(Math.min(collectionSizeOrDefault, collectionSizeOrDefault2));
         while (it.hasNext() && it2.hasNext()) {
-            arrayList.add(TuplesKt.m144to(it.next(), it2.next()));
+            arrayList.add(TuplesKt.m146to(it.next(), it2.next()));
         }
         return arrayList;
     }

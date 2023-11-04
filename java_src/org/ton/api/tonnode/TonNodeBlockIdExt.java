@@ -15,11 +15,11 @@ import kotlinx.serialization.encoding.CompositeEncoder;
 import kotlinx.serialization.internal.PluginExceptionsKt;
 import kotlinx.serialization.internal.SerializationConstructorMarker;
 import org.ton.api.tonnode.TonNodeBlockId;
-import org.ton.p044tl.ByteString;
-import org.ton.p044tl.ByteStringSerializer;
-import org.ton.p044tl.TlCodec;
-import org.ton.p044tl.TlReader;
-import org.ton.p044tl.TlWriter;
+import org.ton.p045tl.ByteString;
+import org.ton.p045tl.ByteStringSerializer;
+import org.ton.p045tl.TlCodec;
+import org.ton.p045tl.TlReader;
+import org.ton.p045tl.TlWriter;
 /* compiled from: TonNodeBlockIdExt.kt */
 @Serializable
 /* loaded from: classes6.dex */
@@ -43,7 +43,7 @@ public final class TonNodeBlockIdExt implements TonNodeBlockId {
     }
 
     public int hashCode() {
-        return (((((((this.workchain * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.shard)) * 31) + this.seqno) * 31) + this.rootHash.hashCode()) * 31) + this.fileHash.hashCode();
+        return (((((((this.workchain * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.shard)) * 31) + this.seqno) * 31) + this.rootHash.hashCode()) * 31) + this.fileHash.hashCode();
     }
 
     public /* synthetic */ TonNodeBlockIdExt(int i, int i2, long j, int i3, ByteString byteString, ByteString byteString2, SerializationConstructorMarker serializationConstructorMarker) {
@@ -134,15 +134,15 @@ public final class TonNodeBlockIdExt implements TonNodeBlockId {
             java.lang.String r0 = "fileHash"
             r7 = r20
             kotlin.jvm.internal.Intrinsics.checkNotNullParameter(r7, r0)
-            org.ton.tl.ByteString$Companion r0 = org.ton.p044tl.ByteString.Companion
+            org.ton.tl.ByteString$Companion r0 = org.ton.p045tl.ByteString.Companion
             r3 = 0
             r4 = 0
             r5 = 3
             r6 = 0
             r1 = r0
-            org.ton.tl.ByteString r12 = org.ton.p044tl.ByteString.Companion.of$default(r1, r2, r3, r4, r5, r6)
+            org.ton.tl.ByteString r12 = org.ton.p045tl.ByteString.Companion.of$default(r1, r2, r3, r4, r5, r6)
             r2 = r20
-            org.ton.tl.ByteString r13 = org.ton.p044tl.ByteString.Companion.of$default(r1, r2, r3, r4, r5, r6)
+            org.ton.tl.ByteString r13 = org.ton.p045tl.ByteString.Companion.of$default(r1, r2, r3, r4, r5, r6)
             r7 = r14
             r8 = r15
             r9 = r16
@@ -166,7 +166,7 @@ public final class TonNodeBlockIdExt implements TonNodeBlockId {
         sb.append("(");
         sb.append(getWorkchain());
         sb.append(":");
-        String upperCase = UStringsKt.m2052toStringJSWoG40(ULong.m1989constructorimpl(getShard()), 16).toUpperCase(Locale.ROOT);
+        String upperCase = UStringsKt.m2057toStringJSWoG40(ULong.m1994constructorimpl(getShard()), 16).toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         sb.append(upperCase);
         sb.append(":");
@@ -190,53 +190,53 @@ public final class TonNodeBlockIdExt implements TonNodeBlockId {
             this();
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public TonNodeBlockIdExt decode(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return this.$$delegate_0.decode(reader);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public TonNodeBlockIdExt decodeBoxed(Input input) {
             Intrinsics.checkNotNullParameter(input, "input");
             return this.$$delegate_0.decodeBoxed(input);
         }
 
-        @Override // org.ton.p044tl.TlDecoder
+        @Override // org.ton.p045tl.TlDecoder
         public TonNodeBlockIdExt decodeBoxed(TlReader reader) {
             Intrinsics.checkNotNullParameter(reader, "reader");
             return this.$$delegate_0.decodeBoxed(reader);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(Output output, TonNodeBlockIdExt value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encode(output, (Output) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encode(TlWriter writer, TonNodeBlockIdExt value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encode(writer, value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encodeBoxed(Output output, TonNodeBlockIdExt value) {
             Intrinsics.checkNotNullParameter(output, "output");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encodeBoxed(output, (Output) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public void encodeBoxed(TlWriter writer, TonNodeBlockIdExt value) {
             Intrinsics.checkNotNullParameter(writer, "writer");
             Intrinsics.checkNotNullParameter(value, "value");
             this.$$delegate_0.encodeBoxed(writer, (TlWriter) value);
         }
 
-        @Override // org.ton.p044tl.TlEncoder
+        @Override // org.ton.p045tl.TlEncoder
         public byte[] encodeToByteArray(TonNodeBlockIdExt value, boolean z) {
             Intrinsics.checkNotNullParameter(value, "value");
             return this.$$delegate_0.encodeToByteArray(value, z);

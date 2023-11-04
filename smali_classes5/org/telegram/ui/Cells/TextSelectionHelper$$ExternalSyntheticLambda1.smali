@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Cells/TextSelectionHelper$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/Cells/TextSelectionHelper;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->$r8$lambda$Zo2v24zK4-CeXV6L-9MtHkfV8WA(Lorg/telegram/ui/Cells/TextSelectionHelper;Landroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Cells/TextSelectionHelper;->$r8$lambda$OkeDC0M73r5U-NotCBZfrONvRGc(Lorg/telegram/ui/Cells/TextSelectionHelper;Landroid/view/View;)V
 
     return-void
 .end method

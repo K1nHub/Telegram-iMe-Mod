@@ -86,13 +86,13 @@ public final class TweetInfo {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m1017m = ((((((((((((((((ProfileData$$ExternalSyntheticBackport0.m1017m(this.f376id) * 31) + this.authorName.hashCode()) * 31) + this.authorNickname.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.likesCount) * 31) + this.quotesCount) * 31) + this.retweetsCount) * 31) + this.text.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.createdAt)) * 31;
+        int m1018m = ((((((((((((((((ProfileData$$ExternalSyntheticBackport0.m1018m(this.f376id) * 31) + this.authorName.hashCode()) * 31) + this.authorNickname.hashCode()) * 31) + this.avatarUrl.hashCode()) * 31) + this.likesCount) * 31) + this.quotesCount) * 31) + this.retweetsCount) * 31) + this.text.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.createdAt)) * 31;
         boolean z = this.isLiked;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return ((m1017m + i) * 31) + this.mediaInfo.hashCode();
+        return ((m1018m + i) * 31) + this.mediaInfo.hashCode();
     }
 
     public String toString() {

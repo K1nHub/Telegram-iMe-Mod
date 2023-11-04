@@ -21,7 +21,7 @@ public final class TrActionPhaseTlbConstructor extends org.ton.tlb.TlbConstructo
     static {
         Maybe.Companion companion = Maybe.Companion;
         maybeCoins = companion.tlbCodec(Coins.Companion);
-        maybeInt32 = companion.tlbCodec(IntTlbConstructor.Companion.m5100int(32));
+        maybeInt32 = companion.tlbCodec(IntTlbConstructor.Companion.m5254int(32));
     }
 
     @Override // org.ton.tlb.TlbConstructor, org.ton.tlb.TlbStorer

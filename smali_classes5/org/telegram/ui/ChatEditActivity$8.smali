@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatEditActivity;)V
     .locals 0
 
-    .line 866
+    .line 868
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

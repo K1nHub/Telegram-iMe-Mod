@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Stories/PeerStoriesView$4;)V
     .locals 0
 
-    .line 721
+    .line 743
     iput-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4$1;->this$1:Lorg/telegram/ui/Stories/PeerStoriesView$4;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -69,12 +69,12 @@
 .method public getBottomOffset(I)I
     .locals 0
 
-    .line 747
+    .line 769
     iget-object p1, p0, Lorg/telegram/ui/Stories/PeerStoriesView$4$1;->this$1:Lorg/telegram/ui/Stories/PeerStoriesView$4;
 
     iget-object p1, p1, Lorg/telegram/ui/Stories/PeerStoriesView$4;->this$0:Lorg/telegram/ui/Stories/PeerStoriesView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1100(Lorg/telegram/ui/Stories/PeerStoriesView;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Stories/PeerStoriesView;->access$1300(Lorg/telegram/ui/Stories/PeerStoriesView;)Z
 
     move-result p1
 
@@ -100,7 +100,7 @@
 
     const/16 p1, 0x3a
 
-    .line 724
+    .line 746
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -121,7 +121,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 740
+    .line 762
     iget p1, p1, Lorg/telegram/ui/Components/Bulletin;->tag:I
 
     const/4 v0, 0x2
@@ -138,7 +138,7 @@
 
     const/4 v0, 0x0
 
-    .line 741
+    .line 763
     invoke-interface {p1, v0}, Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;->setBulletinIsVisible(Z)V
 
     :cond_0
@@ -150,7 +150,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 733
+    .line 755
     iget p1, p1, Lorg/telegram/ui/Components/Bulletin;->tag:I
 
     const/4 v0, 0x2
@@ -167,7 +167,7 @@
 
     const/4 v0, 0x1
 
-    .line 734
+    .line 756
     invoke-interface {p1, v0}, Lorg/telegram/ui/Stories/PeerStoriesView$Delegate;->setBulletinIsVisible(Z)V
 
     :cond_0

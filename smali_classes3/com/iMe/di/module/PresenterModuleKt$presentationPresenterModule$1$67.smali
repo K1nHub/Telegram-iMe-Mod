@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$67\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n*L\n1#1,898:1\n44#2:899\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$67\n*L\n752#1:899\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$67\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n*L\n1#1,901:1\n44#2:902\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$67\n*L\n755#1:902\n*E\n"
 .end annotation
 
 
@@ -87,7 +87,7 @@
 
     check-cast p1, Lcom/iMe/storage/domain/model/catalog/ChatType;
 
-    .line 752
+    .line 755
     new-instance p2, Lcom/iMe/ui/catalog/tabs/user_channels/CatalogUserChannelsPresenter;
 
     invoke-direct {p2, p1}, Lcom/iMe/ui/catalog/tabs/user_channels/CatalogUserChannelsPresenter;-><init>(Lcom/iMe/storage/domain/model/catalog/ChatType;)V
@@ -98,7 +98,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 752
+    .line 755
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

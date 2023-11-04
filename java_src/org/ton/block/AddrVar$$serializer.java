@@ -27,7 +27,7 @@ public final class AddrVar$$serializer implements GeneratedSerializer<AddrVar> {
         pluginGeneratedSerialDescriptor.addElement("addr_len", false);
         pluginGeneratedSerialDescriptor.addElement("workchain_id", false);
         pluginGeneratedSerialDescriptor.addElement("address", false);
-        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7460x1f70da89("@type"));
+        pluginGeneratedSerialDescriptor.pushClassAnnotation(new C7535x1f70da89("@type"));
         descriptor = pluginGeneratedSerialDescriptor;
     }
 

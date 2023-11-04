@@ -8,7 +8,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 /* loaded from: classes4.dex */
 public final class ShortcutWidgetLayout2Binding implements ViewBinding {
     private ShortcutWidgetLayout2Binding(LinearLayout linearLayout, TextView textView, ListView listView) {
@@ -19,7 +19,7 @@ public final class ShortcutWidgetLayout2Binding implements ViewBinding {
     }
 
     public static ShortcutWidgetLayout2Binding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3630R.layout.shortcut_widget_layout_2, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3634R.layout.shortcut_widget_layout_2, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -27,10 +27,10 @@ public final class ShortcutWidgetLayout2Binding implements ViewBinding {
     }
 
     public static ShortcutWidgetLayout2Binding bind(View view) {
-        int i = C3630R.C3633id.empty_view;
+        int i = C3634R.C3637id.empty_view;
         TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
         if (textView != null) {
-            i = C3630R.C3633id.list_view;
+            i = C3634R.C3637id.list_view;
             ListView listView = (ListView) ViewBindings.findChildViewById(view, i);
             if (listView != null) {
                 return new ShortcutWidgetLayout2Binding((LinearLayout) view, textView, listView);

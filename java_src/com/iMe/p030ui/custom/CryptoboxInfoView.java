@@ -29,9 +29,9 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.databinding.ForkContentCryptoboxInfoBinding;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: CryptoboxInfoView.kt */
 /* renamed from: com.iMe.ui.custom.CryptoboxInfoView */
 /* loaded from: classes3.dex */
@@ -165,9 +165,9 @@ public final class CryptoboxInfoView extends FrameLayout implements KoinComponen
 
     private final void setupTexts() {
         ForkContentCryptoboxInfoBinding forkContentCryptoboxInfoBinding = this.binding;
-        forkContentCryptoboxInfoBinding.textTitle.setText(getResourceManager().getString(C3630R.string.cryptobox_create_cryptobox_information_title));
-        forkContentCryptoboxInfoBinding.textCreationFeeTitle.setText(getResourceManager().getString(C3630R.string.cryptobox_create_cryptobox_information_creation_fee));
-        forkContentCryptoboxInfoBinding.textTotalUsersFeeTitle.setText(getResourceManager().getString(C3630R.string.cryptobox_create_cryptobox_information_total_users_fee));
-        forkContentCryptoboxInfoBinding.textTotalFeeTitle.setText(getResourceManager().getString(C3630R.string.cryptobox_create_cryptobox_information_total_fee));
+        forkContentCryptoboxInfoBinding.textTitle.setText(getResourceManager().getString(C3634R.string.cryptobox_create_cryptobox_information_title));
+        forkContentCryptoboxInfoBinding.textCreationFeeTitle.setText(getResourceManager().getString(C3634R.string.cryptobox_create_cryptobox_information_creation_fee));
+        forkContentCryptoboxInfoBinding.textTotalUsersFeeTitle.setText(getResourceManager().getString(C3634R.string.cryptobox_create_cryptobox_information_total_users_fee));
+        forkContentCryptoboxInfoBinding.textTotalFeeTitle.setText(getResourceManager().getString(C3634R.string.cryptobox_create_cryptobox_information_total_fee));
     }
 }

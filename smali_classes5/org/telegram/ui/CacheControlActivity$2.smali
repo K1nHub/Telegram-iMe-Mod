@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/CacheControlActivity;)V
     .locals 0
 
-    .line 1359
+    .line 1360
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$2;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -41,7 +41,7 @@
 
     if-ne p1, v1, :cond_3
 
-    .line 1363
+    .line 1364
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$2;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$100(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -54,17 +54,17 @@
 
     if-eqz p1, :cond_2
 
-    .line 1364
+    .line 1365
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$2;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity;->cacheModel:Lorg/telegram/ui/Storage/CacheModel;
 
     if-eqz p1, :cond_0
 
-    .line 1365
+    .line 1366
     invoke-virtual {p1}, Lorg/telegram/ui/Storage/CacheModel;->clearSelection()V
 
-    .line 1367
+    .line 1368
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$2;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -74,7 +74,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1368
+    .line 1369
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$2;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$200(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/CachedMediaLayout;
@@ -83,7 +83,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/CachedMediaLayout;->showActionMode(Z)V
 
-    .line 1369
+    .line 1370
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$2;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$200(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/CachedMediaLayout;
@@ -95,7 +95,7 @@
     :cond_1
     return-void
 
-    .line 1373
+    .line 1374
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$2;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
@@ -108,7 +108,7 @@
 
     if-ne p1, v1, :cond_4
 
-    .line 1375
+    .line 1376
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$2;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/CacheControlActivity;->access$300(Lorg/telegram/ui/CacheControlActivity;)V
@@ -120,7 +120,7 @@
 
     if-ne p1, v2, :cond_5
 
-    .line 1377
+    .line 1378
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$2;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/CacheControlActivity;->access$400(Lorg/telegram/ui/CacheControlActivity;Z)V
@@ -132,7 +132,7 @@
 
     if-ne p1, v0, :cond_6
 
-    .line 1379
+    .line 1380
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$2;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/CacheControlActivity;->access$400(Lorg/telegram/ui/CacheControlActivity;Z)V

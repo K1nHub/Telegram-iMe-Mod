@@ -56,9 +56,8 @@ public class LazyField extends LazyFieldLite {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: package-private */
     /* loaded from: classes4.dex */
-    public static class LazyIterator<K> implements Iterator<Map.Entry<K, Object>>, p033j$.util.Iterator {
+    static class LazyIterator<K> implements Iterator<Map.Entry<K, Object>>, p033j$.util.Iterator {
         private Iterator<Map.Entry<K, Object>> iterator;
 
         @Override // p033j$.util.Iterator

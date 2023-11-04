@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 228
+    .line 229
     invoke-direct {p0}, Ljava/text/Collator;-><init>()V
 
     return-void
@@ -35,7 +35,7 @@
 
     goto :goto_0
 
-    .line 234
+    .line 235
     :cond_0
     invoke-virtual {p1, p2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 

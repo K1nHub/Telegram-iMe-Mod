@@ -34,7 +34,7 @@ public final class FilterSettingsDb {
         if (z != 0) {
             i = 1;
         }
-        return ((hashCode2 + i) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.userId);
+        return ((hashCode2 + i) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.userId);
     }
 
     public String toString() {

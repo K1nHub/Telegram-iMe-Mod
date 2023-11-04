@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilterCreateActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 536
+    .line 537
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$2;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -37,7 +37,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 539
+    .line 540
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$2;->this$0:Lorg/telegram/ui/FilterCreateActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity;->access$300(Lorg/telegram/ui/FilterCreateActivity;)Ljava/util/ArrayList;
@@ -74,14 +74,14 @@
     :goto_1
     if-eqz p1, :cond_2
 
-    .line 540
+    .line 541
     invoke-static {p1}, Lorg/telegram/ui/FilterCreateActivity$ItemInner;->access$400(Lorg/telegram/ui/FilterCreateActivity$ItemInner;)Z
 
     move-result p1
 
     if-eqz p1, :cond_2
 
-    .line 541
+    .line 542
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
@@ -100,7 +100,7 @@
 
     return-object p1
 
-    .line 543
+    .line 544
     :cond_2
     sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 

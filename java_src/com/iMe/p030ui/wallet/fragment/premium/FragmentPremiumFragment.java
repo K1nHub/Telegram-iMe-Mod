@@ -61,20 +61,20 @@ import org.koin.core.qualifier.Qualifier;
 import org.koin.core.scope.Scope;
 import org.koin.p041mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3630R;
+import org.telegram.messenger.C3634R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.databinding.ForkFragmentFragmentPremiumBinding;
-import org.telegram.p042ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p042ui.ActionBar.Theme;
-import org.telegram.p042ui.ActionBar.ThemeDescription;
-import org.telegram.p042ui.Components.BackupImageView;
-import org.telegram.p042ui.Components.LayoutHelper;
-import org.telegram.p042ui.Components.LoadingSpan;
-import org.telegram.p042ui.Components.Premium.GLIcon.GLIconTextureView;
-import org.telegram.p042ui.Components.Premium.PremiumButtonView;
-import org.telegram.p042ui.Components.Premium.PremiumGradient;
-import org.telegram.p042ui.Components.Premium.StarParticlesView;
-import org.telegram.p042ui.ContactsActivity;
+import org.telegram.p043ui.ActionBar.ActionBarMenuItem;
+import org.telegram.p043ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.ThemeDescription;
+import org.telegram.p043ui.Components.BackupImageView;
+import org.telegram.p043ui.Components.LayoutHelper;
+import org.telegram.p043ui.Components.LoadingSpan;
+import org.telegram.p043ui.Components.Premium.GLIcon.GLIconTextureView;
+import org.telegram.p043ui.Components.Premium.PremiumButtonView;
+import org.telegram.p043ui.Components.Premium.PremiumGradient;
+import org.telegram.p043ui.Components.Premium.StarParticlesView;
+import org.telegram.p043ui.ContactsActivity;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: FragmentPremiumFragment.kt */
 /* renamed from: com.iMe.ui.wallet.fragment.premium.FragmentPremiumFragment */
@@ -96,7 +96,7 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
     private final ResettableLazy starParticlesView$delegate;
     private final ResettableLazy starTextureView$delegate;
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
         return true;
     }
@@ -329,7 +329,7 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
         return root;
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public void onTransitionAnimationEnd(boolean z, boolean z2) {
         super.onTransitionAnimationEnd(z, z2);
         getStarTextureView().startEnterAnimation(-360, 150L);
@@ -356,7 +356,7 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
 
     @Override // com.iMe.p030ui.wallet.fragment.premium.FragmentPremiumView
     public void showActionSuccess() {
-        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3630R.string.cryptobox_create_success_title), getResourceManager().getString(C3630R.string.fragment_premium_gift_success_description), getResourceManager().getString(C3630R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.fragment.premium.FragmentPremiumFragment$$ExternalSyntheticLambda1
+        DialogsFactoryKt.showSuccessAlert(this, getResourceManager().getString(C3634R.string.cryptobox_create_success_title), getResourceManager().getString(C3634R.string.fragment_premium_gift_success_description), getResourceManager().getString(C3634R.string.common_ok), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.fragment.premium.FragmentPremiumFragment$$ExternalSyntheticLambda1
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 FragmentPremiumFragment.this.finishFragment();
@@ -367,7 +367,7 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
     @Override // com.iMe.p030ui.wallet.fragment.premium.FragmentPremiumView
     public void showActionError(String message) {
         Intrinsics.checkNotNullParameter(message, "message");
-        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3630R.string.common_error), message, getResourceManager().getString(C3630R.string.common_ok), null, 8, null);
+        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3634R.string.common_error), message, getResourceManager().getString(C3634R.string.common_ok), null, 8, null);
     }
 
     @Override // com.iMe.p030ui.wallet.fragment.premium.FragmentPremiumView
@@ -375,7 +375,7 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
         Intrinsics.checkNotNullParameter(args, "args");
         final ContactsActivity contactsActivity = new ContactsActivity(args);
         contactsActivity.setDelegate(new ContactsActivity.ContactsActivityDelegate() { // from class: com.iMe.ui.wallet.fragment.premium.FragmentPremiumFragment$$ExternalSyntheticLambda4
-            @Override // org.telegram.p042ui.ContactsActivity.ContactsActivityDelegate
+            @Override // org.telegram.p043ui.ContactsActivity.ContactsActivityDelegate
             public final void didSelectContact(TLRPC$User tLRPC$User, String str, ContactsActivity contactsActivity2) {
                 FragmentPremiumFragment.openChooseContact$lambda$2$lambda$1(ContactsActivity.this, this, tLRPC$User, str, contactsActivity2);
             }
@@ -428,16 +428,16 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
         getBinding().textBalance.setText(balanceText);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BaseFragment
+    @Override // org.telegram.p043ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.fragment.premium.FragmentPremiumFragment$$ExternalSyntheticLambda3
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 FragmentPremiumFragment.getThemeDescriptions$lambda$7(FragmentPremiumFragment.this);
             }
 
-            @Override // org.telegram.p042ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
+            @Override // org.telegram.p043ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
@@ -462,7 +462,7 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
         final Context context = getContext();
         StarParticlesView starParticlesView = new StarParticlesView(context) { // from class: com.iMe.ui.wallet.fragment.premium.FragmentPremiumFragment$initStarParticlesView$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // org.telegram.p042ui.Components.Premium.StarParticlesView, android.view.View
+            @Override // org.telegram.p043ui.Components.Premium.StarParticlesView, android.view.View
             public void onMeasure(int i, int i2) {
                 super.onMeasure(i, i2);
                 this.drawable.rect2.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
@@ -481,14 +481,14 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
         final Context context = getContext();
         GLIconTextureView gLIconTextureView = new GLIconTextureView(context) { // from class: com.iMe.ui.wallet.fragment.premium.FragmentPremiumFragment$initStarTextureView$1
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // org.telegram.p042ui.Components.Premium.GLIcon.GLIconTextureView, android.view.TextureView, android.view.View
+            @Override // org.telegram.p043ui.Components.Premium.GLIcon.GLIconTextureView, android.view.TextureView, android.view.View
             public void onAttachedToWindow() {
                 super.onAttachedToWindow();
                 setPaused(false);
             }
 
             /* JADX INFO: Access modifiers changed from: protected */
-            @Override // org.telegram.p042ui.Components.Premium.GLIcon.GLIconTextureView, android.view.View
+            @Override // org.telegram.p043ui.Components.Premium.GLIcon.GLIconTextureView, android.view.View
             public void onDetachedFromWindow() {
                 setPaused(true);
                 super.onDetachedFromWindow();
@@ -636,8 +636,8 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         BaseNode baseNode = (BaseNode) this_with.getItem(i);
-        if (baseNode instanceof TonFragmentItem.C1529Premium) {
-            this$0.getPresenter().onProductItemClick((TonFragmentItem.C1529Premium) baseNode);
+        if (baseNode instanceof TonFragmentItem.C1535Premium) {
+            this$0.getPresenter().onProductItemClick((TonFragmentItem.C1535Premium) baseNode);
         }
     }
 
@@ -697,7 +697,7 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
         }
         setupViews$lambda$30$lambda$26.addView(getActionButton(), LayoutHelper.createFrame(-1, 48));
         ActionBarMenuItem setupViews$lambda$30$lambda$28 = binding.buttonBack;
-        setupViews$lambda$30$lambda$28.setIcon(C3630R.C3632drawable.ic_ab_back);
+        setupViews$lambda$30$lambda$28.setIcon(C3634R.C3636drawable.ic_ab_back);
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$30$lambda$28, "setupViews$lambda$30$lambda$28");
         ViewGroup.LayoutParams layoutParams = setupViews$lambda$30$lambda$28.getLayoutParams();
         Objects.requireNonNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
@@ -706,12 +706,12 @@ public final class FragmentPremiumFragment extends WalletAuthBaseFragment implem
         ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams3 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams3 : null;
         layoutParams2.setMargins(((ViewGroup.MarginLayoutParams) layoutParams2).leftMargin, (marginLayoutParams != null ? marginLayoutParams.topMargin : 0) + AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) layoutParams2).rightMargin, ((ViewGroup.MarginLayoutParams) layoutParams2).bottomMargin);
         setupViews$lambda$30$lambda$28.setLayoutParams(layoutParams2);
-        binding.textTitle.setText(getResourceManager().getString(C3630R.string.fragment_premium_title));
-        binding.textSubtitle.setText(getResourceManager().getString(C3630R.string.fragment_premium_subtitle));
-        binding.textRecipientTitle.setText(getResourceManager().getString(C3630R.string.wallet_binance_receive_choose_contact_title));
-        binding.textRecipientValue.setText(getResourceManager().getString(C3630R.string.wallet_binance_receive_choose_contact_hint));
-        binding.textDurationTitle.setText(getResourceManager().getString(C3630R.string.fragment_premium_choose_duration));
-        String string = getResourceManager().getString(C3630R.string.fragment_premium_balance);
+        binding.textTitle.setText(getResourceManager().getString(C3634R.string.fragment_premium_title));
+        binding.textSubtitle.setText(getResourceManager().getString(C3634R.string.fragment_premium_subtitle));
+        binding.textRecipientTitle.setText(getResourceManager().getString(C3634R.string.wallet_binance_receive_choose_contact_title));
+        binding.textRecipientValue.setText(getResourceManager().getString(C3634R.string.wallet_binance_receive_choose_contact_hint));
+        binding.textDurationTitle.setText(getResourceManager().getString(C3634R.string.fragment_premium_choose_duration));
+        String string = getResourceManager().getString(C3634R.string.fragment_premium_balance);
         TextView textView = binding.textBalance;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string + "xxxxxx");
         spannableStringBuilder.setSpan(new LoadingSpan(binding.textBalance, getLoadingSpanSize()), string.length(), spannableStringBuilder.length(), 33);

@@ -11,9 +11,9 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class StyleSpan extends AbstractSafeParcelable {
     public static final Parcelable.Creator<StyleSpan> CREATOR = new zzw();
-    @SafeParcelable.Field(getter = "getStyle", m1089id = 2)
+    @SafeParcelable.Field(getter = "getStyle", m1090id = 2)
     private final StrokeStyle zza;
-    @SafeParcelable.Field(getter = "getSegments", m1089id = 3)
+    @SafeParcelable.Field(getter = "getSegments", m1090id = 3)
     private final double zzb;
 
     public StyleSpan(int i) {
@@ -51,7 +51,7 @@ public final class StyleSpan extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public StyleSpan(@SafeParcelable.Param(m1088id = 2) StrokeStyle strokeStyle, @SafeParcelable.Param(m1088id = 3) double d) {
+    public StyleSpan(@SafeParcelable.Param(m1089id = 2) StrokeStyle strokeStyle, @SafeParcelable.Param(m1089id = 3) double d) {
         if (d > 0.0d) {
             this.zza = strokeStyle;
             this.zzb = d;

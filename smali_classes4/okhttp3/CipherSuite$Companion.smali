@@ -153,7 +153,7 @@
     monitor-enter p0
 
     :try_start_0
-    const-string v0, "javaName"
+    const-string/jumbo v0, "javaName"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

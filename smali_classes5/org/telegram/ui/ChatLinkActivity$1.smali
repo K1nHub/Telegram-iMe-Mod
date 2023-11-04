@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatLinkActivity;)V
     .locals 0
 
-    .line 292
+    .line 293
     iput-object p1, p0, Lorg/telegram/ui/ChatLinkActivity$1;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 296
+    .line 297
     iget-object p1, p0, Lorg/telegram/ui/ChatLinkActivity$1;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

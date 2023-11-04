@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/StatisticActivity;)V
     .locals 0
 
-    .line 172
+    .line 174
     iput-object p1, p0, Lorg/telegram/ui/StatisticActivity$1;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 3
 
-    .line 175
+    .line 177
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$1;->this$0:Lorg/telegram/ui/StatisticActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/StatisticActivity;->access$000(Lorg/telegram/ui/StatisticActivity;)Landroid/widget/LinearLayout;

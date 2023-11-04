@@ -5,7 +5,7 @@ import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: ByteBufferChannel.kt */
-@DebugMetadata(m143c = "io.ktor.utils.io.ByteBufferChannel", m142f = "ByteBufferChannel.kt", m141l = {1503}, m140m = "write$suspendImpl")
+@DebugMetadata(m145c = "io.ktor.utils.io.ByteBufferChannel", m144f = "ByteBufferChannel.kt", m143l = {1503}, m142m = "write$suspendImpl")
 /* renamed from: io.ktor.utils.io.ByteBufferChannel$write$1 */
 /* loaded from: classes4.dex */
 public final class ByteBufferChannel$write$1 extends ContinuationImpl {

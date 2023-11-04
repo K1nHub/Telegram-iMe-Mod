@@ -50,7 +50,7 @@ public final class MsgDiscardFin implements InMsg {
     }
 
     public int hashCode() {
-        return (((this.inMsg.hashCode() * 31) + ULong.m1991hashCodeimpl(this.transactionId)) * 31) + this.fwdFee.hashCode();
+        return (((this.inMsg.hashCode() * 31) + ULong.m1996hashCodeimpl(this.transactionId)) * 31) + this.fwdFee.hashCode();
     }
 
     private MsgDiscardFin(int i, CellRef<MsgEnvelope> cellRef, ULong uLong, Coins coins, SerializationConstructorMarker serializationConstructorMarker) {
@@ -58,7 +58,7 @@ public final class MsgDiscardFin implements InMsg {
             PluginExceptionsKt.throwMissingFieldException(i, 7, MsgDiscardFin$$serializer.INSTANCE.getDescriptor());
         }
         this.inMsg = cellRef;
-        this.transactionId = uLong.m1993unboximpl();
+        this.transactionId = uLong.m1998unboximpl();
         this.fwdFee = coins;
     }
 
@@ -72,7 +72,7 @@ public final class MsgDiscardFin implements InMsg {
 
     public static final /* synthetic */ void write$Self(MsgDiscardFin msgDiscardFin, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         compositeEncoder.encodeSerializableElement(serialDescriptor, 0, $childSerializers[0], msgDiscardFin.inMsg);
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1988boximpl(msgDiscardFin.transactionId));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, ULongSerializer.INSTANCE, ULong.m1993boximpl(msgDiscardFin.transactionId));
         compositeEncoder.encodeSerializableElement(serialDescriptor, 2, Coins$$serializer.INSTANCE, msgDiscardFin.fwdFee);
     }
 
@@ -81,7 +81,7 @@ public final class MsgDiscardFin implements InMsg {
     }
 
     /* renamed from: getTransactionId-s-VKNKU  reason: not valid java name */
-    public final long m4972getTransactionIdsVKNKU() {
+    public final long m5126getTransactionIdsVKNKU() {
         return this.transactionId;
     }
 
@@ -140,7 +140,7 @@ public final class MsgDiscardFin implements InMsg {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("msg_discard_fin");
         open.field("in_msg", this.inMsg);
-        open.field("transaction_id", ULong.m1988boximpl(this.transactionId));
+        open.field("transaction_id", ULong.m1993boximpl(this.transactionId));
         open.field("fwd_fee", this.fwdFee);
         TlbPrettyPrinter.close$default(open, null, 1, null);
         return printer;

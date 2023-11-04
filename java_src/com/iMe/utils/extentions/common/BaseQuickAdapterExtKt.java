@@ -16,7 +16,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: BaseQuickAdapterExt.kt */
 /* loaded from: classes4.dex */
 public final class BaseQuickAdapterExtKt {
@@ -79,7 +79,7 @@ public final class BaseQuickAdapterExtKt {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
         View view = baseViewHolder.getView(i);
         PaintDrawable paintDrawable = new PaintDrawable(Theme.getColor(i2));
-        paintDrawable.setCornerRadius(AndroidUtilities.m103dp(f));
+        paintDrawable.setCornerRadius(AndroidUtilities.m105dp(f));
         view.setBackground(paintDrawable);
         return baseViewHolder;
     }
@@ -107,7 +107,7 @@ public final class BaseQuickAdapterExtKt {
 
     public static final BaseViewHolder setPadding(BaseViewHolder baseViewHolder, int i, float f, float f2, float f3, float f4) {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
-        baseViewHolder.getView(i).setPadding(AndroidUtilities.m103dp(f), AndroidUtilities.m103dp(f2), AndroidUtilities.m103dp(f3), AndroidUtilities.m103dp(f4));
+        baseViewHolder.getView(i).setPadding(AndroidUtilities.m105dp(f), AndroidUtilities.m105dp(f2), AndroidUtilities.m105dp(f3), AndroidUtilities.m105dp(f4));
         return baseViewHolder;
     }
 

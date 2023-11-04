@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemeActivity$ListAdapter;Landroid/content/Context;I)V
     .locals 0
 
-    .line 1989
+    .line 2004
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Cells/BrightnessControlCell;-><init>(Landroid/content/Context;I)V
@@ -35,7 +35,7 @@
 .method protected didChangedValue(F)V
     .locals 6
 
-    .line 1992
+    .line 2007
     sget v0, Lorg/telegram/ui/ActionBar/Theme;->autoNightBrighnessThreshold:F
 
     const/high16 v1, 0x42c80000    # 100.0f
@@ -48,12 +48,12 @@
 
     float-to-int v2, v2
 
-    .line 1994
+    .line 2009
     sput p1, Lorg/telegram/ui/ActionBar/Theme;->autoNightBrighnessThreshold:F
 
     if-eq v0, v2, :cond_1
 
-    .line 1996
+    .line 2011
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$ListAdapter$1;->this$1:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemeActivity$ListAdapter;->this$0:Lorg/telegram/ui/ThemeActivity;
@@ -80,12 +80,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 1998
+    .line 2013
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 1999
+    .line 2014
     sget v2, Lorg/telegram/messenger/R$string;->AutoNightBrightnessInfo:I
 
     new-array v3, v0, [Ljava/lang/Object;
@@ -112,7 +112,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2001
+    .line 2016
     :cond_0
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions(Z)V
 

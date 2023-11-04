@@ -28,7 +28,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 741
+    .line 747
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -69,7 +69,7 @@
 .method public static final isArchiveSortingChatsEnabled()Z
     .locals 1
 
-    .line 783
+    .line 789
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isChatSortingEnabledByDefault:Z
 
     return v0
@@ -262,7 +262,7 @@
 .method public static final isSortingChatsEnabled()Z
     .locals 1
 
-    .line 780
+    .line 786
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isChatSortingEnabledByDefault:Z
 
     return v0
@@ -427,7 +427,7 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 777
+    .line 783
     sget-object v1, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_STORY:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -448,7 +448,7 @@
 .method public static final selectedAutoBackupInterval()Lcom/iMe/fork/enums/Interval;
     .locals 1
 
-    .line 755
+    .line 761
     sget-object v0, Lcom/iMe/fork/enums/Interval;->EVERY_WEEK:Lcom/iMe/fork/enums/Interval;
 
     return-object v0
@@ -457,7 +457,7 @@
 .method public static final selectedContactsFilter()Lcom/iMe/model/contacts/ContactsFilter;
     .locals 1
 
-    .line 820
+    .line 826
     sget-object v0, Lcom/iMe/model/contacts/ContactsFilter;->ALL:Lcom/iMe/model/contacts/ContactsFilter;
 
     return-object v0
@@ -474,7 +474,7 @@
         }
     .end annotation
 
-    .line 833
+    .line 839
     sget-object v0, Lcom/iMe/fork/enums/DialogType;->CHANNEL:Lcom/iMe/fork/enums/DialogType;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -503,7 +503,7 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 979
+    .line 985
     sget-object v1, Lcom/iMe/fork/enums/DrawStatusType;->UNREAD_COUNT_CHATS:Lcom/iMe/fork/enums/DrawStatusType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -514,7 +514,7 @@
 
     aput-object v1, v0, v2
 
-    .line 980
+    .line 986
     sget-object v1, Lcom/iMe/fork/enums/DrawStatusType;->ONLINE_USER:Lcom/iMe/fork/enums/DrawStatusType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -525,7 +525,7 @@
 
     aput-object v1, v0, v2
 
-    .line 981
+    .line 987
     sget-object v1, Lcom/iMe/fork/enums/DrawStatusType;->LIVE_VIDEO:Lcom/iMe/fork/enums/DrawStatusType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -536,7 +536,7 @@
 
     aput-object v1, v0, v2
 
-    .line 982
+    .line 988
     sget-object v1, Lcom/iMe/fork/enums/DrawStatusType;->REACTION:Lcom/iMe/fork/enums/DrawStatusType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -547,7 +547,7 @@
 
     aput-object v1, v0, v2
 
-    .line 983
+    .line 989
     sget-object v1, Lcom/iMe/fork/enums/DrawStatusType;->MENTIONS:Lcom/iMe/fork/enums/DrawStatusType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -558,7 +558,7 @@
 
     aput-object v1, v0, v2
 
-    .line 978
+    .line 984
     invoke-static {v0}, Lkotlin/collections/SetsKt;->setOf([Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v0
@@ -577,7 +577,7 @@
         }
     .end annotation
 
-    .line 839
+    .line 845
     sget-object v0, Lcom/iMe/fork/enums/MessagePopupItem;->Companion:Lcom/iMe/fork/enums/MessagePopupItem$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/fork/enums/MessagePopupItem$Companion;->getDefaultEnumNames()Ljava/util/Set;
@@ -590,7 +590,7 @@
 .method public static final selectedMusicTab()Lcom/iMe/ui/music/MusicTab;
     .locals 1
 
-    .line 896
+    .line 902
     sget-object v0, Lcom/iMe/ui/music/MusicTab;->ALBUMS:Lcom/iMe/ui/music/MusicTab;
 
     return-object v0
@@ -617,12 +617,12 @@
 
     const-string v4, "FORUM"
 
-    .line 974
+    .line 980
     filled-new-array {v0, v1, v2, v3, v4}, [Ljava/lang/String;
 
     move-result-object v0
 
-    .line 969
+    .line 975
     invoke-static {v0}, Lkotlin/collections/SetsKt;->setOf([Ljava/lang/Object;)Ljava/util/Set;
 
     move-result-object v0
@@ -633,7 +633,7 @@
 .method public static final selectedSentMessageFont()Lcom/iMe/fork/enums/SentMessageFont;
     .locals 1
 
-    .line 913
+    .line 919
     sget-object v0, Lcom/iMe/fork/enums/SentMessageFont;->REGULAR:Lcom/iMe/fork/enums/SentMessageFont;
 
     return-object v0

@@ -42,7 +42,7 @@ public class Logger {
 
     @KeepForSdk
     /* renamed from: d */
-    public void m1085d(String str, Object... objArr) {
+    public void m1086d(String str, Object... objArr) {
         if (isLoggable(3)) {
             Log.d(this.zza, format(str, objArr));
         }
@@ -50,7 +50,7 @@ public class Logger {
 
     @KeepForSdk
     /* renamed from: e */
-    public void m1084e(String str, Throwable th, Object... objArr) {
+    public void m1085e(String str, Throwable th, Object... objArr) {
         Log.e(this.zza, format(str, objArr), th);
     }
 
@@ -69,7 +69,7 @@ public class Logger {
 
     @KeepForSdk
     /* renamed from: i */
-    public void m1082i(String str, Object... objArr) {
+    public void m1083i(String str, Object... objArr) {
         Log.i(this.zza, format(str, objArr));
     }
 
@@ -80,7 +80,7 @@ public class Logger {
 
     @KeepForSdk
     /* renamed from: v */
-    public void m1081v(String str, Throwable th, Object... objArr) {
+    public void m1082v(String str, Throwable th, Object... objArr) {
         if (isLoggable(2)) {
             Log.v(this.zza, format(str, objArr), th);
         }
@@ -88,7 +88,7 @@ public class Logger {
 
     @KeepForSdk
     /* renamed from: w */
-    public void m1079w(String str, Object... objArr) {
+    public void m1080w(String str, Object... objArr) {
         Log.w(this.zza, format(str, objArr));
     }
 
@@ -99,7 +99,7 @@ public class Logger {
 
     @KeepForSdk
     /* renamed from: e */
-    public void m1083e(String str, Object... objArr) {
+    public void m1084e(String str, Object... objArr) {
         Log.e(this.zza, format(str, objArr));
     }
 
@@ -110,7 +110,7 @@ public class Logger {
 
     @KeepForSdk
     /* renamed from: v */
-    public void m1080v(String str, Object... objArr) {
+    public void m1081v(String str, Object... objArr) {
         if (isLoggable(2)) {
             Log.v(this.zza, format(str, objArr));
         }

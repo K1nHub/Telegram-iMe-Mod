@@ -73,7 +73,7 @@ public final class PrintLnLogger implements Logger {
         Intrinsics.checkNotNullParameter(level, "level");
         Intrinsics.checkNotNullParameter(message, "message");
         if (level.compareTo(getLevel()) >= 0) {
-            this.channel.mo2095trySendJP2dKIU(new Function0<String>() { // from class: org.ton.logger.PrintLnLogger$log$messageLambda$1
+            this.channel.mo2100trySendJP2dKIU(new Function0<String>() { // from class: org.ton.logger.PrintLnLogger$log$messageLambda$1
 
                 /* compiled from: PrintLnLogger.kt */
                 /* loaded from: classes6.dex */

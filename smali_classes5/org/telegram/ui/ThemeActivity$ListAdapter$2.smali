@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemeActivity$ListAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 2016
+    .line 2031
     iput-object p1, p0, Lorg/telegram/ui/ThemeActivity$ListAdapter$2;->this$1:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/ChatListCell;-><init>(Landroid/content/Context;)V
@@ -35,13 +35,13 @@
 .method protected didSelectChatType(ZZ)V
     .locals 3
 
-    .line 2019
+    .line 2034
     invoke-static {p1}, Lorg/telegram/messenger/SharedConfig;->setUseThreeLinesLayout(Z)V
 
-    .line 2021
+    .line 2036
     invoke-static {p2}, Lorg/telegram/messenger/SharedConfig;->setDialogsCompactModeEnabled(Z)V
 
-    .line 2022
+    .line 2037
     iget-object p1, p0, Lorg/telegram/ui/ThemeActivity$ListAdapter$2;->this$1:Lorg/telegram/ui/ThemeActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ThemeActivity$ListAdapter;->this$0:Lorg/telegram/ui/ThemeActivity;

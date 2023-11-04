@@ -35,7 +35,7 @@ public final class ShardStateUnsplitAux implements TlbObject {
     private final CurrencyCollection totalValidatorFees;
     private final long underloadHistory;
     public static final Companion Companion = new Companion(null);
-    private static final KSerializer<Object>[] $childSerializers = {null, null, null, null, new SealedClassSerializer("org.ton.hashmap.HashMapE", Reflection.getOrCreateKotlinClass(HashMapE.class), new KClass[]{Reflection.getOrCreateKotlinClass(HmeEmpty.class), Reflection.getOrCreateKotlinClass(HmeRoot.class)}, new KSerializer[]{HmeEmpty.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), HmeRoot.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7523x50c509b1("@type")}), new SealedClassSerializer("org.ton.block.Maybe", Reflection.getOrCreateKotlinClass(Maybe.class), new KClass[]{Reflection.getOrCreateKotlinClass(Just.class), Reflection.getOrCreateKotlinClass(Nothing.class)}, new KSerializer[]{Just.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), Nothing.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7523x50c509b1("@type")})};
+    private static final KSerializer<Object>[] $childSerializers = {null, null, null, null, new SealedClassSerializer("org.ton.hashmap.HashMapE", Reflection.getOrCreateKotlinClass(HashMapE.class), new KClass[]{Reflection.getOrCreateKotlinClass(HmeEmpty.class), Reflection.getOrCreateKotlinClass(HmeRoot.class)}, new KSerializer[]{HmeEmpty.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), HmeRoot.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7598x50c509b1("@type")}), new SealedClassSerializer("org.ton.block.Maybe", Reflection.getOrCreateKotlinClass(Maybe.class), new KClass[]{Reflection.getOrCreateKotlinClass(Just.class), Reflection.getOrCreateKotlinClass(Nothing.class)}, new KSerializer[]{Just.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0])), Nothing.Companion.serializer(new PolymorphicSerializer(Reflection.getOrCreateKotlinClass(Object.class), new Annotation[0]))}, new Annotation[]{new C7598x50c509b1("@type")})};
 
     public /* synthetic */ ShardStateUnsplitAux(int i, ULong uLong, ULong uLong2, CurrencyCollection currencyCollection, CurrencyCollection currencyCollection2, HashMapE hashMapE, Maybe maybe, SerializationConstructorMarker serializationConstructorMarker, DefaultConstructorMarker defaultConstructorMarker) {
         this(i, uLong, uLong2, currencyCollection, currencyCollection2, hashMapE, maybe, serializationConstructorMarker);
@@ -57,15 +57,15 @@ public final class ShardStateUnsplitAux implements TlbObject {
     }
 
     public int hashCode() {
-        return (((((((((ULong.m1991hashCodeimpl(this.overloadHistory) * 31) + ULong.m1991hashCodeimpl(this.underloadHistory)) * 31) + this.totalBalance.hashCode()) * 31) + this.totalValidatorFees.hashCode()) * 31) + this.libraries.hashCode()) * 31) + this.masterRef.hashCode();
+        return (((((((((ULong.m1996hashCodeimpl(this.overloadHistory) * 31) + ULong.m1996hashCodeimpl(this.underloadHistory)) * 31) + this.totalBalance.hashCode()) * 31) + this.totalValidatorFees.hashCode()) * 31) + this.libraries.hashCode()) * 31) + this.masterRef.hashCode();
     }
 
     private ShardStateUnsplitAux(int i, ULong uLong, ULong uLong2, CurrencyCollection currencyCollection, CurrencyCollection currencyCollection2, HashMapE<LibDescr> hashMapE, Maybe<BlkMasterInfo> maybe, SerializationConstructorMarker serializationConstructorMarker) {
         if (63 != (i & 63)) {
             PluginExceptionsKt.throwMissingFieldException(i, 63, ShardStateUnsplitAux$$serializer.INSTANCE.getDescriptor());
         }
-        this.overloadHistory = uLong.m1993unboximpl();
-        this.underloadHistory = uLong2.m1993unboximpl();
+        this.overloadHistory = uLong.m1998unboximpl();
+        this.underloadHistory = uLong2.m1998unboximpl();
         this.totalBalance = currencyCollection;
         this.totalValidatorFees = currencyCollection2;
         this.libraries = hashMapE;
@@ -88,8 +88,8 @@ public final class ShardStateUnsplitAux implements TlbObject {
     public static final /* synthetic */ void write$Self(ShardStateUnsplitAux shardStateUnsplitAux, CompositeEncoder compositeEncoder, SerialDescriptor serialDescriptor) {
         KSerializer<Object>[] kSerializerArr = $childSerializers;
         ULongSerializer uLongSerializer = ULongSerializer.INSTANCE;
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uLongSerializer, ULong.m1988boximpl(shardStateUnsplitAux.overloadHistory));
-        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uLongSerializer, ULong.m1988boximpl(shardStateUnsplitAux.underloadHistory));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 0, uLongSerializer, ULong.m1993boximpl(shardStateUnsplitAux.overloadHistory));
+        compositeEncoder.encodeSerializableElement(serialDescriptor, 1, uLongSerializer, ULong.m1993boximpl(shardStateUnsplitAux.underloadHistory));
         CurrencyCollection$$serializer currencyCollection$$serializer = CurrencyCollection$$serializer.INSTANCE;
         compositeEncoder.encodeSerializableElement(serialDescriptor, 2, currencyCollection$$serializer, shardStateUnsplitAux.totalBalance);
         compositeEncoder.encodeSerializableElement(serialDescriptor, 3, currencyCollection$$serializer, shardStateUnsplitAux.totalValidatorFees);
@@ -98,12 +98,12 @@ public final class ShardStateUnsplitAux implements TlbObject {
     }
 
     /* renamed from: getOverloadHistory-s-VKNKU  reason: not valid java name */
-    public final long m5047getOverloadHistorysVKNKU() {
+    public final long m5201getOverloadHistorysVKNKU() {
         return this.overloadHistory;
     }
 
     /* renamed from: getUnderloadHistory-s-VKNKU  reason: not valid java name */
-    public final long m5048getUnderloadHistorysVKNKU() {
+    public final long m5202getUnderloadHistorysVKNKU() {
         return this.underloadHistory;
     }
 
@@ -173,8 +173,8 @@ public final class ShardStateUnsplitAux implements TlbObject {
     public TlbPrettyPrinter print(TlbPrettyPrinter printer) {
         Intrinsics.checkNotNullParameter(printer, "printer");
         TlbPrettyPrinter open = printer.open("");
-        open.field("overload_history", ULong.m1988boximpl(this.overloadHistory));
-        open.field("underload_history", ULong.m1988boximpl(this.underloadHistory));
+        open.field("overload_history", ULong.m1993boximpl(this.overloadHistory));
+        open.field("underload_history", ULong.m1993boximpl(this.underloadHistory));
         open.field("total_balance", this.totalBalance);
         open.field("total_validator_fees", this.totalValidatorFees);
         open.field("libraries", this.libraries);

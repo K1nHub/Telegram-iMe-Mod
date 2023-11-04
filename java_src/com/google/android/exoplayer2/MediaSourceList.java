@@ -183,7 +183,7 @@ public final class MediaSourceList {
             try {
                 mediaSourceAndListener.mediaSource.releaseSource(mediaSourceAndListener.caller);
             } catch (RuntimeException e) {
-                Log.m1109e(TAG, "Failed to release child source.", e);
+                Log.m1110e(TAG, "Failed to release child source.", e);
             }
             mediaSourceAndListener.mediaSource.removeEventListener(mediaSourceAndListener.eventListener);
             mediaSourceAndListener.mediaSource.removeDrmEventListener(mediaSourceAndListener.eventListener);

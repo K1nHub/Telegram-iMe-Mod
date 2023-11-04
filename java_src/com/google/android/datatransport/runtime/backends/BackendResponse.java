@@ -30,7 +30,7 @@ public abstract class BackendResponse {
     }
 
     /* renamed from: ok */
-    public static BackendResponse m1120ok(long j) {
+    public static BackendResponse m1121ok(long j) {
         return new AutoValue_BackendResponse(Status.OK, j);
     }
 }

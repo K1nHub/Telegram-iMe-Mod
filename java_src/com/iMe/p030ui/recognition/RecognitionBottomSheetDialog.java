@@ -23,8 +23,8 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.databinding.ForkTextRecognitionContentLayoutBinding;
-import org.telegram.p042ui.ActionBar.BaseFragment;
-import org.telegram.p042ui.ActionBar.Theme;
+import org.telegram.p043ui.ActionBar.BaseFragment;
+import org.telegram.p043ui.ActionBar.Theme;
 /* compiled from: RecognitionBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.recognition.RecognitionBottomSheetDialog */
 /* loaded from: classes3.dex */
@@ -50,7 +50,7 @@ public final class RecognitionBottomSheetDialog extends MvpBottomSheet {
         return Companion.newInstance(baseFragment, str, translationDelegate, i, i2);
     }
 
-    @Override // org.telegram.p042ui.ActionBar.BottomSheet
+    @Override // org.telegram.p043ui.ActionBar.BottomSheet
     protected boolean canDismissWithSwipe() {
         return false;
     }
@@ -60,7 +60,7 @@ public final class RecognitionBottomSheetDialog extends MvpBottomSheet {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public RecognitionBottomSheetDialog(org.telegram.p042ui.ActionBar.BaseFragment r3, java.lang.String r4, com.iMe.p030ui.recognition.RecognitionBottomSheetDialog.TranslationDelegate r5, int r6, int r7) {
+    public RecognitionBottomSheetDialog(org.telegram.p043ui.ActionBar.BaseFragment r3, java.lang.String r4, com.iMe.p030ui.recognition.RecognitionBottomSheetDialog.TranslationDelegate r5, int r6, int r7) {
         /*
             r2 = this;
             java.lang.String r0 = "parentFragment"

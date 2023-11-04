@@ -30,7 +30,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 904
+    .line 909
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    .line 904
+    .line 909
     check-cast p1, Lorg/telegram/messenger/camera/Size;
 
     check-cast p2, Lorg/telegram/messenger/camera/Size;
@@ -56,7 +56,7 @@
 .method public compare(Lorg/telegram/messenger/camera/Size;Lorg/telegram/messenger/camera/Size;)I
     .locals 4
 
-    .line 907
+    .line 912
     invoke-virtual {p1}, Lorg/telegram/messenger/camera/Size;->getWidth()I
 
     move-result v0

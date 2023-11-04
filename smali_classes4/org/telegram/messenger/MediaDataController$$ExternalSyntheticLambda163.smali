@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/GenericProvider;
+.implements Ljava/util/Comparator;
 
 
 # static fields
@@ -32,14 +32,16 @@
 
 
 # virtual methods
-.method public final provide(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    check-cast p1, Ljava/lang/Void;
+    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_topPeer;
 
-    invoke-static {p1}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$DXT_Bb8dskf3mK8GhhKLFs6YjA8(Ljava/lang/Void;)Lorg/telegram/tgnet/TLRPC$MessageEntity;
+    check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_topPeer;
 
-    move-result-object p1
+    invoke-static {p1, p2}, Lorg/telegram/messenger/MediaDataController;->$r8$lambda$o-Refhhu-X-Ho0BM5HDJRkVmn-g(Lorg/telegram/tgnet/TLRPC$TL_topPeer;Lorg/telegram/tgnet/TLRPC$TL_topPeer;)I
 
-    return-object p1
+    move-result p1
+
+    return p1
 .end method

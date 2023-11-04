@@ -68,7 +68,7 @@ public final class IntMsgInfo implements CommonMsgInfo {
         }
         int i3 = (i + i2) * 31;
         boolean z2 = this.bounced;
-        return ((((((((((((((i3 + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.src.hashCode()) * 31) + this.dest.hashCode()) * 31) + this.value.hashCode()) * 31) + this.ihr_fee.hashCode()) * 31) + this.fwd_fee.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1017m(this.created_lt)) * 31) + this.created_at;
+        return ((((((((((((((i3 + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.src.hashCode()) * 31) + this.dest.hashCode()) * 31) + this.value.hashCode()) * 31) + this.ihr_fee.hashCode()) * 31) + this.fwd_fee.hashCode()) * 31) + ProfileData$$ExternalSyntheticBackport0.m1018m(this.created_lt)) * 31) + this.created_at;
     }
 
     public /* synthetic */ IntMsgInfo(int i, boolean z, boolean z2, boolean z3, MsgAddressInt msgAddressInt, MsgAddressInt msgAddressInt2, CurrencyCollection currencyCollection, Coins coins, Coins coins2, long j, int i2, SerializationConstructorMarker serializationConstructorMarker) {
@@ -211,7 +211,7 @@ public final class IntMsgInfo implements CommonMsgInfo {
         KClass[] kClassArr = {Reflection.getOrCreateKotlinClass(AddrStd.class), Reflection.getOrCreateKotlinClass(AddrVar.class)};
         AddrStd$$serializer addrStd$$serializer = AddrStd$$serializer.INSTANCE;
         AddrVar$$serializer addrVar$$serializer = AddrVar$$serializer.INSTANCE;
-        $childSerializers = new KSerializer[]{null, null, null, new SealedClassSerializer("org.ton.block.MsgAddressInt", orCreateKotlinClass, kClassArr, new KSerializer[]{addrStd$$serializer, addrVar$$serializer}, new Annotation[]{new C7483x56daaf1f("@type")}), new SealedClassSerializer("org.ton.block.MsgAddressInt", Reflection.getOrCreateKotlinClass(MsgAddressInt.class), new KClass[]{Reflection.getOrCreateKotlinClass(AddrStd.class), Reflection.getOrCreateKotlinClass(AddrVar.class)}, new KSerializer[]{addrStd$$serializer, addrVar$$serializer}, new Annotation[]{new C7483x56daaf1f("@type")}), null, null, null, null, null};
+        $childSerializers = new KSerializer[]{null, null, null, new SealedClassSerializer("org.ton.block.MsgAddressInt", orCreateKotlinClass, kClassArr, new KSerializer[]{addrStd$$serializer, addrVar$$serializer}, new Annotation[]{new C7558x56daaf1f("@type")}), new SealedClassSerializer("org.ton.block.MsgAddressInt", Reflection.getOrCreateKotlinClass(MsgAddressInt.class), new KClass[]{Reflection.getOrCreateKotlinClass(AddrStd.class), Reflection.getOrCreateKotlinClass(AddrVar.class)}, new KSerializer[]{addrStd$$serializer, addrVar$$serializer}, new Annotation[]{new C7558x56daaf1f("@type")}), null, null, null, null, null};
     }
 
     @Override // org.ton.tlb.TlbObject

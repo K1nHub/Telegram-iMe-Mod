@@ -295,7 +295,7 @@
 
     if-eqz v0, :cond_3
 
-    const-string p1, "kotlin.Nothing"
+    const-string/jumbo p1, "kotlin.Nothing"
 
     goto :goto_1
 
@@ -536,7 +536,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string p1, "kotlin.BooleanArray"
+    const-string/jumbo p1, "kotlin.BooleanArray"
 
     goto :goto_0
 
@@ -550,7 +550,7 @@
 
     if-eqz v0, :cond_1
 
-    const-string p1, "kotlin.CharArray"
+    const-string/jumbo p1, "kotlin.CharArray"
 
     goto :goto_0
 
@@ -564,7 +564,7 @@
 
     if-eqz v0, :cond_2
 
-    const-string p1, "kotlin.ByteArray"
+    const-string/jumbo p1, "kotlin.ByteArray"
 
     goto :goto_0
 
@@ -578,7 +578,7 @@
 
     if-eqz v0, :cond_3
 
-    const-string p1, "kotlin.ShortArray"
+    const-string/jumbo p1, "kotlin.ShortArray"
 
     goto :goto_0
 
@@ -592,7 +592,7 @@
 
     if-eqz v0, :cond_4
 
-    const-string p1, "kotlin.IntArray"
+    const-string/jumbo p1, "kotlin.IntArray"
 
     goto :goto_0
 
@@ -606,7 +606,7 @@
 
     if-eqz v0, :cond_5
 
-    const-string p1, "kotlin.FloatArray"
+    const-string/jumbo p1, "kotlin.FloatArray"
 
     goto :goto_0
 
@@ -620,7 +620,7 @@
 
     if-eqz v0, :cond_6
 
-    const-string p1, "kotlin.LongArray"
+    const-string/jumbo p1, "kotlin.LongArray"
 
     goto :goto_0
 
@@ -634,12 +634,12 @@
 
     if-eqz p1, :cond_7
 
-    const-string p1, "kotlin.DoubleArray"
+    const-string/jumbo p1, "kotlin.DoubleArray"
 
     goto :goto_0
 
     :cond_7
-    const-string p1, "kotlin.Array"
+    const-string/jumbo p1, "kotlin.Array"
 
     :goto_0
     return-object p1
